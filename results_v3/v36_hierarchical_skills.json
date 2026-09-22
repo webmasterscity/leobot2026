@@ -1,0 +1,380 @@
+{
+  "version": "0.3.6",
+  "experiment": "hierarchical_symbolic_skill_induction_from_verified_plans",
+  "code_hash_before": "ce8a25ebfbb6c7701afe65a62b0051d10942caed3c9c953e2d4f8e24cae1398d",
+  "macro_training": [
+    {
+      "status": "macro_pending",
+      "support": 1,
+      "required": 3,
+      "primitive_length": 4
+    },
+    {
+      "status": "macro_pending",
+      "support": 2,
+      "required": 3,
+      "primitive_length": 4
+    },
+    {
+      "status": "macro_learned",
+      "macro": "macro:ec677459531f8e72",
+      "support": 3,
+      "primitive_length": 4,
+      "preconditions": [
+        [
+          "at",
+          "<e0>",
+          "<e1>"
+        ],
+        [
+          "item",
+          "<e3>"
+        ],
+        [
+          "item_at",
+          "<e3>",
+          "<e2>"
+        ],
+        [
+          "person",
+          "<e0>"
+        ],
+        [
+          "place",
+          "<e4>"
+        ],
+        [
+          "road",
+          "<e1>",
+          "<e2>"
+        ],
+        [
+          "road",
+          "<e2>",
+          "<e4>"
+        ]
+      ],
+      "add": [
+        [
+          "at",
+          "<e0>",
+          "<e4>"
+        ],
+        [
+          "item_at",
+          "<e3>",
+          "<e4>"
+        ]
+      ],
+      "delete": [
+        [
+          "at",
+          "<e0>",
+          "<e1>"
+        ],
+        [
+          "item_at",
+          "<e3>",
+          "<e2>"
+        ]
+      ]
+    }
+  ],
+  "macro_count": 1,
+  "macro": {
+    "id": "macro:ec677459531f8e72",
+    "pattern": "macro:ec677459531f8e72",
+    "preconditions": [
+      [
+        "at",
+        "<e0>",
+        "<e1>"
+      ],
+      [
+        "item",
+        "<e3>"
+      ],
+      [
+        "item_at",
+        "<e3>",
+        "<e2>"
+      ],
+      [
+        "person",
+        "<e0>"
+      ],
+      [
+        "place",
+        "<e4>"
+      ],
+      [
+        "road",
+        "<e1>",
+        "<e2>"
+      ],
+      [
+        "road",
+        "<e2>",
+        "<e4>"
+      ]
+    ],
+    "add": [
+      [
+        "at",
+        "<e0>",
+        "<e4>"
+      ],
+      [
+        "item_at",
+        "<e3>",
+        "<e4>"
+      ]
+    ],
+    "delete": [
+      [
+        "at",
+        "<e0>",
+        "<e1>"
+      ],
+      [
+        "item_at",
+        "<e3>",
+        "<e2>"
+      ]
+    ],
+    "sequence": [
+      {
+        "operator": "mueve a <e0> de <e1> a <e2>",
+        "map": {
+          "<e0>": "<e0>",
+          "<e1>": "<e1>",
+          "<e2>": "<e2>"
+        }
+      },
+      {
+        "operator": "<e0> toma <e1> en <e2>",
+        "map": {
+          "<e0>": "<e0>",
+          "<e1>": "<e3>",
+          "<e2>": "<e2>"
+        }
+      },
+      {
+        "operator": "mueve a <e0> de <e1> a <e2>",
+        "map": {
+          "<e0>": "<e0>",
+          "<e1>": "<e2>",
+          "<e2>": "<e4>"
+        }
+      },
+      {
+        "operator": "<e0> deja <e1> en <e2>",
+        "map": {
+          "<e0>": "<e0>",
+          "<e1>": "<e3>",
+          "<e2>": "<e4>"
+        }
+      }
+    ],
+    "dependencies": {
+      "mueve a <e0> de <e1> a <e2>": "83f9d713678d62c4e2883afa8f41ec30",
+      "<e0> toma <e1> en <e2>": "aaec16a1c9b049fc15c9a62fc4a4b798",
+      "<e0> deja <e1> en <e2>": "5c3bd2ea4a7a46869610c31b781e95a4"
+    },
+    "support": 3,
+    "primitive_length": 4
+  },
+  "transfer": {
+    "cases": 200,
+    "hierarchy_tight_success": 200,
+    "primitive_tight_success": 0,
+    "reference_verified": 200,
+    "episodic_exact_cache_hits": 0,
+    "same_depth_median_nodes_hierarchy": 2.0,
+    "same_depth_median_nodes_primitive": 23.0,
+    "same_depth_median_transitions_hierarchy": 2.0,
+    "same_depth_median_transitions_primitive": 37.0
+  },
+  "distractor_scaling": [
+    {
+      "distractors": 0,
+      "success": 5,
+      "runs": 5,
+      "median_ms": 0.3690470002766233,
+      "median_nodes": 2,
+      "median_transitions": 2
+    },
+    {
+      "distractors": 10,
+      "success": 5,
+      "runs": 5,
+      "median_ms": 0.5218870001044706,
+      "median_nodes": 2,
+      "median_transitions": 2
+    },
+    {
+      "distractors": 100,
+      "success": 5,
+      "runs": 5,
+      "median_ms": 2.2469559999080957,
+      "median_nodes": 2,
+      "median_transitions": 2
+    },
+    {
+      "distractors": 500,
+      "success": 5,
+      "runs": 5,
+      "median_ms": 11.282923999715422,
+      "median_nodes": 2,
+      "median_transitions": 2
+    },
+    {
+      "distractors": 1000,
+      "success": 5,
+      "runs": 5,
+      "median_ms": 23.43318499970337,
+      "median_nodes": 2,
+      "median_transitions": 2
+    },
+    {
+      "distractors": 2000,
+      "success": 5,
+      "runs": 5,
+      "median_ms": 55.77965799966478,
+      "median_nodes": 2,
+      "median_transitions": 2
+    }
+  ],
+  "long_horizon": [
+    {
+      "deliveries": 1,
+      "primitive_equivalent": 4,
+      "status": "plan_found",
+      "strategy": "hierarchical_rollout",
+      "nodes": 1,
+      "transitions": 1,
+      "hierarchical_steps": 1,
+      "primitive_steps": 4,
+      "ms": 0.4696670002886094,
+      "primitive_control_status": "goal_unreached",
+      "primitive_control_nodes": 2,
+      "primitive_control_transitions": 1,
+      "primitive_control_ms": 0.12005099961243104
+    },
+    {
+      "deliveries": 2,
+      "primitive_equivalent": 8,
+      "status": "plan_found",
+      "strategy": "hierarchical_rollout",
+      "nodes": 2,
+      "transitions": 2,
+      "hierarchical_steps": 2,
+      "primitive_steps": 8,
+      "ms": 0.3660419997686404,
+      "primitive_control_status": "goal_unreached",
+      "primitive_control_nodes": 4,
+      "primitive_control_transitions": 3,
+      "primitive_control_ms": 0.17380200006300583
+    },
+    {
+      "deliveries": 4,
+      "primitive_equivalent": 16,
+      "status": "plan_found",
+      "strategy": "hierarchical_rollout",
+      "nodes": 4,
+      "transitions": 4,
+      "hierarchical_steps": 4,
+      "primitive_steps": 16,
+      "ms": 0.6647219997830689,
+      "primitive_control_status": "goal_unreached",
+      "primitive_control_nodes": 10,
+      "primitive_control_transitions": 10,
+      "primitive_control_ms": 0.6393740004568826
+    },
+    {
+      "deliveries": 8,
+      "primitive_equivalent": 32,
+      "status": "plan_found",
+      "strategy": "hierarchical_rollout",
+      "nodes": 8,
+      "transitions": 8,
+      "hierarchical_steps": 8,
+      "primitive_steps": 32,
+      "ms": 1.0960119998344453,
+      "primitive_control_status": "goal_unreached",
+      "primitive_control_nodes": 77,
+      "primitive_control_transitions": 97,
+      "primitive_control_ms": 3.8289200001599966
+    },
+    {
+      "deliveries": 16,
+      "primitive_equivalent": 64,
+      "status": "plan_found",
+      "strategy": "hierarchical_rollout",
+      "nodes": 16,
+      "transitions": 16,
+      "hierarchical_steps": 16,
+      "primitive_steps": 64,
+      "ms": 2.429420999760623
+    },
+    {
+      "deliveries": 32,
+      "primitive_equivalent": 128,
+      "status": "plan_found",
+      "strategy": "hierarchical_rollout",
+      "nodes": 32,
+      "transitions": 32,
+      "hierarchical_steps": 32,
+      "primitive_steps": 128,
+      "ms": 4.852353000387666
+    },
+    {
+      "deliveries": 64,
+      "primitive_equivalent": 256,
+      "status": "plan_found",
+      "strategy": "hierarchical_rollout",
+      "nodes": 64,
+      "transitions": 64,
+      "hierarchical_steps": 64,
+      "primitive_steps": 256,
+      "ms": 11.909857999853557
+    },
+    {
+      "deliveries": 128,
+      "primitive_equivalent": 512,
+      "status": "plan_found",
+      "strategy": "hierarchical_rollout",
+      "nodes": 128,
+      "transitions": 128,
+      "hierarchical_steps": 128,
+      "primitive_steps": 512,
+      "ms": 18.537116000516107
+    },
+    {
+      "deliveries": 256,
+      "primitive_equivalent": 1024,
+      "status": "plan_found",
+      "strategy": "hierarchical_rollout",
+      "nodes": 256,
+      "transitions": 256,
+      "hierarchical_steps": 256,
+      "primitive_steps": 1024,
+      "ms": 38.85529599938309
+    }
+  ],
+  "ambiguous_fast_path_fallback": {
+    "status": "plan_found",
+    "strategy": null,
+    "nodes": 3,
+    "macro_steps": 2,
+    "goal_reached": true
+  },
+  "dependency_invalidation": {
+    "macros_before": 1,
+    "counterevidence_status": "inconsistent_effects",
+    "macros_after": 0
+  },
+  "elapsed_s": 1.1692197390002548,
+  "code_hash_after": "ce8a25ebfbb6c7701afe65a62b0051d10942caed3c9c953e2d4f8e24cae1398d",
+  "code_unchanged_during_evaluation": true
+}

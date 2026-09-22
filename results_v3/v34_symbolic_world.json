@@ -1,0 +1,263 @@
+{
+  "version": "0.3.4",
+  "experiment": "symbolic_action_model_induction_and_cross_operator_planning",
+  "code_hash_before": "8e8dcd34ac77cb60ec68fc24777f3c7761016b1168c22b066b2dcaa5cde58ff8",
+  "transfer": {
+    "heldout": 200,
+    "scores": {
+      "full": 200,
+      "independent_reference_valid": 200,
+      "positive_only_ablation": 0,
+      "episodic_memory": 0
+    },
+    "median_us": 162.49999998763087,
+    "p95_us": 262.61599941790337,
+    "median_steps": 3.5,
+    "operators": [
+      {
+        "pattern": "<e0> toma <e1> en <e2>",
+        "preconditions": [
+          [
+            "at",
+            "<e0>",
+            "<e2>"
+          ],
+          [
+            "item_at",
+            "<e1>",
+            "<e2>"
+          ]
+        ],
+        "add": [
+          [
+            "holding",
+            "<e0>",
+            "<e1>"
+          ]
+        ],
+        "delete": [
+          [
+            "item_at",
+            "<e1>",
+            "<e2>"
+          ]
+        ],
+        "support": 3,
+        "failures": 2,
+        "precondition_mode": "contrastive_unique"
+      },
+      {
+        "pattern": "mueve a <e0> de <e1> a <e2>",
+        "preconditions": [
+          [
+            "at",
+            "<e0>",
+            "<e1>"
+          ],
+          [
+            "road",
+            "<e1>",
+            "<e2>"
+          ]
+        ],
+        "add": [
+          [
+            "at",
+            "<e0>",
+            "<e2>"
+          ]
+        ],
+        "delete": [
+          [
+            "at",
+            "<e0>",
+            "<e1>"
+          ]
+        ],
+        "support": 3,
+        "failures": 2,
+        "precondition_mode": "contrastive_unique"
+      }
+    ],
+    "positive_only_operators": [
+      {
+        "pattern": "<e0> toma <e1> en <e2>",
+        "preconditions": [
+          [
+            "at",
+            "<e0>",
+            "<e2>"
+          ],
+          [
+            "entrenado",
+            "<e0>"
+          ],
+          [
+            "item",
+            "<e1>"
+          ],
+          [
+            "item_at",
+            "<e1>",
+            "<e2>"
+          ],
+          [
+            "person",
+            "<e0>"
+          ],
+          [
+            "place",
+            "<e2>"
+          ]
+        ],
+        "add": [
+          [
+            "holding",
+            "<e0>",
+            "<e1>"
+          ]
+        ],
+        "delete": [
+          [
+            "item_at",
+            "<e1>",
+            "<e2>"
+          ]
+        ],
+        "support": 3,
+        "failures": 0,
+        "precondition_mode": "positive_only"
+      },
+      {
+        "pattern": "mueve a <e0> de <e1> a <e2>",
+        "preconditions": [
+          [
+            "at",
+            "<e0>",
+            "<e1>"
+          ],
+          [
+            "autorizado",
+            "<e0>"
+          ],
+          [
+            "person",
+            "<e0>"
+          ],
+          [
+            "place",
+            "<e1>"
+          ],
+          [
+            "place",
+            "<e2>"
+          ],
+          [
+            "road",
+            "<e1>",
+            "<e2>"
+          ]
+        ],
+        "add": [
+          [
+            "at",
+            "<e0>",
+            "<e2>"
+          ]
+        ],
+        "delete": [
+          [
+            "at",
+            "<e0>",
+            "<e1>"
+          ]
+        ],
+        "support": 3,
+        "failures": 0,
+        "precondition_mode": "positive_only"
+      }
+    ],
+    "samples": [
+      {
+        "text": "Logra que persona0 tenga paquete0.",
+        "path_len": 4,
+        "status": "plan_found",
+        "actions": [
+          "mueve a persona0 de lugar0_0 a lugar0_1",
+          "mueve a persona0 de lugar0_1 a lugar0_2",
+          "mueve a persona0 de lugar0_2 a lugar0_3",
+          "mueve a persona0 de lugar0_3 a lugar0_4",
+          "persona0 toma paquete0 en lugar0_4"
+        ]
+      },
+      {
+        "text": "Logra que persona1 tenga paquete1.",
+        "path_len": 3,
+        "status": "plan_found",
+        "actions": [
+          "mueve a persona1 de lugar1_0 a lugar1_1",
+          "mueve a persona1 de lugar1_1 a lugar1_2",
+          "mueve a persona1 de lugar1_2 a lugar1_3",
+          "persona1 toma paquete1 en lugar1_3"
+        ]
+      },
+      {
+        "text": "Logra que persona2 tenga paquete2.",
+        "path_len": 1,
+        "status": "plan_found",
+        "actions": [
+          "mueve a persona2 de lugar2_0 a lugar2_1",
+          "persona2 toma paquete2 en lugar2_1"
+        ]
+      },
+      {
+        "text": "Logra que persona3 tenga paquete3.",
+        "path_len": 2,
+        "status": "plan_found",
+        "actions": [
+          "mueve a persona3 de lugar3_0 a lugar3_1",
+          "mueve a persona3 de lugar3_1 a lugar3_2",
+          "persona3 toma paquete3 en lugar3_2"
+        ]
+      }
+    ]
+  },
+  "distractor_scale": [
+    {
+      "noise_facts": 0,
+      "total_facts": 9,
+      "median_us": 136.75599984708242,
+      "status": "plan_found",
+      "steps": 3
+    },
+    {
+      "noise_facts": 1000,
+      "total_facts": 1009,
+      "median_us": 3193.7049998305156,
+      "status": "plan_found",
+      "steps": 3
+    },
+    {
+      "noise_facts": 5000,
+      "total_facts": 5009,
+      "median_us": 17694.57299997157,
+      "status": "plan_found",
+      "steps": 3
+    },
+    {
+      "noise_facts": 10000,
+      "total_facts": 10009,
+      "median_us": 38931.4040003228,
+      "status": "plan_found",
+      "steps": 3
+    }
+  ],
+  "persistence": {
+    "status": "plan_found",
+    "goal_reached": true,
+    "operators": 2
+  },
+  "code_hash_after": "8e8dcd34ac77cb60ec68fc24777f3c7761016b1168c22b066b2dcaa5cde58ff8",
+  "code_unchanged_during_evaluation": true,
+  "elapsed_s": 0.5449765319999642
+}

@@ -1,0 +1,96 @@
+{
+  "version": "0.3.8",
+  "experiment": "grounded_invention_of_previously_unnamed_relational_concepts",
+  "code_hash_before": "ce8a25ebfbb6c7701afe65a62b0051d10942caed3c9c953e2d4f8e24cae1398d",
+  "root_concept_a": {
+    "status": "concept_learned",
+    "opaque_target": "concept_391273502c5c879e",
+    "selected_program": "parent ; parent",
+    "predicate_candidates_total": 2,
+    "predicate_selected": [
+      "parent",
+      "friend"
+    ],
+    "candidates": 56,
+    "ms": 4.760787000122946,
+    "surface_predicate_preexisted": false
+  },
+  "root_concept_b": {
+    "status": "concept_learned",
+    "opaque_target": "concept_cc943e8ead6cccdf",
+    "selected_program": "friend"
+  },
+  "heldout_transfer": {
+    "positives": 100,
+    "negatives": 100,
+    "entailed_true": 100,
+    "missed_true": 0,
+    "false_positive": 0,
+    "negative_not_asserted": 100,
+    "median_query_ms": 0.23242050019689486
+  },
+  "exact_episode_cache_hits": 0,
+  "distractor_predicates": 5000,
+  "new_surface_with_prior_concept": {
+    "training_statuses": [
+      "concept_pending",
+      "concept_alias_learned"
+    ],
+    "evaluation": {
+      "positives": 100,
+      "negatives": 100,
+      "entailed_true": 100,
+      "missed_true": 0,
+      "false_positive": 0,
+      "negative_not_asserted": 100,
+      "median_query_ms": 0.18703199975789175
+    }
+  },
+  "new_surface_from_scratch_same_two_examples": {
+    "training_statuses": [
+      "concept_pending",
+      "concept_pending"
+    ],
+    "evaluation": {
+      "positives": 100,
+      "negatives": 100,
+      "entailed_true": 0,
+      "missed_true": 100,
+      "false_positive": 0,
+      "negative_not_asserted": 100,
+      "median_query_ms": 0.017551499695400707
+    }
+  },
+  "persistence_after_restart": "entailed",
+  "counterevidence": {
+    "status": "concept_alias_withdrawn",
+    "alias_query_after": "concept_unknown",
+    "root_before": "entailed",
+    "root_after": "entailed"
+  },
+  "conversation_route": {
+    "status": "entailed",
+    "text": "Sí: puedo deducir esa relación del conocimiento aprendido."
+  },
+  "structural_reserve_inverse": {
+    "status": "concept_learned",
+    "selected_program": "inverse(teach)",
+    "heldout_statuses": [
+      "entailed",
+      "entailed"
+    ]
+  },
+  "concept_hierarchy": {
+    "base_status": "concept_learned",
+    "base_program": "r ; s",
+    "higher_with_prior_status": "concept_learned",
+    "higher_with_prior_program": "concept_391273502c5c879e ; concept_391273502c5c879e",
+    "higher_with_prior_heldout": "entailed",
+    "higher_from_scratch_status": "concept_unresolved",
+    "higher_from_scratch_program": null,
+    "higher_from_scratch_heldout": "concept_unknown",
+    "max_relation_length": 2
+  },
+  "code_hash_after": "ce8a25ebfbb6c7701afe65a62b0051d10942caed3c9c953e2d4f8e24cae1398d",
+  "code_unchanged_during_evaluation": true
+}

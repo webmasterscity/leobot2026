@@ -1,0 +1,464 @@
+{
+  "description": "Currículo ampliado V2: construcciones lingüísticas y ejemplos numéricos. No contiene las respuestas del conjunto held-out.",
+  "language": [
+    {
+      "text": "¿Dónde vive Ana?",
+      "frame": {
+        "act": "query",
+        "pred": "vive",
+        "args": [
+          "ana",
+          "?lugar"
+        ]
+      }
+    },
+    {
+      "text": "¿En qué ciudad vive Ana?",
+      "frame": {
+        "act": "query",
+        "pred": "vive",
+        "args": [
+          "ana",
+          "?lugar"
+        ]
+      }
+    },
+    {
+      "text": "¿Cuál es la ciudad de Ana?",
+      "frame": {
+        "act": "query",
+        "pred": "vive",
+        "args": [
+          "ana",
+          "?lugar"
+        ]
+      }
+    },
+    {
+      "text": "Ana vive en Caracas.",
+      "frame": {
+        "act": "assert",
+        "pred": "vive",
+        "args": [
+          "ana",
+          "caracas"
+        ]
+      }
+    },
+    {
+      "text": "Ana reside en Caracas.",
+      "frame": {
+        "act": "assert",
+        "pred": "vive",
+        "args": [
+          "ana",
+          "caracas"
+        ]
+      }
+    },
+    {
+      "text": "La residencia de Ana es Caracas.",
+      "frame": {
+        "act": "assert",
+        "pred": "vive",
+        "args": [
+          "ana",
+          "caracas"
+        ]
+      }
+    },
+    {
+      "text": "¿Qué edad tiene Ana?",
+      "frame": {
+        "act": "query",
+        "pred": "edad",
+        "args": [
+          "ana",
+          "?edad"
+        ]
+      }
+    },
+    {
+      "text": "¿Cuántos años tiene Ana?",
+      "frame": {
+        "act": "query",
+        "pred": "edad",
+        "args": [
+          "ana",
+          "?edad"
+        ]
+      }
+    },
+    {
+      "text": "Ana tiene 30 años.",
+      "frame": {
+        "act": "assert",
+        "pred": "edad",
+        "args": [
+          "ana",
+          30
+        ]
+      }
+    },
+    {
+      "text": "¿Dónde trabaja Ana?",
+      "frame": {
+        "act": "query",
+        "pred": "trabaja",
+        "args": [
+          "ana",
+          "?lugar"
+        ]
+      }
+    },
+    {
+      "text": "Ana trabaja en Taller Norte.",
+      "frame": {
+        "act": "assert",
+        "pred": "trabaja",
+        "args": [
+          "ana",
+          "taller norte"
+        ]
+      }
+    },
+    {
+      "text": "¿Cuál es el trabajo de Ana?",
+      "frame": {
+        "act": "query",
+        "pred": "trabaja",
+        "args": [
+          "ana",
+          "?lugar"
+        ]
+      }
+    }
+  ],
+  "numeric_examples": [
+    {
+      "skill": "base3",
+      "inputs": [
+        -1,
+        -6,
+        -2
+      ],
+      "output": 4
+    },
+    {
+      "skill": "base3",
+      "inputs": [
+        -6,
+        -6,
+        8
+      ],
+      "output": 44
+    },
+    {
+      "skill": "base3",
+      "inputs": [
+        -3,
+        5,
+        0
+      ],
+      "output": -15
+    },
+    {
+      "skill": "base3",
+      "inputs": [
+        -2,
+        3,
+        0
+      ],
+      "output": -6
+    },
+    {
+      "skill": "base3",
+      "inputs": [
+        -6,
+        4,
+        9
+      ],
+      "output": -15
+    },
+    {
+      "skill": "base3",
+      "inputs": [
+        1,
+        -5,
+        1
+      ],
+      "output": -4
+    },
+    {
+      "skill": "base3",
+      "inputs": [
+        10,
+        -1,
+        8
+      ],
+      "output": -2
+    },
+    {
+      "skill": "base3",
+      "inputs": [
+        -8,
+        10,
+        8
+      ],
+      "output": -72
+    },
+    {
+      "skill": "base3",
+      "inputs": [
+        12,
+        9,
+        -2
+      ],
+      "output": 106
+    },
+    {
+      "skill": "base3",
+      "inputs": [
+        12,
+        6,
+        8
+      ],
+      "output": 80
+    },
+    {
+      "skill": "base3",
+      "inputs": [
+        1,
+        7,
+        3
+      ],
+      "output": 10
+    },
+    {
+      "skill": "base3",
+      "inputs": [
+        10,
+        9,
+        5
+      ],
+      "output": 95
+    },
+    {
+      "skill": "double_base3",
+      "inputs": [
+        -1,
+        -6,
+        -2
+      ],
+      "output": 8
+    },
+    {
+      "skill": "double_base3",
+      "inputs": [
+        -6,
+        -6,
+        8
+      ],
+      "output": 88
+    },
+    {
+      "skill": "double_base3",
+      "inputs": [
+        -3,
+        5,
+        0
+      ],
+      "output": -30
+    },
+    {
+      "skill": "double_base3",
+      "inputs": [
+        -2,
+        3,
+        0
+      ],
+      "output": -12
+    },
+    {
+      "skill": "double_base3",
+      "inputs": [
+        -6,
+        4,
+        9
+      ],
+      "output": -30
+    },
+    {
+      "skill": "double_base3",
+      "inputs": [
+        1,
+        -5,
+        1
+      ],
+      "output": -8
+    },
+    {
+      "skill": "double_base3",
+      "inputs": [
+        10,
+        -1,
+        8
+      ],
+      "output": -4
+    },
+    {
+      "skill": "double_base3",
+      "inputs": [
+        -8,
+        10,
+        8
+      ],
+      "output": -144
+    },
+    {
+      "skill": "double_base3",
+      "inputs": [
+        12,
+        9,
+        -2
+      ],
+      "output": 212
+    },
+    {
+      "skill": "double_base3",
+      "inputs": [
+        12,
+        6,
+        8
+      ],
+      "output": 160
+    },
+    {
+      "skill": "double_base3",
+      "inputs": [
+        1,
+        7,
+        3
+      ],
+      "output": 20
+    },
+    {
+      "skill": "double_base3",
+      "inputs": [
+        10,
+        9,
+        5
+      ],
+      "output": 190
+    },
+    {
+      "skill": "quad_base3",
+      "inputs": [
+        -1,
+        -6,
+        -2
+      ],
+      "output": 16
+    },
+    {
+      "skill": "quad_base3",
+      "inputs": [
+        -6,
+        -6,
+        8
+      ],
+      "output": 176
+    },
+    {
+      "skill": "quad_base3",
+      "inputs": [
+        -3,
+        5,
+        0
+      ],
+      "output": -60
+    },
+    {
+      "skill": "quad_base3",
+      "inputs": [
+        -2,
+        3,
+        0
+      ],
+      "output": -24
+    },
+    {
+      "skill": "quad_base3",
+      "inputs": [
+        -6,
+        4,
+        9
+      ],
+      "output": -60
+    },
+    {
+      "skill": "quad_base3",
+      "inputs": [
+        1,
+        -5,
+        1
+      ],
+      "output": -16
+    },
+    {
+      "skill": "quad_base3",
+      "inputs": [
+        10,
+        -1,
+        8
+      ],
+      "output": -8
+    },
+    {
+      "skill": "quad_base3",
+      "inputs": [
+        -8,
+        10,
+        8
+      ],
+      "output": -288
+    },
+    {
+      "skill": "quad_base3",
+      "inputs": [
+        12,
+        9,
+        -2
+      ],
+      "output": 424
+    },
+    {
+      "skill": "quad_base3",
+      "inputs": [
+        12,
+        6,
+        8
+      ],
+      "output": 320
+    },
+    {
+      "skill": "quad_base3",
+      "inputs": [
+        1,
+        7,
+        3
+      ],
+      "output": 40
+    },
+    {
+      "skill": "quad_base3",
+      "inputs": [
+        10,
+        9,
+        5
+      ],
+      "output": 380
+    }
+  ],
+  "heldout_outputs_included": false
+}

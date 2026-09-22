@@ -1,0 +1,575 @@
+{
+  "version": "0.3.2",
+  "experiment": "grounding_procedures",
+  "code_hash_before": "c994451a88e68d717a479a4f7eb7b71269ba4b5c5a55e32bafc185688ece6fff",
+  "parameter_generalization": {
+    "training": [
+      [
+        "Suma 3 al valor.",
+        [
+          10
+        ],
+        [
+          13
+        ]
+      ],
+      [
+        "Suma 5 al valor.",
+        [
+          7
+        ],
+        [
+          12
+        ]
+      ],
+      [
+        "Suma 8 al valor.",
+        [
+          -2
+        ],
+        [
+          6
+        ]
+      ]
+    ],
+    "last_report": {
+      "status": "procedure_learned",
+      "pattern": "suma <n0> al valor",
+      "support": 3,
+      "required": 3,
+      "duplicate": false,
+      "promoted": true,
+      "reports": [
+        {
+          "skill": "proc_75c7b83482970e54_o0",
+          "status": "learned_hypothesis",
+          "examples": 3,
+          "candidates": 1,
+          "search_complete": true,
+          "programs": [
+            "(x0 + x1)"
+          ],
+          "notice": "Acuerdo dentro de candidatos de menor tamaño; no certeza universal.",
+          "library_requested": null,
+          "library_seeded": 0,
+          "library_mode": "auto",
+          "library_selected": [],
+          "library_retrieval": {
+            "mode": "concept_index",
+            "candidates": 1,
+            "total_skills": 0
+          },
+          "dependencies": [],
+          "size": 3,
+          "abstraction_learning": {
+            "status": "no_new_abstraction",
+            "created": [],
+            "candidates": 1,
+            "new_votes": 1,
+            "support_required": 2
+          },
+          "constraint_checks": 119,
+          "goal_directed": true,
+          "goal_join_solved": true,
+          "reason": null,
+          "semantic_states": 6,
+          "ms": 9.034188999976323
+        }
+      ],
+      "programs": [
+        [
+          "(x0 + x1)"
+        ]
+      ]
+    },
+    "heldout": 200,
+    "correct": 200,
+    "episodic_correct": 0,
+    "median_us": 7.84649978413654,
+    "sample_cases": [
+      [
+        4940,
+        270
+      ],
+      [
+        -285,
+        515
+      ],
+      [
+        3595,
+        853
+      ],
+      [
+        -1131,
+        756
+      ],
+      [
+        -3104,
+        317
+      ]
+    ]
+  },
+  "vector_generalization": {
+    "training": [
+      [
+        2,
+        9
+      ],
+      [
+        5,
+        -3
+      ],
+      [
+        11,
+        4
+      ]
+    ],
+    "last_report": {
+      "status": "procedure_learned",
+      "pattern": "intercambia los valores",
+      "support": 3,
+      "required": 3,
+      "duplicate": false,
+      "promoted": true,
+      "reports": [
+        {
+          "skill": "proc_6c0cf52de6930ff0_o0",
+          "status": "learned_hypothesis",
+          "examples": 3,
+          "candidates": 0,
+          "search_complete": true,
+          "programs": [
+            "x1"
+          ],
+          "notice": "Acuerdo dentro de candidatos de menor tamaño; no certeza universal.",
+          "library_requested": null,
+          "library_seeded": 0,
+          "library_mode": "auto",
+          "library_selected": [],
+          "library_retrieval": {
+            "mode": "concept_index",
+            "candidates": 2,
+            "total_skills": 0
+          },
+          "dependencies": [],
+          "size": 1,
+          "abstraction_learning": {
+            "status": "no_new_abstraction",
+            "created": [],
+            "candidates": 18,
+            "new_votes": 18,
+            "support_required": 2
+          },
+          "constraint_checks": 0,
+          "goal_directed": true,
+          "goal_join_solved": false,
+          "reason": null,
+          "semantic_states": 5,
+          "ms": 8.939366000049631
+        },
+        {
+          "skill": "proc_6c0cf52de6930ff0_o1",
+          "status": "learned_hypothesis",
+          "examples": 3,
+          "candidates": 0,
+          "search_complete": true,
+          "programs": [
+            "x0"
+          ],
+          "notice": "Acuerdo dentro de candidatos de menor tamaño; no certeza universal.",
+          "library_requested": null,
+          "library_seeded": 0,
+          "library_mode": "auto",
+          "library_selected": [
+            "proc_6c0cf52de6930ff0_o0"
+          ],
+          "library_retrieval": {
+            "mode": "concept_index",
+            "candidates": 2,
+            "total_skills": 1
+          },
+          "dependencies": [],
+          "size": 1,
+          "abstraction_learning": {
+            "status": "created",
+            "created": [
+              {
+                "name": "abs_7c36c4c8e377",
+                "arity": 1,
+                "program": "(-1 * x0)",
+                "size": 3,
+                "support": 2,
+                "source_skills": [
+                  "proc_6c0cf52de6930ff0_o0",
+                  "proc_6c0cf52de6930ff0_o1"
+                ],
+                "kind": "learned_utility_primitive"
+              },
+              {
+                "name": "abs_d65f34d61652",
+                "arity": 1,
+                "program": "(-1 + x0)",
+                "size": 3,
+                "support": 2,
+                "source_skills": [
+                  "proc_6c0cf52de6930ff0_o0",
+                  "proc_6c0cf52de6930ff0_o1"
+                ],
+                "kind": "learned_utility_primitive"
+              },
+              {
+                "name": "abs_6d37fc3945c6",
+                "arity": 1,
+                "program": "(-1 - x0)",
+                "size": 3,
+                "support": 2,
+                "source_skills": [
+                  "proc_6c0cf52de6930ff0_o0",
+                  "proc_6c0cf52de6930ff0_o1"
+                ],
+                "kind": "learned_utility_primitive"
+              },
+              {
+                "name": "abs_ebb1879c7797",
+                "arity": 1,
+                "program": "(1 + x0)",
+                "size": 3,
+                "support": 2,
+                "source_skills": [
+                  "proc_6c0cf52de6930ff0_o0",
+                  "proc_6c0cf52de6930ff0_o1"
+                ],
+                "kind": "learned_utility_primitive"
+              },
+              {
+                "name": "abs_8ef2f2f225bb",
+                "arity": 1,
+                "program": "(1 - x0)",
+                "size": 3,
+                "support": 2,
+                "source_skills": [
+                  "proc_6c0cf52de6930ff0_o0",
+                  "proc_6c0cf52de6930ff0_o1"
+                ],
+                "kind": "learned_utility_primitive"
+              },
+              {
+                "name": "abs_c126883e1094",
+                "arity": 1,
+                "program": "(x0 * x0)",
+                "size": 3,
+                "support": 2,
+                "source_skills": [
+                  "proc_6c0cf52de6930ff0_o0",
+                  "proc_6c0cf52de6930ff0_o1"
+                ],
+                "kind": "learned_utility_primitive"
+              },
+              {
+                "name": "abs_1e5001f330ef",
+                "arity": 1,
+                "program": "(x0 + x0)",
+                "size": 3,
+                "support": 2,
+                "source_skills": [
+                  "proc_6c0cf52de6930ff0_o0",
+                  "proc_6c0cf52de6930ff0_o1"
+                ],
+                "kind": "learned_utility_primitive"
+              },
+              {
+                "name": "abs_9608dc77ff14",
+                "arity": 1,
+                "program": "max(-1, x0)",
+                "size": 3,
+                "support": 2,
+                "source_skills": [
+                  "proc_6c0cf52de6930ff0_o0",
+                  "proc_6c0cf52de6930ff0_o1"
+                ],
+                "kind": "learned_utility_primitive"
+              }
+            ],
+            "candidates": 18,
+            "new_votes": 18,
+            "support_required": 2
+          },
+          "constraint_checks": 0,
+          "goal_directed": true,
+          "goal_join_solved": false,
+          "reason": null,
+          "semantic_states": 5,
+          "ms": 1.1899539999831177
+        }
+      ],
+      "programs": [
+        [
+          "x1"
+        ],
+        [
+          "x0"
+        ]
+      ]
+    },
+    "heldout": 200,
+    "correct": 200,
+    "episodic_correct": 0
+  },
+  "compositional_transfer": {
+    "base_full": {
+      "status": "procedure_learned",
+      "pattern": "combina los valores",
+      "support": 6,
+      "required": 3,
+      "duplicate": false,
+      "promoted": true,
+      "reports": [
+        {
+          "skill": "proc_9e4588b6b2971271_o0",
+          "status": "learned_hypothesis",
+          "examples": 6,
+          "candidates": 193,
+          "search_complete": true,
+          "programs": [
+            "(x2 + (x0 * x1))"
+          ],
+          "notice": "Acuerdo dentro de candidatos de menor tamaño; no certeza universal.",
+          "library_requested": null,
+          "library_seeded": 0,
+          "library_mode": "auto",
+          "library_selected": [],
+          "library_retrieval": {
+            "mode": "concept_index",
+            "candidates": 1,
+            "total_skills": 0
+          },
+          "dependencies": [],
+          "size": 5,
+          "abstraction_learning": {
+            "status": "no_new_abstraction",
+            "created": [],
+            "candidates": 1,
+            "new_votes": 1,
+            "support_required": 2
+          },
+          "constraint_checks": 2332,
+          "goal_directed": true,
+          "goal_join_solved": true,
+          "reason": null,
+          "semantic_states": 96,
+          "ms": 2.238986000065779
+        }
+      ],
+      "programs": [
+        [
+          "(x2 + (x0 * x1))"
+        ]
+      ]
+    },
+    "base_ablated": {
+      "status": "procedure_learned",
+      "pattern": "combina los valores",
+      "support": 6,
+      "required": 3,
+      "duplicate": false,
+      "promoted": true,
+      "reports": [
+        {
+          "skill": "proc_9e4588b6b2971271_o0",
+          "status": "learned_hypothesis",
+          "examples": 6,
+          "candidates": 193,
+          "search_complete": true,
+          "programs": [
+            "(x2 + (x0 * x1))"
+          ],
+          "notice": "Acuerdo dentro de candidatos de menor tamaño; no certeza universal.",
+          "library_requested": null,
+          "library_seeded": 0,
+          "library_mode": "auto",
+          "library_selected": [],
+          "library_retrieval": {
+            "mode": "concept_index",
+            "candidates": 1,
+            "total_skills": 0
+          },
+          "dependencies": [],
+          "size": 5,
+          "abstraction_learning": {
+            "status": "no_new_abstraction",
+            "created": [],
+            "candidates": 1,
+            "new_votes": 1,
+            "support_required": 2
+          },
+          "constraint_checks": 2332,
+          "goal_directed": true,
+          "goal_join_solved": true,
+          "reason": null,
+          "semantic_states": 96,
+          "ms": 2.2269669998422614
+        }
+      ],
+      "programs": [
+        [
+          "(x2 + (x0 * x1))"
+        ]
+      ]
+    },
+    "target_full": {
+      "status": "procedure_learned",
+      "pattern": "combina los valores y duplica el resultado",
+      "support": 6,
+      "required": 3,
+      "duplicate": false,
+      "promoted": true,
+      "reports": [
+        {
+          "skill": "proc_69add8df0ecc3313_o0",
+          "status": "learned_hypothesis",
+          "examples": 6,
+          "candidates": 1,
+          "search_complete": true,
+          "programs": [
+            "(@proc_9e4588b6b2971271_o0 + @proc_9e4588b6b2971271_o0)"
+          ],
+          "notice": "Acuerdo dentro de candidatos de menor tamaño; no certeza universal.",
+          "library_requested": null,
+          "library_seeded": 1,
+          "library_mode": "auto",
+          "library_selected": [
+            "proc_9e4588b6b2971271_o0"
+          ],
+          "library_retrieval": {
+            "mode": "concept_index",
+            "candidates": 2,
+            "total_skills": 1
+          },
+          "dependencies": [
+            "proc_9e4588b6b2971271_o0"
+          ],
+          "size": 3,
+          "abstraction_learning": {
+            "status": "no_new_abstraction",
+            "created": [],
+            "candidates": 1,
+            "new_votes": 0,
+            "support_required": 2
+          },
+          "constraint_checks": 290,
+          "goal_directed": true,
+          "goal_join_solved": true,
+          "reason": null,
+          "semantic_states": 8,
+          "ms": 0.5593529999714519
+        }
+      ],
+      "programs": [
+        [
+          "(@proc_9e4588b6b2971271_o0 + @proc_9e4588b6b2971271_o0)"
+        ]
+      ]
+    },
+    "target_ablated": {
+      "status": "procedure_unresolved",
+      "pattern": "combina los valores y duplica el resultado",
+      "support": 6,
+      "required": 3,
+      "duplicate": false,
+      "promoted": false,
+      "reports": [
+        {
+          "skill": "proc_69add8df0ecc3313_o0",
+          "status": "no_solution",
+          "examples": 6,
+          "candidates": 192,
+          "search_complete": true,
+          "programs": [],
+          "notice": "Acuerdo dentro de candidatos de menor tamaño; no certeza universal.",
+          "library_requested": null,
+          "library_seeded": 0,
+          "library_mode": "auto",
+          "library_selected": [],
+          "library_retrieval": {
+            "mode": "concept_index",
+            "candidates": 1,
+            "total_skills": 0
+          },
+          "constraint_checks": 234,
+          "goal_directed": true,
+          "goal_join_solved": false,
+          "reason": null,
+          "semantic_states": 95,
+          "ms": 1.3052680001237604
+        }
+      ],
+      "programs": [
+        []
+      ]
+    },
+    "target_no_prior": {
+      "status": "procedure_unresolved",
+      "pattern": "combina los valores y duplica el resultado",
+      "support": 6,
+      "required": 3,
+      "duplicate": false,
+      "promoted": false,
+      "reports": [
+        {
+          "skill": "proc_69add8df0ecc3313_o0",
+          "status": "no_solution",
+          "examples": 6,
+          "candidates": 192,
+          "search_complete": true,
+          "programs": [],
+          "notice": "Acuerdo dentro de candidatos de menor tamaño; no certeza universal.",
+          "library_requested": null,
+          "library_seeded": 0,
+          "library_mode": "auto",
+          "library_selected": [],
+          "library_retrieval": {
+            "mode": "concept_index",
+            "candidates": 1,
+            "total_skills": 0
+          },
+          "constraint_checks": 234,
+          "goal_directed": true,
+          "goal_join_solved": false,
+          "reason": null,
+          "semantic_states": 95,
+          "ms": 1.551728999857005
+        }
+      ],
+      "programs": [
+        []
+      ]
+    },
+    "heldout": 200,
+    "scores": {
+      "full": 200,
+      "ablated": 0,
+      "no_prior": 0,
+      "episodic": 0
+    },
+    "semantic_change_detected": 200,
+    "full_target_library": [
+      "proc_9e4588b6b2971271_o0"
+    ]
+  },
+  "duplicate_support": {
+    "statuses": [
+      "procedure_pending",
+      "procedure_pending",
+      "procedure_pending",
+      "procedure_pending",
+      "procedure_pending",
+      "procedure_pending",
+      "procedure_pending"
+    ],
+    "final_support": 1,
+    "final_duplicate": true
+  },
+  "code_hash_after": "c994451a88e68d717a479a4f7eb7b71269ba4b5c5a55e32bafc185688ece6fff",
+  "code_unchanged_during_evaluation": true,
+  "elapsed_s": 0.10864740599981815
+}

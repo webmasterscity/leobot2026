@@ -1,0 +1,565 @@
+{
+  "environment": {
+    "python": "3.13.5",
+    "platform": "Linux-6.18.44-x86_64-with-glibc2.41",
+    "cpu_count": 5
+  },
+  "numeric_dag": {
+    "depth": 10000,
+    "value": 10007,
+    "expected": 10007,
+    "correct": true,
+    "prediction_ms": 27.71502999985387,
+    "top_repr": "(@s9999 + 1)",
+    "top_repr_chars": 12
+  },
+  "numeric_auto_router": {
+    "junk_skills": 2000,
+    "status": "learned_hypothesis",
+    "selected_count": 16,
+    "base_selected": true,
+    "library_seeded": 16,
+    "fit_ms": 311.9668239996827,
+    "prediction": 668,
+    "expected": 668,
+    "correct": true,
+    "candidates": 1
+  },
+  "numeric_semantic_router": {
+    "junk_skills": 50000,
+    "status": "learned_hypothesis",
+    "retrieval": {
+      "mode": "concept_index",
+      "candidates": 2,
+      "total_skills": 50001
+    },
+    "selected": [
+      "base"
+    ],
+    "fit_ms": 2.5987779999923077,
+    "correct": true,
+    "prediction": 668
+  },
+  "relational_router": {
+    "junk_predicates": 5000,
+    "status": "learned_hypothesis",
+    "selected": [
+      "signal"
+    ],
+    "total_relevant_candidates": 1,
+    "learn_candidates": 8,
+    "fit_ms": 0.45534699984273175,
+    "new_case_correct": true
+  },
+  "closure_scale": {
+    "nodes": 20000,
+    "learned": "closure(p)",
+    "correct": true,
+    "compiled": true,
+    "work": 19999,
+    "query_ms": 292.24712799987174
+  },
+  "language": {
+    "unseen_combinations": 3,
+    "parsed_unseen": 3,
+    "composed_flags": 3,
+    "open_requests": 5,
+    "open_parsed": 0,
+    "rewrite_rules": 3
+  },
+  "grounded_language_learning": {
+    "before_control_parsed": 0,
+    "before_learner_parsed": 0,
+    "grounded_events": 3,
+    "assertion_promotions": 3,
+    "assertion_pending": 3,
+    "cross_act_queries_answered": 3,
+    "cross_act_queries_total": 3,
+    "control_after_success": 6,
+    "transfer_assertions_stored": 6,
+    "transfer_assertions_total": 6,
+    "transfer_queries_answered": 6,
+    "transfer_queries_total": 6,
+    "learned_language_examples": 5,
+    "distractor_predicates": 5000,
+    "distractor_first_status": "grounding_pending",
+    "distractor_first_ms": 4.672994000429753,
+    "distractor_grounding_status": "stored",
+    "distractor_second_ms": 0.2261400004499592,
+    "ambiguous_predicates": 100,
+    "ambiguous_status": "grounding_pending",
+    "ambiguous_active_grammar_changed": false,
+    "ambiguous_possible": 100,
+    "ambiguous_ms": 3.1098279996513156,
+    "open_control": "unrecognized"
+  },
+  "recurrence_learning": {
+    "factorial": {
+      "status": "learned_hypothesis",
+      "recurrence_discovered": true,
+      "programs": [
+        "f(n)=(n * f(n-1)); base={1: 1}",
+        "f(n)=(n * f(n-1)); base={1: 1, 2: 2}",
+        "f(n)=(n * f(n-1)); base={1: 1, 2: 2, 3: 6}"
+      ],
+      "fit_ms": 37.70278499996493,
+      "probe": 8,
+      "prediction": 40320
+    },
+    "fibonacci": {
+      "status": "learned_hypothesis",
+      "recurrence_discovered": true,
+      "programs": [
+        "f(n)=(f(n-1) + f(n-2)); base={0: 0, 1: 1}",
+        "f(n)=(f(n-1) + f(n-2)); base={0: 0, 1: 1, 2: 1}"
+      ],
+      "fit_ms": 283.3141020000767,
+      "probe": 12,
+      "prediction": 144
+    },
+    "lag3": {
+      "status": "learned_hypothesis",
+      "recurrence_discovered": true,
+      "programs": [
+        "f(n)=(f(n-1) + f(n-3)); base={0: 0, 1: 1, 2: 1}"
+      ],
+      "fit_ms": 1148.6974829995233,
+      "probe": 12,
+      "prediction": 41
+    },
+    "tribonacci": {
+      "status": "learned_hypothesis",
+      "recurrence_discovered": true,
+      "programs": [
+        "f(n)=(f(n-1) + (f(n-2) + f(n-3))); base={0: 0, 1: 0, 2: 1}"
+      ],
+      "fit_ms": 1108.506106999812,
+      "probe": 12,
+      "prediction": 274
+    },
+    "order4_control": {
+      "status": "no_solution",
+      "search_complete": true,
+      "fit_ms": 2239.7057870002754,
+      "recurrence_discovered": false
+    }
+  },
+  "abstraction_transfer": {
+    "mul": {
+      "control": {
+        "status": "learned_hypothesis",
+        "fit_ms": 4.729087999294279,
+        "candidates": 344,
+        "program_size": 5,
+        "programs": [
+          "(x0 + (x0 * x1))"
+        ],
+        "heldout_correct": 200,
+        "heldout_total": 200,
+        "abstractions": [],
+        "source_programs": [
+          [
+            "(x2 + (x0 * x1))"
+          ],
+          [
+            "((x0 * x1) - x2)"
+          ]
+        ]
+      },
+      "with_abstraction": {
+        "status": "learned_hypothesis",
+        "fit_ms": 2.1146369999769377,
+        "candidates": 1,
+        "program_size": 3,
+        "programs": [
+          "(@abs_8d9161c5ffad(x0,x1) + x0)"
+        ],
+        "heldout_correct": 200,
+        "heldout_total": 200,
+        "abstractions": [
+          {
+            "name": "abs_8d9161c5ffad",
+            "arity": 2,
+            "program": "(x0 * x1)",
+            "size": 3,
+            "support": 2,
+            "source_skills": [
+              "source_minus",
+              "source_plus"
+            ],
+            "kind": "learned_utility_primitive"
+          }
+        ],
+        "source_programs": [
+          [
+            "(x2 + (x0 * x1))"
+          ],
+          [
+            "((x0 * x1) - x2)"
+          ]
+        ]
+      },
+      "candidate_reduction": 343,
+      "candidate_ratio": 344.0
+    },
+    "sub": {
+      "control": {
+        "status": "learned_hypothesis",
+        "fit_ms": 4.585931999827153,
+        "candidates": 345,
+        "program_size": 5,
+        "programs": [
+          "(x0 + (x0 - x1))"
+        ],
+        "heldout_correct": 200,
+        "heldout_total": 200,
+        "abstractions": [],
+        "source_programs": [
+          [
+            "(x0 + (x2 - x1))"
+          ],
+          [
+            "(x0 - (x1 + x2))"
+          ]
+        ]
+      },
+      "with_abstraction": {
+        "status": "learned_hypothesis",
+        "fit_ms": 3.6040009999851463,
+        "candidates": 5,
+        "program_size": 3,
+        "programs": [
+          "(x0 - @abs_a848378c8e57(x1,x0))"
+        ],
+        "heldout_correct": 200,
+        "heldout_total": 200,
+        "abstractions": [
+          {
+            "name": "abs_4111bdf3ba5d",
+            "arity": 2,
+            "program": "(x0 + x1)",
+            "size": 3,
+            "support": 2,
+            "source_skills": [
+              "source_minus",
+              "source_plus"
+            ],
+            "kind": "learned_utility_primitive"
+          },
+          {
+            "name": "abs_a848378c8e57",
+            "arity": 2,
+            "program": "(x0 - x1)",
+            "size": 3,
+            "support": 2,
+            "source_skills": [
+              "source_minus",
+              "source_plus"
+            ],
+            "kind": "learned_utility_primitive"
+          },
+          {
+            "name": "abs_d38c8a013e17",
+            "arity": 2,
+            "program": "(x1 - x0)",
+            "size": 3,
+            "support": 2,
+            "source_skills": [
+              "source_plus",
+              "target"
+            ],
+            "kind": "learned_utility_primitive"
+          }
+        ],
+        "source_programs": [
+          [
+            "(x0 + (x2 - x1))"
+          ],
+          [
+            "(x0 - (x1 + x2))"
+          ]
+        ]
+      },
+      "candidate_reduction": 340,
+      "candidate_ratio": 69.0
+    },
+    "add": {
+      "control": {
+        "status": "learned_hypothesis",
+        "fit_ms": 4.398949999995239,
+        "candidates": 346,
+        "program_size": 5,
+        "programs": [
+          "(x0 + (x0 + x1))"
+        ],
+        "heldout_correct": 200,
+        "heldout_total": 200,
+        "abstractions": [],
+        "source_programs": [
+          [
+            "(x0 + (x1 + x2))"
+          ],
+          [
+            "(x0 + (x1 - x2))"
+          ]
+        ]
+      },
+      "with_abstraction": {
+        "status": "learned_hypothesis",
+        "fit_ms": 2.0127640000282554,
+        "candidates": 2,
+        "program_size": 3,
+        "programs": [
+          "(@abs_4111bdf3ba5d(x0,x1) + x0)"
+        ],
+        "heldout_correct": 200,
+        "heldout_total": 200,
+        "abstractions": [
+          {
+            "name": "abs_4111bdf3ba5d",
+            "arity": 2,
+            "program": "(x0 + x1)",
+            "size": 3,
+            "support": 2,
+            "source_skills": [
+              "source_minus",
+              "source_plus"
+            ],
+            "kind": "learned_utility_primitive"
+          }
+        ],
+        "source_programs": [
+          [
+            "(x0 + (x1 + x2))"
+          ],
+          [
+            "(x0 + (x1 - x2))"
+          ]
+        ]
+      },
+      "candidate_reduction": 344,
+      "candidate_ratio": 173.0
+    },
+    "max": {
+      "control": {
+        "status": "learned_hypothesis",
+        "fit_ms": 4.5277740000528865,
+        "candidates": 359,
+        "program_size": 5,
+        "programs": [
+          "(x0 + max(x0, x1))"
+        ],
+        "heldout_correct": 200,
+        "heldout_total": 200,
+        "abstractions": [],
+        "source_programs": [
+          [
+            "(x2 + max(x0, x1))"
+          ],
+          [
+            "(max(x0, x1) - x2)"
+          ]
+        ]
+      },
+      "with_abstraction": {
+        "status": "learned_hypothesis",
+        "fit_ms": 2.0290780003051623,
+        "candidates": 1,
+        "program_size": 3,
+        "programs": [
+          "(@abs_7f1eca32e51b(x0,x1) + x0)"
+        ],
+        "heldout_correct": 200,
+        "heldout_total": 200,
+        "abstractions": [
+          {
+            "name": "abs_7f1eca32e51b",
+            "arity": 2,
+            "program": "max(x0, x1)",
+            "size": 3,
+            "support": 2,
+            "source_skills": [
+              "source_minus",
+              "source_plus"
+            ],
+            "kind": "learned_utility_primitive"
+          }
+        ],
+        "source_programs": [
+          [
+            "(x2 + max(x0, x1))"
+          ],
+          [
+            "(max(x0, x1) - x2)"
+          ]
+        ]
+      },
+      "candidate_reduction": 358,
+      "candidate_ratio": 359.0
+    },
+    "min": {
+      "control": {
+        "status": "learned_hypothesis",
+        "fit_ms": 4.541634999441158,
+        "candidates": 349,
+        "program_size": 5,
+        "programs": [
+          "(x0 + min(x0, x1))"
+        ],
+        "heldout_correct": 200,
+        "heldout_total": 200,
+        "abstractions": [],
+        "source_programs": [
+          [
+            "(x2 + min(x0, x1))"
+          ],
+          [
+            "(min(x0, x1) - x2)"
+          ]
+        ]
+      },
+      "with_abstraction": {
+        "status": "learned_hypothesis",
+        "fit_ms": 2.005983000344713,
+        "candidates": 1,
+        "program_size": 3,
+        "programs": [
+          "(@abs_500a672eed8e(x0,x1) + x0)"
+        ],
+        "heldout_correct": 200,
+        "heldout_total": 200,
+        "abstractions": [
+          {
+            "name": "abs_500a672eed8e",
+            "arity": 2,
+            "program": "min(x0, x1)",
+            "size": 3,
+            "support": 2,
+            "source_skills": [
+              "source_minus",
+              "source_plus"
+            ],
+            "kind": "learned_utility_primitive"
+          }
+        ],
+        "source_programs": [
+          [
+            "(x2 + min(x0, x1))"
+          ],
+          [
+            "(min(x0, x1) - x2)"
+          ]
+        ]
+      },
+      "candidate_reduction": 348,
+      "candidate_ratio": 349.0
+    },
+    "bounded_search_control": {
+      "control": {
+        "status": "no_solution",
+        "candidates": 336,
+        "programs": [],
+        "abstractions": []
+      },
+      "with_abstraction": {
+        "status": "learned_hypothesis",
+        "candidates": 5,
+        "programs": [
+          "(x0 - @abs_a848378c8e57(x1,x0))"
+        ],
+        "abstractions": [
+          {
+            "name": "abs_4111bdf3ba5d",
+            "arity": 2,
+            "program": "(x0 + x1)",
+            "size": 3,
+            "support": 2,
+            "source_skills": [
+              "source_minus",
+              "source_plus"
+            ],
+            "kind": "learned_utility_primitive"
+          },
+          {
+            "name": "abs_a848378c8e57",
+            "arity": 2,
+            "program": "(x0 - x1)",
+            "size": 3,
+            "support": 2,
+            "source_skills": [
+              "source_minus",
+              "source_plus"
+            ],
+            "kind": "learned_utility_primitive"
+          },
+          {
+            "name": "abs_d38c8a013e17",
+            "arity": 2,
+            "program": "(x1 - x0)",
+            "size": 3,
+            "support": 2,
+            "source_skills": [
+              "source_plus",
+              "target"
+            ],
+            "kind": "learned_utility_primitive"
+          }
+        ]
+      }
+    },
+    "parametric_cross_arity": {
+      "control": {
+        "status": "no_solution",
+        "fit_ms": 1.776076999703946,
+        "candidates": 259,
+        "programs": [],
+        "heldout_correct": 0,
+        "heldout_total": 200,
+        "abstractions": []
+      },
+      "with_abstraction": {
+        "status": "learned_hypothesis",
+        "fit_ms": 33.06871899985708,
+        "candidates": 1,
+        "programs": [
+          "(@abs_8d9161c5ffad(x2,x3) + x0)"
+        ],
+        "heldout_correct": 200,
+        "heldout_total": 200,
+        "abstractions": [
+          {
+            "name": "abs_8d9161c5ffad",
+            "arity": 2,
+            "program": "(x0 * x1)",
+            "size": 3,
+            "support": 2,
+            "source_skills": [
+              "source_minus",
+              "source_plus"
+            ],
+            "kind": "learned_utility_primitive"
+          }
+        ]
+      }
+    }
+  },
+  "sqlite_scale": {
+    "facts": 200000,
+    "queries": 500,
+    "correct_queries": 500,
+    "ingest_ms": 5121.857276999435,
+    "median_query_ms": 0.052313499963929644,
+    "p95_query_ms": 0.087461999100924,
+    "db_bytes": 104071168,
+    "bytes_per_fact_file": 520.35584,
+    "stats": {
+      "facts": 200000,
+      "rules": 0,
+      "predicates": 1,
+      "examples": 0,
+      "revision": 200000,
+      "disk_backed": true,
+      "path": "/mnt/data/LEOBOT_V3.9_Scalable/results_v3/facts_scale.db"
+    }
+  }
+}

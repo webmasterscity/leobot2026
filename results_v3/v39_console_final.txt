@@ -1,0 +1,76 @@
+{
+  "version": "0.3.9",
+  "experiment": "bounded_predicate_invention_and_cross_target_reuse",
+  "code_hash_before": "ce8a25ebfbb6c7701afe65a62b0051d10942caed3c9c953e2d4f8e24cae1398d",
+  "first_target_with_invention": {
+    "status": "concept_learned",
+    "selected": "invent_0f6d3c4dd79af55e ; invent_0f6d3c4dd79af55e",
+    "invented_predicate": "invent_0f6d3c4dd79af55e",
+    "invention_definition": "r ; s",
+    "invention_attempts": 2,
+    "base_candidates": 48,
+    "total_target_candidates": 178,
+    "total_invention_ms": 18.05967200016312,
+    "heldout": {
+      "cases": 100,
+      "entailed": 100,
+      "median_ms": 0.4615809998540499
+    }
+  },
+  "first_target_tight_no_invention": {
+    "status": "concept_unresolved",
+    "selected": null,
+    "candidates": 48,
+    "heldout": {
+      "cases": 100,
+      "entailed": 0,
+      "median_ms": 0.014081500467000296
+    }
+  },
+  "first_target_deep_no_invention": {
+    "status": "concept_learned",
+    "selected": "r ; s ; r ; s",
+    "candidates": 150,
+    "ms": 14.47698100037087,
+    "heldout": {
+      "cases": 100,
+      "entailed": 100,
+      "median_ms": 0.2966974998344085
+    }
+  },
+  "second_target_reusing_invented_helper_no_new_invention": {
+    "status": "concept_learned",
+    "selected": "invent_0f6d3c4dd79af55e ; t",
+    "candidates": 168,
+    "ms": 15.752473999782524,
+    "helper_survived_restart": true,
+    "heldout": {
+      "cases": 100,
+      "entailed": 100,
+      "median_ms": 0.38433899953815853
+    }
+  },
+  "second_target_tight_without_helper": {
+    "status": "concept_unresolved",
+    "selected": null,
+    "candidates": 80,
+    "heldout": {
+      "cases": 100,
+      "entailed": 0,
+      "median_ms": 0.014176500371831935
+    }
+  },
+  "second_target_deep_without_helper": {
+    "status": "concept_learned",
+    "selected": "r ; s ; t",
+    "candidates": 184,
+    "ms": 17.289610999796423,
+    "heldout": {
+      "cases": 100,
+      "entailed": 100,
+      "median_ms": 0.23287600015464704
+    }
+  },
+  "code_hash_after": "ce8a25ebfbb6c7701afe65a62b0051d10942caed3c9c953e2d4f8e24cae1398d",
+  "code_unchanged_during_evaluation": true
+}

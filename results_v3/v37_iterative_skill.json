@@ -1,0 +1,216 @@
+{
+  "version": "0.3.7",
+  "experiment": "variable_length_iterative_skill_induction_from_repeated_operator_plans",
+  "code_hash_before": "ce8a25ebfbb6c7701afe65a62b0051d10942caed3c9c953e2d4f8e24cae1398d",
+  "training": [
+    {
+      "status": "iteration_pending",
+      "support": 1,
+      "required": 3,
+      "lengths": [
+        2
+      ]
+    },
+    {
+      "status": "iteration_pending",
+      "support": 2,
+      "required": 3,
+      "lengths": [
+        2,
+        3
+      ]
+    },
+    {
+      "status": "iteration_learned",
+      "skill": "iterate:e35d6d8bcbc083d2",
+      "support": 3,
+      "lengths": [
+        2,
+        3,
+        4
+      ],
+      "source_marker": "<e1>",
+      "destination_marker": "<e2>"
+    }
+  ],
+  "fixed_macro_same_experience": [
+    {
+      "status": "macro_pending",
+      "support": 1,
+      "required": 3,
+      "primitive_length": 2
+    },
+    {
+      "status": "macro_pending",
+      "support": 1,
+      "required": 3,
+      "primitive_length": 3
+    },
+    {
+      "status": "macro_pending",
+      "support": 1,
+      "required": 3,
+      "primitive_length": 4
+    }
+  ],
+  "iterative_skills": [
+    {
+      "id": "iterate:e35d6d8bcbc083d2",
+      "operator_pattern": "mueve a <e0> de <e1> a <e2>",
+      "delete": [
+        "at",
+        "<e0>",
+        "<e1>"
+      ],
+      "add": [
+        "at",
+        "<e0>",
+        "<e2>"
+      ],
+      "source_marker": "<e1>",
+      "destination_marker": "<e2>",
+      "invariant_markers": [
+        "<e0>"
+      ],
+      "support": 3,
+      "training_lengths": [
+        2,
+        3,
+        4
+      ],
+      "dependency": "83f9d713678d62c4e2883afa8f41ec30"
+    }
+  ],
+  "fixed_macro_count": 0,
+  "transfer": {
+    "cases": 200,
+    "training_max_length": 4,
+    "heldout_min_length": 5,
+    "heldout_max_length": 64,
+    "iterative_success": 200,
+    "primitive_depth1_success": 0,
+    "fixed_macro_depth1_success": 0,
+    "reference_verified": 200,
+    "episodic_exact_cache_hits": 0,
+    "median_internal_nodes": 60.0,
+    "median_internal_transitions": 61.0
+  },
+  "length_scaling": [
+    {
+      "length": 10,
+      "facts": 23,
+      "status": "plan_found",
+      "primitive_steps": 10,
+      "internal_nodes": 10,
+      "internal_transitions": 10,
+      "median_ms": 0.2999019998242147
+    },
+    {
+      "length": 50,
+      "facts": 103,
+      "status": "plan_found",
+      "primitive_steps": 50,
+      "internal_nodes": 50,
+      "internal_transitions": 50,
+      "median_ms": 1.0804879993884242
+    },
+    {
+      "length": 100,
+      "facts": 203,
+      "status": "plan_found",
+      "primitive_steps": 100,
+      "internal_nodes": 100,
+      "internal_transitions": 100,
+      "median_ms": 2.2434610000345856
+    },
+    {
+      "length": 500,
+      "facts": 1003,
+      "status": "plan_found",
+      "primitive_steps": 500,
+      "internal_nodes": 500,
+      "internal_transitions": 500,
+      "median_ms": 13.884994999898481
+    },
+    {
+      "length": 1000,
+      "facts": 2003,
+      "status": "plan_found",
+      "primitive_steps": 1000,
+      "internal_nodes": 1000,
+      "internal_transitions": 1000,
+      "median_ms": 24.71239299939043
+    },
+    {
+      "length": 2000,
+      "facts": 4003,
+      "status": "plan_found",
+      "primitive_steps": 2000,
+      "internal_nodes": 2000,
+      "internal_transitions": 2000,
+      "median_ms": 51.72293899977376
+    },
+    {
+      "length": 5000,
+      "facts": 10003,
+      "status": "plan_found",
+      "primitive_steps": 5000,
+      "internal_nodes": 5000,
+      "internal_transitions": 5000,
+      "median_ms": 152.84697500010225
+    }
+  ],
+  "branch_scaling": [
+    {
+      "branches_per_step": 0,
+      "facts": 203,
+      "status": "plan_found",
+      "internal_nodes": 100,
+      "internal_transitions": 100,
+      "median_ms": 2.2971630005486077
+    },
+    {
+      "branches_per_step": 1,
+      "facts": 403,
+      "status": "plan_found",
+      "internal_nodes": 198,
+      "internal_transitions": 200,
+      "median_ms": 3.535058000124991
+    },
+    {
+      "branches_per_step": 5,
+      "facts": 1203,
+      "status": "plan_found",
+      "internal_nodes": 590,
+      "internal_transitions": 599,
+      "median_ms": 9.532439000395243
+    },
+    {
+      "branches_per_step": 10,
+      "facts": 2203,
+      "status": "plan_found",
+      "internal_nodes": 1088,
+      "internal_transitions": 1095,
+      "median_ms": 17.103211999710766
+    }
+  ],
+  "same_length_only_control": {
+    "statuses": [
+      "iteration_pending",
+      "iteration_pending",
+      "iteration_pending"
+    ],
+    "final_lengths": [
+      3
+    ],
+    "iterative_skills": 0
+  },
+  "dependency_invalidation": {
+    "skills_before": 1,
+    "counterevidence_status": "inconsistent_effects",
+    "skills_after": 0
+  },
+  "elapsed_s": 1.647627921000094,
+  "code_hash_after": "ce8a25ebfbb6c7701afe65a62b0051d10942caed3c9c953e2d4f8e24cae1398d",
+  "code_unchanged_during_evaluation": true
+}

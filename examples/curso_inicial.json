@@ -1,0 +1,325 @@
+{
+  "description": "Curso supervisado de demostración. No contiene reglas solución: contiene vocabulario anotado, hechos y ejemplos. No es un libro en lenguaje libre.",
+  "language": [
+    {
+      "text": "Ana está en Caracas.",
+      "frame": {
+        "act": "assert",
+        "pred": "ubicacion",
+        "args": [
+          "ana",
+          "caracas"
+        ]
+      }
+    },
+    {
+      "text": "¿Dónde está Ana?",
+      "frame": {
+        "act": "query",
+        "pred": "ubicacion",
+        "args": [
+          "ana",
+          "?lugar"
+        ]
+      }
+    },
+    {
+      "text": "¿Está Ana en Caracas?",
+      "frame": {
+        "act": "query",
+        "pred": "ubicacion",
+        "args": [
+          "ana",
+          "caracas"
+        ]
+      }
+    },
+    {
+      "text": "La entrega es el jueves.",
+      "frame": {
+        "act": "assert",
+        "pred": "fecha",
+        "args": [
+          "la entrega",
+          "jueves"
+        ]
+      }
+    },
+    {
+      "text": "¿Cuándo es la entrega?",
+      "frame": {
+        "act": "query",
+        "pred": "fecha",
+        "args": [
+          "la entrega",
+          "?dia"
+        ]
+      }
+    },
+    {
+      "text": "No, era el viernes.",
+      "frame": {
+        "act": "correct_last",
+        "slot": 1,
+        "value": "viernes"
+      }
+    },
+    {
+      "text": "¿Por qué?",
+      "frame": {
+        "act": "explain"
+      }
+    },
+    {
+      "text": "Ana depende de Bruno.",
+      "frame": {
+        "act": "assert",
+        "pred": "depende",
+        "args": [
+          "ana",
+          "bruno"
+        ]
+      }
+    },
+    {
+      "text": "¿De qué depende Ana?",
+      "frame": {
+        "act": "query",
+        "pred": "depende",
+        "args": [
+          "ana",
+          "?cosa"
+        ]
+      }
+    },
+    {
+      "text": "Ana necesita a Clara.",
+      "frame": {
+        "act": "assert",
+        "pred": "necesita",
+        "args": [
+          "ana",
+          "clara"
+        ]
+      }
+    },
+    {
+      "text": "¿Qué necesita Ana?",
+      "frame": {
+        "act": "query",
+        "pred": "necesita",
+        "args": [
+          "ana",
+          "?cosa"
+        ]
+      }
+    },
+    {
+      "text": "¿Necesita Ana a Clara?",
+      "frame": {
+        "act": "query",
+        "pred": "necesita",
+        "args": [
+          "ana",
+          "clara"
+        ]
+      }
+    },
+    {
+      "text": "¿Cuánto pago por 7 productos de 13 con envío de 5?",
+      "frame": {
+        "act": "calculate",
+        "skill": "total",
+        "values": [
+          7,
+          13,
+          5
+        ]
+      }
+    },
+    {
+      "text": "Calcula doble de 7.",
+      "frame": {
+        "act": "calculate",
+        "skill": "doble",
+        "values": [
+          7
+        ]
+      }
+    },
+    {
+      "text": "Calcula misteriosa de 7.",
+      "frame": {
+        "act": "calculate",
+        "skill": "misteriosa",
+        "values": [
+          7
+        ]
+      }
+    }
+  ],
+  "facts": [
+    {
+      "pred": "depende",
+      "args": [
+        "aula",
+        "techo"
+      ],
+      "source": "curso:hecho1"
+    },
+    {
+      "pred": "depende",
+      "args": [
+        "techo",
+        "columnas"
+      ],
+      "source": "curso:hecho2"
+    },
+    {
+      "pred": "depende",
+      "args": [
+        "columnas",
+        "cimientos"
+      ],
+      "source": "curso:hecho3"
+    },
+    {
+      "pred": "depende",
+      "args": [
+        "cimientos",
+        "suelo"
+      ],
+      "source": "curso:hecho4"
+    }
+  ],
+  "relational_examples": [
+    {
+      "target": "necesita",
+      "args": [
+        "aula",
+        "columnas"
+      ],
+      "positive": true
+    },
+    {
+      "target": "necesita",
+      "args": [
+        "techo",
+        "cimientos"
+      ],
+      "positive": true
+    },
+    {
+      "target": "necesita",
+      "args": [
+        "columnas",
+        "suelo"
+      ],
+      "positive": true
+    },
+    {
+      "target": "necesita",
+      "args": [
+        "aula",
+        "techo"
+      ],
+      "positive": true
+    },
+    {
+      "target": "necesita",
+      "args": [
+        "aula",
+        "cimientos"
+      ],
+      "positive": true
+    },
+    {
+      "target": "necesita",
+      "args": [
+        "aula",
+        "suelo"
+      ],
+      "positive": true
+    },
+    {
+      "target": "necesita",
+      "args": [
+        "suelo",
+        "aula"
+      ],
+      "positive": false
+    }
+  ],
+  "numeric_examples": [
+    {
+      "skill": "doble",
+      "inputs": [
+        2
+      ],
+      "output": 4
+    },
+    {
+      "skill": "doble",
+      "inputs": [
+        3
+      ],
+      "output": 6
+    },
+    {
+      "skill": "doble",
+      "inputs": [
+        -4
+      ],
+      "output": -8
+    },
+    {
+      "skill": "total",
+      "inputs": [
+        2,
+        3,
+        1
+      ],
+      "output": 7
+    },
+    {
+      "skill": "total",
+      "inputs": [
+        4,
+        5,
+        3
+      ],
+      "output": 23
+    },
+    {
+      "skill": "total",
+      "inputs": [
+        3,
+        7,
+        2
+      ],
+      "output": 23
+    },
+    {
+      "skill": "total",
+      "inputs": [
+        5,
+        2,
+        4
+      ],
+      "output": 14
+    },
+    {
+      "skill": "misteriosa",
+      "inputs": [
+        2
+      ],
+      "output": 4
+    }
+  ],
+  "learn": [
+    {
+      "target": "necesita",
+      "max_length": 2
+    }
+  ]
+}

@@ -1,0 +1,179 @@
+{
+  "version": "0.3.5",
+  "experiment": "prior_symbolic_skill_accelerates_reordered_language_grounding",
+  "code_hash_before": "6fb1765c07e80ed55f829e251f42f72431a961ebe23490d64e2d91a8ef8c2993",
+  "transfer": {
+    "alias_training_reports": [
+      {
+        "status": "alias_pending",
+        "pattern": "desde <e0> lleva a <e1> hasta <e2>",
+        "support": 1,
+        "required": 2,
+        "alternatives": 1
+      },
+      {
+        "status": "alias_learned",
+        "pattern": "desde <e0> lleva a <e1> hasta <e2>",
+        "support": 2,
+        "alias_to_operator": {
+          "<e0>": "<e1>",
+          "<e1>": "<e0>",
+          "<e2>": "<e2>"
+        },
+        "operator_pattern": "mueve a <e0> de <e1> a <e2>"
+      },
+      {
+        "status": "alias_pending",
+        "pattern": "en <e0>, <e1> recoge <e2>",
+        "support": 1,
+        "required": 2,
+        "alternatives": 1
+      },
+      {
+        "status": "alias_learned",
+        "pattern": "en <e0>, <e1> recoge <e2>",
+        "support": 2,
+        "alias_to_operator": {
+          "<e0>": "<e2>",
+          "<e1>": "<e0>",
+          "<e2>": "<e1>"
+        },
+        "operator_pattern": "<e0> toma <e1> en <e2>"
+      }
+    ],
+    "learned_aliases": [
+      {
+        "pattern": "desde <e0> lleva a <e1> hasta <e2>",
+        "alias_to_operator": {
+          "<e0>": "<e1>",
+          "<e1>": "<e0>",
+          "<e2>": "<e2>"
+        },
+        "operator_pattern": "mueve a <e0> de <e1> a <e2>",
+        "support": 2
+      },
+      {
+        "pattern": "en <e0>, <e1> recoge <e2>",
+        "alias_to_operator": {
+          "<e0>": "<e2>",
+          "<e1>": "<e0>",
+          "<e2>": "<e1>"
+        },
+        "operator_pattern": "<e0> toma <e1> en <e2>",
+        "support": 2
+      }
+    ],
+    "heldout": 200,
+    "scores": {
+      "prior_skill_alias_move": 200,
+      "scratch_move": 0,
+      "prior_skill_alias_pickup": 200,
+      "scratch_pickup": 0
+    },
+    "median_move_us": 58.081999895875924,
+    "scratch_third_support_report": {
+      "status": "operator_learned",
+      "pattern": "desde <e0> lleva a <e1> hasta <e2>",
+      "support": 3,
+      "failures": 0,
+      "preconditions": [
+        [
+          "at",
+          "<e1>",
+          "<e0>"
+        ],
+        [
+          "person",
+          "<e1>"
+        ],
+        [
+          "place",
+          "<e0>"
+        ],
+        [
+          "place",
+          "<e2>"
+        ],
+        [
+          "road",
+          "<e0>",
+          "<e2>"
+        ]
+      ],
+      "add": [
+        [
+          "at",
+          "<e1>",
+          "<e2>"
+        ]
+      ],
+      "delete": [
+        [
+          "at",
+          "<e1>",
+          "<e0>"
+        ]
+      ],
+      "precondition_mode": "positive_only"
+    },
+    "sample": {
+      "status": "executed_symbolic_action",
+      "result": [
+        [
+          "place",
+          "plaza"
+        ],
+        [
+          "person",
+          "nora"
+        ],
+        [
+          "at",
+          "nora",
+          "plaza"
+        ],
+        [
+          "place",
+          "casa"
+        ],
+        [
+          "road",
+          "casa",
+          "plaza"
+        ]
+      ],
+      "operator": "mueve a <e0> de <e1> a <e2>",
+      "surface": "desde <e0> lleva a <e1> hasta <e2>",
+      "binding": {
+        "<e1>": "casa",
+        "<e0>": "nora",
+        "<e2>": "plaza"
+      },
+      "added": [
+        [
+          "at",
+          "nora",
+          "plaza"
+        ]
+      ],
+      "removed": [
+        [
+          "at",
+          "nora",
+          "casa"
+        ]
+      ]
+    }
+  },
+  "withdrawal": {
+    "aliases_before": 2,
+    "counterevidence_report": {
+      "status": "alias_withdrawn_by_counterevidence",
+      "pattern": "desde <e0> lleva a <e1> hasta <e2>"
+    },
+    "aliases_after": 1
+  },
+  "code_hash_after": "6fb1765c07e80ed55f829e251f42f72431a961ebe23490d64e2d91a8ef8c2993",
+  "code_unchanged_during_evaluation": true,
+  "elapsed_s": 0.04418084300004921
+}
