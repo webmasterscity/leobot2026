@@ -1,0 +1,19 @@
+# F-11 — consultas activas para separar significados rivales
+
+## Decisión
+
+F-10 generó patrones capaces de explicar 29/128 triples, pero promovió tres y respondió uno: faltó evidencia para separar análisis rivales sin aceptar falsos. En un diagnóstico **solo sobre enseñanza F-10**, 400 frases iniciales produjeron rivales en 80/400 frases sin etiqueta y ninguna interpretación en 264/400. Hipótesis: solicitar al entorno el triple de las frases donde las hipótesis más discrepan, con una pequeña cuota para huecos de representación, reduce etiquetas necesarias para adquirir nuevas construcciones. Alternativa: la mayoría de desacuerdos son límites/predicados espurios que una etiqueta no arregla, y pedirlos no cambia el costo. Si funciona, incorporar la selección de evidencia al MetaController existente y retirar la búsqueda pasiva redundante; el piloto fuera del motor decide primero.
+
+## Datos y partición
+
+WebNLG 2020 original `train/1triples`, commit `587fa698bec705efbefe72a235a6019c2b9b8b6c`. Excluir del desarrollo todos los identificadores usados en F-6f/F-6g/F-7/F-8/F-10. Seleccionar 128 textos de desarrollo con entidades disjuntas mediante `sha256(H0 + ':F-11:web:' + id)` y 64 textos para validación interna, sin compartir entidades con ajuste ni desarrollo. H0 = `git rev-parse estable-E-1:leobot`. De los restantes, enseñar 400 frases iniciales y ofrecer un grupo de hasta 400 **textos sin etiquetas**. El selector ve solo identificador y texto; Leobot solicita una anotación, y el corpus entrega el triple original por la interfaz de experiencias, sin traducción manual de Codex. Presupuesto de 100 solicitudes en cinco lotes de 20, además de los 400 iniciales. Mismo motor y mismo corpus para tratamiento y controles.
+
+Reserva externa WebNLG `dev/2triples` solo si la puerta de desarrollo y controles pasan. La reserva requiere composición nueva y no puede ajustar el selector.
+
+## Política candidata y controles
+
+Usar el generador F-10 **sin cambiar su gramática ni límites**. Para cada texto ofrecido, ejecutar programas no promovidos y mantener la distribución de predicados/roles candidatos. Elegir por desacuerdo esperado por costo de análisis: más alternativas distintas con apoyo similar reciben prioridad; en cada lote reservar hasta 20 % para frases sin análisis, elegidas por novedad estructural y desempate determinista. El programa propone **qué preguntar**; no inventa el resultado. Tras cada lote, recompilar y validar con la misma reserva interna. Si la consulta cambia una premisa, retirar dependientes. La política y el presupuesto se fijan antes de abrir desarrollo.
+
+Comparar con tres órdenes de 100 anotaciones aleatorias de ese mismo grupo, sin más CPU ni etiquetas para el tratamiento; con 400 iniciales solamente; memoria de episodios sin inducción; fresco; preguntas sobre frases incompatibles; control de predicados barajados; corrección de una etiqueta; persistencia; renombrado y señal auxiliar que se invierte. Medir exactitud y precisión de triples, etiquetas y candidatos por acierto, CPU/RAM de selección, adquisición, validación, compilación e inferencia, p50/p95, intentos, consultas sin respuesta y hash H0. Comparar curvas tras 20, 40, 60, 80 y 100 etiquetas; tres semillas para la política aleatoria.
+
+Puerta de desarrollo para proseguir: tratamiento ≥5/128 triples exactos con precisión ≥80 %, al menos tres aciertos más que la media de los tres aleatorios al mismo costo de etiquetas y CPU total no mayor que 1,5 veces su media; necesita ≤80 etiquetas para alcanzar la calidad que aleatorio alcanza con 100, o demostrar al menos 20 % menos candidatos de síntesis. Cero triples seguros sobre frases incompatibles, ninguna regla falsa promovida con etiquetas barajadas, corrección y reinicio correctos. Inferencia p95 ≤10 ms, tope 1 s; ensayo completo ≤180 s pared, ≤120 s CPU, RSS ≤256 MiB. La selección activa que solo logra un caso sintético o más abstenciones no se integra.
