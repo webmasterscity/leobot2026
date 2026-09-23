@@ -1,0 +1,82 @@
+{
+  "kind": "source_feasibility_only",
+  "engine_tree": "1f3187f2ced4c97364503187d074815f33612326",
+  "document_sha256": "d0fa4f1cdcd45a9b797cd0f3c340d12f9afc9aeaedf0b634d0468fe72a94a4d8",
+  "methods": 47,
+  "methods_with_outgoing_reference": 4,
+  "outgoing_references": {
+    "str.index": [
+      "str.find"
+    ],
+    "str.maketrans": [
+      "str.translate"
+    ],
+    "str.rindex": [
+      "str.rfind"
+    ],
+    "str.rsplit": [
+      "str.split"
+    ]
+  },
+  "contrast_pairs": [
+    {
+      "methods": [
+        "find",
+        "rfind"
+      ],
+      "token_similarity": 0.735632,
+      "mutual_reference": false
+    },
+    {
+      "methods": [
+        "partition",
+        "rpartition"
+      ],
+      "token_similarity": 0.769231,
+      "mutual_reference": false
+    },
+    {
+      "methods": [
+        "lstrip",
+        "removeprefix"
+      ],
+      "token_similarity": 0.146341,
+      "mutual_reference": false
+    },
+    {
+      "methods": [
+        "startswith",
+        "endswith"
+      ],
+      "token_similarity": 0.598131,
+      "mutual_reference": false
+    },
+    {
+      "methods": [
+        "removesuffix",
+        "rstrip"
+      ],
+      "token_similarity": 0.137931,
+      "mutual_reference": false
+    },
+    {
+      "methods": [
+        "split",
+        "rsplit"
+      ],
+      "token_similarity": 0.5875,
+      "mutual_reference": true
+    },
+    {
+      "methods": [
+        "index",
+        "rindex"
+      ],
+      "token_similarity": 0.666667,
+      "mutual_reference": false
+    }
+  ],
+  "cpu_total_s": 0.227935,
+  "wall_total_s": 0.789874,
+  "max_rss_kib": 32684
+}
