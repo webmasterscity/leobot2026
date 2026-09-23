@@ -1,0 +1,224 @@
+{
+ "engine_path": "/tmp/claude-1000/-media-leonardo-data-leobot2026/9a9db97f-c8e4-4b8a-b8d9-fd130c8c496d/scratchpad/g7/leobot/__init__.py",
+ "reps": 5,
+ "memory": {
+  "duplicate_sources": {
+   "padre(a,b)": {
+    "status": "incomplete",
+    "complete": false,
+    "reason": "Presupuesto de operaciones agotado.",
+    "work": 200001,
+    "answers": [
+     "padre['a', 'b']:f1"
+    ],
+    "n_answers": 1,
+    "stable": true,
+    "p50_ms": 736.242,
+    "p95_ms": 762.978
+   },
+   "!padre(a,b)": {
+    "status": "incomplete",
+    "complete": true,
+    "reason": null,
+    "work": 4,
+    "answers": [],
+    "n_answers": 0,
+    "stable": true,
+    "p50_ms": 734.683,
+    "p95_ms": 745.441
+   },
+   "padre(a,?x)": {
+    "status": "incomplete",
+    "complete": false,
+    "reason": "Presupuesto de operaciones agotado.",
+    "work": 200001,
+    "answers": [
+     "padre['a', 'b']:f1"
+    ],
+    "n_answers": 1,
+    "stable": true,
+    "p50_ms": 842.26,
+    "p95_ms": 856.855
+   },
+   "padre(?x,b)": {
+    "status": "incomplete",
+    "complete": false,
+    "reason": "Presupuesto de operaciones agotado.",
+    "work": 200001,
+    "answers": [
+     "padre['a', 'b']:f1"
+    ],
+    "n_answers": 1,
+    "stable": true,
+    "p50_ms": 838.853,
+    "p95_ms": 841.485
+   }
+  },
+  "negated_positions": {
+   "padre(a,b)": {
+    "status": "supported",
+    "complete": true,
+    "reason": null,
+    "work": 6,
+    "answers": [
+     "padre['a', 'b']:f1"
+    ],
+    "n_answers": 1,
+    "stable": true,
+    "p50_ms": 0.062,
+    "p95_ms": 0.096
+   },
+   "!padre(a,b)": {
+    "status": "refuted",
+    "complete": true,
+    "reason": null,
+    "work": 4,
+    "answers": [],
+    "n_answers": 0,
+    "stable": true,
+    "p50_ms": 0.055,
+    "p95_ms": 0.061
+   }
+  },
+  "duplicate_join": {
+   "abuelo(a,c)": {
+    "status": "incomplete",
+    "complete": false,
+    "reason": "Presupuesto de operaciones agotado.",
+    "work": 200001,
+    "answers": [
+     "abuelo['a', 'c']:abuelo_def"
+    ],
+    "n_answers": 1,
+    "stable": true,
+    "p50_ms": 784.955,
+    "p95_ms": 800.637
+   },
+   "abuelo(a,?z)": {
+    "status": "incomplete",
+    "complete": false,
+    "reason": "Presupuesto de operaciones agotado.",
+    "work": 200001,
+    "answers": [
+     "abuelo['a', 'c']:abuelo_def"
+    ],
+    "n_answers": 1,
+    "stable": true,
+    "p50_ms": 845.531,
+    "p95_ms": 847.819
+   }
+  }
+ },
+ "disk": {
+  "duplicate_sources": {
+   "padre(a,b)": {
+    "status": "incomplete",
+    "complete": false,
+    "reason": "Presupuesto de operaciones agotado.",
+    "work": 200001,
+    "answers": [
+     "padre['a', 'b']:f1"
+    ],
+    "n_answers": 1,
+    "stable": true,
+    "p50_ms": 5235.108,
+    "p95_ms": 5261.799
+   },
+   "!padre(a,b)": {
+    "status": "incomplete",
+    "complete": true,
+    "reason": null,
+    "work": 4,
+    "answers": [],
+    "n_answers": 0,
+    "stable": true,
+    "p50_ms": 5261.876,
+    "p95_ms": 5296.86
+   },
+   "padre(a,?x)": {
+    "status": "incomplete",
+    "complete": false,
+    "reason": "Presupuesto de operaciones agotado.",
+    "work": 200001,
+    "answers": [
+     "padre['a', 'b']:f1"
+    ],
+    "n_answers": 1,
+    "stable": true,
+    "p50_ms": 2148.915,
+    "p95_ms": 2154.395
+   },
+   "padre(?x,b)": {
+    "status": "incomplete",
+    "complete": false,
+    "reason": "Presupuesto de operaciones agotado.",
+    "work": 200001,
+    "answers": [
+     "padre['a', 'b']:f1"
+    ],
+    "n_answers": 1,
+    "stable": true,
+    "p50_ms": 2160.747,
+    "p95_ms": 2169.647
+   },
+   "_build_s": 1.91
+  },
+  "negated_positions": {
+   "padre(a,b)": {
+    "status": "supported",
+    "complete": true,
+    "reason": null,
+    "work": 6,
+    "answers": [
+     "padre['a', 'b']:f1"
+    ],
+    "n_answers": 1,
+    "stable": true,
+    "p50_ms": 45.961,
+    "p95_ms": 47.453
+   },
+   "!padre(a,b)": {
+    "status": "refuted",
+    "complete": true,
+    "reason": null,
+    "work": 4,
+    "answers": [],
+    "n_answers": 0,
+    "stable": true,
+    "p50_ms": 46.098,
+    "p95_ms": 46.145
+   },
+   "_build_s": 1.98
+  },
+  "duplicate_join": {
+   "abuelo(a,c)": {
+    "status": "incomplete",
+    "complete": false,
+    "reason": "Presupuesto de operaciones agotado.",
+    "work": 200001,
+    "answers": [
+     "abuelo['a', 'c']:abuelo_def"
+    ],
+    "n_answers": 1,
+    "stable": true,
+    "p50_ms": 3758.219,
+    "p95_ms": 3785.93
+   },
+   "abuelo(a,?z)": {
+    "status": "incomplete",
+    "complete": false,
+    "reason": "Presupuesto de operaciones agotado.",
+    "work": 200001,
+    "answers": [
+     "abuelo['a', 'c']:abuelo_def"
+    ],
+    "n_answers": 1,
+    "stable": true,
+    "p50_ms": 2178.308,
+    "p95_ms": 2244.992
+   },
+   "_build_s": 1.93
+  }
+ },
+ "rss_peak_mib": 207.3
+}
