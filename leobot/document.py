@@ -2042,7 +2042,8 @@ class DocumentLearningMixin:
 
     def ingest_document_text(self, text: str, source: str = 'documento',
                              max_sentences: int = 5000,
-                             learn_conditionals: bool = False) -> dict:
+                             learn_conditionals: bool = False,
+                             segment_clauses: bool = True) -> dict:
         """Acquire declarative relational knowledge from bounded continuous text.
 
         Document content is treated strictly as data.  We do **not** route it
@@ -2058,6 +2059,7 @@ class DocumentLearningMixin:
         results=[]; promoted=set(); skipped_questions=0; skipped_conditionals=0
         processed_conditionals=0; learned_rules=set()
         stored_direct=0; stored_schema=0; too_long=0
+        fragment_candidates=0; fragment_promotions=0
         coref_resolved=0; coref_ambiguous=0; coref_unresolved=0
         document_links_stored=0; document_links_unresolved=0
         document_events_materialized=0
@@ -2433,6 +2435,18 @@ class DocumentLearningMixin:
             results.append(attach_document_link(row,current,discourse_relation,prior_fact_ids,sentence_source))
             if raw.get('status')=='raw_relation_learned':
                 promoted.add(raw.get('predicate'))
+            if (segment_clauses and raw.get('status') in
+                    ('raw_relation_pending', 'raw_relation_ambiguous')
+                    and len(norm.split()) > 16):
+                fragments=[part.strip() for part in re.split(r'[,;:]',semantic_sentence)]
+                eligible=[part for part in fragments if 4 <= len(normalize(part).split()) <= 16]
+                for j,fragment in enumerate(eligible[:3],1):
+                    fragment_candidates+=1
+                    learned=self.observe_raw_relation(fragment,
+                        source=f'{sentence_source}:fragmento:{j}')
+                    if learned.get('status')=='raw_relation_learned':
+                        fragment_promotions+=1
+                        promoted.add(learned.get('predicate'))
 
         event_meta_bootstrap=self._observe_document_event_meta_bootstrap(
             sentences,results,source,document_episode_id)
@@ -2444,6 +2458,8 @@ class DocumentLearningMixin:
         report={'status':'document_ingested','source':source,'sentences':len(sentences),
                 'facts_added':after-before,'stored_direct':stored_direct,
                 'stored_via_schema':stored_schema,'relations_promoted':len(promoted),
+                'fragment_candidates':fragment_candidates,
+                'fragment_promotions':fragment_promotions,
                 'promoted_predicates':sorted(x for x in promoted if x),
                 'questions_skipped':skipped_questions,'conditionals_skipped':skipped_conditionals,
                 'conditionals_processed':processed_conditionals,'rules_learned':len(learned_rules),
