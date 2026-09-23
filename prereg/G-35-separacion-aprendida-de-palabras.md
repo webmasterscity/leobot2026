@@ -60,6 +60,12 @@ Alternativa: las reglas generalizan mal (separan palabras que no deben), o el an
 | RSS | ≤ 768 MiB por proceso |
 | Reinicio | idéntico |
 
+**Enmienda antes de tocar la reserva (2026-09-23):** el criterio «reglas barajadas no superan a la expresión regular» está mal planteado. Ese control conserva la tabla de formas vistas, que por sí sola ya supera a la expresión regular: en desarrollo, la tabla sola da UAS 0,749 frente a 0,695. El criterio se reemplaza por dos:
+- las reglas barajadas no superan a las aprendidas;
+- las aprendidas superan a solo la tabla (ya estaba).
+
+Detectado en desarrollo visible. Resultados de desarrollo: [g35 dev](../results_v3/g35_learned_splitting_dev_hashseed0.json). Los demás umbrales no cambian.
+
 Se archivan los resultados de desarrollo antes de congelar. Si falla, se registra sin relajarla.
 
 ## En palabras fáciles de entender
