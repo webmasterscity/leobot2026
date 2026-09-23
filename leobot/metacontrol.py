@@ -21,10 +21,11 @@ from math import exp, log1p, log2
 from itertools import combinations
 import json
 from .rbf import RBFStrategyRouter
+from . import meta_operators
 
 
 class MetaController:
-    VERSION = 7
+    VERSION = 9
 
     def __init__(self) -> None:
         # decision family -> exact signature -> strategy -> aggregates
@@ -52,6 +53,12 @@ class MetaController:
         # families learn the same structural truth partition.
         self.meta_primitives: dict[str, dict] = {}
         self.enable_meta_primitives = True
+        self.meta_operators: dict[str, dict] = {}
+        self.enable_meta_operator_invention = True
+        self.aggregate_candidates_evaluated: dict[str, int] = {}
+        # A contradicted aggregate is withdrawn immediately. Expensive broad
+        # synthesis waits for a bounded amount of genuinely new experience.
+        self.aggregate_retry_after: dict[str, int] = {}
 
     @staticmethod
     def _feature_tuple(features) -> tuple[float, ...]:
@@ -361,6 +368,29 @@ class MetaController:
             if (view.get('kind')=='macro_program' and
                     view.get('primitive') not in self.meta_primitives):
                 self.invented_views.pop(family,None)
+        self._reconcile_meta_operators()
+
+    def _reconcile_meta_operators(self) -> None:
+        """Keep only operators backed by independently learned source views."""
+        supported={}
+        for family,view in sorted(self.invented_views.items()):
+            if (view.get('kind')!='aggregate_program' or
+                    view.get('operator_dependency')):
+                continue
+            spec=view.get('spec')
+            if not isinstance(spec,dict):
+                continue
+            identifier=meta_operators.operator_key(spec)
+            row=supported.setdefault(identifier,{'kind':'fold_boolean',
+                                                   'reduce':spec.get('reduce'),
+                                                   'sources':[]})
+            row['sources'].append(family)
+        self.meta_operators=supported
+        for family,view in list(self.invented_views.items()):
+            if (view.get('kind')=='aggregate_program' and
+                    view.get('operator_dependency') and
+                    view['operator_dependency'] not in supported):
+                self.invented_views.pop(family,None)
 
     @classmethod
     def _meta_primitive_value(cls, features, primitive: dict, start: int) -> int | None:
@@ -454,6 +484,102 @@ class MetaController:
               'sources':list(self.meta_primitives[identifier]['sources'])}
         self.invented_views[family]=view
         return {'status':'macro_program_invented','family':family,**deepcopy(view)}
+
+    def _invent_aggregate_view_from_tasks(self, family: str, tasks: list[dict],
+                                          *, only_existing: bool = False) -> dict:
+        """Synthesize a typed fold only after existing representations fail."""
+        if not self.enable_meta_operator_invention or len(tasks)<24:
+            return {'status':'aggregate_program_pending'}
+        width=len(tasks[0]['features'])
+        if any(len(task['features'])!=width for task in tasks):
+            return {'status':'aggregate_program_incompatible_features'}
+        existing=self.invented_views.get(family) if only_existing else None
+        if only_existing and (not isinstance(existing,dict) or
+                              existing.get('kind')!='aggregate_program' or
+                              (existing.get('operator_dependency') and
+                               existing['operator_dependency'] not in self.meta_operators)):
+            return {'status':'aggregate_program_not_retained'}
+        if only_existing:
+            specs=[existing['spec']]
+        else:
+            preferred=[row['reduce'] for _,row in sorted(self.meta_operators.items())]
+            specs=meta_operators.candidate_specs(width,preferred_reducers=preferred,limit=32)
+        majority=self._mode_winner(tasks)
+        evaluated=0
+        for spec in specs:
+            if not only_existing:
+                evaluated+=1
+                self.aggregate_candidates_evaluated[family]=(
+                    self.aggregate_candidates_evaluated.get(family,0)+1)
+            values=[meta_operators.evaluate(task['features'],spec) for task in tasks]
+            if any(value is None for value in values):
+                continue
+            distinct=sorted(set(values))
+            if len(distinct)<2:
+                continue
+            cutpoints=([float(existing['cut'])] if only_existing else
+                       [(low+high)/2.0 for low,high in zip(distinct,distinct[1:])])
+            for cut in cutpoints:
+                branches=[int(value>cut) for value in values]
+                counts={0:{},1:{}}
+                for task,branch in zip(tasks,branches):
+                    row=counts[branch];w=task['winner'];row[w]=row.get(w,0)+1
+                if not counts[0] or not counts[1]:
+                    continue
+                covered=correct=baseline_correct=0
+                for task,branch in zip(tasks,branches):
+                    available={label:n-int(label==task['winner'])
+                               for label,n in counts[branch].items()}
+                    available={label:n for label,n in available.items() if n>0}
+                    if not available:
+                        continue
+                    prediction=min(available,key=lambda label:(-available[label],str(label)))
+                    covered+=1;correct+=int(prediction==task['winner'])
+                    baseline_correct+=int(majority==task['winner'])
+                coverage=covered/len(tasks);accuracy=correct/max(1,covered)
+                gain=accuracy-baseline_correct/max(1,covered)
+                if coverage<0.70 or accuracy<0.90 or gain<0.20:
+                    continue
+                cutpoint=len(tasks)//2;temporal=[]
+                for train,test in ((range(cutpoint),range(cutpoint,len(tasks))),
+                                   (range(cutpoint,len(tasks)),range(cutpoint))):
+                    local={0:{},1:{}}
+                    for i in train:
+                        row=local[branches[i]];w=tasks[i]['winner']
+                        row[w]=row.get(w,0)+1
+                    seen=hits=0
+                    for i in test:
+                        row=local[branches[i]]
+                        if row:
+                            prediction=min(row,key=lambda w:(-row[w],str(w)))
+                            seen+=1;hits+=int(prediction==tasks[i]['winner'])
+                    temporal.append((seen/max(1,len(test)),hits/max(1,seen)))
+                if any(c<0.8 or a<0.95 for c,a in temporal):
+                    continue
+                buckets={}
+                for branch,row in counts.items():
+                    winner=min(row,key=lambda w:(-row[w],str(w)))
+                    support=sum(row.values());confidence=row[winner]/support
+                    if support>=2 and confidence>=0.80:
+                        buckets[str(branch)]={'winner':winner,'support':support,
+                                              'confidence':confidence}
+                if len(buckets)!=2 or buckets['0']['winner']==buckets['1']['winner']:
+                    continue
+                identifier=meta_operators.operator_key(spec)
+                sources=self.meta_operators.get(identifier,{}).get('sources',())
+                dependency=(existing.get('operator_dependency') if only_existing else
+                            (identifier if any(src!=family for src in sources) else None))
+                view={'kind':'aggregate_program','spec':deepcopy(spec),'cut':cut,
+                      'buckets':buckets,'operator':identifier,
+                      'operator_dependency':dependency,'accuracy':accuracy,
+                      'coverage':coverage,'gain_over_majority':gain,
+                      'tasks':len(tasks),'candidates_evaluated':(
+                          existing.get('candidates_evaluated',0) if only_existing else evaluated),
+                      'mechanism':'typed_fold_synthesis'}
+                self.invented_views[family]=view
+                return {'status':'aggregate_program_invented','family':family,
+                        'retained':only_existing,**deepcopy(view)}
+        return {'status':'aggregate_program_rejected','candidates_evaluated':evaluated}
 
     @classmethod
     def _program_temporal_transfer(cls, tasks: list[dict], predicates) -> dict:
@@ -773,6 +899,13 @@ class MetaController:
         representation invention in a bounded meta-DSL, not task-answer synthesis.
         """
         fam=str(family).strip().lower(); tasks=self._meta_tasks(fam)
+        retry_at=int(self.aggregate_retry_after.get(fam,0))
+        if retry_at and len(tasks)<retry_at:
+            return {'status':'meta_view_pending','family':fam,
+                    'reason':'awaiting_new_evidence','tasks':len(tasks),
+                    'retry_at':retry_at}
+        if retry_at:
+            self.aggregate_retry_after.pop(fam,None)
         if len(tasks)<max(4,int(min_tasks)):
             return {'status':'meta_view_pending','family':fam,'tasks':len(tasks)}
         dims_total=len(tasks[0]['features'])
@@ -787,6 +920,16 @@ class MetaController:
             program_checked=self._invent_meta_program_from_tasks(fam,tasks)
             if program_checked.get('retained'):
                 return program_checked
+        if isinstance(existing,dict) and existing.get('kind')=='aggregate_program':
+            checked=self._invent_aggregate_view_from_tasks(
+                fam,tasks,only_existing=True)
+            if checked.get('retained'):
+                return checked
+            self.invented_views.pop(fam,None)
+            self.aggregate_retry_after[fam]=len(tasks)+32
+            return {'status':'aggregate_program_withdrawn','family':fam,
+                    'reason':'new_evidence_failed_validation','tasks':len(tasks),
+                    'retry_at':self.aggregate_retry_after[fam]}
         max_k=min(max(1,int(max_dims)),3,dims_total-1)
         global_mode=self._mode_winner(tasks)
         candidates=[]
@@ -821,9 +964,15 @@ class MetaController:
                      self._invent_meta_program_from_tasks(fam,tasks))
             if program.get('status')=='meta_program_invented':
                 return program
+            aggregate=self._invent_aggregate_view_from_tasks(fam,tasks)
+            if aggregate.get('status')=='aggregate_program_invented':
+                return aggregate
+            if retry_at:
+                self.aggregate_retry_after[fam]=len(tasks)+32
             old=self.invented_views.pop(fam,None)
             return {'status':'meta_view_rejected','family':fam,'reason':'no_valid_compact_view_transform_or_program',
                     'transform_reason':transformed.get('reason'),'program_reason':program.get('reason'),
+                    'aggregate_reason':aggregate.get('status'),
                     'withdrawn':bool(old),'tasks':len(tasks)}
         candidates.sort(key=lambda x:(-x[0],len(x[4]),x[4]))
         score,accuracy,coverage,gain,dims=candidates[0]
@@ -853,7 +1002,20 @@ class MetaController:
         kind=str(view.get('kind','feature_projection'))
         detail={'accuracy':view.get('accuracy'),'coverage':view.get('coverage'),
                 'gain_over_majority':view.get('gain_over_majority'),'kind':kind}
-        if kind=='macro_program':
+        if kind=='aggregate_program':
+            if not self.enable_meta_operator_invention:
+                return None,None
+            dependency=view.get('operator_dependency')
+            if dependency and dependency not in self.meta_operators:
+                return None,None
+            statistic=meta_operators.evaluate(vals,view.get('spec'))
+            if statistic is None:
+                return None,None
+            bucket=(view.get('buckets') or {}).get(str(int(statistic>float(view['cut']))))
+            detail['operator']=view.get('operator')
+            detail['operator_dependency']=dependency
+            detail['statistic']=statistic
+        elif kind=='macro_program':
             primitive=self.meta_primitives.get(view.get('primitive')) if self.enable_meta_primitives else None
             if primitive is None:
                 return None,None
@@ -1141,7 +1303,11 @@ class MetaController:
                 'invented_views':deepcopy(self.invented_views),
                 'program_search_checkpoints':deepcopy(self.program_search_checkpoints),
                 'meta_primitives':deepcopy(self.meta_primitives),
-                'enable_meta_primitives':self.enable_meta_primitives}
+                'enable_meta_primitives':self.enable_meta_primitives,
+                'meta_operators':deepcopy(self.meta_operators),
+                'enable_meta_operator_invention':self.enable_meta_operator_invention,
+                'aggregate_candidates_evaluated':deepcopy(self.aggregate_candidates_evaluated),
+                'aggregate_retry_after':deepcopy(self.aggregate_retry_after)}
 
     @classmethod
     def from_dict(cls, data: dict | None) -> 'MetaController':
@@ -1149,7 +1315,7 @@ class MetaController:
         if not isinstance(data,dict):
             return obj
         version=int(data.get('version',1) or 1)
-        if version not in (1,2,3,4,5,6,7):
+        if version not in (1,2,3,4,5,6,7,8,9):
             raise ValueError('Estado de MetaController no compatible.')
         obj.exact=deepcopy(data.get('exact',{})) if isinstance(data.get('exact',{}),dict) else {}
         obj.routers={str(k):RBFStrategyRouter.from_dict(v) for k,v in (data.get('routers',{}) or {}).items()}
@@ -1169,6 +1335,13 @@ class MetaController:
             obj.program_search_checkpoints=deepcopy(raw) if isinstance(raw,dict) else {}
         if version>=7:
             obj.enable_meta_primitives=bool(data.get('enable_meta_primitives',True))
+        if version>=8:
+            obj.enable_meta_operator_invention=bool(data.get('enable_meta_operator_invention',True))
+            counts=data.get('aggregate_candidates_evaluated',{})
+            obj.aggregate_candidates_evaluated=deepcopy(counts) if isinstance(counts,dict) else {}
+        if version>=9:
+            retry=data.get('aggregate_retry_after',{})
+            obj.aggregate_retry_after=deepcopy(retry) if isinstance(retry,dict) else {}
         obj._reconcile_meta_primitives()
         # V1 persistence had no AIKR summaries.  Reconstruct conservative budget
         # rows from aggregate evidence so old checkpoints remain usable.
