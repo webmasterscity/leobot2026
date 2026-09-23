@@ -38,6 +38,32 @@ def score(controller,family,rows,labels):
 
 
 class MetaOperatorB1Tests(unittest.TestCase):
+    def test_rival_representation_requests_real_discriminating_observation(self):
+        controller=MetaController()
+        teach(controller,'source',[pair_task(i) for i in range(64)],('A','B'))
+        configs=random.Random(17).sample(range(256),128)
+        rows=[]
+        for index in configs:
+            features,target=raw_task(index)
+            factor=4 if target=='north' else 1
+            rows.append((tuple(value*factor for value in features),target))
+        teach(controller,'ambiguous',rows,('north','south'))
+        self.assertTrue(controller.meta_rivals.get('ambiguous'))
+        pool=[]
+        for features,_ in rows:
+            changed=tuple(abs(value) for value in features[:7])+(features[7],)
+            pool.append({'features':changed,'cost':1})
+            if len(pool)>=16:
+                break
+        proposal=controller.propose_meta_probe('ambiguous',pool)
+        self.assertEqual(proposal['status'],'epistemic_action')
+        chosen=pool[proposal['chosen_index']]['features']
+        truth='north' if sum(value>0 for value in chosen)>=5 else 'south'
+        for strategy in ('north','south'):
+            controller.observe('ambiguous',chosen,strategy,
+                               success=strategy==truth,cost=1 if strategy==truth else 9)
+        self.assertFalse(controller.meta_rivals.get('ambiguous'))
+
     def test_persisted_operator_cannot_expand_mapper_grammar(self):
         spec=meta_operators.candidate_specs(8)[0]
         spec['map_expr']={'op':'call','value':'hidden','children':[]}

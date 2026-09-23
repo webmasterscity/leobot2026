@@ -25,7 +25,7 @@ from . import meta_operators
 
 
 class MetaController:
-    VERSION = 9
+    VERSION = 10
 
     def __init__(self) -> None:
         # decision family -> exact signature -> strategy -> aggregates
@@ -59,6 +59,11 @@ class MetaController:
         # A contradicted aggregate is withdrawn immediately. Expensive broad
         # synthesis waits for a bounded amount of genuinely new experience.
         self.aggregate_retry_after: dict[str, int] = {}
+        self.enable_meta_rivals = True
+        self.meta_rivals: dict[str, list[dict]] = {}
+        self.meta_probe_pending: dict[str, dict] = {}
+        self.meta_rival_checkpoints: dict[str, int] = {}
+        self.meta_rival_retry_after: dict[str, int] = {}
 
     @staticmethod
     def _feature_tuple(features) -> tuple[float, ...]:
@@ -129,6 +134,8 @@ class MetaController:
         fb=max(1,int(round(float(failure_budget)*1000.0)))
         self._router(fam).observe(vals,strategy,success=bool(success),
                                   candidates=scaled,failure_budget=fb)
+        if success:
+            self._resolve_meta_probe(fam,sig,strategy)
         self._record_history(fam,vals,strategy,success=bool(success),cost=max(0.001,float(cost)))
         return {'status':'meta_control_observation_recorded','family':fam,
                 'signature':sig,'strategy':strategy,'success':bool(success),
@@ -391,6 +398,33 @@ class MetaController:
                     view.get('operator_dependency') and
                     view['operator_dependency'] not in supported):
                 self.invented_views.pop(family,None)
+                self.meta_rivals.pop(family,None)
+
+    def _resolve_meta_probe(self, family: str, signature: str, winner: str) -> None:
+        """A real successful observation can falsify a pending rival view."""
+        pending=self.meta_probe_pending.get(family)
+        if not pending or pending.get('signature')!=signature:
+            return
+        self.meta_probe_pending.pop(family,None)
+        primary=self.invented_views.get(family)
+        rivals=self.meta_rivals.get(family,[])
+        if not primary or len(rivals)!=1:
+            return
+        predictions=pending.get('predictions',())
+        if len(predictions)!=2:
+            return
+        if predictions[0]!=winner and predictions[1]==winner:
+            self.invented_views[family]=rivals[0]
+            self.meta_rivals.pop(family,None)
+        elif predictions[1]!=winner and predictions[0]==winner:
+            self.meta_rivals.pop(family,None)
+        elif predictions[0]!=winner and predictions[1]!=winner:
+            self.invented_views.pop(family,None)
+            self.meta_rivals.pop(family,None)
+        else:
+            return
+        self.meta_rival_retry_after[family]=len(self._meta_tasks(family))+32
+        self._reconcile_meta_operators()
 
     @classmethod
     def _meta_primitive_value(cls, features, primitive: dict, start: int) -> int | None:
@@ -889,6 +923,78 @@ class MetaController:
             return None
         return min(counts, key=lambda w:(-counts[w],str(w)))
 
+    def _best_projection_view(self, tasks: list[dict], max_dims: int) -> dict | None:
+        """Fit the existing projection learner without changing its hypothesis space."""
+        dims_total=len(tasks[0]['features'])
+        max_k=min(max(1,int(max_dims)),3,dims_total-1)
+        global_mode=self._mode_winner(tasks)
+        candidates=[]
+        for k in range(1,max_k+1):
+            for dims in combinations(range(dims_total),k):
+                covered=correct=baseline_correct=0
+                for i,target in enumerate(tasks):
+                    key=self._view_key(target['features'],dims)
+                    peers=[t for j,t in enumerate(tasks) if j!=i and self._view_key(t['features'],dims)==key]
+                    pred=self._mode_winner(peers)
+                    if pred is None:
+                        continue
+                    covered+=1;correct+=int(pred==target['winner'])
+                    baseline_correct+=int(global_mode==target['winner'])
+                if covered<max(6,int(0.5*len(tasks))):
+                    continue
+                accuracy=correct/covered;coverage=covered/len(tasks)
+                gain=accuracy-baseline_correct/covered
+                if accuracy<0.85 or coverage<0.60 or gain<0.10:
+                    continue
+                score=accuracy*coverage+0.5*gain-0.015*len(dims)
+                candidates.append((score,accuracy,coverage,gain,dims))
+        if not candidates:
+            return None
+        candidates.sort(key=lambda x:(-x[0],len(x[4]),x[4]))
+        score,accuracy,coverage,gain,dims=candidates[0]
+        buckets={}
+        for task in tasks:
+            key=self._view_key(task['features'],dims)
+            row=buckets.setdefault(key,{'support':0,'winners':{}})
+            row['support']+=1;w=task['winner'];row['winners'][w]=row['winners'].get(w,0)+1
+        compact={}
+        for key,row in buckets.items():
+            winner=min(row['winners'],key=lambda w:(-row['winners'][w],str(w)))
+            confidence=row['winners'][winner]/max(1,row['support'])
+            if row['support']>=2 and confidence>=0.75:
+                compact[key]={'winner':winner,'support':row['support'],'confidence':confidence}
+        if not compact:
+            return None
+        return {'kind':'feature_projection','dims':list(dims),'score':score,
+                'accuracy':accuracy,'coverage':coverage,'gain_over_majority':gain,
+                'tasks':len(tasks),'buckets':compact}
+
+    def _maybe_discover_rival(self, family: str, tasks: list[dict]) -> None:
+        """Check a geometrically spaced, bounded alternative to an acquired fold."""
+        if not self.enable_meta_rivals:
+            return
+        view=self.invented_views.get(family)
+        if not view or view.get('kind')!='aggregate_program':
+            return
+        n=len(tasks);width=len(tasks[0]['features'])
+        if n<self.meta_rival_retry_after.get(family,0):
+            return
+        if n<max(64,8*width) or n&(n-1) or n<=self.meta_rival_checkpoints.get(family,0):
+            return
+        self.meta_rival_checkpoints[family]=n
+        alternative=self._best_projection_view(tasks,3)
+        if alternative is None or alternative['accuracy']<0.95:
+            self.meta_rivals.pop(family,None)
+            return
+        labels=sorted({task['winner'] for task in tasks})
+        for task in tasks:
+            primary,_=self._view_order(family,task['features'],labels,view=view)
+            rival,_=self._view_order(family,task['features'],labels,view=alternative)
+            if primary and rival and primary[0]!=rival[0]:
+                self.meta_rivals.pop(family,None)
+                return
+        self.meta_rivals[family]=[alternative]
+
     def invent_view(self, family: str, *, max_dims: int = 3, min_tasks: int = 8) -> dict:
         """Synthesize a compact structural representation from meta-experience.
 
@@ -924,36 +1030,27 @@ class MetaController:
             checked=self._invent_aggregate_view_from_tasks(
                 fam,tasks,only_existing=True)
             if checked.get('retained'):
+                self._maybe_discover_rival(fam,tasks)
                 return checked
             self.invented_views.pop(fam,None)
+            self.meta_rivals.pop(fam,None)
             self.aggregate_retry_after[fam]=len(tasks)+32
             return {'status':'aggregate_program_withdrawn','family':fam,
                     'reason':'new_evidence_failed_validation','tasks':len(tasks),
                     'retry_at':self.aggregate_retry_after[fam]}
-        max_k=min(max(1,int(max_dims)),3,dims_total-1)
-        global_mode=self._mode_winner(tasks)
-        candidates=[]
-        for k in range(1,max_k+1):
-            for dims in combinations(range(dims_total),k):
-                covered=correct=baseline_correct=0
-                for i,target in enumerate(tasks):
-                    key=self._view_key(target['features'],dims)
-                    peers=[t for j,t in enumerate(tasks) if j!=i and self._view_key(t['features'],dims)==key]
-                    pred=self._mode_winner(peers)
-                    if pred is None:
-                        continue
-                    covered+=1; correct+=int(pred==target['winner'])
-                    baseline_correct+=int(global_mode==target['winner'])
-                if covered<max(6,int(0.5*len(tasks))):
-                    continue
-                accuracy=correct/covered; coverage=covered/len(tasks)
-                baseline=baseline_correct/covered if covered else 0.0
-                gain=accuracy-baseline
-                if accuracy < 0.85 or coverage < 0.60 or gain < 0.10:
-                    continue
-                score=(accuracy*coverage)+(0.5*gain)-(0.015*len(dims))
-                candidates.append((score,accuracy,coverage,gain,dims))
-        if not candidates:
+        if (self.enable_meta_rivals and self.meta_operators and
+                len(tasks)>=24 and
+                len(tasks)>=self.meta_rival_retry_after.get(fam,0)):
+            aggregate=self._invent_aggregate_view_from_tasks(fam,tasks)
+            if aggregate.get('status')=='aggregate_program_invented':
+                if (isinstance(existing,dict) and
+                        existing.get('kind')=='feature_projection' and
+                        existing.get('accuracy',0)>=0.95):
+                    self.meta_rivals[fam]=[existing]
+                self._maybe_discover_rival(fam,tasks)
+                return aggregate
+        projection=self._best_projection_view(tasks,max_dims)
+        if projection is None:
             macro=self._invent_macro_view_from_tasks(fam,tasks)
             if macro.get('status')=='macro_program_invented':
                 return macro
@@ -974,29 +1071,11 @@ class MetaController:
                     'transform_reason':transformed.get('reason'),'program_reason':program.get('reason'),
                     'aggregate_reason':aggregate.get('status'),
                     'withdrawn':bool(old),'tasks':len(tasks)}
-        candidates.sort(key=lambda x:(-x[0],len(x[4]),x[4]))
-        score,accuracy,coverage,gain,dims=candidates[0]
-        buckets={}
-        for task in tasks:
-            key=self._view_key(task['features'],dims)
-            row=buckets.setdefault(key,{'support':0,'winners':{}})
-            row['support']+=1; w=task['winner']; row['winners'][w]=row['winners'].get(w,0)+1
-        compact={}
-        for key,row in buckets.items():
-            winner=min(row['winners'],key=lambda w:(-row['winners'][w],str(w)))
-            confidence=row['winners'][winner]/max(1,row['support'])
-            if row['support']>=2 and confidence>=0.75:
-                compact[key]={'winner':winner,'support':row['support'],'confidence':confidence}
-        if not compact:
-            old=self.invented_views.pop(fam,None)
-            return {'status':'meta_view_rejected','family':fam,'reason':'no_stable_buckets','withdrawn':bool(old)}
-        view={'kind':'feature_projection','dims':list(dims),'score':score,'accuracy':accuracy,
-              'coverage':coverage,'gain_over_majority':gain,'tasks':len(tasks),'buckets':compact}
-        self.invented_views[fam]=view
-        return {'status':'meta_view_invented','family':fam,**deepcopy(view)}
+        self.invented_views[fam]=projection
+        return {'status':'meta_view_invented','family':fam,**deepcopy(projection)}
 
-    def _view_order(self, fam: str, vals, default: list[str]) -> tuple[list[str] | None,dict | None]:
-        view=self.invented_views.get(fam)
+    def _view_order(self, fam: str, vals, default: list[str], *, view=None) -> tuple[list[str] | None,dict | None]:
+        view=self.invented_views.get(fam) if view is None else view
         if not isinstance(view,dict):
             return None,None
         kind=str(view.get('kind','feature_projection'))
@@ -1123,6 +1202,13 @@ class MetaController:
             return {'order':exact,'used':exact!=default,'mode':'exact_class',
                     'signature':sig,'scores':deepcopy(table)}
         view_order,view_detail=self._view_order(fam,vals,default)
+        rivals=self.meta_rivals.get(fam,()) if self.enable_meta_rivals else ()
+        if rivals:
+            rival_order,_=self._view_order(fam,vals,default,view=rivals[0])
+            if (view_order is None or rival_order is None or
+                    view_order[0]!=rival_order[0]):
+                return {'order':default,'used':False,'mode':'ambiguous',
+                        'signature':sig,'hypotheses':1+len(rivals),'scores':[]}
         if view_order is not None:
             return {'order':view_order,'used':view_order!=default,'mode':'invented_view',
                     'signature':sig,'view':view_detail,'scores':[]}
@@ -1210,6 +1296,27 @@ class MetaController:
         """
         fam=str(family).strip().lower()
         view=self.invented_views.get(fam)
+        rivals=self.meta_rivals.get(fam,()) if self.enable_meta_rivals else ()
+        if isinstance(view,dict) and len(rivals)==1:
+            labels=sorted({task['winner'] for task in self._meta_tasks(fam)})
+            offered=list(candidates);actions=[];predictions=[]
+            for candidate in offered:
+                vals=self._feature_tuple(candidate['features'])
+                first,_=self._view_order(fam,vals,labels,view=view)
+                second,_=self._view_order(fam,vals,labels,view=rivals[0])
+                pair=(first[0] if first else None,second[0] if second else None)
+                predictions.append(pair)
+                groups=([[0],[1]] if all(pair) and pair[0]!=pair[1]
+                        else [[0,1]])
+                actions.append({'groups':groups,'cost':candidate.get('cost',1.0),
+                                'label':candidate.get('label')})
+            proposal=self.select_epistemic_action((0,1),actions)
+            if proposal.get('status')=='epistemic_action':
+                index=proposal['chosen_index']
+                self.meta_probe_pending[fam]={
+                    'signature':self.signature(offered[index]['features']),
+                    'predictions':list(predictions[index])}
+            return {**proposal,'ambiguous_hypotheses':2}
         if not isinstance(view,dict) or view.get('kind')!='feature_program':
             return {'status':'no_epistemic_action','reason':'no_learned_program'}
         tasks=self._meta_tasks(fam)
@@ -1307,7 +1414,12 @@ class MetaController:
                 'meta_operators':deepcopy(self.meta_operators),
                 'enable_meta_operator_invention':self.enable_meta_operator_invention,
                 'aggregate_candidates_evaluated':deepcopy(self.aggregate_candidates_evaluated),
-                'aggregate_retry_after':deepcopy(self.aggregate_retry_after)}
+                'aggregate_retry_after':deepcopy(self.aggregate_retry_after),
+                'enable_meta_rivals':self.enable_meta_rivals,
+                'meta_rivals':deepcopy(self.meta_rivals),
+                'meta_probe_pending':deepcopy(self.meta_probe_pending),
+                'meta_rival_checkpoints':deepcopy(self.meta_rival_checkpoints),
+                'meta_rival_retry_after':deepcopy(self.meta_rival_retry_after)}
 
     @classmethod
     def from_dict(cls, data: dict | None) -> 'MetaController':
@@ -1315,7 +1427,7 @@ class MetaController:
         if not isinstance(data,dict):
             return obj
         version=int(data.get('version',1) or 1)
-        if version not in (1,2,3,4,5,6,7,8,9):
+        if version not in (1,2,3,4,5,6,7,8,9,10):
             raise ValueError('Estado de MetaController no compatible.')
         obj.exact=deepcopy(data.get('exact',{})) if isinstance(data.get('exact',{}),dict) else {}
         obj.routers={str(k):RBFStrategyRouter.from_dict(v) for k,v in (data.get('routers',{}) or {}).items()}
@@ -1342,6 +1454,12 @@ class MetaController:
         if version>=9:
             retry=data.get('aggregate_retry_after',{})
             obj.aggregate_retry_after=deepcopy(retry) if isinstance(retry,dict) else {}
+        if version>=10:
+            obj.enable_meta_rivals=bool(data.get('enable_meta_rivals',True))
+            for name in ('meta_rivals','meta_probe_pending','meta_rival_checkpoints',
+                         'meta_rival_retry_after'):
+                raw=data.get(name,{})
+                setattr(obj,name,deepcopy(raw) if isinstance(raw,dict) else {})
         obj._reconcile_meta_primitives()
         # V1 persistence had no AIKR summaries.  Reconstruct conservative budget
         # rows from aggregate evidence so old checkpoints remain usable.
