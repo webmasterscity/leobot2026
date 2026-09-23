@@ -1,0 +1,17 @@
+# F-13 — enseñar varias redacciones humanas del mismo hecho
+
+## Decisión
+
+F-9–F-12 no adquirieron una representación semántica fiable desde una sola redacción por triple; pedir más triples elegidos por desacuerdo F-11 tampoco mejoró. El adaptador histórico WebNLG conservó únicamente la primera lexicalización humana `good` de cada entrada. Un inventario previo del `train/1triples` oficial, commit `587fa698bec705efbefe72a235a6019c2b9b8b6c`, contó 3 194 hechos, 7 683 redacciones únicas, 2 760 hechos con al menos dos y 1 737 con al menos dos donde ambos argumentos se alinean literalmente. **Hipótesis:** enseñar varias maneras humanas de decir *el mismo triple*, manteniendo los roles y el hecho fijos, da evidencia de invariancia suficiente para adquirir construcciones y reescrituras reutilizables con el motor actual congelado. **Alternativa:** solo duplica superficies, CPU y errores; no resuelve límites de roles ni significado. No escribir un parser nuevo antes de probar esta educación.
+
+## Partición y experiencia
+
+Excluir del desarrollo las entradas de evaluación usadas en F-6f/F-6g/F-7/F-8/F-10/F-11/F-12. H0 = `git rev-parse estable-E-1:leobot`. Seleccionar 128 entradas de desarrollo con entidades disjuntas por `sha256(H0 + ':F-13:web:' + id)` y 64 de validación sin compartir entidades. Reservar *todas* las redacciones de esas entradas. De las restantes, enseñar hasta 1 000 triples distintos, máximo tres redacciones humanas únicas por triple. Codex no reescribe frases ni introduce reglas; el corpus entrega textos y triple anotado. Comparar con el primer texto de exactamente esos mismos triples. No contar tres textos del mismo hecho como tres hechos independientes para promoción. Variar el orden en tres semillas si cambia el resultado.
+
+Solo si desarrollo pasa, congelar el código y abrir WebNLG `dev/2triples` con semilla de la huella del motor/piloto. Es transferencia estructural distinta; ningún acierto en un triple la reemplaza. La reserva nunca ajusta el mecanismo.
+
+## Tratamiento y controles
+
+Usar el `Language` y su inducción de construcciones/rewrite existente, alimentados desde la interfaz supervisada normal mediante las anotaciones originales. Piloto/adaptador y evaluador fuera de `leobot/`; motor sin cambios. Tratamiento hasta tres redacciones; control una sola; ablación mismas redacciones con reescritura desactivada; memoria exacta sin inducción; fresco; hechos/predicados barajados; roles invertidos; frase incompatible; nombres totalmente nuevos; pista superficial invertida; corrección de un hecho; guardar/cargar. Comparar aprendizaje en 250/500/750/1 000 hechos y medir construcciones/rewrite adquiridos, triples exactos en textos no vistos, intentos, precisión, ejemplos y textos, candidatos, CPU/RAM separados para enseñar, compilar, validar, consolidar, inferir y persistir. Controlar que variantes del mismo hecho no inflen falsamente el apoyo.
+
+Puerta de desarrollo: ≥20/128 triples exactos con precisión ≥80 %, y ≥5 aciertos más que **ambos** controles de una redacción y de reescritura desactivada; ningún triple seguro falso con predicados barajados o frase incompatible; corrección/reinicio pasan; p95 respuesta ≤10 ms, tope absoluto 1 s. CPU de adquisición total del tratamiento ≤3 veces el control de una redacción, CPU del proceso ≤120 s, pared ≤180 s, RSS ≤256 MiB. Una mejora de cobertura que solo duplica superficie sin mejorar frente a la ablación no prueba aprendizaje de paráfrasis y no se integra.
