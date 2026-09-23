@@ -1,0 +1,909 @@
+{
+  "preregistration": "prereg/F-11-consulta-activa-contrastes.md",
+  "kind": "development_only",
+  "engine_tree": "1f3187f2ced4c97364503187d074815f33612326",
+  "engine_unchanged": true,
+  "source_hashes": {
+    "train/1triples/Airport_allSolutions.xml": {
+      "bytes": 188904,
+      "sha256": "8492281d1abf7006a5a3f10f3bfe3451049e7917755e449bc1b69341f7f757ae"
+    },
+    "train/1triples/Artist_allSolutions.xml": {
+      "bytes": 167823,
+      "sha256": "1586d97d8816c19ce923c4865a1afc66198c672a1ee5f84ff10abfb71dd7031b"
+    },
+    "train/1triples/Astronaut_allSolutions.xml": {
+      "bytes": 50580,
+      "sha256": "52896c6c368fbc500efc84829f462122a0ed7184b9287273cd8e83360a0ea6d4"
+    },
+    "train/1triples/Athlete_allSolutions.xml": {
+      "bytes": 173998,
+      "sha256": "ca016b57e1fc7761fca52886cd75f9ac70658d6287ca028d37bb428b269bcb6c"
+    },
+    "train/1triples/Building_allSolutions.xml": {
+      "bytes": 139120,
+      "sha256": "f61607510be9cf08264cfba1aa8694a4bbd4d45c0d52fb01cb001834dabc4d18"
+    },
+    "train/1triples/CelestialBody_allSolutions.xml": {
+      "bytes": 109646,
+      "sha256": "aad294130e43edf206bac9260b4c4bc56c38b2391562b19e567de470e03799c5"
+    },
+    "train/1triples/City_allSolutions.xml": {
+      "bytes": 152029,
+      "sha256": "ee3569b5e5b74892de83d1df9c7369470e1b0b058952c3382965f6a25667a95d"
+    },
+    "train/1triples/ComicsCharacter_allSolutions.xml": {
+      "bytes": 61658,
+      "sha256": "351c0bbb436c328e37887ed04cf1d272ddfcd530c035099db3a0c015e0fa51b8"
+    },
+    "train/1triples/Company_allSolutions.xml": {
+      "bytes": 53898,
+      "sha256": "6593d6084212d294a9ab34aaaacfcb2ed8817bb479e883e29989a54bff810060"
+    },
+    "train/1triples/Food_allSolutions.xml": {
+      "bytes": 154588,
+      "sha256": "9a11a0b3b76e39b01c1b28a3ea0b144bde46449c7fc7d4dd370a42dbf0f9f1dd"
+    },
+    "train/1triples/MeanOfTransportation_allSolutions.xml": {
+      "bytes": 182661,
+      "sha256": "d56a93d518a252640b37faa0a7cccb2117fb42444c937153deb7add71a1dc9d2"
+    },
+    "train/1triples/Monument_allSolutions.xml": {
+      "bytes": 30612,
+      "sha256": "6f02981840169fffaa8d94716b1d6a7e1b2317dca139dd0aa2aa643b516e4e17"
+    },
+    "train/1triples/Politician_allSolutions.xml": {
+      "bytes": 179037,
+      "sha256": "49dd46eae6dceca03d5481ff0796b8a432428abc604d0f0861a6f129bac5d3fa"
+    },
+    "train/1triples/SportsTeam_allSolutions.xml": {
+      "bytes": 144834,
+      "sha256": "5198405576f476b96a3dc1045012305921e56e931ef451c495bbc77ab6c6ed46"
+    },
+    "train/1triples/University_allSolutions.xml": {
+      "bytes": 42488,
+      "sha256": "1ed28e51c848aae790b075277af00cfcd2aebe1985b46b3005fcf6a6a9add356"
+    },
+    "train/1triples/WrittenWork_allSolutions.xml": {
+      "bytes": 133960,
+      "sha256": "87db4cd2480cb706758c267daed65823b0fbc7cea7943ec5ffb5cfaa1a957eb0"
+    }
+  },
+  "source_bytes": 1965836,
+  "previous_development_ids_excluded": 671,
+  "initial_examples": 400,
+  "unlabeled_pool": 400,
+  "validation": 64,
+  "development": 128,
+  "active": {
+    "policy": "active",
+    "random_seed": null,
+    "stages": [
+      {
+        "examples": 400,
+        "requested": 0,
+        "selection": {
+          "programs": null,
+          "rival_texts": null,
+          "representation_gaps": null,
+          "analyses": 0,
+          "cpu_s": 0.0
+        },
+        "learning": {
+          "candidate_programs": 42,
+          "source_pairs": 494,
+          "fit_analyses": 1160,
+          "validation_analyses": 177,
+          "fit_contradicted": 24,
+          "validation_contradicted": 13,
+          "promoted": 1
+        },
+        "score": {
+          "total": 128,
+          "correct": 1,
+          "attempts": 2,
+          "wrong_confident": 1,
+          "precision": 0.5,
+          "candidates": 6,
+          "p50_ms": 0.00866,
+          "p95_ms": 0.01693
+        },
+        "learning_cpu_s": 0.067759,
+        "assessment_cpu_s": 0.001275
+      },
+      {
+        "examples": 420,
+        "requested": 20,
+        "selection": {
+          "programs": 42,
+          "source_pairs": 494,
+          "rival_texts": 62,
+          "representation_gaps": 251,
+          "single_analysis_texts": 87,
+          "analyses": 1100,
+          "cpu_s": 0.065385
+        },
+        "learning": {
+          "candidate_programs": 45,
+          "source_pairs": 539,
+          "fit_analyses": 1332,
+          "validation_analyses": 197,
+          "fit_contradicted": 25,
+          "validation_contradicted": 14,
+          "promoted": 1
+        },
+        "score": {
+          "total": 128,
+          "correct": 1,
+          "attempts": 2,
+          "wrong_confident": 1,
+          "precision": 0.5,
+          "candidates": 6,
+          "p50_ms": 0.00862,
+          "p95_ms": 0.01665
+        },
+        "learning_cpu_s": 0.069381,
+        "assessment_cpu_s": 0.00127
+      },
+      {
+        "examples": 440,
+        "requested": 40,
+        "selection": {
+          "programs": 45,
+          "source_pairs": 539,
+          "rival_texts": 46,
+          "representation_gaps": 247,
+          "single_analysis_texts": 87,
+          "analyses": 1173,
+          "cpu_s": 0.067474
+        },
+        "learning": {
+          "candidate_programs": 51,
+          "source_pairs": 611,
+          "fit_analyses": 1653,
+          "validation_analyses": 231,
+          "fit_contradicted": 31,
+          "validation_contradicted": 15,
+          "promoted": 1
+        },
+        "score": {
+          "total": 128,
+          "correct": 1,
+          "attempts": 2,
+          "wrong_confident": 1,
+          "precision": 0.5,
+          "candidates": 6,
+          "p50_ms": 0.00864,
+          "p95_ms": 0.01746
+        },
+        "learning_cpu_s": 0.077553,
+        "assessment_cpu_s": 0.001279
+      },
+      {
+        "examples": 460,
+        "requested": 60,
+        "selection": {
+          "programs": 51,
+          "source_pairs": 611,
+          "rival_texts": 31,
+          "representation_gaps": 243,
+          "single_analysis_texts": 86,
+          "analyses": 1272,
+          "cpu_s": 0.072634
+        },
+        "learning": {
+          "candidate_programs": 52,
+          "source_pairs": 748,
+          "fit_analyses": 2017,
+          "validation_analyses": 267,
+          "fit_contradicted": 32,
+          "validation_contradicted": 16,
+          "promoted": 1
+        },
+        "score": {
+          "total": 128,
+          "correct": 1,
+          "attempts": 2,
+          "wrong_confident": 1,
+          "precision": 0.5,
+          "candidates": 6,
+          "p50_ms": 0.00869,
+          "p95_ms": 0.01724
+        },
+        "learning_cpu_s": 0.088776,
+        "assessment_cpu_s": 0.001284
+      },
+      {
+        "examples": 480,
+        "requested": 80,
+        "selection": {
+          "programs": 52,
+          "source_pairs": 748,
+          "rival_texts": 22,
+          "representation_gaps": 219,
+          "single_analysis_texts": 99,
+          "analyses": 1321,
+          "cpu_s": 0.077524
+        },
+        "learning": {
+          "candidate_programs": 57,
+          "source_pairs": 877,
+          "fit_analyses": 2427,
+          "validation_analyses": 304,
+          "fit_contradicted": 37,
+          "validation_contradicted": 19,
+          "promoted": 1
+        },
+        "score": {
+          "total": 128,
+          "correct": 1,
+          "attempts": 2,
+          "wrong_confident": 1,
+          "precision": 0.5,
+          "candidates": 6,
+          "p50_ms": 0.00869,
+          "p95_ms": 0.01672
+        },
+        "learning_cpu_s": 0.095547,
+        "assessment_cpu_s": 0.00128
+      },
+      {
+        "examples": 500,
+        "requested": 100,
+        "selection": {
+          "programs": 57,
+          "source_pairs": 877,
+          "rival_texts": 6,
+          "representation_gaps": 215,
+          "single_analysis_texts": 99,
+          "analyses": 1351,
+          "cpu_s": 0.080115
+        },
+        "learning": {
+          "candidate_programs": 57,
+          "source_pairs": 978,
+          "fit_analyses": 2536,
+          "validation_analyses": 304,
+          "fit_contradicted": 37,
+          "validation_contradicted": 19,
+          "promoted": 1
+        },
+        "score": {
+          "total": 128,
+          "correct": 1,
+          "attempts": 2,
+          "wrong_confident": 1,
+          "precision": 0.5,
+          "candidates": 6,
+          "p50_ms": 0.00872,
+          "p95_ms": 0.0194
+        },
+        "learning_cpu_s": 0.100767,
+        "assessment_cpu_s": 0.001292
+      }
+    ],
+    "selector_cpu_s": 0.363132,
+    "learning_cpu_s": 0.499782,
+    "assessment_cpu_s": 0.00768,
+    "synthesis_candidates": 4551,
+    "total_measured_cpu_s": 0.870594
+  },
+  "random_controls": [
+    {
+      "policy": "random",
+      "random_seed": 17,
+      "stages": [
+        {
+          "examples": 400,
+          "requested": 0,
+          "selection": {
+            "programs": null,
+            "rival_texts": null,
+            "representation_gaps": null,
+            "analyses": 0,
+            "cpu_s": 0.0
+          },
+          "learning": {
+            "candidate_programs": 42,
+            "source_pairs": 494,
+            "fit_analyses": 1160,
+            "validation_analyses": 177,
+            "fit_contradicted": 24,
+            "validation_contradicted": 13,
+            "promoted": 1
+          },
+          "score": {
+            "total": 128,
+            "correct": 1,
+            "attempts": 2,
+            "wrong_confident": 1,
+            "precision": 0.5,
+            "candidates": 6,
+            "p50_ms": 0.00864,
+            "p95_ms": 0.01661
+          },
+          "learning_cpu_s": 0.066171,
+          "assessment_cpu_s": 0.001271
+        },
+        {
+          "examples": 420,
+          "requested": 20,
+          "selection": {
+            "programs": null,
+            "rival_texts": null,
+            "representation_gaps": null,
+            "analyses": 0,
+            "cpu_s": 0.0
+          },
+          "learning": {
+            "candidate_programs": 44,
+            "source_pairs": 552,
+            "fit_analyses": 1223,
+            "validation_analyses": 180,
+            "fit_contradicted": 26,
+            "validation_contradicted": 13,
+            "promoted": 1
+          },
+          "score": {
+            "total": 128,
+            "correct": 1,
+            "attempts": 2,
+            "wrong_confident": 1,
+            "precision": 0.5,
+            "candidates": 6,
+            "p50_ms": 0.00867,
+            "p95_ms": 0.01812
+          },
+          "learning_cpu_s": 0.067621,
+          "assessment_cpu_s": 0.001291
+        },
+        {
+          "examples": 440,
+          "requested": 40,
+          "selection": {
+            "programs": null,
+            "rival_texts": null,
+            "representation_gaps": null,
+            "analyses": 0,
+            "cpu_s": 0.0
+          },
+          "learning": {
+            "candidate_programs": 46,
+            "source_pairs": 603,
+            "fit_analyses": 1284,
+            "validation_analyses": 183,
+            "fit_contradicted": 27,
+            "validation_contradicted": 13,
+            "promoted": 1
+          },
+          "score": {
+            "total": 128,
+            "correct": 1,
+            "attempts": 2,
+            "wrong_confident": 1,
+            "precision": 0.5,
+            "candidates": 6,
+            "p50_ms": 0.00856,
+            "p95_ms": 0.01679
+          },
+          "learning_cpu_s": 0.075972,
+          "assessment_cpu_s": 0.001257
+        },
+        {
+          "examples": 460,
+          "requested": 60,
+          "selection": {
+            "programs": null,
+            "rival_texts": null,
+            "representation_gaps": null,
+            "analyses": 0,
+            "cpu_s": 0.0
+          },
+          "learning": {
+            "candidate_programs": 49,
+            "source_pairs": 700,
+            "fit_analyses": 1529,
+            "validation_analyses": 203,
+            "fit_contradicted": 30,
+            "validation_contradicted": 15,
+            "promoted": 1
+          },
+          "score": {
+            "total": 128,
+            "correct": 1,
+            "attempts": 2,
+            "wrong_confident": 1,
+            "precision": 0.5,
+            "candidates": 6,
+            "p50_ms": 0.00846,
+            "p95_ms": 0.0164
+          },
+          "learning_cpu_s": 0.078396,
+          "assessment_cpu_s": 0.001273
+        },
+        {
+          "examples": 480,
+          "requested": 80,
+          "selection": {
+            "programs": null,
+            "rival_texts": null,
+            "representation_gaps": null,
+            "analyses": 0,
+            "cpu_s": 0.0
+          },
+          "learning": {
+            "candidate_programs": 52,
+            "source_pairs": 767,
+            "fit_analyses": 1638,
+            "validation_analyses": 210,
+            "fit_contradicted": 32,
+            "validation_contradicted": 16,
+            "promoted": 0
+          },
+          "score": {
+            "total": 128,
+            "correct": 0,
+            "attempts": 0,
+            "wrong_confident": 0,
+            "precision": null,
+            "candidates": 0,
+            "p50_ms": 0.00866,
+            "p95_ms": 0.01319
+          },
+          "learning_cpu_s": 0.081847,
+          "assessment_cpu_s": 0.001218
+        },
+        {
+          "examples": 500,
+          "requested": 100,
+          "selection": {
+            "programs": null,
+            "rival_texts": null,
+            "representation_gaps": null,
+            "analyses": 0,
+            "cpu_s": 0.0
+          },
+          "learning": {
+            "candidate_programs": 54,
+            "source_pairs": 843,
+            "fit_analyses": 1708,
+            "validation_analyses": 210,
+            "fit_contradicted": 32,
+            "validation_contradicted": 16,
+            "promoted": 0
+          },
+          "score": {
+            "total": 128,
+            "correct": 0,
+            "attempts": 0,
+            "wrong_confident": 0,
+            "precision": null,
+            "candidates": 0,
+            "p50_ms": 0.00831,
+            "p95_ms": 0.01229
+          },
+          "learning_cpu_s": 0.085116,
+          "assessment_cpu_s": 0.001168
+        }
+      ],
+      "selector_cpu_s": 0.0,
+      "learning_cpu_s": 0.455122,
+      "assessment_cpu_s": 0.007478,
+      "synthesis_candidates": 4246,
+      "total_measured_cpu_s": 0.4626
+    },
+    {
+      "policy": "random",
+      "random_seed": 53,
+      "stages": [
+        {
+          "examples": 400,
+          "requested": 0,
+          "selection": {
+            "programs": null,
+            "rival_texts": null,
+            "representation_gaps": null,
+            "analyses": 0,
+            "cpu_s": 0.0
+          },
+          "learning": {
+            "candidate_programs": 42,
+            "source_pairs": 494,
+            "fit_analyses": 1160,
+            "validation_analyses": 177,
+            "fit_contradicted": 24,
+            "validation_contradicted": 13,
+            "promoted": 1
+          },
+          "score": {
+            "total": 128,
+            "correct": 1,
+            "attempts": 2,
+            "wrong_confident": 1,
+            "precision": 0.5,
+            "candidates": 6,
+            "p50_ms": 0.00856,
+            "p95_ms": 0.01976
+          },
+          "learning_cpu_s": 0.065557,
+          "assessment_cpu_s": 0.001276
+        },
+        {
+          "examples": 420,
+          "requested": 20,
+          "selection": {
+            "programs": null,
+            "rival_texts": null,
+            "representation_gaps": null,
+            "analyses": 0,
+            "cpu_s": 0.0
+          },
+          "learning": {
+            "candidate_programs": 43,
+            "source_pairs": 539,
+            "fit_analyses": 1223,
+            "validation_analyses": 180,
+            "fit_contradicted": 24,
+            "validation_contradicted": 13,
+            "promoted": 1
+          },
+          "score": {
+            "total": 128,
+            "correct": 1,
+            "attempts": 2,
+            "wrong_confident": 1,
+            "precision": 0.5,
+            "candidates": 6,
+            "p50_ms": 0.0086,
+            "p95_ms": 0.01703
+          },
+          "learning_cpu_s": 0.067888,
+          "assessment_cpu_s": 0.001279
+        },
+        {
+          "examples": 440,
+          "requested": 40,
+          "selection": {
+            "programs": null,
+            "rival_texts": null,
+            "representation_gaps": null,
+            "analyses": 0,
+            "cpu_s": 0.0
+          },
+          "learning": {
+            "candidate_programs": 45,
+            "source_pairs": 589,
+            "fit_analyses": 1302,
+            "validation_analyses": 186,
+            "fit_contradicted": 25,
+            "validation_contradicted": 14,
+            "promoted": 1
+          },
+          "score": {
+            "total": 128,
+            "correct": 1,
+            "attempts": 2,
+            "wrong_confident": 1,
+            "precision": 0.5,
+            "candidates": 6,
+            "p50_ms": 0.00882,
+            "p95_ms": 0.01718
+          },
+          "learning_cpu_s": 0.071861,
+          "assessment_cpu_s": 0.001286
+        },
+        {
+          "examples": 460,
+          "requested": 60,
+          "selection": {
+            "programs": null,
+            "rival_texts": null,
+            "representation_gaps": null,
+            "analyses": 0,
+            "cpu_s": 0.0
+          },
+          "learning": {
+            "candidate_programs": 48,
+            "source_pairs": 650,
+            "fit_analyses": 1364,
+            "validation_analyses": 187,
+            "fit_contradicted": 25,
+            "validation_contradicted": 14,
+            "promoted": 1
+          },
+          "score": {
+            "total": 128,
+            "correct": 1,
+            "attempts": 2,
+            "wrong_confident": 1,
+            "precision": 0.5,
+            "candidates": 6,
+            "p50_ms": 0.00872,
+            "p95_ms": 0.01725
+          },
+          "learning_cpu_s": 0.075216,
+          "assessment_cpu_s": 0.001279
+        },
+        {
+          "examples": 480,
+          "requested": 80,
+          "selection": {
+            "programs": null,
+            "rival_texts": null,
+            "representation_gaps": null,
+            "analyses": 0,
+            "cpu_s": 0.0
+          },
+          "learning": {
+            "candidate_programs": 50,
+            "source_pairs": 748,
+            "fit_analyses": 1453,
+            "validation_analyses": 189,
+            "fit_contradicted": 28,
+            "validation_contradicted": 14,
+            "promoted": 1
+          },
+          "score": {
+            "total": 128,
+            "correct": 1,
+            "attempts": 2,
+            "wrong_confident": 1,
+            "precision": 0.5,
+            "candidates": 6,
+            "p50_ms": 0.00877,
+            "p95_ms": 0.0169
+          },
+          "learning_cpu_s": 0.080889,
+          "assessment_cpu_s": 0.001283
+        },
+        {
+          "examples": 500,
+          "requested": 100,
+          "selection": {
+            "programs": null,
+            "rival_texts": null,
+            "representation_gaps": null,
+            "analyses": 0,
+            "cpu_s": 0.0
+          },
+          "learning": {
+            "candidate_programs": 53,
+            "source_pairs": 780,
+            "fit_analyses": 1719,
+            "validation_analyses": 220,
+            "fit_contradicted": 31,
+            "validation_contradicted": 15,
+            "promoted": 1
+          },
+          "score": {
+            "total": 128,
+            "correct": 1,
+            "attempts": 2,
+            "wrong_confident": 1,
+            "precision": 0.5,
+            "candidates": 6,
+            "p50_ms": 0.00888,
+            "p95_ms": 0.01766
+          },
+          "learning_cpu_s": 0.088619,
+          "assessment_cpu_s": 0.001296
+        }
+      ],
+      "selector_cpu_s": 0.0,
+      "learning_cpu_s": 0.450031,
+      "assessment_cpu_s": 0.007698,
+      "synthesis_candidates": 4081,
+      "total_measured_cpu_s": 0.457729
+    },
+    {
+      "policy": "random",
+      "random_seed": 97,
+      "stages": [
+        {
+          "examples": 400,
+          "requested": 0,
+          "selection": {
+            "programs": null,
+            "rival_texts": null,
+            "representation_gaps": null,
+            "analyses": 0,
+            "cpu_s": 0.0
+          },
+          "learning": {
+            "candidate_programs": 42,
+            "source_pairs": 494,
+            "fit_analyses": 1160,
+            "validation_analyses": 177,
+            "fit_contradicted": 24,
+            "validation_contradicted": 13,
+            "promoted": 1
+          },
+          "score": {
+            "total": 128,
+            "correct": 1,
+            "attempts": 2,
+            "wrong_confident": 1,
+            "precision": 0.5,
+            "candidates": 6,
+            "p50_ms": 0.00896,
+            "p95_ms": 0.01807
+          },
+          "learning_cpu_s": 0.064028,
+          "assessment_cpu_s": 0.001337
+        },
+        {
+          "examples": 420,
+          "requested": 20,
+          "selection": {
+            "programs": null,
+            "rival_texts": null,
+            "representation_gaps": null,
+            "analyses": 0,
+            "cpu_s": 0.0
+          },
+          "learning": {
+            "candidate_programs": 44,
+            "source_pairs": 560,
+            "fit_analyses": 1251,
+            "validation_analyses": 182,
+            "fit_contradicted": 25,
+            "validation_contradicted": 13,
+            "promoted": 1
+          },
+          "score": {
+            "total": 128,
+            "correct": 1,
+            "attempts": 2,
+            "wrong_confident": 1,
+            "precision": 0.5,
+            "candidates": 6,
+            "p50_ms": 0.00876,
+            "p95_ms": 0.01746
+          },
+          "learning_cpu_s": 0.068993,
+          "assessment_cpu_s": 0.001296
+        },
+        {
+          "examples": 440,
+          "requested": 40,
+          "selection": {
+            "programs": null,
+            "rival_texts": null,
+            "representation_gaps": null,
+            "analyses": 0,
+            "cpu_s": 0.0
+          },
+          "learning": {
+            "candidate_programs": 45,
+            "source_pairs": 608,
+            "fit_analyses": 1323,
+            "validation_analyses": 183,
+            "fit_contradicted": 26,
+            "validation_contradicted": 13,
+            "promoted": 1
+          },
+          "score": {
+            "total": 128,
+            "correct": 1,
+            "attempts": 2,
+            "wrong_confident": 1,
+            "precision": 0.5,
+            "candidates": 6,
+            "p50_ms": 0.00886,
+            "p95_ms": 0.01749
+          },
+          "learning_cpu_s": 0.072436,
+          "assessment_cpu_s": 0.001309
+        },
+        {
+          "examples": 460,
+          "requested": 60,
+          "selection": {
+            "programs": null,
+            "rival_texts": null,
+            "representation_gaps": null,
+            "analyses": 0,
+            "cpu_s": 0.0
+          },
+          "learning": {
+            "candidate_programs": 48,
+            "source_pairs": 665,
+            "fit_analyses": 1405,
+            "validation_analyses": 186,
+            "fit_contradicted": 30,
+            "validation_contradicted": 13,
+            "promoted": 1
+          },
+          "score": {
+            "total": 128,
+            "correct": 1,
+            "attempts": 2,
+            "wrong_confident": 1,
+            "precision": 0.5,
+            "candidates": 6,
+            "p50_ms": 0.00857,
+            "p95_ms": 0.01672
+          },
+          "learning_cpu_s": 0.076467,
+          "assessment_cpu_s": 0.001263
+        },
+        {
+          "examples": 480,
+          "requested": 80,
+          "selection": {
+            "programs": null,
+            "rival_texts": null,
+            "representation_gaps": null,
+            "analyses": 0,
+            "cpu_s": 0.0
+          },
+          "learning": {
+            "candidate_programs": 50,
+            "source_pairs": 739,
+            "fit_analyses": 1476,
+            "validation_analyses": 187,
+            "fit_contradicted": 31,
+            "validation_contradicted": 13,
+            "promoted": 1
+          },
+          "score": {
+            "total": 128,
+            "correct": 1,
+            "attempts": 2,
+            "wrong_confident": 1,
+            "precision": 0.5,
+            "candidates": 6,
+            "p50_ms": 0.00873,
+            "p95_ms": 0.01707
+          },
+          "learning_cpu_s": 0.083992,
+          "assessment_cpu_s": 0.001286
+        },
+        {
+          "examples": 500,
+          "requested": 100,
+          "selection": {
+            "programs": null,
+            "rival_texts": null,
+            "representation_gaps": null,
+            "analyses": 0,
+            "cpu_s": 0.0
+          },
+          "learning": {
+            "candidate_programs": 54,
+            "source_pairs": 861,
+            "fit_analyses": 1609,
+            "validation_analyses": 196,
+            "fit_contradicted": 34,
+            "validation_contradicted": 13,
+            "promoted": 1
+          },
+          "score": {
+            "total": 128,
+            "correct": 1,
+            "attempts": 2,
+            "wrong_confident": 1,
+            "precision": 0.5,
+            "candidates": 6,
+            "p50_ms": 0.00868,
+            "p95_ms": 0.01684
+          },
+          "learning_cpu_s": 0.084678,
+          "assessment_cpu_s": 0.001276
+        }
+      ],
+      "selector_cpu_s": 0.0,
+      "learning_cpu_s": 0.450593,
+      "assessment_cpu_s": 0.007768,
+      "synthesis_candidates": 4210,
+      "total_measured_cpu_s": 0.458362
+    }
+  ],
+  "random_mean_correct_100": 0.6666666666666666,
+  "random_mean_cpu_s": 0.459564,
+  "preliminary_gate_passed": false,
+  "adversarial_controls": "pending_if_preliminary_passes",
+  "cpu_total_s": 2.861714,
+  "wall_total_s": 7.997806,
+  "max_rss_kib": 37372
+}
