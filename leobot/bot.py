@@ -293,19 +293,6 @@ class Bot(DocumentLearningMixin, LanguageAcquisitionMixin, ConditionalLearningMi
                 len(set(int(x) for x in roles)),source=f'meta:{family}:{source}',support=support)
         return {'meta':meta,'propagated':propagated}
 
-    def _publish_meta_role_cardinality(self, cardinality: int, *, family: str,
-                                       source: str, support: int = 1) -> dict:
-        meta=self.meta_representations.register_role_cardinality(
-            cardinality,family=family,source=source,support=support)
-        if meta.get('status')!='meta_representation_registered':
-            return {'meta':meta,'propagated':{}}
-        propagated_source=f'meta:{family}:{source}'
-        return {'meta':meta,'propagated':{
-            'procedure':self.procedures.register_external_role_cardinality(
-                cardinality,source=propagated_source,support=support),
-            'symbolic':self.symbolic.register_external_role_cardinality(
-                cardinality,source=propagated_source,support=support)}}
-
     def observe_world_transition(self, before, after) -> dict:
         """Compare a real state change with one uniquely matching raw text fact.
 
@@ -327,51 +314,88 @@ class Bot(DocumentLearningMixin, LanguageAcquisitionMixin, ConditionalLearningMi
             return {'status':'raw_world_no_change'}
         changed_values={normalize(value) for fact in changed for value in fact[1:]}
         candidates=[]
-        for promotion in self.raw_relation_promotions.values():
-            predicate=promotion.get('predicate')
-            arity=int(promotion.get('arity',0))
-            for evidence in promotion.get('evidence',()):
-                args=evidence.get('args',())
-                if not isinstance(predicate,str) or len(args)!=arity or arity<3:
+        promoted={promotion.get('predicate'):int(promotion.get('arity',0))
+                  for promotion in self.raw_relation_promotions.values()
+                  if isinstance(promotion.get('predicate'),str)}
+        relevant=set(self.kb.predicates_for_entities(changed_values)) & set(promoted)
+        for predicate in sorted(relevant):
+            arity=promoted[predicate]
+            if arity<3:
+                continue
+            fact_ids=set()
+            for value in sorted(changed_values):
+                for position in range(arity):
+                    pattern=Atom(predicate,tuple(value if index==position else f'?role{index}'
+                                                 for index in range(arity)))
+                    for fact in self.kb.matches(pattern):
+                        fact_ids.add(fact['id'])
+                        if len(fact_ids)>64:
+                            return {'status':'raw_world_budget','candidates':len(fact_ids)}
+            for fid in sorted(fact_ids):
+                fact=self.kb.get_fact(fid)
+                if fact is None or fact['atom'].pred!=predicate:
                     continue
-                roles=tuple(index for index,value in enumerate(args)
-                            if normalize(str(value)) in changed_values)
+                args=fact['atom'].args
+                normalized_args=tuple(normalize(str(value)) for value in args)
+                if len(args)!=arity or len(set(normalized_args))!=arity:
+                    continue
+                roles=tuple(index for index,value in enumerate(normalized_args)
+                            if value in changed_values)
                 if len(roles)>=2:
-                    candidates.append((predicate,arity,roles,str(evidence.get('fact_id',''))))
+                    edges=set()
+                    for fact in changed:
+                        values={normalize(value) for value in fact[1:]}
+                        present=tuple(index for index,role in enumerate(roles)
+                                      if normalized_args[role] in values)
+                        if len(present)>=2:
+                            edges.add(present)
+                    candidates.append((predicate,arity,roles,tuple(sorted(edges)),fid))
         if len(candidates)!=1:
             return {'status':'raw_world_ambiguous' if candidates else 'raw_world_unmatched',
                     'candidates':len(candidates)}
-        predicate,arity,roles,fact_id=candidates[0]
+        predicate,arity,roles,edges,fact_id=candidates[0]
         episode=hashlib.blake2b(json.dumps([sorted(prior),sorted(observed)],
                                               ensure_ascii=False).encode('utf8'),
                                  digest_size=12).hexdigest()
         state=self.raw_world_alignment_hypotheses.setdefault(predicate,{
-            'arity':arity,'observations':[],'promoted_roles':None})
+            'arity':arity,'observations':[],'promoted_roles':None,'promoted_edges':None})
         if any(row['episode']==episode for row in state['observations']):
             return {'status':'raw_world_duplicate','predicate':predicate}
-        record={'episode':episode,'fact_id':fact_id,'roles':list(roles)}
+        record={'episode':episode,'fact_id':fact_id,'roles':list(roles),
+                'edges':[list(edge) for edge in edges]}
         state['observations'].append(record)
         state['observations']=state['observations'][-64:]
         source='raw_world:'+predicate
         withdrawn=None
-        if state.get('promoted_roles') is not None and state['promoted_roles']!=list(roles):
+        if state.get('promoted_roles') is not None and (
+                state['promoted_roles']!=list(roles) or
+                state.get('promoted_edges')!=[list(edge) for edge in edges]):
             withdrawn=self._remove_meta_source_from_consumers('raw_world',source)
             state['promoted_roles']=None
+            state['promoted_edges']=None
         tail=[]
         for row in reversed(state['observations']):
-            if row['roles']!=list(roles):
+            if row['roles']!=list(roles) or row.get('edges')!=[list(edge) for edge in edges]:
                 break
             tail.append(row)
         independent=len({row['fact_id'] for row in tail})
         published=None
-        if len(roles)<arity and independent>=3:
-            published=self._publish_meta_role_cardinality(
-                len(roles),family='raw_world',source=source,support=independent)
-            state['promoted_roles']=list(roles)
+        if (len(roles)<arity and independent>=3 and
+                MetaRepresentationLibrary.canonical_role_topology(len(roles),edges) is not None):
+            role_set=self._publish_meta_role_set(
+                arity,roles,family='raw_world',source=source,support=independent)
+            topology=self._publish_meta_role_topology(
+                len(roles),edges,family='raw_world',source=source,support=independent)
+            if (role_set['meta'].get('status')=='meta_representation_registered' and
+                    topology['meta'].get('status')=='meta_representation_registered'):
+                published={'role_set':role_set,'topology':topology}
+                state['promoted_roles']=list(roles)
+                state['promoted_edges']=[list(edge) for edge in edges]
         status=('raw_world_conflict' if withdrawn is not None else
                 'raw_world_grounded' if published is not None else 'raw_world_pending')
         report={'status':status,'predicate':predicate,'arity':arity,
-                'roles':list(roles),'independent_support':independent,
+                'roles':list(roles),'edges':[list(edge) for edge in edges],
+                'independent_support':independent,
                 'source_fact_id':fact_id,'episode':episode,
                 'published':published,'withdrawn':withdrawn}
         self.training_reports.append({'type':'raw_world_transition',**report})
@@ -450,8 +474,15 @@ class Bot(DocumentLearningMixin, LanguageAcquisitionMixin, ConditionalLearningMi
                         self.symbolic.register_external_role_cardinality(
                             len(set(mapping)),source=f'meta:{family}:{source}',support=support)
 
-    def _remove_meta_source_from_consumers(self, family: str, source: str) -> dict:
+    def _remove_meta_source_from_consumers(self, family: str, source: str,
+                                           _seen: set[tuple[str,str]] | None = None) -> dict:
         """Withdraw a disproved structural source from the central memory and consumers."""
+        if _seen is None:
+            _seen=set()
+        marker=(family,source)
+        if marker in _seen:
+            return {'status':'already_withdrawn','source':source}
+        _seen.add(marker)
         report=self.meta_representations.withdraw_source(source)
         propagated_source=normalize(f'meta:{family}:{source}')
         for learner in (self.procedures,self.symbolic):
@@ -464,6 +495,49 @@ class Bot(DocumentLearningMixin, LanguageAcquisitionMixin, ConditionalLearningMi
                         row['support']=sum(int(v) for v in sources.values())
                         if not sources:
                             table.pop(key,None)
+        invalidated_actions=[]
+        for pattern,session in sorted(self.symbolic.sessions.items()):
+            if (not session.get('promoted') or
+                    propagated_source not in session.get('cross_modal_sources',())):
+                continue
+            direct=self.symbolic._fit(pattern)
+            if direct.get('status')=='operator_learned':
+                session.pop('cross_modal_schema',None)
+                session.pop('cross_modal_sources',None)
+                continue
+            self.symbolic._drop_from_analogy_indexes(pattern)
+            invalidated_actions.append(pattern)
+        for pattern in invalidated_actions:
+            self._remove_meta_source_from_consumers('symbolic','symbolic:'+pattern,_seen)
+        affected_skills=set();invalidated_procedures=[]
+        for pattern,session in sorted(self.procedures.sessions.items()):
+            if not session.get('promoted'):
+                continue
+            sources=set(session.get('cross_modal_sources',()))
+            for item in session.get('last_reports',()):
+                sources.update(item.get('meta_dependency_sources',()))
+            if propagated_source in sources:
+                invalidated_procedures.append(pattern)
+                for skill in session.get('output_skills',()):
+                    affected_skills.update(self.programs._invalidate(skill))
+        if affected_skills:
+            for pattern,session in sorted(self.procedures.sessions.items()):
+                if (session.get('promoted') and pattern not in invalidated_procedures and
+                        affected_skills.intersection(session.get('output_skills',()))):
+                    invalidated_procedures.append(pattern)
+        for pattern in invalidated_procedures:
+            session=self.procedures.sessions[pattern]
+            session['promoted']=False
+            session['last_reports']=[]
+            session['meta_dependency_schemas']=[]
+            session.pop('cross_modal_schema',None)
+            session.pop('cross_modal_sources',None)
+            self.procedures._register_semantics(pattern)
+            self._remove_meta_source_from_consumers('procedure','procedure:'+pattern,_seen)
+        if invalidated_actions or invalidated_procedures:
+            report=dict(report)
+            report['invalidated_actions']=invalidated_actions
+            report['invalidated_procedures']=invalidated_procedures
         return report
 
 

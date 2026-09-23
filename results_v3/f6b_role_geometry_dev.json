@@ -1,0 +1,1222 @@
+{
+  "preregistration": "prereg/F-6b-geometria-roles-observados.md",
+  "kind": "development_only",
+  "base_engine_tree": "40a82154d80b58be1f0838c2ed7d9634ab098d45",
+  "working_engine_changes": "M leobot/bot.py",
+  "variants": [
+    {
+      "name": "treatment",
+      "world_statuses": [
+        "raw_world_pending",
+        "raw_world_pending",
+        "raw_world_grounded"
+      ],
+      "meta_before_action": [
+        {
+          "kind": "role_set",
+          "input_arity": 3,
+          "roles": [
+            0,
+            2
+          ],
+          "sources": {
+            "raw_world:primitive_baeb0ab0805e7a11_a3": {
+              "family": "raw_world",
+              "support": 3
+            }
+          },
+          "families": {
+            "raw_world": 3
+          },
+          "support": 3,
+          "schema": "roles:3:0,2"
+        },
+        {
+          "kind": "role_cardinality",
+          "cardinality": 2,
+          "sources": {
+            "raw_world:primitive_baeb0ab0805e7a11_a3": {
+              "family": "raw_world",
+              "support": 3
+            }
+          },
+          "families": {
+            "raw_world": 3
+          },
+          "support": 3,
+          "schema": "card:2"
+        },
+        {
+          "kind": "role_topology",
+          "input_arity": 2,
+          "edges": [
+            [
+              0,
+              1
+            ]
+          ],
+          "sources": {
+            "raw_world:primitive_baeb0ab0805e7a11_a3": {
+              "family": "raw_world",
+              "support": 3
+            }
+          },
+          "families": {
+            "raw_world": 3
+          },
+          "support": 3,
+          "schema": "topo:2:0,1"
+        }
+      ],
+      "action_statuses": [
+        "pending_support",
+        "pending_support",
+        "operator_learned"
+      ],
+      "action_score": {
+        "correct": 128,
+        "total": 128,
+        "unsafe_without_precondition": 0,
+        "p50_ms": 0.03819,
+        "p95_ms": 0.04234,
+        "max_ms": 0.14782
+      },
+      "procedure_statuses": [
+        "procedure_pending",
+        "procedure_pending",
+        "procedure_unresolved",
+        "procedure_unresolved",
+        "procedure_learned"
+      ],
+      "procedure_score": {
+        "correct": 128,
+        "total": 128,
+        "wrong_confident": 0,
+        "p50_ms": 0.00954,
+        "p95_ms": 0.01186,
+        "max_ms": 0.06213
+      },
+      "persisted_bytes": 21501,
+      "counter_status": null,
+      "before_counter": {
+        "meta": [
+          {
+            "kind": "projection",
+            "input_arity": 3,
+            "mapping": [
+              0,
+              2
+            ],
+            "sources": {
+              "symbolic:permuta a <e0> desde <e1> hacia <e2>": {
+                "family": "symbolic",
+                "support": 2
+              }
+            },
+            "families": {
+              "symbolic": 2
+            },
+            "support": 2,
+            "schema": "proj:3:0,2"
+          },
+          {
+            "kind": "role_set",
+            "input_arity": 3,
+            "roles": [
+              0,
+              2
+            ],
+            "sources": {
+              "raw_world:primitive_baeb0ab0805e7a11_a3": {
+                "family": "raw_world",
+                "support": 3
+              },
+              "symbolic:permuta a <e0> desde <e1> hacia <e2>": {
+                "family": "symbolic",
+                "support": 2
+              }
+            },
+            "families": {
+              "raw_world": 3,
+              "symbolic": 2
+            },
+            "support": 5,
+            "schema": "roles:3:0,2"
+          },
+          {
+            "kind": "role_set",
+            "input_arity": 4,
+            "roles": [
+              0,
+              3
+            ],
+            "sources": {
+              "procedure:calcula mezcla f6dev": {
+                "family": "procedure",
+                "support": 5
+              }
+            },
+            "families": {
+              "procedure": 5
+            },
+            "support": 5,
+            "schema": "roles:4:0,3"
+          },
+          {
+            "kind": "role_cardinality",
+            "cardinality": 2,
+            "sources": {
+              "raw_world:primitive_baeb0ab0805e7a11_a3": {
+                "family": "raw_world",
+                "support": 3
+              },
+              "symbolic:permuta a <e0> desde <e1> hacia <e2>": {
+                "family": "symbolic",
+                "support": 2
+              },
+              "procedure:calcula mezcla f6dev": {
+                "family": "procedure",
+                "support": 5
+              }
+            },
+            "families": {
+              "raw_world": 3,
+              "symbolic": 2,
+              "procedure": 5
+            },
+            "support": 10,
+            "schema": "card:2"
+          },
+          {
+            "kind": "role_topology",
+            "input_arity": 2,
+            "edges": [
+              [
+                0,
+                1
+              ]
+            ],
+            "sources": {
+              "raw_world:primitive_baeb0ab0805e7a11_a3": {
+                "family": "raw_world",
+                "support": 3
+              }
+            },
+            "families": {
+              "raw_world": 3
+            },
+            "support": 3,
+            "schema": "topo:2:0,1"
+          },
+          {
+            "kind": "role_topology",
+            "input_arity": 3,
+            "edges": [
+              [
+                0,
+                1
+              ],
+              [
+                1,
+                2
+              ]
+            ],
+            "sources": {
+              "symbolic:permuta a <e0> desde <e1> hacia <e2>": {
+                "family": "symbolic",
+                "support": 2
+              }
+            },
+            "families": {
+              "symbolic": 2
+            },
+            "support": 2,
+            "schema": "topo:3:0,1;1,2"
+          }
+        ],
+        "active_actions": 1,
+        "c_correct": 128
+      },
+      "after_counter": {
+        "meta": [
+          {
+            "kind": "projection",
+            "input_arity": 3,
+            "mapping": [
+              0,
+              2
+            ],
+            "sources": {
+              "symbolic:permuta a <e0> desde <e1> hacia <e2>": {
+                "family": "symbolic",
+                "support": 2
+              }
+            },
+            "families": {
+              "symbolic": 2
+            },
+            "support": 2,
+            "schema": "proj:3:0,2"
+          },
+          {
+            "kind": "role_set",
+            "input_arity": 3,
+            "roles": [
+              0,
+              2
+            ],
+            "sources": {
+              "raw_world:primitive_baeb0ab0805e7a11_a3": {
+                "family": "raw_world",
+                "support": 3
+              },
+              "symbolic:permuta a <e0> desde <e1> hacia <e2>": {
+                "family": "symbolic",
+                "support": 2
+              }
+            },
+            "families": {
+              "raw_world": 3,
+              "symbolic": 2
+            },
+            "support": 5,
+            "schema": "roles:3:0,2"
+          },
+          {
+            "kind": "role_set",
+            "input_arity": 4,
+            "roles": [
+              0,
+              3
+            ],
+            "sources": {
+              "procedure:calcula mezcla f6dev": {
+                "family": "procedure",
+                "support": 5
+              }
+            },
+            "families": {
+              "procedure": 5
+            },
+            "support": 5,
+            "schema": "roles:4:0,3"
+          },
+          {
+            "kind": "role_cardinality",
+            "cardinality": 2,
+            "sources": {
+              "raw_world:primitive_baeb0ab0805e7a11_a3": {
+                "family": "raw_world",
+                "support": 3
+              },
+              "symbolic:permuta a <e0> desde <e1> hacia <e2>": {
+                "family": "symbolic",
+                "support": 2
+              },
+              "procedure:calcula mezcla f6dev": {
+                "family": "procedure",
+                "support": 5
+              }
+            },
+            "families": {
+              "raw_world": 3,
+              "symbolic": 2,
+              "procedure": 5
+            },
+            "support": 10,
+            "schema": "card:2"
+          },
+          {
+            "kind": "role_topology",
+            "input_arity": 2,
+            "edges": [
+              [
+                0,
+                1
+              ]
+            ],
+            "sources": {
+              "raw_world:primitive_baeb0ab0805e7a11_a3": {
+                "family": "raw_world",
+                "support": 3
+              }
+            },
+            "families": {
+              "raw_world": 3
+            },
+            "support": 3,
+            "schema": "topo:2:0,1"
+          },
+          {
+            "kind": "role_topology",
+            "input_arity": 3,
+            "edges": [
+              [
+                0,
+                1
+              ],
+              [
+                1,
+                2
+              ]
+            ],
+            "sources": {
+              "symbolic:permuta a <e0> desde <e1> hacia <e2>": {
+                "family": "symbolic",
+                "support": 2
+              }
+            },
+            "families": {
+              "symbolic": 2
+            },
+            "support": 2,
+            "schema": "topo:3:0,1;1,2"
+          }
+        ],
+        "active_actions": 1,
+        "c_correct": 128
+      },
+      "cost": {
+        "documents": 0.001806,
+        "world_observations": 0.000526,
+        "restart": 0.002048,
+        "action_acquisition": 0.001778,
+        "action_response": 0.009392,
+        "procedure_acquisition": 0.033973,
+        "procedure_response": 0.001626
+      },
+      "cpu_total_s": 0.051149
+    },
+    {
+      "name": "raw_only",
+      "world_statuses": [],
+      "meta_before_action": [],
+      "action_statuses": [
+        "pending_support",
+        "pending_support",
+        "pending_support"
+      ],
+      "action_score": {
+        "correct": 0,
+        "total": 128,
+        "unsafe_without_precondition": 0,
+        "p50_ms": 0.01453,
+        "p95_ms": 0.01582,
+        "max_ms": 0.02479
+      },
+      "procedure_statuses": [
+        "procedure_pending",
+        "procedure_pending",
+        "procedure_unresolved",
+        "procedure_unresolved",
+        "procedure_unresolved"
+      ],
+      "procedure_score": {
+        "correct": 0,
+        "total": 128,
+        "wrong_confident": 0,
+        "p50_ms": 0.00584,
+        "p95_ms": 0.0062,
+        "max_ms": 0.01258
+      },
+      "persisted_bytes": null,
+      "counter_status": null,
+      "before_counter": {
+        "meta": [],
+        "active_actions": 0,
+        "c_correct": 0
+      },
+      "after_counter": {
+        "meta": [],
+        "active_actions": 0,
+        "c_correct": 0
+      },
+      "cost": {
+        "documents": 0.000897,
+        "action_acquisition": 0.00159,
+        "action_response": 0.003744,
+        "procedure_acquisition": 0.00413,
+        "procedure_response": 0.001025
+      },
+      "cpu_total_s": 0.011386
+    },
+    {
+      "name": "world_only",
+      "world_statuses": [
+        "raw_world_unmatched",
+        "raw_world_unmatched",
+        "raw_world_unmatched"
+      ],
+      "meta_before_action": [],
+      "action_statuses": [
+        "pending_support",
+        "pending_support",
+        "pending_support"
+      ],
+      "action_score": {
+        "correct": 0,
+        "total": 128,
+        "unsafe_without_precondition": 0,
+        "p50_ms": 0.01465,
+        "p95_ms": 0.01545,
+        "max_ms": 0.05364
+      },
+      "procedure_statuses": [
+        "procedure_pending",
+        "procedure_pending",
+        "procedure_unresolved",
+        "procedure_unresolved",
+        "procedure_unresolved"
+      ],
+      "procedure_score": {
+        "correct": 0,
+        "total": 128,
+        "wrong_confident": 0,
+        "p50_ms": 0.00588,
+        "p95_ms": 0.00626,
+        "max_ms": 0.01351
+      },
+      "persisted_bytes": null,
+      "counter_status": null,
+      "before_counter": {
+        "meta": [],
+        "active_actions": 0,
+        "c_correct": 0
+      },
+      "after_counter": {
+        "meta": [],
+        "active_actions": 0,
+        "c_correct": 0
+      },
+      "cost": {
+        "world_observations": 8.1e-05,
+        "action_acquisition": 0.001697,
+        "action_response": 0.003795,
+        "procedure_acquisition": 0.004414,
+        "procedure_response": 0.001038
+      },
+      "cpu_total_s": 0.011025
+    },
+    {
+      "name": "same_information_no_meta",
+      "world_statuses": [
+        "raw_world_pending",
+        "raw_world_pending",
+        "raw_world_grounded"
+      ],
+      "meta_before_action": [
+        {
+          "kind": "role_set",
+          "input_arity": 3,
+          "roles": [
+            0,
+            2
+          ],
+          "sources": {
+            "raw_world:primitive_baeb0ab0805e7a11_a3": {
+              "family": "raw_world",
+              "support": 3
+            }
+          },
+          "families": {
+            "raw_world": 3
+          },
+          "support": 3,
+          "schema": "roles:3:0,2"
+        },
+        {
+          "kind": "role_cardinality",
+          "cardinality": 2,
+          "sources": {
+            "raw_world:primitive_baeb0ab0805e7a11_a3": {
+              "family": "raw_world",
+              "support": 3
+            }
+          },
+          "families": {
+            "raw_world": 3
+          },
+          "support": 3,
+          "schema": "card:2"
+        },
+        {
+          "kind": "role_topology",
+          "input_arity": 2,
+          "edges": [
+            [
+              0,
+              1
+            ]
+          ],
+          "sources": {
+            "raw_world:primitive_baeb0ab0805e7a11_a3": {
+              "family": "raw_world",
+              "support": 3
+            }
+          },
+          "families": {
+            "raw_world": 3
+          },
+          "support": 3,
+          "schema": "topo:2:0,1"
+        }
+      ],
+      "action_statuses": [
+        "pending_support",
+        "pending_support",
+        "pending_support"
+      ],
+      "action_score": {
+        "correct": 0,
+        "total": 128,
+        "unsafe_without_precondition": 0,
+        "p50_ms": 0.01516,
+        "p95_ms": 0.02483,
+        "max_ms": 0.11513
+      },
+      "procedure_statuses": [
+        "procedure_pending",
+        "procedure_pending",
+        "procedure_unresolved",
+        "procedure_unresolved",
+        "procedure_unresolved"
+      ],
+      "procedure_score": {
+        "correct": 0,
+        "total": 128,
+        "wrong_confident": 0,
+        "p50_ms": 0.00588,
+        "p95_ms": 0.00613,
+        "max_ms": 0.01274
+      },
+      "persisted_bytes": null,
+      "counter_status": null,
+      "before_counter": {
+        "meta": [],
+        "active_actions": 0,
+        "c_correct": 0
+      },
+      "after_counter": {
+        "meta": [],
+        "active_actions": 0,
+        "c_correct": 0
+      },
+      "cost": {
+        "documents": 0.000879,
+        "world_observations": 0.000365,
+        "action_acquisition": 0.00159,
+        "action_response": 0.004535,
+        "procedure_acquisition": 0.004322,
+        "procedure_response": 0.001035
+      },
+      "cpu_total_s": 0.012726
+    },
+    {
+      "name": "fresh",
+      "world_statuses": [],
+      "meta_before_action": [],
+      "action_statuses": [
+        "pending_support",
+        "pending_support",
+        "pending_support"
+      ],
+      "action_score": {
+        "correct": 0,
+        "total": 128,
+        "unsafe_without_precondition": 0,
+        "p50_ms": 0.01523,
+        "p95_ms": 0.0163,
+        "max_ms": 0.04842
+      },
+      "procedure_statuses": [
+        "procedure_pending",
+        "procedure_pending",
+        "procedure_unresolved",
+        "procedure_unresolved",
+        "procedure_unresolved"
+      ],
+      "procedure_score": {
+        "correct": 0,
+        "total": 128,
+        "wrong_confident": 0,
+        "p50_ms": 0.00575,
+        "p95_ms": 0.00617,
+        "max_ms": 0.01333
+      },
+      "persisted_bytes": null,
+      "counter_status": null,
+      "before_counter": {
+        "meta": [],
+        "active_actions": 0,
+        "c_correct": 0
+      },
+      "after_counter": {
+        "meta": [],
+        "active_actions": 0,
+        "c_correct": 0
+      },
+      "cost": {
+        "action_acquisition": 0.001572,
+        "action_response": 0.003952,
+        "procedure_acquisition": 0.004497,
+        "procedure_response": 0.001016
+      },
+      "cpu_total_s": 0.011037
+    },
+    {
+      "name": "direct_four",
+      "world_statuses": [],
+      "meta_before_action": [],
+      "action_statuses": [
+        "pending_support",
+        "pending_support",
+        "pending_support",
+        "operator_learned"
+      ],
+      "action_score": {
+        "correct": 128,
+        "total": 128,
+        "unsafe_without_precondition": 0,
+        "p50_ms": 0.03706,
+        "p95_ms": 0.05489,
+        "max_ms": 0.08058
+      },
+      "procedure_statuses": [
+        "procedure_pending",
+        "procedure_pending",
+        "procedure_unresolved",
+        "procedure_unresolved",
+        "procedure_unresolved"
+      ],
+      "procedure_score": {
+        "correct": 0,
+        "total": 128,
+        "wrong_confident": 0,
+        "p50_ms": 0.00585,
+        "p95_ms": 0.00607,
+        "max_ms": 0.0123
+      },
+      "persisted_bytes": null,
+      "counter_status": null,
+      "before_counter": {
+        "meta": [
+          {
+            "kind": "projection",
+            "input_arity": 3,
+            "mapping": [
+              0,
+              2
+            ],
+            "sources": {
+              "symbolic:permuta a <e0> desde <e1> hacia <e2>": {
+                "family": "symbolic",
+                "support": 3
+              }
+            },
+            "families": {
+              "symbolic": 3
+            },
+            "support": 3,
+            "schema": "proj:3:0,2"
+          },
+          {
+            "kind": "role_set",
+            "input_arity": 3,
+            "roles": [
+              0,
+              2
+            ],
+            "sources": {
+              "symbolic:permuta a <e0> desde <e1> hacia <e2>": {
+                "family": "symbolic",
+                "support": 3
+              }
+            },
+            "families": {
+              "symbolic": 3
+            },
+            "support": 3,
+            "schema": "roles:3:0,2"
+          },
+          {
+            "kind": "role_cardinality",
+            "cardinality": 2,
+            "sources": {
+              "symbolic:permuta a <e0> desde <e1> hacia <e2>": {
+                "family": "symbolic",
+                "support": 3
+              }
+            },
+            "families": {
+              "symbolic": 3
+            },
+            "support": 3,
+            "schema": "card:2"
+          }
+        ],
+        "active_actions": 1,
+        "c_correct": 0
+      },
+      "after_counter": {
+        "meta": [
+          {
+            "kind": "projection",
+            "input_arity": 3,
+            "mapping": [
+              0,
+              2
+            ],
+            "sources": {
+              "symbolic:permuta a <e0> desde <e1> hacia <e2>": {
+                "family": "symbolic",
+                "support": 3
+              }
+            },
+            "families": {
+              "symbolic": 3
+            },
+            "support": 3,
+            "schema": "proj:3:0,2"
+          },
+          {
+            "kind": "role_set",
+            "input_arity": 3,
+            "roles": [
+              0,
+              2
+            ],
+            "sources": {
+              "symbolic:permuta a <e0> desde <e1> hacia <e2>": {
+                "family": "symbolic",
+                "support": 3
+              }
+            },
+            "families": {
+              "symbolic": 3
+            },
+            "support": 3,
+            "schema": "roles:3:0,2"
+          },
+          {
+            "kind": "role_cardinality",
+            "cardinality": 2,
+            "sources": {
+              "symbolic:permuta a <e0> desde <e1> hacia <e2>": {
+                "family": "symbolic",
+                "support": 3
+              }
+            },
+            "families": {
+              "symbolic": 3
+            },
+            "support": 3,
+            "schema": "card:2"
+          }
+        ],
+        "active_actions": 1,
+        "c_correct": 0
+      },
+      "cost": {
+        "action_acquisition": 0.001861,
+        "action_response": 0.00927,
+        "procedure_acquisition": 0.00464,
+        "procedure_response": 0.001028
+      },
+      "cpu_total_s": 0.016799
+    },
+    {
+      "name": "counter_before",
+      "world_statuses": [
+        "raw_world_pending",
+        "raw_world_pending",
+        "raw_world_grounded"
+      ],
+      "meta_before_action": [
+        {
+          "kind": "role_set",
+          "input_arity": 3,
+          "roles": [
+            0,
+            2
+          ],
+          "sources": {
+            "raw_world:primitive_baeb0ab0805e7a11_a3": {
+              "family": "raw_world",
+              "support": 3
+            }
+          },
+          "families": {
+            "raw_world": 3
+          },
+          "support": 3,
+          "schema": "roles:3:0,2"
+        },
+        {
+          "kind": "role_cardinality",
+          "cardinality": 2,
+          "sources": {
+            "raw_world:primitive_baeb0ab0805e7a11_a3": {
+              "family": "raw_world",
+              "support": 3
+            }
+          },
+          "families": {
+            "raw_world": 3
+          },
+          "support": 3,
+          "schema": "card:2"
+        },
+        {
+          "kind": "role_topology",
+          "input_arity": 2,
+          "edges": [
+            [
+              0,
+              1
+            ]
+          ],
+          "sources": {
+            "raw_world:primitive_baeb0ab0805e7a11_a3": {
+              "family": "raw_world",
+              "support": 3
+            }
+          },
+          "families": {
+            "raw_world": 3
+          },
+          "support": 3,
+          "schema": "topo:2:0,1"
+        }
+      ],
+      "action_statuses": [
+        "pending_support",
+        "pending_support",
+        "pending_support"
+      ],
+      "action_score": {
+        "correct": 0,
+        "total": 128,
+        "unsafe_without_precondition": 0,
+        "p50_ms": 0.01494,
+        "p95_ms": 0.0158,
+        "max_ms": 0.02213
+      },
+      "procedure_statuses": [
+        "procedure_pending",
+        "procedure_pending",
+        "procedure_unresolved",
+        "procedure_unresolved",
+        "procedure_unresolved"
+      ],
+      "procedure_score": {
+        "correct": 0,
+        "total": 128,
+        "wrong_confident": 0,
+        "p50_ms": 0.00591,
+        "p95_ms": 0.00627,
+        "max_ms": 0.01277
+      },
+      "persisted_bytes": null,
+      "counter_status": "raw_world_conflict",
+      "before_counter": {
+        "meta": [],
+        "active_actions": 0,
+        "c_correct": 0
+      },
+      "after_counter": {
+        "meta": [],
+        "active_actions": 0,
+        "c_correct": 0
+      },
+      "cost": {
+        "documents": 0.000881,
+        "world_observations": 0.000348,
+        "counter_before": 0.000115,
+        "action_acquisition": 0.001557,
+        "action_response": 0.003853,
+        "procedure_acquisition": 0.004173,
+        "procedure_response": 0.001037
+      },
+      "cpu_total_s": 0.011964
+    },
+    {
+      "name": "counter_after",
+      "world_statuses": [
+        "raw_world_pending",
+        "raw_world_pending",
+        "raw_world_grounded"
+      ],
+      "meta_before_action": [
+        {
+          "kind": "role_set",
+          "input_arity": 3,
+          "roles": [
+            0,
+            2
+          ],
+          "sources": {
+            "raw_world:primitive_baeb0ab0805e7a11_a3": {
+              "family": "raw_world",
+              "support": 3
+            }
+          },
+          "families": {
+            "raw_world": 3
+          },
+          "support": 3,
+          "schema": "roles:3:0,2"
+        },
+        {
+          "kind": "role_cardinality",
+          "cardinality": 2,
+          "sources": {
+            "raw_world:primitive_baeb0ab0805e7a11_a3": {
+              "family": "raw_world",
+              "support": 3
+            }
+          },
+          "families": {
+            "raw_world": 3
+          },
+          "support": 3,
+          "schema": "card:2"
+        },
+        {
+          "kind": "role_topology",
+          "input_arity": 2,
+          "edges": [
+            [
+              0,
+              1
+            ]
+          ],
+          "sources": {
+            "raw_world:primitive_baeb0ab0805e7a11_a3": {
+              "family": "raw_world",
+              "support": 3
+            }
+          },
+          "families": {
+            "raw_world": 3
+          },
+          "support": 3,
+          "schema": "topo:2:0,1"
+        }
+      ],
+      "action_statuses": [
+        "pending_support",
+        "pending_support",
+        "operator_learned"
+      ],
+      "action_score": {
+        "correct": 128,
+        "total": 128,
+        "unsafe_without_precondition": 0,
+        "p50_ms": 0.03801,
+        "p95_ms": 0.04179,
+        "max_ms": 0.05623
+      },
+      "procedure_statuses": [
+        "procedure_pending",
+        "procedure_pending",
+        "procedure_unresolved",
+        "procedure_unresolved",
+        "procedure_learned"
+      ],
+      "procedure_score": {
+        "correct": 128,
+        "total": 128,
+        "wrong_confident": 0,
+        "p50_ms": 0.00947,
+        "p95_ms": 0.01152,
+        "max_ms": 0.06548
+      },
+      "persisted_bytes": null,
+      "counter_status": "raw_world_conflict",
+      "before_counter": {
+        "meta": [
+          {
+            "kind": "projection",
+            "input_arity": 3,
+            "mapping": [
+              0,
+              2
+            ],
+            "sources": {
+              "symbolic:permuta a <e0> desde <e1> hacia <e2>": {
+                "family": "symbolic",
+                "support": 2
+              }
+            },
+            "families": {
+              "symbolic": 2
+            },
+            "support": 2,
+            "schema": "proj:3:0,2"
+          },
+          {
+            "kind": "role_set",
+            "input_arity": 3,
+            "roles": [
+              0,
+              2
+            ],
+            "sources": {
+              "raw_world:primitive_baeb0ab0805e7a11_a3": {
+                "family": "raw_world",
+                "support": 3
+              },
+              "symbolic:permuta a <e0> desde <e1> hacia <e2>": {
+                "family": "symbolic",
+                "support": 2
+              }
+            },
+            "families": {
+              "raw_world": 3,
+              "symbolic": 2
+            },
+            "support": 5,
+            "schema": "roles:3:0,2"
+          },
+          {
+            "kind": "role_set",
+            "input_arity": 4,
+            "roles": [
+              0,
+              3
+            ],
+            "sources": {
+              "procedure:calcula mezcla f6dev": {
+                "family": "procedure",
+                "support": 5
+              }
+            },
+            "families": {
+              "procedure": 5
+            },
+            "support": 5,
+            "schema": "roles:4:0,3"
+          },
+          {
+            "kind": "role_cardinality",
+            "cardinality": 2,
+            "sources": {
+              "raw_world:primitive_baeb0ab0805e7a11_a3": {
+                "family": "raw_world",
+                "support": 3
+              },
+              "symbolic:permuta a <e0> desde <e1> hacia <e2>": {
+                "family": "symbolic",
+                "support": 2
+              },
+              "procedure:calcula mezcla f6dev": {
+                "family": "procedure",
+                "support": 5
+              }
+            },
+            "families": {
+              "raw_world": 3,
+              "symbolic": 2,
+              "procedure": 5
+            },
+            "support": 10,
+            "schema": "card:2"
+          },
+          {
+            "kind": "role_topology",
+            "input_arity": 2,
+            "edges": [
+              [
+                0,
+                1
+              ]
+            ],
+            "sources": {
+              "raw_world:primitive_baeb0ab0805e7a11_a3": {
+                "family": "raw_world",
+                "support": 3
+              }
+            },
+            "families": {
+              "raw_world": 3
+            },
+            "support": 3,
+            "schema": "topo:2:0,1"
+          },
+          {
+            "kind": "role_topology",
+            "input_arity": 3,
+            "edges": [
+              [
+                0,
+                1
+              ],
+              [
+                1,
+                2
+              ]
+            ],
+            "sources": {
+              "symbolic:permuta a <e0> desde <e1> hacia <e2>": {
+                "family": "symbolic",
+                "support": 2
+              }
+            },
+            "families": {
+              "symbolic": 2
+            },
+            "support": 2,
+            "schema": "topo:3:0,1;1,2"
+          }
+        ],
+        "active_actions": 1,
+        "c_correct": 128
+      },
+      "after_counter": {
+        "meta": [],
+        "active_actions": 0,
+        "c_correct": 0
+      },
+      "cost": {
+        "documents": 0.000934,
+        "world_observations": 0.000366,
+        "action_acquisition": 0.001569,
+        "action_response": 0.009202,
+        "procedure_acquisition": 0.032917,
+        "procedure_response": 0.001607,
+        "counter_after": 0.000204
+      },
+      "cpu_total_s": 0.046799
+    }
+  ],
+  "special_controls": {
+    "three_roles": {
+      "statuses": [
+        "raw_world_pending",
+        "raw_world_pending",
+        "raw_world_pending"
+      ],
+      "meta": []
+    },
+    "no_edge": {
+      "statuses": [
+        "raw_world_pending",
+        "raw_world_pending",
+        "raw_world_pending"
+      ],
+      "meta": []
+    },
+    "duplicate": {
+      "status": "raw_world_duplicate",
+      "observations": 3
+    },
+    "competing_relations": {
+      "promotions": 2,
+      "observation": "raw_world_ambiguous",
+      "meta": []
+    }
+  },
+  "gate_passed": true,
+  "wall_s": 0.196937,
+  "max_rss_kib": 26160
+}
