@@ -1,0 +1,63 @@
+{
+  "kind": "G31_dependency_functions",
+  "preregistration": "prereg/G-31-funciones-de-dependencia-por-conteo.md",
+  "development": false,
+  "engine_tree": "7d68100c08f3b7d8a6d7a6f6feb98199e95c74b0",
+  "engine_unchanged": true,
+  "engine_committed": true,
+  "seed": 2103971852,
+  "hashseed": "0",
+  "treebank_revision": "20adddbfcdd773c6dc97ba48ea11ca9364e74185",
+  "reserve_sentences": 300,
+  "reserve_words": 8732,
+  "treatment": {
+    "tag_accuracy": 0.9703,
+    "uas": 0.7411,
+    "las": 0.6964,
+    "label_given_head": 0.9397,
+    "f1": {
+      "nsubj": 0.5904,
+      "obj": 0.7017,
+      "obl": 0.5342,
+      "iobj": 0.0,
+      "amod": 0.8504
+    },
+    "p95_ms": 16.104
+  },
+  "ablation_no_lexical_marker": {
+    "tag_accuracy": 0.9703,
+    "uas": 0.7411,
+    "las": 0.6556,
+    "label_given_head": 0.8847,
+    "f1": {
+      "nsubj": 0.4735,
+      "obj": 0.5629,
+      "obl": 0.399,
+      "iobj": 0.0,
+      "amod": 0.8413
+    },
+    "p95_ms": 16.14
+  },
+  "shuffled_labels": {
+    "tag_accuracy": 0.9703,
+    "uas": 0.7411,
+    "las": 0.2492,
+    "label_given_head": 0.3363,
+    "f1": {
+      "nsubj": 0.0333,
+      "obj": 0.023,
+      "obl": 0.0558,
+      "iobj": 0.0,
+      "amod": 0.06
+    },
+    "p95_ms": 27.129
+  },
+  "fresh_unlabelled": true,
+  "restart_identical": true,
+  "education_cpu_s": 32.72,
+  "cpu_total_s": 88.91,
+  "wall_total_s": 88.94,
+  "max_rss_kib": 442332,
+  "budget_ok": true,
+  "gate_pass": false
+}

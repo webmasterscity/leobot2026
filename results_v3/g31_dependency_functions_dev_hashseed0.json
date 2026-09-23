@@ -1,0 +1,63 @@
+{
+  "kind": "G31_dependency_functions",
+  "preregistration": "prereg/G-31-funciones-de-dependencia-por-conteo.md",
+  "development": true,
+  "engine_tree": "7d68100c08f3b7d8a6d7a6f6feb98199e95c74b0",
+  "engine_unchanged": true,
+  "engine_committed": true,
+  "seed": null,
+  "hashseed": "0",
+  "treebank_revision": "20adddbfcdd773c6dc97ba48ea11ca9364e74185",
+  "reserve_sentences": 300,
+  "reserve_words": 8925,
+  "treatment": {
+    "tag_accuracy": 0.971,
+    "uas": 0.7369,
+    "las": 0.6929,
+    "label_given_head": 0.9402,
+    "f1": {
+      "nsubj": 0.5784,
+      "obj": 0.6949,
+      "obl": 0.526,
+      "iobj": 0.0,
+      "amod": 0.8021
+    },
+    "p95_ms": 15.86
+  },
+  "ablation_no_lexical_marker": {
+    "tag_accuracy": 0.971,
+    "uas": 0.7369,
+    "las": 0.6496,
+    "label_given_head": 0.8816,
+    "f1": {
+      "nsubj": 0.4606,
+      "obj": 0.5501,
+      "obl": 0.3837,
+      "iobj": 0.0,
+      "amod": 0.7915
+    },
+    "p95_ms": 16.198
+  },
+  "shuffled_labels": {
+    "tag_accuracy": 0.971,
+    "uas": 0.7369,
+    "las": 0.251,
+    "label_given_head": 0.3406,
+    "f1": {
+      "nsubj": 0.0073,
+      "obj": 0.0466,
+      "obl": 0.0716,
+      "iobj": 0.0,
+      "amod": 0.0514
+    },
+    "p95_ms": 28.767
+  },
+  "fresh_unlabelled": true,
+  "restart_identical": true,
+  "education_cpu_s": 33.51,
+  "cpu_total_s": 91.05,
+  "wall_total_s": 91.15,
+  "max_rss_kib": 441316,
+  "budget_ok": true,
+  "gate_pass": false
+}
