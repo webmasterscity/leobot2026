@@ -1,0 +1,51 @@
+{
+  "kind": "source_feasibility_only",
+  "engine_tree": "1f3187f2ced4c97364503187d074815f33612326",
+  "engine_unchanged": true,
+  "source_repository": "https://github.com/rudinger/defeasible-nli",
+  "source_commit": "c675ffc1b0eec5fa56287f08490da8ed43c1ecc5",
+  "source_license": "MIT",
+  "files": {
+    "defeasible-snli/train.jsonl": {
+      "bytes": 37467246,
+      "sha256": "aeb3302c9b828b01120bd0c952079c9be9b3aea13e5b4fd68e27335d83c71760"
+    },
+    "defeasible-atomic/train.jsonl": {
+      "bytes": 18784118,
+      "sha256": "d47f4852b634d3212c9beb442d9ba7f5348256b972aa662eede0e8b8fc98344e"
+    },
+    "defeasible-social/train.jsonl": {
+      "bytes": 44363770,
+      "sha256": "698347642b50d620ee451c6fe443f7e01731f2ee404ad7c83c2bf4f6e8b792af"
+    }
+  },
+  "families": {
+    "defeasible-snli": {
+      "rows": 93860,
+      "weakener": 44054,
+      "strengthener": 44620,
+      "impossible": 5186,
+      "groups_with_updates": 9572,
+      "groups_with_both_labels": 9507
+    },
+    "defeasible-atomic": {
+      "rows": 39036,
+      "weakener": 17340,
+      "strengthener": 17662,
+      "impossible": 4034,
+      "groups_with_updates": 6655,
+      "groups_with_both_labels": 6628
+    },
+    "defeasible-social": {
+      "rows": 80330,
+      "weakener": 37341,
+      "strengthener": 39675,
+      "impossible": 3314,
+      "groups_with_updates": 6416,
+      "groups_with_both_labels": 6410
+    }
+  },
+  "cpu_total_s": 3.937754,
+  "wall_total_s": 11.082968,
+  "max_rss_kib": 33692
+}

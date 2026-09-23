@@ -1,0 +1,21 @@
+# F-16 — transferencia de comparación relacional a actualizaciones humanas
+
+## Decisión y fuente
+
+F-15 detectó una contribución real, pero insuficiente, de comparar un cambio con otro campo: en 3 194 ediciones NLI de una oración, 68,7 % crudo con el contexto real frente a 63,6 % sin comparación y 61,2 % con el campo comparado barajado. **Ningún programa F-15 fue promovido**. El siguiente experimento pregunta si la descripción de la operación sirve para aprender **una estructura distinta** con menos etiquetas/candidatos, sin atribuirle respuestas NLI seguras.
+
+Fuente primaria [Defeasible-NLI](https://github.com/rudinger/defeasible-nli), commit `c675ffc1b0eec5fa56287f08490da8ed43c1ecc5`, licencia MIT. [Inventario fijado](../results_v3/f16_defeasible_inventory.json): SNLI 9 572 grupos con actualizaciones posibles, 9 507 con etiquetas `strengthener` y `weakener`; ATOMIC 6 655/6 628; SOCIAL 6 416/6 410. Son actualizaciones humanas de una premisa/hipótesis, no ediciones contrafactuales de una oración; SOCIAL carece de premisa y sirve de control estructural. Excluir las actualizaciones marcadas imposibles. Las fuentes train están fijadas por SHA-256; dev/test siguen intactos.
+
+## Experiencias y partición
+
+Por familia, agrupar por `SNLIPairId`, `AtomicEventId` o `SocialChemSituationUID` y ordenar grupos mediante `sha256(H0 + ':F-16:' + familia + ':' + id)`, H0 = `git rev-parse estable-E-1:leobot`. Enseñar hasta 1 000 grupos, reservar 200 para validación y 200 para desarrollo; nunca repartir actualizaciones hermanas entre lados. Probar curvas 100/250/500/1 000 grupos; mismo número de textos, etiquetas y CPU para tratamiento y fresco. El entorno proporciona la etiqueta humana de cada actualización. No usar fuentes dev/test oficiales salvo que el piloto pase la puerta y se congele su código.
+
+Una experiencia operacional contiene secuencias tipadas de información previa, afirmación evaluada y actualización; si falta un campo, representar ausencia de forma explícita. Un adaptador mecánico copia esos campos de JSONL, sin reescribir contenido ni agregar semántica. El objetivo es decidir si la actualización fortalece o debilita la afirmación. No enseñar los nombres de dominio ni respuestas en configuración.
+
+## Mecanismo y controles
+
+Piloto fuera de `leobot/`, Python estándar. Un DSL seguro genera comparaciones `igualdad(tramo,campo)` y otras relaciones tipadas posibles entre la actualización y cada campo disponible; adquiere contadores y programas con verificación por grupos, costo, presupuesto, promoción, dependencias y rollback. El MetaController candidato puede **priorizar**, nunca certificar, la operación seleccionada como dato en F-15; el verificador local decide la etiqueta. Fresco explora el mismo espacio sin ese prior. Máximo 32 descripciones por familia, sin `eval`, código Python generado, LLM, red ni GPU en la ruta operacional. Compilar índices para p95 ≤10 ms.
+
+Controles: tratamiento con prior F-15; fresco sin prior; misma información con prior inerte; clasificador léxico de `Update` con los mismos datos; mayoría por grupo; memoria exacta; campo comparado barajado dentro de igual familia y etiqueta; pares incompatibles, renombrado, contraevidencia, reinicio. SOCIAL prueba que la ausencia de premisa no cause conclusiones seguras por una comparación imposible. Mantener H0 antes/después. Medir macro exactitud, precisión/cobertura/intentos, acierto por etiqueta/familia, ejemplos y candidatos hasta igual calidad, CPU/RAM de adquisición, búsqueda, validación, consolidación e inferencia, p50/p95 y costo amortizado. Tres semillas si selección depende de orden.
+
+Puerta de desarrollo: SNLI ≥70 % macro exactitud, ATOMIC ≥65 %, SOCIAL ≥65 %; en cada familia precisión ≥80 % entre respuestas con cobertura ≥50 % y al menos cinco puntos de macro exactitud sobre clasificador léxico. Prior F-15 reduce ≥20 % etiquetas o descripciones exploradas para alcanzar **la misma calidad** en SNLI y ATOMIC sin aumentar CPU total; SOCIAL no debe empeorar ni afirmar relaciones sobre campo ausente. Barajado, incompatibles, corrección y reinicio pasan. CPU ≤120 s y pared ≤180 s por familia, RSS ≤256 MiB, p95 ≤10 ms, tope 1 s. Si solo reutiliza código o una pista de la fuente, registrar NO TRANSFERENCIA y no integrar.
