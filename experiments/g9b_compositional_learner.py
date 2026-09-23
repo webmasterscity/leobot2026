@@ -139,9 +139,17 @@ def educational_model(examples):
                 occurrence[(field, phrase)] += 1
                 positive[(field, value, phrase)] += item['fields'][field] == value
     rules = defaultdict(list)
+    stage = Counter()
     for (field, value, phrase), origins in sorted(candidates.items()):
         evidence = positive[(field, value, phrase)]
         total = occurrence[(field, phrase)]
+        dbs = len({db for db, _ in origins})
+        stage['candidates'] += 1
+        stage['positive_examples_ge3'] += evidence >= 3
+        stage['source_databases_ge2'] += dbs >= 2
+        stage['both_support_gates'] += evidence >= 3 and dbs >= 2
+        stage['both_and_precision'] += (evidence >= 3 and dbs >= 2 and
+                                        bool(total) and evidence / total >= .90)
         if (evidence < 3 or len({db for db, _ in origins}) < 2 or
             not total or evidence / total < .90):
             continue
@@ -154,7 +162,8 @@ def educational_model(examples):
     return {'counts': {field: dict(count) for field, count in counts.items()},
             'defaults': defaults, 'rules': dict(rules),
             'contrast_pairs': contrast_pairs, 'candidate_rules': len(candidates),
-            'promoted_rules': sum(map(len, rules.values()))}
+            'promoted_rules': sum(map(len, rules.values())),
+            'postgate_diagnostic': dict(stage)}
 
 
 def predict(model, question):
