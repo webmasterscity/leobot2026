@@ -3,16 +3,18 @@
 ## Estado de misión
 
 - Actualizado: 2026-09-22 · commit 51bf9cd (motor congelado)
-- Fases: A superada en su ensayo acotado · B en curso · C pendiente · D pendiente · E pendiente · F pendiente
+- Fases: A superada en su ensayo acotado · B en curso · C pendiente · D pendiente · E pendiente · F pendiente · G pendiente · H pendiente
 - Fase en curso: B — detectar una operación ausente e inventar una primitiva meta verificable
 - Último tag estable: `estable-A-1` · huella del motor: `644c55528a5fd97a8822f719f70e11cfae242783`
 - Pruebas: 528 pasan · 2 fallos esperados · 0 fallos · Python 3.12.3
 - Orden rápida: `timeout 40s env PYTHONHASHSEED=0 python3 -m unittest tests.test_meta_abstraction_a1 tests.test_meta_active_probe tests.test_v70 -q` · Orden completa: `timeout 90s env PYTHONHASHSEED=0 ./run_tests.sh --solo-pruebas`
-- Preregistro activo: ninguno
-- Diseños intentados en la fase en curso: ninguno
-- Siguiente paso concreto: preregistrar B-1 con una operación ausente del meta-DSL, un sustrato genérico y una segunda familia que pruebe reutilización sin cambiar el motor
+- Preregistro activo: `prereg/B-1-operador-agregado.md` · estado: diseñado; puerta de latencia: `prereg/performance-1-latencia.md`
+- Diseños intentados en la fase en curso: 1) operador agregado tipado → preregistrado, sin resultado
+- Siguiente paso concreto: fijar y medir la batería de latencia con 100 000 hechos sobre `estable-A-1`; registrar el tablero AGI; después implementar B-1
 - Bloqueos: ninguno
 - Lectura (seguimiento): 0/4 en la sonda visible `experiments/user_text_probe.py` al cerrar A; no es una reserva independiente
+- Tablero AGI (último tag): batería comparable pendiente · obstáculo principal para AGI: lenguaje español abierto (sonda visible 0/4)
+- Latencia (último tag): p50/p95 y RAM con 100 000 hechos pendientes; no se atribuye cumplimiento al tag A-1
 
 ## Historial de ciclos
 
@@ -21,6 +23,7 @@
 - 2026-09-22 · [A-1b](prereg/A-1b-controles-pendientes.md), preregistrado en `e4aa3e7` antes del evaluador `6badef1`. [Resultado A-1b](results_v3/a1b_controls.json): tres órdenes, vista dependiente retirada tras contraevidencia y reinicio; control intacto 160/160; tarea incompatible no promovió la pieza; señal invertida 160/160 antes y después de una observación real. Árbol del motor intacto. El controlador no pidió una prueba nueva en este caso porque su consulta activa solo cubre programas de rasgos, no piezas compiladas. Regresión completa: 528 pruebas, dos fallos esperados. Fase A superada **solo para la familia preregistrada**.
 - 2026-09-22 · Costo A-1 por orden: 64 ejemplos fuente y 64 de aplicación; adquisición fuente 0,10–0,14 s de CPU, aplicación 4,91–4,95 s, ablación de aplicación 6,42–6,53 s. La búsqueda medida en A-1b consumió 5,00–5,11 s de CPU, incluidos 0,049–0,050 s de búsqueda de la pieza y 0,0025–0,0035 s de validación temporal; estas cifras son anidadas y no se suman a la adquisición. Consolidación de piezas 0,043–0,045 s, guardado/carga 0,015–0,016 s, consulta de 160 casos 0,0022–0,0025 s, intervención 0,00007–0,00008 s. Se exploraron 813–862 combinaciones planas en tratamiento y 3389–3713 en la ablación; la pieza examinó 10 aplicaciones. Ambos ensayos juntos tardaron unos 168 s de pared; pico 27 764 KiB. La adquisición fuente se amortiza al reutilizar la pieza; no se cuenta solo el costo de responder.
 - 2026-09-22 · Sonda de lectura repetida antes del tag: 0/4 y código sin cambios. El ZIP y el PDF existentes son históricos; no se regeneran. Git es el registro de versiones.
+- 2026-09-22 · [B-1](prereg/B-1-operador-agregado.md) y [latencia fija](prereg/performance-1-latencia.md) preregistrados antes de código; sin resultado ni tag nuevo.
 
 ## Resultados negativos y trampas conocidas
 
