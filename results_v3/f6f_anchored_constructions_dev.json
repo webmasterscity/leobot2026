@@ -1,0 +1,153 @@
+{
+  "preregistration": "prereg/F-6f-construcciones-ancladas.md",
+  "kind": "development_only",
+  "engine_tree": "5a8feed574ce99aff2772bc7677e04f3458ed591",
+  "engine_unchanged": true,
+  "source_commit": "587fa698bec705efbefe72a235a6019c2b9b8b6c",
+  "source_hashes": {
+    "train/1triples/Airport_allSolutions.xml": {
+      "bytes": 188904,
+      "sha256": "8492281d1abf7006a5a3f10f3bfe3451049e7917755e449bc1b69341f7f757ae"
+    },
+    "train/1triples/Artist_allSolutions.xml": {
+      "bytes": 167823,
+      "sha256": "1586d97d8816c19ce923c4865a1afc66198c672a1ee5f84ff10abfb71dd7031b"
+    },
+    "train/1triples/Astronaut_allSolutions.xml": {
+      "bytes": 50580,
+      "sha256": "52896c6c368fbc500efc84829f462122a0ed7184b9287273cd8e83360a0ea6d4"
+    },
+    "train/1triples/Athlete_allSolutions.xml": {
+      "bytes": 173998,
+      "sha256": "ca016b57e1fc7761fca52886cd75f9ac70658d6287ca028d37bb428b269bcb6c"
+    },
+    "train/1triples/Building_allSolutions.xml": {
+      "bytes": 139120,
+      "sha256": "f61607510be9cf08264cfba1aa8694a4bbd4d45c0d52fb01cb001834dabc4d18"
+    },
+    "train/1triples/CelestialBody_allSolutions.xml": {
+      "bytes": 109646,
+      "sha256": "aad294130e43edf206bac9260b4c4bc56c38b2391562b19e567de470e03799c5"
+    },
+    "train/1triples/City_allSolutions.xml": {
+      "bytes": 152029,
+      "sha256": "ee3569b5e5b74892de83d1df9c7369470e1b0b058952c3382965f6a25667a95d"
+    },
+    "train/1triples/ComicsCharacter_allSolutions.xml": {
+      "bytes": 61658,
+      "sha256": "351c0bbb436c328e37887ed04cf1d272ddfcd530c035099db3a0c015e0fa51b8"
+    },
+    "train/1triples/Company_allSolutions.xml": {
+      "bytes": 53898,
+      "sha256": "6593d6084212d294a9ab34aaaacfcb2ed8817bb479e883e29989a54bff810060"
+    },
+    "train/1triples/Food_allSolutions.xml": {
+      "bytes": 154588,
+      "sha256": "9a11a0b3b76e39b01c1b28a3ea0b144bde46449c7fc7d4dd370a42dbf0f9f1dd"
+    },
+    "train/1triples/MeanOfTransportation_allSolutions.xml": {
+      "bytes": 182661,
+      "sha256": "d56a93d518a252640b37faa0a7cccb2117fb42444c937153deb7add71a1dc9d2"
+    },
+    "train/1triples/Monument_allSolutions.xml": {
+      "bytes": 30612,
+      "sha256": "6f02981840169fffaa8d94716b1d6a7e1b2317dca139dd0aa2aa643b516e4e17"
+    },
+    "train/1triples/Politician_allSolutions.xml": {
+      "bytes": 179037,
+      "sha256": "49dd46eae6dceca03d5481ff0796b8a432428abc604d0f0861a6f129bac5d3fa"
+    },
+    "train/1triples/SportsTeam_allSolutions.xml": {
+      "bytes": 144834,
+      "sha256": "5198405576f476b96a3dc1045012305921e56e931ef451c495bbc77ab6c6ed46"
+    },
+    "train/1triples/University_allSolutions.xml": {
+      "bytes": 42488,
+      "sha256": "1ed28e51c848aae790b075277af00cfcd2aebe1985b46b3005fcf6a6a9add356"
+    },
+    "train/1triples/WrittenWork_allSolutions.xml": {
+      "bytes": 133960,
+      "sha256": "87db4cd2480cb706758c267daed65823b0fbc7cea7943ec5ffb5cfaa1a957eb0"
+    }
+  },
+  "source_bytes": 1965836,
+  "partition": {
+    "source_rows": 3194,
+    "heldout_available": 128,
+    "teaching_available": 1913
+  },
+  "teaching_rows": 1913,
+  "heldout_rows": 128,
+  "learning": {
+    "episodes": 1913,
+    "unaligned": 648,
+    "candidate_surfaces": 777,
+    "ambiguous_surfaces": 26,
+    "promoted_surfaces": 55,
+    "construction_count": 55
+  },
+  "extraction_cpu_s": 0.00061,
+  "compilation_cpu_s": 0.135075,
+  "treatment": {
+    "total": 128,
+    "correct": 19,
+    "attempts": 35,
+    "wrong_confident": 16,
+    "precision": 0.542857,
+    "status": {
+      "unrecognized": 91,
+      "parsed": 35,
+      "ambiguous": 2
+    },
+    "p50_ms": 0.59896,
+    "p95_ms": 1.06324
+  },
+  "raw_control": {
+    "correct": 0,
+    "total": 128,
+    "train_cpu_s": 10.228404,
+    "dev_cpu_s": 0.924565
+  },
+  "memory_only": {
+    "total": 128,
+    "correct": 0,
+    "attempts": 0,
+    "wrong_confident": 0,
+    "precision": null,
+    "status": {
+      "unrecognized": 128
+    },
+    "p50_ms": 0.00034,
+    "p95_ms": 0.00044
+  },
+  "shuffled_learning": {
+    "episodes": 1913,
+    "unaligned": 648,
+    "candidate_surfaces": 777,
+    "ambiguous_surfaces": 151,
+    "promoted_surfaces": 3,
+    "construction_count": 3
+  },
+  "shuffled_control": {
+    "total": 128,
+    "correct": 0,
+    "attempts": 2,
+    "wrong_confident": 2,
+    "precision": 0.0,
+    "status": {
+      "unrecognized": 126,
+      "parsed": 2
+    },
+    "p50_ms": 0.03649,
+    "p95_ms": 0.05171
+  },
+  "restart_same": true,
+  "restart_cpu_s": 0.121085,
+  "saved_bytes": 339666,
+  "renamed_probe": true,
+  "correction_probe": true,
+  "gate_passed": false,
+  "cpu_total_s": 12.109799,
+  "wall_total_s": 19.536799,
+  "max_rss_kib": 42808
+}
