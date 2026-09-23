@@ -19,6 +19,7 @@ from .language_acquisition import LanguageAcquisitionMixin
 from .conditional_learning import ConditionalLearningMixin
 from .dialogue import DialogueMixin
 from .state_fields import plain_state, restore_plain_state
+from .sequence_learner import SequenceLearner
 
 
 class Bot(DocumentLearningMixin, LanguageAcquisitionMixin, ConditionalLearningMixin, DialogueMixin):
@@ -27,6 +28,7 @@ class Bot(DocumentLearningMixin, LanguageAcquisitionMixin, ConditionalLearningMi
                  raw_relation_max_arity: int = 8) -> None:
         self.kb, self.language, self.programs = (kb if kb is not None else KnowledgeBase()), Language(), ProgramLearner()
         self.procedures = ProcedureGrounder(self.programs)
+        self.sequence_learner = SequenceLearner()
         self.symbolic = SymbolicWorldLearner()
         self.concepts = ConceptGrounder(self.kb)
         self.schemas = OpenArityConceptGrounder(self.kb)
@@ -647,6 +649,16 @@ class Bot(DocumentLearningMixin, LanguageAcquisitionMixin, ConditionalLearningMi
                 stack.append((child, indent + 1))
         return {'text': '\n'.join(lines) or 'No hay una prueba positiva ni negativa.', 'status': 'trace'}
 
+    def observe_sequence_example(self, source, target) -> dict:
+        """Teach one data pair; rules are synthesized during consolidation."""
+        return self.sequence_learner.observe(source, target)
+
+    def consolidate_sequence_learning(self) -> dict:
+        return self.sequence_learner.consolidate()
+
+    def predict_sequence(self, source) -> dict:
+        return self.sequence_learner.predict(source)
+
     def as_dict(self) -> dict:
         data = {
             'version': 1,
@@ -659,6 +671,7 @@ class Bot(DocumentLearningMixin, LanguageAcquisitionMixin, ConditionalLearningMi
             'raw_relation_max_arity': self.raw_relation_max_arity,
             'programs': self.programs.as_dict(),
             'procedures': self.procedures.as_dict(),
+            'sequence_learner': self.sequence_learner.as_dict(),
             'symbolic': self.symbolic.as_dict(),
             'concepts': self.concepts.as_dict(),
             'schemas': self.schemas.as_dict(),
@@ -706,6 +719,7 @@ class Bot(DocumentLearningMixin, LanguageAcquisitionMixin, ConditionalLearningMi
         bot.language = Language.from_dict(data['language'])
         bot.programs = ProgramLearner.from_dict(data['programs'])
         bot.procedures = ProcedureGrounder.from_dict(data.get('procedures', {}), bot.programs)
+        bot.sequence_learner = SequenceLearner.from_dict(data.get('sequence_learner', {}))
         bot.symbolic = SymbolicWorldLearner.from_dict(data.get('symbolic', {}))
         bot.concepts = ConceptGrounder.from_dict(data.get('concepts', {}), bot.kb)
         bot.schemas = OpenArityConceptGrounder.from_dict(data.get('schemas', {}), bot.kb)
