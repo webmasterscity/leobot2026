@@ -1,0 +1,5 @@
+{"kind":"G30 development ablation of tree features (clean visible dev, 300 cases; syntax from UD AnCora train; 2000 MLQA reading examples)",
+ "engine_base":"estable-G-3 (3b13f49b) plus uncommitted G-30 tree features, reverted after this test",
+ "f1":{"no_tree_features":0.2221,"attach":0.2148,"tree_full_subtree":0.1971,"root_tag":0.2019,"head_tag":0.2042,"attach_plus_tree":0.1988,"all_tree_features":0.1936},
+ "shuffled_syntax_all_features":0.1878,
+ "reading":"every tree feature lowered F1 when added to the count-based span scorer; G-30 hypothesis refuted in development, reserve not spent"}
