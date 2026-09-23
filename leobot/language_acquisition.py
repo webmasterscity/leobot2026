@@ -12,10 +12,177 @@ from difflib import SequenceMatcher
 from itertools import combinations, permutations
 
 from .core import Atom
-from .language import normalize
+from .language import Language, normalize
 
 
 class LanguageAcquisitionMixin:
+    @staticmethod
+    def _grounding_probe_hypotheses(state: dict) -> list[dict]:
+        """Decode only bounded, aligned assertion candidates from a version space."""
+        possible=state.get('possible',())
+        if not 2 <= len(possible) <= 8:
+            return []
+        decoded=[]; generic=None
+        for key in possible:
+            item=json.loads(key)
+            semantic=item['semantic']; surface=item['surface']
+            arity=semantic.get('arity')
+            order=[int(x) for x in re.findall(r'<a(\d+)>',surface)]
+            if (semantic.get('act')!='assert' or not isinstance(arity,int)
+                    or not 1 <= arity <= 4 or sorted(order)!=list(range(arity))):
+                return []
+            shape=re.sub(r'<a\d+>','<slot>',surface)
+            if generic is not None and shape!=generic:
+                return []
+            generic=shape
+            decoded.append({'key':key,'pred':semantic['pred'],'surface':surface,
+                            'arity':arity,'order':order})
+        return decoded
+
+    def _grounding_probe_options(self, state: dict, *, max_rows: int = 128,
+                                 max_options: int = 256) -> list[dict]:
+        """Use indexed facts to find candidate utterances with explicit truth values."""
+        hyps=self._grounding_probe_hypotheses(state)
+        if not hyps:
+            return []
+        observed={normalize(obs['text']) for obs in state.get('observations',())}
+        seen=set(); options=[]
+        for source in hyps:
+            variables=tuple(f'?g{i}' for i in range(source['arity']))
+            base=Atom(source['pred'],variables)
+            for sign in (base,base.opposite()):
+                for index,fact in enumerate(self.kb.matches(sign)):
+                    if index>=max_rows:
+                        break
+                    values=tuple(fact['atom'].args[i] for i in source['order'])
+                    text=re.sub(r'<a(\d+)>',
+                                lambda match:fact['atom'].args[int(match.group(1))],
+                                source['surface'])
+                    text=normalize(text)
+                    if text in observed or text in seen:
+                        continue
+                    seen.add(text)
+                    judgments={}; frames={}; valid=True
+                    for hyp in hyps:
+                        args=['']*hyp['arity']
+                        for slot,value in zip(hyp['order'],values):
+                            args[slot]=value
+                        atom=Atom(hyp['pred'],tuple(args))
+                        positive=self.kb.contains(atom)
+                        negative=self.kb.contains(atom.opposite())
+                        if positive==negative:
+                            valid=False; break
+                        frame={'act':'assert','pred':hyp['pred'],'args':args}
+                        if self._grounding_signature(text,frame) is None:
+                            valid=False; break
+                        judgments[hyp['key']]=positive
+                        frames[hyp['key']]=frame
+                    if valid:
+                        options.append({'text':text,'judgments':judgments,'frames':frames,
+                                        'cost':max(1,len(text.split()))})
+                    if len(options)>=max_options:
+                        break
+                if len(options)>=max_options:
+                    break
+            if len(options)>=max_options:
+                break
+        return sorted(options,key=lambda row:row['text'])
+
+    def propose_grounding_probe(self) -> dict:
+        """Ask about one real utterance; do not infer or invent its answer."""
+        for cluster,state in sorted(self.grounding_hypotheses.items(),
+                                    key=lambda item:(-len(item[1].get('observations',())),item[0])):
+            if state.get('conflict') or state.get('promoted'):
+                continue
+            options=self._grounding_probe_options(state)
+            if not options:
+                continue
+            hyps=state.get('possible',())
+            actions=[]
+            for option in options:
+                groups=[]
+                for outcome in (True,False):
+                    groups.append([key for key in hyps if option['judgments'][key]==outcome])
+                actions.append({'groups':groups,'cost':option['cost'],
+                                'label':option['text']})
+            selected=self.meta_controller.select_epistemic_action(hyps,actions)
+            if selected.get('status')!='epistemic_action':
+                continue
+            option=options[selected['chosen_index']]
+            probe_id=hashlib.sha256((cluster+'\0'+option['text']).encode()).hexdigest()[:20]
+            state['pending_probe']={'id':probe_id,'text':option['text'],
+                                    'judgments':option['judgments'],
+                                    'frames':option['frames'],'answer':None}
+            return {'status':'epistemic_action','probe_id':probe_id,
+                    'probe_text':option['text'],
+                    'question':f'¿Es cierto que {option["text"]}?',
+                    'possible':len(hyps),'offered':len(options),
+                    'info_gain_bits':selected['chosen']['info_gain_bits'],
+                    'value_per_cost':selected['chosen']['value_per_cost']}
+        return {'status':'no_epistemic_action','reason':'no_safe_discriminating_probe'}
+
+    def observe_grounding_probe(self, probe_id: str, answer: bool) -> dict:
+        """Apply an environment answer to the exact pending language probe."""
+        if type(answer) is not bool:
+            raise ValueError('La respuesta a la prueba debe ser sí o no.')
+        for cluster,state in self.grounding_hypotheses.items():
+            pending=state.get('pending_probe') or {}
+            if pending.get('id')!=probe_id:
+                continue
+            if state.get('conflict'):
+                return {'status':'grounding_conflict','possible':0}
+            previous=pending.get('answer')
+            if previous is not None and previous!=answer:
+                promoted=state.get('promoted_examples',())
+                if promoted:
+                    keys={json.dumps({'text':row['text'],'frame':row['frame']},
+                                     sort_keys=True,ensure_ascii=False) for row in promoted}
+                    remaining=[ex for ex in self.language.examples
+                               if ex.get('source')!='grounded_induction' or
+                               json.dumps({'text':ex['text'],'frame':ex['frame']},
+                                          sort_keys=True,ensure_ascii=False) not in keys]
+                    self.language=Language.from_dict({'examples':remaining})
+                state['promoted_examples']=[]
+                state['promoted']=False; state['conflict']=True; state['possible']=[]
+                state.setdefault('probe_observations',[]).append(
+                    {'id':probe_id,'text':pending['text'],'answer':answer,'contradicts':previous})
+                return {'status':'grounding_conflict','possible':0,'withdrawn':len(promoted)}
+            if previous is not None:
+                return {'status':'grounding_promoted' if state.get('promoted') else 'grounding_pending',
+                        'possible':len(state.get('possible',()))}
+            for key,frame in pending['frames'].items():
+                atom=Atom(frame['pred'],tuple(frame['args']))
+                positive=self.kb.contains(atom)
+                negative=self.kb.contains(atom.opposite())
+                if positive==negative or positive!=pending['judgments'][key]:
+                    return {'status':'no_epistemic_action','reason':'background_changed'}
+            pending['answer']=answer
+            state.setdefault('probe_observations',[]).append(
+                {'id':probe_id,'text':pending['text'],'answer':answer})
+            state['possible']=[key for key in state['possible']
+                               if pending['judgments'][key]==answer]
+            if len(state['possible'])!=1 or len(state.get('observations',()))<self.grounding_min_support:
+                return {'status':'grounding_pending','possible':len(state['possible'])}
+            winner=state['possible'][0]
+            language=Language.from_dict(self.language.as_dict())
+            added=[]
+            try:
+                for observation in state['observations']:
+                    detail=observation['candidates'].get(winner)
+                    if detail is None:
+                        continue
+                    if language.teach(observation['text'],detail['frame'],
+                                      'grounded_induction',detail['evidence']):
+                        added.append({'text':observation['text'],'frame':detail['frame']})
+            except ValueError:
+                state['conflict']=True; state['possible']=[]
+                return {'status':'grounding_conflict','possible':0}
+            self.language=language
+            state['promoted_examples']=added; state['promoted']=True
+            return {'status':'grounding_promoted','possible':1,'support':len(state['observations']),
+                    'construction_count':len(added),'cluster':cluster}
+        return {'status':'no_epistemic_action','reason':'unknown_probe'}
+
     @staticmethod
     def _question_like(text: str) -> bool:
         norm = normalize(text)
