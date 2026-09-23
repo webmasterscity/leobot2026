@@ -1,0 +1,5858 @@
+{
+  "kind": "G28_reading_alignment",
+  "preregistration": "prereg/G-28-memoria-de-enunciados-y-respuesta-por-alineacion.md",
+  "development": false,
+  "engine_tree": "aaea9a1a6c4b36014d35153dad208316dc92d43d",
+  "engine_unchanged": true,
+  "engine_committed": true,
+  "seed": 2867501594,
+  "hashseed": "0",
+  "education": 2000,
+  "education_skipped": 27,
+  "reserve": 200,
+  "reserve_context_leak": 0,
+  "threshold": 0.2304,
+  "treatment": {
+    "n": 200,
+    "answered": 182,
+    "exact": 0.11,
+    "f1": 0.218
+  },
+  "ablation": {
+    "n": 200,
+    "answered": 167,
+    "exact": 0.0,
+    "f1": 0.1071
+  },
+  "shuffled": {
+    "n": 200,
+    "answered": 194,
+    "exact": 0.025,
+    "f1": 0.0813
+  },
+  "renamed": {
+    "n": 200,
+    "answered": 191,
+    "exact": 0.14,
+    "f1": 0.2316
+  },
+  "joint": {
+    "n": 200,
+    "answered": 178,
+    "exact": 0.095,
+    "f1": 0.1838
+  },
+  "fresh_answers": 0,
+  "honest_abstention": 0.95,
+  "restart_identical": true,
+  "latency_single_p95_ms": 5.5906,
+  "latency_joint_p95_ms": 30.4539,
+  "education_cpu_s": 6.217,
+  "cpu_total_s": 60.032,
+  "wall_total_s": 60.064,
+  "max_rss_kib": 126924,
+  "budget_ok": true,
+  "gate_pass": false,
+  "rows": [
+    {
+      "id": "26745e8c60c0cc29e1d4070c4435ddc11daf9866",
+      "question": "¿Qué grupo de personas nunca representaron un gran número?",
+      "answers": [
+        "latinos"
+      ],
+      "answer": "",
+      "status": "unknown",
+      "answered": false,
+      "exact": false,
+      "f1": 0.0,
+      "ablation": {
+        "answered": false,
+        "exact": false,
+        "f1": 0.0
+      },
+      "shuffled": {
+        "answered": true,
+        "exact": true,
+        "f1": 1.0
+      },
+      "fresh_answered": false,
+      "honest_abstained": true,
+      "renamed": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      }
+    },
+    {
+      "id": "e3d6e003745cb191af7c484b9bb527f1744091ab",
+      "question": "¿Cuál es el animal oficial de Canadá?",
+      "answers": [
+        "La cimera"
+      ],
+      "answer": "Canadá",
+      "status": "literal",
+      "answered": true,
+      "exact": false,
+      "f1": 0.0,
+      "ablation": {
+        "answered": false,
+        "exact": false,
+        "f1": 0.0
+      },
+      "shuffled": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "fresh_answered": false,
+      "honest_abstained": true,
+      "renamed": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      }
+    },
+    {
+      "id": "784f6f3cacefbebc13db1f6e6f3c1d5325d59a22",
+      "question": "¿Quién hizo los cálculos iniciales?",
+      "answers": [
+        "Wilhelm Launhardt"
+      ],
+      "answer": "",
+      "status": "unrecognized",
+      "answered": false,
+      "exact": false,
+      "f1": 0.0,
+      "ablation": {
+        "answered": false,
+        "exact": false,
+        "f1": 0.0
+      },
+      "shuffled": {
+        "answered": false,
+        "exact": false,
+        "f1": 0.0
+      },
+      "fresh_answered": false,
+      "honest_abstained": true,
+      "renamed": {
+        "answered": false,
+        "exact": false,
+        "f1": 0.0
+      }
+    },
+    {
+      "id": "91d1d60b4a6b5c2a631e0d384e5fa7d764afac7b",
+      "question": "¿Qué fue diferente en la última fuga de Tubmans?",
+      "answers": [
+        "sin sus hermanos.[35]​"
+      ],
+      "answer": "madre",
+      "status": "literal",
+      "answered": true,
+      "exact": false,
+      "f1": 0.0,
+      "ablation": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "shuffled": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "fresh_answered": false,
+      "honest_abstained": true,
+      "renamed": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      }
+    },
+    {
+      "id": "a3c7700568bf10f984c4a33c5f2b30908d8f821b",
+      "question": "Tras haberse lesionado en quinto grado y haber roto su ilusión de convertirse en jugador de fútbol, ¿qué profesión empezó a ejercer Lee?",
+      "answers": [
+        "actuar"
+      ],
+      "answer": "clase",
+      "status": "literal",
+      "answered": true,
+      "exact": false,
+      "f1": 0.0,
+      "ablation": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "shuffled": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "fresh_answered": false,
+      "honest_abstained": true,
+      "renamed": {
+        "answered": false,
+        "exact": false,
+        "f1": 0.0
+      }
+    },
+    {
+      "id": "84963273129122b0d40caa05c83295fda00e6157",
+      "question": "¿Qué Unión colaboró estrechamente con la FAO para combatir la crisis alimentaria mundial?",
+      "answers": [
+        "Unión Europea"
+      ],
+      "answer": "la Seguridad Alimentaria",
+      "status": "literal",
+      "answered": true,
+      "exact": false,
+      "f1": 0.0,
+      "ablation": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "shuffled": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "fresh_answered": false,
+      "honest_abstained": true,
+      "renamed": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      }
+    },
+    {
+      "id": "71a964d0d32692e7f4b4eab3d215c567d404dd35",
+      "question": "¿Cuándo adquirió Nathaniel el viñedo?",
+      "answers": [
+        "en 1853"
+      ],
+      "answer": "1868",
+      "status": "literal",
+      "answered": true,
+      "exact": false,
+      "f1": 0.0,
+      "ablation": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "shuffled": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "fresh_answered": false,
+      "honest_abstained": true,
+      "renamed": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.6667
+      }
+    },
+    {
+      "id": "be9cc99d90072948f8e3bf9e8cc143c3fd498da3",
+      "question": "¿Por qué se conoce la biblioteca javascript? ",
+      "answers": [
+        "creación de poderosas páginas web dinámicas y aplicaciones web."
+      ],
+      "answer": "JavaScript",
+      "status": "literal",
+      "answered": true,
+      "exact": false,
+      "f1": 0.0,
+      "ablation": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.2
+      },
+      "shuffled": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "fresh_answered": false,
+      "honest_abstained": true,
+      "renamed": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      }
+    },
+    {
+      "id": "8a180f4ebe6ee6a6f4e423270db1f5959d031353",
+      "question": "¿Qué libro escribió Berners-Lee?",
+      "answers": [
+        "Weaving the Web"
+      ],
+      "answer": "Lee fue unir hipertexto e Internet",
+      "status": "literal",
+      "answered": true,
+      "exact": false,
+      "f1": 0.0,
+      "ablation": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "shuffled": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "fresh_answered": false,
+      "honest_abstained": true,
+      "renamed": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      }
+    },
+    {
+      "id": "ddc785a336861ea5d57c0212a537c956e67db41b",
+      "question": "¿En qué estado se encuentra Haddon Heights High School?",
+      "answers": [
+        "Nueva Jersey"
+      ],
+      "answer": "Fisher creció en Lawnside",
+      "status": "literal",
+      "answered": true,
+      "exact": false,
+      "f1": 0.0,
+      "ablation": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "shuffled": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "fresh_answered": false,
+      "honest_abstained": true,
+      "renamed": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      }
+    },
+    {
+      "id": "6f0caef74de9e513b5ea33545f64b135e8159dda",
+      "question": "¿En qué año fue creado finalmente?",
+      "answers": [
+        "2006"
+      ],
+      "answer": "BarCamp NYC por John Resig",
+      "status": "literal",
+      "answered": true,
+      "exact": false,
+      "f1": 0.0,
+      "ablation": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "shuffled": {
+        "answered": true,
+        "exact": true,
+        "f1": 1.0
+      },
+      "fresh_answered": false,
+      "honest_abstained": true,
+      "renamed": {
+        "answered": true,
+        "exact": true,
+        "f1": 1.0
+      }
+    },
+    {
+      "id": "5a7e29a91acf14928eba69dc916a42b574cbcb43",
+      "question": "¿Por qué Osborne no fue a la iglesia durante casi tres años?",
+      "answers": [
+        "debido a una larga enfermedad"
+      ],
+      "answer": "familia Putnam",
+      "status": "literal",
+      "answered": true,
+      "exact": false,
+      "f1": 0.0,
+      "ablation": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "shuffled": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "fresh_answered": false,
+      "honest_abstained": true,
+      "renamed": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      }
+    },
+    {
+      "id": "4ac591343b3c3fd6aacd110b530081d87f405945",
+      "question": "¿Qué usa el pez para causar una picadura?",
+      "answers": [
+        "un pico de dos puntas"
+      ],
+      "answer": "infligir una dolorosa picadura",
+      "status": "literal",
+      "answered": true,
+      "exact": false,
+      "f1": 0.0,
+      "ablation": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "shuffled": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.3333
+      },
+      "fresh_answered": false,
+      "honest_abstained": true,
+      "renamed": {
+        "answered": true,
+        "exact": true,
+        "f1": 1.0
+      }
+    },
+    {
+      "id": "cd0c18f66e5d0b723f547a242a26694f4f64050c",
+      "question": "¿Cuántas tropas británicas formaron parte de la armada?",
+      "answers": [
+        "3.029"
+      ],
+      "answer": "3",
+      "status": "literal",
+      "answered": true,
+      "exact": false,
+      "f1": 0.6667,
+      "ablation": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "shuffled": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "fresh_answered": false,
+      "honest_abstained": true,
+      "renamed": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      }
+    },
+    {
+      "id": "eedc694ea7e79f1733bc3bdc57bcdd873d281863",
+      "question": "Qué título obtuvo Kota Ibushi en el IWGP?",
+      "answers": [
+        "IWGP Junior Heavyweight Tag Team Championship"
+      ],
+      "answer": "Heavyweight Tag Team Championship",
+      "status": "literal",
+      "answered": true,
+      "exact": false,
+      "f1": 0.8,
+      "ablation": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.6667
+      },
+      "shuffled": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.6667
+      },
+      "fresh_answered": false,
+      "honest_abstained": true,
+      "renamed": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.8
+      }
+    },
+    {
+      "id": "8a8d705f1e7fc52a4c90ee3b7d2ab9ca27cee233",
+      "question": "¿Cómo se llama una moneda que no ha circulado nunca?",
+      "answers": [
+        "monedas conmemorativas"
+      ],
+      "answer": "oro",
+      "status": "literal",
+      "answered": true,
+      "exact": false,
+      "f1": 0.0,
+      "ablation": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.4
+      },
+      "shuffled": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "fresh_answered": false,
+      "honest_abstained": true,
+      "renamed": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      }
+    },
+    {
+      "id": "6ef30360b8e57ccf28516be8d5b22d729f042f10",
+      "question": "¿Qué están investigando los científicos?",
+      "answers": [
+        "cómo y por qué se producen las protuberancias solares."
+      ],
+      "answer": "protuberancias solares",
+      "status": "literal",
+      "answered": true,
+      "exact": false,
+      "f1": 0.3636,
+      "ablation": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.5
+      },
+      "shuffled": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.2
+      },
+      "fresh_answered": false,
+      "honest_abstained": true,
+      "renamed": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      }
+    },
+    {
+      "id": "7e30c453ed3fb010b519036711e71e78014f0c4c",
+      "question": "¿Qué tipo de perro tenía la reina Victoria?",
+      "answers": [
+        "El pomerania"
+      ],
+      "answer": "un Spitz Alemán",
+      "status": "literal",
+      "answered": true,
+      "exact": false,
+      "f1": 0.0,
+      "ablation": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "shuffled": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "fresh_answered": false,
+      "honest_abstained": true,
+      "renamed": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      }
+    },
+    {
+      "id": "d75c37f8d03e0a70df976c111b06d921ec2fd63d",
+      "question": "¿Come se llama el fenómeno en que las células se hacen importantes cambios?",
+      "answers": [
+        "modificación postraduccional"
+      ],
+      "answer": "base",
+      "status": "literal",
+      "answered": true,
+      "exact": false,
+      "f1": 0.0,
+      "ablation": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "shuffled": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "fresh_answered": false,
+      "honest_abstained": true,
+      "renamed": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      }
+    },
+    {
+      "id": "bacd3cadf403117bd324b51a35613be80b5f7fd4",
+      "question": "¿Por qué acabó aceptando Australia convictos del Reino Unido?",
+      "answers": [
+        "la gran escasez de fuentes de trabajo"
+      ],
+      "answer": "Tasmania pero nunca del Reino Unido",
+      "status": "literal",
+      "answered": true,
+      "exact": false,
+      "f1": 0.0,
+      "ablation": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "shuffled": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "fresh_answered": false,
+      "honest_abstained": true,
+      "renamed": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      }
+    },
+    {
+      "id": "60ee75c50c8472be7cce1a24ee2cd7409ee4dd52",
+      "question": "¿Cómo se llama un tipo de hilo que forma parte del apio?",
+      "answers": [
+        "colénquima."
+      ],
+      "answer": "soporte plástico",
+      "status": "literal",
+      "answered": true,
+      "exact": false,
+      "f1": 0.0,
+      "ablation": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "shuffled": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "fresh_answered": false,
+      "honest_abstained": false,
+      "renamed": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      }
+    },
+    {
+      "id": "ae47097e738b2d18021d5ca2b1121bacdc5a8c07",
+      "question": "¿Cómo se llamaba el tag team de Austin?",
+      "answers": [
+        "The Hollywood Blonds."
+      ],
+      "answer": "1993",
+      "status": "literal",
+      "answered": true,
+      "exact": false,
+      "f1": 0.0,
+      "ablation": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "shuffled": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.8
+      },
+      "fresh_answered": false,
+      "honest_abstained": true,
+      "renamed": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      }
+    },
+    {
+      "id": "569666f4dc3983dab5624e989212c1d9d0cd1798",
+      "question": "Una infección de moscas de la arena ¿desaparece con el tiempo?",
+      "answers": [
+        "queda infectada de por vida"
+      ],
+      "answer": "",
+      "status": "unknown",
+      "answered": false,
+      "exact": false,
+      "f1": 0.0,
+      "ablation": {
+        "answered": false,
+        "exact": false,
+        "f1": 0.0
+      },
+      "shuffled": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "fresh_answered": false,
+      "honest_abstained": true,
+      "renamed": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      }
+    },
+    {
+      "id": "28ad6604aff1b23701637cc7b4e27456f47c609d",
+      "question": "¿Cuándo tuvo su primer hijo el líder del pelotón?",
+      "answers": [
+        "1911,"
+      ],
+      "answer": "en Juzhirbulan",
+      "status": "literal",
+      "answered": true,
+      "exact": false,
+      "f1": 0.0,
+      "ablation": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "shuffled": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "fresh_answered": false,
+      "honest_abstained": false,
+      "renamed": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      }
+    },
+    {
+      "id": "ae79eb0b09708498faa98555dde2a357f86ddb20",
+      "question": "¿Quién interpretó a Bruce Banner/Hulk?",
+      "answers": [
+        "Mark Ruffalo"
+      ],
+      "answer": "Soy amigo de Ed",
+      "status": "literal",
+      "answered": true,
+      "exact": false,
+      "f1": 0.0,
+      "ablation": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "shuffled": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "fresh_answered": false,
+      "honest_abstained": true,
+      "renamed": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      }
+    },
+    {
+      "id": "0b21d2182c42b3844459625df00d17766bda6820",
+      "question": "¿Qué tipo de ácidos se unen para formar ADN?",
+      "answers": [
+        "nucleicos"
+      ],
+      "answer": "ARN",
+      "status": "literal",
+      "answered": true,
+      "exact": false,
+      "f1": 0.0,
+      "ablation": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "shuffled": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "fresh_answered": false,
+      "honest_abstained": false,
+      "renamed": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      }
+    },
+    {
+      "id": "ed39778440619f7c15cf231a8cbc1cf49142a46d",
+      "question": "¿Qué tamaño tenía el MacBook Pro que se lanzó en octubre de 2008?",
+      "answers": [
+        "15\""
+      ],
+      "answer": "aluminio en formato unibody",
+      "status": "literal",
+      "answered": true,
+      "exact": false,
+      "f1": 0.0,
+      "ablation": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "shuffled": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "fresh_answered": false,
+      "honest_abstained": true,
+      "renamed": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      }
+    },
+    {
+      "id": "b650d5b721943b4bb6af4912ee8e4e84a53a4d6f",
+      "question": "¿Cuándo empezaron a crecer estos sectores de la economía?",
+      "answers": [
+        "siglo XIX"
+      ],
+      "answer": "",
+      "status": "unknown",
+      "answered": false,
+      "exact": false,
+      "f1": 0.0,
+      "ablation": {
+        "answered": false,
+        "exact": false,
+        "f1": 0.0
+      },
+      "shuffled": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "fresh_answered": false,
+      "honest_abstained": true,
+      "renamed": {
+        "answered": true,
+        "exact": true,
+        "f1": 1.0
+      }
+    },
+    {
+      "id": "ce05ea0454dd39f23e0b6a3d064452f3f3b24114",
+      "question": "¿Cuántos F-5Bs con bases terrestres operaba la marina en el Norte de África?",
+      "answers": [
+        "cuatro"
+      ],
+      "answer": "cuatro",
+      "status": "literal",
+      "answered": true,
+      "exact": true,
+      "f1": 1.0,
+      "ablation": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.5
+      },
+      "shuffled": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "fresh_answered": false,
+      "honest_abstained": true,
+      "renamed": {
+        "answered": true,
+        "exact": true,
+        "f1": 1.0
+      }
+    },
+    {
+      "id": "e6bb3bf6f4d5aff8b6fe226b98d701f5eb0e0fbb",
+      "question": "¿En qué estación cae el nivel del agua del río?",
+      "answers": [
+        "invierno"
+      ],
+      "answer": "invierno",
+      "status": "literal",
+      "answered": true,
+      "exact": true,
+      "f1": 1.0,
+      "ablation": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "shuffled": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "fresh_answered": false,
+      "honest_abstained": true,
+      "renamed": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.5
+      }
+    },
+    {
+      "id": "ed926cadfd14f72e7268ee6b35a870baf868965c",
+      "question": "¿Cuándo se publicó?",
+      "answers": [
+        "1993"
+      ],
+      "answer": "",
+      "status": "unknown",
+      "answered": false,
+      "exact": false,
+      "f1": 0.0,
+      "ablation": {
+        "answered": false,
+        "exact": false,
+        "f1": 0.0
+      },
+      "shuffled": {
+        "answered": false,
+        "exact": false,
+        "f1": 0.0
+      },
+      "fresh_answered": false,
+      "honest_abstained": false,
+      "renamed": {
+        "answered": false,
+        "exact": false,
+        "f1": 0.0
+      }
+    },
+    {
+      "id": "16e436b0460afdc207f140afdf2dc8e56c913ffe",
+      "question": "¿Qué comunidades hay en Corea del Norte?",
+      "answers": [
+        "pequeñas comunidades budistas y cristianas."
+      ],
+      "answer": "el cheondoísmo",
+      "status": "literal",
+      "answered": true,
+      "exact": false,
+      "f1": 0.0,
+      "ablation": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "shuffled": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "fresh_answered": false,
+      "honest_abstained": true,
+      "renamed": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      }
+    },
+    {
+      "id": "d473cacae5e04b4a6e445e82e3cac84cb670cdf5",
+      "question": "¿Cuál era el número del vuelo que se estrelló en Irán en 2011?",
+      "answers": [
+        "277"
+      ],
+      "answer": "Urmía",
+      "status": "literal",
+      "answered": true,
+      "exact": false,
+      "f1": 0.0,
+      "ablation": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "shuffled": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "fresh_answered": false,
+      "honest_abstained": false,
+      "renamed": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      }
+    },
+    {
+      "id": "bc7e96351e609bbf44c003f5fa40e49104cce2ee",
+      "question": "¿Qué fuente del tipo de salud en declive no fue una elección?",
+      "answers": [
+        "gran estrés"
+      ],
+      "answer": "",
+      "status": "unknown",
+      "answered": false,
+      "exact": false,
+      "f1": 0.0,
+      "ablation": {
+        "answered": false,
+        "exact": false,
+        "f1": 0.0
+      },
+      "shuffled": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "fresh_answered": false,
+      "honest_abstained": false,
+      "renamed": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      }
+    },
+    {
+      "id": "96735cf2cb94859792f28c3d9f71bc8145d6285f",
+      "question": "¿Qué se puede agotar y modificar significativamente?",
+      "answers": [
+        "la capa de ozono"
+      ],
+      "answer": "ciertas sustancias",
+      "status": "literal",
+      "answered": true,
+      "exact": false,
+      "f1": 0.0,
+      "ablation": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.8571
+      },
+      "shuffled": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.4
+      },
+      "fresh_answered": false,
+      "honest_abstained": true,
+      "renamed": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      }
+    },
+    {
+      "id": "8830293df72ccee11267f7cd97a1e681bbc125db",
+      "question": "¿Con qué clase de hojas se adornaban en celebraciones tradicionales?",
+      "answers": [
+        "roble."
+      ],
+      "answer": "hojas de roble",
+      "status": "literal",
+      "answered": true,
+      "exact": false,
+      "f1": 0.5,
+      "ablation": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "shuffled": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "fresh_answered": false,
+      "honest_abstained": true,
+      "renamed": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      }
+    },
+    {
+      "id": "6167909c7f9e71f2aa74a042a57bbfcad7d8c483",
+      "question": "¿Cuál es una forma convencional de comenzar a aplicar estadísticas a problemas científicos?",
+      "answers": [
+        "se comienza con un proceso o población a ser estudiado. Esta puede ser la población de un país, de granos cristalizados en una roca o de bienes manufacturados por una fábrica en particular durante un periodo dado."
+      ],
+      "answer": "estadística",
+      "status": "literal",
+      "answered": true,
+      "exact": false,
+      "f1": 0.0,
+      "ablation": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0526
+      },
+      "shuffled": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "fresh_answered": false,
+      "honest_abstained": true,
+      "renamed": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      }
+    },
+    {
+      "id": "89fe539c8c4b5dd1f23188b383c88584865b68aa",
+      "question": "Cómo se llama la guerra que no duró siquiera un año?",
+      "answers": [
+        "La Guerra del Ogadén"
+      ],
+      "answer": "",
+      "status": "unknown",
+      "answered": false,
+      "exact": false,
+      "f1": 0.0,
+      "ablation": {
+        "answered": false,
+        "exact": false,
+        "f1": 0.0
+      },
+      "shuffled": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "fresh_answered": false,
+      "honest_abstained": true,
+      "renamed": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      }
+    },
+    {
+      "id": "0cd6543a6ccac9874930fd2cf7e1b40ac0afcce8",
+      "question": "¿Cómo se llama la organización islámica de la que forma parte Kirguistán?",
+      "answers": [
+        "la Organización de Cooperación Islámica"
+      ],
+      "answer": "Cooperación de Shanghai",
+      "status": "literal",
+      "answered": true,
+      "exact": false,
+      "f1": 0.5,
+      "ablation": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "shuffled": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "fresh_answered": false,
+      "honest_abstained": true,
+      "renamed": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.3333
+      }
+    },
+    {
+      "id": "b895480b6d51c7f9e2661ef2ae72acca5f8d46fd",
+      "question": "¿Qué es NF-kB?",
+      "answers": [
+        "un complejo de factores de transcripción"
+      ],
+      "answer": "κB",
+      "status": "literal",
+      "answered": true,
+      "exact": false,
+      "f1": 0.0,
+      "ablation": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "shuffled": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "fresh_answered": false,
+      "honest_abstained": true,
+      "renamed": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      }
+    },
+    {
+      "id": "481c9bc0b0a3e95bc5f3f4788bba0e53699a1f2d",
+      "question": "¿Qué tipo de operación será capaz de usar el modelo 2037 Bomber?",
+      "answers": [
+        "sin tripulación"
+      ],
+      "answer": "Estados Unidos",
+      "status": "literal",
+      "answered": true,
+      "exact": false,
+      "f1": 0.0,
+      "ablation": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "shuffled": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "fresh_answered": false,
+      "honest_abstained": true,
+      "renamed": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      }
+    },
+    {
+      "id": "a2b049f3390fd97e38b88f9710ec32857302040f",
+      "question": "¿Qué recibió Grove Furr en 1978 de Princeton?",
+      "answers": [
+        "un Ph.D en literatura"
+      ],
+      "answer": "Universidad McGill en Montreal",
+      "status": "literal",
+      "answered": true,
+      "exact": false,
+      "f1": 0.2222,
+      "ablation": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "shuffled": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "fresh_answered": false,
+      "honest_abstained": true,
+      "renamed": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.2222
+      }
+    },
+    {
+      "id": "22eda0eb4cb5a5fae8943f1f44873ec94c192ae6",
+      "question": "¿Cuál fue el resultado de que las áreas usaran más potencia de la permitida?",
+      "answers": [
+        "mayor demanda"
+      ],
+      "answer": "",
+      "status": "unknown",
+      "answered": false,
+      "exact": false,
+      "f1": 0.0,
+      "ablation": {
+        "answered": false,
+        "exact": false,
+        "f1": 0.0
+      },
+      "shuffled": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "fresh_answered": false,
+      "honest_abstained": true,
+      "renamed": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      }
+    },
+    {
+      "id": "e0c2b6592ced2cf9cde4b4b9d1ed7238de3fb366",
+      "question": "Además del chamanismo coreano, ¿qué otra religión estaba prohibida?",
+      "answers": [
+        "budismo coreano"
+      ],
+      "answer": "estrictamente",
+      "status": "literal",
+      "answered": true,
+      "exact": false,
+      "f1": 0.0,
+      "ablation": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.4
+      },
+      "shuffled": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "fresh_answered": false,
+      "honest_abstained": true,
+      "renamed": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      }
+    },
+    {
+      "id": "134072c057039478ffb7a2ef183147cfe75f850b",
+      "question": "¿Qué buscan Banner y Stark?",
+      "answers": [
+        "Teseracto."
+      ],
+      "answer": "Teseracto",
+      "status": "literal",
+      "answered": true,
+      "exact": true,
+      "f1": 1.0,
+      "ablation": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "shuffled": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "fresh_answered": false,
+      "honest_abstained": true,
+      "renamed": {
+        "answered": true,
+        "exact": true,
+        "f1": 1.0
+      }
+    },
+    {
+      "id": "68cc3a13aa96fe18ffe8b825c86d50c32753721a",
+      "question": "¿Qué es diferente para baini?",
+      "answers": [
+        "los huesos de la mejilla de esta especie son robustos y muy agrandado"
+      ],
+      "answer": "una forma menos común",
+      "status": "literal",
+      "answered": true,
+      "exact": false,
+      "f1": 0.0,
+      "ablation": {
+        "answered": false,
+        "exact": false,
+        "f1": 0.0
+      },
+      "shuffled": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "fresh_answered": false,
+      "honest_abstained": true,
+      "renamed": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      }
+    },
+    {
+      "id": "d01d83df8d15e8300a80ca94cbcebc5c6a14c691",
+      "question": "¿Cuál era el nombre de la organización sin fines de lucro con sede en los Estados Unidos?",
+      "answers": [
+        "Zidisha"
+      ],
+      "answer": "2009",
+      "status": "literal",
+      "answered": true,
+      "exact": false,
+      "f1": 0.0,
+      "ablation": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.5
+      },
+      "shuffled": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "fresh_answered": false,
+      "honest_abstained": true,
+      "renamed": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      }
+    },
+    {
+      "id": "a5acbb2dab31572705f32be332383711bba441f9",
+      "question": "¿A dónde se extienden las prominencias?",
+      "answers": [
+        "sobre la superficie del Sol"
+      ],
+      "answer": "Sol",
+      "status": "literal",
+      "answered": true,
+      "exact": false,
+      "f1": 0.3333,
+      "ablation": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.25
+      },
+      "shuffled": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "fresh_answered": false,
+      "honest_abstained": true,
+      "renamed": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.3333
+      }
+    },
+    {
+      "id": "93315e061157cd612139f75ec7273fc4e8a7fc2b",
+      "question": "¿En qué año nació Percy Lebaron Spencer? ",
+      "answers": [
+        "1894"
+      ],
+      "answer": "1970",
+      "status": "literal",
+      "answered": true,
+      "exact": false,
+      "f1": 0.0,
+      "ablation": {
+        "answered": false,
+        "exact": false,
+        "f1": 0.0
+      },
+      "shuffled": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "fresh_answered": false,
+      "honest_abstained": true,
+      "renamed": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      }
+    },
+    {
+      "id": "f21d0e2102f2c61006944d859703bb10bee814cc",
+      "question": "¿Con qué se rellenó la tierra?",
+      "answers": [
+        "nativos hostiles y enfermedades tropicales."
+      ],
+      "answer": "tropicales",
+      "status": "literal",
+      "answered": true,
+      "exact": false,
+      "f1": 0.3333,
+      "ablation": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.25
+      },
+      "shuffled": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.3333
+      },
+      "fresh_answered": false,
+      "honest_abstained": true,
+      "renamed": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      }
+    },
+    {
+      "id": "307ceb81087c2bd99ce6a6ffb6799486ae0183f4",
+      "question": "¿Qué tipos de escritores piensan que la piedra filosofal tienen una historia más larga que 300 AD?",
+      "answers": [
+        "alquímicos"
+      ],
+      "answer": "más larga",
+      "status": "literal",
+      "answered": true,
+      "exact": false,
+      "f1": 0.0,
+      "ablation": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.6667
+      },
+      "shuffled": {
+        "answered": true,
+        "exact": true,
+        "f1": 1.0
+      },
+      "fresh_answered": false,
+      "honest_abstained": true,
+      "renamed": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      }
+    },
+    {
+      "id": "5e63c1c3a4081012cf64d0adf8259dd6dded4f8b",
+      "question": "¿Por qué la carne picada llegó a ser vista como una comida de postre en lugar de una cena?",
+      "answers": [
+        "El incremento del dulzor debido al azúcar añadido, y producido por la fermentación, hacía a la mincemeat más apropiada para los postres que para los platos salados principales."
+      ],
+      "answer": "",
+      "status": "unknown",
+      "answered": false,
+      "exact": false,
+      "f1": 0.0,
+      "ablation": {
+        "answered": false,
+        "exact": false,
+        "f1": 0.0
+      },
+      "shuffled": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.069
+      },
+      "fresh_answered": false,
+      "honest_abstained": true,
+      "renamed": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      }
+    },
+    {
+      "id": "230a61bb3f998f9f73b3bf2df9612cd66197bf6e",
+      "question": "¿Cuántos hijos tuvieron Devdas y Lakshmi?",
+      "answers": [
+        "cuatro hijos:"
+      ],
+      "answer": "quince años",
+      "status": "literal",
+      "answered": true,
+      "exact": false,
+      "f1": 0.0,
+      "ablation": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "shuffled": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "fresh_answered": false,
+      "honest_abstained": true,
+      "renamed": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.6667
+      }
+    },
+    {
+      "id": "54563d93abda8c0ac80bf2d7d04788e3ea96016e",
+      "question": "¿Cuál es la distribución de volumen de aspirina?",
+      "answers": [
+        "0,1-0,2 l/kg."
+      ],
+      "answer": "El volumen",
+      "status": "literal",
+      "answered": true,
+      "exact": false,
+      "f1": 0.0,
+      "ablation": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "shuffled": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "fresh_answered": false,
+      "honest_abstained": true,
+      "renamed": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.2857
+      }
+    },
+    {
+      "id": "da0eb3f2cea7cf8409fcce2d2379859d1a261ed7",
+      "question": "¿Cuál es una de las manera en las que podemos controlar el robot quirúrgico de enfermera instrumentista?",
+      "answers": [
+        "comandos de voz."
+      ],
+      "answer": "ojo",
+      "status": "literal",
+      "answered": true,
+      "exact": false,
+      "f1": 0.0,
+      "ablation": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "shuffled": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "fresh_answered": false,
+      "honest_abstained": true,
+      "renamed": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      }
+    },
+    {
+      "id": "c3bfe9cfb82eaec0590a5742afe0c3fb07a2aae6",
+      "question": "¿Qué es un tipo de bacterias que se usa contra las orugas?",
+      "answers": [
+        "Bacillus thuringiensis"
+      ],
+      "answer": "plaguicidas",
+      "status": "literal",
+      "answered": true,
+      "exact": false,
+      "f1": 0.0,
+      "ablation": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "shuffled": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "fresh_answered": false,
+      "honest_abstained": false,
+      "renamed": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      }
+    },
+    {
+      "id": "b8d6ce621991a42bca00bc86237fbf2c77ebf2fe",
+      "question": "¿Cuál se ha conocido generalmente como la finalidad principal de la heparina, aunque hoy en día se debate?",
+      "answers": [
+        "anticoagulación,"
+      ],
+      "answer": "las células endoteliales",
+      "status": "literal",
+      "answered": true,
+      "exact": false,
+      "f1": 0.0,
+      "ablation": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "shuffled": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "fresh_answered": false,
+      "honest_abstained": true,
+      "renamed": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      }
+    },
+    {
+      "id": "8481b4840e879f26253cd5ebea26e0684e8af501",
+      "question": "¿Qué es el acoplamiento?",
+      "answers": [
+        "la interdependencia entre módulos,"
+      ],
+      "answer": "módulos",
+      "status": "literal",
+      "answered": true,
+      "exact": false,
+      "f1": 0.4,
+      "ablation": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "shuffled": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "fresh_answered": false,
+      "honest_abstained": true,
+      "renamed": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.4
+      }
+    },
+    {
+      "id": "75a2b44a5726b1b6e7125872391a662c5f73d549",
+      "question": "¿Qué fue el sucesor del P-38F?",
+      "answers": [
+        "P-38G"
+      ],
+      "answer": "1943",
+      "status": "literal",
+      "answered": true,
+      "exact": false,
+      "f1": 0.0,
+      "ablation": {
+        "answered": false,
+        "exact": false,
+        "f1": 0.0
+      },
+      "shuffled": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "fresh_answered": false,
+      "honest_abstained": true,
+      "renamed": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.6667
+      }
+    },
+    {
+      "id": "12b8560c946ef71d658a06a02a5c2d63f1caf747",
+      "question": "¿Qué año fue Ben Chifley vencido?",
+      "answers": [
+        "1949"
+      ],
+      "answer": "1944",
+      "status": "literal",
+      "answered": true,
+      "exact": false,
+      "f1": 0.0,
+      "ablation": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "shuffled": {
+        "answered": true,
+        "exact": true,
+        "f1": 1.0
+      },
+      "fresh_answered": false,
+      "honest_abstained": true,
+      "renamed": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      }
+    },
+    {
+      "id": "d4884fbad057df34898f2c81298bba9f4647cd8f",
+      "question": "¿Con quién se casó en 1909?",
+      "answers": [
+        "Rose Knox"
+      ],
+      "answer": "Rose Knox",
+      "status": "literal",
+      "answered": true,
+      "exact": true,
+      "f1": 1.0,
+      "ablation": {
+        "answered": false,
+        "exact": false,
+        "f1": 0.0
+      },
+      "shuffled": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.6667
+      },
+      "fresh_answered": false,
+      "honest_abstained": true,
+      "renamed": {
+        "answered": true,
+        "exact": true,
+        "f1": 1.0
+      }
+    },
+    {
+      "id": "6aa470174877d3e01ad00005a8a04dd6c71eadaf",
+      "question": "¿Qué ofrecieron los ciudadanos al rey Rama II en su visita?",
+      "answers": [
+        "flores de loto"
+      ],
+      "answer": "Pathum Thani",
+      "status": "literal",
+      "answered": true,
+      "exact": false,
+      "f1": 0.0,
+      "ablation": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.6667
+      },
+      "shuffled": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "fresh_answered": false,
+      "honest_abstained": true,
+      "renamed": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      }
+    },
+    {
+      "id": "742b5767c20847ad565ecfa0b87b504fa373c981",
+      "question": "¿Qué sistemas operativos son compatibles con Illustrator CS2?",
+      "answers": [
+        "Mac con tecnología Intel, como con Microsoft Windows XP"
+      ],
+      "answer": "Illustrator",
+      "status": "literal",
+      "answered": true,
+      "exact": false,
+      "f1": 0.0,
+      "ablation": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "shuffled": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.3333
+      },
+      "fresh_answered": false,
+      "honest_abstained": true,
+      "renamed": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      }
+    },
+    {
+      "id": "cdc9ebe21932bdaba7703141c139a5c9a94a6e03",
+      "question": "¿Quién se dedicó al activismo político?",
+      "answers": [
+        "Milk"
+      ],
+      "answer": "Milk",
+      "status": "literal",
+      "answered": true,
+      "exact": true,
+      "f1": 1.0,
+      "ablation": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.5
+      },
+      "shuffled": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "fresh_answered": false,
+      "honest_abstained": true,
+      "renamed": {
+        "answered": false,
+        "exact": false,
+        "f1": 0.0
+      }
+    },
+    {
+      "id": "0a139ca9bcef0db76f34cdbd4d0cd35758595248",
+      "question": "¿En qué área era su diploma?",
+      "answers": [
+        "ingeniería"
+      ],
+      "answer": "ACGI",
+      "status": "literal",
+      "answered": true,
+      "exact": false,
+      "f1": 0.0,
+      "ablation": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "shuffled": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "fresh_answered": false,
+      "honest_abstained": true,
+      "renamed": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      }
+    },
+    {
+      "id": "4f481f1e41caf868015fd46ec319a7cd2d0aeb67",
+      "question": "Cuál es el nombre de la celebración?",
+      "answers": [
+        "carnaval"
+      ],
+      "answer": "carnaval sigue muy viva en muchos países de Europa",
+      "status": "literal",
+      "answered": true,
+      "exact": false,
+      "f1": 0.2,
+      "ablation": {
+        "answered": false,
+        "exact": false,
+        "f1": 0.0
+      },
+      "shuffled": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "fresh_answered": false,
+      "honest_abstained": true,
+      "renamed": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      }
+    },
+    {
+      "id": "3a6f61347e39a7e850853a79ca4bf2572fdd9ca2",
+      "question": "¿Por qué los voluntarios estaban trabajando en el extranjero?",
+      "answers": [
+        "guarnición del Imperio Británico."
+      ],
+      "answer": "Imperio Británico",
+      "status": "literal",
+      "answered": true,
+      "exact": false,
+      "f1": 0.6667,
+      "ablation": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.2857
+      },
+      "shuffled": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "fresh_answered": false,
+      "honest_abstained": true,
+      "renamed": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.6667
+      }
+    },
+    {
+      "id": "867c6f0491c1342cbfcf656e0b2c1f99e8e651e1",
+      "question": "¿En qué año compró US-Bangla Airlines el Bombardier Dash Q400?",
+      "answers": [
+        "2014"
+      ],
+      "answer": "2014",
+      "status": "literal",
+      "answered": true,
+      "exact": true,
+      "f1": 1.0,
+      "ablation": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "shuffled": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "fresh_answered": false,
+      "honest_abstained": true,
+      "renamed": {
+        "answered": true,
+        "exact": true,
+        "f1": 1.0
+      }
+    },
+    {
+      "id": "1edec873db3dd332fdf6876706ff1e99ba896d7c",
+      "question": "¿Cuando recibió su licenciatura?",
+      "answers": [
+        "Yeshiva University"
+      ],
+      "answer": "1978",
+      "status": "literal",
+      "answered": true,
+      "exact": false,
+      "f1": 0.0,
+      "ablation": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "shuffled": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.4
+      },
+      "fresh_answered": false,
+      "honest_abstained": true,
+      "renamed": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      }
+    },
+    {
+      "id": "11798497e1232cceea799152dbbb6e535961e580",
+      "question": "El agua, la grasa, los músculos y los huesos se encuentran en todo el cuerpo y se pueden clasificar y analizar como ¿qué?",
+      "answers": [
+        "tipo de tejido"
+      ],
+      "answer": "agua",
+      "status": "literal",
+      "answered": true,
+      "exact": false,
+      "f1": 0.0,
+      "ablation": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "shuffled": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.5
+      },
+      "fresh_answered": false,
+      "honest_abstained": true,
+      "renamed": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      }
+    },
+    {
+      "id": "bb3cbd91e95b613c014fa212ae1ebb484c5a65ae",
+      "question": "¿Qué le mantiene ocupado?",
+      "answers": [
+        "enseñanza abierta"
+      ],
+      "answer": "",
+      "status": "unknown",
+      "answered": false,
+      "exact": false,
+      "f1": 0.0,
+      "ablation": {
+        "answered": false,
+        "exact": false,
+        "f1": 0.0
+      },
+      "shuffled": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "fresh_answered": false,
+      "honest_abstained": false,
+      "renamed": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      }
+    },
+    {
+      "id": "18329b276e617e1163d075e199fc9c0613e08491",
+      "question": "¿Cuál fue el ingreso total de la película?",
+      "answers": [
+        "139 millones de dólares"
+      ],
+      "answer": "139 millones de dólares",
+      "status": "literal",
+      "answered": true,
+      "exact": true,
+      "f1": 1.0,
+      "ablation": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "shuffled": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.4
+      },
+      "fresh_answered": false,
+      "honest_abstained": true,
+      "renamed": {
+        "answered": true,
+        "exact": true,
+        "f1": 1.0
+      }
+    },
+    {
+      "id": "38784ec96818fc28a9752297dc01086c635b12ea",
+      "question": "¿En qué campo se especializó Maxwell?",
+      "answers": [
+        "física matemática"
+      ],
+      "answer": "James Clerk",
+      "status": "literal",
+      "answered": true,
+      "exact": false,
+      "f1": 0.0,
+      "ablation": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.4
+      },
+      "shuffled": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "fresh_answered": false,
+      "honest_abstained": true,
+      "renamed": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      }
+    },
+    {
+      "id": "31c99333cfce9abf5678c55cf9d0c0e6c1df4488",
+      "question": "¿Cuál fue el primer trabajo publicado?",
+      "answers": [
+        "The Mysterious Mummy,"
+      ],
+      "answer": "The Mysterious Mummy",
+      "status": "literal",
+      "answered": true,
+      "exact": true,
+      "f1": 1.0,
+      "ablation": {
+        "answered": false,
+        "exact": false,
+        "f1": 0.0
+      },
+      "shuffled": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "fresh_answered": false,
+      "honest_abstained": true,
+      "renamed": {
+        "answered": true,
+        "exact": true,
+        "f1": 1.0
+      }
+    },
+    {
+      "id": "9e3f07853fa48cbe0f90bc9aa8cf3d7c8b36496c",
+      "question": "¿En qué festival de cine salió al aire primero Knock Knock?",
+      "answers": [
+        "2015 en el Festival de cine de Sundance,[9]​"
+      ],
+      "answer": "2015",
+      "status": "literal",
+      "answered": true,
+      "exact": false,
+      "f1": 0.2,
+      "ablation": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.2
+      },
+      "shuffled": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "fresh_answered": false,
+      "honest_abstained": true,
+      "renamed": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.2
+      }
+    },
+    {
+      "id": "eb02c84e94169bfa220dbe354cbf926f3e2221b7",
+      "question": "¿Dónde quería Raffles construir su nuevo puerto?",
+      "answers": [
+        "en el estrecho de Malaca"
+      ],
+      "answer": "India",
+      "status": "literal",
+      "answered": true,
+      "exact": false,
+      "f1": 0.0,
+      "ablation": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.75
+      },
+      "shuffled": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "fresh_answered": false,
+      "honest_abstained": true,
+      "renamed": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      }
+    },
+    {
+      "id": "2a27b850d204ea87c3144546b37d34839c4fb8e7",
+      "question": "¿Cuándo se reivindicaron los derechos de la mujer?",
+      "answers": [
+        "1792"
+      ],
+      "answer": "1792",
+      "status": "literal",
+      "answered": true,
+      "exact": true,
+      "f1": 1.0,
+      "ablation": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "shuffled": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "fresh_answered": false,
+      "honest_abstained": true,
+      "renamed": {
+        "answered": true,
+        "exact": true,
+        "f1": 1.0
+      }
+    },
+    {
+      "id": "8dbe2e14a2b48cf7c8ab3a6edcdb036e0c915028",
+      "question": "¿En qué idioma está escrito el libro originalmente?",
+      "answers": [
+        "hebreo"
+      ],
+      "answer": "Halajá",
+      "status": "literal",
+      "answered": true,
+      "exact": false,
+      "f1": 0.0,
+      "ablation": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "shuffled": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "fresh_answered": false,
+      "honest_abstained": true,
+      "renamed": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      }
+    },
+    {
+      "id": "72a7a8aeddcc1a17e039b288766ca3793c1db9f9",
+      "question": "¿Cuándo se construyó el aeropuerto Poznan-Lawica Henryk Wieniawki?",
+      "answers": [
+        "1913"
+      ],
+      "answer": "1913",
+      "status": "literal",
+      "answered": true,
+      "exact": true,
+      "f1": 1.0,
+      "ablation": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "shuffled": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "fresh_answered": false,
+      "honest_abstained": true,
+      "renamed": {
+        "answered": true,
+        "exact": true,
+        "f1": 1.0
+      }
+    },
+    {
+      "id": "8532ea293faa2effc4a00c94c5cf93b89b7632c9",
+      "question": "¿Qué metales se usan para hacer Tejas?",
+      "answers": [
+        "El nuevo diseño del ala LCA, está construido de aleaciones de aluminio-litio, los materiales compuestos de fibra de carbono (C-FC) y aceros de aleación de titanio."
+      ],
+      "answer": "C",
+      "status": "literal",
+      "answered": true,
+      "exact": false,
+      "f1": 0.069,
+      "ablation": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "shuffled": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "fresh_answered": false,
+      "honest_abstained": true,
+      "renamed": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.069
+      }
+    },
+    {
+      "id": "b6e5624b36a61e24140443f919edb4aaf599889d",
+      "question": "¿Qué idioma hablan los judíos sirios?",
+      "answers": [
+        "árabe"
+      ],
+      "answer": "ellos",
+      "status": "literal",
+      "answered": true,
+      "exact": false,
+      "f1": 0.0,
+      "ablation": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.5
+      },
+      "shuffled": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "fresh_answered": false,
+      "honest_abstained": true,
+      "renamed": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      }
+    },
+    {
+      "id": "596faa276b12561e9add50144057cfeaa7b34728",
+      "question": "Por qué se ve afectada la velocidad de conductividad de un nervio? ",
+      "answers": [
+        "longitud del mismo"
+      ],
+      "answer": "largas",
+      "status": "literal",
+      "answered": true,
+      "exact": false,
+      "f1": 0.0,
+      "ablation": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "shuffled": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "fresh_answered": false,
+      "honest_abstained": true,
+      "renamed": {
+        "answered": false,
+        "exact": false,
+        "f1": 0.0
+      }
+    },
+    {
+      "id": "819649c9a52eef92402739570bc6b3d0f29cad80",
+      "question": "¿Cuántos pares de folíolos tienen las hojas?",
+      "answers": [
+        "20-60"
+      ],
+      "answer": "2",
+      "status": "literal",
+      "answered": true,
+      "exact": false,
+      "f1": 0.0,
+      "ablation": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "shuffled": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "fresh_answered": false,
+      "honest_abstained": true,
+      "renamed": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.6667
+      }
+    },
+    {
+      "id": "891ae9748fd3c6f29a9c88db8dd21cf8654db8bd",
+      "question": "¿Adónde se mudó la pareja con la esperanza de encontrar más aceptación?",
+      "answers": [
+        "San Francisco"
+      ],
+      "answer": "",
+      "status": "unknown",
+      "answered": false,
+      "exact": false,
+      "f1": 0.0,
+      "ablation": {
+        "answered": false,
+        "exact": false,
+        "f1": 0.0
+      },
+      "shuffled": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "fresh_answered": false,
+      "honest_abstained": true,
+      "renamed": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      }
+    },
+    {
+      "id": "45d61a1527c4548a3b739603c7c9df67d6401010",
+      "question": "¿De qué manera se conocía Halimede antes de que se nombrara?",
+      "answers": [
+        "S/2002 N 1."
+      ],
+      "answer": "el 3",
+      "status": "literal",
+      "answered": true,
+      "exact": false,
+      "f1": 0.0,
+      "ablation": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "shuffled": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "fresh_answered": false,
+      "honest_abstained": true,
+      "renamed": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      }
+    },
+    {
+      "id": "33b49720ac9387419cbc287bb7e6eb72dfb94f69",
+      "question": "¿Contra quién se ha visto luchar a Sipaliwini?",
+      "answers": [
+        "tropas de Guyana y Surinam"
+      ],
+      "answer": "Guyana",
+      "status": "literal",
+      "answered": true,
+      "exact": false,
+      "f1": 0.3333,
+      "ablation": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.5
+      },
+      "shuffled": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.75
+      },
+      "fresh_answered": false,
+      "honest_abstained": true,
+      "renamed": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.3333
+      }
+    },
+    {
+      "id": "0d448eac99611563f2d63061b1e1f9cdc29489fb",
+      "question": "¿Qué premio ganó ella?",
+      "answers": [
+        "Miss Margo Beautiful Skin, el Indiatimes Surfer's Choice y el MTV's Most Wanted."
+      ],
+      "answer": "2001",
+      "status": "literal",
+      "answered": true,
+      "exact": false,
+      "f1": 0.0,
+      "ablation": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.3333
+      },
+      "shuffled": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "fresh_answered": false,
+      "honest_abstained": true,
+      "renamed": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      }
+    },
+    {
+      "id": "b8bf93b04462c540cb397ea26c0c5a09a4ce0bb1",
+      "question": "Cuando se reevaluó el dong en 1985, ¿Cuantó más valia el nuevo dong?",
+      "answers": [
+        "10 dong antiguos."
+      ],
+      "answer": "1985",
+      "status": "literal",
+      "answered": true,
+      "exact": false,
+      "f1": 0.0,
+      "ablation": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.5
+      },
+      "shuffled": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.3333
+      },
+      "fresh_answered": false,
+      "honest_abstained": true,
+      "renamed": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      }
+    },
+    {
+      "id": "d802a13c9d22d49df27de37d2d43761a0cbcbce3",
+      "question": "¿Qué anticipó?",
+      "answers": [
+        "los semiconductores de tipo-P y de tipo-N"
+      ],
+      "answer": "semiconductores",
+      "status": "literal",
+      "answered": true,
+      "exact": false,
+      "f1": 0.2,
+      "ablation": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.5
+      },
+      "shuffled": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.2
+      },
+      "fresh_answered": false,
+      "honest_abstained": true,
+      "renamed": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.3636
+      }
+    },
+    {
+      "id": "04c10b03c58110a31d799a1e4a44496eaeed7d21",
+      "question": "¿Qué tipo de comportamiento está asociado con Gangnam, Corea?",
+      "answers": [
+        "«Gangnam Style»"
+      ],
+      "answer": "Gangnam Style",
+      "status": "literal",
+      "answered": true,
+      "exact": true,
+      "f1": 1.0,
+      "ablation": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.6667
+      },
+      "shuffled": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "fresh_answered": false,
+      "honest_abstained": true,
+      "renamed": {
+        "answered": true,
+        "exact": true,
+        "f1": 1.0
+      }
+    },
+    {
+      "id": "406a1a72701a7daabfb22c48a03bcea7621717f6",
+      "question": "¿Quién conduce a Julia al final de la película?",
+      "answers": [
+        "Michael"
+      ],
+      "answer": "Michael",
+      "status": "literal",
+      "answered": true,
+      "exact": true,
+      "f1": 1.0,
+      "ablation": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "shuffled": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "fresh_answered": false,
+      "honest_abstained": true,
+      "renamed": {
+        "answered": true,
+        "exact": true,
+        "f1": 1.0
+      }
+    },
+    {
+      "id": "a0c3db70d012bda75420336201573e2f90c76cb9",
+      "question": "¿Cuándo salió la canción \"Dream\"?",
+      "answers": [
+        "En enero de 2016,"
+      ],
+      "answer": "primer lugar en Music Bank e Inkigayo",
+      "status": "literal",
+      "answered": true,
+      "exact": false,
+      "f1": 0.1818,
+      "ablation": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "shuffled": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "fresh_answered": false,
+      "honest_abstained": true,
+      "renamed": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.1818
+      }
+    },
+    {
+      "id": "cfffe36d647b33faef889a7eb6c0cc25255cad87",
+      "question": "¿Cuándo lanzó la iniciativa la FAO?",
+      "answers": [
+        "En diciembre de 2007,"
+      ],
+      "answer": "2007",
+      "status": "literal",
+      "answered": true,
+      "exact": false,
+      "f1": 0.4,
+      "ablation": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "shuffled": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "fresh_answered": false,
+      "honest_abstained": true,
+      "renamed": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.4
+      }
+    },
+    {
+      "id": "bd67030f1b38bb26323a27bd988bc95b4789a8e2",
+      "question": "¿Cómo entró White en City Hall? ",
+      "answers": [
+        "través de una ventana del sótano"
+      ],
+      "answer": "1978",
+      "status": "literal",
+      "answered": true,
+      "exact": false,
+      "f1": 0.0,
+      "ablation": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "shuffled": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "fresh_answered": false,
+      "honest_abstained": true,
+      "renamed": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      }
+    },
+    {
+      "id": "0ceafb58a2309f782cce00774b896bfbff51503d",
+      "question": "¿Con qué compañía discográfica firmó Kesha?",
+      "answers": [
+        "RCA"
+      ],
+      "answer": "Luke",
+      "status": "literal",
+      "answered": true,
+      "exact": false,
+      "f1": 0.0,
+      "ablation": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "shuffled": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "fresh_answered": false,
+      "honest_abstained": true,
+      "renamed": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      }
+    },
+    {
+      "id": "702c810386909b2530db9a8dcd4e700821079927",
+      "question": "¿De qué época deben ser los arcos?",
+      "answers": [
+        "Las columnatas, los arcos, balaustradas y cúpulas típicamente un estilo intricado Victoriano."
+      ],
+      "answer": "área central",
+      "status": "literal",
+      "answered": true,
+      "exact": false,
+      "f1": 0.0,
+      "ablation": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "shuffled": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "fresh_answered": false,
+      "honest_abstained": true,
+      "renamed": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      }
+    },
+    {
+      "id": "8bc7a18a440d5e8e67235457e06a2caf0f207fce",
+      "question": "¿A qué pKa se disocia el ácido?",
+      "answers": [
+        "25"
+      ],
+      "answer": "3",
+      "status": "literal",
+      "answered": true,
+      "exact": false,
+      "f1": 0.0,
+      "ablation": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "shuffled": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "fresh_answered": false,
+      "honest_abstained": true,
+      "renamed": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      }
+    },
+    {
+      "id": "822569aa3e108a729f0bdb8686aa7abfb62a15ba",
+      "question": "¿Quién mandaba en Macedon en esa época?",
+      "answers": [
+        "Filipo V."
+      ],
+      "answer": "Filipo V",
+      "status": "literal",
+      "answered": true,
+      "exact": true,
+      "f1": 1.0,
+      "ablation": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "shuffled": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "fresh_answered": false,
+      "honest_abstained": true,
+      "renamed": {
+        "answered": true,
+        "exact": true,
+        "f1": 1.0
+      }
+    },
+    {
+      "id": "490e7fa4d20173a86b8cb789b97a1e649642c1ce",
+      "question": "¿Cuántas cabezas de familia han sido informadas?",
+      "answers": [
+        "12.961"
+      ],
+      "answer": "10",
+      "status": "literal",
+      "answered": true,
+      "exact": false,
+      "f1": 0.0,
+      "ablation": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.6667
+      },
+      "shuffled": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "fresh_answered": false,
+      "honest_abstained": true,
+      "renamed": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      }
+    },
+    {
+      "id": "6078412ee59f6230db8a93ff2b1d64893aedbaee",
+      "question": "¿Qué tan largo es el detector CMS?",
+      "answers": [
+        "21 metros de largo"
+      ],
+      "answer": "Suiza",
+      "status": "literal",
+      "answered": true,
+      "exact": false,
+      "f1": 0.0,
+      "ablation": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.2857
+      },
+      "shuffled": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "fresh_answered": false,
+      "honest_abstained": true,
+      "renamed": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      }
+    },
+    {
+      "id": "e0c3d79d01585f4f00cff71ba9c0de9a3b49a71a",
+      "question": "¿Qué odiaba Vicky?",
+      "answers": [
+        "el sistema político prusiano"
+      ],
+      "answer": "unida y liberal",
+      "status": "literal",
+      "answered": true,
+      "exact": false,
+      "f1": 0.0,
+      "ablation": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "shuffled": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "fresh_answered": false,
+      "honest_abstained": true,
+      "renamed": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      }
+    },
+    {
+      "id": "56941840f059841bb7a2ba129e70e868eccea0ea",
+      "question": "¿De qué país es el serbio la lengua cooficial?",
+      "answers": [
+        "siendo cooficial en la autoproclamada República de Kosovo"
+      ],
+      "answer": "Bosnia",
+      "status": "literal",
+      "answered": true,
+      "exact": false,
+      "f1": 0.0,
+      "ablation": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.2222
+      },
+      "shuffled": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "fresh_answered": false,
+      "honest_abstained": true,
+      "renamed": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      }
+    },
+    {
+      "id": "78dc4f13d9547ed08788efd3260a0a7649673ad2",
+      "question": "¿Cuáles son los otros tratamientos especializados?",
+      "answers": [
+        "gasometría arterial de la sangre"
+      ],
+      "answer": "sangre sea extraída de una arteria",
+      "status": "literal",
+      "answered": true,
+      "exact": false,
+      "f1": 0.3636,
+      "ablation": {
+        "answered": false,
+        "exact": false,
+        "f1": 0.0
+      },
+      "shuffled": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "fresh_answered": false,
+      "honest_abstained": true,
+      "renamed": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.2857
+      }
+    },
+    {
+      "id": "e6187416d5732a3e466bb172e20f6cce747a5867",
+      "question": "¿La forma de Encélado sugería una liberación voluntaria de la órbita giratoria o una liberación forzada de la órbita giratoria?",
+      "answers": [
+        "forzada"
+      ],
+      "answer": "espín",
+      "status": "literal",
+      "answered": true,
+      "exact": false,
+      "f1": 0.0,
+      "ablation": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "shuffled": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "fresh_answered": false,
+      "honest_abstained": true,
+      "renamed": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      }
+    },
+    {
+      "id": "13b4cdfb37c9add4bfb05d63c412b01ddc69d3e8",
+      "question": "¿Qué puede afectar a otros órganos?",
+      "answers": [
+        "Neuropatía autonómica"
+      ],
+      "answer": "ninguno de estos sistemas del órgano",
+      "status": "literal",
+      "answered": true,
+      "exact": false,
+      "f1": 0.0,
+      "ablation": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "shuffled": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "fresh_answered": false,
+      "honest_abstained": false,
+      "renamed": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      }
+    },
+    {
+      "id": "fdc4fe8164ec80862c17e3ae2b98184db1a5bf3c",
+      "question": "¿Qué estructura adopta el compuesto?",
+      "answers": [
+        "oligomérica estructura"
+      ],
+      "answer": "estado sólido",
+      "status": "literal",
+      "answered": true,
+      "exact": false,
+      "f1": 0.0,
+      "ablation": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.5
+      },
+      "shuffled": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "fresh_answered": false,
+      "honest_abstained": true,
+      "renamed": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      }
+    },
+    {
+      "id": "f839a23032e2ad46f3e926caac5996c5709ac598",
+      "question": "¿Cuánto gasta en cómics?",
+      "answers": [
+        "un promedio de treinta y cinco dólares por semana"
+      ],
+      "answer": "cinco dólares",
+      "status": "literal",
+      "answered": true,
+      "exact": false,
+      "f1": 0.3636,
+      "ablation": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.1667
+      },
+      "shuffled": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.2
+      },
+      "fresh_answered": false,
+      "honest_abstained": true,
+      "renamed": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.3636
+      }
+    },
+    {
+      "id": "97172aee2eb3f8562fdfcb9b853c475e3f08a143",
+      "question": "Fibras, parénquima cella y ¿qué otros vasos componen Xylem?",
+      "answers": [
+        "traqueofitas"
+      ],
+      "answer": "vasos del xilema",
+      "status": "literal",
+      "answered": true,
+      "exact": false,
+      "f1": 0.0,
+      "ablation": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "shuffled": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "fresh_answered": false,
+      "honest_abstained": true,
+      "renamed": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      }
+    },
+    {
+      "id": "ae1776673ea80445d6f91ce869ea36401060265c",
+      "question": "¿A qué edad comenzó a entrenar en Yeshiva?\\n \\n",
+      "answers": [
+        "trece años"
+      ],
+      "answer": "",
+      "status": "document_processed",
+      "answered": false,
+      "exact": false,
+      "f1": 0.0,
+      "ablation": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.8
+      },
+      "shuffled": {
+        "answered": false,
+        "exact": false,
+        "f1": 0.0
+      },
+      "fresh_answered": false,
+      "honest_abstained": true,
+      "renamed": {
+        "answered": false,
+        "exact": false,
+        "f1": 0.0
+      }
+    },
+    {
+      "id": "b1ac5997fa950840927b3e10b4651b176d8f9b84",
+      "question": "¿Cómo se llamaba el padre de Devdas Mohandas Gandhi?",
+      "answers": [
+        "Mohandas Karamchand Gandhi"
+      ],
+      "answer": "Karamchand Gandhi",
+      "status": "literal",
+      "answered": true,
+      "exact": false,
+      "f1": 0.8,
+      "ablation": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.5
+      },
+      "shuffled": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "fresh_answered": false,
+      "honest_abstained": true,
+      "renamed": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      }
+    },
+    {
+      "id": "6e679d0280ca791f5978a5fdde2b053bacec41a2",
+      "question": "¿Dónde se pueden encontrar leones en Kenia?",
+      "answers": [
+        "al este"
+      ],
+      "answer": "Tsavo",
+      "status": "literal",
+      "answered": true,
+      "exact": false,
+      "f1": 0.0,
+      "ablation": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "shuffled": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "fresh_answered": false,
+      "honest_abstained": true,
+      "renamed": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      }
+    },
+    {
+      "id": "a4bd597b65c210244c83dc4a1bd4b9aa551472a2",
+      "question": "¿Quién más, aparte de Robert Esnault-Pelteri, indicaron que habían creado el nombre «joystick»?",
+      "answers": [
+        "Robert Loraine, James Henry Joyce y A. E. George."
+      ],
+      "answer": "Henry Joyce",
+      "status": "literal",
+      "answered": true,
+      "exact": false,
+      "f1": 0.3636,
+      "ablation": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.1667
+      },
+      "shuffled": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "fresh_answered": false,
+      "honest_abstained": true,
+      "renamed": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.3636
+      }
+    },
+    {
+      "id": "a1ffcba1a6dc1ab5026ae9717668ec013ef6097b",
+      "question": "¿Quién fue Yanjmaa?",
+      "answers": [
+        "viuda de Süjbator"
+      ],
+      "answer": "La viuda de Süjbator",
+      "status": "literal",
+      "answered": true,
+      "exact": false,
+      "f1": 0.8571,
+      "ablation": {
+        "answered": false,
+        "exact": false,
+        "f1": 0.0
+      },
+      "shuffled": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "fresh_answered": false,
+      "honest_abstained": true,
+      "renamed": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.8571
+      }
+    },
+    {
+      "id": "64ef738f3933c0be78b8aad1ceb91d5a2d01c866",
+      "question": "¿Cuándo se anunció la creación del partido?",
+      "answers": [
+        "El 3 de abril de 2011,"
+      ],
+      "answer": "3 de abril de 2011",
+      "status": "literal",
+      "answered": true,
+      "exact": false,
+      "f1": 0.9091,
+      "ablation": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "shuffled": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "fresh_answered": false,
+      "honest_abstained": true,
+      "renamed": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.9091
+      }
+    },
+    {
+      "id": "25be1db3766bfbb5f64b3a8f4bf4af57470eb651",
+      "question": "¿Qué pueden hacer las células epidérmicas?",
+      "answers": [
+        "sintetizar la cutina"
+      ],
+      "answer": "bioquímica",
+      "status": "literal",
+      "answered": true,
+      "exact": false,
+      "f1": 0.0,
+      "ablation": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "shuffled": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "fresh_answered": false,
+      "honest_abstained": true,
+      "renamed": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      }
+    },
+    {
+      "id": "20bb0f5f0da2f4ef76c0e873115ad8b875651908",
+      "question": "¿En que territorio de americanos nativos se encuentra Galena?",
+      "answers": [
+        "condado de Cherokee"
+      ],
+      "answer": "el estado estadounidense de Kansas",
+      "status": "literal",
+      "answered": true,
+      "exact": false,
+      "f1": 0.25,
+      "ablation": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "shuffled": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "fresh_answered": false,
+      "honest_abstained": true,
+      "renamed": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.75
+      }
+    },
+    {
+      "id": "c1c673c5096d9f5b539fb2733837fc244bb31654",
+      "question": "¿Gracias a qué componente el X-24A pudo alcanzar altas velocidades?",
+      "answers": [
+        "motor de cohete XLR-11"
+      ],
+      "answer": "24A fue de 1667 km",
+      "status": "literal",
+      "answered": true,
+      "exact": false,
+      "f1": 0.2,
+      "ablation": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.25
+      },
+      "shuffled": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "fresh_answered": false,
+      "honest_abstained": true,
+      "renamed": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.2
+      }
+    },
+    {
+      "id": "09a255213b3bdcaed056582a3d9c97b344eb7ffa",
+      "question": "¿En qué año comenzó Jamaica a jugar en los Juegos Olímpicos de Invierno?",
+      "answers": [
+        "1988"
+      ],
+      "answer": "8",
+      "status": "literal",
+      "answered": true,
+      "exact": false,
+      "f1": 0.0,
+      "ablation": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "shuffled": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "fresh_answered": false,
+      "honest_abstained": true,
+      "renamed": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      }
+    },
+    {
+      "id": "74cb25955b06ba0075996202af60e003e4b816f5",
+      "question": "¿Cuándo se emitió el dong?",
+      "answers": [
+        "En 1953"
+      ],
+      "answer": "1953",
+      "status": "literal",
+      "answered": true,
+      "exact": false,
+      "f1": 0.6667,
+      "ablation": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "shuffled": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "fresh_answered": false,
+      "honest_abstained": true,
+      "renamed": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      }
+    },
+    {
+      "id": "4790bc4bd5a8c87fef240065d066adac42a73cb9",
+      "question": "¿En qué año encabezó Eddington la expedición? ",
+      "answers": [
+        "1919"
+      ],
+      "answer": "1919",
+      "status": "literal",
+      "answered": true,
+      "exact": true,
+      "f1": 1.0,
+      "ablation": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.5
+      },
+      "shuffled": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "fresh_answered": false,
+      "honest_abstained": true,
+      "renamed": {
+        "answered": true,
+        "exact": true,
+        "f1": 1.0
+      }
+    },
+    {
+      "id": "9967d5138401adce00d498d8698888c0372695c7",
+      "question": "¿Qué cualidades humanas se le atribuyeron a Mercurio? ",
+      "answers": [
+        "habilidades de recopilación de información y destreza física."
+      ],
+      "answer": "Mercurio",
+      "status": "literal",
+      "answered": true,
+      "exact": false,
+      "f1": 0.0,
+      "ablation": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "shuffled": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "fresh_answered": false,
+      "honest_abstained": true,
+      "renamed": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.1818
+      }
+    },
+    {
+      "id": "dfaf791aa9f18fb7b14542482931c6ecbd232210",
+      "question": "¿En qué transformó su aerolínea?",
+      "answers": [
+        "aerolínea de bajo coste"
+      ],
+      "answer": "Dos meses más tarde",
+      "status": "literal",
+      "answered": true,
+      "exact": false,
+      "f1": 0.0,
+      "ablation": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.8571
+      },
+      "shuffled": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.4
+      },
+      "fresh_answered": false,
+      "honest_abstained": true,
+      "renamed": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      }
+    },
+    {
+      "id": "9d139c4fab7e330eff7404ee5328906f18ae6711",
+      "question": "¿En qué año murió Anandibai?",
+      "answers": [
+        "1887,"
+      ],
+      "answer": "1887",
+      "status": "literal",
+      "answered": true,
+      "exact": true,
+      "f1": 1.0,
+      "ablation": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "shuffled": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "fresh_answered": false,
+      "honest_abstained": true,
+      "renamed": {
+        "answered": true,
+        "exact": true,
+        "f1": 1.0
+      }
+    },
+    {
+      "id": "aa1cb7bf670fb56596441b1515ff3153f77f2492",
+      "question": "¿Qué porcentaje de población representaban los udmurtios en 2010?",
+      "answers": [
+        "29.3%"
+      ],
+      "answer": "udmurtios vive en Udmurtia",
+      "status": "literal",
+      "answered": true,
+      "exact": false,
+      "f1": 0.0,
+      "ablation": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "shuffled": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "fresh_answered": false,
+      "honest_abstained": true,
+      "renamed": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      }
+    },
+    {
+      "id": "db8ad238e636314edbb75c8eeba02bf6cb87b003",
+      "question": "¿Cuándo Pakistán adoptó una Constitución? ",
+      "answers": [
+        "1956"
+      ],
+      "answer": "1956",
+      "status": "literal",
+      "answered": true,
+      "exact": true,
+      "f1": 1.0,
+      "ablation": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "shuffled": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "fresh_answered": false,
+      "honest_abstained": true,
+      "renamed": {
+        "answered": true,
+        "exact": true,
+        "f1": 1.0
+      }
+    },
+    {
+      "id": "3c7d1a724da56fe9f8a596194931cf033531bd6b",
+      "question": "¿Quién fue el candidato presidencial de la Liga de los Libertadores durante las elecciones de abril de 1934 en Estonia?",
+      "answers": [
+        "Larka"
+      ],
+      "answer": "1934",
+      "status": "literal",
+      "answered": true,
+      "exact": false,
+      "f1": 0.0,
+      "ablation": {
+        "answered": false,
+        "exact": false,
+        "f1": 0.0
+      },
+      "shuffled": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "fresh_answered": false,
+      "honest_abstained": true,
+      "renamed": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      }
+    },
+    {
+      "id": "f1134d7268c52b7e6bfe0c9f2991fa4b595b14b4",
+      "question": "¿En qué barco tuvo lugar la reunión?",
+      "answers": [
+        "Maxim Gorki,"
+      ],
+      "answer": "SS Maxim Gorki",
+      "status": "literal",
+      "answered": true,
+      "exact": false,
+      "f1": 0.8,
+      "ablation": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "shuffled": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "fresh_answered": false,
+      "honest_abstained": true,
+      "renamed": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      }
+    },
+    {
+      "id": "77c1567dcd87750112079399b0b6ab9c7b08eec3",
+      "question": "¿En qué año empezó Chris Terrio a reescribir Batman V. Superman?",
+      "answers": [
+        "2013,"
+      ],
+      "answer": "",
+      "status": "document_processed",
+      "answered": false,
+      "exact": false,
+      "f1": 0.0,
+      "ablation": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "shuffled": {
+        "answered": false,
+        "exact": false,
+        "f1": 0.0
+      },
+      "fresh_answered": false,
+      "honest_abstained": true,
+      "renamed": {
+        "answered": false,
+        "exact": false,
+        "f1": 0.0
+      }
+    },
+    {
+      "id": "0784e7d0549d343a415630613b334aac93cbb796",
+      "question": "¿Cuándo Anandibai regresó a Estados Unidos? ",
+      "answers": [
+        "1886,"
+      ],
+      "answer": "1886",
+      "status": "literal",
+      "answered": true,
+      "exact": true,
+      "f1": 1.0,
+      "ablation": {
+        "answered": false,
+        "exact": false,
+        "f1": 0.0
+      },
+      "shuffled": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "fresh_answered": false,
+      "honest_abstained": true,
+      "renamed": {
+        "answered": true,
+        "exact": true,
+        "f1": 1.0
+      }
+    },
+    {
+      "id": "94c11504a431e631dd746bdad3e8b1025716e2c6",
+      "question": "¿Para quién jugó Faubert por última vez?",
+      "answers": [
+        "Borneo"
+      ],
+      "answer": "Julien Faubert",
+      "status": "literal",
+      "answered": true,
+      "exact": false,
+      "f1": 0.0,
+      "ablation": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "shuffled": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "fresh_answered": false,
+      "honest_abstained": true,
+      "renamed": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      }
+    },
+    {
+      "id": "eaa076860295c84bcca755894565b1c4ebbdffc3",
+      "question": "¿En qué estilos produjo edificios McRae? ",
+      "answers": [
+        "(Gótico, Renacimiento, el estilo de la reina Ana y el estilo Románico)"
+      ],
+      "answer": "Gótico",
+      "status": "literal",
+      "answered": true,
+      "exact": false,
+      "f1": 0.1538,
+      "ablation": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "shuffled": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "fresh_answered": false,
+      "honest_abstained": true,
+      "renamed": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.1538
+      }
+    },
+    {
+      "id": "9a376e789d10ecea2b7b469d38895ff2739a2551",
+      "question": "¿Qué escolar hizo registros de las tribus y de la geografía de Irlanda en 100CE?",
+      "answers": [
+        "Ptolomeo"
+      ],
+      "answer": "C",
+      "status": "literal",
+      "answered": true,
+      "exact": false,
+      "f1": 0.0,
+      "ablation": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.5
+      },
+      "shuffled": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "fresh_answered": false,
+      "honest_abstained": true,
+      "renamed": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      }
+    },
+    {
+      "id": "e3ef1715e6a22099d2a795d2ff2fb68212552391",
+      "question": "¿Para qué idioma se ofrecen servicios de interpretación?",
+      "answers": [
+        "kirguiso"
+      ],
+      "answer": "hace poco",
+      "status": "literal",
+      "answered": true,
+      "exact": false,
+      "f1": 0.0,
+      "ablation": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "shuffled": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "fresh_answered": false,
+      "honest_abstained": true,
+      "renamed": {
+        "answered": true,
+        "exact": true,
+        "f1": 1.0
+      }
+    },
+    {
+      "id": "4569c96dedddb08830834e3d4e9641d8035e1906",
+      "question": "¿Cuándo murió el príncipe Alberto?",
+      "answers": [
+        "9 de noviembre de 1901:"
+      ],
+      "answer": "22 de enero de 1901",
+      "status": "literal",
+      "answered": true,
+      "exact": false,
+      "f1": 0.6,
+      "ablation": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.25
+      },
+      "shuffled": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.3333
+      },
+      "fresh_answered": false,
+      "honest_abstained": true,
+      "renamed": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.6
+      }
+    },
+    {
+      "id": "bc39774de6ecb0fc88e979a49744e6347ad46830",
+      "question": "En Síria, ¿qué varía entre la población judía?",
+      "answers": [
+        "el grado en que los Judíos se someten a las disciplinas de su religión"
+      ],
+      "answer": "Siria",
+      "status": "literal",
+      "answered": true,
+      "exact": false,
+      "f1": 0.0,
+      "ablation": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.3529
+      },
+      "shuffled": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "fresh_answered": false,
+      "honest_abstained": true,
+      "renamed": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      }
+    },
+    {
+      "id": "29bc5069e9e475a25a47d32784dd2ed7a63ca3de",
+      "question": "¿Qué país no usa software de filtrado?",
+      "answers": [
+        "los Estados Unidos,"
+      ],
+      "answer": "China",
+      "status": "literal",
+      "answered": true,
+      "exact": false,
+      "f1": 0.0,
+      "ablation": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "shuffled": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "fresh_answered": false,
+      "honest_abstained": true,
+      "renamed": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      }
+    },
+    {
+      "id": "f29b652d57996627829a1cb2940bdc7a99cfde8f",
+      "question": "¿Qué sugirió Catherine Clinton?",
+      "answers": [
+        "40.000 dólares podría ser la suma total de todas las recompensas ofrecidas en la región"
+      ],
+      "answer": "40",
+      "status": "literal",
+      "answered": true,
+      "exact": false,
+      "f1": 0.1176,
+      "ablation": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "shuffled": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "fresh_answered": false,
+      "honest_abstained": true,
+      "renamed": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.1176
+      }
+    },
+    {
+      "id": "c2649b7aa6c532df1a9cd51f75791d49d03f6a07",
+      "question": "¿De qué color es la superficie del planeta Sedna?",
+      "answers": [
+        "roja"
+      ],
+      "answer": "Unión Astronómica Internacional",
+      "status": "literal",
+      "answered": true,
+      "exact": false,
+      "f1": 0.0,
+      "ablation": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "shuffled": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "fresh_answered": false,
+      "honest_abstained": true,
+      "renamed": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      }
+    },
+    {
+      "id": "a6a0434b7e1c8b663fe83eb5b62db929dc4f9db6",
+      "question": "¿Que revelo Selvig a Romanoff?",
+      "answers": [
+        "el cetro de Loki puede usarse para apagar el generador"
+      ],
+      "answer": "cetro de Loki",
+      "status": "literal",
+      "answered": true,
+      "exact": false,
+      "f1": 0.4615,
+      "ablation": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "shuffled": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.4615
+      },
+      "fresh_answered": false,
+      "honest_abstained": true,
+      "renamed": {
+        "answered": false,
+        "exact": false,
+        "f1": 0.0
+      }
+    },
+    {
+      "id": "0e7fe71df1a928dd9bc4f866d0e854c1b121bc51",
+      "question": "¿En qué hospital se hizo médica encargada del pabellón femenino Anandibai?",
+      "answers": [
+        "hospital local Albert Edward."
+      ],
+      "answer": "Albert Edward",
+      "status": "literal",
+      "answered": true,
+      "exact": false,
+      "f1": 0.6667,
+      "ablation": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.8571
+      },
+      "shuffled": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.4
+      },
+      "fresh_answered": false,
+      "honest_abstained": true,
+      "renamed": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.6667
+      }
+    },
+    {
+      "id": "e3e28a4b3a4a57d0c2db428ba1f54a0fb1aef7b7",
+      "question": "Cuándo comenzó Inglaterra a eliminar las tropas británicas de Singapur?",
+      "answers": [
+        "1968"
+      ],
+      "answer": "",
+      "status": "unknown",
+      "answered": false,
+      "exact": false,
+      "f1": 0.0,
+      "ablation": {
+        "answered": false,
+        "exact": false,
+        "f1": 0.0
+      },
+      "shuffled": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "fresh_answered": false,
+      "honest_abstained": true,
+      "renamed": {
+        "answered": true,
+        "exact": true,
+        "f1": 1.0
+      }
+    },
+    {
+      "id": "8960e86ca41d7cb57d2f97b8249489d9801c15c1",
+      "question": "¿Quién creó el primer Ant-Man?",
+      "answers": [
+        "Stan Lee, Larry Lieber y Jack Kirby"
+      ],
+      "answer": "Jack Kirby",
+      "status": "literal",
+      "answered": true,
+      "exact": false,
+      "f1": 0.4444,
+      "ablation": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "shuffled": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "fresh_answered": false,
+      "honest_abstained": true,
+      "renamed": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.4444
+      }
+    },
+    {
+      "id": "75e068f3d37d01b486fec2ee79519fb94df682b9",
+      "question": "¿Cuánto pueden bajar de media las temperaturas en enero en la mayor parte del país?",
+      "answers": [
+        "-30 °C (-22 °F)"
+      ],
+      "answer": "30",
+      "status": "literal",
+      "answered": true,
+      "exact": false,
+      "f1": 0.4,
+      "ablation": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "shuffled": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.4
+      },
+      "fresh_answered": false,
+      "honest_abstained": true,
+      "renamed": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      }
+    },
+    {
+      "id": "d0163321a1ff547f276387d6be5635358b2acdec",
+      "question": "¿Cuál es la fuerza usada por un gobierno totalitario para asegurase de que nadie está en contra del gobierno?",
+      "answers": [
+        "policía"
+      ],
+      "answer": "Delitos Tecnológicos",
+      "status": "literal",
+      "answered": true,
+      "exact": false,
+      "f1": 0.0,
+      "ablation": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "shuffled": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "fresh_answered": false,
+      "honest_abstained": true,
+      "renamed": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      }
+    },
+    {
+      "id": "5379e4a03e39f4899eaa9d4460d1a8189a4035cd",
+      "question": "¿Cuántas medallas de oro recibió?",
+      "answers": [
+        "el oro en suelo, también el oro en salto,"
+      ],
+      "answer": "suelo",
+      "status": "literal",
+      "answered": true,
+      "exact": false,
+      "f1": 0.2,
+      "ablation": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.3636
+      },
+      "shuffled": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "fresh_answered": false,
+      "honest_abstained": true,
+      "renamed": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.2
+      }
+    },
+    {
+      "id": "a4dfa0bdd8966688905ca51156e6239510456c3f",
+      "question": "Además de ser un peligro para los aficionados a los peces, ¿qué tipo de empleados deben tener cuidado con la infección por M. marinum?",
+      "answers": [
+        "trabajadores en tiendas de animales,"
+      ],
+      "answer": "",
+      "status": "document_processed",
+      "answered": false,
+      "exact": false,
+      "f1": 0.0,
+      "ablation": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.25
+      },
+      "shuffled": {
+        "answered": false,
+        "exact": false,
+        "f1": 0.0
+      },
+      "fresh_answered": false,
+      "honest_abstained": true,
+      "renamed": {
+        "answered": false,
+        "exact": false,
+        "f1": 0.0
+      }
+    },
+    {
+      "id": "ce94bf6f9591f05e72f2e5187040e962cd32b901",
+      "question": "¿Cuándo empezó la reconstrucción con piedra del cuartel de madera?",
+      "answers": [
+        "1825"
+      ],
+      "answer": "cuartel construido inicialmente en madera",
+      "status": "literal",
+      "answered": true,
+      "exact": false,
+      "f1": 0.0,
+      "ablation": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "shuffled": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "fresh_answered": false,
+      "honest_abstained": true,
+      "renamed": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      }
+    },
+    {
+      "id": "12d143f1e9533c17fbce6008ac529f153534e61a",
+      "question": "¿Había más familias u hogares viviendo en el condado en 2010?",
+      "answers": [
+        "hogares"
+      ],
+      "answer": "13",
+      "status": "literal",
+      "answered": true,
+      "exact": false,
+      "f1": 0.0,
+      "ablation": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "shuffled": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "fresh_answered": false,
+      "honest_abstained": true,
+      "renamed": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      }
+    },
+    {
+      "id": "057289e3a225c05c002649075c08bd87ed3ba3b6",
+      "question": "¿Cuál es un deporte popular en Pakistán?",
+      "answers": [
+        "hockey"
+      ],
+      "answer": "1968",
+      "status": "literal",
+      "answered": true,
+      "exact": false,
+      "f1": 0.0,
+      "ablation": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "shuffled": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "fresh_answered": false,
+      "honest_abstained": true,
+      "renamed": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      }
+    },
+    {
+      "id": "e6cdaa12ad273b0327c44dcfd33b1132d640c1ca",
+      "question": "¿Qué compañía integró las infraestructuras MVC y AJAX en una plataforma de desarrollo de artilugios?",
+      "answers": [
+        "Microsoft"
+      ],
+      "answer": "Run",
+      "status": "literal",
+      "answered": true,
+      "exact": false,
+      "f1": 0.0,
+      "ablation": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "shuffled": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "fresh_answered": false,
+      "honest_abstained": true,
+      "renamed": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      }
+    },
+    {
+      "id": "97e269704d52785f2f2ffe230720e24dda172142",
+      "question": "¿Qué título tiene el primer libro de posguerra escrito en alemán sobre la literatura Responsa?",
+      "answers": [
+        "Halacha aktuell"
+      ],
+      "answer": "2 volúmenes",
+      "status": "literal",
+      "answered": true,
+      "exact": false,
+      "f1": 0.0,
+      "ablation": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "shuffled": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "fresh_answered": false,
+      "honest_abstained": true,
+      "renamed": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      }
+    },
+    {
+      "id": "7388d21add9ad134b672d3caf5fd8a4ec0a32d44",
+      "question": "¿Quiénes están exentos de tomar aspirina?",
+      "answers": [
+        "con antecedentes alérgicos al ibuprofeno o al naproxeno"
+      ],
+      "answer": "enfermedad renal",
+      "status": "literal",
+      "answered": true,
+      "exact": false,
+      "f1": 0.0,
+      "ablation": {
+        "answered": false,
+        "exact": false,
+        "f1": 0.0
+      },
+      "shuffled": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "fresh_answered": false,
+      "honest_abstained": true,
+      "renamed": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      }
+    },
+    {
+      "id": "67bf7da1a8afa7355e9325c1b62f32ba1b0ea969",
+      "question": "¿Qué tipo de objeto es el A5?",
+      "answers": [
+        "El A5 es un hidroavión de ala alta tipo monoplano"
+      ],
+      "answer": "retráctil",
+      "status": "literal",
+      "answered": true,
+      "exact": false,
+      "f1": 0.0,
+      "ablation": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.3077
+      },
+      "shuffled": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "fresh_answered": false,
+      "honest_abstained": true,
+      "renamed": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      }
+    },
+    {
+      "id": "9a8f6a8a46b131e1ac44c1051e51ebb6c1730846",
+      "question": "¿Cuándo fue arrestada Sarah Osborne?",
+      "answers": [
+        "el 1 de marzo de 1692"
+      ],
+      "answer": "1 de marzo de 1692",
+      "status": "literal",
+      "answered": true,
+      "exact": false,
+      "f1": 0.9091,
+      "ablation": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "shuffled": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "fresh_answered": false,
+      "honest_abstained": true,
+      "renamed": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.9091
+      }
+    },
+    {
+      "id": "b2e48158c17245e118e34c8335c43e1c2887c24b",
+      "question": "¿Qué organización se descubrió que planificaba un ataque a las embajadas de Singapur en 2001?",
+      "answers": [
+        "grupo terrorista islámico Jemaah Islamiya"
+      ],
+      "answer": "2001",
+      "status": "literal",
+      "answered": true,
+      "exact": false,
+      "f1": 0.0,
+      "ablation": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "shuffled": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "fresh_answered": false,
+      "honest_abstained": true,
+      "renamed": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      }
+    },
+    {
+      "id": "ba2d69582067de3d84c6fe5a38b66054b8a4854d",
+      "question": "¿Qué guerras tuvieron lugar entre 1793 y 1802?",
+      "answers": [
+        "las Guerras Revolucionarias Francesas"
+      ],
+      "answer": "1815",
+      "status": "literal",
+      "answered": true,
+      "exact": false,
+      "f1": 0.0,
+      "ablation": {
+        "answered": false,
+        "exact": false,
+        "f1": 0.0
+      },
+      "shuffled": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "fresh_answered": false,
+      "honest_abstained": true,
+      "renamed": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      }
+    },
+    {
+      "id": "6aa2edfc545187160bc221cb0c84d0313b6e95b2",
+      "question": "¿Quién era el secretario de Defensa?",
+      "answers": [
+        "John Keller,"
+      ],
+      "answer": "EE",
+      "status": "literal",
+      "answered": true,
+      "exact": false,
+      "f1": 0.0,
+      "ablation": {
+        "answered": false,
+        "exact": false,
+        "f1": 0.0
+      },
+      "shuffled": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.4
+      },
+      "fresh_answered": false,
+      "honest_abstained": true,
+      "renamed": {
+        "answered": true,
+        "exact": true,
+        "f1": 1.0
+      }
+    },
+    {
+      "id": "a0d4435520d3b3f29f6907e3fcbc0f1a974473d6",
+      "question": "¿Cómo se veía Reims históricamente?",
+      "answers": [
+        "club legendario en los círculos franceses del fútbol,"
+      ],
+      "answer": "1940 y 1950",
+      "status": "literal",
+      "answered": true,
+      "exact": false,
+      "f1": 0.0,
+      "ablation": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "shuffled": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "fresh_answered": false,
+      "honest_abstained": false,
+      "renamed": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      }
+    },
+    {
+      "id": "a6fb40bad3aaddab39849d7f1194f46ed14a48ca",
+      "question": "¿En qué año se realizó Valperga?",
+      "answers": [
+        "(1823)"
+      ],
+      "answer": "46",
+      "status": "literal",
+      "answered": true,
+      "exact": false,
+      "f1": 0.0,
+      "ablation": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "shuffled": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "fresh_answered": false,
+      "honest_abstained": true,
+      "renamed": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      }
+    },
+    {
+      "id": "6f9c7007fdebe5ffb07cbd710acdd267241dc15d",
+      "question": "¿Qué médicos recibió la principesca pareja?",
+      "answers": [
+        "Hermann von Helmholtz, Rudolf Virchow"
+      ],
+      "answer": "Alemania",
+      "status": "literal",
+      "answered": true,
+      "exact": false,
+      "f1": 0.0,
+      "ablation": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "shuffled": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "fresh_answered": false,
+      "honest_abstained": true,
+      "renamed": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      }
+    },
+    {
+      "id": "7107d04673007cafc4b89adbfb25bf846c94db6f",
+      "question": "¿Qué se puede usar para encontrar una solución a la expresión de forma cerrada?",
+      "answers": [
+        "computadoras"
+      ],
+      "answer": "numéricamente",
+      "status": "literal",
+      "answered": true,
+      "exact": false,
+      "f1": 0.0,
+      "ablation": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "shuffled": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "fresh_answered": false,
+      "honest_abstained": true,
+      "renamed": {
+        "answered": true,
+        "exact": true,
+        "f1": 1.0
+      }
+    },
+    {
+      "id": "2409a8c354456eec58c7c4519862f400edc34dfb",
+      "question": "¿La reunión con el padre Faul fue después de la muerte de qué dos caballeros?",
+      "answers": [
+        "Joe McDonnell y Martin Hurson,"
+      ],
+      "answer": "McDonnell y Martin Hurson",
+      "status": "literal",
+      "answered": true,
+      "exact": false,
+      "f1": 0.8889,
+      "ablation": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "shuffled": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.8889
+      },
+      "fresh_answered": false,
+      "honest_abstained": true,
+      "renamed": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      }
+    },
+    {
+      "id": "c87d11aee77aa1ba84445a5dcc12ed753b2571d4",
+      "question": "¿Cuántos objetos de forma circular se utilizaban para controlar a los personajes en las máquinas recreativas de Street Fighter II?",
+      "answers": [
+        "seis"
+      ],
+      "answer": "seis",
+      "status": "literal",
+      "answered": true,
+      "exact": true,
+      "f1": 1.0,
+      "ablation": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "shuffled": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "fresh_answered": false,
+      "honest_abstained": true,
+      "renamed": {
+        "answered": true,
+        "exact": true,
+        "f1": 1.0
+      }
+    },
+    {
+      "id": "95cdbbbdfd2b16ffd5bf269a8966c84cc69603ea",
+      "question": "¿Cuál era la preocupación de Brent Scowcroft?",
+      "answers": [
+        "que lo acordado en la Cumbre de Malta fuera algo prematuro y que generara grandes expectativas"
+      ],
+      "answer": "Unión Soviética",
+      "status": "literal",
+      "answered": true,
+      "exact": false,
+      "f1": 0.0,
+      "ablation": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.1053
+      },
+      "shuffled": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.1176
+      },
+      "fresh_answered": false,
+      "honest_abstained": true,
+      "renamed": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      }
+    },
+    {
+      "id": "aa6b395a5cb2ead221c88b62d2ce1a5ad0b9c498",
+      "question": "¿Cuáles eran las sustancias principales que formaban todo según Empedocles?",
+      "answers": [
+        "tierra, fuego, aire y agua."
+      ],
+      "answer": "aire y agua",
+      "status": "literal",
+      "answered": true,
+      "exact": false,
+      "f1": 0.75,
+      "ablation": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "shuffled": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "fresh_answered": false,
+      "honest_abstained": true,
+      "renamed": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      }
+    },
+    {
+      "id": "01a3c016461767cc62b28038a7bde4770d23d081",
+      "question": "¿Para qué se utiliza el símbolo $?",
+      "answers": [
+        "es un símbolo terminal especial para indicar el final de la pila y el final del flujo de entrada,"
+      ],
+      "answer": "vea",
+      "status": "literal",
+      "answered": true,
+      "exact": false,
+      "f1": 0.0,
+      "ablation": {
+        "answered": false,
+        "exact": false,
+        "f1": 0.0
+      },
+      "shuffled": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.1
+      },
+      "fresh_answered": false,
+      "honest_abstained": true,
+      "renamed": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      }
+    },
+    {
+      "id": "8b81712a9c108bcfc244cfe3eb98cec54cc76077",
+      "question": "¿Dónde se ubica Malvik?",
+      "answers": [
+        "Malvik (en noruego y oficialmente Malvik Kommune) es una localidad y un municipio de la provincia de Trøndelag, en el centro de Noruega."
+      ],
+      "answer": "Trøndelag",
+      "status": "literal",
+      "answered": true,
+      "exact": false,
+      "f1": 0.0833,
+      "ablation": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "shuffled": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0833
+      },
+      "fresh_answered": false,
+      "honest_abstained": true,
+      "renamed": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0833
+      }
+    },
+    {
+      "id": "bf6e46e6e2f7b54c6e88819e976253236fa7db0c",
+      "question": "¿Con quién luchaba el jugador junto con su mayor enemigo?",
+      "answers": [
+        "TCTF"
+      ],
+      "answer": "el TCTF",
+      "status": "literal",
+      "answered": true,
+      "exact": false,
+      "f1": 0.6667,
+      "ablation": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "shuffled": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "fresh_answered": false,
+      "honest_abstained": true,
+      "renamed": {
+        "answered": true,
+        "exact": true,
+        "f1": 1.0
+      }
+    },
+    {
+      "id": "7c3bcac9824075075c5b66c7038928ba198cc7ad",
+      "question": "¿Cuándo atacaron los alemanes a los soviéticos en Zerel?",
+      "answers": [
+        "10 de agosto"
+      ],
+      "answer": "ellos",
+      "status": "literal",
+      "answered": true,
+      "exact": false,
+      "f1": 0.0,
+      "ablation": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "shuffled": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "fresh_answered": false,
+      "honest_abstained": true,
+      "renamed": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      }
+    },
+    {
+      "id": "20b8de16e8a657c1ff896646aad1725094916b44",
+      "question": "¿Por qué sistema está influenciado principalmente el sistema judicial rumano?",
+      "answers": [
+        "Código Civil de Francia"
+      ],
+      "answer": "Francia",
+      "status": "literal",
+      "answered": true,
+      "exact": false,
+      "f1": 0.4,
+      "ablation": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.2857
+      },
+      "shuffled": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "fresh_answered": false,
+      "honest_abstained": true,
+      "renamed": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.4
+      }
+    },
+    {
+      "id": "1b11017bfb138016f719f78262add3ffe691c79a",
+      "question": "¿Qué anunció Lee Kuan Yew?",
+      "answers": [
+        "que Singapur era una nación soberana e independiente."
+      ],
+      "answer": "una conferencia de prensa televisada que Singapur",
+      "status": "literal",
+      "answered": true,
+      "exact": false,
+      "f1": 0.4,
+      "ablation": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.1818
+      },
+      "shuffled": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "fresh_answered": false,
+      "honest_abstained": true,
+      "renamed": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.4
+      }
+    },
+    {
+      "id": "ef3c3e04c0991a4bf4d78832999ff588e6561dd3",
+      "question": "¿Qué posiciones tiene que alcanzar antes de asumir la posición de un obispo según lo decretado por Cayo?",
+      "answers": [
+        "sin antes haber pasado por los grados de ostiario, lector, acólito, exorcista, subdiácono, diácono y sacerdote."
+      ],
+      "answer": "pasado",
+      "status": "literal",
+      "answered": true,
+      "exact": false,
+      "f1": 0.1176,
+      "ablation": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.1176
+      },
+      "shuffled": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.1176
+      },
+      "fresh_answered": false,
+      "honest_abstained": true,
+      "renamed": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      }
+    },
+    {
+      "id": "cd8d4e153b5758ab2930e8c55485f515dd79443e",
+      "question": "En qué año fue creado Howard el Pato?",
+      "answers": [
+        "1986"
+      ],
+      "answer": "1986",
+      "status": "literal",
+      "answered": true,
+      "exact": true,
+      "f1": 1.0,
+      "ablation": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "shuffled": {
+        "answered": true,
+        "exact": true,
+        "f1": 1.0
+      },
+      "fresh_answered": false,
+      "honest_abstained": true,
+      "renamed": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      }
+    },
+    {
+      "id": "2f6b07076541f0436f5f973824d8bac092480862",
+      "question": "¿Quién es Matyas Szuros?",
+      "answers": [
+        "un político húngaro."
+      ],
+      "answer": "Mátyás Szűrös",
+      "status": "literal",
+      "answered": true,
+      "exact": false,
+      "f1": 0.0,
+      "ablation": {
+        "answered": false,
+        "exact": false,
+        "f1": 0.0
+      },
+      "shuffled": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.5
+      },
+      "fresh_answered": false,
+      "honest_abstained": true,
+      "renamed": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      }
+    },
+    {
+      "id": "9499620e5d66aefb6b7e20411e6c0d28a0138bd3",
+      "question": "¿Quién era la empresa discográfica de Pink Floyd en los Estados Unidos?",
+      "answers": [
+        "Capitol Records"
+      ],
+      "answer": "Cara B",
+      "status": "literal",
+      "answered": true,
+      "exact": false,
+      "f1": 0.0,
+      "ablation": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "shuffled": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "fresh_answered": false,
+      "honest_abstained": true,
+      "renamed": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.5
+      }
+    },
+    {
+      "id": "d78557a3727f5d8874b883b33e21581d562140fe",
+      "question": "¿Qué profesión tenía Gustav Freytag?",
+      "answers": [
+        "escritor"
+      ],
+      "answer": "camarero real de Federico durante algún tiempo",
+      "status": "literal",
+      "answered": true,
+      "exact": false,
+      "f1": 0.0,
+      "ablation": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "shuffled": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "fresh_answered": false,
+      "honest_abstained": true,
+      "renamed": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.5
+      }
+    },
+    {
+      "id": "1ccf7e8dbf2086ebe3c796852a344176ac58b542",
+      "question": "¿Qué edad tenía cuando apareció en el debut de su nieto?",
+      "answers": [
+        "setenta y un años"
+      ],
+      "answer": "un años con motivo del debut de su nieto",
+      "status": "literal",
+      "answered": true,
+      "exact": false,
+      "f1": 0.3077,
+      "ablation": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "shuffled": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "fresh_answered": false,
+      "honest_abstained": true,
+      "renamed": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      }
+    },
+    {
+      "id": "20691c62c97bee325925014485bb1c0ae20a9912",
+      "question": "¿Qué explicación posible hay para la compresión de los pechos?",
+      "answers": [
+        "ropa y vestimentas apretadas, o sostenes de la medida incorrecta"
+      ],
+      "answer": "",
+      "status": "unknown",
+      "answered": false,
+      "exact": false,
+      "f1": 0.0,
+      "ablation": {
+        "answered": false,
+        "exact": false,
+        "f1": 0.0
+      },
+      "shuffled": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.1818
+      },
+      "fresh_answered": false,
+      "honest_abstained": true,
+      "renamed": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.3333
+      }
+    },
+    {
+      "id": "ba4a15cc3112237d1d3280219c0e65bdd2b997cc",
+      "question": "¿Cuál es el nombre del software scfreencasting?",
+      "answers": [
+        "ActivePresenter"
+      ],
+      "answer": "tests",
+      "status": "literal",
+      "answered": true,
+      "exact": false,
+      "f1": 0.0,
+      "ablation": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "shuffled": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "fresh_answered": false,
+      "honest_abstained": true,
+      "renamed": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      }
+    },
+    {
+      "id": "9b42bb33a424635774230a97fdc16d151d10562c",
+      "question": "¿A qué se dedicaba Scott Lang antes de ser Ant-Man?",
+      "answers": [
+        "ladrón"
+      ],
+      "answer": "Hank Pym",
+      "status": "literal",
+      "answered": true,
+      "exact": false,
+      "f1": 0.0,
+      "ablation": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.5
+      },
+      "shuffled": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "fresh_answered": false,
+      "honest_abstained": true,
+      "renamed": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      }
+    },
+    {
+      "id": "198914e4be600ca754585c0094153fb5ae1bfb72",
+      "question": "¿Qué tiempo abarca la química?",
+      "answers": [
+        "desde la prehistoria hasta el presente"
+      ],
+      "answer": "naturaleza",
+      "status": "literal",
+      "answered": true,
+      "exact": false,
+      "f1": 0.0,
+      "ablation": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "shuffled": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "fresh_answered": false,
+      "honest_abstained": true,
+      "renamed": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      }
+    },
+    {
+      "id": "5f495e11551aad314468d095f839f8e0db20e4ad",
+      "question": "¿Cuál es una línea de ferrocarril en Japón?",
+      "answers": [
+        "Línea Yamanote,"
+      ],
+      "answer": "Joetsu",
+      "status": "literal",
+      "answered": true,
+      "exact": false,
+      "f1": 0.0,
+      "ablation": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "shuffled": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "fresh_answered": false,
+      "honest_abstained": true,
+      "renamed": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      }
+    },
+    {
+      "id": "0d72681df562d3b59f065130cdb302f51c10212e",
+      "question": "¿En qué año falleció Robert Coleman Richardson?",
+      "answers": [
+        "2013"
+      ],
+      "answer": "Washington",
+      "status": "literal",
+      "answered": true,
+      "exact": false,
+      "f1": 0.0,
+      "ablation": {
+        "answered": false,
+        "exact": false,
+        "f1": 0.0
+      },
+      "shuffled": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "fresh_answered": false,
+      "honest_abstained": true,
+      "renamed": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      }
+    },
+    {
+      "id": "442146a6017db07fb0fe5442d7956a620bb1bff5",
+      "question": "¿Por qué motivo renunció Mustafa Kemal Ataturk al puesto de primer ministro?",
+      "answers": [
+        "Las diferencias de opinión con İnönü le llevaron a dejar el puesto en 25 de enero de 1939."
+      ],
+      "answer": "Kemal",
+      "status": "literal",
+      "answered": true,
+      "exact": false,
+      "f1": 0.0,
+      "ablation": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "shuffled": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.1053
+      },
+      "fresh_answered": false,
+      "honest_abstained": true,
+      "renamed": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      }
+    },
+    {
+      "id": "dff9fd27fc5ac7f365d469e67da3515a57d99c3b",
+      "question": "¿Cuándo nació Guillotin?",
+      "answers": [
+        "28 de mayo de 1738"
+      ],
+      "answer": "1814",
+      "status": "literal",
+      "answered": true,
+      "exact": false,
+      "f1": 0.0,
+      "ablation": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "shuffled": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "fresh_answered": false,
+      "honest_abstained": true,
+      "renamed": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      }
+    },
+    {
+      "id": "fcfe4b03d41b00c785f7c34fd112d856252a43d1",
+      "question": "¿Cuándo obtuvo Singapur su independencia?",
+      "answers": [
+        "9 de agosto de 1965"
+      ],
+      "answer": "9 de agosto de 1965",
+      "status": "literal",
+      "answered": true,
+      "exact": true,
+      "f1": 1.0,
+      "ablation": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.25
+      },
+      "shuffled": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "fresh_answered": false,
+      "honest_abstained": true,
+      "renamed": {
+        "answered": true,
+        "exact": true,
+        "f1": 1.0
+      }
+    },
+    {
+      "id": "2900a0d1fe0a8c0abb11cb57954fb23dbbc85818",
+      "question": "¿Qué canción compuso Reutter?",
+      "answers": [
+        "Deutschlandlied"
+      ],
+      "answer": "Heuss deseaba",
+      "status": "literal",
+      "answered": true,
+      "exact": false,
+      "f1": 0.0,
+      "ablation": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "shuffled": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "fresh_answered": false,
+      "honest_abstained": true,
+      "renamed": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      }
+    },
+    {
+      "id": "1f78bd8f36bd96b8190f2219f33b632360d98fb9",
+      "question": "¿Cuál era el género de Agathokleia?",
+      "answers": [
+        "mujeres"
+      ],
+      "answer": "",
+      "status": "unknown",
+      "answered": false,
+      "exact": false,
+      "f1": 0.0,
+      "ablation": {
+        "answered": false,
+        "exact": false,
+        "f1": 0.0
+      },
+      "shuffled": {
+        "answered": false,
+        "exact": false,
+        "f1": 0.0
+      },
+      "fresh_answered": false,
+      "honest_abstained": true,
+      "renamed": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      }
+    },
+    {
+      "id": "4649a0b7f41cbc533b5400bd19c79a9908d6c2b2",
+      "question": "¿Quién creó el diálogo de juegos?",
+      "answers": [
+        "Matthew J. Costello"
+      ],
+      "answer": "Matthew J",
+      "status": "literal",
+      "answered": true,
+      "exact": false,
+      "f1": 0.8,
+      "ablation": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "shuffled": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "fresh_answered": false,
+      "honest_abstained": true,
+      "renamed": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      }
+    },
+    {
+      "id": "937cd14655dccd4a0ce9fd16e9c01baf30693cc7",
+      "question": "¿Cuál es la definición según la relatividad especial?",
+      "answers": [
+        "en su marco inercial, el interferómetro puede considerarse en reposo de acuerdo con el principio de la relatividad, por lo que el tiempo de propagación de la luz es el mismo en todas las direcciones"
+      ],
+      "answer": "marco inercial",
+      "status": "literal",
+      "answered": true,
+      "exact": false,
+      "f1": 0.1081,
+      "ablation": {
+        "answered": false,
+        "exact": false,
+        "f1": 0.0
+      },
+      "shuffled": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0556
+      },
+      "fresh_answered": false,
+      "honest_abstained": true,
+      "renamed": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.1081
+      }
+    },
+    {
+      "id": "2ddedf0063f403a5c9782b7ec075a1ea3f2919e1",
+      "question": "¿En qué porcentaje afecta  la neuropatía a las personas con diabetes?",
+      "answers": [
+        "Se estima que la prevalencia de la neuropatía en pacientes diabéticos es de aproximadamente 20%."
+      ],
+      "answer": "20",
+      "status": "literal",
+      "answered": true,
+      "exact": false,
+      "f1": 0.125,
+      "ablation": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.3333
+      },
+      "shuffled": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.125
+      },
+      "fresh_answered": false,
+      "honest_abstained": true,
+      "renamed": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.1739
+      }
+    },
+    {
+      "id": "f479210597b261a4b8d0a2154705a851e6eb3e5a",
+      "question": "¿Dónde está ubicada la provincia en relación con Bangkok?",
+      "answers": [
+        "al norte"
+      ],
+      "answer": "norte de Bangkok",
+      "status": "literal",
+      "answered": true,
+      "exact": false,
+      "f1": 0.4,
+      "ablation": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.8
+      },
+      "shuffled": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "fresh_answered": false,
+      "honest_abstained": true,
+      "renamed": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.4
+      }
+    },
+    {
+      "id": "d30fcff8cdfd3fc6a12ace696a3ac6a443207972",
+      "question": "¿Qué estados ocupan el Golfo?",
+      "answers": [
+        "Tamaulipas, Veracruz, Tabasco, Campeche, Yucatán"
+      ],
+      "answer": "península de Yucatán",
+      "status": "literal",
+      "answered": true,
+      "exact": false,
+      "f1": 0.25,
+      "ablation": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "shuffled": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "fresh_answered": false,
+      "honest_abstained": true,
+      "renamed": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      }
+    },
+    {
+      "id": "b47749eee1cb9a414ddaeb18de87840f4df19c27",
+      "question": "¿Qué empresa distribuyó Super Comboy?",
+      "answers": [
+        "Hyundai Electronics"
+      ],
+      "answer": "Comboy",
+      "status": "literal",
+      "answered": true,
+      "exact": false,
+      "f1": 0.0,
+      "ablation": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "shuffled": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "fresh_answered": false,
+      "honest_abstained": true,
+      "renamed": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.6667
+      }
+    },
+    {
+      "id": "f316ec75da7a0d250638f47440b718ca36a53cc2",
+      "question": "¿Quién debió elegir al primer director?",
+      "answers": [
+        "la Asamblea Popular Suprema"
+      ],
+      "answer": "",
+      "status": "unknown",
+      "answered": false,
+      "exact": false,
+      "f1": 0.0,
+      "ablation": {
+        "answered": false,
+        "exact": false,
+        "f1": 0.0
+      },
+      "shuffled": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "fresh_answered": false,
+      "honest_abstained": true,
+      "renamed": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      }
+    },
+    {
+      "id": "4c263aa7b3d9fb66ce642390cc14e6471460058f",
+      "question": "¿Cómo describió conocidamente Lee Kuan Yew sus sentimientos sobre la conversión en república de Singapur?",
+      "answers": [
+        "momento de angustia."
+      ],
+      "answer": "día",
+      "status": "literal",
+      "answered": true,
+      "exact": false,
+      "f1": 0.0,
+      "ablation": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "shuffled": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "fresh_answered": false,
+      "honest_abstained": true,
+      "renamed": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      }
+    },
+    {
+      "id": "3508c050df827def20184c96f3f79f7a7840c8df",
+      "question": "¿ Que standard es el más común al rellenar perforaciones en el papel?",
+      "answers": [
+        "Estándar Internacional ISO 838."
+      ],
+      "answer": "838",
+      "status": "literal",
+      "answered": true,
+      "exact": false,
+      "f1": 0.4,
+      "ablation": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "shuffled": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "fresh_answered": false,
+      "honest_abstained": true,
+      "renamed": {
+        "answered": true,
+        "exact": true,
+        "f1": 1.0
+      }
+    },
+    {
+      "id": "049e6e157a2c580e4371721d8bbe24150e820e97",
+      "question": "¿Cuándo se presentó la adaptación al cine de \"The Crucible\"?",
+      "answers": [
+        "1996"
+      ],
+      "answer": "Osborne es mencionada",
+      "status": "literal",
+      "answered": true,
+      "exact": false,
+      "f1": 0.0,
+      "ablation": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "shuffled": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "fresh_answered": false,
+      "honest_abstained": true,
+      "renamed": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      }
+    },
+    {
+      "id": "d6c719122d580f1e703cd56397561ab6b173cda8",
+      "question": "¿Cuántas cualidades utilizó Jabir ibn Hayyan para analizar cada elemento clásico?",
+      "answers": [
+        "cuatro"
+      ],
+      "answer": "cuatro",
+      "status": "literal",
+      "answered": true,
+      "exact": true,
+      "f1": 1.0,
+      "ablation": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "shuffled": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "fresh_answered": false,
+      "honest_abstained": true,
+      "renamed": {
+        "answered": true,
+        "exact": true,
+        "f1": 1.0
+      }
+    },
+    {
+      "id": "70400b3b5b5ca3c293c38d36b9606b8fa90880f2",
+      "question": "¿En qué año se cerraron oficialmente las colonias penales?",
+      "answers": [
+        "1951."
+      ],
+      "answer": "1951",
+      "status": "literal",
+      "answered": true,
+      "exact": true,
+      "f1": 1.0,
+      "ablation": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "shuffled": {
+        "answered": true,
+        "exact": false,
+        "f1": 0.0
+      },
+      "fresh_answered": false,
+      "honest_abstained": true,
+      "renamed": {
+        "answered": true,
+        "exact": true,
+        "f1": 1.0
+      }
+    }
+  ]
+}
