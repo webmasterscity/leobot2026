@@ -1,0 +1,108 @@
+{
+  "tag": "development",
+  "engine_tree": "1f3187f2ced4c97364503187d074815f33612326",
+  "engine_unchanged": true,
+  "preregistration": "prereg/F-5-alineacion-relacional-local.md",
+  "source_bytes": 11042089,
+  "learning": {
+    "examples_offered": 2000,
+    "examples_used": 1325,
+    "candidates_enumerated": 1036875,
+    "episodes": 1325,
+    "boundary_vocabulary": 54,
+    "cpu_s": 6.662664
+  },
+  "baseline_learning": {
+    "examples_used": 1608,
+    "examples_skipped": 392,
+    "candidates_enumerated": 2122093,
+    "cpu_s": 10.279534
+  },
+  "shuffled_learning": {
+    "examples_offered": 2000,
+    "examples_used": 837,
+    "candidates_enumerated": 1036070,
+    "episodes": 837,
+    "boundary_vocabulary": 31,
+    "cpu_s": 6.08955
+  },
+  "treatment": {
+    "sqac_train_new_development": {
+      "total": 64,
+      "attempts": 8,
+      "correct": 1,
+      "precision": 0.125,
+      "high_confidence_attempts": 0,
+      "candidates_examined": 34496,
+      "cpu_s": 0.507003,
+      "p50_ms": 7.19999,
+      "p95_ms": 15.87833
+    }
+  },
+  "fresh": {
+    "sqac_train_new_development": {
+      "total": 64,
+      "attempts": 0,
+      "correct": 0,
+      "precision": null,
+      "high_confidence_attempts": 0,
+      "candidates_examined": 34496,
+      "cpu_s": 0.468854,
+      "p50_ms": 6.70611,
+      "p95_ms": 14.88342
+    }
+  },
+  "wrong_passage": {
+    "sqac_train_new_development": {
+      "total": 64,
+      "attempts": 5,
+      "correct": 0,
+      "precision": 0.0,
+      "high_confidence_attempts": 0,
+      "candidates_examined": 36275,
+      "cpu_s": 0.433481,
+      "p50_ms": 7.11789,
+      "p95_ms": 15.18704
+    }
+  },
+  "retrieval": {
+    "sqac_train_new_development": {
+      "total": 64,
+      "exact": 0,
+      "answer_in_sentence": 36
+    }
+  },
+  "f4_baseline": {
+    "sqac_train_new_development": {
+      "total": 64,
+      "correct": 5,
+      "attempts": 39,
+      "precision": 0.128205,
+      "high_confidence_attempts": 3,
+      "candidates_examined": 67030,
+      "cpu_s": 0.658703,
+      "p50_ms": 9.29165,
+      "p95_ms": 20.56853
+    }
+  },
+  "shuffled_questions": {
+    "sqac_train_new_development": {
+      "total": 64,
+      "attempts": 9,
+      "correct": 0,
+      "precision": 0.0,
+      "high_confidence_attempts": 0,
+      "candidates_examined": 34496,
+      "cpu_s": 0.497618,
+      "p50_ms": 7.11949,
+      "p95_ms": 15.85523
+    }
+  },
+  "restart_same": true,
+  "correction_same": true,
+  "consolidation_cpu_s": 0.279523,
+  "gate_passed": false,
+  "cpu_total_s": 26.284368,
+  "wall_total_s": 28.59877,
+  "max_rss_kib": 385232
+}
