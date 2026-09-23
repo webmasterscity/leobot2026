@@ -20,12 +20,13 @@ from copy import deepcopy
 from math import exp, log1p, log2
 from itertools import combinations
 import json
+import hashlib
 from .rbf import RBFStrategyRouter
 from . import meta_operators, learner_dsl
 
 
 class MetaController:
-    VERSION = 10
+    VERSION = 11
 
     def __init__(self) -> None:
         # decision family -> exact signature -> strategy -> aggregates
@@ -64,6 +65,11 @@ class MetaController:
         self.meta_probe_pending: dict[str, dict] = {}
         self.meta_rival_checkpoints: dict[str, int] = {}
         self.meta_rival_retry_after: dict[str, int] = {}
+        self.enable_learner_synthesis = True
+        self.meta_learners: dict[str, dict] = {}
+        self.learner_synthesis_counts: dict[str, dict] = {}
+        self.learner_synthesis_checkpoints: dict[str, int] = {}
+        self.learner_retry_after: dict[str, int] = {}
 
     @staticmethod
     def _feature_tuple(features) -> tuple[float, ...]:
@@ -397,6 +403,37 @@ class MetaController:
             if (view.get('kind')=='aggregate_program' and
                     view.get('operator_dependency') and
                     view['operator_dependency'] not in supported):
+                self.invented_views.pop(family,None)
+                self.meta_rivals.pop(family,None)
+        self._reconcile_meta_learners()
+
+    @staticmethod
+    def _learner_key(program: dict) -> str:
+        encoded=json.dumps(program,sort_keys=True,separators=(',',':'))
+        return 'learner_'+hashlib.blake2b(encoded.encode(),digest_size=8).hexdigest()
+
+    def _reconcile_meta_learners(self) -> None:
+        """Retain declarative learners only while their source views survive."""
+        supported={}
+        for family,view in sorted(self.invented_views.items()):
+            if (view.get('kind')!='learner_product' or
+                    view.get('learner_dependency')):
+                continue
+            program=view.get('learner_program')
+            if not isinstance(program,dict):
+                continue
+            try:
+                learner_dsl.validate(program)
+            except (TypeError,ValueError,KeyError):
+                continue
+            key=self._learner_key(program)
+            row=supported.setdefault(key,{'program':deepcopy(program),'sources':[]})
+            row['sources'].append(family)
+        self.meta_learners=supported
+        for family,view in list(self.invented_views.items()):
+            if (view.get('kind')=='learner_product' and
+                    view.get('learner_dependency') and
+                    view['learner_dependency'] not in supported):
                 self.invented_views.pop(family,None)
                 self.meta_rivals.pop(family,None)
 
@@ -898,6 +935,88 @@ class MetaController:
                 return
         self.meta_rivals[family]=[alternative]
 
+    def _candidate_learner_programs(self) -> list[dict]:
+        """Combine existing declarative components under a finite grammar."""
+        topologies=(('binary_context','binary_context'),
+                    ('fold_bool','fold_bool'),
+                    ('binary_context','fold_bool'))
+        programs=[]
+        for topology in topologies:
+            program=deepcopy(learner_dsl.PROJECTION_LEARNER)
+            program['hypothesis_generator']='product_extractors'
+            program['operators']=list(dict.fromkeys(
+                [*learner_dsl.PROJECTION_LEARNER['operators'],
+                 *learner_dsl.AGGREGATE_LEARNER['operators']]))
+            program['constraints']={'min_examples':32,'max_width':16,'max_depth':2,
+                                    'components':list(topology),'top_components':4}
+            program['verifier']={'kind':'leave_one_out','temporal':'halves',
+                                 'min_temporal_coverage':0.65,
+                                 'min_temporal_accuracy':0.92}
+            program['cost']={'kind':'weighted_fit','accuracy_weight':1.0,
+                             'gain_weight':0.5,'dimension_penalty':0.01}
+            program['promotion']={'min_covered_count':16,'min_covered_fraction':0.6,
+                                  'min_accuracy':0.92,'min_coverage':0.80,
+                                  'min_gain':0.20,'min_bucket_support':2,
+                                  'min_bucket_confidence':0.85,
+                                  'required_buckets':2,
+                                  'different_bucket_winners':True}
+            program['budget']={'max_candidates':96,'max_tasks':384,
+                               'max_cpu_s':10.0}
+            learner_dsl.validate(program)
+            programs.append(program)
+        programs.sort(key=lambda row:(self._learner_key(row) not in self.meta_learners,
+                                      topologies.index(tuple(row['constraints']['components']))))
+        return programs
+
+    def _synthesize_learner_from_tasks(self, family: str, tasks: list[dict]) -> dict:
+        """Search descriptions, then promote only a verified local improvement."""
+        if not self.enable_learner_synthesis or len(tasks)<32:
+            return {'status':'learner_synthesis_pending'}
+        existing=self.invented_views.get(family)
+        baseline=(float(existing.get('accuracy',0))*float(existing.get('coverage',0))
+                  if isinstance(existing,dict) else 0.0)
+        tried=hypotheses=0
+        preferred=[row['reduce'] for _,row in sorted(self.meta_operators.items())]
+        fitted=[]
+        for program in self._candidate_learner_programs():
+            tried+=1
+            result=learner_dsl.fit(program,tasks,preferred_reducers=preferred)
+            hypotheses+=result['candidates_evaluated']
+            if result['status']!='fitted':
+                continue
+            view=result['view']
+            if view['accuracy']*view['coverage']<=baseline+0.05:
+                continue
+            key=self._learner_key(program)
+            fitted.append((view['accuracy']*view['coverage'],view['score'],key,view))
+            # A previously validated learner can be reused without reopening
+            # every cheaper description once it again has strong evidence.
+            if (key in self.meta_learners and view['accuracy']>=0.98 and
+                    view['coverage']>=0.95):
+                break
+        row=self.learner_synthesis_counts.setdefault(family,
+             {'descriptions':0,'hypotheses':0})
+        row['descriptions']+=tried;row['hypotheses']+=hypotheses
+        if fitted:
+            fitted.sort(key=lambda item:(-item[0],-item[1],item[2]))
+            _,_,key,view=fitted[0]
+            sources=self.meta_learners.get(key,{}).get('sources',())
+            dependency=key if any(source!=family for source in sources) else None
+            view.update(learner_key=key,learner_dependency=dependency,
+                        descriptions_tried=tried,
+                        structural_hypotheses=hypotheses)
+            self.invented_views[family]=view
+            if (len(fitted)>1 and fitted[0][0]-fitted[1][0]<=0.01 and
+                    fitted[0][2]!=fitted[1][2]):
+                rival=deepcopy(fitted[1][3])
+                rival['learner_key']=fitted[1][2]
+                self.meta_rivals[family]=[rival]
+            self._reconcile_meta_learners()
+            return {'status':'learner_synthesized','family':family,
+                    **deepcopy(view)}
+        return {'status':'learner_synthesis_rejected','family':family,
+                'descriptions_tried':tried,'structural_hypotheses':hypotheses}
+
     def invent_view(self, family: str, *, max_dims: int = 3, min_tasks: int = 8) -> dict:
         """Synthesize a compact structural representation from meta-experience.
 
@@ -925,6 +1044,18 @@ class MetaController:
         # new observation batch; contradictory evidence still withdraws it.
         program_checked=None
         existing=self.invented_views.get(fam)
+        if isinstance(existing,dict) and existing.get('kind')=='learner_product':
+            checked=learner_dsl.revalidate_view(existing,tasks)
+            if checked is not None:
+                self.invented_views[fam]=checked
+                return {'status':'learner_retained','family':fam,**deepcopy(checked)}
+            self.invented_views.pop(fam,None)
+            self.meta_rivals.pop(fam,None)
+            self.learner_retry_after[fam]=len(tasks)+32
+            self._reconcile_meta_learners()
+            return {'status':'learner_withdrawn','family':fam,
+                    'reason':'new_evidence_failed_validation',
+                    'retry_at':self.learner_retry_after[fam]}
         if isinstance(existing,dict) and existing.get('kind')=='feature_program':
             program_checked=self._invent_meta_program_from_tasks(fam,tasks)
             if program_checked.get('retained'):
@@ -952,6 +1083,16 @@ class MetaController:
                     self.meta_rivals[fam]=[existing]
                 self._maybe_discover_rival(fam,tasks)
                 return aggregate
+        if (self.enable_learner_synthesis and len(tasks)>=32 and
+                len(tasks)&(len(tasks)-1)==0 and
+                len(tasks)>self.learner_synthesis_checkpoints.get(fam,0) and
+                len(tasks)>=self.learner_retry_after.get(fam,0) and
+                (not isinstance(existing,dict) or
+                 float(existing.get('accuracy',0))*float(existing.get('coverage',0))<0.90)):
+            self.learner_synthesis_checkpoints[fam]=len(tasks)
+            synthesized=self._synthesize_learner_from_tasks(fam,tasks)
+            if synthesized.get('status')=='learner_synthesized':
+                return synthesized
         projection=self._best_projection_view(tasks,max_dims)
         if projection is None:
             macro=self._invent_macro_view_from_tasks(fam,tasks)
@@ -984,7 +1125,19 @@ class MetaController:
         kind=str(view.get('kind','feature_projection'))
         detail={'accuracy':view.get('accuracy'),'coverage':view.get('coverage'),
                 'gain_over_majority':view.get('gain_over_majority'),'kind':kind}
-        if kind=='aggregate_program':
+        if kind=='learner_product':
+            if not self.enable_learner_synthesis:
+                return None,None
+            dependency=view.get('learner_dependency')
+            if dependency and dependency not in self.meta_learners:
+                return None,None
+            key=learner_dsl.evaluate_components(vals,view.get('components'))
+            if key is None:
+                return None,None
+            bucket=(view.get('buckets') or {}).get(key)
+            detail['learner_key']=view.get('learner_key')
+            detail['learner_dependency']=dependency
+        elif kind=='aggregate_program':
             if not self.enable_meta_operator_invention:
                 return None,None
             dependency=view.get('operator_dependency')
@@ -1322,7 +1475,11 @@ class MetaController:
                 'meta_rivals':deepcopy(self.meta_rivals),
                 'meta_probe_pending':deepcopy(self.meta_probe_pending),
                 'meta_rival_checkpoints':deepcopy(self.meta_rival_checkpoints),
-                'meta_rival_retry_after':deepcopy(self.meta_rival_retry_after)}
+                'meta_rival_retry_after':deepcopy(self.meta_rival_retry_after),
+                'enable_learner_synthesis':self.enable_learner_synthesis,
+                'learner_synthesis_counts':deepcopy(self.learner_synthesis_counts),
+                'learner_synthesis_checkpoints':deepcopy(self.learner_synthesis_checkpoints),
+                'learner_retry_after':deepcopy(self.learner_retry_after)}
 
     @classmethod
     def from_dict(cls, data: dict | None) -> 'MetaController':
@@ -1330,7 +1487,7 @@ class MetaController:
         if not isinstance(data,dict):
             return obj
         version=int(data.get('version',1) or 1)
-        if version not in (1,2,3,4,5,6,7,8,9,10):
+        if version not in (1,2,3,4,5,6,7,8,9,10,11):
             raise ValueError('Estado de MetaController no compatible.')
         obj.exact=deepcopy(data.get('exact',{})) if isinstance(data.get('exact',{}),dict) else {}
         obj.routers={str(k):RBFStrategyRouter.from_dict(v) for k,v in (data.get('routers',{}) or {}).items()}
@@ -1361,6 +1518,12 @@ class MetaController:
             obj.enable_meta_rivals=bool(data.get('enable_meta_rivals',True))
             for name in ('meta_rivals','meta_probe_pending','meta_rival_checkpoints',
                          'meta_rival_retry_after'):
+                raw=data.get(name,{})
+                setattr(obj,name,deepcopy(raw) if isinstance(raw,dict) else {})
+        if version>=11:
+            obj.enable_learner_synthesis=bool(data.get('enable_learner_synthesis',True))
+            for name in ('learner_synthesis_counts','learner_synthesis_checkpoints',
+                         'learner_retry_after'):
                 raw=data.get(name,{})
                 setattr(obj,name,deepcopy(raw) if isinstance(raw,dict) else {})
         obj._reconcile_meta_primitives()

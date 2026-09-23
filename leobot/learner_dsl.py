@@ -6,8 +6,9 @@ structural extractors can run here. Search never executes user code.
 """
 from __future__ import annotations
 
+from copy import deepcopy
 from itertools import combinations
-from math import isfinite
+from math import isfinite, log2
 from time import process_time
 
 from . import meta_operators
@@ -62,7 +63,7 @@ def validate(program: dict) -> None:
     if program['input_representation']!='numeric_meta_tasks':
         raise ValueError('Representación de entrada no permitida.')
     generator=program['hypothesis_generator']
-    if generator not in ('projection_subsets','fold_cutpoints'):
+    if generator not in ('projection_subsets','fold_cutpoints','product_extractors'):
         raise ValueError('Generador no permitido.')
     operators=program['operators']
     if (not isinstance(operators,list) or not operators or
@@ -79,8 +80,18 @@ def validate(program: dict) -> None:
     constraints=program['constraints'];budget=program['budget']
     if not isinstance(constraints,dict) or not isinstance(budget,dict):
         raise ValueError('Restricciones o presupuesto inválidos.')
-    if set(constraints)!=set(('min_examples','max_width','max_depth')):
+    standard_constraints={'min_examples','max_width','max_depth'}
+    product_constraints=standard_constraints|{'components','top_components'}
+    if set(constraints)!=(product_constraints if generator=='product_extractors'
+                          else standard_constraints):
         raise ValueError('Restricciones desconocidas.')
+    if generator=='product_extractors':
+        components=constraints['components'];top=constraints['top_components']
+        if (not isinstance(components,list) or len(components)!=2 or
+                any(item not in ('binary_context','fold_bool') for item in components)
+                or type(top) is not int or not 1<=top<=4 or
+                constraints['max_depth']!=2):
+            raise ValueError('Composición de extractores inválida.')
     if set(budget)!=set(('max_candidates','max_tasks','max_cpu_s')):
         raise ValueError('Presupuesto desconocido.')
     for field,upper in (('min_examples',384),('max_width',16),('max_depth',4)):
@@ -126,6 +137,9 @@ def validate(program: dict) -> None:
             raise ValueError('Peso de costo inválido.')
     else:
         raise ValueError('Costo no permitido.')
+    if generator=='product_extractors' and (
+            search['order']!='best_score' or cost['kind']!='weighted_fit'):
+        raise ValueError('La composición requiere búsqueda puntuable.')
     expected=('min_covered_count','min_covered_fraction','min_accuracy',
               'min_coverage','min_gain','min_bucket_support',
               'min_bucket_confidence','required_buckets','different_bucket_winners')
@@ -151,6 +165,87 @@ def _winner(counts: dict) -> str | None:
 
 def _projection_key(features, dims) -> str:
     return ','.join(f'{float(features[i]):.6g}' for i in dims)
+
+
+def _component_value(features, component: dict) -> int | None:
+    kind=component.get('kind')
+    if kind=='binary_index':
+        index=component.get('index')
+        if type(index) is not int or not 0<=index<len(features):
+            return None
+        return int(float(features[index])>0)
+    if kind=='binary_pair':
+        left=component.get('left');right=component.get('right')
+        if (type(left) is not int or type(right) is not int or
+                not 0<=left<right<len(features)):
+            return None
+        return int(float(features[left])>float(features[right]))
+    if kind=='fold_bool':
+        start=component.get('start');stop=component.get('stop')
+        if (type(start) is not int or type(stop) is not int or
+                not 0<=start<stop<=len(features) or stop-start<4):
+            return None
+        return meta_operators.evaluate(features[start:stop],component.get('spec'))
+    return None
+
+
+def evaluate_components(features, components) -> str | None:
+    """Run a persisted composition without executing arbitrary code."""
+    if not isinstance(components,list) or len(components)!=2:
+        return None
+    values=[_component_value(features,part) if isinstance(part,dict) else None
+            for part in components]
+    if any(value is None for value in values):
+        return None
+    return '|'.join(str(value) for value in values)
+
+
+def _information_gain(values: list[int], labels: list[str]) -> float:
+    counts={};groups={}
+    for value,label in zip(values,labels):
+        counts[label]=counts.get(label,0)+1
+        row=groups.setdefault(value,{})
+        row[label]=row.get(label,0)+1
+    n=len(labels)
+    def entropy(row):
+        total=sum(row.values())
+        return -sum((count/total)*log2(count/total) for count in row.values())
+    return entropy(counts)-sum(sum(row.values())/n*entropy(row)
+                               for row in groups.values())
+
+
+def _component_candidates(kind: str, tasks: list[dict], labels: list[str],
+                          preferred_reducers, top: int) -> tuple[list[dict],int]:
+    """Rank bounded primitive extractors by label information, not names."""
+    width=len(tasks[0]['features']);descriptors=[]
+    if kind=='binary_context':
+        descriptors.extend({'kind':'binary_index','index':index}
+                           for index in range(width))
+        descriptors.extend({'kind':'binary_pair','left':left,'right':right}
+                           for left,right in combinations(range(width),2))
+        descriptors=descriptors[:50]
+    else:
+        segments=[]
+        for start,stop in ((0,width),(1,width),(2,width),
+                           (0,width-1),(0,width-2)):
+            if stop-start>=4 and (start,stop) not in segments:
+                segments.append((start,stop))
+        for start,stop in segments:
+            for spec in meta_operators.candidate_specs(
+                    stop-start,preferred_reducers=preferred_reducers,limit=6):
+                descriptors.append({'kind':'fold_bool','start':start,
+                                    'stop':stop,'spec':spec})
+        descriptors=descriptors[:30]
+    ranked=[]
+    for descriptor in descriptors:
+        values=[_component_value(row['features'],descriptor) for row in tasks]
+        if any(value is None for value in values) or len(set(values))<2:
+            continue
+        score=_information_gain(values,labels)-0.005*len(set(values))
+        complexity=1 if descriptor['kind']=='binary_index' else 2
+        ranked.append((-score,complexity,str(descriptor),descriptor))
+    ranked.sort(key=lambda row:row[:3])
+    return [deepcopy(row[3]) for row in ranked[:top]],len(descriptors)
 
 
 def _judge(keys: list[str], labels: list[str], program: dict) -> dict | None:
@@ -243,13 +338,56 @@ def fit(program: dict, tasks: list[dict], *, max_dims: int = 3,
             if chosen is None or rank<chosen[0]:
                 chosen=(rank,view)
             return False
+        if kind=='product_extractors':
+            components=candidate['components'];cost=program['cost']
+            complexity=sum(1 if row['kind']=='binary_index' else 2
+                           for row in components)
+            score=(cost['accuracy_weight']*result['accuracy']*result['coverage']+
+                   cost['gain_weight']*result['gain_over_majority']-
+                   cost['dimension_penalty']*complexity)
+            view={'kind':'learner_product','components':deepcopy(components),
+                  'learner_program':deepcopy(program),'score':score,
+                  **result,'tasks':len(tasks)}
+            rank=(-score,complexity,str(components))
+            if chosen is None or rank<chosen[0]:
+                chosen=(rank,view)
+            return False
         view={'kind':'aggregate_program','spec':candidate['spec'],
               'cut':candidate['cut'],**result,'tasks':len(tasks)}
         chosen=(None,view)
         return True
 
     kind=program['hypothesis_generator']
-    if kind=='projection_subsets':
+    if kind=='product_extractors':
+        parts=program['constraints']['components']
+        top=program['constraints']['top_components']
+        catalog={}
+        for part in dict.fromkeys(parts):
+            catalog[part],count=_component_candidates(
+                part,tasks,labels,preferred_reducers,top)
+            evaluated+=count
+        if evaluated>budget['max_candidates'] or process_time()-started>budget['max_cpu_s']:
+            return {'status':'budget_exceeded','candidates_evaluated':evaluated}
+        for left in catalog[parts[0]]:
+            for right in catalog[parts[1]]:
+                if left==right:
+                    continue
+                # Two summaries of overlapping spans can encode their
+                # difference as an accidental positional cue.  Independent
+                # components must describe independent input regions.
+                if (left['kind']=='fold_bool' and right['kind']=='fold_bool' and
+                        max(left['start'],right['start'])<
+                        min(left['stop'],right['stop'])):
+                    continue
+                evaluated+=1
+                if evaluated>budget['max_candidates'] or process_time()-started>budget['max_cpu_s']:
+                    return {'status':'budget_exceeded','candidates_evaluated':evaluated}
+                components=[left,right]
+                keys=[evaluate_components(row['features'],components) for row in tasks]
+                if any(key is None for key in keys):
+                    continue
+                judge({'components':components},keys)
+    elif kind=='projection_subsets':
         top=min(max(1,int(max_dims)),constraints['max_depth'],width-1)
         for size in range(1,top+1):
             for dims in combinations(range(width),size):
@@ -285,5 +423,31 @@ def fit(program: dict, tasks: list[dict], *, max_dims: int = 3,
     if chosen is None:
         return {'status':'rejected','candidates_evaluated':evaluated,
                 'rollback':program['rollback']}
+    if kind=='product_extractors':
+        chosen[1]['candidates_evaluated']=evaluated
     return {'status':'fitted','view':chosen[1],
             'candidates_evaluated':evaluated}
+
+
+def revalidate_view(view: dict, tasks: list[dict]) -> dict | None:
+    """Check an acquired composition against new evidence without resynthesis."""
+    if not isinstance(view,dict) or view.get('kind')!='learner_product':
+        return None
+    program=view.get('learner_program')
+    try:
+        validate(program)
+    except (TypeError,ValueError,KeyError):
+        return None
+    if (program['hypothesis_generator']!='product_extractors' or not tasks or
+            len(tasks)>program['budget']['max_tasks']):
+        return None
+    components=view.get('components')
+    keys=[evaluate_components(task['features'],components) for task in tasks]
+    if any(key is None for key in keys):
+        return None
+    result=_judge(keys,[task['winner'] for task in tasks],program)
+    if result is None:
+        return None
+    updated=deepcopy(view)
+    updated.update(result,tasks=len(tasks))
+    return updated
