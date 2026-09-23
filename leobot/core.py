@@ -101,8 +101,10 @@ def unify(pattern: tuple[str, ...], values: tuple[str, ...], bindings: dict[str,
 class KnowledgeBase:
     def __init__(self) -> None:
         self.facts: dict[str, dict] = {}
-        self.buckets: dict[str, set[str]] = defaultdict(set)
-        self.indices: dict[tuple[str, int, str], set[str]] = defaultdict(set)
+        # G-38: secondary indices hold distinct atoms, not fact ids, so work
+        # grows with what is known and not with how many sources repeated it.
+        self.buckets: dict[str, set[Atom]] = defaultdict(set)
+        self.indices: dict[tuple[str, int, str], set[Atom]] = defaultdict(set)
         # Reverse semantic index used by learners to retrieve only predicates
         # touching entities in the current problem.  This prevents search cost
         # from growing with every unrelated predicate in memory.
@@ -110,8 +112,9 @@ class KnowledgeBase:
         self.entity_predicate_counts: dict[tuple[str, str], int] = defaultdict(int)
         self.dedup: dict[tuple[Atom, str], str] = {}
         # G-37: the facts asserting each exact atom (any source), so asking
-        # for a ground fact never scans a per-argument index.
-        self.atom_facts: dict[Atom, set[str]] = {}
+        # for a ground fact never scans a per-argument index.  Ids are kept in
+        # insertion order, which is id order: the first one is the oldest.
+        self.atom_facts: dict[Atom, dict[str, None]] = {}
         self.arity: dict[str, int] = {}
         self.rules: dict[str, Rule] = {}
         self.heads: dict[str, dict[str, Rule]] = defaultdict(dict)
@@ -137,14 +140,18 @@ class KnowledgeBase:
         self.next_id += 1
         fid = f'f{self.next_id}'
         self.facts[fid] = {'id': fid, 'atom': atom, 'source': source}
-        self.buckets[atom.pred].add(fid)
-        for pos, value in enumerate(atom.args):
-            self.indices[(atom.pred, pos, value)].add(fid)
-            base = atom.pred.lstrip('!')
+        same = self.atom_facts.get(atom)
+        if same is None:
+            same = self.atom_facts[atom] = {}
+            self.buckets[atom.pred].add(atom)
+            for pos, value in enumerate(atom.args):
+                self.indices[(atom.pred, pos, value)].add(atom)
+        same[fid] = None
+        base = atom.pred.lstrip('!')
+        for value in atom.args:
             self.entity_predicate_counts[(value, base)] += 1
             self.entity_predicates[value].add(base)
         self.dedup[key] = fid
-        self.atom_facts.setdefault(atom, set()).add(fid)
         self.revision += 1
         return fid
 
@@ -153,15 +160,15 @@ class KnowledgeBase:
             return False
         fact = self.facts.pop(fid)
         atom = fact['atom']
-        same = self.atom_facts.get(atom)
-        if same is not None:
-            same.discard(fid)
-            if not same:
-                self.atom_facts.pop(atom, None)
-        self.buckets[atom.pred].remove(fid)
-        for pos, value in enumerate(atom.args):
-            self.indices[(atom.pred, pos, value)].remove(fid)
-            base = atom.pred.lstrip('!')
+        same = self.atom_facts[atom]
+        del same[fid]
+        if not same:
+            del self.atom_facts[atom]
+            self.buckets[atom.pred].remove(atom)
+            for pos, value in enumerate(atom.args):
+                self.indices[(atom.pred, pos, value)].remove(atom)
+        base = atom.pred.lstrip('!')
+        for value in atom.args:
             key = (value, base)
             self.entity_predicate_counts[key] -= 1
             if self.entity_predicate_counts[key] <= 0:
@@ -187,22 +194,36 @@ class KnowledgeBase:
                            'source': old['source']})
         return nid
 
-    def matches(self, pattern: Atom) -> Iterator[dict]:
-        if pattern.ground:
-            for fid in sorted(self.atom_facts.get(pattern, ()), key=lambda x: int(x[1:])):
-                yield self.facts[fid]
-            return
-        ids = self.buckets.get(pattern.pred, set())
+    def _matching_atoms(self, pattern: Atom) -> list[Atom]:
+        atoms = self.buckets.get(pattern.pred, set())
         for pos, value in enumerate(pattern.args):
             if not variable(value):
                 other = self.indices.get((pattern.pred, pos, value), set())
-                if len(other) < len(ids):
-                    ids = other
-        # IDs are sorted only within the selected bucket for reproducible proofs.
-        for fid in sorted(ids, key=lambda x: int(x[1:])):
-            fact = self.facts[fid]
-            if unify(pattern.args, fact['atom'].args) is not None:
-                yield fact
+                if len(other) < len(atoms):
+                    atoms = other
+        return [atom for atom in atoms if unify(pattern.args, atom.args) is not None]
+
+    def matches(self, pattern: Atom) -> Iterator[dict]:
+        """Every fact matching ``pattern``, one per source, in id order."""
+        if pattern.ground:
+            for fid in self.atom_facts.get(pattern, ()):
+                yield self.facts[fid]
+            return
+        # IDs are sorted only within the matching atoms for reproducible proofs.
+        fids = [fid for atom in self._matching_atoms(pattern) for fid in self.atom_facts[atom]]
+        for fid in sorted(fids, key=lambda x: int(x[1:])):
+            yield self.facts[fid]
+
+    def distinct_matches(self, pattern: Atom) -> Iterator[dict]:
+        """The oldest fact of each distinct matching atom, in the order of its id."""
+        if pattern.ground:
+            same = self.atom_facts.get(pattern)
+            if same:
+                yield self.facts[next(iter(same))]
+            return
+        firsts = [next(iter(self.atom_facts[atom])) for atom in self._matching_atoms(pattern)]
+        for fid in sorted(firsts, key=lambda x: int(x[1:])):
+            yield self.facts[fid]
 
     def contains(self, atom: Atom) -> bool:
         if atom.ground:
@@ -242,8 +263,7 @@ class KnowledgeBase:
                 if self.arity.get(pred) != 2:
                     continue
                 for pos in (0, 1):
-                    for fid in self.indices.get((pred, pos, entity), ()):
-                        atom = self.facts[fid]['atom']
+                    for atom in self.indices.get((pred, pos, entity), ()):
                         for value in atom.args:
                             if value != entity:
                                 out.add(value)
@@ -314,7 +334,8 @@ class KnowledgeBase:
         if data.get('version') != 1:
             raise ValueError('Formato de memoria no compatible.')
         kb = cls()
-        for fact in data.get('facts', []):
+        # Ids are loaded in increasing order so each atom's facts stay oldest first.
+        for fact in sorted(data.get('facts', []), key=lambda f: int(f['id'][1:]) if re.fullmatch(r'f[1-9][0-9]*', f['id']) else 0):
             fid = fact['id']
             if not re.fullmatch(r'f[1-9][0-9]*', fid) or fid in kb.facts:
                 raise ValueError('ID de hecho inválido o duplicado.')
@@ -410,10 +431,15 @@ class Engine:
         self.busy.add(q)
         self.depth += 1
         try:
-            for fact in self.kb.matches(q):
-                self._tick()
-                atom = fact['atom']
-                self._put(q, Proof(atom, 'fact', fact['id'], contested=self.kb.contains(atom.opposite())))
+            # G-38: facts do not change during a query, so each variant reads
+            # them once, and one proof per distinct atom (its oldest fact, the
+            # one that ranked first anyway) instead of one per source.
+            if q not in self.loaded:
+                self.loaded.add(q)
+                for fact in self.kb.distinct_matches(q):
+                    self._tick()
+                    atom = fact['atom']
+                    self._put(q, Proof(atom, 'fact', fact['id'], contested=self.kb.contains(atom.opposite())))
             for rule in self.kb.heads.get(q.pred, {}).values():
                 bindings: dict[str, str] | None = {}
                 for pos, value in enumerate(q.args):
@@ -491,7 +517,7 @@ class Engine:
                     pat = Atom(edge_atom.pred, ('?z', node) if inverse else (node, '?z'))
                 else:
                     pat = Atom(edge_atom.pred, (node, '?z') if inverse else ('?z', node))
-                for fact in self.kb.matches(pat):
+                for fact in self.kb.distinct_matches(pat):
                     work += 1
                     if work > self.max_work:
                         raise BudgetExceeded('Presupuesto de operaciones agotado.')
@@ -531,6 +557,7 @@ class Engine:
             return compiled
         self.tables: dict[Atom, dict[tuple, Proof]] = {}
         self.busy: set[Atom] = set()
+        self.loaded: set[Atom] = set()
         self.depth = self.work = self.answer_count = 0
         rounds, complete, reason = 0, True, None
         try:

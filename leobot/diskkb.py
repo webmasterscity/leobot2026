@@ -38,6 +38,9 @@ class SQLiteKnowledgeBase:
         self.db.execute('CREATE INDEX IF NOT EXISTS ix_facts_pred ON facts(pred)')
         for i in range(8):
             self.db.execute(f'CREATE INDEX IF NOT EXISTS ix_facts_pred_a{i} ON facts(pred,a{i})')
+        # G-38: exact-atom index; equal atoms from different sources sit together.
+        self.db.execute('CREATE INDEX IF NOT EXISTS ix_facts_atom ON facts(pred,' +
+                        ','.join(f'a{i}' for i in range(8)) + ')')
         # A compact digest-free uniqueness index: unused columns are NULL and SQLite
         # permits duplicate NULLs, so dedup is enforced explicitly before insert.
         self.db.execute('''CREATE TABLE IF NOT EXISTS fact_entities(
@@ -47,6 +50,26 @@ class SQLiteKnowledgeBase:
             PRIMARY KEY(fid,entity,base_pred)
         )''')
         self.db.execute('CREATE INDEX IF NOT EXISTS ix_entity_pred ON fact_entities(entity,base_pred)')
+        # G-38: one row per distinct atom with its oldest fact and its number of
+        # sources, so reasoning work grows with distinct knowledge, not repetitions.
+        self.db.execute(f'''CREATE TABLE IF NOT EXISTS atoms(
+            atom_key TEXT PRIMARY KEY,
+            pred TEXT NOT NULL,
+            {cols},
+            first INTEGER NOT NULL,
+            n INTEGER NOT NULL
+        )''')
+        self.db.execute('CREATE INDEX IF NOT EXISTS ix_atoms_pred ON atoms(pred,first)')
+        for i in range(8):
+            self.db.execute(f'CREATE INDEX IF NOT EXISTS ix_atoms_pred_a{i} ON atoms(pred,a{i})')
+        if (self.db.execute('SELECT 1 FROM facts LIMIT 1').fetchone()
+                and not self.db.execute('SELECT 1 FROM atoms LIMIT 1').fetchone()):
+            names = ','.join(f'a{i}' for i in range(8))
+            rows = self.db.execute(f'SELECT pred,arity,{names},MIN(id) AS first,COUNT(*) AS n '
+                                   f'FROM facts GROUP BY pred,{names}').fetchall()
+            self.db.executemany('INSERT INTO atoms VALUES(' + ','.join('?' * 12) + ')',
+                                [(self._atom_key(r['pred'], [r[f'a{i}'] for i in range(r['arity'])]), r['pred'],
+                                  *[r[f'a{i}'] for i in range(8)], r['first'], r['n']) for r in rows])
         self.db.commit()
         self.arity: dict[str, int] = {r['base_pred']: r['arity'] for r in self.db.execute(
             'SELECT base_pred, MAX(arity) AS arity FROM facts GROUP BY base_pred')}
@@ -66,6 +89,10 @@ class SQLiteKnowledgeBase:
         if commit:
             self.arity[pred] = len(a.args)
 
+    @staticmethod
+    def _atom_key(pred: str, args) -> str:
+        return hashlib.blake2b('\x1f'.join((pred, *args)).encode('utf8'), digest_size=16).hexdigest()
+
     def _row_to_fact(self, row: sqlite3.Row) -> dict:
         args = tuple(row[f'a{i}'] for i in range(row['arity']))
         return {'id': f"f{row['id']}", 'atom': Atom(row['pred'], args), 'source': row['source']}
@@ -83,6 +110,10 @@ class SQLiteKnowledgeBase:
         data = [atom.pred, atom.pred.lstrip('!'), len(atom.args)] + list(atom.args) + [None]*(8-len(atom.args)) + [source,fact_key]
         cur = self.db.execute('INSERT INTO facts(' + ','.join(cols) + ') VALUES(' + ','.join('?' for _ in cols) + ')', data)
         fid = cur.lastrowid
+        self.db.execute('INSERT INTO atoms VALUES(' + ','.join('?' * 12) + ') '
+                        'ON CONFLICT(atom_key) DO UPDATE SET n=n+1',
+                        (self._atom_key(atom.pred, atom.args), atom.pred,
+                         *atom.args, *[None] * (8 - len(atom.args)), fid, 1))
         self.db.executemany('INSERT OR IGNORE INTO fact_entities(fid,entity,base_pred) VALUES(?,?,?)',
                             [(fid, v, atom.pred.lstrip('!')) for v in set(atom.args)])
         self.revision += 1
@@ -112,6 +143,18 @@ class SQLiteKnowledgeBase:
         if not fact:
             return False
         self.db.execute('DELETE FROM facts WHERE id=?', (int(fid[1:]),))
+        atom = fact['atom']; key = self._atom_key(atom.pred, atom.args)
+        row = self.db.execute('SELECT first,n FROM atoms WHERE atom_key=?', (key,)).fetchone()
+        if row is not None and row['n'] <= 1:
+            self.db.execute('DELETE FROM atoms WHERE atom_key=?', (key,))
+        elif row is not None:
+            first = row['first']
+            if first == int(fid[1:]):
+                where = ' AND '.join(['pred=?'] + [f'a{i}=?' for i in range(len(atom.args))] +
+                                     [f'a{i} IS NULL' for i in range(len(atom.args), 8)])
+                first = self.db.execute('SELECT MIN(id) FROM facts INDEXED BY ix_facts_atom WHERE ' + where,
+                                        (atom.pred, *atom.args)).fetchone()[0]
+            self.db.execute('UPDATE atoms SET n=n-1, first=? WHERE atom_key=?', (first, key))
         self.revision += 1
         return True
 
@@ -139,8 +182,30 @@ class SQLiteKnowledgeBase:
             if unify(pattern.args, fact['atom'].args) is not None:
                 yield fact
 
+    def distinct_matches(self, pattern: Atom):
+        """The oldest fact of each distinct matching atom, in the order of its id."""
+        self._check(pattern, commit=False)
+        if pattern.ground:
+            sql = ('SELECT f.* FROM atoms a JOIN facts f ON f.id=a.first WHERE a.atom_key=?')
+            vals = [self._atom_key(pattern.pred, pattern.args)]
+        else:
+            where, vals = ['a.pred=?'], [pattern.pred]
+            for i, value in enumerate(pattern.args):
+                if not variable(value):
+                    where.append(f'a.a{i}=?'); vals.append(value)
+            # Without statistics the planner may scan a whole predicate; use
+            # the index of the first known argument.
+            bound = [i for i, value in enumerate(pattern.args) if not variable(value)]
+            index = f'ix_atoms_pred_a{bound[0]}' if bound else 'ix_atoms_pred'
+            sql = (f'SELECT f.* FROM atoms a INDEXED BY {index} JOIN facts f ON f.id=a.first WHERE ' +
+                   ' AND '.join(where) + ' ORDER BY a.first')
+        for row in self.db.execute(sql, vals):
+            fact = self._row_to_fact(row)
+            if unify(pattern.args, fact['atom'].args) is not None:
+                yield fact
+
     def contains(self, atom: Atom) -> bool:
-        return next(self.matches(atom), None) is not None
+        return next(self.distinct_matches(atom), None) is not None
 
     def predicates_for_entities(self, entities: set[str]) -> dict[str, int]:
         if not entities:
