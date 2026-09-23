@@ -1,0 +1,224 @@
+{
+ "engine_path": "/media/leonardo/data/leobot2026/leobot/__init__.py",
+ "reps": 20,
+ "memory": {
+  "duplicate_sources": {
+   "padre(a,b)": {
+    "status": "supported",
+    "complete": true,
+    "reason": null,
+    "work": 5,
+    "answers": [
+     "padre['a', 'b']:f1"
+    ],
+    "n_answers": 1,
+    "stable": true,
+    "p50_ms": 0.046,
+    "p95_ms": 0.103
+   },
+   "!padre(a,b)": {
+    "status": "refuted",
+    "complete": true,
+    "reason": null,
+    "work": 4,
+    "answers": [],
+    "n_answers": 0,
+    "stable": true,
+    "p50_ms": 0.044,
+    "p95_ms": 0.052
+   },
+   "padre(a,?x)": {
+    "status": "bindings",
+    "complete": true,
+    "reason": null,
+    "work": 5,
+    "answers": [
+     "padre['a', 'b']:f1"
+    ],
+    "n_answers": 1,
+    "stable": true,
+    "p50_ms": 0.029,
+    "p95_ms": 0.047
+   },
+   "padre(?x,b)": {
+    "status": "bindings",
+    "complete": true,
+    "reason": null,
+    "work": 5,
+    "answers": [
+     "padre['a', 'b']:f1"
+    ],
+    "n_answers": 1,
+    "stable": true,
+    "p50_ms": 0.03,
+    "p95_ms": 0.037
+   }
+  },
+  "negated_positions": {
+   "padre(a,b)": {
+    "status": "supported",
+    "complete": true,
+    "reason": null,
+    "work": 5,
+    "answers": [
+     "padre['a', 'b']:f1"
+    ],
+    "n_answers": 1,
+    "stable": true,
+    "p50_ms": 0.047,
+    "p95_ms": 0.086
+   },
+   "!padre(a,b)": {
+    "status": "refuted",
+    "complete": true,
+    "reason": null,
+    "work": 4,
+    "answers": [],
+    "n_answers": 0,
+    "stable": true,
+    "p50_ms": 0.045,
+    "p95_ms": 0.067
+   }
+  },
+  "duplicate_join": {
+   "abuelo(a,c)": {
+    "status": "supported",
+    "complete": true,
+    "reason": null,
+    "work": 24,
+    "answers": [
+     "abuelo['a', 'c']:abuelo_def"
+    ],
+    "n_answers": 1,
+    "stable": true,
+    "p50_ms": 0.129,
+    "p95_ms": 0.204
+   },
+   "abuelo(a,?z)": {
+    "status": "bindings",
+    "complete": true,
+    "reason": null,
+    "work": 24,
+    "answers": [
+     "abuelo['a', 'c']:abuelo_def"
+    ],
+    "n_answers": 1,
+    "stable": true,
+    "p50_ms": 0.109,
+    "p95_ms": 0.119
+   }
+  }
+ },
+ "disk": {
+  "duplicate_sources": {
+   "padre(a,b)": {
+    "status": "supported",
+    "complete": true,
+    "reason": null,
+    "work": 5,
+    "answers": [
+     "padre['a', 'b']:f1"
+    ],
+    "n_answers": 1,
+    "stable": true,
+    "p50_ms": 0.08,
+    "p95_ms": 0.276
+   },
+   "!padre(a,b)": {
+    "status": "refuted",
+    "complete": true,
+    "reason": null,
+    "work": 4,
+    "answers": [],
+    "n_answers": 0,
+    "stable": true,
+    "p50_ms": 0.08,
+    "p95_ms": 0.087
+   },
+   "padre(a,?x)": {
+    "status": "bindings",
+    "complete": true,
+    "reason": null,
+    "work": 5,
+    "answers": [
+     "padre['a', 'b']:f1"
+    ],
+    "n_answers": 1,
+    "stable": true,
+    "p50_ms": 0.057,
+    "p95_ms": 0.125
+   },
+   "padre(?x,b)": {
+    "status": "bindings",
+    "complete": true,
+    "reason": null,
+    "work": 5,
+    "answers": [
+     "padre['a', 'b']:f1"
+    ],
+    "n_answers": 1,
+    "stable": true,
+    "p50_ms": 0.055,
+    "p95_ms": 0.102
+   },
+   "_build_s": 2.52
+  },
+  "negated_positions": {
+   "padre(a,b)": {
+    "status": "supported",
+    "complete": true,
+    "reason": null,
+    "work": 5,
+    "answers": [
+     "padre['a', 'b']:f1"
+    ],
+    "n_answers": 1,
+    "stable": true,
+    "p50_ms": 0.232,
+    "p95_ms": 0.829
+   },
+   "!padre(a,b)": {
+    "status": "refuted",
+    "complete": true,
+    "reason": null,
+    "work": 4,
+    "answers": [],
+    "n_answers": 0,
+    "stable": true,
+    "p50_ms": 0.222,
+    "p95_ms": 0.247
+   },
+   "_build_s": 3.64
+  },
+  "duplicate_join": {
+   "abuelo(a,c)": {
+    "status": "supported",
+    "complete": true,
+    "reason": null,
+    "work": 24,
+    "answers": [
+     "abuelo['a', 'c']:abuelo_def"
+    ],
+    "n_answers": 1,
+    "stable": true,
+    "p50_ms": 0.711,
+    "p95_ms": 1.915
+   },
+   "abuelo(a,?z)": {
+    "status": "bindings",
+    "complete": true,
+    "reason": null,
+    "work": 24,
+    "answers": [
+     "abuelo['a', 'c']:abuelo_def"
+    ],
+    "n_answers": 1,
+    "stable": true,
+    "p50_ms": 0.448,
+    "p95_ms": 0.648
+   },
+   "_build_s": 3.12
+  }
+ },
+ "rss_peak_mib": 207.5
+}
