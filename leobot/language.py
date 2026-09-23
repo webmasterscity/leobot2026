@@ -33,7 +33,7 @@ class Construction:
     slots: list[dict]
     surface: str
 
-    def parse_candidates(self, text: str, limit: int = 3, *, normalized: str | None = None) -> list[dict]:
+    def parse_candidates(self, text: str, limit: int = 3) -> list[dict]:
         """Return all bounded slot segmentations compatible with this construction.
 
         For ordinary whitespace-delimited constructions, enumerate boundaries
@@ -42,7 +42,7 @@ class Construction:
         constructions whose placeholders are embedded inside a token retain the
         legacy regex path rather than being reinterpreted by this tokenizer.
         """
-        norm=normalize(text) if normalized is None else normalized
+        norm=normalize(text)
         match=re.fullmatch(self.pattern,norm)
         if match is None:
             return []
@@ -142,10 +142,6 @@ class Language:
     def __init__(self, max_rewrite_states: int = 64, max_rewrite_steps: int = 3) -> None:
         self.constructions: list[Construction] = []
         self.examples: list[dict] = []
-        # A fixed literal must occur in every matching input. Constructions
-        # without a safe three-character literal stay in fallback.
-        self._literal_index: dict[str, set[int]] = defaultdict(set)
-        self._unindexed_constructions: list[int] = []
         self.max_rewrite_states = max_rewrite_states
         self.max_rewrite_steps = max_rewrite_steps
         self.rewrites: dict[str, set[tuple[tuple[str, ...], tuple[str, ...]]]] = defaultdict(set)
@@ -165,24 +161,6 @@ class Language:
         for slot in c.slots:
             text = text.replace('{' + slot['name'] + '}', '<' + slot['name'] + '>')
         return tuple(text.split())
-
-    def _index_construction(self, construction: Construction) -> None:
-        literals = re.split(r'\{s\d+\}', construction.surface)
-        grams = {literal[i:i+3] for part in literals
-                 for literal in (part.strip(),)
-                 for i in range(len(literal)-2)}
-        position = len(self.constructions)-1
-        if not grams:
-            self._unindexed_constructions.append(position)
-            return
-        rarest = min(grams, key=lambda gram: (len(self._literal_index.get(gram, ())), gram))
-        self._literal_index[rarest].add(position)
-
-    def _candidate_indices(self, normalized: str) -> list[int]:
-        candidates = set(self._unindexed_constructions)
-        for gram in {normalized[i:i+3] for i in range(len(normalized)-2)}:
-            candidates.update(self._literal_index.get(gram, ()))
-        return sorted(candidates)
 
     def _learn_rewrites(self, new: Construction) -> None:
         schema = self._schema(new)
@@ -214,9 +192,8 @@ class Language:
             if tokens[i:i+n] == old:
                 yield tokens[:i] + new + tokens[i+n:]
 
-    def _rewrite_variants(self, text: str, schema: str, pred: str | None = None,
-                          *, normalized: str | None = None):
-        start = tuple((normalize(text) if normalized is None else normalized).split())
+    def _rewrite_variants(self, text: str, schema: str, pred: str | None = None):
+        start = tuple(normalize(text).split())
         yield ' '.join(start)
         rules=set(self.rewrites.get(schema, ()))
         if pred:
@@ -286,7 +263,6 @@ class Language:
         if c.parse(text) != self._canonical_frame(frame):
             raise ValueError('La construcción no reproduce la anotación de entrenamiento.')
         self.constructions.append(c)
-        self._index_construction(c)
         self._learn_rewrites(c)
         self.examples.append({'text': text, 'frame': deepcopy(frame), 'source': str(source),
                               'evidence': list(evidence or [])})
@@ -319,31 +295,21 @@ class Language:
     def parse(self, text: str) -> dict:
         if len(text) > 2048:
             return {'status': 'unrecognized', 'frame': None, 'alternatives': [], 'reason': 'Entrada demasiado larga.'}
-        normalized=normalize(text)
         matches: list[tuple[dict, tuple[int,int], bool]] = []
-        direct=self._candidate_indices(normalized)
-        for index in direct:
-            c=self.constructions[index]
-            for frame in c.parse_candidates(text, normalized=normalized):
+        for c in self.constructions:
+            for frame in c.parse_candidates(text):
                 matches.append((frame,self._specificity(c),False))
         if not matches and self.rewrites:
-            by_schema: dict[str, list[int]] = defaultdict(list)
-            for index,c in enumerate(self.constructions):
-                by_schema[self._schema(c)].append(index)
-            candidate_cache={normalized:set(direct)}
-            for schema, positions in by_schema.items():
-                pred=self.constructions[positions[0]].frame.get('pred') if positions else None
-                for variant in self._rewrite_variants(text, schema, pred, normalized=normalized):
-                    if variant == normalized:
+            by_schema: dict[str, list[Construction]] = defaultdict(list)
+            for c in self.constructions:
+                by_schema[self._schema(c)].append(c)
+            for schema, constructions in by_schema.items():
+                pred=constructions[0].frame.get('pred') if constructions else None
+                for variant in self._rewrite_variants(text, schema, pred):
+                    if variant == normalize(text):
                         continue
-                    if variant not in candidate_cache:
-                        candidate_cache[variant]=set(self._candidate_indices(variant))
-                    eligible=candidate_cache[variant]
-                    for index in positions:
-                        if index not in eligible:
-                            continue
-                        c=self.constructions[index]
-                        for frame in c.parse_candidates(variant, normalized=variant):
+                    for c in constructions:
+                        for frame in c.parse_candidates(variant):
                             matches.append((frame,self._specificity(c),True))
         if not matches:
             return {'status':'unrecognized','frame':None,'alternatives':[],'composed_paraphrase':False}
