@@ -1,0 +1,15 @@
+# F-3 — Alcance jerárquico adquirido para operadores de secuencia
+
+F-2 aprendió composición en 7/32 casos; F-2b mostró que duplicar ejemplos de 256 a 512 produjo 4/32 en ambos brazos y duplicó el costo por acierto. Diagnóstico de **desarrollo** (solo entrenamiento SCAN): una regla que repite una subinstrucción no se promueve porque ejemplos con dos subinstrucciones y un conector binario son tratados como contraejemplos a la repetición de la frase completa. La causa candidata es falta de alcance jerárquico. Alternativa sencilla, ya medida negativamente, es solo acumular más pares.
+
+## Cambio mínimo
+
+No añadir vocabulario ni operadores nuevos. El mismo DSL primero induce operadores binarios de composición. Después, al evaluar apoyos para un operador unario, excluye como apoyo o refutación de esa regla los ejemplos cuya **entrada completa contiene un marcador binario ya promovido**: ese ejemplo debe explicarse por una composición jerárquica y se conserva para el aprendizaje binario. Los marcadores proceden de ejemplos, no de una lista escrita por el desarrollador. Si no hay operador binario promovido, el comportamiento coincide con F-2. Mantener una ablación que usa la inducción plana anterior con exactamente los mismos pares. Si la variante funciona, sustituye esa inducción plana; no mantener dos rutas operativas activas.
+
+## Familias, reserva y controles
+
+Desarrollo: solo división oficial de entrenamiento SCAN con los 256 pares y orden fijados en F-2; incluir una prueba de estructura con símbolos totalmente nuevos y una conjunción que no presuponga palabra alguna. Congelar motor `freeze-F-3` y generar 32 comandos de la división oficial de prueba `addprim_jump` con semilla `sha256((H0+':F-3').encode())`, excluyendo los 16/32/32 usados en F-1/F-2/F-2b. Enseñar exactamente 256 pares. Comparar tratamiento contra inducción plana con igual información y presupuesto, bot fresco y solo memoria exacta. Renombrar todos los símbolos de entrada/salida en tratamiento. Una salida observada que contradice un operador debe retirarlo y retirar dependientes; guardar/cargar debe preservar decisión. Medir exactitud, abstención, errores seguros, reglas, candidatos, CPU de observación/búsqueda/consolidación/carga/consulta, ejemplos, RAM y p50/p95. Código/configuración congelados durante cada brazo. No usar preguntas reservadas para ajustar algoritmo.
+
+## Umbral, presupuesto y decisión
+
+Promover como mejora acotada solo si ≥12/32 exactos y ≥5 más que la ablación, cero errores seguros, renombrado conserva el total, reinicio y contraevidencia pasan, costo CPU total de adquisición+consulta no supera dos veces el de la ablación, y p95 de respuesta ≤10 ms. Ejecutar regresión completa y puerta de latencia fija sobre 100 000 hechos antes de tag estable. Esto no supera F: faltan ≥50 familias/≥10 dominios y transferencia entre estructuras no isomorfas. Si falla, retirar toda la variante de secuencias F-2/F-3 del motor y conservar los resultados; no subir profundidad ni candidatos. Presupuesto: 256 ejemplos, ≤32 pruebas por brazo, ≤20 000 candidatos, ≤30 s CPU por brazo, ≤120 s pared.
