@@ -1,0 +1,761 @@
+{
+  "preregistration": "prereg/F-6c-confusor-de-precondicion.md",
+  "engine_tree": "7aca198e132f587c0c154bdb6f08deaaa4310f6d",
+  "engine_unchanged": true,
+  "orders": [
+    {
+      "order": 17,
+      "seed": 1632368967,
+      "passed": false,
+      "variants": {
+        "treatment": {
+          "training": {
+            "source_statuses": [
+              "raw_world_pending",
+              "raw_world_pending",
+              "raw_world_grounded"
+            ],
+            "meta_source": [
+              {
+                "kind": "role_set",
+                "input_arity": 4,
+                "roles": [
+                  0,
+                  3
+                ],
+                "sources": {
+                  "raw_world:primitive_81f86d9a11403aba_a4": {
+                    "family": "raw_world",
+                    "support": 3
+                  }
+                },
+                "families": {
+                  "raw_world": 3
+                },
+                "support": 3,
+                "schema": "roles:4:0,3"
+              },
+              {
+                "kind": "role_cardinality",
+                "cardinality": 2,
+                "sources": {
+                  "raw_world:primitive_81f86d9a11403aba_a4": {
+                    "family": "raw_world",
+                    "support": 3
+                  }
+                },
+                "families": {
+                  "raw_world": 3
+                },
+                "support": 3,
+                "schema": "card:2"
+              },
+              {
+                "kind": "role_topology",
+                "input_arity": 2,
+                "edges": [
+                  [
+                    0,
+                    1
+                  ]
+                ],
+                "sources": {
+                  "raw_world:primitive_81f86d9a11403aba_a4": {
+                    "family": "raw_world",
+                    "support": 3
+                  }
+                },
+                "families": {
+                  "raw_world": 3
+                },
+                "support": 3,
+                "schema": "topo:2:0,1"
+              }
+            ],
+            "action_statuses": [
+              "pending_support",
+              "pending_support",
+              "operator_learned"
+            ],
+            "representation_attempts": 16,
+            "persisted_bytes": 24456,
+            "costs": {
+              "source": {
+                "cpu_s": 0.00358,
+                "wall_s": 0.003584
+              },
+              "restart": {
+                "cpu_s": 0.003091,
+                "wall_s": 0.004606
+              },
+              "action_learning": {
+                "cpu_s": 0.004383,
+                "wall_s": 0.004396
+              }
+            }
+          },
+          "before_feedback": {
+            "full_cases": 32,
+            "full_correct": 32,
+            "missing_item_cases": 32,
+            "unsafe_missing_item": 32,
+            "statuses": {
+              "executed_symbolic_action": 64
+            },
+            "cpu_s": 0.006823,
+            "p50_ms": 0.0846,
+            "p95_ms": 0.09662
+          }
+        },
+        "fresh": {
+          "training": {
+            "source_statuses": [],
+            "meta_source": [],
+            "action_statuses": [
+              "pending_support",
+              "pending_support",
+              "pending_support"
+            ],
+            "representation_attempts": 18,
+            "persisted_bytes": null,
+            "costs": {
+              "action_learning": {
+                "cpu_s": 0.003522,
+                "wall_s": 0.003524
+              }
+            }
+          },
+          "before_feedback": {
+            "full_cases": 32,
+            "full_correct": 0,
+            "missing_item_cases": 32,
+            "unsafe_missing_item": 0,
+            "statuses": {
+              "unknown_or_inapplicable_action": 64
+            },
+            "cpu_s": 0.00368,
+            "p50_ms": 0.03685,
+            "p95_ms": 0.045
+          }
+        },
+        "same_information_no_meta": {
+          "training": {
+            "source_statuses": [
+              "raw_world_pending",
+              "raw_world_pending",
+              "raw_world_grounded"
+            ],
+            "meta_source": [
+              {
+                "kind": "role_set",
+                "input_arity": 4,
+                "roles": [
+                  0,
+                  3
+                ],
+                "sources": {
+                  "raw_world:primitive_81f86d9a11403aba_a4": {
+                    "family": "raw_world",
+                    "support": 3
+                  }
+                },
+                "families": {
+                  "raw_world": 3
+                },
+                "support": 3,
+                "schema": "roles:4:0,3"
+              },
+              {
+                "kind": "role_cardinality",
+                "cardinality": 2,
+                "sources": {
+                  "raw_world:primitive_81f86d9a11403aba_a4": {
+                    "family": "raw_world",
+                    "support": 3
+                  }
+                },
+                "families": {
+                  "raw_world": 3
+                },
+                "support": 3,
+                "schema": "card:2"
+              },
+              {
+                "kind": "role_topology",
+                "input_arity": 2,
+                "edges": [
+                  [
+                    0,
+                    1
+                  ]
+                ],
+                "sources": {
+                  "raw_world:primitive_81f86d9a11403aba_a4": {
+                    "family": "raw_world",
+                    "support": 3
+                  }
+                },
+                "families": {
+                  "raw_world": 3
+                },
+                "support": 3,
+                "schema": "topo:2:0,1"
+              }
+            ],
+            "action_statuses": [
+              "pending_support",
+              "pending_support",
+              "pending_support"
+            ],
+            "representation_attempts": 18,
+            "persisted_bytes": null,
+            "costs": {
+              "source": {
+                "cpu_s": 0.002899,
+                "wall_s": 0.002911
+              },
+              "action_learning": {
+                "cpu_s": 0.002434,
+                "wall_s": 0.002436
+              }
+            }
+          },
+          "before_feedback": {
+            "full_cases": 32,
+            "full_correct": 0,
+            "missing_item_cases": 32,
+            "unsafe_missing_item": 0,
+            "statuses": {
+              "unknown_or_inapplicable_action": 64
+            },
+            "cpu_s": 0.00346,
+            "p50_ms": 0.03418,
+            "p95_ms": 0.04051
+          }
+        }
+      },
+      "feedback_status": "pending_support",
+      "feedback_cost": {
+        "cpu_s": 0.001137,
+        "wall_s": 0.001138
+      },
+      "after_feedback": {
+        "full_cases": 32,
+        "full_correct": 32,
+        "missing_item_cases": 32,
+        "unsafe_missing_item": 32,
+        "statuses": {
+          "executed_symbolic_action": 64
+        },
+        "cpu_s": 0.004749,
+        "p50_ms": 0.05777,
+        "p95_ms": 0.07268
+      },
+      "no_link_status": "unknown_or_inapplicable_action"
+    },
+    {
+      "order": 53,
+      "seed": 3953311807,
+      "passed": false,
+      "variants": {
+        "treatment": {
+          "training": {
+            "source_statuses": [
+              "raw_world_pending",
+              "raw_world_pending",
+              "raw_world_grounded"
+            ],
+            "meta_source": [
+              {
+                "kind": "role_set",
+                "input_arity": 4,
+                "roles": [
+                  0,
+                  3
+                ],
+                "sources": {
+                  "raw_world:primitive_81f86d9a11403aba_a4": {
+                    "family": "raw_world",
+                    "support": 3
+                  }
+                },
+                "families": {
+                  "raw_world": 3
+                },
+                "support": 3,
+                "schema": "roles:4:0,3"
+              },
+              {
+                "kind": "role_cardinality",
+                "cardinality": 2,
+                "sources": {
+                  "raw_world:primitive_81f86d9a11403aba_a4": {
+                    "family": "raw_world",
+                    "support": 3
+                  }
+                },
+                "families": {
+                  "raw_world": 3
+                },
+                "support": 3,
+                "schema": "card:2"
+              },
+              {
+                "kind": "role_topology",
+                "input_arity": 2,
+                "edges": [
+                  [
+                    0,
+                    1
+                  ]
+                ],
+                "sources": {
+                  "raw_world:primitive_81f86d9a11403aba_a4": {
+                    "family": "raw_world",
+                    "support": 3
+                  }
+                },
+                "families": {
+                  "raw_world": 3
+                },
+                "support": 3,
+                "schema": "topo:2:0,1"
+              }
+            ],
+            "action_statuses": [
+              "pending_support",
+              "pending_support",
+              "operator_learned"
+            ],
+            "representation_attempts": 16,
+            "persisted_bytes": 24456,
+            "costs": {
+              "source": {
+                "cpu_s": 0.002565,
+                "wall_s": 0.002566
+              },
+              "restart": {
+                "cpu_s": 0.001822,
+                "wall_s": 0.002721
+              },
+              "action_learning": {
+                "cpu_s": 0.002046,
+                "wall_s": 0.002047
+              }
+            }
+          },
+          "before_feedback": {
+            "full_cases": 32,
+            "full_correct": 32,
+            "missing_item_cases": 32,
+            "unsafe_missing_item": 32,
+            "statuses": {
+              "executed_symbolic_action": 64
+            },
+            "cpu_s": 0.004425,
+            "p50_ms": 0.05291,
+            "p95_ms": 0.05813
+          }
+        },
+        "fresh": {
+          "training": {
+            "source_statuses": [],
+            "meta_source": [],
+            "action_statuses": [
+              "pending_support",
+              "pending_support",
+              "pending_support"
+            ],
+            "representation_attempts": 18,
+            "persisted_bytes": null,
+            "costs": {
+              "action_learning": {
+                "cpu_s": 0.001641,
+                "wall_s": 0.001642
+              }
+            }
+          },
+          "before_feedback": {
+            "full_cases": 32,
+            "full_correct": 0,
+            "missing_item_cases": 32,
+            "unsafe_missing_item": 0,
+            "statuses": {
+              "unknown_or_inapplicable_action": 64
+            },
+            "cpu_s": 0.002075,
+            "p50_ms": 0.02121,
+            "p95_ms": 0.02388
+          }
+        },
+        "same_information_no_meta": {
+          "training": {
+            "source_statuses": [
+              "raw_world_pending",
+              "raw_world_pending",
+              "raw_world_grounded"
+            ],
+            "meta_source": [
+              {
+                "kind": "role_set",
+                "input_arity": 4,
+                "roles": [
+                  0,
+                  3
+                ],
+                "sources": {
+                  "raw_world:primitive_81f86d9a11403aba_a4": {
+                    "family": "raw_world",
+                    "support": 3
+                  }
+                },
+                "families": {
+                  "raw_world": 3
+                },
+                "support": 3,
+                "schema": "roles:4:0,3"
+              },
+              {
+                "kind": "role_cardinality",
+                "cardinality": 2,
+                "sources": {
+                  "raw_world:primitive_81f86d9a11403aba_a4": {
+                    "family": "raw_world",
+                    "support": 3
+                  }
+                },
+                "families": {
+                  "raw_world": 3
+                },
+                "support": 3,
+                "schema": "card:2"
+              },
+              {
+                "kind": "role_topology",
+                "input_arity": 2,
+                "edges": [
+                  [
+                    0,
+                    1
+                  ]
+                ],
+                "sources": {
+                  "raw_world:primitive_81f86d9a11403aba_a4": {
+                    "family": "raw_world",
+                    "support": 3
+                  }
+                },
+                "families": {
+                  "raw_world": 3
+                },
+                "support": 3,
+                "schema": "topo:2:0,1"
+              }
+            ],
+            "action_statuses": [
+              "pending_support",
+              "pending_support",
+              "pending_support"
+            ],
+            "representation_attempts": 18,
+            "persisted_bytes": null,
+            "costs": {
+              "source": {
+                "cpu_s": 0.002037,
+                "wall_s": 0.002039
+              },
+              "action_learning": {
+                "cpu_s": 0.001731,
+                "wall_s": 0.001732
+              }
+            }
+          },
+          "before_feedback": {
+            "full_cases": 32,
+            "full_correct": 0,
+            "missing_item_cases": 32,
+            "unsafe_missing_item": 0,
+            "statuses": {
+              "unknown_or_inapplicable_action": 64
+            },
+            "cpu_s": 0.002029,
+            "p50_ms": 0.0213,
+            "p95_ms": 0.0226
+          }
+        }
+      },
+      "feedback_status": "pending_support",
+      "feedback_cost": {
+        "cpu_s": 0.000787,
+        "wall_s": 0.000788
+      },
+      "after_feedback": {
+        "full_cases": 32,
+        "full_correct": 32,
+        "missing_item_cases": 32,
+        "unsafe_missing_item": 32,
+        "statuses": {
+          "executed_symbolic_action": 64
+        },
+        "cpu_s": 0.004196,
+        "p50_ms": 0.05219,
+        "p95_ms": 0.05738
+      },
+      "no_link_status": "unknown_or_inapplicable_action"
+    },
+    {
+      "order": 97,
+      "seed": 556500822,
+      "passed": false,
+      "variants": {
+        "treatment": {
+          "training": {
+            "source_statuses": [
+              "raw_world_pending",
+              "raw_world_pending",
+              "raw_world_grounded"
+            ],
+            "meta_source": [
+              {
+                "kind": "role_set",
+                "input_arity": 4,
+                "roles": [
+                  0,
+                  3
+                ],
+                "sources": {
+                  "raw_world:primitive_81f86d9a11403aba_a4": {
+                    "family": "raw_world",
+                    "support": 3
+                  }
+                },
+                "families": {
+                  "raw_world": 3
+                },
+                "support": 3,
+                "schema": "roles:4:0,3"
+              },
+              {
+                "kind": "role_cardinality",
+                "cardinality": 2,
+                "sources": {
+                  "raw_world:primitive_81f86d9a11403aba_a4": {
+                    "family": "raw_world",
+                    "support": 3
+                  }
+                },
+                "families": {
+                  "raw_world": 3
+                },
+                "support": 3,
+                "schema": "card:2"
+              },
+              {
+                "kind": "role_topology",
+                "input_arity": 2,
+                "edges": [
+                  [
+                    0,
+                    1
+                  ]
+                ],
+                "sources": {
+                  "raw_world:primitive_81f86d9a11403aba_a4": {
+                    "family": "raw_world",
+                    "support": 3
+                  }
+                },
+                "families": {
+                  "raw_world": 3
+                },
+                "support": 3,
+                "schema": "topo:2:0,1"
+              }
+            ],
+            "action_statuses": [
+              "pending_support",
+              "pending_support",
+              "operator_learned"
+            ],
+            "representation_attempts": 16,
+            "persisted_bytes": 24456,
+            "costs": {
+              "source": {
+                "cpu_s": 0.002528,
+                "wall_s": 0.00253
+              },
+              "restart": {
+                "cpu_s": 0.001823,
+                "wall_s": 0.003329
+              },
+              "action_learning": {
+                "cpu_s": 0.002059,
+                "wall_s": 0.00206
+              }
+            }
+          },
+          "before_feedback": {
+            "full_cases": 32,
+            "full_correct": 32,
+            "missing_item_cases": 32,
+            "unsafe_missing_item": 32,
+            "statuses": {
+              "executed_symbolic_action": 64
+            },
+            "cpu_s": 0.004285,
+            "p50_ms": 0.05265,
+            "p95_ms": 0.05946
+          }
+        },
+        "fresh": {
+          "training": {
+            "source_statuses": [],
+            "meta_source": [],
+            "action_statuses": [
+              "pending_support",
+              "pending_support",
+              "pending_support"
+            ],
+            "representation_attempts": 18,
+            "persisted_bytes": null,
+            "costs": {
+              "action_learning": {
+                "cpu_s": 0.001676,
+                "wall_s": 0.001677
+              }
+            }
+          },
+          "before_feedback": {
+            "full_cases": 32,
+            "full_correct": 0,
+            "missing_item_cases": 32,
+            "unsafe_missing_item": 0,
+            "statuses": {
+              "unknown_or_inapplicable_action": 64
+            },
+            "cpu_s": 0.002056,
+            "p50_ms": 0.02111,
+            "p95_ms": 0.02288
+          }
+        },
+        "same_information_no_meta": {
+          "training": {
+            "source_statuses": [
+              "raw_world_pending",
+              "raw_world_pending",
+              "raw_world_grounded"
+            ],
+            "meta_source": [
+              {
+                "kind": "role_set",
+                "input_arity": 4,
+                "roles": [
+                  0,
+                  3
+                ],
+                "sources": {
+                  "raw_world:primitive_81f86d9a11403aba_a4": {
+                    "family": "raw_world",
+                    "support": 3
+                  }
+                },
+                "families": {
+                  "raw_world": 3
+                },
+                "support": 3,
+                "schema": "roles:4:0,3"
+              },
+              {
+                "kind": "role_cardinality",
+                "cardinality": 2,
+                "sources": {
+                  "raw_world:primitive_81f86d9a11403aba_a4": {
+                    "family": "raw_world",
+                    "support": 3
+                  }
+                },
+                "families": {
+                  "raw_world": 3
+                },
+                "support": 3,
+                "schema": "card:2"
+              },
+              {
+                "kind": "role_topology",
+                "input_arity": 2,
+                "edges": [
+                  [
+                    0,
+                    1
+                  ]
+                ],
+                "sources": {
+                  "raw_world:primitive_81f86d9a11403aba_a4": {
+                    "family": "raw_world",
+                    "support": 3
+                  }
+                },
+                "families": {
+                  "raw_world": 3
+                },
+                "support": 3,
+                "schema": "topo:2:0,1"
+              }
+            ],
+            "action_statuses": [
+              "pending_support",
+              "pending_support",
+              "pending_support"
+            ],
+            "representation_attempts": 18,
+            "persisted_bytes": null,
+            "costs": {
+              "source": {
+                "cpu_s": 0.002069,
+                "wall_s": 0.002071
+              },
+              "action_learning": {
+                "cpu_s": 0.001657,
+                "wall_s": 0.001659
+              }
+            }
+          },
+          "before_feedback": {
+            "full_cases": 32,
+            "full_correct": 0,
+            "missing_item_cases": 32,
+            "unsafe_missing_item": 0,
+            "statuses": {
+              "unknown_or_inapplicable_action": 64
+            },
+            "cpu_s": 0.002854,
+            "p50_ms": 0.02642,
+            "p95_ms": 0.03336
+          }
+        }
+      },
+      "feedback_status": "pending_support",
+      "feedback_cost": {
+        "cpu_s": 0.000975,
+        "wall_s": 0.000976
+      },
+      "after_feedback": {
+        "full_cases": 32,
+        "full_correct": 32,
+        "missing_item_cases": 32,
+        "unsafe_missing_item": 32,
+        "statuses": {
+          "executed_symbolic_action": 64
+        },
+        "cpu_s": 0.00456,
+        "p50_ms": 0.05635,
+        "p95_ms": 0.06484
+      },
+      "no_link_status": "unknown_or_inapplicable_action"
+    }
+  ],
+  "gate_passed": false,
+  "wall_s": 0.108788,
+  "cpu_s": 0.091654,
+  "max_rss_kib": 25448
+}
