@@ -1,0 +1,13 @@
+# F-3b — Delimitar alcance solo con una explicación binaria comprobada
+
+F-3 se rechazó en desarrollo (17/64 sin filtro, 11/64 con filtro) porque ignoraba todos los ejemplos que contenían un conector aprendido y perdía contraejemplos útiles. Este preregistro precede a otra modificación del motor; el fallo anterior permanece. La causa candidata es el alcance, pero la exclusión debe estar respaldada por una **derivación binaria completa**, no por coincidencia de palabras.
+
+## Mecanismo y alternativa
+
+Conservar el DSL y los umbrales de F-2. Promover primero reglas binarias desde pares observados. Para cada ejemplo candidato de una regla unaria, comprobar si alguna regla binaria ya promovida divide su entrada en **dos subentradas observadas inequívocamente** y concatena sus salidas exactamente en el orden que produce la salida real del ejemplo. Solo en ese caso el ejemplo está explicado jerárquicamente y deja de contar como apoyo o contraevidencia para la regla unaria; en cualquier otro caso sigue contando. Los marcadores, los subprogramas y la salida se toman de experiencia, sin verbos ni operadores específicos del dataset. La ablación conserva la inducción plana de F-2. Si funciona, reemplaza esa inducción; no coexistirán dos arquitecturas activas.
+
+## Ensayo y controles
+
+Desarrollo exclusivo con datos de entrenamiento SCAN `addprim_jump`, currículo de 256 pares y 64 ejemplos de desarrollo no enseñados, semilla 2117; comparar aciertos, ambigüedad y errores seguros con F-2. Si no mejora desarrollo sin errores, retirar antes de reserva. Si mejora, congelar `freeze-F-3b` y seleccionar 32 comandos de la división oficial de prueba con semilla `sha256((H0+':F-3b').encode())`, excluyendo los IDs de F-1/F-2/F-2b. Mismos pares y presupuesto para tratamiento y ablación; bot fresco, solo memoria exacta, renombrado biyectivo, evidencia incompatible, reinicio. Medir aciertos, errores seguros, reglas, candidatos, CPU por fase, ejemplos, RAM, p50/p95, hash antes/después. No usar salidas reservadas para ajustar el filtro.
+
+**Promoción acotada:** ≥12/32 exactos, ≥5 por encima de la ablación, cero errores seguros, renombrado preserva total, contradicción retira dependientes, reinicio pasa, CPU total adquisición+consulta ≤2 veces ablación y p95 ≤10 ms. Regresión completa y latencia fija de 100 000 hechos antes de tag estable. Si falla cualquier puerta, retirar F-2/F-3b del motor y conservar código/resultados en historial. F sigue sin superar su requisito de 50 familias y 10 dominios. Presupuesto: 256 ejemplos, 32 pruebas por brazo, ≤20 000 candidatos, ≤30 s CPU por brazo, ≤120 s pared.
