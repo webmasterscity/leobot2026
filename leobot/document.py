@@ -2058,6 +2058,7 @@ class DocumentLearningMixin:
         results=[]; promoted=set(); skipped_questions=0; skipped_conditionals=0
         processed_conditionals=0; learned_rules=set()
         stored_direct=0; stored_schema=0; too_long=0
+        raw_candidates_examined=0
         coref_resolved=0; coref_ambiguous=0; coref_unresolved=0
         document_links_stored=0; document_links_unresolved=0
         document_events_materialized=0
@@ -2426,6 +2427,7 @@ class DocumentLearningMixin:
                 row={'index':i,**meta}
                 results.append(attach_document_link(row,meta.get('fact_id'),discourse_relation,prior_fact_ids,sentence_source)); promoted.add(meta.get('predicate')); continue
             raw=self.observe_raw_relation(semantic_sentence,source=sentence_source)
+            raw_candidates_examined+=raw.get('candidates_examined',0)
             remember_document_facts(raw.get('fact_ids',[]))
             current=next((fid for fid in raw.get('fact_ids',[])
                           if (self.kb.get_fact(fid) or {}).get('source','').startswith(sentence_source)),None)
@@ -2444,6 +2446,7 @@ class DocumentLearningMixin:
         report={'status':'document_ingested','source':source,'sentences':len(sentences),
                 'facts_added':after-before,'stored_direct':stored_direct,
                 'stored_via_schema':stored_schema,'relations_promoted':len(promoted),
+                'raw_candidates_examined':raw_candidates_examined,
                 'promoted_predicates':sorted(x for x in promoted if x),
                 'questions_skipped':skipped_questions,'conditionals_skipped':skipped_conditionals,
                 'conditionals_processed':processed_conditionals,'rules_learned':len(learned_rules),

@@ -7,6 +7,7 @@ from __future__ import annotations
 
 import hashlib
 import json
+import math
 import re
 from difflib import SequenceMatcher
 from itertools import combinations, permutations
@@ -503,16 +504,24 @@ class LanguageAcquisitionMixin:
             if len({args for _,args in support}) != len(support):
                 continue
             fixed=[t for t in surface.split() if not t.startswith('{s')]
+            long_argument=any(len(value.split())>4 for _,args in support for value in args)
+            gain=(len(support)-1)*len(fixed)-0.25*sum(
+                math.log2(len(value.split())+1)
+                for _,args in support for value in args)
+            if self.raw_relation_mdl and long_argument and gain <= 1:
+                continue
             rank=(len(support),len(fixed),sum(map(len,fixed)))
-            viable.append((rank,surface,arity,support))
+            viable.append((rank,surface,arity,support,gain))
         if not viable:
             return {'status':'raw_relation_pending','support':1,
-                    'required':self.raw_relation_min_support}
-        best_rank=max(r for r,_,_,_ in viable)
+                    'required':self.raw_relation_min_support,
+                    'candidates_examined':len(candidate_surfaces)}
+        best_rank=max(row[0] for row in viable)
         best=[x for x in viable if x[0]==best_rank]
         if len(best) != 1:
-            return {'status':'raw_relation_ambiguous','candidates':[x[1] for x in best]}
-        _,surface,arity,support=best[0]
+            return {'status':'raw_relation_ambiguous','candidates':[x[1] for x in best],
+                    'candidates_examined':len(candidate_surfaces)}
+        _,surface,arity,support,gain=best[0]
         pred=self._raw_relation_predicate(surface,arity)
         changed=False; fact_ids=[]; evidence=[]
         for obs,args in support:
@@ -526,7 +535,8 @@ class LanguageAcquisitionMixin:
             fid=self.kb.add(Atom(pred,args),f'{obs["source"]}:raw_relation:{pred}')
             fact_ids.append(fid); evidence.append({'text':obs['text'],'args':list(args),'fact_id':fid})
         promotion={'predicate':pred,'surface':surface,'arity':arity,'support':len(support),
-                   'evidence':evidence,'mechanism':'token_antiunification_v52'}
+                   'evidence':evidence,'mechanism':'token_antiunification_v52',
+                   'compression_gain':round(gain,4) if self.raw_relation_mdl else None}
         for obs,_ in support:
             obs['consumed_by']=pred
         self.raw_relation_promotions[surface]=promotion
@@ -537,6 +547,7 @@ class LanguageAcquisitionMixin:
         question_constructions=self._apply_question_transforms(promotion)
         return {'status':'raw_relation_learned','predicate':pred,'surface':surface,
                 'arity':arity,'support':len(support),'fact_ids':fact_ids,
+                'candidates_examined':len(candidate_surfaces),
                 'construction_added':bool(changed),'question_constructions':question_constructions,
                 'evidence':evidence}
 
