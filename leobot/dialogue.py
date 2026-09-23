@@ -994,6 +994,13 @@ class DialogueMixin:
                 text, require_surface_anchor=not self.allow_extensional_grounding)
             if grounded is not None:
                 parsed = grounded
+        # G-27: without extensional grounding an unknown assertion may only open
+        # rival meanings (at least two); an answered probe is the sole promoter.
+        if (parsed['status'] == 'unrecognized' and self.grounded_language and
+                not self.allow_extensional_grounding and not self._question_like(text)):
+            collected = self._try_grounded_language(text, collect_only=True)
+            if collected is not None:
+                parsed = collected
 
         # Pending generic grounding may coexist with a more specific concept.
         # Only a promoted/revised concept overrides it; pending evidence does not.

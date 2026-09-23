@@ -282,14 +282,18 @@ class LanguageAcquisitionMixin:
                   'unknown':[i for i,v in enumerate(args) if isinstance(v,str) and v.startswith('?')]}
         return surface, json.dumps(semantic,sort_keys=True,ensure_ascii=False,separators=(',',':'))
 
-    def _record_grounding_candidates(self, text: str, choices: list[dict]) -> dict | None:
+    def _record_grounding_candidates(self, text: str, choices: list[dict], *,
+                                     collect_only: bool = False) -> dict | None:
         """Update a contrastive version space from one grounded episode.
 
         Each episode may support several semantic hypotheses.  Hypotheses are
         generalized by replacing concrete entities with role markers, then the
         candidate set is intersected across independent episodes with the same
         delexicalized surface.  Promotion occurs only when one hypothesis remains
-        and the independent-support threshold has been reached.
+        and the independent-support threshold has been reached.  With
+        ``collect_only`` (G-27) an episode is recorded only in clusters where it
+        offers at least two rival hypotheses, and nothing is promoted here: only
+        an answered probe may select the meaning.
         """
         grouped: dict[str, dict[str, dict]] = {}
         all_evidence=set()
@@ -305,7 +309,11 @@ class LanguageAcquisitionMixin:
             hyp_key=json.dumps({'surface':surface,'semantic':semantic},
                                sort_keys=True,ensure_ascii=False,separators=(',',':'))
             grouped.setdefault(cluster,{})[hyp_key]=chosen
-            all_evidence.update(chosen.get('evidence',()))
+        if collect_only:
+            grouped={cluster:current for cluster,current in grouped.items() if len(current)>=2}
+        for current in grouped.values():
+            for chosen in current.values():
+                all_evidence.update(chosen.get('evidence',()))
         if not grouped:
             return None
         episode_id=json.dumps({'text':normalize(text),'evidence':sorted(all_evidence)},
@@ -331,7 +339,8 @@ class LanguageAcquisitionMixin:
                 state['conflict']=True
                 pending.append(state)
                 continue
-            if len(possible)==1 and len(state['observations']) >= self.grounding_min_support and not state.get('promoted'):
+            if (not collect_only and len(possible)==1 and
+                    len(state['observations']) >= self.grounding_min_support and not state.get('promoted')):
                 winner=next(iter(possible)); changed=False
                 supports=[]; added=[]
                 for obs in state['observations']:
@@ -915,7 +924,8 @@ class LanguageAcquisitionMixin:
                     return True
         return False
 
-    def _try_grounded_language(self, text: str, *, require_surface_anchor: bool = False) -> dict | None:
+    def _try_grounded_language(self, text: str, *, require_surface_anchor: bool = False,
+                               collect_only: bool = False) -> dict | None:
         """Induce a construction from independently repeated grounded evidence.
 
         Candidate meanings come only from already-known facts whose concrete
@@ -990,4 +1000,5 @@ class LanguageAcquisitionMixin:
                         candidates[key]={'frame':frame,'evidence':[fact['id']]}
         if not candidates:
             return None
-        return self._record_grounding_candidates(text, list(candidates.values()))
+        return self._record_grounding_candidates(text, list(candidates.values()),
+                                                 collect_only=collect_only)
