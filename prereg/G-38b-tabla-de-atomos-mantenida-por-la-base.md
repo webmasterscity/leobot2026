@@ -31,6 +31,13 @@ La tabla derivada se mantiene fuera de la base, y la clave se calcula con una co
 
 **Enmienda antes del código (2026-09-23):** la clave de duplicados de `facts` (`fact_key`) une predicado, fuente y argumentos con el mismo `\x1f`. Por eso `p('a\x1fb','c')` y `p('a','b\x1fc')` con la misma fuente se toman por el mismo hecho y el segundo no se guarda (defecto ya presente en `estable-G-7`). Se codifica sin ambigüedad (JSON de la lista) y la migración recalcula la clave de todas las filas. Criterio añadido: ese caso guarda los dos hechos. Donde `estable-G-8` guarda mal ese caso, la diferencial no lo cuenta como diferencia, porque las memorias al azar no usan `\x1f`.
 
+**Enmienda del mecanismo antes de congelar (2026-09-23), sin cambiar criterios:** el primer diseño en desarrollo falló el criterio de tamaño: 70,3 MiB frente a 69,5 de `estable-G-8`, con construcción de 7,5 s frente a 3,6 s. En una tabla sin identificador de fila, cada índice secundario copia la clave de 10 columnas. Cambios:
+- la tabla `atoms` pasa a tener identificador de fila y clave única;
+- `facts` conserva solo el índice de átomo exacto (se quitan los ocho índices por posición);
+- `matches` con variables busca los átomos y, desde ellos, sus hechos por ese índice exacto, en orden de identificador.
+
+Medido en desarrollo: 49,3 MiB y 4,3–4,6 s.
+
 **Qué se elimina:** el hash `_atom_key`, el mantenimiento desde Python y dos índices.
 
 ## Pruebas y puerta
