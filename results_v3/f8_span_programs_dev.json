@@ -1,0 +1,110 @@
+{
+  "preregistration": "prereg/F-8-sintesis-de-learner-de-tramos.md",
+  "kind": "development_only",
+  "engine_tree": "1f3187f2ced4c97364503187d074815f33612326",
+  "engine_unchanged": true,
+  "web_fit": 1248,
+  "web_validation": 32,
+  "web_heldout": 128,
+  "web_search": [
+    {
+      "status": "rejected",
+      "descriptions": 25,
+      "candidates": 37700,
+      "cpu_s": 0.28446718899999723
+    },
+    {
+      "status": "fitted",
+      "program": {
+        "input_representation": "token_sequence",
+        "hypothesis_generator": "bounded_spans",
+        "operators": [
+          "left_word"
+        ],
+        "search": "rank_by_count_odds",
+        "verifier": "separate_episodes",
+        "cost": "correct_then_complexity",
+        "promotion": {
+          "min_precision": 0.8
+        },
+        "rollback": "withdraw_on_invalidated",
+        "budget": {
+          "max_descriptions": 96,
+          "max_scored_spans": 125000
+        },
+        "threshold": 0.0,
+        "validation_correct": 6,
+        "validation_attempts": 7
+      },
+      "descriptions": 25,
+      "candidates": 37700,
+      "cpu_s": 0.29888699899999693
+    }
+  ],
+  "web_result": {
+    "correct": 0,
+    "attempts": 0,
+    "precision": null,
+    "candidates": 6068,
+    "p50_ms": 6.98647,
+    "p95_ms": 12.41419
+  },
+  "web_f7_roles": {
+    "correct": 42,
+    "attempts": 56
+  },
+  "sqac_fit": 1520,
+  "sqac_validation": 32,
+  "sqac_heldout": 64,
+  "sqac_educated_search": {
+    "status": "rejected",
+    "descriptions": 12,
+    "candidates": 115968,
+    "cpu_s": 3.7612084239999994
+  },
+  "sqac_educated": {
+    "correct": 0,
+    "attempts": 0,
+    "precision": null,
+    "candidates": 0,
+    "p50_ms": 0.63727,
+    "p95_ms": 1.48029
+  },
+  "sqac_fresh_search": {
+    "status": "rejected",
+    "descriptions": 12,
+    "candidates": 115968,
+    "cpu_s": 3.7608744030000025
+  },
+  "sqac_fresh": {
+    "correct": 0,
+    "attempts": 0,
+    "precision": null,
+    "candidates": 0,
+    "p50_ms": 0.65449,
+    "p95_ms": 1.48297
+  },
+  "sqac_f7_baseline": {
+    "total": 64,
+    "correct": 0,
+    "attempts": 9,
+    "precision": 0.0,
+    "wrong_confident": 9,
+    "candidates": 41274,
+    "status": {
+      "abstain": 55,
+      "answered": 9
+    },
+    "p50_ms": 3.17418,
+    "p95_ms": 4.39161
+  },
+  "web_fit_cpu_s": 0.213856,
+  "sqac_fit_cpu_s": 0.611922,
+  "restart_same": true,
+  "restart_cpu_s": 0.705867,
+  "saved_bytes": 4793147,
+  "gate_passed": false,
+  "cpu_total_s": 34.378566,
+  "wall_total_s": 44.273397,
+  "max_rss_kib": 207664
+}
