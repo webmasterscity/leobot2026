@@ -1,0 +1,109 @@
+{
+  "kind": "G23d_postgate_diagnosis_not_confirmation",
+  "preregistration": "prereg/G-23d-diagnostico-de-rutas.md",
+  "evaluator_commit": "61b34ca8d49584e905917724d4a6d887a4c1a5c3",
+  "engine_tree": "1f3187f2ced4c97364503187d074815f33612326",
+  "engine_unchanged": true,
+  "source_sha256": {
+    "up": "8f155e4309054e0fc6da8d1ca2253d631c0a716744c44958eaf9566c9cbfc260",
+    "ud": "47b6fc49d6ed48a016e7fa5ad9f5c7ecf3ec21e9db005df3ea14d10f07c6deb6"
+  },
+  "source_bytes": {
+    "up": 8228451,
+    "ud": 43100702
+  },
+  "seed": 1361,
+  "source_counts": {
+    "ud_sentences": 14287,
+    "predicate_rows": 30075,
+    "cross_partition_ignored": 7870,
+    "gold_core_heads_heldout": 1852,
+    "representable_core_heads_heldout": 1835,
+    "ambiguous_candidates_heldout": 0,
+    "candidate_cases": 282475,
+    "predicates_heldout": 1180,
+    "renaming_failures": 0,
+    "nonverb_or_missing_predicate": 8146,
+    "gold_core_heads_train": 20314,
+    "representable_core_heads_train": 20129,
+    "ambiguous_candidates_train": 0,
+    "predicates_train": 12879,
+    "missing_document_id": 460,
+    "token_id_mismatches": 222,
+    "up_without_ud": 0
+  },
+  "rule_counts": {
+    "full": 12,
+    "path": 4,
+    "direct": 0,
+    "side": 0,
+    "shuffled_full": 0,
+    "shuffled_path": 0
+  },
+  "counts": {
+    "gold_representable": 1835,
+    "false_negative": 1257,
+    "full_gold_support_without_promotion": 1136,
+    "missed_full_gold_support": 1212,
+    "missed_path_gold_support": 1226,
+    "correct_gold": 578,
+    "false_positive": 265,
+    "false_positive_wrong_head": 189,
+    "full_seen_without_gold_role_support": 40,
+    "false_positive_wrong_role": 76,
+    "promoted_wrong_role": 76,
+    "full_key_unseen": 5
+  },
+  "by_role": {
+    "A0": {
+      "gold": 628,
+      "full_seen": 624,
+      "path_seen": 625,
+      "full_gold_support": 608,
+      "path_gold_support": 614,
+      "missed": 510,
+      "full_gold_support_without_promotion": 489,
+      "correct": 118,
+      "full_seen_without_gold_role_support": 16,
+      "promoted_wrong_role": 1,
+      "full_key_unseen": 4
+    },
+    "A1": {
+      "gold": 975,
+      "full_seen": 974,
+      "path_seen": 975,
+      "full_gold_support": 954,
+      "path_gold_support": 961,
+      "missed": 515,
+      "full_gold_support_without_promotion": 474,
+      "correct": 460,
+      "promoted_wrong_role": 20,
+      "full_seen_without_gold_role_support": 20,
+      "full_key_unseen": 1
+    },
+    "A2": {
+      "gold": 232,
+      "full_seen": 232,
+      "path_seen": 232,
+      "full_gold_support": 228,
+      "path_gold_support": 229,
+      "missed": 232,
+      "full_gold_support_without_promotion": 173,
+      "promoted_wrong_role": 55,
+      "full_seen_without_gold_role_support": 4
+    }
+  },
+  "decision_flags": {
+    "score_hypothesis_priority": true,
+    "representation_hypothesis_priority": false,
+    "lexical_valence_priority": false
+  },
+  "up_download_cpu_s": 0.111834,
+  "up_index_cpu_s": 0.382911,
+  "ud_stream_training_cpu_s": 3.656063,
+  "diagnosis_cpu_s": 0.048553,
+  "cpu_total_s": 4.199405,
+  "wall_total_s": 6.221313,
+  "max_rss_kib": 101308,
+  "budget_ok": true
+}
