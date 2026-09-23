@@ -547,18 +547,9 @@ class Engine:
         checks = 0
         # Check derived as well as explicit contradictions in returned proof trees.
         # Do not call answer recursively: proof graph traversal is finite.
-        # An atom's opposite can only hold if some fact or rule concludes that
-        # opposite predicate; otherwise the check is skipped (exactly the same
-        # answer, without spending the conflict-check budget on impossibilities).
-        possible: dict[tuple[str, int], bool] = {}
-        def may_be_contradicted(atom: Atom) -> bool:
-            opposite = atom.opposite()
-            key = (opposite.pred, len(opposite.args))
-            if key not in possible:
-                pattern = Atom(opposite.pred, tuple(f'?c{i}' for i in range(len(opposite.args))))
-                possible[key] = bool(self.kb.heads.get(opposite.pred)) or \
-                    next(iter(self.kb.matches(pattern)), None) is not None
-            return possible[key]
+        # G-36b: without a rule concluding the opposite predicate, the opposite
+        # of a proof atom can only hold as that exact explicit fact: an O(1)
+        # index lookup decides it, with no query and no use of the budget.
         stack = list(pos['answers']) + (list(neg['answers']) if neg else [])
         seen: set[Atom] = set()
         while stack:
@@ -567,7 +558,10 @@ class Engine:
                 continue
             seen.add(proof.atom)
             stack.extend(proof.children)
-            if not may_be_contradicted(proof.atom):
+            opposite = proof.atom.opposite()
+            if not self.kb.heads.get(opposite.pred):
+                if opposite.ground and self.kb.contains(opposite):
+                    contested = True
                 continue
             if checks >= max_conflict_checks:
                 complete = False
