@@ -1,0 +1,161 @@
+{
+  "preregistration": "prereg/F-16-transferencia-igualdad-actualizaciones.md",
+  "kind": "development_controls_only",
+  "engine_tree": "1f3187f2ced4c97364503187d074815f33612326",
+  "engine_unchanged": true,
+  "families": {
+    "defeasible-snli": {
+      "partition": {
+        "groups_available": 9572,
+        "groups_train": 1000,
+        "groups_validation": 200,
+        "groups_development": 200,
+        "source_rows": 93860,
+        "train_rows": 9184,
+        "validation_rows": 1857,
+        "development_rows": 1844
+      },
+      "majority": {
+        "total": 1844,
+        "correct": 927,
+        "accuracy": 0.502711,
+        "macro_accuracy": 0.5,
+        "by_label": {
+          "strengthener": {
+            "correct": 927,
+            "total": 927
+          },
+          "weakener": {
+            "correct": 0,
+            "total": 917
+          }
+        }
+      },
+      "lexical_update": {
+        "total": 1844,
+        "correct": 1068,
+        "accuracy": 0.579176,
+        "macro_accuracy": 0.578816,
+        "by_label": {
+          "strengthener": {
+            "correct": 598,
+            "total": 927
+          },
+          "weakener": {
+            "correct": 470,
+            "total": 917
+          }
+        }
+      },
+      "lexical_profile": {
+        "documents": 9184,
+        "vocabulary": 6850
+      },
+      "loading_cpu_s": 1.431821,
+      "control_cpu_s": 0.075984
+    },
+    "defeasible-atomic": {
+      "partition": {
+        "groups_available": 6655,
+        "groups_train": 1000,
+        "groups_validation": 200,
+        "groups_development": 200,
+        "source_rows": 39036,
+        "train_rows": 5234,
+        "validation_rows": 1032,
+        "development_rows": 991
+      },
+      "majority": {
+        "total": 991,
+        "correct": 499,
+        "accuracy": 0.503532,
+        "macro_accuracy": 0.5,
+        "by_label": {
+          "strengthener": {
+            "correct": 499,
+            "total": 499
+          },
+          "weakener": {
+            "correct": 0,
+            "total": 492
+          }
+        }
+      },
+      "lexical_update": {
+        "total": 991,
+        "correct": 589,
+        "accuracy": 0.594349,
+        "macro_accuracy": 0.594486,
+        "by_label": {
+          "strengthener": {
+            "correct": 287,
+            "total": 499
+          },
+          "weakener": {
+            "correct": 302,
+            "total": 492
+          }
+        }
+      },
+      "lexical_profile": {
+        "documents": 5234,
+        "vocabulary": 4693
+      },
+      "loading_cpu_s": 1.516576,
+      "control_cpu_s": 0.040736
+    },
+    "defeasible-social": {
+      "partition": {
+        "groups_available": 6416,
+        "groups_train": 1000,
+        "groups_validation": 200,
+        "groups_development": 200,
+        "source_rows": 80330,
+        "train_rows": 12233,
+        "validation_rows": 2356,
+        "development_rows": 2311
+      },
+      "majority": {
+        "total": 2311,
+        "correct": 1189,
+        "accuracy": 0.514496,
+        "macro_accuracy": 0.5,
+        "by_label": {
+          "strengthener": {
+            "correct": 1189,
+            "total": 1189
+          },
+          "weakener": {
+            "correct": 0,
+            "total": 1122
+          }
+        }
+      },
+      "lexical_update": {
+        "total": 2311,
+        "correct": 1454,
+        "accuracy": 0.629165,
+        "macro_accuracy": 0.631778,
+        "by_label": {
+          "strengthener": {
+            "correct": 644,
+            "total": 1189
+          },
+          "weakener": {
+            "correct": 810,
+            "total": 1122
+          }
+        }
+      },
+      "lexical_profile": {
+        "documents": 12233,
+        "vocabulary": 5499
+      },
+      "loading_cpu_s": 3.324539,
+      "control_cpu_s": 0.10269
+    }
+  },
+  "cpu_total_s": 6.493691,
+  "wall_total_s": 21.521291,
+  "max_rss_kib": 45132
+}

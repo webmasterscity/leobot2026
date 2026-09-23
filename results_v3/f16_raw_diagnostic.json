@@ -1,0 +1,189 @@
+{
+  "kind": "diagnostic_not_promotion",
+  "preregistration": "prereg/F-16-transferencia-igualdad-actualizaciones.md",
+  "engine_tree": "1f3187f2ced4c97364503187d074815f33612326",
+  "families": {
+    "defeasible-snli": {
+      "best_raw_program": {
+        "comparison": [
+          "claim",
+          "overlap_bucket"
+        ],
+        "weight": 2.0,
+        "margin": 0.0
+      },
+      "best_raw": {
+        "total": 1844,
+        "correct": 1052,
+        "attempts": 1844,
+        "macro_accuracy": 0.569863,
+        "precision": 0.570499,
+        "coverage": 1.0,
+        "by_label": {
+          "strengthener": {
+            "correct": 637,
+            "total": 927
+          },
+          "weakener": {
+            "correct": 415,
+            "total": 917
+          }
+        },
+        "p50_ms": 0.02047,
+        "p95_ms": 0.03049
+      },
+      "source_prior_program": {
+        "total": 1844,
+        "correct": 1064,
+        "attempts": 1844,
+        "macro_accuracy": 0.576394,
+        "precision": 0.577007,
+        "coverage": 1.0,
+        "by_label": {
+          "strengthener": {
+            "correct": 639,
+            "total": 927
+          },
+          "weakener": {
+            "correct": 425,
+            "total": 917
+          }
+        },
+        "p50_ms": 0.01997,
+        "p95_ms": 0.02968
+      },
+      "lexical_control": {
+        "total": 1844,
+        "correct": 1068,
+        "accuracy": 0.579176,
+        "macro_accuracy": 0.578816,
+        "by_label": {
+          "strengthener": {
+            "correct": 598,
+            "total": 927
+          },
+          "weakener": {
+            "correct": 470,
+            "total": 917
+          }
+        }
+      }
+    },
+    "defeasible-atomic": {
+      "best_raw_program": {
+        "comparison": [
+          "information",
+          "overlap_bucket"
+        ],
+        "weight": 2.0,
+        "margin": 0.0
+      },
+      "best_raw": {
+        "total": 991,
+        "correct": 589,
+        "attempts": 991,
+        "macro_accuracy": 0.594543,
+        "precision": 0.594349,
+        "coverage": 1.0,
+        "by_label": {
+          "strengthener": {
+            "correct": 283,
+            "total": 499
+          },
+          "weakener": {
+            "correct": 306,
+            "total": 492
+          }
+        },
+        "p50_ms": 0.01672,
+        "p95_ms": 0.02335
+      },
+      "source_prior_program": {
+        "total": 991,
+        "correct": 585,
+        "attempts": 991,
+        "macro_accuracy": 0.590278,
+        "precision": 0.590313,
+        "coverage": 1.0,
+        "by_label": {
+          "strengthener": {
+            "correct": 297,
+            "total": 499
+          },
+          "weakener": {
+            "correct": 288,
+            "total": 492
+          }
+        },
+        "p50_ms": 0.01766,
+        "p95_ms": 0.02425
+      },
+      "lexical_control": {
+        "total": 991,
+        "correct": 589,
+        "accuracy": 0.594349,
+        "macro_accuracy": 0.594486,
+        "by_label": {
+          "strengthener": {
+            "correct": 287,
+            "total": 499
+          },
+          "weakener": {
+            "correct": 302,
+            "total": 492
+          }
+        }
+      }
+    },
+    "defeasible-social": {
+      "best_raw_program": {
+        "comparison": [
+          "claim",
+          "novelty_binary"
+        ],
+        "weight": 2.0,
+        "margin": 0.0
+      },
+      "best_raw": {
+        "total": 2311,
+        "correct": 1452,
+        "attempts": 2311,
+        "macro_accuracy": 0.629732,
+        "precision": 0.628299,
+        "coverage": 1.0,
+        "by_label": {
+          "strengthener": {
+            "correct": 690,
+            "total": 1189
+          },
+          "weakener": {
+            "correct": 762,
+            "total": 1122
+          }
+        },
+        "p50_ms": 0.02013,
+        "p95_ms": 0.02858
+      },
+      "source_prior_program": null,
+      "lexical_control": {
+        "total": 2311,
+        "correct": 1454,
+        "accuracy": 0.629165,
+        "macro_accuracy": 0.631778,
+        "by_label": {
+          "strengthener": {
+            "correct": 644,
+            "total": 1189
+          },
+          "weakener": {
+            "correct": 810,
+            "total": 1122
+          }
+        }
+      }
+    }
+  },
+  "cpu_total_s": 9.793153,
+  "wall_total_s": 23.738846,
+  "max_rss_kib": 50080
+}

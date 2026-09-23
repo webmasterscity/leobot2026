@@ -1,0 +1,1517 @@
+{
+  "preregistration": "prereg/F-16-transferencia-igualdad-actualizaciones.md",
+  "kind": "development_only",
+  "engine_tree": "1f3187f2ced4c97364503187d074815f33612326",
+  "engine_unchanged": true,
+  "source_prior": "F-15 unpromoted structural recommendation",
+  "prior_descriptor": [
+    "claim",
+    "overlap_binary"
+  ],
+  "families": {
+    "defeasible-snli": {
+      "partition": {
+        "groups_available": 9572,
+        "groups_train": 1000,
+        "groups_validation": 200,
+        "groups_development": 200,
+        "source_rows": 93860,
+        "train_rows": 9184,
+        "validation_rows": 1857,
+        "development_rows": 1844
+      },
+      "stages": [
+        {
+          "groups": 100,
+          "examples": 886,
+          "shared_fit": {
+            "records": 886,
+            "groups": 100,
+            "vocabulary": 1809,
+            "frequent_tokens": 33,
+            "compiled_relations": 40,
+            "fit_cpu_s": 0.100567
+          },
+          "shared_fit_cpu_s": 0.100661,
+          "educated_selection": {
+            "status": "rejected",
+            "descriptions": 32,
+            "program": null,
+            "best_raw_program": {
+              "comparison": [
+                "claim",
+                "overlap_bucket"
+              ],
+              "weight": 1.0,
+              "margin": 0.0
+            },
+            "best_raw_validation": {
+              "total": 1857,
+              "correct": 1001,
+              "attempts": 1857,
+              "macro_accuracy": 0.538894,
+              "precision": 0.539041,
+              "coverage": 1.0,
+              "by_label": {
+                "strengthener": {
+                  "correct": 520,
+                  "total": 937
+                },
+                "weakener": {
+                  "correct": 481,
+                  "total": 920
+                }
+              }
+            },
+            "search_cpu_s": 0.218542
+          },
+          "educated": {
+            "total": 1844,
+            "correct": 0,
+            "attempts": 0,
+            "macro_accuracy": 0.0,
+            "precision": null,
+            "coverage": 0.0,
+            "by_label": {
+              "strengthener": {
+                "correct": 0,
+                "total": 927
+              },
+              "weakener": {
+                "correct": 0,
+                "total": 917
+              }
+            },
+            "p50_ms": 6e-05,
+            "p95_ms": 8e-05
+          },
+          "fresh_selection": {
+            "status": "rejected",
+            "descriptions": 32,
+            "program": null,
+            "best_raw_program": {
+              "comparison": [
+                "claim",
+                "overlap_bucket"
+              ],
+              "weight": 1.0,
+              "margin": 0.0
+            },
+            "best_raw_validation": {
+              "total": 1857,
+              "correct": 1001,
+              "attempts": 1857,
+              "macro_accuracy": 0.538894,
+              "precision": 0.539041,
+              "coverage": 1.0,
+              "by_label": {
+                "strengthener": {
+                  "correct": 520,
+                  "total": 937
+                },
+                "weakener": {
+                  "correct": 481,
+                  "total": 920
+                }
+              }
+            },
+            "search_cpu_s": 0.216369
+          },
+          "fresh": {
+            "total": 1844,
+            "correct": 0,
+            "attempts": 0,
+            "macro_accuracy": 0.0,
+            "precision": null,
+            "coverage": 0.0,
+            "by_label": {
+              "strengthener": {
+                "correct": 0,
+                "total": 927
+              },
+              "weakener": {
+                "correct": 0,
+                "total": 917
+              }
+            },
+            "p50_ms": 6e-05,
+            "p95_ms": 9e-05
+          }
+        },
+        {
+          "groups": 250,
+          "examples": 2266,
+          "shared_fit": {
+            "records": 2266,
+            "groups": 250,
+            "vocabulary": 3239,
+            "frequent_tokens": 30,
+            "compiled_relations": 40,
+            "fit_cpu_s": 0.253382
+          },
+          "shared_fit_cpu_s": 0.253608,
+          "educated_selection": {
+            "status": "rejected",
+            "descriptions": 32,
+            "program": null,
+            "best_raw_program": {
+              "comparison": [
+                "claim",
+                "overlap_binary"
+              ],
+              "weight": 2.0,
+              "margin": 0.0
+            },
+            "best_raw_validation": {
+              "total": 1857,
+              "correct": 1013,
+              "attempts": 1857,
+              "macro_accuracy": 0.545032,
+              "precision": 0.545504,
+              "coverage": 1.0,
+              "by_label": {
+                "strengthener": {
+                  "correct": 559,
+                  "total": 937
+                },
+                "weakener": {
+                  "correct": 454,
+                  "total": 920
+                }
+              }
+            },
+            "search_cpu_s": 0.22029
+          },
+          "educated": {
+            "total": 1844,
+            "correct": 0,
+            "attempts": 0,
+            "macro_accuracy": 0.0,
+            "precision": null,
+            "coverage": 0.0,
+            "by_label": {
+              "strengthener": {
+                "correct": 0,
+                "total": 927
+              },
+              "weakener": {
+                "correct": 0,
+                "total": 917
+              }
+            },
+            "p50_ms": 6e-05,
+            "p95_ms": 9e-05
+          },
+          "fresh_selection": {
+            "status": "rejected",
+            "descriptions": 32,
+            "program": null,
+            "best_raw_program": {
+              "comparison": [
+                "claim",
+                "overlap_binary"
+              ],
+              "weight": 2.0,
+              "margin": 0.0
+            },
+            "best_raw_validation": {
+              "total": 1857,
+              "correct": 1013,
+              "attempts": 1857,
+              "macro_accuracy": 0.545032,
+              "precision": 0.545504,
+              "coverage": 1.0,
+              "by_label": {
+                "strengthener": {
+                  "correct": 559,
+                  "total": 937
+                },
+                "weakener": {
+                  "correct": 454,
+                  "total": 920
+                }
+              }
+            },
+            "search_cpu_s": 0.220478
+          },
+          "fresh": {
+            "total": 1844,
+            "correct": 0,
+            "attempts": 0,
+            "macro_accuracy": 0.0,
+            "precision": null,
+            "coverage": 0.0,
+            "by_label": {
+              "strengthener": {
+                "correct": 0,
+                "total": 927
+              },
+              "weakener": {
+                "correct": 0,
+                "total": 917
+              }
+            },
+            "p50_ms": 6e-05,
+            "p95_ms": 8e-05
+          }
+        },
+        {
+          "groups": 500,
+          "examples": 4589,
+          "shared_fit": {
+            "records": 4589,
+            "groups": 500,
+            "vocabulary": 4862,
+            "frequent_tokens": 32,
+            "compiled_relations": 40,
+            "fit_cpu_s": 0.507231
+          },
+          "shared_fit_cpu_s": 0.50774,
+          "educated_selection": {
+            "status": "rejected",
+            "descriptions": 32,
+            "program": null,
+            "best_raw_program": {
+              "comparison": [
+                "claim",
+                "novelty_binary"
+              ],
+              "weight": 1.0,
+              "margin": 0.0
+            },
+            "best_raw_validation": {
+              "total": 1857,
+              "correct": 1068,
+              "attempts": 1857,
+              "macro_accuracy": 0.574992,
+              "precision": 0.575121,
+              "coverage": 1.0,
+              "by_label": {
+                "strengthener": {
+                  "correct": 552,
+                  "total": 937
+                },
+                "weakener": {
+                  "correct": 516,
+                  "total": 920
+                }
+              }
+            },
+            "search_cpu_s": 0.218635
+          },
+          "educated": {
+            "total": 1844,
+            "correct": 0,
+            "attempts": 0,
+            "macro_accuracy": 0.0,
+            "precision": null,
+            "coverage": 0.0,
+            "by_label": {
+              "strengthener": {
+                "correct": 0,
+                "total": 927
+              },
+              "weakener": {
+                "correct": 0,
+                "total": 917
+              }
+            },
+            "p50_ms": 6e-05,
+            "p95_ms": 8e-05
+          },
+          "fresh_selection": {
+            "status": "rejected",
+            "descriptions": 32,
+            "program": null,
+            "best_raw_program": {
+              "comparison": [
+                "claim",
+                "novelty_binary"
+              ],
+              "weight": 1.0,
+              "margin": 0.0
+            },
+            "best_raw_validation": {
+              "total": 1857,
+              "correct": 1068,
+              "attempts": 1857,
+              "macro_accuracy": 0.574992,
+              "precision": 0.575121,
+              "coverage": 1.0,
+              "by_label": {
+                "strengthener": {
+                  "correct": 552,
+                  "total": 937
+                },
+                "weakener": {
+                  "correct": 516,
+                  "total": 920
+                }
+              }
+            },
+            "search_cpu_s": 0.22008
+          },
+          "fresh": {
+            "total": 1844,
+            "correct": 0,
+            "attempts": 0,
+            "macro_accuracy": 0.0,
+            "precision": null,
+            "coverage": 0.0,
+            "by_label": {
+              "strengthener": {
+                "correct": 0,
+                "total": 927
+              },
+              "weakener": {
+                "correct": 0,
+                "total": 917
+              }
+            },
+            "p50_ms": 6e-05,
+            "p95_ms": 9e-05
+          }
+        },
+        {
+          "groups": 1000,
+          "examples": 9184,
+          "shared_fit": {
+            "records": 9184,
+            "groups": 1000,
+            "vocabulary": 6850,
+            "frequent_tokens": 31,
+            "compiled_relations": 40,
+            "fit_cpu_s": 1.01309
+          },
+          "shared_fit_cpu_s": 1.014062,
+          "educated_selection": {
+            "status": "rejected",
+            "descriptions": 32,
+            "program": null,
+            "best_raw_program": {
+              "comparison": [
+                "claim",
+                "overlap_bucket"
+              ],
+              "weight": 2.0,
+              "margin": 0.0
+            },
+            "best_raw_validation": {
+              "total": 1857,
+              "correct": 1060,
+              "attempts": 1857,
+              "macro_accuracy": 0.57019,
+              "precision": 0.570813,
+              "coverage": 1.0,
+              "by_label": {
+                "strengthener": {
+                  "correct": 598,
+                  "total": 937
+                },
+                "weakener": {
+                  "correct": 462,
+                  "total": 920
+                }
+              }
+            },
+            "search_cpu_s": 0.217954
+          },
+          "educated": {
+            "total": 1844,
+            "correct": 0,
+            "attempts": 0,
+            "macro_accuracy": 0.0,
+            "precision": null,
+            "coverage": 0.0,
+            "by_label": {
+              "strengthener": {
+                "correct": 0,
+                "total": 927
+              },
+              "weakener": {
+                "correct": 0,
+                "total": 917
+              }
+            },
+            "p50_ms": 6e-05,
+            "p95_ms": 9e-05
+          },
+          "fresh_selection": {
+            "status": "rejected",
+            "descriptions": 32,
+            "program": null,
+            "best_raw_program": {
+              "comparison": [
+                "claim",
+                "overlap_bucket"
+              ],
+              "weight": 2.0,
+              "margin": 0.0
+            },
+            "best_raw_validation": {
+              "total": 1857,
+              "correct": 1060,
+              "attempts": 1857,
+              "macro_accuracy": 0.57019,
+              "precision": 0.570813,
+              "coverage": 1.0,
+              "by_label": {
+                "strengthener": {
+                  "correct": 598,
+                  "total": 937
+                },
+                "weakener": {
+                  "correct": 462,
+                  "total": 920
+                }
+              }
+            },
+            "search_cpu_s": 0.220896
+          },
+          "fresh": {
+            "total": 1844,
+            "correct": 0,
+            "attempts": 0,
+            "macro_accuracy": 0.0,
+            "precision": null,
+            "coverage": 0.0,
+            "by_label": {
+              "strengthener": {
+                "correct": 0,
+                "total": 927
+              },
+              "weakener": {
+                "correct": 0,
+                "total": 917
+              }
+            },
+            "p50_ms": 6e-05,
+            "p95_ms": 9e-05
+          }
+        }
+      ],
+      "lexical_control": {
+        "total": 1844,
+        "correct": 1068,
+        "accuracy": 0.579176,
+        "macro_accuracy": 0.578816,
+        "by_label": {
+          "strengthener": {
+            "correct": 598,
+            "total": 927
+          },
+          "weakener": {
+            "correct": 470,
+            "total": 917
+          }
+        }
+      }
+    },
+    "defeasible-atomic": {
+      "partition": {
+        "groups_available": 6655,
+        "groups_train": 1000,
+        "groups_validation": 200,
+        "groups_development": 200,
+        "source_rows": 39036,
+        "train_rows": 5234,
+        "validation_rows": 1032,
+        "development_rows": 991
+      },
+      "stages": [
+        {
+          "groups": 100,
+          "examples": 532,
+          "shared_fit": {
+            "records": 532,
+            "groups": 100,
+            "vocabulary": 1107,
+            "frequent_tokens": 32,
+            "compiled_relations": 28,
+            "fit_cpu_s": 0.046099
+          },
+          "shared_fit_cpu_s": 0.046183,
+          "educated_selection": {
+            "status": "rejected",
+            "descriptions": 32,
+            "program": null,
+            "best_raw_program": {
+              "comparison": [
+                "claim",
+                "overlap_bucket"
+              ],
+              "weight": 2.0,
+              "margin": 0.0
+            },
+            "best_raw_validation": {
+              "total": 1032,
+              "correct": 533,
+              "attempts": 1032,
+              "macro_accuracy": 0.516437,
+              "precision": 0.516473,
+              "coverage": 1.0,
+              "by_label": {
+                "strengthener": {
+                  "correct": 271,
+                  "total": 521
+                },
+                "weakener": {
+                  "correct": 262,
+                  "total": 511
+                }
+              }
+            },
+            "search_cpu_s": 0.095869
+          },
+          "educated": {
+            "total": 991,
+            "correct": 0,
+            "attempts": 0,
+            "macro_accuracy": 0.0,
+            "precision": null,
+            "coverage": 0.0,
+            "by_label": {
+              "strengthener": {
+                "correct": 0,
+                "total": 499
+              },
+              "weakener": {
+                "correct": 0,
+                "total": 492
+              }
+            },
+            "p50_ms": 6e-05,
+            "p95_ms": 9e-05
+          },
+          "fresh_selection": {
+            "status": "rejected",
+            "descriptions": 32,
+            "program": null,
+            "best_raw_program": {
+              "comparison": [
+                "claim",
+                "overlap_bucket"
+              ],
+              "weight": 2.0,
+              "margin": 0.0
+            },
+            "best_raw_validation": {
+              "total": 1032,
+              "correct": 533,
+              "attempts": 1032,
+              "macro_accuracy": 0.516437,
+              "precision": 0.516473,
+              "coverage": 1.0,
+              "by_label": {
+                "strengthener": {
+                  "correct": 271,
+                  "total": 521
+                },
+                "weakener": {
+                  "correct": 262,
+                  "total": 511
+                }
+              }
+            },
+            "search_cpu_s": 0.094567
+          },
+          "fresh": {
+            "total": 991,
+            "correct": 0,
+            "attempts": 0,
+            "macro_accuracy": 0.0,
+            "precision": null,
+            "coverage": 0.0,
+            "by_label": {
+              "strengthener": {
+                "correct": 0,
+                "total": 499
+              },
+              "weakener": {
+                "correct": 0,
+                "total": 492
+              }
+            },
+            "p50_ms": 6e-05,
+            "p95_ms": 9e-05
+          }
+        },
+        {
+          "groups": 250,
+          "examples": 1317,
+          "shared_fit": {
+            "records": 1317,
+            "groups": 250,
+            "vocabulary": 2043,
+            "frequent_tokens": 30,
+            "compiled_relations": 36,
+            "fit_cpu_s": 0.109013
+          },
+          "shared_fit_cpu_s": 0.109216,
+          "educated_selection": {
+            "status": "rejected",
+            "descriptions": 32,
+            "program": null,
+            "best_raw_program": {
+              "comparison": [
+                "information",
+                "overlap_bucket"
+              ],
+              "weight": 2.0,
+              "margin": 0.0
+            },
+            "best_raw_validation": {
+              "total": 1032,
+              "correct": 558,
+              "attempts": 1032,
+              "macro_accuracy": 0.541199,
+              "precision": 0.540698,
+              "coverage": 1.0,
+              "by_label": {
+                "strengthener": {
+                  "correct": 255,
+                  "total": 521
+                },
+                "weakener": {
+                  "correct": 303,
+                  "total": 511
+                }
+              }
+            },
+            "search_cpu_s": 0.099603
+          },
+          "educated": {
+            "total": 991,
+            "correct": 0,
+            "attempts": 0,
+            "macro_accuracy": 0.0,
+            "precision": null,
+            "coverage": 0.0,
+            "by_label": {
+              "strengthener": {
+                "correct": 0,
+                "total": 499
+              },
+              "weakener": {
+                "correct": 0,
+                "total": 492
+              }
+            },
+            "p50_ms": 6e-05,
+            "p95_ms": 9e-05
+          },
+          "fresh_selection": {
+            "status": "rejected",
+            "descriptions": 32,
+            "program": null,
+            "best_raw_program": {
+              "comparison": [
+                "information",
+                "overlap_bucket"
+              ],
+              "weight": 2.0,
+              "margin": 0.0
+            },
+            "best_raw_validation": {
+              "total": 1032,
+              "correct": 558,
+              "attempts": 1032,
+              "macro_accuracy": 0.541199,
+              "precision": 0.540698,
+              "coverage": 1.0,
+              "by_label": {
+                "strengthener": {
+                  "correct": 255,
+                  "total": 521
+                },
+                "weakener": {
+                  "correct": 303,
+                  "total": 511
+                }
+              }
+            },
+            "search_cpu_s": 0.094892
+          },
+          "fresh": {
+            "total": 991,
+            "correct": 0,
+            "attempts": 0,
+            "macro_accuracy": 0.0,
+            "precision": null,
+            "coverage": 0.0,
+            "by_label": {
+              "strengthener": {
+                "correct": 0,
+                "total": 499
+              },
+              "weakener": {
+                "correct": 0,
+                "total": 492
+              }
+            },
+            "p50_ms": 6e-05,
+            "p95_ms": 9e-05
+          }
+        },
+        {
+          "groups": 500,
+          "examples": 2587,
+          "shared_fit": {
+            "records": 2587,
+            "groups": 500,
+            "vocabulary": 3099,
+            "frequent_tokens": 31,
+            "compiled_relations": 36,
+            "fit_cpu_s": 0.216749
+          },
+          "shared_fit_cpu_s": 0.21713,
+          "educated_selection": {
+            "status": "rejected",
+            "descriptions": 32,
+            "program": null,
+            "best_raw_program": {
+              "comparison": [
+                "information",
+                "overlap_bucket"
+              ],
+              "weight": 2.0,
+              "margin": 0.0
+            },
+            "best_raw_validation": {
+              "total": 1032,
+              "correct": 559,
+              "attempts": 1032,
+              "macro_accuracy": 0.541802,
+              "precision": 0.541667,
+              "coverage": 1.0,
+              "by_label": {
+                "strengthener": {
+                  "correct": 275,
+                  "total": 521
+                },
+                "weakener": {
+                  "correct": 284,
+                  "total": 511
+                }
+              }
+            },
+            "search_cpu_s": 0.096636
+          },
+          "educated": {
+            "total": 991,
+            "correct": 0,
+            "attempts": 0,
+            "macro_accuracy": 0.0,
+            "precision": null,
+            "coverage": 0.0,
+            "by_label": {
+              "strengthener": {
+                "correct": 0,
+                "total": 499
+              },
+              "weakener": {
+                "correct": 0,
+                "total": 492
+              }
+            },
+            "p50_ms": 6e-05,
+            "p95_ms": 9e-05
+          },
+          "fresh_selection": {
+            "status": "rejected",
+            "descriptions": 32,
+            "program": null,
+            "best_raw_program": {
+              "comparison": [
+                "information",
+                "overlap_bucket"
+              ],
+              "weight": 2.0,
+              "margin": 0.0
+            },
+            "best_raw_validation": {
+              "total": 1032,
+              "correct": 559,
+              "attempts": 1032,
+              "macro_accuracy": 0.541802,
+              "precision": 0.541667,
+              "coverage": 1.0,
+              "by_label": {
+                "strengthener": {
+                  "correct": 275,
+                  "total": 521
+                },
+                "weakener": {
+                  "correct": 284,
+                  "total": 511
+                }
+              }
+            },
+            "search_cpu_s": 0.095252
+          },
+          "fresh": {
+            "total": 991,
+            "correct": 0,
+            "attempts": 0,
+            "macro_accuracy": 0.0,
+            "precision": null,
+            "coverage": 0.0,
+            "by_label": {
+              "strengthener": {
+                "correct": 0,
+                "total": 499
+              },
+              "weakener": {
+                "correct": 0,
+                "total": 492
+              }
+            },
+            "p50_ms": 6e-05,
+            "p95_ms": 9e-05
+          }
+        },
+        {
+          "groups": 1000,
+          "examples": 5234,
+          "shared_fit": {
+            "records": 5234,
+            "groups": 1000,
+            "vocabulary": 4693,
+            "frequent_tokens": 31,
+            "compiled_relations": 38,
+            "fit_cpu_s": 0.435475
+          },
+          "shared_fit_cpu_s": 0.436222,
+          "educated_selection": {
+            "status": "rejected",
+            "descriptions": 32,
+            "program": null,
+            "best_raw_program": {
+              "comparison": [
+                "information",
+                "overlap_bucket"
+              ],
+              "weight": 2.0,
+              "margin": 0.0
+            },
+            "best_raw_validation": {
+              "total": 1032,
+              "correct": 574,
+              "attempts": 1032,
+              "macro_accuracy": 0.556216,
+              "precision": 0.556202,
+              "coverage": 1.0,
+              "by_label": {
+                "strengthener": {
+                  "correct": 289,
+                  "total": 521
+                },
+                "weakener": {
+                  "correct": 285,
+                  "total": 511
+                }
+              }
+            },
+            "search_cpu_s": 0.095174
+          },
+          "educated": {
+            "total": 991,
+            "correct": 0,
+            "attempts": 0,
+            "macro_accuracy": 0.0,
+            "precision": null,
+            "coverage": 0.0,
+            "by_label": {
+              "strengthener": {
+                "correct": 0,
+                "total": 499
+              },
+              "weakener": {
+                "correct": 0,
+                "total": 492
+              }
+            },
+            "p50_ms": 6e-05,
+            "p95_ms": 9e-05
+          },
+          "fresh_selection": {
+            "status": "rejected",
+            "descriptions": 32,
+            "program": null,
+            "best_raw_program": {
+              "comparison": [
+                "information",
+                "overlap_bucket"
+              ],
+              "weight": 2.0,
+              "margin": 0.0
+            },
+            "best_raw_validation": {
+              "total": 1032,
+              "correct": 574,
+              "attempts": 1032,
+              "macro_accuracy": 0.556216,
+              "precision": 0.556202,
+              "coverage": 1.0,
+              "by_label": {
+                "strengthener": {
+                  "correct": 289,
+                  "total": 521
+                },
+                "weakener": {
+                  "correct": 285,
+                  "total": 511
+                }
+              }
+            },
+            "search_cpu_s": 0.095846
+          },
+          "fresh": {
+            "total": 991,
+            "correct": 0,
+            "attempts": 0,
+            "macro_accuracy": 0.0,
+            "precision": null,
+            "coverage": 0.0,
+            "by_label": {
+              "strengthener": {
+                "correct": 0,
+                "total": 499
+              },
+              "weakener": {
+                "correct": 0,
+                "total": 492
+              }
+            },
+            "p50_ms": 6e-05,
+            "p95_ms": 9e-05
+          }
+        }
+      ],
+      "lexical_control": {
+        "total": 991,
+        "correct": 589,
+        "accuracy": 0.594349,
+        "macro_accuracy": 0.594486,
+        "by_label": {
+          "strengthener": {
+            "correct": 287,
+            "total": 499
+          },
+          "weakener": {
+            "correct": 302,
+            "total": 492
+          }
+        }
+      }
+    },
+    "defeasible-social": {
+      "partition": {
+        "groups_available": 6416,
+        "groups_train": 1000,
+        "groups_validation": 200,
+        "groups_development": 200,
+        "source_rows": 80330,
+        "train_rows": 12233,
+        "validation_rows": 2356,
+        "development_rows": 2311
+      },
+      "stages": [
+        {
+          "groups": 100,
+          "examples": 1167,
+          "shared_fit": {
+            "records": 1167,
+            "groups": 100,
+            "vocabulary": 1586,
+            "frequent_tokens": 48,
+            "compiled_relations": 18,
+            "fit_cpu_s": 0.073946
+          },
+          "shared_fit_cpu_s": 0.074104,
+          "educated_selection": {
+            "status": "rejected",
+            "descriptions": 16,
+            "program": null,
+            "best_raw_program": {
+              "comparison": [
+                "claim",
+                "novelty_binary"
+              ],
+              "weight": 2.0,
+              "margin": 0.0
+            },
+            "best_raw_validation": {
+              "total": 2356,
+              "correct": 1368,
+              "attempts": 2356,
+              "macro_accuracy": 0.580704,
+              "precision": 0.580645,
+              "coverage": 1.0,
+              "by_label": {
+                "strengthener": {
+                  "correct": 702,
+                  "total": 1213
+                },
+                "weakener": {
+                  "correct": 666,
+                  "total": 1143
+                }
+              }
+            },
+            "search_cpu_s": 0.144868
+          },
+          "educated": {
+            "total": 2311,
+            "correct": 0,
+            "attempts": 0,
+            "macro_accuracy": 0.0,
+            "precision": null,
+            "coverage": 0.0,
+            "by_label": {
+              "strengthener": {
+                "correct": 0,
+                "total": 1189
+              },
+              "weakener": {
+                "correct": 0,
+                "total": 1122
+              }
+            },
+            "p50_ms": 6e-05,
+            "p95_ms": 8e-05
+          },
+          "fresh_selection": {
+            "status": "rejected",
+            "descriptions": 16,
+            "program": null,
+            "best_raw_program": {
+              "comparison": [
+                "claim",
+                "novelty_binary"
+              ],
+              "weight": 2.0,
+              "margin": 0.0
+            },
+            "best_raw_validation": {
+              "total": 2356,
+              "correct": 1368,
+              "attempts": 2356,
+              "macro_accuracy": 0.580704,
+              "precision": 0.580645,
+              "coverage": 1.0,
+              "by_label": {
+                "strengthener": {
+                  "correct": 702,
+                  "total": 1213
+                },
+                "weakener": {
+                  "correct": 666,
+                  "total": 1143
+                }
+              }
+            },
+            "search_cpu_s": 0.145371
+          },
+          "fresh": {
+            "total": 2311,
+            "correct": 0,
+            "attempts": 0,
+            "macro_accuracy": 0.0,
+            "precision": null,
+            "coverage": 0.0,
+            "by_label": {
+              "strengthener": {
+                "correct": 0,
+                "total": 1189
+              },
+              "weakener": {
+                "correct": 0,
+                "total": 1122
+              }
+            },
+            "p50_ms": 6e-05,
+            "p95_ms": 9e-05
+          }
+        },
+        {
+          "groups": 250,
+          "examples": 2892,
+          "shared_fit": {
+            "records": 2892,
+            "groups": 250,
+            "vocabulary": 2641,
+            "frequent_tokens": 47,
+            "compiled_relations": 28,
+            "fit_cpu_s": 0.174325
+          },
+          "shared_fit_cpu_s": 0.174629,
+          "educated_selection": {
+            "status": "rejected",
+            "descriptions": 16,
+            "program": null,
+            "best_raw_program": {
+              "comparison": [
+                "claim",
+                "novelty_binary"
+              ],
+              "weight": 2.0,
+              "margin": 0.0
+            },
+            "best_raw_validation": {
+              "total": 2356,
+              "correct": 1448,
+              "attempts": 2356,
+              "macro_accuracy": 0.61575,
+              "precision": 0.614601,
+              "coverage": 1.0,
+              "by_label": {
+                "strengthener": {
+                  "correct": 700,
+                  "total": 1213
+                },
+                "weakener": {
+                  "correct": 748,
+                  "total": 1143
+                }
+              }
+            },
+            "search_cpu_s": 0.142693
+          },
+          "educated": {
+            "total": 2311,
+            "correct": 0,
+            "attempts": 0,
+            "macro_accuracy": 0.0,
+            "precision": null,
+            "coverage": 0.0,
+            "by_label": {
+              "strengthener": {
+                "correct": 0,
+                "total": 1189
+              },
+              "weakener": {
+                "correct": 0,
+                "total": 1122
+              }
+            },
+            "p50_ms": 6e-05,
+            "p95_ms": 8e-05
+          },
+          "fresh_selection": {
+            "status": "rejected",
+            "descriptions": 16,
+            "program": null,
+            "best_raw_program": {
+              "comparison": [
+                "claim",
+                "novelty_binary"
+              ],
+              "weight": 2.0,
+              "margin": 0.0
+            },
+            "best_raw_validation": {
+              "total": 2356,
+              "correct": 1448,
+              "attempts": 2356,
+              "macro_accuracy": 0.61575,
+              "precision": 0.614601,
+              "coverage": 1.0,
+              "by_label": {
+                "strengthener": {
+                  "correct": 700,
+                  "total": 1213
+                },
+                "weakener": {
+                  "correct": 748,
+                  "total": 1143
+                }
+              }
+            },
+            "search_cpu_s": 0.146339
+          },
+          "fresh": {
+            "total": 2311,
+            "correct": 0,
+            "attempts": 0,
+            "macro_accuracy": 0.0,
+            "precision": null,
+            "coverage": 0.0,
+            "by_label": {
+              "strengthener": {
+                "correct": 0,
+                "total": 1189
+              },
+              "weakener": {
+                "correct": 0,
+                "total": 1122
+              }
+            },
+            "p50_ms": 6e-05,
+            "p95_ms": 9e-05
+          }
+        },
+        {
+          "groups": 500,
+          "examples": 5970,
+          "shared_fit": {
+            "records": 5970,
+            "groups": 500,
+            "vocabulary": 3906,
+            "frequent_tokens": 49,
+            "compiled_relations": 28,
+            "fit_cpu_s": 0.360736
+          },
+          "shared_fit_cpu_s": 0.361264,
+          "educated_selection": {
+            "status": "rejected",
+            "descriptions": 16,
+            "program": null,
+            "best_raw_program": {
+              "comparison": [
+                "claim",
+                "novelty_binary"
+              ],
+              "weight": 2.0,
+              "margin": 0.0
+            },
+            "best_raw_validation": {
+              "total": 2356,
+              "correct": 1460,
+              "attempts": 2356,
+              "macro_accuracy": 0.620873,
+              "precision": 0.619694,
+              "coverage": 1.0,
+              "by_label": {
+                "strengthener": {
+                  "correct": 705,
+                  "total": 1213
+                },
+                "weakener": {
+                  "correct": 755,
+                  "total": 1143
+                }
+              }
+            },
+            "search_cpu_s": 0.143564
+          },
+          "educated": {
+            "total": 2311,
+            "correct": 0,
+            "attempts": 0,
+            "macro_accuracy": 0.0,
+            "precision": null,
+            "coverage": 0.0,
+            "by_label": {
+              "strengthener": {
+                "correct": 0,
+                "total": 1189
+              },
+              "weakener": {
+                "correct": 0,
+                "total": 1122
+              }
+            },
+            "p50_ms": 6e-05,
+            "p95_ms": 9e-05
+          },
+          "fresh_selection": {
+            "status": "rejected",
+            "descriptions": 16,
+            "program": null,
+            "best_raw_program": {
+              "comparison": [
+                "claim",
+                "novelty_binary"
+              ],
+              "weight": 2.0,
+              "margin": 0.0
+            },
+            "best_raw_validation": {
+              "total": 2356,
+              "correct": 1460,
+              "attempts": 2356,
+              "macro_accuracy": 0.620873,
+              "precision": 0.619694,
+              "coverage": 1.0,
+              "by_label": {
+                "strengthener": {
+                  "correct": 705,
+                  "total": 1213
+                },
+                "weakener": {
+                  "correct": 755,
+                  "total": 1143
+                }
+              }
+            },
+            "search_cpu_s": 0.147069
+          },
+          "fresh": {
+            "total": 2311,
+            "correct": 0,
+            "attempts": 0,
+            "macro_accuracy": 0.0,
+            "precision": null,
+            "coverage": 0.0,
+            "by_label": {
+              "strengthener": {
+                "correct": 0,
+                "total": 1189
+              },
+              "weakener": {
+                "correct": 0,
+                "total": 1122
+              }
+            },
+            "p50_ms": 6e-05,
+            "p95_ms": 8e-05
+          }
+        },
+        {
+          "groups": 1000,
+          "examples": 12233,
+          "shared_fit": {
+            "records": 12233,
+            "groups": 1000,
+            "vocabulary": 5499,
+            "frequent_tokens": 49,
+            "compiled_relations": 28,
+            "fit_cpu_s": 0.754501
+          },
+          "shared_fit_cpu_s": 0.755692,
+          "educated_selection": {
+            "status": "rejected",
+            "descriptions": 16,
+            "program": null,
+            "best_raw_program": {
+              "comparison": [
+                "claim",
+                "novelty_binary"
+              ],
+              "weight": 2.0,
+              "margin": 0.0
+            },
+            "best_raw_validation": {
+              "total": 2356,
+              "correct": 1477,
+              "attempts": 2356,
+              "macro_accuracy": 0.628663,
+              "precision": 0.62691,
+              "coverage": 1.0,
+              "by_label": {
+                "strengthener": {
+                  "correct": 691,
+                  "total": 1213
+                },
+                "weakener": {
+                  "correct": 786,
+                  "total": 1143
+                }
+              }
+            },
+            "search_cpu_s": 0.143994
+          },
+          "educated": {
+            "total": 2311,
+            "correct": 0,
+            "attempts": 0,
+            "macro_accuracy": 0.0,
+            "precision": null,
+            "coverage": 0.0,
+            "by_label": {
+              "strengthener": {
+                "correct": 0,
+                "total": 1189
+              },
+              "weakener": {
+                "correct": 0,
+                "total": 1122
+              }
+            },
+            "p50_ms": 6e-05,
+            "p95_ms": 9e-05
+          },
+          "fresh_selection": {
+            "status": "rejected",
+            "descriptions": 16,
+            "program": null,
+            "best_raw_program": {
+              "comparison": [
+                "claim",
+                "novelty_binary"
+              ],
+              "weight": 2.0,
+              "margin": 0.0
+            },
+            "best_raw_validation": {
+              "total": 2356,
+              "correct": 1477,
+              "attempts": 2356,
+              "macro_accuracy": 0.628663,
+              "precision": 0.62691,
+              "coverage": 1.0,
+              "by_label": {
+                "strengthener": {
+                  "correct": 691,
+                  "total": 1213
+                },
+                "weakener": {
+                  "correct": 786,
+                  "total": 1143
+                }
+              }
+            },
+            "search_cpu_s": 0.147426
+          },
+          "fresh": {
+            "total": 2311,
+            "correct": 0,
+            "attempts": 0,
+            "macro_accuracy": 0.0,
+            "precision": null,
+            "coverage": 0.0,
+            "by_label": {
+              "strengthener": {
+                "correct": 0,
+                "total": 1189
+              },
+              "weakener": {
+                "correct": 0,
+                "total": 1122
+              }
+            },
+            "p50_ms": 6e-05,
+            "p95_ms": 9e-05
+          }
+        }
+      ],
+      "lexical_control": {
+        "total": 2311,
+        "correct": 1454,
+        "accuracy": 0.629165,
+        "macro_accuracy": 0.631778,
+        "by_label": {
+          "strengthener": {
+            "correct": 644,
+            "total": 1189
+          },
+          "weakener": {
+            "correct": 810,
+            "total": 1122
+          }
+        }
+      }
+    }
+  },
+  "family_gates": {
+    "defeasible-snli": false,
+    "defeasible-atomic": false,
+    "defeasible-social": false
+  },
+  "transfer_gate_passed": false,
+  "adversarial_restart_controls": "pending_if_family_and_transfer_gates_pass",
+  "cpu_total_s": 15.33428,
+  "wall_total_s": 29.149641,
+  "max_rss_kib": 52564
+}
