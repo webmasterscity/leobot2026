@@ -996,6 +996,7 @@ class DialogueMixin:
                 parsed = grounded
         # G-27: without extensional grounding an unknown assertion may only open
         # rival meanings (at least two); an answered probe is the sole promoter.
+        collected = None
         if (parsed['status'] == 'unrecognized' and self.grounded_language and
                 not self.allow_extensional_grounding and not self._question_like(text)):
             collected = self._try_grounded_language(text, collect_only=True)
@@ -1008,6 +1009,12 @@ class DialogueMixin:
             learned = observe_invented(False)
             if learned is not None:
                 return learned
+            # G-27b: rival meanings still feed raw induction, so repeated
+            # sentences recover the opaque root and its facts as in G-1.
+            if collected is not None:
+                raw = self.observe_raw_relation(text)
+                if raw.get('status') == 'raw_relation_learned':
+                    return {'text':'Induje una relación primitiva opaca a partir de varias afirmaciones no anotadas y registré sus hechos con procedencia; su significado frente a relaciones conocidas sigue pendiente de una pregunta.', **raw}
 
         if parsed['status'] != 'parsed' and parsed['status'] != 'grounding_pending':
             if self._question_like(text):

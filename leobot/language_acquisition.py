@@ -11,7 +11,7 @@ import re
 from difflib import SequenceMatcher
 from itertools import combinations, permutations
 
-from .core import Atom
+from .core import Atom, Rule, unify
 from .language import Language, normalize
 
 
@@ -38,6 +38,53 @@ class LanguageAcquisitionMixin:
                 return None,True
             clusters.add(matches[0])
         return (next(iter(clusters)),False) if len(clusters)==1 else (None,True)
+
+    def _grounding_raw_bridge(self, state: dict, winner: str) -> dict | None:
+        """Relate an answered meaning to a raw root that already parses its surface.
+
+        Teaching the grounded construction there would make the surface
+        ambiguous, so G-27b equates both relations with two learned rules whose
+        role order comes from the observations themselves.  ``None`` keeps the
+        G-27 path (no raw root); mixed roots or orders, or a known fact whose
+        image is explicitly contradicted, yield ``{'status': 'conflict'}``.
+        """
+        examples=self.language.examples
+        found=set()
+        for observation in state.get('observations',()):
+            detail=observation['candidates'].get(winner)
+            parsed=self.language.parse(observation['text'])
+            indices=parsed.get('construction_indices',())
+            if (detail is None or parsed['status']!='parsed' or not indices or
+                    any(examples[i].get('source')!='raw_relation_induction' for i in indices)):
+                found.add(None)
+                continue
+            raw_args=[normalize(str(v)) for v in parsed['frame']['args']]
+            args=[normalize(str(v)) for v in detail['frame']['args']]
+            order=tuple(raw_args.index(v) if raw_args.count(v)==1 else -1 for v in args)
+            if len(args)!=len(raw_args) or sorted(order)!=list(range(len(args))):
+                return {'status':'conflict'}
+            found.add((parsed['frame']['pred'],detail['frame']['pred'],order))
+        if not found or found=={None}:
+            return None
+        if len(found)!=1 or None in found:
+            return {'status':'conflict'}
+        raw,pred,order=next(iter(found))
+        if raw==pred:
+            return {'status':'conflict'}
+        variables=tuple(f'?v{i}' for i in range(len(order)))
+        raw_atom=Atom(raw,variables); rel_atom=Atom(pred,tuple(variables[i] for i in order))
+        for source,target in ((raw_atom,rel_atom),(rel_atom,raw_atom)):
+            for sign in ('','!'):
+                for fact in self.kb.matches(Atom(sign+source.pred,source.args)):
+                    binding=unify(source.args,fact['atom'].args)
+                    image=Atom(sign+target.pred,tuple(binding[x] for x in target.args))
+                    if self.kb.contains(image.opposite()):
+                        return {'status':'conflict'}
+        key=hashlib.sha256(json.dumps([raw,pred,list(order)]).encode()).hexdigest()[:16]
+        evidence=tuple(o['episode_id'] for o in state['observations'])
+        rules=(Rule(f'grounding_bridge_{key}_raw',rel_atom,(raw_atom,),'learned',evidence),
+               Rule(f'grounding_bridge_{key}_rel',raw_atom,(rel_atom,),'learned',evidence))
+        return {'status':'bridge','raw':raw,'pred':pred,'order':list(order),'rules':rules}
 
     @staticmethod
     def _grounding_probe_hypotheses(state: dict) -> list[dict]:
@@ -177,13 +224,17 @@ class LanguageAcquisitionMixin:
                     self.discourse_facts=[fid for fid in self.discourse_facts if fid not in dropped]
                     if self.last_fact in dropped:
                         self.last_fact=None
+                rules=[rid for rid in state.get('bridge_rule_ids',()) if rid in self.kb.rules]
+                for rid in rules:
+                    self.kb.remove_rule(rid)
                 state['derived_fact_ids']=[]
-                state['promoted_examples']=[]
+                state['promoted_examples']=[]; state['bridge_rule_ids']=[]
                 state['promoted']=False; state['conflict']=True; state['possible']=[]
                 state.setdefault('probe_observations',[]).append(
                     {'id':probe_id,'text':pending['text'],'answer':answer,'contradicts':previous})
                 return {'status':'grounding_conflict','possible':0,
-                        'withdrawn':len(promoted),'facts_withdrawn':len(removed)}
+                        'withdrawn':len(promoted),'facts_withdrawn':len(removed),
+                        'rules_withdrawn':len(rules)}
             if previous is not None:
                 return {'status':'grounding_promoted' if state.get('promoted') else 'grounding_pending',
                         'possible':len(state.get('possible',()))}
@@ -201,6 +252,22 @@ class LanguageAcquisitionMixin:
             if len(state['possible'])!=1 or len(state.get('observations',()))<self.grounding_min_support:
                 return {'status':'grounding_pending','possible':len(state['possible'])}
             winner=state['possible'][0]
+            bridge=self._grounding_raw_bridge(state,winner)
+            if bridge is not None:
+                if bridge['status']!='bridge':
+                    state['conflict']=True; state['possible']=[]
+                    return {'status':'grounding_conflict','possible':0}
+                for rule in bridge['rules']:
+                    self.kb.add_rule(rule)
+                state['bridge_rule_ids']=[rule.id for rule in bridge['rules']]
+                state['promoted_examples']=[]; state['promoted']=True
+                self.training_reports.append({'type':'language_grounded_bridge','cluster':cluster,
+                                              'raw_predicate':bridge['raw'],
+                                              'predicate':bridge['pred'],'order':bridge['order'],
+                                              'rule_ids':state['bridge_rule_ids']})
+                return {'status':'grounding_promoted','possible':1,
+                        'support':len(state['observations']),'construction_count':0,
+                        'bridge_rule_ids':list(state['bridge_rule_ids']),'cluster':cluster}
             language=Language.from_dict(self.language.as_dict())
             added=[]
             try:
