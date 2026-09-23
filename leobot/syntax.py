@@ -110,8 +110,16 @@ class SyntaxMixin:
         if lexical:
             contexts.append(f'3\x1f{head_tag}\x1f{dep_tag}\x1f{direction}\x1f{marker}')
         contexts.append(f'4\x1f{head_tag}\x1f{dep_tag}\x1f{direction}\x1f{distance}')
+        if lexical and h:
+            # G-32c: agreement learned from endings (no grammar written down).
+            contexts.append(f'7\x1f{head_tag}\x1f{dep_tag}\x1f{direction}\x1f{words[h - 1][-1:]}\x1f{words[d - 1][-1:]}')
         if lexical:
             contexts.append(f'5\x1f{head_tag}\x1f{dep_tag}\x1f{direction}\x1f{distance}\x1f{marker}')
+            head_word = words[h - 1] if h else '<root>'
+            if h and counts.get(head_word, 0) >= LEXICAL_MIN:
+                # G-32c: each frequent head's own tendencies (e.g. which verbs
+                # take a subject after them).
+                contexts.append(f'8\x1f{head_word}\x1f{dep_tag}\x1f{direction}\x1f{marker}')
             dep_word = words[d - 1]
             if counts.get(dep_word, 0) >= LEXICAL_MIN:
                 contexts.append(f'6\x1f{head_tag}\x1f{dep_tag}\x1f{dep_word}\x1f{direction}\x1f{marker}')
