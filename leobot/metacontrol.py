@@ -19,11 +19,12 @@ from __future__ import annotations
 from copy import deepcopy
 from math import exp, log1p, log2
 from itertools import combinations
+import json
 from .rbf import RBFStrategyRouter
 
 
 class MetaController:
-    VERSION = 6
+    VERSION = 7
 
     def __init__(self) -> None:
         # decision family -> exact signature -> strategy -> aggregates
@@ -47,6 +48,10 @@ class MetaController:
         # incremental while cheap validation of an already promoted program
         # still runs whenever new evidence arrives.
         self.program_search_checkpoints: dict[str, dict[str, int]] = {}
+        # A compiled subrule is admitted only after independent decision
+        # families learn the same structural truth partition.
+        self.meta_primitives: dict[str, dict] = {}
+        self.enable_meta_primitives = True
 
     @staticmethod
     def _feature_tuple(features) -> tuple[float, ...]:
@@ -268,6 +273,188 @@ class MetaController:
         ranked=sorted(candidates.items(),key=lambda entry:(entry[1][0],entry[0]))
         return [candidate[1] for _,candidate in ranked[:max(8,int(limit))]]
 
+    @staticmethod
+    def _subrule_descriptors(view: dict) -> list[dict]:
+        """Extract minimal two-test partitions from a validated program.
+
+        A third predicate may be redundant over the observed buckets.  Project
+        the learned truth table and require every collapsed branch to agree;
+        this avoids treating a genuinely three-way rule as a two-way primitive.
+        """
+        predicates=view.get('predicates',())
+        if view.get('kind')!='feature_program' or not 2<=len(predicates)<=3:
+            return []
+        output=[]
+        for pair in combinations(range(len(predicates)),2):
+            if any(predicates[i].get('op')!='atom_eq' or
+                   predicates[i].get('atom',{}).get('op')!='cmp' for i in pair):
+                continue
+            order=sorted(pair,key=lambda i:(predicates[i]['atom']['a'],
+                                            predicates[i]['atom']['b']))
+            positions=[int(predicates[i]['atom'][side]) for i in order
+                       for side in ('a','b')]
+            if len(set(positions))!=4:
+                continue
+            if any(predicates[i]['value'] not in (-1,1) for i in order):
+                continue
+            origin=min(positions)
+            template=[{'a':int(predicates[i]['atom']['a'])-origin,
+                       'b':int(predicates[i]['atom']['b'])-origin,
+                       'value':-1} for i in order]
+            span=max(positions)-origin+1
+            if span>16:
+                continue
+            winners={};supports={};conflict=False
+            for key,row in (view.get('buckets') or {}).items():
+                bits=key.split('|')
+                if len(bits)!=len(predicates) or any(bit not in ('0','1') for bit in bits):
+                    continue
+                if float(row.get('confidence',0))<0.8:
+                    continue
+                # For non-equal comparisons, "greater" and "less" encode
+                # complementary bits. Canonicalize their orientation before
+                # comparing independent programs; equality later abstains.
+                projected=''.join(str(int(bits[i]) ^
+                                      int(predicates[i]['value']==1)) for i in order)
+                label=str(row.get('winner'))
+                if projected in winners and winners[projected]!=label:
+                    conflict=True;break
+                winners[projected]=label
+                supports[projected]=supports.get(projected,0)+int(row.get('support',0))
+            keys=('00','01','10','11')
+            if conflict or any(supports.get(key,0)<2 for key in keys):
+                continue
+            if len(set(winners.values()))!=2:
+                continue
+            reference=winners['00']
+            truth=[int(winners[key]!=reference) for key in keys]
+            signature=json.dumps({'template':template,'truth':truth},sort_keys=True,
+                                 separators=(',',':'))
+            output.append({'signature':signature,'template':template,
+                           'truth':truth,'span':span,'origin':origin})
+        return output
+
+    def _reconcile_meta_primitives(self) -> None:
+        """Rebuild compiled pieces from current evidence and revoke dependents."""
+        grouped={}
+        for family,view in sorted(self.invented_views.items()):
+            for descriptor in self._subrule_descriptors(view):
+                origin=descriptor['origin']
+                if any(task['features'][row['a']+origin]==
+                       task['features'][row['b']+origin]
+                       for task in self._meta_tasks(family)
+                       for row in descriptor['template']):
+                    continue
+                row=grouped.setdefault(descriptor['signature'],{**descriptor,'sources':[]})
+                # A second label for exactly the same examples is not independent
+                # confirmation. Structural equivalence is tested separately.
+                evidence={task['features'] for task in self._meta_tasks(family)}
+                if not evidence:
+                    continue
+                if any(evidence & {task['features'] for task in self._meta_tasks(source)}
+                       for source in row['sources']):
+                    continue
+                row['sources'].append(family)
+        self.meta_primitives={key:row for key,row in grouped.items()
+                              if len(row['sources'])>=2}
+        for family,view in list(self.invented_views.items()):
+            if (view.get('kind')=='macro_program' and
+                    view.get('primitive') not in self.meta_primitives):
+                self.invented_views.pop(family,None)
+
+    @classmethod
+    def _meta_primitive_value(cls, features, primitive: dict, start: int) -> int | None:
+        bits=[]
+        for row in primitive['template']:
+            atom={'op':'cmp','a':start+int(row['a']),'b':start+int(row['b'])}
+            value=cls._transform_atom_value(features,atom)
+            if value==0:
+                return None
+            bits.append(int(value==row['value']))
+        return int(primitive['truth'][2*bits[0]+bits[1]])
+
+    def _invent_macro_view_from_tasks(self, family: str, tasks: list[dict]) -> dict:
+        """Search a bounded outer program over acquired, reusable subrules."""
+        if not self.enable_meta_primitives or not self.meta_primitives or len(tasks)<16:
+            return {'status':'macro_program_unavailable'}
+        width=len(tasks[0]['features'])
+        if any(len(task['features'])!=width for task in tasks):
+            return {'status':'macro_program_incompatible_features'}
+        majority=self._mode_winner(tasks)
+        evaluated=0; best=None
+        for identifier,primitive in sorted(self.meta_primitives.items()):
+            starts=list(range(width-int(primitive['span'])+1))
+            for left,right in combinations(starts,2):
+                if evaluated>=32:
+                    break
+                evaluated+=1
+                pairs=[(self._meta_primitive_value(task['features'],primitive,left),
+                        self._meta_primitive_value(task['features'],primitive,right))
+                       for task in tasks]
+                if any(a is None or b is None for a,b in pairs):
+                    continue
+                keys=[f'{a}|{b}' for a,b in pairs]
+                counts={}
+                for task,key in zip(tasks,keys):
+                    row=counts.setdefault(key,{})
+                    winner=task['winner'];row[winner]=row.get(winner,0)+1
+                if len(counts)<4:
+                    continue
+                covered=correct=baseline_correct=0
+                for task,key in zip(tasks,keys):
+                    available={label:n-int(label==task['winner'])
+                               for label,n in counts[key].items()}
+                    available={label:n for label,n in available.items() if n>0}
+                    if not available:
+                        continue
+                    prediction=min(available,key=lambda label:(-available[label],str(label)))
+                    covered+=1;correct+=int(prediction==task['winner'])
+                    baseline_correct+=int(majority==task['winner'])
+                coverage=covered/len(tasks);accuracy=correct/max(1,covered)
+                gain=accuracy-baseline_correct/max(1,covered)
+                if coverage<0.70 or accuracy<0.90 or gain<0.15:
+                    continue
+                # Both chronological halves must predict the other half.  A
+                # proxy that only marks the acquisition epoch is insufficient.
+                temporal=[];cut=len(tasks)//2
+                for train,test in ((range(cut),range(cut,len(tasks))),
+                                   (range(cut,len(tasks)),range(cut))):
+                    local={}
+                    for i in train:
+                        row=local.setdefault(keys[i],{})
+                        w=tasks[i]['winner'];row[w]=row.get(w,0)+1
+                    seen=hits=0
+                    for i in test:
+                        row=local.get(keys[i])
+                        if row:
+                            pred=min(row,key=lambda w:(-row[w],str(w)))
+                            seen+=1;hits+=int(pred==tasks[i]['winner'])
+                    temporal.append((seen/max(1,len(test)),hits/max(1,seen)))
+                if any(c<0.8 or a<0.95 for c,a in temporal):
+                    continue
+                buckets={}
+                for key,row in counts.items():
+                    winner=min(row,key=lambda w:(-row[w],str(w)))
+                    support=sum(row.values());confidence=row[winner]/support
+                    if support>=2 and confidence>=0.8:
+                        buckets[key]={'winner':winner,'support':support,'confidence':confidence}
+                if len(buckets)<4:
+                    continue
+                score=accuracy*coverage+0.5*gain
+                candidate=(score,identifier,left,right,buckets,accuracy,coverage,gain)
+                if best is None or candidate[:4]>best[:4]:
+                    best=candidate
+        if best is None:
+            return {'status':'macro_program_rejected','candidates_evaluated':evaluated}
+        score,identifier,left,right,buckets,accuracy,coverage,gain=best
+        view={'kind':'macro_program','primitive':identifier,'starts':[left,right],
+              'buckets':buckets,'accuracy':accuracy,'coverage':coverage,
+              'gain_over_majority':gain,'score':score,'tasks':len(tasks),
+              'candidates_evaluated':evaluated,
+              'sources':list(self.meta_primitives[identifier]['sources'])}
+        self.invented_views[family]=view
+        return {'status':'macro_program_invented','family':family,**deepcopy(view)}
+
     @classmethod
     def _program_temporal_transfer(cls, tasks: list[dict], predicates) -> dict:
         """Check that a composed view transfers across chronological blocks.
@@ -348,7 +535,23 @@ class MetaController:
             except (ValueError,TypeError,IndexError):
                 coverage=accuracy=0.0; temporal={'ok':False}
             if coverage>=0.70 and accuracy>=0.85 and temporal.get('ok'):
-                retained=deepcopy(existing); retained['tasks']=len(tasks)
+                counts={}
+                for task in tasks:
+                    key='|'.join(str(self._predicate_value(task['features'],p))
+                                 for p in predicates)
+                    row=counts.setdefault(key,{})
+                    winner=task['winner'];row[winner]=row.get(winner,0)+1
+                compact={}
+                for key,row in counts.items():
+                    winner=min(row,key=lambda w:(-row[w],str(w)))
+                    support=sum(row.values());confidence=row[winner]/support
+                    if support>=2 and confidence>=0.8:
+                        compact[key]={'winner':winner,'support':support,
+                                      'confidence':confidence}
+                retained=deepcopy(existing)
+                retained['tasks']=len(tasks)
+                retained['buckets']=compact
+                self.invented_views[fam]=retained
                 return {'status':'meta_program_invented','family':fam,'retained':True,**retained}
             self.invented_views.pop(fam,None)
 
@@ -519,6 +722,7 @@ class MetaController:
         # It is cheap at current bounds and its result is only a routing hint.
         if len(rows)>=16 and len(rows)%4==0:
             self.invent_view(fam)
+            self._reconcile_meta_primitives()
 
     def _meta_tasks(self, fam: str) -> list[dict]:
         grouped={}
@@ -607,6 +811,9 @@ class MetaController:
                 score=(accuracy*coverage)+(0.5*gain)-(0.015*len(dims))
                 candidates.append((score,accuracy,coverage,gain,dims))
         if not candidates:
+            macro=self._invent_macro_view_from_tasks(fam,tasks)
+            if macro.get('status')=='macro_program_invented':
+                return macro
             transformed=self._invent_transform_view_from_tasks(fam,tasks)
             if transformed.get('status')=='meta_transform_invented':
                 return transformed
@@ -646,7 +853,25 @@ class MetaController:
         kind=str(view.get('kind','feature_projection'))
         detail={'accuracy':view.get('accuracy'),'coverage':view.get('coverage'),
                 'gain_over_majority':view.get('gain_over_majority'),'kind':kind}
-        if kind=='feature_transform':
+        if kind=='macro_program':
+            primitive=self.meta_primitives.get(view.get('primitive')) if self.enable_meta_primitives else None
+            if primitive is None:
+                return None,None
+            starts=view.get('starts',())
+            if len(starts)!=2:
+                return None,None
+            try:
+                values=[self._meta_primitive_value(vals,primitive,int(start))
+                        for start in starts]
+                if any(value is None for value in values):
+                    return None,None
+                key='|'.join(str(value) for value in values)
+            except (ValueError,TypeError,IndexError):
+                return None,None
+            bucket=(view.get('buckets') or {}).get(key)
+            detail['primitive']=view.get('primitive')
+            detail['sources']=list(primitive.get('sources',()))
+        elif kind=='feature_transform':
             atoms=view.get('atoms',())
             try:
                 key=self._transform_key(vals,atoms)
@@ -914,7 +1139,9 @@ class MetaController:
                 'max_gaps':self.max_gaps,'history':deepcopy(self.history),
                 'max_history_per_family':self.max_history_per_family,
                 'invented_views':deepcopy(self.invented_views),
-                'program_search_checkpoints':deepcopy(self.program_search_checkpoints)}
+                'program_search_checkpoints':deepcopy(self.program_search_checkpoints),
+                'meta_primitives':deepcopy(self.meta_primitives),
+                'enable_meta_primitives':self.enable_meta_primitives}
 
     @classmethod
     def from_dict(cls, data: dict | None) -> 'MetaController':
@@ -922,7 +1149,7 @@ class MetaController:
         if not isinstance(data,dict):
             return obj
         version=int(data.get('version',1) or 1)
-        if version not in (1,2,3,4,5,6):
+        if version not in (1,2,3,4,5,6,7):
             raise ValueError('Estado de MetaController no compatible.')
         obj.exact=deepcopy(data.get('exact',{})) if isinstance(data.get('exact',{}),dict) else {}
         obj.routers={str(k):RBFStrategyRouter.from_dict(v) for k,v in (data.get('routers',{}) or {}).items()}
@@ -940,6 +1167,9 @@ class MetaController:
         if version>=6:
             raw=data.get('program_search_checkpoints',{})
             obj.program_search_checkpoints=deepcopy(raw) if isinstance(raw,dict) else {}
+        if version>=7:
+            obj.enable_meta_primitives=bool(data.get('enable_meta_primitives',True))
+        obj._reconcile_meta_primitives()
         # V1 persistence had no AIKR summaries.  Reconstruct conservative budget
         # rows from aggregate evidence so old checkpoints remain usable.
         if version==1:

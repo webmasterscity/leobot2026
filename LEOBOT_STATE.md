@@ -7,15 +7,15 @@
 - Último tag estable: ninguno · huella del motor en a325276: `137077a46823785681eeeaf976ac5dd89661b3e2`
 - Pruebas: 525 pasan · 2 fallos esperados · 0 fallos · Python 3.12.3
 - Orden rápida: `timeout 20s env PYTHONHASHSEED=0 python3 -m unittest tests.test_meta_active_probe tests.test_safe_question_grounding -q` · Orden completa: `./run_tests.sh --solo-pruebas`
-- Preregistro activo: `prereg/A-1-subregla-meta.md` · estado: diseñado
-- Diseños intentados en la fase en curso: 1) pieza meta de una regla repetida → preregistrada, sin resultado
-- Siguiente paso concreto: implementar A-1 sin subir el límite plano, congelar el motor y ejecutar el ensayo preregistrado
+- Preregistro activo: `prereg/A-1-subregla-meta.md` · estado: implementando
+- Diseños intentados en la fase en curso: 1) pieza meta de una regla repetida → desarrollo funcional en 3 órdenes, sin resultado reservado
+- Siguiente paso concreto: crear el tag `freeze-A-1`, generar después la reserva desde su huella y ejecutar el ensayo preregistrado con `timeout 180s`
 - Bloqueos: ninguno
 - Lectura (seguimiento): 0/4 en el commit actual; aún no hay tag estable
 
 ## Historial de ciclos
 
-- 2026-09-22 · `prereg/A-1-subregla-meta.md` · diseño registrado antes de código · sin tag.
+- 2026-09-22 · `prereg/A-1-subregla-meta.md` · diseño registrado antes de código; desarrollo funcional en tres órdenes, pendiente de reserva · sin tag estable.
 
 <p lang="es" style="text-align: justify; hyphens: auto;">Este es el único registro de continuidad. Las cifras reproducibles están en <code>results_v3/</code>, los experimentos en <code>experiments/</code> y las pruebas en <code>tests/</code>. Las tres versiones originales se compararon antes de retirar sus archivos duplicados. El ZIP existente conserva un estado anterior: el usuario pidió no gastar más tiempo generando archivos ZIP, por lo que el motor actual se sigue desde el repositorio y este documento.</p>
 
