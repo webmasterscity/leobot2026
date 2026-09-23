@@ -1058,7 +1058,8 @@ class DialogueMixin:
                 return {'text':'No puedo atribuir esta afirmación a una interpretación fiable.',
                         'status':'grounding_pending'}
             atom=Atom(frame['pred'],tuple(frame['args']))
-            was_new=(atom,'conversación') not in self.kb.dedup
+            was_new=not any(fact['source']=='conversación'
+                            for fact in self.kb.matches(atom))
             fid=self.kb.add(atom,'conversación')
             if cluster is not None and was_new:
                 self.grounding_fact_dependencies[fid]=cluster

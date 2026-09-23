@@ -5,6 +5,7 @@ from pathlib import Path
 
 from leobot.bot import Bot
 from leobot.core import Atom, KnowledgeBase
+from leobot.scalable import ScalableBot
 
 
 def ambiguous_bot(reverse=False, explicit_negative=True):
@@ -24,6 +25,34 @@ def ambiguous_bot(reverse=False, explicit_negative=True):
 
 
 class GroundingProbeTests(unittest.TestCase):
+    def test_disk_memory_tracks_and_retracts_the_same_derived_fact(self):
+        with tempfile.TemporaryDirectory() as td:
+            db=Path(td)/'facts.db'; path=Path(td)/'bot.json'
+            bot=ScalableBot(db,allow_extensional_grounding=True)
+            try:
+                for left,right in (('ana','luis'),('cora','nora')):
+                    for pred in ('ruta_a','ruta_b'):
+                        bot.kb.add(Atom(pred,(left,right)),'entorno')
+                bot.kb.add(Atom('ruta_a',('bea','mario')),'entorno')
+                bot.kb.add(Atom('!ruta_b',('bea','mario')),'entorno')
+                self.assertEqual(bot.respond('ana cuida luis')['status'],'grounding_pending')
+                self.assertEqual(bot.respond('cora cuida nora')['status'],'grounding_pending')
+                proposal=bot.propose_grounding_probe()
+                self.assertEqual(bot.observe_grounding_probe(proposal['probe_id'],True)['status'],
+                                 'grounding_promoted')
+                self.assertEqual(bot.respond('dana cuida ciro')['status'],'stored')
+                bot.save(path)
+            finally:
+                bot.close()
+            restored=ScalableBot.load(path,db)
+            try:
+                self.assertTrue(restored.kb.contains(Atom('ruta_a',('dana','ciro'))))
+                self.assertEqual(restored.observe_grounding_probe(proposal['probe_id'],False)['status'],
+                                 'grounding_conflict')
+                self.assertFalse(restored.kb.contains(Atom('ruta_a',('dana','ciro'))))
+            finally:
+                restored.close()
+
     def test_counterevidence_removes_a_fact_created_only_by_the_learned_phrase(self):
         bot = ambiguous_bot()
         proposal = bot.propose_grounding_probe()
