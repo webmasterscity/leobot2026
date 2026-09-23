@@ -24,7 +24,7 @@ from .state_fields import plain_state, restore_plain_state
 class Bot(DocumentLearningMixin, LanguageAcquisitionMixin, ConditionalLearningMixin, DialogueMixin):
     def __init__(self, kb=None, grounded_language: bool = True, grounding_min_support: int = 2,
                  raw_relation_min_support: int = 3, allow_extensional_grounding: bool = False,
-                 raw_relation_max_arity: int = 8, raw_relation_mdl: bool = True) -> None:
+                 raw_relation_max_arity: int = 8) -> None:
         self.kb, self.language, self.programs = (kb if kb is not None else KnowledgeBase()), Language(), ProgramLearner()
         self.procedures = ProcedureGrounder(self.programs)
         self.symbolic = SymbolicWorldLearner()
@@ -43,7 +43,6 @@ class Bot(DocumentLearningMixin, LanguageAcquisitionMixin, ConditionalLearningMi
         self.grounding_min_support = max(1, int(grounding_min_support))
         self.raw_relation_min_support = max(3, int(raw_relation_min_support))
         self.raw_relation_max_arity = max(1, min(8, int(raw_relation_max_arity)))
-        self.raw_relation_mdl = bool(raw_relation_mdl)
         # Untrusted semantic hypotheses are kept separate from active grammar until
         # independent grounded episodes support the same delexicalized construction.
         self.grounding_hypotheses: dict[str, dict] = {}
@@ -658,7 +657,6 @@ class Bot(DocumentLearningMixin, LanguageAcquisitionMixin, ConditionalLearningMi
             'grounding_min_support': self.grounding_min_support,
             'raw_relation_min_support': self.raw_relation_min_support,
             'raw_relation_max_arity': self.raw_relation_max_arity,
-            'raw_relation_mdl': self.raw_relation_mdl,
             'programs': self.programs.as_dict(),
             'procedures': self.procedures.as_dict(),
             'symbolic': self.symbolic.as_dict(),
@@ -703,8 +701,7 @@ class Bot(DocumentLearningMixin, LanguageAcquisitionMixin, ConditionalLearningMi
                   grounding_min_support=data.get('grounding_min_support', 2),
                   raw_relation_min_support=data.get('raw_relation_min_support', 3),
                   allow_extensional_grounding=data.get('allow_extensional_grounding', False),
-                  raw_relation_max_arity=data.get('raw_relation_max_arity', 8),
-                  raw_relation_mdl=data.get('raw_relation_mdl', False))
+                  raw_relation_max_arity=data.get('raw_relation_max_arity', 8))
         bot.kb = KnowledgeBase.from_dict(data['kb'])
         bot.language = Language.from_dict(data['language'])
         bot.programs = ProgramLearner.from_dict(data['programs'])

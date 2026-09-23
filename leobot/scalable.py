@@ -23,15 +23,14 @@ from .state_fields import plain_state, restore_plain_state
 class ScalableBot(Bot):
     def __init__(self, db_path: str | Path, grounding_min_support: int = 2,
                  raw_relation_min_support: int = 3, allow_extensional_grounding: bool = False,
-                 raw_relation_max_arity: int = 8, raw_relation_mdl: bool = True) -> None:
+                 raw_relation_max_arity: int = 8) -> None:
         self.db_path = Path(db_path)
         self.db_path.parent.mkdir(parents=True, exist_ok=True)
         super().__init__(SQLiteKnowledgeBase(self.db_path),
                          grounding_min_support=grounding_min_support,
                          raw_relation_min_support=raw_relation_min_support,
                          allow_extensional_grounding=allow_extensional_grounding,
-                         raw_relation_max_arity=raw_relation_max_arity,
-                         raw_relation_mdl=raw_relation_mdl)
+                         raw_relation_max_arity=raw_relation_max_arity)
 
     def save(self, path: str | Path) -> None:
         """Save only compact cognitive state; bulk facts remain in SQLite."""
@@ -48,7 +47,6 @@ class ScalableBot(Bot):
             'grounding_min_support': self.grounding_min_support,
             'raw_relation_min_support': self.raw_relation_min_support,
             'raw_relation_max_arity': self.raw_relation_max_arity,
-            'raw_relation_mdl': self.raw_relation_mdl,
             'programs': self.programs.as_dict(),
             'procedures': self.procedures.as_dict(),
             'symbolic': self.symbolic.as_dict(),
@@ -96,8 +94,7 @@ class ScalableBot(Bot):
                   grounding_min_support=data.get('grounding_min_support', 2),
                   raw_relation_min_support=data.get('raw_relation_min_support', 3),
                   allow_extensional_grounding=data.get('allow_extensional_grounding', False),
-                  raw_relation_max_arity=data.get('raw_relation_max_arity', 8),
-                  raw_relation_mdl=data.get('raw_relation_mdl', False))
+                  raw_relation_max_arity=data.get('raw_relation_max_arity', 8))
         bot.grounded_language = bool(data.get('grounded_language', True))
         bot.language = Language.from_dict(data['language'])
         bot.programs = ProgramLearner.from_dict(data['programs'])
