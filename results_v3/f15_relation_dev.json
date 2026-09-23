@@ -1,0 +1,324 @@
+{
+  "preregistration": "prereg/F-15-igualdad-relacional-ediciones.md",
+  "kind": "development_only",
+  "engine_tree": "1f3187f2ced4c97364503187d074815f33612326",
+  "engine_unchanged": true,
+  "fit_groups": 1000,
+  "validation_groups": 200,
+  "old_development_excluded": 200,
+  "untouched_groups": 266,
+  "base_families_from_F14_validation": [
+    "side_ops",
+    "delta_words",
+    "replacement_pairs",
+    "shape"
+  ],
+  "fit": {
+    "episodes": 20000,
+    "groups": 1000,
+    "feature_keys": 93882,
+    "fit_cpu_s": 1.248362,
+    "relation_keys": 216,
+    "compiled_weights": 144,
+    "frequent_tokens": 10,
+    "relation_fit_cpu_s": 6.784085
+  },
+  "selection": {
+    "status": "rejected",
+    "descriptions": 32,
+    "program": null,
+    "best_raw_program": {
+      "comparison": [
+        "added",
+        "other_new"
+      ],
+      "weight": 2.0,
+      "margin": 0.0,
+      "base_families": [
+        "side_ops",
+        "delta_words",
+        "replacement_pairs",
+        "shape"
+      ]
+    },
+    "best_raw_validation": {
+      "total": 4000,
+      "attempts": 4000,
+      "correct": 2558,
+      "accuracy": 0.6395,
+      "precision": 0.6395,
+      "coverage": 1.0,
+      "macro_accuracy": 0.640634,
+      "same_label": {
+        "correct": 725,
+        "total": 800
+      },
+      "by_side": {
+        "none": {
+          "correct": 6,
+          "total": 8
+        },
+        "sentence1": {
+          "correct": 831,
+          "total": 1188
+        },
+        "sentence1+sentence2": {
+          "correct": 844,
+          "total": 1588
+        },
+        "sentence2": {
+          "correct": 877,
+          "total": 1216
+        }
+      }
+    },
+    "search_cpu_s": 9.76562
+  },
+  "treatment": {
+    "total": 5320,
+    "attempts": 0,
+    "correct": 0,
+    "accuracy": 0.0,
+    "precision": null,
+    "coverage": 0.0,
+    "macro_accuracy": 0.0,
+    "same_label": {
+      "correct": 0,
+      "total": 1064
+    },
+    "by_side": {
+      "none": {
+        "correct": 0,
+        "total": 14
+      },
+      "sentence1": {
+        "correct": 0,
+        "total": 1570
+      },
+      "sentence1+sentence2": {
+        "correct": 0,
+        "total": 2112
+      },
+      "sentence2": {
+        "correct": 0,
+        "total": 1624
+      }
+    },
+    "p50_ms": 7e-05,
+    "p95_ms": 7e-05
+  },
+  "treatment_minimal": {
+    "total": 1410,
+    "attempts": 0,
+    "correct": 0,
+    "accuracy": 0.0,
+    "precision": null,
+    "coverage": 0.0,
+    "macro_accuracy": 0.0,
+    "same_label": {
+      "correct": 0,
+      "total": 4
+    },
+    "by_side": {
+      "sentence1": {
+        "correct": 0,
+        "total": 680
+      },
+      "sentence2": {
+        "correct": 0,
+        "total": 730
+      }
+    },
+    "p50_ms": 6e-05,
+    "p95_ms": 6e-05
+  },
+  "raw_diagnostic": {
+    "total": 5320,
+    "attempts": 5320,
+    "correct": 3325,
+    "accuracy": 0.625,
+    "precision": 0.625,
+    "coverage": 1.0,
+    "macro_accuracy": 0.624688,
+    "same_label": {
+      "correct": 968,
+      "total": 1064
+    },
+    "by_side": {
+      "none": {
+        "correct": 12,
+        "total": 14
+      },
+      "sentence1": {
+        "correct": 1065,
+        "total": 1570
+      },
+      "sentence1+sentence2": {
+        "correct": 1118,
+        "total": 2112
+      },
+      "sentence2": {
+        "correct": 1130,
+        "total": 1624
+      }
+    },
+    "p50_ms": 1.93391,
+    "p95_ms": 3.27389
+  },
+  "raw_minimal_diagnostic": {
+    "total": 1410,
+    "attempts": 1410,
+    "correct": 1010,
+    "accuracy": 0.716312,
+    "precision": 0.716312,
+    "coverage": 1.0,
+    "macro_accuracy": 0.720724,
+    "same_label": {
+      "correct": 0,
+      "total": 4
+    },
+    "by_side": {
+      "sentence1": {
+        "correct": 472,
+        "total": 680
+      },
+      "sentence2": {
+        "correct": 538,
+        "total": 730
+      }
+    },
+    "p50_ms": 1.41628,
+    "p95_ms": 1.57401
+  },
+  "f14_fit": {
+    "episodes": 20000,
+    "groups": 1000,
+    "feature_keys": 93882,
+    "fit_cpu_s": 1.306931
+  },
+  "f14_raw_baseline": {
+    "total": 5320,
+    "attempts": 5320,
+    "correct": 3114,
+    "accuracy": 0.585338,
+    "precision": 0.585338,
+    "coverage": 1.0,
+    "macro_accuracy": 0.585304,
+    "same_label": {
+      "correct": 978,
+      "total": 1064
+    },
+    "by_side": {
+      "none": {
+        "correct": 12,
+        "total": 14
+      },
+      "sentence1": {
+        "correct": 972,
+        "total": 1570
+      },
+      "sentence1+sentence2": {
+        "correct": 1071,
+        "total": 2112
+      },
+      "sentence2": {
+        "correct": 1059,
+        "total": 1624
+      }
+    },
+    "p50_ms": 1.88681,
+    "p95_ms": 3.21852
+  },
+  "f14_raw_minimal": {
+    "total": 1410,
+    "attempts": 1410,
+    "correct": 950,
+    "accuracy": 0.673759,
+    "precision": 0.673759,
+    "coverage": 1.0,
+    "macro_accuracy": 0.674487,
+    "same_label": {
+      "correct": 0,
+      "total": 4
+    },
+    "by_side": {
+      "sentence1": {
+        "correct": 430,
+        "total": 680
+      },
+      "sentence2": {
+        "correct": 520,
+        "total": 730
+      }
+    },
+    "p50_ms": 1.36924,
+    "p95_ms": 1.52832
+  },
+  "prior": {
+    "total": 5320,
+    "attempts": 5320,
+    "correct": 2658,
+    "accuracy": 0.499624,
+    "precision": 0.499624,
+    "coverage": 1.0,
+    "macro_accuracy": 0.497834,
+    "same_label": {
+      "correct": 1050,
+      "total": 1064
+    },
+    "by_side": {
+      "none": {
+        "correct": 12,
+        "total": 14
+      },
+      "sentence1": {
+        "correct": 790,
+        "total": 1570
+      },
+      "sentence1+sentence2": {
+        "correct": 1050,
+        "total": 2112
+      },
+      "sentence2": {
+        "correct": 806,
+        "total": 1624
+      }
+    }
+  },
+  "unpaired": {
+    "total": 5320,
+    "attempts": 5320,
+    "correct": 1932,
+    "accuracy": 0.363158,
+    "precision": 0.363158,
+    "coverage": 1.0,
+    "macro_accuracy": 0.360959,
+    "same_label": {
+      "correct": 393,
+      "total": 1064
+    },
+    "by_side": {
+      "none": {
+        "correct": 4,
+        "total": 14
+      },
+      "sentence1": {
+        "correct": 553,
+        "total": 1570
+      },
+      "sentence1+sentence2": {
+        "correct": 782,
+        "total": 2112
+      },
+      "sentence2": {
+        "correct": 593,
+        "total": 1624
+      }
+    }
+  },
+  "preliminary_gate_passed": false,
+  "three_orders_and_adversarial_controls": "pending_if_preliminary_passes",
+  "cpu_total_s": 44.72308,
+  "wall_total_s": 46.610851,
+  "max_rss_kib": 181488
+}
