@@ -1,0 +1,79 @@
+{
+  "kind": "G32b_backoff_pruned",
+  "preregistration": "prereg/G-32b-arcos-por-respaldo-con-poda.md",
+  "development": false,
+  "engine_tree": "9e53c2190003146302978d1a6060b342e549fa61",
+  "engine_unchanged": true,
+  "engine_committed": true,
+  "seed": 2656289305,
+  "hashseed": "0",
+  "reserve_sentences": 300,
+  "reserve_words": 8498,
+  "treatment": {
+    "tag_accuracy": 0.968,
+    "uas": 0.7648,
+    "las": 0.7139,
+    "label_given_head": 0.9335,
+    "f1": {
+      "nsubj": 0.5908,
+      "obj": 0.6778,
+      "obl": 0.5441,
+      "iobj": 0.0,
+      "amod": 0.8432
+    },
+    "p95_ms": 18.38
+  },
+  "baseline_freeze_G31_uas": 0.7481,
+  "baseline_engine_tree": "7d68100c08f3b7d8a6d7a6f6feb98199e95c74b0",
+  "ablation_no_lexical_marker": {
+    "tag_accuracy": 0.968,
+    "uas": 0.7648,
+    "las": 0.673,
+    "label_given_head": 0.88,
+    "f1": {
+      "nsubj": 0.4823,
+      "obj": 0.58,
+      "obl": 0.4229,
+      "iobj": 0.0,
+      "amod": 0.8369
+    },
+    "p95_ms": 18.472
+  },
+  "shuffled_labels": {
+    "tag_accuracy": 0.968,
+    "uas": 0.7648,
+    "las": 0.2529,
+    "label_given_head": 0.3307,
+    "f1": {
+      "nsubj": 0.0326,
+      "obj": 0.0319,
+      "obl": 0.0278,
+      "iobj": 0.0,
+      "amod": 0.0627
+    },
+    "p95_ms": 30.362
+  },
+  "shuffled_heads": {
+    "tag_accuracy": 0.968,
+    "uas": 0.145,
+    "las": 0.127,
+    "label_given_head": 0.8758,
+    "f1": {
+      "nsubj": 0.0732,
+      "obj": 0.1096,
+      "obl": 0.0484,
+      "iobj": 0.0,
+      "amod": 0.083
+    },
+    "p95_ms": 33.894
+  },
+  "fresh_unparsed": true,
+  "restart_identical": true,
+  "education_cpu_s": 43.35,
+  "cpu_total_s": 168.58,
+  "cpu_children_s": 36.95,
+  "wall_total_s": 206.35,
+  "max_rss_kib": 901280,
+  "budget_ok": false,
+  "gate_pass": false
+}
