@@ -18,7 +18,6 @@ from .procedures import ProcedureGrounder
 from .schemas import OpenArityConceptGrounder
 from .symbolic import SymbolicWorldLearner
 from .state_fields import plain_state, restore_plain_state
-from .sequence_learner import SequenceLearner
 
 
 class ScalableBot(Bot):
@@ -50,7 +49,6 @@ class ScalableBot(Bot):
             'raw_relation_max_arity': self.raw_relation_max_arity,
             'programs': self.programs.as_dict(),
             'procedures': self.procedures.as_dict(),
-            'sequence_learner': self.sequence_learner.as_dict(),
             'symbolic': self.symbolic.as_dict(),
             'concepts': self.concepts.as_dict(),
             'schemas': self.schemas.as_dict(),
@@ -101,7 +99,6 @@ class ScalableBot(Bot):
         bot.language = Language.from_dict(data['language'])
         bot.programs = ProgramLearner.from_dict(data['programs'])
         bot.procedures = ProcedureGrounder.from_dict(data.get('procedures', {}), bot.programs)
-        bot.sequence_learner = SequenceLearner.from_dict(data.get('sequence_learner', {}))
         bot.symbolic = SymbolicWorldLearner.from_dict(data.get('symbolic', {}))
         bot.concepts = ConceptGrounder.from_dict(data.get('concepts', {}), bot.kb)
         bot.schemas = OpenArityConceptGrounder.from_dict(data.get('schemas', {}), bot.kb)

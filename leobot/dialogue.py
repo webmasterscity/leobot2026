@@ -831,13 +831,6 @@ class DialogueMixin:
         return None
 
     def _respond_single(self, text: str) -> dict:
-        if self.sequence_learner.examples and not self.sequence_learner.dirty:
-            try:
-                sequence = self.sequence_learner.predict(text)
-            except ValueError:
-                sequence = None
-            if sequence and sequence['status'] in ('sequence_memory', 'sequence_program'):
-                return {'text': ' '.join(sequence['output']), **sequence}
         for learned_route in (self._respond_learned_goal_plan, self._respond_learned_procedure):
             routed = learned_route(text)
             if routed is not None:
