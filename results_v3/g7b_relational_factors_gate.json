@@ -1,0 +1,90 @@
+{
+  "kind": "development_factored_representation_gate",
+  "preregistration": "prereg/G-7b-composicion-de-hechos-relacionales.md",
+  "engine_tree": "1f3187f2ced4c97364503187d074815f33612326",
+  "engine_unchanged": true,
+  "renamed_structure_same": true,
+  "gate_pass": false,
+  "reports": [
+    {
+      "seed": 17,
+      "counts": {
+        "questions": 40,
+        "shape_admitted": 28,
+        "covered": 13,
+        "ablated_covered": 12,
+        "no_text_covered": 10,
+        "multi_admitted": 13,
+        "multi_covered": 5
+      },
+      "unsupported": {
+        "nested_having_or_set": 7,
+        "non_tree_join": 1,
+        "filter_expression": 3,
+        "projection_expression": 1
+      },
+      "missing_fragments": {
+        "order": 7,
+        "projection": 5,
+        "filter": 6
+      },
+      "candidate_fragments": 8959,
+      "median_log10_combinations_when_covered": 5.08782399361291,
+      "gate_pass": false
+    },
+    {
+      "seed": 53,
+      "counts": {
+        "questions": 40,
+        "shape_admitted": 29,
+        "covered": 15,
+        "ablated_covered": 13,
+        "no_text_covered": 10,
+        "multi_admitted": 17,
+        "multi_covered": 6
+      },
+      "unsupported": {
+        "nested_having_or_set": 9,
+        "filter_expression": 1,
+        "filter_non_scalar": 1
+      },
+      "missing_fragments": {
+        "order": 7,
+        "filter": 6,
+        "projection": 1
+      },
+      "candidate_fragments": 9790,
+      "median_log10_combinations_when_covered": 4.964542466079137,
+      "gate_pass": false
+    },
+    {
+      "seed": 97,
+      "counts": {
+        "questions": 40,
+        "shape_admitted": 28,
+        "covered": 17,
+        "ablated_covered": 14,
+        "no_text_covered": 9,
+        "multi_admitted": 15,
+        "multi_covered": 8
+      },
+      "unsupported": {
+        "filter_expression": 2,
+        "nested_having_or_set": 7,
+        "projection_arity": 3
+      },
+      "missing_fragments": {
+        "filter": 7,
+        "projection": 1,
+        "order": 5
+      },
+      "candidate_fragments": 9831,
+      "median_log10_combinations_when_covered": 5.08782399361291,
+      "gate_pass": false
+    }
+  ],
+  "max_fragments_per_question": 976,
+  "cpu_total_s": 1.606902,
+  "wall_total_s": 11.876388,
+  "max_rss_kib": 169440
+}
