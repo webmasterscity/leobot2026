@@ -2,7 +2,7 @@
 
 ## Estado de misión
 
-- Actualizado: 2026-09-23 · F-6g falló desarrollo; motor restaurado al árbol de `estable-E-1`
+- Actualizado: 2026-09-23 · commit `7b5084d`; F-6g falló y el motor volvió a `estable-E-1`
 - Fases: A superada en ensayo acotado · B superada en ensayo acotado · C superada en ensayo acotado · D superada en ensayo acotado · E refutada en cinco diseños preregistrados · F en curso · G pendiente · H pendiente
 - Fase en curso: F — comprobar aprendizaje general con arquitectura congelada; E falló y sigue siendo obstáculo
 - Último tag estable: `estable-E-1` · huella del motor: `1f3187f2ced4c97364503187d074815f33612326` (mismo árbol que D-1; no se promovió mecanismo de lectura)
