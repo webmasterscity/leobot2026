@@ -2,15 +2,15 @@
 
 ## Estado de misión
 
-- Actualizado: 2026-09-22 · commit a228abb (resultado B-1)
+- Actualizado: 2026-09-22 · commit 9b231a9 (motor y evaluador B-2)
 - Fases: A superada en su ensayo acotado · B en curso · C pendiente · D pendiente · E pendiente · F pendiente · G pendiente · H pendiente
 - Fase en curso: B — detectar una operación ausente e inventar una primitiva meta verificable
 - Último tag estable: `estable-A-1` · huella del motor: `644c55528a5fd97a8822f719f70e11cfae242783`
 - Pruebas: 528 pasan · 2 fallos esperados · 0 fallos · Python 3.12.3
 - Orden rápida: `timeout 40s env PYTHONHASHSEED=0 python3 -m unittest tests.test_meta_abstraction_a1 tests.test_meta_active_probe tests.test_v70 -q` · Orden completa: `timeout 90s env PYTHONHASHSEED=0 ./run_tests.sh --solo-pruebas`
-- Preregistro activo: `prereg/B-2-hipotesis-rivales.md` · estado: diseñado; tablero: `prereg/agi-board-1.md`
-- Diseños intentados en la fase en curso: 1) operador agregado tipado → falló confusor y presupuesto; 2) hipótesis rivales con prueba activa → preregistrado
-- Siguiente paso concreto: implementar conservación acotada de vistas rivales, abstención ante desacuerdo y prueba discriminante B-2; verificar en desarrollo antes de congelar
+- Preregistro activo: `prereg/B-2-hipotesis-rivales.md` · estado: implementando; tablero: `prereg/agi-board-1.md`
+- Diseños intentados en la fase en curso: 1) operador agregado tipado → falló confusor y presupuesto; 2) hipótesis rivales con prueba activa → pasó desarrollo, reserva pendiente
+- Siguiente paso concreto: etiquetar `freeze-B-2`, generar la reserva nueva desde la huella y ejecutar las tres órdenes con sus controles
 - Bloqueos: ninguno
 - Lectura (seguimiento): 0/4 en la sonda visible `experiments/user_text_probe.py` al cerrar A; no es una reserva independiente
 - Tablero AGI (último tag): [resultado](results_v3/agi_board_estable-A-1.json) · MLQA español público 0/20, 20 no reconocidas · ARC-AGI-3 no evaluado · brecha frontier no comparable · obstáculo principal: adquirir significado de texto libre
@@ -29,6 +29,7 @@
 - 2026-09-22 · B-1 implementado en `7d9b2ac`: plegado booleano tipado y acotado, elección del reductor desde experiencia y reuso en otra forma de entrada. En desarrollo, la fuente y el destino pasaron sus sondas; 15 pruebas rápidas relevantes pasaron en 69,6 s. Un primer ensayo de contraevidencia agotó 60 s por búsquedas repetidas; se agregó espera por 32 experiencias independientes antes de reintentar y la prueba de retirada tras reinicio pasó en 10,7 s. Esto no es todavía reserva ni promoción.
 - 2026-09-22 · [B-1 orden 17](results_v3/b1_aggregate_order17.json), [53](results_v3/b1_aggregate_order53.json), [97](results_v3/b1_aggregate_order97.json): motor `freeze-B-1` intacto, F1 y F2 128/128 en las tres reservas; ablación F1 44/128; F2 educado 1 candidato frente a 3 fresco. Contraevidencia, reinicio, renombrado e incompatible pasaron. **No promovido**: al invertir una pista correlacionada, 3–4 decisiones seguras fueron falsas por orden; la adquisición de ese control consumió 34,68–34,78 s de CPU y excedió los 30 s. Las tres ejecuciones usaron 64+128 ejemplos, ~74–78 s de pared y RAM pico 31 376–31 456 KiB cada una. La búsqueda y validación agregada midió ~0,049 s, anidada en 2,52–4,15 s de búsqueda total; no sumar ambas. El operador se programó como sustrato; Leobot seleccionó el reductor y los umbrales por experiencia. La transferencia observada fue solo entre dos disposiciones numéricas, no entre modalidades.
 - 2026-09-22 · Diagnóstico B-1 en datos de desarrollo: una proyección de la posición 7 tuvo ajuste 1,00 y cobertura 0,977; el plegado de signos tuvo ajuste 1,00 y cobertura 1,00, pero ni siquiera fue consultado porque la proyección ganó primero. [B-2](prereg/B-2-hipotesis-rivales.md) preregistrado para conservar ambas explicaciones y solicitar una observación separadora. El diagnóstico no modifica el resultado B-1.
+- 2026-09-22 · B-2 implementado en `27605d5`, evaluador externo fijado en `9b231a9`. En desarrollo con semilla 991: F1/F2 128/128, antes de la pregunta 124 abstenciones y cero errores seguros en la pista invertida; Leobot eligió una prueba con 1 bit de ganancia y una observación real permitió 128/128 después de reiniciar. El control sin cautela dio 5 errores seguros y ~34,8 s de CPU de adquisición; tratamiento ~2,37 s. Las 17 pruebas rápidas relevantes pasaron en 86 s. Falta la reserva derivada de una nueva huella; no se promociona aún.
 
 ## Resultados negativos y trampas conocidas
 
