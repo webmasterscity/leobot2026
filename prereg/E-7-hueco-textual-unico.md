@@ -1,0 +1,13 @@
+# E-7 — ¿Un hueco textual único permite responder sin inventar?
+
+Preregistrado antes del evaluador o cualquier cambio del motor. E-1b/E-3 obtuvieron 0 respuestas en español; E-2 ubicó la oración que contiene la respuesta en 37/40 casos, pero recuperar una oración no equivale a extraer su respuesta. E-5/E-6b mostraron que la antiunificación de oraciones enteras es demasiado ruidosa o demasiado restrictiva. Esta es una prueba externa de una hipótesis **literal y limitada**, no un nuevo parser ni una declaración de comprensión.
+
+## Algoritmo candidato y contraste
+
+Con el texto crudo y la pregunta, segmentar oraciones como el motor actual. Ordenarlas por número de tokens normalizados compartidos con la pregunta. Examinar solo las tres mejores. En cada una, marcar tokens compartidos con la pregunta; una secuencia de tokens no compartidos, de longitud 1 a 6 y rodeada por tokens compartidos a ambos lados es un hueco. Responder solo si hay **exactamente un hueco** entre todas las oraciones consideradas y la oración tiene al menos tres tokens compartidos; de lo contrario abstenerse. La respuesta es el tramo original del documento, no una palabra inventada. No hay léxico de interrogativos, nombres de temas, respuestas preparadas ni ajuste de parámetros después de ver la reserva. Comparar con devolver la primera oración y con la recuperación simple de E-2, que no extraen respuesta.
+
+## Familia, controles y decisión
+
+MLQA español de desarrollo, archivo y SHA-256 de E-1. Excluir identificadores del tablero, E-1b, E-2, E-3, E-5 y E-6b. Seleccionar 40 casos ordenados con semilla `sha256((<huella de freeze-E-7> + ':E-7').encode())` después de congelar. Evaluar exact match normalizado, intentos, precisión de intentos, abstenciones, CPU y RAM. Control adversarial: emparejar cada pregunta con el pasaje de otra pregunta de artículo distinto, por permutación circular; ahí cualquier respuesta sería insegura, aunque pueda coincidir casualmente con otra cadena. Control sin documento: abstención. El algoritmo es memoria con extracción; no inducción, inferencia ni procedimiento. Contraevidencia y reinicio no aplican al piloto externo sin estado, pero serían obligatorios al integrar.
+
+Integrar en el motor solo si acierta al menos 5/40, la precisión entre respuestas emitidas es ≥80 %, y en el control de pasaje incorrecto emite como máximo 2/40. Si falla cualquiera, rechazar sin cambio de motor. Presupuesto: 40 preguntas + 40 adversariales, descarga ≤80 MiB, 120 s pared, 60 s CPU. La huella del motor permanece idéntica antes y después. Una eventual integración necesita reserva nueva derivada de su propio árbol, persistencia, corrección, controles y pruebas rápidas.
