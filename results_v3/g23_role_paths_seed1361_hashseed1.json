@@ -1,0 +1,238 @@
+{
+  "kind": "G23_oracle_UD_role_path_gate",
+  "preregistration": "prereg/G-23-papeles-por-rutas-sintacticas.md",
+  "evaluator_commit": "2d7c52c414cbbca559276d1e454b3b87700b9286",
+  "engine_tree": "1f3187f2ced4c97364503187d074815f33612326",
+  "engine_unchanged": true,
+  "source_sha256": {
+    "up": "8f155e4309054e0fc6da8d1ca2253d631c0a716744c44958eaf9566c9cbfc260",
+    "ud": "47b6fc49d6ed48a016e7fa5ad9f5c7ecf3ec21e9db005df3ea14d10f07c6deb6"
+  },
+  "source_bytes": {
+    "up": 8228451,
+    "ud": 43100702
+  },
+  "seed": 1361,
+  "counts": {
+    "up_sentences": 14287,
+    "up_tokens": 452738,
+    "up_predicate_rows": 31471,
+    "ud_sentences": 14287,
+    "predicate_rows": 30075,
+    "cross_partition_ignored": 7870,
+    "gold_core_heads_heldout": 1852,
+    "representable_core_heads_heldout": 1835,
+    "ambiguous_candidates_heldout": 0,
+    "candidate_cases": 282475,
+    "predicates_heldout": 1180,
+    "renaming_failures": 0,
+    "nonverb_or_missing_predicate": 8146,
+    "gold_core_heads_train": 20314,
+    "representable_core_heads_train": 20129,
+    "ambiguous_candidates_train": 0,
+    "predicates_train": 12879,
+    "missing_document_id": 460,
+    "token_id_mismatches": 222,
+    "up_without_ud": 0
+  },
+  "split": {
+    "train": {
+      "documents": 957,
+      "lemmas": 1166
+    },
+    "heldout": {
+      "documents": 290,
+      "lemmas": 243
+    }
+  },
+  "rule_counts": {
+    "direct": 0,
+    "full": 12,
+    "path": 4,
+    "shuffled_full": 0,
+    "shuffled_path": 0,
+    "side": 0
+  },
+  "results": {
+    "treatment": {
+      "roles": {
+        "A0": {
+          "tp": 118,
+          "fp": 71,
+          "fn": 510,
+          "f1": 0.28886168910648713
+        },
+        "A1": {
+          "tp": 460,
+          "fp": 194,
+          "fn": 515,
+          "f1": 0.5647636586863106
+        },
+        "A2": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 232,
+          "f1": 0.0
+        }
+      },
+      "micro_f1": 0.4316654219566841,
+      "precision": 0.6856465005931198,
+      "recall": 0.31498637602179835,
+      "exact_candidate_labels": 236,
+      "prediction_sha256": "19ad57fe4d5fee8769fd41e94be7242b99799f0f6c4b048d27229e223882ef61"
+    },
+    "direct": {
+      "roles": {
+        "A0": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 628,
+          "f1": 0.0
+        },
+        "A1": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 975,
+          "f1": 0.0
+        },
+        "A2": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 232,
+          "f1": 0.0
+        }
+      },
+      "micro_f1": 0.0,
+      "precision": 0,
+      "recall": 0.0,
+      "exact_candidate_labels": 88,
+      "prediction_sha256": "07f98d2168c0055d34c724df4599f9c8168ca7846c44f289085d889f4ff49c29"
+    },
+    "side": {
+      "roles": {
+        "A0": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 628,
+          "f1": 0.0
+        },
+        "A1": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 975,
+          "f1": 0.0
+        },
+        "A2": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 232,
+          "f1": 0.0
+        }
+      },
+      "micro_f1": 0.0,
+      "precision": 0,
+      "recall": 0.0,
+      "exact_candidate_labels": 88,
+      "prediction_sha256": "07f98d2168c0055d34c724df4599f9c8168ca7846c44f289085d889f4ff49c29"
+    },
+    "shuffled": {
+      "roles": {
+        "A0": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 628,
+          "f1": 0.0
+        },
+        "A1": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 975,
+          "f1": 0.0
+        },
+        "A2": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 232,
+          "f1": 0.0
+        }
+      },
+      "micro_f1": 0.0,
+      "precision": 0,
+      "recall": 0.0,
+      "exact_candidate_labels": 88,
+      "prediction_sha256": "07f98d2168c0055d34c724df4599f9c8168ca7846c44f289085d889f4ff49c29"
+    },
+    "memory": {
+      "roles": {
+        "A0": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 628,
+          "f1": 0.0
+        },
+        "A1": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 975,
+          "f1": 0.0
+        },
+        "A2": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 232,
+          "f1": 0.0
+        }
+      },
+      "micro_f1": 0.0,
+      "precision": 0,
+      "recall": 0.0,
+      "exact_candidate_labels": 88,
+      "prediction_sha256": "07f98d2168c0055d34c724df4599f9c8168ca7846c44f289085d889f4ff49c29"
+    },
+    "fresh": {
+      "roles": {
+        "A0": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 628,
+          "f1": 0.0
+        },
+        "A1": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 975,
+          "f1": 0.0
+        },
+        "A2": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 232,
+          "f1": 0.0
+        }
+      },
+      "micro_f1": 0.0,
+      "precision": 0,
+      "recall": 0.0,
+      "exact_candidate_labels": 88,
+      "prediction_sha256": "07f98d2168c0055d34c724df4599f9c8168ca7846c44f289085d889f4ff49c29"
+    }
+  },
+  "latency": {
+    "p50_ms": 0.0725004356354475,
+    "p95_ms": 0.13080297503620386,
+    "max_ms": 0.7808998925611377
+  },
+  "renaming_same": true,
+  "restart_same": true,
+  "up_download_cpu_s": 0.131767,
+  "up_index_cpu_s": 0.387333,
+  "ud_stream_training_cpu_s": 3.735938,
+  "compile_restart_cpu_s": 0.03937,
+  "inference_cpu_s": 0.045785,
+  "cpu_total_s": 4.34025,
+  "wall_total_s": 6.530959,
+  "max_rss_kib": 101328,
+  "budget_ok": true,
+  "sample_ok": true,
+  "gate_pass": false
+}
