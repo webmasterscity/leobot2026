@@ -10,10 +10,10 @@
 - Orden rápida: `timeout 40s env PYTHONHASHSEED=0 python3 -m unittest tests.test_meta_abstraction_a1 tests.test_meta_active_probe tests.test_v70 -q` · Orden completa: `timeout 90s env PYTHONHASHSEED=0 ./run_tests.sh --solo-pruebas`
 - Preregistro activo: `prereg/B-1-operador-agregado.md` · estado: diseñado; tablero: `prereg/agi-board-1.md`
 - Diseños intentados en la fase en curso: 1) operador agregado tipado → preregistrado, sin resultado
-- Siguiente paso concreto: medir 20 casos públicos de MLQA en español y registrar el tablero AGI sin atribuir puntajes a ARC-AGI-3; después implementar B-1
+- Siguiente paso concreto: implementar B-1 según `prereg/B-1-operador-agregado.md`, sin perder la referencia de lenguaje 0/20 ni la puerta de latencia
 - Bloqueos: ninguno
 - Lectura (seguimiento): 0/4 en la sonda visible `experiments/user_text_probe.py` al cerrar A; no es una reserva independiente
-- Tablero AGI (último tag): `prereg/agi-board-1.md` fijado; MLQA pendiente · obstáculo principal para AGI: lenguaje español abierto (sonda visible 0/4)
+- Tablero AGI (último tag): [resultado](results_v3/agi_board_estable-A-1.json) · MLQA español público 0/20, 20 no reconocidas · ARC-AGI-3 no evaluado · brecha frontier no comparable · obstáculo principal: adquirir significado de texto libre
 - Latencia (último tag): 100 003 hechos; conocido p50 0,107–0,110 ms, p95 0,116–0,119 ms; razonamiento p95 0,279–0,282 ms; máximo <0,31 ms; RAM pico 199 520 KiB en tres semillas
 
 ## Historial de ciclos
@@ -25,12 +25,14 @@
 - 2026-09-22 · Sonda de lectura repetida antes del tag: 0/4 y código sin cambios. El ZIP y el PDF existentes son históricos; no se regeneran. Git es el registro de versiones.
 - 2026-09-22 · [B-1](prereg/B-1-operador-agregado.md) y [latencia fija](prereg/performance-1-latencia.md) preregistrados antes de código; sin resultado ni tag nuevo.
 - 2026-09-22 · Batería de latencia fija sobre `estable-A-1`: 100 003 hechos, cinco tipos de consulta, tres semillas de hash, 100 respuestas correctas por corrida; todas las puertas p95 y tope absoluto pasaron. [Semilla 0](results_v3/latency_estable-A-1_hashseed0.json), [1](results_v3/latency_estable-A-1_hashseed1.json), [2](results_v3/latency_estable-A-1_hashseed2.json). Pico 199 520 KiB. Esta mezcla acotada no demuestra rapidez en conversación o razonamiento abiertos. [Tablero AGI](prereg/agi-board-1.md) preregistrado antes de puntuar MLQA; sin tag nuevo.
+- 2026-09-22 · [Tablero AGI](results_v3/agi_board_estable-A-1.json): 20 preguntas fijas del desarrollo público de MLQA español, 0/20 y 20 no reconocidas. ARC-AGI-3 es la versión pública reciente verificada, pero Leobot carece de interfaz para sus juegos; no evaluado. Sin comparación frontier en batería igualada. El principal obstáculo medido sigue siendo lenguaje abierto; B-1 se mantiene por su posible reducción de parches humanos, sujeto a evidencia.
 
 ## Resultados negativos y trampas conocidas
 
 - **La fase A no equivale a abstracción general.** La pieza adquirida es una partición de dos comparaciones que se reutilizó en otra tarea de la misma estructura numérica. No se demostró transferencia entre dominios no isomorfos, invención de operaciones nuevas ni síntesis de learners. La preferencia por la pieza existente resolvió la señal auxiliar del ensayo, pero no prueba causalidad en general.
 - La consulta de evidencia del MetaController funciona para reglas de rasgos; devolvió `no_learned_program` para la vista compilada de A-1. No atribuirle una intervención que no propuso. La observación la produjo el entorno.
 - Lenguaje abierto: con cuatro frases reales del encargo, Leobot sigue en 0/4 respuestas. Puede aprender una forma de pregunta tras varias afirmaciones y dos preguntas independientes, pero no de una sola frase desconocida. Tres pruebas antiguas pasaron de «no reconocida» a «hipótesis pendiente»; todavía se abstienen de responder y no cuentan como tres capacidades.
+- En 20 casos fijos del desarrollo público de MLQA español, el resultado fue 0/20 y todos quedaron sin reconocer. Esto amplía el diagnóstico lingüístico; tampoco es una reserva final ni demuestra que la solución sea una lista de palabras. El tablero aún carece de baterías públicas comparables para causalidad, conversación larga, planificación y herramientas.
 - En una prueba histórica de transferencia entre estructuras distintas, el bot educado y el fresco necesitaron tres ejemplos cada uno: **sin transferencia**. No confundir renombrado de una misma estructura con transferencia entre modalidades.
 - En documentos, a veces une dos frases casualmente próximas como un evento. Un filtro propuesto para evitarlo no mejoró el control porque otro filtro ya detenía esos casos. Prohibir todas las uniones también destruyó uniones válidas. La primera conclusión falsa sigue siendo posible.
 - Una corrección de procedimiento se conserva, pero aún no distingue bien una excepción permanente de un cambio temporal. Una afirmación cruda desconocida puede terminar como evidencia provisional aunque no trate de una relación útil.
@@ -47,4 +49,4 @@
 
 ### En palabras fáciles de entender
 
-Leobot aprendió una regla pequeña en dos grupos de ejemplos y luego la usó como pieza para resolver un problema más largo. En la prueba preparada acertó los 160 casos nuevos; la copia que recibió la misma información pero no podía usar esa pieza acertó 80. Cuando se contradijo una de las reglas de origen, dejó de usar la pieza, incluso después de apagarlo y volverlo a abrir. Esto es un avance limitado: con cuatro frases normales todavía no pudo responder ninguna pregunta. No hay base para decir que ya solo necesita información, que tiene inteligencia general o que supera a las personas.
+Leobot aprendió una regla pequeña en dos grupos de ejemplos y luego la usó como pieza para resolver un problema más largo. En la prueba preparada acertó los 160 casos nuevos; la copia que recibió la misma información pero no podía usar esa pieza acertó 80. Cuando se contradijo una de las reglas de origen, dejó de usar la pieza, incluso después de apagarlo y volverlo a abrir. Esto es un avance limitado: no respondió ninguna de 20 preguntas en español tomadas de una colección pública. No hay base para decir que ya solo necesita información, que tiene inteligencia general o que supera a las personas.
