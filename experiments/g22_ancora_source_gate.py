@@ -1,4 +1,4 @@
-"""G-22: source viability of aligned Spanish UP/UD semantic roles."""
+"""G-22b: source viability of aligned Spanish UP/UD semantic roles."""
 from __future__ import annotations
 
 import io
@@ -16,7 +16,7 @@ from experiments.f7_typed_sequences_dev import git
 
 
 ROOT = Path(__file__).resolve().parents[1]
-PREREG = 'prereg/G-22-fuente-papeles-verbales.md'
+PREREG = 'prereg/G-22b-lectura-en-flujo-ancora.md'
 H0 = '1f3187f2ced4c97364503187d074815f33612326'
 UP_REV = '7a03859143e52c57f94a8c0480c0e6d433f6a91f'
 UD_REV = '20adddbfcdd773c6dc97ba48ea11ca9364e74185'
@@ -44,11 +44,11 @@ def download(url, cap):
     return data
 
 
-def sentences(data):
+def sentences(lines):
     sid = None
     text_present = False
     rows = []
-    for line in io.StringIO(data.decode('utf-8-sig')):
+    for line in lines:
         line = line.rstrip('\n\r')
         if not line:
             if sid is not None or rows:
@@ -74,7 +74,7 @@ def token_id(value):
 def index_up(data):
     by_id = {}
     stats = Counter()
-    for sid, _, rows in sentences(data):
+    for sid, _, rows in sentences(io.StringIO(data.decode('utf-8-sig'))):
         stats['up_sentences'] += 1
         if not sid:
             stats['up_missing_sent_id'] += 1
@@ -144,13 +144,13 @@ def inspect_pair(ud_ids, lemma_by_id, predicates, counts, role_lemmas,
                 role_lemmas[role].add(lemma)
 
 
-def inspect_ud(data, up):
+def inspect_ud(lines, up):
     counts = Counter()
     role_lemmas = defaultdict(set)
     role_predicates = Counter()
     senses = set()
     lemmas = set()
-    for sid, text_present, rows in sentences(data):
+    for sid, text_present, rows in sentences(lines):
         counts['ud_sentences'] += 1
         if not sid:
             counts['ud_missing_sent_id'] += 1
@@ -176,22 +176,44 @@ def inspect_ud(data, up):
     return counts, senses, lemmas, role_lemmas, role_predicates, shared_roles
 
 
+def inspect_ud_stream(url, up, cap):
+    with urlopen(url, timeout=20) as response:
+        length = int(response.headers.get('Content-Length', 0))
+        if length > cap:
+            raise RuntimeError('UD supera el tamaño preregistrado')
+        used = 0
+        digest = sha256()
+
+        def lines():
+            nonlocal used
+            for raw_line in response:
+                used += len(raw_line)
+                if used > cap:
+                    raise RuntimeError('UD supera el tamaño preregistrado durante lectura')
+                digest.update(raw_line)
+                yield raw_line.decode('utf-8-sig')
+
+        result = inspect_ud(lines(), up)
+    return result, used, digest.hexdigest()
+
+
 def main():
     cpu0, wall0 = time.process_time(), time.monotonic()
     if not frozen():
         raise RuntimeError('Motor o evaluador no congelado')
     up_raw = download(UP_URL, 20*1024*1024)
-    ud_raw = download(UD_URL, 40*1024*1024)
-    sizes = {'up': len(up_raw), 'ud': len(ud_raw)}
-    hashes = {'up': sha256(up_raw).hexdigest(), 'ud': sha256(ud_raw).hexdigest()}
+    sizes = {'up': len(up_raw)}
+    hashes = {'up': sha256(up_raw).hexdigest()}
     read_cpu = time.process_time()-cpu0
 
     tick = time.process_time()
     up, up_stats = index_up(up_raw)
     del up_raw
-    counts, senses, lemmas, role_lemmas, role_predicates, shared_roles = inspect_ud(
-        ud_raw, up)
-    del ud_raw, up
+    (counts, senses, lemmas, role_lemmas, role_predicates, shared_roles), size, digest = (
+        inspect_ud_stream(UD_URL, up, 48*1024*1024))
+    sizes['ud'] = size
+    hashes['ud'] = digest
+    del up
     parse_cpu = time.process_time()-tick
     counts.update(up_stats)
     paired = counts['paired_sentences']
@@ -207,7 +229,7 @@ def main():
             and len(lemmas) >= 100 and len(shared_roles) >= 3)
     unchanged = frozen()
     output = {
-        'kind': 'G22_source_gate_only',
+        'kind': 'G22b_source_gate_only',
         'preregistration': PREREG,
         'evaluator_commit': git('rev-parse', 'HEAD'),
         'engine_tree': H0,
@@ -232,7 +254,7 @@ def main():
         'budget_ok': budget,
         'gate_pass': gate and unchanged,
     }
-    path = ROOT / ('results_v3/g22_ancora_source_hashseed'
+    path = ROOT / ('results_v3/g22b_ancora_source_hashseed'
                    + os.environ.get('PYTHONHASHSEED', 'unset') + '.json')
     path.write_text(json.dumps(output, ensure_ascii=False, indent=2) + '\n')
     print(json.dumps(output, ensure_ascii=False), flush=True)
