@@ -1,0 +1,409 @@
+{
+  "preregistration": "prereg/D-1-cadena-entre-modalidades.md",
+  "frozen_engine_tree": "1f3187f2ced4c97364503187d074815f33612326",
+  "engine_unchanged": true,
+  "order": 53,
+  "seed": 523339763,
+  "controls": {
+    "a_acquired": true,
+    "a_facilitates_b": true,
+    "ab_facilitates_c": true,
+    "b_heldout": true,
+    "c_heldout": true,
+    "dependency_provenance": true,
+    "counterevidence": true,
+    "incompatible": true,
+    "restart": true,
+    "cpu_budget": true,
+    "c2_source_present": true,
+    "ram_budget": true
+  },
+  "variants": {
+    "a_b": {
+      "name": "a_b",
+      "a_status": "schema_learned",
+      "b_status": "operator_learned",
+      "b_mode": "meta_role_set_transfer",
+      "c_status": "procedure_learned",
+      "c_mode": null,
+      "c_dependency": "card:2->roles:4:0,3",
+      "c_candidates_last": 137,
+      "c_candidates_total": 439,
+      "c_score": {
+        "correct": 128,
+        "total": 128,
+        "wrong_confident": 0,
+        "p50_ms": 0.0094,
+        "p95_ms": 0.01269,
+        "max_ms": 0.05896
+      },
+      "b_score": {
+        "correct": 128,
+        "total": 128,
+        "unsafe_without_precondition": 0,
+        "p50_ms": 0.03941,
+        "p95_ms": 0.04414,
+        "max_ms": 0.15039
+      },
+      "structural_prior_before_c": [
+        {
+          "kind": "role_cardinality",
+          "cardinality": 2,
+          "sources": {
+            "schema_surface:operador <e0> asocia pieza <e1> en region <e2>": {
+              "family": "schema",
+              "support": 4
+            },
+            "symbolic:desplaza a <e0> desde <e1> hacia <e2>": {
+              "family": "symbolic",
+              "support": 2
+            }
+          },
+          "families": {
+            "schema": 4,
+            "symbolic": 2
+          },
+          "support": 6,
+          "schema": "card:2"
+        }
+      ],
+      "c2_learner_preeducated": false,
+      "c2_learner_rows": 0,
+      "costs": {
+        "a": {
+          "cpu_s": 0.002867,
+          "wall_s": 0.002871
+        },
+        "b": {
+          "cpu_s": 0.002026,
+          "wall_s": 0.002033
+        },
+        "restart": {
+          "cpu_s": 0.004531,
+          "wall_s": 0.0066
+        },
+        "c": {
+          "cpu_s": 0.033416,
+          "wall_s": 0.033419
+        }
+      },
+      "persisted_bytes": 79904,
+      "episodes": {
+        "a": 4,
+        "b": 3,
+        "c": 5
+      }
+    },
+    "a_only": {
+      "name": "a_only",
+      "a_status": "schema_learned",
+      "b_status": null,
+      "b_mode": null,
+      "c_status": "procedure_unresolved",
+      "c_mode": null,
+      "c_dependency": null,
+      "c_candidates_last": 151,
+      "c_candidates_total": 453,
+      "c_score": {
+        "correct": 0,
+        "total": 128,
+        "wrong_confident": 0,
+        "p50_ms": 0.00607,
+        "p95_ms": 0.00637,
+        "max_ms": 0.01218
+      },
+      "b_score": null,
+      "structural_prior_before_c": [
+        {
+          "kind": "role_cardinality",
+          "cardinality": 2,
+          "sources": {
+            "schema_surface:operador <e0> asocia pieza <e1> en region <e2>": {
+              "family": "schema",
+              "support": 4
+            }
+          },
+          "families": {
+            "schema": 4
+          },
+          "support": 4,
+          "schema": "card:2"
+        }
+      ],
+      "c2_learner_preeducated": false,
+      "c2_learner_rows": 0,
+      "costs": {
+        "a": {
+          "cpu_s": 0.00232,
+          "wall_s": 0.002321
+        },
+        "c": {
+          "cpu_s": 0.003829,
+          "wall_s": 0.003831
+        }
+      },
+      "persisted_bytes": null,
+      "episodes": {
+        "a": 4,
+        "b": 0,
+        "c": 5
+      }
+    },
+    "b_only": {
+      "name": "b_only",
+      "a_status": null,
+      "b_status": "pending_support",
+      "b_mode": null,
+      "c_status": "procedure_unresolved",
+      "c_mode": null,
+      "c_dependency": null,
+      "c_candidates_last": 151,
+      "c_candidates_total": 453,
+      "c_score": {
+        "correct": 0,
+        "total": 128,
+        "wrong_confident": 0,
+        "p50_ms": 0.00605,
+        "p95_ms": 0.00634,
+        "max_ms": 0.01212
+      },
+      "b_score": {
+        "correct": 0,
+        "total": 128,
+        "unsafe_without_precondition": 0,
+        "p50_ms": 0.01606,
+        "p95_ms": 0.01732,
+        "max_ms": 0.04678
+      },
+      "structural_prior_before_c": [],
+      "c2_learner_preeducated": false,
+      "c2_learner_rows": 0,
+      "costs": {
+        "b": {
+          "cpu_s": 0.001536,
+          "wall_s": 0.001537
+        },
+        "c": {
+          "cpu_s": 0.004166,
+          "wall_s": 0.004167
+        }
+      },
+      "persisted_bytes": null,
+      "episodes": {
+        "a": 0,
+        "b": 3,
+        "c": 5
+      }
+    },
+    "fresh": {
+      "name": "fresh",
+      "a_status": null,
+      "b_status": null,
+      "b_mode": null,
+      "c_status": "procedure_unresolved",
+      "c_mode": null,
+      "c_dependency": null,
+      "c_candidates_last": 151,
+      "c_candidates_total": 453,
+      "c_score": {
+        "correct": 0,
+        "total": 128,
+        "wrong_confident": 0,
+        "p50_ms": 0.00606,
+        "p95_ms": 0.00644,
+        "max_ms": 0.0114
+      },
+      "b_score": null,
+      "structural_prior_before_c": [],
+      "c2_learner_preeducated": false,
+      "c2_learner_rows": 0,
+      "costs": {
+        "c": {
+          "cpu_s": 0.003734,
+          "wall_s": 0.003735
+        }
+      },
+      "persisted_bytes": null,
+      "episodes": {
+        "a": 0,
+        "b": 0,
+        "c": 5
+      }
+    },
+    "same_information_no_transfer": {
+      "name": "same_information_no_transfer",
+      "a_status": "schema_learned",
+      "b_status": "pending_support",
+      "b_mode": null,
+      "c_status": "procedure_unresolved",
+      "c_mode": null,
+      "c_dependency": null,
+      "c_candidates_last": 151,
+      "c_candidates_total": 453,
+      "c_score": {
+        "correct": 0,
+        "total": 128,
+        "wrong_confident": 0,
+        "p50_ms": 0.00598,
+        "p95_ms": 0.00622,
+        "max_ms": 0.01162
+      },
+      "b_score": {
+        "correct": 0,
+        "total": 128,
+        "unsafe_without_precondition": 0,
+        "p50_ms": 0.01627,
+        "p95_ms": 0.01716,
+        "max_ms": 0.02295
+      },
+      "structural_prior_before_c": [],
+      "c2_learner_preeducated": false,
+      "c2_learner_rows": 0,
+      "costs": {
+        "a": {
+          "cpu_s": 0.00229,
+          "wall_s": 0.002291
+        },
+        "b": {
+          "cpu_s": 0.001529,
+          "wall_s": 0.00153
+        },
+        "c": {
+          "cpu_s": 0.004136,
+          "wall_s": 0.004138
+        }
+      },
+      "persisted_bytes": null,
+      "episodes": {
+        "a": 4,
+        "b": 3,
+        "c": 5
+      }
+    },
+    "c2_preeducated": {
+      "name": "c2_preeducated",
+      "a_status": "schema_learned",
+      "b_status": "operator_learned",
+      "b_mode": "meta_role_set_transfer",
+      "c_status": "procedure_learned",
+      "c_mode": null,
+      "c_dependency": "card:2->roles:4:0,3",
+      "c_candidates_last": 137,
+      "c_candidates_total": 439,
+      "c_score": {
+        "correct": 128,
+        "total": 128,
+        "wrong_confident": 0,
+        "p50_ms": 0.00953,
+        "p95_ms": 0.01108,
+        "max_ms": 0.02834
+      },
+      "b_score": {
+        "correct": 128,
+        "total": 128,
+        "unsafe_without_precondition": 0,
+        "p50_ms": 0.03996,
+        "p95_ms": 0.04362,
+        "max_ms": 0.08689
+      },
+      "structural_prior_before_c": [
+        {
+          "kind": "role_cardinality",
+          "cardinality": 2,
+          "sources": {
+            "schema_surface:operador <e0> asocia pieza <e1> en region <e2>": {
+              "family": "schema",
+              "support": 4
+            },
+            "symbolic:desplaza a <e0> desde <e1> hacia <e2>": {
+              "family": "symbolic",
+              "support": 2
+            }
+          },
+          "families": {
+            "schema": 4,
+            "symbolic": 2
+          },
+          "support": 6,
+          "schema": "card:2"
+        }
+      ],
+      "c2_learner_preeducated": true,
+      "c2_learner_rows": 1,
+      "costs": {
+        "preeducation": {
+          "cpu_s": 7.672252,
+          "wall_s": 7.672871
+        },
+        "a": {
+          "cpu_s": 0.002319,
+          "wall_s": 0.002321
+        },
+        "b": {
+          "cpu_s": 0.001568,
+          "wall_s": 0.00157
+        },
+        "c": {
+          "cpu_s": 0.03598,
+          "wall_s": 0.035994
+        }
+      },
+      "persisted_bytes": null,
+      "episodes": {
+        "a": 4,
+        "b": 3,
+        "c": 5
+      }
+    }
+  },
+  "c2_transfer": {
+    "extra_examples_saved": 0,
+    "candidates_delta": 0,
+    "cpu_delta_s": 0.002563999999999997
+  },
+  "counterevidence": {
+    "correction": "schema_contradictory",
+    "remaining_cardinality_sources": [
+      {
+        "kind": "role_cardinality",
+        "cardinality": 2,
+        "sources": {
+          "symbolic:desplaza a <e0> desde <e1> hacia <e2>": {
+            "family": "symbolic",
+            "support": 2
+          }
+        },
+        "families": {
+          "symbolic": 2
+        },
+        "support": 2,
+        "schema": "card:2"
+      }
+    ],
+    "c_status": "procedure_unresolved",
+    "costs": {
+      "correction": {
+        "cpu_s": 9.6e-05,
+        "wall_s": 9.8e-05
+      },
+      "c": {
+        "cpu_s": 0.004202,
+        "wall_s": 0.004204
+      }
+    }
+  },
+  "incompatible": {
+    "status": "procedure_unresolved",
+    "dependency": null
+  },
+  "cpu_variants": {
+    "a_b": 0.04284,
+    "a_only": 0.006149,
+    "b_only": 0.0057020000000000005,
+    "fresh": 0.003734,
+    "same_information_no_transfer": 0.007955,
+    "c2_preeducated": 7.712119
+  },
+  "wall_s": 7.83707,
+  "peak_rss_kib": 26876
+}

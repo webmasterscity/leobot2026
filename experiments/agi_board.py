@@ -145,6 +145,29 @@ def run(tag):
         'peak_rss_kib':resource.getrusage(resource.RUSAGE_SELF).ru_maxrss,
         'pythonhashseed':os.environ.get('PYTHONHASHSEED'),
     }
+    d1_paths=[ROOT/'results_v3'/f'd1_chain_order{order}.json'
+              for order in (17,53,97)]
+    if all(path.exists() for path in d1_paths):
+        d1_rows=[json.loads(path.read_text(encoding='utf8')) for path in d1_paths]
+        if all(row.get('engine_unchanged') and row.get('frozen_engine_tree')==tree
+               for row in d1_rows):
+            board['cross_modal_chain']={
+                'battery':'D-1, cadena interna texto → acción → procedimiento',
+                'preregistration':'prereg/D-1-cadena-entre-modalidades.md',
+                'b_heldout_correct':[row['variants']['a_b']['b_score']['correct']
+                                     for row in d1_rows],
+                'c_heldout_correct':[row['variants']['a_b']['c_score']['correct']
+                                     for row in d1_rows],
+                'c_controls_unresolved':[all(row['variants'][name]['c_status']!=
+                                             'procedure_learned' for name in
+                                             ('a_only','b_only','fresh',
+                                              'same_information_no_transfer'))
+                                         for row in d1_rows],
+                'c2_learner_candidates_saved':[
+                    -row['c2_transfer']['candidates_delta'] for row in d1_rows],
+                'frontier_same_protocol':None,
+                'evidence_level':'reserva interna sintética; frases templadas y hechos de base estructurados',
+            }
     path=ROOT/'results_v3'/f'agi_board_{tag}.json'
     path.write_text(json.dumps(board,indent=2,ensure_ascii=False)+'\n',encoding='utf8')
     print(json.dumps({'tag':tag,'spanish':spanish['exact_match'],
