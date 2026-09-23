@@ -1,0 +1,91 @@
+{
+  "kind": "source_feasibility_only",
+  "source_url": "https://raw.githubusercontent.com/google-research/google-research/master/mbpp/mbpp.jsonl",
+  "source_sha256": "ccf64ceae9c5403bf50a044cb6d505bfd2a2963ee58338ba268fd65beab92a9f",
+  "engine_tree": "1f3187f2ced4c97364503187d074815f33612326",
+  "train_task_ids": "601-974",
+  "rows_downloaded": 974,
+  "counts": {
+    "training_rows": 374,
+    "not_single_return": 340,
+    "three_literal_io_tests": 358,
+    "text_io": 36,
+    "bounded_scalar_or_sequence_io": 162,
+    "single_return": 20,
+    "single_return_three_literal_io_tests": 19,
+    "numeric_io_program_learner_compatible": 52,
+    "not_one_function": 14,
+    "return_over_budget": 1
+  },
+  "distinct_single_return_shapes": 18,
+  "repeated_single_return_shapes": 1,
+  "rows_in_repeated_shapes": 2,
+  "distinct_nontrivial_components": 534,
+  "components_repeated_across_tasks": 171,
+  "task_component_links_repeated": 1096,
+  "top_calls_single_return": [
+    [
+      "list",
+      6
+    ],
+    [
+      "len",
+      5
+    ],
+    [
+      "set",
+      4
+    ],
+    [
+      "all",
+      3
+    ],
+    [
+      "int",
+      2
+    ],
+    [
+      "sum",
+      2
+    ],
+    [
+      "range",
+      2
+    ],
+    [
+      ".join",
+      1
+    ],
+    [
+      "reversed",
+      1
+    ],
+    [
+      ".split",
+      1
+    ],
+    [
+      "zip",
+      1
+    ],
+    [
+      ".upper",
+      1
+    ],
+    [
+      "str",
+      1
+    ],
+    [
+      "pow",
+      1
+    ],
+    [
+      "max",
+      1
+    ]
+  ],
+  "cpu_total_s": 0.124025,
+  "wall_total_s": 0.618005,
+  "max_rss_kib": 32972
+}
