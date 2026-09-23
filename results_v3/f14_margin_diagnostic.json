@@ -1,0 +1,251 @@
+{
+  "kind": "diagnostic_not_promotion",
+  "preregistration": "prereg/F-14-revision-contrafactual-tipada.md",
+  "engine_tree": "1f3187f2ced4c97364503187d074815f33612326",
+  "best_raw_families": [
+    "side_ops",
+    "delta_words",
+    "replacement_pairs",
+    "shape"
+  ],
+  "validation": {
+    "total": 4000,
+    "attempts": 4000,
+    "correct": 2404,
+    "accuracy": 0.601,
+    "precision": 0.601,
+    "coverage": 1.0,
+    "macro_accuracy": 0.60201,
+    "same_label": {
+      "correct": 744,
+      "total": 800
+    },
+    "by_side": {
+      "none": {
+        "correct": 6,
+        "total": 8
+      },
+      "sentence1": {
+        "correct": 761,
+        "total": 1188
+      },
+      "sentence1+sentence2": {
+        "correct": 821,
+        "total": 1588
+      },
+      "sentence2": {
+        "correct": 816,
+        "total": 1216
+      }
+    }
+  },
+  "margins": [
+    {
+      "threshold": 0.0,
+      "development": {
+        "total": 4000,
+        "attempts": 4000,
+        "correct": 2365,
+        "accuracy": 0.59125,
+        "precision": 0.59125,
+        "coverage": 1.0,
+        "macro_accuracy": 0.590946,
+        "same_label": {
+          "correct": 745,
+          "total": 800
+        },
+        "by_side": {
+          "none": {
+            "correct": 3,
+            "total": 6
+          },
+          "sentence1": {
+            "correct": 771,
+            "total": 1194
+          },
+          "sentence1+sentence2": {
+            "correct": 806,
+            "total": 1588
+          },
+          "sentence2": {
+            "correct": 785,
+            "total": 1212
+          }
+        }
+      }
+    },
+    {
+      "threshold": 0.5,
+      "development": {
+        "total": 4000,
+        "attempts": 3408,
+        "correct": 2076,
+        "accuracy": 0.519,
+        "precision": 0.609155,
+        "coverage": 0.852,
+        "macro_accuracy": 0.518754,
+        "same_label": {
+          "correct": 720,
+          "total": 800
+        },
+        "by_side": {
+          "none": {
+            "correct": 2,
+            "total": 6
+          },
+          "sentence1": {
+            "correct": 661,
+            "total": 1194
+          },
+          "sentence1+sentence2": {
+            "correct": 763,
+            "total": 1588
+          },
+          "sentence2": {
+            "correct": 650,
+            "total": 1212
+          }
+        }
+      }
+    },
+    {
+      "threshold": 1.0,
+      "development": {
+        "total": 4000,
+        "attempts": 2754,
+        "correct": 1706,
+        "accuracy": 0.4265,
+        "precision": 0.619463,
+        "coverage": 0.6885,
+        "macro_accuracy": 0.426336,
+        "same_label": {
+          "correct": 672,
+          "total": 800
+        },
+        "by_side": {
+          "none": {
+            "correct": 2,
+            "total": 6
+          },
+          "sentence1": {
+            "correct": 503,
+            "total": 1194
+          },
+          "sentence1+sentence2": {
+            "correct": 698,
+            "total": 1588
+          },
+          "sentence2": {
+            "correct": 503,
+            "total": 1212
+          }
+        }
+      }
+    },
+    {
+      "threshold": 2.0,
+      "development": {
+        "total": 4000,
+        "attempts": 1764,
+        "correct": 1106,
+        "accuracy": 0.2765,
+        "precision": 0.626984,
+        "coverage": 0.441,
+        "macro_accuracy": 0.276547,
+        "same_label": {
+          "correct": 567,
+          "total": 800
+        },
+        "by_side": {
+          "none": {
+            "correct": 2,
+            "total": 6
+          },
+          "sentence1": {
+            "correct": 268,
+            "total": 1194
+          },
+          "sentence1+sentence2": {
+            "correct": 579,
+            "total": 1588
+          },
+          "sentence2": {
+            "correct": 257,
+            "total": 1212
+          }
+        }
+      }
+    },
+    {
+      "threshold": 3.0,
+      "development": {
+        "total": 4000,
+        "attempts": 1175,
+        "correct": 726,
+        "accuracy": 0.1815,
+        "precision": 0.617872,
+        "coverage": 0.29375,
+        "macro_accuracy": 0.181568,
+        "same_label": {
+          "correct": 457,
+          "total": 800
+        },
+        "by_side": {
+          "none": {
+            "correct": 2,
+            "total": 6
+          },
+          "sentence1": {
+            "correct": 134,
+            "total": 1194
+          },
+          "sentence1+sentence2": {
+            "correct": 465,
+            "total": 1588
+          },
+          "sentence2": {
+            "correct": 125,
+            "total": 1212
+          }
+        }
+      }
+    },
+    {
+      "threshold": 4.0,
+      "development": {
+        "total": 4000,
+        "attempts": 796,
+        "correct": 508,
+        "accuracy": 0.127,
+        "precision": 0.638191,
+        "coverage": 0.199,
+        "macro_accuracy": 0.127015,
+        "same_label": {
+          "correct": 372,
+          "total": 800
+        },
+        "by_side": {
+          "none": {
+            "correct": 1,
+            "total": 6
+          },
+          "sentence1": {
+            "correct": 65,
+            "total": 1194
+          },
+          "sentence1+sentence2": {
+            "correct": 380,
+            "total": 1588
+          },
+          "sentence2": {
+            "correct": 62,
+            "total": 1212
+          }
+        }
+      }
+    }
+  ],
+  "cpu_total_s": 17.630868,
+  "wall_total_s": 18.478379,
+  "max_rss_kib": 120824
+}

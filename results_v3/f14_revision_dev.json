@@ -1,0 +1,179 @@
+{
+  "preregistration": "prereg/F-14-revision-contrafactual-tipada.md",
+  "kind": "development_only",
+  "engine_tree": "1f3187f2ced4c97364503187d074815f33612326",
+  "engine_unchanged": true,
+  "train_groups": 1000,
+  "validation_groups": 200,
+  "development_groups": 200,
+  "unused_train_groups": 266,
+  "train_directed_pairs": 20000,
+  "stages": [
+    {
+      "groups": 100,
+      "fit": {
+        "episodes": 2000,
+        "groups": 100,
+        "feature_keys": 15771,
+        "fit_cpu_s": 0.129149
+      },
+      "selection": {
+        "status": "rejected",
+        "descriptions": 31,
+        "program": null,
+        "search_cpu_s": 1.893769
+      }
+    },
+    {
+      "groups": 250,
+      "fit": {
+        "episodes": 5000,
+        "groups": 250,
+        "feature_keys": 32316,
+        "fit_cpu_s": 0.308484
+      },
+      "selection": {
+        "status": "rejected",
+        "descriptions": 31,
+        "program": null,
+        "search_cpu_s": 3.019805
+      }
+    },
+    {
+      "groups": 500,
+      "fit": {
+        "episodes": 10000,
+        "groups": 500,
+        "feature_keys": 55878,
+        "fit_cpu_s": 0.611801
+      },
+      "selection": {
+        "status": "rejected",
+        "descriptions": 31,
+        "program": null,
+        "search_cpu_s": 5.27569
+      }
+    },
+    {
+      "groups": 1000,
+      "fit": {
+        "episodes": 20000,
+        "groups": 1000,
+        "feature_keys": 93882,
+        "fit_cpu_s": 1.249346
+      },
+      "selection": {
+        "status": "rejected",
+        "descriptions": 31,
+        "program": null,
+        "search_cpu_s": 8.629231
+      }
+    }
+  ],
+  "treatment_development": {
+    "total": 4000,
+    "attempts": 0,
+    "correct": 0,
+    "accuracy": 0.0,
+    "precision": null,
+    "coverage": 0.0,
+    "macro_accuracy": 0.0,
+    "same_label": {
+      "correct": 0,
+      "total": 800
+    },
+    "by_side": {
+      "none": {
+        "correct": 0,
+        "total": 6
+      },
+      "sentence1": {
+        "correct": 0,
+        "total": 1194
+      },
+      "sentence1+sentence2": {
+        "correct": 0,
+        "total": 1588
+      },
+      "sentence2": {
+        "correct": 0,
+        "total": 1212
+      }
+    },
+    "p50_ms": 6e-05,
+    "p95_ms": 8e-05
+  },
+  "prior_development": {
+    "total": 4000,
+    "attempts": 4000,
+    "correct": 1997,
+    "accuracy": 0.49925,
+    "precision": 0.49925,
+    "coverage": 1.0,
+    "macro_accuracy": 0.496851,
+    "same_label": {
+      "correct": 794,
+      "total": 800
+    },
+    "by_side": {
+      "none": {
+        "correct": 3,
+        "total": 6
+      },
+      "sentence1": {
+        "correct": 597,
+        "total": 1194
+      },
+      "sentence1+sentence2": {
+        "correct": 794,
+        "total": 1588
+      },
+      "sentence2": {
+        "correct": 603,
+        "total": 1212
+      }
+    }
+  },
+  "unpaired_development": {
+    "total": 4000,
+    "attempts": 4000,
+    "correct": 1504,
+    "accuracy": 0.376,
+    "precision": 0.376,
+    "coverage": 1.0,
+    "macro_accuracy": 0.374772,
+    "same_label": {
+      "correct": 306,
+      "total": 800
+    },
+    "by_side": {
+      "none": {
+        "correct": 3,
+        "total": 6
+      },
+      "sentence1": {
+        "correct": 417,
+        "total": 1194
+      },
+      "sentence1+sentence2": {
+        "correct": 608,
+        "total": 1588
+      },
+      "sentence2": {
+        "correct": 476,
+        "total": 1212
+      }
+    }
+  },
+  "unpaired_profile": {
+    "documents": 5000,
+    "vocabulary": 3603
+  },
+  "prior_cpu_s": 0.02055,
+  "unpaired_cpu_s": 0.134236,
+  "preliminary_gate_passed": false,
+  "adversarial_restart_transfer": "pending_if_preliminary_passes",
+  "cpu_total_s": 21.433953,
+  "wall_total_s": 22.289954,
+  "max_rss_kib": 110320
+}

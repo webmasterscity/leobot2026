@@ -1,0 +1,80 @@
+{
+  "preregistration": "prereg/F-14-revision-contrafactual-tipada.md",
+  "kind": "development_controls_only",
+  "engine_tree": "1f3187f2ced4c97364503187d074815f33612326",
+  "groups_train": 1000,
+  "groups_validation": 200,
+  "groups_development": 200,
+  "train_groups_untouched": 266,
+  "prior_validation": {
+    "total": 4000,
+    "attempts": 4000,
+    "correct": 1999,
+    "accuracy": 0.49975,
+    "precision": 0.49975,
+    "coverage": 1.0,
+    "macro_accuracy": 0.502114,
+    "same_label": {
+      "correct": 792,
+      "total": 800
+    },
+    "by_side": {
+      "none": {
+        "correct": 6,
+        "total": 8
+      },
+      "sentence1": {
+        "correct": 596,
+        "total": 1188
+      },
+      "sentence1+sentence2": {
+        "correct": 792,
+        "total": 1588
+      },
+      "sentence2": {
+        "correct": 605,
+        "total": 1216
+      }
+    }
+  },
+  "unpaired_validation": {
+    "total": 4000,
+    "attempts": 4000,
+    "correct": 1456,
+    "accuracy": 0.364,
+    "precision": 0.364,
+    "coverage": 1.0,
+    "macro_accuracy": 0.363418,
+    "same_label": {
+      "correct": 298,
+      "total": 800
+    },
+    "by_side": {
+      "none": {
+        "correct": 2,
+        "total": 8
+      },
+      "sentence1": {
+        "correct": 410,
+        "total": 1188
+      },
+      "sentence1+sentence2": {
+        "correct": 592,
+        "total": 1588
+      },
+      "sentence2": {
+        "correct": 452,
+        "total": 1216
+      }
+    }
+  },
+  "unpaired_profile": {
+    "documents": 5000,
+    "vocabulary": 3603
+  },
+  "prior_cpu_s": 0.020772,
+  "unpaired_cpu_s": 0.138731,
+  "cpu_total_s": 0.255042,
+  "wall_total_s": 1.265676,
+  "max_rss_kib": 38168
+}
