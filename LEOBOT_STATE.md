@@ -2,15 +2,15 @@
 
 ## Estado de misión
 
-- Actualizado: 2026-09-23 · commit 01971bb (motor C-2 congelado)
+- Actualizado: 2026-09-23 · commit a7bfb9c (evaluador D-1 fijado)
 - Fases: A superada en ensayo acotado · B superada en ensayo acotado · C superada en ensayo acotado · D pendiente · E pendiente · F pendiente · G pendiente · H pendiente
 - Fase en curso: D — transferencia entre estructuras y modalidades distintas
 - Último tag estable: `estable-C-2` · huella del motor: `1f3187f2ced4c97364503187d074815f33612326`
 - Pruebas: 536 pasan · 2 fallos esperados · 0 fallos · Python 3.12.3
 - Orden rápida: `timeout 40s env PYTHONHASHSEED=0 python3 -m unittest tests.test_meta_abstraction_a1 tests.test_meta_active_probe tests.test_v70 -q` · Orden completa: `timeout 600s env PYTHONHASHSEED=0 python3 -m experiments.regression_batches`
-- Preregistro activo: [D-1](prereg/D-1-cadena-entre-modalidades.md) · estado: diseñado
-- Diseños intentados en la fase en curso: 1) cadena texto → acción → procedimiento con control del learner C → preregistrada, sin resultado
-- Siguiente paso concreto: fijar evaluador D-1, congelar motor y medir la cadena A→B→C frente a controles con la misma información; registrar aparte el aporte del learner C
+- Preregistro activo: [D-1](prereg/D-1-cadena-entre-modalidades.md) · estado: implementado, reserva pendiente
+- Diseños intentados en la fase en curso: 1) cadena texto → acción → procedimiento → pasó desarrollo; reserva pendiente
+- Siguiente paso concreto: etiquetar `freeze-D-1` y ejecutar los tres órdenes con controles y datos nuevos derivados de la huella; registrar por separado la no transferencia del learner C
 - Bloqueos: ninguno
 - Lectura (seguimiento): 0/4 en la sonda visible `experiments/user_text_probe.py` al cerrar B; no es una reserva independiente
 - Tablero AGI (árbol idéntico al último tag): [resultado](results_v3/agi_board_freeze-C-2.json) · MLQA español público 0/20, 20 no reconocidas · ARC-AGI-3 no evaluado · brecha frontier no comparable · obstáculo principal: adquirir significado de texto libre
@@ -41,6 +41,7 @@
 - 2026-09-23 · C-2 congelado en `freeze-C-2`, árbol `1f3187f2ced4c97364503187d074815f33612326`. [Órdenes 17](results_v3/c2_learner_order17.json), [53](results_v3/c2_learner_order53.json) y [97](results_v3/c2_learner_order97.json): F1 125/127/124 de 128, F2 127/124/123; ablación con la misma información 0 respuestas apoyadas, fresco F2 sí aprendió pero exploró 188 hipótesis frente a 96 educado. El programa de learner se guardó como datos, no contiene etiquetas ni nombre de tarea, sobrevivió reinicio y transfirió del contexto por signo al contexto por comparación. Contraevidencia retiró fuente, dependiente y biblioteca; confusor invertido, renombrado e incompatible pasaron. No hubo rivales equivalentes en este ensayo, por lo que no se solicitó una prueba activa nueva. Los tres ensayos terminaron con el mismo árbol del motor. Fase C superada **solo en estas dos estructuras numéricas**.
 - 2026-09-23 · Costos C-2 por orden: 128 ejemplos fuente + 128 destino; adquisición conjunta 12,77–19,33 s CPU, fresco F2 solo 9,13–9,81 s, ablación 23,11–29,40 s (orden 53 agotó búsqueda tras 108 ejemplos, pero recibió los 128). Renombrado 12,79–19,35 s; confusor 1,03–2,63 s; incompatible 8,89–10,39 s; contraevidencia 18,24–18,31 s. La síntesis del DSL consumió 0,0683–0,0687 s, incluida en adquisición; verificación ~0,0034 s incluida en esa síntesis; revalidación ~0,064 s y promoción ~0,00013 s; no sumar costos anidados. Consultar 128 casos costó ~0,0028–0,0048 s CPU; guardar/cerrar/cargar 0,031–0,033 s de pared, archivo ~609,5 KiB; arranque en frío ~0,06 s de pared/0,05 s CPU; RAM pico del ensayo 33 104–33 372 KiB; ensayo completo 86–109 s de pared. El costo de adquisición de F1+F2 **no** es menor que aprender únicamente F2 fresco. Regresión completa: 536 pruebas y dos fallos esperados. [Latencia 0](results_v3/latency_freeze-C-2_hashseed0.json), [1](results_v3/latency_freeze-C-2_hashseed1.json), [2](results_v3/latency_freeze-C-2_hashseed2.json) pasaron. Lectura visible 0/4 y MLQA público 0/20.
 - 2026-09-23 · [D-1](prereg/D-1-cadena-entre-modalidades.md) preregistrado. En tres sondas visibles con vocabulario renombrado, A enseñó un conjunto de roles desde frases, B aprendió una acción solo con esa fuente y C aprendió un procedimiento de cuatro entradas solo después de A+B (137 candidatos frente a 151 y fallo en controles). No se atribuye al learner sintetizado de C ni se cuenta como reserva. El tablero AGI 0/20 mantiene lenguaje libre como barrera mayor.
+- 2026-09-23 · D-1 en desarrollo: tres órdenes pasaron controles de A→B→C, reinicio, contraevidencia e incompatible. Fuente A: cuatro frases con hechos de base; B: dos cambios y un intento sin efecto; C: cinco transiciones aritméticas. A+B permitió aprender C dentro de 150 candidatos; A sola, B sola, fresca y misma información sin transferencia no. Educar antes el learner C no ahorró ejemplos ni candidatos en B/C: **NO TRANSFERENCIA DEL LEARNER C** hacia estas modalidades. Evaluador fijado en `a7bfb9c` antes de generar reserva; no se declara fase D superada todavía.
 
 ## Resultados negativos y trampas conocidas
 
