@@ -21,7 +21,7 @@ from math import exp, log1p, log2
 from itertools import combinations
 import json
 from .rbf import RBFStrategyRouter
-from . import meta_operators
+from . import meta_operators, learner_dsl
 
 
 class MetaController:
@@ -521,7 +521,7 @@ class MetaController:
 
     def _invent_aggregate_view_from_tasks(self, family: str, tasks: list[dict],
                                           *, only_existing: bool = False) -> dict:
-        """Synthesize a typed fold only after existing representations fail."""
+        """Interpret the acquired fold learner and attach operator provenance."""
         if not self.enable_meta_operator_invention or len(tasks)<24:
             return {'status':'aggregate_program_pending'}
         width=len(tasks[0]['features'])
@@ -533,87 +533,31 @@ class MetaController:
                               (existing.get('operator_dependency') and
                                existing['operator_dependency'] not in self.meta_operators)):
             return {'status':'aggregate_program_not_retained'}
-        if only_existing:
-            specs=[existing['spec']]
-        else:
-            preferred=[row['reduce'] for _,row in sorted(self.meta_operators.items())]
-            specs=meta_operators.candidate_specs(width,preferred_reducers=preferred,limit=32)
-        majority=self._mode_winner(tasks)
-        evaluated=0
-        for spec in specs:
-            if not only_existing:
-                evaluated+=1
-                self.aggregate_candidates_evaluated[family]=(
-                    self.aggregate_candidates_evaluated.get(family,0)+1)
-            values=[meta_operators.evaluate(task['features'],spec) for task in tasks]
-            if any(value is None for value in values):
-                continue
-            distinct=sorted(set(values))
-            if len(distinct)<2:
-                continue
-            cutpoints=([float(existing['cut'])] if only_existing else
-                       [(low+high)/2.0 for low,high in zip(distinct,distinct[1:])])
-            for cut in cutpoints:
-                branches=[int(value>cut) for value in values]
-                counts={0:{},1:{}}
-                for task,branch in zip(tasks,branches):
-                    row=counts[branch];w=task['winner'];row[w]=row.get(w,0)+1
-                if not counts[0] or not counts[1]:
-                    continue
-                covered=correct=baseline_correct=0
-                for task,branch in zip(tasks,branches):
-                    available={label:n-int(label==task['winner'])
-                               for label,n in counts[branch].items()}
-                    available={label:n for label,n in available.items() if n>0}
-                    if not available:
-                        continue
-                    prediction=min(available,key=lambda label:(-available[label],str(label)))
-                    covered+=1;correct+=int(prediction==task['winner'])
-                    baseline_correct+=int(majority==task['winner'])
-                coverage=covered/len(tasks);accuracy=correct/max(1,covered)
-                gain=accuracy-baseline_correct/max(1,covered)
-                if coverage<0.70 or accuracy<0.90 or gain<0.20:
-                    continue
-                cutpoint=len(tasks)//2;temporal=[]
-                for train,test in ((range(cutpoint),range(cutpoint,len(tasks))),
-                                   (range(cutpoint,len(tasks)),range(cutpoint))):
-                    local={0:{},1:{}}
-                    for i in train:
-                        row=local[branches[i]];w=tasks[i]['winner']
-                        row[w]=row.get(w,0)+1
-                    seen=hits=0
-                    for i in test:
-                        row=local[branches[i]]
-                        if row:
-                            prediction=min(row,key=lambda w:(-row[w],str(w)))
-                            seen+=1;hits+=int(prediction==tasks[i]['winner'])
-                    temporal.append((seen/max(1,len(test)),hits/max(1,seen)))
-                if any(c<0.8 or a<0.95 for c,a in temporal):
-                    continue
-                buckets={}
-                for branch,row in counts.items():
-                    winner=min(row,key=lambda w:(-row[w],str(w)))
-                    support=sum(row.values());confidence=row[winner]/support
-                    if support>=2 and confidence>=0.80:
-                        buckets[str(branch)]={'winner':winner,'support':support,
-                                              'confidence':confidence}
-                if len(buckets)!=2 or buckets['0']['winner']==buckets['1']['winner']:
-                    continue
-                identifier=meta_operators.operator_key(spec)
-                sources=self.meta_operators.get(identifier,{}).get('sources',())
-                dependency=(existing.get('operator_dependency') if only_existing else
-                            (identifier if any(src!=family for src in sources) else None))
-                view={'kind':'aggregate_program','spec':deepcopy(spec),'cut':cut,
-                      'buckets':buckets,'operator':identifier,
-                      'operator_dependency':dependency,'accuracy':accuracy,
-                      'coverage':coverage,'gain_over_majority':gain,
-                      'tasks':len(tasks),'candidates_evaluated':(
-                          existing.get('candidates_evaluated',0) if only_existing else evaluated),
-                      'mechanism':'typed_fold_synthesis'}
-                self.invented_views[family]=view
-                return {'status':'aggregate_program_invented','family':family,
-                        'retained':only_existing,**deepcopy(view)}
-        return {'status':'aggregate_program_rejected','candidates_evaluated':evaluated}
+        preferred=[row['reduce'] for _,row in sorted(self.meta_operators.items())]
+        result=learner_dsl.fit(learner_dsl.AGGREGATE_LEARNER,tasks,
+                               preferred_reducers=preferred,existing=existing)
+        evaluated=result['candidates_evaluated']
+        if not only_existing:
+            self.aggregate_candidates_evaluated[family]=(
+                self.aggregate_candidates_evaluated.get(family,0)+evaluated)
+        if result['status']!='fitted':
+            return {'status':'aggregate_program_rejected','candidates_evaluated':evaluated,
+                    'reason':result['status']}
+        base=result['view'];spec=base['spec']
+        identifier=meta_operators.operator_key(spec)
+        sources=self.meta_operators.get(identifier,{}).get('sources',())
+        dependency=(existing.get('operator_dependency') if only_existing else
+                    (identifier if any(src!=family for src in sources) else None))
+        view={'kind':'aggregate_program','spec':deepcopy(spec),'cut':base['cut'],
+              'buckets':base['buckets'],'operator':identifier,
+              'operator_dependency':dependency,'accuracy':base['accuracy'],
+              'coverage':base['coverage'],'gain_over_majority':base['gain_over_majority'],
+              'tasks':len(tasks),'candidates_evaluated':(
+                  existing.get('candidates_evaluated',0) if only_existing else evaluated),
+              'mechanism':'typed_fold_synthesis'}
+        self.invented_views[family]=view
+        return {'status':'aggregate_program_invented','family':family,
+                'retained':only_existing,**deepcopy(view)}
 
     @classmethod
     def _program_temporal_transfer(cls, tasks: list[dict], predicates) -> dict:
@@ -924,50 +868,9 @@ class MetaController:
         return min(counts, key=lambda w:(-counts[w],str(w)))
 
     def _best_projection_view(self, tasks: list[dict], max_dims: int) -> dict | None:
-        """Fit the existing projection learner without changing its hypothesis space."""
-        dims_total=len(tasks[0]['features'])
-        max_k=min(max(1,int(max_dims)),3,dims_total-1)
-        global_mode=self._mode_winner(tasks)
-        candidates=[]
-        for k in range(1,max_k+1):
-            for dims in combinations(range(dims_total),k):
-                covered=correct=baseline_correct=0
-                for i,target in enumerate(tasks):
-                    key=self._view_key(target['features'],dims)
-                    peers=[t for j,t in enumerate(tasks) if j!=i and self._view_key(t['features'],dims)==key]
-                    pred=self._mode_winner(peers)
-                    if pred is None:
-                        continue
-                    covered+=1;correct+=int(pred==target['winner'])
-                    baseline_correct+=int(global_mode==target['winner'])
-                if covered<max(6,int(0.5*len(tasks))):
-                    continue
-                accuracy=correct/covered;coverage=covered/len(tasks)
-                gain=accuracy-baseline_correct/covered
-                if accuracy<0.85 or coverage<0.60 or gain<0.10:
-                    continue
-                score=accuracy*coverage+0.5*gain-0.015*len(dims)
-                candidates.append((score,accuracy,coverage,gain,dims))
-        if not candidates:
-            return None
-        candidates.sort(key=lambda x:(-x[0],len(x[4]),x[4]))
-        score,accuracy,coverage,gain,dims=candidates[0]
-        buckets={}
-        for task in tasks:
-            key=self._view_key(task['features'],dims)
-            row=buckets.setdefault(key,{'support':0,'winners':{}})
-            row['support']+=1;w=task['winner'];row['winners'][w]=row['winners'].get(w,0)+1
-        compact={}
-        for key,row in buckets.items():
-            winner=min(row['winners'],key=lambda w:(-row['winners'][w],str(w)))
-            confidence=row['winners'][winner]/max(1,row['support'])
-            if row['support']>=2 and confidence>=0.75:
-                compact[key]={'winner':winner,'support':row['support'],'confidence':confidence}
-        if not compact:
-            return None
-        return {'kind':'feature_projection','dims':list(dims),'score':score,
-                'accuracy':accuracy,'coverage':coverage,'gain_over_majority':gain,
-                'tasks':len(tasks),'buckets':compact}
+        """Interpret the declarative projection learner."""
+        result=learner_dsl.fit(learner_dsl.PROJECTION_LEARNER,tasks,max_dims=max_dims)
+        return result.get('view') if result['status']=='fitted' else None
 
     def _maybe_discover_rival(self, family: str, tasks: list[dict]) -> None:
         """Check a geometrically spaced, bounded alternative to an acquired fold."""
