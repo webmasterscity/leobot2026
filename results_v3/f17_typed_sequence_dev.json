@@ -1,0 +1,130 @@
+{
+  "preregistration": "prereg/F-17-sintesis-tipado-secuencias.md",
+  "kind": "development_only",
+  "engine_tree": "1f3187f2ced4c97364503187d074815f33612326",
+  "engine_unchanged": true,
+  "tool": {
+    "candidates_available": 32,
+    "train": 32,
+    "validation": 32,
+    "methods": {
+      "find": {
+        "consistent_train": 2,
+        "consistent_validation": 2,
+        "programs": [
+          {
+            "source": "arg0",
+            "pattern": "arg1",
+            "match": "contiguous",
+            "overlap": false,
+            "reduce": "first"
+          },
+          {
+            "source": "arg0",
+            "pattern": "arg1",
+            "match": "contiguous",
+            "overlap": true,
+            "reduce": "first"
+          }
+        ],
+        "attempted": 32,
+        "correct": 32,
+        "validation_total": 32,
+        "p50_ms": 0.005732,
+        "p95_ms": 0.00735
+      },
+      "count": {
+        "consistent_train": 1,
+        "consistent_validation": 1,
+        "programs": [
+          {
+            "source": "arg0",
+            "pattern": "arg1",
+            "match": "contiguous",
+            "overlap": false,
+            "reduce": "count"
+          }
+        ],
+        "attempted": 32,
+        "correct": 32,
+        "validation_total": 32,
+        "p50_ms": 0.003176,
+        "p95_ms": 0.003985
+      }
+    },
+    "search_cpu_s": 0.001055
+  },
+  "language": {
+    "groups_train": 1000,
+    "groups_validation": 200,
+    "fit_edges": 20000,
+    "validation_edges": 4000,
+    "base_fit": {
+      "episodes": 20000,
+      "groups": 1000,
+      "feature_keys": 93882,
+      "fit_cpu_s": 1.25883
+    },
+    "base_families": [
+      "side_ops",
+      "delta_words",
+      "replacement_pairs",
+      "shape"
+    ],
+    "typed_expressions": 24,
+    "searched_descriptions": 96,
+    "best_safe": null,
+    "best_raw_diagnostic": {
+      "expression": {
+        "source": "other_old",
+        "pattern": "added",
+        "match": "contiguous",
+        "overlap": false,
+        "reduce": "count"
+      },
+      "weight": 2.0,
+      "margin": 0.0,
+      "metric": {
+        "total": 4000,
+        "attempts": 4000,
+        "correct": 2495,
+        "accuracy": 0.62375,
+        "precision": 0.62375,
+        "coverage": 1.0,
+        "macro_accuracy": 0.624794,
+        "same_label": {
+          "correct": 738,
+          "total": 800
+        },
+        "by_side": {
+          "none": {
+            "correct": 6,
+            "total": 8
+          },
+          "sentence1": {
+            "correct": 795,
+            "total": 1188
+          },
+          "sentence1+sentence2": {
+            "correct": 827,
+            "total": 1588
+          },
+          "sentence2": {
+            "correct": 867,
+            "total": 1216
+          }
+        }
+      }
+    },
+    "fit_cpu_s": 1.3643,
+    "relation_cpu_s": 2.052052,
+    "validation_cpu_s": 9.004599
+  },
+  "development_gate_passed": false,
+  "reserved_human_test": "unopened",
+  "reserved_tool_cases": "ungenerated",
+  "adversarial_persistence_transfer": "pending_only_if_gate_passes",
+  "cpu_total_s": 12.439279,
+  "wall_total_s": 13.447195,
+  "max_rss_kib": 113872
+}
