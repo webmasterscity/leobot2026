@@ -3,7 +3,7 @@
 ## Estado de misión
 
 - Actualizado: 2026-09-23 · preregistro F-4 en `dbc2d69`; motor D-1 conservado
-- Fases: A superada en ensayo acotado · B superada en ensayo acotado · C superada en ensayo acotado · D superada en ensayo acotado · E refutada en cinco diseños preregistrados · F pendiente · G pendiente · H pendiente
+- Fases: A superada en ensayo acotado · B superada en ensayo acotado · C superada en ensayo acotado · D superada en ensayo acotado · E refutada en cinco diseños preregistrados · F en curso
 - Fase en curso: F — comprobar aprendizaje general con arquitectura congelada; E falló y sigue siendo obstáculo
 - Último tag estable: `estable-E-1` · huella del motor: `1f3187f2ced4c97364503187d074815f33612326` (mismo árbol que D-1; no se promovió mecanismo de lectura)
 - Pruebas: 13 rápidas pasan · regresión estable anterior 536 pasan, 2 fallos esperados, 0 fallos · Python 3.12.3
@@ -107,4 +107,4 @@
 
 ### En palabras fáciles de entender
 
-Probamos varias maneras de que Leobot aprenda leyendo textos reales en español. Guardó algunos datos, pero eran trozos demasiado grandes o confusos y no respondió ninguna de las preguntas de las pruebas externas. También probamos buscar frases, cortarlas y escoger palabras faltantes; ninguna solución funcionó lo bastante bien. Retiramos los cambios que empeoraban el resultado y dejamos registrados los fallos. Leobot sigue lejos de aprender solo con libros o de tener inteligencia general.
+Probamos varias maneras de que Leobot aprenda leyendo textos reales en español. En pruebas externas sigue sin responder las preguntas. Un intento nuevo aprendió de ejemplos con respuestas humanas, pero luego eligió 41 fragmentos equivocados y no acertó ninguno de 64 casos de práctica. Aunque encontraba muchas oraciones que contenían la respuesta, no entendía qué parte respondía la pregunta. Dejamos registrado el fallo sin cambiar el motor: sigue lejos de aprender solo con libros o de tener inteligencia general.
