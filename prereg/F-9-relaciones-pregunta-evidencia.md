@@ -1,0 +1,21 @@
+# F-9 — adquirir relaciones entre pregunta, evidencia y respuesta
+
+## Fallo y decisión
+
+F-4/F-5 puntuaron tramos por rasgos locales y F-7/F-8 no adquirieron una selección útil en SQAC. En el desarrollo F-8 la respuesta inequívoca estaba en las dos primeras oraciones en 51/64 casos, pero solo 4/51 eran un hueco exacto entre palabras compartidas. Un programa de huecos no puede superar la puerta. Hipótesis: el rasgo discriminante es una **relación adquirida** entre términos de la pregunta y palabras del entorno del tramo, incluyendo dirección y distancia. Alternativa: los 2 000 pares de texto/feedback no permiten adquirir semántica relacional transferible; los pares léxicos serían una nueva pista espuria. El ensayo decide si merece integrarse un operador general de relaciones pregunta-evidencia. Si no supera controles, no toca `leobot/`. Si funciona y transfiere, sustituiría las puntuaciones locales redundantes de F-4/F-8 en vez de apilarlas.
+
+## Experiencia y sustrato
+
+Piloto fuera del motor, Python estándar. Cada episodio permitido es `(pregunta original, pasaje original, tramo_respuesta humano, fuente)` por la interfaz normal de enseñanza del piloto. Generar hasta ocho negativos por episodio del mismo pasaje; el positivo y negativos reciben **el mismo conjunto de información**. El operador único `join` cuenta, para cada término de la pregunta, palabras a distancia acotada del tramo candidato y su dirección; puede usar forma de caracteres y longitud como prior universal. No incorpora nombres de preguntas, dominios ni corpus como reglas. Los contadores explícitos producen log odds con apoyo mínimo; las asociaciones de un solo episodio no se promueven. Compilar por pregunta una tabla de puntajes por posición de la oración, para no recorrer toda la biblioteca en cada respuesta. Calibrar abstención en 32 ejemplos de validación separados; conservar hipótesis rivales cuando la evidencia no separa candidatos. Feedback contrario retira las asociaciones dependientes. Ningún `eval`, red neuronal, API inteligente o código generado ejecutable.
+
+## Datos, particiones y techo previo
+
+SQAC español train commit `f9928e8819596a601b8887cc5f8598b15d589a82`. Seleccionar hasta 2 000 experiencias, 32 de validación y 64 de desarrollo con párrafos disjuntos por `sha256(H0 + ':F-9:sqac:' + id)`, excluyendo de desarrollo los párrafos visibles de F-4, F-5, F-7 y F-8. H0 es `git rev-parse estable-E-1:leobot`. Antes de implementar, ejecutar **solo** el enumerador fijo de hasta dos oraciones y tramos de 1–8 tokens. Si menos de 30/64 respuestas de desarrollo están entre esos candidatos, cerrar el diseño como inviable sin añadir código. El techo no es un resultado de aprendizaje.
+
+Si la puerta de desarrollo pasa, congelar piloto y motor y abrir 100 casos de XQuAD español (repositorio oficial commit `7d30520c717524000f0d9d2f9c10a069acd9d285`) mediante semilla de la huella del piloto. XQuAD prueba transferencia de corpus, no transferencia entre modalidades. No abrir SQAC dev ni retocar mecanismos a partir de XQuAD.
+
+## Controles y criterio
+
+Comparar tratamiento con F-4 (mismos episodios), ablación sin relaciones `join`, memoria exacta, fresco, pregunta barajada con el mismo pasaje, pasaje incompatible con igual solapamiento superficial y pregunta con palabras auxiliares invertidas. Añadir contraevidencia, renombrado, guardado/carga y dos órdenes adicionales si el resultado cambia con el orden. Medir respuestas exactas, intentos, precisión, candidatos, CPU y RAM de adquisición, búsqueda, validación, consolidación e inferencia, p50/p95 de respuesta; árbol del motor antes/después. El control de pasaje incorrecto debe abstenerse o expresar incertidumbre, nunca afirmar una respuesta como segura.
+
+Puerta de desarrollo: ≥10/64 respuestas exactas con precisión entre intentos ≥70 %, al menos cinco aciertos sobre F-4 y la ablación, cero respuestas seguras sobre pasajes incompatibles, retiro correcto tras contraevidencia, reinicio idéntico y p95 de respuesta ≤10 ms (tope absoluto 1 s). Presupuesto ≤180 s de pared, ≤120 s CPU, ≤256 MiB y ≤250 000 candidatos puntuados para entrenamiento y evaluación. El ensayo final XQuAD debe conservar al menos 70 % de la precisión lograda en desarrollo y superar F-4 con igual información para justificar integración; un buen SQAC aislado no basta.
