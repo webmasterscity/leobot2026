@@ -1,0 +1,19 @@
+# G-7c — poda de planes por soporte de la salida
+
+## Hipótesis y antecedente
+
+G-7b propuso los fragmentos gold de solo 13–17/40 preguntas aleatorias y, aun entonces, dejó una mediana aproximada de 10⁵ combinaciones. Cambiar 64→128 candidatos de orden o incluir `SELECT *` podría subir cobertura local, pero no resolvería el producto. Una restricción semántica más general es: **si una proyección copia una columna sin transformación, cada valor observado en esa posición de salida debe existir en el dominio de esa columna**. Esta condición necesaria se puede comprobar antes de combinar filtro, unión y orden.
+
+Antecedentes primarios: [Sickle, PLDI 2022](https://arxiv.org/abs/2204.07102) propaga condiciones de la salida hacia programas parciales; [SQuID, artículo de 2026](https://www.sciencedirect.com/science/article/pii/S0306437926000013) usa abducción y ejemplos de tuplas para inferir consultas. No se incorpora su código ni se atribuyen sus resultados a Leobot. La condición de soporte debe funcionar también sobre otras relaciones de hechos, no contener nombres de MultiSpider. Si la salida está vacía o usa agregación/transformación, el mecanismo se abstiene de podar esa ranura.
+
+## Fuente y ensayo
+
+Usar la misma fuente oficial y hashes de G-6, las ocho bases ya inventariadas, **preguntas nuevas de `train_es`** elegidas tras este preregistro con H0 y semillas 31/71/127, cinco aleatorias por base sin reutilizar las muestras 17/53/97. El evaluador ejecuta SQL gold de solo lectura con límite de pasos y filas y entrega **solo las filas resultantes** al generador. El SQL gold sirve al evaluador para clasificar proyecciones simples y comprobar si la columna correcta sobrevivió; no se entrega al generador. `dev_es` y otras bases quedan cerradas. No crear programas ni respuestas desde el gold.
+
+Para cada pregunta con salida no vacía, proyección directa de 1–3 columnas, sin agregación ni expresión, construir candidatos (posición de salida, columna del esquema) por tipo, usando dominios de valores de la base. Tratamiento: conservar solo candidatos cuyo dominio contiene todos los valores observados en esa posición. Ablación: mismos esquema, valores y presupuesto, sin comprobar inclusión; control de salida barajada: asignar a la pregunta otra salida de la misma base de igual aridad, seleccionada con semilla fija. Informar también casos vacíos/transformados como abstención, nunca éxito. El renombrado total de símbolos debe conservar conteos; `PYTHONHASHSEED=0/1` también. No texto de pregunta en el generador: una diferencia demuestra valor de la denotación, **no** comprensión lingüística.
+
+## Puerta, costo y siguiente paso
+
+Se requieren al menos 10 casos elegibles no vacíos por semilla. En **todos** los elegibles la columna gold debe sobrevivir en cada posición; al menos 75 % deben reducir sus candidatos por ≥5 veces respecto de la ablación, con mediana de ≤5 candidatos por posición tras poda. El control de salida barajada debe preservar columnas gold en menos casos o podar menos eficazmente; si la salida de otra pregunta resulta indistinguible, conservar incertidumbre y reportarlo. Presupuesto por semilla ≤60 s CPU, ≤120 s pared, ≤256 MiB RAM, ≤1 000 columnas/posiciones examinadas por pregunta. Medir lectura, ejecución del entorno, dominios, poda, candidatos, filas, CPU y RSS. H0 idéntico antes/después.
+
+Si falla, registrar límite y no integrar. Si pasa, preregistrar un learner que combine esta poda con rutas G-7 y restricciones de los demás operadores, con intervenciones, contraevidencia, bot fresco, solo memoria, mismo dato sin poda, incompatibles, renombrado, confusor, reinicio y reserva derivada de la huella del motor. La puerta presente solo valida una **condición necesaria de representación**, no aprendizaje, SQL completo, lectura española ni fase G superada. Su éxito permitiría sustituir la enumeración ciega de G-6; no justifica agregar un subsistema paralelo.
