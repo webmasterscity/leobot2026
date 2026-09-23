@@ -1,0 +1,206 @@
+{
+  "kind": "postgate_profile_only",
+  "source": "G-16 budget interruption",
+  "engine_tree": "1f3187f2ced4c97364503187d074815f33612326",
+  "engine_unchanged": true,
+  "training_facts": 4171,
+  "paired_candidates": {
+    "single_triple_paragraphs": 517,
+    "sentence_not_unique": 45,
+    "paired_candidates": 472
+  },
+  "paired_teaching": {
+    "accepted": 393,
+    "duplicates": 18,
+    "rejected": 61
+  },
+  "profiled_articles": 3,
+  "facts_cpu_s": 0.027603,
+  "teach_cpu_s": 0.620134,
+  "profiled_ingest_cpu_s": 5.223107,
+  "top_own_cpu": [
+    {
+      "function": "language.py:18:<genexpr>",
+      "calls": 18907897,
+      "own_cpu_s": 1.91081,
+      "cumulative_cpu_s": 2.750453
+    },
+    {
+      "function": "<method 'join' of 'str' objects>",
+      "calls": 248351,
+      "own_cpu_s": 1.232488,
+      "cumulative_cpu_s": 3.982941
+    },
+    {
+      "function": "<built-in method unicodedata.combining>",
+      "calls": 18818776,
+      "own_cpu_s": 0.839643,
+      "cumulative_cpu_s": 0.839643
+    },
+    {
+      "function": "language.py:188:_replace_phrase",
+      "calls": 215979,
+      "own_cpu_s": 0.305621,
+      "cumulative_cpu_s": 0.327357
+    },
+    {
+      "function": "language.py:17:normalize",
+      "calls": 120002,
+      "own_cpu_s": 0.164935,
+      "cumulative_cpu_s": 4.281375
+    },
+    {
+      "function": "language.py:195:_rewrite_variants",
+      "calls": 4825,
+      "own_cpu_s": 0.070989,
+      "cumulative_cpu_s": 0.411974
+    },
+    {
+      "function": "<method 'split' of 'str' objects>",
+      "calls": 120400,
+      "own_cpu_s": 0.062539,
+      "cumulative_cpu_s": 0.062539
+    },
+    {
+      "function": "_parser.py:512:_parse",
+      "calls": 1057,
+      "own_cpu_s": 0.05762,
+      "cumulative_cpu_s": 0.141065
+    },
+    {
+      "function": "<method 'fullmatch' of 're.Pattern' objects>",
+      "calls": 115015,
+      "own_cpu_s": 0.055369,
+      "cumulative_cpu_s": 0.055369
+    },
+    {
+      "function": "language.py:36:parse_candidates",
+      "calls": 114977,
+      "own_cpu_s": 0.046861,
+      "cumulative_cpu_s": 4.563685
+    },
+    {
+      "function": "__init__.py:280:_compile",
+      "calls": 115108,
+      "own_cpu_s": 0.046522,
+      "cumulative_cpu_s": 0.324786
+    },
+    {
+      "function": "language.py:295:parse",
+      "calls": 10,
+      "own_cpu_s": 0.045633,
+      "cumulative_cpu_s": 5.204064
+    },
+    {
+      "function": "__init__.py:169:fullmatch",
+      "calls": 115015,
+      "own_cpu_s": 0.04244,
+      "cumulative_cpu_s": 0.42014
+    },
+    {
+      "function": "_compiler.py:37:_compile",
+      "calls": 10577,
+      "own_cpu_s": 0.039512,
+      "cumulative_cpu_s": 0.089548
+    },
+    {
+      "function": "<built-in method builtins.len>",
+      "calls": 541050,
+      "own_cpu_s": 0.034087,
+      "cumulative_cpu_s": 0.035956
+    },
+    {
+      "function": "<built-in method builtins.isinstance>",
+      "calls": 247383,
+      "own_cpu_s": 0.031017,
+      "cumulative_cpu_s": 0.031017
+    },
+    {
+      "function": "<method 'strip' of 'str' objects>",
+      "calls": 240038,
+      "own_cpu_s": 0.026582,
+      "cumulative_cpu_s": 0.026582
+    },
+    {
+      "function": "<method 'casefold' of 'str' objects>",
+      "calls": 120046,
+      "own_cpu_s": 0.025721,
+      "cumulative_cpu_s": 0.025721
+    },
+    {
+      "function": "<built-in method unicodedata.normalize>",
+      "calls": 120002,
+      "own_cpu_s": 0.021295,
+      "cumulative_cpu_s": 0.021295
+    },
+    {
+      "function": "_parser.py:168:__getitem__",
+      "calls": 119756,
+      "own_cpu_s": 0.021172,
+      "cumulative_cpu_s": 0.032064
+    },
+    {
+      "function": "<method 'append' of 'list' objects>",
+      "calls": 248923,
+      "own_cpu_s": 0.019079,
+      "cumulative_cpu_s": 0.019079
+    },
+    {
+      "function": "_parser.py:261:get",
+      "calls": 61937,
+      "own_cpu_s": 0.012097,
+      "cumulative_cpu_s": 0.019759
+    },
+    {
+      "function": "_parser.py:178:getwidth",
+      "calls": 11257,
+      "own_cpu_s": 0.011133,
+      "cumulative_cpu_s": 0.014447
+    },
+    {
+      "function": "_parser.py:176:append",
+      "calls": 51693,
+      "own_cpu_s": 0.008974,
+      "cumulative_cpu_s": 0.013867
+    },
+    {
+      "function": "_compiler.py:243:_optimize_charset",
+      "calls": 8847,
+      "own_cpu_s": 0.008699,
+      "cumulative_cpu_s": 0.013065
+    },
+    {
+      "function": "_parser.py:240:__next",
+      "calls": 67106,
+      "own_cpu_s": 0.00837,
+      "cumulative_cpu_s": 0.00837
+    },
+    {
+      "function": "encoder.py:205:iterencode",
+      "calls": 3541,
+      "own_cpu_s": 0.006235,
+      "cumulative_cpu_s": 0.006235
+    },
+    {
+      "function": "_parser.py:164:__len__",
+      "calls": 29621,
+      "own_cpu_s": 0.005162,
+      "cumulative_cpu_s": 0.007475
+    },
+    {
+      "function": "_compiler.py:216:_compile_charset",
+      "calls": 8847,
+      "own_cpu_s": 0.004826,
+      "cumulative_cpu_s": 0.006624
+    },
+    {
+      "function": "<built-in method builtins.ord>",
+      "calls": 41473,
+      "own_cpu_s": 0.003623,
+      "cumulative_cpu_s": 0.003623
+    }
+  ],
+  "cpu_total_s": 6.105564,
+  "wall_total_s": 7.609748,
+  "max_rss_kib": 76528
+}
