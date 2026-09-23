@@ -8,9 +8,9 @@
 - Último tag estable: `estable-D-1` · huella del motor: `1f3187f2ced4c97364503187d074815f33612326` (idéntica a C-2: D-1 solo añadió evidencia)
 - Pruebas: 536 pasan · 2 fallos esperados · 0 fallos · Python 3.12.3
 - Orden rápida: `timeout 40s env PYTHONHASHSEED=0 python3 -m unittest tests.test_meta_abstraction_a1 tests.test_meta_active_probe tests.test_v70 -q` · Orden completa: `timeout 600s env PYTHONHASHSEED=0 python3 -m experiments.regression_batches`
-- Preregistro activo: [E-1](prereg/E-1-diagnostico-lectura-literal.md) · ejecutado sin datos por tope de descarga insuficiente
-- Diseños intentados en la fase en curso: E-1 diagnóstico literal externo → archivo de 75,7 MB excedió el tope de 40 MiB antes del ensayo
-- Siguiente paso concreto: preregistrar E-1b con tope de descarga corregido, repetir diagnóstico congelado y usarlo para elegir mecanismo de adquisición o pregunta
+- Preregistro activo: [E-1b](prereg/E-1b-presupuesto-descarga.md) · ejecutado, diagnóstico negativo
+- Diseños intentados en la fase en curso: E-1 → límite de descarga; E-1b → 0/20, cero hechos adquiridos
+- Siguiente paso concreto: preregistrar E-2 para reutilizar de forma verificable las observaciones textuales ya guardadas, con ablación, persistencia y revisión; no atribuir recuperación a comprensión
 - Bloqueos: ninguno
 - Lectura (seguimiento): 0/4 en la sonda visible `experiments/user_text_probe.py` al cerrar D; no es una reserva independiente
 - Tablero AGI (árbol idéntico al último tag): [resultado](results_v3/agi_board_freeze-D-1.json) · MLQA español público 0/20, 20 no reconocidas · cadena D-1 3/3 interna, learner C 0 candidatos ahorrados fuera de numérico · ARC-AGI-3 no evaluado · brecha frontier no comparable · obstáculo principal: adquirir significado de texto libre
@@ -18,6 +18,7 @@
 
 ## Historial de ciclos
 
+- 2026-09-23 · [E-1b](prereg/E-1b-presupuesto-descarga.md) preregistrado en `a093b3b` antes del reintento, motor `freeze-E-1b` intacto. [Resultado](results_v3/e1_reading_diagnostic.json): 20 pasajes y preguntas MLQA distintos de los del tablero, respuesta presente textualmente en 20/20, cero hechos y cero promociones, 0/20 coincidencias antes y después de leer; 19 respuestas no reconocidas y una procesada como documento. Lectura 0,0171 s CPU, respuesta 0,0031 s, 7,56 s de pared incluyendo descarga, pico 102 888 KiB. Apoya fallo de extracción de hechos de una exposición; no prueba que la interpretación de preguntas funcionaría si hubiera hechos.
 - 2026-09-23 · [E-1](prereg/E-1-diagnostico-lectura-literal.md) preregistrado en `10daea9`, motor `freeze-E-1` idéntico a D-1. El diagnóstico no empezó: MLQA publica un archivo de 75 719 050 bytes y el tope fue 40 MiB. Se conserva el fallo; no hay resultado de lectura ni cambio de motor.
 - 2026-09-22 · El estado previo consolidó tres líneas históricas y dejó el lenguaje libre en 0/4. Sus detalles y fallos están en el historial Git anterior a `42c34a6`.
 - 2026-09-22 · [A-1](prereg/A-1-subregla-meta.md), preregistrado en `42c34a6` antes de implementar. Motor congelado en `freeze-A-1`, commit `51bf9cd`. [Resultado A-1](results_v3/a1_meta_abstraction.json): tres órdenes, 160/160 aciertos con la pieza frente a 80/160 con idéntica información y sin reutilizarla; 10 aplicaciones candidatas de la pieza. Bot fresco y solo memoria: 80/160. Renombrado de símbolos: 160/160. Señal auxiliar invertida: 160/160, sin errores seguros. La primera reserva no midió la retirada después de reiniciar.
@@ -49,6 +50,7 @@
 ## Resultados negativos y trampas conocidas
 
 - E-1 falló por presupuesto de descarga, antes de seleccionar casos o exponer preguntas. No es evidencia a favor ni en contra de la lectura. Un preregistro nuevo debe cambiar el tope; el anterior queda intacto.
+- E-1b es diagnóstico literal, no evalúa inferencia ni procedimientos. La coincidencia del texto fuente con la respuesta humana solo acredita disponibilidad de la información, no que Leobot haya comprendido el pasaje. `raw_relation_observations` conserva temporalmente texto sin resolver hasta 96 observaciones; cero hechos no significa cero bytes retenidos.
 - **La fase A no equivale a abstracción general.** La pieza adquirida es una partición de dos comparaciones que se reutilizó en otra tarea de la misma estructura numérica. No se demostró transferencia entre dominios no isomorfos, invención de operaciones nuevas ni síntesis de learners. La preferencia por la pieza existente resolvió la señal auxiliar del ensayo, pero no prueba causalidad en general.
 - B-1 no distingue una pista superficial de una operación robusta cuando ambas concuerdan en la enseñanza. El control de pista invertida produjo 3–4 errores seguros y excedió el presupuesto de CPU; 128/128 en los demás casos no compensa esos fallos. El bot fresco aprendió F2 con tres candidatos, de modo que el ahorro de dos candidatos **no demuestra** menor costo total de adquirir F1+F2. La fuente suma 1,40–2,60 s de CPU, y F2 educado 1,13–1,56 s, frente a F2 fresco 1,12–1,55 s.
 - B-2 conserva solo dos vistas rivales, detecta proyecciones en hitos de experiencia y elige entre acciones **ofrecidas** por el entorno; todavía no inventa por sí mismo intervenciones arbitrarias. Su prueba de operador usa sustrato `suma/mínimo/máximo` escrito por el desarrollador; Leobot seleccionó y compuso un plegado y sus umbrales, no inventó aritmética desde cero. La transferencia es entre disposiciones numéricas, no entre modalidades. Antes de la observación discriminante el sistema se abstuvo en 126/128 casos: cautela no equivale a resolverlos. No se midió por separado el CPU interno de cada subfase de verificación; la cifra de síntesis incluye validación.

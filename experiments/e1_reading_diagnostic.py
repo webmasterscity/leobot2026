@@ -18,7 +18,7 @@ from experiments.agi_board import (MLQA_ARCHIVE_SHA, MLQA_MEMBER, MLQA_URL,
 
 
 ROOT = Path(__file__).resolve().parents[1]
-TAG = 'freeze-E-1'
+TAG = 'freeze-E-1b'
 
 
 def git(*args):
@@ -36,8 +36,8 @@ def assert_frozen(tree):
 
 def cases(tree):
     with urllib.request.urlopen(MLQA_URL, timeout=20) as response:
-        archive_data = response.read(40 * 1024 * 1024 + 1)
-    if len(archive_data) > 40 * 1024 * 1024:
+        archive_data = response.read(80 * 1024 * 1024 + 1)
+    if len(archive_data) > 80 * 1024 * 1024:
         raise RuntimeError('Archivo supera presupuesto')
     if sha256(archive_data).hexdigest() != MLQA_ARCHIVE_SHA:
         raise RuntimeError('El archivo MLQA no coincide con el preregistro')
@@ -89,7 +89,7 @@ def run():
                                'answer': round(answer_cpu, 6)}})
     assert_frozen(tree)
     summary = {'tag': TAG, 'engine_tree': tree, 'engine_unchanged': True,
-               'preregistration': 'prereg/E-1-diagnostico-lectura-literal.md',
+               'preregistration': 'prereg/E-1b-presupuesto-descarga.md',
                'source': 'https://github.com/facebookresearch/MLQA',
                'source_cases': source_count, 'archive_bytes': archive_bytes,
                'cases': len(rows), 'pre_exact': sum(x['pre_exact'] for x in rows),
