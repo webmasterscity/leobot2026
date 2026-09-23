@@ -1,0 +1,15 @@
+# E-6 — Promoción de relaciones por compresión contrastiva
+
+Preregistrado antes de modificar motor. El aprendiz actual prefiere primero el número de apoyos; un ancla genérica presente en muchas oraciones puede ganar a una relación más precisa. E-3 halló plantillas opacas sobre «fue», «como» y otros conectores que absorbían cláusulas largas. E-5 confirmó que aumentar fragmentos no ayuda. Hipótesis: una plantilla debe ahorrar descripción de texto después de pagar por los límites de sus argumentos; si no comprime, permanece como observación provisional. Alternativa simple: conservar el ranking actual por apoyo.
+
+## Mecanismo y desarrollo visible
+
+Para cada candidato ya admitido por antiunificación, calcular `ganancia = (n_apoyos-1)*n_tokens_fijos - 0.25*Σ log2(1+n_tokens_del_argumento)`. Exigir ganancia >1 y priorizarla antes del número de apoyos. El término logarítmico aproxima el costo de delimitar argumentos variables; 0,25 expresa esos bits en unidades de token. Es un criterio de complejidad, sin lista de palabras ni dominio. Desarrollo exploratorio previo al preregistro, solo en textos de enseñanza de E-3: puntuó -2,54, -3,00, +0,39, -4,76 y -1,83 en cinco plantillas observadas; una relación sintética conocida puntuó +4,50. Esos seis valores no son reserva ni prueba de generalidad. Si funciona, sustituye el ranking por apoyos y evita ampliar listas de conectores prohibidos.
+
+## Reserva y controles
+
+Archivo MLQA español fijado en E-1. Excluir identificadores del tablero, E-1b, E-2, E-3 y E-5. Después de congelar el nuevo árbol, elegir 30 artículos de enseñanza y 20 artículos de prueba distintos con semilla `sha256((<huella> + ':E-6').encode())`; ninguna pregunta o respuesta se enseña. Tratamiento con el filtro y ranking, ablación con la misma información y aprendiz anterior. Control adicional: textos con orden de tokens barajado, tanto tratamiento como ablación; y bot fresco en prueba. Medir promociones reales y barajadas, cobertura de respuesta en argumentos cortos (≤8 tokens) y cualquiera, exact match, CPU, candidatos examinados, RAM y reinicio. Si la fuente posteriormente contradice un hecho promovido, comprobar si sigue activo; no declarar corrección si solo se abstiene en otra ruta. Motor congelado durante cada ensayo.
+
+## Criterio y presupuesto
+
+Promover solo si la tasa de promociones en texto barajado baja al menos 50 % frente a la ablación, la cobertura de respuestas en argumentos de texto real no cae frente a la ablación, y la regresión completa no presenta fallos nuevos. Además, al menos una respuesta debe aparecer en un argumento ≤8 tokens, o se registra mejora de cautela **sin** promoción de capacidad lectora. No se exige que responda preguntas en esta etapa, pero 0 respuestas no cierra E. Si falla cualquier criterio, retirar el cambio del motor y conservar el resultado. Presupuesto: 30+20 artículos por brazo, 80 MiB descarga, 120 s CPU, 180 s pared; rápida ≤40 s y completa ≤600 s solo antes de tag estable. Si el orden de hash altera una decisión, repetir con semillas 0/1/2.
