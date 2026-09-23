@@ -10,10 +10,12 @@ Fecha: 2026-09-23. Preregistro previo al código. Base: motor de `freeze-G-28` (
 
 ## Hipótesis (mecanismos aprendidos, sin listas de palabras)
 
-(a) Solo hay respuesta por tramo si la pregunta contiene una palabra ausente de la oración cuya fuerza aprendida como marcador de hueco es alta: fue clave en ≥5 ejemplos de educación y estuvo ausente de la oración que responde en ≥50 % de las preguntas donde apareció. Si no, abstención `no_gap_marker`.
+(a) Solo hay respuesta por tramo si la pregunta contiene una palabra ausente de la oración cuya fuerza aprendida como marcador de hueco es alta: fue clave en ≥3 ejemplos de educación y estuvo ausente de la oración que responde en ≥50 % de las preguntas donde apareció. Si no, abstención `no_gap_marker`.
 (b) Se mide en la educación con qué frecuencia la respuesta correcta contiene una palabra de anclaje de la pregunta (palabras de la pregunta presentes en la oración con peso ≥ la media de la oración). Si esa frecuencia es <5 %, los tramos con anclajes se descartan; si no, quedan como rasgo.
 (c) Correspondencias léxicas entre palabras de pregunta y de oración respondiente, aprendidas de los ejemplos con el modelo de alineación IBM-1 (EM, 5 iteraciones; [Brown y otros, 1993](https://aclanthology.org/J93-2003.pdf)), podadas a probabilidad ≥0,2 con apoyo ≥3. Una palabra de la pregunta sin coincidencia literal cuenta como presente si la oración tiene una palabra correspondiente, con peso reducido por su probabilidad, para pasaje, oración y vecinos del hueco.
 Alternativa: (a)–(b) solo bajan cobertura sin subir F1; (c) no aprende correspondencias útiles con 2000 ejemplos o introduce ruido.
+
+**Enmienda previa a cualquier corrida (2026-09-23):** el mínimo de apoyo del marcador pasó de 5 a 3. Motivo: la prueba focal existente `tests/test_reading_alignment_g28.py` enseña 3–4 ejemplos por marcador y exige respuesta; la regla 5.2 impide modificarla, y con 5 fallaba. No se había ejecutado ningún experimento de G-28b.
 
 ## Datos, controles y puerta
 
