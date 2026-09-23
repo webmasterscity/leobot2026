@@ -18,13 +18,14 @@ SUFFIX_MAX = 5
 SUFFIX_FREQ = 10
 BEAM = 12
 ARC_SMOOTHING = 2.0
+LABEL_SMOOTHING = 3.0
 _WORD = re.compile(r'\w+|[^\w\s]')
 
 
 def _empty_syntax() -> dict:
     return {'sentences': 0, 'tags': {}, 'bigrams': {}, 'trigrams': {}, 'lexicon': {},
             'suffixes': {}, 'word_counts': {}, 'arcs': {}, 'opportunities': {},
-            'arc_total': 0, 'opportunity_total': 0, 'compiled': False}
+            'arc_total': 0, 'opportunity_total': 0, 'compiled': False, 'labels': {}}
 
 
 def _distance(d: int) -> str:
@@ -49,9 +50,12 @@ class SyntaxMixin:
     """Mixed into Bot; learned state lives in ``syntax_model``."""
 
     # ----- learning ------------------------------------------------------
-    def observe_parsed_sentence(self, words, tags, heads) -> dict:
-        """Learn from one annotated sentence (heads are 1-based, 0 = root)."""
+    def observe_parsed_sentence(self, words, tags, heads, labels=None) -> dict:
+        """Learn from one annotated sentence (heads are 1-based, 0 = root);
+        dependency functions are learned too when the demonstration has them."""
         if not (len(words) == len(tags) == len(heads)) or not words:
+            return {'status': 'syntax_example_rejected'}
+        if labels is not None and len(labels) != len(words):
             return {'status': 'syntax_example_rejected'}
         model = self.syntax_model
         model['sentences'] += 1
@@ -78,7 +82,63 @@ class SyntaxMixin:
                         _add(model['arcs'], feature)
         model['arc_total'] += len(words)
         model['opportunity_total'] += len(words) * len(words)
+        if labels is not None:
+            table = model.setdefault('labels', {})
+            for d, label in enumerate(labels, 1):
+                for context in self._label_contexts(d, heads[d - 1], lowered, tags, heads,
+                                                    model['word_counts'], True):
+                    row = table.setdefault(context, {})
+                    row[label] = row.get(label, 0) + 1
         return {'status': 'syntax_example_learned'}
+
+    @staticmethod
+    def _label_contexts(d, h, words, tags, heads, counts, lexical) -> list[str]:
+        """Contexts for a dependency's function, most general first.  The
+        marker is the leftmost word attached to the dependent before it (a
+        preposition or article, learned from the data; no class names)."""
+        head_tag = tags[h - 1] if h else 'ROOT'
+        dep_tag = tags[d - 1]
+        direction = 'R' if h < d else 'L'
+        distance = _distance(h - d) if h else 'root'
+        before = [i for i in range(1, d) if heads[i - 1] == d]
+        marker = words[before[0] - 1] if before else '-'
+        if counts.get(marker, 0) < LEXICAL_MIN:
+            marker = '?' if before else '-'
+        contexts = [f'1\x1f{dep_tag}', f'2\x1f{head_tag}\x1f{dep_tag}\x1f{direction}']
+        if lexical:
+            contexts.append(f'3\x1f{head_tag}\x1f{dep_tag}\x1f{direction}\x1f{marker}')
+        contexts.append(f'4\x1f{head_tag}\x1f{dep_tag}\x1f{direction}\x1f{distance}')
+        if lexical:
+            contexts.append(f'5\x1f{head_tag}\x1f{dep_tag}\x1f{direction}\x1f{distance}\x1f{marker}')
+            dep_word = words[d - 1]
+            if counts.get(dep_word, 0) >= LEXICAL_MIN:
+                contexts.append(f'6\x1f{head_tag}\x1f{dep_tag}\x1f{dep_word}\x1f{direction}\x1f{marker}')
+        return contexts
+
+    def label_arcs(self, words, tags, heads, lexical: bool = True) -> list[str] | None:
+        """Most probable function of each arc, smoothing each context toward
+        the more general one (no gradient, no classifier weights)."""
+        table = self.syntax_model.get('labels') or {}
+        if not table:
+            return None
+        lowered = [w.lower() for w in words]
+        counts = self.syntax_model['word_counts']
+        inventory = sorted({label for row in table.values() for label in row})
+        estimates = []
+        for d in range(1, len(words) + 1):
+            estimate = {label: 1.0 / len(inventory) for label in inventory}
+            for context in self._label_contexts(d, heads[d - 1], lowered, tags, heads, counts, lexical):
+                row = table.get(context)
+                if not row:
+                    continue
+                seen = sum(row.values())
+                estimate = {label: (row.get(label, 0) + LABEL_SMOOTHING * p) / (seen + LABEL_SMOOTHING)
+                            for label, p in estimate.items()}
+            estimates.append(estimate)
+        # Enforcing a learned one-per-head uniqueness was tried in development
+        # and lowered LAS (0.693 -> 0.682); functions are chosen per arc.
+        out = [max(inventory, key=lambda label: (e[label], label)) for e in estimates]
+        return out
 
     @staticmethod
     def _arc_features(h, d, words, tags, counts) -> list[str]:
@@ -235,7 +295,11 @@ class SyntaxMixin:
                     total += value
                 score[h][d] = total
         heads = self._eisner(score, n)
-        return {'status': 'parsed_syntax', 'words': list(words), 'tags': tags, 'heads': heads}
+        result = {'status': 'parsed_syntax', 'words': list(words), 'tags': tags, 'heads': heads}
+        labels = self.label_arcs(words, tags, heads)
+        if labels is not None:
+            result['labels'] = labels
+        return result
 
     @staticmethod
     def _eisner(score, n) -> list[int]:
