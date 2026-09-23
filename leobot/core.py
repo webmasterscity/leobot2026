@@ -109,6 +109,9 @@ class KnowledgeBase:
         self.entity_predicates: dict[str, set[str]] = defaultdict(set)
         self.entity_predicate_counts: dict[tuple[str, str], int] = defaultdict(int)
         self.dedup: dict[tuple[Atom, str], str] = {}
+        # G-37: the facts asserting each exact atom (any source), so asking
+        # for a ground fact never scans a per-argument index.
+        self.atom_facts: dict[Atom, set[str]] = {}
         self.arity: dict[str, int] = {}
         self.rules: dict[str, Rule] = {}
         self.heads: dict[str, dict[str, Rule]] = defaultdict(dict)
@@ -141,6 +144,7 @@ class KnowledgeBase:
             self.entity_predicate_counts[(value, base)] += 1
             self.entity_predicates[value].add(base)
         self.dedup[key] = fid
+        self.atom_facts.setdefault(atom, set()).add(fid)
         self.revision += 1
         return fid
 
@@ -149,6 +153,11 @@ class KnowledgeBase:
             return False
         fact = self.facts.pop(fid)
         atom = fact['atom']
+        same = self.atom_facts.get(atom)
+        if same is not None:
+            same.discard(fid)
+            if not same:
+                self.atom_facts.pop(atom, None)
         self.buckets[atom.pred].remove(fid)
         for pos, value in enumerate(atom.args):
             self.indices[(atom.pred, pos, value)].remove(fid)
@@ -179,6 +188,10 @@ class KnowledgeBase:
         return nid
 
     def matches(self, pattern: Atom) -> Iterator[dict]:
+        if pattern.ground:
+            for fid in sorted(self.atom_facts.get(pattern, ()), key=lambda x: int(x[1:])):
+                yield self.facts[fid]
+            return
         ids = self.buckets.get(pattern.pred, set())
         for pos, value in enumerate(pattern.args):
             if not variable(value):
@@ -192,6 +205,8 @@ class KnowledgeBase:
                 yield fact
 
     def contains(self, atom: Atom) -> bool:
+        if atom.ground:
+            return bool(self.atom_facts.get(atom))
         return next(self.matches(atom), None) is not None
 
     def get_fact(self, fid: str) -> dict | None:
