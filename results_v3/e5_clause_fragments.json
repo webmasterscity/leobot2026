@@ -1,0 +1,1154 @@
+{
+  "tag": "freeze-E-5",
+  "engine_tree": "f6f7764194214378654c0f605be7433094fd8572",
+  "engine_unchanged": true,
+  "preregistration": "prereg/E-5-fragmentos-contrastivos.md",
+  "train_articles": 30,
+  "test_articles": 20,
+  "archive_bytes": 75719050,
+  "training": {
+    "treatment": {
+      "facts": 33,
+      "promotions": 6,
+      "fragments": 71,
+      "cpu_s": 8.168753
+    },
+    "ablation": {
+      "facts": 30,
+      "promotions": 5,
+      "fragments": 0,
+      "cpu_s": 1.785345
+    },
+    "shuffled_treatment": {
+      "facts": 29,
+      "promotions": 6,
+      "fragments": 76,
+      "cpu_s": 11.445169
+    },
+    "shuffled_ablation": {
+      "facts": 35,
+      "promotions": 7,
+      "fragments": 0,
+      "cpu_s": 1.446431
+    }
+  },
+  "counts": {
+    "treatment": {
+      "any_arg": 8,
+      "short_arg": 2,
+      "facts_added": 44,
+      "promotions": 6,
+      "fragment_candidates": 31,
+      "fragment_promotions": 2,
+      "exact": 0
+    },
+    "ablation": {
+      "any_arg": 8,
+      "short_arg": 3,
+      "facts_added": 40,
+      "promotions": 7,
+      "fragment_candidates": 0,
+      "fragment_promotions": 0,
+      "exact": 0
+    },
+    "shuffled_treatment": {
+      "any_arg": 3,
+      "short_arg": 1,
+      "facts_added": 50,
+      "promotions": 11,
+      "fragment_candidates": 31,
+      "fragment_promotions": 2,
+      "exact": 0
+    },
+    "shuffled_ablation": {
+      "any_arg": 5,
+      "short_arg": 1,
+      "facts_added": 37,
+      "promotions": 5,
+      "fragment_candidates": 0,
+      "fragment_promotions": 0,
+      "exact": 0
+    },
+    "fresh": {
+      "any_arg": 0,
+      "short_arg": 0,
+      "facts_added": 3,
+      "promotions": 1,
+      "fragment_candidates": 53,
+      "fragment_promotions": 0,
+      "exact": 0
+    }
+  },
+  "reload_ok": true,
+  "counterevidence": {
+    "tested": true,
+    "positive_facts_before": 4,
+    "positive_facts_after": 4,
+    "positive_withdrawn": false
+  },
+  "cpu_s": 45.693561,
+  "wall_s": 52.294,
+  "max_rss_kib": 104156,
+  "rows": [
+    {
+      "id": "0e7fe71df1a928dd9bc4f866d0e854c1b121bc51",
+      "treatment": {
+        "any_arg": false,
+        "short_arg": false,
+        "facts_added": 0,
+        "promotions": 0,
+        "fragment_candidates": 0,
+        "fragment_promotions": 0,
+        "exact": false,
+        "status": "unrecognized"
+      },
+      "ablation": {
+        "any_arg": false,
+        "short_arg": false,
+        "facts_added": 0,
+        "promotions": 0,
+        "fragment_candidates": 0,
+        "fragment_promotions": 0,
+        "exact": false,
+        "status": "unrecognized"
+      },
+      "shuffled_treatment": {
+        "any_arg": false,
+        "short_arg": false,
+        "facts_added": 0,
+        "promotions": 0,
+        "fragment_candidates": 0,
+        "fragment_promotions": 0,
+        "exact": false,
+        "status": "unrecognized"
+      },
+      "shuffled_ablation": {
+        "any_arg": false,
+        "short_arg": false,
+        "facts_added": 0,
+        "promotions": 0,
+        "fragment_candidates": 0,
+        "fragment_promotions": 0,
+        "exact": false,
+        "status": "unrecognized"
+      },
+      "fresh": {
+        "any_arg": false,
+        "short_arg": false,
+        "facts_added": 0,
+        "promotions": 0,
+        "fragment_candidates": 0,
+        "fragment_promotions": 0,
+        "exact": false,
+        "status": "unrecognized"
+      }
+    },
+    {
+      "id": "20b8de16e8a657c1ff896646aad1725094916b44",
+      "treatment": {
+        "any_arg": false,
+        "short_arg": false,
+        "facts_added": 0,
+        "promotions": 0,
+        "fragment_candidates": 0,
+        "fragment_promotions": 0,
+        "exact": false,
+        "status": "unrecognized"
+      },
+      "ablation": {
+        "any_arg": false,
+        "short_arg": false,
+        "facts_added": 0,
+        "promotions": 0,
+        "fragment_candidates": 0,
+        "fragment_promotions": 0,
+        "exact": false,
+        "status": "unrecognized"
+      },
+      "shuffled_treatment": {
+        "any_arg": false,
+        "short_arg": false,
+        "facts_added": 1,
+        "promotions": 0,
+        "fragment_candidates": 0,
+        "fragment_promotions": 0,
+        "exact": false,
+        "status": "unrecognized"
+      },
+      "shuffled_ablation": {
+        "any_arg": false,
+        "short_arg": false,
+        "facts_added": 1,
+        "promotions": 0,
+        "fragment_candidates": 0,
+        "fragment_promotions": 0,
+        "exact": false,
+        "status": "unrecognized"
+      },
+      "fresh": {
+        "any_arg": false,
+        "short_arg": false,
+        "facts_added": 0,
+        "promotions": 0,
+        "fragment_candidates": 0,
+        "fragment_promotions": 0,
+        "exact": false,
+        "status": "unrecognized"
+      }
+    },
+    {
+      "id": "7e30c453ed3fb010b519036711e71e78014f0c4c",
+      "treatment": {
+        "any_arg": true,
+        "short_arg": true,
+        "facts_added": 2,
+        "promotions": 0,
+        "fragment_candidates": 0,
+        "fragment_promotions": 0,
+        "exact": false,
+        "status": "unrecognized"
+      },
+      "ablation": {
+        "any_arg": true,
+        "short_arg": true,
+        "facts_added": 5,
+        "promotions": 1,
+        "fragment_candidates": 0,
+        "fragment_promotions": 0,
+        "exact": false,
+        "status": "unrecognized"
+      },
+      "shuffled_treatment": {
+        "any_arg": false,
+        "short_arg": false,
+        "facts_added": 1,
+        "promotions": 0,
+        "fragment_candidates": 0,
+        "fragment_promotions": 0,
+        "exact": false,
+        "status": "unrecognized"
+      },
+      "shuffled_ablation": {
+        "any_arg": false,
+        "short_arg": false,
+        "facts_added": 2,
+        "promotions": 0,
+        "fragment_candidates": 0,
+        "fragment_promotions": 0,
+        "exact": false,
+        "status": "unrecognized"
+      },
+      "fresh": {
+        "any_arg": false,
+        "short_arg": false,
+        "facts_added": 0,
+        "promotions": 0,
+        "fragment_candidates": 2,
+        "fragment_promotions": 0,
+        "exact": false,
+        "status": "unrecognized"
+      }
+    },
+    {
+      "id": "b8d6ce621991a42bca00bc86237fbf2c77ebf2fe",
+      "treatment": {
+        "any_arg": true,
+        "short_arg": false,
+        "facts_added": 1,
+        "promotions": 0,
+        "fragment_candidates": 0,
+        "fragment_promotions": 0,
+        "exact": false,
+        "status": "unrecognized"
+      },
+      "ablation": {
+        "any_arg": true,
+        "short_arg": false,
+        "facts_added": 1,
+        "promotions": 0,
+        "fragment_candidates": 0,
+        "fragment_promotions": 0,
+        "exact": false,
+        "status": "unrecognized"
+      },
+      "shuffled_treatment": {
+        "any_arg": false,
+        "short_arg": false,
+        "facts_added": 0,
+        "promotions": 0,
+        "fragment_candidates": 0,
+        "fragment_promotions": 0,
+        "exact": false,
+        "status": "unrecognized"
+      },
+      "shuffled_ablation": {
+        "any_arg": true,
+        "short_arg": false,
+        "facts_added": 1,
+        "promotions": 0,
+        "fragment_candidates": 0,
+        "fragment_promotions": 0,
+        "exact": false,
+        "status": "unrecognized"
+      },
+      "fresh": {
+        "any_arg": false,
+        "short_arg": false,
+        "facts_added": 0,
+        "promotions": 0,
+        "fragment_candidates": 0,
+        "fragment_promotions": 0,
+        "exact": false,
+        "status": "unrecognized"
+      }
+    },
+    {
+      "id": "26745e8c60c0cc29e1d4070c4435ddc11daf9866",
+      "treatment": {
+        "any_arg": false,
+        "short_arg": false,
+        "facts_added": 2,
+        "promotions": 0,
+        "fragment_candidates": 1,
+        "fragment_promotions": 0,
+        "exact": false,
+        "status": "unrecognized"
+      },
+      "ablation": {
+        "any_arg": true,
+        "short_arg": true,
+        "facts_added": 5,
+        "promotions": 1,
+        "fragment_candidates": 0,
+        "fragment_promotions": 0,
+        "exact": false,
+        "status": "unrecognized"
+      },
+      "shuffled_treatment": {
+        "any_arg": false,
+        "short_arg": false,
+        "facts_added": 5,
+        "promotions": 1,
+        "fragment_candidates": 1,
+        "fragment_promotions": 0,
+        "exact": false,
+        "status": "unrecognized"
+      },
+      "shuffled_ablation": {
+        "any_arg": false,
+        "short_arg": false,
+        "facts_added": 5,
+        "promotions": 1,
+        "fragment_candidates": 0,
+        "fragment_promotions": 0,
+        "exact": false,
+        "status": "unrecognized"
+      },
+      "fresh": {
+        "any_arg": false,
+        "short_arg": false,
+        "facts_added": 3,
+        "promotions": 1,
+        "fragment_candidates": 4,
+        "fragment_promotions": 0,
+        "exact": false,
+        "status": "unrecognized"
+      }
+    },
+    {
+      "id": "0c15cd984d26aac39e9ef1be954bc8fee74b43b3",
+      "treatment": {
+        "any_arg": false,
+        "short_arg": false,
+        "facts_added": 1,
+        "promotions": 0,
+        "fragment_candidates": 5,
+        "fragment_promotions": 0,
+        "exact": false,
+        "status": "unrecognized"
+      },
+      "ablation": {
+        "any_arg": false,
+        "short_arg": false,
+        "facts_added": 7,
+        "promotions": 2,
+        "fragment_candidates": 0,
+        "fragment_promotions": 0,
+        "exact": false,
+        "status": "unrecognized"
+      },
+      "shuffled_treatment": {
+        "any_arg": false,
+        "short_arg": false,
+        "facts_added": 3,
+        "promotions": 1,
+        "fragment_candidates": 5,
+        "fragment_promotions": 0,
+        "exact": false,
+        "status": "unrecognized"
+      },
+      "shuffled_ablation": {
+        "any_arg": false,
+        "short_arg": false,
+        "facts_added": 4,
+        "promotions": 1,
+        "fragment_candidates": 0,
+        "fragment_promotions": 0,
+        "exact": false,
+        "status": "unrecognized"
+      },
+      "fresh": {
+        "any_arg": false,
+        "short_arg": false,
+        "facts_added": 0,
+        "promotions": 0,
+        "fragment_candidates": 7,
+        "fragment_promotions": 0,
+        "exact": false,
+        "status": "unrecognized"
+      }
+    },
+    {
+      "id": "76a91acfc7a3e455f20230a5526ad72d5f102722",
+      "treatment": {
+        "any_arg": false,
+        "short_arg": false,
+        "facts_added": 5,
+        "promotions": 1,
+        "fragment_candidates": 0,
+        "fragment_promotions": 0,
+        "exact": false,
+        "status": "unrecognized"
+      },
+      "ablation": {
+        "any_arg": false,
+        "short_arg": false,
+        "facts_added": 1,
+        "promotions": 0,
+        "fragment_candidates": 0,
+        "fragment_promotions": 0,
+        "exact": false,
+        "status": "unrecognized"
+      },
+      "shuffled_treatment": {
+        "any_arg": false,
+        "short_arg": false,
+        "facts_added": 2,
+        "promotions": 0,
+        "fragment_candidates": 0,
+        "fragment_promotions": 0,
+        "exact": false,
+        "status": "unrecognized"
+      },
+      "shuffled_ablation": {
+        "any_arg": false,
+        "short_arg": false,
+        "facts_added": 3,
+        "promotions": 0,
+        "fragment_candidates": 0,
+        "fragment_promotions": 0,
+        "exact": false,
+        "status": "unrecognized"
+      },
+      "fresh": {
+        "any_arg": false,
+        "short_arg": false,
+        "facts_added": 0,
+        "promotions": 0,
+        "fragment_candidates": 0,
+        "fragment_promotions": 0,
+        "exact": false,
+        "status": "unrecognized"
+      }
+    },
+    {
+      "id": "08ae2dcfe6fff36b6f0614591249b0bd6a742503",
+      "treatment": {
+        "any_arg": false,
+        "short_arg": false,
+        "facts_added": 4,
+        "promotions": 1,
+        "fragment_candidates": 5,
+        "fragment_promotions": 1,
+        "exact": false,
+        "status": "unrecognized"
+      },
+      "ablation": {
+        "any_arg": true,
+        "short_arg": false,
+        "facts_added": 3,
+        "promotions": 1,
+        "fragment_candidates": 0,
+        "fragment_promotions": 0,
+        "exact": false,
+        "status": "unrecognized"
+      },
+      "shuffled_treatment": {
+        "any_arg": false,
+        "short_arg": false,
+        "facts_added": 0,
+        "promotions": 0,
+        "fragment_candidates": 2,
+        "fragment_promotions": 0,
+        "exact": false,
+        "status": "unrecognized"
+      },
+      "shuffled_ablation": {
+        "any_arg": false,
+        "short_arg": false,
+        "facts_added": 0,
+        "promotions": 0,
+        "fragment_candidates": 0,
+        "fragment_promotions": 0,
+        "exact": false,
+        "status": "unrecognized"
+      },
+      "fresh": {
+        "any_arg": false,
+        "short_arg": false,
+        "facts_added": 0,
+        "promotions": 0,
+        "fragment_candidates": 5,
+        "fragment_promotions": 0,
+        "exact": false,
+        "status": "unrecognized"
+      }
+    },
+    {
+      "id": "dfaf791aa9f18fb7b14542482931c6ecbd232210",
+      "treatment": {
+        "any_arg": true,
+        "short_arg": false,
+        "facts_added": 2,
+        "promotions": 0,
+        "fragment_candidates": 1,
+        "fragment_promotions": 0,
+        "exact": false,
+        "status": "unrecognized"
+      },
+      "ablation": {
+        "any_arg": true,
+        "short_arg": false,
+        "facts_added": 2,
+        "promotions": 0,
+        "fragment_candidates": 0,
+        "fragment_promotions": 0,
+        "exact": false,
+        "status": "unrecognized"
+      },
+      "shuffled_treatment": {
+        "any_arg": false,
+        "short_arg": false,
+        "facts_added": 2,
+        "promotions": 0,
+        "fragment_candidates": 0,
+        "fragment_promotions": 0,
+        "exact": false,
+        "status": "unrecognized"
+      },
+      "shuffled_ablation": {
+        "any_arg": false,
+        "short_arg": false,
+        "facts_added": 3,
+        "promotions": 0,
+        "fragment_candidates": 0,
+        "fragment_promotions": 0,
+        "exact": false,
+        "status": "unrecognized"
+      },
+      "fresh": {
+        "any_arg": false,
+        "short_arg": false,
+        "facts_added": 0,
+        "promotions": 0,
+        "fragment_candidates": 3,
+        "fragment_promotions": 0,
+        "exact": false,
+        "status": "unrecognized"
+      }
+    },
+    {
+      "id": "a79f27ec5ba15e2816b22eecc823fb7b2abf52bf",
+      "treatment": {
+        "any_arg": false,
+        "short_arg": false,
+        "facts_added": 0,
+        "promotions": 0,
+        "fragment_candidates": 3,
+        "fragment_promotions": 0,
+        "exact": false,
+        "status": "unrecognized"
+      },
+      "ablation": {
+        "any_arg": false,
+        "short_arg": false,
+        "facts_added": 0,
+        "promotions": 0,
+        "fragment_candidates": 0,
+        "fragment_promotions": 0,
+        "exact": false,
+        "status": "unrecognized"
+      },
+      "shuffled_treatment": {
+        "any_arg": false,
+        "short_arg": false,
+        "facts_added": 3,
+        "promotions": 1,
+        "fragment_candidates": 3,
+        "fragment_promotions": 0,
+        "exact": false,
+        "status": "unrecognized"
+      },
+      "shuffled_ablation": {
+        "any_arg": true,
+        "short_arg": true,
+        "facts_added": 3,
+        "promotions": 1,
+        "fragment_candidates": 0,
+        "fragment_promotions": 0,
+        "exact": false,
+        "status": "unrecognized"
+      },
+      "fresh": {
+        "any_arg": false,
+        "short_arg": false,
+        "facts_added": 0,
+        "promotions": 0,
+        "fragment_candidates": 3,
+        "fragment_promotions": 0,
+        "exact": false,
+        "status": "unrecognized"
+      }
+    },
+    {
+      "id": "3c7d1a724da56fe9f8a596194931cf033531bd6b",
+      "treatment": {
+        "any_arg": true,
+        "short_arg": true,
+        "facts_added": 8,
+        "promotions": 2,
+        "fragment_candidates": 2,
+        "fragment_promotions": 0,
+        "exact": false,
+        "status": "unrecognized"
+      },
+      "ablation": {
+        "any_arg": true,
+        "short_arg": true,
+        "facts_added": 4,
+        "promotions": 1,
+        "fragment_candidates": 0,
+        "fragment_promotions": 0,
+        "exact": false,
+        "status": "unrecognized"
+      },
+      "shuffled_treatment": {
+        "any_arg": true,
+        "short_arg": true,
+        "facts_added": 11,
+        "promotions": 3,
+        "fragment_candidates": 2,
+        "fragment_promotions": 0,
+        "exact": false,
+        "status": "unrecognized"
+      },
+      "shuffled_ablation": {
+        "any_arg": true,
+        "short_arg": false,
+        "facts_added": 4,
+        "promotions": 1,
+        "fragment_candidates": 0,
+        "fragment_promotions": 0,
+        "exact": false,
+        "status": "unrecognized"
+      },
+      "fresh": {
+        "any_arg": false,
+        "short_arg": false,
+        "facts_added": 0,
+        "promotions": 0,
+        "fragment_candidates": 6,
+        "fragment_promotions": 0,
+        "exact": false,
+        "status": "unrecognized"
+      }
+    },
+    {
+      "id": "336fcfe0f5885d73cff953cb764dbada1c41c0c4",
+      "treatment": {
+        "any_arg": true,
+        "short_arg": false,
+        "facts_added": 1,
+        "promotions": 0,
+        "fragment_candidates": 0,
+        "fragment_promotions": 0,
+        "exact": false,
+        "status": "unrecognized"
+      },
+      "ablation": {
+        "any_arg": true,
+        "short_arg": false,
+        "facts_added": 1,
+        "promotions": 0,
+        "fragment_candidates": 0,
+        "fragment_promotions": 0,
+        "exact": false,
+        "status": "unrecognized"
+      },
+      "shuffled_treatment": {
+        "any_arg": true,
+        "short_arg": false,
+        "facts_added": 1,
+        "promotions": 0,
+        "fragment_candidates": 0,
+        "fragment_promotions": 0,
+        "exact": false,
+        "status": "unrecognized"
+      },
+      "shuffled_ablation": {
+        "any_arg": true,
+        "short_arg": false,
+        "facts_added": 1,
+        "promotions": 0,
+        "fragment_candidates": 0,
+        "fragment_promotions": 0,
+        "exact": false,
+        "status": "unrecognized"
+      },
+      "fresh": {
+        "any_arg": false,
+        "short_arg": false,
+        "facts_added": 0,
+        "promotions": 0,
+        "fragment_candidates": 2,
+        "fragment_promotions": 0,
+        "exact": false,
+        "status": "unrecognized"
+      }
+    },
+    {
+      "id": "a12d35035e6e86a3f98b92812d301f0669ac3ff3",
+      "treatment": {
+        "any_arg": false,
+        "short_arg": false,
+        "facts_added": 0,
+        "promotions": 0,
+        "fragment_candidates": 5,
+        "fragment_promotions": 0,
+        "exact": false,
+        "status": "unrecognized"
+      },
+      "ablation": {
+        "any_arg": false,
+        "short_arg": false,
+        "facts_added": 0,
+        "promotions": 0,
+        "fragment_candidates": 0,
+        "fragment_promotions": 0,
+        "exact": false,
+        "status": "unrecognized"
+      },
+      "shuffled_treatment": {
+        "any_arg": false,
+        "short_arg": false,
+        "facts_added": 6,
+        "promotions": 2,
+        "fragment_candidates": 3,
+        "fragment_promotions": 1,
+        "exact": false,
+        "status": "unrecognized"
+      },
+      "shuffled_ablation": {
+        "any_arg": false,
+        "short_arg": false,
+        "facts_added": 3,
+        "promotions": 1,
+        "fragment_candidates": 0,
+        "fragment_promotions": 0,
+        "exact": false,
+        "status": "unrecognized"
+      },
+      "fresh": {
+        "any_arg": false,
+        "short_arg": false,
+        "facts_added": 0,
+        "promotions": 0,
+        "fragment_candidates": 5,
+        "fragment_promotions": 0,
+        "exact": false,
+        "status": "unrecognized"
+      }
+    },
+    {
+      "id": "94c11504a431e631dd746bdad3e8b1025716e2c6",
+      "treatment": {
+        "any_arg": false,
+        "short_arg": false,
+        "facts_added": 1,
+        "promotions": 0,
+        "fragment_candidates": 2,
+        "fragment_promotions": 0,
+        "exact": false,
+        "status": "unrecognized"
+      },
+      "ablation": {
+        "any_arg": false,
+        "short_arg": false,
+        "facts_added": 1,
+        "promotions": 0,
+        "fragment_candidates": 0,
+        "fragment_promotions": 0,
+        "exact": false,
+        "status": "unrecognized"
+      },
+      "shuffled_treatment": {
+        "any_arg": false,
+        "short_arg": false,
+        "facts_added": 0,
+        "promotions": 0,
+        "fragment_candidates": 3,
+        "fragment_promotions": 0,
+        "exact": false,
+        "status": "unrecognized"
+      },
+      "shuffled_ablation": {
+        "any_arg": false,
+        "short_arg": false,
+        "facts_added": 0,
+        "promotions": 0,
+        "fragment_candidates": 0,
+        "fragment_promotions": 0,
+        "exact": false,
+        "status": "unrecognized"
+      },
+      "fresh": {
+        "any_arg": false,
+        "short_arg": false,
+        "facts_added": 0,
+        "promotions": 0,
+        "fragment_candidates": 3,
+        "fragment_promotions": 0,
+        "exact": false,
+        "status": "unrecognized"
+      }
+    },
+    {
+      "id": "d83b37e4cba0b8fb025808e260613e932f894a4e",
+      "treatment": {
+        "any_arg": false,
+        "short_arg": false,
+        "facts_added": 0,
+        "promotions": 0,
+        "fragment_candidates": 2,
+        "fragment_promotions": 0,
+        "exact": false,
+        "status": "unrecognized"
+      },
+      "ablation": {
+        "any_arg": false,
+        "short_arg": false,
+        "facts_added": 0,
+        "promotions": 0,
+        "fragment_candidates": 0,
+        "fragment_promotions": 0,
+        "exact": false,
+        "status": "unrecognized"
+      },
+      "shuffled_treatment": {
+        "any_arg": false,
+        "short_arg": false,
+        "facts_added": 0,
+        "promotions": 0,
+        "fragment_candidates": 2,
+        "fragment_promotions": 0,
+        "exact": false,
+        "status": "unrecognized"
+      },
+      "shuffled_ablation": {
+        "any_arg": false,
+        "short_arg": false,
+        "facts_added": 0,
+        "promotions": 0,
+        "fragment_candidates": 0,
+        "fragment_promotions": 0,
+        "exact": false,
+        "status": "unrecognized"
+      },
+      "fresh": {
+        "any_arg": false,
+        "short_arg": false,
+        "facts_added": 0,
+        "promotions": 0,
+        "fragment_candidates": 2,
+        "fragment_promotions": 0,
+        "exact": false,
+        "status": "unrecognized"
+      }
+    },
+    {
+      "id": "049e6e157a2c580e4371721d8bbe24150e820e97",
+      "treatment": {
+        "any_arg": false,
+        "short_arg": false,
+        "facts_added": 2,
+        "promotions": 0,
+        "fragment_candidates": 0,
+        "fragment_promotions": 0,
+        "exact": false,
+        "status": "unrecognized"
+      },
+      "ablation": {
+        "any_arg": false,
+        "short_arg": false,
+        "facts_added": 2,
+        "promotions": 0,
+        "fragment_candidates": 0,
+        "fragment_promotions": 0,
+        "exact": false,
+        "status": "unrecognized"
+      },
+      "shuffled_treatment": {
+        "any_arg": false,
+        "short_arg": false,
+        "facts_added": 3,
+        "promotions": 1,
+        "fragment_candidates": 3,
+        "fragment_promotions": 1,
+        "exact": false,
+        "status": "unrecognized"
+      },
+      "shuffled_ablation": {
+        "any_arg": false,
+        "short_arg": false,
+        "facts_added": 1,
+        "promotions": 0,
+        "fragment_candidates": 0,
+        "fragment_promotions": 0,
+        "exact": false,
+        "status": "unrecognized"
+      },
+      "fresh": {
+        "any_arg": false,
+        "short_arg": false,
+        "facts_added": 0,
+        "promotions": 0,
+        "fragment_candidates": 3,
+        "fragment_promotions": 0,
+        "exact": false,
+        "status": "unrecognized"
+      }
+    },
+    {
+      "id": "01a3c016461767cc62b28038a7bde4770d23d081",
+      "treatment": {
+        "any_arg": false,
+        "short_arg": false,
+        "facts_added": 4,
+        "promotions": 1,
+        "fragment_candidates": 0,
+        "fragment_promotions": 0,
+        "exact": false,
+        "status": "unrecognized"
+      },
+      "ablation": {
+        "any_arg": false,
+        "short_arg": false,
+        "facts_added": 0,
+        "promotions": 0,
+        "fragment_candidates": 0,
+        "fragment_promotions": 0,
+        "exact": false,
+        "status": "unrecognized"
+      },
+      "shuffled_treatment": {
+        "any_arg": false,
+        "short_arg": false,
+        "facts_added": 1,
+        "promotions": 0,
+        "fragment_candidates": 1,
+        "fragment_promotions": 0,
+        "exact": false,
+        "status": "unrecognized"
+      },
+      "shuffled_ablation": {
+        "any_arg": false,
+        "short_arg": false,
+        "facts_added": 1,
+        "promotions": 0,
+        "fragment_candidates": 0,
+        "fragment_promotions": 0,
+        "exact": false,
+        "status": "unrecognized"
+      },
+      "fresh": {
+        "any_arg": false,
+        "short_arg": false,
+        "facts_added": 0,
+        "promotions": 0,
+        "fragment_candidates": 0,
+        "fragment_promotions": 0,
+        "exact": false,
+        "status": "unrecognized"
+      }
+    },
+    {
+      "id": "ea30cdd66f08f540f72b39a624e7a9e61df232e3",
+      "treatment": {
+        "any_arg": true,
+        "short_arg": false,
+        "facts_added": 2,
+        "promotions": 0,
+        "fragment_candidates": 0,
+        "fragment_promotions": 0,
+        "exact": false,
+        "status": "unrecognized"
+      },
+      "ablation": {
+        "any_arg": false,
+        "short_arg": false,
+        "facts_added": 3,
+        "promotions": 1,
+        "fragment_candidates": 0,
+        "fragment_promotions": 0,
+        "exact": false,
+        "status": "unrecognized"
+      },
+      "shuffled_treatment": {
+        "any_arg": false,
+        "short_arg": false,
+        "facts_added": 1,
+        "promotions": 0,
+        "fragment_candidates": 2,
+        "fragment_promotions": 0,
+        "exact": false,
+        "status": "unrecognized"
+      },
+      "shuffled_ablation": {
+        "any_arg": false,
+        "short_arg": false,
+        "facts_added": 0,
+        "promotions": 0,
+        "fragment_candidates": 0,
+        "fragment_promotions": 0,
+        "exact": false,
+        "status": "unrecognized"
+      },
+      "fresh": {
+        "any_arg": false,
+        "short_arg": false,
+        "facts_added": 0,
+        "promotions": 0,
+        "fragment_candidates": 2,
+        "fragment_promotions": 0,
+        "exact": false,
+        "status": "unrecognized"
+      }
+    },
+    {
+      "id": "0d72681df562d3b59f065130cdb302f51c10212e",
+      "treatment": {
+        "any_arg": true,
+        "short_arg": false,
+        "facts_added": 3,
+        "promotions": 1,
+        "fragment_candidates": 2,
+        "fragment_promotions": 1,
+        "exact": false,
+        "status": "unrecognized"
+      },
+      "ablation": {
+        "any_arg": false,
+        "short_arg": false,
+        "facts_added": 0,
+        "promotions": 0,
+        "fragment_candidates": 0,
+        "fragment_promotions": 0,
+        "exact": false,
+        "status": "unrecognized"
+      },
+      "shuffled_treatment": {
+        "any_arg": true,
+        "short_arg": false,
+        "facts_added": 1,
+        "promotions": 0,
+        "fragment_candidates": 0,
+        "fragment_promotions": 0,
+        "exact": false,
+        "status": "unrecognized"
+      },
+      "shuffled_ablation": {
+        "any_arg": true,
+        "short_arg": false,
+        "facts_added": 1,
+        "promotions": 0,
+        "fragment_candidates": 0,
+        "fragment_promotions": 0,
+        "exact": false,
+        "status": "unrecognized"
+      },
+      "fresh": {
+        "any_arg": false,
+        "short_arg": false,
+        "facts_added": 0,
+        "promotions": 0,
+        "fragment_candidates": 2,
+        "fragment_promotions": 0,
+        "exact": false,
+        "status": "unrecognized"
+      }
+    },
+    {
+      "id": "e1224df199fcaee0fccd9154f0b55d85d49d76de",
+      "treatment": {
+        "any_arg": true,
+        "short_arg": false,
+        "facts_added": 6,
+        "promotions": 0,
+        "fragment_candidates": 3,
+        "fragment_promotions": 0,
+        "exact": false,
+        "status": "unrecognized"
+      },
+      "ablation": {
+        "any_arg": true,
+        "short_arg": false,
+        "facts_added": 5,
+        "promotions": 0,
+        "fragment_candidates": 0,
+        "fragment_promotions": 0,
+        "exact": false,
+        "status": "unrecognized"
+      },
+      "shuffled_treatment": {
+        "any_arg": false,
+        "short_arg": false,
+        "facts_added": 9,
+        "promotions": 2,
+        "fragment_candidates": 4,
+        "fragment_promotions": 0,
+        "exact": false,
+        "status": "unrecognized"
+      },
+      "shuffled_ablation": {
+        "any_arg": false,
+        "short_arg": false,
+        "facts_added": 4,
+        "promotions": 0,
+        "fragment_candidates": 0,
+        "fragment_promotions": 0,
+        "exact": false,
+        "status": "unrecognized"
+      },
+      "fresh": {
+        "any_arg": false,
+        "short_arg": false,
+        "facts_added": 0,
+        "promotions": 0,
+        "fragment_candidates": 4,
+        "fragment_promotions": 0,
+        "exact": false,
+        "status": "unrecognized"
+      }
+    }
+  ]
+}
