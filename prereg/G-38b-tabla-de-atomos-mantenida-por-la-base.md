@@ -29,6 +29,8 @@ La tabla derivada se mantiene fuera de la base, y la clave se calcula con una co
 - Se quitan `ix_facts_pred` e `ix_facts_pred_a0`: el índice de átomo exacto los cubre como prefijo.
 - En `atoms` no se crea índice para k0: la clave primaria lo cubre.
 
+**Enmienda antes del código (2026-09-23):** la clave de duplicados de `facts` (`fact_key`) une predicado, fuente y argumentos con el mismo `\x1f`. Por eso `p('a\x1fb','c')` y `p('a','b\x1fc')` con la misma fuente se toman por el mismo hecho y el segundo no se guarda (defecto ya presente en `estable-G-7`). Se codifica sin ambigüedad (JSON de la lista) y la migración recalcula la clave de todas las filas. Criterio añadido: ese caso guarda los dos hechos. Donde `estable-G-8` guarda mal ese caso, la diferencial no lo cuenta como diferencia, porque las memorias al azar no usan `\x1f`.
+
 **Qué se elimina:** el hash `_atom_key`, el mantenimiento desde Python y dos índices.
 
 ## Pruebas y puerta
