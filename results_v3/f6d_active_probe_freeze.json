@@ -1,0 +1,4548 @@
+{
+  "preregistration": "prereg/F-6d-prueba-activa-de-precondicion.md",
+  "tag": "freeze-F-6d",
+  "engine_tree": "5a8feed574ce99aff2772bc7677e04f3458ed591",
+  "engine_unchanged": true,
+  "results": [
+    {
+      "family": "ficha_intermedia",
+      "order": 17,
+      "branch": "necessary",
+      "seed": 3040711686,
+      "passed": true,
+      "source_meta": [
+        {
+          "kind": "role_set",
+          "input_arity": 4,
+          "roles": [
+            0,
+            3
+          ],
+          "sources": {
+            "raw_world:primitive_81f86d9a11403aba_a4": {
+              "family": "raw_world",
+              "support": 3
+            }
+          },
+          "families": {
+            "raw_world": 3
+          },
+          "support": 3,
+          "schema": "roles:4:0,3"
+        },
+        {
+          "kind": "role_cardinality",
+          "cardinality": 2,
+          "sources": {
+            "raw_world:primitive_81f86d9a11403aba_a4": {
+              "family": "raw_world",
+              "support": 3
+            }
+          },
+          "families": {
+            "raw_world": 3
+          },
+          "support": 3,
+          "schema": "card:2"
+        },
+        {
+          "kind": "role_topology",
+          "input_arity": 2,
+          "edges": [
+            [
+              0,
+              1
+            ]
+          ],
+          "sources": {
+            "raw_world:primitive_81f86d9a11403aba_a4": {
+              "family": "raw_world",
+              "support": 3
+            }
+          },
+          "families": {
+            "raw_world": 3
+          },
+          "support": 3,
+          "schema": "topo:2:0,1"
+        }
+      ],
+      "baseline_statuses": [
+        "pending_support",
+        "pending_support",
+        "pending_discriminating_evidence"
+      ],
+      "request": {
+        "kind": "controlled_intervention",
+        "reason": "unresolved_non_effect_role_precondition",
+        "text": "transporta a ab53d9406targetp15324 con ficha ab53d9406targeti88173 desde ab53d9406targeto30296 hasta ab53d9406targetd67274",
+        "before": [
+          [
+            "ab53d9406agent",
+            "ab53d9406targetp15324"
+          ],
+          [
+            "ab53d9406link",
+            "ab53d9406targeto30296",
+            "ab53d9406targetd67274"
+          ],
+          [
+            "ab53d9406loc",
+            "ab53d9406targetp15324",
+            "ab53d9406targeto30296"
+          ],
+          [
+            "ab53d9406place",
+            "ab53d9406targetd67274"
+          ],
+          [
+            "ab53d9406place",
+            "ab53d9406targeto30296"
+          ]
+        ],
+        "removed_fact": [
+          "ab53d9406inventory",
+          "ab53d9406targeti88173"
+        ],
+        "alternatives": [
+          "effect",
+          "no_effect"
+        ],
+        "estimated_information_bits": 1.0,
+        "estimated_cost": 1.0
+      },
+      "before": {
+        "full": 32,
+        "full_correct": 0,
+        "missing": 32,
+        "missing_correct": 32,
+        "unsafe": 0,
+        "unsafe_no_link": 0,
+        "unsafe_no_location": 0,
+        "cpu_s": 0.004502,
+        "p50_ms": 0.02158,
+        "p95_ms": 0.02695
+      },
+      "feedback_status": "operator_learned",
+      "after": {
+        "full": 32,
+        "full_correct": 32,
+        "missing": 32,
+        "missing_correct": 32,
+        "unsafe": 0,
+        "unsafe_no_link": 0,
+        "unsafe_no_location": 0,
+        "cpu_s": 0.009403,
+        "p50_ms": 0.05223,
+        "p95_ms": 0.05878
+      },
+      "procedure_status": "procedure_learned",
+      "procedure": {
+        "correct": 128,
+        "total": 128,
+        "wrong_confident": 0,
+        "p50_ms": 0.01055,
+        "p95_ms": 0.03443,
+        "max_ms": 0.0632
+      },
+      "counter_status": "raw_world_conflict",
+      "action_depends_on_meta": true,
+      "after_counter": {
+        "active_actions": 0,
+        "procedure_correct": 0
+      },
+      "controls": {
+        "fresh": {
+          "statuses": [
+            "pending_support",
+            "pending_support",
+            "pending_support"
+          ],
+          "pre": {
+            "full": 32,
+            "full_correct": 0,
+            "missing": 32,
+            "missing_correct": 32,
+            "unsafe": 0,
+            "unsafe_no_link": 0,
+            "unsafe_no_location": 0,
+            "cpu_s": 0.004316,
+            "p50_ms": 0.02157,
+            "p95_ms": 0.024
+          },
+          "feedback_status": "pending_support",
+          "post": {
+            "full": 32,
+            "full_correct": 0,
+            "missing": 32,
+            "missing_correct": 32,
+            "unsafe": 0,
+            "unsafe_no_link": 0,
+            "unsafe_no_location": 0,
+            "cpu_s": 0.004281,
+            "p50_ms": 0.02159,
+            "p95_ms": 0.02421
+          }
+        },
+        "same_information_no_meta": {
+          "statuses": [
+            "pending_support",
+            "pending_support",
+            "pending_support"
+          ],
+          "pre": {
+            "full": 32,
+            "full_correct": 0,
+            "missing": 32,
+            "missing_correct": 32,
+            "unsafe": 0,
+            "unsafe_no_link": 0,
+            "unsafe_no_location": 0,
+            "cpu_s": 0.004231,
+            "p50_ms": 0.02115,
+            "p95_ms": 0.02387
+          },
+          "feedback_status": "pending_support",
+          "post": {
+            "full": 32,
+            "full_correct": 0,
+            "missing": 32,
+            "missing_correct": 32,
+            "unsafe": 0,
+            "unsafe_no_link": 0,
+            "unsafe_no_location": 0,
+            "cpu_s": 0.004276,
+            "p50_ms": 0.02088,
+            "p95_ms": 0.0233
+          }
+        }
+      },
+      "restart_same": true,
+      "saved_bytes": 76408,
+      "saved_bytes_after": 97677,
+      "cost": {
+        "source": {
+          "cpu_s": 0.003498,
+          "wall_s": 0.003504
+        },
+        "action_learning": {
+          "cpu_s": 0.002186,
+          "wall_s": 0.002188
+        },
+        "restart_before_probe": {
+          "cpu_s": 0.004802,
+          "wall_s": 0.006465
+        },
+        "probe_execution_and_learning": {
+          "cpu_s": 0.000761,
+          "wall_s": 0.000763
+        },
+        "restart_after_probe": {
+          "cpu_s": 0.005024,
+          "wall_s": 0.006081
+        },
+        "procedure_learning": {
+          "cpu_s": 0.034068,
+          "wall_s": 0.03409
+        },
+        "procedure_response": {
+          "cpu_s": 0.00221,
+          "wall_s": 0.002219
+        },
+        "counterevidence": {
+          "cpu_s": 0.000478,
+          "wall_s": 0.00048
+        }
+      },
+      "cpu_total_s": 0.053027
+    },
+    {
+      "family": "ficha_intermedia",
+      "order": 17,
+      "branch": "irrelevant",
+      "seed": 3040711686,
+      "passed": true,
+      "source_meta": [
+        {
+          "kind": "role_set",
+          "input_arity": 4,
+          "roles": [
+            0,
+            3
+          ],
+          "sources": {
+            "raw_world:primitive_81f86d9a11403aba_a4": {
+              "family": "raw_world",
+              "support": 3
+            }
+          },
+          "families": {
+            "raw_world": 3
+          },
+          "support": 3,
+          "schema": "roles:4:0,3"
+        },
+        {
+          "kind": "role_cardinality",
+          "cardinality": 2,
+          "sources": {
+            "raw_world:primitive_81f86d9a11403aba_a4": {
+              "family": "raw_world",
+              "support": 3
+            }
+          },
+          "families": {
+            "raw_world": 3
+          },
+          "support": 3,
+          "schema": "card:2"
+        },
+        {
+          "kind": "role_topology",
+          "input_arity": 2,
+          "edges": [
+            [
+              0,
+              1
+            ]
+          ],
+          "sources": {
+            "raw_world:primitive_81f86d9a11403aba_a4": {
+              "family": "raw_world",
+              "support": 3
+            }
+          },
+          "families": {
+            "raw_world": 3
+          },
+          "support": 3,
+          "schema": "topo:2:0,1"
+        }
+      ],
+      "baseline_statuses": [
+        "pending_support",
+        "pending_support",
+        "pending_discriminating_evidence"
+      ],
+      "request": {
+        "kind": "controlled_intervention",
+        "reason": "unresolved_non_effect_role_precondition",
+        "text": "transporta a ab53d9406targetp15324 con ficha ab53d9406targeti88173 desde ab53d9406targeto30296 hasta ab53d9406targetd67274",
+        "before": [
+          [
+            "ab53d9406agent",
+            "ab53d9406targetp15324"
+          ],
+          [
+            "ab53d9406link",
+            "ab53d9406targeto30296",
+            "ab53d9406targetd67274"
+          ],
+          [
+            "ab53d9406loc",
+            "ab53d9406targetp15324",
+            "ab53d9406targeto30296"
+          ],
+          [
+            "ab53d9406place",
+            "ab53d9406targetd67274"
+          ],
+          [
+            "ab53d9406place",
+            "ab53d9406targeto30296"
+          ]
+        ],
+        "removed_fact": [
+          "ab53d9406inventory",
+          "ab53d9406targeti88173"
+        ],
+        "alternatives": [
+          "effect",
+          "no_effect"
+        ],
+        "estimated_information_bits": 1.0,
+        "estimated_cost": 1.0
+      },
+      "before": {
+        "full": 32,
+        "full_correct": 0,
+        "missing": 32,
+        "missing_correct": 0,
+        "unsafe": 0,
+        "unsafe_no_link": 0,
+        "unsafe_no_location": 0,
+        "cpu_s": 0.004693,
+        "p50_ms": 0.02158,
+        "p95_ms": 0.03431
+      },
+      "feedback_status": "operator_learned",
+      "after": {
+        "full": 32,
+        "full_correct": 32,
+        "missing": 32,
+        "missing_correct": 32,
+        "unsafe": 0,
+        "unsafe_no_link": 0,
+        "unsafe_no_location": 0,
+        "cpu_s": 0.012929,
+        "p50_ms": 0.06657,
+        "p95_ms": 0.09185
+      },
+      "procedure_status": "procedure_learned",
+      "procedure": {
+        "correct": 128,
+        "total": 128,
+        "wrong_confident": 0,
+        "p50_ms": 0.01021,
+        "p95_ms": 0.01304,
+        "max_ms": 0.07059
+      },
+      "counter_status": "raw_world_conflict",
+      "action_depends_on_meta": false,
+      "after_counter": {
+        "active_actions": 1,
+        "procedure_correct": 0
+      },
+      "controls": {
+        "fresh": {
+          "statuses": [
+            "pending_support",
+            "pending_support",
+            "pending_support"
+          ],
+          "pre": {
+            "full": 32,
+            "full_correct": 0,
+            "missing": 32,
+            "missing_correct": 0,
+            "unsafe": 0,
+            "unsafe_no_link": 0,
+            "unsafe_no_location": 0,
+            "cpu_s": 0.004284,
+            "p50_ms": 0.02079,
+            "p95_ms": 0.02328
+          },
+          "feedback_status": "operator_learned",
+          "post": {
+            "full": 32,
+            "full_correct": 32,
+            "missing": 32,
+            "missing_correct": 32,
+            "unsafe": 0,
+            "unsafe_no_link": 0,
+            "unsafe_no_location": 0,
+            "cpu_s": 0.009545,
+            "p50_ms": 0.05263,
+            "p95_ms": 0.05574
+          }
+        },
+        "same_information_no_meta": {
+          "statuses": [
+            "pending_support",
+            "pending_support",
+            "pending_support"
+          ],
+          "pre": {
+            "full": 32,
+            "full_correct": 0,
+            "missing": 32,
+            "missing_correct": 0,
+            "unsafe": 0,
+            "unsafe_no_link": 0,
+            "unsafe_no_location": 0,
+            "cpu_s": 0.004235,
+            "p50_ms": 0.02082,
+            "p95_ms": 0.02295
+          },
+          "feedback_status": "operator_learned",
+          "post": {
+            "full": 32,
+            "full_correct": 32,
+            "missing": 32,
+            "missing_correct": 32,
+            "unsafe": 0,
+            "unsafe_no_link": 0,
+            "unsafe_no_location": 0,
+            "cpu_s": 0.009632,
+            "p50_ms": 0.0531,
+            "p95_ms": 0.05749
+          }
+        }
+      },
+      "restart_same": true,
+      "saved_bytes": 76410,
+      "saved_bytes_after": 88628,
+      "cost": {
+        "source": {
+          "cpu_s": 0.002013,
+          "wall_s": 0.002014
+        },
+        "action_learning": {
+          "cpu_s": 0.001612,
+          "wall_s": 0.001613
+        },
+        "restart_before_probe": {
+          "cpu_s": 0.004594,
+          "wall_s": 0.006445
+        },
+        "probe_execution_and_learning": {
+          "cpu_s": 0.000307,
+          "wall_s": 0.000308
+        },
+        "restart_after_probe": {
+          "cpu_s": 0.005198,
+          "wall_s": 0.006056
+        },
+        "procedure_learning": {
+          "cpu_s": 0.033783,
+          "wall_s": 0.033787
+        },
+        "procedure_response": {
+          "cpu_s": 0.001709,
+          "wall_s": 0.001709
+        },
+        "counterevidence": {
+          "cpu_s": 0.000199,
+          "wall_s": 0.0002
+        }
+      },
+      "cpu_total_s": 0.049415
+    },
+    {
+      "family": "destino_primero",
+      "order": 17,
+      "branch": "necessary",
+      "seed": 3638760647,
+      "passed": true,
+      "source_meta": [
+        {
+          "kind": "role_set",
+          "input_arity": 4,
+          "roles": [
+            0,
+            1
+          ],
+          "sources": {
+            "raw_world:primitive_cda0226c6d3be478_a4": {
+              "family": "raw_world",
+              "support": 3
+            }
+          },
+          "families": {
+            "raw_world": 3
+          },
+          "support": 3,
+          "schema": "roles:4:0,1"
+        },
+        {
+          "kind": "role_cardinality",
+          "cardinality": 2,
+          "sources": {
+            "raw_world:primitive_cda0226c6d3be478_a4": {
+              "family": "raw_world",
+              "support": 3
+            }
+          },
+          "families": {
+            "raw_world": 3
+          },
+          "support": 3,
+          "schema": "card:2"
+        },
+        {
+          "kind": "role_topology",
+          "input_arity": 2,
+          "edges": [
+            [
+              0,
+              1
+            ]
+          ],
+          "sources": {
+            "raw_world:primitive_cda0226c6d3be478_a4": {
+              "family": "raw_world",
+              "support": 3
+            }
+          },
+          "families": {
+            "raw_world": 3
+          },
+          "support": 3,
+          "schema": "topo:2:0,1"
+        }
+      ],
+      "baseline_statuses": [
+        "pending_support",
+        "pending_support",
+        "pending_discriminating_evidence"
+      ],
+      "request": {
+        "kind": "controlled_intervention",
+        "reason": "unresolved_non_effect_role_precondition",
+        "text": "mueve hacia ad8e314c7targetd13688 a ad8e314c7targetp97961 con ficha ad8e314c7targeti50443 desde ad8e314c7targeto15504",
+        "before": [
+          [
+            "ad8e314c7agent",
+            "ad8e314c7targetp97961"
+          ],
+          [
+            "ad8e314c7link",
+            "ad8e314c7targeto15504",
+            "ad8e314c7targetd13688"
+          ],
+          [
+            "ad8e314c7loc",
+            "ad8e314c7targetp97961",
+            "ad8e314c7targeto15504"
+          ],
+          [
+            "ad8e314c7place",
+            "ad8e314c7targetd13688"
+          ],
+          [
+            "ad8e314c7place",
+            "ad8e314c7targeto15504"
+          ]
+        ],
+        "removed_fact": [
+          "ad8e314c7inventory",
+          "ad8e314c7targeti50443"
+        ],
+        "alternatives": [
+          "effect",
+          "no_effect"
+        ],
+        "estimated_information_bits": 1.0,
+        "estimated_cost": 1.0
+      },
+      "before": {
+        "full": 32,
+        "full_correct": 0,
+        "missing": 32,
+        "missing_correct": 32,
+        "unsafe": 0,
+        "unsafe_no_link": 0,
+        "unsafe_no_location": 0,
+        "cpu_s": 0.004218,
+        "p50_ms": 0.0212,
+        "p95_ms": 0.02293
+      },
+      "feedback_status": "operator_learned",
+      "after": {
+        "full": 32,
+        "full_correct": 32,
+        "missing": 32,
+        "missing_correct": 32,
+        "unsafe": 0,
+        "unsafe_no_link": 0,
+        "unsafe_no_location": 0,
+        "cpu_s": 0.009733,
+        "p50_ms": 0.05368,
+        "p95_ms": 0.06446
+      },
+      "procedure_status": "procedure_learned",
+      "procedure": {
+        "correct": 128,
+        "total": 128,
+        "wrong_confident": 0,
+        "p50_ms": 0.01026,
+        "p95_ms": 0.01227,
+        "max_ms": 0.06593
+      },
+      "counter_status": "raw_world_conflict",
+      "action_depends_on_meta": true,
+      "after_counter": {
+        "active_actions": 0,
+        "procedure_correct": 0
+      },
+      "controls": {
+        "fresh": {
+          "statuses": [
+            "pending_support",
+            "pending_support",
+            "pending_support"
+          ],
+          "pre": {
+            "full": 32,
+            "full_correct": 0,
+            "missing": 32,
+            "missing_correct": 32,
+            "unsafe": 0,
+            "unsafe_no_link": 0,
+            "unsafe_no_location": 0,
+            "cpu_s": 0.004235,
+            "p50_ms": 0.02109,
+            "p95_ms": 0.023
+          },
+          "feedback_status": "pending_support",
+          "post": {
+            "full": 32,
+            "full_correct": 0,
+            "missing": 32,
+            "missing_correct": 32,
+            "unsafe": 0,
+            "unsafe_no_link": 0,
+            "unsafe_no_location": 0,
+            "cpu_s": 0.004286,
+            "p50_ms": 0.02114,
+            "p95_ms": 0.02315
+          }
+        },
+        "same_information_no_meta": {
+          "statuses": [
+            "pending_support",
+            "pending_support",
+            "pending_support"
+          ],
+          "pre": {
+            "full": 32,
+            "full_correct": 0,
+            "missing": 32,
+            "missing_correct": 32,
+            "unsafe": 0,
+            "unsafe_no_link": 0,
+            "unsafe_no_location": 0,
+            "cpu_s": 0.004356,
+            "p50_ms": 0.02137,
+            "p95_ms": 0.02376
+          },
+          "feedback_status": "pending_support",
+          "post": {
+            "full": 32,
+            "full_correct": 0,
+            "missing": 32,
+            "missing_correct": 32,
+            "unsafe": 0,
+            "unsafe_no_link": 0,
+            "unsafe_no_location": 0,
+            "cpu_s": 0.004391,
+            "p50_ms": 0.02194,
+            "p95_ms": 0.02766
+          }
+        }
+      },
+      "restart_same": true,
+      "saved_bytes": 76277,
+      "saved_bytes_after": 97481,
+      "cost": {
+        "source": {
+          "cpu_s": 0.002704,
+          "wall_s": 0.002706
+        },
+        "action_learning": {
+          "cpu_s": 0.002031,
+          "wall_s": 0.002033
+        },
+        "restart_before_probe": {
+          "cpu_s": 0.004073,
+          "wall_s": 0.005504
+        },
+        "probe_execution_and_learning": {
+          "cpu_s": 0.00074,
+          "wall_s": 0.000742
+        },
+        "restart_after_probe": {
+          "cpu_s": 0.004966,
+          "wall_s": 0.006207
+        },
+        "procedure_learning": {
+          "cpu_s": 0.033498,
+          "wall_s": 0.033501
+        },
+        "procedure_response": {
+          "cpu_s": 0.001684,
+          "wall_s": 0.001685
+        },
+        "counterevidence": {
+          "cpu_s": 0.000202,
+          "wall_s": 0.000203
+        }
+      },
+      "cpu_total_s": 0.049898
+    },
+    {
+      "family": "destino_primero",
+      "order": 17,
+      "branch": "irrelevant",
+      "seed": 3638760647,
+      "passed": true,
+      "source_meta": [
+        {
+          "kind": "role_set",
+          "input_arity": 4,
+          "roles": [
+            0,
+            1
+          ],
+          "sources": {
+            "raw_world:primitive_cda0226c6d3be478_a4": {
+              "family": "raw_world",
+              "support": 3
+            }
+          },
+          "families": {
+            "raw_world": 3
+          },
+          "support": 3,
+          "schema": "roles:4:0,1"
+        },
+        {
+          "kind": "role_cardinality",
+          "cardinality": 2,
+          "sources": {
+            "raw_world:primitive_cda0226c6d3be478_a4": {
+              "family": "raw_world",
+              "support": 3
+            }
+          },
+          "families": {
+            "raw_world": 3
+          },
+          "support": 3,
+          "schema": "card:2"
+        },
+        {
+          "kind": "role_topology",
+          "input_arity": 2,
+          "edges": [
+            [
+              0,
+              1
+            ]
+          ],
+          "sources": {
+            "raw_world:primitive_cda0226c6d3be478_a4": {
+              "family": "raw_world",
+              "support": 3
+            }
+          },
+          "families": {
+            "raw_world": 3
+          },
+          "support": 3,
+          "schema": "topo:2:0,1"
+        }
+      ],
+      "baseline_statuses": [
+        "pending_support",
+        "pending_support",
+        "pending_discriminating_evidence"
+      ],
+      "request": {
+        "kind": "controlled_intervention",
+        "reason": "unresolved_non_effect_role_precondition",
+        "text": "mueve hacia ad8e314c7targetd13688 a ad8e314c7targetp97961 con ficha ad8e314c7targeti50443 desde ad8e314c7targeto15504",
+        "before": [
+          [
+            "ad8e314c7agent",
+            "ad8e314c7targetp97961"
+          ],
+          [
+            "ad8e314c7link",
+            "ad8e314c7targeto15504",
+            "ad8e314c7targetd13688"
+          ],
+          [
+            "ad8e314c7loc",
+            "ad8e314c7targetp97961",
+            "ad8e314c7targeto15504"
+          ],
+          [
+            "ad8e314c7place",
+            "ad8e314c7targetd13688"
+          ],
+          [
+            "ad8e314c7place",
+            "ad8e314c7targeto15504"
+          ]
+        ],
+        "removed_fact": [
+          "ad8e314c7inventory",
+          "ad8e314c7targeti50443"
+        ],
+        "alternatives": [
+          "effect",
+          "no_effect"
+        ],
+        "estimated_information_bits": 1.0,
+        "estimated_cost": 1.0
+      },
+      "before": {
+        "full": 32,
+        "full_correct": 0,
+        "missing": 32,
+        "missing_correct": 0,
+        "unsafe": 0,
+        "unsafe_no_link": 0,
+        "unsafe_no_location": 0,
+        "cpu_s": 0.004269,
+        "p50_ms": 0.02129,
+        "p95_ms": 0.02339
+      },
+      "feedback_status": "operator_learned",
+      "after": {
+        "full": 32,
+        "full_correct": 32,
+        "missing": 32,
+        "missing_correct": 32,
+        "unsafe": 0,
+        "unsafe_no_link": 0,
+        "unsafe_no_location": 0,
+        "cpu_s": 0.009672,
+        "p50_ms": 0.05232,
+        "p95_ms": 0.05903
+      },
+      "procedure_status": "procedure_learned",
+      "procedure": {
+        "correct": 128,
+        "total": 128,
+        "wrong_confident": 0,
+        "p50_ms": 0.01006,
+        "p95_ms": 0.01222,
+        "max_ms": 0.03193
+      },
+      "counter_status": "raw_world_conflict",
+      "action_depends_on_meta": false,
+      "after_counter": {
+        "active_actions": 1,
+        "procedure_correct": 0
+      },
+      "controls": {
+        "fresh": {
+          "statuses": [
+            "pending_support",
+            "pending_support",
+            "pending_support"
+          ],
+          "pre": {
+            "full": 32,
+            "full_correct": 0,
+            "missing": 32,
+            "missing_correct": 0,
+            "unsafe": 0,
+            "unsafe_no_link": 0,
+            "unsafe_no_location": 0,
+            "cpu_s": 0.004218,
+            "p50_ms": 0.02108,
+            "p95_ms": 0.02338
+          },
+          "feedback_status": "operator_learned",
+          "post": {
+            "full": 32,
+            "full_correct": 32,
+            "missing": 32,
+            "missing_correct": 32,
+            "unsafe": 0,
+            "unsafe_no_link": 0,
+            "unsafe_no_location": 0,
+            "cpu_s": 0.009748,
+            "p50_ms": 0.05201,
+            "p95_ms": 0.06254
+          }
+        },
+        "same_information_no_meta": {
+          "statuses": [
+            "pending_support",
+            "pending_support",
+            "pending_support"
+          ],
+          "pre": {
+            "full": 32,
+            "full_correct": 0,
+            "missing": 32,
+            "missing_correct": 0,
+            "unsafe": 0,
+            "unsafe_no_link": 0,
+            "unsafe_no_location": 0,
+            "cpu_s": 0.00431,
+            "p50_ms": 0.02169,
+            "p95_ms": 0.02736
+          },
+          "feedback_status": "operator_learned",
+          "post": {
+            "full": 32,
+            "full_correct": 32,
+            "missing": 32,
+            "missing_correct": 32,
+            "unsafe": 0,
+            "unsafe_no_link": 0,
+            "unsafe_no_location": 0,
+            "cpu_s": 0.012103,
+            "p50_ms": 0.06045,
+            "p95_ms": 0.09157
+          }
+        }
+      },
+      "restart_same": true,
+      "saved_bytes": 76277,
+      "saved_bytes_after": 88435,
+      "cost": {
+        "source": {
+          "cpu_s": 0.002007,
+          "wall_s": 0.002008
+        },
+        "action_learning": {
+          "cpu_s": 0.001605,
+          "wall_s": 0.001606
+        },
+        "restart_before_probe": {
+          "cpu_s": 0.003901,
+          "wall_s": 0.005844
+        },
+        "probe_execution_and_learning": {
+          "cpu_s": 0.000237,
+          "wall_s": 0.000238
+        },
+        "restart_after_probe": {
+          "cpu_s": 0.004295,
+          "wall_s": 0.005161
+        },
+        "procedure_learning": {
+          "cpu_s": 0.033157,
+          "wall_s": 0.033168
+        },
+        "procedure_response": {
+          "cpu_s": 0.001605,
+          "wall_s": 0.001606
+        },
+        "counterevidence": {
+          "cpu_s": 0.000184,
+          "wall_s": 0.000184
+        }
+      },
+      "cpu_total_s": 0.046991
+    },
+    {
+      "family": "origen_antes_ficha",
+      "order": 17,
+      "branch": "necessary",
+      "seed": 2679102572,
+      "passed": true,
+      "source_meta": [
+        {
+          "kind": "role_set",
+          "input_arity": 4,
+          "roles": [
+            0,
+            3
+          ],
+          "sources": {
+            "raw_world:primitive_468302bb000ad675_a4": {
+              "family": "raw_world",
+              "support": 3
+            }
+          },
+          "families": {
+            "raw_world": 3
+          },
+          "support": 3,
+          "schema": "roles:4:0,3"
+        },
+        {
+          "kind": "role_cardinality",
+          "cardinality": 2,
+          "sources": {
+            "raw_world:primitive_468302bb000ad675_a4": {
+              "family": "raw_world",
+              "support": 3
+            }
+          },
+          "families": {
+            "raw_world": 3
+          },
+          "support": 3,
+          "schema": "card:2"
+        },
+        {
+          "kind": "role_topology",
+          "input_arity": 2,
+          "edges": [
+            [
+              0,
+              1
+            ]
+          ],
+          "sources": {
+            "raw_world:primitive_468302bb000ad675_a4": {
+              "family": "raw_world",
+              "support": 3
+            }
+          },
+          "families": {
+            "raw_world": 3
+          },
+          "support": 3,
+          "schema": "topo:2:0,1"
+        }
+      ],
+      "baseline_statuses": [
+        "pending_support",
+        "pending_support",
+        "pending_discriminating_evidence"
+      ],
+      "request": {
+        "kind": "controlled_intervention",
+        "reason": "unresolved_non_effect_role_precondition",
+        "text": "entrega a a9fafdc6ctargetp68685 desde a9fafdc6ctargeto39573 con ficha a9fafdc6ctargeti22920 hasta a9fafdc6ctargetd40154",
+        "before": [
+          [
+            "a9fafdc6cagent",
+            "a9fafdc6ctargetp68685"
+          ],
+          [
+            "a9fafdc6clink",
+            "a9fafdc6ctargeto39573",
+            "a9fafdc6ctargetd40154"
+          ],
+          [
+            "a9fafdc6cloc",
+            "a9fafdc6ctargetp68685",
+            "a9fafdc6ctargeto39573"
+          ],
+          [
+            "a9fafdc6cplace",
+            "a9fafdc6ctargetd40154"
+          ],
+          [
+            "a9fafdc6cplace",
+            "a9fafdc6ctargeto39573"
+          ]
+        ],
+        "removed_fact": [
+          "a9fafdc6cinventory",
+          "a9fafdc6ctargeti22920"
+        ],
+        "alternatives": [
+          "effect",
+          "no_effect"
+        ],
+        "estimated_information_bits": 1.0,
+        "estimated_cost": 1.0
+      },
+      "before": {
+        "full": 32,
+        "full_correct": 0,
+        "missing": 32,
+        "missing_correct": 32,
+        "unsafe": 0,
+        "unsafe_no_link": 0,
+        "unsafe_no_location": 0,
+        "cpu_s": 0.004606,
+        "p50_ms": 0.02161,
+        "p95_ms": 0.02549
+      },
+      "feedback_status": "operator_learned",
+      "after": {
+        "full": 32,
+        "full_correct": 32,
+        "missing": 32,
+        "missing_correct": 32,
+        "unsafe": 0,
+        "unsafe_no_link": 0,
+        "unsafe_no_location": 0,
+        "cpu_s": 0.010508,
+        "p50_ms": 0.05548,
+        "p95_ms": 0.07692
+      },
+      "procedure_status": "procedure_learned",
+      "procedure": {
+        "correct": 128,
+        "total": 128,
+        "wrong_confident": 0,
+        "p50_ms": 0.01052,
+        "p95_ms": 0.01262,
+        "max_ms": 0.031
+      },
+      "counter_status": "raw_world_conflict",
+      "action_depends_on_meta": true,
+      "after_counter": {
+        "active_actions": 0,
+        "procedure_correct": 0
+      },
+      "controls": {
+        "fresh": {
+          "statuses": [
+            "pending_support",
+            "pending_support",
+            "pending_support"
+          ],
+          "pre": {
+            "full": 32,
+            "full_correct": 0,
+            "missing": 32,
+            "missing_correct": 32,
+            "unsafe": 0,
+            "unsafe_no_link": 0,
+            "unsafe_no_location": 0,
+            "cpu_s": 0.004237,
+            "p50_ms": 0.0215,
+            "p95_ms": 0.02402
+          },
+          "feedback_status": "pending_support",
+          "post": {
+            "full": 32,
+            "full_correct": 0,
+            "missing": 32,
+            "missing_correct": 32,
+            "unsafe": 0,
+            "unsafe_no_link": 0,
+            "unsafe_no_location": 0,
+            "cpu_s": 0.004377,
+            "p50_ms": 0.0216,
+            "p95_ms": 0.02462
+          }
+        },
+        "same_information_no_meta": {
+          "statuses": [
+            "pending_support",
+            "pending_support",
+            "pending_support"
+          ],
+          "pre": {
+            "full": 32,
+            "full_correct": 0,
+            "missing": 32,
+            "missing_correct": 32,
+            "unsafe": 0,
+            "unsafe_no_link": 0,
+            "unsafe_no_location": 0,
+            "cpu_s": 0.008407,
+            "p50_ms": 0.02263,
+            "p95_ms": 0.03244
+          },
+          "feedback_status": "pending_support",
+          "post": {
+            "full": 32,
+            "full_correct": 0,
+            "missing": 32,
+            "missing_correct": 32,
+            "unsafe": 0,
+            "unsafe_no_link": 0,
+            "unsafe_no_location": 0,
+            "cpu_s": 0.004394,
+            "p50_ms": 0.02214,
+            "p95_ms": 0.02396
+          }
+        }
+      },
+      "restart_same": true,
+      "saved_bytes": 76233,
+      "saved_bytes_after": 97462,
+      "cost": {
+        "source": {
+          "cpu_s": 0.003405,
+          "wall_s": 0.003405
+        },
+        "action_learning": {
+          "cpu_s": 0.00219,
+          "wall_s": 0.002204
+        },
+        "restart_before_probe": {
+          "cpu_s": 0.005988,
+          "wall_s": 0.007694
+        },
+        "probe_execution_and_learning": {
+          "cpu_s": 0.001185,
+          "wall_s": 0.001187
+        },
+        "restart_after_probe": {
+          "cpu_s": 0.004818,
+          "wall_s": 0.005846
+        },
+        "procedure_learning": {
+          "cpu_s": 0.033283,
+          "wall_s": 0.033304
+        },
+        "procedure_response": {
+          "cpu_s": 0.001672,
+          "wall_s": 0.001673
+        },
+        "counterevidence": {
+          "cpu_s": 0.000258,
+          "wall_s": 0.000259
+        }
+      },
+      "cpu_total_s": 0.052799
+    },
+    {
+      "family": "origen_antes_ficha",
+      "order": 17,
+      "branch": "irrelevant",
+      "seed": 2679102572,
+      "passed": true,
+      "source_meta": [
+        {
+          "kind": "role_set",
+          "input_arity": 4,
+          "roles": [
+            0,
+            3
+          ],
+          "sources": {
+            "raw_world:primitive_468302bb000ad675_a4": {
+              "family": "raw_world",
+              "support": 3
+            }
+          },
+          "families": {
+            "raw_world": 3
+          },
+          "support": 3,
+          "schema": "roles:4:0,3"
+        },
+        {
+          "kind": "role_cardinality",
+          "cardinality": 2,
+          "sources": {
+            "raw_world:primitive_468302bb000ad675_a4": {
+              "family": "raw_world",
+              "support": 3
+            }
+          },
+          "families": {
+            "raw_world": 3
+          },
+          "support": 3,
+          "schema": "card:2"
+        },
+        {
+          "kind": "role_topology",
+          "input_arity": 2,
+          "edges": [
+            [
+              0,
+              1
+            ]
+          ],
+          "sources": {
+            "raw_world:primitive_468302bb000ad675_a4": {
+              "family": "raw_world",
+              "support": 3
+            }
+          },
+          "families": {
+            "raw_world": 3
+          },
+          "support": 3,
+          "schema": "topo:2:0,1"
+        }
+      ],
+      "baseline_statuses": [
+        "pending_support",
+        "pending_support",
+        "pending_discriminating_evidence"
+      ],
+      "request": {
+        "kind": "controlled_intervention",
+        "reason": "unresolved_non_effect_role_precondition",
+        "text": "entrega a a9fafdc6ctargetp68685 desde a9fafdc6ctargeto39573 con ficha a9fafdc6ctargeti22920 hasta a9fafdc6ctargetd40154",
+        "before": [
+          [
+            "a9fafdc6cagent",
+            "a9fafdc6ctargetp68685"
+          ],
+          [
+            "a9fafdc6clink",
+            "a9fafdc6ctargeto39573",
+            "a9fafdc6ctargetd40154"
+          ],
+          [
+            "a9fafdc6cloc",
+            "a9fafdc6ctargetp68685",
+            "a9fafdc6ctargeto39573"
+          ],
+          [
+            "a9fafdc6cplace",
+            "a9fafdc6ctargetd40154"
+          ],
+          [
+            "a9fafdc6cplace",
+            "a9fafdc6ctargeto39573"
+          ]
+        ],
+        "removed_fact": [
+          "a9fafdc6cinventory",
+          "a9fafdc6ctargeti22920"
+        ],
+        "alternatives": [
+          "effect",
+          "no_effect"
+        ],
+        "estimated_information_bits": 1.0,
+        "estimated_cost": 1.0
+      },
+      "before": {
+        "full": 32,
+        "full_correct": 0,
+        "missing": 32,
+        "missing_correct": 0,
+        "unsafe": 0,
+        "unsafe_no_link": 0,
+        "unsafe_no_location": 0,
+        "cpu_s": 0.004302,
+        "p50_ms": 0.02162,
+        "p95_ms": 0.0237
+      },
+      "feedback_status": "operator_learned",
+      "after": {
+        "full": 32,
+        "full_correct": 32,
+        "missing": 32,
+        "missing_correct": 32,
+        "unsafe": 0,
+        "unsafe_no_link": 0,
+        "unsafe_no_location": 0,
+        "cpu_s": 0.00968,
+        "p50_ms": 0.05263,
+        "p95_ms": 0.05587
+      },
+      "procedure_status": "procedure_learned",
+      "procedure": {
+        "correct": 128,
+        "total": 128,
+        "wrong_confident": 0,
+        "p50_ms": 0.01035,
+        "p95_ms": 0.01558,
+        "max_ms": 0.07241
+      },
+      "counter_status": "raw_world_conflict",
+      "action_depends_on_meta": false,
+      "after_counter": {
+        "active_actions": 1,
+        "procedure_correct": 0
+      },
+      "controls": {
+        "fresh": {
+          "statuses": [
+            "pending_support",
+            "pending_support",
+            "pending_support"
+          ],
+          "pre": {
+            "full": 32,
+            "full_correct": 0,
+            "missing": 32,
+            "missing_correct": 0,
+            "unsafe": 0,
+            "unsafe_no_link": 0,
+            "unsafe_no_location": 0,
+            "cpu_s": 0.004177,
+            "p50_ms": 0.02072,
+            "p95_ms": 0.02253
+          },
+          "feedback_status": "operator_learned",
+          "post": {
+            "full": 32,
+            "full_correct": 32,
+            "missing": 32,
+            "missing_correct": 32,
+            "unsafe": 0,
+            "unsafe_no_link": 0,
+            "unsafe_no_location": 0,
+            "cpu_s": 0.009873,
+            "p50_ms": 0.0521,
+            "p95_ms": 0.06043
+          }
+        },
+        "same_information_no_meta": {
+          "statuses": [
+            "pending_support",
+            "pending_support",
+            "pending_support"
+          ],
+          "pre": {
+            "full": 32,
+            "full_correct": 0,
+            "missing": 32,
+            "missing_correct": 0,
+            "unsafe": 0,
+            "unsafe_no_link": 0,
+            "unsafe_no_location": 0,
+            "cpu_s": 0.004282,
+            "p50_ms": 0.02139,
+            "p95_ms": 0.02403
+          },
+          "feedback_status": "operator_learned",
+          "post": {
+            "full": 32,
+            "full_correct": 32,
+            "missing": 32,
+            "missing_correct": 32,
+            "unsafe": 0,
+            "unsafe_no_link": 0,
+            "unsafe_no_location": 0,
+            "cpu_s": 0.009661,
+            "p50_ms": 0.05306,
+            "p95_ms": 0.0575
+          }
+        }
+      },
+      "restart_same": true,
+      "saved_bytes": 76232,
+      "saved_bytes_after": 88414,
+      "cost": {
+        "source": {
+          "cpu_s": 0.00199,
+          "wall_s": 0.001991
+        },
+        "action_learning": {
+          "cpu_s": 0.001587,
+          "wall_s": 0.001588
+        },
+        "restart_before_probe": {
+          "cpu_s": 0.004031,
+          "wall_s": 0.005214
+        },
+        "probe_execution_and_learning": {
+          "cpu_s": 0.000241,
+          "wall_s": 0.000243
+        },
+        "restart_after_probe": {
+          "cpu_s": 0.004172,
+          "wall_s": 0.005167
+        },
+        "procedure_learning": {
+          "cpu_s": 0.032904,
+          "wall_s": 0.032908
+        },
+        "procedure_response": {
+          "cpu_s": 0.001746,
+          "wall_s": 0.001747
+        },
+        "counterevidence": {
+          "cpu_s": 0.000259,
+          "wall_s": 0.00026
+        }
+      },
+      "cpu_total_s": 0.04693
+    },
+    {
+      "family": "ficha_intermedia",
+      "order": 53,
+      "branch": "necessary",
+      "seed": 2102223459,
+      "passed": true,
+      "source_meta": [
+        {
+          "kind": "role_set",
+          "input_arity": 4,
+          "roles": [
+            0,
+            3
+          ],
+          "sources": {
+            "raw_world:primitive_81f86d9a11403aba_a4": {
+              "family": "raw_world",
+              "support": 3
+            }
+          },
+          "families": {
+            "raw_world": 3
+          },
+          "support": 3,
+          "schema": "roles:4:0,3"
+        },
+        {
+          "kind": "role_cardinality",
+          "cardinality": 2,
+          "sources": {
+            "raw_world:primitive_81f86d9a11403aba_a4": {
+              "family": "raw_world",
+              "support": 3
+            }
+          },
+          "families": {
+            "raw_world": 3
+          },
+          "support": 3,
+          "schema": "card:2"
+        },
+        {
+          "kind": "role_topology",
+          "input_arity": 2,
+          "edges": [
+            [
+              0,
+              1
+            ]
+          ],
+          "sources": {
+            "raw_world:primitive_81f86d9a11403aba_a4": {
+              "family": "raw_world",
+              "support": 3
+            }
+          },
+          "families": {
+            "raw_world": 3
+          },
+          "support": 3,
+          "schema": "topo:2:0,1"
+        }
+      ],
+      "baseline_statuses": [
+        "pending_support",
+        "pending_support",
+        "pending_discriminating_evidence"
+      ],
+      "request": {
+        "kind": "controlled_intervention",
+        "reason": "unresolved_non_effect_role_precondition",
+        "text": "transporta a a7d4d6263targetp60058 con ficha a7d4d6263targeti30509 desde a7d4d6263targeto48651 hasta a7d4d6263targetd17561",
+        "before": [
+          [
+            "a7d4d6263agent",
+            "a7d4d6263targetp60058"
+          ],
+          [
+            "a7d4d6263link",
+            "a7d4d6263targeto48651",
+            "a7d4d6263targetd17561"
+          ],
+          [
+            "a7d4d6263loc",
+            "a7d4d6263targetp60058",
+            "a7d4d6263targeto48651"
+          ],
+          [
+            "a7d4d6263place",
+            "a7d4d6263targetd17561"
+          ],
+          [
+            "a7d4d6263place",
+            "a7d4d6263targeto48651"
+          ]
+        ],
+        "removed_fact": [
+          "a7d4d6263inventory",
+          "a7d4d6263targeti30509"
+        ],
+        "alternatives": [
+          "effect",
+          "no_effect"
+        ],
+        "estimated_information_bits": 1.0,
+        "estimated_cost": 1.0
+      },
+      "before": {
+        "full": 32,
+        "full_correct": 0,
+        "missing": 32,
+        "missing_correct": 32,
+        "unsafe": 0,
+        "unsafe_no_link": 0,
+        "unsafe_no_location": 0,
+        "cpu_s": 0.004204,
+        "p50_ms": 0.02131,
+        "p95_ms": 0.02268
+      },
+      "feedback_status": "operator_learned",
+      "after": {
+        "full": 32,
+        "full_correct": 32,
+        "missing": 32,
+        "missing_correct": 32,
+        "unsafe": 0,
+        "unsafe_no_link": 0,
+        "unsafe_no_location": 0,
+        "cpu_s": 0.009481,
+        "p50_ms": 0.05051,
+        "p95_ms": 0.05871
+      },
+      "procedure_status": "procedure_learned",
+      "procedure": {
+        "correct": 128,
+        "total": 128,
+        "wrong_confident": 0,
+        "p50_ms": 0.01056,
+        "p95_ms": 0.01542,
+        "max_ms": 0.07194
+      },
+      "counter_status": "raw_world_conflict",
+      "action_depends_on_meta": true,
+      "after_counter": {
+        "active_actions": 0,
+        "procedure_correct": 0
+      },
+      "controls": {
+        "fresh": {
+          "statuses": [
+            "pending_support",
+            "pending_support",
+            "pending_support"
+          ],
+          "pre": {
+            "full": 32,
+            "full_correct": 0,
+            "missing": 32,
+            "missing_correct": 32,
+            "unsafe": 0,
+            "unsafe_no_link": 0,
+            "unsafe_no_location": 0,
+            "cpu_s": 0.004256,
+            "p50_ms": 0.02182,
+            "p95_ms": 0.02327
+          },
+          "feedback_status": "pending_support",
+          "post": {
+            "full": 32,
+            "full_correct": 0,
+            "missing": 32,
+            "missing_correct": 32,
+            "unsafe": 0,
+            "unsafe_no_link": 0,
+            "unsafe_no_location": 0,
+            "cpu_s": 0.004274,
+            "p50_ms": 0.02156,
+            "p95_ms": 0.02318
+          }
+        },
+        "same_information_no_meta": {
+          "statuses": [
+            "pending_support",
+            "pending_support",
+            "pending_support"
+          ],
+          "pre": {
+            "full": 32,
+            "full_correct": 0,
+            "missing": 32,
+            "missing_correct": 32,
+            "unsafe": 0,
+            "unsafe_no_link": 0,
+            "unsafe_no_location": 0,
+            "cpu_s": 0.004369,
+            "p50_ms": 0.02184,
+            "p95_ms": 0.02677
+          },
+          "feedback_status": "pending_support",
+          "post": {
+            "full": 32,
+            "full_correct": 0,
+            "missing": 32,
+            "missing_correct": 32,
+            "unsafe": 0,
+            "unsafe_no_link": 0,
+            "unsafe_no_location": 0,
+            "cpu_s": 0.004332,
+            "p50_ms": 0.02168,
+            "p95_ms": 0.02368
+          }
+        }
+      },
+      "restart_same": true,
+      "saved_bytes": 76409,
+      "saved_bytes_after": 97678,
+      "cost": {
+        "source": {
+          "cpu_s": 0.002573,
+          "wall_s": 0.002574
+        },
+        "action_learning": {
+          "cpu_s": 0.001919,
+          "wall_s": 0.00192
+        },
+        "restart_before_probe": {
+          "cpu_s": 0.003982,
+          "wall_s": 0.0056
+        },
+        "probe_execution_and_learning": {
+          "cpu_s": 0.000714,
+          "wall_s": 0.000715
+        },
+        "restart_after_probe": {
+          "cpu_s": 0.004836,
+          "wall_s": 0.005857
+        },
+        "procedure_learning": {
+          "cpu_s": 0.033034,
+          "wall_s": 0.033038
+        },
+        "procedure_response": {
+          "cpu_s": 0.001775,
+          "wall_s": 0.001776
+        },
+        "counterevidence": {
+          "cpu_s": 0.000207,
+          "wall_s": 0.000208
+        }
+      },
+      "cpu_total_s": 0.04904
+    },
+    {
+      "family": "ficha_intermedia",
+      "order": 53,
+      "branch": "irrelevant",
+      "seed": 2102223459,
+      "passed": true,
+      "source_meta": [
+        {
+          "kind": "role_set",
+          "input_arity": 4,
+          "roles": [
+            0,
+            3
+          ],
+          "sources": {
+            "raw_world:primitive_81f86d9a11403aba_a4": {
+              "family": "raw_world",
+              "support": 3
+            }
+          },
+          "families": {
+            "raw_world": 3
+          },
+          "support": 3,
+          "schema": "roles:4:0,3"
+        },
+        {
+          "kind": "role_cardinality",
+          "cardinality": 2,
+          "sources": {
+            "raw_world:primitive_81f86d9a11403aba_a4": {
+              "family": "raw_world",
+              "support": 3
+            }
+          },
+          "families": {
+            "raw_world": 3
+          },
+          "support": 3,
+          "schema": "card:2"
+        },
+        {
+          "kind": "role_topology",
+          "input_arity": 2,
+          "edges": [
+            [
+              0,
+              1
+            ]
+          ],
+          "sources": {
+            "raw_world:primitive_81f86d9a11403aba_a4": {
+              "family": "raw_world",
+              "support": 3
+            }
+          },
+          "families": {
+            "raw_world": 3
+          },
+          "support": 3,
+          "schema": "topo:2:0,1"
+        }
+      ],
+      "baseline_statuses": [
+        "pending_support",
+        "pending_support",
+        "pending_discriminating_evidence"
+      ],
+      "request": {
+        "kind": "controlled_intervention",
+        "reason": "unresolved_non_effect_role_precondition",
+        "text": "transporta a a7d4d6263targetp60058 con ficha a7d4d6263targeti30509 desde a7d4d6263targeto48651 hasta a7d4d6263targetd17561",
+        "before": [
+          [
+            "a7d4d6263agent",
+            "a7d4d6263targetp60058"
+          ],
+          [
+            "a7d4d6263link",
+            "a7d4d6263targeto48651",
+            "a7d4d6263targetd17561"
+          ],
+          [
+            "a7d4d6263loc",
+            "a7d4d6263targetp60058",
+            "a7d4d6263targeto48651"
+          ],
+          [
+            "a7d4d6263place",
+            "a7d4d6263targetd17561"
+          ],
+          [
+            "a7d4d6263place",
+            "a7d4d6263targeto48651"
+          ]
+        ],
+        "removed_fact": [
+          "a7d4d6263inventory",
+          "a7d4d6263targeti30509"
+        ],
+        "alternatives": [
+          "effect",
+          "no_effect"
+        ],
+        "estimated_information_bits": 1.0,
+        "estimated_cost": 1.0
+      },
+      "before": {
+        "full": 32,
+        "full_correct": 0,
+        "missing": 32,
+        "missing_correct": 0,
+        "unsafe": 0,
+        "unsafe_no_link": 0,
+        "unsafe_no_location": 0,
+        "cpu_s": 0.004354,
+        "p50_ms": 0.02157,
+        "p95_ms": 0.02315
+      },
+      "feedback_status": "operator_learned",
+      "after": {
+        "full": 32,
+        "full_correct": 32,
+        "missing": 32,
+        "missing_correct": 32,
+        "unsafe": 0,
+        "unsafe_no_link": 0,
+        "unsafe_no_location": 0,
+        "cpu_s": 0.009586,
+        "p50_ms": 0.05282,
+        "p95_ms": 0.05738
+      },
+      "procedure_status": "procedure_learned",
+      "procedure": {
+        "correct": 128,
+        "total": 128,
+        "wrong_confident": 0,
+        "p50_ms": 0.01027,
+        "p95_ms": 0.01142,
+        "max_ms": 0.03622
+      },
+      "counter_status": "raw_world_conflict",
+      "action_depends_on_meta": false,
+      "after_counter": {
+        "active_actions": 1,
+        "procedure_correct": 0
+      },
+      "controls": {
+        "fresh": {
+          "statuses": [
+            "pending_support",
+            "pending_support",
+            "pending_support"
+          ],
+          "pre": {
+            "full": 32,
+            "full_correct": 0,
+            "missing": 32,
+            "missing_correct": 0,
+            "unsafe": 0,
+            "unsafe_no_link": 0,
+            "unsafe_no_location": 0,
+            "cpu_s": 0.004249,
+            "p50_ms": 0.02132,
+            "p95_ms": 0.02273
+          },
+          "feedback_status": "operator_learned",
+          "post": {
+            "full": 32,
+            "full_correct": 32,
+            "missing": 32,
+            "missing_correct": 32,
+            "unsafe": 0,
+            "unsafe_no_link": 0,
+            "unsafe_no_location": 0,
+            "cpu_s": 0.009488,
+            "p50_ms": 0.05251,
+            "p95_ms": 0.0551
+          }
+        },
+        "same_information_no_meta": {
+          "statuses": [
+            "pending_support",
+            "pending_support",
+            "pending_support"
+          ],
+          "pre": {
+            "full": 32,
+            "full_correct": 0,
+            "missing": 32,
+            "missing_correct": 0,
+            "unsafe": 0,
+            "unsafe_no_link": 0,
+            "unsafe_no_location": 0,
+            "cpu_s": 0.004291,
+            "p50_ms": 0.0213,
+            "p95_ms": 0.02356
+          },
+          "feedback_status": "operator_learned",
+          "post": {
+            "full": 32,
+            "full_correct": 32,
+            "missing": 32,
+            "missing_correct": 32,
+            "unsafe": 0,
+            "unsafe_no_link": 0,
+            "unsafe_no_location": 0,
+            "cpu_s": 0.00954,
+            "p50_ms": 0.05273,
+            "p95_ms": 0.05626
+          }
+        }
+      },
+      "restart_same": true,
+      "saved_bytes": 76409,
+      "saved_bytes_after": 88627,
+      "cost": {
+        "source": {
+          "cpu_s": 0.002065,
+          "wall_s": 0.002073
+        },
+        "action_learning": {
+          "cpu_s": 0.001638,
+          "wall_s": 0.00164
+        },
+        "restart_before_probe": {
+          "cpu_s": 0.003913,
+          "wall_s": 0.005809
+        },
+        "probe_execution_and_learning": {
+          "cpu_s": 0.000247,
+          "wall_s": 0.000248
+        },
+        "restart_after_probe": {
+          "cpu_s": 0.004291,
+          "wall_s": 0.005024
+        },
+        "procedure_learning": {
+          "cpu_s": 0.03351,
+          "wall_s": 0.033514
+        },
+        "procedure_response": {
+          "cpu_s": 0.001642,
+          "wall_s": 0.001642
+        },
+        "counterevidence": {
+          "cpu_s": 0.00019,
+          "wall_s": 0.000191
+        }
+      },
+      "cpu_total_s": 0.047496
+    },
+    {
+      "family": "destino_primero",
+      "order": 53,
+      "branch": "necessary",
+      "seed": 1269501155,
+      "passed": true,
+      "source_meta": [
+        {
+          "kind": "role_set",
+          "input_arity": 4,
+          "roles": [
+            0,
+            1
+          ],
+          "sources": {
+            "raw_world:primitive_cda0226c6d3be478_a4": {
+              "family": "raw_world",
+              "support": 3
+            }
+          },
+          "families": {
+            "raw_world": 3
+          },
+          "support": 3,
+          "schema": "roles:4:0,1"
+        },
+        {
+          "kind": "role_cardinality",
+          "cardinality": 2,
+          "sources": {
+            "raw_world:primitive_cda0226c6d3be478_a4": {
+              "family": "raw_world",
+              "support": 3
+            }
+          },
+          "families": {
+            "raw_world": 3
+          },
+          "support": 3,
+          "schema": "card:2"
+        },
+        {
+          "kind": "role_topology",
+          "input_arity": 2,
+          "edges": [
+            [
+              0,
+              1
+            ]
+          ],
+          "sources": {
+            "raw_world:primitive_cda0226c6d3be478_a4": {
+              "family": "raw_world",
+              "support": 3
+            }
+          },
+          "families": {
+            "raw_world": 3
+          },
+          "support": 3,
+          "schema": "topo:2:0,1"
+        }
+      ],
+      "baseline_statuses": [
+        "pending_support",
+        "pending_support",
+        "pending_discriminating_evidence"
+      ],
+      "request": {
+        "kind": "controlled_intervention",
+        "reason": "unresolved_non_effect_role_precondition",
+        "text": "mueve hacia a4bab0ce3targetd84918 a a4bab0ce3targetp80113 con ficha a4bab0ce3targeti10090 desde a4bab0ce3targeto79701",
+        "before": [
+          [
+            "a4bab0ce3agent",
+            "a4bab0ce3targetp80113"
+          ],
+          [
+            "a4bab0ce3link",
+            "a4bab0ce3targeto79701",
+            "a4bab0ce3targetd84918"
+          ],
+          [
+            "a4bab0ce3loc",
+            "a4bab0ce3targetp80113",
+            "a4bab0ce3targeto79701"
+          ],
+          [
+            "a4bab0ce3place",
+            "a4bab0ce3targetd84918"
+          ],
+          [
+            "a4bab0ce3place",
+            "a4bab0ce3targeto79701"
+          ]
+        ],
+        "removed_fact": [
+          "a4bab0ce3inventory",
+          "a4bab0ce3targeti10090"
+        ],
+        "alternatives": [
+          "effect",
+          "no_effect"
+        ],
+        "estimated_information_bits": 1.0,
+        "estimated_cost": 1.0
+      },
+      "before": {
+        "full": 32,
+        "full_correct": 0,
+        "missing": 32,
+        "missing_correct": 32,
+        "unsafe": 0,
+        "unsafe_no_link": 0,
+        "unsafe_no_location": 0,
+        "cpu_s": 0.004256,
+        "p50_ms": 0.02079,
+        "p95_ms": 0.02268
+      },
+      "feedback_status": "operator_learned",
+      "after": {
+        "full": 32,
+        "full_correct": 32,
+        "missing": 32,
+        "missing_correct": 32,
+        "unsafe": 0,
+        "unsafe_no_link": 0,
+        "unsafe_no_location": 0,
+        "cpu_s": 0.009524,
+        "p50_ms": 0.05063,
+        "p95_ms": 0.06485
+      },
+      "procedure_status": "procedure_learned",
+      "procedure": {
+        "correct": 128,
+        "total": 128,
+        "wrong_confident": 0,
+        "p50_ms": 0.01017,
+        "p95_ms": 0.01159,
+        "max_ms": 0.0315
+      },
+      "counter_status": "raw_world_conflict",
+      "action_depends_on_meta": true,
+      "after_counter": {
+        "active_actions": 0,
+        "procedure_correct": 0
+      },
+      "controls": {
+        "fresh": {
+          "statuses": [
+            "pending_support",
+            "pending_support",
+            "pending_support"
+          ],
+          "pre": {
+            "full": 32,
+            "full_correct": 0,
+            "missing": 32,
+            "missing_correct": 32,
+            "unsafe": 0,
+            "unsafe_no_link": 0,
+            "unsafe_no_location": 0,
+            "cpu_s": 0.004295,
+            "p50_ms": 0.02144,
+            "p95_ms": 0.02316
+          },
+          "feedback_status": "pending_support",
+          "post": {
+            "full": 32,
+            "full_correct": 0,
+            "missing": 32,
+            "missing_correct": 32,
+            "unsafe": 0,
+            "unsafe_no_link": 0,
+            "unsafe_no_location": 0,
+            "cpu_s": 0.00424,
+            "p50_ms": 0.02147,
+            "p95_ms": 0.02322
+          }
+        },
+        "same_information_no_meta": {
+          "statuses": [
+            "pending_support",
+            "pending_support",
+            "pending_support"
+          ],
+          "pre": {
+            "full": 32,
+            "full_correct": 0,
+            "missing": 32,
+            "missing_correct": 32,
+            "unsafe": 0,
+            "unsafe_no_link": 0,
+            "unsafe_no_location": 0,
+            "cpu_s": 0.004295,
+            "p50_ms": 0.02153,
+            "p95_ms": 0.02344
+          },
+          "feedback_status": "pending_support",
+          "post": {
+            "full": 32,
+            "full_correct": 0,
+            "missing": 32,
+            "missing_correct": 32,
+            "unsafe": 0,
+            "unsafe_no_link": 0,
+            "unsafe_no_location": 0,
+            "cpu_s": 0.004311,
+            "p50_ms": 0.02135,
+            "p95_ms": 0.02361
+          }
+        }
+      },
+      "restart_same": true,
+      "saved_bytes": 76277,
+      "saved_bytes_after": 97481,
+      "cost": {
+        "source": {
+          "cpu_s": 0.002616,
+          "wall_s": 0.002617
+        },
+        "action_learning": {
+          "cpu_s": 0.001943,
+          "wall_s": 0.001945
+        },
+        "restart_before_probe": {
+          "cpu_s": 0.003984,
+          "wall_s": 0.005879
+        },
+        "probe_execution_and_learning": {
+          "cpu_s": 0.000719,
+          "wall_s": 0.00072
+        },
+        "restart_after_probe": {
+          "cpu_s": 0.005067,
+          "wall_s": 0.006108
+        },
+        "procedure_learning": {
+          "cpu_s": 0.033193,
+          "wall_s": 0.033196
+        },
+        "procedure_response": {
+          "cpu_s": 0.001615,
+          "wall_s": 0.001616
+        },
+        "counterevidence": {
+          "cpu_s": 0.000263,
+          "wall_s": 0.000264
+        }
+      },
+      "cpu_total_s": 0.0494
+    },
+    {
+      "family": "destino_primero",
+      "order": 53,
+      "branch": "irrelevant",
+      "seed": 1269501155,
+      "passed": true,
+      "source_meta": [
+        {
+          "kind": "role_set",
+          "input_arity": 4,
+          "roles": [
+            0,
+            1
+          ],
+          "sources": {
+            "raw_world:primitive_cda0226c6d3be478_a4": {
+              "family": "raw_world",
+              "support": 3
+            }
+          },
+          "families": {
+            "raw_world": 3
+          },
+          "support": 3,
+          "schema": "roles:4:0,1"
+        },
+        {
+          "kind": "role_cardinality",
+          "cardinality": 2,
+          "sources": {
+            "raw_world:primitive_cda0226c6d3be478_a4": {
+              "family": "raw_world",
+              "support": 3
+            }
+          },
+          "families": {
+            "raw_world": 3
+          },
+          "support": 3,
+          "schema": "card:2"
+        },
+        {
+          "kind": "role_topology",
+          "input_arity": 2,
+          "edges": [
+            [
+              0,
+              1
+            ]
+          ],
+          "sources": {
+            "raw_world:primitive_cda0226c6d3be478_a4": {
+              "family": "raw_world",
+              "support": 3
+            }
+          },
+          "families": {
+            "raw_world": 3
+          },
+          "support": 3,
+          "schema": "topo:2:0,1"
+        }
+      ],
+      "baseline_statuses": [
+        "pending_support",
+        "pending_support",
+        "pending_discriminating_evidence"
+      ],
+      "request": {
+        "kind": "controlled_intervention",
+        "reason": "unresolved_non_effect_role_precondition",
+        "text": "mueve hacia a4bab0ce3targetd84918 a a4bab0ce3targetp80113 con ficha a4bab0ce3targeti10090 desde a4bab0ce3targeto79701",
+        "before": [
+          [
+            "a4bab0ce3agent",
+            "a4bab0ce3targetp80113"
+          ],
+          [
+            "a4bab0ce3link",
+            "a4bab0ce3targeto79701",
+            "a4bab0ce3targetd84918"
+          ],
+          [
+            "a4bab0ce3loc",
+            "a4bab0ce3targetp80113",
+            "a4bab0ce3targeto79701"
+          ],
+          [
+            "a4bab0ce3place",
+            "a4bab0ce3targetd84918"
+          ],
+          [
+            "a4bab0ce3place",
+            "a4bab0ce3targeto79701"
+          ]
+        ],
+        "removed_fact": [
+          "a4bab0ce3inventory",
+          "a4bab0ce3targeti10090"
+        ],
+        "alternatives": [
+          "effect",
+          "no_effect"
+        ],
+        "estimated_information_bits": 1.0,
+        "estimated_cost": 1.0
+      },
+      "before": {
+        "full": 32,
+        "full_correct": 0,
+        "missing": 32,
+        "missing_correct": 0,
+        "unsafe": 0,
+        "unsafe_no_link": 0,
+        "unsafe_no_location": 0,
+        "cpu_s": 0.004352,
+        "p50_ms": 0.02123,
+        "p95_ms": 0.02353
+      },
+      "feedback_status": "operator_learned",
+      "after": {
+        "full": 32,
+        "full_correct": 32,
+        "missing": 32,
+        "missing_correct": 32,
+        "unsafe": 0,
+        "unsafe_no_link": 0,
+        "unsafe_no_location": 0,
+        "cpu_s": 0.009594,
+        "p50_ms": 0.05253,
+        "p95_ms": 0.0561
+      },
+      "procedure_status": "procedure_learned",
+      "procedure": {
+        "correct": 128,
+        "total": 128,
+        "wrong_confident": 0,
+        "p50_ms": 0.01023,
+        "p95_ms": 0.01175,
+        "max_ms": 0.03794
+      },
+      "counter_status": "raw_world_conflict",
+      "action_depends_on_meta": false,
+      "after_counter": {
+        "active_actions": 1,
+        "procedure_correct": 0
+      },
+      "controls": {
+        "fresh": {
+          "statuses": [
+            "pending_support",
+            "pending_support",
+            "pending_support"
+          ],
+          "pre": {
+            "full": 32,
+            "full_correct": 0,
+            "missing": 32,
+            "missing_correct": 0,
+            "unsafe": 0,
+            "unsafe_no_link": 0,
+            "unsafe_no_location": 0,
+            "cpu_s": 0.004244,
+            "p50_ms": 0.02152,
+            "p95_ms": 0.02312
+          },
+          "feedback_status": "operator_learned",
+          "post": {
+            "full": 32,
+            "full_correct": 32,
+            "missing": 32,
+            "missing_correct": 32,
+            "unsafe": 0,
+            "unsafe_no_link": 0,
+            "unsafe_no_location": 0,
+            "cpu_s": 0.009479,
+            "p50_ms": 0.05196,
+            "p95_ms": 0.05502
+          }
+        },
+        "same_information_no_meta": {
+          "statuses": [
+            "pending_support",
+            "pending_support",
+            "pending_support"
+          ],
+          "pre": {
+            "full": 32,
+            "full_correct": 0,
+            "missing": 32,
+            "missing_correct": 0,
+            "unsafe": 0,
+            "unsafe_no_link": 0,
+            "unsafe_no_location": 0,
+            "cpu_s": 0.00431,
+            "p50_ms": 0.02129,
+            "p95_ms": 0.0234
+          },
+          "feedback_status": "operator_learned",
+          "post": {
+            "full": 32,
+            "full_correct": 32,
+            "missing": 32,
+            "missing_correct": 32,
+            "unsafe": 0,
+            "unsafe_no_link": 0,
+            "unsafe_no_location": 0,
+            "cpu_s": 0.01096,
+            "p50_ms": 0.05667,
+            "p95_ms": 0.07266
+          }
+        }
+      },
+      "restart_same": true,
+      "saved_bytes": 76277,
+      "saved_bytes_after": 88435,
+      "cost": {
+        "source": {
+          "cpu_s": 0.001992,
+          "wall_s": 0.001993
+        },
+        "action_learning": {
+          "cpu_s": 0.001604,
+          "wall_s": 0.001605
+        },
+        "restart_before_probe": {
+          "cpu_s": 0.003927,
+          "wall_s": 0.005729
+        },
+        "probe_execution_and_learning": {
+          "cpu_s": 0.000242,
+          "wall_s": 0.000243
+        },
+        "restart_after_probe": {
+          "cpu_s": 0.004397,
+          "wall_s": 0.005327
+        },
+        "procedure_learning": {
+          "cpu_s": 0.034512,
+          "wall_s": 0.034516
+        },
+        "procedure_response": {
+          "cpu_s": 0.001628,
+          "wall_s": 0.001628
+        },
+        "counterevidence": {
+          "cpu_s": 0.000196,
+          "wall_s": 0.000198
+        }
+      },
+      "cpu_total_s": 0.048498
+    },
+    {
+      "family": "origen_antes_ficha",
+      "order": 53,
+      "branch": "necessary",
+      "seed": 347694631,
+      "passed": true,
+      "source_meta": [
+        {
+          "kind": "role_set",
+          "input_arity": 4,
+          "roles": [
+            0,
+            3
+          ],
+          "sources": {
+            "raw_world:primitive_468302bb000ad675_a4": {
+              "family": "raw_world",
+              "support": 3
+            }
+          },
+          "families": {
+            "raw_world": 3
+          },
+          "support": 3,
+          "schema": "roles:4:0,3"
+        },
+        {
+          "kind": "role_cardinality",
+          "cardinality": 2,
+          "sources": {
+            "raw_world:primitive_468302bb000ad675_a4": {
+              "family": "raw_world",
+              "support": 3
+            }
+          },
+          "families": {
+            "raw_world": 3
+          },
+          "support": 3,
+          "schema": "card:2"
+        },
+        {
+          "kind": "role_topology",
+          "input_arity": 2,
+          "edges": [
+            [
+              0,
+              1
+            ]
+          ],
+          "sources": {
+            "raw_world:primitive_468302bb000ad675_a4": {
+              "family": "raw_world",
+              "support": 3
+            }
+          },
+          "families": {
+            "raw_world": 3
+          },
+          "support": 3,
+          "schema": "topo:2:0,1"
+        }
+      ],
+      "baseline_statuses": [
+        "pending_support",
+        "pending_support",
+        "pending_discriminating_evidence"
+      ],
+      "request": {
+        "kind": "controlled_intervention",
+        "reason": "unresolved_non_effect_role_precondition",
+        "text": "entrega a a14b96627targetp86515 desde a14b96627targeto65747 con ficha a14b96627targeti86159 hasta a14b96627targetd19085",
+        "before": [
+          [
+            "a14b96627agent",
+            "a14b96627targetp86515"
+          ],
+          [
+            "a14b96627link",
+            "a14b96627targeto65747",
+            "a14b96627targetd19085"
+          ],
+          [
+            "a14b96627loc",
+            "a14b96627targetp86515",
+            "a14b96627targeto65747"
+          ],
+          [
+            "a14b96627place",
+            "a14b96627targetd19085"
+          ],
+          [
+            "a14b96627place",
+            "a14b96627targeto65747"
+          ]
+        ],
+        "removed_fact": [
+          "a14b96627inventory",
+          "a14b96627targeti86159"
+        ],
+        "alternatives": [
+          "effect",
+          "no_effect"
+        ],
+        "estimated_information_bits": 1.0,
+        "estimated_cost": 1.0
+      },
+      "before": {
+        "full": 32,
+        "full_correct": 0,
+        "missing": 32,
+        "missing_correct": 32,
+        "unsafe": 0,
+        "unsafe_no_link": 0,
+        "unsafe_no_location": 0,
+        "cpu_s": 0.004372,
+        "p50_ms": 0.02155,
+        "p95_ms": 0.02693
+      },
+      "feedback_status": "operator_learned",
+      "after": {
+        "full": 32,
+        "full_correct": 32,
+        "missing": 32,
+        "missing_correct": 32,
+        "unsafe": 0,
+        "unsafe_no_link": 0,
+        "unsafe_no_location": 0,
+        "cpu_s": 0.009981,
+        "p50_ms": 0.05574,
+        "p95_ms": 0.06922
+      },
+      "procedure_status": "procedure_learned",
+      "procedure": {
+        "correct": 128,
+        "total": 128,
+        "wrong_confident": 0,
+        "p50_ms": 0.01025,
+        "p95_ms": 0.01168,
+        "max_ms": 0.03377
+      },
+      "counter_status": "raw_world_conflict",
+      "action_depends_on_meta": true,
+      "after_counter": {
+        "active_actions": 0,
+        "procedure_correct": 0
+      },
+      "controls": {
+        "fresh": {
+          "statuses": [
+            "pending_support",
+            "pending_support",
+            "pending_support"
+          ],
+          "pre": {
+            "full": 32,
+            "full_correct": 0,
+            "missing": 32,
+            "missing_correct": 32,
+            "unsafe": 0,
+            "unsafe_no_link": 0,
+            "unsafe_no_location": 0,
+            "cpu_s": 0.004424,
+            "p50_ms": 0.02107,
+            "p95_ms": 0.0237
+          },
+          "feedback_status": "pending_support",
+          "post": {
+            "full": 32,
+            "full_correct": 0,
+            "missing": 32,
+            "missing_correct": 32,
+            "unsafe": 0,
+            "unsafe_no_link": 0,
+            "unsafe_no_location": 0,
+            "cpu_s": 0.004252,
+            "p50_ms": 0.02162,
+            "p95_ms": 0.02327
+          }
+        },
+        "same_information_no_meta": {
+          "statuses": [
+            "pending_support",
+            "pending_support",
+            "pending_support"
+          ],
+          "pre": {
+            "full": 32,
+            "full_correct": 0,
+            "missing": 32,
+            "missing_correct": 32,
+            "unsafe": 0,
+            "unsafe_no_link": 0,
+            "unsafe_no_location": 0,
+            "cpu_s": 0.004364,
+            "p50_ms": 0.02118,
+            "p95_ms": 0.02383
+          },
+          "feedback_status": "pending_support",
+          "post": {
+            "full": 32,
+            "full_correct": 0,
+            "missing": 32,
+            "missing_correct": 32,
+            "unsafe": 0,
+            "unsafe_no_link": 0,
+            "unsafe_no_location": 0,
+            "cpu_s": 0.004289,
+            "p50_ms": 0.02191,
+            "p95_ms": 0.02389
+          }
+        }
+      },
+      "restart_same": true,
+      "saved_bytes": 76233,
+      "saved_bytes_after": 97463,
+      "cost": {
+        "source": {
+          "cpu_s": 0.002656,
+          "wall_s": 0.002657
+        },
+        "action_learning": {
+          "cpu_s": 0.001951,
+          "wall_s": 0.001952
+        },
+        "restart_before_probe": {
+          "cpu_s": 0.004027,
+          "wall_s": 0.005573
+        },
+        "probe_execution_and_learning": {
+          "cpu_s": 0.00076,
+          "wall_s": 0.000762
+        },
+        "restart_after_probe": {
+          "cpu_s": 0.004915,
+          "wall_s": 0.005708
+        },
+        "procedure_learning": {
+          "cpu_s": 0.03486,
+          "wall_s": 0.034879
+        },
+        "procedure_response": {
+          "cpu_s": 0.001634,
+          "wall_s": 0.001634
+        },
+        "counterevidence": {
+          "cpu_s": 0.000278,
+          "wall_s": 0.00028
+        }
+      },
+      "cpu_total_s": 0.051081
+    },
+    {
+      "family": "origen_antes_ficha",
+      "order": 53,
+      "branch": "irrelevant",
+      "seed": 347694631,
+      "passed": true,
+      "source_meta": [
+        {
+          "kind": "role_set",
+          "input_arity": 4,
+          "roles": [
+            0,
+            3
+          ],
+          "sources": {
+            "raw_world:primitive_468302bb000ad675_a4": {
+              "family": "raw_world",
+              "support": 3
+            }
+          },
+          "families": {
+            "raw_world": 3
+          },
+          "support": 3,
+          "schema": "roles:4:0,3"
+        },
+        {
+          "kind": "role_cardinality",
+          "cardinality": 2,
+          "sources": {
+            "raw_world:primitive_468302bb000ad675_a4": {
+              "family": "raw_world",
+              "support": 3
+            }
+          },
+          "families": {
+            "raw_world": 3
+          },
+          "support": 3,
+          "schema": "card:2"
+        },
+        {
+          "kind": "role_topology",
+          "input_arity": 2,
+          "edges": [
+            [
+              0,
+              1
+            ]
+          ],
+          "sources": {
+            "raw_world:primitive_468302bb000ad675_a4": {
+              "family": "raw_world",
+              "support": 3
+            }
+          },
+          "families": {
+            "raw_world": 3
+          },
+          "support": 3,
+          "schema": "topo:2:0,1"
+        }
+      ],
+      "baseline_statuses": [
+        "pending_support",
+        "pending_support",
+        "pending_discriminating_evidence"
+      ],
+      "request": {
+        "kind": "controlled_intervention",
+        "reason": "unresolved_non_effect_role_precondition",
+        "text": "entrega a a14b96627targetp86515 desde a14b96627targeto65747 con ficha a14b96627targeti86159 hasta a14b96627targetd19085",
+        "before": [
+          [
+            "a14b96627agent",
+            "a14b96627targetp86515"
+          ],
+          [
+            "a14b96627link",
+            "a14b96627targeto65747",
+            "a14b96627targetd19085"
+          ],
+          [
+            "a14b96627loc",
+            "a14b96627targetp86515",
+            "a14b96627targeto65747"
+          ],
+          [
+            "a14b96627place",
+            "a14b96627targetd19085"
+          ],
+          [
+            "a14b96627place",
+            "a14b96627targeto65747"
+          ]
+        ],
+        "removed_fact": [
+          "a14b96627inventory",
+          "a14b96627targeti86159"
+        ],
+        "alternatives": [
+          "effect",
+          "no_effect"
+        ],
+        "estimated_information_bits": 1.0,
+        "estimated_cost": 1.0
+      },
+      "before": {
+        "full": 32,
+        "full_correct": 0,
+        "missing": 32,
+        "missing_correct": 0,
+        "unsafe": 0,
+        "unsafe_no_link": 0,
+        "unsafe_no_location": 0,
+        "cpu_s": 0.004291,
+        "p50_ms": 0.02147,
+        "p95_ms": 0.0235
+      },
+      "feedback_status": "operator_learned",
+      "after": {
+        "full": 32,
+        "full_correct": 32,
+        "missing": 32,
+        "missing_correct": 32,
+        "unsafe": 0,
+        "unsafe_no_link": 0,
+        "unsafe_no_location": 0,
+        "cpu_s": 0.009743,
+        "p50_ms": 0.05329,
+        "p95_ms": 0.05718
+      },
+      "procedure_status": "procedure_learned",
+      "procedure": {
+        "correct": 128,
+        "total": 128,
+        "wrong_confident": 0,
+        "p50_ms": 0.01015,
+        "p95_ms": 0.012,
+        "max_ms": 0.03043
+      },
+      "counter_status": "raw_world_conflict",
+      "action_depends_on_meta": false,
+      "after_counter": {
+        "active_actions": 1,
+        "procedure_correct": 0
+      },
+      "controls": {
+        "fresh": {
+          "statuses": [
+            "pending_support",
+            "pending_support",
+            "pending_support"
+          ],
+          "pre": {
+            "full": 32,
+            "full_correct": 0,
+            "missing": 32,
+            "missing_correct": 0,
+            "unsafe": 0,
+            "unsafe_no_link": 0,
+            "unsafe_no_location": 0,
+            "cpu_s": 0.004362,
+            "p50_ms": 0.0218,
+            "p95_ms": 0.024
+          },
+          "feedback_status": "operator_learned",
+          "post": {
+            "full": 32,
+            "full_correct": 32,
+            "missing": 32,
+            "missing_correct": 32,
+            "unsafe": 0,
+            "unsafe_no_link": 0,
+            "unsafe_no_location": 0,
+            "cpu_s": 0.009474,
+            "p50_ms": 0.05241,
+            "p95_ms": 0.05524
+          }
+        },
+        "same_information_no_meta": {
+          "statuses": [
+            "pending_support",
+            "pending_support",
+            "pending_support"
+          ],
+          "pre": {
+            "full": 32,
+            "full_correct": 0,
+            "missing": 32,
+            "missing_correct": 0,
+            "unsafe": 0,
+            "unsafe_no_link": 0,
+            "unsafe_no_location": 0,
+            "cpu_s": 0.004262,
+            "p50_ms": 0.02084,
+            "p95_ms": 0.02278
+          },
+          "feedback_status": "operator_learned",
+          "post": {
+            "full": 32,
+            "full_correct": 32,
+            "missing": 32,
+            "missing_correct": 32,
+            "unsafe": 0,
+            "unsafe_no_link": 0,
+            "unsafe_no_location": 0,
+            "cpu_s": 0.009535,
+            "p50_ms": 0.05255,
+            "p95_ms": 0.05512
+          }
+        }
+      },
+      "restart_same": true,
+      "saved_bytes": 76233,
+      "saved_bytes_after": 88386,
+      "cost": {
+        "source": {
+          "cpu_s": 0.001982,
+          "wall_s": 0.001983
+        },
+        "action_learning": {
+          "cpu_s": 0.001604,
+          "wall_s": 0.001605
+        },
+        "restart_before_probe": {
+          "cpu_s": 0.004109,
+          "wall_s": 0.005843
+        },
+        "probe_execution_and_learning": {
+          "cpu_s": 0.000244,
+          "wall_s": 0.000245
+        },
+        "restart_after_probe": {
+          "cpu_s": 0.00438,
+          "wall_s": 0.005333
+        },
+        "procedure_learning": {
+          "cpu_s": 0.032779,
+          "wall_s": 0.032782
+        },
+        "procedure_response": {
+          "cpu_s": 0.001619,
+          "wall_s": 0.00162
+        },
+        "counterevidence": {
+          "cpu_s": 0.000192,
+          "wall_s": 0.000193
+        }
+      },
+      "cpu_total_s": 0.046909
+    },
+    {
+      "family": "ficha_intermedia",
+      "order": 97,
+      "branch": "necessary",
+      "seed": 2116425529,
+      "passed": true,
+      "source_meta": [
+        {
+          "kind": "role_set",
+          "input_arity": 4,
+          "roles": [
+            0,
+            3
+          ],
+          "sources": {
+            "raw_world:primitive_81f86d9a11403aba_a4": {
+              "family": "raw_world",
+              "support": 3
+            }
+          },
+          "families": {
+            "raw_world": 3
+          },
+          "support": 3,
+          "schema": "roles:4:0,3"
+        },
+        {
+          "kind": "role_cardinality",
+          "cardinality": 2,
+          "sources": {
+            "raw_world:primitive_81f86d9a11403aba_a4": {
+              "family": "raw_world",
+              "support": 3
+            }
+          },
+          "families": {
+            "raw_world": 3
+          },
+          "support": 3,
+          "schema": "card:2"
+        },
+        {
+          "kind": "role_topology",
+          "input_arity": 2,
+          "edges": [
+            [
+              0,
+              1
+            ]
+          ],
+          "sources": {
+            "raw_world:primitive_81f86d9a11403aba_a4": {
+              "family": "raw_world",
+              "support": 3
+            }
+          },
+          "families": {
+            "raw_world": 3
+          },
+          "support": 3,
+          "schema": "topo:2:0,1"
+        }
+      ],
+      "baseline_statuses": [
+        "pending_support",
+        "pending_support",
+        "pending_discriminating_evidence"
+      ],
+      "request": {
+        "kind": "controlled_intervention",
+        "reason": "unresolved_non_effect_role_precondition",
+        "text": "transporta a a7e261739targetp87178 con ficha a7e261739targeti55015 desde a7e261739targeto82737 hasta a7e261739targetd25518",
+        "before": [
+          [
+            "a7e261739agent",
+            "a7e261739targetp87178"
+          ],
+          [
+            "a7e261739link",
+            "a7e261739targeto82737",
+            "a7e261739targetd25518"
+          ],
+          [
+            "a7e261739loc",
+            "a7e261739targetp87178",
+            "a7e261739targeto82737"
+          ],
+          [
+            "a7e261739place",
+            "a7e261739targetd25518"
+          ],
+          [
+            "a7e261739place",
+            "a7e261739targeto82737"
+          ]
+        ],
+        "removed_fact": [
+          "a7e261739inventory",
+          "a7e261739targeti55015"
+        ],
+        "alternatives": [
+          "effect",
+          "no_effect"
+        ],
+        "estimated_information_bits": 1.0,
+        "estimated_cost": 1.0
+      },
+      "before": {
+        "full": 32,
+        "full_correct": 0,
+        "missing": 32,
+        "missing_correct": 32,
+        "unsafe": 0,
+        "unsafe_no_link": 0,
+        "unsafe_no_location": 0,
+        "cpu_s": 0.004272,
+        "p50_ms": 0.02122,
+        "p95_ms": 0.02344
+      },
+      "feedback_status": "operator_learned",
+      "after": {
+        "full": 32,
+        "full_correct": 32,
+        "missing": 32,
+        "missing_correct": 32,
+        "unsafe": 0,
+        "unsafe_no_link": 0,
+        "unsafe_no_location": 0,
+        "cpu_s": 0.01038,
+        "p50_ms": 0.05636,
+        "p95_ms": 0.0672
+      },
+      "procedure_status": "procedure_learned",
+      "procedure": {
+        "correct": 128,
+        "total": 128,
+        "wrong_confident": 0,
+        "p50_ms": 0.01019,
+        "p95_ms": 0.01147,
+        "max_ms": 0.02971
+      },
+      "counter_status": "raw_world_conflict",
+      "action_depends_on_meta": true,
+      "after_counter": {
+        "active_actions": 0,
+        "procedure_correct": 0
+      },
+      "controls": {
+        "fresh": {
+          "statuses": [
+            "pending_support",
+            "pending_support",
+            "pending_support"
+          ],
+          "pre": {
+            "full": 32,
+            "full_correct": 0,
+            "missing": 32,
+            "missing_correct": 32,
+            "unsafe": 0,
+            "unsafe_no_link": 0,
+            "unsafe_no_location": 0,
+            "cpu_s": 0.004466,
+            "p50_ms": 0.02186,
+            "p95_ms": 0.02743
+          },
+          "feedback_status": "pending_support",
+          "post": {
+            "full": 32,
+            "full_correct": 0,
+            "missing": 32,
+            "missing_correct": 32,
+            "unsafe": 0,
+            "unsafe_no_link": 0,
+            "unsafe_no_location": 0,
+            "cpu_s": 0.004388,
+            "p50_ms": 0.02142,
+            "p95_ms": 0.02383
+          }
+        },
+        "same_information_no_meta": {
+          "statuses": [
+            "pending_support",
+            "pending_support",
+            "pending_support"
+          ],
+          "pre": {
+            "full": 32,
+            "full_correct": 0,
+            "missing": 32,
+            "missing_correct": 32,
+            "unsafe": 0,
+            "unsafe_no_link": 0,
+            "unsafe_no_location": 0,
+            "cpu_s": 0.004336,
+            "p50_ms": 0.02163,
+            "p95_ms": 0.02376
+          },
+          "feedback_status": "pending_support",
+          "post": {
+            "full": 32,
+            "full_correct": 0,
+            "missing": 32,
+            "missing_correct": 32,
+            "unsafe": 0,
+            "unsafe_no_link": 0,
+            "unsafe_no_location": 0,
+            "cpu_s": 0.004377,
+            "p50_ms": 0.02187,
+            "p95_ms": 0.02395
+          }
+        }
+      },
+      "restart_same": true,
+      "saved_bytes": 76407,
+      "saved_bytes_after": 97678,
+      "cost": {
+        "source": {
+          "cpu_s": 0.002589,
+          "wall_s": 0.002591
+        },
+        "action_learning": {
+          "cpu_s": 0.001907,
+          "wall_s": 0.001908
+        },
+        "restart_before_probe": {
+          "cpu_s": 0.004476,
+          "wall_s": 0.006116
+        },
+        "probe_execution_and_learning": {
+          "cpu_s": 0.000906,
+          "wall_s": 0.000908
+        },
+        "restart_after_probe": {
+          "cpu_s": 0.005126,
+          "wall_s": 0.006113
+        },
+        "procedure_learning": {
+          "cpu_s": 0.033429,
+          "wall_s": 0.033432
+        },
+        "procedure_response": {
+          "cpu_s": 0.001618,
+          "wall_s": 0.001618
+        },
+        "counterevidence": {
+          "cpu_s": 0.00308,
+          "wall_s": 0.003082
+        }
+      },
+      "cpu_total_s": 0.053131
+    },
+    {
+      "family": "ficha_intermedia",
+      "order": 97,
+      "branch": "irrelevant",
+      "seed": 2116425529,
+      "passed": true,
+      "source_meta": [
+        {
+          "kind": "role_set",
+          "input_arity": 4,
+          "roles": [
+            0,
+            3
+          ],
+          "sources": {
+            "raw_world:primitive_81f86d9a11403aba_a4": {
+              "family": "raw_world",
+              "support": 3
+            }
+          },
+          "families": {
+            "raw_world": 3
+          },
+          "support": 3,
+          "schema": "roles:4:0,3"
+        },
+        {
+          "kind": "role_cardinality",
+          "cardinality": 2,
+          "sources": {
+            "raw_world:primitive_81f86d9a11403aba_a4": {
+              "family": "raw_world",
+              "support": 3
+            }
+          },
+          "families": {
+            "raw_world": 3
+          },
+          "support": 3,
+          "schema": "card:2"
+        },
+        {
+          "kind": "role_topology",
+          "input_arity": 2,
+          "edges": [
+            [
+              0,
+              1
+            ]
+          ],
+          "sources": {
+            "raw_world:primitive_81f86d9a11403aba_a4": {
+              "family": "raw_world",
+              "support": 3
+            }
+          },
+          "families": {
+            "raw_world": 3
+          },
+          "support": 3,
+          "schema": "topo:2:0,1"
+        }
+      ],
+      "baseline_statuses": [
+        "pending_support",
+        "pending_support",
+        "pending_discriminating_evidence"
+      ],
+      "request": {
+        "kind": "controlled_intervention",
+        "reason": "unresolved_non_effect_role_precondition",
+        "text": "transporta a a7e261739targetp87178 con ficha a7e261739targeti55015 desde a7e261739targeto82737 hasta a7e261739targetd25518",
+        "before": [
+          [
+            "a7e261739agent",
+            "a7e261739targetp87178"
+          ],
+          [
+            "a7e261739link",
+            "a7e261739targeto82737",
+            "a7e261739targetd25518"
+          ],
+          [
+            "a7e261739loc",
+            "a7e261739targetp87178",
+            "a7e261739targeto82737"
+          ],
+          [
+            "a7e261739place",
+            "a7e261739targetd25518"
+          ],
+          [
+            "a7e261739place",
+            "a7e261739targeto82737"
+          ]
+        ],
+        "removed_fact": [
+          "a7e261739inventory",
+          "a7e261739targeti55015"
+        ],
+        "alternatives": [
+          "effect",
+          "no_effect"
+        ],
+        "estimated_information_bits": 1.0,
+        "estimated_cost": 1.0
+      },
+      "before": {
+        "full": 32,
+        "full_correct": 0,
+        "missing": 32,
+        "missing_correct": 0,
+        "unsafe": 0,
+        "unsafe_no_link": 0,
+        "unsafe_no_location": 0,
+        "cpu_s": 0.004292,
+        "p50_ms": 0.02103,
+        "p95_ms": 0.0236
+      },
+      "feedback_status": "operator_learned",
+      "after": {
+        "full": 32,
+        "full_correct": 32,
+        "missing": 32,
+        "missing_correct": 32,
+        "unsafe": 0,
+        "unsafe_no_link": 0,
+        "unsafe_no_location": 0,
+        "cpu_s": 0.010198,
+        "p50_ms": 0.05552,
+        "p95_ms": 0.06335
+      },
+      "procedure_status": "procedure_learned",
+      "procedure": {
+        "correct": 128,
+        "total": 128,
+        "wrong_confident": 0,
+        "p50_ms": 0.01037,
+        "p95_ms": 0.01497,
+        "max_ms": 0.47792
+      },
+      "counter_status": "raw_world_conflict",
+      "action_depends_on_meta": false,
+      "after_counter": {
+        "active_actions": 1,
+        "procedure_correct": 0
+      },
+      "controls": {
+        "fresh": {
+          "statuses": [
+            "pending_support",
+            "pending_support",
+            "pending_support"
+          ],
+          "pre": {
+            "full": 32,
+            "full_correct": 0,
+            "missing": 32,
+            "missing_correct": 0,
+            "unsafe": 0,
+            "unsafe_no_link": 0,
+            "unsafe_no_location": 0,
+            "cpu_s": 0.004229,
+            "p50_ms": 0.02129,
+            "p95_ms": 0.02312
+          },
+          "feedback_status": "operator_learned",
+          "post": {
+            "full": 32,
+            "full_correct": 32,
+            "missing": 32,
+            "missing_correct": 32,
+            "unsafe": 0,
+            "unsafe_no_link": 0,
+            "unsafe_no_location": 0,
+            "cpu_s": 0.009472,
+            "p50_ms": 0.05185,
+            "p95_ms": 0.05525
+          }
+        },
+        "same_information_no_meta": {
+          "statuses": [
+            "pending_support",
+            "pending_support",
+            "pending_support"
+          ],
+          "pre": {
+            "full": 32,
+            "full_correct": 0,
+            "missing": 32,
+            "missing_correct": 0,
+            "unsafe": 0,
+            "unsafe_no_link": 0,
+            "unsafe_no_location": 0,
+            "cpu_s": 0.004349,
+            "p50_ms": 0.02141,
+            "p95_ms": 0.02375
+          },
+          "feedback_status": "operator_learned",
+          "post": {
+            "full": 32,
+            "full_correct": 32,
+            "missing": 32,
+            "missing_correct": 32,
+            "unsafe": 0,
+            "unsafe_no_link": 0,
+            "unsafe_no_location": 0,
+            "cpu_s": 0.009724,
+            "p50_ms": 0.05287,
+            "p95_ms": 0.05614
+          }
+        }
+      },
+      "restart_same": true,
+      "saved_bytes": 76409,
+      "saved_bytes_after": 88627,
+      "cost": {
+        "source": {
+          "cpu_s": 0.002031,
+          "wall_s": 0.002032
+        },
+        "action_learning": {
+          "cpu_s": 0.001607,
+          "wall_s": 0.001608
+        },
+        "restart_before_probe": {
+          "cpu_s": 0.00418,
+          "wall_s": 0.005838
+        },
+        "probe_execution_and_learning": {
+          "cpu_s": 0.000254,
+          "wall_s": 0.000255
+        },
+        "restart_after_probe": {
+          "cpu_s": 0.004322,
+          "wall_s": 0.005206
+        },
+        "procedure_learning": {
+          "cpu_s": 0.032644,
+          "wall_s": 0.032654
+        },
+        "procedure_response": {
+          "cpu_s": 0.002134,
+          "wall_s": 0.002135
+        },
+        "counterevidence": {
+          "cpu_s": 0.000188,
+          "wall_s": 0.000189
+        }
+      },
+      "cpu_total_s": 0.04736
+    },
+    {
+      "family": "destino_primero",
+      "order": 97,
+      "branch": "necessary",
+      "seed": 1842508285,
+      "passed": true,
+      "source_meta": [
+        {
+          "kind": "role_set",
+          "input_arity": 4,
+          "roles": [
+            0,
+            1
+          ],
+          "sources": {
+            "raw_world:primitive_cda0226c6d3be478_a4": {
+              "family": "raw_world",
+              "support": 3
+            }
+          },
+          "families": {
+            "raw_world": 3
+          },
+          "support": 3,
+          "schema": "roles:4:0,1"
+        },
+        {
+          "kind": "role_cardinality",
+          "cardinality": 2,
+          "sources": {
+            "raw_world:primitive_cda0226c6d3be478_a4": {
+              "family": "raw_world",
+              "support": 3
+            }
+          },
+          "families": {
+            "raw_world": 3
+          },
+          "support": 3,
+          "schema": "card:2"
+        },
+        {
+          "kind": "role_topology",
+          "input_arity": 2,
+          "edges": [
+            [
+              0,
+              1
+            ]
+          ],
+          "sources": {
+            "raw_world:primitive_cda0226c6d3be478_a4": {
+              "family": "raw_world",
+              "support": 3
+            }
+          },
+          "families": {
+            "raw_world": 3
+          },
+          "support": 3,
+          "schema": "topo:2:0,1"
+        }
+      ],
+      "baseline_statuses": [
+        "pending_support",
+        "pending_support",
+        "pending_discriminating_evidence"
+      ],
+      "request": {
+        "kind": "controlled_intervention",
+        "reason": "unresolved_non_effect_role_precondition",
+        "text": "mueve hacia a6dd271fdtargetd95730 a a6dd271fdtargetp61557 con ficha a6dd271fdtargeti44119 desde a6dd271fdtargeto63106",
+        "before": [
+          [
+            "a6dd271fdagent",
+            "a6dd271fdtargetp61557"
+          ],
+          [
+            "a6dd271fdlink",
+            "a6dd271fdtargeto63106",
+            "a6dd271fdtargetd95730"
+          ],
+          [
+            "a6dd271fdloc",
+            "a6dd271fdtargetp61557",
+            "a6dd271fdtargeto63106"
+          ],
+          [
+            "a6dd271fdplace",
+            "a6dd271fdtargetd95730"
+          ],
+          [
+            "a6dd271fdplace",
+            "a6dd271fdtargeto63106"
+          ]
+        ],
+        "removed_fact": [
+          "a6dd271fdinventory",
+          "a6dd271fdtargeti44119"
+        ],
+        "alternatives": [
+          "effect",
+          "no_effect"
+        ],
+        "estimated_information_bits": 1.0,
+        "estimated_cost": 1.0
+      },
+      "before": {
+        "full": 32,
+        "full_correct": 0,
+        "missing": 32,
+        "missing_correct": 32,
+        "unsafe": 0,
+        "unsafe_no_link": 0,
+        "unsafe_no_location": 0,
+        "cpu_s": 0.004224,
+        "p50_ms": 0.02146,
+        "p95_ms": 0.02293
+      },
+      "feedback_status": "operator_learned",
+      "after": {
+        "full": 32,
+        "full_correct": 32,
+        "missing": 32,
+        "missing_correct": 32,
+        "unsafe": 0,
+        "unsafe_no_link": 0,
+        "unsafe_no_location": 0,
+        "cpu_s": 0.0096,
+        "p50_ms": 0.05478,
+        "p95_ms": 0.0587
+      },
+      "procedure_status": "procedure_learned",
+      "procedure": {
+        "correct": 128,
+        "total": 128,
+        "wrong_confident": 0,
+        "p50_ms": 0.01026,
+        "p95_ms": 0.01192,
+        "max_ms": 0.07065
+      },
+      "counter_status": "raw_world_conflict",
+      "action_depends_on_meta": true,
+      "after_counter": {
+        "active_actions": 0,
+        "procedure_correct": 0
+      },
+      "controls": {
+        "fresh": {
+          "statuses": [
+            "pending_support",
+            "pending_support",
+            "pending_support"
+          ],
+          "pre": {
+            "full": 32,
+            "full_correct": 0,
+            "missing": 32,
+            "missing_correct": 32,
+            "unsafe": 0,
+            "unsafe_no_link": 0,
+            "unsafe_no_location": 0,
+            "cpu_s": 0.00428,
+            "p50_ms": 0.02156,
+            "p95_ms": 0.02318
+          },
+          "feedback_status": "pending_support",
+          "post": {
+            "full": 32,
+            "full_correct": 0,
+            "missing": 32,
+            "missing_correct": 32,
+            "unsafe": 0,
+            "unsafe_no_link": 0,
+            "unsafe_no_location": 0,
+            "cpu_s": 0.0044,
+            "p50_ms": 0.02138,
+            "p95_ms": 0.02879
+          }
+        },
+        "same_information_no_meta": {
+          "statuses": [
+            "pending_support",
+            "pending_support",
+            "pending_support"
+          ],
+          "pre": {
+            "full": 32,
+            "full_correct": 0,
+            "missing": 32,
+            "missing_correct": 32,
+            "unsafe": 0,
+            "unsafe_no_link": 0,
+            "unsafe_no_location": 0,
+            "cpu_s": 0.004461,
+            "p50_ms": 0.02175,
+            "p95_ms": 0.02408
+          },
+          "feedback_status": "pending_support",
+          "post": {
+            "full": 32,
+            "full_correct": 0,
+            "missing": 32,
+            "missing_correct": 32,
+            "unsafe": 0,
+            "unsafe_no_link": 0,
+            "unsafe_no_location": 0,
+            "cpu_s": 0.004368,
+            "p50_ms": 0.0224,
+            "p95_ms": 0.02375
+          }
+        }
+      },
+      "restart_same": true,
+      "saved_bytes": 76277,
+      "saved_bytes_after": 97481,
+      "cost": {
+        "source": {
+          "cpu_s": 0.00256,
+          "wall_s": 0.002562
+        },
+        "action_learning": {
+          "cpu_s": 0.001917,
+          "wall_s": 0.001918
+        },
+        "restart_before_probe": {
+          "cpu_s": 0.00398,
+          "wall_s": 0.005637
+        },
+        "probe_execution_and_learning": {
+          "cpu_s": 0.000715,
+          "wall_s": 0.000716
+        },
+        "restart_after_probe": {
+          "cpu_s": 0.004853,
+          "wall_s": 0.00591
+        },
+        "procedure_learning": {
+          "cpu_s": 0.033697,
+          "wall_s": 0.033701
+        },
+        "procedure_response": {
+          "cpu_s": 0.001681,
+          "wall_s": 0.001681
+        },
+        "counterevidence": {
+          "cpu_s": 0.000208,
+          "wall_s": 0.000209
+        }
+      },
+      "cpu_total_s": 0.049611
+    },
+    {
+      "family": "destino_primero",
+      "order": 97,
+      "branch": "irrelevant",
+      "seed": 1842508285,
+      "passed": true,
+      "source_meta": [
+        {
+          "kind": "role_set",
+          "input_arity": 4,
+          "roles": [
+            0,
+            1
+          ],
+          "sources": {
+            "raw_world:primitive_cda0226c6d3be478_a4": {
+              "family": "raw_world",
+              "support": 3
+            }
+          },
+          "families": {
+            "raw_world": 3
+          },
+          "support": 3,
+          "schema": "roles:4:0,1"
+        },
+        {
+          "kind": "role_cardinality",
+          "cardinality": 2,
+          "sources": {
+            "raw_world:primitive_cda0226c6d3be478_a4": {
+              "family": "raw_world",
+              "support": 3
+            }
+          },
+          "families": {
+            "raw_world": 3
+          },
+          "support": 3,
+          "schema": "card:2"
+        },
+        {
+          "kind": "role_topology",
+          "input_arity": 2,
+          "edges": [
+            [
+              0,
+              1
+            ]
+          ],
+          "sources": {
+            "raw_world:primitive_cda0226c6d3be478_a4": {
+              "family": "raw_world",
+              "support": 3
+            }
+          },
+          "families": {
+            "raw_world": 3
+          },
+          "support": 3,
+          "schema": "topo:2:0,1"
+        }
+      ],
+      "baseline_statuses": [
+        "pending_support",
+        "pending_support",
+        "pending_discriminating_evidence"
+      ],
+      "request": {
+        "kind": "controlled_intervention",
+        "reason": "unresolved_non_effect_role_precondition",
+        "text": "mueve hacia a6dd271fdtargetd95730 a a6dd271fdtargetp61557 con ficha a6dd271fdtargeti44119 desde a6dd271fdtargeto63106",
+        "before": [
+          [
+            "a6dd271fdagent",
+            "a6dd271fdtargetp61557"
+          ],
+          [
+            "a6dd271fdlink",
+            "a6dd271fdtargeto63106",
+            "a6dd271fdtargetd95730"
+          ],
+          [
+            "a6dd271fdloc",
+            "a6dd271fdtargetp61557",
+            "a6dd271fdtargeto63106"
+          ],
+          [
+            "a6dd271fdplace",
+            "a6dd271fdtargetd95730"
+          ],
+          [
+            "a6dd271fdplace",
+            "a6dd271fdtargeto63106"
+          ]
+        ],
+        "removed_fact": [
+          "a6dd271fdinventory",
+          "a6dd271fdtargeti44119"
+        ],
+        "alternatives": [
+          "effect",
+          "no_effect"
+        ],
+        "estimated_information_bits": 1.0,
+        "estimated_cost": 1.0
+      },
+      "before": {
+        "full": 32,
+        "full_correct": 0,
+        "missing": 32,
+        "missing_correct": 0,
+        "unsafe": 0,
+        "unsafe_no_link": 0,
+        "unsafe_no_location": 0,
+        "cpu_s": 0.004865,
+        "p50_ms": 0.02256,
+        "p95_ms": 0.03462
+      },
+      "feedback_status": "operator_learned",
+      "after": {
+        "full": 32,
+        "full_correct": 32,
+        "missing": 32,
+        "missing_correct": 32,
+        "unsafe": 0,
+        "unsafe_no_link": 0,
+        "unsafe_no_location": 0,
+        "cpu_s": 0.013357,
+        "p50_ms": 0.07163,
+        "p95_ms": 0.0938
+      },
+      "procedure_status": "procedure_learned",
+      "procedure": {
+        "correct": 128,
+        "total": 128,
+        "wrong_confident": 0,
+        "p50_ms": 0.01014,
+        "p95_ms": 0.0119,
+        "max_ms": 0.03125
+      },
+      "counter_status": "raw_world_conflict",
+      "action_depends_on_meta": false,
+      "after_counter": {
+        "active_actions": 1,
+        "procedure_correct": 0
+      },
+      "controls": {
+        "fresh": {
+          "statuses": [
+            "pending_support",
+            "pending_support",
+            "pending_support"
+          ],
+          "pre": {
+            "full": 32,
+            "full_correct": 0,
+            "missing": 32,
+            "missing_correct": 0,
+            "unsafe": 0,
+            "unsafe_no_link": 0,
+            "unsafe_no_location": 0,
+            "cpu_s": 0.004302,
+            "p50_ms": 0.02104,
+            "p95_ms": 0.02322
+          },
+          "feedback_status": "operator_learned",
+          "post": {
+            "full": 32,
+            "full_correct": 32,
+            "missing": 32,
+            "missing_correct": 32,
+            "unsafe": 0,
+            "unsafe_no_link": 0,
+            "unsafe_no_location": 0,
+            "cpu_s": 0.009486,
+            "p50_ms": 0.05158,
+            "p95_ms": 0.05828
+          }
+        },
+        "same_information_no_meta": {
+          "statuses": [
+            "pending_support",
+            "pending_support",
+            "pending_support"
+          ],
+          "pre": {
+            "full": 32,
+            "full_correct": 0,
+            "missing": 32,
+            "missing_correct": 0,
+            "unsafe": 0,
+            "unsafe_no_link": 0,
+            "unsafe_no_location": 0,
+            "cpu_s": 0.004369,
+            "p50_ms": 0.02197,
+            "p95_ms": 0.02389
+          },
+          "feedback_status": "operator_learned",
+          "post": {
+            "full": 32,
+            "full_correct": 32,
+            "missing": 32,
+            "missing_correct": 32,
+            "unsafe": 0,
+            "unsafe_no_link": 0,
+            "unsafe_no_location": 0,
+            "cpu_s": 0.00973,
+            "p50_ms": 0.05397,
+            "p95_ms": 0.05872
+          }
+        }
+      },
+      "restart_same": true,
+      "saved_bytes": 76277,
+      "saved_bytes_after": 88435,
+      "cost": {
+        "source": {
+          "cpu_s": 0.002029,
+          "wall_s": 0.00203
+        },
+        "action_learning": {
+          "cpu_s": 0.001642,
+          "wall_s": 0.001643
+        },
+        "restart_before_probe": {
+          "cpu_s": 0.004054,
+          "wall_s": 0.005722
+        },
+        "probe_execution_and_learning": {
+          "cpu_s": 0.000251,
+          "wall_s": 0.000252
+        },
+        "restart_after_probe": {
+          "cpu_s": 0.004277,
+          "wall_s": 0.005237
+        },
+        "procedure_learning": {
+          "cpu_s": 0.033108,
+          "wall_s": 0.033112
+        },
+        "procedure_response": {
+          "cpu_s": 0.001626,
+          "wall_s": 0.001626
+        },
+        "counterevidence": {
+          "cpu_s": 0.000188,
+          "wall_s": 0.000188
+        }
+      },
+      "cpu_total_s": 0.047175
+    },
+    {
+      "family": "origen_antes_ficha",
+      "order": 97,
+      "branch": "necessary",
+      "seed": 377160885,
+      "passed": true,
+      "source_meta": [
+        {
+          "kind": "role_set",
+          "input_arity": 4,
+          "roles": [
+            0,
+            3
+          ],
+          "sources": {
+            "raw_world:primitive_468302bb000ad675_a4": {
+              "family": "raw_world",
+              "support": 3
+            }
+          },
+          "families": {
+            "raw_world": 3
+          },
+          "support": 3,
+          "schema": "roles:4:0,3"
+        },
+        {
+          "kind": "role_cardinality",
+          "cardinality": 2,
+          "sources": {
+            "raw_world:primitive_468302bb000ad675_a4": {
+              "family": "raw_world",
+              "support": 3
+            }
+          },
+          "families": {
+            "raw_world": 3
+          },
+          "support": 3,
+          "schema": "card:2"
+        },
+        {
+          "kind": "role_topology",
+          "input_arity": 2,
+          "edges": [
+            [
+              0,
+              1
+            ]
+          ],
+          "sources": {
+            "raw_world:primitive_468302bb000ad675_a4": {
+              "family": "raw_world",
+              "support": 3
+            }
+          },
+          "families": {
+            "raw_world": 3
+          },
+          "support": 3,
+          "schema": "topo:2:0,1"
+        }
+      ],
+      "baseline_statuses": [
+        "pending_support",
+        "pending_support",
+        "pending_discriminating_evidence"
+      ],
+      "request": {
+        "kind": "controlled_intervention",
+        "reason": "unresolved_non_effect_role_precondition",
+        "text": "entrega a a167b04b5targetp36099 desde a167b04b5targeto99483 con ficha a167b04b5targeti20191 hasta a167b04b5targetd92815",
+        "before": [
+          [
+            "a167b04b5agent",
+            "a167b04b5targetp36099"
+          ],
+          [
+            "a167b04b5link",
+            "a167b04b5targeto99483",
+            "a167b04b5targetd92815"
+          ],
+          [
+            "a167b04b5loc",
+            "a167b04b5targetp36099",
+            "a167b04b5targeto99483"
+          ],
+          [
+            "a167b04b5place",
+            "a167b04b5targetd92815"
+          ],
+          [
+            "a167b04b5place",
+            "a167b04b5targeto99483"
+          ]
+        ],
+        "removed_fact": [
+          "a167b04b5inventory",
+          "a167b04b5targeti20191"
+        ],
+        "alternatives": [
+          "effect",
+          "no_effect"
+        ],
+        "estimated_information_bits": 1.0,
+        "estimated_cost": 1.0
+      },
+      "before": {
+        "full": 32,
+        "full_correct": 0,
+        "missing": 32,
+        "missing_correct": 32,
+        "unsafe": 0,
+        "unsafe_no_link": 0,
+        "unsafe_no_location": 0,
+        "cpu_s": 0.004248,
+        "p50_ms": 0.02082,
+        "p95_ms": 0.02296
+      },
+      "feedback_status": "operator_learned",
+      "after": {
+        "full": 32,
+        "full_correct": 32,
+        "missing": 32,
+        "missing_correct": 32,
+        "unsafe": 0,
+        "unsafe_no_link": 0,
+        "unsafe_no_location": 0,
+        "cpu_s": 0.009875,
+        "p50_ms": 0.05499,
+        "p95_ms": 0.07626
+      },
+      "procedure_status": "procedure_learned",
+      "procedure": {
+        "correct": 128,
+        "total": 128,
+        "wrong_confident": 0,
+        "p50_ms": 0.01007,
+        "p95_ms": 0.01154,
+        "max_ms": 0.03402
+      },
+      "counter_status": "raw_world_conflict",
+      "action_depends_on_meta": true,
+      "after_counter": {
+        "active_actions": 0,
+        "procedure_correct": 0
+      },
+      "controls": {
+        "fresh": {
+          "statuses": [
+            "pending_support",
+            "pending_support",
+            "pending_support"
+          ],
+          "pre": {
+            "full": 32,
+            "full_correct": 0,
+            "missing": 32,
+            "missing_correct": 32,
+            "unsafe": 0,
+            "unsafe_no_link": 0,
+            "unsafe_no_location": 0,
+            "cpu_s": 0.004286,
+            "p50_ms": 0.02097,
+            "p95_ms": 0.02365
+          },
+          "feedback_status": "pending_support",
+          "post": {
+            "full": 32,
+            "full_correct": 0,
+            "missing": 32,
+            "missing_correct": 32,
+            "unsafe": 0,
+            "unsafe_no_link": 0,
+            "unsafe_no_location": 0,
+            "cpu_s": 0.004303,
+            "p50_ms": 0.02111,
+            "p95_ms": 0.02355
+          }
+        },
+        "same_information_no_meta": {
+          "statuses": [
+            "pending_support",
+            "pending_support",
+            "pending_support"
+          ],
+          "pre": {
+            "full": 32,
+            "full_correct": 0,
+            "missing": 32,
+            "missing_correct": 32,
+            "unsafe": 0,
+            "unsafe_no_link": 0,
+            "unsafe_no_location": 0,
+            "cpu_s": 0.004484,
+            "p50_ms": 0.02194,
+            "p95_ms": 0.02991
+          },
+          "feedback_status": "pending_support",
+          "post": {
+            "full": 32,
+            "full_correct": 0,
+            "missing": 32,
+            "missing_correct": 32,
+            "unsafe": 0,
+            "unsafe_no_link": 0,
+            "unsafe_no_location": 0,
+            "cpu_s": 0.004294,
+            "p50_ms": 0.02114,
+            "p95_ms": 0.02302
+          }
+        }
+      },
+      "restart_same": true,
+      "saved_bytes": 76233,
+      "saved_bytes_after": 97462,
+      "cost": {
+        "source": {
+          "cpu_s": 0.002602,
+          "wall_s": 0.002602
+        },
+        "action_learning": {
+          "cpu_s": 0.001918,
+          "wall_s": 0.001919
+        },
+        "restart_before_probe": {
+          "cpu_s": 0.004012,
+          "wall_s": 0.005967
+        },
+        "probe_execution_and_learning": {
+          "cpu_s": 0.000703,
+          "wall_s": 0.000704
+        },
+        "restart_after_probe": {
+          "cpu_s": 0.005471,
+          "wall_s": 0.006211
+        },
+        "procedure_learning": {
+          "cpu_s": 0.035408,
+          "wall_s": 0.035418
+        },
+        "procedure_response": {
+          "cpu_s": 0.001605,
+          "wall_s": 0.001606
+        },
+        "counterevidence": {
+          "cpu_s": 0.000265,
+          "wall_s": 0.000267
+        }
+      },
+      "cpu_total_s": 0.051984
+    },
+    {
+      "family": "origen_antes_ficha",
+      "order": 97,
+      "branch": "irrelevant",
+      "seed": 377160885,
+      "passed": true,
+      "source_meta": [
+        {
+          "kind": "role_set",
+          "input_arity": 4,
+          "roles": [
+            0,
+            3
+          ],
+          "sources": {
+            "raw_world:primitive_468302bb000ad675_a4": {
+              "family": "raw_world",
+              "support": 3
+            }
+          },
+          "families": {
+            "raw_world": 3
+          },
+          "support": 3,
+          "schema": "roles:4:0,3"
+        },
+        {
+          "kind": "role_cardinality",
+          "cardinality": 2,
+          "sources": {
+            "raw_world:primitive_468302bb000ad675_a4": {
+              "family": "raw_world",
+              "support": 3
+            }
+          },
+          "families": {
+            "raw_world": 3
+          },
+          "support": 3,
+          "schema": "card:2"
+        },
+        {
+          "kind": "role_topology",
+          "input_arity": 2,
+          "edges": [
+            [
+              0,
+              1
+            ]
+          ],
+          "sources": {
+            "raw_world:primitive_468302bb000ad675_a4": {
+              "family": "raw_world",
+              "support": 3
+            }
+          },
+          "families": {
+            "raw_world": 3
+          },
+          "support": 3,
+          "schema": "topo:2:0,1"
+        }
+      ],
+      "baseline_statuses": [
+        "pending_support",
+        "pending_support",
+        "pending_discriminating_evidence"
+      ],
+      "request": {
+        "kind": "controlled_intervention",
+        "reason": "unresolved_non_effect_role_precondition",
+        "text": "entrega a a167b04b5targetp36099 desde a167b04b5targeto99483 con ficha a167b04b5targeti20191 hasta a167b04b5targetd92815",
+        "before": [
+          [
+            "a167b04b5agent",
+            "a167b04b5targetp36099"
+          ],
+          [
+            "a167b04b5link",
+            "a167b04b5targeto99483",
+            "a167b04b5targetd92815"
+          ],
+          [
+            "a167b04b5loc",
+            "a167b04b5targetp36099",
+            "a167b04b5targeto99483"
+          ],
+          [
+            "a167b04b5place",
+            "a167b04b5targetd92815"
+          ],
+          [
+            "a167b04b5place",
+            "a167b04b5targeto99483"
+          ]
+        ],
+        "removed_fact": [
+          "a167b04b5inventory",
+          "a167b04b5targeti20191"
+        ],
+        "alternatives": [
+          "effect",
+          "no_effect"
+        ],
+        "estimated_information_bits": 1.0,
+        "estimated_cost": 1.0
+      },
+      "before": {
+        "full": 32,
+        "full_correct": 0,
+        "missing": 32,
+        "missing_correct": 0,
+        "unsafe": 0,
+        "unsafe_no_link": 0,
+        "unsafe_no_location": 0,
+        "cpu_s": 0.004337,
+        "p50_ms": 0.02206,
+        "p95_ms": 0.02402
+      },
+      "feedback_status": "operator_learned",
+      "after": {
+        "full": 32,
+        "full_correct": 32,
+        "missing": 32,
+        "missing_correct": 32,
+        "unsafe": 0,
+        "unsafe_no_link": 0,
+        "unsafe_no_location": 0,
+        "cpu_s": 0.011154,
+        "p50_ms": 0.05435,
+        "p95_ms": 0.09333
+      },
+      "procedure_status": "procedure_learned",
+      "procedure": {
+        "correct": 128,
+        "total": 128,
+        "wrong_confident": 0,
+        "p50_ms": 0.01008,
+        "p95_ms": 0.01158,
+        "max_ms": 0.02842
+      },
+      "counter_status": "raw_world_conflict",
+      "action_depends_on_meta": false,
+      "after_counter": {
+        "active_actions": 1,
+        "procedure_correct": 0
+      },
+      "controls": {
+        "fresh": {
+          "statuses": [
+            "pending_support",
+            "pending_support",
+            "pending_support"
+          ],
+          "pre": {
+            "full": 32,
+            "full_correct": 0,
+            "missing": 32,
+            "missing_correct": 0,
+            "unsafe": 0,
+            "unsafe_no_link": 0,
+            "unsafe_no_location": 0,
+            "cpu_s": 0.004279,
+            "p50_ms": 0.02175,
+            "p95_ms": 0.02337
+          },
+          "feedback_status": "operator_learned",
+          "post": {
+            "full": 32,
+            "full_correct": 32,
+            "missing": 32,
+            "missing_correct": 32,
+            "unsafe": 0,
+            "unsafe_no_link": 0,
+            "unsafe_no_location": 0,
+            "cpu_s": 0.00957,
+            "p50_ms": 0.05283,
+            "p95_ms": 0.05636
+          }
+        },
+        "same_information_no_meta": {
+          "statuses": [
+            "pending_support",
+            "pending_support",
+            "pending_support"
+          ],
+          "pre": {
+            "full": 32,
+            "full_correct": 0,
+            "missing": 32,
+            "missing_correct": 0,
+            "unsafe": 0,
+            "unsafe_no_link": 0,
+            "unsafe_no_location": 0,
+            "cpu_s": 0.004307,
+            "p50_ms": 0.02165,
+            "p95_ms": 0.02338
+          },
+          "feedback_status": "operator_learned",
+          "post": {
+            "full": 32,
+            "full_correct": 32,
+            "missing": 32,
+            "missing_correct": 32,
+            "unsafe": 0,
+            "unsafe_no_link": 0,
+            "unsafe_no_location": 0,
+            "cpu_s": 0.0096,
+            "p50_ms": 0.05248,
+            "p95_ms": 0.05675
+          }
+        }
+      },
+      "restart_same": true,
+      "saved_bytes": 76233,
+      "saved_bytes_after": 88415,
+      "cost": {
+        "source": {
+          "cpu_s": 0.001992,
+          "wall_s": 0.001994
+        },
+        "action_learning": {
+          "cpu_s": 0.001647,
+          "wall_s": 0.001648
+        },
+        "restart_before_probe": {
+          "cpu_s": 0.004131,
+          "wall_s": 0.005752
+        },
+        "probe_execution_and_learning": {
+          "cpu_s": 0.000243,
+          "wall_s": 0.000244
+        },
+        "restart_after_probe": {
+          "cpu_s": 0.004452,
+          "wall_s": 0.005227
+        },
+        "procedure_learning": {
+          "cpu_s": 0.033336,
+          "wall_s": 0.033339
+        },
+        "procedure_response": {
+          "cpu_s": 0.001594,
+          "wall_s": 0.001601
+        },
+        "counterevidence": {
+          "cpu_s": 0.000179,
+          "wall_s": 0.00018
+        }
+      },
+      "cpu_total_s": 0.047574
+    }
+  ],
+  "gate_passed": true,
+  "cpu_total_s": 0.888319,
+  "wall_s": 1.961665,
+  "max_rss_kib": 28132
+}
