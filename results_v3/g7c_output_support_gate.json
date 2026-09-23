@@ -1,0 +1,78 @@
+{
+  "kind": "development_output_support_gate",
+  "preregistration": "prereg/G-7c-soporte-de-valores-de-salida.md",
+  "engine_tree": "1f3187f2ced4c97364503187d074815f33612326",
+  "engine_unchanged": true,
+  "renamed_same": true,
+  "gate_pass": true,
+  "reports": [
+    {
+      "seed": 31,
+      "counts": {
+        "sampled": 40,
+        "environment_queries": 21,
+        "transformed_or_star": 8,
+        "unsupported_shape": 11,
+        "empty_abstain": 3,
+        "eligible": 18,
+        "gold_survived": 18,
+        "fivefold": 18,
+        "shuffled_evaluated": 13,
+        "shuffled_gold_survived": 0,
+        "candidate_evaluations": 588,
+        "output_rows": 123
+      },
+      "median_candidates_after_per_position": 1,
+      "execution_cpu_s": 0.001557,
+      "pruning_cpu_s": 0.000507,
+      "gate_pass": true
+    },
+    {
+      "seed": 71,
+      "counts": {
+        "sampled": 40,
+        "transformed_or_star": 14,
+        "environment_queries": 14,
+        "unsupported_shape": 12,
+        "empty_abstain": 2,
+        "eligible": 12,
+        "gold_survived": 12,
+        "fivefold": 12,
+        "shuffled_evaluated": 6,
+        "shuffled_gold_survived": 0,
+        "candidate_evaluations": 335,
+        "output_rows": 69
+      },
+      "median_candidates_after_per_position": 1,
+      "execution_cpu_s": 0.000914,
+      "pruning_cpu_s": 0.00023,
+      "gate_pass": true
+    },
+    {
+      "seed": 127,
+      "counts": {
+        "sampled": 40,
+        "environment_queries": 23,
+        "unsupported_shape": 11,
+        "transformed_or_star": 6,
+        "empty_abstain": 3,
+        "eligible": 20,
+        "gold_survived": 20,
+        "fivefold": 20,
+        "shuffled_evaluated": 14,
+        "shuffled_gold_survived": 3,
+        "candidate_evaluations": 705,
+        "output_rows": 109
+      },
+      "median_candidates_after_per_position": 1,
+      "execution_cpu_s": 0.001136,
+      "pruning_cpu_s": 0.000423,
+      "gate_pass": true
+    }
+  ],
+  "reading_cpu_s": 0.327138,
+  "domain_cpu_s": 0.079569,
+  "cpu_total_s": 0.419308,
+  "wall_total_s": 10.690744,
+  "max_rss_kib": 169872
+}
