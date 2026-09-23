@@ -1,0 +1,163 @@
+{
+  "kind": "G21_oracle_span_lexical_operator_gate",
+  "preregistration": "prereg/G-21-operadores-lexicos-contrastivos.md",
+  "evaluator_commit": "9cb0ba2f14b6b2e0b9e1a875b127a36a615686b9",
+  "engine_tree": "1f3187f2ced4c97364503187d074815f33612326",
+  "engine_unchanged": true,
+  "source_sha256": "3af0fff77d7bb3d2907839e1db8e33d56b8e84ae17309f056257f240ec8127b8",
+  "seed": 1217,
+  "training_articles": 1235,
+  "heldout_articles": 309,
+  "clear_structure": {
+    "single_triple": 506,
+    "incompatible_multi_or_empty": 986,
+    "span_context_ineligible": 80,
+    "eligible": 426
+  },
+  "weak_structure": {
+    "multi_paragraphs": 986,
+    "candidate_triples": 3664,
+    "context_skipped": 978,
+    "ambiguous_pair_skipped": 64,
+    "weak_eligible": 2622
+  },
+  "test_structure": {
+    "incompatible_multi_or_empty": 247,
+    "single_triple": 127,
+    "span_context_ineligible": 30,
+    "eligible": 97
+  },
+  "clear_training_episodes": 413,
+  "weak_training_episodes": 2401,
+  "eligible_relations": 25,
+  "eligible_heldout_novel_pairs": 75,
+  "treatment_induction": {
+    "candidate_operators": 16412,
+    "promoted_operators": 45,
+    "operators_with_conflicts": 3937,
+    "promoted_predicates": 8,
+    "promoted_support_episodes": 682,
+    "promoted_counterevidence_episodes": 26
+  },
+  "shuffled_induction": {
+    "candidate_operators": 16412,
+    "promoted_operators": 3,
+    "operators_with_conflicts": 4907,
+    "promoted_predicates": 2,
+    "promoted_support_episodes": 22,
+    "promoted_counterevidence_episodes": 1
+  },
+  "report": {
+    "counts": {
+      "treatment_correct_all": 5,
+      "centroid_correct_all": 34,
+      "type_correct_all": 42,
+      "shuffled_correct_all": 0,
+      "memory_correct_all": 0,
+      "fresh_correct_all": 0,
+      "cases": 75,
+      "matched_rules": 7,
+      "answered": 5,
+      "treatment_correct_answered": 5,
+      "centroid_correct_answered": 5,
+      "type_correct_answered": 3,
+      "shuffled_correct_answered": 0,
+      "memory_correct_answered": 0,
+      "fresh_correct_answered": 0,
+      "confused_answered": 5,
+      "treatment_correct_confused": 5,
+      "centroid_correct_confused": 5,
+      "type_correct_confused": 3,
+      "shuffled_correct_confused": 0,
+      "memory_correct_confused": 0,
+      "fresh_correct_confused": 0
+    },
+    "per_relation": {
+      "P106": {
+        "cases": 2
+      },
+      "P127": {
+        "cases": 3
+      },
+      "P136": {
+        "cases": 2
+      },
+      "P138": {
+        "cases": 2
+      },
+      "P155": {
+        "cases": 10
+      },
+      "P17": {
+        "cases": 2
+      },
+      "P176": {
+        "cases": 6,
+        "answered": 3,
+        "correct": 3
+      },
+      "P19": {
+        "cases": 3
+      },
+      "P206": {
+        "cases": 3
+      },
+      "P27": {
+        "cases": 3
+      },
+      "P276": {
+        "cases": 6
+      },
+      "P31": {
+        "cases": 14
+      },
+      "P40": {
+        "cases": 3,
+        "answered": 2,
+        "correct": 2
+      },
+      "P403": {
+        "cases": 4
+      },
+      "P50": {
+        "cases": 4
+      },
+      "P571": {
+        "cases": 1
+      },
+      "P641": {
+        "cases": 3
+      },
+      "P710": {
+        "cases": 4
+      }
+    },
+    "prediction_sha256": {
+      "centroid": "0c159b718ff71365b1695617024acfd084fc3fa8d82050f3cf524e879d2fc89a",
+      "fresh": "edc0929e239233c14b87bed5975aef9415e9cbde8dd758db1c56fdfce062bf31",
+      "memory": "edc0929e239233c14b87bed5975aef9415e9cbde8dd758db1c56fdfce062bf31",
+      "shuffled": "edc0929e239233c14b87bed5975aef9415e9cbde8dd758db1c56fdfce062bf31",
+      "treatment": "107da05b3d1ee0caea46be0442ef8caab0842240ecd42d32c3a4711c8ca87111",
+      "type": "8ee9683a83b7e5a8ca73336c2103a2c6bc151b2913bd482492cb818760665a86"
+    },
+    "treatment_p50_ms": 0.00308395829051733,
+    "treatment_p95_ms": 0.0068999361246824265,
+    "treatment_max_ms": 0.012459931895136833
+  },
+  "rename_checked": 75,
+  "renaming_same": true,
+  "answered": 5,
+  "hit_relations": 2,
+  "coverage": 0.06666666666666667,
+  "precision": 1.0,
+  "best_control_precision_answered": 1.0,
+  "confused_answered": 5,
+  "load_cpu_s": 0.191534,
+  "acquisition_cpu_s": 0.690726,
+  "inference_cpu_s": 0.036043,
+  "cpu_total_s": 0.918308,
+  "wall_total_s": 2.414998,
+  "max_rss_kib": 90696,
+  "budget_ok": true,
+  "gate_pass": false
+}
