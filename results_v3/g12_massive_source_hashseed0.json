@@ -1,0 +1,69 @@
+{
+  "kind": "development_independent_role_source_gate",
+  "preregistration": "prereg/G-12-fuente-independiente-roles.md",
+  "source_url": "https://amazon-massive-nlu-dataset.s3.amazonaws.com/amazon-massive-dataset-1.1.tar.gz",
+  "archive_content_length": 40251390,
+  "spanish_member": "1.1/data/es-ES.jsonl",
+  "spanish_bytes": 12102823,
+  "spanish_sha256": "310462a79fa181ff83c643a8d356c7b8155fd37a25e80a77ba3ca9b29305c4a5",
+  "engine_tree": "1f3187f2ced4c97364503187d074815f33612326",
+  "engine_unchanged": true,
+  "scenarios": 18,
+  "eligible_scenarios": 18,
+  "annotation": {
+    "train_rows": 11514,
+    "nontrain_rows_skipped": 5007,
+    "annotated_spans": 11154,
+    "literal_spans": 11154,
+    "malformed_annotations": 0
+  },
+  "literal_fidelity": 1.0,
+  "partitions": [
+    {
+      "seed": 719,
+      "eligible_scenarios": 18,
+      "training_scenarios": 14,
+      "heldout_scenarios": 4,
+      "training_utterances": 7761,
+      "heldout_utterances": 3753,
+      "recurrent_roles": 20,
+      "transferable_roles": 8,
+      "heldout_covered_utterances": 2257,
+      "heldout_coverage": 0.6013855582200905,
+      "gate_partition": true
+    },
+    {
+      "seed": 787,
+      "eligible_scenarios": 18,
+      "training_scenarios": 14,
+      "heldout_scenarios": 4,
+      "training_utterances": 9012,
+      "heldout_utterances": 2502,
+      "recurrent_roles": 20,
+      "transferable_roles": 7,
+      "heldout_covered_utterances": 896,
+      "heldout_coverage": 0.3581135091926459,
+      "gate_partition": true
+    },
+    {
+      "seed": 853,
+      "eligible_scenarios": 18,
+      "training_scenarios": 14,
+      "heldout_scenarios": 4,
+      "training_utterances": 9019,
+      "heldout_utterances": 2495,
+      "recurrent_roles": 21,
+      "transferable_roles": 8,
+      "heldout_covered_utterances": 852,
+      "heldout_coverage": 0.3414829659318637,
+      "gate_partition": true
+    }
+  ],
+  "budget_ok": true,
+  "gate_pass": true,
+  "read_cpu_s": 0.649367,
+  "inventory_cpu_s": 0.131084,
+  "cpu_total_s": 0.780451,
+  "wall_total_s": 2.060383,
+  "max_rss_kib": 60060
+}
