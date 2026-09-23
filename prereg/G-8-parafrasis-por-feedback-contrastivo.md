@@ -1,0 +1,21 @@
+# G-8 — aprender reformulaciones por contraste semántico
+
+## Fallo, mecanismo y antecedentes
+
+G-7d obtuvo etiquetas de columnas 92–98 % fiables, pero las asociaciones de palabras no transfirieron entre bases: igualaron texto barajado. `OpenArityConceptGrounder` exige entidades conocidas y casi la misma superficie; `Language._learn_rewrites` ya transforma frases, pero aprende sus equivalencias solo cuando recibe dos construcciones con el mismo marco semántico. G-8 prueba si se pueden adquirir esas equivalencias **como datos** mediante feedback sobre pares de preguntas, reutilizando la reescritura existente sin codificar un léxico.
+
+El [inventario G-8](../results_v3/g8_paraphrase_inventory.json) halló 275 grupos con preguntas españolas distintas y SQL idéntico, y 13 sustituciones locales repetidas en ≥3 consultas y ≥2 bases. Es un límite superior visto solo por el evaluador; el learner no recibirá SQL. El [trabajo IJCAI 2025 sobre descomposición relacional](https://www.ijcai.org/proceedings/2025/504) motiva aprender relaciones pequeñas antes de componer; [POPL 2026 sobre poda por interpretación abstracta](https://doi.org/10.1145/3776694) recuerda que el orden de explorar hipótesis cambia el costo. Ninguno demuestra esta ruta lingüística ni se copiará. Alternativa: las sustituciones son dependientes del contexto y causan falsas equivalencias; en tal caso, detenerla.
+
+## Fuente, separación y feedback
+
+Usar solo `train_es.json` y esquemas de revisión/hash de G-6, las mismas ocho bases; `dev_es` queda sellado. Tres particiones nuevas derivadas de H0, semillas 149/197/251, con una base fuera de educación por vuelta. Educación: pares de preguntas de las otras siete bases propuestos por similitud superficial y una sustitución local de 1–4 tokens; no consultar SQL para proponer pares. Hasta 100 preguntas al entorno por vuelta. El entorno responde «equivalentes» si ambos SQL oficiales son idénticos, «incompatibles» solo cuando sus respuestas ejecutadas difieren, y «indeterminado» en los demás casos. Solo las etiquetas de feedback, nunca SQL ni respuestas esperadas, llegan al learner. El inventario visible no cuenta como reserva. El evaluador seleccionará casos de la base excluida **después de fijar el learner**; positivo si SQL idéntico, negativo si las salidas difieren. No llamar verdad semántica completa a la coincidencia SQL.
+
+## Learner y controles
+
+Extraer sustituciones por comparación de tokens, reemplazando valores concretos/números/entidades detectables por marcadores. Conservar todas las hipótesis; promover una sustitución solo con ≥3 apoyos de consultas distintas en ≥2 bases y sin feedback contrario. Ante respuesta incompatible, retirar la regla y cualquier decisión que dependa de ella. Aplicar reglas por la ruta acotada de `Language` y abstenerse ante dos interpretaciones. Medir sustituciones aprendidas, feedback, CPU, candidatos, incertidumbre y p50/p95.
+
+Tratamiento frente a reescritura vacía, coincidencia por caracteres con mismo presupuesto, feedback barajado, memoria exacta, bot fresco y mismos pares sin promoción. Incluir pares de aspecto parecido con salidas incompatibles, renombrado de valores y entidades, contraevidencia tras promoción, guardado/cierre/carga, y estabilidad `PYTHONHASHSEED=0/1`. H0 idéntico durante ensayo. No modificar el motor ni usar palabras concretas de este corpus como reglas programadas.
+
+## Puertas
+
+En desarrollo entre bases: al menos 20 pares positivos y 20 negativos evaluables por orden; precisión de equivalencia propuesta ≥95 %, recuperación ≥25 % de positivos y F1 ≥20 puntos sobre el mejor control sin feedback, en las tres particiones, con ≤100 consultas al entorno por vuelta y CPU ≤120 s, pared ≤180 s, RSS ≤256 MiB. Contraevidencia debe retirar regla y dependientes, reinicio debe conservar reglas válidas; cero afirmaciones seguras en incompatibles. Si falla, registrar y abandonar sustituciones locales aisladas. Si pasa, fijar código/configuración/evaluador, elegir bases finales desconocidas por hash, verificar con motor congelado y solo entonces integrar en `Language`; medir respuesta bajo 100 000 hechos y lectura independiente. Aprender que dos preguntas se parecen no equivale a comprender documentos o resolver SQL.
