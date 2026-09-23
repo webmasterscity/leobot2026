@@ -1,0 +1,173 @@
+{
+  "order_seed": 53,
+  "reserve_seed": 2435289311,
+  "controls": {
+    "accuracy_f1": true,
+    "accuracy_f2": true,
+    "ablation": true,
+    "reuse": true,
+    "restart": true,
+    "counterevidence": true,
+    "rename": true,
+    "confound": false,
+    "incompatible": true,
+    "budget_cpu": false
+  },
+  "treatment_f1": {
+    "correct": 128,
+    "total": 128,
+    "wrong_confident": 0,
+    "modes": {
+      "invented_view": 128
+    },
+    "cpu_s": 0.00267
+  },
+  "treatment_f2": {
+    "correct": 128,
+    "total": 128,
+    "wrong_confident": 0,
+    "modes": {
+      "invented_view": 128
+    },
+    "cpu_s": 0.00188
+  },
+  "ablation_same_information": {
+    "correct": 44,
+    "total": 128,
+    "wrong_confident": 0,
+    "modes": {
+      "default": 128
+    },
+    "cpu_s": 0.03429
+  },
+  "fresh_f2": {
+    "correct": 128,
+    "total": 128,
+    "wrong_confident": 0,
+    "modes": {
+      "invented_view": 128
+    },
+    "cpu_s": 0.00194
+  },
+  "uneducated_f2": {
+    "correct": 48,
+    "total": 128,
+    "wrong_confident": 0,
+    "modes": {
+      "default": 128
+    },
+    "cpu_s": 0.00059
+  },
+  "memory_only_f2": {
+    "correct": 48,
+    "total": 128,
+    "wrong_confident": 0,
+    "modes": {
+      "default": 128
+    },
+    "cpu_s": 0.00062
+  },
+  "restart_f2": {
+    "correct": 128,
+    "total": 128,
+    "wrong_confident": 0,
+    "modes": {
+      "invented_view": 128
+    },
+    "cpu_s": 0.00196
+  },
+  "renamed_f2": {
+    "correct": 128,
+    "total": 128,
+    "wrong_confident": 0,
+    "modes": {
+      "invented_view": 128
+    },
+    "cpu_s": 0.00191
+  },
+  "confounded_f2": {
+    "correct": 47,
+    "total": 128,
+    "wrong_confident": 4,
+    "modes": {
+      "default": 118,
+      "invented_view": 10
+    },
+    "cpu_s": 0.05165
+  },
+  "incompatible_view": null,
+  "operator_count": 1,
+  "source_candidates": 21,
+  "educated_f2_candidates": 1,
+  "fresh_f2_candidates": 3,
+  "withdrawn_before_restart": true,
+  "withdrawn_after_restart": true,
+  "acquisition_costs": {
+    "source": {
+      "wall_s": 1.39615,
+      "cpu_s": 1.39602
+    },
+    "target": {
+      "wall_s": 1.13402,
+      "cpu_s": 1.13392
+    },
+    "ablation": {
+      "wall_s": 18.91273,
+      "cpu_s": 18.91055
+    },
+    "fresh": {
+      "wall_s": 1.12434,
+      "cpu_s": 1.12429
+    },
+    "rename": {
+      "wall_s": 2.50006,
+      "cpu_s": 2.49998
+    },
+    "confound": {
+      "wall_s": 34.76107,
+      "cpu_s": 34.75759
+    },
+    "incompatible": {
+      "wall_s": 14.19048,
+      "cpu_s": 14.18933
+    },
+    "counterevidence": {
+      "wall_s": 0.01536,
+      "cpu_s": 0.01536
+    }
+  },
+  "nested_cpu_s_nonadditive": {
+    "search_cpu_s": 2.52044,
+    "aggregate_synthesis_validation_cpu_s": 0.0496,
+    "consolidation_cpu_s": 0.00075
+  },
+  "restart_cost": {
+    "wall_s": 0.02391,
+    "cpu_s": 0.02161
+  },
+  "counter_restart_cost": {
+    "wall_s": 0.02638,
+    "cpu_s": 0.02434
+  },
+  "saved_bytes": 457617,
+  "variant_cpu_s": {
+    "treatment": 2.53449,
+    "ablation": 18.94484,
+    "fresh": 1.12623,
+    "rename": 2.50189,
+    "confounded": 34.80924,
+    "incompatible": 14.18933,
+    "counterevidence": 0.0397
+  },
+  "examples": {
+    "source": 64,
+    "target": 128,
+    "counterevidence": 32,
+    "incompatible": 64
+  },
+  "preregistration": "prereg/B-1-operador-agregado.md",
+  "frozen_engine_tree": "912790def147f8986b01ecee3574e6c59a67ee4a",
+  "engine_unchanged": true,
+  "wall_s": 74.2201,
+  "peak_rss_kib": 31456
+}

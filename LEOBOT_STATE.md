@@ -2,15 +2,15 @@
 
 ## Estado de misión
 
-- Actualizado: 2026-09-22 · commit 7d9b2ac (motor B-1 en desarrollo)
+- Actualizado: 2026-09-22 · commit 8c4001a (motor congelado B-1)
 - Fases: A superada en su ensayo acotado · B en curso · C pendiente · D pendiente · E pendiente · F pendiente · G pendiente · H pendiente
 - Fase en curso: B — detectar una operación ausente e inventar una primitiva meta verificable
 - Último tag estable: `estable-A-1` · huella del motor: `644c55528a5fd97a8822f719f70e11cfae242783`
 - Pruebas: 528 pasan · 2 fallos esperados · 0 fallos · Python 3.12.3
 - Orden rápida: `timeout 40s env PYTHONHASHSEED=0 python3 -m unittest tests.test_meta_abstraction_a1 tests.test_meta_active_probe tests.test_v70 -q` · Orden completa: `timeout 90s env PYTHONHASHSEED=0 ./run_tests.sh --solo-pruebas`
-- Preregistro activo: `prereg/B-1-operador-agregado.md` · estado: implementando; tablero: `prereg/agi-board-1.md`
-- Diseños intentados en la fase en curso: 1) operador agregado tipado → eficaz en desarrollo; reserva pendiente
-- Siguiente paso concreto: fijar evaluador B-1, congelar motor en `freeze-B-1` y ejecutar las tres órdenes con controles y presupuesto
+- Preregistro activo: `prereg/B-1-operador-agregado.md` · estado: ejecutado y no promovido; tablero: `prereg/agi-board-1.md`
+- Diseños intentados en la fase en curso: 1) operador agregado tipado → 128/128 en F1 y F2 en tres órdenes, pero falló confusor y presupuesto
+- Siguiente paso concreto: diagnosticar la proyección espuria con datos de desarrollo, preregistrar B-2 y probar selección conservadora entre hipótesis con motor nuevo congelado
 - Bloqueos: ninguno
 - Lectura (seguimiento): 0/4 en la sonda visible `experiments/user_text_probe.py` al cerrar A; no es una reserva independiente
 - Tablero AGI (último tag): [resultado](results_v3/agi_board_estable-A-1.json) · MLQA español público 0/20, 20 no reconocidas · ARC-AGI-3 no evaluado · brecha frontier no comparable · obstáculo principal: adquirir significado de texto libre
@@ -27,10 +27,12 @@
 - 2026-09-22 · Batería de latencia fija sobre `estable-A-1`: 100 003 hechos, cinco tipos de consulta, tres semillas de hash, 100 respuestas correctas por corrida; todas las puertas p95 y tope absoluto pasaron. [Semilla 0](results_v3/latency_estable-A-1_hashseed0.json), [1](results_v3/latency_estable-A-1_hashseed1.json), [2](results_v3/latency_estable-A-1_hashseed2.json). Pico 199 520 KiB. Esta mezcla acotada no demuestra rapidez en conversación o razonamiento abiertos. [Tablero AGI](prereg/agi-board-1.md) preregistrado antes de puntuar MLQA; sin tag nuevo.
 - 2026-09-22 · [Tablero AGI](results_v3/agi_board_estable-A-1.json): 20 preguntas fijas del desarrollo público de MLQA español, 0/20 y 20 no reconocidas. ARC-AGI-3 es la versión pública reciente verificada, pero Leobot carece de interfaz para sus juegos; no evaluado. Sin comparación frontier en batería igualada. El principal obstáculo medido sigue siendo lenguaje abierto; B-1 se mantiene por su posible reducción de parches humanos, sujeto a evidencia.
 - 2026-09-22 · B-1 implementado en `7d9b2ac`: plegado booleano tipado y acotado, elección del reductor desde experiencia y reuso en otra forma de entrada. En desarrollo, la fuente y el destino pasaron sus sondas; 15 pruebas rápidas relevantes pasaron en 69,6 s. Un primer ensayo de contraevidencia agotó 60 s por búsquedas repetidas; se agregó espera por 32 experiencias independientes antes de reintentar y la prueba de retirada tras reinicio pasó en 10,7 s. Esto no es todavía reserva ni promoción.
+- 2026-09-22 · [B-1 orden 17](results_v3/b1_aggregate_order17.json), [53](results_v3/b1_aggregate_order53.json), [97](results_v3/b1_aggregate_order97.json): motor `freeze-B-1` intacto, F1 y F2 128/128 en las tres reservas; ablación F1 44/128; F2 educado 1 candidato frente a 3 fresco. Contraevidencia, reinicio, renombrado e incompatible pasaron. **No promovido**: al invertir una pista correlacionada, 3–4 decisiones seguras fueron falsas por orden; la adquisición de ese control consumió 34,68–34,78 s de CPU y excedió los 30 s. Las tres ejecuciones usaron 64+128 ejemplos, ~74–78 s de pared y RAM pico 31 376–31 456 KiB cada una. La búsqueda y validación agregada midió ~0,049 s, anidada en 2,52–4,15 s de búsqueda total; no sumar ambas. El operador se programó como sustrato; Leobot seleccionó el reductor y los umbrales por experiencia. La transferencia observada fue solo entre dos disposiciones numéricas, no entre modalidades.
 
 ## Resultados negativos y trampas conocidas
 
 - **La fase A no equivale a abstracción general.** La pieza adquirida es una partición de dos comparaciones que se reutilizó en otra tarea de la misma estructura numérica. No se demostró transferencia entre dominios no isomorfos, invención de operaciones nuevas ni síntesis de learners. La preferencia por la pieza existente resolvió la señal auxiliar del ensayo, pero no prueba causalidad en general.
+- B-1 no distingue una pista superficial de una operación robusta cuando ambas concuerdan en la enseñanza. El control de pista invertida produjo 3–4 errores seguros y excedió el presupuesto de CPU; 128/128 en los demás casos no compensa esos fallos. El bot fresco aprendió F2 con tres candidatos, de modo que el ahorro de dos candidatos **no demuestra** menor costo total de adquirir F1+F2. La fuente suma 1,40–2,60 s de CPU, y F2 educado 1,13–1,56 s, frente a F2 fresco 1,12–1,55 s.
 - La consulta de evidencia del MetaController funciona para reglas de rasgos; devolvió `no_learned_program` para la vista compilada de A-1. No atribuirle una intervención que no propuso. La observación la produjo el entorno.
 - Lenguaje abierto: con cuatro frases reales del encargo, Leobot sigue en 0/4 respuestas. Puede aprender una forma de pregunta tras varias afirmaciones y dos preguntas independientes, pero no de una sola frase desconocida. Tres pruebas antiguas pasaron de «no reconocida» a «hipótesis pendiente»; todavía se abstienen de responder y no cuentan como tres capacidades.
 - En 20 casos fijos del desarrollo público de MLQA español, el resultado fue 0/20 y todos quedaron sin reconocer. Esto amplía el diagnóstico lingüístico; tampoco es una reserva final ni demuestra que la solución sea una lista de palabras. El tablero aún carece de baterías públicas comparables para causalidad, conversación larga, planificación y herramientas.
