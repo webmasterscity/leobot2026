@@ -1,0 +1,3188 @@
+{
+  "kind": "source_feasibility_only",
+  "engine_tree": "1f3187f2ced4c97364503187d074815f33612326",
+  "document_sha256": "d0fa4f1cdcd45a9b797cd0f3c340d12f9afc9aeaedf0b634d0468fe72a94a4d8",
+  "texts": [
+    "ababa",
+    "bcbc",
+    "ccc",
+    "a b a",
+    ""
+  ],
+  "argument_signatures": [
+    [],
+    [
+      "a"
+    ],
+    [
+      "b"
+    ],
+    [
+      ""
+    ],
+    [
+      "a",
+      "b"
+    ],
+    [
+      "b",
+      "a"
+    ],
+    [
+      2
+    ]
+  ],
+  "method_count": 47,
+  "methods_with_success_by_arity": {
+    "0": [
+      "capitalize",
+      "casefold",
+      "encode",
+      "expandtabs",
+      "format",
+      "isalnum",
+      "isalpha",
+      "isascii",
+      "isdecimal",
+      "isdigit",
+      "isidentifier",
+      "islower",
+      "isnumeric",
+      "isprintable",
+      "isspace",
+      "istitle",
+      "isupper",
+      "lower",
+      "lstrip",
+      "rsplit",
+      "rstrip",
+      "split",
+      "splitlines",
+      "strip",
+      "swapcase",
+      "title",
+      "upper"
+    ],
+    "1": [
+      "center",
+      "count",
+      "endswith",
+      "expandtabs",
+      "find",
+      "format",
+      "format_map",
+      "index",
+      "join",
+      "ljust",
+      "lstrip",
+      "partition",
+      "removeprefix",
+      "removesuffix",
+      "rfind",
+      "rindex",
+      "rjust",
+      "rpartition",
+      "rsplit",
+      "rstrip",
+      "split",
+      "splitlines",
+      "startswith",
+      "strip",
+      "translate",
+      "zfill"
+    ],
+    "2": [
+      "format",
+      "maketrans",
+      "replace"
+    ]
+  },
+  "one_string_argument_equivalence_groups": [
+    [
+      "endswith",
+      "startswith"
+    ],
+    [
+      "format",
+      "format_map",
+      "translate"
+    ],
+    [
+      "lstrip",
+      "removeprefix"
+    ],
+    [
+      "removesuffix",
+      "rstrip"
+    ],
+    [
+      "rsplit",
+      "split"
+    ]
+  ],
+  "type_profiles": {
+    "str.capitalize": [
+      {
+        "argument_types": [],
+        "successful_texts": 5,
+        "result_types": [
+          "str"
+        ]
+      },
+      {
+        "argument_types": [
+          "str"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      },
+      {
+        "argument_types": [
+          "str"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      },
+      {
+        "argument_types": [
+          "str"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      },
+      {
+        "argument_types": [
+          "str",
+          "str"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      },
+      {
+        "argument_types": [
+          "str",
+          "str"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      },
+      {
+        "argument_types": [
+          "int"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      }
+    ],
+    "str.casefold": [
+      {
+        "argument_types": [],
+        "successful_texts": 5,
+        "result_types": [
+          "str"
+        ]
+      },
+      {
+        "argument_types": [
+          "str"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      },
+      {
+        "argument_types": [
+          "str"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      },
+      {
+        "argument_types": [
+          "str"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      },
+      {
+        "argument_types": [
+          "str",
+          "str"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      },
+      {
+        "argument_types": [
+          "str",
+          "str"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      },
+      {
+        "argument_types": [
+          "int"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      }
+    ],
+    "str.center": [
+      {
+        "argument_types": [],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      },
+      {
+        "argument_types": [
+          "str"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      },
+      {
+        "argument_types": [
+          "str"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      },
+      {
+        "argument_types": [
+          "str"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      },
+      {
+        "argument_types": [
+          "str",
+          "str"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      },
+      {
+        "argument_types": [
+          "str",
+          "str"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      },
+      {
+        "argument_types": [
+          "int"
+        ],
+        "successful_texts": 5,
+        "result_types": [
+          "str"
+        ]
+      }
+    ],
+    "str.count": [
+      {
+        "argument_types": [],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      },
+      {
+        "argument_types": [
+          "str"
+        ],
+        "successful_texts": 5,
+        "result_types": [
+          "int"
+        ]
+      },
+      {
+        "argument_types": [
+          "str"
+        ],
+        "successful_texts": 5,
+        "result_types": [
+          "int"
+        ]
+      },
+      {
+        "argument_types": [
+          "str"
+        ],
+        "successful_texts": 5,
+        "result_types": [
+          "int"
+        ]
+      },
+      {
+        "argument_types": [
+          "str",
+          "str"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      },
+      {
+        "argument_types": [
+          "str",
+          "str"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      },
+      {
+        "argument_types": [
+          "int"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      }
+    ],
+    "str.encode": [
+      {
+        "argument_types": [],
+        "successful_texts": 5,
+        "result_types": [
+          "bytes"
+        ]
+      },
+      {
+        "argument_types": [
+          "str"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:LookupError"
+        ]
+      },
+      {
+        "argument_types": [
+          "str"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:LookupError"
+        ]
+      },
+      {
+        "argument_types": [
+          "str"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:LookupError"
+        ]
+      },
+      {
+        "argument_types": [
+          "str",
+          "str"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:LookupError"
+        ]
+      },
+      {
+        "argument_types": [
+          "str",
+          "str"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:LookupError"
+        ]
+      },
+      {
+        "argument_types": [
+          "int"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      }
+    ],
+    "str.endswith": [
+      {
+        "argument_types": [],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      },
+      {
+        "argument_types": [
+          "str"
+        ],
+        "successful_texts": 5,
+        "result_types": [
+          "bool"
+        ]
+      },
+      {
+        "argument_types": [
+          "str"
+        ],
+        "successful_texts": 5,
+        "result_types": [
+          "bool"
+        ]
+      },
+      {
+        "argument_types": [
+          "str"
+        ],
+        "successful_texts": 5,
+        "result_types": [
+          "bool"
+        ]
+      },
+      {
+        "argument_types": [
+          "str",
+          "str"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      },
+      {
+        "argument_types": [
+          "str",
+          "str"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      },
+      {
+        "argument_types": [
+          "int"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      }
+    ],
+    "str.expandtabs": [
+      {
+        "argument_types": [],
+        "successful_texts": 5,
+        "result_types": [
+          "str"
+        ]
+      },
+      {
+        "argument_types": [
+          "str"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      },
+      {
+        "argument_types": [
+          "str"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      },
+      {
+        "argument_types": [
+          "str"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      },
+      {
+        "argument_types": [
+          "str",
+          "str"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      },
+      {
+        "argument_types": [
+          "str",
+          "str"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      },
+      {
+        "argument_types": [
+          "int"
+        ],
+        "successful_texts": 5,
+        "result_types": [
+          "str"
+        ]
+      }
+    ],
+    "str.find": [
+      {
+        "argument_types": [],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      },
+      {
+        "argument_types": [
+          "str"
+        ],
+        "successful_texts": 5,
+        "result_types": [
+          "int"
+        ]
+      },
+      {
+        "argument_types": [
+          "str"
+        ],
+        "successful_texts": 5,
+        "result_types": [
+          "int"
+        ]
+      },
+      {
+        "argument_types": [
+          "str"
+        ],
+        "successful_texts": 5,
+        "result_types": [
+          "int"
+        ]
+      },
+      {
+        "argument_types": [
+          "str",
+          "str"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      },
+      {
+        "argument_types": [
+          "str",
+          "str"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      },
+      {
+        "argument_types": [
+          "int"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      }
+    ],
+    "str.format": [
+      {
+        "argument_types": [],
+        "successful_texts": 5,
+        "result_types": [
+          "str"
+        ]
+      },
+      {
+        "argument_types": [
+          "str"
+        ],
+        "successful_texts": 5,
+        "result_types": [
+          "str"
+        ]
+      },
+      {
+        "argument_types": [
+          "str"
+        ],
+        "successful_texts": 5,
+        "result_types": [
+          "str"
+        ]
+      },
+      {
+        "argument_types": [
+          "str"
+        ],
+        "successful_texts": 5,
+        "result_types": [
+          "str"
+        ]
+      },
+      {
+        "argument_types": [
+          "str",
+          "str"
+        ],
+        "successful_texts": 5,
+        "result_types": [
+          "str"
+        ]
+      },
+      {
+        "argument_types": [
+          "str",
+          "str"
+        ],
+        "successful_texts": 5,
+        "result_types": [
+          "str"
+        ]
+      },
+      {
+        "argument_types": [
+          "int"
+        ],
+        "successful_texts": 5,
+        "result_types": [
+          "str"
+        ]
+      }
+    ],
+    "str.format_map": [
+      {
+        "argument_types": [],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      },
+      {
+        "argument_types": [
+          "str"
+        ],
+        "successful_texts": 5,
+        "result_types": [
+          "str"
+        ]
+      },
+      {
+        "argument_types": [
+          "str"
+        ],
+        "successful_texts": 5,
+        "result_types": [
+          "str"
+        ]
+      },
+      {
+        "argument_types": [
+          "str"
+        ],
+        "successful_texts": 5,
+        "result_types": [
+          "str"
+        ]
+      },
+      {
+        "argument_types": [
+          "str",
+          "str"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      },
+      {
+        "argument_types": [
+          "str",
+          "str"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      },
+      {
+        "argument_types": [
+          "int"
+        ],
+        "successful_texts": 5,
+        "result_types": [
+          "str"
+        ]
+      }
+    ],
+    "str.index": [
+      {
+        "argument_types": [],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      },
+      {
+        "argument_types": [
+          "str"
+        ],
+        "successful_texts": 2,
+        "result_types": [
+          "error:ValueError",
+          "int"
+        ]
+      },
+      {
+        "argument_types": [
+          "str"
+        ],
+        "successful_texts": 3,
+        "result_types": [
+          "error:ValueError",
+          "int"
+        ]
+      },
+      {
+        "argument_types": [
+          "str"
+        ],
+        "successful_texts": 5,
+        "result_types": [
+          "int"
+        ]
+      },
+      {
+        "argument_types": [
+          "str",
+          "str"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      },
+      {
+        "argument_types": [
+          "str",
+          "str"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      },
+      {
+        "argument_types": [
+          "int"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      }
+    ],
+    "str.isalnum": [
+      {
+        "argument_types": [],
+        "successful_texts": 5,
+        "result_types": [
+          "bool"
+        ]
+      },
+      {
+        "argument_types": [
+          "str"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      },
+      {
+        "argument_types": [
+          "str"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      },
+      {
+        "argument_types": [
+          "str"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      },
+      {
+        "argument_types": [
+          "str",
+          "str"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      },
+      {
+        "argument_types": [
+          "str",
+          "str"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      },
+      {
+        "argument_types": [
+          "int"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      }
+    ],
+    "str.isalpha": [
+      {
+        "argument_types": [],
+        "successful_texts": 5,
+        "result_types": [
+          "bool"
+        ]
+      },
+      {
+        "argument_types": [
+          "str"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      },
+      {
+        "argument_types": [
+          "str"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      },
+      {
+        "argument_types": [
+          "str"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      },
+      {
+        "argument_types": [
+          "str",
+          "str"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      },
+      {
+        "argument_types": [
+          "str",
+          "str"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      },
+      {
+        "argument_types": [
+          "int"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      }
+    ],
+    "str.isascii": [
+      {
+        "argument_types": [],
+        "successful_texts": 5,
+        "result_types": [
+          "bool"
+        ]
+      },
+      {
+        "argument_types": [
+          "str"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      },
+      {
+        "argument_types": [
+          "str"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      },
+      {
+        "argument_types": [
+          "str"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      },
+      {
+        "argument_types": [
+          "str",
+          "str"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      },
+      {
+        "argument_types": [
+          "str",
+          "str"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      },
+      {
+        "argument_types": [
+          "int"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      }
+    ],
+    "str.isdecimal": [
+      {
+        "argument_types": [],
+        "successful_texts": 5,
+        "result_types": [
+          "bool"
+        ]
+      },
+      {
+        "argument_types": [
+          "str"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      },
+      {
+        "argument_types": [
+          "str"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      },
+      {
+        "argument_types": [
+          "str"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      },
+      {
+        "argument_types": [
+          "str",
+          "str"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      },
+      {
+        "argument_types": [
+          "str",
+          "str"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      },
+      {
+        "argument_types": [
+          "int"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      }
+    ],
+    "str.isdigit": [
+      {
+        "argument_types": [],
+        "successful_texts": 5,
+        "result_types": [
+          "bool"
+        ]
+      },
+      {
+        "argument_types": [
+          "str"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      },
+      {
+        "argument_types": [
+          "str"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      },
+      {
+        "argument_types": [
+          "str"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      },
+      {
+        "argument_types": [
+          "str",
+          "str"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      },
+      {
+        "argument_types": [
+          "str",
+          "str"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      },
+      {
+        "argument_types": [
+          "int"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      }
+    ],
+    "str.isidentifier": [
+      {
+        "argument_types": [],
+        "successful_texts": 5,
+        "result_types": [
+          "bool"
+        ]
+      },
+      {
+        "argument_types": [
+          "str"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      },
+      {
+        "argument_types": [
+          "str"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      },
+      {
+        "argument_types": [
+          "str"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      },
+      {
+        "argument_types": [
+          "str",
+          "str"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      },
+      {
+        "argument_types": [
+          "str",
+          "str"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      },
+      {
+        "argument_types": [
+          "int"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      }
+    ],
+    "str.islower": [
+      {
+        "argument_types": [],
+        "successful_texts": 5,
+        "result_types": [
+          "bool"
+        ]
+      },
+      {
+        "argument_types": [
+          "str"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      },
+      {
+        "argument_types": [
+          "str"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      },
+      {
+        "argument_types": [
+          "str"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      },
+      {
+        "argument_types": [
+          "str",
+          "str"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      },
+      {
+        "argument_types": [
+          "str",
+          "str"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      },
+      {
+        "argument_types": [
+          "int"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      }
+    ],
+    "str.isnumeric": [
+      {
+        "argument_types": [],
+        "successful_texts": 5,
+        "result_types": [
+          "bool"
+        ]
+      },
+      {
+        "argument_types": [
+          "str"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      },
+      {
+        "argument_types": [
+          "str"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      },
+      {
+        "argument_types": [
+          "str"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      },
+      {
+        "argument_types": [
+          "str",
+          "str"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      },
+      {
+        "argument_types": [
+          "str",
+          "str"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      },
+      {
+        "argument_types": [
+          "int"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      }
+    ],
+    "str.isprintable": [
+      {
+        "argument_types": [],
+        "successful_texts": 5,
+        "result_types": [
+          "bool"
+        ]
+      },
+      {
+        "argument_types": [
+          "str"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      },
+      {
+        "argument_types": [
+          "str"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      },
+      {
+        "argument_types": [
+          "str"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      },
+      {
+        "argument_types": [
+          "str",
+          "str"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      },
+      {
+        "argument_types": [
+          "str",
+          "str"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      },
+      {
+        "argument_types": [
+          "int"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      }
+    ],
+    "str.isspace": [
+      {
+        "argument_types": [],
+        "successful_texts": 5,
+        "result_types": [
+          "bool"
+        ]
+      },
+      {
+        "argument_types": [
+          "str"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      },
+      {
+        "argument_types": [
+          "str"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      },
+      {
+        "argument_types": [
+          "str"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      },
+      {
+        "argument_types": [
+          "str",
+          "str"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      },
+      {
+        "argument_types": [
+          "str",
+          "str"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      },
+      {
+        "argument_types": [
+          "int"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      }
+    ],
+    "str.istitle": [
+      {
+        "argument_types": [],
+        "successful_texts": 5,
+        "result_types": [
+          "bool"
+        ]
+      },
+      {
+        "argument_types": [
+          "str"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      },
+      {
+        "argument_types": [
+          "str"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      },
+      {
+        "argument_types": [
+          "str"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      },
+      {
+        "argument_types": [
+          "str",
+          "str"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      },
+      {
+        "argument_types": [
+          "str",
+          "str"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      },
+      {
+        "argument_types": [
+          "int"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      }
+    ],
+    "str.isupper": [
+      {
+        "argument_types": [],
+        "successful_texts": 5,
+        "result_types": [
+          "bool"
+        ]
+      },
+      {
+        "argument_types": [
+          "str"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      },
+      {
+        "argument_types": [
+          "str"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      },
+      {
+        "argument_types": [
+          "str"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      },
+      {
+        "argument_types": [
+          "str",
+          "str"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      },
+      {
+        "argument_types": [
+          "str",
+          "str"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      },
+      {
+        "argument_types": [
+          "int"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      }
+    ],
+    "str.join": [
+      {
+        "argument_types": [],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      },
+      {
+        "argument_types": [
+          "str"
+        ],
+        "successful_texts": 5,
+        "result_types": [
+          "str"
+        ]
+      },
+      {
+        "argument_types": [
+          "str"
+        ],
+        "successful_texts": 5,
+        "result_types": [
+          "str"
+        ]
+      },
+      {
+        "argument_types": [
+          "str"
+        ],
+        "successful_texts": 5,
+        "result_types": [
+          "str"
+        ]
+      },
+      {
+        "argument_types": [
+          "str",
+          "str"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      },
+      {
+        "argument_types": [
+          "str",
+          "str"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      },
+      {
+        "argument_types": [
+          "int"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      }
+    ],
+    "str.ljust": [
+      {
+        "argument_types": [],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      },
+      {
+        "argument_types": [
+          "str"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      },
+      {
+        "argument_types": [
+          "str"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      },
+      {
+        "argument_types": [
+          "str"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      },
+      {
+        "argument_types": [
+          "str",
+          "str"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      },
+      {
+        "argument_types": [
+          "str",
+          "str"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      },
+      {
+        "argument_types": [
+          "int"
+        ],
+        "successful_texts": 5,
+        "result_types": [
+          "str"
+        ]
+      }
+    ],
+    "str.lower": [
+      {
+        "argument_types": [],
+        "successful_texts": 5,
+        "result_types": [
+          "str"
+        ]
+      },
+      {
+        "argument_types": [
+          "str"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      },
+      {
+        "argument_types": [
+          "str"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      },
+      {
+        "argument_types": [
+          "str"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      },
+      {
+        "argument_types": [
+          "str",
+          "str"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      },
+      {
+        "argument_types": [
+          "str",
+          "str"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      },
+      {
+        "argument_types": [
+          "int"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      }
+    ],
+    "str.lstrip": [
+      {
+        "argument_types": [],
+        "successful_texts": 5,
+        "result_types": [
+          "str"
+        ]
+      },
+      {
+        "argument_types": [
+          "str"
+        ],
+        "successful_texts": 5,
+        "result_types": [
+          "str"
+        ]
+      },
+      {
+        "argument_types": [
+          "str"
+        ],
+        "successful_texts": 5,
+        "result_types": [
+          "str"
+        ]
+      },
+      {
+        "argument_types": [
+          "str"
+        ],
+        "successful_texts": 5,
+        "result_types": [
+          "str"
+        ]
+      },
+      {
+        "argument_types": [
+          "str",
+          "str"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      },
+      {
+        "argument_types": [
+          "str",
+          "str"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      },
+      {
+        "argument_types": [
+          "int"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      }
+    ],
+    "str.maketrans": [
+      {
+        "argument_types": [],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      },
+      {
+        "argument_types": [
+          "str"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      },
+      {
+        "argument_types": [
+          "str"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      },
+      {
+        "argument_types": [
+          "str"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      },
+      {
+        "argument_types": [
+          "str",
+          "str"
+        ],
+        "successful_texts": 5,
+        "result_types": [
+          "dict"
+        ]
+      },
+      {
+        "argument_types": [
+          "str",
+          "str"
+        ],
+        "successful_texts": 5,
+        "result_types": [
+          "dict"
+        ]
+      },
+      {
+        "argument_types": [
+          "int"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      }
+    ],
+    "str.partition": [
+      {
+        "argument_types": [],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      },
+      {
+        "argument_types": [
+          "str"
+        ],
+        "successful_texts": 5,
+        "result_types": [
+          "tuple"
+        ]
+      },
+      {
+        "argument_types": [
+          "str"
+        ],
+        "successful_texts": 5,
+        "result_types": [
+          "tuple"
+        ]
+      },
+      {
+        "argument_types": [
+          "str"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:ValueError"
+        ]
+      },
+      {
+        "argument_types": [
+          "str",
+          "str"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      },
+      {
+        "argument_types": [
+          "str",
+          "str"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      },
+      {
+        "argument_types": [
+          "int"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      }
+    ],
+    "str.removeprefix": [
+      {
+        "argument_types": [],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      },
+      {
+        "argument_types": [
+          "str"
+        ],
+        "successful_texts": 5,
+        "result_types": [
+          "str"
+        ]
+      },
+      {
+        "argument_types": [
+          "str"
+        ],
+        "successful_texts": 5,
+        "result_types": [
+          "str"
+        ]
+      },
+      {
+        "argument_types": [
+          "str"
+        ],
+        "successful_texts": 5,
+        "result_types": [
+          "str"
+        ]
+      },
+      {
+        "argument_types": [
+          "str",
+          "str"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      },
+      {
+        "argument_types": [
+          "str",
+          "str"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      },
+      {
+        "argument_types": [
+          "int"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      }
+    ],
+    "str.removesuffix": [
+      {
+        "argument_types": [],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      },
+      {
+        "argument_types": [
+          "str"
+        ],
+        "successful_texts": 5,
+        "result_types": [
+          "str"
+        ]
+      },
+      {
+        "argument_types": [
+          "str"
+        ],
+        "successful_texts": 5,
+        "result_types": [
+          "str"
+        ]
+      },
+      {
+        "argument_types": [
+          "str"
+        ],
+        "successful_texts": 5,
+        "result_types": [
+          "str"
+        ]
+      },
+      {
+        "argument_types": [
+          "str",
+          "str"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      },
+      {
+        "argument_types": [
+          "str",
+          "str"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      },
+      {
+        "argument_types": [
+          "int"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      }
+    ],
+    "str.replace": [
+      {
+        "argument_types": [],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      },
+      {
+        "argument_types": [
+          "str"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      },
+      {
+        "argument_types": [
+          "str"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      },
+      {
+        "argument_types": [
+          "str"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      },
+      {
+        "argument_types": [
+          "str",
+          "str"
+        ],
+        "successful_texts": 5,
+        "result_types": [
+          "str"
+        ]
+      },
+      {
+        "argument_types": [
+          "str",
+          "str"
+        ],
+        "successful_texts": 5,
+        "result_types": [
+          "str"
+        ]
+      },
+      {
+        "argument_types": [
+          "int"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      }
+    ],
+    "str.rfind": [
+      {
+        "argument_types": [],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      },
+      {
+        "argument_types": [
+          "str"
+        ],
+        "successful_texts": 5,
+        "result_types": [
+          "int"
+        ]
+      },
+      {
+        "argument_types": [
+          "str"
+        ],
+        "successful_texts": 5,
+        "result_types": [
+          "int"
+        ]
+      },
+      {
+        "argument_types": [
+          "str"
+        ],
+        "successful_texts": 5,
+        "result_types": [
+          "int"
+        ]
+      },
+      {
+        "argument_types": [
+          "str",
+          "str"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      },
+      {
+        "argument_types": [
+          "str",
+          "str"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      },
+      {
+        "argument_types": [
+          "int"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      }
+    ],
+    "str.rindex": [
+      {
+        "argument_types": [],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      },
+      {
+        "argument_types": [
+          "str"
+        ],
+        "successful_texts": 2,
+        "result_types": [
+          "error:ValueError",
+          "int"
+        ]
+      },
+      {
+        "argument_types": [
+          "str"
+        ],
+        "successful_texts": 3,
+        "result_types": [
+          "error:ValueError",
+          "int"
+        ]
+      },
+      {
+        "argument_types": [
+          "str"
+        ],
+        "successful_texts": 5,
+        "result_types": [
+          "int"
+        ]
+      },
+      {
+        "argument_types": [
+          "str",
+          "str"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      },
+      {
+        "argument_types": [
+          "str",
+          "str"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      },
+      {
+        "argument_types": [
+          "int"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      }
+    ],
+    "str.rjust": [
+      {
+        "argument_types": [],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      },
+      {
+        "argument_types": [
+          "str"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      },
+      {
+        "argument_types": [
+          "str"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      },
+      {
+        "argument_types": [
+          "str"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      },
+      {
+        "argument_types": [
+          "str",
+          "str"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      },
+      {
+        "argument_types": [
+          "str",
+          "str"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      },
+      {
+        "argument_types": [
+          "int"
+        ],
+        "successful_texts": 5,
+        "result_types": [
+          "str"
+        ]
+      }
+    ],
+    "str.rpartition": [
+      {
+        "argument_types": [],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      },
+      {
+        "argument_types": [
+          "str"
+        ],
+        "successful_texts": 5,
+        "result_types": [
+          "tuple"
+        ]
+      },
+      {
+        "argument_types": [
+          "str"
+        ],
+        "successful_texts": 5,
+        "result_types": [
+          "tuple"
+        ]
+      },
+      {
+        "argument_types": [
+          "str"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:ValueError"
+        ]
+      },
+      {
+        "argument_types": [
+          "str",
+          "str"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      },
+      {
+        "argument_types": [
+          "str",
+          "str"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      },
+      {
+        "argument_types": [
+          "int"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      }
+    ],
+    "str.rsplit": [
+      {
+        "argument_types": [],
+        "successful_texts": 5,
+        "result_types": [
+          "list"
+        ]
+      },
+      {
+        "argument_types": [
+          "str"
+        ],
+        "successful_texts": 5,
+        "result_types": [
+          "list"
+        ]
+      },
+      {
+        "argument_types": [
+          "str"
+        ],
+        "successful_texts": 5,
+        "result_types": [
+          "list"
+        ]
+      },
+      {
+        "argument_types": [
+          "str"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:ValueError"
+        ]
+      },
+      {
+        "argument_types": [
+          "str",
+          "str"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      },
+      {
+        "argument_types": [
+          "str",
+          "str"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      },
+      {
+        "argument_types": [
+          "int"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      }
+    ],
+    "str.rstrip": [
+      {
+        "argument_types": [],
+        "successful_texts": 5,
+        "result_types": [
+          "str"
+        ]
+      },
+      {
+        "argument_types": [
+          "str"
+        ],
+        "successful_texts": 5,
+        "result_types": [
+          "str"
+        ]
+      },
+      {
+        "argument_types": [
+          "str"
+        ],
+        "successful_texts": 5,
+        "result_types": [
+          "str"
+        ]
+      },
+      {
+        "argument_types": [
+          "str"
+        ],
+        "successful_texts": 5,
+        "result_types": [
+          "str"
+        ]
+      },
+      {
+        "argument_types": [
+          "str",
+          "str"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      },
+      {
+        "argument_types": [
+          "str",
+          "str"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      },
+      {
+        "argument_types": [
+          "int"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      }
+    ],
+    "str.split": [
+      {
+        "argument_types": [],
+        "successful_texts": 5,
+        "result_types": [
+          "list"
+        ]
+      },
+      {
+        "argument_types": [
+          "str"
+        ],
+        "successful_texts": 5,
+        "result_types": [
+          "list"
+        ]
+      },
+      {
+        "argument_types": [
+          "str"
+        ],
+        "successful_texts": 5,
+        "result_types": [
+          "list"
+        ]
+      },
+      {
+        "argument_types": [
+          "str"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:ValueError"
+        ]
+      },
+      {
+        "argument_types": [
+          "str",
+          "str"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      },
+      {
+        "argument_types": [
+          "str",
+          "str"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      },
+      {
+        "argument_types": [
+          "int"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      }
+    ],
+    "str.splitlines": [
+      {
+        "argument_types": [],
+        "successful_texts": 5,
+        "result_types": [
+          "list"
+        ]
+      },
+      {
+        "argument_types": [
+          "str"
+        ],
+        "successful_texts": 5,
+        "result_types": [
+          "list"
+        ]
+      },
+      {
+        "argument_types": [
+          "str"
+        ],
+        "successful_texts": 5,
+        "result_types": [
+          "list"
+        ]
+      },
+      {
+        "argument_types": [
+          "str"
+        ],
+        "successful_texts": 5,
+        "result_types": [
+          "list"
+        ]
+      },
+      {
+        "argument_types": [
+          "str",
+          "str"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      },
+      {
+        "argument_types": [
+          "str",
+          "str"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      },
+      {
+        "argument_types": [
+          "int"
+        ],
+        "successful_texts": 5,
+        "result_types": [
+          "list"
+        ]
+      }
+    ],
+    "str.startswith": [
+      {
+        "argument_types": [],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      },
+      {
+        "argument_types": [
+          "str"
+        ],
+        "successful_texts": 5,
+        "result_types": [
+          "bool"
+        ]
+      },
+      {
+        "argument_types": [
+          "str"
+        ],
+        "successful_texts": 5,
+        "result_types": [
+          "bool"
+        ]
+      },
+      {
+        "argument_types": [
+          "str"
+        ],
+        "successful_texts": 5,
+        "result_types": [
+          "bool"
+        ]
+      },
+      {
+        "argument_types": [
+          "str",
+          "str"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      },
+      {
+        "argument_types": [
+          "str",
+          "str"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      },
+      {
+        "argument_types": [
+          "int"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      }
+    ],
+    "str.strip": [
+      {
+        "argument_types": [],
+        "successful_texts": 5,
+        "result_types": [
+          "str"
+        ]
+      },
+      {
+        "argument_types": [
+          "str"
+        ],
+        "successful_texts": 5,
+        "result_types": [
+          "str"
+        ]
+      },
+      {
+        "argument_types": [
+          "str"
+        ],
+        "successful_texts": 5,
+        "result_types": [
+          "str"
+        ]
+      },
+      {
+        "argument_types": [
+          "str"
+        ],
+        "successful_texts": 5,
+        "result_types": [
+          "str"
+        ]
+      },
+      {
+        "argument_types": [
+          "str",
+          "str"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      },
+      {
+        "argument_types": [
+          "str",
+          "str"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      },
+      {
+        "argument_types": [
+          "int"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      }
+    ],
+    "str.swapcase": [
+      {
+        "argument_types": [],
+        "successful_texts": 5,
+        "result_types": [
+          "str"
+        ]
+      },
+      {
+        "argument_types": [
+          "str"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      },
+      {
+        "argument_types": [
+          "str"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      },
+      {
+        "argument_types": [
+          "str"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      },
+      {
+        "argument_types": [
+          "str",
+          "str"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      },
+      {
+        "argument_types": [
+          "str",
+          "str"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      },
+      {
+        "argument_types": [
+          "int"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      }
+    ],
+    "str.title": [
+      {
+        "argument_types": [],
+        "successful_texts": 5,
+        "result_types": [
+          "str"
+        ]
+      },
+      {
+        "argument_types": [
+          "str"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      },
+      {
+        "argument_types": [
+          "str"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      },
+      {
+        "argument_types": [
+          "str"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      },
+      {
+        "argument_types": [
+          "str",
+          "str"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      },
+      {
+        "argument_types": [
+          "str",
+          "str"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      },
+      {
+        "argument_types": [
+          "int"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      }
+    ],
+    "str.translate": [
+      {
+        "argument_types": [],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      },
+      {
+        "argument_types": [
+          "str"
+        ],
+        "successful_texts": 5,
+        "result_types": [
+          "str"
+        ]
+      },
+      {
+        "argument_types": [
+          "str"
+        ],
+        "successful_texts": 5,
+        "result_types": [
+          "str"
+        ]
+      },
+      {
+        "argument_types": [
+          "str"
+        ],
+        "successful_texts": 5,
+        "result_types": [
+          "str"
+        ]
+      },
+      {
+        "argument_types": [
+          "str",
+          "str"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      },
+      {
+        "argument_types": [
+          "str",
+          "str"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      },
+      {
+        "argument_types": [
+          "int"
+        ],
+        "successful_texts": 1,
+        "result_types": [
+          "error:TypeError",
+          "str"
+        ]
+      }
+    ],
+    "str.upper": [
+      {
+        "argument_types": [],
+        "successful_texts": 5,
+        "result_types": [
+          "str"
+        ]
+      },
+      {
+        "argument_types": [
+          "str"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      },
+      {
+        "argument_types": [
+          "str"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      },
+      {
+        "argument_types": [
+          "str"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      },
+      {
+        "argument_types": [
+          "str",
+          "str"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      },
+      {
+        "argument_types": [
+          "str",
+          "str"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      },
+      {
+        "argument_types": [
+          "int"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      }
+    ],
+    "str.zfill": [
+      {
+        "argument_types": [],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      },
+      {
+        "argument_types": [
+          "str"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      },
+      {
+        "argument_types": [
+          "str"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      },
+      {
+        "argument_types": [
+          "str"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      },
+      {
+        "argument_types": [
+          "str",
+          "str"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      },
+      {
+        "argument_types": [
+          "str",
+          "str"
+        ],
+        "successful_texts": 0,
+        "result_types": [
+          "error:TypeError"
+        ]
+      },
+      {
+        "argument_types": [
+          "int"
+        ],
+        "successful_texts": 5,
+        "result_types": [
+          "str"
+        ]
+      }
+    ]
+  },
+  "cpu_total_s": 0.137176,
+  "wall_total_s": 0.622708,
+  "max_rss_kib": 32444
+}

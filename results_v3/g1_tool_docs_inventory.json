@@ -1,0 +1,249 @@
+{
+  "kind": "source_feasibility_only",
+  "source_url": "https://docs.python.org/es/3.12/library/stdtypes.html",
+  "document_sha256": "d0fa4f1cdcd45a9b797cd0f3c340d12f9afc9aeaedf0b634d0468fe72a94a4d8",
+  "document_bytes": 700502,
+  "engine_tree": "1f3187f2ced4c97364503187d074815f33612326",
+  "method_paragraphs": 47,
+  "executable_methods": 47,
+  "methods": {
+    "str.capitalize": {
+      "description_chars": 93,
+      "description_sha256": "6e78c1cf89c99d6be45b8a35c5c5b3b1359c0514bb86e9fb0ee3012c334d24dc",
+      "preview": "Retorna una copia de la cadena con el primer carácter en mayúsculas y el resto en minúsculas."
+    },
+    "str.casefold": {
+      "description_chars": 175,
+      "description_sha256": "4b977abf23399b829eb3016e78df9eb465343f802b989f06f3a3ce08a78a784a",
+      "preview": "Retorna el texto de la cadena, normalizado a minúsculas. Los textos así normalizados pueden usarse para realiz"
+    },
+    "str.center": {
+      "description_chars": 329,
+      "description_sha256": "d3a294bb708d29b0c49158fa8a1d9e89977f1357be604de6073b82fc816aaeb6",
+      "preview": "Retorna el texto de la cadena, centrado en una cadena de longitud width . El relleno a izquierda y derecha se "
+    },
+    "str.count": {
+      "description_chars": 179,
+      "description_sha256": "877688d299fcb84b6954565c1b379709aa1eb446ee297834cf6953e3f45bfc6c",
+      "preview": "Retorna el número de ocurrencias no solapadas de la cadena sub en el rango [ start , end ]. Los parámetros opc"
+    },
+    "str.encode": {
+      "description_chars": 36,
+      "description_sha256": "5f16c9645268c962f269121e96629f38ae868768a1da5e321474078d417729c8",
+      "preview": "Return the string encoded to bytes ."
+    },
+    "str.endswith": {
+      "description_chars": 319,
+      "description_sha256": "529213b54556a6dbddc14aec6302b23b61e7b30e335a990c69f86de8d2d01bbd",
+      "preview": "Retorna True si la cadena termina con el suffix especificado y False en caso contrario. También podemos usar s"
+    },
+    "str.expandtabs": {
+      "description_chars": 932,
+      "description_sha256": "aa79f1819c80ee6795894ab0fdaf6eacd5eef4a0a6316faa5710c6031ae9c13d",
+      "preview": "Retorna una copia de la cadena, con todos los caracteres de tipo tabulador reemplazados por uno o más espacios"
+    },
+    "str.find": {
+      "description_chars": 246,
+      "description_sha256": "37c08b28699281a8ea42a67dbe91017ba5caa2102ec46b6256a268c2b9a1ed8e",
+      "preview": "Retorna el menor índice de la cadena s donde se puede encontrar la cadena sub , considerando solo el intervalo"
+    },
+    "str.format": {
+      "description_chars": 488,
+      "description_sha256": "f06d9411cd62a1556e3f85b00691606102891cc87ae2f1786b3f6eab07a92a3f",
+      "preview": "Realiza una operación de formateo. La cadena de caracteres sobre la que se está ejecutando este método puede c"
+    },
+    "str.format_map": {
+      "description_chars": 183,
+      "description_sha256": "993e35a23322c8d7bf9a890842cc841933256008a6d58cf4b541793ce352fdbf",
+      "preview": "Similar a str.format(**mapping) , pero se usa mapping de forma directa y no se copia a un diccionario. Esto es"
+    },
+    "str.index": {
+      "description_chars": 96,
+      "description_sha256": "feba735bba43d18f9ff34597979e0c89caca5ca9661da9b8dc5bdc13abc1e323",
+      "preview": "Como find() , pero lanza una excepción de tipo ValueError si no se encuentra la cadena a buscar."
+    },
+    "str.isalnum": {
+      "description_chars": 285,
+      "description_sha256": "a0e0cd00afd0844e450dee9f5afdb1ccd3d157e1c3c9606c4d9d8b16f9ff4a31",
+      "preview": "Retorna True si todos los caracteres de la cadena son alfanuméricos y hay, al menos, un carácter, en caso cont"
+    },
+    "str.isalpha": {
+      "description_chars": 449,
+      "description_sha256": "dce79299435d7e4b4100813d418b5249adcbccf9cd52f81be54f65cfe82aaa5f",
+      "preview": "Return True if all characters in the string are alphabetic and there is at least one character, False otherwis"
+    },
+    "str.isascii": {
+      "description_chars": 238,
+      "description_sha256": "5809a672d8f96aff7a3c8e34c816efe38b7c91ce7e252539e6b701cb1d53686d",
+      "preview": "Retorna True si la cadena de caracteres está vacía, o si todos los caracteres de la cadena son ASCII, en caso "
+    },
+    "str.isdecimal": {
+      "description_chars": 365,
+      "description_sha256": "ece66dbe15eac1dd8716c14e22f1478ca32e6d34bbba58ff62fb41c0ed8d5560",
+      "preview": "Retorna True si todos los caracteres de la cadena son caracteres decimales y hay, al menos, un carácter, en ca"
+    },
+    "str.isdigit": {
+      "description_chars": 480,
+      "description_sha256": "6bb72c21dba86a84124b80820570630bfdbc94d62a6b907a3d0035b46b9d7901",
+      "preview": "Retorna True si todos los caracteres de la cadena son dígitos y hay, al menos, un carácter, en caso contrario,"
+    },
+    "str.isidentifier": {
+      "description_chars": 152,
+      "description_sha256": "d984eb4daf32426bb27e34b516d0d8a621bf1863c4f577a1e2b98d81989987d6",
+      "preview": "Retorna True si la cadena de caracteres es un identificador válido de acuerdo a la especificación del lenguaje"
+    },
+    "str.islower": {
+      "description_chars": 197,
+      "description_sha256": "d7926d8f32abce1317a7a00341c3bd54e2e5e314ac4dcc8c5657f0b4c8f7e515",
+      "preview": "Retorna True si todos los caracteres de la cadena que tengan formas en mayúsculas y minúsculas [ 4 ] están en "
+    },
+    "str.isnumeric": {
+      "description_chars": 439,
+      "description_sha256": "4b0462d5efc7bd3fc9ceb112f583400932f103594ad436cbee851181b53288b5",
+      "preview": "Retorna True si todos los caracteres de la cadena son caracteres numéricos y hay, al menos, un carácter, en ca"
+    },
+    "str.isprintable": {
+      "description_chars": 117,
+      "description_sha256": "2cb7e33e2897485ba4c899f0271bff74b5a6cc9e4e7abbba0fba4666bc2a97d6",
+      "preview": "Return true if all characters in the string are printable, false if it contains at least one non-printable cha"
+    },
+    "str.isspace": {
+      "description_chars": 137,
+      "description_sha256": "1ab547455c06622a971ed23b94dc653ba2de792c20814f3a5cc3e22f9d8f09b9",
+      "preview": "Retorna True si todos los caracteres de la cadena son espacios en blanco y hay, al menos, un carácter, en caso"
+    },
+    "str.istitle": {
+      "description_chars": 366,
+      "description_sha256": "2fa8d8dc2a539c55045d75d4b0f07cde7db3410e91b6e7976ea9e0dae388c413",
+      "preview": "Retorna True si las palabras en la cadena tiene forma de título y hay, al menos, un carácter, por ejemplo una "
+    },
+    "str.isupper": {
+      "description_chars": 197,
+      "description_sha256": "fbb3acfc8f39e660ec767a41ea598d45830a17058a313b07ae7a409a39d536c9",
+      "preview": "Retorna True si todos los caracteres de la cadena que tengan formas en mayúsculas y minúsculas [ 4 ] están en "
+    },
+    "str.join": {
+      "description_chars": 318,
+      "description_sha256": "23cf853b78ffebb2972b9cd38e2327abad2180ed095cbeb3ed8c7602a6293ad5",
+      "preview": "Retorna una cadena de caracteres formada por la concatenación de las cadenas en el iterable . Se lanza una exc"
+    },
+    "str.ljust": {
+      "description_chars": 320,
+      "description_sha256": "9073d5e7427e739624e653eefcf0d8033b18c926a246b58b146768e43cd84454",
+      "preview": "Retorna el texto de la cadena, justificado a la izquierda en una cadena de longitud width . El carácter de rel"
+    },
+    "str.lower": {
+      "description_chars": 87,
+      "description_sha256": "3110013cc475ff9ffe2c5a43bec4d3397df4fa3b6fc2cdbc04b7e4f3038ef58f",
+      "preview": "Retorna una copia de la cadena de caracteres con todas las letras en minúsculas [ 4 ] ."
+    },
+    "str.lstrip": {
+      "description_chars": 359,
+      "description_sha256": "dd094b40dfa4edb2f32c663fc40879b85874819ee61a2b2674e97beceb86ac6c",
+      "preview": "Retorna una copia de la cadena, eliminado determinados caracteres si se encuentren al principio. El parámetro "
+    },
+    "str.maketrans": {
+      "description_chars": 104,
+      "description_sha256": "f45dc579080201e685b6e81f65171f1ae875d0144c4e653735ebf1c3b9e96910",
+      "preview": "Este método estático retorna una tabla de traducción apta para ser usada por el método str.translate() ."
+    },
+    "str.partition": {
+      "description_chars": 338,
+      "description_sha256": "b561e366f9f841ae0024850f7b7a369ac35ecca1a09f74b508e7628ca539ed1a",
+      "preview": "Divide la cadena en la primera ocurrencia de sep , y retorna una tupla de tres elementos, que contiene la part"
+    },
+    "str.removeprefix": {
+      "description_chars": 145,
+      "description_sha256": "8286ceea1d465287d0bc77aadb4558e7844baa0e7a6f62a23846b2e4f493ca54",
+      "preview": "Si la cadena de caracteres empieza con la cadena prefix , retorna string[len(prefix):] . De otra manera, retor"
+    },
+    "str.removesuffix": {
+      "description_chars": 168,
+      "description_sha256": "db78e56bb27ea6f5166cf6408cda7a50adbb8f120d1750561172347f267a2e68",
+      "preview": "Si la cadena de caracteres termina con la cadena suffix y suffix no está vacío, retorna string[:-len(suffix)] "
+    },
+    "str.replace": {
+      "description_chars": 178,
+      "description_sha256": "1d16072f427e3d3e3245c744c23a60f8fc4e927beea444b37e65b2d82e2c0dda",
+      "preview": "Retorna una copia de la cadena con todas las ocurrencias de la cadena old sustituidas por new . Si se utiliza "
+    },
+    "str.rfind": {
+      "description_chars": 258,
+      "description_sha256": "92684377412b376b56ddb94c556fe427103b33dd00361442858809e411f4b497",
+      "preview": "Retorna el mayor índice dentro de la cadena s donde se puede encontrar la cadena sub , estando sub incluida en"
+    },
+    "str.rindex": {
+      "description_chars": 94,
+      "description_sha256": "752e880d582552cc366e081bc76dc4037b0c720a80881f6ee595a70589ab94a8",
+      "preview": "Como el método rfind() , pero lanza la excepción ValueError si no se encuentra la cadena sub ."
+    },
+    "str.rjust": {
+      "description_chars": 282,
+      "description_sha256": "5692a226d5ed4d0d8eed2dc1f0c41d261998f7b3d21cbe5ff776c65b4ad86d92",
+      "preview": "Retorna el texto de la cadena, justificado a la derecha en una cadena de longitud width . El carácter de relle"
+    },
+    "str.rpartition": {
+      "description_chars": 343,
+      "description_sha256": "46ac16adf31722808aa53e197c30b947e1c38e339980926057692730541a1e19",
+      "preview": "Divide la cadena en la última ocurrencia de sep , y retorna una tupla de tres elementos, conteniendo la parte "
+    },
+    "str.rsplit": {
+      "description_chars": 549,
+      "description_sha256": "d5b7a8e1f0f77795a5e24924d96914399291d2939c38558e877b5bf8631fb101",
+      "preview": "Retorna una lista con las palabras que componen la cadena de caracteres original, usando como separador el val"
+    },
+    "str.rstrip": {
+      "description_chars": 354,
+      "description_sha256": "e6bfff63a0c00c38323bbe1e57826b38cef5aab18b5e514e02862056a81d887c",
+      "preview": "Retorna una copia de la cadena, eliminado determinados caracteres si se encuentren al final. El parámetro char"
+    },
+    "str.split": {
+      "description_chars": 413,
+      "description_sha256": "aa1553e2ac43b4f32acd01a2c29410ead5077d7cf04ebe1d95a8ff682c4be15d",
+      "preview": "Retorna una lista con las palabras que componen la cadena de caracteres original, usando como separador el val"
+    },
+    "str.splitlines": {
+      "description_chars": 226,
+      "description_sha256": "572cdde7f81a4635f3e6954d49e06b0f810fed46c98f69b0f31bdfb3d67af9a6",
+      "preview": "Retorna una lista con las líneas en la cadena, dividiendo por los saltos de línea. Los caracteres de salto de "
+    },
+    "str.startswith": {
+      "description_chars": 336,
+      "description_sha256": "e0af993a6dc0162b53317ecf4620bb786d2f49b63848a1e82280b05ec3c6163a",
+      "preview": "Retorna True si la cadena empieza por prefix , en caso contrario retorna False . El valor de prefix puede ser "
+    },
+    "str.strip": {
+      "description_chars": 423,
+      "description_sha256": "5bd675096c675c647bdda0fb5a8a48ce55bfbf114ed7698838373028f9fd4933",
+      "preview": "Retorna una copia de la cadena con los caracteres indicados eliminados, tanto si están al principio como al fi"
+    },
+    "str.swapcase": {
+      "description_chars": 176,
+      "description_sha256": "158e8d30a3efc4dd6feb448b2ac38666e21b0c6b22ce0a7844a99e0864619a50",
+      "preview": "Retorna una copia de la cadena con los caracteres en mayúsculas convertidos a minúsculas, y viceversa. Nótese "
+    },
+    "str.title": {
+      "description_chars": 129,
+      "description_sha256": "34f434ca26abc3c06b41c9c6a9a1647f9a72089e14e7fa31d6fd6d36e97426f1",
+      "preview": "Retorna una versión en forma de título de la cadena, con la primera letra de cada palabra en mayúsculas y el r"
+    },
+    "str.translate": {
+      "description_chars": 525,
+      "description_sha256": "f4bd15159936ff38f5ca8201a3312f3432c76ac2934db98f1e93813353bdd3ca",
+      "preview": "Return a copy of the string in which each character has been mapped through the given translation table. The t"
+    },
+    "str.upper": {
+      "description_chars": 356,
+      "description_sha256": "8d953c5f6d8260cddcb4ec810e4e6d42d5c7da12aa06ef0d6df4e6d9564a09a2",
+      "preview": "Retorna una copia de la cadena, con todos los caracteres con formas mayúsculas/minúsculas [ 4 ] pasados a mayú"
+    },
+    "str.zfill": {
+      "description_chars": 332,
+      "description_sha256": "f9ff77be50129747056cf4a43f8692a3fe460357cce6039e56fb44b1f933a842",
+      "preview": "Retorna una copia de la cadena, rellena por la izquierda con dígitos '0' de ASCII necesarios para conseguir un"
+    }
+  },
+  "cpu_total_s": 0.134071,
+  "wall_total_s": 0.613954,
+  "max_rss_kib": 32636
+}
