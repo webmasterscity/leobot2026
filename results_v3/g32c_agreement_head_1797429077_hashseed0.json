@@ -1,0 +1,81 @@
+{
+  "kind": "G32c_agreement_head",
+  "preregistration": "prereg/G-32c-concordancia-y-cabeza-en-funciones.md",
+  "development": false,
+  "engine_tree": "6b229755f5fa11dba0b02d92dedb94f84a8f36bc",
+  "engine_unchanged": true,
+  "engine_committed": true,
+  "seed": 1797429077,
+  "hashseed": "0",
+  "reserve_sentences": 300,
+  "reserve_words": 8569,
+  "treatment": {
+    "tag_accuracy": 0.9723,
+    "uas": 0.768,
+    "las": 0.7216,
+    "label_given_head": 0.9395,
+    "f1": {
+      "nsubj": 0.6256,
+      "obj": 0.7007,
+      "obl": 0.5762,
+      "iobj": 0.0,
+      "amod": 0.8256
+    },
+    "p95_ms": 24.52
+  },
+  "baseline_freeze_G31_uas": 0.7507,
+  "baseline_engine_tree": "7d68100c08f3b7d8a6d7a6f6feb98199e95c74b0",
+  "ablation_no_lexical_marker": {
+    "tag_accuracy": 0.9723,
+    "uas": 0.768,
+    "las": 0.6791,
+    "label_given_head": 0.8842,
+    "f1": {
+      "nsubj": 0.4859,
+      "obj": 0.5905,
+      "obl": 0.4072,
+      "iobj": 0.0,
+      "amod": 0.8179
+    },
+    "p95_ms": 25.057
+  },
+  "shuffled_labels": {
+    "tag_accuracy": 0.9723,
+    "uas": 0.768,
+    "las": 0.2586,
+    "label_given_head": 0.3367,
+    "f1": {
+      "nsubj": 0.0279,
+      "obj": 0.0281,
+      "obl": 0.0416,
+      "iobj": 0.0,
+      "amod": 0.0894
+    },
+    "p95_ms": 54.235,
+    "rss_kib": 438496
+  },
+  "shuffled_heads": {
+    "tag_accuracy": 0.9723,
+    "uas": 0.1469,
+    "las": 0.1288,
+    "label_given_head": 0.8769,
+    "f1": {
+      "nsubj": 0.0562,
+      "obj": 0.1054,
+      "obl": 0.0497,
+      "iobj": 0.0,
+      "amod": 0.0986
+    },
+    "p95_ms": 45.832,
+    "rss_kib": 523436
+  },
+  "fresh_unparsed": true,
+  "restart_identical": true,
+  "education_cpu_s": 44.13,
+  "cpu_total_s": 69.65,
+  "wall_total_s": 226.88,
+  "main_rss_kib": 435688,
+  "max_rss_kib_per_process": 523436,
+  "budget_ok": true,
+  "gate_pass": true
+}
