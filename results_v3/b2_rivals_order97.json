@@ -1,0 +1,381 @@
+{
+  "order_seed": 97,
+  "reserve_seed": 1969542400,
+  "controls": {
+    "accuracy_f1": true,
+    "accuracy_f2": true,
+    "ablation": true,
+    "reuse": true,
+    "before_probe_safe": true,
+    "active_probe": true,
+    "after_probe": true,
+    "counterevidence": true,
+    "restart": true,
+    "rename": true,
+    "incompatible": true,
+    "treatment_cpu_budget": true
+  },
+  "treatment_f1": {
+    "correct_supported": 128,
+    "total": 128,
+    "wrong_confident": 0,
+    "abstentions": 0,
+    "modes": {
+      "invented_view": 128
+    },
+    "cpu_s": 0.00274
+  },
+  "treatment_f2": {
+    "correct_supported": 128,
+    "total": 128,
+    "wrong_confident": 0,
+    "abstentions": 0,
+    "modes": {
+      "invented_view": 128
+    },
+    "cpu_s": 0.00194
+  },
+  "ablation_f1": {
+    "correct_supported": 0,
+    "total": 128,
+    "wrong_confident": 0,
+    "abstentions": 128,
+    "modes": {
+      "default": 128
+    },
+    "cpu_s": 0.03437
+  },
+  "fresh_f2": {
+    "correct_supported": 128,
+    "total": 128,
+    "wrong_confident": 0,
+    "abstentions": 0,
+    "modes": {
+      "invented_view": 128
+    },
+    "cpu_s": 0.002
+  },
+  "memory_only_f2": {
+    "correct_supported": 0,
+    "total": 128,
+    "wrong_confident": 0,
+    "abstentions": 128,
+    "modes": {
+      "default": 128
+    },
+    "cpu_s": 0.00065
+  },
+  "restart_f2": {
+    "correct_supported": 128,
+    "total": 128,
+    "wrong_confident": 0,
+    "abstentions": 0,
+    "modes": {
+      "invented_view": 128
+    },
+    "cpu_s": 0.00199
+  },
+  "rename_f2": {
+    "correct_supported": 128,
+    "total": 128,
+    "wrong_confident": 0,
+    "abstentions": 0,
+    "modes": {
+      "invented_view": 128
+    },
+    "cpu_s": 0.00194
+  },
+  "incompatible_kind": null,
+  "confounded_before_probe": {
+    "correct_supported": 2,
+    "total": 128,
+    "wrong_confident": 0,
+    "abstentions": 126,
+    "modes": {
+      "ambiguous": 126,
+      "invented_view": 2
+    },
+    "cpu_s": 0.00232
+  },
+  "confounded_after_probe": {
+    "correct_supported": 128,
+    "total": 128,
+    "wrong_confident": 0,
+    "abstentions": 0,
+    "modes": {
+      "invented_view": 128
+    },
+    "cpu_s": 0.00197
+  },
+  "confounded_after_restart": {
+    "correct_supported": 128,
+    "total": 128,
+    "wrong_confident": 0,
+    "abstentions": 0,
+    "modes": {
+      "invented_view": 128
+    },
+    "cpu_s": 0.00215
+  },
+  "no_rivals_same_information": {
+    "correct_supported": 2,
+    "total": 128,
+    "wrong_confident": 3,
+    "abstentions": 123,
+    "modes": {
+      "default": 123,
+      "invented_view": 5
+    },
+    "cpu_s": 0.05336
+  },
+  "rivals_before_probe": 1,
+  "rivals_after_restart": 1,
+  "proposal": {
+    "status": "epistemic_action",
+    "chosen_index": 0,
+    "prior_entropy_bits": 1.0,
+    "chosen": {
+      "index": 0,
+      "info_gain_bits": 1.0,
+      "expected_entropy_bits": 0.0,
+      "cost": 1.0,
+      "pragmatic_value": 0.0,
+      "value_per_cost": 1.0,
+      "label": null
+    },
+    "scores": [
+      {
+        "index": 0,
+        "info_gain_bits": 1.0,
+        "expected_entropy_bits": 0.0,
+        "cost": 1.0,
+        "pragmatic_value": 0.0,
+        "value_per_cost": 1.0,
+        "label": null
+      },
+      {
+        "index": 1,
+        "info_gain_bits": 1.0,
+        "expected_entropy_bits": 0.0,
+        "cost": 1.0,
+        "pragmatic_value": 0.0,
+        "value_per_cost": 1.0,
+        "label": null
+      },
+      {
+        "index": 2,
+        "info_gain_bits": 1.0,
+        "expected_entropy_bits": 0.0,
+        "cost": 1.0,
+        "pragmatic_value": 0.0,
+        "value_per_cost": 1.0,
+        "label": null
+      },
+      {
+        "index": 3,
+        "info_gain_bits": 1.0,
+        "expected_entropy_bits": 0.0,
+        "cost": 1.0,
+        "pragmatic_value": 0.0,
+        "value_per_cost": 1.0,
+        "label": null
+      },
+      {
+        "index": 4,
+        "info_gain_bits": 1.0,
+        "expected_entropy_bits": 0.0,
+        "cost": 1.0,
+        "pragmatic_value": 0.0,
+        "value_per_cost": 1.0,
+        "label": null
+      },
+      {
+        "index": 5,
+        "info_gain_bits": 1.0,
+        "expected_entropy_bits": 0.0,
+        "cost": 1.0,
+        "pragmatic_value": 0.0,
+        "value_per_cost": 1.0,
+        "label": null
+      },
+      {
+        "index": 6,
+        "info_gain_bits": 1.0,
+        "expected_entropy_bits": 0.0,
+        "cost": 1.0,
+        "pragmatic_value": 0.0,
+        "value_per_cost": 1.0,
+        "label": null
+      },
+      {
+        "index": 7,
+        "info_gain_bits": 1.0,
+        "expected_entropy_bits": 0.0,
+        "cost": 1.0,
+        "pragmatic_value": 0.0,
+        "value_per_cost": 1.0,
+        "label": null
+      },
+      {
+        "index": 8,
+        "info_gain_bits": 1.0,
+        "expected_entropy_bits": 0.0,
+        "cost": 1.0,
+        "pragmatic_value": 0.0,
+        "value_per_cost": 1.0,
+        "label": null
+      },
+      {
+        "index": 9,
+        "info_gain_bits": 1.0,
+        "expected_entropy_bits": 0.0,
+        "cost": 1.0,
+        "pragmatic_value": 0.0,
+        "value_per_cost": 1.0,
+        "label": null
+      },
+      {
+        "index": 10,
+        "info_gain_bits": 1.0,
+        "expected_entropy_bits": 0.0,
+        "cost": 1.0,
+        "pragmatic_value": 0.0,
+        "value_per_cost": 1.0,
+        "label": null
+      },
+      {
+        "index": 11,
+        "info_gain_bits": 1.0,
+        "expected_entropy_bits": 0.0,
+        "cost": 1.0,
+        "pragmatic_value": 0.0,
+        "value_per_cost": 1.0,
+        "label": null
+      },
+      {
+        "index": 12,
+        "info_gain_bits": 1.0,
+        "expected_entropy_bits": 0.0,
+        "cost": 1.0,
+        "pragmatic_value": 0.0,
+        "value_per_cost": 1.0,
+        "label": null
+      },
+      {
+        "index": 13,
+        "info_gain_bits": 1.0,
+        "expected_entropy_bits": 0.0,
+        "cost": 1.0,
+        "pragmatic_value": 0.0,
+        "value_per_cost": 1.0,
+        "label": null
+      },
+      {
+        "index": 14,
+        "info_gain_bits": 1.0,
+        "expected_entropy_bits": 0.0,
+        "cost": 1.0,
+        "pragmatic_value": 0.0,
+        "value_per_cost": 1.0,
+        "label": null
+      },
+      {
+        "index": 15,
+        "info_gain_bits": 1.0,
+        "expected_entropy_bits": 0.0,
+        "cost": 1.0,
+        "pragmatic_value": 0.0,
+        "value_per_cost": 1.0,
+        "label": null
+      }
+    ],
+    "ambiguous_hypotheses": 2,
+    "observed_outcome": "north"
+  },
+  "educated_f2_candidates": 1,
+  "fresh_f2_candidates": 3,
+  "dependent_withdrawn": true,
+  "dependent_withdrawn_after_restart": true,
+  "costs": {
+    "source": {
+      "wall_s": 1.7149,
+      "cpu_s": 1.71477
+    },
+    "target": {
+      "wall_s": 2.85209,
+      "cpu_s": 2.85188
+    },
+    "ablation": {
+      "wall_s": 19.98074,
+      "cpu_s": 19.97839
+    },
+    "fresh": {
+      "wall_s": 3.42738,
+      "cpu_s": 3.42716
+    },
+    "incompatible": {
+      "wall_s": 14.45826,
+      "cpu_s": 14.4568
+    },
+    "rename": {
+      "wall_s": 4.66685,
+      "cpu_s": 4.65832
+    },
+    "confounded": {
+      "wall_s": 2.41029,
+      "cpu_s": 2.40995
+    },
+    "probe": {
+      "wall_s": 0.00239,
+      "cpu_s": 0.00239
+    },
+    "no_rivals": {
+      "wall_s": 35.19146,
+      "cpu_s": 35.18641
+    },
+    "counterevidence": {
+      "wall_s": 0.01556,
+      "cpu_s": 0.01556
+    },
+    "restart": {
+      "wall_s": 0.02349,
+      "cpu_s": 0.02183
+    },
+    "restart_unresolved": {
+      "wall_s": 0.03621,
+      "cpu_s": 0.02222
+    },
+    "restart_resolved": {
+      "wall_s": 0.02271,
+      "cpu_s": 0.02212
+    },
+    "restart_counter": {
+      "wall_s": 0.02633,
+      "cpu_s": 0.0248
+    }
+  },
+  "nested_cpu_s_nonadditive": {
+    "search_cpu_s": 4.55701,
+    "aggregate_synthesis_validation_cpu_s": 0.04957,
+    "consolidation_cpu_s": 0.00079
+  },
+  "treatment_variant_cpu_s": {
+    "source_and_target": 4.571330000000001,
+    "confound_acquisition_and_probe": 2.41431,
+    "renamed": 4.66026,
+    "incompatible": 14.4568,
+    "counterevidence": 0.04036
+  },
+  "examples": {
+    "source": 64,
+    "target": 128,
+    "probe": 1,
+    "counterevidence": 32
+  },
+  "saved_bytes": 457965,
+  "preregistration": "prereg/B-2-hipotesis-rivales.md",
+  "frozen_engine_tree": "7564d4fe2d89bdf1504211fcb242619fdbe39698",
+  "engine_unchanged": true,
+  "wall_s": 84.9701,
+  "peak_rss_kib": 33480
+}
