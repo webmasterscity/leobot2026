@@ -8,13 +8,13 @@
 - Último tag estable: `estable-A-1` · huella del motor: `644c55528a5fd97a8822f719f70e11cfae242783`
 - Pruebas: 528 pasan · 2 fallos esperados · 0 fallos · Python 3.12.3
 - Orden rápida: `timeout 40s env PYTHONHASHSEED=0 python3 -m unittest tests.test_meta_abstraction_a1 tests.test_meta_active_probe tests.test_v70 -q` · Orden completa: `timeout 90s env PYTHONHASHSEED=0 ./run_tests.sh --solo-pruebas`
-- Preregistro activo: `prereg/B-1-operador-agregado.md` · estado: diseñado; puerta de latencia: `prereg/performance-1-latencia.md`
+- Preregistro activo: `prereg/B-1-operador-agregado.md` · estado: diseñado; tablero: `prereg/agi-board-1.md`
 - Diseños intentados en la fase en curso: 1) operador agregado tipado → preregistrado, sin resultado
-- Siguiente paso concreto: fijar y medir la batería de latencia con 100 000 hechos sobre `estable-A-1`; registrar el tablero AGI; después implementar B-1
+- Siguiente paso concreto: medir 20 casos públicos de MLQA en español y registrar el tablero AGI sin atribuir puntajes a ARC-AGI-3; después implementar B-1
 - Bloqueos: ninguno
 - Lectura (seguimiento): 0/4 en la sonda visible `experiments/user_text_probe.py` al cerrar A; no es una reserva independiente
-- Tablero AGI (último tag): batería comparable pendiente · obstáculo principal para AGI: lenguaje español abierto (sonda visible 0/4)
-- Latencia (último tag): p50/p95 y RAM con 100 000 hechos pendientes; no se atribuye cumplimiento al tag A-1
+- Tablero AGI (último tag): `prereg/agi-board-1.md` fijado; MLQA pendiente · obstáculo principal para AGI: lenguaje español abierto (sonda visible 0/4)
+- Latencia (último tag): 100 003 hechos; conocido p50 0,107–0,110 ms, p95 0,116–0,119 ms; razonamiento p95 0,279–0,282 ms; máximo <0,31 ms; RAM pico 199 520 KiB en tres semillas
 
 ## Historial de ciclos
 
@@ -24,6 +24,7 @@
 - 2026-09-22 · Costo A-1 por orden: 64 ejemplos fuente y 64 de aplicación; adquisición fuente 0,10–0,14 s de CPU, aplicación 4,91–4,95 s, ablación de aplicación 6,42–6,53 s. La búsqueda medida en A-1b consumió 5,00–5,11 s de CPU, incluidos 0,049–0,050 s de búsqueda de la pieza y 0,0025–0,0035 s de validación temporal; estas cifras son anidadas y no se suman a la adquisición. Consolidación de piezas 0,043–0,045 s, guardado/carga 0,015–0,016 s, consulta de 160 casos 0,0022–0,0025 s, intervención 0,00007–0,00008 s. Se exploraron 813–862 combinaciones planas en tratamiento y 3389–3713 en la ablación; la pieza examinó 10 aplicaciones. Ambos ensayos juntos tardaron unos 168 s de pared; pico 27 764 KiB. La adquisición fuente se amortiza al reutilizar la pieza; no se cuenta solo el costo de responder.
 - 2026-09-22 · Sonda de lectura repetida antes del tag: 0/4 y código sin cambios. El ZIP y el PDF existentes son históricos; no se regeneran. Git es el registro de versiones.
 - 2026-09-22 · [B-1](prereg/B-1-operador-agregado.md) y [latencia fija](prereg/performance-1-latencia.md) preregistrados antes de código; sin resultado ni tag nuevo.
+- 2026-09-22 · Batería de latencia fija sobre `estable-A-1`: 100 003 hechos, cinco tipos de consulta, tres semillas de hash, 100 respuestas correctas por corrida; todas las puertas p95 y tope absoluto pasaron. [Semilla 0](results_v3/latency_estable-A-1_hashseed0.json), [1](results_v3/latency_estable-A-1_hashseed1.json), [2](results_v3/latency_estable-A-1_hashseed2.json). Pico 199 520 KiB. Esta mezcla acotada no demuestra rapidez en conversación o razonamiento abiertos. [Tablero AGI](prereg/agi-board-1.md) preregistrado antes de puntuar MLQA; sin tag nuevo.
 
 ## Resultados negativos y trampas conocidas
 
