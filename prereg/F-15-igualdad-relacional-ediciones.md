@@ -1,0 +1,23 @@
+# F-15 — descubrir comparación entre el cambio y otra parte del texto
+
+## Fallo e hipótesis
+
+F-14 aprendió algo del texto editado (59,1 % macro en NLI frente a 49,7 % del prior), pero no alcanzó precisión segura. Las ediciones exactas apenas se repiten: [inventario](../results_v3/f15_edit_motif_inventory.json) con 1 298/1 341 patrones únicos. Una [sonda estructural](../results_v3/f15_relation_abstraction_inventory.json), **solo en grupos de enseñanza F-14**, añadió la pregunta «¿el tramo quitado o añadido aparece también en la otra oración?». Con apoyo de tres grupos, la precisión subió frente a lado/tipo/longitud en cuatro repartos: 77,0→80,6 %, 79,4→80,5 %, 83,2→85,0 %, 76,8→80,4 %, con menor cobertura en tres. Eso no prueba capacidad general.
+
+Hipótesis: un DSL tipado que **proponga y valide comparaciones de igualdad entre tramos y campos de una experiencia** permitirá inventar una representación relacional reutilizable, evitando memorizar cada cambio literal. Alternativa: la correlación de igualdad es otra pista espuria; el mecanismo no mejora NLI completo ni transfiere. Si funciona, extender el `learner_dsl` y MetaController existentes con esa operación general y retirar la duplicación experimental F-14; no añadir una regla llamada «premisa» o una lista de palabras objetivo.
+
+## Partición y datos
+
+Usar el corpus humano contrafactual [fijado en F-14](../results_v3/f14_counterfactual_inventory.json), commit `6f232a1d2a11462a30ce08fb4825b734ab30828e`. Mantener 1 000 grupos train para ajuste y 200 para validación, por el hash H0 de F-14; **no reutilizar** sus 200 grupos de desarrollo como evaluación F-15. Los 266 grupos train que quedaron intactos forman el desarrollo F-15, con cuatro revisiones humanas y pares de igual etiqueta incluidos. El test oficial NLI queda cerrado hasta congelar el piloto. Tres subconjuntos de 800 grupos de enseñanza, semillas 17/53/97, prueban estabilidad; el resultado principal usa los 1 000 grupos. Separar grupos completos, jamás revisiones hermanas.
+
+Si NLI pasa, evaluar una segunda estructura donde igualdad entre dos fuentes pueda adquirirse por el mismo DSL, con motor idéntico; una reseña de sentimiento aislada no contiene un segundo campo comparable y no sirve para atribuir transferencia de esta operación. Si no se identifica esa segunda estructura, registrar mejora local, **no** meta-aprendizaje ni promoción general.
+
+## Mecanismo propuesto
+
+Piloto fuera de `leobot/`, Python estándar, sin modelos. Entrada como registro de campos tipados `secuencia anterior`, `secuencia nueva`, `tramo quitado`, `tramo añadido`, `campos conservados`, etiqueta anterior y feedback real. Operador universal `igualdad(tramo,campo)` y negación explícita, usando tokens adquiridos como datos. Generar candidatos para todos los pares de tipos válidos, no por nombre de dominio; limitar a 32 descripciones y elegir por información/costo en validación. El programa aprendido selecciona qué comparación usar y cómo combinarla con el learner F-14, con presupuesto, verificador, costo, promoción y rollback declarativos. Guardar apoyos por grupo independiente; conservar rivales cuando no haya evidencia discriminante. Compilar índices de tokens para p95 de inferencia ≤10 ms. Sin `eval`, Python arbitrario, red neuronal, LLM ni GPU.
+
+## Controles y puerta
+
+Tratamiento frente al F-14 de ediciones **con exactamente los mismos textos y etiquetas**, y frente a prior de transición; ablación sin igualdad; igual número de candidatos sin relación cruzada; fresco/memoria; campo conservado barajado entre grupos con la misma etiqueta anterior y lado editado (confusor); renombrado de símbolos; edición incompatible; contraevidencia, retiro de dependencias y reinicio. El entorno entrega las etiquetas, Leobot no las inventa. Medir macro exactitud, intentos/precisión/cobertura, pares de ediciones mínimas, preservaciones de etiqueta, ejemplos, CPU de adquisición/síntesis/validación/consolidación/inferencia, candidatos y RAM, p50/p95; hash H0 antes/después.
+
+Puerta de desarrollo en los 266 grupos intactos: ≥65 % macro exactitud para tres etiquetas, ≥80 % precisión entre respuestas con cobertura ≥50 %, ≥5 puntos de macro exactitud sobre F-14 y ≥10 sobre prior, preservaciones ≥90 %; en cambios mínimos, precisión ≥80 % con cobertura ≥50 % y ventaja consistente de ≥3 puntos sobre ablación en los tres subconjuntos sin perder >10 % de cobertura. El campo barajado no puede producir promociones falsas ni aumentar respuestas seguras erróneas. Contraevidencia/reinicio pasan. CPU proceso ≤120 s, pared ≤180 s, RSS ≤256 MiB, p95 ≤10 ms y tope 1 s. Si falla, no integrar la comparación al motor; no ajustar umbral o vocabulario mirando esos 266 grupos.
