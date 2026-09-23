@@ -1,5 +1,6 @@
 """Leobot state, learner wiring, persistence, and public facade."""
 from __future__ import annotations
+import hashlib
 import json
 import os
 from pathlib import Path
@@ -50,6 +51,9 @@ class Bot(DocumentLearningMixin, LanguageAcquisitionMixin, ConditionalLearningMi
         # primitive relation.  Pending raw text is data, never executable code.
         self.raw_relation_observations: list[dict] = []
         self.raw_relation_promotions: dict[str, dict] = {}
+        # Raw relational roles may be linked to independently observed changes.
+        # This stores evidence and conflicts, never a translated predicate name.
+        self.raw_world_alignment_hypotheses: dict[str, dict] = {}
         # V5.11: negative raw assertions are learned in a separate evidence pool so
         # they can never count as positive support.  If repeated negative wording
         # reveals one stable base relation, only !predicate facts are asserted.
@@ -288,6 +292,90 @@ class Bot(DocumentLearningMixin, LanguageAcquisitionMixin, ConditionalLearningMi
             propagated['symbolic_cardinality']=self.symbolic.register_external_role_cardinality(
                 len(set(int(x) for x in roles)),source=f'meta:{family}:{source}',support=support)
         return {'meta':meta,'propagated':propagated}
+
+    def _publish_meta_role_cardinality(self, cardinality: int, *, family: str,
+                                       source: str, support: int = 1) -> dict:
+        meta=self.meta_representations.register_role_cardinality(
+            cardinality,family=family,source=source,support=support)
+        if meta.get('status')!='meta_representation_registered':
+            return {'meta':meta,'propagated':{}}
+        propagated_source=f'meta:{family}:{source}'
+        return {'meta':meta,'propagated':{
+            'procedure':self.procedures.register_external_role_cardinality(
+                cardinality,source=propagated_source,support=support),
+            'symbolic':self.symbolic.register_external_role_cardinality(
+                cardinality,source=propagated_source,support=support)}}
+
+    def observe_world_transition(self, before, after) -> dict:
+        """Compare a real state change with one uniquely matching raw text fact.
+
+        Symbol equality is evidence about role relevance, not predicate meaning.
+        Three independent facts must agree before a structural prior is shared.
+        """
+        def facts(rows):
+            result=set()
+            for fact in rows:
+                row=tuple(str(value) for value in fact)
+                if not 2 <= len(row) <= 9 or len(result)>=10_000:
+                    raise ValueError('Estado del entorno fuera del presupuesto.')
+                result.add(row)
+            return result
+
+        prior=facts(before); observed=facts(after)
+        changed=prior ^ observed
+        if not changed:
+            return {'status':'raw_world_no_change'}
+        changed_values={normalize(value) for fact in changed for value in fact[1:]}
+        candidates=[]
+        for promotion in self.raw_relation_promotions.values():
+            predicate=promotion.get('predicate')
+            arity=int(promotion.get('arity',0))
+            for evidence in promotion.get('evidence',()):
+                args=evidence.get('args',())
+                if not isinstance(predicate,str) or len(args)!=arity or arity<3:
+                    continue
+                roles=tuple(index for index,value in enumerate(args)
+                            if normalize(str(value)) in changed_values)
+                if len(roles)>=2:
+                    candidates.append((predicate,arity,roles,str(evidence.get('fact_id',''))))
+        if len(candidates)!=1:
+            return {'status':'raw_world_ambiguous' if candidates else 'raw_world_unmatched',
+                    'candidates':len(candidates)}
+        predicate,arity,roles,fact_id=candidates[0]
+        episode=hashlib.blake2b(json.dumps([sorted(prior),sorted(observed)],
+                                              ensure_ascii=False).encode('utf8'),
+                                 digest_size=12).hexdigest()
+        state=self.raw_world_alignment_hypotheses.setdefault(predicate,{
+            'arity':arity,'observations':[],'promoted_roles':None})
+        if any(row['episode']==episode for row in state['observations']):
+            return {'status':'raw_world_duplicate','predicate':predicate}
+        record={'episode':episode,'fact_id':fact_id,'roles':list(roles)}
+        state['observations'].append(record)
+        state['observations']=state['observations'][-64:]
+        source='raw_world:'+predicate
+        withdrawn=None
+        if state.get('promoted_roles') is not None and state['promoted_roles']!=list(roles):
+            withdrawn=self._remove_meta_source_from_consumers('raw_world',source)
+            state['promoted_roles']=None
+        tail=[]
+        for row in reversed(state['observations']):
+            if row['roles']!=list(roles):
+                break
+            tail.append(row)
+        independent=len({row['fact_id'] for row in tail})
+        published=None
+        if len(roles)<arity and independent>=3:
+            published=self._publish_meta_role_cardinality(
+                len(roles),family='raw_world',source=source,support=independent)
+            state['promoted_roles']=list(roles)
+        status=('raw_world_conflict' if withdrawn is not None else
+                'raw_world_grounded' if published is not None else 'raw_world_pending')
+        report={'status':status,'predicate':predicate,'arity':arity,
+                'roles':list(roles),'independent_support':independent,
+                'source_fact_id':fact_id,'episode':episode,
+                'published':published,'withdrawn':withdrawn}
+        self.training_reports.append({'type':'raw_world_transition',**report})
+        return report
 
     def _publish_meta_role_topology(self, input_arity: int, edges, *, family: str,
                                     source: str, support: int = 1) -> dict:

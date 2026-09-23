@@ -11,6 +11,7 @@ COGNITIVE_FIELDS = (
     'grounding_hypotheses',
     'raw_relation_observations',
     'raw_relation_promotions',
+    'raw_world_alignment_hypotheses',
     'raw_negative_relation_observations',
     'question_transform_hypotheses',
     'conditional_rule_hypotheses',

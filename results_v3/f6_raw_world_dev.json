@@ -1,0 +1,160 @@
+{
+  "preregistration": "prereg/F-6-anclaje-texto-efectos.md",
+  "kind": "development_only",
+  "baseline_engine_tree": "1f3187f2ced4c97364503187d074815f33612326",
+  "working_engine_changes": "M leobot/bot.py\n M leobot/state_fields.py",
+  "results": [
+    {
+      "name": "treatment",
+      "world_statuses": [
+        "raw_world_pending",
+        "raw_world_pending",
+        "raw_world_grounded"
+      ],
+      "meta_before_b": [
+        {
+          "kind": "role_cardinality",
+          "cardinality": 2,
+          "sources": {
+            "raw_world:primitive_baeb0ab0805e7a11_a3": {
+              "family": "raw_world",
+              "support": 3
+            }
+          },
+          "families": {
+            "raw_world": 3
+          },
+          "support": 3,
+          "schema": "card:2"
+        }
+      ],
+      "b_statuses": [
+        "pending_support",
+        "pending_support",
+        "pending_support"
+      ],
+      "b_correct": 0,
+      "b_unsafe": 0,
+      "b_p95_ms": 0.01844,
+      "c_statuses": [
+        "procedure_pending",
+        "procedure_pending",
+        "procedure_unresolved",
+        "procedure_unresolved",
+        "procedure_unresolved"
+      ],
+      "cpu_s": 0.012819
+    },
+    {
+      "name": "raw_only",
+      "world_statuses": [],
+      "meta_before_b": [],
+      "b_statuses": [
+        "pending_support",
+        "pending_support",
+        "pending_support"
+      ],
+      "b_correct": 0,
+      "b_unsafe": 0,
+      "b_p95_ms": 0.02441,
+      "c_statuses": [
+        "procedure_pending",
+        "procedure_pending",
+        "procedure_unresolved",
+        "procedure_unresolved",
+        "procedure_unresolved"
+      ],
+      "cpu_s": 0.011355
+    },
+    {
+      "name": "world_only",
+      "world_statuses": [
+        "raw_world_unmatched",
+        "raw_world_unmatched",
+        "raw_world_unmatched"
+      ],
+      "meta_before_b": [],
+      "b_statuses": [
+        "pending_support",
+        "pending_support",
+        "pending_support"
+      ],
+      "b_correct": 0,
+      "b_unsafe": 0,
+      "b_p95_ms": 0.01593,
+      "c_statuses": [
+        "procedure_pending",
+        "procedure_pending",
+        "procedure_unresolved",
+        "procedure_unresolved",
+        "procedure_unresolved"
+      ],
+      "cpu_s": 0.009535
+    },
+    {
+      "name": "same_information_no_meta",
+      "world_statuses": [
+        "raw_world_pending",
+        "raw_world_pending",
+        "raw_world_grounded"
+      ],
+      "meta_before_b": [
+        {
+          "kind": "role_cardinality",
+          "cardinality": 2,
+          "sources": {
+            "raw_world:primitive_baeb0ab0805e7a11_a3": {
+              "family": "raw_world",
+              "support": 3
+            }
+          },
+          "families": {
+            "raw_world": 3
+          },
+          "support": 3,
+          "schema": "card:2"
+        }
+      ],
+      "b_statuses": [
+        "pending_support",
+        "pending_support",
+        "pending_support"
+      ],
+      "b_correct": 0,
+      "b_unsafe": 0,
+      "b_p95_ms": 0.02215,
+      "c_statuses": [
+        "procedure_pending",
+        "procedure_pending",
+        "procedure_unresolved",
+        "procedure_unresolved",
+        "procedure_unresolved"
+      ],
+      "cpu_s": 0.011352
+    },
+    {
+      "name": "fresh",
+      "world_statuses": [],
+      "meta_before_b": [],
+      "b_statuses": [
+        "pending_support",
+        "pending_support",
+        "pending_support"
+      ],
+      "b_correct": 0,
+      "b_unsafe": 0,
+      "b_p95_ms": 0.02541,
+      "c_statuses": [
+        "procedure_pending",
+        "procedure_pending",
+        "procedure_unresolved",
+        "procedure_unresolved",
+        "procedure_unresolved"
+      ],
+      "cpu_s": 0.010295
+    }
+  ],
+  "wall_s": 0.060211,
+  "max_rss_kib": 24844,
+  "gate_passed": false
+}
