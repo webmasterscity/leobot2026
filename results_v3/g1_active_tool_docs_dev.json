@@ -1,0 +1,480 @@
+{
+  "preregistration": "prereg/G-1-documentos-herramientas-experimentos.md",
+  "kind": "development_only",
+  "engine_tree": "1f3187f2ced4c97364503187d074815f33612326",
+  "engine_unchanged": true,
+  "education": {
+    "groups": 3,
+    "simulations": 48,
+    "queries_explored": 24,
+    "paired_document_tool_examples": 6,
+    "learned_word_shape_pairs": 84
+  },
+  "method_groups_train": [
+    [
+      "find",
+      "rfind"
+    ],
+    [
+      "partition",
+      "rpartition"
+    ],
+    [
+      "lstrip",
+      "removeprefix"
+    ]
+  ],
+  "method_groups_development": [
+    [
+      "startswith",
+      "endswith"
+    ],
+    [
+      "removesuffix",
+      "rstrip"
+    ],
+    [
+      "split",
+      "rsplit"
+    ],
+    [
+      "index",
+      "rindex"
+    ]
+  ],
+  "results": {
+    "0": {
+      "startswith/endswith": {
+        "treatment": {
+          "status": "identified",
+          "correct": true,
+          "remaining": 1,
+          "oracle_calls": 1,
+          "candidate_simulations": 6,
+          "queries_explored": 2,
+          "cpu_s": 0.00666
+        },
+        "active_without_text": {
+          "status": "identified",
+          "correct": true,
+          "remaining": 1,
+          "oracle_calls": 1,
+          "candidate_simulations": 8,
+          "queries_explored": 3,
+          "cpu_s": 0.000153
+        },
+        "random": {
+          "status": "identified",
+          "correct": true,
+          "remaining": 1,
+          "oracle_calls": 3,
+          "candidate_simulations": 6,
+          "queries_explored": 0,
+          "cpu_s": 4.6e-05
+        }
+      },
+      "removesuffix/rstrip": {
+        "treatment": {
+          "status": "identified",
+          "correct": true,
+          "remaining": 1,
+          "oracle_calls": 1,
+          "candidate_simulations": 4,
+          "queries_explored": 1,
+          "cpu_s": 0.007304
+        },
+        "active_without_text": {
+          "status": "identified",
+          "correct": true,
+          "remaining": 1,
+          "oracle_calls": 1,
+          "candidate_simulations": 16,
+          "queries_explored": 7,
+          "cpu_s": 0.000163
+        },
+        "random": {
+          "status": "ambiguous",
+          "correct": false,
+          "remaining": 2,
+          "oracle_calls": 3,
+          "candidate_simulations": 6,
+          "queries_explored": 0,
+          "cpu_s": 4.2e-05
+        }
+      },
+      "split/rsplit": {
+        "treatment": {
+          "status": "identified",
+          "correct": true,
+          "remaining": 1,
+          "oracle_calls": 1,
+          "candidate_simulations": 108,
+          "queries_explored": 53,
+          "cpu_s": 0.011098
+        },
+        "active_without_text": {
+          "status": "identified",
+          "correct": true,
+          "remaining": 1,
+          "oracle_calls": 1,
+          "candidate_simulations": 10,
+          "queries_explored": 4,
+          "cpu_s": 0.00016
+        },
+        "random": {
+          "status": "ambiguous",
+          "correct": false,
+          "remaining": 2,
+          "oracle_calls": 3,
+          "candidate_simulations": 6,
+          "queries_explored": 0,
+          "cpu_s": 5.8e-05
+        }
+      },
+      "index/rindex": {
+        "treatment": {
+          "status": "identified",
+          "correct": true,
+          "remaining": 1,
+          "oracle_calls": 1,
+          "candidate_simulations": 4,
+          "queries_explored": 1,
+          "cpu_s": 0.002571
+        },
+        "active_without_text": {
+          "status": "identified",
+          "correct": true,
+          "remaining": 1,
+          "oracle_calls": 1,
+          "candidate_simulations": 4,
+          "queries_explored": 1,
+          "cpu_s": 0.000115
+        },
+        "random": {
+          "status": "identified",
+          "correct": true,
+          "remaining": 1,
+          "oracle_calls": 1,
+          "candidate_simulations": 2,
+          "queries_explored": 0,
+          "cpu_s": 2.1e-05
+        }
+      }
+    },
+    "17": {
+      "startswith/endswith": {
+        "treatment": {
+          "status": "identified",
+          "correct": true,
+          "remaining": 1,
+          "oracle_calls": 1,
+          "candidate_simulations": 4,
+          "queries_explored": 1,
+          "cpu_s": 0.006395
+        },
+        "active_without_text": {
+          "status": "identified",
+          "correct": true,
+          "remaining": 1,
+          "oracle_calls": 1,
+          "candidate_simulations": 16,
+          "queries_explored": 7,
+          "cpu_s": 0.00015
+        },
+        "random": {
+          "status": "ambiguous",
+          "correct": false,
+          "remaining": 2,
+          "oracle_calls": 3,
+          "candidate_simulations": 6,
+          "queries_explored": 0,
+          "cpu_s": 4.4e-05
+        }
+      },
+      "removesuffix/rstrip": {
+        "treatment": {
+          "status": "identified",
+          "correct": true,
+          "remaining": 1,
+          "oracle_calls": 1,
+          "candidate_simulations": 6,
+          "queries_explored": 2,
+          "cpu_s": 0.007282
+        },
+        "active_without_text": {
+          "status": "identified",
+          "correct": true,
+          "remaining": 1,
+          "oracle_calls": 1,
+          "candidate_simulations": 84,
+          "queries_explored": 41,
+          "cpu_s": 0.000234
+        },
+        "random": {
+          "status": "ambiguous",
+          "correct": false,
+          "remaining": 2,
+          "oracle_calls": 3,
+          "candidate_simulations": 6,
+          "queries_explored": 0,
+          "cpu_s": 4.1e-05
+        }
+      },
+      "split/rsplit": {
+        "treatment": {
+          "status": "identified",
+          "correct": true,
+          "remaining": 1,
+          "oracle_calls": 1,
+          "candidate_simulations": 118,
+          "queries_explored": 58,
+          "cpu_s": 0.010691
+        },
+        "active_without_text": {
+          "status": "identified",
+          "correct": true,
+          "remaining": 1,
+          "oracle_calls": 1,
+          "candidate_simulations": 20,
+          "queries_explored": 9,
+          "cpu_s": 0.000172
+        },
+        "random": {
+          "status": "ambiguous",
+          "correct": false,
+          "remaining": 2,
+          "oracle_calls": 3,
+          "candidate_simulations": 6,
+          "queries_explored": 0,
+          "cpu_s": 5.7e-05
+        }
+      },
+      "index/rindex": {
+        "treatment": {
+          "status": "identified",
+          "correct": true,
+          "remaining": 1,
+          "oracle_calls": 1,
+          "candidate_simulations": 16,
+          "queries_explored": 7,
+          "cpu_s": 0.002568
+        },
+        "active_without_text": {
+          "status": "identified",
+          "correct": true,
+          "remaining": 1,
+          "oracle_calls": 1,
+          "candidate_simulations": 18,
+          "queries_explored": 8,
+          "cpu_s": 0.000134
+        },
+        "random": {
+          "status": "ambiguous",
+          "correct": false,
+          "remaining": 2,
+          "oracle_calls": 3,
+          "candidate_simulations": 6,
+          "queries_explored": 0,
+          "cpu_s": 2.8e-05
+        }
+      }
+    },
+    "53": {
+      "startswith/endswith": {
+        "treatment": {
+          "status": "identified",
+          "correct": true,
+          "remaining": 1,
+          "oracle_calls": 1,
+          "candidate_simulations": 4,
+          "queries_explored": 1,
+          "cpu_s": 0.008507
+        },
+        "active_without_text": {
+          "status": "identified",
+          "correct": true,
+          "remaining": 1,
+          "oracle_calls": 1,
+          "candidate_simulations": 14,
+          "queries_explored": 6,
+          "cpu_s": 0.000174
+        },
+        "random": {
+          "status": "ambiguous",
+          "correct": false,
+          "remaining": 2,
+          "oracle_calls": 3,
+          "candidate_simulations": 6,
+          "queries_explored": 0,
+          "cpu_s": 4.8e-05
+        }
+      },
+      "removesuffix/rstrip": {
+        "treatment": {
+          "status": "identified",
+          "correct": true,
+          "remaining": 1,
+          "oracle_calls": 1,
+          "candidate_simulations": 14,
+          "queries_explored": 6,
+          "cpu_s": 0.00737
+        },
+        "active_without_text": {
+          "status": "identified",
+          "correct": true,
+          "remaining": 1,
+          "oracle_calls": 1,
+          "candidate_simulations": 30,
+          "queries_explored": 14,
+          "cpu_s": 0.000173
+        },
+        "random": {
+          "status": "ambiguous",
+          "correct": false,
+          "remaining": 2,
+          "oracle_calls": 3,
+          "candidate_simulations": 6,
+          "queries_explored": 0,
+          "cpu_s": 4.1e-05
+        }
+      },
+      "split/rsplit": {
+        "treatment": {
+          "status": "identified",
+          "correct": true,
+          "remaining": 1,
+          "oracle_calls": 1,
+          "candidate_simulations": 110,
+          "queries_explored": 54,
+          "cpu_s": 0.010786
+        },
+        "active_without_text": {
+          "status": "identified",
+          "correct": true,
+          "remaining": 1,
+          "oracle_calls": 1,
+          "candidate_simulations": 14,
+          "queries_explored": 6,
+          "cpu_s": 0.000171
+        },
+        "random": {
+          "status": "ambiguous",
+          "correct": false,
+          "remaining": 2,
+          "oracle_calls": 3,
+          "candidate_simulations": 6,
+          "queries_explored": 0,
+          "cpu_s": 5.5e-05
+        }
+      },
+      "index/rindex": {
+        "treatment": {
+          "status": "identified",
+          "correct": true,
+          "remaining": 1,
+          "oracle_calls": 1,
+          "candidate_simulations": 6,
+          "queries_explored": 2,
+          "cpu_s": 0.002572
+        },
+        "active_without_text": {
+          "status": "identified",
+          "correct": true,
+          "remaining": 1,
+          "oracle_calls": 1,
+          "candidate_simulations": 6,
+          "queries_explored": 2,
+          "cpu_s": 0.000114
+        },
+        "random": {
+          "status": "identified",
+          "correct": true,
+          "remaining": 1,
+          "oracle_calls": 2,
+          "candidate_simulations": 4,
+          "queries_explored": 0,
+          "cpu_s": 2.4e-05
+        }
+      }
+    }
+  },
+  "incompatible": {
+    "status": "identified",
+    "correct": true,
+    "remaining": 1,
+    "oracle_calls": 1,
+    "candidate_simulations": 195,
+    "queries_explored": 64,
+    "cpu_s": 0.020172
+  },
+  "prior_words": 81,
+  "doc_savings_by_seed_group": [
+    [
+      0,
+      "startswith/endswith",
+      true
+    ],
+    [
+      0,
+      "removesuffix/rstrip",
+      true
+    ],
+    [
+      0,
+      "split/rsplit",
+      false
+    ],
+    [
+      0,
+      "index/rindex",
+      false
+    ],
+    [
+      17,
+      "startswith/endswith",
+      true
+    ],
+    [
+      17,
+      "removesuffix/rstrip",
+      true
+    ],
+    [
+      17,
+      "split/rsplit",
+      false
+    ],
+    [
+      17,
+      "index/rindex",
+      false
+    ],
+    [
+      53,
+      "startswith/endswith",
+      true
+    ],
+    [
+      53,
+      "removesuffix/rstrip",
+      true
+    ],
+    [
+      53,
+      "split/rsplit",
+      false
+    ],
+    [
+      53,
+      "index/rindex",
+      false
+    ]
+  ],
+  "preliminary_gate_passed": false,
+  "reserved_64_queries": "ungenerated",
+  "second_family_pathlib": "unopened",
+  "counterevidence_restart": "pending_only_if_gate_passes",
+  "cpu_total_s": 0.247873,
+  "wall_total_s": 0.826658,
+  "max_rss_kib": 32616
+}
