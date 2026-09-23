@@ -20,6 +20,7 @@ SUFFIX_FREQ = 10
 BEAM = 12
 ARC_SMOOTHING = 5.0   # G-32: each arc context is smoothed toward the more general one
 LABEL_SMOOTHING = 3.0
+PRUNE_OPPORTUNITIES = 2
 _WORD = re.compile(r'\w+|[^\w\s]')
 
 
@@ -168,6 +169,12 @@ class SyntaxMixin:
     def consolidate_syntax(self) -> dict:
         """Compile suffix statistics and interpolation weights from the counts."""
         model = self.syntax_model
+        # G-32b: a context never seen as an arc and seen as an opportunity at
+        # most PRUNE_OPPORTUNITIES times barely moves its parent's rate; drop it
+        # so the learned memory stays loadable.
+        arcs = model['arcs']
+        model['opportunities'] = {key: count for key, count in model['opportunities'].items()
+                                  if count > PRUNE_OPPORTUNITIES or arcs.get(key)}
         suffixes: dict = {}
         for key, count in model['lexicon'].items():
             word, tag = key.rsplit('\x1f', 1)
