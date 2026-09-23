@@ -1,0 +1,422 @@
+{
+  "preregistration": "prereg/C-1-learners-declarativos.md",
+  "frozen_engine_tree": "3f47e6a514c60c5f29665d2468f95785b97c8371",
+  "engine_unchanged": true,
+  "order_seed": 17,
+  "reserve_seed": 1061676709,
+  "controls": {
+    "development_parity": true,
+    "projection_heldout": true,
+    "projection_ablation": true,
+    "projection_incompatible": true,
+    "acquisition_cost": true,
+    "b2_accuracy_f1": true,
+    "b2_accuracy_f2": true,
+    "b2_ablation": true,
+    "b2_reuse": true,
+    "b2_before_probe_safe": true,
+    "b2_active_probe": true,
+    "b2_after_probe": true,
+    "b2_counterevidence": true,
+    "b2_restart": true,
+    "b2_rename": true,
+    "b2_incompatible": true,
+    "b2_treatment_cpu_budget": true
+  },
+  "projection": {
+    "correct": 128,
+    "total": 128,
+    "view_kind": "feature_projection",
+    "ablation_kind": "feature_transform",
+    "incompatible_kind": "feature_transform",
+    "cpu_s": {
+      "acquisition": 0.01285,
+      "inference": 0.00097,
+      "ablation": 0.06115
+    },
+    "examples": 64
+  },
+  "b2_controls": {
+    "order_seed": 17,
+    "reserve_seed": 1061676709,
+    "controls": {
+      "accuracy_f1": true,
+      "accuracy_f2": true,
+      "ablation": true,
+      "reuse": true,
+      "before_probe_safe": true,
+      "active_probe": true,
+      "after_probe": true,
+      "counterevidence": true,
+      "restart": true,
+      "rename": true,
+      "incompatible": true,
+      "treatment_cpu_budget": true
+    },
+    "treatment_f1": {
+      "correct_supported": 128,
+      "total": 128,
+      "wrong_confident": 0,
+      "abstentions": 0,
+      "modes": {
+        "invented_view": 128
+      },
+      "cpu_s": 0.00276
+    },
+    "treatment_f2": {
+      "correct_supported": 128,
+      "total": 128,
+      "wrong_confident": 0,
+      "abstentions": 0,
+      "modes": {
+        "invented_view": 128
+      },
+      "cpu_s": 0.00195
+    },
+    "ablation_f1": {
+      "correct_supported": 0,
+      "total": 128,
+      "wrong_confident": 0,
+      "abstentions": 128,
+      "modes": {
+        "default": 128
+      },
+      "cpu_s": 0.03472
+    },
+    "fresh_f2": {
+      "correct_supported": 128,
+      "total": 128,
+      "wrong_confident": 0,
+      "abstentions": 0,
+      "modes": {
+        "invented_view": 128
+      },
+      "cpu_s": 0.0019
+    },
+    "memory_only_f2": {
+      "correct_supported": 0,
+      "total": 128,
+      "wrong_confident": 0,
+      "abstentions": 128,
+      "modes": {
+        "default": 128
+      },
+      "cpu_s": 0.00063
+    },
+    "restart_f2": {
+      "correct_supported": 128,
+      "total": 128,
+      "wrong_confident": 0,
+      "abstentions": 0,
+      "modes": {
+        "invented_view": 128
+      },
+      "cpu_s": 0.00199
+    },
+    "rename_f2": {
+      "correct_supported": 128,
+      "total": 128,
+      "wrong_confident": 0,
+      "abstentions": 0,
+      "modes": {
+        "invented_view": 128
+      },
+      "cpu_s": 0.00194
+    },
+    "incompatible_kind": null,
+    "confounded_before_probe": {
+      "correct_supported": 1,
+      "total": 128,
+      "wrong_confident": 0,
+      "abstentions": 127,
+      "modes": {
+        "ambiguous": 127,
+        "invented_view": 1
+      },
+      "cpu_s": 0.00222
+    },
+    "confounded_after_probe": {
+      "correct_supported": 128,
+      "total": 128,
+      "wrong_confident": 0,
+      "abstentions": 0,
+      "modes": {
+        "invented_view": 128
+      },
+      "cpu_s": 0.00193
+    },
+    "confounded_after_restart": {
+      "correct_supported": 128,
+      "total": 128,
+      "wrong_confident": 0,
+      "abstentions": 0,
+      "modes": {
+        "invented_view": 128
+      },
+      "cpu_s": 0.00198
+    },
+    "no_rivals_same_information": {
+      "correct_supported": 1,
+      "total": 128,
+      "wrong_confident": 3,
+      "abstentions": 124,
+      "modes": {
+        "default": 124,
+        "invented_view": 4
+      },
+      "cpu_s": 0.05461
+    },
+    "rivals_before_probe": 1,
+    "rivals_after_restart": 1,
+    "proposal": {
+      "status": "epistemic_action",
+      "chosen_index": 0,
+      "prior_entropy_bits": 1.0,
+      "chosen": {
+        "index": 0,
+        "info_gain_bits": 1.0,
+        "expected_entropy_bits": 0.0,
+        "cost": 1.0,
+        "pragmatic_value": 0.0,
+        "value_per_cost": 1.0,
+        "label": null
+      },
+      "scores": [
+        {
+          "index": 0,
+          "info_gain_bits": 1.0,
+          "expected_entropy_bits": 0.0,
+          "cost": 1.0,
+          "pragmatic_value": 0.0,
+          "value_per_cost": 1.0,
+          "label": null
+        },
+        {
+          "index": 1,
+          "info_gain_bits": 1.0,
+          "expected_entropy_bits": 0.0,
+          "cost": 1.0,
+          "pragmatic_value": 0.0,
+          "value_per_cost": 1.0,
+          "label": null
+        },
+        {
+          "index": 2,
+          "info_gain_bits": 1.0,
+          "expected_entropy_bits": 0.0,
+          "cost": 1.0,
+          "pragmatic_value": 0.0,
+          "value_per_cost": 1.0,
+          "label": null
+        },
+        {
+          "index": 3,
+          "info_gain_bits": 1.0,
+          "expected_entropy_bits": 0.0,
+          "cost": 1.0,
+          "pragmatic_value": 0.0,
+          "value_per_cost": 1.0,
+          "label": null
+        },
+        {
+          "index": 4,
+          "info_gain_bits": 1.0,
+          "expected_entropy_bits": 0.0,
+          "cost": 1.0,
+          "pragmatic_value": 0.0,
+          "value_per_cost": 1.0,
+          "label": null
+        },
+        {
+          "index": 5,
+          "info_gain_bits": 1.0,
+          "expected_entropy_bits": 0.0,
+          "cost": 1.0,
+          "pragmatic_value": 0.0,
+          "value_per_cost": 1.0,
+          "label": null
+        },
+        {
+          "index": 6,
+          "info_gain_bits": 1.0,
+          "expected_entropy_bits": 0.0,
+          "cost": 1.0,
+          "pragmatic_value": 0.0,
+          "value_per_cost": 1.0,
+          "label": null
+        },
+        {
+          "index": 7,
+          "info_gain_bits": 1.0,
+          "expected_entropy_bits": 0.0,
+          "cost": 1.0,
+          "pragmatic_value": 0.0,
+          "value_per_cost": 1.0,
+          "label": null
+        },
+        {
+          "index": 8,
+          "info_gain_bits": 1.0,
+          "expected_entropy_bits": 0.0,
+          "cost": 1.0,
+          "pragmatic_value": 0.0,
+          "value_per_cost": 1.0,
+          "label": null
+        },
+        {
+          "index": 9,
+          "info_gain_bits": 1.0,
+          "expected_entropy_bits": 0.0,
+          "cost": 1.0,
+          "pragmatic_value": 0.0,
+          "value_per_cost": 1.0,
+          "label": null
+        },
+        {
+          "index": 10,
+          "info_gain_bits": 1.0,
+          "expected_entropy_bits": 0.0,
+          "cost": 1.0,
+          "pragmatic_value": 0.0,
+          "value_per_cost": 1.0,
+          "label": null
+        },
+        {
+          "index": 11,
+          "info_gain_bits": 1.0,
+          "expected_entropy_bits": 0.0,
+          "cost": 1.0,
+          "pragmatic_value": 0.0,
+          "value_per_cost": 1.0,
+          "label": null
+        },
+        {
+          "index": 12,
+          "info_gain_bits": 1.0,
+          "expected_entropy_bits": 0.0,
+          "cost": 1.0,
+          "pragmatic_value": 0.0,
+          "value_per_cost": 1.0,
+          "label": null
+        },
+        {
+          "index": 13,
+          "info_gain_bits": 1.0,
+          "expected_entropy_bits": 0.0,
+          "cost": 1.0,
+          "pragmatic_value": 0.0,
+          "value_per_cost": 1.0,
+          "label": null
+        },
+        {
+          "index": 14,
+          "info_gain_bits": 1.0,
+          "expected_entropy_bits": 0.0,
+          "cost": 1.0,
+          "pragmatic_value": 0.0,
+          "value_per_cost": 1.0,
+          "label": null
+        },
+        {
+          "index": 15,
+          "info_gain_bits": 1.0,
+          "expected_entropy_bits": 0.0,
+          "cost": 1.0,
+          "pragmatic_value": 0.0,
+          "value_per_cost": 1.0,
+          "label": null
+        }
+      ],
+      "ambiguous_hypotheses": 2,
+      "observed_outcome": "north"
+    },
+    "educated_f2_candidates": 1,
+    "fresh_f2_candidates": 3,
+    "dependent_withdrawn": true,
+    "dependent_withdrawn_after_restart": true,
+    "costs": {
+      "source": {
+        "wall_s": 0.77463,
+        "cpu_s": 0.77458
+      },
+      "target": {
+        "wall_s": 0.85743,
+        "cpu_s": 0.85739
+      },
+      "ablation": {
+        "wall_s": 4.53728,
+        "cpu_s": 4.53695
+      },
+      "fresh": {
+        "wall_s": 1.36383,
+        "cpu_s": 1.36375
+      },
+      "incompatible": {
+        "wall_s": 9.90913,
+        "cpu_s": 9.90821
+      },
+      "rename": {
+        "wall_s": 1.62295,
+        "cpu_s": 1.62275
+      },
+      "confounded": {
+        "wall_s": 0.25113,
+        "cpu_s": 0.25111
+      },
+      "probe": {
+        "wall_s": 0.00241,
+        "cpu_s": 0.0024
+      },
+      "no_rivals": {
+        "wall_s": 0.79565,
+        "cpu_s": 0.79533
+      },
+      "counterevidence": {
+        "wall_s": 0.01547,
+        "cpu_s": 0.01547
+      },
+      "restart": {
+        "wall_s": 0.02266,
+        "cpu_s": 0.0215
+      },
+      "restart_unresolved": {
+        "wall_s": 0.03433,
+        "cpu_s": 0.02194
+      },
+      "restart_resolved": {
+        "wall_s": 0.0409,
+        "cpu_s": 0.02277
+      },
+      "restart_counter": {
+        "wall_s": 0.02754,
+        "cpu_s": 0.02505
+      }
+    },
+    "nested_cpu_s_nonadditive": {
+      "search_cpu_s": 1.6218,
+      "aggregate_synthesis_validation_cpu_s": 0.05551,
+      "consolidation_cpu_s": 0.00079
+    },
+    "treatment_variant_cpu_s": {
+      "source_and_target": 1.63668,
+      "confound_acquisition_and_probe": 0.25544,
+      "renamed": 1.62469,
+      "incompatible": 9.90821,
+      "counterevidence": 0.04052
+    },
+    "examples": {
+      "source": 64,
+      "target": 128,
+      "probe": 1,
+      "counterevidence": 32
+    },
+    "saved_bytes": 457846
+  },
+  "cost_ratios": {
+    "projection": 0.1635,
+    "source": 0.2976,
+    "target": 0.2888
+  },
+  "wall_s": 22.17505,
+  "peak_rss_kib": 33736
+}
