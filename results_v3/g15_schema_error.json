@@ -1,0 +1,113 @@
+{
+  "kind": "invalid_evaluator_schema_read",
+  "result_valid": false,
+  "invalid_reason": "La fuente usa entity.boundaries y predicate.uri; el lector inicial buscó entity.start/end y convirtió predicate entero a texto. Alineación 0 es un error del evaluador, no de la fuente.",
+  "preregistration": "prereg/G-15-documentos-reales-y-relaciones.md",
+  "source_url": "https://huggingface.co/datasets/Babelscape/REDFM/resolve/7fab33bee528dc1dd09d90f788afc93d35fd71b3/data/train.es.jsonl",
+  "source_bytes": 6212868,
+  "source_sha256": "3af0fff77d7bb3d2907839e1db8e33d56b8e84ae17309f056257f240ec8127b8",
+  "engine_tree": "1f3187f2ced4c97364503187d074815f33612326",
+  "engine_unchanged": true,
+  "rows": 1866,
+  "articles": 1544,
+  "reports": [
+    {
+      "seed": 911,
+      "training_articles": 1235,
+      "heldout_articles": 309,
+      "training": {
+        "paragraphs": 1496,
+        "one_triple_paragraphs": 517,
+        "multi_triple_paragraphs": 979,
+        "triples": 4171,
+        "entity_mentions": 8342,
+        "aligned_mentions": 0,
+        "fully_aligned_triples": 0,
+        "pairs_with_multiple_relations": 28
+      },
+      "heldout": {
+        "paragraphs": 370,
+        "one_triple_paragraphs": 116,
+        "multi_triple_paragraphs": 254,
+        "triples": 1023,
+        "entity_mentions": 2046,
+        "aligned_mentions": 0,
+        "fully_aligned_triples": 0,
+        "pairs_with_multiple_relations": 14
+      },
+      "teachable_relations": 47,
+      "recurrent_relations": 30,
+      "heldout_shared_triples": 967,
+      "heldout_relation_coverage": 0.9452590420332356,
+      "mention_alignment": 0.0,
+      "gate_partition": false
+    },
+    {
+      "seed": 977,
+      "training_articles": 1235,
+      "heldout_articles": 309,
+      "training": {
+        "paragraphs": 1467,
+        "one_triple_paragraphs": 501,
+        "multi_triple_paragraphs": 966,
+        "triples": 4112,
+        "entity_mentions": 8224,
+        "aligned_mentions": 0,
+        "fully_aligned_triples": 0,
+        "pairs_with_multiple_relations": 35
+      },
+      "heldout": {
+        "paragraphs": 399,
+        "one_triple_paragraphs": 132,
+        "multi_triple_paragraphs": 267,
+        "triples": 1082,
+        "entity_mentions": 2164,
+        "aligned_mentions": 0,
+        "fully_aligned_triples": 0,
+        "pairs_with_multiple_relations": 7
+      },
+      "teachable_relations": 46,
+      "recurrent_relations": 34,
+      "heldout_shared_triples": 1011,
+      "heldout_relation_coverage": 0.9343807763401109,
+      "mention_alignment": 0.0,
+      "gate_partition": false
+    },
+    {
+      "seed": 1039,
+      "training_articles": 1235,
+      "heldout_articles": 309,
+      "training": {
+        "paragraphs": 1491,
+        "one_triple_paragraphs": 501,
+        "multi_triple_paragraphs": 990,
+        "triples": 4126,
+        "entity_mentions": 8252,
+        "aligned_mentions": 0,
+        "fully_aligned_triples": 0,
+        "pairs_with_multiple_relations": 38
+      },
+      "heldout": {
+        "paragraphs": 375,
+        "one_triple_paragraphs": 132,
+        "multi_triple_paragraphs": 243,
+        "triples": 1068,
+        "entity_mentions": 2136,
+        "aligned_mentions": 0,
+        "fully_aligned_triples": 0,
+        "pairs_with_multiple_relations": 4
+      },
+      "teachable_relations": 44,
+      "recurrent_relations": 27,
+      "heldout_shared_triples": 980,
+      "heldout_relation_coverage": 0.9176029962546817,
+      "mention_alignment": 0.0,
+      "gate_partition": false
+    }
+  ],
+  "budget_ok": true,
+  "gate_pass": false,
+  "cpu_total_s": 0.242756,
+  "wall_total_s": 1.846883,
+  "max_rss_kib": 68364
+}
