@@ -33,6 +33,7 @@ COGNITIVE_FIELDS = (
     'training_reports',
     'reading_utterances',
     'reading_model',
+    'syntax_model',
 )
 
 

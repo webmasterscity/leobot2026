@@ -19,11 +19,12 @@ from .language_acquisition import LanguageAcquisitionMixin
 from .conditional_learning import ConditionalLearningMixin
 from .dialogue import DialogueMixin
 from .reading import ReadingMemoryMixin, _empty_model
+from .syntax import SyntaxMixin, _empty_syntax
 from .state_fields import plain_state, restore_plain_state
 
 
 class Bot(DocumentLearningMixin, LanguageAcquisitionMixin, ConditionalLearningMixin, DialogueMixin,
-          ReadingMemoryMixin):
+          ReadingMemoryMixin, SyntaxMixin):
     def __init__(self, kb=None, grounded_language: bool = True, grounding_min_support: int = 2,
                  raw_relation_min_support: int = 3, allow_extensional_grounding: bool = False,
                  raw_relation_max_arity: int = 8) -> None:
@@ -157,6 +158,8 @@ class Bot(DocumentLearningMixin, LanguageAcquisitionMixin, ConditionalLearningMi
         # learned from worked reading examples.
         self.reading_utterances: list[dict] = []
         self.reading_model: dict = _empty_model()
+        # G-29: word-class and dependency statistics learned from annotated sentences.
+        self.syntax_model: dict = _empty_syntax()
         # Bounded discourse state.  This is linguistic working memory, not factual
         # truth: referents are only used to propose repairs that an already learned
         # construction can parse unambiguously.
