@@ -7,6 +7,7 @@ import os
 import random
 import re
 import resource
+import signal
 import statistics
 import sys
 import tempfile
@@ -30,6 +31,26 @@ FIELDS = ('select',) + tuple(name for name in ACTION_NAMES if name != 'aggregate
 QUOTE = re.compile(r"''[^']*''|\"[^\"]*\"|'[^']*'")
 NUMBER = re.compile(r'(?<!\w)\d+(?:[.,]\d+)?(?!\w)')
 MAX_CANDIDATES = 1000
+PER_QUERY_SECONDS = .010
+
+
+class QueryDeadline(Exception):
+    pass
+
+
+def bounded_call(func, *args):
+    def expired(_signum, _frame):
+        raise QueryDeadline()
+    previous = signal.getsignal(signal.SIGALRM)
+    signal.signal(signal.SIGALRM, expired)
+    signal.setitimer(signal.ITIMER_REAL, PER_QUERY_SECONDS)
+    try:
+        return func(*args), False
+    except QueryDeadline:
+        return None, True
+    finally:
+        signal.setitimer(signal.ITIMER_REAL, 0)
+        signal.signal(signal.SIGALRM, previous)
 
 
 def tokens(text):
@@ -279,6 +300,7 @@ def main(seed):
     restart_same = loaded == treatment
     treatment = loaded
     counts = Counter()
+    timeouts = Counter()
     family = {'join_filter': Counter(), 'aggregate_order': Counter()}
     latency = []
     candidate_evaluations = 0
@@ -286,17 +308,27 @@ def main(seed):
     for item, gold_sql in test:
         question = item['question']
         tick = time.perf_counter_ns()
-        predicted, checked, supported = predict(treatment, question)
+        response, timed_out = bounded_call(predict, treatment, question)
         latency.append((time.perf_counter_ns() - tick)/1e6)
-        shuffled_pred, _, _ = predict(shuffled_model, question)
-        bag_pred, _ = bag_predict(bag, question)
-        lang_pred = language_predict(language, question)
+        timeouts['treatment'] += timed_out
+        predicted, checked, supported = response if response is not None else (None, MAX_CANDIDATES, 0)
+        response, timed_out = bounded_call(predict, shuffled_model, question)
+        timeouts['shuffled'] += timed_out
+        shuffled_pred = response[0] if response is not None else None
+        response, timed_out = bounded_call(bag_predict, bag, question)
+        timeouts['bag'] += timed_out
+        bag_pred = response[0] if response is not None else None
+        lang_pred, timed_out = bounded_call(language_predict, language, question)
+        timeouts['language'] += timed_out
         stored = memory.get(normalize(question), set())
         memory_pred = next(iter(stored)) if len(stored) == 1 else None
         fresh_pred = (1, (0,), False, (False,)*len(ACTION_NAMES))
         candidate_evaluations += checked
         renamed = NUMBER.sub(' 987654321 ', QUOTE.sub(' "opaque" ', question))
-        renamed_values_same &= predict(treatment, renamed)[0] == predicted
+        renamed_response, renamed_timeout = bounded_call(predict, treatment, renamed)
+        timeouts['renamed_treatment'] += renamed_timeout
+        renamed_values_same &= (renamed_response is not None and
+                                renamed_response[0] == predicted)
         gold, _ = signature(gold_sql)
         counts['questions'] += 1
         for name, answer in (('treatment', predicted), ('shuffled', shuffled_pred),
@@ -328,12 +360,13 @@ def main(seed):
     unchanged = (git('rev-parse', 'HEAD:leobot') == h0 and
                  not git('status', '--porcelain', '--', 'leobot'))
     output = {'kind': 'development_typed_phrase_actions',
-              'preregistration': 'prereg/G-9b-estructuras-entre-todas-las-bases.md',
+              'preregistration': 'prereg/G-9c-limite-por-consulta.md',
               'detail': 'prereg/G-9b-detalle-del-learner.md',
               'seed': seed, 'engine_tree': h0, 'engine_unchanged': unchanged,
               'training_databases': len(eligible)-len(heldout),
               'heldout_databases': len(heldout), 'training_demonstrations': len(train),
               'test_questions': len(test), 'counts': dict(counts),
+              'timeouts_10ms': dict(timeouts),
               'family': {k:dict(v) for k,v in family.items()},
               'contrast_pairs': treatment['contrast_pairs'],
               'candidate_rules': treatment['candidate_rules'],
@@ -351,7 +384,7 @@ def main(seed):
               'cpu_total_s': round(time.process_time()-cpu0, 6),
               'wall_total_s': round(time.monotonic()-wall0, 6),
               'max_rss_kib': peak_rss}
-    path = ROOT / f'results_v3/g9b_learner_seed{seed}_hashseed{os.environ.get("PYTHONHASHSEED", "unset")}.json'
+    path = ROOT / f'results_v3/g9c_learner_seed{seed}_hashseed{os.environ.get("PYTHONHASHSEED", "unset")}.json'
     path.write_text(json.dumps(output, ensure_ascii=False, indent=2)+'\n')
     print(json.dumps(output, ensure_ascii=False))
     if not unchanged:
