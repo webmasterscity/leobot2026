@@ -46,6 +46,9 @@ class Bot(DocumentLearningMixin, LanguageAcquisitionMixin, ConditionalLearningMi
         # Untrusted semantic hypotheses are kept separate from active grammar until
         # independent grounded episodes support the same delexicalized construction.
         self.grounding_hypotheses: dict[str, dict] = {}
+        # Fact IDs whose only asserted linguistic basis is one promoted
+        # grounding cluster.  Independent confirmation removes the dependency.
+        self.grounding_fact_dependencies: dict[str, str] = {}
         # V4.5: unresolved ordinary assertions can support a bounded, opaque
         # primitive relation.  Pending raw text is data, never executable code.
         self.raw_relation_observations: list[dict] = []

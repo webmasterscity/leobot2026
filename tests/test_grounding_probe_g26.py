@@ -24,6 +24,33 @@ def ambiguous_bot(reverse=False, explicit_negative=True):
 
 
 class GroundingProbeTests(unittest.TestCase):
+    def test_counterevidence_removes_a_fact_created_only_by_the_learned_phrase(self):
+        bot = ambiguous_bot()
+        proposal = bot.propose_grounding_probe()
+        bot.observe_grounding_probe(proposal['probe_id'], True)
+        stored = bot.respond('dana cuida ciro')
+        self.assertEqual(stored['status'], 'stored')
+        self.assertTrue(bot.kb.contains(Atom('ruta_a', ('dana', 'ciro'))))
+
+        corrected = bot.observe_grounding_probe(proposal['probe_id'], False)
+        self.assertEqual(corrected['status'], 'grounding_conflict')
+        self.assertFalse(bot.kb.contains(Atom('ruta_a', ('dana', 'ciro'))))
+        self.assertIsNone(bot.last_fact)
+
+    def test_independent_support_for_the_same_fact_survives_language_rollback(self):
+        bot = ambiguous_bot()
+        proposal = bot.propose_grounding_probe()
+        bot.observe_grounding_probe(proposal['probe_id'], True)
+        bot.respond('dana cuida ciro')
+        bot.language.teach('ana respalda luis',
+                           {'act': 'assert', 'pred': 'ruta_a', 'args': ['ana', 'luis']})
+        self.assertEqual(bot.respond('dana respalda ciro')['status'], 'stored')
+        bot.kb.add(Atom('ruta_a', ('bea', 'ciro')), 'fuente independiente')
+
+        bot.observe_grounding_probe(proposal['probe_id'], False)
+        self.assertTrue(bot.kb.contains(Atom('ruta_a', ('dana', 'ciro'))))
+        self.assertTrue(bot.kb.contains(Atom('ruta_a', ('bea', 'ciro'))))
+
     def test_question_uses_explicit_contrast_and_waits_for_external_answer(self):
         bot = ambiguous_bot()
         proposal = bot.propose_grounding_probe()

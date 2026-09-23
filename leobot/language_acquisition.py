@@ -16,6 +16,29 @@ from .language import Language, normalize
 
 
 class LanguageAcquisitionMixin:
+    def _grounding_parse_source(self, parsed: dict) -> tuple[str | None, bool]:
+        """Find the unique active grounding on which a parsed fact depends."""
+        indices=parsed.get('construction_indices',())
+        if not indices:
+            return None,False
+        examples=self.language.examples
+        if any(not isinstance(index,int) or index<0 or index>=len(examples)
+               for index in indices):
+            return None,True
+        selected=[examples[index] for index in indices]
+        if any(ex.get('source')!='grounded_induction' for ex in selected):
+            return None,False  # independent instruction/source also parses it
+        clusters=set()
+        for ex in selected:
+            matches=[cluster for cluster,state in self.grounding_hypotheses.items()
+                     if state.get('promoted') and any(
+                         row.get('text')==ex.get('text') and row.get('frame')==ex.get('frame')
+                         for row in state.get('promoted_examples',()))]
+            if len(matches)!=1:
+                return None,True
+            clusters.add(matches[0])
+        return (next(iter(clusters)),False) if len(clusters)==1 else (None,True)
+
     @staticmethod
     def _grounding_probe_hypotheses(state: dict) -> list[dict]:
         """Decode only bounded, aligned assertion candidates from a version space."""
@@ -142,11 +165,25 @@ class LanguageAcquisitionMixin:
                                json.dumps({'text':ex['text'],'frame':ex['frame']},
                                           sort_keys=True,ensure_ascii=False) not in keys]
                     self.language=Language.from_dict({'examples':remaining})
+                removed=[]
+                for fid in state.get('derived_fact_ids',()):
+                    if self.grounding_fact_dependencies.get(fid)!=cluster:
+                        continue
+                    if self.kb.remove(fid):
+                        removed.append(fid)
+                    self.grounding_fact_dependencies.pop(fid,None)
+                if removed:
+                    dropped=set(removed)
+                    self.discourse_facts=[fid for fid in self.discourse_facts if fid not in dropped]
+                    if self.last_fact in dropped:
+                        self.last_fact=None
+                state['derived_fact_ids']=[]
                 state['promoted_examples']=[]
                 state['promoted']=False; state['conflict']=True; state['possible']=[]
                 state.setdefault('probe_observations',[]).append(
                     {'id':probe_id,'text':pending['text'],'answer':answer,'contradicts':previous})
-                return {'status':'grounding_conflict','possible':0,'withdrawn':len(promoted)}
+                return {'status':'grounding_conflict','possible':0,
+                        'withdrawn':len(promoted),'facts_withdrawn':len(removed)}
             if previous is not None:
                 return {'status':'grounding_promoted' if state.get('promoted') else 'grounding_pending',
                         'possible':len(state.get('possible',()))}
@@ -296,19 +333,23 @@ class LanguageAcquisitionMixin:
                 continue
             if len(possible)==1 and len(state['observations']) >= self.grounding_min_support and not state.get('promoted'):
                 winner=next(iter(possible)); changed=False
-                supports=[]
+                supports=[]; added=[]
                 for obs in state['observations']:
                     detail=obs['candidates'].get(winner)
                     if detail is None:
                         continue
                     supports.append(detail)
                     try:
-                        changed=self.language.teach(obs['text'],detail['frame'],'grounded_induction',detail['evidence']) or changed
+                        taught=self.language.teach(obs['text'],detail['frame'],
+                                                   'grounded_induction',detail['evidence'])
+                        changed=taught or changed
+                        if taught:
+                            added.append({'text':obs['text'],'frame':detail['frame']})
                     except ValueError:
                         state['conflict']=True
                         return None
                 if len(supports) >= self.grounding_min_support:
-                    state['promoted']=True; promoted_any=True
+                    state['promoted']=True; state['promoted_examples']=added; promoted_any=True
                     self.training_reports.append({'type':'language_grounded_promoted','text':text,
                                                   'hypothesis':winner,'support':len(supports),
                                                   'possible_before_promotion':1})

@@ -295,35 +295,37 @@ class Language:
     def parse(self, text: str) -> dict:
         if len(text) > 2048:
             return {'status': 'unrecognized', 'frame': None, 'alternatives': [], 'reason': 'Entrada demasiado larga.'}
-        matches: list[tuple[dict, tuple[int,int], bool]] = []
-        for c in self.constructions:
+        matches: list[tuple[dict, tuple[int,int], bool, int]] = []
+        for index,c in enumerate(self.constructions):
             for frame in c.parse_candidates(text):
-                matches.append((frame,self._specificity(c),False))
+                matches.append((frame,self._specificity(c),False,index))
         if not matches and self.rewrites:
-            by_schema: dict[str, list[Construction]] = defaultdict(list)
-            for c in self.constructions:
-                by_schema[self._schema(c)].append(c)
+            by_schema: dict[str, list[tuple[int,Construction]]] = defaultdict(list)
+            for index,c in enumerate(self.constructions):
+                by_schema[self._schema(c)].append((index,c))
             for schema, constructions in by_schema.items():
-                pred=constructions[0].frame.get('pred') if constructions else None
+                pred=constructions[0][1].frame.get('pred') if constructions else None
                 for variant in self._rewrite_variants(text, schema, pred):
                     if variant == normalize(text):
                         continue
-                    for c in constructions:
+                    for index,c in constructions:
                         for frame in c.parse_candidates(variant):
-                            matches.append((frame,self._specificity(c),True))
+                            matches.append((frame,self._specificity(c),True,index))
         if not matches:
             return {'status':'unrecognized','frame':None,'alternatives':[],'composed_paraphrase':False}
-        best=max(score for _,score,_ in matches)
+        best=max(score for _,score,_,_ in matches)
         found=[]; rewritten=False
-        for frame,score,rw in matches:
+        for frame,score,rw,_ in matches:
             if score != best:
                 continue
             if frame not in found:
                 found.append(frame)
             rewritten = rewritten or rw
+        indices=sorted({index for frame,score,_,index in matches
+                        if len(found)==1 and score==best and frame==found[0]})
         return {'status': 'parsed' if len(found) == 1 else 'ambiguous',
                 'frame': found[0] if len(found) == 1 else None, 'alternatives': found,
-                'composed_paraphrase': rewritten}
+                'composed_paraphrase': rewritten,'construction_indices':indices}
 
     def describe(self, pred: str, args: tuple[str, ...]) -> str:
         if pred.startswith('!'):

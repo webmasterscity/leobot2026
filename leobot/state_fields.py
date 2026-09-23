@@ -9,6 +9,7 @@ from __future__ import annotations
 
 COGNITIVE_FIELDS = (
     'grounding_hypotheses',
+    'grounding_fact_dependencies',
     'raw_relation_observations',
     'raw_relation_promotions',
     'raw_negative_relation_observations',

@@ -1053,7 +1053,22 @@ class DialogueMixin:
         if action == 'query':
             return self.answer_atom(Atom(frame['pred'], tuple(frame['args'])))
         if action == 'assert':
-            self._remember_discourse_fact(self.kb.add(Atom(frame['pred'], tuple(frame['args'])), 'conversación'))
+            cluster,uncertain=self._grounding_parse_source(parsed)
+            if uncertain:
+                return {'text':'No puedo atribuir esta afirmación a una interpretación fiable.',
+                        'status':'grounding_pending'}
+            atom=Atom(frame['pred'],tuple(frame['args']))
+            was_new=(atom,'conversación') not in self.kb.dedup
+            fid=self.kb.add(atom,'conversación')
+            if cluster is not None and was_new:
+                self.grounding_fact_dependencies[fid]=cluster
+                self.grounding_hypotheses[cluster].setdefault('derived_fact_ids',[]).append(fid)
+            elif cluster is None and fid in self.grounding_fact_dependencies:
+                old_cluster=self.grounding_fact_dependencies.pop(fid)
+                state=self.grounding_hypotheses.get(old_cluster, {})
+                state['derived_fact_ids']=[old for old in state.get('derived_fact_ids',())
+                                           if old!=fid]
+            self._remember_discourse_fact(fid)
             self.last_result = None
             return {'text': 'Dato registrado con su procedencia.', 'status': 'stored', 'id': self.last_fact}
         if action == 'correct_last':
