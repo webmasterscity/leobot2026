@@ -2,15 +2,15 @@
 
 ## Estado de misión
 
-- Actualizado: 2026-09-22 · commit 49892b1 (motor B-2 congelado)
+- Actualizado: 2026-09-23 · commit 6215ce7 (motor y evaluador C-2 antes de reserva)
 - Fases: A superada en ensayo acotado · B superada en ensayo acotado · C pendiente · D pendiente · E pendiente · F pendiente · G pendiente · H pendiente
 - Fase en curso: C — expresar learners como datos y sintetizar mejoras verificables
 - Último tag estable: `estable-B-2` · huella del motor: `7564d4fe2d89bdf1504211fcb242619fdbe39698`
 - Pruebas: 530 pasan · 2 fallos esperados · 0 fallos · Python 3.12.3
 - Orden rápida: `timeout 40s env PYTHONHASHSEED=0 python3 -m unittest tests.test_meta_abstraction_a1 tests.test_meta_active_probe tests.test_v70 -q` · Orden completa: `timeout 600s env PYTHONHASHSEED=0 python3 -m experiments.regression_batches`
-- Preregistro activo: [C-2](prereg/C-2-sintesis-learner-compuesto.md) · estado: implementando
-- Diseños intentados en la fase en curso: 1) intérprete declarativo de dos learners → pasó como primer paso; 2) composición adquirida de extractores → eficaz en desarrollo, reserva pendiente
-- Siguiente paso concreto: fijar evaluador C-2 con controles de confusor, ablationes, costo y persistencia; congelar motor antes de generar reserva
+- Preregistro activo: [C-2](prereg/C-2-sintesis-learner-compuesto.md) · estado: implementado, reserva pendiente
+- Diseños intentados en la fase en curso: 1) intérprete declarativo de dos learners → pasó; 2) compuesto con 32 ejemplos → retirado por inestabilidad; 3) compuesto con 64 ejemplos y límite de CPU → desarrollo aprobado, reserva pendiente
+- Siguiente paso concreto: etiquetar `freeze-C-2`, ejecutar tres órdenes nuevas de C-2 con motor congelado y conservar cualquier fallo
 - Bloqueos: ninguno
 - Lectura (seguimiento): 0/4 en la sonda visible `experiments/user_text_probe.py` al cerrar B; no es una reserva independiente
 - Tablero AGI (árbol idéntico al último tag): [resultado](results_v3/agi_board_freeze-B-2.json) · MLQA español público 0/20, 20 no reconocidas · ARC-AGI-3 no evaluado · brecha frontier no comparable · obstáculo principal: adquirir significado de texto libre
@@ -37,6 +37,7 @@
 - 2026-09-22 · C-1 congelado en `freeze-C-1`, árbol `3f47e6a514c60c5f29665d2468f95785b97c8371`. [Órdenes 17](results_v3/c1_declarative_order17.json), [53](results_v3/c1_declarative_order53.json), [97](results_v3/c1_declarative_order97.json): paridad exacta de vistas/rutas/candidatos, proyección/F1/F2 128/128 en tres reservas nuevas, ablationes, fresco, memoria, incompatible, confusor, contraevidencia, renombrado y reinicio pasaron. Código congelado. CPU de adquisición de proyección 0,011–0,013 s frente a ~0,076–0,079 s; fuente 0,60–0,77 s y destino 0,70–0,86 s, ambos <0,44 veces la referencia B-2; inferencia de 128 proyecciones ~0,001 s; RAM pico 33 572–33 736 KiB. El intérprete aún solo ejecuta dos generadores diseñados por el desarrollador: **C sigue abierta**. Sonda de desarrollo para C-2: un caso de conteo dependiente de contexto obtuvo 50/128 con el motor actual tras 28,2 s CPU; no es reserva.
 - 2026-09-22 · [C-2](prereg/C-2-sintesis-learner-compuesto.md) preregistrado antes de implementación: construir un learner declarativo que combine extractores existentes, medir F1/F2 con reserva nueva y controles. La sonda de 50/128 es solo diagnóstico visible.
 - 2026-09-22 · C-2 en desarrollo: MetaController construyó un programa de learner `contexto binario + plegado`, lo guardó como datos, y lo reutilizó con un contexto de comparación entre dos valores. En una sonda visible F1 logró 127/128 y F2 126/128; F2 educado exploró 284 hipótesis acumuladas frente a 376 fresco, aunque el CPU marginal fue casi igual (~10,4 s). Una pista de magnitud invertida dio 127/128 y cero errores seguros. Contraevidencia retiró fuente, dependiente y learner después de reiniciar. El motor viejo daba 50/128 en F1; nada de esto cuenta como reserva ni cierra C.
+- 2026-09-23 · C-2, revisión previa a la reserva: con 32 ejemplos se promovió demasiado pronto una vista de F2 que luego cayó; el ensayo completo de desarrollo agotó 180 s. La variante con 64 ejemplos evita esa retirada prematura. Orden 17: tratamiento 17,2 s CPU, F1 126/128 y F2 124/128; orden 53: 19,3 s, F1 126/128 y F2 123/128; orden 97: F1 125/128 y F2 122/128 en sonda parcial. El bot educado intentó una descripción y 96 hipótesis en F2; el fresco, tres y 188. En orden 53, la ablación tardaba 34,4 s sin límite. Ahora el motor suspende solo la búsqueda al consumir 28,5 s, entrega los 128 ejemplos por la interfaz normal y el control termina en 29,3 s. El ensayo de desarrollo 53 pasó todas sus puertas; código/evaluador guardados antes de reserva. El costo de enseñar F1+F2 sigue siendo mayor que enseñar solo F2 fresco.
 
 ## Resultados negativos y trampas conocidas
 
