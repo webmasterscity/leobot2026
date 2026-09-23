@@ -45,6 +45,16 @@ def score(controller,family,indices,generate):
 
 
 class LearnerSynthesisTests(unittest.TestCase):
+    def test_search_budget_keeps_observations_and_persists_exhaustion(self):
+        controller=MetaController()
+        controller.meta_search_cpu_limit_s=0.000001
+        teach(controller,'bounded',range(16),first)
+        self.assertEqual(len(controller._meta_tasks('bounded')),16)
+        self.assertIn('bounded',controller.meta_search_exhausted)
+        restored=MetaController.from_dict(controller.as_dict())
+        self.assertIn('bounded',restored.meta_search_exhausted)
+        self.assertEqual(len(restored._meta_tasks('bounded')),16)
+
     def test_acquired_program_transfers_then_withdraws_with_dependents(self):
         source=random.Random(17).sample(range(512),128)
         target=random.Random(53).sample(range(512),128)

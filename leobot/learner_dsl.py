@@ -318,12 +318,22 @@ def fit(program: dict, tasks: list[dict], *, max_dims: int = 3,
             len(tasks)>budget['max_tasks'] or
             any(len(row['features'])!=width for row in tasks)):
         return {'status':'invalid_input','candidates_evaluated':0}
-    started=process_time();evaluated=0;chosen=None
+    started=process_time();evaluated=0;chosen=None;verification_cpu=0.0
     labels=[row['winner'] for row in tasks]
 
+    def finish(status,**fields):
+        total=process_time()-started
+        return {'status':status,'candidates_evaluated':evaluated,
+                'search_cpu_s':round(total,6),
+                'verification_cpu_s':round(verification_cpu,6),
+                'other_search_cpu_s':round(max(0.0,total-verification_cpu),6),
+                **fields}
+
     def judge(candidate,keys):
-        nonlocal chosen
+        nonlocal chosen,verification_cpu
+        verify_started=process_time()
         result=_judge(keys,labels,program)
+        verification_cpu+=process_time()-verify_started
         if result is None:
             return False
         kind=program['hypothesis_generator']
@@ -367,7 +377,7 @@ def fit(program: dict, tasks: list[dict], *, max_dims: int = 3,
                 part,tasks,labels,preferred_reducers,top)
             evaluated+=count
         if evaluated>budget['max_candidates'] or process_time()-started>budget['max_cpu_s']:
-            return {'status':'budget_exceeded','candidates_evaluated':evaluated}
+            return finish('budget_exceeded')
         for left in catalog[parts[0]]:
             for right in catalog[parts[1]]:
                 if left==right:
@@ -381,7 +391,7 @@ def fit(program: dict, tasks: list[dict], *, max_dims: int = 3,
                     continue
                 evaluated+=1
                 if evaluated>budget['max_candidates'] or process_time()-started>budget['max_cpu_s']:
-                    return {'status':'budget_exceeded','candidates_evaluated':evaluated}
+                    return finish('budget_exceeded')
                 components=[left,right]
                 keys=[evaluate_components(row['features'],components) for row in tasks]
                 if any(key is None for key in keys):
@@ -393,7 +403,7 @@ def fit(program: dict, tasks: list[dict], *, max_dims: int = 3,
             for dims in combinations(range(width),size):
                 evaluated+=1
                 if evaluated>budget['max_candidates'] or process_time()-started>budget['max_cpu_s']:
-                    return {'status':'budget_exceeded','candidates_evaluated':evaluated}
+                    return finish('budget_exceeded')
                 keys=[_projection_key(row['features'],dims) for row in tasks]
                 judge({'dims':dims},keys)
     else:
@@ -404,7 +414,7 @@ def fit(program: dict, tasks: list[dict], *, max_dims: int = 3,
             if existing is None:
                 evaluated+=1
             if evaluated>budget['max_candidates'] or process_time()-started>budget['max_cpu_s']:
-                return {'status':'budget_exceeded','candidates_evaluated':evaluated}
+                return finish('budget_exceeded')
             values=[meta_operators.evaluate(row['features'],fold) for row in tasks]
             if any(value is None for value in values):
                 continue
@@ -418,15 +428,12 @@ def fit(program: dict, tasks: list[dict], *, max_dims: int = 3,
                 if len(set(keys))<2:
                     continue
                 if judge({'spec':fold,'cut':cut},keys):
-                    return {'status':'fitted','view':chosen[1],
-                            'candidates_evaluated':evaluated}
+                    return finish('fitted',view=chosen[1])
     if chosen is None:
-        return {'status':'rejected','candidates_evaluated':evaluated,
-                'rollback':program['rollback']}
+        return finish('rejected',rollback=program['rollback'])
     if kind=='product_extractors':
         chosen[1]['candidates_evaluated']=evaluated
-    return {'status':'fitted','view':chosen[1],
-            'candidates_evaluated':evaluated}
+    return finish('fitted',view=chosen[1])
 
 
 def revalidate_view(view: dict, tasks: list[dict]) -> dict | None:

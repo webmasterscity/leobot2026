@@ -21,12 +21,13 @@ from math import exp, log1p, log2
 from itertools import combinations
 import json
 import hashlib
+from time import process_time
 from .rbf import RBFStrategyRouter
 from . import meta_operators, learner_dsl
 
 
 class MetaController:
-    VERSION = 11
+    VERSION = 12
 
     def __init__(self) -> None:
         # decision family -> exact signature -> strategy -> aggregates
@@ -70,6 +71,12 @@ class MetaController:
         self.learner_synthesis_counts: dict[str, dict] = {}
         self.learner_synthesis_checkpoints: dict[str, int] = {}
         self.learner_retry_after: dict[str, int] = {}
+        # A caller may cap acquisition search while still delivering every
+        # observation through the normal interface. Exhaustion withdraws any
+        # unresolved view so old evidence cannot become a confident answer.
+        self.meta_search_cpu_limit_s: float | None = None
+        self.meta_search_cpu_spent_s: dict[str, float] = {}
+        self.meta_search_exhausted: dict[str, int] = {}
 
     @staticmethod
     def _feature_tuple(features) -> tuple[float, ...]:
@@ -862,7 +869,20 @@ class MetaController:
         # Synthesis is intentionally periodic, not on every strategy attempt.
         # It is cheap at current bounds and its result is only a routing hint.
         if len(rows)>=16 and len(rows)%4==0:
-            self.invent_view(fam)
+            limit=self.meta_search_cpu_limit_s
+            spent=self.meta_search_cpu_spent_s.get(fam,0.0)
+            if limit is not None and spent>=limit:
+                if fam not in self.meta_search_exhausted:
+                    self.meta_search_exhausted[fam]=len(self._meta_tasks(fam))
+                    self.invented_views.pop(fam,None)
+                    self.meta_rivals.pop(fam,None)
+            else:
+                started=process_time()
+                try:
+                    self.invent_view(fam)
+                finally:
+                    self.meta_search_cpu_spent_s[fam]=spent+(
+                        process_time()-started)
             self._reconcile_meta_primitives()
 
     def _meta_tasks(self, fam: str) -> list[dict]:
@@ -947,7 +967,7 @@ class MetaController:
             program['operators']=list(dict.fromkeys(
                 [*learner_dsl.PROJECTION_LEARNER['operators'],
                  *learner_dsl.AGGREGATE_LEARNER['operators']]))
-            program['constraints']={'min_examples':32,'max_width':16,'max_depth':2,
+            program['constraints']={'min_examples':64,'max_width':16,'max_depth':2,
                                     'components':list(topology),'top_components':4}
             program['verifier']={'kind':'leave_one_out','temporal':'halves',
                                  'min_temporal_coverage':0.65,
@@ -970,18 +990,20 @@ class MetaController:
 
     def _synthesize_learner_from_tasks(self, family: str, tasks: list[dict]) -> dict:
         """Search descriptions, then promote only a verified local improvement."""
-        if not self.enable_learner_synthesis or len(tasks)<32:
+        if not self.enable_learner_synthesis or len(tasks)<64:
             return {'status':'learner_synthesis_pending'}
         existing=self.invented_views.get(family)
         baseline=(float(existing.get('accuracy',0))*float(existing.get('coverage',0))
                   if isinstance(existing,dict) else 0.0)
-        tried=hypotheses=0
+        tried=hypotheses=0;search_cpu=verification_cpu=0.0
         preferred=[row['reduce'] for _,row in sorted(self.meta_operators.items())]
         fitted=[]
         for program in self._candidate_learner_programs():
             tried+=1
             result=learner_dsl.fit(program,tasks,preferred_reducers=preferred)
             hypotheses+=result['candidates_evaluated']
+            search_cpu+=result.get('search_cpu_s',0.0)
+            verification_cpu+=result.get('verification_cpu_s',0.0)
             if result['status']!='fitted':
                 continue
             view=result['view']
@@ -997,6 +1019,8 @@ class MetaController:
         row=self.learner_synthesis_counts.setdefault(family,
              {'descriptions':0,'hypotheses':0})
         row['descriptions']+=tried;row['hypotheses']+=hypotheses
+        row['search_cpu_s']=row.get('search_cpu_s',0.0)+search_cpu
+        row['verification_cpu_s']=row.get('verification_cpu_s',0.0)+verification_cpu
         if fitted:
             fitted.sort(key=lambda item:(-item[0],-item[1],item[2]))
             _,_,key,view=fitted[0]
@@ -1011,7 +1035,10 @@ class MetaController:
                 rival=deepcopy(fitted[1][3])
                 rival['learner_key']=fitted[1][2]
                 self.meta_rivals[family]=[rival]
+            promotion_started=process_time()
             self._reconcile_meta_learners()
+            row['promotion_cpu_s']=row.get('promotion_cpu_s',0.0)+(
+                process_time()-promotion_started)
             return {'status':'learner_synthesized','family':family,
                     **deepcopy(view)}
         return {'status':'learner_synthesis_rejected','family':family,
@@ -1045,7 +1072,12 @@ class MetaController:
         program_checked=None
         existing=self.invented_views.get(fam)
         if isinstance(existing,dict) and existing.get('kind')=='learner_product':
+            validation_started=process_time()
             checked=learner_dsl.revalidate_view(existing,tasks)
+            row=self.learner_synthesis_counts.setdefault(fam,
+                 {'descriptions':0,'hypotheses':0})
+            row['revalidation_cpu_s']=row.get('revalidation_cpu_s',0.0)+(
+                process_time()-validation_started)
             if checked is not None:
                 self.invented_views[fam]=checked
                 return {'status':'learner_retained','family':fam,**deepcopy(checked)}
@@ -1083,7 +1115,7 @@ class MetaController:
                     self.meta_rivals[fam]=[existing]
                 self._maybe_discover_rival(fam,tasks)
                 return aggregate
-        if (self.enable_learner_synthesis and len(tasks)>=32 and
+        if (self.enable_learner_synthesis and len(tasks)>=64 and
                 len(tasks)&(len(tasks)-1)==0 and
                 len(tasks)>self.learner_synthesis_checkpoints.get(fam,0) and
                 len(tasks)>=self.learner_retry_after.get(fam,0) and
@@ -1479,7 +1511,10 @@ class MetaController:
                 'enable_learner_synthesis':self.enable_learner_synthesis,
                 'learner_synthesis_counts':deepcopy(self.learner_synthesis_counts),
                 'learner_synthesis_checkpoints':deepcopy(self.learner_synthesis_checkpoints),
-                'learner_retry_after':deepcopy(self.learner_retry_after)}
+                'learner_retry_after':deepcopy(self.learner_retry_after),
+                'meta_search_cpu_limit_s':self.meta_search_cpu_limit_s,
+                'meta_search_cpu_spent_s':deepcopy(self.meta_search_cpu_spent_s),
+                'meta_search_exhausted':deepcopy(self.meta_search_exhausted)}
 
     @classmethod
     def from_dict(cls, data: dict | None) -> 'MetaController':
@@ -1487,7 +1522,7 @@ class MetaController:
         if not isinstance(data,dict):
             return obj
         version=int(data.get('version',1) or 1)
-        if version not in (1,2,3,4,5,6,7,8,9,10,11):
+        if version not in (1,2,3,4,5,6,7,8,9,10,11,12):
             raise ValueError('Estado de MetaController no compatible.')
         obj.exact=deepcopy(data.get('exact',{})) if isinstance(data.get('exact',{}),dict) else {}
         obj.routers={str(k):RBFStrategyRouter.from_dict(v) for k,v in (data.get('routers',{}) or {}).items()}
@@ -1524,6 +1559,13 @@ class MetaController:
             obj.enable_learner_synthesis=bool(data.get('enable_learner_synthesis',True))
             for name in ('learner_synthesis_counts','learner_synthesis_checkpoints',
                          'learner_retry_after'):
+                raw=data.get(name,{})
+                setattr(obj,name,deepcopy(raw) if isinstance(raw,dict) else {})
+        if version>=12:
+            limit=data.get('meta_search_cpu_limit_s')
+            obj.meta_search_cpu_limit_s=(float(limit) if type(limit) in (int,float)
+                                         and 0<float(limit)<=30 else None)
+            for name in ('meta_search_cpu_spent_s','meta_search_exhausted'):
                 raw=data.get(name,{})
                 setattr(obj,name,deepcopy(raw) if isinstance(raw,dict) else {})
         obj._reconcile_meta_primitives()
