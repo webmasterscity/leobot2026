@@ -8,9 +8,9 @@
 - Último tag estable: `estable-B-2` · huella del motor: `7564d4fe2d89bdf1504211fcb242619fdbe39698`
 - Pruebas: 530 pasan · 2 fallos esperados · 0 fallos · Python 3.12.3
 - Orden rápida: `timeout 40s env PYTHONHASHSEED=0 python3 -m unittest tests.test_meta_abstraction_a1 tests.test_meta_active_probe tests.test_v70 -q` · Orden completa: `timeout 600s env PYTHONHASHSEED=0 python3 -m experiments.regression_batches`
-- Preregistro activo: [C-2](prereg/C-2-sintesis-learner-compuesto.md) · estado: diseñado
-- Diseños intentados en la fase en curso: 1) intérprete declarativo de dos learners → pasó como primer paso; 2) composición adquirida de extractores → preregistrada, sin resultado
-- Siguiente paso concreto: implementar búsqueda acotada de descripciones compuestas y demostrar que F1/F2 no se resuelven con los learners base bajo el mismo presupuesto
+- Preregistro activo: [C-2](prereg/C-2-sintesis-learner-compuesto.md) · estado: implementando
+- Diseños intentados en la fase en curso: 1) intérprete declarativo de dos learners → pasó como primer paso; 2) composición adquirida de extractores → eficaz en desarrollo, reserva pendiente
+- Siguiente paso concreto: fijar evaluador C-2 con controles de confusor, ablationes, costo y persistencia; congelar motor antes de generar reserva
 - Bloqueos: ninguno
 - Lectura (seguimiento): 0/4 en la sonda visible `experiments/user_text_probe.py` al cerrar B; no es una reserva independiente
 - Tablero AGI (árbol idéntico al último tag): [resultado](results_v3/agi_board_freeze-B-2.json) · MLQA español público 0/20, 20 no reconocidas · ARC-AGI-3 no evaluado · brecha frontier no comparable · obstáculo principal: adquirir significado de texto libre
@@ -36,6 +36,7 @@
 - 2026-09-22 · C-1: referencia anterior al código guardada en [resultado](results_v3/c1_reference.json), tres órdenes y vistas completas. El intérprete de datos reemplazó los recorridos duplicados de proyección y plegado; paridad exacta de vistas, rutas, operador y conteos en tres órdenes, y 17 pruebas rápidas relevantes más tres pruebas de seguridad pasaron. Reserva no generada aún. C-1 es ingeniería de un learner, no un learner sintetizado por Leobot.
 - 2026-09-22 · C-1 congelado en `freeze-C-1`, árbol `3f47e6a514c60c5f29665d2468f95785b97c8371`. [Órdenes 17](results_v3/c1_declarative_order17.json), [53](results_v3/c1_declarative_order53.json), [97](results_v3/c1_declarative_order97.json): paridad exacta de vistas/rutas/candidatos, proyección/F1/F2 128/128 en tres reservas nuevas, ablationes, fresco, memoria, incompatible, confusor, contraevidencia, renombrado y reinicio pasaron. Código congelado. CPU de adquisición de proyección 0,011–0,013 s frente a ~0,076–0,079 s; fuente 0,60–0,77 s y destino 0,70–0,86 s, ambos <0,44 veces la referencia B-2; inferencia de 128 proyecciones ~0,001 s; RAM pico 33 572–33 736 KiB. El intérprete aún solo ejecuta dos generadores diseñados por el desarrollador: **C sigue abierta**. Sonda de desarrollo para C-2: un caso de conteo dependiente de contexto obtuvo 50/128 con el motor actual tras 28,2 s CPU; no es reserva.
 - 2026-09-22 · [C-2](prereg/C-2-sintesis-learner-compuesto.md) preregistrado antes de implementación: construir un learner declarativo que combine extractores existentes, medir F1/F2 con reserva nueva y controles. La sonda de 50/128 es solo diagnóstico visible.
+- 2026-09-22 · C-2 en desarrollo: MetaController construyó un programa de learner `contexto binario + plegado`, lo guardó como datos, y lo reutilizó con un contexto de comparación entre dos valores. En una sonda visible F1 logró 127/128 y F2 126/128; F2 educado exploró 284 hipótesis acumuladas frente a 376 fresco, aunque el CPU marginal fue casi igual (~10,4 s). Una pista de magnitud invertida dio 127/128 y cero errores seguros. Contraevidencia retiró fuente, dependiente y learner después de reiniciar. El motor viejo daba 50/128 en F1; nada de esto cuenta como reserva ni cierra C.
 
 ## Resultados negativos y trampas conocidas
 
