@@ -1,0 +1,84 @@
+{
+  "kind": "source_feasibility_only",
+  "source_repository": "https://github.com/acmi-lab/counterfactually-augmented-data",
+  "source_commit": "6f232a1d2a11462a30ce08fb4825b734ab30828e",
+  "source_license": "Apache-2.0",
+  "sources": {
+    "NLI/original/train.tsv": {
+      "bytes": 196249,
+      "sha256": "016b1657b1c0eb89e163aa194e5e2da6ca890fd6e97ee42c33de914e7e0a7ce6",
+      "fields": [
+        "sentence1",
+        "sentence2",
+        "gold_label"
+      ]
+    },
+    "NLI/revised_combined/train.tsv": {
+      "bytes": 793408,
+      "sha256": "054a8cf808bcd4a5b3a849eba4e6c1fb49f2f789e3a0f88d21e05f3f38fa5428",
+      "fields": [
+        "sentence1",
+        "sentence2",
+        "gold_label"
+      ]
+    },
+    "sentiment/combined/paired/train_paired.tsv": {
+      "bytes": 3179425,
+      "sha256": "7ac50ca3d70890f80e11ee59955cdbfc43f26b5078d0603717817ab224d2af18",
+      "fields": [
+        "Sentiment",
+        "Text",
+        "batch_id"
+      ]
+    }
+  },
+  "engine_tree": "1f3187f2ced4c97364503187d074815f33612326",
+  "engine_unchanged": true,
+  "nli_train": {
+    "groups": 1666,
+    "two_of_each_other_label": 1666,
+    "revisions": 6664,
+    "exactly_one_sentence_unchanged": 6621,
+    "label_changed": 6664
+  },
+  "nli_label_transitions": [
+    {
+      "before": "contradiction",
+      "after": "entailment",
+      "count": 1100
+    },
+    {
+      "before": "contradiction",
+      "after": "neutral",
+      "count": 1100
+    },
+    {
+      "before": "entailment",
+      "after": "contradiction",
+      "count": 1124
+    },
+    {
+      "before": "entailment",
+      "after": "neutral",
+      "count": 1124
+    },
+    {
+      "before": "neutral",
+      "after": "contradiction",
+      "count": 1108
+    },
+    {
+      "before": "neutral",
+      "after": "entailment",
+      "count": 1108
+    }
+  ],
+  "sentiment_train": {
+    "pairs": 1707,
+    "label_changed": 1707,
+    "same_batch_id": 1707
+  },
+  "cpu_total_s": 0.213621,
+  "wall_total_s": 2.039923,
+  "max_rss_kib": 55856
+}
