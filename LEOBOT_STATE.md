@@ -1,4 +1,21 @@
-# LEOBOT_STATE — continuidad de Leobot 0.10.1
+# LEOBOT_STATE — continuidad de Leobot
+
+## Estado de misión
+- Actualizado: 2026-09-22 · commit a325276
+- Fases: A en curso · B pendiente · C pendiente · D pendiente · E pendiente · F pendiente
+- Fase en curso: A — reutilizar una subregla meta aprendida para reducir la búsqueda profunda
+- Último tag estable: ninguno · huella del motor en a325276: `137077a46823785681eeeaf976ac5dd89661b3e2`
+- Pruebas: 525 pasan · 2 fallos esperados · 0 fallos · Python 3.12.3
+- Orden rápida: `timeout 20s env PYTHONHASHSEED=0 python3 -m unittest tests.test_meta_active_probe tests.test_safe_question_grounding -q` · Orden completa: `./run_tests.sh --solo-pruebas`
+- Preregistro activo: `prereg/A-1-subregla-meta.md` · estado: diseñado
+- Diseños intentados en la fase en curso: 1) pieza meta de una regla repetida → preregistrada, sin resultado
+- Siguiente paso concreto: implementar A-1 sin subir el límite plano, congelar el motor y ejecutar el ensayo preregistrado
+- Bloqueos: ninguno
+- Lectura (seguimiento): 0/4 en el commit actual; aún no hay tag estable
+
+## Historial de ciclos
+
+- 2026-09-22 · `prereg/A-1-subregla-meta.md` · diseño registrado antes de código · sin tag.
 
 <p lang="es" style="text-align: justify; hyphens: auto;">Este es el único registro de continuidad. Las cifras reproducibles están en <code>results_v3/</code>, los experimentos en <code>experiments/</code> y las pruebas en <code>tests/</code>. Las tres versiones originales se compararon antes de retirar sus archivos duplicados. El ZIP existente conserva un estado anterior: el usuario pidió no gastar más tiempo generando archivos ZIP, por lo que el motor actual se sigue desde el repositorio y este documento.</p>
 
