@@ -1,0 +1,22 @@
+# Preregistro D-1 — cadena texto → acción → procedimiento
+
+Fecha: 2026-09-23. Motor de referencia: `estable-C-2`, árbol `1f3187f2ced4c97364503187d074815f33612326`. La sonda visible de desarrollo enseñó una representación de roles desde cuatro frases, luego una acción simbólica y después un procedimiento de cuatro entradas: solo el bot con las dos fuentes aprendió el último dentro de 150 candidatos. Esa sonda no es reserva.
+
+## Fallo y explicaciones rivales
+
+La fase C sintetizó un learner en dos disposiciones numéricas, pero no demostró que reduzca el costo en otras modalidades. Una alternativa ya presente es la biblioteca de representaciones de roles compartida por texto, acciones y procedimientos. D-1 distingue tres posibilidades: (1) la representación adquirida produce una cadena causal A→B→C; (2) basta memorizar los ejemplos o renombrar un grafo; (3) el learner de C aporta ahorro adicional. No se añade un mecanismo nuevo para favorecer la prueba. Si C no aprende con información idéntica en A+B y los controles sí, no hay transferencia demostrada.
+
+## Familias y partición
+
+- A: frases crudas en español que describen una relación de tres participantes. La fuente enseña ejemplos positivos y negativos; el entorno también aporta hechos de base observados. La forma superficial, los nombres, los predicados de base y las entidades varían por orden. La meta adquirida es qué roles importan, no una respuesta por tema. Esta fuente **no** equivale a aprender un documento libre: hay hechos estructurados de base.
+- B: acción con dos transiciones exitosas y un intento comparable sin efecto. Entrada: frase y estado simbólico; salida: cambio real de estado. Predicados, entidades y verbo cambian respecto de A. Se mide cuántas experiencias hacen falta, qué representación se usó y si ejecuta 128 mundos nuevos, incluidas precondiciones ausentes.
+- C: procedimiento sobre cuatro números con dos roles relevantes y operación aritmética no enseñada por A/B. El entorno entrega cinco transiciones de ejemplo con variación independiente de los roles. El presupuesto de síntesis es 150 candidatos por intento; se mide si ejecuta 128 valores y distribuciones nuevos.
+- Desarrollo: tres órdenes y vocabularios visibles; las frases de A son variantes redactadas antes de congelar, no se optimizan contra la reserva. Reserva: después de `freeze-D-1`, tres órdenes 17/53/97, con nombres, predicados, magnitudes y mundos nuevos derivados de los primeros ocho dígitos de `freeze-D-1:leobot` más 0/1/2. No se enseña ninguna respuesta reservada.
+
+## Tratamiento, controles y criterios
+
+Tratamiento A+B→C; A→B sin C; A→C sin B; B→C sin A; fresco C; mismo A+B con transferencia de representaciones desactivada en los consumidores; bot con solo episodios y sin priors activos; A+B con el learner de C previamente adquirido como control adicional. Todo control de C recibe los mismos cinco ejemplos, herramientas y 150 candidatos. Comparar A→B con B fresco tras tres transiciones y A+B→C con A solo, B solo y fresco tras cinco. Renombrado total de símbolos de dominio; estructura incompatible cuya salida usa más de dos roles; pista auxiliar invertida en los casos nuevos; contraevidencia que retira la fuente A sin destruir la B; guardar/cerrar/cargar antes de C; motor congelado.
+
+Éxito acotado: A adquiere una representación sin intervención manual; B tratado aprende tras tres experiencias y B fresco no; C tratado aprende tras cinco, ≥90 % de los 128 casos nuevos B y C, y A-solo/B-solo/fresco/ablación siguen sin resolver C con idéntico presupuesto. La retirada de A debe retirar su apoyo y la ventaja que dependa de dos fuentes; no debe borrar la evidencia B. El control incompatible no puede promover una regla de dos roles falsa. Si el learner de C no reduce ejemplos, candidatos ni CPU adicionales en B/C, registrar **NO TRANSFERENCIA DEL LEARNER C** aunque el rol compartido sí transfiera. Una sola cadena sintética no certifica transferencia general ni lenguaje abierto.
+
+Presupuesto: máximo 150 candidatos para C, cinco experiencias C; dos éxitos y un fracaso B; cuatro frases A; `timeout 120s` por orden, ≤30 s CPU por variante, ≤256 MiB RAM. Medir adquisición por etapa, búsqueda, validación, consolidación, persistencia, inferencia, p50/p95 de respuesta, candidatos, ejemplos, intervención humana y RAM. La batería fija de 100 000 hechos y el tablero AGI siguen siendo puertas de cualquier tag estable. El evaluador vive fuera de `leobot/` y el motor no lo importa.
