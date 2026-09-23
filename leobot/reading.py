@@ -1,0 +1,368 @@
+"""G-28: literal utterance memory and question answering learned by alignment.
+
+Every declarative sentence read from a document is kept verbatim with its
+source.  A question that no learned construction interprets is aligned with the
+stored utterances; the answer is a span of the best aligned utterance, chosen by
+feature statistics learned from worked examples of *other* texts (text,
+question, answer).  Nothing here lists words of any language: the tokens that
+mark the gap of a question, token weights and span preferences are counted from
+experience.  Answers are reported as what the text says (``literal``), with the
+utterance and its source, never as verified facts.
+"""
+from __future__ import annotations
+
+import math
+import re
+import unicodedata
+
+_TOKEN = re.compile(r'\w+|[^\w\s]')
+MAX_UTTERANCES = 200_000
+MAX_SPAN = 10
+STEM = 5
+SMOOTHING = 4.0
+BM25_K1 = 1.2
+BM25_B = 0.75
+
+
+def _norm(token: str) -> str:
+    # Case, accents and inflectional endings are ignored by keeping only the
+    # first letters of long words: «ganó», «ganador», «ganaron» align.  This is
+    # a length rule, not a list of words, so it applies to any suffixing language.
+    decomposed = unicodedata.normalize('NFKD', token.casefold())
+    plain = ''.join(ch for ch in decomposed if not unicodedata.combining(ch))
+    return plain[:STEM] if STEM and len(plain) > STEM else plain
+
+
+def _is_word(token: str) -> bool:
+    return any(ch.isalnum() for ch in token)
+
+
+def _shape(token: str) -> str:
+    if any(ch.isdigit() for ch in token):
+        return 'D'
+    return 'C' if token[:1].isupper() else 'l'
+
+
+def _bucket(value: int, edges: tuple[int, ...]) -> str:
+    for edge in edges:
+        if value <= edge:
+            return str(edge)
+    return f'{edges[-1]}+'
+
+
+def _logit(p: float) -> float:
+    p = min(max(p, 1e-9), 1 - 1e-9)
+    return math.log(p / (1 - p))
+
+
+def _empty_model() -> dict:
+    return {'examples': 0, 'skipped': 0, 'contexts': 0, 'sentence_df': {},
+            'sentences': 0, 'question_df': {}, 'question_unmatched': {}, 'questions': 0,
+            'features': {}, 'positives': 0, 'negatives': 0,
+            'own_overlap': [], 'foreign_overlap': [], 'last_context': []}
+
+
+class ReadingMemoryMixin:
+    """Mixed into Bot; state lives in ``reading_utterances``/``reading_model``."""
+
+    # ----- memory -------------------------------------------------------
+    def _reading_index(self) -> dict:
+        index = getattr(self, '_reading_index_cache', None)
+        if index is None or index[0] != len(self.reading_utterances):
+            postings: dict[str, list[int]] = {}
+            documents: dict[str, set] = {}
+            for position, row in enumerate(self.reading_utterances):
+                words = {_norm(t) for t in row['tokens'] if _is_word(t)}
+                documents.setdefault(row.get('document'), set()).update(words)
+                for token in words:
+                    postings.setdefault(token, []).append(position)
+            index = (len(self.reading_utterances), postings, documents)
+            self._reading_index_cache = index
+        return index[1]
+
+    def _reading_documents(self) -> dict:
+        self._reading_index()
+        return self._reading_index_cache[2]
+
+    def remember_utterances(self, sentences, source: str) -> int:
+        stored = 0
+        for number, sentence in enumerate(sentences):
+            if self._question_like(sentence):
+                continue
+            tokens = _TOKEN.findall(sentence)
+            if not any(_is_word(t) for t in tokens):
+                continue
+            if len(self.reading_utterances) >= MAX_UTTERANCES:
+                break
+            self.reading_utterances.append({'source': f'{source}:oración:{number + 1}',
+                                            'document': source, 'text': sentence,
+                                            'tokens': tokens})
+            stored += 1
+        return stored
+
+    def forget_utterances(self, source: str) -> int:
+        before = len(self.reading_utterances)
+        self.reading_utterances = [row for row in self.reading_utterances
+                                   if row.get('document') != source]
+        self._reading_index_cache = None
+        return before - len(self.reading_utterances)
+
+    # ----- learned statistics --------------------------------------------
+    def _reading_idf(self, token: str) -> float:
+        # A word's weight reflects everything read: the education texts and
+        # the utterances now in memory, where a repeated name stops discriminating.
+        model = self.reading_model
+        cache = getattr(self, '_reading_index_cache', None)
+        memory = len(cache[1].get(token, ())) if cache and cache[0] == len(self.reading_utterances) else 0
+        sentences = model['sentences'] + (cache[0] if cache else 0)
+        return math.log((sentences + 1) / (model['sentence_df'].get(token, 0) + memory + 1))
+
+    def _reading_key(self, unmatched) -> str:
+        """The unmatched token that, in learned questions, is most often absent
+        from the answering sentence: the learned marker of the question's gap."""
+        model = self.reading_model
+        df, missing = model['question_df'], model.get('question_unmatched', {})
+        def strength(token):
+            return ((missing.get(token, 0) + 1) / (df.get(token, 0) + 2), df.get(token, 0), token)
+        known = [t for t in unmatched if df.get(t, 0) > 0]
+        return max(known, key=strength) if known else '*'
+
+    def _reading_overlap(self, question: list[str], tokens: list[str]) -> float:
+        present = {_norm(t) for t in tokens}
+        total = sum(self._reading_idf(t) for t in question)
+        if total <= 0:
+            return 0.0
+        return sum(self._reading_idf(t) for t in question if t in present) / total
+
+    def _gap_neighbours(self, question: list[str], key: str, present: set) -> tuple:
+        """Question words right before and after the gap marker that the
+        sentence also contains; their positions locate the gap in the sentence."""
+        if key not in question:
+            return None, None
+        at = question.index(key)
+        before = next((t for t in reversed(question[:at]) if t in present), None)
+        after = next((t for t in question[at + 1:] if t in present), None)
+        return before, after
+
+    def _span_features(self, tokens, start, end, anchors, qtokens, gap=(None, None),
+                       normalized=None) -> list[tuple]:
+        normalized = normalized or [_norm(t) for t in tokens]
+        span = tokens[start:end]
+        before = normalized[start - 1] if start > 0 else '<s>'
+        after = normalized[end] if end < len(tokens) else '</s>'
+        outside = [p for p in anchors if p < start or p >= end]
+        if outside:
+            nearest = min(outside, key=lambda p: (start - p if p < start else p - end + 1, p))
+            side, distance = ('R', start - nearest) if nearest < start else ('L', nearest - end + 1)
+        else:
+            side, distance = 'N', 0
+        boundary_left = start == 0 or not _is_word(tokens[start - 1]) or (start - 1) in anchors
+        boundary_right = end == len(tokens) or not _is_word(tokens[end]) or end in anchors
+        inside = sum(t in qtokens for t in normalized[start:end])
+        features = [('shape', _shape(span[0]), _shape(span[-1]), _bucket(len(span), (1, 2, 3, 5))),
+                    ('position', side, _bucket(distance, (0, 1, 2, 3, 5, 9))),
+                    ('before', before), ('after', after),
+                    ('first', normalized[start]), ('last', normalized[end - 1]),
+                    ('run', boundary_left, boundary_right),
+                    ('question_inside', _bucket(inside, (0, 1)))]
+        for name, word in (('gap_before', gap[0]), ('gap_after', gap[1])):
+            if word is None:
+                features.append((name, 'none')); continue
+            places = [i for i, t in enumerate(normalized) if t == word and not start <= i < end]
+            if not places:
+                features.append((name, 'inside')); continue
+            if name == 'gap_before':
+                offsets = [start - i for i in places]
+            else:
+                offsets = [i - end + 1 for i in places]
+            offset = min(offsets, key=lambda d: (abs(d), d))
+            features.append((name, 'neg' if offset <= 0 else _bucket(offset, (1, 2, 3, 5, 9))))
+        return features
+
+    def _candidate_spans(self, tokens):
+        for start in range(len(tokens)):
+            if not _is_word(tokens[start]):
+                continue
+            for end in range(start + 1, min(len(tokens), start + MAX_SPAN) + 1):
+                if not _is_word(tokens[end - 1]):
+                    break
+                yield start, end
+
+    def _anchors(self, tokens, qtokens) -> list[int]:
+        weights = [self._reading_idf(_norm(t)) for t in tokens if _is_word(t)]
+        floor = sum(weights) / len(weights) if weights else 0.0
+        return [i for i, t in enumerate(tokens)
+                if _is_word(t) and _norm(t) in qtokens and self._reading_idf(_norm(t)) >= floor]
+
+    def observe_reading_example(self, context: str, question: str, answer: str) -> dict:
+        """Learn from one worked demonstration; the text itself is not memorized."""
+        model = self.reading_model
+        sentences = self._document_sentences(context)
+        tokenized = [_TOKEN.findall(s) for s in sentences]
+        for tokens in tokenized:
+            model['sentences'] += 1
+            for token in {_norm(t) for t in tokens if _is_word(t)}:
+                model['sentence_df'][token] = model['sentence_df'].get(token, 0) + 1
+        model['contexts'] += 1
+        qtokens = [_norm(t) for t in _TOKEN.findall(question) if _is_word(t)]
+        target = [_norm(t) for t in _TOKEN.findall(answer) if _is_word(t)]
+        # Calibration: how much of a question a foreign text covers by chance.
+        own = max((self._reading_overlap(qtokens, t) for t in tokenized), default=0.0)
+        foreign = max((self._reading_overlap(qtokens, t) for t in model['last_context']), default=None)
+        model['last_context'] = tokenized
+        found = None
+        for tokens in tokenized:
+            words = [(i, _norm(t)) for i, t in enumerate(tokens) if _is_word(t)]
+            for k in range(len(words) - len(target) + 1):
+                if target and [w for _, w in words[k:k + len(target)]] == target:
+                    found = (tokens, words[k][0], words[k + len(target) - 1][0] + 1)
+                    break
+            if found:
+                break
+        for token in set(qtokens):
+            model['question_df'][token] = model['question_df'].get(token, 0) + 1
+        model['questions'] += 1
+        if found is None or not qtokens:
+            model['skipped'] += 1
+            return {'status': 'reading_example_skipped', 'reason': 'answer_not_in_one_sentence'}
+        for name, value in (('own_overlap', own), ('foreign_overlap', foreign)):
+            if value is not None:
+                model[name].append(round(value, 4))
+                del model[name][:-5000]
+        tokens, gold_start, gold_end = found
+        present = {_norm(t) for t in tokens}
+        qset = set(qtokens)
+        key = self._reading_key([t for t in qtokens if t not in present])
+        missing = model.setdefault('question_unmatched', {})
+        for token in qset - present:
+            missing[token] = missing.get(token, 0) + 1
+        anchors = self._anchors(tokens, qset)
+        gap = self._gap_neighbours(qtokens, key, present)
+        normalized = [_norm(t) for t in tokens]
+        features = model['features']
+        for start, end in self._candidate_spans(tokens):
+            positive = (start, end) == (gold_start, gold_end)
+            for feature in self._span_features(tokens, start, end, anchors, qset, gap, normalized):
+                for scope in (key, '*'):
+                    name = '\x1f'.join(map(str, (scope,) + feature))
+                    counts = features.setdefault(name, [0, 0])
+                    counts[0 if positive else 1] += 1
+            model['positives' if positive else 'negatives'] += 1
+        model['examples'] += 1
+        self._reading_threshold_cache = None
+        return {'status': 'reading_example_learned', 'key': key}
+
+    def _reading_threshold(self) -> float:
+        cached = getattr(self, '_reading_threshold_cache', None)
+        if cached is None:
+            foreign = sorted(self.reading_model['foreign_overlap'])
+            # Answer only above what 95 % of foreign texts reach by chance.
+            cached = foreign[min(len(foreign) - 1, math.ceil(0.95 * len(foreign)) - 1)] if foreign else 1.0
+            self._reading_threshold_cache = cached
+        return cached
+
+    def _feature_score(self, scope: str, feature: tuple, prior: float) -> float:
+        features = self.reading_model['features']
+        general = features.get('\x1f'.join(map(str, ('*',) + feature)), (0, 0))
+        rate = (general[0] + SMOOTHING * prior) / (general[0] + general[1] + SMOOTHING)
+        if scope != '*':
+            local = features.get('\x1f'.join(map(str, (scope,) + feature)), (0, 0))
+            rate = (local[0] + SMOOTHING * rate) / (local[0] + local[1] + SMOOTHING)
+        return _logit(rate) - _logit(prior)
+
+    # ----- answering -----------------------------------------------------
+    def answer_from_utterances(self, question: str, use_model: bool = True) -> dict | None:
+        """Answer from literal memory, or return None to keep the old behaviour."""
+        model = self.reading_model
+        if not self.reading_utterances or model['examples'] == 0:
+            return None
+        qtokens = [_norm(t) for t in _TOKEN.findall(question) if _is_word(t)]
+        if not qtokens:
+            return None
+        index = self._reading_index()
+        candidates = sorted({p for t in set(qtokens) for p in index.get(t, ())})
+        scored = [(self._reading_overlap(qtokens, self.reading_utterances[p]['tokens']), p)
+                  for p in candidates]
+        if not scored:
+            return self._reading_abstain(0.0)
+        # Locate the passage first, as a reader does: the document that best
+        # covers the question, then its best-covering sentence.  (Letting the best span break near ties was tried on the
+        # visible development split and lowered joint-memory F1; not kept.)
+        # Passage score: BM25 with its usual constants (Robertson and Walker,
+        # 1994), so a long passage does not win by covering words by chance.
+        documents = self._reading_documents()
+        average = sum(len(words) for words in documents.values()) / max(1, len(documents))
+        unique = set(qtokens)
+        cover: dict = {}
+        by_document: dict = {}
+        for overlap, position in scored:
+            name = self.reading_utterances[position].get('document')
+            if name not in cover:
+                words = documents.get(name, set())
+                norm = BM25_K1 * (1 - BM25_B + BM25_B * len(words) / max(1.0, average))
+                cover[name] = sum(self._reading_idf(t) * (BM25_K1 + 1) / (1 + norm)
+                                  for t in unique if t in words)
+            by_document.setdefault(name, []).append((overlap, position))
+        top = max(cover.values())
+        best = []
+        for name in sorted((n for n in cover if cover[n] == top), key=str):
+            local = max(o for o, _ in by_document[name])
+            best.extend(p for o, p in by_document[name] if o == local)
+        overlaps = dict((p, o) for o, p in scored)
+        threshold = self._reading_threshold()
+        best_overlap = max(overlaps[p] for p in best)
+        best = sorted(p for p in best if overlaps[p] >= threshold)
+        if not best:
+            return self._reading_abstain(best_overlap)
+        qset = set(qtokens)
+        prior = model['positives'] / max(1, model['positives'] + model['negatives'])
+        choices = []
+        for position in best:
+            tokens = self.reading_utterances[position]['tokens']
+            present = {_norm(t) for t in tokens}
+            key = self._reading_key([t for t in qtokens if t not in present])
+            anchors = self._anchors(tokens, qset)
+            gap = self._gap_neighbours(qtokens, key, present)
+            normalized = [_norm(t) for t in tokens]
+            memo: dict = {}
+            for start, end in self._candidate_spans(tokens):
+                if use_model:
+                    score = 0.0
+                    for feature in self._span_features(tokens, start, end, anchors, qset, gap, normalized):
+                        value = memo.get(feature)
+                        if value is None:
+                            value = memo[feature] = self._feature_score(key, feature, prior)
+                        score += value
+                else:
+                    score = self._nearest_run_score(tokens, start, end, anchors, qset)
+                    if score is None:
+                        continue
+                choices.append((score, position, start, end))
+        if not choices:
+            return self._reading_abstain(best_overlap)
+        choices.sort(key=lambda row: (-row[0], row[1], row[2], row[3]))
+        score, position, start, end = choices[0]
+        row = self.reading_utterances[position]
+        span = ' '.join(row['tokens'][start:end])
+        best_overlap = overlaps[position]
+        return {'text': span, 'status': 'literal',
+                'explanation': f'Según el texto leído ({row["source"]}): «{row["text"]}».',
+                'evidence': {'source': row['source'], 'utterance': row['text'],
+                             'span': [start, end], 'overlap': round(best_overlap, 4),
+                             'score': round(score, 4)}}
+
+    @staticmethod
+    def _nearest_run_score(tokens, start, end, anchors, qset):
+        """Ablation: the unaligned run of 1-3 words touching an aligned word."""
+        if end - start > 3 or any(_norm(t) in qset for t in tokens[start:end]):
+            return None
+        if (start - 1) in anchors:
+            return 2.0 + (end - start) / 10
+        if end in anchors:
+            return 1.0 + (end - start) / 10
+        return None
+
+    def _reading_abstain(self, overlap: float) -> dict:
+        return {'text': 'No encuentro en lo que leí un enunciado que responda esa pregunta; no inventaré una respuesta.',
+                'status': 'unknown', 'reason': 'reading_overlap_below_threshold',
+                'overlap': round(overlap, 4)}

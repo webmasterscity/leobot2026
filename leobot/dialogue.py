@@ -1058,6 +1058,12 @@ class DialogueMixin:
                 g=parsed.get('grounded_induction',{})
                 return {'text': f'Tengo una hipótesis de significado respaldada por {g.get("support",0)} experiencia(s), pero todavía no la usaré como conocimiento lingüístico hasta reunir {g.get("required",self.grounding_min_support)} apoyos independientes.',
                         'status':'grounding_pending','grounded_induction':g}
+            if parsed['status'] == 'unrecognized' and self._question_like(text):
+                # G-28: no construction interprets the question; align it with
+                # what was read and answer literally, or abstain.
+                reading = self.answer_from_utterances(text)
+                if reading is not None:
+                    return reading
             message = ('Esa frase admite varias interpretaciones aprendidas. Necesito una formulación más precisa.'
                        if parsed['status'] == 'ambiguous' else
                        'No sé interpretar esa formulación todavía. Puedes enseñarme una construcción con texto y significado, o usar /consulta.')

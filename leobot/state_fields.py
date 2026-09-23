@@ -31,6 +31,8 @@ COGNITIVE_FIELDS = (
     'document_state_meta_reference_hypotheses',
     'document_latent_strategy_hypotheses',
     'training_reports',
+    'reading_utterances',
+    'reading_model',
 )
 
 

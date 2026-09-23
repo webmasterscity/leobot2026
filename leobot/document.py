@@ -2054,6 +2054,7 @@ class DocumentLearningMixin:
         per-sentence source string.
         """
         sentences=self._document_sentences(text,max_sentences=max_sentences)
+        utterances_stored=self.remember_utterances(sentences,source)
         before=self.kb.stats()['facts']; language_before=len(self.language.examples)
         results=[]; promoted=set(); skipped_questions=0; skipped_conditionals=0
         processed_conditionals=0; learned_rules=set()
