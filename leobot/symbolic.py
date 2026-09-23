@@ -215,19 +215,7 @@ class SymbolicWorldLearner:
                           ensure_ascii=False,sort_keys=True,separators=(',',':'))
 
     def _encode_episode(self, text: str, before: frozenset[Fact], after: frozenset[Fact]):
-        # A missing entity may be the very precondition under test.  Preserve a
-        # previously supported surface instead of turning that entity's name
-        # into a literal word and creating an unrelated action session.
-        known=[]
-        for pattern,session in sorted(self.sessions.items()):
-            if len(session.get('observations',()))<2:
-                continue
-            binding=_binding_from_text(pattern,text)
-            if binding is not None:
-                known.append((pattern,{value:marker for marker,value in binding.items()}))
-        if len(known)>1:
-            return None
-        aligned=known[0] if known else _mentioned_mapping(text, _entities(before | after))
+        aligned=_mentioned_mapping(text, _entities(before | after))
         if aligned is None:
             return None
         pattern,mapping=aligned
@@ -500,36 +488,6 @@ class SymbolicWorldLearner:
             extra=set()
         pre=mandatory|set(extra)
         if not pre:return None
-        effect_roles={value for fact in (*add,*delete) for value in fact[1:]
-                      if _MARKER_RE.fullmatch(value)}
-        untested=[fact for fact in sorted(common-pre,key=_template_sort_key)
-                  if any(_MARKER_RE.fullmatch(value) and value not in effect_roles
-                         for value in fact[1:])]
-        if untested:
-            # A role that never changed in training can still be necessary for
-            # the action.  Ask for a one-fact intervention; the environment
-            # supplies its outcome.  Do not equate effect participation with a
-            # complete precondition model.
-            for candidate in untested:
-                for success in successes:
-                    episode=json.loads(success['episode_id'])
-                    binding=_binding_from_text(pattern,episode['text'])
-                    if binding is None:
-                        continue
-                    concrete=_instantiate(candidate,binding)
-                    before={tuple(x) for x in episode['before']}
-                    if concrete not in before:
-                        continue
-                    session['evidence_request']={
-                        'kind':'controlled_intervention',
-                        'reason':'unresolved_non_effect_role_precondition',
-                        'text':episode['text'],
-                        'before':[list(x) for x in sorted(before-{concrete},key=_template_sort_key)],
-                        'removed_fact':list(concrete),
-                        'alternatives':['effect','no_effect'],
-                        'estimated_information_bits':1.0,
-                        'estimated_cost':1.0}
-                    return None
         session.update({'promoted':True,'status':'operator_learned',
                         'preconditions':[list(x) for x in sorted(pre,key=_template_sort_key)],
                         'add':[list(x) for x in sorted(add,key=_template_sort_key)],
@@ -538,7 +496,6 @@ class SymbolicWorldLearner:
                         'precondition_mode':'meta_role_set_transfer','cross_modal_schema':key,
                         'cross_modal_sources':sorted(prior.get('sources',{}))})
         self._mark_unclustered(pattern)
-        session.pop('evidence_request',None)
         return {'status':'operator_learned','pattern':pattern,'support':len(successes),'failures':len(failures),
                 'preconditions':session['preconditions'],'add':session['add'],'delete':session['delete'],
                 'precondition_mode':'meta_role_set_transfer','cross_modal_schema':key,
@@ -1123,7 +1080,6 @@ class SymbolicWorldLearner:
              'add':[list(x) for x in sorted(add_t,key=_template_sort_key)],
              'delete':[list(x) for x in sorted(del_t,key=_template_sort_key)]}
         session['observations'].append(obs)
-        session.pop('evidence_request',None)
         report=self._fit(pattern)
         meta_route={'used':False,'mode':'direct_fit_succeeded' if report.get('status')=='operator_learned' else 'unavailable'}
         meta_attempts=[]
@@ -1144,8 +1100,6 @@ class SymbolicWorldLearner:
                 learned=bool(trial is not None and trial.get('status')=='operator_learned')
                 self._record_meta_representation(pattern,strategy,learned)
                 meta_attempts.append({'strategy':strategy,'learned':learned})
-                if session.get('evidence_request') is not None:
-                    break
                 if learned:
                     report=trial
                     break
@@ -1153,15 +1107,11 @@ class SymbolicWorldLearner:
             report={**report,'meta_controller_route':meta_route,
                     'meta_controller_representation_attempts':meta_attempts,
                     'meta_controller_representation_strategy':next((x['strategy'] for x in meta_attempts if x['learned']),None)}
-        pending_request=session.get('evidence_request')
         alias_report=None
-        if report.get('status')!='operator_learned' and pending_request is None:
+        if report.get('status')!='operator_learned':
             alias_report=self._record_alias(pattern,mapping,b,a,eid)
         chosen=alias_report if alias_report is not None else report
-        if pending_request is not None:
-            chosen={**chosen,'status':'pending_discriminating_evidence',
-                    'evidence_request':deepcopy(pending_request)}
-        if (pending_request is None and self.meta_controller is not None and chosen.get('status') not in ('operator_learned','alias_learned')
+        if (self.meta_controller is not None and chosen.get('status') not in ('operator_learned','alias_learned')
                 and meta_attempts):
             gap=self.meta_controller.record_gap(
                 'representation',self._meta_representation_features(pattern),meta_attempts,
@@ -1417,7 +1367,6 @@ class SymbolicWorldLearner:
             f=_instantiate(tuple(t),binding)
             if f is None:return None
             adds.append(f)
-        if not set(deletes).issubset(state):return None
         return frozenset((set(state)-set(deletes))|set(adds))
 
     def execute(self, text: str, state) -> dict:
@@ -1772,7 +1721,6 @@ class SymbolicWorldLearner:
             f=_instantiate(tuple(t),binding)
             if f is None:return None
             adds.append(f)
-        if not set(deletes).issubset(dynamic):return None
         # Predicates changed by an operator are dynamic by construction.
         return frozenset((set(dynamic)-set(deletes))|set(adds))
 
