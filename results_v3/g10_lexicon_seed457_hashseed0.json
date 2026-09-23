@@ -1,0 +1,105 @@
+{
+  "kind": "development_cross_domain_lexical_gate",
+  "preregistration": "prereg/G-10-senal-lexica-entre-dominios.md",
+  "seed": 457,
+  "engine_tree": "1f3187f2ced4c97364503187d074815f33612326",
+  "engine_unchanged": true,
+  "training_databases": 89,
+  "heldout_databases": 22,
+  "training_demonstrations": 3078,
+  "test_questions": 1093,
+  "candidate_phrases": 27335,
+  "promoted_phrases": 1305,
+  "shuffled_promoted_phrases": 1305,
+  "exact_action_vector": {
+    "treatment": 378,
+    "shuffled": 147,
+    "majority": 136,
+    "fresh": 34
+  },
+  "macro_balanced_accuracy": {
+    "treatment": 0.7747860000996425,
+    "shuffled": 0.5390626298589491,
+    "majority": 0.5,
+    "fresh": 0.5
+  },
+  "balanced_by_action": {
+    "aggregate": {
+      "treatment": 0.8798206604942771,
+      "shuffled": 0.48962358144395035,
+      "majority": 0.5,
+      "fresh": 0.5
+    },
+    "filter": {
+      "treatment": 0.8309920965884269,
+      "shuffled": 0.6813396084038286,
+      "majority": 0.5,
+      "fresh": 0.5
+    },
+    "group": {
+      "treatment": 0.7907015102314314,
+      "shuffled": 0.5093732281841142,
+      "majority": 0.5,
+      "fresh": 0.5
+    },
+    "join": {
+      "treatment": 0.6702362593509462,
+      "shuffled": 0.613799155878414,
+      "majority": 0.5,
+      "fresh": 0.5
+    },
+    "limit": {
+      "treatment": 0.8568598442335815,
+      "shuffled": 0.5041322314049587,
+      "majority": 0.5,
+      "fresh": 0.5
+    },
+    "nested": {
+      "treatment": 0.6133050098635542,
+      "shuffled": 0.498849252013809,
+      "majority": 0.5,
+      "fresh": 0.5
+    },
+    "order": {
+      "treatment": 0.8134668204790156,
+      "shuffled": 0.5153839815425181,
+      "majority": 0.5,
+      "fresh": 0.5
+    },
+    "set": {
+      "treatment": 0.7429057995559067,
+      "shuffled": 0.5,
+      "majority": 0.5,
+      "fresh": 0.5
+    }
+  },
+  "action_gains": {
+    "aggregate": 0.3798206604942771,
+    "filter": 0.1496524881845983,
+    "group": 0.2813282820473172,
+    "join": 0.05643710347253217,
+    "limit": 0.35272761282862286,
+    "nested": 0.11330500986355418,
+    "order": 0.29808283893649756,
+    "set": 0.24290579955590674
+  },
+  "candidate_evaluations": 16487,
+  "counterevidence_probe": {
+    "before": -2.3025850929940455,
+    "after": 1.1314021114911006,
+    "sign_reversed": true
+  },
+  "restart_same": true,
+  "renamed_values_same": false,
+  "reading_cpu_s": 0.613617,
+  "treatment_training_cpu_s": 0.208679,
+  "shuffled_training_cpu_s": 0.189279,
+  "inference_cpu_s": 0.102314,
+  "p50_ms": 0.027217,
+  "p95_ms": 0.046997,
+  "budget_ok": true,
+  "gate_pass": false,
+  "cpu_total_s": 1.133615,
+  "wall_total_s": 8.04136,
+  "max_rss_kib": 169644
+}
