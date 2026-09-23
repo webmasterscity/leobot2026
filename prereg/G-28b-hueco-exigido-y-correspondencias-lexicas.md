@@ -17,6 +17,8 @@ Alternativa: (a)–(b) solo bajan cobertura sin subir F1; (c) no aprende corresp
 
 **Enmienda previa a cualquier corrida (2026-09-23):** el mínimo de apoyo del marcador pasó de 5 a 3. Motivo: la prueba focal existente `tests/test_reading_alignment_g28.py` enseña 3–4 ejemplos por marcador y exige respuesta; la regla 5.2 impide modificarla, y con 5 fallaba. No se había ejecutado ningún experimento de G-28b.
 
+**Corrección de desarrollo (visible, antes de congelar):** en el desarrollo limpio, exigir que el marcador esté ausente de *esta* oración hizo abstenerse en muchas preguntas «¿qué…?» cuya oración contiene «que» relativo (F1 0,179). El marcador pasa a definirse por la pregunta: una palabra vista en ≥3 preguntas de educación y ausente de la oración respondiente en ≥50 % de ellas; además, una pregunta que solo copia la oración en orden no tiene hueco. Umbrales de la puerta sin cambios. Las correspondencias IBM-1 con los umbrales preregistrados quedaron vacías en desarrollo (con umbrales relajados, casi todo ruido); no se relajan.
+
 ## Datos, controles y puerta
 
 Iguales a G-28 (educación 2000 de `test` semilla 2828; reserva 200 de `dev` sin los 20 del tablero, semilla de `freeze-G-28b:leobot`), con estos cambios: el **desarrollo visible** usa 300 ejemplos de `test` cuyo párrafo no está en la educación; se añade el control **sin hueco**: para cada caso de reserva, la oración que contiene la respuesta, convertida en pregunta tal cual («¿<oración>?»), debe recibir abstención; y la **ablación de correspondencias** (mismo motor, correspondencias desactivadas).
