@@ -1,0 +1,294 @@
+{
+  "preregistration": "prereg/G-5-composicion-de-operadores-observados.md",
+  "kind": "gate1_feasibility_only",
+  "engine_tree_before": "1f3187f2ced4c97364503187d074815f33612326",
+  "engine_tree_after": "1f3187f2ced4c97364503187d074815f33612326",
+  "engine_unchanged": true,
+  "hashseed": "0",
+  "candidate_programs": 32,
+  "reports": [
+    {
+      "seed": 17,
+      "methods": [
+        {
+          "evaluator_operation": "find",
+          "source_examples": 32,
+          "source_validation": 32,
+          "candidate_programs": 32,
+          "fit_survivors": 2,
+          "validated_survivors": 2,
+          "source_fit_cpu_s": 0.000168,
+          "source_validation_cpu_s": 8e-05,
+          "target_oracle_calls_treatment": 0,
+          "cross_type": {
+            "cases": 64,
+            "supported": 64,
+            "correct": 64,
+            "false": 0,
+            "p50_ms": 0.003255,
+            "p95_ms": 0.005137
+          },
+          "cross_inference_cpu_s": 0.000253,
+          "fresh_target_examples": 32,
+          "fresh_fit_cpu_s": 0.000146,
+          "fresh_target_heldout": {
+            "cases": 32,
+            "supported": 32,
+            "correct": 32,
+            "false": 0,
+            "p50_ms": 0.003265,
+            "p95_ms": 0.004364
+          },
+          "memory_only_cross_answers": 0,
+          "learned_descriptions": [
+            {
+              "source": "arg0",
+              "pattern": "arg1",
+              "match": "contiguous",
+              "overlap": false,
+              "reduce": "first"
+            },
+            {
+              "source": "arg0",
+              "pattern": "arg1",
+              "match": "contiguous",
+              "overlap": true,
+              "reduce": "first"
+            }
+          ]
+        },
+        {
+          "evaluator_operation": "count",
+          "source_examples": 32,
+          "source_validation": 32,
+          "candidate_programs": 32,
+          "fit_survivors": 1,
+          "validated_survivors": 1,
+          "source_fit_cpu_s": 0.000101,
+          "source_validation_cpu_s": 4.1e-05,
+          "target_oracle_calls_treatment": 0,
+          "cross_type": {
+            "cases": 64,
+            "supported": 64,
+            "correct": 64,
+            "false": 0,
+            "p50_ms": 0.001623,
+            "p95_ms": 0.002301
+          },
+          "cross_inference_cpu_s": 0.000128,
+          "fresh_target_examples": 32,
+          "fresh_fit_cpu_s": 0.000122,
+          "fresh_target_heldout": {
+            "cases": 32,
+            "supported": 32,
+            "correct": 32,
+            "false": 0,
+            "p50_ms": 0.00168,
+            "p95_ms": 0.002418
+          },
+          "memory_only_cross_answers": 0,
+          "learned_descriptions": [
+            {
+              "source": "arg0",
+              "pattern": "arg1",
+              "match": "contiguous",
+              "overlap": false,
+              "reduce": "count"
+            }
+          ]
+        }
+      ],
+      "gate1_pass": true
+    },
+    {
+      "seed": 53,
+      "methods": [
+        {
+          "evaluator_operation": "find",
+          "source_examples": 32,
+          "source_validation": 32,
+          "candidate_programs": 32,
+          "fit_survivors": 2,
+          "validated_survivors": 2,
+          "source_fit_cpu_s": 0.000152,
+          "source_validation_cpu_s": 9.2e-05,
+          "target_oracle_calls_treatment": 0,
+          "cross_type": {
+            "cases": 64,
+            "supported": 64,
+            "correct": 64,
+            "false": 0,
+            "p50_ms": 0.003263,
+            "p95_ms": 0.004342
+          },
+          "cross_inference_cpu_s": 0.00023,
+          "fresh_target_examples": 32,
+          "fresh_fit_cpu_s": 0.000212,
+          "fresh_target_heldout": {
+            "cases": 32,
+            "supported": 32,
+            "correct": 32,
+            "false": 0,
+            "p50_ms": 0.00327,
+            "p95_ms": 0.004255
+          },
+          "memory_only_cross_answers": 0,
+          "learned_descriptions": [
+            {
+              "source": "arg0",
+              "pattern": "arg1",
+              "match": "contiguous",
+              "overlap": false,
+              "reduce": "first"
+            },
+            {
+              "source": "arg0",
+              "pattern": "arg1",
+              "match": "contiguous",
+              "overlap": true,
+              "reduce": "first"
+            }
+          ]
+        },
+        {
+          "evaluator_operation": "count",
+          "source_examples": 32,
+          "source_validation": 32,
+          "candidate_programs": 32,
+          "fit_survivors": 1,
+          "validated_survivors": 1,
+          "source_fit_cpu_s": 8.8e-05,
+          "source_validation_cpu_s": 4.2e-05,
+          "target_oracle_calls_treatment": 0,
+          "cross_type": {
+            "cases": 64,
+            "supported": 64,
+            "correct": 64,
+            "false": 0,
+            "p50_ms": 0.001726,
+            "p95_ms": 0.002296
+          },
+          "cross_inference_cpu_s": 0.000131,
+          "fresh_target_examples": 32,
+          "fresh_fit_cpu_s": 0.000101,
+          "fresh_target_heldout": {
+            "cases": 32,
+            "supported": 32,
+            "correct": 32,
+            "false": 0,
+            "p50_ms": 0.001811,
+            "p95_ms": 0.002212
+          },
+          "memory_only_cross_answers": 0,
+          "learned_descriptions": [
+            {
+              "source": "arg0",
+              "pattern": "arg1",
+              "match": "contiguous",
+              "overlap": false,
+              "reduce": "count"
+            }
+          ]
+        }
+      ],
+      "gate1_pass": true
+    },
+    {
+      "seed": 97,
+      "methods": [
+        {
+          "evaluator_operation": "find",
+          "source_examples": 32,
+          "source_validation": 32,
+          "candidate_programs": 32,
+          "fit_survivors": 2,
+          "validated_survivors": 2,
+          "source_fit_cpu_s": 0.000149,
+          "source_validation_cpu_s": 9.1e-05,
+          "target_oracle_calls_treatment": 0,
+          "cross_type": {
+            "cases": 64,
+            "supported": 64,
+            "correct": 64,
+            "false": 0,
+            "p50_ms": 0.00319,
+            "p95_ms": 0.004295
+          },
+          "cross_inference_cpu_s": 0.000226,
+          "fresh_target_examples": 32,
+          "fresh_fit_cpu_s": 0.000152,
+          "fresh_target_heldout": {
+            "cases": 32,
+            "supported": 32,
+            "correct": 32,
+            "false": 0,
+            "p50_ms": 0.003181,
+            "p95_ms": 0.004226
+          },
+          "memory_only_cross_answers": 0,
+          "learned_descriptions": [
+            {
+              "source": "arg0",
+              "pattern": "arg1",
+              "match": "contiguous",
+              "overlap": false,
+              "reduce": "first"
+            },
+            {
+              "source": "arg0",
+              "pattern": "arg1",
+              "match": "contiguous",
+              "overlap": true,
+              "reduce": "first"
+            }
+          ]
+        },
+        {
+          "evaluator_operation": "count",
+          "source_examples": 32,
+          "source_validation": 32,
+          "candidate_programs": 32,
+          "fit_survivors": 1,
+          "validated_survivors": 1,
+          "source_fit_cpu_s": 9.5e-05,
+          "source_validation_cpu_s": 4.6e-05,
+          "target_oracle_calls_treatment": 0,
+          "cross_type": {
+            "cases": 64,
+            "supported": 64,
+            "correct": 64,
+            "false": 0,
+            "p50_ms": 0.001685,
+            "p95_ms": 0.002374
+          },
+          "cross_inference_cpu_s": 0.000129,
+          "fresh_target_examples": 32,
+          "fresh_fit_cpu_s": 0.000106,
+          "fresh_target_heldout": {
+            "cases": 32,
+            "supported": 32,
+            "correct": 32,
+            "false": 0,
+            "p50_ms": 0.001646,
+            "p95_ms": 0.002245
+          },
+          "memory_only_cross_answers": 0,
+          "learned_descriptions": [
+            {
+              "source": "arg0",
+              "pattern": "arg1",
+              "match": "contiguous",
+              "overlap": false,
+              "reduce": "count"
+            }
+          ]
+        }
+      ],
+      "gate1_pass": true
+    }
+  ],
+  "all_gate1_pass": true,
+  "cpu_total_s": 0.006078,
+  "wall_total_s": 0.015656,
+  "max_rss_kib": 28424
+}
