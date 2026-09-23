@@ -1,0 +1,117 @@
+{
+  "preregistration": "prereg/F-18-orden-relacional-espanol.md",
+  "kind": "development_only",
+  "source_revision": "ec5f1f46e9af79639a90684a7a70a956c4998f04",
+  "source_sha256": "e818e96cbdb7877483999a4f9bcf2545f716fd9d64bae09aacf14ac32e344df9",
+  "engine_tree": "1f3187f2ced4c97364503187d074815f33612326",
+  "engine_unchanged": true,
+  "partition_rows": {
+    "fit": 1124,
+    "validation": 378,
+    "development": 459
+  },
+  "partition_sentence1": {
+    "fit": 1100,
+    "validation": 350,
+    "development": 450
+  },
+  "treatment": {
+    "features": [
+      "set_overlap",
+      "multiset_overlap",
+      "length_ratio",
+      "unique_coverage",
+      "lcs_ratio",
+      "inversion_fraction",
+      "adjacency_preserved",
+      "mean_displacement"
+    ],
+    "predicates": 76,
+    "stumps_evaluated": 456,
+    "programs_evaluated": 256,
+    "best_raw": {
+      "program": {
+        "rules": [
+          {
+            "predicate": [
+              "inversion_fraction",
+              0.07017543859649122,
+              "gt"
+            ],
+            "label": "0"
+          },
+          {
+            "predicate": [
+              "mean_displacement",
+              0.16463303587688946,
+              "le"
+            ],
+            "label": "1"
+          }
+        ],
+        "default": "0"
+      },
+      "metric": {
+        "total": 378,
+        "attempts": 378,
+        "correct": 268,
+        "macro_accuracy": 0.712543,
+        "precision": 0.708995,
+        "coverage": 1.0
+      }
+    },
+    "best_safe": null,
+    "search_cpu_s": 0.191376
+  },
+  "no_order": {
+    "features": [
+      "set_overlap",
+      "multiset_overlap",
+      "length_ratio",
+      "unique_coverage"
+    ],
+    "predicates": 38,
+    "stumps_evaluated": 228,
+    "programs_evaluated": 256,
+    "best_raw": {
+      "program": {
+        "rules": [
+          {
+            "predicate": [
+              "length_ratio",
+              0.8421052631578947,
+              "gt"
+            ],
+            "label": "1"
+          }
+        ],
+        "default": "0"
+      },
+      "metric": {
+        "total": 378,
+        "attempts": 378,
+        "correct": 180,
+        "macro_accuracy": 0.535731,
+        "precision": 0.47619,
+        "coverage": 1.0
+      }
+    },
+    "best_safe": null,
+    "search_cpu_s": 0.112488
+  },
+  "majority_validation": {
+    "total": 378,
+    "attempts": 378,
+    "correct": 220,
+    "macro_accuracy": 0.5,
+    "precision": 0.582011,
+    "coverage": 1.0
+  },
+  "candidate_gate_passed": false,
+  "development": null,
+  "reserved_test": "unopened",
+  "english_transfer": "pending_only_if_development_passes",
+  "cpu_total_s": 0.62125,
+  "wall_total_s": 10.25732,
+  "max_rss_kib": 33580
+}
