@@ -1,0 +1,84 @@
+{
+  "kind": "development_joint_action_decode",
+  "preregistration": "prereg/G-11-decodificacion-conjunta.md",
+  "seed": 641,
+  "engine_tree": "1f3187f2ced4c97364503187d074815f33612326",
+  "engine_unchanged": true,
+  "training_databases": 89,
+  "heldout_databases": 22,
+  "training_demonstrations": 3487,
+  "test_questions": 684,
+  "selection": {
+    "correct_by_lambda": {
+      "0": 1192,
+      "0.25": 1190,
+      "0.5": 1209,
+      "1": 1218,
+      "2": 1212
+    },
+    "validation_questions": 3487,
+    "selected_lambda": 1,
+    "cpu_s": 1.894422
+  },
+  "shuffled_selection": {
+    "correct_by_lambda": {
+      "0": 395,
+      "0.25": 395,
+      "0.5": 405,
+      "1": 410,
+      "2": 435
+    },
+    "validation_questions": 3487,
+    "selected_lambda": 2,
+    "cpu_s": 1.866299
+  },
+  "exact_action_vector": {
+    "treatment": 266,
+    "independent": 247,
+    "shuffled": 65,
+    "mode": 67,
+    "majority": 84,
+    "fresh": 34
+  },
+  "macro_balanced_accuracy": {
+    "treatment": 0.8360152834393453,
+    "shuffled": 0.5399652429433082,
+    "majority": 0.5,
+    "fresh": 0.5
+  },
+  "family": {
+    "join_filter": {
+      "questions": 131,
+      "treatment_correct": 56,
+      "independent_correct": 51
+    },
+    "aggregate_order": {
+      "questions": 4,
+      "treatment_correct": 2,
+      "independent_correct": 2
+    }
+  },
+  "family_gain": {
+    "join_filter": 0.03816793893129771,
+    "aggregate_order": 0.0
+  },
+  "rename_eligible": 684,
+  "rename_unrecognized": 0,
+  "rename_agree": 684,
+  "counterevidence_probe": {
+    "before": 0.6466271649250525,
+    "after": -0.8873031950009028,
+    "sign_reversed": true
+  },
+  "restart_same": true,
+  "candidate_evaluations": 188627,
+  "read_cpu_s": 0.605848,
+  "inference_cpu_s": 0.480059,
+  "p50_ms": 0.215396,
+  "p95_ms": 0.24327,
+  "budget_ok": true,
+  "gate_pass": false,
+  "cpu_total_s": 4.87057,
+  "wall_total_s": 12.532105,
+  "max_rss_kib": 169508
+}
