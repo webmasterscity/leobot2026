@@ -1,0 +1,64 @@
+{
+  "preregistration": "prereg/G-2-frases-efectos-tipados.md",
+  "kind": "source_feasibility_only",
+  "engine_tree": "1f3187f2ced4c97364503187d074815f33612326",
+  "training_pairs": [
+    {
+      "methods": [
+        "find",
+        "rfind"
+      ],
+      "query": [
+        "ababa",
+        [
+          "b"
+        ]
+      ],
+      "effect_roles": {
+        "find": "first",
+        "rfind": "last"
+      },
+      "queries_explored": 1,
+      "simulations": 2,
+      "distinctive_phrases": {
+        "find": 9,
+        "rfind": 11
+      }
+    },
+    {
+      "methods": [
+        "partition",
+        "rpartition"
+      ],
+      "query": [
+        "bab",
+        [
+          "b"
+        ]
+      ],
+      "effect_roles": {
+        "partition": "first",
+        "rpartition": "last"
+      },
+      "queries_explored": 2,
+      "simulations": 4,
+      "distinctive_phrases": {
+        "partition": 10,
+        "rpartition": 10
+      }
+    }
+  ],
+  "phrase_role_hypotheses": 40,
+  "reusable_phrases_with_two_independent_types": [],
+  "reusable_count": 0,
+  "postgate_unfiltered_reusable_phrases": [],
+  "directly_linked_development_pairs": [
+    [
+      "index",
+      "rindex"
+    ]
+  ],
+  "cpu_total_s": 0.137005,
+  "wall_total_s": 0.658231,
+  "max_rss_kib": 32724
+}
