@@ -1,0 +1,41 @@
+{
+  "kind": "source_feasibility_only",
+  "engine_tree": "1f3187f2ced4c97364503187d074815f33612326",
+  "train_groups": 1000,
+  "directed_pairs": 20000,
+  "relation_expressions": 24,
+  "relation_signatures": 1033,
+  "relation_conflicts": {
+    "independently_repeated_keys": 720,
+    "mixed_label_keys": 570,
+    "groups_in_mixed_keys": 15465,
+    "group_label_support_in_mixed_keys": 18086
+  },
+  "exact_edit_signatures": 19411,
+  "exact_edit_conflicts": {
+    "independently_repeated_keys": 261,
+    "mixed_label_keys": 55,
+    "groups_in_mixed_keys": 220,
+    "group_label_support_in_mixed_keys": 228
+  },
+  "order_only": {
+    "edges": 20,
+    "changed_label": 14,
+    "same_label": 6,
+    "groups": 4
+  },
+  "transition_counts": {
+    "contradiction→contradiction": 1328,
+    "contradiction→entailment": 2664,
+    "contradiction→neutral": 2664,
+    "entailment→contradiction": 2664,
+    "entailment→entailment": 1336,
+    "entailment→neutral": 2672,
+    "neutral→contradiction": 2664,
+    "neutral→entailment": 2672,
+    "neutral→neutral": 1336
+  },
+  "cpu_total_s": 2.704285,
+  "wall_total_s": 3.55081,
+  "max_rss_kib": 56148
+}
