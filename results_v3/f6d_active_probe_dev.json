@@ -1,0 +1,188 @@
+{
+  "preregistration": "prereg/F-6d-prueba-activa-de-precondicion.md",
+  "kind": "development_only",
+  "base_engine_tree": "7aca198e132f587c0c154bdb6f08deaaa4310f6d",
+  "working_engine_changes": "M leobot/symbolic.py",
+  "necessary": {
+    "branch": "necessary",
+    "before_training_statuses": [
+      "pending_support",
+      "pending_support",
+      "pending_discriminating_evidence"
+    ],
+    "request": {
+      "kind": "controlled_intervention",
+      "reason": "unresolved_non_effect_role_precondition",
+      "text": "transporta a f6ddevtargetp85475 con ficha f6ddevtargeti87325 desde f6ddevtargeto37853 hasta f6ddevtargetd47469",
+      "before": [
+        [
+          "f6ddevagent",
+          "f6ddevtargetp85475"
+        ],
+        [
+          "f6ddevlink",
+          "f6ddevtargeto37853",
+          "f6ddevtargetd47469"
+        ],
+        [
+          "f6ddevloc",
+          "f6ddevtargetp85475",
+          "f6ddevtargeto37853"
+        ],
+        [
+          "f6ddevplace",
+          "f6ddevtargetd47469"
+        ],
+        [
+          "f6ddevplace",
+          "f6ddevtargeto37853"
+        ]
+      ],
+      "removed_fact": [
+        "f6ddevinventory",
+        "f6ddevtargeti87325"
+      ],
+      "alternatives": [
+        "effect",
+        "no_effect"
+      ],
+      "estimated_information_bits": 1.0,
+      "estimated_cost": 1.0
+    },
+    "pending_restart_same": true,
+    "before": {
+      "full": 32,
+      "full_correct": 0,
+      "missing": 32,
+      "missing_correct": 32,
+      "unsafe": 0,
+      "unsafe_without_link": 0,
+      "unsafe_without_location": 0,
+      "p50_ms": 0.01942,
+      "p95_ms": 0.0211
+    },
+    "feedback_status": "operator_learned",
+    "feedback_pattern": "transporta a <e0> con ficha <e1> desde <e2> hasta <e3>",
+    "same_session": true,
+    "after": {
+      "full": 32,
+      "full_correct": 32,
+      "missing": 32,
+      "missing_correct": 32,
+      "unsafe": 0,
+      "unsafe_without_link": 0,
+      "unsafe_without_location": 0,
+      "p50_ms": 0.05226,
+      "p95_ms": 0.07357
+    },
+    "after_restart_same": true,
+    "procedure_status": "procedure_learned",
+    "procedure_correct": 128,
+    "action_depends_on_meta": true,
+    "counter_status": "raw_world_conflict",
+    "withdrawn_action": true,
+    "withdrawn_procedure": true,
+    "saved_bytes": 75365,
+    "saved_bytes_after": 96127,
+    "restart_cpu_s": 0.004391,
+    "feedback_cpu_s": 0.000761,
+    "restart_after_cpu_s": 0.005084
+  },
+  "irrelevant": {
+    "branch": "irrelevant",
+    "before_training_statuses": [
+      "pending_support",
+      "pending_support",
+      "pending_discriminating_evidence"
+    ],
+    "request": {
+      "kind": "controlled_intervention",
+      "reason": "unresolved_non_effect_role_precondition",
+      "text": "transporta a f6ddevtargetp85475 con ficha f6ddevtargeti87325 desde f6ddevtargeto37853 hasta f6ddevtargetd47469",
+      "before": [
+        [
+          "f6ddevagent",
+          "f6ddevtargetp85475"
+        ],
+        [
+          "f6ddevlink",
+          "f6ddevtargeto37853",
+          "f6ddevtargetd47469"
+        ],
+        [
+          "f6ddevloc",
+          "f6ddevtargetp85475",
+          "f6ddevtargeto37853"
+        ],
+        [
+          "f6ddevplace",
+          "f6ddevtargetd47469"
+        ],
+        [
+          "f6ddevplace",
+          "f6ddevtargeto37853"
+        ]
+      ],
+      "removed_fact": [
+        "f6ddevinventory",
+        "f6ddevtargeti87325"
+      ],
+      "alternatives": [
+        "effect",
+        "no_effect"
+      ],
+      "estimated_information_bits": 1.0,
+      "estimated_cost": 1.0
+    },
+    "pending_restart_same": true,
+    "before": {
+      "full": 32,
+      "full_correct": 0,
+      "missing": 32,
+      "missing_correct": 32,
+      "unsafe": 0,
+      "unsafe_without_link": 0,
+      "unsafe_without_location": 0,
+      "p50_ms": 0.01938,
+      "p95_ms": 0.02075
+    },
+    "feedback_status": "operator_learned",
+    "feedback_pattern": "transporta a <e0> con ficha <e1> desde <e2> hasta <e3>",
+    "same_session": true,
+    "after": {
+      "full": 32,
+      "full_correct": 32,
+      "missing": 32,
+      "missing_correct": 32,
+      "unsafe": 0,
+      "unsafe_without_link": 0,
+      "unsafe_without_location": 0,
+      "p50_ms": 0.04976,
+      "p95_ms": 0.05404
+    },
+    "after_restart_same": true,
+    "procedure_status": "procedure_learned",
+    "procedure_correct": 128,
+    "action_depends_on_meta": false,
+    "counter_status": "raw_world_conflict",
+    "withdrawn_action": false,
+    "withdrawn_procedure": true,
+    "saved_bytes": 75365,
+    "saved_bytes_after": 86806,
+    "restart_cpu_s": 0.004036,
+    "feedback_cpu_s": 0.000258,
+    "restart_after_cpu_s": 0.004276
+  },
+  "controls": {
+    "fresh_status": "pending_support",
+    "no_meta_status": "pending_support",
+    "fresh_correct": 0,
+    "no_meta_correct": 0,
+    "incompatible_status": "ungrounded_transition",
+    "incompatible_operator_count": 0,
+    "unmentioned_auxiliary_status": "operator_learned"
+  },
+  "gate_passed": true,
+  "cpu_s": 0.182929,
+  "max_rss_kib": 26896
+}
