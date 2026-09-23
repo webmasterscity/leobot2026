@@ -1,0 +1,1600 @@
+{
+ "baseline": "/tmp/claude-1000/-media-leonardo-data-leobot2026/9a9db97f-c8e4-4b8a-b8d9-fd130c8c496d/scratchpad/g8/leobot/__init__.py",
+ "candidate": "/tmp/claude-1000/-media-leonardo-data-leobot2026/9a9db97f-c8e4-4b8a-b8d9-fd130c8c496d/scratchpad/mut/leobot/__init__.py",
+ "bases": 15,
+ "first_seed": 0,
+ "against_baseline": {
+  "comparisons": 4320,
+  "differences": 50,
+  "baseline_incomplete": 4,
+  "baseline_incomplete_differences": 0
+ },
+ "direct_sql_disk_vs_memory": {
+  "comparisons": 1080,
+  "differences": 37,
+  "baseline_incomplete": 1,
+  "baseline_incomplete_differences": 0
+ },
+ "examples": [
+  {
+   "where": "0:raw",
+   "kind": "answer",
+   "query": 7,
+   "base": {
+    "status": "contested",
+    "complete": true,
+    "positive": [
+     [
+      "v",
+      [
+       "e1"
+      ],
+      "rule",
+      "un",
+      false,
+      true,
+      [
+       [
+        "p",
+        [
+         "e1",
+         "e1"
+        ],
+        "fact",
+        "f97",
+        false,
+        false,
+        []
+       ],
+       [
+        "u",
+        [
+         "e1"
+        ],
+        "fact",
+        "f111",
+        false,
+        true,
+        []
+       ]
+      ]
+     ]
+    ],
+    "negative": []
+   },
+   "cand": {
+    "status": "unknown",
+    "complete": true,
+    "positive": [],
+    "negative": []
+   }
+  },
+  {
+   "where": "0:raw",
+   "kind": "answer",
+   "query": 8,
+   "base": {
+    "status": "contested",
+    "complete": true,
+    "positive": [
+     [
+      "v",
+      [
+       "e1"
+      ],
+      "rule",
+      "un",
+      false,
+      true,
+      [
+       [
+        "u",
+        [
+         "e1"
+        ],
+        "fact",
+        "f111",
+        false,
+        true,
+        []
+       ],
+       [
+        "p",
+        [
+         "e1",
+         "e1"
+        ],
+        "fact",
+        "f97",
+        false,
+        false,
+        []
+       ]
+      ]
+     ],
+     [
+      "v",
+      [
+       "e3"
+      ],
+      "rule",
+      "un",
+      false,
+      false,
+      [
+       [
+        "u",
+        [
+         "e3"
+        ],
+        "fact",
+        "f75",
+        false,
+        false,
+        []
+       ],
+       [
+        "p",
+        [
+         "e3",
+         "e3"
+        ],
+        "fact",
+        "f54",
+        false,
+        false,
+        []
+       ]
+      ]
+     ]
+    ],
+    "negative": null
+   },
+   "cand": {
+    "status": "bindings",
+    "complete": true,
+    "positive": [
+     [
+      "v",
+      [
+       "e3"
+      ],
+      "rule",
+      "un",
+      false,
+      false,
+      [
+       [
+        "u",
+        [
+         "e3"
+        ],
+        "fact",
+        "f75",
+        false,
+        false,
+        []
+       ],
+       [
+        "p",
+        [
+         "e3",
+         "e3"
+        ],
+        "fact",
+        "f54",
+        false,
+        false,
+        []
+       ]
+      ]
+     ]
+    ],
+    "negative": null
+   }
+  },
+  {
+   "where": "1:disk",
+   "kind": "contains",
+   "query": 23,
+   "base": true,
+   "cand": false
+  },
+  {
+   "where": "1:disk",
+   "kind": "answer",
+   "query": 6,
+   "base": {
+    "status": "bindings",
+    "complete": true,
+    "positive": [
+     [
+      "p",
+      [
+       "e2",
+       "e0"
+      ],
+      "fact",
+      "f46",
+      false,
+      false,
+      []
+     ],
+     [
+      "p",
+      [
+       "e0",
+       "e0"
+      ],
+      "fact",
+      "f100",
+      false,
+      false,
+      []
+     ],
+     [
+      "p",
+      [
+       "e3",
+       "e0"
+      ],
+      "fact",
+      "f116",
+      false,
+      false,
+      []
+     ]
+    ],
+    "negative": null
+   },
+   "cand": {
+    "status": "bindings",
+    "complete": true,
+    "positive": [
+     [
+      "p",
+      [
+       "e2",
+       "e0"
+      ],
+      "fact",
+      "f46",
+      false,
+      false,
+      []
+     ],
+     [
+      "p",
+      [
+       "e3",
+       "e0"
+      ],
+      "fact",
+      "f116",
+      false,
+      false,
+      []
+     ]
+    ],
+    "negative": null
+   }
+  },
+  {
+   "where": "1:disk",
+   "kind": "answer",
+   "query": 8,
+   "base": {
+    "status": "contested",
+    "complete": true,
+    "positive": [
+     [
+      "r",
+      [
+       "e0",
+       "e3"
+      ],
+      "fact",
+      "f42",
+      false,
+      false,
+      []
+     ],
+     [
+      "r",
+      [
+       "e0",
+       "e2"
+      ],
+      "fact",
+      "f92",
+      false,
+      false,
+      []
+     ],
+     [
+      "r",
+      [
+       "e0",
+       "e1"
+      ],
+      "fact",
+      "f103",
+      false,
+      false,
+      []
+     ],
+     [
+      "r",
+      [
+       "e0",
+       "e0"
+      ],
+      "fact",
+      "f122",
+      false,
+      true,
+      []
+     ]
+    ],
+    "negative": null
+   },
+   "cand": {
+    "status": "bindings",
+    "complete": true,
+    "positive": [
+     [
+      "r",
+      [
+       "e0",
+       "e3"
+      ],
+      "fact",
+      "f42",
+      false,
+      false,
+      []
+     ],
+     [
+      "r",
+      [
+       "e0",
+       "e2"
+      ],
+      "fact",
+      "f92",
+      false,
+      false,
+      []
+     ],
+     [
+      "r",
+      [
+       "e0",
+       "e1"
+      ],
+      "fact",
+      "f103",
+      false,
+      false,
+      []
+     ],
+     [
+      "r",
+      [
+       "e0",
+       "e0"
+      ],
+      "fact",
+      "f122",
+      false,
+      false,
+      []
+     ]
+    ],
+    "negative": null
+   }
+  },
+  {
+   "where": "1:disk",
+   "kind": "answer",
+   "query": 17,
+   "base": {
+    "status": "bindings",
+    "complete": true,
+    "positive": [
+     [
+      "anc",
+      [
+       "e2",
+       "e1"
+      ],
+      "compiled",
+      "indexed_bfs_closure:anc",
+      true,
+      false,
+      [
+       [
+        "p",
+        [
+         "e2",
+         "e1"
+        ],
+        "fact",
+        "f30",
+        false,
+        false,
+        []
+       ]
+      ]
+     ],
+     [
+      "anc",
+      [
+       "e3",
+       "e1"
+      ],
+      "compiled",
+      "indexed_bfs_closure:anc",
+      true,
+      false,
+      [
+       [
+        "p",
+        [
+         "e3",
+         "e2"
+        ],
+        "fact",
+        "f12",
+        false,
+        false,
+        []
+       ],
+       [
+        "anc",
+        [
+         "e2",
+         "e1"
+        ],
+        "compiled",
+        "indexed_bfs_closure:anc",
+        true,
+        false,
+        [
+         [
+          "p",
+          [
+           "e2",
+           "e1"
+          ],
+          "fact",
+          "f30",
+          false,
+          false,
+          []
+         ]
+        ]
+       ]
+      ]
+     ]
+    ],
+    "negative": null
+   },
+   "cand": {
+    "status": "bindings",
+    "complete": true,
+    "positive": [],
+    "negative": null
+   }
+  },
+  {
+   "where": "1:disk",
+   "kind": "answer",
+   "query": 23,
+   "base": {
+    "status": "conflict",
+    "complete": true,
+    "positive": [
+     [
+      "u",
+      [
+       "e1"
+      ],
+      "fact",
+      "f64",
+      false,
+      true,
+      []
+     ]
+    ],
+    "negative": [
+     [
+      "!u",
+      [
+       "e1"
+      ],
+      "fact",
+      "f41",
+      false,
+      true,
+      []
+     ]
+    ]
+   },
+   "cand": {
+    "status": "refuted",
+    "complete": true,
+    "positive": [],
+    "negative": [
+     [
+      "!u",
+      [
+       "e1"
+      ],
+      "fact",
+      "f41",
+      false,
+      false,
+      []
+     ]
+    ]
+   }
+  },
+  {
+   "where": "1:disk_reopened",
+   "kind": "contains",
+   "query": 23,
+   "base": true,
+   "cand": false
+  },
+  {
+   "where": "1:disk_reopened",
+   "kind": "answer",
+   "query": 6,
+   "base": {
+    "status": "bindings",
+    "complete": true,
+    "positive": [
+     [
+      "p",
+      [
+       "e2",
+       "e0"
+      ],
+      "fact",
+      "f46",
+      false,
+      false,
+      []
+     ],
+     [
+      "p",
+      [
+       "e0",
+       "e0"
+      ],
+      "fact",
+      "f100",
+      false,
+      false,
+      []
+     ],
+     [
+      "p",
+      [
+       "e3",
+       "e0"
+      ],
+      "fact",
+      "f116",
+      false,
+      false,
+      []
+     ]
+    ],
+    "negative": null
+   },
+   "cand": {
+    "status": "bindings",
+    "complete": true,
+    "positive": [
+     [
+      "p",
+      [
+       "e2",
+       "e0"
+      ],
+      "fact",
+      "f46",
+      false,
+      false,
+      []
+     ],
+     [
+      "p",
+      [
+       "e3",
+       "e0"
+      ],
+      "fact",
+      "f116",
+      false,
+      false,
+      []
+     ]
+    ],
+    "negative": null
+   }
+  },
+  {
+   "where": "1:disk_reopened",
+   "kind": "answer",
+   "query": 8,
+   "base": {
+    "status": "contested",
+    "complete": true,
+    "positive": [
+     [
+      "r",
+      [
+       "e0",
+       "e3"
+      ],
+      "fact",
+      "f42",
+      false,
+      false,
+      []
+     ],
+     [
+      "r",
+      [
+       "e0",
+       "e2"
+      ],
+      "fact",
+      "f92",
+      false,
+      false,
+      []
+     ],
+     [
+      "r",
+      [
+       "e0",
+       "e1"
+      ],
+      "fact",
+      "f103",
+      false,
+      false,
+      []
+     ],
+     [
+      "r",
+      [
+       "e0",
+       "e0"
+      ],
+      "fact",
+      "f122",
+      false,
+      true,
+      []
+     ]
+    ],
+    "negative": null
+   },
+   "cand": {
+    "status": "bindings",
+    "complete": true,
+    "positive": [
+     [
+      "r",
+      [
+       "e0",
+       "e3"
+      ],
+      "fact",
+      "f42",
+      false,
+      false,
+      []
+     ],
+     [
+      "r",
+      [
+       "e0",
+       "e2"
+      ],
+      "fact",
+      "f92",
+      false,
+      false,
+      []
+     ],
+     [
+      "r",
+      [
+       "e0",
+       "e1"
+      ],
+      "fact",
+      "f103",
+      false,
+      false,
+      []
+     ],
+     [
+      "r",
+      [
+       "e0",
+       "e0"
+      ],
+      "fact",
+      "f122",
+      false,
+      false,
+      []
+     ]
+    ],
+    "negative": null
+   }
+  },
+  {
+   "where": "1:disk_reopened",
+   "kind": "answer",
+   "query": 17,
+   "base": {
+    "status": "bindings",
+    "complete": true,
+    "positive": [
+     [
+      "anc",
+      [
+       "e2",
+       "e1"
+      ],
+      "compiled",
+      "indexed_bfs_closure:anc",
+      true,
+      false,
+      [
+       [
+        "p",
+        [
+         "e2",
+         "e1"
+        ],
+        "fact",
+        "f30",
+        false,
+        false,
+        []
+       ]
+      ]
+     ],
+     [
+      "anc",
+      [
+       "e3",
+       "e1"
+      ],
+      "compiled",
+      "indexed_bfs_closure:anc",
+      true,
+      false,
+      [
+       [
+        "p",
+        [
+         "e3",
+         "e2"
+        ],
+        "fact",
+        "f12",
+        false,
+        false,
+        []
+       ],
+       [
+        "anc",
+        [
+         "e2",
+         "e1"
+        ],
+        "compiled",
+        "indexed_bfs_closure:anc",
+        true,
+        false,
+        [
+         [
+          "p",
+          [
+           "e2",
+           "e1"
+          ],
+          "fact",
+          "f30",
+          false,
+          false,
+          []
+         ]
+        ]
+       ]
+      ]
+     ]
+    ],
+    "negative": null
+   },
+   "cand": {
+    "status": "bindings",
+    "complete": true,
+    "positive": [],
+    "negative": null
+   }
+  },
+  {
+   "where": "1:disk_reopened",
+   "kind": "answer",
+   "query": 23,
+   "base": {
+    "status": "conflict",
+    "complete": true,
+    "positive": [
+     [
+      "u",
+      [
+       "e1"
+      ],
+      "fact",
+      "f64",
+      false,
+      true,
+      []
+     ]
+    ],
+    "negative": [
+     [
+      "!u",
+      [
+       "e1"
+      ],
+      "fact",
+      "f41",
+      false,
+      true,
+      []
+     ]
+    ]
+   },
+   "cand": {
+    "status": "refuted",
+    "complete": true,
+    "positive": [],
+    "negative": [
+     [
+      "!u",
+      [
+       "e1"
+      ],
+      "fact",
+      "f41",
+      false,
+      false,
+      []
+     ]
+    ]
+   }
+  },
+  {
+   "where": "1:raw",
+   "kind": "contains",
+   "query": 23,
+   "base": true,
+   "cand": false
+  },
+  {
+   "where": "1:raw",
+   "kind": "answer",
+   "query": 5,
+   "base": {
+    "status": "conflict",
+    "complete": true,
+    "positive": [
+     [
+      "!q",
+      [
+       "e3",
+       "e0"
+      ],
+      "fact",
+      "f73",
+      false,
+      true,
+      []
+     ]
+    ],
+    "negative": [
+     [
+      "q",
+      [
+       "e3",
+       "e0"
+      ],
+      "fact",
+      "f119",
+      false,
+      true,
+      []
+     ]
+    ]
+   },
+   "cand": {
+    "status": "supported",
+    "complete": true,
+    "positive": [
+     [
+      "!q",
+      [
+       "e3",
+       "e0"
+      ],
+      "fact",
+      "f73",
+      false,
+      false,
+      []
+     ]
+    ],
+    "negative": []
+   }
+  },
+  {
+   "where": "1:raw",
+   "kind": "answer",
+   "query": 6,
+   "base": {
+    "status": "bindings",
+    "complete": true,
+    "positive": [
+     [
+      "p",
+      [
+       "e2",
+       "e0"
+      ],
+      "fact",
+      "f46",
+      false,
+      false,
+      []
+     ],
+     [
+      "p",
+      [
+       "e0",
+       "e0"
+      ],
+      "fact",
+      "f100",
+      false,
+      false,
+      []
+     ],
+     [
+      "p",
+      [
+       "e3",
+       "e0"
+      ],
+      "fact",
+      "f116",
+      false,
+      false,
+      []
+     ]
+    ],
+    "negative": null
+   },
+   "cand": {
+    "status": "bindings",
+    "complete": true,
+    "positive": [
+     [
+      "p",
+      [
+       "e2",
+       "e0"
+      ],
+      "fact",
+      "f46",
+      false,
+      false,
+      []
+     ],
+     [
+      "p",
+      [
+       "e3",
+       "e0"
+      ],
+      "fact",
+      "f116",
+      false,
+      false,
+      []
+     ]
+    ],
+    "negative": null
+   }
+  },
+  {
+   "where": "1:raw",
+   "kind": "answer",
+   "query": 8,
+   "base": {
+    "status": "contested",
+    "complete": true,
+    "positive": [
+     [
+      "r",
+      [
+       "e0",
+       "e3"
+      ],
+      "fact",
+      "f42",
+      false,
+      false,
+      []
+     ],
+     [
+      "r",
+      [
+       "e0",
+       "e2"
+      ],
+      "fact",
+      "f92",
+      false,
+      false,
+      []
+     ],
+     [
+      "r",
+      [
+       "e0",
+       "e1"
+      ],
+      "fact",
+      "f103",
+      false,
+      false,
+      []
+     ],
+     [
+      "r",
+      [
+       "e0",
+       "e0"
+      ],
+      "fact",
+      "f122",
+      false,
+      true,
+      []
+     ]
+    ],
+    "negative": null
+   },
+   "cand": {
+    "status": "bindings",
+    "complete": true,
+    "positive": [
+     [
+      "r",
+      [
+       "e0",
+       "e3"
+      ],
+      "fact",
+      "f42",
+      false,
+      false,
+      []
+     ],
+     [
+      "r",
+      [
+       "e0",
+       "e2"
+      ],
+      "fact",
+      "f92",
+      false,
+      false,
+      []
+     ],
+     [
+      "r",
+      [
+       "e0",
+       "e1"
+      ],
+      "fact",
+      "f103",
+      false,
+      false,
+      []
+     ],
+     [
+      "r",
+      [
+       "e0",
+       "e0"
+      ],
+      "fact",
+      "f122",
+      false,
+      false,
+      []
+     ]
+    ],
+    "negative": null
+   }
+  },
+  {
+   "where": "1:raw",
+   "kind": "answer",
+   "query": 17,
+   "base": {
+    "status": "bindings",
+    "complete": true,
+    "positive": [
+     [
+      "anc",
+      [
+       "e2",
+       "e1"
+      ],
+      "compiled",
+      "indexed_bfs_closure:anc",
+      true,
+      false,
+      [
+       [
+        "p",
+        [
+         "e2",
+         "e1"
+        ],
+        "fact",
+        "f30",
+        false,
+        false,
+        []
+       ]
+      ]
+     ],
+     [
+      "anc",
+      [
+       "e3",
+       "e1"
+      ],
+      "compiled",
+      "indexed_bfs_closure:anc",
+      true,
+      false,
+      [
+       [
+        "p",
+        [
+         "e3",
+         "e2"
+        ],
+        "fact",
+        "f12",
+        false,
+        false,
+        []
+       ],
+       [
+        "anc",
+        [
+         "e2",
+         "e1"
+        ],
+        "compiled",
+        "indexed_bfs_closure:anc",
+        true,
+        false,
+        [
+         [
+          "p",
+          [
+           "e2",
+           "e1"
+          ],
+          "fact",
+          "f30",
+          false,
+          false,
+          []
+         ]
+        ]
+       ]
+      ]
+     ]
+    ],
+    "negative": null
+   },
+   "cand": {
+    "status": "bindings",
+    "complete": true,
+    "positive": [],
+    "negative": null
+   }
+  },
+  {
+   "where": "1:raw",
+   "kind": "answer",
+   "query": 23,
+   "base": {
+    "status": "conflict",
+    "complete": true,
+    "positive": [
+     [
+      "u",
+      [
+       "e1"
+      ],
+      "fact",
+      "f64",
+      false,
+      true,
+      []
+     ]
+    ],
+    "negative": [
+     [
+      "!u",
+      [
+       "e1"
+      ],
+      "fact",
+      "f41",
+      false,
+      true,
+      []
+     ]
+    ]
+   },
+   "cand": {
+    "status": "refuted",
+    "complete": true,
+    "positive": [],
+    "negative": [
+     [
+      "!u",
+      [
+       "e1"
+      ],
+      "fact",
+      "f41",
+      false,
+      false,
+      []
+     ]
+    ]
+   }
+  },
+  {
+   "where": "3:disk",
+   "kind": "contains",
+   "query": 17,
+   "base": true,
+   "cand": false
+  },
+  {
+   "where": "3:disk",
+   "kind": "answer",
+   "query": 0,
+   "base": {
+    "status": "contested",
+    "complete": true,
+    "positive": [
+     [
+      "v",
+      [
+       "e0"
+      ],
+      "rule",
+      "un",
+      false,
+      true,
+      [
+       [
+        "u",
+        [
+         "e0"
+        ],
+        "fact",
+        "f121",
+        false,
+        true,
+        []
+       ],
+       [
+        "p",
+        [
+         "e0",
+         "e0"
+        ],
+        "fact",
+        "f15",
+        false,
+        false,
+        []
+       ]
+      ]
+     ],
+     [
+      "v",
+      [
+       "e2"
+      ],
+      "rule",
+      "un",
+      false,
+      true,
+      [
+       [
+        "u",
+        [
+         "e2"
+        ],
+        "fact",
+        "f87",
+        false,
+        true,
+        []
+       ],
+       [
+        "p",
+        [
+         "e2",
+         "e2"
+        ],
+        "fact",
+        "f14",
+        false,
+        false,
+        []
+       ]
+      ]
+     ],
+     [
+      "v",
+      [
+       "e1"
+      ],
+      "rule",
+      "un",
+      false,
+      false,
+      [
+       [
+        "u",
+        [
+         "e1"
+        ],
+        "fact",
+        "f28",
+        false,
+        false,
+        []
+       ],
+       [
+        "p",
+        [
+         "e1",
+         "e1"
+        ],
+        "fact",
+        "f33",
+        false,
+        false,
+        []
+       ]
+      ]
+     ],
+     [
+      "v",
+      [
+       "e3"
+      ],
+      "rule",
+      "un",
+      false,
+      true,
+      [
+       [
+        "u",
+        [
+         "e3"
+        ],
+        "fact",
+        "f5",
+        false,
+        true,
+        []
+       ],
+       [
+        "p",
+        [
+         "e3",
+         "e3"
+        ],
+        "fact",
+        "f103",
+        false,
+        false,
+        []
+       ]
+      ]
+     ]
+    ],
+    "negative": null
+   },
+   "cand": {
+    "status": "contested",
+    "complete": true,
+    "positive": [
+     [
+      "v",
+      [
+       "e0"
+      ],
+      "rule",
+      "un",
+      false,
+      false,
+      [
+       [
+        "u",
+        [
+         "e0"
+        ],
+        "fact",
+        "f121",
+        false,
+        false,
+        []
+       ],
+       [
+        "p",
+        [
+         "e0",
+         "e0"
+        ],
+        "fact",
+        "f15",
+        false,
+        false,
+        []
+       ]
+      ]
+     ],
+     [
+      "v",
+      [
+       "e2"
+      ],
+      "rule",
+      "un",
+      false,
+      true,
+      [
+       [
+        "u",
+        [
+         "e2"
+        ],
+        "fact",
+        "f87",
+        false,
+        true,
+        []
+       ],
+       [
+        "p",
+        [
+         "e2",
+         "e2"
+        ],
+        "fact",
+        "f14",
+        false,
+        false,
+        []
+       ]
+      ]
+     ],
+     [
+      "v",
+      [
+       "e1"
+      ],
+      "rule",
+      "un",
+      false,
+      false,
+      [
+       [
+        "u",
+        [
+         "e1"
+        ],
+        "fact",
+        "f28",
+        false,
+        false,
+        []
+       ],
+       [
+        "p",
+        [
+         "e1",
+         "e1"
+        ],
+        "fact",
+        "f33",
+        false,
+        false,
+        []
+       ]
+      ]
+     ],
+     [
+      "v",
+      [
+       "e3"
+      ],
+      "rule",
+      "un",
+      false,
+      true,
+      [
+       [
+        "u",
+        [
+         "e3"
+        ],
+        "fact",
+        "f5",
+        false,
+        true,
+        []
+       ],
+       [
+        "p",
+        [
+         "e3",
+         "e3"
+        ],
+        "fact",
+        "f103",
+        false,
+        false,
+        []
+       ]
+      ]
+     ]
+    ],
+    "negative": null
+   }
+  }
+ ]
+}

@@ -76,6 +76,62 @@ class DistinctAtomTests(unittest.TestCase):
             self.assertEqual(self.distinct(kb, 'vive(?p,lima)'), [('f1', Atom('vive', ('ana', 'lima')))])
             kb.close()
 
+    def test_disk_atoms_stay_current_under_direct_sql_writes(self):
+        # G-38b: another writer (e.g. an older engine) changes facts without the
+        # engine; the triggers inside the file keep the atom table current.
+        with tempfile.TemporaryDirectory() as d:
+            path = Path(d) / 'k.sqlite'
+            kb = SQLiteKnowledgeBase(path)
+            for source in ('s1', 's2'):
+                kb.add(Atom('p', ('a', 'b')), source)
+            kb.add(Atom('p', ('c', 'd'))); kb.close()
+            import sqlite3
+            db = sqlite3.connect(path)
+            db.execute("INSERT INTO facts(pred,base_pred,arity,a0,a1,source,fact_key) VALUES('p','p',2,'x','y','s9','k9')")
+            db.execute('DELETE FROM facts WHERE id IN (1,3)'); db.commit(); db.close()
+            kb = SQLiteKnowledgeBase(path)
+            self.assertEqual(self.distinct(kb, 'p(?u,?v)'), [('f2', Atom('p', ('a', 'b'))), ('f4', Atom('p', ('x', 'y')))])
+            self.assertEqual(Engine(kb).answer(Atom.parse('p(x,y)'))['status'], 'supported')
+            self.assertFalse(kb.contains(Atom('p', ('c', 'd'))))
+            kb.close()
+
+    def test_disk_keys_do_not_collide(self):
+        with tempfile.TemporaryDirectory() as d:
+            kb = SQLiteKnowledgeBase(Path(d) / 'k.sqlite')
+            first, second = Atom('p', ('a\x1fb', 'c')), Atom('p', ('a', 'b\x1fc'))
+            f1, f2 = kb.add(first, 's1'), kb.add(second, 's1')
+            self.assertNotEqual(f1, f2)
+            self.assertTrue(kb.contains(first)); self.assertTrue(kb.contains(second))
+            self.assertTrue(kb.remove(f1))
+            self.assertEqual(self.distinct(kb, 'p(a,?y)'), [(f2, second)])
+            kb.close()
+
+    def test_disk_file_in_an_older_format_is_migrated(self):
+        import sqlite3
+        with tempfile.TemporaryDirectory() as d:
+            path = Path(d) / 'k.sqlite'
+            kb = SQLiteKnowledgeBase(path)
+            for source in ('s1', 's2'):
+                kb.add(Atom('vive', ('ana', 'lima')), source)
+            kb.close()
+            # Rewrite the file as an estable-G-7 file: no atom table or triggers,
+            # separator-joined fact keys, format version 0.
+            import hashlib
+            db = sqlite3.connect(path)
+            for name in ('facts_atoms_insert', 'facts_atoms_delete', 'facts_atoms_update'):
+                db.execute(f'DROP TRIGGER {name}')
+            db.execute('DROP TABLE atoms'); db.execute('PRAGMA user_version=0')
+            for fid, source in db.execute('SELECT id, source FROM facts').fetchall():
+                old = hashlib.blake2b('\x1f'.join(('vive', source, 'ana', 'lima')).encode(), digest_size=16).hexdigest()
+                db.execute('UPDATE facts SET fact_key=? WHERE id=?', (old, fid))
+            db.commit(); db.close()
+            kb = SQLiteKnowledgeBase(path)
+            self.assertEqual(self.distinct(kb, 'vive(?p,?c)'), [('f1', Atom('vive', ('ana', 'lima')))])
+            self.assertEqual(kb.add(Atom('vive', ('ana', 'lima')), 's2'), 'f2')
+            kb.remove('f1')
+            self.assertEqual(self.distinct(kb, 'vive(ana,lima)'), [('f2', Atom('vive', ('ana', 'lima')))])
+            kb.close()
+
 
 if __name__ == '__main__':
     unittest.main()
