@@ -2,15 +2,15 @@
 
 ## Estado de misión
 
-- Actualizado: 2026-09-23 · commit 7321215 (último ensayo E, motor D-1 conservado)
+- Actualizado: 2026-09-23 · preregistro F-4 en `dbc2d69`; motor D-1 conservado
 - Fases: A superada en ensayo acotado · B superada en ensayo acotado · C superada en ensayo acotado · D superada en ensayo acotado · E refutada en cinco diseños preregistrados · F pendiente · G pendiente · H pendiente
 - Fase en curso: F — comprobar aprendizaje general con arquitectura congelada; E falló y sigue siendo obstáculo
 - Último tag estable: `estable-E-1` · huella del motor: `1f3187f2ced4c97364503187d074815f33612326` (mismo árbol que D-1; no se promovió mecanismo de lectura)
-- Pruebas: 536 pasan · 2 fallos esperados · 0 fallos · Python 3.12.3
+- Pruebas: 13 rápidas pasan · regresión estable anterior 536 pasan, 2 fallos esperados, 0 fallos · Python 3.12.3
 - Orden rápida: `timeout 40s env PYTHONHASHSEED=0 python3 -m unittest tests.test_meta_abstraction_a1 tests.test_meta_active_probe tests.test_v70 -q` · Orden completa: `timeout 600s env PYTHONHASHSEED=0 python3 -m experiments.regression_batches`
-- Preregistro activo: [F-3b](prereg/F-3b-alcance-verificado.md) · rechazado en desarrollo y control entre dominios
-- Diseños intentados en la fase en curso: F-1 tres familias 0; F-2 7/32; F-2b 256/512 ambos 4/32; F-3/F-3b alcance empeora; COGS 512 pares → 0 reglas y 0/32
-- Siguiente paso concreto: retirar el learner de secuencias candidato y sus pruebas operativas; preregistrar F-4 sobre representación tipada reutilizable entre entradas distintas, con control externo previo antes de añadir otro subsistema
+- Preregistro activo: [F-4](prereg/F-4-roles-desde-feedback.md) · rechazado en desarrollo, reserva intacta
+- Diseños intentados en la fase en curso: F-1 tres familias 0; F-2 7/32; F-2b 256/512 ambos 4/32; F-3/F-3b alcance empeora; COGS 512 pares → 0 reglas y 0/32; F-4 extracción 0/64 en desarrollo
+- Siguiente paso concreto: inspeccionar la adquisición lingüística existente y preregistrar F-5 sobre alineación relacional de pregunta y oración; exigir una mejora visible de desarrollo antes de abrir otra reserva externa
 - Bloqueos: ninguno
 - Lectura (seguimiento): 0/4 en la sonda visible `experiments/user_text_probe.py` al cerrar E; huella de código idéntica antes/después, no es reserva independiente
 - Tablero AGI (árbol idéntico al último tag): [resultado](results_v3/agi_board_freeze-D-1.json) · MLQA español público 0/20, 20 no reconocidas · cadena D-1 3/3 interna, learner C 0 candidatos ahorrados fuera de numérico · ARC-AGI-3 no evaluado · brecha frontier no comparable · obstáculo principal: adquirir significado de texto libre
@@ -18,6 +18,7 @@
 
 ## Historial de ciclos
 
+- 2026-09-23 · [F-4](prereg/F-4-roles-desde-feedback.md), piloto externo preregistrado en `dbc2d69` y ejecutado **solo en SQAC train de desarrollo**. [Resultado](results_v3/f4_span_dev.json): 2 000 pares ofrecidos, 1 608 usados, 392 sin tramo candidato, 2 122 093 candidatos enumerados. Con feedback, 0/64 respuestas exactas y 41 intentos erróneos; fresco 0/64 y 0 intentos. La mejor oración contenía la respuesta en 39/64, pero el clasificador contrastivo no elegía el tramo: el problema es la alineación semántica, no hallar una oración. Pasaje incorrecto: 38 intentos, 5 de confianza alta entre 64; guardar/cargar y retirar un episodio de sus contadores pasaron, sin demostrar revisión semántica. Adquisición 10,44 s CPU; evaluación tratamiento 0,78 s CPU, p95 25,82 ms; total 13,17 s CPU, 15,10 s pared, RAM pico 129 156 KiB. El motor permaneció en árbol `1f3187f`; el código piloto **no se congeló en tag** porque falló la puerta de desarrollo; SQAC dev y XQuAD no se consultaron. No integrar.
 - 2026-09-23 · Control de transferencia de la línea F-2/F-3b: [diagnóstico COGS](results_v3/f3b_cogs_transfer_probe.json), repositorio oficial en commit `165a7b6`, 512 pares de entrenamiento enseñados por la misma interfaz y 32 casos de desarrollo externos. **Cero reglas propuestas, 0/32 aciertos y 32 abstenciones**; CPU de adquisición 0,0047 s, total 0,223 s, RAM pico 47 900 KiB. No es reserva final de COGS, pero refuta la interpretación de F-2 como un learner de secuencias entre dominios. Los filtros exploratorios de desarrollo que reducían reglas de SCAN no se promueven por esta evidencia. Se retira F-2/F-3b del motor; Git conserva el tag `freeze-F-2` y resultados.
 - 2026-09-23 · [F-3b](prereg/F-3b-alcance-verificado.md) preregistrado en `342b00b`. En desarrollo, exigir que el conector binario explique realmente el ejemplo siguió dando 11/64 frente a 17/64 del aprendiz plano, cero errores seguros y 53 frente a 33 abstenciones ambiguas. 18 pruebas rápidas/focales pasaron, pero la puerta de desarrollo falló. Sin congelar nueva variante ni consultar reserva; se retiró. La pérdida parece venir de exceso de reglas rivales tras omitir evidencia discriminante, no solo del alcance de una palabra.
 - 2026-09-23 · [F-3](prereg/F-3-alcance-jerarquico.md) preregistrado en `cbc5b60`. Primer filtro de alcance probó solo datos de desarrollo: 17/64 aciertos sin filtro frente a 11/64 con filtro; respuestas ambiguas 33→53, aunque ambos sin errores seguros. Dos conectores binarios aprendidos bastaban para excluir también contraejemplos útiles de reglas unarias. No se congeló ni se puntuó reserva; variante retirada antes de promoción. Se requiere una condición que compruebe la explicación binaria efectiva, no mera presencia del marcador.
@@ -63,6 +64,7 @@
 
 ## Resultados negativos y trampas conocidas
 
+- F-4 confirma que contar forma, longitud y cercanía de palabras no basta para asociar una pregunta con su respuesta, incluso cuando la oración adecuada se recupera. El piloto no forma parte del motor; no convertir sus 41 intentos en evidencia de capacidad. El control de pasaje incorrecto revela respuestas espurias. La resta de contadores de un episodio prueba reversibilidad estadística, pero no retiro de una conclusión semántica. No se abrió la reserva externa ni se usó para ajustar umbrales.
 - F-2 demuestra una capacidad acotada de componer secuencias desde pares, pero 7/32 en reserva oficial SCAN queda bajo su criterio previo; 11/32 de desarrollo no cambia eso. La síntesis de reglas y 0/32 de controles distinguen aprendizaje de copia, pero todavía no hay prueba entre dominios ni lectura libre. La ruta candidata permanece sin tag estable mientras se prueba si más educación, con código idéntico, justifica su costo.
 - F-2b duplicó ejemplos y candidatos sin mejorar 4/32 en una reserva nueva. Un aumento de reglas no es mejora de capacidad: el costo por acierto casi se duplicó. En datos de desarrollo, el posible mecanismo faltante es delimitar qué subexpresión modifica una operación; no usar la reserva para elegir marcadores o soluciones concretas.
 - F-3 intentó delimitar alcance usando marcadores binarios ya adquiridos, pero excluir cualquier ejemplo que los contuviera produjo más ambigüedad y menos aciertos en desarrollo. La reserva no se usó y no se afirma progreso.
