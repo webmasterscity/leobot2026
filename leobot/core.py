@@ -174,7 +174,8 @@ class KnowledgeBase:
         self.remove(fid)
         nid = self.add(new, old['source'])
         self.audit.append({'event': 'correction', 'old': fid, 'new': nid,
-                           'old_atom': old['atom'].as_dict(), 'new_atom': new.as_dict()})
+                           'old_atom': old['atom'].as_dict(), 'new_atom': new.as_dict(),
+                           'source': old['source']})
         return nid
 
     def matches(self, pattern: Atom) -> Iterator[dict]:

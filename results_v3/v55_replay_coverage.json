@@ -1,0 +1,182 @@
+{
+  "version": "V5.5-development",
+  "mechanism": "selective_exact_replay_tree_expansion",
+  "code_hash_before": "e855f17757905ad7f22cf0fdb84df61edfa307ab98fd1eb85a58ee125f952001",
+  "code_hash_after": "e855f17757905ad7f22cf0fdb84df61edfa307ab98fd1eb85a58ee125f952001",
+  "code_unchanged": true,
+  "treatment": {
+    "domains": 30,
+    "online_attempts": 33,
+    "shadow_attempts": 24,
+    "online_candidates": 4020,
+    "shadow_candidates": 1314,
+    "all_candidates": 5334,
+    "regime_resets": 1,
+    "median_ms": 58.669107500463724,
+    "final_policy": "reverse_first",
+    "first_three": [
+      {
+        "domain": 50,
+        "online_attempts": 4,
+        "shadow_attempts": 24,
+        "online_candidates": 308,
+        "shadow_candidates": 1314,
+        "all_candidates": 1622,
+        "policy_used": "synth:cat,p,q,inv:forward,same,reverse",
+        "policy_after": "reverse_first",
+        "regime_reset": true,
+        "ms": 29.407397960312665
+      },
+      {
+        "domain": 51,
+        "online_attempts": 1,
+        "shadow_attempts": 0,
+        "online_candidates": 128,
+        "shadow_candidates": 0,
+        "all_candidates": 128,
+        "policy_used": "reverse_first",
+        "policy_after": "reverse_first",
+        "regime_reset": false,
+        "ms": 28.789528994821012
+      },
+      {
+        "domain": 52,
+        "online_attempts": 1,
+        "shadow_attempts": 0,
+        "online_candidates": 128,
+        "shadow_candidates": 0,
+        "all_candidates": 128,
+        "policy_used": "reverse_first",
+        "policy_after": "reverse_first",
+        "regime_reset": false,
+        "ms": 31.42942301928997
+      }
+    ],
+    "last_three": [
+      {
+        "domain": 77,
+        "online_attempts": 1,
+        "shadow_attempts": 0,
+        "online_candidates": 128,
+        "shadow_candidates": 0,
+        "all_candidates": 128,
+        "policy_used": "reverse_first",
+        "policy_after": "reverse_first",
+        "regime_reset": false,
+        "ms": 86.39294106978923
+      },
+      {
+        "domain": 78,
+        "online_attempts": 1,
+        "shadow_attempts": 0,
+        "online_candidates": 128,
+        "shadow_candidates": 0,
+        "all_candidates": 128,
+        "policy_used": "reverse_first",
+        "policy_after": "reverse_first",
+        "regime_reset": false,
+        "ms": 89.58815410733223
+      },
+      {
+        "domain": 79,
+        "online_attempts": 1,
+        "shadow_attempts": 0,
+        "online_candidates": 128,
+        "shadow_candidates": 0,
+        "all_candidates": 128,
+        "policy_used": "reverse_first",
+        "policy_after": "reverse_first",
+        "regime_reset": false,
+        "ms": 91.6067729704082
+      }
+    ]
+  },
+  "no_shadow_control": {
+    "domains": 30,
+    "online_attempts": 120,
+    "shadow_attempts": 0,
+    "online_candidates": 9240,
+    "shadow_candidates": 0,
+    "all_candidates": 9240,
+    "regime_resets": 0,
+    "median_ms": 41.156428516842425,
+    "final_policy": "synth:cat,p,q,inv:forward,same,reverse",
+    "first_three": [
+      {
+        "domain": 50,
+        "online_attempts": 4,
+        "shadow_attempts": 0,
+        "online_candidates": 308,
+        "shadow_candidates": 0,
+        "all_candidates": 308,
+        "policy_used": "synth:cat,p,q,inv:forward,same,reverse",
+        "policy_after": "synth:cat,p,q,inv:forward,same,reverse",
+        "regime_reset": false,
+        "ms": 27.903039008378983
+      },
+      {
+        "domain": 51,
+        "online_attempts": 4,
+        "shadow_attempts": 0,
+        "online_candidates": 308,
+        "shadow_candidates": 0,
+        "all_candidates": 308,
+        "policy_used": "synth:cat,p,q,inv:forward,same,reverse",
+        "policy_after": "synth:cat,p,q,inv:forward,same,reverse",
+        "regime_reset": false,
+        "ms": 28.997346060350537
+      },
+      {
+        "domain": 52,
+        "online_attempts": 4,
+        "shadow_attempts": 0,
+        "online_candidates": 308,
+        "shadow_candidates": 0,
+        "all_candidates": 308,
+        "policy_used": "synth:cat,p,q,inv:forward,same,reverse",
+        "policy_after": "synth:cat,p,q,inv:forward,same,reverse",
+        "regime_reset": false,
+        "ms": 30.508974101394415
+      }
+    ],
+    "last_three": [
+      {
+        "domain": 77,
+        "online_attempts": 4,
+        "shadow_attempts": 0,
+        "online_candidates": 308,
+        "shadow_candidates": 0,
+        "all_candidates": 308,
+        "policy_used": "synth:cat,p,q,inv:forward,same,reverse",
+        "policy_after": "synth:cat,p,q,inv:forward,same,reverse",
+        "regime_reset": false,
+        "ms": 53.234401042573154
+      },
+      {
+        "domain": 78,
+        "online_attempts": 4,
+        "shadow_attempts": 0,
+        "online_candidates": 308,
+        "shadow_candidates": 0,
+        "all_candidates": 308,
+        "policy_used": "synth:cat,p,q,inv:forward,same,reverse",
+        "policy_after": "synth:cat,p,q,inv:forward,same,reverse",
+        "regime_reset": false,
+        "ms": 53.57865709811449
+      },
+      {
+        "domain": 79,
+        "online_attempts": 4,
+        "shadow_attempts": 0,
+        "online_candidates": 308,
+        "shadow_candidates": 0,
+        "all_candidates": 308,
+        "policy_used": "synth:cat,p,q,inv:forward,same,reverse",
+        "policy_after": "synth:cat,p,q,inv:forward,same,reverse",
+        "regime_reset": false,
+        "ms": 51.539965090341866
+      }
+    ]
+  },
+  "scope_note": "Shadow probes run only when online attempts exceed the median-like historical threshold of the deployed policy, and execute on an isolated KB clone."
+}

@@ -1,0 +1,42 @@
+{
+  "version": "0.4.1",
+  "experiment": "existential_reified_event_schema",
+  "code_hash_before": "e855f17757905ad7f22cf0fdb84df61edfa307ab98fd1eb85a58ee125f952001",
+  "learned": {
+    "status": "schema_learned",
+    "arity": 3,
+    "projection": [
+      0,
+      1,
+      2
+    ],
+    "selected": "actor(z,r0) & sitio(z,r2) & tema(z,r1)",
+    "candidates_evaluated": 324,
+    "projection_rejections": 6,
+    "ms": 12.131415074691176,
+    "predicate_selected": [
+      "actor",
+      "sitio",
+      "tema"
+    ],
+    "unrelated_predicates_in_world": 5000,
+    "hidden_event_mentions_in_training_text": 0,
+    "heldout_positive": 100,
+    "heldout_positive_cases": 100,
+    "heldout_negative_rejected": 100,
+    "heldout_negative_cases": 100,
+    "median_query_ms": 0.3596185124479234
+  },
+  "controls": {
+    "v40_schema_language_without_existential": {
+      "solutions": 0,
+      "candidates_evaluated": 108,
+      "projection_rejections": 6,
+      "ms": 5.276951007544994
+    },
+    "episodic_memory_positive_heldout_hits": 0,
+    "episodic_memory_positive_heldout_cases": 100
+  },
+  "code_hash_after": "e855f17757905ad7f22cf0fdb84df61edfa307ab98fd1eb85a58ee125f952001",
+  "code_unchanged_during_evaluation": true
+}

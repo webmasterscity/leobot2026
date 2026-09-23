@@ -18,9 +18,11 @@ import re
 from typing import Iterable
 from collections import defaultdict, deque
 from difflib import SequenceMatcher
+from itertools import combinations
 
 from .language import normalize
 from .programs import ProgramLearner, LIMIT, Expr, COMMUTATIVE
+from .rbf import RBFStrategyRouter
 
 _NUM = re.compile(r'(?<!\w)-?\d+(?!\w)')
 _WORD = re.compile(r'[a-záéíóúüñ]+', re.IGNORECASE)
@@ -81,6 +83,24 @@ class ProcedureGrounder:
         # cues so behavioural equivalence cannot accidentally conflate goals
         # with transitions.
         self.goal_sessions: dict[str, dict] = {}
+        # Representation-independent transformation priors learned elsewhere.
+        # Only structural permutations are stored; no language/domain labels.
+        self.external_permutation_schemas: dict[str, dict] = {}
+        self.external_projection_schemas: dict[str, dict] = {}
+        self.external_role_sets: dict[str, dict] = {}
+        self.external_role_cardinalities: dict[str, dict] = {}
+        # Learned meta-policy for dependency-restricted program synthesis.
+        # Keys are structural classes only (input arity + number of relevant
+        # roles); no task names or answers are stored here.
+        self.dependency_search_stats: dict[str, dict] = {}
+        # V6.4: non-neural RBF meta-router. It only reorders the two existing
+        # dependency-search strategies from structural task features; it never
+        # generates answers or removes the completeness fallback.
+        self.rbf_strategy_enabled = True
+        self.rbf_strategy_router = RBFStrategyRouter()
+        # Shared bot-level MetaController. It is intentionally not persisted here;
+        # Bot owns the single auditable controller and reattaches it on load.
+        self.meta_controller = None
 
     @staticmethod
     def _pattern_tokens(pattern: str) -> tuple[str, ...]:
@@ -219,6 +239,355 @@ class ProcedureGrounder:
             raise ValueError(f'{label}: solo enteros con magnitud máxima 10^12.')
         return out
 
+    @staticmethod
+    def _permutation_key(perm) -> str:
+        perm=tuple(int(x) for x in perm)
+        return f"perm:{len(perm)}:" + ','.join(map(str,perm))
+
+    def register_external_permutation(self, perm, source: str, support: int = 1) -> dict:
+        perm=tuple(int(x) for x in perm)
+        if len(perm)<2 or tuple(sorted(perm))!=tuple(range(len(perm))) or perm==tuple(range(len(perm))):
+            return {'status':'cross_modal_schema_ignored','reason':'not_nontrivial_permutation'}
+        key=self._permutation_key(perm)
+        row=self.external_permutation_schemas.setdefault(key,{'kind':'permutation','perm':list(perm),'sources':{},'support':0})
+        src=normalize(str(source));old=int(row['sources'].get(src,0));row['sources'][src]=max(old,max(1,int(support)))
+        row['support']=sum(int(v) for v in row['sources'].values())
+        return {'status':'cross_modal_schema_registered','schema':key,'support':row['support'],'sources':len(row['sources'])}
+
+    @staticmethod
+    def observed_projection_signature(session: dict):
+        """Infer a pure role projection directly from independent transitions.
+
+        This deliberately does not inspect the syntactic form of synthesized
+        programs.  A projection is accepted only when, for every output role,
+        exactly one input position agrees with that output in *all* observed
+        supports.  If two input columns remain observationally indistinguishable
+        the result is ambiguous and no cross-representation prior is exported.
+        Parameters are excluded: this signature describes only state-role flow.
+        """
+        if int(session.get('parameter_count', 0)) != 0:
+            return None
+        n=int(session.get('input_arity',0)); m=int(session.get('output_arity',0))
+        supports=list(session.get('supports',()))
+        if n < 1 or m < 1 or not supports:
+            return None
+        mapping=[]
+        for out_pos in range(m):
+            candidates=[]
+            for in_pos in range(n):
+                ok=True
+                for row in supports:
+                    before=tuple(row.get('before',()))
+                    after=tuple(row.get('after',()))
+                    if len(before)!=n or len(after)!=m or before[in_pos] != after[out_pos]:
+                        ok=False; break
+                if ok:
+                    candidates.append(in_pos)
+            if len(candidates) != 1:
+                return None
+            mapping.append(candidates[0])
+        return n, tuple(mapping)
+
+    @staticmethod
+    def _projection_key(input_arity: int, mapping) -> str:
+        mapping=tuple(int(x) for x in mapping)
+        return f"proj:{int(input_arity)}:" + ','.join(map(str,mapping))
+
+    def register_external_projection(self, input_arity: int, mapping, source: str, support: int = 1) -> dict:
+        n=int(input_arity);mapping=tuple(int(x) for x in mapping)
+        if n<2 or not mapping or any(i<0 or i>=n for i in mapping):
+            return {'status':'cross_modal_schema_ignored','reason':'invalid_projection'}
+        if len(mapping)==n and mapping==tuple(range(n)):
+            return {'status':'cross_modal_schema_ignored','reason':'identity_projection'}
+        if len(mapping)==n and tuple(sorted(mapping))==tuple(range(n)):
+            return self.register_external_permutation(mapping,source,support)
+        key=self._projection_key(n,mapping)
+        row=self.external_projection_schemas.setdefault(key,{'kind':'projection','input_arity':n,'mapping':list(mapping),'sources':{},'support':0})
+        src=normalize(str(source));old=int(row['sources'].get(src,0));row['sources'][src]=max(old,max(1,int(support)))
+        row['support']=sum(int(v) for v in row['sources'].values())
+        return {'status':'cross_modal_schema_registered','schema':key,'support':row['support'],'sources':len(row['sources'])}
+
+    @staticmethod
+    def _role_set_key(input_arity: int, roles) -> str:
+        vals=tuple(sorted(set(int(x) for x in roles)))
+        return f"roles:{int(input_arity)}:" + ','.join(map(str,vals))
+
+    def register_external_role_set(self, input_arity: int, roles, source: str, support: int = 1) -> dict:
+        n=int(input_arity); vals=tuple(sorted(set(int(x) for x in roles)))
+        if n<2 or not vals or len(vals)>=n or any(i<0 or i>=n for i in vals):
+            return {'status':'cross_modal_schema_ignored','reason':'invalid_role_set'}
+        key=self._role_set_key(n,vals)
+        row=self.external_role_sets.setdefault(key,{'kind':'role_set','input_arity':n,'roles':list(vals),'sources':{},'support':0})
+        src=normalize(str(source));old=int(row['sources'].get(src,0));row['sources'][src]=max(old,max(1,int(support)))
+        row['support']=sum(int(v) for v in row['sources'].values())
+        return {'status':'cross_modal_schema_registered','schema':key,'support':row['support'],'sources':len(row['sources'])}
+
+    def _matching_external_role_set(self, session: dict):
+        if int(session.get('parameter_count',0))!=0:return None
+        supports=list(session.get('supports',()))
+        if len(supports)<2:return None
+        sig=self.observed_projection_signature(session)
+        if sig is None:return None
+        n,mapping=sig; roles=tuple(sorted(set(mapping))); key=self._role_set_key(n,roles)
+        prior=self.external_role_sets.get(key)
+        return (key,mapping,prior) if prior is not None else None
+
+    def register_external_role_cardinality(self, cardinality: int, source: str, support: int = 1) -> dict:
+        k=int(cardinality)
+        if k < 1 or k > 7:
+            return {'status':'cross_modal_schema_ignored','reason':'invalid_role_cardinality'}
+        key=f'card:{k}'
+        row=self.external_role_cardinalities.setdefault(key,{'kind':'role_cardinality','cardinality':k,
+                                                            'sources':{},'support':0})
+        src=normalize(str(source)); old=int(row['sources'].get(src,0))
+        row['sources'][src]=max(old,max(1,int(support)))
+        row['support']=sum(int(v) for v in row['sources'].values())
+        return {'status':'cross_modal_schema_registered','schema':key,'support':row['support'],
+                'sources':len(row['sources'])}
+
+    @staticmethod
+    def _dependency_roles_supported(session: dict, output_index: int, roles) -> bool:
+        supports=list(session.get('supports',()))
+        n=int(session.get('input_arity',0)); roles=tuple(sorted(set(int(x) for x in roles)))
+        if not roles or len(roles)>=n or len(supports)<2:
+            return False
+        outside=tuple(i for i in range(n) if i not in roles)
+        excluded_witness={i:False for i in outside}
+        included_witness={i:False for i in roles}
+        for i,left in enumerate(supports):
+            lb=tuple(left['before']); lo=tuple(left['after'])[output_index]
+            for right in supports[i+1:]:
+                rb=tuple(right['before']); ro=tuple(right['after'])[output_index]
+                if all(lb[k]==rb[k] for k in roles):
+                    for k in outside:
+                        if lb[k]!=rb[k]:
+                            if lo!=ro: return False
+                            excluded_witness[k]=True
+                if lo!=ro:
+                    for k in roles:
+                        if lb[k]!=rb[k] and all(lb[j]==rb[j] for j in roles if j!=k):
+                            included_witness[k]=True
+        return all(excluded_witness.values()) and all(included_witness.values())
+
+    def _matching_external_dependency_cardinality(self, session: dict, output_index: int):
+        """Infer unseen role positions from a learned sparsity/cardinality prior.
+
+        The prior provides only *how many* roles tend to matter.  The new task's
+        own interventions must identify *which* roles.  At least two independent
+        provenance sources are required before a cardinality prior can transfer
+        across arities.
+        """
+        if int(session.get('parameter_count',0)) != 0:
+            return None
+        supports=list(session.get('supports',()))
+        if len(supports) < self.min_support:
+            return None
+        n=int(session.get('input_arity',0))
+        winners=[]
+        for key,row in self.external_role_cardinalities.items():
+            if len(row.get('sources',{})) < 2:
+                continue
+            k=int(row.get('cardinality',0))
+            if k < 1 or k >= n:
+                continue
+            for roles in combinations(range(n),k):
+                if self._dependency_roles_supported(session,output_index,roles):
+                    winners.append((f'{key}->roles:{n}:'+','.join(map(str,roles)),tuple(roles),row))
+        return winners[0] if len(winners)==1 else None
+
+    @staticmethod
+    def _dependency_policy_key(input_arity: int, roles) -> str:
+        return f"{int(input_arity)}:{len(tuple(roles))}"
+
+    @staticmethod
+    def _dependency_rbf_features(input_arity: int, roles, support_count: int = 0) -> tuple[float, ...]:
+        """Domain-neutral, scaled structural features for the RBF router.
+
+        No task name, predicate, entity, output, or held-out label is present.
+        The role fraction lets nearby arities share evidence without declaring
+        them semantically identical.
+        """
+        n=max(1,int(input_arity)); k=len(tuple(roles)); s=max(0,int(support_count))
+        return (min(n,8)/8.0, min(k,4)/2.0, k/n, min(s,8)/8.0)
+
+    def _dependency_strategy_order(self, input_arity: int, roles, support_count: int = 0):
+        key=self._dependency_policy_key(input_arity,roles)
+        table=self.dependency_search_stats.get(key,{})
+        default=['auto_library','no_library']
+        # Exact historical class remains the first authority.
+        if table:
+            seen=[]
+            for strategy in default:
+                row=table.get(strategy)
+                if not row or int(row.get('trials',0)) <= 0:
+                    continue
+                trials=max(1,int(row.get('trials',0))); success=int(row.get('success',0))
+                avg=float(row.get('candidates',0))/trials
+                seen.append((-success/trials,avg,strategy))
+            seen.sort(); ordered=[x[2] for x in seen]
+            ordered.extend(x for x in default if x not in ordered)
+            return key,ordered,{'used':False,'mode':'exact_class','scores':[]}
+        # Only unseen structural classes are eligible for interpolation.  The
+        # router can save search effort but cannot suppress either strategy.
+        if self.rbf_strategy_enabled:
+            features=self._dependency_rbf_features(input_arity,roles,support_count)
+            rbf=self.rbf_strategy_router.rank(features,default)
+            return key,list(rbf['order']),{**rbf,'mode':'rbf','features':list(features)}
+        return key,default,{'used':False,'mode':'disabled','scores':[]}
+
+    def _record_dependency_strategy(self, key: str, strategy: str, report: dict,
+                                    input_arity: int | None = None, roles=(),
+                                    support_count: int = 0) -> None:
+        table=self.dependency_search_stats.setdefault(key,{})
+        row=table.setdefault(strategy,{'trials':0,'success':0,'candidates':0})
+        success=report.get('status')=='learned_hypothesis'
+        row['trials']=int(row.get('trials',0))+1
+        row['success']=int(row.get('success',0))+success
+        row['candidates']=int(row.get('candidates',0))+max(0,int(report.get('candidates',0) or 0))
+        if input_arity is not None:
+            self.rbf_strategy_router.observe(
+                self._dependency_rbf_features(input_arity,roles,support_count), strategy,
+                success=success, candidates=int(report.get('candidates',0) or 0),
+                failure_budget=int(getattr(self.programs,'max_candidates',1) or 1))
+
+    def _meta_representation_features(self, session: dict) -> tuple[float, ...]:
+        """Learner-neutral structural signature used by the shared MetaController.
+
+        Positions have the same meaning in the symbolic learner: arity, support,
+        failure fraction, output/effect width, and availability of role-set,
+        cardinality, projection/permutation and topology priors.  No words, task
+        names, entities or answers are included.
+        """
+        n=max(1,int(session.get('input_arity',0)))
+        support=max(0,len(session.get('supports',())))
+        out=max(0,int(session.get('output_arity',0)))
+        rs=sum(1 for row in self.external_role_sets.values() if int(row.get('input_arity',0))==n)
+        card=sum(1 for row in self.external_role_cardinalities.values() if 0<int(row.get('cardinality',0))<n)
+        proj=(sum(1 for row in self.external_projection_schemas.values() if int(row.get('input_arity',0))==n)
+              +sum(1 for row in self.external_permutation_schemas.values() if len(row.get('perm',()))==n))
+        return (min(n,8)/8.0,min(support,8)/8.0,0.0,min(out,8)/8.0,
+                min(rs,8)/8.0,min(card,8)/8.0,min(proj,8)/8.0,0.0)
+
+    def _meta_representation_order(self, session: dict, strategies) -> tuple[list[str], dict]:
+        default=list(strategies)
+        if self.meta_controller is None:
+            return default,{'used':False,'mode':'disabled','order':default}
+        route=self.meta_controller.rank('representation',self._meta_representation_features(session),default)
+        return list(route.get('order',default)),route
+
+    def _record_meta_representation(self, session: dict, strategy: str, success: bool, cost: float = 1.0) -> None:
+        if self.meta_controller is None:
+            return
+        self.meta_controller.observe('representation',self._meta_representation_features(session),strategy,
+                                     success=bool(success),cost=max(0.001,float(cost)),failure_budget=2.0)
+
+    def _matching_external_dependency_role_set(self, session: dict, output_index: int):
+        """Select an unordered relevance prior using target-domain invariance.
+
+        A prior is admissible only when the target observations themselves show
+        that changing roles outside the set can leave this output unchanged, and
+        changing selected roles can change the output.  The prior then restricts
+        the synthesis alphabet; it never supplies the arithmetic operation.
+        """
+        if int(session.get('parameter_count',0)) != 0:
+            return None
+        supports=list(session.get('supports',()))
+        if len(supports) < self.min_support:
+            return None
+        n=int(session.get('input_arity',0))
+        if n < 2 or not (0 <= int(output_index) < int(session.get('output_arity',0))):
+            return None
+        winners=[]
+        for key,row in self.external_role_sets.items():
+            if int(row.get('input_arity',0)) != n:
+                continue
+            roles=tuple(sorted(set(int(x) for x in row.get('roles',()))))
+            if not roles or len(roles) >= n:
+                continue
+            outside=tuple(i for i in range(n) if i not in roles)
+            excluded_witness={i:False for i in outside}
+            included_witness={i:False for i in roles}
+            violated=False
+            for i,left in enumerate(supports):
+                lb=tuple(left['before']); lo=tuple(left['after'])[output_index]
+                for right in supports[i+1:]:
+                    rb=tuple(right['before']); ro=tuple(right['after'])[output_index]
+                    selected_same=all(lb[k] == rb[k] for k in roles)
+                    if selected_same:
+                        for k in outside:
+                            if lb[k] != rb[k]:
+                                if lo != ro:
+                                    violated=True; break
+                                excluded_witness[k]=True
+                    if violated: break
+                    if lo != ro:
+                        for k in roles:
+                            if lb[k] != rb[k] and all(lb[j] == rb[j] for j in roles if j != k):
+                                included_witness[k]=True
+                if violated: break
+            if (not violated and all(excluded_witness.values())
+                    and all(included_witness.values())):
+                winners.append((key,roles,row))
+        return winners[0] if len(winners)==1 else None
+
+    def _matching_external_projection(self, session: dict):
+        if int(session.get('parameter_count',0))!=0:return None
+        n=int(session.get('input_arity',0));m=int(session.get('output_arity',0))
+        if n<2 or m<1:return None
+        supports=list(session.get('supports',()))
+        if len(supports)<2:return None
+        winners=[]
+        for key,row in self.external_projection_schemas.items():
+            mapping=tuple(int(x) for x in row.get('mapping',()))
+            if int(row.get('input_arity',0))!=n or len(mapping)!=m:continue
+            ok=True
+            for ex in supports:
+                before=tuple(ex['before']);after=tuple(ex['after'])
+                if tuple(before[i] for i in mapping)!=after:
+                    ok=False;break
+            if ok:winners.append((key,mapping,row))
+        return winners[0] if len(winners)==1 else None
+
+    def _matching_external_permutation(self, session: dict):
+        if int(session.get('parameter_count',0))!=0:return None
+        n=int(session.get('input_arity',0))
+        if n<2 or int(session.get('output_arity',0))!=n:return None
+        supports=list(session.get('supports',()))
+        if len(supports)<2:return None
+        winners=[]
+        for key,row in self.external_permutation_schemas.items():
+            perm=tuple(int(x) for x in row.get('perm',()))
+            if len(perm)!=n:continue
+            ok=True
+            for ex in supports:
+                before=tuple(ex['before']); after=tuple(ex['after'])
+                if tuple(before[i] for i in perm)!=after:
+                    ok=False;break
+            if ok:winners.append((key,perm,row))
+        return winners[0] if len(winners)==1 else None
+
+    def _install_external_permutation(self, session: dict, match) -> list[dict]:
+        key,perm,row=match;reports=[]
+        if str(key).startswith('roles:'):
+            mode='meta_role_set_transfer'; reason='meta_role_set_prior'
+        elif str(key).startswith('proj:'):
+            mode='cross_modal_projection_transfer'; reason='cross_modal_projection_prior'
+        else:
+            mode='cross_modal_permutation_transfer'; reason='cross_modal_permutation_prior'
+        for out_idx,skill in enumerate(session['output_skills']):
+            expr=Expr('var',perm[out_idx])
+            self.programs.solutions[skill]=[expr]
+            self.programs.dependencies[skill]=set()
+            rep={'status':'learned_hypothesis','examples':len(session['supports']),'candidates':0,
+                 'search_complete':True,'programs':[str(expr)],'reason':reason,
+                 'cross_modal_schema':key}
+            self.programs.reports[skill]=dict(rep);reports.append({'skill':skill,**rep})
+        session['promoted']=True;session['last_reports']=reports;session['cross_modal_schema']=key
+        session['cross_modal_mode']=mode
+        session['cross_modal_sources']=sorted(row.get('sources',{}))
+        self._register_semantics(session['pattern'])
+        return reports
+
     def observe(self, text: str, before: Iterable[int], after: Iterable[int]) -> dict:
         """Observe one independently produced transition; no semantic frame is supplied."""
         if not isinstance(text, str) or not text.strip() or len(text) > 2048:
@@ -264,23 +633,112 @@ class ProcedureGrounder:
 
         support = len(session['supports'])
         if support < self.min_support:
+            strategy_fns={
+                'projection':self._matching_external_projection,
+                'permutation':self._matching_external_permutation,
+                'role_set':self._matching_external_role_set,
+            }
+            order,route=self._meta_representation_order(session,['projection','permutation','role_set'])
+            match=None; chosen_strategy=None; meta_attempts=[]
+            for strategy in order:
+                fn=strategy_fns.get(strategy)
+                trial=fn(session) if fn is not None else None
+                ok=trial is not None
+                self._record_meta_representation(session,strategy,ok)
+                meta_attempts.append({'strategy':strategy,'matched':ok})
+                if ok:
+                    match=trial; chosen_strategy=strategy; break
+            if match is not None:
+                reports=self._install_external_permutation(session,match)
+                result={'status':'procedure_learned','pattern':pattern,'support':support,'required':self.min_support,
+                        'duplicate':duplicate,'promoted':True,'reports':reports,
+                        'programs':[r.get('programs',[]) for r in reports],
+                        'precondition_mode':session.get('cross_modal_mode','cross_modal_transfer'),
+                        'cross_modal_schema':match[0],'cross_modal_sources':session.get('cross_modal_sources',[]),
+                        'meta_controller_route':route,'meta_controller_attempts':meta_attempts,
+                        'meta_controller_strategy':chosen_strategy}
+                self.audit.append({'event':'observe_cross_modal_fit',**deepcopy(result)})
+                return result
             result = {
                 'status': 'procedure_pending', 'pattern': pattern, 'support': support,
                 'required': self.min_support, 'duplicate': duplicate, 'promoted': False,
+                'meta_controller_route':route,'meta_controller_attempts':meta_attempts,
             }
             self.audit.append({'event':'observe_pending', **result})
             return result
 
         reports = []
         all_learned = True
+        dependency_schemas=[]
         if not duplicate or not session.get('promoted'):
-            for skill in session['output_skills']:
-                report = self.programs.fit(skill)
+            for output_index, skill in enumerate(session['output_skills']):
+                rep_order,rep_route=self._meta_representation_order(session,['role_set','role_cardinality'])
+                dep=None; dep_strategy=None; rep_attempts=[]
+                for rep_strategy in rep_order:
+                    if rep_strategy=='role_set':
+                        candidate=self._matching_external_dependency_role_set(session,output_index)
+                    else:
+                        candidate=self._matching_external_dependency_cardinality(session,output_index)
+                    matched=candidate is not None
+                    rep_attempts.append({'strategy':rep_strategy,'matched':matched})
+                    if not matched:
+                        self._record_meta_representation(session,rep_strategy,False)
+                        continue
+                    dep=candidate; dep_strategy=rep_strategy; break
+                if dep is not None:
+                    dep_key, dep_roles, dep_row=dep
+                    policy_key,strategy_order,rbf_route=self._dependency_strategy_order(
+                        int(session.get('input_arity',0)),dep_roles,len(session.get('supports',())))
+                    attempts=[]; report=None
+                    for strategy in strategy_order:
+                        if strategy=='auto_library':
+                            trial=self.programs.fit(skill,allowed_vars=dep_roles)
+                        else:
+                            trial=self.programs.fit(skill,library=[],allowed_vars=dep_roles)
+                        self._record_dependency_strategy(
+                            policy_key,strategy,trial,int(session.get('input_arity',0)),dep_roles,
+                            len(session.get('supports',())))
+                        attempts.append({'strategy':strategy,'status':trial.get('status'),
+                                         'candidates':trial.get('candidates'),
+                                         'library_seeded':trial.get('library_seeded',0)})
+                        report=trial
+                        if trial.get('status')=='learned_hypothesis':
+                            break
+                    report={**report,'meta_dependency_schema':dep_key,
+                            'meta_dependency_roles':list(dep_roles),
+                            'meta_dependency_sources':sorted(dep_row.get('sources',{})),
+                            'meta_dependency_policy_key':policy_key,
+                            'meta_dependency_strategy_order':strategy_order,
+                            'meta_dependency_rbf_route':rbf_route,
+                            'meta_dependency_attempts':attempts}
+                    dependency_schemas.append(dep_key)
+                    # The learned policy orders search but cannot remove the
+                    # general learner. If every restricted strategy fails, use
+                    # ordinary unrestricted synthesis as a completeness fallback.
+                    representation_success=report.get('status')=='learned_hypothesis'
+                    self._record_meta_representation(session,dep_strategy,representation_success,
+                                                     cost=max(1.0,float(len(rep_attempts))))
+                    report={**report,'meta_controller_route':rep_route,
+                            'meta_controller_representation_attempts':rep_attempts,
+                            'meta_controller_representation_strategy':dep_strategy}
+                    if report.get('status') != 'learned_hypothesis':
+                        fallback=self.programs.fit(skill)
+                        report={**fallback,'meta_dependency_attempt':{
+                            'schema':dep_key,'roles':list(dep_roles),
+                            'restricted_attempts':attempts},
+                            'meta_controller_route':rep_route,
+                            'meta_controller_representation_attempts':rep_attempts,
+                            'meta_controller_representation_strategy':dep_strategy}
+                else:
+                    report = self.programs.fit(skill)
+                    report={**report,'meta_controller_route':rep_route,
+                            'meta_controller_representation_attempts':rep_attempts}
                 reports.append({'skill': skill, **report})
                 if report.get('status') != 'learned_hypothesis':
                     all_learned = False
             session['last_reports'] = reports
             session['promoted'] = bool(all_learned)
+            session['meta_dependency_schemas']=sorted(set(dependency_schemas))
             self._register_semantics(pattern)
         else:
             reports = list(session.get('last_reports', ()))
@@ -291,8 +749,132 @@ class ProcedureGrounder:
             'pattern': pattern, 'support': support, 'required': self.min_support,
             'duplicate': duplicate, 'promoted': bool(all_learned), 'reports': reports,
             'programs': [r.get('programs', []) for r in reports],
+            'meta_dependency_schemas': list(session.get('meta_dependency_schemas',())),
         }
+        if not all_learned:
+            probe=self.suggest_probe(pattern,0)
+            if probe.get('status')=='evidence_probe':
+                result['evidence_request']=probe
         self.audit.append({'event':'observe_fit', **deepcopy(result)})
+        return result
+
+    def _candidate_dependency_role_sets(self, session: dict, output_index: int = 0):
+        """Return cardinality-compatible role subsets not yet contradicted.
+
+        This is a version-space diagnostic, not a learned answer. A subset is
+        discarded only when two observed inputs are identical on that subset but
+        have different outputs. The target function itself is never inspected.
+        """
+        if int(session.get('parameter_count',0))!=0:
+            return []
+        supports=list(session.get('supports',()))
+        n=int(session.get('input_arity',0)); out_idx=int(output_index)
+        if n<2 or not supports or not 0<=out_idx<int(session.get('output_arity',0)):
+            return []
+        cardinalities=sorted({int(r.get('cardinality',0)) for r in self.external_role_cardinalities.values()
+                              if len(r.get('sources',{}))>=2 and 0<int(r.get('cardinality',0))<n})
+        candidates=[]
+        for k in cardinalities:
+            for roles in combinations(range(n),k):
+                consistent=True
+                for i,left in enumerate(supports):
+                    lb=tuple(left['before']); lo=tuple(left['after'])[out_idx]
+                    for right in supports[i+1:]:
+                        rb=tuple(right['before']); ro=tuple(right['after'])[out_idx]
+                        if all(lb[j]==rb[j] for j in roles) and lo!=ro:
+                            consistent=False; break
+                    if not consistent: break
+                if consistent:
+                    candidates.append(tuple(roles))
+        return candidates
+
+    def suggest_probe(self, text: str, output_index: int = 0, role_costs=None) -> dict:
+        """Propose a target-free numeric intervention that splits role hypotheses.
+
+        The returned state is an *experiment request*: Leobot does not predict its
+        output. An external environment/user may execute it and feed the observed
+        transition back through :meth:`observe`. This keeps active learning
+        auditable and avoids fabricating labels.
+        """
+        pattern,_params=_surface(text)
+        session=self.sessions.get(pattern)
+        if session is None:
+            return {'status':'no_probe','reason':'unknown_procedure_pattern'}
+        if int(session.get('parameter_count',0))!=0:
+            return {'status':'no_probe','reason':'parameterized_surface_not_supported'}
+        candidates=self._candidate_dependency_role_sets(session,output_index)
+        if len(candidates)<2:
+            return {'status':'no_probe','reason':'role_version_space_not_ambiguous',
+                    'candidate_role_sets':[list(x) for x in candidates]}
+        n=int(session.get('input_arity',0)); supports=list(session.get('supports',()))
+        # Choose the coordinate whose membership most evenly partitions current
+        # hypotheses. Ties are deterministic and therefore reproducible.
+        # Prefer coordinates not yet isolated by a controlled one-role
+        # intervention. Repeating a role that already produced an invariance or
+        # sensitivity witness usually adds less information than testing a new one.
+        tested=set()
+        for i,left in enumerate(supports):
+            lb=tuple(left['before'])
+            for right in supports[i+1:]:
+                rb=tuple(right['before'])
+                diffs=[j for j in range(n) if lb[j]!=rb[j]]
+                if len(diffs)==1:
+                    tested.add(diffs[0])
+        # V6.6: expected information gain per declared intervention cost.
+        # With equal costs this preserves the previous balanced-split behaviour;
+        # callers may declare a higher real-world cost for manipulating some
+        # roles. The outcome itself is never predicted or fabricated.
+        def role_cost(role):
+            if role_costs is None:
+                base=1.0
+            elif isinstance(role_costs,dict):
+                base=float(role_costs.get(role,1.0))
+            else:
+                vals=list(role_costs)
+                base=float(vals[role]) if role < len(vals) else 1.0
+            if not (base > 0.0):
+                raise ValueError('Los costos de intervención deben ser positivos.')
+            # Prefer unseen interventions when epistemic value is otherwise tied.
+            return base*(1.20 if role in tested else 1.0)
+        actions=[]
+        details=[]
+        for role in range(n):
+            inside_h=[c for c in candidates if role in c]
+            outside_h=[c for c in candidates if role not in c]
+            if inside_h and outside_h:
+                actions.append({'label':role,'groups':[inside_h,outside_h],'cost':role_cost(role)})
+                details.append((role,len(inside_h),len(outside_h)))
+        if not actions:
+            return {'status':'no_probe','reason':'no_discriminating_role',
+                    'candidate_role_sets':[list(x) for x in candidates]}
+        if self.meta_controller is not None:
+            epistemic=self.meta_controller.select_epistemic_action(candidates,actions)
+            if epistemic.get('status')=='epistemic_action':
+                pick=int(epistemic['chosen_index']); role=int(actions[pick]['label'])
+                inside=sum(role in c for c in candidates); outside=len(candidates)-inside
+            else:
+                epistemic=None; details.sort(key=lambda x:(x[0] in tested,-min(x[1],x[2]),abs(x[1]-x[2]),x[0]))
+                role,inside,outside=details[0]
+        else:
+            epistemic=None; details.sort(key=lambda x:(x[0] in tested,-min(x[1],x[2]),abs(x[1]-x[2]),x[0]))
+            role,inside,outside=details[0]
+        base=list(tuple(supports[0]['before']))
+        existing={tuple(x['before']) for x in supports}
+        proposal=None
+        for delta in (1,-1,2,-2,5,11,-11):
+            q=list(base); q[role]=int(q[role])+delta
+            if tuple(q) not in existing:
+                proposal=tuple(q); break
+        if proposal is None:
+            return {'status':'no_probe','reason':'could_not_construct_novel_intervention'}
+        result={'status':'evidence_probe','pattern':pattern,'before':proposal,
+                'output_index':int(output_index),'vary_role':role,
+                'candidate_role_sets':[list(x) for x in candidates],
+                'partition':{'contains_role':inside,'excludes_role':outside},
+                'reason':'maximize_expected_information_gain_per_cost' if epistemic else 'maximize_role_hypothesis_disagreement'}
+        if epistemic:
+            result['epistemic_selection']=epistemic
+            result['intervention_cost']=float(actions[int(epistemic['chosen_index'])]['cost'])
         return result
 
     def _execute_atomic(self, text: str, state: Iterable[int]) -> dict:
@@ -317,6 +899,12 @@ class ProcedureGrounder:
         args = state_t + params
         if len(args) > 4:
             return {'status':'incompatible_state','pattern':pattern,'result':None}
+        for counterexample in session.get('counterexamples', ()):
+            if (tuple(counterexample['before']) == state_t
+                    and tuple(counterexample['params']) == params):
+                return {'status':'corrected_conflict','pattern':pattern,
+                        'matched_pattern':variant,'result':None,
+                        'observed_after':tuple(counterexample['after'])}
         values=[]; details=[]
         for skill in session['output_skills']:
             pred = self.programs.predict(skill, args)
@@ -369,6 +957,40 @@ class ProcedureGrounder:
         out = {'status':'executed_plan','pattern':normalize(text),'result':current,'steps':steps}
         self.audit.append({'event':'execute_plan','pattern':normalize(text),'steps':len(steps),'result':list(current)})
         return out
+
+    def correct(self, text: str, before: Iterable[int], after: Iterable[int]) -> dict:
+        """Apply an explicit correction to one grounded procedure (from V8.9).
+
+        If the promoted program contradicts the corrected transition, only this
+        surface is demoted: its supports, examples and induced programs are
+        discarded and it must be re-taught. The correction is retained as
+        counterevidence for its exact input, so a later general program cannot
+        silently overwrite it. Other procedures are untouched. Without a
+        contradiction the correction is an ordinary observation.
+        """
+        before_t = self._validate_state(before, 'estado inicial')
+        after_t = self._validate_state(after, 'estado final')
+        pattern, params = _surface(text)
+        session = self.sessions.get(pattern)
+        if session is None or not session.get('promoted'):
+            return self.observe(text, before_t, after_t)
+        predicted = self._execute_atomic(text, before_t)
+        if predicted.get('status') == 'executed' and tuple(predicted['result']) == after_t:
+            return self.observe(text, before_t, after_t)
+        session['promoted'] = False
+        session['supports'] = []
+        session['last_reports'] = []
+        counterexamples=session.setdefault('counterexamples',[])
+        counterexamples[:]=[row for row in counterexamples
+                            if tuple(row['before'])!=before_t or tuple(row['params'])!=params]
+        counterexamples.append({'before':list(before_t),'params':list(params),
+                                'after':list(after_t)})
+        for skill in session.get('output_skills', []):
+            for table in (self.programs.examples, self.programs.solutions, self.programs.reports):
+                table.pop(skill, None)
+        self.audit.append({'event':'correct','pattern':pattern,'before':list(before_t),'after':list(after_t),
+                           'predicted':list(predicted['result']) if predicted.get('result') is not None else None})
+        return {'status':'procedure_demoted','pattern':pattern,'reason':'counterexample_conflict','promoted':False}
 
     def observe_goal(self, text: str, goal: Iterable[int]) -> dict:
         """Learn a target-state construction from natural text + observed target.
@@ -502,19 +1124,26 @@ class ProcedureGrounder:
 
     def as_dict(self) -> dict:
         return {
-            'version':3, 'min_support':self.min_support,
+            'version':9, 'min_support':self.min_support,
             'semantic_rewrites_enabled':self.semantic_rewrites_enabled,
             'sequence_composition_enabled':self.sequence_composition_enabled,
             'max_rewrite_states':self.max_rewrite_states, 'max_rewrite_steps':self.max_rewrite_steps,
             'sessions':deepcopy(self.sessions),'goal_sessions':deepcopy(self.goal_sessions),'audit':deepcopy(self.audit),
             'semantic_families':{k:sorted(v) for k,v in self.semantic_families.items()},
             'rewrite_evidence':{k:[[list(a),list(b)] for a,b in rules] for k,rules in self.rewrite_evidence.items()},
+            'external_permutation_schemas':deepcopy(self.external_permutation_schemas),
+            'external_projection_schemas':deepcopy(self.external_projection_schemas),
+            'external_role_sets':deepcopy(self.external_role_sets),
+            'external_role_cardinalities':deepcopy(self.external_role_cardinalities),
+            'dependency_search_stats':deepcopy(self.dependency_search_stats),
+            'rbf_strategy_enabled':self.rbf_strategy_enabled,
+            'rbf_strategy_router':self.rbf_strategy_router.as_dict(),
         }
 
     @classmethod
     def from_dict(cls, data: dict, programs: ProgramLearner) -> 'ProcedureGrounder':
         version=data.get('version',1)
-        if version not in (1,2,3):
+        if version not in (1,2,3,4,5,6,7,8,9):
             raise ValueError('Estado de grounding de procedimientos no compatible.')
         obj=cls(programs,min_support=data.get('min_support',3),
                 semantic_rewrites=data.get('semantic_rewrites_enabled',True),
@@ -535,4 +1164,12 @@ class ProcedureGrounder:
             for pattern, session in list(obj.sessions.items()):
                 if session.get('promoted'):
                     obj._register_semantics(pattern)
+        obj.external_permutation_schemas=deepcopy(data.get('external_permutation_schemas',{})) if version>=4 else {}
+        obj.external_projection_schemas=deepcopy(data.get('external_projection_schemas',{})) if version>=5 else {}
+        obj.external_role_sets=deepcopy(data.get('external_role_sets',{})) if version>=6 else {}
+        obj.external_role_cardinalities=deepcopy(data.get('external_role_cardinalities',{})) if version>=8 else {}
+        obj.dependency_search_stats=deepcopy(data.get('dependency_search_stats',{})) if version>=7 else {}
+        if version>=9:
+            obj.rbf_strategy_enabled=bool(data.get('rbf_strategy_enabled',True))
+            obj.rbf_strategy_router=RBFStrategyRouter.from_dict(data.get('rbf_strategy_router',{}))
         return obj

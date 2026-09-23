@@ -1,0 +1,60 @@
+{
+  "version": "V8.1-symbolic-plan-spanish",
+  "log": [
+    [
+      "sym",
+      "pending_support"
+    ],
+    [
+      "sym",
+      "pending_support"
+    ],
+    [
+      "sym",
+      "operator_learned"
+    ],
+    [
+      "proc",
+      "procedure_pending"
+    ],
+    [
+      "proc",
+      "procedure_pending"
+    ],
+    [
+      "proc",
+      "procedure_learned"
+    ]
+  ],
+  "sym_learned": true,
+  "plan_status": "plan_found",
+  "plan_steps": [
+    {
+      "kind": "primitive",
+      "operator": "<e0> va de <e1> a <e2>",
+      "action": "robot va de casa a escuela",
+      "binding": {
+        "<e0>": "robot",
+        "<e1>": "casa",
+        "<e2>": "escuela"
+      },
+      "added": [
+        [
+          "at",
+          "robot",
+          "escuela"
+        ]
+      ],
+      "removed": [
+        [
+          "at",
+          "robot",
+          "casa"
+        ]
+      ]
+    }
+  ],
+  "sym_exec": "executed_symbolic_action",
+  "proc_ok": true,
+  "pass": true
+}

@@ -1,0 +1,63 @@
+{
+  "version": "0.4.2",
+  "experiment": "open_entity_surface_acquisition_and_transfer",
+  "code_hash_before": "e855f17757905ad7f22cf0fdb84df61edfa307ab98fd1eb85a58ee125f952001",
+  "seed_surfaces": {
+    "left_target": "schema_f0700070da24211f_a2",
+    "right_target": "schema_fd9b68f08d4f7421_a2",
+    "left_selected": "socio(r0,r1)",
+    "right_selected": "sitio(r0,r1)",
+    "unrelated_predicates_in_world": 5000
+  },
+  "controls": {
+    "v41_known_entity_parser_novel_matches": 0,
+    "v41_known_entity_parser_cases": 200,
+    "learned_surface_matcher_novel_matches": 200,
+    "learned_surface_matcher_cases": 200,
+    "ambiguous_boundary_status": "schema_surface_ambiguous",
+    "ambiguous_boundary_fact_delta": 0,
+    "without_acquisition_composed_training_statuses": [
+      "schema_unrecognized",
+      "schema_unrecognized",
+      "schema_unrecognized",
+      "schema_unrecognized",
+      "schema_unrecognized"
+    ],
+    "exact_text_memory_positive_heldout_hits": 0,
+    "exact_text_memory_positive_heldout_cases": 100
+  },
+  "acquisition": {
+    "assertions_stored": 240,
+    "assertion_cases": 240,
+    "novel_entities_indexed": 360,
+    "novel_entities_expected": 360,
+    "audit_events": 240,
+    "median_assertion_ms": 0.05043495912104845,
+    "max_assertion_ms": 0.25361194275319576
+  },
+  "transfer": {
+    "status": "schema_learned",
+    "arity": 3,
+    "projection": [
+      0,
+      1,
+      2
+    ],
+    "selected": "schema_f0700070da24211f_a2(r0,r1) & schema_fd9b68f08d4f7421_a2(r1,r2)",
+    "predicates_considered": [
+      "schema_f0700070da24211f_a2",
+      "schema_fd9b68f08d4f7421_a2"
+    ],
+    "expected_acquired_primitives": [
+      "schema_f0700070da24211f_a2",
+      "schema_fd9b68f08d4f7421_a2"
+    ],
+    "heldout_positive": 100,
+    "heldout_positive_cases": 100,
+    "heldout_negative_rejected": 100,
+    "heldout_negative_cases": 100,
+    "median_query_ms": 0.3585375379770994
+  },
+  "code_hash_after": "e855f17757905ad7f22cf0fdb84df61edfa307ab98fd1eb85a58ee125f952001",
+  "code_unchanged_during_frozen_phase": true
+}

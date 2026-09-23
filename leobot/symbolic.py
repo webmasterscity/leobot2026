@@ -25,6 +25,7 @@ import re
 from typing import Iterable
 
 from .language import normalize
+from .metarepr import MetaRepresentationLibrary
 
 Fact = tuple[str, ...]
 TemplateFact = tuple[str, ...]
@@ -190,6 +191,22 @@ class SymbolicWorldLearner:
         self.alias_sessions: dict[str,dict] = {}
         self.macro_sessions: dict[str,dict] = {}
         self.iterative_sessions: dict[str,dict] = {}
+        # V4.1: explicit learned meta-schemas group structurally analogous
+        # operators.  New domains consult one live representative per schema
+        # instead of rescanning every concrete operator ever learned.
+        self.analogy_schemas: dict[str,dict] = {}
+        self.analogy_schema_by_pattern: dict[str,str] = {}
+        self.analogy_unclustered: set[str] = set()
+        # Cross-representation transformation priors.  These do not encode domain
+        # predicates or answers: they store only structural permutations learned
+        # in another representation (e.g. a numeric tuple procedure).
+        self.external_permutation_schemas: dict[str,dict] = {}
+        self.external_projection_schemas: dict[str,dict] = {}
+        self.external_role_sets: dict[str,dict] = {}
+        self.external_role_cardinalities: dict[str,dict] = {}
+        self.external_role_topologies: dict[str,dict] = {}
+        # Shared bot-level MetaController; Bot owns/persists the single instance.
+        self.meta_controller = None
         self.audit: list[dict] = []
 
     @staticmethod
@@ -214,6 +231,35 @@ class SymbolicWorldLearner:
         if changed and (not add_t and not del_t):
             return None
         return pattern,mapping,before_t,add_t,del_t
+
+    @staticmethod
+    def _pattern_role_count(pattern: str) -> int:
+        roles=[int(m.group(1)) for m in _MARKER_RE.finditer(pattern)]
+        return (max(roles)+1) if roles else 0
+
+    @staticmethod
+    def _fact_role_edge(template: TemplateFact) -> tuple[int, ...] | None:
+        roles=[]
+        for arg in template[1:]:
+            m=_MARKER_RE.fullmatch(arg)
+            if m is not None:
+                roles.append(int(m.group(1)))
+        if not roles:
+            return None
+        return tuple(roles)
+
+    def register_external_role_topology(self, input_arity: int, edges, source: str, support: int = 1) -> dict:
+        n=int(input_arity); canon=MetaRepresentationLibrary.canonical_role_topology(n,edges)
+        if canon is None:
+            return {'status':'cross_modal_schema_ignored','reason':'invalid_role_topology'}
+        key=MetaRepresentationLibrary.role_topology_key(n,canon)
+        row=self.external_role_topologies.setdefault(key,{'kind':'role_topology','input_arity':n,
+                                                           'edges':[list(x) for x in canon],
+                                                           'sources':{},'support':0})
+        src=normalize(str(source)); old=int(row['sources'].get(src,0));
+        row['sources'][src]=max(old,max(1,int(support))); row['support']=sum(int(v) for v in row['sources'].values())
+        return {'status':'cross_modal_schema_registered','schema':key,'support':row['support'],
+                'sources':len(row['sources'])}
 
     @staticmethod
     def _minimal_hitting_set(candidates: set[TemplateFact], failures: list[set[TemplateFact]], limit: int):
@@ -244,6 +290,648 @@ class SymbolicWorldLearner:
                 return None,'ambiguous_minimal_preconditions'
         return None,'no_separating_preconditions'
 
+    @staticmethod
+    def _map_template_markers(template: TemplateFact, marker_map: dict[str,str]) -> TemplateFact:
+        return (template[0], *(marker_map.get(x, x) for x in template[1:]))
+
+    @staticmethod
+    def _effect_alignment(source: dict, target_add: tuple[TemplateFact, ...],
+                          target_delete: tuple[TemplateFact, ...],
+                          marker_map: dict[str,str]) -> dict[str,str] | None:
+        """Align effect predicates while preserving role topology.
+
+        Predicate names may change across domains, but equality relations among
+        source predicates are preserved: one source predicate cannot silently map
+        to two target predicates, and two source predicates cannot collapse into
+        one target predicate.  This keeps the analogy structural rather than a
+        bag-of-arities match.
+        """
+        src_add=[tuple(x) for x in source.get('add',())]
+        src_del=[tuple(x) for x in source.get('delete',())]
+        if len(src_add)!=len(target_add) or len(src_del)!=len(target_delete):
+            return None
+
+        def aligned_args(src: TemplateFact, tgt: TemplateFact) -> bool:
+            if len(src)!=len(tgt): return False
+            mapped=SymbolicWorldLearner._map_template_markers(src,marker_map)
+            return mapped[1:]==tgt[1:]
+
+        # Effect sets are intentionally small in the current symbolic learner.
+        # Backtracking over their permutations avoids privileging predicate names.
+        for add_perm in permutations(target_add):
+            if not all(aligned_args(a,b) for a,b in zip(src_add,add_perm)): continue
+            for del_perm in permutations(target_delete):
+                if not all(aligned_args(a,b) for a,b in zip(src_del,del_perm)): continue
+                pmap={}; reverse={};ok=True
+                for a,b in [*zip(src_add,add_perm),*zip(src_del,del_perm)]:
+                    sp,tp=a[0],b[0]
+                    if sp in pmap and pmap[sp]!=tp: ok=False;break
+                    if tp in reverse and reverse[tp]!=sp: ok=False;break
+                    pmap[sp]=tp;reverse[tp]=sp
+                if ok:return pmap
+        return None
+
+
+    @staticmethod
+    def _permutation_key(perm) -> str:
+        perm=tuple(int(x) for x in perm)
+        return f"perm:{len(perm)}:" + ','.join(map(str,perm))
+
+    def register_external_permutation(self, perm, source: str, support: int = 1) -> dict:
+        """Register a representation-independent permutation hypothesis.
+
+        The schema stores only the mapping between mutable slots.  It carries no
+        predicate names, language cues, entities or domain labels.  Registration
+        is idempotent per source and is therefore auditable/persistable.
+        """
+        perm=tuple(int(x) for x in perm)
+        if len(perm)<2 or tuple(sorted(perm))!=tuple(range(len(perm))) or perm==tuple(range(len(perm))):
+            return {'status':'cross_modal_schema_ignored','reason':'not_nontrivial_permutation'}
+        key=self._permutation_key(perm)
+        row=self.external_permutation_schemas.setdefault(key,{'kind':'permutation','perm':list(perm),'sources':{},'support':0})
+        src=normalize(str(source))
+        old=int(row['sources'].get(src,0)); new=max(old,max(1,int(support)))
+        row['sources'][src]=new; row['support']=sum(int(v) for v in row['sources'].values())
+        return {'status':'cross_modal_schema_registered','schema':key,'support':row['support'],'sources':len(row['sources'])}
+
+    @staticmethod
+    def _projection_key(input_arity: int, mapping) -> str:
+        mapping=tuple(int(x) for x in mapping)
+        return f"proj:{int(input_arity)}:" + ','.join(map(str,mapping))
+
+    def register_external_projection(self, input_arity: int, mapping, source: str, support: int = 1) -> dict:
+        n=int(input_arity);mapping=tuple(int(x) for x in mapping)
+        if n<2 or not mapping or any(i<0 or i>=n for i in mapping):
+            return {'status':'cross_modal_schema_ignored','reason':'invalid_projection'}
+        if len(mapping)==n and mapping==tuple(range(n)):
+            return {'status':'cross_modal_schema_ignored','reason':'identity_projection'}
+        # Bijective same-arity projections are represented by the permutation
+        # family to avoid duplicate priors for the same structural hypothesis.
+        if len(mapping)==n and tuple(sorted(mapping))==tuple(range(n)):
+            return self.register_external_permutation(mapping,source,support)
+        key=self._projection_key(n,mapping)
+        row=self.external_projection_schemas.setdefault(key,{'kind':'projection','input_arity':n,'mapping':list(mapping),'sources':{},'support':0})
+        src=normalize(str(source));old=int(row['sources'].get(src,0));row['sources'][src]=max(old,max(1,int(support)))
+        row['support']=sum(int(v) for v in row['sources'].values())
+        return {'status':'cross_modal_schema_registered','schema':key,'support':row['support'],'sources':len(row['sources'])}
+
+    @staticmethod
+    def _role_set_key(input_arity: int, roles) -> str:
+        vals=tuple(sorted(set(int(x) for x in roles)))
+        return f"roles:{int(input_arity)}:" + ','.join(map(str,vals))
+
+    def register_external_role_set(self, input_arity: int, roles, source: str, support: int = 1) -> dict:
+        n=int(input_arity); vals=tuple(sorted(set(int(x) for x in roles)))
+        if n<2 or not vals or len(vals)>=n or any(i<0 or i>=n for i in vals):
+            return {'status':'cross_modal_schema_ignored','reason':'invalid_role_set'}
+        key=self._role_set_key(n,vals)
+        row=self.external_role_sets.setdefault(key,{'kind':'role_set','input_arity':n,'roles':list(vals),'sources':{},'support':0})
+        src=normalize(str(source));old=int(row['sources'].get(src,0));row['sources'][src]=max(old,max(1,int(support)))
+        row['support']=sum(int(v) for v in row['sources'].values())
+        return {'status':'cross_modal_schema_registered','schema':key,'support':row['support'],'sources':len(row['sources'])}
+
+    @staticmethod
+    def _role_cardinality_key(cardinality: int) -> str:
+        return f"card:{int(cardinality)}"
+
+    def register_external_role_cardinality(self, cardinality: int, source: str, support: int = 1) -> dict:
+        k=int(cardinality)
+        if k<1:
+            return {'status':'cross_modal_schema_ignored','reason':'invalid_role_cardinality'}
+        key=self._role_cardinality_key(k)
+        row=self.external_role_cardinalities.setdefault(
+            key,{'kind':'role_cardinality','cardinality':k,'sources':{},'support':0})
+        src=normalize(str(source));old=int(row['sources'].get(src,0));row['sources'][src]=max(old,max(1,int(support)))
+        row['support']=sum(int(v) for v in row['sources'].values())
+        return {'status':'cross_modal_schema_registered','schema':key,'support':row['support'],'sources':len(row['sources'])}
+
+    @staticmethod
+    def _effect_projection_signature(pattern: str, add: tuple[TemplateFact, ...], delete: tuple[TemplateFact, ...]):
+        """Infer role-flow for a single relational replacement.
+
+        Example: ``at(<e0>,<e1>) -> at(<e0>,<e2>)`` under a three-role
+        instruction becomes ``proj:3:0,2``.  Predicate names are intentionally
+        absent from the signature.
+        """
+        if len(add)!=1 or len(delete)!=1:return None
+        a,d=tuple(add[0]),tuple(delete[0])
+        if a[0]!=d[0] or len(a)!=len(d) or a==d:return None
+        vals=(*a[1:],*d[1:])
+        if any(_MARKER_RE.fullmatch(x) is None for x in vals):return None
+        marker_ids=[int(x[2:-1]) for x in re.findall(r'<e\d+>',pattern)]
+        if not marker_ids:return None
+        n=max(marker_ids)+1
+        mapping=tuple(int(x[2:-1]) for x in a[1:])
+        if any(i>=n for i in mapping):return None
+        return n,mapping
+
+    def _fit_by_cross_modal_projection(self, pattern: str) -> dict | None:
+        session=self.sessions[pattern]
+        successes=[o for o in session['observations'] if o['success']]
+        failures=[o for o in session['observations'] if not o['success']]
+        if len(successes)<2 or not failures:return None
+        effect_keys={(tuple(map(tuple,o['add'])),tuple(map(tuple,o['delete']))) for o in successes}
+        if len(effect_keys)!=1:return None
+        add=tuple(tuple(x) for x in successes[0]['add']);delete=tuple(tuple(x) for x in successes[0]['delete'])
+        sig=self._effect_projection_signature(pattern,add,delete)
+        if sig is None:return None
+        n,mapping=sig;key=self._projection_key(n,mapping);prior=self.external_projection_schemas.get(key)
+        if prior is None:return None
+        common=set(tuple(x) for x in successes[0]['before'])
+        for o in successes[1:]:common &= set(tuple(x) for x in o['before'])
+        mandatory=set(delete);context_candidates=common-mandatory;residual=[]
+        for o in failures:
+            fail=set(tuple(x) for x in o['before'])
+            if mandatory.issubset(fail):residual.append(fail-mandatory)
+        if residual:
+            extra,mode=self._minimal_hitting_set(context_candidates,residual,self.max_precondition_candidates)
+            if extra is None or mode!='contrastive_unique':return None
+        else:
+            extra=set();mode='mandatory_delete_contrast'
+        pre=mandatory|set(extra)
+        if not pre:return None
+        session.update({'promoted':True,'status':'operator_learned',
+                        'preconditions':[list(x) for x in sorted(pre,key=_template_sort_key)],
+                        'add':[list(x) for x in sorted(add,key=_template_sort_key)],
+                        'delete':[list(x) for x in sorted(delete,key=_template_sort_key)],
+                        'support':len(successes),'failures':len(failures),
+                        'precondition_mode':'cross_modal_projection_transfer',
+                        'cross_modal_schema':key,'cross_modal_sources':sorted(prior.get('sources',{}))})
+        self._mark_unclustered(pattern)
+        return {'status':'operator_learned','pattern':pattern,'support':len(successes),'failures':len(failures),
+                'preconditions':session['preconditions'],'add':session['add'],'delete':session['delete'],
+                'precondition_mode':'cross_modal_projection_transfer','cross_modal_schema':key,
+                'cross_modal_sources':session['cross_modal_sources']}
+
+    def _fit_by_meta_role_set(self, pattern: str) -> dict | None:
+        session=self.sessions[pattern]
+        successes=[o for o in session['observations'] if o['success']]
+        failures=[o for o in session['observations'] if not o['success']]
+        if len(successes)<2 or not failures:return None
+        effect_keys={(tuple(map(tuple,o['add'])),tuple(map(tuple,o['delete']))) for o in successes}
+        if len(effect_keys)!=1:return None
+        add=tuple(tuple(x) for x in successes[0]['add']);delete=tuple(tuple(x) for x in successes[0]['delete'])
+        sig=self._effect_projection_signature(pattern,add,delete)
+        if sig is None:return None
+        n,mapping=sig; key=self._role_set_key(n,mapping); prior=self.external_role_sets.get(key)
+        if prior is None:return None
+        common=set(tuple(x) for x in successes[0]['before'])
+        for o in successes[1:]:common &= set(tuple(x) for x in o['before'])
+        mandatory=set(delete); context_candidates=common-mandatory; residual=[]
+        for o in failures:
+            fail=set(tuple(x) for x in o['before'])
+            if mandatory.issubset(fail):residual.append(fail-mandatory)
+        if residual:
+            extra,mode=self._minimal_hitting_set(context_candidates,residual,self.max_precondition_candidates)
+            if extra is None or mode!='contrastive_unique':return None
+        else:
+            extra=set()
+        pre=mandatory|set(extra)
+        if not pre:return None
+        session.update({'promoted':True,'status':'operator_learned',
+                        'preconditions':[list(x) for x in sorted(pre,key=_template_sort_key)],
+                        'add':[list(x) for x in sorted(add,key=_template_sort_key)],
+                        'delete':[list(x) for x in sorted(delete,key=_template_sort_key)],
+                        'support':len(successes),'failures':len(failures),
+                        'precondition_mode':'meta_role_set_transfer','cross_modal_schema':key,
+                        'cross_modal_sources':sorted(prior.get('sources',{}))})
+        self._mark_unclustered(pattern)
+        return {'status':'operator_learned','pattern':pattern,'support':len(successes),'failures':len(failures),
+                'preconditions':session['preconditions'],'add':session['add'],'delete':session['delete'],
+                'precondition_mode':'meta_role_set_transfer','cross_modal_schema':key,
+                'cross_modal_sources':session['cross_modal_sources']}
+
+    def _fit_by_meta_role_cardinality(self, pattern: str) -> dict | None:
+        """Transfer only the *number* of relevant roles across representations.
+
+        The prior never identifies which roles or what predicates/preconditions mean.
+        The target action's own observed effect determines the concrete role flow; target
+        failures still have to identify any contextual preconditions.  At least two
+        independent sources are required so a single earlier task cannot impose a
+        cardinality on an unrelated domain.
+        """
+        session=self.sessions[pattern]
+        successes=[o for o in session['observations'] if o['success']]
+        failures=[o for o in session['observations'] if not o['success']]
+        if len(successes)<2 or not failures:return None
+        effect_keys={(tuple(map(tuple,o['add'])),tuple(map(tuple,o['delete']))) for o in successes}
+        if len(effect_keys)!=1:return None
+        add=tuple(tuple(x) for x in successes[0]['add']);delete=tuple(tuple(x) for x in successes[0]['delete'])
+        sig=self._effect_projection_signature(pattern,add,delete)
+        if sig is None:return None
+        n,mapping=sig
+        k=len(set(mapping))
+        key=self._role_cardinality_key(k)
+        prior=self.external_role_cardinalities.get(key)
+        if prior is None or len(prior.get('sources',{}))<2:return None
+        # The prior says only k.  The concrete mapping above came entirely from the
+        # target action's observed add/delete effect, so this also works across arity.
+        common=set(tuple(x) for x in successes[0]['before'])
+        for o in successes[1:]:common &= set(tuple(x) for x in o['before'])
+        mandatory=set(delete); context_candidates=common-mandatory; residual=[]
+        for o in failures:
+            fail=set(tuple(x) for x in o['before'])
+            if mandatory.issubset(fail):residual.append(fail-mandatory)
+        if residual:
+            extra,mode=self._minimal_hitting_set(context_candidates,residual,self.max_precondition_candidates)
+            if extra is None or mode!='contrastive_unique':return None
+        else:
+            extra=set();mode='mandatory_delete_contrast'
+        pre=mandatory|set(extra)
+        if not pre:return None
+        session.update({'promoted':True,'status':'operator_learned',
+                        'preconditions':[list(x) for x in sorted(pre,key=_template_sort_key)],
+                        'add':[list(x) for x in sorted(add,key=_template_sort_key)],
+                        'delete':[list(x) for x in sorted(delete,key=_template_sort_key)],
+                        'support':len(successes),'failures':len(failures),
+                        'precondition_mode':'meta_role_cardinality_transfer',
+                        'cross_modal_schema':key,
+                        'target_role_mapping':list(mapping),
+                        'cross_modal_sources':sorted(prior.get('sources',{}))})
+        self._mark_unclustered(pattern)
+        return {'status':'operator_learned','pattern':pattern,'support':len(successes),'failures':len(failures),
+                'preconditions':session['preconditions'],'add':session['add'],'delete':session['delete'],
+                'precondition_mode':'meta_role_cardinality_transfer','cross_modal_schema':key,
+                'target_role_mapping':list(mapping),'cross_modal_sources':session['cross_modal_sources']}
+
+    def _fit_by_meta_role_topology(self, pattern: str) -> dict | None:
+        """Use a domain-neutral directed role topology as a conservative prior.
+
+        The source topology contains only ordered role incidences, never predicate
+        names.  The target must provide two independent successful transitions,
+        a consistent effect, and exactly one subset of its own observed facts that
+        matches a topology supported by >=2 independent sources.  Any observed
+        failure containing all selected preconditions vetoes the transfer.
+        """
+        session=self.sessions[pattern]
+        successes=[o for o in session['observations'] if o['success']]
+        failures=[o for o in session['observations'] if not o['success']]
+        if len(successes)<2:
+            return None
+        effect_keys={(tuple(map(tuple,o['add'])),tuple(map(tuple,o['delete']))) for o in successes}
+        if len(effect_keys)!=1:
+            return None
+        add=tuple(tuple(x) for x in successes[0]['add']); delete=tuple(tuple(x) for x in successes[0]['delete'])
+        if not add and not delete:
+            return None
+        n=self._pattern_role_count(pattern)
+        if n < 2:
+            return None
+        common=set(tuple(x) for x in successes[0]['before'])
+        for o in successes[1:]:
+            common &= set(tuple(x) for x in o['before'])
+        mandatory=set(delete)
+        if not mandatory.issubset(common):
+            return None
+        usable=[]
+        for fact in sorted(common,key=_template_sort_key):
+            edge=self._fact_role_edge(fact)
+            if edge is not None:
+                usable.append((fact,edge))
+        if len(usable)>self.max_precondition_candidates:
+            return None
+        matches=[]
+        for key,row in sorted(self.external_role_topologies.items()):
+            if int(row.get('input_arity',0))!=n or len(row.get('sources',{}))<2:
+                continue
+            edges=tuple(tuple(int(x) for x in e) for e in row.get('edges',()))
+            width=len(edges)
+            if width<1 or width>len(usable):
+                continue
+            # Bound structural subset search independently of domain size.
+            checked=0
+            for combo in combinations(usable,width):
+                checked+=1
+                if checked>20_000:
+                    break
+                facts={fact for fact,_edge in combo}
+                if not mandatory.issubset(facts):
+                    continue
+                topo=MetaRepresentationLibrary.canonical_role_topology(n,[edge for _fact,edge in combo])
+                if topo != edges:
+                    continue
+                # A target failure with every proposed precondition present is
+                # direct counterevidence against this transfer.
+                contradicted=False
+                for obs in failures:
+                    fail=set(tuple(x) for x in obs['before'])
+                    if facts.issubset(fail):
+                        contradicted=True; break
+                if contradicted:
+                    continue
+                matches.append((key,row,facts))
+        # Multiple structural embeddings remain uncertainty; do not select one
+        # lexicographically just to make the task pass.
+        unique={}
+        for key,row,facts in matches:
+            sig=tuple(sorted(facts,key=_template_sort_key))
+            unique[(key,sig)]=(key,row,facts)
+        if len(unique)!=1:
+            return None
+        key,row,pre=next(iter(unique.values()))
+        session.update({'promoted':True,'status':'operator_learned',
+                        'preconditions':[list(x) for x in sorted(pre,key=_template_sort_key)],
+                        'add':[list(x) for x in sorted(add,key=_template_sort_key)],
+                        'delete':[list(x) for x in sorted(delete,key=_template_sort_key)],
+                        'support':len(successes),'failures':len(failures),
+                        'precondition_mode':'meta_role_topology_transfer',
+                        'cross_modal_schema':key,
+                        'cross_modal_sources':sorted(row.get('sources',{}))})
+        self._mark_unclustered(pattern)
+        return {'status':'operator_learned','pattern':pattern,'support':len(successes),'failures':len(failures),
+                'preconditions':session['preconditions'],'add':session['add'],'delete':session['delete'],
+                'precondition_mode':'meta_role_topology_transfer','cross_modal_schema':key,
+                'cross_modal_sources':session['cross_modal_sources']}
+
+    @staticmethod
+    def _effect_permutation_signature(add: tuple[TemplateFact, ...], delete: tuple[TemplateFact, ...]):
+        """Return a pure row-payload permutation, or None.
+
+        A compatible symbolic effect deletes N tuples and adds N tuples of one
+        predicate.  Exactly one argument position is allowed to change; all other
+        positions identify the row.  The changed values must be permuted, not
+        invented or destroyed.  This makes the signature independent of domain
+        predicate names and compatible with tuple projections learned elsewhere.
+        """
+        if len(add)<2 or len(add)!=len(delete): return None
+        preds={f[0] for f in (*add,*delete)}
+        arities={len(f) for f in (*add,*delete)}
+        if len(preds)!=1 or len(arities)!=1: return None
+        arity=next(iter(arities))
+        if arity<3: return None
+        dels=list(delete); adds=list(add)
+        for changed in range(1,arity):
+            # All non-changing arguments form a unique row key.
+            def key(f): return tuple(v for i,v in enumerate(f[1:],start=1) if i!=changed)
+            dkeys=[key(f) for f in dels]; akeys=[key(f) for f in adds]
+            if len(set(dkeys))!=len(dels) or set(dkeys)!=set(akeys): continue
+            by_key={key(f):f for f in adds}
+            source_values=[f[changed] for f in dels]
+            if len(set(source_values))!=len(source_values): continue
+            out_values=[by_key[key(f)][changed] for f in dels]
+            if set(out_values)!=set(source_values): continue
+            index={v:i for i,v in enumerate(source_values)}
+            perm=tuple(index[v] for v in out_values)
+            if perm==tuple(range(len(perm))): continue
+            return perm
+        return None
+
+    def _fit_by_cross_modal_permutation(self, pattern: str) -> dict | None:
+        """Use a learned cross-representation permutation as a conservative prior.
+
+        The prior can lower target positive support from three to two, but never
+        supplies target predicates or preconditions.  Preconditions must still be
+        uniquely identified by contrastive target failures.  Thus the prior says
+        only "this effect topology has been useful before", not "this action means
+        X".
+        """
+        session=self.sessions[pattern]
+        successes=[o for o in session['observations'] if o['success']]
+        failures=[o for o in session['observations'] if not o['success']]
+        if len(successes)<2 or not failures: return None
+        effect_keys={(tuple(map(tuple,o['add'])),tuple(map(tuple,o['delete']))) for o in successes}
+        if len(effect_keys)!=1:return None
+        add=tuple(tuple(x) for x in successes[0]['add']); delete=tuple(tuple(x) for x in successes[0]['delete'])
+        perm=self._effect_permutation_signature(add,delete)
+        if perm is None:return None
+        key=self._permutation_key(perm); prior=self.external_permutation_schemas.get(key)
+        if not prior:return None
+        common=set(tuple(x) for x in successes[0]['before'])
+        for o in successes[1:]:common &= set(tuple(x) for x in o['before'])
+        # Delete effects are safe mandatory preconditions: every successful target
+        # episode proves those facts existed immediately before the transition.
+        # Contrastive failures only need to identify *additional* context.
+        mandatory=set(delete)
+        context_candidates=common-mandatory
+        residual_failures=[]
+        for o in failures:
+            fail=set(tuple(x) for x in o['before'])
+            if mandatory.issubset(fail):
+                residual_failures.append(fail-mandatory)
+        if residual_failures:
+            extra,mode=self._minimal_hitting_set(context_candidates,residual_failures,self.max_precondition_candidates)
+            if extra is None or mode!='contrastive_unique':return None
+        else:
+            extra=set();mode='mandatory_delete_contrast'
+        pre=mandatory|set(extra)
+        if not pre:return None
+        session.update({'promoted':True,'status':'operator_learned',
+                        'preconditions':[list(x) for x in sorted(pre,key=_template_sort_key)],
+                        'add':[list(x) for x in sorted(add,key=_template_sort_key)],
+                        'delete':[list(x) for x in sorted(delete,key=_template_sort_key)],
+                        'support':len(successes),'failures':len(failures),
+                        'precondition_mode':'cross_modal_permutation_transfer',
+                        'cross_modal_schema':key,
+                        'cross_modal_sources':sorted(prior.get('sources',{}))})
+        self._mark_unclustered(pattern)
+        return {'status':'operator_learned','pattern':pattern,'support':len(successes),'failures':len(failures),
+                'preconditions':session['preconditions'],'add':session['add'],'delete':session['delete'],
+                'precondition_mode':'cross_modal_permutation_transfer','cross_modal_schema':key,
+                'cross_modal_sources':session['cross_modal_sources']}
+
+    def _operator_for_pattern(self, pattern: str) -> dict | None:
+        state=self.sessions.get(pattern)
+        if not state or not state.get('promoted'):
+            return None
+        return {'pattern':pattern,
+                'preconditions':tuple(tuple(x) for x in state.get('preconditions',())),
+                'add':tuple(tuple(x) for x in state.get('add',())),
+                'delete':tuple(tuple(x) for x in state.get('delete',())),
+                'support':state.get('support',0),'failures':state.get('failures',0),
+                'precondition_mode':state.get('precondition_mode'),
+                'analogy_sources':tuple(state.get('analogy_sources',())),
+                'analogy_schema_id':state.get('analogy_schema_id')}
+
+    def _mark_unclustered(self, pattern: str) -> None:
+        if pattern not in self.analogy_schema_by_pattern and self._operator_for_pattern(pattern) is not None:
+            self.analogy_unclustered.add(pattern)
+
+    def _drop_from_analogy_indexes(self, pattern: str) -> None:
+        self.analogy_unclustered.discard(pattern)
+        sid=self.analogy_schema_by_pattern.pop(pattern,None)
+        if sid is None:return
+        schema=self.analogy_schemas.get(sid)
+        if not schema:return
+        members=[p for p in schema.get('members',[]) if p!=pattern and self._operator_for_pattern(p) is not None]
+        if len(members)<2:
+            self.analogy_schemas.pop(sid,None)
+            for p in members:
+                self.analogy_schema_by_pattern.pop(p,None);self.analogy_unclustered.add(p)
+            return
+        schema['members']=sorted(members);schema['representative']=schema['members'][0];schema['support']=len(members)
+
+    def _analogy_source_representatives(self) -> list[dict]:
+        """Return one live representative per learned meta-schema plus unclustered operators.
+
+        The bookkeeping is incremental, so the steady-state cost depends on the
+        number of distinct structural schemas, not on every historical operator.
+        """
+        out=[]
+        for sid,schema in sorted(self.analogy_schemas.items()):
+            members=schema.get('members',[])
+            rep=schema.get('representative')
+            op=self._operator_for_pattern(rep) if rep else None
+            if op is None:
+                live=[p for p in members if self._operator_for_pattern(p) is not None]
+                if len(live)<2:continue
+                rep=live[0];schema['representative']=rep;schema['members']=live;schema['support']=len(live);op=self._operator_for_pattern(rep)
+            evidence=members[:2] if len(members)>=2 else members
+            out.append({'operator':op,'evidence_members':evidence,'support_count':int(schema.get('support',len(members))),
+                        'schema_id':sid})
+        stale=[]
+        for pattern in sorted(self.analogy_unclustered):
+            op=self._operator_for_pattern(pattern)
+            if op is None:stale.append(pattern);continue
+            out.append({'operator':op,'evidence_members':[pattern],'support_count':1,'schema_id':None})
+        for pattern in stale:self.analogy_unclustered.discard(pattern)
+        return out
+
+    def _register_analogy_schema(self, source_patterns: Iterable[str], target_pattern: str) -> str:
+        sources=list(dict.fromkeys(source_patterns));matching=[]
+        for pattern in sources:
+            sid=self.analogy_schema_by_pattern.get(pattern)
+            if sid and sid not in matching:matching.append(sid)
+        if matching:
+            sid=matching[0];schema=self.analogy_schemas[sid]
+            # The common path is incremental: one established schema gains one
+            # new operator.  No full member scan/sort is needed.
+            if len(matching)==1:
+                if target_pattern not in self.analogy_schema_by_pattern:
+                    schema.setdefault('members',[]).append(target_pattern)
+                    schema['support']=int(schema.get('support',len(schema['members'])-1))+1
+                members=schema['members']
+            else:
+                merged=[];seen=set()
+                for old in matching:
+                    for pattern in self.analogy_schemas.get(old,{}).get('members',[]):
+                        if pattern not in seen:seen.add(pattern);merged.append(pattern)
+                for pattern in [*sources,target_pattern]:
+                    if pattern not in seen:seen.add(pattern);merged.append(pattern)
+                for old in matching[1:]:self.analogy_schemas.pop(old,None)
+                schema={'id':sid,'members':merged,'representative':merged[0],'support':len(merged)}
+                self.analogy_schemas[sid]=schema;members=merged
+        else:
+            members=[];seen=set()
+            for pattern in [*sources,target_pattern]:
+                if pattern not in seen:seen.add(pattern);members.append(pattern)
+            seed='|'.join(sorted(members));sid='schema:'+hashlib.blake2b(seed.encode('utf8'),digest_size=8).hexdigest()
+            schema={'id':sid,'members':members,'representative':members[0],'support':len(members)}
+            self.analogy_schemas[sid]=schema
+        for pattern in members:
+            # Existing members already have the mapping; avoid rewriting their
+            # sessions on every incremental addition.
+            if self.analogy_schema_by_pattern.get(pattern)==sid:continue
+            self.analogy_schema_by_pattern[pattern]=sid;self.analogy_unclustered.discard(pattern)
+            state=self.sessions.get(pattern)
+            if state is not None:state['analogy_schema_id']=sid
+        return sid
+
+    def structural_schemas(self) -> list[dict]:
+        out=[]
+        for sid,schema in sorted(self.analogy_schemas.items()):
+            members=[p for p in schema.get('members',[]) if self._operator_for_pattern(p) is not None]
+            if len(members)>=2:
+                out.append({'id':sid,'representative':schema.get('representative'),'members':tuple(members),'support':len(members)})
+        return out
+
+    def _fit_by_structural_analogy(self, pattern: str) -> dict | None:
+        """Transfer an already learned operator topology to a new domain.
+
+        This is a bounded, conservative meta-transfer experiment.  It needs two
+        independent successful target episodes with consistent effects.  Existing
+        operators provide only *structural* guidance: predicate names may be
+        completely different.  Context preconditions are accepted only when the
+        target successes contain a unique fact with the corresponding role shape.
+        Observed failures must violate at least one transferred precondition.
+
+        The method deliberately refuses ambiguous analogies instead of selecting
+        the first source operator.  A later counterexample automatically removes
+        the promotion because every observation re-runs this validation.
+        """
+        session=self.sessions[pattern]
+        successes=[o for o in session['observations'] if o['success']]
+        failures=[o for o in session['observations'] if not o['success']]
+        if not successes:return None
+        effect_keys={(tuple(map(tuple,o['add'])),tuple(map(tuple,o['delete']))) for o in successes}
+        if len(effect_keys)!=1:return None
+        target_add=tuple(tuple(x) for x in successes[0]['add'])
+        target_delete=tuple(tuple(x) for x in successes[0]['delete'])
+        if not target_add and not target_delete:return None
+        target_markers=sorted({a for f in (*target_add,*target_delete) for a in f[1:] if _MARKER_RE.fullmatch(a)})
+        common=set(tuple(x) for x in successes[0]['before'])
+        for o in successes[1:]:common &= set(tuple(x) for x in o['before'])
+        failure_sets=[set(tuple(x) for x in o['before']) for o in failures]
+        proposals={}
+        for source_entry in self._analogy_source_representatives():
+            source=source_entry['operator']
+            if source.get('pattern')==pattern:continue
+            source_markers=self._markers_in_operator(source)
+            # Every role must be visible in target effects; otherwise the analogy
+            # would need to invent an ungrounded hidden argument.
+            if len(source_markers)!=len(target_markers):continue
+            if any(m not in {a for f in (*source.get('add',()),*source.get('delete',())) for a in f[1:]}
+                   for m in source_markers):
+                continue
+            for perm in permutations(target_markers):
+                mmap=dict(zip(source_markers,perm))
+                pmap=self._effect_alignment(source,target_add,target_delete,mmap)
+                if pmap is None:continue
+                # Same-predicate effects are ordinary language aliases; keep the
+                # older evidence-intersection mechanism authoritative for those.
+                if pmap and all(sp==tp for sp,tp in pmap.items()):continue
+                mapped_pre=[];local_pmap=dict(pmap);reverse={v:k for k,v in local_pmap.items()};valid=True
+                for src_pre in source.get('preconditions',()):
+                    src_pre=tuple(src_pre); mapped_args=self._map_template_markers(src_pre,mmap)[1:]
+                    sp=src_pre[0]
+                    if sp in local_pmap:
+                        candidate=(local_pmap[sp],*mapped_args)
+                        if candidate not in common:valid=False;break
+                    else:
+                        candidates=[f for f in common if len(f)==len(src_pre) and f[1:]==mapped_args]
+                        # Exclude predicates already structurally assigned to a
+                        # different source predicate.
+                        candidates=[f for f in candidates if f[0] not in reverse or reverse[f[0]]==sp]
+                        preds=sorted({f[0] for f in candidates})
+                        if len(preds)!=1:valid=False;break
+                        tp=preds[0];local_pmap[sp]=tp;reverse[tp]=sp;candidate=(tp,*mapped_args)
+                    mapped_pre.append(candidate)
+                if not valid:continue
+                pre=frozenset(mapped_pre)
+                if not pre:continue
+                # A recorded failure that satisfies all transferred preconditions
+                # refutes this analogy.
+                if any(pre.issubset(fail) for fail in failure_sets):continue
+                key=json.dumps({'pre':[list(x) for x in sorted(pre,key=_template_sort_key)],
+                                'add':[list(x) for x in sorted(target_add,key=_template_sort_key)],
+                                'delete':[list(x) for x in sorted(target_delete,key=_template_sort_key)]},
+                               sort_keys=True,separators=(',',':'))
+                proposals.setdefault(key,{'pre':pre,'sources':set(),'source_support':0,'source_entries':set(),'marker_maps':[],'predicate_maps':[]})
+                entry_id=source_entry.get('schema_id') or ('operator:'+source['pattern'])
+                if entry_id not in proposals[key]['source_entries']:
+                    proposals[key]['source_entries'].add(entry_id)
+                    proposals[key]['source_support']+=int(source_entry.get('support_count',1))
+                    proposals[key]['sources'].update(source_entry.get('evidence_members',[source['pattern']]))
+                proposals[key]['marker_maps'].append(dict(mmap));proposals[key]['predicate_maps'].append(dict(local_pmap))
+        if len(proposals)!=1:return None
+        proposal=next(iter(proposals.values()));pre=proposal['pre']
+        sources=sorted(proposal['sources']);source_support=int(proposal.get('source_support',len(sources)))
+        # One target success is accepted only after the same structural schema
+        # has independently survived in at least two learned source operators.
+        # With a single source schema we still require two target successes.
+        if len(successes)<2 and source_support<2:
+            return None
+        session.update({'promoted':True,'status':'operator_learned','preconditions':[list(x) for x in sorted(pre,key=_template_sort_key)],
+                        'add':[list(x) for x in sorted(target_add,key=_template_sort_key)],
+                        'delete':[list(x) for x in sorted(target_delete,key=_template_sort_key)],
+                        'support':len(successes),'failures':len(failures),'precondition_mode':'analogical_transfer',
+                        'analogy_sources':sources})
+        schema_id=self._register_analogy_schema(sources,pattern)
+        session['analogy_schema_id']=schema_id
+        return {'status':'operator_learned','pattern':pattern,'support':len(successes),'failures':len(failures),
+                'preconditions':session['preconditions'],'add':session['add'],'delete':session['delete'],
+                'precondition_mode':'analogical_transfer','analogy_sources':sources,
+                'analogy_source_count':source_support,'analogy_alternatives':1,'analogy_schema_id':schema_id}
+
     def _fit(self, pattern: str) -> dict:
         s=self.sessions[pattern]
         successes=[o for o in s['observations'] if o['success']]
@@ -269,6 +957,7 @@ class SymbolicWorldLearner:
                   'add':[list(x) for x in sorted(add,key=_template_sort_key)],
                   'delete':[list(x) for x in sorted(delete,key=_template_sort_key)],
                   'support':len(successes),'failures':len(failures),'precondition_mode':mode})
+        self._mark_unclustered(pattern)
         return {'status':'operator_learned','pattern':pattern,'support':len(successes),'failures':len(failures),
                 'preconditions':s['preconditions'],'add':s['add'],'delete':s['delete'],'precondition_mode':mode}
 
@@ -327,6 +1016,53 @@ class SymbolicWorldLearner:
                 out.append({'pattern':pattern,**deepcopy(state['winner']),'support':len(state.get('observations',[]))})
         return out
 
+    def _meta_representation_features(self, pattern: str) -> tuple[float, ...]:
+        """Domain-neutral structural signature shared with ProcedureGrounder."""
+        session=self.sessions.get(pattern,{})
+        obs=list(session.get('observations',()))
+        successes=[o for o in obs if o.get('success')]
+        failures=[o for o in obs if not o.get('success')]
+        n=max(1,self._pattern_role_count(pattern))
+        effect=0
+        if successes:
+            effect=len(successes[0].get('add',()))+len(successes[0].get('delete',()))
+        rs=sum(1 for row in self.external_role_sets.values() if int(row.get('input_arity',0))==n)
+        card=sum(1 for row in self.external_role_cardinalities.values() if 0<int(row.get('cardinality',0))<n)
+        proj=(sum(1 for row in self.external_projection_schemas.values() if int(row.get('input_arity',0))==n)
+              +sum(1 for row in self.external_permutation_schemas.values() if len(row.get('perm',()))==n))
+        topo=sum(1 for row in self.external_role_topologies.values() if int(row.get('input_arity',0))==n)
+        total=max(1,len(obs))
+        return (min(n,8)/8.0,min(len(successes),8)/8.0,min(len(failures)/total,1.0),
+                min(effect,8)/8.0,min(rs,8)/8.0,min(card,8)/8.0,
+                min(proj,8)/8.0,min(topo,8)/8.0)
+
+    def _meta_representation_order(self, pattern: str, strategies) -> tuple[list[str], dict]:
+        default=list(strategies)
+        if self.meta_controller is None:
+            return default,{'used':False,'mode':'disabled','order':default}
+        route=self.meta_controller.rank('representation',self._meta_representation_features(pattern),default)
+        return list(route.get('order',default)),route
+
+    def _record_meta_representation(self, pattern: str, strategy: str, success: bool, cost: float = 1.0) -> None:
+        if self.meta_controller is None:
+            return
+        self.meta_controller.observe('representation',self._meta_representation_features(pattern),strategy,
+                                     success=bool(success),cost=max(0.001,float(cost)),failure_budget=2.0)
+
+    def _meta_evidence_request(self, pattern: str) -> dict:
+        session=self.sessions.get(pattern,{})
+        obs=list(session.get('observations',()))
+        successes=[o for o in obs if o.get('success')]
+        failures=[o for o in obs if not o.get('success')]
+        if len(successes)<2:
+            return {'kind':'independent_success','reason':'need_effect_invariance',
+                    'message':'Observe otra ejecución exitosa independiente con entidades distintas.'}
+        if not failures:
+            return {'kind':'contrastive_failure','reason':'need_precondition_discrimination',
+                    'message':'Observe un intento comparable que no produzca el efecto para discriminar precondiciones.'}
+        return {'kind':'controlled_intervention','reason':'known_representations_unresolved',
+                'message':'Varíe un solo hecho o rol contextual por vez y observe si el efecto cambia.'}
+
     def observe(self, text: str, before, after) -> dict:
         b,a=_canon_state(before),_canon_state(after)
         encoded=self._encode_episode(text,b,a)
@@ -336,6 +1072,7 @@ class SymbolicWorldLearner:
         pattern,mapping,before_t,add_t,del_t=encoded
         eid=self._episode_id(text,b,a)
         session=self.sessions.setdefault(pattern,{'observations':[],'promoted':False})
+        was_promoted=bool(session.get('promoted'))
         if any(o['episode_id']==eid for o in session['observations']):
             return {'status':'duplicate_episode','pattern':pattern,'support':sum(o['success'] for o in session['observations'])}
         success=b!=a
@@ -344,10 +1081,47 @@ class SymbolicWorldLearner:
              'delete':[list(x) for x in sorted(del_t,key=_template_sort_key)]}
         session['observations'].append(obs)
         report=self._fit(pattern)
+        meta_route={'used':False,'mode':'direct_fit_succeeded' if report.get('status')=='operator_learned' else 'unavailable'}
+        meta_attempts=[]
+        if report.get('status')!='operator_learned':
+            strategy_fns={
+                'structural_analogy':self._fit_by_structural_analogy,
+                'projection':self._fit_by_cross_modal_projection,
+                'permutation':self._fit_by_cross_modal_permutation,
+                'role_set':self._fit_by_meta_role_set,
+                'role_topology':self._fit_by_meta_role_topology,
+                'role_cardinality':self._fit_by_meta_role_cardinality,
+            }
+            default=['structural_analogy','projection','permutation','role_set','role_topology','role_cardinality']
+            order,meta_route=self._meta_representation_order(pattern,default)
+            for strategy in order:
+                fn=strategy_fns[strategy]
+                trial=fn(pattern)
+                learned=bool(trial is not None and trial.get('status')=='operator_learned')
+                self._record_meta_representation(pattern,strategy,learned)
+                meta_attempts.append({'strategy':strategy,'learned':learned})
+                if learned:
+                    report=trial
+                    break
+        if meta_attempts:
+            report={**report,'meta_controller_route':meta_route,
+                    'meta_controller_representation_attempts':meta_attempts,
+                    'meta_controller_representation_strategy':next((x['strategy'] for x in meta_attempts if x['learned']),None)}
         alias_report=None
         if report.get('status')!='operator_learned':
             alias_report=self._record_alias(pattern,mapping,b,a,eid)
         chosen=alias_report if alias_report is not None else report
+        if (self.meta_controller is not None and chosen.get('status') not in ('operator_learned','alias_learned')
+                and meta_attempts):
+            gap=self.meta_controller.record_gap(
+                'representation',self._meta_representation_features(pattern),meta_attempts,
+                reason='known_representation_strategies_unresolved',
+                evidence_request=self._meta_evidence_request(pattern))
+            chosen={**chosen,'meta_controller_gap':gap,
+                    'meta_controller_route':meta_route,
+                    'meta_controller_representation_attempts':meta_attempts}
+        if was_promoted and not session.get('promoted'):
+            self._drop_from_analogy_indexes(pattern)
         self.audit.append({'event':'observe','text':text,'pattern':pattern,'success':success,'report':deepcopy(chosen)})
         return chosen
 
@@ -360,7 +1134,11 @@ class SymbolicWorldLearner:
                             'add':tuple(tuple(x) for x in s['add']),
                             'delete':tuple(tuple(x) for x in s['delete']),
                             'support':s.get('support',0),'failures':s.get('failures',0),
-                            'precondition_mode':s.get('precondition_mode')})
+                            'precondition_mode':s.get('precondition_mode'),
+                            'analogy_sources':tuple(s.get('analogy_sources',())),
+                            'analogy_schema_id':s.get('analogy_schema_id'),
+                            'cross_modal_schema':s.get('cross_modal_schema'),
+                            'cross_modal_sources':tuple(s.get('cross_modal_sources',()))})
         return out
 
 
@@ -1074,19 +1852,27 @@ class SymbolicWorldLearner:
         return report
 
     def as_dict(self) -> dict:
-        return {'version':4,'min_support':self.min_support,'goal_min_support':self.goal_min_support,'alias_min_support':self.alias_min_support,
+        return {'version':11,'min_support':self.min_support,'goal_min_support':self.goal_min_support,'alias_min_support':self.alias_min_support,
                 'max_precondition_candidates':self.max_precondition_candidates,'max_action_bindings':self.max_action_bindings,
                 'macro_min_support':self.macro_min_support,'iterative_min_support':self.iterative_min_support,
                 'sessions':deepcopy(self.sessions),'goal_sessions':deepcopy(self.goal_sessions),
                 'alias_sessions':deepcopy(self.alias_sessions),'macro_sessions':deepcopy(self.macro_sessions),
                 'iterative_sessions':deepcopy(self.iterative_sessions),
+                'analogy_schemas':deepcopy(self.analogy_schemas),
+                'analogy_schema_by_pattern':deepcopy(self.analogy_schema_by_pattern),
+                'analogy_unclustered':sorted(self.analogy_unclustered),
+                'external_permutation_schemas':deepcopy(self.external_permutation_schemas),
+                'external_projection_schemas':deepcopy(self.external_projection_schemas),
+                'external_role_sets':deepcopy(self.external_role_sets),
+                'external_role_cardinalities':deepcopy(self.external_role_cardinalities),
+                'external_role_topologies':deepcopy(self.external_role_topologies),
                 'audit':deepcopy(self.audit)}
 
     @classmethod
     def from_dict(cls,data: dict) -> 'SymbolicWorldLearner':
         if not data:return cls()
         version=data.get('version',1)
-        if version not in (1,2,3,4):raise ValueError('Estado simbólico no compatible.')
+        if version not in (1,2,3,4,5,6,7,8,9,10,11):raise ValueError('Estado simbólico no compatible.')
         obj=cls(data.get('min_support',3),data.get('goal_min_support',2),data.get('alias_min_support',2),
                 data.get('max_precondition_candidates',24),data.get('max_action_bindings',10_000),
                 data.get('macro_min_support',3),data.get('iterative_min_support',3))
@@ -1094,5 +1880,19 @@ class SymbolicWorldLearner:
         obj.alias_sessions=deepcopy(data.get('alias_sessions',{})) if version>=2 else {}
         obj.macro_sessions=deepcopy(data.get('macro_sessions',{})) if version>=3 else {}
         obj.iterative_sessions=deepcopy(data.get('iterative_sessions',{})) if version>=4 else {}
+        obj.analogy_schemas=deepcopy(data.get('analogy_schemas',{})) if version>=5 else {}
+        if version>=6:
+            obj.analogy_schema_by_pattern=deepcopy(data.get('analogy_schema_by_pattern',{}))
+            obj.analogy_unclustered=set(data.get('analogy_unclustered',[]))
+        else:
+            obj.analogy_schema_by_pattern={}
+            for sid,schema in obj.analogy_schemas.items():
+                for pattern in schema.get('members',[]):obj.analogy_schema_by_pattern[pattern]=sid
+            obj.analogy_unclustered={p for p,state in obj.sessions.items() if state.get('promoted') and p not in obj.analogy_schema_by_pattern}
+        obj.external_permutation_schemas=deepcopy(data.get('external_permutation_schemas',{})) if version>=7 else {}
+        obj.external_projection_schemas=deepcopy(data.get('external_projection_schemas',{})) if version>=8 else {}
+        obj.external_role_sets=deepcopy(data.get('external_role_sets',{})) if version>=9 else {}
+        obj.external_role_cardinalities=deepcopy(data.get('external_role_cardinalities',{})) if version>=10 else {}
+        obj.external_role_topologies=deepcopy(data.get('external_role_topologies',{})) if version>=11 else {}
         obj.audit=deepcopy(data.get('audit',[]))
         return obj

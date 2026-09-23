@@ -1,0 +1,73 @@
+{
+  "version": "V7.8-raw-bootstrap",
+  "log": [
+    [
+      "raw",
+      "Ana conoce a Luis",
+      "raw_relation_pending",
+      null
+    ],
+    [
+      "raw",
+      "María conoce a Pedro",
+      "raw_relation_pending",
+      null
+    ],
+    [
+      "raw",
+      "Carlos conoce a Sofía",
+      "raw_relation_learned",
+      "primitive_b361f41744d6cbca_a2"
+    ],
+    [
+      "raw",
+      "Elena conoce a Diego",
+      "raw_relation_pending",
+      null
+    ],
+    [
+      "proc",
+      "suma uno a 2",
+      "procedure_pending"
+    ],
+    [
+      "proc",
+      "suma uno a 4",
+      "procedure_pending"
+    ],
+    [
+      "proc",
+      "suma uno a 6",
+      "procedure_learned"
+    ]
+  ],
+  "promotions": {
+    "{s0} conoce a {s1}": {
+      "pred": "primitive_b361f41744d6cbca_a2",
+      "arity": 2,
+      "support": 3
+    }
+  },
+  "queries": [
+    [
+      "ana-luis",
+      "supported",
+      "Según la información registrada: ana conoce a luis."
+    ],
+    [
+      "ana-pedro",
+      "unknown",
+      "No tengo información suficiente para afirmarlo ni negarlo."
+    ],
+    [
+      "respond",
+      "supported",
+      "Según la información registrada: ana conoce a luis."
+    ]
+  ],
+  "procedure_use": "procedure_executed",
+  "procedure_ok": true,
+  "raw_promoted": true,
+  "pass": true,
+  "fact_ok": true
+}

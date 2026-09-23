@@ -1,0 +1,81 @@
+{
+  "version": "V5.9-development",
+  "mechanism": "central_cross_mechanism_meta_representation",
+  "code_hash_before": "e855f17757905ad7f22cf0fdb84df61edfa307ab98fd1eb85a58ee125f952001",
+  "projection_families": [
+    {
+      "input_arity": 3,
+      "mapping": [
+        1
+      ],
+      "schema_status": "schema_learned",
+      "meta_schema": "roles:3:1",
+      "treatment_status": "procedure_learned",
+      "control_status": "procedure_pending",
+      "treatment_correct": 100,
+      "control_correct": 0
+    },
+    {
+      "input_arity": 3,
+      "mapping": [
+        2,
+        0
+      ],
+      "schema_status": "schema_learned",
+      "meta_schema": "roles:3:0,2",
+      "treatment_status": "procedure_learned",
+      "control_status": "procedure_pending",
+      "treatment_correct": 100,
+      "control_correct": 0
+    },
+    {
+      "input_arity": 3,
+      "mapping": [
+        1,
+        0
+      ],
+      "schema_status": "schema_learned",
+      "meta_schema": "roles:3:0,1",
+      "treatment_status": "procedure_learned",
+      "control_status": "procedure_pending",
+      "treatment_correct": 100,
+      "control_correct": 0
+    },
+    {
+      "input_arity": 3,
+      "mapping": [
+        2,
+        1
+      ],
+      "schema_status": "schema_learned",
+      "meta_schema": "roles:3:1,2",
+      "treatment_status": "procedure_learned",
+      "control_status": "procedure_pending",
+      "treatment_correct": 100,
+      "control_correct": 0
+    }
+  ],
+  "symbolic_transfer": {
+    "treatment_status": "operator_learned",
+    "control_status": "pending_support",
+    "treatment_mode": "meta_role_set_transfer",
+    "heldout_correct": 100
+  },
+  "incompatible_arithmetic": {
+    "status_after_two": "procedure_pending",
+    "meta_rows": 3
+  },
+  "withdrawal_persistence": {
+    "source_present_before": true,
+    "contradictory_status": "schema_contradictory",
+    "source_present_after": false,
+    "persistence_status": "procedure_learned",
+    "persistence_correct": 40
+  },
+  "all_treatments_learned": true,
+  "all_controls_pending": true,
+  "heldout_total": 400,
+  "code_hash_after": "e855f17757905ad7f22cf0fdb84df61edfa307ab98fd1eb85a58ee125f952001",
+  "code_unchanged": true,
+  "elapsed_ms": 42.12281701620668
+}

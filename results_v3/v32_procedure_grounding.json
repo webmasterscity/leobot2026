@@ -1,7 +1,7 @@
 {
   "version": "0.3.2",
   "experiment": "grounding_procedures",
-  "code_hash_before": "8e8dcd34ac77cb60ec68fc24777f3c7761016b1168c22b066b2dcaa5cde58ff8",
+  "code_hash_before": "615749e62e3dd25443e8eb37ccc69ed819194afe662e76337e1351ef21b9d7d4",
   "parameter_generalization": {
     "training": [
       [
@@ -53,6 +53,10 @@
           "library_requested": null,
           "library_seeded": 0,
           "library_mode": "auto",
+          "allowed_vars": [
+            0,
+            1
+          ],
           "library_selected": [],
           "library_retrieval": {
             "mode": "concept_index",
@@ -73,19 +77,59 @@
           "goal_join_solved": true,
           "reason": null,
           "semantic_states": 6,
-          "ms": 8.769086999564024
+          "ms": 8.628146024420857,
+          "meta_controller_route": {
+            "order": [
+              "role_set",
+              "role_cardinality"
+            ],
+            "used": false,
+            "mode": "rbf_promote",
+            "signature": "0.125,0.375,0,0.125,0,0,0,0",
+            "features": [
+              0.125,
+              0.375,
+              0.0,
+              0.125,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "scores": [
+              {
+                "strategy": "role_set",
+                "cost": 3000.0,
+                "confidence": 0.6537721660930257,
+                "nearest_distance": 0.001953125,
+                "support": 2,
+                "mode": "interpolated"
+              }
+            ]
+          },
+          "meta_controller_representation_attempts": [
+            {
+              "strategy": "role_set",
+              "matched": false
+            },
+            {
+              "strategy": "role_cardinality",
+              "matched": false
+            }
+          ]
         }
       ],
       "programs": [
         [
           "(x0 + x1)"
         ]
-      ]
+      ],
+      "meta_dependency_schemas": []
     },
     "heldout": 200,
     "correct": 200,
     "episodic_correct": 0,
-    "median_us": 7.86199962021783,
+    "median_us": 8.880975656211376,
     "sample_cases": [
       [
         4940,
@@ -145,6 +189,10 @@
           "library_requested": null,
           "library_seeded": 0,
           "library_mode": "auto",
+          "allowed_vars": [
+            0,
+            1
+          ],
           "library_selected": [],
           "library_retrieval": {
             "mode": "concept_index",
@@ -165,7 +213,46 @@
           "goal_join_solved": false,
           "reason": null,
           "semantic_states": 5,
-          "ms": 8.47834900014277
+          "ms": 8.276919019408524,
+          "meta_controller_route": {
+            "order": [
+              "role_set",
+              "role_cardinality"
+            ],
+            "used": false,
+            "mode": "rbf_promote",
+            "signature": "0.25,0.375,0,0.25,0,0,0,0",
+            "features": [
+              0.25,
+              0.375,
+              0.0,
+              0.25,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "scores": [
+              {
+                "strategy": "role_set",
+                "cost": 3000.0,
+                "confidence": 0.6537721660930257,
+                "nearest_distance": 0.001953125,
+                "support": 2,
+                "mode": "interpolated"
+              }
+            ]
+          },
+          "meta_controller_representation_attempts": [
+            {
+              "strategy": "role_set",
+              "matched": false
+            },
+            {
+              "strategy": "role_cardinality",
+              "matched": false
+            }
+          ]
         },
         {
           "skill": "proc_6c0cf52de6930ff0_o1",
@@ -180,6 +267,10 @@
           "library_requested": null,
           "library_seeded": 0,
           "library_mode": "auto",
+          "allowed_vars": [
+            0,
+            1
+          ],
           "library_selected": [
             "proc_6c0cf52de6930ff0_o0"
           ],
@@ -299,7 +390,38 @@
           "goal_join_solved": false,
           "reason": null,
           "semantic_states": 5,
-          "ms": 1.1318460001348285
+          "ms": 1.26186094712466,
+          "meta_controller_route": {
+            "order": [
+              "role_set",
+              "role_cardinality"
+            ],
+            "used": false,
+            "mode": "exact_class",
+            "signature": "0.25,0.375,0,0.25,0,0,0,0",
+            "scores": {
+              "role_set": {
+                "trials": 1,
+                "success": 0,
+                "cost": 1.0
+              },
+              "role_cardinality": {
+                "trials": 1,
+                "success": 0,
+                "cost": 1.0
+              }
+            }
+          },
+          "meta_controller_representation_attempts": [
+            {
+              "strategy": "role_set",
+              "matched": false
+            },
+            {
+              "strategy": "role_cardinality",
+              "matched": false
+            }
+          ]
         }
       ],
       "programs": [
@@ -309,7 +431,53 @@
         [
           "x0"
         ]
-      ]
+      ],
+      "meta_dependency_schemas": [],
+      "meta_representation": {
+        "meta": {
+          "status": "meta_representation_registered",
+          "schema": "proj:2:1,0",
+          "kind": "permutation",
+          "input_arity": 2,
+          "mapping": [
+            1,
+            0
+          ],
+          "support": 3,
+          "source_count": 1,
+          "families": [
+            "procedure"
+          ]
+        },
+        "role_set": {
+          "status": "meta_representation_ignored",
+          "reason": "invalid_role_set"
+        },
+        "propagated": {
+          "symbolic": {
+            "status": "cross_modal_schema_registered",
+            "schema": "perm:2:1,0",
+            "support": 3,
+            "sources": 1
+          },
+          "symbolic_role_set": {
+            "status": "cross_modal_schema_ignored",
+            "reason": "invalid_role_set"
+          },
+          "symbolic_role_cardinality": {
+            "status": "cross_modal_schema_registered",
+            "schema": "card:2",
+            "support": 3,
+            "sources": 1
+          }
+        }
+      },
+      "cross_modal_learning": {
+        "status": "cross_modal_schema_registered",
+        "schema": "perm:2:1,0",
+        "support": 3,
+        "sources": 1
+      }
     },
     "heldout": 200,
     "correct": 200,
@@ -337,6 +505,11 @@
           "library_requested": null,
           "library_seeded": 0,
           "library_mode": "auto",
+          "allowed_vars": [
+            0,
+            1,
+            2
+          ],
           "library_selected": [],
           "library_retrieval": {
             "mode": "concept_index",
@@ -357,14 +530,62 @@
           "goal_join_solved": true,
           "reason": null,
           "semantic_states": 96,
-          "ms": 2.1625990002576145
+          "ms": 2.1060080034658313,
+          "meta_controller_route": {
+            "order": [
+              "role_set",
+              "role_cardinality"
+            ],
+            "used": true,
+            "scores": [
+              {
+                "strategy": "role_set",
+                "cost": 3000.0,
+                "confidence": 0.9806582491395386,
+                "nearest_distance": 0.001953125,
+                "support": 5,
+                "mode": "interpolated"
+              },
+              {
+                "strategy": "role_cardinality",
+                "cost": 3000.0000000000005,
+                "confidence": 0.9806582491395386,
+                "nearest_distance": 0.001953125,
+                "support": 3,
+                "mode": "interpolated"
+              }
+            ],
+            "mode": "rbf",
+            "signature": "0.375,0.75,0,0.125,0,0,0,0",
+            "features": [
+              0.375,
+              0.75,
+              0.0,
+              0.125,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          "meta_controller_representation_attempts": [
+            {
+              "strategy": "role_set",
+              "matched": false
+            },
+            {
+              "strategy": "role_cardinality",
+              "matched": false
+            }
+          ]
         }
       ],
       "programs": [
         [
           "(x2 + (x0 * x1))"
         ]
-      ]
+      ],
+      "meta_dependency_schemas": []
     },
     "base_ablated": {
       "status": "procedure_learned",
@@ -387,6 +608,11 @@
           "library_requested": null,
           "library_seeded": 0,
           "library_mode": "auto",
+          "allowed_vars": [
+            0,
+            1,
+            2
+          ],
           "library_selected": [],
           "library_retrieval": {
             "mode": "concept_index",
@@ -407,14 +633,62 @@
           "goal_join_solved": true,
           "reason": null,
           "semantic_states": 96,
-          "ms": 2.114537000124983
+          "ms": 2.118671895004809,
+          "meta_controller_route": {
+            "order": [
+              "role_set",
+              "role_cardinality"
+            ],
+            "used": true,
+            "scores": [
+              {
+                "strategy": "role_set",
+                "cost": 3000.0,
+                "confidence": 0.9806582491395386,
+                "nearest_distance": 0.001953125,
+                "support": 5,
+                "mode": "interpolated"
+              },
+              {
+                "strategy": "role_cardinality",
+                "cost": 3000.0000000000005,
+                "confidence": 0.9806582491395386,
+                "nearest_distance": 0.001953125,
+                "support": 3,
+                "mode": "interpolated"
+              }
+            ],
+            "mode": "rbf",
+            "signature": "0.375,0.75,0,0.125,0,0,0,0",
+            "features": [
+              0.375,
+              0.75,
+              0.0,
+              0.125,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          "meta_controller_representation_attempts": [
+            {
+              "strategy": "role_set",
+              "matched": false
+            },
+            {
+              "strategy": "role_cardinality",
+              "matched": false
+            }
+          ]
         }
       ],
       "programs": [
         [
           "(x2 + (x0 * x1))"
         ]
-      ]
+      ],
+      "meta_dependency_schemas": []
     },
     "target_full": {
       "status": "procedure_learned",
@@ -437,6 +711,11 @@
           "library_requested": null,
           "library_seeded": 1,
           "library_mode": "auto",
+          "allowed_vars": [
+            0,
+            1,
+            2
+          ],
           "library_selected": [
             "proc_9e4588b6b2971271_o0"
           ],
@@ -461,14 +740,46 @@
           "goal_join_solved": true,
           "reason": null,
           "semantic_states": 8,
-          "ms": 0.5293680005706847
+          "ms": 0.5742110079154372,
+          "meta_controller_route": {
+            "order": [
+              "role_set",
+              "role_cardinality"
+            ],
+            "used": false,
+            "mode": "exact_class",
+            "signature": "0.375,0.75,0,0.125,0,0,0,0",
+            "scores": {
+              "role_set": {
+                "trials": 1,
+                "success": 0,
+                "cost": 1.0
+              },
+              "role_cardinality": {
+                "trials": 1,
+                "success": 0,
+                "cost": 1.0
+              }
+            }
+          },
+          "meta_controller_representation_attempts": [
+            {
+              "strategy": "role_set",
+              "matched": false
+            },
+            {
+              "strategy": "role_cardinality",
+              "matched": false
+            }
+          ]
         }
       ],
       "programs": [
         [
           "(@proc_9e4588b6b2971271_o0 + @proc_9e4588b6b2971271_o0)"
         ]
-      ]
+      ],
+      "meta_dependency_schemas": []
     },
     "target_ablated": {
       "status": "procedure_unresolved",
@@ -489,6 +800,11 @@
           "library_requested": null,
           "library_seeded": 0,
           "library_mode": "auto",
+          "allowed_vars": [
+            0,
+            1,
+            2
+          ],
           "library_selected": [],
           "library_retrieval": {
             "mode": "concept_index",
@@ -500,12 +816,44 @@
           "goal_join_solved": false,
           "reason": null,
           "semantic_states": 95,
-          "ms": 1.325307000115572
+          "ms": 1.2272140011191368,
+          "meta_controller_route": {
+            "order": [
+              "role_set",
+              "role_cardinality"
+            ],
+            "used": false,
+            "mode": "exact_class",
+            "signature": "0.375,0.75,0,0.125,0,0,0,0",
+            "scores": {
+              "role_set": {
+                "trials": 1,
+                "success": 0,
+                "cost": 1.0
+              },
+              "role_cardinality": {
+                "trials": 1,
+                "success": 0,
+                "cost": 1.0
+              }
+            }
+          },
+          "meta_controller_representation_attempts": [
+            {
+              "strategy": "role_set",
+              "matched": false
+            },
+            {
+              "strategy": "role_cardinality",
+              "matched": false
+            }
+          ]
         }
       ],
       "programs": [
         []
-      ]
+      ],
+      "meta_dependency_schemas": []
     },
     "target_no_prior": {
       "status": "procedure_unresolved",
@@ -526,6 +874,11 @@
           "library_requested": null,
           "library_seeded": 0,
           "library_mode": "auto",
+          "allowed_vars": [
+            0,
+            1,
+            2
+          ],
           "library_selected": [],
           "library_retrieval": {
             "mode": "concept_index",
@@ -537,12 +890,60 @@
           "goal_join_solved": false,
           "reason": null,
           "semantic_states": 95,
-          "ms": 3.557891999662388
+          "ms": 1.2178790057078004,
+          "meta_controller_route": {
+            "order": [
+              "role_set",
+              "role_cardinality"
+            ],
+            "used": true,
+            "scores": [
+              {
+                "strategy": "role_set",
+                "cost": 3000.0,
+                "confidence": 0.9806582491395386,
+                "nearest_distance": 0.001953125,
+                "support": 5,
+                "mode": "interpolated"
+              },
+              {
+                "strategy": "role_cardinality",
+                "cost": 3000.0000000000005,
+                "confidence": 0.9806582491395386,
+                "nearest_distance": 0.001953125,
+                "support": 3,
+                "mode": "interpolated"
+              }
+            ],
+            "mode": "rbf",
+            "signature": "0.375,0.75,0,0.125,0,0,0,0",
+            "features": [
+              0.375,
+              0.75,
+              0.0,
+              0.125,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          "meta_controller_representation_attempts": [
+            {
+              "strategy": "role_set",
+              "matched": false
+            },
+            {
+              "strategy": "role_cardinality",
+              "matched": false
+            }
+          ]
         }
       ],
       "programs": [
         []
-      ]
+      ],
+      "meta_dependency_schemas": []
     },
     "heldout": 200,
     "scores": {
@@ -569,7 +970,7 @@
     "final_support": 1,
     "final_duplicate": true
   },
-  "code_hash_after": "8e8dcd34ac77cb60ec68fc24777f3c7761016b1168c22b066b2dcaa5cde58ff8",
+  "code_hash_after": "615749e62e3dd25443e8eb37ccc69ed819194afe662e76337e1351ef21b9d7d4",
   "code_unchanged_during_evaluation": true,
-  "elapsed_s": 0.10841653300030885
+  "elapsed_s": 0.10360066988505423
 }

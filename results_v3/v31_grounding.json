@@ -1,6 +1,6 @@
 {
   "experiment": "v3.1 grounded language internal validation",
-  "frozen_code_sha256": "8e8dcd34ac77cb60ec68fc24777f3c7761016b1168c22b066b2dcaa5cde58ff8",
+  "frozen_code_sha256": "615749e62e3dd25443e8eb37ccc69ed819194afe662e76337e1351ef21b9d7d4",
   "conditions": {
     "candidate_two_independent_supports": {
       "training_statuses": [
@@ -76,8 +76,8 @@
         "concept_pending",
         "concept_pending",
         "concept_pending",
-        "unrecognized",
-        "unrecognized",
+        "schema_pending",
+        "schema_pending",
         "concept_pending",
         "concept_learned",
         "unrecognized",
@@ -88,22 +88,22 @@
       "assertions": [
         {
           "text": "Diego reside en Maracay.",
-          "status": "unrecognized",
+          "status": "raw_relation_learned",
           "correct": false
         },
         {
           "text": "Nora labora para Initech.",
-          "status": "unrecognized",
+          "status": "raw_relation_learned",
           "correct": false
         },
         {
           "text": "Iris tiene bajo su custodia Patineta.",
-          "status": "unrecognized",
+          "status": "raw_relation_learned",
           "correct": false
         },
         {
           "text": "Rosa es progenitora de Tomas.",
-          "status": "unrecognized",
+          "status": "raw_relation_learned",
           "correct": false
         },
         {
@@ -113,7 +113,7 @@
         },
         {
           "text": "Julia no reside en Maracay.",
-          "status": "unrecognized",
+          "status": "stored",
           "correct": false
         }
       ],
@@ -198,7 +198,7 @@
   "semantic_coincidence": {
     "candidate": {
       "first": "grounding_pending",
-      "second": "unrecognized",
+      "second": "raw_relation_pending",
       "false_fact_created": false
     },
     "single_support_ablation": {
@@ -227,7 +227,7 @@
         "concept_pending",
         "concept_pending"
       ],
-      "transfer": "unrecognized",
+      "transfer": "raw_relation_learned",
       "vive_created": false,
       "wrong_trabaja": false,
       "wrong_posee": false
@@ -241,7 +241,7 @@
     ],
     "transfer_status": "stored",
     "correct": true,
-    "two_training_ms": 0.9400270000696764
+    "two_training_ms": 1.0064069647341967
   },
   "limitations": [
     "Internal developer-designed evaluation, not an independent AGI test.",

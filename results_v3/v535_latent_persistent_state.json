@@ -1,0 +1,29 @@
+{
+  "version": "0.5.35",
+  "experiment": "latent_persistent_state_without_named_internal_relation",
+  "code_hash": "615749e62e3dd25443e8eb37ccc69ed819194afe662e76337e1351ef21b9d7d4",
+  "code_frozen": true,
+  "training": {
+    "independent_documents": 3,
+    "input_predicate_naming_state": false,
+    "promoted_state_schemas": 1,
+    "promoted_event_schemas": 0
+  },
+  "treatment": {
+    "heldout_cases": 100,
+    "state_resolved": 100,
+    "event_materializations_max": 0,
+    "dependency_materializations_max": 0,
+    "intervening_noise_sentences": "1..5"
+  },
+  "v534_ablation_without_state_generator": {
+    "heldout_cases": 100,
+    "unresolved": 100
+  },
+  "ambiguity_control": {
+    "cases": 50,
+    "safe_ambiguity": 50,
+    "state_materializations": 0
+  },
+  "claim": "a non-contiguous recurrent role can induce a demand-driven persistent-state representation without an explicit input predicate naming that state; bounded exact-schema result, not open ontology invention or AGI/ASI"
+}

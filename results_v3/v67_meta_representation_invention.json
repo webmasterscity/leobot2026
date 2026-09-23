@@ -1,0 +1,81 @@
+{
+  "version": "V6.7 invented meta-representation",
+  "code_hash_before": "5e88b661f121e64ddb7df67ec785a1a4ff5728da567e7cb597d09f259c451fac",
+  "invented_view": {
+    "kind": "feature_projection",
+    "dims": [
+      0,
+      1
+    ],
+    "score": 1.22,
+    "accuracy": 1.0,
+    "coverage": 1.0,
+    "gain_over_majority": 0.5,
+    "tasks": 16,
+    "buckets": {
+      "0,0": {
+        "winner": "role_cardinality",
+        "support": 4,
+        "confidence": 1.0
+      },
+      "0,1": {
+        "winner": "role_topology",
+        "support": 4,
+        "confidence": 1.0
+      },
+      "1,0": {
+        "winner": "role_topology",
+        "support": 4,
+        "confidence": 1.0
+      },
+      "1,1": {
+        "winner": "role_cardinality",
+        "support": 4,
+        "confidence": 1.0
+      }
+    }
+  },
+  "treatment": {
+    "correct_first_choice": 400,
+    "total": 400,
+    "attempts_to_reach_safe_fallback": 400,
+    "modes": {
+      "invented_view": 400
+    }
+  },
+  "control_without_invented_view": {
+    "correct_first_choice": 200,
+    "total": 400,
+    "attempts_to_reach_safe_fallback": 600,
+    "modes": {
+      "default": 400
+    }
+  },
+  "first_choice_gain_pct": 50.0,
+  "attempt_reduction_pct": 33.333333333333336,
+  "persistence": {
+    "view_preserved": true,
+    "procedure_shared": true,
+    "symbolic_shared": true,
+    "heldout_after_reload": {
+      "correct_first_choice": 80,
+      "total": 80,
+      "attempts_to_reach_safe_fallback": 80,
+      "modes": {
+        "invented_view": 80
+      }
+    }
+  },
+  "rollback": {
+    "view_existed_before_shift": true,
+    "view_after_contradictory_regime": null,
+    "route_mode_after_shift": "rbf",
+    "safe_fallback_order": [
+      "role_cardinality",
+      "role_topology"
+    ]
+  },
+  "elapsed_s": 1.0296286130324006,
+  "code_hash_after": "5e88b661f121e64ddb7df67ec785a1a4ff5728da567e7cb597d09f259c451fac",
+  "code_unchanged": true
+}

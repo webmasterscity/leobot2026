@@ -139,7 +139,7 @@ class V3Tests(unittest.TestCase):
     def test_scalable_bot_fact_roundtrip(self):
         with tempfile.TemporaryDirectory() as td:
             db=Path(td)/'facts.db';state=Path(td)/'state.json'
-            b=ScalableBot(db)
+            b=ScalableBot(db,allow_extensional_grounding=True)
             b.language.teach('Ana vive en Caracas.',{'act':'assert','pred':'vive','args':['ana','caracas']})
             b.language.teach('¿Dónde vive Ana?',{'act':'query','pred':'vive','args':['ana','?lugar']})
             b.respond('Eva vive en Mérida.')
@@ -240,7 +240,7 @@ class V3Tests(unittest.TestCase):
 
 
     def test_grounded_language_induction_transfers_without_frame_annotation(self):
-        b=Bot()
+        b=Bot(allow_extensional_grounding=True)
         b.language.teach('Ana vive en Caracas.',{'act':'assert','pred':'vive','args':['ana','caracas']})
         b.language.teach('¿Dónde vive Ana?',{'act':'query','pred':'vive','args':['ana','?answer']})
         b.kb.add(Atom('vive',('bruno','merida')),'seed')
@@ -262,7 +262,7 @@ class V3Tests(unittest.TestCase):
         self.assertEqual(q2['proofs'][0]['atom']['args'],['diego','maracay'])
 
     def test_grounded_language_induction_abstains_when_semantics_are_ambiguous(self):
-        b=Bot()
+        b=Bot(allow_extensional_grounding=True)
         b.kb.add(Atom('vive',('ana','caracas')),'seed')
         b.kb.add(Atom('trabaja',('ana','acme')),'seed')
         before=len(b.language.examples)
@@ -273,7 +273,7 @@ class V3Tests(unittest.TestCase):
 
     def test_grounded_language_induction_works_with_disk_memory(self):
         with tempfile.TemporaryDirectory() as td:
-            b=ScalableBot(Path(td)/'facts.db')
+            b=ScalableBot(Path(td)/'facts.db',allow_extensional_grounding=True)
             try:
                 b.kb.add(Atom('vive',('bruno','merida')),'seed')
                 b.kb.add(Atom('vive',('eva','barquisimeto')),'seed')
@@ -284,7 +284,7 @@ class V3Tests(unittest.TestCase):
             finally:b.close()
 
     def test_grounded_language_does_not_promote_single_coincidence(self):
-        b=Bot()
+        b=Bot(allow_extensional_grounding=True)
         b.kb.add(Atom('trabaja',('bruno','acme')),'seed')
         r=b.respond('Bruno odia Acme.')
         self.assertEqual(r['status'],'grounding_pending')
@@ -294,7 +294,7 @@ class V3Tests(unittest.TestCase):
         self.assertFalse(b.kb.contains(Atom('trabaja',('eva','globex'))))
 
     def test_grounded_language_promotes_after_independent_support(self):
-        b=Bot()
+        b=Bot(allow_extensional_grounding=True)
         b.kb.add(Atom('vive',('bruno','merida')),'seed')
         b.kb.add(Atom('vive',('eva','barquisimeto')),'seed')
         self.assertEqual(b.respond('Bruno reside en Mérida.')['status'],'grounding_pending')
@@ -303,7 +303,7 @@ class V3Tests(unittest.TestCase):
         self.assertTrue(b.kb.contains(Atom('vive',('diego','maracay'))))
 
     def test_grounded_language_supports_explicit_negative_facts(self):
-        b=Bot()
+        b=Bot(allow_extensional_grounding=True)
         b.kb.add(Atom('!vive',('ana','caracas')),'seed')
         b.kb.add(Atom('!vive',('bruno','merida')),'seed')
         self.assertEqual(b.respond('Ana no reside en Caracas.')['status'],'grounding_pending')
@@ -313,7 +313,7 @@ class V3Tests(unittest.TestCase):
 
     def test_grounded_language_pending_state_persists(self):
         import json
-        b=Bot()
+        b=Bot(allow_extensional_grounding=True)
         b.kb.add(Atom('vive',('bruno','merida')),'seed')
         self.assertEqual(b.respond('Bruno reside en Mérida.')['status'],'grounding_pending')
         with tempfile.TemporaryDirectory() as td:
@@ -323,7 +323,7 @@ class V3Tests(unittest.TestCase):
             self.assertEqual(c.respond('Diego reside en Maracay.')['status'],'stored')
 
     def test_negative_construction_beats_broader_positive_slot(self):
-        b=Bot()
+        b=Bot(allow_extensional_grounding=True)
         b.kb.add(Atom('vive',('bruno','merida')),'seed')
         b.kb.add(Atom('vive',('eva','barquisimeto')),'seed')
         self.assertEqual(b.respond('Bruno reside en Mérida.')['status'],'grounding_pending')
@@ -338,7 +338,7 @@ class V3Tests(unittest.TestCase):
         self.assertFalse(b.kb.contains(Atom('vive',('julia no','maracay'))))
 
     def test_grounded_lexical_rewrite_transfers_across_acts(self):
-        b=Bot()
+        b=Bot(allow_extensional_grounding=True)
         for person,city in [('bruno','merida'),('eva','barquisimeto'),('luis','valencia'),('ana','caracas'),('carla','maracay')]:
             b.kb.add(Atom('vive',(person,city)),'seed')
         # Acquire two assertion constructions entirely through grounding.
@@ -357,7 +357,7 @@ class V3Tests(unittest.TestCase):
         self.assertEqual(out['proofs'][0]['atom']['args'],['carla','maracay'])
 
     def test_grounded_language_resolves_ambiguity_by_version_space_intersection(self):
-        b=Bot()
+        b=Bot(allow_extensional_grounding=True)
         # Neither episode is individually unique: the shared surviving meaning is vive.
         for atom in [Atom('vive',('ana','caracas')),Atom('trabaja',('ana','caracas')),
                      Atom('vive',('bruno','merida')),Atom('posee',('bruno','merida'))]:
@@ -376,7 +376,7 @@ class V3Tests(unittest.TestCase):
     def test_scalable_grounding_hypothesis_persists_across_restart(self):
         with tempfile.TemporaryDirectory() as td:
             db=Path(td)/'facts.db'; state=Path(td)/'state.json'
-            b=ScalableBot(db)
+            b=ScalableBot(db,allow_extensional_grounding=True)
             b.kb.add(Atom('vive',('bruno','merida')),'seed')
             self.assertEqual(b.respond('Bruno reside en Mérida.')['status'],'grounding_pending')
             b.save(state); b.close()
@@ -443,7 +443,7 @@ class V3Tests(unittest.TestCase):
     def test_grounded_procedure_persists_with_bot_and_disk_backend(self):
         with tempfile.TemporaryDirectory() as td:
             db=Path(td)/'facts.db'; state=Path(td)/'state.json'
-            b=ScalableBot(db); b.procedures.min_support=3
+            b=ScalableBot(db,allow_extensional_grounding=True); b.procedures.min_support=3
             for text,before,after in [('Suma 3 al valor.',(10,),(13,)),('Suma 5 al valor.',(7,),(12,)),('Suma 8 al valor.',(-2,),(6,))]:
                 b.observe_transition(text,before,after)
             b.save(state); b.close()
@@ -711,7 +711,7 @@ class V3Tests(unittest.TestCase):
 
     def test_symbolic_world_persists_with_scalable_bot(self):
         with tempfile.TemporaryDirectory() as td:
-            db=Path(td)/'facts.db';side=Path(td)/'state.json';b=ScalableBot(db)
+            db=Path(td)/'facts.db';side=Path(td)/'state.json';b=ScalableBot(db,allow_extensional_grounding=True)
             self._teach_symbolic_move(b);self._teach_symbolic_pickup(b);S=self._symbolic_state
             b.observe_symbolic_goal('Logra que Ana tenga caja.',S(('holding','ana','caja')))
             b.observe_symbolic_goal('Logra que Bruno tenga libro.',S(('holding','bruno','libro')))
@@ -984,7 +984,7 @@ class V3Tests(unittest.TestCase):
 
     def test_concept_grounder_persists_with_scalable_bot(self):
         with tempfile.TemporaryDirectory() as td:
-            db=Path(td)/'concepts.db';side=Path(td)/'concepts.json';b=ScalableBot(db)
+            db=Path(td)/'concepts.db';side=Path(td)/'concepts.json';b=ScalableBot(db,allow_extensional_grounding=True)
             for pred,args in [('edge',('ana','beto')),('edge',('beto','carla')),
                               ('edge',('diego','elena')),('edge',('elena','fabio')),
                               ('other',('gina','oscar')),('other',('juan','paula'))]:

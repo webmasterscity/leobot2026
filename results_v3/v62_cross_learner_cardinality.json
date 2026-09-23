@@ -1,0 +1,373 @@
+{
+  "experiment": "V6.2 cross-learner cardinality across unseen arity",
+  "code_hash_before": "5e88b661f121e64ddb7df67ec785a1a4ff5728da567e7cb597d09f259c451fac",
+  "code_hash_after": "5e88b661f121e64ddb7df67ec785a1a4ff5728da567e7cb597d09f259c451fac",
+  "code_unchanged": true,
+  "prior_sources": 3,
+  "treatment_final": {
+    "status": "operator_learned",
+    "pattern": "transporta a <e0> con <e1> de <e2> a <e3>",
+    "support": 2,
+    "failures": 1,
+    "preconditions": [
+      [
+        "at",
+        "<e0>",
+        "<e2>"
+      ],
+      [
+        "road",
+        "<e2>",
+        "<e3>"
+      ]
+    ],
+    "add": [
+      [
+        "at",
+        "<e0>",
+        "<e3>"
+      ]
+    ],
+    "delete": [
+      [
+        "at",
+        "<e0>",
+        "<e2>"
+      ]
+    ],
+    "precondition_mode": "meta_role_cardinality_transfer",
+    "cross_modal_schema": "card:2",
+    "target_role_mapping": [
+      0,
+      3
+    ],
+    "cross_modal_sources": [
+      "meta:schema:schema_surface:delta rol0 <e0> rol1 <e1> rol2 <e2>",
+      "meta:schema:schema_surface:epsilon rol0 <e0> rol1 <e1> rol2 <e2>",
+      "meta:schema:schema_surface:zeta rol0 <e0> rol1 <e1> rol2 <e2>"
+    ],
+    "meta_controller_route": {
+      "order": [
+        "structural_analogy",
+        "projection",
+        "permutation",
+        "role_set",
+        "role_topology",
+        "role_cardinality"
+      ],
+      "used": true,
+      "scores": [
+        {
+          "strategy": "structural_analogy",
+          "cost": 3000.0,
+          "confidence": 0.580216483888927,
+          "nearest_distance": 0.013888888888888888,
+          "support": 2,
+          "mode": "interpolated"
+        },
+        {
+          "strategy": "projection",
+          "cost": 3000.0,
+          "confidence": 0.580216483888927,
+          "nearest_distance": 0.013888888888888888,
+          "support": 2,
+          "mode": "interpolated"
+        },
+        {
+          "strategy": "permutation",
+          "cost": 3000.0,
+          "confidence": 0.580216483888927,
+          "nearest_distance": 0.013888888888888888,
+          "support": 2,
+          "mode": "interpolated"
+        },
+        {
+          "strategy": "role_set",
+          "cost": 3000.0,
+          "confidence": 0.580216483888927,
+          "nearest_distance": 0.013888888888888888,
+          "support": 2,
+          "mode": "interpolated"
+        },
+        {
+          "strategy": "role_topology",
+          "cost": 3000.0,
+          "confidence": 0.580216483888927,
+          "nearest_distance": 0.013888888888888888,
+          "support": 2,
+          "mode": "interpolated"
+        },
+        {
+          "strategy": "role_cardinality",
+          "cost": 3000.0,
+          "confidence": 0.580216483888927,
+          "nearest_distance": 0.013888888888888888,
+          "support": 2,
+          "mode": "interpolated"
+        }
+      ],
+      "mode": "rbf",
+      "signature": "0.5,0.25,0.333333,0.25,0,0.125,0,0",
+      "features": [
+        0.5,
+        0.25,
+        0.3333333333333333,
+        0.25,
+        0.0,
+        0.125,
+        0.0,
+        0.0
+      ]
+    },
+    "meta_controller_representation_attempts": [
+      {
+        "strategy": "structural_analogy",
+        "learned": false
+      },
+      {
+        "strategy": "projection",
+        "learned": false
+      },
+      {
+        "strategy": "permutation",
+        "learned": false
+      },
+      {
+        "strategy": "role_set",
+        "learned": false
+      },
+      {
+        "strategy": "role_topology",
+        "learned": false
+      },
+      {
+        "strategy": "role_cardinality",
+        "learned": true
+      }
+    ],
+    "meta_controller_representation_strategy": "role_cardinality",
+    "meta_representation": {
+      "meta": {
+        "status": "meta_representation_registered",
+        "schema": "proj:4:0,3",
+        "kind": "projection",
+        "input_arity": 4,
+        "mapping": [
+          0,
+          3
+        ],
+        "support": 2,
+        "source_count": 1,
+        "families": [
+          "symbolic"
+        ]
+      },
+      "role_set": {
+        "status": "meta_representation_registered",
+        "schema": "roles:4:0,3",
+        "kind": "role_set",
+        "input_arity": 4,
+        "roles": [
+          0,
+          3
+        ],
+        "support": 2,
+        "source_count": 1,
+        "families": [
+          "symbolic"
+        ],
+        "cardinality_schema": "card:2"
+      },
+      "propagated": {
+        "procedure": {
+          "status": "cross_modal_schema_registered",
+          "schema": "proj:4:0,3",
+          "support": 2,
+          "sources": 1
+        },
+        "procedure_role_set": {
+          "status": "cross_modal_schema_registered",
+          "schema": "roles:4:0,3",
+          "support": 2,
+          "sources": 1
+        },
+        "procedure_role_cardinality": {
+          "status": "cross_modal_schema_registered",
+          "schema": "card:2",
+          "support": 17,
+          "sources": 4
+        }
+      }
+    },
+    "cross_modal_learning": {
+      "status": "cross_modal_schema_registered",
+      "schema": "proj:4:0,3",
+      "support": 2,
+      "sources": 1
+    }
+  },
+  "control_final": {
+    "status": "pending_support",
+    "support": 2,
+    "required": 3,
+    "pattern": "transporta a <e0> con <e1> de <e2> a <e3>",
+    "meta_controller_route": {
+      "order": [
+        "structural_analogy",
+        "projection",
+        "permutation",
+        "role_set",
+        "role_topology",
+        "role_cardinality"
+      ],
+      "used": true,
+      "scores": [
+        {
+          "strategy": "structural_analogy",
+          "cost": 3000.0,
+          "confidence": 0.580216483888927,
+          "nearest_distance": 0.013888888888888888,
+          "support": 2,
+          "mode": "interpolated"
+        },
+        {
+          "strategy": "projection",
+          "cost": 3000.0,
+          "confidence": 0.580216483888927,
+          "nearest_distance": 0.013888888888888888,
+          "support": 2,
+          "mode": "interpolated"
+        },
+        {
+          "strategy": "permutation",
+          "cost": 3000.0,
+          "confidence": 0.580216483888927,
+          "nearest_distance": 0.013888888888888888,
+          "support": 2,
+          "mode": "interpolated"
+        },
+        {
+          "strategy": "role_set",
+          "cost": 3000.0,
+          "confidence": 0.580216483888927,
+          "nearest_distance": 0.013888888888888888,
+          "support": 2,
+          "mode": "interpolated"
+        },
+        {
+          "strategy": "role_topology",
+          "cost": 3000.0,
+          "confidence": 0.580216483888927,
+          "nearest_distance": 0.013888888888888888,
+          "support": 2,
+          "mode": "interpolated"
+        },
+        {
+          "strategy": "role_cardinality",
+          "cost": 3000.0,
+          "confidence": 0.580216483888927,
+          "nearest_distance": 0.013888888888888888,
+          "support": 2,
+          "mode": "interpolated"
+        }
+      ],
+      "mode": "rbf",
+      "signature": "0.5,0.25,0.333333,0.25,0,0,0,0",
+      "features": [
+        0.5,
+        0.25,
+        0.3333333333333333,
+        0.25,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "meta_controller_representation_attempts": [
+      {
+        "strategy": "structural_analogy",
+        "learned": false
+      },
+      {
+        "strategy": "projection",
+        "learned": false
+      },
+      {
+        "strategy": "permutation",
+        "learned": false
+      },
+      {
+        "strategy": "role_set",
+        "learned": false
+      },
+      {
+        "strategy": "role_topology",
+        "learned": false
+      },
+      {
+        "strategy": "role_cardinality",
+        "learned": false
+      }
+    ],
+    "meta_controller_representation_strategy": null,
+    "meta_controller_gap": {
+      "status": "meta_representation_gap",
+      "family": "representation",
+      "features": [
+        0.5,
+        0.25,
+        0.3333333333333333,
+        0.25,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "attempts": [
+        {
+          "strategy": "structural_analogy",
+          "learned": false
+        },
+        {
+          "strategy": "projection",
+          "learned": false
+        },
+        {
+          "strategy": "permutation",
+          "learned": false
+        },
+        {
+          "strategy": "role_set",
+          "learned": false
+        },
+        {
+          "strategy": "role_topology",
+          "learned": false
+        },
+        {
+          "strategy": "role_cardinality",
+          "learned": false
+        }
+      ],
+      "reason": "known_representation_strategies_unresolved",
+      "evidence_request": {
+        "kind": "controlled_intervention",
+        "reason": "known_representations_unresolved",
+        "message": "Varíe un solo hecho o rol contextual por vez y observe si el efecto cambia."
+      },
+      "representation_invention": {
+        "status": "meta_view_pending",
+        "family": "representation",
+        "tasks": 0
+      }
+    }
+  },
+  "heldout_correct": 200,
+  "heldout_total": 200,
+  "false_accepts_without_required_road": 0,
+  "heldout_elapsed_ms": 16.548488,
+  "persisted": true,
+  "restart_ok": true,
+  "interpretation": "The source contributes only k=2. Target action effects identify roles 0 and 3; target failures identify road as a precondition."
+}

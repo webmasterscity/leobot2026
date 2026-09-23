@@ -1,0 +1,115 @@
+{
+  "version": "V5.3-development",
+  "mechanism": "exact_history_replay_meta_exploration",
+  "code_hash_before": "e855f17757905ad7f22cf0fdb84df61edfa307ab98fd1eb85a58ee125f952001",
+  "code_hash_after": "e855f17757905ad7f22cf0fdb84df61edfa307ab98fd1eb85a58ee125f952001",
+  "code_unchanged": true,
+  "treatment": {
+    "domains": 50,
+    "attempts_total": 51,
+    "target_candidates_total": 6450,
+    "heldout_correct": 200,
+    "heldout_total": 200,
+    "median_domain_ms": 80.14228899264708,
+    "final_policy": "forward_first",
+    "policy_updates": 1,
+    "first_five": [
+      {
+        "domain": 0,
+        "attempts": 2,
+        "target_candidates": 178,
+        "ms": 29.540190938860178,
+        "heldout": 4,
+        "heldout_total": 4,
+        "policy": "forward_first"
+      },
+      {
+        "domain": 1,
+        "attempts": 1,
+        "target_candidates": 128,
+        "ms": 30.398529954254627,
+        "heldout": 4,
+        "heldout_total": 4,
+        "policy": "forward_first"
+      },
+      {
+        "domain": 2,
+        "attempts": 1,
+        "target_candidates": 128,
+        "ms": 30.588717898353934,
+        "heldout": 4,
+        "heldout_total": 4,
+        "policy": "forward_first"
+      },
+      {
+        "domain": 3,
+        "attempts": 1,
+        "target_candidates": 128,
+        "ms": 33.42724498361349,
+        "heldout": 4,
+        "heldout_total": 4,
+        "policy": "forward_first"
+      },
+      {
+        "domain": 4,
+        "attempts": 1,
+        "target_candidates": 128,
+        "ms": 35.11835902463645,
+        "heldout": 4,
+        "heldout_total": 4,
+        "policy": "forward_first"
+      }
+    ]
+  },
+  "fixed_policy_control": {
+    "domains": 50,
+    "attempts_total": 100,
+    "target_candidates_total": 8900,
+    "heldout_correct": 200,
+    "heldout_total": 200,
+    "median_domain_ms": 108.98471745895222,
+    "first_five": [
+      {
+        "domain": 0,
+        "attempts": 2,
+        "target_candidates": 178,
+        "ms": 24.814940989017487,
+        "heldout": 4,
+        "heldout_total": 4
+      },
+      {
+        "domain": 1,
+        "attempts": 2,
+        "target_candidates": 178,
+        "ms": 28.20299204904586,
+        "heldout": 4,
+        "heldout_total": 4
+      },
+      {
+        "domain": 2,
+        "attempts": 2,
+        "target_candidates": 178,
+        "ms": 31.36208897922188,
+        "heldout": 4,
+        "heldout_total": 4
+      },
+      {
+        "domain": 3,
+        "attempts": 2,
+        "target_candidates": 178,
+        "ms": 34.79288890957832,
+        "heldout": 4,
+        "heldout_total": 4
+      },
+      {
+        "domain": 4,
+        "attempts": 2,
+        "target_candidates": 178,
+        "ms": 38.73148502316326,
+        "heldout": 4,
+        "heldout_total": 4
+      }
+    ]
+  },
+  "scope_note": "Replay is exact only over candidate branches actually observed in historical invention traces."
+}

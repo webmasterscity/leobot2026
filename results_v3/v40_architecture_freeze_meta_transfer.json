@@ -1,0 +1,2544 @@
+{
+  "version": "0.4.0",
+  "experiment": "architecture_freeze_cross_family_meta_transfer",
+  "code_hash_before": "615749e62e3dd25443e8eb37ccc69ed819194afe662e76337e1351ef21b9d7d4",
+  "families": {
+    "move": {
+      "success_curve": [
+        3,
+        2,
+        1,
+        1
+      ],
+      "domains": [
+        {
+          "domain": 1,
+          "successes_to_promote": 2,
+          "reports": [
+            {
+              "status": "pending_support",
+              "support": 1,
+              "required": 3,
+              "pattern": "navega a <e0> de <e1> a <e2>",
+              "meta_controller_route": {
+                "order": [
+                  "structural_analogy",
+                  "projection",
+                  "permutation",
+                  "role_set",
+                  "role_topology",
+                  "role_cardinality"
+                ],
+                "used": false,
+                "mode": "exact_class",
+                "signature": "0.375,0.125,0,0.25,0,0,0,0",
+                "scores": {
+                  "structural_analogy": {
+                    "trials": 1,
+                    "success": 0,
+                    "cost": 1.0
+                  },
+                  "projection": {
+                    "trials": 1,
+                    "success": 0,
+                    "cost": 1.0
+                  },
+                  "permutation": {
+                    "trials": 1,
+                    "success": 0,
+                    "cost": 1.0
+                  },
+                  "role_set": {
+                    "trials": 1,
+                    "success": 0,
+                    "cost": 1.0
+                  },
+                  "role_topology": {
+                    "trials": 1,
+                    "success": 0,
+                    "cost": 1.0
+                  },
+                  "role_cardinality": {
+                    "trials": 1,
+                    "success": 0,
+                    "cost": 1.0
+                  }
+                }
+              },
+              "meta_controller_representation_attempts": [
+                {
+                  "strategy": "structural_analogy",
+                  "learned": false
+                },
+                {
+                  "strategy": "projection",
+                  "learned": false
+                },
+                {
+                  "strategy": "permutation",
+                  "learned": false
+                },
+                {
+                  "strategy": "role_set",
+                  "learned": false
+                },
+                {
+                  "strategy": "role_topology",
+                  "learned": false
+                },
+                {
+                  "strategy": "role_cardinality",
+                  "learned": false
+                }
+              ],
+              "meta_controller_representation_strategy": null,
+              "meta_controller_gap": {
+                "status": "meta_representation_gap",
+                "family": "representation",
+                "features": [
+                  0.375,
+                  0.125,
+                  0.0,
+                  0.25,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "attempts": [
+                  {
+                    "strategy": "structural_analogy",
+                    "learned": false
+                  },
+                  {
+                    "strategy": "projection",
+                    "learned": false
+                  },
+                  {
+                    "strategy": "permutation",
+                    "learned": false
+                  },
+                  {
+                    "strategy": "role_set",
+                    "learned": false
+                  },
+                  {
+                    "strategy": "role_topology",
+                    "learned": false
+                  },
+                  {
+                    "strategy": "role_cardinality",
+                    "learned": false
+                  }
+                ],
+                "reason": "known_representation_strategies_unresolved",
+                "evidence_request": {
+                  "kind": "independent_success",
+                  "reason": "need_effect_invariance",
+                  "message": "Observe otra ejecución exitosa independiente con entidades distintas."
+                },
+                "representation_invention": {
+                  "status": "meta_view_pending",
+                  "family": "representation",
+                  "tasks": 0
+                }
+              }
+            },
+            {
+              "status": "operator_learned",
+              "pattern": "navega a <e0> de <e1> a <e2>",
+              "support": 2,
+              "failures": 0,
+              "preconditions": [
+                [
+                  "link",
+                  "<e1>",
+                  "<e2>"
+                ],
+                [
+                  "located",
+                  "<e0>",
+                  "<e1>"
+                ]
+              ],
+              "add": [
+                [
+                  "located",
+                  "<e0>",
+                  "<e2>"
+                ]
+              ],
+              "delete": [
+                [
+                  "located",
+                  "<e0>",
+                  "<e1>"
+                ]
+              ],
+              "precondition_mode": "analogical_transfer",
+              "analogy_sources": [
+                "mueve a <e0> de <e1> a <e2>"
+              ],
+              "analogy_source_count": 1,
+              "analogy_alternatives": 1,
+              "analogy_schema_id": "schema:837ccac0f2380fa3",
+              "meta_controller_route": {
+                "order": [
+                  "structural_analogy",
+                  "projection",
+                  "permutation",
+                  "role_set",
+                  "role_topology",
+                  "role_cardinality"
+                ],
+                "used": false,
+                "mode": "exact_class",
+                "signature": "0.375,0.25,0,0.25,0,0,0,0",
+                "scores": {
+                  "structural_analogy": {
+                    "trials": 1,
+                    "success": 0,
+                    "cost": 1.0
+                  },
+                  "projection": {
+                    "trials": 1,
+                    "success": 0,
+                    "cost": 1.0
+                  },
+                  "permutation": {
+                    "trials": 1,
+                    "success": 0,
+                    "cost": 1.0
+                  },
+                  "role_set": {
+                    "trials": 1,
+                    "success": 0,
+                    "cost": 1.0
+                  },
+                  "role_topology": {
+                    "trials": 1,
+                    "success": 0,
+                    "cost": 1.0
+                  },
+                  "role_cardinality": {
+                    "trials": 1,
+                    "success": 0,
+                    "cost": 1.0
+                  }
+                }
+              },
+              "meta_controller_representation_attempts": [
+                {
+                  "strategy": "structural_analogy",
+                  "learned": true
+                }
+              ],
+              "meta_controller_representation_strategy": "structural_analogy",
+              "meta_representation": {
+                "meta": {
+                  "status": "meta_representation_registered",
+                  "schema": "proj:3:0,2",
+                  "kind": "projection",
+                  "input_arity": 3,
+                  "mapping": [
+                    0,
+                    2
+                  ],
+                  "support": 5,
+                  "source_count": 2,
+                  "families": [
+                    "symbolic"
+                  ]
+                },
+                "role_set": {
+                  "status": "meta_representation_registered",
+                  "schema": "roles:3:0,2",
+                  "kind": "role_set",
+                  "input_arity": 3,
+                  "roles": [
+                    0,
+                    2
+                  ],
+                  "support": 5,
+                  "source_count": 2,
+                  "families": [
+                    "symbolic"
+                  ],
+                  "cardinality_schema": "card:2"
+                },
+                "propagated": {
+                  "procedure": {
+                    "status": "cross_modal_schema_registered",
+                    "schema": "proj:3:0,2",
+                    "support": 5,
+                    "sources": 2
+                  },
+                  "procedure_role_set": {
+                    "status": "cross_modal_schema_registered",
+                    "schema": "roles:3:0,2",
+                    "support": 5,
+                    "sources": 2
+                  },
+                  "procedure_role_cardinality": {
+                    "status": "cross_modal_schema_registered",
+                    "schema": "card:2",
+                    "support": 5,
+                    "sources": 2
+                  }
+                }
+              },
+              "meta_role_topology": {
+                "meta": {
+                  "status": "meta_representation_registered",
+                  "schema": "topo:3:0,1;1,2",
+                  "kind": "role_topology",
+                  "input_arity": 3,
+                  "edges": [
+                    [
+                      0,
+                      1
+                    ],
+                    [
+                      1,
+                      2
+                    ]
+                  ],
+                  "support": 5,
+                  "source_count": 2,
+                  "families": [
+                    "symbolic"
+                  ]
+                },
+                "propagated": {}
+              },
+              "cross_modal_learning": {
+                "status": "cross_modal_schema_registered",
+                "schema": "proj:3:0,2",
+                "support": 5,
+                "sources": 2
+              }
+            }
+          ],
+          "heldout": {
+            "cases": 100,
+            "correct": 100
+          }
+        },
+        {
+          "domain": 2,
+          "successes_to_promote": 1,
+          "reports": [
+            {
+              "status": "operator_learned",
+              "pattern": "desplaza a <e0> desde <e1> hasta <e2>",
+              "support": 1,
+              "failures": 0,
+              "preconditions": [
+                [
+                  "path",
+                  "<e1>",
+                  "<e2>"
+                ],
+                [
+                  "positioned",
+                  "<e0>",
+                  "<e1>"
+                ]
+              ],
+              "add": [
+                [
+                  "positioned",
+                  "<e0>",
+                  "<e2>"
+                ]
+              ],
+              "delete": [
+                [
+                  "positioned",
+                  "<e0>",
+                  "<e1>"
+                ]
+              ],
+              "precondition_mode": "analogical_transfer",
+              "analogy_sources": [
+                "mueve a <e0> de <e1> a <e2>",
+                "navega a <e0> de <e1> a <e2>"
+              ],
+              "analogy_source_count": 2,
+              "analogy_alternatives": 1,
+              "analogy_schema_id": "schema:837ccac0f2380fa3",
+              "meta_controller_route": {
+                "order": [
+                  "structural_analogy",
+                  "projection",
+                  "permutation",
+                  "role_set",
+                  "role_topology",
+                  "role_cardinality"
+                ],
+                "used": false,
+                "mode": "aikr_budget",
+                "signature": "0.375,0.125,0,0.25,0,0,0,0",
+                "scores": [
+                  {
+                    "strategy": "structural_analogy",
+                    "value": 0.22703598902131938,
+                    "priority": 0.20781598049496477,
+                    "durability": 0.3296799539643607,
+                    "quality": 0.25,
+                    "ema_cost": 1.0,
+                    "trials": 2
+                  },
+                  {
+                    "strategy": "projection",
+                    "value": 0.22703598902131938,
+                    "priority": 0.20781598049496477,
+                    "durability": 0.3296799539643607,
+                    "quality": 0.25,
+                    "ema_cost": 1.0,
+                    "trials": 2
+                  },
+                  {
+                    "strategy": "permutation",
+                    "value": 0.22703598902131938,
+                    "priority": 0.20781598049496477,
+                    "durability": 0.3296799539643607,
+                    "quality": 0.25,
+                    "ema_cost": 1.0,
+                    "trials": 2
+                  },
+                  {
+                    "strategy": "role_set",
+                    "value": 0.22703598902131938,
+                    "priority": 0.20781598049496477,
+                    "durability": 0.3296799539643607,
+                    "quality": 0.25,
+                    "ema_cost": 1.0,
+                    "trials": 2
+                  },
+                  {
+                    "strategy": "role_topology",
+                    "value": 0.22703598902131938,
+                    "priority": 0.20781598049496477,
+                    "durability": 0.3296799539643607,
+                    "quality": 0.25,
+                    "ema_cost": 1.0,
+                    "trials": 2
+                  },
+                  {
+                    "strategy": "role_cardinality",
+                    "value": 0.22703598902131938,
+                    "priority": 0.20781598049496477,
+                    "durability": 0.3296799539643607,
+                    "quality": 0.25,
+                    "ema_cost": 1.0,
+                    "trials": 2
+                  }
+                ]
+              },
+              "meta_controller_representation_attempts": [
+                {
+                  "strategy": "structural_analogy",
+                  "learned": true
+                }
+              ],
+              "meta_controller_representation_strategy": "structural_analogy",
+              "meta_representation": {
+                "meta": {
+                  "status": "meta_representation_registered",
+                  "schema": "proj:3:0,2",
+                  "kind": "projection",
+                  "input_arity": 3,
+                  "mapping": [
+                    0,
+                    2
+                  ],
+                  "support": 6,
+                  "source_count": 3,
+                  "families": [
+                    "symbolic"
+                  ]
+                },
+                "role_set": {
+                  "status": "meta_representation_registered",
+                  "schema": "roles:3:0,2",
+                  "kind": "role_set",
+                  "input_arity": 3,
+                  "roles": [
+                    0,
+                    2
+                  ],
+                  "support": 6,
+                  "source_count": 3,
+                  "families": [
+                    "symbolic"
+                  ],
+                  "cardinality_schema": "card:2"
+                },
+                "propagated": {
+                  "procedure": {
+                    "status": "cross_modal_schema_registered",
+                    "schema": "proj:3:0,2",
+                    "support": 6,
+                    "sources": 3
+                  },
+                  "procedure_role_set": {
+                    "status": "cross_modal_schema_registered",
+                    "schema": "roles:3:0,2",
+                    "support": 6,
+                    "sources": 3
+                  },
+                  "procedure_role_cardinality": {
+                    "status": "cross_modal_schema_registered",
+                    "schema": "card:2",
+                    "support": 6,
+                    "sources": 3
+                  }
+                }
+              },
+              "meta_role_topology": {
+                "meta": {
+                  "status": "meta_representation_registered",
+                  "schema": "topo:3:0,1;1,2",
+                  "kind": "role_topology",
+                  "input_arity": 3,
+                  "edges": [
+                    [
+                      0,
+                      1
+                    ],
+                    [
+                      1,
+                      2
+                    ]
+                  ],
+                  "support": 6,
+                  "source_count": 3,
+                  "families": [
+                    "symbolic"
+                  ]
+                },
+                "propagated": {}
+              },
+              "cross_modal_learning": {
+                "status": "cross_modal_schema_registered",
+                "schema": "proj:3:0,2",
+                "support": 6,
+                "sources": 3
+              }
+            }
+          ],
+          "heldout": {
+            "cases": 100,
+            "correct": 100
+          }
+        },
+        {
+          "domain": 3,
+          "successes_to_promote": 1,
+          "reports": [
+            {
+              "status": "operator_learned",
+              "pattern": "traslada a <e0> entre <e1> y <e2>",
+              "support": 1,
+              "failures": 0,
+              "preconditions": [
+                [
+                  "route",
+                  "<e1>",
+                  "<e2>"
+                ],
+                [
+                  "situated",
+                  "<e0>",
+                  "<e1>"
+                ]
+              ],
+              "add": [
+                [
+                  "situated",
+                  "<e0>",
+                  "<e2>"
+                ]
+              ],
+              "delete": [
+                [
+                  "situated",
+                  "<e0>",
+                  "<e1>"
+                ]
+              ],
+              "precondition_mode": "analogical_transfer",
+              "analogy_sources": [
+                "mueve a <e0> de <e1> a <e2>",
+                "navega a <e0> de <e1> a <e2>"
+              ],
+              "analogy_source_count": 3,
+              "analogy_alternatives": 1,
+              "analogy_schema_id": "schema:837ccac0f2380fa3",
+              "meta_controller_route": {
+                "order": [
+                  "structural_analogy",
+                  "projection",
+                  "permutation",
+                  "role_set",
+                  "role_topology",
+                  "role_cardinality"
+                ],
+                "used": false,
+                "mode": "aikr_budget",
+                "signature": "0.375,0.125,0,0.25,0,0,0,0",
+                "scores": [
+                  {
+                    "strategy": "structural_analogy",
+                    "value": 0.40162514287539036,
+                    "priority": 0.4054155310475696,
+                    "durability": 0.4511883639059736,
+                    "quality": 0.4,
+                    "ema_cost": 1.0,
+                    "trials": 3
+                  },
+                  {
+                    "strategy": "projection",
+                    "value": 0.22703598902131938,
+                    "priority": 0.20781598049496477,
+                    "durability": 0.3296799539643607,
+                    "quality": 0.25,
+                    "ema_cost": 1.0,
+                    "trials": 2
+                  },
+                  {
+                    "strategy": "permutation",
+                    "value": 0.22703598902131938,
+                    "priority": 0.20781598049496477,
+                    "durability": 0.3296799539643607,
+                    "quality": 0.25,
+                    "ema_cost": 1.0,
+                    "trials": 2
+                  },
+                  {
+                    "strategy": "role_set",
+                    "value": 0.22703598902131938,
+                    "priority": 0.20781598049496477,
+                    "durability": 0.3296799539643607,
+                    "quality": 0.25,
+                    "ema_cost": 1.0,
+                    "trials": 2
+                  },
+                  {
+                    "strategy": "role_topology",
+                    "value": 0.22703598902131938,
+                    "priority": 0.20781598049496477,
+                    "durability": 0.3296799539643607,
+                    "quality": 0.25,
+                    "ema_cost": 1.0,
+                    "trials": 2
+                  },
+                  {
+                    "strategy": "role_cardinality",
+                    "value": 0.22703598902131938,
+                    "priority": 0.20781598049496477,
+                    "durability": 0.3296799539643607,
+                    "quality": 0.25,
+                    "ema_cost": 1.0,
+                    "trials": 2
+                  }
+                ]
+              },
+              "meta_controller_representation_attempts": [
+                {
+                  "strategy": "structural_analogy",
+                  "learned": true
+                }
+              ],
+              "meta_controller_representation_strategy": "structural_analogy",
+              "meta_representation": {
+                "meta": {
+                  "status": "meta_representation_registered",
+                  "schema": "proj:3:0,2",
+                  "kind": "projection",
+                  "input_arity": 3,
+                  "mapping": [
+                    0,
+                    2
+                  ],
+                  "support": 7,
+                  "source_count": 4,
+                  "families": [
+                    "symbolic"
+                  ]
+                },
+                "role_set": {
+                  "status": "meta_representation_registered",
+                  "schema": "roles:3:0,2",
+                  "kind": "role_set",
+                  "input_arity": 3,
+                  "roles": [
+                    0,
+                    2
+                  ],
+                  "support": 7,
+                  "source_count": 4,
+                  "families": [
+                    "symbolic"
+                  ],
+                  "cardinality_schema": "card:2"
+                },
+                "propagated": {
+                  "procedure": {
+                    "status": "cross_modal_schema_registered",
+                    "schema": "proj:3:0,2",
+                    "support": 7,
+                    "sources": 4
+                  },
+                  "procedure_role_set": {
+                    "status": "cross_modal_schema_registered",
+                    "schema": "roles:3:0,2",
+                    "support": 7,
+                    "sources": 4
+                  },
+                  "procedure_role_cardinality": {
+                    "status": "cross_modal_schema_registered",
+                    "schema": "card:2",
+                    "support": 7,
+                    "sources": 4
+                  }
+                }
+              },
+              "meta_role_topology": {
+                "meta": {
+                  "status": "meta_representation_registered",
+                  "schema": "topo:3:0,1;1,2",
+                  "kind": "role_topology",
+                  "input_arity": 3,
+                  "edges": [
+                    [
+                      0,
+                      1
+                    ],
+                    [
+                      1,
+                      2
+                    ]
+                  ],
+                  "support": 7,
+                  "source_count": 4,
+                  "families": [
+                    "symbolic"
+                  ]
+                },
+                "propagated": {}
+              },
+              "cross_modal_learning": {
+                "status": "cross_modal_schema_registered",
+                "schema": "proj:3:0,2",
+                "support": 7,
+                "sources": 4
+              }
+            }
+          ],
+          "heldout": {
+            "cases": 100,
+            "correct": 100
+          }
+        }
+      ]
+    },
+    "pickup": {
+      "success_curve": [
+        3,
+        2,
+        1,
+        1
+      ],
+      "domains": [
+        {
+          "domain": 1,
+          "successes_to_promote": 2,
+          "reports": [
+            {
+              "status": "pending_support",
+              "support": 1,
+              "required": 3,
+              "pattern": "<e0> recolecta <e1> en <e2>",
+              "meta_controller_route": {
+                "order": [
+                  "structural_analogy",
+                  "projection",
+                  "permutation",
+                  "role_set",
+                  "role_topology",
+                  "role_cardinality"
+                ],
+                "used": false,
+                "mode": "exact_class",
+                "signature": "0.375,0.125,0,0.25,0,0,0,0",
+                "scores": {
+                  "structural_analogy": {
+                    "trials": 1,
+                    "success": 0,
+                    "cost": 1.0
+                  },
+                  "projection": {
+                    "trials": 1,
+                    "success": 0,
+                    "cost": 1.0
+                  },
+                  "permutation": {
+                    "trials": 1,
+                    "success": 0,
+                    "cost": 1.0
+                  },
+                  "role_set": {
+                    "trials": 1,
+                    "success": 0,
+                    "cost": 1.0
+                  },
+                  "role_topology": {
+                    "trials": 1,
+                    "success": 0,
+                    "cost": 1.0
+                  },
+                  "role_cardinality": {
+                    "trials": 1,
+                    "success": 0,
+                    "cost": 1.0
+                  }
+                }
+              },
+              "meta_controller_representation_attempts": [
+                {
+                  "strategy": "structural_analogy",
+                  "learned": false
+                },
+                {
+                  "strategy": "projection",
+                  "learned": false
+                },
+                {
+                  "strategy": "permutation",
+                  "learned": false
+                },
+                {
+                  "strategy": "role_set",
+                  "learned": false
+                },
+                {
+                  "strategy": "role_topology",
+                  "learned": false
+                },
+                {
+                  "strategy": "role_cardinality",
+                  "learned": false
+                }
+              ],
+              "meta_controller_representation_strategy": null,
+              "meta_controller_gap": {
+                "status": "meta_representation_gap",
+                "family": "representation",
+                "features": [
+                  0.375,
+                  0.125,
+                  0.0,
+                  0.25,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "attempts": [
+                  {
+                    "strategy": "structural_analogy",
+                    "learned": false
+                  },
+                  {
+                    "strategy": "projection",
+                    "learned": false
+                  },
+                  {
+                    "strategy": "permutation",
+                    "learned": false
+                  },
+                  {
+                    "strategy": "role_set",
+                    "learned": false
+                  },
+                  {
+                    "strategy": "role_topology",
+                    "learned": false
+                  },
+                  {
+                    "strategy": "role_cardinality",
+                    "learned": false
+                  }
+                ],
+                "reason": "known_representation_strategies_unresolved",
+                "evidence_request": {
+                  "kind": "independent_success",
+                  "reason": "need_effect_invariance",
+                  "message": "Observe otra ejecución exitosa independiente con entidades distintas."
+                },
+                "representation_invention": {
+                  "status": "meta_view_pending",
+                  "family": "representation",
+                  "tasks": 0
+                }
+              }
+            },
+            {
+              "status": "operator_learned",
+              "pattern": "<e0> recolecta <e1> en <e2>",
+              "support": 2,
+              "failures": 0,
+              "preconditions": [
+                [
+                  "positioned",
+                  "<e0>",
+                  "<e2>"
+                ],
+                [
+                  "token_at",
+                  "<e1>",
+                  "<e2>"
+                ]
+              ],
+              "add": [
+                [
+                  "possesses",
+                  "<e0>",
+                  "<e1>"
+                ]
+              ],
+              "delete": [
+                [
+                  "token_at",
+                  "<e1>",
+                  "<e2>"
+                ]
+              ],
+              "precondition_mode": "analogical_transfer",
+              "analogy_sources": [
+                "<e0> toma <e1> en <e2>"
+              ],
+              "analogy_source_count": 1,
+              "analogy_alternatives": 1,
+              "analogy_schema_id": "schema:9ea452a264ed4b8c",
+              "meta_controller_route": {
+                "order": [
+                  "structural_analogy",
+                  "projection",
+                  "permutation",
+                  "role_set",
+                  "role_topology",
+                  "role_cardinality"
+                ],
+                "used": false,
+                "mode": "exact_class",
+                "signature": "0.375,0.25,0,0.25,0,0,0,0",
+                "scores": {
+                  "structural_analogy": {
+                    "trials": 1,
+                    "success": 0,
+                    "cost": 1.0
+                  },
+                  "projection": {
+                    "trials": 1,
+                    "success": 0,
+                    "cost": 1.0
+                  },
+                  "permutation": {
+                    "trials": 1,
+                    "success": 0,
+                    "cost": 1.0
+                  },
+                  "role_set": {
+                    "trials": 1,
+                    "success": 0,
+                    "cost": 1.0
+                  },
+                  "role_topology": {
+                    "trials": 1,
+                    "success": 0,
+                    "cost": 1.0
+                  },
+                  "role_cardinality": {
+                    "trials": 1,
+                    "success": 0,
+                    "cost": 1.0
+                  }
+                }
+              },
+              "meta_controller_representation_attempts": [
+                {
+                  "strategy": "structural_analogy",
+                  "learned": true
+                }
+              ],
+              "meta_controller_representation_strategy": "structural_analogy",
+              "meta_role_topology": {
+                "meta": {
+                  "status": "meta_representation_registered",
+                  "schema": "topo:3:0,1;2,1",
+                  "kind": "role_topology",
+                  "input_arity": 3,
+                  "edges": [
+                    [
+                      0,
+                      1
+                    ],
+                    [
+                      2,
+                      1
+                    ]
+                  ],
+                  "support": 5,
+                  "source_count": 2,
+                  "families": [
+                    "symbolic"
+                  ]
+                },
+                "propagated": {}
+              }
+            }
+          ],
+          "heldout": {
+            "cases": 100,
+            "correct": 100
+          }
+        },
+        {
+          "domain": 2,
+          "successes_to_promote": 1,
+          "reports": [
+            {
+              "status": "operator_learned",
+              "pattern": "<e0> adquiere <e1> dentro de <e2>",
+              "support": 1,
+              "failures": 0,
+              "preconditions": [
+                [
+                  "located",
+                  "<e0>",
+                  "<e2>"
+                ],
+                [
+                  "object_at",
+                  "<e1>",
+                  "<e2>"
+                ]
+              ],
+              "add": [
+                [
+                  "carries",
+                  "<e0>",
+                  "<e1>"
+                ]
+              ],
+              "delete": [
+                [
+                  "object_at",
+                  "<e1>",
+                  "<e2>"
+                ]
+              ],
+              "precondition_mode": "analogical_transfer",
+              "analogy_sources": [
+                "<e0> recolecta <e1> en <e2>",
+                "<e0> toma <e1> en <e2>"
+              ],
+              "analogy_source_count": 2,
+              "analogy_alternatives": 1,
+              "analogy_schema_id": "schema:9ea452a264ed4b8c",
+              "meta_controller_route": {
+                "order": [
+                  "structural_analogy",
+                  "projection",
+                  "permutation",
+                  "role_set",
+                  "role_topology",
+                  "role_cardinality"
+                ],
+                "used": false,
+                "mode": "aikr_budget",
+                "signature": "0.375,0.125,0,0.25,0,0,0,0",
+                "scores": [
+                  {
+                    "strategy": "structural_analogy",
+                    "value": 0.22703598902131938,
+                    "priority": 0.20781598049496477,
+                    "durability": 0.3296799539643607,
+                    "quality": 0.25,
+                    "ema_cost": 1.0,
+                    "trials": 2
+                  },
+                  {
+                    "strategy": "projection",
+                    "value": 0.22703598902131938,
+                    "priority": 0.20781598049496477,
+                    "durability": 0.3296799539643607,
+                    "quality": 0.25,
+                    "ema_cost": 1.0,
+                    "trials": 2
+                  },
+                  {
+                    "strategy": "permutation",
+                    "value": 0.22703598902131938,
+                    "priority": 0.20781598049496477,
+                    "durability": 0.3296799539643607,
+                    "quality": 0.25,
+                    "ema_cost": 1.0,
+                    "trials": 2
+                  },
+                  {
+                    "strategy": "role_set",
+                    "value": 0.22703598902131938,
+                    "priority": 0.20781598049496477,
+                    "durability": 0.3296799539643607,
+                    "quality": 0.25,
+                    "ema_cost": 1.0,
+                    "trials": 2
+                  },
+                  {
+                    "strategy": "role_topology",
+                    "value": 0.22703598902131938,
+                    "priority": 0.20781598049496477,
+                    "durability": 0.3296799539643607,
+                    "quality": 0.25,
+                    "ema_cost": 1.0,
+                    "trials": 2
+                  },
+                  {
+                    "strategy": "role_cardinality",
+                    "value": 0.22703598902131938,
+                    "priority": 0.20781598049496477,
+                    "durability": 0.3296799539643607,
+                    "quality": 0.25,
+                    "ema_cost": 1.0,
+                    "trials": 2
+                  }
+                ]
+              },
+              "meta_controller_representation_attempts": [
+                {
+                  "strategy": "structural_analogy",
+                  "learned": true
+                }
+              ],
+              "meta_controller_representation_strategy": "structural_analogy",
+              "meta_role_topology": {
+                "meta": {
+                  "status": "meta_representation_registered",
+                  "schema": "topo:3:0,1;2,1",
+                  "kind": "role_topology",
+                  "input_arity": 3,
+                  "edges": [
+                    [
+                      0,
+                      1
+                    ],
+                    [
+                      2,
+                      1
+                    ]
+                  ],
+                  "support": 6,
+                  "source_count": 3,
+                  "families": [
+                    "symbolic"
+                  ]
+                },
+                "propagated": {}
+              }
+            }
+          ],
+          "heldout": {
+            "cases": 100,
+            "correct": 100
+          }
+        },
+        {
+          "domain": 3,
+          "successes_to_promote": 1,
+          "reports": [
+            {
+              "status": "operator_learned",
+              "pattern": "<e0> obtiene <e1> desde <e2>",
+              "support": 1,
+              "failures": 0,
+              "preconditions": [
+                [
+                  "asset_at",
+                  "<e1>",
+                  "<e2>"
+                ],
+                [
+                  "situated",
+                  "<e0>",
+                  "<e2>"
+                ]
+              ],
+              "add": [
+                [
+                  "owns",
+                  "<e0>",
+                  "<e1>"
+                ]
+              ],
+              "delete": [
+                [
+                  "asset_at",
+                  "<e1>",
+                  "<e2>"
+                ]
+              ],
+              "precondition_mode": "analogical_transfer",
+              "analogy_sources": [
+                "<e0> recolecta <e1> en <e2>",
+                "<e0> toma <e1> en <e2>"
+              ],
+              "analogy_source_count": 3,
+              "analogy_alternatives": 1,
+              "analogy_schema_id": "schema:9ea452a264ed4b8c",
+              "meta_controller_route": {
+                "order": [
+                  "structural_analogy",
+                  "projection",
+                  "permutation",
+                  "role_set",
+                  "role_topology",
+                  "role_cardinality"
+                ],
+                "used": false,
+                "mode": "aikr_budget",
+                "signature": "0.375,0.125,0,0.25,0,0,0,0",
+                "scores": [
+                  {
+                    "strategy": "structural_analogy",
+                    "value": 0.40162514287539036,
+                    "priority": 0.4054155310475696,
+                    "durability": 0.4511883639059736,
+                    "quality": 0.4,
+                    "ema_cost": 1.0,
+                    "trials": 3
+                  },
+                  {
+                    "strategy": "projection",
+                    "value": 0.22703598902131938,
+                    "priority": 0.20781598049496477,
+                    "durability": 0.3296799539643607,
+                    "quality": 0.25,
+                    "ema_cost": 1.0,
+                    "trials": 2
+                  },
+                  {
+                    "strategy": "permutation",
+                    "value": 0.22703598902131938,
+                    "priority": 0.20781598049496477,
+                    "durability": 0.3296799539643607,
+                    "quality": 0.25,
+                    "ema_cost": 1.0,
+                    "trials": 2
+                  },
+                  {
+                    "strategy": "role_set",
+                    "value": 0.22703598902131938,
+                    "priority": 0.20781598049496477,
+                    "durability": 0.3296799539643607,
+                    "quality": 0.25,
+                    "ema_cost": 1.0,
+                    "trials": 2
+                  },
+                  {
+                    "strategy": "role_topology",
+                    "value": 0.22703598902131938,
+                    "priority": 0.20781598049496477,
+                    "durability": 0.3296799539643607,
+                    "quality": 0.25,
+                    "ema_cost": 1.0,
+                    "trials": 2
+                  },
+                  {
+                    "strategy": "role_cardinality",
+                    "value": 0.22703598902131938,
+                    "priority": 0.20781598049496477,
+                    "durability": 0.3296799539643607,
+                    "quality": 0.25,
+                    "ema_cost": 1.0,
+                    "trials": 2
+                  }
+                ]
+              },
+              "meta_controller_representation_attempts": [
+                {
+                  "strategy": "structural_analogy",
+                  "learned": true
+                }
+              ],
+              "meta_controller_representation_strategy": "structural_analogy",
+              "meta_role_topology": {
+                "meta": {
+                  "status": "meta_representation_registered",
+                  "schema": "topo:3:0,1;2,1",
+                  "kind": "role_topology",
+                  "input_arity": 3,
+                  "edges": [
+                    [
+                      0,
+                      1
+                    ],
+                    [
+                      2,
+                      1
+                    ]
+                  ],
+                  "support": 7,
+                  "source_count": 4,
+                  "families": [
+                    "symbolic"
+                  ]
+                },
+                "propagated": {}
+              }
+            }
+          ],
+          "heldout": {
+            "cases": 100,
+            "correct": 100
+          }
+        }
+      ]
+    },
+    "swap": {
+      "success_curve": [
+        3,
+        2,
+        1,
+        1
+      ],
+      "domains": [
+        {
+          "domain": 1,
+          "successes_to_promote": 2,
+          "reports": [
+            {
+              "status": "pending_support",
+              "support": 1,
+              "required": 3,
+              "pattern": "<e0> permuta <e1> con <e2> y <e3>",
+              "meta_controller_route": {
+                "order": [
+                  "structural_analogy",
+                  "projection",
+                  "permutation",
+                  "role_set",
+                  "role_topology",
+                  "role_cardinality"
+                ],
+                "used": false,
+                "mode": "exact_class",
+                "signature": "0.5,0.125,0,0.5,0,0,0,0",
+                "scores": {
+                  "structural_analogy": {
+                    "trials": 1,
+                    "success": 0,
+                    "cost": 1.0
+                  },
+                  "projection": {
+                    "trials": 1,
+                    "success": 0,
+                    "cost": 1.0
+                  },
+                  "permutation": {
+                    "trials": 1,
+                    "success": 0,
+                    "cost": 1.0
+                  },
+                  "role_set": {
+                    "trials": 1,
+                    "success": 0,
+                    "cost": 1.0
+                  },
+                  "role_topology": {
+                    "trials": 1,
+                    "success": 0,
+                    "cost": 1.0
+                  },
+                  "role_cardinality": {
+                    "trials": 1,
+                    "success": 0,
+                    "cost": 1.0
+                  }
+                }
+              },
+              "meta_controller_representation_attempts": [
+                {
+                  "strategy": "structural_analogy",
+                  "learned": false
+                },
+                {
+                  "strategy": "projection",
+                  "learned": false
+                },
+                {
+                  "strategy": "permutation",
+                  "learned": false
+                },
+                {
+                  "strategy": "role_set",
+                  "learned": false
+                },
+                {
+                  "strategy": "role_topology",
+                  "learned": false
+                },
+                {
+                  "strategy": "role_cardinality",
+                  "learned": false
+                }
+              ],
+              "meta_controller_representation_strategy": null,
+              "meta_controller_gap": {
+                "status": "meta_representation_gap",
+                "family": "representation",
+                "features": [
+                  0.5,
+                  0.125,
+                  0.0,
+                  0.5,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "attempts": [
+                  {
+                    "strategy": "structural_analogy",
+                    "learned": false
+                  },
+                  {
+                    "strategy": "projection",
+                    "learned": false
+                  },
+                  {
+                    "strategy": "permutation",
+                    "learned": false
+                  },
+                  {
+                    "strategy": "role_set",
+                    "learned": false
+                  },
+                  {
+                    "strategy": "role_topology",
+                    "learned": false
+                  },
+                  {
+                    "strategy": "role_cardinality",
+                    "learned": false
+                  }
+                ],
+                "reason": "known_representation_strategies_unresolved",
+                "evidence_request": {
+                  "kind": "independent_success",
+                  "reason": "need_effect_invariance",
+                  "message": "Observe otra ejecución exitosa independiente con entidades distintas."
+                },
+                "representation_invention": {
+                  "status": "meta_view_pending",
+                  "family": "representation",
+                  "tasks": 0
+                }
+              }
+            },
+            {
+              "status": "operator_learned",
+              "pattern": "<e0> permuta <e1> con <e2> y <e3>",
+              "support": 2,
+              "failures": 0,
+              "preconditions": [
+                [
+                  "holds",
+                  "<e0>",
+                  "<e1>"
+                ],
+                [
+                  "holds",
+                  "<e2>",
+                  "<e3>"
+                ],
+                [
+                  "linked",
+                  "<e0>",
+                  "<e2>"
+                ]
+              ],
+              "add": [
+                [
+                  "holds",
+                  "<e0>",
+                  "<e3>"
+                ],
+                [
+                  "holds",
+                  "<e2>",
+                  "<e1>"
+                ]
+              ],
+              "delete": [
+                [
+                  "holds",
+                  "<e0>",
+                  "<e1>"
+                ],
+                [
+                  "holds",
+                  "<e2>",
+                  "<e3>"
+                ]
+              ],
+              "precondition_mode": "analogical_transfer",
+              "analogy_sources": [
+                "<e0> intercambia <e1> con <e2> por <e3>"
+              ],
+              "analogy_source_count": 1,
+              "analogy_alternatives": 1,
+              "analogy_schema_id": "schema:4f71d8d81225f2ee",
+              "meta_controller_route": {
+                "order": [
+                  "structural_analogy",
+                  "projection",
+                  "permutation",
+                  "role_set",
+                  "role_topology",
+                  "role_cardinality"
+                ],
+                "used": false,
+                "mode": "exact_class",
+                "signature": "0.5,0.25,0,0.5,0,0,0,0",
+                "scores": {
+                  "structural_analogy": {
+                    "trials": 1,
+                    "success": 0,
+                    "cost": 1.0
+                  },
+                  "projection": {
+                    "trials": 1,
+                    "success": 0,
+                    "cost": 1.0
+                  },
+                  "permutation": {
+                    "trials": 1,
+                    "success": 0,
+                    "cost": 1.0
+                  },
+                  "role_set": {
+                    "trials": 1,
+                    "success": 0,
+                    "cost": 1.0
+                  },
+                  "role_topology": {
+                    "trials": 1,
+                    "success": 0,
+                    "cost": 1.0
+                  },
+                  "role_cardinality": {
+                    "trials": 1,
+                    "success": 0,
+                    "cost": 1.0
+                  }
+                }
+              },
+              "meta_controller_representation_attempts": [
+                {
+                  "strategy": "structural_analogy",
+                  "learned": true
+                }
+              ],
+              "meta_controller_representation_strategy": "structural_analogy",
+              "meta_representation": {
+                "meta": {
+                  "status": "meta_representation_registered",
+                  "schema": "proj:2:1,0",
+                  "kind": "permutation",
+                  "input_arity": 2,
+                  "mapping": [
+                    1,
+                    0
+                  ],
+                  "support": 5,
+                  "source_count": 2,
+                  "families": [
+                    "symbolic"
+                  ]
+                },
+                "role_set": {
+                  "status": "meta_representation_ignored",
+                  "reason": "invalid_role_set"
+                },
+                "propagated": {
+                  "procedure": {
+                    "status": "cross_modal_schema_registered",
+                    "schema": "perm:2:1,0",
+                    "support": 5,
+                    "sources": 2
+                  },
+                  "procedure_role_set": {
+                    "status": "cross_modal_schema_ignored",
+                    "reason": "invalid_role_set"
+                  },
+                  "procedure_role_cardinality": {
+                    "status": "cross_modal_schema_registered",
+                    "schema": "card:2",
+                    "support": 5,
+                    "sources": 2
+                  }
+                }
+              },
+              "meta_role_topology": {
+                "meta": {
+                  "status": "meta_representation_registered",
+                  "schema": "topo:4:0,1;0,2;1,3",
+                  "kind": "role_topology",
+                  "input_arity": 4,
+                  "edges": [
+                    [
+                      0,
+                      1
+                    ],
+                    [
+                      0,
+                      2
+                    ],
+                    [
+                      1,
+                      3
+                    ]
+                  ],
+                  "support": 5,
+                  "source_count": 2,
+                  "families": [
+                    "symbolic"
+                  ]
+                },
+                "propagated": {}
+              },
+              "cross_modal_learning": {
+                "status": "cross_modal_schema_registered",
+                "schema": "perm:2:1,0",
+                "support": 5,
+                "sources": 2
+              }
+            }
+          ],
+          "heldout": {
+            "cases": 100,
+            "correct": 100
+          }
+        },
+        {
+          "domain": 2,
+          "successes_to_promote": 1,
+          "reports": [
+            {
+              "status": "operator_learned",
+              "pattern": "<e0> canjea <e1> con <e2> por <e3>",
+              "support": 1,
+              "failures": 0,
+              "preconditions": [
+                [
+                  "peer",
+                  "<e0>",
+                  "<e2>"
+                ],
+                [
+                  "possesses",
+                  "<e0>",
+                  "<e1>"
+                ],
+                [
+                  "possesses",
+                  "<e2>",
+                  "<e3>"
+                ]
+              ],
+              "add": [
+                [
+                  "possesses",
+                  "<e0>",
+                  "<e3>"
+                ],
+                [
+                  "possesses",
+                  "<e2>",
+                  "<e1>"
+                ]
+              ],
+              "delete": [
+                [
+                  "possesses",
+                  "<e0>",
+                  "<e1>"
+                ],
+                [
+                  "possesses",
+                  "<e2>",
+                  "<e3>"
+                ]
+              ],
+              "precondition_mode": "analogical_transfer",
+              "analogy_sources": [
+                "<e0> intercambia <e1> con <e2> por <e3>",
+                "<e0> permuta <e1> con <e2> y <e3>"
+              ],
+              "analogy_source_count": 2,
+              "analogy_alternatives": 1,
+              "analogy_schema_id": "schema:4f71d8d81225f2ee",
+              "meta_controller_route": {
+                "order": [
+                  "structural_analogy",
+                  "projection",
+                  "permutation",
+                  "role_set",
+                  "role_topology",
+                  "role_cardinality"
+                ],
+                "used": false,
+                "mode": "aikr_budget",
+                "signature": "0.5,0.125,0,0.5,0,0,0,0",
+                "scores": [
+                  {
+                    "strategy": "structural_analogy",
+                    "value": 0.22703598902131938,
+                    "priority": 0.20781598049496477,
+                    "durability": 0.3296799539643607,
+                    "quality": 0.25,
+                    "ema_cost": 1.0,
+                    "trials": 2
+                  },
+                  {
+                    "strategy": "projection",
+                    "value": 0.22703598902131938,
+                    "priority": 0.20781598049496477,
+                    "durability": 0.3296799539643607,
+                    "quality": 0.25,
+                    "ema_cost": 1.0,
+                    "trials": 2
+                  },
+                  {
+                    "strategy": "permutation",
+                    "value": 0.22703598902131938,
+                    "priority": 0.20781598049496477,
+                    "durability": 0.3296799539643607,
+                    "quality": 0.25,
+                    "ema_cost": 1.0,
+                    "trials": 2
+                  },
+                  {
+                    "strategy": "role_set",
+                    "value": 0.22703598902131938,
+                    "priority": 0.20781598049496477,
+                    "durability": 0.3296799539643607,
+                    "quality": 0.25,
+                    "ema_cost": 1.0,
+                    "trials": 2
+                  },
+                  {
+                    "strategy": "role_topology",
+                    "value": 0.22703598902131938,
+                    "priority": 0.20781598049496477,
+                    "durability": 0.3296799539643607,
+                    "quality": 0.25,
+                    "ema_cost": 1.0,
+                    "trials": 2
+                  },
+                  {
+                    "strategy": "role_cardinality",
+                    "value": 0.22703598902131938,
+                    "priority": 0.20781598049496477,
+                    "durability": 0.3296799539643607,
+                    "quality": 0.25,
+                    "ema_cost": 1.0,
+                    "trials": 2
+                  }
+                ]
+              },
+              "meta_controller_representation_attempts": [
+                {
+                  "strategy": "structural_analogy",
+                  "learned": true
+                }
+              ],
+              "meta_controller_representation_strategy": "structural_analogy",
+              "meta_representation": {
+                "meta": {
+                  "status": "meta_representation_registered",
+                  "schema": "proj:2:1,0",
+                  "kind": "permutation",
+                  "input_arity": 2,
+                  "mapping": [
+                    1,
+                    0
+                  ],
+                  "support": 6,
+                  "source_count": 3,
+                  "families": [
+                    "symbolic"
+                  ]
+                },
+                "role_set": {
+                  "status": "meta_representation_ignored",
+                  "reason": "invalid_role_set"
+                },
+                "propagated": {
+                  "procedure": {
+                    "status": "cross_modal_schema_registered",
+                    "schema": "perm:2:1,0",
+                    "support": 6,
+                    "sources": 3
+                  },
+                  "procedure_role_set": {
+                    "status": "cross_modal_schema_ignored",
+                    "reason": "invalid_role_set"
+                  },
+                  "procedure_role_cardinality": {
+                    "status": "cross_modal_schema_registered",
+                    "schema": "card:2",
+                    "support": 6,
+                    "sources": 3
+                  }
+                }
+              },
+              "meta_role_topology": {
+                "meta": {
+                  "status": "meta_representation_registered",
+                  "schema": "topo:4:0,1;0,2;1,3",
+                  "kind": "role_topology",
+                  "input_arity": 4,
+                  "edges": [
+                    [
+                      0,
+                      1
+                    ],
+                    [
+                      0,
+                      2
+                    ],
+                    [
+                      1,
+                      3
+                    ]
+                  ],
+                  "support": 6,
+                  "source_count": 3,
+                  "families": [
+                    "symbolic"
+                  ]
+                },
+                "propagated": {}
+              },
+              "cross_modal_learning": {
+                "status": "cross_modal_schema_registered",
+                "schema": "perm:2:1,0",
+                "support": 6,
+                "sources": 3
+              }
+            }
+          ],
+          "heldout": {
+            "cases": 100,
+            "correct": 100
+          }
+        },
+        {
+          "domain": 3,
+          "successes_to_promote": 1,
+          "reports": [
+            {
+              "status": "operator_learned",
+              "pattern": "<e0> cambia <e1> con <e2> y recibe <e3>",
+              "support": 1,
+              "failures": 0,
+              "preconditions": [
+                [
+                  "adjacent",
+                  "<e0>",
+                  "<e2>"
+                ],
+                [
+                  "controls",
+                  "<e0>",
+                  "<e1>"
+                ],
+                [
+                  "controls",
+                  "<e2>",
+                  "<e3>"
+                ]
+              ],
+              "add": [
+                [
+                  "controls",
+                  "<e0>",
+                  "<e3>"
+                ],
+                [
+                  "controls",
+                  "<e2>",
+                  "<e1>"
+                ]
+              ],
+              "delete": [
+                [
+                  "controls",
+                  "<e0>",
+                  "<e1>"
+                ],
+                [
+                  "controls",
+                  "<e2>",
+                  "<e3>"
+                ]
+              ],
+              "precondition_mode": "analogical_transfer",
+              "analogy_sources": [
+                "<e0> intercambia <e1> con <e2> por <e3>",
+                "<e0> permuta <e1> con <e2> y <e3>"
+              ],
+              "analogy_source_count": 3,
+              "analogy_alternatives": 1,
+              "analogy_schema_id": "schema:4f71d8d81225f2ee",
+              "meta_controller_route": {
+                "order": [
+                  "structural_analogy",
+                  "projection",
+                  "permutation",
+                  "role_set",
+                  "role_topology",
+                  "role_cardinality"
+                ],
+                "used": false,
+                "mode": "aikr_budget",
+                "signature": "0.5,0.125,0,0.5,0,0,0,0",
+                "scores": [
+                  {
+                    "strategy": "structural_analogy",
+                    "value": 0.40162514287539036,
+                    "priority": 0.4054155310475696,
+                    "durability": 0.4511883639059736,
+                    "quality": 0.4,
+                    "ema_cost": 1.0,
+                    "trials": 3
+                  },
+                  {
+                    "strategy": "projection",
+                    "value": 0.22703598902131938,
+                    "priority": 0.20781598049496477,
+                    "durability": 0.3296799539643607,
+                    "quality": 0.25,
+                    "ema_cost": 1.0,
+                    "trials": 2
+                  },
+                  {
+                    "strategy": "permutation",
+                    "value": 0.22703598902131938,
+                    "priority": 0.20781598049496477,
+                    "durability": 0.3296799539643607,
+                    "quality": 0.25,
+                    "ema_cost": 1.0,
+                    "trials": 2
+                  },
+                  {
+                    "strategy": "role_set",
+                    "value": 0.22703598902131938,
+                    "priority": 0.20781598049496477,
+                    "durability": 0.3296799539643607,
+                    "quality": 0.25,
+                    "ema_cost": 1.0,
+                    "trials": 2
+                  },
+                  {
+                    "strategy": "role_topology",
+                    "value": 0.22703598902131938,
+                    "priority": 0.20781598049496477,
+                    "durability": 0.3296799539643607,
+                    "quality": 0.25,
+                    "ema_cost": 1.0,
+                    "trials": 2
+                  },
+                  {
+                    "strategy": "role_cardinality",
+                    "value": 0.22703598902131938,
+                    "priority": 0.20781598049496477,
+                    "durability": 0.3296799539643607,
+                    "quality": 0.25,
+                    "ema_cost": 1.0,
+                    "trials": 2
+                  }
+                ]
+              },
+              "meta_controller_representation_attempts": [
+                {
+                  "strategy": "structural_analogy",
+                  "learned": true
+                }
+              ],
+              "meta_controller_representation_strategy": "structural_analogy",
+              "meta_representation": {
+                "meta": {
+                  "status": "meta_representation_registered",
+                  "schema": "proj:2:1,0",
+                  "kind": "permutation",
+                  "input_arity": 2,
+                  "mapping": [
+                    1,
+                    0
+                  ],
+                  "support": 7,
+                  "source_count": 4,
+                  "families": [
+                    "symbolic"
+                  ]
+                },
+                "role_set": {
+                  "status": "meta_representation_ignored",
+                  "reason": "invalid_role_set"
+                },
+                "propagated": {
+                  "procedure": {
+                    "status": "cross_modal_schema_registered",
+                    "schema": "perm:2:1,0",
+                    "support": 7,
+                    "sources": 4
+                  },
+                  "procedure_role_set": {
+                    "status": "cross_modal_schema_ignored",
+                    "reason": "invalid_role_set"
+                  },
+                  "procedure_role_cardinality": {
+                    "status": "cross_modal_schema_registered",
+                    "schema": "card:2",
+                    "support": 7,
+                    "sources": 4
+                  }
+                }
+              },
+              "meta_role_topology": {
+                "meta": {
+                  "status": "meta_representation_registered",
+                  "schema": "topo:4:0,1;0,2;1,3",
+                  "kind": "role_topology",
+                  "input_arity": 4,
+                  "edges": [
+                    [
+                      0,
+                      1
+                    ],
+                    [
+                      0,
+                      2
+                    ],
+                    [
+                      1,
+                      3
+                    ]
+                  ],
+                  "support": 7,
+                  "source_count": 4,
+                  "families": [
+                    "symbolic"
+                  ]
+                },
+                "propagated": {}
+              },
+              "cross_modal_learning": {
+                "status": "cross_modal_schema_registered",
+                "schema": "perm:2:1,0",
+                "support": 7,
+                "sources": 4
+              }
+            }
+          ],
+          "heldout": {
+            "cases": 100,
+            "correct": 100
+          }
+        }
+      ]
+    }
+  },
+  "cross_family_negative": {
+    "report": {
+      "status": "pending_support",
+      "support": 1,
+      "required": 3,
+      "pattern": "<e0> recolecta <e1> en <e2>",
+      "meta_controller_route": {
+        "order": [
+          "structural_analogy",
+          "projection",
+          "permutation",
+          "role_set",
+          "role_topology",
+          "role_cardinality"
+        ],
+        "used": false,
+        "mode": "aikr_budget",
+        "signature": "0.375,0.125,0,0.25,0,0,0,0",
+        "scores": [
+          {
+            "strategy": "structural_analogy",
+            "value": 0.22703598902131938,
+            "priority": 0.20781598049496477,
+            "durability": 0.3296799539643607,
+            "quality": 0.25,
+            "ema_cost": 1.0,
+            "trials": 2
+          },
+          {
+            "strategy": "projection",
+            "value": 0.22703598902131938,
+            "priority": 0.20781598049496477,
+            "durability": 0.3296799539643607,
+            "quality": 0.25,
+            "ema_cost": 1.0,
+            "trials": 2
+          },
+          {
+            "strategy": "permutation",
+            "value": 0.22703598902131938,
+            "priority": 0.20781598049496477,
+            "durability": 0.3296799539643607,
+            "quality": 0.25,
+            "ema_cost": 1.0,
+            "trials": 2
+          },
+          {
+            "strategy": "role_set",
+            "value": 0.22703598902131938,
+            "priority": 0.20781598049496477,
+            "durability": 0.3296799539643607,
+            "quality": 0.25,
+            "ema_cost": 1.0,
+            "trials": 2
+          },
+          {
+            "strategy": "role_topology",
+            "value": 0.22703598902131938,
+            "priority": 0.20781598049496477,
+            "durability": 0.3296799539643607,
+            "quality": 0.25,
+            "ema_cost": 1.0,
+            "trials": 2
+          },
+          {
+            "strategy": "role_cardinality",
+            "value": 0.22703598902131938,
+            "priority": 0.20781598049496477,
+            "durability": 0.3296799539643607,
+            "quality": 0.25,
+            "ema_cost": 1.0,
+            "trials": 2
+          }
+        ]
+      },
+      "meta_controller_representation_attempts": [
+        {
+          "strategy": "structural_analogy",
+          "learned": false
+        },
+        {
+          "strategy": "projection",
+          "learned": false
+        },
+        {
+          "strategy": "permutation",
+          "learned": false
+        },
+        {
+          "strategy": "role_set",
+          "learned": false
+        },
+        {
+          "strategy": "role_topology",
+          "learned": false
+        },
+        {
+          "strategy": "role_cardinality",
+          "learned": false
+        }
+      ],
+      "meta_controller_representation_strategy": null,
+      "meta_controller_gap": {
+        "status": "meta_representation_gap",
+        "family": "representation",
+        "features": [
+          0.375,
+          0.125,
+          0.0,
+          0.25,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "attempts": [
+          {
+            "strategy": "structural_analogy",
+            "learned": false
+          },
+          {
+            "strategy": "projection",
+            "learned": false
+          },
+          {
+            "strategy": "permutation",
+            "learned": false
+          },
+          {
+            "strategy": "role_set",
+            "learned": false
+          },
+          {
+            "strategy": "role_topology",
+            "learned": false
+          },
+          {
+            "strategy": "role_cardinality",
+            "learned": false
+          }
+        ],
+        "reason": "known_representation_strategies_unresolved",
+        "evidence_request": {
+          "kind": "independent_success",
+          "reason": "need_effect_invariance",
+          "message": "Observe otra ejecución exitosa independiente con entidades distintas."
+        },
+        "representation_invention": {
+          "status": "meta_view_pending",
+          "family": "representation",
+          "tasks": 1
+        }
+      }
+    },
+    "heldout": {
+      "cases": 20,
+      "correct": 0
+    }
+  },
+  "fresh_one_success_controls": {
+    "move": {
+      "report": {
+        "status": "pending_support",
+        "support": 1,
+        "required": 3,
+        "pattern": "traslada a <e0> entre <e1> y <e2>",
+        "meta_controller_route": {
+          "order": [
+            "structural_analogy",
+            "projection",
+            "permutation",
+            "role_set",
+            "role_topology",
+            "role_cardinality"
+          ],
+          "used": false,
+          "mode": "default",
+          "signature": "0.375,0.125,0,0.25,0,0,0,0",
+          "scores": []
+        },
+        "meta_controller_representation_attempts": [
+          {
+            "strategy": "structural_analogy",
+            "learned": false
+          },
+          {
+            "strategy": "projection",
+            "learned": false
+          },
+          {
+            "strategy": "permutation",
+            "learned": false
+          },
+          {
+            "strategy": "role_set",
+            "learned": false
+          },
+          {
+            "strategy": "role_topology",
+            "learned": false
+          },
+          {
+            "strategy": "role_cardinality",
+            "learned": false
+          }
+        ],
+        "meta_controller_representation_strategy": null,
+        "meta_controller_gap": {
+          "status": "meta_representation_gap",
+          "family": "representation",
+          "features": [
+            0.375,
+            0.125,
+            0.0,
+            0.25,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "attempts": [
+            {
+              "strategy": "structural_analogy",
+              "learned": false
+            },
+            {
+              "strategy": "projection",
+              "learned": false
+            },
+            {
+              "strategy": "permutation",
+              "learned": false
+            },
+            {
+              "strategy": "role_set",
+              "learned": false
+            },
+            {
+              "strategy": "role_topology",
+              "learned": false
+            },
+            {
+              "strategy": "role_cardinality",
+              "learned": false
+            }
+          ],
+          "reason": "known_representation_strategies_unresolved",
+          "evidence_request": {
+            "kind": "independent_success",
+            "reason": "need_effect_invariance",
+            "message": "Observe otra ejecución exitosa independiente con entidades distintas."
+          },
+          "representation_invention": {
+            "status": "meta_view_pending",
+            "family": "representation",
+            "tasks": 0
+          }
+        }
+      },
+      "heldout": {
+        "cases": 50,
+        "correct": 0
+      }
+    },
+    "pick": {
+      "report": {
+        "status": "pending_support",
+        "support": 1,
+        "required": 3,
+        "pattern": "<e0> obtiene <e1> desde <e2>",
+        "meta_controller_route": {
+          "order": [
+            "structural_analogy",
+            "projection",
+            "permutation",
+            "role_set",
+            "role_topology",
+            "role_cardinality"
+          ],
+          "used": false,
+          "mode": "default",
+          "signature": "0.375,0.125,0,0.25,0,0,0,0",
+          "scores": []
+        },
+        "meta_controller_representation_attempts": [
+          {
+            "strategy": "structural_analogy",
+            "learned": false
+          },
+          {
+            "strategy": "projection",
+            "learned": false
+          },
+          {
+            "strategy": "permutation",
+            "learned": false
+          },
+          {
+            "strategy": "role_set",
+            "learned": false
+          },
+          {
+            "strategy": "role_topology",
+            "learned": false
+          },
+          {
+            "strategy": "role_cardinality",
+            "learned": false
+          }
+        ],
+        "meta_controller_representation_strategy": null,
+        "meta_controller_gap": {
+          "status": "meta_representation_gap",
+          "family": "representation",
+          "features": [
+            0.375,
+            0.125,
+            0.0,
+            0.25,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "attempts": [
+            {
+              "strategy": "structural_analogy",
+              "learned": false
+            },
+            {
+              "strategy": "projection",
+              "learned": false
+            },
+            {
+              "strategy": "permutation",
+              "learned": false
+            },
+            {
+              "strategy": "role_set",
+              "learned": false
+            },
+            {
+              "strategy": "role_topology",
+              "learned": false
+            },
+            {
+              "strategy": "role_cardinality",
+              "learned": false
+            }
+          ],
+          "reason": "known_representation_strategies_unresolved",
+          "evidence_request": {
+            "kind": "independent_success",
+            "reason": "need_effect_invariance",
+            "message": "Observe otra ejecución exitosa independiente con entidades distintas."
+          },
+          "representation_invention": {
+            "status": "meta_view_pending",
+            "family": "representation",
+            "tasks": 0
+          }
+        }
+      },
+      "heldout": {
+        "cases": 50,
+        "correct": 0
+      }
+    },
+    "swap": {
+      "report": {
+        "status": "pending_support",
+        "support": 1,
+        "required": 3,
+        "pattern": "<e0> cambia <e1> con <e2> y recibe <e3>",
+        "meta_controller_route": {
+          "order": [
+            "structural_analogy",
+            "projection",
+            "permutation",
+            "role_set",
+            "role_topology",
+            "role_cardinality"
+          ],
+          "used": false,
+          "mode": "default",
+          "signature": "0.5,0.125,0,0.5,0,0,0,0",
+          "scores": []
+        },
+        "meta_controller_representation_attempts": [
+          {
+            "strategy": "structural_analogy",
+            "learned": false
+          },
+          {
+            "strategy": "projection",
+            "learned": false
+          },
+          {
+            "strategy": "permutation",
+            "learned": false
+          },
+          {
+            "strategy": "role_set",
+            "learned": false
+          },
+          {
+            "strategy": "role_topology",
+            "learned": false
+          },
+          {
+            "strategy": "role_cardinality",
+            "learned": false
+          }
+        ],
+        "meta_controller_representation_strategy": null,
+        "meta_controller_gap": {
+          "status": "meta_representation_gap",
+          "family": "representation",
+          "features": [
+            0.5,
+            0.125,
+            0.0,
+            0.5,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "attempts": [
+            {
+              "strategy": "structural_analogy",
+              "learned": false
+            },
+            {
+              "strategy": "projection",
+              "learned": false
+            },
+            {
+              "strategy": "permutation",
+              "learned": false
+            },
+            {
+              "strategy": "role_set",
+              "learned": false
+            },
+            {
+              "strategy": "role_topology",
+              "learned": false
+            },
+            {
+              "strategy": "role_cardinality",
+              "learned": false
+            }
+          ],
+          "reason": "known_representation_strategies_unresolved",
+          "evidence_request": {
+            "kind": "independent_success",
+            "reason": "need_effect_invariance",
+            "message": "Observe otra ejecución exitosa independiente con entidades distintas."
+          },
+          "representation_invention": {
+            "status": "meta_view_pending",
+            "family": "representation",
+            "tasks": 0
+          }
+        }
+      },
+      "heldout": {
+        "cases": 50,
+        "correct": 0
+      }
+    }
+  },
+  "elapsed_ms": 73.36341694463044,
+  "code_hash_after": "615749e62e3dd25443e8eb37ccc69ed819194afe662e76337e1351ef21b9d7d4",
+  "code_unchanged": true
+}

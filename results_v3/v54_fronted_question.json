@@ -1,0 +1,28 @@
+{
+  "version": "0.5.4-candidate",
+  "experiment": "explicit_fronted_wh_from_grounded_query",
+  "code_hash_before": "e855f17757905ad7f22cf0fdb84df61edfa307ab98fd1eb85a58ee125f952001",
+  "code_hash_after": "e855f17757905ad7f22cf0fdb84df61edfa307ab98fd1eb85a58ee125f952001",
+  "code_unchanged": true,
+  "pre_instruction_status": "unrecognized",
+  "instruction_status": "paraphrase_learned",
+  "heldout": {
+    "cases": 100,
+    "correct_bindings": 100,
+    "median_ms": 0.2184719778597355
+  },
+  "control_without_instruction": {
+    "cases": 100,
+    "fronted_wh_unrecognized": 100
+  },
+  "safety": {
+    "wrong_anchor_unrecognized": 100,
+    "cases": 100,
+    "fact_delta_from_questions": 0
+  },
+  "limits": [
+    "Fronted WH is learned from explicit equivalence to an already grounded in-situ question; it is supervised instruction, not autonomous syntax induction.",
+    "The mechanism remains predicate/surface specific and does not yet infer Spanish question transformations globally.",
+    "Internal synthetic evaluation does not demonstrate AGI/ASI."
+  ]
+}

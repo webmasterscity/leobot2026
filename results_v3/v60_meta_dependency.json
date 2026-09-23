@@ -1,0 +1,240 @@
+{
+  "version": "V6.0-meta-dependency",
+  "mechanism": "shared_role_relevance_plus_learned_search_policy",
+  "code_hash_before": "e855f17757905ad7f22cf0fdb84df61edfa307ab98fd1eb85a58ee125f952001",
+  "schema_statuses": [
+    "schema_learned",
+    "schema_learned",
+    "schema_learned",
+    "schema_learned",
+    "schema_learned",
+    "schema_learned"
+  ],
+  "families": [
+    {
+      "roles": [
+        0
+      ],
+      "treatment_status": "procedure_learned",
+      "control_status": "procedure_unresolved",
+      "meta_schema": "roles:3:0",
+      "strategy_order": [
+        "auto_library",
+        "no_library"
+      ],
+      "attempts": [
+        {
+          "strategy": "auto_library",
+          "status": "learned_hypothesis",
+          "candidates": 90,
+          "library_seeded": 0
+        }
+      ],
+      "treatment_candidates_total": 90,
+      "control_candidates": 151,
+      "treatment_heldout": 100,
+      "control_heldout": 0
+    },
+    {
+      "roles": [
+        1
+      ],
+      "treatment_status": "procedure_learned",
+      "control_status": "procedure_unresolved",
+      "meta_schema": "roles:3:1",
+      "strategy_order": [
+        "auto_library",
+        "no_library"
+      ],
+      "attempts": [
+        {
+          "strategy": "auto_library",
+          "status": "learned_hypothesis",
+          "candidates": 137,
+          "library_seeded": 1
+        }
+      ],
+      "treatment_candidates_total": 137,
+      "control_candidates": 151,
+      "treatment_heldout": 100,
+      "control_heldout": 0
+    },
+    {
+      "roles": [
+        2
+      ],
+      "treatment_status": "procedure_learned",
+      "control_status": "procedure_unresolved",
+      "meta_schema": "roles:3:2",
+      "strategy_order": [
+        "auto_library",
+        "no_library"
+      ],
+      "attempts": [
+        {
+          "strategy": "auto_library",
+          "status": "learned_hypothesis",
+          "candidates": 2,
+          "library_seeded": 3
+        }
+      ],
+      "treatment_candidates_total": 2,
+      "control_candidates": 151,
+      "treatment_heldout": 100,
+      "control_heldout": 0
+    },
+    {
+      "roles": [
+        0,
+        1
+      ],
+      "treatment_status": "procedure_learned",
+      "control_status": "procedure_unresolved",
+      "meta_schema": "roles:3:0,1",
+      "strategy_order": [
+        "auto_library",
+        "no_library"
+      ],
+      "attempts": [
+        {
+          "strategy": "auto_library",
+          "status": "no_solution",
+          "candidates": 151,
+          "library_seeded": 5
+        },
+        {
+          "strategy": "no_library",
+          "status": "learned_hypothesis",
+          "candidates": 137,
+          "library_seeded": 0
+        }
+      ],
+      "treatment_candidates_total": 288,
+      "control_candidates": 151,
+      "treatment_heldout": 100,
+      "control_heldout": 0
+    },
+    {
+      "roles": [
+        0,
+        2
+      ],
+      "treatment_status": "procedure_learned",
+      "control_status": "procedure_unresolved",
+      "meta_schema": "roles:3:0,2",
+      "strategy_order": [
+        "no_library",
+        "auto_library"
+      ],
+      "attempts": [
+        {
+          "strategy": "no_library",
+          "status": "learned_hypothesis",
+          "candidates": 137,
+          "library_seeded": 0
+        }
+      ],
+      "treatment_candidates_total": 137,
+      "control_candidates": 151,
+      "treatment_heldout": 100,
+      "control_heldout": 0
+    },
+    {
+      "roles": [
+        1,
+        2
+      ],
+      "treatment_status": "procedure_learned",
+      "control_status": "procedure_unresolved",
+      "meta_schema": "roles:3:1,2",
+      "strategy_order": [
+        "no_library",
+        "auto_library"
+      ],
+      "attempts": [
+        {
+          "strategy": "no_library",
+          "status": "learned_hypothesis",
+          "candidates": 137,
+          "library_seeded": 0
+        }
+      ],
+      "treatment_candidates_total": 137,
+      "control_candidates": 151,
+      "treatment_heldout": 100,
+      "control_heldout": 0
+    }
+  ],
+  "treatment_heldout_total": 600,
+  "control_heldout_total": 0,
+  "treatment_candidate_total": 791,
+  "control_candidate_total": 906,
+  "dependency_search_stats": {
+    "3:1": {
+      "auto_library": {
+        "trials": 3,
+        "success": 3,
+        "candidates": 229
+      }
+    },
+    "3:2": {
+      "auto_library": {
+        "trials": 1,
+        "success": 0,
+        "candidates": 151
+      },
+      "no_library": {
+        "trials": 3,
+        "success": 3,
+        "candidates": 411
+      }
+    }
+  },
+  "cross_arity": {
+    "treatment_status": "procedure_learned",
+    "control_status": "procedure_unresolved",
+    "schema": "card:2->roles:4:0,3",
+    "allowed_vars": [
+      0,
+      3
+    ],
+    "treatment_candidates": 137,
+    "control_candidates": 151,
+    "heldout": 3
+  },
+  "cross_mechanism_action": {
+    "treatment_status": "operator_learned",
+    "control_status": "pending_support",
+    "treatment_mode": "meta_role_set_transfer",
+    "heldout": 100
+  },
+  "incompatible_control": {
+    "status": "procedure_learned",
+    "allowed_vars": [
+      0,
+      1,
+      2
+    ],
+    "meta_dependency_schema": null,
+    "heldout": 3
+  },
+  "persistence": {
+    "status": "procedure_learned",
+    "strategy_order": [
+      "no_library",
+      "auto_library"
+    ],
+    "attempts": [
+      {
+        "strategy": "no_library",
+        "status": "learned_hypothesis",
+        "candidates": 138,
+        "library_seeded": 0
+      }
+    ],
+    "heldout": 3
+  },
+  "code_hash_after": "e855f17757905ad7f22cf0fdb84df61edfa307ab98fd1eb85a58ee125f952001",
+  "code_unchanged": true,
+  "elapsed_ms": 231.08397901523858
+}

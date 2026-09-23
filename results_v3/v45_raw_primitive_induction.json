@@ -1,0 +1,57 @@
+{
+  "version": "0.4.5",
+  "experiment": "raw_opaque_primitive_induction",
+  "code_hash_before_frozen_eval": "e855f17757905ad7f22cf0fdb84df61edfa307ab98fd1eb85a58ee125f952001",
+  "code_hash_after_frozen_eval": "e855f17757905ad7f22cf0fdb84df61edfa307ab98fd1eb85a58ee125f952001",
+  "code_unchanged_during_frozen_phase": true,
+  "initial_conditions": {
+    "known_entities": 0,
+    "pretraining_heldout_parsed": 0,
+    "heldout_cases": 100,
+    "noise_observations": 60,
+    "promotions_after_noise": 0
+  },
+  "acquisition": {
+    "raw_support_sentences": 6,
+    "learned_relations": 2,
+    "surfaces": {
+      "{s0} enlaza {s1}": "primitive_f4f86dd1449e7f39_a2",
+      "{s0} reposa {s1}": "primitive_eccf388d813fa0b5_a2"
+    },
+    "median_support_response_ms": 13.026315486058593
+  },
+  "heldout_transfer": {
+    "parsed": 100,
+    "stored": 100,
+    "entailed": 100,
+    "cases": 100,
+    "exact_text_memory_hits": 0,
+    "changed_anchor_unrecognized": 100,
+    "changed_anchor_cases": 100,
+    "median_response_ms": 0.12471049558371305
+  },
+  "safety_controls": {
+    "function_word_only_promotions": 0,
+    "function_word_last_status": "raw_relation_pending",
+    "repeated_anchor_promotions": 0,
+    "repeated_anchor_last_status": "raw_relation_pending"
+  },
+  "downstream_composition": {
+    "primitive_a": "primitive_f4f86dd1449e7f39_a2",
+    "primitive_b": "primitive_eccf388d813fa0b5_a2",
+    "selected_schema": "primitive_eccf388d813fa0b5_a2(r1,r2) & primitive_f4f86dd1449e7f39_a2(r0,r1)",
+    "uses_both_invented_primitives": true,
+    "positive_entailed": 100,
+    "positive_cases": 100,
+    "mismatched_unknown": 100,
+    "negative_cases": 100,
+    "episodic_control_hits": 0,
+    "median_query_ms": 0.33008650643751025
+  },
+  "limits": [
+    "Induce solo relaciones primitivas binarias opacas con dos spans separados por anclas compartidas.",
+    "La repeticion de una superficie no demuestra que Leobot conozca una definicion intensional del predicado.",
+    "No interpreta aun polaridad cruda, preguntas nuevas ni roles adyacentes sin delimitadores.",
+    "Evaluacion interna y sintetica; no demuestra AGI ni ASI."
+  ]
+}

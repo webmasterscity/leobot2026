@@ -1,0 +1,53 @@
+{
+  "version": "0.5.38",
+  "experiment": "cross_type_latent_representation_proposal_strategy",
+  "code_hash": "e855f17757905ad7f22cf0fdb84df61edfa307ab98fd1eb85a58ee125f952001",
+  "code_frozen": true,
+  "training": {
+    "source_representation_families": [
+      "event",
+      "state"
+    ],
+    "source_family_count": 2,
+    "common_constraints": {
+      "fact_count": 2,
+      "connected": true,
+      "shared_role_count": 1,
+      "all_positive": true,
+      "predicate_count": 2
+    },
+    "consumer_role_bound": true
+  },
+  "treatment": {
+    "heldout_cases": 100,
+    "first_episode_generic_bundle_resolved": 100,
+    "target_member_arities": [
+      2,
+      3
+    ],
+    "target_type_seen_in_sources": false
+  },
+  "v537_ablation_without_cross_type_strategy": {
+    "heldout_cases": 100,
+    "unresolved": 100
+  },
+  "one_source_family_control": {
+    "heldout_cases": 100,
+    "unresolved": 100
+  },
+  "wrong_consumer_control": {
+    "heldout_cases": 100,
+    "unresolved": 100
+  },
+  "ambiguity_control": {
+    "cases": 50,
+    "two_candidate_abstentions": 50
+  },
+  "non_circular_credit_control": {
+    "support_before": 2,
+    "support_after": 2,
+    "source_records_before": 2,
+    "source_records_after": 2
+  },
+  "claim": "successful exact event and persistent-state uses can teach a family-neutral connected multi-fact proposal policy; that policy transfers once to a structurally compatible binary+ternary target bundle unseen as a representation family. This is bounded learned proposal transfer, not arbitrary ontology invention or AGI/ASI."
+}

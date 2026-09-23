@@ -1,0 +1,246 @@
+{
+  "version": "V7.0 bounded variable-depth meta-program synthesis",
+  "code_hash_before": "5e88b661f121e64ddb7df67ec785a1a4ff5728da567e7cb597d09f259c451fac",
+  "learned_view": {
+    "kind": "feature_program",
+    "predicates": [
+      {
+        "op": "atom_eq",
+        "atom": {
+          "op": "cmp",
+          "a": 2,
+          "b": 3
+        },
+        "value": -1
+      },
+      {
+        "op": "atom_eq",
+        "atom": {
+          "op": "cmp",
+          "a": 4,
+          "b": 5
+        },
+        "value": -1
+      },
+      {
+        "op": "atom_eq",
+        "atom": {
+          "op": "cmp",
+          "a": 0,
+          "b": 1
+        },
+        "value": -1
+      }
+    ],
+    "score": 1.1825,
+    "accuracy": 1.0,
+    "coverage": 1.0,
+    "gain_over_majority": 0.5,
+    "tasks": 24,
+    "buckets": {
+      "1|1|1": {
+        "winner": "B",
+        "support": 3,
+        "confidence": 1.0
+      },
+      "1|1|0": {
+        "winner": "A",
+        "support": 3,
+        "confidence": 1.0
+      },
+      "0|1|1": {
+        "winner": "A",
+        "support": 3,
+        "confidence": 1.0
+      },
+      "0|1|0": {
+        "winner": "B",
+        "support": 3,
+        "confidence": 1.0
+      },
+      "1|0|1": {
+        "winner": "A",
+        "support": 3,
+        "confidence": 1.0
+      },
+      "1|0|0": {
+        "winner": "B",
+        "support": 3,
+        "confidence": 1.0
+      },
+      "0|0|1": {
+        "winner": "B",
+        "support": 3,
+        "confidence": 1.0
+      },
+      "0|0|0": {
+        "winner": "A",
+        "support": 3,
+        "confidence": 1.0
+      }
+    },
+    "program_size": 3,
+    "temporal_validation": {
+      "ok": true,
+      "splits": [
+        {
+          "coverage": 1.0,
+          "accuracy": 1.0,
+          "train": 12,
+          "test": 12
+        },
+        {
+          "coverage": 1.0,
+          "accuracy": 1.0,
+          "train": 12,
+          "test": 12
+        }
+      ],
+      "reason": null
+    }
+  },
+  "depth2_control_status": {
+    "status": "meta_program_rejected",
+    "family": "parity3",
+    "reason": "no_valid_composed_program",
+    "predicates": 17,
+    "tasks": 64,
+    "max_program_size": 2
+  },
+  "heldout": {
+    "treatment": {
+      "correct_first_choice": 800,
+      "total": 800,
+      "attempts": 800,
+      "modes": {
+        "invented_view": 800
+      }
+    },
+    "depth2_control": {
+      "correct_first_choice": 400,
+      "total": 800,
+      "attempts": 1200,
+      "modes": {
+        "default": 800
+      }
+    }
+  },
+  "attempt_reduction_pct": 33.333333333333336,
+  "acquisition_s": 0.32012803107500076,
+  "persistence": {
+    "program_size": 3,
+    "heldout_after_reload": {
+      "correct_first_choice": 160,
+      "total": 160,
+      "attempts": 160,
+      "modes": {
+        "invented_view": 160
+      }
+    },
+    "checkpoints_preserved": true
+  },
+  "rollback": {
+    "view_before_contradiction": {
+      "kind": "feature_program",
+      "predicates": [
+        {
+          "op": "atom_eq",
+          "atom": {
+            "op": "cmp",
+            "a": 2,
+            "b": 3
+          },
+          "value": -1
+        },
+        {
+          "op": "atom_eq",
+          "atom": {
+            "op": "cmp",
+            "a": 4,
+            "b": 5
+          },
+          "value": -1
+        },
+        {
+          "op": "atom_eq",
+          "atom": {
+            "op": "cmp",
+            "a": 0,
+            "b": 1
+          },
+          "value": -1
+        }
+      ],
+      "score": 1.1825,
+      "accuracy": 1.0,
+      "coverage": 1.0,
+      "gain_over_majority": 0.5,
+      "tasks": 24,
+      "buckets": {
+        "1|1|1": {
+          "winner": "B",
+          "support": 3,
+          "confidence": 1.0
+        },
+        "1|1|0": {
+          "winner": "A",
+          "support": 3,
+          "confidence": 1.0
+        },
+        "0|1|1": {
+          "winner": "A",
+          "support": 3,
+          "confidence": 1.0
+        },
+        "0|1|0": {
+          "winner": "B",
+          "support": 3,
+          "confidence": 1.0
+        },
+        "1|0|1": {
+          "winner": "A",
+          "support": 3,
+          "confidence": 1.0
+        },
+        "1|0|0": {
+          "winner": "B",
+          "support": 3,
+          "confidence": 1.0
+        },
+        "0|0|1": {
+          "winner": "B",
+          "support": 3,
+          "confidence": 1.0
+        },
+        "0|0|0": {
+          "winner": "A",
+          "support": 3,
+          "confidence": 1.0
+        }
+      },
+      "program_size": 3,
+      "temporal_validation": {
+        "ok": true,
+        "splits": [
+          {
+            "coverage": 1.0,
+            "accuracy": 1.0,
+            "train": 12,
+            "test": 12
+          },
+          {
+            "coverage": 1.0,
+            "accuracy": 1.0,
+            "train": 12,
+            "test": 12
+          }
+        ],
+        "reason": null
+      }
+    },
+    "view_after_contradiction": null
+  },
+  "elapsed_s": 8.676411489024758,
+  "code_hash_after": "5e88b661f121e64ddb7df67ec785a1a4ff5728da567e7cb597d09f259c451fac",
+  "code_unchanged": true
+}

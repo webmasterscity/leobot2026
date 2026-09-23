@@ -33,15 +33,84 @@ class Construction:
     slots: list[dict]
     surface: str
 
-    def parse(self, text: str) -> dict | None:
-        match = re.fullmatch(self.pattern, normalize(text))
+    def parse_candidates(self, text: str, limit: int = 3) -> list[dict]:
+        """Return all bounded slot segmentations compatible with this construction.
+
+        For ordinary whitespace-delimited constructions, enumerate boundaries
+        instead of letting a non-greedy regex silently choose one.  This detects
+        cases where fixed anchor words also occur inside a possible slot.  Exotic
+        constructions whose placeholders are embedded inside a token retain the
+        legacy regex path rather than being reinterpreted by this tokenizer.
+        """
+        norm=normalize(text)
+        match=re.fullmatch(self.pattern,norm)
         if match is None:
-            return None
-        result = deepcopy(self.frame)
-        for slot in self.slots:
-            value = match[slot['name']]
-            put_path(result, tuple(slot['path']), int(value) if slot['type'] == 'int' else value.strip())
-        return result
+            return []
+
+        placeholder={f'{{{slot["name"]}}}':slot for slot in self.slots}
+        surface_tokens=self.surface.split()
+        # Only use the bounded enumerator when every placeholder is a standalone
+        # token and appears exactly once.  Numeric/operator constructions such as
+        # ``{s0}+{s1}`` keep the established regex behavior.
+        present=[tok for tok in surface_tokens if tok in placeholder]
+        if len(present) != len(self.slots) or len(set(present)) != len(present):
+            result=deepcopy(self.frame)
+            for slot in self.slots:
+                value=match[slot['name']]
+                put_path(result,tuple(slot['path']),int(value) if slot['type']=='int' else value.strip())
+            return [result]
+
+        parts=[];fixed=[]
+        for tok in surface_tokens:
+            if tok in placeholder:
+                if fixed:
+                    parts.append(('fixed',tuple(fixed)));fixed=[]
+                parts.append(('slot',placeholder[tok]))
+            else:
+                fixed.append(tok)
+        if fixed:
+            parts.append(('fixed',tuple(fixed)))
+        tokens=norm.split();solutions=[]
+        suffix_min=[0]*(len(parts)+1)
+        for i in range(len(parts)-1,-1,-1):
+            kind,value=parts[i]
+            suffix_min[i]=suffix_min[i+1] + (1 if kind=='slot' else len(value))
+
+        def walk(pi,ti,values):
+            if len(solutions)>=limit:
+                return
+            if pi==len(parts):
+                if ti==len(tokens):
+                    result=deepcopy(self.frame)
+                    for slot in self.slots:
+                        raw=values[slot['name']]
+                        put_path(result,tuple(slot['path']),int(raw) if slot['type']=='int' else raw)
+                    if result not in solutions:
+                        solutions.append(result)
+                return
+            kind,value=parts[pi]
+            if kind=='fixed':
+                n=len(value)
+                if tuple(tokens[ti:ti+n])==value:
+                    walk(pi+1,ti+n,values)
+                return
+            slot=value; max_end=len(tokens)-suffix_min[pi+1]
+            ends=range(ti+1,max_end+1)
+            if slot['type']=='int':
+                ends=(ti+1,) if ti < len(tokens) and re.fullmatch(r'-?\d+',tokens[ti]) else ()
+            for end in ends:
+                values[slot['name']]=' '.join(tokens[ti:end])
+                walk(pi+1,end,values)
+                if len(solutions)>=limit:
+                    break
+            values.pop(slot['name'],None)
+
+        walk(0,0,{})
+        return solutions
+
+    def parse(self, text: str) -> dict | None:
+        candidates=self.parse_candidates(text,limit=2)
+        return candidates[0] if len(candidates)==1 else None
 
     def render(self, frame: dict) -> str | None:
         expected, actual = deepcopy(self.frame), deepcopy(frame)
@@ -228,8 +297,7 @@ class Language:
             return {'status': 'unrecognized', 'frame': None, 'alternatives': [], 'reason': 'Entrada demasiado larga.'}
         matches: list[tuple[dict, tuple[int,int], bool]] = []
         for c in self.constructions:
-            frame = c.parse(text)
-            if frame is not None:
+            for frame in c.parse_candidates(text):
                 matches.append((frame,self._specificity(c),False))
         if not matches and self.rewrites:
             by_schema: dict[str, list[Construction]] = defaultdict(list)
@@ -241,8 +309,7 @@ class Language:
                     if variant == normalize(text):
                         continue
                     for c in constructions:
-                        frame = c.parse(variant)
-                        if frame is not None:
+                        for frame in c.parse_candidates(variant):
                             matches.append((frame,self._specificity(c),True))
         if not matches:
             return {'status':'unrecognized','frame':None,'alternatives':[],'composed_paraphrase':False}
@@ -259,6 +326,8 @@ class Language:
                 'composed_paraphrase': rewritten}
 
     def describe(self, pred: str, args: tuple[str, ...]) -> str:
+        if pred.startswith('!'):
+            return 'no (' + self.describe(pred[1:], args) + ')'
         frame = {'act': 'assert', 'pred': pred, 'args': list(args)}
         for c in self.constructions:
             text = c.render(frame)

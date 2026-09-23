@@ -1,0 +1,150 @@
+{
+  "version": "V6.8 meta-DSL derived observables",
+  "code_hash_before": "5e88b661f121e64ddb7df67ec785a1a4ff5728da567e7cb597d09f259c451fac",
+  "invented_views": {
+    "order": {
+      "kind": "feature_transform",
+      "atoms": [
+        {
+          "op": "cmp",
+          "a": 0,
+          "b": 1
+        }
+      ],
+      "score": 1.23,
+      "accuracy": 1.0,
+      "coverage": 1.0,
+      "gain_over_majority": 0.5,
+      "tasks": 32,
+      "buckets": {
+        "-1": {
+          "winner": "A",
+          "support": 16,
+          "confidence": 1.0
+        },
+        "1": {
+          "winner": "B",
+          "support": 16,
+          "confidence": 1.0
+        }
+      }
+    },
+    "delta": {
+      "kind": "feature_transform",
+      "atoms": [
+        {
+          "op": "delta_gt",
+          "a": 0,
+          "b": 1,
+          "threshold": 0.25
+        }
+      ],
+      "score": 1.1366666666666667,
+      "accuracy": 1.0,
+      "coverage": 1.0,
+      "gain_over_majority": 0.33333333333333337,
+      "tasks": 30,
+      "buckets": {
+        "0": {
+          "winner": "B",
+          "support": 20,
+          "confidence": 1.0
+        },
+        "1": {
+          "winner": "A",
+          "support": 10,
+          "confidence": 1.0
+        }
+      }
+    }
+  },
+  "order_relation": {
+    "treatment": {
+      "correct_first_choice": 400,
+      "total": 400,
+      "attempts": 400,
+      "modes": {
+        "invented_view": 400
+      }
+    },
+    "control_without_views": {
+      "correct_first_choice": 200,
+      "total": 400,
+      "attempts": 600,
+      "modes": {
+        "default": 400
+      }
+    }
+  },
+  "learned_difference_threshold": {
+    "treatment": {
+      "correct_first_choice": 400,
+      "total": 400,
+      "attempts": 400,
+      "modes": {
+        "invented_view": 400
+      }
+    },
+    "control_without_views": {
+      "correct_first_choice": 100,
+      "total": 400,
+      "attempts": 700,
+      "modes": {
+        "default": 400
+      }
+    }
+  },
+  "combined_attempt_reduction_pct": 38.46153846153846,
+  "persistence": {
+    "views_preserved": true,
+    "order_after_reload": {
+      "correct_first_choice": 80,
+      "total": 80,
+      "attempts": 80,
+      "modes": {
+        "invented_view": 80
+      }
+    },
+    "delta_after_reload": {
+      "correct_first_choice": 80,
+      "total": 80,
+      "attempts": 80,
+      "modes": {
+        "invented_view": 80
+      }
+    }
+  },
+  "rollback": {
+    "view_before_contradiction": {
+      "kind": "feature_transform",
+      "atoms": [
+        {
+          "op": "cmp",
+          "a": 0,
+          "b": 1
+        }
+      ],
+      "score": 1.23,
+      "accuracy": 1.0,
+      "coverage": 1.0,
+      "gain_over_majority": 0.5,
+      "tasks": 32,
+      "buckets": {
+        "-1": {
+          "winner": "A",
+          "support": 16,
+          "confidence": 1.0
+        },
+        "1": {
+          "winner": "B",
+          "support": 16,
+          "confidence": 1.0
+        }
+      }
+    },
+    "view_after_contradiction": null
+  },
+  "elapsed_s": 2.1841564730275422,
+  "code_hash_after": "5e88b661f121e64ddb7df67ec785a1a4ff5728da567e7cb597d09f259c451fac",
+  "code_unchanged": true
+}

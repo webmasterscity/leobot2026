@@ -1,0 +1,42 @@
+{
+  "version": "0.5.37",
+  "experiment": "predicate_disjoint_persistent_state_topology_meta_transfer",
+  "code_hash": "e855f17757905ad7f22cf0fdb84df61edfa307ab98fd1eb85a58ee125f952001",
+  "code_frozen": true,
+  "training": {
+    "source_families": 2,
+    "predicate_disjoint": true,
+    "real_downstream_uses_per_family": 1,
+    "meta_topologies_promoted": 1,
+    "meta_support": 2,
+    "consumer_gate_support": 2
+  },
+  "treatment": {
+    "heldout_cases": 100,
+    "third_family_first_episode_meta_resolved": 100,
+    "exact_state_schemas_still_promoted": 2
+  },
+  "v535_ablation_without_meta_transfer": {
+    "heldout_cases": 100,
+    "first_episode_unresolved": 100,
+    "same_family_learning_curve": [
+      "document_coreference_unresolved",
+      "document_coreference_unresolved",
+      "document_coreference_resolved"
+    ],
+    "first_exact_resolution_episode": 3
+  },
+  "one_source_family_control": {
+    "heldout_cases": 100,
+    "unresolved": 100
+  },
+  "carrier_role_change_control": {
+    "cases": 50,
+    "unresolved": 50
+  },
+  "non_circular_credit_control": {
+    "meta_gate_support_before": 2,
+    "after_two_meta_uses": 2
+  },
+  "claim": "two predicate-disjoint, actually used exact persistence schemas can teach a lexical-identity-free persistence topology that transfers to a third unseen predicate family in one state episode; bounded structural meta-transfer, not unrestricted representation invention or AGI/ASI"
+}

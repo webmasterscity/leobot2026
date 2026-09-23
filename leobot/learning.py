@@ -10,6 +10,7 @@ import hashlib
 from collections import defaultdict
 from time import perf_counter
 from .core import Atom, Rule, KnowledgeBase, Engine, BudgetExceeded, variable
+from .metapolicy import policy_key, valid_policy
 
 PairSet = frozenset[tuple[str, str]]
 
@@ -44,7 +45,8 @@ class Path:
 class RelationalLearner:
     def __init__(self, kb: KnowledgeBase, max_length: int = 3, max_candidates: int = 20_000,
                  max_pairs: int = 40_000, max_seconds: float = 10.0, max_auto_predicates: int = 32,
-                 max_auto_hops: int = 3, max_auto_entities: int = 512) -> None:
+                 max_auto_hops: int = 3, max_auto_entities: int = 512,
+                 invention_inversion_order=None, invention_candidate_policy: str = 'baseline') -> None:
         if max_length < 1 or max_length > 16:
             raise ValueError('La longitud del programa debe estar entre 1 y 16.')
         self.kb, self.max_length = kb, max_length
@@ -57,6 +59,14 @@ class RelationalLearner:
         self._extension_cache: dict[tuple, tuple[PairSet, int]] = {}
         self._preserve_extension_cache = False
         self._extension_stack: set[str] = set()
+        default_order=((False,False),(False,True),(True,False),(True,True))
+        order=tuple(invention_inversion_order or default_order)
+        if set(order) != set(default_order) or len(order) != 4:
+            raise ValueError('Política de inversión inválida.')
+        self.invention_inversion_order=order
+        if not valid_policy(str(invention_candidate_policy)):
+            raise ValueError('Política de candidatos de invención inválida.')
+        self.invention_candidate_policy=str(invention_candidate_policy)
 
 
     def _auto_predicates(self, target: str, examples: dict[tuple[str, str], set[bool]]) -> tuple[list[str], int]:
@@ -309,7 +319,8 @@ class RelationalLearner:
 
     def fit_with_invention(self, target: str, allowed: list[str] | None = None,
                            install: bool = True, max_inventions: int = 64,
-                           helper_length: int = 2) -> dict:
+                           helper_length: int = 2, shadow_probe_budget: int = 0,
+                           shadow_probe_threshold: int = 3) -> dict:
         """Retry a failed relation by inventing one reusable intermediate path.
 
         The helper is not named by the caller and is not domain-specific.  We
@@ -329,6 +340,7 @@ class RelationalLearner:
         base['predicate_invention_used']=False
         base['invention_attempts']=0
         base['invention_base_candidates']=base_candidates
+        base['invention_candidate_policy']=self.invention_candidate_policy
         if (base.get('status') != 'no_solution' or not base.get('search_complete', True)
                 or helper_length != 2 or max_inventions <= 0):
             self._preserve_extension_cache=False
@@ -337,22 +349,91 @@ class RelationalLearner:
         predicates=[p for p in base.get('predicate_selected', [])
                     if p != target and not p.startswith('!') and self.kb.arity.get(p) == 2]
         candidates=[]
-        # Preserve relevance ranking of predicates and prefer fewer inversions.
-        # This is a generic simplicity bias: direct compositions are cheaper to
-        # explain/execute than equivalent doubly-inverted helpers.
-        inversion_patterns=((False,False),(False,True),(True,False),(True,True))
-        for inv_p,inv_q in inversion_patterns:
-            for p in predicates:
-                for q in predicates:
-                    candidates.append(Path(((p,inv_p),(q,inv_q))))
+        # Preserve the historical baseline ordering as one explicit policy, then
+        # allow a replay-learned meta policy to reprioritize only generic structural
+        # features (relative predicate rank / inversion), never predicate names.
+        inversion_patterns=self.invention_inversion_order
+        baseline_index=0
+        for inv_rank,(inv_p,inv_q) in enumerate(inversion_patterns):
+            for p_rank,p in enumerate(predicates):
+                for q_rank,q in enumerate(predicates):
+                    category='same' if p_rank==q_rank else ('forward' if p_rank<q_rank else 'reverse')
+                    path=Path(((p,inv_p),(q,inv_q)))
+                    candidates.append((path,{'definition':path.text(),'baseline_index':baseline_index,
+                                             'inv_rank':inv_rank,'p_rank':p_rank,'q_rank':q_rank,
+                                             'pair_category':category,
+                                             'inversion_pattern':[bool(inv_p),bool(inv_q)]}))
+                    baseline_index += 1
         unique=[];seen_text=set()
-        for path in candidates:
+        for path,meta in candidates:
             txt=path.text()
             if txt in seen_text: continue
-            seen_text.add(txt);unique.append(path)
+            seen_text.add(txt);unique.append((path,meta))
+
+        def candidate_order_key(row):
+            _path,meta=row
+            return policy_key(meta, self.invention_candidate_policy)
+        unique.sort(key=candidate_order_key)
+        catalog_complete=len(unique) <= 256
+        catalog=[meta for _,meta in unique] if catalog_complete else []
+        base['invention_candidate_catalog']=catalog
+        base['invention_catalog_complete']=catalog_complete
+
+        shadow_probe_budget=max(0,min(64,int(shadow_probe_budget)))
+        shadow_probe_threshold=max(1,int(shadow_probe_threshold))
+
+        def shadow_probe(success_path, success_rules, success_trial, success_meta, observed_defs):
+            """Expand only missing baseline-prefix branches on an isolated KB copy.
+
+            These probes never alter the deployed hypothesis.  They exist solely
+            to make additional counterfactual policy prefixes exactly replayable.
+            """
+            if (shadow_probe_budget <= 0 or self.invention_candidate_policy == 'baseline'
+                    or not catalog_complete):
+                return []
+            # Probing is only justified when the deployed policy needed >1 online
+            # candidate; one-shot success already supplies no evidence of regret.
+            baseline_order=sorted(unique,key=lambda row:row[1]['baseline_index'])
+            success_baseline=int(success_meta['baseline_index'])
+            missing=[row for row in baseline_order
+                     if int(row[1]['baseline_index']) <= success_baseline
+                     and row[1]['definition'] not in observed_defs]
+            if not missing:
+                return []
+            # Work on a serialized clone so failed or successful shadow helpers
+            # cannot mutate the operational KB, proofs, or installed target.
+            clone=KnowledgeBase.from_dict(self.kb.as_dict())
+            clone.withdraw_learned(target)
+            for rule in success_rules:
+                clone.remove_rule(rule.id)
+            rows=[]
+            for path,meta in missing[:shadow_probe_budget]:
+                digest=hashlib.blake2b((target+'|'+path.text()).encode('utf8'),digest_size=8).hexdigest()
+                helper='invent_'+digest
+                rules=path.rules(helper,(f'shadow_for:{target}',f'definition:{path.text()}'))
+                try:
+                    for rule in rules: clone.add_rule(rule)
+                    probe=RelationalLearner(clone,max_length=self.max_length,max_candidates=self.max_candidates,
+                        max_pairs=self.max_pairs,max_seconds=self.max_seconds,
+                        max_auto_predicates=self.max_auto_predicates,max_auto_hops=self.max_auto_hops,
+                        max_auto_entities=self.max_auto_entities,
+                        invention_inversion_order=self.invention_inversion_order,
+                        invention_candidate_policy=self.invention_candidate_policy).fit(target,allowed=allowed,install=False)
+                    selected=str(probe.get('selected') or '')
+                    used=helper in selected or any(any(a.get('pred')==helper for a in rd.get('body',()))
+                        for rd in probe.get('rules',()))
+                    rows.append({'helper':helper,'definition':path.text(),
+                        'inversion_pattern':meta['inversion_pattern'],'pair_category':meta['pair_category'],
+                        'p_rank':meta['p_rank'],'q_rank':meta['q_rank'],
+                        'target_status':probe.get('status'),'used':used,
+                        'candidates':probe.get('candidates'),'shadow':True})
+                finally:
+                    for rule in rules: clone.remove_rule(rule.id)
+                    clone.withdraw_learned(target)
+            return rows
 
         attempts=[]
-        for path in unique[:max_inventions]:
+        for path,meta in unique[:max_inventions]:
             digest=hashlib.blake2b((target+'|'+path.text()).encode('utf8'),digest_size=8).hexdigest()
             helper='invent_'+digest
             if helper == target:
@@ -367,17 +448,33 @@ class RelationalLearner:
                     any(a.get('pred')==helper for a in rd.get('body',()))
                     for rd in trial.get('rules',())
                 )
+                pattern=[bool(path.steps[0][1]),bool(path.steps[1][1])]
                 attempts.append({'helper':helper,'definition':path.text(),
+                                 'inversion_pattern':pattern,
+                                 'pair_category':meta['pair_category'],
+                                 'p_rank':meta['p_rank'],'q_rank':meta['q_rank'],
                                  'target_status':trial.get('status'),'used':used,
                                  'candidates':trial.get('candidates')})
                 if trial.get('status')=='learned_hypothesis' and used:
                     trial['predicate_invention_used']=True
+                    trial['invention_candidate_policy']=self.invention_candidate_policy
+                    trial['invention_candidate_catalog']=catalog
+                    trial['invention_catalog_complete']=catalog_complete
                     trial['invented_predicate']=helper
                     trial['invention_definition']=path.text()
-                    trial['invention_attempts']=len(attempts)
-                    trial['invention_trace']=attempts
+                    online_attempts=len(attempts)
+                    probes=[]
+                    if online_attempts > shadow_probe_threshold:
+                        probes=shadow_probe(path,rules,trial,meta,{a['definition'] for a in attempts})
+                    full_trace=attempts+probes
+                    trial['invention_attempts']=online_attempts
+                    trial['invention_shadow_attempts']=len(probes)
+                    trial['invention_shadow_probe_threshold']=shadow_probe_threshold
+                    trial['invention_trace']=full_trace
                     trial['invention_base_candidates']=base_candidates
                     trial['invention_total_target_candidates']=base_candidates + sum(int(a.get('candidates') or 0) for a in attempts)
+                    trial['invention_shadow_target_candidates']=sum(int(a.get('candidates') or 0) for a in probes)
+                    trial['invention_total_target_candidates_with_shadow']=trial['invention_total_target_candidates'] + trial['invention_shadow_target_candidates']
                     trial['invention_total_ms']=(perf_counter()-invention_started)*1000
                     self._preserve_extension_cache=False
                     return trial

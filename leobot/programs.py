@@ -363,6 +363,23 @@ class ProgramLearner:
             yield from ProgramLearner._walk_expr(child)
 
     @staticmethod
+    def _expr_vars(expr: Expr) -> set[int]:
+        """Return caller input roles referenced by an expression.
+
+        This is structural only: it does not inspect task names, labels or
+        held-out answers.  It lets a cross-mechanism relevance prior reduce the
+        variable alphabet without prescribing the operation that combines them.
+        """
+        out=set()
+        for node in ProgramLearner._walk_expr(expr):
+            if node.op=='var':
+                out.add(int(node.value))
+            elif node.op=='pcall':
+                for child in node.children:
+                    if child.op=='var': out.add(int(child.value))
+        return out
+
+    @staticmethod
     def _proper_subexpressions(expr: Expr):
         """Yield structural subprograms below the root, once per occurrence.
 
@@ -372,6 +389,55 @@ class ProgramLearner:
         for child in expr.children:
             yield child
             yield from ProgramLearner._proper_subexpressions(child)
+
+    def _expr_dependency_roles(self, expr: Expr, seen: tuple[str, ...] = ()) -> set[int] | None:
+        """Return caller input roles that can influence ``expr``.
+
+        Calls are expanded through already learned programs so the result is a
+        representation-level dependency certificate rather than a textual scan
+        of one expression.  ``None`` means the dependency cannot be certified.
+        """
+        if expr.op=='var': return {int(expr.value)}
+        if expr.op=='const': return set()
+        if expr.op in OPS:
+            left=self._expr_dependency_roles(expr.children[0],seen)
+            right=self._expr_dependency_roles(expr.children[1],seen)
+            return None if left is None or right is None else left|right
+        if expr.op=='call':
+            name=str(expr.value)
+            if name in seen: return None
+            deps=self.dependency_roles(name,seen+(name,))
+            return None if deps is None else set(deps)
+        if expr.op=='pcall':
+            name=str(expr.value)
+            if name in seen: return None
+            deps=self.dependency_roles(name,seen+(name,))
+            if deps is None: return None
+            out=set()
+            for i in deps:
+                if i < 0 or i >= len(expr.children): return None
+                child=expr.children[i]
+                if child.op=='var': out.add(int(child.value))
+                elif child.op=='const': pass
+                else: return None
+            return out
+        return None
+
+    def dependency_roles(self, skill: str, seen: tuple[str, ...] = ()) -> tuple[int, ...] | None:
+        """Certify a stable unordered input-dependency set for a learned skill.
+
+        Every retained minimum-size hypothesis must agree on the same dependency
+        set.  If alternatives disagree, no cross-task representation is emitted.
+        """
+        bodies=self.solutions.get(skill,())
+        if not bodies or any(not isinstance(x,Expr) for x in bodies):
+            return None
+        rows=[]
+        for body in bodies:
+            deps=self._expr_dependency_roles(body,seen)
+            if deps is None: return None
+            rows.append(tuple(sorted(deps)))
+        return rows[0] if rows and all(x==rows[0] for x in rows) else None
 
     def _skill_arity(self, skill: str) -> int | None:
         examples = self.examples.get(skill)
@@ -684,7 +750,7 @@ class ProgramLearner:
         uniq={str(c):c for c in candidates}
         return [uniq[k] for k in sorted(uniq,key=lambda k:(len(k),k))]
 
-    def fit(self, skill: str, library: list[str] | None = None) -> dict:
+    def fit(self, skill: str, library: list[str] | None = None, allowed_vars=None) -> dict:
         start = perf_counter()
         # Re-fitting a target invalidates only its previous implementation and dependents.
         self._invalidate(skill)
@@ -702,6 +768,16 @@ class ProgramLearner:
         inputs = list(examples)
         outputs = tuple(next(iter(examples[x])) for x in inputs)
         arity = len(inputs[0])
+        if allowed_vars is None:
+            variable_ids=tuple(range(arity))
+        else:
+            try:
+                variable_ids=tuple(sorted(set(int(i) for i in allowed_vars)))
+            except Exception as exc:
+                raise ValueError('Roles permitidos inválidos.') from exc
+            if not variable_ids or any(i < 0 or i >= arity for i in variable_ids):
+                raise ValueError('Roles permitidos fuera de la aridad del programa.')
+        report['allowed_vars']=list(variable_ids)
         probes = [x for x in self.probes(arity) if x not in examples]
         points = inputs + probes
         selected_library = self._auto_library(skill, inputs, outputs, arity) if library is None else list(library)
@@ -723,7 +799,7 @@ class ProgramLearner:
             if sig[:len(inputs)] == outputs:
                 solutions.append(expr)
 
-        for i in range(arity):
+        for i in variable_ids:
             e = Expr('var', i)
             consider(e, tuple(x[i] for x in points), 1)
         for c in (-1, 0, 1):
@@ -739,6 +815,8 @@ class ProgramLearner:
             if libskill == skill or libskill not in self.solutions:
                 continue
             for e, sig in self._library_call_variants(libskill, arity, points):
+                if allowed_vars is not None and not self._expr_vars(e).issubset(set(variable_ids)):
+                    continue
                 before = len(levels.get(1, []))
                 consider(e, sig, 1)
                 if len(levels.get(1, [])) > before:

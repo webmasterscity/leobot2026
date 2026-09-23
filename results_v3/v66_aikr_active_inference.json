@@ -1,0 +1,205 @@
+{
+  "version": "V6.6 AIKR + epistemic acquisition",
+  "code_hash_before": "5e88b661f121e64ddb7df67ec785a1a4ff5728da567e7cb597d09f259c451fac",
+  "regime_shift": {
+    "post_shift_rounds": 20,
+    "aikr_correct_choices": 17,
+    "lifetime_correct_choices": 0,
+    "aikr_switch_round": 4,
+    "lifetime_switch_round": null,
+    "trace": [
+      {
+        "step": 1,
+        "aikr_choice": "A",
+        "lifetime_choice": "A"
+      },
+      {
+        "step": 2,
+        "aikr_choice": "A",
+        "lifetime_choice": "A"
+      },
+      {
+        "step": 3,
+        "aikr_choice": "A",
+        "lifetime_choice": "A"
+      },
+      {
+        "step": 4,
+        "aikr_choice": "B",
+        "lifetime_choice": "A"
+      },
+      {
+        "step": 5,
+        "aikr_choice": "B",
+        "lifetime_choice": "A"
+      },
+      {
+        "step": 6,
+        "aikr_choice": "B",
+        "lifetime_choice": "A"
+      },
+      {
+        "step": 7,
+        "aikr_choice": "B",
+        "lifetime_choice": "A"
+      },
+      {
+        "step": 8,
+        "aikr_choice": "B",
+        "lifetime_choice": "A"
+      },
+      {
+        "step": 9,
+        "aikr_choice": "B",
+        "lifetime_choice": "A"
+      },
+      {
+        "step": 10,
+        "aikr_choice": "B",
+        "lifetime_choice": "A"
+      },
+      {
+        "step": 11,
+        "aikr_choice": "B",
+        "lifetime_choice": "A"
+      },
+      {
+        "step": 12,
+        "aikr_choice": "B",
+        "lifetime_choice": "A"
+      },
+      {
+        "step": 13,
+        "aikr_choice": "B",
+        "lifetime_choice": "A"
+      },
+      {
+        "step": 14,
+        "aikr_choice": "B",
+        "lifetime_choice": "A"
+      },
+      {
+        "step": 15,
+        "aikr_choice": "B",
+        "lifetime_choice": "A"
+      },
+      {
+        "step": 16,
+        "aikr_choice": "B",
+        "lifetime_choice": "A"
+      },
+      {
+        "step": 17,
+        "aikr_choice": "B",
+        "lifetime_choice": "A"
+      },
+      {
+        "step": 18,
+        "aikr_choice": "B",
+        "lifetime_choice": "A"
+      },
+      {
+        "step": 19,
+        "aikr_choice": "B",
+        "lifetime_choice": "A"
+      },
+      {
+        "step": 20,
+        "aikr_choice": "B",
+        "lifetime_choice": "A"
+      }
+    ],
+    "final_budgets": {
+      "A": {
+        "trials": 40,
+        "successes": 20,
+        "priority": 0.0005269044644041186,
+        "durability": 0.995,
+        "quality": 0.5,
+        "ema_cost": 1.0,
+        "last_tick": 79
+      },
+      "B": {
+        "trials": 40,
+        "successes": 20,
+        "priority": 0.8785225757333232,
+        "durability": 0.995,
+        "quality": 0.5,
+        "ema_cost": 1.0,
+        "last_tick": 80
+      }
+    }
+  },
+  "active_evidence": {
+    "treatment": {
+      "chosen_role": 1,
+      "actual_cost": 1.0,
+      "learn_status": "procedure_learned",
+      "heldout_correct": 200,
+      "heldout_total": 200,
+      "epistemic_selection": {
+        "status": "epistemic_action",
+        "chosen_index": 1,
+        "prior_entropy_bits": 2.584962500721156,
+        "chosen": {
+          "index": 1,
+          "info_gain_bits": 1.0,
+          "expected_entropy_bits": 1.584962500721156,
+          "cost": 1.0,
+          "pragmatic_value": 0.0,
+          "value_per_cost": 1.0,
+          "label": 1
+        },
+        "scores": [
+          {
+            "index": 1,
+            "info_gain_bits": 1.0,
+            "expected_entropy_bits": 1.584962500721156,
+            "cost": 1.0,
+            "pragmatic_value": 0.0,
+            "value_per_cost": 1.0,
+            "label": 1
+          },
+          {
+            "index": 2,
+            "info_gain_bits": 1.0,
+            "expected_entropy_bits": 1.584962500721156,
+            "cost": 1.0,
+            "pragmatic_value": 0.0,
+            "value_per_cost": 1.0,
+            "label": 2
+          },
+          {
+            "index": 3,
+            "info_gain_bits": 1.0,
+            "expected_entropy_bits": 1.584962500721156,
+            "cost": 1.0,
+            "pragmatic_value": 0.0,
+            "value_per_cost": 1.0,
+            "label": 3
+          },
+          {
+            "index": 0,
+            "info_gain_bits": 1.0,
+            "expected_entropy_bits": 1.584962500721156,
+            "cost": 10.0,
+            "pragmatic_value": 0.0,
+            "value_per_cost": 0.1,
+            "label": 0
+          }
+        ]
+      }
+    },
+    "control_ignores_cost": {
+      "chosen_role": 0,
+      "actual_cost": 10.0,
+      "learn_status": "procedure_learned",
+      "heldout_correct": 200,
+      "heldout_total": 200
+    },
+    "cost_reduction_pct": 90.0
+  },
+  "code_hash_after": "5e88b661f121e64ddb7df67ec785a1a4ff5728da567e7cb597d09f259c451fac",
+  "code_unchanged": true,
+  "elapsed_s": 0.08744123694486916
+}

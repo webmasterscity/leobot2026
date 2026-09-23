@@ -1,0 +1,25 @@
+{
+  "version": "0.4.7",
+  "experiment": "retire_underdetermined_extensional_grounding",
+  "code_hash_before": "e855f17757905ad7f22cf0fdb84df61edfa307ab98fd1eb85a58ee125f952001",
+  "code_hash_after": "e855f17757905ad7f22cf0fdb84df61edfa307ab98fd1eb85a58ee125f952001",
+  "code_unchanged": true,
+  "trials": 20,
+  "default_false_existing_predicate_facts": 0,
+  "legacy_false_existing_predicate_facts": 20,
+  "default_distinct_primitives_learned": 20,
+  "default_final_statuses": [
+    "raw_relation_learned"
+  ],
+  "legacy_final_statuses": [
+    "stored"
+  ],
+  "operational_default_allow_extensional_grounding": false,
+  "legacy_reproduction_requires_explicit_opt_in": true,
+  "interpretation": "La coincidencia extensional sola no identifica el significado de una palabra nueva; el camino por defecto conserva una relacion nueva como primitiva separada en vez de reetiquetar hechos existentes.",
+  "limits": [
+    "Una primitiva opaca tampoco establece equivalencia semantica con otros predicados.",
+    "Falta un mecanismo seguro para aprender sinonimia/equivalencia mediante evidencia definicional o contrastiva suficiente.",
+    "No demuestra AGI/ASI."
+  ]
+}

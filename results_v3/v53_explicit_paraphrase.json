@@ -1,0 +1,44 @@
+{
+  "version": "0.5.3-candidate",
+  "experiment": "explicit_grounded_paraphrase_role_remapping",
+  "code_hash_before": "e855f17757905ad7f22cf0fdb84df61edfa307ab98fd1eb85a58ee125f952001",
+  "code_hash_after": "e855f17757905ad7f22cf0fdb84df61edfa307ab98fd1eb85a58ee125f952001",
+  "code_unchanged": true,
+  "instruction": {
+    "status": "paraphrase_learned",
+    "mechanism": "explicit_equivalence_instruction",
+    "canonical_predicate": "primitive_7f4bd6a5eb2a3295_a3"
+  },
+  "heldout": {
+    "cases": 100,
+    "parsed_to_canonical": 100,
+    "stored": 100,
+    "canonical_relation_supported": 100,
+    "median_response_ms": 0.11183653259649873
+  },
+  "no_equivalence_control": {
+    "canonical_relation_supported": 0,
+    "cases": 100,
+    "separate_raw_predicate_learned": true,
+    "distinct_predicates": [
+      "primitive_7f4bd6a5eb2a3295_a3",
+      "primitive_967f12e9a3c8e2bc_a3"
+    ],
+    "statuses": [
+      "raw_relation_learned",
+      "raw_relation_pending",
+      "stored"
+    ]
+  },
+  "safety": {
+    "two_unknown_status": "paraphrase_unresolved",
+    "known_conflict_status": "paraphrase_conflict",
+    "conflict_predicates_were_distinct": true
+  },
+  "limits": [
+    "This is explicit supervised semantic instruction, not autonomous synonym discovery.",
+    "The quoted metalinguistic interface is intentionally narrow and does not yet understand arbitrary paraphrase requests.",
+    "One grounded example is generalized compositionally by the existing slot learner; broader language variation still needs evidence.",
+    "Internal synthetic evaluation does not demonstrate AGI/ASI."
+  ]
+}

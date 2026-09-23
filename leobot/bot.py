@@ -1,34 +1,209 @@
-"""Conversation facade, persistence and dataset ingestion. No network operations."""
+"""Leobot state, learner wiring, persistence, and public facade."""
 from __future__ import annotations
 import json
 import os
-import re
 from pathlib import Path
 import tempfile
-from itertools import permutations
-from .core import Atom, KnowledgeBase, Engine, Proof
+from .core import Atom, KnowledgeBase, Engine
 from .learning import RelationalLearner
 from .programs import ProgramLearner
 from .procedures import ProcedureGrounder
 from .symbolic import SymbolicWorldLearner
 from .concepts import ConceptGrounder
+from .schemas import OpenArityConceptGrounder
+from .metarepr import MetaRepresentationLibrary
+from .metacontrol import MetaController
 from .language import Language, normalize
+from .document import DocumentLearningMixin
+from .language_acquisition import LanguageAcquisitionMixin
+from .conditional_learning import ConditionalLearningMixin
+from .dialogue import DialogueMixin
+from .state_fields import plain_state, restore_plain_state
 
 
-class Bot:
-    def __init__(self, kb=None, grounded_language: bool = True, grounding_min_support: int = 2) -> None:
+class Bot(DocumentLearningMixin, LanguageAcquisitionMixin, ConditionalLearningMixin, DialogueMixin):
+    def __init__(self, kb=None, grounded_language: bool = True, grounding_min_support: int = 2,
+                 raw_relation_min_support: int = 3, allow_extensional_grounding: bool = False,
+                 raw_relation_max_arity: int = 8) -> None:
         self.kb, self.language, self.programs = (kb if kb is not None else KnowledgeBase()), Language(), ProgramLearner()
         self.procedures = ProcedureGrounder(self.programs)
         self.symbolic = SymbolicWorldLearner()
         self.concepts = ConceptGrounder(self.kb)
+        self.schemas = OpenArityConceptGrounder(self.kb)
+        # V6.0-V6.2: domain-free structural priors shared between learners.
+        self.meta_representations = MetaRepresentationLibrary()
+        self.meta_controller = MetaController()
+        self._sync_meta_controller()
         self.grounded_language = bool(grounded_language)
+        # Legacy V3 extensional grounding can map arbitrary new wording onto an
+        # existing predicate from co-occurrence alone.  That is underdetermined
+        # semantics, so it is reproducible only by explicit opt-in and is not on
+        # the default operational path.
+        self.allow_extensional_grounding = bool(allow_extensional_grounding)
         self.grounding_min_support = max(1, int(grounding_min_support))
+        self.raw_relation_min_support = max(3, int(raw_relation_min_support))
+        self.raw_relation_max_arity = max(1, min(8, int(raw_relation_max_arity)))
         # Untrusted semantic hypotheses are kept separate from active grammar until
         # independent grounded episodes support the same delexicalized construction.
         self.grounding_hypotheses: dict[str, dict] = {}
+        # V4.5: unresolved ordinary assertions can support a bounded, opaque
+        # primitive relation.  Pending raw text is data, never executable code.
+        self.raw_relation_observations: list[dict] = []
+        self.raw_relation_promotions: dict[str, dict] = {}
+        # V5.11: negative raw assertions are learned in a separate evidence pool so
+        # they can never count as positive support.  If repeated negative wording
+        # reveals one stable base relation, only !predicate facts are asserted.
+        self.raw_negative_relation_observations: list[dict] = []
+        # V5.5: learned meta-schemas for safe question syntax. A transform is
+        # promoted only after two distinct grounded predicates support the same
+        # abstract assertion->query topology.
+        self.question_transform_hypotheses: dict[str, dict] = {}
+        # V5.6: natural conditional examples can induce a Horn rule only after
+        # several independent grounded episodes agree on the same role mapping.
+        # The conditional itself never asserts its antecedent or consequent as fact.
+        self.conditional_rule_hypotheses: dict[str, dict] = {}
+        # V5.8: unresolved single-antecedent conditionals may teach opaque clause
+        # constructions from repeated hypothetical episodes.  These observations
+        # never become facts; they only bootstrap language forms, after which the
+        # ordinary grounded conditional learner must still induce the rule.
+        self.conditional_bootstrap_observations: list[dict] = []
+        self.conditional_bootstrap_promotions: list[dict] = []
         self.last_fact: str | None = None
+        # V5.16: bounded conversational fact history.  This is not a transcript
+        # or a hidden semantic cache: it contains only IDs of facts that were
+        # actually asserted/revised in the dialogue.  It lets an explicit repair
+        # refer back past an intervening topic while remaining auditable through
+        # the underlying KB fact/provenance records.
+        self.discourse_facts: list[str] = []
+        # V5.22: cross-predicate document-role bridges are learned only from
+        # repeated *explicit* shared referents in independent document episodes.
+        # Coreference-resolved facts never count as support, preventing circular
+        # self-confirmation.
+        self.document_role_bridge_hypotheses: dict[str, dict] = {}
+        # V5.25: candidate document-event schemas are learned only from repeated
+        # explicit adjacent fact pairs whose argument-equality structure recurs in
+        # independent documents.  The schema is *not* an event assertion.  A
+        # latent event node is materialized only when a demonstrative reference
+        # (eso/esto/aquello) cannot be resolved to an entity and exactly one
+        # promoted structural candidate can explain it.  This keeps event
+        # invention demand-driven and makes ambiguous partitions abstain.
+        self.document_event_schema_hypotheses: dict[str, dict] = {}
+        # V5.27: meta-transfer of event *topology* is kept separate from exact
+        # predicate schemas.  A topology becomes active only after at least two
+        # predicate-disjoint exact schemas were not merely promoted but actually
+        # materialized to resolve an event reference.  This prevents one repeated
+        # lexical family from licensing a universal event heuristic.
+        self.document_event_meta_hypotheses: dict[str, dict] = {}
+        # V5.29: a transferred event topology is not universally applicable just
+        # because its internal role geometry matches.  We separately learn which
+        # downstream predicate/argument roles have independently *used* exact
+        # event representations.  Meta-transferred event candidates are admitted
+        # only through a promoted, uncontested consumer-role gate.
+        self.document_event_reference_hypotheses: dict[str, dict] = {}
+        # V5.31: explicit competition between a transferred event interpretation
+        # and an ordinary-entity interpretation for the same downstream role.
+        # Event credit comes only from V5.29's predicate-disjoint exact uses;
+        # independent credit comes only when an ambiguous demonstrative is later
+        # disambiguated by an explicit assertion in the same document episode.
+        # Resolver-produced facts never count, preventing self-confirmation.
+        self.document_event_choice_hypotheses: dict[str, dict] = {}
+        # V5.28: pending raw document episodes for testing whether a proven event
+        # topology can reduce the examples required to acquire *new* opaque
+        # relations.  These records contain text/provenance only; they do not
+        # assert facts until a unique meta-constrained anti-unification succeeds.
+        self.document_event_bootstrap_observations: list[dict] = []
+        # V5.33: explicit document-causal links may be reified as a representation
+        # type distinct from events.  Support is learned only from actual downstream
+        # uses of causal nodes and is deduplicated by semantic episode content, not
+        # by source names or generated fact IDs.  This lets causal dependencies
+        # compete with event representations without treating every adjacency as
+        # causality.
+        self.document_causal_reference_hypotheses: dict[str, dict] = {}
+        # V5.34: generic predictive gates for reified explicit document links.
+        # Any safe binary ``_doc_*`` relation already produced by the document
+        # parser can become a first-class dependency representation without a new
+        # hand-written candidate generator.  V5.33 causal gates are mirrored into
+        # this store for backward-compatible evidence.
+        self.document_dependency_reference_hypotheses: dict[str, dict] = {}
+        # V5.35: latent persistent-state schemas are induced from repeated
+        # non-contiguous explicit facts that keep one carrier entity stable while
+        # unrelated intervening statements vary.  No input predicate names the
+        # state.  A schema is only a hypothesis until a later demonstrative needs
+        # the joint persistent condition; only then is a state node materialized.
+        self.document_state_schema_hypotheses: dict[str, dict] = {}
+        self.document_state_reference_hypotheses: dict[str, dict] = {}
+        # V5.37: meta-topologies for persistent states erase lexical predicate
+        # identity while preserving role geometry.  Promotion requires at least
+        # two predicate-disjoint exact state families that were actually consumed
+        # downstream.  Meta-transferred uses are deliberately non-crediting.
+        self.document_state_meta_hypotheses: dict[str, dict] = {}
+        self.document_state_meta_reference_hypotheses: dict[str, dict] = {}
+        # V5.38: type-agnostic latent-representation proposal policies.  These
+        # hypotheses are learned from successful *exact* uses belonging to at
+        # least two different representation families (currently event/state),
+        # then erase the family label, predicate names and arities.  Only common
+        # relational features and the downstream consumer role survive.  Generic
+        # bundle uses are intentionally non-crediting, preventing recursive
+        # self-licensing.
+        self.document_latent_strategy_hypotheses: dict[str, dict] = {}
         self.last_result: dict | None = None
         self.training_reports: list[dict] = []
+        # Bounded discourse state.  This is linguistic working memory, not factual
+        # truth: referents are only used to propose repairs that an already learned
+        # construction can parse unambiguously.
+        self.discourse_referents: list[dict] = []
+        self.discourse_max_referents = 32
+        # V8.9: last observed/executed symbolic world state, so dialogue can plan
+        # toward learned goal constructions without restating the state.
+        self.last_symbolic_state: list[tuple[str, ...]] | None = None
+        # Entities seen in any observed or executed symbolic state; a goal naming
+        # anything else is refused instead of planned.
+        self.symbolic_entities: set[str] = set()
+
+    def _remember_discourse_fact(self, fid: str | None) -> str | None:
+        """Mark one concrete fact as the current conversational focus."""
+        if not fid:
+            return fid
+        self.last_fact = fid
+        live=[]
+        for prior in self.discourse_facts:
+            if prior == fid:
+                continue
+            if hasattr(self.kb, 'get_fact') and self.kb.get_fact(prior) is None:
+                continue
+            live.append(prior)
+        live.append(fid)
+        self.discourse_facts = live[-32:]
+        return fid
+
+    def _replace_discourse_fact(self, old_id: str, new_id: str) -> None:
+        """Replace a revised fact ID in discourse history without duplicating it."""
+        out=[]
+        for fid in self.discourse_facts:
+            if fid in (old_id,new_id):
+                continue
+            if fid not in out and (not hasattr(self.kb,'get_fact') or self.kb.get_fact(fid) is not None):
+                out.append(fid)
+        # The revision itself is the newest discourse event even when it repairs
+        # a fact that was originally mentioned before an intervening topic.
+        out.append(new_id)
+        self.discourse_facts=out[-32:]
+        self.last_fact=new_id
+
+    def _recent_discourse_facts(self) -> list[dict]:
+        """Return current conversational facts, newest first, with a V5.15 fallback."""
+        ids=list(self.discourse_facts)
+        if self.last_fact and self.last_fact not in ids:
+            ids.append(self.last_fact)
+        rows=[]; seen=set()
+        for fid in reversed(ids[-32:]):
+            if fid in seen or not hasattr(self.kb,'get_fact'):
+                continue
+            seen.add(fid); fact=self.kb.get_fact(fid)
+            if fact is None or 'conversación' not in str(fact.get('source','')):
+                continue
+            rows.append(fact)
+        return rows
 
     def ingest(self, data: dict) -> dict:
         counts = {'constructions': 0, 'facts': 0, 'relational_examples': 0, 'numeric_examples': 0}
@@ -63,214 +238,145 @@ class Bot:
         self.training_reports.extend(reports)
         return {'added': counts, 'training': reports, 'memory': self.kb.stats()}
 
-    @staticmethod
-    def _question_like(text: str) -> bool:
-        norm = normalize(text)
-        starts = ('que ', 'cual ', 'donde ', 'cuando ', 'quien ', 'cuanto ', 'como ',
-                  'en que ', 'a que ', 'de que ', 'por que ')
-        return '?' in text or '¿' in text or any(norm.startswith(x) for x in starts)
+    def _publish_meta_projection(self, input_arity: int, mapping, *, family: str,
+                                 source: str, support: int = 1) -> dict:
+        """Publish a role-flow abstraction and expose it only to other learners.
 
-    def _entities_mentioned(self, text: str) -> set[str]:
-        """Retrieve known entities by bounded n-grams, never by full KB scan."""
-        tokens = normalize(text).split()
-        if not tokens or len(tokens) > 48:
-            return set()
-        candidates = set()
-        for width in range(1, min(4, len(tokens)) + 1):
-            for i in range(len(tokens) - width + 1):
-                candidates.add(' '.join(tokens[i:i+width]))
-        if hasattr(self.kb, 'known_entities'):
-            return set(self.kb.known_entities(candidates))
-        # Compatibility fallback for custom KB implementations.
-        return {x for x in candidates if self.kb.predicates_for_entities({x})}
-
-    @staticmethod
-    def _grounding_signature(text: str, frame: dict) -> tuple[str, str] | None:
-        """Return a delexicalized surface+semantic key for grounded induction.
-
-        Concrete argument values are replaced by markers tied to their semantic
-        argument position.  This lets independent entity pairs support the same
-        construction while preserving role/order information.
+        The central library contains no domain semantics.  Receiving learners
+        still require their own target observations to match the projection before
+        it can lower search/support.  This is therefore a prior over
+        representation topology, not a transferred answer.
         """
-        norm = normalize(text)
-        args = list(frame.get('args', []))
-        spans = []
-        used: set[int] = set()
-        for pos, value in enumerate(args):
-            if isinstance(value, str) and value.startswith('?'):
-                continue
-            needle = normalize(str(value))
-            hits = [m for m in re.finditer(r'(?<!\w)' + re.escape(needle) + r'(?!\w)', norm)
-                    if not used.intersection(range(m.start(), m.end()))]
-            if len(hits) != 1:
-                return None
-            m = hits[0]
-            used.update(range(m.start(), m.end()))
-            spans.append((m.start(), m.end(), f'<a{pos}>'))
-        spans.sort()
-        parts=[]; cursor=0
-        for a,b,marker in spans:
-            parts.extend((norm[cursor:a], marker)); cursor=b
-        parts.append(norm[cursor:])
-        surface=''.join(parts)
-        semantic={'act':frame.get('act'),'pred':frame.get('pred'),'arity':len(args),
-                  'unknown':[i for i,v in enumerate(args) if isinstance(v,str) and v.startswith('?')]}
-        return surface, json.dumps(semantic,sort_keys=True,ensure_ascii=False,separators=(',',':'))
+        meta=self.meta_representations.register_projection(
+            input_arity, mapping, family=family, source=source, support=support)
+        roles=self.meta_representations.register_role_set(
+            input_arity, mapping, family=family, source=source, support=support)
+        if meta.get('status')!='meta_representation_registered':
+            return {'meta':meta,'role_set':roles,'propagated':{}}
+        propagated={}
+        if family != 'procedure':
+            propagated['procedure']=self.procedures.register_external_projection(
+                input_arity,mapping,source=f'meta:{family}:{source}',support=support)
+            propagated['procedure_role_set']=self.procedures.register_external_role_set(
+                input_arity,mapping,source=f'meta:{family}:{source}',support=support)
+            propagated['procedure_role_cardinality']=self.procedures.register_external_role_cardinality(
+                len(set(int(x) for x in mapping)),source=f'meta:{family}:{source}',support=support)
+        if family != 'symbolic':
+            propagated['symbolic']=self.symbolic.register_external_projection(
+                input_arity,mapping,source=f'meta:{family}:{source}',support=support)
+            propagated['symbolic_role_set']=self.symbolic.register_external_role_set(
+                input_arity,mapping,source=f'meta:{family}:{source}',support=support)
+            propagated['symbolic_role_cardinality']=self.symbolic.register_external_role_cardinality(
+                len(set(int(x) for x in mapping)),source=f'meta:{family}:{source}',support=support)
+        return {'meta':meta,'role_set':roles,'propagated':propagated}
 
-    def _record_grounding_candidates(self, text: str, choices: list[dict]) -> dict | None:
-        """Update a contrastive version space from one grounded episode.
+    def _publish_meta_role_set(self, input_arity: int, roles, *, family: str,
+                               source: str, support: int = 1) -> dict:
+        meta=self.meta_representations.register_role_set(
+            input_arity,roles,family=family,source=source,support=support)
+        if meta.get('status')!='meta_representation_registered':
+            return {'meta':meta,'propagated':{}}
+        propagated={}
+        if family != 'procedure':
+            propagated['procedure']=self.procedures.register_external_role_set(
+                input_arity,roles,source=f'meta:{family}:{source}',support=support)
+            propagated['procedure_cardinality']=self.procedures.register_external_role_cardinality(
+                len(set(int(x) for x in roles)),source=f'meta:{family}:{source}',support=support)
+        if family != 'symbolic':
+            propagated['symbolic']=self.symbolic.register_external_role_set(
+                input_arity,roles,source=f'meta:{family}:{source}',support=support)
+            propagated['symbolic_cardinality']=self.symbolic.register_external_role_cardinality(
+                len(set(int(x) for x in roles)),source=f'meta:{family}:{source}',support=support)
+        return {'meta':meta,'propagated':propagated}
 
-        Each episode may support several semantic hypotheses.  Hypotheses are
-        generalized by replacing concrete entities with role markers, then the
-        candidate set is intersected across independent episodes with the same
-        delexicalized surface.  Promotion occurs only when one hypothesis remains
-        and the independent-support threshold has been reached.
+    def _publish_meta_role_topology(self, input_arity: int, edges, *, family: str,
+                                    source: str, support: int = 1) -> dict:
+        meta=self.meta_representations.register_role_topology(
+            input_arity,edges,family=family,source=source,support=support)
+        if meta.get('status')!='meta_representation_registered':
+            return {'meta':meta,'propagated':{}}
+        propagated={}
+        if family != 'symbolic':
+            propagated['symbolic']=self.symbolic.register_external_role_topology(
+                input_arity,edges,source=f'meta:{family}:{source}',support=support)
+        return {'meta':meta,'propagated':propagated}
+
+    def _sync_meta_controller(self) -> None:
+        """Share one auditable meta-controller across independent learners.
+
+        The learners never own the controller state; they only report bounded
+        structural decisions to the bot-level instance.  This makes persistence
+        single-source and permits cross-mechanism transfer without copying task
+        semantics between learners.
         """
-        grouped: dict[str, dict[str, dict]] = {}
-        all_evidence=set()
-        for chosen in choices:
-            sig=self._grounding_signature(text, chosen['frame'])
-            if sig is None:
-                continue
-            surface,semantic_json=sig
-            generic_surface=re.sub(r'<a\d+>', '<slot>', surface)
-            semantic=json.loads(semantic_json)
-            cluster=json.dumps({'surface':generic_surface,'act':semantic.get('act')},
-                               sort_keys=True,ensure_ascii=False,separators=(',',':'))
-            hyp_key=json.dumps({'surface':surface,'semantic':semantic},
-                               sort_keys=True,ensure_ascii=False,separators=(',',':'))
-            grouped.setdefault(cluster,{})[hyp_key]=chosen
-            all_evidence.update(chosen.get('evidence',()))
-        if not grouped:
-            return None
-        episode_id=json.dumps({'text':normalize(text),'evidence':sorted(all_evidence)},
-                              sort_keys=True,ensure_ascii=False,separators=(',',':'))
-        promoted_any=False; pending=[]
-        for cluster,current in grouped.items():
-            state=self.grounding_hypotheses.get(cluster)
-            if not isinstance(state,dict) or 'possible' not in state:
-                state={'possible':sorted(current),'observations':[],'promoted':False,'conflict':False}
-                self.grounding_hypotheses[cluster]=state
-            if any(o.get('episode_id')==episode_id for o in state.get('observations',[])):
-                pending.append(state)
-                continue
-            previous=set(state.get('possible',[]))
-            now=set(current)
-            possible=now if not state.get('observations') else previous & now
-            observation={'episode_id':episode_id,'text':text,
-                         'candidates':{k:{'frame':v['frame'],'evidence':list(v['evidence'])}
-                                       for k,v in current.items()}}
-            state.setdefault('observations',[]).append(observation)
-            state['possible']=sorted(possible)
-            if not possible:
-                state['conflict']=True
-                pending.append(state)
-                continue
-            if len(possible)==1 and len(state['observations']) >= self.grounding_min_support and not state.get('promoted'):
-                winner=next(iter(possible)); changed=False
-                supports=[]
-                for obs in state['observations']:
-                    detail=obs['candidates'].get(winner)
-                    if detail is None:
-                        continue
-                    supports.append(detail)
-                    try:
-                        changed=self.language.teach(obs['text'],detail['frame'],'grounded_induction',detail['evidence']) or changed
-                    except ValueError:
-                        state['conflict']=True
-                        return None
-                if len(supports) >= self.grounding_min_support:
-                    state['promoted']=True; promoted_any=True
-                    self.training_reports.append({'type':'language_grounded_promoted','text':text,
-                                                  'hypothesis':winner,'support':len(supports),
-                                                  'possible_before_promotion':1})
-            else:
-                pending.append(state)
-        if promoted_any:
-            parsed=self.language.parse(text)
-            if parsed['status']=='parsed':
-                parsed['grounded_induction']={'learned':True,'pending':False,
-                    'required':self.grounding_min_support,'candidate_count':len(choices),
-                    'version_space':True}
-                return parsed
-        active=[s for s in pending if not s.get('conflict')]
-        if active:
-            best=min(active,key=lambda st:(len(st.get('possible',[])) or 10**9,-len(st.get('observations',[]))))
-            poss=len(best.get('possible',[])); support=len(best.get('observations',[]))
-            self.training_reports.append({'type':'language_grounded_pending','text':text,
-                                          'support':support,'required':self.grounding_min_support,
-                                          'possible':poss,'version_space':True})
-            return {'status':'grounding_pending','frame':None,'alternatives':[],
-                    'grounded_induction':{'learned':False,'pending':True,'support':support,
-                                          'required':self.grounding_min_support,'possible':poss,
-                                          'candidate_count':len(choices),'version_space':True}}
-        return None
+        self.procedures.meta_controller = self.meta_controller
+        self.symbolic.meta_controller = self.meta_controller
 
-    def _try_grounded_language(self, text: str) -> dict | None:
-        """Induce a construction from independently repeated grounded evidence.
+    def _sync_meta_representations(self) -> None:
+        """Rebuild consumer indexes from the auditable central representation memory.
 
-        Candidate meanings come only from already-known facts whose concrete
-        entities occur in the utterance.  A unique candidate becomes an untrusted
-        hypothesis first; it enters the active grammar only after independent
-        supports reach ``grounding_min_support``.  Both positive and explicitly
-        negative facts are considered.
+        Role-cardinality rows are weaker priors: they state only how many
+        roles repeatedly mattered across earlier tasks.  They are useful to the
+        procedure learner across unseen arities, but they never identify which
+        roles; the target domain must establish that by interventions.
         """
-        entities = self._entities_mentioned(text)
-        if not entities or len(entities) > 8:
-            return None
-        pred_scores = self.kb.predicates_for_entities(entities)
-        if not pred_scores:
-            return None
-        candidates: dict[str, dict] = {}
-        checks = 0; max_checks = 768
-        question = self._question_like(text)
-        ordered_entities = sorted(entities, key=lambda x: (-len(x), x))
-        for base_pred, _ in sorted(pred_scores.items(), key=lambda kv: (-kv[1], kv[0])):
-            arity = int(getattr(self.kb, 'arity', {}).get(base_pred, 0) or 0)
-            if not 1 <= arity <= 4:
-                continue
-            if not question and pred_scores.get(base_pred, 0) < arity:
-                continue
-            for pred in (base_pred, '!' + base_pred):
-                if question:
-                    bound_count = arity - 1
-                    if bound_count > len(ordered_entities):
-                        continue
-                    bound_rows = [()] if bound_count == 0 else permutations(ordered_entities, bound_count)
-                    for bound in bound_rows:
-                        for unknown_pos in range(arity):
-                            checks += 1
-                            if checks > max_checks:
-                                return None
-                            vals = iter(bound); args=[]
-                            for pos in range(arity):
-                                args.append('?answer' if pos == unknown_pos else next(vals))
-                            rows=[]
-                            for fact in self.kb.matches(Atom(pred, tuple(args))):
-                                rows.append(fact)
-                                if len(rows) >= 4:
-                                    break
-                            if not rows:
-                                continue
-                            frame={'act':'query','pred':pred,'args':args}
-                            key=json.dumps(frame,sort_keys=True,ensure_ascii=False)
-                            candidates[key]={'frame':frame,'evidence':[r['id'] for r in rows]}
+        for row in self.meta_representations.rows():
+            kind=row.get('kind')
+            for source,info in sorted((row.get('sources') or {}).items()):
+                family=str(info.get('family','unknown')); support=int(info.get('support',1))
+                if kind=='role_cardinality':
+                    if family != 'procedure':
+                        self.procedures.register_external_role_cardinality(
+                            int(row.get('cardinality',0)),source=f'meta:{family}:{source}',support=support)
+                    if family != 'symbolic':
+                        self.symbolic.register_external_role_cardinality(
+                            int(row.get('cardinality',0)),source=f'meta:{family}:{source}',support=support)
+                    continue
+                if kind=='role_topology':
+                    if family != 'symbolic':
+                        self.symbolic.register_external_role_topology(
+                            int(row.get('input_arity',0)),row.get('edges',()),
+                            source=f'meta:{family}:{source}',support=support)
+                    continue
+                if 'input_arity' not in row:
+                    continue
+                n=int(row['input_arity'])
+                if kind=='role_set':
+                    values=tuple(int(x) for x in row.get('roles',()))
+                    if family != 'procedure':
+                        self.procedures.register_external_role_set(n,values,source=f'meta:{family}:{source}',support=support)
+                        self.procedures.register_external_role_cardinality(
+                            len(set(values)),source=f'meta:{family}:{source}',support=support)
+                    if family != 'symbolic':
+                        self.symbolic.register_external_role_set(n,values,source=f'meta:{family}:{source}',support=support)
+                        self.symbolic.register_external_role_cardinality(
+                            len(set(values)),source=f'meta:{family}:{source}',support=support)
                 else:
-                    if arity > len(ordered_entities):
-                        continue
-                    for args in permutations(ordered_entities, arity):
-                        checks += 1
-                        if checks > max_checks:
-                            return None
-                        fact = next(self.kb.matches(Atom(pred, tuple(args))), None)
-                        if fact is None:
-                            continue
-                        frame={'act':'assert','pred':pred,'args':list(args)}
-                        key=json.dumps(frame,sort_keys=True,ensure_ascii=False)
-                        candidates[key]={'frame':frame,'evidence':[fact['id']]}
-        if not candidates:
-            return None
-        return self._record_grounding_candidates(text, list(candidates.values()))
+                    mapping=tuple(int(x) for x in row.get('mapping',()))
+                    if family != 'procedure':
+                        self.procedures.register_external_projection(n,mapping,source=f'meta:{family}:{source}',support=support)
+                        self.procedures.register_external_role_cardinality(
+                            len(set(mapping)),source=f'meta:{family}:{source}',support=support)
+                    if family != 'symbolic':
+                        self.symbolic.register_external_projection(n,mapping,source=f'meta:{family}:{source}',support=support)
+                        self.symbolic.register_external_role_cardinality(
+                            len(set(mapping)),source=f'meta:{family}:{source}',support=support)
+
+    def _remove_meta_source_from_consumers(self, family: str, source: str) -> dict:
+        """Withdraw a disproved structural source from the central memory and consumers."""
+        report=self.meta_representations.withdraw_source(source)
+        propagated_source=normalize(f'meta:{family}:{source}')
+        for learner in (self.procedures,self.symbolic):
+            for attr in ('external_projection_schemas','external_permutation_schemas','external_role_sets','external_role_cardinalities','external_role_topologies'):
+                table=getattr(learner,attr,{})
+                for key in list(table):
+                    row=table[key]; sources=row.get('sources',{})
+                    if propagated_source in sources:
+                        sources.pop(propagated_source,None)
+                        row['support']=sum(int(v) for v in sources.values())
+                        if not sources:
+                            table.pop(key,None)
+        return report
 
 
     def observe_concept_statement(self, text: str) -> dict:
@@ -283,15 +389,112 @@ class Bot:
         """Resolve a natural yes/no relation utterance against an invented concept."""
         return self.concepts.resolve(text)
 
+    def observe_schema_statement(self, text: str) -> dict:
+        """Learn an open-role concept and export only its domain-free role flow."""
+        report = self.schemas.observe(text)
+        if report.get('status') in ('schema_learned','schema_confirmed'):
+            surface=report.get('surface')
+            session=self.schemas.sessions.get(surface,{}) if surface else {}
+            projection=session.get('projection')
+            mention_count=int(session.get('mention_count',0) or 0)
+            if projection is not None and mention_count >= 2:
+                support=len(session.get('observations',()))
+                published=self._publish_meta_role_set(
+                    mention_count,tuple(projection),family='schema',
+                    source='schema_surface:'+str(surface),support=support)
+                if published.get('meta',{}).get('status')=='meta_representation_registered':
+                    report=dict(report); report['meta_representation']=published
+                solution=session.get('solution') if isinstance(session.get('solution'),dict) else {}
+                topology=solution.get('role_topology') or ()
+                arity=int(session.get('arity') or 0)
+                if arity>=2 and topology:
+                    topo=self._publish_meta_role_topology(
+                        arity,topology,family='schema',
+                        source='schema_surface:'+str(surface),support=support)
+                    if topo.get('meta',{}).get('status')=='meta_representation_registered':
+                        report=dict(report); report['meta_role_topology']=topo
+        else:
+            surface=report.get('surface')
+            source='schema_surface:'+str(surface) if surface else None
+            if source and self.meta_representations.has_source(source):
+                report=dict(report); report['meta_representation_withdrawal']=self._remove_meta_source_from_consumers('schema',source)
+        self.training_reports.append({'type': 'open_arity_concept_grounding', 'text': text, **report})
+        return report
+
+    def query_schema(self, text: str) -> dict:
+        """Resolve an utterance through an acquired open-arity concept schema."""
+        return self.schemas.resolve(text)
+
+    def acquire_schema_assertion(self, text: str, source: str = 'conversación',
+                                 require_novel: bool = True) -> dict:
+        """Acquire new referents/facts through a previously learned surface."""
+        report=self.schemas.acquire_assertion(text,source=source,require_novel=require_novel)
+        if report.get('status')=='schema_fact_stored':
+            self._remember_discourse_fact(report.get('id')); self.last_result=None
+            self.training_reports.append({'type':'schema_surface_assertion','text':text,**report})
+        return report
+
     def observe_transition(self, text: str, before, after) -> dict:
         """Learn an action meaning from a natural utterance and an observed state change."""
         report = self.procedures.observe(text, before, after)
+        # Cross-representation abstraction: a learned pure tuple permutation is
+        # registered as structural knowledge for the symbolic learner.  No action
+        # name or domain predicate crosses the boundary.
+        cross=None
+        source='procedure:'+str(report.get('pattern'))
+        if report.get('status')=='procedure_learned':
+            session=self.procedures.sessions.get(report.get('pattern'),{})
+            n=int(session.get('input_arity',0)); m=int(session.get('output_arity',0))
+            signature=self.procedures.observed_projection_signature(session)
+            if signature is not None:
+                n,mapping=signature
+                if list(mapping)!=list(range(n)):
+                    published=self._publish_meta_projection(
+                        n,tuple(mapping),family='procedure',
+                        source=source, support=len(session.get('supports',())))
+                    cross=published.get('propagated',{}).get('symbolic')
+                    if cross is not None:
+                        report=dict(report); report['meta_representation']=published
+            # A non-projection program can still export a weaker, unordered
+            # dependency certificate when every retained hypothesis agrees on
+            # which input roles matter.  No arithmetic operator or language
+            # surface is transferred.
+            if int(session.get('parameter_count',0))==0 and n>=2:
+                deps=[]; certified=True
+                for skill in session.get('output_skills',()):
+                    row=self.programs.dependency_roles(skill)
+                    if row is None:
+                        certified=False; break
+                    deps.extend(int(x) for x in row)
+                roles=tuple(sorted(set(deps))) if certified else ()
+                if roles and len(roles)<n:
+                    dep_published=self._publish_meta_role_set(
+                        n,roles,family='procedure',source=source,
+                        support=len(session.get('supports',())))
+                    if dep_published.get('meta',{}).get('status')=='meta_representation_registered':
+                        report=dict(report); report['meta_dependency_representation']=dep_published
+                        if cross is None:
+                            report['cross_modal_relevance']=dep_published.get('propagated',{}).get('symbolic')
+        if report.get('status')!='procedure_learned' and self.meta_representations.has_source(source):
+            report=dict(report); report['meta_representation_withdrawal']=self._remove_meta_source_from_consumers('procedure',source)
+        if cross is not None:
+            report=dict(report);report['cross_modal_learning']=cross
         self.training_reports.append({'type':'procedure_grounding', **report})
+        return report
+
+    def correct_transition(self, text: str, before, after) -> dict:
+        """Correct one grounded procedure without disturbing the others."""
+        report = self.procedures.correct(text, before, after)
+        self.training_reports.append({'type':'procedure_correction', **report})
         return report
 
     def execute_transition(self, text: str, state) -> dict:
         """Apply a grounded action cue to a new observable state."""
         return self.procedures.execute(text, state)
+
+    def suggest_transition_probe(self, text: str, output_index: int = 0, role_costs=None) -> dict:
+        """Ask which unlabeled intervention offers the most information per declared cost."""
+        return self.procedures.suggest_probe(text,output_index,role_costs=role_costs)
 
     def plan_transition(self, state, goal, max_steps: int = 6, max_nodes: int = 10000) -> dict:
         """Plan over learned grounded actions toward an explicit target state."""
@@ -310,11 +513,59 @@ class Bot:
     def observe_symbolic_transition(self, text: str, before, after) -> dict:
         """Learn a factual action model from natural language + observed state change."""
         report = self.symbolic.observe(text, before, after)
+        self.last_symbolic_state = sorted(tuple(f) for f in after)
+        self.symbolic_entities.update(str(arg) for state in (before, after) for fact in state for arg in tuple(fact)[1:])
+        cross=None
+        if report.get('status')=='operator_learned':
+            add=tuple(tuple(x) for x in report.get('add',()))
+            delete=tuple(tuple(x) for x in report.get('delete',()))
+            perm=self.symbolic._effect_permutation_signature(add,delete)
+            if perm is not None:
+                n=len(tuple(perm)); mapping=tuple(perm)
+                published=self._publish_meta_projection(
+                    n,mapping,family='symbolic',
+                    source='symbolic:'+str(report.get('pattern')),support=int(report.get('support',1)))
+                cross=published.get('propagated',{}).get('procedure')
+                if cross is not None:
+                    report=dict(report); report['meta_representation']=published
+            else:
+                sig=self.symbolic._effect_projection_signature(str(report.get('pattern')),add,delete)
+                if sig is not None:
+                    n,mapping=sig
+                    published=self._publish_meta_projection(
+                        n,mapping,family='symbolic',
+                        source='symbolic:'+str(report.get('pattern')),support=int(report.get('support',1)))
+                    cross=published.get('propagated',{}).get('procedure')
+                    if cross is not None:
+                        report=dict(report); report['meta_representation']=published
+        if report.get('status')=='operator_learned':
+            pattern=str(report.get('pattern') or '')
+            n=self.symbolic._pattern_role_count(pattern)
+            edges=[]
+            for fact in report.get('preconditions',()):
+                edge=self.symbolic._fact_role_edge(tuple(fact))
+                if edge is not None:
+                    edges.append(edge)
+            if n>=2 and edges:
+                topo=self._publish_meta_role_topology(
+                    n,edges,family='symbolic',source='symbolic:'+pattern,
+                    support=int(report.get('support',1)))
+                if topo.get('meta',{}).get('status')=='meta_representation_registered':
+                    report=dict(report); report['meta_role_topology']=topo
+        source='symbolic:'+str(report.get('pattern'))
+        if report.get('status')!='operator_learned' and self.meta_representations.has_source(source):
+            report=dict(report); report['meta_representation_withdrawal']=self._remove_meta_source_from_consumers('symbolic',source)
+        if cross is not None:
+            report=dict(report);report['cross_modal_learning']=cross
         self.training_reports.append({'type':'symbolic_transition', 'text':text, 'report':report})
         return report
 
     def execute_symbolic_transition(self, text: str, state) -> dict:
-        return self.symbolic.execute(text, state)
+        report = self.symbolic.execute(text, state)
+        if report.get('status') == 'executed_symbolic_action':
+            self.last_symbolic_state = sorted(tuple(f) for f in report['result'])
+            self.symbolic_entities.update(arg for fact in self.last_symbolic_state for arg in fact[1:])
+        return report
 
     def observe_symbolic_goal(self, text: str, goal) -> dict:
         report = self.symbolic.observe_goal(text, goal)
@@ -396,137 +647,33 @@ class Bot:
                 stack.append((child, indent + 1))
         return {'text': '\n'.join(lines) or 'No hay una prueba positiva ni negativa.', 'status': 'trace'}
 
-    def respond(self, text: str) -> dict:
-        parsed = self.language.parse(text)
-        # A concept surface that has already been learned is more specific than
-        # a still-pending generic grounding hypothesis.  Resolve it before the
-        # generic grounding route can absorb the utterance.
-        if parsed['status'] == 'unrecognized' and self._question_like(text):
-            concept = self.query_concept(text)
-            if concept.get('status') in ('entailed','contradicted','contested','unknown'):
-                messages = {
-                    'entailed': 'Sí: puedo deducir esa relación del conocimiento aprendido.',
-                    'contradicted': 'Tengo evidencia explícita para la relación contraria.',
-                    'contested': 'La evidencia disponible es contradictoria.',
-                    'unknown': 'No puedo deducir esa relación con el conocimiento actual.',
-                }
-                return {'text': messages[concept['status']], **concept}
-        if self.grounded_language and parsed['status'] == 'parsed':
-            # A broad slot can sometimes absorb words that should have been fixed
-            # structure.  When the utterance mentions already-known entities that
-            # disappear from the parsed concrete arguments, let grounded evidence
-            # challenge the existing construction instead of silently trusting it.
-            frame=parsed.get('frame') or {}
-            if frame.get('act') in ('assert','query'):
-                mentioned=self._entities_mentioned(text)
-                concrete={normalize(str(v)) for v in frame.get('args',[])
-                          if not (isinstance(v,str) and v.startswith('?'))}
-                if mentioned and not mentioned.issubset(concrete):
-                    grounded=self._try_grounded_language(text)
-                    if grounded is not None:
-                        parsed=grounded
-        if parsed['status'] == 'unrecognized' and self.grounded_language:
-            grounded = self._try_grounded_language(text)
-            if grounded is not None:
-                parsed = grounded
-        # Generic grounding may remain ambiguous while the concept learner has
-        # accumulated enough contrastive evidence for a specific surface.  Let
-        # the specific concept hypothesis promote/withdraw without discarding the
-        # older grounding version-space.  Pending concept evidence alone does not
-        # override the historical grounding_pending response.
-        if parsed['status'] == 'grounding_pending' and not self._question_like(text):
-            concept = self.observe_concept_statement(text)
-            if concept.get('status') in ('concept_learned','concept_unresolved','concept_contradictory',
-                                         'concept_alias_learned','concept_alias_confirmed','concept_alias_withdrawn'):
-                messages = {
-                    'concept_learned': 'Aprendí una hipótesis relacional nueva a partir de los ejemplos y del contexto factual.',
-                    'concept_unresolved': 'Registré el concepto, pero todavía no encontré una definición relacional que explique los ejemplos.',
-                    'concept_contradictory': 'Los ejemplos de esa relación son contradictorios.',
-                    'concept_alias_learned': 'La nueva formulación es compatible de forma única con una relación ya aprendida y quedó vinculada como hipótesis reutilizable.',
-                    'concept_alias_confirmed': 'La nueva evidencia sigue siendo compatible con la relación aprendida.',
-                    'concept_alias_withdrawn': 'La nueva evidencia contradijo la equivalencia lingüística anterior; retiré ese alias sin borrar la relación original.',
-                }
-                return {'text': messages[concept['status']], **concept}
-        if parsed['status'] != 'parsed' and parsed['status'] != 'grounding_pending':
-            if self._question_like(text):
-                concept = self.query_concept(text)
-                if concept.get('status') in ('entailed','contradicted','contested','unknown'):
-                    messages = {
-                        'entailed': 'Sí: puedo deducir esa relación del conocimiento aprendido.',
-                        'contradicted': 'Tengo evidencia explícita para la relación contraria.',
-                        'contested': 'La evidencia disponible es contradictoria.',
-                        'unknown': 'No puedo deducir esa relación con el conocimiento actual.',
-                    }
-                    return {'text': messages[concept['status']], **concept}
-            else:
-                concept = self.observe_concept_statement(text)
-                if concept.get('status') in ('concept_pending','concept_learned','concept_unresolved','concept_contradictory',
-                                                 'concept_alias_learned','concept_alias_confirmed','concept_alias_withdrawn'):
-                    messages = {
-                        'concept_pending': 'Registré el ejemplo como una posible relación nueva, pero aún falta evidencia contrastiva.',
-                        'concept_learned': 'Aprendí una hipótesis relacional nueva a partir de los ejemplos y del contexto factual.',
-                        'concept_unresolved': 'Registré el concepto, pero todavía no encontré una definición relacional que explique los ejemplos.',
-                        'concept_contradictory': 'Los ejemplos de esa relación son contradictorios.',
-                        'concept_alias_learned': 'La nueva formulación es compatible de forma única con una relación ya aprendida y quedó vinculada como hipótesis reutilizable.',
-                        'concept_alias_confirmed': 'La nueva evidencia sigue siendo compatible con la relación aprendida.',
-                        'concept_alias_withdrawn': 'La nueva evidencia contradijo la equivalencia lingüística anterior; retiré ese alias sin borrar la relación original.',
-                    }
-                    return {'text': messages[concept['status']], **concept}
-        if parsed['status'] != 'parsed':
-            if parsed['status'] == 'grounding_pending':
-                g=parsed.get('grounded_induction',{})
-                return {'text': f'Tengo una hipótesis de significado respaldada por {g.get("support",0)} experiencia(s), pero todavía no la usaré como conocimiento lingüístico hasta reunir {g.get("required",self.grounding_min_support)} apoyos independientes.',
-                        'status':'grounding_pending','grounded_induction':g}
-            message = ('Esa frase admite varias interpretaciones aprendidas. Necesito una formulación más precisa.'
-                       if parsed['status'] == 'ambiguous' else
-                       'No sé interpretar esa formulación todavía. Puedes enseñarme una construcción con texto y significado, o usar /consulta.')
-            return {'text': message, 'status': parsed['status']}
-        frame = parsed['frame']
-        action = frame['act']
-        if action == 'query':
-            return self.answer_atom(Atom(frame['pred'], tuple(frame['args'])))
-        if action == 'assert':
-            self.last_fact = self.kb.add(Atom(frame['pred'], tuple(frame['args'])), 'conversación')
-            # Avoid a stale conversational explanation after new information.
-            self.last_result = None
-            return {'text': 'Dato registrado con su procedencia.', 'status': 'stored', 'id': self.last_fact}
-        if action == 'correct_last':
-            if not self.last_fact:
-                return {'text': 'No hay un dato anterior inequívoco que pueda corregir.', 'status': 'unknown'}
-            old_fact = self.kb.get_fact(self.last_fact) if hasattr(self.kb, 'get_fact') else None
-            if old_fact is None:
-                return {'text': 'El dato anterior ya no existe.', 'status': 'unknown'}
-            old = old_fact['atom']
-            args, slot = list(old.args), frame['slot']
-            if type(slot) is not int or not 0 <= slot < len(args):
-                return {'text': 'La corrección no corresponde al dato anterior.', 'status': 'unrecognized'}
-            args[slot] = str(frame['value'])
-            self.last_fact = self.kb.replace(self.last_fact, Atom(old.pred, tuple(args)))
-            self.last_result = None
-            return {'text': 'Corrección aplicada: ' + self.language.describe(old.pred, tuple(args)) + '.', 'status': 'corrected'}
-        if action == 'calculate':
-            answer = self.programs.predict(frame['skill'], tuple(frame['values']))
-            if answer['status'] == 'hypothesis':
-                message = f'Resultado según el procedimiento aprendido: {answer["value"]}. Regla: {answer["programs"][0]}.'
-            elif answer['status'] == 'ambiguous':
-                message = f'Los procedimientos compatibles discrepan: {answer["alternatives"]}. Necesito otro ejemplo para distinguirlos.'
-            elif answer['status'] == 'contradictory_examples':
-                message = 'Los ejemplos enseñan resultados contradictorios para la misma entrada.'
-            else:
-                message = 'No tengo un procedimiento válido para resolver eso dentro del presupuesto actual.'
-            return {'text': message, **answer}
-        if action == 'explain':
-            return self.explain()
-        return {'text': 'El acto comunicativo anotado no está implementado.', 'status': 'unrecognized'}
-
     def as_dict(self) -> dict:
-        return {'version': 1, 'kb': self.kb.as_dict(), 'language': self.language.as_dict(),
-                'grounded_language': self.grounded_language,
-                'grounding_min_support': self.grounding_min_support,
-                'grounding_hypotheses': self.grounding_hypotheses,
-                'programs': self.programs.as_dict(), 'procedures': self.procedures.as_dict(),
-                'symbolic': self.symbolic.as_dict(), 'concepts': self.concepts.as_dict(), 'last_fact': self.last_fact,
-                'training_reports': self.training_reports}
+        data = {
+            'version': 1,
+            'kb': self.kb.as_dict(),
+            'language': self.language.as_dict(),
+            'grounded_language': self.grounded_language,
+            'allow_extensional_grounding': self.allow_extensional_grounding,
+            'grounding_min_support': self.grounding_min_support,
+            'raw_relation_min_support': self.raw_relation_min_support,
+            'raw_relation_max_arity': self.raw_relation_max_arity,
+            'programs': self.programs.as_dict(),
+            'procedures': self.procedures.as_dict(),
+            'symbolic': self.symbolic.as_dict(),
+            'concepts': self.concepts.as_dict(),
+            'schemas': self.schemas.as_dict(),
+            'meta_representations': self.meta_representations.as_dict(),
+            'meta_controller': self.meta_controller.as_dict(),
+            'last_fact': self.last_fact,
+            'discourse_facts': self.discourse_facts,
+            'discourse_referents': self.discourse_referents,
+            'discourse_max_referents': self.discourse_max_referents,
+            'last_symbolic_state': ([list(f) for f in self.last_symbolic_state]
+                                    if self.last_symbolic_state is not None else None),
+            'symbolic_entities': sorted(self.symbolic_entities),
+        }
+        data.update(plain_state(self))
+        return data
 
     def save(self, path: str | Path) -> None:
         path = Path(path)
@@ -551,14 +698,31 @@ class Bot:
         if data.get('version') != 1:
             raise ValueError('Formato de bot no compatible.')
         bot = cls(grounded_language=data.get('grounded_language', True),
-                  grounding_min_support=data.get('grounding_min_support', 2))
+                  grounding_min_support=data.get('grounding_min_support', 2),
+                  raw_relation_min_support=data.get('raw_relation_min_support', 3),
+                  allow_extensional_grounding=data.get('allow_extensional_grounding', False),
+                  raw_relation_max_arity=data.get('raw_relation_max_arity', 8))
         bot.kb = KnowledgeBase.from_dict(data['kb'])
         bot.language = Language.from_dict(data['language'])
         bot.programs = ProgramLearner.from_dict(data['programs'])
         bot.procedures = ProcedureGrounder.from_dict(data.get('procedures', {}), bot.programs)
         bot.symbolic = SymbolicWorldLearner.from_dict(data.get('symbolic', {}))
         bot.concepts = ConceptGrounder.from_dict(data.get('concepts', {}), bot.kb)
+        bot.schemas = OpenArityConceptGrounder.from_dict(data.get('schemas', {}), bot.kb)
+        bot.meta_representations = MetaRepresentationLibrary.from_dict(data.get('meta_representations', {}))
+        bot.meta_controller = MetaController.from_dict(data.get('meta_controller', {}))
+        bot._sync_meta_controller()
+        bot._sync_meta_representations()
         bot.last_fact = data.get('last_fact')
-        bot.grounding_hypotheses = data.get('grounding_hypotheses', {})
-        bot.training_reports = data.get('training_reports', [])
+        bot.discourse_facts = [fid for fid in data.get('discourse_facts', [])
+                               if isinstance(fid,str) and bot.kb.get_fact(fid) is not None][-32:]
+        if bot.last_fact and bot.last_fact not in bot.discourse_facts and bot.kb.get_fact(bot.last_fact) is not None:
+            bot.discourse_facts.append(bot.last_fact)
+        restore_plain_state(bot, data)
+        bot._restore_raw_consumption()
+        bot.discourse_max_referents = max(4, int(data.get('discourse_max_referents', 32)))
+        bot.discourse_referents = list(data.get('discourse_referents', []))[-bot.discourse_max_referents:]
+        state = data.get('last_symbolic_state')
+        bot.last_symbolic_state = [tuple(f) for f in state] if state is not None else None
+        bot.symbolic_entities = set(data.get('symbolic_entities', []))
         return bot

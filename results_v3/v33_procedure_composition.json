@@ -1,7 +1,7 @@
 {
   "version": "0.3.3",
   "experiment": "semantic_procedure_rewrites_and_sequence_composition",
-  "code_hash_before": "8e8dcd34ac77cb60ec68fc24777f3c7761016b1168c22b066b2dcaa5cde58ff8",
+  "code_hash_before": "615749e62e3dd25443e8eb37ccc69ed819194afe662e76337e1351ef21b9d7d4",
   "paraphrase_composition": {
     "training_episodes": 18,
     "learned_rewrites": [
@@ -46,7 +46,7 @@
       "full": 200,
       "exact_surface_control": 0
     },
-    "median_us": 33.55549961270299,
+    "median_us": 39.549951907247305,
     "sample": {
       "status": "executed",
       "pattern": "anade <n0> a la cantidad",
@@ -512,6 +512,10 @@
           "library_requested": null,
           "library_seeded": 0,
           "library_mode": "auto",
+          "allowed_vars": [
+            0,
+            1
+          ],
           "library_selected": [],
           "library_retrieval": {
             "mode": "concept_index",
@@ -532,7 +536,7 @@
           "goal_join_solved": true,
           "reason": null,
           "semantic_states": 6,
-          "ms": 8.795949000159453
+          "ms": 8.018678985536098
         }
       ]
     },
@@ -729,7 +733,7 @@
     "after_status": "unknown_procedure",
     "rewrite_survived": false
   },
-  "code_hash_after": "8e8dcd34ac77cb60ec68fc24777f3c7761016b1168c22b066b2dcaa5cde58ff8",
+  "code_hash_after": "615749e62e3dd25443e8eb37ccc69ed819194afe662e76337e1351ef21b9d7d4",
   "code_unchanged_during_evaluation": true,
-  "elapsed_s": 0.8308088730000236
+  "elapsed_s": 0.8090793300652876
 }

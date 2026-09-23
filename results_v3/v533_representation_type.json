@@ -1,0 +1,25 @@
+{
+  "version": "0.5.33",
+  "experiment": "representation_type_competition_event_vs_explicit_causal",
+  "code_hash": "615749e62e3dd25443e8eb37ccc69ed819194afe662e76337e1351ef21b9d7d4",
+  "code_frozen": true,
+  "treatment": {
+    "heldout_cases": 100,
+    "causal_dependency_selected": 100,
+    "event_selected": 0,
+    "prior_support": {
+      "causal_dependency": 4,
+      "event": 2
+    }
+  },
+  "event_only_ablation": {
+    "heldout_cases": 100,
+    "event_selected": 100
+  },
+  "equal_support_control": {
+    "heldout_cases": 100,
+    "safe_ambiguity": 100
+  },
+  "noncausal_connective_control": "covered by tests/test_v533.py: luego never creates a causal candidate",
+  "claim": "competition between two qualitatively different representation types using prior non-circular predictive utility; not AGI/ASI"
+}

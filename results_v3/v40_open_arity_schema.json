@@ -1,0 +1,84 @@
+{
+  "version": "0.4.0",
+  "experiment": "open_arity_schema_and_role_remapping",
+  "code_hash_before": "e855f17757905ad7f22cf0fdb84df61edfa307ab98fd1eb85a58ee125f952001",
+  "ternary": {
+    "status": "schema_learned",
+    "arity": 3,
+    "projection": [
+      0,
+      1,
+      2
+    ],
+    "selected": "posee(r0,r1) & ubicado(r1,r2)",
+    "projection_rejections": 6,
+    "candidates_evaluated": 112,
+    "predicate_selected": [
+      "posee",
+      "ubicado"
+    ],
+    "unrelated_predicates_in_world": 5000,
+    "heldout": {
+      "positive_cases": 100,
+      "positive_entailed": 100,
+      "negative_cases": 100,
+      "negative_rejected": 100,
+      "median_ms": 0.30879495898261666
+    }
+  },
+  "controls": {
+    "binary_v39_unrecognized_training_examples": 5,
+    "binary_v39_training_examples": 5,
+    "episodic_memory_positive_heldout_hits": 0,
+    "episodic_memory_positive_heldout_cases": 100,
+    "manual_arity_roles": {
+      "projection_supplied": [
+        0,
+        1,
+        2
+      ],
+      "candidates_evaluated": 112,
+      "solutions": [
+        "posee(r0,r1) & ubicado(r1,r2)"
+      ],
+      "ms": 5.651809042319655
+    }
+  },
+  "role_alias": {
+    "status": "schema_alias_learned",
+    "mapping": [
+      2,
+      1,
+      0
+    ],
+    "root_target": "schema_a14131fda94364e1_a3",
+    "heldout": {
+      "positive_cases": 100,
+      "positive_entailed": 100,
+      "negative_cases": 100,
+      "negative_rejected": 100,
+      "median_ms": 0.2282594214193523
+    }
+  },
+  "unary": {
+    "arity": 1,
+    "projection": [
+      1
+    ],
+    "selected": "activo(r0)",
+    "heldout_positive": 100,
+    "heldout_negative_rejected": 100
+  },
+  "binary_from_three_mentions": {
+    "arity": 2,
+    "projection": [
+      0,
+      2
+    ],
+    "selected": "mentor(r0,r1)",
+    "heldout_positive": 100,
+    "heldout_negative_rejected": 100
+  },
+  "code_hash_after": "e855f17757905ad7f22cf0fdb84df61edfa307ab98fd1eb85a58ee125f952001",
+  "code_unchanged_during_evaluation": true
+}

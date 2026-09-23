@@ -1,0 +1,54 @@
+{
+  "version": "0.5.6",
+  "mechanism": "repeated grounded natural-language conditional -> Horn rule",
+  "learned_rule": {
+    "body_pred": "primitive_7f4bd6a5eb2a3295_a3",
+    "head_pred": "primitive_4af0eee81342152c_a2",
+    "support": 3,
+    "mapping": [
+      1,
+      2
+    ],
+    "rule_id": "conditional_9948f14a8c67ad40",
+    "rule": "primitive_4af0eee81342152c_a2(?v1, ?v2) <- primitive_7f4bd6a5eb2a3295_a3(?v0, ?v1, ?v2)"
+  },
+  "educated_heldout": {
+    "correct": 100,
+    "unknown": 0,
+    "other": 0,
+    "facts": 106,
+    "expected_facts": 106,
+    "question_fact_delta": 0,
+    "query_ms_p50": 0.2909179893322289,
+    "query_ms_p95": 0.35651796497404575
+  },
+  "two_support_control": {
+    "correct": 0,
+    "unknown": 100,
+    "other": 0,
+    "facts": 106,
+    "expected_facts": 106,
+    "question_fact_delta": 0,
+    "query_ms_p50": 0.1526924315840006,
+    "query_ms_p95": 0.1861880300566554
+  },
+  "noise_control": {
+    "unresolved_conditionals": 60,
+    "rules": 0,
+    "facts": 0,
+    "raw_observations": 0
+  },
+  "late_conflict": {
+    "status": "conditional_rule_ambiguous",
+    "withdrawn": true,
+    "post_conflict_answer": "unknown"
+  },
+  "safety": {
+    "allow_extensional_grounding": false,
+    "conditional_examples_added_facts": false
+  },
+  "code_hash_before": "615749e62e3dd25443e8eb37ccc69ed819194afe662e76337e1351ef21b9d7d4",
+  "code_hash_after": "615749e62e3dd25443e8eb37ccc69ed819194afe662e76337e1351ef21b9d7d4",
+  "code_unchanged_during_experiment": true,
+  "claim_boundary": "Internal rule-learning/transfer evidence; not open-domain understanding or AGI."
+}

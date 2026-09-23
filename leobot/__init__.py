@@ -5,5 +5,7 @@ from .scalable import ScalableBot
 from .procedures import ProcedureGrounder
 from .symbolic import SymbolicWorldLearner
 from .concepts import ConceptGrounder
+from .schemas import OpenArityConceptGrounder
+from .metacontrol import MetaController
 
-__version__ = '0.3.9'
+__version__ = '0.10.1'

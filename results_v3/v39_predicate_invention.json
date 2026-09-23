@@ -1,7 +1,7 @@
 {
   "version": "0.3.9",
   "experiment": "bounded_predicate_invention_and_cross_target_reuse",
-  "code_hash_before": "ce8a25ebfbb6c7701afe65a62b0051d10942caed3c9c953e2d4f8e24cae1398d",
+  "code_hash_before": "e855f17757905ad7f22cf0fdb84df61edfa307ab98fd1eb85a58ee125f952001",
   "first_target_with_invention": {
     "status": "concept_learned",
     "selected": "invent_0f6d3c4dd79af55e ; invent_0f6d3c4dd79af55e",
@@ -10,11 +10,11 @@
     "invention_attempts": 2,
     "base_candidates": 48,
     "total_target_candidates": 178,
-    "total_invention_ms": 20.736377000503126,
+    "total_invention_ms": 21.527659031562507,
     "heldout": {
       "cases": 100,
       "entailed": 100,
-      "median_ms": 0.46937300021454575
+      "median_ms": 0.5300235352478921
     }
   },
   "first_target_tight_no_invention": {
@@ -24,30 +24,30 @@
     "heldout": {
       "cases": 100,
       "entailed": 0,
-      "median_ms": 0.013140000191924628
+      "median_ms": 0.014223973266780376
     }
   },
   "first_target_deep_no_invention": {
     "status": "concept_learned",
     "selected": "r ; s ; r ; s",
     "candidates": 150,
-    "ms": 14.872797999487375,
+    "ms": 15.97417809534818,
     "heldout": {
       "cases": 100,
       "entailed": 100,
-      "median_ms": 0.30066799990891013
+      "median_ms": 0.34191145095974207
     }
   },
   "second_target_reusing_invented_helper_no_new_invention": {
     "status": "concept_learned",
     "selected": "invent_0f6d3c4dd79af55e ; t",
     "candidates": 168,
-    "ms": 17.026686000463087,
+    "ms": 17.294728895649314,
     "helper_survived_restart": true,
     "heldout": {
       "cases": 100,
       "entailed": 100,
-      "median_ms": 0.37812499977007974
+      "median_ms": 0.41709194192662835
     }
   },
   "second_target_tight_without_helper": {
@@ -57,20 +57,20 @@
     "heldout": {
       "cases": 100,
       "entailed": 0,
-      "median_ms": 0.013426000350591494
+      "median_ms": 0.01464103115722537
     }
   },
   "second_target_deep_without_helper": {
     "status": "concept_learned",
     "selected": "r ; s ; t",
     "candidates": 184,
-    "ms": 17.22479399995791,
+    "ms": 17.4075000686571,
     "heldout": {
       "cases": 100,
       "entailed": 100,
-      "median_ms": 0.2716295002755942
+      "median_ms": 0.29012246523052454
     }
   },
-  "code_hash_after": "ce8a25ebfbb6c7701afe65a62b0051d10942caed3c9c953e2d4f8e24cae1398d",
+  "code_hash_after": "e855f17757905ad7f22cf0fdb84df61edfa307ab98fd1eb85a58ee125f952001",
   "code_unchanged_during_evaluation": true
 }

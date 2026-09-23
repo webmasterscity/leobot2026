@@ -1,0 +1,444 @@
+{
+  "version": "V5.9-architecture-freeze",
+  "motor_hash_before": "e855f17757905ad7f22cf0fdb84df61edfa307ab98fd1eb85a58ee125f952001",
+  "schema_statuses": [
+    "schema_learned",
+    "schema_learned",
+    "schema_learned",
+    "schema_learned",
+    "schema_learned",
+    "schema_learned"
+  ],
+  "meta_rows": [
+    {
+      "kind": "projection",
+      "input_arity": 3,
+      "mapping": [
+        0
+      ],
+      "sources": {
+        "procedure:operacion freeze0": {
+          "family": "procedure",
+          "support": 2
+        }
+      },
+      "families": {
+        "procedure": 2
+      },
+      "support": 2,
+      "schema": "proj:3:0"
+    },
+    {
+      "kind": "projection",
+      "input_arity": 3,
+      "mapping": [
+        1
+      ],
+      "sources": {
+        "procedure:operacion freeze1": {
+          "family": "procedure",
+          "support": 2
+        }
+      },
+      "families": {
+        "procedure": 2
+      },
+      "support": 2,
+      "schema": "proj:3:1"
+    },
+    {
+      "kind": "projection",
+      "input_arity": 3,
+      "mapping": [
+        1,
+        0
+      ],
+      "sources": {
+        "procedure:operacion freeze3": {
+          "family": "procedure",
+          "support": 2
+        }
+      },
+      "families": {
+        "procedure": 2
+      },
+      "support": 2,
+      "schema": "proj:3:1,0"
+    },
+    {
+      "kind": "projection",
+      "input_arity": 3,
+      "mapping": [
+        2
+      ],
+      "sources": {
+        "procedure:operacion freeze2": {
+          "family": "procedure",
+          "support": 2
+        }
+      },
+      "families": {
+        "procedure": 2
+      },
+      "support": 2,
+      "schema": "proj:3:2"
+    },
+    {
+      "kind": "projection",
+      "input_arity": 3,
+      "mapping": [
+        2,
+        0
+      ],
+      "sources": {
+        "procedure:operacion freeze4": {
+          "family": "procedure",
+          "support": 2
+        }
+      },
+      "families": {
+        "procedure": 2
+      },
+      "support": 2,
+      "schema": "proj:3:2,0"
+    },
+    {
+      "kind": "projection",
+      "input_arity": 3,
+      "mapping": [
+        2,
+        1
+      ],
+      "sources": {
+        "procedure:operacion freeze5": {
+          "family": "procedure",
+          "support": 2
+        }
+      },
+      "families": {
+        "procedure": 2
+      },
+      "support": 2,
+      "schema": "proj:3:2,1"
+    },
+    {
+      "kind": "role_set",
+      "input_arity": 3,
+      "roles": [
+        0
+      ],
+      "sources": {
+        "schema_surface:alfa rol0 <e0> rol1 <e1> rol2 <e2>": {
+          "family": "schema",
+          "support": 5
+        },
+        "procedure:operacion freeze0": {
+          "family": "procedure",
+          "support": 2
+        }
+      },
+      "families": {
+        "schema": 5,
+        "procedure": 2
+      },
+      "support": 7,
+      "schema": "roles:3:0"
+    },
+    {
+      "kind": "role_set",
+      "input_arity": 3,
+      "roles": [
+        0,
+        1
+      ],
+      "sources": {
+        "schema_surface:delta rol0 <e0> rol1 <e1> rol2 <e2>": {
+          "family": "schema",
+          "support": 5
+        },
+        "procedure:operacion freeze3": {
+          "family": "procedure",
+          "support": 2
+        }
+      },
+      "families": {
+        "schema": 5,
+        "procedure": 2
+      },
+      "support": 7,
+      "schema": "roles:3:0,1"
+    },
+    {
+      "kind": "role_set",
+      "input_arity": 3,
+      "roles": [
+        0,
+        2
+      ],
+      "sources": {
+        "schema_surface:epsilon rol0 <e0> rol1 <e1> rol2 <e2>": {
+          "family": "schema",
+          "support": 5
+        },
+        "procedure:operacion freeze4": {
+          "family": "procedure",
+          "support": 2
+        }
+      },
+      "families": {
+        "schema": 5,
+        "procedure": 2
+      },
+      "support": 7,
+      "schema": "roles:3:0,2"
+    },
+    {
+      "kind": "role_set",
+      "input_arity": 3,
+      "roles": [
+        1
+      ],
+      "sources": {
+        "schema_surface:beta rol0 <e0> rol1 <e1> rol2 <e2>": {
+          "family": "schema",
+          "support": 5
+        },
+        "procedure:operacion freeze1": {
+          "family": "procedure",
+          "support": 2
+        }
+      },
+      "families": {
+        "schema": 5,
+        "procedure": 2
+      },
+      "support": 7,
+      "schema": "roles:3:1"
+    },
+    {
+      "kind": "role_set",
+      "input_arity": 3,
+      "roles": [
+        1,
+        2
+      ],
+      "sources": {
+        "schema_surface:zeta rol0 <e0> rol1 <e1> rol2 <e2>": {
+          "family": "schema",
+          "support": 5
+        },
+        "procedure:operacion freeze5": {
+          "family": "procedure",
+          "support": 2
+        }
+      },
+      "families": {
+        "schema": 5,
+        "procedure": 2
+      },
+      "support": 7,
+      "schema": "roles:3:1,2"
+    },
+    {
+      "kind": "role_set",
+      "input_arity": 3,
+      "roles": [
+        2
+      ],
+      "sources": {
+        "schema_surface:gamma rol0 <e0> rol1 <e1> rol2 <e2>": {
+          "family": "schema",
+          "support": 5
+        },
+        "procedure:operacion freeze2": {
+          "family": "procedure",
+          "support": 2
+        }
+      },
+      "families": {
+        "schema": 5,
+        "procedure": 2
+      },
+      "support": 7,
+      "schema": "roles:3:2"
+    },
+    {
+      "kind": "role_cardinality",
+      "cardinality": 1,
+      "sources": {
+        "schema_surface:alfa rol0 <e0> rol1 <e1> rol2 <e2>": {
+          "family": "schema",
+          "support": 5
+        },
+        "schema_surface:beta rol0 <e0> rol1 <e1> rol2 <e2>": {
+          "family": "schema",
+          "support": 5
+        },
+        "schema_surface:gamma rol0 <e0> rol1 <e1> rol2 <e2>": {
+          "family": "schema",
+          "support": 5
+        },
+        "procedure:operacion freeze0": {
+          "family": "procedure",
+          "support": 2
+        },
+        "procedure:operacion freeze1": {
+          "family": "procedure",
+          "support": 2
+        },
+        "procedure:operacion freeze2": {
+          "family": "procedure",
+          "support": 2
+        }
+      },
+      "families": {
+        "schema": 15,
+        "procedure": 6
+      },
+      "support": 21,
+      "schema": "card:1"
+    },
+    {
+      "kind": "role_cardinality",
+      "cardinality": 2,
+      "sources": {
+        "schema_surface:delta rol0 <e0> rol1 <e1> rol2 <e2>": {
+          "family": "schema",
+          "support": 5
+        },
+        "schema_surface:epsilon rol0 <e0> rol1 <e1> rol2 <e2>": {
+          "family": "schema",
+          "support": 5
+        },
+        "schema_surface:zeta rol0 <e0> rol1 <e1> rol2 <e2>": {
+          "family": "schema",
+          "support": 5
+        },
+        "procedure:operacion freeze3": {
+          "family": "procedure",
+          "support": 2
+        },
+        "procedure:operacion freeze4": {
+          "family": "procedure",
+          "support": 2
+        },
+        "procedure:operacion freeze5": {
+          "family": "procedure",
+          "support": 2
+        }
+      },
+      "families": {
+        "schema": 15,
+        "procedure": 6
+      },
+      "support": 21,
+      "schema": "card:2"
+    },
+    {
+      "kind": "role_topology",
+      "input_arity": 2,
+      "edges": [
+        [
+          0,
+          1
+        ]
+      ],
+      "sources": {
+        "schema_surface:delta rol0 <e0> rol1 <e1> rol2 <e2>": {
+          "family": "schema",
+          "support": 5
+        },
+        "schema_surface:epsilon rol0 <e0> rol1 <e1> rol2 <e2>": {
+          "family": "schema",
+          "support": 5
+        },
+        "schema_surface:zeta rol0 <e0> rol1 <e1> rol2 <e2>": {
+          "family": "schema",
+          "support": 5
+        }
+      },
+      "families": {
+        "schema": 15
+      },
+      "support": 15,
+      "schema": "topo:2:0,1"
+    }
+  ],
+  "numeric": [
+    {
+      "mapping": [
+        0
+      ],
+      "treatment_status": "procedure_learned",
+      "treatment_mode": "meta_role_set_transfer",
+      "control_status": "procedure_pending",
+      "treatment_correct": 100,
+      "control_correct": 0
+    },
+    {
+      "mapping": [
+        1
+      ],
+      "treatment_status": "procedure_learned",
+      "treatment_mode": "meta_role_set_transfer",
+      "control_status": "procedure_pending",
+      "treatment_correct": 100,
+      "control_correct": 0
+    },
+    {
+      "mapping": [
+        2
+      ],
+      "treatment_status": "procedure_learned",
+      "treatment_mode": "meta_role_set_transfer",
+      "control_status": "procedure_pending",
+      "treatment_correct": 100,
+      "control_correct": 0
+    },
+    {
+      "mapping": [
+        1,
+        0
+      ],
+      "treatment_status": "procedure_learned",
+      "treatment_mode": "meta_role_set_transfer",
+      "control_status": "procedure_pending",
+      "treatment_correct": 100,
+      "control_correct": 0
+    },
+    {
+      "mapping": [
+        2,
+        0
+      ],
+      "treatment_status": "procedure_learned",
+      "treatment_mode": "meta_role_set_transfer",
+      "control_status": "procedure_pending",
+      "treatment_correct": 100,
+      "control_correct": 0
+    },
+    {
+      "mapping": [
+        2,
+        1
+      ],
+      "treatment_status": "procedure_learned",
+      "treatment_mode": "meta_role_set_transfer",
+      "control_status": "procedure_pending",
+      "treatment_correct": 100,
+      "control_correct": 0
+    }
+  ],
+  "numeric_treatment_correct": 600,
+  "numeric_control_correct": 0,
+  "incompatible_arithmetic_status": "procedure_pending",
+  "symbolic": {
+    "treatment_status": "operator_learned",
+    "treatment_mode": "meta_role_set_transfer",
+    "control_status": "pending_support",
+    "heldout_correct": 100
+  },
+  "motor_hash_after": "e855f17757905ad7f22cf0fdb84df61edfa307ab98fd1eb85a58ee125f952001",
+  "motor_unchanged": true,
+  "elapsed_ms": 40.16518604476005
+}

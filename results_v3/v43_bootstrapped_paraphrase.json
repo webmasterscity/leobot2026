@@ -1,0 +1,47 @@
+{
+  "version": "0.4.3",
+  "experiment": "bootstrapped_paraphrase_from_acquired_facts",
+  "code_hash_before": "e855f17757905ad7f22cf0fdb84df61edfa307ab98fd1eb85a58ee125f952001",
+  "target": "schema_f0700070da24211f_a2",
+  "controls": {
+    "without_acquired_facts_response_status": "raw_relation_pending",
+    "without_acquired_facts_language_status": "unrecognized",
+    "exact_text_memory_root_query_hits": 0,
+    "exact_text_memory_root_query_cases": 100
+  },
+  "grounding": {
+    "first_support_status": "grounding_pending",
+    "second_support_status": "stored",
+    "promoted_version_spaces": 1,
+    "independent_supports": 2,
+    "support_fact_ids": [
+      "f5009",
+      "f5010"
+    ],
+    "support_fact_ids_from_v42_acquisition": true,
+    "grounded_language_constructions": 1,
+    "grounded_language_evidence": [
+      "f5009"
+    ]
+  },
+  "open_entity_transfer": {
+    "new_paraphrase_assertions_stored": 100,
+    "cases": 100,
+    "new_entities_indexed": 200,
+    "new_entities_expected": 200,
+    "root_schema_queries_entailed": 100,
+    "root_schema_query_cases": 100,
+    "median_response_ms": 0.17723202472552657,
+    "persisted_new_assertion_status": "stored",
+    "persisted_root_query_status": "entailed"
+  },
+  "next_failure_probe": {
+    "text": "persona alfa se asocia con modulo se asocia con extra",
+    "language_parse_status": "ambiguous",
+    "parsed_frame": null,
+    "risk": null
+  },
+  "unrelated_predicates_in_seed_world": 5000,
+  "code_hash_after": "e855f17757905ad7f22cf0fdb84df61edfa307ab98fd1eb85a58ee125f952001",
+  "code_unchanged_during_frozen_phase": true
+}

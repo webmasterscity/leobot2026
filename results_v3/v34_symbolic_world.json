@@ -1,7 +1,7 @@
 {
   "version": "0.3.4",
   "experiment": "symbolic_action_model_induction_and_cross_operator_planning",
-  "code_hash_before": "8e8dcd34ac77cb60ec68fc24777f3c7761016b1168c22b066b2dcaa5cde58ff8",
+  "code_hash_before": "615749e62e3dd25443e8eb37ccc69ed819194afe662e76337e1351ef21b9d7d4",
   "transfer": {
     "heldout": 200,
     "scores": {
@@ -10,8 +10,8 @@
       "positive_only_ablation": 0,
       "episodic_memory": 0
     },
-    "median_us": 162.49999998763087,
-    "p95_us": 262.61599941790337,
+    "median_us": 199.63050726801157,
+    "p95_us": 269.21904645860195,
     "median_steps": 3.5,
     "operators": [
       {
@@ -44,7 +44,11 @@
         ],
         "support": 3,
         "failures": 2,
-        "precondition_mode": "contrastive_unique"
+        "precondition_mode": "contrastive_unique",
+        "analogy_sources": [],
+        "analogy_schema_id": null,
+        "cross_modal_schema": null,
+        "cross_modal_sources": []
       },
       {
         "pattern": "mueve a <e0> de <e1> a <e2>",
@@ -76,7 +80,11 @@
         ],
         "support": 3,
         "failures": 2,
-        "precondition_mode": "contrastive_unique"
+        "precondition_mode": "contrastive_unique",
+        "analogy_sources": [],
+        "analogy_schema_id": null,
+        "cross_modal_schema": null,
+        "cross_modal_sources": []
       }
     ],
     "positive_only_operators": [
@@ -126,7 +134,11 @@
         ],
         "support": 3,
         "failures": 0,
-        "precondition_mode": "positive_only"
+        "precondition_mode": "positive_only",
+        "analogy_sources": [],
+        "analogy_schema_id": null,
+        "cross_modal_schema": null,
+        "cross_modal_sources": []
       },
       {
         "pattern": "mueve a <e0> de <e1> a <e2>",
@@ -174,7 +186,11 @@
         ],
         "support": 3,
         "failures": 0,
-        "precondition_mode": "positive_only"
+        "precondition_mode": "positive_only",
+        "analogy_sources": [],
+        "analogy_schema_id": null,
+        "cross_modal_schema": null,
+        "cross_modal_sources": []
       }
     ],
     "samples": [
@@ -226,28 +242,28 @@
     {
       "noise_facts": 0,
       "total_facts": 9,
-      "median_us": 136.75599984708242,
+      "median_us": 160.18899623304605,
       "status": "plan_found",
       "steps": 3
     },
     {
       "noise_facts": 1000,
       "total_facts": 1009,
-      "median_us": 3193.7049998305156,
+      "median_us": 3384.176059626043,
       "status": "plan_found",
       "steps": 3
     },
     {
       "noise_facts": 5000,
       "total_facts": 5009,
-      "median_us": 17694.57299997157,
+      "median_us": 16961.497021839023,
       "status": "plan_found",
       "steps": 3
     },
     {
       "noise_facts": 10000,
       "total_facts": 10009,
-      "median_us": 38931.4040003228,
+      "median_us": 35198.35788756609,
       "status": "plan_found",
       "steps": 3
     }
@@ -257,7 +273,7 @@
     "goal_reached": true,
     "operators": 2
   },
-  "code_hash_after": "8e8dcd34ac77cb60ec68fc24777f3c7761016b1168c22b066b2dcaa5cde58ff8",
+  "code_hash_after": "615749e62e3dd25443e8eb37ccc69ed819194afe662e76337e1351ef21b9d7d4",
   "code_unchanged_during_evaluation": true,
-  "elapsed_s": 0.5449765319999642
+  "elapsed_s": 0.4960870170034468
 }

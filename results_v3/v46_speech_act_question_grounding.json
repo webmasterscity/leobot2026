@@ -1,0 +1,55 @@
+{
+  "version": "0.4.6",
+  "experiment": "speech_act_gate_and_grounded_questions",
+  "code_hash_before_frozen_eval": "e855f17757905ad7f22cf0fdb84df61edfa307ab98fd1eb85a58ee125f952001",
+  "code_hash_after_frozen_eval": "e855f17757905ad7f22cf0fdb84df61edfa307ab98fd1eb85a58ee125f952001",
+  "code_unchanged_during_frozen_phase": true,
+  "primitive_predicate": "primitive_f4f86dd1449e7f39_a2",
+  "question_learning": {
+    "first_status": "unrecognized",
+    "second_status": "unrecognized",
+    "facts_before": 105,
+    "facts_after_first": 105,
+    "facts_after_second": 105,
+    "question_word_became_entity": false,
+    "learned_parse": {
+      "status": "parsed",
+      "frame": {
+        "act": "assert",
+        "pred": "primitive_f4f86dd1449e7f39_a2",
+        "args": [
+          "que",
+          "sujeto consulta 99"
+        ]
+      },
+      "alternatives": [
+        {
+          "act": "assert",
+          "pred": "primitive_f4f86dd1449e7f39_a2",
+          "args": [
+            "que",
+            "sujeto consulta 99"
+          ]
+        }
+      ],
+      "composed_paraphrase": false
+    }
+  },
+  "heldout_questions": {
+    "correct_answers": 0,
+    "cases": 100,
+    "fact_mutations": 0,
+    "exact_question_memory_hits": 0,
+    "median_response_ms": 0.1754735130816698
+  },
+  "changed_relation_control": {
+    "nonassertive_or_pending": 100,
+    "cases": 100,
+    "fact_delta": 0
+  },
+  "limits": [
+    "El detector de acto interrogativo usa señales superficiales y todavía no cubre todas las formas pragmáticas del español.",
+    "La construcción interrogativa se aprende porque existen hechos estructurados que la fundamentan; no implica comprensión abierta de preguntas arbitrarias.",
+    "Evaluación interna y sintética; no demuestra AGI ni ASI."
+  ]
+}

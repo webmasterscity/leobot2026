@@ -1,76 +1,87 @@
-# LEOBOT_STATE — continuidad compacta
+# LEOBOT_STATE — continuidad de Leobot 0.10.1
 
-## Versión comprobada
+<p lang="es" style="text-align: justify; hyphens: auto;">Este es el único registro de continuidad. Las cifras reproducibles están en <code>results_v3/</code>, los experimentos en <code>experiments/</code> y las pruebas en <code>tests/</code>. Las tres versiones originales se compararon antes de retirar sus archivos duplicados. El ZIP existente conserva un estado anterior: el usuario pidió no gastar más tiempo generando archivos ZIP, por lo que el motor actual se sigue desde el repositorio y este documento.</p>
 
-- Leobot **0.3.9 / V3.9**.
-- Python 3.13.5, CPU, sin redes neuronales/LLM/GPU en interpretación, adquisición, razonamiento o respuesta.
-- Regresión actual: **131/131** pruebas.
-- V3.8: `results_v3/v38_concept_invention.json`.
-- V3.9: `results_v3/v39_predicate_invention.json`.
-- Hash congelado actual `leobot/*.py`: `ce8a25ebfbb6c7701afe65a62b0051d10942caed3c9c953e2d4f8e24cae1398d`.
+## Estado y procedencia
 
-## Cambio aceptado V3.8 — invención grounded de conceptos relacionales
+<p lang="es" style="text-align: justify; hyphens: auto;">La versión 0.10.1 continúa la unión de la base V6.3 con X (V5.39, documentos), Y (V7.0, elección de estrategias y composición de reglas) y tres rutas útiles de Z (V8.9, procedimientos, metas y correcciones en conversación). El motor quedó dividido por capacidades; ahora los experimentos están juntos y se ejecutan como módulos de Python, mientras la raíz conserva solo los archivos de entrada y entrega. Funciona en Python 3.12.3, con un Intel Core i7-13620H y sin bibliotecas de terceros en el motor. Las huellas digitales de los tres archivos recibidos, en el mismo orden X, Y y Z, son <code>19d299f4c94577a39ea643b3a8ac1a5a7759be3d752bc3948a5c24fecaa3037b</code>, <code>6c179016d0cc92ed942c6fb957df7a6953695a1456960bf7a510f2b4f6915daf</code> y <code>78e8cf981ecab34eee9ae600fb1105b79102d2399751c2ca70e9a89566ed26dc</code>. Se comprobó que los tres se podían abrir antes de retirarlos. La huella digital del código, o <em>hash</em>, de cada experimento permite comprobar si el motor cambió mientras se ejecutaba.</p>
 
-1. `ConceptGrounder` recibe afirmaciones naturales con exactamente dos entidades ya conocidas y polaridad explícita; el predicado objetivo no se entrega.
-2. La superficie se deslexicaliza, se crea un identificador opaco `concept_*` y ejemplos positivos/negativos alimentan el aprendiz relacional existente.
-3. El concepto se promociona solo con evidencia contrastiva mínima; pares no demostrados siguen siendo `unknown`, no `false`.
-4. Una formulación nueva puede vincularse como alias de un concepto previo con menos ejemplos solo cuando existe una única relación aprendida compatible con evidencia positiva y negativa.
-5. Contraevidencia posterior retira solo el alias, no el concepto raíz.
-6. Los conceptos inventados se convierten en primitivas disponibles para aprender conceptos de orden superior.
+| Origen | Pruebas originales repetidas | Aporte que se conservó | Límite relevante |
+|---|---:|---|---|
+| X — V5.39 | 392/392 | Lectura limitada de documentos, elección entre referencias posibles y retirada de algunas conclusiones equivocadas | Reglas muy ligadas a la forma de las frases; una prueba publicada atribuyó al nuevo filtro un efecto que otro filtro ya producía |
+| Y — V7.0 | 274/274 | Elección aprendida de estrategias y reglas compuestas de hasta tres comprobaciones | Datos y tareas preparados; la búsqueda depende del orden de los datos |
+| Z — V8.9 | 256/256 | Uso de procedimientos y metas aprendidas en conversación; retirada de un procedimiento contradicho | Varias mejoras declaradas no ahorran trabajo frente a sus controles; sus experimentos no se ejecutaban todos en la orden principal |
 
-### Evidencia V3.8
+<p lang="es" style="text-align: justify; hyphens: auto;">En la versión unida, una relación de cuatro partes necesita cuatro ejemplos independientes. Y la aprendía con tres; se mantuvo la regla más cauta de X porque aún no hay una comparación que demuestre que tres ejemplos permiten hacerlo con igual seguridad. Se recuperó la opción para limitar cuántas partes puede aprender el programa y se guarda esa opción al reiniciar, junto con el tamaño del recuerdo de conversación. Por ello, una prueba antigua de Y que exige aprender cuatro partes con solo tres ejemplos no representa el comportamiento elegido para esta fusión.</p>
 
-- Concepto opaco aprendido como `parent ; parent`: 100/100 positivos held-out, 0 falsos positivos sobre 100 negativos.
-- 5.000 predicados distractores disjuntos no entraron en el conjunto relevante del entrenamiento.
-- Reserva estructural distinta: descubrió `inverse(teach)` y transfirió a entidades nuevas.
-- Nueva superficie con concepto previo: 100/100 tras 1 positivo + 1 negativo; desde cero con los mismos dos ejemplos: 0/100.
-- Concepto `r;s` previo permitió aprender un concepto `r;s;r;s` bajo profundidad 2; sin la abstracción previa y con el mismo presupuesto quedó sin solución.
-- Persistencia Bot/SQLite comprobada; ruta conversacional de consulta comprobada.
+<p lang="es" style="text-align: justify; hyphens: auto;">Al aplicar las 274 pruebas originales de Y directamente al motor unido, pasó 273 y falló solo esa prueba del umbral de cuatro partes. Se conserva el resultado de la discrepancia; no se cambió la prueba antigua de Y para ocultarlo. Las pruebas de la versión unida incluyen por separado la regla conservadora elegida.</p>
 
-## Cambio aceptado V3.9 — invención autónoma y reutilizable de predicados auxiliares
+## Qué se implementó y qué aprendió Leobot
 
-1. Cuando la inducción directa termina completa pero sin solución, `fit_with_invention` puede explorar una cantidad finita de predicados auxiliares binarios cortos.
-2. El auxiliar no recibe nombre semántico ni patrón del dominio; se construye sobre predicados relevantes del problema.
-3. Solo se conserva si el programa final del objetivo depende realmente de él. Los intentos fallidos se retiran.
-4. La recuperación de predicados expande un vecindario relacional acotado para incluir relaciones que solo aparecen en nodos intermedios, sin escanear toda la memoria.
-5. Predicados que tocan ejemplos positivos se priorizan frente a relaciones presentes solo en negativos; composiciones directas se prueban antes de inversiones.
-6. Reglas de camino aprendidas se compilan como composiciones directas y se cachean durante la transacción de aprendizaje, evitando ejecutar siempre el motor lógico general.
+<p lang="es" style="text-align: justify; hyphens: auto;">El trabajo de ingeniería inicial fue unir almacenes de conocimiento, conectar las rutas de conversación y guardar el estado al reiniciar. En 0.10.0 se separó el antiguo archivo central en módulos de documentos, adquisición de lenguaje, condiciones y diálogo; los campos de conocimiento que deben guardarse se declaran en un solo sitio. La versión con hechos en SQLite ahora guarda también el estado aprendido y conserva ese estado tras reiniciar. La búsqueda de reglas ya no depende de que los datos útiles aparezcan al principio de la lista. Una pregunta española con tilde y sin signos de interrogación ya no se guarda como una afirmación. Después de una corrección de procedimiento, un nuevo aprendizaje general no borra en silencio el caso corregido. En 0.10.1 se trasladaron 89 experimentos y dos sondas a <code>experiments/</code>; se actualizaron sus rutas y las importaciones de las pruebas, sin cambiar los algoritmos de aprendizaje. Son cambios programados por nosotros; Leobot no inventó estas soluciones.</p>
 
-### Evidencia V3.9
+<p lang="es" style="text-align: justify; hyphens: auto;">En los experimentos congelados, Leobot sí construyó a partir de ejemplos una regla de tres comprobaciones para elegir entre dos estrategias, indujo formas limitadas de relaciones y acciones, y reutilizó algunos patrones de conexión entre tareas. Los nombres de operaciones básicas, las formas que puede buscar, los límites, los verificadores, los datos de entrenamiento y las respuestas de estado fueron programados por las personas que hicieron las tres ramas o por esta fusión. No inventó una operación básica nueva ni un método de aprendizaje nuevo y ejecutable.</p>
 
-- Objetivo `r;s;r;s` con profundidad directa 2: control sin invención 0/100; V3.9 inventó `r;s` en 2 intentos y obtuvo 100/100.
-- Coste total de la primera invención en la corrida final: ~19,8 ms, 178 candidatos de objetivo acumulados; búsqueda directa profundidad 4: ~13,3 ms, 150 candidatos. La primera invención **todavía tiene sobrecoste**.
-- El auxiliar persistió tras reinicio y, con nueva invención desactivada, permitió aprender otro objetivo `r;s;t` con profundidad 2: 100/100.
-- Mismo segundo objetivo sin auxiliar bajo profundidad 2: 0/100. Con profundidad 3 directa: 100/100.
-- Reutilización del auxiliar: ~14,8 ms / 168 candidatos frente a ~15,7 ms / 184 candidatos para profundidad 3 directa en esa corrida. Reduce profundidad y ligeramente candidatos, pero todavía no demuestra una ventaja estable de latencia.
-- Aprendiz congelado durante V3.8/V3.9: hashes antes/después idénticos en los experimentos.
+## Comprobaciones y costes
 
-## Antecedentes cercanos
+<p lang="es" style="text-align: justify; hyphens: auto;">La versión 0.10.1 pasó 518 pruebas; dos pruebas diagnósticas marcan fallos esperados que siguen abiertos. Ejecutó 89 experimentos sin error. La ejecución del repositorio tardó 2 min 12,77 s, consumió 131,66 s de procesador y alcanzó 108&nbsp;444 KiB de memoria. La copia extraída del ZIP tardó 2 min 13,51 s, consumió 130,70 s de procesador y alcanzó 108&nbsp;444 KiB; sus 296 huellas de archivos coincidieron. También se repitieron por separado las dos sondas en <code>experiments/</code>. Las huellas agregadas del motor y del motor con las pruebas fueron, respectivamente, <code>9421eb879fc2267dbbce51af0a4dd2dcd0036f0642c792b3504f10928ac15c76</code> y <code>5e88b661f121e64ddb7df67ec785a1a4ff5728da567e7cb597d09f259c451fac</code>, calculadas con ruta relativa, separador nulo y contenido de cada archivo Python en orden. Una salida sin error indica que el experimento terminó; no significa por sí misma que su hipótesis se confirmó.</p>
 
-La invención de predicados no es nueva. Meta-Interpretive Learning (Muggleton, Lin & Tamaddoni-Nezhad, 2015), trabajos posteriores de Cropper/Morel/Muggleton y POPPI estudian predicados inventados y reutilización lógica. La aportación experimental aquí es local: conexión con español grounded, alias contrastivos, routing por relevancia, memoria escalable y reutilización de la representación inventada en el mismo bot. No se afirma originalidad histórica general.
+| Prueba | Resultado observado | Qué permite decir |
+|---|---|---|
+| Regla compuesta V7.0 | 800/800 primeras elecciones correctas; control con máximo de dos comprobaciones: 400/800; 33,3 % menos intentos; 0,32 s para adquirirla y 8,68 s para todo ese experimento | Mejora en una familia sintética de ocho combinaciones repetidas con otros números; no demuestra razonamiento abierto |
+| Patrón de conexión V6.3 | 200/200 casos preparados; 0/200 aceptaciones falsas sin conexión necesaria; control fresco sigue esperando pruebas | Transferencia limitada de una forma entre ejemplos diseñados |
+| Revisión de X V5.39 | 100/100 consecuencias erróneas retiradas tras nueva evidencia explícita; sin esa revisión se repitieron 100/100 errores | Revisión acotada; la primera conclusión equivocada todavía puede aparecer |
+| Diálogo mixto V8.9 unido | 8/13 consultas contadas como útiles; una consulta adicional comprueba que el caso corregido sigue en disputa. Z obtenía 9/12 mediante una regla fija para «cómo llego» y la relación <code>at</code> | La regla general reaprende otros casos, pero no anula el caso corregido; no se atribuye la respuesta fija a aprendizaje general |
+| Transferencia entre estructuras distintas V8.8 | 3 ejemplos con experiencia previa y 3 sin ella | No hubo ahorro cuando cambió la estructura de la tarea |
+| Orden de datos V9, corregido en 0.10.0 | Aprende una regla de tres partes con los datos útiles al principio o al final y diez distractores: unos 3,9 s de adquisición en cada orden; tres ordenaciones superaron 96/96 casos reservados cada una | Se eliminó esta dependencia del orden en la familia sintética probada; señales que coinciden siempre durante la enseñanza aún pueden confundirse |
+| Español del encargo del usuario | Leyó cuatro frases reales como evidencia sin completar una relación; respondió 0/4 preguntas directas | Diagnóstico pequeño, no examen independiente; véase <code>experiments/user_text_probe.py</code> |
 
-## Cuello de botella principal
+## Ensayo nuevo: pedir una prueba que separe dos reglas
 
-Leobot ya puede inventar una relación nombrada por una superficie natural y, si hace falta, un auxiliar lógico intermedio. Sin embargo:
+<p lang="es" style="text-align: justify; hyphens: auto;">Se añadió al controlador una consulta que recupera reglas de comparación que encajaban casi igual con la experiencia disponible. Recibe posibilidades de prueba que el entorno puede realizar, calcula cuál separaría mejor esas reglas por unidad de costo y pide esa prueba sin inventar el resultado. El entorno devuelve después el resultado real por la interfaz habitual. La reconstrucción de alternativas, el límite de desacuerdos tolerados y la elección de la prueba son ingeniería; la regla que finalmente cambia procede de observaciones recibidas por Leobot. No se ha inventado un método de aprendizaje nuevo ni se ha demostrado una causa.</p>
 
-- sigue restringido a relaciones binarias y a un DSL de caminos/inversión/cierre;
-- las entidades deben existir previamente en memoria para el grounding conceptual;
-- el significado base proviene de hechos/predicados estructurados; texto bruto arbitrario todavía no crea automáticamente un mundo conceptual abierto;
-- la invención inicial puede costar más que una búsqueda profunda directa;
-- lenguaje libre, creación abierta y resolución general permanecen muy por debajo de un LLM de frontera.
+<p lang="es" style="text-align: justify; hyphens: auto;">En <code>experiments/meta_active_probe.py</code>, 64 tareas sintéticas permitían dos explicaciones indistinguibles. Antes de intervenir, la regla elegida fallaba los 96 casos reservados cuando se invertía la pista auxiliar. El controlador escogió dos pruebas que separaban las explicaciones y recibió sus resultados: pasó a 96/96. Dos pruebas pasivas del mismo costo dejaron 0/96. Una copia que recibió exactamente las mismas observaciones escogidas también obtuvo 96/96; por ello el ahorro se debe a elegir información útil, no a un aprendiz distinto. Las copias sin experiencia y con solo recuerdo exacto obtuvieron 48/96. El resultado sobrevivió al guardado y reinicio: 96/96. En una tarea de estructura diferente obtuvo 48/96, sin prueba de transferencia. Dieciséis observaciones contrarias retiraron la antigua regla por primera vez tras la segunda y acabaron invirtiendo sus respuestas. El motor conservó la misma huella <code>94c98425354a50f75cda984e2bda55a85f2d7212037b4183a66a616403eb2afa</code> durante el ensayo.</p>
 
-## Hipótesis activa siguiente
+<p lang="es" style="text-align: justify; hyphens: auto;">La adquisición inicial costó 1,50 s de procesador; las dos rondas de pruebas, con sus controles en el mismo proceso, 4,18 s; y la revisión con dieciséis observaciones, 18,75 s. El proceso llegó a 163 508 KiB de memoria. El guardado y la recarga se hicieron mediante el archivo normal de Leobot. La consulta solo reconstruye alternativas entre comparaciones del programa aprendido y exige que el entorno ofrezca pruebas posibles; no crea por sí sola una intervención física ni determina causalidad. Sigue fallando el caso invertido si no recibe datos que distingan las pistas. La sonda de español libre continúa en 0/4. Tras este cambio, <code>./run_tests.sh --solo-pruebas</code> pasó 522 pruebas, con dos fallos esperados ya conocidos.</p>
 
-**Representación relacional de aridad abierta / adquisición de esquemas desde texto y experiencia sin predicado ni aridad objetivo predefinidos.**
+## Lectura de preguntas nuevas: avance y límite
 
-Experimento mínimo propuesto: extender la formación de conceptos a relaciones de 1–3 roles donde el número y orden de roles se infieran de experiencias naturales contrastivas; demostrar transferencia a entidades y formulaciones nuevas y que una representación aprendida facilite una segunda tarea. Comparar contra memoria episódica, contra versión binaria y contra un control con aridad/roles entregados manualmente.
+<p lang="es" style="text-align: justify; hyphens: auto;">Se detectó que tres frases con una misma construcción ya permitían aprender una relación, pero una pregunta corriente sobre ella seguía sin reconocerse. La vía anterior que podía aprender preguntas estaba desactivada por confundir palabras distintas con una relación conocida. Se habilitó solo para preguntas que conservan todas las palabras distintivas de la relación y el orden comprobable de las personas o cosas mencionadas. La primera pregunta queda como hipótesis; otra pregunta sobre un hecho independiente permite aprender la forma. Son restricciones programadas por ingeniería. La forma concreta de pregunta se adquiere de texto y hechos observados, sin etiquetas de significado escritas para el ensayo.</p>
 
-Criterio de descarte: si el mecanismo solo funciona porque una heurística textual fija decide la aridad/roles o si la búsqueda explota antes de transferir a estructuras no vistas, no promoverlo como avance general.
+<p lang="es" style="text-align: justify; hyphens: auto;">Con tres afirmaciones en español natural y dos preguntas de la misma forma, Leobot respondió la tercera pregunta reservada. Un control con exactamente el mismo texto, pero sin este aprendizaje, no respondió ninguna. Una copia fresca tampoco respondió. Tres preguntas que cambiaban el orden de las personas se rechazaron; una con un verbo diferente también. Una afirmación contraria posterior hizo que la respuesta antes aceptada quedara en disputa. Se repitió con una relación de tres participantes y la respuesta sobrevivió al guardado y la recarga. El ensayo local tardó 0,0067 s de procesador; la huella del motor quedó igual, <code>1f1b19d11c4606f4d2af2fe6b93566224806c970169b4000dcf7cb57c3b61ed5</code>. La regresión completa pasó 525 pruebas, con dos fallos esperados anteriores.</p>
 
-## Límites / meta
+<p lang="es" style="text-align: justify; hyphens: auto;">Este resultado exige varias afirmaciones parecidas y dos preguntas previas. No resuelve la lectura de un documento desconocido con una sola aparición de cada construcción: la sonda del encargo sigue en 0/4. Tampoco aprende paráfrasis libres ni garantiza que todas las preguntas con palabras iguales tengan el mismo significado. No se debe contar el cambio de tres pruebas antiguas de «no reconocida» a «hipótesis pendiente» como tres capacidades nuevas: en esos casos Leobot todavía se abstiene de responder.</p>
 
-- AGI demostrada: **NO**.
-- ASI demostrada: **NO**.
-- No hay evidencia de crecimiento cognitivo ilimitado.
-- Evaluaciones siguen siendo internas y sintéticas; reserva realmente independiente pendiente.
-- El objetivo de sustituir LLM de frontera sigue vigente, pero ninguna métrica actual justifica declarar equivalencia general.
+<p lang="es" style="text-align: justify; hyphens: auto;">Las tres versiones originales pasaron sus propias pruebas. El experimento V7.0 se repitió: 800/800 frente a 400/800 y código sin cambios. La versión 0.10.1 pasó sus 518 pruebas con <code>python3 -S</code>, que desactiva la carga habitual de bibliotecas añadidas a Python; dos de ellas siguen señalando los límites conocidos. La sonda opcional del orden usa 64 tareas, 16 datos por tarea y diez datos irrelevantes, con los mismos ejemplos en ambos órdenes y la misma huella digital antes y después. La sonda de español usa frases tomadas del encargo del usuario y también dejó intacto el código. No se ha hecho una comparación justa con los asistentes más avanzados; sus versiones y condiciones deberán verificarse cuando Leobot pueda abordar tareas abiertas.</p>
+
+## Hallazgos que no deben convertirse en victorias
+
+- La prueba V5.29 deja **0/100** resoluciones falsas aun al desactivar su filtro; otro filtro sigue bloqueándolas. No atribuir 100/100 al filtro V5.29.
+- La ruta de Z para «cómo llego» tomaba la palabra posterior a «a» y fabricaba una meta con la relación fija <code>at</code>. Con la relación <code>en</code>, un destino desconocido o una frase parecida puede fallar o inventar planes. No se incorporó.
+- En Z, una comparación de búsqueda examinó 20 candidatos frente a 12 del control; otra eligió el mismo orden de estrategias en ambos. Su reducción de tres a un ejemplo entre mundos de la misma forma se explicó por acciones previas, no por el controlador. Se conservaron aquí las conclusiones negativas antes de retirar los ZIP originales.
+- X agrupa a veces dos frases casualmente conectadas como si formaran un evento. Una afirmación posterior puede retirar el error, pero el primer error sigue siendo posible.
+- La búsqueda nueva ordena y quita comprobaciones redundantes antes del límite de 32 posibilidades. Resolvió la falla al mover los datos útiles, pero una señal auxiliar perfectamente correlacionada puede desplazar a la causa útil: en la prueba diagnóstica acierta 0/96 casos cuando esa señal se invierte. Con los ejemplos originales ambas señales son indistinguibles; se necesita experiencia que las separe. Leobot tampoco reutiliza todavía subreglas como piezas nuevas, ni inventa operaciones básicas o métodos de aprendizaje ejecutables.
+- Un filtro que prohíba todas las uniones de dos hechos evita una conclusión falsa inicial de documentos, pero también elimina las uniones válidas de la misma forma. Ambos casos son indistinguibles para las señales que hoy observa el motor. Se conserva la capacidad y se mantiene este límite como prueba diagnóstica, sin atribuirle una solución inexistente.
+- Una corrección de procedimiento impide reutilizar la regla general en ese caso exacto, incluso después de reenseñar la regla con otros ejemplos. Esto evita una respuesta contradicha, pero todavía no aprende cuándo la corrección es una excepción estable ni cuándo debe revisarse.
+- Al ejecutar los 98 archivos de resultados desde otra carpeta, 95 conservaron el mismo contenido útil tras apartar mediciones de tiempo. En los otros tres, cambió solo el orden de presentación de los mismos hechos en <code>v35_symbolic_alias</code>, cambió la ruta y tamaño de la base de datos en <code>v3_results</code>, o cambió el número de estados examinados en <code>v37_iterative_skill</code>. Este último dato depende del orden interno de Python: con dos valores de <code>PYTHONHASHSEED</code> —un ajuste de ese orden— dio 590 y 594 estados en un mismo caso. No usar una sola cifra de esa prueba como medida precisa de ahorro de búsqueda.
+- Una frase desconocida que parece afirmación puede quedar guardada como posible ejemplo de relación; eso incluye alguna charla ajena al tema. Aún hace falta separar mejor instrucciones, preguntas y afirmaciones sin depender de listas de frases.
+
+## Próxima decisión comprobable
+
+<p lang="es" style="text-align: justify; hyphens: auto;">El mayor límite práctico sigue siendo interpretar lenguaje humano cuando una construcción aparece una sola vez: la sonda existente continúa en 0/4. La siguiente prueba debe entregar textos reales redactados antes del cambio, comparar comprensión con simple búsqueda de fragmentos y medir qué información adicional pide Leobot para resolver la ambigüedad. Si falla, registrar el fallo antes de añadir vocabulario fijo. También queda pendiente comprobar si una subregla aprendida reduce la búsqueda en tareas más profundas.</p>
+
+<p lang="es" style="text-align: justify; hyphens: auto;">La próxima orden operativa es <code>./run_tests.sh</code>. La sonda del orden se reproduce con <code>python3 -m experiments.meta_feature_order_probe</code>; no repetirla tras cambios ajenos al mecanismo de búsqueda. El diagnóstico de lectura se reproduce con <code>python3 -m experiments.user_text_probe</code>. Las decisiones sobre las versiones anteriores y sus fallos se conservaron aquí; sus ZIP duplicados se retiraron tras probar el paquete unido.</p>
+
+## Qué falta para las afirmaciones grandes
+
+<p lang="es" style="text-align: justify; hyphens: auto;">Para decir «solo falta información» harían falta muchas tareas y textos nuevos, con el motor intacto, donde Leobot pudiera aprender formas de representar problemas, operaciones y métodos nuevos sin que un desarrollador los añadiera. También tendría que corregirse sin olvidar lo ajeno, conversar con libertad, usar herramientas y mantener un coste razonable al crecer. Para afirmar inteligencia general harían falta evaluaciones amplias e independientes de esas capacidades. Para afirmar una inteligencia superior a la humana se necesitaría además superar de manera repetida a especialistas adecuados en muchas tareas nuevas y producir descubrimientos verificables. Hoy ninguna de esas tres afirmaciones está respaldada.</p>
+
+## En palabras fáciles de entender
+
+<p lang="es" style="text-align: justify; hyphens: auto;">Había tres Leobot distintos. Uno se concentró en leer frases y pequeños documentos; otro en aprovechar patrones aprendidos para elegir mejor cómo resolver un problema; el tercero añadió maneras de usar acciones y metas enseñadas dentro de una conversación. Los juntamos con cuidado. Sus partes principales están separadas y los experimentos tienen una carpeta propia. Así otras personas o asistentes pueden encontrar qué modificar sin recorrer una raíz llena de archivos.</p>
+
+<p lang="es" style="text-align: justify; hyphens: auto;">Al repetir las pruebas, vimos avances reales pero pequeños. En un problema preparado, Leobot aprendió una regla que le permitió acertar 800 veces seguidas; la copia a la que se le prohibió usar esa regla acertó 400. Antes dejaba de encontrarla si los datos importantes estaban al final de una lista; ahora la encuentra en ambos órdenes y tarda menos. También conserva una corrección concreta aunque luego vuelva a aprender la regla general. Sin embargo, cuando leyó cuatro frases normales del encargo, no respondió bien ninguna de las cuatro preguntas sencillas sobre ellas.</p>
+
+<p lang="es" style="text-align: justify; hyphens: auto;">En una prueba nueva, Leobot eligió dos experiencias capaces de separar pistas que antes parecían iguales. Al recibir los resultados reales, corrigió su elección: acertó 96 de 96 casos preparados donde antes fallaba los 96. Sin esas experiencias siguió fallando. La prueba se hizo con números preparados, no con conversaciones ni documentos corrientes. Leobot todavía puede unir mal frases de un documento y necesita que sus desarrolladores preparen muchas de sus maneras de aprender. El siguiente paso práctico es medir si puede aprender de textos humanos que no fueron escritos para sus reglas actuales.</p>
+
+<p lang="es" style="text-align: justify; hyphens: auto;">También puede aprender una manera nueva de preguntar después de leer varias frases parecidas y recibir dos preguntas sobre hechos distintos. Comprobamos que no responde cuando se cambia el verbo o se intercambia el papel de las personas. Si aparece información contraria, deja de presentar la respuesta como segura. Aun así, las cuatro preguntas sobre frases sueltas del encargo siguen sin respuesta: aprender de un texto desconocido una sola vez continúa siendo el problema principal.</p>

@@ -1,0 +1,94 @@
+{
+  "version": "0.5.2-candidate",
+  "experiment": "open_raw_relation_arity_1_to_3",
+  "code_hash_before": "e855f17757905ad7f22cf0fdb84df61edfa307ab98fd1eb85a58ee125f952001",
+  "code_hash_after": "e855f17757905ad7f22cf0fdb84df61edfa307ab98fd1eb85a58ee125f952001",
+  "code_unchanged": true,
+  "initial_ontology": {
+    "facts": 0,
+    "entities": 0
+  },
+  "noise_control": {
+    "sentences": 60,
+    "promotions": 0,
+    "statuses": [
+      "raw_relation_pending"
+    ]
+  },
+  "acquisition": {
+    "learned_arities": [
+      1,
+      2,
+      3
+    ],
+    "surfaces": {
+      "1": "{s0} vibra",
+      "2": "sujeto {s0} enlaza modulo {s1}",
+      "3": "{s0} entrega {s1} a {s2}"
+    },
+    "predicates": {
+      "1": "primitive_0b3f102e9b3f267c_a1",
+      "2": "primitive_ba9934c6e81e58d1_a2",
+      "3": "primitive_7f4bd6a5eb2a3295_a3"
+    },
+    "median_support_response_ms": 12.371854041703045
+  },
+  "heldout_transfer": {
+    "1": {
+      "cases": 100,
+      "parsed": 100,
+      "stored": 100,
+      "entailed": 100,
+      "median_response_ms": 0.0868584611453116
+    },
+    "2": {
+      "cases": 100,
+      "parsed": 100,
+      "stored": 100,
+      "entailed": 100,
+      "median_response_ms": 0.113885966129601
+    },
+    "3": {
+      "cases": 100,
+      "parsed": 100,
+      "stored": 100,
+      "entailed": 100,
+      "median_response_ms": 0.1150395255535841
+    }
+  },
+  "downstream_schema": {
+    "status": "schema_learned",
+    "arity": 3,
+    "selected": "primitive_7f4bd6a5eb2a3295_a3(r0,r1,r2)",
+    "uses_ternary_raw_primitive": true,
+    "positive_entailed": 100,
+    "positive_cases": 100,
+    "mismatched_rejected": 100,
+    "negative_cases": 100
+  },
+  "v51_binary_ablation": {
+    "1": {
+      "last_status": "raw_relation_pending"
+    },
+    "2": {
+      "last_status": "raw_relation_learned"
+    },
+    "3": {
+      "last_status": "raw_relation_pending"
+    },
+    "promoted_arities": [
+      2
+    ],
+    "composition_last_status": "schema_unrecognized"
+  },
+  "bounded_scope": {
+    "four_role_promoted": false,
+    "last_status": "concept_pending"
+  },
+  "limits": [
+    "Anti-unification and predicate invention are established ideas; this is evidence about Leobot integration, not a novelty claim.",
+    "The raw learner still requires lexical anchors between adjacent variable spans and is capped at three roles.",
+    "Opaque relation induction does not establish intensional meaning or synonymy across different surfaces.",
+    "Evaluation is internal and synthetic; it does not demonstrate AGI/ASI."
+  ]
+}

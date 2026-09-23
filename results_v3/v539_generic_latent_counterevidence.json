@@ -1,0 +1,22 @@
+{
+  "version": "0.5.39",
+  "experiment": "future_counterevidence_for_cross_type_latent_strategy",
+  "code_hash": "e855f17757905ad7f22cf0fdb84df61edfa307ab98fd1eb85a58ee125f952001",
+  "code_frozen": true,
+  "treatment": {
+    "episodes": 100,
+    "wrong_downstream_facts_retracted": 100,
+    "orphan_latent_nodes_removed": 100,
+    "later_equivalent_cases_abstained": 100
+  },
+  "ablation_without_v539_confirmation": {
+    "episodes": 100,
+    "later_wrong_generic_transfers_repeated": 100
+  },
+  "unrelated_future_fact_control": {
+    "cases": 50,
+    "policy_remained_active": 50
+  },
+  "credit_rule": "only a later explicit non-coreference assertion matching predicate and all undisputed arguments can contest the V5.38 consumer strategy; generic transfers themselves never add strategy support",
+  "claim": "future explicit evidence can autonomously retract a wrong generic latent-bundle consequence and withdraw the concrete cross-type consumer policy before the next equivalent case. This is bounded counterevidence-driven strategy revision, not general self-correction or AGI/ASI."
+}

@@ -1,0 +1,202 @@
+{
+  "version": "V5.3-development",
+  "mechanism": "exact_history_replay_with_regret_rollback",
+  "code_hash_before": "e855f17757905ad7f22cf0fdb84df61edfa307ab98fd1eb85a58ee125f952001",
+  "code_hash_after": "e855f17757905ad7f22cf0fdb84df61edfa307ab98fd1eb85a58ee125f952001",
+  "code_unchanged": true,
+  "rows": [
+    {
+      "idx": 0,
+      "regime": "forward",
+      "attempts": 2,
+      "target_candidates": 178,
+      "ms": 22.508461959660053,
+      "policy": "forward_first",
+      "regime_reset": false,
+      "policy_updated": true,
+      "status": "concept_learned"
+    },
+    {
+      "idx": 1,
+      "regime": "forward",
+      "attempts": 1,
+      "target_candidates": 128,
+      "ms": 25.598260923288763,
+      "policy": "forward_first",
+      "regime_reset": false,
+      "policy_updated": false,
+      "status": "concept_learned"
+    },
+    {
+      "idx": 2,
+      "regime": "forward",
+      "attempts": 1,
+      "target_candidates": 128,
+      "ms": 27.21794496756047,
+      "policy": "forward_first",
+      "regime_reset": false,
+      "policy_updated": false,
+      "status": "concept_learned"
+    },
+    {
+      "idx": 3,
+      "regime": "forward",
+      "attempts": 1,
+      "target_candidates": 128,
+      "ms": 30.424196971580386,
+      "policy": "forward_first",
+      "regime_reset": false,
+      "policy_updated": false,
+      "status": "concept_learned"
+    },
+    {
+      "idx": 4,
+      "regime": "forward",
+      "attempts": 1,
+      "target_candidates": 128,
+      "ms": 31.54505300335586,
+      "policy": "forward_first",
+      "regime_reset": false,
+      "policy_updated": false,
+      "status": "concept_learned"
+    },
+    {
+      "idx": 5,
+      "regime": "forward",
+      "attempts": 1,
+      "target_candidates": 128,
+      "ms": 34.131712978705764,
+      "policy": "forward_first",
+      "regime_reset": false,
+      "policy_updated": false,
+      "status": "concept_learned"
+    },
+    {
+      "idx": 6,
+      "regime": "forward",
+      "attempts": 1,
+      "target_candidates": 128,
+      "ms": 36.09476808924228,
+      "policy": "forward_first",
+      "regime_reset": false,
+      "policy_updated": false,
+      "status": "concept_learned"
+    },
+    {
+      "idx": 7,
+      "regime": "forward",
+      "attempts": 1,
+      "target_candidates": 128,
+      "ms": 38.2163809845224,
+      "policy": "forward_first",
+      "regime_reset": false,
+      "policy_updated": false,
+      "status": "concept_learned"
+    },
+    {
+      "idx": 50,
+      "regime": "reverse",
+      "attempts": 7,
+      "target_candidates": 458,
+      "ms": 25.859370944090188,
+      "policy": "reverse_first",
+      "regime_reset": true,
+      "policy_updated": true,
+      "status": "concept_learned"
+    },
+    {
+      "idx": 51,
+      "regime": "reverse",
+      "attempts": 1,
+      "target_candidates": 128,
+      "ms": 27.87103899754584,
+      "policy": "reverse_first",
+      "regime_reset": false,
+      "policy_updated": false,
+      "status": "concept_learned"
+    },
+    {
+      "idx": 52,
+      "regime": "reverse",
+      "attempts": 1,
+      "target_candidates": 128,
+      "ms": 30.181098030880094,
+      "policy": "reverse_first",
+      "regime_reset": false,
+      "policy_updated": false,
+      "status": "concept_learned"
+    },
+    {
+      "idx": 53,
+      "regime": "reverse",
+      "attempts": 1,
+      "target_candidates": 128,
+      "ms": 32.45381696615368,
+      "policy": "reverse_first",
+      "regime_reset": false,
+      "policy_updated": false,
+      "status": "concept_learned"
+    },
+    {
+      "idx": 54,
+      "regime": "reverse",
+      "attempts": 1,
+      "target_candidates": 128,
+      "ms": 34.739713999442756,
+      "policy": "reverse_first",
+      "regime_reset": false,
+      "policy_updated": false,
+      "status": "concept_learned"
+    },
+    {
+      "idx": 55,
+      "regime": "reverse",
+      "attempts": 1,
+      "target_candidates": 128,
+      "ms": 36.747602047398686,
+      "policy": "reverse_first",
+      "regime_reset": false,
+      "policy_updated": false,
+      "status": "concept_learned"
+    },
+    {
+      "idx": 56,
+      "regime": "reverse",
+      "attempts": 1,
+      "target_candidates": 128,
+      "ms": 38.759735063649714,
+      "policy": "reverse_first",
+      "regime_reset": false,
+      "policy_updated": false,
+      "status": "concept_learned"
+    },
+    {
+      "idx": 57,
+      "regime": "reverse",
+      "attempts": 1,
+      "target_candidates": 128,
+      "ms": 41.8133579660207,
+      "policy": "reverse_first",
+      "regime_reset": false,
+      "policy_updated": false,
+      "status": "concept_learned"
+    }
+  ],
+  "summary": {
+    "pre_shift_policy": "forward_first",
+    "first_shift_attempts": 7,
+    "first_shift_regime_reset": true,
+    "policy_after_first_shift": "reverse_first",
+    "subsequent_shift_attempts": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "regime_resets": 1,
+    "final_policy": "reverse_first"
+  }
+}

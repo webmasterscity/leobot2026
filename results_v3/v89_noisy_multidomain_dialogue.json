@@ -1,0 +1,171 @@
+{
+  "version": "V8.9-noisy-multidomain-dialogue",
+  "n_query_turns": 13,
+  "n_useful_answers": 8,
+  "useful_rate": 0.6153846153846154,
+  "legacy_same_input_recovery": false,
+  "turns": [
+    {
+      "label": "raw",
+      "status": "raw_relation_pending",
+      "text": ""
+    },
+    {
+      "label": "raw",
+      "status": "raw_relation_pending",
+      "text": ""
+    },
+    {
+      "label": "raw",
+      "status": "raw_relation_learned",
+      "text": ""
+    },
+    {
+      "label": "raw",
+      "status": "raw_relation_pending",
+      "text": ""
+    },
+    {
+      "label": "proc_teach",
+      "status": "procedure_pending",
+      "text": ""
+    },
+    {
+      "label": "proc_teach",
+      "status": "procedure_pending",
+      "text": ""
+    },
+    {
+      "label": "proc_teach",
+      "status": "procedure_learned",
+      "text": ""
+    },
+    {
+      "label": "sym",
+      "status": "pending_support",
+      "text": ""
+    },
+    {
+      "label": "sym",
+      "status": "pending_support",
+      "text": ""
+    },
+    {
+      "label": "sym",
+      "status": "operator_learned",
+      "text": ""
+    },
+    {
+      "label": "sym",
+      "status": "operator_learned",
+      "text": ""
+    },
+    {
+      "label": "goal",
+      "status": "pending_goal_support",
+      "text": ""
+    },
+    {
+      "label": "goal",
+      "status": "goal_schema_learned",
+      "text": ""
+    },
+    {
+      "label": "q_rel",
+      "status": "supported",
+      "text": "Según la información registrada: ana conoce a luis."
+    },
+    {
+      "label": "q_rel_unknown",
+      "status": "unknown",
+      "text": "No tengo información suficiente para afirmarlo ni negarlo."
+    },
+    {
+      "label": "q_proc",
+      "status": "procedure_executed",
+      "text": "Resultado mediante procedimiento aprendido: 41"
+    },
+    {
+      "label": "q_plan",
+      "status": "symbolic_plan",
+      "text": "Plan simbólico aprendido: robot va de casa a escuela"
+    },
+    {
+      "label": "q_plan_cue",
+      "status": "unrecognized",
+      "text": "No sé interpretar esa formulación todavía. Puedes enseñarme una construcción con texto y significado"
+    },
+    {
+      "label": "q_noise",
+      "status": "unrecognized",
+      "text": "No sé interpretar esa formulación todavía. Puedes enseñarme una construcción con texto y significado"
+    },
+    {
+      "label": "q_rel2",
+      "status": "supported",
+      "text": "Según la información registrada: maria conoce a pedro."
+    },
+    {
+      "label": "q_proc2",
+      "status": "procedure_executed",
+      "text": "Resultado mediante procedimiento aprendido: 1"
+    },
+    {
+      "label": "correct",
+      "status": "procedure_demoted",
+      "text": ""
+    },
+    {
+      "label": "q_proc_down",
+      "status": "procedure_unresolved",
+      "text": "Reconozco la construcción, pero no puedo ejecutar el procedimiento con la evidencia vigente."
+    },
+    {
+      "label": "reteach",
+      "status": "procedure_pending",
+      "text": ""
+    },
+    {
+      "label": "reteach",
+      "status": "procedure_pending",
+      "text": ""
+    },
+    {
+      "label": "reteach",
+      "status": "procedure_learned",
+      "text": ""
+    },
+    {
+      "label": "q_proc_up",
+      "status": "procedure_executed",
+      "text": "Resultado mediante procedimiento aprendido: 42"
+    },
+    {
+      "label": "q_proc_corrected",
+      "status": "procedure_corrected_conflict",
+      "text": "Hay una corrección explícita para este caso; no aplicaré la regla general."
+    },
+    {
+      "label": "q_rel_after",
+      "status": "supported",
+      "text": "Según la información registrada: ana conoce a luis."
+    },
+    {
+      "label": "q_plan_after",
+      "status": "symbolic_plan",
+      "text": "Plan simbólico aprendido: robot va de casa a parque"
+    }
+  ],
+  "checks": {
+    "rel_ok": true,
+    "proc_ok": true,
+    "plan_ok": true,
+    "noise_not_hallucinated": true,
+    "correct_demotes": true,
+    "proc_recovers": true,
+    "corrected_input_remains_contested": true,
+    "rel_after_ok": true,
+    "plan_after_ok": true
+  },
+  "pass": true
+}

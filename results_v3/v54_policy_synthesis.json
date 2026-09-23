@@ -1,0 +1,155 @@
+{
+  "version": "V5.4-development",
+  "mechanism": "exact_replay_policy_synthesis",
+  "policy_space": 148,
+  "code_hash_before": "e855f17757905ad7f22cf0fdb84df61edfa307ab98fd1eb85a58ee125f952001",
+  "code_hash_after": "e855f17757905ad7f22cf0fdb84df61edfa307ab98fd1eb85a58ee125f952001",
+  "code_unchanged": true,
+  "treatment": {
+    "domains": 40,
+    "attempts_total": 137,
+    "target_candidates_total": 11256,
+    "heldout_correct": 160,
+    "heldout_total": 160,
+    "median_ms": 45.03020498668775,
+    "final_policy": "synth:cat,p,q,inv:forward,same,reverse",
+    "first_three": [
+      {
+        "domain": 0,
+        "attempts": 20,
+        "target_candidates": 1194,
+        "policy_used": "baseline",
+        "policy_after": "synth:cat,p,q,inv:forward,same,reverse",
+        "ms": 49.687968916259706,
+        "heldout": 4,
+        "heldout_total": 4
+      },
+      {
+        "domain": 1,
+        "attempts": 3,
+        "target_candidates": 258,
+        "policy_used": "synth:cat,p,q,inv:forward,same,reverse",
+        "policy_after": "synth:cat,p,q,inv:forward,same,reverse",
+        "ms": 27.87201094906777,
+        "heldout": 4,
+        "heldout_total": 4
+      },
+      {
+        "domain": 2,
+        "attempts": 3,
+        "target_candidates": 258,
+        "policy_used": "synth:cat,p,q,inv:forward,same,reverse",
+        "policy_after": "synth:cat,p,q,inv:forward,same,reverse",
+        "ms": 27.227886952459812,
+        "heldout": 4,
+        "heldout_total": 4
+      }
+    ],
+    "last_three": [
+      {
+        "domain": 37,
+        "attempts": 3,
+        "target_candidates": 258,
+        "policy_used": "synth:cat,p,q,inv:forward,same,reverse",
+        "policy_after": "synth:cat,p,q,inv:forward,same,reverse",
+        "ms": 52.460312959738076,
+        "heldout": 4,
+        "heldout_total": 4
+      },
+      {
+        "domain": 38,
+        "attempts": 3,
+        "target_candidates": 258,
+        "policy_used": "synth:cat,p,q,inv:forward,same,reverse",
+        "policy_after": "synth:cat,p,q,inv:forward,same,reverse",
+        "ms": 52.502913982607424,
+        "heldout": 4,
+        "heldout_total": 4
+      },
+      {
+        "domain": 39,
+        "attempts": 3,
+        "target_candidates": 258,
+        "policy_used": "synth:cat,p,q,inv:forward,same,reverse",
+        "policy_after": "synth:cat,p,q,inv:forward,same,reverse",
+        "ms": 53.812197991646826,
+        "heldout": 4,
+        "heldout_total": 4
+      }
+    ]
+  },
+  "legacy_forward_control": {
+    "domains": 40,
+    "attempts_total": 760,
+    "target_candidates_total": 45200,
+    "heldout_correct": 160,
+    "heldout_total": 160,
+    "median_ms": 72.19169702148065,
+    "final_policy": "forward_first",
+    "first_three": [
+      {
+        "domain": 0,
+        "attempts": 19,
+        "target_candidates": 1130,
+        "policy_used": "forward_first",
+        "policy_after": "synth:cat,p,q,inv:forward,same,reverse",
+        "ms": 26.63817605935037,
+        "heldout": 4,
+        "heldout_total": 4
+      },
+      {
+        "domain": 1,
+        "attempts": 19,
+        "target_candidates": 1130,
+        "policy_used": "forward_first",
+        "policy_after": "synth:cat,p,q,inv:forward,same,reverse",
+        "ms": 28.373915003612638,
+        "heldout": 4,
+        "heldout_total": 4
+      },
+      {
+        "domain": 2,
+        "attempts": 19,
+        "target_candidates": 1130,
+        "policy_used": "forward_first",
+        "policy_after": "synth:cat,p,q,inv:forward,same,reverse",
+        "ms": 30.12795001268387,
+        "heldout": 4,
+        "heldout_total": 4
+      }
+    ],
+    "last_three": [
+      {
+        "domain": 37,
+        "attempts": 19,
+        "target_candidates": 1130,
+        "policy_used": "forward_first",
+        "policy_after": "synth:cat,p,q,inv:forward,same,reverse",
+        "ms": 98.93393190577626,
+        "heldout": 4,
+        "heldout_total": 4
+      },
+      {
+        "domain": 38,
+        "attempts": 19,
+        "target_candidates": 1130,
+        "policy_used": "forward_first",
+        "policy_after": "synth:cat,p,q,inv:forward,same,reverse",
+        "ms": 98.08633604552597,
+        "heldout": 4,
+        "heldout_total": 4
+      },
+      {
+        "domain": 39,
+        "attempts": 19,
+        "target_candidates": 1130,
+        "policy_used": "forward_first",
+        "policy_after": "synth:cat,p,q,inv:forward,same,reverse",
+        "ms": 99.03942898381501,
+        "heldout": 4,
+        "heldout_total": 4
+      }
+    ]
+  },
+  "scope_note": "Policies are synthesized only from generic candidate metadata; replay scores only prefixes whose outcomes were historically observed."
+}

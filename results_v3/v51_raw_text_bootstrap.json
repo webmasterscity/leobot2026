@@ -1,0 +1,52 @@
+{
+  "version": "0.5.1-hybrid-eval",
+  "experiment": "zero_ontology_raw_text_to_composed_relation",
+  "code_hash_before": "e855f17757905ad7f22cf0fdb84df61edfa307ab98fd1eb85a58ee125f952001",
+  "code_hash_after": "e855f17757905ad7f22cf0fdb84df61edfa307ab98fd1eb85a58ee125f952001",
+  "code_unchanged": true,
+  "initial_facts": 0,
+  "raw_primitives": {
+    "learned": 2,
+    "predicates": [
+      "primitive_ba9934c6e81e58d1_a2",
+      "primitive_bf47bb54fe05c265_a2"
+    ],
+    "support_statuses_a": [
+      "raw_relation_pending",
+      "raw_relation_pending",
+      "raw_relation_learned"
+    ],
+    "support_statuses_b": [
+      "schema_pending",
+      "schema_pending",
+      "raw_relation_learned"
+    ]
+  },
+  "composition": {
+    "status": "schema_learned",
+    "arity": 3,
+    "selected": "primitive_ba9934c6e81e58d1_a2(r0,r1) & primitive_bf47bb54fe05c265_a2(r1,r2)",
+    "uses_both_raw_primitives": true
+  },
+  "heldout": {
+    "novel_pairs_stored": 100,
+    "cases": 100,
+    "composed_positive_entailed": 100,
+    "positive_cases": 100,
+    "mismatched_rejected": 100,
+    "negative_cases": 100,
+    "median_raw_assertion_ms": 0.13371050590649247
+  },
+  "control_no_raw_promotion": {
+    "primitive_promotions": 0,
+    "composition_last_status": "schema_unrecognized",
+    "novel_statuses": [
+      "raw_relation_pending"
+    ]
+  },
+  "limits": [
+    "La induccion cruda sigue limitada a primitivas binarias con dos spans y anclas compartidas.",
+    "El concepto ternario se aprende desde ejemplos contrastivos sobre primitivas ya adquiridas; no es comprension abierta de documentos.",
+    "Evaluacion interna sintetica; no demuestra AGI/ASI."
+  ]
+}

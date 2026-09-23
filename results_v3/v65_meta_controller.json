@@ -1,0 +1,196 @@
+{
+  "version": "V6.5 MetaController",
+  "code_hash_before": "5e88b661f121e64ddb7df67ec785a1a4ff5728da567e7cb597d09f259c451fac",
+  "code_hash_after": "5e88b661f121e64ddb7df67ec785a1a4ff5728da567e7cb597d09f259c451fac",
+  "code_unchanged": true,
+  "elapsed_s": 0.29001480992883444,
+  "cross_learner_routing": {
+    "treatment_status": "operator_learned",
+    "control_status": "operator_learned",
+    "treatment_mode": "meta_role_cardinality_transfer",
+    "control_mode": "meta_role_set_transfer",
+    "treatment_representation_attempts": 1,
+    "control_representation_attempts": 4,
+    "attempt_reduction_pct": 75.0,
+    "treatment_route": {
+      "order": [
+        "role_cardinality",
+        "projection",
+        "permutation",
+        "structural_analogy",
+        "role_topology",
+        "role_set"
+      ],
+      "used": true,
+      "scores": [
+        {
+          "strategy": "role_cardinality",
+          "cost": 2825.3903754806997,
+          "confidence": 0.8703247258333905,
+          "nearest_distance": 0.013888888888888888,
+          "support": 5,
+          "mode": "interpolated"
+        },
+        {
+          "strategy": "projection",
+          "cost": 3000.0,
+          "confidence": 0.8703247258333905,
+          "nearest_distance": 0.013888888888888888,
+          "support": 4,
+          "mode": "interpolated"
+        },
+        {
+          "strategy": "permutation",
+          "cost": 3000.0,
+          "confidence": 0.8703247258333905,
+          "nearest_distance": 0.013888888888888888,
+          "support": 4,
+          "mode": "interpolated"
+        },
+        {
+          "strategy": "structural_analogy",
+          "cost": 3000.0,
+          "confidence": 0.580216483888927,
+          "nearest_distance": 0.013888888888888888,
+          "support": 2,
+          "mode": "interpolated"
+        },
+        {
+          "strategy": "role_topology",
+          "cost": 3000.0,
+          "confidence": 0.580216483888927,
+          "nearest_distance": 0.013888888888888888,
+          "support": 2,
+          "mode": "interpolated"
+        },
+        {
+          "strategy": "role_set",
+          "cost": 3000.0000000000005,
+          "confidence": 0.8703247258333905,
+          "nearest_distance": 0.013888888888888888,
+          "support": 7,
+          "mode": "interpolated"
+        }
+      ],
+      "mode": "rbf",
+      "signature": "0.5,0.25,0.333333,0.25,0.125,0.125,0,0",
+      "features": [
+        0.5,
+        0.25,
+        0.3333333333333333,
+        0.25,
+        0.125,
+        0.125,
+        0.0,
+        0.0
+      ]
+    },
+    "treatment_heldout": {
+      "correct": 200,
+      "total": 200,
+      "false_accept_without_road": 0
+    },
+    "control_heldout": {
+      "correct": 200,
+      "total": 200,
+      "false_accept_without_road": 0
+    }
+  },
+  "safety_fallback": {
+    "status": "operator_learned",
+    "mode": "meta_role_topology_transfer",
+    "attempts": [
+      {
+        "strategy": "role_cardinality",
+        "learned": false
+      },
+      {
+        "strategy": "projection",
+        "learned": false
+      },
+      {
+        "strategy": "permutation",
+        "learned": false
+      },
+      {
+        "strategy": "role_set",
+        "learned": false
+      },
+      {
+        "strategy": "structural_analogy",
+        "learned": false
+      },
+      {
+        "strategy": "role_topology",
+        "learned": true
+      }
+    ],
+    "heldout_correct": 100,
+    "heldout_total": 100
+  },
+  "active_evidence": {
+    "initial_candidate_sets": 6,
+    "active_probes": [
+      {
+        "role": 0,
+        "candidate_count": 6,
+        "before": [
+          3,
+          3,
+          5,
+          7
+        ]
+      },
+      {
+        "role": 1,
+        "candidate_count": 3,
+        "before": [
+          2,
+          4,
+          5,
+          7
+        ]
+      },
+      {
+        "role": 2,
+        "candidate_count": 3,
+        "before": [
+          2,
+          3,
+          6,
+          7
+        ]
+      },
+      {
+        "role": 3,
+        "candidate_count": 3,
+        "before": [
+          2,
+          3,
+          5,
+          8
+        ]
+      }
+    ],
+    "treatment_final_version_space": [
+      [
+        0,
+        3
+      ]
+    ],
+    "control_final_version_space_size": 6,
+    "treatment_status": "procedure_learned",
+    "control_status": "procedure_unresolved",
+    "treatment_roles": [
+      0,
+      3
+    ],
+    "heldout_correct": 200,
+    "heldout_total": 200
+  },
+  "persistence": {
+    "observations_before": 25,
+    "observations_after": 25,
+    "shared_identity": true
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "version": "0.5.34",
+  "experiment": "generated_document_dependency_representation_types",
+  "code_hash": "615749e62e3dd25443e8eb37ccc69ed819194afe662e76337e1351ef21b9d7d4",
+  "code_frozen": true,
+  "treatment": {
+    "heldout_cases": 100,
+    "temporal_dependency_selected": 100,
+    "event_selected": 0,
+    "prior_support": {
+      "document_dependency:_doc_precedes": 4,
+      "document_dependency:_doc_causes": 2,
+      "event": 2
+    }
+  },
+  "causal_only_v533_ablation": {
+    "heldout_cases": 100,
+    "selected_same_temporal_type": 0
+  },
+  "event_only_v532_ablation": {
+    "heldout_cases": 100,
+    "event_selected": 100
+  },
+  "equal_best_dependency_control": {
+    "heldout_cases": 100,
+    "safe_ambiguity": 100
+  },
+  "safety": "only _doc_* atoms with document_discourse_v524 provenance can generate dependency types",
+  "claim": "generic reification/competition of explicit document dependency types plus events; not autonomous arbitrary ontology invention and not AGI/ASI"
+}
