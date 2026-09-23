@@ -2,15 +2,15 @@
 
 ## Estado de misión
 
-- Actualizado: 2026-09-22 · commit 51bf9cd (motor congelado)
+- Actualizado: 2026-09-22 · commit 7d9b2ac (motor B-1 en desarrollo)
 - Fases: A superada en su ensayo acotado · B en curso · C pendiente · D pendiente · E pendiente · F pendiente · G pendiente · H pendiente
 - Fase en curso: B — detectar una operación ausente e inventar una primitiva meta verificable
 - Último tag estable: `estable-A-1` · huella del motor: `644c55528a5fd97a8822f719f70e11cfae242783`
 - Pruebas: 528 pasan · 2 fallos esperados · 0 fallos · Python 3.12.3
 - Orden rápida: `timeout 40s env PYTHONHASHSEED=0 python3 -m unittest tests.test_meta_abstraction_a1 tests.test_meta_active_probe tests.test_v70 -q` · Orden completa: `timeout 90s env PYTHONHASHSEED=0 ./run_tests.sh --solo-pruebas`
-- Preregistro activo: `prereg/B-1-operador-agregado.md` · estado: diseñado; tablero: `prereg/agi-board-1.md`
-- Diseños intentados en la fase en curso: 1) operador agregado tipado → preregistrado, sin resultado
-- Siguiente paso concreto: implementar B-1 según `prereg/B-1-operador-agregado.md`, sin perder la referencia de lenguaje 0/20 ni la puerta de latencia
+- Preregistro activo: `prereg/B-1-operador-agregado.md` · estado: implementando; tablero: `prereg/agi-board-1.md`
+- Diseños intentados en la fase en curso: 1) operador agregado tipado → eficaz en desarrollo; reserva pendiente
+- Siguiente paso concreto: fijar evaluador B-1, congelar motor en `freeze-B-1` y ejecutar las tres órdenes con controles y presupuesto
 - Bloqueos: ninguno
 - Lectura (seguimiento): 0/4 en la sonda visible `experiments/user_text_probe.py` al cerrar A; no es una reserva independiente
 - Tablero AGI (último tag): [resultado](results_v3/agi_board_estable-A-1.json) · MLQA español público 0/20, 20 no reconocidas · ARC-AGI-3 no evaluado · brecha frontier no comparable · obstáculo principal: adquirir significado de texto libre
@@ -26,6 +26,7 @@
 - 2026-09-22 · [B-1](prereg/B-1-operador-agregado.md) y [latencia fija](prereg/performance-1-latencia.md) preregistrados antes de código; sin resultado ni tag nuevo.
 - 2026-09-22 · Batería de latencia fija sobre `estable-A-1`: 100 003 hechos, cinco tipos de consulta, tres semillas de hash, 100 respuestas correctas por corrida; todas las puertas p95 y tope absoluto pasaron. [Semilla 0](results_v3/latency_estable-A-1_hashseed0.json), [1](results_v3/latency_estable-A-1_hashseed1.json), [2](results_v3/latency_estable-A-1_hashseed2.json). Pico 199 520 KiB. Esta mezcla acotada no demuestra rapidez en conversación o razonamiento abiertos. [Tablero AGI](prereg/agi-board-1.md) preregistrado antes de puntuar MLQA; sin tag nuevo.
 - 2026-09-22 · [Tablero AGI](results_v3/agi_board_estable-A-1.json): 20 preguntas fijas del desarrollo público de MLQA español, 0/20 y 20 no reconocidas. ARC-AGI-3 es la versión pública reciente verificada, pero Leobot carece de interfaz para sus juegos; no evaluado. Sin comparación frontier en batería igualada. El principal obstáculo medido sigue siendo lenguaje abierto; B-1 se mantiene por su posible reducción de parches humanos, sujeto a evidencia.
+- 2026-09-22 · B-1 implementado en `7d9b2ac`: plegado booleano tipado y acotado, elección del reductor desde experiencia y reuso en otra forma de entrada. En desarrollo, la fuente y el destino pasaron sus sondas; 15 pruebas rápidas relevantes pasaron en 69,6 s. Un primer ensayo de contraevidencia agotó 60 s por búsquedas repetidas; se agregó espera por 32 experiencias independientes antes de reintentar y la prueba de retirada tras reinicio pasó en 10,7 s. Esto no es todavía reserva ni promoción.
 
 ## Resultados negativos y trampas conocidas
 
