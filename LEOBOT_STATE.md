@@ -2,22 +2,23 @@
 
 ## Estado de misión
 
-- Actualizado: 2026-09-23 · commit 6a154ef (motor D-1 congelado)
-- Fases: A superada en ensayo acotado · B superada en ensayo acotado · C superada en ensayo acotado · D superada en ensayo acotado · E pendiente · F pendiente · G pendiente · H pendiente
-- Fase en curso: E — educación desde texto español libre y documentos desconocidos
-- Último tag estable: `estable-D-1` · huella del motor: `1f3187f2ced4c97364503187d074815f33612326` (idéntica a C-2: D-1 solo añadió evidencia)
+- Actualizado: 2026-09-23 · commit 7321215 (último ensayo E, motor D-1 conservado)
+- Fases: A superada en ensayo acotado · B superada en ensayo acotado · C superada en ensayo acotado · D superada en ensayo acotado · E refutada en cinco diseños preregistrados · F pendiente · G pendiente · H pendiente
+- Fase en curso: F — comprobar aprendizaje general con arquitectura congelada; E falló y sigue siendo obstáculo
+- Último tag estable: `estable-E-1` · huella del motor: `1f3187f2ced4c97364503187d074815f33612326` (mismo árbol que D-1; no se promovió mecanismo de lectura)
 - Pruebas: 536 pasan · 2 fallos esperados · 0 fallos · Python 3.12.3
 - Orden rápida: `timeout 40s env PYTHONHASHSEED=0 python3 -m unittest tests.test_meta_abstraction_a1 tests.test_meta_active_probe tests.test_v70 -q` · Orden completa: `timeout 600s env PYTHONHASHSEED=0 python3 -m experiments.regression_batches`
-- Preregistro activo: [E-7](prereg/E-7-hueco-textual-unico.md) · ejecutado, extracción literal rechazada
-- Diseños intentados en la fase en curso: E-1 límite; E-1b 0/20; E-2 recuperación; E-3 educación cruda; E-4 argumentos largos; E-5 fragmentos fallan; E-6 rompe relación corta; E-6b filtro pierde utilidad; E-7 hueco único 0/40
-- Siguiente paso concreto: cerrar el balance de E de los diseños preregistrados; investigar una representación lingüística adquirible con feedback real, distinta de recuperación, fragmentación y umbrales, antes de programarla
+- Preregistro activo: ninguno; [E-7](prereg/E-7-hueco-textual-unico.md) ejecutado y rechazado
+- Diseños intentados en la fase en curso: F ninguno; E cerrada tras E-2 recuperación, E-3 educación, E-5 fragmentación, E-6b compresión, E-7 extracción, todos negativos para lectura libre
+- Siguiente paso concreto: preregistrar F-1 como puerta de viabilidad de Architecture Freeze con motor `estable-E-1`; fijar familias/dominios externos y límites antes de exponer experiencia, comprobar que no se atribuye recuperación a aprendizaje
 - Bloqueos: ninguno
-- Lectura (seguimiento): 0/4 en la sonda visible `experiments/user_text_probe.py` al cerrar D; no es una reserva independiente
+- Lectura (seguimiento): 0/4 en la sonda visible `experiments/user_text_probe.py` al cerrar E; huella de código idéntica antes/después, no es reserva independiente
 - Tablero AGI (árbol idéntico al último tag): [resultado](results_v3/agi_board_freeze-D-1.json) · MLQA español público 0/20, 20 no reconocidas · cadena D-1 3/3 interna, learner C 0 candidatos ahorrados fuera de numérico · ARC-AGI-3 no evaluado · brecha frontier no comparable · obstáculo principal: adquirir significado de texto libre
 - Latencia (último tag, árbol congelado): 100 003 hechos; peor p95 conocido 0,123 ms, razonamiento 0,271 ms, máximo 0,277 ms; RAM pico 199 596 KiB en tres semillas; ninguna categoría empeoró >20 %
 
 ## Historial de ciclos
 
+- 2026-09-23 · Cierre de E **refutada en los diseños ensayados**, no imposibilidad general de leer: E-2 recuperación, E-3 currículo crudo, E-5 fragmentos, E-6b filtro y E-7 extracción cumplieron preregistro y fallaron sus criterios; E-1b/E-4 diagnosticaron la pérdida de significado. Las variantes E-5/E-6b fueron revertidas, árbol del motor igual a D-1. Regresión completa: 538 pruebas totales, 536 pasan y 2 fallos esperados, 0 fallos, 94,3 s; sonda visible 0/4. Tag de checkpoint `estable-E-1` con resultado negativo. F queda disponible pero el fallo de E hace improbable superarla sin otro mecanismo de aprendizaje lingüístico.
 - 2026-09-23 · [E-7](prereg/E-7-hueco-textual-unico.md) preregistrado en `ad51c88`, motor `freeze-E-7` idéntico a D-1 e intacto. [Resultado](results_v3/e7_unique_gap.json): 40 artículos nuevos, 3 intentos de extraer un único tramo distinto de la pregunta, 0 correctos; 2 intentos con pasajes deliberadamente incorrectos. CPU 1,03 s, pared 7,89 s con descarga, pico 109 640 KiB. **No integrar**; recuperar y hallar un hueco de tokens no equivale a reconocer el papel de la respuesta.
 - 2026-09-23 · [E-6b](prereg/E-6b-longitud-de-argumentos.md) preregistrado en `2e66737`; motor `freeze-E-6b`, árbol `1b954548892a735222f106f1551edf00fe811d34`, intacto en el ensayo. [Resultado](results_v3/e6b_mdl_filter.json): 30+20 artículos nuevos. Promociones de texto barajado 0/0 en enseñanza/prueba frente a 8/7 en ablación, pero cobertura real en cualquier argumento 1/20 frente a 5/20; cobertura breve 1/20 frente a 2/20; ambos 0 respuestas exactas. Enseñanza 7,72 s CPU frente a 3,38 s; candidatos 2881 frente a 1247. Total 58,29 s CPU, 64,92 s pared, 109 552 KiB. Guardar/cargar pasó; no hubo promoción en enseñanza que permitiera el control de negación. **Rechazado** por pérdida de cobertura y costo; se retira el filtro.
 - 2026-09-23 · [E-6](prereg/E-6-compresion-de-relaciones.md) preregistrado en `86b7b0d`. La fórmula de compresión eliminó cuatro de cinco plantillas vagas exploratorias de E-3, pero **falló antes de congelar**: `tests.test_v45` perdió 3/5 casos porque una relación corta con una sola ancla («enlaza») quedó bajo el umbral. 20 pruebas rápidas/documentales pasaron y 3 de 25 pruebas focales fallaron. No se alteró la prueba ni se hizo ensayo held-out; se retiró la variante no confirmada.
@@ -92,4 +93,4 @@
 
 ### En palabras fáciles de entender
 
-Leobot leyó cuatro frases de una forma repetida y aprendió qué partes importaban. Eso le ayudó a aprender una acción y, después, un cálculo con menos intentos. El nuevo modo de aprender creado en la fase anterior no ayudó en esta cadena. Las pruebas fueron preparadas y tenían datos de apoyo; Leobot todavía no respondió ninguna de 20 preguntas públicas en español. No hay base para decir que ya solo necesita información, que tiene inteligencia general o que supera a las personas.
+Probamos varias maneras de que Leobot aprenda leyendo textos reales en español. Guardó algunos datos, pero eran trozos demasiado grandes o confusos y no respondió ninguna de las preguntas de las pruebas externas. También probamos buscar frases, cortarlas y escoger palabras faltantes; ninguna solución funcionó lo bastante bien. Retiramos los cambios que empeoraban el resultado y dejamos registrados los fallos. Leobot sigue lejos de aprender solo con libros o de tener inteligencia general.
