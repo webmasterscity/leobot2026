@@ -1,0 +1,54 @@
+{
+  "kind": "development_single_replacement_upper_bound",
+  "preregistration": "prereg/G-8-parafrasis-por-feedback-contrastivo.md",
+  "engine_tree": "1f3187f2ced4c97364503187d074815f33612326",
+  "engine_unchanged": true,
+  "counts": {
+    "candidate_pairs": 66,
+    "same_sql_pairs": 21,
+    "other_sql_pairs_upper_bound_negative": 45
+  },
+  "per_database": {
+    "college_3": {
+      "candidate_pairs": 2,
+      "same_sql_pairs": 2
+    },
+    "county_public_safety": {},
+    "customer_complaints": {
+      "candidate_pairs": 2,
+      "other_sql_pairs_upper_bound_negative": 1,
+      "same_sql_pairs": 1
+    },
+    "gymnast": {
+      "candidate_pairs": 4,
+      "other_sql_pairs_upper_bound_negative": 2,
+      "same_sql_pairs": 2
+    },
+    "hr_1": {
+      "candidate_pairs": 5,
+      "same_sql_pairs": 5
+    },
+    "medicine_enzyme_interaction": {
+      "candidate_pairs": 4,
+      "other_sql_pairs_upper_bound_negative": 2,
+      "same_sql_pairs": 2
+    },
+    "movie_1": {
+      "candidate_pairs": 5,
+      "other_sql_pairs_upper_bound_negative": 2,
+      "same_sql_pairs": 3
+    },
+    "music_2": {
+      "candidate_pairs": 44,
+      "other_sql_pairs_upper_bound_negative": 38,
+      "same_sql_pairs": 6
+    }
+  },
+  "unique_positive_replacements": 17,
+  "max_promotable_under_preregistered_support": 0,
+  "gate_possible": false,
+  "note": "SQL gold used only by evaluator for an upper bound; no learner ran.",
+  "cpu_total_s": 1.221196,
+  "wall_total_s": 5.114209,
+  "max_rss_kib": 169440
+}
