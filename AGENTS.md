@@ -1,5 +1,7 @@
 # Instrucciones para trabajar en Leobot
 
+La misión permanente está en `MISION.md`: léela completa al empezar cada sesión y síguela. Si te lanzaron como verificador independiente con un encargo concreto (regla 5.10 de `MISION.md`), haz solo ese encargo.
+
 La continuidad técnica está en `LEOBOT_STATE.md`. Reanuda desde su «Siguiente paso concreto», conserva los resultados negativos y sigue las restricciones del proyecto: el motor operacional de `leobot/` no usa LLM, redes neuronales ni servicios que oculten esas capacidades.
 
 ## Investigación científica para problemas difíciles
