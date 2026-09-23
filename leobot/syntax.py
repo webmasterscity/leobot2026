@@ -4,8 +4,9 @@ Demonstrations are sentences with word classes and heads.  A trigram hidden
 Markov tagger with a suffix model for unknown words (after TnT, Brants 2000)
 and an arc-factored dependency scorer decoded with Eisner's projective
 algorithm (Eisner 1996) are compiled from counts: no neural network,
-perceptron or gradient.  Arc scores are smoothed log-ratios between how often a
-configuration is a real arc and how often it was an opportunity for one.
+perceptron or gradient.  Arc scores are log-ratios of how often a
+configuration is a real arc versus an opportunity for one, estimated along a
+chain of contexts from general to specific (G-32).
 """
 from __future__ import annotations
 
@@ -17,7 +18,7 @@ LEXICAL_MIN = 3
 SUFFIX_MAX = 5
 SUFFIX_FREQ = 10
 BEAM = 12
-ARC_SMOOTHING = 2.0
+ARC_SMOOTHING = 5.0   # G-32: each arc context is smoothed toward the more general one
 LABEL_SMOOTHING = 3.0
 _WORD = re.compile(r'\w+|[^\w\s]')
 
@@ -142,6 +143,8 @@ class SyntaxMixin:
 
     @staticmethod
     def _arc_features(h, d, words, tags, counts) -> list[str]:
+        """Arc contexts, most general first (G-32).  Each is smoothed toward the
+        previous one instead of summing correlated evidence."""
         head_tag = tags[h - 1] if h else 'ROOT'
         dep_tag = tags[d - 1]
         direction = 'R' if h < d else 'L'
@@ -150,15 +153,17 @@ class SyntaxMixin:
         between = tags[low:high - 1] if h else ()
         verb = 'v' if 'VERB' in between or 'AUX' in between else '-'
         punct = 'p' if 'PUNCT' in between else '-'
-        features = [f'a\x1f{head_tag}\x1f{dep_tag}\x1f{direction}\x1f{distance}',
-                    f'b\x1f{head_tag}\x1f{dep_tag}\x1f{direction}\x1f{verb}{punct}']
+        same = 'y' if dep_tag in between else 'n'
+        contexts = [f'A1\x1f{head_tag}\x1f{dep_tag}\x1f{direction}',
+                    f'A2\x1f{head_tag}\x1f{dep_tag}\x1f{direction}\x1f{distance}',
+                    f'A3\x1f{head_tag}\x1f{dep_tag}\x1f{direction}\x1f{distance}\x1f{verb}{punct}{same}']
         head_word = words[h - 1] if h else '<root>'
         dep_word = words[d - 1]
         if h and counts.get(head_word, 0) >= LEXICAL_MIN:
-            features.append(f'c\x1f{head_word}\x1f{dep_tag}\x1f{direction}')
+            contexts.append(f'A4\x1f{head_word}\x1f{dep_tag}\x1f{direction}\x1f{distance}')
         if counts.get(dep_word, 0) >= LEXICAL_MIN:
-            features.append(f'd\x1f{head_tag}\x1f{dep_word}\x1f{direction}')
-        return features
+            contexts.append(f'A5\x1f{head_tag}\x1f{dep_word}\x1f{direction}\x1f{distance}')
+        return contexts
 
     def consolidate_syntax(self) -> dict:
         """Compile suffix statistics and interpolation weights from the counts."""
@@ -263,11 +268,12 @@ class SyntaxMixin:
         return final[1][1]
 
     # ----- parsing -------------------------------------------------------
-    def _arc_score(self, feature: str, prior: float) -> float:
+    def _arc_score(self, contexts, prior: float) -> float:
         model = self.syntax_model
-        arcs = model['arcs'].get(feature, 0)
-        chances = model['opportunities'].get(feature, 0)
-        rate = (arcs + ARC_SMOOTHING * prior) / (chances + ARC_SMOOTHING)
+        arcs, chances = model['arcs'], model['opportunities']
+        rate = prior
+        for context in contexts:
+            rate = (arcs.get(context, 0) + ARC_SMOOTHING * rate) / (chances.get(context, 0) + ARC_SMOOTHING)
         rate = min(max(rate, 1e-9), 1 - 1e-9)
         return math.log(rate / (1 - rate)) - math.log(prior / (1 - prior))
 
@@ -287,13 +293,11 @@ class SyntaxMixin:
             for d in range(1, n + 1):
                 if h == d:
                     continue
-                total = 0.0
-                for feature in self._arc_features(h, d, lowered, tags, model['word_counts']):
-                    value = memo.get(feature)
-                    if value is None:
-                        value = memo[feature] = self._arc_score(feature, prior)
-                    total += value
-                score[h][d] = total
+                contexts = tuple(self._arc_features(h, d, lowered, tags, model['word_counts']))
+                value = memo.get(contexts)
+                if value is None:
+                    value = memo[contexts] = self._arc_score(contexts, prior)
+                score[h][d] = value
         heads = self._eisner(score, n)
         result = {'status': 'parsed_syntax', 'words': list(words), 'tags': tags, 'heads': heads}
         labels = self.label_arcs(words, tags, heads)
