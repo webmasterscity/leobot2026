@@ -33,7 +33,7 @@ class Construction:
     slots: list[dict]
     surface: str
 
-    def parse_candidates(self, text: str, limit: int = 3) -> list[dict]:
+    def parse_candidates(self, text: str, limit: int = 3, *, normalized: str | None = None) -> list[dict]:
         """Return all bounded slot segmentations compatible with this construction.
 
         For ordinary whitespace-delimited constructions, enumerate boundaries
@@ -42,7 +42,7 @@ class Construction:
         constructions whose placeholders are embedded inside a token retain the
         legacy regex path rather than being reinterpreted by this tokenizer.
         """
-        norm=normalize(text)
+        norm=normalize(text) if normalized is None else normalized
         match=re.fullmatch(self.pattern,norm)
         if match is None:
             return []
@@ -192,8 +192,9 @@ class Language:
             if tokens[i:i+n] == old:
                 yield tokens[:i] + new + tokens[i+n:]
 
-    def _rewrite_variants(self, text: str, schema: str, pred: str | None = None):
-        start = tuple(normalize(text).split())
+    def _rewrite_variants(self, text: str, schema: str, pred: str | None = None,
+                          *, normalized: str | None = None):
+        start = tuple((normalize(text) if normalized is None else normalized).split())
         yield ' '.join(start)
         rules=set(self.rewrites.get(schema, ()))
         if pred:
@@ -295,9 +296,10 @@ class Language:
     def parse(self, text: str) -> dict:
         if len(text) > 2048:
             return {'status': 'unrecognized', 'frame': None, 'alternatives': [], 'reason': 'Entrada demasiado larga.'}
+        normalized=normalize(text)
         matches: list[tuple[dict, tuple[int,int], bool]] = []
         for c in self.constructions:
-            for frame in c.parse_candidates(text):
+            for frame in c.parse_candidates(text, normalized=normalized):
                 matches.append((frame,self._specificity(c),False))
         if not matches and self.rewrites:
             by_schema: dict[str, list[Construction]] = defaultdict(list)
@@ -305,11 +307,11 @@ class Language:
                 by_schema[self._schema(c)].append(c)
             for schema, constructions in by_schema.items():
                 pred=constructions[0].frame.get('pred') if constructions else None
-                for variant in self._rewrite_variants(text, schema, pred):
-                    if variant == normalize(text):
+                for variant in self._rewrite_variants(text, schema, pred, normalized=normalized):
+                    if variant == normalized:
                         continue
                     for c in constructions:
-                        for frame in c.parse_candidates(variant):
+                        for frame in c.parse_candidates(variant, normalized=variant):
                             matches.append((frame,self._specificity(c),True))
         if not matches:
             return {'status':'unrecognized','frame':None,'alternatives':[],'composed_paraphrase':False}
