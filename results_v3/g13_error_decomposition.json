@@ -1,0 +1,125 @@
+{
+  "kind": "postgate_diagnostic_only",
+  "source": "G-13 failed gate",
+  "engine_tree": "1f3187f2ced4c97364503187d074815f33612326",
+  "engine_unchanged": true,
+  "reports": [
+    {
+      "seed": 719,
+      "heldout_utterances": 3753,
+      "detail": {
+        "treatment": {
+          "gold": 3686,
+          "predicted": 4244,
+          "joint_tp": 1343,
+          "boundary_tp": 1612,
+          "role_multiset_tp": 2042,
+          "novel_gold": 1531,
+          "novel_predicted": 1779,
+          "novel_joint_tp": 70,
+          "novel_boundary_tp": 138,
+          "joint_f1": 0.3387137452711223,
+          "boundary_oracle_f1": 0.4065573770491803,
+          "role_oracle_f1": 0.5150063051702396,
+          "novel_joint_f1": 0.04229607250755287,
+          "novel_boundary_oracle_f1": 0.08338368580060423
+        },
+        "no_context": {
+          "gold": 3686,
+          "predicted": 2844,
+          "joint_tp": 1362,
+          "boundary_tp": 1568,
+          "role_multiset_tp": 1912,
+          "novel_gold": 1531,
+          "novel_predicted": 520,
+          "novel_joint_tp": 49,
+          "novel_boundary_tp": 56,
+          "joint_f1": 0.4171516079632466,
+          "boundary_oracle_f1": 0.48024502297090355,
+          "role_oracle_f1": 0.585604900459418,
+          "novel_joint_f1": 0.04778156996587031,
+          "novel_boundary_oracle_f1": 0.05460750853242321
+        }
+      }
+    },
+    {
+      "seed": 787,
+      "heldout_utterances": 2502,
+      "detail": {
+        "treatment": {
+          "gold": 1123,
+          "predicted": 1940,
+          "joint_tp": 349,
+          "boundary_tp": 426,
+          "role_multiset_tp": 533,
+          "novel_gold": 519,
+          "novel_predicted": 905,
+          "novel_joint_tp": 19,
+          "novel_boundary_tp": 45,
+          "joint_f1": 0.22788116225922297,
+          "boundary_oracle_f1": 0.2781586679725759,
+          "role_oracle_f1": 0.3480248122755468,
+          "novel_joint_f1": 0.026685393258426966,
+          "novel_boundary_oracle_f1": 0.06320224719101124
+        },
+        "no_context": {
+          "gold": 1123,
+          "predicted": 1061,
+          "joint_tp": 309,
+          "boundary_tp": 340,
+          "role_multiset_tp": 474,
+          "novel_gold": 519,
+          "novel_predicted": 287,
+          "novel_joint_tp": 5,
+          "novel_boundary_tp": 9,
+          "joint_f1": 0.28296703296703296,
+          "boundary_oracle_f1": 0.31135531135531136,
+          "role_oracle_f1": 0.4340659340659341,
+          "novel_joint_f1": 0.01240694789081886,
+          "novel_boundary_oracle_f1": 0.022332506203473945
+        }
+      }
+    },
+    {
+      "seed": 853,
+      "heldout_utterances": 2495,
+      "detail": {
+        "treatment": {
+          "gold": 930,
+          "predicted": 1833,
+          "joint_tp": 109,
+          "boundary_tp": 185,
+          "role_multiset_tp": 203,
+          "novel_gold": 663,
+          "novel_predicted": 1214,
+          "novel_joint_tp": 14,
+          "novel_boundary_tp": 66,
+          "joint_f1": 0.07889974665218964,
+          "boundary_oracle_f1": 0.1339124140427072,
+          "role_oracle_f1": 0.14694173000361926,
+          "novel_joint_f1": 0.014917421417155035,
+          "novel_boundary_oracle_f1": 0.07032498668087374
+        },
+        "no_context": {
+          "gold": 930,
+          "predicted": 862,
+          "joint_tp": 97,
+          "boundary_tp": 109,
+          "role_multiset_tp": 170,
+          "novel_gold": 663,
+          "novel_predicted": 392,
+          "novel_joint_tp": 1,
+          "novel_boundary_tp": 6,
+          "joint_f1": 0.10825892857142858,
+          "boundary_oracle_f1": 0.12165178571428571,
+          "role_oracle_f1": 0.18973214285714285,
+          "novel_joint_f1": 0.0018957345971563982,
+          "novel_boundary_oracle_f1": 0.011374407582938388
+        }
+      }
+    }
+  ],
+  "cpu_total_s": 7.958306,
+  "wall_total_s": 9.356489,
+  "max_rss_kib": 77788
+}

@@ -1,0 +1,255 @@
+{
+  "kind": "development_span_role_learner",
+  "preregistration": "prereg/G-13-vinculos-de-papeles.md",
+  "seed": 853,
+  "source_spanish_sha256": "310462a79fa181ff83c643a8d356c7b8155fd37a25e80a77ba3ca9b29305c4a5",
+  "source_archive_bytes": 40251390,
+  "engine_tree": "1f3187f2ced4c97364503187d074815f33612326",
+  "engine_unchanged": true,
+  "training_scenarios": 14,
+  "heldout_scenarios": 4,
+  "training_utterances": 9019,
+  "test_utterances": 2495,
+  "eligible_roles": 21,
+  "positive_spans": 9272,
+  "training_candidate_spans": 272546,
+  "promoted_features": 1165,
+  "shuffled_promoted_features": 1163,
+  "stats": {
+    "treatment": {
+      "tp": 109,
+      "pred": 1833,
+      "gold": 930,
+      "novel_tp": 14,
+      "novel_pred": 1214,
+      "novel_gold": 663,
+      "all_tp": 109,
+      "all_pred": 1833,
+      "all_gold": 1800,
+      "utterance_exact": 519,
+      "f1": 0.07889974665218964,
+      "novel_f1": 0.014917421417155035,
+      "all_f1": 0.060005505092210296,
+      "precision": 0.05946535733769776,
+      "recall": 0.11720430107526882
+    },
+    "ablation": {
+      "tp": 97,
+      "pred": 862,
+      "gold": 930,
+      "novel_tp": 1,
+      "novel_pred": 392,
+      "novel_gold": 663,
+      "all_tp": 97,
+      "all_pred": 862,
+      "all_gold": 1800,
+      "utterance_exact": 677,
+      "f1": 0.10825892857142858,
+      "novel_f1": 0.0018957345971563982,
+      "all_f1": 0.07287753568745305,
+      "precision": 0.11252900232018562,
+      "recall": 0.1043010752688172
+    },
+    "shuffled": {
+      "tp": 42,
+      "pred": 594,
+      "gold": 930,
+      "novel_tp": 2,
+      "novel_pred": 320,
+      "novel_gold": 663,
+      "all_tp": 42,
+      "all_pred": 594,
+      "all_gold": 1800,
+      "utterance_exact": 819,
+      "f1": 0.05511811023622047,
+      "novel_f1": 0.004069175991861648,
+      "all_f1": 0.03508771929824561,
+      "precision": 0.0707070707070707,
+      "recall": 0.04516129032258064
+    },
+    "memory": {
+      "tp": 141,
+      "pred": 4843,
+      "gold": 930,
+      "novel_tp": 0,
+      "novel_pred": 0,
+      "novel_gold": 663,
+      "all_tp": 141,
+      "all_pred": 4843,
+      "all_gold": 1800,
+      "utterance_exact": 208,
+      "f1": 0.04884808591720076,
+      "novel_f1": 0.0,
+      "all_f1": 0.04245069998494656,
+      "precision": 0.02911418542225893,
+      "recall": 0.15161290322580645
+    },
+    "mode": {
+      "tp": 27,
+      "pred": 5116,
+      "gold": 930,
+      "novel_tp": 0,
+      "novel_pred": 0,
+      "novel_gold": 663,
+      "all_tp": 27,
+      "all_pred": 5116,
+      "all_gold": 1800,
+      "utterance_exact": 176,
+      "f1": 0.008931524975190208,
+      "novel_f1": 0.0,
+      "all_f1": 0.007807981492192018,
+      "precision": 0.00527756059421423,
+      "recall": 0.02903225806451613
+    },
+    "fresh": {
+      "tp": 0,
+      "pred": 0,
+      "gold": 930,
+      "novel_tp": 0,
+      "novel_pred": 0,
+      "novel_gold": 663,
+      "all_tp": 0,
+      "all_pred": 0,
+      "all_gold": 1800,
+      "utterance_exact": 981,
+      "f1": 0.0,
+      "novel_f1": 0.0,
+      "all_f1": 0.0,
+      "precision": 0.0,
+      "recall": 0.0
+    }
+  },
+  "per_role": {
+    "app_name": {
+      "gold": 4,
+      "f1": 0.0
+    },
+    "timeofday": {
+      "gold": 3,
+      "f1": 0.0149812734082397
+    },
+    "person": {
+      "gold": 193,
+      "f1": 0.0728476821192053
+    },
+    "media_type": {
+      "gold": 5,
+      "f1": 0.0
+    },
+    "event_name": {
+      "gold": 12,
+      "f1": 0.059602649006622516
+    },
+    "date": {
+      "gold": 38,
+      "f1": 0.17667844522968199
+    },
+    "news_topic": {
+      "gold": 4,
+      "f1": 0.0
+    },
+    "relation": {
+      "gold": 0,
+      "f1": 0.0
+    },
+    "time": {
+      "gold": 26,
+      "f1": 0.015463917525773196
+    },
+    "transport_type": {
+      "gold": 0,
+      "f1": 0.0
+    },
+    "artist_name": {
+      "gold": 36,
+      "f1": 0.0
+    },
+    "general_frequency": {
+      "gold": 2,
+      "f1": 0.14285714285714285
+    },
+    "place_name": {
+      "gold": 130,
+      "f1": 0.17518248175182483
+    },
+    "food_type": {
+      "gold": 151,
+      "f1": 0.056818181818181816
+    },
+    "list_name": {
+      "gold": 0,
+      "f1": 0.0
+    },
+    "meal_type": {
+      "gold": 3,
+      "f1": 0.0
+    },
+    "business_name": {
+      "gold": 116,
+      "f1": 0.16551724137931034
+    },
+    "business_type": {
+      "gold": 3,
+      "f1": 0.0
+    },
+    "personal_info": {
+      "gold": 0,
+      "f1": 0.0
+    },
+    "song_name": {
+      "gold": 7,
+      "f1": 0.08888888888888889
+    },
+    "device_type": {
+      "gold": 197,
+      "f1": 0.027649769585253458
+    }
+  },
+  "gold_spans_over6": 3,
+  "well_supported_roles_at_f1_030": 0,
+  "counterevidence_probe": {
+    "before_a": 4.0,
+    "after_a": 1.3134814568938806,
+    "after_b": 3.4672260609572882,
+    "reversed": true
+  },
+  "restart_same": true,
+  "renaming_probe": {
+    "sampled_one_token_spans": 100,
+    "same_label": 88,
+    "original_correct": 10,
+    "renamed_correct": 2,
+    "renamed_abstained": 94
+  },
+  "timeouts_or_candidate_abstentions": {
+    "treatment": 8,
+    "ablation": 1,
+    "shuffled": 9
+  },
+  "response_over_10ms": {
+    "treatment": 0,
+    "ablation": 0,
+    "shuffled": 1
+  },
+  "candidate_limit_exceeded": {
+    "treatment": 8,
+    "ablation": 1,
+    "shuffled": 9
+  },
+  "model_sha256": "93daed19c47fe2a0b7d209900d6d9946ad4bb5d62185330f60ba5c452717d8a7",
+  "candidate_evaluations": 711884,
+  "read_cpu_s": 0.922831,
+  "treatment_teach_cpu_s": 0.767989,
+  "ablation_teach_cpu_s": 0.546101,
+  "shuffled_teach_cpu_s": 0.733904,
+  "inference_cpu_s": 1.539999,
+  "evaluation_cpu_s": 0.21598,
+  "p50_ms": 0.19374,
+  "p95_ms": 0.450553,
+  "budget_ok": true,
+  "max_ms": 0.893574,
+  "gate_pass": false,
+  "cpu_total_s": 4.759576,
+  "wall_total_s": 6.15098,
+  "max_rss_kib": 71996
+}
