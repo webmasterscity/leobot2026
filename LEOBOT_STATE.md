@@ -2,7 +2,7 @@
 
 ## Estado de misión
 
-- Actualizado: 2026-09-23 · commit `347f35a` · G-26b pasó puerta acotada de consulta, retiro de hechos dependientes y regresión; lectura libre sigue fallando
+- Actualizado: 2026-09-23 · commit `69bee4f` · G-26b estable en consulta acotada; sonda pública confirma 0/20 en lectura libre
 - Fases: A superada en ensayo acotado · B superada en ensayo acotado · C superada en ensayo acotado · D superada en ensayo acotado · E refutada en cinco diseños preregistrados · F bloqueada para H0 · G en curso por prioridad lingüística · H pendiente
 - Fase en curso: G — adquirir significado de texto y herramientas por experiencia verificable antes de medir competencia abierta
 - Último tag estable: `estable-G-1` · huella del motor: `0c5f3152b3c93273c25d4108e7b73bba0629d804` (ensayo acotado de pregunta por evidencia; no lectura libre)
@@ -13,7 +13,7 @@
 - Siguiente paso concreto: inspeccionar el ingreso de afirmaciones crudas y los candidatos semánticos actuales para diseñar G-27: producir una pregunta discriminante sin entregar previamente el predicado ni activar anclaje extensional inseguro; medir contra el motor G-1 y abstenerse si faltan anclas.
 - Bloqueos: F largo sigue sin justificación: E falló y la lectura libre no mejoró; reabrir F tras una representación de texto/efectos verificada. G sigue en curso; sin comparación frontier todavía.
 - Lectura (seguimiento): [sonda visible G-26b](results_v3/g26b_user_text_probe.json) **0/4** con el árbol nuevo; huella idéntica antes/después, no es reserva independiente
-- Tablero AGI: [resultado previo](results_v3/agi_board_freeze-D-1.json) · MLQA español público previo 0/20 (actualizar tablero tras el tag G-1) · cadena D-1 3/3 interna, learner C 0 candidatos ahorrados fuera de numérico · ARC-AGI-3 no evaluado · brecha frontier no comparable · obstáculo principal: adquirir significado de texto libre
+- Tablero AGI: [resultado G-1](results_v3/agi_board_estable-G-1.json) · MLQA español público **0/20**, 20 no reconocidas; cadena D-1 3/3 interna, learner C 0 candidatos ahorrados fuera de numérico · ARC-AGI-3 no evaluado · brecha frontier no comparable · obstáculo principal: adquirir significado de texto libre
 - Latencia (último tag, árbol congelado): 100 003 hechos; peor p95 conocido 0,123 ms, razonamiento 0,271 ms, máximo 0,277 ms; RAM pico 199 596 KiB en tres semillas; ninguna categoría empeoró >20 %
 
 ## Historial de ciclos
@@ -240,4 +240,4 @@
 
 ### En palabras fáciles de entender
 
-Leobot sigue sin entender de forma fiable documentos y preguntas libres. Ahora, en una situación preparada con hechos conocidos, puede detectar que una frase tiene dos significados posibles y preguntar por un ejemplo que los separe. Aprende de la respuesta, y si después se demuestra un error, retira la frase aprendida y los datos que nacieron directamente de ella. Las cuatro preguntas libres de seguimiento siguen sin respuesta. El próximo reto es lograr preguntas útiles sin preparar antes los significados posibles.
+Leobot sigue sin entender de forma fiable documentos y preguntas libres. Ahora, en una situación preparada con hechos conocidos, puede detectar que una frase tiene dos significados posibles y preguntar por un ejemplo que los separe. Aprende de la respuesta, y si después se demuestra un error, retira la frase aprendida y los datos que nacieron directamente de ella. Las cuatro preguntas libres y las veinte preguntas públicas siguen sin respuesta. El próximo reto es lograr preguntas útiles sin preparar antes los significados posibles.
