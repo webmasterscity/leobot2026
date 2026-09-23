@@ -21,13 +21,17 @@ BEAM = 12
 ARC_SMOOTHING = 5.0   # G-32: each arc context is smoothed toward the more general one
 LABEL_SMOOTHING = 3.0
 PRUNE_OPPORTUNITIES = 2
+SPLIT_TABLE_MIN = 2       # G-35: a surface form seen split this often is stored
+SPLIT_RULE_SUPPORT = 3    # distinct forms supporting an ending rule
+SPLIT_RULE_RATE = 0.9     # share of words with that ending that were split
 _WORD = re.compile(r'\w+|[^\w\s]')
 
 
 def _empty_syntax() -> dict:
     return {'sentences': 0, 'tags': {}, 'bigrams': {}, 'trigrams': {}, 'lexicon': {},
             'suffixes': {}, 'word_counts': {}, 'arcs': {}, 'opportunities': {},
-            'arc_total': 0, 'opportunity_total': 0, 'compiled': False, 'labels': {}}
+            'arc_total': 0, 'opportunity_total': 0, 'compiled': False, 'labels': {},
+            'multiword': {}, 'split_table': {}, 'split_rules': {}}
 
 
 def _distance(d: int) -> str:
@@ -92,6 +96,82 @@ class SyntaxMixin:
                     row = table.setdefault(context, {})
                     row[label] = row.get(label, 0) + 1
         return {'status': 'syntax_example_learned'}
+
+    def observe_multiword(self, surface: str, words) -> dict:
+        """Learn that a written form stands for several syntactic words (G-35)."""
+        words = [w for w in words if w]
+        if len(words) < 2 or not surface:
+            return {'status': 'multiword_rejected'}
+        key = surface.lower() + '\x1f' + '\x1f'.join(w.lower() for w in words)
+        table = self.syntax_model.setdefault('multiword', {})
+        table[key] = table.get(key, 0) + 1
+        self.syntax_model['compiled'] = False
+        return {'status': 'multiword_learned'}
+
+    def _compile_splitting(self) -> None:
+        """Table of seen forms and ending rules induced from them, kept only
+        when the ending is almost always split in the demonstrations."""
+        model = self.syntax_model
+        by_surface: dict = {}
+        rules: dict = {}
+        for key, count in model.get('multiword', {}).items():
+            surface, *words = key.split('\x1f')
+            best = by_surface.get(surface)
+            if best is None or count > best[1]:
+                by_surface[surface] = (words, count)
+            first = words[0]
+            common = 0
+            while common < min(len(surface), len(first)) and surface[common] == first[common]:
+                common += 1
+            if common < 2:
+                continue
+            ending = surface[common - 1:]
+            rule = rules.setdefault(ending, {})
+            target = '\x1f'.join([first[common - 1:]] + words[1:])
+            rule.setdefault(target, set()).add(surface)
+        model['split_table'] = {s: w for s, (w, c) in by_surface.items()
+                                if c >= SPLIT_TABLE_MIN}
+        split_counts: dict = {}
+        for key, count in model.get('multiword', {}).items():
+            surface = key.split('\x1f')[0]
+            split_counts[surface] = split_counts.get(surface, 0) + count
+        kept = {}
+        for ending, targets in rules.items():
+            target, forms = max(targets.items(), key=lambda kv: (len(kv[1]), kv[0]))
+            if len(forms) < SPLIT_RULE_SUPPORT:
+                continue
+            split = sum(c for s, c in split_counts.items() if s.endswith(ending))
+            whole = sum(c for w, c in model['word_counts'].items() if w.lower().endswith(ending))
+            if split / max(1, split + whole) >= SPLIT_RULE_RATE:
+                kept[ending] = target.split('\x1f')
+        model['split_rules'] = kept
+
+    def split_words(self, text: str) -> list[str]:
+        """Raw text into syntactic words with the learned splitting."""
+        model = self.syntax_model
+        if not model.get('compiled'):
+            self.consolidate_syntax()
+        table, rules = model.get('split_table', {}), model.get('split_rules', {})
+        known = model['word_counts']
+        endings = sorted(rules, key=lambda e: (-len(e), e))
+        out = []
+        for token in _WORD.findall(text):
+            low = token.lower()
+            words = table.get(low)
+            if words is None:
+                for ending in endings:
+                    if low.endswith(ending) and len(low) > len(ending) + 1:
+                        first = low[:len(low) - len(ending)] + rules[ending][0]
+                        if known.get(first, 0) or known.get(first.capitalize(), 0):
+                            words = [first] + rules[ending][1:]
+                            break
+            if words is None:
+                out.append(token)
+                continue
+            head = words[0]
+            out.append(head.capitalize() if token[:1].isupper() else head)
+            out.extend(words[1:])
+        return out
 
     @staticmethod
     def _label_contexts(d, h, words, tags, heads, counts, lexical) -> list[str]:
@@ -177,6 +257,7 @@ class SyntaxMixin:
     def consolidate_syntax(self) -> dict:
         """Compile suffix statistics and interpolation weights from the counts."""
         model = self.syntax_model
+        self._compile_splitting()
         # G-32b: a context never seen as an arc and seen as an opportunity at
         # most PRUNE_OPPORTUNITIES times barely moves its parent's rate; drop it
         # so the learned memory stays loadable.
@@ -379,4 +460,6 @@ class SyntaxMixin:
         return heads[1:]
 
     def parse_sentence(self, text: str) -> dict | None:
-        return self.parse_words(_WORD.findall(text))
+        if not self.syntax_model['sentences']:
+            return None
+        return self.parse_words(self.split_words(text))
