@@ -1,0 +1,284 @@
+{
+  "preregistration": "prereg/F-13-parafrasis-humanas-mismo-hecho.md",
+  "kind": "development_only",
+  "engine_tree": "1f3187f2ced4c97364503187d074815f33612326",
+  "engine_unchanged": true,
+  "source_hashes": {
+    "train/1triples/Airport_allSolutions.xml": "8492281d1abf7006a5a3f10f3bfe3451049e7917755e449bc1b69341f7f757ae",
+    "train/1triples/Artist_allSolutions.xml": "1586d97d8816c19ce923c4865a1afc66198c672a1ee5f84ff10abfb71dd7031b",
+    "train/1triples/Astronaut_allSolutions.xml": "52896c6c368fbc500efc84829f462122a0ed7184b9287273cd8e83360a0ea6d4",
+    "train/1triples/Athlete_allSolutions.xml": "ca016b57e1fc7761fca52886cd75f9ac70658d6287ca028d37bb428b269bcb6c",
+    "train/1triples/Building_allSolutions.xml": "f61607510be9cf08264cfba1aa8694a4bbd4d45c0d52fb01cb001834dabc4d18",
+    "train/1triples/CelestialBody_allSolutions.xml": "aad294130e43edf206bac9260b4c4bc56c38b2391562b19e567de470e03799c5",
+    "train/1triples/City_allSolutions.xml": "ee3569b5e5b74892de83d1df9c7369470e1b0b058952c3382965f6a25667a95d",
+    "train/1triples/ComicsCharacter_allSolutions.xml": "351c0bbb436c328e37887ed04cf1d272ddfcd530c035099db3a0c015e0fa51b8",
+    "train/1triples/Company_allSolutions.xml": "6593d6084212d294a9ab34aaaacfcb2ed8817bb479e883e29989a54bff810060",
+    "train/1triples/Food_allSolutions.xml": "9a11a0b3b76e39b01c1b28a3ea0b144bde46449c7fc7d4dd370a42dbf0f9f1dd",
+    "train/1triples/MeanOfTransportation_allSolutions.xml": "d56a93d518a252640b37faa0a7cccb2117fb42444c937153deb7add71a1dc9d2",
+    "train/1triples/Monument_allSolutions.xml": "6f02981840169fffaa8d94716b1d6a7e1b2317dca139dd0aa2aa643b516e4e17",
+    "train/1triples/Politician_allSolutions.xml": "49dd46eae6dceca03d5481ff0796b8a432428abc604d0f0861a6f129bac5d3fa",
+    "train/1triples/SportsTeam_allSolutions.xml": "5198405576f476b96a3dc1045012305921e56e931ef451c495bbc77ab6c6ed46",
+    "train/1triples/University_allSolutions.xml": "1ed28e51c848aae790b075277af00cfcd2aebe1985b46b3005fcf6a6a9add356",
+    "train/1triples/WrittenWork_allSolutions.xml": "87db4cd2480cb706758c267daed65823b0fbc7cea7943ec5ffb5cfaa1a957eb0"
+  },
+  "source_bytes": 1965836,
+  "source_facts": 3194,
+  "excluded_previous_development_ids": 1055,
+  "fit_entries": 907,
+  "validation_entries": 64,
+  "heldout_entries": 128,
+  "fit_with_multiple_lexicalizations": 781,
+  "stages": [
+    {
+      "facts": 250,
+      "treatment_learning": {
+        "episodes": 581,
+        "unaligned": 194,
+        "candidate_surfaces": 315,
+        "ambiguous_surfaces": 7,
+        "promoted_surfaces": 9,
+        "construction_count": 9,
+        "facts": 250,
+        "texts_offered": 581,
+        "observation_cpu_s": 0.000368,
+        "compilation_cpu_s": 0.024447
+      },
+      "treatment": {
+        "total": 128,
+        "correct": 5,
+        "attempts": 14,
+        "wrong_confident": 9,
+        "precision": 0.357143,
+        "status": {
+          "parsed": 14,
+          "unrecognized": 114
+        },
+        "p50_ms": 0.0371,
+        "p95_ms": 0.06236
+      },
+      "single_learning": {
+        "episodes": 250,
+        "unaligned": 88,
+        "candidate_surfaces": 146,
+        "ambiguous_surfaces": 4,
+        "promoted_surfaces": 1,
+        "construction_count": 1,
+        "facts": 250,
+        "texts_offered": 250,
+        "observation_cpu_s": 0.000238,
+        "compilation_cpu_s": 0.004515
+      },
+      "single": {
+        "total": 128,
+        "correct": 0,
+        "attempts": 4,
+        "wrong_confident": 4,
+        "precision": 0.0,
+        "status": {
+          "parsed": 4,
+          "unrecognized": 124
+        },
+        "p50_ms": 0.00473,
+        "p95_ms": 0.0072
+      }
+    },
+    {
+      "facts": 500,
+      "treatment_learning": {
+        "episodes": 1168,
+        "unaligned": 406,
+        "candidate_surfaces": 558,
+        "ambiguous_surfaces": 11,
+        "promoted_surfaces": 27,
+        "construction_count": 27,
+        "facts": 500,
+        "texts_offered": 1168,
+        "observation_cpu_s": 0.000867,
+        "compilation_cpu_s": 0.038204
+      },
+      "treatment": {
+        "total": 128,
+        "correct": 9,
+        "attempts": 26,
+        "wrong_confident": 17,
+        "precision": 0.346154,
+        "status": {
+          "parsed": 26,
+          "unrecognized": 102
+        },
+        "p50_ms": 0.46449,
+        "p95_ms": 1.37245
+      },
+      "single_learning": {
+        "episodes": 500,
+        "unaligned": 174,
+        "candidate_surfaces": 261,
+        "ambiguous_surfaces": 5,
+        "promoted_surfaces": 6,
+        "construction_count": 6,
+        "facts": 500,
+        "texts_offered": 500,
+        "observation_cpu_s": 0.000681,
+        "compilation_cpu_s": 0.02937
+      },
+      "single": {
+        "total": 128,
+        "correct": 6,
+        "attempts": 14,
+        "wrong_confident": 8,
+        "precision": 0.428571,
+        "status": {
+          "parsed": 14,
+          "unrecognized": 114
+        },
+        "p50_ms": 0.07788,
+        "p95_ms": 0.11693
+      }
+    },
+    {
+      "facts": 750,
+      "treatment_learning": {
+        "episodes": 1758,
+        "unaligned": 617,
+        "candidate_surfaces": 751,
+        "ambiguous_surfaces": 20,
+        "promoted_surfaces": 51,
+        "construction_count": 51,
+        "facts": 750,
+        "texts_offered": 1758,
+        "observation_cpu_s": 0.001282,
+        "compilation_cpu_s": 0.078302
+      },
+      "treatment": {
+        "total": 128,
+        "correct": 11,
+        "attempts": 84,
+        "wrong_confident": 73,
+        "precision": 0.130952,
+        "status": {
+          "parsed": 84,
+          "unrecognized": 44
+        },
+        "p50_ms": 0.87135,
+        "p95_ms": 2.43694
+      },
+      "single_learning": {
+        "episodes": 750,
+        "unaligned": 264,
+        "candidate_surfaces": 356,
+        "ambiguous_surfaces": 8,
+        "promoted_surfaces": 16,
+        "construction_count": 16,
+        "facts": 750,
+        "texts_offered": 750,
+        "observation_cpu_s": 0.000964,
+        "compilation_cpu_s": 0.049901
+      },
+      "single": {
+        "total": 128,
+        "correct": 8,
+        "attempts": 17,
+        "wrong_confident": 9,
+        "precision": 0.470588,
+        "status": {
+          "parsed": 17,
+          "unrecognized": 111
+        },
+        "p50_ms": 0.19888,
+        "p95_ms": 0.31334
+      }
+    },
+    {
+      "facts": 907,
+      "treatment_learning": {
+        "episodes": 2125,
+        "unaligned": 742,
+        "candidate_surfaces": 880,
+        "ambiguous_surfaces": 26,
+        "promoted_surfaces": 63,
+        "construction_count": 63,
+        "facts": 907,
+        "texts_offered": 2125,
+        "observation_cpu_s": 0.001654,
+        "compilation_cpu_s": 0.09655
+      },
+      "treatment": {
+        "total": 128,
+        "correct": 11,
+        "attempts": 43,
+        "wrong_confident": 32,
+        "precision": 0.255814,
+        "status": {
+          "parsed": 43,
+          "ambiguous": 43,
+          "unrecognized": 42
+        },
+        "p50_ms": 0.97468,
+        "p95_ms": 3.00939
+      },
+      "single_learning": {
+        "episodes": 907,
+        "unaligned": 320,
+        "candidate_surfaces": 414,
+        "ambiguous_surfaces": 11,
+        "promoted_surfaces": 19,
+        "construction_count": 19,
+        "facts": 907,
+        "texts_offered": 907,
+        "observation_cpu_s": 0.001137,
+        "compilation_cpu_s": 0.055002
+      },
+      "single": {
+        "total": 128,
+        "correct": 9,
+        "attempts": 19,
+        "wrong_confident": 10,
+        "precision": 0.473684,
+        "status": {
+          "parsed": 19,
+          "unrecognized": 109
+        },
+        "p50_ms": 0.22495,
+        "p95_ms": 0.36831
+      }
+    }
+  ],
+  "treatment_all_variants": {
+    "total_texts": 304,
+    "correct": 41,
+    "attempts": 123,
+    "wrong_confident": 82,
+    "precision": 0.333333,
+    "p95_ms": 2.68972
+  },
+  "single_all_variants": {
+    "total_texts": 304,
+    "correct": 24,
+    "attempts": 46,
+    "wrong_confident": 22,
+    "precision": 0.521739,
+    "p95_ms": 0.35326
+  },
+  "no_rewrite": {
+    "total": 128,
+    "correct": 11,
+    "attempts": 28,
+    "wrong_confident": 17,
+    "precision": 0.392857,
+    "status": {
+      "parsed": 28,
+      "unrecognized": 100
+    },
+    "p50_ms": 0.54587,
+    "p95_ms": 0.75902
+  },
+  "correction": true,
+  "restart_same": true,
+  "restart_cpu_s": 0.106546,
+  "stored_bytes": 396570,
+  "preliminary_gate_passed": false,
+  "adversarial_controls": "pending_if_preliminary_passes",
+  "cpu_total_s": 3.200873,
+  "wall_total_s": 12.641236,
+  "max_rss_kib": 39920
+}
