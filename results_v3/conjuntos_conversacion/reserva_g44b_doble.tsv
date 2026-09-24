@@ -1,0 +1,127 @@
+# Reserva G-44b — conversaciones nuevas, redactadas por verificador independiente (regla 5.10)
+# Formato: turno TAB esperado · línea sin TAB = no calificada · línea en blanco = conversación nueva
+
+Marta Vidal es arquitecta y vive en Cuenca.
+Marta tiene un perro llamado Rocco.
+Rocco tiene cuatro años.
+¿Dónde vive Marta?	/Cuenca/i
+¿Marta es arquitecta?	sí
+¿Cómo se llama el perro de Marta?	/Rocco/i
+¿Marta tiene un gato?	no lo sé
+
+La panadería El Trigal queda en la calle Novena de Bogotá.
+El Trigal abre a las seis de la mañana.
+El dueño de El Trigal se llama Hernán Ríos.
+¿En qué calle queda El Trigal?	/Novena/i
+¿A qué hora abre El Trigal?	/seis|6/i
+¿Quién es el dueño de El Trigal?	/Hernán|Hernan/i
+¿El Trigal vende zapatos?	no lo sé
+
+Julián Peña tiene tres hermanas: Carla, Sofía y Elena.
+Julián nació en Mendoza.
+Julián trabaja como electricista.
+¿Cuántas hermanas tiene Julián?	/tres|3/i
+¿Dónde nació Julián?	/Mendoza/i
+¿Julián es electricista?	sí
+¿Cómo se llama el hermano de Julián?	no lo sé
+
+La biblioteca del barrio San Rafael tiene doce mil libros.
+La biblioteca cierra los domingos.
+La bibliotecaria se llama Rosa Nieto.
+¿Cuántos libros tiene la biblioteca?	/doce mil|12.?000/i
+¿La biblioteca abre los domingos?	no
+¿Cómo se llama la bibliotecaria?	/Rosa/i
+¿En qué barrio queda la biblioteca?	/San Rafael/i
+
+La doctora Camila Duarte trabaja en el hospital Santa Fe.
+Camila atiende los martes y los jueves.
+Camila tiene dos hijos, Mateo y Lucía.
+¿Dónde trabaja Camila?	/Santa Fe/i
+¿Cuántos hijos tiene Camila?	/dos|2/i
+¿Camila atiende los lunes?	no
+¿Cómo se llama la hija de Camila?	/Lucía|Lucia/i
+
+La finca La Esperanza queda cerca del río Cauca.
+En la finca La Esperanza hay cuarenta vacas.
+El capataz de la finca se llama Ignacio Rojas.
+¿Cerca de qué río queda la finca La Esperanza?	/Cauca/i
+¿Cuántas vacas hay en la finca?	/cuarenta|40/i
+¿Quién es el capataz de la finca?	/Ignacio/i
+¿Cuántos caballos hay en la finca?	no lo sé
+
+Tomás Bravo compró un carro azul el mes pasado.
+El carro de Tomás tiene cinco puertas.
+Tomás vive en la calle Los Álamos, número catorce.
+¿De qué color es el carro de Tomás?	/azul/i
+¿Cuántas puertas tiene el carro de Tomás?	/cinco|5/i
+¿El carro de Tomás es rojo?	no
+
+La tienda de música Acorde vende guitarras y tambores.
+Acorde está ubicada frente a la plaza principal.
+El encargado de Acorde se llama Bernardo Salcedo.
+¿Qué vende la tienda Acorde?	/guitarra/i
+¿Dónde está ubicada la tienda Acorde?	/plaza/i
+¿Quién es el encargado de Acorde?	/Bernardo/i
+¿Cuántas guitarras tiene la tienda Acorde?	no lo sé
+
+# reserva_g44b_b — conversaciones nuevas para verificación independiente
+# redactadas sin leer el repositorio ni el código del motor
+
+Marta vive en Cuenca.
+Marta trabaja como ingeniera.
+Ricardo vive en Toledo.
+Ricardo trabaja como panadero.
+Marta y Ricardo son primos.
+¿Dónde vive Marta?	Cuenca
+¿A qué se dedica Ricardo?	panadero
+¿Marta es ingeniera?	sí
+¿Ricardo es médico?	no lo sé
+¿Dónde vive la madre de Marta?	no lo sé
+
+La caja azul está sobre la mesa del comedor.
+Dentro de la caja azul hay siete llaves.
+La caja roja está en el sótano.
+La caja roja está vacía.
+¿Dónde está la caja azul?	mesa
+¿Cuántas llaves hay en la caja azul?	siete
+¿La caja roja está vacía?	sí
+¿La caja azul está en el sótano?	no
+¿Dónde está la caja roja?	sótano
+
+Elena tiene tres hijos: Pablo, Sofía y Diego.
+Pablo nació en Mérida.
+Diego vive en Bilbao con su esposa Carmen.
+¿Cuántos hijos tiene Elena?	tres
+¿Quién nació en Mérida?	Pablo
+¿Dónde vive Diego?	Bilbao
+¿Pablo es hijo de Elena?	sí
+¿Sofía vive en Bilbao?	no lo sé
+
+El pueblo de Santa Rosa tiene dos mil habitantes.
+En Santa Rosa hay una panadería y una farmacia.
+La farmacia cierra a las nueve de la noche.
+Javier dijo que tal vez llueva mañana en Santa Rosa.
+¿Cuántos habitantes tiene Santa Rosa?	/dos\s*mil|2\s*000/i
+¿A qué hora cierra la farmacia?	nueve
+¿La farmacia cierra a las diez de la noche?	no
+¿En Santa Rosa hay un hospital?	no lo sé
+¿Va a llover mañana en Santa Rosa?	sin afirmar
+
+Esteban compró cuatro sillas y una mesa.
+Las sillas son de color verde.
+Esteban pagó ciento veinte euros por todo.
+La mesa es de madera.
+¿Cuántas sillas compró Esteban?	cuatro
+¿De qué color son las sillas?	verde
+¿De qué material es la mesa?	madera
+¿Cuánto pagó Esteban en total?	/ciento veinte|120/i
+¿Esteban compró también un sofá?	no lo sé
+
+Lucía tiene veintiocho años.
+Fernando tiene treinta y cinco años.
+Lucía y Fernando trabajan en la misma editorial.
+¿Cuántos años tiene Lucía?	veintiocho
+¿Lucía y Fernando trabajan en la misma editorial?	sí
+¿Quién es mayor, Lucía o Fernando?	Fernando
+¿Fernando tiene menos de treinta años?	no
+¿Cuántos años tiene el hermano de Fernando?	no lo sé
