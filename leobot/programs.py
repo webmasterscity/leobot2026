@@ -41,9 +41,11 @@ class GridContext:
         nonzero = {k: n for k, n in counts.items() if k}
         rows = [r for r in range(h) if any(grid[r])]
         cols = [c for c in range(w) if any(grid[r][c] for r in range(h))]
-        self.features = (max(sorted(counts), key=lambda k: counts[k]),
-                         max(sorted(nonzero), key=lambda k: nonzero[k]) if nonzero else 0,
-                         min(sorted(nonzero), key=lambda k: nonzero[k]) if nonzero else 0,
+        # G-39c: ties go to the colour seen first in reading order, never to
+        # its code, so renaming colours renames these values and nothing else.
+        self.features = (max(counts, key=lambda k: counts[k]),
+                         max(nonzero, key=lambda k: nonzero[k]) if nonzero else 0,
+                         min(nonzero, key=lambda k: nonzero[k]) if nonzero else 0,
                          len(nonzero), rows[0] if rows else 0, cols[0] if cols else 0,
                          rows[-1] - rows[0] + 1 if rows else 0, cols[-1] - cols[0] + 1 if cols else 0)
         self.neighbours = [[sum(1 for di in (-1, 0, 1) for dj in (-1, 0, 1)
@@ -102,6 +104,10 @@ class Expr:
         if self.op in ('var', 'const'):
             if self.children or not isinstance(self.value, int):
                 raise ValueError('Hoja inválida.')
+        elif self.op == 'color':
+            # G-39c: a colour is a symbol taken from the data, not a number.
+            if self.children or type(self.value) is not int or not 0 <= self.value <= 9:
+                raise ValueError('Color inválido.')
         elif self.op == 'call':
             if self.children or not isinstance(self.value, str) or not re.fullmatch(r'[A-Za-z_][A-Za-z_0-9]*', self.value):
                 raise ValueError('Referencia de habilidad inválida.')
@@ -117,7 +123,7 @@ class Expr:
             grid=None) -> int | None:
         if self.op == 'var':
             return args[self.value] if 0 <= self.value < len(args) else None
-        if self.op == 'const':
+        if self.op in ('const', 'color'):
             return self.value
         if self.op == 'call':
             if resolver is None:
@@ -139,6 +145,7 @@ class Expr:
     def __str__(self) -> str:
         if self.op == 'var': return f'x{self.value}'
         if self.op == 'const': return str(self.value)
+        if self.op == 'color': return f'color{self.value}'
         if self.op == 'call': return '@' + str(self.value)
         if self.op == 'pcall': return '@' + str(self.value) + '(' + ','.join(map(str,self.children)) + ')'
         if self.op in CONTEXT_OPS: return f'{self.op}({self.children[0]}, {self.children[1]})'
@@ -818,7 +825,8 @@ class ProgramLearner:
     def fit(self, skill: str, library: list[str] | None = None, allowed_vars=None, *,
             examples: dict | None = None, probe_points=None, contexts: list | None = None,
             context_ops: tuple[str, ...] = CONTEXT_OPS, goal_context: bool = True,
-            abstract: bool = True) -> dict:
+            var_types: dict[int, str] | None = None, color_constants: tuple[int, ...] = (),
+            output_type: str | None = None, abstract: bool = True) -> dict:
         """Search the smallest programs agreeing with the examples.
 
         G-39: ``examples``/``probe_points`` replace the stored examples and the
@@ -826,6 +834,9 @@ class ProgramLearner:
         with ``contexts`` (``GridContext`` objects) the last argument of every
         point indexes the grid that ``context_ops`` read.  The search itself is
         the same; G-39b adds the inversion of ``at`` to the goal-directed join.
+        G-39c: with ``var_types`` the search is typed: ``color`` values (typed
+        variables, ``color_constants``, ``at``) are only copied; arithmetic and
+        indices take ``num``; a solution must have ``output_type``.
         """
         start = perf_counter()
         # Re-fitting a target invalidates only its previous implementation and dependents.
@@ -869,14 +880,23 @@ class ProgramLearner:
         attempts, truncated, reason = 0, False, None
         constraint_checks = 0
         goal_hits = False
+        typed = var_types is not None
+
+        def kind(expr: Expr) -> str:
+            if not typed:
+                return 'num'
+            if expr.op == 'var':
+                return var_types.get(expr.value, 'num')
+            return 'color' if expr.op in ('color', 'at') else 'num'
 
         def consider(expr: Expr, sig: tuple, level: int) -> None:
             nonlocal stored_cells
-            if any(v is None for v in sig[:len(inputs)]) or sig in seen:
+            key = (kind(expr), sig) if typed else sig
+            if any(v is None for v in sig[:len(inputs)]) or key in seen:
                 return
-            seen.add(sig)
+            seen.add(key)
             levels.setdefault(level, []).append((expr, sig))
-            if sig[:len(inputs)] == outputs:
+            if sig[:len(inputs)] == outputs and (output_type is None or kind(expr) == output_type):
                 solutions.append(expr)
                 solution_levels.append(level)
             stored_cells += len(sig)
@@ -889,6 +909,8 @@ class ProgramLearner:
         for c in (-1, 0, 1):
             e = Expr('const', c)
             consider(e, tuple(c for _ in points), 1)
+        for c in color_constants:
+            consider(Expr('color', c), tuple(c for _ in points), 1)
 
         # Learned programs can be reused as abstract library primitives.  They
         # are EXECUTED as their learned expression, but count as one search unit
@@ -1041,8 +1063,11 @@ class ProgramLearner:
                     continue
                 by_first: dict[int, list] = {}
                 for right, rs in rights:
-                    by_first.setdefault(rs[0], []).append((right, rs))
+                    if kind(right) == 'num':
+                        by_first.setdefault(rs[0], []).append((right, rs))
                 for left, ls in levels.get(left_size, []):
+                    if kind(left) != 'num':
+                        continue
                     check_budget()
                     allowed = []
                     for rowmap, i in zip(rowmaps, ls):
@@ -1073,7 +1098,8 @@ class ProgramLearner:
                     if solutions and min(solution_levels) == size:
                         goal_hits = True
                         break
-                if self.goal_directed:
+                # An arithmetic root cannot yield a colour in a typed search.
+                if self.goal_directed and not (typed and output_type == 'color'):
                     goal_join(size)
                     if solutions and min(solution_levels) == size:
                         goal_hits = True
@@ -1081,7 +1107,11 @@ class ProgramLearner:
                 for left_size in range(1, size - 1, 2):
                     right_size = size - 1 - left_size
                     for left, ls in levels.get(left_size, []):
+                        if typed and kind(left) != 'num':
+                            continue
                         for right, rs in levels.get(right_size, []):
+                            if typed and kind(right) != 'num':
+                                continue
                             for op in OPS:
                                 if op in COMMUTATIVE and (left_size > right_size or (left_size == right_size and str(left) > str(right))):
                                     continue
@@ -1184,7 +1214,7 @@ class ProgramLearner:
         return True
 
     def fit_grid(self, skill: str, test_inputs=(), *, use_context: bool = True, use_test_probes: bool = True,
-                 use_aggregation: bool = True, use_goal: bool = True) -> dict:
+                 use_aggregation: bool = True, use_goal: bool = True, use_types: bool = True) -> dict:
         """G-39/G-39b: learn output height, width and cell colour as integer programs.
 
         Height and width are skills of (height, width, whole-grid aggregates) of
@@ -1203,7 +1233,11 @@ class ProgramLearner:
         report: dict = {'pairs': len(pairs), 'tests': len(tests)}
         contexts = [GridContext(a) for a, _ in pairs] + [GridContext(g) for g in tests]
         width = 2 + len(GRID_FEATURES)
-        shape_vars = tuple(range(width)) if use_aggregation else (0, 1)
+        # G-39c: colour-valued aggregates are symbols; sizes may not use them.
+        colour_features = {i for i, name in enumerate(GRID_FEATURES)
+                           if name in ('moda', 'mas_frecuente', 'menos_frecuente')}
+        shape_vars = tuple(i for i in range(width) if not (use_types and i - 2 in colour_features)) \
+            if use_aggregation else (0, 1)
         for k, part in enumerate(('alto', 'ancho')):
             ex = {}
             for (a, b), ctx in zip(pairs, contexts):
@@ -1231,9 +1265,16 @@ class ProgramLearner:
             probes.extend((r, c, len(g), len(g[0]), *ctx.features, len(pairs) + t) for r in range(h) for c in range(w))
         cell_vars = tuple(range(2 + width)) if use_aggregation else (0, 1, 2, 3)
         ops = CONTEXT_OPS if use_aggregation else ('at',)
+        typing = {}
+        if use_types:
+            typing['var_types'] = {4 + i: 'color' for i in colour_features}
+            # Colour constants come from the demonstrations, in order of appearance.
+            seen_colours = dict.fromkeys(v for _, b in pairs for row in b for v in row)
+            typing['color_constants'] = tuple(seen_colours)
+            typing['output_type'] = 'color'
         rep = self.fit(f'{skill}__celda', library=[], allowed_vars=cell_vars, examples=ex, probe_points=probes,
                        contexts=contexts if use_context else None, context_ops=ops, goal_context=use_goal,
-                       abstract=False)
+                       abstract=False, **typing)
         report['celda'] = rep
         return {**report, 'status': rep['status'], 'stage': 'celda'}
 

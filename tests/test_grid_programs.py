@@ -32,6 +32,21 @@ class GridProgramTests(unittest.TestCase):
             pl.add_grid_example('t', a, b)
         self.assertNotEqual(pl.fit_grid('t', [[[1, 2, 3]]], use_context=False)['status'], 'learned_hypothesis')
 
+    def test_renaming_colours_renames_the_answer(self):
+        # G-39c: colours are symbols; a consistent renaming gives the renamed answer.
+        perm = [0, 7, 3, 9, 2, 8, 1, 5, 4, 6]
+        rename = lambda g: [[perm[v] for v in row] for row in g]
+        pl, _ = self.learner(MIRROR, [[[1, 2, 3, 4, 5]]])
+        qr, _ = self.learner([(rename(a), rename(b)) for a, b in MIRROR], [rename([[1, 2, 3, 4, 5]])])
+        self.assertEqual(qr.predict_grid('t', rename([[1, 2, 3, 4, 5]]))['grid'],
+                         rename(pl.predict_grid('t', [[1, 2, 3, 4, 5]])['grid']))
+
+    def test_colours_are_not_numbers(self):
+        # A colour computed by arithmetic (here: colour = 2 - colour) is not learnable.
+        pairs = [([[1, 2]], [[1, 0]]), ([[2, 0]], [[0, 2]]), ([[0, 1]], [[2, 1]])]
+        pl, rep = self.learner(pairs, [[[1, 1]]])
+        self.assertNotEqual(pl.predict_grid('t', [[1, 1]])['status'], 'hypothesis')
+
     def test_fresh_learner_does_not_answer_and_rejects_bad_grids(self):
         pl = ProgramLearner()
         self.assertEqual(pl.predict_grid('t', [[1]])['status'], 'unknown')
