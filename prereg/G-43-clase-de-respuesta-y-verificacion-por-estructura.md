@@ -77,6 +77,26 @@ Trabajos cercanos:
 
 Aquí la clase se aprende por conteo de los ejemplos de educación, sin taxonomía escrita a mano.
 
+**Enmienda antes de congelar (2026-09-24), por lo visto en desarrollo.** Variantes medidas con la base de G-43, en los 4 conjuntos de conversación visibles (124 preguntas) y en MLQA visible (300):
+
+| Variante | Conversación | MLQA F1 |
+|---|---|---|
+| todas las candidatas + clase | 94 | 0,2126 |
+| todas las candidatas, sin clase | 92 | 0,2099 |
+| subárboles máximos + clase | 95 | 0,2151 |
+| subárboles máximos, sin clase | 93 | 0,2099 |
+| máximos + clase + desempate por el lector | 95 | 0,2176 |
+| máximos + desempate por el lector, sin clase | 94 | 0,2168 |
+
+Cambios que quedan:
+1. **Se retira el punto 2** («todas las candidatas»). Con todas, la clase elige fragmentos internos por errores del análisis; por ejemplo, «Real» en vez de «en la calle Real». Quedan los subárboles máximos de G-42.
+2. **Las palabras de función son transparentes al medir distancias**, tanto en el espejo como en la verificación: solo cuentan como pasos las palabras de contenido. Un error del análisis que cuelga el sujeto del verbo copulativo «es» ya no alarga el camino («¿El gato de Marta es gris?»).
+3. **La alineación es solo por raíz**, como decía el texto de G-42: no se exige que la oración etiquete la palabra como de contenido.
+4. **Desempate por el lector.** Si la estructura deja candidatas distintas empatadas, el lector de G-28 las puntúa con sus estadísticas aprendidas, solo a ellas. Si una queda sola arriba, es la respuesta; si no, se mantiene la abstención. La estructura restringe las opciones y la evidencia aprendida decide; no se elige en silencio.
+5. **MLQA en una muestra no vista.** Se compararon 6 variantes contra los mismos 300 casos visibles. Por eso los criterios de MLQA de la puerta se miden en una **muestra nueva de 300 casos MLQA**, sacada con la semilla de `freeze-G-43` entre los casos cuyo contexto no está en la educación ni en los visibles. La comparación es contra el lector de G-28 solo en esa misma muestra: F1 de G-43 ≥ F1 del lector de G-28 − 0,005, y aporte de la clase ≥ +0,005. Las cifras visibles se informan como desarrollo.
+
+Los demás umbrales no cambian. En el desarrollo visible, la variante elegida no llega al aporte de la clase exigido (+0,0008). Se espera que ese criterio falle y no se ajusta.
+
 ## Evaluación
 
 **Base educada:** la misma receta (AnCora `train` + 2000 MLQA), reconstruida con el motor de G-43.

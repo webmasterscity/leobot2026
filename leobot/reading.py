@@ -13,6 +13,7 @@ from __future__ import annotations
 
 import math
 import re
+from collections import deque
 import unicodedata
 
 _TOKEN = re.compile(r'\w+|[^\w\s]')
@@ -28,6 +29,9 @@ BM25_B = 0.75
 # G-42: learned word classes that carry grammar rather than content; they do
 # not have to be found in the answering sentence and do not anchor it.
 FUNCTION_TAGS = frozenset({'DET', 'ADP', 'AUX', 'PRON', 'CCONJ', 'SCONJ', 'PUNCT'})
+ANSWER_LEAD = 6            # G-43: question words kept per worked example
+ANSWER_WORDS = 4           # answer words kept per worked example
+CLASS_SUPPORT = 5          # examples a key with its noun needs before it is used
 
 
 def _norm(token: str) -> str:
@@ -178,6 +182,7 @@ class ReadingMemoryMixin:
         G-42: the questions read are evidence of which words ask."""
         if self.syntax_model.get('sentences'):
             self._compile_question_words()
+            self._compile_answer_classes()
         return {'status': 'reading_consolidated', 'words': 0, 'pairs': 0}
 
     def _gap_neighbours(self, question: list[str], key: str, present: set) -> tuple:
@@ -251,6 +256,13 @@ class ReadingMemoryMixin:
                 model['sentence_df'][token] = model['sentence_df'].get(token, 0) + 1
         model['contexts'] += 1
         self._observe_opener(_TOKEN.findall(question), True)
+        # G-43: which words answer which questions, compiled when consolidating.
+        lead = [t.lower() for t in _TOKEN.findall(question) if _is_word(t)][:ANSWER_LEAD]
+        said = [t for t in _TOKEN.findall(answer) if _is_word(t)][:ANSWER_WORDS]
+        if lead and said:
+            table = model.setdefault('answer_examples', {})
+            pair = ' '.join(lead) + '\x1e' + ' '.join(said)
+            table[pair] = table.get(pair, 0) + 1
         qtokens = [_norm(t) for t in _TOKEN.findall(question) if _is_word(t)]
         target = [_norm(t) for t in _TOKEN.findall(answer) if _is_word(t)]
         # Calibration: how much of a question a foreign text covers by chance.
@@ -329,18 +341,31 @@ class ReadingMemoryMixin:
         An utterance supports it when it contains every stem of the question
         other than the learned negators; its answer is «sí» with the question's
         polarity (parity of learned negators) and «no» with the opposite one.
-        Both polarities supported: contradiction; none: «no lo sé»."""
+        Both polarities supported: contradiction; none: «no lo sé».
+        G-43: with learned syntax the support must also hold in structure (who
+        does what) and not be subordinate (what someone said or supposed)."""
         negators = set(self.syntax_model.get('negators', ()))
         words = [t.lower() for t in _TOKEN.findall(question) if _is_word(t)]
         polarity = sum(w in negators for w in words) % 2
         content = {_norm(w) for w in words if w not in negators}
         supports: dict[int, list[str]] = {0: [], 1: []}
+        reported: list[str] = []
+        structure = None
+        if getattr(self, 'structural_verification', True) and self.syntax_model.get('sentences'):
+            structure = self._question_links(question, negators)
         if content and self.reading_utterances:
             index = self._reading_index()
             lists = sorted((index.get(t, ()) for t in content), key=len)
             candidates = set(lists[0]).intersection(*lists[1:]) if lists else set()
             for position in sorted(candidates):
                 row = self.reading_utterances[position]
+                if structure is not None:
+                    held = self._links_hold(structure, row['text'])
+                    if held is None:
+                        continue
+                    if held == 'subordinate':
+                        reported.append(row['source'])
+                        continue
                 said = [t.lower() for t in row['tokens'] if _is_word(t)]
                 supports[sum(w in negators for w in said) % 2].append(row['source'])
         same, opposite = supports[polarity], supports[1 - polarity]
@@ -351,7 +376,115 @@ class ReadingMemoryMixin:
             return {'text': 'Sí, según lo que me dijeron.', 'status': 'literal_yes', 'evidence': same}
         if opposite:
             return {'text': 'No, según lo que me dijeron.', 'status': 'literal_no', 'evidence': opposite}
+        if reported:
+            return {'text': 'No lo sé con seguridad: lo que me dijeron lo presenta como algo dicho o supuesto, '
+                            'no como un hecho.', 'status': 'literal_reported', 'evidence': reported}
         return {'text': 'No lo sé: no tengo esa información.', 'status': 'literal_unknown', 'evidence': []}
+
+    @staticmethod
+    def _enhanced(heads, labels):
+        """G-43: each coordinated element hangs from the head of the first
+        element of its coordination, with its function (the enhanced Universal
+        Dependencies convention); returns the new heads and functions."""
+        new_heads, new_labels = list(heads), list(labels)
+        for d in range(len(heads)):
+            first, seen = d, set()
+            while labels[first] == 'conj' and heads[first] and first not in seen:
+                seen.add(first)
+                first = heads[first] - 1
+            if first != d:
+                new_heads[d], new_labels[d] = heads[first], labels[first]
+        return new_heads, new_labels
+
+    def _graph(self, heads, labels):
+        """Undirected links of the enhanced tree, plus the subject a coordinated
+        predicate shares with the first one (G-43)."""
+        enhanced, _ = self._enhanced(heads, labels)
+        links = [set() for _ in heads]
+        for d, h in enumerate(enhanced):
+            if h:
+                links[d].add(h - 1); links[h - 1].add(d)
+        for d, h in enumerate(heads):
+            if labels[d] == 'conj' and h and not any(heads[k] == d + 1 and str(labels[k]).startswith('nsubj')
+                                                     for k in range(len(heads))):
+                for k in range(len(heads)):
+                    if heads[k] == h and str(labels[k]).startswith('nsubj'):
+                        links[d].add(k); links[k].add(d)
+        return enhanced, links
+
+    def _question_links(self, question: str, negators: set):
+        """Links between the content words of a yes/no question: each one with
+        its nearest content ancestor and the number of steps between them."""
+        tree = self._utterance_tree(question)
+        if tree is None:
+            return None
+        words, tags, heads, labels = tree
+        enhanced, _ = self._enhanced(heads, labels)
+        content = {i for i, (w, t) in enumerate(zip(words, tags))
+                   if t not in FUNCTION_TAGS and _is_word(w) and w.lower() not in negators}
+        links = []
+        for i in sorted(content):
+            node = enhanced[i] - 1
+            while node >= 0 and node not in content:
+                node = enhanced[node] - 1
+            if node >= 0:
+                # One content step: function words in between are transparent.
+                links.append((_norm(words[i]), _norm(words[node]), 1))
+        return {'stems': {_norm(words[i]) for i in content}, 'links': links}
+
+    def _links_hold(self, structure, text: str):
+        """None if the sentence does not state the question's links; 'subordinate'
+        if it does but inside a subordinate clause; 'asserted' otherwise."""
+        tree = self._utterance_tree(text)
+        if tree is None:
+            return None
+        words, tags, heads, labels = tree
+        stems = [_norm(w) for w in words]
+        places: dict = {}
+        for j, w in enumerate(words):
+            if _is_word(w) and stems[j] in structure['stems']:
+                places.setdefault(stems[j], []).append(j)
+        if set(places) != structure['stems']:
+            return None
+        aligned = {j for js in places.values() for j in js}
+        enhanced, graph = self._graph(heads, labels)
+        weight = [0 if t in FUNCTION_TAGS else 1 for t in tags]
+        for a, b, steps in structure['links']:
+            reached = False
+            for start in places[a]:
+                # Only content words count as steps (G-43); other question
+                # words may not stand in between.
+                far, queue = {start: 0}, deque([start])
+                while queue and not reached:
+                    node = queue.popleft()
+                    for other in graph[node]:
+                        cost = far[node] + weight[other]
+                        if cost > steps + 1 or far.get(other, cost + 1) <= cost:
+                            continue
+                        far[other] = cost
+                        if other in places[b]:
+                            reached = True
+                            break
+                        if other not in aligned:
+                            (queue.appendleft if weight[other] == 0 else queue.append)(other)
+                if reached:
+                    break
+            if not reached:
+                return None
+        depth = lambda j: len(self._ancestors(enhanced, j))
+        top = min(sorted(aligned), key=depth)
+        for node in [top] + self._ancestors(enhanced, top):
+            if any(heads[k] == node + 1 and tags[k] == 'SCONJ' for k in range(len(heads))):
+                return 'subordinate'
+        return 'asserted'
+
+    @staticmethod
+    def _ancestors(heads, node: int) -> list[int]:
+        out, seen = [], {node}
+        while heads[node] and heads[node] - 1 not in seen:
+            node = heads[node] - 1
+            out.append(node); seen.add(node)
+        return out
 
     def _utterance_tree(self, text: str):
         """Syntactic words, tags, heads and functions of a remembered sentence,
@@ -369,13 +502,17 @@ class ReadingMemoryMixin:
         return tree or None
 
     @staticmethod
-    def _tree_distances(heads, start: int) -> list[int]:
-        """Edges between ``start`` and every word of a tree (heads 1-based, 0 root)."""
+    def _tree_distances(heads, start: int, tags=None) -> list[int]:
+        """Steps between ``start`` and every word of a tree (heads 1-based, 0
+        root).  G-43: with tags, only content words count as steps; function
+        words are transparent, so an article or a copula wrongly chosen as a
+        head does not lengthen the way."""
         n = len(heads)
         links = [[] for _ in range(n)]
         for d, h in enumerate(heads):
             if h:
                 links[d].append(h - 1); links[h - 1].append(d)
+        step = [0 if tags is not None and tags[i] in FUNCTION_TAGS else 1 for i in range(n)]
         far = [-1] * n
         far[start] = 0
         frontier = [start]
@@ -384,19 +521,86 @@ class ReadingMemoryMixin:
             for node in frontier:
                 for other in links[node]:
                     if far[other] < 0:
-                        far[other] = far[node] + 1; nxt.append(other)
+                        far[other] = far[node] + step[other]; nxt.append(other)
             frontier = nxt
         return [d if d >= 0 else n for d in far]
+
+    def _span_class(self, words):
+        """The class of a stretch of text: the learned class of its first word
+        that is not a function word (G-43)."""
+        for word in words:
+            if _is_word(word):
+                label = self.word_class(word)
+                if label is not None and label not in FUNCTION_TAGS:
+                    return label
+        return None
+
+    def _compile_answer_classes(self) -> None:
+        """G-43: which class of words answers each interrogative (and each
+        interrogative with its noun), counted from the worked examples."""
+        model = self.reading_model
+        interrogatives = set(self.syntax_model.get('interrogatives', ()))
+        classes: dict = {}
+        for key, count in sorted(model.get('answer_examples', {}).items()):
+            lead, said = key.split('\x1e')
+            words = lead.split()
+            k = next((i for i, w in enumerate(words) if w in interrogatives), None)
+            label = self._span_class(said.split()) if k is not None else None
+            if label is None:
+                continue
+            names = [words[k]]
+            if k + 1 < len(words) and self.word_class(words[k + 1]) == 'NOUN':
+                names.append(words[k] + ' ' + words[k + 1])
+            for name in names:
+                row = classes.setdefault(name, {})
+                row[label] = row.get(label, 0) + count
+        model['answer_classes'] = classes
+
+    def _class_cost(self, keys, label) -> float:
+        classes = self.reading_model.get('answer_classes', {})
+        for key in keys:
+            row = classes.get(key)
+            if row and (key == keys[-1] or sum(row.values()) >= CLASS_SUPPORT):
+                total = sum(row.values())
+                return -math.log((row.get(label, 0) + 1) / (total + len(self._tag_list())))
+        return 0.0
+
+    def _reader_span_score(self, question: str, row: dict, text: str):
+        """The G-28 reader's learned score for one given span of a sentence,
+        or None when the span cannot be located or nothing was learned."""
+        model = self.reading_model
+        if not model.get('examples'):
+            return None
+        tokens = row['tokens']
+        normalized = [_norm(t) for t in tokens]
+        target = [_norm(t) for t in _TOKEN.findall(text) if _is_word(t)]
+        words = [(i, w) for i, (t, w) in enumerate(zip(tokens, normalized)) if _is_word(t)]
+        found = next(((words[k][0], words[k + len(target) - 1][0] + 1) for k in range(len(words) - len(target) + 1)
+                      if target and [w for _, w in words[k:k + len(target)]] == target), None)
+        if found is None:
+            return None
+        qtokens = [_norm(t) for t in _TOKEN.findall(question) if _is_word(t)]
+        qset = set(qtokens)
+        key = self._gap_marker(qtokens)
+        anchors = set(self._anchors(tokens, qset))
+        gap = self._gap_neighbours(qtokens, key, set(normalized))
+        prior = model['positives'] / max(1, model['positives'] + model['negatives'])
+        return round(sum(self._feature_score(key, f, prior)
+                         for f in self._span_features(tokens, found[0], found[1], anchors, qset, gap, normalized)), 9)
 
     def answer_by_structure(self, question: str) -> dict | None:
         """G-42: an open question is a sentence with a gap.  A remembered
         sentence that contains every content word of the question answers it
-        with the part that sits where the question's interrogative sits: the
+        with the part that sits where the question's interrogative sits: a
         largest subtree without question words, in the sentence that aligns
         most question words, placed at the same tree distances from the shared
-        words.  Ties that remain are reported as
-        ambiguity instead of chosen silently.  None when no sentence contains
-        every content word (the G-28 reader then decides)."""
+        words.  G-43: distances are taken from the head of the interrogative
+        phrase in enhanced trees (coordinated elements share their head) and
+        count content words only; a coordinated element answers only with its
+        coordination; the class of words learned to answer the interrogative
+        weighs in, and the G-28 reader's statistics separate the ties left.
+        Ties that remain are reported as ambiguity instead of chosen silently.  None when no sentence contains every
+        content word (the G-28 reader then decides)."""
         interrogatives = set(self.syntax_model.get('interrogatives', ()))
         if not interrogatives or not self.reading_utterances:
             return None
@@ -421,10 +625,13 @@ class ReadingMemoryMixin:
         if not where:
             return None
         noun_stem = _norm(words[noun]) if noun is not None else None
+        keys = ([low[q] + ' ' + low[noun]] if noun is not None else []) + [low[q]]
+        use_classes = getattr(self, 'answer_classes', True)
         index = self._reading_index()
         lists = sorted((index.get(t, ()) for t in where), key=len)
         positions = set(lists[0]).intersection(*lists[1:])
-        qdist = self._tree_distances(heads, q)
+        qheads, _ = self._enhanced(heads, labels)
+        qdist = self._tree_distances(qheads, noun if noun is not None else q, tags)
         ranked = []
         for position in sorted(positions):
             row = self.reading_utterances[position]
@@ -433,9 +640,8 @@ class ReadingMemoryMixin:
                 continue
             swords, stags, sheads, slabels = tree
             stems = [_norm(w) for w in swords]
-            aligned = {j for j, (w, t) in enumerate(zip(swords, stags))
-                       if t not in FUNCTION_TAGS and _is_word(w)
-                       and (stems[j] in where or stems[j] == noun_stem)}
+            aligned = {j for j, w in enumerate(swords)
+                       if _is_word(w) and (stems[j] in where or stems[j] == noun_stem)}
             if not set(where) <= {stems[j] for j in aligned}:
                 continue
             n = len(swords)
@@ -453,29 +659,34 @@ class ReadingMemoryMixin:
                 return inside
             for root in (d for d, h in enumerate(sheads) if not h):
                 mark(root)
+            enhanced, _ = self._enhanced(sheads, slabels)
             host = next((j for j in aligned if stems[j] == noun_stem), None)
+            coverage = len({stems[j] for j in aligned})
             for node in range(n):
-                parent = sheads[node] - 1
-                if covered[node] or (parent >= 0 and not covered[parent]):
+                if covered[node] or slabels[node] == 'conj':
                     continue
-                if host is not None and parent != host:
+                parent = sheads[node] - 1
+                if parent >= 0 and not covered[parent]:
+                    continue
+                if host is not None and host not in self._ancestors(enhanced, node):
                     continue
                 span, stack = [], [node]
                 while stack:
                     k = stack.pop(); span.append(k); stack.extend(children[k])
                 if all(stags[k] in FUNCTION_TAGS or not _is_word(swords[k]) for k in span):
                     continue
-                sdist = self._tree_distances(sheads, node)
+                sdist = self._tree_distances(enhanced, node, stags)
                 mirror = sum(abs(qdist[where[stems[j]]] - sdist[j]) for j in aligned if stems[j] in where)
-                lead = min(span)
-                own_case = swords[lead].lower() if stags[lead] == 'ADP' else None
                 a, b = min(span), max(span)
                 while a <= b and not _is_word(swords[a]):
                     a += 1
                 while b >= a and not _is_word(swords[b]):
                     b -= 1
-                ranked.append(((-len({stems[j] for j in aligned}), mirror, own_case != case, slabels[node] != labels[q]),
-                               ' '.join(swords[a:b + 1]), row))
+                text = swords[a:b + 1]
+                cost = mirror + (self._class_cost(keys, self._span_class(text)) if use_classes else 0.0)
+                own_case = swords[a].lower() if stags[a] == 'ADP' else None
+                ranked.append(((-coverage, round(cost, 9), own_case != case, slabels[node] != labels[q]),
+                               ' '.join(text), row))
         if not ranked:
             return None
         best = min(key for key, _, _ in ranked)
@@ -483,6 +694,12 @@ class ReadingMemoryMixin:
         for key, text, row in ranked:
             if key == best:
                 winners.setdefault(' '.join(_norm(t) for t in text.split()), (text, row))
+        if len(winners) > 1:
+            # G-43: structure narrows the options; the reader's learned statistics decide among them.
+            scores = {name: self._reader_span_score(question, row, text) for name, (text, row) in winners.items()}
+            top = max((v for v in scores.values() if v is not None), default=None)
+            if top is not None and sum(v == top for v in scores.values()) == 1:
+                winners = {name: winners[name] for name, v in scores.items() if v == top}
         if len(winners) > 1:
             return {'text': 'No lo sé con seguridad: lo que me dijeron admite más de una respuesta.',
                     'status': 'literal_ambiguous', 'candidates': len(winners)}
