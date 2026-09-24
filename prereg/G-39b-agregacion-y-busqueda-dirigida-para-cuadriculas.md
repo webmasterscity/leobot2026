@@ -41,6 +41,11 @@ No cambia qué programas son soluciones, solo el orden y el costo de encontrarla
 - Para búsquedas sin cuadrícula el comportamiento es el mismo que antes.
 - No se sube ningún límite.
 
+**Segunda enmienda antes de congelar (2026-09-23), sin cambiar criterios:** en el desarrollo del motor, solo con el tratamiento (20/400, 2 errores), la memoria pico fue de 1602 MiB por proceso, sobre el umbral de 1500. Las firmas de las cuadrículas guardan un valor por celda de cada ejemplo. Se añade un **presupuesto explícito de memoria de la búsqueda**:
+- cuando la suma de valores guardados en firmas supera 50 millones, la búsqueda se detiene como incompleta;
+- es un límite nuevo, no una subida;
+- las búsquedas sin cuadrícula no lo alcanzan.
+
 5.8:
 - **Qué fallo resuelve:** representación insuficiente (tamaño dependiente del contenido, agregados) y dilución de la búsqueda plana.
 - **Por qué no bastan los actuales:** G-39 da 0/200.
