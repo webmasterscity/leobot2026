@@ -29,6 +29,21 @@ Causas:
 - **Qué lo distingue:** la ablación con los dos interruptores; MLQA no vista, donde el punto 1 no debe cambiar nada porque todo es documento leído.
 - **Qué se elimina:** las adivinanzas del lector de G-28 sobre lo dicho en conversación.
 
+**Enmienda antes de congelar (2026-09-24), por lo visto en desarrollo.**
+- **Error de nombre de variable.** Al guardar la presencia de las palabras de la pregunta se reutilizó el nombre de variable que el lector de G-28 usa como ámbito de sus estadísticas. El modelo de lectura se corrompió (de 5,4 a 20,6 MB) y la base superó el límite de carga. Se corrigió antes de medir.
+- **Abstención sin «No lo sé».** Cuando el lector de G-28 no encuentra oración, se abstiene con «No encuentro en lo que leí…». Eso incumple la regla de una sola abstención de G-42 (punto 2) y ya ocurría desde entonces. Con el punto 1, la mayoría de las preguntas sin respuesta pasan por ahí. Ahora, con interrogativas aprendidas, esa abstención es «No lo sé: …».
+
+Medido en desarrollo después de la corrección (7 conjuntos gastados, 247 preguntas; MLQA visible):
+
+| Variante | Conversación | MLQA F1 |
+|---|---|---|
+| G-45 | 187 | 0,2252 |
+| solo el lector sobre documentos | 186 | 0,2252 |
+| solo el choque de sustantivos | 178 | 0,2252 |
+| ablación (ambos interruptores con el comportamiento de G-44b, con la abstención corregida) | 178 | 0,2252 |
+
+La puerta no cambia.
+
 ## Evaluación
 
 - **Desarrollo:** los 7 conjuntos de conversación gastados (247 preguntas) y MLQA visible.
