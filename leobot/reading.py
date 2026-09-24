@@ -35,6 +35,7 @@ ANSWER_WORDS = 4           # G-47: answer words kept per worked example
 # G-42: learned word classes that carry grammar rather than content; they do
 # not have to be found in the answering sentence and do not anchor it.
 FUNCTION_TAGS = frozenset({'DET', 'ADP', 'AUX', 'PRON', 'CCONJ', 'SCONJ', 'PUNCT'})
+LEMMA = '\x1d'             # G-47b: prefix of dictionary forms in the search index
 
 
 def _norm(token: str) -> str:
@@ -97,7 +98,9 @@ class ReadingMemoryMixin:
             _, postings, documents, word_sets, _ = index
             for position in range(index[0], len(rows)):
                 row = rows[position]
-                words = {_norm(t) for t in list(row['tokens']) + list(row.get('referents', ())) if _is_word(t)}
+                said = [t for t in list(row['tokens']) + list(row.get('referents', ())) if _is_word(t)]
+                # G-47b: also every learned dictionary form, so that search uses alignment's keys.
+                words = {_norm(t) for t in said} | {LEMMA + k for t in said for k in self.lemma_keys(t)}
                 word_sets.append(words)
                 documents.setdefault(row.get('document'), set()).update(words)
                 for token in words:
@@ -112,7 +115,8 @@ class ReadingMemoryMixin:
         if index is None or len(index) < 5 or index[4] != id(self.reading_utterances) or position >= index[0]:
             return
         _, postings, documents, word_sets, _ = index
-        new = {_norm(t) for t in words if _is_word(t)} - word_sets[position]
+        new = ({_norm(t) for t in words if _is_word(t)} |
+               {LEMMA + k for t in words if _is_word(t) for k in self.lemma_keys(t)}) - word_sets[position]
         for token in sorted(new):
             postings.setdefault(token, []).append(position)
         word_sets[position] |= new
@@ -377,7 +381,7 @@ class ReadingMemoryMixin:
         negators = set(self.syntax_model.get('negators', ()))
         words = [t.lower() for t in _TOKEN.findall(question) if _is_word(t)]
         polarity = sum(w in negators for w in words) % 2
-        content = {_norm(w) for w in words if w not in negators}
+        content = {self._search_key(w) for w in words if w not in negators}
         supports: dict[int, list[str]] = {0: [], 1: []}
         reported: list[str] = []
         structure = None
@@ -415,7 +419,8 @@ class ReadingMemoryMixin:
             # G-46: another value of the same attribute was said.
             index = self._reading_index()
             for value in sorted(structure['stems']):
-                others = [structure['norms'][k] for k in structure['stems'] if k != value]
+                others = [LEMMA + k if self._lemma_sets() else structure['norms'][k]
+                          for k in structure['stems'] if k != value]
                 lists = sorted((index.get(t, ()) for t in others), key=len)
                 if not lists:
                     continue
@@ -492,6 +497,7 @@ class ReadingMemoryMixin:
                 'norms': {self._word_key(words[i]): _norm(words[i]) for i in content},
                 'cases': {self._word_key(words[i]): cases[i] for i in content},
                 'copular': {self._word_key(words[i]): copular[i] for i in content},
+                'elabels': {self._word_key(words[i]): enhanced_labels[i] for i in content},
                 'roles': roles}
 
     def _contrast(self, structure, source, negators: set):
@@ -521,6 +527,12 @@ class ReadingMemoryMixin:
                 continue
             eheads, elabels = self._enhanced(heads, labels)
             aligned = {j for j, k in enumerate(keys) if k in reduced['stems']}
+            # G-47b: the kind of something had, existing or sold («cajas de
+            # clavos») is not a single-valued attribute: other kinds may exist.
+            if getattr(self, 'g47b_structure', True) and structure['cases'][value] and any(
+                    str(structure.get('elabels', {}).get(b, '')).split(':')[0] == 'obj'
+                    for a, b, _ in structure['roles'] if a == value):
+                continue
             for j, (w, t) in enumerate(zip(words, tags)):
                 if j in aligned or not _is_word(w) or t != structure['tags'][value]:
                     continue
@@ -577,7 +589,7 @@ class ReadingMemoryMixin:
         stems = [self._word_key(w) for w in words]
         if getattr(self, 'same_fact', True):
             # G-47: one occurrence per question word, links through no other entity, same prepositions.
-            placements = self._placements(structure, tree, stems)
+            placements = self._placements(structure, tree, self._key_sets(words))
             if not placements:
                 return None
             enhanced, _ = self._graph(heads, labels)
@@ -632,8 +644,9 @@ class ReadingMemoryMixin:
         words, tags, heads, labels = tree
         places: dict = {}
         for j, w in enumerate(words):
-            if _is_word(w) and stems[j] in structure['stems']:
-                places.setdefault(stems[j], []).append(j)
+            if _is_word(w):
+                for key in sorted(stems[j] & set(structure['stems'])):
+                    places.setdefault(key, []).append(j)
         if set(places) != set(structure['stems']):
             return []
         keys = sorted(places)
@@ -790,6 +803,21 @@ class ReadingMemoryMixin:
         self.reading_model['category_nouns'] = sorted(k for k, (n, absent) in counts.items()
                                                       if n >= CATEGORY_SUPPORT and absent >= 0.5 * n)
 
+    def _lemma_sets(self) -> bool:
+        return getattr(self, 'lemma_sets', True) and getattr(self, 'lemma_alignment', True)
+
+    def _key_sets(self, words) -> list:
+        """G-47b: the keys each word of a remembered sentence aligns by: every
+        learned dictionary form (or only the majority one, as in G-47)."""
+        if self._lemma_sets():
+            return [self.lemma_keys(w) for w in words]
+        return [{self._word_key(w)} for w in words]
+
+    def _search_key(self, word: str) -> str:
+        """G-47b: how a question word is looked up in memory: by its
+        dictionary form, like alignment (G-47: by its 5-letter stem)."""
+        return LEMMA + self._word_key(word) if self._lemma_sets() else _norm(word)
+
     def _word_key(self, word: str) -> str:
         """How two words are matched when aligning: by learned dictionary form
         (G-44b), or by the 5-letter stem when that is switched off."""
@@ -871,7 +899,7 @@ class ReadingMemoryMixin:
         same = getattr(self, 'same_fact', True)
         if same:
             self._resolve_references()
-        retrieval = {_norm(words[i]) for i in where.values()}
+        retrieval = {self._search_key(words[i]) for i in where.values()}
         index = self._reading_index()
         lists = sorted((index.get(t, ()) for t in retrieval), key=len)
         positions = set(lists[0]).intersection(*lists[1:])
@@ -892,12 +920,14 @@ class ReadingMemoryMixin:
             if tree is None:
                 continue
             keys = [self._word_key(w) for w in tree[0]]
-            if not required <= set(keys):
-                continue
             if same:
-                ranked += self._placed_candidates(row, tree, keys, shapes[noun_key in keys], where, noun, noun_key,
+                sets = self._key_sets(tree[0])
+                present = set().union(*sets) if sets else set()
+                if not required <= present:
+                    continue
+                ranked += self._placed_candidates(row, tree, sets, shapes[noun_key in present], where, noun, noun_key,
                                                   categories, qdist, labels[q], case, negators, polarity)
-            else:
+            elif required <= set(keys):
                 ranked += self._legacy_candidates(row, tree, keys, where, noun, noun_key, required, categories,
                                                   qdist, labels[q], case)
         classes = self._answer_classes_for(low, q, noun) if getattr(self, 'answer_type', True) else None
@@ -984,7 +1014,7 @@ class ReadingMemoryMixin:
                     continue
                 if host is not None and host not in self._ancestors(enhanced, node):
                     continue
-                if (host is None and noun is not None and stags[node] == 'NOUN' and keys[node] != noun_key
+                if (host is None and noun is not None and stags[node] == 'NOUN' and noun_key not in keys[node]
                         and getattr(self, 'noun_clash', True) and noun_key not in categories):
                     continue        # G-45: another noun speaks of another thing
                 span, stack = [], [node]
@@ -1002,7 +1032,9 @@ class ReadingMemoryMixin:
                 own = {swords[k].lower() for k in children[node] if stags[k] == 'ADP'}
                 text = self._span_text(row, swords, span)
                 if text:
-                    out.append(((-len(placement), mirror, case not in own if case else bool(own),
+                    # G-47b: a sentence holding the noun of the interrogative phrase comes first.
+                    first = -(host is not None) if getattr(self, 'g47b_structure', True) else 0
+                    out.append(((first, -len(placement), mirror, case not in own if case else bool(own),
                                  slabels[node] != qlabel), text, row))
         return out
 
@@ -1021,7 +1053,30 @@ class ReadingMemoryMixin:
             a += 1
         while b >= a and not _is_word(words[b]):
             b -= 1
-        return ' '.join(words[a:b + 1])
+        return self._surface(words[a:b + 1])
+
+    def _surface(self, words) -> str:
+        """G-47b: syntactic words back to how they are written: two words the
+        learned splitting (G-35) takes apart are joined again («de el» → «del»)."""
+        joined = self.__dict__.get('_joined_forms')
+        table = self.syntax_model.get('split_table', {})
+        if joined is None or joined[0] != len(table):
+            forms: dict = {}
+            for surface, parts in sorted(table.items()):
+                if len(parts) == 2:
+                    forms.setdefault((parts[0].lower(), parts[1].lower()), surface)
+            joined = self.__dict__['_joined_forms'] = (len(table), forms)
+        out, k = [], 0
+        while k < len(words):
+            pair = (words[k].lower(), words[k + 1].lower()) if k + 1 < len(words) else None
+            if pair in joined[1]:
+                surface = joined[1][pair]
+                out.append(surface.capitalize() if words[k][:1].isupper() else surface)
+                k += 2
+            else:
+                out.append(words[k])
+                k += 1
+        return ' '.join(out)
 
     def _subject_taken(self, node, placement, structure, tree, keys, enhanced) -> bool:
         """G-47: a candidate that is the subject of a placed word whose subject
@@ -1035,7 +1090,7 @@ class ReadingMemoryMixin:
         governed = {head} | {d for d in range(len(heads)) if labels[d] == 'conj' and heads[d] - 1 == head
                              and not any(heads[k] == d + 1 and str(labels[k]).startswith('nsubj')
                                          for k in range(len(heads)))}
-        return any(g in placed and (keys[g], 'nsubj') in structure['subjects'] for g in governed)
+        return any(g in placed and any((k, 'nsubj') in structure['subjects'] for k in keys[g]) for g in governed)
 
     @staticmethod
     def _joined_siblings(nodes, heads, labels, tags, words):
@@ -1105,7 +1160,7 @@ class ReadingMemoryMixin:
                 b -= 1
             own_case = swords[a].lower() if stags[a] == 'ADP' else None
             out.append(((-coverage, mirror, own_case != case, slabels[node] != qlabel),
-                        ' '.join(swords[a:b + 1]), row))
+                        self._surface(swords[a:b + 1]), row))
         return out
 
     @staticmethod

@@ -72,3 +72,23 @@ Si pasa: verificación independiente 5.10 y `estable-G-12`. Si falla, se registr
 ## En palabras fáciles de entender
 
 Leobot ya entiende mejor a quién se refieren «él», «ella» o «su». Pero seguía fallando por cosas pequeñas que se repiten. Buscaba las frases por las primeras letras de las palabras, y así «dijo» no encontraba «dice». No sabía que «llamado» viene de «llamar». Escribía «de el» donde se dice «del». Y si una frase decía «ella» por Elena, no aprendía que Elena es mujer. Esta vuelta corrige esas causas, cada una de forma general, y se vuelve a medir con preguntas nuevas.
+
+## Enmienda antes de congelar (2026-09-24), por lo visto en desarrollo
+
+Medida en los 12 conjuntos gastados (528 preguntas).
+
+1. **Contraste (punto 6).** La primera versión quitaba el «no» por contraste a cualquier valor que dependiera de un objeto, en la pregunta o en la oración.
+   - Así se evitaron 2 «no» falsos, pero se perdieron 8 correctos de cantidad y de cualidad: «¿hay quince manzanas?», «¿tiene ocho sillas?», «¿la fuente es de madera?».
+   - Ahora se quita solo cuando el valor preguntado lleva preposición (una clase: «cajas **de clavos**») y la palabra de la que depende es un objeto en la pregunta. Una cantidad o una cualidad sigue teniendo un solo valor.
+2. **Orden de antecedentes (implementación de lo que dice la enmienda de G-47).** El código de G-47 recorría cada oración anterior con su sujeto primero, y después pasaba a la siguiente. La enmienda de G-47 dice: primero los sujetos de las oraciones anteriores y después sus demás menciones.
+   - Con el interruptor `g47b_structure`, se sigue la enmienda.
+   - Además, un elemento coordinado tiene la función del primero («Elena y Marcos» son sujetos), como en las dependencias mejoradas.
+
+| Variante (desarrollo, 528) | Aciertos | Afirma lo falso | Abiertas equivocadas | «no» |
+|---|---|---|---|---|
+| G-47b | 408 | 3 | 17 | 39/63 |
+| sin `lemma_sets` | 385 (primera versión) | 2 | 16 | 30/63 |
+| sin `g47b_structure` | 405 | 4 | 18 | 39/63 |
+| ambas (= G-47 con contracciones unidas) | 390 | 4 | 17 | 39/63 |
+
+MLQA visible: G-47b 0,2295; ambas ablaciones 0,2302; lector solo 0,2221. La puerta no cambia.

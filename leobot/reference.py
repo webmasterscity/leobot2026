@@ -53,6 +53,11 @@ class ReferenceMixin:
         pending = [p for p in range(start, len(rows)) if self._conversational(rows[p])
                    and not rows[p].get('referenced')]
         if pending:
+            # G-47b: genders the conversation taught (a name taken up by «ella» is feminine).
+            learned: dict = {}
+            for row in rows[:pending[0]]:
+                if self._conversational(row):
+                    learned.update(row.get('genders', {}))
             history, p = [], pending[0] - 1
             while p >= 0 and len(history) < WINDOW:
                 if self._conversational(rows[p]):
@@ -66,7 +71,10 @@ class ReferenceMixin:
                     continue
                 tree = self._utterance_tree(row['text'])
                 if not row.get('referenced') and tree is not None:
-                    resolved, added = self._resolve_tree(tree, history)
+                    before = dict(learned)
+                    resolved, added = self._resolve_tree(tree, history, learned)
+                    if learned != before:
+                        row['genders'] = {k: v for k, v in learned.items() if before.get(k) != v}
                     if added:
                         row['resolved'] = [list(part) for part in resolved]
                         row['referents'] = added
@@ -79,8 +87,9 @@ class ReferenceMixin:
         self.__dict__['_reference_cursor'] = (id(rows), len(rows))
 
     # ----- mentions -----------------------------------------------------
-    def _agreement(self, words, tags, children, node):
-        """Gender and number of a mention, from its own form or its determiner."""
+    def _agreement(self, words, tags, children, node, learned=None):
+        """Gender and number of a mention, from its own form or its determiner
+        (G-47b: or, for a name, from how the conversation took it up)."""
         features = self.morphology(words[node], tags[node]) if tags[node] == 'NOUN' else set()
         gender, number = _feature(features, 'Gender'), _feature(features, 'Number')
         for k in children[node]:
@@ -88,12 +97,18 @@ class ReferenceMixin:
                 det = self.morphology(words[k], 'DET')
                 gender = gender or _feature(det, 'Gender')
                 number = number or _feature(det, 'Number')
+        if gender is None and learned and tags[node] == 'PROPN':
+            gender = learned.get(words[node].lower())
         return gender, number
 
     def _mentions(self, tree):
         """Nominal mentions of a tree (not predicates, not parts of a name),
-        ranked subject first, then by function, then left to right."""
+        ranked subject first, then by function, then left to right.  G-47b: a
+        coordinated element has the function of the first one («Elena y
+        Marcos» are both subjects)."""
         words, tags, heads, labels = tree
+        if getattr(self, 'g47b_structure', True):
+            labels = self._enhanced(heads, labels)[1]
         children = [[] for _ in words]
         for d, h in enumerate(heads):
             if h:
@@ -130,7 +145,7 @@ class ReferenceMixin:
         return [(words[k], tags[k], position.get(heads[k] - 1) if k != node else None, labels[k]) for k in keep]
 
     # ----- resolution ---------------------------------------------------
-    def _resolve_tree(self, tree, history):
+    def _resolve_tree(self, tree, history, learned=None):
         words, tags, heads, labels = tree
         n = len(words)
         children = [[] for _ in range(n)]
@@ -171,18 +186,36 @@ class ReferenceMixin:
             # sentence's earlier clauses, of the previous sentences; then the
             # other mentions of the previous sentences and of its own sentence.
             order = []
-            if possessive and subject is not None and subject < i and subject != possessed:
+            structural = getattr(self, 'g47b_structure', True)
+            # G-47b: the possessor of a noun predicated with «ser» is not its subject («Consuelo es su esposa»).
+            attribute = possessive and structural and any(labels[k] == 'cop' for k in children[possessed])
+            if attribute and subject is not None:
+                coarguments = {subject}
+            if possessive and not attribute and subject is not None and subject < i and subject != possessed:
                 order.append((tree, subject))
             subjects = [k for k in range(i) if str(labels[k]).startswith('nsubj') and tags[k] in ('NOUN', 'PROPN')]
             order += [(tree, k) for k in reversed(subjects)]
-            for past in reversed(range(len(history))):
-                order += [(history[past], k) for k, _ in earlier[past]]
+            if structural:
+                # G-47b, as the G-47 amendment reads: the subjects of the previous
+                # sentences (most recent first) before their other mentions.
+                recent = list(reversed(range(len(history))))
+                order += [(history[past], k) for past in recent for k, _ in earlier[past]
+                          if self._is_subject(history[past], k)]
+                order += [(history[past], k) for past in recent for k, _ in earlier[past]
+                          if not self._is_subject(history[past], k)]
+            else:
+                for past in reversed(range(len(history))):
+                    order += [(history[past], k) for k, _ in earlier[past]]
             order += [(tree, k) for k, _ in sorted(own, key=lambda m: -m[0]) if k < i]
+            memory = learned if structural else None
             chosen = self._first_compatible(order, gender, number,
                                             exclude=inside | coarguments | ({possessed} if possessive else set()),
-                                            current=tree)
+                                            current=tree, learned=memory)
             if chosen is not None:
                 edits[i] = ('possessive' if possessive else 'pronoun', chosen)
+                source, k = chosen
+                if memory is not None and gender and source[1][k] == 'PROPN':
+                    memory.setdefault(source[0][k].lower(), gender)
         root = next((d for d, h in enumerate(heads) if not h), None)
         # The subject may hang from the copula or auxiliary (a parser slip).
         governed = [root] + [k for k in children[root] if labels[k] in ('cop', 'aux')] if root is not None else []
@@ -194,12 +227,16 @@ class ReferenceMixin:
                 if lemma not in set(self.syntax_model.get('impersonal', ())):
                     order = [(history[past], k) for past in reversed(range(len(history)))
                              for k, _ in self._mentions(history[past])]
-                    chosen = self._first_compatible(order, None, 'Sing', exclude=set(), current=tree)
+                    chosen = self._first_compatible(order, None, 'Sing', exclude=set(), current=tree,
+                                                    learned=learned if getattr(self, 'g47b_structure', True) else None)
                     if chosen is not None:
                         edits[('subject', root)] = ('subject', chosen)
         if not edits:
             return tree, []
         return self._rebuilt(tree, edits)
+
+    def _is_subject(self, tree, k) -> bool:
+        return str(self._enhanced(tree[2], tree[3])[1][k]).startswith('nsubj')
 
     def _finite(self, words, tags, labels, children, root):
         """Features of the finite verb of a clause: the head itself, or its copula or auxiliary."""
@@ -227,7 +264,7 @@ class ReferenceMixin:
             head = heads[head] - 1
         return None
 
-    def _first_compatible(self, order, gender, number, exclude, current):
+    def _first_compatible(self, order, gender, number, exclude, current, learned=None):
         for tree, k in order:
             if tree is current and k in exclude:
                 continue
@@ -236,7 +273,7 @@ class ReferenceMixin:
             for d, h in enumerate(heads):
                 if h:
                     children[h - 1].append(d)
-            g, n = self._agreement(words, tags, children, k)
+            g, n = self._agreement(words, tags, children, k, learned)
             if (gender and g and g != gender) or (number and n and n != number):
                 continue
             return tree, k

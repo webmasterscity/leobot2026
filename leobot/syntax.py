@@ -30,6 +30,8 @@ OPENER_SUPPORT = 3        # questions a word must open to be learned as interrog
 OPENER_RATE = 0.9         # ... and its balanced share of question openings
 MORPH_TAGS = frozenset({'PRON', 'DET', 'NOUN', 'VERB', 'AUX'})   # G-47: words whose features are kept
 MORPH_NAMES = frozenset({'Person', 'Number', 'Gender', 'Poss', 'PronType', 'Reflex', 'Case'})
+LEMMA_SUPPORT = 3          # G-47b: an annotated lemma kept as an alternative this often ...
+LEMMA_SHARE = 0.2          # ... and in at least this share of the form's occurrences
 IMPERSONAL_SUPPORT = 30   # G-47: a verb seen this often ...
 IMPERSONAL_RATE = 0.05    # ... with an explicit subject less often than this is impersonal
 _WORD = re.compile(r'\w+|[^\w\s]')
@@ -208,6 +210,15 @@ class SyntaxMixin:
         lemma = self.syntax_model.get('lemma_table', {}).get(low, low)
         decomposed = unicodedata.normalize('NFKD', lemma)
         return ''.join(ch for ch in decomposed if not unicodedata.combining(ch))
+
+    def lemma_keys(self, word: str) -> set:
+        """G-47b: the majority dictionary form and every other form the word
+        was annotated with often enough, without accents."""
+        keys = {self.lemma_key(word)}
+        for lemma in self.syntax_model.get('lemma_sets', {}).get(word.lower(), ()):
+            decomposed = unicodedata.normalize('NFKD', lemma)
+            keys.add(''.join(ch for ch in decomposed if not unicodedata.combining(ch)))
+        return keys
 
     def observe_multiword(self, surface: str, words) -> dict:
         """Learn that a written form stands for several syntactic words (G-35)."""
@@ -403,6 +414,13 @@ class SyntaxMixin:
         model['lemma_table'] = {w: max(sorted(row), key=lambda k: row[k])
                                 for w, row in model.get('lemma_counts', {}).items()
                                 if max(sorted(row), key=lambda k: row[k]) != w}
+        # G-47b: every lemma a form was annotated with often enough.
+        model['lemma_sets'] = {}
+        for w, row in model.get('lemma_counts', {}).items():
+            total = sum(row.values())
+            kept = sorted(l for l, c in row.items() if c >= LEMMA_SUPPORT and c >= LEMMA_SHARE * total)
+            if len(kept) > 1:
+                model['lemma_sets'][w] = kept
         # G-32b: a context never seen as an arc and seen as an opportunity at
         # most PRUNE_OPPORTUNITIES times barely moves its parent's rate; drop it
         # so the learned memory stays loadable.
