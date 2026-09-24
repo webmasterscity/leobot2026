@@ -23,6 +23,13 @@ DEMOS = [
      ['Number=Sing|Person=1', 'Gender=Masc|Number=Sing', '_']),
     (['Usó', 'pan', '.'], [V, N, X], [0, 1, 1], ['root', 'obj', 'punct'],
      ['Number=Sing|Person=3', 'Gender=Masc|Number=Sing', '_']),
+    # G-49: the preposition of a noun's complement and of a doubled dative are learned, not written in.
+    (['La', 'casa', 'de', 'Ana', 'es', 'azul', '.'], [D, N, A, P, 'AUX', 'ADJ', X], [2, 6, 4, 2, 6, 0, 6],
+     ['det', 'nsubj', 'case', 'nmod', 'cop', 'root', 'punct'],
+     ['Gender=Fem|Number=Sing', 'Gender=Fem|Number=Sing', '_', '_', 'Number=Sing|Person=3', 'Number=Sing', '_']),
+    (['Le', 'dio', 'pan', 'a', 'Ana', '.'], ['PRON', V, N, A, P, X], [2, 0, 2, 5, 2, 2],
+     ['iobj', 'root', 'obj', 'case', 'obl', 'punct'],
+     ['Case=Dat|Number=Sing|Person=3|PronType=Prs', 'Number=Sing|Person=3', 'Gender=Masc|Number=Sing', '_', '_', '_']),
 ]
 
 
@@ -36,6 +43,11 @@ def taught():
 
 
 class ReferenceTests(unittest.TestCase):
+    def test_prepositions_are_learned(self):
+        bot = taught()
+        self.assertEqual(bot.syntax_model['possessor_case'], 'de')
+        self.assertEqual(bot.syntax_model['dative_case'], 'a')
+
     def test_features_are_learned_per_word_and_class(self):
         bot = taught()
         self.assertIn('Poss=Yes', bot.morphology('su', 'DET'))

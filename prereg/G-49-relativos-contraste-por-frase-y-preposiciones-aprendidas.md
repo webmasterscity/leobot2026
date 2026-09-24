@@ -69,3 +69,22 @@ Si pasa: verificación independiente 5.10 y `estable-G-13`. Si falla, se registr
 ## En palabras fáciles de entender
 
 Cuando alguien dice «Julián, **que** es ingeniero», entendemos que el ingeniero es Julián. Leobot todavía no conectaba ese «que» con Julián. Ahora lo hará, igual que ya hace con «él» o «su». También aprenderá que, si le preguntan si la biblioteca cierra «a las nueve de la noche» y le dijeron «a las seis de la tarde», la respuesta es «no», aunque cambien varias palabras a la vez. Y dos palabras que el programa tenía escritas a mano («de» y «a») las aprenderá del libro de gramática, como aprende todo lo demás.
+
+## Enmienda antes de congelar (2026-09-24), por lo visto en desarrollo
+
+Medida en los 14 conjuntos gastados (616 preguntas):
+
+1. **Frase del valor.** La primera versión tomaba como frase del valor todo lo que dependía de él. Cuando el valor es el atributo de «ser»/«estar» («¿La plaza… es **pequeña**?»), eso incluía al sujeto y se perdieron 3 «no» correctos. Ahora la frase sigue solo a los modificadores (`nmod`, `amod`, `nummod`, `compound`, `flat`, `appos`); los argumentos son vecinos, no parte del valor.
+2. **Preposiciones aprendidas:** AnCora da «de» para el complemento nominal y «a» para el complemento doblado por un clítico dativo, las mismas que estaban escritas a mano.
+   - Las demostraciones de la prueba focal de G-47 (`tests/test_references_and_same_fact.py`) no traían ninguna frase de la que aprenderlas. Se añadieron dos: «La casa de Ana es azul» y «Le dio pan a Ana».
+   - Sus aserciones no cambian, y una prueba nueva exige que se aprendan «de» y «a». La prueba no se debilita: ahora exige además que la preposición se aprenda.
+
+| Variante (desarrollo, 616) | Aciertos | Afirma lo falso | «no» |
+|---|---|---|---|
+| G-49 | 458 | 5 | 43/78 |
+| sin `phrase_contrast` | 457 | 4 | 42/78 |
+| ambas ablaciones | 457 | 4 | 42/78 |
+
+Los relativos no mueven el desarrollo; el contraste por frase suma 1 acierto y 1 afirmación falsa.
+
+**Evaluación conjunta.** Por economía de reservas, G-49 se congela junto con G-50 (preregistro aparte, en respuesta a un dato de la prueba común del usuario) y se evalúa en la misma reserva doble, con sus propias ablaciones. **La puerta de G-49 no cambia.**

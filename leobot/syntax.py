@@ -131,6 +131,22 @@ class SyntaxMixin:
                 for value in str(feat).split('|'):
                     if value.split('=')[0] in MORPH_NAMES:
                         row[value] = row.get(value, 0) + 1
+        if feats is not None and labels is not None:
+            # G-49: which preposition marks a noun's nominal complement, and
+            # which one the complement doubled by a dative clitic.
+            cases = model.setdefault('complement_cases', {'nmod': {}, 'dative': {}})
+            marks = {d: [lowered[k] for k in range(len(words)) if heads[k] == d + 1 and labels[k] == 'case']
+                     for d in range(len(words))}
+            dative_heads = {heads[k] for k in range(len(words))
+                            if tags[k] == 'PRON' and 'Case=Dat' in str(feats[k]).split('|')}
+            for d, (tag, label) in enumerate(zip(tags, labels)):
+                if tag not in ('NOUN', 'PROPN') or len(marks[d]) != 1:
+                    continue
+                head = heads[d] - 1
+                if label == 'nmod' and head >= 0 and tags[head] == 'NOUN':
+                    _add(cases['nmod'], marks[d][0])
+                elif label in ('obl', 'iobj') and heads[d] in dative_heads:
+                    _add(cases['dative'], marks[d][0])
         if lemmas is not None and labels is not None:
             # G-47: how often each verb has a subject of its own.
             subjects = model.setdefault('subject_counts', {})
@@ -408,6 +424,10 @@ class SyntaxMixin:
             total, (bundle, count) = sum(row.values()), max(sorted(row.items()), key=lambda kv: kv[1])
             if count >= SPLIT_RULE_SUPPORT and count >= SPLIT_RULE_RATE * total:
                 model['morph_endings'][ending] = bundle
+        cases = model.get('complement_cases', {})
+        for name, key in (('possessor_case', 'nmod'), ('dative_case', 'dative')):
+            row = cases.get(key, {})
+            model[name] = max(sorted(row), key=lambda w: row[w]) if row else None
         model['impersonal'] = sorted(lemma for lemma, (n, s) in model.get('subject_counts', {}).items()
                                      if n >= IMPERSONAL_SUPPORT and s < IMPERSONAL_RATE * n)
         self._compile_question_words()

@@ -174,7 +174,8 @@ class ReferenceMixin:
             doubled = ('obj',) if case == 'Acc' else ('iobj', 'obl') if case == 'Dat' else ()
             if not possessive and clause >= 0 and any(
                     k != i and tags[k] in ('NOUN', 'PROPN') and labels[k] in doubled
-                    and (labels[k] != 'obl' or any(words[c].lower() == 'a' for c in children[k]))
+                    and (labels[k] != 'obl' or any(words[c].lower() == self.syntax_model.get('dative_case')
+                                                   for c in children[k]))
                     for k in children[clause]):
                 continue            # a clitic doubling a complement of its own verb («le … a Julián»)
             # A pronoun does not refer to the subject of its own clause
@@ -216,6 +217,19 @@ class ReferenceMixin:
                 source, k = chosen
                 if memory is not None and gender and source[1][k] == 'PROPN':
                     memory.setdefault(source[0][k].lower(), gender)
+        if getattr(self, 'relative_resolution', True):
+            # G-49: a relative pronoun (learned feature) that is the subject or
+            # object of a clause modifying a noun stands for that noun.
+            for i in range(n):
+                if i in edits or tags[i] != 'PRON' or 'PronType=Rel' not in self.morphology(words[i], 'PRON'):
+                    continue
+                clause = heads[i] - 1
+                if clause < 0 or str(labels[i]).split(':')[0] not in ('nsubj', 'obj') \
+                        or not str(labels[clause]).startswith('acl'):
+                    continue
+                noun = heads[clause] - 1
+                if noun >= 0 and tags[noun] in ('NOUN', 'PROPN'):
+                    edits[i] = ('pronoun', (tree, noun))
         root = next((d for d, h in enumerate(heads) if not h), None)
         # The subject may hang from the copula or auxiliary (a parser slip).
         governed = [root] + [k for k in children[root] if labels[k] in ('cop', 'aux')] if root is not None else []
@@ -312,10 +326,12 @@ class ReferenceMixin:
                 old = items[key]
                 noun = old['head']
                 copied, top = graft(source, noun, 'nmod')
-                case = {'word': 'de', 'tag': 'ADP', 'head': top, 'label': 'case', 'origin': -1}
                 order.remove(old)
                 at = order.index(noun) + 1
-                order[at:at] = [case] + copied
+                # G-49: the preposition of a noun's nominal complement, learned from the treebank.
+                learned = self.syntax_model.get('possessor_case')
+                case = [{'word': learned, 'tag': 'ADP', 'head': top, 'label': 'case', 'origin': -1}] if learned else []
+                order[at:at] = case + copied
             else:
                 verb = items[key[1]]
                 copied, top = graft(source, verb, 'nsubj')
