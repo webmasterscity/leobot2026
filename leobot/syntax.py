@@ -24,6 +24,9 @@ PRUNE_OPPORTUNITIES = 2
 SPLIT_TABLE_MIN = 2       # G-35: a surface form seen split this often is stored
 SPLIT_RULE_SUPPORT = 3    # distinct forms supporting an ending rule
 SPLIT_RULE_RATE = 0.9     # share of words with that ending that were split
+OPENER_WORDS = 3          # G-42: leading words kept per sentence (prepositions are skipped later)
+OPENER_SUPPORT = 3        # questions a word must open to be learned as interrogative
+OPENER_RATE = 0.9         # ... and its balanced share of question openings
 _WORD = re.compile(r'\w+|[^\w\s]')
 
 
@@ -92,6 +95,7 @@ class SyntaxMixin:
                         _add(model['arcs'], feature)
         model['arc_total'] += len(words)
         model['opportunity_total'] += len(words) * len(words)
+        self._observe_opener(words, '¿' in words or '?' in words)
         if feats is not None:
             marks = model.setdefault('word_marks', {})
             for word, feat in zip(lowered, feats):
@@ -108,6 +112,50 @@ class SyntaxMixin:
                     row = table.setdefault(context, {})
                     row[label] = row.get(label, 0) + 1
         return {'status': 'syntax_example_learned'}
+
+    def _observe_opener(self, words, question: bool) -> None:
+        """G-42: the first words of a sentence, counted apart for questions and
+        assertions.  Which leading words are prepositions is decided when
+        compiling, from the learned tags, so the counts do not depend on the
+        order in which sentences arrive."""
+        lead = [w.lower() for w in words if any(ch.isalnum() for ch in w)][:OPENER_WORDS]
+        if not lead:
+            return
+        table = self.syntax_model.setdefault('openers', {'q': {}, 'a': {}, 'nq': 0, 'na': 0})
+        kind = 'q' if question else 'a'
+        table['n' + kind] += 1
+        _add(table[kind], '\x1f'.join(lead))
+
+    def _compile_question_words(self) -> None:
+        """Interrogatives: words annotated as asking (G-41) and words that open
+        questions far more than assertions once prepositions are skipped
+        (G-42), both with G-35's rule (support >= 3 and >= 90 %)."""
+        model = self.syntax_model
+        marks = model.get('word_marks', {})
+        learned = {w for w, (n, _, q) in marks.items() if q >= 3 and q >= 0.9 * n}
+        openers = model.get('openers')
+        if openers and openers['nq'] and openers['na']:
+            tags: dict = {}
+            for key, count in model['lexicon'].items():
+                word, tag = key.rsplit('\x1f', 1)
+                row = tags.setdefault(word.lower(), {})
+                row[tag] = row.get(tag, 0) + count
+
+            def preposition(word):
+                row = tags.get(word)
+                return bool(row) and max(row.items(), key=lambda kv: (kv[1], kv[0]))[0] == 'ADP'
+            opened: dict = {'q': {}, 'a': {}}
+            for kind in ('q', 'a'):
+                for key, count in openers[kind].items():
+                    word = next((w for w in key.split('\x1f') if not preposition(w)), None)
+                    if word is not None:
+                        _add(opened[kind], word, count)
+            for word, count in opened['q'].items():
+                asked = count / openers['nq']
+                stated = opened['a'].get(word, 0) / openers['na']
+                if count >= OPENER_SUPPORT and asked / (asked + stated) >= OPENER_RATE:
+                    learned.add(word)
+        model['interrogatives'] = sorted(learned)
 
     def observe_multiword(self, surface: str, words) -> dict:
         """Learn that a written form stands for several syntactic words (G-35)."""
@@ -274,7 +322,7 @@ class SyntaxMixin:
         # the feature in >= 90 % of the word's annotated occurrences).
         marks = model.get('word_marks', {})
         model['negators'] = sorted(w for w, (n, neg, _) in marks.items() if neg >= 3 and neg >= 0.9 * n)
-        model['interrogatives'] = sorted(w for w, (n, _, q) in marks.items() if q >= 3 and q >= 0.9 * n)
+        self._compile_question_words()
         # G-32b: a context never seen as an arc and seen as an opportunity at
         # most PRUNE_OPPORTUNITIES times barely moves its parent's rate; drop it
         # so the learned memory stays loadable.

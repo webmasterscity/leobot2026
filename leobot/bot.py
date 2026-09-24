@@ -610,7 +610,7 @@ class Bot(DocumentLearningMixin, LanguageAcquisitionMixin, ConditionalLearningMi
         status = result['status']
         proofs = result['positive']['answers']
         if status == 'unknown':
-            text = 'No tengo información suficiente para afirmarlo ni negarlo.'
+            text = 'No lo sé: no tengo información suficiente para afirmarlo ni negarlo.'
         elif status in ('conflict', 'contested'):
             text = 'Hay información contradictoria en esta conclusión o en sus condiciones. No la presentaré como un hecho seguro.'
         elif status == 'incomplete':

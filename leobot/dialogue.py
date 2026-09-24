@@ -834,6 +834,32 @@ class DialogueMixin:
                         'status':'procedure_executed','procedure':report.get('pattern'),'result':values,'detail':report}
         return None
 
+    def _answer_literally(self, text: str) -> dict | None:
+        """A question answered from what was said or read (G-41, G-42), or None
+        to keep the older behaviour when nothing was learned about questions."""
+        # G-41: with learned interrogatives, a question without one is a
+        # yes/no question checked against memory; an open one is read.
+        interrogatives = set(getattr(self, 'syntax_model', {}).get('interrogatives', ()))
+        if interrogatives:
+            words = {t.lower() for t in re.findall(r'\w+', text)}
+            if not words & interrogatives:
+                return self.verify_from_utterances(text)
+            # G-42: first as a sentence with a gap, when one remembered sentence
+            # contains every content word of the question.
+            if getattr(self, 'structural_answers', True):
+                structural = self.answer_by_structure(text)
+                if structural is not None:
+                    return structural
+        # G-28: no construction interprets the question; align it with
+        # what was read and answer literally, or abstain.
+        reading = self.answer_from_utterances(text)
+        if reading is not None:
+            return reading
+        if interrogatives:
+            return {'text': 'No lo sé: no encontré esa información en lo que me dijeron ni en lo que leí.',
+                    'status': 'literal_unknown'}
+        return None
+
     def _respond_single(self, text: str) -> dict:
         for learned_route in (self._respond_learned_goal_plan, self._respond_learned_procedure):
             routed = learned_route(text)
@@ -1063,21 +1089,9 @@ class DialogueMixin:
                 return {'text': f'Tengo una hipótesis de significado respaldada por {g.get("support",0)} experiencia(s), pero todavía no la usaré como conocimiento lingüístico hasta reunir {g.get("required",self.grounding_min_support)} apoyos independientes.',
                         'status':'grounding_pending','grounded_induction':g}
             if parsed['status'] == 'unrecognized' and self._question_like(text):
-                # G-41: with learned interrogatives, a question without one is a
-                # yes/no question checked against memory; an open one is read.
-                interrogatives = set(getattr(self, 'syntax_model', {}).get('interrogatives', ()))
-                if interrogatives:
-                    words = {t.lower() for t in re.findall(r'\w+', text)}
-                    if not words & interrogatives:
-                        return self.verify_from_utterances(text)
-                # G-28: no construction interprets the question; align it with
-                # what was read and answer literally, or abstain.
-                reading = self.answer_from_utterances(text)
-                if reading is not None:
-                    return reading
-                if interrogatives:
-                    return {'text': 'No lo sé: no encontré esa información en lo que me dijeron ni en lo que leí.',
-                            'status': 'literal_unknown'}
+                literal = self._answer_literally(text)
+                if literal is not None:
+                    return literal
             message = ('Esa frase admite varias interpretaciones aprendidas. Necesito una formulación más precisa.'
                        if parsed['status'] == 'ambiguous' else
                        'No sé interpretar esa formulación todavía. Puedes enseñarme una construcción con texto y significado, o usar /consulta.')
@@ -1085,7 +1099,13 @@ class DialogueMixin:
         frame = parsed['frame']
         action = frame['act']
         if action == 'query':
-            return self.answer_atom(Atom(frame['pred'], tuple(frame['args'])))
+            answered = self.answer_atom(Atom(frame['pred'], tuple(frame['args'])))
+            # G-42: what formal knowledge lacks may still have been said or read.
+            if answered.get('status') == 'unknown' and self.reading_utterances:
+                literal = self._answer_literally(text)
+                if literal is not None:
+                    return literal
+            return answered
         if action == 'assert':
             cluster,uncertain=self._grounding_parse_source(parsed)
             if uncertain:

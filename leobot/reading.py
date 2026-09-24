@@ -25,6 +25,9 @@ STEM = 5
 SMOOTHING = 4.0
 BM25_K1 = 1.2
 BM25_B = 0.75
+# G-42: learned word classes that carry grammar rather than content; they do
+# not have to be found in the answering sentence and do not anchor it.
+FUNCTION_TAGS = frozenset({'DET', 'ADP', 'AUX', 'PRON', 'CCONJ', 'SCONJ', 'PUNCT'})
 
 
 def _norm(token: str) -> str:
@@ -171,7 +174,10 @@ class ReadingMemoryMixin:
 
     def consolidate_reading(self) -> dict:
         """Consolidation hook.  G-28b's IBM-1 word correspondences were retired:
-        with the preregistered thresholds they learned nothing (G-28b result)."""
+        with the preregistered thresholds they learned nothing (G-28b result).
+        G-42: the questions read are evidence of which words ask."""
+        if self.syntax_model.get('sentences'):
+            self._compile_question_words()
         return {'status': 'reading_consolidated', 'words': 0, 'pairs': 0}
 
     def _gap_neighbours(self, question: list[str], key: str, present: set) -> tuple:
@@ -244,6 +250,7 @@ class ReadingMemoryMixin:
             for token in {_norm(t) for t in tokens if _is_word(t)}:
                 model['sentence_df'][token] = model['sentence_df'].get(token, 0) + 1
         model['contexts'] += 1
+        self._observe_opener(_TOKEN.findall(question), True)
         qtokens = [_norm(t) for t in _TOKEN.findall(question) if _is_word(t)]
         target = [_norm(t) for t in _TOKEN.findall(answer) if _is_word(t)]
         # Calibration: how much of a question a foreign text covers by chance.
@@ -345,6 +352,144 @@ class ReadingMemoryMixin:
         if opposite:
             return {'text': 'No, según lo que me dijeron.', 'status': 'literal_no', 'evidence': opposite}
         return {'text': 'No lo sé: no tengo esa información.', 'status': 'literal_unknown', 'evidence': []}
+
+    def _utterance_tree(self, text: str):
+        """Syntactic words, tags, heads and functions of a remembered sentence,
+        analysed the first time a question needs it and kept (G-42)."""
+        cache = self.__dict__.setdefault('_utterance_trees', {})
+        tree = cache.get(text)
+        if tree is None:
+            words = self.split_words(text)
+            parse = self.parse_words(words)
+            if not parse or parse.get('status') != 'parsed_syntax':
+                tree = False
+            else:
+                tree = (words, parse['tags'], parse['heads'], parse.get('labels') or [None] * len(words))
+            cache[text] = tree
+        return tree or None
+
+    @staticmethod
+    def _tree_distances(heads, start: int) -> list[int]:
+        """Edges between ``start`` and every word of a tree (heads 1-based, 0 root)."""
+        n = len(heads)
+        links = [[] for _ in range(n)]
+        for d, h in enumerate(heads):
+            if h:
+                links[d].append(h - 1); links[h - 1].append(d)
+        far = [-1] * n
+        far[start] = 0
+        frontier = [start]
+        while frontier:
+            nxt = []
+            for node in frontier:
+                for other in links[node]:
+                    if far[other] < 0:
+                        far[other] = far[node] + 1; nxt.append(other)
+            frontier = nxt
+        return [d if d >= 0 else n for d in far]
+
+    def answer_by_structure(self, question: str) -> dict | None:
+        """G-42: an open question is a sentence with a gap.  A remembered
+        sentence that contains every content word of the question answers it
+        with the part that sits where the question's interrogative sits: the
+        largest subtree without question words, in the sentence that aligns
+        most question words, placed at the same tree distances from the shared
+        words.  Ties that remain are reported as
+        ambiguity instead of chosen silently.  None when no sentence contains
+        every content word (the G-28 reader then decides)."""
+        interrogatives = set(self.syntax_model.get('interrogatives', ()))
+        if not interrogatives or not self.reading_utterances:
+            return None
+        qtree = self._utterance_tree(question)
+        if qtree is None:
+            return None
+        words, tags, heads, labels = qtree
+        low = [w.lower() for w in words]
+        asking = [i for i, w in enumerate(low) if w in interrogatives]
+        if not asking:
+            return None
+        q = asking[0]
+        # «qué color», «cuántas vacas»: the noun right after the interrogative.
+        noun = q + 1 if q + 1 < len(words) and tags[q + 1] == 'NOUN' else None
+        phrase = {q} | ({noun} if noun is not None else set())
+        first = min(phrase)
+        case = low[first - 1] if first > 0 and tags[first - 1] == 'ADP' else None
+        where: dict = {}
+        for i, (w, t) in enumerate(zip(words, tags)):
+            if i not in phrase and t not in FUNCTION_TAGS and _is_word(w) and low[i] not in interrogatives:
+                where.setdefault(_norm(w), i)
+        if not where:
+            return None
+        noun_stem = _norm(words[noun]) if noun is not None else None
+        index = self._reading_index()
+        lists = sorted((index.get(t, ()) for t in where), key=len)
+        positions = set(lists[0]).intersection(*lists[1:])
+        qdist = self._tree_distances(heads, q)
+        ranked = []
+        for position in sorted(positions):
+            row = self.reading_utterances[position]
+            tree = self._utterance_tree(row['text'])
+            if tree is None:
+                continue
+            swords, stags, sheads, slabels = tree
+            stems = [_norm(w) for w in swords]
+            aligned = {j for j, (w, t) in enumerate(zip(swords, stags))
+                       if t not in FUNCTION_TAGS and _is_word(w)
+                       and (stems[j] in where or stems[j] == noun_stem)}
+            if not set(where) <= {stems[j] for j in aligned}:
+                continue
+            n = len(swords)
+            children = [[] for _ in range(n)]
+            for d, h in enumerate(sheads):
+                if h:
+                    children[h - 1].append(d)
+            covered = [False] * n
+
+            def mark(node):
+                inside = node in aligned
+                for child in children[node]:
+                    inside = mark(child) or inside
+                covered[node] = inside
+                return inside
+            for root in (d for d, h in enumerate(sheads) if not h):
+                mark(root)
+            host = next((j for j in aligned if stems[j] == noun_stem), None)
+            for node in range(n):
+                parent = sheads[node] - 1
+                if covered[node] or (parent >= 0 and not covered[parent]):
+                    continue
+                if host is not None and parent != host:
+                    continue
+                span, stack = [], [node]
+                while stack:
+                    k = stack.pop(); span.append(k); stack.extend(children[k])
+                if all(stags[k] in FUNCTION_TAGS or not _is_word(swords[k]) for k in span):
+                    continue
+                sdist = self._tree_distances(sheads, node)
+                mirror = sum(abs(qdist[where[stems[j]]] - sdist[j]) for j in aligned if stems[j] in where)
+                lead = min(span)
+                own_case = swords[lead].lower() if stags[lead] == 'ADP' else None
+                a, b = min(span), max(span)
+                while a <= b and not _is_word(swords[a]):
+                    a += 1
+                while b >= a and not _is_word(swords[b]):
+                    b -= 1
+                ranked.append(((-len({stems[j] for j in aligned}), mirror, own_case != case, slabels[node] != labels[q]),
+                               ' '.join(swords[a:b + 1]), row))
+        if not ranked:
+            return None
+        best = min(key for key, _, _ in ranked)
+        winners = {}
+        for key, text, row in ranked:
+            if key == best:
+                winners.setdefault(' '.join(_norm(t) for t in text.split()), (text, row))
+        if len(winners) > 1:
+            return {'text': 'No lo sé con seguridad: lo que me dijeron admite más de una respuesta.',
+                    'status': 'literal_ambiguous', 'candidates': len(winners)}
+        text, row = next(iter(winners.values()))
+        return {'text': text, 'status': 'literal',
+                'explanation': f'Según lo que me dijeron ({row["source"]}): «{row["text"]}».',
+                'evidence': {'source': row['source'], 'utterance': row['text'], 'structural': True}}
 
     def answer_from_utterances(self, question: str, use_model: bool = True,
                                use_correspondences: bool = True) -> dict | None:
