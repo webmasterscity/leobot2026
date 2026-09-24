@@ -930,10 +930,6 @@ class ReadingMemoryMixin:
             elif required <= set(keys):
                 ranked += self._legacy_candidates(row, tree, keys, where, noun, noun_key, required, categories,
                                                   qdist, labels[q], case)
-        if not ranked and same and getattr(self, 'learned_paths', True):
-            # G-48: no sentence states it with the question's own structure;
-            # the learned correspondences of paths may still find it.
-            ranked = self._path_candidates(question, qtree, q, noun, categories)
         classes = self._answer_classes_for(low, q, noun) if getattr(self, 'answer_type', True) else None
         if classes is not None:
             ranked = [entry for entry in ranked if classes.get(self._answer_class(entry[1].split())) != 0]

@@ -21,12 +21,11 @@ from .dialogue import DialogueMixin
 from .reading import ReadingMemoryMixin, _empty_model
 from .syntax import SyntaxMixin, _empty_syntax
 from .reference import ReferenceMixin
-from .paths import PathMixin
 from .state_fields import plain_state, restore_plain_state
 
 
 class Bot(DocumentLearningMixin, LanguageAcquisitionMixin, ConditionalLearningMixin, DialogueMixin,
-          ReadingMemoryMixin, ReferenceMixin, PathMixin, SyntaxMixin):
+          ReadingMemoryMixin, ReferenceMixin, SyntaxMixin):
     def __init__(self, kb=None, grounded_language: bool = True, grounding_min_support: int = 2,
                  raw_relation_min_support: int = 3, allow_extensional_grounding: bool = False,
                  raw_relation_max_arity: int = 8) -> None:
