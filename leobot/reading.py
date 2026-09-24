@@ -381,6 +381,20 @@ class ReadingMemoryMixin:
         if reported:
             return {'text': 'No lo sé con seguridad: lo que me dijeron lo presenta como algo dicho o supuesto, '
                             'no como un hecho.', 'status': 'literal_reported', 'evidence': reported}
+        if structure is not None and polarity == 0 and getattr(self, 'contrast_answers', True) and self.reading_utterances:
+            # G-46: another value of the same attribute was said.
+            index = self._reading_index()
+            for value in sorted(structure['stems']):
+                others = [structure['norms'][k] for k in structure['stems'] if k != value]
+                lists = sorted((index.get(t, ()) for t in others), key=len)
+                if not lists:
+                    continue
+                for position in sorted(set(lists[0]).intersection(*lists[1:])):
+                    row = self.reading_utterances[position]
+                    said = self._contrast(structure, row['text'], negators)
+                    if said is not None:
+                        return {'text': f'No: según lo que me dijeron, «{row["text"]}»', 'status': 'literal_contrast',
+                                'evidence': [row['source']], 'said_value': said}
         return {'text': 'No lo sé: no tengo esa información.', 'status': 'literal_unknown', 'evidence': []}
 
     @staticmethod
@@ -432,7 +446,61 @@ class ReadingMemoryMixin:
             if node >= 0:
                 # One content step: function words in between are transparent.
                 links.append((self._word_key(words[i]), self._word_key(words[node]), 1))
-        return {'stems': {self._word_key(words[i]) for i in content}, 'links': links}
+        cases = {i: sorted(words[k].lower() for k in range(len(words)) if heads[k] == i + 1 and tags[k] == 'ADP')
+                 for i in content}
+        copular = {i: any(heads[k] == i + 1 and labels[k] == 'cop' for k in range(len(words))) for i in content}
+        return {'stems': {self._word_key(words[i]) for i in content}, 'links': links,
+                'tags': {self._word_key(words[i]): tags[i] for i in content},
+                'norms': {self._word_key(words[i]): _norm(words[i]) for i in content},
+                'cases': {self._word_key(words[i]): cases[i] for i in content},
+                'copular': {self._word_key(words[i]): copular[i] for i in content}}
+
+    def _contrast(self, structure, text: str, negators: set):
+        """G-46: the value the question asks about, if the sentence states the
+        same links with another value of the same class in its place, and that
+        place is an attribute (a quality, a quantity, a place or time, what a
+        copula predicates), which takes one value per thing; what is had,
+        exists or is sold is not.  Returns the replaced value or None."""
+        tree = self._utterance_tree(text)
+        if tree is None or any(w.lower() in negators for w in tree[0]):
+            return None
+        words, tags, heads, labels = tree
+        keys = [self._word_key(w) for w in words]
+        for value in sorted(structure['stems']):
+            if value in keys:
+                continue
+            links = [l for l in structure['links'] if value not in l[:2]]
+            neighbours = {b for a, b, _ in structure['links'] if a == value} | \
+                         {a for a, b, _ in structure['links'] if b == value}
+            reduced = {'stems': structure['stems'] - {value}, 'links': links}
+            if not neighbours or not reduced['stems'] or self._links_hold(reduced, text) != 'asserted':
+                continue
+            # The asked value must itself sit in an attribute place.
+            if not (structure['tags'][value] in ('ADJ', 'NUM') or structure['cases'][value]
+                    or structure['copular'][value]):
+                continue
+            _, graph = self._graph(heads, labels)
+            aligned = {j for j, k in enumerate(keys) if k in reduced['stems']}
+            for j, (w, t) in enumerate(zip(words, tags)):
+                if j in aligned or not _is_word(w) or t != structure['tags'][value]:
+                    continue
+                children = [k for k in range(len(words)) if heads[k] == j + 1]
+                case = sorted(words[k].lower() for k in children if tags[k] == 'ADP')
+                attribute = (t in ('ADJ', 'NUM') or case or any(labels[k] == 'cop' for k in children))
+                # The same place: the same preposition (or none) on both sides.
+                if not attribute or case != structure['cases'][value]:
+                    continue
+                # One content step from the word aligned with the value's neighbour.
+                near, frontier = {j}, [j]
+                while frontier:
+                    node = frontier.pop()
+                    for other in graph[node]:
+                        if other not in near and tags[other] in FUNCTION_TAGS:
+                            near.add(other); frontier.append(other)
+                reach = set().union(*(graph[k] for k in near)) | near
+                if any(keys[k] in neighbours for k in reach):
+                    return w
+        return None
 
     def _links_hold(self, structure, text: str):
         """None if the sentence does not state the question's links; 'subordinate'
