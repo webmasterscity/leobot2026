@@ -1,0 +1,124 @@
+{
+ "conjunto_sha256_16": "2fa74bbec95f1ed4",
+ "base_sha256_16": "ab3b071f80a6df1e",
+ "huella_motor": "dc219b9b7e461206fa75f95bd3c0f7c9c54e6eb5",
+ "tratamiento": {
+  "calificadas": 64,
+  "aciertos": 51,
+  "afirma_falso": 1,
+  "abiertas_equivocadas": 2,
+  "por_tipo": {
+   "abierta": "27/32",
+   "no": "0/5",
+   "no lo se": "15/15",
+   "si": "9/11",
+   "sin afirmar": "0/1"
+  },
+  "p50_ms": 9.572,
+  "p95_ms": 45.483
+ },
+ "sin_entidades": {
+  "calificadas": 64,
+  "aciertos": 51,
+  "afirma_falso": 1,
+  "abiertas_equivocadas": 2,
+  "por_tipo": {
+   "abierta": "27/32",
+   "no": "0/5",
+   "no lo se": "15/15",
+   "si": "9/11",
+   "sin afirmar": "0/1"
+  },
+  "p50_ms": 9.474,
+  "p95_ms": 45.377
+ },
+ "sin_marcos_aprendidos": {
+  "calificadas": 64,
+  "aciertos": 50,
+  "afirma_falso": 1,
+  "abiertas_equivocadas": 2,
+  "por_tipo": {
+   "abierta": "26/32",
+   "no": "0/5",
+   "no lo se": "15/15",
+   "si": "9/11",
+   "sin afirmar": "0/1"
+  },
+  "p50_ms": 9.542,
+  "p95_ms": 46.203
+ },
+ "marcos_barajados": {
+  "calificadas": 64,
+  "aciertos": 50,
+  "afirma_falso": 1,
+  "abiertas_equivocadas": 2,
+  "por_tipo": {
+   "abierta": "26/32",
+   "no": "0/5",
+   "no lo se": "15/15",
+   "si": "9/11",
+   "sin afirmar": "0/1"
+  },
+  "p50_ms": 9.89,
+  "p95_ms": 45.619
+ },
+ "marcos_barajados_base_sha256_16": "ea06714a044ab559",
+ "sin_memoria": {
+  "calificadas": 64,
+  "aciertos": 16,
+  "afirma_falso": 0,
+  "abiertas_equivocadas": 0,
+  "por_tipo": {
+   "abierta": "0/32",
+   "no": "0/5",
+   "no lo se": "15/15",
+   "si": "0/11",
+   "sin afirmar": "1/1"
+  },
+  "p50_ms": 0.2,
+  "p95_ms": 10.258
+ },
+ "memoria_barajada": {
+  "calificadas": 64,
+  "aciertos": 16,
+  "afirma_falso": 0,
+  "abiertas_equivocadas": 0,
+  "por_tipo": {
+   "abierta": "0/32",
+   "no": "0/5",
+   "no lo se": "15/15",
+   "si": "0/11",
+   "sin afirmar": "1/1"
+  },
+  "p50_ms": 9.46,
+  "p95_ms": 45.294
+ },
+ "renombrado_invariantes": "56/64",
+ "nombres_sustituidos": 49,
+ "reinicio_identicas": "64/64",
+ "estrategia_siempre_no_lo_se": 16,
+ "linea_base_estable_G12": {
+  "aciertos": 51,
+  "calificadas": 64
+ },
+ "G49_congelado": {
+  "aciertos": 51,
+  "calificadas": 64
+ },
+ "subagente_sin_clave": {
+  "aciertos": 61,
+  "calificadas": 64,
+  "modelo": "Sonnet (subagente de Claude Code), 2026-09-24"
+ },
+ "puerta": {
+  "aciertos >= estable-G-12 + 2 (53) y >= G-49 congelado + 1 (52)": "falla (51)",
+  "aporte (G-51 - sin entidades) en reserva y referencias juntas >= +2": "falla (0 + 0)",
+  "marcos barajados: ningun verbo de identidad": "pasa (ninguno; tambien con tramo al azar)",
+  "afirma lo falso <= 2": "pasa (1)",
+  "abiertas equivocadas <= 15 %": "pasa (2/32 = 6 %)",
+  "reinicio 100 %": "pasa (64/64)",
+  "barajada 0 en abiertas y si/no": "pasa",
+  "renombrado >= 90 %": "falla (56/64 = 87,5 %; sin entidades 58/64)",
+  "base <= 100 MiB": "pasa (91,6)"
+ }
+}

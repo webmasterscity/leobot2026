@@ -1,0 +1,32 @@
+{
+ "huella_motor": "dc219b9b7e461206fa75f95bd3c0f7c9c54e6eb5",
+ "semilla": 3693190043,
+ "casos": 600,
+ "fuente": "https://raw.githubusercontent.com/ccasimiro88/TranslateAlignRetrieve/master/SQuAD-es-v1.1/dev-v1.1-es.json",
+ "sha256": "969c846df740ee2725ac23b4d2882a58ef19a4c696767b306227c243ed99f461",
+ "g51": {
+  "n": 600,
+  "answered": 547,
+  "exact": 0.13,
+  "f1": 0.2598,
+  "p95_ms": 29.96
+ },
+ "ablacion": {
+  "n": 600,
+  "answered": 547,
+  "exact": 0.13,
+  "f1": 0.2598,
+  "p95_ms": 29.58
+ },
+ "solo_lector_g28": {
+  "n": 600,
+  "answered": 564,
+  "exact": 0.1417,
+  "f1": 0.2675,
+  "p95_ms": 4.46
+ },
+ "puerta": {
+  "F1 >= lector de G-28 solo - 0,005 (0,2625)": "falla (0,2598; ablacion identica 0,2598: G-51 no cambia la lectura de documentos)"
+ },
+ "nota": "Diferencia camino estructural - lector solo en las tres muestras nuevas: G-47b +0,0022, G-49 +0,0074, G-51 -0,0077; con 600 casos el error tipico de esa diferencia (~0,007) supera la tolerancia (0,005)."
+}

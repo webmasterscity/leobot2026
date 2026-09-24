@@ -1,0 +1,151 @@
+# Reserva de verificación independiente — regla 5.10 (redactor de pruebas)
+# Conversaciones nuevas en español, escritas sin leer el repositorio ni el código.
+# Formato: dicho <TAB> esperado. Línea sin TAB = se dice, no se califica. Línea en blanco = conversación nueva.
+
+# Conversación 1 — Marta (persona)
+Marta tiene cuarenta y dos años.
+Marta vive en Cuenca.
+Marta trabaja como enfermera en el hospital San Rafael.
+Marta tiene un hijo que se llama Tomás.
+¿Marta es enfermera?	sí
+¿Cuántos años tiene Marta?	/cuarenta y dos|42/i
+¿Cómo se llama el hijo de Marta?	Tomás
+¿En qué universidad estudió Marta?	no lo sé
+
+# Conversación 2 — La ferretería El Tornillo (lugar)
+La ferretería El Tornillo queda en la calle Bolívar.
+La ferretería El Tornillo abre a las siete de la mañana.
+El dueño de la ferretería El Tornillo se llama Ramiro Peña.
+La ferretería El Tornillo vende pintura, clavos y herramientas.
+¿La ferretería El Tornillo vende pintura?	sí
+¿Quién es el dueño de la ferretería El Tornillo?	Ramiro Peña
+¿La ferretería El Tornillo vende zapatos?	no lo sé
+¿A qué hora cierra la ferretería El Tornillo?	no lo sé
+
+# Conversación 3 — El carro de Sebastián (cosa)
+El carro de Sebastián es un Toyota gris.
+Sebastián compró el carro hace tres años.
+El carro de Sebastián tiene cuatro puertas.
+El carro de Sebastián está parqueado frente a la casa.
+¿El carro de Sebastián es gris?	sí
+¿Cuántas puertas tiene el carro de Sebastián?	/cuatro|4/i
+¿Dónde está parqueado el carro de Sebastián?	frente a la casa
+¿Cuánto pagó Sebastián por el carro?	no lo sé
+
+# Conversación 4 — La profesora Lucía (persona y lugar)
+La profesora Lucía Rojas enseña matemáticas en el colegio Simón Bolívar.
+La clase de la profesora Lucía tiene veintiocho estudiantes.
+La clase de la profesora Lucía es los lunes y los miércoles.
+¿La profesora Lucía enseña matemáticas?	sí
+¿Cuántos estudiantes tiene la clase de la profesora Lucía?	/veintiocho|28/i
+¿La profesora Lucía enseña inglés?	no lo sé
+¿En qué salón da clase la profesora Lucía?	no lo sé
+
+# Conversación 5 — El viaje de Andrés (lugar)
+Andrés viajó a Cartagena en avión.
+El viaje de Andrés duró cinco días.
+Andrés se hospedó en el hotel Las Palmas.
+Andrés fue a la playa todos los días del viaje.
+¿Andrés viajó a Cartagena?	sí
+¿En qué hotel se hospedó Andrés?	Las Palmas
+¿Cuántos días duró el viaje de Andrés?	/cinco|5/i
+¿Cuánto costó el viaje de Andrés?	no lo sé
+
+# Conversación 6 — El perro y los gatos de Camila (cosas)
+Camila tiene un perro llamado Toby.
+Toby es un perro pastor alemán.
+Toby tiene cinco años.
+Camila también tiene dos gatos.
+¿Camila tiene un perro?	sí
+¿Cómo se llama el perro de Camila?	Toby
+¿Cuántos gatos tiene Camila?	/dos|2/i
+¿Cómo se llaman los gatos de Camila?	no lo sé
+
+# Conversación 7 — El restaurante La Sazón (lugar)
+El restaurante La Sazón sirve comida colombiana.
+El restaurante La Sazón queda en el barrio Chapinero.
+El chef del restaurante La Sazón se llama Julián Vargas.
+El restaurante La Sazón cierra los domingos.
+¿El restaurante La Sazón sirve comida colombiana?	sí
+¿Quién es el chef del restaurante La Sazón?	Julián Vargas
+¿Qué día cierra el restaurante La Sazón?	/domingo/i
+¿Cuántas mesas tiene el restaurante La Sazón?	no lo sé
+
+# Conversación 8 — La tienda Modamix (ambigüedad)
+En la tienda Modamix trabajan dos vendedoras que se llaman Paola.
+Una Paola atiende en la caja y la otra Paola atiende en la bodega.
+La tienda Modamix vende ropa para niños.
+¿Cuántas vendedoras llamadas Paola trabajan en la tienda Modamix?	/dos|2/i
+¿Paola atiende en la caja?	sin afirmar
+¿La tienda Modamix vende ropa para niños?	sí
+¿La tienda Modamix vende ropa para adultos?	no lo sé
+
+
+# reserva_g51_b — conversaciones nuevas, redactadas por el verificador independiente
+# sin acceso al repositorio ni al código; solo hechos comunes y preguntas sobre ellos
+
+Marta Fuentes es médica.
+Marta trabaja en el hospital San Rafael.
+El hospital San Rafael queda en Cuenca.
+Marta tiene treinta y cuatro años.
+¿Marta Fuentes es médica?	sí
+¿En qué ciudad queda el hospital San Rafael?	/cuenca/i
+¿Cuántos años tiene Marta?	/34|treinta y cuatro/i
+¿Marta es enfermera?	no
+
+La panadería El Trigal queda en la calle Olmos.
+El Trigal abre a las seis de la mañana.
+El dueño de El Trigal se llama Rodrigo Paz.
+¿Cómo se llama el dueño de El Trigal?	/rodrigo/i
+¿El Trigal queda en la calle Olmos?	sí
+¿A qué hora abre El Trigal?	/seis|6/i
+¿El Trigal tiene una sucursal en Cuenca?	no lo sé
+
+El coche de Elena es azul.
+Ese coche es un Toyota del año dos mil diecinueve.
+Elena compró el coche en Valencia.
+El coche tiene cuatro puertas.
+¿De qué color es el coche de Elena?	/azul/i
+¿Dónde compró Elena el coche?	/valencia/i
+¿Cuántas puertas tiene el coche de Elena?	/cuatro|4/i
+¿El coche de Elena es del año dos mil veinte?	no
+
+Pedro y Lucía son hermanos.
+Pedro tiene un hijo llamado Tomás.
+Lucía vive en Bogotá.
+¿Quién es el hijo de Pedro?	/tomas|tomás/i
+¿Dónde vive Lucía?	/bogota|bogotá/i
+¿Tomás es hijo de Lucía?	no
+¿Cuántos hijos tiene Lucía?	no lo sé
+
+La escuela Los Álamos tiene tres pisos.
+La profesora Beatriz Rojas enseña matemáticas en la escuela Los Álamos.
+La escuela Los Álamos tiene doscientos alumnos.
+¿Qué enseña Beatriz Rojas?	/matematicas|matemáticas/i
+¿Cuántos pisos tiene la escuela Los Álamos?	/tres|3/i
+¿Beatriz Rojas enseña historia?	no
+¿En qué calle queda la escuela Los Álamos?	no lo sé
+
+Sofía viajó a Lima el martes pasado.
+En Lima, Sofía se quedó en un hotel llamado Miraflores Suites.
+El viaje de Sofía duró cinco días.
+¿A dónde viajó Sofía?	/lima/i
+¿Cómo se llama el hotel donde se quedó Sofía?	/miraflores/i
+¿Cuántos días duró el viaje de Sofía?	/cinco|5/i
+¿Sofía viajó a Lima en carro?	no lo sé
+
+La empresa Vidrios del Norte fabrica ventanas.
+Vidrios del Norte tiene quince empleados.
+El gerente de Vidrios del Norte se llama Andrés Salgado.
+¿Qué fabrica Vidrios del Norte?	/ventanas/i
+¿Quién es el gerente de Vidrios del Norte?	/andres|andrés/i
+¿Cuántos empleados tiene Vidrios del Norte?	/quince|15/i
+¿Vidrios del Norte fabrica muebles?	no
+
+El parque Las Acacias tiene una fuente en el centro.
+Camila lleva a su perro Rocco a pasear por el parque Las Acacias todos los domingos.
+Rocco es un perro pastor alemán.
+¿Cómo se llama el perro de Camila?	/rocco/i
+¿De qué raza es Rocco?	/pastor alem/i
+¿El parque Las Acacias tiene una fuente?	sí
+¿Cuántos años tiene Rocco?	no lo sé
