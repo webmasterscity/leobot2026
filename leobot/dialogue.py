@@ -769,7 +769,7 @@ class DialogueMixin:
         result=self._respond_single(repaired)
         # G-41: what is said is remembered literally, like what is read, so a
         # later question can be checked against it.
-        if not self._question_like(repaired):
+        if getattr(self, 'conversation_memory', True) and not self._question_like(repaired):
             self.remember_utterances([repaired], f'conversación:{len(self.reading_utterances) + 1}')
         # Only understood/promoted/stored utterances should influence salience.
         if result.get('status') not in ('unrecognized','ambiguous','grounding_pending',
