@@ -90,3 +90,23 @@ Si pasa: verificación independiente 5.10 y `estable-G-13`. Si falla, se registr
 ## En palabras fáciles de entender
 
 Tres arreglos generales. El primero: cuando alguien pregunta «¿De qué color es el coche?» y le dijeron «el coche es azul», Leobot no sabía que la respuesta es justo lo que se dice del coche. El segundo: solo entendía «no» como negación; ahora aprenderá, del libro de gramática, que «nunca», «nadie» o «tampoco» también niegan, y dejará de contestar «sí» cuando le dijeron «nunca sale». El tercero: si le dicen «Los hermanos viajaron. Alquilaron una moto», entenderá que la moto la alquilaron los hermanos. Esta vez el examen será el doble de largo, para que las mejoras pequeñas se puedan ver de verdad. Y lo que no ayude se quita.
+
+## Enmienda antes de congelar (2026-09-24), por lo visto en desarrollo
+
+Medida en los 18 conjuntos gastados (791 preguntas):
+
+| Variante | Aciertos | Afirma lo falso | Abiertas equivocadas |
+|---|---|---|---|
+| G-52 | 599 | 6 | 24 |
+| sin las tres | 597 | 7 | 23 |
+| sin `predicate_gap` | 600 | 6 | 23 |
+| sin `negative_concord` | 598 | 7 | 24 |
+| sin `plural_subjects` | 597 | 6 | 24 |
+
+**Negadores aprendidos por concordancia:** nada, nadie, ni, ninguno, nunca, tampoco.
+
+Las 4 preguntas perdidas son todas respuestas de otra clase: «vacía» a «¿Dónde…?», «un modelo del año…» a «¿De qué color…?» (dos veces), «juntos» a «¿A qué hora…?». Las 6 ganadas son colores y razas dichos como predicado, sujetos en plural y «nunca».
+
+**Defecto de implementación corregido:** el analizador cuelga la cópula de la pregunta de otra palabra, o toma el verbo «es» como raíz. Por eso el hueco en el predicado se detecta si la pregunta tiene una cópula, con esa función o como auxiliar raíz, y la frase interrogativa no es su sujeto (lleva preposición o no es `nsubj`).
+
+**Evaluación conjunta con [G-53](G-53-clase-de-la-respuesta-aprendida.md).** G-53 es la comprobación de la clase de la respuesta, sugerida por el usuario. Se congela en el mismo motor y se mide en la misma reserva cuádruple. Las ablaciones de G-52 se miden con G-53 encendido; se añaden la ablación de G-53 y la de todo junto. **La puerta de G-52 no cambia.**
