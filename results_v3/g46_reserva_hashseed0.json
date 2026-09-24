@@ -1,0 +1,100 @@
+{
+ "conjunto_sha256_16": "6705e9d844a05db4",
+ "base_sha256_16": "af18f51124675dbf",
+ "huella_motor": "bc657715c4aca6f42b1e736774da41d7793a27fb",
+ "tratamiento": {
+  "calificadas": 62,
+  "aciertos": 49,
+  "afirma_falso": 3,
+  "abiertas_equivocadas": 2,
+  "por_tipo": {
+   "abierta": "23/31",
+   "no": "9/10",
+   "no lo se": "11/12",
+   "si": "6/7",
+   "sin afirmar": "0/2"
+  },
+  "p50_ms": 31.84,
+  "p95_ms": 46.716
+ },
+ "ablacion": {
+  "calificadas": 62,
+  "aciertos": 40,
+  "afirma_falso": 2,
+  "abiertas_equivocadas": 2,
+  "por_tipo": {
+   "abierta": "23/31",
+   "no": "0/10",
+   "no lo se": "11/12",
+   "si": "6/7",
+   "sin afirmar": "0/2"
+  },
+  "p50_ms": 31.683,
+  "p95_ms": 46.966
+ },
+ "sin_memoria": {
+  "calificadas": 62,
+  "aciertos": 14,
+  "afirma_falso": 0,
+  "abiertas_equivocadas": 0,
+  "por_tipo": {
+   "abierta": "0/31",
+   "no": "0/10",
+   "no lo se": "12/12",
+   "si": "0/7",
+   "sin afirmar": "2/2"
+  },
+  "p50_ms": 0.313,
+  "p95_ms": 20.326
+ },
+ "memoria_barajada": {
+  "calificadas": 62,
+  "aciertos": 14,
+  "afirma_falso": 0,
+  "abiertas_equivocadas": 0,
+  "por_tipo": {
+   "abierta": "0/31",
+   "no": "0/10",
+   "no lo se": "12/12",
+   "si": "0/7",
+   "sin afirmar": "2/2"
+  },
+  "p50_ms": 17.151,
+  "p95_ms": 26.108
+ },
+ "renombrado_invariantes": "61/62",
+ "nombres_sustituidos": 30,
+ "estrategia_siempre_no_lo_se": 14,
+ "reserva": "doble: dos conjuntos nuevos (validadores: 0 y 3 claves corregidas), 15 conversaciones, 62 preguntas",
+ "estable_g11_misma_reserva": {
+  "aciertos": 40,
+  "calificadas": 62
+ },
+ "subagente_sonnet5_sin_clave": {
+  "aciertos": 59,
+  "calificadas": 62
+ },
+ "mlqa_600_no_vistos": {
+  "g46": 0.2477,
+  "ablacion": 0.2477,
+  "solo_lector_g28": 0.244,
+  "archivo": "results_v3/g46_mlqa_reserva.json"
+ },
+ "regresion": "604 pruebas, 2 fallos esperados, 0 fallos (lotes de 900 s; la orden oficial agotó 90 s por carga ajena)",
+ "puerta": {
+  "aciertos": "49/62 ≥ 40 + 3: pasa",
+  "claves_no": "9/10 = 90 % ≥ 40 %: pasa",
+  "aporte": "49 − 40 = +9 ≥ +3: pasa",
+  "afirma_falso": "3 > 2: FALLA (2 ya estaban en estable-G-11: «Según Marta, la reunión es el jueves» → «Sí»; 1 nueva: «¿Marta es enfermera?» → «No» por «Diego es el hermano de Marta»)",
+  "abiertas_equivocadas": "2/31: pasa",
+  "barajada": "0: pasa",
+  "renombrado": "61/62: pasa",
+  "mlqa_f1": "0,2477 ≥ 0,2440 − 0,005: pasa",
+  "p95_conversacion": "47 ms: pasa",
+  "resultado": "NO SUPERADA"
+ },
+ "causas_falsos": [
+  "contraste sin exigir el mismo papel: en la pregunta «Marta» es sujeto del atributo; en la oración es complemento de «hermano», cuyo sujeto es Diego",
+  "atribución con «según X» no se reconoce como dicho por otro (solo las subordinadas con «que»)"
+ ]
+}
