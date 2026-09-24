@@ -1,0 +1,11 @@
+{
+ "preregistro": "prereg/G-48-correspondencia-de-caminos-aprendida.md",
+ "fase": "desarrollo (14 conjuntos gastados, 616 preguntas calificadas)",
+ "educacion": {"mlqa": 2000, "squad_es_train": 20000, "aprendidos": 17529, "omitidos": 4471, "caminos_de_pregunta_conservados": 164, "cpu_s": 1080.7, "rss_mib": 431.7, "base_mib": 92.6},
+ "g48_todas_las_anclas": {"aciertos": 456, "afirma_falso": 4, "abiertas_equivocadas": 21},
+ "ablacion_sin_caminos": {"aciertos": 457, "afirma_falso": 4, "abiertas_equivocadas": 21},
+ "variante_exploratoria_una_ancla": {"aciertos": 459, "afirma_falso": 4, "abiertas_equivocadas": 21},
+ "correspondencias_de_nombre_aprendidas": {"^obl llamar vobj": ["^appos", "^nmod"], "^nsubj nombre vnmod": ["^appos"]},
+ "veredicto": "refutado en desarrollo: sin aporte (-1; +2 en la variante exploratoria); no se congela ni se gasta reserva",
+ "causas": ["con 20 000 ejemplos, correspondencias como «dedicar» no llegan al apoyo 3", "exigir todas las anclas descarta las preguntas con relativa, cuyos caminos son largos y el analizador rompe", "los fallos que quedan son encadenamiento entre frases, inferencia para «no» y errores del analizador"]
+}
