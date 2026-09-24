@@ -28,6 +28,10 @@ SPLIT_RULE_RATE = 0.9     # share of words with that ending that were split
 OPENER_WORDS = 3          # G-42: leading words kept per sentence (prepositions are skipped later)
 OPENER_SUPPORT = 3        # questions a word must open to be learned as interrogative
 OPENER_RATE = 0.9         # ... and its balanced share of question openings
+MORPH_TAGS = frozenset({'PRON', 'DET', 'NOUN', 'VERB', 'AUX'})   # G-47: words whose features are kept
+MORPH_NAMES = frozenset({'Person', 'Number', 'Gender', 'Poss', 'PronType', 'Reflex', 'Case'})
+IMPERSONAL_SUPPORT = 30   # G-47: a verb seen this often ...
+IMPERSONAL_RATE = 0.05    # ... with an explicit subject less often than this is impersonal
 _WORD = re.compile(r'\w+|[^\w\s]')
 
 
@@ -115,6 +119,25 @@ class SyntaxMixin:
                 row[0] += 1
                 row[1] += 'Polarity=Neg' in values
                 row[2] += 'PronType=Int' in values
+            # G-47: person, number, gender and kind of reference, per word and class.
+            morph = model.setdefault('morph_counts', {})
+            for word, tag, feat in zip(lowered, tags, feats):
+                if tag not in MORPH_TAGS:
+                    continue
+                row = morph.setdefault(word + '\x1f' + tag, {})
+                row['n'] = row.get('n', 0) + 1
+                for value in str(feat).split('|'):
+                    if value.split('=')[0] in MORPH_NAMES:
+                        row[value] = row.get(value, 0) + 1
+        if lemmas is not None and labels is not None:
+            # G-47: how often each verb has a subject of its own.
+            subjects = model.setdefault('subject_counts', {})
+            with_subject = {heads[d] for d, label in enumerate(labels) if str(label).startswith('nsubj')}
+            for d, (tag, lemma) in enumerate(zip(tags, lemmas)):
+                if tag == 'VERB' and lemma and lemma != '_':
+                    row = subjects.setdefault(lemma.lower(), [0, 0])
+                    row[0] += 1
+                    row[1] += (d + 1) in with_subject
         if labels is not None:
             table = model.setdefault('labels', {})
             for d, label in enumerate(labels, 1):
@@ -167,6 +190,16 @@ class SyntaxMixin:
                 if count >= OPENER_SUPPORT and asked / (asked + stated) >= OPENER_RATE:
                     learned.add(word)
         model['interrogatives'] = sorted(learned)
+
+    def morphology(self, word: str, tag: str) -> set:
+        """G-47: the learned features of a word in a class (empty if unknown)."""
+        low = word.lower()
+        value = self.syntax_model.get('morph_table', {}).get(low + '\x1f' + tag)
+        if not value and tag == 'VERB':
+            endings = self.syntax_model.get('morph_endings', {})
+            value = next((endings[low[-size:]] for size in range(SUFFIX_MAX, 0, -1)
+                          if len(low) > size and low[-size:] in endings), None)
+        return set(value.split('|')) if value else set()
 
     def lemma_key(self, word: str) -> str:
         """G-44: the learned dictionary form of a word, without accents; an
@@ -341,6 +374,31 @@ class SyntaxMixin:
         # the feature in >= 90 % of the word's annotated occurrences).
         marks = model.get('word_marks', {})
         model['negators'] = sorted(w for w, (n, neg, _) in marks.items() if neg >= 3 and neg >= 0.9 * n)
+        # G-47: each word's features with the same rule, and the verbs that
+        # almost never take a subject.
+        model['morph_table'] = {key: '|'.join(sorted(v for v, c in row.items() if v != 'n' and c >= 3
+                                                     and c >= 0.9 * row['n']))
+                                for key, row in model.get('morph_counts', {}).items()}
+        model['morph_table'] = {k: v for k, v in model['morph_table'].items() if v}
+        # G-47: person and number of verb forms never seen often enough, from
+        # their endings, with G-35's rule over distinct forms.
+        endings: dict = {}
+        for key, value in model['morph_table'].items():
+            word, tag = key.rsplit('\x1f', 1)
+            bundle = '|'.join(v for v in value.split('|') if v.split('=')[0] in ('Person', 'Number'))
+            if tag != 'VERB' or 'Person=' not in bundle:
+                continue
+            for size in range(1, SUFFIX_MAX + 1):
+                if len(word) > size:
+                    row = endings.setdefault(word[-size:], {})
+                    row[bundle] = row.get(bundle, 0) + 1
+        model['morph_endings'] = {}
+        for ending, row in endings.items():
+            total, (bundle, count) = sum(row.values()), max(sorted(row.items()), key=lambda kv: kv[1])
+            if count >= SPLIT_RULE_SUPPORT and count >= SPLIT_RULE_RATE * total:
+                model['morph_endings'][ending] = bundle
+        model['impersonal'] = sorted(lemma for lemma, (n, s) in model.get('subject_counts', {}).items()
+                                     if n >= IMPERSONAL_SUPPORT and s < IMPERSONAL_RATE * n)
         self._compile_question_words()
         model['lemma_table'] = {w: max(sorted(row), key=lambda k: row[k])
                                 for w, row in model.get('lemma_counts', {}).items()

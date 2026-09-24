@@ -122,3 +122,54 @@ Si pasa: verificación independiente 5.10 y `estable-G-12`. Si falla, se registr
 Una persona que escucha «Doña Esperanza hizo un sancocho. La reunión fue en casa de su hija Norela» entiende que Norela es hija de Esperanza. Leobot no lo entendía: el «su» no apuntaba a nadie. Ahora buscará a quién se refiere cada «su», «él», «ella», «lo» o «la», y también de quién se habla cuando la frase no lo repite. Para elegir, se fijará en de quién se venía hablando y en si es hombre o mujer, uno o varios, como aprendió en el libro de gramática.
 
 Además, revisará que la respuesta hable de la misma persona o cosa por la que le preguntan. Si le dicen «Luis tiene ocho años y Elena tiene doce» y le preguntan la edad de Elena, no contestará con la de Luis. Si le preguntan «¿cuántas?», no contestará con un color. Y si le dijeron que alguien **no** hizo algo, no lo dará como quien lo hizo.
+
+## Enmienda antes de congelar (2026-09-24), por lo visto en desarrollo
+
+Medida en los 10 conjuntos gastados (439 preguntas) y en los 300 MLQA visibles.
+
+**Primera versión.** Solo dejaba pasar palabras alineadas y de función. Además, exigía la misma preposición a todas las palabras.
+- Con eso, «dice lo mismo» ganó 12 preguntas y perdió 39. Con la regla de caminos tal como estaba preregistrada, perdió 25.
+- Las pérdidas vinieron de tres cosas:
+  - la paráfrasis de posesión («¿Cómo se llama el perro de Mariana?» con «Mariana tiene un perro que se llama Rocco»), que la preposición bloqueaba;
+  - preposiciones que el analizador cuelga del verbo en la pregunta («¿A quién perteneció…?»);
+  - sustantivos que son la misma entidad («La doctora Camila Duarte», «El gato de Marta es de color gris»).
+
+**Cambios**, todos generales:
+
+1. **Caminos.**
+   - Tampoco se cruza otra aparición de una palabra de la pregunta, porque es otro hecho: es la regla de «una aparición por palabra» aplicada al camino.
+   - Un sustantivo que es la misma entidad sí se cruza, pero solo desde su pareja o hacia ella:
+     - el atributo con «ser» y su sujeto, también cuando el analizador cuelga el sujeto de la cópula;
+     - la aposición y las partes de un nombre.
+   - Los coordinados conservan su enlace con el primer elemento, como en las dependencias mejoradas.
+2. **Se retira la comprobación de preposiciones por palabra.** Impedía la paráfrasis de posesión «el N de X» = «X tiene un N».
+   - La preposición del hueco se compara ahora con cualquier preposición que lleve el núcleo de la candidata, no solo con su primera palabra («junto con…»).
+   - La preposición que va delante de la interrogativa, y el sustantivo de esa frase, pertenecen al hueco.
+3. **Papel ocupado.** Una candidata que es el sujeto de una palabra alineada cuyo sujeto ya nombra la pregunta no es el hueco. Un verbo tiene un solo sujeto, y los predicados coordinados lo comparten. Caso: «¿Dónde vive Wilmer?» → «El hermano de Rosaura».
+4. **Texto de la respuesta.** Una respuesta sacada de una copia resuelta se muestra con las palabras tal como se dijeron.
+5. **Referencias.**
+   - **Orden del antecedente:** primero los sujetos (de la misma cláusula para un posesivo, de las cláusulas anteriores de la oración, de las oraciones anteriores); después las demás menciones de las oraciones anteriores; al final, las de la propia oración.
+   - **Pronombre y sujeto.** Un pronombre no se refiere al sujeto de su cláusula, que en una cláusula coordinada es el heredado. Solo al sujeto, como estaba preregistrado; la primera versión excluía todos los complementos.
+   - **Doblado.** Un clítico que dobla un complemento de su propio verbo no se resuelve: acusativo con objeto; dativo con objeto indirecto o complemento con «a» («le … a Julián»).
+   - **El antecedente no contiene al pronombre.**
+   - **La copia de la mención:** el sustantivo con sus determinantes, adjetivos, partes de nombre, números y un complemento con «de», a un solo nivel. Sin su propia preposición y sin oraciones de relativo.
+   - **Sujeto omitido.** También se miran los sujetos colgados de la cópula o del auxiliar.
+   - **Formas verbales no vistas:** toman persona y número de su terminación, aprendida con la regla de G-35 sobre formas distintas («usó» no llega a 3 apariciones en AnCora).
+6. El filtro de tipo no cambia.
+
+**Límites vistos y no atacados:**
+- errores del analizador (sustantivo desconocido etiquetado como adjetivo; enganches de «de largo»);
+- «el pueblo de Aguazul» (nombramiento con «de»), indistinguible de «el hermano de Marta» sin conocimiento léxico;
+- «hace calor» (verbo impersonal solo en ese uso);
+- «su nieta», resuelto como del huerto.
+
+| Variante (desarrollo) | Aciertos /439 | Afirma lo falso | Abiertas equivocadas | MLQA visible F1 |
+|---|---|---|---|---|
+| G-47 | 337 | 3 | 14 | 0,2296 |
+| sin referencias | 335 | 3 | 14 | — |
+| sin «dice lo mismo» | 329 | 5 | 23 | 0,2340 |
+| sin tipo | 337 | 3 | 14 | 0,2242 |
+| los tres apagados (= G-46b) | 332 | 5 | 20 | 0,2252 |
+| lector de G-28 solo | — | — | — | 0,2221 |
+
+La puerta no cambia. El encargo del conjunto de referencias queda escrito en [`experiments/g47_encargo_referencias.md`](../experiments/g47_encargo_referencias.md) antes de congelar.
