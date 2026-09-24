@@ -95,3 +95,37 @@ Si pasa: verificación independiente 5.10 y `estable-G-13`. Si falla, se registr
 ## En palabras fáciles de entender
 
 Cuando alguien dice «Fernando es el padre de Camila» o «su esposo Julián», entendemos que se habla de una sola persona con dos maneras de nombrarla. Leobot todavía no lo entendía: si luego le preguntaban «¿Cómo se llama el padre de Camila?», no sabía que era Fernando. Ahora juntará las distintas maneras de nombrar a la misma persona o cosa. Además, aprenderá solo, leyendo preguntas ya resueltas, qué verbos sirven para dar un nombre («se llama», «llamado»), sin que nadie se lo escriba.
+
+## Enmienda antes de congelar (2026-09-24), por lo visto en desarrollo
+
+Medida en los 16 conjuntos gastados (703 preguntas). **Marcos aprendidos** de los 2000 ejemplos MLQA:
+- («cómo», llamar): 6 de 11;
+- («quién», cópula): 8 de 14.
+
+**Verbo de identidad aprendido:** «llamar». Los demás marcos quedan en 0 o casi 0; por ejemplo, («cuál», cópula) tiene 1 de 25 y («qué», tener) 0 de 17.
+
+La base pesa 91,6 MiB y la educación tarda 122 s de CPU (antes, 60 s).
+
+**Defectos de implementación corregidos** (la regla del preregistro no cambia):
+1. **La conversación como secuencia.** Cada frase dicha es su propio documento (`conversación:N`). Unir las menciones «dentro del mismo documento» no unía nada entre frases. Ahora las frases de la conversación se recorren en orden, como en G-47.
+2. **Predicado con preposición.** «Bruno es **de color** negro» no es identidad: un predicado con su propia preposición es una cualidad.
+3. **Mismo número.** Dos menciones de una entidad tienen el mismo número aprendido. «Los domingos la panadería no abre» salía con «la panadería» en aposición de «domingos».
+4. **Ancla de la cópula.** Los argumentos de la cópula son su sujeto y su predicado. En «¿Quién es mayor, Sofía o Diego?» (predicado adjetivo), el código tomaba como ancla un «objeto» que el analizador colgó mal.
+5. **Lo que la pregunta ya nombra no es la respuesta.** Una mención de la misma entidad que una palabra colocada no puede ser la respuesta. Además, una colocación por otra mención cuenta después de la colocación literal. Así, «¿De qué color es Michi?» no responde «Michi» por «un gato llamado Michi».
+   - El sustantivo de la frase interrogativa («qué **calle**») es la clase del hueco, no algo nombrado: su nombre («Olmo») sí puede ser la respuesta.
+6. **El nombre como respuesta** solo sustituye la respuesta si esta no dice ya ese nombre. «En la calle Real» se queda como está.
+
+| Variante (desarrollo, 703) | Aciertos | Afirma lo falso | Abiertas equivocadas |
+|---|---|---|---|
+| G-51 | 533 | 5 | 21 |
+| sin marcos aprendidos (solo aposición y cópula) | 512 | 5 | 23 |
+| sin `entities` (= G-49) | 509 | 5 | 26 |
+
+Frente a la ablación: 24 preguntas ganadas y 0 perdidas.
+
+**Evaluadores:**
+- `experiments/g51_conversacion.py`;
+- `experiments/g51_lectura_squad_es.py`;
+- `experiments/g51_marcos_barajados.py`. Las preguntas se reasignan al azar entre los ejemplos; como dato adicional, se prueba también un tramo al azar de la misma frase como respuesta.
+
+La puerta no cambia.

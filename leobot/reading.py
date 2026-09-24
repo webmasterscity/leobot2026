@@ -212,6 +212,8 @@ class ReadingMemoryMixin:
             self._compile_question_words()
             self._compile_category_nouns()
             self._compile_answer_classes()
+            if hasattr(self, '_compile_identity_frames'):
+                self._compile_identity_frames()
         return {'status': 'reading_consolidated', 'words': 0, 'pairs': 0}
 
     def _gap_neighbours(self, question: list[str], key: str, present: set) -> tuple:
@@ -319,6 +321,9 @@ class ReadingMemoryMixin:
                 model[name].append(round(value, 4))
                 del model[name][:-5000]
         tokens, gold_start, gold_end = found
+        if self.syntax_model.get('sentences') and hasattr(self, '_observe_identity_frame'):
+            # G-51: whether this kind of question asks for the same entity said otherwise.
+            self._observe_identity_frame(question, sentences[tokenized.index(tokens)], answer)
         present = {_norm(t) for t in tokens}
         # G-45: which of the question's first words the answering sentence repeats.
         lead = [t.lower() for t in _TOKEN.findall(question) if _is_word(t)][:LEAD_WORDS]
@@ -391,7 +396,8 @@ class ReadingMemoryMixin:
             self._resolve_references()
         if content and self.reading_utterances:
             index = self._reading_index()
-            lists = sorted((index.get(t, ()) for t in content), key=len)
+            # G-51: a row where another mention of the same entity is said also counts.
+            lists = sorted((set(index.get(t, ())) | set(self._alias_postings(t)) for t in content), key=len)
             candidates = set(lists[0]).intersection(*lists[1:]) if lists else set()
             for position in sorted(candidates):
                 row = self.reading_utterances[position]
@@ -612,7 +618,7 @@ class ReadingMemoryMixin:
         stems = [self._word_key(w) for w in words]
         if getattr(self, 'same_fact', True):
             # G-47: one occurrence per question word, links through no other entity, same prepositions.
-            placements = self._placements(structure, tree, self._key_sets(words))
+            placements = self._placements(structure, tree, self._row_key_sets(source, tree))
             if not placements:
                 return None
             enhanced, _ = self._graph(heads, labels)
@@ -922,9 +928,12 @@ class ReadingMemoryMixin:
         same = getattr(self, 'same_fact', True)
         if same:
             self._resolve_references()
+            identity = self._identity_answer(qtree)
+            if identity is not None:
+                return identity
         retrieval = {self._search_key(words[i]) for i in where.values()}
         index = self._reading_index()
-        lists = sorted((index.get(t, ()) for t in retrieval), key=len)
+        lists = sorted((set(index.get(t, ())) | set(self._alias_postings(t)) for t in retrieval), key=len)
         positions = set(lists[0]).intersection(*lists[1:])
         if same:
             _, qgraph = self._graph(heads, labels)
@@ -944,7 +953,7 @@ class ReadingMemoryMixin:
                 continue
             keys = [self._word_key(w) for w in tree[0]]
             if same:
-                sets = self._key_sets(tree[0])
+                sets = self._row_key_sets(row, tree)
                 present = set().union(*sets) if sets else set()
                 if not required <= present:
                     continue
@@ -958,10 +967,12 @@ class ReadingMemoryMixin:
             ranked = [entry for entry in ranked if classes.get(self._answer_class(entry[1].split())) != 0]
         if not ranked:
             return None
-        best = min(key for key, _, _ in ranked)
+        best = min(key for key, _, _, _ in ranked)
         winners = {}
-        for key, text, row in ranked:
+        for key, text, row, node in ranked:
             if key == best:
+                # G-51: a common noun asked with a name-seeking interrogative is answered with its entity's name.
+                text = self._name_of(row, node, low[q], text) or text
                 winners.setdefault(' '.join(_norm(t) for t in text.split()), (text, row))
         if len(winners) > 1:
             # G-43: structure narrows the options; the reader's learned statistics decide among them.
@@ -1011,9 +1022,15 @@ class ReadingMemoryMixin:
             if h:
                 children[h - 1].append(d)
         enhanced, graph = self._graph(sheads, slabels, conj=True)
+        literal = self._key_sets(swords)
         out = []
         for placement in self._placements(structure, tree, keys):
             aligned = set(placement.values())
+            # G-51: a word placed through another mention of its entity is weaker
+            # evidence than the word itself, and that entity is not the answer.
+            aliased = sum(k not in literal[j] for k, j in placement.items())
+            # The noun of the interrogative phrase («qué calle») is the gap's kind, not a named thing.
+            named = self._same_entity(row, aligned - {placement.get(noun_key)})
             negated = sum(swords[k].lower() in negators and sheads[k] - 1 in aligned for k in range(n)) % 2
             if negated != polarity or self._subordinate(enhanced, stags, sheads, aligned):
                 continue
@@ -1047,7 +1064,7 @@ class ReadingMemoryMixin:
                     continue
                 nodes.append((node, span))
             for node, span in self._joined_siblings(nodes, sheads, slabels, stags, swords):
-                if self._subject_taken(node, placement, structure, tree, keys, enhanced):
+                if node in named or self._subject_taken(node, placement, structure, tree, keys, enhanced):
                     continue
                 sdist = self._graph_distances(graph, node, stags)
                 mirror = sum(abs(qdist[where[k]] - sdist[placement[k]]) for k in where)
@@ -1057,8 +1074,8 @@ class ReadingMemoryMixin:
                 if text:
                     # G-47b: a sentence holding the noun of the interrogative phrase comes first.
                     first = -(host is not None) if getattr(self, 'g47b_structure', True) else 0
-                    out.append(((first, -len(placement), mirror, case not in own if case else bool(own),
-                                 slabels[node] != qlabel), text, row))
+                    out.append(((first, -len(placement), aliased, mirror, case not in own if case else bool(own),
+                                 slabels[node] != qlabel), text, row, node))
         return out
 
     def _span_text(self, row, words, span) -> str:
@@ -1183,7 +1200,7 @@ class ReadingMemoryMixin:
                 b -= 1
             own_case = swords[a].lower() if stags[a] == 'ADP' else None
             out.append(((-coverage, mirror, own_case != case, slabels[node] != qlabel),
-                        self._surface(swords[a:b + 1]), row))
+                        self._surface(swords[a:b + 1]), row, None))
         return out
 
     @staticmethod
