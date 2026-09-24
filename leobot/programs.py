@@ -16,16 +16,62 @@ import re
 OPS = ('add', 'sub', 'mul', 'floordiv', 'mod', 'min', 'max')
 # G-39: generic index access into a context grid (-1 outside it).  Only
 # available when a search is given contexts; it is substrate, not a solution.
-CONTEXT_OPS = ('at',)
+# G-39b: generic aggregation/iteration over the same grid (0 is background):
+# nb = non-zero 8-neighbours, comp = size of the 4-connected same-colour part.
+CONTEXT_OPS = ('at', 'nb', 'comp')
+# Whole-grid aggregates, given to grid programs as variables after (h, w).
+GRID_FEATURES = ('moda', 'mas_frecuente', 'menos_frecuente', 'colores',
+                 'arriba', 'izquierda', 'alto_dibujo', 'ancho_dibujo')
 LEAF_OPS = frozenset(('var', 'const', 'call', 'pcall'))
 COMMUTATIVE = frozenset(('add', 'mul', 'min', 'max'))
 LIMIT = 10 ** 12
 
 
-def grid_at(grid, i: int | None, j: int | None) -> int | None:
-    if grid is None or i is None or j is None:
+class GridContext:
+    """A grid with its generic aggregates, computed once per grid."""
+    __slots__ = ('grid', 'features', 'neighbours', 'components')
+
+    def __init__(self, grid) -> None:
+        self.grid = grid
+        h, w = len(grid), len(grid[0])
+        counts: dict[int, int] = defaultdict(int)
+        for row in grid:
+            for v in row:
+                counts[v] += 1
+        nonzero = {k: n for k, n in counts.items() if k}
+        rows = [r for r in range(h) if any(grid[r])]
+        cols = [c for c in range(w) if any(grid[r][c] for r in range(h))]
+        self.features = (max(sorted(counts), key=lambda k: counts[k]),
+                         max(sorted(nonzero), key=lambda k: nonzero[k]) if nonzero else 0,
+                         min(sorted(nonzero), key=lambda k: nonzero[k]) if nonzero else 0,
+                         len(nonzero), rows[0] if rows else 0, cols[0] if cols else 0,
+                         rows[-1] - rows[0] + 1 if rows else 0, cols[-1] - cols[0] + 1 if cols else 0)
+        self.neighbours = [[sum(1 for di in (-1, 0, 1) for dj in (-1, 0, 1)
+                                if (di or dj) and 0 <= r + di < h and 0 <= c + dj < w and grid[r + di][c + dj])
+                            for c in range(w)] for r in range(h)]
+        label = [[-1] * w for _ in range(h)]
+        sizes: list[int] = []
+        for r in range(h):
+            for c in range(w):
+                if label[r][c] >= 0:
+                    continue
+                label[r][c], stack, n = len(sizes), [(r, c)], 0
+                while stack:
+                    x, y = stack.pop(); n += 1
+                    for u, v in ((x + 1, y), (x - 1, y), (x, y + 1), (x, y - 1)):
+                        if 0 <= u < h and 0 <= v < w and label[u][v] < 0 and grid[u][v] == grid[x][y]:
+                            label[u][v] = len(sizes); stack.append((u, v))
+                sizes.append(n)
+        self.components = [[sizes[label[r][c]] for c in range(w)] for r in range(h)]
+
+
+def context_op(op: str, ctx, i: int | None, j: int | None) -> int | None:
+    if ctx is None or i is None or j is None:
         return None
-    return grid[i][j] if 0 <= i < len(grid) and 0 <= j < len(grid[i]) else -1
+    if not (0 <= i < len(ctx.grid) and 0 <= j < len(ctx.grid[0])):
+        return -1
+    table = ctx.grid if op == 'at' else ctx.neighbours if op == 'nb' else ctx.components
+    return table[i][j]
 
 
 def operate(op: str, a: int | None, b: int | None) -> int | None:
@@ -84,9 +130,9 @@ class Expr:
             if any(v is None for v in mapped):
                 return None
             return resolver(self.value, mapped, memo if memo is not None else {}, stack)
-        if self.op == 'at':
-            return grid_at(grid, self.children[0].run(args, resolver, memo, stack, grid),
-                           self.children[1].run(args, resolver, memo, stack, grid))
+        if self.op in CONTEXT_OPS:
+            return context_op(self.op, grid, self.children[0].run(args, resolver, memo, stack, grid),
+                              self.children[1].run(args, resolver, memo, stack, grid))
         return operate(self.op, self.children[0].run(args, resolver, memo, stack, grid),
                        self.children[1].run(args, resolver, memo, stack, grid))
 
@@ -95,7 +141,7 @@ class Expr:
         if self.op == 'const': return str(self.value)
         if self.op == 'call': return '@' + str(self.value)
         if self.op == 'pcall': return '@' + str(self.value) + '(' + ','.join(map(str,self.children)) + ')'
-        if self.op == 'at': return f'at({self.children[0]}, {self.children[1]})'
+        if self.op in CONTEXT_OPS: return f'{self.op}({self.children[0]}, {self.children[1]})'
         sym = {'add': '+', 'sub': '-', 'mul': '*', 'floordiv': '//', 'mod': '%'}
         a, b = map(str, self.children)
         return f'({a} {sym[self.op]} {b})' if self.op in sym else f'{self.op}({a}, {b})'
@@ -225,8 +271,11 @@ class ProgramLearner:
     def __init__(self, max_size: int = 7, max_candidates: int = 120_000, max_seconds: float = 8.0,
                  goal_directed: bool = True, auto_library_top_k: int = 16, allow_recurrence: bool = True,
                  auto_abstraction: bool = True, abstraction_min_support: int = 2,
-                 abstraction_max_new: int = 8) -> None:
+                 abstraction_max_new: int = 8, max_signature_cells: int = 10_000_000) -> None:
         self.max_size, self.max_candidates, self.max_seconds = max_size, max_candidates, max_seconds
+        # G-39b: explicit memory budget of a search (values held in retained
+        # signatures); long grid signatures otherwise exhaust RAM first.
+        self.max_signature_cells = int(max_signature_cells)
         self.goal_directed = goal_directed
         self.auto_library_top_k = max(0, int(auto_library_top_k))
         self.allow_recurrence = bool(allow_recurrence)
@@ -768,13 +817,15 @@ class ProgramLearner:
 
     def fit(self, skill: str, library: list[str] | None = None, allowed_vars=None, *,
             examples: dict | None = None, probe_points=None, contexts: list | None = None,
+            context_ops: tuple[str, ...] = CONTEXT_OPS, goal_context: bool = True,
             abstract: bool = True) -> dict:
         """Search the smallest programs agreeing with the examples.
 
         G-39: ``examples``/``probe_points`` replace the stored examples and the
         generic probes (e.g. grid cells, whose unlabelled test cells are probes);
-        with ``contexts`` the last argument of every point indexes a grid that
-        ``at`` reads.  The search itself is the same.
+        with ``contexts`` (``GridContext`` objects) the last argument of every
+        point indexes the grid that ``context_ops`` read.  The search itself is
+        the same; G-39b adds the inversion of ``at`` to the goal-directed join.
         """
         start = perf_counter()
         # Re-fitting a target invalidates only its previous implementation and dependents.
@@ -813,17 +864,24 @@ class ProgramLearner:
         seen: set[tuple] = set()
         levels: dict[int, list[tuple[Expr, tuple]]] = {}
         solutions: list[Expr] = []
+        solution_levels: list[int] = []
+        stored_cells = 0
         attempts, truncated, reason = 0, False, None
         constraint_checks = 0
         goal_hits = False
 
         def consider(expr: Expr, sig: tuple, level: int) -> None:
+            nonlocal stored_cells
             if any(v is None for v in sig[:len(inputs)]) or sig in seen:
                 return
             seen.add(sig)
             levels.setdefault(level, []).append((expr, sig))
             if sig[:len(inputs)] == outputs:
                 solutions.append(expr)
+                solution_levels.append(level)
+            stored_cells += len(sig)
+            if stored_cells > self.max_signature_cells:
+                raise RuntimeError('Presupuesto de memoria de la búsqueda agotado.')
 
         for i in variable_ids:
             e = Expr('var', i)
@@ -958,14 +1016,67 @@ class ProgramLearner:
                                 continue
                             signature = training_sig + tuple(operate(op, a, b) for a, b in zip(ls[n:], rs[n:]))
                             consider(Expr(op, children=(left, right)), signature, size)
+        rowmaps = None
+        goal_splits_done: set[tuple[int, int]] = set()
+
+        def goal_at(size: int, built: int) -> None:
+            """G-39b: ``at(i, j)`` as the root, by inversion.  A row expression
+            survives alone only if every target colour occurs in that input row;
+            then only column expressions landing on such cells are checked.
+            Only splits whose children are already complete levels (< ``built``)
+            are tried, each once; every solution found is kept."""
+            nonlocal attempts, rowmaps, constraint_checks
+            n = len(inputs)
+            if rowmaps is None:
+                rowmaps = [{i: frozenset(j for j, v in enumerate(row) if v == y)
+                            for i, row in enumerate(point_grids[p].grid) if y in row}
+                           for p, y in zip(range(n), outputs)]
+            for left_size in range(1, size - 1, 2):
+                right_size = size - 1 - left_size
+                if left_size >= built or right_size >= built or (size, left_size) in goal_splits_done:
+                    continue
+                goal_splits_done.add((size, left_size))
+                rights = levels.get(right_size, [])
+                if not rights:
+                    continue
+                by_first: dict[int, list] = {}
+                for right, rs in rights:
+                    by_first.setdefault(rs[0], []).append((right, rs))
+                for left, ls in levels.get(left_size, []):
+                    check_budget()
+                    allowed = []
+                    for rowmap, i in zip(rowmaps, ls):
+                        constraint_checks += 1
+                        cols = rowmap.get(i)
+                        if not cols:
+                            break
+                        allowed.append(cols)
+                    else:
+                        for j0 in allowed[0]:
+                            for right, rs in by_first.get(j0, ()):
+                                attempts += 1
+                                if all(j in cols for j, cols in zip(rs, allowed)):
+                                    sig = tuple(context_op('at', g, a, b) for g, a, b in zip(point_grids, ls, rs))
+                                    consider(Expr('at', children=(left, right)), sig, size)
+
         try:
             for size in range(3, self.max_size + 1, 2):
-                if solutions:
+                if solutions and min(solution_levels) < size:
                     break
+                if point_grids is not None and goal_context and 'at' in context_ops:
+                    # G-39b: pruned inversions for every size reachable with the
+                    # complete levels, before the expensive enumeration of this
+                    # size; a larger solution found early is replaced below by
+                    # any smaller one the enumeration still finds.
+                    for target in range(size, self.max_size + 1, 2):
+                        goal_at(target, size)
+                    if solutions and min(solution_levels) == size:
+                        goal_hits = True
+                        break
                 if self.goal_directed:
                     goal_join(size)
-                    if solutions:
-                        winning_size, goal_hits = size, True
+                    if solutions and min(solution_levels) == size:
+                        goal_hits = True
                         break
                 for left_size in range(1, size - 1, 2):
                     right_size = size - 1 - left_size
@@ -982,15 +1093,19 @@ class ProgramLearner:
                                 sig = tuple(operate(op, a, b) for a, b in zip(ls, rs))
                                 consider(Expr(op, children=(left, right)), sig, size)
                             if point_grids is not None:
-                                attempts += 1
-                                if attempts > self.max_candidates:
-                                    raise RuntimeError('Presupuesto de candidatos agotado.')
-                                sig = tuple(grid_at(g, a, b) for g, a, b in zip(point_grids, ls, rs))
-                                consider(Expr('at', children=(left, right)), sig, size)
-                if solutions:
-                    winning_size = size
+                                for op in context_ops:
+                                    attempts += 1
+                                    if attempts > self.max_candidates:
+                                        raise RuntimeError('Presupuesto de candidatos agotado.')
+                                    sig = tuple(context_op(op, g, a, b) for g, a, b in zip(point_grids, ls, rs))
+                                    consider(Expr(op, children=(left, right)), sig, size)
         except RuntimeError as exc:
             truncated, reason = True, str(exc)
+        if solutions and solution_levels:
+            # Keep every retained solution of the smallest size found.
+            smallest = min(solution_levels)
+            solutions = [e for e, level in zip(solutions, solution_levels) if level == smallest]
+            winning_size = smallest
         recurrence_solutions = []
         if not solutions and not truncated:
             recurrence_solutions = self._fit_recurrences(inputs, outputs)
@@ -1068,58 +1183,68 @@ class ProgramLearner:
             self._invalidate(f'{skill}__{part}')
         return True
 
-    def fit_grid(self, skill: str, test_inputs=(), *, use_context: bool = True, use_test_probes: bool = True) -> dict:
-        """G-39: learn output height, width and cell colour as integer programs.
+    def fit_grid(self, skill: str, test_inputs=(), *, use_context: bool = True, use_test_probes: bool = True,
+                 use_aggregation: bool = True, use_goal: bool = True) -> dict:
+        """G-39/G-39b: learn output height, width and cell colour as integer programs.
 
-        Height and width are skills of the input (height, width); the cell colour
-        is a skill of (row, col, height, width) read against the input grid with
-        ``at``.  Test inputs are given information, not answers: their sizes
-        and cells enter only as unlabelled probes, so programs that agree on the
+        Height and width are skills of (height, width, whole-grid aggregates) of
+        the input; the cell colour is a skill of (row, col, height, width,
+        aggregates) read against the input grid with the context operations.
+        Test inputs are given information, not answers: their sizes and cells
+        enter only as unlabelled probes, so programs that agree on the
         demonstrations but differ on the test stay distinct (ambiguity).
-        ``use_context``/``use_test_probes`` exist for ablations.
+        The keyword switches exist for ablations; arguments always keep the
+        full layout, the switches only restrict what the search may use.
         """
         pairs = self.grid_examples.get(skill, [])
         if not pairs:
             return {'status': 'need_examples'}
         tests = [self._grid(g) for g in test_inputs]
         report: dict = {'pairs': len(pairs), 'tests': len(tests)}
-        shapes = []
+        contexts = [GridContext(a) for a, _ in pairs] + [GridContext(g) for g in tests]
+        width = 2 + len(GRID_FEATURES)
+        shape_vars = tuple(range(width)) if use_aggregation else (0, 1)
         for k, part in enumerate(('alto', 'ancho')):
-            name = f'{skill}__{part}'
             ex = {}
-            for a, b in pairs:
-                ex.setdefault((len(a), len(a[0])), set()).add(len(b) if k == 0 else len(b[0]))
-            probes = ([(len(g), len(g[0])) for g in tests] if use_test_probes else []) + self.probes(2)
-            rep = self.fit(name, library=[], examples=ex, probe_points=probes, abstract=False)
+            for (a, b), ctx in zip(pairs, contexts):
+                ex.setdefault((len(a), len(a[0]), *ctx.features), set()).add(len(b) if k == 0 else len(b[0]))
+            probes = [(len(g), len(g[0]), *ctx.features) for g, ctx in zip(tests, contexts[len(pairs):])] \
+                if use_test_probes else []
+            rep = self.fit(f'{skill}__{part}', library=[], allowed_vars=shape_vars, examples=ex,
+                           probe_points=probes, abstract=False)
             report[part] = rep
             if rep['status'] != 'learned_hypothesis':
                 return {**report, 'status': rep['status'], 'stage': part}
+        shapes = []
         for g in tests:
             shape = self._grid_shape(skill, g)
             if shape['status'] != 'hypothesis':
                 return {**report, 'status': shape['status'], 'stage': 'tamaño de prueba'}
             shapes.append(shape['value'])
-        contexts = [a for a, _ in pairs] + tests
         ex, probes = {}, []
-        for k, (a, b) in enumerate(pairs):
+        for k, ((a, b), ctx) in enumerate(zip(pairs, contexts)):
             for r, row in enumerate(b):
                 for c, v in enumerate(row):
-                    ex[(r, c, len(a), len(a[0]), k)] = {v}
+                    ex[(r, c, len(a), len(a[0]), *ctx.features, k)] = {v}
         for t, (g, (h, w)) in enumerate(zip(tests, shapes) if use_test_probes else ()):
-            probes.extend((r, c, len(g), len(g[0]), len(pairs) + t) for r in range(h) for c in range(w))
-        rep = self.fit(f'{skill}__celda', library=[], allowed_vars=(0, 1, 2, 3), examples=ex,
-                       probe_points=probes, contexts=contexts if use_context else None, abstract=False)
+            ctx = contexts[len(pairs) + t]
+            probes.extend((r, c, len(g), len(g[0]), *ctx.features, len(pairs) + t) for r in range(h) for c in range(w))
+        cell_vars = tuple(range(2 + width)) if use_aggregation else (0, 1, 2, 3)
+        ops = CONTEXT_OPS if use_aggregation else ('at',)
+        rep = self.fit(f'{skill}__celda', library=[], allowed_vars=cell_vars, examples=ex, probe_points=probes,
+                       contexts=contexts if use_context else None, context_ops=ops, goal_context=use_goal,
+                       abstract=False)
         report['celda'] = rep
         return {**report, 'status': rep['status'], 'stage': 'celda'}
 
     def _grid_shape(self, skill: str, grid) -> dict:
-        size = (len(grid), len(grid[0]))
+        args = (len(grid), len(grid[0]), *GridContext(grid).features)
         shape = []
         for part in ('alto', 'ancho'):
             programs = self.solutions.get(f'{skill}__{part}', [])
             if not programs:
                 return {'status': 'unknown', 'value': None}
-            values = {self._run_expr(p, size) for p in programs}
+            values = {self._run_expr(p, args) for p in programs}
             if len(values) != 1:
                 return {'status': 'ambiguous', 'value': None}
             value = next(iter(values))
@@ -1137,12 +1262,14 @@ class ProgramLearner:
         programs = self.solutions.get(f'{skill}__celda', [])
         if not programs:
             return {'status': 'unknown', 'grid': None}
+        ctx = GridContext(grid)
         h, w = shape['value']
         out = []
         for r in range(h):
             row = []
             for c in range(w):
-                values = {p.run((r, c, len(grid), len(grid[0]), 0), None, {}, (), grid) for p in programs}
+                args = (r, c, len(grid), len(grid[0]), *ctx.features, 0)
+                values = {p.run(args, None, {}, (), ctx) for p in programs}
                 if len(values) != 1:
                     return {'status': 'ambiguous', 'grid': None, 'programs': [str(p) for p in programs]}
                 value = next(iter(values))
@@ -1157,7 +1284,8 @@ class ProgramLearner:
                            'goal_directed': self.goal_directed, 'auto_library_top_k': self.auto_library_top_k,
                            'allow_recurrence': self.allow_recurrence, 'auto_abstraction': self.auto_abstraction,
                            'abstraction_min_support': self.abstraction_min_support,
-                           'abstraction_max_new': self.abstraction_max_new}, 'examples': {s: [{'args': list(x), 'labels': sorted(y)} for x, y in ex.items()] for s, ex in self.examples.items()},
+                           'abstraction_max_new': self.abstraction_max_new,
+                           'max_signature_cells': self.max_signature_cells}, 'examples': {s: [{'args': list(x), 'labels': sorted(y)} for x, y in ex.items()] for s, ex in self.examples.items()},
                 'solutions': {s: [e.as_dict() for e in es] for s, es in self.solutions.items()}, 'reports': self.reports,
                 'dependencies': {s: sorted(v) for s, v in self.dependencies.items()},
                 'skill_concepts': {s: sorted(v) for s, v in self.skill_concepts.items()},
