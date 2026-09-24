@@ -56,12 +56,16 @@ class SyntaxMixin:
     """Mixed into Bot; learned state lives in ``syntax_model``."""
 
     # ----- learning ------------------------------------------------------
-    def observe_parsed_sentence(self, words, tags, heads, labels=None) -> dict:
+    def observe_parsed_sentence(self, words, tags, heads, labels=None, feats=None) -> dict:
         """Learn from one annotated sentence (heads are 1-based, 0 = root);
-        dependency functions are learned too when the demonstration has them."""
+        dependency functions are learned too when the demonstration has them.
+        G-41: with morphological features, which words mark negative polarity
+        and which ones ask are counted too (``Polarity=Neg``, ``PronType=Int``)."""
         if not (len(words) == len(tags) == len(heads)) or not words:
             return {'status': 'syntax_example_rejected'}
         if labels is not None and len(labels) != len(words):
+            return {'status': 'syntax_example_rejected'}
+        if feats is not None and len(feats) != len(words):
             return {'status': 'syntax_example_rejected'}
         model = self.syntax_model
         model['sentences'] += 1
@@ -88,6 +92,14 @@ class SyntaxMixin:
                         _add(model['arcs'], feature)
         model['arc_total'] += len(words)
         model['opportunity_total'] += len(words) * len(words)
+        if feats is not None:
+            marks = model.setdefault('word_marks', {})
+            for word, feat in zip(lowered, feats):
+                values = set(str(feat).split('|'))
+                row = marks.setdefault(word, [0, 0, 0])
+                row[0] += 1
+                row[1] += 'Polarity=Neg' in values
+                row[2] += 'PronType=Int' in values
         if labels is not None:
             table = model.setdefault('labels', {})
             for d, label in enumerate(labels, 1):
@@ -258,6 +270,11 @@ class SyntaxMixin:
         """Compile suffix statistics and interpolation weights from the counts."""
         model = self.syntax_model
         self._compile_splitting()
+        # G-41: learned lexicons, with G-35's promotion rule (support >= 3 and
+        # the feature in >= 90 % of the word's annotated occurrences).
+        marks = model.get('word_marks', {})
+        model['negators'] = sorted(w for w, (n, neg, _) in marks.items() if neg >= 3 and neg >= 0.9 * n)
+        model['interrogatives'] = sorted(w for w, (n, _, q) in marks.items() if q >= 3 and q >= 0.9 * n)
         # G-32b: a context never seen as an arc and seen as an opportunity at
         # most PRUNE_OPPORTUNITIES times barely moves its parent's rate; drop it
         # so the learned memory stays loadable.

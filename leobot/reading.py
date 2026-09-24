@@ -71,19 +71,24 @@ class ReadingMemoryMixin:
 
     # ----- memory -------------------------------------------------------
     def _reading_index(self) -> dict:
+        # G-41: memory only grows by appending (forgetting drops the cache), so
+        # new utterances extend the index instead of rebuilding it; a replaced
+        # list (another identity) is rebuilt from scratch.
         index = getattr(self, '_reading_index_cache', None)
-        if index is None or index[0] != len(self.reading_utterances):
-            postings: dict[str, list[int]] = {}
-            documents: dict[str, set] = {}
-            word_sets: list[set] = []
-            for position, row in enumerate(self.reading_utterances):
+        rows = self.reading_utterances
+        if index is None or len(index) < 5 or index[4] != id(rows) or index[0] > len(rows):
+            index = (0, {}, {}, [], id(rows))
+        if index[0] != len(rows):
+            _, postings, documents, word_sets, _ = index
+            for position in range(index[0], len(rows)):
+                row = rows[position]
                 words = {_norm(t) for t in row['tokens'] if _is_word(t)}
                 word_sets.append(words)
                 documents.setdefault(row.get('document'), set()).update(words)
                 for token in words:
                     postings.setdefault(token, []).append(position)
-            index = (len(self.reading_utterances), postings, documents, word_sets)
-            self._reading_index_cache = index
+            index = (len(rows), postings, documents, word_sets, id(rows))
+        self._reading_index_cache = index
         return index[1]
 
     def _reading_documents(self) -> dict:
@@ -311,6 +316,36 @@ class ReadingMemoryMixin:
         return _logit(rate) - _logit(prior)
 
     # ----- answering -----------------------------------------------------
+    def verify_from_utterances(self, question: str) -> dict:
+        """G-41: a yes/no question checked against what was said or read.
+
+        An utterance supports it when it contains every stem of the question
+        other than the learned negators; its answer is «sí» with the question's
+        polarity (parity of learned negators) and «no» with the opposite one.
+        Both polarities supported: contradiction; none: «no lo sé»."""
+        negators = set(self.syntax_model.get('negators', ()))
+        words = [t.lower() for t in _TOKEN.findall(question) if _is_word(t)]
+        polarity = sum(w in negators for w in words) % 2
+        content = {_norm(w) for w in words if w not in negators}
+        supports: dict[int, list[str]] = {0: [], 1: []}
+        if content and self.reading_utterances:
+            index = self._reading_index()
+            lists = sorted((index.get(t, ()) for t in content), key=len)
+            candidates = set(lists[0]).intersection(*lists[1:]) if lists else set()
+            for position in sorted(candidates):
+                row = self.reading_utterances[position]
+                said = [t.lower() for t in row['tokens'] if _is_word(t)]
+                supports[sum(w in negators for w in said) % 2].append(row['source'])
+        same, opposite = supports[polarity], supports[1 - polarity]
+        if same and opposite:
+            return {'text': 'No lo sé: lo que me dijeron se contradice.', 'status': 'literal_contradiction',
+                    'evidence': same + opposite}
+        if same:
+            return {'text': 'Sí, según lo que me dijeron.', 'status': 'literal_yes', 'evidence': same}
+        if opposite:
+            return {'text': 'No, según lo que me dijeron.', 'status': 'literal_no', 'evidence': opposite}
+        return {'text': 'No lo sé: no tengo esa información.', 'status': 'literal_unknown', 'evidence': []}
+
     def answer_from_utterances(self, question: str, use_model: bool = True,
                                use_correspondences: bool = True) -> dict | None:
         """Answer from literal memory, or return None to keep the old behaviour."""

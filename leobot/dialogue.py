@@ -767,6 +767,10 @@ class DialogueMixin:
         original=parts[0]
         repaired,trace=self._resolve_discourse_surface(original)
         result=self._respond_single(repaired)
+        # G-41: what is said is remembered literally, like what is read, so a
+        # later question can be checked against it.
+        if not self._question_like(repaired):
+            self.remember_utterances([repaired], f'conversación:{len(self.reading_utterances) + 1}')
         # Only understood/promoted/stored utterances should influence salience.
         if result.get('status') not in ('unrecognized','ambiguous','grounding_pending',
                                         'concept_pending','schema_pending','raw_relation_pending'):
@@ -1059,11 +1063,21 @@ class DialogueMixin:
                 return {'text': f'Tengo una hipótesis de significado respaldada por {g.get("support",0)} experiencia(s), pero todavía no la usaré como conocimiento lingüístico hasta reunir {g.get("required",self.grounding_min_support)} apoyos independientes.',
                         'status':'grounding_pending','grounded_induction':g}
             if parsed['status'] == 'unrecognized' and self._question_like(text):
+                # G-41: with learned interrogatives, a question without one is a
+                # yes/no question checked against memory; an open one is read.
+                interrogatives = set(getattr(self, 'syntax_model', {}).get('interrogatives', ()))
+                if interrogatives:
+                    words = {t.lower() for t in re.findall(r'\w+', text)}
+                    if not words & interrogatives:
+                        return self.verify_from_utterances(text)
                 # G-28: no construction interprets the question; align it with
                 # what was read and answer literally, or abstain.
                 reading = self.answer_from_utterances(text)
                 if reading is not None:
                     return reading
+                if interrogatives:
+                    return {'text': 'No lo sé: no encontré esa información en lo que me dijeron ni en lo que leí.',
+                            'status': 'literal_unknown'}
             message = ('Esa frase admite varias interpretaciones aprendidas. Necesito una formulación más precisa.'
                        if parsed['status'] == 'ambiguous' else
                        'No sé interpretar esa formulación todavía. Puedes enseñarme una construcción con texto y significado, o usar /consulta.')
