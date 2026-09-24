@@ -438,7 +438,8 @@ class ReadingMemoryMixin:
         enhanced, _ = self._enhanced(heads, labels)
         content = {i for i, (w, t) in enumerate(zip(words, tags))
                    if t not in FUNCTION_TAGS and _is_word(w) and w.lower() not in negators}
-        links = []
+        enhanced_labels = self._enhanced(heads, labels)[1]
+        links, roles = [], []
         for i in sorted(content):
             node = enhanced[i] - 1
             while node >= 0 and node not in content:
@@ -446,6 +447,7 @@ class ReadingMemoryMixin:
             if node >= 0:
                 # One content step: function words in between are transparent.
                 links.append((self._word_key(words[i]), self._word_key(words[node]), 1))
+                roles.append((self._word_key(words[i]), self._word_key(words[node]), enhanced_labels[i]))
         cases = {i: sorted(words[k].lower() for k in range(len(words)) if heads[k] == i + 1 and tags[k] == 'ADP')
                  for i in content}
         copular = {i: any(heads[k] == i + 1 and labels[k] == 'cop' for k in range(len(words))) for i in content}
@@ -453,7 +455,8 @@ class ReadingMemoryMixin:
                 'tags': {self._word_key(words[i]): tags[i] for i in content},
                 'norms': {self._word_key(words[i]): _norm(words[i]) for i in content},
                 'cases': {self._word_key(words[i]): cases[i] for i in content},
-                'copular': {self._word_key(words[i]): copular[i] for i in content}}
+                'copular': {self._word_key(words[i]): copular[i] for i in content},
+                'roles': roles}
 
     def _contrast(self, structure, text: str, negators: set):
         """G-46: the value the question asks about, if the sentence states the
@@ -479,7 +482,7 @@ class ReadingMemoryMixin:
             if not (structure['tags'][value] in ('ADJ', 'NUM') or structure['cases'][value]
                     or structure['copular'][value]):
                 continue
-            _, graph = self._graph(heads, labels)
+            eheads, elabels = self._enhanced(heads, labels)
             aligned = {j for j, k in enumerate(keys) if k in reduced['stems']}
             for j, (w, t) in enumerate(zip(words, tags)):
                 if j in aligned or not _is_word(w) or t != structure['tags'][value]:
@@ -490,17 +493,42 @@ class ReadingMemoryMixin:
                 # The same place: the same preposition (or none) on both sides.
                 if not attribute or case != structure['cases'][value]:
                     continue
-                # One content step from the word aligned with the value's neighbour.
-                near, frontier = {j}, [j]
-                while frontier:
-                    node = frontier.pop()
-                    for other in graph[node]:
-                        if other not in near and tags[other] in FUNCTION_TAGS:
-                            near.add(other); frontier.append(other)
-                reach = set().union(*(graph[k] for k in near)) | near
-                if any(keys[k] in neighbours for k in reach):
+                # G-46b: the same role with respect to the value's neighbour.
+                if self._same_role(structure, value, j, words, tags, keys, eheads, elabels, labels, heads):
                     return w
         return None
+
+    def _same_role(self, structure, value, j, words, tags, keys, eheads, elabels, labels, heads) -> bool:
+        """Whether sentence word ``j`` relates to the word aligned with the
+        value's neighbour as the value does in the question: the same
+        direction and function in the enhanced tree (function words are
+        transparent); an adjective predicated of the neighbour with a copula
+        and one modifying it are the same attribute."""
+        def content_head(k):
+            node = eheads[k] - 1
+            while node >= 0 and tags[node] in FUNCTION_TAGS:
+                node = eheads[node] - 1
+            return node
+
+        def copular(k):
+            return any(heads[m] == k + 1 and labels[m] == 'cop' for m in range(len(words)))
+        adjective = structure['tags'][value] == 'ADJ'
+        for child, parent, label in structure['roles']:
+            if child == value:          # the value depends on its neighbour
+                for p in (k for k, key in enumerate(keys) if key == parent):
+                    if content_head(j) == p and elabels[j] == label:
+                        return True
+                    if adjective and label == 'amod' and content_head(p) == j and \
+                            str(elabels[p]).startswith('nsubj') and copular(j):
+                        return True
+            elif parent == value:       # the neighbour depends on the value
+                for p in (k for k, key in enumerate(keys) if key == child):
+                    if content_head(p) == j and elabels[p] == label:
+                        return True
+                    if adjective and str(label).startswith('nsubj') and structure['copular'][value] and \
+                            content_head(j) == p and elabels[j] == 'amod':
+                        return True
+        return False
 
     def _links_hold(self, structure, text: str):
         """None if the sentence does not state the question's links; 'subordinate'
