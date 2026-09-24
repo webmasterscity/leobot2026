@@ -42,7 +42,7 @@ No cambia qué programas son soluciones, solo el orden y el costo de encontrarla
 - No se sube ningún límite.
 
 **Segunda enmienda antes de congelar (2026-09-23), sin cambiar criterios:** en el desarrollo del motor, solo con el tratamiento (20/400, 2 errores), la memoria pico fue de 1602 MiB por proceso, sobre el umbral de 1500. Las firmas de las cuadrículas guardan un valor por celda de cada ejemplo. Se añade un **presupuesto explícito de memoria de la búsqueda**:
-- cuando la suma de valores guardados en firmas supera 50 millones, la búsqueda se detiene como incompleta;
+- cuando la suma de valores guardados en firmas supera **10 millones**, la búsqueda se detiene como incompleta. Primero se probaron 50 millones: la memoria no bajó (1725 MiB), porque cada valor mayor que 256 es un objeto entero de Python de unos 36 bytes, y la tarea más pesada llegó a 1,6 GB con 17,6 millones de valores;
 - es un límite nuevo, no una subida;
 - las búsquedas sin cuadrícula no lo alcanzan.
 
