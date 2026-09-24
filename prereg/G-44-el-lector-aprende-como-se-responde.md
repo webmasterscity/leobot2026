@@ -94,3 +94,16 @@ Hasta ahora Leobot usaba reglas fijas para elegir la respuesta. Por ejemplo, «s
 - si la cosa que se pregunta («gallinas» en «¿cuántas gallinas?») tiene que aparecer en la frase que responde.
 
 También reconocerá las palabras por su forma de diccionario, para no confundir «bibliotecaria» con «biblioteca», y entenderá «cuantos» aunque le falte la tilde. Para medirlo con justicia, esta vez el examen tendrá el doble de preguntas.
+
+## Resultado en desarrollo (2026-09-24): refutado, sin congelar ni gastar reserva
+
+Base de G-44 (AnCora `train` con lemas + 2000 MLQA, repaso de 1973 ejemplos). Lo aprendido es sensato: «dónde» → «en» (49/121); «cuántos» → número (42/61); «quién» → nombre propio (113/170). El sustantivo tras «cuántos» aparece en la oración que responde solo en el 79 % (42/53), así que nunca llega a ser obligatorio.
+
+| Variante (6 conjuntos de conversación ya gastados, 186 preguntas; MLQA visible 300) | Conversación | MLQA F1 |
+|---|---|---|
+| G-44 completo | 137 | 0,2211 |
+| sin lo aprendido (`answer_frames = False`): lemas + interrogativas sin tilde sobre G-43b | 138 | 0,2252 |
+| lo mismo, sin quitar la preposición repetida | 138 | 0,2252 |
+| G-43b (referencia de G-43, variante «máximos + desempate por el lector, sin clase») | — | 0,2168 |
+
+**El mecanismo central (costos aprendidos de preposición y clase, sustantivo obligatorio) no aporta: −1 en conversación y −0,004 en MLQA. Se descarta (5.9).** Quitar la preposición repetida no cambia nada y también se descarta. Los lemas y las interrogativas sin tilde suben MLQA visible (+0,008 sobre G-43b) sin cambiar la conversación. Se prueban aparte, con su propio preregistro ([G-44b](G-44b-lemas-e-interrogativas-sin-tilde.md)), porque los criterios no se cambian después de ver resultados.
