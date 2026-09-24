@@ -1,0 +1,129 @@
+# Reserva de verificación G-49, conjunto A. Redactor de pruebas independiente (regla 5.10).
+# No se leyó el repositorio ni el código de Leobot para escribir este material.
+# Modelo: Claude Sonnet 5 · Fecha: 2026-09-24
+
+Marta trabaja como enfermera en el hospital central.
+Diego es el hermano de Marta y trabaja como electricista.
+Marta tiene treinta y cuatro años.
+El hospital central queda en la calle Bolívar.
+¿Marta es enfermera?	sí
+¿Dónde trabaja Marta?	hospital central
+¿Quién es el hermano de Marta?	Diego
+¿Cuántos años tiene Diego?	no lo sé
+¿Diego es electricista?	sí
+
+La panadería El Trigo Dorado está en la esquina de la avenida Sucre.
+Ramona es la dueña de la panadería.
+La panadería abre a las seis de la mañana.
+Ramona tiene dos hijos, Pedro y Lucía.
+¿Cómo se llama la panadería?	Trigo Dorado
+¿A qué hora abre la panadería?	/seis|\b6\b/i
+¿Quién es la dueña de la panadería?	Ramona
+¿Cuántos hijos tiene Ramona?	dos
+¿La panadería está en la avenida Sucre?	sí
+¿Cuántos empleados tiene la panadería?	no lo sé
+
+El auto rojo de Fernando es un modelo del año dos mil dieciocho.
+Fernando guarda el auto en el garaje de su casa.
+El auto tiene cuatro puertas.
+La casa de Fernando queda en el barrio Las Flores.
+¿De qué color es el auto de Fernando?	rojo
+¿Dónde guarda Fernando el auto?	garaje
+¿En qué barrio queda la casa de Fernando?	Las Flores
+¿El auto es del año dos mil veinte?	no
+¿Cuántos kilómetros tiene el auto?	no lo sé
+
+Camila vive en la ciudad de Manizales con su esposo Julián.
+Julián trabaja en una fábrica de muebles.
+Camila y Julián tienen un perro llamado Toby.
+Toby es de color café.
+¿Cómo se llama el esposo de Camila?	Julián
+¿En qué trabaja Julián?	muebles
+¿Cómo se llama el perro de Camila y Julián?	Toby
+¿De qué color es Toby?	/caf[eé]/i
+¿Cuántos hijos tienen Camila y Julián?	no lo sé
+¿Camila vive en Manizales?	sí
+
+La biblioteca del pueblo tiene tres mil libros.
+El bibliotecario se llama don Salvador.
+La biblioteca está abierta de lunes a viernes.
+Los sábados la biblioteca permanece cerrada.
+¿Cuántos libros tiene la biblioteca?	tres mil
+¿Cómo se llama el bibliotecario?	Salvador
+¿La biblioteca abre los sábados?	no
+¿La biblioteca está abierta los lunes?	sí
+¿Cuántos empleados tiene la biblioteca?	no lo sé
+
+El equipo de fútbol del barrio Santa Rita se llama Los Halcones.
+El entrenador de Los Halcones es Rogelio.
+El equipo juega los domingos en la cancha municipal.
+Los Halcones tienen catorce jugadores.
+¿Cómo se llama el equipo del barrio Santa Rita?	Los Halcones
+¿Quién es el entrenador de Los Halcones?	Rogelio
+¿Cuándo juega el equipo?	domingos
+¿Cuántos jugadores tiene el equipo?	catorce
+¿Los Halcones ganaron el campeonato el año pasado?	no lo sé
+
+
+# Reserva de verificación independiente (regla 5.10), redactor de pruebas.
+# Conversaciones nuevas en español corriente, no leídas del repositorio.
+
+Marta es enfermera y trabaja en el hospital de Cuenca.
+Rodrigo, hermano de Marta, es electricista.
+Rodrigo vive en la ciudad de Loja.
+Marta tiene treinta y cuatro años.
+¿Marta es enfermera?	sí
+¿Dónde trabaja Marta?	/Cuenca/i
+¿Quién es electricista?	/Rodrigo/i
+¿Rodrigo vive en Cuenca?	no
+¿Marta tiene hijos?	no lo sé
+
+La tienda de don Alberto vende herramientas y pintura.
+La tienda está en la calle Bolívar, junto a la panadería.
+Susana atiende la caja de la tienda.
+Pedro hace las entregas a domicilio.
+¿Qué vende la tienda de don Alberto?	herramientas
+¿En qué calle está la tienda?	/Bolívar/i
+¿Quién atiende la caja?	/Susana/i
+¿Pedro atiende la caja?	no
+¿Cuántos clientes visitan la tienda cada día?	no lo sé
+
+Camila y Esteban son primos.
+Fernando es el padre de Camila.
+Esteban tiene una hermana menor llamada Valentina.
+Valentina estudia en la escuela San José.
+¿Camila y Esteban son primos?	sí
+¿Cómo se llama el padre de Camila?	/Fernando/i
+¿Quién es la hermana de Esteban?	/Valentina/i
+¿Dónde estudia Valentina?	/San José/i
+¿Cuántos años tiene Valentina?	no lo sé
+
+El pueblo de Miraflores tiene tres mil habitantes.
+Miraflores está a orillas del río Chico.
+La plaza principal de Miraflores tiene una fuente de piedra.
+Cada agosto se celebra la fiesta del maíz en la plaza.
+¿Cuántos habitantes tiene Miraflores?	/tres mil/i
+¿Miraflores está junto a un río?	sí
+¿Cómo se llama el río?	/Chico/i
+¿En qué mes se celebra la fiesta del maíz?	/agosto/i
+¿Miraflores tiene playa?	no lo sé
+
+El camión de la empresa es rojo y tiene diez años de uso.
+Lo conduce Ignacio los martes y los jueves.
+El camión transporta cajas de fruta al mercado.
+La empresa se llama Transportes Andinos.
+¿De qué color es el camión?	rojo
+¿Quién conduce el camión?	/Ignacio/i
+¿Qué transporta el camión?	fruta
+¿Cómo se llama la empresa?	/Andinos/i
+¿Ignacio conduce el camión los lunes?	no
+
+La maestra Beatriz enseña matemáticas en el colegio Sucre.
+Beatriz tiene veintiocho estudiantes en su clase.
+El ayudante de Beatriz se llama Joaquín.
+Las clases empiezan a las siete de la mañana.
+¿Qué enseña Beatriz?	matemáticas
+¿Cuántos estudiantes tiene la clase de Beatriz?	/veintiocho/i
+¿Quién es el ayudante de Beatriz?	/Joaquín/i
+¿Beatriz enseña historia?	no
+¿A qué hora terminan las clases?	no lo sé

@@ -1,0 +1,110 @@
+{
+ "conjunto_sha256_16": "2abd307040c91553",
+ "base_sha256_16": "bd82bcaa8f4107d4",
+ "huella_motor": "a01300925619e981f21db5e999d114a4e79bf505",
+ "tratamiento": {
+  "calificadas": 25,
+  "aciertos": 11,
+  "afirma_falso": 0,
+  "abiertas_equivocadas": 2,
+  "por_tipo": {
+   "abierta": "6/17",
+   "no": "1/2",
+   "no lo se": "3/4",
+   "si": "1/2"
+  },
+  "p50_ms": 16.01,
+  "p95_ms": 91.421
+ },
+ "sin_relativos": {
+  "calificadas": 25,
+  "aciertos": 11,
+  "afirma_falso": 0,
+  "abiertas_equivocadas": 2,
+  "por_tipo": {
+   "abierta": "6/17",
+   "no": "1/2",
+   "no lo se": "3/4",
+   "si": "1/2"
+  },
+  "p50_ms": 9.759,
+  "p95_ms": 47.474
+ },
+ "sin_contraste_por_frase": {
+  "calificadas": 25,
+  "aciertos": 11,
+  "afirma_falso": 0,
+  "abiertas_equivocadas": 2,
+  "por_tipo": {
+   "abierta": "6/17",
+   "no": "1/2",
+   "no lo se": "3/4",
+   "si": "1/2"
+  },
+  "p50_ms": 10.055,
+  "p95_ms": 46.791
+ },
+ "ambas_ablaciones": {
+  "calificadas": 25,
+  "aciertos": 11,
+  "afirma_falso": 0,
+  "abiertas_equivocadas": 2,
+  "por_tipo": {
+   "abierta": "6/17",
+   "no": "1/2",
+   "no lo se": "3/4",
+   "si": "1/2"
+  },
+  "p50_ms": 9.711,
+  "p95_ms": 47.118
+ },
+ "sin_memoria": {
+  "calificadas": 25,
+  "aciertos": 4,
+  "afirma_falso": 0,
+  "abiertas_equivocadas": 0,
+  "por_tipo": {
+   "abierta": "0/17",
+   "no": "0/2",
+   "no lo se": "4/4",
+   "si": "0/2"
+  },
+  "p50_ms": 0.179,
+  "p95_ms": 9.43
+ },
+ "memoria_barajada": {
+  "calificadas": 25,
+  "aciertos": 4,
+  "afirma_falso": 0,
+  "abiertas_equivocadas": 0,
+  "por_tipo": {
+   "abierta": "0/17",
+   "no": "0/2",
+   "no lo se": "4/4",
+   "si": "0/2"
+  },
+  "p50_ms": 9.786,
+  "p95_ms": 46.688
+ },
+ "renombrado_invariantes": "25/25",
+ "nombres_sustituidos": 11,
+ "reinicio_identicas": "25/25",
+ "estrategia_siempre_no_lo_se": 4,
+ "linea_base_estable_G12": {
+  "aciertos": 11,
+  "calificadas": 25
+ },
+ "subagente_sin_clave": {
+  "aciertos": 25,
+  "calificadas": 25,
+  "modelo": "Sonnet (subagente de Claude Code), 2026-09-24"
+ },
+ "puerta": {
+  "referencias >= estable-G-12 - 1 (10)": "pasa (11)",
+  "afirma lo falso <= 1": "pasa (0)",
+  "abiertas equivocadas <= 15 %": "pasa (2/17 = 12 %)",
+  "reinicio 100 %": "pasa (25/25)",
+  "barajada 0": "pasa",
+  "renombrado >= 90 %": "pasa (25/25)"
+ }
+}
