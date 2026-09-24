@@ -1,0 +1,96 @@
+{
+ "conjunto_sha256_16": "dfa4ca1f5f56f496",
+ "base_sha256_16": "af18f51124675dbf",
+ "huella_motor": "dc4481e441a1ca3e62e48b0ec5169ea16c1f7f41",
+ "tratamiento": {
+  "calificadas": 63,
+  "aciertos": 40,
+  "afirma_falso": 1,
+  "abiertas_equivocadas": 6,
+  "por_tipo": {
+   "abierta": "17/27",
+   "no": "2/10",
+   "no lo se": "15/16",
+   "si": "4/8",
+   "sin afirmar": "2/2"
+  },
+  "p50_ms": 34.376,
+  "p95_ms": 73.705
+ },
+ "ablacion": {
+  "calificadas": 63,
+  "aciertos": 38,
+  "afirma_falso": 1,
+  "abiertas_equivocadas": 6,
+  "por_tipo": {
+   "abierta": "17/27",
+   "no": "0/10",
+   "no lo se": "15/16",
+   "si": "4/8",
+   "sin afirmar": "2/2"
+  },
+  "p50_ms": 27.452,
+  "p95_ms": 67.652
+ },
+ "sin_memoria": {
+  "calificadas": 63,
+  "aciertos": 18,
+  "afirma_falso": 0,
+  "abiertas_equivocadas": 0,
+  "por_tipo": {
+   "abierta": "0/27",
+   "no": "0/10",
+   "no lo se": "16/16",
+   "si": "0/8",
+   "sin afirmar": "2/2"
+  },
+  "p50_ms": 0.377,
+  "p95_ms": 34.873
+ },
+ "memoria_barajada": {
+  "calificadas": 63,
+  "aciertos": 18,
+  "afirma_falso": 0,
+  "abiertas_equivocadas": 0,
+  "por_tipo": {
+   "abierta": "0/27",
+   "no": "0/10",
+   "no lo se": "16/16",
+   "si": "0/8",
+   "sin afirmar": "2/2"
+  },
+  "p50_ms": 22.837,
+  "p95_ms": 44.983
+ },
+ "renombrado_invariantes": "58/63",
+ "nombres_sustituidos": 51,
+ "estrategia_siempre_no_lo_se": 18,
+ "linea_base_estable_G11": {
+  "aciertos": 38,
+  "calificadas": 63
+ },
+ "subagente_sin_clave": {
+  "aciertos": 62,
+  "calificadas": 63,
+  "modelo": "Sonnet (subagente de Claude Code), 2026-09-24"
+ },
+ "puerta": {
+  "aciertos >= estable-G-11 + 3 (41)": "falla (40)",
+  "claves no >= 40 %": "falla (2/10)",
+  "aporte >= +3": "falla (+2)",
+  "afirma lo falso <= 2": "pasa (1)",
+  "abiertas equivocadas <= 15 %": "falla (6/27 = 22 %)",
+  "barajada 0": "pasa",
+  "renombrado >= 90 %": "pasa (58/63)",
+  "MLQA no vista": "pasa (0,1684 frente a 0,1688, 86 casos: el fondo no visto se agotó)",
+  "veredicto": "no superada"
+ },
+ "causas_en_la_reserva_gastada": {
+  "pregunta con verbo delante mal analizada": 4,
+  "otra entidad u otro tipo en la respuesta": 5,
+  "referencias (su, lo, ambos)": 4,
+  "parafrasis o inferencia (trabaja como, junto con, llamado, queda)": 8,
+  "negacion en respuesta abierta": 1,
+  "clave discutible": 1
+ }
+}
