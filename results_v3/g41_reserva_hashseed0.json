@@ -1,0 +1,81 @@
+{
+ "conjunto_sha256_16": "0f270db3117f19b4",
+ "base_sha256_16": "e84581df910bb62f",
+ "huella_motor": "ad568f85a255f8583ffa2581ea8f0dc658c6d565",
+ "tratamiento": {
+  "calificadas": 33,
+  "aciertos": 14,
+  "afirma_falso": 3,
+  "por_tipo": {
+   "abierta": "5/17",
+   "no": "1/6",
+   "no lo se": "6/8",
+   "si": "1/1",
+   "sin afirmar": "1/1"
+  },
+  "p50_ms": 0.346,
+  "p95_ms": 3.291
+ },
+ "sin_memoria": {
+  "calificadas": 33,
+  "aciertos": 8,
+  "afirma_falso": 3,
+  "por_tipo": {
+   "abierta": "0/17",
+   "no": "0/6",
+   "no lo se": "7/8",
+   "si": "0/1",
+   "sin afirmar": "1/1"
+  },
+  "p50_ms": 0.256,
+  "p95_ms": 0.522
+ },
+ "memoria_barajada": {
+  "calificadas": 33,
+  "aciertos": 8,
+  "afirma_falso": 1,
+  "por_tipo": {
+   "abierta": "0/17",
+   "no": "0/6",
+   "no lo se": "7/8",
+   "si": "0/1",
+   "sin afirmar": "1/1"
+  },
+  "p50_ms": 0.31,
+  "p95_ms": 0.703
+ },
+ "nombres_renombrados": {
+  "calificadas": 33,
+  "aciertos": 10,
+  "afirma_falso": 3,
+  "por_tipo": {
+   "abierta": "1/17",
+   "no": "1/6",
+   "no lo se": "6/8",
+   "si": "1/1",
+   "sin afirmar": "1/1"
+  },
+  "p50_ms": 0.322,
+  "p95_ms": 1.845
+ },
+ "nombres_sustituidos": 15,
+ "linea_base_estable_G10_educado": {
+  "calificadas": 33,
+  "aciertos": 1
+ },
+ "estrategia_siempre_no_lo_se": 9,
+ "subagente_sonnet5_sin_clave": {
+  "calificadas": 33,
+  "aciertos": 32
+ },
+ "nota_afirma_falso": "El evaluador cuenta como afirma_falso toda respuesta que empieza por «no» salvo «no lo sé»/«no sé»; las 3 del tratamiento son «No tengo información suficiente para afirmarlo ni negarlo», una abstención de otra vía (la lista ABSTENCIONES de validacion_comun la incluye). Con esa lista: 0 sí/no falsos. Se registra; la puerta no se recalcula.",
+ "puerta": {
+  "aciertos": "14 < 17 (máx(1, 9) + 8): falla",
+  "afirma_falso": "3 > 1 según el evaluador preregistrado: falla (ver nota)",
+  "barajada_abiertas_y_si_no": "0: pasa",
+  "renombrados": "10 frente a 14 (±2): falla",
+  "aporte_memoria": "14 − 8 = 6 ≥ 6: pasa",
+  "mlqa_f1": "0,2221 sin cambio: pasa",
+  "resultado": "NO SUPERADA"
+ }
+}
