@@ -1,0 +1,45 @@
+"""G-39: grid transformations learned as integer programs with index access."""
+import unittest
+
+from leobot.programs import ProgramLearner
+
+MIRROR = [([[1, 2, 3], [4, 5, 6]], [[3, 2, 1], [6, 5, 4]]),
+          ([[7, 0], [8, 9], [1, 1]], [[0, 7], [9, 8], [1, 1]]),
+          ([[2, 3, 4, 5], [6, 7, 8, 9]], [[5, 4, 3, 2], [9, 8, 7, 6]])]
+
+
+class GridProgramTests(unittest.TestCase):
+    def learner(self, pairs, tests):
+        pl = ProgramLearner(max_seconds=6.0)
+        for a, b in pairs:
+            pl.add_grid_example('t', a, b)
+        return pl, pl.fit_grid('t', tests)
+
+    def test_mirror_is_learned_and_survives_restart(self):
+        pl, rep = self.learner(MIRROR, [[[1, 2, 3, 4, 5]]])
+        self.assertEqual(rep['status'], 'learned_hypothesis')
+        self.assertEqual(pl.predict_grid('t', [[1, 2, 3, 4, 5]])['grid'], [[5, 4, 3, 2, 1]])
+        again = ProgramLearner.from_dict(pl.as_dict())
+        self.assertEqual(again.predict_grid('t', [[1, 2, 3, 4, 5]])['grid'], [[5, 4, 3, 2, 1]])
+
+    def test_ambiguous_evidence_abstains_instead_of_guessing(self):
+        pl, _ = self.learner(MIRROR[:2], [[[1, 2, 3, 4]]])
+        self.assertEqual(pl.predict_grid('t', [[1, 2, 3, 4]])['status'], 'ambiguous')
+
+    def test_without_index_access_the_mirror_is_not_learned(self):
+        pl = ProgramLearner(max_seconds=3.0)
+        for a, b in MIRROR:
+            pl.add_grid_example('t', a, b)
+        self.assertNotEqual(pl.fit_grid('t', [[[1, 2, 3]]], use_context=False)['status'], 'learned_hypothesis')
+
+    def test_fresh_learner_does_not_answer_and_rejects_bad_grids(self):
+        pl = ProgramLearner()
+        self.assertEqual(pl.predict_grid('t', [[1]])['status'], 'unknown')
+        with self.assertRaises(ValueError):
+            pl.add_grid_example('t', [[1, 2], [3]], [[1]])
+        with self.assertRaises(ValueError):
+            pl.add_grid_example('t', [[10]], [[1]])
+
+
+if __name__ == '__main__':
+    unittest.main()
