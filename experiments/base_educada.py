@@ -3,12 +3,14 @@
 python3 -m experiments.base_educada ANCORA_DIR SALIDA.json
 
 Educación, toda anterior e independiente de cualquier conjunto de validación:
-- sintaxis y separación de palabras con UD AnCora `train` (como G-35);
+- sintaxis y separación de palabras con UD AnCora `train` (como G-35), con los
+  rasgos morfológicos si el motor los acepta (G-41: negación e interrogativas);
 - lectura con los 2000 ejemplos MLQA de educación de G-28b (semilla 2828).
 Se guarda con Bot.save para que cada conversación parta de una copia nueva.
 """
 from __future__ import annotations
 
+import inspect
 import json
 import random
 import resource
@@ -24,11 +26,13 @@ from leobot import Bot
 def main():
     ancora, out = Path(sys.argv[1]), Path(sys.argv[2])
     bot = Bot(); t0 = time.process_time()
+    with_feats = 'feats' in inspect.signature(bot.observe_parsed_sentence).parameters
     for block, idx in sentences(ancora / 'es_ancora-ud-train.conllu'):
         cols = [block[i].split('\t') for i in idx]
         words = [c[1] for c in cols]
+        extra = {'feats': [c[5] for c in cols]} if with_feats else {}
         bot.observe_parsed_sentence(words, [c[3] for c in cols], [int(c[6]) for c in cols],
-                                    [c[7].split(':')[0] for c in cols])
+                                    [c[7].split(':')[0] for c in cols], **extra)
         position = {c[0]: k for k, c in enumerate(cols)}
         for line in block:
             first = line.split('\t')[0]
@@ -41,7 +45,7 @@ def main():
         bot.observe_reading_example(e['context'], e['question'], e['answers'][0])
     bot.consolidate_reading()
     bot.save(out)
-    print(json.dumps({'cpu_s': round(time.process_time() - t0, 1), 'mib': round(out.stat().st_size / 2**20, 1),
+    print(json.dumps({'feats': with_feats, 'cpu_s': round(time.process_time() - t0, 1), 'mib': round(out.stat().st_size / 2**20, 1),
                       'rss_mib': round(resource.getrusage(resource.RUSAGE_SELF).ru_maxrss / 1024, 1)}))
 
 
