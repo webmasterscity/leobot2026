@@ -35,6 +35,12 @@ Exploración de desarrollo ya hecha, que se declara. Son prototipos fuera del mo
 
 No cambia qué programas son soluciones, solo el orden y el costo de encontrarlas. Se conservan todas las soluciones mínimas del tamaño ganador, y la abstención por ambigüedad de G-39 sigue igual.
 
+**Enmienda del mecanismo antes de congelar (2026-09-23), sin cambiar criterios ni presupuesto:** en el motor, el tope de 120 000 candidatos, que el prototipo no tenía, se agota en menos de 1 s en la enumeración de tamaño 5 (15 variables y 10 operaciones), antes de llegar a la inversión de tamaño 7. Por eso, antes de enumerar cada tamaño, la inversión de `at` se prueba para **todos los tamaños alcanzables con los niveles ya completos**. Cada división se prueba una sola vez y todo sigue podado.
+- Si la enumeración encuentra después una solución más pequeña, esta reemplaza a las mayores. Se conservan todas las soluciones del menor tamaño hallado.
+- Si el presupuesto se agota, el informe lo marca como búsqueda incompleta.
+- Para búsquedas sin cuadrícula el comportamiento es el mismo que antes.
+- No se sube ningún límite.
+
 5.8:
 - **Qué fallo resuelve:** representación insuficiente (tamaño dependiente del contenido, agregados) y dilución de la búsqueda plana.
 - **Por qué no bastan los actuales:** G-39 da 0/200.
