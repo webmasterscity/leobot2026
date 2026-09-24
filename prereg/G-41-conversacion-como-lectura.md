@@ -29,6 +29,8 @@ En la [validación común](../results_v3/validacion_comun_2026-09-24.json) (conj
      - Si hay apoyos de ambas polaridades: «No lo sé» con aviso de contradicción.
 4. **«No sé interpretar…»** queda solo para lo que no es pregunta y no se entiende.
 
+**Enmienda antes del código (2026-09-24):** una pregunta es «abierta» solo si contiene una interrogativa aprendida, no si contiene un marcador de hueco. Los marcadores de hueco aprendidos de MLQA pueden incluir palabras de contenido (por ejemplo, un verbo frecuente en las preguntas) y convertirían en abierta una pregunta de sí o no. Además, el índice de la memoria literal pasa a ser incremental: la memoria solo crece añadiendo al final. Así, guardar cada frase dicha no reconstruye el índice.
+
 5.8:
 - **Qué fallo resuelve:** la conversación en español corriente.
 - **Por qué no bastan los actuales:** la causa 1 se ve en el código.
