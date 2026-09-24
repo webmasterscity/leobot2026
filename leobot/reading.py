@@ -40,6 +40,11 @@ def _norm(token: str) -> str:
     return plain[:STEM] if STEM and len(plain) > STEM else plain
 
 
+def _fold(word: str) -> str:
+    decomposed = unicodedata.normalize('NFKD', word.lower())
+    return ''.join(ch for ch in decomposed if not unicodedata.combining(ch))
+
+
 def _is_word(token: str) -> bool:
     return any(ch.isalnum() for ch in token)
 
@@ -418,8 +423,8 @@ class ReadingMemoryMixin:
                 node = enhanced[node] - 1
             if node >= 0:
                 # One content step: function words in between are transparent.
-                links.append((_norm(words[i]), _norm(words[node]), 1))
-        return {'stems': {_norm(words[i]) for i in content}, 'links': links}
+                links.append((self._word_key(words[i]), self._word_key(words[node]), 1))
+        return {'stems': {self._word_key(words[i]) for i in content}, 'links': links}
 
     def _links_hold(self, structure, text: str):
         """None if the sentence does not state the question's links; 'subordinate'
@@ -428,7 +433,7 @@ class ReadingMemoryMixin:
         if tree is None:
             return None
         words, tags, heads, labels = tree
-        stems = [_norm(w) for w in words]
+        stems = [self._word_key(w) for w in words]
         places: dict = {}
         for j, w in enumerate(words):
             if _is_word(w) and stems[j] in structure['stems']:
@@ -537,6 +542,38 @@ class ReadingMemoryMixin:
         return round(sum(self._feature_score(key, f, prior)
                          for f in self._span_features(tokens, found[0], found[1], anchors, qset, gap, normalized)), 9)
 
+    def _word_key(self, word: str) -> str:
+        """How two words are matched when aligning: by learned dictionary form
+        (G-44b), or by the 5-letter stem when that is switched off."""
+        return self.lemma_key(word) if getattr(self, 'lemma_alignment', True) else _norm(word)
+
+    def asking_word(self, words, tags=None) -> int | None:
+        """Position of the word that asks: a learned interrogative, or (G-44)
+        the first word after the prepositions that matches one without
+        accents, the position from which interrogatives were learned."""
+        interrogatives = set(self.syntax_model.get('interrogatives', ()))
+        if not interrogatives:
+            return None
+        low = [w.lower() for w in words]
+        for i, w in enumerate(low):
+            if w in interrogatives:
+                return i
+        if not getattr(self, 'folded_openers', True):
+            return None
+        folded = {_fold(w): w for w in interrogatives}
+        for i, w in enumerate(low):
+            if not _is_word(w) or (tags is not None and tags[i] == 'ADP') or (tags is None and self._preposition(w)):
+                continue
+            return i if _fold(w) in folded else None
+        return None
+
+    def _preposition(self, word: str) -> bool:
+        """Whether a word's most frequent learned tag is a preposition."""
+        lexicon = self.syntax_model['lexicon']
+        counts = {t: lexicon.get(word + '\x1f' + t, 0) + lexicon.get(word.capitalize() + '\x1f' + t, 0)
+                  for t in self._tag_list()}
+        return sum(counts.values()) > 0 and max(sorted(counts), key=lambda t: counts[t]) == 'ADP'
+
     def answer_by_structure(self, question: str) -> dict | None:
         """G-42: an open question is a sentence with a gap.  A remembered
         sentence that contains every content word of the question answers it
@@ -547,35 +584,36 @@ class ReadingMemoryMixin:
         phrase in enhanced trees (coordinated elements share their head) and
         count content words only; a coordinated element answers only with its
         coordination; the G-28 reader's statistics separate the ties left.
-        (G-43b: the learned answer class was retired; it added nothing.)
-        Ties that remain are reported as ambiguity instead of chosen silently.  None when no sentence contains every
-        content word (the G-28 reader then decides)."""
-        interrogatives = set(self.syntax_model.get('interrogatives', ()))
-        if not interrogatives or not self.reading_utterances:
+        G-44b: words align by learned dictionary form.  Ties that remain are reported as ambiguity instead of
+        chosen silently.  None when no sentence contains every content word
+        (the G-28 reader then decides)."""
+        if not self.syntax_model.get('interrogatives') or not self.reading_utterances:
             return None
         qtree = self._utterance_tree(question)
         if qtree is None:
             return None
         words, tags, heads, labels = qtree
         low = [w.lower() for w in words]
-        asking = [i for i, w in enumerate(low) if w in interrogatives]
-        if not asking:
+        q = self.asking_word(words, tags)
+        if q is None:
             return None
-        q = asking[0]
         # «qué color», «cuántas vacas»: the noun right after the interrogative.
         noun = q + 1 if q + 1 < len(words) and tags[q + 1] == 'NOUN' else None
         phrase = {q} | ({noun} if noun is not None else set())
         first = min(phrase)
         case = low[first - 1] if first > 0 and tags[first - 1] == 'ADP' else None
+        interrogatives = set(self.syntax_model.get('interrogatives', ()))
         where: dict = {}
         for i, (w, t) in enumerate(zip(words, tags)):
             if i not in phrase and t not in FUNCTION_TAGS and _is_word(w) and low[i] not in interrogatives:
-                where.setdefault(_norm(w), i)
-        if not where:
+                where.setdefault(self._word_key(w), i)
+        noun_key = self._word_key(words[noun]) if noun is not None else None
+        required = set(where)
+        if not required:
             return None
-        noun_stem = _norm(words[noun]) if noun is not None else None
+        retrieval = {_norm(words[i]) for i in where.values()}
         index = self._reading_index()
-        lists = sorted((index.get(t, ()) for t in where), key=len)
+        lists = sorted((index.get(t, ()) for t in retrieval), key=len)
         positions = set(lists[0]).intersection(*lists[1:])
         qheads, _ = self._enhanced(heads, labels)
         qdist = self._tree_distances(qheads, noun if noun is not None else q, tags)
@@ -586,10 +624,10 @@ class ReadingMemoryMixin:
             if tree is None:
                 continue
             swords, stags, sheads, slabels = tree
-            stems = [_norm(w) for w in swords]
+            keys = [self._word_key(w) for w in swords]
             aligned = {j for j, w in enumerate(swords)
-                       if _is_word(w) and (stems[j] in where or stems[j] == noun_stem)}
-            if not set(where) <= {stems[j] for j in aligned}:
+                       if _is_word(w) and (keys[j] in where or keys[j] == noun_key)}
+            if not required <= {keys[j] for j in aligned}:
                 continue
             n = len(swords)
             children = [[] for _ in range(n)]
@@ -607,8 +645,8 @@ class ReadingMemoryMixin:
             for root in (d for d, h in enumerate(sheads) if not h):
                 mark(root)
             enhanced, _ = self._enhanced(sheads, slabels)
-            host = next((j for j in aligned if stems[j] == noun_stem), None)
-            coverage = len({stems[j] for j in aligned})
+            host = next((j for j in aligned if keys[j] == noun_key), None)
+            coverage = len({keys[j] for j in aligned})
             for node in range(n):
                 if covered[node] or slabels[node] == 'conj':
                     continue
@@ -623,7 +661,7 @@ class ReadingMemoryMixin:
                 if all(stags[k] in FUNCTION_TAGS or not _is_word(swords[k]) for k in span):
                     continue
                 sdist = self._tree_distances(enhanced, node, stags)
-                mirror = sum(abs(qdist[where[stems[j]]] - sdist[j]) for j in aligned if stems[j] in where)
+                mirror = sum(abs(qdist[where[keys[j]]] - sdist[j]) for j in aligned if keys[j] in where)
                 a, b = min(span), max(span)
                 while a <= b and not _is_word(swords[a]):
                     a += 1

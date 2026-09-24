@@ -12,6 +12,7 @@ from __future__ import annotations
 
 import math
 import re
+import unicodedata
 
 MAX_PARSE = 60
 LEXICAL_MIN = 3
@@ -59,7 +60,7 @@ class SyntaxMixin:
     """Mixed into Bot; learned state lives in ``syntax_model``."""
 
     # ----- learning ------------------------------------------------------
-    def observe_parsed_sentence(self, words, tags, heads, labels=None, feats=None) -> dict:
+    def observe_parsed_sentence(self, words, tags, heads, labels=None, feats=None, lemmas=None) -> dict:
         """Learn from one annotated sentence (heads are 1-based, 0 = root);
         dependency functions are learned too when the demonstration has them.
         G-41: with morphological features, which words mark negative polarity
@@ -69,6 +70,8 @@ class SyntaxMixin:
         if labels is not None and len(labels) != len(words):
             return {'status': 'syntax_example_rejected'}
         if feats is not None and len(feats) != len(words):
+            return {'status': 'syntax_example_rejected'}
+        if lemmas is not None and len(lemmas) != len(words):
             return {'status': 'syntax_example_rejected'}
         model = self.syntax_model
         model['sentences'] += 1
@@ -96,6 +99,14 @@ class SyntaxMixin:
         model['arc_total'] += len(words)
         model['opportunity_total'] += len(words) * len(words)
         self._observe_opener(words, '¿' in words or '?' in words)
+        if lemmas is not None:
+            # G-44: dictionary forms, so that inflected forms align and
+            # different words that share a beginning do not.
+            table = model.setdefault('lemma_counts', {})
+            for word, lemma in zip(lowered, lemmas):
+                if lemma and lemma != '_':
+                    row = table.setdefault(word, {})
+                    row[lemma.lower()] = row.get(lemma.lower(), 0) + 1
         if feats is not None:
             marks = model.setdefault('word_marks', {})
             for word, feat in zip(lowered, feats):
@@ -156,6 +167,14 @@ class SyntaxMixin:
                 if count >= OPENER_SUPPORT and asked / (asked + stated) >= OPENER_RATE:
                     learned.add(word)
         model['interrogatives'] = sorted(learned)
+
+    def lemma_key(self, word: str) -> str:
+        """G-44: the learned dictionary form of a word, without accents; an
+        unknown word stands for itself."""
+        low = word.lower()
+        lemma = self.syntax_model.get('lemma_table', {}).get(low, low)
+        decomposed = unicodedata.normalize('NFKD', lemma)
+        return ''.join(ch for ch in decomposed if not unicodedata.combining(ch))
 
     def observe_multiword(self, surface: str, words) -> dict:
         """Learn that a written form stands for several syntactic words (G-35)."""
@@ -323,6 +342,9 @@ class SyntaxMixin:
         marks = model.get('word_marks', {})
         model['negators'] = sorted(w for w, (n, neg, _) in marks.items() if neg >= 3 and neg >= 0.9 * n)
         self._compile_question_words()
+        model['lemma_table'] = {w: max(sorted(row), key=lambda k: row[k])
+                                for w, row in model.get('lemma_counts', {}).items()
+                                if max(sorted(row), key=lambda k: row[k]) != w}
         # G-32b: a context never seen as an arc and seen as an opportunity at
         # most PRUNE_OPPORTUNITIES times barely moves its parent's rate; drop it
         # so the learned memory stays loadable.

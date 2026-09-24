@@ -841,8 +841,9 @@ class DialogueMixin:
         # yes/no question checked against memory; an open one is read.
         interrogatives = set(getattr(self, 'syntax_model', {}).get('interrogatives', ()))
         if interrogatives:
-            words = {t.lower() for t in re.findall(r'\w+', text)}
-            if not words & interrogatives:
+            # G-44: an interrogative written without its accent counts where
+            # interrogatives were learned, at the opening of the question.
+            if self.asking_word(self.split_words(text)) is None:
                 return self.verify_from_utterances(text)
             # G-42: first as a sentence with a gap, when one remembered sentence
             # contains every content word of the question.
