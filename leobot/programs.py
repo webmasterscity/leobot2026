@@ -1084,6 +1084,9 @@ class ProgramLearner:
                                     sig = tuple(context_op('at', g, a, b) for g, a, b in zip(point_grids, ls, rs))
                                     consider(Expr('at', children=(left, right)), sig, size)
 
+        # G-39d: largest size whose enumeration finished; a retained minimal
+        # set is only trustworthy if every smaller size was enumerated.
+        built_complete = 1
         try:
             for size in range(3, self.max_size + 1, 2):
                 if solutions and min(solution_levels) < size:
@@ -1129,6 +1132,7 @@ class ProgramLearner:
                                         raise RuntimeError('Presupuesto de candidatos agotado.')
                                     sig = tuple(context_op(op, g, a, b) for g, a, b in zip(point_grids, ls, rs))
                                     consider(Expr(op, children=(left, right)), sig, size)
+                built_complete = size
         except RuntimeError as exc:
             truncated, reason = True, str(exc)
         if solutions and solution_levels:
@@ -1154,6 +1158,8 @@ class ProgramLearner:
                 report['abstraction_learning'] = self.discover_abstractions(source_skill=skill)
         report.update(candidates=attempts, constraint_checks=constraint_checks, goal_directed=self.goal_directed,
                       goal_join_solved=goal_hits, search_complete=not truncated, reason=reason,
+                      minimal_complete=(None if not solutions else
+                                        winning_size == 'recurrence' or winning_size - 2 <= built_complete),
                       semantic_states=len(seen), ms=(perf_counter() - start) * 1000)
         self.reports[skill] = report
         return report
@@ -1285,6 +1291,8 @@ class ProgramLearner:
             programs = self.solutions.get(f'{skill}__{part}', [])
             if not programs:
                 return {'status': 'unknown', 'value': None}
+            if self.reports.get(f'{skill}__{part}', {}).get('minimal_complete') is False:
+                return {'status': 'incomplete', 'value': None}
             values = {self._run_expr(p, args) for p in programs}
             if len(values) != 1:
                 return {'status': 'ambiguous', 'value': None}
@@ -1303,6 +1311,9 @@ class ProgramLearner:
         programs = self.solutions.get(f'{skill}__celda', [])
         if not programs:
             return {'status': 'unknown', 'grid': None}
+        if self.reports.get(f'{skill}__celda', {}).get('minimal_complete') is False:
+            # G-39d: smaller programs were never enumerated; they could disagree.
+            return {'status': 'incomplete', 'grid': None}
         ctx = GridContext(grid)
         h, w = shape['value']
         out = []

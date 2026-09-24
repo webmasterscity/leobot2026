@@ -47,6 +47,25 @@ class GridProgramTests(unittest.TestCase):
         pl, rep = self.learner(pairs, [[[1, 1]]])
         self.assertNotEqual(pl.predict_grid('t', [[1, 1]])['status'], 'hypothesis')
 
+    def test_truncated_search_abstains(self):
+        # G-39d (audit case, seed 9): with 1500 candidates a crop is answered from
+        # a partial minimal set; the complete search finds disagreeing programs.
+        import random
+        rng = random.Random(9)
+        colours = rng.sample(range(1, 10), 2)
+        grid = lambda h, w: [[rng.choice(colours) for _ in range(w)] for _ in range(h)]
+        pairs = []
+        for _ in range(2):
+            a = grid(rng.randrange(3, 6), rng.randrange(3, 6))
+            pairs.append((a, [row[1:] for row in a[1:]]))
+        test = grid(rng.randrange(3, 6), rng.randrange(3, 6))
+        for cap, expected in ((1500, 'incomplete'), (120_000, 'ambiguous')):
+            pl = ProgramLearner(max_seconds=600.0, max_candidates=cap)
+            for a, b in pairs:
+                pl.add_grid_example('t', a, b)
+            pl.fit_grid('t', [test])
+            self.assertEqual(pl.predict_grid('t', test)['status'], expected)
+
     def test_fresh_learner_does_not_answer_and_rejects_bad_grids(self):
         pl = ProgramLearner()
         self.assertEqual(pl.predict_grid('t', [[1]])['status'], 'unknown')
