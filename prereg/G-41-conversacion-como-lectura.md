@@ -60,17 +60,28 @@ En la [validación común](../results_v3/validacion_comun_2026-09-24.json) (conj
 
 | Criterio | Umbral |
 |---|---|
-| Aciertos de Leobot educado en la reserva | ≥ línea base educada + 8 (de ~30) |
+| Aciertos de Leobot educado en la reserva | ≥ máx(línea base educada, estrategia «siempre no lo sé») + 8 |
 | Sí o no erróneos (afirmar lo falso) | ≤ 1 |
 | Memoria barajada | 0 aciertos en preguntas abiertas y de sí o no |
 | Nombres renombrados | ±2 del tratamiento |
-| Sin memoria de conversación | ≤ línea base + 1 |
+| La memoria aporta: tratamiento − sin memoria de conversación | ≥ +6 |
 | Lectura MLQA en desarrollo limpio (G-28b) | F1 sin bajar más de 0,005 |
 | Regresión completa | sin fallos nuevos |
 | Latencia fija intercalada | ≤ +20 % |
 | Respuesta en conversación | p95 ≤ 200 ms |
 
 Se informa la brecha con el subagente sin maquillarla. Si falla, se registra sin relajarla.
+
+**Enmienda antes de congelar (2026-09-24), por lo visto en desarrollo** ([controles en desarrollo](../results_v3/g41_desarrollo_controles.json)): «sin memoria de conversación» dio 7/30, exactamente las 7 preguntas de «no lo sé». Las acertó solo porque G-41 también cambia la abstención a «No lo sé» cuando la pregunta se entiende pero falta el dato. El criterio «sin memoria ≤ línea base + 1» mezclaba ese cambio con la memoria. Se reemplaza por dos criterios:
+- el tratamiento debe superar en 8 a la estrategia trivial «siempre no lo sé» (número de claves «no lo sé»);
+- la memoria debe aportar al menos 6 aciertos.
+
+Los demás umbrales no cambian. En desarrollo:
+- línea base educada (`estable-G-10`): 0/30;
+- tratamiento: 18/30, 0 sí/no falsos;
+- sin memoria: 7;
+- memoria barajada: 5, todos «no lo sé»;
+- nombres renombrados: 19.
 
 ## En palabras fáciles de entender
 
