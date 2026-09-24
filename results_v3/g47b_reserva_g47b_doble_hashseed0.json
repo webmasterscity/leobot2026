@@ -1,0 +1,120 @@
+{
+ "conjunto_sha256_16": "6ca7150eae555757",
+ "base_sha256_16": "7b58760648d76c36",
+ "huella_motor": "20a694f450344ee55f9e94fb0bd337278e0bbad0",
+ "tratamiento": {
+  "calificadas": 64,
+  "aciertos": 39,
+  "afirma_falso": 1,
+  "abiertas_equivocadas": 3,
+  "por_tipo": {
+   "abierta": "13/23",
+   "no": "3/13",
+   "no lo se": "14/14",
+   "si": "7/12",
+   "sin afirmar": "2/2"
+  },
+  "p50_ms": 9.301,
+  "p95_ms": 48.238
+ },
+ "sin_lemas": {
+  "calificadas": 64,
+  "aciertos": 39,
+  "afirma_falso": 1,
+  "abiertas_equivocadas": 3,
+  "por_tipo": {
+   "abierta": "13/23",
+   "no": "3/13",
+   "no lo se": "14/14",
+   "si": "7/12",
+   "sin afirmar": "2/2"
+  },
+  "p50_ms": 9.297,
+  "p95_ms": 48.981
+ },
+ "sin_estructura_g47b": {
+  "calificadas": 64,
+  "aciertos": 39,
+  "afirma_falso": 1,
+  "abiertas_equivocadas": 3,
+  "por_tipo": {
+   "abierta": "13/23",
+   "no": "3/13",
+   "no lo se": "14/14",
+   "si": "7/12",
+   "sin afirmar": "2/2"
+  },
+  "p50_ms": 9.25,
+  "p95_ms": 49.241
+ },
+ "ambas_ablaciones": {
+  "calificadas": 64,
+  "aciertos": 39,
+  "afirma_falso": 1,
+  "abiertas_equivocadas": 3,
+  "por_tipo": {
+   "abierta": "13/23",
+   "no": "3/13",
+   "no lo se": "14/14",
+   "si": "7/12",
+   "sin afirmar": "2/2"
+  },
+  "p50_ms": 9.187,
+  "p95_ms": 50.926
+ },
+ "sin_memoria": {
+  "calificadas": 64,
+  "aciertos": 16,
+  "afirma_falso": 0,
+  "abiertas_equivocadas": 0,
+  "por_tipo": {
+   "abierta": "0/23",
+   "no": "0/13",
+   "no lo se": "14/14",
+   "si": "0/12",
+   "sin afirmar": "2/2"
+  },
+  "p50_ms": 0.202,
+  "p95_ms": 9.721
+ },
+ "memoria_barajada": {
+  "calificadas": 64,
+  "aciertos": 16,
+  "afirma_falso": 0,
+  "abiertas_equivocadas": 0,
+  "por_tipo": {
+   "abierta": "0/23",
+   "no": "0/13",
+   "no lo se": "14/14",
+   "si": "0/12",
+   "sin afirmar": "2/2"
+  },
+  "p50_ms": 9.189,
+  "p95_ms": 48.562
+ },
+ "renombrado_invariantes": "60/64",
+ "nombres_sustituidos": 59,
+ "estrategia_siempre_no_lo_se": 16,
+ "linea_base_estable_G11": {
+  "aciertos": 36,
+  "calificadas": 64
+ },
+ "G47_congelado": {
+  "aciertos": 39,
+  "calificadas": 64
+ },
+ "subagente_sin_clave": {
+  "aciertos": 62,
+  "calificadas": 64,
+  "modelo": "Sonnet (subagente de Claude Code), 2026-09-24"
+ },
+ "puerta": {
+  "aciertos >= estable-G-11 + 3 (39) y >= G-47 congelado (39)": "pasa (39)",
+  "aporte >= +2 (ambas ablaciones 39)": "falla (0)",
+  "afirma lo falso <= 2": "pasa (1)",
+  "abiertas equivocadas <= 15 %": "pasa (3/23 = 13 %)",
+  "claves no >= 40 %": "falla (3/13)",
+  "barajada 0 en abiertas y si/no": "pasa",
+  "renombrado >= 90 %": "pasa (60/64)"
+ }
+}

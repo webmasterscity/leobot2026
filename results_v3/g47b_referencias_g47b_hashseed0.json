@@ -1,0 +1,112 @@
+{
+ "conjunto_sha256_16": "291e68d4ac410043",
+ "base_sha256_16": "7b58760648d76c36",
+ "huella_motor": "20a694f450344ee55f9e94fb0bd337278e0bbad0",
+ "tratamiento": {
+  "calificadas": 24,
+  "aciertos": 10,
+  "afirma_falso": 0,
+  "abiertas_equivocadas": 1,
+  "por_tipo": {
+   "abierta": "5/15",
+   "no": "0/2",
+   "no lo se": "3/3",
+   "si": "2/4"
+  },
+  "p50_ms": 9.21,
+  "p95_ms": 37.25
+ },
+ "sin_lemas": {
+  "calificadas": 24,
+  "aciertos": 9,
+  "afirma_falso": 0,
+  "abiertas_equivocadas": 1,
+  "por_tipo": {
+   "abierta": "4/15",
+   "no": "0/2",
+   "no lo se": "3/3",
+   "si": "2/4"
+  },
+  "p50_ms": 9.048,
+  "p95_ms": 36.734
+ },
+ "sin_estructura_g47b": {
+  "calificadas": 24,
+  "aciertos": 10,
+  "afirma_falso": 0,
+  "abiertas_equivocadas": 1,
+  "por_tipo": {
+   "abierta": "5/15",
+   "no": "0/2",
+   "no lo se": "3/3",
+   "si": "2/4"
+  },
+  "p50_ms": 9.076,
+  "p95_ms": 36.023
+ },
+ "ambas_ablaciones": {
+  "calificadas": 24,
+  "aciertos": 9,
+  "afirma_falso": 0,
+  "abiertas_equivocadas": 1,
+  "por_tipo": {
+   "abierta": "4/15",
+   "no": "0/2",
+   "no lo se": "3/3",
+   "si": "2/4"
+  },
+  "p50_ms": 9.157,
+  "p95_ms": 36.52
+ },
+ "sin_memoria": {
+  "calificadas": 24,
+  "aciertos": 3,
+  "afirma_falso": 0,
+  "abiertas_equivocadas": 0,
+  "por_tipo": {
+   "abierta": "0/15",
+   "no": "0/2",
+   "no lo se": "3/3",
+   "si": "0/4"
+  },
+  "p50_ms": 0.166,
+  "p95_ms": 9.112
+ },
+ "memoria_barajada": {
+  "calificadas": 24,
+  "aciertos": 3,
+  "afirma_falso": 0,
+  "abiertas_equivocadas": 0,
+  "por_tipo": {
+   "abierta": "0/15",
+   "no": "0/2",
+   "no lo se": "3/3",
+   "si": "0/4"
+  },
+  "p50_ms": 9.067,
+  "p95_ms": 36.027
+ },
+ "renombrado_invariantes": "23/24",
+ "nombres_sustituidos": 14,
+ "estrategia_siempre_no_lo_se": 3,
+ "linea_base_estable_G11": {
+  "aciertos": 7,
+  "calificadas": 24
+ },
+ "G47_congelado": {
+  "aciertos": 9,
+  "calificadas": 24
+ },
+ "subagente_sin_clave": {
+  "aciertos": 24,
+  "calificadas": 24,
+  "modelo": "Sonnet (subagente de Claude Code), 2026-09-24"
+ },
+ "puerta": {
+  ">= 50 % y >= estable-G-11 + 5 (12)": "falla (10/24)",
+  "afirma lo falso <= 1": "pasa (0)",
+  "abiertas equivocadas <= 15 %": "pasa (1/15)",
+  "barajada 0": "pasa",
+  "renombrado >= 90 %": "pasa (23/24)"
+ }
+}
