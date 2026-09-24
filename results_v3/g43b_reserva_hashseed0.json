@@ -1,0 +1,122 @@
+{
+ "conjunto_sha256_16": "efbb8b8fd200f65b",
+ "base_sha256_16": "cb7f25f3ea082434",
+ "huella_motor": "263cc12b357c4057a3aa606e13d6932d626dba6e",
+ "tratamiento": {
+  "calificadas": 32,
+  "aciertos": 18,
+  "afirma_falso": 0,
+  "abiertas_equivocadas": 7,
+  "por_tipo": {
+   "abierta": "12/19",
+   "no": "0/4",
+   "no lo se": "2/4",
+   "si": "2/3",
+   "sin afirmar": "2/2"
+  },
+  "p50_ms": 33.079,
+  "p95_ms": 68.43
+ },
+ "ablacion_sin_verificacion_estructural": {
+  "calificadas": 32,
+  "aciertos": 19,
+  "afirma_falso": 0,
+  "abiertas_equivocadas": 7,
+  "por_tipo": {
+   "abierta": "12/19",
+   "no": "1/4",
+   "no lo se": "2/4",
+   "si": "2/3",
+   "sin afirmar": "2/2"
+  },
+  "p50_ms": 32.256,
+  "p95_ms": 67.873
+ },
+ "ablacion_sin_alineacion": {
+  "calificadas": 32,
+  "aciertos": 16,
+  "afirma_falso": 0,
+  "abiertas_equivocadas": 9,
+  "por_tipo": {
+   "abierta": "10/19",
+   "no": "0/4",
+   "no lo se": "2/4",
+   "si": "2/3",
+   "sin afirmar": "2/2"
+  },
+  "p50_ms": 1.827,
+  "p95_ms": 31.879
+ },
+ "sin_memoria": {
+  "calificadas": 32,
+  "aciertos": 6,
+  "afirma_falso": 0,
+  "abiertas_equivocadas": 0,
+  "por_tipo": {
+   "abierta": "0/19",
+   "no": "0/4",
+   "no lo se": "4/4",
+   "si": "0/3",
+   "sin afirmar": "2/2"
+  },
+  "p50_ms": 0.316,
+  "p95_ms": 28.101
+ },
+ "memoria_barajada": {
+  "calificadas": 32,
+  "aciertos": 4,
+  "afirma_falso": 2,
+  "abiertas_equivocadas": 19,
+  "por_tipo": {
+   "abierta": "0/19",
+   "no": "0/4",
+   "no lo se": "2/4",
+   "si": "0/3",
+   "sin afirmar": "2/2"
+  },
+  "p50_ms": 16.752,
+  "p95_ms": 31.365
+ },
+ "renombrado_invariantes": "29/32",
+ "nombres_sustituidos": 23,
+ "estrategia_siempre_no_lo_se": 4,
+ "g42_congelado_misma_reserva": {
+  "aciertos": 19,
+  "calificadas": 32
+ },
+ "g43_congelado_misma_reserva": {
+  "aciertos": 17,
+  "calificadas": 32
+ },
+ "subagente_sonnet5_sin_clave": {
+  "aciertos": 31,
+  "calificadas": 32
+ },
+ "mlqa_muestra_no_vista": {
+  "g43b": 0.2261,
+  "solo_lector_g28": 0.2452,
+  "archivo": "results_v3/g43b_mlqa_reserva.json",
+  "descomposicion": "alineación en 42 casos: F1 16,5 frente a 19,6 del lector (−0,010); 6 preguntas sin interrogativa reconocida (tildes omitidas) tratadas como sí/no (−0,009)"
+ },
+ "regresion": "597 pruebas, 2 fallos esperados, 0 fallos con lotes de 900 s",
+ "puerta": {
+  "aciertos": "18/32 = 56 % < 60 % y < 19 + 2: FALLA",
+  "no_inferior_a_g43": "18 ≥ 17 − 1: pasa",
+  "si_no_falsos": "0: pasa",
+  "abiertas_equivocadas": "7 > 3: FALLA",
+  "barajada": "0 en abiertas y sí/no: pasa",
+  "renombrado": "29/32 = 90,6 %: pasa",
+  "mlqa_f1": "0,2261 < 0,2452 − 0,005: FALLA",
+  "p95_conversacion": "68 ms: pasa",
+  "latencia_fija": "no ejecutada",
+  "auditoria_5_10": "no pedida: la puerta falló",
+  "resultado": "NO SUPERADA"
+ },
+ "causas_de_fallo_en_reserva_gastada": [
+  "raíz de 5 letras confunde palabras («bibliotecaria» = «biblioteca»)",
+  "sujeto omitido y anáfora definida («En el huerto siembra…», «La tienda vende…»)",
+  "lector de G-28 contesta lo que ninguna oración cubre",
+  "«no» por otro valor o por paráfrasis («cerrada» = «no abre»)",
+  "errores de análisis en coordinaciones de oraciones"
+ ]
+}
