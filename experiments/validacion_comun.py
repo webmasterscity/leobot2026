@@ -1,6 +1,6 @@
 """Validación común en español corriente, por la interfaz pública de conversación.
 
-python3 -m experiments.validacion_comun RUTA [--detalle]
+python3 -m experiments.validacion_comun RUTA [--detalle] [--base BOT.json]
 python3 -m experiments.validacion_comun RUTA --exportar SALIDA.json
 python3 -m experiments.validacion_comun RUTA --respuestas RESPUESTAS.json [--detalle]
 
@@ -22,6 +22,9 @@ Calificación de lo esperado:
 - cualquier otro texto: debe aparecer dentro de la respuesta (sin distinguir
   mayúsculas ni tildes).
 
+--base parte cada conversación de una copia nueva de un bot educado de forma
+general (guardado con Bot.save), sin memoria entre conversaciones; sin --base,
+cada conversación empieza con un bot vacío.
 --exportar escribe las conversaciones sin lo esperado (para que otro las conteste
 sin ver la clave); --respuestas califica una lista JSON de respuestas, una por
 turno dicho, en el mismo orden, con las mismas reglas.
@@ -105,6 +108,7 @@ def main():
         salida.write_text(json.dumps([[d for d, _ in c] for c in convs], ensure_ascii=False, indent=1), encoding='utf8')
         print(f'{sum(len(c) for c in convs)} turnos en {len(convs)} conversaciones exportados sin lo esperado')
         return
+    base = Path(args[args.index('--base') + 1]) if '--base' in args else None
     externas = None
     if '--respuestas' in args:
         externas = json.loads(Path(args[args.index('--respuestas') + 1]).read_text(encoding='utf8'))
@@ -115,7 +119,7 @@ def main():
         bot = None
         if externas is None:
             from leobot import Bot
-            bot = Bot()
+            bot = Bot.load(base) if base else Bot()
         for dicho, esperado in c:
             if externas is None:
                 t = time.perf_counter()
@@ -136,6 +140,7 @@ def main():
                'conversaciones': len(convs), 'calificadas': calificadas, 'aciertos': aciertos,
                'no_lo_se': abstenciones, 'p50_ms': pct(tiempos, 0.5), 'p95_ms': pct(tiempos, 0.95),
                'respondido_por': 'lista externa' if externas is not None else 'leobot',
+               'base': None if base is None else __import__('hashlib').sha256(base.read_bytes()).hexdigest()[:16],
                'huella_motor': huella()}
     print(json.dumps(resumen, ensure_ascii=False))
     if detalle:
