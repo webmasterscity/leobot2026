@@ -11,6 +11,7 @@ from random import Random
 from time import perf_counter
 from collections import defaultdict
 import hashlib
+import json
 import re
 
 OPS = ('add', 'sub', 'mul', 'floordiv', 'mod', 'min', 'max')
@@ -65,6 +66,68 @@ class GridContext:
                             label[u][v] = len(sizes); stack.append((u, v))
                 sizes.append(n)
         self.components = [[sizes[label[r][c]] for c in range(w)] for r in range(h)]
+
+
+def grid_objects(grid, same_colour: bool) -> list[list[tuple[int, int]]]:
+    """G-40: 8-connected sets of non-background (non-zero) cells, of one colour
+    or of any colours; cells in reading order of discovery."""
+    h, w = len(grid), len(grid[0])
+    seen: set[tuple[int, int]] = set()
+    out = []
+    for r in range(h):
+        for c in range(w):
+            if grid[r][c] == 0 or (r, c) in seen:
+                continue
+            stack, cells = [(r, c)], []
+            seen.add((r, c))
+            while stack:
+                x, y = stack.pop(); cells.append((x, y))
+                for dx in (-1, 0, 1):
+                    for dy in (-1, 0, 1):
+                        u, v = x + dx, y + dy
+                        if (0 <= u < h and 0 <= v < w and (u, v) not in seen and grid[u][v] != 0
+                                and (not same_colour or grid[u][v] == grid[x][y])):
+                            seen.add((u, v)); stack.append((u, v))
+            out.append(cells)
+    return out
+
+
+def _crop(grid, cells):
+    rows = [r for r, _ in cells]; cols = [c for _, c in cells]
+    return tuple(tuple(row[min(cols):max(cols) + 1]) for row in grid[min(rows):max(rows) + 1])
+
+
+def _select_object(grid, objects, how):
+    """One object by a generic property; None when the choice is not unique."""
+    if not objects:
+        return None
+    if how == 'unico':
+        sets = [frozenset(grid[r][c] for r, c in o) for o in objects]
+        alone = [o for o, colours in zip(objects, sets) if sets.count(colours) == 1]
+        return alone[0] if len(alone) == 1 else None
+    key = {'mayor': lambda o: -len(o), 'menor': len,
+           'arriba': lambda o: min(r for r, _ in o), 'izquierda': lambda o: min(c for _, c in o)}[how]
+    ranked = sorted(objects, key=key)
+    if len(ranked) > 1 and key(ranked[0]) == key(ranked[1]):
+        return None
+    return ranked[0]
+
+
+# G-40: whole-grid views composed with the cell learner (identity, bounding box
+# of everything drawn, bounding box of one object chosen by a generic property).
+GRID_VIEWS = ('identidad', 'dibujo') + tuple(f'{notion}:{how}' for notion in ('color', 'mixto')
+                                             for how in ('mayor', 'menor', 'arriba', 'izquierda', 'unico'))
+
+
+def grid_view(grid, name: str):
+    if name == 'identidad':
+        return grid
+    if name == 'dibujo':
+        cells = [(r, c) for r, row in enumerate(grid) for c, v in enumerate(row) if v]
+        return _crop(grid, cells) if cells else None
+    notion, how = name.split(':')
+    chosen = _select_object(grid, grid_objects(grid, notion == 'color'), how)
+    return _crop(grid, chosen) if chosen else None
 
 
 def context_op(op: str, ctx, i: int | None, j: int | None) -> int | None:
@@ -305,6 +368,8 @@ class ProgramLearner:
         self._abstraction_recipe_cache: dict[int, tuple] = {}
         # G-39: (input, output) grid pairs per grid skill.
         self.grid_examples: dict[str, list[tuple[tuple, tuple]]] = {}
+        # G-40: views that learned a program for each composed grid skill.
+        self.grid_views_fitted: dict[str, list[str]] = {}
 
     @staticmethod
     def _expr_calls(expr) -> set[str]:
@@ -1284,6 +1349,55 @@ class ProgramLearner:
         report['celda'] = rep
         return {**report, 'status': rep['status'], 'stage': 'celda'}
 
+    def fit_grid_views(self, skill: str, test_inputs=(), *, views=GRID_VIEWS,
+                       seconds_per_view: float | None = None, **switches) -> dict:
+        """G-40: compose each whole-grid view with ``fit_grid``.  A view is
+        tried only if it exists for every demonstration and test input."""
+        pairs = self.grid_examples.get(skill, [])
+        if not pairs:
+            return {'status': 'need_examples'}
+        tests = [self._grid(g) for g in test_inputs]
+        fitted, reports = [], {}
+        saved = self.max_seconds
+        if seconds_per_view is not None:
+            self.max_seconds = seconds_per_view
+        try:
+            for k, name in enumerate(views):
+                sources = [grid_view(a, name) for a, _ in pairs]
+                shown = [grid_view(g, name) for g in tests]
+                if any(v is None for v in sources + shown):
+                    continue
+                sub = f'{skill}__vista{GRID_VIEWS.index(name)}'
+                self.grid_examples[sub] = []
+                for view, (_, b) in zip(sources, pairs):
+                    self.add_grid_example(sub, view, b)
+                rep = self.fit_grid(sub, shown, **switches)
+                reports[name] = rep.get('status')
+                if rep.get('status') == 'learned_hypothesis':
+                    fitted.append(name)
+        finally:
+            self.max_seconds = saved
+        self.grid_views_fitted[skill] = fitted
+        return {'status': 'learned_hypothesis' if fitted else 'no_solution', 'views': fitted, 'reports': reports}
+
+    def predict_grid_views(self, skill: str, source) -> dict:
+        """Answer only when every fitted view that answers gives the same grid."""
+        grid = self._grid(source)
+        answers: dict[str, list] = {}
+        for name in self.grid_views_fitted.get(skill, []):
+            view = grid_view(grid, name)
+            if view is None:
+                continue
+            pred = self.predict_grid(f'{skill}__vista{GRID_VIEWS.index(name)}', view)
+            if pred['status'] == 'hypothesis':
+                answers[name] = pred['grid']
+        distinct = {json.dumps(g) for g in answers.values()}
+        if not answers:
+            return {'status': 'unknown', 'grid': None}
+        if len(distinct) > 1:
+            return {'status': 'ambiguous', 'grid': None, 'views': sorted(answers)}
+        return {'status': 'hypothesis', 'grid': next(iter(answers.values())), 'views': sorted(answers)}
+
     def _grid_shape(self, skill: str, grid) -> dict:
         args = (len(grid), len(grid[0]), *GridContext(grid).features)
         shape = []
@@ -1344,6 +1458,7 @@ class ProgramLearner:
                 'abstractions': self.abstractions,
                 'grid_examples': {s: [[list(map(list, a)), list(map(list, b))] for a, b in ps]
                                   for s, ps in self.grid_examples.items()},
+                'grid_views_fitted': self.grid_views_fitted,
                 'abstraction_evidence': {k: {**v, 'source_skills': sorted(v.get('source_skills', ())) }
                                          for k, v in self.abstraction_evidence.items()}}
 
@@ -1368,4 +1483,6 @@ class ProgramLearner:
             pl.set_concepts(skill, concepts)
         for skill, ps in data.get('grid_examples', {}).items():
             pl.grid_examples[skill] = [(pl._grid(a), pl._grid(b)) for a, b in ps]
+        pl.grid_views_fitted = {s: [v for v in vs if v in GRID_VIEWS]
+                                for s, vs in data.get('grid_views_fitted', {}).items()}
         return pl
