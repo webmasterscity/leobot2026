@@ -1,0 +1,15 @@
+{
+ "origen": "sugerencia del usuario (prueba común: sí/no 3/10; datos dichos con otras palabras): similitud distribucional aprendida por conteo, sin redes",
+ "prototipo": "experiments/g50_ppmi_prototype.py (fuera del motor)",
+ "corpus": {"oraciones": 112142, "tokens_de_contenido": 939662, "fuentes": ["AnCora train (texto)", "contextos de SQuAD-es v1.1 train"], "vocabulario_frecuencia_20": 4761},
+ "metodo": "PPMI de ventana ±2 sobre lemas de contenido (suavizado 0,75), coseno, 5 vecinos; equivalencia = vecinos mutuos, misma clase y coaparición en la oración no mayor que el azar",
+ "costo": {"cpu_s": 196.5, "rss_mib": 819},
+ "vecinos_ejemplo": {"marido": ["hijo", "esposa", "princesa", "madre", "hija"], "rojo": ["verde", "azul", "amarillo", "oscuro", "blanco"], "pequeño": ["grande", "conocido", "llamado", "menudo", "mayor"], "lunes": ["domingo", "miércoles", "martes", "día", "jueves"], "abogado": ["juez", "médico", "escrito", "derecho", "especialista"], "coche": ["ascensor", "vehículo", "automóvil", "tren", "pasajero"], "empresa": ["compañía", "sector", "negocio", "mercado", "industria"]},
+ "equivalencias_que_pasan_el_filtro": 30,
+ "coseno_misma_clase": {"azul-verde": 0.311, "martes-lunes": 0.219, "perro-gato": 0.252, "tarde-noche": 0.21, "cerrado-abierto": 0.2, "rojo-gris": 0.195},
+ "coseno_otra_dimension": {"verde-nuevo": 0.109, "azul-caro": 0.116},
+ "coseno_profesiones_y_raras": {"abogado-ingeniero": 0.084, "maestro-conductor": 0.08, "moto-camioneta": 0.0},
+ "asociacion_ppmi": {"color-azul": 4.0, "color-rojo": 3.87, "color-usar": 2.04, "color-electricista": 0.0, "material-madera": 2.69, "marca-usar": 0.28},
+ "veredicto": "no se adopta el «sí» por equivalencia: los vecinos distribucionales son sobre todo de la misma clase u opuestos, que darían «sí» falsos; el filtro de clase para el contraste separa colores, días y animales de otras dimensiones, pero excluye profesiones y palabras raras, y perdería «no» correctos; la asociación sirve para ordenar, no para descartar. Con ~1 M de palabras de contenido no alcanza; haría falta un corpus de decenas de millones.",
+ "los_ejemplos_del_usuario": "«da clases de historia» ⇒ «es profesor» es una inferencia; «vive con su esposo» ⇒ «tiene esposo» es una construcción de posesión; ninguna es sinonimia de palabra"
+}
