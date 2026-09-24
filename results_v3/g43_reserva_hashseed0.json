@@ -1,0 +1,131 @@
+{
+ "conjunto_sha256_16": "320506bc10b06166",
+ "base_sha256_16": "22ad683866769bb9",
+ "huella_motor": "44c668c5a9489f6852971493ca051ea432981ab8",
+ "tratamiento": {
+  "calificadas": 30,
+  "aciertos": 26,
+  "afirma_falso": 0,
+  "abiertas_equivocadas": 0,
+  "por_tipo": {
+   "abierta": "15/15",
+   "no": "1/2",
+   "no lo se": "3/6",
+   "si": "5/5",
+   "sin afirmar": "2/2"
+  },
+  "p50_ms": 17.924,
+  "p95_ms": 37.741
+ },
+ "ablacion_sin_clase": {
+  "calificadas": 30,
+  "aciertos": 26,
+  "afirma_falso": 0,
+  "abiertas_equivocadas": 0,
+  "por_tipo": {
+   "abierta": "15/15",
+   "no": "1/2",
+   "no lo se": "3/6",
+   "si": "5/5",
+   "sin afirmar": "2/2"
+  },
+  "p50_ms": 31.534,
+  "p95_ms": 48.445
+ },
+ "ablacion_sin_verificacion_estructural": {
+  "calificadas": 30,
+  "aciertos": 24,
+  "afirma_falso": 2,
+  "abiertas_equivocadas": 0,
+  "por_tipo": {
+   "abierta": "15/15",
+   "no": "1/2",
+   "no lo se": "3/6",
+   "si": "5/5",
+   "sin afirmar": "0/2"
+  },
+  "p50_ms": 19.12,
+  "p95_ms": 69.181
+ },
+ "ablacion_sin_alineacion": {
+  "calificadas": 30,
+  "aciertos": 25,
+  "afirma_falso": 0,
+  "abiertas_equivocadas": 1,
+  "por_tipo": {
+   "abierta": "14/15",
+   "no": "1/2",
+   "no lo se": "3/6",
+   "si": "5/5",
+   "sin afirmar": "2/2"
+  },
+  "p50_ms": 1.992,
+  "p95_ms": 35.489
+ },
+ "sin_memoria": {
+  "calificadas": 30,
+  "aciertos": 8,
+  "afirma_falso": 0,
+  "abiertas_equivocadas": 0,
+  "por_tipo": {
+   "abierta": "0/15",
+   "no": "0/2",
+   "no lo se": "6/6",
+   "si": "0/5",
+   "sin afirmar": "2/2"
+  },
+  "p50_ms": 0.384,
+  "p95_ms": 30.402
+ },
+ "memoria_barajada": {
+  "calificadas": 30,
+  "aciertos": 5,
+  "afirma_falso": 3,
+  "abiertas_equivocadas": 15,
+  "por_tipo": {
+   "abierta": "0/15",
+   "no": "0/2",
+   "no lo se": "3/6",
+   "si": "0/5",
+   "sin afirmar": "2/2"
+  },
+  "p50_ms": 16.494,
+  "p95_ms": 17.527
+ },
+ "renombrado_invariantes": "29/30",
+ "nombres_sustituidos": 16,
+ "estrategia_siempre_no_lo_se": 6,
+ "g42_congelado_misma_reserva": {
+  "aciertos": 24,
+  "calificadas": 30,
+  "base_sha256_16": "cb7f25f3ea082434"
+ },
+ "subagente_sonnet5_sin_clave": {
+  "aciertos": 30,
+  "calificadas": 30
+ },
+ "mlqa_muestra_no_vista": {
+  "g43": 0.2193,
+  "sin_clase": 0.2185,
+  "solo_lector_g28": 0.2214,
+  "archivo": "results_v3/g43_mlqa_reserva.json"
+ },
+ "regresion": "599 pruebas, 2 fallos esperados, 0 fallos con lotes de 900 s; la orden oficial agotó 90 s en el lote de test_learner_synthesis_c2 (carga 7–16 por otra sesión)",
+ "puerta": {
+  "aciertos": "26/30 = 87 % ≥ 60 % y ≥ 24 + 2: pasa",
+  "si_no_falsos": "0: pasa",
+  "abiertas_equivocadas": "0: pasa",
+  "barajada": "0 en abiertas y sí/no: pasa",
+  "renombrado": "29/30: pasa",
+  "mlqa_f1": "0,2193 ≥ 0,2214 − 0,005: pasa",
+  "aporte_clase_mlqa": "+0,0008 < +0,005: FALLA",
+  "p95_conversacion": "37,7 ms: pasa",
+  "latencia_fija": "no ejecutada: la puerta ya falló",
+  "resultado": "NO SUPERADA (solo por la clase)"
+ },
+ "aportes_en_reserva": {
+  "verificacion_estructural": "+2 (sin afirmar 2/2 frente a 0/2; 2 sí/no falsos sin ella)",
+  "alineacion": "+1",
+  "clase": "0"
+ }
+}
