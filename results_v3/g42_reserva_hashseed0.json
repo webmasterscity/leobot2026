@@ -1,0 +1,93 @@
+{
+ "conjunto_sha256_16": "f0b632a775c7ba1b",
+ "base_sha256_16": "cb7f25f3ea082434",
+ "huella_motor": "2628854f9ee1a11a4e3fb6dff211caa0676ed453",
+ "tratamiento": {
+  "calificadas": 31,
+  "aciertos": 23,
+  "afirma_falso": 0,
+  "abiertas_equivocadas": 2,
+  "por_tipo": {
+   "abierta": "18/22",
+   "no": "0/2",
+   "no lo se": "4/6",
+   "si": "1/1"
+  },
+  "p50_ms": 31.988,
+  "p95_ms": 74.593
+ },
+ "ablacion_sin_alineacion": {
+  "calificadas": 31,
+  "aciertos": 19,
+  "afirma_falso": 0,
+  "abiertas_equivocadas": 8,
+  "por_tipo": {
+   "abierta": "14/22",
+   "no": "0/2",
+   "no lo se": "4/6",
+   "si": "1/1"
+  },
+  "p50_ms": 1.167,
+  "p95_ms": 1.976
+ },
+ "sin_memoria": {
+  "calificadas": 31,
+  "aciertos": 6,
+  "afirma_falso": 0,
+  "abiertas_equivocadas": 0,
+  "por_tipo": {
+   "abierta": "0/22",
+   "no": "0/2",
+   "no lo se": "6/6",
+   "si": "0/1"
+  },
+  "p50_ms": 0.244,
+  "p95_ms": 0.33
+ },
+ "memoria_barajada": {
+  "calificadas": 31,
+  "aciertos": 4,
+  "afirma_falso": 2,
+  "abiertas_equivocadas": 22,
+  "por_tipo": {
+   "abierta": "0/22",
+   "no": "0/2",
+   "no lo se": "4/6",
+   "si": "0/1"
+  },
+  "p50_ms": 16.781,
+  "p95_ms": 19.588
+ },
+ "renombrado_invariantes": "28/31",
+ "nombres_sustituidos": 18,
+ "estrategia_siempre_no_lo_se": 6,
+ "g41_congelado_misma_reserva": {
+  "aciertos": 14,
+  "calificadas": 31,
+  "base_sha256_16": "e84581df910bb62f",
+  "huella_motor": "ad568f85a255f8583ffa2581ea8f0dc658c6d565"
+ },
+ "subagente_sonnet5_sin_clave": {
+  "aciertos": 31,
+  "calificadas": 31
+ },
+ "mlqa_desarrollo_limpio": {
+  "g42": 0.2058,
+  "sin_alineacion": 0.2169,
+  "solo_lector_g28": 0.2221,
+  "archivo": "results_v3/g42_mlqa_educado_dev.json"
+ },
+ "regresion": "592 pruebas, 2 fallos esperados, 0 fallos, con lotes de 900 s (la orden oficial de 90 s agotó el lote 4 por la carga de la máquina: carga media 11–21 por otra sesión)",
+ "puerta": {
+  "aciertos": "23/31 = 74 % ≥ 60 % y ≥ 14 + 5: pasa",
+  "si_no_falsos": "0 ≤ 1: pasa",
+  "abiertas_equivocadas": "2 ≤ 3: pasa",
+  "aporte_alineacion": "23 − 19 = 4 ≥ 4: pasa",
+  "barajada": "0 aciertos en abiertas y sí/no: pasa",
+  "renombrado": "28/31 = 90,3 % ≥ 90 %: pasa",
+  "p95_conversacion": "74,6 ms ≤ 200: pasa",
+  "mlqa_f1": "0,2058 < 0,2171 (0,2221 − 0,005): FALLA",
+  "latencia_fija": "no ejecutada: la puerta ya falló",
+  "resultado": "NO SUPERADA"
+ }
+}
