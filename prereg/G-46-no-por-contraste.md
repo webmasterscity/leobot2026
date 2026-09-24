@@ -34,6 +34,12 @@ La verificación de G-43 busca una oración que diga lo mismo o lo contrario con
 
 **Riesgo conocido:** dos adjetivos de distinta dimensión («azul» y «grande») darían un «no» falso. Se mide como «afirma lo falso».
 
+**Enmienda antes de congelar (2026-09-24), por lo visto en desarrollo** (8 conjuntos gastados, 314 preguntas). La primera versión exigía el rasgo de atributo solo en la oración. Dio 241 frente a 229 de la ablación, con «no» 22/35 frente a 6/35, pero hubo 4 «no» falsos. En dos de ellos, el valor preguntado ocupaba otra casilla que la palabra de la oración: «¿vende pescado?» (objeto) frente a «de don Alberto»; «¿tiene tulipanes?» frente a «con rosas». Por eso el principio se aplica a los dos lados:
+- el valor preguntado también debe estar en un lugar de atributo;
+- los dos deben llevar la **misma preposición**, o ninguna.
+
+Los otros dos casos no cambian: «¿Fue caro el sombrero?» frente a «azul» es el riesgo conocido de dimensiones distintas, y «¿Marta vive en Toledo?» frente a «vive en Salamanca» choca con una clave «no lo sé» que puso el validador. La puerta no cambia.
+
 ## Evaluación
 
 - **Desarrollo:** los 8 conjuntos de conversación gastados (314 preguntas).
