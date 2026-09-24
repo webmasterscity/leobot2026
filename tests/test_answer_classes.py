@@ -1,4 +1,5 @@
-"""G-43: the class of an answer is learned; yes/no is checked in structure."""
+"""G-43: coordinated elements and yes/no checked in structure (G-43b retired the
+learned answer class, which added nothing, together with its tests)."""
 import unittest
 
 from leobot import Bot
@@ -61,18 +62,6 @@ def taught_bot():
 class AnswerClassTests(unittest.TestCase):
     def test_only_the_asking_word_is_learned_as_interrogative(self):
         self.assertEqual(taught_bot().syntax_model['interrogatives'], ['cuántas'])
-
-    def test_the_class_of_answers_is_counted_from_examples(self):
-        row = taught_bot().reading_model['answer_classes']['cuántas']
-        self.assertEqual(max(row, key=row.get), 'NUM')
-
-    def test_classes_do_not_depend_on_the_order_of_education(self):
-        later = Bot()
-        for context, question, answer in EXAMPLES:
-            later.observe_reading_example(context, question, answer)
-        learn_syntax(later)
-        later.consolidate_reading()
-        self.assertEqual(later.reading_model['answer_classes'], taught_bot().reading_model['answer_classes'])
 
     def test_a_coordinated_element_is_not_a_modifier(self):
         bot = taught_bot()

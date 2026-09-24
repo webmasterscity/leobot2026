@@ -414,22 +414,6 @@ class SyntaxMixin:
             estimate = {t: (local[t] / seen + theta * estimate[t]) / (1 + theta) for t in tags}
         return estimate
 
-    def word_class(self, word: str) -> str | None:
-        """G-43: a word's most likely class out of context: its most frequent
-        learned tag or, for an unknown word, the suffix model's best guess."""
-        model = self.syntax_model
-        if not model['sentences']:
-            return None
-        if not model.get('compiled'):
-            self.consolidate_syntax()
-        tags = self._tag_list()
-        for form in (word, word.lower()):
-            counts = {t: model['lexicon'].get(form + '\x1f' + t, 0) for t in tags}
-            if sum(counts.values()):
-                return max(sorted(counts), key=lambda t: counts[t])
-        estimate = self._suffix_estimate(word)
-        return max(sorted(estimate), key=lambda t: estimate[t])
-
     def tag_words(self, words) -> list[str] | None:
         model = self.syntax_model
         if not model['sentences']:

@@ -29,9 +29,6 @@ BM25_B = 0.75
 # G-42: learned word classes that carry grammar rather than content; they do
 # not have to be found in the answering sentence and do not anchor it.
 FUNCTION_TAGS = frozenset({'DET', 'ADP', 'AUX', 'PRON', 'CCONJ', 'SCONJ', 'PUNCT'})
-ANSWER_LEAD = 6            # G-43: question words kept per worked example
-ANSWER_WORDS = 4           # answer words kept per worked example
-CLASS_SUPPORT = 5          # examples a key with its noun needs before it is used
 
 
 def _norm(token: str) -> str:
@@ -182,7 +179,6 @@ class ReadingMemoryMixin:
         G-42: the questions read are evidence of which words ask."""
         if self.syntax_model.get('sentences'):
             self._compile_question_words()
-            self._compile_answer_classes()
         return {'status': 'reading_consolidated', 'words': 0, 'pairs': 0}
 
     def _gap_neighbours(self, question: list[str], key: str, present: set) -> tuple:
@@ -256,13 +252,6 @@ class ReadingMemoryMixin:
                 model['sentence_df'][token] = model['sentence_df'].get(token, 0) + 1
         model['contexts'] += 1
         self._observe_opener(_TOKEN.findall(question), True)
-        # G-43: which words answer which questions, compiled when consolidating.
-        lead = [t.lower() for t in _TOKEN.findall(question) if _is_word(t)][:ANSWER_LEAD]
-        said = [t for t in _TOKEN.findall(answer) if _is_word(t)][:ANSWER_WORDS]
-        if lead and said:
-            table = model.setdefault('answer_examples', {})
-            pair = ' '.join(lead) + '\x1e' + ' '.join(said)
-            table[pair] = table.get(pair, 0) + 1
         qtokens = [_norm(t) for t in _TOKEN.findall(question) if _is_word(t)]
         target = [_norm(t) for t in _TOKEN.findall(answer) if _is_word(t)]
         # Calibration: how much of a question a foreign text covers by chance.
@@ -525,46 +514,6 @@ class ReadingMemoryMixin:
             frontier = nxt
         return [d if d >= 0 else n for d in far]
 
-    def _span_class(self, words):
-        """The class of a stretch of text: the learned class of its first word
-        that is not a function word (G-43)."""
-        for word in words:
-            if _is_word(word):
-                label = self.word_class(word)
-                if label is not None and label not in FUNCTION_TAGS:
-                    return label
-        return None
-
-    def _compile_answer_classes(self) -> None:
-        """G-43: which class of words answers each interrogative (and each
-        interrogative with its noun), counted from the worked examples."""
-        model = self.reading_model
-        interrogatives = set(self.syntax_model.get('interrogatives', ()))
-        classes: dict = {}
-        for key, count in sorted(model.get('answer_examples', {}).items()):
-            lead, said = key.split('\x1e')
-            words = lead.split()
-            k = next((i for i, w in enumerate(words) if w in interrogatives), None)
-            label = self._span_class(said.split()) if k is not None else None
-            if label is None:
-                continue
-            names = [words[k]]
-            if k + 1 < len(words) and self.word_class(words[k + 1]) == 'NOUN':
-                names.append(words[k] + ' ' + words[k + 1])
-            for name in names:
-                row = classes.setdefault(name, {})
-                row[label] = row.get(label, 0) + count
-        model['answer_classes'] = classes
-
-    def _class_cost(self, keys, label) -> float:
-        classes = self.reading_model.get('answer_classes', {})
-        for key in keys:
-            row = classes.get(key)
-            if row and (key == keys[-1] or sum(row.values()) >= CLASS_SUPPORT):
-                total = sum(row.values())
-                return -math.log((row.get(label, 0) + 1) / (total + len(self._tag_list())))
-        return 0.0
-
     def _reader_span_score(self, question: str, row: dict, text: str):
         """The G-28 reader's learned score for one given span of a sentence,
         or None when the span cannot be located or nothing was learned."""
@@ -597,8 +546,8 @@ class ReadingMemoryMixin:
         words.  G-43: distances are taken from the head of the interrogative
         phrase in enhanced trees (coordinated elements share their head) and
         count content words only; a coordinated element answers only with its
-        coordination; the class of words learned to answer the interrogative
-        weighs in, and the G-28 reader's statistics separate the ties left.
+        coordination; the G-28 reader's statistics separate the ties left.
+        (G-43b: the learned answer class was retired; it added nothing.)
         Ties that remain are reported as ambiguity instead of chosen silently.  None when no sentence contains every
         content word (the G-28 reader then decides)."""
         interrogatives = set(self.syntax_model.get('interrogatives', ()))
@@ -625,8 +574,6 @@ class ReadingMemoryMixin:
         if not where:
             return None
         noun_stem = _norm(words[noun]) if noun is not None else None
-        keys = ([low[q] + ' ' + low[noun]] if noun is not None else []) + [low[q]]
-        use_classes = getattr(self, 'answer_classes', True)
         index = self._reading_index()
         lists = sorted((index.get(t, ()) for t in where), key=len)
         positions = set(lists[0]).intersection(*lists[1:])
@@ -682,11 +629,9 @@ class ReadingMemoryMixin:
                     a += 1
                 while b >= a and not _is_word(swords[b]):
                     b -= 1
-                text = swords[a:b + 1]
-                cost = mirror + (self._class_cost(keys, self._span_class(text)) if use_classes else 0.0)
                 own_case = swords[a].lower() if stags[a] == 'ADP' else None
-                ranked.append(((-coverage, round(cost, 9), own_case != case, slabels[node] != labels[q]),
-                               ' '.join(text), row))
+                ranked.append(((-coverage, mirror, own_case != case, slabels[node] != labels[q]),
+                               ' '.join(swords[a:b + 1]), row))
         if not ranked:
             return None
         best = min(key for key, _, _ in ranked)
