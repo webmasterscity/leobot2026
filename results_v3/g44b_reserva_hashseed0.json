@@ -1,0 +1,117 @@
+{
+ "conjunto_sha256_16": "f4f62c610df27570",
+ "base_sha256_16": "0e9823dc6b069d51",
+ "huella_motor": "7f81d4ab83199c6c12bfef1e15395404a0fe4a58",
+ "tratamiento": {
+  "calificadas": 61,
+  "aciertos": 40,
+  "afirma_falso": 0,
+  "abiertas_equivocadas": 7,
+  "por_tipo": {
+   "abierta": "30/37",
+   "no": "0/6",
+   "no lo se": "6/11",
+   "si": "3/6",
+   "sin afirmar": "1/1"
+  },
+  "p50_ms": 17.255,
+  "p95_ms": 34.425
+ },
+ "ablacion_sin_verificacion_estructural": {
+  "calificadas": 61,
+  "aciertos": 40,
+  "afirma_falso": 0,
+  "abiertas_equivocadas": 7,
+  "por_tipo": {
+   "abierta": "30/37",
+   "no": "0/6",
+   "no lo se": "6/11",
+   "si": "3/6",
+   "sin afirmar": "1/1"
+  },
+  "p50_ms": 17.63,
+  "p95_ms": 44.78
+ },
+ "ablacion_sin_alineacion": {
+  "calificadas": 61,
+  "aciertos": 35,
+  "afirma_falso": 0,
+  "abiertas_equivocadas": 12,
+  "por_tipo": {
+   "abierta": "25/37",
+   "no": "0/6",
+   "no lo se": "6/11",
+   "si": "3/6",
+   "sin afirmar": "1/1"
+  },
+  "p50_ms": 1.431,
+  "p95_ms": 30.671
+ },
+ "sin_memoria": {
+  "calificadas": 61,
+  "aciertos": 12,
+  "afirma_falso": 0,
+  "abiertas_equivocadas": 0,
+  "por_tipo": {
+   "abierta": "0/37",
+   "no": "0/6",
+   "no lo se": "11/11",
+   "si": "0/6",
+   "sin afirmar": "1/1"
+  },
+  "p50_ms": 0.271,
+  "p95_ms": 16.842
+ },
+ "memoria_barajada": {
+  "calificadas": 61,
+  "aciertos": 7,
+  "afirma_falso": 3,
+  "abiertas_equivocadas": 37,
+  "por_tipo": {
+   "abierta": "0/37",
+   "no": "0/6",
+   "no lo se": "6/11",
+   "si": "0/6",
+   "sin afirmar": "1/1"
+  },
+  "p50_ms": 16.484,
+  "p95_ms": 31.817
+ },
+ "renombrado_invariantes": "50/61",
+ "nombres_sustituidos": 47,
+ "estrategia_siempre_no_lo_se": 11,
+ "reserva": "doble: dos conjuntos nuevos (validadores: 4 y 2 claves corregidas, 0 eliminadas), 14 conversaciones, 61 preguntas",
+ "g43b_congelado_misma_reserva": {
+  "aciertos": 40,
+  "calificadas": 61
+ },
+ "subagente_sonnet5_sin_clave": {
+  "aciertos": 60,
+  "calificadas": 61
+ },
+ "mlqa_600_no_vistos": {
+  "g44b": 0.2048,
+  "ablacion_sin_lemas_ni_tildes": 0.2055,
+  "solo_lector_g28": 0.2045,
+  "archivo": "results_v3/g44b_mlqa_reserva.json"
+ },
+ "diagnostico_renombrado": "27 de 47 nombres sustitutos llevan cifras («Octavio22») porque la lista del evaluador tiene 20 nombres; el etiquetador trata esas formas como números. Las 11 diferencias involucran esos nombres. Defecto del evaluador; el veredicto no se recalcula. Para el próximo evaluador: lista de nombres suficiente, sin cifras.",
+ "puerta": {
+  "aciertos": "40/61 = 65,6 % ≥ 60 % y ≥ 40 − 1: pasa",
+  "si_no_falsos": "0: pasa",
+  "abiertas_equivocadas": "7/37 = 19 % ≤ 20 %: pasa",
+  "barajada": "0 en abiertas y sí/no: pasa",
+  "renombrado": "50/61 = 82 % < 90 %: FALLA (defecto del evaluador, ver diagnóstico)",
+  "mlqa_f1": "0,2048 ≥ 0,2045 − 0,005: pasa",
+  "aporte_mlqa": "−0,0007 < +0,005: FALLA",
+  "p95_conversacion": "34 ms: pasa",
+  "resultado": "NO SUPERADA"
+ },
+ "fallos_por_causa_en_reserva_gastada": {
+  "contraste_no_por_otro_valor": 5,
+  "parafrasis_no_sabia": 4,
+  "contesta_sin_saber": 5,
+  "numeros_y_comparaciones": 3,
+  "otros_analisis_y_mundo": 4
+ }
+}
