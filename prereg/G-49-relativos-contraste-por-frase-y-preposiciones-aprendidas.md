@@ -88,3 +88,5 @@ Medida en los 14 conjuntos gastados (616 preguntas):
 Los relativos no mueven el desarrollo; el contraste por frase suma 1 acierto y 1 afirmación falsa.
 
 **Evaluación conjunta.** Por economía de reservas, G-49 se congela junto con G-50 (preregistro aparte, en respuesta a un dato de la prueba común del usuario) y se evalúa en la misma reserva doble, con sus propias ablaciones. **La puerta de G-49 no cambia.**
+
+**Actualización antes de congelar.** El prototipo de G-50 ([cifras](../results_v3/g50_ppmi_prototipo.json)) no justificó ningún cambio en el motor: los vecinos distribucionales son de la misma clase u opuestos. G-49 se congela solo, sin G-50.
