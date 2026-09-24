@@ -78,6 +78,12 @@ Trabajos cercanos, para ubicar el mecanismo:
 
 La diferencia es que aquí la sintaxis y las interrogativas son aprendidas por conteo, y que la ambigüedad lleva a abstenerse.
 
+**Enmienda antes de congelar (2026-09-24), por lo visto en desarrollo** (reserva gastada de G-41 y desarrollo de G-41; motor sin congelar). Dos defectos contradecían el principio declarado arriba («la oración que contiene la pregunta con su hueco»):
+1. **La cobertura va primero.** La puntuación no premiaba la oración que alinea más palabras de la pregunta. Si el núcleo nominal («vacas») estaba en una oración y no en otra, podía ganar la otra: «¿Cuántas vacas hay en la finca?» → «cinco caballos». La clave de orden pasa a ser: (número de palabras de la pregunta alineadas, incluido el núcleo, mayor es mejor; espejo; preposición; función).
+2. **El núcleo nominal es el sustantivo que sigue a la interrogativa** («qué color», «cuántas vacas»), no su cabeza sintáctica. La cabeza atrapaba el atributo de las oraciones con «ser»: en «¿Quién es la hermana de Daniel?», «hermana» quedaba dentro de la frase interrogativa y dejaba de ser obligatoria.
+
+No cambian el lector de G-28 de respaldo, ni la regla de ambigüedad, ni la puerta. Visto también en desarrollo y **sin corregir en G-42**: el lector de G-28 contesta preguntas que ninguna oración cubre, y en conversación casi siempre se equivoca; por ejemplo, «¿Cuántos años tiene la nevera?» → «blanca». Es un problema de si la pregunta tiene respuesta en lo recordado, y será el diseño siguiente.
+
 ## Evaluación
 
 **Base educada:** la de G-41 (AnCora `train` + 2000 MLQA), reconstruida con el motor de G-42. No usa nada de ningún conjunto de validación.
