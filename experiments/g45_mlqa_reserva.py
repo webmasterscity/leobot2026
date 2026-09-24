@@ -1,6 +1,6 @@
 """G-45: lectura MLQA en 600 casos NO vistos, con el bot educado completo.
 
-python3 -m experiments.g44b_mlqa_reserva BASE.json OUT.json
+python3 -m experiments.g45_mlqa_reserva BASE.json OUT.json
 
 Casos cuyo contexto no está en la educación, en los 300 visibles de desarrollo
 ni en las muestras de G-43, G-43b y G-44b; semilla de `freeze-G-45`.
