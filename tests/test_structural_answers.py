@@ -63,11 +63,21 @@ class StructuralAnswerTests(unittest.TestCase):
 
     def test_equally_good_answers_are_reported_as_ambiguous(self):
         bot = taught_bot()
+        bot.noun_clash = False          # G-42 behaviour, kept under the G-45 ablation switch
         bot.respond('Marta tiene tres hijos.')
         bot.respond('Marta tiene dos perros.')
         answer = bot.answer_by_structure('¿Cuántos gatos tiene Marta?')
         self.assertEqual(answer['status'], 'literal_ambiguous')
         self.assertTrue(answer['text'].startswith('No lo sé'))
+
+    def test_another_noun_does_not_answer(self):
+        # G-45: nobody said how many cats; sons and dogs speak of other things.
+        bot = taught_bot()
+        bot.respond('Marta tiene tres hijos.')
+        bot.respond('Marta tiene dos perros.')
+        self.assertIsNone(bot.answer_by_structure('¿Cuántos gatos tiene Marta?'))
+        self.assertTrue(bot.respond('¿Cuántos gatos tiene Marta?')['text'].startswith('No lo sé'))
+        self.assertEqual(bot.answer_by_structure('¿Qué tiene Marta?')['status'], 'literal_ambiguous')
 
     def test_ablation_switch_leaves_the_older_reader(self):
         bot = taught_bot()

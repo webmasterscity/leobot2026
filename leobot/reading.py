@@ -26,6 +26,8 @@ STEM = 5
 SMOOTHING = 4.0
 BM25_K1 = 1.2
 BM25_B = 0.75
+LEAD_WORDS = 6             # G-45: question words whose presence in the answer sentence is counted
+CATEGORY_SUPPORT = 5       # worked examples before a noun can be learned as a category
 # G-42: learned word classes that carry grammar rather than content; they do
 # not have to be found in the answering sentence and do not anchor it.
 FUNCTION_TAGS = frozenset({'DET', 'ADP', 'AUX', 'PRON', 'CCONJ', 'SCONJ', 'PUNCT'})
@@ -184,6 +186,7 @@ class ReadingMemoryMixin:
         G-42: the questions read are evidence of which words ask."""
         if self.syntax_model.get('sentences'):
             self._compile_question_words()
+            self._compile_category_nouns()
         return {'status': 'reading_consolidated', 'words': 0, 'pairs': 0}
 
     def _gap_neighbours(self, question: list[str], key: str, present: set) -> tuple:
@@ -285,6 +288,11 @@ class ReadingMemoryMixin:
                 del model[name][:-5000]
         tokens, gold_start, gold_end = found
         present = {_norm(t) for t in tokens}
+        # G-45: which of the question's first words the answering sentence repeats.
+        lead = [t.lower() for t in _TOKEN.findall(question) if _is_word(t)][:LEAD_WORDS]
+        table = model.setdefault('lead_presence', {})
+        presence = ' '.join(lead) + '\x1e' + ''.join('1' if _norm(w) in present else '0' for w in lead)
+        table[presence] = table.get(presence, 0) + 1
         qset = set(qtokens)
         missing = model.setdefault('question_unmatched', {})
         for token in qset - present:
@@ -542,6 +550,29 @@ class ReadingMemoryMixin:
         return round(sum(self._feature_score(key, f, prior)
                          for f in self._span_features(tokens, found[0], found[1], anchors, qset, gap, normalized)), 9)
 
+    def _majority_tag(self, word: str) -> str | None:
+        lexicon = self.syntax_model['lexicon']
+        counts = {t: lexicon.get(word + '\x1f' + t, 0) + lexicon.get(word.capitalize() + '\x1f' + t, 0)
+                  for t in self._tag_list()}
+        return max(sorted(counts), key=lambda t: counts[t]) if sum(counts.values()) else None
+
+    def _compile_category_nouns(self) -> None:
+        """G-45: a noun after an interrogative names a category («color»,
+        «tipo») when the answering sentence leaves it out in at least half of
+        at least CATEGORY_SUPPORT worked examples."""
+        counts: dict = {}
+        for key, n in sorted(self.reading_model.get('lead_presence', {}).items()):
+            lead, bits = key.split('\x1e')
+            words = lead.split()
+            q = self.asking_word(words)
+            if q is None or q + 1 >= len(words) or self._majority_tag(words[q + 1]) != 'NOUN':
+                continue
+            row = counts.setdefault(self.lemma_key(words[q + 1]), [0, 0])
+            row[0] += n
+            row[1] += n * (bits[q + 1] == '0')
+        self.reading_model['category_nouns'] = sorted(k for k, (n, absent) in counts.items()
+                                                      if n >= CATEGORY_SUPPORT and absent >= 0.5 * n)
+
     def _word_key(self, word: str) -> str:
         """How two words are matched when aligning: by learned dictionary form
         (G-44b), or by the 5-letter stem when that is switched off."""
@@ -608,6 +639,7 @@ class ReadingMemoryMixin:
             if i not in phrase and t not in FUNCTION_TAGS and _is_word(w) and low[i] not in interrogatives:
                 where.setdefault(self._word_key(w), i)
         noun_key = self._word_key(words[noun]) if noun is not None else None
+        categories = set(self.reading_model.get('category_nouns', ()))
         required = set(where)
         if not required:
             return None
@@ -655,6 +687,9 @@ class ReadingMemoryMixin:
                     continue
                 if host is not None and host not in self._ancestors(enhanced, node):
                     continue
+                if (host is None and noun is not None and stags[node] == 'NOUN' and keys[node] != noun_key
+                        and getattr(self, 'noun_clash', True) and noun_key not in categories):
+                    continue        # G-45: another noun speaks of another thing
                 span, stack = [], [node]
                 while stack:
                     k = stack.pop(); span.append(k); stack.extend(children[k])
@@ -692,8 +727,12 @@ class ReadingMemoryMixin:
                 'evidence': {'source': row['source'], 'utterance': row['text'], 'structural': True}}
 
     def answer_from_utterances(self, question: str, use_model: bool = True,
-                               use_correspondences: bool = True) -> dict | None:
-        """Answer from literal memory, or return None to keep the old behaviour."""
+                               use_correspondences: bool = True, documents_only: bool = False) -> dict | None:
+        """Answer from literal memory, or return None to keep the old behaviour.
+        G-45: with ``documents_only`` the reader looks only at documents read,
+        not at what was said in conversation: it was educated on questions that
+        always have an answer in their text, which holds when asking about a
+        document and not about a conversation."""
         model = self.reading_model
         if not self.reading_utterances or model['examples'] == 0:
             return None
@@ -704,6 +743,9 @@ class ReadingMemoryMixin:
             return None
         index = self._reading_index()
         candidates = sorted({p for t in set(qtokens) for p in index.get(t, ())})
+        if documents_only:
+            candidates = [p for p in candidates
+                          if not str(self.reading_utterances[p].get('document', '')).startswith('conversación')]
         word_sets = self._reading_index_cache[3]
         literal = {p: self._reading_overlap(qtokens, word_sets[p]) for p in candidates}
         scored = [(literal[p], p) for p in candidates]

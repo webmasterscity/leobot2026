@@ -852,10 +852,12 @@ class DialogueMixin:
                 if structural is not None:
                     return structural
         # G-28: no construction interprets the question; align it with
-        # what was read and answer literally, or abstain.
-        reading = self.answer_from_utterances(text)
-        if reading is not None:
+        # what was read and answer literally, or abstain.  G-45: only over
+        # documents read; what nobody said in conversation is not guessed.
+        reading = self.answer_from_utterances(text, documents_only=not getattr(self, 'conversation_guessing', False))
+        if reading is not None and not (interrogatives and reading.get('status') == 'unknown'):
             return reading
+        # G-42: understood but without the fact, the one abstention starts with «No lo sé».
         if interrogatives:
             return {'text': 'No lo sé: no encontré esa información en lo que me dijeron ni en lo que leí.',
                     'status': 'literal_unknown'}
