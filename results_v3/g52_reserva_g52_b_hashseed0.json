@@ -176,15 +176,23 @@
   "SQuAD-es 2400": "pasa (0,2385 >= 0,2314)",
   "negadores no y nunca": "pasa"
  },
- "puerta_G53_material_limpio": {
+ "retirada_5_9": {
+  "G-51 (sin entidades)": "se queda: aporte +2 en la cuadruple y +3 en referencias",
+  "G-49 (relativos y contraste por frase)": "se retira: aporte -1 en la cuadruple y 0 en referencias"
+ },
+ "puerta_G53_material_limpio_ANULADA": {
   "abiertas equivocadas <= 2/3 de la ablacion (B + referencias)": "pasa (1 frente a 2)",
   "aciertos >= ablacion (B + referencias)": "pasa (52 frente a 49)",
   "afirma lo falso no aumenta": "pasa (0 = 0)",
   "SQuAD-es 2400": "pasa (0,2385; sin G-53 0,2378; lector 0,2364)",
   "base <= 100 MiB": "pasa (93,1)"
  },
- "retirada_5_9": {
-  "G-51 (sin entidades)": "se queda: aporte +2 en la cuadruple y +3 en referencias",
-  "G-49 (relativos y contraste por frase)": "se retira: aporte -1 en la cuadruple y 0 en referencias"
+ "nota_auditoria_5_10": "Corrección tras la auditoría 5.10 (results_v3/auditoria_g53r.md): la mitad B tampoco era limpia; su redactor incorporó la sugerencia del usuario (4 de sus 8 claves «no lo sé» piden un color no dicho). La puerta de G-53 se juzga solo con las referencias (48): aciertos 26 frente a 25, abiertas equivocadas 1 frente a 2, afirma lo falso 0 = 0. Pasa por una sola pregunta. La cifra «52 frente a 49 (B + referencias)» queda como dato, no como puerta.",
+ "puerta_G53_solo_referencias": {
+  "aciertos >= ablacion": "pasa (26 frente a 25)",
+  "abiertas equivocadas <= 2/3 de la ablacion": "pasa (1 frente a 2)",
+  "afirma lo falso no aumenta": "pasa (0 = 0)",
+  "SQuAD-es 2400": "pasa (0,2385; sin G-53 0,2378; lector 0,2364)",
+  "base <= 100 MiB": "pasa (93,1)"
  }
 }

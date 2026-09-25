@@ -97,3 +97,21 @@ El mensaje del usuario con la sugerencia llegó al contexto de los subagentes re
 Por eso, decidido **antes** de ejecutar Leobot sobre ellos:
 - **La puerta de G-53** se juzga solo con el material limpio: la mitad B y los dos conjuntos de referencias. El resultado en la reserva completa se informa como dato.
 - **La puerta de G-52** se juzga con todo, como estaba preregistrada. Esas preguntas no favorecen sus mecanismos; si acaso, ponen a prueba el hueco en el predicado.
+
+## Corrección tras la auditoría 5.10 (2026-09-25)
+
+La [auditoría independiente](../results_v3/auditoria_g53r.md) encontró que la nota anterior se equivocó: **la mitad B tampoco es limpia**. Su redactor incorporó la sugerencia: 4 de sus 8 claves «no lo sé» piden un color que no se dijo. Solo los dos redactores de referencias la rechazaron. La sugerencia les llegó porque el flujo orquestado reenvía el mensaje del usuario a cada subagente.
+
+Con la regla de la propia nota bien aplicada, la puerta de G-53 se juzga **solo con las referencias (48)**:
+- aciertos: 26 frente a 25;
+- abiertas equivocadas: 1 frente a 2;
+- afirma lo falso: 0 = 0.
+
+**Pasa por una sola pregunta.** Es una diferencia que no se distingue del ruido. La cifra «52 frente a 49» queda como dato.
+
+**Pendientes que la auditoría señaló.** Se miden en la reserva de G-54, que es material nuevo:
+- el control preregistrado «educación sin SQuAD-es» (clases solo de MLQA);
+- el desglose de equivocadas por clase de pregunta;
+- el hueco del evaluador: una respuesta con contenido a una clave «no lo sé» no contaba como error.
+
+**Defecto de la enmienda: la exención de los nombres propios.** Produce «¿De qué color es Trueno?» → «Alejandra». Se corrige en la enmienda de G-54.
