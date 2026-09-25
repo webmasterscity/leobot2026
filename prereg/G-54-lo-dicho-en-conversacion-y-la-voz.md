@@ -262,3 +262,20 @@ Los conjuntos de desarrollo están todos en tercera persona. Por eso casi no mid
 - paráfrasis: el resto.
 
 Siguiente: G-55 (el «no» por la clase aprendida) y un ciclo para la charla con esas causas.
+
+## Verificación independiente 5.10 de `freeze-G-54r` (2026-09-25)
+
+[Informe](../results_v3/auditoria_g54r.md). **Confirma.**
+- La base es idéntica byte a byte.
+- En los tres conjuntos da 96, 30 y 31, igual que `estable-G-13`.
+- La voz no cambia ningún acierto.
+- Con `PYTHONHASHSEED=1` las respuestas son idénticas.
+- Las referencias de `freeze-G-54` dan las mismas cifras.
+- El juicio de naturalidad se recalcula exacto.
+
+Salvedades registradas:
+1. **Palabras propias de la voz no declaradas antes:** «lo contrario» («No, me contaste lo contrario.») y «eso» («No lo sé: eso no me lo has contado.»). Se declaran aquí como programadas: son voz de quien responde, no conocimiento. El umbral `FORM_RULE_SUPPORT = 2` tampoco estaba declarado.
+2. **El juicio de naturalidad completo** (preguntas, mapa, notas del juez y respuestas) se guarda ahora en [`results_v3/g54_naturalidad_juicio/`](../results_v3/g54_naturalidad_juicio/). El juez vio las respuestas de `freeze-G-54`; en `freeze-G-54r` coinciden 63 de 64, y la distinta es mejor.
+3. **Orden de los commits:** la enmienda es del mismo segundo que el código. Precede al tag, pero git no demuestra que preceda al código; es la misma salvedad que en G-53.
+4. **«Eso no me lo has contado»** sale también cuando la pregunta es sobre un documento leído.
+5. **Errata:** el commit `50a5c1e` dice «charla 65»; son 64 preguntas calificadas.
