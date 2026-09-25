@@ -38,6 +38,7 @@ OPEN_TOKENS = 10           # ... and a word class is open for that kind with thi
 OPEN_RATE = 0.5            # ... if this share of them are words seen once (Good-Turing)
 KIND_DOMINANT = 2 / 3      # ... the class is checked only where one class takes this share of the answers
 MEMBER_LABELS = frozenset({'amod', 'nmod', 'appos', 'flat', 'nummod', 'compound'})
+FORM_SUPPORT = 3           # G-54: a counted reading of a form with this support outweighs rarer ones
 # G-42: learned word classes that carry grammar rather than content; they do
 # not have to be found in the answering sentence and do not anchor it.
 FUNCTION_TAGS = frozenset({'DET', 'ADP', 'AUX', 'PRON', 'CCONJ', 'SCONJ', 'PUNCT'})
@@ -393,13 +394,14 @@ class ReadingMemoryMixin:
         words = [t.lower() for t in _TOKEN.findall(question) if _is_word(t)]
         polarity = self.negated(sum(w in negators for w in words))
         content = {self._search_key(w) for w in words if w not in negators}
-        supports: dict[int, list[str]] = {0: [], 1: []}
+        supports: dict[int, list[int]] = {0: [], 1: []}
         reported: list[str] = []
         structure = None
         if getattr(self, 'structural_verification', True) and self.syntax_model.get('sentences'):
             structure = self._question_links(question, negators)
         if structure is not None:
             self._resolve_references()
+        scoped = structure is not None and getattr(self, 'scoped_polarity', True) and getattr(self, 'same_fact', True)
         if content and self.reading_utterances:
             index = self._reading_index()
             # G-51: a row where another mention of the same entity is said also counts.
@@ -407,42 +409,265 @@ class ReadingMemoryMixin:
             candidates = set(lists[0]).intersection(*lists[1:]) if lists else set()
             for position in sorted(candidates):
                 row = self.reading_utterances[position]
+                asserted: list = []
                 if structure is not None:
-                    held = self._links_hold(structure, row)
+                    held = self._links_hold(structure, row, asserted)
                     if held is None:
                         continue
                     if held == 'subordinate':
                         reported.append(row['source'])
                         continue
+                if scoped:
+                    # G-54: a negator negates the word it hangs from (its scope in
+                    # UD), as in open answers: only those on the placed words count.
+                    words_, _, heads_, labels_ = self._tree_of(row)
+                    for polarity_ in sorted({self._scope_negated(words_, heads_, set(p.values()), negators, labels_)
+                                             for p in asserted}):
+                        supports[polarity_].append(position)
+                    continue
                 said = [t.lower() for t in row['tokens'] if _is_word(t)]
-                supports[self.negated(sum(w in negators for w in said))].append(row['source'])
+                supports[self.negated(sum(w in negators for w in said))].append(position)
+        rows = self.reading_utterances
         same, opposite = supports[polarity], supports[1 - polarity]
+        recency = getattr(self, 'recency', True) and all(self._conversational(rows[p]) for p in same)
+        sources = lambda positions: [rows[p]['source'] for p in positions]
         if same and opposite:
-            return {'text': 'No lo sé: lo que me dijeron se contradice.', 'status': 'literal_contradiction',
-                    'evidence': same + opposite}
+            return {'text': self._voiced('contradiction', [rows[p] for p in sorted(same + opposite)])
+                    or 'No lo sé: lo que me dijeron se contradice.', 'status': 'literal_contradiction',
+                    'evidence': sources(same + opposite)}
+        contrast = structure is not None and polarity == 0 and getattr(self, 'contrast_answers', True) and rows
         if same:
-            return {'text': 'Sí, según lo que me dijeron.', 'status': 'literal_yes', 'evidence': same}
+            if contrast and recency:
+                # G-54: a later sentence with another value in the same place replaces the one that agreed.
+                later = self._contrast_row(structure, negators, after=max(same))
+                if later is not None:
+                    row, said = later
+                    return {'text': self._voiced('contrast', [row]) or f'No: según lo que me dijeron, «{row["text"]}»',
+                            'status': 'literal_contrast',
+                            'evidence': [row['source']], 'said_value': said}
+            return {'text': self._voiced('yes', [rows[p] for p in same]) or 'Sí, según lo que me dijeron.',
+                    'status': 'literal_yes', 'evidence': sources(same)}
         if opposite:
-            return {'text': 'No, según lo que me dijeron.', 'status': 'literal_no', 'evidence': opposite}
+            return {'text': self._voiced('no', [rows[p] for p in opposite]) or 'No, según lo que me dijeron.',
+                    'status': 'literal_no', 'evidence': sources(opposite)}
         if reported:
             return {'text': 'No lo sé con seguridad: lo que me dijeron lo presenta como algo dicho o supuesto, '
                             'no como un hecho.', 'status': 'literal_reported', 'evidence': reported}
-        if structure is not None and polarity == 0 and getattr(self, 'contrast_answers', True) and self.reading_utterances:
+        if contrast:
             # G-46: another value of the same attribute was said.
-            index = self._reading_index()
-            for value in sorted(structure['stems']):
-                others = [LEMMA + k if self._lemma_sets() else structure['norms'][k]
-                          for k in structure['stems'] if k != value]
-                lists = sorted((index.get(t, ()) for t in others), key=len)
-                if not lists:
+            found = self._contrast_row(structure, negators)
+            if found is not None:
+                row, said = found
+                return {'text': self._voiced('contrast', [row]) or f'No: según lo que me dijeron, «{row["text"]}»',
+                        'status': 'literal_contrast',
+                        'evidence': [row['source']], 'said_value': said}
+        return {'text': self._voiced('unknown') or 'No lo sé: no tengo esa información.', 'status': 'literal_unknown',
+                'evidence': []}
+
+    def _scope_negated(self, words, heads, aligned, negators, labels=None) -> int:
+        """G-47/G-54: the polarity of placed words: the learned negators that
+        hang from them.  G-54: a word in apposition or a name part is in the
+        scope of a negator on the noun it goes with («no su colega Tomás»)."""
+        scope = set(aligned)
+        if labels is not None and getattr(self, 'scoped_polarity', True):
+            for j in aligned:
+                while labels[j] in ('appos', 'flat') and heads[j]:
+                    j = heads[j] - 1
+                    scope.add(j)
+        return self.negated(sum(words[k].lower() in negators and heads[k] - 1 in scope for k in range(len(words))))
+
+    def _same_kind(self, a: str, b: str) -> bool:
+        """G-54: whether two words are members of one closed learned kind of
+        answer (G-53: «martes» and «lunes» are both answers to «qué día»)."""
+        index = self.__dict__.get('_kind_members')
+        table = self.reading_model.get('answer_kinds', {})
+        if index is None or index[0] != len(table):
+            members: dict = {}
+            for key, row in table.items():
+                counts = row.get('members', {})
+                tokens, hapax = sum(counts.values()), sum(n == 1 for n in counts.values())
+                if ' ' not in key or row['n'] < KIND_SUPPORT or (tokens >= OPEN_TOKENS and hapax >= OPEN_RATE * tokens):
                     continue
-                for position in sorted(set(lists[0]).intersection(*lists[1:])):
-                    row = self.reading_utterances[position]
-                    said = self._contrast(structure, row, negators)
-                    if said is not None:
-                        return {'text': f'No: según lo que me dijeron, «{row["text"]}»', 'status': 'literal_contrast',
-                                'evidence': [row['source']], 'said_value': said}
-        return {'text': 'No lo sé: no tengo esa información.', 'status': 'literal_unknown', 'evidence': []}
+                for member in counts:
+                    members.setdefault(member.split('\x1f')[0], set()).add(key)
+            index = self.__dict__['_kind_members'] = (len(table), members)
+        return bool(index[1].get(self.lemma_key(a), set()) & index[1].get(self.lemma_key(b), set()))
+
+    def _contrast_row(self, structure, negators, after=None):
+        """G-46: the first remembered row (after position ``after``, if given)
+        that says another value of the question's attribute, with that value.
+        G-54: a later value replaces the one asked about only if both are of
+        one learned kind."""
+        index = self._reading_index()
+        for value in sorted(structure['stems']):
+            others = [LEMMA + k if self._lemma_sets() else structure['norms'][k]
+                      for k in structure['stems'] if k != value]
+            lists = sorted((index.get(t, ()) for t in others), key=len)
+            if not lists:
+                continue
+            for position in sorted(set(lists[0]).intersection(*lists[1:])):
+                if after is not None and position <= after:
+                    continue
+                row = self.reading_utterances[position]
+                said = self._contrast(structure, row, negators)
+                if said is not None and (after is None or self._same_kind(value, said)):
+                    return row, said
+        return None
+
+    # ----- the voice of the answer (G-54) -----------------------------------
+    def _swapped_form(self, word: str, tag: str, hint: str | None = None):
+        """G-54: the word said by the other person: a first person singular
+        form becomes second and back, with the same lemma and the other
+        features.  The analyses of a form are those counted in the treebanks;
+        a verb form never counted is analysed with the learned ending rules,
+        keeping only lemmas the treebanks know.  A form of more than one person
+        («cantaba») takes the person of its clause (``hint``: its subject or
+        clitic), or is not restated.  The new form is the counted one; if it was
+        never counted, it is made with the rule of the same lemma ending that
+        makes the old form (the verb is regular there: «hice» is not).  A
+        pronoun or possessive takes the most frequent form with those features.
+        None: the word does not change; False: it should and no form is known."""
+        model = self.syntax_model
+        low = word.lower()
+        verbal = tag in ('VERB', 'AUX')
+        classes = (tag,) + tuple(t for t in ('VERB', 'AUX') if verbal and t != tag)
+        known = model.get('form_analysis', {})
+        rules = model.get('form_rules', {})
+        table = model.get('form_table', {})
+        readings: dict = {}
+        for t in classes:
+            for key, count in known.get(low + '\x1f' + t, {}).items():
+                readings[(t,) + tuple(key.split('\x1f'))] = count
+        if not readings and verbal:
+            lemmas = self.__dict__.get('_known_lemmas')
+            if lemmas is None or lemmas[0] != len(table):
+                lemmas = self.__dict__['_known_lemmas'] = (len(table), {k.split('\x1f')[1] for k in table})
+            for slot, bucket in rules.items():
+                rtag, features_, end = slot.split('\x1f')
+                if rtag not in classes:
+                    continue
+                for rule, support in bucket.items():
+                    strip, add = rule.split('\x1f')
+                    if low.endswith(add) and len(low) > len(add):
+                        lemma = low[:len(low) - len(add)] + strip
+                        if lemma.endswith(end) and lemma in lemmas[1]:
+                            key = (rtag, lemma, features_)
+                            readings[key] = max(readings.get(key, 0), support)
+        if not readings:
+            return None
+        # A reading seen fewer times than the support rule, next to one that
+        # reaches it, is annotation noise (G-35's support).
+        if max(readings.values()) >= FORM_SUPPORT:
+            readings = {r: n for r, n in readings.items() if n >= FORM_SUPPORT}
+        person_of = lambda r: next((f for f in r[2].split('|') if f.startswith('Person=')), None)
+        swap = lambda features, old, new: '|'.join(sorted(new if f == old else f for f in features.split('|')))
+        if hint in ('Person=1', 'Person=2') and hint not in {person_of(r) for r in readings}:
+            # The same form in the hinted person, by the lemma's learned paradigm («vivía» with «yo»).
+            for (t, lemma, features_), n in list(readings.items()):
+                other = swap(features_, person_of((t, lemma, features_)), hint)
+                counted = table.get(t + '\x1f' + lemma + '\x1f' + other)
+                bucket = rules.get(t + '\x1f' + other + '\x1f' + lemma[-2:], {})
+                made = {lemma[:len(lemma) - len(r.split('\x1f')[0])] + r.split('\x1f')[1]
+                        for r in bucket if lemma.endswith(r.split('\x1f')[0])}
+                if counted == low or (counted is None and low in made):
+                    readings[(t, lemma, other)] = n
+        persons = {person_of(r) for r in readings}
+        if hint in persons:
+            persons = {hint}
+        if len(persons) != 1:
+            return False if persons & {'Person=1', 'Person=2'} else None
+        person = next(iter(persons))
+        if person not in ('Person=1', 'Person=2'):
+            return None
+        tag, lemma, features_ = max(sorted(r for r in readings if person_of(r) == person), key=lambda r: readings[r])
+        values = features_.split('|')
+        # Plural persons depend on the variety of Spanish: not restated.  The
+        # number of a possessive is the possessed thing's.
+        if 'Number[psor]=Plur' in values or ('Number=Plur' in values and 'Number[psor]=Sing' not in values):
+            return False
+        target = swap(features_, person, 'Person=2' if person == 'Person=1' else 'Person=1')
+        form = next((table[t + '\x1f' + lemma + '\x1f' + target] for t in classes
+                     if t + '\x1f' + lemma + '\x1f' + target in table), None)
+        if form is None and verbal:
+            source = rules.get(tag + '\x1f' + features_ + '\x1f' + lemma[-2:], {})
+            used = [r.split('\x1f')[0] for r in source if lemma.endswith(r.split('\x1f')[0])
+                    and lemma[:len(lemma) - len(r.split('\x1f')[0])] + r.split('\x1f')[1] == low]
+            bucket = rules.get(tag + '\x1f' + target + '\x1f' + lemma[-2:], {})
+            made = {lemma[:len(lemma) - len(r.split('\x1f')[0])] + r.split('\x1f')[1]: n
+                    for r, n in bucket.items() if r.split('\x1f')[0] in used}
+            if made:
+                form = max(sorted(made), key=lambda f: made[f])
+        if form is None and not verbal:
+            form = model.get('form_by_features', {}).get(tag + '\x1f' + target)
+        if form is None:
+            return False
+        return form.capitalize() if word[:1].isupper() else form
+
+    def _restated(self, row) -> str | None:
+        """G-54: a sentence said in conversation, as the listener says it back:
+        the persons swapped with learned forms.  None if a word cannot be."""
+        if not isinstance(row, dict) or not self._conversational(row):
+            return None
+        tree = self._utterance_tree(row['text'])
+        if tree is None:
+            return None
+        words, tags, heads, labels = list(tree[0]), tree[1], tree[2], tree[3]
+        # The person of a clause: its subject's, or its pronoun clitic's (they agree).
+        hints = {}
+        for k in range(len(words)):
+            h = heads[k] - 1
+            if h < 0:
+                continue
+            if str(labels[k]).startswith('nsubj') and tags[k] in ('NOUN', 'PROPN'):
+                hints.setdefault(h, 'Person=3')
+            elif tags[k] == 'PRON':
+                person = next((f for f in self.morphology(words[k], 'PRON') if f.startswith('Person=')), None)
+                if person and (str(labels[k]).startswith('nsubj') or 'Reflex=Yes' in self.morphology(words[k], 'PRON')):
+                    hints[h] = person
+        for k, (w, t) in enumerate(zip(words, tags)):
+            hint = hints.get(k)
+            if hint is None and labels[k] in ('cop', 'aux') and heads[k]:
+                hint = hints.get(heads[k] - 1)
+            new = self._swapped_form(w, t, hint)
+            if new is False:
+                return None
+            if new:
+                words[k] = new
+        while words and not _is_word(words[-1]):
+            words.pop()
+        if not words:
+            return None
+        if tags[0] != 'PROPN':
+            words[0] = words[0][:1].lower() + words[0][1:]
+        return self._written(self._surface(words))
+
+    @staticmethod
+    def _written(text: str) -> str:
+        """Spacing of written punctuation: none before closing marks, none after opening ones."""
+        text = re.sub(r' ([,.;:!?)»])', r'\1', text)
+        return re.sub(r'([(«¿¡]) ', r'\1', text)
+
+    def _voiced(self, answer: str, rows=()) -> str | None:
+        """G-54: the text of a yes/no answer or an abstention in Leobot's own
+        voice (``answer_voice``): what was told, said back.  Only «sí», «no»,
+        «no lo sé», «me contaste que» and «no me lo has contado» are Leobot's
+        own words (programmed, not knowledge).  An open answer stays the
+        constituent itself, as a person answers.  None: the old text."""
+        if not getattr(self, 'answer_voice', True):
+            return None
+        told = [t for t in (self._restated(r) for r in rows) if t]
+        if answer == 'yes':
+            return f'Sí, me contaste que {told[-1]}.' if told else 'Sí, me lo contaste.'
+        if answer == 'no':
+            return f'No, me contaste que {told[-1]}.' if told else 'No, me contaste lo contrario.'
+        if answer == 'contrast':
+            return f'No: me contaste que {told[-1]}.' if told else None
+        if answer == 'contradiction':
+            return f'No lo sé: me contaste que {told[0]}, pero también que {told[-1]}.' \
+                if len(set(told)) > 1 else None
+        if answer == 'unknown':
+            return 'No lo sé: eso no me lo has contado.'
+        return None
 
     @staticmethod
     def _enhanced(heads, labels):
@@ -592,9 +817,11 @@ class ReadingMemoryMixin:
                         return True
         return False
 
-    def _links_hold(self, structure, source):
+    def _links_hold(self, structure, source, asserted=None):
         """None if the sentence does not state the question's links; 'subordinate'
-        if it does but inside a subordinate clause; 'asserted' otherwise."""
+        if it does but inside a subordinate clause; 'asserted' otherwise.  G-54:
+        the placements that hold outside a subordinate clause are added to
+        ``asserted`` when a list is given."""
         tree = self._tree_of(source)
         if tree is None:
             return None
@@ -607,6 +834,8 @@ class ReadingMemoryMixin:
                 return None
             enhanced, _ = self._graph(heads, labels)
             held = [self._subordinate(enhanced, tags, heads, set(p.values())) for p in placements]
+            if asserted is not None:
+                asserted.extend(p for p, sub in zip(placements, held) if not sub)
             return 'asserted' if not all(held) else 'subordinate'
         places: dict = {}
         for j, w in enumerate(words):
@@ -961,6 +1190,16 @@ class ReadingMemoryMixin:
         ranked = [entry for entry in ranked if self._kind_fits(low, q, noun, entry[1], self._head_of(entry)) is not False]
         if not ranked:
             return None
+        if getattr(self, 'recency', True) and self._kind_checked(low, q, noun):
+            # G-54: values of the kind asked for, placed as fully, said in several
+            # sentences of the conversation: the last one said replaces the others.
+            quality = min(entry[0][:4] for entry in ranked)
+            top = [entry for entry in ranked if entry[0][:4] == quality]
+            if all(isinstance(entry[2], dict) and self._conversational(entry[2]) for entry in top) \
+                    and len({id(entry[2]) for entry in top}) > 1:
+                where_said = self._row_positions()
+                last = max(where_said[id(entry[2])] for entry in top)
+                ranked = [entry for entry in top if where_said[id(entry[2])] == last]
         best = min(key for key, _, _, _ in ranked)
         winners = {}
         for key, text, row, node in ranked:
@@ -1025,7 +1264,7 @@ class ReadingMemoryMixin:
             aliased = sum(k not in literal[j] for k, j in placement.items())
             # The noun of the interrogative phrase («qué calle») is the gap's kind, not a named thing.
             named = self._same_entity(row, aligned - {placement.get(noun_key)})
-            negated = self.negated(sum(swords[k].lower() in negators and sheads[k] - 1 in aligned for k in range(n)))
+            negated = self._scope_negated(swords, sheads, aligned, negators, slabels)
             if negated != polarity or self._subordinate(enhanced, stags, sheads, aligned):
                 continue
             covered = [False] * n
@@ -1040,12 +1279,18 @@ class ReadingMemoryMixin:
                 mark(root)
             host = placement.get(noun_key) if noun_key is not None else None
             first = -(host is not None) if getattr(self, 'g47b_structure', True) else 0
+            # G-54: a value (not a clause) a negator hangs from was denied, not said
+            # («el doce, no el trece»); it is neither an answer nor part of one.
+            denied = {sheads[k] - 1 for k in range(n) if swords[k].lower() in negators and sheads[k]
+                      and stags[sheads[k] - 1] not in ('VERB', 'AUX')} if getattr(self, 'negated_value', True) else set()
             if predicate_gap:
                 # G-52: what the sentence predicates, with a copula, of a placed word.
                 for node, span in self._predicates_of(swords, stags, sheads, slabels, children, aligned):
+                    if node in denied:
+                        continue
                     text = self._span_text(row, swords, span)
                     if text:
-                        out.append(((first, -len(placement), aliased, 0, False, False), text, row, node))
+                        out.append(((first, -len(placement), False, aliased, 0, False, False), text, row, node))
             nodes = []
             for node in range(n):
                 if covered[node] or slabels[node] == 'conj':
@@ -1058,24 +1303,37 @@ class ReadingMemoryMixin:
                 if (host is None and noun is not None and stags[node] == 'NOUN' and noun_key not in keys[node]
                         and getattr(self, 'noun_clash', True) and noun_key not in categories):
                     continue        # G-45: another noun speaks of another thing
+                if node in denied:
+                    continue
                 span, stack = [], [node]
                 while stack:
-                    k = stack.pop(); span.append(k); stack.extend(children[k])
+                    k = stack.pop(); span.append(k); stack.extend(c for c in children[k] if c not in denied)
                 if all(stags[k] in FUNCTION_TAGS or not _is_word(swords[k]) for k in span):
                     continue
                 nodes.append((node, span))
-            for node, span in self._joined_siblings(nodes, sheads, slabels, stags, swords):
+            for node, span in self._joined_siblings(nodes, sheads, slabels, stags, swords,
+                                                    getattr(self, 'answer_constituent', True)):
                 if node in named or self._subject_taken(node, placement, structure, tree, keys, enhanced):
                     continue
                 sdist = self._graph_distances(graph, node, stags)
                 mirror = sum(abs(qdist[where[k]] - sdist[placement[k]]) for k in where)
                 # The gap's preposition: any preposition the answer's head carries.
                 own = {swords[k].lower() for k in children[node] if stags[k] == 'ADP'}
+                # G-54: a question whose gap carries a preposition asks for the
+                # constituent with that one (the phrase noun, when placed, carries
+                # it, and its name then carries none); that outweighs distances.
+                # The constituent's first-level complements count too («de
+                # Barranquilla a Cartagena»).  Another preposition may still be the
+                # answer («desde las cinco» to «¿a qué hora?»): it only ranks after.
+                inner = own | {swords[c].lower() for m in children[node] if slabels[m] in ('nmod', 'conj')
+                               for c in children[m] if stags[c] == 'ADP'}
+                marked = bool(case) and getattr(self, 'gap_case', True) and (
+                    bool(own) if host is not None else case not in inner)
                 text = self._span_text(row, swords, span)
                 if text:
                     # G-47b: a sentence holding the noun of the interrogative phrase comes first.
-                    out.append(((first, -len(placement), aliased, mirror, case not in own if case else bool(own),
-                                 slabels[node] != qlabel), text, row, node))
+                    out.append(((first, -len(placement), marked, aliased, mirror,
+                                 case not in own if case else bool(own), slabels[node] != qlabel), text, row, node))
         return out
 
     @staticmethod
@@ -1171,13 +1429,25 @@ class ReadingMemoryMixin:
         return any(g in placed and any((k, 'nsubj') in structure['subjects'] for k in keys[g]) for g in governed)
 
     @staticmethod
-    def _joined_siblings(nodes, heads, labels, tags, words):
+    def _joined_siblings(nodes, heads, labels, tags, words, names=False):
         """G-47: siblings with the same function, joined only by a conjunction
-        or a comma, answer together («cuarenta y dos» analysed as two numbers)."""
+        or a comma, answer together («cuarenta y dos» analysed as two numbers).
+        G-54 (``names``): name parts (UD ``flat``) of one head, side by side,
+        are one name and answer together («Santa Ana»)."""
         nodes = sorted(nodes, key=lambda item: min(item[1]))
         groups = []
         for node, span in nodes:
             last = groups[-1] if groups else None
+            # A name part joins the words right before it under the same head; an
+            # apposed name joins them when they are written with a capital (Spanish
+            # writes names so: «la escuela San Jorge»).
+            if names and last is not None and heads[last[0]] == heads[node] and min(span) == max(last[1]) + 1 \
+                    and (labels[node] == 'flat' or (labels[node] == 'appos' and tags[node] == 'PROPN'
+                                                    and all(words[k][:1].isupper() for k in last[1]))):
+                last[1].extend(span)
+                if tags[node] == 'PROPN' and tags[last[0]] != 'PROPN':
+                    groups[-1] = (node, last[1])        # the name is the group's head
+                continue
             if last is not None and heads[last[0]] == heads[node] and labels[last[0]] == labels[node]:
                 gap = range(max(last[1]) + 1, min(span))
                 if gap and all(tags[k] in ('CCONJ', 'PUNCT') and words[k] != '.' for k in gap) \
@@ -1322,6 +1592,29 @@ class ReadingMemoryMixin:
                     out.add(self._word_key(words[k]))
         return out
 
+    def _kind_checked(self, low, q, noun) -> bool:
+        """G-54: whether G-53 checks this kind of question: one class takes most
+        of its answers, or its noun has a closed set of members."""
+        if not getattr(self, 'answer_kind', True):
+            return False
+        key, row = self._kind_row(low, q, noun)
+        if row is None:
+            return False
+        if max(row['classes'].values()) >= KIND_DOMINANT * row['n']:
+            return True
+        members = row['members']
+        tokens, hapax = sum(members.values()), sum(count == 1 for count in members.values())
+        return ' ' in key and not (tokens >= OPEN_TOKENS and hapax >= OPEN_RATE * tokens)
+
+    def _row_positions(self) -> dict:
+        """Where each remembered row sits in memory (its order in time)."""
+        rows = self.reading_utterances
+        cache = self.__dict__.get('_row_position_cache')
+        if cache is None or cache[0] != (id(rows), len(rows)):
+            cache = self.__dict__['_row_position_cache'] = ((id(rows), len(rows)),
+                                                              {id(row): p for p, row in enumerate(rows)})
+        return cache[1]
+
     def _kind_fits(self, low, q, noun, text, head=None) -> bool | None:
         """G-53: whether a candidate answer is of the kind the question asks
         for, as learned from worked questions; None when too little was learned.
@@ -1339,12 +1632,15 @@ class ReadingMemoryMixin:
         if head is None:
             return False
         word, tag = head
+        share = row['classes'].get(tag, 0) >= KIND_SHARE * row['n']
         # The class, only where the kind clearly asks for one class of word.
-        if max(row['classes'].values()) >= KIND_DOMINANT * row['n'] and \
-                row['classes'].get(tag, 0) < KIND_SHARE * row['n']:
+        if max(row['classes'].values()) >= KIND_DOMINANT * row['n'] and not share:
             return False
-        if ' ' not in key or tag == 'PROPN':
-            return True            # a name is an arbitrary label: never having seen it says nothing
+        # A name is an arbitrary label: never having seen it says nothing, but
+        # only where names are a learned class of answers to this kind (G-54:
+        # a name is not a colour).
+        if ' ' not in key or (tag == 'PROPN' and (share or not getattr(self, 'name_kind', True))):
+            return True
         members = row['members']
         # Open or closed: how often an answer word of this kind was new (Good-Turing).
         tokens, hapax = sum(members.values()), sum(count == 1 for count in members.values())

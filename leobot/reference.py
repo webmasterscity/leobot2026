@@ -48,6 +48,19 @@ class ReferenceMixin:
         if not getattr(self, 'reference_resolution', True) or not self.syntax_model.get('morph_table'):
             return
         rows = self.reading_utterances
+        # G-54: the first person is who speaks; once the conversation says that
+        # person's name, every sentence is resolved again with it.
+        speaker = self._speaker()
+        marker = ' '.join(w for w, _, _, _ in self._copy(*speaker)) if speaker is not None else None
+        applied = self.__dict__.get('_speaker_applied')
+        if applied != (id(rows), marker):
+            if any(self._conversational(row) and row.get('referenced') and row.get('speaker') != marker for row in rows):
+                for row in rows:
+                    if self._conversational(row):
+                        for key in ('referenced', 'resolved', 'referents', 'genders', 'speaker', 'history_tree'):
+                            row.pop(key, None)
+                self.__dict__['_reference_cursor'] = None
+            self.__dict__['_speaker_applied'] = (id(rows), marker)
         state = self.__dict__.get('_reference_cursor')
         start = state[1] if state and state[0] == id(rows) and state[1] <= len(rows) else 0
         pending = [p for p in range(start, len(rows)) if self._conversational(rows[p])
@@ -61,7 +74,7 @@ class ReferenceMixin:
             history, p = [], pending[0] - 1
             while p >= 0 and len(history) < WINDOW:
                 if self._conversational(rows[p]):
-                    tree = tuple(rows[p]['resolved'][:4]) if rows[p].get('resolved') else self._utterance_tree(rows[p]['text'])
+                    tree = self._history_tree(rows[p])
                     if tree is not None:
                         history.insert(0, tree)
                 p -= 1
@@ -72,19 +85,107 @@ class ReferenceMixin:
                 tree = self._utterance_tree(row['text'])
                 if not row.get('referenced') and tree is not None:
                     before = dict(learned)
-                    resolved, added = self._resolve_tree(tree, history, learned)
+                    resolved, added, plain = self._resolve_speaking(tree, history, learned, speaker)
                     if learned != before:
                         row['genders'] = {k: v for k, v in learned.items() if before.get(k) != v}
                     if added:
                         row['resolved'] = [list(part) for part in resolved]
                         row['referents'] = added
                         self._index_extend(p, added)
+                    if plain is not resolved:
+                        row['history_tree'] = [list(part) for part in plain[:4]]
+                    if marker is not None:
+                        row['speaker'] = marker
                 row['referenced'] = True
-                current = tuple(row['resolved'][:4]) if row.get('resolved') else tree
+                current = self._history_tree(row) if tree is not None else None
                 if current is not None:
                     history.append(current)
                     del history[:-WINDOW]
         self.__dict__['_reference_cursor'] = (id(rows), len(rows))
+
+    def _history_tree(self, row):
+        """The tree later sentences look back at: resolved, but without the
+        speaker's name (G-54), since a third person never refers to who speaks."""
+        if row.get('history_tree'):
+            return tuple(row['history_tree'])
+        return tuple(row['resolved'][:4]) if row.get('resolved') else self._utterance_tree(row['text'])
+
+    # ----- who speaks (G-54) ----------------------------------------------
+    def _first_person_verb(self, words, tags, labels, children, v) -> bool:
+        """Whether node ``v`` heads a clause whose finite verb (itself, or its
+        copula or auxiliary) is learned as first person singular."""
+        if labels[v] in ('cop', 'aux'):
+            return False
+        for k in [v] + [c for c in children[v] if labels[c] in ('cop', 'aux')]:
+            if tags[k] in ('VERB', 'AUX'):
+                # A verb form with a learned person is finite.
+                if {'Person=1', 'Number=Sing'} <= self.morphology(words[k], tags[k]):
+                    return True
+        return False
+
+    def _first_person_edits(self, tree, source) -> dict:
+        """G-54: the edits that put ``source`` (a mention) where the tree speaks
+        in the first person singular, by the learned features: a personal
+        pronoun, a possessive, and a first-person verb without a subject.  A
+        first-person object of a first-person verb («me llamo») is the subject
+        itself and is left alone."""
+        words, tags, heads, labels = tree
+        n = len(words)
+        children = [[] for _ in range(n)]
+        for d, h in enumerate(heads):
+            if h:
+                children[h - 1].append(d)
+        edits = {}
+        for i in range(n):
+            features = self.morphology(words[i], tags[i])
+            if not {'Person=1', 'Number=Sing', 'PronType=Prs'} <= features:
+                continue
+            if 'Poss=Yes' in features:
+                if heads[i] and tags[heads[i] - 1] in ('NOUN', 'PROPN'):
+                    edits[i] = ('possessive', source)
+            elif tags[i] == 'PRON' and (str(labels[i]).startswith('nsubj') or not heads[i] or not
+                                        self._first_person_verb(words, tags, labels, children, heads[i] - 1)):
+                edits[i] = ('pronoun', source)
+        for v in range(n):
+            governed = [v] + [k for k in children[v] if labels[k] in ('cop', 'aux')]
+            if self._first_person_verb(words, tags, labels, children, v) and not any(
+                    str(labels[k]).startswith(('nsubj', 'csubj')) for g in governed for k in children[g]):
+                edits[('subject', v)] = ('subject', source)
+        return edits
+
+    def _speaker(self):
+        """G-54: the name of who speaks, as a mention (tree, node): the other
+        side of an identity (G-51: apposition, copula or a learned identity
+        verb) whose one side is the first person; the last one said.  None if
+        the conversation has not said it."""
+        rows = self.reading_utterances
+        if not getattr(self, 'speaker', True) or not self.syntax_model.get('morph_table') \
+                or not hasattr(self, '_identity_pairs'):
+            return None
+        # Memory only grows by appending (G-41): only the rows not yet seen are looked at.
+        cache = self.__dict__.get('_speaker_cache')
+        if cache is None or cache[0] != id(rows) or cache[1] > len(rows):
+            cache = (id(rows), 0, None)
+        found = cache[2]
+        if cache[1] < len(rows):
+            place = (['\x00'], ['PROPN'], [0], ['root'])
+            for row in rows[cache[1]:]:
+                if not self._conversational(row):
+                    continue
+                tree = self._utterance_tree(row['text'])
+                if tree is None:
+                    continue
+                edits = {k: e for k, e in self._first_person_edits(tree, (place, 0)).items() if e[0] != 'possessive'}
+                if not edits:
+                    continue
+                new = self._rebuilt(tree, edits)[0][:4]
+                marks = {k for k, w in enumerate(new[0]) if w == '\x00'}
+                for a, b in sorted(self._identity_pairs(new)):
+                    other = b if a in marks else a if b in marks else None
+                    if other is not None and other not in marks and new[1][other] == 'PROPN':
+                        found = (new, other)
+            self.__dict__['_speaker_cache'] = (id(rows), len(rows), found)
+        return found
 
     # ----- mentions -----------------------------------------------------
     def _agreement(self, words, tags, children, node, learned=None):
@@ -151,6 +252,24 @@ class ReferenceMixin:
 
     # ----- resolution ---------------------------------------------------
     def _resolve_tree(self, tree, history, learned=None):
+        """The tree with its third-person references resolved, and the words added."""
+        edits = self._reference_edits(tree, history, learned)
+        return self._rebuilt(tree, edits) if edits else (tree, [])
+
+    def _resolve_speaking(self, tree, history, learned, speaker):
+        """G-54: the tree resolved, the words added, and the tree without the
+        speaker's name (what later sentences look back at)."""
+        edits = self._reference_edits(tree, history, learned)
+        first = {k: e for k, e in self._first_person_edits(tree, speaker).items()
+                 if k not in edits} if speaker is not None else {}
+        if not edits and not first:
+            return tree, [], tree
+        resolved, added = self._rebuilt(tree, {**edits, **first})
+        if not first:
+            return resolved, added, resolved
+        return resolved, added, self._rebuilt(tree, edits)[0] if edits else tree
+
+    def _reference_edits(self, tree, history, learned=None) -> dict:
         words, tags, heads, labels = tree
         n = len(words)
         children = [[] for _ in range(n)]
@@ -244,9 +363,7 @@ class ReferenceMixin:
                 chosen = next(((t, k) for t, k in order if self._plural(t, k)), None)
                 if chosen is not None:
                     edits[('subject', root)] = ('subject', chosen + (True,))
-        if not edits:
-            return tree, []
-        return self._rebuilt(tree, edits)
+        return edits
 
     def _plural(self, tree, k) -> bool:
         """G-52: a mention that stands for several: learned plural number or a coordination."""
@@ -330,8 +447,13 @@ class ReferenceMixin:
                 for item in items:
                     if item['head'] is old:
                         item['head'] = top
+                # G-54: a dative clitic's antecedent takes the dative's learned preposition (G-49: «a»).
+                dative = self.syntax_model.get('dative_case')
+                case = [{'word': dative, 'tag': 'ADP', 'head': top, 'label': 'case', 'origin': -1}] \
+                    if dative and getattr(self, 'dative_copy', True) and old['tag'] == 'PRON' \
+                    and ('Case=Dat' in self.morphology(old['word'], 'PRON') or old['label'] == 'iobj') else []
                 at = order.index(old)
-                order[at:at + 1] = copied
+                order[at:at + 1] = case + copied
             elif kind == 'possessive':
                 old = items[key]
                 noun = old['head']

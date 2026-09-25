@@ -859,7 +859,8 @@ class DialogueMixin:
             return reading
         # G-42: understood but without the fact, the one abstention starts with «No lo sé».
         if interrogatives:
-            return {'text': 'No lo sé: no encontré esa información en lo que me dijeron ni en lo que leí.',
+            return {'text': (self._voiced('unknown') if hasattr(self, '_voiced') else None)
+                    or 'No lo sé: no encontré esa información en lo que me dijeron ni en lo que leí.',
                     'status': 'literal_unknown'}
         return None
 

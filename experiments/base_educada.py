@@ -1,13 +1,16 @@
 """Bot educado de forma general, para la validación común con --base.
 
-python3 -m experiments.base_educada ANCORA_DIR SALIDA.json
+python3 -m experiments.base_educada ANCORA_DIR SALIDA.json [--clases-mlqa]
 
 Educación, toda anterior e independiente de cualquier conjunto de validación:
 - sintaxis y separación de palabras con UD AnCora `train` (como G-35), con los
   rasgos morfológicos si el motor los acepta (G-41: negación e interrogativas)
   y los lemas si los acepta (G-44);
 - lectura con los 2000 ejemplos MLQA de educación de G-28b (semilla 2828);
-- G-53: la clase de respuesta de cada clase de pregunta, contada en SQuAD-es v1.1 `train` (87 595 preguntas).
+- G-53: la clase de respuesta de cada clase de pregunta, contada en SQuAD-es v1.1 `train` (87 595 preguntas);
+- G-54: las formas verbales de cada persona y las de pronombres y posesivos de primera y segunda (lema, clase y
+  rasgos → forma), contadas además en UD COSER `train` (habla oral transcrita), solo para esa tabla: no entran al
+  analizador.  GSD no, porque mezcla el voseo («salís») con el tuteo.
 Se guarda con Bot.save para que cada conversación parta de una copia nueva.
 """
 from __future__ import annotations
@@ -60,6 +63,12 @@ def main():
             if not line.startswith('#') and '-' in first:
                 a, b = first.split('-')
                 bot.observe_multiword(line.split('\t')[1], [words[position[str(i)]] for i in range(int(a), int(b) + 1)])
+    if hasattr(bot, 'observe_forms'):
+        # G-54: forms from a treebank of speech, forms only.
+        for name in ('es_coser-ud-train.conllu',):
+            for block, idx in sentences(ancora / name):
+                cols = [block[i].split('\t') for i in idx]
+                bot.observe_forms([c[1] for c in cols], [c[3] for c in cols], [c[2] for c in cols], [c[5] for c in cols])
     bot.consolidate_syntax()
     test = rows(archive(), 'MLQA_V1/test/test-context-es-question-es.json')
     for e in random.Random(EDU_SEED).sample(test, 2300)[:2000]:
@@ -68,7 +77,13 @@ def main():
     # G-53: the kind of answer each kind of question takes, counted from the
     # SQuAD-es v1.1 training questions (question and answer only; no parsing),
     # once the words that ask are learned.
-    for question, answer in squad_es_train():
+    # Control preregistrado de G-53 («educación sin SQuAD-es»): con --clases-mlqa las clases
+    # se cuentan solo en los 2000 ejemplos MLQA de educación.
+    if '--clases-mlqa' in sys.argv:
+        pairs = [(e['question'], e['answers'][0]) for e in random.Random(EDU_SEED).sample(test, 2300)[:2000]]
+    else:
+        pairs = squad_es_train()
+    for question, answer in pairs:
         bot.observe_answer_kind(question, answer)
     bot.save(out)
     print(json.dumps({'feats': with_feats, 'cpu_s': round(time.process_time() - t0, 1), 'mib': round(out.stat().st_size / 2**20, 1),

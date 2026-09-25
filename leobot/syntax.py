@@ -30,6 +30,7 @@ OPENER_SUPPORT = 3        # questions a word must open to be learned as interrog
 OPENER_RATE = 0.9         # ... and its balanced share of question openings
 MORPH_TAGS = frozenset({'PRON', 'DET', 'NOUN', 'VERB', 'AUX'})   # G-47: words whose features are kept
 MORPH_NAMES = frozenset({'Person', 'Number', 'Gender', 'Poss', 'PronType', 'Reflex', 'Case', 'Definite'})   # G-51: Definite
+FORM_RULE_SUPPORT = 2      # G-54: distinct lemmas behind an ending rule of first or second person
 LEMMA_SUPPORT = 3          # G-47b: an annotated lemma kept as an alternative this often ...
 LEMMA_SHARE = 0.2          # ... and in at least this share of the form's occurrences
 CONCORD_AFTER = 5         # G-52: cases after a verb before a word can be learned as negative concord ...
@@ -165,6 +166,8 @@ class SyntaxMixin:
                     _add(cases['nmod'], marks[d][0])
                 elif label in ('obl', 'iobj') and heads[d] in dative_heads:
                     _add(cases['dative'], marks[d][0])
+        if feats is not None and lemmas is not None:
+            self._count_forms(words, tags, lemmas, feats)
         if lemmas is not None and labels is not None:
             # G-47: how often each verb has a subject of its own.
             subjects = model.setdefault('subject_counts', {})
@@ -182,6 +185,63 @@ class SyntaxMixin:
                     row = table.setdefault(context, {})
                     row[label] = row.get(label, 0) + 1
         return {'status': 'syntax_example_learned'}
+
+    def observe_forms(self, words, tags, lemmas, feats) -> dict:
+        """G-54: learn only which form each lemma takes with each set of
+        features (from another treebank), without touching the parser's
+        statistics."""
+        if not (len(words) == len(tags) == len(lemmas) == len(feats)) or not words:
+            return {'status': 'forms_rejected'}
+        self._count_forms(words, tags, lemmas, feats)
+        self.syntax_model['compiled'] = False
+        return {'status': 'forms_learned'}
+
+    def _count_forms(self, words, tags, lemmas, feats) -> None:
+        """G-54: verb forms of every person; pronouns and possessives of the first and second."""
+        table = self.syntax_model.setdefault('form_counts', {})
+        for word, tag, lemma, feat in zip(words, tags, lemmas, feats):
+            values = str(feat).split('|')
+            if tag not in MORPH_TAGS or not lemma or lemma == '_' or not any(v.startswith('Person=') for v in values):
+                continue
+            if tag not in ('VERB', 'AUX') and not ({'Person=1', 'Person=2'} & set(values)):
+                continue
+            row = table.setdefault(tag + '\x1f' + lemma.lower() + '\x1f' + '|'.join(sorted(values)), {})
+            row[word.lower()] = row.get(word.lower(), 0) + 1
+
+    def _compile_forms(self) -> None:
+        """G-54: from the counted forms, the form of each (class, lemma,
+        features); every analysis of each form with its count; the most
+        frequent form of each (class, features) regardless of lemma; and the
+        ending rules (lemma end → form end, by class, features and the lemma's
+        last two letters) with the lemmas behind them."""
+        model = self.syntax_model
+        forms, analysis, by_features, rules = {}, {}, {}, {}
+        for key, row in sorted(model.get('form_counts', {}).items()):
+            tag, lemma, features = key.split('\x1f')
+            form = max(sorted(row), key=lambda w: row[w])
+            forms[key] = form
+            for word, count in row.items():
+                entry = analysis.setdefault(word + '\x1f' + tag, {})
+                entry[lemma + '\x1f' + features] = entry.get(lemma + '\x1f' + features, 0) + count
+            slot = tag + '\x1f' + features
+            total = sum(row.values())
+            if total > by_features.get(slot, (0, ''))[0]:
+                by_features[slot] = (total, form)
+            if tag in ('VERB', 'AUX'):
+                common = 0
+                while common < min(len(lemma), len(form)) and lemma[common] == form[common]:
+                    common += 1
+                common = min(common, len(lemma) - 2)      # a rule always replaces the lemma's ending
+                rule = lemma[common:] + '\x1f' + form[common:]
+                bucket = rules.setdefault(slot + '\x1f' + lemma[-2:], {})
+                bucket.setdefault(rule, set()).add(lemma)
+        model['form_table'] = forms
+        model['form_analysis'] = analysis
+        model['form_by_features'] = {k: v for k, (_, v) in by_features.items()}
+        model['form_rules'] = {slot: {rule: len(lemmas) for rule, lemmas in bucket.items()
+                                      if len(lemmas) >= FORM_RULE_SUPPORT}
+                               for slot, bucket in rules.items()}
+        model['form_rules'] = {k: v for k, v in model['form_rules'].items() if v}
 
     def _observe_opener(self, words, question: bool) -> None:
         """G-42: the first words of a sentence, counted apart for questions and
@@ -467,6 +527,7 @@ class SyntaxMixin:
         model['impersonal'] = sorted(lemma for lemma, (n, s) in model.get('subject_counts', {}).items()
                                      if n >= IMPERSONAL_SUPPORT and s < IMPERSONAL_RATE * n)
         self._compile_question_words()
+        self._compile_forms()
         model['lemma_table'] = {w: max(sorted(row), key=lambda k: row[k])
                                 for w, row in model.get('lemma_counts', {}).items()
                                 if max(sorted(row), key=lambda k: row[k]) != w}
