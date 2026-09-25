@@ -124,3 +124,20 @@ Mismo material y mismas cifras que en la sección «Resultado» de [G-56](G-56-c
 - No se vuelve a medir hasta que otro preregistro lo necesite.
 
 **Una observación del control.** Con las clases barajadas, el total baja a 146. La caída no viene del contraste, que aporta 0 con las clases barajadas: viene de G-53, que usa las mismas clases para elegir la clase de la respuesta. Confirma que G-53 se apoya en ellas.
+
+## Verificación independiente 5.10 (`freeze-G-55r`, [informe](../results_v3/auditoria_g55r.md))
+
+**Confirma** la promoción a `estable-G-15`, como consolidación y no como fase superada:
+- base idéntica byte a byte;
+- 101/21/36, y 100 sin el contraste por clase;
+- con otra semilla de hash, las 235 respuestas son idénticas;
+- regresión 642/2/0;
+- sin hardcodeo.
+
+**Declaraciones que pidió:**
+1. **Desviación no declarada del punto 2.** Para dos nombres propios, el código pide la misma preposición, pero no la condición preregistrada de que los nombres propios sean una clase de respuesta (≥ 10 %) para ese hueco. No influyó en el +1 (que viene de «qué día») ni añadió «no» falsos. Queda así en `estable-G-15`.
+2. **Días de la semana aprendidos como conectores** («domingo», «lunes»…, de las fechas que abren noticias en AnCora). La voz puede comerse la palabra inicial: «Domingo, el primo de Ana, vive en Cali» se repite como «me contaste que el primo de Ana, vive en Cali». Afecta solo al texto, no a la calificación. Se corrige en el ciclo siguiente con una regla general: un conector no es una frase nominal sin preposición.
+3. **La persona del verbo coordinado** no se ajusta cuando el analizador toma el verbo por sustantivo. Es un límite.
+4. **`role_check` sin aporte confirmado.** Es neutro en 235 preguntas; se conserva como excepción declarada.
+5. **La prueba de la trampa de la oración coordinada** vuelve como fallo esperado.
+6. **Trazabilidad:** las cifras de `estable-G-14` en el material nuevo, la medida de la retirada (con las huellas) y las respuestas del subagente quedan en `results_v3/`.

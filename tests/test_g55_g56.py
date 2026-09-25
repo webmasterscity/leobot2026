@@ -78,5 +78,23 @@ class RoleCheckTests(unittest.TestCase):
         self.assertTrue(bot.verify_from_utterances(question)['text'].startswith('Sí'))
 
 
+
+class KnownTrapTests(unittest.TestCase):
+    @unittest.expectedFailure
+    def test_a_coordinated_clause_does_not_lend_its_place(self):
+        """Open limit (the holding of links within a clause, G-56, was retired
+        by rule 5.9): the verb of a coordinated clause lends its place, as in
+        «Pedro nació en Bogotá y ahora vive en Medellín» → «¿Pedro vive en
+        Bogotá?» → «Sí»."""
+        said = 'Juan vive en Bogotá y trabaja en Cali .'
+        question = '¿ Juan vive en Cali ?'
+        bot = given({
+            said: (said.split(), [P, V, A, P, 'CCONJ', V, A, P, X], [2, 0, 4, 2, 6, 2, 8, 6, 2],
+                   ['nsubj', 'root', 'case', 'obl', 'cc', 'conj', 'case', 'obl', 'punct']),
+            question: (question.split(), [X, P, V, A, P, X], [3, 3, 0, 5, 3, 3],
+                       ['punct', 'nsubj', 'root', 'case', 'obl', 'punct'])})
+        self.assertFalse(bot.verify_from_utterances(question)['text'].startswith('Sí'))
+
+
 if __name__ == '__main__':
     unittest.main()
