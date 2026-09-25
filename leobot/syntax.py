@@ -32,6 +32,11 @@ MORPH_TAGS = frozenset({'PRON', 'DET', 'NOUN', 'VERB', 'AUX'})   # G-47: words w
 MORPH_NAMES = frozenset({'Person', 'Number', 'Gender', 'Poss', 'PronType', 'Reflex', 'Case', 'Definite'})   # G-51: Definite
 LEMMA_SUPPORT = 3          # G-47b: an annotated lemma kept as an alternative this often ...
 LEMMA_SHARE = 0.2          # ... and in at least this share of the form's occurrences
+CONCORD_AFTER = 5         # G-52: cases after a verb before a word can be learned as negative concord ...
+CONCORD_AFTER_RATE = 0.5  # ... sharing the verb with a marked negator this often
+CONCORD_BEFORE = 10       # ... cases before the verb ...
+CONCORD_BEFORE_RATE = 0.05  # ... where it (almost) never has one: there it negates by itself
+CONCORD_TAGS = frozenset({'ADV', 'PRON', 'DET', 'CCONJ'})
 IMPERSONAL_SUPPORT = 30   # G-47: a verb seen this often ...
 IMPERSONAL_RATE = 0.05    # ... with an explicit subject less often than this is impersonal
 _WORD = re.compile(r'\w+|[^\w\s]')
@@ -121,6 +126,19 @@ class SyntaxMixin:
                 row[0] += 1
                 row[1] += 'Polarity=Neg' in values
                 row[2] += 'PronType=Int' in values
+            # G-52: negative concord.  A word hung from a verb is counted after
+            # and before it, with or without a marked negator under the same verb.
+            concord = model.setdefault('concord_counts', {})
+            negated = {heads[k] for k in range(len(words)) if 'Polarity=Neg' in str(feats[k]).split('|')}
+            for k, (word, tag) in enumerate(zip(lowered, tags)):
+                h = heads[k]
+                if tag not in CONCORD_TAGS or not h or tags[h - 1] not in ('VERB', 'AUX') \
+                        or 'Polarity=Neg' in str(feats[k]).split('|'):
+                    continue
+                row = concord.setdefault(word, [0, 0, 0, 0])     # after, after with negator, before, before with
+                side = 0 if k + 1 > h else 2
+                row[side] += 1
+                row[side + 1] += h in negated
             # G-47: person, number, gender and kind of reference, per word and class.
             morph = model.setdefault('morph_counts', {})
             for word, tag, feat in zip(lowered, tags, feats):
@@ -208,6 +226,18 @@ class SyntaxMixin:
                 if count >= OPENER_SUPPORT and asked / (asked + stated) >= OPENER_RATE:
                     learned.add(word)
         model['interrogatives'] = sorted(learned)
+
+    def negator_words(self) -> set:
+        """G-41 marked negators, plus G-52 negative concord when switched on."""
+        words = set(self.syntax_model.get('negators', ()))
+        if getattr(self, 'negative_concord', True):
+            words |= set(self.syntax_model.get('concord_negators', ()))
+        return words
+
+    def negated(self, count: int) -> int:
+        """Polarity from the negators present: with negative concord two of them
+        do not affirm («no sale nunca»); without it, their parity (G-41)."""
+        return int(count > 0) if getattr(self, 'negative_concord', True) else count % 2
 
     def morphology(self, word: str, tag: str) -> set:
         """G-47: the learned features of a word in a class (empty if unknown)."""
@@ -401,6 +431,12 @@ class SyntaxMixin:
         # the feature in >= 90 % of the word's annotated occurrences).
         marks = model.get('word_marks', {})
         model['negators'] = sorted(w for w, (n, neg, _) in marks.items() if neg >= 3 and neg >= 0.9 * n)
+        # G-52: words of negative concord («nunca», «nadie»): after the verb they
+        # go with a marked negator, before it they negate by themselves.
+        model['concord_negators'] = sorted(
+            w for w, (after, with_after, before, with_before) in model.get('concord_counts', {}).items()
+            if w not in model['negators'] and after >= CONCORD_AFTER and with_after >= CONCORD_AFTER_RATE * after
+            and before >= CONCORD_BEFORE and with_before <= CONCORD_BEFORE_RATE * before)
         # G-47: each word's features with the same rule, and the verbs that
         # almost never take a subject.
         model['morph_table'] = {key: '|'.join(sorted(v for v, c in row.items() if v != 'n' and c >= 3

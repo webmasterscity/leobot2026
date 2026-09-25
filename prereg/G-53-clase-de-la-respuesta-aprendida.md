@@ -64,3 +64,28 @@ Si pasa junto con G-52: verificación independiente 5.10 y `estable-G-13`. Si fa
 ## En palabras fáciles de entender
 
 Cuando alguien pregunta «¿de qué color es la casa?», no sirve contestar «grande»: eso no es un color. Leobot a veces contestaba así, seguro de sí mismo. Ahora, antes de responder, revisará si la respuesta es de la clase que se pide: un color, un número, un lugar, una persona o un día. Esa clase la aprende contando qué se respondió en decenas de miles de preguntas ya resueltas, sin listas escritas a mano. Si la respuesta no calza, dirá «No lo sé», que es mejor que equivocarse.
+
+## Enmienda antes de congelar (2026-09-24), por lo visto en desarrollo
+
+Medida en los 18 conjuntos gastados (791 preguntas), con G-52 encendido.
+
+**Primera versión, tal como estaba preregistrada:** 590 frente a 599 sin `answer_kind`. Bajaban las abiertas equivocadas (17 frente a 24), pero se perdían 24 respuestas correctas, por tres defectos:
+1. **La clase de la primera palabra de contenido no es la clase de la respuesta.** «Junto a la ventana» se clasificaba por «junto» y «tres kilos de naranjas» por «tres». Ahora la clase es la del **núcleo** de la respuesta en la frase («ventana», «kilos»). Si no hay núcleo, se sigue usando la primera palabra de contenido.
+2. **Clase de palabra en preguntas que admiten muchas clases.** «¿Qué…?», «¿Dónde…?» y «¿Cuándo…?» reparten sus respuestas entre varias clases, y el umbral del 10 % descartaba respuestas correctas («matemáticas» a «¿Qué enseña…?»). Ahora esa comprobación se aplica solo donde una clase se lleva al menos **2/3** de las respuestas («cuántos»: número 81 %).
+3. **Nombres propios.** «Cali», «Cartagena» y «Cuenca» se descartaban porque «qué ciudad» salía cerrada (Good-Turing 0,44). Un nombre propio es una etiqueta arbitraria: no haberlo visto no dice nada. **Los nombres no necesitan haberse visto.**
+
+Además:
+- **Orden de la educación.** Las clases se cuentan después de consolidar las preguntas de educación. Si no, «cuántos» y «cuántas» todavía no se conocían como interrogativas y no se contaban.
+- **Good-Turing sobre toda la clase de pregunta.** El cálculo de Good-Turing se hace sobre todas las respuestas de esa clase de pregunta, no por clase de palabra. Por clase, los pocos sustantivos de «qué color» (22 vistos una vez de 42, en su mayoría restos de traducción) la abrían. Sobre toda la clase de pregunta da 0,34: cerrada, como corresponde a los colores.
+
+| Variante (desarrollo, 791) | Aciertos | Afirma lo falso | Abiertas equivocadas | «no lo sé» |
+|---|---|---|---|---|
+| G-52 + G-53 (enmendado) | **607** | 6 | **16** | 148/151 |
+| sin `answer_kind` | 599 | 6 | 24 | 143/151 |
+| G-53 preregistrado | 590 | 6 | 17 | 149/151 |
+
+**G-53 enmendado frente a la ablación:** 10 preguntas ganadas y 2 perdidas.
+- **Ganadas:** «¿Cuántos años tiene…?» ya no responde «llamado», «menor» ni «un gato llamado Rayo»; «¿De qué color…?» responde «rojo» o «es azul» en vez de «un modelo del año…»; «¿En qué mes…?» responde «Cada agosto» en vez de «en la plaza»; «nueve gallinas» en vez de «blancas».
+- **Perdidas:** «se llama Ignacio Rojas» y «de la empresa será el próximo jueves». Eran respuestas mal cortadas que acertaban por la expresión regular.
+
+La puerta no cambia.

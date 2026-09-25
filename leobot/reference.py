@@ -125,10 +125,11 @@ class ReferenceMixin:
         return [(i, agreement) for _, i, agreement in out]
 
     @staticmethod
-    def _copy(tree, node):
+    def _copy(tree, node, coordination=False):
         """The mention's words: the noun with its determiners, modifiers,
         name parts and «de» complement, one level deep, as (word, tag, local
-        head, label) with local heads."""
+        head, label) with local heads.  G-52: with ``coordination``, also the
+        elements coordinated with it («Pedro y Luis»)."""
         words, tags, heads, labels = tree
         children = [[] for _ in words]
         for d, h in enumerate(heads):
@@ -139,6 +140,10 @@ class ReferenceMixin:
             k = stack.pop()
             keep.append(k)
             allowed = KEEP if k == node or labels[k] in ('appos', 'flat') else INNER
+            if coordination and k == node:
+                allowed = allowed | {'conj'}
+            elif coordination and labels[k] == 'conj':
+                allowed = KEEP | {'cc'}
             stack.extend(c for c in children[k] if labels[c] in allowed | ({'case'} if k != node else set()))
         keep.sort()
         position = {k: n for n, k in enumerate(keep)}
@@ -236,18 +241,36 @@ class ReferenceMixin:
         if root is not None and history and not any(str(labels[k]).startswith(('nsubj', 'csubj'))
                                                      for g in governed for k in children[g]):
             finite = self._finite(words, tags, labels, children, root)
-            if finite is not None and 'Person=3' in finite and 'Number=Sing' in finite:
-                lemma = self.syntax_model.get('lemma_table', {}).get(words[root].lower(), words[root].lower())
-                if lemma not in set(self.syntax_model.get('impersonal', ())):
-                    order = [(history[past], k) for past in reversed(range(len(history)))
-                             for k, _ in self._mentions(history[past])]
-                    chosen = self._first_compatible(order, None, 'Sing', exclude=set(), current=tree,
-                                                    learned=learned if getattr(self, 'g47b_structure', True) else None)
-                    if chosen is not None:
-                        edits[('subject', root)] = ('subject', chosen)
+            lemma = self.syntax_model.get('lemma_table', {}).get(words[root].lower(), words[root].lower())
+            personal = lemma not in set(self.syntax_model.get('impersonal', ()))
+            order = [(history[past], k) for past in reversed(range(len(history)))
+                     for k, _ in self._mentions(history[past])]
+            if finite is not None and 'Person=3' in finite and 'Number=Sing' in finite and personal:
+                chosen = self._first_compatible(order, None, 'Sing', exclude=set(), current=tree,
+                                                learned=learned if getattr(self, 'g47b_structure', True) else None)
+                if chosen is not None:
+                    edits[('subject', root)] = ('subject', chosen)
+            elif finite is not None and 'Person=3' in finite and 'Number=Plur' in finite and personal \
+                    and getattr(self, 'plural_subjects', True):
+                # G-52: a plural verb takes the most prominent plural mention: a
+                # noun learned as plural or a coordination, copied whole.
+                chosen = next(((t, k) for t, k in order if self._plural(t, k)), None)
+                if chosen is not None:
+                    edits[('subject', root)] = ('subject', chosen + (True,))
         if not edits:
             return tree, []
         return self._rebuilt(tree, edits)
+
+    def _plural(self, tree, k) -> bool:
+        """G-52: a mention that stands for several: learned plural number or a coordination."""
+        words, tags, heads, labels = tree
+        children = [[] for _ in words]
+        for d, h in enumerate(heads):
+            if h:
+                children[h - 1].append(d)
+        if any(labels[c] == 'conj' and tags[c] in ('NOUN', 'PROPN') for c in children[k]):
+            return True
+        return self._agreement(words, tags, children, k)[1] == 'Plur'
 
     def _is_subject(self, tree, k) -> bool:
         return str(self._enhanced(tree[2], tree[3])[1][k]).startswith('nsubj')

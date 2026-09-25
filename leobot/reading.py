@@ -32,6 +32,12 @@ CATEGORY_SUPPORT = 5       # worked examples before a noun can be learned as a c
 MAX_PLACEMENTS = 64        # G-47: ways of placing the question's words that are tried
 TYPE_SUPPORT = 30          # G-47: worked examples before a never-seen answer class is ruled out
 ANSWER_WORDS = 4           # G-47: answer words kept per worked example
+KIND_SUPPORT = 30          # G-53: worked answers before a kind of question is checked ...
+KIND_SHARE = 0.1           # ... an answer's class needs at least this share of them ...
+OPEN_TOKENS = 10           # ... and a word class is open for that kind with this many cases ...
+OPEN_RATE = 0.5            # ... if this share of them are words seen once (Good-Turing)
+KIND_DOMINANT = 2 / 3      # ... the class is checked only where one class takes this share of the answers
+MEMBER_LABELS = frozenset({'amod', 'nmod', 'appos', 'flat', 'nummod', 'compound'})
 # G-42: learned word classes that carry grammar rather than content; they do
 # not have to be found in the answering sentence and do not anchor it.
 FUNCTION_TAGS = frozenset({'DET', 'ADP', 'AUX', 'PRON', 'CCONJ', 'SCONJ', 'PUNCT'})
@@ -383,9 +389,9 @@ class ReadingMemoryMixin:
         Both polarities supported: contradiction; none: «no lo sé».
         G-43: with learned syntax the support must also hold in structure (who
         does what) and not be subordinate (what someone said or supposed)."""
-        negators = set(self.syntax_model.get('negators', ()))
+        negators = self.negator_words()
         words = [t.lower() for t in _TOKEN.findall(question) if _is_word(t)]
-        polarity = sum(w in negators for w in words) % 2
+        polarity = self.negated(sum(w in negators for w in words))
         content = {self._search_key(w) for w in words if w not in negators}
         supports: dict[int, list[str]] = {0: [], 1: []}
         reported: list[str] = []
@@ -409,7 +415,7 @@ class ReadingMemoryMixin:
                         reported.append(row['source'])
                         continue
                 said = [t.lower() for t in row['tokens'] if _is_word(t)]
-                supports[sum(w in negators for w in said) % 2].append(row['source'])
+                supports[self.negated(sum(w in negators for w in said))].append(row['source'])
         same, opposite = supports[polarity], supports[1 - polarity]
         if same and opposite:
             return {'text': 'No lo sé: lo que me dijeron se contradice.', 'status': 'literal_contradiction',
@@ -922,6 +928,13 @@ class ReadingMemoryMixin:
                 where.setdefault(self._word_key(w), i)
         noun_key = self._word_key(words[noun]) if noun is not None else None
         categories = set(self.reading_model.get('category_nouns', ()))
+        # G-52: the question is copular and its interrogative phrase is not the
+        # copula's subject: the gap is the predicate.  The parser may hang the
+        # copula from another word or take it as the root.
+        gap_head = noun if noun is not None else q
+        copular = any(labels[k] == 'cop' or (tags[k] == 'AUX' and not heads[k]) for k in range(len(words)))
+        predicate_gap = getattr(self, 'predicate_gap', True) and copular and (
+            case is not None or not str(labels[gap_head]).startswith('nsubj'))
         required = set(where)
         if not required:
             return None
@@ -938,8 +951,8 @@ class ReadingMemoryMixin:
         if same:
             _, qgraph = self._graph(heads, labels)
             qdist = self._graph_distances(qgraph, noun if noun is not None else q, tags)
-            negators = set(self.syntax_model.get('negators', ()))
-            polarity = sum(w in negators for w in low) % 2
+            negators = self.negator_words()
+            polarity = self.negated(sum(w in negators for w in low))
             shapes = {True: self._open_structure(qtree, q, where, noun, True),
                       False: self._open_structure(qtree, q, where, noun, False)}
         else:
@@ -958,13 +971,16 @@ class ReadingMemoryMixin:
                 if not required <= present:
                     continue
                 ranked += self._placed_candidates(row, tree, sets, shapes[noun_key in present], where, noun, noun_key,
-                                                  categories, qdist, labels[q], case, negators, polarity)
+                                                  categories, qdist, labels[q], case, negators, polarity,
+                                                  predicate_gap)
             elif required <= set(keys):
                 ranked += self._legacy_candidates(row, tree, keys, where, noun, noun_key, required, categories,
                                                   qdist, labels[q], case)
         classes = self._answer_classes_for(low, q, noun) if getattr(self, 'answer_type', True) else None
         if classes is not None:
             ranked = [entry for entry in ranked if classes.get(self._answer_class(entry[1].split())) != 0]
+        # G-53: an answer of another kind than the one asked for is not given.
+        ranked = [entry for entry in ranked if self._kind_fits(low, q, noun, entry[1], self._head_of(entry)) is not False]
         if not ranked:
             return None
         best = min(key for key, _, _, _ in ranked)
@@ -1014,7 +1030,7 @@ class ReadingMemoryMixin:
                           for i in content if i != noun}}
 
     def _placed_candidates(self, row, tree, keys, structure, where, noun, noun_key, categories, qdist,
-                           qlabel, case, negators, polarity):
+                           qlabel, case, negators, polarity, predicate_gap=False):
         swords, stags, sheads, slabels = tree
         n = len(swords)
         children = [[] for _ in range(n)]
@@ -1031,7 +1047,7 @@ class ReadingMemoryMixin:
             aliased = sum(k not in literal[j] for k, j in placement.items())
             # The noun of the interrogative phrase («qué calle») is the gap's kind, not a named thing.
             named = self._same_entity(row, aligned - {placement.get(noun_key)})
-            negated = sum(swords[k].lower() in negators and sheads[k] - 1 in aligned for k in range(n)) % 2
+            negated = self.negated(sum(swords[k].lower() in negators and sheads[k] - 1 in aligned for k in range(n)))
             if negated != polarity or self._subordinate(enhanced, stags, sheads, aligned):
                 continue
             covered = [False] * n
@@ -1045,6 +1061,13 @@ class ReadingMemoryMixin:
             for root in (d for d, h in enumerate(sheads) if not h):
                 mark(root)
             host = placement.get(noun_key) if noun_key is not None else None
+            first = -(host is not None) if getattr(self, 'g47b_structure', True) else 0
+            if predicate_gap:
+                # G-52: what the sentence predicates, with a copula, of a placed word.
+                for node, span in self._predicates_of(swords, stags, sheads, slabels, children, aligned):
+                    text = self._span_text(row, swords, span)
+                    if text:
+                        out.append(((first, -len(placement), aliased, 0, False, False), text, row, node))
             nodes = []
             for node in range(n):
                 if covered[node] or slabels[node] == 'conj':
@@ -1073,9 +1096,46 @@ class ReadingMemoryMixin:
                 text = self._span_text(row, swords, span)
                 if text:
                     # G-47b: a sentence holding the noun of the interrogative phrase comes first.
-                    first = -(host is not None) if getattr(self, 'g47b_structure', True) else 0
                     out.append(((first, -len(placement), aliased, mirror, case not in own if case else bool(own),
                                  slabels[node] != qlabel), text, row, node))
+        return out
+
+    @staticmethod
+    def _predicates_of(words, tags, heads, labels, children, aligned):
+        """G-52: predicates with a copula whose subject is a placed word (the
+        subject may hang from the copula, or the predicate be taken as an
+        apposition of it, the parser's slips), each with its span: the predicate
+        and its dependents without the copula, the subject, punctuation,
+        coordinated elements or anything placed."""
+        out = []
+        for p in range(len(words)):
+            copulas = [k for k in children[p] if labels[k] == 'cop']
+            if not copulas or p in aligned:
+                continue
+            subjects = [k for k in children[p] if str(labels[k]).startswith('nsubj')]
+            subjects += [k for c in copulas for k in children[c] if str(labels[k]).startswith('nsubj')]
+            if labels[p] == 'appos' and heads[p]:
+                subjects.append(heads[p] - 1)
+            if not any(k in aligned for k in subjects):
+                continue
+            span, stack = [], [p]
+            while stack:
+                k = stack.pop()
+                if k in aligned:
+                    continue
+                inside = [k]
+                queue = list(children[k])
+                while queue:
+                    c = queue.pop()
+                    inside.append(c)
+                    queue.extend(children[c])
+                if k != p and any(c in aligned for c in inside):
+                    continue
+                span.append(k)
+                stack.extend(c for c in children[k] if k != p or (
+                    labels[c] not in ('cop', 'punct', 'conj', 'cc') and not str(labels[c]).startswith('nsubj')))
+            if any(tags[k] not in FUNCTION_TAGS and _is_word(words[k]) for k in span):
+                out.append((p, span))
         return out
 
     def _span_text(self, row, words, span) -> str:
@@ -1219,6 +1279,102 @@ class ReadingMemoryMixin:
                     far[other] = cost
                     (queue.appendleft if cost == far[node] else queue.append)(other)
         return far
+
+    # ----- G-53: the kind of answer a question asks for --------------------
+    def _kind_keys(self, words):
+        """The kinds of a question: its interrogative, and with the noun after it."""
+        q = self.asking_word(words)
+        if q is None:
+            return []
+        keys = [_fold(words[q])]
+        if q + 1 < len(words) and self._majority_tag(words[q + 1]) == 'NOUN':
+            keys.append(_fold(words[q]) + ' ' + _fold(words[q + 1]))
+        return keys
+
+    def observe_answer_kind(self, question: str, answer: str) -> None:
+        """G-53: count, from one worked question, the class of its answer and
+        its words (no text is kept, no parsing).  The words that ask must be
+        learned first (G-42)."""
+        lead = [t.lower() for t in _TOKEN.findall(question) if _is_word(t)][:LEAD_WORDS]
+        answer_words = [t for t in _TOKEN.findall(answer) if _is_word(t)][:ANSWER_WORDS]
+        keys = self._kind_keys(lead)
+        if not keys or not answer_words:
+            return
+        tags = self.tag_words(answer_words) or []
+        content = [(w, t) for w, t in zip(answer_words, tags) if t not in FUNCTION_TAGS]
+        if not content:
+            return
+        table = self.reading_model.setdefault('answer_kinds', {})
+        for key in keys:
+            row = table.setdefault(key, {'n': 0, 'classes': {}, 'members': {}})
+            row['n'] += 1
+            row['classes'][content[0][1]] = row['classes'].get(content[0][1], 0) + 1
+            if ' ' in key:
+                for w, t in content:
+                    member = self.lemma_key(w) + '\x1f' + t
+                    row['members'][member] = row['members'].get(member, 0) + 1
+
+    def _head_of(self, entry):
+        """G-53: the head word of a candidate answer and its class in the sentence."""
+        _, _, row, node = entry
+        tree = self._tree_of(row) if node is not None else None
+        return (tree[0][node], tree[1][node]) if tree is not None and node < len(tree[0]) else None
+
+    def _kind_row(self, low, q, noun):
+        table = self.reading_model.get('answer_kinds', {})
+        keys = ([_fold(low[q]) + ' ' + _fold(low[noun])] if noun is not None else []) + [_fold(low[q])]
+        for key in keys:
+            row = table.get(key)
+            if row and row['n'] >= KIND_SUPPORT:
+                return key, row
+        return None, None
+
+    def _taught_members(self, noun_key) -> set:
+        """G-53: words said in conversation right under the question's noun («de color café»)."""
+        out = set()
+        for row in self.reading_utterances:
+            if not self._conversational(row):
+                continue
+            tree = self._tree_of(row)
+            if tree is None:
+                continue
+            words, _, heads, labels = tree
+            for k, h in enumerate(heads):
+                if h and labels[k] in MEMBER_LABELS and self._word_key(words[h - 1]) == noun_key:
+                    out.add(self._word_key(words[k]))
+        return out
+
+    def _kind_fits(self, low, q, noun, text, head=None) -> bool | None:
+        """G-53: whether a candidate answer is of the kind the question asks
+        for, as learned from worked questions; None when too little was learned.
+        ``head`` is the answer's head word and learned class, when known (its
+        class is the answer's class); otherwise the first content word."""
+        if not getattr(self, 'answer_kind', True):
+            return None
+        key, row = self._kind_row(low, q, noun)
+        if row is None:
+            return None
+        if head is None:
+            words = [w for w in text.split() if _is_word(w)]
+            tags = self.tag_words(words) or []
+            head = next(((w, t) for w, t in zip(words, tags) if t not in FUNCTION_TAGS), None)
+        if head is None:
+            return False
+        word, tag = head
+        # The class, only where the kind clearly asks for one class of word.
+        if max(row['classes'].values()) >= KIND_DOMINANT * row['n'] and \
+                row['classes'].get(tag, 0) < KIND_SHARE * row['n']:
+            return False
+        if ' ' not in key or tag == 'PROPN':
+            return True            # a name is an arbitrary label: never having seen it says nothing
+        members = row['members']
+        # Open or closed: how often an answer word of this kind was new (Good-Turing).
+        tokens, hapax = sum(members.values()), sum(count == 1 for count in members.values())
+        if tokens >= OPEN_TOKENS and hapax >= OPEN_RATE * tokens:
+            return True
+        if self.lemma_key(word) in {m.split('\x1f')[0] for m in members}:
+            return True
+        return self._word_key(word) in self._taught_members(self._word_key(low[noun]))
 
     def _answer_class(self, words) -> str | None:
         """G-43/G-47: the class of an answer, the learned tag of its first content word."""

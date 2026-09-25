@@ -81,7 +81,7 @@ class EntityMixin:
         for d, h in enumerate(heads):
             if h:
                 children[h - 1].append(d)
-        negators = set(self.syntax_model.get('negators', ()))
+        negators = self.negator_words()
         enhanced, _ = self._enhanced(heads, labels)
 
         def asserted(node) -> bool:
@@ -365,7 +365,12 @@ class EntityMixin:
         if len(pick) > 1:
             return {'text': 'No lo sé con seguridad: lo que me dijeron admite más de una respuesta.',
                     'status': 'literal_ambiguous', 'candidates': len(pick)}
-        text, (pos, _) = next(iter(pick.values()))
+        text, (pos, node) = next(iter(pick.values()))
+        low = [w.lower() for w in words]
+        noun = q + 1 if q + 1 < len(words) and tags[q + 1] == 'NOUN' else None
+        tree = entities['trees'][pos]
+        if self._kind_fits(low, q, noun, text, (tree[0][node], tree[1][node])) is False:
+            return None            # G-53: not the kind of answer asked for
         row = self.reading_utterances[pos]
         return {'text': text, 'status': 'literal',
                 'explanation': f'Según lo que me dijeron ({row["source"]}): «{row["text"]}».',
