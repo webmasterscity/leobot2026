@@ -1,0 +1,303 @@
+# Reserva cuádruple G-54 — redactado después de freeze-G-54 (árbol 0d5eda1e) por subagentes nuevos (Claude Sonnet, herramienta Agent, copia aislada) con el encargo fijo (experiments/validacion_comun_encargo.md); claves validadas por otro subagente nuevo. Los redactores no recibieron ningún mensaje del usuario. 2026-09-25.
+
+# --- mitad A (reserva_g54_a) ---
+# Reserva G-54 A — redactada por verificador independiente (regla 5.10)
+# Formato: turno TAB esperado; sin TAB = turno no calificado; línea en blanco = nueva conversación; # = comentario
+# Conversación 1
+Marta vive en Sevilla.
+Roberto es el hermano de Marta.
+Roberto tiene treinta y cinco años.
+La casa de Marta tiene tres habitaciones.
+¿Marta vive en Sevilla?	sí
+¿Cuántos años tiene Roberto?	/treinta y cinco|35/i
+¿Cuántas habitaciones tiene la casa de Marta?	/tres|3/i
+¿Roberto vive en Sevilla también?	no lo sé
+
+# Conversación 2
+La tienda de Carlos está en la calle Mayor.
+La tienda vende zapatos y bolsos.
+El zapato azul cuesta veinte euros.
+El bolso rojo cuesta cuarenta euros.
+¿Qué vende la tienda de Carlos?	zapatos
+¿Cuánto cuesta el zapato azul?	/veinte|20/i
+¿La tienda vende relojes?	no
+¿Cuánto cuesta el bolso rojo?	/cuarenta|40/i
+
+# Conversación 3
+Los tres perros de Elena se llaman Toby, Luna y Max.
+Toby es negro.
+Luna es blanca.
+Max es marrón.
+¿De qué color es Toby?	/negro/i
+¿Cuántos perros tiene Elena?	/tres|3/i
+¿Max es blanco?	no
+¿Elena tiene gatos?	no lo sé
+
+# Conversación 4
+Pedro trabaja como médico en el hospital central.
+Su esposa, Laura, es maestra en una escuela primaria.
+Tienen dos hijos: Sofía y Diego.
+Sofía tiene ocho años y Diego tiene doce años.
+¿En qué trabaja Pedro?	/médic/i
+¿Cuántos hijos tienen Pedro y Laura?	/dos|2/i
+¿Cuántos años tiene Diego?	/doce|12/i
+¿Cuál es el apellido de la familia?	no lo sé
+
+# Conversación 5
+El tren de las nueve sale de la estación norte.
+El viaje dura dos horas.
+El tren llega a la ciudad de Toledo.
+Ana compró un boleto de ida y vuelta.
+¿A qué hora sale el tren?	/nueve|9/i
+¿A dónde llega el tren?	Toledo
+¿Ana compró boleto solo de ida?	no
+¿Cuánto costó el boleto de Ana?	no lo sé
+
+# Conversación 6
+En la biblioteca hay quinientos libros.
+La mitad de los libros son de historia.
+El bibliotecario se llama Andrés.
+La biblioteca abre a las ocho de la mañana.
+¿Cómo se llama el bibliotecario?	Andrés
+¿La biblioteca abre a las ocho?	sí
+¿Cuántos libros de historia hay?	/doscientos cincuenta|250/i
+¿La biblioteca cierra a las cinco?	no lo sé
+
+# Conversación 7
+Camila preparó una torta de chocolate para la fiesta.
+La fiesta es el sábado en el parque.
+Vendrán quince invitados.
+Camila también trajo jugo de naranja.
+¿Qué torta preparó Camila?	/chocolate/i
+¿Dónde es la fiesta?	/parque/i
+¿Cuántos invitados vendrán?	/quince|15/i
+¿Camila trajo jugo de manzana?	no
+
+# Conversación 8
+El auto de Fernando es un sedán gris.
+El auto tiene cuatro puertas.
+Fernando lo compró hace dos años.
+El tanque del auto tiene capacidad para cincuenta litros.
+¿De qué color es el auto de Fernando?	/gris/i
+¿Cuántas puertas tiene el auto?	/cuatro|4/i
+¿El auto de Fernando es un convertible?	no
+¿Cuánto pagó Fernando por el auto?	no lo sé
+
+# --- mitad B (reserva_g54_b) ---
+# Reserva G-54 B — verificador independiente (regla 5.10), redactor de pruebas
+# Formato: turno TAB esperado; sin TAB = turno no calificado; línea en blanco = nueva conversación; # = comentario
+
+Mariana Vega vive en Cuenca.
+Mariana tiene treinta y dos años.
+Nicolás Vega es el hermano de Mariana.
+Nicolás trabaja en una panadería llamada El Trigal.
+El Trigal queda en la calle Bolívar.
+¿Dónde vive Mariana?	/Cuenca/i
+¿Nicolás es el hermano de Mariana?	sí
+¿Cuántos años tiene Nicolás?	no lo sé
+¿Cómo se llama la panadería donde trabaja Nicolás?	/Trigal/i
+¿El Trigal queda en la calle Sucre?	no
+
+Ramón Cabezas tiene una finca llamada Los Naranjos.
+En Los Naranjos hay quince vacas y ocho caballos.
+El perro de la finca se llama Tambor.
+Tambor es de color negro.
+¿Cuántas vacas hay en Los Naranjos?	/15|quince/i
+¿Cuántos caballos hay en Los Naranjos?	/8|ocho/i
+¿Cómo se llama el perro de la finca?	/Tambor/i
+¿De qué color es Tambor?	/negro/i
+¿Cuántos gatos hay en Los Naranjos?	no lo sé
+¿Tambor es de color blanco?	no
+
+La librería Papel y Tinta está en la avenida Central.
+Su dueña se llama Lucía Paredes.
+La librería vende libros, cuadernos y lápices.
+Papel y Tinta abre a las ocho de la mañana.
+¿Cómo se llama la dueña de la librería?	/Lucía/i
+¿Dónde está la librería Papel y Tinta?	/Central/i
+¿La librería vende libros?	sí
+¿A qué hora abre Papel y Tinta?	/ocho/i
+¿La dueña de la librería se llama Beatriz?	no
+¿A qué hora cierra Papel y Tinta?	no lo sé
+
+Ismael y Renata viajaron a la ciudad de Montebello.
+El viaje duró cuatro días.
+Se hospedaron en el hotel Las Palmas.
+Renata compró un sombrero azul en el mercado.
+¿A qué ciudad viajaron Ismael y Renata?	/Montebello/i
+¿Cuántos días duró el viaje?	/4|cuatro/i
+¿En qué hotel se hospedaron?	/Palmas/i
+¿Qué compró Renata en el mercado?	/sombrero/i
+¿De qué color es el sombrero que compró Renata?	/azul/i
+¿Se hospedaron en el hotel Las Palmas?	sí
+¿Ismael compró algo en el mercado?	no lo sé
+
+El profesor Horacio Beltrán enseña matemáticas en la escuela San Marcos.
+La escuela San Marcos tiene doscientos alumnos.
+¿Qué materia enseña Horacio Beltrán?	/matemáticas/i
+¿Cuántos alumnos tiene la escuela San Marcos?	/200|doscientos/i
+
+Adriana Fuentes preparó una sopa de lentejas para el almuerzo.
+La sopa llevaba zanahoria, cebolla y ajo.
+¿Qué preparó Adriana para el almuerzo?	/lentejas/i
+¿Adriana preparó la sopa para la cena?	no
+
+El taller de don Alberto repara carros y motocicletas.
+Ayer llegó un carro rojo con el motor dañado.
+¿Qué repara el taller de don Alberto?	/carros|motocicletas/i
+¿De qué color era el carro que llegó ayer?	/rojo/i
+¿Quién llevó el carro al taller?	no lo sé
+
+# --- mitad C (reserva_g54_c) ---
+# Reserva G-54 C — conversaciones nuevas, redactadas sin leer el repositorio
+
+Marta tiene un hermano llamado Diego.
+Diego tiene treinta y cinco años.
+Marta vive en Sevilla.
+Diego vive en Toledo.
+Marta trabaja como enfermera.
+¿Diego es el hermano de Marta?	sí
+¿Cuántos años tiene Diego?	/treinta y cinco|35/i
+¿Dónde vive Marta?	Sevilla
+¿En qué trabaja Diego?	no lo sé
+¿Marta trabaja como profesora?	no
+
+La casa de Rosario tiene tres habitaciones.
+El jardín de la casa tiene un limonero.
+La casa está pintada de color azul.
+Rosario compró la casa hace dos años.
+¿Cuántas habitaciones tiene la casa de Rosario?	/tres|3/i
+¿De qué color está pintada la casa?	azul
+¿Qué árbol hay en el jardín?	limonero
+¿La casa de Rosario tiene cuatro habitaciones?	no
+¿Cuánto costó la casa?	no lo sé
+
+Esteban tiene dos bicicletas.
+Una bicicleta es roja y la otra es verde.
+La bicicleta roja pesa doce kilos.
+Esteban guarda las bicicletas en el garaje.
+¿Cuántas bicicletas tiene Esteban?	/dos|2/i
+¿Cuánto pesa la bicicleta roja?	/doce|12/i
+¿Dónde guarda Esteban las bicicletas?	garaje
+¿La bicicleta roja es de color azul?	no
+¿Cuánto pesa la bicicleta verde?	no lo sé
+
+Camila tiene un perro llamado Toby.
+Toby es un perro pastor alemán.
+Toby tiene cuatro años.
+El vecino de Camila tiene un gato llamado Simón.
+¿Cómo se llama el perro de Camila?	Toby
+¿De qué raza es Toby?	pastor alemán
+¿Cuántos años tiene Toby?	/cuatro|4/i
+¿El gato del vecino se llama Simón?	sí
+¿Cuántos años tiene el gato Simón?	no lo sé
+
+Ricardo viajó a Bogotá el lunes.
+El viaje duró cinco horas en avión.
+Ricardo se hospedó en un hotel cerca del centro.
+Llevó dos maletas.
+¿A qué ciudad viajó Ricardo?	Bogotá
+¿Cuánto duró el viaje en avión?	/cinco|5/i
+¿Ricardo viajó en barco?	no
+¿Cuánto costó el hotel?	no lo sé
+
+Valentina fue a la tienda del señor Ortiz.
+Compró tres panes y un litro de leche.
+Pagó con un billete de veinte pesos y le devolvieron cambio.
+La tienda cierra a las ocho de la noche.
+¿Cuántos panes compró Valentina?	/tres|3/i
+¿A qué hora cierra la tienda?	/ocho|8/i
+¿Valentina compró dos litros de leche?	no
+¿Cuánto de cambio le devolvieron?	no lo sé
+
+El profesor Anselmo enseña matemáticas en el colegio San Rafael.
+Su salón de clase es el número catorce.
+Anselmo tiene veintidós estudiantes en su grupo.
+Las clases empiezan a las siete de la mañana.
+¿Qué materia enseña el profesor Anselmo?	matemáticas
+¿Cuántos estudiantes tiene el grupo de Anselmo?	/veintidós|22/i
+¿El salón de Anselmo es el número catorce?	sí
+¿A qué hora terminan las clases?	no lo sé
+
+# --- mitad D (reserva_g54_d) ---
+# Reserva G-54-D — conversaciones en español corriente
+# Redactado por verificador independiente (regla 5.10), redactor de pruebas
+# Formato: dicho<TAB>esperado ; línea sin TAB = dicho sin calificar ; línea en blanco = nueva conversación ; # = comentario
+
+# Conversación 1
+Marta Rueda vive en la ciudad de Tunja.
+Marta tiene dos hijos: Camila y Andrés.
+Andrés tiene doce años.
+Marta no trabaja los domingos.
+¿Vive Marta en Tunja?	sí
+¿Trabaja Marta los domingos?	no
+¿Cuántos años tiene Andrés?	/doce|12/i
+¿Cuántos años tiene el esposo de Marta?	no lo sé
+
+# Conversación 2
+Don Alfonso tiene una tienda de frutas en la esquina.
+En la tienda hay quince cajas de naranjas.
+No hay mangos en la tienda.
+La tienda abre a las siete de la mañana.
+¿Tiene don Alfonso una tienda de frutas?	sí
+¿Hay mangos en la tienda?	no
+¿A qué hora abre la tienda?	/siete/i
+¿Vende don Alfonso pescado?	no lo sé
+
+# Conversación 3
+Los hermanos Fonseca viajaron a Cartagena en agosto.
+Su prima Rosa se quedó en Bogotá porque estaba enferma.
+El viaje duró seis días.
+¿Viajaron los hermanos Fonseca a Cartagena?	sí
+¿Viajó Rosa a Cartagena?	no
+¿Cuántos días duró el viaje?	/seis|6/i
+¿En qué mes regresaron de Cartagena?	no lo sé
+
+# Conversación 4
+En la finca de Ignacio hay veinte vacas y ningún caballo.
+Ignacio tiene un perro llamado Trueno.
+Trueno no entra a la casa.
+¿Hay caballos en la finca?	no
+¿Tiene Ignacio un perro?	sí
+¿Cómo se llama el perro de Ignacio?	Trueno
+¿De qué raza es Trueno?	no lo sé
+
+# Conversación 5
+En la oficina trabajan tres personas: Lucía, Esteban y Paula.
+Lucía es la jefa del equipo.
+Esteban no es el jefe.
+Paula llegó tarde el lunes.
+¿Es Lucía la jefa?	sí
+¿Es Esteban el jefe?	no
+¿Quién llegó tarde el lunes?	Paula
+¿Cuánto gana Lucía al mes?	no lo sé
+
+# Conversación 6
+La casa de la abuela Sofía tiene una cocina grande.
+En la sala hay un sofá rojo.
+El gato de la abuela duerme en la cocina.
+La abuela no tiene jardín.
+¿Tiene la casa una cocina grande?	sí
+¿Tiene jardín la abuela Sofía?	no
+¿Dónde duerme el gato?	cocina
+¿Cómo se llama el gato de la abuela?	no lo sé
+
+# Conversación 7
+La fiesta de Valeria fue el sábado por la tarde.
+Vinieron doce invitados a la fiesta.
+Había una torta de chocolate y jugo de mango.
+No hubo música en vivo.
+¿Fue la fiesta el sábado?	sí
+¿Hubo música en vivo en la fiesta?	no
+¿Cuántos invitados vinieron?	/doce|12/i
+¿Quién trajo la torta?	no lo sé
+
+# Conversación 8
+En el colegio San Rafael, Tomás cursa quinto grado.
+Su materia favorita es matemáticas.
+Tomás no juega fútbol en el recreo.
+La profesora de Tomás se llama Beatriz.
+¿Cursa Tomás quinto grado?	sí
+¿Juega fútbol Tomás en el recreo?	no
+¿Cómo se llama la profesora de Tomás?	Beatriz
+¿Cuántos alumnos hay en la clase de Tomás?	no lo sé
