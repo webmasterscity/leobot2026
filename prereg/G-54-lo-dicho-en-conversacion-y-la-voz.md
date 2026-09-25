@@ -279,3 +279,27 @@ Salvedades registradas:
 3. **Orden de los commits:** la enmienda es del mismo segundo que el código. Precede al tag, pero git no demuestra que preceda al código; es la misma salvedad que en G-53.
 4. **«Eso no me lo has contado»** sale también cuando la pregunta es sobre un documento leído.
 5. **Errata:** el commit `50a5c1e` dice «charla 65»; son 64 preguntas calificadas.
+
+## Prueba común del usuario (2026-09-25; la corrió otra sesión por encargo del usuario; el conjunto no se leyó)
+
+| | Conjunto 2 (42; de él salieron los tipos de fallo de la sugerencia) | Conjunto 1 (32, gastado) |
+|---|---|---|
+| `estable-G-14` (= `estable-G-13` en aciertos) | 24/42 · 6 equivocadas · 12 abstenciones ante un dato dicho | 23/32 · 1 equivocada |
+| `freeze-G-54` (con el contenido) | **27/42** · 5 equivocadas · 10 abstenciones | 23/32 · 1 equivocada |
+| `estable-G-12` | 25/42 · 8 equivocadas | — |
+
+**Lectura.**
+- El contenido de G-54 suma +3 y una equivocada menos, todas en preguntas abiertas. Pero lo hace en el mismo conjunto del que salieron los tipos de fallo que motivaron el diseño: no es una medida independiente.
+- En el material limpio dio −1.
+- **La retirada (5.9) se mantiene.**
+- Si más adelante un conjunto independiente, escrito sin conocer la sugerencia, mostrara ganancia, un preregistro nuevo podría reincorporar los puntos con esa evidencia. Su código queda en `freeze-G-54`.
+
+**Latencia en el conjunto 2** (p50 / p95):
+- G-14: 9,8 / 54 ms;
+- G-54: 10,4 / 63 ms.
+
+**Dos defectos de la voz que vio la otra sesión** (genéricos, sin ítems):
+1. En una coordinación, el segundo verbo queda sin pasar a segunda persona: «…que te llamas X y vivo en…».
+2. Se arrastra un conector del inicio de la frase: «me contaste que en cambio, …».
+
+Se corrigen en la enmienda de G-56.

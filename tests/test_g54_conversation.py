@@ -79,5 +79,24 @@ class VoiceTests(unittest.TestCase):
         self.assertIsNone(bot._voiced('yes', [rows[1]]))
 
 
+class VoiceShapeTests(unittest.TestCase):
+    def test_a_coordinated_verb_takes_the_first_one_s_person(self):
+        said = 'Me llamo Sofía y llevo pan .'
+        bot = given({said: (said.split(), ['PRON', V, P, C, V, N, X], [2, 0, 2, 5, 2, 5, 2],
+                            ['expl', 'root', 'obj', 'cc', 'conj', 'obj', 'punct'])})
+        self.assertEqual(bot._restated(bot.reading_utterances[0]), 'te llamas Sofía y llevas pan')
+
+    def test_a_learned_connective_that_opens_the_sentence_is_not_told_back(self):
+        opener = (['En', 'cambio', ',', 'Ana', 'come', 'pan', '.'], [A, N, X, P, V, N, X], [2, 5, 2, 5, 0, 5, 5],
+                  ['case', 'obl', 'punct', 'nsubj', 'root', 'obj', 'punct'])
+        said = 'En cambio , Ana come pan .'
+        bot = given({said: opener[:4]})
+        for _ in range(5):
+            bot.observe_parsed_sentence(*opener)
+        bot.consolidate_syntax()
+        self.assertIn('en cambio', bot.syntax_model['connectives'])
+        self.assertEqual(bot._restated(bot.reading_utterances[0]), 'Ana come pan')
+
+
 if __name__ == '__main__':
     unittest.main()
