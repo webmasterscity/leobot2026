@@ -965,7 +965,7 @@ class ReadingMemoryMixin:
             base = str(elabels[d]).split(':')[0]
             # An edge between clauses is crossed only as the question's own link («hace cinco años»).
             if h and (base not in CLAUSE_EDGES or base == own) and labels[d] != 'conj' or \
-                    (h and labels[d] == 'conj' and tags[d] not in ('VERB', 'AUX')):
+                    (h and labels[d] == 'conj' and not self._clause_head(tags, heads, labels, d)):
                 links[d].add(h - 1); links[h - 1].add(d)
         seen, stack = {start}, [start]
         while stack:
@@ -978,6 +978,14 @@ class ReadingMemoryMixin:
                     continue
                 seen.add(other); stack.append(other)
         return False
+
+    @staticmethod
+    def _clause_head(tags, heads, labels, node) -> bool:
+        """G-56: whether a word heads a clause of its own: a verb, or a word
+        with its own copula or subject («… y es nueva»)."""
+        return tags[node] in ('VERB', 'AUX') or any(
+            heads[c] == node + 1 and (labels[c] == 'cop' or str(labels[c]).startswith('nsubj'))
+            for c in range(len(heads)))
 
     @staticmethod
     def _partners(words, heads, labels) -> dict:
@@ -1374,7 +1382,8 @@ class ReadingMemoryMixin:
                 # one («además del paraguas»), or else with it (G-47).  A
                 # coordinated predicate is a clause of its own.
                 if covered[node] or (slabels[node] == 'conj' and (
-                        stags[node] in ('VERB', 'AUX') or not getattr(self, 'named_conjuncts', True))):
+                        self._clause_head(stags, sheads, slabels, node)
+                        or not getattr(self, 'named_conjuncts', True))):
                     continue
                 parent = sheads[node] - 1
                 if parent >= 0 and not covered[parent]:

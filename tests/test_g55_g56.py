@@ -164,6 +164,21 @@ class CoordinatedAnswerTests(unittest.TestCase):
         bot.named_conjuncts = False
         self.assertIsNone(bot.answer_by_structure(question))
 
+    def test_a_coordinated_predicate_is_not_a_coordinated_noun(self):
+        place = 'En la cocina hay una nevera blanca .'
+        said = 'La nevera blanca es nueva .'
+        question = '¿ Dónde está la nevera blanca ?'
+        bot = given({
+            place: (place.split(), [A, D, N, V, D, N, 'ADJ', X], [3, 3, 4, 0, 6, 4, 6, 4],
+                    ['case', 'det', 'obl', 'root', 'det', 'obj', 'amod', 'punct']),
+            # «nueva», with a copula of its own, hung from «blanca» as if coordinated.
+            said: (said.split(), [D, N, 'ADJ', AUX, 'ADJ', X], [2, 0, 2, 5, 3, 5],
+                   ['det', 'root', 'amod', 'cop', 'conj', 'punct']),
+            question: (question.split(), [X, ADV, AUX, D, N, 'ADJ', X], [5, 3, 5, 5, 0, 5, 5],
+                       ['punct', 'advmod', 'cop', 'det', 'root', 'amod', 'punct'])})
+        bot.syntax_model['interrogatives'] = ['dónde']
+        self.assertEqual(bot.answer_by_structure(question)['text'], 'En la cocina')
+
 
 class GapPhraseTests(unittest.TestCase):
     def test_a_common_noun_complement_of_the_interrogative_phrase_is_part_of_the_gap(self):
