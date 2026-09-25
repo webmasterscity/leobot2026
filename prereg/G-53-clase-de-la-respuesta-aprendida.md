@@ -89,3 +89,11 @@ Además:
 - **Perdidas:** «se llama Ignacio Rojas» y «de la empresa será el próximo jueves». Eran respuestas mal cortadas que acertaban por la expresión regular.
 
 La puerta no cambia.
+
+## Nota antes de ejecutar (2026-09-24): reserva contaminada para G-53
+
+El mensaje del usuario con la sugerencia llegó al contexto de los subagentes redactores. En sus informes, los de las mitades **A, C y D** de la reserva cuádruple dicen que **incorporaron a propósito** preguntas del tipo descrito: piden un dato de una clase (color, día, precio) que no se dijo, con la clave «no lo sé». Los de la mitad **B** y de los dos conjuntos de referencias no lo hicieron.
+
+Por eso, decidido **antes** de ejecutar Leobot sobre ellos:
+- **La puerta de G-53** se juzga solo con el material limpio: la mitad B y los dos conjuntos de referencias. El resultado en la reserva completa se informa como dato.
+- **La puerta de G-52** se juzga con todo, como estaba preregistrada. Esas preguntas no favorecen sus mecanismos; si acaso, ponen a prueba el hueco en el predicado.
