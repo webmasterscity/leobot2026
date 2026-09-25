@@ -222,19 +222,6 @@ class ReferenceMixin:
                 source, k = chosen
                 if memory is not None and gender and source[1][k] == 'PROPN':
                     memory.setdefault(source[0][k].lower(), gender)
-        if getattr(self, 'relative_resolution', True):
-            # G-49: a relative pronoun (learned feature) that is the subject or
-            # object of a clause modifying a noun stands for that noun.
-            for i in range(n):
-                if i in edits or tags[i] != 'PRON' or 'PronType=Rel' not in self.morphology(words[i], 'PRON'):
-                    continue
-                clause = heads[i] - 1
-                if clause < 0 or str(labels[i]).split(':')[0] not in ('nsubj', 'obj') \
-                        or not str(labels[clause]).startswith('acl'):
-                    continue
-                noun = heads[clause] - 1
-                if noun >= 0 and tags[noun] in ('NOUN', 'PROPN'):
-                    edits[i] = ('pronoun', (tree, noun))
         root = next((d for d, h in enumerate(heads) if not h), None)
         # The subject may hang from the copula or auxiliary (a parser slip).
         governed = [root] + [k for k in children[root] if labels[k] in ('cop', 'aux')] if root is not None else []

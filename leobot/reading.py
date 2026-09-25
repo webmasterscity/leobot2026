@@ -431,9 +431,8 @@ class ReadingMemoryMixin:
             # G-46: another value of the same attribute was said.
             index = self._reading_index()
             for value in sorted(structure['stems']):
-                phrase = self._phrase(structure, value)
                 others = [LEMMA + k if self._lemma_sets() else structure['norms'][k]
-                          for k in structure['stems'] if k != value and k not in phrase]
+                          for k in structure['stems'] if k != value]
                 lists = sorted((index.get(t, ()) for t in others), key=len)
                 if not lists:
                     continue
@@ -527,8 +526,7 @@ class ReadingMemoryMixin:
         for value in sorted(structure['stems']):
             if value in keys:
                 continue
-            # G-49: the asked value is a phrase; its own complements need not align.
-            gone = {value} | self._phrase(structure, value)
+            gone = {value}
             links = [l for l in structure['links'] if not (set(l[:2]) & gone)]
             neighbours = {b for a, b, _ in structure['links'] if a == value and b not in gone} | \
                          {a for a, b, _ in structure['links'] if b == value and a not in gone}
@@ -561,26 +559,6 @@ class ReadingMemoryMixin:
                 if self._same_role(structure, value, j, words, tags, keys, eheads, elabels, labels, heads):
                     return w
         return None
-
-    def _phrase(self, structure, value) -> set:
-        """G-49: the question words that modify the asked value, directly or not."""
-        if not getattr(self, 'phrase_contrast', True):
-            return set()
-        # Only modifiers make up the phrase («nueve de la noche»); arguments,
-        # such as the subject of a predicated value, are its neighbours.
-        modifiers = {'nmod', 'amod', 'nummod', 'compound', 'flat', 'appos'}
-        parent = {}
-        for child, head, label in structure['roles']:
-            if str(label).split(':')[0] in modifiers:
-                parent.setdefault(child, head)
-        out = set()
-        for key in structure['stems']:
-            seen, node = set(), parent.get(key)
-            while node is not None and node not in seen and node != value:
-                seen.add(node); node = parent.get(node)
-            if node == value and key != value:
-                out.add(key)
-        return out
 
     def _same_role(self, structure, value, j, words, tags, keys, eheads, elabels, labels, heads) -> bool:
         """Whether sentence word ``j`` relates to the word aligned with the
