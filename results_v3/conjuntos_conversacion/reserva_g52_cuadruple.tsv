@@ -1,0 +1,273 @@
+# Reserva de prueba — redactado por verificador independiente (regla 5.10, redactor de pruebas)
+# No se leyó el repositorio ni el código de Leobot para escribir este material.
+# Formato: «lo que se dice» TAB «lo que se espera». Línea sin TAB: se dice, no se califica.
+# Línea en blanco: empieza una conversación nueva. Línea con «#»: comentario.
+
+# Conversación 1 — familia de Mariana
+Mariana vive en una casa azul, en la calle Robles.
+Tomás es el esposo de Mariana y trabaja en una panadería.
+Mariana y Tomás tienen dos hijos: Valeria y Joaquín.
+El gato de la familia se llama Nube.
+¿De qué color es la casa de Mariana?	azul
+¿Dónde trabaja Tomás?	panadería
+¿Vive Mariana en la calle Robles?	sí
+¿Es Tomás el hermano de Mariana?	no
+¿De qué color es el gato de la familia?	no lo sé
+
+# Conversación 2 — la librería Horizonte
+La librería Horizonte queda en la avenida Central, junto a un banco.
+A la librería la atiende un solo empleado, que se llama Ernesto.
+La librería vende libros usados y también cuadernos.
+La librería no abre los domingos.
+¿En qué avenida queda la librería Horizonte?	Central
+¿Cómo se llama el empleado de la librería?	Ernesto
+¿Vende la librería solamente cuadernos?	no
+¿Abre la librería los domingos?	no
+
+# Conversación 3 — Daniela y su hermano Andrés
+Daniela nació en Barranquilla y ahora vive en Bogotá.
+El hermano mayor de Daniela se llama Andrés y vive en Medellín.
+Andrés trabaja como ingeniero.
+¿En qué ciudad nació Daniela?	Barranquilla
+¿En qué ciudad vive Daniela actualmente?	Bogotá
+¿Es Andrés el hermano menor de Daniela?	no
+¿Cuántos años tiene Andrés?	no lo sé
+
+# Conversación 4 — el auto de Roberto
+El auto de Roberto es rojo y tiene cuatro puertas.
+Roberto compró el auto hace tres años.
+El auto está parqueado frente a la casa de Roberto.
+¿De qué color es el auto de Roberto?	rojo
+¿Cuántas puertas tiene el auto de Roberto?	/cuatro|4/i
+¿Dónde está parqueado el auto de Roberto?	casa
+¿Cuántos kilómetros tiene el auto de Roberto?	no lo sé
+
+# Conversación 5 — la fiesta de Patricia
+El sábado hubo una fiesta en la casa de Patricia.
+A la fiesta vinieron quince invitados.
+Patricia preparó una torta de chocolate.
+¿Qué día fue la fiesta de Patricia?	sábado
+¿Cuántos invitados vinieron a la fiesta?	/quince|15/i
+¿Fue la fiesta en la casa de Patricia?	sí
+¿Quién llevó la música a la fiesta?	no lo sé
+
+# Conversación 6 — el pueblo de Santa Rosa
+El pueblo de Santa Rosa tiene tres escuelas y un hospital.
+El alcalde de Santa Rosa se llama Fernando Ríos.
+¿Cuántas escuelas tiene Santa Rosa?	/tres|3/i
+¿Cómo se llama el alcalde de Santa Rosa?	/Fernando/i
+¿Tiene Santa Rosa un hospital?	sí
+¿Tiene Santa Rosa una universidad?	no lo sé
+
+# Conversación 7 — el perro de Alejandra
+El perro de Alejandra se llama Trueno.
+Trueno es un perro grande y muy juguetón.
+Alejandra adoptó a Trueno hace un año.
+¿Cómo se llama el perro de Alejandra?	Trueno
+¿Es Trueno un perro grande?	sí
+¿Es Trueno un gato?	no
+¿De qué color es Trueno?	no lo sé
+
+# Conversación 8 — la finca de la abuela de Simón
+La abuela de Simón tiene una finca en las montañas.
+En la finca hay vacas y gallinas.
+Simón visita la finca cada verano.
+¿Dónde queda la finca de la abuela de Simón?	montañas
+¿Qué animales hay en la finca?	vacas
+¿Es Simón el dueño de la finca?	no lo sé
+¿Cuántas vacas hay en la finca?	no lo sé
+
+
+# Reserva de prueba — verificador independiente (regla 5.10), redactor de pruebas
+# Modelo: Claude Sonnet 5 (claude-sonnet-5) · Fecha: 2026-09-24
+# Material nuevo, sin leer leobot/ ni pruebas existentes. Ninguna pregunta requiere
+# conocimiento del mundo. Varias preguntas "no lo sé" piden un dato de una clase
+# (color, número, lugar, persona, día) que el texto no dio para ese objeto.
+
+Mi hermana se llama Valentina y vive en Cusco.
+Valentina tiene dos hijos.
+El hijo mayor de Valentina se llama Mateo.
+¿Cómo se llama mi hermana?	Valentina
+¿Cuántos hijos tiene Valentina?	/dos|2/i
+¿Valentina vive en Lima?	no
+¿De qué color es la casa de Valentina?	no lo sé
+
+Tengo un perro que se llama Rayo.
+Rayo tiene cuatro años.
+Mi vecina Camila tiene un gato llamado Luna.
+¿Cómo se llama el gato de Camila?	Luna
+¿Cuántos años tiene Rayo?	/cuatro|4/i
+¿Rayo es un gato?	no
+¿De qué color es Rayo?	no lo sé
+
+Diego trabaja en una oficina en Medellín.
+Diego llega al trabajo a las ocho de la mañana.
+El jefe de Diego se llama Ricardo.
+¿Cómo se llama el jefe de Diego?	Ricardo
+¿A qué hora llega Diego al trabajo?	/ocho|8/i
+¿Diego trabaja en Medellín?	sí
+¿Diego trabaja los domingos?	no lo sé
+
+El próximo mes Sofía viaja a Bogotá.
+Sofía va a quedarse en casa de su tío Andrés.
+El viaje de Sofía dura diez días.
+¿Con quién se va a quedar Sofía?	Andrés
+¿Cuántos días dura el viaje de Sofía?	/diez|10/i
+¿Sofía viaja a Lima?	no
+¿Sofía viaja en avión?	no lo sé
+
+Compré una bicicleta grande para mi hijo.
+La bicicleta costó doscientos dólares.
+Mi hijo se llama Tomás.
+¿Cómo se llama mi hijo?	Tomás
+¿Cuánto costó la bicicleta?	/doscientos|200/i
+¿La bicicleta es pequeña?	no
+¿De qué color es la bicicleta?	no lo sé
+
+Ayer llovió mucho en Quito.
+En Quito hace frío por las noches.
+Hoy no llueve en Quito.
+¿Qué ciudad tuvo mucha lluvia ayer?	Quito
+¿Llueve hoy en Quito?	no
+¿Hace frío en Quito por las noches?	sí
+¿Cuántas personas viven en Quito?	no lo sé
+
+Laura y Pedro son amigos desde la universidad.
+Pedro nació un martes.
+Laura vive en el mismo edificio que Pedro.
+¿Quién nació un martes?	Pedro
+¿Qué día nació Pedro?	/martes/i
+¿Laura vive en el mismo edificio que Pedro?	sí
+¿Cuántos años tiene Pedro?	no lo sé
+
+Mi abuelo tiene un reloj antiguo.
+El reloj fue un regalo de su padre.
+Mi abuelo tiene tres hermanos.
+¿Quién le regaló el reloj a mi abuelo?	padre
+¿Cuántos hermanos tiene mi abuelo?	/tres|3/i
+¿El reloj de mi abuelo es antiguo?	sí
+¿De qué color es el reloj de mi abuelo?	no lo sé
+
+
+# Reserva de conversaciones (held-out) — reserva_g52_c
+# Redactor: Claude Sonnet 5, verificador independiente (regla 5.10), redactor de pruebas
+# Fecha: 2026-09-24
+# Encargo: conjunto nuevo de conversaciones en español corriente (hechos + preguntas),
+# sin leer el repositorio ni el código del motor.
+
+Valentina tiene un perro que se llama Trueno.
+Trueno es de color café.
+Valentina vive en Cartagena.
+¿Cómo se llama el perro de Valentina?	/trueno/i
+¿El perro de Valentina se llama Rayo?	no
+¿De qué color es el perro?	/café/i
+¿En qué ciudad vive Valentina?	/cartagena/i
+¿Trueno es grande?	no lo sé
+¿El perro de Valentina se llama Trueno?	sí
+
+Ignacio compró una casa grande en Popayán.
+La casa tiene tres habitaciones.
+Ignacio se mudó el lunes.
+¿Dónde queda la casa de Ignacio?	/popayán/i
+¿Cuántas habitaciones tiene la casa?	/tres/i
+¿Qué día se mudó Ignacio?	/lunes/i
+¿De qué color es la casa?	no lo sé
+¿La casa de Ignacio queda en Neiva?	no
+
+Camila tiene un hermano llamado Simón.
+Simón tiene doce años.
+El primo de Camila se llama Bruno.
+¿Cómo se llama el hermano de Camila?	/simón/i
+¿Cuántos años tiene Simón?	/doce/i
+¿Cómo se llama el primo de Camila?	/bruno/i
+¿Camila tiene una hermana?	no lo sé
+¿El hermano de Camila se llama Bruno?	no
+
+La tienda de Rocío vende zapatos.
+La tienda de Rocío no vende ropa.
+La tienda abre a las nueve.
+¿La tienda de Rocío vende zapatos?	sí
+¿La tienda de Rocío vende ropa?	no
+¿A qué hora abre la tienda?	/nueve/i
+¿Quién es la dueña de la tienda?	/rocío/i
+¿La tienda de Rocío vende libros?	no lo sé
+
+Mateo abrió un taller de bicicletas en Ibagué.
+El taller tiene quince estudiantes.
+Mateo dijo que tal vez abra un segundo taller en Neiva.
+¿En qué ciudad está el taller de Mateo?	/ibagué/i
+¿Cuántos estudiantes tiene el taller?	/quince/i
+¿Mateo va a abrir un segundo taller en Neiva?	sin afirmar
+¿Qué vende el taller de Mateo?	no lo sé
+¿El taller de Mateo tiene veinte estudiantes?	no
+
+Antonella tiene una reunión el jueves.
+La reunión es con Renata.
+Antonella llevará su carro rojo.
+¿Qué día es la reunión de Antonella?	/jueves/i
+¿Con quién es la reunión de Antonella?	/renata/i
+¿De qué color es el carro de Antonella?	/rojo/i
+¿A qué hora es la reunión?	no lo sé
+¿La reunión de Antonella es el viernes?	no
+¿Antonella llevará un carro rojo?	sí
+
+
+# Redactado por Claude (verificador independiente, regla 5.10, redactor de pruebas) — 2026-09-24 — held-out nuevo para reserva de G-52 (enmienda)
+
+Mariana vive en una casa azul en el barrio Los Pinos.
+Mariana tiene un perro llamado Rocco.
+¿De qué color es la casa de Mariana?	azul
+¿Cómo se llama el perro de Mariana?	/rocco/i
+¿De qué color es el perro de Mariana?	no lo sé
+¿Vive Mariana en Los Pinos?	sí
+
+El pueblo de Santa Rosa tiene tres mil habitantes.
+En Santa Rosa hay una plaza principal y una iglesia antigua.
+¿Cuántos habitantes tiene Santa Rosa?	/tres mil|3000|3\.000/i
+¿Qué hay en la plaza principal de Santa Rosa?	no lo sé
+¿Hay una iglesia en Santa Rosa?	sí
+¿Tiene Santa Rosa playa?	no lo sé
+
+Esteban nació un martes de octubre.
+Esteban trabaja como carpintero en su taller.
+¿Qué día nació Esteban?	/martes/i
+¿En qué trabaja Esteban?	/carpintero/i
+¿Cuántos hijos tiene Esteban?	no lo sé
+
+Valentina compró cinco manzanas y dos peras en el mercado.
+Las manzanas eran rojas y las peras verdes.
+¿Cuántas manzanas compró Valentina?	/cinco|5/i
+¿De qué color eran las peras?	/verde/i
+¿Cuánto pagó Valentina por las manzanas?	no lo sé
+¿Compró Valentina naranjas?	no
+
+Rodrigo es médico y trabaja en el hospital central de Rosario.
+Su esposa se llama Paula y es maestra.
+¿Quién es médico?	/rodrigo/i
+¿Dónde trabaja Rodrigo?	/hospital/i
+¿Cómo se llama la esposa de Rodrigo?	/paula/i
+¿En qué trabaja Paula?	/maestra/i
+¿Dónde trabaja Paula?	no lo sé
+
+Lucía piensa que mañana va a llover, pero todavía no está segura.
+Lucía tiene un paraguas verde cerca de la puerta.
+¿Va a llover mañana?	sin afirmar
+¿De qué color es el paraguas de Lucía?	/verde/i
+¿Dónde está el paraguas de Lucía?	/puerta/i
+¿Tiene Lucía un paraguas?	sí
+
+Andrés tiene dos hermanas: Camila y Sofía.
+Camila vive en Mérida y Sofía vive en Cali.
+¿Cuántas hermanas tiene Andrés?	/dos|2/i
+¿Dónde vive Camila?	/mérida/i
+¿Dónde vive Sofía?	/cali/i
+¿Vive Andrés en Cali?	no lo sé
+
+Joaquín tiene un reloj plateado que heredó de su abuelo.
+El reloj marca las horas pero no tiene fecha.
+¿De qué color es el reloj de Joaquín?	/plateado/i
+¿De quién heredó Joaquín el reloj?	/abuelo/i
+¿Cuánto cuesta el reloj de Joaquín?	no lo sé
+¿Tiene fecha el reloj de Joaquín?	no
+
+

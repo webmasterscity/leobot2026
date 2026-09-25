@@ -1,0 +1,124 @@
+# Pruebas de referencia (correferencia / anáfora) — verificador independiente, regla 5.10
+# Formato: turno TAB esperado · línea sin TAB no se califica · línea en blanco = conversación nueva
+# Redactado sin leer el repositorio, el código ni pruebas existentes; solo a partir del encargo recibido.
+
+Rosa llegó tarde a la reunión del martes.
+Traía un paraguas azul.
+Ella trabaja en la biblioteca del pueblo.
+Su hermano se llama Tomás.
+¿Qué traía Rosa a la reunión?	paraguas
+¿De qué color era el paraguas de Rosa?	azul
+¿Dónde trabaja Rosa?	biblioteca
+¿Rosa llegó tarde a la reunión?	sí
+
+Andrés compró una casa en Mérida el año pasado.
+Es una casa grande, con un jardín trasero.
+Vive allí con su esposa Carla.
+Ellos tienen un perro llamado Rayo.
+¿En qué ciudad compró la casa Andrés?	Mérida
+¿La casa de Andrés es pequeña?	no
+¿Cómo se llama la esposa de Andrés?	Carla
+
+Doña Elvira puso una tienda de flores en el mercado central.
+La abre todos los días menos el lunes.
+Su hijo Mateo la ayuda los fines de semana.
+¿Qué vende Doña Elvira en su tienda?	flores
+¿Doña Elvira abre la tienda los lunes?	no
+¿Quién ayuda a Doña Elvira los fines de semana?	Mateo
+
+Julián dejó su bicicleta roja en el patio.
+La compró hace tres meses.
+Él trabaja como electricista en un taller del centro.
+¿De qué color es la bicicleta de Julián?	roja
+¿En qué trabaja Julián?	electricista
+¿Cuánto pagó Julián por la bicicleta?	no lo sé
+
+La familia Ortiz viajó a la costa en agosto.
+Llevaron a sus dos hijas gemelas, Lucía y Paula.
+Ellas cumplieron ocho años ese mes.
+Se quedaron en un hotel cerca de la playa.
+¿Adónde viajó la familia Ortiz?	costa
+¿Cuántos años cumplieron las hijas de la familia Ortiz?	ocho
+¿Cómo se llaman las hijas de la familia Ortiz?	/(?=.*Lucía)(?=.*Paula)/i
+¿Dónde se quedó la familia Ortiz?	hotel
+
+Sofía estudió toda la noche para el examen de historia.
+Al día siguiente le fue muy bien.
+Sacó la nota más alta de su clase.
+¿Sofía estudió para el examen de historia?	sí
+¿A Sofía le fue mal en el examen?	no
+¿Quién sacó la nota más alta de la clase de Sofía?	Sofía
+
+Los hermanos Reyes abrieron una panadería en la esquina.
+La llamaron "El Trigal".
+Ellos preparan el pan fresco cada madrugada.
+Todavía no han contratado a nadie más.
+¿Qué abrieron los hermanos Reyes?	panadería
+¿Cómo se llama la panadería de los hermanos Reyes?	Trigal
+¿Los hermanos Reyes han contratado a más empleados?	no
+¿Cuántos hermanos Reyes hay exactamente?	no lo sé
+
+
+# Pruebas de referencia anafórica (redactado por verificador independiente, regla 5.10)
+# Modelo: Claude Sonnet 5 · Fecha: 2026-09-24 · Encargo: material nuevo de correferencia en español
+# Formato: "se dice" TAB "se espera"; línea sin TAB = se dice y no se califica; línea en blanco = conversación nueva
+# Conversación 1: Rosa y Tomás en una reunión
+Rosa llegó tarde a la reunión.
+Traía un paraguas azul.
+Tomás llegó primero.
+Ya tenía las sillas listas.
+Ella se sentó junto a la ventana porque tenía frío.
+¿Qué traía Rosa?	paraguas
+¿Quién llegó primero, Rosa o Tomás?	/tomás/i
+¿Dónde se sentó Rosa?	ventana
+¿Traía Tomás un paraguas?	no lo sé
+
+# Conversación 2: Diego y su perro Rayo
+Diego tiene un perro.
+Se llama Rayo.
+Le gusta correr en el parque.
+Diego vive en Medellín.
+¿Cómo se llama el perro de Diego?	rayo
+¿Qué le gusta hacer a Rayo?	correr
+¿Vive Diego en Medellín?	sí
+¿Cuántos gatos tiene Diego?	no lo sé
+
+# Conversación 3: Elena y su hermano Marcos
+Elena viajó a Cartagena la semana pasada.
+Fue con su hermano Marcos.
+Él llevó la cámara.
+Ella compró un sombrero blanco en el mercado.
+¿A dónde viajó Elena?	cartagena
+¿Quién llevó la cámara?	/marcos/i
+¿Qué compró Elena en el mercado?	sombrero
+¿Viajó Marcos con Elena?	sí
+
+# Conversación 4: Sofía y su tienda de flores
+Sofía abrió una tienda de flores el lunes.
+Contrató a dos empleados.
+Ellos trabajan por las mañanas.
+Queda cerca del parque central.
+¿Cuándo abrió Sofía la tienda?	lunes
+¿Cuántos empleados contrató Sofía?	dos
+¿Dónde queda la tienda de Sofía?	parque
+¿Trabajan los empleados de Sofía por las tardes?	no lo sé
+
+# Conversación 5: Andrés y su prima Lucía
+Andrés y Lucía son primos.
+Ella vive en una casa grande.
+Tiene un jardín con rosas.
+Él visita a Lucía los domingos.
+¿Dónde vive Lucía?	casa
+¿Qué tiene la casa de Lucía?	no lo sé
+¿Cuándo visita Andrés a Lucía?	domingo
+¿Son primos Andrés y Lucía?	sí
+
+# Conversación 6: Camila y su jefe Pedro
+Camila trabaja en una panadería.
+No trabaja los domingos.
+Su jefe se llama Pedro.
+Él abre el local a las seis.
+¿Trabaja Camila los domingos?	no
+¿Cómo se llama el jefe de Camila?	pedro
+¿A qué hora abre Pedro el local?	seis
+¿Trabaja Camila los sábados?	no lo sé
