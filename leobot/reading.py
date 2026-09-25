@@ -39,6 +39,10 @@ OPEN_RATE = 0.5            # ... if this share of them are words seen once (Good
 KIND_DOMINANT = 2 / 3      # ... the class is checked only where one class takes this share of the answers
 MEMBER_LABELS = frozenset({'amod', 'nmod', 'appos', 'flat', 'nummod', 'compound'})
 FORM_SUPPORT = 3           # G-54: a counted reading of a form with this support outweighs rarer ones
+CORE_LABELS = frozenset({'nsubj', 'obj', 'iobj', 'ccomp', 'xcomp', 'csubj'})    # G-56: who does what to whom
+CLAUSE_EDGES = frozenset({'conj', 'advcl', 'acl', 'ccomp', 'parataxis', 'csubj'})  # G-56: edges between clauses
+OPTIONAL_SUPPORT = 30      # G-56: worked questions with a word before it can be learned as optional ...
+OPTIONAL_RATE = 0.8        # ... if the answering sentence lacks it this often
 # G-42: learned word classes that carry grammar rather than content; they do
 # not have to be found in the answering sentence and do not anchor it.
 FUNCTION_TAGS = frozenset({'DET', 'ADP', 'AUX', 'PRON', 'CCONJ', 'SCONJ', 'PUNCT'})
@@ -393,12 +397,16 @@ class ReadingMemoryMixin:
         negators = self.negator_words()
         words = [t.lower() for t in _TOKEN.findall(question) if _is_word(t)]
         polarity = self.negated(sum(w in negators for w in words))
-        content = {self._search_key(w) for w in words if w not in negators}
+        # G-56: learned optional modifiers nobody said are not asked for.
+        qtree = self._utterance_tree(question) if self.syntax_model.get('sentences') else None
+        skipped = {qtree[0][i].lower() for i in self._skippable(qtree[0], qtree[1], qtree[3], negators)} \
+            if qtree is not None else set()
+        content = {self._search_key(w) for w in words if w not in negators and w not in skipped}
         supports: dict[int, list[str]] = {0: [], 1: []}
         reported: list[str] = []
         structure = None
         if getattr(self, 'structural_verification', True) and self.syntax_model.get('sentences'):
-            structure = self._question_links(question, negators)
+            structure = self._question_links(question, negators, skipped)
         if structure is not None:
             self._resolve_references()
         if content and self.reading_utterances:
@@ -445,6 +453,8 @@ class ReadingMemoryMixin:
                 for position in sorted(set(lists[0]).intersection(*lists[1:])):
                     row = self.reading_utterances[position]
                     said = self._contrast(structure, row, negators)
+                    if said is None and getattr(self, 'kind_contrast', True):
+                        said = self._contrast(structure, row, negators, by_kind=True)
                     if said is not None:
                         return {'text': self._voiced('contrast', [row]) or f'No: según lo que me dijeron, «{row["text"]}»',
                                 'status': 'literal_contrast',
@@ -644,7 +654,7 @@ class ReadingMemoryMixin:
                         links[d].add(k); links[k].add(d)
         return enhanced, links
 
-    def _question_links(self, question: str, negators: set):
+    def _question_links(self, question: str, negators: set, skipped=frozenset()):
         """Links between the content words of a yes/no question: each one with
         its nearest content ancestor and the number of steps between them."""
         tree = self._utterance_tree(question)
@@ -653,9 +663,9 @@ class ReadingMemoryMixin:
         words, tags, heads, labels = tree
         enhanced, _ = self._enhanced(heads, labels)
         content = {i for i, (w, t) in enumerate(zip(words, tags))
-                   if t not in FUNCTION_TAGS and _is_word(w) and w.lower() not in negators}
+                   if t not in FUNCTION_TAGS and _is_word(w) and w.lower() not in negators and w.lower() not in skipped}
         enhanced_labels = self._enhanced(heads, labels)[1]
-        links, roles = [], []
+        links, roles, loose = [], [], set()
         for i in sorted(content):
             node = enhanced[i] - 1
             while node >= 0 and node not in content:
@@ -664,6 +674,8 @@ class ReadingMemoryMixin:
                 # One content step: function words in between are transparent.
                 links.append((self._word_key(words[i]), self._word_key(words[node]), 1))
                 roles.append((self._word_key(words[i]), self._word_key(words[node]), enhanced_labels[i]))
+                if str(enhanced_labels[i]).split(':')[0] not in CORE_LABELS:
+                    loose.add((self._word_key(words[i]), self._word_key(words[node])))
         cases = {i: sorted(words[k].lower() for k in range(len(words)) if heads[k] == i + 1 and tags[k] == 'ADP')
                  for i in content}
         copular = {i: any(heads[k] == i + 1 and labels[k] == 'cop' for k in range(len(words))) for i in content}
@@ -673,14 +685,35 @@ class ReadingMemoryMixin:
                 'cases': {self._word_key(words[i]): cases[i] for i in content},
                 'copular': {self._word_key(words[i]): copular[i] for i in content},
                 'elabels': {self._word_key(words[i]): enhanced_labels[i] for i in content},
-                'roles': roles}
+                'roles': roles, 'loose': loose}
 
-    def _contrast(self, structure, source, negators: set):
+    def _same_kind(self, a: str, b: str) -> bool:
+        """G-55: whether two words are members of one closed learned kind of
+        answer with a noun (G-53: «martes» and «lunes» both answer «qué día»)."""
+        index = self.__dict__.get('_kind_members')
+        table = self.reading_model.get('answer_kinds', {})
+        if index is None or index[0] != len(table):
+            members: dict = {}
+            for key, row in table.items():
+                counts = row.get('members', {})
+                tokens, hapax = sum(counts.values()), sum(n == 1 for n in counts.values())
+                if ' ' not in key or row['n'] < KIND_SUPPORT or (tokens >= OPEN_TOKENS and hapax >= OPEN_RATE * tokens):
+                    continue
+                for member in counts:
+                    members.setdefault(member.split('\x1f')[0], set()).add(key)
+            index = self.__dict__['_kind_members'] = (len(table), members)
+        return bool(index[1].get(self.lemma_key(a), set()) & index[1].get(self.lemma_key(b), set()))
+
+    def _contrast(self, structure, source, negators: set, by_kind: bool = False):
         """G-46: the value the question asks about, if the sentence states the
         same links with another value of the same class in its place, and that
         place is an attribute (a quality, a quantity, a place or time, what a
         copula predicates), which takes one value per thing; what is had,
-        exists or is sold is not.  Returns the replaced value or None."""
+        exists or is sold is not.  Returns the replaced value or None.
+        G-55 (``by_kind``): the dimension is decided by the learned kinds of
+        answer instead of the class and the place: the two values are members of
+        one closed learned kind, or both numbers written alike, or both names
+        with the same preposition; whatever is had, exists or is sold."""
         tree = self._tree_of(source)
         if tree is None or any(w.lower() in negators for w in tree[0]):
             return None
@@ -697,27 +730,39 @@ class ReadingMemoryMixin:
                        'cases': {k: v for k, v in structure['cases'].items() if k not in gone}}
             if not neighbours or not reduced['stems'] or self._links_hold(reduced, source) != 'asserted':
                 continue
-            # The asked value must itself sit in an attribute place.
-            if not (structure['tags'][value] in ('ADJ', 'NUM') or structure['cases'][value]
-                    or structure['copular'][value]):
-                continue
             eheads, elabels = self._enhanced(heads, labels)
             aligned = {j for j, k in enumerate(keys) if k in reduced['stems']}
-            # G-47b: the kind of something had, existing or sold («cajas de
-            # clavos») is not a single-valued attribute: other kinds may exist.
-            if getattr(self, 'g47b_structure', True) and structure['cases'][value] and any(
-                    str(structure.get('elabels', {}).get(b, '')).split(':')[0] == 'obj'
-                    for a, b, _ in structure['roles'] if a == value):
-                continue
+            if not by_kind:
+                # The asked value must itself sit in an attribute place.
+                if not (structure['tags'][value] in ('ADJ', 'NUM') or structure['cases'][value]
+                        or structure['copular'][value]):
+                    continue
+                # G-47b: the kind of something had, existing or sold («cajas de
+                # clavos») is not a single-valued attribute: other kinds may exist.
+                if getattr(self, 'g47b_structure', True) and structure['cases'][value] and any(
+                        str(structure.get('elabels', {}).get(b, '')).split(':')[0] == 'obj'
+                        for a, b, _ in structure['roles'] if a == value):
+                    continue
+            asked = structure['norms'][value]
             for j, (w, t) in enumerate(zip(words, tags)):
-                if j in aligned or not _is_word(w) or t != structure['tags'][value]:
+                if j in aligned or not _is_word(w):
                     continue
                 children = [k for k in range(len(words)) if heads[k] == j + 1]
                 case = sorted(words[k].lower() for k in children if tags[k] == 'ADP')
-                attribute = (t in ('ADJ', 'NUM') or case or any(labels[k] == 'cop' for k in children))
-                # The same place: the same preposition (or none) on both sides.
-                if not attribute or case != structure['cases'][value]:
-                    continue
+                if by_kind:
+                    qtag = structure['tags'][value]
+                    kin = (self._same_kind(value, w)
+                           or (qtag == t == 'NUM' and w.isdigit() == asked.isdigit())
+                           or (qtag == t == 'PROPN' and case and case == structure['cases'][value]))
+                    if not kin or self.lemma_key(w) == value:
+                        continue
+                else:
+                    if t != structure['tags'][value]:
+                        continue
+                    attribute = (t in ('ADJ', 'NUM') or case or any(labels[k] == 'cop' for k in children))
+                    # The same place: the same preposition (or none) on both sides.
+                    if not attribute or case != structure['cases'][value]:
+                        continue
                 # G-46b: the same role with respect to the value's neighbour.
                 if self._same_role(structure, value, j, words, tags, keys, eheads, elabels, labels, heads):
                     return w
@@ -828,6 +873,9 @@ class ReadingMemoryMixin:
         keys = sorted(places)
         _, graph = self._graph(heads, labels, conj=True)
         partners = self._partners(words, heads, labels)
+        loose = structure.get('loose', set()) if getattr(self, 'core_links', True) else set()
+        roles = structure.get('elabels', {})
+        elabels = self._enhanced(heads, labels)[1]
         occurrences = {j for js in places.values() for j in js}
         out = []
         for combo in itertools.islice(itertools.product(*(places[k] for k in keys)), MAX_PLACEMENTS):
@@ -838,10 +886,46 @@ class ReadingMemoryMixin:
             blocked = {j for j in range(len(words)) if j not in aligned and (
                 j in occurrences or tags[j] in ('NOUN', 'PROPN')
                 or (tags[j] == 'PRON' and 'PronType=Prs' in self.morphology(words[j], 'PRON')))}
-            if all(self._joined(graph, tags, blocked, partners, chosen[a], chosen[b], steps)
-                   for a, b, steps in structure['links']):
+            if all(self._within_clause(heads, labels, blocked, partners, chosen[a], chosen[b]) if (a, b) in loose
+                   else self._joined(graph, tags, blocked, partners, chosen[a], chosen[b], steps)
+                   for a, b, steps in structure['links']) and not self._roles_swapped(roles, elabels, chosen):
                 out.append(chosen)
         return out
+
+    def _roles_swapped(self, roles, elabels, chosen) -> bool:
+        """G-56: whether two question words that are core arguments of the
+        question with different functions (subject, object, indirect object)
+        trade them in the sentence: one takes the other's function («¿María ama
+        a Juan?» against «Juan ama a María»).  One word labelled otherwise by
+        the parser is not a swap."""
+        if not getattr(self, 'core_links', True):
+            return False
+        core = {k: str(roles.get(k, '')).split(':')[0] for k in chosen}
+        core = {k: r for k, r in core.items() if r in ('nsubj', 'obj', 'iobj')}
+        return any(ra != rb and str(elabels[chosen[a]]).split(':')[0] == rb
+                   for a, ra in core.items() for b, rb in core.items() if a != b)
+
+    @staticmethod
+    def _within_clause(heads, labels, blocked, partners, start, goal) -> bool:
+        """G-56: a link that is not a core argument (a modifier, a place or a
+        time, an apposition) holds if the two words are in one clause: a path
+        through the tree that crosses no edge between clauses and no other
+        entity (G-47's blocked words, which may be crossed as the same entity)."""
+        links = [set() for _ in heads]
+        for d, h in enumerate(heads):
+            if h and str(labels[d]).split(':')[0] not in CLAUSE_EDGES:
+                links[d].add(h - 1); links[h - 1].add(d)
+        seen, stack = {start}, [start]
+        while stack:
+            node = stack.pop()
+            for other in sorted(links[node]):
+                if other == goal:
+                    return True
+                if other in seen or (other in blocked and other not in partners.get(node, ())
+                                     and node not in partners.get(other, ())):
+                    continue
+                seen.add(other); stack.append(other)
+        return False
 
     @staticmethod
     def _partners(words, heads, labels) -> dict:
@@ -1063,9 +1147,19 @@ class ReadingMemoryMixin:
         first = min(phrase)
         case = low[first - 1] if first > 0 and tags[first - 1] == 'ADP' else None
         interrogatives = set(self.syntax_model.get('interrogatives', ()))
+        # G-56: the interrogative phrase's common-noun complements («qué día de la
+        # semana») belong to the gap; a name there («hermanos de Ana») identifies.
+        gap = set(phrase)
+        if noun is not None and getattr(self, 'gap_phrase', True):
+            stack = [k for k in range(len(words)) if heads[k] == noun + 1 and labels[k] == 'nmod' and tags[k] == 'NOUN']
+            while stack:
+                k = stack.pop()
+                gap.add(k)
+                stack.extend(c for c in range(len(words)) if heads[c] == k + 1 and tags[c] != 'PROPN')
+        skip = self._skippable(words, tags, labels, self.negator_words())
         where: dict = {}
         for i, (w, t) in enumerate(zip(words, tags)):
-            if i not in phrase and t not in FUNCTION_TAGS and _is_word(w) and low[i] not in interrogatives:
+            if i not in gap and i not in skip and t not in FUNCTION_TAGS and _is_word(w) and low[i] not in interrogatives:
                 where.setdefault(self._word_key(w), i)
         noun_key = self._word_key(words[noun]) if noun is not None else None
         categories = set(self.reading_model.get('category_nouns', ()))
@@ -1152,13 +1246,15 @@ class ReadingMemoryMixin:
         words, tags, heads, labels = qtree
         enhanced, elabels = self._enhanced(heads, labels)
         content = set(where.values()) | ({noun} if with_noun and noun is not None else set())
-        links = []
+        links, loose = [], set()
         for i in sorted(content):
             node = enhanced[i] - 1
             while node >= 0 and node not in content:
                 node = enhanced[node] - 1
             if node >= 0:
                 links.append((self._word_key(words[i]), self._word_key(words[node]), 1))
+                if str(elabels[i]).split(':')[0] not in CORE_LABELS:
+                    loose.add((self._word_key(words[i]), self._word_key(words[node])))
         # The preposition before the interrogative phrase, and the noun of
         # that phrase, belong to the gap, whatever the parser hung them from.
         first = min([q] + ([noun] if noun is not None else []))
@@ -1166,6 +1262,7 @@ class ReadingMemoryMixin:
         subjects = {(self._word_key(words[enhanced[i] - 1]), 'nsubj') for i in where.values()
                     if enhanced[i] and str(elabels[i]).startswith('nsubj')}
         return {'stems': {self._word_key(words[i]) for i in content}, 'links': links, 'subjects': subjects,
+                'loose': loose, 'elabels': {self._word_key(words[i]): elabels[i] for i in content},
                 'cases': {self._word_key(words[i]): sorted(words[k].lower() for k in range(len(words))
                                                            if heads[k] == i + 1 and tags[k] == 'ADP' and k not in gap)
                           for i in content if i != noun}}
@@ -1454,6 +1551,43 @@ class ReadingMemoryMixin:
                 for w, t in content:
                     member = self.lemma_key(w) + '\x1f' + t
                     row['members'][member] = row['members'].get(member, 0) + 1
+
+    def observe_question_presence(self, question: str, sentence: str) -> None:
+        """G-56: count, from one worked question, which of its words (by
+        dictionary form) the sentence that holds the answer says (no parsing)."""
+        said = set()
+        for t in _TOKEN.findall(sentence):
+            if _is_word(t):
+                said |= self.lemma_keys(t)
+        table = self.reading_model.setdefault('question_presence', {})
+        for key in sorted({self.lemma_key(t) for t in _TOKEN.findall(question) if _is_word(t)}):
+            row = table.setdefault(key, [0, 0])
+            row[0] += 1
+            row[1] += key not in said
+        self.__dict__.pop('_optional_cache', None)
+
+    def _optional_words(self) -> set:
+        """G-56: question words the answering sentence usually does not say."""
+        table = self.reading_model.get('question_presence', {})
+        cache = self.__dict__.get('_optional_cache')
+        if cache is None or cache[0] != len(table):
+            cache = self.__dict__['_optional_cache'] = (len(table), {
+                key for key, (n, absent) in table.items() if n >= OPTIONAL_SUPPORT and absent >= OPTIONAL_RATE * n})
+        return cache[1]
+
+    def _skippable(self, words, tags, labels, negators) -> set:
+        """G-56 (``optional_words``): positions of the question whose word is a
+        modifier (an adverb, or hung as ``advmod``), learned as optional, not a
+        negator, and not said in anything remembered."""
+        if not getattr(self, 'optional_words', True):
+            return set()
+        optional = self._optional_words()
+        if not optional:
+            return set()
+        index = self._reading_index()
+        return {i for i, w in enumerate(words) if _is_word(w) and w.lower() not in negators
+                and (tags[i] == 'ADV' or str(labels[i]).split(':')[0] == 'advmod')
+                and self.lemma_key(w) in optional and not index.get(self._search_key(w))}
 
     def _head_of(self, entry):
         """G-53: the head word of a candidate answer and its class in the sentence."""

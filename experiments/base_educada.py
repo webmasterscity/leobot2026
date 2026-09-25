@@ -8,6 +8,7 @@ Educación, toda anterior e independiente de cualquier conjunto de validación:
   y los lemas si los acepta (G-44);
 - lectura con los 2000 ejemplos MLQA de educación de G-28b (semilla 2828);
 - G-53: la clase de respuesta de cada clase de pregunta, contada en SQuAD-es v1.1 `train` (87 595 preguntas);
+- G-56: qué palabras de cada pregunta dice la oración que contiene la respuesta (SQuAD-es `train` y MLQA);
 - G-54: las formas verbales de cada persona y las de pronombres y posesivos de primera y segunda (lema, clase y
   rasgos → forma), contadas además en UD COSER `train` (habla oral transcrita), solo para esa tabla: no entran al
   analizador.  GSD no, porque mezcla el voseo («salís») con el tuteo.
@@ -42,6 +43,22 @@ def squad_es_train():
         raise RuntimeError('SQuAD-es train cambió.')
     return [(qa['question'], qa['answers'][0]['text']) for article in json.loads(data)['data']
             for paragraph in article['paragraphs'] for qa in paragraph['qas'] if qa['answers']]
+
+
+def answer_sentence(context: str, start: int) -> str:
+    """G-56: the sentence of a context that holds the answer (between the
+    periods around its first character).  Text preparation only."""
+    left = context.rfind('. ', 0, max(start, 0)) + 2 if start > 0 else 0
+    right = context.find('. ', max(start, 0))
+    return context[left if left > 1 else 0: right + 1 if right >= 0 else len(context)]
+
+
+def squad_es_train_sentences():
+    """G-56: (question, sentence holding the answer) for SQuAD-es v1.1 `train`."""
+    data = json.loads(SQUAD_TRAIN_CACHE.read_bytes())
+    return [(qa['question'], answer_sentence(paragraph['context'], qa['answers'][0]['answer_start']))
+            for article in data['data'] for paragraph in article['paragraphs'] for qa in paragraph['qas']
+            if qa['answers']]
 
 
 def main():
@@ -85,6 +102,13 @@ def main():
         pairs = squad_es_train()
     for question, answer in pairs:
         bot.observe_answer_kind(question, answer)
+    if hasattr(bot, 'observe_question_presence'):
+        # G-56: which question words the sentence holding the answer says.
+        squad_es_train()                        # checks the cached file's SHA-256
+        for e in random.Random(EDU_SEED).sample(test, 2300)[:2000]:
+            bot.observe_question_presence(e['question'], answer_sentence(e['context'], e['context'].find(e['answers'][0])))
+        for question, sentence in squad_es_train_sentences():
+            bot.observe_question_presence(question, sentence)
     bot.save(out)
     print(json.dumps({'feats': with_feats, 'cpu_s': round(time.process_time() - t0, 1), 'mib': round(out.stat().st_size / 2**20, 1),
                       'rss_mib': round(resource.getrusage(resource.RUSAGE_SELF).ru_maxrss / 1024, 1)}))
