@@ -348,6 +348,7 @@ AGI no aparece al final de la lista de fases: se construye y se mide desde el pr
 - comprensión de lenguaje abierto en español;
 - razonamiento deductivo, relacional y causal;
 - aprendizaje con pocos ejemplos y abstracción: incluye la versión pública más reciente de ARC-AGI si hay acceso a la red, porque mide justo esto y los LLM todavía tienen dificultades con ella;
+  - **En pausa por decisión del usuario (2026-09-25).** No se trabaja en ARC ni en acertijos de rejillas, y esta medida del tablero se salta: el usuario lo está haciendo aparte y después dirá cómo lo hizo. Mientras tanto, el foco es la conversación: resolver problemas dentro de ella y responder con naturalidad.
 - transferencia a dominios nuevos;
 - planificación y uso de herramientas;
 - conversación útil;
