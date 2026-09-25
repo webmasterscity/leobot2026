@@ -28,7 +28,7 @@ from pathlib import Path
 
 from experiments.g41_conversacion import barajada
 from experiments.g42_conversacion import run
-from experiments.g45_conversacion import mapa_nombres
+from experiments.g45_conversacion import NOMBRES
 from experiments.g52_conversacion import reinicio
 from experiments.g54_conversacion import medir
 from experiments.validacion_comun import conversaciones, huella, normal
@@ -37,6 +37,27 @@ ROOT = Path(__file__).resolve().parents[1]
 FREEZE = 'freeze-G-55'
 G55 = ('kind_contrast',)
 G56 = ('gap_phrase', 'optional_words', 'core_links', 'named_conjuncts')
+# La reserva cuádruple de G-55 nombra 81 personas y cosas: los 70 sustitutos de G-45 no bastan.
+MAS_NOMBRES = ['Abundio', 'Crisanto', 'Demetria', 'Eleuterio', 'Fructuoso', 'Gregoria', 'Heraclio', 'Ignacia',
+               'Juvencio', 'Leocadia', 'Melquiades', 'Nemesia', 'Olegario', 'Pancracio', 'Rufina', 'Segismundo',
+               'Tiburcio', 'Venancia', 'Zenobia', 'Agapito', 'Bernardina', 'Cipriano', 'Domitila', 'Eusebia',
+               'Froilán', 'Gervasio', 'Hermenegildo', 'Ildefonso', 'Justiniano', 'Liberata', 'Modesto', 'Nazaria',
+               'Ovidio', 'Primitiva', 'Robustiano', 'Sinforosa', 'Telesforo', 'Valentín', 'Wilfrido', 'Yolanda']
+
+
+def mapa_nombres(convs):
+    """Como en G-45 (palabras con mayúscula que no abren la frase), con más sustitutos."""
+    nombres = []
+    for c in convs:
+        for dicho, _ in c:
+            for k, w in enumerate(re.findall(r'\w+', dicho)):
+                if k > 0 and w[:1].isupper() and not w.isupper() and w not in nombres:
+                    nombres.append(w)
+    usados = {normal(w) for w in nombres}
+    libres = [n for n in NOMBRES + MAS_NOMBRES if normal(n) not in usados]
+    if len(libres) < len(nombres):
+        raise RuntimeError('Faltan nombres sustitutos sin cifras.')
+    return {w: libres[i] for i, w in enumerate(nombres)}
 
 
 def git(*args):

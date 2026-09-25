@@ -34,9 +34,6 @@ FORM_RULE_SUPPORT = 2      # G-54: distinct lemmas behind an ending rule of a ve
 CONNECTIVE_SUPPORT = 5     # G-56: a phrase seen this often ...
 CONNECTIVE_RATE = 0.8      # ... and this often set off by punctuation is a connective
 CONNECTIVE_WORDS = 3       # longest phrase counted
-BARRIER_SUPPORT = 20       # G-56: a punctuation mark seen this often between two words ...
-BARRIER_RATE = 0.8         # ... and this often with no modifier link reaching across it is a barrier
-MODIFIER_LABELS = frozenset({'nmod', 'amod', 'obl', 'advmod', 'nummod'})    # G-56: links that modify
 LEMMA_SUPPORT = 3          # G-47b: an annotated lemma kept as an alternative this often ...
 LEMMA_SHARE = 0.2          # ... and in at least this share of the form's occurrences
 CONCORD_AFTER = 5         # G-52: cases after a verb before a word can be learned as negative concord ...
@@ -176,7 +173,6 @@ class SyntaxMixin:
             self._count_forms(words, tags, lemmas, feats)
         if labels is not None:
             self._count_connectives(lowered, tags, heads, labels)
-            self._count_barriers(lowered, tags, heads, labels)
         if lemmas is not None and labels is not None:
             # G-47: how often each verb has a subject of its own.
             subjects = model.setdefault('subject_counts', {})
@@ -216,21 +212,6 @@ class SyntaxMixin:
                 continue
             row = table.setdefault(tag + '\x1f' + lemma.lower() + '\x1f' + '|'.join(sorted(values)), {})
             row[word.lower()] = row.get(word.lower(), 0) + 1
-
-    def _count_barriers(self, lowered, tags, heads, labels) -> None:
-        """G-56: for each punctuation mark between two words, whether some
-        modifier link (a noun's complement or adjective, a place, a time, a
-        manner) reaches across it.  Almost none crosses «;» or «:», which part
-        a sentence into units; many cross «,»."""
-        spans = [(min(d, h - 1), max(d, h - 1)) for d, h in enumerate(heads)
-                 if h and str(labels[d]).split(':')[0] in MODIFIER_LABELS]
-        table = self.syntax_model.setdefault('barrier_counts', {})
-        for k in range(1, len(lowered) - 1):
-            if tags[k] != 'PUNCT' or tags[k - 1] == 'PUNCT' or tags[k + 1] == 'PUNCT':
-                continue
-            row = table.setdefault(lowered[k], [0, 0])
-            row[0] += 1
-            row[1] += not any(a < k < b for a, b in spans)
 
     def _count_connectives(self, lowered, tags, heads, labels) -> None:
         """G-56: for each short phrase hung from a clause as a modifier, a
@@ -580,8 +561,6 @@ class SyntaxMixin:
         self._compile_forms()
         model['connectives'] = sorted(k for k, (n, off) in model.get('connective_counts', {}).items()
                                       if n >= CONNECTIVE_SUPPORT and off >= CONNECTIVE_RATE * n)
-        model['modifier_barriers'] = sorted(k for k, (n, free) in model.get('barrier_counts', {}).items()
-                                            if n >= BARRIER_SUPPORT and free >= BARRIER_RATE * n)
         model['lemma_table'] = {w: max(sorted(row), key=lambda k: row[k])
                                 for w, row in model.get('lemma_counts', {}).items()
                                 if max(sorted(row), key=lambda k: row[k]) != w}

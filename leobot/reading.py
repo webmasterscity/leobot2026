@@ -40,10 +40,6 @@ KIND_COMPLEMENTED = 0.5    # G-55: a kind's noun this often completed («qué ti
 KIND_DOMINANT = 2 / 3      # ... the class is checked only where one class takes this share of the answers
 MEMBER_LABELS = frozenset({'amod', 'nmod', 'appos', 'flat', 'nummod', 'compound'})
 FORM_SUPPORT = 3           # G-54: a counted reading of a form with this support outweighs rarer ones
-CORE_LABELS = frozenset({'nsubj', 'obj', 'iobj', 'ccomp', 'xcomp', 'csubj'})    # G-56: who does what to whom
-CLAUSE_EDGES = frozenset({'conj', 'advcl', 'acl', 'ccomp', 'parataxis', 'csubj'})  # G-56: edges between clauses
-OPTIONAL_SUPPORT = 30      # G-56: worked questions with a word before it can be learned as optional ...
-OPTIONAL_RATE = 0.8        # ... if the answering sentence lacks it this often
 # G-42: learned word classes that carry grammar rather than content; they do
 # not have to be found in the answering sentence and do not anchor it.
 FUNCTION_TAGS = frozenset({'DET', 'ADP', 'AUX', 'PRON', 'CCONJ', 'SCONJ', 'PUNCT'})
@@ -398,16 +394,12 @@ class ReadingMemoryMixin:
         negators = self.negator_words()
         words = [t.lower() for t in _TOKEN.findall(question) if _is_word(t)]
         polarity = self.negated(sum(w in negators for w in words))
-        # G-56: learned optional modifiers nobody said are not asked for.
-        qtree = self._utterance_tree(question) if self.syntax_model.get('sentences') else None
-        skipped = {qtree[0][i].lower() for i in self._skippable(qtree[0], qtree[1], qtree[3], negators)} \
-            if qtree is not None else set()
-        content = {self._search_key(w) for w in words if w not in negators and w not in skipped}
+        content = {self._search_key(w) for w in words if w not in negators}
         supports: dict[int, list[str]] = {0: [], 1: []}
         reported: list[str] = []
         structure = None
         if getattr(self, 'structural_verification', True) and self.syntax_model.get('sentences'):
-            structure = self._question_links(question, negators, skipped)
+            structure = self._question_links(question, negators)
         if structure is not None:
             self._resolve_references()
         if content and self.reading_utterances:
@@ -677,7 +669,7 @@ class ReadingMemoryMixin:
                         links[d].add(k); links[k].add(d)
         return enhanced, links
 
-    def _question_links(self, question: str, negators: set, skipped=frozenset()):
+    def _question_links(self, question: str, negators: set):
         """Links between the content words of a yes/no question: each one with
         its nearest content ancestor and the number of steps between them."""
         tree = self._utterance_tree(question)
@@ -686,9 +678,9 @@ class ReadingMemoryMixin:
         words, tags, heads, labels = tree
         enhanced, _ = self._enhanced(heads, labels)
         content = {i for i, (w, t) in enumerate(zip(words, tags))
-                   if t not in FUNCTION_TAGS and _is_word(w) and w.lower() not in negators and w.lower() not in skipped}
+                   if t not in FUNCTION_TAGS and _is_word(w) and w.lower() not in negators}
         enhanced_labels = self._enhanced(heads, labels)[1]
-        links, roles, loose = [], [], set()
+        links, roles = [], []
         for i in sorted(content):
             node = enhanced[i] - 1
             while node >= 0 and node not in content:
@@ -697,8 +689,6 @@ class ReadingMemoryMixin:
                 # One content step: function words in between are transparent.
                 links.append((self._word_key(words[i]), self._word_key(words[node]), 1))
                 roles.append((self._word_key(words[i]), self._word_key(words[node]), enhanced_labels[i]))
-                if str(enhanced_labels[i]).split(':')[0] not in CORE_LABELS:
-                    loose.add((self._word_key(words[i]), self._word_key(words[node])))
         cases = {i: sorted(words[k].lower() for k in range(len(words)) if heads[k] == i + 1 and tags[k] == 'ADP')
                  for i in content}
         copular = {i: any(heads[k] == i + 1 and labels[k] == 'cop' for k in range(len(words))) for i in content}
@@ -714,7 +704,7 @@ class ReadingMemoryMixin:
                 'cases': {self._word_key(words[i]): cases[i] for i in content},
                 'copular': {self._word_key(words[i]): copular[i] for i in content},
                 'elabels': {self._word_key(words[i]): enhanced_labels[i] for i in content},
-                'roles': roles, 'loose': loose}
+                'roles': roles}
 
     def _same_kind(self, a: str, tag_a: str, b: str, tag_b: str) -> bool:
         """G-55: whether two words, each with its word class, are members of one
@@ -912,9 +902,7 @@ class ReadingMemoryMixin:
         keys = sorted(places)
         _, graph = self._graph(heads, labels, conj=True)
         partners = self._partners(words, heads, labels)
-        loose = structure.get('loose', set()) if getattr(self, 'core_links', True) else set()
-        roles_all = structure.get('elabels', {})
-        roles = roles_all if structure.get('declarative', True) else {}
+        roles = structure.get('elabels', {}) if structure.get('declarative', True) else {}
         elabels = self._enhanced(heads, labels)[1]
         occurrences = {j for js in places.values() for j in js}
         out = []
@@ -926,66 +914,26 @@ class ReadingMemoryMixin:
             blocked = {j for j in range(len(words)) if j not in aligned and (
                 j in occurrences or tags[j] in ('NOUN', 'PROPN')
                 or (tags[j] == 'PRON' and 'PronType=Prs' in self.morphology(words[j], 'PRON')))}
-            if all(self._within_clause(words, heads, labels, tags, blocked, partners, chosen[a], chosen[b],
-                                       str(roles_all.get(a, '')).split(':')[0]) if (a, b) in loose
-                   else self._joined(graph, tags, blocked, partners, chosen[a], chosen[b], steps)
+            if all(self._joined(graph, tags, blocked, partners, chosen[a], chosen[b], steps)
                    for a, b, steps in structure['links']) and not self._roles_swapped(roles, elabels, chosen):
                 out.append(chosen)
         return out
 
     def _roles_swapped(self, roles, elabels, chosen) -> bool:
-        """G-56: whether two question words that are core arguments of the
-        question with different functions (subject, object, indirect object)
-        trade them in the sentence: one takes the other's function («¿María ama
-        a Juan?» against «Juan ama a María»).  One word labelled otherwise by
-        the parser is not a swap."""
-        if not getattr(self, 'core_links', True):
+        """G-56 (``role_check``, kept when the rest of G-56 was retired): whether
+        two question words that are core arguments of the question with
+        different functions (subject, object, indirect object) trade them in the
+        sentence: one takes the other's function («¿María ama a Juan?» against
+        «Juan ama a María»).  One word labelled otherwise by the parser is not a
+        swap.  Checked only when the question keeps the declarative order the
+        parser learned from."""
+        if not getattr(self, 'role_check', True):
             return False
         core = {k: str(roles.get(k, '')).split(':')[0] for k in chosen}
         core = {k: r for k, r in core.items() if r in ('nsubj', 'obj', 'iobj')}
         return any(ra != rb and str(elabels[chosen[a]]).split(':')[0] == rb
                    and str(elabels[chosen[b]]).split(':')[0] == ra
                    for a, ra in core.items() for b, rb in core.items() if a != b)
-
-    def _within_clause(self, words, heads, labels, tags, blocked, partners, start, goal, own: str = '') -> bool:
-        """G-56: a link that is not a core argument (a modifier, a place or a
-        time, an apposition) holds if the two words are in one clause: a path
-        through the enhanced tree (coordinated elements hang from the head of
-        the first one, so coordinated nouns share it and a coordinated predicate
-        is a clause of its own) that crosses no edge between clauses and no
-        other entity (G-47's blocked words, which may be crossed as the same
-        entity).  A punctuation mark no modifier link was seen to reach across
-        («;», learned) parts them even where the parser missed the division."""
-        barriers = set(self.syntax_model.get('modifier_barriers', ()))
-        if any(words[k] in barriers for k in range(min(start, goal) + 1, max(start, goal))):
-            return False
-        enhanced, elabels = self._enhanced(heads, labels)
-        links = [set() for _ in heads]
-        for d, h in enumerate(enhanced):
-            base = str(elabels[d]).split(':')[0]
-            # An edge between clauses is crossed only as the question's own link («hace cinco años»).
-            if h and (base not in CLAUSE_EDGES or base == own) and labels[d] != 'conj' or \
-                    (h and labels[d] == 'conj' and not self._clause_head(tags, heads, labels, d)):
-                links[d].add(h - 1); links[h - 1].add(d)
-        seen, stack = {start}, [start]
-        while stack:
-            node = stack.pop()
-            for other in sorted(links[node]):
-                if other == goal:
-                    return True
-                if other in seen or (other in blocked and other not in partners.get(node, ())
-                                     and node not in partners.get(other, ())):
-                    continue
-                seen.add(other); stack.append(other)
-        return False
-
-    @staticmethod
-    def _clause_head(tags, heads, labels, node) -> bool:
-        """G-56: whether a word heads a clause of its own: a verb, or a word
-        with its own copula or subject («… y es nueva»)."""
-        return tags[node] in ('VERB', 'AUX') or any(
-            heads[c] == node + 1 and (labels[c] == 'cop' or str(labels[c]).startswith('nsubj'))
-            for c in range(len(heads)))
 
     @staticmethod
     def _partners(words, heads, labels) -> dict:
@@ -1207,27 +1155,9 @@ class ReadingMemoryMixin:
         first = min(phrase)
         case = low[first - 1] if first > 0 and tags[first - 1] == 'ADP' else None
         interrogatives = set(self.syntax_model.get('interrogatives', ()))
-        # G-56: the interrogative phrase's common-noun complements («qué día de la
-        # semana») belong to the gap; a name there («hermanos de Ana») identifies.
-        gap = set(phrase)
-        if noun is not None and getattr(self, 'gap_phrase', True):
-            # The phrase is fronted as one unit: only a complement that follows
-            # the noun without a gap and ends before the question's verb counts.
-            verb = next((k for k in range(noun + 1, len(words)) if tags[k] in ('VERB', 'AUX')), len(words))
-            for m in (k for k in range(len(words)) if heads[k] == noun + 1 and labels[k] == 'nmod' and tags[k] == 'NOUN'):
-                span, stack = [], [m]
-                while stack:
-                    k = stack.pop(); span.append(k)
-                    stack.extend(c for c in range(len(words)) if heads[c] == k + 1)
-                # ... and whose words the answering sentence usually does not say (learned).
-                optional = self._optional_words()
-                if max(span) < verb and sorted(span) == list(range(noun + 1, max(span) + 1)) \
-                        and all(tags[k] in FUNCTION_TAGS or self.lemma_key(words[k]) in optional for k in span):
-                    gap.update(span)
-        skip = self._skippable(words, tags, labels, self.negator_words())
         where: dict = {}
         for i, (w, t) in enumerate(zip(words, tags)):
-            if i not in gap and i not in skip and t not in FUNCTION_TAGS and _is_word(w) and low[i] not in interrogatives:
+            if i not in phrase and t not in FUNCTION_TAGS and _is_word(w) and low[i] not in interrogatives:
                 where.setdefault(self._word_key(w), i)
         noun_key = self._word_key(words[noun]) if noun is not None else None
         categories = set(self.reading_model.get('category_nouns', ()))
@@ -1314,7 +1244,7 @@ class ReadingMemoryMixin:
         words, tags, heads, labels = qtree
         enhanced, elabels = self._enhanced(heads, labels)
         content = set(where.values()) | ({noun} if with_noun and noun is not None else set())
-        links, loose = [], set()
+        links = []
         for i in sorted(content):
             node = enhanced[i] - 1
             while node >= 0 and node not in content:
@@ -1330,7 +1260,7 @@ class ReadingMemoryMixin:
         declarative = all(heads[i] - 1 < 0 or i < heads[i] - 1 for i in range(len(words))
                           if str(labels[i]).startswith('nsubj'))
         return {'stems': {self._word_key(words[i]) for i in content}, 'links': links, 'subjects': subjects,
-                'loose': loose, 'declarative': declarative,
+                'declarative': declarative,
                 'elabels': {self._word_key(words[i]): elabels[i] for i in content if i != noun},
                 'cases': {self._word_key(words[i]): sorted(words[k].lower() for k in range(len(words))
                                                            if heads[k] == i + 1 and tags[k] == 'ADP' and k not in gap)
@@ -1377,13 +1307,7 @@ class ReadingMemoryMixin:
                         out.append(((first, -len(placement), aliased, 0, False, False), text, row, node))
             nodes = []
             for node in range(n):
-                # G-56 (``named_conjuncts``): a coordinated noun shares its first
-                # element's place: it answers alone when the question named that
-                # one («además del paraguas»), or else with it (G-47).  A
-                # coordinated predicate is a clause of its own.
-                if covered[node] or (slabels[node] == 'conj' and (
-                        self._clause_head(stags, sheads, slabels, node)
-                        or not getattr(self, 'named_conjuncts', True))):
+                if covered[node] or slabels[node] == 'conj':
                     continue
                 parent = sheads[node] - 1
                 if parent >= 0 and not covered[parent]:
@@ -1396,8 +1320,6 @@ class ReadingMemoryMixin:
                 span, stack = [], [node]
                 while stack:
                     k = stack.pop(); span.append(k); stack.extend(children[k])
-                if slabels[node] == 'conj':         # its conjunction belongs to the coordination
-                    span = [k for k in span if not (sheads[k] - 1 == node and slabels[k] == 'cc')]
                 if all(stags[k] in FUNCTION_TAGS or not _is_word(swords[k]) for k in span):
                     continue
                 nodes.append((node, span))
@@ -1635,43 +1557,6 @@ class ReadingMemoryMixin:
                 for w, t in content:
                     member = self.lemma_key(w) + '\x1f' + t
                     row['members'][member] = row['members'].get(member, 0) + 1
-
-    def observe_question_presence(self, question: str, sentence: str) -> None:
-        """G-56: count, from one worked question, which of its words (by
-        dictionary form) the sentence that holds the answer says (no parsing)."""
-        said = set()
-        for t in _TOKEN.findall(sentence):
-            if _is_word(t):
-                said |= self.lemma_keys(t)
-        table = self.reading_model.setdefault('question_presence', {})
-        for key in sorted({self.lemma_key(t) for t in _TOKEN.findall(question) if _is_word(t)}):
-            row = table.setdefault(key, [0, 0])
-            row[0] += 1
-            row[1] += key not in said
-        self.__dict__.pop('_optional_cache', None)
-
-    def _optional_words(self) -> set:
-        """G-56: question words the answering sentence usually does not say."""
-        table = self.reading_model.get('question_presence', {})
-        cache = self.__dict__.get('_optional_cache')
-        if cache is None or cache[0] != len(table):
-            cache = self.__dict__['_optional_cache'] = (len(table), {
-                key for key, (n, absent) in table.items() if n >= OPTIONAL_SUPPORT and absent >= OPTIONAL_RATE * n})
-        return cache[1]
-
-    def _skippable(self, words, tags, labels, negators) -> set:
-        """G-56 (``optional_words``): positions of the question whose word is a
-        modifier (an adverb, or hung as ``advmod``), learned as optional, not a
-        negator, and not said in anything remembered."""
-        if not getattr(self, 'optional_words', True):
-            return set()
-        optional = self._optional_words()
-        if not optional:
-            return set()
-        index = self._reading_index()
-        return {i for i, w in enumerate(words) if _is_word(w) and w.lower() not in negators
-                and (tags[i] == 'ADV' or str(labels[i]).split(':')[0] == 'advmod')
-                and self.lemma_key(w) in optional and not index.get(self._search_key(w))}
 
     def _head_of(self, entry):
         """G-53: the head word of a candidate answer and its class in the sentence."""

@@ -104,3 +104,23 @@ Viene del mismo desarrollo que G-56 (23 conjuntos gastados, 1207 preguntas); las
 5. El contraste por clase va después del de G-46, que no cambia, y no pide ni lugar de atributo ni la exclusión de G-47b.
 
 La puerta no cambia.
+
+## Resultado (2026-09-25, `freeze-G-55`, junto con G-56)
+
+Mismo material y mismas cifras que en la sección «Resultado» de [G-56](G-56-charla-frase-interrogativa-palabras-opcionales-enlaces-no-nucleares.md).
+
+| Criterio | Umbral | Resultado |
+|---|---|---|
+| «no» acertados (reserva y referencias) | ≥ `freeze-G-54` + 5 | 15 frente a 14: **+1, no** |
+| Aciertos totales | ≥ +3 | reserva y referencias: 122 frente a 121; con la charla: 158 frente a 157. **+1, no** |
+| Afirma lo falso | ≤ +2 | 1 frente a 1: sí |
+| Clases barajadas | aporte ≤ la mitad | aporte 0 con clases barajadas, frente a +1: sí |
+| Reinicio, barajada, renombrado, SQuAD-es | como en G-54 | sí (ver G-56) |
+
+**Puerta: no superada.** Se registra sin relajarla.
+
+**Qué se conserva.** El contraste por clase se queda en el motor: aporta +1 y no añade ningún «no» falso ni ningún error confiado.
+- Es una decisión que revisará la auditoría 5.10.
+- No se vuelve a medir hasta que otro preregistro lo necesite.
+
+**Una observación del control.** Con las clases barajadas, el total baja a 146. La caída no viene del contraste, que aporta 0 con las clases barajadas: viene de G-53, que usa las mismas clases para elegir la clase de la respuesta. Confirma que G-53 se apoya en ellas.

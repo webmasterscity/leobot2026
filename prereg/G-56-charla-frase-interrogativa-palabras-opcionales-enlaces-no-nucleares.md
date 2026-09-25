@@ -138,3 +138,43 @@ Todo lo de abajo salió del desarrollo: los 23 conjuntos gastados, 1207 pregunta
 «¿Sofía es la mayor?» ganaba con un motivo flojo («No: me contaste que Sofía tiene ocho años»). Con la clase por categoría vuelve a «No lo sé».
 
 Las pruebas focales nuevas están en `tests/test_g55_g56.py`.
+
+## Resultado (2026-09-25, `freeze-G-55`, motor `672f78db`)
+
+**Material:** reserva cuádruple 123, referencias 48 y charla doble 64. Lo redactaron, después de congelar, 8 subagentes nuevos (Sonnet, herramienta Agent, copia aislada) con los encargos fijos y sin ningún mensaje del usuario. Lo validaron 8 subagentes más (2 claves corregidas). Se guardó en git (`9b6a021`) antes de ejecutar.
+
+| | Reserva | Referencias | Charla | Total (235) |
+|---|---|---|---|---|
+| G-55 + G-56 | 101 | 21 | 36 | **158** |
+| sin los cuatro puntos de G-56 | 101 | 21 | 36 | 158 |
+| cada punto de G-56 apagado por separado | 101 | 21 | 36 | 158 |
+| `estable-G-14` (= `freeze-G-54r`) | 100 | 21 | 36 | 157 |
+| subagente Claude, sin claves | 123 | 48 | 63 | 234 |
+
+**Puerta: no superada.**
+
+| Criterio | Umbral | Resultado |
+|---|---|---|
+| Charla doble | ≥ `freeze-G-54r` + 5 | 36 frente a 36: **no** |
+| Aporte de G-56 | ≥ +5 | **0** |
+| Afirma lo falso | ≤ +1 | 1 frente a 1: sí |
+| Errores confiados | ≤ +2 | 8 frente a 8: sí |
+| Palabras barajadas | aporte ≤ la mitad | 0: sí |
+| Roles invertidos (prueba focal) | ningún «sí» | sí |
+| Reinicio | 100 % | 235/235: sí |
+| Memoria barajada | 0 en abiertas y sí/no | sí |
+| Renombrado | ≥ 90 % | 114/123 (`estable-G-14`: 117), 48/48, 64/64: sí |
+| SQuAD-es, 2400 nuevos | no peor | F1 0,2464 (sin G-55/56: 0,2458; lector solo: 0,2457): sí |
+
+- **Naturalidad:** en los 173 turnos de la charla nueva, las respuestas son idénticas a las de `estable-G-14`. Las correcciones de la voz no se activaron en este material, así que no se gastó el juez.
+- **Lectura:** lo ganado en desarrollo (+5 en 1207) **no se transfiere** al material nuevo. Los fallos del material nuevo son de otros tipos.
+
+**Retirada (5.9, regla de este preregistro):** los cuatro puntos tienen aporte 0 en los tres conjuntos juntos y **se retiran**: la frase interrogativa completa, las palabras opcionales (con su conteo), la holgura con sus barreras aprendidas, y lo coordinado con lo nombrado.
+
+**Se conserva la comprobación de roles intercambiados** (interruptor propio, `role_check`), con el mismo criterio con que se conservó G-52:
+- evita una clase de «sí» falso comprobada: «Juan ama a María» frente a «¿María ama a Juan?»;
+- en el material nuevo es neutra.
+
+**Trampa que vuelve** (ya estaba en `estable-G-14`): una oración coordinada presta su lugar. «Pedro nació en Bogotá y ahora vive en Medellín» → «¿Pedro vive en Bogotá?» → «Sí». Solo la evitaba la holgura retirada. Queda registrada como resultado negativo.
+
+**Se conservan también las correcciones de la voz** (conectores aprendidos, persona del verbo coordinado): son arreglos de la voz de G-54 que pidió la prueba común, no de G-56.
