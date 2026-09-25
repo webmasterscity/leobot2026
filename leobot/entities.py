@@ -287,22 +287,18 @@ class EntityMixin:
         roots = {entities['root'][(pos, j)] for j in nodes if (pos, j) in entities['root']}
         return {m[1] for root in roots for m in entities['members'][root] if m[0] == pos}
 
-    def _mention_text(self, mention, coordination: bool = False) -> str:
-        """The words of a mention with its name parts; G-54: with
-        ``coordination``, also the mentions coordinated with it («Lucía y Paula»)."""
+    def _mention_text(self, mention) -> str:
         entities = self._entities()
         pos, node = mention
         tree = entities['trees'].get(pos)
         if tree is None:
             return ''
         words, tags, heads, labels = tree
-        parts = NAME_PARTS | ({'conj', 'cc'} if coordination else set())
         span, stack = [], [node]
         while stack:
             k = stack.pop()
             span.append(k)
-            stack.extend(c for c in range(len(words)) if heads[c] == k + 1 and labels[c] in parts
-                         and (labels[c] != 'cc' or k != node))
+            stack.extend(c for c in range(len(words)) if heads[c] == k + 1 and labels[c] in NAME_PARTS)
         return self._span_text(self.reading_utterances[pos], words, span)
 
     # ----- answering --------------------------------------------------------
@@ -339,9 +335,6 @@ class EntityMixin:
             if node >= 0:
                 links.append((keyof[k], keyof[node], 1))
         structure = {'stems': set(keyof.values()), 'links': links}
-        # G-54: a plural noun asked about («las hijas») is answered with the whole coordination.
-        plural = getattr(self, 'answer_constituent', True) and tags[anchor] == 'NOUN' \
-            and 'Number=Plur' in self.morphology(words[anchor], 'NOUN')
         index = self._reading_index()
         lists = sorted((set(index.get(self._search_key(words[k]), ())) |
                         set(self._alias_postings(self._search_key(words[k]))) for k in content), key=len)
@@ -359,15 +352,10 @@ class EntityMixin:
                 if root is None:
                     continue
                 used = {(pos, j) for j in placement.values()}
-                members = set(entities['members'][root])
                 for other in entities['members'][root]:
                     if other in used or entities['info'][other][0] in structure['stems']:
                         continue
-                    otree = entities['trees'].get(other[0])
-                    if plural and otree is not None and otree[3][other[1]] == 'conj' \
-                            and (other[0], otree[2][other[1]] - 1) in members:
-                        continue            # already inside its coordination's answer
-                    text = self._mention_text(other, plural)
+                    text = self._mention_text(other)
                     if text:
                         found.setdefault(' '.join(_norm(t) for t in text.split()), (text, other))
         names = {k: v for k, v in found.items() if entities['info'][v[1]][1] == 'PROPN'}

@@ -394,14 +394,13 @@ class ReadingMemoryMixin:
         words = [t.lower() for t in _TOKEN.findall(question) if _is_word(t)]
         polarity = self.negated(sum(w in negators for w in words))
         content = {self._search_key(w) for w in words if w not in negators}
-        supports: dict[int, list[int]] = {0: [], 1: []}
+        supports: dict[int, list[str]] = {0: [], 1: []}
         reported: list[str] = []
         structure = None
         if getattr(self, 'structural_verification', True) and self.syntax_model.get('sentences'):
             structure = self._question_links(question, negators)
         if structure is not None:
             self._resolve_references()
-        scoped = structure is not None and getattr(self, 'scoped_polarity', True) and getattr(self, 'same_fact', True)
         if content and self.reading_utterances:
             index = self._reading_index()
             # G-51: a row where another mention of the same entity is said also counts.
@@ -409,110 +408,49 @@ class ReadingMemoryMixin:
             candidates = set(lists[0]).intersection(*lists[1:]) if lists else set()
             for position in sorted(candidates):
                 row = self.reading_utterances[position]
-                asserted: list = []
                 if structure is not None:
-                    held = self._links_hold(structure, row, asserted)
+                    held = self._links_hold(structure, row)
                     if held is None:
                         continue
                     if held == 'subordinate':
                         reported.append(row['source'])
                         continue
-                if scoped:
-                    # G-54: a negator negates the word it hangs from (its scope in
-                    # UD), as in open answers: only those on the placed words count.
-                    words_, _, heads_, labels_ = self._tree_of(row)
-                    for polarity_ in sorted({self._scope_negated(words_, heads_, set(p.values()), negators, labels_)
-                                             for p in asserted}):
-                        supports[polarity_].append(position)
-                    continue
                 said = [t.lower() for t in row['tokens'] if _is_word(t)]
-                supports[self.negated(sum(w in negators for w in said))].append(position)
-        rows = self.reading_utterances
+                supports[self.negated(sum(w in negators for w in said))].append(row['source'])
         same, opposite = supports[polarity], supports[1 - polarity]
-        recency = getattr(self, 'recency', True) and all(self._conversational(rows[p]) for p in same)
-        sources = lambda positions: [rows[p]['source'] for p in positions]
+        # G-54: the rows behind an answer, for its voice.
+        rows_of = lambda sources: [r for r in self.reading_utterances if r['source'] in set(sources)]
         if same and opposite:
-            return {'text': self._voiced('contradiction', [rows[p] for p in sorted(same + opposite)])
+            return {'text': self._voiced('contradiction', rows_of(same + opposite))
                     or 'No lo sé: lo que me dijeron se contradice.', 'status': 'literal_contradiction',
-                    'evidence': sources(same + opposite)}
-        contrast = structure is not None and polarity == 0 and getattr(self, 'contrast_answers', True) and rows
+                    'evidence': same + opposite}
         if same:
-            if contrast and recency:
-                # G-54: a later sentence with another value in the same place replaces the one that agreed.
-                later = self._contrast_row(structure, negators, after=max(same))
-                if later is not None:
-                    row, said = later
-                    return {'text': self._voiced('contrast', [row]) or f'No: según lo que me dijeron, «{row["text"]}»',
-                            'status': 'literal_contrast',
-                            'evidence': [row['source']], 'said_value': said}
-            return {'text': self._voiced('yes', [rows[p] for p in same]) or 'Sí, según lo que me dijeron.',
-                    'status': 'literal_yes', 'evidence': sources(same)}
+            return {'text': self._voiced('yes', rows_of(same)) or 'Sí, según lo que me dijeron.',
+                    'status': 'literal_yes', 'evidence': same}
         if opposite:
-            return {'text': self._voiced('no', [rows[p] for p in opposite]) or 'No, según lo que me dijeron.',
-                    'status': 'literal_no', 'evidence': sources(opposite)}
+            return {'text': self._voiced('no', rows_of(opposite)) or 'No, según lo que me dijeron.',
+                    'status': 'literal_no', 'evidence': opposite}
         if reported:
             return {'text': 'No lo sé con seguridad: lo que me dijeron lo presenta como algo dicho o supuesto, '
                             'no como un hecho.', 'status': 'literal_reported', 'evidence': reported}
-        if contrast:
+        if structure is not None and polarity == 0 and getattr(self, 'contrast_answers', True) and self.reading_utterances:
             # G-46: another value of the same attribute was said.
-            found = self._contrast_row(structure, negators)
-            if found is not None:
-                row, said = found
-                return {'text': self._voiced('contrast', [row]) or f'No: según lo que me dijeron, «{row["text"]}»',
-                        'status': 'literal_contrast',
-                        'evidence': [row['source']], 'said_value': said}
+            index = self._reading_index()
+            for value in sorted(structure['stems']):
+                others = [LEMMA + k if self._lemma_sets() else structure['norms'][k]
+                          for k in structure['stems'] if k != value]
+                lists = sorted((index.get(t, ()) for t in others), key=len)
+                if not lists:
+                    continue
+                for position in sorted(set(lists[0]).intersection(*lists[1:])):
+                    row = self.reading_utterances[position]
+                    said = self._contrast(structure, row, negators)
+                    if said is not None:
+                        return {'text': self._voiced('contrast', [row]) or f'No: según lo que me dijeron, «{row["text"]}»',
+                                'status': 'literal_contrast',
+                                'evidence': [row['source']], 'said_value': said}
         return {'text': self._voiced('unknown') or 'No lo sé: no tengo esa información.', 'status': 'literal_unknown',
                 'evidence': []}
-
-    def _scope_negated(self, words, heads, aligned, negators, labels=None) -> int:
-        """G-47/G-54: the polarity of placed words: the learned negators that
-        hang from them.  G-54: a word in apposition or a name part is in the
-        scope of a negator on the noun it goes with («no su colega Tomás»)."""
-        scope = set(aligned)
-        if labels is not None and getattr(self, 'scoped_polarity', True):
-            for j in aligned:
-                while labels[j] in ('appos', 'flat') and heads[j]:
-                    j = heads[j] - 1
-                    scope.add(j)
-        return self.negated(sum(words[k].lower() in negators and heads[k] - 1 in scope for k in range(len(words))))
-
-    def _same_kind(self, a: str, b: str) -> bool:
-        """G-54: whether two words are members of one closed learned kind of
-        answer (G-53: «martes» and «lunes» are both answers to «qué día»)."""
-        index = self.__dict__.get('_kind_members')
-        table = self.reading_model.get('answer_kinds', {})
-        if index is None or index[0] != len(table):
-            members: dict = {}
-            for key, row in table.items():
-                counts = row.get('members', {})
-                tokens, hapax = sum(counts.values()), sum(n == 1 for n in counts.values())
-                if ' ' not in key or row['n'] < KIND_SUPPORT or (tokens >= OPEN_TOKENS and hapax >= OPEN_RATE * tokens):
-                    continue
-                for member in counts:
-                    members.setdefault(member.split('\x1f')[0], set()).add(key)
-            index = self.__dict__['_kind_members'] = (len(table), members)
-        return bool(index[1].get(self.lemma_key(a), set()) & index[1].get(self.lemma_key(b), set()))
-
-    def _contrast_row(self, structure, negators, after=None):
-        """G-46: the first remembered row (after position ``after``, if given)
-        that says another value of the question's attribute, with that value.
-        G-54: a later value replaces the one asked about only if both are of
-        one learned kind."""
-        index = self._reading_index()
-        for value in sorted(structure['stems']):
-            others = [LEMMA + k if self._lemma_sets() else structure['norms'][k]
-                      for k in structure['stems'] if k != value]
-            lists = sorted((index.get(t, ()) for t in others), key=len)
-            if not lists:
-                continue
-            for position in sorted(set(lists[0]).intersection(*lists[1:])):
-                if after is not None and position <= after:
-                    continue
-                row = self.reading_utterances[position]
-                said = self._contrast(structure, row, negators)
-                if said is not None and (after is None or self._same_kind(value, said)):
-                    return row, said
-        return None
 
     # ----- the voice of the answer (G-54) -----------------------------------
     def _swapped_form(self, word: str, tag: str, hint: str | None = None):
@@ -817,11 +755,9 @@ class ReadingMemoryMixin:
                         return True
         return False
 
-    def _links_hold(self, structure, source, asserted=None):
+    def _links_hold(self, structure, source):
         """None if the sentence does not state the question's links; 'subordinate'
-        if it does but inside a subordinate clause; 'asserted' otherwise.  G-54:
-        the placements that hold outside a subordinate clause are added to
-        ``asserted`` when a list is given."""
+        if it does but inside a subordinate clause; 'asserted' otherwise."""
         tree = self._tree_of(source)
         if tree is None:
             return None
@@ -834,8 +770,6 @@ class ReadingMemoryMixin:
                 return None
             enhanced, _ = self._graph(heads, labels)
             held = [self._subordinate(enhanced, tags, heads, set(p.values())) for p in placements]
-            if asserted is not None:
-                asserted.extend(p for p, sub in zip(placements, held) if not sub)
             return 'asserted' if not all(held) else 'subordinate'
         places: dict = {}
         for j, w in enumerate(words):
@@ -1190,16 +1124,6 @@ class ReadingMemoryMixin:
         ranked = [entry for entry in ranked if self._kind_fits(low, q, noun, entry[1], self._head_of(entry)) is not False]
         if not ranked:
             return None
-        if getattr(self, 'recency', True) and self._kind_checked(low, q, noun):
-            # G-54: values of the kind asked for, placed as fully, said in several
-            # sentences of the conversation: the last one said replaces the others.
-            quality = min(entry[0][:4] for entry in ranked)
-            top = [entry for entry in ranked if entry[0][:4] == quality]
-            if all(isinstance(entry[2], dict) and self._conversational(entry[2]) for entry in top) \
-                    and len({id(entry[2]) for entry in top}) > 1:
-                where_said = self._row_positions()
-                last = max(where_said[id(entry[2])] for entry in top)
-                ranked = [entry for entry in top if where_said[id(entry[2])] == last]
         best = min(key for key, _, _, _ in ranked)
         winners = {}
         for key, text, row, node in ranked:
@@ -1264,7 +1188,7 @@ class ReadingMemoryMixin:
             aliased = sum(k not in literal[j] for k, j in placement.items())
             # The noun of the interrogative phrase («qué calle») is the gap's kind, not a named thing.
             named = self._same_entity(row, aligned - {placement.get(noun_key)})
-            negated = self._scope_negated(swords, sheads, aligned, negators, slabels)
+            negated = self.negated(sum(swords[k].lower() in negators and sheads[k] - 1 in aligned for k in range(n)))
             if negated != polarity or self._subordinate(enhanced, stags, sheads, aligned):
                 continue
             covered = [False] * n
@@ -1279,18 +1203,12 @@ class ReadingMemoryMixin:
                 mark(root)
             host = placement.get(noun_key) if noun_key is not None else None
             first = -(host is not None) if getattr(self, 'g47b_structure', True) else 0
-            # G-54: a value (not a clause) a negator hangs from was denied, not said
-            # («el doce, no el trece»); it is neither an answer nor part of one.
-            denied = {sheads[k] - 1 for k in range(n) if swords[k].lower() in negators and sheads[k]
-                      and stags[sheads[k] - 1] not in ('VERB', 'AUX')} if getattr(self, 'negated_value', True) else set()
             if predicate_gap:
                 # G-52: what the sentence predicates, with a copula, of a placed word.
                 for node, span in self._predicates_of(swords, stags, sheads, slabels, children, aligned):
-                    if node in denied:
-                        continue
                     text = self._span_text(row, swords, span)
                     if text:
-                        out.append(((first, -len(placement), False, aliased, 0, False, False), text, row, node))
+                        out.append(((first, -len(placement), aliased, 0, False, False), text, row, node))
             nodes = []
             for node in range(n):
                 if covered[node] or slabels[node] == 'conj':
@@ -1303,37 +1221,24 @@ class ReadingMemoryMixin:
                 if (host is None and noun is not None and stags[node] == 'NOUN' and noun_key not in keys[node]
                         and getattr(self, 'noun_clash', True) and noun_key not in categories):
                     continue        # G-45: another noun speaks of another thing
-                if node in denied:
-                    continue
                 span, stack = [], [node]
                 while stack:
-                    k = stack.pop(); span.append(k); stack.extend(c for c in children[k] if c not in denied)
+                    k = stack.pop(); span.append(k); stack.extend(children[k])
                 if all(stags[k] in FUNCTION_TAGS or not _is_word(swords[k]) for k in span):
                     continue
                 nodes.append((node, span))
-            for node, span in self._joined_siblings(nodes, sheads, slabels, stags, swords,
-                                                    getattr(self, 'answer_constituent', True)):
+            for node, span in self._joined_siblings(nodes, sheads, slabels, stags, swords):
                 if node in named or self._subject_taken(node, placement, structure, tree, keys, enhanced):
                     continue
                 sdist = self._graph_distances(graph, node, stags)
                 mirror = sum(abs(qdist[where[k]] - sdist[placement[k]]) for k in where)
                 # The gap's preposition: any preposition the answer's head carries.
                 own = {swords[k].lower() for k in children[node] if stags[k] == 'ADP'}
-                # G-54: a question whose gap carries a preposition asks for the
-                # constituent with that one (the phrase noun, when placed, carries
-                # it, and its name then carries none); that outweighs distances.
-                # The constituent's first-level complements count too («de
-                # Barranquilla a Cartagena»).  Another preposition may still be the
-                # answer («desde las cinco» to «¿a qué hora?»): it only ranks after.
-                inner = own | {swords[c].lower() for m in children[node] if slabels[m] in ('nmod', 'conj')
-                               for c in children[m] if stags[c] == 'ADP'}
-                marked = bool(case) and getattr(self, 'gap_case', True) and (
-                    bool(own) if host is not None else case not in inner)
                 text = self._span_text(row, swords, span)
                 if text:
                     # G-47b: a sentence holding the noun of the interrogative phrase comes first.
-                    out.append(((first, -len(placement), marked, aliased, mirror,
-                                 case not in own if case else bool(own), slabels[node] != qlabel), text, row, node))
+                    out.append(((first, -len(placement), aliased, mirror, case not in own if case else bool(own),
+                                 slabels[node] != qlabel), text, row, node))
         return out
 
     @staticmethod
@@ -1429,25 +1334,13 @@ class ReadingMemoryMixin:
         return any(g in placed and any((k, 'nsubj') in structure['subjects'] for k in keys[g]) for g in governed)
 
     @staticmethod
-    def _joined_siblings(nodes, heads, labels, tags, words, names=False):
+    def _joined_siblings(nodes, heads, labels, tags, words):
         """G-47: siblings with the same function, joined only by a conjunction
-        or a comma, answer together («cuarenta y dos» analysed as two numbers).
-        G-54 (``names``): name parts (UD ``flat``) of one head, side by side,
-        are one name and answer together («Santa Ana»)."""
+        or a comma, answer together («cuarenta y dos» analysed as two numbers)."""
         nodes = sorted(nodes, key=lambda item: min(item[1]))
         groups = []
         for node, span in nodes:
             last = groups[-1] if groups else None
-            # A name part joins the words right before it under the same head; an
-            # apposed name joins them when they are written with a capital (Spanish
-            # writes names so: «la escuela San Jorge»).
-            if names and last is not None and heads[last[0]] == heads[node] and min(span) == max(last[1]) + 1 \
-                    and (labels[node] == 'flat' or (labels[node] == 'appos' and tags[node] == 'PROPN'
-                                                    and all(words[k][:1].isupper() for k in last[1]))):
-                last[1].extend(span)
-                if tags[node] == 'PROPN' and tags[last[0]] != 'PROPN':
-                    groups[-1] = (node, last[1])        # the name is the group's head
-                continue
             if last is not None and heads[last[0]] == heads[node] and labels[last[0]] == labels[node]:
                 gap = range(max(last[1]) + 1, min(span))
                 if gap and all(tags[k] in ('CCONJ', 'PUNCT') and words[k] != '.' for k in gap) \
@@ -1592,29 +1485,6 @@ class ReadingMemoryMixin:
                     out.add(self._word_key(words[k]))
         return out
 
-    def _kind_checked(self, low, q, noun) -> bool:
-        """G-54: whether G-53 checks this kind of question: one class takes most
-        of its answers, or its noun has a closed set of members."""
-        if not getattr(self, 'answer_kind', True):
-            return False
-        key, row = self._kind_row(low, q, noun)
-        if row is None:
-            return False
-        if max(row['classes'].values()) >= KIND_DOMINANT * row['n']:
-            return True
-        members = row['members']
-        tokens, hapax = sum(members.values()), sum(count == 1 for count in members.values())
-        return ' ' in key and not (tokens >= OPEN_TOKENS and hapax >= OPEN_RATE * tokens)
-
-    def _row_positions(self) -> dict:
-        """Where each remembered row sits in memory (its order in time)."""
-        rows = self.reading_utterances
-        cache = self.__dict__.get('_row_position_cache')
-        if cache is None or cache[0] != (id(rows), len(rows)):
-            cache = self.__dict__['_row_position_cache'] = ((id(rows), len(rows)),
-                                                              {id(row): p for p, row in enumerate(rows)})
-        return cache[1]
-
     def _kind_fits(self, low, q, noun, text, head=None) -> bool | None:
         """G-53: whether a candidate answer is of the kind the question asks
         for, as learned from worked questions; None when too little was learned.
@@ -1632,15 +1502,12 @@ class ReadingMemoryMixin:
         if head is None:
             return False
         word, tag = head
-        share = row['classes'].get(tag, 0) >= KIND_SHARE * row['n']
         # The class, only where the kind clearly asks for one class of word.
-        if max(row['classes'].values()) >= KIND_DOMINANT * row['n'] and not share:
+        if max(row['classes'].values()) >= KIND_DOMINANT * row['n'] and \
+                row['classes'].get(tag, 0) < KIND_SHARE * row['n']:
             return False
-        # A name is an arbitrary label: never having seen it says nothing, but
-        # only where names are a learned class of answers to this kind (G-54:
-        # a name is not a colour).
-        if ' ' not in key or (tag == 'PROPN' and (share or not getattr(self, 'name_kind', True))):
-            return True
+        if ' ' not in key or tag == 'PROPN':
+            return True            # a name is an arbitrary label: never having seen it says nothing
         members = row['members']
         # Open or closed: how often an answer word of this kind was new (Good-Turing).
         tokens, hapax = sum(members.values()), sum(count == 1 for count in members.values())

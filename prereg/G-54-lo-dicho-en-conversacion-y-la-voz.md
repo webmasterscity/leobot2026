@@ -205,3 +205,60 @@ Todo sale de lo que aprende de textos escritos por personas, sin listas hechas a
 | puntos 14 a 16 | *interrumpida por falta de memoria del equipo (170/968: +1 / −0)* | | | |
 
 Los conjuntos de desarrollo están todos en tercera persona. Por eso casi no miden «quién habla» ni la voz; eso lo mide la charla nueva.
+
+## Resultado (2026-09-25, `freeze-G-54`, árbol `0d5eda1e`)
+
+**Material nuevo.**
+- Se escribió después de congelar, con subagentes nuevos (herramienta Agent) que no recibieron el mensaje del usuario, y lo validaron otros subagentes.
+- Entró en git (`50a5c1e`) antes de ejecutar Leobot.
+- Base congelada idéntica byte a byte a la de desarrollo (`67905a5e`).
+
+| Conjunto | G-54 | Sin el contenido de G-54 | `estable-G-13` | Sin G-52 | Sin G-53 | Clases solo de MLQA | Subagente |
+|---|---|---|---|---|---|---|---|
+| Reserva cuádruple (127) | 96 | 96 | 96 | 94 | 95 | 94 | 125 |
+| Referencias (48) | 30 | 30 | 30 | 28 | 31 | 29 | 48 |
+| Charla (64) | 30 | 31 | 31 | 30 | 29 | 30 | 64 |
+| **Total (239)** | **156** | **157** | **157** | **152** | **155** | **153** | **237** |
+
+**Controles.** Reinicio: respuestas idénticas en el 100 %. Memoria barajada y sin memoria: 0 aciertos en abiertas y sí/no. Renombrado: 123/127, 48/48 y 64/64.
+
+**SQuAD-es 2400:** G-54 0,2375; sin G-54 0,2378; lector solo 0,2360. Pasa.
+
+**Errores confiados** (afirma lo falso + abiertas equivocadas + contenido con clave «no lo sé»):
+- con G-54: 4 + 2 + 3 = 9;
+- sin G-53: 6 + 1 + 7 = 14.
+
+**Puerta del contenido (puntos 1 a 6 y enmienda): no pasa.**
+- Aporte: −1 en los tres conjuntos juntos. Cada interruptor aporta 0.
+- Salvo `scoped_polarity`, que aporta −1 y suma 1 afirmación falsa en la charla: «¿Fue mi papá al almuerzo?» → «Sí, me contaste que tu papá no fue…». El «no» colgaba del verbo, y la pregunta analizó «Fue» como auxiliar no colocado. El alcance correcto incluye la cabeza de la oración que gobierna las palabras colocadas.
+- El +6 de desarrollo no se repitió: estos fenómenos casi no aparecen en el material nuevo.
+- **Retirada (5.9):** se retiran los ocho puntos de contenido: `scoped_polarity`, `negated_value`, `speaker`, `recency`, `answer_constituent`, `dative_copy`, `name_kind` y `gap_case`. Ninguno redujo las afirmaciones falsas ni las abiertas equivocadas en la reserva. Su código queda en `freeze-G-54`, por si otra medida externa, como la prueba común del usuario, mostrara lo contrario. Eso pediría un preregistro nuevo.
+
+**Puerta de la voz: pasa.** Juez a ciegas, subagente nuevo, 64 preguntas de la charla:
+
+| | Naturalidad media (1–5) | Errores gramaticales |
+|---|---|---|
+| Leobot con voz | **3,08** | 1 |
+| Leobot sin voz | 1,89 | 1 |
+| Subagente | 4,63 | 0 |
+
+- Diferencia: +1,19 ≥ +0,5.
+- Aciertos idénticos con voz y sin voz en los tres conjuntos.
+- Errores gramaticales: 1,6 % ≤ 5 %.
+- La voz se queda: formas aprendidas de AnCora y COSER.
+
+**Retirada de G-52 (enmienda): no se retira.** Aporta +4 (+2 en la reserva y +2 en referencias). Queda confirmado.
+
+**Controles pendientes de G-53:**
+- las clases contadas en SQuAD-es aportan +3 frente a contarlas solo en MLQA (156 frente a 153);
+- abiertas equivocadas: 4 frente a 6;
+- G-53 frente a su ablación: +1 en aciertos y 9 errores confiados frente a 14.
+
+**Causas de los 34 fallos de la charla** (material ya gastado, pasa a desarrollo):
+- el complemento de la frase interrogativa se exige a la frase («¿qué día **de la semana**…?»): 4;
+- palabras de la pregunta que no hacen falta («**ya**», «**ahora**»): 5;
+- datos repartidos entre dos frases sobre la misma entidad: unos 5;
+- errores del analizador en preguntas con el verbo delante, que rompen los enlaces estrictos: unos 9;
+- paráfrasis: el resto.
+
+Siguiente: G-55 (el «no» por la clase aprendida) y un ciclo para la charla con esas causas.
