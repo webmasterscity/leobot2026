@@ -59,7 +59,8 @@ def prepare(eval_dir: Path, bank: Path, judges_dir: Path, n: int):
         mine = []
         for name in group:
             shutil.copytree(bank / name, folder / name.replace('/', '_'), dirs_exist_ok=True)
-            convs = json.loads((bank / name / 'conversaciones.json').read_text(encoding='utf8'))
+            from experiments.g57_kiosco import conversations_of
+            convs = conversations_of(json.loads((bank / name / 'conversaciones.json').read_text(encoding='utf8')))
             for iid in by_business[name]:
                 k = key[iid]
                 turn = convs[k['conv']][k['turno']]

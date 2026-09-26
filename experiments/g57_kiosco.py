@@ -41,13 +41,25 @@ def contains(answer: str, key: str) -> bool:
     return f' {plain(key)} ' in f' {plain(answer)} '
 
 
+def conversations_of(data):
+    """A list of conversations, each a list of turns; a conversation written as an object with a single list of
+    turns inside (one redactor of G-59 did so) is read as that list.  Form only; no content changes."""
+    out = []
+    for conv in data:
+        if isinstance(conv, dict):
+            lists = [v for v in conv.values() if isinstance(v, list)]
+            conv = lists[0] if len(lists) == 1 else []
+        out.append(conv)
+    return out
+
+
 def businesses(folders):
     for folder in folders:
         for sub in sorted(Path(folder).iterdir()):
             if (sub / 'conversaciones.json').exists():
                 yield (f'{Path(folder).name}/{sub.name}', (sub / 'negocio.txt').read_text(encoding='utf8'),
                        (sub / 'instrucciones.txt').read_text(encoding='utf8') if (sub / 'instrucciones.txt').exists() else '',
-                       json.loads((sub / 'conversaciones.json').read_text(encoding='utf8')))
+                       conversations_of(json.loads((sub / 'conversaciones.json').read_text(encoding='utf8'))))
 
 
 def judge(turn: dict, reply: dict, system: str) -> str:
