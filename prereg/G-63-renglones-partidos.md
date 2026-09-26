@@ -134,7 +134,7 @@ El banco se completó con 9 negocios de redactores nuevos, en git antes de ejecu
 - sin unir, texto partido: respuestas idénticas a `estable-G-18` partido en 619/619;
 - reinicio, texto partido: 619/619;
 - otro negocio: 0 útiles; 545/619 «No lo sé» (88,0 %); 6 respuestas que los jueces marcan como inventadas, que son texto literal del documento de otro negocio, como en G-62;
-- renombrado estricto, texto partido: 552/619 turnos con la misma decisión y la misma línea (89,2 %, conteo automático), por debajo del 95 %. Posible causa, no comprobada: al renombrar cambia el largo de las palabras y el texto se parte en otros sitios.
+- renombrado estricto, texto partido: **601/619 (97,1 %)** respuestas iguales tras deshacer el renombrado, la misma medida de G-62. Pasa. *Corrección (2026-09-26, durante G-64):* la cifra que se escribió primero, 552/619 (89,2 %), comparaba el casillero interno de confianza y no la respuesta; era una medida equivocada.
 
 **Decisión (regla 5.9 y la de retención de este preregistro):** la puerta 1 falla por 0,6 puntos, así que **la unión de renglones no entra**. La meta no se mueve después de medir. Main vuelve al motor de `estable-G-18`; el motor de G-63 queda en la rama `G-63` y en `freeze-G-63`. Sin auditoría 5.10, porque no hay tag.
 
