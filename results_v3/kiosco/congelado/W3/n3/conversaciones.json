@@ -1,0 +1,37 @@
+[
+  [
+    {"cliente": "Tengo una sedán y quiero lavar la. ¿Cuanto cuesta?", "tipo": "directa", "accion": "responder", "claves": ["180"], "evidencia": "Sedán / Hatchback | 180", "respuesta_ideal": "Un lavado básico para sedán es 180 pesos. Si quieres el premium con más detalles, es 380."},
+    {"cliente": "¿Cuanto tarda?", "tipo": "directa", "accion": "responder", "claves": ["45-60 min"], "evidencia": "Tiempo: 45-60 min", "respuesta_ideal": "El lavado básico tarda entre 45 y 60 minutos."}
+  ],
+  [
+    {"cliente": "Hola, tengo una camioneta grande y quisiera un lavado premium. ¿Que incluye?", "tipo": "directa", "accion": "responder", "claves": ["550", "90-120 min", "motor", "abrillantador", "tapicería"], "evidencia": "Camioneta grande / Van | 550 / Incluye todo lo del básico PLUS: lavado de motor, abrillantador protector UV, interior: limpieza profunda de tapicería", "respuesta_ideal": "El premium para camioneta grande cuesta 550 pesos, tarda 90-120 minutos. Incluye lavado del motor, abrillantador UV, limpieza profunda de interior y tapicería."},
+    {"cliente": "¿Me hacen un descuento si voy 4 veces al mes?", "tipo": "directa", "accion": "responder", "claves": ["Suscripción Mensual", "750 MXN/mes"], "evidencia": "Suscripción Mensual (4 lavados básicos): SUV: 750 MXN/mes", "respuesta_ideal": "No tenemos paquete para camioneta grande mensual en nuestro catálogo. Para eso contacta directamente al teléfono para negociar un plan personalizado."},
+    {"cliente": "OK, pero ¿aceptan tarjeta?", "tipo": "directa", "accion": "responder", "claves": ["tarjeta débito/crédito", "Visa, Mastercard"], "evidencia": "Efectivo, tarjeta débito/crédito (Visa, Mastercard)", "respuesta_ideal": "Sí, aceptamos Visa y Mastercard, tanto débito como crédito. También efectivo y transferencia."}
+  ],
+  [
+    {"cliente": "¿Donde puedo dejar mi auto mientras se lava?", "tipo": "directa", "accion": "responder", "claves": ["20 plazas de estacionamiento cubierto"], "evidencia": "20 plazas de estacionamiento cubierto durante el lavado", "respuesta_ideal": "Contamos con 20 plazas de estacionamiento cubierto. El estacionamiento es gratis durante el lavado."},
+    {"cliente": "¿Y si me tardo mas?", "tipo": "seguimiento", "accion": "responder", "claves": ["3 horas gratis", "10 MXN/hora"], "evidencia": "3 horas gratis con cualquier servicio. Después: 10 MXN/hora", "respuesta_ideal": "Las primeras 3 horas son gratis con tu lavado. Después, es 10 pesos por hora."}
+  ],
+  [
+    {"cliente": "Tengo una moto. ¿Cuanto cuesta lavarla?", "tipo": "directa", "accion": "responder", "claves": ["60"], "evidencia": "Motocicleta | 60", "respuesta_ideal": "Motocicleta es 60 pesos el lavado básico."},
+    {"cliente": "¿Y hay plazas para motos?", "tipo": "si_no", "accion": "responder", "claves": ["2 plazas de descarga de motos"], "evidencia": "2 plazas de descarga de motos", "respuesta_ideal": "Sí, tenemos 2 plazas especiales para motos."}
+  ],
+  [
+    {"cliente": "Necesito agendar para el sabado a las 10:00 am.", "tipo": "instruccion", "accion": "responder", "claves": ["(81) 2045-5678", "WhatsApp", "primera llegada, primer servicio"], "evidencia": "se aceptan citas por teléfono o WhatsApp, sin anticipo. Primera llegada, primer servicio si no hay cita.", "respuesta_ideal": "Perfecto. Llama al (81) 2045-5678 o escribe por WhatsApp al +52 81 2154-4321. No cobramos anticipo. Sábado abrimos a las 8:00 am."},
+    {"cliente": "¿Que si cancelo?", "tipo": "directa", "accion": "responder", "claves": ["2 horas antes", "50%"], "evidencia": "hasta 2 horas antes sin penalidad. Menos de 2h: se cobra 50% del servicio", "respuesta_ideal": "Hasta 2 horas antes sin penalidad. Si cancelas con menos de 2 horas, se cobra el 50% del servicio."}
+  ],
+  [
+    {"cliente": "Buenas, ¿abren los domingos?", "tipo": "directa", "accion": "responder", "claves": ["9:00 a 15:00 h"], "evidencia": "Domingos: 9:00 a 15:00 h", "respuesta_ideal": "Sí, domingos abrimos de 9:00 am a 3:00 pm."},
+    {"cliente": "¿Y hay promoción ahorita?", "tipo": "directa", "accion": "responder", "claves": ["Referido Amigo", "50 MXN"], "evidencia": "Referido Amigo: trae un amigo, ambos reciben 50 MXN de descuento", "respuesta_ideal": "Sí, tenemos la promoción 'Referido Amigo'. Si traes a un amigo, ambos reciben 50 pesos de descuento en el siguiente lavado."},
+    {"cliente": "Excelente. Muchas gracias.", "tipo": "charla", "accion": "charla", "claves": [], "evidencia": null, "respuesta_ideal": "De nada. ¡Esperamos verte pronto en LavaMax!"}
+  ],
+  [
+    {"cliente": "¿Puedo pagar con tarjeta de débito?", "tipo": "directa", "accion": "responder", "claves": ["tarjeta débito"], "evidencia": "Efectivo, tarjeta débito/crédito (Visa, Mastercard)", "respuesta_ideal": "Claro, aceptamos tarjeta de débito Visa y Mastercard."},
+    {"cliente": "¿Y si no estoy conforme con el lavado?", "tipo": "instruccion", "accion": "responder", "claves": ["repetimos el lavado sin costo", "mismo día"], "evidencia": "si el cliente no está satisfecho con el lavado, se repite sin costo adicional en el mismo día", "respuesta_ideal": "Si no quedas satisfecho, repetimos el lavado sin costo el mismo día. Es nuestra garantía de calidad."}
+  ],
+  [
+    {"cliente": "Hola, soy empresa de taxis. ¿Hacen descuentos por flota?", "tipo": "directa", "accion": "responder", "claves": ["15%", "mínimo 10 autos/mes", "flota@lavamaxmty.mx"], "evidencia": "Descuento 15% para lavados recurrentes (mínimo 10 autos/mes). Contacto: flota@lavamaxmty.mx", "respuesta_ideal": "Sí, ofrecemos 15% de descuento para flotas con mínimo 10 autos al mes. Contacta a flota@lavamaxmty.mx para coordinar."},
+    {"cliente": "¿Pueden pasar a recoger los autos?", "tipo": "directa", "accion": "responder", "claves": ["rutas de recolección"], "evidencia": "Rutas de recolección disponibles (previa coordinación)", "respuesta_ideal": "Sí, ofrecemos rutas de recolección. Debe coordinarse con flota@lavamaxmty.mx para los detalles."},
+    {"cliente": "Perfecto, los contacto.", "tipo": "charla", "accion": "charla", "claves": [], "evidencia": null, "respuesta_ideal": "Excelente. ¡Esperamos trabajar con ustedes!"}
+  ]
+]

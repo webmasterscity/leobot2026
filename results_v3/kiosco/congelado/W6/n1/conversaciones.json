@@ -1,0 +1,295 @@
+[
+ [
+  {
+   "cliente": "Hola, buenas tardes",
+   "tipo": "charla",
+   "accion": "charla",
+   "claves": [],
+   "evidencia": "1. Saluda con amabilidad y preséntate como el asistente virtual de Mueblería Sillar & Cedro.",
+   "respuesta_ideal": "¡Buenas tardes! Soy el asistente virtual de Mueblería Sillar & Cedro, ¿en qué le puedo ayudar?"
+  },
+  {
+   "cliente": "cuanto cuesta el sofa cama?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "1,350"
+   ],
+   "evidencia": "| Sofá cama \"Yanahuara\" | Estructura de pino, tapiz chenille | 1.90 m de largo | S/ 1,350 |",
+   "respuesta_ideal": "El sofá cama \"Yanahuara\" cuesta S/ 1,350, con IGV incluido."
+  },
+  {
+   "cliente": "¿y de largo cuánto mide?",
+   "tipo": "seguimiento",
+   "accion": "responder",
+   "claves": [
+    "1.90 m"
+   ],
+   "evidencia": "| Sofá cama \"Yanahuara\" | Estructura de pino, tapiz chenille | 1.90 m de largo | S/ 1,350 |",
+   "respuesta_ideal": "Mide aproximadamente 1.90 m de largo."
+  },
+  {
+   "cliente": "uy, no me entra en la sala. ¿no lo tienen más chico, de 1.60 más o menos?",
+   "tipo": "sin_respuesta",
+   "accion": "abstenerse",
+   "claves": [],
+   "evidencia": null,
+   "respuesta_ideal": "No tengo información de ese sofá cama en otra medida; en el catálogo solo figura el de 1.90 m. Un asesor en tienda podría orientarle."
+  },
+  {
+   "cliente": "Y si me animo, ¿lo puedo pagar en cuotas con tarjeta?",
+   "tipo": "combinada",
+   "accion": "responder",
+   "claves": [
+    "6 cuotas sin intereses"
+   ],
+   "evidencia": "Con tarjeta de crédito puede pagar hasta en 6 cuotas sin intereses en compras mayores a S/ 1,000.",
+   "respuesta_ideal": "Sí: como cuesta S/ 1,350, que pasa de S/ 1,000, con tarjeta de crédito puede pagarlo hasta en 6 cuotas sin intereses."
+  }
+ ],
+ [
+  {
+   "cliente": "A que hora abren los domingos?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "10:00"
+   ],
+   "evidencia": "- Domingos: 10:00 a. m. a 2:00 p. m.",
+   "respuesta_ideal": "Los domingos abrimos a las 10:00 a. m. y atendemos hasta las 2:00 p. m."
+  },
+  {
+   "cliente": "y el 15 de agosto atienden? es feriado",
+   "tipo": "seguimiento",
+   "accion": "responder",
+   "claves": [
+    "cerrados"
+   ],
+   "evidencia": "El 15 de agosto, aniversario de Arequipa, permanecemos cerrados.",
+   "respuesta_ideal": "No, el 15 de agosto, por el aniversario de Arequipa, permanecemos cerrados."
+  },
+  {
+   "cliente": "¿Dónde queda la tienda exactamente?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "Av. Ejército 1024"
+   ],
+   "evidencia": "Dirección: Av. Ejército 1024, Yanahuara, Arequipa (a una cuadra de la Av. Trinidad Morán)",
+   "respuesta_ideal": "Estamos en Av. Ejército 1024, Yanahuara, a una cuadra de la Av. Trinidad Morán."
+  },
+  {
+   "cliente": "¿Hay donde estacionar el carro?",
+   "tipo": "si_no",
+   "accion": "responder",
+   "claves": [
+    "4 espacios"
+   ],
+   "evidencia": "Estacionamiento: 4 espacios para clientes en la puerta de la tienda.",
+   "respuesta_ideal": "Sí, tenemos 4 espacios para clientes en la puerta de la tienda."
+  },
+  {
+   "cliente": "Oiga, ¿y el taller de Cerro Colorado se puede visitar para ver cómo fabrican?",
+   "tipo": "sin_respuesta",
+   "accion": "abstenerse",
+   "claves": [],
+   "evidencia": null,
+   "respuesta_ideal": "No tengo información sobre visitas al taller; lo que sí le puedo decir es que la atención al público es en la sala de exhibición de Av. Ejército 1024."
+  }
+ ],
+ [
+  {
+   "cliente": "Quiero un ropero a medida porque mi cuarto es angosto. ¿Cobran por venir a medir?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "40",
+    "se descuenta"
+   ],
+   "evidencia": "1. Visita técnica para tomar medidas: S/ 40 dentro de la ciudad (se descuenta del precio si confirma el pedido).",
+   "respuesta_ideal": "Sí, la visita técnica para tomar medidas cuesta S/ 40 dentro de la ciudad, y se descuenta del precio si confirma el pedido."
+  },
+  {
+   "cliente": "¿Más o menos cuánto saldría uno de 2.40 de ancho con puertas corredizas?",
+   "tipo": "instruccion",
+   "accion": "derivar",
+   "claves": [],
+   "evidencia": "3. No des precios de muebles a medida: las cotizaciones las prepara el taller. Deriva al cliente con la Sra. Rocío Linares, jefa de taller, al WhatsApp 959 318 442.",
+   "respuesta_ideal": "No puedo darle precios de muebles a medida; las cotizaciones las prepara el taller. Puede escribir a la Sra. Rocío Linares, jefa de taller, al WhatsApp 959 318 442."
+  },
+  {
+   "cliente": "Ya. ¿Y en cuánto tiempo lo tendrían listo?",
+   "tipo": "seguimiento",
+   "accion": "responder",
+   "claves": [
+    "15 a 25 días hábiles"
+   ],
+   "evidencia": "4. Fabricación: de 15 a 25 días hábiles, según el mueble.",
+   "respuesta_ideal": "La fabricación toma aproximadamente de 15 a 25 días hábiles, según el mueble; antes van unos 3 días hábiles de diseño y cotización."
+  },
+  {
+   "cliente": "cuanto hay que dar de adelanto",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "50"
+   ],
+   "evidencia": "3. Adelanto del 50 % para empezar la fabricación.",
+   "respuesta_ideal": "Para empezar la fabricación se deja un adelanto del 50 %; el saldo se paga en la entrega."
+  },
+  {
+   "cliente": "Y si al final no me convence cómo quedó, ¿lo puedo cambiar?",
+   "tipo": "si_no",
+   "accion": "responder",
+   "claves": [
+    "no tienen cambio ni devolución"
+   ],
+   "evidencia": "Los muebles a medida no tienen cambio ni devolución.",
+   "respuesta_ideal": "Lamentablemente no: los muebles a medida no tienen cambio ni devolución."
+  }
+ ],
+ [
+  {
+   "cliente": "Vivo en Cayma. Si compro la cama Tingo, ¿me cobran el delivery?",
+   "tipo": "combinada",
+   "accion": "responder",
+   "claves": [
+    "gratis"
+   ],
+   "evidencia": "- Delivery gratis en Cercado, Yanahuara, Cayma y Cerro Colorado por compras desde S/ 800; por compras menores, S/ 25.",
+   "respuesta_ideal": "No: la cama Tingo cuesta S/ 890 y en Cayma el delivery es gratis por compras desde S/ 800."
+  },
+  {
+   "cliente": "¿Y si solo llevo un velador?",
+   "tipo": "seguimiento",
+   "accion": "responder",
+   "claves": [
+    "25"
+   ],
+   "evidencia": "- Delivery gratis en Cercado, Yanahuara, Cayma y Cerro Colorado por compras desde S/ 800; por compras menores, S/ 25.",
+   "respuesta_ideal": "El velador cuesta S/ 210, menos de S/ 800, así que el delivery a Cayma le costaría S/ 25."
+  },
+  {
+   "cliente": "¿El armado se paga aparte?",
+   "tipo": "si_no",
+   "accion": "responder",
+   "claves": [
+    "incluido"
+   ],
+   "evidencia": "- El armado está incluido en todos nuestros muebles.",
+   "respuesta_ideal": "No, el armado está incluido en todos nuestros muebles."
+  },
+  {
+   "cliente": "A mi hermana que vive en Mollendo le quiero regalar un comedor, ¿se lo pueden mandar?",
+   "tipo": "instruccion",
+   "accion": "derivar",
+   "claves": [],
+   "evidencia": "4. Si el cliente quiere enviar un mueble fuera de la provincia de Arequipa (Mollendo, Camaná, Puno, Cusco u otro lugar), deriva el caso a ventas al (054) 281930.",
+   "respuesta_ideal": "Los envíos fuera de la provincia los coordina el área de ventas; por favor comuníquese al (054) 281930."
+  },
+  {
+   "cliente": "¿Y cuántos días se demora en llegar el delivery aquí en la ciudad?",
+   "tipo": "sin_respuesta",
+   "accion": "abstenerse",
+   "claves": [],
+   "evidencia": null,
+   "respuesta_ideal": "No tengo el dato de cuántos días demora la entrega; solo sé que repartimos de lunes a sábado. Un asesor en caja se lo puede confirmar."
+  }
+ ],
+ [
+  {
+   "cliente": "¿Cómo se puede pagar? ¿Aceptan billeteras digitales?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "Yape",
+    "Plin"
+   ],
+   "evidencia": "Efectivo, Yape, Plin, transferencia BCP o Interbank, y tarjetas Visa y Mastercard.",
+   "respuesta_ideal": "Sí, aceptamos Yape y Plin, además de efectivo, transferencia BCP o Interbank y tarjetas Visa y Mastercard."
+  },
+  {
+   "cliente": "Necesito dos sillas más para mi comedor, ¿venden sueltas las de cedro? ¿cuánto serían las dos?",
+   "tipo": "combinada",
+   "accion": "responder",
+   "claves": [
+    "760"
+   ],
+   "evidencia": "Sí, la silla de cedro del comedor Chachani se vende suelta a S/ 380 c/u.",
+   "respuesta_ideal": "Sí, la silla de cedro del comedor Chachani se vende suelta a S/ 380 cada una, así que las dos serían S/ 760."
+  },
+  {
+   "cliente": "¿Y las de tornillo, las del comedor de 4 sillas?",
+   "tipo": "sin_respuesta",
+   "accion": "abstenerse",
+   "claves": [],
+   "evidencia": null,
+   "respuesta_ideal": "No tengo el precio de las sillas del comedor Pichu Pichu por separado; solo figura la silla de cedro del Chachani. Un asesor se lo puede consultar."
+  },
+  {
+   "cliente": "¿Cuánto tiempo de garantía tiene la madera?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "2 años"
+   ],
+   "evidencia": "Estructura de madera: 2 años.",
+   "respuesta_ideal": "La estructura de madera tiene 2 años de garantía."
+  },
+  {
+   "cliente": "¿venden colchones tambien? para la cama de 2 plazas",
+   "tipo": "sin_respuesta",
+   "accion": "abstenerse",
+   "claves": [],
+   "evidencia": null,
+   "respuesta_ideal": "No tengo información sobre venta de colchones; en nuestro catálogo no figuran."
+  },
+  {
+   "cliente": "Ya, muchas gracias, lo voy a conversar con mi esposo",
+   "tipo": "charla",
+   "accion": "charla",
+   "claves": [],
+   "evidencia": "8. Al despedirte, agradece la visita.",
+   "respuesta_ideal": "¡Con gusto! Gracias por su visita, aquí la esperamos cuando se decidan."
+  }
+ ],
+ [
+  {
+   "cliente": "Buenas, ¿me pueden dar factura? Es para la empresa",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "RUC"
+   ],
+   "evidencia": "Sí, boleta o factura electrónica. Para factura, indíquenos su RUC al momento de pagar.",
+   "respuesta_ideal": "Sí, emitimos factura electrónica; solo indíquenos su RUC al momento de pagar."
+  },
+  {
+   "cliente": "Otra cosa: el mes pasado compré el escritorio Characato y ya se le zafó una bisagra. ¿Qué hago?",
+   "tipo": "instruccion",
+   "accion": "responder",
+   "claves": [
+    "boleta",
+    "Libro de Reclamaciones"
+   ],
+   "evidencia": "6. Si el cliente tiene un reclamo o un mueble dañado, pídele su número de boleta o factura y avísale que el Libro de Reclamaciones está a su disposición en caja.",
+   "respuesta_ideal": "Lamento el inconveniente. ¿Me indica su número de boleta o factura? Las bisagras tienen 1 año de garantía, y si desea dejar un reclamo, el Libro de Reclamaciones está a su disposición en caja."
+  },
+  {
+   "cliente": "¿Ustedes retapizan muebles viejos? Tengo un sillón de mi mamá",
+   "tipo": "sin_respuesta",
+   "accion": "abstenerse",
+   "claves": [],
+   "evidencia": null,
+   "respuesta_ideal": "No tengo información sobre servicio de retapizado; puedo contarle sobre los muebles que fabricamos y vendemos."
+  },
+  {
+   "cliente": "¿Tienen un catálogo en PDF que me puedan mandar por WhatsApp?",
+   "tipo": "sin_respuesta",
+   "accion": "abstenerse",
+   "claves": [],
+   "evidencia": null,
+   "respuesta_ideal": "No tengo el dato de si hay un catálogo en PDF; puede consultarlo al WhatsApp de la tienda, 974 205 118."
+  }
+ ]
+]

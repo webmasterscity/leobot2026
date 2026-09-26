@@ -1,0 +1,288 @@
+[
+ [
+  {
+   "cliente": "Buenos dias",
+   "tipo": "charla",
+   "accion": "charla",
+   "claves": [],
+   "evidencia": "1. Trate siempre al cliente de \"usted\" y salúdelo con respeto: \"Bienvenido a Sastrería Illimani, ¿en qué le puedo servir?\".",
+   "respuesta_ideal": "Buenos días, bienvenido a Sastrería Illimani, ¿en qué le puedo servir?"
+  },
+  {
+   "cliente": "cuanto cuesta subir la basta de un pantalon",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "15"
+   ],
+   "evidencia": "3.1  Basta de pantalón a máquina ........................ Bs 15",
+   "respuesta_ideal": "La basta de pantalón a máquina cuesta Bs 15; si la quiere invisible, cosida a mano, son Bs 20."
+  },
+  {
+   "cliente": "¿y si es jean y quiero que quede con el ruedo original?",
+   "tipo": "seguimiento",
+   "accion": "responder",
+   "claves": [
+    "25"
+   ],
+   "evidencia": "3.3  Basta de jean conservando el ruedo original ........ Bs 25",
+   "respuesta_ideal": "La basta de jean conservando el ruedo original cuesta Bs 25."
+  },
+  {
+   "cliente": "¿Para cuándo estaría?",
+   "tipo": "seguimiento",
+   "accion": "responder",
+   "claves": [
+    "2 días hábiles"
+   ],
+   "evidencia": "Plazo normal: 2 días hábiles para arreglos simples.",
+   "respuesta_ideal": "El plazo normal para arreglos simples es de 2 días hábiles."
+  },
+  {
+   "cliente": "Es que lo necesito hoy en la noche, ¿se puede?",
+   "tipo": "instruccion",
+   "accion": "responder",
+   "claves": [
+    "11:00",
+    "casa matriz"
+   ],
+   "evidencia": "3. Si el cliente pide un servicio EXPRESS, recuérdele que la prenda debe dejarse antes de las 11:00 y que el express solo se hace en la casa matriz.",
+   "respuesta_ideal": "Sí, con el servicio express: si deja la prenda antes de las 11:00 en la casa matriz, se la entregamos hoy desde las 18:00, con un recargo del 50 %."
+  },
+  {
+   "cliente": "¿Y cuánto me cobrarían con el express por la basta normal?",
+   "tipo": "combinada",
+   "accion": "responder",
+   "claves": [
+    "22"
+   ],
+   "evidencia": "Servicio EXPRESS: si la prenda se deja antes de las 11:00, se entrega el mismo día desde las 18:00, con un recargo del 50 % sobre el precio del arreglo. Solo en casa matriz.",
+   "respuesta_ideal": "La basta a máquina cuesta Bs 15 y el express tiene un recargo del 50 %, así que serían Bs 22,50."
+  }
+ ],
+ [
+  {
+   "cliente": "Quiero mandarme a hacer un terno, ¿cuánto sale?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "1.450",
+    "2.600"
+   ],
+   "evidencia": "- Terno (saco y pantalón): tela nacional Bs. 1.450 / tela importada desde Bs. 2.600",
+   "respuesta_ideal": "El terno a medida cuesta Bs. 1.450 en tela nacional, y desde Bs. 2.600 en tela importada."
+  },
+  {
+   "cliente": "¿Y si yo llevo mi tela?",
+   "tipo": "seguimiento",
+   "accion": "responder",
+   "claves": [
+    "900"
+   ],
+   "evidencia": "- Terno con tela que trae el cliente: solo hechura, Bs. 900",
+   "respuesta_ideal": "Si usted trae la tela, se cobra solo la hechura: Bs. 900."
+  },
+  {
+   "cliente": "¿Cuánto demoran en hacer un terno?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "3 semanas"
+   ],
+   "evidencia": "Plazos aprox.: terno, 3 semanas con 2 pruebas; pantalón y camisa, 10 días hábiles.",
+   "respuesta_ideal": "Aproximadamente 3 semanas, con 2 pruebas."
+  },
+  {
+   "cliente": "¿Cuánto tendría que dejar a cuenta por el de tela nacional?",
+   "tipo": "combinada",
+   "accion": "responder",
+   "claves": [
+    "725"
+   ],
+   "evidencia": "Adelanto del 50 % al tomar las medidas; el saldo se paga al recoger.",
+   "respuesta_ideal": "Se deja un adelanto del 50 % al tomar las medidas: de Bs. 1.450, serían Bs. 725, y el saldo al recoger."
+  },
+  {
+   "cliente": "Vivo en Sopocachi, ¿me pueden tomar las medidas en la sucursal de la 20 de Octubre?",
+   "tipo": "si_no",
+   "accion": "responder",
+   "claves": [
+    "únicamente en la casa matriz"
+   ],
+   "evidencia": "La toma de medidas y las pruebas de confección se hacen únicamente en la casa matriz.",
+   "respuesta_ideal": "No, la toma de medidas y las pruebas de confección se hacen únicamente en la casa matriz, en la Calle Potosí N° 1123."
+  },
+  {
+   "cliente": "¿Alquilan ternos? Es para un matrimonio este sábado",
+   "tipo": "sin_respuesta",
+   "accion": "abstenerse",
+   "claves": [],
+   "evidencia": null,
+   "respuesta_ideal": "No cuento con esa información; en el manual solo figuran la confección a medida y los arreglos."
+  },
+  {
+   "cliente": "¿Y cuánto cuesta solo un saco a medida, sin pantalón?",
+   "tipo": "sin_respuesta",
+   "accion": "abstenerse",
+   "claves": [],
+   "evidencia": null,
+   "respuesta_ideal": "No cuento con el precio del saco solo; tengo el del terno completo, el pantalón, la camisa y el chaleco."
+  }
+ ],
+ [
+  {
+   "cliente": "¿Aceptan tarjeta?",
+   "tipo": "si_no",
+   "accion": "responder",
+   "claves": [
+    "no aceptamos tarjetas"
+   ],
+   "evidencia": "Aceptamos efectivo (bolivianos, o dólares al tipo de cambio del día), pago con QR de cualquier banco y transferencia bancaria; no aceptamos tarjetas de débito ni de crédito.",
+   "respuesta_ideal": "No, no aceptamos tarjetas de débito ni de crédito; puede pagar en efectivo, con QR de cualquier banco o por transferencia."
+  },
+  {
+   "cliente": "a que hora abren el sabado en la calle Potosi",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "9:00",
+    "13:00"
+   ],
+   "evidencia": "Casa matriz: L a V de 9:00 a 12:30 y de 14:30 a 19:00 / Sáb. de 9:00 a 13:00 / Dom. cerrado",
+   "respuesta_ideal": "El sábado la casa matriz atiende de 9:00 a 13:00."
+  },
+  {
+   "cliente": "¿y la de Sopocachi?",
+   "tipo": "seguimiento",
+   "accion": "responder",
+   "claves": [
+    "10:00",
+    "19:30"
+   ],
+   "evidencia": "Sucursal Sopocachi: L a S de 10:00 a 19:30, horario continuo / Dom. cerrado",
+   "respuesta_ideal": "La sucursal Sopocachi atiende de lunes a sábado de 10:00 a 19:30, en horario continuo."
+  },
+  {
+   "cliente": "¿En el centro cierran al mediodía?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "12:30",
+    "14:30"
+   ],
+   "evidencia": "Casa matriz: L a V de 9:00 a 12:30 y de 14:30 a 19:00 / Sáb. de 9:00 a 13:00 / Dom. cerrado",
+   "respuesta_ideal": "Sí, de lunes a viernes la casa matriz cierra de 12:30 a 14:30."
+  },
+  {
+   "cliente": "¿Hacen descuento si llevo varios pantalones para arreglar?",
+   "tipo": "sin_respuesta",
+   "accion": "abstenerse",
+   "claves": [],
+   "evidencia": null,
+   "respuesta_ideal": "No cuento con información sobre descuentos por cantidad."
+  },
+  {
+   "cliente": "¿Los arreglos de ropa de niño cuestan menos?",
+   "tipo": "sin_respuesta",
+   "accion": "abstenerse",
+   "claves": [],
+   "evidencia": null,
+   "respuesta_ideal": "No cuento con esa información; los precios del manual no hacen diferencia para ropa de niño."
+  }
+ ],
+ [
+  {
+   "cliente": "Perdí la boleta, ¿cómo hago para recoger mi saco?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "carnet de identidad"
+   ],
+   "evidencia": "a) Para recoger hay que presentar la boleta de recepción. Si se perdió, debe venir el titular con su carnet de identidad.",
+   "respuesta_ideal": "Si perdió la boleta, debe venir el titular con su carnet de identidad."
+  },
+  {
+   "cliente": "Lo dejé en Sopocachi, ¿puedo recogerlo en el de la calle Potosí que me queda más cerca?",
+   "tipo": "si_no",
+   "accion": "responder",
+   "claves": [
+    "mismo local"
+   ],
+   "evidencia": "b) Las prendas se recogen en el mismo local donde se dejaron.",
+   "respuesta_ideal": "No, las prendas se recogen en el mismo local donde se dejaron; tendría que ir a Sopocachi."
+  },
+  {
+   "cliente": "Me arreglaron la cintura de un pantalón y quedó chueca, quiero que me devuelvan mi plata",
+   "tipo": "instruccion",
+   "accion": "derivar",
+   "claves": [],
+   "evidencia": "5. Reclamos (prenda dañada, arreglo mal hecho, pedido atrasado): pida el número de boleta y derive el caso a la Maestra Nélida Quispe. NO ofrezca devoluciones de dinero ni descuentos.",
+   "respuesta_ideal": "Lamento lo ocurrido. ¿Me indica su número de boleta? Su caso lo atenderá la Maestra Nélida Quispe."
+  },
+  {
+   "cliente": "¿Me pueden llevar la prenda a mi casa cuando esté lista?",
+   "tipo": "sin_respuesta",
+   "accion": "abstenerse",
+   "claves": [],
+   "evidencia": null,
+   "respuesta_ideal": "No cuento con información sobre entregas a domicilio."
+  },
+  {
+   "cliente": "¿Cuánto cobran por cambiar el cierre de una chamarra?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "45",
+    "60"
+   ],
+   "evidencia": "3.6  Cambio de cierre de chamarra ....................... Bs 45 a 60 (según el largo)",
+   "respuesta_ideal": "El cambio de cierre de chamarra cuesta de Bs 45 a 60, según el largo."
+  }
+ ],
+ [
+  {
+   "cliente": "Se me cayeron unos botones de un saco que no es de aquí, ¿cuánto me cobran por pegarlos?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "5"
+   ],
+   "evidencia": "3.11 Pegado de botones .................................. gratis si el arreglo es nuestro; si no, Bs 5 c/u",
+   "respuesta_ideal": "Como el arreglo no es de la sastrería, el pegado cuesta Bs 5 por botón."
+  },
+  {
+   "cliente": "Tengo que ajustar mi vestido de novia, ¿cuánto me costaría?",
+   "tipo": "instruccion",
+   "accion": "responder",
+   "claves": [
+    "revisando la prenda"
+   ],
+   "evidencia": "2. NO dé precio final de los arreglos que dicen \"desde\" (vestidos de fiesta, zurcidos) ni de los ajustes de vestidos de novia. Explique que el precio se confirma revisando la prenda en el mostrador.",
+   "respuesta_ideal": "Los ajustes de vestidos de novia se cotizan en tienda: el precio se confirma revisando la prenda en el mostrador."
+  },
+  {
+   "cliente": "Trabajo en un hotel y necesitamos 25 ternos para el personal, ¿con quién hablo?",
+   "tipo": "instruccion",
+   "accion": "derivar",
+   "claves": [],
+   "evidencia": "4. Los pedidos de uniformes o pedidos corporativos (10 prendas o más) los atiende la Maestra Nélida Quispe: derive al cel. 71534420, de lunes a viernes.",
+   "respuesta_ideal": "Los pedidos corporativos los atiende la Maestra Nélida Quispe; puede llamarla al cel. 71534420, de lunes a viernes."
+  },
+  {
+   "cliente": "¿Hacen bordado del logo en los sacos?",
+   "tipo": "sin_respuesta",
+   "accion": "abstenerse",
+   "claves": [],
+   "evidencia": null,
+   "respuesta_ideal": "No cuento con información sobre bordados."
+  },
+  {
+   "cliente": "Ya, muchas gracias, hasta luego",
+   "tipo": "charla",
+   "accion": "charla",
+   "claves": [],
+   "evidencia": "7. Al despedirse, diga \"Que tenga un buen día\".",
+   "respuesta_ideal": "Gracias a usted. Que tenga un buen día."
+  }
+ ]
+]

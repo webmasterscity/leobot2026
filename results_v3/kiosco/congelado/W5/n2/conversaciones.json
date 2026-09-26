@@ -1,0 +1,301 @@
+[
+  [
+    {
+      "cliente": "¿Cuánto sale la heladera de 300 litros?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": [
+        "Gs. 4.850.000"
+      ],
+      "evidencia": "| Heladera No Frost 300 L        | Gs. 4.850.000   |",
+      "respuesta_ideal": "La heladera No Frost de 300 litros cuesta Gs. 4.850.000."
+    },
+    {
+      "cliente": "¿Y el lavarropas de 8 kilos?",
+      "tipo": "seguimiento",
+      "accion": "responder",
+      "claves": [
+        "Gs. 3.200.000"
+      ],
+      "evidencia": "| Lavarropas automático 8 kg     | Gs. 3.200.000   |",
+      "respuesta_ideal": "El lavarropas automático de 8 kg cuesta Gs. 3.200.000."
+    },
+    {
+      "cliente": "Si me llevo las dos, la heladera y el lavarropas, ¿cuánto sería en total?",
+      "tipo": "combinada",
+      "accion": "responder",
+      "claves": [
+        "Gs. 4.850.000",
+        "Gs. 3.200.000"
+      ],
+      "evidencia": "| Heladera No Frost 300 L        | Gs. 4.850.000   |\n| Lavarropas automático 8 kg     | Gs. 3.200.000   |",
+      "respuesta_ideal": "La heladera cuesta Gs. 4.850.000 y el lavarropas Gs. 3.200.000, entre las dos serían Gs. 8.050.000."
+    },
+    {
+      "cliente": "¿Eso tiene descuento si pago contado?",
+      "tipo": "seguimiento",
+      "accion": "responder",
+      "claves": [
+        "10%"
+      ],
+      "evidencia": "se descuenta el 10% sobre el precio de lista.",
+      "respuesta_ideal": "Sí, pagando de contado se descuenta el 10% sobre el precio de lista."
+    },
+    {
+      "cliente": "Buenísimo, gracias por la info",
+      "tipo": "charla",
+      "accion": "charla",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "Con gusto, cualquier otra consulta estamos a las órdenes."
+    }
+  ],
+  [
+    {
+      "cliente": "¿A qué hora abren los sábados?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": [
+        "8:30 a 12:30"
+      ],
+      "evidencia": "Sábados: 8:30 a 12:30 hs",
+      "respuesta_ideal": "Los sábados atendemos de 8:30 a 12:30 hs."
+    },
+    {
+      "cliente": "¿Atienden los domingos?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": [
+        "Domingos y feriados: cerrado"
+      ],
+      "evidencia": "Domingos y feriados: cerrado",
+      "respuesta_ideal": "No, los domingos y feriados permanecemos cerrados."
+    },
+    {
+      "cliente": "¿Y el Día de la Madre abren aunque caiga domingo?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No tengo esa excepción registrada; lo que sé es que domingos y feriados cerramos, le recomiendo confirmar esa fecha puntual."
+    },
+    {
+      "cliente": "¿Puedo hacer pedidos por WhatsApp?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": [
+        "0981-234-567"
+      ],
+      "evidencia": "¿Atienden pedidos por WhatsApp? Sí, al 0981-234-567, de lunes a sábado en el horario de atención.",
+      "respuesta_ideal": "Sí, puede pedir por WhatsApp al 0981-234-567, de lunes a sábado en el horario de atención."
+    }
+  ],
+  [
+    {
+      "cliente": "¿En cuántas cuotas sin interés puedo pagar con tarjeta Itaú?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": [
+        "3 cuotas sin interés"
+      ],
+      "evidencia": "3 cuotas sin interés con tarjetas Itaú, Continental o Ueno.",
+      "respuesta_ideal": "Con tarjeta Itaú puede pagar en 3 cuotas sin interés."
+    },
+    {
+      "cliente": "¿Y las 6 cuotas sin interés se puede cualquier día?",
+      "tipo": "seguimiento",
+      "accion": "responder",
+      "claves": [
+        "martes a jueves"
+      ],
+      "evidencia": "6 cuotas sin interés con las mismas tarjetas, promoción válida solo de martes a jueves.",
+      "respuesta_ideal": "No, la promoción de 6 cuotas sin interés es válida solo de martes a jueves."
+    },
+    {
+      "cliente": "¿Reciben pago con cheque?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": [
+        "No trabajamos con cheques"
+      ],
+      "evidencia": "No trabajamos con cheques ni con giros postales.",
+      "respuesta_ideal": "No, no trabajamos con cheques ni con giros postales."
+    },
+    {
+      "cliente": "Quiero pagar en efectivo como Gs. 12.000.000 por el aire acondicionado y otras cosas, ¿se puede?",
+      "tipo": "instruccion",
+      "accion": "responder",
+      "claves": [
+        "Gs. 10.000.000",
+        "transferencia bancaria"
+      ],
+      "evidencia": "no se reciben pagos en efectivo superiores a Gs. 10.000.000; en esos casos el pago debe hacerse por transferencia bancaria.",
+      "respuesta_ideal": "No, en efectivo el límite es Gs. 10.000.000; por encima de eso el pago debe ser por transferencia bancaria."
+    }
+  ],
+  [
+    {
+      "cliente": "¿El envío dentro de Asunción tiene costo?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": [
+        "sin cargo"
+      ],
+      "evidencia": "Envío sin cargo dentro de Asunción y Gran Asunción en compras desde Gs. 2.000.000.",
+      "respuesta_ideal": "No, el envío dentro de Asunción y Gran Asunción es sin cargo desde cierto monto de compra."
+    },
+    {
+      "cliente": "¿Y a partir de qué monto de compra?",
+      "tipo": "seguimiento",
+      "accion": "responder",
+      "claves": [
+        "Gs. 2.000.000"
+      ],
+      "evidencia": "Envío sin cargo dentro de Asunción y Gran Asunción en compras desde Gs. 2.000.000.",
+      "respuesta_ideal": "A partir de compras desde Gs. 2.000.000."
+    },
+    {
+      "cliente": "¿Cuánto tarda en llegar el pedido?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": [
+        "24 a 72 horas"
+      ],
+      "evidencia": "Tiempo estimado de entrega: 24 a 72 horas hábiles según stock.",
+      "respuesta_ideal": "El tiempo estimado de entrega es de 24 a 72 horas hábiles según el stock."
+    },
+    {
+      "cliente": "¿La garantía de fábrica es de un año?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": [
+        "12 meses"
+      ],
+      "evidencia": "Garantía de fábrica: 12 meses en todos los productos.",
+      "respuesta_ideal": "Sí, la garantía de fábrica es de 12 meses en todos los productos."
+    },
+    {
+      "cliente": "Si además contrato la garantía extendida para el aire acondicionado, ¿hasta cuándo quedaría cubierto en total?",
+      "tipo": "combinada",
+      "accion": "responder",
+      "claves": [
+        "12 meses",
+        "+12 meses adicionales"
+      ],
+      "evidencia": "Garantía de fábrica: 12 meses en todos los productos.\nGarantía extendida opcional: +12 meses adicionales, desde USD 30 hasta USD 90 según el equipo.",
+      "respuesta_ideal": "Con la garantía de fábrica de 12 meses más la extendida de 12 meses adicionales, quedaría cubierto durante 24 meses en total."
+    }
+  ],
+  [
+    {
+      "cliente": "¿La instalación del aire acondicionado está incluida en el precio?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": [
+        "cargo aparte"
+      ],
+      "evidencia": "la instalación tiene un cargo aparte que depende de la distancia entre las unidades.",
+      "respuesta_ideal": "No, la instalación tiene un cargo aparte que depende de la distancia entre las unidades."
+    },
+    {
+      "cliente": "¿Reciben mi heladera vieja como parte de pago de la nueva?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": [
+        "no aceptamos usados como parte de pago"
+      ],
+      "evidencia": "No, no aceptamos usados como parte de pago.",
+      "respuesta_ideal": "No, no aceptamos usados como parte de pago."
+    },
+    {
+      "cliente": "¿Tienen la marca Samsung en TV de 55 pulgadas?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No tengo especificada la marca del Smart TV de 55 pulgadas; le recomiendo consultar en el local o por WhatsApp."
+    },
+    {
+      "cliente": "Buenas tardes, quería consultar algo",
+      "tipo": "charla",
+      "accion": "charla",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "Buenas tardes, dígame en qué le puedo ayudar."
+    },
+    {
+      "cliente": "¿Cuánto cuesta el microondas de 20 litros?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": [
+        "Gs. 890.000"
+      ],
+      "evidencia": "| Microondas 20 L                | Gs. 890.000     |",
+      "respuesta_ideal": "El microondas de 20 litros cuesta Gs. 890.000."
+    }
+  ],
+  [
+    {
+      "cliente": "¿Tienen en stock ahorita todos los modelos de heladera?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": [
+        "No siempre"
+      ],
+      "evidencia": "No siempre; a veces hay que encargar y esperar entre 3 y 7 días.",
+      "respuesta_ideal": "No siempre hay stock de todos los modelos; a veces hay que encargarlo y esperar entre 3 y 7 días."
+    },
+    {
+      "cliente": "¿Tienen local en Ciudad del Este también?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No tengo registrada otra sucursal aparte de la de Asunción."
+    },
+    {
+      "cliente": "¿Cuál es la dirección de la tienda?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": [
+        "Avda. Mariscal López 2340"
+      ],
+      "evidencia": "Avda. Mariscal López 2340 c/ Brasilia, Asunción, Paraguay",
+      "respuesta_ideal": "Estamos en Avda. Mariscal López 2340 c/ Brasilia, Asunción."
+    },
+    {
+      "cliente": "Gracias, voy a pasar mañana",
+      "tipo": "charla",
+      "accion": "charla",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "Perfecto, lo esperamos."
+    }
+  ],
+  [
+    {
+      "cliente": "¿Tienen cocinas o anafes a gas también?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No tengo cocinas ni anafes en la lista de productos que manejamos."
+    },
+    {
+      "cliente": "Si compro por WhatsApp, ¿me pueden mandar fotos reales del producto antes de pagar?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No tengo esa información; puede consultarlo directo por WhatsApp al momento de hacer el pedido."
+    },
+    {
+      "cliente": "Compré un ventilador en otro local pero se descompuso, ¿me lo pueden reparar aquí igual?",
+      "tipo": "instruccion",
+      "accion": "derivar",
+      "claves": [],
+      "evidencia": "deriva con Carlos Ovelar de todos modos, ya que él atiende el servicio técnico.",
+      "respuesta_ideal": "Puede consultar con nuestro encargado de servicio técnico, Carlos Ovelar, aunque el producto no lo haya comprado con nosotros."
+    }
+  ]
+]

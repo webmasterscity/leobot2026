@@ -1,0 +1,41 @@
+[
+  [
+    {"cliente": "¿A cómo está la premium ahorita?", "tipo": "directa", "accion": "responder", "claves": ["$24.65"], "evidencia": "| Premium     | $24.65 |", "respuesta_ideal": "La Premium está a $24.65 el litro esta semana, aunque puede variar un poco de un día a otro."},
+    {"cliente": "¿Y la normal, la magna?", "tipo": "seguimiento", "accion": "responder", "claves": ["$22.98"], "evidencia": "| Magna       | $22.98 |", "respuesta_ideal": "La Magna está a $22.98 el litro."},
+    {"cliente": "¿Se puede pagar con tarjeta ahí mismo en la bomba?", "tipo": "directa", "accion": "responder", "claves": ["en caja dentro de la tienda"], "evidencia": "el pago con tarjeta se hace en caja dentro de la tienda", "respuesta_ideal": "No, el pago con tarjeta se hace en caja dentro de la tienda, no en la bomba."},
+    {"cliente": "Va, gracias, que estén bien", "tipo": "charla", "accion": "charla", "claves": [], "evidencia": null, "respuesta_ideal": "Con gusto, que le vaya muy bien."}
+  ],
+  [
+    {"cliente": "¿Hasta qué hora abre la tienda?", "tipo": "directa", "accion": "responder", "claves": ["11:00 p.m."], "evidencia": "Tienda de conveniencia: 6:00 a.m. a 11:00 p.m.", "respuesta_ideal": "La tienda abre de 6:00 a.m. a 11:00 p.m."},
+    {"cliente": "¿Y el 25 de diciembre igual?", "tipo": "seguimiento", "accion": "responder", "claves": ["3:00 p.m."], "evidencia": "la tienda cierra a las 3:00 p.m.", "respuesta_ideal": "No, el 25 de diciembre la tienda cierra a las 3:00 p.m., aunque el despacho de gasolina sigue las 24 horas."},
+    {"cliente": "¿También abren el 24 en la noche, para el brindis?", "tipo": "sin_respuesta", "accion": "abstenerse", "claves": [], "evidencia": null, "respuesta_ideal": "No tengo ese dato específico para el 24 de diciembre, solo sé que el 25 cerramos a las 3:00 p.m.; le recomiendo llamar para confirmar."},
+    {"cliente": "¿Venden yelo para las bebidas?", "tipo": "sin_respuesta", "accion": "abstenerse", "claves": [], "evidencia": null, "respuesta_ideal": "No tengo esa información; en tienda manejamos snacks, café y refrescos, pero no le puedo confirmar si hay hielo."}
+  ],
+  [
+    {"cliente": "Se me ponchó una llanta, me la pueden arreglar?", "tipo": "instruccion", "accion": "derivar", "claves": [], "evidencia": "deriva a la llantera \"Don Beto\" de al lado, aclarando que es un negocio independiente.", "respuesta_ideal": "Aquí no damos servicio de llantas, pero al lado está la llantera Don Beto que le puede ayudar; es un negocio aparte del nuestro."},
+    {"cliente": "¿Y no hacen ningún servicio de mecánica aquí adentro?", "tipo": "seguimiento", "accion": "derivar", "claves": [], "evidencia": "No des diagnósticos mecánicos sobre fallas del auto del cliente", "respuesta_ideal": "No, aquí no damos servicio mecánico ni revisiones de motor; eso lo puede ver en la llantera de al lado."},
+    {"cliente": "Se siente un olor fuerte a gasolina cerca de las bombas, es peligroso?", "tipo": "instruccion", "accion": "derivar", "claves": [], "evidencia": "da de inmediato el teléfono de Protección Civil Puebla (222-232-4000) y pide que se aleje del área.", "respuesta_ideal": "Aléjese de esa zona por precaución; si hay una fuga real hay que avisar a Protección Civil Puebla al 222-232-4000."}
+  ],
+  [
+    {"cliente": "Si me lavan el carro completo y aparte el básico para la moto de mi hijo, cuanto seria en total?", "tipo": "combinada", "accion": "responder", "claves": ["$120.00", "$80.00"], "evidencia": "básico $80.00, completo $120.00", "respuesta_ideal": "El lavado completo son $120.00 y el básico $80.00, en total $200.00 por los dos."},
+    {"cliente": "¿Después de qué hora ya no aceptan billetes grandes?", "tipo": "directa", "accion": "responder", "claves": ["no se aceptan billetes de más de $500"], "evidencia": "no se aceptan billetes de más de $500 pesos en la tienda", "respuesta_ideal": "Después de las 10:00 p.m. no se aceptan billetes de más de $500 pesos, por seguridad."},
+    {"cliente": "¿Me pueden fiar la gasolina, ya después les pago?", "tipo": "si_no", "accion": "responder", "claves": ["no se fía"], "evidencia": "Aquí no se fía: todo pago es de contado.", "respuesta_ideal": "No, aquí no se fía, todo pago es de contado."},
+    {"cliente": "¿Puedo entrar con mi perrito a comprar algo?", "tipo": "si_no", "accion": "responder", "claves": ["no pueden entrar a la tienda"], "evidencia": "no pueden entrar a la tienda", "respuesta_ideal": "Las mascotas son bienvenidas afuera, pero no pueden entrar a la tienda."},
+    {"cliente": "¿Tienen aspiradora para el interior del carro?", "tipo": "sin_respuesta", "accion": "abstenerse", "claves": [], "evidencia": null, "respuesta_ideal": "No tengo ese servicio registrado; lo que sí ofrecemos es lavado básico y completo."}
+  ],
+  [
+    {"cliente": "¿Hay alguna rifa o promoción esta semana?", "tipo": "sin_respuesta", "accion": "abstenerse", "claves": [], "evidencia": null, "respuesta_ideal": "No tengo información sobre rifas o promociones especiales; lo que sí tenemos es el programa de puntos El Sol Puntos."},
+    {"cliente": "Bueno, ¿y cómo funciona lo de los puntos de la app?", "tipo": "seguimiento", "accion": "responder", "claves": ["1 punto por cada $10"], "evidencia": "acumula 1 punto por cada $10 de compra", "respuesta_ideal": "Por cada $10 de compra acumula 1 punto en la app El Sol Puntos."},
+    {"cliente": "¿El estacionamiento para un tráiler tiene algún costo?", "tipo": "directa", "accion": "responder", "claves": ["sin costo adicional por 30 minutos"], "evidencia": "sin costo adicional por 30 minutos", "respuesta_ideal": "No tiene costo, el estacionamiento para tráileres es gratis los primeros 30 minutos."},
+    {"cliente": "¿Tienen regaderas o duchas para choferes de carga?", "tipo": "sin_respuesta", "accion": "abstenerse", "claves": [], "evidencia": null, "respuesta_ideal": "No tengo ese dato; solo le puedo confirmar el estacionamiento amplio para tráileres."},
+    {"cliente": "Perfecto, muchas gracias por su ayuda", "tipo": "charla", "accion": "charla", "claves": [], "evidencia": null, "respuesta_ideal": "Con mucho gusto, que le vaya bien."}
+  ],
+  [
+    {"cliente": "¿Tienen cargadores para carros eléctricos?", "tipo": "sin_respuesta", "accion": "abstenerse", "claves": [], "evidencia": null, "respuesta_ideal": "No tengo ese servicio registrado; manejamos Magna, Premium y Diésel."},
+    {"cliente": "¿Cuál es el teléfono de la estación por si se me olvida algo en el carro?", "tipo": "directa", "accion": "responder", "claves": ["222-315-9087"], "evidencia": "Teléfono: 222-315-9087", "respuesta_ideal": "El teléfono de la estación es 222-315-9087."}
+  ],
+  [
+    {"cliente": "¿Cuánto me cobran si no compro nada y solo quiero usar el baño?", "tipo": "directa", "accion": "responder", "claves": ["cuota de $10"], "evidencia": "sin compra, cuota de $10.", "respuesta_ideal": "Si no compra nada, el baño tiene una cuota de $10."},
+    {"cliente": "Si compro algo de $20 en la tienda y aparte quiero usar el baño, ¿me cobran los $10 extra?", "tipo": "combinada", "accion": "responder", "claves": ["compra mínima de $20", "cuota de $10"], "evidencia": "Baños: gratuitos con compra mínima de $20 en tienda; sin compra, cuota de $10.", "respuesta_ideal": "No, si compra al menos $20 en tienda el baño es gratis; el cobro de $10 es solo cuando no se compra nada."}
+  ]
+]

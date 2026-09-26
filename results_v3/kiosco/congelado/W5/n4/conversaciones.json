@@ -1,0 +1,260 @@
+[
+  [
+    {
+      "cliente": "¿Cuánto sale la noche por persona?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": [
+        "$8.500"
+      ],
+      "evidencia": "Acampante por persona\t\t$8.500",
+      "respuesta_ideal": "El acampante por persona cuesta $8.500 la noche."
+    },
+    {
+      "cliente": "¿Y si llevamos la casa rodante, cuánto es?",
+      "tipo": "seguimiento",
+      "accion": "responder",
+      "claves": [
+        "$12.000"
+      ],
+      "evidencia": "Casa rodante / motorhome\t\t$12.000",
+      "respuesta_ideal": "La casa rodante o motorhome cuesta $12.000 la noche."
+    },
+    {
+      "cliente": "Somos dos adultos y un nene de 7 años, vamos en carpa con auto, cuanto pagariamos por una noche?",
+      "tipo": "combinada",
+      "accion": "responder",
+      "claves": [
+        "$8.500",
+        "$3.000",
+        "mitad de la tarifa"
+      ],
+      "evidencia": "De 5 a 12 años pagan la mitad de la tarifa de acampante.",
+      "respuesta_ideal": "Serían $8.500 por cada adulto, la mitad de esa tarifa para el nene de 7 años, y $3.000 adicionales por la carpa más el auto; en total $24.250 la noche."
+    },
+    {
+      "cliente": "Buenísimo, gracias",
+      "tipo": "charla",
+      "accion": "charla",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "Genial, cualquier otra consulta me avisa."
+    }
+  ],
+  [
+    {
+      "cliente": "¿A qué hora es el check-in?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": [
+        "12:00 hs"
+      ],
+      "evidencia": "Check-in: a partir de las 12:00 hs",
+      "respuesta_ideal": "El check-in es a partir de las 12:00 hs."
+    },
+    {
+      "cliente": "¿Y el check-out?",
+      "tipo": "seguimiento",
+      "accion": "responder",
+      "claves": [
+        "10:00 hs"
+      ],
+      "evidencia": "Check-out: hasta las 10:00 hs",
+      "respuesta_ideal": "El check-out es hasta las 10:00 hs."
+    },
+    {
+      "cliente": "¿La pileta está abierta ahora en julio?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": [
+        "de noviembre a marzo"
+      ],
+      "evidencia": "Pileta: habilitada de noviembre a marzo, de 10:00 a 19:00 hs",
+      "respuesta_ideal": "No, la pileta solo está habilitada de noviembre a marzo."
+    },
+    {
+      "cliente": "¿La pileta tiene profundidad para chicos chiquitos, es apta para bebes?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No tengo ese dato sobre la profundidad de la pileta."
+    }
+  ],
+  [
+    {
+      "cliente": "¿Aceptan tarjeta de débito?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": [
+        "No aceptamos tarjeta"
+      ],
+      "evidencia": "No aceptamos tarjeta porque la señal acá es floja y el posnet no siempre anda.",
+      "respuesta_ideal": "No, no aceptamos tarjeta, solo efectivo o transferencia."
+    },
+    {
+      "cliente": "¿Puedo llevar a mi perro?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": [
+        "se aceptan atadas"
+      ],
+      "evidencia": "Mascotas: se aceptan atadas y con dueño responsable. No se permite el ingreso de mascotas a la zona de pileta.",
+      "respuesta_ideal": "Sí, las mascotas se aceptan atadas y con dueño responsable."
+    },
+    {
+      "cliente": "¿Y puede entrar a la pileta con nosotros?",
+      "tipo": "seguimiento",
+      "accion": "responder",
+      "claves": [
+        "No se permite el ingreso de mascotas a la zona de pileta"
+      ],
+      "evidencia": "Mascotas: se aceptan atadas y con dueño responsable. No se permite el ingreso de mascotas a la zona de pileta.",
+      "respuesta_ideal": "No, no se permite el ingreso de mascotas a la zona de pileta."
+    },
+    {
+      "cliente": "Quiero reservar 3 noches para enero, me confirman el lugar ya?",
+      "tipo": "instruccion",
+      "accion": "derivar",
+      "claves": [],
+      "evidencia": "da la información de tarifas y pide que se comuniquen con Don Walter al 261 15-402-3391 para confirmar el cupo.",
+      "respuesta_ideal": "Por acá le puedo dar la información, pero para confirmar el cupo tiene que comunicarse directo con Don Walter al 261 15-402-3391."
+    },
+    {
+      "cliente": "Si al final no podemos ir, ¿me devuelven la seña?",
+      "tipo": "instruccion",
+      "accion": "responder",
+      "claves": [
+        "72 horas"
+      ],
+      "evidencia": "Si cancela avisando con 72 horas de anticipación, se devuelve la seña completa",
+      "respuesta_ideal": "Sí, siempre que avise con al menos 72 horas de anticipación; si avisa después, no hay devolución."
+    }
+  ],
+  [
+    {
+      "cliente": "¿Hay luz para conectar el motorhome?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": [
+        "toma de electricidad en las parcelas para casa rodante y motorhome"
+      ],
+      "evidencia": "Sí, hay toma de electricidad en las parcelas para casa rodante y motorhome; para carpas comunes no está garantizado en todos los sectores.",
+      "respuesta_ideal": "Sí, hay toma de electricidad en las parcelas para casa rodante y motorhome."
+    },
+    {
+      "cliente": "¿Y para la carpa común también tiene toma de luz segura?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": [
+        "no está garantizado en todos los sectores"
+      ],
+      "evidencia": "Sí, hay toma de electricidad en las parcelas para casa rodante y motorhome; para carpas comunes no está garantizado en todos los sectores.",
+      "respuesta_ideal": "Para carpas comunes no está garantizado en todos los sectores, mejor confirme al llegar."
+    },
+    {
+      "cliente": "¿Alquilan bicicletas para andar por el camping?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No tengo ese servicio registrado, no ofrecemos alquiler de bicicletas."
+    },
+    {
+      "cliente": "¿Venden hielo y carbón ahí?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": [
+        "hielo, carbón"
+      ],
+      "evidencia": "Proveeduría: de 8:00 a 21:00 hs (lo básico: hielo, carbón, gaseosas, algo de fiambre, pan)",
+      "respuesta_ideal": "Sí, en la proveeduría vendemos hielo, carbón y otras cosas básicas."
+    },
+    {
+      "cliente": "¿Y hasta qué hora está abierta la proveeduría?",
+      "tipo": "seguimiento",
+      "accion": "responder",
+      "claves": [
+        "8:00 a 21:00 hs"
+      ],
+      "evidencia": "Proveeduría: de 8:00 a 21:00 hs (lo básico: hielo, carbón, gaseosas, algo de fiambre, pan)",
+      "respuesta_ideal": "La proveeduría está abierta de 8:00 a 21:00 hs."
+    }
+  ],
+  [
+    {
+      "cliente": "¿Hay wifi en toda la zona del camping?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": [
+        "Wifi solo en el sector de la proveeduría"
+      ],
+      "evidencia": "Wifi solo en el sector de la proveeduría, no llega a las parcelas del fondo.",
+      "respuesta_ideal": "No en todos lados, el wifi solo llega al sector de la proveeduría, a las parcelas del fondo no llega."
+    },
+    {
+      "cliente": "¿Qué compañía de celular tiene mejor señal, Personal o Claro?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": [
+        "entra mejor Personal"
+      ],
+      "evidencia": "Es floja, entra mejor Personal que Claro o Movistar, pero no es garantía.",
+      "respuesta_ideal": "Entra mejor la señal de Personal que la de Claro o Movistar, aunque en general es floja."
+    },
+    {
+      "cliente": "¿Podemos poner música con parlante hasta tarde, como a la 1 de la mañana?",
+      "tipo": "instruccion",
+      "accion": "responder",
+      "claves": [
+        "Después de las 24:00 hs pedimos silencio"
+      ],
+      "evidencia": "Después de las 24:00 hs pedimos silencio, nada de música fuerte ni motos.",
+      "respuesta_ideal": "No, después de las 24:00 hs pedimos silencio, nada de música fuerte."
+    },
+    {
+      "cliente": "¿Va a llover el fin de semana que vamos?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No tengo esa información del clima; eso se sabe más cerca de la fecha."
+    },
+    {
+      "cliente": "Dale, muchas gracias, nos vemos el sábado",
+      "tipo": "charla",
+      "accion": "charla",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "Genial, los esperamos."
+    }
+  ],
+  [
+    {
+      "cliente": "¿Cuánto cuesta alquilar una carpa ya armada, si no tenemos la nuestra?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": [
+        "$15.000"
+      ],
+      "evidencia": "Carpa equipada para 2 (alquiler)\t$15.000",
+      "respuesta_ideal": "La carpa equipada para 2 personas se alquila a $15.000 la noche."
+    },
+    {
+      "cliente": "¿Tienen quincho cerrado por si llueve?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No tengo un quincho cerrado registrado; contamos con parrillas individuales y fogón comunitario los sábados."
+    },
+    {
+      "cliente": "¿Se puede pagar en dólares o solo en pesos?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No tengo esa información específica; lo que sé es que aceptamos efectivo o transferencia."
+    }
+  ]
+]

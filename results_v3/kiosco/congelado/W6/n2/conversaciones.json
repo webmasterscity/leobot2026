@@ -1,0 +1,276 @@
+[
+ [
+  {
+   "cliente": "Hola! a que hora cerrais hoy? es martes",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "22:30"
+   ],
+   "evidencia": "Lunes a viernes ......... 07:00 – 22:30",
+   "respuesta_ideal": "¡Hola, bienvenido al Club Natació Cabanyal! De lunes a viernes cerramos a las 22:30, aunque el acceso al agua se cierra 30 minutos antes."
+  },
+  {
+   "cliente": "¿y el domingo?",
+   "tipo": "seguimiento",
+   "accion": "responder",
+   "claves": [
+    "14:00"
+   ],
+   "evidencia": "Domingos y festivos ..... 09:00 – 14:00",
+   "respuesta_ideal": "Los domingos abrimos de 09:00 a 14:00."
+  },
+  {
+   "cliente": "Vale, entonces hoy si llego a las 22:15 ¿me da tiempo a nadar un rato?",
+   "tipo": "combinada",
+   "accion": "responder",
+   "claves": [
+    "30 minutos antes"
+   ],
+   "evidencia": "El acceso al agua se cierra 30 minutos antes del cierre de la instalación.",
+   "respuesta_ideal": "No: hoy cerramos a las 22:30 y el acceso al agua se cierra 30 minutos antes, a las 22:00, así que a las 22:15 ya no podrías entrar al agua."
+  },
+  {
+   "cliente": "¿Teneis sauna o baño turco para después?",
+   "tipo": "sin_respuesta",
+   "accion": "derivar",
+   "claves": [],
+   "evidencia": "- Si te preguntan algo que no aparece en la información del club, no lo supongas: di que no tienes ese dato y que pueden preguntarlo en recepción o llamando al 963 55 21 40.",
+   "respuesta_ideal": "No tengo ese dato; puedes preguntarlo en recepción o llamando al 963 55 21 40."
+  },
+  {
+   "cliente": "¿Qué profundidad tiene la piscina grande? es que no hago pie",
+   "tipo": "sin_respuesta",
+   "accion": "derivar",
+   "claves": [],
+   "evidencia": "- Si te preguntan algo que no aparece en la información del club, no lo supongas: di que no tienes ese dato y que pueden preguntarlo en recepción o llamando al 963 55 21 40.",
+   "respuesta_ideal": "La profundidad de la piscina de 25 m no la tengo; solo sé que el vaso de enseñanza tiene 90 cm. Puedes preguntarlo en recepción o llamando al 963 55 21 40."
+  }
+ ],
+ [
+  {
+   "cliente": "Buenas, ¿cuánto cuesta la matrícula para hacerse socio?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "35"
+   ],
+   "evidencia": "Matrícula de alta (pago único): 35 €",
+   "respuesta_ideal": "La matrícula de alta es un pago único de 35 €."
+  },
+  {
+   "cliente": "¿Y cuánto se paga al mes siendo adulto?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "44"
+   ],
+   "evidencia": "Cuota mensual adulto (26 a 64 años): 44 €",
+   "respuesta_ideal": "La cuota mensual de adulto, de 26 a 64 años, es de 44 €."
+  },
+  {
+   "cliente": "Somos mi pareja, yo y dos críos de 6 y 9 años. ¿Hay algo para familias?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "89"
+   ],
+   "evidencia": "Cuota familiar (2 adultos + hijos menores de 14 años): 89 €/mes",
+   "respuesta_ideal": "Sí, la cuota familiar, para 2 adultos más los hijos menores de 14 años, cuesta 89 € al mes."
+  },
+  {
+   "cliente": "La de 9 querría apuntarse a cursillo. Si somos socios, ¿cuánto pagaríamos al trimestre?",
+   "tipo": "combinada",
+   "accion": "responder",
+   "claves": [
+    "88"
+   ],
+   "evidencia": "· Infantil II (6 a 12 años): lunes y miércoles a las 18:00, o martes y jueves a las 18:30 — 110 €",
+   "respuesta_ideal": "Le corresponde el Infantil II, que cuesta 110 € al trimestre; con el 20 % de descuento de socio serían 88 €."
+  },
+  {
+   "cliente": "¿Y qué días serían las clases?",
+   "tipo": "seguimiento",
+   "accion": "responder",
+   "claves": [
+    "lunes y miércoles",
+    "martes y jueves"
+   ],
+   "evidencia": "· Infantil II (6 a 12 años): lunes y miércoles a las 18:00, o martes y jueves a las 18:30 — 110 €",
+   "respuesta_ideal": "El Infantil II tiene dos grupos: lunes y miércoles a las 18:00, o martes y jueves a las 18:30."
+  },
+  {
+   "cliente": "¿Hace falta llevar certificado médico para apuntarla?",
+   "tipo": "sin_respuesta",
+   "accion": "derivar",
+   "claves": [],
+   "evidencia": "- Si te preguntan algo que no aparece en la información del club, no lo supongas: di que no tienes ese dato y que pueden preguntarlo en recepción o llamando al 963 55 21 40.",
+   "respuesta_ideal": "No tengo ese dato; puedes preguntarlo en recepción o llamando al 963 55 21 40."
+  }
+ ],
+ [
+  {
+   "cliente": "Mi hijo tiene 13 años, ¿puede venir solo a nadar por las tardes?",
+   "tipo": "si_no",
+   "accion": "responder",
+   "claves": [
+    "acompañados de un adulto"
+   ],
+   "evidencia": "Los menores de 14 años solo pueden usar el baño libre acompañados de un adulto que también esté en la instalación.",
+   "respuesta_ideal": "Solo no: los menores de 14 años solo pueden usar el baño libre acompañados de un adulto que también esté en la instalación."
+  },
+  {
+   "cliente": "¿Las taquillas tienen candado o hay que traerse uno?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "1 €"
+   ],
+   "evidencia": "Las taquillas funcionan con una moneda de 1 € que se recupera al abrirlas.",
+   "respuesta_ideal": "No hace falta candado: las taquillas funcionan con una moneda de 1 € que se recupera al abrirlas."
+  },
+  {
+   "cliente": "Me operaron de la rodilla hace tres semanas, ¿puedo empezar ya a nadar?",
+   "tipo": "instruccion",
+   "accion": "derivar",
+   "claves": [],
+   "evidencia": "- No des consejos médicos ni sobre lesiones. Si alguien pregunta si puede nadar tras una operación, con una lesión, estando embarazada o con cualquier problema de salud, dile que lo consulte con su médico.",
+   "respuesta_ideal": "Eso no te lo puedo decir yo; lo mejor es que lo consultes con tu médico antes de empezar."
+  },
+  {
+   "cliente": "¿Hay socorrista durante todo el horario?",
+   "tipo": "sin_respuesta",
+   "accion": "derivar",
+   "claves": [],
+   "evidencia": "- Si te preguntan algo que no aparece en la información del club, no lo supongas: di que no tienes ese dato y que pueden preguntarlo en recepción o llamando al 963 55 21 40.",
+   "respuesta_ideal": "No tengo ese dato; puedes preguntarlo en recepción o llamando al 963 55 21 40."
+  },
+  {
+   "cliente": "Ayer me deje unas gafas en el vestuario, ¿donde puedo preguntar?",
+   "tipo": "instruccion",
+   "accion": "responder",
+   "claves": [
+    "recepción",
+    "un mes"
+   ],
+   "evidencia": "- Si preguntan por objetos perdidos, indica que se guardan en recepción durante un mes.",
+   "respuesta_ideal": "Los objetos perdidos se guardan en recepción durante un mes; pregunta allí por tus gafas."
+  }
+ ],
+ [
+  {
+   "cliente": "¿Qué horario de entrenos tiene el equipo de competición?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "06:45",
+    "18:30"
+   ],
+   "evidencia": "Entrenamientos de lunes a viernes, de 06:45 a 08:15 y de 18:30 a 20:30.",
+   "respuesta_ideal": "El equipo entrena de lunes a viernes, de 06:45 a 08:15 y de 18:30 a 20:30."
+  },
+  {
+   "cliente": "Mi hija quiere hacer la prueba de nivel para entrar, ¿cuándo puede hacerla?",
+   "tipo": "instruccion",
+   "accion": "derivar",
+   "claves": [],
+   "evidencia": "- Todo lo relativo al equipo de competición (pruebas de nivel, fichas federativas, competiciones) lo lleva Marta Ferrer: remite a competicio@cncabanyal.es.",
+   "respuesta_ideal": "Las pruebas de nivel las lleva Marta Ferrer, la coordinadora deportiva; escríbele a competicio@cncabanyal.es."
+  },
+  {
+   "cliente": "Y para darme de alta yo, ¿que tengo que traer?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "DNI",
+    "foto"
+   ],
+   "evidencia": "Para darse de alta hay que pasar por recepción con el DNI o NIE y una foto tamaño carnet.",
+   "respuesta_ideal": "Tienes que pasar por recepción con tu DNI o NIE y una foto tamaño carnet."
+  },
+  {
+   "cliente": "si luego me quiero dar de baja, ¿hasta qué día tengo que avisar?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "25"
+   ],
+   "evidencia": "La baja se comunica por escrito, en recepción o por correo a info@cncabanyal.es, antes del día 25; si se avisa después, se cobra el mes siguiente completo.",
+   "respuesta_ideal": "Tienes que comunicarlo por escrito antes del día 25, en recepción o a info@cncabanyal.es; si no, se cobra el mes siguiente completo."
+  },
+  {
+   "cliente": "¿Y me devuelven la matrícula?",
+   "tipo": "si_no",
+   "accion": "responder",
+   "claves": [
+    "no se devuelve"
+   ],
+   "evidencia": "La matrícula no se devuelve en ningún caso.",
+   "respuesta_ideal": "No, la matrícula no se devuelve en ningún caso."
+  },
+  {
+   "cliente": "¿Se puede congelar la cuota un par de meses si me voy de Erasmus?",
+   "tipo": "sin_respuesta",
+   "accion": "derivar",
+   "claves": [],
+   "evidencia": "- Si te preguntan algo que no aparece en la información del club, no lo supongas: di que no tienes ese dato y que pueden preguntarlo en recepción o llamando al 963 55 21 40.",
+   "respuesta_ideal": "No tengo ese dato; puedes preguntarlo en recepción o llamando al 963 55 21 40."
+  }
+ ],
+ [
+  {
+   "cliente": "¿Abrís en agosto?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "17 al 31 de agosto"
+   ],
+   "evidencia": "Cierre técnico anual por mantenimiento: del 17 al 31 de agosto.",
+   "respuesta_ideal": "Sí, pero solo hasta el 16: del 17 al 31 de agosto cerramos por mantenimiento."
+  },
+  {
+   "cliente": "¿Y el día de Navidad está abierto?",
+   "tipo": "si_no",
+   "accion": "responder",
+   "claves": [
+    "cerrado"
+   ],
+   "evidencia": "24 y 31 de diciembre: abierto hasta las 14:00. 25 de diciembre y 1 de enero: cerrado.",
+   "respuesta_ideal": "No, el 25 de diciembre está cerrado."
+  },
+  {
+   "cliente": "¿y en nochebuena?",
+   "tipo": "seguimiento",
+   "accion": "responder",
+   "claves": [
+    "14:00"
+   ],
+   "evidencia": "24 y 31 de diciembre: abierto hasta las 14:00. 25 de diciembre y 1 de enero: cerrado.",
+   "respuesta_ideal": "El 24 de diciembre abrimos hasta las 14:00."
+  },
+  {
+   "cliente": "¿Hay sitio para dejar la bici?",
+   "tipo": "sin_respuesta",
+   "accion": "derivar",
+   "claves": [],
+   "evidencia": "- Si te preguntan algo que no aparece en la información del club, no lo supongas: di que no tienes ese dato y que pueden preguntarlo en recepción o llamando al 963 55 21 40.",
+   "respuesta_ideal": "No tengo ese dato; puedes preguntarlo en recepción o llamando al 963 55 21 40."
+  },
+  {
+   "cliente": "¿Vendeis gorros y gafas en recepción? Me he olvidado el gorro",
+   "tipo": "sin_respuesta",
+   "accion": "derivar",
+   "claves": [],
+   "evidencia": "- Si te preguntan algo que no aparece en la información del club, no lo supongas: di que no tienes ese dato y que pueden preguntarlo en recepción o llamando al 963 55 21 40.",
+   "respuesta_ideal": "No tengo ese dato; pregúntalo en recepción o en el 963 55 21 40. Eso sí, recuerda que el gorro es obligatorio para entrar al agua."
+  },
+  {
+   "cliente": "Vale, pues muchas gracias. ¡Hasta luego!",
+   "tipo": "charla",
+   "accion": "charla",
+   "claves": [],
+   "evidencia": null,
+   "respuesta_ideal": "¡A ti! Hasta luego."
+  }
+ ]
+]

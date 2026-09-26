@@ -1,0 +1,280 @@
+[
+  [
+    {
+      "cliente": "¿Cuánto vale el SOAT para un carro particular?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": [
+        "$450.000"
+      ],
+      "evidencia": "para vehículos particulares en Bogotá el valor promedio parte desde $450.000 al año",
+      "respuesta_ideal": "El SOAT para vehículos particulares en Bogotá parte desde $450.000 al año."
+    },
+    {
+      "cliente": "¿Y para una moto es igual?",
+      "tipo": "seguimiento",
+      "accion": "responder",
+      "claves": [
+        "$250.000"
+      ],
+      "evidencia": "y para motos desde $250.000 al año.",
+      "respuesta_ideal": "Para motos el SOAT parte desde $250.000 al año."
+    },
+    {
+      "cliente": "¿Se puede pagar el SOAT en cuotas?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": [
+        "algunas lo permiten hasta en 3 cuotas"
+      ],
+      "evidencia": "algunas lo permiten hasta en 3 cuotas.",
+      "respuesta_ideal": "Depende de la aseguradora con la que se emita; algunas sí permiten pagarlo hasta en 3 cuotas."
+    },
+    {
+      "cliente": "Ah perfecto, gracias",
+      "tipo": "charla",
+      "accion": "charla",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "Con gusto, cualquier otra duda me escribe."
+    }
+  ],
+  [
+    {
+      "cliente": "¿Cuánto cuesta el seguro todo riesgo para mi carro?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": [
+        "COP 1.200.000"
+      ],
+      "evidencia": "tiene un valor desde COP 1.200.000 anuales",
+      "respuesta_ideal": "El seguro todo riesgo para automóvil tiene un valor desde COP 1.200.000 anuales."
+    },
+    {
+      "cliente": "Mi carro es un Renault Sandero 2019, cuanto me saldria exactamente a mi?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No le puedo dar el valor exacto por chat, depende del modelo, año y ciudad de circulación; un asesor le puede cotizar con esos datos."
+    },
+    {
+      "cliente": "¿Cubre a cualquier persona que maneje el carro, aunque no sea yo?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": [
+        "Solo si el conductor está declarado en la póliza"
+      ],
+      "evidencia": "Solo si el conductor está declarado en la póliza",
+      "respuesta_ideal": "Solo si el conductor está declarado en la póliza, o si tiene la cláusula de conductor no declarado."
+    },
+    {
+      "cliente": "¿Y si quiero que cubra a cualquiera, eso tiene costo extra?",
+      "tipo": "seguimiento",
+      "accion": "responder",
+      "claves": [
+        "conductor no declarado",
+        "costo adicional"
+      ],
+      "evidencia": "la cláusula de \"conductor no declarado\", que tiene un costo adicional.",
+      "respuesta_ideal": "Sí, existe la cláusula de conductor no declarado, pero tiene un costo adicional."
+    }
+  ],
+  [
+    {
+      "cliente": "¿Desde cuánto sale un seguro de vida?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": [
+        "$35.000 mensuales"
+      ],
+      "evidencia": "El seguro de vida cuenta con planes desde $35.000 mensuales",
+      "respuesta_ideal": "El seguro de vida cuenta con planes desde $35.000 mensuales."
+    },
+    {
+      "cliente": "¿Y el de hogar para un apartamento?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": [
+        "$60.000 mensuales"
+      ],
+      "evidencia": "los planes parten desde $60.000 mensuales para apartamentos",
+      "respuesta_ideal": "El seguro de hogar para apartamentos parte desde $60.000 mensuales."
+    },
+    {
+      "cliente": "Si saco el de vida y el de hogar para apartamento juntos, cuanto pagaria al mes entre los dos?",
+      "tipo": "combinada",
+      "accion": "responder",
+      "claves": [
+        "$35.000 mensuales",
+        "$60.000 mensuales"
+      ],
+      "evidencia": "El seguro de vida cuenta con planes desde $35.000 mensuales",
+      "respuesta_ideal": "El de vida parte desde $35.000 mensuales y el de hogar para apartamento desde $60.000 mensuales, entre los dos serían $95.000 mensuales."
+    },
+    {
+      "cliente": "¿El seguro de hogar cubre también si se me daña la nevera por un apagón?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No tengo esa cobertura específica confirmada; el seguro de hogar protege contra incendio, terremoto, robo y daños por agua, pero no le puedo confirmar daños eléctricos por apagón."
+    }
+  ],
+  [
+    {
+      "cliente": "Choqué hace media hora, que hago?",
+      "tipo": "instruccion",
+      "accion": "derivar",
+      "claves": [],
+      "evidencia": "da de inmediato el teléfono de la línea de siniestros 24 horas (01-8000-912-345).",
+      "respuesta_ideal": "Llame de inmediato a nuestra línea de siniestros 24 horas, 01-8000-912-345, para que lo guíen con el reporte."
+    },
+    {
+      "cliente": "¿Y tengo que llevar algún papel o documento?",
+      "tipo": "seguimiento",
+      "accion": "responder",
+      "claves": [
+        "número de póliza",
+        "la cédula del asegurado"
+      ],
+      "evidencia": "Tener a mano el número de póliza, la cédula del asegurado",
+      "respuesta_ideal": "Tenga a la mano el número de póliza, la cédula del asegurado y, si aplica, el informe de tránsito."
+    },
+    {
+      "cliente": "¿Si me demoro más de dos días en avisar, hay problema?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": [
+        "48 horas"
+      ],
+      "evidencia": "Reportar el siniestro dentro de las 48 horas siguientes al hecho",
+      "respuesta_ideal": "Sí puede haber problema, el siniestro se debe reportar dentro de las 48 horas siguientes al hecho."
+    },
+    {
+      "cliente": "¿Cuánto me van a pagar de indemnización por los daños?",
+      "tipo": "instruccion",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": "No prometas montos de indemnización ni tiempos exactos de pago por parte de la aseguradora.",
+      "respuesta_ideal": "Eso no se lo puedo asegurar por chat, depende de la evaluación de la aseguradora; un asesor le dará el detalle cuando revisen el caso."
+    }
+  ],
+  [
+    {
+      "cliente": "¿Hasta qué hora atienden entre semana?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": [
+        "5:30 p.m."
+      ],
+      "evidencia": "Lunes a viernes: 8:00 a.m. – 5:30 p.m.",
+      "respuesta_ideal": "Entre semana atendemos de 8:00 a.m. a 5:30 p.m."
+    },
+    {
+      "cliente": "¿Y los sábados?",
+      "tipo": "seguimiento",
+      "accion": "responder",
+      "claves": [
+        "9:00 a.m. – 12:00 m."
+      ],
+      "evidencia": "Sábados: 9:00 a.m. – 12:00 m.",
+      "respuesta_ideal": "Los sábados atendemos de 9:00 a.m. a 12:00 m."
+    },
+    {
+      "cliente": "¿Abren el 7 de agosto, que es festivo?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": [
+        "Domingos y festivos: cerrado"
+      ],
+      "evidencia": "Domingos y festivos: cerrado, salvo la línea de siniestros que funciona siempre.",
+      "respuesta_ideal": "No, los festivos la oficina permanece cerrada; solo funciona la línea de siniestros."
+    },
+    {
+      "cliente": "Si cancelo mi póliza a mitad de año, ¿me devuelven parte de lo que pagué?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": [
+        "devolución proporcional de la prima"
+      ],
+      "evidencia": "con devolución proporcional de la prima ya pagada, excepto el primer mes de vigencia, que no es reembolsable.",
+      "respuesta_ideal": "Sí, se le devuelve proporcionalmente la prima ya pagada, excepto la del primer mes, que no es reembolsable."
+    },
+    {
+      "cliente": "¿Tienen oficina también en Medellín?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No tengo registrada otra sede aparte de la de Bogotá Centro."
+    }
+  ],
+  [
+    {
+      "cliente": "¿Con quién puedo hablar para que me asesore bien?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": [
+        "Diana Ramírez Torres"
+      ],
+      "evidencia": "Nuestra asesora comercial es Diana Ramírez Torres",
+      "respuesta_ideal": "Nuestra asesora comercial es Diana Ramírez Torres."
+    },
+    {
+      "cliente": "¿Diana habla ingles, por si mi esposo que no habla español necesita consultar algo?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No tengo esa información sobre los idiomas que maneja la asesora."
+    },
+    {
+      "cliente": "Buenos días, quisiera cotizar un seguro",
+      "tipo": "charla",
+      "accion": "charla",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "Buenos días, con gusto, cuénteme qué tipo de seguro le interesa cotizar."
+    },
+    {
+      "cliente": "Muchas gracias por la información, que estén bien",
+      "tipo": "charla",
+      "accion": "charla",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "Con gusto, recuerde que atendemos de lunes a viernes de 8:00 a.m. a 5:30 p.m. y sábados hasta el mediodía."
+    }
+  ],
+  [
+    {
+      "cliente": "¿Cuál es el teléfono de la línea de siniestros?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": [
+        "01-8000-912-345"
+      ],
+      "evidencia": "da de inmediato el teléfono de la línea de siniestros 24 horas (01-8000-912-345).",
+      "respuesta_ideal": "La línea de siniestros 24 horas es 01-8000-912-345."
+    },
+    {
+      "cliente": "Si contrato el SOAT de mi carro particular y el seguro de hogar para mi casa, cuanto pagaria en total al año contando el de hogar por doce meses?",
+      "tipo": "combinada",
+      "accion": "responder",
+      "claves": [
+        "$450.000",
+        "$85.000 mensuales"
+      ],
+      "evidencia": "para vehículos particulares en Bogotá el valor promedio parte desde $450.000 al año",
+      "respuesta_ideal": "El SOAT particular está desde $450.000 al año, y el hogar para casa desde $85.000 mensuales, que en doce meses serían $1.020.000; sumando ambos, el total anual rondaría $1.470.000."
+    },
+    {
+      "cliente": "¿Manejan seguros para bicicletas o patinetas eléctricas?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No tengo ese producto en nuestra oferta; manejamos SOAT, seguro de automóvil, de vida y de hogar."
+    }
+  ]
+]

@@ -1,0 +1,34 @@
+[
+  [
+    {"cliente": "Hola, ¿a qué hora abren mañana?", "tipo": "directa", "accion": "responder", "claves": ["9:00 a. m."], "evidencia": "Lunes a domingo, 9:00 a. m. a 6:00 p. m.", "respuesta_ideal": "Abrimos a las 9:00 de la mañana todos los días. Cierre es a las 6:00 de la tarde."},
+    {"cliente": "¿Y mañana es domingo?", "tipo": "charla", "accion": "charla", "claves": [], "evidencia": null, "respuesta_ideal": "No tengo información del calendario de hoy. Pero le cuento que domingos abrimos de 9:00 a. m. a 6:00 p. m."},
+    {"cliente": "¿Cuánto cuesta la entrada para un niño de 6 años?", "tipo": "directa", "accion": "responder", "claves": ["22 000"], "evidencia": "Niño (3 a 12 años) 22 000", "respuesta_ideal": "La entrada para niños de 3 a 12 años es de 22.000 pesos colombianos."}
+  ],
+  [
+    {"cliente": "¿Puedo llevar a mi perro al zoo?", "tipo": "si_no", "accion": "responder", "claves": ["no permitidos", "perros guía"], "evidencia": "Animales domésticos no permitidos, salvo perros guía de invidentes con certificado", "respuesta_ideal": "Los animales domésticos no se permiten, pero sí puedes traer un perro guía de invidentes con certificado, notificando con anticipación."},
+    {"cliente": "¿Y si lo deixo en casa? ¿Cuánto me cuesta entrar con mi familia?", "tipo": "combinada", "accion": "responder", "claves": ["35 000", "22 000"], "evidencia": "Adulto 35 000, Niño (3 a 12 años) 22 000", "respuesta_ideal": "Perfecto. Los precios son 35.000 por adulto y 22.000 por niño de 3 a 12 años. ¿Cuántos adultos y niños son?"}
+  ],
+  [
+    {"cliente": "¿Tienen jaguares?", "tipo": "directa", "accion": "responder", "claves": ["jaguares"], "evidencia": "más de 800 animales de 120 especies distintas, con énfasis en fauna colombiana: jaguares, ocelotes", "respuesta_ideal": "Sí, tenemos jaguares. Están en la Casa de Felinos. También tenemos ocelotes y otros felinos americanos."},
+    {"cliente": "¿Y hay leones africanos?", "tipo": "sin_respuesta", "accion": "abstenerse", "claves": [], "evidencia": null, "respuesta_ideal": "No tenemos información sobre eso en nuestro catálogo. Nuestra colección se enfoca en fauna americana. Le recomiendo llamar al (2) 555-0847 para preguntar sobre especies específicas."},
+    {"cliente": "¿Puedo tomar fotos?", "tipo": "sin_respuesta", "accion": "abstenerse", "claves": [], "evidencia": null, "respuesta_ideal": "Puedo contarle que ofrecemos sesiones de fotografía profesional por 120.000 pesos. Si quiere fotos más informales con su propio dispositivo, comuníquese directamente al zoo."}
+  ],
+  [
+    {"cliente": "Quiero ir el 25 de diciembre con mis hijos. ¿A qué hora nos abre?", "tipo": "directa", "accion": "responder", "claves": ["Cerrado: 24, 25 y 31 de diciembre"], "evidencia": "Cerrado: 24, 25 y 31 de diciembre, 1 de enero", "respuesta_ideal": "Lo siento, pero ese día el zoo permanece cerrado. Estamos cerrados el 25 de diciembre. ¿Quizás otro día?"},
+    {"cliente": "¿Y el 26 de diciembre?", "tipo": "seguimiento", "accion": "responder", "claves": ["9:00 a. m.", "6:00 p. m."], "evidencia": "Lunes a domingo, 9:00 a. m. a 6:00 p. m.", "respuesta_ideal": "El 26 de diciembre sí estamos abiertos. Abrimos de 9:00 a. m. a 6:00 p. m."}
+  ],
+  [
+    {"cliente": "¿Cuánto cuesta una grupo escolr de 25 niños?", "tipo": "combinada", "accion": "responder", "claves": ["50% descuento", "entrada", "22 000"], "evidencia": "grupos educativos: entrada 50% descuento", "respuesta_ideal": "Para grupos escolares tenemos 50% de descuento en la entrada. El precio base de niños es 22.000, así que sería 11.000 por niño. Pero deben reservar con 15 días de anticipación en educacion@faunacali.com.co"},
+    {"cliente": "¿Qué se necesita para reservar?", "tipo": "instruccion", "accion": "responder", "claves": ["15 días de anticipación", "educacion@faunacali.com.co"], "evidencia": "Reserva con 15 días de anticipación, mínimo 20 estudiantes. Contacto educativo: educacion@faunacali.com.co", "respuesta_ideal": "Necesitan contactar a educacion@faunacali.com.co con mínimo 15 días de anticipación. Deben tener al menos 20 estudiantes."}
+  ],
+  [
+    {"cliente": "Hola, buenas tardes.", "tipo": "charla", "accion": "charla", "claves": [], "evidencia": null, "respuesta_ideal": "Hola, buenas tardes. Bienvenido al Zoológico Fauna Cali. ¿En qué puedo ayudarte?"},
+    {"cliente": "¿Cuales son sus ofertas estos dias?", "tipo": "sin_respuesta", "accion": "abstenerse", "claves": [], "evidencia": null, "respuesta_ideal": "Nuestros precios regulares están disponibles. Para promociones especiales, le recomiendo seguirnos en Facebook @ZooFaunaCali o Instagram @faunacali_oficial, o llamar al (2) 555-0847."},
+    {"cliente": "¿Cómo es que entro si soy de Cali?", "tipo": "directa", "accion": "responder", "claves": ["Residentes Valle (con cédula)", "18 000"], "evidencia": "Residentes Valle (con cédula) | 18 000", "respuesta_ideal": "Si eres residente del Valle con cédula, la entrada es de 18.000 pesos. Solo tienes que mostrar tu documento de identidad."},
+    {"cliente": "Ok, gracias.", "tipo": "charla", "accion": "charla", "claves": [], "evidencia": null, "respuesta_ideal": "De nada. Si tienes más preguntas, llámanos al +57 312 456 7890. ¡Que disfrutes tu visita!"}
+  ],
+  [
+    {"cliente": "¿Aceptan tarjetas de crédito?", "tipo": "directa", "accion": "responder", "claves": ["tarjetas débito/crédito", "Visa", "Mastercard"], "evidencia": "Métodos de pago: efectivo, tarjetas débito/crédito (Visa, Mastercard, American Express)", "respuesta_ideal": "Sí, aceptamos Visa, Mastercard y American Express, tanto débito como crédito. También efectivo y consignación bancaria."},
+    {"cliente": "Perfecto, voy a ir con mi señora el próximo fin de semana.", "tipo": "charla", "accion": "charla", "claves": [], "evidencia": null, "respuesta_ideal": "Excelente. Recuerda que estamos abiertos de 9 a.m. a 6 p.m. el próximo fin de semana. Último ingreso es a las 4:30 p.m. ¡Que disfrutes!"}
+  ]
+]

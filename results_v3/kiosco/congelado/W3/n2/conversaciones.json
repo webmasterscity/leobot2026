@@ -1,0 +1,40 @@
+[
+  [
+    {"cliente": "Hola, soy freelancer y quiero un sitio para trabajar sin pagar mucho. ¿Qué opciones tenéis?", "tipo": "directa", "accion": "responder", "claves": ["Hot-Desk", "15€ al día", "120€ / mes"], "evidencia": "PLAN HOT-DESK: Precio: 120€ / mes (o 15€ al día sin contrato)", "respuesta_ideal": "Para freelancers, el Hot-Desk es perfecto. Es 120€ al mes o 15€ el día sin compromiso. Incluye wifi, escritorio compartido, y acceso a cocina."},
+    {"cliente": "¿Puedo trabajar los domingos?", "tipo": "directa", "accion": "responder", "claves": ["Domingos y festivos cerrado"], "evidencia": "Recepción presencial: lunes a viernes, 9:00 a 18:00 h. Sábados 10:00 a 13:00 h. Domingos y festivos cerrado.", "respuesta_ideal": "El plan Hot-Desk es de lunes a viernes 8-19h. Domingos no tenemos acceso. Si necesitas trabajar 24/7, el Dedicated Desk sí ofrece acceso todo el día."}
+  ],
+  [
+    {"cliente": "Tenemos 5 personas y necesitamos una sala propia. ¿Cuánto saldría?", "tipo": "directa", "accion": "responder", "claves": ["Sala mediana", "1.100€"], "evidencia": "Sala mediana (hasta 8 personas): 1.100€ / mes", "respuesta_ideal": "La sala mediana, que cabe hasta 8 personas, cuesta 1.100€ al mes. Incluye 24/7, wifi empresarial, videoconferencia y todo lo que necesitáis."},
+    {"cliente": "¿Y si es por poco tiempo? ¿Puedo alquilar solo para una reunión?", "tipo": "si_no", "accion": "responder", "claves": ["Sala de reuniones", "50€", "8h", "90€"], "evidencia": "Sala de reuniones (3h): 50€ / Sala de reuniones (8h): 90€", "respuesta_ideal": "Sí, puedes. Tenemos salas de reuniones por 50€ tres horas, o 90€ el día entero (8h). Incluye videoconferencia y wifi."}
+  ],
+  [
+    {"cliente": "Me dicen que aqui es muy caro. ¿Hay descuentos?", "tipo": "directa", "accion": "responder", "claves": ["Nuevo miembro Hot-Desk", "90€", "descuento 10%"], "evidencia": "Nuevo miembro Hot-Desk: primer mes a 90€ (Ahorro 30€) / Dedicated Desk anual: descuento 10%", "respuesta_ideal": "Si eres nuevo en Hot-Desk, el primer mes es 90€ en vez de 120€. Y si contratas anual, hay descuento del 10%. Depende de tu plan."},
+    {"cliente": "¿Hasta cuando es eso?", "tipo": "directa", "accion": "responder", "claves": ["31 de marzo de 2025"], "evidencia": "Promociones actuales (vigencia hasta 31 de marzo de 2025)", "respuesta_ideal": "Hasta el 31 de marzo de 2025. Así que si te interesa, ahora es buen momento."}
+  ],
+  [
+    {"cliente": "Necesito que la empresa tenga un domicilio en Madrid. ¿Vosotros haceis eso?", "tipo": "directa", "accion": "responder", "claves": ["Domicilio fiscal", "25€/mes"], "evidencia": "Domicilio fiscal y legal: 25€/mes (aplica solo planes Dedicated Desk y Private Office)", "respuesta_ideal": "Sí, ofrecemos domicilio fiscal y legal. Cuesta 25€ al mes, pero solo aplica si tienes un plan Dedicated Desk o Private Office."},
+    {"cliente": "Yo tengo solo Hot-Desk. Puedo cambiar luego?", "tipo": "sin_respuesta", "accion": "abstenerse", "claves": [], "evidencia": null, "respuesta_ideal": "Cambios de plan los gestiona nuestro equipo. Llama al +34 91 445 8822 o pasa por recepción (L-V 9-18h) para ver las opciones de upgrade."}
+  ],
+  [
+    {"cliente": "¿Que pasa si necesito dejar antes de los 3 meses?", "tipo": "directa", "accion": "responder", "claves": ["preaviso de 30 días"], "evidencia": "Planes mensuales: preaviso de 30 días antes del fin de mes", "respuesta_ideal": "Hay que avisar con 30 días de anticipación antes de fin de mes. Así que si cancelas ahora, la última cuota sería a fin de mes siguiente."},
+    {"cliente": "OK, ¿como hago para empezar?", "tipo": "instruccion", "accion": "responder", "claves": ["contacto@workhubmadrid.es", "+34 91 445 8822", "L-V 9-18h"], "evidencia": "Teléfono: +34 91 445 8822 · contacto@workhubmadrid.es", "respuesta_ideal": "Llama al +34 91 445 8822 o escribe a contacto@workhubmadrid.es. Recepción atiende L-V 9-18h y sábado 10-13h. Te guiarán en todo."}
+  ],
+  [
+    {"cliente": "¿Se puede fumar en la oficina?", "tipo": "directa", "accion": "responder", "claves": ["prohibido fumar", "zona habilitada en la terraza"], "evidencia": "Está prohibido fumar en todo el espacio; hay una zona habilitada en la terraza", "respuesta_ideal": "No, está prohibido fumar dentro. Tenemos una zona habilitada en la terraza."},
+    {"cliente": "Vale, y si hago llamadas, ¿puedo hacerlas en mi escritorio?", "tipo": "directa", "accion": "responder", "claves": ["llamadas de más de 15 min", "salas de reuniones"], "evidencia": "Las llamadas de más de 15 min se hacen en las salas de reuniones o private office", "respuesta_ideal": "Llamadas cortas (menos de 15 min) en tu escritorio está bien. Las largas se hacen en una sala de reuniones para no distraer a otros."}
+  ],
+  [
+    {"cliente": "Hola, buenos días.", "tipo": "charla", "accion": "charla", "claves": [], "evidencia": null, "respuesta_ideal": "Buenos días. Bienvenido a WorkHub Madrid. ¿En qué puedo ayudarte?"},
+    {"cliente": "¿Que es lo más barato que teneis?", "tipo": "directa", "accion": "responder", "claves": ["15€ al día", "120€ / mes"], "evidencia": "PLAN HOT-DESK: Precio: 120€ / mes (o 15€ al día sin contrato)", "respuesta_ideal": "El Hot-Desk es lo más económico: 120€ al mes o 15€ al día sin contrato. Acceso 8h de L-V, con todo incluido: wifi, escritorio, cocina."},
+    {"cliente": "¿Y 24 horas?", "tipo": "directa", "accion": "responder", "claves": ["Dedicated Desk", "275€"], "evidencia": "PLAN DEDICATED DESK: Precio: 275€ / mes (mínimo 3 meses)", "respuesta_ideal": "Para acceso 24/7 el Dedicated Desk es 275€ al mes con contrato de 3 meses mínimo. Es tu escritorio propio con cerradura."},
+    {"cliente": "Gracias por la info.", "tipo": "charla", "accion": "charla", "claves": [], "evidencia": null, "respuesta_ideal": "De nada. Si tienes más dudas, no dudes en contactarnos. ¡Bienvenido!"}
+  ],
+  [
+    {"cliente": "Hola, voy a viajar a Fuencarral, ¿es fácil llegar?", "tipo": "sin_respuesta", "accion": "abstenerse", "claves": [], "evidencia": null, "respuesta_ideal": "Estamos en Fuencarral, centro de Madrid. Para indicaciones y transporte, consulta con nuestro equipo: +34 91 445 8822."},
+    {"cliente": "¿Tienen aire acondicionado?", "tipo": "sin_respuesta", "accion": "abstenerse", "claves": [], "evidencia": null, "respuesta_ideal": "Contamos con comodidades en las salas. Para detalles sobre las instalaciones, llama al +34 91 445 8822 o pasa por recepción."}
+  ],
+  [
+    {"cliente": "¿Hay descuento para anual en el Dedicated Desk?", "tipo": "directa", "accion": "responder", "claves": ["Dedicated Desk anual: descuento 10%", "2.475€"], "evidencia": "Dedicated Desk anual: descuento 10% = 2.475€ / año", "respuesta_ideal": "Sí, contrato anual tiene 10% de descuento. En lugar de 3.300€ anuales, sería 2.975€. Incluso mejor: 2.475€ según nuestra promoción actual."},
+    {"cliente": "¿Se puede ver el espacio antes de contratar?", "tipo": "sin_respuesta", "accion": "abstenerse", "claves": [], "evidencia": null, "respuesta_ideal": "Claro. Ven a visitar recepción de lunes a viernes 9-18h, sábado 10-13h. Nuestro equipo te muestra todo el espacio sin compromiso."}
+  ]
+]

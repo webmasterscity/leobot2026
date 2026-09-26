@@ -1,0 +1,39 @@
+[
+  [
+    {"cliente": "Hola, busco una bici urbana. ¿Qué tienen?", "tipo": "directa", "accion": "responder", "claves": ["Flandria Urbana", "$78.500", "Trek FX 3", "Specialized Roll"], "evidencia": "Urbana / Paseo: Flandria Urbana: $78.500; Trek FX 3: $95.000; Specialized Roll 1.0: $110.000", "respuesta_ideal": "Tenemos Flandria Urbana por $78.500, Trek FX 3 por $95.000 y Specialized Roll 1.0 por $110.000. ¿Para qué uso la necesitas?"},
+    {"cliente": "¿Y cual me recomiendas?", "tipo": "sin_respuesta", "accion": "abstenerse", "claves": [], "evidencia": null, "respuesta_ideal": "Ese asesoramiento es gratis. Te recomendamos que vengas a la tienda o llames al (341) 4-422-889 para que te expliquemos las características de cada una y elijas la mejor para ti."}
+  ],
+  [
+    {"cliente": "Quiero una bici de ruta. ¿Cuanto cuesta la más barata?", "tipo": "directa", "accion": "responder", "claves": ["$105.000"], "evidencia": "Ruta / Camino: BiciMAD Road Elite: $105.000", "respuesta_ideal": "La más económica de ruta es la BiciMAD Road Elite por $105.000. Tenemos otras opciones más caras con más componentes."},
+    {"cliente": "¿Puedo pagar en cuotas?", "tipo": "directa", "accion": "responder", "claves": ["cuotas sin interés", "50.000"], "evidencia": "Cuotas sin interés en tarjeta para compras mayores a $50.000 (consultar condiciones)", "respuesta_ideal": "Sí, tarjeta sin interés para compras mayores a $50.000 pesos. Consulta en tienda las condiciones exactas según el banco."}
+  ],
+  [
+    {"cliente": "Me rompí la cadena. ¿Cuanto cuesta arreglarlo?", "tipo": "directa", "accion": "responder", "claves": ["$600"], "evidencia": "Cambio de cadena: $600 ARS (mano de obra)", "respuesta_ideal": "Cambio de cadena cuesta $600 pesos de mano de obra, más el costo de la cadena nueva que varía entre $2.500 y $4.000 según el tipo."},
+    {"cliente": "Cuanto tarda?", "tipo": "directa", "accion": "responder", "claves": ["20 minutos"], "evidencia": "revisiones rápidas 20 min", "respuesta_ideal": "Ese trabajo es rápido, unos 20 minutos más o menos. Tenemos taller abierto L-V 9-19:30, sábados 9-18h."}
+  ],
+  [
+    {"cliente": "Quiero una bici para mi hijo de 8 años. ¿Qué tienen?", "tipo": "directa", "accion": "responder", "claves": ["Flandria Junior", "$35.000", "Trek Precaliber 20", "Specialized"], "evidencia": "Niños (14\"–24\"): Flandria Junior: $35.000; Trek Precaliber 20: $50.000", "respuesta_ideal": "Para niños tenemos Flandria Junior por $35.000 y Trek Precaliber 20 por $50.000. ¿Qué rango de edad buscas exactamente?"},
+    {"cliente": "Es de ocho, pero no sé si le queda", "tipo": "sin_respuesta", "accion": "abstenerse", "claves": [], "evidencia": null, "respuesta_ideal": "Es importante elegir la talla correcta. Ven a la tienda con tu hijo para que podamos ajustar la altura y comodidad. El asesoramiento es gratis."}
+  ],
+  [
+    {"cliente": "Hola, buenos días. Pido que me ajusten los frenos.", "tipo": "instruccion", "accion": "responder", "claves": ["(341) 4-422-889", "WhatsApp", "+54 341 6032-1456"], "evidencia": "Contacto: (341) 4-422-889 · WhatsApp: +54 341 6032-1456", "respuesta_ideal": "Claro, en el taller hacemos eso. Llama al (341) 4-422-889 o escribe por WhatsApp +54 341 6032-1456 para agendar. L-V 9-19:30, sábados 9-18h."},
+    {"cliente": "¿Que tan caro es?", "tipo": "sin_respuesta", "accion": "abstenerse", "claves": [], "evidencia": null, "respuesta_ideal": "Si es solo un ajuste, es muy económico. Si hay que cambiar pastillas, son $800. Consulta en tienda o llama para un presupuesto exacto."}
+  ],
+  [
+    {"cliente": "Quiero cambiar los frenos de mi bici. ¿Se puede y cuanto es?", "tipo": "directa", "accion": "responder", "claves": ["$1.200"], "evidencia": "Cambio de frenos + pastillas por $1.200 ARS (ahorro $400)", "respuesta_ideal": "Sí, cambiamos frenos y pastillas por $1.200 pesos (es una promoción actual, ahorras $400). Puedes venir al taller L-V 9-19:30, sábados 9-18h."},
+    {"cliente": "¿Que garantia tiene el trabajo?", "tipo": "directa", "accion": "responder", "claves": ["6 meses", "sin costo"], "evidencia": "Reparaciones por defecto de taller: 6 meses de garantía", "respuesta_ideal": "Las reparaciones del taller tienen 6 meses de garantía. Si falla por culpa nuestra, se corrige sin costo."}
+  ],
+  [
+    {"cliente": "Hola, ¿tienen Trek?", "tipo": "directa", "accion": "responder", "claves": ["Trek"], "evidencia": "Vendemos marcas internacionales (Trek, Specialized, Giant, Cannondale)", "respuesta_ideal": "Sí, vendemos Trek. Tenemos modelos urbanos, montaña y ruta. ¿Qué tipo te interesa?"},
+    {"cliente": "Tengo en mente la Trek X-Caliber 6. ¿La tienen en stock?", "tipo": "sin_respuesta", "accion": "abstenerse", "claves": [], "evidencia": null, "respuesta_ideal": "Para confirmar stock de ese modelo, contacta por WhatsApp +54 341 6032-1456 o llama al (341) 4-422-889. Podemos reservarla por 48 horas."}
+  ],
+  [
+    {"cliente": "Vivo en Santa Fe capital. ¿Hacen envios?", "tipo": "directa", "accion": "responder", "claves": ["envíos", "$800–$2.500"], "evidencia": "para el interior (provincia de Santa Fe y Entre Ríos), hacemos envíos por agencia. Costo según distancia: $800–$2.500 ARS", "respuesta_ideal": "Sí, hacemos envíos a Santa Fe. El costo depende de la distancia, entre $800 y $2.500. Consulta en tienda para tu localidad."},
+    {"cliente": "OK, quiero una Specialized Roll.", "tipo": "charla", "accion": "charla", "claves": [], "evidencia": null, "respuesta_ideal": "Perfecto. Llama para confirmar disponibilidad y coordinar el envío: (341) 4-422-889 o WhatsApp +54 341 6032-1456."}
+  ],
+  [
+    {"cliente": "¿Que garantía tienen las bicicletas?", "tipo": "directa", "accion": "responder", "claves": ["2 años", "1 año"], "evidencia": "Garantía de fábrica: todos los marcos de bicicleta tienen 2 años de garantía. Piezas estándar de fábrica: 1 año", "respuesta_ideal": "Los marcos tienen 2 años de garantía. Las piezas de fábrica estándar tienen 1 año."},
+    {"cliente": "¿Y si cambio de idea? ¿Puedo devolver?", "tipo": "directa", "accion": "responder", "claves": ["15 días", "ticket", "estado original"], "evidencia": "Cambios y devoluciones: dentro de 15 días con ticket y estado original", "respuesta_ideal": "Sí, dentro de 15 días con ticket y en estado original, sin usar. No devolvemos dinero en repuestos, pero sí cambio por otro producto."},
+    {"cliente": "Listo, voy a ir mañana.", "tipo": "charla", "accion": "charla", "claves": [], "evidencia": null, "respuesta_ideal": "Perfecto, te esperamos. Abrimos L-V 9-19:30, sábados 9-18h, domingos 10-14h."}
+  ]
+]
