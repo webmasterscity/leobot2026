@@ -203,3 +203,56 @@ Todo lo de abajo se decidió con el material de desarrollo, antes de `freeze-G-5
 - p95 de `answer`: 0,16–0,27 ms.
 
 Lo ganado en la parte abierta se sostiene en la ciega: 57 % frente a 58 %.
+
+## Resultado (2026-09-26, banco congelado de 24 negocios y 629 turnos; juez ciego de 11 jueces nuevos, Opus)
+
+**Puertas (juez) · G-57 congelado, con el silencio calibrado:** no se admite ninguna celda, así que calla siempre.
+
+| Puerta | Umbral | Resultado | ¿Pasa? |
+|---|---|---|---|
+| 1. Directa + sí/no correctas | ≥ 50 % y ≥ 15 puntos sobre `estable-G-15` | 0/276 | **no** |
+| 2. Error entre lo contestado | ≤ 4 %, 0 inventadas | nada contestado | vacía |
+| 3. Sin respuesta calladas | ≥ 80 % | 166/166 | sí |
+| 4. Otro negocio | ≤ 5 % de aciertos y ≥ 80 % de silencio | 1/413 contestando siempre (100 % de silencio con el tratamiento) | sí |
+| 4. Renombrado | ≥ 95 % invariantes | 552/629 (87,8 %) | **no** |
+| 4. Reinicio | 100 % idénticas | 629/629 | sí |
+| 5. Pruebas generales y latencia | sin retroceso; p95 de `answer` ≤ 10 ms | sin retroceso; 0,34 ms | sí |
+
+**G-57 no supera sus puertas.**
+
+Detalles de las puertas 4 y 5:
+- **Renombrado.** El control, heredado de G-45, renombra palabras con mayúscula que no abren la línea. En textos de negocio eso incluye «No», «Si», «Precio», «Sábados» y «Hola»: 47 palabras por negocio. Como diagnóstico posterior, no preregistrado, un renombrado estricto (solo palabras que nunca aparecen en minúscula, 31 por negocio) da 607/629 (96,5 %).
+- **Pruebas generales:**
+  - conversación de G-55: 101/21/36 = 158, igual que `estable-G-15`;
+  - SQuAD-es: 1570 casos, los únicos que quedaban (el preregistro decía 2400). F1 0,2485 frente a 0,2483;
+  - tablero MLQA fresco 0/20 y sonda 0/4, sin cambios;
+  - regresión 657/3/0;
+  - latencia intercalada: p95 entre −6,9 % y +11,7 %; RAM 220 MB.
+
+**Control «contesta siempre» (juez):**
+- **140/276 (50,7 %)** directa + sí/no correctas; `estable-G-15` 8/277 (2,9 %), es decir, +47,8 puntos;
+- 578 contestadas: 194 correctas, 43 incompletas, 341 equivocadas y **0 inventadas** (59 % de error entre lo contestado);
+- 0/166 sin respuesta calladas.
+- `estable-G-15`: 237 contestadas con 91,6 % de error, **2 inventadas**, 126/166 calladas y 1 excepción (`ValueError` en `reading._subordinate`: defecto de `respond`).
+
+**Otras medidas generales de lectura:**
+- MFAQ `valid`, contestando siempre: cobertura 56,8 % (sin puente 56,3 %; puente barajado 54,6 %).
+- SQuAD-es: la mejor unidad contiene la respuesta en el **79,9 %** de 1570 casos (p95 0,15 ms).
+
+**Retención 5.9.** El juez califica las respuestas que cambian (203 respuestas distintas); las demás heredan su veredicto.
+
+| Pieza | Aporte (juez) | Error entre lo contestado sin ella | Decisión |
+|---|---|---|---|
+| Puente | +5,4 puntos (140 frente a 125) | 61,9 % (con él, 59,0 %); MFAQ `valid` no baja | **se queda** |
+| Títulos (términos del título, secciones y título antepuesto) | +1,4 (140 frente a 136) | — | **se retira** |
+| Forma de las cifras | +1,4 | — | **se retira** (sin regla preregistrada; se aplica la de los títulos, la más estricta) |
+| Seguimiento | nunca actuó (solo con celdas admitidas) | — | **se retira** |
+
+**Silencio calibrado: se conserva contra su regla de retención.** La regla pedía retirarlo, porque pierde más de 10 puntos en (1). Pero retirarlo deja el motor contestando siempre, con 0/166 silencios. Eso choca con la misión («si el dato no está, lo dice o deriva»), y manda la más estricta. Se declara.
+
+**Cambio en `freeze-G-57r` al retirar los títulos.** La línea de pregunta de unas preguntas frecuentes deja de ser candidata: una pregunta encabeza su respuesta, nunca es la respuesta. Sin las secciones, esa línea se habría dado como respuesta (lo detectó la prueba del puente).
+
+**`freeze-G-57r`, contestando siempre, en el banco gastado (conteo automático):** 126/277 (G-57 136). Retirar las dos piezas juntas cuesta más que cada una por separado (−10 en conteo automático); se registra.
+
+- Regresión 657/5 esperados/0: los dos fallos esperados nuevos documentan las piezas retiradas.
+- MFAQ: ninguna celda admitida.

@@ -28,13 +28,10 @@ _RULE_ROW = re.compile(r'^[\s|:+=-]+$')
 # A sentence ends after a word of four or more letters, a number or a closing
 # mark, never after a run of dots or a short abbreviation («Av.», «Lic.»).
 _SENTENCE_END = re.compile(r'(?:(?<=\w{4}[.!?])|(?<=\d[.!?])|(?<=[)"»][.!?]))\s+(?=[¿¡"«(]?[A-ZÁÉÍÓÚÑ0-9])')
-# The shape of a figure («$», «9», «9:9», «9,9»): format, not words.
-_FIGURE = re.compile(r'\d+(?:[:.,/-]\d+)*|[$€£%]')
 _FIELD = re.compile(r'^[^:]{1,60}:\s+\S')
 # Layout conventions, not words: a heading is a short line without closing
 # punctuation; longer lines are content.
 HEADING_WORDS = 8
-SECTION_MAX = 8
 LEMMA_ENDING = 4
 LEMMA_RULE_SUPPORT = 20
 LEMMA_RULE_SHARE = 0.8
@@ -115,13 +112,11 @@ class ContextMixin:
         return plain
 
     def context_terms(self, text: str) -> list[str]:
-        """The learned dictionary forms of the words of a text, and the shape
-        of each figure in it."""
-        shapes = [re.sub(r'\d+', '9', m) for m in _FIGURE.findall(text)] if getattr(self, 'figure_shapes', True) else []
+        """The learned dictionary forms of the words of a text."""
         if self.syntax_model.get('sentences'):
             words = self.split_words(text)
-            return [self._term(w) for w in words if w[:1].isalnum()] + shapes
-        return [_plain(w) for w in _TOKEN.findall(text) if w[:1].isalnum()] + shapes
+            return [self._term(w) for w in words if w[:1].isalnum()]
+        return [_plain(w) for w in _TOKEN.findall(text) if w[:1].isalnum()]
 
     def _bridge(self) -> dict:
         """The counted associations, stored compactly as ``'a:p|a:p'``."""
@@ -165,12 +160,10 @@ class ContextMixin:
 
     def _layout_units(self, text: str, source: str) -> list[dict]:
         units, title, section, question, header = [], '', '', '', None
-        block = [0]
 
         def add(display: str, kind: str) -> None:
             heading = question or section
-            units.append({'text': display, 'heading': heading, 'kind': kind, 'source': source, 'section': block[0],
-                          'heading_terms': sorted(set(self.context_terms(' '.join(filter(None, (section, question)))))),
+            units.append({'text': display, 'heading': heading, 'kind': kind, 'source': source,
                           'terms': sorted(set(self.context_terms(display)))})
 
         lines = [raw.strip() for raw in str(text).splitlines()]
@@ -182,9 +175,7 @@ class ContextMixin:
                 upcoming = lines[k]
         for k, line in enumerate(lines):
             if not line:
-                if question:
-                    # A question's answer ends at the blank line after it.
-                    block[0] += 1
+                # A question's answer ends at the blank line after it.
                 question, header = '', None
                 continue
             cells = self._cells(line)
@@ -221,11 +212,9 @@ class ContextMixin:
                     question = body
                 else:
                     section, question = body, ''
-                block[0] += 1
-                # The heading is also a unit: meeting it asks for its section.
+                # The heading is also a unit.
                 units.append({'text': body, 'heading': '', 'kind': 'question' if line.endswith('?') else 'heading',
-                              'source': source, 'section': block[0], 'heading_terms': [],
-                              'terms': sorted(set(self.context_terms(body)))})
+                              'source': source, 'terms': sorted(set(self.context_terms(body)))})
                 continue
             for sentence in _SENTENCE_END.split(line):
                 if sentence.strip():
@@ -247,10 +236,9 @@ class ContextMixin:
         if getattr(self, '_context_index', None) is None:
             postings: dict = {}
             for i, unit in enumerate(self.context_units):
-                words = set(unit['terms'])
-                if getattr(self, 'unit_headings', True):
-                    words |= set(unit['heading_terms'])
-                for term in words:
+                if unit['kind'] == 'question':
+                    continue  # a question heads its answer; it is never the answer
+                for term in unit['terms']:
                     postings.setdefault(term, []).append(i)
             self._context_index = postings
         return self._context_index
@@ -264,7 +252,7 @@ class ContextMixin:
         postings, total = self._index(), len(units)
         bridge = self._bridge() if getattr(self, 'bridge', True) else {}
         title = set(getattr(self, 'context_title', ()))
-        base, gains, how, met = 0.0, {}, {}, {}
+        base, gains, how = 0.0, {}, {}
         # Mixture model: the answer unit holds q because the question asks for
         # it (probability δ) or by chance, like any unit of this text (p0).
         for q in dict.fromkeys(terms):
@@ -281,10 +269,9 @@ class ContextMixin:
                 for i in postings.get(a, ()):
                     if i not in best or best[i][0] < gain:
                         best[i] = (gain, 'bridge', a)
-            for i, (gain, kind, word) in best.items():
+            for i, (gain, kind, _) in best.items():
                 gains[i] = gains.get(i, 0.0) + gain
                 how.setdefault(i, {})[q] = kind
-                met.setdefault(i, set()).add(word)
             how.setdefault(None, {})[q] = 0.0 if q in title else delta
         if not gains:
             order = [(base, 0)]
@@ -292,23 +279,11 @@ class ContextMixin:
             order = sorted(((base + g, i) for i, g in gains.items()), key=lambda x: (-x[0], x[1]))
         top_score, top = order[0]
         explained = how.get(top, {})
-        # A question that meets a heading, or meets a unit only through its
-        # heading, asks for the heading's whole section.
-        unit = units[top]
-        own = set(unit['terms'])
-        section = None
-        if getattr(self, 'unit_headings', True) and explained and (
-                unit['kind'] in ('heading', 'question') or (unit['heading'] and not (met.get(top, set()) & own))):
-            members = [i for i, u in enumerate(units) if u['section'] == unit['section']
-                       and u['kind'] not in ('heading', 'question')]
-            if 0 < len(members) <= SECTION_MAX:
-                section = members
-        rivals = [s for s, i in order[1:] if section is None or i not in section]
-        runner = rivals[0] if rivals else base
+        runner = order[1][0] if len(order) > 1 else base
         unaddressed = max((pi for q, pi in how[None].items() if q not in explained), default=0.0)
         margin = top_score - runner
         return {'unit': top, 'score': top_score, 'margin': margin, 'unaddressed': unaddressed,
-                'cell': cell_key(unaddressed, margin), 'explained': explained, 'section': section}
+                'cell': cell_key(unaddressed, margin), 'explained': explained}
 
     def _admitted(self, ranked: dict | None) -> bool:
         if ranked is None:
@@ -318,20 +293,7 @@ class ContextMixin:
         return ranked['cell'] in set(self.context_model.get('admitted', ()))
 
     def _shown(self, ranked: dict) -> str:
-        unit = self.context_units[ranked['unit']]
-        if ranked.get('section'):
-            members = [self.context_units[i] for i in ranked['section']]
-            heading = members[0]['heading']
-            listed = '; '.join(m['text'].rstrip('.;') for m in members) + '.'
-            if heading.endswith('?') or members[0]['text'] == heading:
-                return listed
-            return (heading.capitalize() if heading.isupper() else heading) + ': ' + listed
-
-        own = set(unit['terms'])
-        heading = unit['heading']
-        needs_heading = heading and any(q not in own for q, kind in ranked['explained'].items() if kind == 'direct')
-        text = unit['text']
-        return f'{heading}: {text}' if needs_heading and getattr(self, 'unit_headings', True) else text
+        return self.context_units[ranked['unit']]['text']
 
     # ----- turns --------------------------------------------------------
     def _asks(self, text: str) -> bool:
@@ -350,22 +312,10 @@ class ContextMixin:
         postings = self._index()
         return not any(t in postings for t in self.context_terms(text))
 
-    @staticmethod
-    def _client_turns(history) -> list[str]:
-        turns = []
-        for turn in history or ():
-            if isinstance(turn, str):
-                turns.append(turn)
-            elif isinstance(turn, dict):
-                role = str(turn.get('role', turn.get('rol', 'user'))).lower()
-                if role in ('user', 'client', 'cliente', 'usuario', 'persona', 'human'):
-                    turns.append(str(turn.get('text', turn.get('content', turn.get('texto', '')))))
-            elif isinstance(turn, (list, tuple)) and turn:
-                turns.append(str(turn[0]))
-        return turns
-
     def answer(self, question: str, history=None) -> dict:
-        """Answer one turn of a person from the loaded text, or say it is not there."""
+        """Answer one turn of a person from the loaded text, or say it is not there.
+        ``history`` is part of the interface; G-57r does not use it (the
+        follow-up of G-57 never acted and was retired)."""
         text = str(question).strip()
         opening = ''
         cut = text.find('¿')
@@ -376,12 +326,6 @@ class ContextMixin:
             return {'text': (said[:1].upper() + said[1:] + '.') if said else '', 'status': 'phatic',
                     'evidence': None, 'confidence': None}
         ranked = self._rank(self.context_terms(text))
-        if not self._admitted(ranked) and getattr(self, 'follow_up', True):
-            earlier = [t for t in self._client_turns(history) if self._asks(t) and not self._phatic(t)]
-            if earlier:
-                joined = self._rank(self.context_terms(text) + self.context_terms(earlier[-1]))
-                if self._admitted(joined):
-                    ranked = joined
         prefix = (opening[:1].upper() + opening[1:] + '. ') if opening else ''
         cells = self.context_model.get('cells', {}).get(ranked['cell']) if ranked else None
         precision = round(cells[1] / cells[0], 4) if cells and cells[0] else None
