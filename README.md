@@ -17,6 +17,37 @@ python3 -m experiments.meta_active_probe          # elección de pruebas para se
 
 <p lang="es" style="text-align: justify; hyphens: auto;">El estado, las cifras, las decisiones de fusión, los fallos y la siguiente prueba están en <a href="LEOBOT_STATE.md">LEOBOT_STATE.md</a>. Los ZIP existentes son copias históricas; el estado actual es el código de este repositorio. No se generan ZIP nuevos como parte del trabajo habitual.</p>
 
+## Kiosco: interfaz para integrar (G-57/G-58)
+
+Carga una vez la información de un negocio y responde a cada persona. Todo ocurre en el mismo proceso, con la biblioteca estándar de Python. La base educada (unos 100 MB) se prepara con `experiments/g57_educar_kiosco.py`, `experiments/g57_calibrar_kiosco.py` y `experiments/g58_calibrar_cercano.py`.
+
+```python
+from leobot import Bot
+bot = Bot.load('base_kiosco.json')                  # una vez
+bot.load_context(texto_del_negocio, instrucciones)  # una vez por negocio
+r = bot.answer('¿Cuánto cuesta la habitación doble?', historial)
+r['text']      # lo único que se dice a la persona
+r['status']    # 'answered' | 'closest' | 'unknown' | 'phatic'
+r['evidence']  # la línea del texto que respalda la respuesta (si hay)
+```
+
+**Estados de la respuesta:**
+- `answered`: respuesta plana. Solo aparece si la calibración lo permite; hoy no ocurre.
+- `closest`: «No lo tengo seguro. Lo más cercano que dice el texto es: «…».». Solo cita texto del negocio.
+- `unknown`: «No lo sé…».
+- `phatic`: devuelve un saludo corto sin cifras.
+
+**Garantías y límites:**
+- No inventa: solo dice texto del negocio o frases fijas del motor.
+- No guarda nada de lo que dice una persona. `historial` es solo de esa persona y hoy no se usa.
+- El campo `candidate` es para quien integra y **nunca** se muestra a un cliente.
+- Las instrucciones del negocio se cargan, pero todavía no se aplican.
+- Medido en 24 negocios nuevos, calificados por un juez ciego (`freeze-G-58r`):
+  - una de cada cuatro preguntas directas recibe una cita útil;
+  - el 97 % de las preguntas sin dato se llevan bien;
+  - el 3,9 % de las citas son engañosas;
+  - 0 respuestas inventadas.
+
 ## Dónde está cada parte
 
 | Carpeta | Contenido |
@@ -40,6 +71,7 @@ python3 -m experiments.meta_active_probe          # elección de pruebas para se
 | <code>leobot/metacontrol.py</code> | Elección de estrategias y búsqueda de reglas sobre experiencias anteriores |
 | <code>leobot/scalable.py</code> | Guardado con los hechos en disco |
 | <code>leobot/state_fields.py</code> | Campos aprendidos que ambas formas de guardado conservan |
+| <code>leobot/context.py</code> | Kiosco: cargar el texto de un negocio y responder con honestidad graduada |
 
 <p lang="es" style="text-align: justify; hyphens: auto;">Para ampliar una capacidad, modifica su módulo, añade una prueba que falle antes del cambio y compara el experimento con la versión anterior y con un control sin el mecanismo. Si agregas información que debe sobrevivir al reinicio, verifica las dos formas de guardado. Registra la medición y el límite en <a href="LEOBOT_STATE.md">LEOBOT_STATE.md</a>; no conviertas el resultado de una prueba preparada en una afirmación de inteligencia general.</p>
 
