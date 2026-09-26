@@ -24,6 +24,13 @@
 
 ## Historial de ciclos
 
+- 2026-09-26 · **Examen privado del usuario sobre `estable-G-18`**, pasado por la sesión coordinadora; solo cifras, examen no leído. 3 negocios nuevos, 67 preguntas.
+  - datos abiertos: 23 citas útiles (G-17: 14);
+  - sí o no: 13 citas (9), 11 de ellas con la respuesta correcta según la coordinadora;
+  - sin dato: 11 bien calladas (9) y 2 engañosas (4);
+  - 0 inventadas;
+  - total ~34/54 útiles (63 %) frente a ~22 (41 %) de G-17: +11 puntos, como el juez.
+  - Defecto general señalado: citas cortadas a media frase, por renglones partidos en el texto.
 - 2026-09-26 · **`estable-G-18`** sobre `freeze-G-62` (árbol `8839d77d`) · [G-62](prereg/G-62-heredar-solo-de-lo-que-gobierna.md): cada línea hereda solo de lo que la gobierna.
   - Banco de 24 negocios y 647 turnos; juez de 8 Opus: útiles 99/276 frente a 69/276 de G-58r (+10,9 puntos), engañosas 2,5 %, 0 inventadas.
   - Retención: el alcance nuevo da +13 frente a sin herencia; la pregunta en línea, +6.
