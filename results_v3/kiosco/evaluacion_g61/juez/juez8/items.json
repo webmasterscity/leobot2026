@@ -1,0 +1,931 @@
+[
+ {
+  "id": "i0027",
+  "negocio": "Z2_n4",
+  "turnos_previos_del_cliente": [
+   "me hice un tatuaje hace 2 meses, ¿puedo donar?",
+   "¿cuanto tengo que esperar entonces?",
+   "¿el proceso completo cuanto dura?",
+   "¿necesito pedir cita?"
+  ],
+  "cliente": "perfecto, muchas gracias",
+  "tipo": "charla",
+  "accion_esperada": "charla",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "¡De nada! Te esperamos con gusto.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Evitar comidas muy grasosas antes de donar; no es necesario estar en ayunas»."
+ },
+ {
+  "id": "i0050",
+  "negocio": "Z2_n4",
+  "turnos_previos_del_cliente": [
+   "estoy tomando antibioticos, puedo donar hoy?",
+   "tengo diabetes controlada, ¿puedo donar?",
+   "¿cual es mi tipo de sangre, lo pueden decir aca por telefono?",
+   "necesito sangre urgente para mi papá que está en cirugía, ¿qué hago?"
+  ],
+  "cliente": "gracias, voy a llamar ya",
+  "tipo": "charla",
+  "accion_esperada": "charla",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "Perfecto, te atenderán de inmediato en esa línea.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Puedes venir sin cita previa (walk-in) o agendar llamando a nuestra línea»."
+ },
+ {
+  "id": "i0068",
+  "negocio": "Z2_n4",
+  "turnos_previos_del_cliente": [],
+  "cliente": "estoy tomando antibioticos, puedo donar hoy?",
+  "tipo": "instruccion",
+  "accion_esperada": "responder",
+  "claves": [
+   "Personas bajo tratamiento con antibióticos (esperar hasta terminar el tratamiento más 3 días)."
+  ],
+  "evidencia": "Personas bajo tratamiento con antibióticos (esperar hasta terminar el tratamiento más 3 días).",
+  "respuesta_ideal": "No podrías donar hoy: hay que esperar hasta terminar el tratamiento con antibióticos, más 3 días adicionales.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Personas bajo tratamiento con antibióticos (esperar hasta terminar el tratamiento más 3 días)»."
+ },
+ {
+  "id": "i0086",
+  "negocio": "Z2_n4",
+  "turnos_previos_del_cliente": [
+   "¿cada cuanto puedo donar si soy mujer?",
+   "¿y los hombres?",
+   "¿tienen jornadas de donación en universidades?",
+   "¿cuanto pesan las bolsas de sangre que recolectan?"
+  ],
+  "cliente": "¿tienen parqueadero en la sede?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo ese dato sobre parqueadero; te sugiero consultarlo directamente al (605) 356 7890.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Además de la sede fija, organizamos jornadas móviles de donación en universidades y empresas del área metropolitana de Barranquilla; el calendario de jornadas se publica cada mes en nuestras redes sociales»."
+ },
+ {
+  "id": "i0190",
+  "negocio": "Z2_n4",
+  "turnos_previos_del_cliente": [
+   "buenas tardes, ¿atienden los domingos?"
+  ],
+  "cliente": "¿y los sabados hasta que hora?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "Sábados: 7:00 a.m. a 12:00 m."
+  ],
+  "evidencia": "Sábados: 7:00 a.m. a 12:00 m.",
+  "respuesta_ideal": "Los sábados atendemos de 7:00 a.m. a 12:00 m.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Sábados y domingos: 09:00 a 20:00 h»."
+ },
+ {
+  "id": "i0263",
+  "negocio": "Z2_n4",
+  "turnos_previos_del_cliente": [],
+  "cliente": "me hice un tatuaje hace 2 meses, ¿puedo donar?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "No tener tatuajes ni perforaciones (piercings) en los últimos 12 meses."
+  ],
+  "evidencia": "No tener tatuajes ni perforaciones (piercings) en los últimos 12 meses.",
+  "respuesta_ideal": "No, hay que esperar 12 meses después de un tatuaje o perforación para poder donar; con 2 meses aún no puedes.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «No tener tatuajes ni perforaciones (piercings) en los últimos 12 meses»."
+ },
+ {
+  "id": "i0281",
+  "negocio": "Z2_n4",
+  "turnos_previos_del_cliente": [],
+  "cliente": "¿cada cuanto puedo donar si soy mujer?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "las mujeres, cada 4 meses"
+  ],
+  "evidencia": "Los hombres pueden donar cada 3 meses; las mujeres, cada 4 meses, según recomendación médica para reponer reservas de hierro.",
+  "respuesta_ideal": "Las mujeres pueden donar cada 4 meses, según la recomendación médica para reponer reservas de hierro.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Los hombres pueden donar cada 3 meses; las mujeres, cada 4 meses, según recomendación médica para reponer reservas de hierro»."
+ },
+ {
+  "id": "i0305",
+  "negocio": "Z2_n4",
+  "turnos_previos_del_cliente": [
+   "me hice un tatuaje hace 2 meses, ¿puedo donar?",
+   "¿cuanto tengo que esperar entonces?"
+  ],
+  "cliente": "¿el proceso completo cuanto dura?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "entre 40 y 50 minutos"
+  ],
+  "evidencia": "El proceso completo (registro, entrevista, examen de hemoglobina, donación y refrigerio) toma entre 40 y 50 minutos.",
+  "respuesta_ideal": "El proceso completo toma entre 40 y 50 minutos, aunque la extracción en sí dura unos 10 minutos.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «El proceso completo (registro, entrevista, examen de hemoglobina, donación y refrigerio) toma entre 40 y 50 minutos»."
+ },
+ {
+  "id": "i0315",
+  "negocio": "Z2_n4",
+  "turnos_previos_del_cliente": [
+   "me hice un tatuaje hace 2 meses, ¿puedo donar?",
+   "¿cuanto tengo que esperar entonces?",
+   "¿el proceso completo cuanto dura?"
+  ],
+  "cliente": "¿necesito pedir cita?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "Puedes venir sin cita previa (walk-in) o agendar llamando a nuestra línea."
+  ],
+  "evidencia": "Puedes venir sin cita previa (walk-in) o agendar llamando a nuestra línea.",
+  "respuesta_ideal": "No es obligatorio, puedes venir sin cita previa o agendar llamando a nuestra línea.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Puedes venir sin cita previa (walk-in) o agendar llamando a nuestra línea»."
+ },
+ {
+  "id": "i0316",
+  "negocio": "Z2_n4",
+  "turnos_previos_del_cliente": [
+   "Hola, quiero donar sangre, ¿qué necesito?",
+   "tengo 62 años y nunca he donado, ¿puedo?",
+   "¿y si ya he donado antes, hasta que edad puedo seguir donando?"
+  ],
+  "cliente": "gracias por la info",
+  "tipo": "charla",
+  "accion_esperada": "charla",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "¡Con gusto! Gracias a ti por querer donar.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Email: info@sanfelipeeri.mx»."
+ },
+ {
+  "id": "i0351",
+  "negocio": "Z2_n4",
+  "turnos_previos_del_cliente": [
+   "¿cada cuanto puedo donar si soy mujer?",
+   "¿y los hombres?",
+   "¿tienen jornadas de donación en universidades?"
+  ],
+  "cliente": "¿cuanto pesan las bolsas de sangre que recolectan?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo ese dato técnico; te recomiendo llamar al (605) 356 7890 para esa consulta.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Somos un banco de sangre privado sin ánimo de lucro, habilitado por la Secretaría de Salud Distrital, y abastecemos a más de quince clínicas y hospitales de la región Caribe»."
+ },
+ {
+  "id": "i0389",
+  "negocio": "Z2_n4",
+  "turnos_previos_del_cliente": [
+   "Hola, quiero donar sangre, ¿qué necesito?"
+  ],
+  "cliente": "tengo 62 años y nunca he donado, ¿puedo?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "los donantes de primera vez deben ser menores de 60"
+  ],
+  "evidencia": "Tener entre 18 y 65 años (los donantes de primera vez deben ser menores de 60).",
+  "respuesta_ideal": "No, para donar por primera vez se debe ser menor de 60 años, así que con 62 años y sin donaciones previas no calificas.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Tener entre 18 y 65 años (los donantes de primera vez deben ser menores de 60)»."
+ },
+ {
+  "id": "i0436",
+  "negocio": "Z2_n4",
+  "turnos_previos_del_cliente": [
+   "¿cada cuanto puedo donar si soy mujer?",
+   "¿y los hombres?"
+  ],
+  "cliente": "¿tienen jornadas de donación en universidades?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "organizamos jornadas móviles de donación en universidades y empresas"
+  ],
+  "evidencia": "organizamos jornadas móviles de donación en universidades y empresas del área metropolitana de Barranquilla",
+  "respuesta_ideal": "Sí, organizamos jornadas móviles de donación en universidades y empresas del área metropolitana; el calendario se publica cada mes en redes sociales.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Además de la sede fija, organizamos jornadas móviles de donación en universidades y empresas del área metropolitana de Barranquilla; el calendario de jornadas se publica cada mes en nuestras redes sociales»."
+ },
+ {
+  "id": "i0437",
+  "negocio": "Z2_n4",
+  "turnos_previos_del_cliente": [
+   "Hola, quiero donar sangre, ¿qué necesito?",
+   "tengo 62 años y nunca he donado, ¿puedo?",
+   "¿y si ya he donado antes, hasta que edad puedo seguir donando?"
+  ],
+  "cliente": "gracias por la info",
+  "tipo": "charla",
+  "accion_esperada": "charla",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "¡Con gusto! Gracias a ti por querer donar.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Somos un banco de sangre privado sin ánimo de lucro, habilitado por la Secretaría de Salud Distrital, y abastecemos a más de quince clínicas y hospitales de la región Caribe»."
+ },
+ {
+  "id": "i0438",
+  "negocio": "Z2_n4",
+  "turnos_previos_del_cliente": [
+   "buenas tardes, ¿atienden los domingos?"
+  ],
+  "cliente": "¿y los sabados hasta que hora?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "Sábados: 7:00 a.m. a 12:00 m."
+  ],
+  "evidencia": "Sábados: 7:00 a.m. a 12:00 m.",
+  "respuesta_ideal": "Los sábados atendemos de 7:00 a.m. a 12:00 m.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Sábados: 7:00 a.m. a 12:00 m»."
+ },
+ {
+  "id": "i0459",
+  "negocio": "Z2_n4",
+  "turnos_previos_del_cliente": [
+   "buenas tardes, ¿atienden los domingos?",
+   "¿y los sabados hasta que hora?",
+   "si dono hoy sabado a las 11:30, ¿alcanzo?",
+   "¿dan algun certificado por donar?"
+  ],
+  "cliente": "excelente, muchas gracias por la atención",
+  "tipo": "charla",
+  "accion_esperada": "charla",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "¡Gracias a ti por tu interés en donar! Te esperamos pronto.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Somos un banco de sangre privado sin ánimo de lucro, habilitado por la Secretaría de Salud Distrital, y abastecemos a más de quince clínicas y hospitales de la región Caribe»."
+ },
+ {
+  "id": "i0472",
+  "negocio": "Z2_n4",
+  "turnos_previos_del_cliente": [
+   "¿cada cuanto puedo donar si soy mujer?"
+  ],
+  "cliente": "¿y los hombres?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "cada 3 meses"
+  ],
+  "evidencia": "Los hombres pueden donar cada 3 meses; las mujeres, cada 4 meses, según recomendación médica para reponer reservas de hierro.",
+  "respuesta_ideal": "Los hombres pueden donar cada 3 meses.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Los hombres pueden donar cada 3 meses; las mujeres, cada 4 meses, según recomendación médica para reponer reservas de hierro»."
+ },
+ {
+  "id": "i0024",
+  "negocio": "Z4_n4",
+  "turnos_previos_del_cliente": [
+   "hola! cuanto cuesta revelar un carrete de color con escaneo?",
+   "y cuanto tardais?",
+   "tengo 3 carretes de color, si los quiero con escaneado en alta cuanto seria en total?"
+  ],
+  "cliente": "los puedo pagar cuando los recoja?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "al entregar"
+  ],
+  "evidencia": "Los trabajos de laboratorio se pagan al entregar el carrete.",
+  "respuesta_ideal": "No, los trabajos de laboratorio se pagan al entregar el carrete, no al recogerlo.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «El E-6 se envía a un laboratorio de Madrid; el plazo puede alargarse una semana en agosto y Navidad»."
+ },
+ {
+  "id": "i0028",
+  "negocio": "Z4_n4",
+  "turnos_previos_del_cliente": [
+   "hola! cuanto cuesta revelar un carrete de color con escaneo?"
+  ],
+  "cliente": "y cuanto tardais?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "48 h"
+  ],
+  "evidencia": "Revelado C-41 + escaneado básico (JPG, 2000 px)\t12,90 €\t48 h",
+  "respuesta_ideal": "Con escaneado básico está en 48 h; el de alta resolución tarda 4 días laborables.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Digitalización de diapositivas: 0,60 € por diapositiva (mínimo 20)»."
+ },
+ {
+  "id": "i0054",
+  "negocio": "Z4_n4",
+  "turnos_previos_del_cliente": [
+   "vendeis camaras de carrete de segunda mano? busco una olympus mju",
+   "tienen garantia?",
+   "si compro una y no me gusta la puedo devolver?",
+   "y un carrete que abrí sin querer?"
+  ],
+  "cliente": "se puede pagar con bizum?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "Bizum"
+  ],
+  "evidencia": "Efectivo, tarjeta y Bizum.",
+  "respuesta_ideal": "Sí, aceptamos Bizum, además de efectivo y tarjeta.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Transferencia bancaria, efectivo en secretaría o Bizum al 622 118 845»."
+ },
+ {
+  "id": "i0060",
+  "negocio": "Z4_n4",
+  "turnos_previos_del_cliente": [
+   "hola, dejé un carrete la semana pasada, ya está listo?"
+  ],
+  "cliente": "vale. el enlace de descarga cuanto tiempo está activo?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "7 días"
+  ],
+  "evidencia": "Los escaneos se entregan por enlace de descarga WeTransfer, activo 7 días.",
+  "respuesta_ideal": "El enlace de WeTransfer está activo 7 días.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Los escaneos se entregan por enlace de descarga WeTransfer, activo 7 días»."
+ },
+ {
+  "id": "i0078",
+  "negocio": "Z4_n4",
+  "turnos_previos_del_cliente": [],
+  "cliente": "necesito fotos para el pasaporte, hace falta cita?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "sin cita"
+  ],
+  "evidencia": "Se hacen al momento, sin cita, hasta 30 minutos antes del cierre.",
+  "respuesta_ideal": "Hola, bienvenido a Foto Turia. No hace falta cita: las fotos de pasaporte se hacen al momento, hasta 30 minutos antes del cierre.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Se hacen al momento, sin cita, hasta 30 minutos antes del cierre»."
+ },
+ {
+  "id": "i0133",
+  "negocio": "Z4_n4",
+  "turnos_previos_del_cliente": [
+   "buenas, a que hora abris los sabados por la tarde?",
+   "y en agosto?"
+  ],
+  "cliente": "hay parking cerca?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "parking Russafa",
+   "2,20 €"
+  ],
+  "evidencia": "Aparcamiento público más cercano: parking Russafa (c/ Cuba), 2,20 € la hora.",
+  "respuesta_ideal": "El aparcamiento público más cercano es el parking Russafa, en la calle Cuba, a 2,20 € la hora.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Aparcamiento público más cercano: parking Russafa (c/ Cuba), 2,20 € la hora»."
+ },
+ {
+  "id": "i0146",
+  "negocio": "Z4_n4",
+  "turnos_previos_del_cliente": [
+   "buenas, a que hora abris los sabados por la tarde?",
+   "y en agosto?",
+   "hay parking cerca?",
+   "la tienda tiene acceso para silla de ruedas?",
+   "como se llega en metro?"
+  ],
+  "cliente": "haceis fotos de estudio, tipo retratos de familia?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo ese servicio en mi información; lo que hacemos son fotos de carné. Pregunta en el mostrador o por WhatsApp al 611 08 34 52.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Hacemos revelado de carrete, escaneado, copias en papel, restauración de fotos antiguas, fotos de carné y venta de cámaras y película»."
+ },
+ {
+  "id": "i0203",
+  "negocio": "Z4_n4",
+  "turnos_previos_del_cliente": [
+   "hola, dejé un carrete la semana pasada, ya está listo?",
+   "vale. el enlace de descarga cuanto tiempo está activo?",
+   "y si se me pasa el plazo me lo podeis reenviar?",
+   "los negativos me los quedo yo o los guardais?"
+  ],
+  "cliente": "tengo una foto de mi abuela rota por la mitad, cuanto me costaría arreglarla?",
+  "tipo": "instruccion",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "Los presupuestos de restauración, de reparación de cámaras y de papel fine art los da siempre una persona: pide que dejen el material o escriban por WhatsApp con una foto. No des una cifra cerrada.",
+  "respuesta_ideal": "La restauración digital parte de 25 € por foto según el estado, pero el presupuesto exacto te lo da el laboratorio: acerca la foto a la tienda o mándanos una imagen por WhatsApp al 611 08 34 52 y te lo enviamos antes de empezar.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Foto Turia abrió en 1987 como tienda de material fotográfico y desde 2015 tenemos laboratorio propio de revelado analógico»."
+ },
+ {
+  "id": "i0224",
+  "negocio": "Z4_n4",
+  "turnos_previos_del_cliente": [
+   "buenas, a que hora abris los sabados por la tarde?"
+  ],
+  "cliente": "y en agosto?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "10:00-14:00",
+   "15 al 31 de agosto"
+  ],
+  "evidencia": "En agosto cerramos por las tardes (solo 10:00-14:00) y del 15 al 31 de agosto cerramos por vacaciones.",
+  "respuesta_ideal": "En agosto abrimos solo por las mañanas, de 10:00 a 14:00, y del 15 al 31 de agosto cerramos por vacaciones.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «En agosto cerramos por las tardes (solo 10:00-14:00) y del 15 al 31 de agosto cerramos por vacaciones»."
+ },
+ {
+  "id": "i0270",
+  "negocio": "Z4_n4",
+  "turnos_previos_del_cliente": [
+   "vendeis camaras de carrete de segunda mano? busco una olympus mju"
+  ],
+  "cliente": "tienen garantia?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "6 meses"
+  ],
+  "evidencia": "cámaras compactas de segunda mano revisadas (con 6 meses de garantía)",
+  "respuesta_ideal": "Sí, las cámaras de segunda mano llevan 6 meses de garantía y se pueden probar en tienda antes de comprar.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Iniciación (6 a 9 años): martes y jueves, 17:00-18:00»."
+ },
+ {
+  "id": "i0285",
+  "negocio": "Z4_n4",
+  "turnos_previos_del_cliente": [
+   "vendeis camaras de carrete de segunda mano? busco una olympus mju",
+   "tienen garantia?",
+   "si compro una y no me gusta la puedo devolver?",
+   "y un carrete que abrí sin querer?"
+  ],
+  "cliente": "se puede pagar con bizum?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "Bizum"
+  ],
+  "evidencia": "Efectivo, tarjeta y Bizum.",
+  "respuesta_ideal": "Sí, aceptamos Bizum, además de efectivo y tarjeta.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Efectivo, tarjeta y Bizum»."
+ },
+ {
+  "id": "i0288",
+  "negocio": "Z4_n4",
+  "turnos_previos_del_cliente": [
+   "vendeis camaras de carrete de segunda mano? busco una olympus mju"
+  ],
+  "cliente": "tienen garantia?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "6 meses"
+  ],
+  "evidencia": "cámaras compactas de segunda mano revisadas (con 6 meses de garantía)",
+  "respuesta_ideal": "Sí, las cámaras de segunda mano llevan 6 meses de garantía y se pueden probar en tienda antes de comprar.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Vendemos película Kodak, Ilford, Fujifilm y Cinestill, cámaras compactas de segunda mano revisadas (con 6 meses de garantía), baterías, tarjetas de memoria y álbumes»."
+ },
+ {
+  "id": "i0299",
+  "negocio": "Z4_n4",
+  "turnos_previos_del_cliente": [
+   "necesito fotos para el pasaporte, hace falta cita?"
+  ],
+  "cliente": "cuanto cuestan las de pasaporte?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "8 €"
+  ],
+  "evidencia": "Fotos de carné / DNI / pasaporte: 8 € (6 fotos).",
+  "respuesta_ideal": "Cuestan 8 € y te llevas 6 fotos.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Fotos de carné / DNI / pasaporte: 8 € (6 fotos)»."
+ },
+ {
+  "id": "i0319",
+  "negocio": "Z4_n4",
+  "turnos_previos_del_cliente": [
+   "necesito fotos para el pasaporte, hace falta cita?",
+   "cuanto cuestan las de pasaporte?",
+   "y si quiero que me las mandeis tambien por email?",
+   "sirven para el visado americano?"
+  ],
+  "cliente": "puedo pasar hoy a las 20:15 entre semana?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "30 minutos antes"
+  ],
+  "evidencia": "Lunes a viernes: 10:00-14:00 y 17:00-20:30\n[...]\nSe hacen al momento, sin cita, hasta 30 minutos antes del cierre.",
+  "respuesta_ideal": "A las 20:15 ya no: entre semana cerramos a las 20:30 y las fotos de carné se hacen hasta 30 minutos antes del cierre, o sea hasta las 20:00.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Si un alumno falta por enfermedad y avisa con al menos 24 horas de antelación, puede recuperar la clase otro día de la misma semana, sujeto a plazas disponibles»."
+ },
+ {
+  "id": "i0355",
+  "negocio": "Z4_n4",
+  "turnos_previos_del_cliente": [
+   "necesito fotos para el pasaporte, hace falta cita?",
+   "cuanto cuestan las de pasaporte?",
+   "y si quiero que me las mandeis tambien por email?"
+  ],
+  "cliente": "sirven para el visado americano?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "12 €"
+  ],
+  "evidencia": "Foto para visado de EE. UU. o Canadá (medidas especiales): 12 €.",
+  "respuesta_ideal": "Para el visado de EE. UU. las medidas son especiales; esa foto la hacemos también y cuesta 12 €.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Foto para visado de EE. UU. o Canadá (medidas especiales): 12 €»."
+ },
+ {
+  "id": "i0357",
+  "negocio": "Z4_n4",
+  "turnos_previos_del_cliente": [
+   "necesito fotos para el pasaporte, hace falta cita?",
+   "cuanto cuestan las de pasaporte?"
+  ],
+  "cliente": "y si quiero que me las mandeis tambien por email?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "10 €"
+  ],
+  "evidencia": "Con envío por correo electrónico del archivo: 10 €.",
+  "respuesta_ideal": "Con el archivo enviado por correo electrónico son 10 €.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «La revisión y el presupuesto cuestan 15 €, que se descuentan si se acepta la reparación»."
+ },
+ {
+  "id": "i0415",
+  "negocio": "Z4_n4",
+  "turnos_previos_del_cliente": [
+   "necesito fotos para el pasaporte, hace falta cita?",
+   "cuanto cuestan las de pasaporte?",
+   "y si quiero que me las mandeis tambien por email?",
+   "sirven para el visado americano?"
+  ],
+  "cliente": "puedo pasar hoy a las 20:15 entre semana?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "30 minutos antes"
+  ],
+  "evidencia": "Lunes a viernes: 10:00-14:00 y 17:00-20:30\n[...]\nSe hacen al momento, sin cita, hasta 30 minutos antes del cierre.",
+  "respuesta_ideal": "A las 20:15 ya no: entre semana cerramos a las 20:30 y las fotos de carné se hacen hasta 30 minutos antes del cierre, o sea hasta las 20:00.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «El E-6 se envía a un laboratorio de Madrid; el plazo puede alargarse una semana en agosto y Navidad»."
+ },
+ {
+  "id": "i0419",
+  "negocio": "Z4_n4",
+  "turnos_previos_del_cliente": [
+   "buenas, a que hora abris los sabados por la tarde?",
+   "y en agosto?",
+   "hay parking cerca?"
+  ],
+  "cliente": "la tienda tiene acceso para silla de ruedas?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo ese dato; llama al 963 41 27 80 o escribe al WhatsApp 611 08 34 52 y te lo confirman.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Foto Turia abrió en 1987 como tienda de material fotográfico y desde 2015 tenemos laboratorio propio de revelado analógico»."
+ },
+ {
+  "id": "i0450",
+  "negocio": "Z4_n4",
+  "turnos_previos_del_cliente": [
+   "hola, dejé un carrete la semana pasada, ya está listo?",
+   "vale. el enlace de descarga cuanto tiempo está activo?",
+   "y si se me pasa el plazo me lo podeis reenviar?"
+  ],
+  "cliente": "los negativos me los quedo yo o los guardais?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "3 meses"
+  ],
+  "evidencia": "Los negativos se guardan en tienda durante 3 meses. Pasado ese plazo se destruyen si no se han recogido.",
+  "respuesta_ideal": "Los negativos se guardan en tienda durante 3 meses para que los recojas; pasado ese plazo se destruyen.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Los negativos se guardan en tienda durante 3 meses»."
+ },
+ {
+  "id": "i0470",
+  "negocio": "Z4_n4",
+  "turnos_previos_del_cliente": [
+   "hola, dejé un carrete la semana pasada, ya está listo?",
+   "vale. el enlace de descarga cuanto tiempo está activo?",
+   "y si se me pasa el plazo me lo podeis reenviar?",
+   "los negativos me los quedo yo o los guardais?",
+   "tengo una foto de mi abuela rota por la mitad, cuanto me costaría arreglarla?"
+  ],
+  "cliente": "y escanear 40 diapositivas cuanto me sale?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "24 €"
+  ],
+  "evidencia": "Digitalización de diapositivas: 0,60 € por diapositiva (mínimo 20).",
+  "respuesta_ideal": "A 0,60 € cada una, 40 diapositivas son 24 €.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Digitalización de diapositivas: 0,60 € por diapositiva (mínimo 20)»."
+ },
+ {
+  "id": "i0476",
+  "negocio": "Z4_n4",
+  "turnos_previos_del_cliente": [
+   "hola, dejé un carrete la semana pasada, ya está listo?",
+   "vale. el enlace de descarga cuanto tiempo está activo?"
+  ],
+  "cliente": "y si se me pasa el plazo me lo podeis reenviar?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo ese dato; lo que sí puedo decirte es que hay copia en pendrive por 4 €. Consulta el reenvío en el mostrador o por WhatsApp al 611 08 34 52.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «El E-6 se envía a un laboratorio de Madrid; el plazo puede alargarse una semana en agosto y Navidad»."
+ },
+ {
+  "id": "i0009",
+  "negocio": "Z6_n4",
+  "turnos_previos_del_cliente": [
+   "Buenas tardes",
+   "cuanto cobra la dermatologa por la consulta?"
+  ],
+  "cliente": "y si regreso a las dos semanas para que me revise como voy?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "30"
+  ],
+  "evidencia": "Consulta de control (dentro de los 30 días siguientes): USD 30",
+  "respuesta_ideal": "Si regresa dentro de los 30 días siguientes, es una consulta de control y cuesta USD 30.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Trabajamos con seguros médicos privados (INISER, ASSA y Seguros América) en modalidad de reembolso: usted paga su consulta y le entregamos factura e informe médico para que tramite el reembolso con su aseguradora»."
+ },
+ {
+  "id": "i0051",
+  "negocio": "Z6_n4",
+  "turnos_previos_del_cliente": [
+   "cuanto sale una limpieza facial?",
+   "¿Y cuánto dura?",
+   "Mi hermana está embarazada de 5 meses, ¿ella se puede hacer un peeling?"
+  ],
+  "cliente": "¿Y la depilación láser de piernas completas en cuánto sale?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "valoración",
+   "25"
+  ],
+  "evidencia": "Depilación láser y toxina botulínica: se cotizan en la consulta de valoración estética (USD 25, abonables al tratamiento).",
+  "respuesta_ideal": "El precio de la depilación láser se da en la consulta de valoración estética, que cuesta USD 25 y se abona al tratamiento.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Depilación láser y toxina botulínica: se cotizan en la consulta de valoración estética (USD 25, abonables al tratamiento)»."
+ },
+ {
+  "id": "i0053",
+  "negocio": "Z6_n4",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Donde quedan exactamente?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "Colegio Teresiano"
+  ],
+  "evidencia": "Colonia Centroamérica, del Colegio Teresiano 1 c. al lago, 1/2 c. arriba, casa K-212.",
+  "respuesta_ideal": "Estamos en la Colonia Centroamérica, del Colegio Teresiano 1 c. al lago, 1/2 c. arriba, casa K-212.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Managua, Nicaragua · \"Cuidamos la piel de toda la familia desde 2011\"»."
+ },
+ {
+  "id": "i0095",
+  "negocio": "Z6_n4",
+  "turnos_previos_del_cliente": [
+   "Donde quedan exactamente?",
+   "y dónde dejo el carro?",
+   "Puedo pagar en córdobas?",
+   "¿A cuánto tienen el dólar hoy?",
+   "Si no llego a la cita y no aviso, me cobran algo?",
+   "Vamos a ir mi esposo y yo, los dos por primera vez, y él tiene ese recargo pendiente porque la vez pasada no llegó ni avisó. ¿Cuánto pagaríamos entre los dos?"
+  ],
+  "cliente": "¿Tienen el protector solar de La Roche-Posay en recepción?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "En recepción hay protectores solares de marcas dermatológicas, pero no tengo el dato de qué marcas. Puede consultarlo al 2278-4412.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Sí. En recepción tenemos protectores solares, cremas hidratantes y limpiadores de marcas dermatológicas»."
+ },
+ {
+  "id": "i0137",
+  "negocio": "Z6_n4",
+  "turnos_previos_del_cliente": [
+   "cuanto sale una limpieza facial?",
+   "¿Y cuánto dura?",
+   "Mi hermana está embarazada de 5 meses, ¿ella se puede hacer un peeling?",
+   "¿Y la depilación láser de piernas completas en cuánto sale?",
+   "¿Más o menos cuántas sesiones de láser se necesitan?"
+  ],
+  "cliente": "Yo sí me quiero hacer peeling, si me hago 3 sesiones cuanto seria todo?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "180"
+  ],
+  "evidencia": "Peeling químico: USD 60 por sesión",
+  "respuesta_ideal": "Tres sesiones de peeling químico serían USD 180 (USD 60 por sesión).",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Peeling químico: USD 60 por sesión»."
+ },
+ {
+  "id": "i0147",
+  "negocio": "Z6_n4",
+  "turnos_previos_del_cliente": [
+   "mi niña de 3 años tiene como resequedad en los bracitos, quien atiende niños ahi?"
+  ],
+  "cliente": "que dias viene el doctor?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "martes",
+   "jueves",
+   "sábados"
+  ],
+  "evidencia": "Consulta martes, jueves y sábados.",
+  "respuesta_ideal": "El Dr. Lacayo atiende los martes, jueves y sábados.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «También recibimos córdobas al tipo de cambio oficial del día»."
+ },
+ {
+  "id": "i0163",
+  "negocio": "Z6_n4",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Me picó algo en el patio y se me está hinchando la cara, me cuesta respirar, me pueden atender ya??",
+  "tipo": "instruccion",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "Si la persona describe una urgencia (sangrado que no para, reacción alérgica fuerte, hinchazón de la cara o dificultad para respirar), indíquele que acuda de inmediato a la emergencia del hospital más cercano; no debe esperar una cita.",
+  "respuesta_ideal": "Por favor, acuda de inmediato a la emergencia del hospital más cercano; no espere una cita.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Dr. Óscar Lacayo Ruiz — Dermatólogo pediatra; atiende a niños desde recién nacidos hasta los 15 años»."
+ },
+ {
+  "id": "i0206",
+  "negocio": "Z6_n4",
+  "turnos_previos_del_cliente": [
+   "cuanto sale una limpieza facial?"
+  ],
+  "cliente": "¿Y cuánto dura?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "60 min"
+  ],
+  "evidencia": "Limpieza facial profunda (60 min): USD 35",
+  "respuesta_ideal": "Dura 60 minutos.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Si cancela con menos tiempo o el técnico llega y no hay quien lo reciba, se cobra una visita fallida de $30.000»."
+ },
+ {
+  "id": "i0212",
+  "negocio": "Z6_n4",
+  "turnos_previos_del_cliente": [],
+  "cliente": "mi niña de 3 años tiene como resequedad en los bracitos, quien atiende niños ahi?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "Óscar Lacayo"
+  ],
+  "evidencia": "Dr. Óscar Lacayo Ruiz — Dermatólogo pediatra; atiende a niños desde recién nacidos hasta los 15 años.",
+  "respuesta_ideal": "A los niños los atiende el Dr. Óscar Lacayo Ruiz, dermatólogo pediatra.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Dr. Óscar Lacayo Ruiz — Dermatólogo pediatra; atiende a niños desde recién nacidos hasta los 15 años»."
+ },
+ {
+  "id": "i0274",
+  "negocio": "Z6_n4",
+  "turnos_previos_del_cliente": [
+   "Donde quedan exactamente?"
+  ],
+  "cliente": "y dónde dejo el carro?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "parqueo propio"
+  ],
+  "evidencia": "Contamos con parqueo propio para 8 vehículos.",
+  "respuesta_ideal": "La clínica tiene parqueo propio para 8 vehículos.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Consulta de control (dentro de los 30 días siguientes): USD 30»."
+ },
+ {
+  "id": "i0276",
+  "negocio": "Z6_n4",
+  "turnos_previos_del_cliente": [
+   "mi niña de 3 años tiene como resequedad en los bracitos, quien atiende niños ahi?",
+   "que dias viene el doctor?"
+  ],
+  "cliente": "y cuanto cobra el?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "50"
+  ],
+  "evidencia": "Consulta de dermatología pediátrica: USD 50",
+  "respuesta_ideal": "La consulta de dermatología pediátrica cuesta USD 50.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Si cancela con menos tiempo o el técnico llega y no hay quien lo reciba, se cobra una visita fallida de $30.000»."
+ },
+ {
+  "id": "i0283",
+  "negocio": "Z6_n4",
+  "turnos_previos_del_cliente": [
+   "cuanto sale una limpieza facial?",
+   "¿Y cuánto dura?"
+  ],
+  "cliente": "Mi hermana está embarazada de 5 meses, ¿ella se puede hacer un peeling?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "embarazadas"
+  ],
+  "evidencia": "No se realizan en mujeres embarazadas.",
+  "respuesta_ideal": "No, el peeling no se realiza en mujeres embarazadas.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Peeling y láser: evitar el sol 7 días antes y 7 días despues del procedimiento. No se realizan en mujeres embarazadas»."
+ },
+ {
+  "id": "i0306",
+  "negocio": "Z6_n4",
+  "turnos_previos_del_cliente": [
+   "Donde quedan exactamente?",
+   "y dónde dejo el carro?",
+   "Puedo pagar en córdobas?",
+   "¿A cuánto tienen el dólar hoy?"
+  ],
+  "cliente": "Si no llego a la cita y no aviso, me cobran algo?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "recargo",
+   "10"
+  ],
+  "evidencia": "Si no se presenta y no avisa, en su próxima cita se cobrará un recargo de USD 10.",
+  "respuesta_ideal": "Sí: si no se presenta y no avisa, en su próxima cita se cobra un recargo de USD 10.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Si no se presenta y no avisa, en su próxima cita se cobrará un recargo de USD 10»."
+ },
+ {
+  "id": "i0314",
+  "negocio": "Z6_n4",
+  "turnos_previos_del_cliente": [
+   "Donde quedan exactamente?",
+   "y dónde dejo el carro?",
+   "Puedo pagar en córdobas?",
+   "¿A cuánto tienen el dólar hoy?"
+  ],
+  "cliente": "Si no llego a la cita y no aviso, me cobran algo?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "recargo",
+   "10"
+  ],
+  "evidencia": "Si no se presenta y no avisa, en su próxima cita se cobrará un recargo de USD 10.",
+  "respuesta_ideal": "Sí: si no se presenta y no avisa, en su próxima cita se cobra un recargo de USD 10.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Si cancela con menos tiempo o el técnico llega y no hay quien lo reciba, se cobra una visita fallida de $30.000»."
+ },
+ {
+  "id": "i0323",
+  "negocio": "Z6_n4",
+  "turnos_previos_del_cliente": [
+   "mi niña de 3 años tiene como resequedad en los bracitos, quien atiende niños ahi?",
+   "que dias viene el doctor?"
+  ],
+  "cliente": "y cuanto cobra el?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "50"
+  ],
+  "evidencia": "Consulta de dermatología pediátrica: USD 50",
+  "respuesta_ideal": "La consulta de dermatología pediátrica cuesta USD 50.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Si no se presenta y no avisa, en su próxima cita se cobrará un recargo de USD 10»."
+ },
+ {
+  "id": "i0360",
+  "negocio": "Z6_n4",
+  "turnos_previos_del_cliente": [
+   "quiero que me revisen todos los lunares, hacen eso?",
+   "Y si me sacan una biopsia, en cuánto salen los resultados?",
+   "¿Para la biopsia ponen anestesia?",
+   "¿La biopsia se paga aparte de la consulta o ya va incluida?"
+  ],
+  "cliente": "Oiga, y a mi mamá le hicieron una biopsia hace dos semanas, ¿ya salió? ¿salió bien?",
+  "tipo": "instruccion",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "Si preguntan por resultados de biopsias u otros exámenes, no dé ninguna información: indique que la Dra. Karla Membreño los entrega en consulta y que puede coordinarlo con recepción.",
+  "respuesta_ideal": "No puedo darle información sobre resultados; la Dra. Karla Membreño los entrega en consulta. Puede coordinarlo con recepción al 2278-4412.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Biopsia de piel: USD 120, incluye el análisis de patología»."
+ },
+ {
+  "id": "i0380",
+  "negocio": "Z6_n4",
+  "turnos_previos_del_cliente": [
+   "Buenas tardes",
+   "cuanto cobra la dermatologa por la consulta?",
+   "y si regreso a las dos semanas para que me revise como voy?",
+   "Es que me salieron unas manchitas blancas en la espalda, ¿qué será? ¿qué crema me pongo mientras tanto?",
+   "tienen espacio para mañana en la mañana?"
+  ],
+  "cliente": "Aceptan el seguro del INSS?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "proveedores del INSS"
+  ],
+  "evidencia": "No somos proveedores del INSS.",
+  "respuesta_ideal": "No, no somos proveedores del INSS. Sí trabajamos con seguros privados (INISER, ASSA y Seguros América) por reembolso.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «No somos proveedores del INSS»."
+ }
+]

@@ -98,3 +98,48 @@ Diagnóstico: contestando siempre, G-61 frente a G-58r.
 ## Presupuesto
 
 Implementación y conteo ≤ 45 min; banco ≤ 40 min; juez ≤ 1 h; medidas generales ≤ 30 min. Hasta 16 procesos, con al menos 2 GB de RAM libres.
+
+## Resultado (2026-09-26, banco congelado de 24 negocios nuevos y 651 turnos; juez ciego de 8 jueces nuevos, Opus)
+
+| Puerta | Umbral | G-61 | G-58r, mismo banco | ¿Pasa? |
+|---|---|---|---|---|
+| 1. Útiles en directa + sí/no | ≥ G-58r + 5 puntos | **118/301 (39,2 %)** | 96/301 (31,9 %) | **sí (+7,3)** |
+| 2. Citas engañosas | ≤ 15 % y ≤ G-58r + 2 puntos | **10/214 (4,7 %)** | 6/177 (3,4 %) | sí (+1,3) |
+| 3. Inventadas · planas | 0 · — | **0** · ninguna | 0 | sí |
+| 4. Sin respuesta bien llevadas | ≥ 90 % | **163/164 (99,4 %)** | 99,4 % | sí |
+| 5. Eco de datos | 0 | **0** | 0 | sí |
+
+El 72,4 % de las citas de G-61 son útiles, frente al 70,6 % de G-58r.
+
+**Controles:**
+- rasgos barajados: 65 útiles y 38,6 % de citas útiles. La confianza contada importa.
+- otro negocio: 0 útiles y 571/651 «No lo sé» (87,7 %). Los jueces marcaron 16 de sus citas como «inventadas»: son texto literal del documento cargado, que es de otro negocio, igual que en G-59. No es invención del motor. De sus 44 citas, 30 engañan: la objeción 2 de G-58r sigue abierta.
+- reinicio: 651/651;
+- renombrado estricto: 641/651 (98,5 %).
+
+Contestando siempre (conteo automático): 179/299 frente a 165/299 de G-58r.
+
+**Retención 5.9 (juez):**
+- herencia: 118 frente a 106 sin ella (+12), engañosas 4,7 % frente a 4,2 %. Se queda por la regla del kiosco.
+- pregunta en línea: 118 frente a 113 sin ella (+5), engañosas 4,7 % frente a 4,7 %. Se queda.
+
+**Pruebas generales:**
+- regresión 666/6/0;
+- conversación 101/21/36 = 158;
+- SQuAD-es: unidad con la respuesta 0,8013 frente a 0,7987, F1 0,2485;
+- p95 de `answer` 0,46 ms.
+- **MFAQ `valid`, contestando siempre: 56,90 % frente a 57,24 % de G-58r. Retrocede 0,34 puntos**, y el preregistro pedía «no menor».
+
+**Diagnóstico posterior del retroceso de MFAQ:**
+
+| Variante | MFAQ |
+|---|---|
+| sin herencia | 57,28 % |
+| sin pregunta en línea | 56,90 % |
+| sin las dos | 57,46 % |
+
+Lo causa la herencia. En una página de preguntas frecuentes, las respuestas van seguidas y sin títulos, así que una línea corta de una respuesta cuenta como encabezado débil. Ese encabezado gobierna todo lo que sigue, y las demás respuestas heredan sus palabras.
+
+**Decisión: G-61 no se promueve.** Pasa todas las puertas del kiosco, pero retrocede en una prueba general, y la misión dice que eso no puede pasar. El preregistro no daba tolerancia, y no se añade después de medir. El kiosco de referencia sigue siendo `estable-G-17`.
+
+La versión sin herencia no sirve como salida: da 106 útiles, +3,3 puntos, por debajo de la puerta 1. Siguiente paso, G-62: heredar solo de encabezados marcados (markdown, mayúsculas, dos puntos) y de preguntas, no de encabezados débiles. Con preregistro nuevo y banco nuevo.

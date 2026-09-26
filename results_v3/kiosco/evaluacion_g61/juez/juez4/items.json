@@ -1,0 +1,1228 @@
+[
+ {
+  "id": "i0041",
+  "negocio": "Z1_n4",
+  "turnos_previos_del_cliente": [
+   "¿Cuánto cuesta el flexo verde?",
+   "Vivo en Valencia, ¿cuánto me cobráis por enviármelo?",
+   "¿Y si también pido la lámpara de pie de mármol?",
+   "¿La Nórdica Bruma la tenéis en negro?",
+   "¿Enviáis a Tenerife? Es para mi hermana"
+  ],
+  "cliente": "¿Se puede pagar con Bizum?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "Bizum"
+  ],
+  "evidencia": "Tarjeta, efectivo, Bizum y transferencia.",
+  "respuesta_ideal": "Sí, aceptamos Bizum, además de tarjeta, efectivo y transferencia.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Para compras desde 300 € puede pagar en 3 plazos sin intereses con tarjeta de crédito»."
+ },
+ {
+  "id": "i0042",
+  "negocio": "Z1_n4",
+  "turnos_previos_del_cliente": [
+   "Tengo una lámpara de mi abuela que ya no enciende, ¿la arregláis?",
+   "¿Cuánto me costaría exactamente?",
+   "¿Y cuánto tardáis?"
+  ],
+  "cliente": "¿El arreglo tiene garantía?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "Si preguntan por existencias, colores o modelos que no aparecen aquí, o por cualquier dato que no tengas, di que no lo tienes y ofrece el WhatsApp 644 218 907 para consultarlo con la tienda.",
+  "respuesta_ideal": "No tengo el dato de la garantía para restauraciones de lámparas de clientes; puede consultarlo con la tienda por WhatsApp al 644 218 907.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Todos los productos nuevos tienen 3 años de garantía»."
+ },
+ {
+  "id": "i0067",
+  "negocio": "Z1_n4",
+  "turnos_previos_del_cliente": [
+   "Compré unas bombillas, las desprecinté y resulta que no son del casquillo que necesito. ¿Las puedo devolver?",
+   "¿Y una lámpara normal, cuántos días tengo para devolverla?",
+   "¿Quién paga el envío de vuelta?"
+  ],
+  "cliente": "¿Me la podéis cambiar por otra en vez de devolverme el dinero?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "Si preguntan por existencias, colores o modelos que no aparecen aquí, o por cualquier dato que no tengas, di que no lo tienes y ofrece el WhatsApp 644 218 907 para consultarlo con la tienda.",
+  "respuesta_ideal": "No tengo información sobre cambios; solo sé que el reembolso se hace por el mismo medio de pago. Puede consultarlo con la tienda por WhatsApp al 644 218 907.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Sí, una sola vez por ciclo y sin costo adicional, sujeto a disponibilidad de vacantes en el área destino»."
+ },
+ {
+  "id": "i0081",
+  "negocio": "Z1_n4",
+  "turnos_previos_del_cliente": [
+   "Tengo una lámpara de mi abuela que ya no enciende, ¿la arregláis?",
+   "¿Cuánto me costaría exactamente?",
+   "¿Y cuánto tardáis?",
+   "¿El arreglo tiene garantía?"
+  ],
+  "cliente": "También quiero hacerle una pantalla nueva de tela a medida, ¿en cuánto tiempo estaría?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "3 semanas"
+  ],
+  "evidencia": "Pantallas a medida en tela o pergamino: desde 38 €. Plazo: 3 semanas.",
+  "respuesta_ideal": "Las pantallas a medida tardan 3 semanas y cuestan desde 38 €; el presupuesto definitivo se hace en tienda.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Pantallas a medida en tela o pergamino: desde 38 €. Plazo: 3 semanas»."
+ },
+ {
+  "id": "i0083",
+  "negocio": "Z1_n4",
+  "turnos_previos_del_cliente": [
+   "Vivo aquí al lado, en Chamberí. ¿Cuánto me cobráis por venir a instalar tres lámparas?",
+   "Una de ellas va en un techo de 4 metros"
+  ],
+  "cliente": "¿Y si la instalación fuera en casa de mi madre, en Alcobendas?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "Fuera de la M-40, consúltenos.",
+  "respuesta_ideal": "Fuera de la M-40 no tengo la tarifa; puede consultarlo con la tienda por WhatsApp al 644 218 907 o en el 91 447 3829.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Instalación a domicilio (Madrid capital, dentro de la M-40): 55 € la primera lámpara y 25 € cada lámpara adicional en la misma visita»."
+ },
+ {
+  "id": "i0107",
+  "negocio": "Z1_n4",
+  "turnos_previos_del_cliente": [
+   "Vivo aquí al lado, en Chamberí. ¿Cuánto me cobráis por venir a instalar tres lámparas?",
+   "Una de ellas va en un techo de 4 metros",
+   "¿Y si la instalación fuera en casa de mi madre, en Alcobendas?"
+  ],
+  "cliente": "Oye, un aplique que me vendisteis huele a quemado cuando lo enciendo",
+  "tipo": "instruccion",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "Si alguien dice que una lámpara echa chispas, huele a quemado o da calambre, dile que la desenchufe o corte la luz de inmediato, que no la vuelva a usar y que la traiga al taller para revisarla.",
+  "respuesta_ideal": "Desenchúfelo o corte la luz de inmediato y no lo vuelva a usar; tráigalo al taller para que lo revisemos.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Tráigala o traiga una foto del casquillo»."
+ },
+ {
+  "id": "i0124",
+  "negocio": "Z1_n4",
+  "turnos_previos_del_cliente": [
+   "Buenas tardes, ¿a qué hora abrís el sábado?"
+  ],
+  "cliente": "¿Y en agosto también?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "10:00 a 14:00"
+  ],
+  "evidencia": "En agosto abrimos solo por las mañanas, de lunes a sábado de 10:00 a 14:00.",
+  "respuesta_ideal": "En agosto abrimos solo por las mañanas, de lunes a sábado de 10:00 a 14:00.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Ciclo Semestral (marzo-julio y agosto-diciembre)»."
+ },
+ {
+  "id": "i0192",
+  "negocio": "Z1_n4",
+  "turnos_previos_del_cliente": [
+   "Compré unas bombillas, las desprecinté y resulta que no son del casquillo que necesito. ¿Las puedo devolver?",
+   "¿Y una lámpara normal, cuántos días tengo para devolverla?",
+   "¿Quién paga el envío de vuelta?",
+   "¿Me la podéis cambiar por otra en vez de devolverme el dinero?"
+  ],
+  "cliente": "¿Cuánta garantía tiene la lámpara de ratán del techo?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "3 años"
+  ],
+  "evidencia": "Todos los productos nuevos tienen 3 años de garantía.",
+  "respuesta_ideal": "Como todos los productos nuevos, la Nórdica Bruma tiene 3 años de garantía.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Las lámparas vintage restauradas que vendemos tienen 1 año de garantía sobre la parte eléctrica»."
+ },
+ {
+  "id": "i0211",
+  "negocio": "Z1_n4",
+  "turnos_previos_del_cliente": [],
+  "cliente": "¿Cuánto cuesta el flexo verde?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "59,90 €"
+  ],
+  "evidencia": "Flexo Olavide, verde inglés\tMesa\t59,90 €",
+  "respuesta_ideal": "El flexo Olavide en verde inglés cuesta 59,90 €, IVA incluido.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Modelo: Flexo Olavide, verde inglés; Tipo: Mesa; Precio (IVA incl.): 59,90 €»."
+ },
+ {
+  "id": "i0238",
+  "negocio": "Z1_n4",
+  "turnos_previos_del_cliente": [
+   "¿Cuánto cuesta el flexo verde?",
+   "Vivo en Valencia, ¿cuánto me cobráis por enviármelo?"
+  ],
+  "cliente": "¿Y si también pido la lámpara de pie de mármol?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "348,90 €",
+   "gratis"
+  ],
+  "evidencia": "Arco Retiro, base de mármol blanco\tPie\t289,00 € … Envío gratis en pedidos superiores a 150 € a la península.",
+  "respuesta_ideal": "La Arco Retiro cuesta 289,00 €; con el flexo serían 348,90 € y, al superar los 150 €, el envío a la península sería gratis.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Modelo: Arco Retiro, base de mármol blanco; Tipo: Pie; Precio (IVA incl.): 289,00 €»."
+ },
+ {
+  "id": "i0246",
+  "negocio": "Z1_n4",
+  "turnos_previos_del_cliente": [
+   "Compré unas bombillas, las desprecinté y resulta que no son del casquillo que necesito. ¿Las puedo devolver?",
+   "¿Y una lámpara normal, cuántos días tengo para devolverla?",
+   "¿Quién paga el envío de vuelta?"
+  ],
+  "cliente": "¿Me la podéis cambiar por otra en vez de devolverme el dinero?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "Si preguntan por existencias, colores o modelos que no aparecen aquí, o por cualquier dato que no tengas, di que no lo tienes y ofrece el WhatsApp 644 218 907 para consultarlo con la tienda.",
+  "respuesta_ideal": "No tengo información sobre cambios; solo sé que el reembolso se hace por el mismo medio de pago. Puede consultarlo con la tienda por WhatsApp al 644 218 907.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Tráigala o traiga una foto del casquillo»."
+ },
+ {
+  "id": "i0303",
+  "negocio": "Z1_n4",
+  "turnos_previos_del_cliente": [
+   "Compré unas bombillas, las desprecinté y resulta que no son del casquillo que necesito. ¿Las puedo devolver?"
+  ],
+  "cliente": "¿Y una lámpara normal, cuántos días tengo para devolverla?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "14 días"
+  ],
+  "evidencia": "Dispone de 14 días naturales desde la entrega para devolver un producto sin usar y en su embalaje original.",
+  "respuesta_ideal": "Tiene 14 días naturales desde la entrega, siempre que esté sin usar y en su embalaje original.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Dispone de 14 días naturales desde la entrega para devolver un producto sin usar y en su embalaje original»."
+ },
+ {
+  "id": "i0313",
+  "negocio": "Z1_n4",
+  "turnos_previos_del_cliente": [
+   "¿Cuánto cuesta el flexo verde?",
+   "Vivo en Valencia, ¿cuánto me cobráis por enviármelo?",
+   "¿Y si también pido la lámpara de pie de mármol?"
+  ],
+  "cliente": "¿La Nórdica Bruma la tenéis en negro?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "Si preguntan por existencias, colores o modelos que no aparecen aquí, o por cualquier dato que no tengas, di que no lo tienes y ofrece el WhatsApp 644 218 907 para consultarlo con la tienda.",
+  "respuesta_ideal": "Solo tengo información de la Nórdica Bruma en ratán natural; para saber si hay otros colores consulte con la tienda por WhatsApp al 644 218 907.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Modelo: Nórdica Bruma, ratán natural Ø 45 cm; Tipo: Techo; Precio (IVA incl.): 129,00 €»."
+ },
+ {
+  "id": "i0364",
+  "negocio": "Z1_n4",
+  "turnos_previos_del_cliente": [
+   "Vivo aquí al lado, en Chamberí. ¿Cuánto me cobráis por venir a instalar tres lámparas?",
+   "Una de ellas va en un techo de 4 metros",
+   "¿Y si la instalación fuera en casa de mi madre, en Alcobendas?",
+   "Oye, un aplique que me vendisteis huele a quemado cuando lo enciendo"
+  ],
+  "cliente": "¿Qué luz me recomiendas para la cocina, cálida o fría?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "4000 K"
+  ],
+  "evidencia": "Para cocina, baño y zonas de trabajo recomendamos luz neutra de 4000 K; para salón y dormitorio, luz cálida de 2700 K.",
+  "respuesta_ideal": "Para la cocina le recomendamos luz neutra de 4000 K.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Para cocina, baño y zonas de trabajo recomendamos luz neutra de 4000 K; para salón y dormitorio, luz cálida de 2700 K»."
+ },
+ {
+  "id": "i0367",
+  "negocio": "Z1_n4",
+  "turnos_previos_del_cliente": [
+   "Buenas tardes, ¿a qué hora abrís el sábado?"
+  ],
+  "cliente": "¿Y en agosto también?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "10:00 a 14:00"
+  ],
+  "evidencia": "En agosto abrimos solo por las mañanas, de lunes a sábado de 10:00 a 14:00.",
+  "respuesta_ideal": "En agosto abrimos solo por las mañanas, de lunes a sábado de 10:00 a 14:00.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «En agosto abrimos solo por las mañanas, de lunes a sábado de 10:00 a 14:00»."
+ },
+ {
+  "id": "i0385",
+  "negocio": "Z1_n4",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Buenas tardes, ¿a qué hora abrís el sábado?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "10:30",
+   "14:00"
+  ],
+  "evidencia": "Sábados: 10:30–14:00",
+  "respuesta_ideal": "Buenas tardes. Los sábados abrimos de 10:30 a 14:00.",
+  "respuesta_a_calificar": "Buenas tardes. No lo tengo seguro. Lo más cercano que dice el texto es: «En agosto abrimos solo por las mañanas, de lunes a sábado de 10:00 a 14:00»."
+ },
+ {
+  "id": "i0414",
+  "negocio": "Z1_n4",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Tengo una lámpara de mi abuela que ya no enciende, ¿la arregláis?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "desde 45 €"
+  ],
+  "evidencia": "Restauración y recableado de lámparas antiguas: desde 45 €.",
+  "respuesta_ideal": "Sí, en nuestro taller restauramos y recableamos lámparas antiguas, desde 45 €.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «No se admiten devoluciones de lámparas y pantallas hechas a medida ni de bombillas desprecintadas»."
+ },
+ {
+  "id": "i0453",
+  "negocio": "Z1_n4",
+  "turnos_previos_del_cliente": [
+   "¿Cuánto cuesta el flexo verde?",
+   "Vivo en Valencia, ¿cuánto me cobráis por enviármelo?",
+   "¿Y si también pido la lámpara de pie de mármol?",
+   "¿La Nórdica Bruma la tenéis en negro?"
+  ],
+  "cliente": "¿Enviáis a Tenerife? Es para mi hermana",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "Canarias"
+  ],
+  "evidencia": "No realizamos envíos a Canarias, Ceuta ni Melilla.",
+  "respuesta_ideal": "No, lo siento, no realizamos envíos a Canarias.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Somos una tienda de barrio con taller propio desde 1998»."
+ },
+ {
+  "id": "i0457",
+  "negocio": "Z1_n4",
+  "turnos_previos_del_cliente": [
+   "Buenas tardes, ¿a qué hora abrís el sábado?",
+   "¿Y en agosto también?",
+   "¿Qué metro me queda cerca?",
+   "¿Tenéis parking para clientes?"
+  ],
+  "cliente": "¿Me dais el teléfono de la tienda?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "91 447 3829"
+  ],
+  "evidencia": "Tel. 91 447 3829 · WhatsApp 644 218 907",
+  "respuesta_ideal": "El teléfono es el 91 447 3829 y el WhatsApp, el 644 218 907.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Recogida en tienda gratuita: le avisamos por SMS cuando su pedido esté listo»."
+ },
+ {
+  "id": "i0022",
+  "negocio": "Z3_n4",
+  "turnos_previos_del_cliente": [
+   "Hola, quisiera una consulta con nutricionista. ¿Cuánto cuesta?",
+   "¿Qué incluye la primera consulta?",
+   "¿Cuál es el horario?",
+   "¿Hacen consultas de seguimiento?",
+   "Necesito perder peso. ¿Hay un programa?",
+   "¿Soy diabético. ¿Hay algo para eso?",
+   "¿Dónde quedan?"
+  ],
+  "cliente": "¿Se puede pagar con tarjeta?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "Tarjeta de débito y crédito",
+   "Visa, Mastercard, American Express"
+  ],
+  "evidencia": "Tarjeta de débito y crédito (Visa, Mastercard, American Express).",
+  "respuesta_ideal": "Sí, aceptamos visa, Mastercard y American Express, además de efectivo.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Efectivo en dólares USD. Tarjeta de débito y crédito (Visa, Mastercard, American Express)»."
+ },
+ {
+  "id": "i0023",
+  "negocio": "Z3_n4",
+  "turnos_previos_del_cliente": [
+   "Hola, quisiera una consulta con nutricionista. ¿Cuánto cuesta?",
+   "¿Qué incluye la primera consulta?",
+   "¿Cuál es el horario?",
+   "¿Hacen consultas de seguimiento?",
+   "Necesito perder peso. ¿Hay un programa?"
+  ],
+  "cliente": "¿Soy diabético. ¿Hay algo para eso?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "Manejo de diabetes: $220 USD",
+   "3 meses",
+   "4 consultas"
+  ],
+  "evidencia": "* Manejo de diabetes: $220 USD (3 meses, 4 consultas)",
+  "respuesta_ideal": "Sí, hay programa de manejo de diabetes: $220 USD por 3 meses, con 4 consultas.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Transferencia bancaria (para programas de 3 meses)»."
+ },
+ {
+  "id": "i0033",
+  "negocio": "Z3_n4",
+  "turnos_previos_del_cliente": [
+   "Hola, quisiera una consulta con nutricionista. ¿Cuánto cuesta?",
+   "¿Qué incluye la primera consulta?",
+   "¿Cuál es el horario?",
+   "¿Hacen consultas de seguimiento?",
+   "Necesito perder peso. ¿Hay un programa?",
+   "¿Soy diabético. ¿Hay algo para eso?",
+   "¿Dónde quedan?",
+   "¿Se puede pagar con tarjeta?",
+   "¿Cuánto cuesta el análisis de composición corporal?",
+   "Quiero cancelar mi cita de mañana. ¿Hay costo?",
+   "¿Puedo cancelar con más tiempo?",
+   "¿Qué nutricionistas atienden?",
+   "Estoy embarazada. ¿Tienen programa?",
+   "¿Hacen seguimiento por email?",
+   "¿Qué necesito traer en la primera cita?",
+   "¿Hacen programas para deportistas?",
+   "Tengo síndrome del colon irritable. ¿Qué me recomiendas?"
+  ],
+  "cliente": "¿Hacen asesoramiento en el supermercado?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "Asesoramiento de compra en supermercado (presencial): $25 USD"
+  ],
+  "evidencia": "Asesoramiento de compra en supermercado (presencial): $25 USD",
+  "respuesta_ideal": "Sí, asesoramiento de compra en el supermercado por $25 USD.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Asesoramiento de compra en supermercado (presencial): $25 USD»."
+ },
+ {
+  "id": "i0049",
+  "negocio": "Z3_n4",
+  "turnos_previos_del_cliente": [
+   "Hola, quisiera una consulta con nutricionista. ¿Cuánto cuesta?"
+  ],
+  "cliente": "¿Qué incluye la primera consulta?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "Historia clínica",
+   "Análisis de hábitos",
+   "Medidas antropométricas",
+   "Plan nutricional personalizado"
+  ],
+  "evidencia": "Incluye:\n- Historia clínica completa\n- Análisis de hábitos alimentarios\n- Toma de medidas antropométricas\n- Plan nutricional personalizado",
+  "respuesta_ideal": "Incluye historia clínica, análisis de tus hábitos, medidas corporales, cálculo del IMC, y un plan personalizado escrito.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Tarifa: $40 USD (primera revisión a los 15 días)»."
+ },
+ {
+  "id": "i0118",
+  "negocio": "Z3_n4",
+  "turnos_previos_del_cliente": [
+   "Hola, quisiera una consulta con nutricionista. ¿Cuánto cuesta?",
+   "¿Qué incluye la primera consulta?",
+   "¿Cuál es el horario?",
+   "¿Hacen consultas de seguimiento?",
+   "Necesito perder peso. ¿Hay un programa?",
+   "¿Soy diabético. ¿Hay algo para eso?",
+   "¿Dónde quedan?",
+   "¿Se puede pagar con tarjeta?",
+   "¿Cuánto cuesta el análisis de composición corporal?"
+  ],
+  "cliente": "Quiero cancelar mi cita de mañana. ¿Hay costo?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "menos de 48 horas",
+   "50 % de la tarifa"
+  ],
+  "evidencia": "Cancelación con menos de 48 horas: 50 % de la tarifa.",
+  "respuesta_ideal": "Como es menos de 48 horas, se cobra el 50 % de la tarifa de la consulta.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Cancelación con 48 horas de anticipación: sin costo»."
+ },
+ {
+  "id": "i0131",
+  "negocio": "Z3_n4",
+  "turnos_previos_del_cliente": [
+   "Hola, quisiera una consulta con nutricionista. ¿Cuánto cuesta?",
+   "¿Qué incluye la primera consulta?",
+   "¿Cuál es el horario?",
+   "¿Hacen consultas de seguimiento?",
+   "Necesito perder peso. ¿Hay un programa?",
+   "¿Soy diabético. ¿Hay algo para eso?",
+   "¿Dónde quedan?",
+   "¿Se puede pagar con tarjeta?",
+   "¿Cuánto cuesta el análisis de composición corporal?",
+   "Quiero cancelar mi cita de mañana. ¿Hay costo?"
+  ],
+  "cliente": "¿Puedo cancelar con más tiempo?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "48 horas de anticipación",
+   "sin costo"
+  ],
+  "evidencia": "Cancelación con 48 horas de anticipación: sin costo.",
+  "respuesta_ideal": "Sí, si cancelas con 48 horas de anticipación no hay costo.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Cancelaciones con más de 48 horas de anticipación: se devuelve el abono completo. Con menos de 48 horas, el abono se guarda como saldo para otra fecha durante 3 meses. Si no llega y no avisa, se pierde el abono»."
+ },
+ {
+  "id": "i0170",
+  "negocio": "Z3_n4",
+  "turnos_previos_del_cliente": [
+   "Hola, quisiera una consulta con nutricionista. ¿Cuánto cuesta?",
+   "¿Qué incluye la primera consulta?",
+   "¿Cuál es el horario?",
+   "¿Hacen consultas de seguimiento?",
+   "Necesito perder peso. ¿Hay un programa?",
+   "¿Soy diabético. ¿Hay algo para eso?",
+   "¿Dónde quedan?"
+  ],
+  "cliente": "¿Se puede pagar con tarjeta?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "Tarjeta de débito y crédito",
+   "Visa, Mastercard, American Express"
+  ],
+  "evidencia": "Tarjeta de débito y crédito (Visa, Mastercard, American Express).",
+  "respuesta_ideal": "Sí, aceptamos visa, Mastercard y American Express, además de efectivo.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Recibimos efectivo, Nequi, Daviplata y tarjetas débito y crédito (con tarjeta se cobra un recargo del 3 %)»."
+ },
+ {
+  "id": "i0173",
+  "negocio": "Z3_n4",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Hola, quisiera una consulta con nutricionista. ¿Cuánto cuesta?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "$60 USD",
+   "60 minutos"
+  ],
+  "evidencia": "Consulta inicial\nTarifa: $60 USD\nDuración: 60 minutos",
+  "respuesta_ideal": "La consulta inicial es $60 USD y dura 60 minutos. Incluye plan personalizado y análisis completo.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Cancelación con 48 horas de anticipación: sin costo»."
+ },
+ {
+  "id": "i0187",
+  "negocio": "Z3_n4",
+  "turnos_previos_del_cliente": [
+   "Hola, quisiera una consulta con nutricionista. ¿Cuánto cuesta?",
+   "¿Qué incluye la primera consulta?"
+  ],
+  "cliente": "¿Cuál es el horario?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "lunes a viernes: 08:00 a 18:00",
+   "sábados: 09:00 a 13:00"
+  ],
+  "evidencia": "Lunes a viernes: 08:00 a 18:00 h\nSábados: 09:00 a 13:00 h\nDomingos y feriados: cerrado",
+  "respuesta_ideal": "De lunes a viernes 08:00 a 18:00, sábados 09:00 a 13:00. Domingos cerramos.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Los datos de los pacientes son confidenciales»."
+ },
+ {
+  "id": "i0231",
+  "negocio": "Z3_n4",
+  "turnos_previos_del_cliente": [
+   "Hola, quisiera una consulta con nutricionista. ¿Cuánto cuesta?",
+   "¿Qué incluye la primera consulta?",
+   "¿Cuál es el horario?",
+   "¿Hacen consultas de seguimiento?",
+   "Necesito perder peso. ¿Hay un programa?",
+   "¿Soy diabético. ¿Hay algo para eso?",
+   "¿Dónde quedan?",
+   "¿Se puede pagar con tarjeta?",
+   "¿Cuánto cuesta el análisis de composición corporal?",
+   "Quiero cancelar mi cita de mañana. ¿Hay costo?",
+   "¿Puedo cancelar con más tiempo?",
+   "¿Qué nutricionistas atienden?",
+   "Estoy embarazada. ¿Tienen programa?",
+   "¿Hacen seguimiento por email?",
+   "¿Qué necesito traer en la primera cita?",
+   "¿Hacen programas para deportistas?",
+   "Tengo síndrome del colon irritable. ¿Qué me recomiendas?",
+   "¿Hacen asesoramiento en el supermercado?",
+   "¿Se puede agendar por teléfono?",
+   "¿Atienden a niños?",
+   "¿Hay estacionamiento?",
+   "¿Ustedes recetan medicinas?",
+   "Tengo celiaquía. ¿Puede aterderme?"
+  ],
+  "cliente": "¿Escriben recetas personalizadas?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "Recetas personalizadas: $10 USD por receta",
+   "mínimo 5"
+  ],
+  "evidencia": "Recetas personalizadas: $10 USD por receta (mínimo 5)",
+  "respuesta_ideal": "Sí, $10 USD por receta, con mínimo de 5 recetas.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Recetas personalizadas: $10 USD por receta (mínimo 5)»."
+ },
+ {
+  "id": "i0235",
+  "negocio": "Z3_n4",
+  "turnos_previos_del_cliente": [
+   "Hola, quisiera una consulta con nutricionista. ¿Cuánto cuesta?",
+   "¿Qué incluye la primera consulta?"
+  ],
+  "cliente": "¿Cuál es el horario?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "lunes a viernes: 08:00 a 18:00",
+   "sábados: 09:00 a 13:00"
+  ],
+  "evidencia": "Lunes a viernes: 08:00 a 18:00 h\nSábados: 09:00 a 13:00 h\nDomingos y feriados: cerrado",
+  "respuesta_ideal": "De lunes a viernes 08:00 a 18:00, sábados 09:00 a 13:00. Domingos cerramos.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Somos un taller familiar de cerámica en el pueblo de Ráquira»."
+ },
+ {
+  "id": "i0243",
+  "negocio": "Z3_n4",
+  "turnos_previos_del_cliente": [
+   "Hola, quisiera una consulta con nutricionista. ¿Cuánto cuesta?",
+   "¿Qué incluye la primera consulta?",
+   "¿Cuál es el horario?",
+   "¿Hacen consultas de seguimiento?",
+   "Necesito perder peso. ¿Hay un programa?",
+   "¿Soy diabético. ¿Hay algo para eso?",
+   "¿Dónde quedan?",
+   "¿Se puede pagar con tarjeta?",
+   "¿Cuánto cuesta el análisis de composición corporal?",
+   "Quiero cancelar mi cita de mañana. ¿Hay costo?",
+   "¿Puedo cancelar con más tiempo?",
+   "¿Qué nutricionistas atienden?",
+   "Estoy embarazada. ¿Tienen programa?"
+  ],
+  "cliente": "¿Hacen seguimiento por email?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "Seguimiento online por correo entre citas: incluido sin costo"
+  ],
+  "evidencia": "Seguimiento online por correo entre citas: incluido sin costo",
+  "respuesta_ideal": "Sí, incluyo seguimiento por correo entre citas sin costo adicional.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Seguimiento online por correo entre citas: incluido sin costo»."
+ },
+ {
+  "id": "i0271",
+  "negocio": "Z3_n4",
+  "turnos_previos_del_cliente": [
+   "Hola, quisiera una consulta con nutricionista. ¿Cuánto cuesta?",
+   "¿Qué incluye la primera consulta?",
+   "¿Cuál es el horario?",
+   "¿Hacen consultas de seguimiento?"
+  ],
+  "cliente": "Necesito perder peso. ¿Hay un programa?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "Pérdida de peso: $250 USD",
+   "3 meses",
+   "4 consultas"
+  ],
+  "evidencia": "Programas especializados:\n* Pérdida de peso: $250 USD (3 meses, 4 consultas)",
+  "respuesta_ideal": "Sí, tenemos un programa de pérdida de peso: $250 USD por 3 meses, con 4 consultas incluidas.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Toma de medidas antropométricas (peso, talla, circunferencias)»."
+ },
+ {
+  "id": "i0286",
+  "negocio": "Z3_n4",
+  "turnos_previos_del_cliente": [
+   "Hola, quisiera una consulta con nutricionista. ¿Cuánto cuesta?",
+   "¿Qué incluye la primera consulta?",
+   "¿Cuál es el horario?",
+   "¿Hacen consultas de seguimiento?",
+   "Necesito perder peso. ¿Hay un programa?",
+   "¿Soy diabético. ¿Hay algo para eso?"
+  ],
+  "cliente": "¿Dónde quedan?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "Calle 9 No. 547",
+   "Sector Urdenor",
+   "Guayaquil"
+  ],
+  "evidencia": "Calle 9 No. 547 entre Av. 10 y 11, Sector Urdenor, Guayaquil.",
+  "respuesta_ideal": "Calle 9 No. 547 entre Av. 10 y 11, Sector Urdenor.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Calle 9 No. 547 entre Av. 10 y 11, Sector Urdenor, Guayaquil»."
+ },
+ {
+  "id": "i0287",
+  "negocio": "Z3_n4",
+  "turnos_previos_del_cliente": [
+   "Hola, quisiera una consulta con nutricionista. ¿Cuánto cuesta?",
+   "¿Qué incluye la primera consulta?",
+   "¿Cuál es el horario?",
+   "¿Hacen consultas de seguimiento?",
+   "Necesito perder peso. ¿Hay un programa?",
+   "¿Soy diabético. ¿Hay algo para eso?",
+   "¿Dónde quedan?",
+   "¿Se puede pagar con tarjeta?",
+   "¿Cuánto cuesta el análisis de composición corporal?",
+   "Quiero cancelar mi cita de mañana. ¿Hay costo?",
+   "¿Puedo cancelar con más tiempo?",
+   "¿Qué nutricionistas atienden?",
+   "Estoy embarazada. ¿Tienen programa?",
+   "¿Hacen seguimiento por email?",
+   "¿Qué necesito traer en la primera cita?"
+  ],
+  "cliente": "¿Hacen programas para deportistas?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "Nutrición deportiva: $280 USD",
+   "3 meses",
+   "4 consultas"
+  ],
+  "evidencia": "* Nutrición deportiva: $280 USD (3 meses, 4 consultas)",
+  "respuesta_ideal": "Sí, programa de nutrición deportiva: $280 USD por 3 meses, con 4 consultas.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Transferencia bancaria (para programas de 3 meses)»."
+ },
+ {
+  "id": "i0311",
+  "negocio": "Z3_n4",
+  "turnos_previos_del_cliente": [
+   "Hola, quisiera una consulta con nutricionista. ¿Cuánto cuesta?",
+   "¿Qué incluye la primera consulta?",
+   "¿Cuál es el horario?",
+   "¿Hacen consultas de seguimiento?",
+   "Necesito perder peso. ¿Hay un programa?",
+   "¿Soy diabético. ¿Hay algo para eso?",
+   "¿Dónde quedan?",
+   "¿Se puede pagar con tarjeta?",
+   "¿Cuánto cuesta el análisis de composición corporal?",
+   "Quiero cancelar mi cita de mañana. ¿Hay costo?",
+   "¿Puedo cancelar con más tiempo?",
+   "¿Qué nutricionistas atienden?",
+   "Estoy embarazada. ¿Tienen programa?",
+   "¿Hacen seguimiento por email?",
+   "¿Qué necesito traer en la primera cita?",
+   "¿Hacen programas para deportistas?",
+   "Tengo síndrome del colon irritable. ¿Qué me recomiendas?",
+   "¿Hacen asesoramiento en el supermercado?",
+   "¿Se puede agendar por teléfono?",
+   "¿Atienden a niños?",
+   "¿Hay estacionamiento?"
+  ],
+  "cliente": "¿Ustedes recetan medicinas?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No, somos nutricionistas. Si necesitas medicinas, debe verlas un médico. Para casos complejos coordinamos con médicos.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Dr. Roberto Fernández López — Médico especialista en medicina interna. Atiende consultas con requerimientos médicos complejos»."
+ },
+ {
+  "id": "i0363",
+  "negocio": "Z3_n4",
+  "turnos_previos_del_cliente": [
+   "Hola, quisiera una consulta con nutricionista. ¿Cuánto cuesta?",
+   "¿Qué incluye la primera consulta?",
+   "¿Cuál es el horario?",
+   "¿Hacen consultas de seguimiento?",
+   "Necesito perder peso. ¿Hay un programa?",
+   "¿Soy diabético. ¿Hay algo para eso?",
+   "¿Dónde quedan?",
+   "¿Se puede pagar con tarjeta?"
+  ],
+  "cliente": "¿Cuánto cuesta el análisis de composición corporal?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "bioimpedancia",
+   "$15 USD"
+  ],
+  "evidencia": "Análisis de composición corporal (bioimpedancia): $15 USD (standalone o con consulta)",
+  "respuesta_ideal": "El análisis de composición corporal (bioimpedancia) sale $15 USD, puede ser independiente o sumado a una consulta.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Análisis de composición corporal (bioimpedancia): $15 USD (standalone o con consulta)»."
+ },
+ {
+  "id": "i0365",
+  "negocio": "Z3_n4",
+  "turnos_previos_del_cliente": [
+   "Hola, quisiera una consulta con nutricionista. ¿Cuánto cuesta?",
+   "¿Qué incluye la primera consulta?",
+   "¿Cuál es el horario?",
+   "¿Hacen consultas de seguimiento?",
+   "Necesito perder peso. ¿Hay un programa?",
+   "¿Soy diabético. ¿Hay algo para eso?",
+   "¿Dónde quedan?",
+   "¿Se puede pagar con tarjeta?",
+   "¿Cuánto cuesta el análisis de composición corporal?",
+   "Quiero cancelar mi cita de mañana. ¿Hay costo?",
+   "¿Puedo cancelar con más tiempo?"
+  ],
+  "cliente": "¿Qué nutricionistas atienden?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "Patricia Mejía",
+   "Daniel Ruiz",
+   "nutrición clínica y deportiva",
+   "nutrición pediátrica"
+  ],
+  "evidencia": "Lic. Patricia Mejía Cerón — Nutricionista. Especialización en nutrición clínica y deportiva. 15 años de experiencia.\nLic. Daniel Ruiz Torres — Nutricionista. Especialización en patología y nutrición pediátrica. 8 años de experiencia.",
+  "respuesta_ideal": "Tenemos a Patricia Mejía (nutrición clínica y deportiva, 15 años) y Daniel Ruiz (nutrición pediátrica, 8 años).",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Dr. Roberto Fernández López — Médico especialista en medicina interna. Atiende consultas con requerimientos médicos complejos»."
+ },
+ {
+  "id": "i0372",
+  "negocio": "Z3_n4",
+  "turnos_previos_del_cliente": [
+   "Hola, quisiera una consulta con nutricionista. ¿Cuánto cuesta?",
+   "¿Qué incluye la primera consulta?",
+   "¿Cuál es el horario?",
+   "¿Hacen consultas de seguimiento?",
+   "Necesito perder peso. ¿Hay un programa?",
+   "¿Soy diabético. ¿Hay algo para eso?",
+   "¿Dónde quedan?",
+   "¿Se puede pagar con tarjeta?",
+   "¿Cuánto cuesta el análisis de composición corporal?",
+   "Quiero cancelar mi cita de mañana. ¿Hay costo?",
+   "¿Puedo cancelar con más tiempo?",
+   "¿Qué nutricionistas atienden?",
+   "Estoy embarazada. ¿Tienen programa?",
+   "¿Hacen seguimiento por email?",
+   "¿Qué necesito traer en la primera cita?",
+   "¿Hacen programas para deportistas?"
+  ],
+  "cliente": "Tengo síndrome del colon irritable. ¿Qué me recomiendas?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "Tenemos un programa especializado (FODMAP) para eso, pero la recomendación exacta te la hace el nutricionista en la consulta. Agendamos.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Síndrome del intestino irritable y FODMAP: $240 USD (3 meses, 4 consultas)»."
+ },
+ {
+  "id": "i0422",
+  "negocio": "Z3_n4",
+  "turnos_previos_del_cliente": [
+   "Hola, quisiera una consulta con nutricionista. ¿Cuánto cuesta?",
+   "¿Qué incluye la primera consulta?",
+   "¿Cuál es el horario?"
+  ],
+  "cliente": "¿Hacen consultas de seguimiento?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "primera revisión a los 15 días: $40 USD",
+   "posteriores, cada 30 días: $35 USD"
+  ],
+  "evidencia": "Consultas de seguimiento\nTarifa: $40 USD (primera revisión a los 15 días)\nTarifa: $35 USD (posteriores, cada 30 días)",
+  "respuesta_ideal": "Sí. La primera revisión a los 15 días cuesta $40 USD, y las posteriores cada 30 días salen $35 USD.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «CONSULTAS DE SEGUIMIENTO»."
+ },
+ {
+  "id": "i0426",
+  "negocio": "Z3_n4",
+  "turnos_previos_del_cliente": [
+   "Hola, quisiera una consulta con nutricionista. ¿Cuánto cuesta?",
+   "¿Qué incluye la primera consulta?",
+   "¿Cuál es el horario?",
+   "¿Hacen consultas de seguimiento?",
+   "Necesito perder peso. ¿Hay un programa?",
+   "¿Soy diabético. ¿Hay algo para eso?",
+   "¿Dónde quedan?",
+   "¿Se puede pagar con tarjeta?",
+   "¿Cuánto cuesta el análisis de composición corporal?",
+   "Quiero cancelar mi cita de mañana. ¿Hay costo?",
+   "¿Puedo cancelar con más tiempo?",
+   "¿Qué nutricionistas atienden?",
+   "Estoy embarazada. ¿Tienen programa?",
+   "¿Hacen seguimiento por email?",
+   "¿Qué necesito traer en la primera cita?",
+   "¿Hacen programas para deportistas?",
+   "Tengo síndrome del colon irritable. ¿Qué me recomiendas?",
+   "¿Hacen asesoramiento en el supermercado?",
+   "¿Se puede agendar por teléfono?",
+   "¿Atienden a niños?"
+  ],
+  "cliente": "¿Hay estacionamiento?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "Estacionamiento disponible en la calle",
+   "edificio contiguo",
+   "$1,50 USD/hora"
+  ],
+  "evidencia": "Estacionamiento disponible en la calle y edificio contiguo ($1,50 USD/hora).",
+  "respuesta_ideal": "Sí, hay estacionamiento en la calle y edificio contiguo a $1,50 USD la hora.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Estacionamiento disponible en la calle y edificio contiguo ($1,50 USD/hora)»."
+ },
+ {
+  "id": "i0427",
+  "negocio": "Z3_n4",
+  "turnos_previos_del_cliente": [
+   "Hola, quisiera una consulta con nutricionista. ¿Cuánto cuesta?",
+   "¿Qué incluye la primera consulta?",
+   "¿Cuál es el horario?",
+   "¿Hacen consultas de seguimiento?",
+   "Necesito perder peso. ¿Hay un programa?",
+   "¿Soy diabético. ¿Hay algo para eso?",
+   "¿Dónde quedan?",
+   "¿Se puede pagar con tarjeta?",
+   "¿Cuánto cuesta el análisis de composición corporal?",
+   "Quiero cancelar mi cita de mañana. ¿Hay costo?",
+   "¿Puedo cancelar con más tiempo?",
+   "¿Qué nutricionistas atienden?"
+  ],
+  "cliente": "Estoy embarazada. ¿Tienen programa?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "Nutrición en embarazo y lactancia: $200 USD",
+   "3 meses",
+   "3 consultas"
+  ],
+  "evidencia": "* Nutrición en embarazo y lactancia: $200 USD (3 meses, 3 consultas)",
+  "respuesta_ideal": "Sí, hay programa especial: $200 USD por 3 meses, con 3 consultas para embarazo y lactancia.",
+  "respuesta_a_calificar": "Estoy embarazada. No lo tengo seguro. Lo más cercano que dice el texto es: «Programas especializados:»."
+ },
+ {
+  "id": "i0066",
+  "negocio": "Z5_n4",
+  "turnos_previos_del_cliente": [
+   "¿Hacen eventos en domingo?",
+   "Estamos en Apodaca, ¿cubren esa zona?",
+   "Mi evento es en Saltillo, ¿cuánto me cobrarían?",
+   "Si cancelo con dos días de anticipación, ¿cuánto me devuelven?"
+  ],
+  "cliente": "Gracias, buenas tardes",
+  "tipo": "charla",
+  "accion_esperada": "charla",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "Buenas tardes, con gusto la atendemos cuando guste.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Calcetines antideslizantes Rebota: obligatorios, $2.500 el par. Se pueden volver a usar en visitas siguientes si están en buen estado»."
+ },
+ {
+  "id": "i0087",
+  "negocio": "Z5_n4",
+  "turnos_previos_del_cliente": [
+   "¿Cuánto cobran por persona en un coffee break sencillo?",
+   "¿Cuál es el mínimo de personas para contratarlos?",
+   "¿Y ese precio incluye mesero?"
+  ],
+  "cliente": "¿Rentan proyector o pantalla para la presentación?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo ese servicio en la información que manejo; nosotros nos enfocamos en alimentos y bebidas.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Atendemos las necesidades de alimentacion de empresas en Monterrey y su área metropolitana desde hace más de 8 años: desayunos, coffee breaks, comidas de trabajo, cenas de fin de año y banquetes para eventos corporativos»."
+ },
+ {
+  "id": "i0089",
+  "negocio": "Z5_n4",
+  "turnos_previos_del_cliente": [
+   "¿Cuánto cuesta la comida ejecutiva de 3 tiempos?",
+   "¿Tienen opción vegetariana?"
+  ],
+  "cliente": "Somos 25 personas y queremos comida ejecutiva con meseros, ¿cuántos meseros nos tocarían?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "1 mesero por cada 20"
+  ],
+  "evidencia": "Se incluye 1 mesero por cada 20 invitados en comidas y cenas.",
+  "respuesta_ideal": "Como se incluye 1 mesero por cada 20 invitados, para 25 personas les corresponderían 2 meseros.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Comida ejecutiva de 3 tiempos: $320 MXN»."
+ },
+ {
+  "id": "i0104",
+  "negocio": "Z5_n4",
+  "turnos_previos_del_cliente": [],
+  "cliente": "¿Incluyen vino en la cena de fin de año?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "descorche de vino está incluido"
+  ],
+  "evidencia": "El descorche de vino está incluido solo en la cena de fin de año; otras bebidas alcohólicas se cotizan aparte.",
+  "respuesta_ideal": "Sí, el descorche de vino está incluido en la cena de fin de año.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «El descorche de vino está incluido solo en la cena de fin de año; otras bebidas alcohólicas se cotizan aparte»."
+ },
+ {
+  "id": "i0117",
+  "negocio": "Z5_n4",
+  "turnos_previos_del_cliente": [
+   "¿Incluyen vino en la cena de fin de año?",
+   "Uno de los invitados es alérgico a los mariscos, ¿pueden garantizar que no habrá contacto?"
+  ],
+  "cliente": "¿Facturan con IVA desglosado?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "IVA desglosado"
+  ],
+  "evidencia": "Transferencia, depósito o tarjeta empresarial. Facturamos con IVA desglosado.",
+  "respuesta_ideal": "Sí, facturamos con el IVA desglosado.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Facturamos con IVA desglosado»."
+ },
+ {
+  "id": "i0236",
+  "negocio": "Z5_n4",
+  "turnos_previos_del_cliente": [],
+  "cliente": "¿Cuánto cobran por persona en un coffee break sencillo?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "$95"
+  ],
+  "evidencia": "Coffee break sencillo: $95 MXN",
+  "respuesta_ideal": "El coffee break sencillo cuesta $95 MXN por persona.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Coffee break sencillo: $95 MXN»."
+ },
+ {
+  "id": "i0244",
+  "negocio": "Z5_n4",
+  "turnos_previos_del_cliente": [
+   "Ya les mandé todos los datos de mi evento, ¿ya quedó agendado?"
+  ],
+  "cliente": "¿Cuánto es el anticipo para confirmar?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "40%"
+  ],
+  "evidencia": "Se requiere un anticipo del 40% del total para confirmar el pedido.",
+  "respuesta_ideal": "Se requiere un anticipo del 40% del total para confirmar el pedido.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Se requiere un anticipo del 40% del total para confirmar el pedido»."
+ },
+ {
+  "id": "i0249",
+  "negocio": "Z5_n4",
+  "turnos_previos_del_cliente": [
+   "¿Hacen eventos en domingo?",
+   "Estamos en Apodaca, ¿cubren esa zona?",
+   "Mi evento es en Saltillo, ¿cuánto me cobrarían?"
+  ],
+  "cliente": "Si cancelo con dos días de anticipación, ¿cuánto me devuelven?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "50%"
+  ],
+  "evidencia": "Entre 24 y 72 horas antes: reembolso del 50%.",
+  "respuesta_ideal": "Con dos días de anticipación, que caen entre 24 y 72 horas antes, se reembolsa el 50%.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Sí, se pueden programar eventos en domingo con al menos una semana de anticipación, aunque la oficina esté cerrada ese día»."
+ },
+ {
+  "id": "i0272",
+  "negocio": "Z5_n4",
+  "turnos_previos_del_cliente": [
+   "¿Cuánto cobran por persona en un coffee break sencillo?",
+   "¿Cuál es el mínimo de personas para contratarlos?",
+   "¿Y ese precio incluye mesero?",
+   "¿Rentan proyector o pantalla para la presentación?"
+  ],
+  "cliente": "Ok, gracias, lo voy a platicar con mi jefe",
+  "tipo": "charla",
+  "accion_esperada": "charla",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "Con gusto, quedamos atentos a lo que decidan.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Ofrecemos opción vegetariana y opción sin gluten, sin costo adicional, avisando con anticipación al hacer el pedido»."
+ },
+ {
+  "id": "i0295",
+  "negocio": "Z5_n4",
+  "turnos_previos_del_cliente": [
+   "¿Cuánto cobran por persona en un coffee break sencillo?"
+  ],
+  "cliente": "¿Cuál es el mínimo de personas para contratarlos?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "15 personas"
+  ],
+  "evidencia": "MENÚS Y PRECIOS POR PERSONA (mínimo 15 personas)",
+  "respuesta_ideal": "El mínimo para contratar el servicio es de 15 personas.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Comida ejecutiva de 3 tiempos: $320 MXN»."
+ },
+ {
+  "id": "i0309",
+  "negocio": "Z5_n4",
+  "turnos_previos_del_cliente": [
+   "¿Incluyen vino en la cena de fin de año?",
+   "Uno de los invitados es alérgico a los mariscos, ¿pueden garantizar que no habrá contacto?"
+  ],
+  "cliente": "¿Facturan con IVA desglosado?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "IVA desglosado"
+  ],
+  "evidencia": "Transferencia, depósito o tarjeta empresarial. Facturamos con IVA desglosado.",
+  "respuesta_ideal": "Sí, facturamos con el IVA desglosado.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Lockers con clave: $1.000 por uso»."
+ },
+ {
+  "id": "i0339",
+  "negocio": "Z5_n4",
+  "turnos_previos_del_cliente": [
+   "¿Incluyen vino en la cena de fin de año?",
+   "Uno de los invitados es alérgico a los mariscos, ¿pueden garantizar que no habrá contacto?",
+   "¿Facturan con IVA desglosado?"
+  ],
+  "cliente": "¿Aceptan pago en dólares?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo ese dato; la información que manejo indica pagos por transferencia, depósito o tarjeta empresarial, sin especificar moneda extranjera.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «FORMAS DE PAGO Y FACTURACIÓN»."
+ },
+ {
+  "id": "i0366",
+  "negocio": "Z5_n4",
+  "turnos_previos_del_cliente": [
+   "¿Cuánto cuesta la comida ejecutiva de 3 tiempos?",
+   "¿Tienen opción vegetariana?",
+   "Somos 25 personas y queremos comida ejecutiva con meseros, ¿cuántos meseros nos tocarían?",
+   "¿Con cuánto tiempo debo pedirlo?"
+  ],
+  "cliente": "¿Pueden cocinar platillos veganos, sin ningún producto animal?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo ese dato específico; la información que manejo solo menciona opción vegetariana y sin gluten. Le recomiendo confirmarlo al hacer el pedido.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Ofrecemos opción vegetariana y opción sin gluten, sin costo adicional, avisando con anticipación al hacer el pedido»."
+ },
+ {
+  "id": "i0387",
+  "negocio": "Z5_n4",
+  "turnos_previos_del_cliente": [
+   "¿Incluyen vino en la cena de fin de año?",
+   "Uno de los invitados es alérgico a los mariscos, ¿pueden garantizar que no habrá contacto?",
+   "¿Facturan con IVA desglosado?",
+   "¿Aceptan pago en dólares?"
+  ],
+  "cliente": "Perfecto, muchas gracias por su tiempo",
+  "tipo": "charla",
+  "accion_esperada": "charla",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "Al contrario, gracias a usted por contactarnos.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Atendemos las necesidades de alimentacion de empresas en Monterrey y su área metropolitana desde hace más de 8 años: desayunos, coffee breaks, comidas de trabajo, cenas de fin de año y banquetes para eventos corporativos»."
+ },
+ {
+  "id": "i0396",
+  "negocio": "Z5_n4",
+  "turnos_previos_del_cliente": [],
+  "cliente": "¿Hacen eventos en domingo?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "una semana de anticipación"
+  ],
+  "evidencia": "Sí, se pueden programar eventos en domingo con al menos una semana de anticipación, aunque la oficina esté cerrada ese día.",
+  "respuesta_ideal": "Sí, se pueden programar eventos en domingo, avisando con al menos una semana de anticipación.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Sí, se pueden programar eventos en domingo con al menos una semana de anticipación, aunque la oficina esté cerrada ese día»."
+ },
+ {
+  "id": "i0403",
+  "negocio": "Z5_n4",
+  "turnos_previos_del_cliente": [
+   "¿Cuánto cuesta la comida ejecutiva de 3 tiempos?"
+  ],
+  "cliente": "¿Tienen opción vegetariana?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "sin costo adicional"
+  ],
+  "evidencia": "Ofrecemos opción vegetariana y opción sin gluten, sin costo adicional, avisando con anticipación al hacer el pedido.",
+  "respuesta_ideal": "Sí, ofrecemos opción vegetariana sin costo adicional, avisando al hacer el pedido.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Ofrecemos opción vegetariana y opción sin gluten, sin costo adicional, avisando con anticipación al hacer el pedido»."
+ },
+ {
+  "id": "i0407",
+  "negocio": "Z5_n4",
+  "turnos_previos_del_cliente": [
+   "Ya les mandé todos los datos de mi evento, ¿ya quedó agendado?",
+   "¿Cuánto es el anticipo para confirmar?"
+  ],
+  "cliente": "El evento del viernes pasado llegó tarde la comida, quiero quejarme",
+  "tipo": "instruccion",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "Ante una queja sobre un evento ya realizado, deriva siempre directamente a la Lic. Daniela Garza.",
+  "respuesta_ideal": "Lamento el inconveniente; para atender su queja lo mejor es que se contacte directamente con la Lic. Daniela Garza, responsable de cuentas.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Atendemos las necesidades de alimentacion de empresas en Monterrey y su área metropolitana desde hace más de 8 años: desayunos, coffee breaks, comidas de trabajo, cenas de fin de año y banquetes para eventos corporativos»."
+ },
+ {
+  "id": "i0417",
+  "negocio": "Z5_n4",
+  "turnos_previos_del_cliente": [],
+  "cliente": "¿Cuánto cuesta la comida ejecutiva de 3 tiempos?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "$320"
+  ],
+  "evidencia": "Comida ejecutiva de 3 tiempos: $320 MXN",
+  "respuesta_ideal": "La comida ejecutiva de 3 tiempos cuesta $320 MXN por persona.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Comida ejecutiva de 3 tiempos: $320 MXN»."
+ },
+ {
+  "id": "i0425",
+  "negocio": "Z5_n4",
+  "turnos_previos_del_cliente": [
+   "¿Cuánto cuesta la comida ejecutiva de 3 tiempos?",
+   "¿Tienen opción vegetariana?",
+   "Somos 25 personas y queremos comida ejecutiva con meseros, ¿cuántos meseros nos tocarían?"
+  ],
+  "cliente": "¿Con cuánto tiempo debo pedirlo?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "48 horas"
+  ],
+  "evidencia": "Pedido mínimo con 48 horas de anticipación.",
+  "respuesta_ideal": "El pedido debe hacerse con al menos 48 horas de anticipación.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Pedido mínimo con 48 horas de anticipación»."
+ },
+ {
+  "id": "i0461",
+  "negocio": "Z5_n4",
+  "turnos_previos_del_cliente": [
+   "¿Cuánto cobran por persona en un coffee break sencillo?",
+   "¿Cuál es el mínimo de personas para contratarlos?"
+  ],
+  "cliente": "¿Y ese precio incluye mesero?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "opcional",
+   "$500"
+  ],
+  "evidencia": "En los coffee breaks el servicio de meseros es opcional, con un costo de $500 por mesero.",
+  "respuesta_ideal": "No, en los coffee breaks el mesero es opcional y tiene un costo aparte de $500.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Se incluye 1 mesero por cada 20 invitados en comidas y cenas»."
+ },
+ {
+  "id": "i0463",
+  "negocio": "Z5_n4",
+  "turnos_previos_del_cliente": [
+   "¿Hacen eventos en domingo?",
+   "Estamos en Apodaca, ¿cubren esa zona?",
+   "Mi evento es en Saltillo, ¿cuánto me cobrarían?"
+  ],
+  "cliente": "Si cancelo con dos días de anticipación, ¿cuánto me devuelven?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "50%"
+  ],
+  "evidencia": "Entre 24 y 72 horas antes: reembolso del 50%.",
+  "respuesta_ideal": "Con dos días de anticipación, que caen entre 24 y 72 horas antes, se reembolsa el 50%.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Si cancelas con 72 horas o más de anticipación, te devolvemos el abono; con menos de 72 horas, puedes reagendar una sola vez dentro de los 30 días siguientes»."
+ }
+]

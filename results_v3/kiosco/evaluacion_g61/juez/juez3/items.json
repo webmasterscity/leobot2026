@@ -1,0 +1,1293 @@
+[
+ {
+  "id": "i0000",
+  "negocio": "Z1_n3",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Quiero poner una queja, el chofer de la unidad 118 me trató muy mal",
+  "tipo": "instruccion",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "Quejas sobre un chofer o una unidad: pide el número de la unidad y la fecha del viaje, y remite al departamento de Calidad, calidad@radiotaxiproceres.do o (809) 531-4400 extensión 3.",
+  "respuesta_ideal": "Lamento lo ocurrido. ¿Me indica la fecha del viaje? Puede presentar la queja al departamento de Calidad en calidad@radiotaxiproceres.do o al (809) 531-4400, extensión 3.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «El chofer lo espera en la salida de llegadas internacionales con un letrero con su nombre»."
+ },
+ {
+  "id": "i0019",
+  "negocio": "Z1_n3",
+  "turnos_previos_del_cliente": [
+   "Anoche se me quedó el celular en uno de sus taxis",
+   "¿Por cuánto tiempo guardan las cosas que la gente olvida?",
+   "Hoy es sábado, ¿hasta qué hora está abierta la oficina?"
+  ],
+  "cliente": "¿y el domingo?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "cerrada"
+  ],
+  "evidencia": "Los domingos y días feriados la oficina permanece cerrada, pero los taxis siguen trabajando normal.",
+  "respuesta_ideal": "Los domingos la oficina permanece cerrada, aunque los taxis siguen trabajando normal.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «La oficina administrativa queda en la Av. 27 de Febrero #318, Ensanche Naco, Santo Domingo, D. N. Atiende de lunes a viernes de 8:00 a. m. a 5:00 p. m. y los sábados de 8:00 a. m. a 12:00 m. Los domingos y días feriados la oficina permanece cerrada, pero los taxis siguen trabajando normal»."
+ },
+ {
+  "id": "i0020",
+  "negocio": "Z1_n3",
+  "turnos_previos_del_cliente": [
+   "Anoche se me quedó el celular en uno de sus taxis",
+   "¿Por cuánto tiempo guardan las cosas que la gente olvida?"
+  ],
+  "cliente": "Hoy es sábado, ¿hasta qué hora está abierta la oficina?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "12:00 m."
+  ],
+  "evidencia": "los sábados de 8:00 a. m. a 12:00 m.",
+  "respuesta_ideal": "Los sábados la oficina atiende de 8:00 a. m. a 12:00 m.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «La oficina administrativa queda en la Av. 27 de Febrero #318, Ensanche Naco, Santo Domingo, D. N. Atiende de lunes a viernes de 8:00 a. m. a 5:00 p. m. y los sábados de 8:00 a. m. a 12:00 m. Los domingos y días feriados la oficina permanece cerrada, pero los taxis siguen trabajando normal»."
+ },
+ {
+  "id": "i0026",
+  "negocio": "Z1_n3",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Buenas noches, voy a mandar a buscar a mi mamá al aeropuerto. Si el vuelo se retrasa, ¿cuánto tiempo la espera el chofer?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "45 minutos"
+  ],
+  "evidencia": "tiene 45 minutos de espera gratis contados desde que aterriza el avión; después aplica la tarifa de espera normal.",
+  "respuesta_ideal": "Buenas noches. Monitoreamos el vuelo y el chofer espera 45 minutos gratis contados desde que aterriza el avión.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Monitoreamos su vuelo, así que si se atrasa no hay problema: tiene 45 minutos de espera gratis contados desde que aterriza el avión; después aplica la tarifa de espera normal»."
+ },
+ {
+  "id": "i0035",
+  "negocio": "Z1_n3",
+  "turnos_previos_del_cliente": [
+   "Buenas, ¿puedo llevar a mi perro en el taxi? Es un labrador grande"
+  ],
+  "cliente": "¿Y un gatito en su jaulita?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "sin costo"
+  ],
+  "evidencia": "Las mascotas pequeñas dentro de su transportadora viajan sin costo.",
+  "respuesta_ideal": "Las mascotas pequeñas dentro de su transportadora viajan sin costo.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Dispone de 14 días naturales desde la entrega para devolver un producto sin usar y en su embalaje original»."
+ },
+ {
+  "id": "i0044",
+  "negocio": "Z1_n3",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Anoche se me quedó el celular en uno de sus taxis",
+  "tipo": "instruccion",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "Objetos perdidos: pide la fecha, la hora aproximada y, si lo tiene, el número de la unidad, y remite a la oficina al (809) 531-4400 extensión 5.",
+  "respuesta_ideal": "Lo siento mucho. ¿A qué hora fue, más o menos, y tiene el número de la unidad? Con esos datos comuníquese con la oficina al (809) 531-4400, extensión 5.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «La oficina administrativa queda en la Av. 27 de Febrero #318, Ensanche Naco, Santo Domingo, D. N. Atiende de lunes a viernes de 8:00 a. m. a 5:00 p. m. y los sábados de 8:00 a. m. a 12:00 m. Los domingos y días feriados la oficina permanece cerrada, pero los taxis siguen trabajando normal»."
+ },
+ {
+  "id": "i0057",
+  "negocio": "Z1_n3",
+  "turnos_previos_del_cliente": [
+   "Hola! cuánto cuesta un taxi del aeropuerto Las Américas a la Zona Colonial?",
+   "¿y en yipeta?",
+   "¿Se le puede pagar al chofer en dólares?"
+  ],
+  "cliente": "Somos 7 personas con bastantes maletas, ¿qué vehículo nos sirve?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "10 pasajeros"
+  ],
+  "evidencia": "- Minivan: hasta 10 pasajeros, ideal para grupos y equipaje voluminoso.",
+  "respuesta_ideal": "Les sirve la minivan, que lleva hasta 10 pasajeros y es ideal para grupos con equipaje voluminoso.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Sí, en yipeta o minivan, siempre que la silla sea plegable»."
+ },
+ {
+  "id": "i0075",
+  "negocio": "Z1_n3",
+  "turnos_previos_del_cliente": [
+   "Buenas noches, voy a mandar a buscar a mi mamá al aeropuerto. Si el vuelo se retrasa, ¿cuánto tiempo la espera el chofer?"
+  ],
+  "cliente": "¿Y si pasa de ese tiempo?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "RD$20 por minuto"
+  ],
+  "evidencia": "Tiempo de espera: los primeros 10 minutos son gratis; después se cobran RD$20 por minuto.",
+  "respuesta_ideal": "Después de esos 45 minutos se aplica la tarifa de espera normal, que es de RD$20 por minuto.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Los perros medianos y grandes solo viajan en nuestras unidades pet friendly, que se reservan con 24 horas de anticipación y tienen un recargo de RD$300 por viaje»."
+ },
+ {
+  "id": "i0125",
+  "negocio": "Z1_n3",
+  "turnos_previos_del_cliente": [
+   "Anoche se me quedó el celular en uno de sus taxis",
+   "¿Por cuánto tiempo guardan las cosas que la gente olvida?",
+   "Hoy es sábado, ¿hasta qué hora está abierta la oficina?",
+   "¿y el domingo?"
+  ],
+  "cliente": "¿Ustedes tienen oficina en Santiago?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo información de una oficina en Santiago; la que conozco está en la Av. 27 de Febrero #318, Ensanche Naco.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «La oficina administrativa queda en la Av. 27 de Febrero #318, Ensanche Naco, Santo Domingo, D. N. Atiende de lunes a viernes de 8:00 a. m. a 5:00 p. m. y los sábados de 8:00 a. m. a 12:00 m. Los domingos y días feriados la oficina permanece cerrada, pero los taxis siguen trabajando normal»."
+ },
+ {
+  "id": "i0129",
+  "negocio": "Z1_n3",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Buenas, ¿puedo llevar a mi perro en el taxi? Es un labrador grande",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "24 horas",
+   "RD$300"
+  ],
+  "evidencia": "Los perros medianos y grandes solo viajan en nuestras unidades pet friendly, que se reservan con 24 horas de anticipación y tienen un recargo de RD$300 por viaje.",
+  "respuesta_ideal": "Sí, pero los perros grandes solo viajan en las unidades pet friendly, que se reservan con 24 horas de anticipación y tienen un recargo de RD$300 por viaje.",
+  "respuesta_a_calificar": "Buenas. No lo tengo seguro. Lo más cercano que dice el texto es: «Los perros medianos y grandes solo viajan en nuestras unidades pet friendly, que se reservan con 24 horas de anticipación y tienen un recargo de RD$300 por viaje»."
+ },
+ {
+  "id": "i0140",
+  "negocio": "Z1_n3",
+  "turnos_previos_del_cliente": [
+   "Buenas, ¿puedo llevar a mi perro en el taxi? Es un labrador grande",
+   "¿Y un gatito en su jaulita?",
+   "Tambien voy con mi niña, que hay que hacer para que el taxi traiga silla?"
+  ],
+  "cliente": "¿Esa silla sirve para un bebé recién nacido?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo ese dato; no sabría decirle si la silla sirve para un recién nacido.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Silla de bebé o booster: sin costo, se pide al momento de reservar con al menos 2 horas de anticipación»."
+ },
+ {
+  "id": "i0144",
+  "negocio": "Z1_n3",
+  "turnos_previos_del_cliente": [
+   "Hola! cuánto cuesta un taxi del aeropuerto Las Américas a la Zona Colonial?",
+   "¿y en yipeta?",
+   "¿Se le puede pagar al chofer en dólares?"
+  ],
+  "cliente": "Somos 7 personas con bastantes maletas, ¿qué vehículo nos sirve?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "10 pasajeros"
+  ],
+  "evidencia": "- Minivan: hasta 10 pasajeros, ideal para grupos y equipaje voluminoso.",
+  "respuesta_ideal": "Les sirve la minivan, que lleva hasta 10 pasajeros y es ideal para grupos con equipaje voluminoso.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Sedán: hasta 4 pasajeros y 2 maletas grandes»."
+ },
+ {
+  "id": "i0174",
+  "negocio": "Z1_n3",
+  "turnos_previos_del_cliente": [
+   "¿Cuánto es lo mínimo que cobran por una carrera?",
+   "¿cuanto me sale ir a Boca Chica?"
+  ],
+  "cliente": "¿Y hasta Punta Cana?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "US$150"
+  ],
+  "evidencia": "Distrito Nacional – Punta Cana / Bávaro ............ US$150 sedán / US$180 yipeta",
+  "respuesta_ideal": "A Punta Cana o Bávaro son US$150 en sedán y US$180 en yipeta.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Distrito Nacional – Punta Cana / Bávaro ............ US$150 sedán / US$180 yipeta»."
+ },
+ {
+  "id": "i0182",
+  "negocio": "Z1_n3",
+  "turnos_previos_del_cliente": [
+   "Hola! cuánto cuesta un taxi del aeropuerto Las Américas a la Zona Colonial?"
+  ],
+  "cliente": "¿y en yipeta?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "RD$2,300"
+  ],
+  "evidencia": "Aeropuerto Las Américas (AILA) – Distrito Nacional . sedán RD$1,800 / yipeta RD$2,300",
+  "respuesta_ideal": "En yipeta ese mismo trayecto cuesta RD$2,300, sin incluir peajes.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Sí, en yipeta o minivan, siempre que la silla sea plegable»."
+ },
+ {
+  "id": "i0197",
+  "negocio": "Z1_n3",
+  "turnos_previos_del_cliente": [
+   "Quiero poner una queja, el chofer de la unidad 118 me trató muy mal",
+   "Aparte de eso, en mi empresa queremos usar el servicio, ¿le dan crédito a empresas?",
+   "¿Y qué papeles piden para abrir la cuenta?"
+  ],
+  "cliente": "Gracias, que tenga buen día",
+  "tipo": "charla",
+  "accion_esperada": "charla",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "A usted, que tenga buen día.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Los objetos olvidados se guardan en la oficina durante 30 días»."
+ },
+ {
+  "id": "i0250",
+  "negocio": "Z1_n3",
+  "turnos_previos_del_cliente": [
+   "Buenas noches, voy a mandar a buscar a mi mamá al aeropuerto. Si el vuelo se retrasa, ¿cuánto tiempo la espera el chofer?",
+   "¿Y si pasa de ese tiempo?"
+  ],
+  "cliente": "¿Los choferes hablan inglés? Es que mi mamá casi no habla español",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo el dato de si los choferes hablan inglés.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Cancelar es gratis si el chofer todavía no ha salido hacia usted»."
+ },
+ {
+  "id": "i0334",
+  "negocio": "Z1_n3",
+  "turnos_previos_del_cliente": [
+   "Buenas, ¿puedo llevar a mi perro en el taxi? Es un labrador grande",
+   "¿Y un gatito en su jaulita?"
+  ],
+  "cliente": "Tambien voy con mi niña, que hay que hacer para que el taxi traiga silla?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "2 horas"
+  ],
+  "evidencia": "Silla de bebé o booster: sin costo, se pide al momento de reservar con al menos 2 horas de anticipación.",
+  "respuesta_ideal": "Pídala al reservar, con al menos 2 horas de anticipación; la silla de bebé o el booster no tienen costo.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Silla de bebé o booster: sin costo, se pide al momento de reservar con al menos 2 horas de anticipación»."
+ },
+ {
+  "id": "i0341",
+  "negocio": "Z1_n3",
+  "turnos_previos_del_cliente": [
+   "Buenas noches, voy a mandar a buscar a mi mamá al aeropuerto. Si el vuelo se retrasa, ¿cuánto tiempo la espera el chofer?"
+  ],
+  "cliente": "¿Y si pasa de ese tiempo?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "RD$20 por minuto"
+  ],
+  "evidencia": "Tiempo de espera: los primeros 10 minutos son gratis; después se cobran RD$20 por minuto.",
+  "respuesta_ideal": "Después de esos 45 minutos se aplica la tarifa de espera normal, que es de RD$20 por minuto.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Pasado ese plazo se donan»."
+ },
+ {
+  "id": "i0395",
+  "negocio": "Z1_n3",
+  "turnos_previos_del_cliente": [
+   "Anoche se me quedó el celular en uno de sus taxis",
+   "¿Por cuánto tiempo guardan las cosas que la gente olvida?",
+   "Hoy es sábado, ¿hasta qué hora está abierta la oficina?"
+  ],
+  "cliente": "¿y el domingo?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "cerrada"
+  ],
+  "evidencia": "Los domingos y días feriados la oficina permanece cerrada, pero los taxis siguen trabajando normal.",
+  "respuesta_ideal": "Los domingos la oficina permanece cerrada, aunque los taxis siguen trabajando normal.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Domingos y festivos: cerrado»."
+ },
+ {
+  "id": "i0398",
+  "negocio": "Z1_n3",
+  "turnos_previos_del_cliente": [
+   "Buenas, ¿puedo llevar a mi perro en el taxi? Es un labrador grande"
+  ],
+  "cliente": "¿Y un gatito en su jaulita?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "sin costo"
+  ],
+  "evidencia": "Las mascotas pequeñas dentro de su transportadora viajan sin costo.",
+  "respuesta_ideal": "Las mascotas pequeñas dentro de su transportadora viajan sin costo.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «El chofer lo espera en la salida de llegadas internacionales con un letrero con su nombre»."
+ },
+ {
+  "id": "i0465",
+  "negocio": "Z1_n3",
+  "turnos_previos_del_cliente": [
+   "¿Cuánto es lo mínimo que cobran por una carrera?"
+  ],
+  "cliente": "¿cuanto me sale ir a Boca Chica?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "RD$2,000"
+  ],
+  "evidencia": "Distrito Nacional – Boca Chica ..................... RD$2,000",
+  "respuesta_ideal": "Del Distrito Nacional a Boca Chica son RD$2,000 por trayecto, sin incluir peajes.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Distrito Nacional – Boca Chica ..................... RD$2,000»."
+ },
+ {
+  "id": "i0471",
+  "negocio": "Z1_n3",
+  "turnos_previos_del_cliente": [
+   "¿Cuánto es lo mínimo que cobran por una carrera?",
+   "¿cuanto me sale ir a Boca Chica?",
+   "¿Y hasta Punta Cana?"
+  ],
+  "cliente": "Tengo que ir a Juan Dolio hoy y volver mañana, ¿cuánto me costarían los dos viajes?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "RD$6,400"
+  ],
+  "evidencia": "TARIFAS (pesos dominicanos, por trayecto, solo ida) … Distrito Nacional – Juan Dolio ..................... RD$3,200",
+  "respuesta_ideal": "Cada trayecto a Juan Dolio cuesta RD$3,200, así que la ida y la vuelta serían RD$6,400, sin contar peajes.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Los perros medianos y grandes solo viajan en nuestras unidades pet friendly, que se reservan con 24 horas de anticipación y tienen un recargo de RD$300 por viaje»."
+ },
+ {
+  "id": "i0475",
+  "negocio": "Z1_n3",
+  "turnos_previos_del_cliente": [
+   "Hola! cuánto cuesta un taxi del aeropuerto Las Américas a la Zona Colonial?",
+   "¿y en yipeta?"
+  ],
+  "cliente": "¿Se le puede pagar al chofer en dólares?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "tasa del día"
+  ],
+  "evidencia": "Efectivo en pesos dominicanos o en dólares estadounidenses a la tasa del día.",
+  "respuesta_ideal": "Sí, puede pagar en efectivo en dólares estadounidenses, a la tasa del día.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Efectivo en pesos dominicanos o en dólares estadounidenses a la tasa del día. Tarjetas Visa y Mastercard con un recargo del 5 % (el chofer lleva terminal)»."
+ },
+ {
+  "id": "i0012",
+  "negocio": "Z3_n3",
+  "turnos_previos_del_cliente": [
+   "Hola, ¿cuanto cuesta alquilar un scooter por un día?",
+   "¿Qué necesito para alquilar?",
+   "¿Qué tal si alquilo por una semana?",
+   "¿Hay motos grandes?",
+   "¿Qué edad mínima hay?",
+   "¿Cómo es el seguro?",
+   "¿Cuál es el depósito?"
+  ],
+  "cliente": "¿Se incluye gasolina?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "tanque lleno",
+   "se devuelven llenos"
+  ],
+  "evidencia": "Los vehículos se entregan con el tanque lleno. Deben devolverse llenos.",
+  "respuesta_ideal": "Se entregan con tanque lleno y deben devolverse llenos. Si no, se cobra repostaje.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Los vehículos se entregan con el tanque lleno»."
+ },
+ {
+  "id": "i0032",
+  "negocio": "Z3_n3",
+  "turnos_previos_del_cliente": [
+   "Hola, ¿cuanto cuesta alquilar un scooter por un día?",
+   "¿Qué necesito para alquilar?",
+   "¿Qué tal si alquilo por una semana?",
+   "¿Hay motos grandes?",
+   "¿Qué edad mínima hay?",
+   "¿Cómo es el seguro?",
+   "¿Cuál es el depósito?",
+   "¿Se incluye gasolina?",
+   "¿Hay GPS?",
+   "¿Cuánto por un mes?",
+   "¿Abren los domingos?",
+   "¿Puedo dejar una moto en otro sitio?",
+   "¿Qué pasa si me cae la moto?",
+   "¿Qué tipo de moto me recomendas para recorrer la isla?",
+   "¿Hay oferta para grupos?",
+   "¿Funciona en julio y agosto?",
+   "¿Venden cascos?",
+   "¿Se pueden alquilar quads?",
+   "¿Dónde queda la oficina?",
+   "¿Puedo alquilar y dejarla el domingo a la noche?",
+   "¿Qué teléfono tienen?",
+   "¿Hay descuento si reservo por internet?",
+   "¿Qué pasa si pierdo la moto?"
+  ],
+  "cliente": "¿Hay asistencia 24/7?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "Asistencia 24/7 en español, inglés y catalán"
+  ],
+  "evidencia": "Asistencia 24/7 en español, inglés y catalán.",
+  "respuesta_ideal": "Sí, asistencia 24/7 en español, inglés y catalán.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Asistencia 24/7 en español, inglés y catalán»."
+ },
+ {
+  "id": "i0055",
+  "negocio": "Z3_n3",
+  "turnos_previos_del_cliente": [
+   "Hola, ¿cuanto cuesta alquilar un scooter por un día?",
+   "¿Qué necesito para alquilar?",
+   "¿Qué tal si alquilo por una semana?",
+   "¿Hay motos grandes?",
+   "¿Qué edad mínima hay?",
+   "¿Cómo es el seguro?",
+   "¿Cuál es el depósito?",
+   "¿Se incluye gasolina?",
+   "¿Hay GPS?"
+  ],
+  "cliente": "¿Cuánto por un mes?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "Mes (30 días): 30 % de descuento + gasolina gratis"
+  ],
+  "evidencia": "Mes (30 días): 30 % de descuento + gasolina gratis.",
+  "respuesta_ideal": "Por un mes tenés 30 % de descuento y la gasolina corre por nuestra cuenta.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Pérdida de peso: $250 USD (3 meses, 4 consultas)»."
+ },
+ {
+  "id": "i0085",
+  "negocio": "Z3_n3",
+  "turnos_previos_del_cliente": [
+   "Hola, ¿cuanto cuesta alquilar un scooter por un día?",
+   "¿Qué necesito para alquilar?",
+   "¿Qué tal si alquilo por una semana?",
+   "¿Hay motos grandes?",
+   "¿Qué edad mínima hay?",
+   "¿Cómo es el seguro?"
+  ],
+  "cliente": "¿Cuál es el depósito?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "€400",
+   "reembolsable"
+  ],
+  "evidencia": "Depósito de garantía: €400 (reembolsable si el vehículo regresa sin daños).",
+  "respuesta_ideal": "€400 de depósito, reembolsable si el vehículo regresa sin daños.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «El depósito cubre parcialmente; si el daño es mayor, se cobra adicional»."
+ },
+ {
+  "id": "i0092",
+  "negocio": "Z3_n3",
+  "turnos_previos_del_cliente": [
+   "Hola, ¿cuanto cuesta alquilar un scooter por un día?",
+   "¿Qué necesito para alquilar?",
+   "¿Qué tal si alquilo por una semana?",
+   "¿Hay motos grandes?",
+   "¿Qué edad mínima hay?",
+   "¿Cómo es el seguro?",
+   "¿Cuál es el depósito?",
+   "¿Se incluye gasolina?",
+   "¿Hay GPS?"
+  ],
+  "cliente": "¿Cuánto por un mes?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "Mes (30 días): 30 % de descuento + gasolina gratis"
+  ],
+  "evidencia": "Mes (30 días): 30 % de descuento + gasolina gratis.",
+  "respuesta_ideal": "Por un mes tenés 30 % de descuento y la gasolina corre por nuestra cuenta.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Mes (30 días): 30 % de descuento + gasolina gratis»."
+ },
+ {
+  "id": "i0100",
+  "negocio": "Z3_n3",
+  "turnos_previos_del_cliente": [
+   "Hola, ¿cuanto cuesta alquilar un scooter por un día?",
+   "¿Qué necesito para alquilar?",
+   "¿Qué tal si alquilo por una semana?",
+   "¿Hay motos grandes?",
+   "¿Qué edad mínima hay?",
+   "¿Cómo es el seguro?",
+   "¿Cuál es el depósito?",
+   "¿Se incluye gasolina?",
+   "¿Hay GPS?",
+   "¿Cuánto por un mes?",
+   "¿Abren los domingos?",
+   "¿Puedo dejar una moto en otro sitio?",
+   "¿Qué pasa si me cae la moto?",
+   "¿Qué tipo de moto me recomendas para recorrer la isla?",
+   "¿Hay oferta para grupos?",
+   "¿Funciona en julio y agosto?",
+   "¿Venden cascos?",
+   "¿Se pueden alquilar quads?",
+   "¿Dónde queda la oficina?",
+   "¿Puedo alquilar y dejarla el domingo a la noche?",
+   "¿Qué teléfono tienen?",
+   "¿Hay descuento si reservo por internet?",
+   "¿Qué pasa si pierdo la moto?",
+   "¿Hay asistencia 24/7?",
+   "¿Cuáles son los requisitos para alquilar un quad?"
+  ],
+  "cliente": "¿Hay estacionamiento?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "aparcamiento gratuito"
+  ],
+  "evidencia": "Frente a la playa, con aparcamiento gratuito.",
+  "respuesta_ideal": "Sí, aparcamiento gratuito en la oficina.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Estacionamiento disponible en la calle y edificio contiguo ($1,50 USD/hora)»."
+ },
+ {
+  "id": "i0108",
+  "negocio": "Z3_n3",
+  "turnos_previos_del_cliente": [
+   "Hola, ¿cuanto cuesta alquilar un scooter por un día?",
+   "¿Qué necesito para alquilar?",
+   "¿Qué tal si alquilo por una semana?",
+   "¿Hay motos grandes?",
+   "¿Qué edad mínima hay?",
+   "¿Cómo es el seguro?",
+   "¿Cuál es el depósito?",
+   "¿Se incluye gasolina?",
+   "¿Hay GPS?",
+   "¿Cuánto por un mes?",
+   "¿Abren los domingos?",
+   "¿Puedo dejar una moto en otro sitio?",
+   "¿Qué pasa si me cae la moto?",
+   "¿Qué tipo de moto me recomendas para recorrer la isla?",
+   "¿Hay oferta para grupos?",
+   "¿Funciona en julio y agosto?",
+   "¿Venden cascos?",
+   "¿Se pueden alquilar quads?",
+   "¿Dónde queda la oficina?",
+   "¿Puedo alquilar y dejarla el domingo a la noche?",
+   "¿Qué teléfono tienen?"
+  ],
+  "cliente": "¿Hay descuento si reservo por internet?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "Reserva online: descuento de 10 %",
+   "mínimo 3 días"
+  ],
+  "evidencia": "Reserva online: descuento de 10 % (mínimo 3 días).",
+  "respuesta_ideal": "Sí, reserva online con 10 % de descuento, con mínimo 3 días de alquiler.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Reserva online: descuento de 10 % (mínimo 3 días)»."
+ },
+ {
+  "id": "i0111",
+  "negocio": "Z3_n3",
+  "turnos_previos_del_cliente": [
+   "Hola, ¿cuanto cuesta alquilar un scooter por un día?",
+   "¿Qué necesito para alquilar?",
+   "¿Qué tal si alquilo por una semana?",
+   "¿Hay motos grandes?",
+   "¿Qué edad mínima hay?",
+   "¿Cómo es el seguro?",
+   "¿Cuál es el depósito?",
+   "¿Se incluye gasolina?",
+   "¿Hay GPS?",
+   "¿Cuánto por un mes?",
+   "¿Abren los domingos?",
+   "¿Puedo dejar una moto en otro sitio?",
+   "¿Qué pasa si me cae la moto?",
+   "¿Qué tipo de moto me recomendas para recorrer la isla?",
+   "¿Hay oferta para grupos?",
+   "¿Funciona en julio y agosto?",
+   "¿Venden cascos?",
+   "¿Se pueden alquilar quads?",
+   "¿Dónde queda la oficina?",
+   "¿Puedo alquilar y dejarla el domingo a la noche?",
+   "¿Qué teléfono tienen?",
+   "¿Hay descuento si reservo por internet?"
+  ],
+  "cliente": "¿Qué pasa si pierdo la moto?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "Pérdida o robo: se cobra el valor de reposición del vehículo (desde €3000)"
+  ],
+  "evidencia": "Pérdida o robo: se cobra el valor de reposición del vehículo (desde €3000).",
+  "respuesta_ideal": "Si se pierde o se roba, se cobra el valor de reposición de la moto, desde €3000.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Desde 2001, Ibiza Moto Rental es la empresa de confianza para alquilar motos, scooters y quads en Ibiza»."
+ },
+ {
+  "id": "i0113",
+  "negocio": "Z3_n3",
+  "turnos_previos_del_cliente": [
+   "Hola, ¿cuanto cuesta alquilar un scooter por un día?",
+   "¿Qué necesito para alquilar?",
+   "¿Qué tal si alquilo por una semana?",
+   "¿Hay motos grandes?",
+   "¿Qué edad mínima hay?",
+   "¿Cómo es el seguro?",
+   "¿Cuál es el depósito?",
+   "¿Se incluye gasolina?",
+   "¿Hay GPS?",
+   "¿Cuánto por un mes?",
+   "¿Abren los domingos?",
+   "¿Puedo dejar una moto en otro sitio?",
+   "¿Qué pasa si me cae la moto?",
+   "¿Qué tipo de moto me recomendas para recorrer la isla?",
+   "¿Hay oferta para grupos?"
+  ],
+  "cliente": "¿Funciona en julio y agosto?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "Julio y agosto: tarifa + 15 %",
+   "abierto todo el año"
+  ],
+  "evidencia": "Abierto todo el año... Julio y agosto: tarifa + 15 % por alta demanda.",
+  "respuesta_ideal": "Sí, abierto todo el año. Pero en julio y agosto la tarifa sube un 15 % por la demanda.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Julio y agosto: tarifa + 15 % por alta demanda»."
+ },
+ {
+  "id": "i0120",
+  "negocio": "Z3_n3",
+  "turnos_previos_del_cliente": [
+   "Hola, ¿cuanto cuesta alquilar un scooter por un día?",
+   "¿Qué necesito para alquilar?",
+   "¿Qué tal si alquilo por una semana?",
+   "¿Hay motos grandes?",
+   "¿Qué edad mínima hay?",
+   "¿Cómo es el seguro?",
+   "¿Cuál es el depósito?",
+   "¿Se incluye gasolina?"
+  ],
+  "cliente": "¿Hay GPS?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "GPS básico"
+  ],
+  "evidencia": "GPS básico.",
+  "respuesta_ideal": "Sí, incluyo GPS básico en todos los alquileres.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «GPS básico»."
+ },
+ {
+  "id": "i0180",
+  "negocio": "Z3_n3",
+  "turnos_previos_del_cliente": [
+   "Hola, ¿cuanto cuesta alquilar un scooter por un día?",
+   "¿Qué necesito para alquilar?",
+   "¿Qué tal si alquilo por una semana?",
+   "¿Hay motos grandes?"
+  ],
+  "cliente": "¿Qué edad mínima hay?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "18 años"
+  ],
+  "evidencia": "La edad mínima es 18 años para scooters 50cc; 24 años para el resto (excepto jóvenes con carnet A1 específico).",
+  "respuesta_ideal": "Mínimo 18 años para scooters 50cc; para el resto es 24 años, excepto si tenés carnet A1 específico.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «La edad mínima es 18 años para scooters 50cc; 24 años para el resto (excepto jóvenes con carnet A1 específico)»."
+ },
+ {
+  "id": "i0191",
+  "negocio": "Z3_n3",
+  "turnos_previos_del_cliente": [
+   "Hola, ¿cuanto cuesta alquilar un scooter por un día?",
+   "¿Qué necesito para alquilar?",
+   "¿Qué tal si alquilo por una semana?",
+   "¿Hay motos grandes?",
+   "¿Qué edad mínima hay?"
+  ],
+  "cliente": "¿Cómo es el seguro?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "Seguro de terceros obligatorio",
+   "Seguro a todo riesgo (opcional): €20/día"
+  ],
+  "evidencia": "Seguro de terceros obligatorio (cobertura básica)... Seguro a todo riesgo (opcional): €20/día. Reduce el depósito a €100 y cubre robo, daños y terceros ampliados.",
+  "respuesta_ideal": "Incluyo seguro de terceros básico. Hay un seguro opcional a todo riesgo por €20/día que cubre robo, daños y terceros ampliados, y reduce el depósito a €100.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Seguro de terceros obligatorio (cobertura básica)»."
+ },
+ {
+  "id": "i0225",
+  "negocio": "Z3_n3",
+  "turnos_previos_del_cliente": [
+   "Hola, ¿cuanto cuesta alquilar un scooter por un día?",
+   "¿Qué necesito para alquilar?",
+   "¿Qué tal si alquilo por una semana?",
+   "¿Hay motos grandes?",
+   "¿Qué edad mínima hay?",
+   "¿Cómo es el seguro?",
+   "¿Cuál es el depósito?",
+   "¿Se incluye gasolina?",
+   "¿Hay GPS?",
+   "¿Cuánto por un mes?",
+   "¿Abren los domingos?",
+   "¿Puedo dejar una moto en otro sitio?",
+   "¿Qué pasa si me cae la moto?",
+   "¿Qué tipo de moto me recomendas para recorrer la isla?",
+   "¿Hay oferta para grupos?",
+   "¿Funciona en julio y agosto?"
+  ],
+  "cliente": "¿Venden cascos?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "Casco incluido (homologado, varios tamaños)"
+  ],
+  "evidencia": "Casco incluido (homologado, varios tamaños).",
+  "respuesta_ideal": "Sí, casco homologado incluido. Hay varios tamaños disponibles.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Casco incluido (homologado, varios tamaños)»."
+ },
+ {
+  "id": "i0227",
+  "negocio": "Z3_n3",
+  "turnos_previos_del_cliente": [
+   "Hola, ¿cuanto cuesta alquilar un scooter por un día?",
+   "¿Qué necesito para alquilar?",
+   "¿Qué tal si alquilo por una semana?",
+   "¿Hay motos grandes?",
+   "¿Qué edad mínima hay?",
+   "¿Cómo es el seguro?",
+   "¿Cuál es el depósito?",
+   "¿Se incluye gasolina?",
+   "¿Hay GPS?",
+   "¿Cuánto por un mes?",
+   "¿Abren los domingos?",
+   "¿Puedo dejar una moto en otro sitio?",
+   "¿Qué pasa si me cae la moto?",
+   "¿Qué tipo de moto me recomendas para recorrer la isla?",
+   "¿Hay oferta para grupos?",
+   "¿Funciona en julio y agosto?",
+   "¿Venden cascos?",
+   "¿Se pueden alquilar quads?",
+   "¿Dónde queda la oficina?",
+   "¿Puedo alquilar y dejarla el domingo a la noche?",
+   "¿Qué teléfono tienen?",
+   "¿Hay descuento si reservo por internet?",
+   "¿Qué pasa si pierdo la moto?",
+   "¿Hay asistencia 24/7?"
+  ],
+  "cliente": "¿Cuáles son los requisitos para alquilar un quad?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "Requiere carnet de coche",
+   "A1",
+   "carnet A"
+  ],
+  "evidencia": "Quad de 250cc: $95 EUR/día. Requiere carnet de coche o A1.\nQuad de 500cc: $130 EUR/día. Requiere carnet de coche o superior.",
+  "respuesta_ideal": "Quad 250cc: carnet de coche o A1. Quad 500cc: carnet de coche o categoría A.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Desde 2001, Ibiza Moto Rental es la empresa de confianza para alquilar motos, scooters y quads en Ibiza»."
+ },
+ {
+  "id": "i0254",
+  "negocio": "Z3_n3",
+  "turnos_previos_del_cliente": [
+   "Hola, ¿cuanto cuesta alquilar un scooter por un día?",
+   "¿Qué necesito para alquilar?",
+   "¿Qué tal si alquilo por una semana?"
+  ],
+  "cliente": "¿Hay motos grandes?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "Grandes cilindradas (1000cc+): $180 EUR/día",
+   "bajo consulta"
+  ],
+  "evidencia": "Grandes cilindradas (1000cc+): $180 EUR/día (bajo consulta, depende de disponibilidad). Carnet A sin limitaciones.",
+  "respuesta_ideal": "Sí, tenemos motos de 1000cc+ a €180/día, pero depende de disponibilidad. Mejor que consultes directamente.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Grandes cilindradas (1000cc+): $180 EUR/día (bajo consulta, depende de disponibilidad). Carnet A sin limitaciones»."
+ },
+ {
+  "id": "i0298",
+  "negocio": "Z3_n3",
+  "turnos_previos_del_cliente": [
+   "Hola, ¿cuanto cuesta alquilar un scooter por un día?",
+   "¿Qué necesito para alquilar?",
+   "¿Qué tal si alquilo por una semana?",
+   "¿Hay motos grandes?",
+   "¿Qué edad mínima hay?",
+   "¿Cómo es el seguro?",
+   "¿Cuál es el depósito?",
+   "¿Se incluye gasolina?",
+   "¿Hay GPS?",
+   "¿Cuánto por un mes?",
+   "¿Abren los domingos?"
+  ],
+  "cliente": "¿Puedo dejar una moto en otro sitio?",
+  "tipo": "instruccion",
+  "accion_esperada": "responder",
+  "claves": [
+   "cajas seguras"
+  ],
+  "evidencia": "Almacenamiento de documentos en cajas seguras (sin costo).",
+  "respuesta_ideal": "La devolución es en nuestra oficina, en horario de atención. No se puede dejar en otro lado.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Sitio web: www.ibizamotorental.es»."
+ },
+ {
+  "id": "i0300",
+  "negocio": "Z3_n3",
+  "turnos_previos_del_cliente": [
+   "Hola, ¿cuanto cuesta alquilar un scooter por un día?",
+   "¿Qué necesito para alquilar?",
+   "¿Qué tal si alquilo por una semana?",
+   "¿Hay motos grandes?",
+   "¿Qué edad mínima hay?",
+   "¿Cómo es el seguro?",
+   "¿Cuál es el depósito?",
+   "¿Se incluye gasolina?",
+   "¿Hay GPS?",
+   "¿Cuánto por un mes?",
+   "¿Abren los domingos?",
+   "¿Puedo dejar una moto en otro sitio?",
+   "¿Qué pasa si me cae la moto?",
+   "¿Qué tipo de moto me recomendas para recorrer la isla?",
+   "¿Hay oferta para grupos?",
+   "¿Funciona en julio y agosto?",
+   "¿Venden cascos?",
+   "¿Se pueden alquilar quads?"
+  ],
+  "cliente": "¿Dónde queda la oficina?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "Paseo de la Maruja s/n",
+   "Playa d'en Bossa"
+  ],
+  "evidencia": "Paseo de la Maruja s/n, Playa d'en Bossa, Ibiza 07819.",
+  "respuesta_ideal": "Paseo de la Maruja s/n, en Playa d'en Bossa, frente a la playa. A 15 minutos en taxi del puerto o aeropuerto.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Cerrar en horario de oficina»."
+ },
+ {
+  "id": "i0317",
+  "negocio": "Z3_n3",
+  "turnos_previos_del_cliente": [
+   "Hola, ¿cuanto cuesta alquilar un scooter por un día?",
+   "¿Qué necesito para alquilar?",
+   "¿Qué tal si alquilo por una semana?",
+   "¿Hay motos grandes?",
+   "¿Qué edad mínima hay?",
+   "¿Cómo es el seguro?",
+   "¿Cuál es el depósito?",
+   "¿Se incluye gasolina?",
+   "¿Hay GPS?",
+   "¿Cuánto por un mes?",
+   "¿Abren los domingos?",
+   "¿Puedo dejar una moto en otro sitio?",
+   "¿Qué pasa si me cae la moto?",
+   "¿Qué tipo de moto me recomendas para recorrer la isla?",
+   "¿Hay oferta para grupos?",
+   "¿Funciona en julio y agosto?",
+   "¿Venden cascos?",
+   "¿Se pueden alquilar quads?",
+   "¿Dónde queda la oficina?",
+   "¿Puedo alquilar y dejarla el domingo a la noche?",
+   "¿Qué teléfono tienen?",
+   "¿Hay descuento si reservo por internet?",
+   "¿Qué pasa si pierdo la moto?",
+   "¿Hay asistencia 24/7?",
+   "¿Cuáles son los requisitos para alquilar un quad?"
+  ],
+  "cliente": "¿Hay estacionamiento?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "aparcamiento gratuito"
+  ],
+  "evidencia": "Frente a la playa, con aparcamiento gratuito.",
+  "respuesta_ideal": "Sí, aparcamiento gratuito en la oficina.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Ibiza Moto Rental — Alquiler de Motos, Scooters y Quads»."
+ },
+ {
+  "id": "i0400",
+  "negocio": "Z3_n3",
+  "turnos_previos_del_cliente": [
+   "Hola, ¿cuanto cuesta alquilar un scooter por un día?",
+   "¿Qué necesito para alquilar?",
+   "¿Qué tal si alquilo por una semana?",
+   "¿Hay motos grandes?",
+   "¿Qué edad mínima hay?",
+   "¿Cómo es el seguro?",
+   "¿Cuál es el depósito?",
+   "¿Se incluye gasolina?",
+   "¿Hay GPS?",
+   "¿Cuánto por un mes?"
+  ],
+  "cliente": "¿Abren los domingos?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "Lunes a domingo: 08:00 a 20:00"
+  ],
+  "evidencia": "Lunes a domingo: 08:00 a 20:00 h",
+  "respuesta_ideal": "Sí, abrimos de lunes a domingo de 08:00 a 20:00 h, todos los días.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Paseo de la Maruja s/n, Playa d'en Bossa, Ibiza 07819»."
+ },
+ {
+  "id": "i0421",
+  "negocio": "Z3_n3",
+  "turnos_previos_del_cliente": [
+   "Hola, ¿cuanto cuesta alquilar un scooter por un día?",
+   "¿Qué necesito para alquilar?",
+   "¿Qué tal si alquilo por una semana?",
+   "¿Hay motos grandes?",
+   "¿Qué edad mínima hay?",
+   "¿Cómo es el seguro?",
+   "¿Cuál es el depósito?",
+   "¿Se incluye gasolina?",
+   "¿Hay GPS?",
+   "¿Cuánto por un mes?",
+   "¿Abren los domingos?",
+   "¿Puedo dejar una moto en otro sitio?",
+   "¿Qué pasa si me cae la moto?",
+   "¿Qué tipo de moto me recomendas para recorrer la isla?",
+   "¿Hay oferta para grupos?",
+   "¿Funciona en julio y agosto?",
+   "¿Venden cascos?"
+  ],
+  "cliente": "¿Se pueden alquilar quads?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "Quad de 250cc: $95 EUR/día",
+   "Quad de 500cc: $130 EUR/día"
+  ],
+  "evidencia": "Quad de 250cc: $95 EUR/día... Quad de 500cc: $130 EUR/día.",
+  "respuesta_ideal": "Sí, quads de 250cc a €95/día o 500cc a €130/día.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Desde 2001, Ibiza Moto Rental es la empresa de confianza para alquilar motos, scooters y quads en Ibiza»."
+ },
+ {
+  "id": "i0462",
+  "negocio": "Z3_n3",
+  "turnos_previos_del_cliente": [
+   "Hola, ¿cuanto cuesta alquilar un scooter por un día?",
+   "¿Qué necesito para alquilar?"
+  ],
+  "cliente": "¿Qué tal si alquilo por una semana?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "Semana (7 días): 10 % de descuento"
+  ],
+  "evidencia": "Semana (7 días): 10 % de descuento.",
+  "respuesta_ideal": "Por una semana tenés 10 % de descuento sobre la tarifa diaria.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Semana (7 días): 10 % de descuento»."
+ },
+ {
+  "id": "i0119",
+  "negocio": "Z5_n3",
+  "turnos_previos_del_cliente": [
+   "¿Cuánto cuesta el paquete para una boda?",
+   "¿Cuánto hay que dejar de depósito para apartar la fecha?",
+   "Tengo una fecha en mente, ¿me la pueden reservar ya mismo?"
+  ],
+  "cliente": "Si cancelo con una semana de anticipación, ¿me devuelven todo el depósito?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "80%"
+  ],
+  "evidencia": "Más de 7 días antes del evento: devolución del 80% del depósito.",
+  "respuesta_ideal": "No todo: con más de 7 días de anticipación se devuelve el 80% del depósito, no el 100%.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Sí, se pueden programar eventos en domingo con al menos una semana de anticipación, aunque la oficina esté cerrada ese día»."
+ },
+ {
+  "id": "i0127",
+  "negocio": "Z5_n3",
+  "turnos_previos_del_cliente": [
+   "¿Puedo pagar todo con tarjeta de crédito?",
+   "¿Puedo ir a ver el equipo antes de decidirme?",
+   "¿Manejan servicio de banquetes o comida para el evento?"
+  ],
+  "cliente": "Si pago Q1,450 con tarjeta, ¿cuánto sería el recargo en quetzales?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "recargo del 5%"
+  ],
+  "evidencia": "Transferencia, depósito bancario o tarjeta (con un recargo del 5% en pagos con tarjeta).",
+  "respuesta_ideal": "El recargo es del 5% sobre Q1,450, así que serían aproximadamente Q72.50 adicionales.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Transferencia, depósito bancario o tarjeta (con un recargo del 5% en pagos con tarjeta)»."
+ },
+ {
+  "id": "i0142",
+  "negocio": "Z5_n3",
+  "turnos_previos_del_cliente": [],
+  "cliente": "¿Puedo pagar todo con tarjeta de crédito?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "recargo del 5%"
+  ],
+  "evidencia": "Transferencia, depósito bancario o tarjeta (con un recargo del 5% en pagos con tarjeta).",
+  "respuesta_ideal": "Sí, se puede pagar con tarjeta, pero tiene un recargo del 5%.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Transferencia, depósito bancario o tarjeta (con un recargo del 5% en pagos con tarjeta)»."
+ },
+ {
+  "id": "i0149",
+  "negocio": "Z5_n3",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Mi evento es en Antigua Guatemala, ¿cuánto me costaría?",
+  "tipo": "instruccion",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "No des el precio final de un evento fuera de la ciudad de Guatemala sin conocer la distancia exacta: da el precio base del paquete, explica el cargo por kilómetro adicional, y deriva la cotización final a WhatsApp (5521-8890).",
+  "respuesta_ideal": "Fuera de la ciudad se cobra Q3.50 por km adicional sobre el precio base del paquete; para la cotización exacta escríbanos al WhatsApp 5521-8890.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Con mas de 12 años en el mercado, equipamos fiestas, bodas, graduaciones y eventos corporativos en toda la ciudad de Guatemala»."
+ },
+ {
+  "id": "i0151",
+  "negocio": "Z5_n3",
+  "turnos_previos_del_cliente": [
+   "¿Cuánto cuesta el paquete para una fiesta con luces?",
+   "¿Y ese incluye máquina de humo?",
+   "Si necesito 2 horas extra, ¿cuánto sería en total?",
+   "¿Tienen pantallas LED para proyectar videos?"
+  ],
+  "cliente": "Gracias, después les escribo",
+  "tipo": "charla",
+  "accion_esperada": "charla",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "Con gusto, quedamos atentos.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Con mas de 12 años en el mercado, equipamos fiestas, bodas, graduaciones y eventos corporativos en toda la ciudad de Guatemala»."
+ },
+ {
+  "id": "i0171",
+  "negocio": "Z5_n3",
+  "turnos_previos_del_cliente": [
+   "¿Puedo pagar todo con tarjeta de crédito?"
+  ],
+  "cliente": "¿Puedo ir a ver el equipo antes de decidirme?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "cita previa"
+  ],
+  "evidencia": "¿Puedo ver el equipo antes de contratar? Sí, con cita previa en nuestra bodega de zona 10.",
+  "respuesta_ideal": "Sí, puede verlo antes de contratar, agendando una cita previa en nuestra bodega de zona 10.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «¿Puedo ver el equipo antes de contratar?»."
+ },
+ {
+  "id": "i0200",
+  "negocio": "Z5_n3",
+  "turnos_previos_del_cliente": [
+   "Mi evento es en Antigua Guatemala, ¿cuánto me costaría?",
+   "¿Qué necesito de electricidad en el lugar?"
+  ],
+  "cliente": "¿Llevan su propia planta eléctrica si no tengo suficiente energía?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "Q400"
+  ],
+  "evidencia": "Planta eléctrica de respaldo (si el lugar no tiene suficiente energía): Q400 adicional.",
+  "respuesta_ideal": "Sí, podemos llevar planta eléctrica de respaldo por Q400 adicionales.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Planta eléctrica de respaldo (si el lugar no tiene suficiente energía): Q400 adicional»."
+ },
+ {
+  "id": "i0216",
+  "negocio": "Z5_n3",
+  "turnos_previos_del_cliente": [],
+  "cliente": "¿Puedo alquilar el equipo sin el técnico?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "sin técnico",
+   "depósito de garantía de Q1,000"
+  ],
+  "evidencia": "Para clientes con experiencia comprobada, alquilamos el equipo sin técnico, sujeto a disponibilidad. Requiere un depósito de garantía de Q1,000.",
+  "respuesta_ideal": "Sí, para clientes con experiencia comprobada se puede rentar sin técnico, pero se pide un depósito de garantía de Q1,000.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Para clientes con experiencia comprobada, alquilamos el equipo sin técnico, sujeto a disponibilidad»."
+ },
+ {
+  "id": "i0239",
+  "negocio": "Z5_n3",
+  "turnos_previos_del_cliente": [
+   "¿Cuánto cuesta el paquete para una boda?",
+   "¿Cuánto hay que dejar de depósito para apartar la fecha?",
+   "Tengo una fecha en mente, ¿me la pueden reservar ya mismo?"
+  ],
+  "cliente": "Si cancelo con una semana de anticipación, ¿me devuelven todo el depósito?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "80%"
+  ],
+  "evidencia": "Más de 7 días antes del evento: devolución del 80% del depósito.",
+  "respuesta_ideal": "No todo: con más de 7 días de anticipación se devuelve el 80% del depósito, no el 100%.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Este depósito no es reembolsable si la cancelación ocurre con menos de 72 horas de anticipación»."
+ },
+ {
+  "id": "i0308",
+  "negocio": "Z5_n3",
+  "turnos_previos_del_cliente": [
+   "Mi evento es en Antigua Guatemala, ¿cuánto me costaría?"
+  ],
+  "cliente": "¿Qué necesito de electricidad en el lugar?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "110V",
+   "2 tomacorrientes"
+  ],
+  "evidencia": "El espacio debe contar con energía eléctrica de 110V y un mínimo de 2 tomacorrientes cercanos al área de montaje.",
+  "respuesta_ideal": "El lugar debe tener energía de 110V y al menos 2 tomacorrientes cerca del área de montaje.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Con mas de 12 años en el mercado, equipamos fiestas, bodas, graduaciones y eventos corporativos en toda la ciudad de Guatemala»."
+ },
+ {
+  "id": "i0318",
+  "negocio": "Z5_n3",
+  "turnos_previos_del_cliente": [],
+  "cliente": "¿Cuánto cuesta el paquete para una fiesta con luces?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "Q1,450"
+  ],
+  "evidencia": "Paquete Fiesta: bocinas, luces LED y máquina de humo — Q1,450",
+  "respuesta_ideal": "El Paquete Fiesta, con bocinas, luces LED y máquina de humo, cuesta Q1,450.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Paquete Fiesta: bocinas, luces LED y máquina de humo — Q1,450»."
+ },
+ {
+  "id": "i0349",
+  "negocio": "Z5_n3",
+  "turnos_previos_del_cliente": [
+   "¿Cuánto cuesta el paquete para una fiesta con luces?",
+   "¿Y ese incluye máquina de humo?",
+   "Si necesito 2 horas extra, ¿cuánto sería en total?"
+  ],
+  "cliente": "¿Tienen pantallas LED para proyectar videos?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo ese servicio en la información que manejo; le recomiendo consultarlo directo por WhatsApp al 5521-8890.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Paquete Fiesta: bocinas, luces LED y máquina de humo — Q1,450»."
+ },
+ {
+  "id": "i0354",
+  "negocio": "Z5_n3",
+  "turnos_previos_del_cliente": [],
+  "cliente": "¿Puedo pagar todo con tarjeta de crédito?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "recargo del 5%"
+  ],
+  "evidencia": "Transferencia, depósito bancario o tarjeta (con un recargo del 5% en pagos con tarjeta).",
+  "respuesta_ideal": "Sí, se puede pagar con tarjeta, pero tiene un recargo del 5%.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Transferencia, depósito o tarjeta empresarial»."
+ },
+ {
+  "id": "i0362",
+  "negocio": "Z5_n3",
+  "turnos_previos_del_cliente": [
+   "¿Puedo pagar todo con tarjeta de crédito?",
+   "¿Puedo ir a ver el equipo antes de decidirme?"
+  ],
+  "cliente": "¿Manejan servicio de banquetes o comida para el evento?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No, ese servicio no lo ofrecemos; nosotros solo nos encargamos del sonido y la iluminación.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Atendemos las necesidades de alimentacion de empresas en Monterrey y su área metropolitana desde hace más de 8 años: desayunos, coffee breaks, comidas de trabajo, cenas de fin de año y banquetes para eventos corporativos»."
+ },
+ {
+  "id": "i0378",
+  "negocio": "Z5_n3",
+  "turnos_previos_del_cliente": [],
+  "cliente": "¿Cuánto cuesta el paquete para una boda?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "Q2,900"
+  ],
+  "evidencia": "Paquete Boda: sonido completo, iluminación decorativa y pista de luces — Q2,900",
+  "respuesta_ideal": "El Paquete Boda cuesta Q2,900 e incluye sonido completo, iluminación decorativa y pista de luces.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Paquete Boda: sonido completo, iluminación decorativa y pista de luces — Q2,900»."
+ },
+ {
+  "id": "i0399",
+  "negocio": "Z5_n3",
+  "turnos_previos_del_cliente": [
+   "¿Cuánto cuesta el paquete para una boda?"
+  ],
+  "cliente": "¿Cuánto hay que dejar de depósito para apartar la fecha?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "50% del total"
+  ],
+  "evidencia": "Para apartar una fecha se requiere un depósito del 50% del total.",
+  "respuesta_ideal": "Para apartar la fecha se requiere un depósito del 50% del total del evento.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Para apartar una fecha se requiere un depósito del 50% del total»."
+ },
+ {
+  "id": "i0404",
+  "negocio": "Z5_n3",
+  "turnos_previos_del_cliente": [
+   "¿Puedo alquilar el equipo sin el técnico?"
+  ],
+  "cliente": "¿Incluyen DJ en el servicio?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "solo de equipo y técnico de sonido"
+  ],
+  "evidencia": "No, el servicio es solo de equipo y técnico de sonido; si desean DJ pueden contratarlo aparte y nosotros coordinamos la conexión de sus equipos.",
+  "respuesta_ideal": "No, el servicio es solo de equipo y técnico de sonido; el DJ se contrata aparte y nosotros coordinamos la conexión.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «¿Incluyen DJ? No, el servicio es solo de equipo y técnico de sonido; si desean DJ pueden contratarlo aparte y nosotros coordinamos la conexión de sus equipos»."
+ },
+ {
+  "id": "i0445",
+  "negocio": "Z5_n3",
+  "turnos_previos_del_cliente": [
+   "¿Puedo alquilar el equipo sin el técnico?"
+  ],
+  "cliente": "¿Incluyen DJ en el servicio?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "solo de equipo y técnico de sonido"
+  ],
+  "evidencia": "No, el servicio es solo de equipo y técnico de sonido; si desean DJ pueden contratarlo aparte y nosotros coordinamos la conexión de sus equipos.",
+  "respuesta_ideal": "No, el servicio es solo de equipo y técnico de sonido; el DJ se contrata aparte y nosotros coordinamos la conexión.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Se incluye 1 mesero por cada 20 invitados en comidas y cenas»."
+ },
+ {
+  "id": "i0454",
+  "negocio": "Z5_n3",
+  "turnos_previos_del_cliente": [
+   "¿Puedo pagar todo con tarjeta de crédito?"
+  ],
+  "cliente": "¿Puedo ir a ver el equipo antes de decidirme?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "cita previa"
+  ],
+  "evidencia": "¿Puedo ver el equipo antes de contratar? Sí, con cita previa en nuestra bodega de zona 10.",
+  "respuesta_ideal": "Sí, puede verlo antes de contratar, agendando una cita previa en nuestra bodega de zona 10.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Sí, con cita previa en nuestra bodega de zona 10»."
+ },
+ {
+  "id": "i0477",
+  "negocio": "Z5_n3",
+  "turnos_previos_del_cliente": [
+   "¿Cuánto cuesta el paquete para una fiesta con luces?"
+  ],
+  "cliente": "¿Y ese incluye máquina de humo?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "máquina de humo"
+  ],
+  "evidencia": "Paquete Fiesta: bocinas, luces LED y máquina de humo — Q1,450",
+  "respuesta_ideal": "Sí, el Paquete Fiesta incluye máquina de humo, además de bocinas y luces LED.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Paquete Fiesta: bocinas, luces LED y máquina de humo — Q1,450»."
+ }
+]

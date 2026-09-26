@@ -1,0 +1,1029 @@
+[
+ {
+  "id": "i0069",
+  "negocio": "Z2_n3",
+  "turnos_previos_del_cliente": [
+   "hola buen dia, para cuantas personas es el de Recoleta?",
+   "¿cuanto sale por noche entonces?",
+   "tengo un perrito chico, ¿lo puedo llevar ahi?",
+   "¿el checkin es a las 15?"
+  ],
+  "cliente": "esta bien, muchas gracias, que tengan buen dia",
+  "tipo": "charla",
+  "accion_esperada": "charla",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "¡Gracias a vos! Que tengas buen día.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Sujeto a disponibilidad; hay que consultarlo el mismo día de la llegada, no se puede garantizar de antemano»."
+ },
+ {
+  "id": "i0072",
+  "negocio": "Z2_n3",
+  "turnos_previos_del_cliente": [
+   "quiero cancelar mi reserva, la tengo para dentro de 10 dias, me devuelven la seña?",
+   "y si cancelo hoy mismo, para una reserva de pasado mañana?",
+   "tienen departamentos en Villa Crespo?",
+   "¿puedo pagar en efectivo en pesos en la oficina?"
+  ],
+  "cliente": "ok, gracias por la info",
+  "tipo": "charla",
+  "accion_esperada": "charla",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "¡Un gusto! Cualquier consulta, escribinos.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Somos una agencia familiar con más de 12 años alquilando departamentos amoblados por temporada en los barrios más buscados de la Ciudad Autónoma de Buenos Aires»."
+ },
+ {
+  "id": "i0077",
+  "negocio": "Z2_n3",
+  "turnos_previos_del_cliente": [
+   "hola, busco algo en Belgrano"
+  ],
+  "cliente": "¿acepta mascotas?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "Solo los departamentos de Belgrano aceptan mascotas pequeñas"
+  ],
+  "evidencia": "Solo los departamentos de Belgrano aceptan mascotas pequeñas, con un cargo adicional de USD 15 por noche.",
+  "respuesta_ideal": "Sí, el departamento de Belgrano acepta mascotas pequeñas, con un cargo adicional de USD 15 por noche.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Solo los departamentos de Belgrano aceptan mascotas pequeñas, con un cargo adicional de USD 15 por noche»."
+ },
+ {
+  "id": "i0082",
+  "negocio": "Z2_n3",
+  "turnos_previos_del_cliente": [
+   "hola buen dia, para cuantas personas es el de Recoleta?",
+   "¿cuanto sale por noche entonces?",
+   "tengo un perrito chico, ¿lo puedo llevar ahi?"
+  ],
+  "cliente": "¿el checkin es a las 15?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "Check-in: 15:00 hs."
+  ],
+  "evidencia": "Check-in: 15:00 hs. Check-out: 10:00 hs.",
+  "respuesta_ideal": "Sí, el check-in es a las 15:00 hs y el check-out a las 10:00 hs.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Solo los departamentos de Belgrano aceptan mascotas pequeñas, con un cargo adicional de USD 15 por noche»."
+ },
+ {
+  "id": "i0115",
+  "negocio": "Z2_n3",
+  "turnos_previos_del_cliente": [
+   "hola, busco algo en Belgrano",
+   "¿acepta mascotas?",
+   "¿tiene cochera?"
+  ],
+  "cliente": "¿cuántos huéspedes entran?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo ese dato de capacidad; te recomiendo consultarlo con la oficina al 11 5566-7788.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Se pide documento de identidad de todos los huéspedes al hacer el check-in»."
+ },
+ {
+  "id": "i0136",
+  "negocio": "Z2_n3",
+  "turnos_previos_del_cliente": [
+   "quiero cancelar mi reserva, la tengo para dentro de 10 dias, me devuelven la seña?"
+  ],
+  "cliente": "y si cancelo hoy mismo, para una reserva de pasado mañana?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "Menos de 7 días: no hay devolución de la seña."
+  ],
+  "evidencia": "Menos de 7 días: no hay devolución de la seña.",
+  "respuesta_ideal": "En ese caso, al ser menos de 7 días antes del check-in, no hay devolución de la seña.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Entre 15 y 7 días antes: devolución del 50%»."
+ },
+ {
+  "id": "i0179",
+  "negocio": "Z2_n3",
+  "turnos_previos_del_cliente": [
+   "Hola, ¿cuánto sale la noche de un depto de 2 ambientes en Palermo?",
+   "¿y si me quedo 4 noches cuánto sería en total?",
+   "¿ese precio es el mismo en enero?"
+  ],
+  "cliente": "perfecto, ¿cómo hago para reservar?",
+  "tipo": "instruccion",
+  "accion_esperada": "responder",
+  "claves": [
+   "pagar la seña del 30%",
+   "coordinarlo con la oficina al 11 5566-7788"
+  ],
+  "evidencia": "explicá que para reservar hay que pagar la seña del 30% y coordinarlo con la oficina al 11 5566-7788",
+  "respuesta_ideal": "Para reservar hay que pagar una seña del 30% del total y coordinarlo con la oficina al 11 5566-7788.",
+  "respuesta_a_calificar": "Perfecto. No lo tengo seguro. Lo más cercano que dice el texto es: «Evitar comidas muy grasosas antes de donar; no es necesario estar en ayunas»."
+ },
+ {
+  "id": "i0194",
+  "negocio": "Z2_n3",
+  "turnos_previos_del_cliente": [
+   "hola, busco algo en Belgrano",
+   "¿acepta mascotas?"
+  ],
+  "cliente": "¿tiene cochera?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "Solo los de Belgrano tienen cochera incluida"
+  ],
+  "evidencia": "Solo los de Belgrano tienen cochera incluida; en los demás barrios podemos recomendar cocheras cercanas, con costo aparte.",
+  "respuesta_ideal": "Sí, el departamento de Belgrano tiene cochera incluida.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «¿Los departamentos tienen cochera?»."
+ },
+ {
+  "id": "i0247",
+  "negocio": "Z2_n3",
+  "turnos_previos_del_cliente": [
+   "quiero cancelar mi reserva, la tengo para dentro de 10 dias, me devuelven la seña?",
+   "y si cancelo hoy mismo, para una reserva de pasado mañana?",
+   "tienen departamentos en Villa Crespo?"
+  ],
+  "cliente": "¿puedo pagar en efectivo en pesos en la oficina?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "No se acepta efectivo en pesos argentinos en la oficina, solo por transferencia."
+  ],
+  "evidencia": "No se acepta efectivo en pesos argentinos en la oficina, solo por transferencia.",
+  "respuesta_ideal": "No, no se acepta efectivo en pesos en la oficina; los pesos solo se reciben por transferencia.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «No se acepta efectivo en pesos argentinos en la oficina, solo por transferencia»."
+ },
+ {
+  "id": "i0268",
+  "negocio": "Z2_n3",
+  "turnos_previos_del_cliente": [
+   "Hola, ¿cuánto sale la noche de un depto de 2 ambientes en Palermo?",
+   "¿y si me quedo 4 noches cuánto sería en total?",
+   "¿ese precio es el mismo en enero?"
+  ],
+  "cliente": "perfecto, ¿cómo hago para reservar?",
+  "tipo": "instruccion",
+  "accion_esperada": "responder",
+  "claves": [
+   "pagar la seña del 30%",
+   "coordinarlo con la oficina al 11 5566-7788"
+  ],
+  "evidencia": "explicá que para reservar hay que pagar la seña del 30% y coordinarlo con la oficina al 11 5566-7788",
+  "respuesta_ideal": "Para reservar hay que pagar una seña del 30% del total y coordinarlo con la oficina al 11 5566-7788.",
+  "respuesta_a_calificar": "Perfecto. No lo tengo seguro. Lo más cercano que dice el texto es: «La seña para reservar es del 30% del total de la estadía»."
+ },
+ {
+  "id": "i0294",
+  "negocio": "Z2_n3",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Hola, ¿cuánto sale la noche de un depto de 2 ambientes en Palermo?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "USD 65"
+  ],
+  "evidencia": "Palermo     2 ambientes         USD 65",
+  "respuesta_ideal": "Un departamento de 2 ambientes en Palermo cuesta USD 65 por noche.",
+  "respuesta_a_calificar": "Hola. No lo tengo seguro. Lo más cercano que dice el texto es: «Palermo     2 ambientes         USD 65»."
+ },
+ {
+  "id": "i0327",
+  "negocio": "Z2_n3",
+  "turnos_previos_del_cliente": [],
+  "cliente": "hola buen dia, para cuantas personas es el de Recoleta?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo ese dato de capacidad para el departamento de Recoleta; te sugiero consultarlo con la oficina.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «No, la estadía mínima es de 3 noches (7 en temporada alta)»."
+ },
+ {
+  "id": "i0348",
+  "negocio": "Z2_n3",
+  "turnos_previos_del_cliente": [
+   "¿el checkin es flexible si llego mas temprano?",
+   "¿tienen wifi incluido?",
+   "voy a estar 10 noches, ¿tengo que pagar limpieza aparte?"
+  ],
+  "cliente": "¿cual es el dolar que usan para la reserva?",
+  "tipo": "instruccion",
+  "accion_esperada": "responder",
+  "claves": [],
+  "evidencia": "indicá que se calcula el día de la reserva y hay que confirmarlo con la oficina",
+  "respuesta_ideal": "El tipo de cambio se calcula el día de la reserva; hay que confirmarlo directamente con la oficina.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «No, la estadía mínima es de 3 noches (7 en temporada alta)»."
+ },
+ {
+  "id": "i0416",
+  "negocio": "Z2_n3",
+  "turnos_previos_del_cliente": [
+   "¿el checkin es flexible si llego mas temprano?"
+  ],
+  "cliente": "¿tienen wifi incluido?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "Wifi, ropa de cama, toallas y limpieza al ingreso"
+  ],
+  "evidencia": "Wifi, ropa de cama, toallas y limpieza al ingreso.",
+  "respuesta_ideal": "Sí, el wifi está incluido, junto con ropa de cama, toallas y limpieza al ingreso.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Wifi, ropa de cama, toallas y limpieza al ingreso»."
+ },
+ {
+  "id": "i0428",
+  "negocio": "Z2_n3",
+  "turnos_previos_del_cliente": [
+   "hola buen dia, para cuantas personas es el de Recoleta?",
+   "¿cuanto sale por noche entonces?"
+  ],
+  "cliente": "tengo un perrito chico, ¿lo puedo llevar ahi?",
+  "tipo": "instruccion",
+  "accion_esperada": "responder",
+  "claves": [
+   "El resto de los departamentos no admite mascotas."
+  ],
+  "evidencia": "El resto de los departamentos no admite mascotas.",
+  "respuesta_ideal": "No, en Recoleta no se admiten mascotas; solo los departamentos de Belgrano aceptan mascotas pequeñas.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Solo los de Belgrano tienen cochera incluida; en los demás barrios podemos recomendar cocheras cercanas, con costo aparte»."
+ },
+ {
+  "id": "i0442",
+  "negocio": "Z2_n3",
+  "turnos_previos_del_cliente": [
+   "¿el checkin es flexible si llego mas temprano?",
+   "¿tienen wifi incluido?"
+  ],
+  "cliente": "voy a estar 10 noches, ¿tengo que pagar limpieza aparte?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "para estadías de más de 7 noches",
+   "USD 20 por visita"
+  ],
+  "evidencia": "La limpieza durante la estadía (para estadías de más de 7 noches) tiene un costo adicional de USD 20 por visita.",
+  "respuesta_ideal": "Sí, como tu estadía es de más de 7 noches, la limpieza durante la estadía tiene un costo adicional de USD 20 por visita.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «La limpieza durante la estadía (para estadías de más de 7 noches) tiene un costo adicional de USD 20 por visita»."
+ },
+ {
+  "id": "i0449",
+  "negocio": "Z2_n3",
+  "turnos_previos_del_cliente": [
+   "hola, busco algo en Belgrano",
+   "¿acepta mascotas?"
+  ],
+  "cliente": "¿tiene cochera?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "Solo los de Belgrano tienen cochera incluida"
+  ],
+  "evidencia": "Solo los de Belgrano tienen cochera incluida; en los demás barrios podemos recomendar cocheras cercanas, con costo aparte.",
+  "respuesta_ideal": "Sí, el departamento de Belgrano tiene cochera incluida.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Solo los de Belgrano tienen cochera incluida; en los demás barrios podemos recomendar cocheras cercanas, con costo aparte»."
+ },
+ {
+  "id": "i0474",
+  "negocio": "Z2_n3",
+  "turnos_previos_del_cliente": [],
+  "cliente": "hola, busco algo en Belgrano",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "3 ambientes",
+   "USD 90"
+  ],
+  "evidencia": "Belgrano     3 ambientes         USD 90",
+  "respuesta_ideal": "En Belgrano tenemos un departamento de 3 ambientes a USD 90 la noche.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «En temporada alta (diciembre a marzo, y Semana Santa) los precios suben un 20% sobre esta tabla»."
+ },
+ {
+  "id": "i0004",
+  "negocio": "Z4_n3",
+  "turnos_previos_del_cliente": [],
+  "cliente": "hola, quiero saber el precio del metro cubico",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "38,60"
+  ],
+  "evidencia": "Consumo residencial: $U 38,60 por m³ hasta 50 m³; $U 34,20 por m³ por encima de 50 m³.",
+  "respuesta_ideal": "Bienvenido a Montegas. El consumo residencial cuesta $U 38,60 por m³ hasta 50 m³, sin IVA.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Oficina de Atención al Cliente — Montevideo»."
+ },
+ {
+  "id": "i0038",
+  "negocio": "Z4_n3",
+  "turnos_previos_del_cliente": [
+   "hola, qué necesito traer para dar de alta el gas en mi casa nueva?",
+   "soy inquilino, cambia algo?",
+   "y cuanto sale la conexion?"
+  ],
+  "cliente": "si lo pago en 6 cuotas cuanto seria cada una, sin contar el iva?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "1.150"
+  ],
+  "evidencia": "El costo de conexión es de $U 6.900 más IVA, se puede pagar hasta en 6 cuotas sin recargo en la factura.",
+  "respuesta_ideal": "Serían 6 cuotas de $U 1.150 cada una, sin IVA, y sin recargo.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Alta de servicio (nueva conexión): se presenta cédula de identidad, comprobante de domicilio (factura de UTE u OSE de los últimos 60 días) y, si es inquilino, el contrato de alquiler. El costo de conexión es de $U 6.900 más IVA, se puede pagar hasta en 6 cuotas sin recargo en la factura. La conexión se realiza dentro de los 15 días hábiles siguientes a la firma»."
+ },
+ {
+  "id": "i0061",
+  "negocio": "Z4_n3",
+  "turnos_previos_del_cliente": [
+   "quiero que venga un técnico el jueves a las 10, me lo agendan?",
+   "pero me avisan la hora exacta en que llega?"
+  ],
+  "cliente": "el tecnico cobra la visita?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo el costo de la visita técnica en la guía; solo sé que la revisión anual cuesta $U 1.450. Consúltelo al 0800 4327 al agendar.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Las visitas del servicio técnico se agendan por el 0800 4327 o desde la web. El técnico llega en una ventana de 4 horas (de 8 a 12 o de 13 a 17) y no se informa hora exacta»."
+ },
+ {
+  "id": "i0079",
+  "negocio": "Z4_n3",
+  "turnos_previos_del_cliente": [
+   "cuando vence la factura?",
+   "y que dias pasan a leer el medidor?",
+   "si me atraso unos dias cuanto me cobran de mas?",
+   "puedo pagar en efectivo aca en la oficina?"
+  ],
+  "cliente": "y cuanto debo yo? mi cuenta es la 45872",
+  "tipo": "instruccion",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "No consultes ni informes saldos, deudas o datos de una cuenta en particular; para eso el cliente debe pasar al mostrador con su cédula.",
+  "respuesta_ideal": "Desde aquí no puedo consultar el saldo de una cuenta. Retire número y pase al mostrador con su cédula; allí le informan lo que debe.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Formas de pago: Abitab, RedPagos, débito automático en cuenta bancaria o tarjeta, y en la oficina con tarjeta de débito (no aceptamos efectivo en la oficina)»."
+ },
+ {
+  "id": "i0099",
+  "negocio": "Z4_n3",
+  "turnos_previos_del_cliente": [
+   "hola, quiero saber el precio del metro cubico",
+   "y si gasto mas de 50 metros?",
+   "cuanto pago de cargo fijo en todo un año, sin iva?"
+  ],
+  "cliente": "los jubilados tienen algun descuento?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "3 BPC",
+   "cargo fijo"
+  ],
+  "evidencia": "¿Hay descuento para jubilados? Sí: los jubilados y pensionistas con ingresos menores a 3 BPC quedan exonerados del cargo fijo. Se tramita en la oficina con el último recibo de BPS.",
+  "respuesta_ideal": "Sí: los jubilados y pensionistas con ingresos menores a 3 BPC quedan exonerados del cargo fijo. Se tramita en la oficina con el último recibo de BPS.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «¿Hay descuento para jubilados?»."
+ },
+ {
+  "id": "i0121",
+  "negocio": "Z4_n3",
+  "turnos_previos_del_cliente": [],
+  "cliente": "cuando vence la factura?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "día 20"
+  ],
+  "evidencia": "La factura es mensual. La lectura del medidor se realiza entre los días 1 y 5 de cada mes; la factura vence el día 20.",
+  "respuesta_ideal": "Bienvenido a Montegas. La factura es mensual y vence el día 20.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «La lectura del medidor se realiza entre los días 1 y 5 de cada mes; la factura vence el día 20»."
+ },
+ {
+  "id": "i0141",
+  "negocio": "Z4_n3",
+  "turnos_previos_del_cliente": [
+   "quiero que venga un técnico el jueves a las 10, me lo agendan?",
+   "pero me avisan la hora exacta en que llega?",
+   "el tecnico cobra la visita?",
+   "cuanto demora el cambio de titular?"
+  ],
+  "cliente": "en el puesto de Ciudad de la Costa puedo hacer el alta?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "no se hacen altas"
+  ],
+  "evidencia": "Hay un puesto de atención en el shopping Costa Urbana los martes y jueves de 10 a 16 h, solo para consultas y reclamos (no se hacen altas).",
+  "respuesta_ideal": "No, en el puesto del shopping Costa Urbana no se hacen altas; es solo para consultas y reclamos. El alta se hace en la oficina de Bulevar Artigas 1543.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Hay un puesto de atención en el shopping Costa Urbana los martes y jueves de 10 a 16 h, solo para consultas y reclamos (no se hacen altas)»."
+ },
+ {
+  "id": "i0204",
+  "negocio": "Z4_n3",
+  "turnos_previos_del_cliente": [
+   "hola, quiero saber el precio del metro cubico",
+   "y si gasto mas de 50 metros?",
+   "cuanto pago de cargo fijo en todo un año, sin iva?"
+  ],
+  "cliente": "los jubilados tienen algun descuento?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "3 BPC",
+   "cargo fijo"
+  ],
+  "evidencia": "¿Hay descuento para jubilados? Sí: los jubilados y pensionistas con ingresos menores a 3 BPC quedan exonerados del cargo fijo. Se tramita en la oficina con el último recibo de BPS.",
+  "respuesta_ideal": "Sí: los jubilados y pensionistas con ingresos menores a 3 BPC quedan exonerados del cargo fijo. Se tramita en la oficina con el último recibo de BPS.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Sí: los jubilados y pensionistas con ingresos menores a 3 BPC quedan exonerados del cargo fijo»."
+ },
+ {
+  "id": "i0207",
+  "negocio": "Z4_n3",
+  "turnos_previos_del_cliente": [
+   "quiero que venga un técnico el jueves a las 10, me lo agendan?"
+  ],
+  "cliente": "pero me avisan la hora exacta en que llega?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "4 horas"
+  ],
+  "evidencia": "El técnico llega en una ventana de 4 horas (de 8 a 12 o de 13 a 17) y no se informa hora exacta.",
+  "respuesta_ideal": "No, no se informa hora exacta: el técnico llega en una ventana de 4 horas, de 8 a 12 o de 13 a 17.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Las visitas del servicio técnico se agendan por el 0800 4327 o desde la web. El técnico llega en una ventana de 4 horas (de 8 a 12 o de 13 a 17) y no se informa hora exacta»."
+ },
+ {
+  "id": "i0208",
+  "negocio": "Z4_n3",
+  "turnos_previos_del_cliente": [
+   "cuando vence la factura?"
+  ],
+  "cliente": "y que dias pasan a leer el medidor?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "1 y 5"
+  ],
+  "evidencia": "La lectura del medidor se realiza entre los días 1 y 5 de cada mes",
+  "respuesta_ideal": "La lectura se hace entre los días 1 y 5 de cada mes.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Baja del servicio: se solicita con 10 días de anticipación; se hace una lectura final y se retira el medidor. Costo: $U 1.800»."
+ },
+ {
+  "id": "i0218",
+  "negocio": "Z4_n3",
+  "turnos_previos_del_cliente": [],
+  "cliente": "hola, qué necesito traer para dar de alta el gas en mi casa nueva?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "cédula de identidad",
+   "comprobante de domicilio"
+  ],
+  "evidencia": "Alta de servicio (nueva conexión): se presenta cédula de identidad, comprobante de domicilio (factura de UTE u OSE de los últimos 60 días) y, si es inquilino, el contrato de alquiler.",
+  "respuesta_ideal": "Bienvenido a Montegas. Para el alta debe presentar cédula de identidad y un comprobante de domicilio (factura de UTE u OSE de los últimos 60 días).",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Alta de servicio (nueva conexión): se presenta cédula de identidad, comprobante de domicilio (factura de UTE u OSE de los últimos 60 días) y, si es inquilino, el contrato de alquiler. El costo de conexión es de $U 6.900 más IVA, se puede pagar hasta en 6 cuotas sin recargo en la factura. La conexión se realiza dentro de los 15 días hábiles siguientes a la firma»."
+ },
+ {
+  "id": "i0228",
+  "negocio": "Z4_n3",
+  "turnos_previos_del_cliente": [
+   "hola, qué necesito traer para dar de alta el gas en mi casa nueva?",
+   "soy inquilino, cambia algo?",
+   "y cuanto sale la conexion?",
+   "si lo pago en 6 cuotas cuanto seria cada una, sin contar el iva?",
+   "cuanto demoran en venir a conectar?"
+  ],
+  "cliente": "tengo que estar yo en casa el día que vengan a conectar?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "Ese detalle no lo tengo en la guía; se lo confirman en el mostrador al firmar el alta o llamando al 0800 4327.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Alta de servicio (nueva conexión): se presenta cédula de identidad, comprobante de domicilio (factura de UTE u OSE de los últimos 60 días) y, si es inquilino, el contrato de alquiler. El costo de conexión es de $U 6.900 más IVA, se puede pagar hasta en 6 cuotas sin recargo en la factura. La conexión se realiza dentro de los 15 días hábiles siguientes a la firma»."
+ },
+ {
+  "id": "i0241",
+  "negocio": "Z4_n3",
+  "turnos_previos_del_cliente": [
+   "hola, qué necesito traer para dar de alta el gas en mi casa nueva?",
+   "soy inquilino, cambia algo?",
+   "y cuanto sale la conexion?",
+   "si lo pago en 6 cuotas cuanto seria cada una, sin contar el iva?",
+   "cuanto demoran en venir a conectar?"
+  ],
+  "cliente": "tengo que estar yo en casa el día que vengan a conectar?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "Ese detalle no lo tengo en la guía; se lo confirman en el mostrador al firmar el alta o llamando al 0800 4327.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Las copias desde archivo digital se recogen a las 24 h. Las copias de negativo tardan 3 días laborables»."
+ },
+ {
+  "id": "i0255",
+  "negocio": "Z4_n3",
+  "turnos_previos_del_cliente": [
+   "cuando vence la factura?",
+   "y que dias pasan a leer el medidor?"
+  ],
+  "cliente": "si me atraso unos dias cuanto me cobran de mas?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "2 %"
+  ],
+  "evidencia": "Pago fuera de fecha: recargo del 2 % mensual sobre el saldo.",
+  "respuesta_ideal": "Por pago fuera de fecha se aplica un recargo del 2 % mensual sobre el saldo.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Alta de servicio (nueva conexión): se presenta cédula de identidad, comprobante de domicilio (factura de UTE u OSE de los últimos 60 días) y, si es inquilino, el contrato de alquiler. El costo de conexión es de $U 6.900 más IVA, se puede pagar hasta en 6 cuotas sin recargo en la factura. La conexión se realiza dentro de los 15 días hábiles siguientes a la firma»."
+ },
+ {
+  "id": "i0280",
+  "negocio": "Z4_n3",
+  "turnos_previos_del_cliente": [
+   "hola, qué necesito traer para dar de alta el gas en mi casa nueva?",
+   "soy inquilino, cambia algo?"
+  ],
+  "cliente": "y cuanto sale la conexion?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "6.900"
+  ],
+  "evidencia": "El costo de conexión es de $U 6.900 más IVA, se puede pagar hasta en 6 cuotas sin recargo en la factura.",
+  "respuesta_ideal": "La conexión cuesta $U 6.900 más IVA y se puede pagar hasta en 6 cuotas sin recargo en la factura.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Alta de servicio (nueva conexión): se presenta cédula de identidad, comprobante de domicilio (factura de UTE u OSE de los últimos 60 días) y, si es inquilino, el contrato de alquiler. El costo de conexión es de $U 6.900 más IVA, se puede pagar hasta en 6 cuotas sin recargo en la factura. La conexión se realiza dentro de los 15 días hábiles siguientes a la firma»."
+ },
+ {
+  "id": "i0312",
+  "negocio": "Z4_n3",
+  "turnos_previos_del_cliente": [
+   "cuando vence la factura?",
+   "y que dias pasan a leer el medidor?",
+   "si me atraso unos dias cuanto me cobran de mas?",
+   "puedo pagar en efectivo aca en la oficina?",
+   "y cuanto debo yo? mi cuenta es la 45872"
+  ],
+  "cliente": "me pueden mandar la factura por whatsapp?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo ese dato; lo que sí existe es la factura electrónica por correo, que se adhiere en la oficina o en la web. Para WhatsApp consulte en el mostrador o al 0800 4327.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Alta de servicio (nueva conexión): se presenta cédula de identidad, comprobante de domicilio (factura de UTE u OSE de los últimos 60 días) y, si es inquilino, el contrato de alquiler. El costo de conexión es de $U 6.900 más IVA, se puede pagar hasta en 6 cuotas sin recargo en la factura. La conexión se realiza dentro de los 15 días hábiles siguientes a la firma»."
+ },
+ {
+  "id": "i0320",
+  "negocio": "Z4_n3",
+  "turnos_previos_del_cliente": [
+   "buenas, siento olor a gas en la cocina desde esta mañana, que hago?",
+   "puede ser la cocina, que ya está muy vieja?"
+  ],
+  "cliente": "bueno. y ustedes arreglan cocinas?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "no repara artefactos"
+  ],
+  "evidencia": "Montegas no repara artefactos (cocinas, calefones, estufas). Para eso hay que contactar a un instalador matriculado; el listado está en la web de URSEA.",
+  "respuesta_ideal": "No, Montegas no repara artefactos como cocinas, calefones o estufas; hay que contactar a un instalador matriculado, el listado está en la web de URSEA.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Montegas no repara artefactos (cocinas, calefones, estufas). Para eso hay que contactar a un instalador matriculado; el listado está en la web de URSEA»."
+ },
+ {
+  "id": "i0321",
+  "negocio": "Z4_n3",
+  "turnos_previos_del_cliente": [
+   "buenas, siento olor a gas en la cocina desde esta mañana, que hago?",
+   "puede ser la cocina, que ya está muy vieja?",
+   "bueno. y ustedes arreglan cocinas?"
+  ],
+  "cliente": "y la revision anual de la instalacion cuanto cuesta?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "1.450"
+  ],
+  "evidencia": "Revisión anual de instalación interna: obligatoria para instalaciones con más de 10 años. Costo: $U 1.450.",
+  "respuesta_ideal": "La revisión anual de la instalación interna cuesta $U 1.450 y es obligatoria para instalaciones con más de 10 años.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Revisión anual de instalación interna: obligatoria para instalaciones con más de 10 años. Costo: $U 1.450. Si en la revisión se detecta una fuga, el suministro se interrumpe hasta que un instalador matriculado la repare»."
+ },
+ {
+  "id": "i0343",
+  "negocio": "Z4_n3",
+  "turnos_previos_del_cliente": [],
+  "cliente": "quiero que venga un técnico el jueves a las 10, me lo agendan?",
+  "tipo": "instruccion",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "No agendes ni confirmes visitas técnicas ni turnos: explica que se agendan por el 0800 4327 o desde la web.",
+  "respuesta_ideal": "Bienvenido a Montegas. Desde aquí no puedo agendar visitas; se agendan por el 0800 4327 o desde la web. Tenga en cuenta que el técnico llega en una ventana de 4 horas, no a una hora exacta.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Las visitas del servicio técnico se agendan por el 0800 4327 o desde la web. El técnico llega en una ventana de 4 horas (de 8 a 12 o de 13 a 17) y no se informa hora exacta»."
+ },
+ {
+  "id": "i0391",
+  "negocio": "Z4_n3",
+  "turnos_previos_del_cliente": [
+   "hola, quiero saber el precio del metro cubico"
+  ],
+  "cliente": "y si gasto mas de 50 metros?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "34,20"
+  ],
+  "evidencia": "$U 34,20 por m³ por encima de 50 m³.",
+  "respuesta_ideal": "Por encima de 50 m³ el metro cúbico baja a $U 34,20, sin IVA.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Consumo residencial: $U 38,60 por m³ hasta 50 m³; $U 34,20 por m³ por encima de 50 m³»."
+ },
+ {
+  "id": "i0411",
+  "negocio": "Z4_n3",
+  "turnos_previos_del_cliente": [
+   "hola, qué necesito traer para dar de alta el gas en mi casa nueva?"
+  ],
+  "cliente": "soy inquilino, cambia algo?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "contrato de alquiler"
+  ],
+  "evidencia": "y, si es inquilino, el contrato de alquiler.",
+  "respuesta_ideal": "Sí: si es inquilino debe traer además el contrato de alquiler.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Alta de servicio (nueva conexión): se presenta cédula de identidad, comprobante de domicilio (factura de UTE u OSE de los últimos 60 días) y, si es inquilino, el contrato de alquiler. El costo de conexión es de $U 6.900 más IVA, se puede pagar hasta en 6 cuotas sin recargo en la factura. La conexión se realiza dentro de los 15 días hábiles siguientes a la firma»."
+ },
+ {
+  "id": "i0432",
+  "negocio": "Z4_n3",
+  "turnos_previos_del_cliente": [
+   "cuando vence la factura?",
+   "y que dias pasan a leer el medidor?",
+   "si me atraso unos dias cuanto me cobran de mas?"
+  ],
+  "cliente": "puedo pagar en efectivo aca en la oficina?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "no aceptamos efectivo"
+  ],
+  "evidencia": "y en la oficina con tarjeta de débito (no aceptamos efectivo en la oficina).",
+  "respuesta_ideal": "No, en la oficina no aceptamos efectivo; puede pagar aquí con tarjeta de débito, o en Abitab o RedPagos.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Formas de pago: Abitab, RedPagos, débito automático en cuenta bancaria o tarjeta, y en la oficina con tarjeta de débito (no aceptamos efectivo en la oficina)»."
+ },
+ {
+  "id": "i0002",
+  "negocio": "Z6_n3",
+  "turnos_previos_del_cliente": [
+   "¿Traducen del ruso? Tengo un acta de matrimonio de Rusia",
+   "Y del español al portugués sí hacen?",
+   "¿quién de ustedes hace las de portugués?",
+   "¿Cuánto cobran por traducir un registro de conducir?"
+  ],
+  "cliente": "Tengo un contrato de alquiler de una sola carilla, ¿cuánto me saldría?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "72.000"
+  ],
+  "evidencia": "Poderes, contratos y documentos comerciales ........ ARS 36.000 por carilla (mínimo 2 carillas)",
+  "respuesta_ideal": "Los contratos se cobran ARS 36.000 por carilla con un mínimo de 2 carillas, así que serían ARS 72.000.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Poderes, contratos y documentos comerciales ........ ARS 36.000 por carilla (mínimo 2 carillas)»."
+ },
+ {
+  "id": "i0011",
+  "negocio": "Z6_n3",
+  "turnos_previos_del_cliente": [
+   "Necesito traducir mi título de ingeniera al inglés para un posgrado afuera, cuanto cuesta?",
+   "Y el analítico que tiene 4 carillas?",
+   "¿cuántos días tardan con el título normalmente?",
+   "Tengo que dejarles el título original? me da miedo que se pierda"
+  ],
+  "cliente": "Es que lo necesito para pasado mañana sin falta, me lo pueden tener?",
+  "tipo": "instruccion",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "No confirmes plazos de entrega para un pedido concreto ni tomes encargos: eso lo hace Gabriel Soria. Derivá al WhatsApp +54 9 351 587-2290.",
+  "respuesta_ideal": "Hay un servicio de urgencia, pero el plazo de tu pedido te lo tiene que confirmar Gabriel Soria: escribile por WhatsApp al +54 9 351 587-2290.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «El presupuesto es sin cargo: nos mandás el documento escaneado por correo o por WhatsApp y te respondemos dentro del día hábil»."
+ },
+ {
+  "id": "i0013",
+  "negocio": "Z6_n3",
+  "turnos_previos_del_cliente": [
+   "a que hora atienden?"
+  ],
+  "cliente": "y los sabados?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "no atendemos"
+  ],
+  "evidencia": "Los sábados no atendemos.",
+  "respuesta_ideal": "Los sábados no atendemos.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Atención al público: lunes a viernes de 9 a 13 hs y de 16 a 19 hs. Los sábados no atendemos»."
+ },
+ {
+  "id": "i0052",
+  "negocio": "Z6_n3",
+  "turnos_previos_del_cliente": [
+   "Hola, buen día! cuánto sale traducir una partida de nacimiento al italiano?",
+   "y la legalización del colegio esa, se paga aparte?",
+   "Entonces si son dos partidas, la mía y la de mi viejo, las dos legalizadas, ¿cuánto me queda todo?",
+   "¿Primero tengo que apostillar la partida o la traducen así como está?"
+  ],
+  "cliente": "¿La apostilla me la hacen ustedes?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "no hacemos ese trámite"
+  ],
+  "evidencia": "La apostilla la tramita el interesado ante el organismo que corresponda; nosotros no hacemos ese trámite.",
+  "respuesta_ideal": "No, la apostilla la tramitás vos ante el organismo que corresponda; nosotros no hacemos ese trámite.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «La apostilla la tramita el interesado ante el organismo que corresponda; nosotros no hacemos ese trámite»."
+ },
+ {
+  "id": "i0064",
+  "negocio": "Z6_n3",
+  "turnos_previos_del_cliente": [
+   "a que hora atienden?"
+  ],
+  "cliente": "y los sabados?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "no atendemos"
+  ],
+  "evidencia": "Los sábados no atendemos.",
+  "respuesta_ideal": "Los sábados no atendemos.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Consulta martes, jueves y sábados»."
+ },
+ {
+  "id": "i0097",
+  "negocio": "Z6_n3",
+  "turnos_previos_del_cliente": [
+   "Hola, buen día! cuánto sale traducir una partida de nacimiento al italiano?"
+  ],
+  "cliente": "y la legalización del colegio esa, se paga aparte?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "16.500"
+  ],
+  "evidencia": "Legalización del Colegio ........ ARS 16.500 por documento (se suma al arancel de traducción)",
+  "respuesta_ideal": "Sí, la legalización del Colegio se suma aparte: son ARS 16.500 por documento.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «La legalización del Colegio de Traductores (necesaria para presentar la traducción ante organismos públicos) la gestionamos nosotros y suma 2 días hábiles al plazo»."
+ },
+ {
+  "id": "i0101",
+  "negocio": "Z6_n3",
+  "turnos_previos_del_cliente": [
+   "¿Traducen del ruso? Tengo un acta de matrimonio de Rusia",
+   "Y del español al portugués sí hacen?"
+  ],
+  "cliente": "¿quién de ustedes hace las de portugués?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "Lucía Aráoz"
+  ],
+  "evidencia": "Trad. Públ. Lucía Aráoz — italiano y portugués (Mat. 1542)",
+  "respuesta_ideal": "El portugués lo hace la traductora pública Lucía Aráoz.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Trabajamos con seguros médicos privados (INISER, ASSA y Seguros América) en modalidad de reembolso: usted paga su consulta y le entregamos factura e informe médico para que tramite el reembolso con su aseguradora»."
+ },
+ {
+  "id": "i0135",
+  "negocio": "Z6_n3",
+  "turnos_previos_del_cliente": [
+   "¿Traducen del ruso? Tengo un acta de matrimonio de Rusia"
+  ],
+  "cliente": "Y del español al portugués sí hacen?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "ambos sentidos"
+  ],
+  "evidencia": "Trabajamos en inglés, francés, italiano y portugués, en ambos sentidos (del idioma extranjero al español y del español al idioma extranjero).",
+  "respuesta_ideal": "Sí, el portugués lo trabajamos en ambos sentidos, también del español al portugués.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Trabajamos en inglés, francés, italiano y portugués, en ambos sentidos (del idioma extranjero al español y del español al idioma extranjero)»."
+ },
+ {
+  "id": "i0143",
+  "negocio": "Z6_n3",
+  "turnos_previos_del_cliente": [
+   "Hola, buen día! cuánto sale traducir una partida de nacimiento al italiano?",
+   "y la legalización del colegio esa, se paga aparte?",
+   "Entonces si son dos partidas, la mía y la de mi viejo, las dos legalizadas, ¿cuánto me queda todo?",
+   "¿Primero tengo que apostillar la partida o la traducen así como está?",
+   "¿La apostilla me la hacen ustedes?"
+  ],
+  "cliente": "¿Y con esto ya me dan la ciudadanía en el consulado italiano? ¿qué otros papeles me van a pedir?",
+  "tipo": "instruccion",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "No des asesoramiento legal ni migratorio (qué documentos pide un consulado, si un trámite va a salir bien, qué conviene presentar). Decí que eso lo tiene que consultar con el organismo que hace el trámite o con un abogado.",
+  "respuesta_ideal": "Eso no te lo puedo asegurar ni asesorar: los requisitos los tenés que consultar con el consulado o con un abogado.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Algunos consulados, por ejemplo el de Italia para trámites de ciudadanía, piden que la traducción esté legalizada por el Colegio y después apostillada»."
+ },
+ {
+  "id": "i0156",
+  "negocio": "Z6_n3",
+  "turnos_previos_del_cliente": [
+   "a que hora atienden?",
+   "y los sabados?"
+  ],
+  "cliente": "Dónde queda la oficina?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "Bv. San Juan 318",
+   "piso 4"
+  ],
+  "evidencia": "Bv. San Juan 318, piso 4, oficina B, Córdoba Capital.",
+  "respuesta_ideal": "Estamos en Bv. San Juan 318, piso 4, oficina B, en Córdoba Capital.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Efectivo en la oficina, transferencia bancaria o Mercado Pago»."
+ },
+ {
+  "id": "i0196",
+  "negocio": "Z6_n3",
+  "turnos_previos_del_cliente": [
+   "¿Traducen del ruso? Tengo un acta de matrimonio de Rusia",
+   "Y del español al portugués sí hacen?"
+  ],
+  "cliente": "¿quién de ustedes hace las de portugués?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "Lucía Aráoz"
+  ],
+  "evidencia": "Trad. Públ. Lucía Aráoz — italiano y portugués (Mat. 1542)",
+  "respuesta_ideal": "El portugués lo hace la traductora pública Lucía Aráoz.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Sí, con una nota firmada por vos y una fotocopia de tu DNI»."
+ },
+ {
+  "id": "i0210",
+  "negocio": "Z6_n3",
+  "turnos_previos_del_cliente": [
+   "Hola! Encargué la traducción de un poder hace 4 días, ya está lista?",
+   "¿Puede pasar a buscarlo mi hermana?",
+   "¿Me lo pueden mandar por correo a Río Cuarto? Vivo allá"
+  ],
+  "cliente": "¿Cuánto hay que pagar cuando se retira?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "50 %"
+  ],
+  "evidencia": "Para empezar pedimos una seña del 50 %; el otro 50 % se abona al retirar.",
+  "respuesta_ideal": "Al retirar se abona el otro 50 % del total; el primer 50 % se paga como seña al empezar.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Para empezar pedimos una seña del 50 %; el otro 50 % se abona al retirar»."
+ },
+ {
+  "id": "i0266",
+  "negocio": "Z6_n3",
+  "turnos_previos_del_cliente": [
+   "Necesito traducir mi título de ingeniera al inglés para un posgrado afuera, cuanto cuesta?"
+  ],
+  "cliente": "Y el analítico que tiene 4 carillas?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "128.000"
+  ],
+  "evidencia": "Certificado analítico ........ ARS 32.000 por carilla",
+  "respuesta_ideal": "El analítico se cobra ARS 32.000 por carilla: con 4 carillas serían ARS 128.000.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Analíticos y documentos de hasta 10 carillas: 5 días hábiles»."
+ },
+ {
+  "id": "i0289",
+  "negocio": "Z6_n3",
+  "turnos_previos_del_cliente": [
+   "a que hora atienden?",
+   "y los sabados?",
+   "Dónde queda la oficina?"
+  ],
+  "cliente": "¿Hay cochera o estacionamiento en el edificio?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo información sobre estacionamiento en el edificio, así que no te lo puedo confirmar.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Cuando el documento se va a presentar en el exterior, en la mayoría de los casos primero hay que apostillar el original y después traducirlo, incluida la apostilla»."
+ },
+ {
+  "id": "i0346",
+  "negocio": "Z6_n3",
+  "turnos_previos_del_cliente": [
+   "Necesito traducir mi título de ingeniera al inglés para un posgrado afuera, cuanto cuesta?",
+   "Y el analítico que tiene 4 carillas?"
+  ],
+  "cliente": "¿cuántos días tardan con el título normalmente?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "3 días hábiles"
+  ],
+  "evidencia": "Documentos personales (partidas, antecedentes, títulos): 3 días hábiles.",
+  "respuesta_ideal": "Para títulos el plazo habitual es de 3 días hábiles, contados desde que recibimos la seña y el documento.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Documentos personales (partidas, antecedentes, títulos): 3 días hábiles»."
+ },
+ {
+  "id": "i0369",
+  "negocio": "Z6_n3",
+  "turnos_previos_del_cliente": [
+   "a que hora atienden?",
+   "y los sabados?",
+   "Dónde queda la oficina?",
+   "¿Hay cochera o estacionamiento en el edificio?"
+  ],
+  "cliente": "¿Puedo pagar con tarjeta de crédito en cuotas?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "No aceptamos tarjeta de crédito"
+  ],
+  "evidencia": "No aceptamos tarjeta de crédito.",
+  "respuesta_ideal": "No aceptamos tarjeta de crédito; podés pagar en efectivo, por transferencia o con Mercado Pago.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «No aceptamos tarjeta de crédito»."
+ },
+ {
+  "id": "i0410",
+  "negocio": "Z6_n3",
+  "turnos_previos_del_cliente": [
+   "Hola! Encargué la traducción de un poder hace 4 días, ya está lista?"
+  ],
+  "cliente": "¿Puede pasar a buscarlo mi hermana?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "nota firmada",
+   "DNI"
+  ],
+  "evidencia": "Sí, con una nota firmada por vos y una fotocopia de tu DNI.",
+  "respuesta_ideal": "Sí, con una nota firmada por vos y una fotocopia de tu DNI.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Sí, con una nota firmada por vos y una fotocopia de tu DNI»."
+ },
+ {
+  "id": "i0429",
+  "negocio": "Z6_n3",
+  "turnos_previos_del_cliente": [
+   "¿Traducen del ruso? Tengo un acta de matrimonio de Rusia",
+   "Y del español al portugués sí hacen?",
+   "¿quién de ustedes hace las de portugués?",
+   "¿Cuánto cobran por traducir un registro de conducir?",
+   "Tengo un contrato de alquiler de una sola carilla, ¿cuánto me saldría?"
+  ],
+  "cliente": "¿Hacen de intérprete en el Registro Civil? me caso con un brasileño que no habla español",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo información sobre servicios de interpretación; lo que ofrecemos son traducciones públicas de documentos.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Hacemos traducciones públicas —lo que en otros países se llama \"traducción jurada\" o \"traducción certificada\"— de documentos personales, académicos, comerciales y judiciales, con firma y sello de traductora pública matriculada en el Colegio de Traductores Públicos de la Provincia de Córdoba»."
+ },
+ {
+  "id": "i0435",
+  "negocio": "Z6_n3",
+  "turnos_previos_del_cliente": [
+   "a que hora atienden?",
+   "y los sabados?",
+   "Dónde queda la oficina?",
+   "¿Hay cochera o estacionamiento en el edificio?",
+   "¿Puedo pagar con tarjeta de crédito en cuotas?"
+  ],
+  "cliente": "¿Tienen algún descuento para estudiantes?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo información sobre descuentos para estudiantes, así que no te lo puedo asegurar.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Para traducir alcanza con una copia clara»."
+ },
+ {
+  "id": "i0440",
+  "negocio": "Z6_n3",
+  "turnos_previos_del_cliente": [
+   "Necesito traducir mi título de ingeniera al inglés para un posgrado afuera, cuanto cuesta?"
+  ],
+  "cliente": "Y el analítico que tiene 4 carillas?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "128.000"
+  ],
+  "evidencia": "Certificado analítico ........ ARS 32.000 por carilla",
+  "respuesta_ideal": "El analítico se cobra ARS 32.000 por carilla: con 4 carillas serían ARS 128.000.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Poderes, contratos y documentos comerciales ........ ARS 36.000 por carilla (mínimo 2 carillas)»."
+ },
+ {
+  "id": "i0468",
+  "negocio": "Z6_n3",
+  "turnos_previos_del_cliente": [
+   "Hola, buen día! cuánto sale traducir una partida de nacimiento al italiano?",
+   "y la legalización del colegio esa, se paga aparte?",
+   "Entonces si son dos partidas, la mía y la de mi viejo, las dos legalizadas, ¿cuánto me queda todo?"
+  ],
+  "cliente": "¿Primero tengo que apostillar la partida o la traducen así como está?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "apostillar el original"
+  ],
+  "evidencia": "Cuando el documento se va a presentar en el exterior, en la mayoría de los casos primero hay que apostillar el original y después traducirlo, incluida la apostilla.",
+  "respuesta_ideal": "En la mayoría de los casos, primero hay que apostillar el original y después se traduce, incluida la apostilla.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Cuando el documento se va a presentar en el exterior, en la mayoría de los casos primero hay que apostillar el original y después traducirlo, incluida la apostilla»."
+ }
+]
