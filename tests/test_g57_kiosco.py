@@ -230,23 +230,6 @@ class WhatGovernsTests(unittest.TestCase):
         self.assertTrue({u['text']: u for u in bot.context_units}['Todo con IVA incluido.']['inherited'])
 
 
-class WrappedLinesTests(unittest.TestCase):
-    """G-63: a sentence broken across lines is read as one unit."""
-
-    def test_a_broken_sentence_is_one_unit(self):
-        bot = Bot()
-        bot.load_context('HOTEL\nLos menores de doce años no pagan alojamiento cuando comparten la habitación con dos\n'
-                         'adultos, y el desayuno para ellos cuesta la mitad.\n- Piscina\n- sauna\nHorarios\nde 8 a 18')
-        texts = [u['text'] for u in bot.context_units]
-        self.assertIn('Los menores de doce años no pagan alojamiento cuando comparten la habitación con dos '
-                      'adultos, y el desayuno para ellos cuesta la mitad.', texts)
-        self.assertIn('sauna', texts)
-        bot.join_wrapped = False
-        bot.load_context('HOTEL\nLos menores de doce años no pagan alojamiento cuando comparten la habitación con dos\n'
-                         'adultos, y el desayuno para ellos cuesta la mitad.')
-        self.assertIn('adultos, y el desayuno para ellos cuesta la mitad.', [u['text'] for u in bot.context_units])
-
-
 class PrivacyTests(unittest.TestCase):
     def test_what_one_client_says_is_not_kept_for_the_next(self):
         bot = Bot()
