@@ -22,6 +22,7 @@ ningún texto de MFAQ.  Ver prereg/G-57-kiosco-unidades-del-documento-puente-con
 from __future__ import annotations
 
 import hashlib
+import os
 import json
 import math
 import random
@@ -35,7 +36,7 @@ from leobot import Bot
 MFAQ_URL = 'https://huggingface.co/datasets/clips/mfaq/resolve/main/data/es/train.jsonl'
 MFAQ_SHA = 'c985eb099bcdadf87baa778786148e4de6c9a84057e68b4268ea2f832b884c66'
 SEED = 57
-PAIRS_PER_DOMAIN = 100
+PAIRS_PER_DOMAIN = int(os.environ.get('PARES_POR_DOMINIO', '100'))  # G-63: más educación con el mismo motor
 PI_MIN = 3
 RARE = (1, 5)
 BRIDGE_SUPPORT = 20
