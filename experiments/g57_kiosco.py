@@ -113,7 +113,7 @@ def renamed(text: str, mapping: dict) -> str:
     return re.sub(r'\w+', lambda m: mapping.get(m.group(0), m.group(0)), str(text)) if text else text
 
 
-def run(base: Path, folders, system: str, off=(), rename=False, other=False, restart=False, strict=False):
+def run(base: Path, folders, system: str, off=(), rename=False, other=False, restart=False, strict=False, on=()):
     rows = []
     template = Bot.load(base) if system == 'g57' else None
     items = list(businesses(folders))
@@ -130,6 +130,8 @@ def run(base: Path, folders, system: str, off=(), rename=False, other=False, res
             bot = template
             for switch in off:
                 setattr(bot, switch, False)
+            for switch in on:
+                setattr(bot, switch, True)
             bot.load_context(text, instructions)
             if restart:
                 with tempfile.TemporaryDirectory() as tmp:

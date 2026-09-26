@@ -10,14 +10,16 @@ juicio).  «No lo sé», saludos y excepciones se califican solos.  Puertas del 
 from __future__ import annotations
 
 import json
+import os
 import random
 import shutil
 import sys
 from pathlib import Path
 
-FROZEN = '86684a218e4cc2cc2c13fdb0915fc5a281953b6f'
-JUDGED = ('tratamiento', 'sin_seguimiento', 'tabla_barajada', 'otro_negocio')
-REPORTED = JUDGED + ('sin_cercano', 'g57r', 'renombrado_estricto')
+FROZEN = os.environ.get('JUECES_SEMILLA', '86684a218e4cc2cc2c13fdb0915fc5a281953b6f')
+import os
+JUDGED = tuple(os.environ.get('JUECES_SISTEMAS', 'tratamiento,sin_seguimiento,tabla_barajada,otro_negocio').split(','))
+REPORTED = JUDGED + tuple(x for x in os.environ.get('JUECES_OTROS', 'sin_cercano,g57r,renombrado_estricto').split(',') if x)
 
 
 def rows_of(eval_dir: Path, system: str) -> list[dict]:
