@@ -85,3 +85,34 @@ Congelado `freeze-G-63`; semilla de su huella.
 ## Presupuesto
 
 Implementación ≤ 20 min; banco ≤ 40 min; juez ≤ 1 h; medidas generales ≤ 40 min; auditoría ≤ 1 h. Hasta 16 procesos, con al menos 2 GB de RAM libres.
+
+## Resultado preliminar e incompleto (2026-09-26): la medida no se pudo terminar
+
+**El límite semanal de la API cortó a los redactores**; se reinicia el 30 de septiembre.
+- El banco quedó en 15 de 24 negocios y 396 turnos. `results_v3/kiosco/congelado_g63/LEEME.md` dice qué se incluyó.
+- No hubo juez ciego ni auditoría. Las cifras siguientes son de conteo automático y **no deciden ninguna puerta**.
+
+| Presentación | G-63 | `estable-G-18` | Sin unir (G-63) |
+|---|---|---|---|
+| Tal cual: útiles en directa + sí/no | 34/180 | 34/180 | — |
+| Tal cual: respuestas idénticas | 396/396 | — | — |
+| Partido a 70: útiles en directa + sí/no | **32/180** | 27/180 | 27/180 |
+| Partido a 70: citas útiles · no útiles | 40 · 36 | 36 · 44 | 36 · 44 |
+
+**Controles:**
+- reinicio con texto partido: 396/396;
+- otro negocio: 0 útiles y 352/396 «No lo sé».
+
+**Pruebas generales (`freeze-G-63`):**
+- MFAQ normalizado 57,31 % frente a 57,24 %; con el evaluador original, 55,97 % (el artefacto declarado);
+- SQuAD-es 0,8013;
+- conversación 158;
+- regresión 668/6/0.
+
+En el banco parcial, la ventaja con texto partido es de +2,8 puntos (automático), lejos de los +8,8 del desarrollo. Con 180 preguntas no se puede concluir nada.
+
+**Estado:** el motor de G-63 queda en la rama `G-63`; main vuelve al motor de `estable-G-18`. Para retomar:
+1. redactar los 9 negocios que faltan (R4, R5 y el cuarto de R6), con el mismo encargo y los mismos sectores;
+2. pasar el juez;
+3. decidir las puertas;
+4. auditoría 5.10 si pasa.
