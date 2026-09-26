@@ -169,13 +169,21 @@ class ContextMixin:
 
     def _layout_units(self, text: str, source: str) -> list[dict]:
         units, title, section, question, header = [], '', '', '', None
+        section_kind, block_open = '', False
 
         def add(display: str, kind: str, asked: str = '') -> None:
             heading = asked or question or section
             own = sorted(set(self.context_terms(display)))
             # G-61: a unit is read under its heading, so it also answers to the
             # heading's words (a price row under «Extras», an answer under its question).
-            inherited = sorted(set(self.context_terms(heading)) - set(own)) if heading else []
+            # G-62: a question governs its answer; a title marked by typography
+            # (markdown or capitals) governs its whole section; a line ending in a
+            # colon introduces only its own block, up to the next blank line; a short
+            # unmarked line may be content and governs nothing.
+            governs = (section_kind == 'title' or (section_kind == 'colon' and block_open)
+                       or getattr(self, 'inherit_all_headings', False))
+            governing = asked or question or (section if governs else '')
+            inherited = sorted(set(self.context_terms(governing)) - set(own)) if governing else []
             units.append({'text': display, 'heading': heading, 'kind': kind, 'source': source,
                           'terms': own, 'inherited': inherited, 'classes': self._classes(display)})
 
@@ -190,6 +198,7 @@ class ContextMixin:
             if not line:
                 # A question's answer ends at the blank line after it.
                 question, header = '', None
+                block_open = False
                 continue
             cells = self._cells(line)
             if cells is not None:
@@ -224,7 +233,9 @@ class ContextMixin:
                 if line.endswith('?'):
                     question = body
                 else:
-                    section, question = body, ''
+                    section, question, block_open = body, '', True
+                    section_kind = ('title' if _MD_HEADING.match(line) or not line.endswith(':') else 'colon') \
+                        if strong else 'unmarked'
                 # The heading is also a unit.
                 units.append({'text': body, 'heading': '', 'kind': 'question' if line.endswith('?') else 'heading',
                               'source': source, 'terms': sorted(set(self.context_terms(body))), 'inherited': [],

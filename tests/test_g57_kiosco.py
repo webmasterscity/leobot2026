@@ -211,6 +211,25 @@ class ReadUnderItsHeadingTests(unittest.TestCase):
         self.assertEqual({u['text']: u for u in bot.context_units}['¿Hay parking?']['kind'], 'sentence')
 
 
+class WhatGovernsTests(unittest.TestCase):
+    """G-62: a title governs its section, a colon line only its block, an unmarked short line nothing."""
+
+    def test_scope_of_each_heading(self):
+        bot = Bot()
+        bot.load_context('TIENDA\nHORARIOS\nLunes a viernes de 9 a 18.\n\nSábados de 9 a 13.\n\n'
+                         'Extras:\n- GPS: 4 € por día\n\nLa silla de bebé va aparte.\n\n'
+                         'Nota breve\nTodo con IVA incluido.')
+        by_text = {u['text']: u for u in bot.context_units}
+        hours = set(bot.context_terms('HORARIOS'))
+        self.assertTrue(hours <= set(by_text['Sábados de 9 a 13.']['inherited']) | set(by_text['Sábados de 9 a 13.']['terms']))
+        self.assertTrue(set(bot.context_terms('Extras')) <= set(by_text['GPS: 4 € por día']['inherited']))
+        self.assertFalse(set(bot.context_terms('Extras')) & set(by_text['La silla de bebé va aparte.']['inherited']))
+        self.assertEqual(by_text['Todo con IVA incluido.']['inherited'], [])
+        bot.inherit_all_headings = True
+        bot.load_context('TIENDA\nNota breve\nTodo con IVA incluido.')
+        self.assertTrue({u['text']: u for u in bot.context_units}['Todo con IVA incluido.']['inherited'])
+
+
 class PrivacyTests(unittest.TestCase):
     def test_what_one_client_says_is_not_kept_for_the_next(self):
         bot = Bot()
