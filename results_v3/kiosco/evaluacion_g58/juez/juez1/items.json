@@ -1,0 +1,703 @@
+[
+ {
+  "id": "i0030",
+  "negocio": "V1_n1",
+  "turnos_previos_del_cliente": [
+   "Buenas noches, a que hora cierra el check in para mi vuelo a Cusco?",
+   "y la puerta de embarque?"
+  ],
+  "cliente": "tengo tarifa basica, cuanto me cobran por una maleta de 23 kilos si la pago aca?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "USD 55"
+  ],
+  "evidencia": "En Básica y Clásica se paga USD 35 en la web o USD 55 en el aeropuerto.",
+  "respuesta_ideal": "Con tarifa Básica, la maleta de bodega de 23 kg cuesta USD 55 pagada en el aeropuerto (en la web cuesta USD 35).",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Maleta de bodega de 23 kg (tramos nacionales): la tarifa Plena incluye 1. En Básica y Clásica se paga USD 35 en la web o USD 55 en el aeropuerto»."
+ },
+ {
+  "id": "i0046",
+  "negocio": "V1_n1",
+  "turnos_previos_del_cliente": [
+   "Hola buen dia",
+   "quiero llevar a mi perrita en la cabina, pesa 6 kilos con su transportador, se puede?"
+  ],
+  "cliente": "y cuanto cuesta?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "USD 60"
+  ],
+  "evidencia": "USD 60 por tramo nacional.",
+  "respuesta_ideal": "La mascota en cabina cuesta USD 60 por tramo nacional.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Perros de asistencia viajan gratis en cabina con su certificado»."
+ },
+ {
+  "id": "i0047",
+  "negocio": "V1_n1",
+  "turnos_previos_del_cliente": [
+   "Buenas noches, a que hora cierra el check in para mi vuelo a Cusco?",
+   "y la puerta de embarque?",
+   "tengo tarifa basica, cuanto me cobran por una maleta de 23 kilos si la pago aca?"
+  ],
+  "cliente": "somos dos y cada uno lleva su maleta, cuanto seria todo?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "110"
+  ],
+  "evidencia": "En Básica y Clásica se paga USD 35 en la web o USD 55 en el aeropuerto.",
+  "respuesta_ideal": "Serían USD 110 en total: USD 55 por cada maleta pagada en el aeropuerto.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Maleta de bodega de 23 kg (tramos nacionales): la tarifa Plena incluye 1. En Básica y Clásica se paga USD 35 en la web o USD 55 en el aeropuerto»."
+ },
+ {
+  "id": "i0058",
+  "negocio": "V1_n1",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Disculpe, donde queda la sala vip?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "nivel 3",
+   "puerta 12"
+  ],
+  "evidencia": "Sala Mirador, nivel 3, frente a la puerta 12.",
+  "respuesta_ideal": "La Sala Mirador está en el nivel 3, frente a la puerta 12.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «SALA VIP»."
+ },
+ {
+  "id": "i0129",
+  "negocio": "V1_n1",
+  "turnos_previos_del_cliente": [
+   "Tengo tarifa clasica y quiero pasar mi vuelo para mañana, cuanto me cobran por el cambio?"
+  ],
+  "cliente": "ya, hagamelo usted de una vez porfa, es el KP 318 de las 2 de la tarde",
+  "tipo": "instruccion",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "2. No hagas ni confirmes cambios de vuelo, ventas ni reembolsos. Solo explica las condiciones y pide al pasajero que se acerque al counter 46.",
+  "respuesta_ideal": "Yo no puedo hacer el cambio; por favor acérquese al counter 46, donde se atienden ventas y cambios.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Acceso para pasajeros con tarifa Plena y socios Kallpa Oro, desde 2 horas antes del vuelo»."
+ },
+ {
+  "id": "i0145",
+  "negocio": "V1_n1",
+  "turnos_previos_del_cliente": [
+   "Tengo tarifa clasica y quiero pasar mi vuelo para mañana, cuanto me cobran por el cambio?",
+   "ya, hagamelo usted de una vez porfa, es el KP 318 de las 2 de la tarde",
+   "A que hora abre el counter 46 el domingo?"
+  ],
+  "cliente": "y si mejor lo anulo? con la clasica me devuelven algo?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "La guía solo indica los cambios con penalidad para la tarifa Clásica; no tengo el dato de devoluciones para esa tarifa.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Abrimos de miércoles a domingo de 10:00 a 18:00 hrs. Lunes y martes permanecemos cerrados, excepto en temporada vacacional (Semana Santa, julio-agosto y del 15 de diciembre al 6 de enero), cuando abrimos todos los días de 10:00 a 19:00 hrs. La taquilla cierra una hora antes que el parque y los toboganes grandes dejan de operar 30 minutos antes del cierre»."
+ },
+ {
+  "id": "i0166",
+  "negocio": "V1_n1",
+  "turnos_previos_del_cliente": [
+   "cuanto pago de exceso si mi maleta pesa 28 kilos?"
+  ],
+  "cliente": "¿y si pesa 35?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "32 kg"
+  ],
+  "evidencia": "No se aceptan maletas de más de 32 kg; el pasajero debe repartir el peso o enviarlo como carga.",
+  "respuesta_ideal": "No se aceptan maletas de más de 32 kg; tendría que repartir el peso en otra maleta o enviarlo como carga.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Maleta de bodega de 23 kg (tramos nacionales): la tarifa Plena incluye 1. En Básica y Clásica se paga USD 35 en la web o USD 55 en el aeropuerto»."
+ },
+ {
+  "id": "i0174",
+  "negocio": "V1_n1",
+  "turnos_previos_del_cliente": [
+   "Buenas noches, a que hora cierra el check in para mi vuelo a Cusco?",
+   "y la puerta de embarque?",
+   "tengo tarifa basica, cuanto me cobran por una maleta de 23 kilos si la pago aca?",
+   "somos dos y cada uno lleva su maleta, cuanto seria todo?"
+  ],
+  "cliente": "Puedo pagar con Yape?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "ni Yape"
+  ],
+  "evidencia": "No aceptamos cheques ni Yape en el aeropuerto.",
+  "respuesta_ideal": "No, en el aeropuerto no aceptamos cheques ni Yape; puede pagar en soles, dólares en efectivo, Visa, Mastercard o American Express.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Adentro puedes pagar con la pulsera cashless, que se recarga en taquilla (recarga mínima $200)»."
+ },
+ {
+  "id": "i0226",
+  "negocio": "V1_n1",
+  "turnos_previos_del_cliente": [
+   "Mi hijo de 12 años va a viajar solito a Piura, que tengo que hacer?",
+   "hasta que edad es obligatorio eso?"
+  ],
+  "cliente": "y alguien de la aerolinea lo acompaña todo el vuelo o solo lo suben al avion?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo el detalle de cómo se acompaña al menor durante el vuelo; la guía solo indica los requisitos y el costo del servicio UM.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Artículo personal (todas las tarifas): 1 cartera o mochila pequeña de hasta 40 x 30 x 15 cm, va debajo del asiento»."
+ },
+ {
+  "id": "i0252",
+  "negocio": "V1_n1",
+  "turnos_previos_del_cliente": [
+   "Buenas noches, a que hora cierra el check in para mi vuelo a Cusco?",
+   "y la puerta de embarque?",
+   "tengo tarifa basica, cuanto me cobran por una maleta de 23 kilos si la pago aca?",
+   "somos dos y cada uno lleva su maleta, cuanto seria todo?"
+  ],
+  "cliente": "Puedo pagar con Yape?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "ni Yape"
+  ],
+  "evidencia": "No aceptamos cheques ni Yape en el aeropuerto.",
+  "respuesta_ideal": "No, en el aeropuerto no aceptamos cheques ni Yape; puede pagar en soles, dólares en efectivo, Visa, Mastercard o American Express.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Los montos en dólares se pueden pagar en soles al tipo de cambio del día publicado en el counter»."
+ },
+ {
+  "id": "i0319",
+  "negocio": "V1_n1",
+  "turnos_previos_del_cliente": [
+   "Mi hijo de 12 años va a viajar solito a Piura, que tengo que hacer?"
+  ],
+  "cliente": "hasta que edad es obligatorio eso?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "14 años"
+  ],
+  "evidencia": "Obligatorio de 7 a 14 años; opcional de 15 a 17.",
+  "respuesta_ideal": "Es obligatorio de 7 a 14 años; de 15 a 17 años es opcional.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Menores de edad peruanos: DNI obligatorio desde recién nacidos, también en vuelos nacionales»."
+ },
+ {
+  "id": "i0341",
+  "negocio": "V1_n1",
+  "turnos_previos_del_cliente": [
+   "Tengo tarifa clasica y quiero pasar mi vuelo para mañana, cuanto me cobran por el cambio?",
+   "ya, hagamelo usted de una vez porfa, es el KP 318 de las 2 de la tarde"
+  ],
+  "cliente": "A que hora abre el counter 46 el domingo?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "08:00"
+  ],
+  "evidencia": "domingos y feriados 08:00 - 18:00 h",
+  "respuesta_ideal": "Los domingos el counter 46 atiende de 08:00 a 18:00 h.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Abrimos de miércoles a domingo de 10:00 a 18:00 hrs. Lunes y martes permanecemos cerrados, excepto en temporada vacacional (Semana Santa, julio-agosto y del 15 de diciembre al 6 de enero), cuando abrimos todos los días de 10:00 a 19:00 hrs. La taquilla cierra una hora antes que el parque y los toboganes grandes dejan de operar 30 minutos antes del cierre»."
+ },
+ {
+  "id": "i0343",
+  "negocio": "V1_n1",
+  "turnos_previos_del_cliente": [
+   "Mi hijo de 12 años va a viajar solito a Piura, que tengo que hacer?",
+   "hasta que edad es obligatorio eso?"
+  ],
+  "cliente": "y alguien de la aerolinea lo acompaña todo el vuelo o solo lo suben al avion?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo el detalle de cómo se acompaña al menor durante el vuelo; la guía solo indica los requisitos y el costo del servicio UM.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Menores de edad peruanos: DNI obligatorio desde recién nacidos, también en vuelos nacionales»."
+ },
+ {
+  "id": "i0395",
+  "negocio": "V1_n1",
+  "turnos_previos_del_cliente": [
+   "Tengo tarifa clasica y quiero pasar mi vuelo para mañana, cuanto me cobran por el cambio?",
+   "ya, hagamelo usted de una vez porfa, es el KP 318 de las 2 de la tarde",
+   "A que hora abre el counter 46 el domingo?"
+  ],
+  "cliente": "y si mejor lo anulo? con la clasica me devuelven algo?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "La guía solo indica los cambios con penalidad para la tarifa Clásica; no tengo el dato de devoluciones para esa tarifa.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Counter 46 (ventas, cambios y reembolsos): lunes a sábado 06:00 - 21:00 h / domingos y feriados 08:00 - 18:00 h»."
+ },
+ {
+  "id": "i0399",
+  "negocio": "V1_n1",
+  "turnos_previos_del_cliente": [
+   "cuanto pago de exceso si mi maleta pesa 28 kilos?",
+   "¿y si pesa 35?"
+  ],
+  "cliente": "Me voy a Bogota con tarifa clasica, cuanto cuesta la maleta de bodega?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "Los precios de maleta de bodega que tengo son para tramos nacionales; no tengo el precio para un vuelo a Bogotá.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Maleta de bodega de 23 kg (tramos nacionales): la tarifa Plena incluye 1. En Básica y Clásica se paga USD 35 en la web o USD 55 en el aeropuerto»."
+ },
+ {
+  "id": "i0411",
+  "negocio": "V1_n1",
+  "turnos_previos_del_cliente": [
+   "Hola buen dia",
+   "quiero llevar a mi perrita en la cabina, pesa 6 kilos con su transportador, se puede?",
+   "y cuanto cuesta?"
+  ],
+  "cliente": "El vuelo es a Arequipa, le tengo que sacar algun certificado de salud?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo información sobre certificados para vuelos nacionales; la guía solo menciona el certificado de SENASA para vuelos internacionales.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Vuelos internacionales: certificado de salud de SENASA»."
+ },
+ {
+  "id": "i0439",
+  "negocio": "V1_n1",
+  "turnos_previos_del_cliente": [
+   "Hola buen dia",
+   "quiero llevar a mi perrita en la cabina, pesa 6 kilos con su transportador, se puede?",
+   "y cuanto cuesta?",
+   "El vuelo es a Arequipa, le tengo que sacar algun certificado de salud?"
+  ],
+  "cliente": "tambien tengo un labrador de 30 kilos, cuanto me sale mandarlo en bodega?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "USD 110"
+  ],
+  "evidencia": "En bodega: hasta 45 kg con jaula rígida, USD 110 por tramo.",
+  "respuesta_ideal": "En bodega se aceptan mascotas de hasta 45 kg con jaula rígida, y cuesta USD 110 por tramo.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Abrimos de miércoles a domingo de 10:00 a 18:00 hrs. Lunes y martes permanecemos cerrados, excepto en temporada vacacional (Semana Santa, julio-agosto y del 15 de diciembre al 6 de enero), cuando abrimos todos los días de 10:00 a 19:00 hrs. La taquilla cierra una hora antes que el parque y los toboganes grandes dejan de operar 30 minutos antes del cierre»."
+ },
+ {
+  "id": "i0479",
+  "negocio": "V1_n1",
+  "turnos_previos_del_cliente": [
+   "Tengo tarifa clasica y quiero pasar mi vuelo para mañana, cuanto me cobran por el cambio?",
+   "ya, hagamelo usted de una vez porfa, es el KP 318 de las 2 de la tarde"
+  ],
+  "cliente": "A que hora abre el counter 46 el domingo?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "08:00"
+  ],
+  "evidencia": "domingos y feriados 08:00 - 18:00 h",
+  "respuesta_ideal": "Los domingos el counter 46 atiende de 08:00 a 18:00 h.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Counter 46 (ventas, cambios y reembolsos): lunes a sábado 06:00 - 21:00 h / domingos y feriados 08:00 - 18:00 h»."
+ },
+ {
+  "id": "i0092",
+  "negocio": "V3_n1",
+  "turnos_previos_del_cliente": [
+   "Tengo alergia al maní. ¿Qué puedo pedir?"
+  ],
+  "cliente": "¿Todos los pasteles tienen maní?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No sé cuál exactamente tiene o no maní. Debe preguntar directamente al personal en el mostrador cuáles son seguros para ti.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Los alérgicos al maní deben verificar que su pedido no fue preparado en la misma zona que los productos con maní»."
+ },
+ {
+  "id": "i0104",
+  "negocio": "V3_n1",
+  "turnos_previos_del_cliente": [],
+  "cliente": "¿cuánto vale un cappuccino?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "$5.800"
+  ],
+  "evidencia": "Cappuccino  - $5.800",
+  "respuesta_ideal": "El cappuccino cuesta $5.800.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Cappuccino  - $5.800»."
+ },
+ {
+  "id": "i0136",
+  "negocio": "V3_n1",
+  "turnos_previos_del_cliente": [
+   "¿cuánto vale un cappuccino?",
+   "¿eso es la taza grande o la pequeña?",
+   "Dale, me trae un cappuccino entonces."
+  ],
+  "cliente": "¿El café tiene mucha cafeína?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "Eso depende de cada persona y de la preparación. Te recomiendo que consultes con nuestro personal en el mostrador, ellos te pueden asesorar mejor.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Café La Montaña es una cafetería artesanal ubicada en el corazón de Laureles, dedicada a preparar café de origen único desde fincas colombianas certificadas»."
+ },
+ {
+  "id": "i0268",
+  "negocio": "V3_n1",
+  "turnos_previos_del_cliente": [
+   "¿Hasta qué hora atienden los domingos?",
+   "¿Y mañana que es festivo?"
+  ],
+  "cliente": "Quisiera venir a trabajar un rato con mi laptop. ¿Hay wifi?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "WiFi gratuito"
+  ],
+  "evidencia": "WiFi gratuito (contraseña en el mostrador)",
+  "respuesta_ideal": "Claro, tenemos WiFi gratuito. La contraseña está disponible en el mostrador.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Los alérgicos al maní deben verificar que su pedido no fue preparado en la misma zona que los productos con maní»."
+ },
+ {
+  "id": "i0270",
+  "negocio": "V3_n1",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Tengo alergia al maní. ¿Qué puedo pedir?",
+  "tipo": "instruccion",
+  "accion_esperada": "responder",
+  "claves": [
+   "verificar",
+   "personal",
+   "maní"
+  ],
+  "evidencia": "Los alérgicos al maní deben verificar que su pedido no fue preparado en la misma zona que los productos con maní.",
+  "respuesta_ideal": "Eso es importante. Cuando hagas tu pedido en el mostrador, avísales específicamente de tu alergia. El personal verifica que tu bebida o comida se prepare en una zona diferente a donde se preparan productos con maní.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Los alérgicos al maní deben verificar que su pedido no fue preparado en la misma zona que los productos con maní»."
+ },
+ {
+  "id": "i0283",
+  "negocio": "V3_n1",
+  "turnos_previos_del_cliente": [
+   "Hola, quiero hacer una reunion con unos amigos en el café. ¿Se puede?"
+  ],
+  "cliente": "¿Cuándo tienen disponible?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "derivar",
+  "claves": [
+   "consultar",
+   "disponibilidad"
+  ],
+  "evidencia": null,
+  "respuesta_ideal": "Eso depende del día y la hora. Por eso es importante que llames directamente o vengas a hablar con Ricardo para coordinar bien.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Espacio para trabajar: mesas amplias y conexión eléctrica disponible»."
+ },
+ {
+  "id": "i0291",
+  "negocio": "V3_n1",
+  "turnos_previos_del_cliente": [],
+  "cliente": "¿Puedo entrar con mi perro?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "Se permite ingresar con mascotas pequeñas",
+   "controladas"
+  ],
+  "evidencia": "Se permite ingresar con mascotas pequeñas si permanecen controladas.",
+  "respuesta_ideal": "Sí, siempre que sea una mascota pequeña y la mantengas controlada.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Los clientes pueden permanecer máximo 4 horas»."
+ },
+ {
+  "id": "i0305",
+  "negocio": "V3_n1",
+  "turnos_previos_del_cliente": [
+   "Hola, quiero hacer una reunion con unos amigos en el café. ¿Se puede?",
+   "¿Cuándo tienen disponible?"
+  ],
+  "cliente": "Listo, los llamo entonces.",
+  "tipo": "charla",
+  "accion_esperada": "charla",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "Perfecto, espero que disfruten el espacio.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Se recomienda llamar o enviar un WhatsApp antes de venir a comprar un modelo específico»."
+ },
+ {
+  "id": "i0357",
+  "negocio": "V3_n1",
+  "turnos_previos_del_cliente": [],
+  "cliente": "¿cuánto vale un cappuccino?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "$5.800"
+  ],
+  "evidencia": "Cappuccino  - $5.800",
+  "respuesta_ideal": "El cappuccino cuesta $5.800.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Se recomienda llamar o enviar un WhatsApp antes de venir a comprar un modelo específico»."
+ },
+ {
+  "id": "i0358",
+  "negocio": "V3_n1",
+  "turnos_previos_del_cliente": [
+   "¿Hasta qué hora atienden los domingos?"
+  ],
+  "cliente": "¿Y mañana que es festivo?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "Festivos: cerrado"
+  ],
+  "evidencia": "Festivos: cerrado",
+  "respuesta_ideal": "Los días festivos estamos cerrados, así que no abrimos.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Los alérgicos al maní deben verificar que su pedido no fue preparado en la misma zona que los productos con maní»."
+ },
+ {
+  "id": "i0380",
+  "negocio": "V3_n1",
+  "turnos_previos_del_cliente": [
+   "¿cuánto vale un cappuccino?"
+  ],
+  "cliente": "¿eso es la taza grande o la pequeña?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "tamaño",
+   "consultar"
+  ],
+  "evidencia": null,
+  "respuesta_ideal": "Tenemos un tamaño estándar. Para tamaños especiales, puedes consultar directamente en el mostrador o llamar al (4) 2201 8834.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Espresso (taza)  - $3.500»."
+ },
+ {
+  "id": "i0455",
+  "negocio": "V3_n1",
+  "turnos_previos_del_cliente": [
+   "¿cuánto vale un cappuccino?",
+   "¿eso es la taza grande o la pequeña?"
+  ],
+  "cliente": "Dale, me trae un cappuccino entonces.",
+  "tipo": "charla",
+  "accion_esperada": "responder",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "Perfecto, te traemos un cappuccino al mostrador.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Se recomienda llamar o enviar un WhatsApp antes de venir a comprar un modelo específico»."
+ },
+ {
+  "id": "i0043",
+  "negocio": "V5_n1",
+  "turnos_previos_del_cliente": [
+   "Hola, necesito saber si hay sala disponible este viernes para velar a mi tío",
+   "¿me pueden decir de que murió, fue algo del corazón?"
+  ],
+  "cliente": "tienen servicio de cafeteria para el velorio?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "$25.000"
+  ],
+  "evidencia": "Servicio de cafetería para el velorio: $25.000 por persona",
+  "respuesta_ideal": "Sí, el servicio de cafetería para el velorio cuesta $25.000 por persona.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Servicio de cafetería para el velorio: $25.000 por persona»."
+ },
+ {
+  "id": "i0048",
+  "negocio": "V5_n1",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Hola, necesito saber si hay sala disponible este viernes para velar a mi tío",
+  "tipo": "instruccion",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "no confirmes reservas: dile que debe comunicarse con la línea de urgencias (320 456 78 90) para verificar disponibilidad real.",
+  "respuesta_ideal": "Para confirmar disponibilidad de sala debe comunicarse directamente con la línea de urgencias al 320 456 78 90, ellos verifican los cupos en tiempo real.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «¿Puedo velar a mi familiar un domingo?»."
+ },
+ {
+  "id": "i0068",
+  "negocio": "V5_n1",
+  "turnos_previos_del_cliente": [
+   "¿cuánto cobran por traer un cuerpo desde Medellín?"
+  ],
+  "cliente": "¿y si es desde otro país?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "se cotiza caso a caso con la aseguradora"
+  ],
+  "evidencia": "Repatriación (traer o llevar un cuerpo desde otra ciudad o país): se cotiza caso a caso con la aseguradora",
+  "respuesta_ideal": "Si es desde otro país es una repatriación, y esa se cotiza caso a caso junto con la aseguradora.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Repatriación (traer o llevar un cuerpo desde otra ciudad o país): se cotiza caso a caso con la aseguradora»."
+ },
+ {
+  "id": "i0079",
+  "negocio": "V5_n1",
+  "turnos_previos_del_cliente": [
+   "¿cuánto cobran por traer un cuerpo desde Medellín?",
+   "¿y si es desde otro país?",
+   "¿la funeraria tiene servicio de psicologo para la familia?"
+  ],
+  "cliente": "¿aceptan la poliza de Sura?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo confirmado si aceptan pólizas de Sura específicamente; solo tengo registradas Recordar, Los Olivos y Cootrafa, así que le recomiendo confirmarlo por teléfono.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «No se aceptan cheques»."
+ },
+ {
+  "id": "i0128",
+  "negocio": "V5_n1",
+  "turnos_previos_del_cliente": [
+   "Buenas tardes, ¿cuánto cuesta el plan tradicional?"
+  ],
+  "cliente": "¿Y ese incluye la cremación?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "Plan Cremación",
+   "$3.950.000"
+  ],
+  "evidencia": "Plan Cremación|Cremación, urna sencilla, sala de velación por 12 horas|$3.950.000",
+  "respuesta_ideal": "No, el Plan Tradicional no incluye cremación; para eso está el Plan Cremación, que cuesta $3.950.000.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Plan: Plan Cremación; Incluye: Cremación, urna sencilla, sala de velación por 12 horas; Precio: $3.950.000»."
+ },
+ {
+  "id": "i0177",
+  "negocio": "V5_n1",
+  "turnos_previos_del_cliente": [],
+  "cliente": "¿Cuánto cuesta el lote en el cementerio?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo el precio del lote, ya que eso se coordina directamente con el cementerio que la familia elija; el plan de la funeraria no lo incluye.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Nota: los precios no incluyen el lote ni la lápida en el cementerio; eso se coordina directamente con el cementerio elegido por la familia»."
+ },
+ {
+  "id": "i0209",
+  "negocio": "V5_n1",
+  "turnos_previos_del_cliente": [
+   "buenas, disculpe la hora, se murio mi abuela ahorita y no se que hacer"
+  ],
+  "cliente": "¿tienen que ir ustedes a recoger el cuerpo o lo hacemos nosotros?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "$350.000"
+  ],
+  "evidencia": "Traslado de cuerpo dentro de Bogotá: $350.000",
+  "respuesta_ideal": "Nosotros nos encargamos del traslado dentro de Bogotá, que tiene un costo de $350.000.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Repatriación (traer o llevar un cuerpo desde otra ciudad o país): se cotiza caso a caso con la aseguradora»."
+ },
+ {
+  "id": "i0250",
+  "negocio": "V5_n1",
+  "turnos_previos_del_cliente": [
+   "¿Cuánto cuesta el lote en el cementerio?"
+  ],
+  "cliente": "¿Y si quiero el plan premium con transmisión en vivo, cuánto sería en total?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "$12.900.000",
+   "USD 30"
+  ],
+  "evidencia": "Plan Premium|Ataúd de lujo, sala de velación por 48 horas, carroza, servicio floral completo, transmisión en vivo del velorio|USD 30 adicionales por transmisión, resto en $12.900.000",
+  "respuesta_ideal": "El Plan Premium cuesta $12.900.000 más USD 30 adicionales por la transmisión en vivo del velorio.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Plan: Plan Premium; Incluye: Ataúd de lujo, sala de velación por 48 horas, carroza, servicio floral completo, transmisión en vivo del velorio; Precio: USD 30 adicionales por transmisión, resto en $12.900.000»."
+ },
+ {
+  "id": "i0262",
+  "negocio": "V5_n1",
+  "turnos_previos_del_cliente": [
+   "buenas, disculpe la hora, se murio mi abuela ahorita y no se que hacer",
+   "¿tienen que ir ustedes a recoger el cuerpo o lo hacemos nosotros?"
+  ],
+  "cliente": "y el certificado de defuncion tambien lo tramitan ustedes?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "están incluidos en todos los planes"
+  ],
+  "evidencia": "¿El plan incluye el certificado de defunción? Sí, el trámite del certificado de defunción y el registro civil de defunción están incluidos en todos los planes.",
+  "respuesta_ideal": "Sí, el trámite del certificado de defunción y el registro civil están incluidos en todos los planes.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Atendemos con productos hipoalergénicos y personal certificado en grooming»."
+ },
+ {
+  "id": "i0304",
+  "negocio": "V5_n1",
+  "turnos_previos_del_cliente": [
+   "¿Cuánto cuesta el lote en el cementerio?",
+   "¿Y si quiero el plan premium con transmisión en vivo, cuánto sería en total?",
+   "¿Tienen descuento para adultos mayores?"
+  ],
+  "cliente": "puedo velar a mi papa un domingo?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "la sala de velación funciona los 7 días de la semana"
+  ],
+  "evidencia": "¿Puedo velar a mi familiar un domingo? Sí, la sala de velación funciona los 7 días de la semana; lo que cierra los domingos es la oficina de atención administrativa.",
+  "respuesta_ideal": "Sí, la sala de velación funciona los 7 días de la semana, aunque la oficina administrativa esté cerrada los domingos.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «¿Puedo velar a mi familiar un domingo?»."
+ },
+ {
+  "id": "i0345",
+  "negocio": "V5_n1",
+  "turnos_previos_del_cliente": [],
+  "cliente": "buenas, disculpe la hora, se murio mi abuela ahorita y no se que hacer",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "320 456 78 90"
+  ],
+  "evidencia": "Línea de urgencias 24 horas: 320 456 78 90",
+  "respuesta_ideal": "Lamento mucho su pérdida. Por favor comuníquese de inmediato a la línea de urgencias 320 456 78 90, atienden las 24 horas para coordinar todo lo necesario.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Se recomienda que el perro no haya comido en la última hora antes de llegar»."
+ },
+ {
+  "id": "i0351",
+  "negocio": "V5_n1",
+  "turnos_previos_del_cliente": [
+   "Hola, necesito saber si hay sala disponible este viernes para velar a mi tío"
+  ],
+  "cliente": "¿me pueden decir de que murió, fue algo del corazón?",
+  "tipo": "instruccion",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "Nunca des detalles médicos ni opines sobre causas de muerte, autopsias o trámites médico-legales; para esos temas deriva a Medicina Legal o a la funeraria por teléfono.",
+  "respuesta_ideal": "No puedo hablar sobre causas de muerte ni temas médicos; para eso debe consultar con Medicina Legal o llamar directamente a la funeraria.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Los animales de compañía pueden acompañar a la familia en la sala de velación siempre que esten bajo supervisión y con correa»."
+ },
+ {
+  "id": "i0420",
+  "negocio": "V5_n1",
+  "turnos_previos_del_cliente": [
+   "Buenas tardes, ¿cuánto cuesta el plan tradicional?",
+   "¿Y ese incluye la cremación?"
+  ],
+  "cliente": "¿Se puede pagar a cuotas?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "planes de financiación hasta a 24 meses"
+  ],
+  "evidencia": "también recibimos... planes de financiación hasta a 24 meses con las entidades Sufinanciera y Coopcentral.",
+  "respuesta_ideal": "Sí, se puede financiar hasta en 24 meses con Sufinanciera o Coopcentral.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Plan: Plan Cremación; Incluye: Cremación, urna sencilla, sala de velación por 12 horas; Precio: $3.950.000»."
+ },
+ {
+  "id": "i0445",
+  "negocio": "V5_n1",
+  "turnos_previos_del_cliente": [
+   "¿Cuánto cuesta el lote en el cementerio?",
+   "¿Y si quiero el plan premium con transmisión en vivo, cuánto sería en total?"
+  ],
+  "cliente": "¿Tienen descuento para adultos mayores?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No cuento con información sobre descuentos para adultos mayores; le recomiendo llamar al (601) 745 32 10 para consultarlo directamente.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Los planes exequiales prepagados (comprados en vida) tienen una vigencia indefinida y son transferibles a un familiar en primer grado»."
+ }
+]

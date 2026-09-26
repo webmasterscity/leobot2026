@@ -93,3 +93,42 @@ Congelado `freeze-G-58`; semilla de su huella.
 ## Presupuesto
 
 Implementación ≤ 1 h; banco y juez ≤ 1 h; medidas generales ≤ 30 min. Hasta 16 procesos, con al menos 2 GB de RAM libres.
+
+## Resultado (2026-09-26, banco congelado de 24 negocios nuevos y 630 turnos; juez ciego de 8 jueces nuevos, Opus)
+
+| Puerta | Umbral | G-58 | ¿Pasa? |
+|---|---|---|---|
+| 1. Útiles en directa + sí/no | ≥ 20 % | **65/266 (24,4 %)** (G-57r: 0 %) | sí |
+| 2. Respuestas planas | error ≤ 2 % | ninguna (ninguna celda admitida) | vacía |
+| 2. Inventadas en todo el banco | 0 | **0** | sí |
+| 3. Sin respuesta bien llevadas | ≥ 90 % | **169/174 (97,1 %)**: 114 «No lo sé» y 55 citas honestas o útiles | sí |
+| 4. Citas engañosas | ≤ 15 % | **9/212 (4,2 %)**; el 48 % de las citas son útiles | sí |
+| 5. Ecos de turnos con cifras o de más de 4 palabras | 0 | **0** (G-57r: 3) | sí |
+
+**6. Controles:**
+- otro negocio: 0 útiles y 84 % de «No lo sé» (pasa). Aun así, 22 de sus 97 citas son engañosas.
+- reinicio: 630/630 idénticas;
+- renombrado estricto: 611/630 (97,0 %);
+- sin `closest`: 0 útiles;
+- tabla barajada: 22/266 útiles (8,3 %) y 19,6 % de citas útiles. La tabla contada importa.
+
+**7. Pruebas generales:**
+- conversación de G-55: 101/21/36 = 158, sin cambios;
+- regresión 661/5/0;
+- p95 de `answer`: 0,46 ms.
+
+**G-58 supera sus puertas.**
+
+**Retención 5.9:**
+- `closest` se queda (puertas 1, 3 y 4);
+- `short_echo` se queda (puerta 5);
+- **el seguimiento se retira.** En las preguntas de seguimiento suma citas útiles (13 → 18), pero sube las engañosas (1 → 3), y la regla pedía no subirlas. En todo el banco: útiles 62 → 65 y engañosas 6 → 9.
+
+**`freeze-G-58r` = G-58 sin seguimiento.** Sus respuestas en el banco son idénticas (630/630) a las de la variante `sin_seguimiento` ya juzgada, así que sus cifras con el juez son esas:
+- útiles 62/266 (23,3 %);
+- sin respuesta 169/174 (97,1 %);
+- engañosas 6/152 (3,9 %);
+- inventadas 0;
+- ecos 0.
+
+Pasa las mismas puertas. La base no cambia (`1c0db7a6`): la tabla de lo más cercano ya se contó sin seguimiento.

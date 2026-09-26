@@ -1,0 +1,871 @@
+[
+ {
+  "id": "i0010",
+  "negocio": "V1_n3",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Hola",
+  "tipo": "charla",
+  "accion_esperada": "charla",
+  "claves": [],
+  "evidencia": "1. Trate a las personas de usted y preséntese como el asistente de Admisión de la Universidad del Mapocho.",
+  "respuesta_ideal": "Hola, le saluda el asistente de Admisión de la Universidad del Mapocho. ¿En qué le puedo ayudar?",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Tel. 910 45 72 38 · hola@almendro.es · almendro.es»."
+ },
+ {
+  "id": "i0023",
+  "negocio": "V1_n3",
+  "turnos_previos_del_cliente": [
+   "Hola",
+   "¿Derecho se puede estudiar en la noche?"
+  ],
+  "cliente": "¿y qué otra carrera tienen en vespertino?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "Contador Auditor"
+  ],
+  "evidencia": "Contador Auditor\tvespertina\t9 semestres\t50\t$3.210.000\t500",
+  "respuesta_ideal": "La otra carrera vespertina es Contador Auditor.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Nota: toda la informacion corresponde al proceso de Admisión 2027 y puede tener ajustes»."
+ },
+ {
+  "id": "i0062",
+  "negocio": "V1_n3",
+  "turnos_previos_del_cliente": [
+   "Hola",
+   "¿Derecho se puede estudiar en la noche?",
+   "¿y qué otra carrera tienen en vespertino?"
+  ],
+  "cliente": "cuanto pagaria el primer año en esa, sumando la matricula?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "3.425.000"
+  ],
+  "evidencia": "Contador Auditor\tvespertina\t9 semestres\t50\t$3.210.000\t500\n\nMatrícula anual (todas las carreras): $215.000",
+  "respuesta_ideal": "En Contador Auditor serían $3.425.000 el primer año: $3.210.000 de arancel más $215.000 de matrícula.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «La matrícula se paga al contado al momento de matricularse»."
+ },
+ {
+  "id": "i0069",
+  "negocio": "V1_n3",
+  "turnos_previos_del_cliente": [
+   "Hola, con cuanto puntaje se entra a enfermeria?",
+   "tengo 640 ponderado, quedo?",
+   "igual me tinca ingenieria civil industrial, cuantos cupos tiene?",
+   "hay alguna beca por buen puntaje?"
+  ],
+  "cliente": "y con 720 me la gano?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "750"
+  ],
+  "evidencia": "- Beca Excelencia Académica: 50% del arancel anual para quienes ingresen con puntaje ponderado igual o superior a 750 puntos.",
+  "respuesta_ideal": "No, esa beca exige un puntaje ponderado igual o superior a 750 puntos.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Beca Excelencia Académica: 50% del arancel anual para quienes ingresen con puntaje ponderado igual o superior a 750 puntos»."
+ },
+ {
+  "id": "i0077",
+  "negocio": "V1_n3",
+  "turnos_previos_del_cliente": [
+   "Buenas tardes, cuánto sale el arancel de psicología?",
+   "y la matrícula es aparte?",
+   "si pago el año completo al contado, en cuánto me queda el arancel?",
+   "y si lo pago en cuotas, cobran intereses?",
+   "¿Tienen gratuidad?"
+  ],
+  "cliente": "Entonces me conviene sacar el CAE? como postulo?",
+  "tipo": "instruccion",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "4. Consultas sobre CAE, becas del Mineduc, FUAS o situación socioeconómica: derive a la Dirección de Asuntos Estudiantiles y Financiamiento (DAEF), teléfono +56 2 2940 7815, correo financiamiento@udm.cl.",
+  "respuesta_ideal": "Para orientarle sobre el CAE le recomiendo contactar a la Dirección de Asuntos Estudiantiles y Financiamiento (DAEF), al +56 2 2940 7815 o a financiamiento@udm.cl.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Nuestros estudiantes pueden postular al Crédito con Garantía Estatal (CAE) y a las becas del Mineduc, según los requisitos de cada beneficio»."
+ },
+ {
+  "id": "i0078",
+  "negocio": "V1_n3",
+  "turnos_previos_del_cliente": [
+   "Si ya tengo un título técnico, igual tengo que dar la PAES?"
+  ],
+  "cliente": "hasta cuando puedo postular por esa via?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "30 de noviembre"
+  ],
+  "evidencia": "Postulación: del 1 de septiembre al 30 de noviembre de 2026, en udm.cl/especial.",
+  "respuesta_ideal": "La postulación a Admisión Especial está abierta hasta el 30 de noviembre de 2026, en udm.cl/especial.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Nuestros estudiantes pueden postular al Crédito con Garantía Estatal (CAE) y a las becas del Mineduc, según los requisitos de cada beneficio»."
+ },
+ {
+  "id": "i0091",
+  "negocio": "V1_n3",
+  "turnos_previos_del_cliente": [
+   "a que hora atienden en admision los viernes?",
+   "¿y los sábados?",
+   "Se puede conocer el campus antes de postular?"
+  ],
+  "cliente": "la visita tiene algún costo?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo información sobre si la visita guiada tiene costo.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «VISITAS GUIADAS AL CAMPUS»."
+ },
+ {
+  "id": "i0107",
+  "negocio": "V1_n3",
+  "turnos_previos_del_cliente": [
+   "Si ya tengo un título técnico, igual tengo que dar la PAES?",
+   "hasta cuando puedo postular por esa via?"
+  ],
+  "cliente": "¿Cuánto cuesta postular por admisión especial?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "$35.000"
+  ],
+  "evidencia": "Derecho de postulación: $35.000 (no reembolsable).",
+  "respuesta_ideal": "El derecho de postulación cuesta $35.000 y no es reembolsable.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Postulantes de Admisión Especial: además, certificado de título o documento que acredite la vía de ingreso»."
+ },
+ {
+  "id": "i0114",
+  "negocio": "V1_n3",
+  "turnos_previos_del_cliente": [
+   "Buenas tardes, cuánto sale el arancel de psicología?",
+   "y la matrícula es aparte?",
+   "si pago el año completo al contado, en cuánto me queda el arancel?"
+  ],
+  "cliente": "y si lo pago en cuotas, cobran intereses?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "Se puede pagar en hasta 10 cuotas con pagaré o tarjeta de crédito, pero no tengo información sobre intereses.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «b) En hasta 10 cuotas mensuales, de marzo a diciembre, con pagaré o con tarjeta de crédito»."
+ },
+ {
+  "id": "i0204",
+  "negocio": "V1_n3",
+  "turnos_previos_del_cliente": [
+   "Si ya tengo un título técnico, igual tengo que dar la PAES?",
+   "hasta cuando puedo postular por esa via?",
+   "¿Cuánto cuesta postular por admisión especial?",
+   "¿y cuándo me avisan si quedé?"
+  ],
+  "cliente": "me convalidan los ramos que aprobé en el instituto?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo información sobre convalidación de ramos para titulados de institutos.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Postulantes de Admisión Especial: además, certificado de título o documento que acredite la vía de ingreso»."
+ },
+ {
+  "id": "i0215",
+  "negocio": "V1_n3",
+  "turnos_previos_del_cliente": [
+   "Hola, con cuanto puntaje se entra a enfermeria?",
+   "tengo 640 ponderado, quedo?"
+  ],
+  "cliente": "igual me tinca ingenieria civil industrial, cuantos cupos tiene?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "90"
+  ],
+  "evidencia": "Ingeniería Civil Industrial\tdiurna\t11 semestres\t90\t$5.480.000\t600",
+  "respuesta_ideal": "Ingeniería Civil Industrial tiene 90 vacantes para 2027.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Carrera: Ingeniería Civil Industrial; Jornada: diurna; Duración: 11 semestres; Vacantes: 90; Arancel anual: $5.480.000; Puntaje mínimo de postulación: 600»."
+ },
+ {
+  "id": "i0217",
+  "negocio": "V1_n3",
+  "turnos_previos_del_cliente": [
+   "a que hora atienden en admision los viernes?",
+   "¿y los sábados?"
+  ],
+  "cliente": "Se puede conocer el campus antes de postular?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "11:00",
+   "16:00"
+  ],
+  "evidencia": "Martes y jueves a las 11:00 y a las 16:00 hrs, con inscripción previa en udm.cl/visitas.",
+  "respuesta_ideal": "Sí, hay visitas guiadas los martes y jueves a las 11:00 y a las 16:00 hrs, con inscripción previa en udm.cl/visitas.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Nuestros estudiantes pueden postular al Crédito con Garantía Estatal (CAE) y a las becas del Mineduc, según los requisitos de cada beneficio»."
+ },
+ {
+  "id": "i0233",
+  "negocio": "V1_n3",
+  "turnos_previos_del_cliente": [
+   "Si ya tengo un título técnico, igual tengo que dar la PAES?"
+  ],
+  "cliente": "hasta cuando puedo postular por esa via?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "30 de noviembre"
+  ],
+  "evidencia": "Postulación: del 1 de septiembre al 30 de noviembre de 2026, en udm.cl/especial.",
+  "respuesta_ideal": "La postulación a Admisión Especial está abierta hasta el 30 de noviembre de 2026, en udm.cl/especial.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Disponible en importes de 25 €, 50 € y 100 €. Tiene validez de un año desde la compra y se puede usar en varias compras hasta agotar el saldo»."
+ },
+ {
+  "id": "i0307",
+  "negocio": "V1_n3",
+  "turnos_previos_del_cliente": [
+   "Si ya tengo un título técnico, igual tengo que dar la PAES?",
+   "hasta cuando puedo postular por esa via?",
+   "¿Cuánto cuesta postular por admisión especial?"
+  ],
+  "cliente": "¿y cuándo me avisan si quedé?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo la fecha de publicación de resultados de la Admisión Especial.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Las becas internas no son acumulables entre sí»."
+ },
+ {
+  "id": "i0366",
+  "negocio": "V1_n3",
+  "turnos_previos_del_cliente": [
+   "Si ya tengo un título técnico, igual tengo que dar la PAES?",
+   "hasta cuando puedo postular por esa via?",
+   "¿Cuánto cuesta postular por admisión especial?",
+   "¿y cuándo me avisan si quedé?",
+   "me convalidan los ramos que aprobé en el instituto?"
+  ],
+  "cliente": "¿Qué papeles tengo que llevar para matricularme?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "Cédula de identidad",
+   "Licencia de enseñanza media",
+   "certificado de título"
+  ],
+  "evidencia": "- Cédula de identidad vigente (o pasaporte, en el caso de extranjeros).\n- Licencia de enseñanza media (original o copia legalizada).\n- Concentración de notas de enseñanza media.\n- Una fotografía tamaño carné.\n- Postulantes de Admisión Especial: además, certificado de título o documento que acredite la vía de ingreso.",
+  "respuesta_ideal": "Necesita cédula de identidad vigente, licencia de enseñanza media (original o copia legalizada), concentración de notas, una foto tamaño carné y, por venir de Admisión Especial, su certificado de título.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Beca Hermanos: 10% del arancel anual para el segundo hermano matriculado en la UDM (y los siguientes)»."
+ },
+ {
+  "id": "i0386",
+  "negocio": "V1_n3",
+  "turnos_previos_del_cliente": [
+   "Hola",
+   "¿Derecho se puede estudiar en la noche?",
+   "¿y qué otra carrera tienen en vespertino?",
+   "cuanto pagaria el primer año en esa, sumando la matricula?",
+   "A qué hora son las clases del vespertino?",
+   "Mi hermana estudia Diseño en la UDM, ¿a mí me hacen algún descuento?"
+  ],
+  "cliente": "Muchas gracias, que esté bien",
+  "tipo": "charla",
+  "accion_esperada": "charla",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "A usted, que tenga un buen día.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «La UDM está acreditada por 5 años (hasta octubre de 2029) por la Comisión Nacional de Acreditación»."
+ },
+ {
+  "id": "i0419",
+  "negocio": "V1_n3",
+  "turnos_previos_del_cliente": [
+   "Buenas tardes, cuánto sale el arancel de psicología?",
+   "y la matrícula es aparte?",
+   "si pago el año completo al contado, en cuánto me queda el arancel?",
+   "y si lo pago en cuotas, cobran intereses?"
+  ],
+  "cliente": "¿Tienen gratuidad?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "no está adscrita"
+  ],
+  "evidencia": "La UDM no está adscrita a la Gratuidad.",
+  "respuesta_ideal": "No, la UDM no está adscrita a la Gratuidad.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «La UDM no está adscrita a la Gratuidad»."
+ },
+ {
+  "id": "i0446",
+  "negocio": "V1_n3",
+  "turnos_previos_del_cliente": [
+   "Hola, con cuanto puntaje se entra a enfermeria?",
+   "tengo 640 ponderado, quedo?",
+   "igual me tinca ingenieria civil industrial, cuantos cupos tiene?"
+  ],
+  "cliente": "hay alguna beca por buen puntaje?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "750",
+   "50%"
+  ],
+  "evidencia": "- Beca Excelencia Académica: 50% del arancel anual para quienes ingresen con puntaje ponderado igual o superior a 750 puntos.",
+  "respuesta_ideal": "Sí, la Beca Excelencia Académica cubre el 50% del arancel anual para quienes ingresen con puntaje ponderado igual o superior a 750 puntos.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Beca Excelencia Académica: 50% del arancel anual para quienes ingresen con puntaje ponderado igual o superior a 750 puntos»."
+ },
+ {
+  "id": "i0485",
+  "negocio": "V1_n3",
+  "turnos_previos_del_cliente": [
+   "Hola, con cuanto puntaje se entra a enfermeria?",
+   "tengo 640 ponderado, quedo?",
+   "igual me tinca ingenieria civil industrial, cuantos cupos tiene?"
+  ],
+  "cliente": "hay alguna beca por buen puntaje?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "750",
+   "50%"
+  ],
+  "evidencia": "- Beca Excelencia Académica: 50% del arancel anual para quienes ingresen con puntaje ponderado igual o superior a 750 puntos.",
+  "respuesta_ideal": "Sí, la Beca Excelencia Académica cubre el 50% del arancel anual para quienes ingresen con puntaje ponderado igual o superior a 750 puntos.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Carrera: Ingeniería Civil Industrial; Jornada: diurna; Duración: 11 semestres; Vacantes: 90; Arancel anual: $5.480.000; Puntaje mínimo de postulación: 600»."
+ },
+ {
+  "id": "i0003",
+  "negocio": "V3_n3",
+  "turnos_previos_del_cliente": [
+   "Quiero instalar una cerradura de seguridad en la puerta de mi tienda. ¿Cuanto cuesta?"
+  ],
+  "cliente": "¿Tiene garantía?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "garantía de fábrica",
+   "3-5 años",
+   "mano de obra",
+   "1 año"
+  ],
+  "evidencia": "Todas las cerraduras instaladas tienen garantía de fábrica (generalmente 3-5 años). La mano de obra tiene garantía de 1 año contra defectos de instalación.",
+  "respuesta_ideal": "Sí, la cerradura tiene garantía de fábrica que generalmente es de 3 a 5 años, y la mano de obra tiene garantía de 1 año contra defectos de instalación.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «GARANTÍA Y CALIDAD»."
+ },
+ {
+  "id": "i0034",
+  "negocio": "V3_n3",
+  "turnos_previos_del_cliente": [
+   "Hola, me han robado en el piso y necesito cambiar todas las cerraduras.",
+   "¿Cuanto me costaria cambiar 4 cerraduras?"
+  ],
+  "cliente": "¿Puedo ir hoy aún?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "hasta las 19:30"
+  ],
+  "evidencia": "Lunes a viernes: 08:00 - 19:30",
+  "respuesta_ideal": "Claro, atendemos hasta las 19:30 si es entre semana. Trae la denuncia y llama primero para coordinar.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Nos especializamos en apertura de puertas, instalación de cerraduras de seguridad, duplicado de llaves, reparación de cerraduras dañadas y sistemas de seguridad integral para viviendas y comercios»."
+ },
+ {
+  "id": "i0140",
+  "negocio": "V3_n3",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Me han forzado la puerta de entrada. ¿Pueden venir ahora mismo?",
+  "tipo": "instruccion",
+  "accion_esperada": "derivar",
+  "claves": [
+   "emergencia",
+   "móvil",
+   "650 42 31 78",
+   "24 horas"
+  ],
+  "evidencia": "Móvil de emergencia: 650 42 31 78 (disponible 24h)",
+  "respuesta_ideal": "Sí, tenemos servicio de emergencia 24 horas. Llama inmediatamente al móvil 650 42 31 78 y te atenderán. Hay un suplemento de 30 € por ser fuera de horario.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Nos especializamos en apertura de puertas, instalación de cerraduras de seguridad, duplicado de llaves, reparación de cerraduras dañadas y sistemas de seguridad integral para viviendas y comercios»."
+ },
+ {
+  "id": "i0152",
+  "negocio": "V3_n3",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Hola, me han robado en el piso y necesito cambiar todas las cerraduras.",
+  "tipo": "instruccion",
+  "accion_esperada": "derivar",
+  "claves": [
+   "robo",
+   "descuento",
+   "15%",
+   "denuncia policial"
+  ],
+  "evidencia": "En caso de robo o acto vandálico en vivienda habitual, se ofrece descuento del 15 % al presentar denuncia policial.",
+  "respuesta_ideal": "Lo siento mucho. Pues tienes suerte: si presentas la denuncia policial, te ofrecemos un descuento del 15 % en los trabajos de cambio de cerraduras.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Nos especializamos en apertura de puertas, instalación de cerraduras de seguridad, duplicado de llaves, reparación de cerraduras dañadas y sistemas de seguridad integral para viviendas y comercios»."
+ },
+ {
+  "id": "i0200",
+  "negocio": "V3_n3",
+  "turnos_previos_del_cliente": [
+   "Se me perdió la llave de casa, ¿cuanto cuesta hacer otra?",
+   "¿Necesito traer la cerradura?"
+  ],
+  "cliente": "¿Qué horario tienen?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "Lunes a viernes: 08:00 - 19:30",
+   "Sábado: 09:00 - 14:00"
+  ],
+  "evidencia": "Horario de atención\nLunes a viernes: 08:00 - 19:30\nSábado: 09:00 - 14:00",
+  "respuesta_ideal": "Abrimos de lunes a viernes de 08:00 a 19:30, y sábados de 09:00 a 14:00. Los domingos cerramos, pero tenemos emergencias disponibles al móvil 650 42 31 78.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «HORARIO»."
+ },
+ {
+  "id": "i0296",
+  "negocio": "V3_n3",
+  "turnos_previos_del_cliente": [
+   "Hola, me han robado en el piso y necesito cambiar todas las cerraduras.",
+   "¿Cuanto me costaria cambiar 4 cerraduras?"
+  ],
+  "cliente": "¿Puedo ir hoy aún?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "hasta las 19:30"
+  ],
+  "evidencia": "Lunes a viernes: 08:00 - 19:30",
+  "respuesta_ideal": "Claro, atendemos hasta las 19:30 si es entre semana. Trae la denuncia y llama primero para coordinar.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Se puede entregar el archivo por email (pedidos@printexpress.com.pe), WhatsApp (945 821 934) o llevar USB/tarjeta de memoria en tienda»."
+ },
+ {
+  "id": "i0314",
+  "negocio": "V3_n3",
+  "turnos_previos_del_cliente": [
+   "Me han forzado la puerta de entrada. ¿Pueden venir ahora mismo?"
+  ],
+  "cliente": "Ok, ¿cuanto me cobran por abrir?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "120 €",
+   "Apertura de puertas (sin rotura)"
+  ],
+  "evidencia": "Apertura de puertas (sin rotura) - 120 €",
+  "respuesta_ideal": "La apertura sin rotura de la puerta cuesta 120 €. Si hay que romper el cilindro, serían 180 €. Más los 30 € de suplemento de emergencia.",
+  "respuesta_a_calificar": "Ok. No lo tengo seguro. Lo más cercano que dice el texto es: «Cambios en el pedido después de imprimir: se cobra recargo del 15 %»."
+ },
+ {
+  "id": "i0355",
+  "negocio": "V3_n3",
+  "turnos_previos_del_cliente": [
+   "Quiero instalar una cerradura de seguridad en la puerta de mi tienda. ¿Cuanto cuesta?",
+   "¿Tiene garantía?"
+  ],
+  "cliente": "Perfecto, mañana les llamo entonces.",
+  "tipo": "charla",
+  "accion_esperada": "charla",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "Bien, estaremos pendientes de tu llamada.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «GARANTÍA Y CALIDAD»."
+ },
+ {
+  "id": "i0356",
+  "negocio": "V3_n3",
+  "turnos_previos_del_cliente": [
+   "Me han forzado la puerta de entrada. ¿Pueden venir ahora mismo?"
+  ],
+  "cliente": "Ok, ¿cuanto me cobran por abrir?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "120 €",
+   "Apertura de puertas (sin rotura)"
+  ],
+  "evidencia": "Apertura de puertas (sin rotura) - 120 €",
+  "respuesta_ideal": "La apertura sin rotura de la puerta cuesta 120 €. Si hay que romper el cilindro, serían 180 €. Más los 30 € de suplemento de emergencia.",
+  "respuesta_a_calificar": "Ok. No lo tengo seguro. Lo más cercano que dice el texto es: «Nos especializamos en apertura de puertas, instalación de cerraduras de seguridad, duplicado de llaves, reparación de cerraduras dañadas y sistemas de seguridad integral para viviendas y comercios»."
+ },
+ {
+  "id": "i0383",
+  "negocio": "V3_n3",
+  "turnos_previos_del_cliente": [
+   "Se me perdió la llave de casa, ¿cuanto cuesta hacer otra?",
+   "¿Necesito traer la cerradura?"
+  ],
+  "cliente": "¿Qué horario tienen?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "Lunes a viernes: 08:00 - 19:30",
+   "Sábado: 09:00 - 14:00"
+  ],
+  "evidencia": "Horario de atención\nLunes a viernes: 08:00 - 19:30\nSábado: 09:00 - 14:00",
+  "respuesta_ideal": "Abrimos de lunes a viernes de 08:00 a 19:30, y sábados de 09:00 a 14:00. Los domingos cerramos, pero tenemos emergencias disponibles al móvil 650 42 31 78.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «HORARIO DE ATENCIÓN»."
+ },
+ {
+  "id": "i0425",
+  "negocio": "V3_n3",
+  "turnos_previos_del_cliente": [
+   "Hola, me han robado en el piso y necesito cambiar todas las cerraduras."
+  ],
+  "cliente": "¿Cuanto me costaria cambiar 4 cerraduras?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "dependerá",
+   "presupuesto",
+   "954 21 68 94"
+  ],
+  "evidencia": null,
+  "respuesta_ideal": "Eso dependerá del tipo de cerraduras y si necesitas solo cambiar cilindros o instalar cerraduras nuevas. Llama al 954 21 68 94 y José Manuel te hace presupuesto. Y no olvides traer la denuncia para el descuento.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Nos especializamos en apertura de puertas, instalación de cerraduras de seguridad, duplicado de llaves, reparación de cerraduras dañadas y sistemas de seguridad integral para viviendas y comercios»."
+ },
+ {
+  "id": "i0466",
+  "negocio": "V3_n3",
+  "turnos_previos_del_cliente": [
+   "Me han forzado la puerta de entrada. ¿Pueden venir ahora mismo?",
+   "Ok, ¿cuanto me cobran por abrir?"
+  ],
+  "cliente": "¿me la reparan también en el mismo día?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "dependerá",
+   "consultar"
+  ],
+  "evidencia": null,
+  "respuesta_ideal": "Eso dependerá de los daños exactos. Lo mejor es que lo consultes con el técnico cuando venga. Seguramente pueden arreglarlo ese mismo día o dejarte presupuesto.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Nos especializamos en apertura de puertas, instalación de cerraduras de seguridad, duplicado de llaves, reparación de cerraduras dañadas y sistemas de seguridad integral para viviendas y comercios»."
+ },
+ {
+  "id": "i0005",
+  "negocio": "V5_n3",
+  "turnos_previos_del_cliente": [
+   "Buenos dias, necesito reclutar 3 vendedores, ¿cuanto cobran?",
+   "si el sueldo es de 300 dolares por candidato, ¿cuanto seria en total por los 3?",
+   "¿y si quiero que tambien verifiquen antecedentes?",
+   "¿tienen que pagar todo antes de empezar?"
+  ],
+  "cliente": "¿que pasa si el candidato renuncia a los 15 dias?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "se reemplaza sin costo adicional una sola vez"
+  ],
+  "evidencia": "Garantía: si el candidato colocado renuncia o es desvinculado antes de 30 días, se reemplaza sin costo adicional una sola vez.",
+  "respuesta_ideal": "Si renuncia o es desvinculado antes de 30 días, se le reemplaza sin costo adicional, una sola vez.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Garantía: si el candidato colocado renuncia o es desvinculado antes de 30 días, se reemplaza sin costo adicional una sola vez»."
+ },
+ {
+  "id": "i0007",
+  "negocio": "V5_n3",
+  "turnos_previos_del_cliente": [
+   "quiero trabajar en seguridad, ¿que piden?",
+   "¿me pueden decir si ya me tienen una entrevista programada?",
+   "¿cuanto pagan los trabajos de seguridad?"
+  ],
+  "cliente": "porfa deme el numero para llamar",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "(0212) 267 45 90"
+  ],
+  "evidencia": "Teléfonos: (0212) 267 45 90 / WhatsApp 0414-235 67 89",
+  "respuesta_ideal": "Claro, puede llamar al (0212) 267 45 90 o escribir al WhatsApp 0414-235 67 89.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «No, el registro en la bolsa de empleo es gratuito; solo se cobra si pide asesoría adicional como el arreglo de currículum»."
+ },
+ {
+  "id": "i0052",
+  "negocio": "V5_n3",
+  "turnos_previos_del_cliente": [
+   "¿ustedes colocan personal para cuidar ancianos?",
+   "¿y de niñera si hay vacantes?"
+  ],
+  "cliente": "¿que necesito para postularme como niñera?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "dos referencias de familias donde haya trabajado antes"
+  ],
+  "evidencia": "Para personal doméstico: dos referencias de familias donde haya trabajado antes.",
+  "respuesta_ideal": "Necesita presentar dos referencias de familias donde haya trabajado antes, además de la cédula y el currículum.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Sí, pero la mayoría de las vacantes que manejamos son para Caracas y el área metropolitana»."
+ },
+ {
+  "id": "i0061",
+  "negocio": "V5_n3",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Buenos dias, necesito reclutar 3 vendedores, ¿cuanto cobran?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "15% del salario mensual ofrecido"
+  ],
+  "evidencia": "Reclutamiento básico | Preselección de 3 a 5 candidatos | 15% del salario mensual ofrecido",
+  "respuesta_ideal": "El reclutamiento básico, que incluye preselección de 3 a 5 candidatos, tiene un costo del 15% del salario mensual ofrecido.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Los paquetes de fiesta requieren apartado con al menos 3 días de anticipación y un anticipo del 50%. El anticipo no es reembolsable si se cancela con menos de 24 horas de anticipación»."
+ },
+ {
+  "id": "i0162",
+  "negocio": "V5_n3",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Buenos dias, necesito reclutar 3 vendedores, ¿cuanto cobran?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "15% del salario mensual ofrecido"
+  ],
+  "evidencia": "Reclutamiento básico | Preselección de 3 a 5 candidatos | 15% del salario mensual ofrecido",
+  "respuesta_ideal": "El reclutamiento básico, que incluye preselección de 3 a 5 candidatos, tiene un costo del 15% del salario mensual ofrecido.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Nota: los precios en dólares se cobran en su equivalente en bolívares según la tasa del Banco Central de Venezuela del día del pago»."
+ },
+ {
+  "id": "i0184",
+  "negocio": "V5_n3",
+  "turnos_previos_del_cliente": [
+   "¿ustedes colocan personal para cuidar ancianos?",
+   "¿y de niñera si hay vacantes?",
+   "¿que necesito para postularme como niñera?",
+   "¿me cobran algo por conseguirme el trabajo?",
+   "¿el pago se los deben dar en dolares o en bolivares?"
+  ],
+  "cliente": "¿tienen vacantes para trabajar cuidando mascotas?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No manejamos esa categoría específica de cuidado de mascotas, solo servicio doméstico como niñeras, cocineras y limpieza.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Nota: los precios en dólares se cobran en su equivalente en bolívares según la tasa del Banco Central de Venezuela del día del pago»."
+ },
+ {
+  "id": "i0188",
+  "negocio": "V5_n3",
+  "turnos_previos_del_cliente": [
+   "Buenos dias, necesito reclutar 3 vendedores, ¿cuanto cobran?",
+   "si el sueldo es de 300 dolares por candidato, ¿cuanto seria en total por los 3?",
+   "¿y si quiero que tambien verifiquen antecedentes?"
+  ],
+  "cliente": "¿tienen que pagar todo antes de empezar?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "deben pagar el 50% de la tarifa de reclutamiento por adelantado"
+  ],
+  "evidencia": "Las empresas deben pagar el 50% de la tarifa de reclutamiento por adelantado y el 50% restante cuando el candidato inicie funciones.",
+  "respuesta_ideal": "No, se paga el 50% por adelantado y el 50% restante cuando el candidato inicie funciones.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Para seguridad privada: certificado de la DAEX y no tener antecedentes penales»."
+ },
+ {
+  "id": "i0189",
+  "negocio": "V5_n3",
+  "turnos_previos_del_cliente": [
+   "Buenos dias, necesito reclutar 3 vendedores, ¿cuanto cobran?",
+   "si el sueldo es de 300 dolares por candidato, ¿cuanto seria en total por los 3?",
+   "¿y si quiero que tambien verifiquen antecedentes?"
+  ],
+  "cliente": "¿tienen que pagar todo antes de empezar?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "deben pagar el 50% de la tarifa de reclutamiento por adelantado"
+  ],
+  "evidencia": "Las empresas deben pagar el 50% de la tarifa de reclutamiento por adelantado y el 50% restante cuando el candidato inicie funciones.",
+  "respuesta_ideal": "No, se paga el 50% por adelantado y el 50% restante cuando el candidato inicie funciones.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Niños menores de 5 años: no pagan si comparten carril con un adulto que sí pagó»."
+ },
+ {
+  "id": "i0241",
+  "negocio": "V5_n3",
+  "turnos_previos_del_cliente": [
+   "¿atienden los sabados?",
+   "¿y los domingos?",
+   "necesito contratar 20 personas para una empresa de call center, ¿tienen algun descuento por volumen?"
+  ],
+  "cliente": "¿ese encargado tiene nombre?",
+  "tipo": "instruccion",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "Si un cliente empresa pregunta por tarifas de un caso particular fuera de lo estándar, deriva al Sr. Rubén Salcedo.",
+  "respuesta_ideal": "Sí, para casos particulares como este puede comunicarse con el Sr. Rubén Salcedo, encargado de atención a empresas.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Sí, tenemos calcetines desechables a $20 MXN para quien lo necesite»."
+ },
+ {
+  "id": "i0263",
+  "negocio": "V5_n3",
+  "turnos_previos_del_cliente": [
+   "Buenos dias, necesito reclutar 3 vendedores, ¿cuanto cobran?"
+  ],
+  "cliente": "si el sueldo es de 300 dolares por candidato, ¿cuanto seria en total por los 3?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "15% del salario mensual ofrecido"
+  ],
+  "evidencia": "Reclutamiento básico | Preselección de 3 a 5 candidatos | 15% del salario mensual ofrecido",
+  "respuesta_ideal": "El 15% de $300 son $45 por candidato, así que por los 3 vendedores serían $135 en total.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Nota: los precios en dólares se cobran en su equivalente en bolívares según la tasa del Banco Central de Venezuela del día del pago»."
+ },
+ {
+  "id": "i0272",
+  "negocio": "V5_n3",
+  "turnos_previos_del_cliente": [
+   "¿ustedes colocan personal para cuidar ancianos?",
+   "¿y de niñera si hay vacantes?",
+   "¿que necesito para postularme como niñera?"
+  ],
+  "cliente": "¿me cobran algo por conseguirme el trabajo?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "No cobramos comisión a los candidatos"
+  ],
+  "evidencia": "No cobramos comisión a los candidatos por conseguirles empleo; nuestra comisión la paga la empresa contratante.",
+  "respuesta_ideal": "No, no se cobra comisión a los candidatos; esa la paga la empresa que contrata.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «No, el registro en la bolsa de empleo es gratuito; solo se cobra si pide asesoría adicional como el arreglo de currículum»."
+ },
+ {
+  "id": "i0277",
+  "negocio": "V5_n3",
+  "turnos_previos_del_cliente": [
+   "quiero trabajar en seguridad, ¿que piden?"
+  ],
+  "cliente": "¿me pueden decir si ya me tienen una entrevista programada?",
+  "tipo": "instruccion",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "Si preguntan por el estado de una postulación o proceso específico de una persona, deriva a la Lcda. Yorgelis Pérez o al teléfono (0212) 267 45 90.",
+  "respuesta_ideal": "Para el estado de su proceso específico debe consultar con la Lcda. Yorgelis Pérez o llamar al (0212) 267 45 90.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Currículum actualizado (lo pueden hacer en la oficina si no tienen uno)»."
+ },
+ {
+  "id": "i0318",
+  "negocio": "V5_n3",
+  "turnos_previos_del_cliente": [
+   "Hola, quiero saber si tiene costo inscribirme para buscar trabajo",
+   "¿y si quiero que me ayuden con el currículum?"
+  ],
+  "cliente": "¿cuando me van a llamar si me registro?",
+  "tipo": "instruccion",
+  "accion_esperada": "responder",
+  "claves": [],
+  "evidencia": "Nunca prometas ni asegures que un candidato será contratado, ni des fechas exactas de llamado; aclara siempre que depende de la demanda de vacantes.",
+  "respuesta_ideal": "No hay un plazo fijo, la llamada depende de que surja una vacante que calce con su perfil.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Los paquetes de fiesta sí deben reservarse con anticipación llamando al (81) 8123 4567 o por WhatsApp»."
+ },
+ {
+  "id": "i0327",
+  "negocio": "V5_n3",
+  "turnos_previos_del_cliente": [
+   "Buenos dias, necesito reclutar 3 vendedores, ¿cuanto cobran?",
+   "si el sueldo es de 300 dolares por candidato, ¿cuanto seria en total por los 3?",
+   "¿y si quiero que tambien verifiquen antecedentes?",
+   "¿tienen que pagar todo antes de empezar?",
+   "¿que pasa si el candidato renuncia a los 15 dias?"
+  ],
+  "cliente": "¿la garantia de reemplazo aplica tambien para el reclutamiento con verificacion?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "se reemplaza sin costo adicional una sola vez"
+  ],
+  "evidencia": "Garantía: si el candidato colocado renuncia o es desvinculado antes de 30 días, se reemplaza sin costo adicional una sola vez.",
+  "respuesta_ideal": "Sí, la garantía de reemplazo aplica para cualquier modalidad de reclutamiento, siempre que sea antes de 30 días.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Garantía: si el candidato colocado renuncia o es desvinculado antes de 30 días, se reemplaza sin costo adicional una sola vez»."
+ },
+ {
+  "id": "i0342",
+  "negocio": "V5_n3",
+  "turnos_previos_del_cliente": [],
+  "cliente": "quiero trabajar en seguridad, ¿que piden?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "certificado de la DAEX y no tener antecedentes penales"
+  ],
+  "evidencia": "Para seguridad privada: certificado de la DAEX y no tener antecedentes penales.",
+  "respuesta_ideal": "Para seguridad privada se pide certificado de la DAEX vigente y no tener antecedentes penales.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Los menores de 18 años deben estar acompañados de un adulto después de las 8:00 pm»."
+ },
+ {
+  "id": "i0346",
+  "negocio": "V5_n3",
+  "turnos_previos_del_cliente": [
+   "¿atienden los sabados?",
+   "¿y los domingos?",
+   "necesito contratar 20 personas para una empresa de call center, ¿tienen algun descuento por volumen?"
+  ],
+  "cliente": "¿ese encargado tiene nombre?",
+  "tipo": "instruccion",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "Si un cliente empresa pregunta por tarifas de un caso particular fuera de lo estándar, deriva al Sr. Rubén Salcedo.",
+  "respuesta_ideal": "Sí, para casos particulares como este puede comunicarse con el Sr. Rubén Salcedo, encargado de atención a empresas.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Servicios para candidatos (personas que buscan empleo)»."
+ },
+ {
+  "id": "i0362",
+  "negocio": "V5_n3",
+  "turnos_previos_del_cliente": [
+   "¿ustedes colocan personal para cuidar ancianos?",
+   "¿y de niñera si hay vacantes?",
+   "¿que necesito para postularme como niñera?"
+  ],
+  "cliente": "¿me cobran algo por conseguirme el trabajo?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "No cobramos comisión a los candidatos"
+  ],
+  "evidencia": "No cobramos comisión a los candidatos por conseguirles empleo; nuestra comisión la paga la empresa contratante.",
+  "respuesta_ideal": "No, no se cobra comisión a los candidatos; esa la paga la empresa que contrata.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Sí, se permite llevar pastel aunque no se compre un paquete, pero se cobra un costo de montaje de $150 MXN»."
+ },
+ {
+  "id": "i0403",
+  "negocio": "V5_n3",
+  "turnos_previos_del_cliente": [
+   "¿ustedes colocan personal para cuidar ancianos?",
+   "¿y de niñera si hay vacantes?",
+   "¿que necesito para postularme como niñera?",
+   "¿me cobran algo por conseguirme el trabajo?"
+  ],
+  "cliente": "¿el pago se los deben dar en dolares o en bolivares?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo esa información, el salario y su moneda lo define cada familia o empresa empleadora.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Nota: los precios en dólares se cobran en su equivalente en bolívares según la tasa del Banco Central de Venezuela del día del pago»."
+ },
+ {
+  "id": "i0424",
+  "negocio": "V5_n3",
+  "turnos_previos_del_cliente": [
+   "Hola, quiero saber si tiene costo inscribirme para buscar trabajo",
+   "¿y si quiero que me ayuden con el currículum?"
+  ],
+  "cliente": "¿cuando me van a llamar si me registro?",
+  "tipo": "instruccion",
+  "accion_esperada": "responder",
+  "claves": [],
+  "evidencia": "Nunca prometas ni asegures que un candidato será contratado, ni des fechas exactas de llamado; aclara siempre que depende de la demanda de vacantes.",
+  "respuesta_ideal": "No hay un plazo fijo, la llamada depende de que surja una vacante que calce con su perfil.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «No, el registro en la bolsa de empleo es gratuito; solo se cobra si pide asesoría adicional como el arreglo de currículum»."
+ },
+ {
+  "id": "i0430",
+  "negocio": "V5_n3",
+  "turnos_previos_del_cliente": [
+   "¿atienden los sabados?",
+   "¿y los domingos?"
+  ],
+  "cliente": "necesito contratar 20 personas para una empresa de call center, ¿tienen algun descuento por volumen?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo información sobre descuentos por volumen; le recomiendo hablar directamente con el encargado de atención a empresas.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Servicios para candidatos (personas que buscan empleo)»."
+ }
+]

@@ -1,0 +1,1186 @@
+[
+ {
+  "id": "i0059",
+  "negocio": "V2_n2",
+  "turnos_previos_del_cliente": [
+   "¿Hasta qué hora abren entre semana?",
+   "¿Y los sábados?",
+   "¿Cuánto sale una guitarra criolla de ustedes?"
+  ],
+  "cliente": "¿Tienen descuento si pago en efectivo?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "15% de descuento"
+  ],
+  "evidencia": "Efectivo o transferencia: 15% de descuento sobre el precio de lista.",
+  "respuesta_ideal": "Sí, pagando en efectivo o por transferencia tiene un 15% de descuento sobre el precio de lista.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Efectivo o transferencia: 15% de descuento sobre el precio de lista»."
+ },
+ {
+  "id": "i0105",
+  "negocio": "V2_n2",
+  "turnos_previos_del_cliente": [],
+  "cliente": "¿Alquilan instrumentos para estudiantes?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "Alquilamos instrumentos a estudiantes"
+  ],
+  "evidencia": "Alquilamos instrumentos a estudiantes de escuelas de música (guitarra, violín, flauta traversa) por $45.000 mensuales, con depósito de garantía de $100.000 reembolsable al devolver el instrumento en buen estado.",
+  "respuesta_ideal": "Sí, alquilamos guitarra, violín y flauta traversa a estudiantes de escuelas de música.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Alquilamos instrumentos a estudiantes de escuelas de música (guitarra, violín, flauta traversa) por $45.000 mensuales, con depósito de garantía de $100.000 reembolsable al devolver el instrumento en buen estado»."
+ },
+ {
+  "id": "i0133",
+  "negocio": "V2_n2",
+  "turnos_previos_del_cliente": [
+   "¿Puedo pagar en cuotas con tarjeta?"
+  ],
+  "cliente": "Si compro el bajo de $650.000 pagando en efectivo, ¿cuánto termino pagando?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "$650.000",
+   "15%"
+  ],
+  "evidencia": "Bajo eléctrico 4 cuerdas (varias marcas): desde $650.000 | Efectivo o transferencia: 15% de descuento sobre el precio de lista.",
+  "respuesta_ideal": "Con el 15% de descuento por efectivo, el bajo de $650.000 le quedaría en aproximadamente $552.500.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Bajo eléctrico 4 cuerdas (varias marcas): desde $650.000»."
+ },
+ {
+  "id": "i0146",
+  "negocio": "V2_n2",
+  "turnos_previos_del_cliente": [],
+  "cliente": "¿Alquilan instrumentos para estudiantes?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "Alquilamos instrumentos a estudiantes"
+  ],
+  "evidencia": "Alquilamos instrumentos a estudiantes de escuelas de música (guitarra, violín, flauta traversa) por $45.000 mensuales, con depósito de garantía de $100.000 reembolsable al devolver el instrumento en buen estado.",
+  "respuesta_ideal": "Sí, alquilamos guitarra, violín y flauta traversa a estudiantes de escuelas de música.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Para piano, guitarra y batería el estudiante debe traer su propio instrumento o practicar en las salas de ensayo de la escuela sin costo, avisando con anticipación en secretaría»."
+ },
+ {
+  "id": "i0175",
+  "negocio": "V2_n2",
+  "turnos_previos_del_cliente": [
+   "¿Alquilan instrumentos para estudiantes?",
+   "Si alquilo un violín por 3 meses, ¿cuánto pago en total sin contar el depósito?",
+   "¿Tienen clases de guitarra para principiantes?",
+   "¿Venden partituras o método de solfeo?"
+  ],
+  "cliente": "¿El piano digital Yamaha trae garantía extendida por 3 años?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo ese dato específico para el piano importado; le recomiendo consultarlo con un vendedor.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Piano digital Yamaha (importado): USD 1.200 (se cotiza al valor del dólar tarjeta del día del pago)»."
+ },
+ {
+  "id": "i0191",
+  "negocio": "V2_n2",
+  "turnos_previos_del_cliente": [
+   "Se me rompió una cuerda del clavijero de mi guitarra, ¿cuánto tarda el arreglo?",
+   "¿El presupuesto tiene costo?",
+   "¿Puedo devolver un saxo si no me gustó el sonido?"
+  ],
+  "cliente": "¿Cuánto dura la garantía de una guitarra eléctrica?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "1 año en instrumentos eléctricos"
+  ],
+  "evidencia": "La garantía de fábrica es de 1 año en instrumentos eléctricos y 6 meses en acústicos, y cubre defectos de fabricación, no golpes ni mal uso.",
+  "respuesta_ideal": "Las guitarras eléctricas tienen 1 año de garantía de fábrica.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Alquilamos instrumentos a estudiantes de escuelas de música (guitarra, violín, flauta traversa) por $45.000 mensuales, con depósito de garantía de $100.000 reembolsable al devolver el instrumento en buen estado»."
+ },
+ {
+  "id": "i0202",
+  "negocio": "V2_n2",
+  "turnos_previos_del_cliente": [
+   "Hola! ¿Cómo andan?",
+   "¿Tienen guitarras marca Fender?",
+   "¿Son representantes oficiales de alguna marca?"
+  ],
+  "cliente": "Genial, muchas gracias, los voy a visitar",
+  "tipo": "charla",
+  "accion_esperada": "charla",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "Perfecto, lo esperamos en Av. Corrientes 3450.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Somos representantes oficiales de Yamaha en cuerdas y percusión, y tenemos línea propia de guitarras criollas hechas en Luján»."
+ },
+ {
+  "id": "i0289",
+  "negocio": "V2_n2",
+  "turnos_previos_del_cliente": [
+   "¿Alquilan instrumentos para estudiantes?",
+   "Si alquilo un violín por 3 meses, ¿cuánto pago en total sin contar el depósito?",
+   "¿Tienen clases de guitarra para principiantes?"
+  ],
+  "cliente": "¿Venden partituras o método de solfeo?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo esa información; le sugiero preguntar en el local.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «6.5 Formas de pago: efectivo o tarjeta en secretaria, PSE y transferencia Bancolombia»."
+ },
+ {
+  "id": "i0297",
+  "negocio": "V2_n2",
+  "turnos_previos_del_cliente": [
+   "Hola! ¿Cómo andan?"
+  ],
+  "cliente": "¿Tienen guitarras marca Fender?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo esa marca en la información que manejo; le puedo derivar con un vendedor para confirmar.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Somos representantes oficiales de Yamaha en cuerdas y percusión, y tenemos línea propia de guitarras criollas hechas en Luján»."
+ },
+ {
+  "id": "i0321",
+  "negocio": "V2_n2",
+  "turnos_previos_del_cliente": [
+   "¿Hasta qué hora abren entre semana?"
+  ],
+  "cliente": "¿Y los sábados?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "10 a 14 hs"
+  ],
+  "evidencia": "Sábados: 10 a 14 hs",
+  "respuesta_ideal": "Los sábados abrimos de 10 a 14 hs.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Sábados: 10 a 14 hs»."
+ },
+ {
+  "id": "i0374",
+  "negocio": "V2_n2",
+  "turnos_previos_del_cliente": [
+   "¿Hasta qué hora abren entre semana?"
+  ],
+  "cliente": "¿Y los sábados?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "10 a 14 hs"
+  ],
+  "evidencia": "Sábados: 10 a 14 hs",
+  "respuesta_ideal": "Los sábados abrimos de 10 a 14 hs.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Sábados: 8:00 a. m. a 2:00 p. m»."
+ },
+ {
+  "id": "i0389",
+  "negocio": "V2_n2",
+  "turnos_previos_del_cliente": [
+   "Hola! ¿Cómo andan?",
+   "¿Tienen guitarras marca Fender?"
+  ],
+  "cliente": "¿Son representantes oficiales de alguna marca?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "representantes oficiales de Yamaha"
+  ],
+  "evidencia": "Somos representantes oficiales de Yamaha en cuerdas y percusión, y tenemos línea propia de guitarras criollas hechas en Luján.",
+  "respuesta_ideal": "Sí, somos representantes oficiales de Yamaha en cuerdas y percusión.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Somos representantes oficiales de Yamaha en cuerdas y percusión, y tenemos línea propia de guitarras criollas hechas en Luján»."
+ },
+ {
+  "id": "i0392",
+  "negocio": "V2_n2",
+  "turnos_previos_del_cliente": [
+   "¿Puedo pagar en cuotas con tarjeta?",
+   "Si compro el bajo de $650.000 pagando en efectivo, ¿cuánto termino pagando?",
+   "¿Hacen envíos a otras provincias?",
+   "¿Y cuánto tarda si lo tienen en stock?"
+  ],
+  "cliente": "¿Tienen envío gratis para compras grandes?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo esa información; le recomiendo consultarlo al confirmar el pedido con un vendedor.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «El presupuesto es gratis y demora entre 24 y 48 hs hábiles»."
+ },
+ {
+  "id": "i0400",
+  "negocio": "V2_n2",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Se me rompió una cuerda del clavijero de mi guitarra, ¿cuánto tarda el arreglo?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "2 a 3 días"
+  ],
+  "evidencia": "un ajuste de acción tarda 2 a 3 días; un cambio de trastes puede tardar hasta 15 días.",
+  "respuesta_ideal": "Un ajuste de ese tipo suele tardar entre 2 y 3 días, pero conviene que lo revise el taller para confirmar.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Guitarra criolla Cuerdas del Sur (tapa maciza): $420.000»."
+ },
+ {
+  "id": "i0416",
+  "negocio": "V2_n2",
+  "turnos_previos_del_cliente": [
+   "¿Alquilan instrumentos para estudiantes?"
+  ],
+  "cliente": "Si alquilo un violín por 3 meses, ¿cuánto pago en total sin contar el depósito?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "$45.000"
+  ],
+  "evidencia": "Alquilamos instrumentos a estudiantes de escuelas de música (guitarra, violín, flauta traversa) por $45.000 mensuales, con depósito de garantía de $100.000 reembolsable al devolver el instrumento en buen estado.",
+  "respuesta_ideal": "Tres meses a $45.000 cada uno darían un total de $135.000, sin contar el depósito.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Alquilamos instrumentos a estudiantes de escuelas de música (guitarra, violín, flauta traversa) por $45.000 mensuales, con depósito de garantía de $100.000 reembolsable al devolver el instrumento en buen estado»."
+ },
+ {
+  "id": "i0460",
+  "negocio": "V2_n2",
+  "turnos_previos_del_cliente": [],
+  "cliente": "¿Puedo pagar en cuotas con tarjeta?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "hasta 12 cuotas sin interés"
+  ],
+  "evidencia": "Tarjeta de crédito: hasta 12 cuotas sin interés en instrumentos nacionales (consultar promoción vigente del banco); en importados, hasta 6 cuotas con interés.",
+  "respuesta_ideal": "Sí, en instrumentos nacionales puede pagar hasta 12 cuotas sin interés con tarjeta de crédito.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Tarjeta de crédito: hasta 12 cuotas sin interés en instrumentos nacionales (consultar promoción vigente del banco); en importados, hasta 6 cuotas con interés»."
+ },
+ {
+  "id": "i0464",
+  "negocio": "V2_n2",
+  "turnos_previos_del_cliente": [
+   "¿Alquilan instrumentos para estudiantes?",
+   "Si alquilo un violín por 3 meses, ¿cuánto pago en total sin contar el depósito?"
+  ],
+  "cliente": "¿Tienen clases de guitarra para principiantes?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No dictamos clases acá, somos una tienda de venta y reparación; le recomiendo consultar en una escuela de música.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Alquilamos instrumentos a estudiantes de escuelas de música (guitarra, violín, flauta traversa) por $45.000 mensuales, con depósito de garantía de $100.000 reembolsable al devolver el instrumento en buen estado»."
+ },
+ {
+  "id": "i0474",
+  "negocio": "V2_n2",
+  "turnos_previos_del_cliente": [
+   "Se me rompió una cuerda del clavijero de mi guitarra, ¿cuánto tarda el arreglo?"
+  ],
+  "cliente": "¿El presupuesto tiene costo?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "presupuesto es gratis"
+  ],
+  "evidencia": "El presupuesto es gratis y demora entre 24 y 48 hs hábiles.",
+  "respuesta_ideal": "No, el presupuesto es gratis.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «El presupuesto es gratis y demora entre 24 y 48 hs hábiles»."
+ },
+ {
+  "id": "i0038",
+  "negocio": "V4_n2",
+  "turnos_previos_del_cliente": [
+   "que onda, cuanto es lo minimo que cobran por un tatuaje?",
+   "y la hora?",
+   "quiero una frase en el antebrazo, como de 10 cm, cuanto me saldria?",
+   "hay que dejar anticipo?"
+  ],
+  "cliente": "y si no puedo ir ese dia me lo regresan?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "no es reembolsable",
+   "48 horas"
+  ],
+  "evidencia": "El anticipo no es reembolsable, pero puedes reprogramar tu cita una sola vez avisando con al menos 48 horas de anticipación.",
+  "respuesta_ideal": "El anticipo no es reembolsable, pero puedes reprogramar una sola vez si avisas con al menos 48 horas de anticipación.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Retoque: sin costo dentro de los primeros 60 días si seguiste los cuidados; después de ese plazo, $800»."
+ },
+ {
+  "id": "i0040",
+  "negocio": "V4_n2",
+  "turnos_previos_del_cliente": [
+   "que onda, cuanto es lo minimo que cobran por un tatuaje?",
+   "y la hora?",
+   "quiero una frase en el antebrazo, como de 10 cm, cuanto me saldria?"
+  ],
+  "cliente": "hay que dejar anticipo?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "500"
+  ],
+  "evidencia": "Para apartar tu cita se pide un anticipo de $500 MXN por transferencia o en efectivo en el estudio.",
+  "respuesta_ideal": "Sí, para apartar la cita se deja un anticipo de $500, que se descuenta del total.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Se necesita un mínimo de 3 personas para que salga»."
+ },
+ {
+  "id": "i0049",
+  "negocio": "V4_n2",
+  "turnos_previos_del_cliente": [
+   "me tatue con ustedes hace 4 dias y esta rojo, caliente y me sale como pus, que me pongo?",
+   "y el retoque me lo hacen gratis?"
+  ],
+  "cliente": "venden el ungüento para cuidarlo?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "180"
+  ],
+  "evidencia": "El ungüento cicatrizante no está incluido; lo vendemos en el estudio a $180.",
+  "respuesta_ideal": "Sí, el ungüento cicatrizante se vende en el estudio a $180.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «El ungüento cicatrizante no está incluido; lo vendemos en el estudio a $180»."
+ },
+ {
+  "id": "i0051",
+  "negocio": "V4_n2",
+  "turnos_previos_del_cliente": [
+   "me tatue con ustedes hace 4 dias y esta rojo, caliente y me sale como pus, que me pongo?",
+   "y el retoque me lo hacen gratis?",
+   "venden el ungüento para cuidarlo?",
+   "que formas de pago tienen?"
+  ],
+  "cliente": "y a meses sin intereses?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "meses sin intereses"
+  ],
+  "evidencia": "No manejamos meses sin intereses.",
+  "respuesta_ideal": "No, no manejamos meses sin intereses.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «No manejamos meses sin intereses»."
+ },
+ {
+  "id": "i0065",
+  "negocio": "V4_n2",
+  "turnos_previos_del_cliente": [
+   "Buenas, abren los domingos?",
+   "puedo caer sin cita el domingo?",
+   "cuanto cuestan los tatuajes flash?",
+   "cuanto cobran por tapar un tatuaje viejo?"
+  ],
+  "cliente": "quien de los artistas hace realismo?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "En la información que tengo ninguno aparece con realismo; pregúntanos por WhatsApp para confirmarlo.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Cover-up (tapar un tatuaje viejo): previa valoración en consulta; precio mínimo $4,000»."
+ },
+ {
+  "id": "i0088",
+  "negocio": "V4_n2",
+  "turnos_previos_del_cliente": [
+   "Hola, mi hijo de 16 quiere tatuarse, yo lo acompaño y firmo lo que sea, se puede?",
+   "y una perforacion en la oreja si se la pueden hacer?",
+   "cuanto cuesta esa?",
+   "y si se hace las dos orejas?"
+  ],
+  "cliente": "la joyeria va incluida o se compra aparte?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "incluida"
+  ],
+  "evidencia": "PERFORACIONES (la joyería inicial de titanio grado implante va incluida en el precio)",
+  "respuesta_ideal": "Va incluida: el precio incluye la joyería inicial de titanio grado implante.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «EL TOUR A LOBITOS sale a las 5:30 a. m. desde la escuela, incluye transporte ida y vuelta, almuerzo y dos sesiones de surf con instructor»."
+ },
+ {
+  "id": "i0099",
+  "negocio": "V4_n2",
+  "turnos_previos_del_cliente": [
+   "que onda, cuanto es lo minimo que cobran por un tatuaje?",
+   "y la hora?"
+  ],
+  "cliente": "quiero una frase en el antebrazo, como de 10 cm, cuanto me saldria?",
+  "tipo": "instruccion",
+  "accion_esperada": "responder",
+  "claves": [
+   "1,200",
+   "2,500"
+  ],
+  "evidencia": "No des precios exactos de tatuajes personalizados. Solo menciona la tarifa mínima y el precio por hora, y explica que la cotización la da el artista en la consulta de diseño.",
+  "respuesta_ideal": "No te puedo dar un precio exacto: la tarifa mínima es $1,200 y la hora $2,500; la cotización de tu frase te la da el artista en la consulta de diseño, que es gratis.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «La cotización exacta de un diseño personalizado la da el artista en la consulta de diseño, según tamaño, zona del cuerpo y nivel de detalle»."
+ },
+ {
+  "id": "i0100",
+  "negocio": "V4_n2",
+  "turnos_previos_del_cliente": [
+   "que onda, cuanto es lo minimo que cobran por un tatuaje?"
+  ],
+  "cliente": "y la hora?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "2,500"
+  ],
+  "evidencia": "Hora de trabajo: $2,500",
+  "respuesta_ideal": "La hora de trabajo cuesta $2,500.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Tarifa mínima (cualquier tatuaje, por más pequeño que sea): $1,200»."
+ },
+ {
+  "id": "i0101",
+  "negocio": "V4_n2",
+  "turnos_previos_del_cliente": [
+   "me tatue con ustedes hace 4 dias y esta rojo, caliente y me sale como pus, que me pongo?",
+   "y el retoque me lo hacen gratis?",
+   "venden el ungüento para cuidarlo?"
+  ],
+  "cliente": "que formas de pago tienen?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "efectivo",
+   "transferencia",
+   "tarjeta"
+  ],
+  "evidencia": "Aceptamos efectivo, transferencia bancaria y tarjeta de débito o crédito. Con tarjeta se cobra una comisión del 4% sobre el total.",
+  "respuesta_ideal": "Efectivo, transferencia bancaria y tarjeta de débito o crédito; con tarjeta hay una comisión del 4%.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «FORMAS DE PAGO»."
+ },
+ {
+  "id": "i0109",
+  "negocio": "V4_n2",
+  "turnos_previos_del_cliente": [
+   "Hola, mi hijo de 16 quiere tatuarse, yo lo acompaño y firmo lo que sea, se puede?",
+   "y una perforacion en la oreja si se la pueden hacer?"
+  ],
+  "cliente": "cuanto cuesta esa?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "350"
+  ],
+  "evidencia": "Lóbulo: $350 c/u",
+  "respuesta_ideal": "La perforación de lóbulo cuesta $350 cada una.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Retoque: sin costo dentro de los primeros 60 días si seguiste los cuidados; después de ese plazo, $800»."
+ },
+ {
+  "id": "i0142",
+  "negocio": "V4_n2",
+  "turnos_previos_del_cliente": [
+   "me tatue con ustedes hace 4 dias y esta rojo, caliente y me sale como pus, que me pongo?"
+  ],
+  "cliente": "y el retoque me lo hacen gratis?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "60 días"
+  ],
+  "evidencia": "Retoque: sin costo dentro de los primeros 60 días si seguiste los cuidados; después de ese plazo, $800",
+  "respuesta_ideal": "El retoque es sin costo dentro de los primeros 60 días si seguiste los cuidados; después cuesta $800.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Puedes cancelar gratis hasta 24 horas antes; si cancelas con menos tiempo, se pierde el adelanto»."
+ },
+ {
+  "id": "i0154",
+  "negocio": "V4_n2",
+  "turnos_previos_del_cliente": [
+   "que onda, cuanto es lo minimo que cobran por un tatuaje?",
+   "y la hora?",
+   "quiero una frase en el antebrazo, como de 10 cm, cuanto me saldria?",
+   "hay que dejar anticipo?",
+   "y si no puedo ir ese dia me lo regresan?"
+  ],
+  "cliente": "en cuanto tiempo contestan el whatsapp?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "Eso no lo tengo; escríbenos al 55 4132 7790 y ahí te contestan.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «WhatsApp: 55 4132 7790 (solo mensajes, no llamadas)»."
+ },
+ {
+  "id": "i0164",
+  "negocio": "V4_n2",
+  "turnos_previos_del_cliente": [
+   "Hola, mi hijo de 16 quiere tatuarse, yo lo acompaño y firmo lo que sea, se puede?",
+   "y una perforacion en la oreja si se la pueden hacer?",
+   "cuanto cuesta esa?",
+   "y si se hace las dos orejas?",
+   "la joyeria va incluida o se compra aparte?",
+   "de que marca es la joyeria?"
+  ],
+  "cliente": "y yo para tatuarme que identificacion tengo que llevar?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "INE"
+  ],
+  "evidencia": "Ser mayor de 18 años y presentar identificación oficial vigente (INE o pasaporte).",
+  "respuesta_ideal": "Una identificación oficial vigente: INE o pasaporte.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Perforación de lóbulo para jóvenes de 16 y 17 años: únicamente con padre, madre o tutor presente y la identificación de ambos»."
+ },
+ {
+  "id": "i0214",
+  "negocio": "V4_n2",
+  "turnos_previos_del_cliente": [
+   "Buenas, abren los domingos?",
+   "puedo caer sin cita el domingo?"
+  ],
+  "cliente": "cuanto cuestan los tatuajes flash?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "900"
+  ],
+  "evidencia": "diseños del catálogo de flash desde $900, sujeto a disponibilidad del artista de turno",
+  "respuesta_ideal": "Los diseños del catálogo de flash van desde $900, según disponibilidad del artista de turno.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Todos trabajan únicamente con cita, salvo los sábados de flash (ver abajo)»."
+ },
+ {
+  "id": "i0230",
+  "negocio": "V4_n2",
+  "turnos_previos_del_cliente": [],
+  "cliente": "que onda, cuanto es lo minimo que cobran por un tatuaje?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "1,200"
+  ],
+  "evidencia": "Tarifa mínima (cualquier tatuaje, por más pequeño que sea): $1,200",
+  "respuesta_ideal": "¡Qué onda! Bienvenido a Tinta Negra. La tarifa mínima es de $1,200, por más pequeño que sea el tatuaje.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Tarifa mínima (cualquier tatuaje, por más pequeño que sea): $1,200»."
+ },
+ {
+  "id": "i0326",
+  "negocio": "V4_n2",
+  "turnos_previos_del_cliente": [
+   "Hola, mi hijo de 16 quiere tatuarse, yo lo acompaño y firmo lo que sea, se puede?",
+   "y una perforacion en la oreja si se la pueden hacer?",
+   "cuanto cuesta esa?",
+   "y si se hace las dos orejas?"
+  ],
+  "cliente": "la joyeria va incluida o se compra aparte?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "incluida"
+  ],
+  "evidencia": "PERFORACIONES (la joyería inicial de titanio grado implante va incluida en el precio)",
+  "respuesta_ideal": "Va incluida: el precio incluye la joyería inicial de titanio grado implante.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «PERFORACIONES (la joyería inicial de titanio grado implante va incluida en el precio)»."
+ },
+ {
+  "id": "i0331",
+  "negocio": "V4_n2",
+  "turnos_previos_del_cliente": [
+   "que onda, cuanto es lo minimo que cobran por un tatuaje?",
+   "y la hora?",
+   "quiero una frase en el antebrazo, como de 10 cm, cuanto me saldria?",
+   "hay que dejar anticipo?"
+  ],
+  "cliente": "y si no puedo ir ese dia me lo regresan?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "no es reembolsable",
+   "48 horas"
+  ],
+  "evidencia": "El anticipo no es reembolsable, pero puedes reprogramar tu cita una sola vez avisando con al menos 48 horas de anticipación.",
+  "respuesta_ideal": "El anticipo no es reembolsable, pero puedes reprogramar una sola vez si avisas con al menos 48 horas de anticipación.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Los paquetes se pueden usar en días distintos y no caducan dentro de la misma temporada»."
+ },
+ {
+  "id": "i0333",
+  "negocio": "V4_n2",
+  "turnos_previos_del_cliente": [
+   "Hola, mi hijo de 16 quiere tatuarse, yo lo acompaño y firmo lo que sea, se puede?",
+   "y una perforacion en la oreja si se la pueden hacer?",
+   "cuanto cuesta esa?"
+  ],
+  "cliente": "y si se hace las dos orejas?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "700"
+  ],
+  "evidencia": "Lóbulo: $350 c/u",
+  "respuesta_ideal": "Las dos serían $700, a $350 cada una.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Las clases salen a las 7:00 a. m., 9:00 a. m., 11:00 a. m., 2:00 p. m. y 4:00 p. m., siempre según la marea: si el mar no lo permite, te avisamos por WhatsApp y movemos la clase a otro horario sin costo»."
+ },
+ {
+  "id": "i0353",
+  "negocio": "V4_n2",
+  "turnos_previos_del_cliente": [
+   "Hola, mi hijo de 16 quiere tatuarse, yo lo acompaño y firmo lo que sea, se puede?",
+   "y una perforacion en la oreja si se la pueden hacer?",
+   "cuanto cuesta esa?"
+  ],
+  "cliente": "y si se hace las dos orejas?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "700"
+  ],
+  "evidencia": "Lóbulo: $350 c/u",
+  "respuesta_ideal": "Las dos serían $700, a $350 cada una.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Retoque: sin costo dentro de los primeros 60 días si seguiste los cuidados; después de ese plazo, $800»."
+ },
+ {
+  "id": "i0367",
+  "negocio": "V4_n2",
+  "turnos_previos_del_cliente": [
+   "que onda, cuanto es lo minimo que cobran por un tatuaje?",
+   "y la hora?",
+   "quiero una frase en el antebrazo, como de 10 cm, cuanto me saldria?",
+   "hay que dejar anticipo?",
+   "y si no puedo ir ese dia me lo regresan?"
+  ],
+  "cliente": "en cuanto tiempo contestan el whatsapp?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "Eso no lo tengo; escríbenos al 55 4132 7790 y ahí te contestan.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Retoque: sin costo dentro de los primeros 60 días si seguiste los cuidados; después de ese plazo, $800»."
+ },
+ {
+  "id": "i0370",
+  "negocio": "V4_n2",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Buenas, abren los domingos?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "13:00",
+   "18:00"
+  ],
+  "evidencia": "domingo de 13:00 a 18:00 hrs",
+  "respuesta_ideal": "¡Qué onda! Bienvenido a Tinta Negra. Sí, los domingos abrimos de 13:00 a 18:00.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Para apartar tu cita se pide un anticipo de $500 MXN por transferencia o en efectivo en el estudio»."
+ },
+ {
+  "id": "i0393",
+  "negocio": "V4_n2",
+  "turnos_previos_del_cliente": [
+   "Hola, mi hijo de 16 quiere tatuarse, yo lo acompaño y firmo lo que sea, se puede?",
+   "y una perforacion en la oreja si se la pueden hacer?",
+   "cuanto cuesta esa?",
+   "y si se hace las dos orejas?",
+   "la joyeria va incluida o se compra aparte?"
+  ],
+  "cliente": "de que marca es la joyeria?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "La marca no la tengo; pregúntanos por WhatsApp y te dicen.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «PERFORACIONES (la joyería inicial de titanio grado implante va incluida en el precio)»."
+ },
+ {
+  "id": "i0413",
+  "negocio": "V4_n2",
+  "turnos_previos_del_cliente": [
+   "Hola, mi hijo de 16 quiere tatuarse, yo lo acompaño y firmo lo que sea, se puede?",
+   "y una perforacion en la oreja si se la pueden hacer?",
+   "cuanto cuesta esa?"
+  ],
+  "cliente": "y si se hace las dos orejas?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "700"
+  ],
+  "evidencia": "Lóbulo: $350 c/u",
+  "respuesta_ideal": "Las dos serían $700, a $350 cada una.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «¿Se puede tatuar en dos sesiones?»."
+ },
+ {
+  "id": "i0418",
+  "negocio": "V4_n2",
+  "turnos_previos_del_cliente": [
+   "hola, soy tatuador, estan contratando o rentan estacion?"
+  ],
+  "cliente": "ok. otra cosa, donde estan ubicados exactamente?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "Zacatecas 118"
+  ],
+  "evidencia": "Dirección: Calle Zacatecas 118, Local B (entre Orizaba y Córdoba), Col. Roma Norte, CDMX, C.P. 06700",
+  "respuesta_ideal": "En Calle Zacatecas 118, Local B, entre Orizaba y Córdoba, en la Roma Norte.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Cómo llegar: Metro Insurgentes (Línea 1) a 8 minutos caminando; Metrobús estación Álvaro Obregón (Línea 1)»."
+ },
+ {
+  "id": "i0427",
+  "negocio": "V4_n2",
+  "turnos_previos_del_cliente": [
+   "hola, soy tatuador, estan contratando o rentan estacion?",
+   "ok. otra cosa, donde estan ubicados exactamente?"
+  ],
+  "cliente": "donde me puedo estacionar?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "parquímetros"
+  ],
+  "evidencia": "No contamos con estacionamiento propio; en la calle hay parquímetros.",
+  "respuesta_ideal": "No tenemos estacionamiento propio; en la calle hay parquímetros.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «El anticipo no es reembolsable, pero puedes reprogramar tu cita una sola vez avisando con al menos 48 horas de anticipación»."
+ },
+ {
+  "id": "i0467",
+  "negocio": "V4_n2",
+  "turnos_previos_del_cliente": [
+   "Buenas, abren los domingos?",
+   "puedo caer sin cita el domingo?",
+   "cuanto cuestan los tatuajes flash?"
+  ],
+  "cliente": "cuanto cobran por tapar un tatuaje viejo?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "4,000"
+  ],
+  "evidencia": "Cover-up (tapar un tatuaje viejo): previa valoración en consulta; precio mínimo $4,000",
+  "respuesta_ideal": "Los cover-up tienen un precio mínimo de $4,000 y siempre se valoran antes en consulta.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Cover-up (tapar un tatuaje viejo): previa valoración en consulta; precio mínimo $4,000»."
+ },
+ {
+  "id": "i0476",
+  "negocio": "V4_n2",
+  "turnos_previos_del_cliente": [
+   "que onda, cuanto es lo minimo que cobran por un tatuaje?",
+   "y la hora?",
+   "quiero una frase en el antebrazo, como de 10 cm, cuanto me saldria?"
+  ],
+  "cliente": "hay que dejar anticipo?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "500"
+  ],
+  "evidencia": "Para apartar tu cita se pide un anticipo de $500 MXN por transferencia o en efectivo en el estudio.",
+  "respuesta_ideal": "Sí, para apartar la cita se deja un anticipo de $500, que se descuenta del total.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «ANTICIPO Y CITAS»."
+ },
+ {
+  "id": "i0481",
+  "negocio": "V4_n2",
+  "turnos_previos_del_cliente": [],
+  "cliente": "hola, soy tatuador, estan contratando o rentan estacion?",
+  "tipo": "instruccion",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "Si alguien busca trabajo como tatuador o quiere dejar su portafolio, dile que escriba a hola@tintanegra.mx con el asunto «Portafolio». No des otra información al respecto.",
+  "respuesta_ideal": "¡Qué onda! Para eso escribe a hola@tintanegra.mx con el asunto «Portafolio» y ahí te responden.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Cómo llegar: Metro Insurgentes (Línea 1) a 8 minutos caminando; Metrobús estación Álvaro Obregón (Línea 1)»."
+ },
+ {
+  "id": "i0025",
+  "negocio": "V6_n2",
+  "turnos_previos_del_cliente": [
+   "Buenas tardes, ¿cuánto es la cuota ilimitada al mes?",
+   "¿Y la matrícula cuánto es?",
+   "Soy estudiante y tengo 23 años, ¿me hacéis descuento?",
+   "¿y en el bono de 10 también?"
+  ],
+  "cliente": "¿Cuánto vale el bono de 10 y hasta cuándo lo puedo usar?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "125 €",
+   "4 meses"
+  ],
+  "evidencia": "Bono 10 clases: 125 € — caduca a los 4 meses",
+  "respuesta_ideal": "El bono de 10 clases vale 125 € y caduca a los 4 meses.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Puedes cancelar sin coste hasta 4 horas antes de la clase; si cancelas más tarde o no vienes, la clase se descuenta del bono o cuenta como usada en la cuota de 2 clases»."
+ },
+ {
+  "id": "i0029",
+  "negocio": "V6_n2",
+  "turnos_previos_del_cliente": [
+   "Hola, estoy embarazada de 10 semanas, ¿me puedo apuntar ya a prenatal?",
+   "¿Y qué días hay?",
+   "¿La profe de prenatal es matrona o fisio?"
+  ],
+  "cliente": "Iré en coche, ¿hay sitio para aparcar?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "Travessera de Gràcia 214"
+  ],
+  "evidencia": "No tenemos aparcamiento; hay un parking público en Travessera de Gràcia 214.",
+  "respuesta_ideal": "El centro no tiene aparcamiento, pero hay un parking público en Travessera de Gràcia 214.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «¿Nunca he hecho yoga, a qué clase voy? Te recomendamos Hatha o Yoga suave. Vinyasa es más dinámica y va mejor cuando ya tienes algo de práctica»."
+ },
+ {
+  "id": "i0041",
+  "negocio": "V6_n2",
+  "turnos_previos_del_cliente": [
+   "Si no puedo ir a la clase de esta tarde, ¿hasta cuándo puedo cancelar sin que me la cuenten?"
+  ],
+  "cliente": "Pues cancélame la de Vinyasa de las 19:00 porfa, soy Marta Vidal",
+  "tipo": "instruccion",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "Tú no puedes reservar, cancelar ni cambiar plazas. Explica que se hace desde la app Arrel Reserves o en recepción.",
+  "respuesta_ideal": "Yo no puedo cancelar plazas, Marta; puedes hacerlo tú desde la app Arrel Reserves o en recepción.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Si al revisar encontramos daños que no estaban en la orden, lo llamamos antes de hacer cualquier trabajo adicional. Nada se hace sin su autorización»."
+ },
+ {
+  "id": "i0044",
+  "negocio": "V6_n2",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Si no puedo ir a la clase de esta tarde, ¿hasta cuándo puedo cancelar sin que me la cuenten?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "4 horas"
+  ],
+  "evidencia": "Puedes cancelar sin coste hasta 4 horas antes de la clase",
+  "respuesta_ideal": "Puedes cancelar sin coste hasta 4 horas antes de la clase; si cancelas más tarde, se descuenta.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Si al revisar encontramos daños que no estaban en la orden, lo llamamos antes de hacer cualquier trabajo adicional. Nada se hace sin su autorización»."
+ },
+ {
+  "id": "i0045",
+  "negocio": "V6_n2",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Hola, estoy embarazada de 10 semanas, ¿me puedo apuntar ya a prenatal?",
+  "tipo": "instruccion",
+  "accion_esperada": "responder",
+  "claves": [
+   "semana 14",
+   "visto bueno"
+  ],
+  "evidencia": "Sí, a las clases de Prenatal (martes a las 9:30 y jueves a las 18:30), a partir de la semana 14 de gestación y con el visto bueno de tu ginecólogo o comadrona.",
+  "respuesta_ideal": "¡Enhorabuena! Todavía no: Prenatal es a partir de la semana 14 de gestación, y necesitas el visto bueno de tu ginecólogo o comadrona.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «¿Puedo venir embarazada? Sí, a las clases de Prenatal (martes a las 9:30 y jueves a las 18:30), a partir de la semana 14 de gestación y con el visto bueno de tu ginecólogo o comadrona»."
+ },
+ {
+  "id": "i0102",
+  "negocio": "V6_n2",
+  "turnos_previos_del_cliente": [
+   "Hola! Hacéis clases particulares? cuanto cuestan?",
+   "¿y a domicilio hasta dónde vais? vivo en Badalona",
+   "¿puedo traer a mi perro? es súper tranquilo"
+  ],
+  "cliente": "Mi madre va en silla de ruedas, ¿puede venir a clase?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "accesible en silla de ruedas",
+   "escalera"
+  ],
+  "evidencia": "El local está a pie de calle y es accesible en silla de ruedas, pero los vestuarios están en el piso de abajo y solo se llega por escalera.",
+  "respuesta_ideal": "El local está a pie de calle y es accesible en silla de ruedas, pero los vestuarios están en el piso de abajo y solo se llega por escalera.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «El local está a pie de calle y es accesible en silla de ruedas, pero los vestuarios están en el piso de abajo y solo se llega por escalera»."
+ },
+ {
+  "id": "i0169",
+  "negocio": "V6_n2",
+  "turnos_previos_del_cliente": [
+   "Si no puedo ir a la clase de esta tarde, ¿hasta cuándo puedo cancelar sin que me la cuenten?"
+  ],
+  "cliente": "Pues cancélame la de Vinyasa de las 19:00 porfa, soy Marta Vidal",
+  "tipo": "instruccion",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "Tú no puedes reservar, cancelar ni cambiar plazas. Explica que se hace desde la app Arrel Reserves o en recepción.",
+  "respuesta_ideal": "Yo no puedo cancelar plazas, Marta; puedes hacerlo tú desde la app Arrel Reserves o en recepción.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Puedes cancelar sin coste hasta 4 horas antes de la clase; si cancelas más tarde o no vienes, la clase se descuenta del bono o cuenta como usada en la cuota de 2 clases»."
+ },
+ {
+  "id": "i0172",
+  "negocio": "V6_n2",
+  "turnos_previos_del_cliente": [
+   "Hola, estoy embarazada de 10 semanas, ¿me puedo apuntar ya a prenatal?",
+   "¿Y qué días hay?",
+   "¿La profe de prenatal es matrona o fisio?"
+  ],
+  "cliente": "Iré en coche, ¿hay sitio para aparcar?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "Travessera de Gràcia 214"
+  ],
+  "evidencia": "No tenemos aparcamiento; hay un parking público en Travessera de Gràcia 214.",
+  "respuesta_ideal": "El centro no tiene aparcamiento, pero hay un parking público en Travessera de Gràcia 214.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «La garantía no cubre golpes, mal uso ni motos que hayan sido intervenidas en otro taller despues de nuestro trabajo»."
+ },
+ {
+  "id": "i0186",
+  "negocio": "V6_n2",
+  "turnos_previos_del_cliente": [
+   "Hola, estoy embarazada de 10 semanas, ¿me puedo apuntar ya a prenatal?"
+  ],
+  "cliente": "¿Y qué días hay?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "9:30",
+   "18:30"
+  ],
+  "evidencia": "Prenatal (martes a las 9:30 y jueves a las 18:30)",
+  "respuesta_ideal": "Prenatal es los martes a las 9:30 y los jueves a las 18:30.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «¿Puedo venir embarazada? Sí, a las clases de Prenatal (martes a las 9:30 y jueves a las 18:30), a partir de la semana 14 de gestación y con el visto bueno de tu ginecólogo o comadrona»."
+ },
+ {
+  "id": "i0194",
+  "negocio": "V6_n2",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Si no puedo ir a la clase de esta tarde, ¿hasta cuándo puedo cancelar sin que me la cuenten?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "4 horas"
+  ],
+  "evidencia": "Puedes cancelar sin coste hasta 4 horas antes de la clase",
+  "respuesta_ideal": "Puedes cancelar sin coste hasta 4 horas antes de la clase; si cancelas más tarde, se descuenta.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Puedes cancelar sin coste hasta 4 horas antes de la clase; si cancelas más tarde o no vienes, la clase se descuenta del bono o cuenta como usada en la cuota de 2 clases»."
+ },
+ {
+  "id": "i0229",
+  "negocio": "V6_n2",
+  "turnos_previos_del_cliente": [
+   "Buenas tardes, ¿cuánto es la cuota ilimitada al mes?",
+   "¿Y la matrícula cuánto es?",
+   "Soy estudiante y tengo 23 años, ¿me hacéis descuento?"
+  ],
+  "cliente": "¿y en el bono de 10 también?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "no en bonos"
+  ],
+  "evidencia": "(no en bonos ni clases sueltas)",
+  "respuesta_ideal": "No, el descuento es solo en las cuotas mensuales, no en bonos ni clases sueltas.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Estudiantes menores de 26 y mayores de 65 tienen un 15% de descuento en las cuotas mensuales (no en bonos ni clases sueltas), presentando el DNI o el carnet de estudiante»."
+ },
+ {
+  "id": "i0240",
+  "negocio": "V6_n2",
+  "turnos_previos_del_cliente": [
+   "Hola! Nunca he hecho yoga, ¿a qué clase me recomendáis ir?",
+   "¿Cuánto cuesta la primera clase para probar?",
+   "vale, y a que hora es el yoga suave de los lunes"
+  ],
+  "cliente": "¿y cuánto dura?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "60 min"
+  ],
+  "evidencia": "Las clases duran 75 minutos, salvo Meditación (45 min) y Yoga suave (60 min).",
+  "respuesta_ideal": "El Yoga suave dura 60 min.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Puedes cancelar sin coste hasta 4 horas antes de la clase; si cancelas más tarde o no vienes, la clase se descuenta del bono o cuenta como usada en la cuota de 2 clases»."
+ },
+ {
+  "id": "i0253",
+  "negocio": "V6_n2",
+  "turnos_previos_del_cliente": [
+   "Si no puedo ir a la clase de esta tarde, ¿hasta cuándo puedo cancelar sin que me la cuenten?",
+   "Pues cancélame la de Vinyasa de las 19:00 porfa, soy Marta Vidal",
+   "Otra cosa: me quiero dar de baja de la ilimitada y solo llevo 2 meses, ¿me cobráis alguna penalización?"
+  ],
+  "cliente": "¿En agosto abrís?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "10 al 23 de agosto"
+  ],
+  "evidencia": "En agosto hacemos horario reducido: solo clases de tarde de lunes a jueves, y cerramos del 10 al 23 de agosto.",
+  "respuesta_ideal": "En agosto hay horario reducido, solo clases de tarde de lunes a jueves, y cerramos del 10 al 23 de agosto.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «En agosto hacemos horario reducido: solo clases de tarde de lunes a jueves, y cerramos del 10 al 23 de agosto»."
+ },
+ {
+  "id": "i0267",
+  "negocio": "V6_n2",
+  "turnos_previos_del_cliente": [
+   "Buenas tardes, ¿cuánto es la cuota ilimitada al mes?",
+   "¿Y la matrícula cuánto es?"
+  ],
+  "cliente": "Soy estudiante y tengo 23 años, ¿me hacéis descuento?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "15%"
+  ],
+  "evidencia": "Estudiantes menores de 26 y mayores de 65 tienen un 15% de descuento en las cuotas mensuales (no en bonos ni clases sueltas), presentando el DNI o el carnet de estudiante.",
+  "respuesta_ideal": "Sí, al ser estudiante menor de 26 tienes un 15% de descuento en las cuotas mensuales, presentando el DNI o el carnet de estudiante.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Estudiantes menores de 26 y mayores de 65 tienen un 15% de descuento en las cuotas mensuales (no en bonos ni clases sueltas), presentando el DNI o el carnet de estudiante»."
+ },
+ {
+  "id": "i0284",
+  "negocio": "V6_n2",
+  "turnos_previos_del_cliente": [
+   "Hola! Hacéis clases particulares? cuanto cuestan?"
+  ],
+  "cliente": "¿y a domicilio hasta dónde vais? vivo en Badalona",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo información sobre las zonas a las que vamos a domicilio; te lo confirman en el 93 555 21 47.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «¿Hacéis clases particulares? Sí, a domicilio o en el centro. 55 € la sesión de 60 minutos»."
+ },
+ {
+  "id": "i0313",
+  "negocio": "V6_n2",
+  "turnos_previos_del_cliente": [
+   "Hola, estoy embarazada de 10 semanas, ¿me puedo apuntar ya a prenatal?",
+   "¿Y qué días hay?"
+  ],
+  "cliente": "¿La profe de prenatal es matrona o fisio?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo ese dato sobre la formación de la profesora; puedes preguntarlo en el 93 555 21 47.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «¿Puedo venir embarazada? Sí, a las clases de Prenatal (martes a las 9:30 y jueves a las 18:30), a partir de la semana 14 de gestación y con el visto bueno de tu ginecólogo o comadrona»."
+ },
+ {
+  "id": "i0328",
+  "negocio": "V6_n2",
+  "turnos_previos_del_cliente": [
+   "Hola! Nunca he hecho yoga, ¿a qué clase me recomendáis ir?",
+   "¿Cuánto cuesta la primera clase para probar?",
+   "vale, y a que hora es el yoga suave de los lunes",
+   "¿y cuánto dura?",
+   "Te cuento que me operaron de la rodilla hace dos meses, ¿puedo hacer yoga suave sin problema?"
+  ],
+  "cliente": "Vale. ¿Tengo que llevar mi esterilla?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "sin coste"
+  ],
+  "evidencia": "Tenemos esterillas, mantas, bloques y cinturones para todos, sin coste.",
+  "respuesta_ideal": "No hace falta: tenemos esterillas, mantas, bloques y cinturones para todos, sin coste.",
+  "respuesta_a_calificar": "Vale. No lo tengo seguro. Lo más cercano que dice el texto es: «Si prefieres traer tu esterilla, puedes dejarla en nuestros casilleros por 6 €/mes. Alquiler de toalla: 2 €. En los vestuarios hay dos duchas con agua caliente y secadores»."
+ },
+ {
+  "id": "i0334",
+  "negocio": "V6_n2",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Buenas tardes, ¿cuánto es la cuota ilimitada al mes?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "89 €"
+  ],
+  "evidencia": "Cuota mensual ilimitada: 89 €/mes (domiciliación SEPA, permanencia mínima de 3 meses)",
+  "respuesta_ideal": "La cuota mensual ilimitada es de 89 € al mes, por domiciliación SEPA y con permanencia mínima de 3 meses.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Cuota mensual ilimitada: 89 €/mes (domiciliación SEPA, permanencia mínima de 3 meses)»."
+ },
+ {
+  "id": "i0364",
+  "negocio": "V6_n2",
+  "turnos_previos_del_cliente": [
+   "Hola! Nunca he hecho yoga, ¿a qué clase me recomendáis ir?",
+   "¿Cuánto cuesta la primera clase para probar?"
+  ],
+  "cliente": "vale, y a que hora es el yoga suave de los lunes",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "13:15"
+  ],
+  "evidencia": "13:15 Yoga suave",
+  "respuesta_ideal": "Los lunes el Yoga suave es a las 13:15.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Horario: Lunes a viernes 7:30 a.m. a 6:00 p.m. · Sábados 8:00 a.m. a 2:00 p.m»."
+ },
+ {
+  "id": "i0373",
+  "negocio": "V6_n2",
+  "turnos_previos_del_cliente": [
+   "Si no puedo ir a la clase de esta tarde, ¿hasta cuándo puedo cancelar sin que me la cuenten?",
+   "Pues cancélame la de Vinyasa de las 19:00 porfa, soy Marta Vidal"
+  ],
+  "cliente": "Otra cosa: me quiero dar de baja de la ilimitada y solo llevo 2 meses, ¿me cobráis alguna penalización?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "Para darse de baja de la cuota, congelarla o cualquier tema de recibos y cobros, deriva siempre a administración: admin@espaiarrel.cat. No prometas devoluciones.",
+  "respuesta_ideal": "No tengo ese dato; las bajas y los cobros los lleva administración, escríbeles a admin@espaiarrel.cat.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Si al revisar encontramos daños que no estaban en la orden, lo llamamos antes de hacer cualquier trabajo adicional. Nada se hace sin su autorización»."
+ },
+ {
+  "id": "i0376",
+  "negocio": "V6_n2",
+  "turnos_previos_del_cliente": [
+   "Si no puedo ir a la clase de esta tarde, ¿hasta cuándo puedo cancelar sin que me la cuenten?",
+   "Pues cancélame la de Vinyasa de las 19:00 porfa, soy Marta Vidal"
+  ],
+  "cliente": "Otra cosa: me quiero dar de baja de la ilimitada y solo llevo 2 meses, ¿me cobráis alguna penalización?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "Para darse de baja de la cuota, congelarla o cualquier tema de recibos y cobros, deriva siempre a administración: admin@espaiarrel.cat. No prometas devoluciones.",
+  "respuesta_ideal": "No tengo ese dato; las bajas y los cobros los lleva administración, escríbeles a admin@espaiarrel.cat.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Puedes cancelar sin coste hasta 4 horas antes de la clase; si cancelas más tarde o no vienes, la clase se descuenta del bono o cuenta como usada en la cuota de 2 clases»."
+ },
+ {
+  "id": "i0436",
+  "negocio": "V6_n2",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Hola! Nunca he hecho yoga, ¿a qué clase me recomendáis ir?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "Hatha",
+   "Yoga suave"
+  ],
+  "evidencia": "Te recomendamos Hatha o Yoga suave.",
+  "respuesta_ideal": "Hola, bienvenida a Espai Arrel. Si empiezas de cero te recomendamos Hatha o Yoga suave; Vinyasa es más dinámica y va mejor cuando ya tienes algo de práctica.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «¿Nunca he hecho yoga, a qué clase voy? Te recomendamos Hatha o Yoga suave. Vinyasa es más dinámica y va mejor cuando ya tienes algo de práctica»."
+ },
+ {
+  "id": "i0454",
+  "negocio": "V6_n2",
+  "turnos_previos_del_cliente": [
+   "Si no puedo ir a la clase de esta tarde, ¿hasta cuándo puedo cancelar sin que me la cuenten?",
+   "Pues cancélame la de Vinyasa de las 19:00 porfa, soy Marta Vidal"
+  ],
+  "cliente": "Otra cosa: me quiero dar de baja de la ilimitada y solo llevo 2 meses, ¿me cobráis alguna penalización?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "Para darse de baja de la cuota, congelarla o cualquier tema de recibos y cobros, deriva siempre a administración: admin@espaiarrel.cat. No prometas devoluciones.",
+  "respuesta_ideal": "No tengo ese dato; las bajas y los cobros los lleva administración, escríbeles a admin@espaiarrel.cat.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Si prefieres traer tu esterilla, puedes dejarla en nuestros casilleros por 6 €/mes. Alquiler de toalla: 2 €. En los vestuarios hay dos duchas con agua caliente y secadores»."
+ },
+ {
+  "id": "i0458",
+  "negocio": "V6_n2",
+  "turnos_previos_del_cliente": [
+   "Hola! Nunca he hecho yoga, ¿a qué clase me recomendáis ir?",
+   "¿Cuánto cuesta la primera clase para probar?",
+   "vale, y a que hora es el yoga suave de los lunes",
+   "¿y cuánto dura?"
+  ],
+  "cliente": "Te cuento que me operaron de la rodilla hace dos meses, ¿puedo hacer yoga suave sin problema?",
+  "tipo": "instruccion",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "No des consejos médicos ni digas si una postura o una clase es buena para una lesión, una enfermedad o una operación reciente. Di que lo hablen con su médico y, antes de la clase, con la profesora. Puedes darles el correo hola@espaiarrel.cat para que lo consulten.",
+  "respuesta_ideal": "Eso no te lo puedo decir yo: coméntalo con tu médico y, antes de la clase, con la profesora. También puedes escribir a hola@espaiarrel.cat.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Si prefieres traer tu esterilla, puedes dejarla en nuestros casilleros por 6 €/mes. Alquiler de toalla: 2 €. En los vestuarios hay dos duchas con agua caliente y secadores»."
+ },
+ {
+  "id": "i0468",
+  "negocio": "V6_n2",
+  "turnos_previos_del_cliente": [
+   "Hola! Nunca he hecho yoga, ¿a qué clase me recomendáis ir?"
+  ],
+  "cliente": "¿Cuánto cuesta la primera clase para probar?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "8 €"
+  ],
+  "evidencia": "Clase de prueba (solo la primera vez): 8 €",
+  "respuesta_ideal": "La clase de prueba, solo la primera vez, cuesta 8 €.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «¿Nunca he hecho yoga, a qué clase voy? Te recomendamos Hatha o Yoga suave. Vinyasa es más dinámica y va mejor cuando ya tienes algo de práctica»."
+ }
+]

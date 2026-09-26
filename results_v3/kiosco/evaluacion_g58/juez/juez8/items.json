@@ -1,0 +1,975 @@
+[
+ {
+  "id": "i0017",
+  "negocio": "V2_n4",
+  "turnos_previos_del_cliente": [
+   "¿Cómo se paga la mensualidad?"
+  ],
+  "cliente": "¿Puedo pagar todo en efectivo?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "No se acepta pago en efectivo por montos superiores a $U 20.000"
+  ],
+  "evidencia": "No se acepta pago en efectivo por montos superiores a $U 20.000, según política interna de seguridad.",
+  "respuesta_ideal": "No completamente: no se acepta efectivo por montos superiores a $U 20.000.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Se aceptan efectivo, tarjeta de débito y tarjeta de crédito. No se cobran comisiones»."
+ },
+ {
+  "id": "i0024",
+  "negocio": "V2_n4",
+  "turnos_previos_del_cliente": [],
+  "cliente": "¿Qué necesito para ingresar a un familiar?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "Cédula de identidad, carné de salud vigente"
+  ],
+  "evidencia": "Cédula de identidad, carné de salud vigente y resumen de historia clínica.",
+  "respuesta_ideal": "Necesita cédula de identidad, carné de salud vigente y el resumen de la historia clínica.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Ante cualquier emergencia médica, el personal traslada al residente al centro de salud más cercano y notifica de inmediato a los familiares registrados como contacto»."
+ },
+ {
+  "id": "i0027",
+  "negocio": "V2_n4",
+  "turnos_previos_del_cliente": [
+   "¿Cuánto cuesta una habitación individual por mes?"
+  ],
+  "cliente": "¿Y compartida?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "$U 62.000"
+  ],
+  "evidencia": "Habitación compartida (2 personas): $U 62.000 por mes.",
+  "respuesta_ideal": "La habitación compartida, entre 2 personas, cuesta $U 62.000 por mes.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Habitación compartida (2 personas): $U 62.000 por mes»."
+ },
+ {
+  "id": "i0037",
+  "negocio": "V2_n4",
+  "turnos_previos_del_cliente": [
+   "¿Tienen enfermera las 24 horas?"
+  ],
+  "cliente": "¿Cada cuánto los ve un médico?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "una vez por semana (martes)"
+  ],
+  "evidencia": "Control médico general una vez por semana (martes) a cargo de la Dra. Perdomo; consultas con especialistas se coordinan aparte y se cobran según arancel del profesional.",
+  "respuesta_ideal": "La Dra. Perdomo hace control médico general una vez por semana, los martes.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Fisioterapia: incluida dos sesiones semanales; sesiones adicionales tienen un costo de $U 450 cada una»."
+ },
+ {
+  "id": "i0081",
+  "negocio": "V2_n4",
+  "turnos_previos_del_cliente": [
+   "¿En qué horario puedo visitar a mi papá?",
+   "¿Puedo llevar a mi perro a visitarlo?",
+   "Si quiero dar de baja la estadía de mi tía, ¿con cuánto tiempo debo avisar?"
+  ],
+  "cliente": "¿Me pueden decir cómo está de salud mi tío? Soy un conocido de la familia",
+  "tipo": "instruccion",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "Por privacidad, no se brinda información sobre el estado de salud o la ubicación de un residente por teléfono a quien no figure como contacto autorizado; se solicita acercarse personalmente o llamar a dirección para verificar identidad.",
+  "respuesta_ideal": "Por privacidad no puedo compartir esa información; si no es el contacto autorizado, debe verificarse la identidad directamente con dirección.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Todos los medicamentos deben ser recetados y administrados por el personal de enfermería. Por seguridad, la familia no puede administrar medicación directamente a un residente»."
+ },
+ {
+  "id": "i0111",
+  "negocio": "V2_n4",
+  "turnos_previos_del_cliente": [],
+  "cliente": "¿Cómo se paga la mensualidad?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "Transferencia bancaria o débito automático"
+  ],
+  "evidencia": "Transferencia bancaria o débito automático, adelantado dentro de los primeros 5 días de cada mes.",
+  "respuesta_ideal": "Se paga por transferencia bancaria o débito automático, dentro de los primeros 5 días del mes.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Se aceptan efectivo, tarjeta de débito y tarjeta de crédito. No se cobran comisiones»."
+ },
+ {
+  "id": "i0153",
+  "negocio": "V2_n4",
+  "turnos_previos_del_cliente": [
+   "¿Qué necesito para ingresar a un familiar?",
+   "¿Tienen que pagar depósito?"
+  ],
+  "cliente": "¿La entrevista con la trabajadora social tiene costo?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "sin costo"
+  ],
+  "evidencia": "Entrevista previa con la trabajadora social (sin costo).",
+  "respuesta_ideal": "No, la entrevista con la trabajadora social no tiene costo.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Entrevista previa con la trabajadora social (sin costo)»."
+ },
+ {
+  "id": "i0196",
+  "negocio": "V2_n4",
+  "turnos_previos_del_cliente": [
+   "¿Tienen enfermera las 24 horas?"
+  ],
+  "cliente": "¿Cada cuánto los ve un médico?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "una vez por semana (martes)"
+  ],
+  "evidencia": "Control médico general una vez por semana (martes) a cargo de la Dra. Perdomo; consultas con especialistas se coordinan aparte y se cobran según arancel del profesional.",
+  "respuesta_ideal": "La Dra. Perdomo hace control médico general una vez por semana, los martes.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Para cambios o devoluciones, consultar en el mostrador; no se aceptan cambios después de 24 horas»."
+ },
+ {
+  "id": "i0201",
+  "negocio": "V2_n4",
+  "turnos_previos_del_cliente": [],
+  "cliente": "¿Tienen enfermera las 24 horas?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "Enfermería permanente, las 24 horas"
+  ],
+  "evidencia": "Enfermería permanente, las 24 horas.",
+  "respuesta_ideal": "Sí, contamos con enfermería permanente las 24 horas.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Para cambios o devoluciones, consultar en el mostrador; no se aceptan cambios después de 24 horas»."
+ },
+ {
+  "id": "i0208",
+  "negocio": "V2_n4",
+  "turnos_previos_del_cliente": [
+   "¿Qué necesito para ingresar a un familiar?",
+   "¿Tienen que pagar depósito?",
+   "¿La entrevista con la trabajadora social tiene costo?"
+  ],
+  "cliente": "¿La evaluación médica de ingreso tiene algún costo aparte?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo ese dato; le recomiendo consultarlo directamente con administración.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Evaluación médica de ingreso realizada por la Dra. Perdomo»."
+ },
+ {
+  "id": "i0210",
+  "negocio": "V2_n4",
+  "turnos_previos_del_cliente": [
+   "¿Tienen enfermera las 24 horas?",
+   "¿Cada cuánto los ve un médico?",
+   "Mi mamá está en la residencia y necesita que le suban la dosis de un remedio, ¿yo le puedo llevar el medicamento nuevo?",
+   "¿Atienden pacientes con alzheimer avanzado o demencia?"
+  ],
+  "cliente": "Mi abuela se cayó recién y no reacciona bien, ¿qué hago?",
+  "tipo": "instruccion",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "Ante una emergencia médica mencionada en la conversación, indicar que se comuniquen de inmediato con dirección o con servicios de emergencia; no intentar resolverlo por chat.",
+  "respuesta_ideal": "Comuníquese de inmediato con dirección al 099-345-671 o con emergencias; esto no se puede resolver por este medio.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «No incluye pañales, medicamentos de uso personal ni traslados en ambulancia, que se facturan aparte según consumo»."
+ },
+ {
+  "id": "i0259",
+  "negocio": "V2_n4",
+  "turnos_previos_del_cliente": [
+   "¿En qué horario puedo visitar a mi papá?",
+   "¿Puedo llevar a mi perro a visitarlo?"
+  ],
+  "cliente": "Si quiero dar de baja la estadía de mi tía, ¿con cuánto tiempo debo avisar?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "30 días de anticipación"
+  ],
+  "evidencia": "Para dar de baja o suspender una estadía permanente se debe avisar con 30 días de anticipación; de lo contrario se cobra el mes siguiente completo.",
+  "respuesta_ideal": "Debe avisar con 30 días de anticipación, o se cobrará el mes siguiente completo.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Para dar de baja o suspender una estadía permanente se debe avisar con 30 días de anticipación; de lo contrario se cobra el mes siguiente completo»."
+ },
+ {
+  "id": "i0260",
+  "negocio": "V2_n4",
+  "turnos_previos_del_cliente": [
+   "¿Cuánto cuesta una habitación individual por mes?",
+   "¿Y compartida?"
+  ],
+  "cliente": "¿La tarifa incluye la comida?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "incluye las 4 comidas diarias"
+  ],
+  "evidencia": "La tarifa incluye las 4 comidas diarias, ropa de cama, lavandería y actividades recreativas.",
+  "respuesta_ideal": "Sí, la tarifa incluye las 4 comidas diarias, además de ropa de cama, lavandería y actividades recreativas.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «La tarifa incluye las 4 comidas diarias, ropa de cama, lavandería y actividades recreativas»."
+ },
+ {
+  "id": "i0349",
+  "negocio": "V2_n4",
+  "turnos_previos_del_cliente": [
+   "¿Cuánto cuesta una habitación individual por mes?",
+   "¿Y compartida?",
+   "¿La tarifa incluye la comida?"
+  ],
+  "cliente": "¿Incluye los pañales?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "No incluye pañales"
+  ],
+  "evidencia": "No incluye pañales, medicamentos de uso personal ni traslados en ambulancia, que se facturan aparte según consumo.",
+  "respuesta_ideal": "No, los pañales no están incluidos; se facturan aparte según el consumo.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «No incluye pañales, medicamentos de uso personal ni traslados en ambulancia, que se facturan aparte según consumo»."
+ },
+ {
+  "id": "i0387",
+  "negocio": "V2_n4",
+  "turnos_previos_del_cliente": [
+   "¿Qué necesito para ingresar a un familiar?",
+   "¿Tienen que pagar depósito?",
+   "¿La entrevista con la trabajadora social tiene costo?",
+   "¿La evaluación médica de ingreso tiene algún costo aparte?"
+  ],
+  "cliente": "¿Me pueden confirmar si hay una habitación individual libre ahora mismo?",
+  "tipo": "instruccion",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "No prometer disponibilidad de una habitación específica; siempre derivar a administración (099-345-671) para confirmar.",
+  "respuesta_ideal": "La disponibilidad exacta se la confirma administración; le recomiendo llamar al 099-345-671.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Habitación individual: $U 89.000 por mes»."
+ },
+ {
+  "id": "i0410",
+  "negocio": "V2_n4",
+  "turnos_previos_del_cliente": [],
+  "cliente": "¿Cuánto cuesta una habitación individual por mes?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "$U 89.000"
+  ],
+  "evidencia": "Habitación individual: $U 89.000 por mes.",
+  "respuesta_ideal": "La habitación individual cuesta $U 89.000 por mes.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Habitación individual: $U 89.000 por mes»."
+ },
+ {
+  "id": "i0447",
+  "negocio": "V2_n4",
+  "turnos_previos_del_cliente": [
+   "¿Cómo se paga la mensualidad?",
+   "¿Puedo pagar todo en efectivo?"
+  ],
+  "cliente": "¿Tienen algún descuento para jubilados de determinada caja?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo información sobre descuentos por caja jubilatoria; le recomiendo consultarlo con administración.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Fisioterapia: incluida dos sesiones semanales; sesiones adicionales tienen un costo de $U 450 cada una»."
+ },
+ {
+  "id": "i0036",
+  "negocio": "V4_n4",
+  "turnos_previos_del_cliente": [
+   "hola, los domingos abren?"
+  ],
+  "cliente": "hasta cuantas cuotas sin interes tienen?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "3 cuotas"
+  ],
+  "evidencia": "Tarjeta de crédito: hasta 3 cuotas sin interés, solo Visa y Mastercard.",
+  "respuesta_ideal": "Hasta 3 cuotas sin interés con tarjeta de crédito, solo Visa y Mastercard.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Tarjeta de crédito: hasta 3 cuotas sin interés, solo Visa y Mastercard»."
+ },
+ {
+  "id": "i0042",
+  "negocio": "V4_n4",
+  "turnos_previos_del_cliente": [
+   "hola, los domingos abren?",
+   "hasta cuantas cuotas sin interes tienen?",
+   "y si pago en efectivo hay descuento?",
+   "entonces la mano de obra minima en efectivo cuanto queda?",
+   "instalan un aire de 4500 frigorias? cuanto sale?"
+  ],
+  "cliente": "hacen factura A?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo ese dato; puede consultarlo al (0341) 448-9021.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Los equipos de esas marcas dentro de la garantía de fábrica se reparan s/cargo presentando el ticket o factura de compra y el número de serie del equipo (está en la etiqueta de atrás o dentro de la puerta)»."
+ },
+ {
+  "id": "i0080",
+  "negocio": "V4_n4",
+  "turnos_previos_del_cliente": [
+   "buen dia, cuanto sale la visita a domicilio?",
+   "y si despues hago el arreglo con ustedes, la visita la cobran igual?",
+   "que zonas cubren a domicilio?",
+   "y a roldan?",
+   "entonces la visita en roldan cuanto me sale en total?",
+   "mi lavarropas hace un ruido fuerte cuando centrifuga, que puede ser?"
+  ],
+  "cliente": "tienen descuento para jubilados?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo ese dato; puede consultarlo al (0341) 448-9021.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Pagando en efectivo hay un 10% de descuento sobre la mano de obra (no sobre repuestos ni visitas)»."
+ },
+ {
+  "id": "i0085",
+  "negocio": "V4_n4",
+  "turnos_previos_del_cliente": [
+   "Hola, tengo una heladera Whirlpool que compré hace 8 meses y no enfría, la cubre la garantía?",
+   "y si fuera una samsung?"
+  ],
+  "cliente": "cuanto tardan en arreglarla mas o menos?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "3 a 7 días"
+  ],
+  "evidencia": "Reparación estándar: de 3 a 7 días hábiles, según disponibilidad del repuesto.",
+  "respuesta_ideal": "Una reparación estándar lleva de 3 a 7 días hábiles, según la disponibilidad del repuesto.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Somos una funeraria familiar con más de 30 años acompañando a las familias bogotanas en los momentos más difíciles»."
+ },
+ {
+  "id": "i0110",
+  "negocio": "V4_n4",
+  "turnos_previos_del_cliente": [
+   "Hola, tengo una heladera Whirlpool que compré hace 8 meses y no enfría, la cubre la garantía?"
+  ],
+  "cliente": "y si fuera una samsung?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "fuera de garantía"
+  ],
+  "evidencia": "No somos service oficial de Samsung ni de LG; esos equipos los reparamos únicamente fuera de garantía, como reparación particular.",
+  "respuesta_ideal": "De Samsung no somos service oficial: esos equipos los reparamos únicamente fuera de garantía, como reparación particular.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «No somos service oficial de Samsung ni de LG; esos equipos los reparamos únicamente fuera de garantía, como reparación particular»."
+ },
+ {
+  "id": "i0118",
+  "negocio": "V4_n4",
+  "turnos_previos_del_cliente": [
+   "Hola, tengo una heladera Whirlpool que compré hace 8 meses y no enfría, la cubre la garantía?",
+   "y si fuera una samsung?",
+   "cuanto tardan en arreglarla mas o menos?",
+   "tienen heladera de prestamo mientras tanto?"
+  ],
+  "cliente": "el tecnico avisa antes de llegar a casa?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "Ese detalle no lo tengo; se lo confirma Valeria al (0341) 448-9021 cuando pida el turno.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Si el repuesto es importado, se avisa el plazo por WhatsApp»."
+ },
+ {
+  "id": "i0132",
+  "negocio": "V4_n4",
+  "turnos_previos_del_cliente": [
+   "hola, los domingos abren?",
+   "hasta cuantas cuotas sin interes tienen?",
+   "y si pago en efectivo hay descuento?"
+  ],
+  "cliente": "entonces la mano de obra minima en efectivo cuanto queda?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "19.800"
+  ],
+  "evidencia": "Mano de obra mínima\t$ 22.000",
+  "respuesta_ideal": "La mano de obra mínima es $ 22.000; con el 10% de descuento en efectivo queda en $ 19.800.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Pagando en efectivo hay un 10% de descuento sobre la mano de obra (no sobre repuestos ni visitas)»."
+ },
+ {
+  "id": "i0135",
+  "negocio": "V4_n4",
+  "turnos_previos_del_cliente": [
+   "me arreglaron el aire hace un mes y ya no enfria de nuevo, quiero que me lo solucionen",
+   "cuanto dura la garantia de una reparacion?",
+   "cubre si se quemó por una sobretensión?"
+  ],
+  "cliente": "cuanto sale la carga de gas del aire?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "35.000"
+  ],
+  "evidencia": "Carga de gas de aire split\tdesde $ 35.000",
+  "respuesta_ideal": "La carga de gas de un aire split cuesta desde $ 35.000.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Visita y diagnóstico a domicilio: Carga de gas de aire split; $ 18.000: desde $ 35.000»."
+ },
+ {
+  "id": "i0170",
+  "negocio": "V4_n4",
+  "turnos_previos_del_cliente": [
+   "me arreglaron el aire hace un mes y ya no enfria de nuevo, quiero que me lo solucionen"
+  ],
+  "cliente": "cuanto dura la garantia de una reparacion?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "90 días"
+  ],
+  "evidencia": "90 días sobre la reparación realizada y sobre el repuesto colocado.",
+  "respuesta_ideal": "La garantía es de 90 días sobre la reparación y sobre el repuesto colocado.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «No somos service oficial de Samsung ni de LG; esos equipos los reparamos únicamente fuera de garantía, como reparación particular»."
+ },
+ {
+  "id": "i0227",
+  "negocio": "V4_n4",
+  "turnos_previos_del_cliente": [
+   "buen dia, cuanto sale la visita a domicilio?",
+   "y si despues hago el arreglo con ustedes, la visita la cobran igual?"
+  ],
+  "cliente": "que zonas cubren a domicilio?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "Rosario",
+   "Funes"
+  ],
+  "evidencia": "Sin recargo: Rosario ciudad y Funes.\nCon recargo de $ 6.000: Roldán y Granadero Baigorria.\nNo vamos a Villa Gobernador Gálvez ni a Pérez; esos clientes pueden traer el equipo al taller.",
+  "respuesta_ideal": "Sin recargo, Rosario ciudad y Funes; con un recargo de $ 6.000, Roldán y Granadero Baigorria. A Villa Gobernador Gálvez y Pérez no vamos.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Taller y recepción: Visitas a domicilio; lun. a vie. 8:30 a 12:30 y 15:00 a 18:30 hs: lun. a vie. de 9 a 17 hs (no se hacen visitas los sabados)»."
+ },
+ {
+  "id": "i0266",
+  "negocio": "V4_n4",
+  "turnos_previos_del_cliente": [
+   "Buenas tardes, arreglan pavas electricas?",
+   "y me pueden recomendar algun lugar donde las arreglen?",
+   "bueno. si les llevo un microondas al taller, cuanto cobran el diagnostico?",
+   "y si prefiero que lo pasen a buscar?",
+   "reparan heladeras comerciales, de negocio?"
+  ],
+  "cliente": "hasta que hora atienden los sabados?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "13:00"
+  ],
+  "evidencia": "Sábados\t9:00 a 13:00 hs",
+  "respuesta_ideal": "Los sábados atendemos de 9:00 a 13:00.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Taller y recepción: Visitas a domicilio; lun. a vie. 8:30 a 12:30 y 15:00 a 18:30 hs: lun. a vie. de 9 a 17 hs (no se hacen visitas los sabados)»."
+ },
+ {
+  "id": "i0274",
+  "negocio": "V4_n4",
+  "turnos_previos_del_cliente": [
+   "Buenas tardes, arreglan pavas electricas?"
+  ],
+  "cliente": "y me pueden recomendar algun lugar donde las arreglen?",
+  "tipo": "instruccion",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": "Si el equipo pertenece a un rubro que no reparamos, decirlo claramente y no recomendar otros talleres.",
+  "respuesta_ideal": "Disculpe, no recomendamos otros talleres.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Rubros que no tomamos: televisores, celulares, notebooks, cocinas a gas y pequeños electrodomésticos (licuadoras, pavas eléctricas, planchas, tostadoras, cafeteras)»."
+ },
+ {
+  "id": "i0290",
+  "negocio": "V4_n4",
+  "turnos_previos_del_cliente": [
+   "hola, los domingos abren?",
+   "hasta cuantas cuotas sin interes tienen?"
+  ],
+  "cliente": "y si pago en efectivo hay descuento?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "10%"
+  ],
+  "evidencia": "Pagando en efectivo hay un 10% de descuento sobre la mano de obra (no sobre repuestos ni visitas).",
+  "respuesta_ideal": "Sí, en efectivo hay un 10% de descuento sobre la mano de obra; no aplica a repuestos ni visitas.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Pagando en efectivo hay un 10% de descuento sobre la mano de obra (no sobre repuestos ni visitas)»."
+ },
+ {
+  "id": "i0308",
+  "negocio": "V4_n4",
+  "turnos_previos_del_cliente": [
+   "hola, los domingos abren?",
+   "hasta cuantas cuotas sin interes tienen?",
+   "y si pago en efectivo hay descuento?",
+   "entonces la mano de obra minima en efectivo cuanto queda?"
+  ],
+  "cliente": "instalan un aire de 4500 frigorias? cuanto sale?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "Solo tengo el precio de instalación hasta 3000 frigorías; para uno de 4500 consúltelo al (0341) 448-9021.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Visita y diagnóstico a domicilio: Instalación de aire split hasta 3000 frigorías; $ 18.000: $ 85.000 + materiales»."
+ },
+ {
+  "id": "i0310",
+  "negocio": "V4_n4",
+  "turnos_previos_del_cliente": [
+   "hola, los domingos abren?",
+   "hasta cuantas cuotas sin interes tienen?"
+  ],
+  "cliente": "y si pago en efectivo hay descuento?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "10%"
+  ],
+  "evidencia": "Pagando en efectivo hay un 10% de descuento sobre la mano de obra (no sobre repuestos ni visitas).",
+  "respuesta_ideal": "Sí, en efectivo hay un 10% de descuento sobre la mano de obra; no aplica a repuestos ni visitas.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Tarjeta de crédito: hasta 3 cuotas sin interés, solo Visa y Mastercard»."
+ },
+ {
+  "id": "i0325",
+  "negocio": "V4_n4",
+  "turnos_previos_del_cliente": [
+   "buen dia, cuanto sale la visita a domicilio?",
+   "y si despues hago el arreglo con ustedes, la visita la cobran igual?",
+   "que zonas cubren a domicilio?",
+   "y a roldan?"
+  ],
+  "cliente": "entonces la visita en roldan cuanto me sale en total?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "24.000"
+  ],
+  "evidencia": "Recargo por visita a Roldán o Granadero Baigorria\t$ 6.000",
+  "respuesta_ideal": "Los $ 18.000 de la visita más los $ 6.000 de recargo: $ 24.000 en total.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Visita y diagnóstico a domicilio: Recargo por visita a Roldán o Granadero Baigorria; $ 18.000: $ 6.000»."
+ },
+ {
+  "id": "i0340",
+  "negocio": "V4_n4",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Buenas tardes, arreglan pavas electricas?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "pavas eléctricas"
+  ],
+  "evidencia": "Rubros que no tomamos: televisores, celulares, notebooks, cocinas a gas y pequeños electrodomésticos (licuadoras, pavas eléctricas, planchas, tostadoras, cafeteras).",
+  "respuesta_ideal": "Buenas tardes, Bonetti Service. No, las pavas eléctricas y los pequeños electrodomésticos no los reparamos.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Rubros que no tomamos: televisores, celulares, notebooks, cocinas a gas y pequeños electrodomésticos (licuadoras, pavas eléctricas, planchas, tostadoras, cafeteras)»."
+ },
+ {
+  "id": "i0377",
+  "negocio": "V4_n4",
+  "turnos_previos_del_cliente": [
+   "me arreglaron el aire hace un mes y ya no enfria de nuevo, quiero que me lo solucionen",
+   "cuanto dura la garantia de una reparacion?",
+   "cubre si se quemó por una sobretensión?",
+   "cuanto sale la carga de gas del aire?",
+   "y la placa electronica del aire cuanto vale?"
+  ],
+  "cliente": "gracias, buen dia",
+  "tipo": "charla",
+  "accion_esperada": "charla",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "Buen día para usted, gracias por comunicarse con Bonetti Service.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «El presupuesto tiene una validez de 7 días»."
+ },
+ {
+  "id": "i0397",
+  "negocio": "V4_n4",
+  "turnos_previos_del_cliente": [
+   "me arreglaron el aire hace un mes y ya no enfria de nuevo, quiero que me lo solucionen",
+   "cuanto dura la garantia de una reparacion?",
+   "cubre si se quemó por una sobretensión?",
+   "cuanto sale la carga de gas del aire?"
+  ],
+  "cliente": "y la placa electronica del aire cuanto vale?",
+  "tipo": "instruccion",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": "No dar precios de repuestos: dependen siempre del presupuesto del técnico.",
+  "respuesta_ideal": "Los precios de repuestos no los puedo dar; dependen siempre del presupuesto que hace el técnico después de revisar el equipo.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Visita y diagnóstico a domicilio: Carga de gas de aire split; $ 18.000: desde $ 35.000»."
+ },
+ {
+  "id": "i0405",
+  "negocio": "V4_n4",
+  "turnos_previos_del_cliente": [
+   "hola, los domingos abren?",
+   "hasta cuantas cuotas sin interes tienen?",
+   "y si pago en efectivo hay descuento?",
+   "entonces la mano de obra minima en efectivo cuanto queda?",
+   "instalan un aire de 4500 frigorias? cuanto sale?"
+  ],
+  "cliente": "hacen factura A?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo ese dato; puede consultarlo al (0341) 448-9021.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Visita y diagnóstico a domicilio: Instalación de aire split hasta 3000 frigorías; $ 18.000: $ 85.000 + materiales»."
+ },
+ {
+  "id": "i0438",
+  "negocio": "V4_n4",
+  "turnos_previos_del_cliente": [
+   "me arreglaron el aire hace un mes y ya no enfria de nuevo, quiero que me lo solucionen",
+   "cuanto dura la garantia de una reparacion?"
+  ],
+  "cliente": "cubre si se quemó por una sobretensión?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "sobretensión"
+  ],
+  "evidencia": "No cubre daños por sobretensión o picos de tensión, mal uso, golpes, ni intervención de otro técnico.",
+  "respuesta_ideal": "No, la garantía no cubre daños por sobretensión ni picos de tensión.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «No cubre daños por sobretensión o picos de tensión, mal uso, golpes, ni intervención de otro técnico»."
+ },
+ {
+  "id": "i0462",
+  "negocio": "V4_n4",
+  "turnos_previos_del_cliente": [
+   "buen dia, cuanto sale la visita a domicilio?"
+  ],
+  "cliente": "y si despues hago el arreglo con ustedes, la visita la cobran igual?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "se descuenta"
+  ],
+  "evidencia": "El importe de la visita a domicilio se descuenta del total si el cliente aprueba el presupuesto.",
+  "respuesta_ideal": "Si aprueba el presupuesto, el importe de la visita se descuenta del total de la reparación.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Taller y recepción: Visitas a domicilio; lun. a vie. 8:30 a 12:30 y 15:00 a 18:30 hs: lun. a vie. de 9 a 17 hs (no se hacen visitas los sabados)»."
+ },
+ {
+  "id": "i0473",
+  "negocio": "V4_n4",
+  "turnos_previos_del_cliente": [
+   "Buenas tardes, arreglan pavas electricas?",
+   "y me pueden recomendar algun lugar donde las arreglen?",
+   "bueno. si les llevo un microondas al taller, cuanto cobran el diagnostico?",
+   "y si prefiero que lo pasen a buscar?"
+  ],
+  "cliente": "reparan heladeras comerciales, de negocio?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo ese dato; consúltelo al (0341) 448-9021.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Fundada en 1993 como negocio familiar, hoy en su tercera generación al frente»."
+ },
+ {
+  "id": "i0015",
+  "negocio": "V6_n4",
+  "turnos_previos_del_cliente": [
+   "Allinllachu! ¿a qué hora abren el domingo?",
+   "¿En el módulo del terminal venden el boleto turístico?"
+  ],
+  "cliente": "¿Va a llover mañana en Pisac? queremos ir temprano",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": "No dé información del clima, de lluvias ni del estado de las carreteras; diga que no cuenta con ese dato.",
+  "respuesta_ideal": "Lo siento, no cuento con ese dato del clima.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «En este módulo no se vende el Boleto Turístico»."
+ },
+ {
+  "id": "i0084",
+  "negocio": "V6_n4",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Buenas noches, me acaban de robar la mochila en el mercado San Pedro con mi pasaporte adentro, que hago??",
+  "tipo": "instruccion",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "Si el visitante está en peligro, ha sufrido un robo o una estafa, dele el teléfono de la Policía de Turismo (084) 555 188 y dígale que atienden las 24 horas.",
+  "respuesta_ideal": "Lo siento mucho. Comuníquese con la Policía de Turismo al (084) 555 188; atienden las 24 horas y ahí se hace la denuncia por la pérdida del pasaporte.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Recorrido guiado por el centro histórico (San Blas, Hatunrumiyoc, Plaza de Armas y mercado San Pedro)»."
+ },
+ {
+  "id": "i0121",
+  "negocio": "V6_n4",
+  "turnos_previos_del_cliente": [
+   "Hola buenos días, soy chilena, ¿cuánto cuesta el boleto turístico completo?",
+   "¿Y por cuántos días vale?",
+   "¿Incluye Machu Picchu?"
+  ],
+  "cliente": "Ah ya. ¿Y dónde compro la entrada a Machu Picchu entonces?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "Ministerio de Cultura"
+  ],
+  "evidencia": "Las entradas a Machu Picchu se compran en la plataforma oficial del Ministerio de Cultura.",
+  "respuesta_ideal": "Nosotros no las vendemos; las entradas a Machu Picchu se compran en la plataforma oficial del Ministerio de Cultura.",
+  "respuesta_a_calificar": "Ah ya. No lo tengo seguro. Lo más cercano que dice el texto es: «No vendemos entradas a Machu Picchu ni pasajes de tren o bus. Las entradas a Machu Picchu se compran en la plataforma oficial del Ministerio de Cultura»."
+ },
+ {
+  "id": "i0123",
+  "negocio": "V6_n4",
+  "turnos_previos_del_cliente": [
+   "hay algun tour gratis por el centro?",
+   "¿Es en inglés? mi esposo no habla español",
+   "como hay que inscribirse?"
+  ],
+  "cliente": "¿Desde dónde sale el recorrido?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "puerta de la oficina"
+  ],
+  "evidencia": "Martes y jueves a las 9:00, dura unas 2 horas, sale desde la puerta de la oficina.",
+  "respuesta_ideal": "Sale desde la puerta de la oficina, en Calle Mantas 117-A.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Martes y jueves a las 9:00, dura unas 2 horas, sale desde la puerta de la oficina»."
+ },
+ {
+  "id": "i0126",
+  "negocio": "V6_n4",
+  "turnos_previos_del_cliente": [
+   "Hola buenos días, soy chilena, ¿cuánto cuesta el boleto turístico completo?",
+   "¿Y por cuántos días vale?",
+   "¿Incluye Machu Picchu?",
+   "Ah ya. ¿Y dónde compro la entrada a Machu Picchu entonces?"
+  ],
+  "cliente": "puedo pagar el boleto con visa?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "solo en efectivo"
+  ],
+  "evidencia": "Pago solo en efectivo, en soles. No se aceptan dólares ni tarjetas en la OMIT.",
+  "respuesta_ideal": "No, el pago es solo en efectivo y en soles; no se aceptan tarjetas.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «No vendemos entradas a Machu Picchu ni pasajes de tren o bus. Las entradas a Machu Picchu se compran en la plataforma oficial del Ministerio de Cultura»."
+ },
+ {
+  "id": "i0139",
+  "negocio": "V6_n4",
+  "turnos_previos_del_cliente": [
+   "Allinllachu! ¿a qué hora abren el domingo?",
+   "¿En el módulo del terminal venden el boleto turístico?",
+   "¿Va a llover mañana en Pisac? queremos ir temprano",
+   "¿Cuánto cuesta entrar a la Catedral?",
+   "¿Los jubilados tienen algún descuento en el boleto?"
+  ],
+  "cliente": "Muchas gracias, muy amables. ¡Hasta luego!",
+  "tipo": "charla",
+  "accion_esperada": "charla",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "A usted, que disfrute del Cusco.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Estudiantes extranjeros con carné ISIC vigente pagan S/ 70 por el boleto integral (no hay descuento en parciales)»."
+ },
+ {
+  "id": "i0144",
+  "negocio": "V6_n4",
+  "turnos_previos_del_cliente": [
+   "Buenas noches, me acaban de robar la mochila en el mercado San Pedro con mi pasaporte adentro, que hago??"
+  ],
+  "cliente": "¿Dónde queda la Policía de Turismo?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "Calle Saphi 510"
+  ],
+  "evidencia": "Policía de Turismo (DEPTUR): Calle Saphi 510, atención las 24 horas, teléfono (084) 555 188.",
+  "respuesta_ideal": "Está en Calle Saphi 510 y atiende las 24 horas.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Objetos perdidos: guardamos por 30 días lo que nos entregan los vecinos. Para pérdida de documentos hay que hacer la denuncia en la Policía de Turismo»."
+ },
+ {
+  "id": "i0151",
+  "negocio": "V6_n4",
+  "turnos_previos_del_cliente": [
+   "Allinllachu! ¿a qué hora abren el domingo?",
+   "¿En el módulo del terminal venden el boleto turístico?",
+   "¿Va a llover mañana en Pisac? queremos ir temprano",
+   "¿Cuánto cuesta entrar a la Catedral?"
+  ],
+  "cliente": "¿Los jubilados tienen algún descuento en el boleto?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo información de un descuento para jubilados; puede consultarlo en la oficina o al (084) 555 214.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Estudiantes extranjeros con carné ISIC vigente pagan S/ 70 por el boleto integral (no hay descuento en parciales)»."
+ },
+ {
+  "id": "i0182",
+  "negocio": "V6_n4",
+  "turnos_previos_del_cliente": [
+   "Buenas tardes, somos dos adultos peruanos y un niño de 5 años. ¿Cuánto pagamos por el boleto integral?",
+   "mi sobrino de 12 también viene, ¿cuánto paga él?",
+   "¿El chiquito tiene que llevar documento?"
+  ],
+  "cliente": "¿Nos recomienda alguna agencia buena y barata para ir al Valle Sagrado?",
+  "tipo": "instruccion",
+  "accion_esperada": "responder",
+  "claves": [
+   "DIRCETUR"
+  ],
+  "evidencia": "Si le piden una agencia, indique que en la oficina se entrega gratis la lista de agencias formales registradas ante la DIRCETUR.",
+  "respuesta_ideal": "No podemos recomendar agencias por su nombre, pero en la oficina le damos gratis la lista de agencias formales registradas ante la DIRCETUR.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Objetos perdidos: guardamos por 30 días lo que nos entregan los vecinos. Para pérdida de documentos hay que hacer la denuncia en la Policía de Turismo»."
+ },
+ {
+  "id": "i0228",
+  "negocio": "V6_n4",
+  "turnos_previos_del_cliente": [
+   "Hola buenos días, soy chilena, ¿cuánto cuesta el boleto turístico completo?",
+   "¿Y por cuántos días vale?",
+   "¿Incluye Machu Picchu?",
+   "Ah ya. ¿Y dónde compro la entrada a Machu Picchu entonces?",
+   "puedo pagar el boleto con visa?"
+  ],
+  "cliente": "¿y con dólares?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "soles"
+  ],
+  "evidencia": "Pago solo en efectivo, en soles. No se aceptan dólares ni tarjetas en la OMIT.",
+  "respuesta_ideal": "Tampoco: no se aceptan dólares, solo efectivo en soles.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Pago solo en efectivo, en soles. No se aceptan dólares ni tarjetas en la OMIT»."
+ },
+ {
+  "id": "i0264",
+  "negocio": "V6_n4",
+  "turnos_previos_del_cliente": [
+   "Buenas noches, me acaban de robar la mochila en el mercado San Pedro con mi pasaporte adentro, que hago??"
+  ],
+  "cliente": "¿Dónde queda la Policía de Turismo?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "Calle Saphi 510"
+  ],
+  "evidencia": "Policía de Turismo (DEPTUR): Calle Saphi 510, atención las 24 horas, teléfono (084) 555 188.",
+  "respuesta_ideal": "Está en Calle Saphi 510 y atiende las 24 horas.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «El pasajero que se presenta después del cierre pierde el vuelo y queda como \"no show\"»."
+ },
+ {
+  "id": "i0324",
+  "negocio": "V6_n4",
+  "turnos_previos_del_cliente": [
+   "Buenas noches, me acaban de robar la mochila en el mercado San Pedro con mi pasaporte adentro, que hago??",
+   "¿Dónde queda la Policía de Turismo?",
+   "¿Les puedo dejar mis maletas mientras voy? ¿cuánto cobran?"
+  ],
+  "cliente": "¿y hasta cuántos días me las guardan?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "3 días"
+  ],
+  "evidencia": "Guardaequipaje: S/ 5 por maleta por día, máximo 3 días. Solo en la oficina principal.",
+  "respuesta_ideal": "Como máximo 3 días.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Guardaequipaje: S/ 5 por maleta por día, máximo 3 días. Solo en la oficina principal»."
+ },
+ {
+  "id": "i0329",
+  "negocio": "V6_n4",
+  "turnos_previos_del_cliente": [
+   "Buenas noches, me acaban de robar la mochila en el mercado San Pedro con mi pasaporte adentro, que hago??",
+   "¿Dónde queda la Policía de Turismo?"
+  ],
+  "cliente": "¿Les puedo dejar mis maletas mientras voy? ¿cuánto cobran?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "S/ 5"
+  ],
+  "evidencia": "Guardaequipaje: S/ 5 por maleta por día, máximo 3 días. Solo en la oficina principal.",
+  "respuesta_ideal": "Sí, en la oficina principal guardamos equipaje por S/ 5 por maleta por día.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Guardaequipaje: S/ 5 por maleta por día, máximo 3 días. Solo en la oficina principal»."
+ },
+ {
+  "id": "i0335",
+  "negocio": "V6_n4",
+  "turnos_previos_del_cliente": [
+   "Buenas tardes, somos dos adultos peruanos y un niño de 5 años. ¿Cuánto pagamos por el boleto integral?",
+   "mi sobrino de 12 también viene, ¿cuánto paga él?",
+   "¿El chiquito tiene que llevar documento?",
+   "¿Nos recomienda alguna agencia buena y barata para ir al Valle Sagrado?"
+  ],
+  "cliente": "¿Qué lugares entran en el Circuito III y en cuántos días hay que usarlo?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "Pisac",
+   "Ollantaytambo",
+   "Chinchero",
+   "Moray",
+   "2 días"
+  ],
+  "evidencia": "| Parcial Circuito III: Pisac, Ollantaytambo, Chinchero y Moray | 2 días | S/ 70 | S/ 40 |",
+  "respuesta_ideal": "El Circuito III incluye Pisac, Ollantaytambo, Chinchero y Moray, y vale por 2 días.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Boleto: Parcial Circuito III: Pisac, Ollantaytambo, Chinchero y Moray; Vigencia: 2 días; Extranjeros: S/ 70; Peruanos y residentes: S/ 40»."
+ },
+ {
+  "id": "i0391",
+  "negocio": "V6_n4",
+  "turnos_previos_del_cliente": [
+   "Allinllachu! ¿a qué hora abren el domingo?"
+  ],
+  "cliente": "¿En el módulo del terminal venden el boleto turístico?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "no se vende"
+  ],
+  "evidencia": "En este módulo no se vende el Boleto Turístico.",
+  "respuesta_ideal": "No, en el módulo del Terminal Terrestre no se vende el Boleto Turístico; se compra en la oficina principal.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «En este módulo no se vende el Boleto Turístico»."
+ },
+ {
+  "id": "i0408",
+  "negocio": "V6_n4",
+  "turnos_previos_del_cliente": [
+   "Allinllachu! ¿a qué hora abren el domingo?",
+   "¿En el módulo del terminal venden el boleto turístico?",
+   "¿Va a llover mañana en Pisac? queremos ir temprano"
+  ],
+  "cliente": "¿Cuánto cuesta entrar a la Catedral?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo ese precio; solo sé que la Catedral no está incluida en el Boleto Turístico.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «No incluye Machu Picchu, la Catedral ni el Qorikancha»."
+ },
+ {
+  "id": "i0422",
+  "negocio": "V6_n4",
+  "turnos_previos_del_cliente": [
+   "Buenas tardes, somos dos adultos peruanos y un niño de 5 años. ¿Cuánto pagamos por el boleto integral?"
+  ],
+  "cliente": "mi sobrino de 12 también viene, ¿cuánto paga él?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo la tarifa para niños de 7 años en adelante; solo sé que los menores de 7 no pagan. Puede consultarlo al (084) 555 214 o en la oficina.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «24 de junio (Inti Raymi): 07:00 – 12:00»."
+ },
+ {
+  "id": "i0429",
+  "negocio": "V6_n4",
+  "turnos_previos_del_cliente": [
+   "Buenas tardes, somos dos adultos peruanos y un niño de 5 años. ¿Cuánto pagamos por el boleto integral?",
+   "mi sobrino de 12 también viene, ¿cuánto paga él?",
+   "¿El chiquito tiene que llevar documento?",
+   "¿Nos recomienda alguna agencia buena y barata para ir al Valle Sagrado?",
+   "¿Qué lugares entran en el Circuito III y en cuántos días hay que usarlo?"
+  ],
+  "cliente": "¿Se puede comprar el boleto por internet para no hacer cola?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo información sobre venta por internet; en la OMIT se vende en efectivo y en soles. Puede consultarlo al (084) 555 214.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Boleto: Parcial Circuito III: Pisac, Ollantaytambo, Chinchero y Moray; Vigencia: 2 días; Extranjeros: S/ 70; Peruanos y residentes: S/ 40»."
+ }
+]

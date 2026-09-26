@@ -328,26 +328,15 @@ class ContextMixin:
         postings = self._index()
         return not any(t in postings for t in self.context_terms(text))
 
-    @staticmethod
-    def _client_turns(history) -> list[str]:
-        turns = []
-        for turn in history or ():
-            if isinstance(turn, str):
-                turns.append(turn)
-            elif isinstance(turn, dict):
-                role = str(turn.get('role', turn.get('rol', 'user'))).lower()
-                if role in ('user', 'client', 'cliente', 'usuario', 'persona', 'human'):
-                    turns.append(str(turn.get('text', turn.get('content', turn.get('texto', '')))))
-            elif isinstance(turn, (list, tuple)) and turn:
-                turns.append(str(turn[0]))
-        return turns
-
     def answer(self, question: str, history=None) -> dict:
         """Answer one turn of a person from the loaded text: plainly when the
         counted reliability allows it, with the closest text and a warning
         when that text is useful at least half of the time, or saying it is
-        not known.  ``history`` holds the earlier turns of this person only;
-        nothing of a person is kept by the bot."""
+        not known.  ``history`` holds the earlier turns of this person only
+        and is part of the interface; G-58r does not use it (the follow-up
+        raised misleading citations and was retired).  Nothing of a person is
+        kept by the bot.  ``text`` is the only thing to say to the person;
+        ``candidate`` is for the integrator and is never shown to a customer."""
         text = str(question).strip()
         opening = ''
         cut = text.find('¿')
@@ -359,14 +348,6 @@ class ContextMixin:
                     'evidence': None, 'confidence': None}
         ranked = self._rank(self.context_terms(text))
         level = self._level(ranked)
-        if level == 'unknown' and getattr(self, 'follow_up', True):
-            # G-58: an incomplete question («¿y el sábado?») borrows the words
-            # of this person's previous question.
-            earlier = [t for t in self._client_turns(history) if self._asks(t) and not self._phatic(t)]
-            if earlier:
-                joined = self._rank(self.context_terms(text) + self.context_terms(earlier[-1]))
-                if self._level(joined) != 'unknown':
-                    ranked, level = joined, self._level(joined)
         prefix = (opening[:1].upper() + opening[1:] + '. ') if opening else ''
         table = self.context_model.get('closest_cells' if level == 'closest' else 'cells', {})
         cells = table.get(ranked['cell']) if ranked else None

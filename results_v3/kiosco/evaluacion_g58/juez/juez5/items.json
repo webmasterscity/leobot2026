@@ -1,0 +1,1349 @@
+[
+ {
+  "id": "i0021",
+  "negocio": "V2_n1",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Buenas, ¿a qué ora abren los sabados?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "08h00 a 13h00"
+  ],
+  "evidencia": "Sábados: 08h00 a 13h00",
+  "respuesta_ideal": "Los sábados atendemos de 08h00 a 13h00.",
+  "respuesta_a_calificar": "Buenas. No lo tengo seguro. Lo más cercano que dice el texto es: «Sábados: 08h00 a 13h00»."
+ },
+ {
+  "id": "i0035",
+  "negocio": "V2_n1",
+  "turnos_previos_del_cliente": [
+   "¿Qué debo llevar para la cita?",
+   "Somos 4 hermanos, ¿nos dan descuento si vamos el mismo dia?"
+  ],
+  "cliente": "¿Y si solo somos 3?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "4 personas o más"
+  ],
+  "evidencia": "Descuento del 10% para grupos familiares de 4 personas o más que se vacunen el mismo día.",
+  "respuesta_ideal": "Con 3 personas no alcanzarían el descuento, porque aplica desde 4 personas o más.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Descuento del 10% para grupos familiares de 4 personas o más que se vacunen el mismo día»."
+ },
+ {
+  "id": "i0097",
+  "negocio": "V2_n1",
+  "turnos_previos_del_cliente": [],
+  "cliente": "¿Tienen promoción por pagar en efectivo?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo registrada una promoción por pago en efectivo; el único descuento que manejamos es el familiar.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Tarjeta de crédito: hasta 12 cuotas sin interés en instrumentos nacionales (consultar promoción vigente del banco); en importados, hasta 6 cuotas con interés»."
+ },
+ {
+  "id": "i0112",
+  "negocio": "V2_n1",
+  "turnos_previos_del_cliente": [
+   "¿Tienen promoción por pagar en efectivo?"
+  ],
+  "cliente": "Si me pongo las tres dosis de la hepatitis B, cuanto termino pagando en total?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "$28,00",
+   "3 dosis"
+  ],
+  "evidencia": "Hepatitis B | 3 dosis | $28,00 c/u",
+  "respuesta_ideal": "Cada dosis cuesta $28,00 y son 3 dosis, así que en total serían $84,00.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Vacuna: Hepatitis B; Dosis necesarias: 3 dosis; Precio: $28,00 c/u»."
+ },
+ {
+  "id": "i0113",
+  "negocio": "V2_n1",
+  "turnos_previos_del_cliente": [],
+  "cliente": "¿Tienen promoción por pagar en efectivo?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo registrada una promoción por pago en efectivo; el único descuento que manejamos es el familiar.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Formas de pago: efectivo, tarjeta de débito/crédito (Visa, Mastercard, Diners) y transferencia bancaria. No se acepta pago con cheque»."
+ },
+ {
+  "id": "i0116",
+  "negocio": "V2_n1",
+  "turnos_previos_del_cliente": [
+   "¿La vacuna de fiebre amarilla necesita más de una dosis?",
+   "Viajo pasado mañana, ¿me alcanza el tiempo para sacar el certificado?"
+  ],
+  "cliente": "¿Necesito estar en ayunas para vacunarme?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "no requieren ayuno"
+  ],
+  "evidencia": "¿Necesito estar en ayunas? No, las vacunas no requieren ayuno.",
+  "respuesta_ideal": "No, las vacunas no requieren ayuno.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «¿Necesito estar en ayunas?»."
+ },
+ {
+  "id": "i0156",
+  "negocio": "V2_n1",
+  "turnos_previos_del_cliente": [
+   "Buenas, ¿a qué ora abren los sabados?",
+   "¿Y los domingos?",
+   "¿Cuánto cuesta la vacuna contra la fiebre amarilla?",
+   "¿Y la de hepatitis A cuánto sale?",
+   "¿Aceptan tarjeta de crédito?"
+  ],
+  "cliente": "Muchas gracias, que estén bien",
+  "tipo": "charla",
+  "accion_esperada": "charla",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "Gracias a usted, que tenga un buen día.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Formas de pago: efectivo, tarjeta de débito/crédito (Visa, Mastercard, Diners) y transferencia bancaria. No se acepta pago con cheque»."
+ },
+ {
+  "id": "i0223",
+  "negocio": "V2_n1",
+  "turnos_previos_del_cliente": [
+   "Buenas, ¿a qué ora abren los sabados?",
+   "¿Y los domingos?"
+  ],
+  "cliente": "¿Cuánto cuesta la vacuna contra la fiebre amarilla?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "$25,00"
+  ],
+  "evidencia": "Fiebre amarilla | 1 dosis (dura toda la vida) | $25,00",
+  "respuesta_ideal": "La vacuna contra la fiebre amarilla cuesta $25,00 y es una sola dosis que dura toda la vida.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Nota: los precios de la vacuna contra el COVID-19 varían según el lote donado y se informan en recepción; no manejamos una tarifa fija»."
+ },
+ {
+  "id": "i0232",
+  "negocio": "V2_n1",
+  "turnos_previos_del_cliente": [
+   "¿Tienen promoción por pagar en efectivo?",
+   "Si me pongo las tres dosis de la hepatitis B, cuanto termino pagando en total?"
+  ],
+  "cliente": "¿Debo ir en ayunas si me van a aplicar la de hepatitis B?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "no requieren ayuno"
+  ],
+  "evidencia": "¿Necesito estar en ayunas? No, las vacunas no requieren ayuno.",
+  "respuesta_ideal": "No, ninguna de nuestras vacunas requiere ayuno.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Vacuna: Hepatitis B; Dosis necesarias: 3 dosis; Precio: $28,00 c/u»."
+ },
+ {
+  "id": "i0256",
+  "negocio": "V2_n1",
+  "turnos_previos_del_cliente": [],
+  "cliente": "¿Tienen la vacuna contra el dengue?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo esa información en este momento; le recomiendo consultarlo directamente en el centro.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Nota: los precios de la vacuna contra el COVID-19 varían según el lote donado y se informan en recepción; no manejamos una tarifa fija»."
+ },
+ {
+  "id": "i0282",
+  "negocio": "V2_n1",
+  "turnos_previos_del_cliente": [
+   "¿Tienen la vacuna contra el dengue?"
+  ],
+  "cliente": "cuanto cuesta la vacuna de varicela pa mi hija de 5 años?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo el precio de esa vacuna; le sugiero preguntar en recepción.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Nota: los precios de la vacuna contra el COVID-19 varían según el lote donado y se informan en recepción; no manejamos una tarifa fija»."
+ },
+ {
+  "id": "i0288",
+  "negocio": "V2_n1",
+  "turnos_previos_del_cliente": [
+   "¿Qué debo llevar para la cita?",
+   "Somos 4 hermanos, ¿nos dan descuento si vamos el mismo dia?"
+  ],
+  "cliente": "¿Y si solo somos 3?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "4 personas o más"
+  ],
+  "evidencia": "Descuento del 10% para grupos familiares de 4 personas o más que se vacunen el mismo día.",
+  "respuesta_ideal": "Con 3 personas no alcanzarían el descuento, porque aplica desde 4 personas o más.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Dirección: Av. Eloy Alfaro N32-15 y Av. Amazonas, Edificio Torre Alfaro, local 3, Quito»."
+ },
+ {
+  "id": "i0298",
+  "negocio": "V2_n1",
+  "turnos_previos_del_cliente": [
+   "¿Qué debo llevar para la cita?"
+  ],
+  "cliente": "Somos 4 hermanos, ¿nos dan descuento si vamos el mismo dia?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "10%",
+   "4 personas o más"
+  ],
+  "evidencia": "Descuento del 10% para grupos familiares de 4 personas o más que se vacunen el mismo día.",
+  "respuesta_ideal": "Sí, siendo 4 personas que se vacunen el mismo día acceden al 10% de descuento en grupo familiar.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Descuento del 10% para grupos familiares de 4 personas o más que se vacunen el mismo día»."
+ },
+ {
+  "id": "i0309",
+  "negocio": "V2_n1",
+  "turnos_previos_del_cliente": [
+   "¿La vacuna de fiebre amarilla necesita más de una dosis?"
+  ],
+  "cliente": "Viajo pasado mañana, ¿me alcanza el tiempo para sacar el certificado?",
+  "tipo": "instruccion",
+  "accion_esperada": "responder",
+  "claves": [
+   "10 días de anticipación"
+  ],
+  "evidencia": "Recordar SIEMPRE que las vacunas de fiebre amarilla requieren cita previa con 10 días de anticipación para viajeros (aviso obligatorio).",
+  "respuesta_ideal": "Con dos días no le alcanza: el certificado de fiebre amarilla necesita agendarse con al menos 10 días de anticipación para tener validez.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Para fiebre amarilla con fines de viaje, agendar con mínimo 10 días de anticipación: el certificado internacional exige ese plazo para tener validez en la mayoría de países»."
+ },
+ {
+  "id": "i0344",
+  "negocio": "V2_n1",
+  "turnos_previos_del_cliente": [
+   "¿Tienen promoción por pagar en efectivo?",
+   "Si me pongo las tres dosis de la hepatitis B, cuanto termino pagando en total?",
+   "¿Debo ir en ayunas si me van a aplicar la de hepatitis B?"
+  ],
+  "cliente": "Gracias por la info, hasta luego",
+  "tipo": "charla",
+  "accion_esperada": "charla",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "Hasta luego, que tenga un buen día.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Ante una reacción alérgica grave después de vacunarse, comunicarse de inmediato al ECU 911 y luego avisar al centro al 099-812-3345»."
+ },
+ {
+  "id": "i0372",
+  "negocio": "V2_n1",
+  "turnos_previos_del_cliente": [
+   "Buenas, ¿a qué ora abren los sabados?",
+   "¿Y los domingos?",
+   "¿Cuánto cuesta la vacuna contra la fiebre amarilla?",
+   "¿Y la de hepatitis A cuánto sale?"
+  ],
+  "cliente": "¿Aceptan tarjeta de crédito?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "tarjeta de débito/crédito"
+  ],
+  "evidencia": "Formas de pago: efectivo, tarjeta de débito/crédito (Visa, Mastercard, Diners) y transferencia bancaria.",
+  "respuesta_ideal": "Sí, aceptamos tarjeta de débito o crédito, además de efectivo y transferencia.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Formas de pago: efectivo, tarjeta de débito/crédito (Visa, Mastercard, Diners) y transferencia bancaria. No se acepta pago con cheque»."
+ },
+ {
+  "id": "i0390",
+  "negocio": "V2_n1",
+  "turnos_previos_del_cliente": [
+   "¿Qué debo llevar para la cita?",
+   "Somos 4 hermanos, ¿nos dan descuento si vamos el mismo dia?",
+   "¿Y si solo somos 3?"
+  ],
+  "cliente": "¿Puedo cancelar la cita si me sale un imprevisto?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "2 horas de anticipación"
+  ],
+  "evidencia": "Cancelación de cita: avisar con al menos 2 horas de anticipación; de lo contrario se pierde el turno asignado.",
+  "respuesta_ideal": "Sí, puede cancelar avisando con al menos 2 horas de anticipación, o pierde el turno.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «El tiempo de reparación depende del trabajo: un ajuste de acción tarda 2 a 3 días; un cambio de trastes puede tardar hasta 15 días»."
+ },
+ {
+  "id": "i0409",
+  "negocio": "V2_n1",
+  "turnos_previos_del_cliente": [
+   "Buenas, ¿a qué ora abren los sabados?",
+   "¿Y los domingos?",
+   "¿Cuánto cuesta la vacuna contra la fiebre amarilla?",
+   "¿Y la de hepatitis A cuánto sale?",
+   "¿Aceptan tarjeta de crédito?"
+  ],
+  "cliente": "Muchas gracias, que estén bien",
+  "tipo": "charla",
+  "accion_esperada": "charla",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "Gracias a usted, que tenga un buen día.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Feriados nacionales: cerramos a las 12h00, excepto 25 de diciembre y 1 de enero que cerramos todo el día»."
+ },
+ {
+  "id": "i0415",
+  "negocio": "V2_n1",
+  "turnos_previos_del_cliente": [
+   "Buenas, ¿a qué ora abren los sabados?",
+   "¿Y los domingos?",
+   "¿Cuánto cuesta la vacuna contra la fiebre amarilla?",
+   "¿Y la de hepatitis A cuánto sale?",
+   "¿Aceptan tarjeta de crédito?"
+  ],
+  "cliente": "Muchas gracias, que estén bien",
+  "tipo": "charla",
+  "accion_esperada": "charla",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "Gracias a usted, que tenga un buen día.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Tarjeta de crédito: hasta 12 cuotas sin interés en instrumentos nacionales (consultar promoción vigente del banco); en importados, hasta 6 cuotas con interés»."
+ },
+ {
+  "id": "i0431",
+  "negocio": "V2_n1",
+  "turnos_previos_del_cliente": [
+   "¿Qué debo llevar para la cita?",
+   "Somos 4 hermanos, ¿nos dan descuento si vamos el mismo dia?",
+   "¿Y si solo somos 3?",
+   "¿Puedo cancelar la cita si me sale un imprevisto?"
+  ],
+  "cliente": "¿Tienen parqueadero?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "dos puestos gratuitos"
+  ],
+  "evidencia": "¿Tienen parqueadero? Sí, dos puestos gratuitos frente al edificio, sujeto a disponibilidad.",
+  "respuesta_ideal": "Sí, tenemos dos puestos gratuitos frente al edificio, según disponibilidad.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «¿Tienen parqueadero?»."
+ },
+ {
+  "id": "i0441",
+  "negocio": "V2_n1",
+  "turnos_previos_del_cliente": [
+   "Buenas, ¿a qué ora abren los sabados?",
+   "¿Y los domingos?",
+   "¿Cuánto cuesta la vacuna contra la fiebre amarilla?"
+  ],
+  "cliente": "¿Y la de hepatitis A cuánto sale?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "$32,00"
+  ],
+  "evidencia": "Hepatitis A | 2 dosis | $32,00 c/u",
+  "respuesta_ideal": "La de hepatitis A cuesta $32,00 por cada una de las dos dosis.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Vacuna: Hepatitis A; Dosis necesarias: 2 dosis; Precio: $32,00 c/u»."
+ },
+ {
+  "id": "i0008",
+  "negocio": "V4_n1",
+  "turnos_previos_del_cliente": [
+   "A qué hora cierran el sábado?",
+   "y hasta que hora se puede entrar?",
+   "el 24 de diciembre hasta que hora dejan entrar?",
+   "hay parking?",
+   "cuanto cuesta ese parking?",
+   "y en metro como llego?"
+  ],
+  "cliente": "hacen visitas guiadas?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo información sobre visitas guiadas; pregunta en taquilla o llama al 963 55 41 20.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «¿Hacen diseños propios o solo lo que traigo?»."
+ },
+ {
+  "id": "i0020",
+  "negocio": "V4_n1",
+  "turnos_previos_del_cliente": [
+   "hola, somos un colegio y vendríamos 45 alumnos, que precio tienen?",
+   "los profesores que acompañan pagan tambien?",
+   "con cuanta antelacion hay que reservar un grupo?",
+   "hay descuento con el carnet jove?"
+  ],
+  "cliente": "y para desempleados teneis alguna tarifa?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo información sobre una tarifa para desempleados; pregunta en taquilla o en el 963 55 41 20.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Con el Carnet Jove tienes un 10% de descuento en la entrada de adulto, presentándolo en taquilla»."
+ },
+ {
+  "id": "i0022",
+  "negocio": "V4_n1",
+  "turnos_previos_del_cliente": [
+   "hola buenas, cuanto cuesta la entrada para un adulto?"
+  ],
+  "cliente": "y para un niño de 6 años?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "13,90"
+  ],
+  "evidencia": "Infantil (4 a 12 años): €13,90",
+  "respuesta_ideal": "La entrada infantil, de 4 a 12 años, cuesta 13,90 €.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Cumpleaños en la Sala Coral: sábados y domingos, de 11:00 a 13:30, máximo 12 niños, €240 (incluye entrada, monitor y merienda)»."
+ },
+ {
+  "id": "i0031",
+  "negocio": "V4_n1",
+  "turnos_previos_del_cliente": [
+   "hola buenas, cuanto cuesta la entrada para un adulto?",
+   "y para un niño de 6 años?",
+   "somos dos adultos y mi madre que tiene 70, cuanto pagariamos en total?"
+  ],
+  "cliente": "se puede pagar con bizum?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "Bizum"
+  ],
+  "evidencia": "En taquilla aceptamos efectivo, tarjeta y Bizum. En la web, solo tarjeta.",
+  "respuesta_ideal": "Sí, en taquilla aceptamos Bizum; en la web solo tarjeta.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «En taquilla aceptamos efectivo, tarjeta y Bizum»."
+ },
+ {
+  "id": "i0063",
+  "negocio": "V4_n1",
+  "turnos_previos_del_cliente": [
+   "puedo entrar con mi perro? es pequeñito y va en brazos"
+  ],
+  "cliente": "y con el carrito del bebe?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "carritos"
+  ],
+  "evidencia": "Los carritos de bebé están permitidos en todo el recorrido.",
+  "respuesta_ideal": "Sí, los carritos de bebé están permitidos en todo el recorrido.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Los carritos de bebé están permitidos en todo el recorrido»."
+ },
+ {
+  "id": "i0071",
+  "negocio": "V4_n1",
+  "turnos_previos_del_cliente": [
+   "A qué hora cierran el sábado?",
+   "y hasta que hora se puede entrar?",
+   "el 24 de diciembre hasta que hora dejan entrar?",
+   "hay parking?",
+   "cuanto cuesta ese parking?"
+  ],
+  "cliente": "y en metro como llego?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "Marítim-Serrería"
+  ],
+  "evidencia": "Metro: líneas 5 y 7, parada Marítim-Serrería, y después 10 minutos a pie.",
+  "respuesta_ideal": "En metro, líneas 5 y 7 hasta la parada Marítim-Serrería y luego unos 10 minutos a pie.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Metro: líneas 5 y 7, parada Marítim-Serrería, y después 10 minutos a pie»."
+ },
+ {
+  "id": "i0090",
+  "negocio": "V4_n1",
+  "turnos_previos_del_cliente": [],
+  "cliente": "puedo entrar con mi perro? es pequeñito y va en brazos",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "perros guía"
+  ],
+  "evidencia": "No se permite la entrada de animales, excepto perros guía.",
+  "respuesta_ideal": "¡Hola! Bienvenido al Acuario Marina Blava. Lo siento, no se permite la entrada de animales, solo perros guía.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «¿Puedo salir y volver a entrar?»."
+ },
+ {
+  "id": "i0106",
+  "negocio": "V4_n1",
+  "turnos_previos_del_cliente": [
+   "hola, somos un colegio y vendríamos 45 alumnos, que precio tienen?"
+  ],
+  "cliente": "los profesores que acompañan pagan tambien?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo ese dato; consúltalo en grupos@marinablava.es o en el 963 55 41 20.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Grupos y colegios: reservar con un mínimo de 7 días de antelación en grupos@marinablava.es o en el 963 55 41 20 (extensión 3)»."
+ },
+ {
+  "id": "i0115",
+  "negocio": "V4_n1",
+  "turnos_previos_del_cliente": [
+   "hola, somos un colegio y vendríamos 45 alumnos, que precio tienen?",
+   "los profesores que acompañan pagan tambien?"
+  ],
+  "cliente": "con cuanta antelacion hay que reservar un grupo?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "7 días"
+  ],
+  "evidencia": "Grupos y colegios: reservar con un mínimo de 7 días de antelación en grupos@marinablava.es o en el 963 55 41 20 (extensión 3).",
+  "respuesta_ideal": "Los grupos se reservan con un mínimo de 7 días de antelación, escribiendo a grupos@marinablava.es o llamando al 963 55 41 20, extensión 3.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Grupos y colegios: reservar con un mínimo de 7 días de antelación en grupos@marinablava.es o en el 963 55 41 20 (extensión 3)»."
+ },
+ {
+  "id": "i0160",
+  "negocio": "V4_n1",
+  "turnos_previos_del_cliente": [
+   "A qué hora cierran el sábado?"
+  ],
+  "cliente": "y hasta que hora se puede entrar?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "19:00"
+  ],
+  "evidencia": "Última entrada: una hora antes del cierre (18:00 entre semana, 19:00 fines de semana y festivos)",
+  "respuesta_ideal": "La última entrada es una hora antes del cierre, así que el sábado se puede entrar hasta las 19:00.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «El anticipo no es reembolsable, pero puedes reprogramar tu cita una sola vez avisando con al menos 48 horas de anticipación»."
+ },
+ {
+  "id": "i0165",
+  "negocio": "V4_n1",
+  "turnos_previos_del_cliente": [
+   "hola, somos un colegio y vendríamos 45 alumnos, que precio tienen?",
+   "los profesores que acompañan pagan tambien?",
+   "con cuanta antelacion hay que reservar un grupo?",
+   "hay descuento con el carnet jove?"
+  ],
+  "cliente": "y para desempleados teneis alguna tarifa?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo información sobre una tarifa para desempleados; pregunta en taquilla o en el 963 55 41 20.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «No, de momento no tenemos tarifa de residente»."
+ },
+ {
+  "id": "i0168",
+  "negocio": "V4_n1",
+  "turnos_previos_del_cliente": [
+   "puedo entrar con mi perro? es pequeñito y va en brazos",
+   "y con el carrito del bebe?",
+   "hay cambiador para bebes en los baños?"
+  ],
+  "cliente": "hasta que edad no pagan los niños?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "3 años"
+  ],
+  "evidencia": "Menores de 3 años (0 a 3): entrada gratuita",
+  "respuesta_ideal": "Los menores de 3 años entran gratis; a partir de los 4 pagan entrada infantil.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «No tatuamos a menores de edad bajo ninguna circunstancia, ni con permiso o presencia de los padres»."
+ },
+ {
+  "id": "i0203",
+  "negocio": "V4_n1",
+  "turnos_previos_del_cliente": [
+   "Buenas tardes. Quería saber qué precio tiene la Noche en el acuario.",
+   "mi hija tiene 6, puede venir?",
+   "que dia la hacen y a que hora?",
+   "incluye cena o algo de picar?"
+  ],
+  "cliente": "vale, pues resérvame dos plazas para el viernes que viene",
+  "tipo": "instruccion",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "No confirmes ni tramites reservas de ninguna actividad (Noche en el acuario, cumpleaños, grupos): explica que se reservan en la web, en el 963 55 41 20 o en grupos@marinablava.es, según el caso.",
+  "respuesta_ideal": "Desde aquí no puedo hacer reservas; la Noche en el acuario se reserva en la web o llamando al 963 55 41 20.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Plazas limitadas a 25 personas; reserva obligatoria en la web o en el 963 55 41 20»."
+ },
+ {
+  "id": "i0231",
+  "negocio": "V4_n1",
+  "turnos_previos_del_cliente": [
+   "Buenas tardes. Quería saber qué precio tiene la Noche en el acuario.",
+   "mi hija tiene 6, puede venir?",
+   "que dia la hacen y a que hora?"
+  ],
+  "cliente": "incluye cena o algo de picar?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo ese dato; te lo confirman en taquilla o en el 963 55 41 20.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «PERFORACIONES (la joyería inicial de titanio grado implante va incluida en el precio)»."
+ },
+ {
+  "id": "i0239",
+  "negocio": "V4_n1",
+  "turnos_previos_del_cliente": [
+   "Buenas tardes. Quería saber qué precio tiene la Noche en el acuario.",
+   "mi hija tiene 6, puede venir?",
+   "que dia la hacen y a que hora?"
+  ],
+  "cliente": "incluye cena o algo de picar?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo ese dato; te lo confirman en taquilla o en el 963 55 41 20.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Cumpleaños en la Sala Coral: sábados y domingos, de 11:00 a 13:30, máximo 12 niños, €240 (incluye entrada, monitor y merienda)»."
+ },
+ {
+  "id": "i0243",
+  "negocio": "V4_n1",
+  "turnos_previos_del_cliente": [],
+  "cliente": "hola, somos un colegio y vendríamos 45 alumnos, que precio tienen?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "12,00"
+  ],
+  "evidencia": "Grupos (a partir de 20 personas): €12,00 por persona, solo con reserva previa",
+  "respuesta_ideal": "¡Hola! Bienvenido al Acuario Marina Blava. Para grupos de 20 personas o más la entrada cuesta 12,00 € por persona, con reserva previa.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Grupos y colegios: reservar con un mínimo de 7 días de antelación en grupos@marinablava.es o en el 963 55 41 20 (extensión 3)»."
+ },
+ {
+  "id": "i0246",
+  "negocio": "V4_n1",
+  "turnos_previos_del_cliente": [
+   "A qué hora cierran el sábado?",
+   "y hasta que hora se puede entrar?"
+  ],
+  "cliente": "el 24 de diciembre hasta que hora dejan entrar?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "14:00"
+  ],
+  "evidencia": "Última entrada: una hora antes del cierre (18:00 entre semana, 19:00 fines de semana y festivos)\n- 24 y 31 de diciembre: cerramos a las 15:00",
+  "respuesta_ideal": "El 24 de diciembre cerramos a las 15:00, y como la última entrada es una hora antes, se puede entrar hasta las 14:00.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Si compraste por la web puedes cambiar la fecha sin coste hasta 24 horas antes de la visita escribiendo a entradas@marinablava.es»."
+ },
+ {
+  "id": "i0269",
+  "negocio": "V4_n1",
+  "turnos_previos_del_cliente": [
+   "A qué hora cierran el sábado?",
+   "y hasta que hora se puede entrar?",
+   "el 24 de diciembre hasta que hora dejan entrar?",
+   "hay parking?"
+  ],
+  "cliente": "cuanto cuesta ese parking?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo el precio de ese parking, no es nuestro; te lo pueden decir en taquilla o en el 963 55 41 20.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «El parking público más cercano es el de la Marina Real, a 5 minutos andando»."
+ },
+ {
+  "id": "i0281",
+  "negocio": "V4_n1",
+  "turnos_previos_del_cliente": [
+   "hola buenas, cuanto cuesta la entrada para un adulto?",
+   "y para un niño de 6 años?"
+  ],
+  "cliente": "somos dos adultos y mi madre que tiene 70, cuanto pagariamos en total?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "51,50"
+  ],
+  "evidencia": "Adulto (13 a 64 años): €18,50\nInfantil (4 a 12 años): €13,90\nMenores de 3 años (0 a 3): entrada gratuita\nSénior (65 años o más): €14,50",
+  "respuesta_ideal": "Dos entradas de adulto (18,50 € cada una) más una sénior (14,50 €) suman 51,50 €.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Con el Carnet Jove tienes un 10% de descuento en la entrada de adulto, presentándolo en taquilla»."
+ },
+ {
+  "id": "i0286",
+  "negocio": "V4_n1",
+  "turnos_previos_del_cliente": [
+   "puedo entrar con mi perro? es pequeñito y va en brazos",
+   "y con el carrito del bebe?",
+   "hay cambiador para bebes en los baños?"
+  ],
+  "cliente": "hasta que edad no pagan los niños?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "3 años"
+  ],
+  "evidencia": "Menores de 3 años (0 a 3): entrada gratuita",
+  "respuesta_ideal": "Los menores de 3 años entran gratis; a partir de los 4 pagan entrada infantil.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Ascensores en todas las plantas y baños adaptados»."
+ },
+ {
+  "id": "i0287",
+  "negocio": "V4_n1",
+  "turnos_previos_del_cliente": [
+   "A qué hora cierran el sábado?",
+   "y hasta que hora se puede entrar?",
+   "el 24 de diciembre hasta que hora dejan entrar?"
+  ],
+  "cliente": "hay parking?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "Marina Real"
+  ],
+  "evidencia": "el acuario no dispone de aparcamiento propio. El parking público más cercano es el de la Marina Real, a 5 minutos andando.",
+  "respuesta_ideal": "No tenemos aparcamiento propio; el parking público más cercano es el de la Marina Real, a 5 minutos andando.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «El parking público más cercano es el de la Marina Real, a 5 minutos andando»."
+ },
+ {
+  "id": "i0336",
+  "negocio": "V4_n1",
+  "turnos_previos_del_cliente": [],
+  "cliente": "A qué hora cierran el sábado?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "20:00"
+  ],
+  "evidencia": "Sábados, domingos y festivos: 10:00 a 20:00",
+  "respuesta_ideal": "¡Hola! Bienvenido al Acuario Marina Blava. Los sábados cerramos a las 20:00.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Cumpleaños en la Sala Coral: sábados y domingos, de 11:00 a 13:30, máximo 12 niños, €240 (incluye entrada, monitor y merienda)»."
+ },
+ {
+  "id": "i0361",
+  "negocio": "V4_n1",
+  "turnos_previos_del_cliente": [
+   "A qué hora cierran el sábado?",
+   "y hasta que hora se puede entrar?",
+   "el 24 de diciembre hasta que hora dejan entrar?",
+   "hay parking?",
+   "cuanto cuesta ese parking?",
+   "y en metro como llego?"
+  ],
+  "cliente": "hacen visitas guiadas?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo información sobre visitas guiadas; pregunta en taquilla o llama al 963 55 41 20.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Metro: líneas 5 y 7, parada Marítim-Serrería, y después 10 minutos a pie»."
+ },
+ {
+  "id": "i0368",
+  "negocio": "V4_n1",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Buenas tardes. Quería saber qué precio tiene la Noche en el acuario.",
+  "tipo": "instruccion",
+  "accion_esperada": "responder",
+  "claves": [
+   "32",
+   "8 años"
+  ],
+  "evidencia": "Precio: €32 por persona. Edad mínima: 8 años (los menores de 14 deben ir con un adulto).",
+  "respuesta_ideal": "¡Hola! Bienvenido al Acuario Marina Blava. La Noche en el acuario cuesta 32 € por persona; ten en cuenta que la edad mínima es 8 años.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «NOCHE EN EL ACUARIO»."
+ },
+ {
+  "id": "i0378",
+  "negocio": "V4_n1",
+  "turnos_previos_del_cliente": [
+   "A qué hora cierran el sábado?",
+   "y hasta que hora se puede entrar?",
+   "el 24 de diciembre hasta que hora dejan entrar?",
+   "hay parking?",
+   "cuanto cuesta ese parking?"
+  ],
+  "cliente": "y en metro como llego?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "Marítim-Serrería"
+  ],
+  "evidencia": "Metro: líneas 5 y 7, parada Marítim-Serrería, y después 10 minutos a pie.",
+  "respuesta_ideal": "En metro, líneas 5 y 7 hasta la parada Marítim-Serrería y luego unos 10 minutos a pie.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Cómo llegar: Metro Insurgentes (Línea 1) a 8 minutos caminando; Metrobús estación Álvaro Obregón (Línea 1)»."
+ },
+ {
+  "id": "i0379",
+  "negocio": "V4_n1",
+  "turnos_previos_del_cliente": [
+   "puedo entrar con mi perro? es pequeñito y va en brazos",
+   "y con el carrito del bebe?",
+   "hay cambiador para bebes en los baños?",
+   "hasta que edad no pagan los niños?"
+  ],
+  "cliente": "me he dejado las gafas de sol en el tunel, a quien le pregunto?",
+  "tipo": "instruccion",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "Objetos perdidos, quejas y hojas de reclamaciones: deriva siempre a Marta Ferrandis, en el mostrador de atención al visitante de la planta baja.",
+  "respuesta_ideal": "Pregunta a Marta Ferrandis, en el mostrador de atención al visitante de la planta baja, junto a la consigna; allí gestionan los objetos perdidos.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Cumpleaños en la Sala Coral: sábados y domingos, de 11:00 a 13:30, máximo 12 niños, €240 (incluye entrada, monitor y merienda)»."
+ },
+ {
+  "id": "i0407",
+  "negocio": "V4_n1",
+  "turnos_previos_del_cliente": [
+   "Buenas tardes. Quería saber qué precio tiene la Noche en el acuario."
+  ],
+  "cliente": "mi hija tiene 6, puede venir?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "8 años"
+  ],
+  "evidencia": "Edad mínima: 8 años (los menores de 14 deben ir con un adulto).",
+  "respuesta_ideal": "Lo siento, no: la edad mínima para la Noche en el acuario es 8 años.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «El anticipo no es reembolsable, pero puedes reprogramar tu cita una sola vez avisando con al menos 48 horas de anticipación»."
+ },
+ {
+  "id": "i0412",
+  "negocio": "V4_n1",
+  "turnos_previos_del_cliente": [
+   "puedo entrar con mi perro? es pequeñito y va en brazos",
+   "y con el carrito del bebe?"
+  ],
+  "cliente": "hay cambiador para bebes en los baños?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo ese dato; en taquilla te lo pueden confirmar.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Ascensores en todas las plantas y baños adaptados»."
+ },
+ {
+  "id": "i0449",
+  "negocio": "V4_n1",
+  "turnos_previos_del_cliente": [
+   "hola, somos un colegio y vendríamos 45 alumnos, que precio tienen?",
+   "los profesores que acompañan pagan tambien?",
+   "con cuanta antelacion hay que reservar un grupo?"
+  ],
+  "cliente": "hay descuento con el carnet jove?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "10%"
+  ],
+  "evidencia": "Con el Carnet Jove tienes un 10% de descuento en la entrada de adulto, presentándolo en taquilla.",
+  "respuesta_ideal": "Sí, con el Carnet Jove hay un 10% de descuento en la entrada de adulto presentándolo en taquilla.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Con el Carnet Jove tienes un 10% de descuento en la entrada de adulto, presentándolo en taquilla»."
+ },
+ {
+  "id": "i0456",
+  "negocio": "V4_n1",
+  "turnos_previos_del_cliente": [
+   "Buenas tardes. Quería saber qué precio tiene la Noche en el acuario.",
+   "mi hija tiene 6, puede venir?"
+  ],
+  "cliente": "que dia la hacen y a que hora?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "viernes",
+   "20:30"
+  ],
+  "evidencia": "Se hace los viernes, de 20:30 a 23:00.",
+  "respuesta_ideal": "Se hace los viernes, de 20:30 a 23:00.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «El anticipo no es reembolsable, pero puedes reprogramar tu cita una sola vez avisando con al menos 48 horas de anticipación»."
+ },
+ {
+  "id": "i0471",
+  "negocio": "V4_n1",
+  "turnos_previos_del_cliente": [
+   "A qué hora cierran el sábado?"
+  ],
+  "cliente": "y hasta que hora se puede entrar?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "19:00"
+  ],
+  "evidencia": "Última entrada: una hora antes del cierre (18:00 entre semana, 19:00 fines de semana y festivos)",
+  "respuesta_ideal": "La última entrada es una hora antes del cierre, así que el sábado se puede entrar hasta las 19:00.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Si compraste por la web puedes cambiar la fecha sin coste hasta 24 horas antes de la visita escribiendo a entradas@marinablava.es»."
+ },
+ {
+  "id": "i0001",
+  "negocio": "V6_n1",
+  "turnos_previos_del_cliente": [
+   "donde queda el local de guemes?"
+  ],
+  "cliente": "tiene mesas para sentarse?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "sin mesas"
+  ],
+  "evidencia": "Local Güemes: Belgrano 780, barrio Güemes (solo para llevar, sin mesas).",
+  "respuesta_ideal": "No, el de Güemes es solo para llevar, sin mesas. Si querés sentarte, el local Cerro tiene mesas afuera.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Local Cerro: Av. Rafael Núñez 4120, Cerro de las Rosas. Tiene mesas afuera, baño para clientes y wifi»."
+ },
+ {
+  "id": "i0013",
+  "negocio": "V6_n1",
+  "turnos_previos_del_cliente": [
+   "buenas, hacen envios a barrio general paz?",
+   "cual es el minimo para pedir delivery?",
+   "cuanto cobran el envio",
+   "hasta que hora mandan un sabado a la noche y cuanto tarda mas o menos?",
+   "le puedo pagar con tarjeta al chico del delivery?"
+  ],
+  "cliente": "che el pedido de anoche llego todo derretido y encima faltaba un palito, quiero reclamar",
+  "tipo": "instruccion",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "Si hay un reclamo por un pedido de delivery (llegó derretido, tarde, faltó algo), pedile el nombre y la dirección del pedido y derivalo al WhatsApp 351 555-0142.",
+  "respuesta_ideal": "Qué macana, disculpá. Pasame el nombre y la dirección del pedido y escribí al WhatsApp 351 555-0142 así lo resuelven.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Se puede pagar con tarjeta, Bizum o efectivo en recepción»."
+ },
+ {
+  "id": "i0014",
+  "negocio": "V6_n1",
+  "turnos_previos_del_cliente": [
+   "buenas, hacen envios a barrio general paz?",
+   "cual es el minimo para pedir delivery?"
+  ],
+  "cliente": "cuanto cobran el envio",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "$1.500"
+  ],
+  "evidencia": "Costo de envío: $1.500.",
+  "respuesta_ideal": "El envío cuesta $1.500.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Cuota mensual ilimitada: 89 €/mes (domiciliación SEPA, permanencia mínima de 3 meses)»."
+ },
+ {
+  "id": "i0055",
+  "negocio": "V6_n1",
+  "turnos_previos_del_cliente": [
+   "donde queda el local de guemes?",
+   "tiene mesas para sentarse?",
+   "y al del cerro puedo ir con mi perra?"
+  ],
+  "cliente": "tienen descuento para jubilados?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo información de un descuento para jubilados; consultalo en el mostrador.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Estudiantes menores de 26 y mayores de 65 tienen un 15% de descuento en las cuotas mensuales (no en bonos ni clases sueltas), presentando el DNI o el carnet de estudiante»."
+ },
+ {
+  "id": "i0060",
+  "negocio": "V6_n1",
+  "turnos_previos_del_cliente": [
+   "donde queda el local de guemes?",
+   "tiene mesas para sentarse?",
+   "y al del cerro puedo ir con mi perra?",
+   "tienen descuento para jubilados?"
+  ],
+  "cliente": "los palitos bombon de que gusto son?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo el dato de los gustos de los palitos bombón; sé que salen $2.300 la unidad. Consultalo en el mostrador.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Estudiantes menores de 26 y mayores de 65 tienen un 15% de descuento en las cuotas mensuales (no en bonos ni clases sueltas), presentando el DNI o el carnet de estudiante»."
+ },
+ {
+  "id": "i0064",
+  "negocio": "V6_n1",
+  "turnos_previos_del_cliente": [
+   "Hola! a que hora cierran los viernes?"
+  ],
+  "cliente": "y los domingos?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "12 a 00 h"
+  ],
+  "evidencia": "Domingos y feriados ... 12 a 00 h",
+  "respuesta_ideal": "Los domingos abrimos de 12 a 00 h en temporada alta; en temporada baja, de 14 a 22 h.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Contacto: hola@espaiarrel.cat · 93 555 21 47 (de lunes a viernes, de 10 a 13 h y de 17 a 20 h)»."
+ },
+ {
+  "id": "i0096",
+  "negocio": "V6_n1",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Hola! a que hora cierran los viernes?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "1:30"
+  ],
+  "evidencia": "Viernes y sábados ..... 12 a 1:30 h",
+  "respuesta_ideal": "¡Hola! Bienvenido a Nevada Serrana. Los viernes abrimos de 12 a 1:30 h en temporada alta (septiembre a mayo); en junio, julio y agosto cerramos a las 22 h.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Contacto: hola@espaiarrel.cat · 93 555 21 47 (de lunes a viernes, de 10 a 13 h y de 17 a 20 h)»."
+ },
+ {
+  "id": "i0137",
+  "negocio": "V6_n1",
+  "turnos_previos_del_cliente": [
+   "buenas, hacen envios a barrio general paz?",
+   "cual es el minimo para pedir delivery?",
+   "cuanto cobran el envio",
+   "hasta que hora mandan un sabado a la noche y cuanto tarda mas o menos?"
+  ],
+  "cliente": "le puedo pagar con tarjeta al chico del delivery?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "efectivo o con QR"
+  ],
+  "evidencia": "En el delivery se paga en efectivo o con QR al recibir; no aceptamos tarjeta ni transferencia en el delivery.",
+  "respuesta_ideal": "No, en el delivery se paga en efectivo o con QR al recibir; no aceptamos tarjeta.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Se puede pagar con tarjeta, Bizum o efectivo en recepción»."
+ },
+ {
+  "id": "i0138",
+  "negocio": "V6_n1",
+  "turnos_previos_del_cliente": [
+   "hola, mi hija es celiaca, que gustos puede comer?",
+   "y en cucurucho puede?"
+  ],
+  "cliente": "usan la misma cuchara para todos los gustos? me preocupa la contaminacion cruzada",
+  "tipo": "instruccion",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "Si alguien pregunta por alergias (maní, frutos secos, huevo, etc.) o por contaminación cruzada, no le asegures nada. Decile que antes de pedir lo consulte en el mostrador con la encargada.",
+  "respuesta_ideal": "Eso no te lo puedo asegurar yo; antes de pedir consultalo en el mostrador con la encargada.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Tenemos esterillas, mantas, bloques y cinturones para todos, sin coste»."
+ },
+ {
+  "id": "i0161",
+  "negocio": "V6_n1",
+  "turnos_previos_del_cliente": [],
+  "cliente": "donde queda el local de guemes?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "Belgrano 780"
+  ],
+  "evidencia": "Local Güemes: Belgrano 780, barrio Güemes (solo para llevar, sin mesas).",
+  "respuesta_ideal": "El local Güemes está en Belgrano 780, barrio Güemes.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Local Güemes: Belgrano 780, barrio Güemes (solo para llevar, sin mesas)»."
+ },
+ {
+  "id": "i0205",
+  "negocio": "V6_n1",
+  "turnos_previos_del_cliente": [
+   "hola, mi hija es celiaca, que gustos puede comer?",
+   "y en cucurucho puede?",
+   "usan la misma cuchara para todos los gustos? me preocupa la contaminacion cruzada"
+  ],
+  "cliente": "tienen algo sin azucar?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "vainilla y chocolate",
+   "stevia"
+  ],
+  "evidencia": "Sin azúcar agregada: vainilla y chocolate, endulzados con stevia.",
+  "respuesta_ideal": "Sí, vainilla y chocolate sin azúcar agregada, endulzados con stevia.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Tenemos esterillas, mantas, bloques y cinturones para todos, sin coste»."
+ },
+ {
+  "id": "i0212",
+  "negocio": "V6_n1",
+  "turnos_previos_del_cliente": [
+   "Hola! a que hora cierran los viernes?",
+   "y los domingos?",
+   "cuanto sale el cuarto de helado?"
+  ],
+  "cliente": "me pueden poner 4 gustos en el cuarto?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "hasta 3 sabores"
+  ],
+  "evidencia": "1/4 kg (hasta 3 sabores)",
+  "respuesta_ideal": "No, en el 1/4 kg entran hasta 3 sabores; si querés 4 tenés que pedir el 1/2 kg.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Puedes cancelar sin coste hasta 4 horas antes de la clase; si cancelas más tarde o no vienes, la clase se descuenta del bono o cuenta como usada en la cuota de 2 clases»."
+ },
+ {
+  "id": "i0219",
+  "negocio": "V6_n1",
+  "turnos_previos_del_cliente": [
+   "cuanto sale una torta helada para 20 personas?",
+   "con cuantos dias hay que pedirla?",
+   "cuanto hay que dejar de seña?",
+   "dale, anotame una de dulce de leche y frutilla para el sabado a las 18 hs",
+   "la pueden hacer con forma de personaje? es para el cumple de mi nene"
+  ],
+  "cliente": "ah y otra cosa, cuanto sale el balde de 5 litros para un evento?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "Ese precio no lo tengo: los precios por mayor se consultan con la administración, administracion@nevadaserrana.com.ar.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Sí, a comercios y para eventos, en baldes de 5 y 10 litros»."
+ },
+ {
+  "id": "i0220",
+  "negocio": "V6_n1",
+  "turnos_previos_del_cliente": [],
+  "cliente": "cuanto sale una torta helada para 20 personas?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "$58.000"
+  ],
+  "evidencia": "para 20 porciones $58.000",
+  "respuesta_ideal": "La torta helada para 20 porciones sale $58.000.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Por encargo: torta para 10 porciones $32.000 y para 20 porciones $58.000»."
+ },
+ {
+  "id": "i0234",
+  "negocio": "V6_n1",
+  "turnos_previos_del_cliente": [
+   "hola, mi hija es celiaca, que gustos puede comer?",
+   "y en cucurucho puede?",
+   "usan la misma cuchara para todos los gustos? me preocupa la contaminacion cruzada"
+  ],
+  "cliente": "tienen algo sin azucar?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "vainilla y chocolate",
+   "stevia"
+  ],
+  "evidencia": "Sin azúcar agregada: vainilla y chocolate, endulzados con stevia.",
+  "respuesta_ideal": "Sí, vainilla y chocolate sin azúcar agregada, endulzados con stevia.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Sin azúcar agregada: vainilla y chocolate, endulzados con stevia»."
+ },
+ {
+  "id": "i0235",
+  "negocio": "V6_n1",
+  "turnos_previos_del_cliente": [
+   "buenas, hacen envios a barrio general paz?",
+   "cual es el minimo para pedir delivery?",
+   "cuanto cobran el envio",
+   "hasta que hora mandan un sabado a la noche y cuanto tarda mas o menos?",
+   "le puedo pagar con tarjeta al chico del delivery?"
+  ],
+  "cliente": "che el pedido de anoche llego todo derretido y encima faltaba un palito, quiero reclamar",
+  "tipo": "instruccion",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "Si hay un reclamo por un pedido de delivery (llegó derretido, tarde, faltó algo), pedile el nombre y la dirección del pedido y derivalo al WhatsApp 351 555-0142.",
+  "respuesta_ideal": "Qué macana, disculpá. Pasame el nombre y la dirección del pedido y escribí al WhatsApp 351 555-0142 así lo resuelven.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Efectivo, tarjetas de débito y crédito Visa y Mastercard (en 1 pago) y Mercado Pago con QR. Pagando en efectivo en el local tenés 10% de descuento en los potes de 1 kg. En el delivery se paga en efectivo o con QR al recibir; no aceptamos tarjeta ni transferencia en el delivery»."
+ },
+ {
+  "id": "i0247",
+  "negocio": "V6_n1",
+  "turnos_previos_del_cliente": [
+   "donde queda el local de guemes?",
+   "tiene mesas para sentarse?"
+  ],
+  "cliente": "y al del cerro puedo ir con mi perra?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "mesas de afuera"
+  ],
+  "evidencia": "Sí, a las mesas de afuera del local Cerro. Adentro no se permiten mascotas (salvo perros de asistencia).",
+  "respuesta_ideal": "Sí, podés sentarte con ella en las mesas de afuera del local Cerro; adentro no se permiten mascotas.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Local Cerro: Av. Rafael Núñez 4120, Cerro de las Rosas. Tiene mesas afuera, baño para clientes y wifi»."
+ },
+ {
+  "id": "i0254",
+  "negocio": "V6_n1",
+  "turnos_previos_del_cliente": [
+   "cuanto sale una torta helada para 20 personas?"
+  ],
+  "cliente": "con cuantos dias hay que pedirla?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "48 horas"
+  ],
+  "evidencia": "Se encargan con 48 horas de anticipación como mínimo",
+  "respuesta_ideal": "Se encarga con 48 horas de anticipación como mínimo.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Los festivos de Barcelona no hay clases, excepto el día de la Mercè, en que hacemos una clase abierta de Hatha a las 11:00»."
+ },
+ {
+  "id": "i0255",
+  "negocio": "V6_n1",
+  "turnos_previos_del_cliente": [
+   "cuanto sale una torta helada para 20 personas?",
+   "con cuantos dias hay que pedirla?"
+  ],
+  "cliente": "cuanto hay que dejar de seña?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "50 %"
+  ],
+  "evidencia": "se señan con el 50 %",
+  "respuesta_ideal": "Se seña con el 50 % del valor.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «También estamos en PedidosYa (con los precios de la app, que son distintos a los del local)»."
+ },
+ {
+  "id": "i0303",
+  "negocio": "V6_n1",
+  "turnos_previos_del_cliente": [
+   "buenas, hacen envios a barrio general paz?",
+   "cual es el minimo para pedir delivery?",
+   "cuanto cobran el envio",
+   "hasta que hora mandan un sabado a la noche y cuanto tarda mas o menos?"
+  ],
+  "cliente": "le puedo pagar con tarjeta al chico del delivery?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "efectivo o con QR"
+  ],
+  "evidencia": "En el delivery se paga en efectivo o con QR al recibir; no aceptamos tarjeta ni transferencia en el delivery.",
+  "respuesta_ideal": "No, en el delivery se paga en efectivo o con QR al recibir; no aceptamos tarjeta.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Efectivo, tarjetas de débito y crédito Visa y Mastercard (en 1 pago) y Mercado Pago con QR. Pagando en efectivo en el local tenés 10% de descuento en los potes de 1 kg. En el delivery se paga en efectivo o con QR al recibir; no aceptamos tarjeta ni transferencia en el delivery»."
+ },
+ {
+  "id": "i0371",
+  "negocio": "V6_n1",
+  "turnos_previos_del_cliente": [
+   "Hola! a que hora cierran los viernes?",
+   "y los domingos?"
+  ],
+  "cliente": "cuanto sale el cuarto de helado?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "$7.800"
+  ],
+  "evidencia": "| 1/4 kg (hasta 3 sabores) | $7.800 |",
+  "respuesta_ideal": "El 1/4 kg sale $7.800.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Producto: Caja de 12 bombones helados; Precio: $11.000»."
+ },
+ {
+  "id": "i0375",
+  "negocio": "V6_n1",
+  "turnos_previos_del_cliente": [
+   "buenas, hacen envios a barrio general paz?"
+  ],
+  "cliente": "cual es el minimo para pedir delivery?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "1/2 kg"
+  ],
+  "evidencia": "Pedido mínimo: 1/2 kg.",
+  "respuesta_ideal": "El pedido mínimo para delivery es de 1/2 kg.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Cuota mensual ilimitada: 89 €/mes (domiciliación SEPA, permanencia mínima de 3 meses)»."
+ },
+ {
+  "id": "i0402",
+  "negocio": "V6_n1",
+  "turnos_previos_del_cliente": [
+   "cuanto sale una torta helada para 20 personas?",
+   "con cuantos dias hay que pedirla?",
+   "cuanto hay que dejar de seña?",
+   "dale, anotame una de dulce de leche y frutilla para el sabado a las 18 hs"
+  ],
+  "cliente": "la pueden hacer con forma de personaje? es para el cumple de mi nene",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo ese dato; consultalo con Romina cuando hagas el encargo o en el mostrador.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Si prefieres traer tu esterilla, puedes dejarla en nuestros casilleros por 6 €/mes. Alquiler de toalla: 2 €. En los vestuarios hay dos duchas con agua caliente y secadores»."
+ },
+ {
+  "id": "i0404",
+  "negocio": "V6_n1",
+  "turnos_previos_del_cliente": [
+   "cuanto sale una torta helada para 20 personas?",
+   "con cuantos dias hay que pedirla?",
+   "cuanto hay que dejar de seña?",
+   "dale, anotame una de dulce de leche y frutilla para el sabado a las 18 hs"
+  ],
+  "cliente": "la pueden hacer con forma de personaje? es para el cumple de mi nene",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo ese dato; consultalo con Romina cuando hagas el encargo o en el mostrador.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Los precios pueden cambiar sin previo aviso. Las promociones no son acumulables»."
+ },
+ {
+  "id": "i0426",
+  "negocio": "V6_n1",
+  "turnos_previos_del_cliente": [],
+  "cliente": "donde queda el local de guemes?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "Belgrano 780"
+  ],
+  "evidencia": "Local Güemes: Belgrano 780, barrio Güemes (solo para llevar, sin mesas).",
+  "respuesta_ideal": "El local Güemes está en Belgrano 780, barrio Güemes.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «El local está a pie de calle y es accesible en silla de ruedas, pero los vestuarios están en el piso de abajo y solo se llega por escalera»."
+ },
+ {
+  "id": "i0433",
+  "negocio": "V6_n1",
+  "turnos_previos_del_cliente": [
+   "donde queda el local de guemes?",
+   "tiene mesas para sentarse?",
+   "y al del cerro puedo ir con mi perra?"
+  ],
+  "cliente": "tienen descuento para jubilados?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo información de un descuento para jubilados; consultalo en el mostrador.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Efectivo, tarjetas de débito y crédito Visa y Mastercard (en 1 pago) y Mercado Pago con QR. Pagando en efectivo en el local tenés 10% de descuento en los potes de 1 kg. En el delivery se paga en efectivo o con QR al recibir; no aceptamos tarjeta ni transferencia en el delivery»."
+ },
+ {
+  "id": "i0452",
+  "negocio": "V6_n1",
+  "turnos_previos_del_cliente": [
+   "cuanto sale una torta helada para 20 personas?"
+  ],
+  "cliente": "con cuantos dias hay que pedirla?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "48 horas"
+  ],
+  "evidencia": "Se encargan con 48 horas de anticipación como mínimo",
+  "respuesta_ideal": "Se encarga con 48 horas de anticipación como mínimo.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Elaboramos todos los días en nuestra planta de barrio Alta Córdoba, con leche entera de tambos de la zona y fruta de estación»."
+ },
+ {
+  "id": "i0465",
+  "negocio": "V6_n1",
+  "turnos_previos_del_cliente": [
+   "donde queda el local de guemes?",
+   "tiene mesas para sentarse?",
+   "y al del cerro puedo ir con mi perra?",
+   "tienen descuento para jubilados?",
+   "los palitos bombon de que gusto son?"
+  ],
+  "cliente": "bueno gracias, chau!",
+  "tipo": "charla",
+  "accion_esperada": "charla",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "¡Gracias a vos! Chau, que lo disfrutes.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «¿Puedo venir embarazada? Sí, a las clases de Prenatal (martes a las 9:30 y jueves a las 18:30), a partir de la semana 14 de gestación y con el visto bueno de tu ginecólogo o comadrona»."
+ },
+ {
+  "id": "i0484",
+  "negocio": "V6_n1",
+  "turnos_previos_del_cliente": [
+   "cuanto sale una torta helada para 20 personas?",
+   "con cuantos dias hay que pedirla?",
+   "cuanto hay que dejar de seña?"
+  ],
+  "cliente": "dale, anotame una de dulce de leche y frutilla para el sabado a las 18 hs",
+  "tipo": "instruccion",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "Los encargos de tortas heladas no los confirmes vos. Pasale el WhatsApp 351 555-0142 y decile que pregunte por Romina.",
+  "respuesta_ideal": "El encargo no te lo puedo tomar yo: escribí al WhatsApp 351 555-0142 y preguntá por Romina, que te lo confirma.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Cremas: dulce de leche, dulce de leche granizado, dulce de leche con nuez, chocolate, chocolate amargo, chocolate suizo, sambayón, crema americana, tramontana, vainilla, frutilla a la crema, banana split, menta granizada y pistacho (el pistacho tiene un recargo de $800 por pote o cucurucho)»."
+ }
+]

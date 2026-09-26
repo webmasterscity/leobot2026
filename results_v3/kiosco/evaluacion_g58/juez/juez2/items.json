@@ -1,0 +1,813 @@
+[
+ {
+  "id": "i0004",
+  "negocio": "V1_n2",
+  "turnos_previos_del_cliente": [
+   "Buenas tardes, hay descuento para personas de la tercera edad?",
+   "y para estudiantes?",
+   "rentan toallas?",
+   "y los chalecos salvavidas hay de tamaño para bebe?"
+  ],
+  "cliente": "que tipo de bloqueador dejan usar?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "biodegradable"
+  ],
+  "evidencia": "Solo se permite bloqueador solar biodegradable.",
+  "respuesta_ideal": "Solo se permite bloqueador solar biodegradable.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Postulantes de Admisión Especial: además, certificado de título o documento que acredite la vía de ingreso»."
+ },
+ {
+  "id": "i0016",
+  "negocio": "V1_n2",
+  "turnos_previos_del_cliente": [],
+  "cliente": "abren el lunes 3 de agosto?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "10:00 a 19:00"
+  ],
+  "evidencia": "Lunes y martes permanecemos cerrados, excepto en temporada vacacional (Semana Santa, julio-agosto y del 15 de diciembre al 6 de enero), cuando abrimos todos los días de 10:00 a 19:00 hrs.",
+  "respuesta_ideal": "Sí, agosto es temporada vacacional y abrimos todos los días de 10:00 a 19:00 hrs.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Abrimos de miércoles a domingo de 10:00 a 18:00 hrs. Lunes y martes permanecemos cerrados, excepto en temporada vacacional (Semana Santa, julio-agosto y del 15 de diciembre al 6 de enero), cuando abrimos todos los días de 10:00 a 19:00 hrs. La taquilla cierra una hora antes que el parque y los toboganes grandes dejan de operar 30 minutos antes del cierre»."
+ },
+ {
+  "id": "i0032",
+  "negocio": "V1_n2",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Mi hijo mide 1.35, se puede subir al Kraken?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "1.40 m"
+  ],
+  "evidencia": "Los toboganes Kraken y Caída Libre requieren una estatura mínima de 1.40 m y un peso menor a 120 kg.",
+  "respuesta_ideal": "No, para el Kraken se necesita una estatura mínima de 1.40 m.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Los toboganes Kraken y Caída Libre requieren una estatura mínima de 1.40 m y un peso menor a 120 kg»."
+ },
+ {
+  "id": "i0086",
+  "negocio": "V1_n2",
+  "turnos_previos_del_cliente": [
+   "Mi hijo mide 1.35, se puede subir al Kraken?",
+   "que tan honda es la alberca de olas? es que no sabe nadar muy bien",
+   "Y yo estoy embarazada de 4 meses, me puedo meter al rio lento?",
+   "a que hora dejan de funcionar los toboganes grandes el sabado 10 de octubre?",
+   "tienen lockers? cuanto cuestan?"
+  ],
+  "cliente": "el deposito de la llave me lo regresan?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "$100"
+  ],
+  "evidencia": "más $100 de depósito por la llave, que se devuelve al entregarla",
+  "respuesta_ideal": "Sí, los $100 de depósito se te devuelven al entregar la llave.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Locker chico / grande .................... $80 / $120 (más $100 de depósito por la llave, que se devuelve al entregarla)»."
+ },
+ {
+  "id": "i0094",
+  "negocio": "V1_n2",
+  "turnos_previos_del_cliente": [
+   "como funciona lo de la pulsera para pagar adentro?",
+   "y si me sobra saldo?",
+   "que hay para comer alla adentro?"
+  ],
+  "cliente": "cuanto cuesta una hamburguesa en el snack tiburon?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "6. Si te preguntan algo que no está en la información, dilo con honestidad y sugiere llamar a taquilla al 744 481 2290.",
+  "respuesta_ideal": "No tengo el precio de la hamburguesa; solo sé que un combo cuesta en promedio $180. Puedes llamar a taquilla al 744 481 2290.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Contamos con tres puntos de venta: Restaurante El Muelle (comida corrida y mariscos), Snack Tiburón (hot dogs, hamburguesas y papas) y Paletería La Ola. El precio promedio de un combo es de $180»."
+ },
+ {
+  "id": "i0157",
+  "negocio": "V1_n2",
+  "turnos_previos_del_cliente": [
+   "Hola! cuanto cuesta la entrada?",
+   "vamos el sabado 3 de octubre, somos 2 adultos y 2 niños, uno mide 1.10 y el otro 80 cm, cuanto pagamos en taquilla?",
+   "se pueden meter unas tortas para los niños?",
+   "y la papilla del bebe?"
+  ],
+  "cliente": "Se puede apartar un camastro con palapa desde antes?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "6. Si te preguntan algo que no está en la información, dilo con honestidad y sugiere llamar a taquilla al 744 481 2290.",
+  "respuesta_ideal": "No tengo información sobre apartar camastros; te sugiero llamar a taquilla al 744 481 2290. Lo que sí te puedo decir es que el camastro con palapa cuesta $350 por día.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Tenemos 14 toboganes, alberca de olas, un río lento de 400 metros, la zona infantil \"Pulpito\" para los más pequeños y área de camastros con palapas»."
+ },
+ {
+  "id": "i0178",
+  "negocio": "V1_n2",
+  "turnos_previos_del_cliente": [
+   "Buenas tardes, hay descuento para personas de la tercera edad?",
+   "y para estudiantes?",
+   "rentan toallas?",
+   "y los chalecos salvavidas hay de tamaño para bebe?"
+  ],
+  "cliente": "que tipo de bloqueador dejan usar?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "biodegradable"
+  ],
+  "evidencia": "Solo se permite bloqueador solar biodegradable.",
+  "respuesta_ideal": "Solo se permite bloqueador solar biodegradable.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Abrimos de miércoles a domingo de 10:00 a 18:00 hrs. Lunes y martes permanecemos cerrados, excepto en temporada vacacional (Semana Santa, julio-agosto y del 15 de diciembre al 6 de enero), cuando abrimos todos los días de 10:00 a 19:00 hrs. La taquilla cierra una hora antes que el parque y los toboganes grandes dejan de operar 30 minutos antes del cierre»."
+ },
+ {
+  "id": "i0190",
+  "negocio": "V1_n2",
+  "turnos_previos_del_cliente": [
+   "abren el lunes 3 de agosto?",
+   "y un lunes de octubre?",
+   "en vacaciones hasta que hora venden boletos?",
+   "El 2x1 de los miercoles sirve si compro en la pagina?"
+  ],
+  "cliente": "y comprando en linea hay algun descuento?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "10%"
+  ],
+  "evidencia": "Compra en línea en olaslocas.mx y obtén 10% de descuento en boletos de adulto y niño (no aplica en INAPAM).",
+  "respuesta_ideal": "Sí, comprando en olaslocas.mx tienes 10% de descuento en boletos de adulto y niño (no aplica en INAPAM).",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Compra en línea en olaslocas.mx y obtén 10% de descuento en boletos de adulto y niño (no aplica en INAPAM)»."
+ },
+ {
+  "id": "i0236",
+  "negocio": "V1_n2",
+  "turnos_previos_del_cliente": [
+   "Mi hijo mide 1.35, se puede subir al Kraken?",
+   "que tan honda es la alberca de olas? es que no sabe nadar muy bien",
+   "Y yo estoy embarazada de 4 meses, me puedo meter al rio lento?"
+  ],
+  "cliente": "a que hora dejan de funcionar los toboganes grandes el sabado 10 de octubre?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "17:30"
+  ],
+  "evidencia": "Abrimos de miércoles a domingo de 10:00 a 18:00 hrs. Lunes y martes permanecemos cerrados, excepto en temporada vacacional (Semana Santa, julio-agosto y del 15 de diciembre al 6 de enero), cuando abrimos todos los días de 10:00 a 19:00 hrs. La taquilla cierra una hora antes que el parque y los toboganes grandes dejan de operar 30 minutos antes del cierre.",
+  "respuesta_ideal": "El sábado el parque cierra a las 18:00 hrs y los toboganes grandes dejan de operar 30 minutos antes, o sea a las 17:30.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Abrimos de miércoles a domingo de 10:00 a 18:00 hrs. Lunes y martes permanecemos cerrados, excepto en temporada vacacional (Semana Santa, julio-agosto y del 15 de diciembre al 6 de enero), cuando abrimos todos los días de 10:00 a 19:00 hrs. La taquilla cierra una hora antes que el parque y los toboganes grandes dejan de operar 30 minutos antes del cierre»."
+ },
+ {
+  "id": "i0249",
+  "negocio": "V1_n2",
+  "turnos_previos_del_cliente": [
+   "como funciona lo de la pulsera para pagar adentro?",
+   "y si me sobra saldo?",
+   "que hay para comer alla adentro?",
+   "cuanto cuesta una hamburguesa en el snack tiburon?"
+  ],
+  "cliente": "Quiero hacer ahi el cumple de mi hija, serian como 25 niños, como le hago?",
+  "tipo": "instruccion",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "3. Grupos de 20 personas o más, escuelas, empresas y fiestas de cumpleaños: da el contacto de Ventas Grupales, Lic. Mariana Torres, WhatsApp 744 209 7781.",
+  "respuesta_ideal": "¡Qué padre! Para fiestas de cumpleaños comunícate con Ventas Grupales, Lic. Mariana Torres, al WhatsApp 744 209 7781.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Contamos con tres puntos de venta: Restaurante El Muelle (comida corrida y mariscos), Snack Tiburón (hot dogs, hamburguesas y papas) y Paletería La Ola. El precio promedio de un combo es de $180»."
+ },
+ {
+  "id": "i0300",
+  "negocio": "V1_n2",
+  "turnos_previos_del_cliente": [
+   "abren el lunes 3 de agosto?",
+   "y un lunes de octubre?"
+  ],
+  "cliente": "en vacaciones hasta que hora venden boletos?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "18:00"
+  ],
+  "evidencia": "cuando abrimos todos los días de 10:00 a 19:00 hrs. La taquilla cierra una hora antes que el parque",
+  "respuesta_ideal": "En temporada vacacional el parque cierra a las 19:00 hrs y la taquilla una hora antes, a las 18:00.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Abrimos de miércoles a domingo de 10:00 a 18:00 hrs. Lunes y martes permanecemos cerrados, excepto en temporada vacacional (Semana Santa, julio-agosto y del 15 de diciembre al 6 de enero), cuando abrimos todos los días de 10:00 a 19:00 hrs. La taquilla cierra una hora antes que el parque y los toboganes grandes dejan de operar 30 minutos antes del cierre»."
+ },
+ {
+  "id": "i0315",
+  "negocio": "V1_n2",
+  "turnos_previos_del_cliente": [
+   "abren el lunes 3 de agosto?"
+  ],
+  "cliente": "y un lunes de octubre?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "cerrado"
+  ],
+  "evidencia": "Lunes y martes permanecemos cerrados",
+  "respuesta_ideal": "No, fuera de temporada vacacional los lunes y martes el parque permanece cerrado.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Abrimos de miércoles a domingo de 10:00 a 18:00 hrs. Lunes y martes permanecemos cerrados, excepto en temporada vacacional (Semana Santa, julio-agosto y del 15 de diciembre al 6 de enero), cuando abrimos todos los días de 10:00 a 19:00 hrs. La taquilla cierra una hora antes que el parque y los toboganes grandes dejan de operar 30 minutos antes del cierre»."
+ },
+ {
+  "id": "i0317",
+  "negocio": "V1_n2",
+  "turnos_previos_del_cliente": [],
+  "cliente": "como funciona lo de la pulsera para pagar adentro?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "$200"
+  ],
+  "evidencia": "Adentro puedes pagar con la pulsera cashless, que se recarga en taquilla (recarga mínima $200).",
+  "respuesta_ideal": "Es una pulsera cashless con la que pagas dentro del parque; se recarga en taquilla con una recarga mínima de $200.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Adentro puedes pagar con la pulsera cashless, que se recarga en taquilla (recarga mínima $200)»."
+ },
+ {
+  "id": "i0406",
+  "negocio": "V1_n2",
+  "turnos_previos_del_cliente": [
+   "como funciona lo de la pulsera para pagar adentro?",
+   "y si me sobra saldo?"
+  ],
+  "cliente": "que hay para comer alla adentro?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "El Muelle",
+   "Snack Tiburón",
+   "La Ola"
+  ],
+  "evidencia": "Contamos con tres puntos de venta: Restaurante El Muelle (comida corrida y mariscos), Snack Tiburón (hot dogs, hamburguesas y papas) y Paletería La Ola.",
+  "respuesta_ideal": "Hay tres lugares: Restaurante El Muelle (comida corrida y mariscos), Snack Tiburón (hot dogs, hamburguesas y papas) y Paletería La Ola.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Adentro puedes pagar con la pulsera cashless, que se recarga en taquilla (recarga mínima $200)»."
+ },
+ {
+  "id": "i0437",
+  "negocio": "V1_n2",
+  "turnos_previos_del_cliente": [
+   "Hola! cuanto cuesta la entrada?",
+   "vamos el sabado 3 de octubre, somos 2 adultos y 2 niños, uno mide 1.10 y el otro 80 cm, cuanto pagamos en taquilla?",
+   "se pueden meter unas tortas para los niños?",
+   "y la papilla del bebe?",
+   "Se puede apartar un camastro con palapa desde antes?"
+  ],
+  "cliente": "cuanto sale el estacionamiento?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "$60"
+  ],
+  "evidencia": "Estacionamiento por día .................. $60 auto / $40 moto",
+  "respuesta_ideal": "El estacionamiento cuesta $60 por día para auto y $40 para moto.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Estacionamiento por día .................. $60 auto / $40 moto»."
+ },
+ {
+  "id": "i0443",
+  "negocio": "V1_n2",
+  "turnos_previos_del_cliente": [
+   "Mi hijo mide 1.35, se puede subir al Kraken?",
+   "que tan honda es la alberca de olas? es que no sabe nadar muy bien"
+  ],
+  "cliente": "Y yo estoy embarazada de 4 meses, me puedo meter al rio lento?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "6. Si te preguntan algo que no está en la información, dilo con honestidad y sugiere llamar a taquilla al 744 481 2290.",
+  "respuesta_ideal": "La información del parque solo dice que las embarazadas no pueden usar ningún tobogán; sobre el río lento no tengo el dato, te sugiero llamar a taquilla al 744 481 2290.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Tenemos 14 toboganes, alberca de olas, un río lento de 400 metros, la zona infantil \"Pulpito\" para los más pequeños y área de camastros con palapas»."
+ },
+ {
+  "id": "i0463",
+  "negocio": "V1_n2",
+  "turnos_previos_del_cliente": [
+   "Mi hijo mide 1.35, se puede subir al Kraken?",
+   "que tan honda es la alberca de olas? es que no sabe nadar muy bien",
+   "Y yo estoy embarazada de 4 meses, me puedo meter al rio lento?",
+   "a que hora dejan de funcionar los toboganes grandes el sabado 10 de octubre?"
+  ],
+  "cliente": "tienen lockers? cuanto cuestan?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "$80",
+   "$120"
+  ],
+  "evidencia": "Locker chico / grande .................... $80 / $120 (más $100 de depósito por la llave, que se devuelve al entregarla)",
+  "respuesta_ideal": "Sí, el locker chico cuesta $80 y el grande $120, más $100 de depósito por la llave.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Abrimos de miércoles a domingo de 10:00 a 18:00 hrs. Lunes y martes permanecemos cerrados, excepto en temporada vacacional (Semana Santa, julio-agosto y del 15 de diciembre al 6 de enero), cuando abrimos todos los días de 10:00 a 19:00 hrs. La taquilla cierra una hora antes que el parque y los toboganes grandes dejan de operar 30 minutos antes del cierre»."
+ },
+ {
+  "id": "i0469",
+  "negocio": "V1_n2",
+  "turnos_previos_del_cliente": [
+   "como funciona lo de la pulsera para pagar adentro?",
+   "y si me sobra saldo?"
+  ],
+  "cliente": "que hay para comer alla adentro?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "El Muelle",
+   "Snack Tiburón",
+   "La Ola"
+  ],
+  "evidencia": "Contamos con tres puntos de venta: Restaurante El Muelle (comida corrida y mariscos), Snack Tiburón (hot dogs, hamburguesas y papas) y Paletería La Ola.",
+  "respuesta_ideal": "Hay tres lugares: Restaurante El Muelle (comida corrida y mariscos), Snack Tiburón (hot dogs, hamburguesas y papas) y Paletería La Ola.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «El saldo que no uses se te reembolsa el mismo día en taquilla»."
+ },
+ {
+  "id": "i0012",
+  "negocio": "V3_n2",
+  "turnos_previos_del_cliente": [
+   "tengo una compu que se infectó con virus. ¿Hacen limpieza?"
+  ],
+  "cliente": "¿Cuanto tarda?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "Eso depende de qué tan infectada esté. Para estimar el tiempo exacto, el técnico necesita verla en la tienda. Hay diagnóstico gratis.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Limpieza de virus: Q 400»."
+ },
+ {
+  "id": "i0067",
+  "negocio": "V3_n2",
+  "turnos_previos_del_cliente": [],
+  "cliente": "¿Cuales son los horarios del sabado?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "Sábado: 9:00 - 17:00"
+  ],
+  "evidencia": "Sábado: 9:00 - 17:00",
+  "respuesta_ideal": "El sábado abrimos de 9:00 a.m. a 5:00 p.m.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Sábado: 09:00 - 14:00»."
+ },
+ {
+  "id": "i0072",
+  "negocio": "V3_n2",
+  "turnos_previos_del_cliente": [
+   "Hola, ¿me devuelven un producto si lo devolvi abierto?"
+  ],
+  "cliente": "¿Y si tiene un defecto?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "defecto comprobable",
+   "cambios"
+  ],
+  "evidencia": "Cambios de producto: permitidos dentro de 7 días si hay defecto comprobable.",
+  "respuesta_ideal": "Si tiene un defecto comprobable, sí se puede hacer cambio dentro de 7 días. Tendrías que traerlo con la factura.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Cambios de producto: permitidos dentro de 7 días si hay defecto comprobable»."
+ },
+ {
+  "id": "i0082",
+  "negocio": "V3_n2",
+  "turnos_previos_del_cliente": [
+   "Hola, cuanto cuesta la laptop Dell Inspiron 14"
+  ],
+  "cliente": "¿Viene con Windows?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No te puedo confirmar los detalles de fábrica exactos. Te recomiendo que llames al +502 2385 2547 o vengas a la tienda para que veas la especificación completa.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Windows 11 Pro (USB) - Q 899»."
+ },
+ {
+  "id": "i0150",
+  "negocio": "V3_n2",
+  "turnos_previos_del_cliente": [
+   "Hola, cuanto cuesta la laptop Dell Inspiron 14",
+   "¿Viene con Windows?",
+   "¿Se puede pagar en cuotas sin interés?"
+  ],
+  "cliente": "Listo, voy a llamar entonces para hacer el pedido",
+  "tipo": "charla",
+  "accion_esperada": "charla",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "Perfecto, al +502 2385 2547 te atienden rápido. ¡Que disfrutes tu nueva laptop!",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Se ofrecen planes de financiamiento sin interés hasta 12 meses (con tarjeta de crédito participante)»."
+ },
+ {
+  "id": "i0216",
+  "negocio": "V3_n2",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Hola, cuanto cuesta la laptop Dell Inspiron 14",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "Q 7,899"
+  ],
+  "evidencia": "Dell Inspiron 14 (Ryzen 5, 16GB RAM) - Q 7,899",
+  "respuesta_ideal": "La Dell Inspiron 14 con Ryzen 5 y 16GB de RAM cuesta Q 7,899.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Dell Inspiron 14 (Ryzen 5, 16GB RAM) - Q 7,899»."
+ },
+ {
+  "id": "i0222",
+  "negocio": "V3_n2",
+  "turnos_previos_del_cliente": [],
+  "cliente": "tengo una compu que se infectó con virus. ¿Hacen limpieza?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "Limpieza de virus: Q 400"
+  ],
+  "evidencia": "Limpieza de virus: Q 400",
+  "respuesta_ideal": "Sí, hacemos servicio de limpieza de virus por Q 400. Puedes traer tu computadora a la tienda o llamar al +502 2385 2547 para más detalles.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Limpieza de virus: Q 400»."
+ },
+ {
+  "id": "i0271",
+  "negocio": "V3_n2",
+  "turnos_previos_del_cliente": [
+   "Hola, ¿me devuelven un producto si lo devolvi abierto?"
+  ],
+  "cliente": "¿Y si tiene un defecto?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "defecto comprobable",
+   "cambios"
+  ],
+  "evidencia": "Cambios de producto: permitidos dentro de 7 días si hay defecto comprobable.",
+  "respuesta_ideal": "Si tiene un defecto comprobable, sí se puede hacer cambio dentro de 7 días. Tendrías que traerlo con la factura.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «La mano de obra tiene garantía de 1 año contra defectos de instalación»."
+ },
+ {
+  "id": "i0276",
+  "negocio": "V3_n2",
+  "turnos_previos_del_cliente": [
+   "tengo una compu que se infectó con virus. ¿Hacen limpieza?",
+   "¿Cuanto tarda?"
+  ],
+  "cliente": "Dale, mañana la llevo.",
+  "tipo": "charla",
+  "accion_esperada": "charla",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "Perfecto, te esperamos. Recuerda que abrimos a las 8 de la mañana.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Cerrajería Sevilla & Seguridad lleva 22 años en el sector»."
+ },
+ {
+  "id": "i0301",
+  "negocio": "V3_n2",
+  "turnos_previos_del_cliente": [],
+  "cliente": "¿puedo hacer un pedido por internet?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "derivar",
+  "claves": [
+   "correo",
+   "atencionalcliente@compuworld.com.gt"
+  ],
+  "evidencia": null,
+  "respuesta_ideal": "Buena pregunta. Para eso es mejor que contactes a atencionalcliente@compuworld.com.gt o llames al +502 2385 2547 para consultarles sobre opciones de envío y compra en línea.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Se recomienda llamar o enviar un WhatsApp antes de venir a comprar un modelo específico»."
+ },
+ {
+  "id": "i0330",
+  "negocio": "V3_n2",
+  "turnos_previos_del_cliente": [
+   "¿Cuales son los horarios del sabado?",
+   "¿y el domingo?"
+  ],
+  "cliente": "¿Si compro un monitor y cable HDMI, hay combo?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "gratis el cable"
+  ],
+  "evidencia": "Compra de monitor + cable HDMI: gratis el cable",
+  "respuesta_ideal": "Sí, si compras monitor + cable HDMI, te regalamos el cable. Es un combo que ofrecemos.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Compra de monitor + cable HDMI: gratis el cable»."
+ },
+ {
+  "id": "i0347",
+  "negocio": "V3_n2",
+  "turnos_previos_del_cliente": [
+   "Hola, cuanto cuesta la laptop Dell Inspiron 14",
+   "¿Viene con Windows?",
+   "¿Se puede pagar en cuotas sin interés?"
+  ],
+  "cliente": "Listo, voy a llamar entonces para hacer el pedido",
+  "tipo": "charla",
+  "accion_esperada": "charla",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "Perfecto, al +502 2385 2547 te atienden rápido. ¡Que disfrutes tu nueva laptop!",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Se recomienda llamar o enviar un WhatsApp antes de venir a comprar un modelo específico»."
+ },
+ {
+  "id": "i0421",
+  "negocio": "V3_n2",
+  "turnos_previos_del_cliente": [
+   "Hola, cuanto cuesta la laptop Dell Inspiron 14",
+   "¿Viene con Windows?"
+  ],
+  "cliente": "¿Se puede pagar en cuotas sin interés?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "planes de financiamiento sin interés hasta 12 meses",
+   "tarjeta de crédito participante"
+  ],
+  "evidencia": "Se ofrecen planes de financiamiento sin interés hasta 12 meses (con tarjeta de crédito participante).",
+  "respuesta_ideal": "Sí, se ofrecen planes sin interés hasta 12 meses con tarjeta de crédito participante. Las tarjetas que aplican puedes consultarlas cuando llames o vengas.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Se ofrecen planes de financiamiento sin interés hasta 12 meses (con tarjeta de crédito participante)»."
+ },
+ {
+  "id": "i0432",
+  "negocio": "V3_n2",
+  "turnos_previos_del_cliente": [
+   "¿Cuales son los horarios del sabado?"
+  ],
+  "cliente": "¿y el domingo?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "Domingo: 10:00 - 15:00"
+  ],
+  "evidencia": "Domingo: 10:00 - 15:00",
+  "respuesta_ideal": "El domingo atendemos de 10:00 a.m. a 3:00 p.m.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Se aceptan efectivo, tarjeta de crédito, débito y cheques»."
+ },
+ {
+  "id": "i0000",
+  "negocio": "V5_n2",
+  "turnos_previos_del_cliente": [],
+  "cliente": "¿cuanto sale cortar las uñas no mas?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "$5.000"
+  ],
+  "evidencia": "Corte de uñas: $5.000",
+  "respuesta_ideal": "El corte de uñas solo cuesta $5.000.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «No se realizan devoluciones de dinero una vez iniciado el servicio»."
+ },
+ {
+  "id": "i0011",
+  "negocio": "V5_n2",
+  "turnos_previos_del_cliente": [
+   "¿puedo pagar con cheque?",
+   "¿tienen sucursal en Providencia?",
+   "¿cuanto es el corte para un perro grande, tipo un labrador?",
+   "y si le pongo pañoleta despues, ¿cuanto mas seria?"
+  ],
+  "cliente": "¿ustedes hacen entrenamiento de obediencia tambien?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No, no ofrecemos entrenamiento de obediencia, solo servicios de estética canina y felina.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Sí, atendemos gatos solo para baño y corte de uñas, no hacemos corte de pelo felino»."
+ },
+ {
+  "id": "i0095",
+  "negocio": "V5_n2",
+  "turnos_previos_del_cliente": [
+   "Hola, ¿el sábado abren todo el día?",
+   "¿y en navidad atienden?",
+   "mi perro tiene sarna, ¿lo pueden bañar igual?",
+   "ok, ¿el paquete de 4 baños aplica para perros grandes?",
+   "¿tienen algun servicio de corte de garras para conejos?"
+  ],
+  "cliente": "ah ok, ¿y el corte de uñas para gato cuesta igual que el de perro?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo el valor específico para gatos, te recomiendo confirmarlo por WhatsApp.",
+  "respuesta_a_calificar": "Ah ok. No lo tengo seguro. Lo más cercano que dice el texto es: «Sí, atendemos gatos solo para baño y corte de uñas, no hacemos corte de pelo felino»."
+ },
+ {
+  "id": "i0119",
+  "negocio": "V5_n2",
+  "turnos_previos_del_cliente": [
+   "¿puedo pagar con cheque?",
+   "¿tienen sucursal en Providencia?",
+   "¿cuanto es el corte para un perro grande, tipo un labrador?",
+   "y si le pongo pañoleta despues, ¿cuanto mas seria?",
+   "¿ustedes hacen entrenamiento de obediencia tambien?"
+  ],
+  "cliente": "ya, muchas gracias, hasta luego",
+  "tipo": "charla",
+  "accion_esperada": "charla",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "¡Hasta luego! Te esperamos, agenda por WhatsApp cuando gustes.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Si la empresa cancela el proceso ya iniciado, no se devuelve el adelanto»."
+ },
+ {
+  "id": "i0125",
+  "negocio": "V5_n2",
+  "turnos_previos_del_cliente": [
+   "Hola, ¿el sábado abren todo el día?",
+   "¿y en navidad atienden?"
+  ],
+  "cliente": "mi perro tiene sarna, ¿lo pueden bañar igual?",
+  "tipo": "instruccion",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "Si preguntan por temas de salud del animal (enfermedades, tratamientos veterinarios, vacunas específicas), no des recomendaciones médicas: deriva a un veterinario.",
+  "respuesta_ideal": "Para ese tema de salud lo mejor es que lo consultes primero con un veterinario antes de traerlo a bañar.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «El perro debe tener carnet de vacunas al día (mínimo antirrábica y óctuple)»."
+ },
+ {
+  "id": "i0155",
+  "negocio": "V5_n2",
+  "turnos_previos_del_cliente": [
+   "¿cuanto sale cortar las uñas no mas?",
+   "mi perra esta en celo, ¿la pueden atender?"
+  ],
+  "cliente": "que pena, ¿y despues que se le pase se puede agendar?",
+  "tipo": "instruccion",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "Cuando el cliente quiera agendar o confirmar una cita puntual, no confirmes tú la hora: indícale que debe escribir al WhatsApp +56 9 8877 6655 para agendar.",
+  "respuesta_ideal": "Claro, cuando ya haya pasado el celo puede escribirnos al WhatsApp +56 9 8877 6655 para agendar la hora.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Perras en celo no se atienden por seguridad de los demás animales en el local»."
+ },
+ {
+  "id": "i0173",
+  "negocio": "V5_n2",
+  "turnos_previos_del_cliente": [
+   "Hola, ¿cuánto cuesta el baño para un perro chico?",
+   "¿y si le quiero hacer corte de pelo tambien?"
+  ],
+  "cliente": "¿atienden los domingos?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "Domingo: cerrado"
+  ],
+  "evidencia": "Domingo: cerrado",
+  "respuesta_ideal": "No, los domingos permanecemos cerrados.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Sí, atendemos gatos solo para baño y corte de uñas, no hacemos corte de pelo felino»."
+ },
+ {
+  "id": "i0180",
+  "negocio": "V5_n2",
+  "turnos_previos_del_cliente": [
+   "¿puedo pagar con cheque?",
+   "¿tienen sucursal en Providencia?",
+   "¿cuanto es el corte para un perro grande, tipo un labrador?",
+   "y si le pongo pañoleta despues, ¿cuanto mas seria?",
+   "¿ustedes hacen entrenamiento de obediencia tambien?"
+  ],
+  "cliente": "ya, muchas gracias, hasta luego",
+  "tipo": "charla",
+  "accion_esperada": "charla",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "¡Hasta luego! Te esperamos, agenda por WhatsApp cuando gustes.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Raza pequeña (hasta 10 kg): $12.000»."
+ },
+ {
+  "id": "i0199",
+  "negocio": "V5_n2",
+  "turnos_previos_del_cliente": [
+   "Hola, ¿cuánto cuesta el baño para un perro chico?",
+   "¿y si le quiero hacer corte de pelo tambien?"
+  ],
+  "cliente": "¿atienden los domingos?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "Domingo: cerrado"
+  ],
+  "evidencia": "Domingo: cerrado",
+  "respuesta_ideal": "No, los domingos permanecemos cerrados.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «¿Atienden gente de otras ciudades?»."
+ },
+ {
+  "id": "i0280",
+  "negocio": "V5_n2",
+  "turnos_previos_del_cliente": [
+   "¿puedo pagar con cheque?",
+   "¿tienen sucursal en Providencia?",
+   "¿cuanto es el corte para un perro grande, tipo un labrador?"
+  ],
+  "cliente": "y si le pongo pañoleta despues, ¿cuanto mas seria?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "$32.000",
+   "$2.000"
+  ],
+  "evidencia": "Perfume y accesorio (pañoleta o moño): $2.000",
+  "respuesta_ideal": "El accesorio, como la pañoleta, cuesta $2.000 adicionales, quedando en $34.000 en total con el corte grande.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Sí, atendemos gatos solo para baño y corte de uñas, no hacemos corte de pelo felino»."
+ },
+ {
+  "id": "i0311",
+  "negocio": "V5_n2",
+  "turnos_previos_del_cliente": [
+   "¿puedo pagar con cheque?",
+   "¿tienen sucursal en Providencia?",
+   "¿cuanto es el corte para un perro grande, tipo un labrador?",
+   "y si le pongo pañoleta despues, ¿cuanto mas seria?"
+  ],
+  "cliente": "¿ustedes hacen entrenamiento de obediencia tambien?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No, no ofrecemos entrenamiento de obediencia, solo servicios de estética canina y felina.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Currículum actualizado (lo pueden hacer en la oficina si no tienen uno)»."
+ },
+ {
+  "id": "i0322",
+  "negocio": "V5_n2",
+  "turnos_previos_del_cliente": [
+   "¿puedo pagar con cheque?"
+  ],
+  "cliente": "¿tienen sucursal en Providencia?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo información de otra sucursal, solo contamos con el local en Ñuñoa.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «El perro debe tener carnet de vacunas al día (mínimo antirrábica y óctuple)»."
+ },
+ {
+  "id": "i0352",
+  "negocio": "V5_n2",
+  "turnos_previos_del_cliente": [
+   "Hola, ¿cuánto cuesta el baño para un perro chico?"
+  ],
+  "cliente": "¿y si le quiero hacer corte de pelo tambien?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "$18.000"
+  ],
+  "evidencia": "Corte de pelo (incluye baño): Raza pequeña: $18.000",
+  "respuesta_ideal": "El corte de pelo para raza pequeña, que ya incluye el baño, cuesta $18.000.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Sí, atendemos gatos solo para baño y corte de uñas, no hacemos corte de pelo felino»."
+ },
+ {
+  "id": "i0381",
+  "negocio": "V5_n2",
+  "turnos_previos_del_cliente": [
+   "Buenas, ¿hacen algo para gatos?",
+   "¿y el baño de gato cuesta lo mismo que el de perro?"
+  ],
+  "cliente": "mi perro tiene como 13 kilos, ¿es mediano o grande?",
+  "tipo": "instruccion",
+  "accion_esperada": "responder",
+  "claves": [
+   "Raza mediana (10-25 kg)"
+  ],
+  "evidencia": "Baño y secado - Raza mediana (10-25 kg): $16.000",
+  "respuesta_ideal": "Con 13 kilos entra en la categoría de raza mediana, entre 10 y 25 kilos.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Aplica solo para perros de raza pequeña o mediana»."
+ },
+ {
+  "id": "i0417",
+  "negocio": "V5_n2",
+  "turnos_previos_del_cliente": [
+   "¿cuanto sale cortar las uñas no mas?"
+  ],
+  "cliente": "mi perra esta en celo, ¿la pueden atender?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "Perras en celo no se atienden"
+  ],
+  "evidencia": "Perras en celo no se atienden por seguridad de los demás animales en el local.",
+  "respuesta_ideal": "No, por seguridad de los demás animales no atendemos perras en celo.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Perras en celo no se atienden por seguridad de los demás animales en el local»."
+ },
+ {
+  "id": "i0435",
+  "negocio": "V5_n2",
+  "turnos_previos_del_cliente": [
+   "Buenas, ¿hacen algo para gatos?"
+  ],
+  "cliente": "¿y el baño de gato cuesta lo mismo que el de perro?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo el valor específico del baño para gatos, te recomiendo consultarlo directo por WhatsApp.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Sí, atendemos gatos solo para baño y corte de uñas, no hacemos corte de pelo felino»."
+ },
+ {
+  "id": "i0459",
+  "negocio": "V5_n2",
+  "turnos_previos_del_cliente": [
+   "Buenas, ¿hacen algo para gatos?",
+   "¿y el baño de gato cuesta lo mismo que el de perro?",
+   "mi perro tiene como 13 kilos, ¿es mediano o grande?"
+  ],
+  "cliente": "perfecto, ¿y ese vale con el desenredado incluido?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "$16.000",
+   "recargo de $6.000"
+  ],
+  "evidencia": "Desenredado especial (pelo muy enredado): recargo de $6.000 sobre el valor del servicio",
+  "respuesta_ideal": "No, el baño mediano son $16.000 y el desenredado especial tiene un recargo aparte de $6.000, quedando en $22.000 en total.",
+  "respuesta_a_calificar": "Perfecto. No lo tengo seguro. Lo más cercano que dice el texto es: «Desenredado especial (pelo muy enredado): recargo de $6.000 sobre el valor del servicio»."
+ }
+]
