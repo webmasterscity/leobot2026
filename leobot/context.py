@@ -12,8 +12,10 @@ statistics, both counted in question–answer pairs written by people (MFAQ):
 
 The unit is given only when its calibration cell, counted on held-out pages,
 keeps the error among answered questions within the preregistered bound.
-Otherwise the engine says it does not know.  Nothing is cut or generated: the
-answer is the document's own text.
+Otherwise it is quoted with a warning when its counted usefulness reaches the
+operating point (G-60: naive Bayes over seven features, isotonic calibration),
+or the engine says it does not know.  Nothing is cut or generated: the answer
+is the document's own text.
 """
 from __future__ import annotations
 
@@ -39,6 +41,9 @@ LEMMA_RULE_SUPPORT = 20
 LEMMA_RULE_SHARE = 0.8
 PI_BINS = (0.2, 0.4, 0.6, 0.8)
 MARGIN_BINS = (0.5, 1.0, 2.0, 4.0)
+COVER_BINS = (0.25, 0.5, 0.75, 0.999)
+LENGTH_BINS = (6, 13, 26)
+CITE_FROM = 0.7
 UNKNOWN_TEXT = 'No lo sé: no encontré esa información en el texto que tengo.'
 CLOSEST_TEXT = 'No lo tengo seguro. Lo más cercano que dice el texto es: «{}».'
 ECHO_WORDS = 4
@@ -218,7 +223,7 @@ class ContextMixin:
                     section, question = body, ''
                 # The heading is also a unit.
                 units.append({'text': body, 'heading': '', 'kind': 'question' if line.endswith('?') else 'heading',
-                              'source': source, 'terms': sorted(set(self.context_terms(body))), 'classes': []})
+                              'source': source, 'terms': sorted(set(self.context_terms(body))), 'classes': {}})
                 continue
             for sentence in _SENTENCE_END.split(line):
                 if sentence.strip():
@@ -226,12 +231,16 @@ class ContextMixin:
         self._layout_title = title
         return units
 
-    def _classes(self, text: str) -> list[str]:
-        """G-59: the learned word classes (AnCora tagger) present in a unit."""
+    def _classes(self, text: str) -> dict:
+        """G-59: the learned word classes (AnCora tagger) in a unit, with how
+        many words carry each (G-60)."""
         if not self.syntax_model.get('sentences'):
-            return []
+            return {}
         words = self.split_words(text)
-        return sorted(set(self.tag_words(words) or [])) if words else []
+        counts: dict = {}
+        for tag in (self.tag_words(words) or []) if words else []:
+            counts[tag] = counts.get(tag, 0) + 1
+        return dict(sorted(counts.items()))
 
     def _asked_class(self, question: str):
         """G-59: the class of answer this kind of question asks for, learned
@@ -263,8 +272,8 @@ class ContextMixin:
         if getattr(self, '_context_index', None) is None:
             postings: dict = {}
             for i, unit in enumerate(self.context_units):
-                if unit['kind'] == 'question' or (unit['kind'] == 'heading' and not getattr(self, 'bare_headings', False)):
-                    continue  # a question or a heading heads its answer; it is never the answer (G-59)
+                if unit['kind'] == 'question':
+                    continue  # a question heads its answer; it is never the answer (G-57r)
                 for term in unit['terms']:
                     postings.setdefault(term, []).append(i)
             self._context_index = postings
@@ -320,10 +329,54 @@ class ContextMixin:
         top_score, top = order[0]
         explained = how.get(top, {})
         runner = order[1][0] if len(order) > 1 else base
-        unaddressed = max((pi for q, pi in how[None].items() if q not in explained), default=0.0)
+        asked_for = how.get(None, {})
+        unaddressed = max((pi for q, pi in asked_for.items() if q not in explained), default=0.0)
         margin = top_score - runner
-        return {'unit': top, 'score': top_score, 'margin': margin, 'unaddressed': unaddressed,
-                'cell': cell_key(unaddressed, margin), 'explained': explained}
+        mass = sum(asked_for.values())
+        covered = sum(pi for q, pi in asked_for.items() if q in explained) / mass if mass else 0.0
+        ranked = {'unit': top, 'score': top_score, 'margin': margin, 'unaddressed': unaddressed,
+                  'cell': cell_key(unaddressed, margin), 'explained': explained, 'covered': covered,
+                  'asked': asked}
+        ranked['features'] = self._features(ranked, question)
+        ranked['useful'] = self._usefulness(ranked['features'])
+        return ranked
+
+    def _features(self, ranked: dict, question: str) -> dict:
+        """G-60: what is known about a candidate answer, all from layout or
+        learned: the calibration cell's two features, whether the question
+        carries a learned interrogative or asks yes or no, how often the unit
+        holds the class of answer asked for, how much of the question it
+        explains, its kind of layout unit and its length."""
+        unit = self.context_units[ranked['unit']] if ranked['unit'] is not None else None
+        asking = {_plain(w) for w in self.syntax_model.get('interrogatives', ())}
+        words = [_plain(w) for w in self.split_words(question) if w[:1].isalnum()] if question else []
+        asked = ranked.get('asked')
+        return {'u': str(_bin(ranked['unaddressed'], PI_BINS)), 'm': str(_bin(ranked['margin'], MARGIN_BINS)),
+                'form': 'wh' if any(w in asking for w in words) else 'sn',
+                'cls': 'na' if asked is None or unit is None else
+                f"{asked[0]}:{min(unit.get('classes', {}).get(asked[0], 0), 2)}",
+                'cov': str(_bin(ranked['covered'], COVER_BINS)),
+                'kind': unit['kind'] if unit else 'none',
+                'len': str(_bin(len(unit['text'].split()), LENGTH_BINS)) if unit else '0'}
+
+    def _usefulness(self, features: dict):
+        """G-60: the counted chance that this candidate is useful: naive Bayes
+        over the counted features, turned into a rate by the isotonic table
+        counted on cross-fitted scores.  None without a counted model."""
+        model = self.context_model.get('confidence')
+        if not model or not getattr(self, 'confidence_features', True):
+            return None
+        n0, n1 = model['prior']
+        score = math.log((n1 + 1) / (n0 + 1))
+        for name, counts in model['counts'].items():
+            c0, c1 = counts.get(features.get(name), (0, 0))
+            k = model['values'][name] + 1
+            score += math.log((c1 + 1) / (n1 + k)) - math.log((c0 + 1) / (n0 + k))
+        rate = model['calibration'][0][1]
+        for low, block_rate, _ in model['calibration']:
+            if score >= low:
+                rate = block_rate
+        return rate
 
     def _admitted(self, ranked: dict | None) -> bool:
         if ranked is None:
@@ -337,10 +390,13 @@ class ContextMixin:
         answer, the closest text with a warning, or not knowing."""
         if self._admitted(ranked):
             return 'answered'
-        if ranked is not None and getattr(self, 'closest', True) and \
-                ranked['cell'] in set(self.context_model.get('closest', ())):
-            return 'closest'
-        return 'unknown'
+        if ranked is None or not getattr(self, 'closest', True):
+            return 'unknown'
+        if ranked.get('useful') is not None:
+            # G-60: quoted only where it is counted useful often enough.
+            cite_from = self.context_model['confidence'].get('cite_from', CITE_FROM)
+            return 'closest' if ranked['useful'] >= cite_from else 'unknown'
+        return 'closest' if ranked['cell'] in set(self.context_model.get('closest', ())) else 'unknown'
 
     def _shown(self, ranked: dict) -> str:
         return self.context_units[ranked['unit']]['text']
@@ -366,6 +422,14 @@ class ContextMixin:
         postings = self._index()
         return not any(t in postings for t in self.context_terms(text))
 
+    def _question_part(self, question: str) -> tuple[str, str]:
+        """A greeting that opens a question is set apart from it."""
+        text = str(question).strip()
+        cut = text.find('¿')
+        if cut > 0 and self._phatic(text[:cut]):
+            return text[:cut].strip(' ,.;:'), text[cut:]
+        return '', text
+
     def answer(self, question: str, history=None) -> dict:
         """Answer one turn of a person from the loaded text: plainly when the
         counted reliability allows it, with the closest text and a warning
@@ -375,11 +439,7 @@ class ContextMixin:
         raised misleading citations and was retired).  Nothing of a person is
         kept by the bot.  ``text`` is the only thing to say to the person;
         ``candidate`` is for the integrator and is never shown to a customer."""
-        text = str(question).strip()
-        opening = ''
-        cut = text.find('¿')
-        if cut > 0 and self._phatic(text[:cut]):
-            opening, text = text[:cut].strip(' ,.;:'), text[cut:]
+        opening, text = self._question_part(question)
         if not text or self._phatic(text):
             said = (opening or text).strip(' ,.;:')
             return {'text': (said[:1].upper() + said[1:] + '.') if said else '', 'status': 'phatic',
@@ -390,6 +450,8 @@ class ContextMixin:
         table = self.context_model.get('closest_cells' if level == 'closest' else 'cells', {})
         cells = table.get(ranked['cell']) if ranked else None
         precision = round(cells[1] / cells[0], 4) if cells and cells[0] else None
+        if ranked is not None and ranked.get('useful') is not None and level != 'answered':
+            precision = round(ranked['useful'], 4)
         if level == 'unknown':
             # Not asserted: the best unit and its counted precision go to the
             # caller apart from the reply, so an integrator can decide.

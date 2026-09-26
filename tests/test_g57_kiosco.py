@@ -155,6 +155,38 @@ class GradedHonestyTests(unittest.TestCase):
         self.assertEqual(self.bot.answer('Muchas gracias')['text'], 'Muchas gracias.')
 
 
+class CountedUsefulnessTests(unittest.TestCase):
+    """G-60: the quote is shown only where its counted usefulness reaches the operating point."""
+
+    def setUp(self):
+        self.bot = Bot()
+        counts = {'kind': {'item': [2, 18], 'row': [10, 10]}, 'u': {}, 'm': {}}
+        self.bot.context_model = {'delta': {'doble': 0.8, 'sencilla': 0.8, 'noche': 0.5, 'plan': 0.8},
+                                  'rare_delta': 0.6, 'bridge': {}, 'admitted': [], 'cells': {},
+                                  'closest': all_cells(), 'closest_cells': {},
+                                  'confidence': {'prior': [40, 40], 'counts': counts,
+                                                 'values': {'kind': 2, 'u': 5, 'm': 5},
+                                                 'calibration': [[-99.0, 0.2, 30], [0.5, 0.9, 30]],
+                                                 'cite_from': 0.7}}
+        self.bot.load_context(TEXT)
+
+    def test_features_come_from_layout_and_counts(self):
+        ranked = self.bot._rank(self.bot.context_terms('¿Cuánto cuesta la doble?'), '¿Cuánto cuesta la doble?')
+        self.assertEqual(ranked['features']['kind'], 'item')
+        self.assertEqual(set(ranked['features']), {'u', 'm', 'form', 'cls', 'cov', 'kind', 'len'})
+        self.assertEqual(ranked['useful'], 0.9)
+
+    def test_quotes_only_what_is_counted_useful_enough(self):
+        reply = self.bot.answer('¿Cuánto cuesta la doble?')
+        self.assertEqual(reply['status'], 'closest')
+        self.assertEqual(reply['confidence'], 0.9)
+        self.assertEqual(self.bot.answer('¿Cuánto vale el plan básico?')['status'], 'unknown')
+
+    def test_without_the_counted_features_the_cells_decide(self):
+        self.bot.confidence_features = False
+        self.assertEqual(self.bot.answer('¿Cuánto vale el plan básico?')['status'], 'closest')
+
+
 class PrivacyTests(unittest.TestCase):
     def test_what_one_client_says_is_not_kept_for_the_next(self):
         bot = Bot()
