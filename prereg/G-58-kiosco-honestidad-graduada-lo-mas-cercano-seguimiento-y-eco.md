@@ -1,0 +1,95 @@
+# G-58 — el kiosco con honestidad graduada: responder, citar lo más cercano avisando de la duda, o decir que no se sabe
+
+Fecha: 2026-09-26. Preregistro previo al código. Base: `freeze-G-57r` (árbol `15cfba45`). Prioridad del usuario en `MISION.md` («Prioridad actual»). Guía:
+- las ideas de la sesión coordinadora tras medir `freeze-G-57` en el examen privado del usuario (solo cifras): un modo «cita» y elegir el punto de operación según la curva;
+- el plan 2 del investigador, en la parte de preguntas completadas con el turno anterior y estado por cliente.
+
+## Fallo medido
+
+**G-57 (juez, banco congelado de 24 negocios):** con silencio calibrado al 2 % no se admite ninguna celda, y calla siempre: 0/276 útiles. Contestando siempre acierta 140/276, pero contesta mal el 59 % de lo que dice y no calla ninguna de las 166 sin respuesta. En el examen privado, lo mismo: 0/54 tal cual.
+
+**Rasgos probados en el banco de G-57, ya gastado (557 respuestas con veredicto del juez):**
+
+| Rasgo | Precisión |
+|---|---|
+| Ventaja ≥ 8 sobre la segunda unidad | 84 % (19 casos) |
+| Ventaja ≥ 4 | 67 % |
+| Otros (δ sin explicar, cobertura, palabras de δ alto) | por debajo |
+
+**Ningún rasgo acerca al 98 %:** la búsqueda por palabras no sabe con certeza cuándo acertó. Pero la unidad más cercana sí es útil muchas veces:
+- en las celdas donde el juez la da por correcta o incompleta en al menos la mitad de los casos, sirve en el 74 % (69 de 93);
+- solo muestra algo en 18 de las 166 preguntas sin respuesta.
+
+**Otros dos defectos:**
+- El eco de G-57 devuelve cualquier turno sin pregunta y sin palabras del documento, aunque lleve datos personales («Me llamo Ana y mi tarjeta es…» → lo repite).
+- El seguimiento de G-57 nunca actuó, porque solo aceptaba celdas admitidas y no había ninguna.
+
+## Cambio (5.8)
+
+Todo en `leobot/context.py`. Es una capacidad general de autoconocimiento: decir con qué seguridad se sabe algo y no afirmar más de lo que se sabe.
+
+**1. Tres niveles de respuesta** (interruptor `closest`):
+- `answered`, respuesta plana: solo en celdas admitidas con la regla de G-57 (Clopper–Pearson 95 %, error acumulado ≤ 2 %).
+- `closest`, lo más cercano avisando de la duda: en las celdas donde lo más cercano es útil al menos la mitad de las veces (correcta o incompleta según el juez), con al menos 5 casos. El texto es «No lo tengo seguro. Lo más cercano que dice el texto es: «…».» Solo se cita texto del documento. La frase de aviso es voz del motor, como «No lo sé»: no depende del negocio ni de la pregunta.
+- `unknown`: «No lo sé…» en el resto. La candidata va aparte, como en G-57.
+
+La tabla por celda se cuenta en el banco de G-57, ya gastado: 629 turnos redactados por modelos de lenguaje y calificados por el juez. Se declara, y solo se guardan cuentas por celda.
+
+**2. Seguimiento** (interruptor `follow_up`, reintroducido con otro disparo). Si la pregunta sola queda en `unknown` y el historial trae un turno anterior del cliente que pregunta, se busca de nuevo con las palabras de los dos. Se usa si la celda resultante es `closest` o `answered`. El seguimiento de G-57 se retiró por no actuar nunca; este puede actuar.
+
+**3. Eco solo de saludos cortos** (interruptor `short_echo`). Un turno sin pregunta y sin palabras del documento se devuelve solo si tiene como mucho 4 palabras y ninguna cifra. Si no, se trata como pregunta: nunca se repiten datos de la persona.
+
+**Qué se elimina si funciona:** nada. El silencio calibrado de G-57 queda como el nivel `answered`.
+
+## Medida
+
+Congelado `freeze-G-58`; semilla de su huella.
+
+**A. Banco congelado nuevo.**
+- 6 redactores nuevos (herramienta Agent con `isolation: "worktree"`, nunca *fork*), de 4 modelos (Opus, Sonnet 5, Haiku 4.5, Fable 5.1), después del congelado.
+- 24 negocios de 24 sectores distintos de los de desarrollo y de G-57, de varios países.
+- El mismo encargo neutral (`results_v3/kiosco/encargo_redactor.md`).
+- En git antes de ejecutar.
+
+**B. Juez ciego** (jueces nuevos, Opus). Califica G-58 y los controles que cambian respuestas, mezclados y sin decir qué sistema contestó:
+- respuesta plana: `correcta`, `incompleta`, `equivocada`, `inventada`;
+- cita avisada:
+  - `util`: el texto citado responde lo pedido o su parte principal;
+  - `honesta`: no lo responde, pero el aviso deja claro que no es el dato y nada engaña;
+  - `enganosa`: aun con el aviso, llevaría al cliente a creer algo falso;
+- «No lo sé»: se califica solo (correcta si la acción esperada es abstenerse o derivar).
+
+## Umbrales de éxito (banco congelado, juez)
+
+| Puerta | Umbral |
+|---|---|
+| 1. Útiles en directa + sí/no (plana correcta o cita `util`) | ≥ 20 % (G-57: 0 %; desarrollo: 25 %) |
+| 2. Respuestas planas equivocadas + inventadas | ≤ 2 % |
+| 2. Inventadas en todo el banco | 0 |
+| 3. Sin respuesta: «No lo sé», o cita `honesta` o `util` | ≥ 90 % |
+| 4. Citas `enganosa` | ≤ 15 % de las citas |
+| 5. Eco de turnos con cifras o más de 4 palabras | 0 |
+
+**6. Controles:**
+- documento de otro negocio: citas `util` ≤ 5 % y «No lo sé» ≥ 80 %;
+- reinicio: 100 % idénticas;
+- renombrado **estricto** (solo palabras que nunca aparecen en minúscula en el negocio; se corrige el control de G-57, que renombraba «No» o «Precio»): ≥ 95 % invariantes;
+- sin `closest` (debe dar 0 útiles);
+- sin seguimiento (el seguimiento se queda si suma citas útiles en `seguimiento` sin subir las `enganosa`);
+- tabla barajada (las cuentas de las celdas se reasignan al azar): debe dar menos útiles o más engañosas.
+
+**7. Pruebas generales sin retroceso:**
+- conversación de G-55: 158;
+- SQuAD-es: los mismos 1570 casos que G-57, solo como regresión (no quedan casos nuevos en `dev`);
+- tablero y sonda;
+- regresión completa;
+- latencia 5.6: p95 de `answer` ≤ 10 ms.
+
+**Retención 5.9:**
+- `closest` se queda si pasa las puertas 1, 3 y 4;
+- `short_echo`, si la 5;
+- el seguimiento, según su control.
+
+## Presupuesto
+
+Implementación ≤ 1 h; banco y juez ≤ 1 h; medidas generales ≤ 30 min. Hasta 16 procesos, con al menos 2 GB de RAM libres.
