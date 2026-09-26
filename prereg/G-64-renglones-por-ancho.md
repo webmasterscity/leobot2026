@@ -72,3 +72,30 @@ El evaluador de G-63 ya renombraba **antes** de partir. El 89 % de G-63 incluye,
 - **G-64, texto partido:** no más de 2 puntos por debajo de `estable-G-18` con el texto partido y renombrado igual. Así se ve si el defecto es de la unión o del texto partido.
 
 Evaluador: `experiments/g64_evaluar.py`. Añade a 55 columnas (diagnóstico), el renombrado tal cual y `estable-G-18` renombrado y partido.
+
+## Resultado preliminar (2026-09-26; conteo automático; **sin juez todavía**, no decide puertas)
+
+Banco congelado de 24 negocios nuevos y 585 turnos (`results_v3/kiosco/congelado_g64`).
+
+| Presentación | G-64 | `estable-G-18` |
+|---|---|---|
+| Tal cual: útiles en directa + sí/no | 90/266 | 90/266 (585/585 respuestas idénticas) |
+| Partido a 70 | **90/266** | 73/266 |
+| Partido a 55 (diagnóstico) | 84/266 | 60/266 |
+
+**Controles automáticos:**
+- sin unir: respuestas idénticas a `estable-G-18` partido en 585/585;
+- reinicio: 585/585;
+- otro negocio: 516/585 «No lo sé»;
+- renombrado estricto (respuestas iguales tras deshacer el renombrado, la medida de G-62): tal cual 572/585 (97,8 %); partido 568/585 (97,1 %), frente a 558/585 (95,4 %) de `estable-G-18` partido.
+
+**Pruebas generales (`freeze-G-64`):**
+- MFAQ normalizado: 57,31 %;
+- SQuAD-es: 0,8013;
+- conversación: 158;
+- regresión: 669/6/0;
+- latencia intercalada con `estable-G-18`, 3 rondas × 3 semillas ([resumen](../results_v3/latency_rounds_g19/resumen.json)): p95 entre −2,5 % y +2,9 %, RAM 220 MB, límites pasan.
+
+**Juez ciego pendiente:** los 8 jueces se cortaron por el límite de sesión de la API sin dejar veredictos. Para retomar, se preparan de nuevo con la misma semilla (la preparación es determinista):
+`JUECES_SISTEMAS=partido,g18_partido,tratamiento,otro_negocio JUECES_OTROS=g18,sin_unir_partido,reinicio_partido JUECES_SEMILLA=$(git rev-parse freeze-G-64:leobot) python3 -m experiments.g58_juez preparar <eval64> results_v3/kiosco/congelado_g64 <jueces64> 8`
+El directorio `<eval64>` es `results_v3/kiosco/evaluacion_g64`. Se lanzan 8 jueces Opus con el encargo de G-58 y se reúne con `g58_juez reunir`, con las mismas variables.
