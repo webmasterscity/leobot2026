@@ -1,0 +1,38 @@
+[
+  [
+    {"cliente": "Hola, ¿qué tal?", "tipo": "charla", "accion": "responder", "claves": [], "evidencia": null, "respuesta_ideal": "Hola, bienvenido a Acuarios Maracay. ¿Qué te podemos ayudar?"},
+    {"cliente": "¿Tienen tetras?", "tipo": "si_no", "accion": "responder", "claves": ["Tetras (cardenal, neón, cobre, serpae)"], "evidencia": "Tetras (cardenal, neón, cobre, serpae)", "respuesta_ideal": "Sí, tenemos varias variedades: cardenal, neón, cobre y serpae."},
+    {"cliente": "¿Cuánto cuesta un tetra cardenal?", "tipo": "directa", "accion": "responder", "claves": ["850.000 a 1.200.000 VES"], "evidencia": "Tetras pequeños: 850.000 a 1.200.000 VES", "respuesta_ideal": "Los tetras pequeños salen entre 850.000 y 1.200.000 bolívares."},
+    {"cliente": "¿Eso es seguro?", "tipo": "sin_respuesta", "accion": "abstenerse", "claves": [], "evidencia": null, "respuesta_ideal": "Los precios pueden variar sin aviso previo por fluctuación de tasas. Te recomiendo llamar al +58 (243) 233-7890 para confirmar el precio exacto del día."}
+  ],
+  [
+    {"cliente": "Buenos días", "tipo": "charla", "accion": "responder", "claves": [], "evidencia": null, "respuesta_ideal": "Buenos días. ¿Cómo te podemos ayudar?"},
+    {"cliente": "Quiero montar mi primer acuario", "tipo": "instruccion", "accion": "derivar", "claves": [], "evidencia": "instrucciones.txt: punto 4", "respuesta_ideal": "¡Qué emoción! Te recomiendo venir a la tienda para una consulta gratuita con nuestro equipo, que te asesore en todo lo que necesitas."},
+    {"cliente": "¿Venden acuarios completos?", "tipo": "si_no", "accion": "responder", "claves": ["Acuarios (tanques de vidrio"], "evidencia": "Acuarios (tanques de vidrio 30L, 50L, 80L, 120L, 150L)", "respuesta_ideal": "Sí, vendemos acuarios de diferentes tamaños: 30L, 50L, 80L, 120L y 150L."},
+    {"cliente": "¿Cuánto cuesta uno de 80 litros?", "tipo": "directa", "accion": "responder", "claves": ["8.000.000 a 10.000.000 VES"], "evidencia": "Acuarios (80L): 8.000.000 a 10.000.000 VES", "respuesta_ideal": "Un acuario de 80 litros cuesta entre 8 y 10 millones de bolívares."},
+    {"cliente": "¿Incluye el filtro?", "tipo": "sin_respuesta", "accion": "abstenerse", "claves": [], "evidencia": null, "respuesta_ideal": "El acuario es solo el tanque. El filtro se vende aparte. Los filtros externos básicos cuestan entre 3.5 y 5 millones."},
+    {"cliente": "¿Qué peces me recomiendas para empezar?", "tipo": "instruccion", "accion": "derivar", "claves": [], "evidencia": "instrucciones.txt: punto 4", "respuesta_ideal": "Para un primer acuario, el equipo te puede recomendar en una consulta gratuita. Llamanos al +58 (243) 233-7890 o veni a la tienda."}
+  ],
+  [
+    {"cliente": "Hola, compre peces hace dos días", "tipo": "charla", "accion": "responder", "claves": [], "evidencia": null, "respuesta_ideal": "Hola, ¿cómo te va? ¿Hay algún problema?"},
+    {"cliente": "Uno de los tetras se murió", "tipo": "directa", "accion": "responder", "claves": ["48 horas de garantía", "lo reemplazamos sin costo"], "evidencia": "Garantía de los peces: 48 horas desde la compra... Si el pez muere en las primeras 48 horas sin culpa del cliente, lo reemplazamos sin costo", "respuesta_ideal": "Lamentamos eso. Tenemos 48 horas de garantía. Si tu acuario está ciclado con parámetros correctos, te lo reemplazamos sin costo. Trae la factura."},
+    {"cliente": "¿Pero cuánto tarda en reemplazarlo?", "tipo": "seguimiento", "accion": "responder", "claves": [], "evidencia": null, "respuesta_ideal": "Puedes venir hoy mismo a la tienda y te lo cambiamos en el acto. Estamos abiertos hasta las 18:00."},
+    {"cliente": "¿Hacen entregas a domicilio?", "tipo": "si_no", "accion": "responder", "claves": ["entregas en Maracay y alrededores", "15 km", "350.000 VES", "máximo 24 horas"], "evidencia": "Entregas a domicilio: disponibles en Maracay y alrededores dentro de un radio de 15 km. Costo: 350.000 VES... Tiempo: máximo 24 horas.", "respuesta_ideal": "Sí, hacemos entregas dentro de 15 km de Maracay. Cuesta 350.000 bolívares y tardamos máximo 24 horas."},
+    {"cliente": "¿Pero si me entregas, necesito pagar el envío antes o después?", "tipo": "sin_respuesta", "accion": "abstenerse", "claves": [], "evidencia": null, "respuesta_ideal": "Para las entregas, te recomiendo llamar al +58 (243) 233-7890 o escribir por WhatsApp para coordinar los detalles de pago."}
+  ],
+  [
+    {"cliente": "Necesito plecos", "tipo": "charla", "accion": "responder", "claves": [], "evidencia": null, "respuesta_ideal": "Excelente, tenemos varias variedades de plecos. ¿Cuál tipo buscas?"},
+    {"cliente": "¿Qué variedades tienen de plecos?", "tipo": "directa", "accion": "responder", "claves": ["L025, L046, L200"], "evidencia": "Plecos (L025, L046, L200)", "respuesta_ideal": "Tenemos los modelos L025, L046 y L200."},
+    {"cliente": "¿Cuál es la diferencia?", "tipo": "sin_respuesta", "accion": "abstenerse", "claves": [], "evidencia": null, "respuesta_ideal": "Son líneas distintas con características diferentes. Te recomiendo que llames al +58 (243) 233-7890 para que un especialista te explique las diferencias en detalle."},
+    {"cliente": "¿Cuánto cuesta cada uno?", "tipo": "directa", "accion": "responder", "claves": ["3.200.000 a 8.500.000 VES"], "evidencia": "Plecos: 3.200.000 a 8.500.000 VES (según tamaño y variedad)", "respuesta_ideal": "Los plecos cuestan entre 3.2 millones y 8.5 millones de bolívares, dependiendo del tamaño y variedad."},
+    {"cliente": "¿Tienen pez payaso también?", "tipo": "directa", "accion": "responder", "claves": ["agua marina", "disponible por encargo"], "evidencia": "Agua marina (disponible por encargo)... Cirujanos (azul, amarillo, pez payaso)", "respuesta_ideal": "El pez payaso es de agua marina. Que lo conseguimos, pero por encargo. Entre 1 a 3 semanas con depósito del 50 %."},
+    {"cliente": "¿Gracias, me vas a llamar cuando llegue?", "tipo": "instruccion", "accion": "derivar", "claves": [], "evidencia": "instrucciones.txt: punto 5", "respuesta_ideal": "Para coordinar los encargos, llamanos al +58 (243) 233-7890 y nuestro equipo te confirma todos los detalles del pedido."}
+  ],
+  [
+    {"cliente": "Hola, tengo una pregunta sobre las plantas", "tipo": "charla", "accion": "responder", "claves": [], "evidencia": null, "respuesta_ideal": "Claro, adelante. ¿Qué necesitas sobre plantas acuáticas?"},
+    {"cliente": "¿Tienen musgo de java?", "tipo": "si_no", "accion": "responder", "claves": ["musgo de java"], "evidencia": "Plantas acuáticas: anubias, musgo de java, ludwigia...", "respuesta_ideal": "Sí, tenemos musgo de java. Cuesta entre 350.000 y 1.500.000 bolívares según la cantidad."},
+    {"cliente": "¿Y ludwigia roja?", "tipo": "directa", "accion": "responder", "claves": ["ludwigia"], "evidencia": "Plantas acuáticas... ludwigia...", "respuesta_ideal": "Tenemos ludwigia. La ludwigia roja es una de las variedades que comercializamos."},
+    {"cliente": "¿Cuánto sale la ludwigia?", "tipo": "directa", "accion": "responder", "claves": ["350.000 a 1.500.000 VES"], "evidencia": "Plantas: 350.000 a 1.500.000 VES según variedad", "respuesta_ideal": "Dependiendo de la cantidad de ramas, entre 350.000 y 1.500.000 bolívares."},
+    {"cliente": "Yo soy menor, ¿puedo comprar?", "tipo": "directa", "accion": "responder", "claves": ["menores de 12 años", "supervisión de un adulto"], "evidencia": "No vendemos peces a menores de 12 años sin supervisión de adulto", "respuesta_ideal": "Si tienes menos de 12 años, necesitas que un adulto responsable esté contigo. Después de los 12, puedes comprar sin problema."}
+  ]
+]
