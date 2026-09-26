@@ -49,3 +49,18 @@ Congelado `freeze-G-64`; semilla de su huella. Banco congelado nuevo de 24 negoc
 ## Presupuesto
 
 Desarrollo ≤ 30 min de CPU, hasta 4 procesos, con al menos 2 GB de RAM libres. Banco ≤ 40 min; juez ≤ 1 h.
+
+## Resultado en desarrollo (2026-09-26; conteo automático; `g64_dev.py` en el cuaderno de la sesión)
+
+Bancos de G-59 a G-62 (1116 preguntas directas y de sí/no). Con el texto original, 403 útiles.
+
+| Variante | Partido a 70 | a 50 | a 90 | Tal cual (idénticas a `estable-G-18`) | Citas sin dato, a 70 |
+|---|---|---|---|---|---|
+| V0 (G-63) | 366 | 265 | 373 | 2558/2558 | 103/801 (12,9 %) |
+| V1 (coma) | 372 | 277 | 376 | 2558/2558 | 105/811 (12,9 %) |
+| **V2 (ancho)** | **393** | **317** | **402** | 2558/2558 | 109/817 (13,3 %) |
+| V3 (V2 + coma) | 393 | 317 | 402 | 2558/2558 | 109/817 (13,3 %) |
+
+Confirmación en los bancos de G-57, G-58 y desarrollo, a 70 (819 preguntas): V0 255, V1 247, V2 255 y V3 255. V2 no queda por debajo de V0. Allí casi no cambia nada, porque esos textos tienen pocos renglones largos y la prueba de «viene partido» no se activa.
+
+**Elegida: V2.** Empata con V3 en todo. La regla de desempate no se había escrito, así que se declara aquí: se elige la más simple, porque la coma de V3 solo actúa en documentos no partidos, y ahí V1 bajó de 255 a 247. V2 supera a V0 a 70 por 27 útiles (pedía ≥ 10) y cumple las tres condiciones: a 50 y a 90 no pierde, tal cual es idéntica y las citas sin dato suben 0,4 puntos. **Pasa desarrollo.**
