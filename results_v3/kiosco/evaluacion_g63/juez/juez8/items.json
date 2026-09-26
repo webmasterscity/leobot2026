@@ -1,0 +1,845 @@
+[
+ {
+  "id": "i0000",
+  "negocio": "R2_n4",
+  "turnos_previos_del_cliente": [
+   "Buenas, ¿qué horario tienen?",
+   "abren los sabados?",
+   "y en la feria de independencia de septiembre?"
+  ],
+  "cliente": "cual es el telefono del archivo?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "7761-2233"
+  ],
+  "evidencia": "Teléfono: 7761-2233, extensión 145",
+  "respuesta_ideal": "El teléfono del archivo es 7761-2233, extensión 145.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «agendar cita previa al teléfono del archivo, para que el documento»."
+ },
+ {
+  "id": "i0025",
+  "negocio": "R2_n4",
+  "turnos_previos_del_cliente": [],
+  "cliente": "tienen el periodico El Popular Quezalteco?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "El Popular Quezalteco (1901-1965)"
+  ],
+  "evidencia": "Colección de periódicos: El Popular Quezalteco (1901-1965), Diario de Occidente (1948-2003, incompleto)",
+  "respuesta_ideal": "Sí, tenemos la colección de El Popular Quezalteco de 1901 a 1965.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Colección de periódicos: El Popular Quezalteco (1901-1965), Diario de Occidente (1948-2003, incompleto) y recortes de prensa nacional sobre Quetzaltenango desde 1980»."
+ },
+ {
+  "id": "i0044",
+  "negocio": "R2_n4",
+  "turnos_previos_del_cliente": [
+   "tienen el periodico El Popular Quezalteco?"
+  ],
+  "cliente": "y del Diario de Occidente tienen completa la coleccion?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "1948-2003, incompleto"
+  ],
+  "evidencia": "Diario de Occidente (1948-2003, incompleto)",
+  "respuesta_ideal": "No, la colección del Diario de Occidente va de 1948 a 2003 pero está incompleta.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Colección de periódicos: El Popular Quezalteco (1901-1965), Diario de Occidente (1948-2003, incompleto) y recortes de prensa nacional sobre Quetzaltenango desde 1980»."
+ },
+ {
+  "id": "i0045",
+  "negocio": "R2_n4",
+  "turnos_previos_del_cliente": [
+   "cuanto cuesta sacar una copia certificada?",
+   "y una fotocopia normal?",
+   "necesito 40 fotocopias, cuanto seria?"
+  ],
+  "cliente": "puedo pagar con tarjeta?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo esa información, el documento no especifica las formas de pago aceptadas.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Las entradas se pueden comprar en la boletería del auditorio, por teléfono con tarjeta de débito o crédito, o en línea a través del sitio web»."
+ },
+ {
+  "id": "i0052",
+  "negocio": "R2_n4",
+  "turnos_previos_del_cliente": [
+   "necesito que me busquen la partida de nacimiento de mi bisabuelo, ustedes la tienen?",
+   "necesito hacer una investigacion de 10 visitas seguidas, debo avisar antes?"
+  ],
+  "cliente": "puedo escribir un correo con mi consulta en vez de ir?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "Sí, se puede escribir solicitando información puntual"
+  ],
+  "evidencia": "¿Atienden consultas por escrito o correo? Sí, se puede escribir solicitando información puntual, pero la respuesta puede tardar hasta 10 días hábiles según la carga de trabajo.",
+  "respuesta_ideal": "Sí, puedes escribir con tu consulta puntual, aunque la respuesta puede tardar hasta 10 días hábiles.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Sí, se puede escribir solicitando información puntual, pero la respuesta puede tardar hasta 10 días hábiles según la carga de trabajo»."
+ },
+ {
+  "id": "i0075",
+  "negocio": "R2_n4",
+  "turnos_previos_del_cliente": [
+   "Buenas, ¿qué horario tienen?",
+   "abren los sabados?",
+   "y en la feria de independencia de septiembre?"
+  ],
+  "cliente": "cual es el telefono del archivo?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "7761-2233"
+  ],
+  "evidencia": "Teléfono: 7761-2233, extensión 145",
+  "respuesta_ideal": "El teléfono del archivo es 7761-2233, extensión 145.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «No, el archivo es de acceso público; solo se pide identificación»."
+ },
+ {
+  "id": "i0090",
+  "negocio": "R2_n4",
+  "turnos_previos_del_cliente": [],
+  "cliente": "cuanto cuesta digitalizar un documento de 5 paginas?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "Q15.00 por página"
+  ],
+  "evidencia": "Digitalización de un documento (escaneo a PDF, entregado por correo): Q15.00 por página",
+  "respuesta_ideal": "La digitalización cuesta Q15.00 por página, así que 5 páginas saldrían Q75.00 en total.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Digitalización de un documento (escaneo a PDF, entregado por correo): Q15.00 por página»."
+ },
+ {
+  "id": "i0101",
+  "negocio": "R2_n4",
+  "turnos_previos_del_cliente": [
+   "Buenas, ¿qué horario tienen?",
+   "abren los sabados?"
+  ],
+  "cliente": "y en la feria de independencia de septiembre?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "incluida la Feria de Independencia, del 12 al 16 de septiembre"
+  ],
+  "evidencia": "Cerrado: sábados, domingos y días feriados nacionales y municipales (incluida la Feria de Independencia, del 12 al 16 de septiembre).",
+  "respuesta_ideal": "Tampoco, durante la Feria de Independencia, del 12 al 16 de septiembre, el archivo permanece cerrado.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «(incluida la Feria de Independencia, del 12 al 16 de septiembre)»."
+ },
+ {
+  "id": "i0126",
+  "negocio": "R2_n4",
+  "turnos_previos_del_cliente": [
+   "Buenas, ¿qué horario tienen?"
+  ],
+  "cliente": "abren los sabados?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "Cerrado: sábados, domingos"
+  ],
+  "evidencia": "Cerrado: sábados, domingos y días feriados nacionales y municipales (incluida la Feria de Independencia, del 12 al 16 de septiembre).",
+  "respuesta_ideal": "No, los sábados permanecemos cerrados, igual que los domingos y días feriados.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Cerrado: sábados, domingos y días feriados nacionales y municipales (incluida la Feria de Independencia, del 12 al 16 de septiembre)»."
+ },
+ {
+  "id": "i0128",
+  "negocio": "R2_n4",
+  "turnos_previos_del_cliente": [
+   "Buenas, ¿qué horario tienen?",
+   "abren los sabados?"
+  ],
+  "cliente": "y en la feria de independencia de septiembre?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "incluida la Feria de Independencia, del 12 al 16 de septiembre"
+  ],
+  "evidencia": "Cerrado: sábados, domingos y días feriados nacionales y municipales (incluida la Feria de Independencia, del 12 al 16 de septiembre).",
+  "respuesta_ideal": "Tampoco, durante la Feria de Independencia, del 12 al 16 de septiembre, el archivo permanece cerrado.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Cerrado: sábados, domingos y días feriados nacionales y municipales (incluida la Feria de Independencia, del 12 al 16 de septiembre)»."
+ },
+ {
+  "id": "i0181",
+  "negocio": "R2_n4",
+  "turnos_previos_del_cliente": [
+   "cuanto cuesta digitalizar un documento de 5 paginas?"
+  ],
+  "cliente": "puedo llevar mi computadora a trabajar en la sala?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "Sí, hay una mesa habilitada para trabajar con computadora"
+  ],
+  "evidencia": "¿Puedo llevar mi laptop? Sí, hay una mesa habilitada para trabajar con computadora en la sala de consulta.",
+  "respuesta_ideal": "Sí, hay una mesa habilitada en la sala de consulta para trabajar con computadora.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Sí, hay una mesa habilitada para trabajar con computadora en la sala de consulta»."
+ },
+ {
+  "id": "i0186",
+  "negocio": "R2_n4",
+  "turnos_previos_del_cliente": [],
+  "cliente": "tienen el periodico El Popular Quezalteco?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "El Popular Quezalteco (1901-1965)"
+  ],
+  "evidencia": "Colección de periódicos: El Popular Quezalteco (1901-1965), Diario de Occidente (1948-2003, incompleto)",
+  "respuesta_ideal": "Sí, tenemos la colección de El Popular Quezalteco de 1901 a 1965.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Colección de periódicos: El Popular Quezalteco (1901-1965), Diario de»."
+ },
+ {
+  "id": "i0206",
+  "negocio": "R2_n4",
+  "turnos_previos_del_cliente": [
+   "quiero llevarme prestado un expediente para fotocopiarlo en mi oficina, se puede?",
+   "puedo fotografiar los documentos con el flash de mi celular?"
+  ],
+  "cliente": "necesito guantes para ver documentos de 1960?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "para manipular documentos anteriores a 1950"
+  ],
+  "evidencia": "Uso obligatorio de guantes de algodón (los proporciona el archivo) para manipular documentos anteriores a 1950.",
+  "respuesta_ideal": "No necesariamente, los guantes son obligatorios solo para documentos anteriores a 1950; uno de 1960 no los requeriría.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Uso obligatorio de guantes de algodón (los proporciona el archivo) para manipular documentos anteriores a 1950»."
+ },
+ {
+  "id": "i0233",
+  "negocio": "R2_n4",
+  "turnos_previos_del_cliente": [
+   "Buenas, ¿qué horario tienen?"
+  ],
+  "cliente": "abren los sabados?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "Cerrado: sábados, domingos"
+  ],
+  "evidencia": "Cerrado: sábados, domingos y días feriados nacionales y municipales (incluida la Feria de Independencia, del 12 al 16 de septiembre).",
+  "respuesta_ideal": "No, los sábados permanecemos cerrados, igual que los domingos y días feriados.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Cerrado: sábados, domingos y días feriados nacionales y municipales»."
+ },
+ {
+  "id": "i0246",
+  "negocio": "R2_n4",
+  "turnos_previos_del_cliente": [
+   "quiero llevarme prestado un expediente para fotocopiarlo en mi oficina, se puede?"
+  ],
+  "cliente": "puedo fotografiar los documentos con el flash de mi celular?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "prohibido fotografiar con flash"
+  ],
+  "evidencia": "Está prohibido fotografiar con flash; sin flash sí se permite, salvo en los documentos marcados como frágiles.",
+  "respuesta_ideal": "No, está prohibido usar flash; sin flash sí puedes fotografiar, excepto en documentos marcados como frágiles.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Está prohibido fotografiar con flash; sin flash sí se permite,»."
+ },
+ {
+  "id": "i0261",
+  "negocio": "R2_n4",
+  "turnos_previos_del_cliente": [
+   "necesito que me busquen la partida de nacimiento de mi bisabuelo, ustedes la tienen?",
+   "necesito hacer una investigacion de 10 visitas seguidas, debo avisar antes?"
+  ],
+  "cliente": "puedo escribir un correo con mi consulta en vez de ir?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "Sí, se puede escribir solicitando información puntual"
+  ],
+  "evidencia": "¿Atienden consultas por escrito o correo? Sí, se puede escribir solicitando información puntual, pero la respuesta puede tardar hasta 10 días hábiles según la carga de trabajo.",
+  "respuesta_ideal": "Sí, puedes escribir con tu consulta puntual, aunque la respuesta puede tardar hasta 10 días hábiles.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Sí, se puede escribir»."
+ },
+ {
+  "id": "i0292",
+  "negocio": "R2_n4",
+  "turnos_previos_del_cliente": [],
+  "cliente": "cuanto cuesta sacar una copia certificada?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "Q25.00"
+  ],
+  "evidencia": "Copia certificada por el archivo: Q25.00 por documento",
+  "respuesta_ideal": "Una copia certificada por el archivo cuesta Q25.00 por documento.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Copia certificada por el archivo: Q25.00 por documento»."
+ },
+ {
+  "id": "i0301",
+  "negocio": "R2_n4",
+  "turnos_previos_del_cliente": [
+   "quiero llevarme prestado un expediente para fotocopiarlo en mi oficina, se puede?"
+  ],
+  "cliente": "puedo fotografiar los documentos con el flash de mi celular?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "prohibido fotografiar con flash"
+  ],
+  "evidencia": "Está prohibido fotografiar con flash; sin flash sí se permite, salvo en los documentos marcados como frágiles.",
+  "respuesta_ideal": "No, está prohibido usar flash; sin flash sí puedes fotografiar, excepto en documentos marcados como frágiles.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Está prohibido fotografiar con flash; sin flash sí se permite, salvo en los documentos marcados como frágiles»."
+ },
+ {
+  "id": "i0331",
+  "negocio": "R2_n4",
+  "turnos_previos_del_cliente": [
+   "cuanto cuesta sacar una copia certificada?"
+  ],
+  "cliente": "y una fotocopia normal?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "Q1.00"
+  ],
+  "evidencia": "Copia simple (fotocopia), por hoja: Q1.00",
+  "respuesta_ideal": "Una fotocopia simple cuesta Q1.00 por hoja.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Copia simple (fotocopia), por hoja: Q1.00»."
+ },
+ {
+  "id": "i0031",
+  "negocio": "R4_n4",
+  "turnos_previos_del_cliente": [
+   "llevamos tablas de surf, tiene costo extra?",
+   "cuanto cuesta el compartido por persona?"
+  ],
+  "cliente": "ese tiene hora fija de salida?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "sale cuando se completa el vehículo"
+  ],
+  "evidencia": "No, sale cuando se completa el vehículo, por eso puede haber espera.",
+  "respuesta_ideal": "No, el compartido sale cuando se completa el vehículo, así que el horario puede variar.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «No tiene hora fija de salida porque depende de completar el vehículo»."
+ },
+ {
+  "id": "i0038",
+  "negocio": "R4_n4",
+  "turnos_previos_del_cliente": [
+   "van a Punta Mita cuanto cobran?",
+   "dan factura?"
+  ],
+  "cliente": "puedo pagar con cheque de viajero?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "No se aceptan cheques de viajero"
+  ],
+  "evidencia": "No se aceptan cheques de viajero.",
+  "respuesta_ideal": "No, no aceptamos cheques de viajero.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «No se aceptan cheques de viajero»."
+ },
+ {
+  "id": "i0039",
+  "negocio": "R4_n4",
+  "turnos_previos_del_cliente": [
+   "cuanto sale ir a Sayulita en privado?",
+   "y si reservamos ida y vuelta, hay algun descuento?"
+  ],
+  "cliente": "llevan silla para bebe?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "Asiento para bebé o silla elevadora: sin costo"
+  ],
+  "evidencia": "Asiento para bebé o silla elevadora: sin costo, solicitarlo al reservar",
+  "respuesta_ideal": "Sí, tenemos asiento para bebé o silla elevadora sin costo, solo hay que solicitarlo al reservar.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Asiento para bebé o silla elevadora: sin costo, solicitarlo al reservar»."
+ },
+ {
+  "id": "i0048",
+  "negocio": "R4_n4",
+  "turnos_previos_del_cliente": [
+   "llevamos tablas de surf, tiene costo extra?",
+   "cuanto cuesta el compartido por persona?",
+   "ese tiene hora fija de salida?"
+  ],
+  "cliente": "si el vuelo llega tarde, cobran algo extra?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "no hay cargo extra por demoras del vuelo"
+  ],
+  "evidencia": "No, monitoreamos el vuelo y no hay cargo extra por demoras del vuelo.",
+  "respuesta_ideal": "No, monitoreamos el vuelo y no se cobra extra si llega tarde.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «No, monitoreamos el vuelo y no hay cargo extra por demoras del vuelo»."
+ },
+ {
+  "id": "i0091",
+  "negocio": "R4_n4",
+  "turnos_previos_del_cliente": [],
+  "cliente": "llevamos tablas de surf, tiene costo extra?",
+  "tipo": "instruccion",
+  "accion_esperada": "responder",
+  "claves": [
+   "puede tener cargo adicional"
+  ],
+  "evidencia": "Equipaje adicional o de gran tamaño (tablas de surf, equipo de buceo) debe avisarse al reservar, puede tener cargo adicional según el vehículo.",
+  "respuesta_ideal": "Debe avisarlo al reservar; las tablas de surf pueden tener un cargo adicional según el vehículo.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Equipaje adicional o de gran tamaño (tablas de surf, equipo de buceo) debe avisarse al reservar, puede tener cargo adicional según el vehículo»."
+ },
+ {
+  "id": "i0108",
+  "negocio": "R4_n4",
+  "turnos_previos_del_cliente": [
+   "llevamos tablas de surf, tiene costo extra?"
+  ],
+  "cliente": "cuanto cuesta el compartido por persona?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "USD 15"
+  ],
+  "evidencia": "Traslado compartido (van con otros pasajeros): USD 15 por persona",
+  "respuesta_ideal": "El traslado compartido cuesta USD 15 por persona.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Traslado compartido (van con otros pasajeros): USD 15 por persona,»."
+ },
+ {
+  "id": "i0123",
+  "negocio": "R4_n4",
+  "turnos_previos_del_cliente": [
+   "van a Punta Mita cuanto cobran?"
+  ],
+  "cliente": "dan factura?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "disponible bajo solicitud al hacer la reserva"
+  ],
+  "evidencia": "Sí, disponible bajo solicitud al hacer la reserva.",
+  "respuesta_ideal": "Sí, damos factura fiscal, disponible si la solicita al hacer la reserva.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Sí, disponible bajo solicitud al hacer la»."
+ },
+ {
+  "id": "i0133",
+  "negocio": "R4_n4",
+  "turnos_previos_del_cliente": [
+   "cuanto sale ir a Sayulita en privado?",
+   "y si reservamos ida y vuelta, hay algun descuento?"
+  ],
+  "cliente": "llevan silla para bebe?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "Asiento para bebé o silla elevadora: sin costo"
+  ],
+  "evidencia": "Asiento para bebé o silla elevadora: sin costo, solicitarlo al reservar",
+  "respuesta_ideal": "Sí, tenemos asiento para bebé o silla elevadora sin costo, solo hay que solicitarlo al reservar.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Asiento para bebé o silla elevadora: sin costo, solicitarlo al»."
+ },
+ {
+  "id": "i0142",
+  "negocio": "R4_n4",
+  "turnos_previos_del_cliente": [
+   "quiero reservar para el jueves que viene, me confirman ya?"
+  ],
+  "cliente": "con cuanta anticipacion hay que reservar?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "24 horas de anticipación"
+  ],
+  "evidencia": "con al menos 24 horas de anticipación",
+  "respuesta_ideal": "Se recomienda reservar con al menos 24 horas de anticipación.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Se reserva en línea o por WhatsApp al +52 322 123 4567, con al menos 24 horas de anticipación»."
+ },
+ {
+  "id": "i0161",
+  "negocio": "R4_n4",
+  "turnos_previos_del_cliente": [
+   "van a Punta Mita cuanto cobran?"
+  ],
+  "cliente": "dan factura?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "disponible bajo solicitud al hacer la reserva"
+  ],
+  "evidencia": "Sí, disponible bajo solicitud al hacer la reserva.",
+  "respuesta_ideal": "Sí, damos factura fiscal, disponible si la solicita al hacer la reserva.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Sí, disponible bajo solicitud al hacer la reserva»."
+ },
+ {
+  "id": "i0162",
+  "negocio": "R4_n4",
+  "turnos_previos_del_cliente": [
+   "llevamos tablas de surf, tiene costo extra?",
+   "cuanto cuesta el compartido por persona?"
+  ],
+  "cliente": "ese tiene hora fija de salida?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "sale cuando se completa el vehículo"
+  ],
+  "evidencia": "No, sale cuando se completa el vehículo, por eso puede haber espera.",
+  "respuesta_ideal": "No, el compartido sale cuando se completa el vehículo, así que el horario puede variar.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «hora fija de salida porque depende de completar el vehículo»."
+ },
+ {
+  "id": "i0165",
+  "negocio": "R4_n4",
+  "turnos_previos_del_cliente": [
+   "quiero reservar para el jueves que viene, me confirman ya?"
+  ],
+  "cliente": "con cuanta anticipacion hay que reservar?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "24 horas de anticipación"
+  ],
+  "evidencia": "con al menos 24 horas de anticipación",
+  "respuesta_ideal": "Se recomienda reservar con al menos 24 horas de anticipación.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Las reservas de grupos (10 personas o más) requieren confirmación con 48 horas de anticipación»."
+ },
+ {
+  "id": "i0188",
+  "negocio": "R4_n4",
+  "turnos_previos_del_cliente": [
+   "cuanto sale ir a Sayulita en privado?"
+  ],
+  "cliente": "y si reservamos ida y vuelta, hay algun descuento?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "10% de descuento"
+  ],
+  "evidencia": "Ida y vuelta: 10% de descuento sobre el total de ambos tramos, pagando por adelantado.",
+  "respuesta_ideal": "Reservando ida y vuelta y pagando por adelantado se aplica un 10% de descuento sobre el total de los dos tramos, unos USD 126 en vez de USD 140.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Sí, con carné estudiantil vigente el precio es de $2,50»."
+ },
+ {
+  "id": "i0225",
+  "negocio": "R4_n4",
+  "turnos_previos_del_cliente": [
+   "quiero reservar para el jueves que viene, me confirman ya?",
+   "con cuanta anticipacion hay que reservar?",
+   "si cancelo un dia antes, me devuelven el dinero?"
+  ],
+  "cliente": "y si cancelo el mismo dia, unas horas antes?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "sin reembolso"
+  ],
+  "evidencia": "Cancelación con menos de 6 horas o no-show: sin reembolso.",
+  "respuesta_ideal": "Si cancela con menos de 6 horas de anticipación, no hay reembolso.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Cancelación entre 24 y 6 horas antes: reembolso del 50%»."
+ },
+ {
+  "id": "i0234",
+  "negocio": "R4_n4",
+  "turnos_previos_del_cliente": [
+   "llevamos tablas de surf, tiene costo extra?"
+  ],
+  "cliente": "cuanto cuesta el compartido por persona?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "USD 15"
+  ],
+  "evidencia": "Traslado compartido (van con otros pasajeros): USD 15 por persona",
+  "respuesta_ideal": "El traslado compartido cuesta USD 15 por persona.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Traslado compartido (van con otros pasajeros): USD 15 por persona, cualquier zona dentro de Puerto Vallarta y Nuevo Vallarta»."
+ },
+ {
+  "id": "i0249",
+  "negocio": "R4_n4",
+  "turnos_previos_del_cliente": [
+   "cuanto sale ir a Sayulita en privado?"
+  ],
+  "cliente": "y si reservamos ida y vuelta, hay algun descuento?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "10% de descuento"
+  ],
+  "evidencia": "Ida y vuelta: 10% de descuento sobre el total de ambos tramos, pagando por adelantado.",
+  "respuesta_ideal": "Reservando ida y vuelta y pagando por adelantado se aplica un 10% de descuento sobre el total de los dos tramos, unos USD 126 en vez de USD 140.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Ida y vuelta: 10% de descuento sobre el total de ambos tramos, pagando»."
+ },
+ {
+  "id": "i0279",
+  "negocio": "R4_n4",
+  "turnos_previos_del_cliente": [
+   "llevamos tablas de surf, tiene costo extra?",
+   "cuanto cuesta el compartido por persona?",
+   "ese tiene hora fija de salida?"
+  ],
+  "cliente": "si el vuelo llega tarde, cobran algo extra?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "no hay cargo extra por demoras del vuelo"
+  ],
+  "evidencia": "No, monitoreamos el vuelo y no hay cargo extra por demoras del vuelo.",
+  "respuesta_ideal": "No, monitoreamos el vuelo y no se cobra extra si llega tarde.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «No, monitoreamos el vuelo y no hay»."
+ },
+ {
+  "id": "i0293",
+  "negocio": "R4_n4",
+  "turnos_previos_del_cliente": [],
+  "cliente": "van a Punta Mita cuanto cobran?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "USD 60"
+  ],
+  "evidencia": "Punta de Mita: USD 60",
+  "respuesta_ideal": "El traslado privado a Punta de Mita cuesta USD 60.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Punta de Mita: USD 60»."
+ },
+ {
+  "id": "i0350",
+  "negocio": "R4_n4",
+  "turnos_previos_del_cliente": [
+   "cuanto sale ir a Sayulita en privado?"
+  ],
+  "cliente": "y si reservamos ida y vuelta, hay algun descuento?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "10% de descuento"
+  ],
+  "evidencia": "Ida y vuelta: 10% de descuento sobre el total de ambos tramos, pagando por adelantado.",
+  "respuesta_ideal": "Reservando ida y vuelta y pagando por adelantado se aplica un 10% de descuento sobre el total de los dos tramos, unos USD 126 en vez de USD 140.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Ida y vuelta: 10% de descuento sobre el total de ambos tramos, pagando por adelantado»."
+ },
+ {
+  "id": "i0023",
+  "negocio": "R6_n4",
+  "turnos_previos_del_cliente": [
+   "Buenas tardes, quiero alquilar un vestido de novia, ¿en cuánto sale?",
+   "¿Cuántos vestidos de alquiler tienen para escoger?"
+  ],
+  "cliente": "hay que dejar alguna garantia?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "₡100.000"
+  ],
+  "evidencia": "Se deja un depósito de garantía de ₡100.000, que se devuelve completo cuando el vestido regresa sin daños.",
+  "respuesta_ideal": "Sí, se deja un depósito de garantía de ₡100.000, que se le devuelve completo si el vestido regresa sin daños.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Se deja un depósito de garantía de ₡100.000, que se devuelve completo cuando el vestido regresa sin daños»."
+ },
+ {
+  "id": "i0062",
+  "negocio": "R6_n4",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Hola, buenas. ¿Dónde queda la tienda?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "Parque Central",
+   "150 metros oeste"
+  ],
+  "evidencia": "Dirección: Heredia centro, de la esquina suroeste del Parque Central, 150 metros oeste, casa esquinera color crema, segundo piso (Local 2).",
+  "respuesta_ideal": "Bienvenida a Velo & Encaje Novias. Estamos en Heredia centro, de la esquina suroeste del Parque Central 150 metros oeste, en la casa esquinera color crema, segundo piso (Local 2).",
+  "respuesta_a_calificar": "Hola, buenas. No lo tengo seguro. Lo más cercano que dice el texto es: «Somos una tienda familiar fundada en 2009 por la diseñadora Mariela Chaves Solano»."
+ },
+ {
+  "id": "i0065",
+  "negocio": "R6_n4",
+  "turnos_previos_del_cliente": [
+   "Hola, buenas. ¿Dónde queda la tienda?",
+   "a q hora cierran los sabados"
+  ],
+  "cliente": "¿y los domingos?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "cerrado"
+  ],
+  "evidencia": "Domingos: cerrado",
+  "respuesta_ideal": "Los domingos el local está cerrado.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Feriados: abrimos de 10 a. m. a 2 p. m., excepto el 25 de diciembre y el 1.º de enero, que permanecemos cerrados»."
+ },
+ {
+  "id": "i0074",
+  "negocio": "R6_n4",
+  "turnos_previos_del_cliente": [
+   "Hola, buenas. ¿Dónde queda la tienda?"
+  ],
+  "cliente": "a q hora cierran los sabados",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "5:00 p. m."
+  ],
+  "evidencia": "Sábados: 9:00 a. m. – 5:00 p. m.",
+  "respuesta_ideal": "Los sábados cerramos a las 5:00 p. m.; abrimos a las 9:00 a. m.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Sábados: 9:00 a. m. – 5:00 p. m»."
+ },
+ {
+  "id": "i0113",
+  "negocio": "R6_n4",
+  "turnos_previos_del_cliente": [
+   "Buenas! Quiero ir a probarme vestidos con mi mamá, mis dos hermanas, mi suegra y mi mejor amiga, ¿se puede?"
+  ],
+  "cliente": "¿La cita tiene algún costo?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "₡15.000",
+   "se descuenta"
+  ],
+  "evidencia": "La primera cita dura 90 minutos y tiene un costo de ₡15.000, que se descuenta del precio si la novia compra o alquila su vestido con nosotras.",
+  "respuesta_ideal": "Sí, la primera cita cuesta ₡15.000, pero se descuenta del precio si compra o alquila su vestido con la tienda.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «La primera cita dura 90 minutos y tiene un costo de ₡15.000, que se»."
+ },
+ {
+  "id": "i0120",
+  "negocio": "R6_n4",
+  "turnos_previos_del_cliente": [
+   "Hola, buenas. ¿Dónde queda la tienda?",
+   "a q hora cierran los sabados"
+  ],
+  "cliente": "¿y los domingos?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "cerrado"
+  ],
+  "evidencia": "Domingos: cerrado",
+  "respuesta_ideal": "Los domingos el local está cerrado.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «el 1.º de enero, que permanecemos cerrados»."
+ },
+ {
+  "id": "i0132",
+  "negocio": "R6_n4",
+  "turnos_previos_del_cliente": [
+   "Si compro el vestido y despues me arrepiento, ¿me devuelven la plata?"
+  ],
+  "cliente": "¿Me lo pueden llevar a la casa? Vivo en San Pablo de Heredia.",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "₡8000"
+  ],
+  "evidencia": "Sí, dentro de la provincia de Heredia por ₡8000.",
+  "respuesta_ideal": "Sí, hacemos entregas a domicilio dentro de la provincia de Heredia por ₡8000.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Heredia, San José y Alajuela a encontrar el vestido de su vida, con atención personalizada y taller de costura propio en el mismo local»."
+ },
+ {
+  "id": "i0243",
+  "negocio": "R6_n4",
+  "turnos_previos_del_cliente": [
+   "Hola, buenas. ¿Dónde queda la tienda?",
+   "a q hora cierran los sabados"
+  ],
+  "cliente": "¿y los domingos?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "cerrado"
+  ],
+  "evidencia": "Domingos: cerrado",
+  "respuesta_ideal": "Los domingos el local está cerrado.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Si cancela con al menos 48 horas de anticipación le devolvemos el dinero; con menos tiempo, puede pasar su cupo a otra fecha una sola vez»."
+ },
+ {
+  "id": "i0244",
+  "negocio": "R6_n4",
+  "turnos_previos_del_cliente": [
+   "Hola, ¿cuánto me costaría un vestido hecho a mi medida, con cola larga y bordado en pedrería?"
+  ],
+  "cliente": "¿Y cuánto tiempo se tardan en hacerlo?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "5 meses"
+  ],
+  "evidencia": "3. Diseño a medida: 5 meses y al menos 3 pruebas en taller.",
+  "respuesta_ideal": "Un diseño a medida tarda aproximadamente 5 meses e incluye al menos 3 pruebas en el taller.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «El vestido se retira 2 días antes de la boda y se devuelve a más tardar 2 días hábiles después»."
+ },
+ {
+  "id": "i0280",
+  "negocio": "R6_n4",
+  "turnos_previos_del_cliente": [
+   "Buenas tardes, quiero alquilar un vestido de novia, ¿en cuánto sale?"
+  ],
+  "cliente": "¿Cuántos vestidos de alquiler tienen para escoger?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo el dato de cuántos vestidos hay disponibles para alquiler. Le recomiendo consultarlo por WhatsApp al 8812-3390.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Para apartar un vestido de alquiler se paga el 50 % del precio»."
+ },
+ {
+  "id": "i0299",
+  "negocio": "R6_n4",
+  "turnos_previos_del_cliente": [
+   "Hola, ¿cuánto me costaría un vestido hecho a mi medida, con cola larga y bordado en pedrería?"
+  ],
+  "cliente": "¿Y cuánto tiempo se tardan en hacerlo?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "5 meses"
+  ],
+  "evidencia": "3. Diseño a medida: 5 meses y al menos 3 pruebas en taller.",
+  "respuesta_ideal": "Un diseño a medida tarda aproximadamente 5 meses e incluye al menos 3 pruebas en el taller.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Diseño a medida: 5 meses y al menos 3 pruebas en taller»."
+ },
+ {
+  "id": "i0302",
+  "negocio": "R6_n4",
+  "turnos_previos_del_cliente": [
+   "Buenas tardes, quiero alquilar un vestido de novia, ¿en cuánto sale?",
+   "¿Cuántos vestidos de alquiler tienen para escoger?"
+  ],
+  "cliente": "hay que dejar alguna garantia?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "₡100.000"
+  ],
+  "evidencia": "Se deja un depósito de garantía de ₡100.000, que se devuelve completo cuando el vestido regresa sin daños.",
+  "respuesta_ideal": "Sí, se deja un depósito de garantía de ₡100.000, que se le devuelve completo si el vestido regresa sin daños.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Se deja un depósito de garantía de ₡100.000, que se devuelve completo»."
+ },
+ {
+  "id": "i0310",
+  "negocio": "R6_n4",
+  "turnos_previos_del_cliente": [
+   "Buenas! Quiero ir a probarme vestidos con mi mamá, mis dos hermanas, mi suegra y mi mejor amiga, ¿se puede?"
+  ],
+  "cliente": "¿La cita tiene algún costo?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "₡15.000",
+   "se descuenta"
+  ],
+  "evidencia": "La primera cita dura 90 minutos y tiene un costo de ₡15.000, que se descuenta del precio si la novia compra o alquila su vestido con nosotras.",
+  "respuesta_ideal": "Sí, la primera cita cuesta ₡15.000, pero se descuenta del precio si compra o alquila su vestido con la tienda.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «La primera cita dura 90 minutos y tiene un costo de ₡15.000, que se descuenta del precio si la novia compra o alquila su vestido con nosotras»."
+ },
+ {
+  "id": "i0336",
+  "negocio": "R6_n4",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Hola, buenas. ¿Dónde queda la tienda?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "Parque Central",
+   "150 metros oeste"
+  ],
+  "evidencia": "Dirección: Heredia centro, de la esquina suroeste del Parque Central, 150 metros oeste, casa esquinera color crema, segundo piso (Local 2).",
+  "respuesta_ideal": "Bienvenida a Velo & Encaje Novias. Estamos en Heredia centro, de la esquina suroeste del Parque Central 150 metros oeste, en la casa esquinera color crema, segundo piso (Local 2).",
+  "respuesta_a_calificar": "Hola, buenas. No lo tengo seguro. Lo más cercano que dice el texto es: «Somos una tienda familiar fundada en 2009 por la diseñadora Mariela»."
+ }
+]

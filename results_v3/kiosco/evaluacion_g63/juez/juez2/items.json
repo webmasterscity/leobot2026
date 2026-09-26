@@ -1,0 +1,808 @@
+[
+ {
+  "id": "i0018",
+  "negocio": "R1_n2",
+  "turnos_previos_del_cliente": [
+   "Hola, ¿cuánto cuesta que me miren cómo piso?",
+   "¿Y si luego me hago las plantillas aquí, cuánto me sale todo junto?",
+   "¿Cuánto tardan en dármelas?",
+   "Tengo fascitis y me duele muchisimo el talón por las mañanas, ¿qué plantilla me va mejor?"
+  ],
+  "cliente": "Vale, ¿me da usted cita para el jueves por la tarde?",
+  "tipo": "instruccion",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "Las citas para el estudio de la pisada y las visitas a domicilio no las da usted: que llamen al 923 21 44 87 o escriban al WhatsApp 644 310 229.",
+  "respuesta_ideal": "Yo no puedo dar citas; llame al 923 21 44 87 o escriba al WhatsApp 644 310 229 y se la dan.",
+  "respuesta_a_calificar": "Vale. No lo tengo seguro. Lo más cercano que dice el texto es: «Para personas con movilidad reducida, la técnica ortopédica se desplaza a tomar medidas a domicilio los martes y jueves por la tarde»."
+ },
+ {
+  "id": "i0032",
+  "negocio": "R1_n2",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Compré unas medias de compresión, las abrí y me quedan pequeñas, ¿me las cambian?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "higiene"
+  ],
+  "evidencia": "medias de compresión y productos de contacto directo con la piel una vez abiertos, por motivos de higiene.",
+  "respuesta_ideal": "Lo siento, las medias de compresión abiertas no se pueden cambiar ni devolver, por motivos de higiene.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «medias de compresión y productos de contacto directo con la piel una vez abiertos, por motivos de higiene»."
+ },
+ {
+  "id": "i0138",
+  "negocio": "R1_n2",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Compré unas medias de compresión, las abrí y me quedan pequeñas, ¿me las cambian?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "higiene"
+  ],
+  "evidencia": "medias de compresión y productos de contacto directo con la piel una vez abiertos, por motivos de higiene.",
+  "respuesta_ideal": "Lo siento, las medias de compresión abiertas no se pueden cambiar ni devolver, por motivos de higiene.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «medias de compresión y productos de contacto directo con la piel una»."
+ },
+ {
+  "id": "i0203",
+  "negocio": "R1_n2",
+  "turnos_previos_del_cliente": [
+   "Necesito alquilar una silla de ruedas normal para mi madre, ¿cuánto sale al mes?",
+   "¿Hay que dejar alguna señal o depósito?",
+   "Si la tengo dos meses, ¿cuánto tengo que pagar en total contando eso?",
+   "¿Me la llevan ustedes a casa?",
+   "¿Y tienen sillas eléctricas para alquilar?"
+  ],
+  "cliente": "¿Cuánto pesa la silla ligera de aluminio?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo el dato del peso de la silla ligera; se lo pueden decir en tienda o en el 923 21 44 87.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Producto: Silla de ruedas ligera (aluminio); Semana: 35 €; Mes: 85 €; Fianza: 150 €»."
+ },
+ {
+  "id": "i0217",
+  "negocio": "R1_n2",
+  "turnos_previos_del_cliente": [
+   "Compré unas medias de compresión, las abrí y me quedan pequeñas, ¿me las cambian?",
+   "¿Y una faja que no he llegado a usar?",
+   "¿Cuánto vale la faja lumbar?",
+   "¿Tienen fajas para embarazadas?",
+   "Me llevo unas plantillas deportivas de las normales y una rodillera, ¿cuánto es?"
+  ],
+  "cliente": "¿Cómo puedo pagar?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "tarjeta",
+   "Bizum"
+  ],
+  "evidencia": "Efectivo, tarjeta (incluido pago contactless) y Bizum al 644 310 229.",
+  "respuesta_ideal": "Puede pagar en efectivo, con tarjeta (también contactless) o por Bizum al 644 310 229.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «En compras superiores a 300 € se puede fraccionar el pago en 3 meses»."
+ },
+ {
+  "id": "i0227",
+  "negocio": "R1_n2",
+  "turnos_previos_del_cliente": [
+   "Compré unas medias de compresión, las abrí y me quedan pequeñas, ¿me las cambian?",
+   "¿Y una faja que no he llegado a usar?",
+   "¿Cuánto vale la faja lumbar?",
+   "¿Tienen fajas para embarazadas?",
+   "Me llevo unas plantillas deportivas de las normales y una rodillera, ¿cuánto es?"
+  ],
+  "cliente": "¿Cómo puedo pagar?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "tarjeta",
+   "Bizum"
+  ],
+  "evidencia": "Efectivo, tarjeta (incluido pago contactless) y Bizum al 644 310 229.",
+  "respuesta_ideal": "Puede pagar en efectivo, con tarjeta (también contactless) o por Bizum al 644 310 229.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Se puede pagar con transferencia, tarjeta de crédito (hasta 12 cuotas sin interés con bancos adheridos) o vale vista»."
+ },
+ {
+  "id": "i0237",
+  "negocio": "R1_n2",
+  "turnos_previos_del_cliente": [
+   "Compré unas medias de compresión, las abrí y me quedan pequeñas, ¿me las cambian?",
+   "¿Y una faja que no he llegado a usar?",
+   "¿Cuánto vale la faja lumbar?",
+   "¿Tienen fajas para embarazadas?",
+   "Me llevo unas plantillas deportivas de las normales y una rodillera, ¿cuánto es?"
+  ],
+  "cliente": "¿Cómo puedo pagar?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "tarjeta",
+   "Bizum"
+  ],
+  "evidencia": "Efectivo, tarjeta (incluido pago contactless) y Bizum al 644 310 229.",
+  "respuesta_ideal": "Puede pagar en efectivo, con tarjeta (también contactless) o por Bizum al 644 310 229.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «En compras superiores a 300 € se puede fraccionar el pago en 3 meses sin intereses con tarjeta de crédito»."
+ },
+ {
+  "id": "i0245",
+  "negocio": "R1_n2",
+  "turnos_previos_del_cliente": [
+   "Buenos días, ¿qué horario tienen los sábados?",
+   "¿Y entre semana hasta qué hora están por la tarde?"
+  ],
+  "cliente": "¿Y cómo es el horario en agosto?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "9:30",
+   "14:00"
+  ],
+  "evidencia": "Agosto: solo mañanas (9:30-14:00), sábados cerrado.",
+  "respuesta_ideal": "En agosto abrimos solo por las mañanas, de 9:30 a 14:00, y los sábados está cerrado.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Agosto: solo mañanas (9:30-14:00), sábados cerrado»."
+ },
+ {
+  "id": "i0259",
+  "negocio": "R1_n2",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Buenos días, ¿qué horario tienen los sábados?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "10:00",
+   "13:30"
+  ],
+  "evidencia": "Horario: L-V 9:30-14:00 y 17:00-20:15 · Sáb 10:00-13:30",
+  "respuesta_ideal": "Buenos días. Los sábados abrimos de 10:00 a 13:30.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Agosto: solo mañanas (9:30-14:00), sábados cerrado»."
+ },
+ {
+  "id": "i0268",
+  "negocio": "R1_n2",
+  "turnos_previos_del_cliente": [
+   "Necesito alquilar una silla de ruedas normal para mi madre, ¿cuánto sale al mes?",
+   "¿Hay que dejar alguna señal o depósito?"
+  ],
+  "cliente": "Si la tengo dos meses, ¿cuánto tengo que pagar en total contando eso?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "220"
+  ],
+  "evidencia": "Silla de ruedas estándar\t25 €\t60 €\t100 €",
+  "respuesta_ideal": "Dos meses son 120 € más 100 € de fianza: 220 € en total, de los que los 100 € de fianza se le devuelven al entregarla en buen estado.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «En compras superiores a 300 € se puede fraccionar el pago en 3 meses»."
+ },
+ {
+  "id": "i0277",
+  "negocio": "R1_n2",
+  "turnos_previos_del_cliente": [
+   "Compré unas medias de compresión, las abrí y me quedan pequeñas, ¿me las cambian?",
+   "¿Y una faja que no he llegado a usar?"
+  ],
+  "cliente": "¿Cuánto vale la faja lumbar?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "39,95"
+  ],
+  "evidencia": "Faja lumbar semirrígida: 39,95 €",
+  "respuesta_ideal": "La faja lumbar semirrígida cuesta 39,95 €.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Faja lumbar semirrígida: 39,95 €»."
+ },
+ {
+  "id": "i0307",
+  "negocio": "R1_n2",
+  "turnos_previos_del_cliente": [
+   "Hola, ¿cuánto cuesta que me miren cómo piso?",
+   "¿Y si luego me hago las plantillas aquí, cuánto me sale todo junto?",
+   "¿Cuánto tardan en dármelas?",
+   "Tengo fascitis y me duele muchisimo el talón por las mañanas, ¿qué plantilla me va mejor?"
+  ],
+  "cliente": "Vale, ¿me da usted cita para el jueves por la tarde?",
+  "tipo": "instruccion",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "Las citas para el estudio de la pisada y las visitas a domicilio no las da usted: que llamen al 923 21 44 87 o escriban al WhatsApp 644 310 229.",
+  "respuesta_ideal": "Yo no puedo dar citas; llame al 923 21 44 87 o escriba al WhatsApp 644 310 229 y se la dan.",
+  "respuesta_a_calificar": "Vale. No lo tengo seguro. Lo más cercano que dice el texto es: «desplaza a tomar medidas a domicilio los martes y jueves por la tarde»."
+ },
+ {
+  "id": "i0355",
+  "negocio": "R1_n2",
+  "turnos_previos_del_cliente": [
+   "Buenas, mi medico me ha hecho una receta para un andador, ¿qué tengo que traer?",
+   "¿Y cuánto tarda la Junta en devolverme el dinero?",
+   "Mi padre no puede salir de casa y vive en Villamayor, ¿pueden ir a tomarle medidas?"
+  ],
+  "cliente": "¿Se puede comprar por internet?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "No realizamos venta online"
+  ],
+  "evidencia": "No realizamos venta online.",
+  "respuesta_ideal": "No realizamos venta online; los encargos por teléfono se recogen en tienda.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «En compras superiores a 300 € se puede fraccionar el pago en 3 meses»."
+ },
+ {
+  "id": "i0358",
+  "negocio": "R1_n2",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Buenas, mi medico me ha hecho una receta para un andador, ¿qué tengo que traer?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "receta original",
+   "DNI"
+  ],
+  "evidencia": "tráiganos la receta original y el DNI.",
+  "respuesta_ideal": "Tráiganos la receta original y su DNI; nosotros tramitamos la solicitud, usted adelanta el importe y la Junta se lo reintegra.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Si su médico le ha hecho una prescripción de ortoprótesis (por ejemplo, una silla de ruedas, un andador o unas plantillas incluidas en el catálogo), tráiganos la receta original y el DNI. Nosotros tramitamos la solicitud; usted adelanta el importe y la Junta se lo reintegra en su cuenta»."
+ },
+ {
+  "id": "i0012",
+  "negocio": "R3_n2",
+  "turnos_previos_del_cliente": [
+   "Hola, tengo una pregunta sobre las plantas"
+  ],
+  "cliente": "¿Tienen musgo de java?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "musgo de java"
+  ],
+  "evidencia": "Plantas acuáticas: anubias, musgo de java, ludwigia...",
+  "respuesta_ideal": "Sí, tenemos musgo de java. Cuesta entre 350.000 y 1.500.000 bolívares según la cantidad.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Plantas acuáticas: anubias, musgo de java, ludwigia, espada amazónica,»."
+ },
+ {
+  "id": "i0028",
+  "negocio": "R3_n2",
+  "turnos_previos_del_cliente": [
+   "Necesito plecos",
+   "¿Qué variedades tienen de plecos?",
+   "¿Cuál es la diferencia?",
+   "¿Cuánto cuesta cada uno?"
+  ],
+  "cliente": "¿Tienen pez payaso también?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "agua marina",
+   "disponible por encargo"
+  ],
+  "evidencia": "Agua marina (disponible por encargo)... Cirujanos (azul, amarillo, pez payaso)",
+  "respuesta_ideal": "El pez payaso es de agua marina. Que lo conseguimos, pero por encargo. Entre 1 a 3 semanas con depósito del 50 %.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Cirujanos (azul, amarillo, pez payaso)»."
+ },
+ {
+  "id": "i0081",
+  "negocio": "R3_n2",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Buenos días",
+  "tipo": "charla",
+  "accion_esperada": "responder",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "Buenos días. ¿Cómo te podemos ayudar?",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Devoluciones de equipos: 15 días con factura original y producto en»."
+ },
+ {
+  "id": "i0089",
+  "negocio": "R3_n2",
+  "turnos_previos_del_cliente": [
+   "Necesito plecos",
+   "¿Qué variedades tienen de plecos?"
+  ],
+  "cliente": "¿Cuál es la diferencia?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "Son líneas distintas con características diferentes. Te recomiendo que llames al +58 (243) 233-7890 para que un especialista te explique las diferencias en detalle.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Somos la tienda especializada número uno en acuarismo de Maracay, con más de 18 años de experiencia en la venta de peces ornamentales,»."
+ },
+ {
+  "id": "i0095",
+  "negocio": "R3_n2",
+  "turnos_previos_del_cliente": [
+   "Hola, compre peces hace dos días",
+   "Uno de los tetras se murió"
+  ],
+  "cliente": "¿Pero cuánto tarda en reemplazarlo?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "Puedes venir hoy mismo a la tienda y te lo cambiamos en el acto. Estamos abiertos hasta las 18:00.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «5 con acuerdos de indemnización entre cliente y empresa»."
+ },
+ {
+  "id": "i0141",
+  "negocio": "R3_n2",
+  "turnos_previos_del_cliente": [
+   "Buenos días",
+   "Quiero montar mi primer acuario",
+   "¿Venden acuarios completos?",
+   "¿Cuánto cuesta uno de 80 litros?",
+   "¿Incluye el filtro?"
+  ],
+  "cliente": "¿Qué peces me recomiendas para empezar?",
+  "tipo": "instruccion",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "instrucciones.txt: punto 4",
+  "respuesta_ideal": "Para un primer acuario, el equipo te puede recomendar en una consulta gratuita. Llamanos al +58 (243) 233-7890 o veni a la tienda.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Medicinas para peces (contra hongos, bacterias, parásitos)»."
+ },
+ {
+  "id": "i0145",
+  "negocio": "R3_n2",
+  "turnos_previos_del_cliente": [
+   "Buenos días"
+  ],
+  "cliente": "Quiero montar mi primer acuario",
+  "tipo": "instruccion",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "instrucciones.txt: punto 4",
+  "respuesta_ideal": "¡Qué emoción! Te recomiendo venir a la tienda para una consulta gratuita con nuestro equipo, que te asesore en todo lo que necesitas.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Consulta sobre ciclado de acuarios antes de tu primera compra»."
+ },
+ {
+  "id": "i0147",
+  "negocio": "R3_n2",
+  "turnos_previos_del_cliente": [
+   "Hola, compre peces hace dos días",
+   "Uno de los tetras se murió"
+  ],
+  "cliente": "¿Pero cuánto tarda en reemplazarlo?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "Puedes venir hoy mismo a la tienda y te lo cambiamos en el acto. Estamos abiertos hasta las 18:00.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Si el pez muere en las primeras 48 horas sin culpa del cliente, lo reemplazamos sin costo (requiere acuario ciclado, parámetros de agua adecuados y transporte correcto)»."
+ },
+ {
+  "id": "i0180",
+  "negocio": "R3_n2",
+  "turnos_previos_del_cliente": [
+   "Hola, compre peces hace dos días",
+   "Uno de los tetras se murió",
+   "¿Pero cuánto tarda en reemplazarlo?"
+  ],
+  "cliente": "¿Hacen entregas a domicilio?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "entregas en Maracay y alrededores",
+   "15 km",
+   "350.000 VES",
+   "máximo 24 horas"
+  ],
+  "evidencia": "Entregas a domicilio: disponibles en Maracay y alrededores dentro de un radio de 15 km. Costo: 350.000 VES... Tiempo: máximo 24 horas.",
+  "respuesta_ideal": "Sí, hacemos entregas dentro de 15 km de Maracay. Cuesta 350.000 bolívares y tardamos máximo 24 horas.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Entregas a domicilio: disponibles en Maracay y alrededores dentro de un radio de 15 km. Costo: 350.000 VES (no se incluye transporte de peces vivos)»."
+ },
+ {
+  "id": "i0194",
+  "negocio": "R3_n2",
+  "turnos_previos_del_cliente": [
+   "Hola, compre peces hace dos días",
+   "Uno de los tetras se murió"
+  ],
+  "cliente": "¿Pero cuánto tarda en reemplazarlo?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "Puedes venir hoy mismo a la tienda y te lo cambiamos en el acto. Estamos abiertos hasta las 18:00.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Si el pez muere en las primeras 48 horas sin culpa del cliente, lo reemplazamos sin costo»."
+ },
+ {
+  "id": "i0197",
+  "negocio": "R3_n2",
+  "turnos_previos_del_cliente": [
+   "Necesito plecos"
+  ],
+  "cliente": "¿Qué variedades tienen de plecos?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "L025, L046, L200"
+  ],
+  "evidencia": "Plecos (L025, L046, L200)",
+  "respuesta_ideal": "Tenemos los modelos L025, L046 y L200.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Plecos: 3.200.000 a 8.500.000 VES (según tamaño y variedad)»."
+ },
+ {
+  "id": "i0216",
+  "negocio": "R3_n2",
+  "turnos_previos_del_cliente": [
+   "Necesito plecos",
+   "¿Qué variedades tienen de plecos?"
+  ],
+  "cliente": "¿Cuál es la diferencia?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "Son líneas distintas con características diferentes. Te recomiendo que llames al +58 (243) 233-7890 para que un especialista te explique las diferencias en detalle.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Somos la tienda especializada número uno en acuarismo de Maracay, con más de 18 años de experiencia en la venta de peces ornamentales, plantas acuáticas, equipos y accesorios para acuarios»."
+ },
+ {
+  "id": "i0222",
+  "negocio": "R3_n2",
+  "turnos_previos_del_cliente": [
+   "Hola, ¿qué tal?"
+  ],
+  "cliente": "¿Tienen tetras?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "Tetras (cardenal, neón, cobre, serpae)"
+  ],
+  "evidencia": "Tetras (cardenal, neón, cobre, serpae)",
+  "respuesta_ideal": "Sí, tenemos varias variedades: cardenal, neón, cobre y serpae.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Tetras (cardenal, neón, cobre, serpae)»."
+ },
+ {
+  "id": "i0232",
+  "negocio": "R3_n2",
+  "turnos_previos_del_cliente": [
+   "Hola, compre peces hace dos días",
+   "Uno de los tetras se murió",
+   "¿Pero cuánto tarda en reemplazarlo?"
+  ],
+  "cliente": "¿Hacen entregas a domicilio?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "entregas en Maracay y alrededores",
+   "15 km",
+   "350.000 VES",
+   "máximo 24 horas"
+  ],
+  "evidencia": "Entregas a domicilio: disponibles en Maracay y alrededores dentro de un radio de 15 km. Costo: 350.000 VES... Tiempo: máximo 24 horas.",
+  "respuesta_ideal": "Sí, hacemos entregas dentro de 15 km de Maracay. Cuesta 350.000 bolívares y tardamos máximo 24 horas.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Entregas a domicilio: disponibles en Maracay y alrededores dentro de»."
+ },
+ {
+  "id": "i0267",
+  "negocio": "R3_n2",
+  "turnos_previos_del_cliente": [
+   "Hola, tengo una pregunta sobre las plantas"
+  ],
+  "cliente": "¿Tienen musgo de java?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "musgo de java"
+  ],
+  "evidencia": "Plantas acuáticas: anubias, musgo de java, ludwigia...",
+  "respuesta_ideal": "Sí, tenemos musgo de java. Cuesta entre 350.000 y 1.500.000 bolívares según la cantidad.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Plantas acuáticas: anubias, musgo de java, ludwigia, espada amazónica, cabomba, helecho de agua, más de 15 variedades»."
+ },
+ {
+  "id": "i0278",
+  "negocio": "R3_n2",
+  "turnos_previos_del_cliente": [
+   "Necesito plecos",
+   "¿Qué variedades tienen de plecos?"
+  ],
+  "cliente": "¿Cuál es la diferencia?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "Son líneas distintas con características diferentes. Te recomiendo que llames al +58 (243) 233-7890 para que un especialista te explique las diferencias en detalle.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Somos la tienda especializada número uno en acuarismo de Maracay, con»."
+ },
+ {
+  "id": "i0304",
+  "negocio": "R3_n2",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Necesito plecos",
+  "tipo": "charla",
+  "accion_esperada": "responder",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "Excelente, tenemos varias variedades de plecos. ¿Cuál tipo buscas?",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Plecos (L025, L046, L200)»."
+ },
+ {
+  "id": "i0312",
+  "negocio": "R3_n2",
+  "turnos_previos_del_cliente": [
+   "Buenos días",
+   "Quiero montar mi primer acuario",
+   "¿Venden acuarios completos?",
+   "¿Cuánto cuesta uno de 80 litros?"
+  ],
+  "cliente": "¿Incluye el filtro?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "El acuario es solo el tanque. El filtro se vende aparte. Los filtros externos básicos cuestan entre 3.5 y 5 millones.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Filtros (internos, externos, canister)»."
+ },
+ {
+  "id": "i0022",
+  "negocio": "R5_n2",
+  "turnos_previos_del_cliente": [
+   "¿hacen tapizado de cabeceras de cama con luces led incorporadas?"
+  ],
+  "cliente": "¿tapizan asientos de auto?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "Retapizado de asientos de auto clásico"
+  ],
+  "evidencia": "Retapizado de asientos de auto clásico: consultar, varía mucho según el modelo",
+  "respuesta_ideal": "Sí, hacemos retapizado de asientos de auto clásico.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «muebles de auto (asientos de vehículos clásicos)»."
+ },
+ {
+  "id": "i0050",
+  "negocio": "R5_n2",
+  "turnos_previos_del_cliente": [],
+  "cliente": "¿Cuánto sale el retiro a domicilio dentro de Salto?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "$U 400"
+  ],
+  "evidencia": "Hacemos retiro y entrega a domicilio dentro del radio de Salto capital por $U 400 el viaje (ida y vuelta).",
+  "respuesta_ideal": "El retiro y entrega a domicilio dentro de Salto capital cuesta $U 400 el viaje, ida y vuelta.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Hacemos retiro y entrega a domicilio dentro del radio de Salto capital por $U 400 el viaje (ida y vuelta)»."
+ },
+ {
+  "id": "i0068",
+  "negocio": "R5_n2",
+  "turnos_previos_del_cliente": [
+   "¿Qué formas de pago aceptan?"
+  ],
+  "cliente": "¿cuánto hay que dejar de seña?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "50%"
+  ],
+  "evidencia": "Se pide una seña del 50% al dejar el mueble y el saldo se paga al retirarlo.",
+  "respuesta_ideal": "Se pide una seña del 50% al dejar el mueble, y el resto se paga al retirarlo.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Se pide una seña del 50%»."
+ },
+ {
+  "id": "i0094",
+  "negocio": "R5_n2",
+  "turnos_previos_del_cliente": [],
+  "cliente": "¿Qué formas de pago aceptan?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "efectivo",
+   "transferencia bancaria",
+   "Mercado Pago"
+  ],
+  "evidencia": "Aceptamos efectivo, transferencia bancaria y Mercado Pago.",
+  "respuesta_ideal": "Aceptamos efectivo, transferencia bancaria y Mercado Pago.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Aceptamos efectivo, transferencia bancaria y Mercado Pago»."
+ },
+ {
+  "id": "i0102",
+  "negocio": "R5_n2",
+  "turnos_previos_del_cliente": [],
+  "cliente": "¿Cuánto tarda un sofá de 3 cuerpos?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "15 días hábiles"
+  ],
+  "evidencia": "Un sofá de 3 cuerpos puede demorar hasta 15 días hábiles.",
+  "respuesta_ideal": "Un sofá de 3 cuerpos puede demorar hasta 15 días hábiles.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Un sofá de 3 cuerpos puede demorar hasta 15 días hábiles»."
+ },
+ {
+  "id": "i0115",
+  "negocio": "R5_n2",
+  "turnos_previos_del_cliente": [
+   "¿hacen tapizado de cabeceras de cama con luces led incorporadas?",
+   "¿tapizan asientos de auto?",
+   "¿y cuánto cuesta eso?"
+  ],
+  "cliente": "¿puedo pagar en cuotas con tarjeta de credito?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "No trabajamos con tarjeta de crédito en cuotas"
+  ],
+  "evidencia": "No trabajamos con tarjeta de crédito en cuotas.",
+  "respuesta_ideal": "No, no trabajamos con tarjeta de crédito en cuotas; aceptamos efectivo, transferencia bancaria y Mercado Pago.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «trabajamos con tarjeta de crédito en cuotas»."
+ },
+ {
+  "id": "i0156",
+  "negocio": "R5_n2",
+  "turnos_previos_del_cliente": [
+   "Hola buenas tardes"
+  ],
+  "cliente": "¿cuanto cuesta tapizar un sillon de un cuerpo?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "$U 3.500"
+  ],
+  "evidencia": "Tapizado de sillón de 1 cuerpo: desde $U 3.500 (según tela y estado del mueble)",
+  "respuesta_ideal": "El tapizado de un sillón de un cuerpo arranca desde $U 3.500, según la tela y el estado del mueble.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Tapizado de sillón de 1 cuerpo: desde $U 3.500 (según tela y estado del mueble)»."
+ },
+ {
+  "id": "i0179",
+  "negocio": "R5_n2",
+  "turnos_previos_del_cliente": [
+   "¿Qué formas de pago aceptan?",
+   "¿cuánto hay que dejar de seña?"
+  ],
+  "cliente": "¿hacen envios a Montevideo por encomienda?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo información de envíos por encomienda a Montevideo; solo contamos con retiro y entrega a domicilio en la zona de Salto.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Sí, a todo México por paquetería, con costo de envío a cargo del cliente»."
+ },
+ {
+  "id": "i0191",
+  "negocio": "R5_n2",
+  "turnos_previos_del_cliente": [
+   "¿hacen tapizado de cabeceras de cama con luces led incorporadas?",
+   "¿tapizan asientos de auto?",
+   "¿y cuánto cuesta eso?"
+  ],
+  "cliente": "¿puedo pagar en cuotas con tarjeta de credito?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "No trabajamos con tarjeta de crédito en cuotas"
+  ],
+  "evidencia": "No trabajamos con tarjeta de crédito en cuotas.",
+  "respuesta_ideal": "No, no trabajamos con tarjeta de crédito en cuotas; aceptamos efectivo, transferencia bancaria y Mercado Pago.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «No trabajamos con tarjeta de crédito en cuotas»."
+ },
+ {
+  "id": "i0196",
+  "negocio": "R5_n2",
+  "turnos_previos_del_cliente": [
+   "¿Qué formas de pago aceptan?"
+  ],
+  "cliente": "¿cuánto hay que dejar de seña?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "50%"
+  ],
+  "evidencia": "Se pide una seña del 50% al dejar el mueble y el saldo se paga al retirarlo.",
+  "respuesta_ideal": "Se pide una seña del 50% al dejar el mueble, y el resto se paga al retirarlo.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Se pide una seña del 50% al dejar el mueble y el saldo se paga al retirarlo»."
+ },
+ {
+  "id": "i0220",
+  "negocio": "R5_n2",
+  "turnos_previos_del_cliente": [
+   "Hola buenas tardes",
+   "¿cuanto cuesta tapizar un sillon de un cuerpo?",
+   "¿y eso incluye la tela?"
+  ],
+  "cliente": "¿cual es el horario los sabados?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "9:00 a 12:00"
+  ],
+  "evidencia": "Sáb 9:00 a 12:00.",
+  "respuesta_ideal": "Los sábados atendemos de 9:00 a 12:00.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Horario: Lunes a viernes 9:00-19:00, sábados 9:00-15:00, domingo cerrado»."
+ },
+ {
+  "id": "i0250",
+  "negocio": "R5_n2",
+  "turnos_previos_del_cliente": [
+   "¿Cuánto tarda un sofá de 3 cuerpos?"
+  ],
+  "cliente": "quiero tapizar 3 sillas de comedor con tela propia, ¿cuánto pagaría en total?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "$U 1.200"
+  ],
+  "evidencia": "Tapizado de silla de comedor (unidad): $U 1.200",
+  "respuesta_ideal": "Las 3 sillas saldrían $U 3.600 en total, a $U 1.200 cada una.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Tapizado de silla de comedor (unidad): $U 1.200»."
+ },
+ {
+  "id": "i0283",
+  "negocio": "R5_n2",
+  "turnos_previos_del_cliente": [],
+  "cliente": "¿Cuánto tarda un sofá de 3 cuerpos?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "15 días hábiles"
+  ],
+  "evidencia": "Un sofá de 3 cuerpos puede demorar hasta 15 días hábiles.",
+  "respuesta_ideal": "Un sofá de 3 cuerpos puede demorar hasta 15 días hábiles.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Tapizado de sofá de 2 o 3 cuerpos: desde $U 6.800»."
+ },
+ {
+  "id": "i0319",
+  "negocio": "R5_n2",
+  "turnos_previos_del_cliente": [],
+  "cliente": "¿Qué formas de pago aceptan?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "efectivo",
+   "transferencia bancaria",
+   "Mercado Pago"
+  ],
+  "evidencia": "Aceptamos efectivo, transferencia bancaria y Mercado Pago.",
+  "respuesta_ideal": "Aceptamos efectivo, transferencia bancaria y Mercado Pago.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Formas de pago»."
+ },
+ {
+  "id": "i0322",
+  "negocio": "R5_n2",
+  "turnos_previos_del_cliente": [
+   "Hola buenas tardes",
+   "¿cuanto cuesta tapizar un sillon de un cuerpo?"
+  ],
+  "cliente": "¿y eso incluye la tela?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "NO incluyen la tela"
+  ],
+  "evidencia": "los precios de arriba NO incluyen la tela.",
+  "respuesta_ideal": "No, ese precio no incluye la tela.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Nota: los precios de arriba NO incluyen la tela»."
+ },
+ {
+  "id": "i0346",
+  "negocio": "R5_n2",
+  "turnos_previos_del_cliente": [
+   "¿Cuánto tarda un sofá de 3 cuerpos?",
+   "quiero tapizar 3 sillas de comedor con tela propia, ¿cuánto pagaría en total?"
+  ],
+  "cliente": "¿cuánto cobran por metro de tela si la ponen ustedes?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "$U 450",
+   "$U 900"
+  ],
+  "evidencia": "el metraje se cobra aparte, entre $U 450 y $U 900 el metro según el tejido.",
+  "respuesta_ideal": "El metro de tela, si la ponemos nosotros, sale entre $U 450 y $U 900 según el tejido.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Si el taller provee la tela, el metraje se cobra aparte, entre $U 450 y $U 900 el metro según el tejido»."
+ },
+ {
+  "id": "i0347",
+  "negocio": "R5_n2",
+  "turnos_previos_del_cliente": [
+   "Hola buenas tardes"
+  ],
+  "cliente": "¿cuanto cuesta tapizar un sillon de un cuerpo?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "$U 3.500"
+  ],
+  "evidencia": "Tapizado de sillón de 1 cuerpo: desde $U 3.500 (según tela y estado del mueble)",
+  "respuesta_ideal": "El tapizado de un sillón de un cuerpo arranca desde $U 3.500, según la tela y el estado del mueble.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Tapizado de sillón de 1 cuerpo: desde $U 3.500 (según tela y estado»."
+ }
+]

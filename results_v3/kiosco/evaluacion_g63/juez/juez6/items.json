@@ -1,0 +1,614 @@
+[
+ {
+  "id": "i0027",
+  "negocio": "R2_n2",
+  "turnos_previos_del_cliente": [
+   "Hola, ¿cuánto sale pernoctar si no soy socio del club andino?"
+  ],
+  "cliente": "¿y si quiero pensión completa?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "$41.000"
+  ],
+  "evidencia": "Pensión completa (pernocte + desayuno + cena)|$32.000|$41.000",
+  "respuesta_ideal": "La pensión completa sin ser socio cuesta $41.000 por persona.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Servicio: Pensión completa (pernocte + desayuno + cena); Socix Club Andino: $32.000; No socix: $41.000»."
+ },
+ {
+  "id": "i0054",
+  "negocio": "R2_n2",
+  "turnos_previos_del_cliente": [
+   "¿los chicos pagan igual que los adultos?"
+  ],
+  "cliente": "tengo un nene de 5 años, entonces no paga?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "no pagan pernocte si comparten cama con un adulto"
+  ],
+  "evidencia": "Los menores de 6 años no pagan pernocte si comparten cama con un adulto.",
+  "respuesta_ideal": "Correcto, si tu hijo tiene 5 años y comparte cama con vos, no paga el pernocte.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Los menores de 6 años no pagan pernocte si comparten cama con un»."
+ },
+ {
+  "id": "i0184",
+  "negocio": "R2_n2",
+  "turnos_previos_del_cliente": [
+   "¿los chicos pagan igual que los adultos?",
+   "tengo un nene de 5 años, entonces no paga?",
+   "¿hay servicio de arriero para subir el equipaje?"
+  ],
+  "cliente": "el guardarrefugio se llama como?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "Marcos Huenul"
+  ],
+  "evidencia": "Guardarrefugio: Marcos Huenul",
+  "respuesta_ideal": "El guardarrefugio se llama Marcos Huenul.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «El refugio no cuenta con electricidad para cargar celulares; hay un panel solar de uso limitado para emergencias del guardarrefugio»."
+ },
+ {
+  "id": "i0231",
+  "negocio": "R2_n2",
+  "turnos_previos_del_cliente": [
+   "¿los chicos pagan igual que los adultos?",
+   "tengo un nene de 5 años, entonces no paga?",
+   "¿hay servicio de arriero para subir el equipaje?"
+  ],
+  "cliente": "el guardarrefugio se llama como?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "Marcos Huenul"
+  ],
+  "evidencia": "Guardarrefugio: Marcos Huenul",
+  "respuesta_ideal": "El guardarrefugio se llama Marcos Huenul.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «panel solar de uso limitado para emergencias del guardarrefugio»."
+ },
+ {
+  "id": "i0240",
+  "negocio": "R2_n2",
+  "turnos_previos_del_cliente": [
+   "¿los chicos pagan igual que los adultos?"
+  ],
+  "cliente": "tengo un nene de 5 años, entonces no paga?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "no pagan pernocte si comparten cama con un adulto"
+  ],
+  "evidencia": "Los menores de 6 años no pagan pernocte si comparten cama con un adulto.",
+  "respuesta_ideal": "Correcto, si tu hijo tiene 5 años y comparte cama con vos, no paga el pernocte.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Los menores de 6 años no pagan pernocte si comparten cama con un adulto»."
+ },
+ {
+  "id": "i0262",
+  "negocio": "R2_n2",
+  "turnos_previos_del_cliente": [
+   "buenas, ¿el refugio está abierto en julio?",
+   "y si cancelo con 5 dias antes me devuelven la seña?",
+   "¿puedo pagar la seña en pesos chilenos?"
+  ],
+  "cliente": "¿hay que llevar bolsa de dormir?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "Bolsa de dormir (no proveemos ropa de cama"
+  ],
+  "evidencia": "Bolsa de dormir (no proveemos ropa de cama, solo colchón y manta liviana)",
+  "respuesta_ideal": "Sí, hay que traer bolsa de dormir; el refugio solo provee colchón y una manta liviana.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Bolsa de dormir (no proveemos ropa de cama, solo colchón y manta»."
+ },
+ {
+  "id": "i0271",
+  "negocio": "R2_n2",
+  "turnos_previos_del_cliente": [
+   "¿Puedo llevar a mi perro al refugio?",
+   "¿Hay toma corriente para cargar el celular?"
+  ],
+  "cliente": "aceptan tarjeta de credito?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "no hay señal para posnet ni cajero"
+  ],
+  "evidencia": "Efectivo: no hay señal para posnet ni cajero, se paga en efectivo o por transferencia previa",
+  "respuesta_ideal": "No, no hay posnet ni cajero; se paga en efectivo o por transferencia previa.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «BANCO DE ALIMENTOS DE LEÓN, A.C»."
+ },
+ {
+  "id": "i0357",
+  "negocio": "R2_n2",
+  "turnos_previos_del_cliente": [],
+  "cliente": "¿los chicos pagan igual que los adultos?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "Los menores de 6 años no pagan pernocte si comparten cama con un adulto."
+  ],
+  "evidencia": "Los menores de 6 años no pagan pernocte si comparten cama con un adulto.",
+  "respuesta_ideal": "Los menores de 6 años no pagan el pernocte si comparten la cama con un adulto; de resto pagan tarifa normal.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Los menores de 6 años no pagan pernocte si comparten cama con un adulto»."
+ },
+ {
+  "id": "i0002",
+  "negocio": "R4_n2",
+  "turnos_previos_del_cliente": [
+   "que dias son las funciones del elenco estable?",
+   "dan certificado al terminar el año?"
+  ],
+  "cliente": "es entrada libre la muestra de fin de año?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "entrada a la gorra"
+  ],
+  "evidencia": "abierta al público, con entrada a la gorra",
+  "respuesta_ideal": "Sí, la muestra de fin de año es abierta al público con entrada a la gorra.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Cada nivel presenta una muestra de fin de año en noviembre, abierta»."
+ },
+ {
+  "id": "i0003",
+  "negocio": "R4_n2",
+  "turnos_previos_del_cliente": [],
+  "cliente": "hay lugar en el grupo de intermedio ahora mismo?",
+  "tipo": "instruccion",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "No confirmar vacantes disponibles en un grupo específico por este medio: decir que hay que escribir al WhatsApp 221 555-4433 para consultar cupo real.",
+  "respuesta_ideal": "Eso te lo puedo confirmar mejor por WhatsApp al 221 555-4433, porque los cupos cambian seguido.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Se puede recuperar una clase perdida en otro grupo del mismo»."
+ },
+ {
+  "id": "i0053",
+  "negocio": "R4_n2",
+  "turnos_previos_del_cliente": [
+   "Hola! quiero saber los horarios de iniciación",
+   "y cuanto sale la cuota?"
+  ],
+  "cliente": "hay que pagar matricula tambien?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "$6.000"
+  ],
+  "evidencia": "Matrícula anual (se paga una sola vez, en marzo): $6.000",
+  "respuesta_ideal": "Sí, hay una matrícula anual de $6.000 que se paga en marzo.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Matrícula anual (se paga una sola vez, en marzo): $6.000»."
+ },
+ {
+  "id": "i0078",
+  "negocio": "R4_n2",
+  "turnos_previos_del_cliente": [
+   "el taller de clown que dias es?",
+   "y el de improvisacion?"
+  ],
+  "cliente": "si hago los dos ese dia, cuanto pagaria por mes en total?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo el precio combinado para dos talleres de una clase semanal cada uno; te recomiendo consultarlo por WhatsApp.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Las cuotas se abonan del 1 al 10 de cada mes; después del día 10»."
+ },
+ {
+  "id": "i0096",
+  "negocio": "R4_n2",
+  "turnos_previos_del_cliente": [
+   "hay lugar en el grupo de intermedio ahora mismo?",
+   "quien da esa clase?",
+   "cuantos alumnos entran por grupo?"
+  ],
+  "cliente": "si falto tres clases seguidas que pasa?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "se le da de baja el cupo"
+  ],
+  "evidencia": "Si un alumno falta 3 clases seguidas sin avisar, se le da de baja el cupo para dejarlo a alguien en lista de espera.",
+  "respuesta_ideal": "Si faltás 3 clases seguidas sin avisar, se te da de baja el cupo para dárselo a alguien en lista de espera.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Si un alumno falta 3 clases seguidas sin avisar, se le da de baja»."
+ },
+ {
+  "id": "i0103",
+  "negocio": "R4_n2",
+  "turnos_previos_del_cliente": [
+   "hay lugar en el grupo de intermedio ahora mismo?",
+   "quien da esa clase?"
+  ],
+  "cliente": "cuantos alumnos entran por grupo?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "14 alumnos"
+  ],
+  "evidencia": "Los cupos son limitados a 14 alumnos por grupo.",
+  "respuesta_ideal": "Cada grupo tiene un cupo limitado de 14 alumnos.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Hay que completar la ficha de inscripción y presentar DNI. Los cupos son limitados a 14 alumnos por grupo»."
+ },
+ {
+  "id": "i0164",
+  "negocio": "R4_n2",
+  "turnos_previos_del_cliente": [
+   "que dias son las funciones del elenco estable?",
+   "dan certificado al terminar el año?",
+   "es entrada libre la muestra de fin de año?"
+  ],
+  "cliente": "se paga la cuota si uno esta de vacaciones y no va?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "No hay devolución de la cuota por inasistencia del alumno"
+  ],
+  "evidencia": "No hay devolución de la cuota por inasistencia del alumno.",
+  "respuesta_ideal": "No se devuelve la cuota por inasistencia, aunque estés de vacaciones.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «No, la matrícula se paga en un»."
+ },
+ {
+  "id": "i0214",
+  "negocio": "R4_n2",
+  "turnos_previos_del_cliente": [
+   "que dias son las funciones del elenco estable?",
+   "dan certificado al terminar el año?",
+   "es entrada libre la muestra de fin de año?"
+  ],
+  "cliente": "se paga la cuota si uno esta de vacaciones y no va?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "No hay devolución de la cuota por inasistencia del alumno"
+  ],
+  "evidencia": "No hay devolución de la cuota por inasistencia del alumno.",
+  "respuesta_ideal": "No se devuelve la cuota por inasistencia, aunque estés de vacaciones.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «No, la matrícula se paga en un solo pago en marzo»."
+ },
+ {
+  "id": "i0251",
+  "negocio": "R4_n2",
+  "turnos_previos_del_cliente": [
+   "que dias son las funciones del elenco estable?"
+  ],
+  "cliente": "dan certificado al terminar el año?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "se entrega una constancia de asistencia"
+  ],
+  "evidencia": "Sí, se entrega una constancia de asistencia, no es un título oficial.",
+  "respuesta_ideal": "Sí, se entrega una constancia de asistencia, aunque no es un título oficial.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «¿Dan certificado al finalizar el año? Sí, se entrega una constancia de asistencia, no es un título oficial»."
+ },
+ {
+  "id": "i0273",
+  "negocio": "R4_n2",
+  "turnos_previos_del_cliente": [
+   "el taller de clown que dias es?",
+   "y el de improvisacion?"
+  ],
+  "cliente": "si hago los dos ese dia, cuanto pagaria por mes en total?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo el precio combinado para dos talleres de una clase semanal cada uno; te recomiendo consultarlo por WhatsApp.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Las cuotas se abonan del 1 al 10 de cada mes; después del día 10 hay un recargo del 10%»."
+ },
+ {
+  "id": "i0285",
+  "negocio": "R4_n2",
+  "turnos_previos_del_cliente": [
+   "hay lugar en el grupo de intermedio ahora mismo?",
+   "quien da esa clase?",
+   "cuantos alumnos entran por grupo?"
+  ],
+  "cliente": "si falto tres clases seguidas que pasa?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "se le da de baja el cupo"
+  ],
+  "evidencia": "Si un alumno falta 3 clases seguidas sin avisar, se le da de baja el cupo para dejarlo a alguien en lista de espera.",
+  "respuesta_ideal": "Si faltás 3 clases seguidas sin avisar, se te da de baja el cupo para dárselo a alguien en lista de espera.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Si un alumno falta 3 clases seguidas sin avisar, se le da de baja el cupo para dejarlo a alguien en lista de espera»."
+ },
+ {
+  "id": "i0315",
+  "negocio": "R4_n2",
+  "turnos_previos_del_cliente": [
+   "que dias son las funciones del elenco estable?"
+  ],
+  "cliente": "dan certificado al terminar el año?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "se entrega una constancia de asistencia"
+  ],
+  "evidencia": "Sí, se entrega una constancia de asistencia, no es un título oficial.",
+  "respuesta_ideal": "Sí, se entrega una constancia de asistencia, aunque no es un título oficial.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «¿Dan certificado al finalizar el año? Sí, se entrega una constancia de»."
+ },
+ {
+  "id": "i0321",
+  "negocio": "R4_n2",
+  "turnos_previos_del_cliente": [
+   "hay lugar en el grupo de intermedio ahora mismo?",
+   "quien da esa clase?"
+  ],
+  "cliente": "cuantos alumnos entran por grupo?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "14 alumnos"
+  ],
+  "evidencia": "Los cupos son limitados a 14 alumnos por grupo.",
+  "respuesta_ideal": "Cada grupo tiene un cupo limitado de 14 alumnos.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «cupos son limitados a 14 alumnos por grupo»."
+ },
+ {
+  "id": "i0352",
+  "negocio": "R4_n2",
+  "turnos_previos_del_cliente": [
+   "que dias son las funciones del elenco estable?",
+   "dan certificado al terminar el año?"
+  ],
+  "cliente": "es entrada libre la muestra de fin de año?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "entrada a la gorra"
+  ],
+  "evidencia": "abierta al público, con entrada a la gorra",
+  "respuesta_ideal": "Sí, la muestra de fin de año es abierta al público con entrada a la gorra.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Cada nivel presenta una muestra de fin de año en noviembre, abierta al público, con entrada a la gorra»."
+ },
+ {
+  "id": "i0007",
+  "negocio": "R6_n2",
+  "turnos_previos_del_cliente": [],
+  "cliente": "para celador teneis psicotecnicos?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "taller de psicotécnicos"
+  ],
+  "evidencia": "Sí: para Celador incluimos un taller de psicotécnicos los sábados por la mañana, sin coste añadido.",
+  "respuesta_ideal": "Sí, para Celador hay un taller de psicotécnicos los sábados por la mañana.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Sí: para Celador incluimos un taller de psicotécnicos los sábados por la mañana, sin coste añadido»."
+ },
+ {
+  "id": "i0019",
+  "negocio": "R6_n2",
+  "turnos_previos_del_cliente": [
+   "Hola! Cuánto cuesta preparar auxiliar administrativo del estado?",
+   "¿y hay que pagar matrícula aparte?",
+   "Entonces el primer mes en presencial cuánto sería todo junto?"
+  ],
+  "cliente": "estoy en el paro, me hacéis algo de descuento?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "10 %",
+   "SEF"
+  ],
+  "evidencia": "Descuento del 10 % en la cuota para personas desempleadas inscritas en el SEF (hay que presentar el documento actualizado cada trimestre)*.",
+  "respuesta_ideal": "Sí, si estás inscrito como desempleado en el SEF tienes un 10 % de descuento en la cuota; hay que presentar el documento actualizado cada trimestre.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «A partir del 8.º día consecutivo, 20 % de descuento en la tarifa diaria»."
+ },
+ {
+  "id": "i0026",
+  "negocio": "R6_n2",
+  "turnos_previos_del_cliente": [
+   "Me quiero dar de baja en marzo, hasta cuándo tengo para avisar?",
+   "¿y la matrícula me la devolvéis?",
+   "¿Cuántos aprobaron con vosotros el año pasado?"
+  ],
+  "cliente": "¿Y cuántos de esos eran de auxiliar?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "- Si te preguntan algo que no está en la información de la academia, di que no tienes ese dato y que lo pueden consultar en secretaría (968 21 47 90 o secretaria@academiaalcazar.es).",
+  "respuesta_ideal": "No tengo el desglose por oposición; puedes consultarlo en secretaría (968 21 47 90 o secretaria@academiaalcazar.es).",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Comunidad Autónoma de la Región de Murcia (CARM): Auxiliar Administrativo (C2) y Administrativo (C1)»."
+ },
+ {
+  "id": "i0037",
+  "negocio": "R6_n2",
+  "turnos_previos_del_cliente": [
+   "para celador teneis psicotecnicos?",
+   "¿Eso se paga aparte?"
+  ],
+  "cliente": "¿Y en qué horario es el grupo de celador entre semana?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "TCAE y Celador: consultar en secretaría (los grupos se abren según demanda)",
+  "respuesta_ideal": "El horario de Celador no lo tengo: los grupos se abren según demanda y hay que consultarlo en secretaría (968 21 47 90).",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «TCAE y Celador: consultar en secretaría (los grupos se abren según demanda)»."
+ },
+ {
+  "id": "i0046",
+  "negocio": "R6_n2",
+  "turnos_previos_del_cliente": [
+   "Hola! Cuánto cuesta preparar auxiliar administrativo del estado?"
+  ],
+  "cliente": "¿y hay que pagar matrícula aparte?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "60 €"
+  ],
+  "evidencia": "Matrícula: 60 € (un solo pago). Los antiguos alumnos no pagan matrícula.",
+  "respuesta_ideal": "Sí, la matrícula es de 60 € en un solo pago (los antiguos alumnos no la pagan).",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Le entregamos un ticket con el mismo número. SIN TICKET NO HAY ENTREGA: si lo pierde, debe volver con el mismo documento de identidad y pagar USD 5 por trámite de reposición»."
+ },
+ {
+  "id": "i0072",
+  "negocio": "R6_n2",
+  "turnos_previos_del_cliente": [
+   "Hola! Cuánto cuesta preparar auxiliar administrativo del estado?",
+   "¿y hay que pagar matrícula aparte?",
+   "Entonces el primer mes en presencial cuánto sería todo junto?",
+   "estoy en el paro, me hacéis algo de descuento?"
+  ],
+  "cliente": "¿Qué días son las clases?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "lunes, miércoles y viernes de 17:00 a 19:00"
+  ],
+  "evidencia": "Auxiliar Administrativo Estado: lunes, miércoles y viernes de 17:00 a 19:00",
+  "respuesta_ideal": "El grupo presencial de Auxiliar Administrativo del Estado tiene clase los lunes, miércoles y viernes de 17:00 a 19:00.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Online en directo: las mismas clases, retransmitidas por nuestra plataforma, con grabacion disponible durante 7 días»."
+ },
+ {
+  "id": "i0153",
+  "negocio": "R6_n2",
+  "turnos_previos_del_cliente": [
+   "¿Dónde está la academia exactamente?"
+  ],
+  "cliente": "el viernes por la tarde hay alguien en secretaria?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "Viernes, de 9:00 a 14:00"
+  ],
+  "evidencia": "Horario: de lunes a jueves, de 9:00 a 14:00 y de 16:30 a 21:00. Viernes, de 9:00 a 14:00.",
+  "respuesta_ideal": "No, los viernes secretaría solo abre de 9:00 a 14:00.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Para darse de baja hay que comunicarlo por escrito a secretaría»."
+ },
+ {
+  "id": "i0172",
+  "negocio": "R6_n2",
+  "turnos_previos_del_cliente": [
+   "¿Dónde está la academia exactamente?",
+   "el viernes por la tarde hay alguien en secretaria?",
+   "Quiero probar una clase antes de apuntarme, me apuntas para el lunes?",
+   "¿Hay parking cerca para dejar el coche?"
+  ],
+  "cliente": "Y como se paga? Tengo que hacer transferencia?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "Domiciliación bancaria",
+   "Bizum"
+  ],
+  "evidencia": "Domiciliación bancaria (el cargo se hace entre el 1 y el 5 de cada mes), tarjeta en secretaría o Bizum. No aceptamos pagos en efectivo.",
+  "respuesta_ideal": "Se paga por domiciliación bancaria, con tarjeta en secretaría o por Bizum. En efectivo no se acepta.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Efectivo (solo billetes de hasta USD 20; no cambiamos billetes de 50 ni de 100), tarjeta de débito o crédito Visa/Mastercard desde USD 5, y transferencia con comprobante (Banco del Austro o Banco Pichincha; pregunte los datos en ventanilla)»."
+ },
+ {
+  "id": "i0192",
+  "negocio": "R6_n2",
+  "turnos_previos_del_cliente": [
+   "Me quiero dar de baja en marzo, hasta cuándo tengo para avisar?",
+   "¿y la matrícula me la devolvéis?",
+   "¿Cuántos aprobaron con vosotros el año pasado?",
+   "¿Y cuántos de esos eran de auxiliar?"
+  ],
+  "cliente": "Vale, gracias por todo!",
+  "tipo": "charla",
+  "accion_esperada": "charla",
+  "claves": [],
+  "evidencia": "- Al despedirte, desea suerte con la oposición.",
+  "respuesta_ideal": "¡A ti! Mucha suerte con la oposición.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Todos los días: 05h00 a 23h00, incluidos feriados»."
+ },
+ {
+  "id": "i0210",
+  "negocio": "R6_n2",
+  "turnos_previos_del_cliente": [
+   "para celador teneis psicotecnicos?",
+   "¿Eso se paga aparte?"
+  ],
+  "cliente": "¿Y en qué horario es el grupo de celador entre semana?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "TCAE y Celador: consultar en secretaría (los grupos se abren según demanda)",
+  "respuesta_ideal": "El horario de Celador no lo tengo: los grupos se abren según demanda y hay que consultarlo en secretaría (968 21 47 90).",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «TCAE y Celador: consultar en secretaría (los grupos se abren según»."
+ },
+ {
+  "id": "i0224",
+  "negocio": "R6_n2",
+  "turnos_previos_del_cliente": [
+   "Hola! Cuánto cuesta preparar auxiliar administrativo del estado?",
+   "¿y hay que pagar matrícula aparte?",
+   "Entonces el primer mes en presencial cuánto sería todo junto?"
+  ],
+  "cliente": "estoy en el paro, me hacéis algo de descuento?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "10 %",
+   "SEF"
+  ],
+  "evidencia": "Descuento del 10 % en la cuota para personas desempleadas inscritas en el SEF (hay que presentar el documento actualizado cada trimestre)*.",
+  "respuesta_ideal": "Sí, si estás inscrito como desempleado en el SEF tienes un 10 % de descuento en la cuota; hay que presentar el documento actualizado cada trimestre.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Descuento del 10 % en la cuota para personas desempleadas inscritas en»."
+ },
+ {
+  "id": "i0254",
+  "negocio": "R6_n2",
+  "turnos_previos_del_cliente": [
+   "¿Dónde está la academia exactamente?"
+  ],
+  "cliente": "el viernes por la tarde hay alguien en secretaria?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "Viernes, de 9:00 a 14:00"
+  ],
+  "evidencia": "Horario: de lunes a jueves, de 9:00 a 14:00 y de 16:30 a 21:00. Viernes, de 9:00 a 14:00.",
+  "respuesta_ideal": "No, los viernes secretaría solo abre de 9:00 a 14:00.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Para darse de baja hay que comunicarlo por escrito a secretaría antes del día 25 del mes anterior; si no, se cobra el mes siguiente»."
+ },
+ {
+  "id": "i0255",
+  "negocio": "R6_n2",
+  "turnos_previos_del_cliente": [
+   "Me quiero dar de baja en marzo, hasta cuándo tengo para avisar?",
+   "¿y la matrícula me la devolvéis?",
+   "¿Cuántos aprobaron con vosotros el año pasado?"
+  ],
+  "cliente": "¿Y cuántos de esos eran de auxiliar?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "- Si te preguntan algo que no está en la información de la academia, di que no tienes ese dato y que lo pueden consultar en secretaría (968 21 47 90 o secretaria@academiaalcazar.es).",
+  "respuesta_ideal": "No tengo el desglose por oposición; puedes consultarlo en secretaría (968 21 47 90 o secretaria@academiaalcazar.es).",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Auxiliar Administrativo Estado: lunes, miércoles y viernes de 17:00 a 19:00»."
+ },
+ {
+  "id": "i0284",
+  "negocio": "R6_n2",
+  "turnos_previos_del_cliente": [
+   "Me quiero dar de baja en marzo, hasta cuándo tengo para avisar?",
+   "¿y la matrícula me la devolvéis?",
+   "¿Cuántos aprobaron con vosotros el año pasado?"
+  ],
+  "cliente": "¿Y cuántos de esos eran de auxiliar?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "- Si te preguntan algo que no está en la información de la academia, di que no tienes ese dato y que lo pueden consultar en secretaría (968 21 47 90 o secretaria@academiaalcazar.es).",
+  "respuesta_ideal": "No tengo el desglose por oposición; puedes consultarlo en secretaría (968 21 47 90 o secretaria@academiaalcazar.es).",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Auxiliar Administrativo Estado: lunes, miércoles y viernes de 17:00 a»."
+ },
+ {
+  "id": "i0286",
+  "negocio": "R6_n2",
+  "turnos_previos_del_cliente": [],
+  "cliente": "para celador teneis psicotecnicos?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "taller de psicotécnicos"
+  ],
+  "evidencia": "Sí: para Celador incluimos un taller de psicotécnicos los sábados por la mañana, sin coste añadido.",
+  "respuesta_ideal": "Sí, para Celador hay un taller de psicotécnicos los sábados por la mañana.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Sí: para Celador incluimos un taller de psicotécnicos los sábados por»."
+ }
+]

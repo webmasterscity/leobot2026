@@ -167,22 +167,6 @@ class ContextMixin:
             return None
         return cells if sum(bool(c) for c in cells) >= 2 else None
 
-    def _unwrapped(self, lines: list[str]) -> list[str]:
-        """G-63: a sentence broken across lines (text pasted from a page or a
-        document) is one line again: a long line that does not close its
-        sentence continues on the next when that one starts in lowercase or
-        with a figure and is not a list item or a table row."""
-        out: list[str] = []
-        for line in lines:
-            prev = out[-1] if out else ''
-            if prev and line and not self._heading_like(prev) and prev[-1].isalnum() \
-                    and (line[0].islower() or line[0].isdigit()) and not _LIST_MARK.match(line) \
-                    and self._cells(line) is None and self._cells(prev) is None:
-                out[-1] = prev + ' ' + line
-            else:
-                out.append(line)
-        return out
-
     def _layout_units(self, text: str, source: str) -> list[dict]:
         units, title, section, question, header = [], '', '', '', None
         section_kind, block_open = '', False
@@ -204,8 +188,6 @@ class ContextMixin:
                           'terms': own, 'inherited': inherited, 'classes': self._classes(display)})
 
         lines = [raw.strip() for raw in str(text).splitlines()]
-        if getattr(self, 'join_wrapped', True):
-            lines = self._unwrapped(lines)
         following = [''] * len(lines)
         upcoming = ''
         for k in range(len(lines) - 1, -1, -1):

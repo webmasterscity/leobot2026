@@ -1,0 +1,581 @@
+[
+ {
+  "id": "i0064",
+  "negocio": "R2_n1",
+  "turnos_previos_del_cliente": [
+   "Hola buenas, ¿hasta qué hora abren los sábados?",
+   "¿y los domingos?",
+   "¿Los lunes también abren?"
+  ],
+  "cliente": "¿El sanduche de la casa cuánto cuesta?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "$12.000"
+  ],
+  "evidencia": "Sanduche de la casa: $12.000",
+  "respuesta_ideal": "El sanduche de la casa cuesta $12.000.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Sanduche de la casa: $12.000»."
+ },
+ {
+  "id": "i0069",
+  "negocio": "R2_n1",
+  "turnos_previos_del_cliente": [
+   "¿Tienen wifi?"
+  ],
+  "cliente": "El capuchino cuánto vale?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "$6.000"
+  ],
+  "evidencia": "Capuchino: $6.000",
+  "respuesta_ideal": "El capuchino cuesta $6.000.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Capuchino: $6.000»."
+ },
+ {
+  "id": "i0199",
+  "negocio": "R2_n1",
+  "turnos_previos_del_cliente": [
+   "¿Tienen wifi?",
+   "El capuchino cuánto vale?"
+  ],
+  "cliente": "¿De cuánto a cuánto sale la cerveza artesanal?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "$9.000",
+   "$14.000"
+  ],
+  "evidencia": "Cerveza artesanal (varias): entre $9.000 y $14.000 según la referencia",
+  "respuesta_ideal": "La cerveza artesanal cuesta entre $9.000 y $14.000 según la referencia.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Cerveza artesanal (varias): entre $9.000 y $14.000 según la»."
+ },
+ {
+  "id": "i0211",
+  "negocio": "R2_n1",
+  "turnos_previos_del_cliente": [
+   "Hola buenas, ¿hasta qué hora abren los sábados?"
+  ],
+  "cliente": "¿y los domingos?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "2:00 p. m.",
+   "8:00 p. m."
+  ],
+  "evidencia": "domingos 2:00 p. m. – 8:00 p. m.",
+  "respuesta_ideal": "Los domingos el horario es de 2:00 p. m. a 8:00 p. m.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Entre 7 y 2 días: devolución del 50%. Con menos de 48 horas o no-show: no hay devolución, salvo cierre del sendero por Gendarmería o Club Andino por mal tiempo, en cuyo caso se reprograma sin cargo»."
+ },
+ {
+  "id": "i0289",
+  "negocio": "R2_n1",
+  "turnos_previos_del_cliente": [
+   "¿Qué día es la noche de torneo?",
+   "Si quiero jugar Gloomhaven, ¿tiene algún costo extra?",
+   "El mesero me trató mal la semana pasada, quiero quejarme",
+   "¿Cuánto cobran por alquilar todo el local para un evento privado?"
+  ],
+  "cliente": "Vale, hasta luego",
+  "tipo": "charla",
+  "accion_esperada": "charla",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "¡Hasta luego! Te esperamos pronto en La Torre de Dados.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Modalidad: Tarde completa (hasta el cierre); Precio: $15.000; Incluye: 1 bebida + snack»."
+ },
+ {
+  "id": "i0296",
+  "negocio": "R2_n1",
+  "turnos_previos_del_cliente": [],
+  "cliente": "¿Tienen wifi?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "Sí, gratis para los clientes"
+  ],
+  "evidencia": "¿Hay wifi? Sí, gratis para los clientes, la clave la da el mesero.",
+  "respuesta_ideal": "Sí, el wifi es gratis para los clientes; el mesero te da la clave.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Sí, gratis para los clientes, la clave la da el mesero»."
+ },
+ {
+  "id": "i0005",
+  "negocio": "R4_n1",
+  "turnos_previos_del_cliente": [
+   "por qué se me pincha siempre la misma rueda?",
+   "tienen rines de aleación en venta?",
+   "atienden camiones de carga pesada?"
+  ],
+  "cliente": "cuánto cuesta cambiar la batería?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "30.000 Gs"
+  ],
+  "evidencia": "Cambio de batería (mano de obra) | 30.000 Gs",
+  "respuesta_ideal": "El cambio de batería, mano de obra, cuesta 30.000 Gs.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Servicio: Cambio de batería (mano de obra); Precio: 30.000 Gs»."
+ },
+ {
+  "id": "i0006",
+  "negocio": "R4_n1",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Hola, buenas, ¿qué horario tienen los sábados?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "7:00 a 13:00"
+  ],
+  "evidencia": "Sábados: 7:00 a 13:00, solo pinchaduras urgentes (alineación y balanceo requieren cita previa)",
+  "respuesta_ideal": "Los sábados atendemos de 7:00 a 13:00, pero solo pinchaduras urgentes.",
+  "respuesta_a_calificar": "Hola, buenas. No lo tengo seguro. Lo más cercano que dice el texto es: «Sábados: 7:00 a 13:00, solo pinchaduras urgentes (alineación y»."
+ },
+ {
+  "id": "i0035",
+  "negocio": "R4_n1",
+  "turnos_previos_del_cliente": [
+   "Quiero agendar una alineación para mañana a las 10, ¿me confirman?",
+   "ok, ¿y cuánto cuesta la alineación?"
+  ],
+  "cliente": "se puede pagar con Tigo Money?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "Tigo Money"
+  ],
+  "evidencia": "Aceptamos efectivo, tarjeta de débito y crédito, transferencia bancaria, Tigo Money y Personal Pay.",
+  "respuesta_ideal": "Sí, aceptamos pagos con Tigo Money.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Aceptamos efectivo, tarjeta de débito y crédito, transferencia bancaria, Tigo Money y Personal Pay. No aceptamos cheques»."
+ },
+ {
+  "id": "i0056",
+  "negocio": "R4_n1",
+  "turnos_previos_del_cliente": [
+   "Quiero agendar una alineación para mañana a las 10, ¿me confirman?"
+  ],
+  "cliente": "ok, ¿y cuánto cuesta la alineación?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "80.000 Gs"
+  ],
+  "evidencia": "Alineación (las 4 ruedas) | 80.000 Gs",
+  "respuesta_ideal": "La alineación de las 4 ruedas cuesta 80.000 Gs.",
+  "respuesta_a_calificar": "Ok. No lo tengo seguro. Lo más cercano que dice el texto es: «Servicio: Alineación (las 4 ruedas); Precio: 80.000 Gs»."
+ },
+ {
+  "id": "i0058",
+  "negocio": "R4_n1",
+  "turnos_previos_del_cliente": [
+   "Hola, buenas, ¿qué horario tienen los sábados?",
+   "¿y los domingos abren?",
+   "perfecto, ¿cuánto cuesta el parchado simple?"
+  ],
+  "cliente": "gracias, buen día",
+  "tipo": "charla",
+  "accion_esperada": "charla",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "¡Gracias a usted, buen día!",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Las cuotas se abonan del 1 al 10 de cada mes; después del día 10 hay un recargo del 10%»."
+ },
+ {
+  "id": "i0063",
+  "negocio": "R4_n1",
+  "turnos_previos_del_cliente": [],
+  "cliente": "dejé mi camioneta ayer, ¿ya está lista?",
+  "tipo": "instruccion",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "Si preguntan por el estado de un vehículo que ya dejaron en el taller, no dar información: pedir que llamen directamente porque no se tiene acceso al taller desde acá.",
+  "respuesta_ideal": "No tengo acceso al estado del taller desde acá, por favor llame directamente al 0985 123-456.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Si un alumno falta 3 clases seguidas sin avisar, se le da de baja el cupo para dejarlo a alguien en lista de espera»."
+ },
+ {
+  "id": "i0087",
+  "negocio": "R4_n1",
+  "turnos_previos_del_cliente": [
+   "por qué se me pincha siempre la misma rueda?",
+   "tienen rines de aleación en venta?"
+  ],
+  "cliente": "atienden camiones de carga pesada?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "No atendemos camiones de carga pesada"
+  ],
+  "evidencia": "No atendemos camiones de carga pesada.",
+  "respuesta_ideal": "No, no atendemos camiones de carga pesada, solo autos, camionetas y utilitarios livianos.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «camiones de carga pesada»."
+ },
+ {
+  "id": "i0098",
+  "negocio": "R4_n1",
+  "turnos_previos_del_cliente": [
+   "dejé mi camioneta ayer, ¿ya está lista?"
+  ],
+  "cliente": "tengo el rin rajado, lo pueden arreglar?",
+  "tipo": "instruccion",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "derivar al taller de chapería vecino, teléfono 0985 999-000",
+  "respuesta_ideal": "Eso lo hace el taller de chapería vecino, puede llamar al 0985 999-000.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «**¿Reparan rines rajados o hacen soldadura?**»."
+ },
+ {
+  "id": "i0200",
+  "negocio": "R4_n1",
+  "turnos_previos_del_cliente": [
+   "dejé mi camioneta ayer, ¿ya está lista?",
+   "tengo el rin rajado, lo pueden arreglar?",
+   "cuanto sale el cambio de aceite?"
+  ],
+  "cliente": "muchas gracias, que tengan buen dia",
+  "tipo": "charla",
+  "accion_esperada": "charla",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "¡Gracias, que tenga buen día!",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Las cuotas se abonan del 1 al 10 de cada mes; después del día 10 hay un recargo del 10%»."
+ },
+ {
+  "id": "i0202",
+  "negocio": "R4_n1",
+  "turnos_previos_del_cliente": [
+   "Hola, buenas, ¿qué horario tienen los sábados?",
+   "¿y los domingos abren?",
+   "perfecto, ¿cuánto cuesta el parchado simple?"
+  ],
+  "cliente": "gracias, buen día",
+  "tipo": "charla",
+  "accion_esperada": "charla",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "¡Gracias a usted, buen día!",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «tipo de cambio del día»."
+ },
+ {
+  "id": "i0238",
+  "negocio": "R4_n1",
+  "turnos_previos_del_cliente": [],
+  "cliente": "cuanto cuesta el parchado con mecha?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "35.000 Gs"
+  ],
+  "evidencia": "Parchado con mecha | 35.000 Gs",
+  "respuesta_ideal": "El parchado con mecha cuesta 35.000 Gs.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Servicio: Parchado con mecha; Precio: 35.000 Gs»."
+ },
+ {
+  "id": "i0270",
+  "negocio": "R4_n1",
+  "turnos_previos_del_cliente": [],
+  "cliente": "cuanto vale un neumatico nuevo aro 15?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "aro 15 desde USD 70"
+  ],
+  "evidencia": "aro 15 desde USD 70",
+  "respuesta_ideal": "El aro 15 nuevo arranca en USD 70.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «nuevos: aro 13 desde USD 55, aro 14 desde USD 60, aro 15 desde USD 70»."
+ },
+ {
+  "id": "i0281",
+  "negocio": "R4_n1",
+  "turnos_previos_del_cliente": [
+   "Hola, buenas, ¿qué horario tienen los sábados?",
+   "¿y los domingos abren?"
+  ],
+  "cliente": "perfecto, ¿cuánto cuesta el parchado simple?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "25.000 Gs"
+  ],
+  "evidencia": "Parchado simple | 25.000 Gs",
+  "respuesta_ideal": "El parchado simple cuesta 25.000 Gs.",
+  "respuesta_a_calificar": "Perfecto. No lo tengo seguro. Lo más cercano que dice el texto es: «Servicio: Parchado simple; Precio: 25.000 Gs»."
+ },
+ {
+  "id": "i0297",
+  "negocio": "R4_n1",
+  "turnos_previos_del_cliente": [
+   "Hola, buenas, ¿qué horario tienen los sábados?"
+  ],
+  "cliente": "¿y los domingos abren?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "Domingos: cerrado"
+  ],
+  "evidencia": "Domingos: cerrado",
+  "respuesta_ideal": "No, los domingos permanecemos cerrados.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Las inscripciones para el nivel iniciación abren en febrero y marzo; el resto del año solo hay lugar si queda vacante»."
+ },
+ {
+  "id": "i0333",
+  "negocio": "R4_n1",
+  "turnos_previos_del_cliente": [
+   "dejé mi camioneta ayer, ¿ya está lista?",
+   "tengo el rin rajado, lo pueden arreglar?"
+  ],
+  "cliente": "cuanto sale el cambio de aceite?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "120.000 Gs"
+  ],
+  "evidencia": "Cambio de aceite (incluye filtro) | 120.000 Gs",
+  "respuesta_ideal": "El cambio de aceite, con filtro incluido, cuesta 120.000 Gs.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Servicio: Cambio de aceite (incluye filtro); Precio: 120.000 Gs»."
+ },
+ {
+  "id": "i0334",
+  "negocio": "R4_n1",
+  "turnos_previos_del_cliente": [],
+  "cliente": "cuanto vale un neumatico nuevo aro 15?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "aro 15 desde USD 70"
+  ],
+  "evidencia": "aro 15 desde USD 70",
+  "respuesta_ideal": "El aro 15 nuevo arranca en USD 70.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Neumáticos nuevos: aro 13 desde USD 55, aro 14 desde USD 60, aro 15 desde USD 70»."
+ },
+ {
+  "id": "i0340",
+  "negocio": "R4_n1",
+  "turnos_previos_del_cliente": [
+   "por qué se me pincha siempre la misma rueda?",
+   "tienen rines de aleación en venta?"
+  ],
+  "cliente": "atienden camiones de carga pesada?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "No atendemos camiones de carga pesada"
+  ],
+  "evidencia": "No atendemos camiones de carga pesada.",
+  "respuesta_ideal": "No, no atendemos camiones de carga pesada, solo autos, camionetas y utilitarios livianos.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «No atendemos camiones de carga pesada»."
+ },
+ {
+  "id": "i0013",
+  "negocio": "R6_n1",
+  "turnos_previos_del_cliente": [
+   "buen dia donde queda la oficina de ustedes?",
+   "El sábado a la tarde está abierto?"
+  ],
+  "cliente": "Quiero comprar pastillas de cloro, a cuanto están?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "Sí vendemos pastillas de cloro en el depósito, pero no cuento con el precio; no se lo puedo confirmar.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Sí, en el depósito vendemos cloro granulado, pastillas de cloro,»."
+ },
+ {
+  "id": "i0125",
+  "negocio": "R6_n1",
+  "turnos_previos_del_cliente": [
+   "Tengo el plan completo para una pileta de 50 m2 y este mes quiero sumar el cambio de arena del filtro. Cuánto pago en total sin contar la arena?"
+  ],
+  "cliente": "Y cada cuánto hay que cambiar la arena?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No cuento con información sobre cada cuánto hay que cambiar la arena del filtro.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Cambio de arena del filtro: Gs. 350.000 más el costo de la arena»."
+ },
+ {
+  "id": "i0131",
+  "negocio": "R6_n1",
+  "turnos_previos_del_cliente": [
+   "Buenas! Se me puso verde la piscina con las lluvias, cuanto cobran por recuperarla?",
+   "y cuántos días tardan?"
+  ],
+  "cliente": "Pueden venir el domingo a empezar?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "No trabajamos domingos"
+  ],
+  "evidencia": "1. Las visitas se hacen de lunes a sábado entre las 7:00 y las 16:00. No trabajamos domingos ni feriados nacionales.",
+  "respuesta_ideal": "No, los domingos y feriados nacionales no trabajamos; las visitas son de lunes a sábado, entre las 7:00 y las 16:00.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Sí, os podéis incorporar en cualquier momento; la matrícula se paga igual»."
+ },
+ {
+  "id": "i0155",
+  "negocio": "R6_n1",
+  "turnos_previos_del_cliente": [
+   "Hola buenas, cuánto me sale que vengan una vez por semana a limpiar la pileta? Es de unos 25 metros cuadrados"
+  ],
+  "cliente": "y eso incluye el cloro?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "se cobran aparte"
+  ],
+  "evidencia": "Los productos químicos (cloro, alguicida, clarificador) se cobran aparte según consumo, excepto en el plan Premium, que los incluye.",
+  "respuesta_ideal": "No, en el plan Básico los productos químicos se cobran aparte según consumo; solo el plan Premium los incluye.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Todos los planes incluyen: aspirado del fondo, limpieza de bordes y azulejos a la altura del agua, retiro de hojas, control de pH y cloro, y retrolavado del filtro»."
+ },
+ {
+  "id": "i0177",
+  "negocio": "R6_n1",
+  "turnos_previos_del_cliente": [
+   "Hola, mi piscina es de vinilo, ustedes trabajan con ese tipo?",
+   "Cuánto cobran por una limpieza sola, una vez nomás? La mía tiene como 45 m2"
+  ],
+  "cliente": "Y la visita para ver la piscina la cobran? Estoy en Minga Guazú",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "Gs. 50.000"
+  ],
+  "evidencia": "- Visita técnica / presupuesto: gratis dentro de Ciudad del Este; en Hernandarias, Minga Guazú y Pdte. Franco cuesta Gs. 50.000",
+  "respuesta_ideal": "En Minga Guazú la visita técnica para el presupuesto cuesta Gs. 50.000; solo es gratis dentro de Ciudad del Este.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «clubes en Ciudad del Este, Hernandarias, Minga Guazú y Presidente»."
+ },
+ {
+  "id": "i0221",
+  "negocio": "R6_n1",
+  "turnos_previos_del_cliente": [
+   "Buenas! Se me puso verde la piscina con las lluvias, cuanto cobran por recuperarla?"
+  ],
+  "cliente": "y cuántos días tardan?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "entre 2 y 4 días"
+  ],
+  "evidencia": "- Recuperación de agua verde: desde Gs. 450.000 (entre 2 y 4 días de trabajo, según el estado)",
+  "respuesta_ideal": "Lleva entre 2 y 4 días de trabajo, según cómo esté la piscina.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Recuperación de agua verde: desde Gs. 450.000 (entre 2 y 4 días de»."
+ },
+ {
+  "id": "i0228",
+  "negocio": "R6_n1",
+  "turnos_previos_del_cliente": [
+   "Buenas! Se me puso verde la piscina con las lluvias, cuanto cobran por recuperarla?"
+  ],
+  "cliente": "y cuántos días tardan?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "entre 2 y 4 días"
+  ],
+  "evidencia": "- Recuperación de agua verde: desde Gs. 450.000 (entre 2 y 4 días de trabajo, según el estado)",
+  "respuesta_ideal": "Lleva entre 2 y 4 días de trabajo, según cómo esté la piscina.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Recuperación de agua verde: desde Gs. 450.000 (entre 2 y 4 días de trabajo, según el estado)»."
+ },
+ {
+  "id": "i0275",
+  "negocio": "R6_n1",
+  "turnos_previos_del_cliente": [
+   "Hola buenas, cuánto me sale que vengan una vez por semana a limpiar la pileta? Es de unos 25 metros cuadrados"
+  ],
+  "cliente": "y eso incluye el cloro?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "se cobran aparte"
+  ],
+  "evidencia": "Los productos químicos (cloro, alguicida, clarificador) se cobran aparte según consumo, excepto en el plan Premium, que los incluye.",
+  "respuesta_ideal": "No, en el plan Básico los productos químicos se cobran aparte según consumo; solo el plan Premium los incluye.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Todos los planes incluyen: aspirado del fondo, limpieza de bordes y azulejos a la altura del agua, retiro de hojas, control de pH y cloro,»."
+ },
+ {
+  "id": "i0298",
+  "negocio": "R6_n1",
+  "turnos_previos_del_cliente": [
+   "Tengo el plan completo para una pileta de 50 m2 y este mes quiero sumar el cambio de arena del filtro. Cuánto pago en total sin contar la arena?",
+   "Y cada cuánto hay que cambiar la arena?",
+   "otra cosa, los tecnicos tienen seguro si se accidentan en mi casa?"
+  ],
+  "cliente": "y si quiero dar de baja el plan, con cuánto tiempo aviso?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "15 días"
+  ],
+  "evidencia": "5. Para cancelar un plan mensual hay que avisar con 15 días de anticipación. No se devuelve el dinero de las visitas ya pagadas del mes en curso.",
+  "respuesta_ideal": "Hay que avisar con 15 días de anticipación. Las visitas ya pagadas del mes en curso no se devuelven.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Para darse de baja hay que comunicarlo por escrito a secretaría antes del día 25 del mes anterior; si no, se cobra el mes siguiente»."
+ },
+ {
+  "id": "i0320",
+  "negocio": "R6_n1",
+  "turnos_previos_del_cliente": [
+   "buen dia donde queda la oficina de ustedes?",
+   "El sábado a la tarde está abierto?"
+  ],
+  "cliente": "Quiero comprar pastillas de cloro, a cuanto están?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "Sí vendemos pastillas de cloro en el depósito, pero no cuento con el precio; no se lo puedo confirmar.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Sí, en el depósito vendemos cloro granulado, pastillas de cloro, alguicida y kits para medir pH. No hacemos envíos de productos sueltos»."
+ },
+ {
+  "id": "i0324",
+  "negocio": "R6_n1",
+  "turnos_previos_del_cliente": [
+   "Hola buenas, cuánto me sale que vengan una vez por semana a limpiar la pileta? Es de unos 25 metros cuadrados",
+   "y eso incluye el cloro?",
+   "Y el que ya trae los quimicos cuánto sale para mi pileta?"
+  ],
+  "cliente": "si lo pago con tarjeta de crédito en cuánto me queda?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "5 %",
+   "997.500"
+  ],
+  "evidencia": "Con tarjeta de crédito hay un recargo del 5 %.",
+  "respuesta_ideal": "Con tarjeta de crédito hay un recargo del 5 %, así que el plan Premium le quedaría en Gs. 997.500 por mes.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Con tarjeta de crédito hay un recargo del 5 %. Los planes mensuales se pagan por adelantado, los primeros cinco días de cada mes»."
+ },
+ {
+  "id": "i0341",
+  "negocio": "R6_n1",
+  "turnos_previos_del_cliente": [
+   "Hola, mi piscina es de vinilo, ustedes trabajan con ese tipo?",
+   "Cuánto cobran por una limpieza sola, una vez nomás? La mía tiene como 45 m2",
+   "Y la visita para ver la piscina la cobran? Estoy en Minga Guazú"
+  ],
+  "cliente": "Dale, pueden venir el jueves a las 10?",
+  "tipo": "instruccion",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "2. No confirmes días ni horarios de visitas. La agenda la maneja la oficina: pedile al cliente que escriba al WhatsApp de ventas 0983 441 207 para agendar.",
+  "respuesta_ideal": "Yo no puedo confirmar días ni horarios; para agendar la visita escriba por favor al WhatsApp de ventas, 0983 441 207.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Auxiliar Administrativo CARM: martes y jueves de 10:00 a 12:00 y sábados de 10:00 a 12:00»."
+ },
+ {
+  "id": "i0345",
+  "negocio": "R6_n1",
+  "turnos_previos_del_cliente": [
+   "Hola buenas, cuánto me sale que vengan una vez por semana a limpiar la pileta? Es de unos 25 metros cuadrados",
+   "y eso incluye el cloro?",
+   "Y el que ya trae los quimicos cuánto sale para mi pileta?"
+  ],
+  "cliente": "si lo pago con tarjeta de crédito en cuánto me queda?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "5 %",
+   "997.500"
+  ],
+  "evidencia": "Con tarjeta de crédito hay un recargo del 5 %.",
+  "respuesta_ideal": "Con tarjeta de crédito hay un recargo del 5 %, así que el plan Premium le quedaría en Gs. 997.500 por mes.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Domiciliación bancaria (el cargo se hace entre el 1 y el 5 de cada mes), tarjeta en secretaría o Bizum»."
+ }
+]

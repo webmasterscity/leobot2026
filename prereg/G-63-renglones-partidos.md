@@ -86,7 +86,7 @@ Congelado `freeze-G-63`; semilla de su huella.
 
 Implementación ≤ 20 min; banco ≤ 40 min; juez ≤ 1 h; medidas generales ≤ 40 min; auditoría ≤ 1 h. Hasta 16 procesos, con al menos 2 GB de RAM libres.
 
-## Resultado preliminar e incompleto (2026-09-26): la medida no se pudo terminar
+## Resultado preliminar e incompleto (2026-09-26): la medida no se pudo terminar (superado por el resultado final, abajo)
 
 **El límite semanal de la API cortó a los redactores**; se reinicia el 30 de septiembre.
 - El banco quedó en 15 de 24 negocios y 396 turnos. `results_v3/kiosco/congelado_g63/LEEME.md` dice qué se incluyó.
@@ -116,3 +116,26 @@ En el banco parcial, la ventaja con texto partido es de +2,8 puntos (automático
 2. pasar el juez;
 3. decidir las puertas;
 4. auditoría 5.10 si pasa.
+
+## Resultado final (2026-09-26, banco completo de 24 negocios y 619 turnos; juez ciego de 8 jueces nuevos, Opus)
+
+El banco se completó con 9 negocios de redactores nuevos, en git antes de ejecutar (`results_v3/kiosco/congelado_g63/LEEME.md`). Desvío declarado: R4 lo escribió Sonnet 5 en lugar de Fable 5.1, así que el banco tiene 3 modelos y no 4. Cinco jueces se cortaron por el límite de sesión; uno ya había dejado su archivo completo y los otros cuatro se relanzaron con el mismo encargo.
+
+| Puerta | Umbral | G-63 | `estable-G-18` | ¿Pasa? |
+|---|---|---|---|---|
+| 1. Útiles en directa + sí/no, texto partido | ≥ `estable-G-18` + 5 puntos | **95/274 (34,7 %)** | 83/274 (30,3 %) | **no (+4,4)** |
+| 2. Texto tal cual | idénticas ≥ 98 %, útiles no menores | 619/619 idénticas; 102/274 | 102/274 | sí |
+| 3. Citas engañosas | ≤ 15 % y ≤ +2 puntos | partido 3,8 %; tal cual 2,7 % | 3,3 %; 2,7 % | sí |
+| 4. Inventadas · planas | 0 · — | 0 · ninguna | 0 | sí |
+| 5. Sin respuesta bien llevadas | ≥ 90 % | 99,4 % en las dos | 98,7 %; 99,4 % | sí |
+| 6. Eco de datos | 0 | 0 | 0 | sí |
+
+**Controles:**
+- sin unir, texto partido: respuestas idénticas a `estable-G-18` partido en 619/619;
+- reinicio, texto partido: 619/619;
+- otro negocio: 0 útiles; 545/619 «No lo sé» (88,0 %); 6 respuestas que los jueces marcan como inventadas, que son texto literal del documento de otro negocio, como en G-62;
+- renombrado estricto, texto partido: 552/619 turnos con la misma decisión y la misma línea (89,2 %, conteo automático), por debajo del 95 %. Posible causa, no comprobada: al renombrar cambia el largo de las palabras y el texto se parte en otros sitios.
+
+**Decisión (regla 5.9 y la de retención de este preregistro):** la puerta 1 falla por 0,6 puntos, así que **la unión de renglones no entra**. La meta no se mueve después de medir. Main vuelve al motor de `estable-G-18`; el motor de G-63 queda en la rama `G-63` y en `freeze-G-63`. Sin auditoría 5.10, porque no hay tag.
+
+**Lo que sí queda como evidencia:** con texto partido, unir renglones gana 12 útiles sin subir las engañosas ni inventar, y con texto tal cual no cambia ninguna respuesta. Es una ganancia real pero menor que la pedida: en desarrollo fueron +8,8 puntos; en el banco nuevo, +4,4.
