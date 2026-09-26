@@ -187,6 +187,30 @@ class CountedUsefulnessTests(unittest.TestCase):
         self.assertEqual(self.bot.answer('¿Cuánto vale el plan básico?')['status'], 'closest')
 
 
+class ReadUnderItsHeadingTests(unittest.TestCase):
+    """G-61: a line answers to its heading's words; a question opening its line heads the rest."""
+
+    def test_a_unit_inherits_its_heading_words(self):
+        bot = Bot()
+        bot.load_context(TEXT)
+        unit = next(u for u in bot.context_units if u['text'] == 'No se admiten mascotas.')
+        expected = set(bot.context_terms('¿Aceptan mascotas?')) - set(unit['terms'])
+        self.assertTrue(expected)
+        self.assertEqual(set(unit['inherited']), expected)
+        heading = next(u for u in bot.context_units if u['text'] == 'HORARIOS')
+        self.assertEqual(heading['inherited'], [])
+
+    def test_a_question_opening_its_line_heads_the_rest(self):
+        bot = Bot()
+        bot.load_context('CAFÉ\nServicios\n¿Hay parking? El más cercano está en la plaza.')
+        by_text = {u['text']: u for u in bot.context_units}
+        self.assertEqual(by_text['¿Hay parking?']['kind'], 'question')
+        self.assertEqual(by_text['El más cercano está en la plaza.']['heading'], '¿Hay parking?')
+        bot.inline_questions = False
+        bot.load_context('CAFÉ\nServicios\n¿Hay parking? El más cercano está en la plaza.')
+        self.assertEqual({u['text']: u for u in bot.context_units}['¿Hay parking?']['kind'], 'sentence')
+
+
 class PrivacyTests(unittest.TestCase):
     def test_what_one_client_says_is_not_kept_for_the_next(self):
         bot = Bot()

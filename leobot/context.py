@@ -170,10 +170,14 @@ class ContextMixin:
     def _layout_units(self, text: str, source: str) -> list[dict]:
         units, title, section, question, header = [], '', '', '', None
 
-        def add(display: str, kind: str) -> None:
-            heading = question or section
+        def add(display: str, kind: str, asked: str = '') -> None:
+            heading = asked or question or section
+            own = sorted(set(self.context_terms(display)))
+            # G-61: a unit is read under its heading, so it also answers to the
+            # heading's words (a price row under «Extras», an answer under its question).
+            inherited = sorted(set(self.context_terms(heading)) - set(own)) if heading else []
             units.append({'text': display, 'heading': heading, 'kind': kind, 'source': source,
-                          'terms': sorted(set(self.context_terms(display))), 'classes': self._classes(display)})
+                          'terms': own, 'inherited': inherited, 'classes': self._classes(display)})
 
         lines = [raw.strip() for raw in str(text).splitlines()]
         following = [''] * len(lines)
@@ -223,11 +227,20 @@ class ContextMixin:
                     section, question = body, ''
                 # The heading is also a unit.
                 units.append({'text': body, 'heading': '', 'kind': 'question' if line.endswith('?') else 'heading',
-                              'source': source, 'terms': sorted(set(self.context_terms(body))), 'classes': {}})
+                              'source': source, 'terms': sorted(set(self.context_terms(body))), 'inherited': [],
+                              'classes': {}})
                 continue
-            for sentence in _SENTENCE_END.split(line):
-                if sentence.strip():
-                    add(sentence.strip(), 'sentence' if sentence != line else 'line')
+            sentences = [part.strip() for part in _SENTENCE_END.split(line) if part.strip()]
+            asked = ''
+            for n, sentence in enumerate(sentences):
+                if sentence.endswith('?') and n + 1 < len(sentences) and getattr(self, 'inline_questions', True):
+                    # G-61: a question that opens its answer on the same line heads it.
+                    units.append({'text': sentence, 'heading': '', 'kind': 'question', 'source': source,
+                                  'terms': sorted(set(self.context_terms(sentence))), 'inherited': [],
+                                  'classes': {}})
+                    asked = sentence
+                    continue
+                add(sentence, 'sentence' if len(sentences) > 1 else 'line', asked)
         self._layout_title = title
         return units
 
@@ -274,7 +287,8 @@ class ContextMixin:
             for i, unit in enumerate(self.context_units):
                 if unit['kind'] == 'question':
                     continue  # a question heads its answer; it is never the answer (G-57r)
-                for term in unit['terms']:
+                terms = unit['terms'] + (unit.get('inherited', []) if getattr(self, 'inherit_heading', True) else [])
+                for term in terms:
                     postings.setdefault(term, []).append(i)
             self._context_index = postings
         return self._context_index

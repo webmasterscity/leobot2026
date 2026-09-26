@@ -15,6 +15,7 @@ from __future__ import annotations
 import hashlib
 import json
 import math
+import os
 import sys
 from pathlib import Path
 
@@ -22,8 +23,10 @@ from experiments.g57_kiosco import businesses, contains, plain
 from leobot import Bot
 from leobot.context import CITE_FROM
 
-BANKS = (Path('results_v3/kiosco/congelado'), Path('results_v3/kiosco/congelado_g58'),
-         Path('results_v3/kiosco/congelado_g59'), Path('results_v3/kiosco/desarrollo'))
+BANKS = tuple(Path(p) for p in os.environ.get('CONFIANZA_BANCOS', 'results_v3/kiosco/congelado,results_v3/kiosco/'
+                                             'congelado_g58,results_v3/kiosco/congelado_g59,'
+                                             'results_v3/kiosco/desarrollo').split(','))
+CITE = float(os.environ.get('CONFIANZA_CITA', CITE_FROM))  # G-61: 0,4
 MIN_BLOCK = 30
 MIN_CELL = 5
 
@@ -104,7 +107,7 @@ def main():
         crossed += [(score(model, r['f']), r['y']) for r in rows if r['half'] == half]
     confidence = naive_bayes(rows)
     confidence['calibration'] = isotonic(crossed)
-    confidence['cite_from'] = CITE_FROM
+    confidence['cite_from'] = CITE
     confidence['rows'] = len(rows)
     cells = {}
     for r in rows:
@@ -121,7 +124,7 @@ def main():
     bot.save(out)
     cited = [(s, y) for s, y in crossed
              if next((b[1] for b in reversed(confidence['calibration']) if s >= b[0]), confidence['calibration'][0][1])
-             >= CITE_FROM]
+             >= CITE]
     print(json.dumps({'turnos': len(rows), 'utiles': sum(r['y'] for r in rows),
                       'tramos': [b[1:] for b in confidence['calibration']],
                       'cruzado_citas': len(cited), 'cruzado_utiles': sum(y for _, y in cited),
