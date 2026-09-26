@@ -256,3 +256,21 @@ Detalles de las puertas 4 y 5:
 
 - Regresión 657/5 esperados/0: los dos fallos esperados nuevos documentan las piezas retiradas.
 - MFAQ: ninguna celda admitida.
+
+## Verificación independiente 5.10 (auditor nuevo, Opus, copia aislada; [informe](../results_v3/auditoria_g57r.md))
+
+**Confirmado:**
+- orden en git;
+- base de `freeze-G-57r` idéntica byte a byte (`3d6ae179…`);
+- banco congelado: 126/277 contestando siempre, idéntico con `PYTHONHASHSEED` 0 y 1 y tras reiniciar; tratamiento 0/277 y 166/166;
+- puertas del juez: salida idéntica a `juez_puertas.json`; en una muestra de 30 veredictos, el auditor coincide en 28;
+- sin hardcodeo y sin texto de MFAQ ni de los bancos en la base.
+
+**Objeciones, declaradas aquí:**
+1. La enmienda previa al congelado entró en el mismo commit que el código (antes del tag, pero no en un commit propio).
+2. **La retirada de los títulos es parcial.** Los títulos sueltos siguen siendo unidades candidatas (13 de 603 respuestas contestando siempre, p. ej. «Precios de las entradas»). Es la configuración medida con `unit_headings` apagado.
+3. **La educación toma como mucho 100 pares por dominio** (33 787 de 475 307). Está en el script, pero no en el preregistro.
+4. **El saludo (punto 8) se programó distinto de lo preregistrado:** sin pregunta y sin palabras del documento, en lugar de «ninguna palabra con π ≥ π medio». Una pregunta directa sin signos de pregunta se devolvió como eco y quedó fuera del denominador. **Cifra corregida: contestando siempre, 140/277 (50,5 %).** Además, 25 de los 50 turnos de charla reciben «No lo sé».
+5. **El silencio calibrado se conservó contra su regla de retención**, aunque la enmienda 7 prometía aplicarla tal cual. Se mantiene por la misión (la regla más estricta); el auditor está de acuerdo en el fondo y objeta la promesa incumplida.
+6. **El control de renombrado es peor de lo declarado:** renombra también el «No» de «No lo sé» (con su método, el tratamiento daría 24/629). Para G-58 se usa el renombrado estricto.
+7. **El campo `candidate` es solo para quien integra, nunca para el cliente:** queda escrito en la interfaz. En `freeze-G-57r` no hay juez propio (solo conteo automático, 126/277).
