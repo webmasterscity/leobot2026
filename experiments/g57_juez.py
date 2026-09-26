@@ -34,6 +34,8 @@ def abstained(row) -> bool:
 
 
 def auto_label(row):
+    if row['estado'] == 'excepcion':
+        return 'excepcion'
     if row['accion'] == 'charla' or row['estado'] == 'phatic':
         return 'charla'
     if abstained(row):
@@ -120,9 +122,53 @@ def collect(eval_dir: Path, judges_dir: Path, out: Path):
     out.write_text(json.dumps(report, ensure_ascii=False, indent=1), encoding='utf8')
 
 
+def prepare_changed(eval_dir: Path, bank: Path, judges_dir: Path, n: int, variants=('sin_titulos', 'sin_puente', 'sin_formas')):
+    """Ablaciones: solo las respuestas que difieren de `contesta_siempre` (sin repetir la misma respuesta al mismo
+    turno), ciegas y barajadas; el resto hereda el veredicto de `contesta_siempre`."""
+    base = {(r['negocio'], r['conv'], r['turno']): r for r in load_rows(eval_dir, 'contesta_siempre')}
+    unique = {}
+    for v in variants:
+        for row in load_rows(eval_dir, v):
+            k = (row['negocio'], row['conv'], row['turno'])
+            if row['respuesta'] != base[k]['respuesta'] and auto_label(row) is None:
+                unique.setdefault(k + (row['respuesta'],), row)
+    items = list(unique.values())
+    rng = random.Random(int(FROZEN[:8], 16) + 1)
+    rng.shuffle(items)
+    key = {}
+    for k, it in enumerate(items):
+        it = dict(it)
+        items[k] = it
+        it['id'] = f'a{k:04d}'
+        key[it['id']] = {'negocio': it['negocio'], 'conv': it['conv'], 'turno': it['turno'], 'respuesta': it['respuesta']}
+    judges_dir.mkdir(parents=True, exist_ok=True)
+    (judges_dir / 'clave_ablaciones.json').write_text(json.dumps(key, ensure_ascii=False, indent=1))
+    names = sorted({it['negocio'] for it in items})
+    for j, group in enumerate([names[i::n] for i in range(n)]):
+        folder = judges_dir / f'juezA{j + 1}'
+        folder.mkdir(exist_ok=True)
+        mine = []
+        for name in group:
+            shutil.copytree(bank / name, folder / name.replace('/', '_'), dirs_exist_ok=True)
+            convs = json.loads((bank / name / 'conversaciones.json').read_text(encoding='utf8'))
+            for it in items:
+                if it['negocio'] == name:
+                    turn = convs[it['conv']][it['turno']]
+                    mine.append({'id': it['id'], 'negocio': name.replace('/', '_'),
+                                 'turnos_previos_del_cliente': [t['cliente'] for t in convs[it['conv']][:it['turno']]],
+                                 'cliente': turn['cliente'], 'tipo': turn.get('tipo'), 'accion_esperada': turn.get('accion'),
+                                 'claves': turn.get('claves'), 'evidencia': turn.get('evidencia'),
+                                 'respuesta_ideal': turn.get('respuesta_ideal'), 'respuesta_a_calificar': it['respuesta']})
+        mine.sort(key=lambda x: (x['negocio'], x['id']))
+        (folder / 'items.json').write_text(json.dumps(mine, ensure_ascii=False, indent=1), encoding='utf8')
+        print(folder.name, len(group), 'negocios', len(mine), 'ítems')
+
+
 if __name__ == '__main__':
     mode = sys.argv[1]
     if mode == 'preparar':
         prepare(Path(sys.argv[2]), Path(sys.argv[3]), Path(sys.argv[4]), int(sys.argv[5]))
+    elif mode == 'preparar_ablaciones':
+        prepare_changed(Path(sys.argv[2]), Path(sys.argv[3]), Path(sys.argv[4]), int(sys.argv[5]))
     else:
         collect(Path(sys.argv[2]), Path(sys.argv[3]), Path(sys.argv[4]))

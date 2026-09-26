@@ -67,7 +67,7 @@ def main():
             template.load_context(case['context'])
             t = time.perf_counter(); reply = template.answer(case['question']); times.append((time.perf_counter() - t) * 1000)
             text = (reply.get('candidate') or {}).get('text') or (reply.get('text') if reply.get('status') == 'answered' else '')
-            gold = [a['text'] for a in case['answers']] if 'answers' in case else [case['answer']]
+            gold = [a['text'] if isinstance(a, dict) else a for a in case['answers']]
             hits += any(f' {plain(g)} ' in f' {plain(text)} ' for g in gold)
             results.append(scored(text, case))
         times.sort()

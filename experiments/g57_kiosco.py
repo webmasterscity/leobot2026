@@ -53,6 +53,9 @@ def businesses(folders):
 def judge(turn: dict, reply: dict, system: str) -> str:
     text = reply.get('text', '') or ''
     status = reply.get('status', '')
+    if status == 'excepcion':
+        return 'excepcion'
+
     abstained = status in ABSTAINED or plain(text).startswith('no lo se') or (system == 'g57' and status == 'unknown')
     action = turn.get('accion', 'responder')
     keys = [k for k in turn.get('claves') or [] if plain(k)]
@@ -84,13 +87,16 @@ SUBSTITUTES = ['Abundio', 'Crisanto', 'Demetria', 'Eleuterio', 'Fructuoso', 'Gre
                'Cleofás', 'Dorotea', 'Eulogio', 'Faustina', 'Gaudencio', 'Honorata', 'Ireneo']
 
 
-def name_map(texts) -> dict:
-    """Proper names: capitalised words that do not open a line or sentence (as in G-45), each with a substitute."""
+def name_map(texts, strict=False) -> dict:
+    """Proper names: capitalised words that do not open a line or sentence (as in G-45), each with a substitute.
+    Strict (diagnóstico posterior, no preregistrado): además, la palabra nunca aparece en minúscula en esos textos."""
     names = []
+    lower = {w for text in texts for w in re.findall(r'\w+', str(text)) if w[:1].islower()} if strict else set()
     for text in texts:
         for line in str(text).splitlines():
             for k, w in enumerate(re.findall(r'\w+', line)):
-                if k > 0 and w[:1].isupper() and not w.isupper() and not any(c.isdigit() for c in w) and w not in names:
+                if k > 0 and w[:1].isupper() and not w.isupper() and not any(c.isdigit() for c in w) and w not in names \
+                        and w.lower() not in lower:
                     names.append(w)
     used = {plain(w) for w in names}
     free = [n for n in SUBSTITUTES if plain(n) not in used]
@@ -101,14 +107,14 @@ def renamed(text: str, mapping: dict) -> str:
     return re.sub(r'\w+', lambda m: mapping.get(m.group(0), m.group(0)), str(text)) if text else text
 
 
-def run(base: Path, folders, system: str, off=(), rename=False, other=False, restart=False):
+def run(base: Path, folders, system: str, off=(), rename=False, other=False, restart=False, strict=False):
     rows = []
     template = Bot.load(base) if system == 'g57' else None
     items = list(businesses(folders))
     if rename:
         items = [(name, *(lambda m: (renamed(text, m), renamed(ins, m),
                                      [[{**turn, 'cliente': renamed(turn['cliente'], m), 'mapa': m} for turn in conv]
-                                      for conv in convs]))(name_map([text, ins] + [t['cliente'] for c in convs for t in c])))
+                                      for conv in convs]))(name_map([text, ins] + [t['cliente'] for c in convs for t in c], strict)))
                  for name, text, ins, convs in items]
     for index, (name, text, instructions, conversations) in enumerate(items):
         if other:
@@ -133,7 +139,10 @@ def run(base: Path, folders, system: str, off=(), rename=False, other=False, res
             for t, turn in enumerate(conversation):
                 said = turn['cliente']
                 start = time.perf_counter()
-                reply = bot.answer(said, history) if system == 'g57' else bot.respond(said)
+                try:
+                    reply = bot.answer(said, history) if system == 'g57' else bot.respond(said)
+                except Exception as error:  # a crash is recorded as such, never as an answer
+                    reply = {'text': '', 'status': 'excepcion', 'error': type(error).__name__}
                 ms = (time.perf_counter() - start) * 1000
                 history += [{'role': 'user', 'text': said}, {'role': 'assistant', 'text': reply.get('text', '')}]
                 rows.append({'negocio': name, 'conv': c, 'turno': t, 'tipo': turn.get('tipo'),
