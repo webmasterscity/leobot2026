@@ -114,6 +114,18 @@ class AnswerTests(unittest.TestCase):
         self.assertEqual(again.answer('¿Cuánto cuesta la doble?'), before)
 
 
+class PrivacyTests(unittest.TestCase):
+    def test_what_one_client_says_is_not_kept_for_the_next(self):
+        bot = Bot()
+        bot.load_context(TEXT)
+        before = bot.as_dict()
+        history = [{'role': 'user', 'text': 'Me llamo Ana Pérez y mi tarjeta es la 4111 2222.'}]
+        bot.answer('Me llamo Ana Pérez y mi tarjeta es la 4111 2222.')
+        bot.answer('¿Cuánto cuesta la doble?', history)
+        self.assertEqual(bot.as_dict(), before)
+        self.assertNotIn('Ana', bot.answer('¿Cómo me llamo?')['text'])
+
+
 class RespondTests(unittest.TestCase):
     def test_several_parts_never_reply_with_an_internal_message(self):
         reply = Bot().respond('Hola. ¿Qué hora es?')

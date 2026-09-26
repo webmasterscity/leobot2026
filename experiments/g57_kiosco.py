@@ -71,10 +71,45 @@ def reply_g57(bot, turn_text, history):
     return bot.answer(turn_text, history)
 
 
+SUBSTITUTES = ['Abundio', 'Crisanto', 'Demetria', 'Eleuterio', 'Fructuoso', 'Gregoria', 'Heraclio', 'Ignacia',
+               'Juvencio', 'Leocadia', 'Melquiades', 'Nemesia', 'Olegario', 'Pancracio', 'Rufina', 'Segismundo',
+               'Tiburcio', 'Venancia', 'Zenobia', 'Agapito', 'Bernardina', 'Cipriano', 'Domitila', 'Eusebia',
+               'Froilán', 'Gervasio', 'Hermenegildo', 'Ildefonso', 'Justiniano', 'Liberata', 'Modesto', 'Nazaria',
+               'Ovidio', 'Primitiva', 'Robustiano', 'Sinforosa', 'Telesforo', 'Wilfrido', 'Yolanda', 'Anacleto',
+               'Baldomero', 'Casimira', 'Dalmacio', 'Epifania', 'Filomeno', 'Genoveva', 'Hilarión', 'Isidora',
+               'Jacinta', 'Laureano', 'Macaria', 'Nicasio', 'Onésimo', 'Petronila', 'Quirino', 'Remigio', 'Saturnina',
+               'Teodosia', 'Urbano', 'Valeriana', 'Zoilo', 'Amalio', 'Brígida', 'Celedonio', 'Diosdado', 'Evaristo',
+               'Fermina', 'Gumersindo', 'Herminia', 'Inocencio', 'Jenaro', 'Leandra', 'Marcelino', 'Norberta',
+               'Olimpia', 'Pascasio', 'Reinalda', 'Sabino', 'Tránsito', 'Ulpiano', 'Victorina', 'Arsenio', 'Benigna',
+               'Cleofás', 'Dorotea', 'Eulogio', 'Faustina', 'Gaudencio', 'Honorata', 'Ireneo']
+
+
+def name_map(texts) -> dict:
+    """Proper names: capitalised words that do not open a line or sentence (as in G-45), each with a substitute."""
+    names = []
+    for text in texts:
+        for line in str(text).splitlines():
+            for k, w in enumerate(re.findall(r'\w+', line)):
+                if k > 0 and w[:1].isupper() and not w.isupper() and not any(c.isdigit() for c in w) and w not in names:
+                    names.append(w)
+    used = {plain(w) for w in names}
+    free = [n for n in SUBSTITUTES if plain(n) not in used]
+    return {w: free[i] for i, w in enumerate(names[:len(free)])}
+
+
+def renamed(text: str, mapping: dict) -> str:
+    return re.sub(r'\w+', lambda m: mapping.get(m.group(0), m.group(0)), str(text)) if text else text
+
+
 def run(base: Path, folders, system: str, off=(), rename=False, other=False, restart=False):
     rows = []
     template = Bot.load(base) if system == 'g57' else None
     items = list(businesses(folders))
+    if rename:
+        items = [(name, *(lambda m: (renamed(text, m), renamed(ins, m),
+                                     [[{**turn, 'cliente': renamed(turn['cliente'], m), 'mapa': m} for turn in conv]
+                                      for conv in convs]))(name_map([text, ins] + [t['cliente'] for c in convs for t in c])))
+                 for name, text, ins, convs in items]
     for index, (name, text, instructions, conversations) in enumerate(items):
         if other:
             # Control: the questions of one business against the text of the next one.
@@ -104,7 +139,8 @@ def run(base: Path, folders, system: str, off=(), rename=False, other=False, res
                 rows.append({'negocio': name, 'conv': c, 'turno': t, 'tipo': turn.get('tipo'),
                              'accion': turn.get('accion'), 'veredicto': judge(turn, reply, system),
                              'ms': round(ms, 3), 'respuesta': reply.get('text', ''), 'estado': reply.get('status'),
-                             'celda': reply.get('cell'), 'cliente': said, 'claves': turn.get('claves')})
+                             'celda': reply.get('cell'), 'cliente': said, 'claves': turn.get('claves'),
+                             'candidata': (reply.get('candidate') or {}).get('text')})
     return rows
 
 
