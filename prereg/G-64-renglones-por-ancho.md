@@ -120,3 +120,9 @@ El directorio `<eval64>` es `results_v3/kiosco/evaluacion_g64`. Se lanzan 8 juec
 **Decisión (reglas 5.1 y 5.9):** la puerta 1 no pasa, así que **G-64 no entra** a main por sus propias reglas. La meta no se mueve. Queda en la rama `G-64` y en `freeze-G-64`. Solo el usuario puede decidir una excepción.
 
 **Lección de medida:** la puerta 1 medía útiles y fijó +5 sin calcular antes el techo, que es lo que se gana con el texto limpio. Un preregistro futuro de este tipo debe fijar la vara respecto a ese techo, antes de medir.
+
+## Excepción decidida por el usuario (2026-09-26)
+
+El usuario, en su ventana, decidió aceptar G-64 aunque no pasa la puerta 1: «si acepta G-64». **Es una excepción suya, no un cambio de la vara.** La puerta 1 sigue constando como no superada. La razón que se le presentó: en este banco el máximo posible era +2,6 y G-64 lo alcanza. Además, con texto limpio no cambia nada, las engañosas bajan y todas las demás puertas y pruebas generales pasan.
+
+Antes del tag `estable-G-19`: auditoría 5.10 y mediciones de la sección 7.
