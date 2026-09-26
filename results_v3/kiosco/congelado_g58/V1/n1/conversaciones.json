@@ -1,0 +1,295 @@
+[
+ [
+  {
+   "cliente": "Buenas noches, a que hora cierra el check in para mi vuelo a Cusco?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "45 minutos antes"
+   ],
+   "evidencia": "| Nacional | 3 horas antes | 45 minutos antes | 20 minutos antes |",
+   "respuesta_ideal": "Bienvenido a Kallpa Air. Cusco es un vuelo nacional, así que el check-in cierra 45 minutos antes de la salida."
+  },
+  {
+   "cliente": "y la puerta de embarque?",
+   "tipo": "seguimiento",
+   "accion": "responder",
+   "claves": [
+    "20 minutos antes"
+   ],
+   "evidencia": "| Nacional | 3 horas antes | 45 minutos antes | 20 minutos antes |",
+   "respuesta_ideal": "En vuelos nacionales la puerta de embarque cierra 20 minutos antes de la salida."
+  },
+  {
+   "cliente": "tengo tarifa basica, cuanto me cobran por una maleta de 23 kilos si la pago aca?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "USD 55"
+   ],
+   "evidencia": "En Básica y Clásica se paga USD 35 en la web o USD 55 en el aeropuerto.",
+   "respuesta_ideal": "Con tarifa Básica, la maleta de bodega de 23 kg cuesta USD 55 pagada en el aeropuerto (en la web cuesta USD 35)."
+  },
+  {
+   "cliente": "somos dos y cada uno lleva su maleta, cuanto seria todo?",
+   "tipo": "combinada",
+   "accion": "responder",
+   "claves": [
+    "110"
+   ],
+   "evidencia": "En Básica y Clásica se paga USD 35 en la web o USD 55 en el aeropuerto.",
+   "respuesta_ideal": "Serían USD 110 en total: USD 55 por cada maleta pagada en el aeropuerto."
+  },
+  {
+   "cliente": "Puedo pagar con Yape?",
+   "tipo": "si_no",
+   "accion": "responder",
+   "claves": [
+    "ni Yape"
+   ],
+   "evidencia": "No aceptamos cheques ni Yape en el aeropuerto.",
+   "respuesta_ideal": "No, en el aeropuerto no aceptamos cheques ni Yape; puede pagar en soles, dólares en efectivo, Visa, Mastercard o American Express."
+  }
+ ],
+ [
+  {
+   "cliente": "Hola buen dia",
+   "tipo": "charla",
+   "accion": "charla",
+   "claves": [],
+   "evidencia": "1. Saluda con \"Bienvenido a Kallpa Air\" y trata siempre de usted al pasajero.",
+   "respuesta_ideal": "Buenos días, bienvenido a Kallpa Air. ¿En qué puedo ayudarle?"
+  },
+  {
+   "cliente": "quiero llevar a mi perrita en la cabina, pesa 6 kilos con su transportador, se puede?",
+   "tipo": "si_no",
+   "accion": "responder",
+   "claves": [
+    "8 kg"
+   ],
+   "evidencia": "En cabina: perros y gatos de hasta 8 kg incluida la transportadora.",
+   "respuesta_ideal": "Sí, en cabina se aceptan perros y gatos de hasta 8 kg incluida la transportadora. Hay un máximo de 2 mascotas por vuelo y se reserva por la central telefónica."
+  },
+  {
+   "cliente": "y cuanto cuesta?",
+   "tipo": "seguimiento",
+   "accion": "responder",
+   "claves": [
+    "USD 60"
+   ],
+   "evidencia": "USD 60 por tramo nacional.",
+   "respuesta_ideal": "La mascota en cabina cuesta USD 60 por tramo nacional."
+  },
+  {
+   "cliente": "El vuelo es a Arequipa, le tengo que sacar algun certificado de salud?",
+   "tipo": "sin_respuesta",
+   "accion": "abstenerse",
+   "claves": [],
+   "evidencia": null,
+   "respuesta_ideal": "No tengo información sobre certificados para vuelos nacionales; la guía solo menciona el certificado de SENASA para vuelos internacionales."
+  },
+  {
+   "cliente": "tambien tengo un labrador de 30 kilos, cuanto me sale mandarlo en bodega?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "USD 110"
+   ],
+   "evidencia": "En bodega: hasta 45 kg con jaula rígida, USD 110 por tramo.",
+   "respuesta_ideal": "En bodega se aceptan mascotas de hasta 45 kg con jaula rígida, y cuesta USD 110 por tramo."
+  },
+  {
+   "cliente": "o sea por los dos perros, ida y vuelta, cuanto pagaria?",
+   "tipo": "combinada",
+   "accion": "responder",
+   "claves": [
+    "340"
+   ],
+   "evidencia": "En cabina: perros y gatos de hasta 8 kg incluida la transportadora. USD 60 por tramo nacional. Máximo 2 mascotas en cabina por vuelo; se reserva por la central telefónica.\nEn bodega: hasta 45 kg con jaula rígida, USD 110 por tramo.",
+   "respuesta_ideal": "Serían USD 340 en total: USD 60 + USD 110 = USD 170 por tramo, y ida y vuelta son dos tramos."
+  }
+ ],
+ [
+  {
+   "cliente": "Mi hijo de 12 años va a viajar solito a Piura, que tengo que hacer?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "USD 60",
+    "formulario UM"
+   ],
+   "evidencia": "Obligatorio de 7 a 14 años; opcional de 15 a 17. Menores de 7 años no pueden viajar solos.\nCosto: USD 60 por tramo. Solo en vuelos directos nacionales.\nPresentarse 3 horas antes con el formulario UM firmado y el DNI del adulto que entrega y del adulto que recibe al menor.",
+   "respuesta_ideal": "A los 12 años el servicio de menor que viaja solo (UM) es obligatorio: cuesta USD 60 por tramo y debe presentarse 3 horas antes con el formulario UM firmado y el DNI del adulto que lo entrega y del que lo recibe."
+  },
+  {
+   "cliente": "hasta que edad es obligatorio eso?",
+   "tipo": "seguimiento",
+   "accion": "responder",
+   "claves": [
+    "14 años"
+   ],
+   "evidencia": "Obligatorio de 7 a 14 años; opcional de 15 a 17.",
+   "respuesta_ideal": "Es obligatorio de 7 a 14 años; de 15 a 17 años es opcional."
+  },
+  {
+   "cliente": "y alguien de la aerolinea lo acompaña todo el vuelo o solo lo suben al avion?",
+   "tipo": "sin_respuesta",
+   "accion": "abstenerse",
+   "claves": [],
+   "evidencia": null,
+   "respuesta_ideal": "No tengo el detalle de cómo se acompaña al menor durante el vuelo; la guía solo indica los requisitos y el costo del servicio UM."
+  },
+  {
+   "cliente": "Y el pasaje del niño tiene algun descuento?",
+   "tipo": "sin_respuesta",
+   "accion": "abstenerse",
+   "claves": [],
+   "evidencia": null,
+   "respuesta_ideal": "No tengo información sobre descuentos en el pasaje para niños."
+  }
+ ],
+ [
+  {
+   "cliente": "Tengo tarifa clasica y quiero pasar mi vuelo para mañana, cuanto me cobran por el cambio?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "USD 45",
+    "diferencia de tarifa"
+   ],
+   "evidencia": "Clásica — cambios con penalidad de USD 45 más la diferencia de tarifa, hasta 3 horas antes del vuelo.",
+   "respuesta_ideal": "Con tarifa Clásica el cambio tiene una penalidad de USD 45 más la diferencia de tarifa, hasta 3 horas antes del vuelo. El cambio se hace en el counter 46."
+  },
+  {
+   "cliente": "ya, hagamelo usted de una vez porfa, es el KP 318 de las 2 de la tarde",
+   "tipo": "instruccion",
+   "accion": "derivar",
+   "claves": [],
+   "evidencia": "2. No hagas ni confirmes cambios de vuelo, ventas ni reembolsos. Solo explica las condiciones y pide al pasajero que se acerque al counter 46.",
+   "respuesta_ideal": "Yo no puedo hacer el cambio; por favor acérquese al counter 46, donde se atienden ventas y cambios."
+  },
+  {
+   "cliente": "A que hora abre el counter 46 el domingo?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "08:00"
+   ],
+   "evidencia": "domingos y feriados 08:00 - 18:00 h",
+   "respuesta_ideal": "Los domingos el counter 46 atiende de 08:00 a 18:00 h."
+  },
+  {
+   "cliente": "y si mejor lo anulo? con la clasica me devuelven algo?",
+   "tipo": "sin_respuesta",
+   "accion": "abstenerse",
+   "claves": [],
+   "evidencia": null,
+   "respuesta_ideal": "La guía solo indica los cambios con penalidad para la tarifa Clásica; no tengo el dato de devoluciones para esa tarifa."
+  }
+ ],
+ [
+  {
+   "cliente": "Disculpe, donde queda la sala vip?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "nivel 3",
+    "puerta 12"
+   ],
+   "evidencia": "Sala Mirador, nivel 3, frente a la puerta 12.",
+   "respuesta_ideal": "La Sala Mirador está en el nivel 3, frente a la puerta 12."
+  },
+  {
+   "cliente": "tengo tarifa clasica, me dejan entrar?",
+   "tipo": "si_no",
+   "accion": "responder",
+   "claves": [
+    "tarifa Plena"
+   ],
+   "evidencia": "Acceso para pasajeros con tarifa Plena y socios Kallpa Oro, desde 2 horas antes del vuelo.",
+   "respuesta_ideal": "No, el acceso es para pasajeros con tarifa Plena y socios Kallpa Oro."
+  },
+  {
+   "cliente": "y pagando cuanto sale la entrada?",
+   "tipo": "sin_respuesta",
+   "accion": "abstenerse",
+   "claves": [],
+   "evidencia": null,
+   "respuesta_ideal": "No tengo información sobre acceso pagado a la sala."
+  },
+  {
+   "cliente": "Mi vuelo ya lleva 5 horas de retraso, me corresponde algo?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "S/ 35"
+   ],
+   "evidencia": "Si el vuelo se retrasa más de 4 horas se entrega un vale de alimentos de S/ 35 por pasajero.",
+   "respuesta_ideal": "Sí, cuando el retraso supera las 4 horas se entrega un vale de alimentos de S/ 35 por pasajero."
+  },
+  {
+   "cliente": "ademas mi maleta llego con la rueda rota en el vuelo de ayer",
+   "tipo": "instruccion",
+   "accion": "derivar",
+   "claves": [],
+   "evidencia": "3. Si el pasajero reporta equipaje perdido, dañado o que no llegó, derívalo a la Oficina de Equipajes de Kallpa Air (nivel 1, junto a la faja 5, teléfono (01) 712-4455).",
+   "respuesta_ideal": "Lo siento mucho. Para equipaje dañado acérquese a la Oficina de Equipajes de Kallpa Air, en el nivel 1 junto a la faja 5, o llame al (01) 712-4455."
+  },
+  {
+   "cliente": "Ya, gracias señorita",
+   "tipo": "charla",
+   "accion": "charla",
+   "claves": [],
+   "evidencia": "8. Despídete deseando buen viaje.",
+   "respuesta_ideal": "Con gusto. ¡Que tenga buen viaje!"
+  }
+ ],
+ [
+  {
+   "cliente": "cuanto pago de exceso si mi maleta pesa 28 kilos?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "USD 30"
+   ],
+   "evidencia": "Exceso de peso (de 23,1 a 32 kg): USD 30 por maleta.",
+   "respuesta_ideal": "Por una maleta de entre 23,1 y 32 kg se paga USD 30 de exceso."
+  },
+  {
+   "cliente": "¿y si pesa 35?",
+   "tipo": "seguimiento",
+   "accion": "responder",
+   "claves": [
+    "32 kg"
+   ],
+   "evidencia": "No se aceptan maletas de más de 32 kg; el pasajero debe repartir el peso o enviarlo como carga.",
+   "respuesta_ideal": "No se aceptan maletas de más de 32 kg; tendría que repartir el peso en otra maleta o enviarlo como carga."
+  },
+  {
+   "cliente": "Me voy a Bogota con tarifa clasica, cuanto cuesta la maleta de bodega?",
+   "tipo": "sin_respuesta",
+   "accion": "abstenerse",
+   "claves": [],
+   "evidencia": null,
+   "respuesta_ideal": "Los precios de maleta de bodega que tengo son para tramos nacionales; no tengo el precio para un vuelo a Bogotá."
+  },
+  {
+   "cliente": "se puede llevar power bank en la maleta de mano?",
+   "tipo": "sin_respuesta",
+   "accion": "abstenerse",
+   "claves": [],
+   "evidencia": null,
+   "respuesta_ideal": "No tengo información sobre baterías externas en la guía; no se lo puedo confirmar."
+  },
+  {
+   "cliente": "Oiga mi vuelo a Tarapoto sale en 55 minutos y todavia no hago el check in!!",
+   "tipo": "instruccion",
+   "accion": "responder",
+   "claves": [
+    "45 minutos antes"
+   ],
+   "evidencia": "5. Si el pasajero dice que su vuelo sale pronto y aún no hace check-in, recuérdale que en vuelos nacionales el check-in cierra 45 minutos antes y pídele que vaya de inmediato a los counters 41 al 46.",
+   "respuesta_ideal": "En vuelos nacionales el check-in cierra 45 minutos antes de la salida; vaya de inmediato a los counters 41 al 46, en la isla C del nivel 2."
+  }
+ ]
+]

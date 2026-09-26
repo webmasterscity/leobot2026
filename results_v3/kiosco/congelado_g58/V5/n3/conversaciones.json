@@ -1,0 +1,260 @@
+[
+  [
+    {
+      "cliente": "Hola, quiero saber si tiene costo inscribirme para buscar trabajo",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": [
+        "gratuito"
+      ],
+      "evidencia": "Registro en bolsa de empleo: gratuito.",
+      "respuesta_ideal": "No, inscribirse en la bolsa de empleo es totalmente gratuito."
+    },
+    {
+      "cliente": "¿y si quiero que me ayuden con el currículum?",
+      "tipo": "seguimiento",
+      "accion": "responder",
+      "claves": [
+        "$5"
+      ],
+      "evidencia": "Orientación de currículum: $5 (se puede cancelar el equivalente en bolívares al cambio del día).",
+      "respuesta_ideal": "La orientación de currículum tiene un costo de $5, que se puede pagar en bolívares al cambio del día."
+    },
+    {
+      "cliente": "¿cuando me van a llamar si me registro?",
+      "tipo": "instruccion",
+      "accion": "responder",
+      "claves": [],
+      "evidencia": "Nunca prometas ni asegures que un candidato será contratado, ni des fechas exactas de llamado; aclara siempre que depende de la demanda de vacantes.",
+      "respuesta_ideal": "No hay un plazo fijo, la llamada depende de que surja una vacante que calce con su perfil."
+    },
+    {
+      "cliente": "ok, gracias",
+      "tipo": "charla",
+      "accion": "charla",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "Con gusto, cualquier duda puede escribir al WhatsApp 0414-235 67 89."
+    }
+  ],
+  [
+    {
+      "cliente": "Buenos dias, necesito reclutar 3 vendedores, ¿cuanto cobran?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": [
+        "15% del salario mensual ofrecido"
+      ],
+      "evidencia": "Reclutamiento básico | Preselección de 3 a 5 candidatos | 15% del salario mensual ofrecido",
+      "respuesta_ideal": "El reclutamiento básico, que incluye preselección de 3 a 5 candidatos, tiene un costo del 15% del salario mensual ofrecido."
+    },
+    {
+      "cliente": "si el sueldo es de 300 dolares por candidato, ¿cuanto seria en total por los 3?",
+      "tipo": "combinada",
+      "accion": "responder",
+      "claves": [
+        "15% del salario mensual ofrecido"
+      ],
+      "evidencia": "Reclutamiento básico | Preselección de 3 a 5 candidatos | 15% del salario mensual ofrecido",
+      "respuesta_ideal": "El 15% de $300 son $45 por candidato, así que por los 3 vendedores serían $135 en total."
+    },
+    {
+      "cliente": "¿y si quiero que tambien verifiquen antecedentes?",
+      "tipo": "seguimiento",
+      "accion": "responder",
+      "claves": [
+        "20% del salario mensual ofrecido"
+      ],
+      "evidencia": "Reclutamiento con verificación | Incluye verificación de referencias y antecedentes | 20% del salario mensual ofrecido",
+      "respuesta_ideal": "Ese sería el paquete de reclutamiento con verificación, que cuesta el 20% del salario mensual ofrecido."
+    },
+    {
+      "cliente": "¿tienen que pagar todo antes de empezar?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": [
+        "deben pagar el 50% de la tarifa de reclutamiento por adelantado"
+      ],
+      "evidencia": "Las empresas deben pagar el 50% de la tarifa de reclutamiento por adelantado y el 50% restante cuando el candidato inicie funciones.",
+      "respuesta_ideal": "No, se paga el 50% por adelantado y el 50% restante cuando el candidato inicie funciones."
+    },
+    {
+      "cliente": "¿que pasa si el candidato renuncia a los 15 dias?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": [
+        "se reemplaza sin costo adicional una sola vez"
+      ],
+      "evidencia": "Garantía: si el candidato colocado renuncia o es desvinculado antes de 30 días, se reemplaza sin costo adicional una sola vez.",
+      "respuesta_ideal": "Si renuncia o es desvinculado antes de 30 días, se le reemplaza sin costo adicional, una sola vez."
+    },
+    {
+      "cliente": "¿la garantia de reemplazo aplica tambien para el reclutamiento con verificacion?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": [
+        "se reemplaza sin costo adicional una sola vez"
+      ],
+      "evidencia": "Garantía: si el candidato colocado renuncia o es desvinculado antes de 30 días, se reemplaza sin costo adicional una sola vez.",
+      "respuesta_ideal": "Sí, la garantía de reemplazo aplica para cualquier modalidad de reclutamiento, siempre que sea antes de 30 días."
+    },
+    {
+      "cliente": "si el sueldo es de 200 dolares, y uso el reclutamiento con verificacion, ¿cuanto pagaria en total?",
+      "tipo": "combinada",
+      "accion": "responder",
+      "claves": [
+        "20% del salario mensual ofrecido"
+      ],
+      "evidencia": "Reclutamiento con verificación | Incluye verificación de referencias y antecedentes | 20% del salario mensual ofrecido",
+      "respuesta_ideal": "El 20% de $200 son $40, así que pagaría $40 por el reclutamiento con verificación de ese puesto."
+    }
+  ],
+  [
+    {
+      "cliente": "¿ustedes colocan personal para cuidar ancianos?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No tengo esa área específica registrada; manejamos más que todo niñeras, cocineras y personal de limpieza, le recomiendo consultar directamente en la oficina."
+    },
+    {
+      "cliente": "¿y de niñera si hay vacantes?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": [
+        "Servicio doméstico (niñeras, cocineras, personal de limpieza)"
+      ],
+      "evidencia": "Servicio doméstico (niñeras, cocineras, personal de limpieza)",
+      "respuesta_ideal": "Sí, el servicio doméstico incluye niñeras, cocineras y personal de limpieza, esas vacantes sí las manejamos."
+    },
+    {
+      "cliente": "¿que necesito para postularme como niñera?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": [
+        "dos referencias de familias donde haya trabajado antes"
+      ],
+      "evidencia": "Para personal doméstico: dos referencias de familias donde haya trabajado antes.",
+      "respuesta_ideal": "Necesita presentar dos referencias de familias donde haya trabajado antes, además de la cédula y el currículum."
+    },
+    {
+      "cliente": "¿me cobran algo por conseguirme el trabajo?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": [
+        "No cobramos comisión a los candidatos"
+      ],
+      "evidencia": "No cobramos comisión a los candidatos por conseguirles empleo; nuestra comisión la paga la empresa contratante.",
+      "respuesta_ideal": "No, no se cobra comisión a los candidatos; esa la paga la empresa que contrata."
+    },
+    {
+      "cliente": "¿el pago se los deben dar en dolares o en bolivares?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No tengo esa información, el salario y su moneda lo define cada familia o empresa empleadora."
+    },
+    {
+      "cliente": "¿tienen vacantes para trabajar cuidando mascotas?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No manejamos esa categoría específica de cuidado de mascotas, solo servicio doméstico como niñeras, cocineras y limpieza."
+    }
+  ],
+  [
+    {
+      "cliente": "quiero trabajar en seguridad, ¿que piden?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": [
+        "certificado de la DAEX y no tener antecedentes penales"
+      ],
+      "evidencia": "Para seguridad privada: certificado de la DAEX y no tener antecedentes penales.",
+      "respuesta_ideal": "Para seguridad privada se pide certificado de la DAEX vigente y no tener antecedentes penales."
+    },
+    {
+      "cliente": "¿me pueden decir si ya me tienen una entrevista programada?",
+      "tipo": "instruccion",
+      "accion": "derivar",
+      "claves": [],
+      "evidencia": "Si preguntan por el estado de una postulación o proceso específico de una persona, deriva a la Lcda. Yorgelis Pérez o al teléfono (0212) 267 45 90.",
+      "respuesta_ideal": "Para el estado de su proceso específico debe consultar con la Lcda. Yorgelis Pérez o llamar al (0212) 267 45 90."
+    },
+    {
+      "cliente": "¿cuanto pagan los trabajos de seguridad?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No tengo un salario fijo para esos cargos, ya que lo define cada empresa que solicita el personal."
+    },
+    {
+      "cliente": "porfa deme el numero para llamar",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": [
+        "(0212) 267 45 90"
+      ],
+      "evidencia": "Teléfonos: (0212) 267 45 90 / WhatsApp 0414-235 67 89",
+      "respuesta_ideal": "Claro, puede llamar al (0212) 267 45 90 o escribir al WhatsApp 0414-235 67 89."
+    },
+    {
+      "cliente": "muchas gracias",
+      "tipo": "charla",
+      "accion": "charla",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "Con gusto, cualquier duda puede escribir al WhatsApp 0414-235 67 89."
+    }
+  ],
+  [
+    {
+      "cliente": "¿atienden los sabados?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": [
+        "Sábados de 8:30 am a 12:00 m"
+      ],
+      "evidencia": "Sábados de 8:30 am a 12:00 m",
+      "respuesta_ideal": "Sí, atendemos los sábados de 8:30 am a 12:00 del mediodía."
+    },
+    {
+      "cliente": "¿y los domingos?",
+      "tipo": "seguimiento",
+      "accion": "responder",
+      "claves": [
+        "No atendemos domingos ni feriados"
+      ],
+      "evidencia": "No atendemos domingos ni feriados nacionales.",
+      "respuesta_ideal": "No, los domingos y feriados nacionales no atendemos."
+    },
+    {
+      "cliente": "necesito contratar 20 personas para una empresa de call center, ¿tienen algun descuento por volumen?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No tengo información sobre descuentos por volumen; le recomiendo hablar directamente con el encargado de atención a empresas."
+    },
+    {
+      "cliente": "¿ese encargado tiene nombre?",
+      "tipo": "instruccion",
+      "accion": "derivar",
+      "claves": [],
+      "evidencia": "Si un cliente empresa pregunta por tarifas de un caso particular fuera de lo estándar, deriva al Sr. Rubén Salcedo.",
+      "respuesta_ideal": "Sí, para casos particulares como este puede comunicarse con el Sr. Rubén Salcedo, encargado de atención a empresas."
+    },
+    {
+      "cliente": "listo, hasta luego",
+      "tipo": "charla",
+      "accion": "charla",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "Hasta luego, cualquier duda escríbanos al WhatsApp 0414-235 67 89."
+    }
+  ]
+]

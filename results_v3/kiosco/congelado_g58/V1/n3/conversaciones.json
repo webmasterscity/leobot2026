@@ -1,0 +1,296 @@
+[
+ [
+  {
+   "cliente": "Buenas tardes, cuánto sale el arancel de psicología?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "$4.920.000"
+   ],
+   "evidencia": "Psicología\tdiurna\t10 semestres\t70\t$4.920.000\t580",
+   "respuesta_ideal": "Buenas tardes, le saluda el asistente de Admisión de la Universidad del Mapocho. El arancel anual de Psicología para 2027 es de $4.920.000."
+  },
+  {
+   "cliente": "y la matrícula es aparte?",
+   "tipo": "seguimiento",
+   "accion": "responder",
+   "claves": [
+    "$215.000"
+   ],
+   "evidencia": "Matrícula anual (todas las carreras): $215.000",
+   "respuesta_ideal": "Sí, la matrícula anual es aparte y cuesta $215.000 para todas las carreras."
+  },
+  {
+   "cliente": "si pago el año completo al contado, en cuánto me queda el arancel?",
+   "tipo": "combinada",
+   "accion": "responder",
+   "claves": [
+    "4.674.000"
+   ],
+   "evidencia": "a) Al contado (transferencia o Webpay): 5% de descuento sobre el arancel anual.",
+   "respuesta_ideal": "Pagando al contado tiene un 5% de descuento, así que el arancel de Psicología le quedaría en $4.674.000."
+  },
+  {
+   "cliente": "y si lo pago en cuotas, cobran intereses?",
+   "tipo": "sin_respuesta",
+   "accion": "abstenerse",
+   "claves": [],
+   "evidencia": null,
+   "respuesta_ideal": "Se puede pagar en hasta 10 cuotas con pagaré o tarjeta de crédito, pero no tengo información sobre intereses."
+  },
+  {
+   "cliente": "¿Tienen gratuidad?",
+   "tipo": "si_no",
+   "accion": "responder",
+   "claves": [
+    "no está adscrita"
+   ],
+   "evidencia": "La UDM no está adscrita a la Gratuidad.",
+   "respuesta_ideal": "No, la UDM no está adscrita a la Gratuidad."
+  },
+  {
+   "cliente": "Entonces me conviene sacar el CAE? como postulo?",
+   "tipo": "instruccion",
+   "accion": "derivar",
+   "claves": [],
+   "evidencia": "4. Consultas sobre CAE, becas del Mineduc, FUAS o situación socioeconómica: derive a la Dirección de Asuntos Estudiantiles y Financiamiento (DAEF), teléfono +56 2 2940 7815, correo financiamiento@udm.cl.",
+   "respuesta_ideal": "Para orientarle sobre el CAE le recomiendo contactar a la Dirección de Asuntos Estudiantiles y Financiamiento (DAEF), al +56 2 2940 7815 o a financiamiento@udm.cl."
+  }
+ ],
+ [
+  {
+   "cliente": "Hola, con cuanto puntaje se entra a enfermeria?",
+   "tipo": "instruccion",
+   "accion": "responder",
+   "claves": [
+    "600"
+   ],
+   "evidencia": "3. Si preguntan con qué puntaje \"se entra\" o por puntajes de corte, aclare que los puntajes de la tabla son mínimos de postulación y no de corte, y que el puntaje del último seleccionado cambia cada año.",
+   "respuesta_ideal": "El puntaje mínimo para postular a Enfermería es 600; no es un puntaje de corte, porque el puntaje del último seleccionado cambia cada año."
+  },
+  {
+   "cliente": "tengo 640 ponderado, quedo?",
+   "tipo": "instruccion",
+   "accion": "responder",
+   "claves": [
+    "600"
+   ],
+   "evidencia": "2. No asegure a nadie que quedará seleccionado ni haga cálculos de puntaje ponderado: la selección depende del proceso oficial.",
+   "respuesta_ideal": "No le puedo asegurar que quedará seleccionado: con 640 cumple el mínimo de postulación de 600, pero la selección depende del proceso oficial."
+  },
+  {
+   "cliente": "igual me tinca ingenieria civil industrial, cuantos cupos tiene?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "90"
+   ],
+   "evidencia": "Ingeniería Civil Industrial\tdiurna\t11 semestres\t90\t$5.480.000\t600",
+   "respuesta_ideal": "Ingeniería Civil Industrial tiene 90 vacantes para 2027."
+  },
+  {
+   "cliente": "hay alguna beca por buen puntaje?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "750",
+    "50%"
+   ],
+   "evidencia": "- Beca Excelencia Académica: 50% del arancel anual para quienes ingresen con puntaje ponderado igual o superior a 750 puntos.",
+   "respuesta_ideal": "Sí, la Beca Excelencia Académica cubre el 50% del arancel anual para quienes ingresen con puntaje ponderado igual o superior a 750 puntos."
+  },
+  {
+   "cliente": "y con 720 me la gano?",
+   "tipo": "seguimiento",
+   "accion": "responder",
+   "claves": [
+    "750"
+   ],
+   "evidencia": "- Beca Excelencia Académica: 50% del arancel anual para quienes ingresen con puntaje ponderado igual o superior a 750 puntos.",
+   "respuesta_ideal": "No, esa beca exige un puntaje ponderado igual o superior a 750 puntos."
+  },
+  {
+   "cliente": "¿La beca se mantiene todos los años o hay que renovarla?",
+   "tipo": "sin_respuesta",
+   "accion": "abstenerse",
+   "claves": [],
+   "evidencia": null,
+   "respuesta_ideal": "No tengo información sobre la renovación de la Beca Excelencia Académica en los años siguientes."
+  }
+ ],
+ [
+  {
+   "cliente": "a que hora atienden en admision los viernes?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "14:00"
+   ],
+   "evidencia": "• Viernes: 9:00 a 14:00 hrs.",
+   "respuesta_ideal": "Los viernes la Oficina de Admisión atiende de 9:00 a 14:00 hrs."
+  },
+  {
+   "cliente": "¿y los sábados?",
+   "tipo": "seguimiento",
+   "accion": "responder",
+   "claves": [
+    "cerrado"
+   ],
+   "evidencia": "• Sábados, domingos y festivos: cerrado.\n   • Período de matrícula (enero 2027): lunes a sábado, 9:00 a 19:00 hrs.",
+   "respuesta_ideal": "Los sábados está cerrado, salvo en el período de matrícula de enero de 2027, cuando se atiende de lunes a sábado de 9:00 a 19:00 hrs."
+  },
+  {
+   "cliente": "Se puede conocer el campus antes de postular?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "11:00",
+    "16:00"
+   ],
+   "evidencia": "Martes y jueves a las 11:00 y a las 16:00 hrs, con inscripción previa en udm.cl/visitas.",
+   "respuesta_ideal": "Sí, hay visitas guiadas los martes y jueves a las 11:00 y a las 16:00 hrs, con inscripción previa en udm.cl/visitas."
+  },
+  {
+   "cliente": "la visita tiene algún costo?",
+   "tipo": "sin_respuesta",
+   "accion": "abstenerse",
+   "claves": [],
+   "evidencia": null,
+   "respuesta_ideal": "No tengo información sobre si la visita guiada tiene costo."
+  },
+  {
+   "cliente": "¿Y hay estacionamiento para los que van a la visita?",
+   "tipo": "sin_respuesta",
+   "accion": "abstenerse",
+   "claves": [],
+   "evidencia": null,
+   "respuesta_ideal": "No tengo información sobre estacionamiento para visitantes; la Casa Central queda a pasos del Metro Irarrázaval."
+  }
+ ],
+ [
+  {
+   "cliente": "Si ya tengo un título técnico, igual tengo que dar la PAES?",
+   "tipo": "si_no",
+   "accion": "responder",
+   "claves": [
+    "no requiere PAES"
+   ],
+   "evidencia": "6.2 Admisión Especial (no requiere PAES):\n   • Titulados de carreras técnicas o profesionales.",
+   "respuesta_ideal": "No, los titulados de carreras técnicas pueden postular por Admisión Especial, que no requiere PAES."
+  },
+  {
+   "cliente": "hasta cuando puedo postular por esa via?",
+   "tipo": "seguimiento",
+   "accion": "responder",
+   "claves": [
+    "30 de noviembre"
+   ],
+   "evidencia": "Postulación: del 1 de septiembre al 30 de noviembre de 2026, en udm.cl/especial.",
+   "respuesta_ideal": "La postulación a Admisión Especial está abierta hasta el 30 de noviembre de 2026, en udm.cl/especial."
+  },
+  {
+   "cliente": "¿Cuánto cuesta postular por admisión especial?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "$35.000"
+   ],
+   "evidencia": "Derecho de postulación: $35.000 (no reembolsable).",
+   "respuesta_ideal": "El derecho de postulación cuesta $35.000 y no es reembolsable."
+  },
+  {
+   "cliente": "¿y cuándo me avisan si quedé?",
+   "tipo": "sin_respuesta",
+   "accion": "abstenerse",
+   "claves": [],
+   "evidencia": null,
+   "respuesta_ideal": "No tengo la fecha de publicación de resultados de la Admisión Especial."
+  },
+  {
+   "cliente": "me convalidan los ramos que aprobé en el instituto?",
+   "tipo": "sin_respuesta",
+   "accion": "abstenerse",
+   "claves": [],
+   "evidencia": null,
+   "respuesta_ideal": "No tengo información sobre convalidación de ramos para titulados de institutos."
+  },
+  {
+   "cliente": "¿Qué papeles tengo que llevar para matricularme?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "Cédula de identidad",
+    "Licencia de enseñanza media",
+    "certificado de título"
+   ],
+   "evidencia": "- Cédula de identidad vigente (o pasaporte, en el caso de extranjeros).\n- Licencia de enseñanza media (original o copia legalizada).\n- Concentración de notas de enseñanza media.\n- Una fotografía tamaño carné.\n- Postulantes de Admisión Especial: además, certificado de título o documento que acredite la vía de ingreso.",
+   "respuesta_ideal": "Necesita cédula de identidad vigente, licencia de enseñanza media (original o copia legalizada), concentración de notas, una foto tamaño carné y, por venir de Admisión Especial, su certificado de título."
+  }
+ ],
+ [
+  {
+   "cliente": "Hola",
+   "tipo": "charla",
+   "accion": "charla",
+   "claves": [],
+   "evidencia": "1. Trate a las personas de usted y preséntese como el asistente de Admisión de la Universidad del Mapocho.",
+   "respuesta_ideal": "Hola, le saluda el asistente de Admisión de la Universidad del Mapocho. ¿En qué le puedo ayudar?"
+  },
+  {
+   "cliente": "¿Derecho se puede estudiar en la noche?",
+   "tipo": "si_no",
+   "accion": "responder",
+   "claves": [
+    "vespertina"
+   ],
+   "evidencia": "Derecho\tdiurna y vespertina\t10 semestres\t100\t$4.690.000\t570",
+   "respuesta_ideal": "Sí, Derecho se imparte en jornada diurna y vespertina."
+  },
+  {
+   "cliente": "¿y qué otra carrera tienen en vespertino?",
+   "tipo": "seguimiento",
+   "accion": "responder",
+   "claves": [
+    "Contador Auditor"
+   ],
+   "evidencia": "Contador Auditor\tvespertina\t9 semestres\t50\t$3.210.000\t500",
+   "respuesta_ideal": "La otra carrera vespertina es Contador Auditor."
+  },
+  {
+   "cliente": "cuanto pagaria el primer año en esa, sumando la matricula?",
+   "tipo": "combinada",
+   "accion": "responder",
+   "claves": [
+    "3.425.000"
+   ],
+   "evidencia": "Contador Auditor\tvespertina\t9 semestres\t50\t$3.210.000\t500\n\nMatrícula anual (todas las carreras): $215.000",
+   "respuesta_ideal": "En Contador Auditor serían $3.425.000 el primer año: $3.210.000 de arancel más $215.000 de matrícula."
+  },
+  {
+   "cliente": "A qué hora son las clases del vespertino?",
+   "tipo": "sin_respuesta",
+   "accion": "abstenerse",
+   "claves": [],
+   "evidencia": null,
+   "respuesta_ideal": "No tengo información sobre el horario de las clases vespertinas."
+  },
+  {
+   "cliente": "Mi hermana estudia Diseño en la UDM, ¿a mí me hacen algún descuento?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "10%"
+   ],
+   "evidencia": "- Beca Hermanos: 10% del arancel anual para el segundo hermano matriculado en la UDM (y los siguientes).",
+   "respuesta_ideal": "Sí, existe la Beca Hermanos: 10% del arancel anual para el segundo hermano matriculado en la UDM."
+  },
+  {
+   "cliente": "Muchas gracias, que esté bien",
+   "tipo": "charla",
+   "accion": "charla",
+   "claves": [],
+   "evidencia": null,
+   "respuesta_ideal": "A usted, que tenga un buen día."
+  }
+ ]
+]

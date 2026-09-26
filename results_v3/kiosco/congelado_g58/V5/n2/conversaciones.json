@@ -1,0 +1,242 @@
+[
+  [
+    {
+      "cliente": "Hola, ¿cuánto cuesta el baño para un perro chico?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": [
+        "$12.000"
+      ],
+      "evidencia": "Raza pequeña (hasta 10 kg): $12.000",
+      "respuesta_ideal": "El baño para raza pequeña, hasta 10 kilos, cuesta $12.000."
+    },
+    {
+      "cliente": "¿y si le quiero hacer corte de pelo tambien?",
+      "tipo": "seguimiento",
+      "accion": "responder",
+      "claves": [
+        "$18.000"
+      ],
+      "evidencia": "Corte de pelo (incluye baño): Raza pequeña: $18.000",
+      "respuesta_ideal": "El corte de pelo para raza pequeña, que ya incluye el baño, cuesta $18.000."
+    },
+    {
+      "cliente": "¿atienden los domingos?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": [
+        "Domingo: cerrado"
+      ],
+      "evidencia": "Domingo: cerrado",
+      "respuesta_ideal": "No, los domingos permanecemos cerrados."
+    },
+    {
+      "cliente": "genial, gracias",
+      "tipo": "charla",
+      "accion": "charla",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "¡De nada! Te esperamos, puedes agendar por WhatsApp cuando quieras."
+    }
+  ],
+  [
+    {
+      "cliente": "¿cuanto sale cortar las uñas no mas?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": [
+        "$5.000"
+      ],
+      "evidencia": "Corte de uñas: $5.000",
+      "respuesta_ideal": "El corte de uñas solo cuesta $5.000."
+    },
+    {
+      "cliente": "mi perra esta en celo, ¿la pueden atender?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": [
+        "Perras en celo no se atienden"
+      ],
+      "evidencia": "Perras en celo no se atienden por seguridad de los demás animales en el local.",
+      "respuesta_ideal": "No, por seguridad de los demás animales no atendemos perras en celo."
+    },
+    {
+      "cliente": "que pena, ¿y despues que se le pase se puede agendar?",
+      "tipo": "instruccion",
+      "accion": "derivar",
+      "claves": [],
+      "evidencia": "Cuando el cliente quiera agendar o confirmar una cita puntual, no confirmes tú la hora: indícale que debe escribir al WhatsApp +56 9 8877 6655 para agendar.",
+      "respuesta_ideal": "Claro, cuando ya haya pasado el celo puede escribirnos al WhatsApp +56 9 8877 6655 para agendar la hora."
+    },
+    {
+      "cliente": "¿tienen estacionamiento?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No tengo información sobre estacionamiento en el local, te recomiendo preguntar directamente al llegar o por WhatsApp."
+    }
+  ],
+  [
+    {
+      "cliente": "Buenas, ¿hacen algo para gatos?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": [
+        "atendemos gatos solo para baño y corte de uñas"
+      ],
+      "evidencia": "¿Atienden gatos? Sí, atendemos gatos solo para baño y corte de uñas, no hacemos corte de pelo felino.",
+      "respuesta_ideal": "Sí, atendemos gatos, pero solo para baño y corte de uñas; no hacemos corte de pelo felino."
+    },
+    {
+      "cliente": "¿y el baño de gato cuesta lo mismo que el de perro?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No tengo el valor específico del baño para gatos, te recomiendo consultarlo directo por WhatsApp."
+    },
+    {
+      "cliente": "mi perro tiene como 13 kilos, ¿es mediano o grande?",
+      "tipo": "instruccion",
+      "accion": "responder",
+      "claves": [
+        "Raza mediana (10-25 kg)"
+      ],
+      "evidencia": "Baño y secado - Raza mediana (10-25 kg): $16.000",
+      "respuesta_ideal": "Con 13 kilos entra en la categoría de raza mediana, entre 10 y 25 kilos."
+    },
+    {
+      "cliente": "perfecto, ¿y ese vale con el desenredado incluido?",
+      "tipo": "combinada",
+      "accion": "responder",
+      "claves": [
+        "$16.000",
+        "recargo de $6.000"
+      ],
+      "evidencia": "Desenredado especial (pelo muy enredado): recargo de $6.000 sobre el valor del servicio",
+      "respuesta_ideal": "No, el baño mediano son $16.000 y el desenredado especial tiene un recargo aparte de $6.000, quedando en $22.000 en total."
+    },
+    {
+      "cliente": "buenisimo, muchas gracias",
+      "tipo": "charla",
+      "accion": "charla",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "¡Con gusto! Agenda cuando quieras por WhatsApp."
+    }
+  ],
+  [
+    {
+      "cliente": "Hola, ¿el sábado abren todo el día?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": [
+        "10:00 - 16:00"
+      ],
+      "evidencia": "Sábado: 10:00 - 16:00",
+      "respuesta_ideal": "Los sábados atendemos de 10:00 a 16:00."
+    },
+    {
+      "cliente": "¿y en navidad atienden?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": [
+        "abrimos de 10:00 a 13:00 solo con cita previa"
+      ],
+      "evidencia": "Feriados: cerrado, excepto Navidad y Año Nuevo que abrimos de 10:00 a 13:00 solo con cita previa.",
+      "respuesta_ideal": "En Navidad abrimos de 10:00 a 13:00, pero solo con cita previa."
+    },
+    {
+      "cliente": "mi perro tiene sarna, ¿lo pueden bañar igual?",
+      "tipo": "instruccion",
+      "accion": "derivar",
+      "claves": [],
+      "evidencia": "Si preguntan por temas de salud del animal (enfermedades, tratamientos veterinarios, vacunas específicas), no des recomendaciones médicas: deriva a un veterinario.",
+      "respuesta_ideal": "Para ese tema de salud lo mejor es que lo consultes primero con un veterinario antes de traerlo a bañar."
+    },
+    {
+      "cliente": "ok, ¿el paquete de 4 baños aplica para perros grandes?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": [
+        "Aplica solo para perros de raza pequeña o mediana"
+      ],
+      "evidencia": "Paquete mensual \"Cliente frecuente\": 4 baños al mes por $40.000 (ahorra $8.000 respecto del valor individual). Aplica solo para perros de raza pequeña o mediana.",
+      "respuesta_ideal": "No, el paquete de cliente frecuente solo aplica para perros de raza pequeña o mediana."
+    },
+    {
+      "cliente": "¿tienen algun servicio de corte de garras para conejos?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No, no atendemos conejos, solo trabajamos con perros y gatos."
+    },
+    {
+      "cliente": "ah ok, ¿y el corte de uñas para gato cuesta igual que el de perro?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No tengo el valor específico para gatos, te recomiendo confirmarlo por WhatsApp."
+    }
+  ],
+  [
+    {
+      "cliente": "¿puedo pagar con cheque?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": [
+        "No se aceptan cheques"
+      ],
+      "evidencia": "No se aceptan cheques.",
+      "respuesta_ideal": "No, no se aceptan cheques; sí efectivo, tarjetas o transferencia."
+    },
+    {
+      "cliente": "¿tienen sucursal en Providencia?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No tengo información de otra sucursal, solo contamos con el local en Ñuñoa."
+    },
+    {
+      "cliente": "¿cuanto es el corte para un perro grande, tipo un labrador?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": [
+        "$32.000"
+      ],
+      "evidencia": "Corte de pelo (incluye baño): Raza grande: $32.000",
+      "respuesta_ideal": "El corte de pelo para raza grande, incluyendo baño, cuesta $32.000."
+    },
+    {
+      "cliente": "y si le pongo pañoleta despues, ¿cuanto mas seria?",
+      "tipo": "combinada",
+      "accion": "responder",
+      "claves": [
+        "$32.000",
+        "$2.000"
+      ],
+      "evidencia": "Perfume y accesorio (pañoleta o moño): $2.000",
+      "respuesta_ideal": "El accesorio, como la pañoleta, cuesta $2.000 adicionales, quedando en $34.000 en total con el corte grande."
+    },
+    {
+      "cliente": "¿ustedes hacen entrenamiento de obediencia tambien?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No, no ofrecemos entrenamiento de obediencia, solo servicios de estética canina y felina."
+    },
+    {
+      "cliente": "ya, muchas gracias, hasta luego",
+      "tipo": "charla",
+      "accion": "charla",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "¡Hasta luego! Te esperamos, agenda por WhatsApp cuando gustes."
+    }
+  ]
+]

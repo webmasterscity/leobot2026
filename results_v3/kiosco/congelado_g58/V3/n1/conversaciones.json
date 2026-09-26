@@ -1,0 +1,32 @@
+[
+  [
+    {"cliente": "¿cuánto vale un cappuccino?", "tipo": "directa", "accion": "responder", "claves": ["$5.800"], "evidencia": "Cappuccino  - $5.800", "respuesta_ideal": "El cappuccino cuesta $5.800."},
+    {"cliente": "¿eso es la taza grande o la pequeña?", "tipo": "seguimiento", "accion": "responder", "claves": ["tamaño", "consultar"], "evidencia": null, "respuesta_ideal": "Tenemos un tamaño estándar. Para tamaños especiales, puedes consultar directamente en el mostrador o llamar al (4) 2201 8834."},
+    {"cliente": "Dale, me trae un cappuccino entonces.", "tipo": "charla", "accion": "responder", "claves": [], "evidencia": null, "respuesta_ideal": "Perfecto, te traemos un cappuccino al mostrador."},
+    {"cliente": "¿El café tiene mucha cafeína?", "tipo": "sin_respuesta", "accion": "abstenerse", "claves": [], "evidencia": null, "respuesta_ideal": "Eso depende de cada persona y de la preparación. Te recomiendo que consultes con nuestro personal en el mostrador, ellos te pueden asesorar mejor."},
+    {"cliente": "Gracias", "tipo": "charla", "accion": "charla", "claves": [], "evidencia": null, "respuesta_ideal": "De nada, gracias por visitarnos."}
+  ],
+  [
+    {"cliente": "¿Puedo entrar con mi perro?", "tipo": "si_no", "accion": "responder", "claves": ["Se permite ingresar con mascotas pequeñas", "controladas"], "evidencia": "Se permite ingresar con mascotas pequeñas si permanecen controladas.", "respuesta_ideal": "Sí, siempre que sea una mascota pequeña y la mantengas controlada."},
+    {"cliente": "¿Y si es un perro grande?", "tipo": "sin_respuesta", "accion": "abstenerse", "claves": [], "evidencia": null, "respuesta_ideal": "Para eso es mejor que llames al (4) 2201 8834 o consultes directamente con el personal para que vean si hay alguna excepción."},
+    {"cliente": "Está bien, gracias.", "tipo": "charla", "accion": "charla", "claves": [], "evidencia": null, "respuesta_ideal": "De nada, ¡que disfrutes!"},
+    {"cliente": "adiós", "tipo": "charla", "accion": "charla", "claves": [], "evidencia": null, "respuesta_ideal": "Adiós, hasta pronto."}
+  ],
+  [
+    {"cliente": "¿Hasta qué hora atienden los domingos?", "tipo": "directa", "accion": "responder", "claves": ["Domingo: 8:30 a.m. - 6:00 p.m."], "evidencia": "Domingo: 8:30 a.m. - 6:00 p.m.", "respuesta_ideal": "Los domingos atendemos de 8:30 a.m. a 6:00 p.m."},
+    {"cliente": "¿Y mañana que es festivo?", "tipo": "seguimiento", "accion": "responder", "claves": ["Festivos: cerrado"], "evidencia": "Festivos: cerrado", "respuesta_ideal": "Los días festivos estamos cerrados, así que no abrimos."},
+    {"cliente": "Quisiera venir a trabajar un rato con mi laptop. ¿Hay wifi?", "tipo": "si_no", "accion": "responder", "claves": ["WiFi gratuito"], "evidencia": "WiFi gratuito (contraseña en el mostrador)", "respuesta_ideal": "Claro, tenemos WiFi gratuito. La contraseña está disponible en el mostrador."},
+    {"cliente": "¿Y si me compro un americano y un croissant, cuánto me cuesta todo?", "tipo": "combinada", "accion": "responder", "claves": ["$4.200", "$4.000", "$8.200"], "evidencia": "Americano - $4.200; Croissant (varios sabores) - $4.000-5.200", "respuesta_ideal": "Un americano cuesta $4.200 y un croissant desde $4.000, así que el mínimo sería unos $8.200. Si el croissant es de otro sabor podría ser un poco más."},
+    {"cliente": "Perfecto, voy pa'ya.", "tipo": "charla", "accion": "charla", "claves": [], "evidencia": null, "respuesta_ideal": "Nos vemos pronto, te estamos esperando."}
+  ],
+  [
+    {"cliente": "Hola, quiero hacer una reunion con unos amigos en el café. ¿Se puede?", "tipo": "instruccion", "accion": "derivar", "claves": ["eventos", "máximo 20 personas", "Ricardo Álvarez"], "evidencia": "Eventos: se alquilan para reuniones pequeñas (máximo 20 personas), consultar disponibilidad", "respuesta_ideal": "Claro, se puede. El máximo es 20 personas. Debes contactar directamente a Ricardo Álvarez, el gerente, al (4) 2201 8834, extensión 3, o pasar por la tienda para consultar disponibilidad y coordinar los detalles."},
+    {"cliente": "¿Cuándo tienen disponible?", "tipo": "sin_respuesta", "accion": "derivar", "claves": ["consultar", "disponibilidad"], "evidencia": null, "respuesta_ideal": "Eso depende del día y la hora. Por eso es importante que llames directamente o vengas a hablar con Ricardo para coordinar bien."},
+    {"cliente": "Listo, los llamo entonces.", "tipo": "charla", "accion": "charla", "claves": [], "evidencia": null, "respuesta_ideal": "Perfecto, espero que disfruten el espacio."}
+  ],
+  [
+    {"cliente": "Tengo alergia al maní. ¿Qué puedo pedir?", "tipo": "instruccion", "accion": "responder", "claves": ["verificar", "personal", "maní"], "evidencia": "Los alérgicos al maní deben verificar que su pedido no fue preparado en la misma zona que los productos con maní.", "respuesta_ideal": "Eso es importante. Cuando hagas tu pedido en el mostrador, avísales específicamente de tu alergia. El personal verifica que tu bebida o comida se prepare en una zona diferente a donde se preparan productos con maní."},
+    {"cliente": "¿Todos los pasteles tienen maní?", "tipo": "sin_respuesta", "accion": "abstenerse", "claves": [], "evidencia": null, "respuesta_ideal": "No sé cuál exactamente tiene o no maní. Debe preguntar directamente al personal en el mostrador cuáles son seguros para ti."},
+    {"cliente": "Bueno, voy y me fijo con ellos entonces.", "tipo": "charla", "accion": "charla", "claves": [], "evidencia": null, "respuesta_ideal": "Perfecto, ellos te ayudan con mucho gusto."}
+  ]
+]

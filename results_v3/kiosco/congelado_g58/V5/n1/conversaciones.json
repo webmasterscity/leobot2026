@@ -1,0 +1,215 @@
+[
+  [
+    {
+      "cliente": "Buenas tardes, ¿cuánto cuesta el plan tradicional?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": [
+        "$7.800.000"
+      ],
+      "evidencia": "Plan Tradicional|Ataúd de madera, sala de velación por 24 horas, carroza, flores sencillas, café y agua para asistentes|$7.800.000",
+      "respuesta_ideal": "El Plan Tradicional cuesta $7.800.000 e incluye ataúd de madera, sala de velación por 24 horas, carroza, flores sencillas y café para los asistentes."
+    },
+    {
+      "cliente": "¿Y ese incluye la cremación?",
+      "tipo": "seguimiento",
+      "accion": "responder",
+      "claves": [
+        "Plan Cremación",
+        "$3.950.000"
+      ],
+      "evidencia": "Plan Cremación|Cremación, urna sencilla, sala de velación por 12 horas|$3.950.000",
+      "respuesta_ideal": "No, el Plan Tradicional no incluye cremación; para eso está el Plan Cremación, que cuesta $3.950.000."
+    },
+    {
+      "cliente": "¿Se puede pagar a cuotas?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": [
+        "planes de financiación hasta a 24 meses"
+      ],
+      "evidencia": "también recibimos... planes de financiación hasta a 24 meses con las entidades Sufinanciera y Coopcentral.",
+      "respuesta_ideal": "Sí, se puede financiar hasta en 24 meses con Sufinanciera o Coopcentral."
+    },
+    {
+      "cliente": "Listo, muchas gracias por la información",
+      "tipo": "charla",
+      "accion": "charla",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "Con gusto, cualquier otra duda que tengan, estamos para acompañarlos en este momento."
+    }
+  ],
+  [
+    {
+      "cliente": "¿Cuánto cuesta el lote en el cementerio?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No tengo el precio del lote, ya que eso se coordina directamente con el cementerio que la familia elija; el plan de la funeraria no lo incluye."
+    },
+    {
+      "cliente": "¿Y si quiero el plan premium con transmisión en vivo, cuánto sería en total?",
+      "tipo": "combinada",
+      "accion": "responder",
+      "claves": [
+        "$12.900.000",
+        "USD 30"
+      ],
+      "evidencia": "Plan Premium|Ataúd de lujo, sala de velación por 48 horas, carroza, servicio floral completo, transmisión en vivo del velorio|USD 30 adicionales por transmisión, resto en $12.900.000",
+      "respuesta_ideal": "El Plan Premium cuesta $12.900.000 más USD 30 adicionales por la transmisión en vivo del velorio."
+    },
+    {
+      "cliente": "¿Tienen descuento para adultos mayores?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No cuento con información sobre descuentos para adultos mayores; le recomiendo llamar al (601) 745 32 10 para consultarlo directamente."
+    },
+    {
+      "cliente": "puedo velar a mi papa un domingo?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": [
+        "la sala de velación funciona los 7 días de la semana"
+      ],
+      "evidencia": "¿Puedo velar a mi familiar un domingo? Sí, la sala de velación funciona los 7 días de la semana; lo que cierra los domingos es la oficina de atención administrativa.",
+      "respuesta_ideal": "Sí, la sala de velación funciona los 7 días de la semana, aunque la oficina administrativa esté cerrada los domingos."
+    }
+  ],
+  [
+    {
+      "cliente": "Hola, necesito saber si hay sala disponible este viernes para velar a mi tío",
+      "tipo": "instruccion",
+      "accion": "derivar",
+      "claves": [],
+      "evidencia": "no confirmes reservas: dile que debe comunicarse con la línea de urgencias (320 456 78 90) para verificar disponibilidad real.",
+      "respuesta_ideal": "Para confirmar disponibilidad de sala debe comunicarse directamente con la línea de urgencias al 320 456 78 90, ellos verifican los cupos en tiempo real."
+    },
+    {
+      "cliente": "¿me pueden decir de que murió, fue algo del corazón?",
+      "tipo": "instruccion",
+      "accion": "derivar",
+      "claves": [],
+      "evidencia": "Nunca des detalles médicos ni opines sobre causas de muerte, autopsias o trámites médico-legales; para esos temas deriva a Medicina Legal o a la funeraria por teléfono.",
+      "respuesta_ideal": "No puedo hablar sobre causas de muerte ni temas médicos; para eso debe consultar con Medicina Legal o llamar directamente a la funeraria."
+    },
+    {
+      "cliente": "tienen servicio de cafeteria para el velorio?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": [
+        "$25.000"
+      ],
+      "evidencia": "Servicio de cafetería para el velorio: $25.000 por persona",
+      "respuesta_ideal": "Sí, el servicio de cafetería para el velorio cuesta $25.000 por persona."
+    },
+    {
+      "cliente": "perfecto, gracias",
+      "tipo": "charla",
+      "accion": "charla",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "Con mucho gusto, estamos para acompañarlos en este momento."
+    }
+  ],
+  [
+    {
+      "cliente": "buenas, disculpe la hora, se murio mi abuela ahorita y no se que hacer",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": [
+        "320 456 78 90"
+      ],
+      "evidencia": "Línea de urgencias 24 horas: 320 456 78 90",
+      "respuesta_ideal": "Lamento mucho su pérdida. Por favor comuníquese de inmediato a la línea de urgencias 320 456 78 90, atienden las 24 horas para coordinar todo lo necesario."
+    },
+    {
+      "cliente": "¿tienen que ir ustedes a recoger el cuerpo o lo hacemos nosotros?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": [
+        "$350.000"
+      ],
+      "evidencia": "Traslado de cuerpo dentro de Bogotá: $350.000",
+      "respuesta_ideal": "Nosotros nos encargamos del traslado dentro de Bogotá, que tiene un costo de $350.000."
+    },
+    {
+      "cliente": "y el certificado de defuncion tambien lo tramitan ustedes?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": [
+        "están incluidos en todos los planes"
+      ],
+      "evidencia": "¿El plan incluye el certificado de defunción? Sí, el trámite del certificado de defunción y el registro civil de defunción están incluidos en todos los planes.",
+      "respuesta_ideal": "Sí, el trámite del certificado de defunción y el registro civil están incluidos en todos los planes."
+    },
+    {
+      "cliente": "¿puedo llevar a mi perro a la sala de velacion?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": [
+        "Los animales de compañía pueden acompañar",
+        "con correa"
+      ],
+      "evidencia": "Los animales de compañía pueden acompañar a la familia en la sala de velación siempre que esten bajo supervisión y con correa.",
+      "respuesta_ideal": "Sí, las mascotas pueden acompañar a la familia en la sala de velación siempre que estén con correa y bajo supervisión."
+    }
+  ],
+  [
+    {
+      "cliente": "¿cuánto cobran por traer un cuerpo desde Medellín?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": [
+        "desde $900.000"
+      ],
+      "evidencia": "Traslado de cuerpo fuera de Bogotá: se cotiza según distancia, desde $900.000",
+      "respuesta_ideal": "El traslado desde otra ciudad se cotiza según la distancia, con un valor desde $900.000."
+    },
+    {
+      "cliente": "¿y si es desde otro país?",
+      "tipo": "seguimiento",
+      "accion": "responder",
+      "claves": [
+        "se cotiza caso a caso con la aseguradora"
+      ],
+      "evidencia": "Repatriación (traer o llevar un cuerpo desde otra ciudad o país): se cotiza caso a caso con la aseguradora",
+      "respuesta_ideal": "Si es desde otro país es una repatriación, y esa se cotiza caso a caso junto con la aseguradora."
+    },
+    {
+      "cliente": "¿la funeraria tiene servicio de psicologo para la familia?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No tengo información sobre un servicio de acompañamiento psicológico; le sugiero preguntar directamente al llamar a la funeraria."
+    },
+    {
+      "cliente": "¿aceptan la poliza de Sura?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No tengo confirmado si aceptan pólizas de Sura específicamente; solo tengo registradas Recordar, Los Olivos y Cootrafa, así que le recomiendo confirmarlo por teléfono."
+    },
+    {
+      "cliente": "¿manejan urnas para cenizas de mascotas también?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No tengo información sobre urnas para mascotas; ese servicio no aparece en lo que ofrecemos para personas, le recomiendo confirmar por teléfono."
+    },
+    {
+      "cliente": "muchas gracias, buenas noches",
+      "tipo": "charla",
+      "accion": "charla",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "Buenas noches, estamos para acompañarlos en el momento que sea necesario."
+    }
+  ]
+]

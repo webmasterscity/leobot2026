@@ -1,0 +1,286 @@
+[
+ [
+  {
+   "cliente": "Hola! cuanto cuesta la entrada?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "$420",
+    "$320"
+   ],
+   "evidencia": "Adulto (desde 1.30 m de estatura) ........ $420\nNiño (de 90 cm a 1.29 m) ................. $320\nMenores de 90 cm ......................... GRATIS",
+   "respuesta_ideal": "¡Hola! Bienvenido a Olas Locas. La entrada de adulto cuesta $420 y la de niño (de 90 cm a 1.29 m) $320; los menores de 90 cm entran gratis."
+  },
+  {
+   "cliente": "vamos el sabado 3 de octubre, somos 2 adultos y 2 niños, uno mide 1.10 y el otro 80 cm, cuanto pagamos en taquilla?",
+   "tipo": "combinada",
+   "accion": "responder",
+   "claves": [
+    "1,160"
+   ],
+   "evidencia": "Adulto (desde 1.30 m de estatura) ........ $420\nNiño (de 90 cm a 1.29 m) ................. $320\nMenores de 90 cm ......................... GRATIS",
+   "respuesta_ideal": "En taquilla serían $1,160: dos adultos a $420, el niño de 1.10 m paga $320 y el de 80 cm entra gratis."
+  },
+  {
+   "cliente": "se pueden meter unas tortas para los niños?",
+   "tipo": "si_no",
+   "accion": "responder",
+   "claves": [
+    "introducir alimentos"
+   ],
+   "evidencia": "No se permite introducir alimentos ni bebidas.",
+   "respuesta_ideal": "No, no se permite introducir alimentos ni bebidas al parque. Adentro hay restaurante, snack y paletería."
+  },
+  {
+   "cliente": "y la papilla del bebe?",
+   "tipo": "seguimiento",
+   "accion": "responder",
+   "claves": [
+    "comida para bebés"
+   ],
+   "evidencia": "Solo se aceptan comida para bebés y alimentos por dieta médica, previa revisión en el acceso.",
+   "respuesta_ideal": "Sí, la comida para bebés sí se acepta, previa revisión en el acceso."
+  },
+  {
+   "cliente": "Se puede apartar un camastro con palapa desde antes?",
+   "tipo": "sin_respuesta",
+   "accion": "derivar",
+   "claves": [],
+   "evidencia": "6. Si te preguntan algo que no está en la información, dilo con honestidad y sugiere llamar a taquilla al 744 481 2290.",
+   "respuesta_ideal": "No tengo información sobre apartar camastros; te sugiero llamar a taquilla al 744 481 2290. Lo que sí te puedo decir es que el camastro con palapa cuesta $350 por día."
+  },
+  {
+   "cliente": "cuanto sale el estacionamiento?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "$60"
+   ],
+   "evidencia": "Estacionamiento por día .................. $60 auto / $40 moto",
+   "respuesta_ideal": "El estacionamiento cuesta $60 por día para auto y $40 para moto."
+  },
+  {
+   "cliente": "Va, muchas gracias!!",
+   "tipo": "charla",
+   "accion": "charla",
+   "claves": [],
+   "evidencia": null,
+   "respuesta_ideal": "¡De nada! Que se diviertan mucho en Olas Locas."
+  }
+ ],
+ [
+  {
+   "cliente": "Mi hijo mide 1.35, se puede subir al Kraken?",
+   "tipo": "si_no",
+   "accion": "responder",
+   "claves": [
+    "1.40 m"
+   ],
+   "evidencia": "Los toboganes Kraken y Caída Libre requieren una estatura mínima de 1.40 m y un peso menor a 120 kg.",
+   "respuesta_ideal": "No, para el Kraken se necesita una estatura mínima de 1.40 m."
+  },
+  {
+   "cliente": "que tan honda es la alberca de olas? es que no sabe nadar muy bien",
+   "tipo": "sin_respuesta",
+   "accion": "derivar",
+   "claves": [],
+   "evidencia": "6. Si te preguntan algo que no está en la información, dilo con honestidad y sugiere llamar a taquilla al 744 481 2290.",
+   "respuesta_ideal": "No tengo el dato de la profundidad de la alberca de olas; puedes llamar a taquilla al 744 481 2290. En esa alberca solo se usan los chalecos del parque, que son sin costo."
+  },
+  {
+   "cliente": "Y yo estoy embarazada de 4 meses, me puedo meter al rio lento?",
+   "tipo": "sin_respuesta",
+   "accion": "derivar",
+   "claves": [],
+   "evidencia": "6. Si te preguntan algo que no está en la información, dilo con honestidad y sugiere llamar a taquilla al 744 481 2290.",
+   "respuesta_ideal": "La información del parque solo dice que las embarazadas no pueden usar ningún tobogán; sobre el río lento no tengo el dato, te sugiero llamar a taquilla al 744 481 2290."
+  },
+  {
+   "cliente": "a que hora dejan de funcionar los toboganes grandes el sabado 10 de octubre?",
+   "tipo": "combinada",
+   "accion": "responder",
+   "claves": [
+    "17:30"
+   ],
+   "evidencia": "Abrimos de miércoles a domingo de 10:00 a 18:00 hrs. Lunes y martes permanecemos cerrados, excepto en temporada vacacional (Semana Santa, julio-agosto y del 15 de diciembre al 6 de enero), cuando abrimos todos los días de 10:00 a 19:00 hrs. La taquilla cierra una hora antes que el parque y los toboganes grandes dejan de operar 30 minutos antes del cierre.",
+   "respuesta_ideal": "El sábado el parque cierra a las 18:00 hrs y los toboganes grandes dejan de operar 30 minutos antes, o sea a las 17:30."
+  },
+  {
+   "cliente": "tienen lockers? cuanto cuestan?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "$80",
+    "$120"
+   ],
+   "evidencia": "Locker chico / grande .................... $80 / $120 (más $100 de depósito por la llave, que se devuelve al entregarla)",
+   "respuesta_ideal": "Sí, el locker chico cuesta $80 y el grande $120, más $100 de depósito por la llave."
+  },
+  {
+   "cliente": "el deposito de la llave me lo regresan?",
+   "tipo": "seguimiento",
+   "accion": "responder",
+   "claves": [
+    "$100"
+   ],
+   "evidencia": "más $100 de depósito por la llave, que se devuelve al entregarla",
+   "respuesta_ideal": "Sí, los $100 de depósito se te devuelven al entregar la llave."
+  }
+ ],
+ [
+  {
+   "cliente": "abren el lunes 3 de agosto?",
+   "tipo": "si_no",
+   "accion": "responder",
+   "claves": [
+    "10:00 a 19:00"
+   ],
+   "evidencia": "Lunes y martes permanecemos cerrados, excepto en temporada vacacional (Semana Santa, julio-agosto y del 15 de diciembre al 6 de enero), cuando abrimos todos los días de 10:00 a 19:00 hrs.",
+   "respuesta_ideal": "Sí, agosto es temporada vacacional y abrimos todos los días de 10:00 a 19:00 hrs."
+  },
+  {
+   "cliente": "y un lunes de octubre?",
+   "tipo": "seguimiento",
+   "accion": "responder",
+   "claves": [
+    "cerrado"
+   ],
+   "evidencia": "Lunes y martes permanecemos cerrados",
+   "respuesta_ideal": "No, fuera de temporada vacacional los lunes y martes el parque permanece cerrado."
+  },
+  {
+   "cliente": "en vacaciones hasta que hora venden boletos?",
+   "tipo": "combinada",
+   "accion": "responder",
+   "claves": [
+    "18:00"
+   ],
+   "evidencia": "cuando abrimos todos los días de 10:00 a 19:00 hrs. La taquilla cierra una hora antes que el parque",
+   "respuesta_ideal": "En temporada vacacional el parque cierra a las 19:00 hrs y la taquilla una hora antes, a las 18:00."
+  },
+  {
+   "cliente": "El 2x1 de los miercoles sirve si compro en la pagina?",
+   "tipo": "si_no",
+   "accion": "responder",
+   "claves": [
+    "solo en taquilla"
+   ],
+   "evidencia": "Miércoles de 2x1 en entrada de adulto: solo en taquilla y pagando en efectivo.",
+   "respuesta_ideal": "No, el 2x1 de los miércoles es solo en taquilla y pagando en efectivo."
+  },
+  {
+   "cliente": "y comprando en linea hay algun descuento?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "10%"
+   ],
+   "evidencia": "Compra en línea en olaslocas.mx y obtén 10% de descuento en boletos de adulto y niño (no aplica en INAPAM).",
+   "respuesta_ideal": "Sí, comprando en olaslocas.mx tienes 10% de descuento en boletos de adulto y niño (no aplica en INAPAM)."
+  }
+ ],
+ [
+  {
+   "cliente": "como funciona lo de la pulsera para pagar adentro?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "$200"
+   ],
+   "evidencia": "Adentro puedes pagar con la pulsera cashless, que se recarga en taquilla (recarga mínima $200).",
+   "respuesta_ideal": "Es una pulsera cashless con la que pagas dentro del parque; se recarga en taquilla con una recarga mínima de $200."
+  },
+  {
+   "cliente": "y si me sobra saldo?",
+   "tipo": "seguimiento",
+   "accion": "responder",
+   "claves": [
+    "el mismo día"
+   ],
+   "evidencia": "El saldo que no uses se te reembolsa el mismo día en taquilla.",
+   "respuesta_ideal": "El saldo que no uses se te reembolsa el mismo día en taquilla."
+  },
+  {
+   "cliente": "que hay para comer alla adentro?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "El Muelle",
+    "Snack Tiburón",
+    "La Ola"
+   ],
+   "evidencia": "Contamos con tres puntos de venta: Restaurante El Muelle (comida corrida y mariscos), Snack Tiburón (hot dogs, hamburguesas y papas) y Paletería La Ola.",
+   "respuesta_ideal": "Hay tres lugares: Restaurante El Muelle (comida corrida y mariscos), Snack Tiburón (hot dogs, hamburguesas y papas) y Paletería La Ola."
+  },
+  {
+   "cliente": "cuanto cuesta una hamburguesa en el snack tiburon?",
+   "tipo": "sin_respuesta",
+   "accion": "derivar",
+   "claves": [],
+   "evidencia": "6. Si te preguntan algo que no está en la información, dilo con honestidad y sugiere llamar a taquilla al 744 481 2290.",
+   "respuesta_ideal": "No tengo el precio de la hamburguesa; solo sé que un combo cuesta en promedio $180. Puedes llamar a taquilla al 744 481 2290."
+  },
+  {
+   "cliente": "Quiero hacer ahi el cumple de mi hija, serian como 25 niños, como le hago?",
+   "tipo": "instruccion",
+   "accion": "derivar",
+   "claves": [],
+   "evidencia": "3. Grupos de 20 personas o más, escuelas, empresas y fiestas de cumpleaños: da el contacto de Ventas Grupales, Lic. Mariana Torres, WhatsApp 744 209 7781.",
+   "respuesta_ideal": "¡Qué padre! Para fiestas de cumpleaños comunícate con Ventas Grupales, Lic. Mariana Torres, al WhatsApp 744 209 7781."
+  }
+ ],
+ [
+  {
+   "cliente": "Buenas tardes, hay descuento para personas de la tercera edad?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "$250"
+   ],
+   "evidencia": "Adulto mayor con credencial INAPAM ....... $250",
+   "respuesta_ideal": "¡Hola! Sí, el adulto mayor con credencial INAPAM paga $250."
+  },
+  {
+   "cliente": "y para estudiantes?",
+   "tipo": "sin_respuesta",
+   "accion": "derivar",
+   "claves": [],
+   "evidencia": "6. Si te preguntan algo que no está en la información, dilo con honestidad y sugiere llamar a taquilla al 744 481 2290.",
+   "respuesta_ideal": "No tengo información de descuento para estudiantes; puedes preguntar llamando a taquilla al 744 481 2290."
+  },
+  {
+   "cliente": "rentan toallas?",
+   "tipo": "sin_respuesta",
+   "accion": "derivar",
+   "claves": [],
+   "evidencia": "6. Si te preguntan algo que no está en la información, dilo con honestidad y sugiere llamar a taquilla al 744 481 2290.",
+   "respuesta_ideal": "No tengo ese dato; te sugiero llamar a taquilla al 744 481 2290. Sí hay regaderas y vestidores sin costo junto a la entrada."
+  },
+  {
+   "cliente": "y los chalecos salvavidas hay de tamaño para bebe?",
+   "tipo": "sin_respuesta",
+   "accion": "derivar",
+   "claves": [],
+   "evidencia": "6. Si te preguntan algo que no está en la información, dilo con honestidad y sugiere llamar a taquilla al 744 481 2290.",
+   "respuesta_ideal": "No tengo el dato de las tallas de los chalecos; te sugiero llamar a taquilla al 744 481 2290. Los chalecos son sin costo, dejando una identificación."
+  },
+  {
+   "cliente": "que tipo de bloqueador dejan usar?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "biodegradable"
+   ],
+   "evidencia": "Solo se permite bloqueador solar biodegradable.",
+   "respuesta_ideal": "Solo se permite bloqueador solar biodegradable."
+  },
+  {
+   "cliente": "Oiga no encuentro a mi hijo, tiene 6 años, trae short rojo!!",
+   "tipo": "instruccion",
+   "accion": "derivar",
+   "claves": [],
+   "evidencia": "2. Emergencias (una persona lastimada, un niño perdido, alguien que se siente mal): pide que avisen de inmediato al salvavidas más cercano o que vayan a la Enfermería, que está junto al río lento. No des consejos médicos.",
+   "respuesta_ideal": "Avisa de inmediato al salvavidas más cercano o ve a la Enfermería, que está junto al río lento, para que te ayuden a buscarlo."
+  }
+ ]
+]

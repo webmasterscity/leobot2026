@@ -1,0 +1,34 @@
+[
+  [
+    {"cliente": "Necesito fotocopias de unos documentos, ¿cuanto sale?", "tipo": "directa", "accion": "responder", "claves": ["Copia blanco y negro (A4)", "S/ 0,15"], "evidencia": "Copia blanco y negro (A4) - S/ 0,15", "respuesta_ideal": "Una copia blanco y negro en A4 cuesta S/ 0,15. Si la quieres a color, son S/ 0,65. ¿Cuántas copias necesitas?"},
+    {"cliente": "Necesito 100 copias", "tipo": "seguimiento", "accion": "responder", "claves": ["S/ 15", "S/ 65"], "evidencia": null, "respuesta_ideal": "Con 100 copias B/N serían S/ 15. A color serían S/ 65. ¿Cuál prefieres?"},
+    {"cliente": "¿Puedo traer mis documentos ahora?", "tipo": "si_no", "accion": "responder", "claves": ["08:00 - 19:00"], "evidencia": "Horario\nLunes a viernes: 08:00 - 19:00", "respuesta_ideal": "Claro, atendemos hasta las 19:00 hoy. Trae tus documentos y te las hacemos en el momento."},
+    {"cliente": "¿cuanto tarda?", "tipo": "sin_respuesta", "accion": "abstenerse", "claves": [], "evidencia": null, "respuesta_ideal": "Depende de cuántos están en la cola ahora, pero generalmente las copias simples son muy rápidas. En tienda te dicen exacto."}
+  ],
+  [
+    {"cliente": "Quiero imprimir 500 tarjetas de presentacion. ¿Cuanto cuesta?", "tipo": "directa", "accion": "responder", "claves": ["500 un., cartulina 250g", "S/ 95"], "evidencia": "Tarjetas de presentación (500 un., cartulina 250g) - S/ 95", "respuesta_ideal": "Las tarjetas de presentación de 500 unidades en cartulina de 250g nos salen por S/ 95."},
+    {"cliente": "¿Incluye diseño o lo tengo que traer yo?", "tipo": "sin_respuesta", "accion": "abstenerse", "claves": [], "evidencia": null, "respuesta_ideal": "Ese es un buen punto. Si ya tienes el diseño hecho, lo traes. Si no lo tienes, Katina Moreno, nuestra diseñadora, puede hacerlo. Le das tus especificaciones y ella presupuesta. ¿Ya tienes el diseño?"},
+    {"cliente": "No, no tengo. ¿Me hacen el diseño?", "tipo": "si_no", "accion": "responder", "claves": ["presupuesto sin costo"], "evidencia": "Se realiza presupuesto sin costo.", "respuesta_ideal": "Sí, Katina puede hacerlo. Se realiza presupuesto sin costo. Mejor que vengas a la tienda o llames al (01) 4205 6789 para dar los detalles de lo que quieres."}
+  ],
+  [
+    {"cliente": "Necesito imprimir 1000 volantes a color urgente. ¿Para cuando?", "tipo": "combinada", "accion": "responder", "claves": ["Volantes", "color", "1000 un.", "S/ 450", "1-2 días"], "evidencia": "Volantes (A5, 1000 un.) - S/ 180 (B/N) | S/ 450 (color); Tiempo de entrega: mínimo 2 horas para copias urgentes, 1-2 días para impresiones con diseño.", "respuesta_ideal": "Los volantes a color de 1000 unidades cuestan S/ 450. El tiempo normal es 1-2 días, pero si es muy urgente y el diseño está listo, podemos coordinar algo. ¿Tienes el archivo listo o necesitas diseño?"},
+    {"cliente": "Tengo el archivo listo en PDF", "tipo": "seguimiento", "accion": "responder", "claves": ["email", "WhatsApp", "pedidos@printexpress.com.pe"], "evidencia": "Se puede entregar el archivo por email (pedidos@printexpress.com.pe), WhatsApp (945 821 934) o llevar USB", "respuesta_ideal": "Perfecto, puedes enviarnos el PDF por email a pedidos@printexpress.com.pe, por WhatsApp al 945 821 934, o traer una USB a la tienda. Confirma fechas cuando lo envíes."},
+    {"cliente": "¿Se necesita pagar anticipo?", "tipo": "si_no", "accion": "responder", "claves": ["mayores a S/ 500", "50 % de anticipo"], "evidencia": "Depósitos para pedidos mayores a S/ 500: se solicita el 50 % de anticipo.", "respuesta_ideal": "Sí, como son S/ 450 no llegamos al mínimo, pero si pones otro pedido además y supera S/ 500, se pide 50 % de anticipo. Para este pedido coordina cuando vengas."}
+  ],
+  [
+    {"cliente": "¿Hacen encuadernación?", "tipo": "si_no", "accion": "responder", "claves": ["Encuadernación", "espiral", "S/ 8 - 15"], "evidencia": "Encuadernación:\n• Espiral metálica o plástica - S/ 8 - 15", "respuesta_ideal": "Sí, hacemos encuadernación con espiral metálica o plástica por S/ 8 a S/ 15, dependiendo del tipo. También hacemos grapado y corte."},
+    {"cliente": "¿Me pueden plastificar cartillas también?", "tipo": "directa", "accion": "responder", "claves": ["Laminado", "S/ 3,00", "S/ 5,00"], "evidencia": "Laminado (A4) - S/ 3,00 | (A3) - S/ 5,00", "respuesta_ideal": "Sí, hacemos laminado por S/ 3,00 en A4 o S/ 5,00 en A3. También hacemos plastificado de carnet por S/ 2,50 si es tipo DNI."},
+    {"cliente": "Listo, les llevo mi encargo entonces.", "tipo": "charla", "accion": "charla", "claves": [], "evidencia": null, "respuesta_ideal": "Perfecto, te esperamos. Traes tus documentos o archivos y listo."}
+  ],
+  [
+    {"cliente": "¿Ustedes scan documentos?", "tipo": "si_no", "accion": "responder", "claves": ["Escaneado de documentos", "S/ 0,10"], "evidencia": "Escaneado de documentos (por página) - S/ 0,10", "respuesta_ideal": "Sí, hacemos escaneo de documentos por S/ 0,10 la página."},
+    {"cliente": "¿Y después me lo envían a mi correo?", "tipo": "sin_respuesta", "accion": "abstenerse", "claves": [], "evidencia": null, "respuesta_ideal": "Los detalles de cómo se entrega el archivo escanneado, mejor consulta directamente en tienda o llama al (01) 4205 6789."},
+    {"cliente": "ok, muchas gracias", "tipo": "charla", "accion": "charla", "claves": [], "evidencia": null, "respuesta_ideal": "De nada, nos vemos pronto."}
+  ],
+  [
+    {"cliente": "Necesito brochures doblados. ¿Hacen ese tipo de trabajos?", "tipo": "directa", "accion": "responder", "claves": ["Brochures", "A5", "1000 un."], "evidencia": "Brochures/dípticos (1000 un., A5) - S/ 320 (B/N) | S/ 850 (color)", "respuesta_ideal": "Sí, hacemos brochures o dípticos en A5. De 1000 unidades cuesta S/ 320 en blanco y negro o S/ 850 a color."},
+    {"cliente": "Tengo que cambiar un dato del diseño. ¿Hay recargo?", "tipo": "directa", "accion": "responder", "claves": ["recargo del 15 %"], "evidencia": "Cambios en el pedido después de imprimir: se cobra recargo del 15 %.", "respuesta_ideal": "Sí, si es después de que ya se imprimió, hay recargo del 15 %. Por eso es importante verificar todo antes. ¿Ya se empezó a imprimir?"},
+    {"cliente": "No, aun no. Todavía puedo cambiar?", "tipo": "si_no", "accion": "responder", "claves": ["cambios antes de imprimir", "sin recargo"], "evidencia": null, "respuesta_ideal": "Claro, si aún no se imprime, los cambios van sin recargo. Confirma rápido qué quieres cambiar. Llama al (01) 4205 6789 o escribe al correo."},
+    {"cliente": "Dale, voy a verificar y les escribo.", "tipo": "charla", "accion": "charla", "claves": [], "evidencia": null, "respuesta_ideal": "Perfecto, esperamos tu correo. Que tengas un buen día."}
+  ]
+]

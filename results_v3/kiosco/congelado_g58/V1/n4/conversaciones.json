@@ -1,0 +1,294 @@
+[
+ [
+  {
+   "cliente": "hola! compré unos vaqueros hace 3 semanas y me quedan grandes, los puedo devolver?",
+   "tipo": "si_no",
+   "accion": "responder",
+   "claves": [
+    "30 días"
+   ],
+   "evidencia": "Tienes 30 días desde la fecha de compra para cambiar o devolver cualquier prenda, siempre que esté sin usar y con la etiqueta. Imprescindible presentar el ticket de compra (en papel o en la app de Almendro).",
+   "respuesta_ideal": "¡Hola! Bienvenida a Almendro. Sí, tienes 30 días desde la compra para devolverlos, siempre que estén sin usar, con la etiqueta y con el ticket."
+  },
+  {
+   "cliente": "es que no encuentro el ticket",
+   "tipo": "seguimiento",
+   "accion": "responder",
+   "claves": [
+    "en la app"
+   ],
+   "evidencia": "Imprescindible presentar el ticket de compra (en papel o en la app de Almendro).",
+   "respuesta_ideal": "El ticket es imprescindible, pero también vale el que tienes en la app de Almendro."
+  },
+  {
+   "cliente": "y como me devolveis el dinero? pagué con tarjeta",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "mismo medio de pago"
+   ],
+   "evidencia": "El reembolso se hace en el mismo medio de pago con el que compraste.",
+   "respuesta_ideal": "El reembolso se hace en el mismo medio de pago, así que te lo devolvemos a la tarjeta."
+  },
+  {
+   "cliente": "¿y cuántos días tarda en verse en la cuenta?",
+   "tipo": "sin_respuesta",
+   "accion": "abstenerse",
+   "claves": [],
+   "evidencia": null,
+   "respuesta_ideal": "Eso no lo sé; no tengo el dato de cuánto tarda el reembolso en aparecer en la cuenta."
+  },
+  {
+   "cliente": "otra cosa, un bañador que compré la semana pasada, lo puedo cambiar por otra talla?",
+   "tipo": "si_no",
+   "accion": "responder",
+   "claves": [
+    "higiene"
+   ],
+   "evidencia": "Ropa interior y bañadores: no se admiten cambios ni devoluciones por motivos de higiene.",
+   "respuesta_ideal": "Lo siento, no: los bañadores no admiten cambios ni devoluciones por motivos de higiene."
+  },
+  {
+   "cliente": "vale, gracias guapa",
+   "tipo": "charla",
+   "accion": "charla",
+   "claves": [],
+   "evidencia": null,
+   "respuesta_ideal": "¡A ti! Que tengas un buen día."
+  }
+ ],
+ [
+  {
+   "cliente": "¿Cuánto cobráis por cogerle el bajo a un pantalón?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "8 €",
+    "precio completo"
+   ],
+   "evidencia": "Bajos de pantalón: 8 €. Gratis en pantalones comprados a precio completo (no en rebajas).",
+   "respuesta_ideal": "El bajo cuesta 8 €, y es gratis si el pantalón lo compraste aquí a precio completo (no en rebajas)."
+  },
+  {
+   "cliente": "¿y en cuánto lo tenéis?",
+   "tipo": "seguimiento",
+   "accion": "responder",
+   "claves": [
+    "48 horas"
+   ],
+   "evidencia": "Los tenemos listos en 48 horas.",
+   "respuesta_ideal": "Los bajos están listos en 48 horas."
+  },
+  {
+   "cliente": "¿Me podéis hacer el bajo de un pantalón que no he comprado aquí?",
+   "tipo": "sin_respuesta",
+   "accion": "abstenerse",
+   "claves": [],
+   "evidencia": null,
+   "respuesta_ideal": "No lo sé: no tengo información sobre arreglos en prendas compradas en otras tiendas."
+  },
+  {
+   "cliente": "que precio tiene el jersey de merino?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "79 €"
+   ],
+   "evidencia": "• Jersey de lana merino — 79 €",
+   "respuesta_ideal": "El jersey de lana merino cuesta 79 €."
+  },
+  {
+   "cliente": "si me llevo el jersey y dos camisetas de las basicas cuanto es?",
+   "tipo": "combinada",
+   "accion": "responder",
+   "claves": [
+    "118,90"
+   ],
+   "evidencia": "• Camiseta básica de algodón orgánico — 19,95 €\n• Camiseta estampada — 24,95 €\n• Vaqueros (corte recto o slim) — 59,90 €\n• Jersey de lana merino — 79 €",
+   "respuesta_ideal": "Serían 118,90 €: 79 € del jersey más 2 × 19,95 € de las camisetas básicas."
+  },
+  {
+   "cliente": "¿Y si lo pido por la web me sale gratis el envío con eso?",
+   "tipo": "seguimiento",
+   "accion": "responder",
+   "claves": [
+    "60 €"
+   ],
+   "evidencia": "Envío a domicilio: 4,95 €; gratis en pedidos desde 60 €.",
+   "respuesta_ideal": "Sí, el envío a domicilio es gratis en pedidos desde 60 €."
+  }
+ ],
+ [
+  {
+   "cliente": "a que hora abris el domingo?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "12:00"
+   ],
+   "evidencia": "Dom y festivos .... 12:00–20:00",
+   "respuesta_ideal": "Los domingos abrimos de 12:00 a 20:00."
+  },
+  {
+   "cliente": "¿El 24 de diciembre hasta qué hora estáis?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "17:00"
+   ],
+   "evidencia": "El 24 y el 31 de diciembre cerramos a las 17:00.",
+   "respuesta_ideal": "El 24 de diciembre cerramos a las 17:00."
+  },
+  {
+   "cliente": "¿En agosto cerráis por vacaciones?",
+   "tipo": "sin_respuesta",
+   "accion": "abstenerse",
+   "claves": [],
+   "evidencia": null,
+   "respuesta_ideal": "No tengo información sobre cierres en agosto; solo sé que cerramos el 25 de diciembre y el 1 de enero."
+  },
+  {
+   "cliente": "Dónde está la tienda exactamente? voy en metro",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "Fuencarral",
+    "Bilbao"
+   ],
+   "evidencia": "C/ de Fuencarral, 118 · 28010 Madrid\nMetro Bilbao (L1 y L4) · Bus 21, 147 y 149",
+   "respuesta_ideal": "Estamos en la calle de Fuencarral, 118; la parada de metro es Bilbao (líneas 1 y 4)."
+  },
+  {
+   "cliente": "¿Y hay parking cerca para dejar el coche?",
+   "tipo": "sin_respuesta",
+   "accion": "abstenerse",
+   "claves": [],
+   "evidencia": null,
+   "respuesta_ideal": "No tengo información sobre aparcamiento cerca de la tienda; lo que sí te puedo decir es que está al lado del Metro Bilbao."
+  }
+ ],
+ [
+  {
+   "cliente": "Si me hago del club hoy, ¿en cuánto me quedarían los vaqueros?",
+   "tipo": "combinada",
+   "accion": "responder",
+   "claves": [
+    "53,91"
+   ],
+   "evidencia": "10 % de descuento en tu primera compra tras registrarte (no acumulable con rebajas ni con otras promos)",
+   "respuesta_ideal": "Con el 10 % de descuento de la primera compra tras registrarte, los vaqueros de 59,90 € te quedarían en 53,91 €."
+  },
+  {
+   "cliente": "Soy de México, ¿me hacéis el tax free?",
+   "tipo": "si_no",
+   "accion": "responder",
+   "claves": [
+    "pasaporte"
+   ],
+   "evidencia": "Tax Free: sí, para residentes fuera de la UE, presentando el pasaporte en el momento de la compra.",
+   "respuesta_ideal": "Sí, el Tax Free es para residentes fuera de la UE; tienes que presentar el pasaporte en el momento de la compra."
+  },
+  {
+   "cliente": "¿Tenéis la chaqueta verde del escaparate en una M?",
+   "tipo": "instruccion",
+   "accion": "derivar",
+   "claves": [],
+   "evidencia": "- No tienes acceso al stock. Si alguien pregunta si queda una talla, un color o una prenda concreta, dile que no puedes consultarlo y que pregunte a cualquier dependienta en caja.",
+   "respuesta_ideal": "No puedo consultar el stock; pregunta a cualquier dependienta en caja y te lo miran."
+  },
+  {
+   "cliente": "otra cosa, hice un pedido en la web hace 10 dias y todavia no me ha llegado",
+   "tipo": "instruccion",
+   "accion": "derivar",
+   "claves": [],
+   "evidencia": "- Problemas con pedidos online (retrasos, paquetes que no llegan, cobros repetidos): que escriban a pedidos@almendro.es o llamen al 910 45 72 39.",
+   "respuesta_ideal": "Vaya, lo siento. Para eso escribe a pedidos@almendro.es o llama al 910 45 72 39 y te lo revisan."
+  },
+  {
+   "cliente": "¿Cuánto suele tardar un envío normalmente?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "2 a 4 días laborables"
+   ],
+   "evidencia": "Plazo de entrega: de 2 a 4 días laborables en península.",
+   "respuesta_ideal": "En península el plazo de entrega es de 2 a 4 días laborables."
+  },
+  {
+   "cliente": "¿y a Tenerife?",
+   "tipo": "sin_respuesta",
+   "accion": "abstenerse",
+   "claves": [],
+   "evidencia": null,
+   "respuesta_ideal": "No tengo el plazo de entrega para Canarias; el dato que tengo es solo para península."
+  }
+ ],
+ [
+  {
+   "cliente": "Buenas, se puede entrar con perro?",
+   "tipo": "si_no",
+   "accion": "responder",
+   "claves": [
+    "con correa"
+   ],
+   "evidencia": "- Los perros son bienvenidos, siempre con correa.",
+   "respuesta_ideal": "¡Hola! Bienvenido a Almendro. Sí, los perros son bienvenidos, siempre con correa."
+  },
+  {
+   "cliente": "tenéis tallas grandes de mujer? uso una 50",
+   "tipo": "sin_respuesta",
+   "accion": "abstenerse",
+   "claves": [],
+   "evidencia": null,
+   "respuesta_ideal": "En mujer tenemos de la XS a la XXL, pero no tengo la equivalencia con la talla 50, así que no te lo puedo asegurar."
+  },
+  {
+   "cliente": "De cuánto son las tarjetas regalo?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "25 €",
+    "50 €",
+    "100 €"
+   ],
+   "evidencia": "Disponible en importes de 25 €, 50 € y 100 €.",
+   "respuesta_ideal": "Las tarjetas regalo son de 25 €, 50 € y 100 €."
+  },
+  {
+   "cliente": "¿y caducan?",
+   "tipo": "seguimiento",
+   "accion": "responder",
+   "claves": [
+    "un año"
+   ],
+   "evidencia": "Tiene validez de un año desde la compra y se puede usar en varias compras hasta agotar el saldo.",
+   "respuesta_ideal": "Sí, tienen validez de un año desde la compra, y se pueden usar en varias compras hasta agotar el saldo."
+  },
+  {
+   "cliente": "¿Se pueden gastar en la tienda online?",
+   "tipo": "sin_respuesta",
+   "accion": "abstenerse",
+   "claves": [],
+   "evidencia": null,
+   "respuesta_ideal": "No lo sé; no tengo información sobre si la tarjeta regalo se puede usar en la web."
+  },
+  {
+   "cliente": "Por cierto, ¿estáis buscando dependientas? os puedo dejar el CV",
+   "tipo": "instruccion",
+   "accion": "responder",
+   "claves": [
+    "empleo@almendro.es"
+   ],
+   "evidencia": "- Si preguntan por trabajo, que manden el CV a empleo@almendro.es; en tienda no recogemos currículums.",
+   "respuesta_ideal": "En tienda no recogemos currículums; mándalo a empleo@almendro.es."
+  },
+  {
+   "cliente": "Genial, gracias. Hasta luego!",
+   "tipo": "charla",
+   "accion": "charla",
+   "claves": [],
+   "evidencia": null,
+   "respuesta_ideal": "¡Gracias a ti, hasta luego!"
+  }
+ ]
+]

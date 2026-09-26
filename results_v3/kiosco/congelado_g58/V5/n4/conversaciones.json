@@ -1,0 +1,288 @@
+[
+  [
+    {
+      "cliente": "Hola, ¿cuanto cuesta jugar boliche entre semana?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": [
+        "$89 MXN por persona por hora"
+      ],
+      "evidencia": "Lunes a jueves: $89 MXN por persona por hora (renta de zapatos incluida)",
+      "respuesta_ideal": "De lunes a jueves cuesta $89 MXN por persona por hora, con renta de zapatos incluida."
+    },
+    {
+      "cliente": "¿y el fin de semana?",
+      "tipo": "seguimiento",
+      "accion": "responder",
+      "claves": [
+        "$129 MXN por persona por hora"
+      ],
+      "evidencia": "Viernes a domingo: $129 MXN por persona por hora (renta de zapatos incluida)",
+      "respuesta_ideal": "El fin de semana, de viernes a domingo, la tarifa es de $129 MXN por persona por hora."
+    },
+    {
+      "cliente": "¿tienen alguna promocion mas barata?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": [
+        "happy bowling",
+        "$65 MXN"
+      ],
+      "evidencia": "Antes de las 3:00 pm de lunes a viernes: tarifa \"happy bowling\" de $65 MXN por persona por hora",
+      "respuesta_ideal": "Sí, antes de las 3:00 pm de lunes a viernes hay una tarifa 'happy bowling' de $65 MXN por persona por hora."
+    },
+    {
+      "cliente": "va, gracias",
+      "tipo": "charla",
+      "accion": "charla",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "¡Con gusto! Te esperamos para jugar unas líneas."
+    }
+  ],
+  [
+    {
+      "cliente": "quiero cotizar una fiesta para 15 niños, ¿que paquetes tienen?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": [
+        "Fiesta Strike",
+        "$4.200 MXN"
+      ],
+      "evidencia": "Fiesta Strike | 2 horas de boliche, zapatos, pizza, refresco ilimitado, 15 personas | $4.200 MXN",
+      "respuesta_ideal": "Para 15 personas el paquete Fiesta Strike cuesta $4.200 MXN, incluye 2 horas de boliche, zapatos, pizza y refresco ilimitado."
+    },
+    {
+      "cliente": "¿puedo reservar la fecha ahorita mismo contigo?",
+      "tipo": "instruccion",
+      "accion": "derivar",
+      "claves": [],
+      "evidencia": "No confirmes reservaciones de paquetes de fiesta tú mismo: indica que deben llamar al (81) 8123 4567 o escribir por WhatsApp con Paola Reyna para apartar la fecha.",
+      "respuesta_ideal": "Para apartar la fecha debe llamar al (81) 8123 4567 o escribir por WhatsApp con Paola Reyna, la encargada de eventos."
+    },
+    {
+      "cliente": "¿cuanto es el anticipo?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": [
+        "anticipo del 50%"
+      ],
+      "evidencia": "Los paquetes de fiesta requieren apartado con al menos 3 días de anticipación y un anticipo del 50%.",
+      "respuesta_ideal": "El anticipo requerido es del 50% del valor del paquete."
+    },
+    {
+      "cliente": "si cancelo la fiesta un dia antes, ¿me devuelven el anticipo?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": [
+        "no es reembolsable si se cancela con menos de 24 horas"
+      ],
+      "evidencia": "El anticipo no es reembolsable si se cancela con menos de 24 horas de anticipación.",
+      "respuesta_ideal": "No, si cancela con menos de 24 horas de anticipación el anticipo no se devuelve."
+    },
+    {
+      "cliente": "¿y si cambio de fecha en vez de cancelar, tambien pierdo el anticipo?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No tengo esa información específica sobre cambios de fecha, le recomiendo consultarlo directamente con Paola Reyna."
+    },
+    {
+      "cliente": "si llevo mi propio pastel para la fiesta strike, ¿me descuentan algo del precio?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No tengo información sobre descuentos por llevar pastel propio en un paquete de fiesta, le recomiendo preguntar directamente con Paola Reyna."
+    }
+  ],
+  [
+    {
+      "cliente": "¿puedo entrar con mis propios tenis?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": [
+        "no se permite entrar con zapatos de calle"
+      ],
+      "evidencia": "Es obligatorio usar los zapatos especiales de boliche dentro del área de carriles; no se permite entrar con zapatos de calle ni descalzo.",
+      "respuesta_ideal": "No, dentro del área de carriles es obligatorio usar los zapatos especiales de boliche, no se permite con zapatos de calle."
+    },
+    {
+      "cliente": "¿me pueden vender una cerveza aunque tenga 17 años?",
+      "tipo": "instruccion",
+      "accion": "responder",
+      "claves": [
+        "solo a mayores de 18 años"
+      ],
+      "evidencia": "Se vende cerveza y bebidas alcohólicas solo a mayores de 18 años con identificación oficial vigente.",
+      "respuesta_ideal": "No, la cerveza y las bebidas alcohólicas solo se venden a mayores de 18 años con identificación oficial vigente."
+    },
+    {
+      "cliente": "¿puedo llevar mi propia botana?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": [
+        "No se permite el ingreso de alimentos ni bebidas de fuera"
+      ],
+      "evidencia": "No se permite el ingreso de alimentos ni bebidas de fuera del establecimiento.",
+      "respuesta_ideal": "No, no se permite ingresar alimentos ni bebidas de fuera del establecimiento."
+    },
+    {
+      "cliente": "¿y un pastel de cumpleaños si se puede?",
+      "tipo": "seguimiento",
+      "accion": "responder",
+      "claves": [
+        "se permite llevar pastel",
+        "$150 MXN"
+      ],
+      "evidencia": "¿Puedo llevar un pastel para un cumpleaños sin comprar el paquete de fiesta? Sí, se permite llevar pastel aunque no se compre un paquete, pero se cobra un costo de montaje de $150 MXN.",
+      "respuesta_ideal": "Sí, el pastel sí se permite aunque no compre el paquete de fiesta, pero se cobra un costo de montaje de $150 MXN."
+    },
+    {
+      "cliente": "oye y se puede fumar afuera de los carriles, en la zona de mesas?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": [
+        "No se permite fumar dentro de las instalaciones"
+      ],
+      "evidencia": "No se permite fumar dentro de las instalaciones, incluyendo cigarrillos electronicos.",
+      "respuesta_ideal": "No, no se permite fumar en ninguna parte dentro de las instalaciones, ni siquiera cigarrillos electrónicos."
+    }
+  ],
+  [
+    {
+      "cliente": "¿cuanto cuestan los nachos?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": [
+        "$75"
+      ],
+      "evidencia": "Nachos con queso: $75",
+      "respuesta_ideal": "Los nachos con queso cuestan $75."
+    },
+    {
+      "cliente": "si pido dos hot dogs y un refresco, ¿me sale mas barato el combo?",
+      "tipo": "combinada",
+      "accion": "responder",
+      "claves": [
+        "Combo 2 hot dogs + refresco: $110"
+      ],
+      "evidencia": "Combo 2 hot dogs + refresco: $110",
+      "respuesta_ideal": "Sí, el combo de 2 hot dogs más refresco cuesta $110, que es más barato que pedirlos por separado."
+    },
+    {
+      "cliente": "¿tienen opciones sin gluten?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No tengo información sobre opciones sin gluten en el menú, le recomiendo preguntar directamente en el snack bar."
+    },
+    {
+      "cliente": "¿cuanto cuesta rentar calcetines si se me olvidan los mios?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": [
+        "$20 MXN"
+      ],
+      "evidencia": "¿Rentan calcetines? Sí, tenemos calcetines desechables a $20 MXN para quien lo necesite.",
+      "respuesta_ideal": "Los calcetines desechables cuestan $20 MXN."
+    },
+    {
+      "cliente": "si somos 6 personas y jugamos 2 horas en fin de semana, ¿cuanto seria en total?",
+      "tipo": "combinada",
+      "accion": "responder",
+      "claves": [
+        "$129 MXN por persona por hora"
+      ],
+      "evidencia": "Viernes a domingo: $129 MXN por persona por hora (renta de zapatos incluida)",
+      "respuesta_ideal": "Serían $129 MXN por persona por hora; para 6 personas durante 2 horas el total sería de $1.548 MXN."
+    },
+    {
+      "cliente": "gracias, nos vemos",
+      "tipo": "charla",
+      "accion": "charla",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "¡Nos vemos! Te esperamos para tirar unas líneas."
+    }
+  ],
+  [
+    {
+      "cliente": "¿hay estacionamiento?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": [
+        "estacionamiento propio gratuito",
+        "80 vehículos"
+      ],
+      "evidencia": "Sí, contamos con estacionamiento propio gratuito para clientes, con capacidad para 80 vehículos.",
+      "respuesta_ideal": "Sí, contamos con estacionamiento propio y gratuito para clientes, con capacidad para 80 vehículos."
+    },
+    {
+      "cliente": "¿aceptan transferencia?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": [
+        "No aceptamos pagos por transferencia en el mostrador"
+      ],
+      "evidencia": "No aceptamos pagos por transferencia en el mostrador.",
+      "respuesta_ideal": "No, en el mostrador no se aceptan pagos por transferencia, solo tarjeta o efectivo."
+    },
+    {
+      "cliente": "mi hijo de 15 años puede quedarse solo jugando en la noche?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": [
+        "Los menores de 18 años deben estar acompañados de un adulto después de las 8:00 pm"
+      ],
+      "evidencia": "Los menores de 18 años deben estar acompañados de un adulto después de las 8:00 pm.",
+      "respuesta_ideal": "No, después de las 8:00 pm los menores de 18 años deben estar acompañados de un adulto."
+    },
+    {
+      "cliente": "¿cuantas personas caben por carril?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": [
+        "Máximo 6 personas por carril"
+      ],
+      "evidencia": "Máximo 6 personas por carril.",
+      "respuesta_ideal": "El máximo es de 6 personas por carril."
+    },
+    {
+      "cliente": "¿el 25 de diciembre abren?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": [
+        "cerramos a las 2:00 p. m."
+      ],
+      "evidencia": "Los días festivos cerramos a las 2:00 p. m., excepto 31 de diciembre que abrimos hasta las 6:00 p. m.",
+      "respuesta_ideal": "El 25 de diciembre, al ser festivo, cerramos a las 2:00 p. m."
+    },
+    {
+      "cliente": "¿tienen boliche para personas en silla de ruedas?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No tengo información sobre accesibilidad para sillas de ruedas, le recomiendo llamar directamente para confirmarlo."
+    },
+    {
+      "cliente": "¿tienen sillas altas para bebés en el area de mesas?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No tengo esa información sobre sillas para bebés, le recomiendo preguntar al llegar."
+    },
+    {
+      "cliente": "ok muchas gracias",
+      "tipo": "charla",
+      "accion": "charla",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "¡Con mucho gusto! Te esperamos por acá."
+    }
+  ]
+]

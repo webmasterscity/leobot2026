@@ -1,0 +1,32 @@
+[
+  [
+    {"cliente": "Hola, cuanto cuesta la laptop Dell Inspiron 14", "tipo": "directa", "accion": "responder", "claves": ["Q 7,899"], "evidencia": "Dell Inspiron 14 (Ryzen 5, 16GB RAM) - Q 7,899", "respuesta_ideal": "La Dell Inspiron 14 con Ryzen 5 y 16GB de RAM cuesta Q 7,899."},
+    {"cliente": "¿Viene con Windows?", "tipo": "sin_respuesta", "accion": "abstenerse", "claves": [], "evidencia": null, "respuesta_ideal": "No te puedo confirmar los detalles de fábrica exactos. Te recomiendo que llames al +502 2385 2547 o vengas a la tienda para que veas la especificación completa."},
+    {"cliente": "¿Se puede pagar en cuotas sin interés?", "tipo": "si_no", "accion": "responder", "claves": ["planes de financiamiento sin interés hasta 12 meses", "tarjeta de crédito participante"], "evidencia": "Se ofrecen planes de financiamiento sin interés hasta 12 meses (con tarjeta de crédito participante).", "respuesta_ideal": "Sí, se ofrecen planes sin interés hasta 12 meses con tarjeta de crédito participante. Las tarjetas que aplican puedes consultarlas cuando llames o vengas."},
+    {"cliente": "Listo, voy a llamar entonces para hacer el pedido", "tipo": "charla", "accion": "charla", "claves": [], "evidencia": null, "respuesta_ideal": "Perfecto, al +502 2385 2547 te atienden rápido. ¡Que disfrutes tu nueva laptop!"}
+  ],
+  [
+    {"cliente": "tengo una compu que se infectó con virus. ¿Hacen limpieza?", "tipo": "directa", "accion": "responder", "claves": ["Limpieza de virus: Q 400"], "evidencia": "Limpieza de virus: Q 400", "respuesta_ideal": "Sí, hacemos servicio de limpieza de virus por Q 400. Puedes traer tu computadora a la tienda o llamar al +502 2385 2547 para más detalles."},
+    {"cliente": "¿Cuanto tarda?", "tipo": "sin_respuesta", "accion": "abstenerse", "claves": [], "evidencia": null, "respuesta_ideal": "Eso depende de qué tan infectada esté. Para estimar el tiempo exacto, el técnico necesita verla en la tienda. Hay diagnóstico gratis."},
+    {"cliente": "Dale, mañana la llevo.", "tipo": "charla", "accion": "charla", "claves": [], "evidencia": null, "respuesta_ideal": "Perfecto, te esperamos. Recuerda que abrimos a las 8 de la mañana."}
+  ],
+  [
+    {"cliente": "Quiero montar un cafe internet. ¿Qué me recomiendas, una PC gamer o una de oficina?", "tipo": "instruccion", "accion": "derivar", "claves": ["consultoría", "Ing. Luis Rodríguez"], "evidencia": "Consultoría tecnológica: Q 250/hora (mínimo 1 hora)", "respuesta_ideal": "Eso es una buena pregunta. Te recomendaría que hables con uno de nuestros técnicos en la tienda. Ofrecemos consultoría tecnológica por Q 250/hora (mínimo 1 hora) para ayudarte a elegir lo mejor según tu presupuesto."},
+    {"cliente": "¿Puedo llamar para programar la consulta?", "tipo": "si_no", "accion": "responder", "claves": ["llamar", "+502 2385 2547"], "evidencia": "+502 2385 2547", "respuesta_ideal": "Claro, puedes llamar al +502 2385 2547 y preguntar por el Ing. Luis Rodríguez o por Mariana López para programar la consulta."},
+    {"cliente": "Listo, muchas gracias.", "tipo": "charla", "accion": "charla", "claves": [], "evidencia": null, "respuesta_ideal": "De nada, con gusto. Que tengas un buen día."}
+  ],
+  [
+    {"cliente": "¿Cuales son los horarios del sabado?", "tipo": "directa", "accion": "responder", "claves": ["Sábado: 9:00 - 17:00"], "evidencia": "Sábado: 9:00 - 17:00", "respuesta_ideal": "El sábado abrimos de 9:00 a.m. a 5:00 p.m."},
+    {"cliente": "¿y el domingo?", "tipo": "seguimiento", "accion": "responder", "claves": ["Domingo: 10:00 - 15:00"], "evidencia": "Domingo: 10:00 - 15:00", "respuesta_ideal": "El domingo atendemos de 10:00 a.m. a 3:00 p.m."},
+    {"cliente": "¿Si compro un monitor y cable HDMI, hay combo?", "tipo": "combinada", "accion": "responder", "claves": ["gratis el cable"], "evidencia": "Compra de monitor + cable HDMI: gratis el cable", "respuesta_ideal": "Sí, si compras monitor + cable HDMI, te regalamos el cable. Es un combo que ofrecemos."},
+    {"cliente": "¿Que modelos de monitor tienen?", "tipo": "sin_respuesta", "accion": "responder", "claves": ["Monitor 24\" FHD - Q 1,199", "Monitor 27\" 4K - Q 2,899"], "evidencia": "Monitor 24\" FHD - Q 1,199; Monitor 27\" 4K - Q 2,899", "respuesta_ideal": "Tenemos Monitor 24\" FHD por Q 1,199 y Monitor 27\" 4K por Q 2,899. Hay otros modelos también, pero para la lista completa es mejor que llames al +502 2385 2547."}
+  ],
+  [
+    {"cliente": "Hola, ¿me devuelven un producto si lo devolvi abierto?", "tipo": "si_no", "accion": "responder", "claves": ["Los productos abiertos", "no aplican para devolución"], "evidencia": "Los productos abiertos o con signos de uso no aplican para devolución.", "respuesta_ideal": "No, si el producto ya fue abierto no se devuelve. Las devoluciones son solo dentro de 7 días, con empaque original, sin abrir."},
+    {"cliente": "¿Y si tiene un defecto?", "tipo": "seguimiento", "accion": "responder", "claves": ["defecto comprobable", "cambios"], "evidencia": "Cambios de producto: permitidos dentro de 7 días si hay defecto comprobable.", "respuesta_ideal": "Si tiene un defecto comprobable, sí se puede hacer cambio dentro de 7 días. Tendrías que traerlo con la factura."},
+    {"cliente": "Gracias", "tipo": "charla", "accion": "charla", "claves": [], "evidencia": null, "respuesta_ideal": "De nada, cualquier duda nos llamas."}
+  ],
+  [
+    {"cliente": "¿puedo hacer un pedido por internet?", "tipo": "sin_respuesta", "accion": "derivar", "claves": ["correo", "atencionalcliente@compuworld.com.gt"], "evidencia": null, "respuesta_ideal": "Buena pregunta. Para eso es mejor que contactes a atencionalcliente@compuworld.com.gt o llames al +502 2385 2547 para consultarles sobre opciones de envío y compra en línea."}
+  ]
+]
