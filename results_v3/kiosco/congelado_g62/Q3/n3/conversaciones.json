@@ -1,0 +1,170 @@
+[
+  {
+    "cliente": "¿Cuánto cuesta un rosario de madera?",
+    "tipo": "directa",
+    "accion": "responder",
+    "claves": ["$18.000 COP", "rosario tradicional", "cuentas de madera"],
+    "evidencia": "Rosario tradicional (cuentas de madera, cruz plateada): $18.000 COP",
+    "respuesta_ideal": "Un rosario tradicional con cuentas de madera y cruz plateada cuesta $18.000 COP."
+  },
+  {
+    "cliente": "¿Tienen rosarios de piedra?",
+    "tipo": "si_no",
+    "accion": "responder",
+    "claves": ["piedra semipreciosa", "$32.000 - $45.000 COP"],
+    "evidencia": "Rosario de piedra semipreciosa (cuarzo, amatista): $32.000 - $45.000 COP",
+    "respuesta_ideal": "Sí, tenemos rosarios de piedra semipreciosa como cuarzo y amatista, entre $32.000 y $45.000 COP."
+  },
+  {
+    "cliente": "¿A qué hora abren mañana?",
+    "tipo": "directa",
+    "accion": "responder",
+    "claves": ["9:00 a.m."],
+    "evidencia": "Lunes a viernes: 9:00 a.m. - 6:00 p.m.",
+    "respuesta_ideal": "Mañana abrimos a las 9:00 a.m."
+  },
+  {
+    "cliente": "¿Cuesta más enviar a otro país?",
+    "tipo": "si_no",
+    "accion": "responder",
+    "claves": ["$45 USD mínimo", "15-30 días", "internacional"],
+    "evidencia": "Internacional: $45 USD mínimo (solo para pedidos mayores a $100.000 COP). Tiempo: 15-30 días.",
+    "respuesta_ideal": "Sí, los envíos internacionales cuestan mínimo $45 USD, pero solo para pedidos mayores a $100.000 COP. Tardan entre 15 y 30 días."
+  },
+  {
+    "cliente": "¿Venden biblias?",
+    "tipo": "si_no",
+    "accion": "responder",
+    "claves": ["Biblia tapa dura", "$42.000 - $68.000 COP"],
+    "evidencia": "Biblia tapa dura (varias ediciones): $42.000 - $68.000 COP",
+    "respuesta_ideal": "Sí, vendemos biblias en tapa dura con varias ediciones, de $42.000 a $68.000 COP."
+  },
+  {
+    "cliente": "Quiero una imagen de San José. ¿Cuál es el precio?",
+    "tipo": "directa",
+    "accion": "responder",
+    "claves": ["$45.000 - $65.000 COP", "cuadros enmarcados", "30 x 40 cm"],
+    "evidencia": "Cuadros enmarcados de santos (30 x 40 cm): $45.000 - $65.000 COP",
+    "respuesta_ideal": "Un cuadro de santo enmarcado de 30 x 40 cm cuesta entre $45.000 y $65.000 COP, dependiendo del diseño."
+  },
+  {
+    "cliente": "¿Pueden grabar mi nombre en una pulsera?",
+    "tipo": "instruccion",
+    "accion": "responder",
+    "claves": ["grabado", "$8.000 COP", "3-5 días"],
+    "evidencia": "Grabado en medallones o pulseras: $8.000 COP adicionales. Tiempo: 3-5 días.",
+    "respuesta_ideal": "Sí, podemos grabar tu nombre en una pulsera. Cuesta $8.000 COP adicionales y tarda entre 3 y 5 días."
+  },
+  {
+    "cliente": "¿Cuál es el horario del domingo?",
+    "tipo": "directa",
+    "accion": "responder",
+    "claves": ["Domingo: 1:00 p.m. - 5:00 p.m."],
+    "evidencia": "Domingo: 1:00 p.m. - 5:00 p.m.",
+    "respuesta_ideal": "El domingo estamos abiertos de 1:00 p.m. a 5:00 p.m."
+  },
+  {
+    "cliente": "¿Se puede pagar por transferencia?",
+    "tipo": "si_no",
+    "accion": "responder",
+    "claves": ["transferencia bancaria"],
+    "evidencia": "En tienda: efectivo en pesos colombianos (COP), transferencia bancaria, tarjetas de débito y crédito (Visa, Mastercard), y daviplata.",
+    "respuesta_ideal": "Sí, aceptamos transferencia bancaria. También efectivo, tarjetas y daviplata."
+  },
+  {
+    "cliente": "Compré una imagen y llegó rota. ¿Qué hago?",
+    "tipo": "instruccion",
+    "accion": "responder",
+    "claves": ["dañado", "máximo 5 días", "foto"],
+    "evidencia": "Solo aceptamos devoluciones si llega dañado (máximo 5 días). Se debe probar con foto.",
+    "respuesta_ideal": "Envíanos una foto del daño dentro de 5 días de recibirlo y veremos qué solución es posible. Asegúrate de tomar las fotos antes de abrir el paquete."
+  },
+  {
+    "cliente": "Quiero un cristo de madera. ¿Cuánto vale?",
+    "tipo": "directa",
+    "accion": "responder",
+    "claves": ["$60.000 - $180.000 COP", "Cristo de madera tallada"],
+    "evidencia": "Cristos de madera tallada (varios tamaños): $60.000 - $180.000 COP",
+    "respuesta_ideal": "Los cristos de madera tallada cuestan entre $60.000 y $180.000 COP, según el tamaño."
+  },
+  {
+    "cliente": "¿Cómo pido un envío dentro de Popayán?",
+    "tipo": "combinada",
+    "accion": "responder",
+    "claves": ["gratis con compra mayor a $50.000 COP", "dentro de Popayán"],
+    "evidencia": "Dentro de Popayán: envío gratis con compra mayor a $50.000 COP.",
+    "respuesta_ideal": "Si compras por más de $50.000 COP, el envío es gratis en Popayán. Menos de eso, pregunta por el costo."
+  },
+  {
+    "cliente": "¿Venden velas?",
+    "tipo": "si_no",
+    "accion": "responder",
+    "claves": ["velas"],
+    "evidencia": "Velas de cera natural (20 cm): $4.500 COP; Vela aromática de iglesia (aroma a incienso): $8.000 COP; Vela de múltiples santos: $10.000 COP",
+    "respuesta_ideal": "Sí, vendemos velas. Tenemos de cera natural desde $4.500 COP, aromáticas y de múltiples santos."
+  },
+  {
+    "cliente": "¿Cuánto tarda un envío a Cali?",
+    "tipo": "directa",
+    "accion": "responder",
+    "claves": ["$12.000 - $18.000 COP", "fuera del Cauca"],
+    "evidencia": "Fuera del Cauca, dentro de Colombia: $12.000 - $18.000 COP (según destino)",
+    "respuesta_ideal": "Un envío a Cali cuesta entre $12.000 y $18.000 COP. El tiempo normal es 3-5 días dentro de Colombia."
+  },
+  {
+    "cliente": "¿Qué santo rezar para un examen?",
+    "tipo": "instruccion",
+    "accion": "derivar",
+    "claves": [],
+    "evidencia": "NO HAGAS RECOMENDACIONES ESPIRITUALES",
+    "respuesta_ideal": "Esa es una pregunta hermosa, pero es mejor que la hagas con tu sacerdote o pastor. Yo puedo ayudarte a encontrar la imagen o rosario que necesites, pero la orientación espiritual la deben dar ellos."
+  },
+  {
+    "cliente": "Quiero comprar un medallón de San Cristóbal para mi auto.",
+    "tipo": "directa",
+    "accion": "responder",
+    "claves": ["$7.500 COP"],
+    "evidencia": "Medallones de san Cristóbal para auto: $7.500 COP",
+    "respuesta_ideal": "Excelente, tenemos medallones de san Cristóbal para auto a $7.500 COP."
+  },
+  {
+    "cliente": "¿Venden palmas benditas todo el año?",
+    "tipo": "si_no",
+    "accion": "responder",
+    "claves": ["domingos de Ramos", "estacionales"],
+    "evidencia": "Palmas benditas: $2.000 COP (domingos de Ramos)",
+    "respuesta_ideal": "No, las palmas benditas solo las vendemos en el domingo de Ramos. Son un artículo estacional."
+  },
+  {
+    "cliente": "¿Es auténtica la reliquia que venden?",
+    "tipo": "sin_respuesta",
+    "accion": "derivar",
+    "claves": [],
+    "evidencia": null,
+    "respuesta_ideal": "Para preguntas sobre autenticidad y certificación, es mejor que llames directamente: +57 2 8241156. Los dueños te darán toda la información."
+  },
+  {
+    "cliente": "¿Puedo devolver un rosario de vidrio que no me gustó?",
+    "tipo": "si_no",
+    "accion": "responder",
+    "claves": ["cambio de opinión", "no se devuelven"],
+    "evidencia": "Los artículos religiosos no se devuelven por cambio de opinión. Solo aceptamos devoluciones si llega dañado (máximo 5 días).",
+    "respuesta_ideal": "No, nuestra política es no devolver artículos que se compran en buen estado. Solo aceptamos cambios si llega dañado. Pero toma tu tiempo en la tienda para elegir bien."
+  },
+  {
+    "cliente": "Buenos días, ¿cómo están?",
+    "tipo": "charla",
+    "accion": "charla",
+    "claves": [],
+    "evidencia": null,
+    "respuesta_ideal": "Buenos días, muy bien. Bienvenido a Tienda Sagrada. ¿En qué puedo ayudarte?"
+  },
+  {
+    "cliente": "Voy a enviar un regalo a Ecuador. ¿Cuánto más cuesta?",
+    "tipo": "combinada",
+    "accion": "responder",
+    "claves": ["$45 USD", "internacional", "$100.000 COP"],
+    "evidencia": "Internacional: $45 USD mínimo (solo para pedidos mayores a $100.000 COP). Tiempo: 15-30 días.",
+    "respuesta_ideal": "Para envíos internacionales cobro $45 USD, pero solo si el pedido es mayor a $100.000 COP. Tarda entre 15 y 30 días."
+  }
+]

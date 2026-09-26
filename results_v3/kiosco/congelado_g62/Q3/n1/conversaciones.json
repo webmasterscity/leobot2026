@@ -1,0 +1,154 @@
+[
+  {
+    "cliente": "Hola, ¿a qué hora cierran hoy?",
+    "tipo": "directa",
+    "accion": "responder",
+    "claves": ["9:00 a.m. - 6:00 p.m.", "lunes a jueves"],
+    "evidencia": "De lunes a jueves: 9:00 a.m. - 6:00 p.m.",
+    "respuesta_ideal": "Hola, hoy es lunes así que cerramos a las 6:00 p.m. Todavía tenemos tiempo para atenderte."
+  },
+  {
+    "cliente": "¿Cuánto cuesta un chocolate de 50 gramos?",
+    "tipo": "directa",
+    "accion": "responder",
+    "claves": ["$3,50"],
+    "evidencia": "Barras de 50 g: $3,50",
+    "respuesta_ideal": "Una barra de 50 gramos cuesta $3,50."
+  },
+  {
+    "cliente": "¿Hacen envíos a Quito?",
+    "tipo": "sin_respuesta",
+    "accion": "abstenerse",
+    "claves": [],
+    "evidencia": "No hacemos envíos nacionales ni internacionales. Vendemos solo en la tienda física.",
+    "respuesta_ideal": "No, desafortunadamente solo vendemos en la tienda física aquí en Mindo. Si puedes visitarnos, con gusto te mostramos nuestros productos."
+  },
+  {
+    "cliente": "¿Se puede llegar en tour a la fábrica los domingos?",
+    "tipo": "si_no",
+    "accion": "responder",
+    "claves": ["lunes a sábado", "no hay tours ese día"],
+    "evidencia": "Ofrecemos tours de la fábrica de lunes a sábado.",
+    "respuesta_ideal": "No, los tours de la fábrica son de lunes a sábado. El domingo cerramos los tours, pero la tienda está abierta de 10 a.m. a 5 p.m."
+  },
+  {
+    "cliente": "Mañana vamos 12 adultos y 3 niños de 8 años. ¿Cuánto saldría el tour?",
+    "tipo": "combinada",
+    "accion": "responder",
+    "claves": ["$6,50 por adulto", "$4,00", "12 adultos", "3 niños"],
+    "evidencia": "Grupos de 10 o más personas: $6,50 por adulto; Niños de 6 a 12 años: $4,00",
+    "respuesta_ideal": "Perfecto, como son 12 adultos, les aplico el descuento de grupo: $6,50 por adulto. Los tres niños pagan $4,00 cada uno. En total serían $102 más $12 = $114."
+  },
+  {
+    "cliente": "¿Necesitamos reservar con anticipación?",
+    "tipo": "seguimiento",
+    "accion": "responder",
+    "claves": ["llamar", "tours@nubemindo.ec", "2 días de anticipación"],
+    "evidencia": "Reservas: Llamar al +593 2 290-0123 o enviar correo a tours@nubemindo.ec; inglés disponible con 2 días de anticipación",
+    "respuesta_ideal": "Sí, es mejor reservar. Puedes llamar al +593 2 290-0123 o escribir a tours@nubemindo.ec. Si necesitan guía en inglés, avísanos con al menos 2 días de anticipación."
+  },
+  {
+    "cliente": "¿A qué hora sale el próximo tour?",
+    "tipo": "directa",
+    "accion": "responder",
+    "claves": ["10:00 a.m.", "12:00 p.m.", "2:00 p.m.", "4:00 p.m."],
+    "evidencia": "Horarios de tour: 10:00 a.m., 12:00 p.m., 2:00 p.m., 4:00 p.m.",
+    "respuesta_ideal": "Tenemos salidas a las 10:00 a.m., 12:00 p.m., 2:00 p.m. y 4:00 p.m. ¿Cuál te viene mejor?"
+  },
+  {
+    "cliente": "¿El chocolate de ustedes tiene frutos secos adentro?",
+    "tipo": "sin_respuesta",
+    "accion": "derivar",
+    "claves": [],
+    "evidencia": "Nuestro chocolate se elabora en instalaciones que procesan frutos secos (almendras, maní). Información detallada sobre ingredientes: disponible en la tienda con el encargado.",
+    "respuesta_ideal": "Es importante que hables directamente con nuestro encargado en la tienda sobre eso. Nuestro chocolate se hace en un lugar donde procesamos frutos secos, así que podría haber trazas. Llama al +593 2 290-0123 para más detalles sobre los ingredientes exactos."
+  },
+  {
+    "cliente": "¿Venden caramelos de chocolate?",
+    "tipo": "sin_respuesta",
+    "accion": "abstenerse",
+    "claves": [],
+    "evidencia": null,
+    "respuesta_ideal": "No tengo información sobre eso. En la tienda vendemos barras, trufas, cacao en polvo y souvenirs. Si quieres saber qué otras cosas tenemos, te recomiendo que llames o visites en persona."
+  },
+  {
+    "cliente": "¿Hacen chocolates sin azúcar?",
+    "tipo": "si_no",
+    "accion": "responder",
+    "claves": ["Tabletas de chocolate sin azúcar (85 g): $4,50"],
+    "evidencia": "Tabletas de chocolate sin azúcar (85 g): $4,50",
+    "respuesta_ideal": "Sí, tenemos tabletas sin azúcar de 85 gramos a $4,50 cada una."
+  },
+  {
+    "cliente": "¿Cuánto tiempo dura el tour?",
+    "tipo": "directa",
+    "accion": "responder",
+    "claves": ["45 minutos"],
+    "evidencia": "El tour dura 45 minutos.",
+    "respuesta_ideal": "El tour dura 45 minutos. Es suficiente para ver todo el proceso y una pequeña charla sobre nuestros métodos."
+  },
+  {
+    "cliente": "¿Se puede grabar video en la fábrica?",
+    "tipo": "si_no",
+    "accion": "responder",
+    "claves": ["No está permitido", "sin permiso"],
+    "evidencia": "No está permitido tocar la maquinaria ni grabar video sin permiso.",
+    "respuesta_ideal": "No está permitido grabar video sin permiso. Puedes preguntar a nuestro guía durante el tour si hay alguna excepción."
+  },
+  {
+    "cliente": "Necesito 20 barras de chocolate para un regalo corporativo. ¿Cuál es el precio por mayor?",
+    "tipo": "instruccion",
+    "accion": "derivar",
+    "claves": [],
+    "evidencia": "Si necesita un pedido personalizado de chocolate para un evento (cumpleaños, boda, regalo corporativo), debe venir en persona para discutir el diseño y los detalles.",
+    "respuesta_ideal": "Para pedidos especiales y corporativos, tienes que venir a la tienda a hablar directamente con el gerente. Ellos pueden ofrecerte opciones personalizadas y precios ajustados. El tiempo mínimo es 7 días."
+  },
+  {
+    "cliente": "¿Se aceptan tarjetas en el tour?",
+    "tipo": "si_no",
+    "accion": "responder",
+    "claves": ["tarjeta", "pago en efectivo o tarjeta al momento"],
+    "evidencia": "Para las visitas: pago en efectivo o tarjeta al momento de presentarse.",
+    "respuesta_ideal": "Sí, aceptamos efectivo o tarjeta de débito y crédito al momento de hacer el tour."
+  },
+  {
+    "cliente": "Hola, ¿cómo están?",
+    "tipo": "charla",
+    "accion": "charla",
+    "claves": [],
+    "evidencia": null,
+    "respuesta_ideal": "Hola, muy bien. Bienvenido a Nube Mindo. ¿En qué te ayudamos?"
+  },
+  {
+    "cliente": "¿Y si somos un grupo de 8 adultos, cuánto pagamos?",
+    "tipo": "combinada",
+    "accion": "responder",
+    "claves": ["$8,00", "8 adultos", "no aplica descuento"],
+    "evidencia": "Adultos: $8,00; Grupos de 10 o más personas: $6,50 por adulto",
+    "respuesta_ideal": "Como son 8 adultos, no aplica el descuento de grupo. Cada adulto paga $8,00. En total serían $64."
+  },
+  {
+    "cliente": "¿Qué día no abren?",
+    "tipo": "si_no",
+    "accion": "responder",
+    "claves": ["25 de diciembre", "1 de enero"],
+    "evidencia": "Cerrado los 25 de diciembre y 1 de enero.",
+    "respuesta_ideal": "Cerramos solo los 25 de diciembre y 1 de enero. El resto del año estamos abiertos según el horario usual."
+  },
+  {
+    "cliente": "¿Qué incluye la muestra en el tour?",
+    "tipo": "directa",
+    "accion": "responder",
+    "claves": ["25 g", "chocolate recién hecho"],
+    "evidencia": "Una muestra de chocolate recién hecho (aprox. 25 g)",
+    "respuesta_ideal": "Incluye una muestra de chocolate que acabamos de hacer, de aproximadamente 25 gramos. Es para que pruebes el sabor fresco de nuestra producción."
+  },
+  {
+    "cliente": "¿Puedo llevar mi propio chocolate para que lo calienten?",
+    "tipo": "sin_respuesta",
+    "accion": "abstenerse",
+    "claves": [],
+    "evidencia": null,
+    "respuesta_ideal": "No tengo información sobre eso. Puedes llamar a la tienda para preguntar si es posible. Nuestro número es +593 2 290-0123."
+  }
+]

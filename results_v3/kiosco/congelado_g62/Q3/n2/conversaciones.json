@@ -1,0 +1,162 @@
+[
+  {
+    "cliente": "Mi auto no enciende. Necesito que me halen",
+    "tipo": "charla",
+    "accion": "derivar",
+    "claves": [],
+    "evidencia": "Teléfono de emergencia: +52 664-555-0123",
+    "respuesta_ideal": "Esto es un servicio de auxilio. Por favor llama ya al +52 664-555-0123 o envía WhatsApp al +52 664-555-0124. Nuestros operadores te ayudarán de inmediato. ¿Dónde estás exactamente?"
+  },
+  {
+    "cliente": "¿Cuánto cuesta remolcar un automóvil?",
+    "tipo": "directa",
+    "accion": "responder",
+    "claves": ["$85,00", "automóvil"],
+    "evidencia": "Automóvil: $85,00",
+    "respuesta_ideal": "Remolcar un automóvil cuesta $85,00 dentro del área de cobertura."
+  },
+  {
+    "cliente": "¿Se puede pagar con tarjeta?",
+    "tipo": "si_no",
+    "accion": "responder",
+    "claves": ["tarjetas de débito y crédito", "Visa, Mastercard"],
+    "evidencia": "Aceptamos efectivo en pesos mexicanos (MXN) y dólares estadounidenses (USD). También tarjetas de débito y crédito (Visa, Mastercard).",
+    "respuesta_ideal": "Sí, aceptamos tarjetas de débito y crédito: Visa y Mastercard. También efectivo en pesos o dólares."
+  },
+  {
+    "cliente": "¿Cuál es el número para llamar?",
+    "tipo": "directa",
+    "accion": "responder",
+    "claves": ["+52 664-555-0123"],
+    "evidencia": "Teléfono de emergencia: +52 664-555-0123",
+    "respuesta_ideal": "El número de emergencia es +52 664-555-0123. También puedes escribir por WhatsApp al +52 664-555-0124."
+  },
+  {
+    "cliente": "¿Tienen servicio a Ensenada?",
+    "tipo": "sin_respuesta",
+    "accion": "derivar",
+    "claves": [],
+    "evidencia": "Tijuana y municipios circundantes (Rosarito, Tecate) dentro de 25 km del centro de Tijuana. Viajes más allá: consultar tarifa especial.",
+    "respuesta_ideal": "Ensenada está fuera de nuestro área habitual de cobertura. Llama al +52 664-555-0123 para preguntar por una tarifa especial si es urgente."
+  },
+  {
+    "cliente": "Necesito cambiar una llanta y traigo llanta de repuesto",
+    "tipo": "directa",
+    "accion": "responder",
+    "claves": ["$30,00", "con llanta de repuesto"],
+    "evidencia": "Con llanta de repuesto: $30,00",
+    "respuesta_ideal": "El cambio de llanta con tu llanta de repuesto cuesta $30,00."
+  },
+  {
+    "cliente": "¿Y si no tengo llanta?",
+    "tipo": "seguimiento",
+    "accion": "responder",
+    "claves": ["$55,00", "sin llanta de repuesto"],
+    "evidencia": "Sin llanta de repuesto (suministramos la llanta): $55,00",
+    "respuesta_ideal": "Si no tienes llanta, nosotros te la suministramos y el costo es $55,00."
+  },
+  {
+    "cliente": "¿Cuánto cobran por un salto de corriente?",
+    "tipo": "directa",
+    "accion": "responder",
+    "claves": ["$25,00"],
+    "evidencia": "Salto de corriente: $25,00",
+    "respuesta_ideal": "Un salto de corriente cuesta $25,00. Usamos nuestra batería de grúa."
+  },
+  {
+    "cliente": "¿Cuál es el precio para remolcar una camioneta?",
+    "tipo": "directa",
+    "accion": "responder",
+    "claves": ["$105,00", "camioneta"],
+    "evidencia": "Camioneta o SUV: $105,00",
+    "respuesta_ideal": "Remolcar una camioneta o SUV cuesta $105,00."
+  },
+  {
+    "cliente": "¿Qué pasa si están muy ocupados y tardo más de una hora en remolcar?",
+    "tipo": "combinada",
+    "accion": "responder",
+    "claves": ["$25,00", "hora adicional", "por encima de 1 hora"],
+    "evidencia": "Tiempo de espera por encima de 1 hora: $25,00 / hora adicional",
+    "respuesta_ideal": "Si el servicio tarda más de una hora, cada hora adicional cuesta $25,00."
+  },
+  {
+    "cliente": "¿Aceptan dólares?",
+    "tipo": "si_no",
+    "accion": "responder",
+    "claves": ["dólares estadounidenses", "17 pesos por dólar"],
+    "evidencia": "Aceptamos efectivo en pesos mexicanos (MXN) y dólares estadounidenses (USD). Nota: para pagos en USD, el tipo de cambio es de 17 pesos por dólar.",
+    "respuesta_ideal": "Sí, aceptamos dólares estadounidenses. El cambio que usamos es 17 pesos por dólar."
+  },
+  {
+    "cliente": "¿Necesito papeles para que me remolquen?",
+    "tipo": "instruccion",
+    "accion": "responder",
+    "claves": ["identificación válida", "licencia de conducir", "dirección de destino"],
+    "evidencia": "Para remolcar te pedimos: Identificación válida (licencia de conducir, pasaporte o credencial); Dirección de destino clara; Si el vehículo no es tuyo, documento que pruebe que tienes autorización",
+    "respuesta_ideal": "Necesitas identificación válida (licencia, pasaporte), la dirección a dónde quieres que vaya el auto, y si no es tu vehículo, que pruebes que tienes autorización."
+  },
+  {
+    "cliente": "¿Cuánto tiempo se tarda en llegar?",
+    "tipo": "directa",
+    "accion": "responder",
+    "claves": ["10-20 minutos", "promedio", "depende del tráfico"],
+    "evidencia": "Dentro de la ciudad de Tijuana: respuesta en 10-20 minutos promedio. En horas pico (7-9 a.m., 5-7 p.m.): sumar 10-15 minutos a la espera.",
+    "respuesta_ideal": "En la ciudad normalmente tardamos 10-20 minutos. Si es hora pico puede ser un poco más. La ubicación exacta importa mucho."
+  },
+  {
+    "cliente": "Mi moto se quedó sin gasolina en la carretera. ¿Cuánto cuesta?",
+    "tipo": "directa",
+    "accion": "responder",
+    "claves": ["$20,00", "gasolina", "hasta 5 galones"],
+    "evidencia": "Gasolina (hasta 5 galones): $20,00",
+    "respuesta_ideal": "Traer gasolina cuesta $20,00 por hasta 5 galones."
+  },
+  {
+    "cliente": "Necesito más de 5 galones. ¿Cuánto sería?",
+    "tipo": "seguimiento",
+    "accion": "responder",
+    "claves": ["$3,50", "galón adicional"],
+    "evidencia": "Galón adicional: $3,50",
+    "respuesta_ideal": "El primero cuesta $20,00. Cada galón adicional después de los 5 es $3,50."
+  },
+  {
+    "cliente": "¿Pueden abrir una puerta si dejo las llaves adentro?",
+    "tipo": "si_no",
+    "accion": "responder",
+    "claves": ["$50,00", "apertura de puerta"],
+    "evidencia": "Apertura de puerta con llave adentro: $50,00",
+    "respuesta_ideal": "Sí, podemos abrir la puerta. El servicio cuesta $50,00."
+  },
+  {
+    "cliente": "¿Debo contratar un seguro adicional de transporte?",
+    "tipo": "sin_respuesta",
+    "accion": "abstenerse",
+    "claves": [],
+    "evidencia": "Nuestros vehículos tienen seguro. Si deseas que tu vehículo remolcado esté cubierto por una póliza adicional (responsabilidad civil), puedes contratar un seguro de tránsito por $15,00 por remolque.",
+    "respuesta_ideal": "Nuestros vehículos están asegurados. Si quieres cobertura adicional para tu auto, puedes contratar un seguro de tránsito por $15,00. Pregunta en el momento del servicio."
+  },
+  {
+    "cliente": "¿Ustedes tienen servicio 24 horas?",
+    "tipo": "si_no",
+    "accion": "responder",
+    "claves": ["24 horas", "7 días a la semana"],
+    "evidencia": "Disponible 24 horas, 7 días a la semana",
+    "respuesta_ideal": "Sí, estamos disponibles 24 horas, 7 días a la semana."
+  },
+  {
+    "cliente": "Tengo un remolque averiado. ¿Lo pueden remolcar?",
+    "tipo": "sin_respuesta",
+    "accion": "derivar",
+    "claves": [],
+    "evidencia": null,
+    "respuesta_ideal": "Para remolques especiales, tendrías que llamar a la gerencia: +52 664-555-0123. Ellos te dirán si es posible y qué cuesta."
+  },
+  {
+    "cliente": "¿Atienden la ruta a Tecate?",
+    "tipo": "si_no",
+    "accion": "responder",
+    "claves": ["Tecate", "municipios circundantes", "25 km"],
+    "evidencia": "Tijuana y municipios circundantes (Rosarito, Tecate) dentro de 25 km del centro de Tijuana.",
+    "respuesta_ideal": "Sí, Tecate está en nuestro área de cobertura. Aunque puede tardar más tiempo dependiendo de dónde exactamente estés."
+  }
+]

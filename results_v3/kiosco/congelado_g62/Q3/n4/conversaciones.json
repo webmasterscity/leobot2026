@@ -1,0 +1,170 @@
+[
+  {
+    "cliente": "¿Cuánto cuesta alquilar un kayak por 2 horas?",
+    "tipo": "directa",
+    "accion": "responder",
+    "claves": ["$40,00 USD", "kayak individual", "2 horas"],
+    "evidencia": "Kayak individual (1 persona): 2 horas: $40,00 USD",
+    "respuesta_ideal": "Un kayak individual por 2 horas cuesta $40,00 USD."
+  },
+  {
+    "cliente": "¿Se necesita saber nadar para kayakear?",
+    "tipo": "si_no",
+    "accion": "responder",
+    "claves": ["saber nadar", "obligatorio", "requisito"],
+    "evidencia": "OBLIGATORIO: Saber nadar. Preguntaremos en el punto de alquiler.",
+    "respuesta_ideal": "Sí, es obligatorio saber nadar. Lo verificamos cuando llegas al punto de alquiler."
+  },
+  {
+    "cliente": "¿Puedo alquilar un kayak sin chaleco salvavidas?",
+    "tipo": "si_no",
+    "accion": "responder",
+    "claves": ["obligatorio", "chaleco salvavidas", "no excepciones"],
+    "evidencia": "Usar chaleco salvavidas (obligatorio).",
+    "respuesta_ideal": "No, el chaleco salvavidas es obligatorio en todo momento. No hay excepciones."
+  },
+  {
+    "cliente": "¿Cuánto cuesta un kayak doble por el día completo?",
+    "tipo": "directa",
+    "accion": "responder",
+    "claves": ["$180,00 USD", "kayak doble", "8 horas"],
+    "evidencia": "Kayak doble (2 personas): Día completo (8 horas): $180,00 USD",
+    "respuesta_ideal": "Un kayak doble por día completo (8 horas) cuesta $180,00 USD."
+  },
+  {
+    "cliente": "Tengo 10 años. ¿Puedo kayakear?",
+    "tipo": "si_no",
+    "accion": "responder",
+    "claves": ["al menos 12 años", "no se alquilan kayaks"],
+    "evidencia": "Menores de 12 años: no se alquilan kayaks.",
+    "respuesta_ideal": "Lo siento, nuestro requisito es tener al menos 12 años. Quizás en unos años puedas volver."
+  },
+  {
+    "cliente": "Voy con mi hijo de 14. ¿A él le puedo alquilar?",
+    "tipo": "instruccion",
+    "accion": "responder",
+    "claves": ["adulto responsable presente", "todo el tiempo en el agua", "14 años"],
+    "evidencia": "Menores de 18 años solo con adulto responsable presente durante todo el tiempo en el agua.",
+    "respuesta_ideal": "Sí, pero necesitas estar con él TODO el tiempo en el agua. Un adulto responsable debe estar presente siempre."
+  },
+  {
+    "cliente": "¿A qué hora puedo hacer kayaking?",
+    "tipo": "directa",
+    "accion": "responder",
+    "claves": ["7:00 a.m. - 5:00 p.m."],
+    "evidencia": "Todos los días: 7:00 a.m. - 5:00 p.m.",
+    "respuesta_ideal": "Operamos de 7:00 a.m. a 5:00 p.m. No se permite kayaking después del atardecer."
+  },
+  {
+    "cliente": "¿Qué pasa si estoy en febrero, llueve mucho?",
+    "tipo": "sin_respuesta",
+    "accion": "abstenerse",
+    "claves": [],
+    "evidencia": "En temporada de lluvias (noviembre-marzo) los tours pueden cancelarse por mal tiempo.",
+    "respuesta_ideal": "Febrero está en temporada de lluvias, así que hay riesgo de cancelación por mal tiempo. Mejor considera venir en julio-agosto cuando el clima es más estable."
+  },
+  {
+    "cliente": "¿Cuál es el peso mínimo y máximo para kayakear?",
+    "tipo": "directa",
+    "accion": "responder",
+    "claves": ["40 kg", "120 kg"],
+    "evidencia": "Peso mínimo 40 kg, peso máximo 120 kg por kayakista.",
+    "respuesta_ideal": "El peso mínimo es 40 kg y el máximo 120 kg por persona."
+  },
+  {
+    "cliente": "¿Incluye guía el alquiler?",
+    "tipo": "si_no",
+    "accion": "responder",
+    "claves": ["no incluido", "guía profesional", "$35 USD"],
+    "evidencia": "No incluido: Guía profesional (disponible por $35 USD / grupo de hasta 5 kayaks)",
+    "respuesta_ideal": "No está incluido. El guía profesional cuesta $35 USD adicionales por grupo de hasta 5 kayaks."
+  },
+  {
+    "cliente": "¿Necesito pagar un depósito?",
+    "tipo": "si_no",
+    "accion": "responder",
+    "claves": ["depósito", "$50 USD", "devuelve al regreso"],
+    "evidencia": "Se requiere depósito en efectivo o tarjeta: $50 USD por kayak. Se devuelve al regreso del kayak en perfecto estado.",
+    "respuesta_ideal": "Sí, hay un depósito de $50 USD por kayak que se devuelve cuando regreses el kayak en buen estado."
+  },
+  {
+    "cliente": "¿Cuánto cuesta 4 kayaks individuales por 4 horas?",
+    "tipo": "combinada",
+    "accion": "responder",
+    "claves": ["$70,00 USD", "4 horas", "kayak individual"],
+    "evidencia": "Kayak individual: 4 horas: $70,00 USD",
+    "respuesta_ideal": "Cada kayak individual por 4 horas cuesta $70,00 USD. Para 4 kayaks serían $280,00 USD en total."
+  },
+  {
+    "cliente": "¿Puedo beber cerveza mientras kayakeo?",
+    "tipo": "si_no",
+    "accion": "responder",
+    "claves": ["no se permite", "alcohol"],
+    "evidencia": "No se permite beber alcohol antes ni durante el kayaking.",
+    "respuesta_ideal": "No, está prohibido beber alcohol antes y durante el kayaking. Es por tu seguridad."
+  },
+  {
+    "cliente": "¿A qué hora se pone el sol en julio?",
+    "tipo": "directa",
+    "accion": "responder",
+    "claves": ["5:15 p.m.", "julio"],
+    "evidencia": "Durante junio-julio-agosto, el sol se pone alrededor de las 5:15 p.m.",
+    "respuesta_ideal": "En julio, el sol se pone alrededor de las 5:15 p.m. Así que si terminas tu alquiler cerca de esa hora, tendrás una hermosa vista."
+  },
+  {
+    "cliente": "¿Cuál es la mejor temporada para kayakear?",
+    "tipo": "directa",
+    "accion": "responder",
+    "claves": ["julio-agosto", "clima estable"],
+    "evidencia": "Julio-agosto es la temporada más estable.",
+    "respuesta_ideal": "La mejor temporada es julio-agosto cuando el clima es más estable. Evita noviembre a marzo que es época de lluvia."
+  },
+  {
+    "cliente": "¿Aceptan tarjeta de crédito?",
+    "tipo": "si_no",
+    "accion": "responder",
+    "claves": ["tarjeta de débito y crédito", "Visa, Mastercard"],
+    "evidencia": "En la base: efectivo USD o PEN (soles peruanos), tarjeta de débito y crédito (Visa, Mastercard), y Yape/Plin.",
+    "respuesta_ideal": "Sí, aceptamos Visa y Mastercard. También efectivo en USD o soles peruanos, y billeteras digitales como Yape."
+  },
+  {
+    "cliente": "¿Quiero llevar 15 personas. ¿Hay descuento?",
+    "tipo": "sin_respuesta",
+    "accion": "abstenerse",
+    "claves": [],
+    "evidencia": null,
+    "respuesta_ideal": "Para grupos grandes, lo mejor es que llames directamente al +51 51-368790. Podemos ver opciones de descuento."
+  },
+  {
+    "cliente": "¿Hay kayaks para 3 personas?",
+    "tipo": "si_no",
+    "accion": "responder",
+    "claves": ["Kayak triple", "disponible bajo pedido"],
+    "evidencia": "Kayak triple (3 personas, disponible bajo pedido): Contactar para disponibilidad y precio.",
+    "respuesta_ideal": "Sí, tenemos kayak triple pero necesitas reservarlo con anticipación. Llama para confirmar disponibilidad."
+  },
+  {
+    "cliente": "¿Qué pasa si daño el kayak?",
+    "tipo": "sin_respuesta",
+    "accion": "responder",
+    "claves": ["grieta pequeña", "$15 USD", "grieta grande", "$80 USD"],
+    "evidencia": "Rayones menores, desgaste normal: sin cargo. Grieta pequeña: $15 USD. Grieta grande o agujero: $80 USD mínimo.",
+    "respuesta_ideal": "Los rayones normales no cuestan nada. Una grieta pequeña son $15 USD. Una grieta grande mínimo $80 USD. Daños intencionales no los cubre el depósito."
+  },
+  {
+    "cliente": "¡Hola! ¿Todavía atienden hoy?",
+    "tipo": "charla",
+    "accion": "charla",
+    "claves": [],
+    "evidencia": null,
+    "respuesta_ideal": "¡Hola! Sí, operamos hasta las 5:00 p.m. ¿En qué te ayudamos hoy?"
+  },
+  {
+    "cliente": "¿Para cuándo puedo hacer transferencia si venimos 12 personas?",
+    "tipo": "directa",
+    "accion": "responder",
+    "claves": ["48 horas de anticipación", "transferencia bancaria"],
+    "evidencia": "Transferencia bancaria: solo para grupos de 10 o más personas, con 48 horas de anticipación.",
+    "respuesta_ideal": "Para un grupo de 12, sí pueden pagar por transferencia. Pero necesitan hacerla con 48 horas de anticipación, así que llamen ya."
+  }
+]
