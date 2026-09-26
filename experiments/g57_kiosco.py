@@ -128,7 +128,18 @@ def renamed(text: str, mapping: dict) -> str:
     return re.sub(r'\w+', lambda m: mapping.get(m.group(0), m.group(0)), str(text)) if text else text
 
 
-def run(base: Path, folders, system: str, off=(), rename=False, other=False, restart=False, strict=False, on=()):
+def wrapped(text: str, width: int) -> str:
+    """G-63: the business text broken into lines of at most `width` characters, at word boundaries (a mechanical,
+    declared presentation, the same for every system)."""
+    import textwrap
+    if not width:
+        return text
+    return '\n'.join('\n'.join(textwrap.wrap(line, width, break_long_words=False, break_on_hyphens=False))
+                     if len(line) > width else line for line in str(text).split('\n'))
+
+
+def run(base: Path, folders, system: str, off=(), rename=False, other=False, restart=False, strict=False, on=(),
+        wrap=0):
     rows = []
     template = Bot.load(base) if system == 'g57' else None
     items = list(businesses(folders))
@@ -137,6 +148,7 @@ def run(base: Path, folders, system: str, off=(), rename=False, other=False, res
                                      [[{**turn, 'cliente': renamed(turn['cliente'], m), 'mapa': m} for turn in conv]
                                       for conv in convs]))(name_map([text, ins] + [t['cliente'] for c in convs for t in c], strict)))
                  for name, text, ins, convs in items]
+    items = [(name, wrapped(text, wrap), ins, convs) for name, text, ins, convs in items]
     for index, (name, text, instructions, conversations) in enumerate(items):
         if other:
             # Control: the questions of one business against the text of the next one.
@@ -210,13 +222,15 @@ def totals(rows) -> dict:
 
 def main():
     args = sys.argv[1:]
-    flags = {a for a in args if a.startswith('--') and a not in ('--sistema', '--apagar')}
+    valued = ('--sistema', '--apagar', '--partir')
+    flags = {a for a in args if a.startswith('--') and a not in valued}
     system = args[args.index('--sistema') + 1] if '--sistema' in args else 'g57'
     off = tuple(x for x in (args[args.index('--apagar') + 1].split(',') if '--apagar' in args else []) if x)
-    positional = [a for i, a in enumerate(args) if not a.startswith('--') and (i == 0 or args[i - 1] not in ('--sistema', '--apagar'))]
+    wrap = int(args[args.index('--partir') + 1]) if '--partir' in args else 0
+    positional = [a for i, a in enumerate(args) if not a.startswith('--') and (i == 0 or args[i - 1] not in valued)]
     base, out, folders = Path(positional[0]), Path(positional[1]), positional[2:]
     rows = run(base, folders, system, off, other='--otro-negocio' in flags, restart='--reinicio' in flags,
-               rename='--renombrar' in flags, strict='--estricto' in flags)
+               rename='--renombrar' in flags, strict='--estricto' in flags, wrap=wrap)
     report = {'sistema': system, 'apagados': list(off), 'base_sha256_16': hashlib.sha256(base.read_bytes()).hexdigest()[:16],
               'carpetas': folders, **totals(rows)}
     if '--respuestas' in flags and '--ciega' not in flags:
