@@ -51,6 +51,21 @@ Si la respuesta es no, no es prioridad. Si es sí, mídelo en el tablero AGI.
 
 **La evidencia es lo que convierte la ambición en logro.** Declarar AGI sin pruebas no acerca al objetivo: lo aleja, porque esconde lo que falta. Declara «solo falta educarlo», AGI o ASI en cuanto se cumplan los criterios de la sección 11; ni antes ni después.
 
+### Prioridad actual: el cerebro del kiosco (pedido del usuario, 2026-09-26)
+
+Leobot será el cerebro de kioscos con avatar que atienden a personas reales. Hasta que el usuario diga otra cosa, esta es la prioridad de trabajo:
+- se le carga en texto plano toda la información de un negocio (un hotel, un supermercado, una clínica…) y sus instrucciones;
+- responde cualquier pregunta relacionada de personas reales, con coherencia a lo largo de varios turnos;
+- no inventa: si el dato no está, lo dice o deriva a una persona;
+- sigue las instrucciones del negocio;
+- responde en milisegundos (regla 5.6);
+- funciona con cualquier negocio sin reglas por negocio, por sector ni por pregunta (regla 5.7);
+- ofrece una interfaz limpia y estable, para que otro proyecto del usuario la integre: cargar el contexto y las instrucciones; responder una pregunta con su historial.
+
+Se mide con documentos y preguntas nuevos, de negocios que Leobot nunca vio, redactados por verificadores independientes después de congelar el motor (reglas 5.2 y 5.10). Incluyen preguntas sin respuesta en el texto y un juez que distingue entre respuesta correcta y respaldada, abstención o derivación correcta, error e invención. El usuario pide la perfección: cada tag reporta la distancia honesta hasta ella.
+
+**No es a costa de la misión.** Cada mecanismo del kiosco debe ser una capacidad general que acerque a la meta: leer documentos, seguir entidades entre frases, calibrar cuándo callar, hacer cuentas con unidades, seguir instrucciones o conversar en varios turnos. Nunca un arreglo que solo sirva para negocios. Por eso se mide también en las pruebas generales (conversación, referencias, lectura y tablero AGI), y nada de eso puede retroceder. Las reglas de evidencia y las prohibiciones siguen iguales.
+
 ## 3. Arranque de cada sesión (siempre, antes de cualquier otra cosa)
 
 Esto no es una auditoría. No revises todo el repositorio ni vuelvas a verificar el trabajo de sesiones anteriores más allá de lo que se indica aquí.
@@ -348,7 +363,7 @@ AGI no aparece al final de la lista de fases: se construye y se mide desde el pr
 - comprensión de lenguaje abierto en español;
 - razonamiento deductivo, relacional y causal;
 - aprendizaje con pocos ejemplos y abstracción: incluye la versión pública más reciente de ARC-AGI si hay acceso a la red, porque mide justo esto y los LLM todavía tienen dificultades con ella;
-  - **En pausa por decisión del usuario (2026-09-25).** No se trabaja en ARC ni en acertijos de rejillas, y esta medida del tablero se salta: el usuario lo está haciendo aparte y después dirá cómo lo hizo. Mientras tanto, el foco es la conversación: resolver problemas dentro de ella y responder con naturalidad.
+  - **En pausa por decisión del usuario (2026-09-25).** No se trabaja en ARC ni en acertijos de rejillas, y esta medida del tablero se salta: el usuario lo está haciendo aparte y después dirá cómo lo hizo. Mientras tanto, el foco es la conversación: resolver problemas dentro de ella y responder con naturalidad; desde el 2026-09-26, en el caso concreto del kiosco (sección 2, «Prioridad actual»).
 - transferencia a dominios nuevos;
 - planificación y uso de herramientas;
 - conversación útil;
@@ -480,5 +495,7 @@ El objetivo es AGI y después ASI. Ejecuta la sección 3 (arranque) y continúa 
 Leobot es un programa que queremos que llegue a pensar tan bien como una persona muy inteligente, y después mejor. A eso se le llama inteligencia general (AGI, por su sigla en inglés), y al paso siguiente, superinteligencia (ASI). Tiene que lograrlo en un computador normal, contestando en milésimas de segundo y sin usar la técnica de los programas tipo ChatGPT.
 
 No buscamos que lo sepa todo. Todo el conocimiento del mundo no cabe en una máquina, y una persona muy lista tampoco lo sabe todo. Lo que la hace lista es que entiende, razona, reconoce sus errores y aprende rápido lo que le falta. Eso es lo que buscamos en Leobot. Si algún día lo único que le falta es que le enseñemos más, la construcción habrá cumplido su meta y desde ahí se trata de educarlo, como a un buen estudiante. Cuanto más aprenda, más lejos llegará.
+
+Por ahora, el trabajo se concentra en un uso concreto: que Leobot atienda un kiosco. Se le entrega en texto todo lo que un negocio sabe de sí mismo y sus normas, y tiene que contestar a los clientes sin inventar; si no sabe, lo dice o los pasa con una persona. Lo que aprenda para eso (leer, recordar de quién se habla, saber cuándo callar, hacer cuentas) debe servirle también para todo lo demás.
 
 Este archivo es el manual de trabajo que se lee al empezar cada sesión. Pide que cada avance se pruebe con exámenes honestos: exámenes que el programa no conocía, comparaciones justas y resultados guardados aunque salgan mal. Está prohibido hacer trampa, como esconderle las respuestas. Cuando falla, se anota si fue porque le faltaba un dato (se arregla enseñándole) o porque no era capaz (hay que mejorarlo). Y cuando haya que confirmar un logro importante, otro revisor que no participó en la construcción repite las pruebas por su cuenta.
