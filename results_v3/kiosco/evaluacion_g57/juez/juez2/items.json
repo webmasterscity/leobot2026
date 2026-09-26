@@ -1,0 +1,1556 @@
+[
+ {
+  "id": "i0015",
+  "negocio": "W1_n2",
+  "turnos_previos_del_cliente": [
+   "Vamos a ir mi hijo de 7 años y yo: él corte y yo corte con barba. ¿Cuánto sería todo?"
+  ],
+  "cliente": "¿Aceptan vales de despensa?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "Si le preguntan algo que no viene en la información del salón, no lo invente: diga que no tiene ese dato y que puede preguntar en recepción o al 33 3615 2290.",
+  "respuesta_ideal": "No tengo ese dato; puede confirmarlo en recepción o al 33 3615 2290.",
+  "respuesta_a_calificar": "Efectivo, tarjeta de débito y crédito Visa y Mastercard (no aceptamos American Express) y transferencia SPEI."
+ },
+ {
+  "id": "i0049",
+  "negocio": "W1_n2",
+  "turnos_previos_del_cliente": [
+   "Buenas tardes, ¿cuánto cuesta el corte de caballero?"
+  ],
+  "cliente": "¿y si también me arreglan la barba?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "$350"
+  ],
+  "evidencia": "Corte + barba\t$350",
+  "respuesta_ideal": "El corte con barba le sale en $350.",
+  "respuesta_a_calificar": "PRODUCTOS A LA VENTA: Pomada mate 100 g: Aceite para barba 30 ml; $280: $240"
+ },
+ {
+  "id": "i0122",
+  "negocio": "W1_n2",
+  "turnos_previos_del_cliente": [
+   "Hola, quiero hacerme un balayage, ¿en cuánto me sale?"
+  ],
+  "cliente": "¿y esa valoración tiene costo?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "gratuita"
+  ],
+  "evidencia": "* Requiere valoración previa gratuita con Marisol.",
+  "respuesta_ideal": "No, la valoración previa con Marisol es gratuita.",
+  "respuesta_a_calificar": "Requiere valoración previa gratuita con Marisol. El precio final depende del largo y del estado del cabello."
+ },
+ {
+  "id": "i0167",
+  "negocio": "W1_n2",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Buenas tardes, ¿cuánto cuesta el corte de caballero?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "$220"
+  ],
+  "evidencia": "Corte clásico\t$220",
+  "respuesta_ideal": "¡Bienvenido a La Tijera de Oro! El corte clásico cuesta $220.",
+  "respuesta_a_calificar": "Buenas tardes. Si no queda satisfecho con su corte, puede regresar dentro de los 5 días siguientes para un ajuste sin costo."
+ },
+ {
+  "id": "i0192",
+  "negocio": "W1_n2",
+  "turnos_previos_del_cliente": [
+   "Hola, quiero hacerme un balayage, ¿en cuánto me sale?",
+   "¿y esa valoración tiene costo?",
+   "¿hay que dejar algo de anticipo?",
+   "Y si mejor me hago la keratina y la pago con tarjeta de crédito, ¿la puedo pagar a meses?"
+  ],
+  "cliente": "nunca me e pintado el cabello, ¿me pueden hacer el tinte completo hoy mismo?",
+  "tipo": "instruccion",
+  "accion_esperada": "responder",
+  "claves": [
+   "prueba de sensibilidad",
+   "48 horas"
+  ],
+  "evidencia": "Si el cliente nunca se ha pintado el cabello con nosotros y pide tinte o decoloración, avísele que necesita una prueba de sensibilidad 48 horas antes del servicio.",
+  "respuesta_ideal": "Como es su primera vez, necesita una prueba de sensibilidad 48 horas antes del tinte, así que no sería hoy mismo; la cita la agenda por WhatsApp o en recepción.",
+  "respuesta_a_calificar": "Corte de dama, cabello corto (incluye lavado): Tinte completo; $320: desde $900 *"
+ },
+ {
+  "id": "i0233",
+  "negocio": "W1_n2",
+  "turnos_previos_del_cliente": [
+   "Buenas tardes, ¿cuánto cuesta el corte de caballero?",
+   "¿y si también me arreglan la barba?"
+  ],
+  "cliente": "¿Necesito sacar cita o puedo llegar así nomás?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "sin cita",
+   "según disponibilidad"
+  ],
+  "evidencia": "En barbería también atendemos sin cita, según disponibilidad; en estética trabajamos solo con cita.",
+  "respuesta_ideal": "En barbería puede llegar sin cita y lo atendemos según disponibilidad.",
+  "respuesta_a_calificar": "CITAS: Si cancela con menos de 24 h, el anticipo no se reembolsa."
+ },
+ {
+  "id": "i0236",
+  "negocio": "W1_n2",
+  "turnos_previos_del_cliente": [
+   "Vamos a ir mi hijo de 7 años y yo: él corte y yo corte con barba. ¿Cuánto sería todo?",
+   "¿Aceptan vales de despensa?"
+  ],
+  "cliente": "Oiga, y la tarjeta de puntos ¿cómo funciona?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "6 cortes",
+   "gratis"
+  ],
+  "evidencia": "Pida su tarjeta en recepción: por cada 6 cortes de barbería, el 7º es gratis. No aplica en cortes de estética ni en otros servicios.",
+  "respuesta_ideal": "La pide en recepción: por cada 6 cortes de barbería, el séptimo es gratis. No aplica en estética ni en otros servicios.",
+  "respuesta_a_calificar": "Efectivo, tarjeta de débito y crédito Visa y Mastercard (no aceptamos American Express) y transferencia SPEI."
+ },
+ {
+  "id": "i0237",
+  "negocio": "W1_n2",
+  "turnos_previos_del_cliente": [
+   "Ayer me hicieron un tinte y hoy traigo el cuero cabelludo con ronchas y me arde mucho, ¿qué me pongo?",
+   "tienen descuento para estudiantes?"
+  ],
+  "cliente": "Otra cosa: a mi esposo el corte que le hicieron el lunes le quedó disparejo, ¿qué puede hacer?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "5 días",
+   "sin costo"
+  ],
+  "evidencia": "Si no queda satisfecho con su corte, puede regresar dentro de los 5 días siguientes para un ajuste sin costo.",
+  "respuesta_ideal": "Su esposo puede regresar dentro de los 5 días siguientes al corte para un ajuste sin costo.",
+  "respuesta_a_calificar": "OTRAS POLÍTICAS: Si no queda satisfecho con su corte, puede regresar dentro de los 5 días siguientes para un ajuste sin costo."
+ },
+ {
+  "id": "i0250",
+  "negocio": "W1_n2",
+  "turnos_previos_del_cliente": [
+   "¿Tienen dónde estacionarse?",
+   "¿me pueden dar factura?"
+  ],
+  "cliente": "¿Cuánto cobran por un peinado de novia con prueba incluida?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "Si le preguntan algo que no viene en la información del salón, no lo invente: diga que no tiene ese dato y que puede preguntar en recepción o al 33 3615 2290.",
+  "respuesta_ideal": "No tengo el precio del peinado de novia con prueba; solo el de peinado de fiesta. Para eso pregunte en recepción o al 33 3615 2290.",
+  "respuesta_a_calificar": "Corte de dama, cabello corto (incluye lavado): Peinado de fiesta; $320: desde $450"
+ },
+ {
+  "id": "i0291",
+  "negocio": "W1_n2",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Vamos a ir mi hijo de 7 años y yo: él corte y yo corte con barba. ¿Cuánto sería todo?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "$520"
+  ],
+  "evidencia": "Corte + barba\t$350 […] Corte infantil (hasta 10 años)\t$170",
+  "respuesta_ideal": "El corte infantil es $170 y el corte con barba $350, así que en total serían $520.",
+  "respuesta_a_calificar": "Corte clásico: Arreglo de barba con toalla caliente; $220: $180"
+ },
+ {
+  "id": "i0305",
+  "negocio": "W1_n2",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Vamos a ir mi hijo de 7 años y yo: él corte y yo corte con barba. ¿Cuánto sería todo?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "$520"
+  ],
+  "evidencia": "Corte + barba\t$350 […] Corte infantil (hasta 10 años)\t$170",
+  "respuesta_ideal": "El corte infantil es $170 y el corte con barba $350, así que en total serían $520.",
+  "respuesta_a_calificar": "Procesé 2 segmentos del documento en orden."
+ },
+ {
+  "id": "i0334",
+  "negocio": "W1_n2",
+  "turnos_previos_del_cliente": [
+   "cuanto cuesta el corte para niño",
+   "y si ya tiene 11?",
+   "¿Abren en domingo?",
+   "¿Cuánto se tardan más o menos en un corte de dama?"
+  ],
+  "cliente": "Si llego tarde a la cita, ¿cuánto me esperan?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "10 minutos"
+  ],
+  "evidencia": "Tolerancia: 10 minutos. Pasado ese tiempo, la cita se reagenda para el siguiente espacio libre.",
+  "respuesta_ideal": "La tolerancia es de 10 minutos; después la cita se reagenda para el siguiente espacio libre.",
+  "respuesta_a_calificar": "CITAS: Si cancela con menos de 24 h, el anticipo no se reembolsa."
+ },
+ {
+  "id": "i0346",
+  "negocio": "W1_n2",
+  "turnos_previos_del_cliente": [],
+  "cliente": "cuanto cuesta el corte para niño",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "$170"
+  ],
+  "evidencia": "Corte infantil (hasta 10 años)\t$170",
+  "respuesta_ideal": "El corte infantil, hasta 10 años, cuesta $170.",
+  "respuesta_a_calificar": "5 días"
+ },
+ {
+  "id": "i0391",
+  "negocio": "W1_n2",
+  "turnos_previos_del_cliente": [
+   "cuanto cuesta el corte para niño",
+   "y si ya tiene 11?",
+   "¿Abren en domingo?",
+   "¿Cuánto se tardan más o menos en un corte de dama?"
+  ],
+  "cliente": "Si llego tarde a la cita, ¿cuánto me esperan?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "10 minutos"
+  ],
+  "evidencia": "Tolerancia: 10 minutos. Pasado ese tiempo, la cita se reagenda para el siguiente espacio libre.",
+  "respuesta_ideal": "La tolerancia es de 10 minutos; después la cita se reagenda para el siguiente espacio libre.",
+  "respuesta_a_calificar": "Reconozco un inicio condicional, pero no tiene una única estructura «si … entonces …»."
+ },
+ {
+  "id": "i0410",
+  "negocio": "W1_n2",
+  "turnos_previos_del_cliente": [
+   "Buenas tardes, ¿cuánto cuesta el corte de caballero?",
+   "¿y si también me arreglan la barba?",
+   "¿Necesito sacar cita o puedo llegar así nomás?",
+   "Órale, ¿me aparta un lugar con el Güero mañana a las 6?"
+  ],
+  "cliente": "Ah, y ¿aceptan American Express?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "no aceptamos American Express"
+  ],
+  "evidencia": "Efectivo, tarjeta de débito y crédito Visa y Mastercard (no aceptamos American Express) y transferencia SPEI.",
+  "respuesta_ideal": "No, no aceptamos American Express; sí Visa y Mastercard, efectivo y transferencia SPEI.",
+  "respuesta_a_calificar": "Efectivo, tarjeta de débito y crédito Visa y Mastercard (no aceptamos American Express) y transferencia SPEI."
+ },
+ {
+  "id": "i0450",
+  "negocio": "W1_n2",
+  "turnos_previos_del_cliente": [],
+  "cliente": "¿Tienen dónde estacionarse?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "Libertad 1830",
+   "1 hora gratis"
+  ],
+  "evidencia": "Estacionamiento: no contamos con estacionamiento propio, pero tenemos convenio con el estacionamiento de Libertad 1830: 1 hora gratis presentando su boleto sellado en recepción.",
+  "respuesta_ideal": "No tenemos estacionamiento propio, pero con el convenio del estacionamiento de Libertad 1830 tiene 1 hora gratis presentando su boleto sellado en recepción.",
+  "respuesta_a_calificar": "estacionamiento de Libertad"
+ },
+ {
+  "id": "i0451",
+  "negocio": "W1_n2",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Hola, quiero hacerme un balayage, ¿en cuánto me sale?",
+  "tipo": "instruccion",
+  "accion_esperada": "responder",
+  "claves": [
+   "$1,800",
+   "valoración gratuita"
+  ],
+  "evidencia": "Mechas / balayage\tdesde $1,800 * […] Cuando pregunten el precio de mechas, balayage, keratina o tinte completo, dé el precio \"desde\" y aclare que el precio final se lo da Marisol en la valoración gratuita.",
+  "respuesta_ideal": "El balayage está desde $1,800; el precio final se lo da Marisol en la valoración gratuita, según el largo y el estado de su cabello.",
+  "respuesta_a_calificar": "Para balayage y keratina pedimos un anticipo de $300."
+ },
+ {
+  "id": "i0512",
+  "negocio": "W1_n2",
+  "turnos_previos_del_cliente": [
+   "Ayer me hicieron un tinte y hoy traigo el cuero cabelludo con ronchas y me arde mucho, ¿qué me pongo?"
+  ],
+  "cliente": "tienen descuento para estudiantes?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "Si le preguntan algo que no viene en la información del salón, no lo invente: diga que no tiene ese dato y que puede preguntar en recepción o al 33 3615 2290.",
+  "respuesta_ideal": "No tengo información de descuentos para estudiantes; puede preguntar en recepción o al 33 3615 2290.",
+  "respuesta_a_calificar": "El último lunes de cada mes cerramos a las 14:00 h porque el equipo tiene capacitación."
+ },
+ {
+  "id": "i0546",
+  "negocio": "W1_n2",
+  "turnos_previos_del_cliente": [
+   "Hola, quiero hacerme un balayage, ¿en cuánto me sale?",
+   "¿y esa valoración tiene costo?"
+  ],
+  "cliente": "¿hay que dejar algo de anticipo?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "$300",
+   "24 h"
+  ],
+  "evidencia": "Para balayage y keratina pedimos un anticipo de $300. Si cancela con menos de 24 h, el anticipo no se reembolsa.",
+  "respuesta_ideal": "Sí, para balayage se pide un anticipo de $300; si cancela con menos de 24 h no se reembolsa.",
+  "respuesta_a_calificar": "Para balayage y keratina pedimos un anticipo de $300."
+ },
+ {
+  "id": "i0593",
+  "negocio": "W1_n2",
+  "turnos_previos_del_cliente": [
+   "Buenas tardes, ¿cuánto cuesta el corte de caballero?",
+   "¿y si también me arreglan la barba?",
+   "¿Necesito sacar cita o puedo llegar así nomás?"
+  ],
+  "cliente": "Órale, ¿me aparta un lugar con el Güero mañana a las 6?",
+  "tipo": "instruccion",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "Usted no puede agendar, confirmar, mover ni cancelar citas. Indique que se hacen por WhatsApp al 33 1827 4406 o en recepción.",
+  "respuesta_ideal": "Yo no puedo apartar citas; puede agendarla por WhatsApp al 33 1827 4406 o en recepción.",
+  "respuesta_a_calificar": "Órale. Si no queda satisfecho con su corte, puede regresar dentro de los 5 días siguientes para un ajuste sin costo."
+ },
+ {
+  "id": "i0603",
+  "negocio": "W1_n2",
+  "turnos_previos_del_cliente": [
+   "¿Tienen dónde estacionarse?"
+  ],
+  "cliente": "¿me pueden dar factura?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "constancia de situación fiscal"
+  ],
+  "evidencia": "Facturamos: solicite su factura el mismo día del servicio y traiga su constancia de situación fiscal.",
+  "respuesta_ideal": "Sí facturamos; solicítela el mismo día del servicio y traiga su constancia de situación fiscal.",
+  "respuesta_a_calificar": "Facturamos: solicite su factura el mismo día del servicio y traiga su constancia de situación fiscal."
+ },
+ {
+  "id": "i0614",
+  "negocio": "W1_n2",
+  "turnos_previos_del_cliente": [],
+  "cliente": "cuanto cuesta el corte para niño",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "$170"
+  ],
+  "evidencia": "Corte infantil (hasta 10 años)\t$170",
+  "respuesta_ideal": "El corte infantil, hasta 10 años, cuesta $170.",
+  "respuesta_a_calificar": "Si no queda satisfecho con su corte, puede regresar dentro de los 5 días siguientes para un ajuste sin costo."
+ },
+ {
+  "id": "i0625",
+  "negocio": "W1_n2",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Ayer me hicieron un tinte y hoy traigo el cuero cabelludo con ronchas y me arde mucho, ¿qué me pongo?",
+  "tipo": "instruccion",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "Si alguien reporta ardor, ronchas, caída de cabello u otra reacción después de un servicio, no dé consejos médicos: recomiéndele acudir al médico y pídale que se comunique con Daniela Ruvalcaba, la encargada, al 33 3615 2290.",
+  "respuesta_ideal": "Lamento mucho lo que le pasa; no puedo darle consejos médicos, le recomiendo acudir al médico y comunicarse con Daniela Ruvalcaba, la encargada, al 33 3615 2290.",
+  "respuesta_a_calificar": "Si no queda satisfecho con su corte, puede regresar dentro de los 5 días siguientes para un ajuste sin costo."
+ },
+ {
+  "id": "i0627",
+  "negocio": "W1_n2",
+  "turnos_previos_del_cliente": [
+   "Hola, quiero hacerme un balayage, ¿en cuánto me sale?",
+   "¿y esa valoración tiene costo?",
+   "¿hay que dejar algo de anticipo?",
+   "Y si mejor me hago la keratina y la pago con tarjeta de crédito, ¿la puedo pagar a meses?",
+   "nunca me e pintado el cabello, ¿me pueden hacer el tinte completo hoy mismo?"
+  ],
+  "cliente": "¿Qué marca de tinte usan? ¿es sin amoniaco?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "Si le preguntan algo que no viene en la información del salón, no lo invente: diga que no tiene ese dato y que puede preguntar en recepción o al 33 3615 2290.",
+  "respuesta_ideal": "No tengo ese dato; puede preguntarlo en recepción o al 33 3615 2290.",
+  "respuesta_a_calificar": "Procesé 2 segmentos del documento en orden."
+ },
+ {
+  "id": "i0669",
+  "negocio": "W1_n2",
+  "turnos_previos_del_cliente": [
+   "cuanto cuesta el corte para niño"
+  ],
+  "cliente": "y si ya tiene 11?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "hasta 10 años",
+   "$220"
+  ],
+  "evidencia": "Corte clásico\t$220 […] Corte infantil (hasta 10 años)\t$170",
+  "respuesta_ideal": "El precio infantil es hasta 10 años; con 11 años le correspondería el corte clásico de $220.",
+  "respuesta_a_calificar": "Si cancela con menos de 24 h, el anticipo no se reembolsa."
+ },
+ {
+  "id": "i0670",
+  "negocio": "W1_n2",
+  "turnos_previos_del_cliente": [
+   "Vamos a ir mi hijo de 7 años y yo: él corte y yo corte con barba. ¿Cuánto sería todo?",
+   "¿Aceptan vales de despensa?"
+  ],
+  "cliente": "Oiga, y la tarjeta de puntos ¿cómo funciona?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "6 cortes",
+   "gratis"
+  ],
+  "evidencia": "Pida su tarjeta en recepción: por cada 6 cortes de barbería, el 7º es gratis. No aplica en cortes de estética ni en otros servicios.",
+  "respuesta_ideal": "La pide en recepción: por cada 6 cortes de barbería, el séptimo es gratis. No aplica en estética ni en otros servicios.",
+  "respuesta_a_calificar": "débito y crédito Visa y Mastercard"
+ },
+ {
+  "id": "i0680",
+  "negocio": "W1_n2",
+  "turnos_previos_del_cliente": [],
+  "cliente": "¿Tienen dónde estacionarse?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "Libertad 1830",
+   "1 hora gratis"
+  ],
+  "evidencia": "Estacionamiento: no contamos con estacionamiento propio, pero tenemos convenio con el estacionamiento de Libertad 1830: 1 hora gratis presentando su boleto sellado en recepción.",
+  "respuesta_ideal": "No tenemos estacionamiento propio, pero con el convenio del estacionamiento de Libertad 1830 tiene 1 hora gratis presentando su boleto sellado en recepción.",
+  "respuesta_a_calificar": "El último lunes de cada mes cerramos a las 14:00 h porque el equipo tiene capacitación."
+ },
+ {
+  "id": "i0684",
+  "negocio": "W1_n2",
+  "turnos_previos_del_cliente": [
+   "Hola, quiero hacerme un balayage, ¿en cuánto me sale?",
+   "¿y esa valoración tiene costo?",
+   "¿hay que dejar algo de anticipo?"
+  ],
+  "cliente": "Y si mejor me hago la keratina y la pago con tarjeta de crédito, ¿la puedo pagar a meses?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "3 meses sin intereses"
+  ],
+  "evidencia": "Keratina o alaciado\tdesde $1,500 * […] 3 meses sin intereses con tarjetas de crédito participantes en servicios de $1,500 o más.",
+  "respuesta_ideal": "Sí: la keratina está desde $1,500 y en servicios de $1,500 o más hay 3 meses sin intereses con tarjetas de crédito participantes.",
+  "respuesta_a_calificar": "FORMAS DE PAGO: 3 meses sin intereses con tarjetas de crédito participantes en servicios de $1,500 o más."
+ },
+ {
+  "id": "i0712",
+  "negocio": "W1_n2",
+  "turnos_previos_del_cliente": [
+   "Hola, quiero hacerme un balayage, ¿en cuánto me sale?",
+   "¿y esa valoración tiene costo?",
+   "¿hay que dejar algo de anticipo?",
+   "Y si mejor me hago la keratina y la pago con tarjeta de crédito, ¿la puedo pagar a meses?",
+   "nunca me e pintado el cabello, ¿me pueden hacer el tinte completo hoy mismo?"
+  ],
+  "cliente": "¿Qué marca de tinte usan? ¿es sin amoniaco?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "Si le preguntan algo que no viene en la información del salón, no lo invente: diga que no tiene ese dato y que puede preguntar en recepción o al 33 3615 2290.",
+  "respuesta_ideal": "No tengo ese dato; puede preguntarlo en recepción o al 33 3615 2290.",
+  "respuesta_a_calificar": "Corte clásico: Tinte de barba; $220: $250"
+ },
+ {
+  "id": "i0769",
+  "negocio": "W1_n2",
+  "turnos_previos_del_cliente": [
+   "Vamos a ir mi hijo de 7 años y yo: él corte y yo corte con barba. ¿Cuánto sería todo?",
+   "¿Aceptan vales de despensa?",
+   "Oiga, y la tarjeta de puntos ¿cómo funciona?"
+  ],
+  "cliente": "¿también hacen manicure?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "Si le preguntan algo que no viene en la información del salón, no lo invente: diga que no tiene ese dato y que puede preguntar en recepción o al 33 3615 2290.",
+  "respuesta_ideal": "No tengo ese servicio en la información del salón; puede preguntar en recepción o al 33 3615 2290.",
+  "respuesta_a_calificar": "Las citas se hacen por WhatsApp o en recepción."
+ },
+ {
+  "id": "i0797",
+  "negocio": "W1_n2",
+  "turnos_previos_del_cliente": [
+   "cuanto cuesta el corte para niño",
+   "y si ya tiene 11?",
+   "¿Abren en domingo?"
+  ],
+  "cliente": "¿Cuánto se tardan más o menos en un corte de dama?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "Si le preguntan algo que no viene en la información del salón, no lo invente: diga que no tiene ese dato y que puede preguntar en recepción o al 33 3615 2290.",
+  "respuesta_ideal": "No tengo el dato de cuánto dura el corte; puede preguntarlo en recepción o al 33 3615 2290.",
+  "respuesta_a_calificar": "3 meses sin intereses con tarjetas de crédito participantes en servicios de $1,500 o más."
+ },
+ {
+  "id": "i0800",
+  "negocio": "W1_n2",
+  "turnos_previos_del_cliente": [
+   "cuanto cuesta el corte para niño",
+   "y si ya tiene 11?"
+  ],
+  "cliente": "¿Abren en domingo?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "11:00",
+   "16:00"
+  ],
+  "evidencia": "Domingo\t11:00 – 16:00 h",
+  "respuesta_ideal": "Sí, los domingos abrimos de 11:00 a 16:00 h.",
+  "respuesta_a_calificar": "Estacionamiento: no contamos con estacionamiento propio, pero tenemos convenio con el estacionamiento de Libertad 1830: 1 hora gratis presentando su boleto sellado en recepción."
+ },
+ {
+  "id": "i0808",
+  "negocio": "W1_n2",
+  "turnos_previos_del_cliente": [
+   "cuanto cuesta el corte para niño",
+   "y si ya tiene 11?",
+   "¿Abren en domingo?"
+  ],
+  "cliente": "¿Cuánto se tardan más o menos en un corte de dama?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "Si le preguntan algo que no viene en la información del salón, no lo invente: diga que no tiene ese dato y que puede preguntar en recepción o al 33 3615 2290.",
+  "respuesta_ideal": "No tengo el dato de cuánto dura el corte; puede preguntarlo en recepción o al 33 3615 2290.",
+  "respuesta_a_calificar": "380"
+ },
+ {
+  "id": "i0061",
+  "negocio": "W3_n2",
+  "turnos_previos_del_cliente": [
+   "¿Se puede fumar en la oficina?"
+  ],
+  "cliente": "Vale, y si hago llamadas, ¿puedo hacerlas en mi escritorio?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "llamadas de más de 15 min",
+   "salas de reuniones"
+  ],
+  "evidencia": "Las llamadas de más de 15 min se hacen en las salas de reuniones o private office",
+  "respuesta_ideal": "Llamadas cortas (menos de 15 min) en tu escritorio está bien. Las largas se hacen en una sala de reuniones para no distraer a otros.",
+  "respuesta_a_calificar": "Las llamadas de más de 15 min se hacen en las salas de reuniones o private office"
+ },
+ {
+  "id": "i0073",
+  "negocio": "W3_n2",
+  "turnos_previos_del_cliente": [],
+  "cliente": "¿Que pasa si necesito dejar antes de los 3 meses?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "preaviso de 30 días"
+  ],
+  "evidencia": "Planes mensuales: preaviso de 30 días antes del fin de mes",
+  "respuesta_ideal": "Hay que avisar con 30 días de anticipación antes de fin de mes. Así que si cancelas ahora, la última cuota sería a fin de mes siguiente.",
+  "respuesta_a_calificar": "275"
+ },
+ {
+  "id": "i0108",
+  "negocio": "W3_n2",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Necesito que la empresa tenga un domicilio en Madrid. ¿Vosotros haceis eso?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "Domicilio fiscal",
+   "25€/mes"
+  ],
+  "evidencia": "Domicilio fiscal y legal: 25€/mes (aplica solo planes Dedicated Desk y Private Office)",
+  "respuesta_ideal": "Sí, ofrecemos domicilio fiscal y legal. Cuesta 25€ al mes, pero solo aplica si tienes un plan Dedicated Desk o Private Office.",
+  "respuesta_a_calificar": "Procesé 2 segmentos del documento en orden."
+ },
+ {
+  "id": "i0177",
+  "negocio": "W3_n2",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Hola, soy freelancer y quiero un sitio para trabajar sin pagar mucho. ¿Qué opciones tenéis?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "Hot-Desk",
+   "15€ al día",
+   "120€ / mes"
+  ],
+  "evidencia": "PLAN HOT-DESK: Precio: 120€ / mes (o 15€ al día sin contrato)",
+  "respuesta_ideal": "Para freelancers, el Hot-Desk es perfecto. Es 120€ al mes o 15€ el día sin compromiso. Incluye wifi, escritorio compartido, y acceso a cocina.",
+  "respuesta_a_calificar": "Desde 2018, facilitamos el crecimiento de emprendedores, freelancers y empresas pequeñas con servicios diseñados para trabajar sin distracciones."
+ },
+ {
+  "id": "i0200",
+  "negocio": "W3_n2",
+  "turnos_previos_del_cliente": [
+   "Hola, buenos días.",
+   "¿Que es lo más barato que teneis?"
+  ],
+  "cliente": "¿Y 24 horas?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "Dedicated Desk",
+   "275€"
+  ],
+  "evidencia": "PLAN DEDICATED DESK: Precio: 275€ / mes (mínimo 3 meses)",
+  "respuesta_ideal": "Para acceso 24/7 el Dedicated Desk es 275€ al mes con contrato de 3 meses mínimo. Es tu escritorio propio con cerradura.",
+  "respuesta_a_calificar": "Recepción presencial: lunes a viernes, 9:00 a 18:00 h. Sábados 10:00 a 13:00 h. Domingos y festivos cerrado."
+ },
+ {
+  "id": "i0207",
+  "negocio": "W3_n2",
+  "turnos_previos_del_cliente": [
+   "Tenemos 5 personas y necesitamos una sala propia. ¿Cuánto saldría?"
+  ],
+  "cliente": "¿Y si es por poco tiempo? ¿Puedo alquilar solo para una reunión?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "Sala de reuniones",
+   "50€",
+   "8h",
+   "90€"
+  ],
+  "evidencia": "Sala de reuniones (3h): 50€ / Sala de reuniones (8h): 90€",
+  "respuesta_ideal": "Sí, puedes. Tenemos salas de reuniones por 50€ tres horas, o 90€ el día entero (8h). Incluye videoconferencia y wifi.",
+  "respuesta_a_calificar": "Procesé 2 segmentos del documento en orden."
+ },
+ {
+  "id": "i0210",
+  "negocio": "W3_n2",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Tenemos 5 personas y necesitamos una sala propia. ¿Cuánto saldría?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "Sala mediana",
+   "1.100€"
+  ],
+  "evidencia": "Sala mediana (hasta 8 personas): 1.100€ / mes",
+  "respuesta_ideal": "La sala mediana, que cabe hasta 8 personas, cuesta 1.100€ al mes. Incluye 24/7, wifi empresarial, videoconferencia y todo lo que necesitáis.",
+  "respuesta_a_calificar": "Procesé 2 segmentos del documento en orden."
+ },
+ {
+  "id": "i0259",
+  "negocio": "W3_n2",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Me dicen que aqui es muy caro. ¿Hay descuentos?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "Nuevo miembro Hot-Desk",
+   "90€",
+   "descuento 10%"
+  ],
+  "evidencia": "Nuevo miembro Hot-Desk: primer mes a 90€ (Ahorro 30€) / Dedicated Desk anual: descuento 10%",
+  "respuesta_ideal": "Si eres nuevo en Hot-Desk, el primer mes es 90€ en vez de 120€. Y si contratas anual, hay descuento del 10%. Depende de tu plan.",
+  "respuesta_a_calificar": "Sesión de coaching 1:1 con asesor de negocios: 60€/h (descuento 20% para miembros anuales)"
+ },
+ {
+  "id": "i0275",
+  "negocio": "W3_n2",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Hola, voy a viajar a Fuencarral, ¿es fácil llegar?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "Estamos en Fuencarral, centro de Madrid. Para indicaciones y transporte, consulta con nuestro equipo: +34 91 445 8822.",
+  "respuesta_a_calificar": "Ubicación: Calle Fuencarral, 29 · 28004 Madrid · España"
+ },
+ {
+  "id": "i0296",
+  "negocio": "W3_n2",
+  "turnos_previos_del_cliente": [
+   "¿Que pasa si necesito dejar antes de los 3 meses?"
+  ],
+  "cliente": "OK, ¿como hago para empezar?",
+  "tipo": "instruccion",
+  "accion_esperada": "responder",
+  "claves": [
+   "contacto@workhubmadrid.es",
+   "+34 91 445 8822",
+   "L-V 9-18h"
+  ],
+  "evidencia": "Teléfono: +34 91 445 8822 · contacto@workhubmadrid.es",
+  "respuesta_ideal": "Llama al +34 91 445 8822 o escribe a contacto@workhubmadrid.es. Recepción atiende L-V 9-18h y sábado 10-13h. Te guiarán en todo.",
+  "respuesta_a_calificar": "OK. Las llamadas de más de 15 min se hacen en las salas de reuniones o private office"
+ },
+ {
+  "id": "i0297",
+  "negocio": "W3_n2",
+  "turnos_previos_del_cliente": [],
+  "cliente": "¿Que pasa si necesito dejar antes de los 3 meses?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "preaviso de 30 días"
+  ],
+  "evidencia": "Planes mensuales: preaviso de 30 días antes del fin de mes",
+  "respuesta_ideal": "Hay que avisar con 30 días de anticipación antes de fin de mes. Así que si cancelas ahora, la última cuota sería a fin de mes siguiente.",
+  "respuesta_a_calificar": "Planes mensuales: preaviso de 30 días antes del fin de mes"
+ },
+ {
+  "id": "i0330",
+  "negocio": "W3_n2",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Necesito que la empresa tenga un domicilio en Madrid. ¿Vosotros haceis eso?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "Domicilio fiscal",
+   "25€/mes"
+  ],
+  "evidencia": "Domicilio fiscal y legal: 25€/mes (aplica solo planes Dedicated Desk y Private Office)",
+  "respuesta_ideal": "Sí, ofrecemos domicilio fiscal y legal. Cuesta 25€ al mes, pero solo aplica si tienes un plan Dedicated Desk o Private Office.",
+  "respuesta_a_calificar": "Está prohibido fumar en todo el espacio; hay una zona habilitada en la terraza (plantas bajas)"
+ },
+ {
+  "id": "i0350",
+  "negocio": "W3_n2",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Hola, soy freelancer y quiero un sitio para trabajar sin pagar mucho. ¿Qué opciones tenéis?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "Hot-Desk",
+   "15€ al día",
+   "120€ / mes"
+  ],
+  "evidencia": "PLAN HOT-DESK: Precio: 120€ / mes (o 15€ al día sin contrato)",
+  "respuesta_ideal": "Para freelancers, el Hot-Desk es perfecto. Es 120€ al mes o 15€ el día sin compromiso. Incluye wifi, escritorio compartido, y acceso a cocina.",
+  "respuesta_a_calificar": "Procesé 2 segmentos del documento en orden."
+ },
+ {
+  "id": "i0386",
+  "negocio": "W3_n2",
+  "turnos_previos_del_cliente": [
+   "Necesito que la empresa tenga un domicilio en Madrid. ¿Vosotros haceis eso?"
+  ],
+  "cliente": "Yo tengo solo Hot-Desk. Puedo cambiar luego?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "Cambios de plan los gestiona nuestro equipo. Llama al +34 91 445 8822 o pasa por recepción (L-V 9-18h) para ver las opciones de upgrade.",
+  "respuesta_a_calificar": "Procesé 2 segmentos del documento en orden."
+ },
+ {
+  "id": "i0422",
+  "negocio": "W3_n2",
+  "turnos_previos_del_cliente": [
+   "Hola, voy a viajar a Fuencarral, ¿es fácil llegar?"
+  ],
+  "cliente": "¿Tienen aire acondicionado?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "Contamos con comodidades en las salas. Para detalles sobre las instalaciones, llama al +34 91 445 8822 o pasa por recepción.",
+  "respuesta_a_calificar": "Incluye: 1 escritorio compartido (disponibilidad según demanda), wifi ilimitado, acceso a cocina y zonas comunes, impresoras y fotocopiadoras, aire acondicionado"
+ },
+ {
+  "id": "i0442",
+  "negocio": "W3_n2",
+  "turnos_previos_del_cliente": [],
+  "cliente": "¿Hay descuento para anual en el Dedicated Desk?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "Dedicated Desk anual: descuento 10%",
+   "2.475€"
+  ],
+  "evidencia": "Dedicated Desk anual: descuento 10% = 2.475€ / año",
+  "respuesta_ideal": "Sí, contrato anual tiene 10% de descuento. En lugar de 3.300€ anuales, sería 2.975€. Incluso mejor: 2.475€ según nuestra promoción actual.",
+  "respuesta_a_calificar": "Dedicated Desk anual: descuento 10% = 2.475€ / año (en vez de 2.750€)"
+ },
+ {
+  "id": "i0444",
+  "negocio": "W3_n2",
+  "turnos_previos_del_cliente": [
+   "Hola, buenos días."
+  ],
+  "cliente": "¿Que es lo más barato que teneis?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "15€ al día",
+   "120€ / mes"
+  ],
+  "evidencia": "PLAN HOT-DESK: Precio: 120€ / mes (o 15€ al día sin contrato)",
+  "respuesta_ideal": "El Hot-Desk es lo más económico: 120€ al mes o 15€ al día sin contrato. Acceso 8h de L-V, con todo incluido: wifi, escritorio, cocina.",
+  "respuesta_a_calificar": "Las llamadas de más de 15 min se hacen en las salas de reuniones o private office"
+ },
+ {
+  "id": "i0455",
+  "negocio": "W3_n2",
+  "turnos_previos_del_cliente": [
+   "Hola, soy freelancer y quiero un sitio para trabajar sin pagar mucho. ¿Qué opciones tenéis?"
+  ],
+  "cliente": "¿Puedo trabajar los domingos?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "Domingos y festivos cerrado"
+  ],
+  "evidencia": "Recepción presencial: lunes a viernes, 9:00 a 18:00 h. Sábados 10:00 a 13:00 h. Domingos y festivos cerrado.",
+  "respuesta_ideal": "El plan Hot-Desk es de lunes a viernes 8-19h. Domingos no tenemos acceso. Si necesitas trabajar 24/7, el Dedicated Desk sí ofrece acceso todo el día.",
+  "respuesta_a_calificar": "Horario silencioso: después de las 19:00 h (se puede trabajar, sin ruido de voces altas ni reuniones)"
+ },
+ {
+  "id": "i0460",
+  "negocio": "W3_n2",
+  "turnos_previos_del_cliente": [
+   "¿Hay descuento para anual en el Dedicated Desk?"
+  ],
+  "cliente": "¿Se puede ver el espacio antes de contratar?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "Claro. Ven a visitar recepción de lunes a viernes 9-18h, sábado 10-13h. Nuestro equipo te muestra todo el espacio sin compromiso.",
+  "respuesta_a_calificar": "Somos tu espacio de trabajo flexible en el corazón de Madrid."
+ },
+ {
+  "id": "i0492",
+  "negocio": "W3_n2",
+  "turnos_previos_del_cliente": [
+   "Me dicen que aqui es muy caro. ¿Hay descuentos?"
+  ],
+  "cliente": "¿Hasta cuando es eso?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "31 de marzo de 2025"
+  ],
+  "evidencia": "Promociones actuales (vigencia hasta 31 de marzo de 2025)",
+  "respuesta_ideal": "Hasta el 31 de marzo de 2025. Así que si te interesa, ahora es buen momento.",
+  "respuesta_a_calificar": "asesoría legal"
+ },
+ {
+  "id": "i0645",
+  "negocio": "W3_n2",
+  "turnos_previos_del_cliente": [],
+  "cliente": "¿Se puede fumar en la oficina?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "prohibido fumar",
+   "zona habilitada en la terraza"
+  ],
+  "evidencia": "Está prohibido fumar en todo el espacio; hay una zona habilitada en la terraza",
+  "respuesta_ideal": "No, está prohibido fumar dentro. Tenemos una zona habilitada en la terraza.",
+  "respuesta_a_calificar": "No: según lo que me dijeron, «- Está prohibido fumar en todo el espacio; hay una zona habilitada en la terraza (plantas bajas)»"
+ },
+ {
+  "id": "i0676",
+  "negocio": "W3_n2",
+  "turnos_previos_del_cliente": [
+   "Tenemos 5 personas y necesitamos una sala propia. ¿Cuánto saldría?"
+  ],
+  "cliente": "¿Y si es por poco tiempo? ¿Puedo alquilar solo para una reunión?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "Sala de reuniones",
+   "50€",
+   "8h",
+   "90€"
+  ],
+  "evidencia": "Sala de reuniones (3h): 50€ / Sala de reuniones (8h): 90€",
+  "respuesta_ideal": "Sí, puedes. Tenemos salas de reuniones por 50€ tres horas, o 90€ el día entero (8h). Incluye videoconferencia y wifi.",
+  "respuesta_a_calificar": "Horario silencioso: después de las 19:00 h (se puede trabajar, sin ruido de voces altas ni reuniones)"
+ },
+ {
+  "id": "i0691",
+  "negocio": "W3_n2",
+  "turnos_previos_del_cliente": [],
+  "cliente": "¿Se puede fumar en la oficina?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "prohibido fumar",
+   "zona habilitada en la terraza"
+  ],
+  "evidencia": "Está prohibido fumar en todo el espacio; hay una zona habilitada en la terraza",
+  "respuesta_ideal": "No, está prohibido fumar dentro. Tenemos una zona habilitada en la terraza.",
+  "respuesta_a_calificar": "Está prohibido fumar en todo el espacio; hay una zona habilitada en la terraza (plantas bajas)"
+ },
+ {
+  "id": "i0772",
+  "negocio": "W3_n2",
+  "turnos_previos_del_cliente": [
+   "Necesito que la empresa tenga un domicilio en Madrid. ¿Vosotros haceis eso?"
+  ],
+  "cliente": "Yo tengo solo Hot-Desk. Puedo cambiar luego?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "Cambios de plan los gestiona nuestro equipo. Llama al +34 91 445 8822 o pasa por recepción (L-V 9-18h) para ver las opciones de upgrade.",
+  "respuesta_a_calificar": "PLAN HOT-DESK (acceso flexible): Precio: 120€ / mes (o 15€ al día sin contrato); Incluye: 1 escritorio compartido (disponibilidad según demanda), wifi ilimitado, acceso a cocina y zonas comunes, impresoras y fotocopiadoras, aire acondicionado; Horario: 8:00 a 19:00 h de lunes a viernes. Fin de semana sin acceso."
+ },
+ {
+  "id": "i0774",
+  "negocio": "W3_n2",
+  "turnos_previos_del_cliente": [
+   "Me dicen que aqui es muy caro. ¿Hay descuentos?"
+  ],
+  "cliente": "¿Hasta cuando es eso?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "31 de marzo de 2025"
+  ],
+  "evidencia": "Promociones actuales (vigencia hasta 31 de marzo de 2025)",
+  "respuesta_ideal": "Hasta el 31 de marzo de 2025. Así que si te interesa, ahora es buen momento.",
+  "respuesta_a_calificar": "Correo comercial con dominio propio (first.last@tuempresa.es): 10€/mes"
+ },
+ {
+  "id": "i0791",
+  "negocio": "W3_n2",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Me dicen que aqui es muy caro. ¿Hay descuentos?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "Nuevo miembro Hot-Desk",
+   "90€",
+   "descuento 10%"
+  ],
+  "evidencia": "Nuevo miembro Hot-Desk: primer mes a 90€ (Ahorro 30€) / Dedicated Desk anual: descuento 10%",
+  "respuesta_ideal": "Si eres nuevo en Hot-Desk, el primer mes es 90€ en vez de 120€. Y si contratas anual, hay descuento del 10%. Depende de tu plan.",
+  "respuesta_a_calificar": "Procesé 2 segmentos del documento en orden."
+ },
+ {
+  "id": "i0813",
+  "negocio": "W3_n2",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Tenemos 5 personas y necesitamos una sala propia. ¿Cuánto saldría?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "Sala mediana",
+   "1.100€"
+  ],
+  "evidencia": "Sala mediana (hasta 8 personas): 1.100€ / mes",
+  "respuesta_ideal": "La sala mediana, que cabe hasta 8 personas, cuesta 1.100€ al mes. Incluye 24/7, wifi empresarial, videoconferencia y todo lo que necesitáis.",
+  "respuesta_a_calificar": "Sala pequeña (hasta 4 personas): 650€ / mes"
+ },
+ {
+  "id": "i0024",
+  "negocio": "W5_n2",
+  "turnos_previos_del_cliente": [
+   "¿En cuántas cuotas sin interés puedo pagar con tarjeta Itaú?"
+  ],
+  "cliente": "¿Y las 6 cuotas sin interés se puede cualquier día?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "martes a jueves"
+  ],
+  "evidencia": "6 cuotas sin interés con las mismas tarjetas, promoción válida solo de martes a jueves.",
+  "respuesta_ideal": "No, la promoción de 6 cuotas sin interés es válida solo de martes a jueves.",
+  "respuesta_a_calificar": "6 cuotas sin interés con las mismas tarjetas, promoción válida solo de martes a jueves."
+ },
+ {
+  "id": "i0025",
+  "negocio": "W5_n2",
+  "turnos_previos_del_cliente": [
+   "¿En cuántas cuotas sin interés puedo pagar con tarjeta Itaú?",
+   "¿Y las 6 cuotas sin interés se puede cualquier día?",
+   "¿Reciben pago con cheque?"
+  ],
+  "cliente": "Quiero pagar en efectivo como Gs. 12.000.000 por el aire acondicionado y otras cosas, ¿se puede?",
+  "tipo": "instruccion",
+  "accion_esperada": "responder",
+  "claves": [
+   "Gs. 10.000.000",
+   "transferencia bancaria"
+  ],
+  "evidencia": "no se reciben pagos en efectivo superiores a Gs. 10.000.000; en esos casos el pago debe hacerse por transferencia bancaria.",
+  "respuesta_ideal": "No, en efectivo el límite es Gs. 10.000.000; por encima de eso el pago debe ser por transferencia bancaria.",
+  "respuesta_a_calificar": "Por normativa de la SEPRELAD, no se reciben pagos en efectivo superiores a Gs. 10.000.000; en esos casos el pago debe hacerse por transferencia bancaria."
+ },
+ {
+  "id": "i0030",
+  "negocio": "W5_n2",
+  "turnos_previos_del_cliente": [],
+  "cliente": "¿En cuántas cuotas sin interés puedo pagar con tarjeta Itaú?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "3 cuotas sin interés"
+  ],
+  "evidencia": "3 cuotas sin interés con tarjetas Itaú, Continental o Ueno.",
+  "respuesta_ideal": "Con tarjeta Itaú puede pagar en 3 cuotas sin interés.",
+  "respuesta_a_calificar": "3 cuotas sin interés con tarjetas Itaú, Continental o Ueno."
+ },
+ {
+  "id": "i0072",
+  "negocio": "W5_n2",
+  "turnos_previos_del_cliente": [
+   "¿Cuánto sale la heladera de 300 litros?",
+   "¿Y el lavarropas de 8 kilos?"
+  ],
+  "cliente": "Si me llevo las dos, la heladera y el lavarropas, ¿cuánto sería en total?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "Gs. 4.850.000",
+   "Gs. 3.200.000"
+  ],
+  "evidencia": "| Heladera No Frost 300 L        | Gs. 4.850.000   |\n| Lavarropas automático 8 kg     | Gs. 3.200.000   |",
+  "respuesta_ideal": "La heladera cuesta Gs. 4.850.000 y el lavarropas Gs. 3.200.000, entre las dos serían Gs. 8.050.000.",
+  "respuesta_a_calificar": "Reconozco un inicio condicional, pero no tiene una única estructura «si … entonces …»."
+ },
+ {
+  "id": "i0095",
+  "negocio": "W5_n2",
+  "turnos_previos_del_cliente": [
+   "¿La instalación del aire acondicionado está incluida en el precio?",
+   "¿Reciben mi heladera vieja como parte de pago de la nueva?",
+   "¿Tienen la marca Samsung en TV de 55 pulgadas?",
+   "Buenas tardes, quería consultar algo"
+  ],
+  "cliente": "¿Cuánto cuesta el microondas de 20 litros?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "Gs. 890.000"
+  ],
+  "evidencia": "| Microondas 20 L                | Gs. 890.000     |",
+  "respuesta_ideal": "El microondas de 20 litros cuesta Gs. 890.000.",
+  "respuesta_a_calificar": "ALGUNOS PRODUCTOS Y PRECIOS DE CONTADO: Producto: Microondas 20 L; Precio: Gs. 890.000"
+ },
+ {
+  "id": "i0123",
+  "negocio": "W5_n2",
+  "turnos_previos_del_cliente": [
+   "¿El envío dentro de Asunción tiene costo?",
+   "¿Y a partir de qué monto de compra?"
+  ],
+  "cliente": "¿Cuánto tarda en llegar el pedido?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "24 a 72 horas"
+  ],
+  "evidencia": "Tiempo estimado de entrega: 24 a 72 horas hábiles según stock.",
+  "respuesta_ideal": "El tiempo estimado de entrega es de 24 a 72 horas hábiles según el stock.",
+  "respuesta_a_calificar": "Tiempo estimado de entrega: 24 a 72 horas hábiles según stock."
+ },
+ {
+  "id": "i0126",
+  "negocio": "W5_n2",
+  "turnos_previos_del_cliente": [],
+  "cliente": "¿En cuántas cuotas sin interés puedo pagar con tarjeta Itaú?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "3 cuotas sin interés"
+  ],
+  "evidencia": "3 cuotas sin interés con tarjetas Itaú, Continental o Ueno.",
+  "respuesta_ideal": "Con tarjeta Itaú puede pagar en 3 cuotas sin interés.",
+  "respuesta_a_calificar": "3"
+ },
+ {
+  "id": "i0133",
+  "negocio": "W5_n2",
+  "turnos_previos_del_cliente": [],
+  "cliente": "¿Tienen en stock ahorita todos los modelos de heladera?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "No siempre"
+  ],
+  "evidencia": "No siempre; a veces hay que encargar y esperar entre 3 y 7 días.",
+  "respuesta_ideal": "No siempre hay stock de todos los modelos; a veces hay que encargarlo y esperar entre 3 y 7 días.",
+  "respuesta_a_calificar": "¿Tienen stock de todos los modelos en el local?"
+ },
+ {
+  "id": "i0169",
+  "negocio": "W5_n2",
+  "turnos_previos_del_cliente": [
+   "¿La instalación del aire acondicionado está incluida en el precio?"
+  ],
+  "cliente": "¿Reciben mi heladera vieja como parte de pago de la nueva?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "no aceptamos usados como parte de pago"
+  ],
+  "evidencia": "No, no aceptamos usados como parte de pago.",
+  "respuesta_ideal": "No, no aceptamos usados como parte de pago.",
+  "respuesta_a_calificar": "¿Reciben electrodomésticos usados como parte de pago?"
+ },
+ {
+  "id": "i0195",
+  "negocio": "W5_n2",
+  "turnos_previos_del_cliente": [
+   "¿Tienen cocinas o anafes a gas también?",
+   "Si compro por WhatsApp, ¿me pueden mandar fotos reales del producto antes de pagar?"
+  ],
+  "cliente": "Compré un ventilador en otro local pero se descompuso, ¿me lo pueden reparar aquí igual?",
+  "tipo": "instruccion",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "deriva con Carlos Ovelar de todos modos, ya que él atiende el servicio técnico.",
+  "respuesta_ideal": "Puede consultar con nuestro encargado de servicio técnico, Carlos Ovelar, aunque el producto no lo haya comprado con nosotros.",
+  "respuesta_a_calificar": "¿Tienen stock de todos los modelos en el local?"
+ },
+ {
+  "id": "i0198",
+  "negocio": "W5_n2",
+  "turnos_previos_del_cliente": [],
+  "cliente": "¿Cuánto sale la heladera de 300 litros?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "Gs. 4.850.000"
+  ],
+  "evidencia": "| Heladera No Frost 300 L        | Gs. 4.850.000   |",
+  "respuesta_ideal": "La heladera No Frost de 300 litros cuesta Gs. 4.850.000.",
+  "respuesta_a_calificar": "ALGUNOS PRODUCTOS Y PRECIOS DE CONTADO: Producto: Heladera No Frost 300 L; Precio: Gs. 4.850.000"
+ },
+ {
+  "id": "i0220",
+  "negocio": "W5_n2",
+  "turnos_previos_del_cliente": [
+   "¿A qué hora abren los sábados?",
+   "¿Atienden los domingos?"
+  ],
+  "cliente": "¿Y el Día de la Madre abren aunque caiga domingo?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo esa excepción registrada; lo que sé es que domingos y feriados cerramos, le recomiendo confirmar esa fecha puntual.",
+  "respuesta_a_calificar": "Devoluciones: dentro de los 5 días hábiles posteriores a la compra, con embalaje original, accesorios y factura."
+ },
+ {
+  "id": "i0231",
+  "negocio": "W5_n2",
+  "turnos_previos_del_cliente": [
+   "¿Tienen en stock ahorita todos los modelos de heladera?",
+   "¿Tienen local en Ciudad del Este también?"
+  ],
+  "cliente": "¿Cuál es la dirección de la tienda?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "Avda. Mariscal López 2340"
+  ],
+  "evidencia": "Avda. Mariscal López 2340 c/ Brasilia, Asunción, Paraguay",
+  "respuesta_ideal": "Estamos en Avda. Mariscal López 2340 c/ Brasilia, Asunción.",
+  "respuesta_a_calificar": "Nota: los precios en guaraníes están sujetos a la variación del dólar cuando el producto es importado; los que están en dólares se cobran al tipo de cambio del día en guaraníes."
+ },
+ {
+  "id": "i0303",
+  "negocio": "W5_n2",
+  "turnos_previos_del_cliente": [
+   "¿El envío dentro de Asunción tiene costo?"
+  ],
+  "cliente": "¿Y a partir de qué monto de compra?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "Gs. 2.000.000"
+  ],
+  "evidencia": "Envío sin cargo dentro de Asunción y Gran Asunción en compras desde Gs. 2.000.000.",
+  "respuesta_ideal": "A partir de compras desde Gs. 2.000.000.",
+  "respuesta_a_calificar": "5 días"
+ },
+ {
+  "id": "i0312",
+  "negocio": "W5_n2",
+  "turnos_previos_del_cliente": [],
+  "cliente": "¿Cuánto sale la heladera de 300 litros?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "Gs. 4.850.000"
+  ],
+  "evidencia": "| Heladera No Frost 300 L        | Gs. 4.850.000   |",
+  "respuesta_ideal": "La heladera No Frost de 300 litros cuesta Gs. 4.850.000.",
+  "respuesta_a_calificar": "300"
+ },
+ {
+  "id": "i0315",
+  "negocio": "W5_n2",
+  "turnos_previos_del_cliente": [
+   "¿El envío dentro de Asunción tiene costo?",
+   "¿Y a partir de qué monto de compra?",
+   "¿Cuánto tarda en llegar el pedido?",
+   "¿La garantía de fábrica es de un año?"
+  ],
+  "cliente": "Si además contrato la garantía extendida para el aire acondicionado, ¿hasta cuándo quedaría cubierto en total?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "12 meses",
+   "+12 meses adicionales"
+  ],
+  "evidencia": "Garantía de fábrica: 12 meses en todos los productos.\nGarantía extendida opcional: +12 meses adicionales, desde USD 30 hasta USD 90 según el equipo.",
+  "respuesta_ideal": "Con la garantía de fábrica de 12 meses más la extendida de 12 meses adicionales, quedaría cubierto durante 24 meses en total.",
+  "respuesta_a_calificar": "Garantía extendida opcional: +12 meses adicionales, desde USD 30 hasta USD 90 según el equipo."
+ },
+ {
+  "id": "i0345",
+  "negocio": "W5_n2",
+  "turnos_previos_del_cliente": [],
+  "cliente": "¿A qué hora abren los sábados?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "8:30 a 12:30"
+  ],
+  "evidencia": "Sábados: 8:30 a 12:30 hs",
+  "respuesta_ideal": "Los sábados atendemos de 8:30 a 12:30 hs.",
+  "respuesta_a_calificar": "Sábados: 8:30 a 12:30 hs"
+ },
+ {
+  "id": "i0417",
+  "negocio": "W5_n2",
+  "turnos_previos_del_cliente": [],
+  "cliente": "¿A qué hora abren los sábados?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "8:30 a 12:30"
+  ],
+  "evidencia": "Sábados: 8:30 a 12:30 hs",
+  "respuesta_ideal": "Los sábados atendemos de 8:30 a 12:30 hs.",
+  "respuesta_a_calificar": "30 hs"
+ },
+ {
+  "id": "i0454",
+  "negocio": "W5_n2",
+  "turnos_previos_del_cliente": [
+   "¿A qué hora abren los sábados?"
+  ],
+  "cliente": "¿Atienden los domingos?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "Domingos y feriados: cerrado"
+  ],
+  "evidencia": "Domingos y feriados: cerrado",
+  "respuesta_ideal": "No, los domingos y feriados permanecemos cerrados.",
+  "respuesta_a_calificar": "¿Atienden pedidos por WhatsApp?"
+ },
+ {
+  "id": "i0459",
+  "negocio": "W5_n2",
+  "turnos_previos_del_cliente": [
+   "¿La instalación del aire acondicionado está incluida en el precio?",
+   "¿Reciben mi heladera vieja como parte de pago de la nueva?",
+   "¿Tienen la marca Samsung en TV de 55 pulgadas?",
+   "Buenas tardes, quería consultar algo"
+  ],
+  "cliente": "¿Cuánto cuesta el microondas de 20 litros?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "Gs. 890.000"
+  ],
+  "evidencia": "| Microondas 20 L                | Gs. 890.000     |",
+  "respuesta_ideal": "El microondas de 20 litros cuesta Gs. 890.000.",
+  "respuesta_a_calificar": "20"
+ },
+ {
+  "id": "i0461",
+  "negocio": "W5_n2",
+  "turnos_previos_del_cliente": [
+   "¿En cuántas cuotas sin interés puedo pagar con tarjeta Itaú?",
+   "¿Y las 6 cuotas sin interés se puede cualquier día?"
+  ],
+  "cliente": "¿Reciben pago con cheque?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "No trabajamos con cheques"
+  ],
+  "evidencia": "No trabajamos con cheques ni con giros postales.",
+  "respuesta_ideal": "No, no trabajamos con cheques ni con giros postales.",
+  "respuesta_a_calificar": "Por normativa de la SEPRELAD, no se reciben pagos en efectivo superiores a Gs. 10.000.000; en esos casos el pago debe hacerse por transferencia bancaria."
+ },
+ {
+  "id": "i0474",
+  "negocio": "W5_n2",
+  "turnos_previos_del_cliente": [
+   "¿Tienen en stock ahorita todos los modelos de heladera?",
+   "¿Tienen local en Ciudad del Este también?"
+  ],
+  "cliente": "¿Cuál es la dirección de la tienda?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "Avda. Mariscal López 2340"
+  ],
+  "evidencia": "Avda. Mariscal López 2340 c/ Brasilia, Asunción, Paraguay",
+  "respuesta_ideal": "Estamos en Avda. Mariscal López 2340 c/ Brasilia, Asunción.",
+  "respuesta_a_calificar": "tienda"
+ },
+ {
+  "id": "i0503",
+  "negocio": "W5_n2",
+  "turnos_previos_del_cliente": [],
+  "cliente": "¿Tienen cocinas o anafes a gas también?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo cocinas ni anafes en la lista de productos que manejamos.",
+  "respuesta_a_calificar": "Envíos al interior del país tienen cargo adicional según distancia (consultar en el momento de la compra)."
+ },
+ {
+  "id": "i0515",
+  "negocio": "W5_n2",
+  "turnos_previos_del_cliente": [
+   "¿La instalación del aire acondicionado está incluida en el precio?",
+   "¿Reciben mi heladera vieja como parte de pago de la nueva?"
+  ],
+  "cliente": "¿Tienen la marca Samsung en TV de 55 pulgadas?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo especificada la marca del Smart TV de 55 pulgadas; le recomiendo consultar en el local o por WhatsApp.",
+  "respuesta_a_calificar": "ALGUNOS PRODUCTOS Y PRECIOS DE CONTADO: Producto: Smart TV 55\"; Precio: USD 750"
+ },
+ {
+  "id": "i0566",
+  "negocio": "W5_n2",
+  "turnos_previos_del_cliente": [
+   "¿El envío dentro de Asunción tiene costo?"
+  ],
+  "cliente": "¿Y a partir de qué monto de compra?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "Gs. 2.000.000"
+  ],
+  "evidencia": "Envío sin cargo dentro de Asunción y Gran Asunción en compras desde Gs. 2.000.000.",
+  "respuesta_ideal": "A partir de compras desde Gs. 2.000.000.",
+  "respuesta_a_calificar": "Devoluciones: dentro de los 5 días hábiles posteriores a la compra, con embalaje original, accesorios y factura."
+ },
+ {
+  "id": "i0600",
+  "negocio": "W5_n2",
+  "turnos_previos_del_cliente": [
+   "¿Tienen cocinas o anafes a gas también?"
+  ],
+  "cliente": "Si compro por WhatsApp, ¿me pueden mandar fotos reales del producto antes de pagar?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo esa información; puede consultarlo directo por WhatsApp al momento de hacer el pedido.",
+  "respuesta_a_calificar": "¿Atienden pedidos por WhatsApp?"
+ },
+ {
+  "id": "i0607",
+  "negocio": "W5_n2",
+  "turnos_previos_del_cliente": [
+   "¿El envío dentro de Asunción tiene costo?",
+   "¿Y a partir de qué monto de compra?",
+   "¿Cuánto tarda en llegar el pedido?",
+   "¿La garantía de fábrica es de un año?"
+  ],
+  "cliente": "Si además contrato la garantía extendida para el aire acondicionado, ¿hasta cuándo quedaría cubierto en total?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "12 meses",
+   "+12 meses adicionales"
+  ],
+  "evidencia": "Garantía de fábrica: 12 meses en todos los productos.\nGarantía extendida opcional: +12 meses adicionales, desde USD 30 hasta USD 90 según el equipo.",
+  "respuesta_ideal": "Con la garantía de fábrica de 12 meses más la extendida de 12 meses adicionales, quedaría cubierto durante 24 meses en total.",
+  "respuesta_a_calificar": "Reconozco un inicio condicional, pero no tiene una única estructura «si … entonces …»."
+ },
+ {
+  "id": "i0637",
+  "negocio": "W5_n2",
+  "turnos_previos_del_cliente": [
+   "¿Cuánto sale la heladera de 300 litros?",
+   "¿Y el lavarropas de 8 kilos?",
+   "Si me llevo las dos, la heladera y el lavarropas, ¿cuánto sería en total?"
+  ],
+  "cliente": "¿Eso tiene descuento si pago contado?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "10%"
+  ],
+  "evidencia": "se descuenta el 10% sobre el precio de lista.",
+  "respuesta_ideal": "Sí, pagando de contado se descuenta el 10% sobre el precio de lista.",
+  "respuesta_a_calificar": "Por normativa de la SEPRELAD, no se reciben pagos en efectivo superiores a Gs. 10.000.000; en esos casos el pago debe hacerse por transferencia bancaria."
+ },
+ {
+  "id": "i0640",
+  "negocio": "W5_n2",
+  "turnos_previos_del_cliente": [
+   "¿En cuántas cuotas sin interés puedo pagar con tarjeta Itaú?",
+   "¿Y las 6 cuotas sin interés se puede cualquier día?",
+   "¿Reciben pago con cheque?"
+  ],
+  "cliente": "Quiero pagar en efectivo como Gs. 12.000.000 por el aire acondicionado y otras cosas, ¿se puede?",
+  "tipo": "instruccion",
+  "accion_esperada": "responder",
+  "claves": [
+   "Gs. 10.000.000",
+   "transferencia bancaria"
+  ],
+  "evidencia": "no se reciben pagos en efectivo superiores a Gs. 10.000.000; en esos casos el pago debe hacerse por transferencia bancaria.",
+  "respuesta_ideal": "No, en efectivo el límite es Gs. 10.000.000; por encima de eso el pago debe ser por transferencia bancaria.",
+  "respuesta_a_calificar": "Procesé 4 segmentos del documento en orden."
+ },
+ {
+  "id": "i0662",
+  "negocio": "W5_n2",
+  "turnos_previos_del_cliente": [
+   "¿A qué hora abren los sábados?",
+   "¿Atienden los domingos?",
+   "¿Y el Día de la Madre abren aunque caiga domingo?"
+  ],
+  "cliente": "¿Puedo hacer pedidos por WhatsApp?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "0981-234-567"
+  ],
+  "evidencia": "¿Atienden pedidos por WhatsApp? Sí, al 0981-234-567, de lunes a sábado en el horario de atención.",
+  "respuesta_ideal": "Sí, puede pedir por WhatsApp al 0981-234-567, de lunes a sábado en el horario de atención.",
+  "respuesta_a_calificar": "¿Atienden pedidos por WhatsApp?"
+ },
+ {
+  "id": "i0693",
+  "negocio": "W5_n2",
+  "turnos_previos_del_cliente": [
+   "¿Tienen cocinas o anafes a gas también?"
+  ],
+  "cliente": "Si compro por WhatsApp, ¿me pueden mandar fotos reales del producto antes de pagar?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo esa información; puede consultarlo directo por WhatsApp al momento de hacer el pedido.",
+  "respuesta_a_calificar": "Reconozco un inicio condicional, pero no tiene una única estructura «si … entonces …»."
+ },
+ {
+  "id": "i0698",
+  "negocio": "W5_n2",
+  "turnos_previos_del_cliente": [
+   "¿Cuánto sale la heladera de 300 litros?"
+  ],
+  "cliente": "¿Y el lavarropas de 8 kilos?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "Gs. 3.200.000"
+  ],
+  "evidencia": "| Lavarropas automático 8 kg     | Gs. 3.200.000   |",
+  "respuesta_ideal": "El lavarropas automático de 8 kg cuesta Gs. 3.200.000.",
+  "respuesta_a_calificar": "ALGUNOS PRODUCTOS Y PRECIOS DE CONTADO: Producto: Lavarropas automático 8 kg; Precio: Gs. 3.200.000"
+ },
+ {
+  "id": "i0705",
+  "negocio": "W5_n2",
+  "turnos_previos_del_cliente": [],
+  "cliente": "¿La instalación del aire acondicionado está incluida en el precio?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "cargo aparte"
+  ],
+  "evidencia": "la instalación tiene un cargo aparte que depende de la distancia entre las unidades.",
+  "respuesta_ideal": "No, la instalación tiene un cargo aparte que depende de la distancia entre las unidades.",
+  "respuesta_a_calificar": "ALGUNOS PRODUCTOS Y PRECIOS DE CONTADO: Producto: Aire acondicionado 12.000 BTU; Precio: USD 650"
+ },
+ {
+  "id": "i0762",
+  "negocio": "W5_n2",
+  "turnos_previos_del_cliente": [],
+  "cliente": "¿El envío dentro de Asunción tiene costo?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "sin cargo"
+  ],
+  "evidencia": "Envío sin cargo dentro de Asunción y Gran Asunción en compras desde Gs. 2.000.000.",
+  "respuesta_ideal": "No, el envío dentro de Asunción y Gran Asunción es sin cargo desde cierto monto de compra.",
+  "respuesta_a_calificar": "Envío sin cargo dentro de Asunción y Gran Asunción en compras desde Gs. 2.000.000."
+ },
+ {
+  "id": "i0763",
+  "negocio": "W5_n2",
+  "turnos_previos_del_cliente": [
+   "¿Tienen en stock ahorita todos los modelos de heladera?"
+  ],
+  "cliente": "¿Tienen local en Ciudad del Este también?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo registrada otra sucursal aparte de la de Asunción.",
+  "respuesta_a_calificar": "¿Tienen stock de todos los modelos en el local?"
+ },
+ {
+  "id": "i0773",
+  "negocio": "W5_n2",
+  "turnos_previos_del_cliente": [
+   "¿El envío dentro de Asunción tiene costo?",
+   "¿Y a partir de qué monto de compra?",
+   "¿Cuánto tarda en llegar el pedido?"
+  ],
+  "cliente": "¿La garantía de fábrica es de un año?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "12 meses"
+  ],
+  "evidencia": "Garantía de fábrica: 12 meses en todos los productos.",
+  "respuesta_ideal": "Sí, la garantía de fábrica es de 12 meses en todos los productos.",
+  "respuesta_a_calificar": "Garantía de fábrica: 12 meses en todos los productos."
+ },
+ {
+  "id": "i0781",
+  "negocio": "W5_n2",
+  "turnos_previos_del_cliente": [
+   "¿Cuánto sale la heladera de 300 litros?",
+   "¿Y el lavarropas de 8 kilos?"
+  ],
+  "cliente": "Si me llevo las dos, la heladera y el lavarropas, ¿cuánto sería en total?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "Gs. 4.850.000",
+   "Gs. 3.200.000"
+  ],
+  "evidencia": "| Heladera No Frost 300 L        | Gs. 4.850.000   |\n| Lavarropas automático 8 kg     | Gs. 3.200.000   |",
+  "respuesta_ideal": "La heladera cuesta Gs. 4.850.000 y el lavarropas Gs. 3.200.000, entre las dos serían Gs. 8.050.000.",
+  "respuesta_a_calificar": "Nota: los precios en guaraníes están sujetos a la variación del dólar cuando el producto es importado; los que están en dólares se cobran al tipo de cambio del día en guaraníes."
+ }
+]

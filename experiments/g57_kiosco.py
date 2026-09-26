@@ -61,6 +61,12 @@ def judge(turn: dict, reply: dict, system: str) -> str:
     keys = [k for k in turn.get('claves') or [] if plain(k)]
     if action == 'charla':
         return 'charla_ok' if status == 'phatic' else 'charla_otro'
+    if status == 'closest':
+        # G-58: the closest text with a warning (automatic count: useful if it holds every key).
+        keys = [k for k in turn.get('claves') or [] if plain(k)]
+        if action in ('abstenerse', 'derivar') or not keys:
+            return 'cita_sin_dato'
+        return 'cita_util' if all(contains(text, k) for k in keys) else 'cita_no_util'
     if action in ('abstenerse', 'derivar'):
         return 'abstencion_correcta' if abstained else 'contesto_sin_dato'
     if not keys:
@@ -164,11 +170,15 @@ def totals(rows) -> dict:
         cell = by_type.setdefault(r['tipo'], {})
         cell[r['veredicto']] = cell.get(r['veredicto'], 0) + 1
     out['por_tipo'] = {k: dict(sorted(v.items())) for k, v in sorted(by_type.items(), key=lambda kv: str(kv[0]))}
-    answerable = [r for r in rows if r['accion'] == 'responder' and r['veredicto'] in ('correcta', 'equivocada', 'abstencion_indebida')]
+    answerable = [r for r in rows if r['accion'] == 'responder' and r['veredicto'] in
+                  ('correcta', 'equivocada', 'abstencion_indebida', 'cita_util', 'cita_no_util', 'cita_sin_dato')]
     core = [r for r in answerable if r['tipo'] in ('directa', 'si_no')]
     answered = [r for r in rows if r['veredicto'] in ('correcta', 'equivocada', 'contesto_sin_dato')]
     unanswerable = [r for r in rows if r['accion'] in ('abstenerse', 'derivar')]
     pct = lambda a, b: round(100 * a / b, 1) if b else None
+    useful = lambda r: r['veredicto'] in ('correcta', 'cita_util')
+    out['directa_si_no_utiles'] = f"{sum(useful(r) for r in core)}/{len(core)}"
+    out['sin_respuesta_no_lo_se_o_cita'] = f"{sum(r['veredicto'] in ('abstencion_correcta', 'cita_sin_dato') for r in rows if r['accion'] in ('abstenerse', 'derivar'))}/{sum(r['accion'] in ('abstenerse', 'derivar') for r in rows)}"
     out['directa_si_no_correctas'] = f"{sum(r['veredicto'] == 'correcta' for r in core)}/{len(core)}"
     out['directa_si_no_pct'] = pct(sum(r['veredicto'] == 'correcta' for r in core), len(core))
     out['con_respuesta_correctas'] = f"{sum(r['veredicto'] == 'correcta' for r in answerable)}/{len(answerable)}"

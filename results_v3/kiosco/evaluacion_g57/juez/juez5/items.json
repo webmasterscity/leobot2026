@@ -1,0 +1,1915 @@
+[
+ {
+  "id": "i0044",
+  "negocio": "W2_n1",
+  "turnos_previos_del_cliente": [
+   "buenas, quisiera saber donde quedan ubicados",
+   "tienen estacionamiento?"
+  ],
+  "cliente": "quiero agendar la toma de muestra a domicilio para mañana a las 8am",
+  "tipo": "instruccion",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "No agendes ni confirmes citas de toma de muestra a domicilio por este medio; si el cliente quiere agendar, derívalo al WhatsApp 987-654-321.",
+  "respuesta_ideal": "Para agendar la toma de muestra a domicilio debe escribirnos al WhatsApp 987-654-321.",
+  "respuesta_a_calificar": "Registré la afirmación como evidencia lingüística cruda; todavía no hay 3 apoyos independientes para inducir una relación."
+ },
+ {
+  "id": "i0063",
+  "negocio": "W2_n1",
+  "turnos_previos_del_cliente": [
+   "buenas, quisiera saber donde quedan ubicados",
+   "tienen estacionamiento?",
+   "quiero agendar la toma de muestra a domicilio para mañana a las 8am",
+   "cuanto es el recargo por ir a domicilio"
+  ],
+  "cliente": "hacen ese servicio en la molina?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "únicamente en Miraflores, San Isidro y Surco"
+  ],
+  "evidencia": "Servicio disponible únicamente en Miraflores, San Isidro y Surco.",
+  "respuesta_ideal": "No, el servicio a domicilio solo está disponible en Miraflores, San Isidro y Surco.",
+  "respuesta_a_calificar": "¿Hacen pruebas de dopaje o exámenes genéticos?: No, esos análisis no forman parte de nuestra cartera de servicios."
+ },
+ {
+  "id": "i0070",
+  "negocio": "W2_n1",
+  "turnos_previos_del_cliente": [
+   "necesito pedir cita para un hemograma?",
+   "mi glucosa salio en 130, eso es malo?"
+  ],
+  "cliente": "puedo pagar en dolares?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo esa información; le puedo confirmar que aceptamos soles en efectivo, tarjeta, Yape o Plin, pero le sugiero preguntar por dólares en el local.",
+  "respuesta_a_calificar": "Los pacientes particulares que paguen en efectivo tienen 10% de descuento."
+ },
+ {
+  "id": "i0081",
+  "negocio": "W2_n1",
+  "turnos_previos_del_cliente": [],
+  "cliente": "cuanto cuesta el perfil tiroideo",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "S/ 120.00"
+  ],
+  "evidencia": "| Perfil tiroideo (T3, T4, TSH) | S/ 120.00 |",
+  "respuesta_ideal": "El perfil tiroideo (T3, T4 y TSH) cuesta S/ 120.00.",
+  "respuesta_a_calificar": "48 horas"
+ },
+ {
+  "id": "i0082",
+  "negocio": "W2_n1",
+  "turnos_previos_del_cliente": [
+   "buenas, quisiera saber donde quedan ubicados",
+   "tienen estacionamiento?",
+   "quiero agendar la toma de muestra a domicilio para mañana a las 8am"
+  ],
+  "cliente": "cuanto es el recargo por ir a domicilio",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "S/ 25.00"
+  ],
+  "evidencia": "Toma de muestra a domicilio: recargo de S/ 25.00.",
+  "respuesta_ideal": "El servicio a domicilio tiene un recargo de S/ 25.00.",
+  "respuesta_a_calificar": "Toma de muestra a domicilio: recargo de S/ 25.00."
+ },
+ {
+  "id": "i0084",
+  "negocio": "W2_n1",
+  "turnos_previos_del_cliente": [],
+  "cliente": "cuanto cuesta el perfil tiroideo",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "S/ 120.00"
+  ],
+  "evidencia": "| Perfil tiroideo (T3, T4, TSH) | S/ 120.00 |",
+  "respuesta_ideal": "El perfil tiroideo (T3, T4 y TSH) cuesta S/ 120.00.",
+  "respuesta_a_calificar": "Análisis: Perfil tiroideo (T3, T4, TSH); Precio: S/ 120.00"
+ },
+ {
+  "id": "i0116",
+  "negocio": "W2_n1",
+  "turnos_previos_del_cliente": [
+   "Hola, buenas tardes",
+   "cuanto cuesta el hemograma completo",
+   "y el de glucosa?"
+  ],
+  "cliente": "si me hago los dos cuanto seria en total",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "S/ 35.00",
+   "S/ 18.00"
+  ],
+  "evidencia": "| Hemograma completo | S/ 35.00 | ... | Glucosa en ayunas | S/ 18.00 |",
+  "respuesta_ideal": "En total serían S/ 53.00: S/ 35.00 del hemograma más S/ 18.00 de la glucosa.",
+  "respuesta_a_calificar": "Reconozco un inicio condicional, pero no tiene una única estructura «si … entonces …»."
+ },
+ {
+  "id": "i0158",
+  "negocio": "W2_n1",
+  "turnos_previos_del_cliente": [
+   "que formas de pago aceptan",
+   "cuanto cuesta el examen de orina para un niño de 5 años",
+   "la doctora sotelo atiende consultas por resultados?"
+  ],
+  "cliente": "cuanto cuesta el paquete preocupacional",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "S/ 150.00"
+  ],
+  "evidencia": "| Paquete preocupacional | S/ 150.00 |",
+  "respuesta_ideal": "El paquete preocupacional cuesta S/ 150.00.",
+  "respuesta_a_calificar": "hemograma"
+ },
+ {
+  "id": "i0168",
+  "negocio": "W2_n1",
+  "turnos_previos_del_cliente": [
+   "Hola, buenas tardes",
+   "cuanto cuesta el hemograma completo",
+   "y el de glucosa?",
+   "si me hago los dos cuanto seria en total"
+  ],
+  "cliente": "atienden los domingos?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "Domingos: cerrado"
+  ],
+  "evidencia": "Domingos: cerrado",
+  "respuesta_ideal": "No, los domingos permanecemos cerrados.",
+  "respuesta_a_calificar": "Vitalab es un laboratorio clínico particular con más de 15 años atendiendo a la comunidad de Miraflores y distritos cercanos."
+ },
+ {
+  "id": "i0174",
+  "negocio": "W2_n1",
+  "turnos_previos_del_cliente": [
+   "buenas, quisiera saber donde quedan ubicados"
+  ],
+  "cliente": "tienen estacionamiento?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo esa información a la mano; se la puedo confirmar si nos contacta al teléfono del local.",
+  "respuesta_a_calificar": "Los pacientes particulares que paguen en efectivo tienen 10% de descuento."
+ },
+ {
+  "id": "i0189",
+  "negocio": "W2_n1",
+  "turnos_previos_del_cliente": [
+   "Hola, buenas tardes"
+  ],
+  "cliente": "cuanto cuesta el hemograma completo",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "S/ 35.00"
+  ],
+  "evidencia": "| Hemograma completo | S/ 35.00 |",
+  "respuesta_ideal": "El hemograma completo cuesta S/ 35.00.",
+  "respuesta_a_calificar": "Análisis: Hemograma completo; Precio: S/ 35.00"
+ },
+ {
+  "id": "i0209",
+  "negocio": "W2_n1",
+  "turnos_previos_del_cliente": [
+   "cuanto cuesta el perfil tiroideo",
+   "si pido el tiroideo y el perfil lipidico cuanto seria"
+  ],
+  "cliente": "y el tiroideo cuanto demora en salir",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "48 horas"
+  ],
+  "evidencia": "El perfil tiroideo demora 48 horas.",
+  "respuesta_ideal": "El perfil tiroideo demora 48 horas en estar listo.",
+  "respuesta_a_calificar": "Induje una relación primitiva opaca a partir de varias afirmaciones no anotadas y registré sus hechos con procedencia."
+ },
+ {
+  "id": "i0246",
+  "negocio": "W2_n1",
+  "turnos_previos_del_cliente": [
+   "necesito pedir cita para un hemograma?",
+   "mi glucosa salio en 130, eso es malo?",
+   "puedo pagar en dolares?"
+  ],
+  "cliente": "cuanto cuesta la prueba de embarazo",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "S/ 45.00"
+  ],
+  "evidencia": "| Prueba de embarazo en sangre | S/ 45.00 |",
+  "respuesta_ideal": "La prueba de embarazo en sangre cuesta S/ 45.00.",
+  "respuesta_a_calificar": "sangre"
+ },
+ {
+  "id": "i0260",
+  "negocio": "W2_n1",
+  "turnos_previos_del_cliente": [],
+  "cliente": "necesito pedir cita para un hemograma?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "No es necesario, atendemos por orden de llegada"
+  ],
+  "evidencia": "No es necesario, atendemos por orden de llegada, aunque para paquetes preocupacionales recomendamos llamar antes.",
+  "respuesta_ideal": "No es necesario, atendemos por orden de llegada.",
+  "respuesta_a_calificar": "¿Necesito pedir cita para un análisis de rutina?: No es necesario, atendemos por orden de llegada, aunque para paquetes preocupacionales recomendamos llamar antes."
+ },
+ {
+  "id": "i0266",
+  "negocio": "W2_n1",
+  "turnos_previos_del_cliente": [
+   "buenas, quisiera saber donde quedan ubicados",
+   "tienen estacionamiento?",
+   "quiero agendar la toma de muestra a domicilio para mañana a las 8am"
+  ],
+  "cliente": "cuanto es el recargo por ir a domicilio",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "S/ 25.00"
+  ],
+  "evidencia": "Toma de muestra a domicilio: recargo de S/ 25.00.",
+  "respuesta_ideal": "El servicio a domicilio tiene un recargo de S/ 25.00.",
+  "respuesta_a_calificar": "25"
+ },
+ {
+  "id": "i0304",
+  "negocio": "W2_n1",
+  "turnos_previos_del_cliente": [
+   "cuanto cuesta el perfil tiroideo",
+   "si pido el tiroideo y el perfil lipidico cuanto seria",
+   "y el tiroideo cuanto demora en salir"
+  ],
+  "cliente": "hacen perfil hepatico tambien?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No veo ese análisis en nuestra lista de servicios; le recomiendo llamar para confirmar si lo realizamos.",
+  "respuesta_a_calificar": "Análisis: Perfil lipídico completo; Precio: S/ 80.00"
+ },
+ {
+  "id": "i0340",
+  "negocio": "W2_n1",
+  "turnos_previos_del_cliente": [],
+  "cliente": "que formas de pago aceptan",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "efectivo, tarjeta de débito/crédito, Yape y Plin"
+  ],
+  "evidencia": "Aceptamos efectivo, tarjeta de débito/crédito, Yape y Plin.",
+  "respuesta_ideal": "Aceptamos efectivo, tarjeta de débito o crédito, Yape y Plin.",
+  "respuesta_a_calificar": "pago"
+ },
+ {
+  "id": "i0351",
+  "negocio": "W2_n1",
+  "turnos_previos_del_cliente": [
+   "Hola, buenas tardes",
+   "cuanto cuesta el hemograma completo",
+   "y el de glucosa?"
+  ],
+  "cliente": "si me hago los dos cuanto seria en total",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "S/ 35.00",
+   "S/ 18.00"
+  ],
+  "evidencia": "| Hemograma completo | S/ 35.00 | ... | Glucosa en ayunas | S/ 18.00 |",
+  "respuesta_ideal": "En total serían S/ 53.00: S/ 35.00 del hemograma más S/ 18.00 de la glucosa.",
+  "respuesta_a_calificar": "¿Hacen pruebas de dopaje o exámenes genéticos?: No, esos análisis no forman parte de nuestra cartera de servicios."
+ },
+ {
+  "id": "i0353",
+  "negocio": "W2_n1",
+  "turnos_previos_del_cliente": [
+   "Hola, buenas tardes"
+  ],
+  "cliente": "cuanto cuesta el hemograma completo",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "S/ 35.00"
+  ],
+  "evidencia": "| Hemograma completo | S/ 35.00 |",
+  "respuesta_ideal": "El hemograma completo cuesta S/ 35.00.",
+  "respuesta_a_calificar": "35"
+ },
+ {
+  "id": "i0372",
+  "negocio": "W2_n1",
+  "turnos_previos_del_cliente": [
+   "que formas de pago aceptan"
+  ],
+  "cliente": "cuanto cuesta el examen de orina para un niño de 5 años",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo un precio distinto para niños; le puedo confirmar el precio general del examen de orina si lo desea.",
+  "respuesta_a_calificar": "Requisitos para tomarte un análisis: Para examen de orina: de preferencia la primera orina de la mañana, en frasco estéril (lo entregamos en el local)."
+ },
+ {
+  "id": "i0436",
+  "negocio": "W2_n1",
+  "turnos_previos_del_cliente": [
+   "que formas de pago aceptan"
+  ],
+  "cliente": "cuanto cuesta el examen de orina para un niño de 5 años",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo un precio distinto para niños; le puedo confirmar el precio general del examen de orina si lo desea.",
+  "respuesta_a_calificar": "orina"
+ },
+ {
+  "id": "i0468",
+  "negocio": "W2_n1",
+  "turnos_previos_del_cliente": [],
+  "cliente": "buenas, quisiera saber donde quedan ubicados",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "Av. Larco 1245"
+  ],
+  "evidencia": "Dirección: Av. Larco 1245, Miraflores, Lima",
+  "respuesta_ideal": "Estamos en Av. Larco 1245, Miraflores, Lima.",
+  "respuesta_a_calificar": "Registré la afirmación como evidencia lingüística cruda; todavía no hay 3 apoyos independientes para inducir una relación."
+ },
+ {
+  "id": "i0483",
+  "negocio": "W2_n1",
+  "turnos_previos_del_cliente": [],
+  "cliente": "que formas de pago aceptan",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "efectivo, tarjeta de débito/crédito, Yape y Plin"
+  ],
+  "evidencia": "Aceptamos efectivo, tarjeta de débito/crédito, Yape y Plin.",
+  "respuesta_ideal": "Aceptamos efectivo, tarjeta de débito o crédito, Yape y Plin.",
+  "respuesta_a_calificar": "Convenios y formas de pago: Aceptamos efectivo, tarjeta de débito/crédito, Yape y Plin."
+ },
+ {
+  "id": "i0524",
+  "negocio": "W2_n1",
+  "turnos_previos_del_cliente": [
+   "cuanto cuesta el perfil tiroideo"
+  ],
+  "cliente": "si pido el tiroideo y el perfil lipidico cuanto seria",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "S/ 120.00",
+   "S/ 80.00"
+  ],
+  "evidencia": "| Perfil tiroideo (T3, T4, TSH) | S/ 120.00 | ... | Perfil lipídico completo | S/ 80.00 |",
+  "respuesta_ideal": "En total serían S/ 200.00: S/ 120.00 del perfil tiroideo más S/ 80.00 del perfil lipídico.",
+  "respuesta_a_calificar": "El perfil tiroideo demora 48 horas."
+ },
+ {
+  "id": "i0584",
+  "negocio": "W2_n1",
+  "turnos_previos_del_cliente": [
+   "cuanto cuesta el perfil tiroideo",
+   "si pido el tiroideo y el perfil lipidico cuanto seria"
+  ],
+  "cliente": "y el tiroideo cuanto demora en salir",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "48 horas"
+  ],
+  "evidencia": "El perfil tiroideo demora 48 horas.",
+  "respuesta_ideal": "El perfil tiroideo demora 48 horas en estar listo.",
+  "respuesta_a_calificar": "El perfil tiroideo demora 48 horas."
+ },
+ {
+  "id": "i0611",
+  "negocio": "W2_n1",
+  "turnos_previos_del_cliente": [
+   "necesito pedir cita para un hemograma?",
+   "mi glucosa salio en 130, eso es malo?"
+  ],
+  "cliente": "puedo pagar en dolares?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo esa información; le puedo confirmar que aceptamos soles en efectivo, tarjeta, Yape o Plin, pero le sugiero preguntar por dólares en el local.",
+  "respuesta_a_calificar": "No: según lo que me dijeron, «Los pacientes particulares que paguen en efectivo tienen 10% de descuento.»"
+ },
+ {
+  "id": "i0652",
+  "negocio": "W2_n1",
+  "turnos_previos_del_cliente": [
+   "Hola, buenas tardes",
+   "cuanto cuesta el hemograma completo"
+  ],
+  "cliente": "y el de glucosa?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "S/ 18.00"
+  ],
+  "evidencia": "| Glucosa en ayunas | S/ 18.00 |",
+  "respuesta_ideal": "La glucosa en ayunas cuesta S/ 18.00.",
+  "respuesta_a_calificar": "El paquete preocupacional incluye hemograma, glucosa, examen de orina y una evaluación clínica básica."
+ },
+ {
+  "id": "i0666",
+  "negocio": "W2_n1",
+  "turnos_previos_del_cliente": [
+   "que formas de pago aceptan",
+   "cuanto cuesta el examen de orina para un niño de 5 años"
+  ],
+  "cliente": "la doctora sotelo atiende consultas por resultados?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo esa información; solo sé que está a cargo del área de bioquímica del laboratorio.",
+  "respuesta_a_calificar": "Vitalab es un laboratorio clínico particular con más de 15 años atendiendo a la comunidad de Miraflores y distritos cercanos."
+ },
+ {
+  "id": "i0679",
+  "negocio": "W2_n1",
+  "turnos_previos_del_cliente": [
+   "que formas de pago aceptan",
+   "cuanto cuesta el examen de orina para un niño de 5 años",
+   "la doctora sotelo atiende consultas por resultados?",
+   "cuanto cuesta el paquete preocupacional"
+  ],
+  "cliente": "y que incluye ese paquete?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "hemograma, glucosa, examen de orina"
+  ],
+  "evidencia": "El paquete preocupacional incluye hemograma, glucosa, examen de orina y una evaluación clínica básica.",
+  "respuesta_ideal": "Incluye hemograma, glucosa, examen de orina y una evaluación clínica básica.",
+  "respuesta_a_calificar": "El paquete preocupacional incluye hemograma, glucosa, examen de orina y una evaluación clínica básica."
+ },
+ {
+  "id": "i0700",
+  "negocio": "W2_n1",
+  "turnos_previos_del_cliente": [
+   "que formas de pago aceptan",
+   "cuanto cuesta el examen de orina para un niño de 5 años",
+   "la doctora sotelo atiende consultas por resultados?"
+  ],
+  "cliente": "cuanto cuesta el paquete preocupacional",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "S/ 150.00"
+  ],
+  "evidencia": "| Paquete preocupacional | S/ 150.00 |",
+  "respuesta_ideal": "El paquete preocupacional cuesta S/ 150.00.",
+  "respuesta_a_calificar": "El paquete preocupacional incluye hemograma, glucosa, examen de orina y una evaluación clínica básica."
+ },
+ {
+  "id": "i0727",
+  "negocio": "W2_n1",
+  "turnos_previos_del_cliente": [
+   "Hola, buenas tardes",
+   "cuanto cuesta el hemograma completo"
+  ],
+  "cliente": "y el de glucosa?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "S/ 18.00"
+  ],
+  "evidencia": "| Glucosa en ayunas | S/ 18.00 |",
+  "respuesta_ideal": "La glucosa en ayunas cuesta S/ 18.00.",
+  "respuesta_a_calificar": "Sí, me lo contaste."
+ },
+ {
+  "id": "i0733",
+  "negocio": "W2_n1",
+  "turnos_previos_del_cliente": [
+   "cuanto cuesta el perfil tiroideo"
+  ],
+  "cliente": "si pido el tiroideo y el perfil lipidico cuanto seria",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "S/ 120.00",
+   "S/ 80.00"
+  ],
+  "evidencia": "| Perfil tiroideo (T3, T4, TSH) | S/ 120.00 | ... | Perfil lipídico completo | S/ 80.00 |",
+  "respuesta_ideal": "En total serían S/ 200.00: S/ 120.00 del perfil tiroideo más S/ 80.00 del perfil lipídico.",
+  "respuesta_a_calificar": "Reconozco un inicio condicional, pero no tiene una única estructura «si … entonces …»."
+ },
+ {
+  "id": "i0760",
+  "negocio": "W2_n1",
+  "turnos_previos_del_cliente": [
+   "necesito pedir cita para un hemograma?"
+  ],
+  "cliente": "mi glucosa salio en 130, eso es malo?",
+  "tipo": "instruccion",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "Nunca interpretes resultados de análisis ni des diagnósticos ni opiniones médicas; si preguntan qué significa un resultado o un valor, indica que debe consultarlo con su médico tratante.",
+  "respuesta_ideal": "No puedo interpretar ese resultado; le recomiendo consultarlo con su médico tratante.",
+  "respuesta_a_calificar": "Los análisis de rutina (hemograma, glucosa, orina) se entregan en 24 horas."
+ },
+ {
+  "id": "i0775",
+  "negocio": "W2_n1",
+  "turnos_previos_del_cliente": [
+   "buenas, quisiera saber donde quedan ubicados",
+   "tienen estacionamiento?"
+  ],
+  "cliente": "quiero agendar la toma de muestra a domicilio para mañana a las 8am",
+  "tipo": "instruccion",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "No agendes ni confirmes citas de toma de muestra a domicilio por este medio; si el cliente quiere agendar, derívalo al WhatsApp 987-654-321.",
+  "respuesta_ideal": "Para agendar la toma de muestra a domicilio debe escribirnos al WhatsApp 987-654-321.",
+  "respuesta_a_calificar": "¿Cancelaron una cita de toma de muestra a domicilio?: Por favor avise con al menos 2 horas de anticipación para reprogramar sin costo."
+ },
+ {
+  "id": "i0814",
+  "negocio": "W2_n1",
+  "turnos_previos_del_cliente": [
+   "necesito pedir cita para un hemograma?",
+   "mi glucosa salio en 130, eso es malo?",
+   "puedo pagar en dolares?"
+  ],
+  "cliente": "cuanto cuesta la prueba de embarazo",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "S/ 45.00"
+  ],
+  "evidencia": "| Prueba de embarazo en sangre | S/ 45.00 |",
+  "respuesta_ideal": "La prueba de embarazo en sangre cuesta S/ 45.00.",
+  "respuesta_a_calificar": "Análisis: Prueba de embarazo en sangre; Precio: S/ 45.00"
+ },
+ {
+  "id": "i0010",
+  "negocio": "W4_n1",
+  "turnos_previos_del_cliente": [
+   "Me quebraron un televisor en la mudanza de ayer y quiero que me lo paguen"
+  ],
+  "cliente": "cuanto cubre el seguro que viene incluido?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "$500.000"
+  ],
+  "evidencia": "Todas las mudanzas incluyen seguro básico contra daños por manipulación hasta $500.000 en total.",
+  "respuesta_ideal": "El seguro básico incluido cubre daños por manipulación hasta $500.000 en total.",
+  "respuesta_a_calificar": "Sí, camas, closets y mesas; está incluido en el servicio."
+ },
+ {
+  "id": "i0017",
+  "negocio": "W4_n1",
+  "turnos_previos_del_cliente": [
+   "buenas, tienen bodega para guardar muebles por un tiempo?",
+   "y cual es el minimo de meses?"
+  ],
+  "cliente": "la bodega tiene camaras o guardia?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo esa información; le sugiero preguntar al WhatsApp +56 9 7712 3040.",
+  "respuesta_a_calificar": "Se retiran en bodega o se llevan con la mudanza."
+ },
+ {
+  "id": "i0021",
+  "negocio": "W4_n1",
+  "turnos_previos_del_cliente": [
+   "me cambio a Lampa, cobran algo extra por ir hasta alla?",
+   "entonces una casa de 3 dormitorios hasta Lampa, cuanto seria?",
+   "puedo mandar a mi perro en el camion?",
+   "hacen mudanzas de noche?"
+  ],
+  "cliente": "si cancelo 2 dias antes me devuelven el abono?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "no se devuelve",
+   "60 días"
+  ],
+  "evidencia": "- Cancelación con menos de 72 horas: el abono no se devuelve, pero puede usarse para reagendar dentro de los 60 días siguientes.",
+  "respuesta_ideal": "No, con menos de 72 horas de aviso el abono no se devuelve, pero puede usarlo para reagendar dentro de los 60 días siguientes.",
+  "respuesta_a_calificar": "Se pide un abono del 30 % para reservar la fecha; el saldo se paga al terminar la mudanza, antes de que el camión se retire."
+ },
+ {
+  "id": "i0085",
+  "negocio": "W4_n1",
+  "turnos_previos_del_cliente": [
+   "buenas, tienen bodega para guardar muebles por un tiempo?"
+  ],
+  "cliente": "y cual es el minimo de meses?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo ese dato; puede consultarlo al WhatsApp +56 9 7712 3040.",
+  "respuesta_a_calificar": "Recomendamos agendar con al menos 5 días hábiles de anticipación; a fin de mes y en marzo la agenda se llena rápido."
+ },
+ {
+  "id": "i0087",
+  "negocio": "W4_n1",
+  "turnos_previos_del_cliente": [
+   "hola, cuanto sale una mudanza de un depto de 2 dormitorios?",
+   "y si nos pasamos de las 4 horas?",
+   "es que seria un domingo, cambia algo?",
+   "ya, entonces el domingo cuanto me saldria en total el depto?"
+  ],
+  "cliente": "tengo que pagar todo por adelantado?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "30 %",
+   "al terminar"
+  ],
+  "evidencia": "Se pide un abono del 30 % para reservar la fecha; el saldo se paga al terminar la mudanza, antes de que el camión se retire.",
+  "respuesta_ideal": "No, solo un abono del 30 % para reservar la fecha; el saldo se paga al terminar la mudanza, antes de que el camión se retire.",
+  "respuesta_a_calificar": "Electrónicos que no vayan en su caja original o embalados por nosotros no tienen cobertura."
+ },
+ {
+  "id": "i0103",
+  "negocio": "W4_n1",
+  "turnos_previos_del_cliente": [
+   "me cambio a Lampa, cobran algo extra por ir hasta alla?"
+  ],
+  "cliente": "entonces una casa de 3 dormitorios hasta Lampa, cuanto seria?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "295.000"
+  ],
+  "evidencia": "| Mudanza casa 3-4 dormitorios | Camión 30 m3 | chofer + 3 ayudantes, hasta 6 horas | $260.000 |\nPara Colina, Lampa, Padre Hurtado, Peñaflor, Talagante, Buin y Paine se cobra un recargo de $35.000 por tramo de ida.",
+  "respuesta_ideal": "La mudanza de casa de 3 a 4 dormitorios tiene un valor referencial de $260.000 más el recargo de $35.000 por Lampa: unos $295.000; el valor final se confirma con visita o fotos.",
+  "respuesta_a_calificar": "Servicio: Mudanza casa 3-4 dormitorios; Vehículo: Camión 30 m3; Incluye: chofer + 3 ayudantes, hasta 6 horas; Valor referencial: $260.000"
+ },
+ {
+  "id": "i0118",
+  "negocio": "W4_n1",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Me quebraron un televisor en la mudanza de ayer y quiero que me lo paguen",
+  "tipo": "instruccion",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "Reclamos por daños o cosas perdidas: no discutas ni prometas devoluciones; toma nombre, fecha de la mudanza y teléfono, y deriva a Rodrigo Fuenzalida al +56 2 2555 8190.",
+  "respuesta_ideal": "Lamento lo ocurrido. Los reclamos por daños los atiende Rodrigo Fuenzalida al +56 2 2555 8190; si me deja su nombre, la fecha de la mudanza y un teléfono, le paso el caso.",
+  "respuesta_a_calificar": "Se pide un abono del 30 % para reservar la fecha; el saldo se paga al terminar la mudanza, antes de que el camión se retire."
+ },
+ {
+  "id": "i0138",
+  "negocio": "W4_n1",
+  "turnos_previos_del_cliente": [
+   "hola, cuanto sale una mudanza de un depto de 2 dormitorios?"
+  ],
+  "cliente": "y si nos pasamos de las 4 horas?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "$25.000"
+  ],
+  "evidencia": "| Hora adicional (cualquier servicio) | — | — | $25.000 por hora |",
+  "respuesta_ideal": "Cada hora adicional se cobra a $25.000.",
+  "respuesta_a_calificar": "Atención en oficina: lunes a viernes de 9:00 a 18:30 hrs, sábados de 9:00 a 13:00 hrs. Domingos y festivos no hay atención en oficina (sí se realizan mudanzas agendadas)."
+ },
+ {
+  "id": "i0186",
+  "negocio": "W4_n1",
+  "turnos_previos_del_cliente": [
+   "hola, tengo que mover poca cosa, una cama, un ropero chico y unas 10 cajas, dentro de la misma comuna. que servicio me sirve?",
+   "vivo en un 4to piso sin ascensor, cobran extra por eso?"
+  ],
+  "cliente": "y la cama la desarman ustedes?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "está incluido"
+  ],
+  "evidencia": "¿Ustedes desarman y arman muebles? Sí, camas, closets y mesas; está incluido en el servicio.",
+  "respuesta_ideal": "Sí, desarmamos y armamos camas, closets y mesas; está incluido en el servicio.",
+  "respuesta_a_calificar": "¿Ustedes desarman y arman muebles?"
+ },
+ {
+  "id": "i0194",
+  "negocio": "W4_n1",
+  "turnos_previos_del_cliente": [
+   "hola, tengo que mover poca cosa, una cama, un ropero chico y unas 10 cajas, dentro de la misma comuna. que servicio me sirve?",
+   "vivo en un 4to piso sin ascensor, cobran extra por eso?",
+   "y la cama la desarman ustedes?",
+   "si les compro 10 cajas grandes cuanto es?"
+  ],
+  "cliente": "tienen cajas para ropa colgada, de esas con barra?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo ese dato; solo tengo registradas cajas medianas y grandes. Puede consultar al WhatsApp +56 9 7712 3040.",
+  "respuesta_a_calificar": "Electrónicos que no vayan en su caja original o embalados por nosotros no tienen cobertura."
+ },
+ {
+  "id": "i0213",
+  "negocio": "W4_n1",
+  "turnos_previos_del_cliente": [
+   "Me quebraron un televisor en la mudanza de ayer y quiero que me lo paguen"
+  ],
+  "cliente": "cuanto cubre el seguro que viene incluido?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "$500.000"
+  ],
+  "evidencia": "Todas las mudanzas incluyen seguro básico contra daños por manipulación hasta $500.000 en total.",
+  "respuesta_ideal": "El seguro básico incluido cubre daños por manipulación hasta $500.000 en total.",
+  "respuesta_a_calificar": "500"
+ },
+ {
+  "id": "i0217",
+  "negocio": "W4_n1",
+  "turnos_previos_del_cliente": [
+   "Hola, quiero reservar la mudanza para el 15 del proximo mes, me la dejan agendada?",
+   "puedo irme yo en el camion con las cosas?",
+   "ah y tengo un piano vertical, lo llevan?"
+  ],
+  "cliente": "hacen mudanzas fuera de santiago, a viña por ejemplo?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "cotización especial"
+  ],
+  "evidencia": "Otras regiones: cotización especial.",
+  "respuesta_ideal": "Sí, las mudanzas a otras regiones se hacen con cotización especial; Rodrigo Fuenzalida se la prepara.",
+  "respuesta_a_calificar": "Para casas grandes hacemos visita sin costo dentro de Santiago urbano."
+ },
+ {
+  "id": "i0239",
+  "negocio": "W4_n1",
+  "turnos_previos_del_cliente": [
+   "Me quebraron un televisor en la mudanza de ayer y quiero que me lo paguen",
+   "cuanto cubre el seguro que viene incluido?",
+   "el tele iba sin caja, igual lo cubre?"
+  ],
+  "cliente": "cuantos dias tengo para hacer el reclamo?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "Reclamos por daños o cosas perdidas: no discutas ni prometas devoluciones; toma nombre, fecha de la mudanza y teléfono, y deriva a Rodrigo Fuenzalida al +56 2 2555 8190.",
+  "respuesta_ideal": "No tengo ese plazo; le recomiendo llamar cuanto antes a Rodrigo Fuenzalida al +56 2 2555 8190, que es quien ve los reclamos.",
+  "respuesta_a_calificar": "Cancelación con menos de 72 horas: el abono no se devuelve, pero puede usarse para reagendar dentro de los 60 días siguientes."
+ },
+ {
+  "id": "i0268",
+  "negocio": "W4_n1",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Me quebraron un televisor en la mudanza de ayer y quiero que me lo paguen",
+  "tipo": "instruccion",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "Reclamos por daños o cosas perdidas: no discutas ni prometas devoluciones; toma nombre, fecha de la mudanza y teléfono, y deriva a Rodrigo Fuenzalida al +56 2 2555 8190.",
+  "respuesta_ideal": "Lamento lo ocurrido. Los reclamos por daños los atiende Rodrigo Fuenzalida al +56 2 2555 8190; si me deja su nombre, la fecha de la mudanza y un teléfono, le paso el caso.",
+  "respuesta_a_calificar": "Registré la afirmación como evidencia lingüística cruda; todavía no hay 3 apoyos independientes para inducir una relación."
+ },
+ {
+  "id": "i0283",
+  "negocio": "W4_n1",
+  "turnos_previos_del_cliente": [
+   "me cambio a Lampa, cobran algo extra por ir hasta alla?",
+   "entonces una casa de 3 dormitorios hasta Lampa, cuanto seria?",
+   "puedo mandar a mi perro en el camion?"
+  ],
+  "cliente": "hacen mudanzas de noche?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo ese dato; puede consultarlo al WhatsApp +56 9 7712 3040.",
+  "respuesta_a_calificar": "Para casas grandes hacemos visita sin costo dentro de Santiago urbano."
+ },
+ {
+  "id": "i0341",
+  "negocio": "W4_n1",
+  "turnos_previos_del_cliente": [],
+  "cliente": "hola, tengo que mover poca cosa, una cama, un ropero chico y unas 10 cajas, dentro de la misma comuna. que servicio me sirve?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "$65.000"
+  ],
+  "evidencia": "| Flete pequeño | Camioneta 3/4 cerrada | chofer + 1 ayudante, hasta 2 horas | $65.000 |",
+  "respuesta_ideal": "Hola, bienvenido a Mudanzas Cordillera. Para eso le sirve el flete pequeño: camioneta 3/4 cerrada con chofer y 1 ayudante hasta 2 horas, valor referencial $65.000; el valor final se confirma con fotos.",
+  "respuesta_a_calificar": "Procesé 2 segmentos del documento en orden."
+ },
+ {
+  "id": "i0367",
+  "negocio": "W4_n1",
+  "turnos_previos_del_cliente": [
+   "me cambio a Lampa, cobran algo extra por ir hasta alla?",
+   "entonces una casa de 3 dormitorios hasta Lampa, cuanto seria?",
+   "puedo mandar a mi perro en el camion?",
+   "hacen mudanzas de noche?"
+  ],
+  "cliente": "si cancelo 2 dias antes me devuelven el abono?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "no se devuelve",
+   "60 días"
+  ],
+  "evidencia": "- Cancelación con menos de 72 horas: el abono no se devuelve, pero puede usarse para reagendar dentro de los 60 días siguientes.",
+  "respuesta_ideal": "No, con menos de 72 horas de aviso el abono no se devuelve, pero puede usarlo para reagendar dentro de los 60 días siguientes.",
+  "respuesta_a_calificar": "Reconozco un inicio condicional, pero no tiene una única estructura «si … entonces …»."
+ },
+ {
+  "id": "i0369",
+  "negocio": "W4_n1",
+  "turnos_previos_del_cliente": [
+   "hola, cuanto sale una mudanza de un depto de 2 dormitorios?",
+   "y si nos pasamos de las 4 horas?",
+   "es que seria un domingo, cambia algo?"
+  ],
+  "cliente": "ya, entonces el domingo cuanto me saldria en total el depto?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "188.500"
+  ],
+  "evidencia": "| Mudanza departamento 1-2 dormitorios | Camión 15 m3 | chofer + 2 ayudantes, hasta 4 horas | $145.000 |\n- Domingos y festivos: 30 % sobre el valor del servicio.",
+  "respuesta_ideal": "Con el recargo del 30 % serían unos $188.500 referenciales ($145.000 más $43.500); el valor exacto lo confirma Rodrigo con fotos o visita.",
+  "respuesta_a_calificar": "Todas las mudanzas incluyen seguro básico contra daños por manipulación hasta $500.000 en total."
+ },
+ {
+  "id": "i0396",
+  "negocio": "W4_n1",
+  "turnos_previos_del_cliente": [],
+  "cliente": "buenas, tienen bodega para guardar muebles por un tiempo?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "$9.900"
+  ],
+  "evidencia": "| Bodegaje | — | por m3 al mes | $9.900 |",
+  "respuesta_ideal": "Hola, bienvenido a Mudanzas Cordillera. Sí, ofrecemos bodegaje a $9.900 por metro cúbico al mes.",
+  "respuesta_a_calificar": "Se pide un abono del 30 % para reservar la fecha; el saldo se paga al terminar la mudanza, antes de que el camión se retire."
+ },
+ {
+  "id": "i0544",
+  "negocio": "W4_n1",
+  "turnos_previos_del_cliente": [
+   "hola, tengo que mover poca cosa, una cama, un ropero chico y unas 10 cajas, dentro de la misma comuna. que servicio me sirve?",
+   "vivo en un 4to piso sin ascensor, cobran extra por eso?",
+   "y la cama la desarman ustedes?"
+  ],
+  "cliente": "si les compro 10 cajas grandes cuanto es?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "22.000"
+  ],
+  "evidencia": "¿Venden cajas? Sí: caja mediana $1.500, caja grande $2.200, rollo de film $6.000.",
+  "respuesta_ideal": "La caja grande cuesta $2.200, así que 10 cajas serían $22.000.",
+  "respuesta_a_calificar": "Sí: caja mediana $1.500, caja grande $2.200, rollo de film $6.000."
+ },
+ {
+  "id": "i0575",
+  "negocio": "W4_n1",
+  "turnos_previos_del_cliente": [
+   "hola, tengo que mover poca cosa, una cama, un ropero chico y unas 10 cajas, dentro de la misma comuna. que servicio me sirve?"
+  ],
+  "cliente": "vivo en un 4to piso sin ascensor, cobran extra por eso?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "$8.000"
+  ],
+  "evidencia": "- Piso sin ascensor: $8.000 por piso a partir del 3er piso (se cobra en origen y en destino, según corresponda).",
+  "respuesta_ideal": "Sí, sin ascensor se cobran $8.000 por piso a partir del tercero, así que en un cuarto piso serían dos pisos de recargo.",
+  "respuesta_a_calificar": "Piso sin ascensor: $8.000 por piso a partir del 3er piso (se cobra en origen y en destino, según corresponda)."
+ },
+ {
+  "id": "i0579",
+  "negocio": "W4_n1",
+  "turnos_previos_del_cliente": [
+   "hola, cuanto sale una mudanza de un depto de 2 dormitorios?",
+   "y si nos pasamos de las 4 horas?"
+  ],
+  "cliente": "es que seria un domingo, cambia algo?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "30 %"
+  ],
+  "evidencia": "- Domingos y festivos: 30 % sobre el valor del servicio.",
+  "respuesta_ideal": "Sí, los domingos y festivos tienen un recargo del 30 % sobre el valor del servicio.",
+  "respuesta_a_calificar": "El horario de llegada es una ventana de 1 hora."
+ },
+ {
+  "id": "i0613",
+  "negocio": "W4_n1",
+  "turnos_previos_del_cliente": [],
+  "cliente": "me cambio a Lampa, cobran algo extra por ir hasta alla?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "$35.000"
+  ],
+  "evidencia": "Para Colina, Lampa, Padre Hurtado, Peñaflor, Talagante, Buin y Paine se cobra un recargo de $35.000 por tramo de ida.",
+  "respuesta_ideal": "Sí, para Lampa se cobra un recargo de $35.000 por tramo de ida.",
+  "respuesta_a_calificar": "Se considera Santiago urbano las comunas dentro del anillo Américo Vespucio. Para Colina, Lampa, Padre Hurtado, Peñaflor, Talagante, Buin y Paine se cobra un recargo de $35.000 por tramo de ida. Otras regiones: cotización especial."
+ },
+ {
+  "id": "i0638",
+  "negocio": "W4_n1",
+  "turnos_previos_del_cliente": [
+   "buenas, tienen bodega para guardar muebles por un tiempo?",
+   "y cual es el minimo de meses?",
+   "la bodega tiene camaras o guardia?"
+  ],
+  "cliente": "donde queda la bodega?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "Av. Vicuña Mackenna 4820"
+  ],
+  "evidencia": "Oficina y bodega: Av. Vicuña Mackenna 4820, San Joaquín, Santiago (a dos cuadras del metro Pedrero, línea 5).",
+  "respuesta_ideal": "La bodega está junto a la oficina, en Av. Vicuña Mackenna 4820, San Joaquín, a dos cuadras del metro Pedrero.",
+  "respuesta_a_calificar": "Oficina y bodega: Av. Vicuña Mackenna 4820, San Joaquín, Santiago (a dos cuadras del metro Pedrero, línea 5)."
+ },
+ {
+  "id": "i0646",
+  "negocio": "W4_n1",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Hola, quiero reservar la mudanza para el 15 del proximo mes, me la dejan agendada?",
+  "tipo": "instruccion",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "Nunca confirmes una fecha ni des por reservada una mudanza: las reservas solo quedan firmes con el abono del 30 % y las confirma Karina Soto. Si el cliente quiere reservar, pídele nombre, comuna de origen y destino, fecha tentativa y un teléfono, y dile que Karina lo contactará.",
+  "respuesta_ideal": "Hola, bienvenido a Mudanzas Cordillera. Desde aquí no puedo dejarla agendada: la fecha queda firme con el abono del 30 % y la confirma Karina Soto. Si me indica su nombre, comuna de origen y destino, fecha tentativa y un teléfono, Karina lo contacta.",
+  "respuesta_a_calificar": "Se pide un abono del 30 % para reservar la fecha; el saldo se paga al terminar la mudanza, antes de que el camión se retire."
+ },
+ {
+  "id": "i0649",
+  "negocio": "W4_n1",
+  "turnos_previos_del_cliente": [
+   "Me quebraron un televisor en la mudanza de ayer y quiero que me lo paguen",
+   "cuanto cubre el seguro que viene incluido?"
+  ],
+  "cliente": "el tele iba sin caja, igual lo cubre?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "no tienen cobertura"
+  ],
+  "evidencia": "Electrónicos que no vayan en su caja original o embalados por nosotros no tienen cobertura.",
+  "respuesta_ideal": "Según la política, los electrónicos que no van en su caja original o embalados por nosotros no tienen cobertura; de todos modos, Rodrigo revisa cada caso.",
+  "respuesta_a_calificar": "Electrónicos que no vayan en su caja original o embalados por nosotros no tienen cobertura."
+ },
+ {
+  "id": "i0672",
+  "negocio": "W4_n1",
+  "turnos_previos_del_cliente": [
+   "Hola, quiero reservar la mudanza para el 15 del proximo mes, me la dejan agendada?",
+   "puedo irme yo en el camion con las cosas?"
+  ],
+  "cliente": "ah y tengo un piano vertical, lo llevan?",
+  "tipo": "instruccion",
+  "accion_esperada": "responder",
+  "claves": [
+   "$40.000"
+  ],
+  "evidencia": "- Piano vertical, caja fuerte o mesa de pool: $40.000 adicionales por pieza. Se debe avisar al cotizar.\nSi el cliente menciona un piano, caja fuerte o mesa de pool, avísale del recargo de $40.000 y que debe informarlo al cotizar.",
+  "respuesta_ideal": "Sí, pero el piano vertical tiene un recargo de $40.000 por pieza y hay que informarlo al momento de cotizar.",
+  "respuesta_a_calificar": "Piano vertical, caja fuerte o mesa de pool: $40.000 adicionales por pieza. Se debe avisar al cotizar."
+ },
+ {
+  "id": "i0678",
+  "negocio": "W4_n1",
+  "turnos_previos_del_cliente": [
+   "buenas, tienen bodega para guardar muebles por un tiempo?",
+   "y cual es el minimo de meses?",
+   "la bodega tiene camaras o guardia?"
+  ],
+  "cliente": "donde queda la bodega?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "Av. Vicuña Mackenna 4820"
+  ],
+  "evidencia": "Oficina y bodega: Av. Vicuña Mackenna 4820, San Joaquín, Santiago (a dos cuadras del metro Pedrero, línea 5).",
+  "respuesta_ideal": "La bodega está junto a la oficina, en Av. Vicuña Mackenna 4820, San Joaquín, a dos cuadras del metro Pedrero.",
+  "respuesta_a_calificar": "mudanza"
+ },
+ {
+  "id": "i0685",
+  "negocio": "W4_n1",
+  "turnos_previos_del_cliente": [
+   "me cambio a Lampa, cobran algo extra por ir hasta alla?",
+   "entonces una casa de 3 dormitorios hasta Lampa, cuanto seria?"
+  ],
+  "cliente": "puedo mandar a mi perro en el camion?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "animales"
+  ],
+  "evidencia": "Plantas de gran tamaño, animales, combustibles, gas, pinturas abiertas, dinero, joyas ni documentos de valor.",
+  "respuesta_ideal": "No, no transportamos animales; el perro tendría que viajar por otro medio.",
+  "respuesta_a_calificar": "¿Puedo ir en el camión?"
+ },
+ {
+  "id": "i0702",
+  "negocio": "W4_n1",
+  "turnos_previos_del_cliente": [
+   "Hola, quiero reservar la mudanza para el 15 del proximo mes, me la dejan agendada?"
+  ],
+  "cliente": "puedo irme yo en el camion con las cosas?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "no llevamos pasajeros"
+  ],
+  "evidencia": "¿Puedo ir en el camión? Por norma de seguridad no llevamos pasajeros.",
+  "respuesta_ideal": "No, por norma de seguridad no llevamos pasajeros en el camión.",
+  "respuesta_a_calificar": "¿Puedo ir en el camión?"
+ },
+ {
+  "id": "i0726",
+  "negocio": "W4_n1",
+  "turnos_previos_del_cliente": [
+   "hola, tengo que mover poca cosa, una cama, un ropero chico y unas 10 cajas, dentro de la misma comuna. que servicio me sirve?",
+   "vivo en un 4to piso sin ascensor, cobran extra por eso?",
+   "y la cama la desarman ustedes?"
+  ],
+  "cliente": "si les compro 10 cajas grandes cuanto es?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "22.000"
+  ],
+  "evidencia": "¿Venden cajas? Sí: caja mediana $1.500, caja grande $2.200, rollo de film $6.000.",
+  "respuesta_ideal": "La caja grande cuesta $2.200, así que 10 cajas serían $22.000.",
+  "respuesta_a_calificar": "Reconozco un inicio condicional, pero no tiene una única estructura «si … entonces …»."
+ },
+ {
+  "id": "i0739",
+  "negocio": "W4_n1",
+  "turnos_previos_del_cliente": [
+   "Hola, quiero reservar la mudanza para el 15 del proximo mes, me la dejan agendada?",
+   "puedo irme yo en el camion con las cosas?",
+   "ah y tengo un piano vertical, lo llevan?",
+   "hacen mudanzas fuera de santiago, a viña por ejemplo?"
+  ],
+  "cliente": "el camion tiene rampa hidraulica?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo ese dato; consúltelo al WhatsApp +56 9 7712 3040.",
+  "respuesta_a_calificar": "Se pide un abono del 30 % para reservar la fecha; el saldo se paga al terminar la mudanza, antes de que el camión se retire."
+ },
+ {
+  "id": "i0754",
+  "negocio": "W4_n1",
+  "turnos_previos_del_cliente": [],
+  "cliente": "hola, cuanto sale una mudanza de un depto de 2 dormitorios?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "$145.000"
+  ],
+  "evidencia": "| Mudanza departamento 1-2 dormitorios | Camión 15 m3 | chofer + 2 ayudantes, hasta 4 horas | $145.000 |",
+  "respuesta_ideal": "Hola, bienvenido a Mudanzas Cordillera. Una mudanza de departamento de 1 a 2 dormitorios tiene un valor referencial de $145.000 con IVA, con camión de 15 m3, chofer y 2 ayudantes hasta 4 horas; el valor final se confirma con fotos o visita.",
+  "respuesta_a_calificar": "Servicio: Mudanza departamento 1-2 dormitorios; Vehículo: Camión 15 m3; Incluye: chofer + 2 ayudantes, hasta 4 horas; Valor referencial: $145.000"
+ },
+ {
+  "id": "i0780",
+  "negocio": "W4_n1",
+  "turnos_previos_del_cliente": [],
+  "cliente": "hola, tengo que mover poca cosa, una cama, un ropero chico y unas 10 cajas, dentro de la misma comuna. que servicio me sirve?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "$65.000"
+  ],
+  "evidencia": "| Flete pequeño | Camioneta 3/4 cerrada | chofer + 1 ayudante, hasta 2 horas | $65.000 |",
+  "respuesta_ideal": "Hola, bienvenido a Mudanzas Cordillera. Para eso le sirve el flete pequeño: camioneta 3/4 cerrada con chofer y 1 ayudante hasta 2 horas, valor referencial $65.000; el valor final se confirma con fotos.",
+  "respuesta_a_calificar": "Sí, camas, closets y mesas; está incluido en el servicio."
+ },
+ {
+  "id": "i0794",
+  "negocio": "W4_n1",
+  "turnos_previos_del_cliente": [
+   "hola, cuanto sale una mudanza de un depto de 2 dormitorios?",
+   "y si nos pasamos de las 4 horas?",
+   "es que seria un domingo, cambia algo?",
+   "ya, entonces el domingo cuanto me saldria en total el depto?",
+   "tengo que pagar todo por adelantado?"
+  ],
+  "cliente": "y hacen mudanzas de oficinas tambien?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo ese dato; puede consultarlo al WhatsApp +56 9 7712 3040 y le confirman.",
+  "respuesta_a_calificar": "Atención en oficina: lunes a viernes de 9:00 a 18:30 hrs, sábados de 9:00 a 13:00 hrs. Domingos y festivos no hay atención en oficina (sí se realizan mudanzas agendadas)."
+ },
+ {
+  "id": "i0020",
+  "negocio": "W6_n1",
+  "turnos_previos_del_cliente": [
+   "¿Cómo se puede pagar? ¿Aceptan billeteras digitales?"
+  ],
+  "cliente": "Necesito dos sillas más para mi comedor, ¿venden sueltas las de cedro? ¿cuánto serían las dos?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "760"
+  ],
+  "evidencia": "Sí, la silla de cedro del comedor Chachani se vende suelta a S/ 380 c/u.",
+  "respuesta_ideal": "Sí, la silla de cedro del comedor Chachani se vende suelta a S/ 380 cada una, así que las dos serían S/ 760.",
+  "respuesta_a_calificar": "¿Venden sillas sueltas?: Sí, la silla de cedro del comedor Chachani se vende suelta a S/ 380 c/u."
+ },
+ {
+  "id": "i0026",
+  "negocio": "W6_n1",
+  "turnos_previos_del_cliente": [
+   "Quiero un ropero a medida porque mi cuarto es angosto. ¿Cobran por venir a medir?",
+   "¿Más o menos cuánto saldría uno de 2.40 de ancho con puertas corredizas?",
+   "Ya. ¿Y en cuánto tiempo lo tendrían listo?"
+  ],
+  "cliente": "cuanto hay que dar de adelanto",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "50"
+  ],
+  "evidencia": "3. Adelanto del 50 % para empezar la fabricación.",
+  "respuesta_ideal": "Para empezar la fabricación se deja un adelanto del 50 %; el saldo se paga en la entrega.",
+  "respuesta_a_calificar": "50"
+ },
+ {
+  "id": "i0032",
+  "negocio": "W6_n1",
+  "turnos_previos_del_cliente": [
+   "¿Cómo se puede pagar? ¿Aceptan billeteras digitales?"
+  ],
+  "cliente": "Necesito dos sillas más para mi comedor, ¿venden sueltas las de cedro? ¿cuánto serían las dos?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "760"
+  ],
+  "evidencia": "Sí, la silla de cedro del comedor Chachani se vende suelta a S/ 380 c/u.",
+  "respuesta_ideal": "Sí, la silla de cedro del comedor Chachani se vende suelta a S/ 380 cada una, así que las dos serían S/ 760.",
+  "respuesta_a_calificar": "Procesé 2 segmentos del documento en orden."
+ },
+ {
+  "id": "i0046",
+  "negocio": "W6_n1",
+  "turnos_previos_del_cliente": [
+   "Vivo en Cayma. Si compro la cama Tingo, ¿me cobran el delivery?",
+   "¿Y si solo llevo un velador?",
+   "¿El armado se paga aparte?",
+   "A mi hermana que vive en Mollendo le quiero regalar un comedor, ¿se lo pueden mandar?"
+  ],
+  "cliente": "¿Y cuántos días se demora en llegar el delivery aquí en la ciudad?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo el dato de cuántos días demora la entrega; solo sé que repartimos de lunes a sábado. Un asesor en caja se lo puede confirmar.",
+  "respuesta_a_calificar": "Tiene 7 días calendario desde la entrega para pedir un cambio, presentando su boleta o factura, con el mueble sin uso y en su embalaje original."
+ },
+ {
+  "id": "i0051",
+  "negocio": "W6_n1",
+  "turnos_previos_del_cliente": [
+   "¿Cómo se puede pagar? ¿Aceptan billeteras digitales?",
+   "Necesito dos sillas más para mi comedor, ¿venden sueltas las de cedro? ¿cuánto serían las dos?",
+   "¿Y las de tornillo, las del comedor de 4 sillas?"
+  ],
+  "cliente": "¿Cuánto tiempo de garantía tiene la madera?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "2 años"
+  ],
+  "evidencia": "Estructura de madera: 2 años.",
+  "respuesta_ideal": "La estructura de madera tiene 2 años de garantía.",
+  "respuesta_a_calificar": "daños"
+ },
+ {
+  "id": "i0052",
+  "negocio": "W6_n1",
+  "turnos_previos_del_cliente": [
+   "¿Cómo se puede pagar? ¿Aceptan billeteras digitales?",
+   "Necesito dos sillas más para mi comedor, ¿venden sueltas las de cedro? ¿cuánto serían las dos?",
+   "¿Y las de tornillo, las del comedor de 4 sillas?",
+   "¿Cuánto tiempo de garantía tiene la madera?"
+  ],
+  "cliente": "¿venden colchones tambien? para la cama de 2 plazas",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo información sobre venta de colchones; en nuestro catálogo no figuran.",
+  "respuesta_a_calificar": "Producto: Cama \"Tingo\" 2 plazas con cabecera; Material: Pino; Medidas aprox.: 1.40 x 1.90 m; Precio: S/ 890"
+ },
+ {
+  "id": "i0057",
+  "negocio": "W6_n1",
+  "turnos_previos_del_cliente": [
+   "A que hora abren los domingos?",
+   "y el 15 de agosto atienden? es feriado",
+   "¿Dónde queda la tienda exactamente?"
+  ],
+  "cliente": "¿Hay donde estacionar el carro?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "4 espacios"
+  ],
+  "evidencia": "Estacionamiento: 4 espacios para clientes en la puerta de la tienda.",
+  "respuesta_ideal": "Sí, tenemos 4 espacios para clientes en la puerta de la tienda.",
+  "respuesta_a_calificar": "Dirección: Av. Ejército 1024, Yanahuara, Arequipa (a una cuadra de la Av. Trinidad Morán)"
+ },
+ {
+  "id": "i0062",
+  "negocio": "W6_n1",
+  "turnos_previos_del_cliente": [
+   "Quiero un ropero a medida porque mi cuarto es angosto. ¿Cobran por venir a medir?",
+   "¿Más o menos cuánto saldría uno de 2.40 de ancho con puertas corredizas?"
+  ],
+  "cliente": "Ya. ¿Y en cuánto tiempo lo tendrían listo?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "15 a 25 días hábiles"
+  ],
+  "evidencia": "4. Fabricación: de 15 a 25 días hábiles, según el mueble.",
+  "respuesta_ideal": "La fabricación toma aproximadamente de 15 a 25 días hábiles, según el mueble; antes van unos 3 días hábiles de diseño y cotización.",
+  "respuesta_a_calificar": "Procesé 2 segmentos del documento en orden."
+ },
+ {
+  "id": "i0069",
+  "negocio": "W6_n1",
+  "turnos_previos_del_cliente": [],
+  "cliente": "A que hora abren los domingos?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "10:00"
+  ],
+  "evidencia": "- Domingos: 10:00 a. m. a 2:00 p. m.",
+  "respuesta_ideal": "Los domingos abrimos a las 10:00 a. m. y atendemos hasta las 2:00 p. m.",
+  "respuesta_a_calificar": "sábado"
+ },
+ {
+  "id": "i0080",
+  "negocio": "W6_n1",
+  "turnos_previos_del_cliente": [
+   "A que hora abren los domingos?",
+   "y el 15 de agosto atienden? es feriado",
+   "¿Dónde queda la tienda exactamente?",
+   "¿Hay donde estacionar el carro?"
+  ],
+  "cliente": "Oiga, ¿y el taller de Cerro Colorado se puede visitar para ver cómo fabrican?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo información sobre visitas al taller; lo que sí le puedo decir es que la atención al público es en la sala de exhibición de Av. Ejército 1024.",
+  "respuesta_a_calificar": "Oiga. Fabricamos en nuestro propio taller de Cerro Colorado y vendemos directo en nuestra sala de exhibición, sin intermediarios."
+ },
+ {
+  "id": "i0088",
+  "negocio": "W6_n1",
+  "turnos_previos_del_cliente": [
+   "Quiero un ropero a medida porque mi cuarto es angosto. ¿Cobran por venir a medir?",
+   "¿Más o menos cuánto saldría uno de 2.40 de ancho con puertas corredizas?",
+   "Ya. ¿Y en cuánto tiempo lo tendrían listo?",
+   "cuanto hay que dar de adelanto"
+  ],
+  "cliente": "Y si al final no me convence cómo quedó, ¿lo puedo cambiar?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "no tienen cambio ni devolución"
+  ],
+  "evidencia": "Los muebles a medida no tienen cambio ni devolución.",
+  "respuesta_ideal": "Lamentablemente no: los muebles a medida no tienen cambio ni devolución.",
+  "respuesta_a_calificar": "Los muebles a medida no tienen cambio ni devolución."
+ },
+ {
+  "id": "i0119",
+  "negocio": "W6_n1",
+  "turnos_previos_del_cliente": [
+   "A que hora abren los domingos?",
+   "y el 15 de agosto atienden? es feriado",
+   "¿Dónde queda la tienda exactamente?",
+   "¿Hay donde estacionar el carro?"
+  ],
+  "cliente": "Oiga, ¿y el taller de Cerro Colorado se puede visitar para ver cómo fabrican?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo información sobre visitas al taller; lo que sí le puedo decir es que la atención al público es en la sala de exhibición de Av. Ejército 1024.",
+  "respuesta_a_calificar": "directo en nuestra sala de exhibición"
+ },
+ {
+  "id": "i0128",
+  "negocio": "W6_n1",
+  "turnos_previos_del_cliente": [
+   "Hola, buenas tardes",
+   "cuanto cuesta el sofa cama?"
+  ],
+  "cliente": "¿y de largo cuánto mide?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "1.90 m"
+  ],
+  "evidencia": "| Sofá cama \"Yanahuara\" | Estructura de pino, tapiz chenille | 1.90 m de largo | S/ 1,350 |",
+  "respuesta_ideal": "Mide aproximadamente 1.90 m de largo.",
+  "respuesta_a_calificar": "Producto: Sofá cama \"Yanahuara\"; Material: Estructura de pino, tapiz chenille; Medidas aprox.: 1.90 m de largo; Precio: S/ 1,350"
+ },
+ {
+  "id": "i0132",
+  "negocio": "W6_n1",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Quiero un ropero a medida porque mi cuarto es angosto. ¿Cobran por venir a medir?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "40",
+   "se descuenta"
+  ],
+  "evidencia": "1. Visita técnica para tomar medidas: S/ 40 dentro de la ciudad (se descuenta del precio si confirma el pedido).",
+  "respuesta_ideal": "Sí, la visita técnica para tomar medidas cuesta S/ 40 dentro de la ciudad, y se descuenta del precio si confirma el pedido.",
+  "respuesta_a_calificar": "Producto: Ropero \"Colca\" 3 cuerpos; Material: Melamina 18 mm; Medidas aprox.: 1.50 x 2.00 m; Precio: S/ 1,190"
+ },
+ {
+  "id": "i0159",
+  "negocio": "W6_n1",
+  "turnos_previos_del_cliente": [],
+  "cliente": "¿Cómo se puede pagar? ¿Aceptan billeteras digitales?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "Yape",
+   "Plin"
+  ],
+  "evidencia": "Efectivo, Yape, Plin, transferencia BCP o Interbank, y tarjetas Visa y Mastercard.",
+  "respuesta_ideal": "Sí, aceptamos Yape y Plin, además de efectivo, transferencia BCP o Interbank y tarjetas Visa y Mastercard.",
+  "respuesta_a_calificar": "No aceptamos cheques."
+ },
+ {
+  "id": "i0185",
+  "negocio": "W6_n1",
+  "turnos_previos_del_cliente": [
+   "¿Cómo se puede pagar? ¿Aceptan billeteras digitales?",
+   "Necesito dos sillas más para mi comedor, ¿venden sueltas las de cedro? ¿cuánto serían las dos?",
+   "¿Y las de tornillo, las del comedor de 4 sillas?"
+  ],
+  "cliente": "¿Cuánto tiempo de garantía tiene la madera?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "2 años"
+  ],
+  "evidencia": "Estructura de madera: 2 años.",
+  "respuesta_ideal": "La estructura de madera tiene 2 años de garantía.",
+  "respuesta_a_calificar": "== GARANTÍA ==: Estructura de madera: 2 años."
+ },
+ {
+  "id": "i0216",
+  "negocio": "W6_n1",
+  "turnos_previos_del_cliente": [
+   "A que hora abren los domingos?"
+  ],
+  "cliente": "y el 15 de agosto atienden? es feriado",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "cerrados"
+  ],
+  "evidencia": "El 15 de agosto, aniversario de Arequipa, permanecemos cerrados.",
+  "respuesta_ideal": "No, el 15 de agosto, por el aniversario de Arequipa, permanecemos cerrados.",
+  "respuesta_a_calificar": "El 15 de agosto, aniversario de Arequipa, permanecemos cerrados."
+ },
+ {
+  "id": "i0243",
+  "negocio": "W6_n1",
+  "turnos_previos_del_cliente": [
+   "A que hora abren los domingos?",
+   "y el 15 de agosto atienden? es feriado"
+  ],
+  "cliente": "¿Dónde queda la tienda exactamente?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "Av. Ejército 1024"
+  ],
+  "evidencia": "Dirección: Av. Ejército 1024, Yanahuara, Arequipa (a una cuadra de la Av. Trinidad Morán)",
+  "respuesta_ideal": "Estamos en Av. Ejército 1024, Yanahuara, a una cuadra de la Av. Trinidad Morán.",
+  "respuesta_a_calificar": "WhatsApp de la tienda: 974 205 118"
+ },
+ {
+  "id": "i0248",
+  "negocio": "W6_n1",
+  "turnos_previos_del_cliente": [
+   "Buenas, ¿me pueden dar factura? Es para la empresa",
+   "Otra cosa: el mes pasado compré el escritorio Characato y ya se le zafó una bisagra. ¿Qué hago?"
+  ],
+  "cliente": "¿Ustedes retapizan muebles viejos? Tengo un sillón de mi mamá",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo información sobre servicio de retapizado; puedo contarle sobre los muebles que fabricamos y vendemos.",
+  "respuesta_a_calificar": "Tiene 7 días calendario desde la entrega para pedir un cambio, presentando su boleta o factura, con el mueble sin uso y en su embalaje original."
+ },
+ {
+  "id": "i0254",
+  "negocio": "W6_n1",
+  "turnos_previos_del_cliente": [
+   "A que hora abren los domingos?"
+  ],
+  "cliente": "y el 15 de agosto atienden? es feriado",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "cerrados"
+  ],
+  "evidencia": "El 15 de agosto, aniversario de Arequipa, permanecemos cerrados.",
+  "respuesta_ideal": "No, el 15 de agosto, por el aniversario de Arequipa, permanecemos cerrados.",
+  "respuesta_a_calificar": "Procesé 2 segmentos del documento en orden."
+ },
+ {
+  "id": "i0277",
+  "negocio": "W6_n1",
+  "turnos_previos_del_cliente": [
+   "Buenas, ¿me pueden dar factura? Es para la empresa",
+   "Otra cosa: el mes pasado compré el escritorio Characato y ya se le zafó una bisagra. ¿Qué hago?"
+  ],
+  "cliente": "¿Ustedes retapizan muebles viejos? Tengo un sillón de mi mamá",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo información sobre servicio de retapizado; puedo contarle sobre los muebles que fabricamos y vendemos.",
+  "respuesta_a_calificar": "Procesé 2 segmentos del documento en orden."
+ },
+ {
+  "id": "i0288",
+  "negocio": "W6_n1",
+  "turnos_previos_del_cliente": [],
+  "cliente": "A que hora abren los domingos?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "10:00"
+  ],
+  "evidencia": "- Domingos: 10:00 a. m. a 2:00 p. m.",
+  "respuesta_ideal": "Los domingos abrimos a las 10:00 a. m. y atendemos hasta las 2:00 p. m.",
+  "respuesta_a_calificar": "Domingos: 10:00 a. m. a 2:00 p. m."
+ },
+ {
+  "id": "i0289",
+  "negocio": "W6_n1",
+  "turnos_previos_del_cliente": [
+   "A que hora abren los domingos?",
+   "y el 15 de agosto atienden? es feriado",
+   "¿Dónde queda la tienda exactamente?"
+  ],
+  "cliente": "¿Hay donde estacionar el carro?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "4 espacios"
+  ],
+  "evidencia": "Estacionamiento: 4 espacios para clientes en la puerta de la tienda.",
+  "respuesta_ideal": "Sí, tenemos 4 espacios para clientes en la puerta de la tienda.",
+  "respuesta_a_calificar": "la puerta de la tienda"
+ },
+ {
+  "id": "i0301",
+  "negocio": "W6_n1",
+  "turnos_previos_del_cliente": [
+   "Hola, buenas tardes",
+   "cuanto cuesta el sofa cama?",
+   "¿y de largo cuánto mide?"
+  ],
+  "cliente": "uy, no me entra en la sala. ¿no lo tienen más chico, de 1.60 más o menos?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo información de ese sofá cama en otra medida; en el catálogo solo figura el de 1.90 m. Un asesor en tienda podría orientarle.",
+  "respuesta_a_calificar": "Producto: Seccional en L \"Sabandía\"; Material: Tela antimanchas; Medidas aprox.: 2.60 x 1.70 m; Precio: S/ 2,890"
+ },
+ {
+  "id": "i0335",
+  "negocio": "W6_n1",
+  "turnos_previos_del_cliente": [
+   "Buenas, ¿me pueden dar factura? Es para la empresa"
+  ],
+  "cliente": "Otra cosa: el mes pasado compré el escritorio Characato y ya se le zafó una bisagra. ¿Qué hago?",
+  "tipo": "instruccion",
+  "accion_esperada": "responder",
+  "claves": [
+   "boleta",
+   "Libro de Reclamaciones"
+  ],
+  "evidencia": "6. Si el cliente tiene un reclamo o un mueble dañado, pídele su número de boleta o factura y avísale que el Libro de Reclamaciones está a su disposición en caja.",
+  "respuesta_ideal": "Lamento el inconveniente. ¿Me indica su número de boleta o factura? Las bisagras tienen 1 año de garantía, y si desea dejar un reclamo, el Libro de Reclamaciones está a su disposición en caja.",
+  "respuesta_a_calificar": "Procesé 2 segmentos del documento en orden."
+ },
+ {
+  "id": "i0370",
+  "negocio": "W6_n1",
+  "turnos_previos_del_cliente": [
+   "Quiero un ropero a medida porque mi cuarto es angosto. ¿Cobran por venir a medir?"
+  ],
+  "cliente": "¿Más o menos cuánto saldría uno de 2.40 de ancho con puertas corredizas?",
+  "tipo": "instruccion",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "3. No des precios de muebles a medida: las cotizaciones las prepara el taller. Deriva al cliente con la Sra. Rocío Linares, jefa de taller, al WhatsApp 959 318 442.",
+  "respuesta_ideal": "No puedo darle precios de muebles a medida; las cotizaciones las prepara el taller. Puede escribir a la Sra. Rocío Linares, jefa de taller, al WhatsApp 959 318 442.",
+  "respuesta_a_calificar": "Procesé 2 segmentos del documento en orden."
+ },
+ {
+  "id": "i0373",
+  "negocio": "W6_n1",
+  "turnos_previos_del_cliente": [
+   "Hola, buenas tardes"
+  ],
+  "cliente": "cuanto cuesta el sofa cama?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "1,350"
+  ],
+  "evidencia": "| Sofá cama \"Yanahuara\" | Estructura de pino, tapiz chenille | 1.90 m de largo | S/ 1,350 |",
+  "respuesta_ideal": "El sofá cama \"Yanahuara\" cuesta S/ 1,350, con IGV incluido.",
+  "respuesta_a_calificar": "Sofá"
+ },
+ {
+  "id": "i0380",
+  "negocio": "W6_n1",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Buenas, ¿me pueden dar factura? Es para la empresa",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "RUC"
+  ],
+  "evidencia": "Sí, boleta o factura electrónica. Para factura, indíquenos su RUC al momento de pagar.",
+  "respuesta_ideal": "Sí, emitimos factura electrónica; solo indíquenos su RUC al momento de pagar.",
+  "respuesta_a_calificar": "Procesé 2 segmentos del documento en orden."
+ },
+ {
+  "id": "i0423",
+  "negocio": "W6_n1",
+  "turnos_previos_del_cliente": [
+   "Hola, buenas tardes",
+   "cuanto cuesta el sofa cama?",
+   "¿y de largo cuánto mide?",
+   "uy, no me entra en la sala. ¿no lo tienen más chico, de 1.60 más o menos?"
+  ],
+  "cliente": "Y si me animo, ¿lo puedo pagar en cuotas con tarjeta?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "6 cuotas sin intereses"
+  ],
+  "evidencia": "Con tarjeta de crédito puede pagar hasta en 6 cuotas sin intereses en compras mayores a S/ 1,000.",
+  "respuesta_ideal": "Sí: como cuesta S/ 1,350, que pasa de S/ 1,000, con tarjeta de crédito puede pagarlo hasta en 6 cuotas sin intereses.",
+  "respuesta_a_calificar": "Con tarjeta de crédito puede pagar hasta en 6 cuotas sin intereses en compras mayores a S/ 1,000."
+ },
+ {
+  "id": "i0439",
+  "negocio": "W6_n1",
+  "turnos_previos_del_cliente": [
+   "Vivo en Cayma. Si compro la cama Tingo, ¿me cobran el delivery?"
+  ],
+  "cliente": "¿Y si solo llevo un velador?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "25"
+  ],
+  "evidencia": "- Delivery gratis en Cercado, Yanahuara, Cayma y Cerro Colorado por compras desde S/ 800; por compras menores, S/ 25.",
+  "respuesta_ideal": "El velador cuesta S/ 210, menos de S/ 800, así que el delivery a Cayma le costaría S/ 25.",
+  "respuesta_a_calificar": "Por ahora vendemos solo en la sala de exhibición y por WhatsApp."
+ },
+ {
+  "id": "i0449",
+  "negocio": "W6_n1",
+  "turnos_previos_del_cliente": [
+   "A que hora abren los domingos?",
+   "y el 15 de agosto atienden? es feriado"
+  ],
+  "cliente": "¿Dónde queda la tienda exactamente?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "Av. Ejército 1024"
+  ],
+  "evidencia": "Dirección: Av. Ejército 1024, Yanahuara, Arequipa (a una cuadra de la Av. Trinidad Morán)",
+  "respuesta_ideal": "Estamos en Av. Ejército 1024, Yanahuara, a una cuadra de la Av. Trinidad Morán.",
+  "respuesta_a_calificar": "205 118"
+ },
+ {
+  "id": "i0469",
+  "negocio": "W6_n1",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Quiero un ropero a medida porque mi cuarto es angosto. ¿Cobran por venir a medir?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "40",
+   "se descuenta"
+  ],
+  "evidencia": "1. Visita técnica para tomar medidas: S/ 40 dentro de la ciudad (se descuenta del precio si confirma el pedido).",
+  "respuesta_ideal": "Sí, la visita técnica para tomar medidas cuesta S/ 40 dentro de la ciudad, y se descuenta del precio si confirma el pedido.",
+  "respuesta_a_calificar": "Procesé 2 segmentos del documento en orden."
+ },
+ {
+  "id": "i0473",
+  "negocio": "W6_n1",
+  "turnos_previos_del_cliente": [
+   "Quiero un ropero a medida porque mi cuarto es angosto. ¿Cobran por venir a medir?",
+   "¿Más o menos cuánto saldría uno de 2.40 de ancho con puertas corredizas?"
+  ],
+  "cliente": "Ya. ¿Y en cuánto tiempo lo tendrían listo?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "15 a 25 días hábiles"
+  ],
+  "evidencia": "4. Fabricación: de 15 a 25 días hábiles, según el mueble.",
+  "respuesta_ideal": "La fabricación toma aproximadamente de 15 a 25 días hábiles, según el mueble; antes van unos 3 días hábiles de diseño y cotización.",
+  "respuesta_a_calificar": "Ya. Tiene 7 días calendario desde la entrega para pedir un cambio, presentando su boleta o factura, con el mueble sin uso y en su embalaje original."
+ },
+ {
+  "id": "i0521",
+  "negocio": "W6_n1",
+  "turnos_previos_del_cliente": [
+   "Buenas, ¿me pueden dar factura? Es para la empresa"
+  ],
+  "cliente": "Otra cosa: el mes pasado compré el escritorio Characato y ya se le zafó una bisagra. ¿Qué hago?",
+  "tipo": "instruccion",
+  "accion_esperada": "responder",
+  "claves": [
+   "boleta",
+   "Libro de Reclamaciones"
+  ],
+  "evidencia": "6. Si el cliente tiene un reclamo o un mueble dañado, pídele su número de boleta o factura y avísale que el Libro de Reclamaciones está a su disposición en caja.",
+  "respuesta_ideal": "Lamento el inconveniente. ¿Me indica su número de boleta o factura? Las bisagras tienen 1 año de garantía, y si desea dejar un reclamo, el Libro de Reclamaciones está a su disposición en caja.",
+  "respuesta_a_calificar": "No hacemos devolución de dinero: entregamos una nota de crédito válida por 6 meses."
+ },
+ {
+  "id": "i0551",
+  "negocio": "W6_n1",
+  "turnos_previos_del_cliente": [
+   "Hola, buenas tardes",
+   "cuanto cuesta el sofa cama?",
+   "¿y de largo cuánto mide?"
+  ],
+  "cliente": "uy, no me entra en la sala. ¿no lo tienen más chico, de 1.60 más o menos?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo información de ese sofá cama en otra medida; en el catálogo solo figura el de 1.90 m. Un asesor en tienda podría orientarle.",
+  "respuesta_a_calificar": "Procesé 3 segmentos del documento en orden."
+ },
+ {
+  "id": "i0552",
+  "negocio": "W6_n1",
+  "turnos_previos_del_cliente": [
+   "Vivo en Cayma. Si compro la cama Tingo, ¿me cobran el delivery?",
+   "¿Y si solo llevo un velador?"
+  ],
+  "cliente": "¿El armado se paga aparte?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "incluido"
+  ],
+  "evidencia": "- El armado está incluido en todos nuestros muebles.",
+  "respuesta_ideal": "No, el armado está incluido en todos nuestros muebles.",
+  "respuesta_a_calificar": "Para factura, indíquenos su RUC al momento de pagar."
+ },
+ {
+  "id": "i0556",
+  "negocio": "W6_n1",
+  "turnos_previos_del_cliente": [],
+  "cliente": "¿Cómo se puede pagar? ¿Aceptan billeteras digitales?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "Yape",
+   "Plin"
+  ],
+  "evidencia": "Efectivo, Yape, Plin, transferencia BCP o Interbank, y tarjetas Visa y Mastercard.",
+  "respuesta_ideal": "Sí, aceptamos Yape y Plin, además de efectivo, transferencia BCP o Interbank y tarjetas Visa y Mastercard.",
+  "respuesta_a_calificar": "Procesé 2 segmentos del documento en orden."
+ },
+ {
+  "id": "i0563",
+  "negocio": "W6_n1",
+  "turnos_previos_del_cliente": [
+   "¿Cómo se puede pagar? ¿Aceptan billeteras digitales?",
+   "Necesito dos sillas más para mi comedor, ¿venden sueltas las de cedro? ¿cuánto serían las dos?"
+  ],
+  "cliente": "¿Y las de tornillo, las del comedor de 4 sillas?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo el precio de las sillas del comedor Pichu Pichu por separado; solo figura la silla de cedro del Chachani. Un asesor se lo puede consultar.",
+  "respuesta_a_calificar": "Producto: Comedor \"Pichu Pichu\" (mesa + 4 sillas); Material: Tornillo; Medidas aprox.: Mesa 1.20 x 0.80 m; Precio: S/ 1,980"
+ },
+ {
+  "id": "i0578",
+  "negocio": "W6_n1",
+  "turnos_previos_del_cliente": [
+   "Vivo en Cayma. Si compro la cama Tingo, ¿me cobran el delivery?",
+   "¿Y si solo llevo un velador?",
+   "¿El armado se paga aparte?"
+  ],
+  "cliente": "A mi hermana que vive en Mollendo le quiero regalar un comedor, ¿se lo pueden mandar?",
+  "tipo": "instruccion",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "4. Si el cliente quiere enviar un mueble fuera de la provincia de Arequipa (Mollendo, Camaná, Puno, Cusco u otro lugar), deriva el caso a ventas al (054) 281930.",
+  "respuesta_ideal": "Los envíos fuera de la provincia los coordina el área de ventas; por favor comuníquese al (054) 281930.",
+  "respuesta_a_calificar": "Sí, la silla de cedro del comedor Chachani se vende suelta a S/ 380 c/u."
+ },
+ {
+  "id": "i0599",
+  "negocio": "W6_n1",
+  "turnos_previos_del_cliente": [
+   "Quiero un ropero a medida porque mi cuarto es angosto. ¿Cobran por venir a medir?"
+  ],
+  "cliente": "¿Más o menos cuánto saldría uno de 2.40 de ancho con puertas corredizas?",
+  "tipo": "instruccion",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "3. No des precios de muebles a medida: las cotizaciones las prepara el taller. Deriva al cliente con la Sra. Rocío Linares, jefa de taller, al WhatsApp 959 318 442.",
+  "respuesta_ideal": "No puedo darle precios de muebles a medida; las cotizaciones las prepara el taller. Puede escribir a la Sra. Rocío Linares, jefa de taller, al WhatsApp 959 318 442.",
+  "respuesta_a_calificar": "Producto: Cama \"Tingo\" 2 plazas con cabecera; Material: Pino; Medidas aprox.: 1.40 x 1.90 m; Precio: S/ 890"
+ },
+ {
+  "id": "i0602",
+  "negocio": "W6_n1",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Vivo en Cayma. Si compro la cama Tingo, ¿me cobran el delivery?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "gratis"
+  ],
+  "evidencia": "- Delivery gratis en Cercado, Yanahuara, Cayma y Cerro Colorado por compras desde S/ 800; por compras menores, S/ 25.",
+  "respuesta_ideal": "No: la cama Tingo cuesta S/ 890 y en Cayma el delivery es gratis por compras desde S/ 800.",
+  "respuesta_a_calificar": "Delivery gratis en Cercado, Yanahuara, Cayma y Cerro Colorado por compras desde S/ 800; por compras menores, S/ 25."
+ },
+ {
+  "id": "i0648",
+  "negocio": "W6_n1",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Buenas, ¿me pueden dar factura? Es para la empresa",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "RUC"
+  ],
+  "evidencia": "Sí, boleta o factura electrónica. Para factura, indíquenos su RUC al momento de pagar.",
+  "respuesta_ideal": "Sí, emitimos factura electrónica; solo indíquenos su RUC al momento de pagar.",
+  "respuesta_a_calificar": "Buenas. Tiene 7 días calendario desde la entrega para pedir un cambio, presentando su boleta o factura, con el mueble sin uso y en su embalaje original."
+ },
+ {
+  "id": "i0660",
+  "negocio": "W6_n1",
+  "turnos_previos_del_cliente": [
+   "Hola, buenas tardes"
+  ],
+  "cliente": "cuanto cuesta el sofa cama?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "1,350"
+  ],
+  "evidencia": "| Sofá cama \"Yanahuara\" | Estructura de pino, tapiz chenille | 1.90 m de largo | S/ 1,350 |",
+  "respuesta_ideal": "El sofá cama \"Yanahuara\" cuesta S/ 1,350, con IGV incluido.",
+  "respuesta_a_calificar": "Producto: Sofá cama \"Yanahuara\"; Material: Estructura de pino, tapiz chenille; Medidas aprox.: 1.90 m de largo; Precio: S/ 1,350"
+ },
+ {
+  "id": "i0681",
+  "negocio": "W6_n1",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Vivo en Cayma. Si compro la cama Tingo, ¿me cobran el delivery?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "gratis"
+  ],
+  "evidencia": "- Delivery gratis en Cercado, Yanahuara, Cayma y Cerro Colorado por compras desde S/ 800; por compras menores, S/ 25.",
+  "respuesta_ideal": "No: la cama Tingo cuesta S/ 890 y en Cayma el delivery es gratis por compras desde S/ 800.",
+  "respuesta_a_calificar": "Procesé 2 segmentos del documento en orden."
+ },
+ {
+  "id": "i0706",
+  "negocio": "W6_n1",
+  "turnos_previos_del_cliente": [
+   "Buenas, ¿me pueden dar factura? Es para la empresa",
+   "Otra cosa: el mes pasado compré el escritorio Characato y ya se le zafó una bisagra. ¿Qué hago?",
+   "¿Ustedes retapizan muebles viejos? Tengo un sillón de mi mamá"
+  ],
+  "cliente": "¿Tienen un catálogo en PDF que me puedan mandar por WhatsApp?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo el dato de si hay un catálogo en PDF; puede consultarlo al WhatsApp de la tienda, 974 205 118.",
+  "respuesta_a_calificar": "¿Tienen tienda virtual?: Por ahora vendemos solo en la sala de exhibición y por WhatsApp."
+ },
+ {
+  "id": "i0715",
+  "negocio": "W6_n1",
+  "turnos_previos_del_cliente": [
+   "Hola, buenas tardes",
+   "cuanto cuesta el sofa cama?"
+  ],
+  "cliente": "¿y de largo cuánto mide?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "1.90 m"
+  ],
+  "evidencia": "| Sofá cama \"Yanahuara\" | Estructura de pino, tapiz chenille | 1.90 m de largo | S/ 1,350 |",
+  "respuesta_ideal": "Mide aproximadamente 1.90 m de largo.",
+  "respuesta_a_calificar": "350"
+ },
+ {
+  "id": "i0722",
+  "negocio": "W6_n1",
+  "turnos_previos_del_cliente": [
+   "Quiero un ropero a medida porque mi cuarto es angosto. ¿Cobran por venir a medir?",
+   "¿Más o menos cuánto saldría uno de 2.40 de ancho con puertas corredizas?",
+   "Ya. ¿Y en cuánto tiempo lo tendrían listo?"
+  ],
+  "cliente": "cuanto hay que dar de adelanto",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "50"
+  ],
+  "evidencia": "3. Adelanto del 50 % para empezar la fabricación.",
+  "respuesta_ideal": "Para empezar la fabricación se deja un adelanto del 50 %; el saldo se paga en la entrega.",
+  "respuesta_a_calificar": "Adelanto del 50 % para empezar la fabricación."
+ },
+ {
+  "id": "i0805",
+  "negocio": "W6_n1",
+  "turnos_previos_del_cliente": [
+   "¿Cómo se puede pagar? ¿Aceptan billeteras digitales?",
+   "Necesito dos sillas más para mi comedor, ¿venden sueltas las de cedro? ¿cuánto serían las dos?",
+   "¿Y las de tornillo, las del comedor de 4 sillas?",
+   "¿Cuánto tiempo de garantía tiene la madera?"
+  ],
+  "cliente": "¿venden colchones tambien? para la cama de 2 plazas",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo información sobre venta de colchones; en nuestro catálogo no figuran.",
+  "respuesta_a_calificar": "Procesé 2 segmentos del documento en orden."
+ }
+]

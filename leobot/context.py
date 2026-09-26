@@ -38,6 +38,8 @@ LEMMA_RULE_SHARE = 0.8
 PI_BINS = (0.2, 0.4, 0.6, 0.8)
 MARGIN_BINS = (0.5, 1.0, 2.0, 4.0)
 UNKNOWN_TEXT = 'No lo sé: no encontré esa información en el texto que tengo.'
+CLOSEST_TEXT = 'No lo tengo seguro. Lo más cercano que dice el texto es: «{}».'
+ECHO_WORDS = 4
 
 
 def _plain(word: str) -> str:
@@ -292,6 +294,16 @@ class ContextMixin:
             return True
         return ranked['cell'] in set(self.context_model.get('admitted', ()))
 
+    def _level(self, ranked: dict | None) -> str:
+        """G-58: what the counted reliability of this cell allows: a plain
+        answer, the closest text with a warning, or not knowing."""
+        if self._admitted(ranked):
+            return 'answered'
+        if ranked is not None and getattr(self, 'closest', True) and \
+                ranked['cell'] in set(self.context_model.get('closest', ())):
+            return 'closest'
+        return 'unknown'
+
     def _shown(self, ranked: dict) -> str:
         return self.context_units[ranked['unit']]['text']
 
@@ -309,13 +321,33 @@ class ContextMixin:
             return True
         if self._asks(text):
             return False
+        # G-58: only a short turn without figures is given back; anything
+        # longer, or with figures, may carry a person's data and is never echoed.
+        if getattr(self, 'short_echo', True) and (len(text.split()) > ECHO_WORDS or any(c.isdigit() for c in text)):
+            return False
         postings = self._index()
         return not any(t in postings for t in self.context_terms(text))
 
+    @staticmethod
+    def _client_turns(history) -> list[str]:
+        turns = []
+        for turn in history or ():
+            if isinstance(turn, str):
+                turns.append(turn)
+            elif isinstance(turn, dict):
+                role = str(turn.get('role', turn.get('rol', 'user'))).lower()
+                if role in ('user', 'client', 'cliente', 'usuario', 'persona', 'human'):
+                    turns.append(str(turn.get('text', turn.get('content', turn.get('texto', '')))))
+            elif isinstance(turn, (list, tuple)) and turn:
+                turns.append(str(turn[0]))
+        return turns
+
     def answer(self, question: str, history=None) -> dict:
-        """Answer one turn of a person from the loaded text, or say it is not there.
-        ``history`` is part of the interface; G-57r does not use it (the
-        follow-up of G-57 never acted and was retired)."""
+        """Answer one turn of a person from the loaded text: plainly when the
+        counted reliability allows it, with the closest text and a warning
+        when that text is useful at least half of the time, or saying it is
+        not known.  ``history`` holds the earlier turns of this person only;
+        nothing of a person is kept by the bot."""
         text = str(question).strip()
         opening = ''
         cut = text.find('¿')
@@ -326,10 +358,20 @@ class ContextMixin:
             return {'text': (said[:1].upper() + said[1:] + '.') if said else '', 'status': 'phatic',
                     'evidence': None, 'confidence': None}
         ranked = self._rank(self.context_terms(text))
+        level = self._level(ranked)
+        if level == 'unknown' and getattr(self, 'follow_up', True):
+            # G-58: an incomplete question («¿y el sábado?») borrows the words
+            # of this person's previous question.
+            earlier = [t for t in self._client_turns(history) if self._asks(t) and not self._phatic(t)]
+            if earlier:
+                joined = self._rank(self.context_terms(text) + self.context_terms(earlier[-1]))
+                if self._level(joined) != 'unknown':
+                    ranked, level = joined, self._level(joined)
         prefix = (opening[:1].upper() + opening[1:] + '. ') if opening else ''
-        cells = self.context_model.get('cells', {}).get(ranked['cell']) if ranked else None
+        table = self.context_model.get('closest_cells' if level == 'closest' else 'cells', {})
+        cells = table.get(ranked['cell']) if ranked else None
         precision = round(cells[1] / cells[0], 4) if cells and cells[0] else None
-        if not self._admitted(ranked):
+        if level == 'unknown':
             # Not asserted: the best unit and its counted precision go to the
             # caller apart from the reply, so an integrator can decide.
             candidate = ({'text': self._shown(ranked), 'precision': precision}
@@ -337,6 +379,8 @@ class ContextMixin:
             return {'text': prefix + UNKNOWN_TEXT, 'status': 'unknown', 'evidence': None,
                     'confidence': None, 'cell': ranked['cell'] if ranked else None, 'candidate': candidate}
         unit = self.context_units[ranked['unit']]
-        return {'text': prefix + self._shown(ranked), 'status': 'answered',
+        shown = self._shown(ranked)
+        reply = shown if level == 'answered' else CLOSEST_TEXT.format(shown.rstrip('.'))
+        return {'text': prefix + reply, 'status': level,
                 'evidence': {'unit': unit['text'], 'heading': unit['heading'], 'index': ranked['unit']},
                 'confidence': precision, 'cell': ranked['cell']}

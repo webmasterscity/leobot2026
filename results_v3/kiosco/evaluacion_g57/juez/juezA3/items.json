@@ -1,0 +1,1036 @@
+[
+ {
+  "id": "a0004",
+  "negocio": "W1_n3",
+  "turnos_previos_del_cliente": [
+   "hola tengo 17 años y quiero sacar la licencia de moto, ¿puedo?"
+  ],
+  "cliente": "¿Y qué vale el curso de moto?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "$980.000"
+  ],
+  "evidencia": "| Moto | A2 | 28 h | 15 h | $980.000 |",
+  "respuesta_ideal": "El curso de moto, categoría A2, vale $980.000.",
+  "respuesta_a_calificar": "Vehículos: Renault Logan (mecánico), Kia Picanto (automático) y motos AKT de 125 cc. Los carros tienen doble pedal de freno para el instructor."
+ },
+ {
+  "id": "a0013",
+  "negocio": "W1_n3",
+  "turnos_previos_del_cliente": [
+   "¿Se puede pagar con Nequi?",
+   "¿Me dejan pagarlo por partes?",
+   "Soy estudiante de la Nacional, ¿con el descuento en cuánto me queda el de carro mecánico?",
+   "¿Y al de moto también le aplica?"
+  ],
+  "cliente": "Y si nos inscribimos dos amigos al tiempo, ¿nos hacen descuento?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo información de descuentos por inscribirse en grupo, así que no se lo puedo asegurar.",
+  "respuesta_a_calificar": "Descuento del 10 % para estudiantes universitarios con carné vigente (aplica solo para cursos B1; no acumulable)."
+ },
+ {
+  "id": "a0021",
+  "negocio": "W1_n3",
+  "turnos_previos_del_cliente": [
+   "El instructor de ayer llegó tarde y fue muy grosero conmigo, ¿con quién me puedo quejar?",
+   "Pagué el curso pero todavía no he empezado y ya no lo voy a poder hacer, ¿cuánto me devuelven?",
+   "¿Y en cuántos días hacen esa devolución?"
+  ],
+  "cliente": "Otra pregunta, ¿hay instructoras mujeres?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo esa información sobre los instructores, así que no se lo puedo asegurar.",
+  "respuesta_a_calificar": "PREGUNTAS FRECUENTES"
+ },
+ {
+  "id": "a0026",
+  "negocio": "W1_n3",
+  "turnos_previos_del_cliente": [],
+  "cliente": "¿Se puede pagar con Nequi?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "Nequi"
+  ],
+  "evidencia": "Efectivo, tarjeta débito y crédito, PSE y Nequi.",
+  "respuesta_ideal": "Sí, recibimos Nequi, además de efectivo, tarjetas y PSE.",
+  "respuesta_a_calificar": "Se puede pagar en 2 cuotas sin intereses: 50 % al inscribirse y 50 % antes de la primera clase práctica."
+ },
+ {
+  "id": "a0077",
+  "negocio": "W1_n3",
+  "turnos_previos_del_cliente": [],
+  "cliente": "¿Hasta qué hora atienden los sábados en la oficina?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "1:00"
+  ],
+  "evidencia": "Sáb: 8:00 a. m. a 1:00 p. m.",
+  "respuesta_ideal": "Los sábados la oficina atiende de 8:00 a. m. a 1:00 p. m.",
+  "respuesta_a_calificar": "Para cancelar o mover una clase práctica hay que avisar con mínimo 12 horas de anticipación; si no, la clase se pierde."
+ },
+ {
+  "id": "a0090",
+  "negocio": "W1_n3",
+  "turnos_previos_del_cliente": [
+   "Si no puedo llegar a una clase práctica, ¿con cuánto tiempo tengo que avisar?"
+  ],
+  "cliente": "Y si me rajo en el examen práctico, ¿lo puedo repetir gratis?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "una vez sin costo",
+   "$90.000"
+  ],
+  "evidencia": "Lo puede repetir una vez sin costo. Desde el segundo intento, cada examen vale $90.000.",
+  "respuesta_ideal": "Sí, lo puede repetir una vez sin costo; desde el segundo intento cada examen vale $90.000.",
+  "respuesta_a_calificar": "El valor incluye: clases teóricas y prácticas, taller de mecánica básica de 4 h, examen teórico y práctico en la academia y certificado de aptitud en conducción cargado al RUNT."
+ },
+ {
+  "id": "a0097",
+  "negocio": "W1_n3",
+  "turnos_previos_del_cliente": [
+   "Buenos días",
+   "¿Cuánto vale el curso para sacar el pase de carro?",
+   "¿Y eso ya incluye el examen médico?",
+   "¿y más o menos cuánto vale ese examen?"
+  ],
+  "cliente": "¿Cuántas horas de práctica tiene el curso de carro?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "20"
+  ],
+  "evidencia": "| Carro particular mecánico | B1 | 30 h | 20 h | $1.650.000 |",
+  "respuesta_ideal": "El curso de carro B1 tiene 20 horas de práctica, además de 30 horas de teoría.",
+  "respuesta_a_calificar": "Curso: Carro particular mecánico; Categoría: B1; Teoría: 30 h; Práctica: 20 h; Valor: $1.650.000"
+ },
+ {
+  "id": "a0126",
+  "negocio": "W1_n3",
+  "turnos_previos_del_cliente": [
+   "Buenos días"
+  ],
+  "cliente": "¿Cuánto vale el curso para sacar el pase de carro?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "$1.650.000",
+   "$1.790.000"
+  ],
+  "evidencia": "| Carro particular mecánico | B1 | 30 h | 20 h | $1.650.000 |\n| Carro particular automático | B1 | 30 h | 20 h | $1.790.000 |",
+  "respuesta_ideal": "El curso B1 de carro particular vale $1.650.000 en carro mecánico y $1.790.000 en automático.",
+  "respuesta_a_calificar": "Descuento del 10 % para estudiantes universitarios con carné vigente (aplica solo para cursos B1; no acumulable)."
+ },
+ {
+  "id": "a0162",
+  "negocio": "W1_n3",
+  "turnos_previos_del_cliente": [],
+  "cliente": "¿Hasta qué hora atienden los sábados en la oficina?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "1:00"
+  ],
+  "evidencia": "Sáb: 8:00 a. m. a 1:00 p. m.",
+  "respuesta_ideal": "Los sábados la oficina atiende de 8:00 a. m. a 1:00 p. m.",
+  "respuesta_a_calificar": "Lunes a viernes de 6:00 p. m. a 8:00 p. m., o sábados de 8:00 a. m. a 12:00 m."
+ },
+ {
+  "id": "a0182",
+  "negocio": "W1_n3",
+  "turnos_previos_del_cliente": [
+   "Si no puedo llegar a una clase práctica, ¿con cuánto tiempo tengo que avisar?",
+   "Y si me rajo en el examen práctico, ¿lo puedo repetir gratis?",
+   "Tengo un comparendo sin pagar, ¿eso me afecta para sacar la licencia?"
+  ],
+  "cliente": "¿Cuanto se demora en llegar la licencia fisica despues de terminar el curso?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo ese dato; solo sé que el proceso del curso toma normalmente entre 4 y 6 semanas.",
+  "respuesta_a_calificar": "No. Se hace en un Centro de Reconocimiento de Conductores (CRC) autorizado, antes de terminar el curso."
+ },
+ {
+  "id": "a0186",
+  "negocio": "W1_n3",
+  "turnos_previos_del_cliente": [
+   "Si no puedo llegar a una clase práctica, ¿con cuánto tiempo tengo que avisar?",
+   "Y si me rajo en el examen práctico, ¿lo puedo repetir gratis?",
+   "Tengo un comparendo sin pagar, ¿eso me afecta para sacar la licencia?",
+   "¿Cuanto se demora en llegar la licencia fisica despues de terminar el curso?"
+  ],
+  "cliente": "Quiero sacar moto y carro mecánico, ¿cuánto me ahorro con el paquete en vez de hacerlos por separado?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "$2.400.000",
+   "230.000"
+  ],
+  "evidencia": "| Moto | A2 | 28 h | 15 h | $980.000 |\n| Carro particular mecánico | B1 | 30 h | 20 h | $1.650.000 | […] | Paquete moto + carro mecánico | A2 + B1 | 58 h | 35 h | $2.400.000 |",
+  "respuesta_ideal": "Por separado serían $980.000 más $1.650.000, o sea $2.630.000; el paquete vale $2.400.000, así que se ahorra $230.000.",
+  "respuesta_a_calificar": "Curso: Paquete moto + carro mecánico; Categoría: A2 + B1; Teoría: 58 h; Práctica: 35 h; Valor: $2.400.000"
+ },
+ {
+  "id": "a0196",
+  "negocio": "W1_n3",
+  "turnos_previos_del_cliente": [
+   "Buenos días",
+   "¿Cuánto vale el curso para sacar el pase de carro?"
+  ],
+  "cliente": "¿Y eso ya incluye el examen médico?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "No incluye el examen médico"
+  ],
+  "evidencia": "No incluye el examen médico en el CRC ni los derechos de trámite de la licencia ante la Secretaria de Movilidad.",
+  "respuesta_ideal": "No, el valor no incluye el examen médico en el CRC ni los derechos de trámite de la licencia.",
+  "respuesta_a_calificar": "No incluye el examen médico en el CRC ni los derechos de trámite de la licencia ante la Secretaria de Movilidad."
+ },
+ {
+  "id": "a0018",
+  "negocio": "W2_n2",
+  "turnos_previos_del_cliente": [
+   "tienen el libro Cien años de soledad?"
+  ],
+  "cliente": "hacen envios a Bariloche?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "Correo Argentino"
+  ],
+  "evidencia": "Envíos a todo el país por Correo Argentino",
+  "respuesta_ideal": "Sí, hacemos envíos a todo el país por Correo Argentino, incluido Bariloche.",
+  "respuesta_a_calificar": "¿Hacen envíos al interior del país?"
+ },
+ {
+  "id": "a0060",
+  "negocio": "W2_n2",
+  "turnos_previos_del_cliente": [
+   "Hola, buen día",
+   "cuanto sale un libro de tapa blanda"
+  ],
+  "cliente": "y el envio a mi casa cuanto cuesta",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "$3.200"
+  ],
+  "evidencia": "Envío nacional (Correo Argentino): $3.200",
+  "respuesta_ideal": "El envío nacional por Correo Argentino cuesta $3.200.",
+  "respuesta_a_calificar": "El envío cuesta $3.200 y demora entre 5 y 10 días hábiles."
+ },
+ {
+  "id": "a0075",
+  "negocio": "W2_n2",
+  "turnos_previos_del_cliente": [
+   "tienen el libro Cien años de soledad?",
+   "hacen envios a Bariloche?",
+   "cuanto tarda en llegar",
+   "compran libros usados?"
+  ],
+  "cliente": "si compro ese libro y pago el envio a Bariloche cuanto seria en total",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "$12.500",
+   "$3.200"
+  ],
+  "evidencia": "Libro de tapa blanda (nuevo): desde $12.500 ... Envío nacional (Correo Argentino): $3.200",
+  "respuesta_ideal": "En total serían $15.700: $12.500 del libro más $3.200 del envío.",
+  "respuesta_a_calificar": "Desde 1998 en el barrio de Once, El Aleph Sur es una librería de barrio que vende libros nuevos y usados, hace pedidos especiales y organiza un club de lectura mensual."
+ },
+ {
+  "id": "a0099",
+  "negocio": "W2_n2",
+  "turnos_previos_del_cliente": [
+   "tienen el libro Cien años de soledad?",
+   "hacen envios a Bariloche?"
+  ],
+  "cliente": "cuanto tarda en llegar",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "5 y 10 días hábiles"
+  ],
+  "evidencia": "demora entre 5 y 10 días hábiles",
+  "respuesta_ideal": "El envío al interior demora entre 5 y 10 días hábiles.",
+  "respuesta_a_calificar": "Desde 1998 en el barrio de Once, El Aleph Sur es una librería de barrio que vende libros nuevos y usados, hace pedidos especiales y organiza un club de lectura mensual."
+ },
+ {
+  "id": "a0106",
+  "negocio": "W2_n2",
+  "turnos_previos_del_cliente": [
+   "cuanto cuesta el club de lectura mensual",
+   "quiero reservar el libro de octubre del club, me lo confirman ahora?",
+   "tienen descuento para jubilados?"
+  ],
+  "cliente": "aceptan tarjeta amex?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo esa información sobre Amex en particular, te recomiendo consultarlo en el local.",
+  "respuesta_a_calificar": "Tarjeta de fidelidad: 10 sellos = 1 libro grtis (hasta $15.000)"
+ },
+ {
+  "id": "a0112",
+  "negocio": "W2_n2",
+  "turnos_previos_del_cliente": [],
+  "cliente": "compran libros usados?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "pagamos entre 20% y 40%"
+  ],
+  "evidencia": "Compra de libros usados: pagamos entre 20% y 40% del precio de tapa según el estado del ejemplar.",
+  "respuesta_ideal": "Sí, compramos libros usados y pagamos entre 20% y 40% del precio de tapa según el estado.",
+  "respuesta_a_calificar": "¿Compran libros usados?"
+ },
+ {
+  "id": "a0122",
+  "negocio": "W2_n2",
+  "turnos_previos_del_cliente": [],
+  "cliente": "cual es el horario de ustedes los sabados",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "10 a 20 hs"
+  ],
+  "evidencia": "Lunes a sábado: 10 a 20 hs corrido",
+  "respuesta_ideal": "Los sábados atendemos de 10 a 20 hs corrido.",
+  "respuesta_a_calificar": "Lunes a sábado: 10 a 20 hs corrido"
+ },
+ {
+  "id": "a0124",
+  "negocio": "W2_n2",
+  "turnos_previos_del_cliente": [
+   "Hola, buen día",
+   "cuanto sale un libro de tapa blanda",
+   "y el envio a mi casa cuanto cuesta",
+   "hay envio gratis si compro bastante?"
+  ],
+  "cliente": "tienen otra sucursal en Palermo?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo información de otra sucursal; que yo sepa solo estamos en Av. Corrientes 2854.",
+  "respuesta_a_calificar": "¿Tienen wifi?"
+ },
+ {
+  "id": "a0130",
+  "negocio": "W2_n2",
+  "turnos_previos_del_cliente": [
+   "compran libros usados?",
+   "y cuanto pagarian por uno en buen estado"
+  ],
+  "cliente": "compran discos de vinilo tambien?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No, no tengo información de que compremos discos, solo libros.",
+  "respuesta_a_calificar": "¿Compran libros usados?"
+ },
+ {
+  "id": "a0143",
+  "negocio": "W2_n2",
+  "turnos_previos_del_cliente": [],
+  "cliente": "cuanto cuesta el club de lectura mensual",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "$5.000"
+  ],
+  "evidencia": "Club de lectura mensual (incluye el libro del mes): $5.000",
+  "respuesta_ideal": "El club de lectura mensual cuesta $5.000 e incluye el libro del mes.",
+  "respuesta_a_calificar": "Desde 1998 en el barrio de Once, El Aleph Sur es una librería de barrio que vende libros nuevos y usados, hace pedidos especiales y organiza un club de lectura mensual."
+ },
+ {
+  "id": "a0163",
+  "negocio": "W2_n2",
+  "turnos_previos_del_cliente": [
+   "cual es el horario de ustedes los sabados",
+   "si voy el domingo a las 19 los encuentro abiertos?",
+   "puedo pagar en cuotas?"
+  ],
+  "cliente": "tienen estacionamiento propio?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo esa información, lo siento.",
+  "respuesta_a_calificar": "¿Tienen wifi?"
+ },
+ {
+  "id": "a0199",
+  "negocio": "W2_n2",
+  "turnos_previos_del_cliente": [
+   "tienen el libro Cien años de soledad?",
+   "hacen envios a Bariloche?",
+   "cuanto tarda en llegar"
+  ],
+  "cliente": "compran libros usados?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "tráelos para que los evaluemos"
+  ],
+  "evidencia": "Sí, tráelos para que los evaluemos.",
+  "respuesta_ideal": "Sí, compramos libros usados; podés traerlos para que los evaluemos.",
+  "respuesta_a_calificar": "¿Compran libros usados?"
+ },
+ {
+  "id": "a0007",
+  "negocio": "W3_n1",
+  "turnos_previos_del_cliente": [
+   "Hola, ¿a qué hora abren mañana?",
+   "¿Y mañana es domingo?"
+  ],
+  "cliente": "¿Cuánto cuesta la entrada para un niño de 6 años?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "22 000"
+  ],
+  "evidencia": "Niño (3 a 12 años) 22 000",
+  "respuesta_ideal": "La entrada para niños de 3 a 12 años es de 22.000 pesos colombianos.",
+  "respuesta_a_calificar": "Visitante: Niño (3 a 12 años); Tarifa en COP: 22 000"
+ },
+ {
+  "id": "a0050",
+  "negocio": "W3_n1",
+  "turnos_previos_del_cliente": [
+   "¿Puedo llevar a mi perro al zoo?"
+  ],
+  "cliente": "¿Y si lo deixo en casa? ¿Cuánto me cuesta entrar con mi familia?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "35 000",
+   "22 000"
+  ],
+  "evidencia": "Adulto 35 000, Niño (3 a 12 años) 22 000",
+  "respuesta_ideal": "Perfecto. Los precios son 35.000 por adulto y 22.000 por niño de 3 a 12 años. ¿Cuántos adultos y niños son?",
+  "respuesta_a_calificar": "Se prohíbe el consumo de alimentos al aire libre en áreas especificadas (señalizadas). Disponible zona de picnic con mesas (sin costo adicional)."
+ },
+ {
+  "id": "a0111",
+  "negocio": "W3_n1",
+  "turnos_previos_del_cliente": [
+   "¿Cuánto cuesta una grupo escolr de 25 niños?"
+  ],
+  "cliente": "¿Qué se necesita para reservar?",
+  "tipo": "instruccion",
+  "accion_esperada": "responder",
+  "claves": [
+   "15 días de anticipación",
+   "educacion@faunacali.com.co"
+  ],
+  "evidencia": "Reserva con 15 días de anticipación, mínimo 20 estudiantes. Contacto educativo: educacion@faunacali.com.co",
+  "respuesta_ideal": "Necesitan contactar a educacion@faunacali.com.co con mínimo 15 días de anticipación. Deben tener al menos 20 estudiantes.",
+  "respuesta_a_calificar": "Alimentación de animales: $8 000 por balde de alimento (aceptado para herbívoros únicamente: giraffe, antílopes, venados)."
+ },
+ {
+  "id": "a0142",
+  "negocio": "W3_n1",
+  "turnos_previos_del_cliente": [],
+  "cliente": "¿Cuánto cuesta una grupo escolr de 25 niños?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "50% descuento",
+   "entrada",
+   "22 000"
+  ],
+  "evidencia": "grupos educativos: entrada 50% descuento",
+  "respuesta_ideal": "Para grupos escolares tenemos 50% de descuento en la entrada. El precio base de niños es 22.000, así que sería 11.000 por niño. Pero deben reservar con 15 días de anticipación en educacion@faunacali.com.co",
+  "respuesta_a_calificar": "Tarifas de entrada: Visitante: Niño (3 a 12 años); Tarifa en COP: 22 000"
+ },
+ {
+  "id": "a0144",
+  "negocio": "W3_n1",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Hola, ¿a qué hora abren mañana?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "9:00 a. m."
+  ],
+  "evidencia": "Lunes a domingo, 9:00 a. m. a 6:00 p. m.",
+  "respuesta_ideal": "Abrimos a las 9:00 de la mañana todos los días. Cierre es a las 6:00 de la tarde.",
+  "respuesta_a_calificar": "Hola. Fotografía profesional: sesión de 1 hora con fotógrafo + 30 fotos digitales retocadas = $120 000."
+ },
+ {
+  "id": "a0043",
+  "negocio": "W3_n4",
+  "turnos_previos_del_cliente": [
+   "Me rompí la cadena. ¿Cuanto cuesta arreglarlo?"
+  ],
+  "cliente": "Cuanto tarda?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "20 minutos"
+  ],
+  "evidencia": "revisiones rápidas 20 min",
+  "respuesta_ideal": "Ese trabajo es rápido, unos 20 minutos más o menos. Tenemos taller abierto L-V 9-19:30, sábados 9-18h.",
+  "respuesta_a_calificar": "Ubicación: Peatonal Córdoba 1245, Rosario, Santa Fe, Argentina"
+ },
+ {
+  "id": "a0055",
+  "negocio": "W3_n4",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Me rompí la cadena. ¿Cuanto cuesta arreglarlo?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "$600"
+  ],
+  "evidencia": "Cambio de cadena: $600 ARS (mano de obra)",
+  "respuesta_ideal": "Cambio de cadena cuesta $600 pesos de mano de obra, más el costo de la cadena nueva que varía entre $2.500 y $4.000 según el tipo.",
+  "respuesta_a_calificar": "Si algo falla por culpa nuestra, se corrige sin costo."
+ },
+ {
+  "id": "a0056",
+  "negocio": "W3_n4",
+  "turnos_previos_del_cliente": [
+   "Hola, busco una bici urbana. ¿Qué tienen?"
+  ],
+  "cliente": "¿Y cual me recomiendas?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "Ese asesoramiento es gratis. Te recomendamos que vengas a la tienda o llames al (341) 4-422-889 para que te expliquemos las características de cada una y elijas la mejor para ti.",
+  "respuesta_a_calificar": "Desde 2015, Ciclos Rosario es referencia en la zona por la variedad de bicicletas y el asesoramiento técnico."
+ },
+ {
+  "id": "a0068",
+  "negocio": "W3_n4",
+  "turnos_previos_del_cliente": [
+   "Hola, buenos días. Pido que me ajusten los frenos."
+  ],
+  "cliente": "¿Que tan caro es?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "Si es solo un ajuste, es muy económico. Si hay que cambiar pastillas, son $800. Consulta en tienda o llama para un presupuesto exacto.",
+  "respuesta_a_calificar": "Quiénes somos"
+ },
+ {
+  "id": "a0006",
+  "negocio": "W4_n3",
+  "turnos_previos_del_cliente": [
+   "hola, cuánto cuesta la entrada?",
+   "y si voy un miércoles?",
+   "compro por internet o en taquilla? hay diferencia de precio?",
+   "somos 4 amigos, cuanto nos sale en total si vamos el miercoles?",
+   "quedan entradas para este sabado?"
+  ],
+  "cliente": "vale, ¿y a qué hora empieza?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "20:30"
+  ],
+  "evidencia": "Las funciones de martes a sábado empiezan a las 20:30 h; los domingos hay función a las 18:00 h (además de la familiar).",
+  "respuesta_ideal": "Las funciones de martes a sábado empiezan a las 20:30 h; las puertas se abren 20 minutos antes.",
+  "respuesta_a_calificar": "En el vestíbulo hay un bar que abre una hora antes de cada función y durante el descanso."
+ },
+ {
+  "id": "a0010",
+  "negocio": "W4_n3",
+  "turnos_previos_del_cliente": [
+   "Compré dos entradas para el viernes que viene pero no puedo ir, me devolvéis el dinero?"
+  ],
+  "cliente": "y cómo hago el cambio?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "entradas@teatrolafarola.cat"
+  ],
+  "evidencia": "Se admite un cambio de fecha para el mismo espectáculo, sin coste, hasta 48 horas antes de la función, escribiendo a entradas@teatrolafarola.cat; después de ese plazo no se hacen cambios.",
+  "respuesta_ideal": "Escribiendo a entradas@teatrolafarola.cat antes de que falten 48 horas para la función.",
+  "respuesta_a_calificar": "Se admite un cambio de fecha para el mismo espectáculo, sin coste, hasta 48 horas antes de la función, escribiendo a entradas@teatrolafarola.cat; después de ese plazo no se hacen cambios."
+ },
+ {
+  "id": "a0080",
+  "negocio": "W4_n3",
+  "turnos_previos_del_cliente": [
+   "Compré dos entradas para el viernes que viene pero no puedo ir, me devolvéis el dinero?",
+   "y cómo hago el cambio?",
+   "puedo dárselas a un amigo para que vaya él?"
+  ],
+  "cliente": "la de tres tristes tigres es en catalán?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "catalán",
+   "sobretítulos",
+   "viernes"
+  ],
+  "evidencia": "| 16 oct – 8 nov | «Tres tristes tigres» | comedia | 80 min | catalán, con sobretítulos en castellano los viernes |",
+  "respuesta_ideal": "Sí, «Tres tristes tigres» es en catalán, con sobretítulos en castellano los viernes.",
+  "respuesta_a_calificar": "Fechas: 16 oct – 8 nov; Espectáculo: «Tres tristes tigres»; Género: comedia; Duración: 80 min; Idioma: catalán, con sobretítulos en castellano los viernes"
+ },
+ {
+  "id": "a0085",
+  "negocio": "W4_n3",
+  "turnos_previos_del_cliente": [
+   "Si llego 10 minutos tarde me dejáis entrar?",
+   "y si no puedo entrar me devolvéis el dinero?",
+   "puedo entrar en la sala con la caña del bar?"
+  ],
+  "cliente": "se puede pagar con bizum en la taquilla?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "efectivo y tarjeta"
+  ],
+  "evidencia": "En taquilla: efectivo y tarjeta. Online: tarjeta y Bizum.",
+  "respuesta_ideal": "No, en taquilla se paga con efectivo y tarjeta; Bizum solo está disponible en la compra online.",
+  "respuesta_a_calificar": "¿Puedo reservar sin pagar?"
+ },
+ {
+  "id": "a0086",
+  "negocio": "W4_n3",
+  "turnos_previos_del_cliente": [
+   "hola, cuánto cuesta la entrada?"
+  ],
+  "cliente": "y si voy un miércoles?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "€10"
+  ],
+  "evidencia": "Día del espectador: los miércoles todas las entradas cuestan €10.",
+  "respuesta_ideal": "Los miércoles es el día del espectador y todas las entradas cuestan €10.",
+  "respuesta_a_calificar": "Día del espectador: los miércoles todas las entradas cuestan €10."
+ },
+ {
+  "id": "a0138",
+  "negocio": "W4_n3",
+  "turnos_previos_del_cliente": [
+   "hola, cuánto cuesta la entrada?",
+   "y si voy un miércoles?",
+   "compro por internet o en taquilla? hay diferencia de precio?"
+  ],
+  "cliente": "somos 4 amigos, cuanto nos sale en total si vamos el miercoles?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "40"
+  ],
+  "evidencia": "Día del espectador: los miércoles todas las entradas cuestan €10.",
+  "respuesta_ideal": "El miércoles cada entrada cuesta €10, así que las cuatro son €40 en taquilla (online se suman €1,20 por entrada).",
+  "respuesta_a_calificar": "El bar de la Farola: Cañas €2,50, copa de vino €3,50, refrescos €2,20, bocadillos €4,50."
+ },
+ {
+  "id": "a0140",
+  "negocio": "W4_n3",
+  "turnos_previos_del_cliente": [],
+  "cliente": "hola, cuánto cuesta la entrada?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "€18"
+  ],
+  "evidencia": "Precio general: €18",
+  "respuesta_ideal": "Bienvenido/a al Teatro La Farola. La entrada general cuesta €18; hay precio reducido de €13 para menores de 30, mayores de 65 y otros colectivos con documento.",
+  "respuesta_a_calificar": "Precios de las entradas: Precio general: €18; Precio reducido (menores de 30 años, mayores de 65, personas en paro, familias numerosas y titulares del carnet de bibliotecas de Barcelona, con documento acreditativo): €13; Ciclo familiar de los domingos (11:30 h): adultos €9,90 y niños de 3 a 12 años €6; Los menores de 3 años no pagan, pero no ocupan butaca; Día del espectador: los miércoles todas las entradas cuestan €10; Abono 5 funciones: €65, válido durante la temporada (de septiembre a junio), nominal e intransferible; Sirve para cualquier función excepto los estrenos y el ciclo familiar; Grupos de 10 o más personas: €12 por persona, solo por correo con Marta Puig y con reserva mínima de 7 días."
+ },
+ {
+  "id": "a0149",
+  "negocio": "W4_n3",
+  "turnos_previos_del_cliente": [
+   "Si llego 10 minutos tarde me dejáis entrar?",
+   "y si no puedo entrar me devolvéis el dinero?"
+  ],
+  "cliente": "puedo entrar en la sala con la caña del bar?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "salvo agua"
+  ],
+  "evidencia": "2. No se puede comer ni beber dentro de la sala, salvo agua.",
+  "respuesta_ideal": "No, dentro de la sala no se puede comer ni beber, salvo agua; la caña te la tomas en el vestíbulo.",
+  "respuesta_a_calificar": "Las puertas se abren 20 minutos antes de la función. Una vez empezada, no se permite la entrada hasta el descanso, si lo hay; si no lo hay, no se podrá entrar. En ese caso no se devuelve el importe."
+ },
+ {
+  "id": "a0155",
+  "negocio": "W4_n3",
+  "turnos_previos_del_cliente": [],
+  "cliente": "hola, cuánto cuesta la entrada?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "€18"
+  ],
+  "evidencia": "Precio general: €18",
+  "respuesta_ideal": "Bienvenido/a al Teatro La Farola. La entrada general cuesta €18; hay precio reducido de €13 para menores de 30, mayores de 65 y otros colectivos con documento.",
+  "respuesta_a_calificar": "Precios de las entradas"
+ },
+ {
+  "id": "a0029",
+  "negocio": "W5_n2",
+  "turnos_previos_del_cliente": [
+   "¿La instalación del aire acondicionado está incluida en el precio?",
+   "¿Reciben mi heladera vieja como parte de pago de la nueva?",
+   "¿Tienen la marca Samsung en TV de 55 pulgadas?",
+   "Buenas tardes, quería consultar algo"
+  ],
+  "cliente": "¿Cuánto cuesta el microondas de 20 litros?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "Gs. 890.000"
+  ],
+  "evidencia": "| Microondas 20 L                | Gs. 890.000     |",
+  "respuesta_ideal": "El microondas de 20 litros cuesta Gs. 890.000.",
+  "respuesta_a_calificar": "Producto: Microondas 20 L; Precio: Gs. 890.000"
+ },
+ {
+  "id": "a0053",
+  "negocio": "W5_n2",
+  "turnos_previos_del_cliente": [
+   "¿Cuánto sale la heladera de 300 litros?"
+  ],
+  "cliente": "¿Y el lavarropas de 8 kilos?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "Gs. 3.200.000"
+  ],
+  "evidencia": "| Lavarropas automático 8 kg     | Gs. 3.200.000   |",
+  "respuesta_ideal": "El lavarropas automático de 8 kg cuesta Gs. 3.200.000.",
+  "respuesta_a_calificar": "Producto: Lavarropas automático 8 kg; Precio: Gs. 3.200.000"
+ },
+ {
+  "id": "a0067",
+  "negocio": "W5_n2",
+  "turnos_previos_del_cliente": [],
+  "cliente": "¿Cuánto sale la heladera de 300 litros?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "Gs. 4.850.000"
+  ],
+  "evidencia": "| Heladera No Frost 300 L        | Gs. 4.850.000   |",
+  "respuesta_ideal": "La heladera No Frost de 300 litros cuesta Gs. 4.850.000.",
+  "respuesta_a_calificar": "Producto: Heladera No Frost 300 L; Precio: Gs. 4.850.000"
+ },
+ {
+  "id": "a0088",
+  "negocio": "W5_n2",
+  "turnos_previos_del_cliente": [],
+  "cliente": "¿La instalación del aire acondicionado está incluida en el precio?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "cargo aparte"
+  ],
+  "evidencia": "la instalación tiene un cargo aparte que depende de la distancia entre las unidades.",
+  "respuesta_ideal": "No, la instalación tiene un cargo aparte que depende de la distancia entre las unidades.",
+  "respuesta_a_calificar": "Producto: Aire acondicionado 12.000 BTU; Precio: USD 650"
+ },
+ {
+  "id": "a0093",
+  "negocio": "W5_n2",
+  "turnos_previos_del_cliente": [],
+  "cliente": "¿A qué hora abren los sábados?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "8:30 a 12:30"
+  ],
+  "evidencia": "Sábados: 8:30 a 12:30 hs",
+  "respuesta_ideal": "Los sábados atendemos de 8:30 a 12:30 hs.",
+  "respuesta_a_calificar": "Sí, al 0981-234-567, de lunes a sábado en el horario de atención."
+ },
+ {
+  "id": "a0147",
+  "negocio": "W5_n2",
+  "turnos_previos_del_cliente": [
+   "¿El envío dentro de Asunción tiene costo?",
+   "¿Y a partir de qué monto de compra?"
+  ],
+  "cliente": "¿Cuánto tarda en llegar el pedido?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "24 a 72 horas"
+  ],
+  "evidencia": "Tiempo estimado de entrega: 24 a 72 horas hábiles según stock.",
+  "respuesta_ideal": "El tiempo estimado de entrega es de 24 a 72 horas hábiles según el stock.",
+  "respuesta_a_calificar": "Por normativa de la SEPRELAD, no se reciben pagos en efectivo superiores a Gs. 10.000.000; en esos casos el pago debe hacerse por transferencia bancaria."
+ },
+ {
+  "id": "a0158",
+  "negocio": "W5_n2",
+  "turnos_previos_del_cliente": [
+   "¿En cuántas cuotas sin interés puedo pagar con tarjeta Itaú?",
+   "¿Y las 6 cuotas sin interés se puede cualquier día?",
+   "¿Reciben pago con cheque?"
+  ],
+  "cliente": "Quiero pagar en efectivo como Gs. 12.000.000 por el aire acondicionado y otras cosas, ¿se puede?",
+  "tipo": "instruccion",
+  "accion_esperada": "responder",
+  "claves": [
+   "Gs. 10.000.000",
+   "transferencia bancaria"
+  ],
+  "evidencia": "no se reciben pagos en efectivo superiores a Gs. 10.000.000; en esos casos el pago debe hacerse por transferencia bancaria.",
+  "respuesta_ideal": "No, en efectivo el límite es Gs. 10.000.000; por encima de eso el pago debe ser por transferencia bancaria.",
+  "respuesta_a_calificar": "ALGUNOS PRODUCTOS Y PRECIOS DE CONTADO: Producto: Aire acondicionado 12.000 BTU; Precio: USD 650"
+ },
+ {
+  "id": "a0181",
+  "negocio": "W5_n2",
+  "turnos_previos_del_cliente": [
+   "¿La instalación del aire acondicionado está incluida en el precio?",
+   "¿Reciben mi heladera vieja como parte de pago de la nueva?"
+  ],
+  "cliente": "¿Tienen la marca Samsung en TV de 55 pulgadas?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo especificada la marca del Smart TV de 55 pulgadas; le recomiendo consultar en el local o por WhatsApp.",
+  "respuesta_a_calificar": "Producto: Smart TV 55\"; Precio: USD 750"
+ },
+ {
+  "id": "a0000",
+  "negocio": "W6_n1",
+  "turnos_previos_del_cliente": [
+   "¿Cómo se puede pagar? ¿Aceptan billeteras digitales?"
+  ],
+  "cliente": "Necesito dos sillas más para mi comedor, ¿venden sueltas las de cedro? ¿cuánto serían las dos?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "760"
+  ],
+  "evidencia": "Sí, la silla de cedro del comedor Chachani se vende suelta a S/ 380 c/u.",
+  "respuesta_ideal": "Sí, la silla de cedro del comedor Chachani se vende suelta a S/ 380 cada una, así que las dos serían S/ 760.",
+  "respuesta_a_calificar": "Sí, la silla de cedro del comedor Chachani se vende suelta a S/ 380 c/u."
+ },
+ {
+  "id": "a0003",
+  "negocio": "W6_n1",
+  "turnos_previos_del_cliente": [
+   "Quiero un ropero a medida porque mi cuarto es angosto. ¿Cobran por venir a medir?",
+   "¿Más o menos cuánto saldría uno de 2.40 de ancho con puertas corredizas?",
+   "Ya. ¿Y en cuánto tiempo lo tendrían listo?",
+   "cuanto hay que dar de adelanto"
+  ],
+  "cliente": "Y si al final no me convence cómo quedó, ¿lo puedo cambiar?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "no tienen cambio ni devolución"
+  ],
+  "evidencia": "Los muebles a medida no tienen cambio ni devolución.",
+  "respuesta_ideal": "Lamentablemente no: los muebles a medida no tienen cambio ni devolución.",
+  "respuesta_a_calificar": "== DELIVERY Y ARMADO ==: Hacemos entregas de lunes a sábado; los domingos no hacemos reparto."
+ },
+ {
+  "id": "a0054",
+  "negocio": "W6_n1",
+  "turnos_previos_del_cliente": [],
+  "cliente": "A que hora abren los domingos?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "10:00"
+  ],
+  "evidencia": "- Domingos: 10:00 a. m. a 2:00 p. m.",
+  "respuesta_ideal": "Los domingos abrimos a las 10:00 a. m. y atendemos hasta las 2:00 p. m.",
+  "respuesta_a_calificar": "Hacemos entregas de lunes a sábado; los domingos no hacemos reparto."
+ },
+ {
+  "id": "a0091",
+  "negocio": "W6_n1",
+  "turnos_previos_del_cliente": [
+   "Vivo en Cayma. Si compro la cama Tingo, ¿me cobran el delivery?",
+   "¿Y si solo llevo un velador?",
+   "¿El armado se paga aparte?"
+  ],
+  "cliente": "A mi hermana que vive en Mollendo le quiero regalar un comedor, ¿se lo pueden mandar?",
+  "tipo": "instruccion",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "4. Si el cliente quiere enviar un mueble fuera de la provincia de Arequipa (Mollendo, Camaná, Puno, Cusco u otro lugar), deriva el caso a ventas al (054) 281930.",
+  "respuesta_ideal": "Los envíos fuera de la provincia los coordina el área de ventas; por favor comuníquese al (054) 281930.",
+  "respuesta_a_calificar": "Con tarjeta de crédito puede pagar hasta en 6 cuotas sin intereses en compras mayores a S/ 1,000."
+ },
+ {
+  "id": "a0094",
+  "negocio": "W6_n1",
+  "turnos_previos_del_cliente": [],
+  "cliente": "¿Cómo se puede pagar? ¿Aceptan billeteras digitales?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "Yape",
+   "Plin"
+  ],
+  "evidencia": "Efectivo, Yape, Plin, transferencia BCP o Interbank, y tarjetas Visa y Mastercard.",
+  "respuesta_ideal": "Sí, aceptamos Yape y Plin, además de efectivo, transferencia BCP o Interbank y tarjetas Visa y Mastercard.",
+  "respuesta_a_calificar": "Con tarjeta de crédito puede pagar hasta en 6 cuotas sin intereses en compras mayores a S/ 1,000."
+ },
+ {
+  "id": "a0113",
+  "negocio": "W6_n1",
+  "turnos_previos_del_cliente": [
+   "¿Cómo se puede pagar? ¿Aceptan billeteras digitales?",
+   "Necesito dos sillas más para mi comedor, ¿venden sueltas las de cedro? ¿cuánto serían las dos?",
+   "¿Y las de tornillo, las del comedor de 4 sillas?"
+  ],
+  "cliente": "¿Cuánto tiempo de garantía tiene la madera?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "2 años"
+  ],
+  "evidencia": "Estructura de madera: 2 años.",
+  "respuesta_ideal": "La estructura de madera tiene 2 años de garantía.",
+  "respuesta_a_calificar": "Estructura de madera: 2 años."
+ },
+ {
+  "id": "a0136",
+  "negocio": "W6_n1",
+  "turnos_previos_del_cliente": [
+   "Vivo en Cayma. Si compro la cama Tingo, ¿me cobran el delivery?",
+   "¿Y si solo llevo un velador?"
+  ],
+  "cliente": "¿El armado se paga aparte?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "incluido"
+  ],
+  "evidencia": "- El armado está incluido en todos nuestros muebles.",
+  "respuesta_ideal": "No, el armado está incluido en todos nuestros muebles.",
+  "respuesta_a_calificar": "El armado está incluido en todos nuestros muebles."
+ },
+ {
+  "id": "a0137",
+  "negocio": "W6_n1",
+  "turnos_previos_del_cliente": [
+   "Hola, buenas tardes",
+   "cuanto cuesta el sofa cama?"
+  ],
+  "cliente": "¿y de largo cuánto mide?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "1.90 m"
+  ],
+  "evidencia": "| Sofá cama \"Yanahuara\" | Estructura de pino, tapiz chenille | 1.90 m de largo | S/ 1,350 |",
+  "respuesta_ideal": "Mide aproximadamente 1.90 m de largo.",
+  "respuesta_a_calificar": "Fabricamos en nuestro propio taller de Cerro Colorado y vendemos directo en nuestra sala de exhibición, sin intermediarios."
+ },
+ {
+  "id": "a0156",
+  "negocio": "W6_n1",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Vivo en Cayma. Si compro la cama Tingo, ¿me cobran el delivery?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "gratis"
+  ],
+  "evidencia": "- Delivery gratis en Cercado, Yanahuara, Cayma y Cerro Colorado por compras desde S/ 800; por compras menores, S/ 25.",
+  "respuesta_ideal": "No: la cama Tingo cuesta S/ 890 y en Cayma el delivery es gratis por compras desde S/ 800.",
+  "respuesta_a_calificar": "Producto: Cama \"Tingo\" 2 plazas con cabecera; Material: Pino; Medidas aprox.: 1.40 x 1.90 m; Precio: S/ 890"
+ },
+ {
+  "id": "a0157",
+  "negocio": "W6_n1",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Quiero un ropero a medida porque mi cuarto es angosto. ¿Cobran por venir a medir?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "40",
+   "se descuenta"
+  ],
+  "evidencia": "1. Visita técnica para tomar medidas: S/ 40 dentro de la ciudad (se descuenta del precio si confirma el pedido).",
+  "respuesta_ideal": "Sí, la visita técnica para tomar medidas cuesta S/ 40 dentro de la ciudad, y se descuenta del precio si confirma el pedido.",
+  "respuesta_a_calificar": "== QUIÉNES SOMOS ==: Trabajamos sobre todo con cedro, tornillo y pino; para roperos y escritorios usamos melamina de 18 mm."
+ },
+ {
+  "id": "a0185",
+  "negocio": "W6_n1",
+  "turnos_previos_del_cliente": [
+   "Hola, buenas tardes",
+   "cuanto cuesta el sofa cama?",
+   "¿y de largo cuánto mide?"
+  ],
+  "cliente": "uy, no me entra en la sala. ¿no lo tienen más chico, de 1.60 más o menos?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo información de ese sofá cama en otra medida; en el catálogo solo figura el de 1.90 m. Un asesor en tienda podría orientarle.",
+  "respuesta_a_calificar": "¿Tienen tienda virtual?: Por ahora vendemos solo en la sala de exhibición y por WhatsApp."
+ },
+ {
+  "id": "a0194",
+  "negocio": "W6_n1",
+  "turnos_previos_del_cliente": [
+   "Buenas, ¿me pueden dar factura? Es para la empresa",
+   "Otra cosa: el mes pasado compré el escritorio Characato y ya se le zafó una bisagra. ¿Qué hago?",
+   "¿Ustedes retapizan muebles viejos? Tengo un sillón de mi mamá"
+  ],
+  "cliente": "¿Tienen un catálogo en PDF que me puedan mandar por WhatsApp?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo el dato de si hay un catálogo en PDF; puede consultarlo al WhatsApp de la tienda, 974 205 118.",
+  "respuesta_a_calificar": "Por ahora vendemos solo en la sala de exhibición y por WhatsApp."
+ },
+ {
+  "id": "a0167",
+  "negocio": "W6_n4",
+  "turnos_previos_del_cliente": [
+   "Se me cayeron unos botones de un saco que no es de aquí, ¿cuánto me cobran por pegarlos?",
+   "Tengo que ajustar mi vestido de novia, ¿cuánto me costaría?"
+  ],
+  "cliente": "Trabajo en un hotel y necesitamos 25 ternos para el personal, ¿con quién hablo?",
+  "tipo": "instruccion",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "4. Los pedidos de uniformes o pedidos corporativos (10 prendas o más) los atiende la Maestra Nélida Quispe: derive al cel. 71534420, de lunes a viernes.",
+  "respuesta_ideal": "Los pedidos corporativos los atiende la Maestra Nélida Quispe; puede llamarla al cel. 71534420, de lunes a viernes.",
+  "respuesta_a_calificar": "¿Puedo traer mi propia tela? Sí, para ternos (ver punto 4)."
+ },
+ {
+  "id": "a0171",
+  "negocio": "W6_n4",
+  "turnos_previos_del_cliente": [
+   "Perdí la boleta, ¿cómo hago para recoger mi saco?",
+   "Lo dejé en Sopocachi, ¿puedo recogerlo en el de la calle Potosí que me queda más cerca?"
+  ],
+  "cliente": "Me arreglaron la cintura de un pantalón y quedó chueca, quiero que me devuelvan mi plata",
+  "tipo": "instruccion",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "5. Reclamos (prenda dañada, arreglo mal hecho, pedido atrasado): pida el número de boleta y derive el caso a la Maestra Nélida Quispe. NO ofrezca devoluciones de dinero ni descuentos.",
+  "respuesta_ideal": "Lamento lo ocurrido. ¿Me indica su número de boleta? Su caso lo atenderá la Maestra Nélida Quispe.",
+  "respuesta_a_calificar": "Terno (saco y pantalón): tela nacional Bs. 1.450 / tela importada desde Bs. 2.600"
+ }
+]

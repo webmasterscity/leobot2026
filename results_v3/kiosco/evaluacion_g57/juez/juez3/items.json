@@ -1,0 +1,1443 @@
+[
+ {
+  "id": "i0058",
+  "negocio": "W1_n3",
+  "turnos_previos_del_cliente": [],
+  "cliente": "El instructor de ayer llegó tarde y fue muy grosero conmigo, ¿con quién me puedo quejar?",
+  "tipo": "instruccion",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "Las quejas sobre instructores las recibe la coordinadora académica, Paola Andrea Beltrán, al correo coordinacion@vialibre.edu.co.",
+  "respuesta_ideal": "Lamento lo ocurrido; las quejas sobre instructores las recibe la coordinadora académica, Paola Andrea Beltrán, al correo coordinacion@vialibre.edu.co.",
+  "respuesta_a_calificar": "Vehículos: Renault Logan (mecánico), Kia Picanto (automático) y motos AKT de 125 cc. Los carros tienen doble pedal de freno para el instructor."
+ },
+ {
+  "id": "i0060",
+  "negocio": "W1_n3",
+  "turnos_previos_del_cliente": [
+   "El instructor de ayer llegó tarde y fue muy grosero conmigo, ¿con quién me puedo quejar?"
+  ],
+  "cliente": "Pagué el curso pero todavía no he empezado y ya no lo voy a poder hacer, ¿cuánto me devuelven?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "80 %"
+  ],
+  "evidencia": "Retiro: si desiste antes de empezar las clases, le devolvemos el 80 % del valor pagado.",
+  "respuesta_ideal": "Si desiste antes de empezar las clases, se le devuelve el 80 % del valor pagado.",
+  "respuesta_a_calificar": "Retiro: si desiste antes de empezar las clases, le devolvemos el 80 % del valor pagado. Una vez iniciada la teoría no hay devolución."
+ },
+ {
+  "id": "i0098",
+  "negocio": "W1_n3",
+  "turnos_previos_del_cliente": [
+   "Buenos días",
+   "¿Cuánto vale el curso para sacar el pase de carro?"
+  ],
+  "cliente": "¿Y eso ya incluye el examen médico?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "No incluye el examen médico"
+  ],
+  "evidencia": "No incluye el examen médico en el CRC ni los derechos de trámite de la licencia ante la Secretaria de Movilidad.",
+  "respuesta_ideal": "No, el valor no incluye el examen médico en el CRC ni los derechos de trámite de la licencia.",
+  "respuesta_a_calificar": "CURSOS Y TARIFAS 2026: No incluye el examen médico en el CRC ni los derechos de trámite de la licencia ante la Secretaria de Movilidad."
+ },
+ {
+  "id": "i0153",
+  "negocio": "W1_n3",
+  "turnos_previos_del_cliente": [
+   "hola tengo 17 años y quiero sacar la licencia de moto, ¿puedo?",
+   "¿Y qué vale el curso de moto?",
+   "¿me pueden recojer en la casa para las prácticas?"
+  ],
+  "cliente": "¿Entonces dónde son las prácticas?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "Calle 170 No. 58-40"
+  ],
+  "evidencia": "Pista de práctica: Calle 170 No. 58-40 (solo clases prácticas, no hay atención al público) […] Las clases prácticas empiezan en la sede o en la pista.",
+  "respuesta_ideal": "Las prácticas empiezan en la sede de la Cra. 15 No. 124-30 o en la pista de la Calle 170 No. 58-40.",
+  "respuesta_a_calificar": "la pista"
+ },
+ {
+  "id": "i0156",
+  "negocio": "W1_n3",
+  "turnos_previos_del_cliente": [
+   "¿Se puede pagar con Nequi?",
+   "¿Me dejan pagarlo por partes?",
+   "Soy estudiante de la Nacional, ¿con el descuento en cuánto me queda el de carro mecánico?",
+   "¿Y al de moto también le aplica?"
+  ],
+  "cliente": "Y si nos inscribimos dos amigos al tiempo, ¿nos hacen descuento?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo información de descuentos por inscribirse en grupo, así que no se lo puedo asegurar.",
+  "respuesta_a_calificar": "Se puede pagar en 2 cuotas sin intereses: 50 % al inscribirse y 50 % antes de la primera clase práctica."
+ },
+ {
+  "id": "i0166",
+  "negocio": "W1_n3",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Si no puedo llegar a una clase práctica, ¿con cuánto tiempo tengo que avisar?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "12 horas"
+  ],
+  "evidencia": "Para cancelar o mover una clase práctica hay que avisar con mínimo 12 horas de anticipación; si no, la clase se pierde.",
+  "respuesta_ideal": "Tiene que avisar con mínimo 12 horas de anticipación; si no, la clase se pierde.",
+  "respuesta_a_calificar": "Reconozco un inicio condicional, pero no tiene una única estructura «si … entonces …»."
+ },
+ {
+  "id": "i0170",
+  "negocio": "W1_n3",
+  "turnos_previos_del_cliente": [
+   "Si no puedo llegar a una clase práctica, ¿con cuánto tiempo tengo que avisar?"
+  ],
+  "cliente": "Y si me rajo en el examen práctico, ¿lo puedo repetir gratis?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "una vez sin costo",
+   "$90.000"
+  ],
+  "evidencia": "Lo puede repetir una vez sin costo. Desde el segundo intento, cada examen vale $90.000.",
+  "respuesta_ideal": "Sí, lo puede repetir una vez sin costo; desde el segundo intento cada examen vale $90.000.",
+  "respuesta_a_calificar": "¿Qué pasa si pierdo el examen práctico?: Lo puede repetir una vez sin costo."
+ },
+ {
+  "id": "i0324",
+  "negocio": "W1_n3",
+  "turnos_previos_del_cliente": [
+   "hola tengo 17 años y quiero sacar la licencia de moto, ¿puedo?",
+   "¿Y qué vale el curso de moto?",
+   "¿me pueden recojer en la casa para las prácticas?"
+  ],
+  "cliente": "¿Entonces dónde son las prácticas?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "Calle 170 No. 58-40"
+  ],
+  "evidencia": "Pista de práctica: Calle 170 No. 58-40 (solo clases prácticas, no hay atención al público) […] Las clases prácticas empiezan en la sede o en la pista.",
+  "respuesta_ideal": "Las prácticas empiezan en la sede de la Cra. 15 No. 124-30 o en la pista de la Calle 170 No. 58-40.",
+  "respuesta_a_calificar": "No por ahora; la teoría es 100 % presencial."
+ },
+ {
+  "id": "i0332",
+  "negocio": "W1_n3",
+  "turnos_previos_del_cliente": [
+   "Si no puedo llegar a una clase práctica, ¿con cuánto tiempo tengo que avisar?",
+   "Y si me rajo en el examen práctico, ¿lo puedo repetir gratis?",
+   "Tengo un comparendo sin pagar, ¿eso me afecta para sacar la licencia?",
+   "¿Cuanto se demora en llegar la licencia fisica despues de terminar el curso?"
+  ],
+  "cliente": "Quiero sacar moto y carro mecánico, ¿cuánto me ahorro con el paquete en vez de hacerlos por separado?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "$2.400.000",
+   "230.000"
+  ],
+  "evidencia": "| Moto | A2 | 28 h | 15 h | $980.000 |\n| Carro particular mecánico | B1 | 30 h | 20 h | $1.650.000 | […] | Paquete moto + carro mecánico | A2 + B1 | 58 h | 35 h | $2.400.000 |",
+  "respuesta_ideal": "Por separado serían $980.000 más $1.650.000, o sea $2.630.000; el paquete vale $2.400.000, así que se ahorra $230.000.",
+  "respuesta_a_calificar": "CURSOS Y TARIFAS 2026: Curso: Paquete moto + carro mecánico; Categoría: A2 + B1; Teoría: 58 h; Práctica: 35 h; Valor: $2.400.000"
+ },
+ {
+  "id": "i0337",
+  "negocio": "W1_n3",
+  "turnos_previos_del_cliente": [
+   "Buenos días",
+   "¿Cuánto vale el curso para sacar el pase de carro?",
+   "¿Y eso ya incluye el examen médico?",
+   "¿y más o menos cuánto vale ese examen?"
+  ],
+  "cliente": "¿Cuántas horas de práctica tiene el curso de carro?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "20"
+  ],
+  "evidencia": "| Carro particular mecánico | B1 | 30 h | 20 h | $1.650.000 |",
+  "respuesta_ideal": "El curso de carro B1 tiene 20 horas de práctica, además de 30 horas de teoría.",
+  "respuesta_a_calificar": "doble pedal"
+ },
+ {
+  "id": "i0356",
+  "negocio": "W1_n3",
+  "turnos_previos_del_cliente": [
+   "hola tengo 17 años y quiero sacar la licencia de moto, ¿puedo?",
+   "¿Y qué vale el curso de moto?",
+   "¿me pueden recojer en la casa para las prácticas?",
+   "¿Entonces dónde son las prácticas?"
+  ],
+  "cliente": "¿Las motos son de cambios o automáticas?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "Sé que son motos AKT de 125 cc, pero no tengo el dato de si son de cambios o automáticas.",
+  "respuesta_a_calificar": "Vehículos: Renault Logan (mecánico), Kia Picanto (automático) y motos AKT de 125 cc. Los carros tienen doble pedal de freno para el instructor."
+ },
+ {
+  "id": "i0358",
+  "negocio": "W1_n3",
+  "turnos_previos_del_cliente": [
+   "Si no puedo llegar a una clase práctica, ¿con cuánto tiempo tengo que avisar?",
+   "Y si me rajo en el examen práctico, ¿lo puedo repetir gratis?",
+   "Tengo un comparendo sin pagar, ¿eso me afecta para sacar la licencia?"
+  ],
+  "cliente": "¿Cuanto se demora en llegar la licencia fisica despues de terminar el curso?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo ese dato; solo sé que el proceso del curso toma normalmente entre 4 y 6 semanas.",
+  "respuesta_a_calificar": "CRC"
+ },
+ {
+  "id": "i0383",
+  "negocio": "W1_n3",
+  "turnos_previos_del_cliente": [
+   "El instructor de ayer llegó tarde y fue muy grosero conmigo, ¿con quién me puedo quejar?",
+   "Pagué el curso pero todavía no he empezado y ya no lo voy a poder hacer, ¿cuánto me devuelven?"
+  ],
+  "cliente": "¿Y en cuántos días hacen esa devolución?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo el dato de en cuánto tiempo se hace la devolución; eso se lo pueden confirmar en la oficina.",
+  "respuesta_a_calificar": "Retiro: si desiste antes de empezar las clases, le devolvemos el 80 % del valor pagado. Una vez iniciada la teoría no hay devolución."
+ },
+ {
+  "id": "i0393",
+  "negocio": "W1_n3",
+  "turnos_previos_del_cliente": [
+   "Si no puedo llegar a una clase práctica, ¿con cuánto tiempo tengo que avisar?",
+   "Y si me rajo en el examen práctico, ¿lo puedo repetir gratis?",
+   "Tengo un comparendo sin pagar, ¿eso me afecta para sacar la licencia?",
+   "¿Cuanto se demora en llegar la licencia fisica despues de terminar el curso?"
+  ],
+  "cliente": "Quiero sacar moto y carro mecánico, ¿cuánto me ahorro con el paquete en vez de hacerlos por separado?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "$2.400.000",
+   "230.000"
+  ],
+  "evidencia": "| Moto | A2 | 28 h | 15 h | $980.000 |\n| Carro particular mecánico | B1 | 30 h | 20 h | $1.650.000 | […] | Paquete moto + carro mecánico | A2 + B1 | 58 h | 35 h | $2.400.000 |",
+  "respuesta_ideal": "Por separado serían $980.000 más $1.650.000, o sea $2.630.000; el paquete vale $2.400.000, así que se ahorra $230.000.",
+  "respuesta_a_calificar": "A2"
+ },
+ {
+  "id": "i0405",
+  "negocio": "W1_n3",
+  "turnos_previos_del_cliente": [
+   "Buenos días"
+  ],
+  "cliente": "¿Cuánto vale el curso para sacar el pase de carro?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "$1.650.000",
+   "$1.790.000"
+  ],
+  "evidencia": "| Carro particular mecánico | B1 | 30 h | 20 h | $1.650.000 |\n| Carro particular automático | B1 | 30 h | 20 h | $1.790.000 |",
+  "respuesta_ideal": "El curso B1 de carro particular vale $1.650.000 en carro mecánico y $1.790.000 en automático.",
+  "respuesta_a_calificar": "CURSOS Y TARIFAS 2026: Vehículos: Renault Logan (mecánico), Kia Picanto (automático) y motos AKT de 125 cc. Los carros tienen doble pedal de freno para el instructor."
+ },
+ {
+  "id": "i0409",
+  "negocio": "W1_n3",
+  "turnos_previos_del_cliente": [
+   "¿Hasta qué hora atienden los sábados en la oficina?",
+   "¿Y en festivo se pueden hacer prácticas?"
+  ],
+  "cliente": "¿Tienen parqueadero en la sede para los alumnos?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo información sobre parqueadero en la sede, así que no se lo puedo confirmar.",
+  "respuesta_a_calificar": "No recogemos a los alumnos en su casa ni en el trabajo."
+ },
+ {
+  "id": "i0425",
+  "negocio": "W1_n3",
+  "turnos_previos_del_cliente": [
+   "Buenos días",
+   "¿Cuánto vale el curso para sacar el pase de carro?",
+   "¿Y eso ya incluye el examen médico?"
+  ],
+  "cliente": "¿y más o menos cuánto vale ese examen?",
+  "tipo": "instruccion",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": "Si preguntan cuánto cuesta el examen médico o los derechos de la licencia, diga que no están incluidos en el curso y que usted no tiene el valor exacto.",
+  "respuesta_ideal": "El examen médico no está incluido en el curso y no tengo el valor exacto; se hace en un CRC autorizado.",
+  "respuesta_a_calificar": "90"
+ },
+ {
+  "id": "i0464",
+  "negocio": "W1_n3",
+  "turnos_previos_del_cliente": [],
+  "cliente": "hola tengo 17 años y quiero sacar la licencia de moto, ¿puedo?",
+  "tipo": "instruccion",
+  "accion_esperada": "responder",
+  "claves": [
+   "16 años",
+   "autorización firmada"
+  ],
+  "evidencia": "Edad mínima: 16 años para A2 y B1; 18 años para C1. […] Si quien pregunta es menor de edad, recuérdele que para inscribirse necesita la autorización firmada por uno de sus padres y copia de la cédula de ese padre.",
+  "respuesta_ideal": "Sí, para moto (A2) la edad mínima es 16 años; como es menor de edad, necesita la autorización firmada por uno de sus padres y copia de la cédula de ese padre.",
+  "respuesta_a_calificar": "Vehículos: Renault Logan (mecánico), Kia Picanto (automático) y motos AKT de 125 cc. Los carros tienen doble pedal de freno para el instructor."
+ },
+ {
+  "id": "i0467",
+  "negocio": "W1_n3",
+  "turnos_previos_del_cliente": [
+   "Si no puedo llegar a una clase práctica, ¿con cuánto tiempo tengo que avisar?",
+   "Y si me rajo en el examen práctico, ¿lo puedo repetir gratis?",
+   "Tengo un comparendo sin pagar, ¿eso me afecta para sacar la licencia?"
+  ],
+  "cliente": "¿Cuanto se demora en llegar la licencia fisica despues de terminar el curso?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo ese dato; solo sé que el proceso del curso toma normalmente entre 4 y 6 semanas.",
+  "respuesta_a_calificar": "CURSOS Y TARIFAS 2026: No incluye el examen médico en el CRC ni los derechos de trámite de la licencia ante la Secretaria de Movilidad."
+ },
+ {
+  "id": "i0490",
+  "negocio": "W1_n3",
+  "turnos_previos_del_cliente": [
+   "¿Hasta qué hora atienden los sábados en la oficina?"
+  ],
+  "cliente": "¿Y en festivo se pueden hacer prácticas?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "reserva previa"
+  ],
+  "evidencia": "Festivos: solo con reserva previa, de 7:00 a. m. a 1:00 p. m.",
+  "respuesta_ideal": "Sí, pero solo con reserva previa, de 7:00 a. m. a 1:00 p. m.",
+  "respuesta_a_calificar": "Se puede pagar en 2 cuotas sin intereses: 50 % al inscribirse y 50 % antes de la primera clase práctica."
+ },
+ {
+  "id": "i0517",
+  "negocio": "W1_n3",
+  "turnos_previos_del_cliente": [
+   "¿Se puede pagar con Nequi?",
+   "¿Me dejan pagarlo por partes?"
+  ],
+  "cliente": "Soy estudiante de la Nacional, ¿con el descuento en cuánto me queda el de carro mecánico?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "1.485.000"
+  ],
+  "evidencia": "| Carro particular mecánico | B1 | 30 h | 20 h | $1.650.000 | […] Descuento del 10 % para estudiantes universitarios con carné vigente (aplica solo para cursos B1; no acumulable).",
+  "respuesta_ideal": "Con el 10 % para universitarios con carné vigente, el curso de carro mecánico de $1.650.000 le queda en $1.485.000.",
+  "respuesta_a_calificar": "Descuento del 10 % para estudiantes universitarios con carné vigente (aplica solo para cursos B1; no acumulable)."
+ },
+ {
+  "id": "i0568",
+  "negocio": "W1_n3",
+  "turnos_previos_del_cliente": [
+   "Buenos días",
+   "¿Cuánto vale el curso para sacar el pase de carro?",
+   "¿Y eso ya incluye el examen médico?"
+  ],
+  "cliente": "¿y más o menos cuánto vale ese examen?",
+  "tipo": "instruccion",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": "Si preguntan cuánto cuesta el examen médico o los derechos de la licencia, diga que no están incluidos en el curso y que usted no tiene el valor exacto.",
+  "respuesta_ideal": "El examen médico no está incluido en el curso y no tengo el valor exacto; se hace en un CRC autorizado.",
+  "respuesta_a_calificar": "Desde el segundo intento, cada examen vale $90.000."
+ },
+ {
+  "id": "i0574",
+  "negocio": "W1_n3",
+  "turnos_previos_del_cliente": [],
+  "cliente": "¿Se puede pagar con Nequi?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "Nequi"
+  ],
+  "evidencia": "Efectivo, tarjeta débito y crédito, PSE y Nequi.",
+  "respuesta_ideal": "Sí, recibimos Nequi, además de efectivo, tarjetas y PSE.",
+  "respuesta_a_calificar": "Efectivo, tarjeta débito y crédito, PSE y Nequi."
+ },
+ {
+  "id": "i0605",
+  "negocio": "W1_n3",
+  "turnos_previos_del_cliente": [
+   "hola tengo 17 años y quiero sacar la licencia de moto, ¿puedo?",
+   "¿Y qué vale el curso de moto?"
+  ],
+  "cliente": "¿me pueden recojer en la casa para las prácticas?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "No recogemos"
+  ],
+  "evidencia": "No recogemos a los alumnos en su casa ni en el trabajo.",
+  "respuesta_ideal": "No, no recogemos a los alumnos en la casa ni en el trabajo; las prácticas empiezan en la sede o en la pista.",
+  "respuesta_a_calificar": "No recogemos a los alumnos en su casa ni en el trabajo."
+ },
+ {
+  "id": "i0617",
+  "negocio": "W1_n3",
+  "turnos_previos_del_cliente": [
+   "hola tengo 17 años y quiero sacar la licencia de moto, ¿puedo?"
+  ],
+  "cliente": "¿Y qué vale el curso de moto?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "$980.000"
+  ],
+  "evidencia": "| Moto | A2 | 28 h | 15 h | $980.000 |",
+  "respuesta_ideal": "El curso de moto, categoría A2, vale $980.000.",
+  "respuesta_a_calificar": "CURSOS Y TARIFAS 2026: Vehículos: Renault Logan (mecánico), Kia Picanto (automático) y motos AKT de 125 cc. Los carros tienen doble pedal de freno para el instructor."
+ },
+ {
+  "id": "i0629",
+  "negocio": "W1_n3",
+  "turnos_previos_del_cliente": [
+   "El instructor de ayer llegó tarde y fue muy grosero conmigo, ¿con quién me puedo quejar?",
+   "Pagué el curso pero todavía no he empezado y ya no lo voy a poder hacer, ¿cuánto me devuelven?",
+   "¿Y en cuántos días hacen esa devolución?"
+  ],
+  "cliente": "Otra pregunta, ¿hay instructoras mujeres?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo esa información sobre los instructores, así que no se lo puedo asegurar.",
+  "respuesta_a_calificar": "Pista de práctica: Calle 170 No. 58-40 (solo clases prácticas, no hay atención al público)"
+ },
+ {
+  "id": "i0688",
+  "negocio": "W1_n3",
+  "turnos_previos_del_cliente": [],
+  "cliente": "¿Hasta qué hora atienden los sábados en la oficina?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "1:00"
+  ],
+  "evidencia": "Sáb: 8:00 a. m. a 1:00 p. m.",
+  "respuesta_ideal": "Los sábados la oficina atiende de 8:00 a. m. a 1:00 p. m.",
+  "respuesta_a_calificar": "HORARIO DE ATENCIÓN EN OFICINA: L-V: 7:00 a. m. a 6:00 p. m."
+ },
+ {
+  "id": "i0729",
+  "negocio": "W1_n3",
+  "turnos_previos_del_cliente": [
+   "¿Se puede pagar con Nequi?",
+   "¿Me dejan pagarlo por partes?",
+   "Soy estudiante de la Nacional, ¿con el descuento en cuánto me queda el de carro mecánico?"
+  ],
+  "cliente": "¿Y al de moto también le aplica?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "solo para cursos B1"
+  ],
+  "evidencia": "(aplica solo para cursos B1; no acumulable)",
+  "respuesta_ideal": "No, el descuento para estudiantes aplica solo para cursos B1, no para moto.",
+  "respuesta_a_calificar": "Vehículos: Renault Logan (mecánico), Kia Picanto (automático) y motos AKT de 125 cc. Los carros tienen doble pedal de freno para el instructor."
+ },
+ {
+  "id": "i0730",
+  "negocio": "W1_n3",
+  "turnos_previos_del_cliente": [
+   "hola tengo 17 años y quiero sacar la licencia de moto, ¿puedo?"
+  ],
+  "cliente": "¿Y qué vale el curso de moto?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "$980.000"
+  ],
+  "evidencia": "| Moto | A2 | 28 h | 15 h | $980.000 |",
+  "respuesta_ideal": "El curso de moto, categoría A2, vale $980.000.",
+  "respuesta_a_calificar": "90"
+ },
+ {
+  "id": "i0743",
+  "negocio": "W1_n3",
+  "turnos_previos_del_cliente": [
+   "Si no puedo llegar a una clase práctica, ¿con cuánto tiempo tengo que avisar?",
+   "Y si me rajo en el examen práctico, ¿lo puedo repetir gratis?"
+  ],
+  "cliente": "Tengo un comparendo sin pagar, ¿eso me afecta para sacar la licencia?",
+  "tipo": "instruccion",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "No dé información sobre multas, comparendos, embargos ni trámites ante la Secretaría de Movilidad. Diga que eso se consulta directamente con la Secretaría o en el SIMIT.",
+  "respuesta_ideal": "Sobre comparendos no le puedo informar; eso se consulta directamente con la Secretaría de Movilidad o en el SIMIT.",
+  "respuesta_a_calificar": "Se puede pagar en 2 cuotas sin intereses: 50 % al inscribirse y 50 % antes de la primera clase práctica."
+ },
+ {
+  "id": "i0753",
+  "negocio": "W1_n3",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Si no puedo llegar a una clase práctica, ¿con cuánto tiempo tengo que avisar?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "12 horas"
+  ],
+  "evidencia": "Para cancelar o mover una clase práctica hay que avisar con mínimo 12 horas de anticipación; si no, la clase se pierde.",
+  "respuesta_ideal": "Tiene que avisar con mínimo 12 horas de anticipación; si no, la clase se pierde.",
+  "respuesta_a_calificar": "Para cancelar o mover una clase práctica hay que avisar con mínimo 12 horas de anticipación; si no, la clase se pierde."
+ },
+ {
+  "id": "i0757",
+  "negocio": "W1_n3",
+  "turnos_previos_del_cliente": [
+   "¿Se puede pagar con Nequi?"
+  ],
+  "cliente": "¿Me dejan pagarlo por partes?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "2 cuotas",
+   "50 %"
+  ],
+  "evidencia": "Se puede pagar en 2 cuotas sin intereses: 50 % al inscribirse y 50 % antes de la primera clase práctica.",
+  "respuesta_ideal": "Sí, en 2 cuotas sin intereses: 50 % al inscribirse y 50 % antes de la primera clase práctica.",
+  "respuesta_a_calificar": "Se puede pagar en 2 cuotas sin intereses: 50 % al inscribirse y 50 % antes de la primera clase práctica."
+ },
+ {
+  "id": "i0802",
+  "negocio": "W1_n3",
+  "turnos_previos_del_cliente": [
+   "Buenos días",
+   "¿Cuánto vale el curso para sacar el pase de carro?",
+   "¿Y eso ya incluye el examen médico?",
+   "¿y más o menos cuánto vale ese examen?"
+  ],
+  "cliente": "¿Cuántas horas de práctica tiene el curso de carro?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "20"
+  ],
+  "evidencia": "| Carro particular mecánico | B1 | 30 h | 20 h | $1.650.000 |",
+  "respuesta_ideal": "El curso de carro B1 tiene 20 horas de práctica, además de 30 horas de teoría.",
+  "respuesta_a_calificar": "CURSOS Y TARIFAS 2026: Vehículos: Renault Logan (mecánico), Kia Picanto (automático) y motos AKT de 125 cc. Los carros tienen doble pedal de freno para el instructor."
+ },
+ {
+  "id": "i0042",
+  "negocio": "W3_n3",
+  "turnos_previos_del_cliente": [
+   "Hola, tengo una camioneta grande y quisiera un lavado premium. ¿Que incluye?",
+   "¿Me hacen un descuento si voy 4 veces al mes?"
+  ],
+  "cliente": "OK, pero ¿aceptan tarjeta?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "tarjeta débito/crédito",
+   "Visa, Mastercard"
+  ],
+  "evidencia": "Efectivo, tarjeta débito/crédito (Visa, Mastercard)",
+  "respuesta_ideal": "Sí, aceptamos Visa y Mastercard, tanto débito como crédito. También efectivo y transferencia.",
+  "respuesta_a_calificar": "OK, pero. Efectivo, tarjeta débito/crédito (Visa, Mastercard), transferencia bancaria, Oxxo Pay, Spoti."
+ },
+ {
+  "id": "i0053",
+  "negocio": "W3_n3",
+  "turnos_previos_del_cliente": [],
+  "cliente": "¿Puedo pagar con tarjeta de débito?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "tarjeta débito"
+  ],
+  "evidencia": "Efectivo, tarjeta débito/crédito (Visa, Mastercard)",
+  "respuesta_ideal": "Claro, aceptamos tarjeta de débito Visa y Mastercard.",
+  "respuesta_a_calificar": "Métodos de pago: Efectivo, tarjeta débito/crédito (Visa, Mastercard), transferencia bancaria, Oxxo Pay, Spoti."
+ },
+ {
+  "id": "i0099",
+  "negocio": "W3_n3",
+  "turnos_previos_del_cliente": [
+   "Buenas, ¿abren los domingos?"
+  ],
+  "cliente": "¿Y hay promoción ahorita?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "Referido Amigo",
+   "50 MXN"
+  ],
+  "evidencia": "Referido Amigo: trae un amigo, ambos reciben 50 MXN de descuento",
+  "respuesta_ideal": "Sí, tenemos la promoción 'Referido Amigo'. Si traes a un amigo, ambos reciben 50 pesos de descuento en el siguiente lavado.",
+  "respuesta_a_calificar": "Promoción vigente (marzo 2025): \"Referido Amigo\": trae un amigo, ambos reciben 50 MXN de descuento en su próximo lavado; Válido 1 vez por cliente."
+ },
+ {
+  "id": "i0115",
+  "negocio": "W3_n3",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Tengo una moto. ¿Cuanto cuesta lavarla?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "60"
+  ],
+  "evidencia": "Motocicleta | 60",
+  "respuesta_ideal": "Motocicleta es 60 pesos el lavado básico.",
+  "respuesta_a_calificar": "Procesé 2 segmentos del documento en orden."
+ },
+ {
+  "id": "i0140",
+  "negocio": "W3_n3",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Buenas, ¿abren los domingos?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "9:00 a 15:00 h"
+  ],
+  "evidencia": "Domingos: 9:00 a 15:00 h",
+  "respuesta_ideal": "Sí, domingos abrimos de 9:00 am a 3:00 pm.",
+  "respuesta_a_calificar": "Buenas. Domingos: 9:00 a 15:00 h."
+ },
+ {
+  "id": "i0228",
+  "negocio": "W3_n3",
+  "turnos_previos_del_cliente": [
+   "Necesito agendar para el sabado a las 10:00 am."
+  ],
+  "cliente": "¿Que si cancelo?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "2 horas antes",
+   "50%"
+  ],
+  "evidencia": "hasta 2 horas antes sin penalidad. Menos de 2h: se cobra 50% del servicio",
+  "respuesta_ideal": "Hasta 2 horas antes sin penalidad. Si cancelas con menos de 2 horas, se cobra el 50% del servicio.",
+  "respuesta_a_calificar": "2 horas"
+ },
+ {
+  "id": "i0295",
+  "negocio": "W3_n3",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Tengo una moto. ¿Cuanto cuesta lavarla?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "60"
+  ],
+  "evidencia": "Motocicleta | 60",
+  "respuesta_ideal": "Motocicleta es 60 pesos el lavado básico.",
+  "respuesta_a_calificar": "2 plazas de descarga de motos."
+ },
+ {
+  "id": "i0339",
+  "negocio": "W3_n3",
+  "turnos_previos_del_cliente": [
+   "Necesito agendar para el sabado a las 10:00 am."
+  ],
+  "cliente": "¿Que si cancelo?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "2 horas antes",
+   "50%"
+  ],
+  "evidencia": "hasta 2 horas antes sin penalidad. Menos de 2h: se cobra 50% del servicio",
+  "respuesta_ideal": "Hasta 2 horas antes sin penalidad. Si cancelas con menos de 2 horas, se cobra el 50% del servicio.",
+  "respuesta_a_calificar": "Envío de fotos: después de cada lavado enviamos fotos del auto terminado a WhatsApp o email (si lo solicita en el formulario de cliente)."
+ },
+ {
+  "id": "i0376",
+  "negocio": "W3_n3",
+  "turnos_previos_del_cliente": [],
+  "cliente": "¿Donde puedo dejar mi auto mientras se lava?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "20 plazas de estacionamiento cubierto"
+  ],
+  "evidencia": "20 plazas de estacionamiento cubierto durante el lavado",
+  "respuesta_ideal": "Contamos con 20 plazas de estacionamiento cubierto. El estacionamiento es gratis durante el lavado.",
+  "respuesta_a_calificar": "Desde hace 12 años, lavamos autos con los mejores productos y técnica profesional."
+ },
+ {
+  "id": "i0377",
+  "negocio": "W3_n3",
+  "turnos_previos_del_cliente": [
+   "Tengo una moto. ¿Cuanto cuesta lavarla?"
+  ],
+  "cliente": "¿Y hay plazas para motos?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "2 plazas de descarga de motos"
+  ],
+  "evidencia": "2 plazas de descarga de motos",
+  "respuesta_ideal": "Sí, tenemos 2 plazas especiales para motos.",
+  "respuesta_a_calificar": "2 plazas de descarga de motos."
+ },
+ {
+  "id": "i0404",
+  "negocio": "W3_n3",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Necesito agendar para el sabado a las 10:00 am.",
+  "tipo": "instruccion",
+  "accion_esperada": "responder",
+  "claves": [
+   "(81) 2045-5678",
+   "WhatsApp",
+   "primera llegada, primer servicio"
+  ],
+  "evidencia": "se aceptan citas por teléfono o WhatsApp, sin anticipo. Primera llegada, primer servicio si no hay cita.",
+  "respuesta_ideal": "Perfecto. Llama al (81) 2045-5678 o escribe por WhatsApp al +52 81 2154-4321. No cobramos anticipo. Sábado abrimos a las 8:00 am.",
+  "respuesta_a_calificar": "Sábados: 8:00 a 17:00 h."
+ },
+ {
+  "id": "i0408",
+  "negocio": "W3_n3",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Necesito agendar para el sabado a las 10:00 am.",
+  "tipo": "instruccion",
+  "accion_esperada": "responder",
+  "claves": [
+   "(81) 2045-5678",
+   "WhatsApp",
+   "primera llegada, primer servicio"
+  ],
+  "evidencia": "se aceptan citas por teléfono o WhatsApp, sin anticipo. Primera llegada, primer servicio si no hay cita.",
+  "respuesta_ideal": "Perfecto. Llama al (81) 2045-5678 o escribe por WhatsApp al +52 81 2154-4321. No cobramos anticipo. Sábado abrimos a las 8:00 am.",
+  "respuesta_a_calificar": "Registré la afirmación como evidencia lingüística cruda; todavía no hay 3 apoyos independientes para inducir una relación."
+ },
+ {
+  "id": "i0437",
+  "negocio": "W3_n3",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Tengo una sedán y quiero lavar la. ¿Cuanto cuesta?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "180"
+  ],
+  "evidencia": "Sedán / Hatchback | 180",
+  "respuesta_ideal": "Un lavado básico para sedán es 180 pesos. Si quieres el premium con más detalles, es 380.",
+  "respuesta_a_calificar": "Procesé 2 segmentos del documento en orden."
+ },
+ {
+  "id": "i0494",
+  "negocio": "W3_n3",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Tengo una sedán y quiero lavar la. ¿Cuanto cuesta?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "180"
+  ],
+  "evidencia": "Sedán / Hatchback | 180",
+  "respuesta_ideal": "Un lavado básico para sedán es 180 pesos. Si quieres el premium con más detalles, es 380.",
+  "respuesta_a_calificar": "Tipo: Sedán / Hatchback; Precio MXN: 180"
+ },
+ {
+  "id": "i0498",
+  "negocio": "W3_n3",
+  "turnos_previos_del_cliente": [
+   "Tengo una sedán y quiero lavar la. ¿Cuanto cuesta?"
+  ],
+  "cliente": "¿Cuanto tarda?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "45-60 min"
+  ],
+  "evidencia": "Tiempo: 45-60 min",
+  "respuesta_ideal": "El lavado básico tarda entre 45 y 60 minutos.",
+  "respuesta_a_calificar": "Distancia de 2 m entre estaciones."
+ },
+ {
+  "id": "i0519",
+  "negocio": "W3_n3",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Hola, soy empresa de taxis. ¿Hacen descuentos por flota?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "15%",
+   "mínimo 10 autos/mes",
+   "flota@lavamaxmty.mx"
+  ],
+  "evidencia": "Descuento 15% para lavados recurrentes (mínimo 10 autos/mes). Contacto: flota@lavamaxmty.mx",
+  "respuesta_ideal": "Sí, ofrecemos 15% de descuento para flotas con mínimo 10 autos al mes. Contacta a flota@lavamaxmty.mx para coordinar.",
+  "respuesta_a_calificar": "Flotas y empresas: Descuento 15% para lavados recurrentes (mínimo 10 autos/mes)."
+ },
+ {
+  "id": "i0588",
+  "negocio": "W3_n3",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Hola, tengo una camioneta grande y quisiera un lavado premium. ¿Que incluye?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "550",
+   "90-120 min",
+   "motor",
+   "abrillantador",
+   "tapicería"
+  ],
+  "evidencia": "Camioneta grande / Van | 550 / Incluye todo lo del básico PLUS: lavado de motor, abrillantador protector UV, interior: limpieza profunda de tapicería",
+  "respuesta_ideal": "El premium para camioneta grande cuesta 550 pesos, tarda 90-120 minutos. Incluye lavado del motor, abrillantador UV, limpieza profunda de interior y tapicería.",
+  "respuesta_a_calificar": "Procesé 2 segmentos del documento en orden."
+ },
+ {
+  "id": "i0628",
+  "negocio": "W3_n3",
+  "turnos_previos_del_cliente": [
+   "¿Donde puedo dejar mi auto mientras se lava?"
+  ],
+  "cliente": "¿Y si me tardo mas?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "3 horas gratis",
+   "10 MXN/hora"
+  ],
+  "evidencia": "3 horas gratis con cualquier servicio. Después: 10 MXN/hora",
+  "respuesta_ideal": "Las primeras 3 horas son gratis con tu lavado. Después, es 10 pesos por hora.",
+  "respuesta_a_calificar": "Uso de cubrebocas y guantes por parte del personal."
+ },
+ {
+  "id": "i0631",
+  "negocio": "W3_n3",
+  "turnos_previos_del_cliente": [
+   "¿Puedo pagar con tarjeta de débito?"
+  ],
+  "cliente": "¿Y si no estoy conforme con el lavado?",
+  "tipo": "instruccion",
+  "accion_esperada": "responder",
+  "claves": [
+   "repetimos el lavado sin costo",
+   "mismo día"
+  ],
+  "evidencia": "si el cliente no está satisfecho con el lavado, se repite sin costo adicional en el mismo día",
+  "respuesta_ideal": "Si no quedas satisfecho, repetimos el lavado sin costo el mismo día. Es nuestra garantía de calidad.",
+  "respuesta_a_calificar": "Garantía: si el cliente no está satisfecho con el lavado, se repite sin costo adicional en el mismo día. Máximo 1 repetición."
+ },
+ {
+  "id": "i0654",
+  "negocio": "W3_n3",
+  "turnos_previos_del_cliente": [
+   "Hola, tengo una camioneta grande y quisiera un lavado premium. ¿Que incluye?"
+  ],
+  "cliente": "¿Me hacen un descuento si voy 4 veces al mes?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "Suscripción Mensual",
+   "750 MXN/mes"
+  ],
+  "evidencia": "Suscripción Mensual (4 lavados básicos): SUV: 750 MXN/mes",
+  "respuesta_ideal": "No tenemos paquete para camioneta grande mensual en nuestro catálogo. Para eso contacta directamente al teléfono para negociar un plan personalizado.",
+  "respuesta_a_calificar": "Suscripción Mensual (4 lavados básicos): Descuento adicional 5% si pagas adelantado (3 meses)."
+ },
+ {
+  "id": "i0657",
+  "negocio": "W3_n3",
+  "turnos_previos_del_cliente": [
+   "Tengo una sedán y quiero lavar la. ¿Cuanto cuesta?"
+  ],
+  "cliente": "¿Cuanto tarda?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "45-60 min"
+  ],
+  "evidencia": "Tiempo: 45-60 min",
+  "respuesta_ideal": "El lavado básico tarda entre 45 y 60 minutos.",
+  "respuesta_a_calificar": "El lavado básico"
+ },
+ {
+  "id": "i0766",
+  "negocio": "W3_n3",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Hola, soy empresa de taxis. ¿Hacen descuentos por flota?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "15%",
+   "mínimo 10 autos/mes",
+   "flota@lavamaxmty.mx"
+  ],
+  "evidencia": "Descuento 15% para lavados recurrentes (mínimo 10 autos/mes). Contacto: flota@lavamaxmty.mx",
+  "respuesta_ideal": "Sí, ofrecemos 15% de descuento para flotas con mínimo 10 autos al mes. Contacta a flota@lavamaxmty.mx para coordinar.",
+  "respuesta_a_calificar": "Procesé 2 segmentos del documento en orden."
+ },
+ {
+  "id": "i0770",
+  "negocio": "W3_n3",
+  "turnos_previos_del_cliente": [
+   "Hola, soy empresa de taxis. ¿Hacen descuentos por flota?"
+  ],
+  "cliente": "¿Pueden pasar a recoger los autos?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "rutas de recolección"
+  ],
+  "evidencia": "Rutas de recolección disponibles (previa coordinación)",
+  "respuesta_ideal": "Sí, ofrecemos rutas de recolección. Debe coordinarse con flota@lavamaxmty.mx para los detalles.",
+  "respuesta_a_calificar": "Envío de fotos: después de cada lavado enviamos fotos del auto terminado a WhatsApp o email (si lo solicita en el formulario de cliente)."
+ },
+ {
+  "id": "i0799",
+  "negocio": "W3_n3",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Hola, tengo una camioneta grande y quisiera un lavado premium. ¿Que incluye?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "550",
+   "90-120 min",
+   "motor",
+   "abrillantador",
+   "tapicería"
+  ],
+  "evidencia": "Camioneta grande / Van | 550 / Incluye todo lo del básico PLUS: lavado de motor, abrillantador protector UV, interior: limpieza profunda de tapicería",
+  "respuesta_ideal": "El premium para camioneta grande cuesta 550 pesos, tarda 90-120 minutos. Incluye lavado del motor, abrillantador UV, limpieza profunda de interior y tapicería.",
+  "respuesta_a_calificar": "LAVADO PREMIUM (deluxe): Tipo: Camioneta grande / Van; Precio MXN: 550"
+ },
+ {
+  "id": "i0004",
+  "negocio": "W5_n3",
+  "turnos_previos_del_cliente": [
+   "¿Hasta qué hora atienden entre semana?",
+   "¿Y los sábados?"
+  ],
+  "cliente": "¿Abren el 7 de agosto, que es festivo?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "Domingos y festivos: cerrado"
+  ],
+  "evidencia": "Domingos y festivos: cerrado, salvo la línea de siniestros que funciona siempre.",
+  "respuesta_ideal": "No, los festivos la oficina permanece cerrada; solo funciona la línea de siniestros.",
+  "respuesta_a_calificar": "El seguro de vida cuenta con planes desde $35.000 mensuales, con montos de cobertura que van desde 50 hasta 500 salarios mínimos según el plan elegido."
+ },
+ {
+  "id": "i0038",
+  "negocio": "W5_n3",
+  "turnos_previos_del_cliente": [
+   "Choqué hace media hora, que hago?",
+   "¿Y tengo que llevar algún papel o documento?"
+  ],
+  "cliente": "¿Si me demoro más de dos días en avisar, hay problema?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "48 horas"
+  ],
+  "evidencia": "Reportar el siniestro dentro de las 48 horas siguientes al hecho",
+  "respuesta_ideal": "Sí puede haber problema, el siniestro se debe reportar dentro de las 48 horas siguientes al hecho.",
+  "respuesta_a_calificar": "Reconozco un inicio condicional, pero no tiene una única estructura «si … entonces …»."
+ },
+ {
+  "id": "i0055",
+  "negocio": "W5_n3",
+  "turnos_previos_del_cliente": [],
+  "cliente": "¿Desde cuánto sale un seguro de vida?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "$35.000 mensuales"
+  ],
+  "evidencia": "El seguro de vida cuenta con planes desde $35.000 mensuales",
+  "respuesta_ideal": "El seguro de vida cuenta con planes desde $35.000 mensuales.",
+  "respuesta_a_calificar": "El seguro de vida cuenta con planes desde $35.000 mensuales, con montos de cobertura que van desde 50 hasta 500 salarios mínimos según el plan elegido."
+ },
+ {
+  "id": "i0135",
+  "negocio": "W5_n3",
+  "turnos_previos_del_cliente": [
+   "¿Cuál es el teléfono de la línea de siniestros?",
+   "Si contrato el SOAT de mi carro particular y el seguro de hogar para mi casa, cuanto pagaria en total al año contando el de hogar por doce meses?"
+  ],
+  "cliente": "¿Manejan seguros para bicicletas o patinetas eléctricas?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo ese producto en nuestra oferta; manejamos SOAT, seguro de automóvil, de vida y de hogar.",
+  "respuesta_a_calificar": "El SOAT (Seguro Obligatorio de Accidentes de Tránsito) es obligatorio por ley para todo vehículo que circule en Colombia."
+ },
+ {
+  "id": "i0154",
+  "negocio": "W5_n3",
+  "turnos_previos_del_cliente": [],
+  "cliente": "¿Cuál es el teléfono de la línea de siniestros?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "01-8000-912-345"
+  ],
+  "evidencia": "da de inmediato el teléfono de la línea de siniestros 24 horas (01-8000-912-345).",
+  "respuesta_ideal": "La línea de siniestros 24 horas es 01-8000-912-345.",
+  "respuesta_a_calificar": "24"
+ },
+ {
+  "id": "i0178",
+  "negocio": "W5_n3",
+  "turnos_previos_del_cliente": [
+   "¿Desde cuánto sale un seguro de vida?",
+   "¿Y el de hogar para un apartamento?"
+  ],
+  "cliente": "Si saco el de vida y el de hogar para apartamento juntos, cuanto pagaria al mes entre los dos?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "$35.000 mensuales",
+   "$60.000 mensuales"
+  ],
+  "evidencia": "El seguro de vida cuenta con planes desde $35.000 mensuales",
+  "respuesta_ideal": "El de vida parte desde $35.000 mensuales y el de hogar para apartamento desde $60.000 mensuales, entre los dos serían $95.000 mensuales.",
+  "respuesta_a_calificar": "El seguro de hogar protege contra incendio, terremoto, robo y daños por agua; los planes parten desde $60.000 mensuales para apartamentos y $85.000 mensuales para casas."
+ },
+ {
+  "id": "i0234",
+  "negocio": "W5_n3",
+  "turnos_previos_del_cliente": [
+   "¿Hasta qué hora atienden entre semana?"
+  ],
+  "cliente": "¿Y los sábados?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "9:00 a.m. – 12:00 m."
+  ],
+  "evidencia": "Sábados: 9:00 a.m. – 12:00 m.",
+  "respuesta_ideal": "Los sábados atendemos de 9:00 a.m. a 12:00 m.",
+  "respuesta_a_calificar": "Sábados: 9:00 a.m. – 12:00 m."
+ },
+ {
+  "id": "i0327",
+  "negocio": "W5_n3",
+  "turnos_previos_del_cliente": [],
+  "cliente": "¿Cuánto vale el SOAT para un carro particular?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "$450.000"
+  ],
+  "evidencia": "para vehículos particulares en Bogotá el valor promedio parte desde $450.000 al año",
+  "respuesta_ideal": "El SOAT para vehículos particulares en Bogotá parte desde $450.000 al año.",
+  "respuesta_a_calificar": "El SOAT"
+ },
+ {
+  "id": "i0344",
+  "negocio": "W5_n3",
+  "turnos_previos_del_cliente": [
+   "¿Desde cuánto sale un seguro de vida?",
+   "¿Y el de hogar para un apartamento?",
+   "Si saco el de vida y el de hogar para apartamento juntos, cuanto pagaria al mes entre los dos?"
+  ],
+  "cliente": "¿El seguro de hogar cubre también si se me daña la nevera por un apagón?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo esa cobertura específica confirmada; el seguro de hogar protege contra incendio, terremoto, robo y daños por agua, pero no le puedo confirmar daños eléctricos por apagón.",
+  "respuesta_a_calificar": "El seguro de hogar protege contra incendio, terremoto, robo y daños por agua; los planes parten desde $60.000 mensuales para apartamentos y $85.000 mensuales para casas."
+ },
+ {
+  "id": "i0362",
+  "negocio": "W5_n3",
+  "turnos_previos_del_cliente": [
+   "Choqué hace media hora, que hago?"
+  ],
+  "cliente": "¿Y tengo que llevar algún papel o documento?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "número de póliza",
+   "la cédula del asegurado"
+  ],
+  "evidencia": "Tener a mano el número de póliza, la cédula del asegurado",
+  "respuesta_ideal": "Tenga a la mano el número de póliza, la cédula del asegurado y, si aplica, el informe de tránsito.",
+  "respuesta_a_calificar": "Tener a mano el número de póliza, la cédula del asegurado y, si aplica, el croquis o informe de tránsito."
+ },
+ {
+  "id": "i0379",
+  "negocio": "W5_n3",
+  "turnos_previos_del_cliente": [],
+  "cliente": "¿Con quién puedo hablar para que me asesore bien?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "Diana Ramírez Torres"
+  ],
+  "evidencia": "Nuestra asesora comercial es Diana Ramírez Torres",
+  "respuesta_ideal": "Nuestra asesora comercial es Diana Ramírez Torres.",
+  "respuesta_a_calificar": "El cliente puede cancelar su póliza en cualquier momento, con devolución proporcional de la prima ya pagada, excepto el primer mes de vigencia, que no es reembolsable."
+ },
+ {
+  "id": "i0395",
+  "negocio": "W5_n3",
+  "turnos_previos_del_cliente": [
+   "¿Desde cuánto sale un seguro de vida?"
+  ],
+  "cliente": "¿Y el de hogar para un apartamento?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "$60.000 mensuales"
+  ],
+  "evidencia": "los planes parten desde $60.000 mensuales para apartamentos",
+  "respuesta_ideal": "El seguro de hogar para apartamentos parte desde $60.000 mensuales.",
+  "respuesta_a_calificar": "El seguro de hogar protege contra incendio, terremoto, robo y daños por agua; los planes parten desde $60.000 mensuales para apartamentos y $85.000 mensuales para casas."
+ },
+ {
+  "id": "i0413",
+  "negocio": "W5_n3",
+  "turnos_previos_del_cliente": [
+   "¿Cuál es el teléfono de la línea de siniestros?"
+  ],
+  "cliente": "Si contrato el SOAT de mi carro particular y el seguro de hogar para mi casa, cuanto pagaria en total al año contando el de hogar por doce meses?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "$450.000",
+   "$85.000 mensuales"
+  ],
+  "evidencia": "para vehículos particulares en Bogotá el valor promedio parte desde $450.000 al año",
+  "respuesta_ideal": "El SOAT particular está desde $450.000 al año, y el hogar para casa desde $85.000 mensuales, que en doce meses serían $1.020.000; sumando ambos, el total anual rondaría $1.470.000.",
+  "respuesta_a_calificar": "El seguro de hogar protege contra incendio, terremoto, robo y daños por agua; los planes parten desde $60.000 mensuales para apartamentos y $85.000 mensuales para casas."
+ },
+ {
+  "id": "i0443",
+  "negocio": "W5_n3",
+  "turnos_previos_del_cliente": [
+   "¿Cuánto cuesta el seguro todo riesgo para mi carro?",
+   "Mi carro es un Renault Sandero 2019, cuanto me saldria exactamente a mi?"
+  ],
+  "cliente": "¿Cubre a cualquier persona que maneje el carro, aunque no sea yo?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "Solo si el conductor está declarado en la póliza"
+  ],
+  "evidencia": "Solo si el conductor está declarado en la póliza",
+  "respuesta_ideal": "Solo si el conductor está declarado en la póliza, o si tiene la cláusula de conductor no declarado.",
+  "respuesta_a_calificar": "¿El seguro todo riesgo cubre a cualquier conductor del carro?"
+ },
+ {
+  "id": "i0453",
+  "negocio": "W5_n3",
+  "turnos_previos_del_cliente": [
+   "¿Cuánto cuesta el seguro todo riesgo para mi carro?"
+  ],
+  "cliente": "Mi carro es un Renault Sandero 2019, cuanto me saldria exactamente a mi?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No le puedo dar el valor exacto por chat, depende del modelo, año y ciudad de circulación; un asesor le puede cotizar con esos datos.",
+  "respuesta_a_calificar": "PROCESO ANTE UN SINIESTRO: Reportar el siniestro dentro de las 48 horas siguientes al hecho, llamando a la línea de siniestros."
+ },
+ {
+  "id": "i0458",
+  "negocio": "W5_n3",
+  "turnos_previos_del_cliente": [],
+  "cliente": "¿Cuánto cuesta el seguro todo riesgo para mi carro?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "COP 1.200.000"
+  ],
+  "evidencia": "tiene un valor desde COP 1.200.000 anuales",
+  "respuesta_ideal": "El seguro todo riesgo para automóvil tiene un valor desde COP 1.200.000 anuales.",
+  "respuesta_a_calificar": "automóvil"
+ },
+ {
+  "id": "i0495",
+  "negocio": "W5_n3",
+  "turnos_previos_del_cliente": [
+   "¿Cuánto cuesta el seguro todo riesgo para mi carro?",
+   "Mi carro es un Renault Sandero 2019, cuanto me saldria exactamente a mi?",
+   "¿Cubre a cualquier persona que maneje el carro, aunque no sea yo?"
+  ],
+  "cliente": "¿Y si quiero que cubra a cualquiera, eso tiene costo extra?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "conductor no declarado",
+   "costo adicional"
+  ],
+  "evidencia": "la cláusula de \"conductor no declarado\", que tiene un costo adicional.",
+  "respuesta_ideal": "Sí, existe la cláusula de conductor no declarado, pero tiene un costo adicional.",
+  "respuesta_a_calificar": "Solo si el conductor está declarado en la póliza o si esta tiene la cláusula de \"conductor no declarado\", que tiene un costo adicional."
+ },
+ {
+  "id": "i0499",
+  "negocio": "W5_n3",
+  "turnos_previos_del_cliente": [
+   "¿Cuánto vale el SOAT para un carro particular?"
+  ],
+  "cliente": "¿Y para una moto es igual?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "$250.000"
+  ],
+  "evidencia": "y para motos desde $250.000 al año.",
+  "respuesta_ideal": "Para motos el SOAT parte desde $250.000 al año.",
+  "respuesta_a_calificar": "Su valor varía según el cilindraje y la ciudad de matrícula; para vehículos particulares en Bogotá el valor promedio parte desde $450.000 al año, y para motos desde $250.000 al año."
+ },
+ {
+  "id": "i0506",
+  "negocio": "W5_n3",
+  "turnos_previos_del_cliente": [
+   "¿Hasta qué hora atienden entre semana?",
+   "¿Y los sábados?",
+   "¿Abren el 7 de agosto, que es festivo?"
+  ],
+  "cliente": "Si cancelo mi póliza a mitad de año, ¿me devuelven parte de lo que pagué?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "devolución proporcional de la prima"
+  ],
+  "evidencia": "con devolución proporcional de la prima ya pagada, excepto el primer mes de vigencia, que no es reembolsable.",
+  "respuesta_ideal": "Sí, se le devuelve proporcionalmente la prima ya pagada, excepto la del primer mes, que no es reembolsable.",
+  "respuesta_a_calificar": "Reconozco un inicio condicional, pero no tiene una única estructura «si … entonces …»."
+ },
+ {
+  "id": "i0516",
+  "negocio": "W5_n3",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Choqué hace media hora, que hago?",
+  "tipo": "instruccion",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "da de inmediato el teléfono de la línea de siniestros 24 horas (01-8000-912-345).",
+  "respuesta_ideal": "Llame de inmediato a nuestra línea de siniestros 24 horas, 01-8000-912-345, para que lo guíen con el reporte.",
+  "respuesta_a_calificar": "Línea de siniestros 24 horas: 01-8000-912-345"
+ },
+ {
+  "id": "i0543",
+  "negocio": "W5_n3",
+  "turnos_previos_del_cliente": [],
+  "cliente": "¿Desde cuánto sale un seguro de vida?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "$35.000 mensuales"
+  ],
+  "evidencia": "El seguro de vida cuenta con planes desde $35.000 mensuales",
+  "respuesta_ideal": "El seguro de vida cuenta con planes desde $35.000 mensuales.",
+  "respuesta_a_calificar": "35"
+ },
+ {
+  "id": "i0592",
+  "negocio": "W5_n3",
+  "turnos_previos_del_cliente": [
+   "¿Hasta qué hora atienden entre semana?",
+   "¿Y los sábados?",
+   "¿Abren el 7 de agosto, que es festivo?"
+  ],
+  "cliente": "Si cancelo mi póliza a mitad de año, ¿me devuelven parte de lo que pagué?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "devolución proporcional de la prima"
+  ],
+  "evidencia": "con devolución proporcional de la prima ya pagada, excepto el primer mes de vigencia, que no es reembolsable.",
+  "respuesta_ideal": "Sí, se le devuelve proporcionalmente la prima ya pagada, excepto la del primer mes, que no es reembolsable.",
+  "respuesta_a_calificar": "PRODUCTOS QUE OFRECEMOS: Su valor varía según el cilindraje y la ciudad de matrícula; para vehículos particulares en Bogotá el valor promedio parte desde $450.000 al año, y para motos desde $250.000 al año."
+ },
+ {
+  "id": "i0641",
+  "negocio": "W5_n3",
+  "turnos_previos_del_cliente": [
+   "¿Desde cuánto sale un seguro de vida?",
+   "¿Y el de hogar para un apartamento?"
+  ],
+  "cliente": "Si saco el de vida y el de hogar para apartamento juntos, cuanto pagaria al mes entre los dos?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "$35.000 mensuales",
+   "$60.000 mensuales"
+  ],
+  "evidencia": "El seguro de vida cuenta con planes desde $35.000 mensuales",
+  "respuesta_ideal": "El de vida parte desde $35.000 mensuales y el de hogar para apartamento desde $60.000 mensuales, entre los dos serían $95.000 mensuales.",
+  "respuesta_a_calificar": "Reconozco un inicio condicional, pero no tiene una única estructura «si … entonces …»."
+ },
+ {
+  "id": "i0659",
+  "negocio": "W5_n3",
+  "turnos_previos_del_cliente": [
+   "Choqué hace media hora, que hago?",
+   "¿Y tengo que llevar algún papel o documento?"
+  ],
+  "cliente": "¿Si me demoro más de dos días en avisar, hay problema?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "48 horas"
+  ],
+  "evidencia": "Reportar el siniestro dentro de las 48 horas siguientes al hecho",
+  "respuesta_ideal": "Sí puede haber problema, el siniestro se debe reportar dentro de las 48 horas siguientes al hecho.",
+  "respuesta_a_calificar": "Correo: contacto@andinaconfiable.com.co (respuesta en máximo 2 días hábiles)"
+ },
+ {
+  "id": "i0674",
+  "negocio": "W5_n3",
+  "turnos_previos_del_cliente": [],
+  "cliente": "¿Cuánto cuesta el seguro todo riesgo para mi carro?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "COP 1.200.000"
+  ],
+  "evidencia": "tiene un valor desde COP 1.200.000 anuales",
+  "respuesta_ideal": "El seguro todo riesgo para automóvil tiene un valor desde COP 1.200.000 anuales.",
+  "respuesta_a_calificar": "¿El seguro todo riesgo cubre a cualquier conductor del carro?"
+ },
+ {
+  "id": "i0682",
+  "negocio": "W5_n3",
+  "turnos_previos_del_cliente": [
+   "¿Cuál es el teléfono de la línea de siniestros?"
+  ],
+  "cliente": "Si contrato el SOAT de mi carro particular y el seguro de hogar para mi casa, cuanto pagaria en total al año contando el de hogar por doce meses?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "$450.000",
+   "$85.000 mensuales"
+  ],
+  "evidencia": "para vehículos particulares en Bogotá el valor promedio parte desde $450.000 al año",
+  "respuesta_ideal": "El SOAT particular está desde $450.000 al año, y el hogar para casa desde $85.000 mensuales, que en doce meses serían $1.020.000; sumando ambos, el total anual rondaría $1.470.000.",
+  "respuesta_a_calificar": "Reconozco un inicio condicional, pero no tiene una única estructura «si … entonces …»."
+ },
+ {
+  "id": "i0686",
+  "negocio": "W5_n3",
+  "turnos_previos_del_cliente": [],
+  "cliente": "¿Cuánto vale el SOAT para un carro particular?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "$450.000"
+  ],
+  "evidencia": "para vehículos particulares en Bogotá el valor promedio parte desde $450.000 al año",
+  "respuesta_ideal": "El SOAT para vehículos particulares en Bogotá parte desde $450.000 al año.",
+  "respuesta_a_calificar": "Su valor varía según el cilindraje y la ciudad de matrícula; para vehículos particulares en Bogotá el valor promedio parte desde $450.000 al año, y para motos desde $250.000 al año."
+ },
+ {
+  "id": "i0707",
+  "negocio": "W5_n3",
+  "turnos_previos_del_cliente": [],
+  "cliente": "¿Cuál es el teléfono de la línea de siniestros?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "01-8000-912-345"
+  ],
+  "evidencia": "da de inmediato el teléfono de la línea de siniestros 24 horas (01-8000-912-345).",
+  "respuesta_ideal": "La línea de siniestros 24 horas es 01-8000-912-345.",
+  "respuesta_a_calificar": "Domingos y festivos: cerrado, salvo la línea de siniestros que funciona siempre."
+ },
+ {
+  "id": "i0709",
+  "negocio": "W5_n3",
+  "turnos_previos_del_cliente": [
+   "¿Hasta qué hora atienden entre semana?",
+   "¿Y los sábados?",
+   "¿Abren el 7 de agosto, que es festivo?",
+   "Si cancelo mi póliza a mitad de año, ¿me devuelven parte de lo que pagué?"
+  ],
+  "cliente": "¿Tienen oficina también en Medellín?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo registrada otra sede aparte de la de Bogotá Centro.",
+  "respuesta_a_calificar": "Horario de atención en oficina: Lunes a viernes: 8:00 a.m. – 5:30 p.m; Sábados: 9:00 a.m. – 12:00 m; Domingos y festivos: cerrado, salvo la línea de siniestros que funciona siempre; Nuestra asesora comercial es Diana Ramírez Torres, con matrícula ante Fasecolda No. 34521*."
+ },
+ {
+  "id": "i0713",
+  "negocio": "W5_n3",
+  "turnos_previos_del_cliente": [
+   "¿Con quién puedo hablar para que me asesore bien?"
+  ],
+  "cliente": "¿Diana habla ingles, por si mi esposo que no habla español necesita consultar algo?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo esa información sobre los idiomas que maneja la asesora.",
+  "respuesta_a_calificar": "Nuestra asesora comercial es Diana Ramírez Torres, con matrícula ante Fasecolda No. 34521*."
+ },
+ {
+  "id": "i0718",
+  "negocio": "W5_n3",
+  "turnos_previos_del_cliente": [
+   "Choqué hace media hora, que hago?",
+   "¿Y tengo que llevar algún papel o documento?",
+   "¿Si me demoro más de dos días en avisar, hay problema?"
+  ],
+  "cliente": "¿Cuánto me van a pagar de indemnización por los daños?",
+  "tipo": "instruccion",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": "No prometas montos de indemnización ni tiempos exactos de pago por parte de la aseguradora.",
+  "respuesta_ideal": "Eso no se lo puedo asegurar por chat, depende de la evaluación de la aseguradora; un asesor le dará el detalle cuando revisen el caso.",
+  "respuesta_a_calificar": "La aseguradora puede objetar o reducir el pago de la indemnización."
+ },
+ {
+  "id": "i0735",
+  "negocio": "W5_n3",
+  "turnos_previos_del_cliente": [
+   "¿Cuánto vale el SOAT para un carro particular?",
+   "¿Y para una moto es igual?"
+  ],
+  "cliente": "¿Se puede pagar el SOAT en cuotas?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "algunas lo permiten hasta en 3 cuotas"
+  ],
+  "evidencia": "algunas lo permiten hasta en 3 cuotas.",
+  "respuesta_ideal": "Depende de la aseguradora con la que se emita; algunas sí permiten pagarlo hasta en 3 cuotas.",
+  "respuesta_a_calificar": "¿Puedo pagar el SOAT en cuotas?"
+ },
+ {
+  "id": "i0810",
+  "negocio": "W5_n3",
+  "turnos_previos_del_cliente": [],
+  "cliente": "¿Hasta qué hora atienden entre semana?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "5:30 p.m."
+  ],
+  "evidencia": "Lunes a viernes: 8:00 a.m. – 5:30 p.m.",
+  "respuesta_ideal": "Entre semana atendemos de 8:00 a.m. a 5:30 p.m.",
+  "respuesta_a_calificar": "Línea de siniestros 24 horas: 01-8000-912-345"
+ }
+]

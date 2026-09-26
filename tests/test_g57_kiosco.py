@@ -116,6 +116,44 @@ class AnswerTests(unittest.TestCase):
         self.assertEqual(again.answer('¿Cuánto cuesta la doble?'), before)
 
 
+class GradedHonestyTests(unittest.TestCase):
+    """G-58: plain answer, the closest text with a warning, or not knowing."""
+
+    def setUp(self):
+        self.bot = Bot()
+        self.bot.context_model = {'delta': {'doble': 0.8, 'sencilla': 0.8, 'noche': 0.5, 'mascotas': 0.8},
+                                  'rare_delta': 0.6, 'bridge': {}, 'admitted': [],
+                                  'closest': [c for c in all_cells() if c[2] != '0'],
+                                  'cells': {}, 'closest_cells': {}}
+        self.bot.load_context(TEXT)
+
+    def test_closest_quotes_the_text_and_warns(self):
+        reply = self.bot.answer('¿Cuánto cuesta la doble?')
+        self.assertEqual(reply['status'], 'closest')
+        self.assertEqual(reply['text'], 'No lo tengo seguro. Lo más cercano que dice el texto es: «Doble: $250.000 por noche».')
+
+    def test_without_closest_it_says_it_does_not_know(self):
+        self.bot.closest = False
+        self.assertEqual(self.bot.answer('¿Cuánto cuesta la doble?')['status'], 'unknown')
+
+    def test_an_incomplete_question_borrows_the_previous_one(self):
+        history = [{'role': 'user', 'text': '¿Cuánto cuesta la doble?'}, {'role': 'assistant', 'text': '…'}]
+        self.assertEqual(self.bot.answer('¿Y por noche?')['status'], 'unknown')
+        followed = self.bot.answer('¿Y por noche?', history)
+        self.assertEqual(followed['status'], 'closest')
+        self.assertIn('Doble', followed['text'])
+        self.bot.follow_up = False
+        self.assertEqual(self.bot.answer('¿Y por noche?', history)['status'], 'unknown')
+
+    def test_long_turns_and_figures_are_never_echoed(self):
+        for said in ('Me llamo Ana Pérez y vengo con mi hermana', 'Mi tarjeta es la 4111 2222'):
+            reply = self.bot.answer(said)
+            self.assertNotEqual(reply['status'], 'phatic')
+            self.assertNotIn('4111', reply['text'])
+            self.assertNotIn('Ana', reply['text'])
+        self.assertEqual(self.bot.answer('Muchas gracias')['text'], 'Muchas gracias.')
+
+
 class PrivacyTests(unittest.TestCase):
     def test_what_one_client_says_is_not_kept_for_the_next(self):
         bot = Bot()

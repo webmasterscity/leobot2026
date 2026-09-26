@@ -1,0 +1,1673 @@
+[
+ {
+  "id": "i0031",
+  "negocio": "W2_n2",
+  "turnos_previos_del_cliente": [
+   "tienen el libro Cien años de soledad?",
+   "hacen envios a Bariloche?",
+   "cuanto tarda en llegar",
+   "compran libros usados?"
+  ],
+  "cliente": "si compro ese libro y pago el envio a Bariloche cuanto seria en total",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "$12.500",
+   "$3.200"
+  ],
+  "evidencia": "Libro de tapa blanda (nuevo): desde $12.500 ... Envío nacional (Correo Argentino): $3.200",
+  "respuesta_ideal": "En total serían $15.700: $12.500 del libro más $3.200 del envío.",
+  "respuesta_a_calificar": "¿Compran libros usados?: Pagamos entre 20% y 40% del precio de tapa según el estado."
+ },
+ {
+  "id": "i0040",
+  "negocio": "W2_n2",
+  "turnos_previos_del_cliente": [
+   "cuanto cuesta el club de lectura mensual",
+   "quiero reservar el libro de octubre del club, me lo confirman ahora?"
+  ],
+  "cliente": "tienen descuento para jubilados?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "15%"
+  ],
+  "evidencia": "Docentes y jubilados: 15% de descuento presentando credencial.",
+  "respuesta_ideal": "Sí, jubilados y docentes tienen 15% de descuento presentando la credencial.",
+  "respuesta_a_calificar": "Docentes y jubilados: 15% de descuento presentando credencial."
+ },
+ {
+  "id": "i0146",
+  "negocio": "W2_n2",
+  "turnos_previos_del_cliente": [
+   "compran libros usados?",
+   "y cuanto pagarian por uno en buen estado",
+   "compran discos de vinilo tambien?"
+  ],
+  "cliente": "aceptan enciclopedias viejas?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "No aceptamos manuales viejos ni enciclopedias"
+  ],
+  "evidencia": "No aceptamos manuales viejos ni enciclopedias.",
+  "respuesta_ideal": "No, no aceptamos enciclopedias viejas.",
+  "respuesta_a_calificar": "No aceptamos manuales viejos ni enciclopedias."
+ },
+ {
+  "id": "i0225",
+  "negocio": "W2_n2",
+  "turnos_previos_del_cliente": [
+   "Hola, buen día"
+  ],
+  "cliente": "cuanto sale un libro de tapa blanda",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "$12.500"
+  ],
+  "evidencia": "Libro de tapa blanda (nuevo): desde $12.500",
+  "respuesta_ideal": "Los libros de tapa blanda nuevos arrancan desde $12.500.",
+  "respuesta_a_calificar": "Libro de tapa blanda (nuevo): desde $12.500"
+ },
+ {
+  "id": "i0251",
+  "negocio": "W2_n2",
+  "turnos_previos_del_cliente": [
+   "cual es el horario de ustedes los sabados",
+   "si voy el domingo a las 19 los encuentro abiertos?"
+  ],
+  "cliente": "puedo pagar en cuotas?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "hasta 3 cuotas sin interés"
+  ],
+  "evidencia": "Los miércoles, con tarjeta Visa, hasta 3 cuotas sin interés.",
+  "respuesta_ideal": "Sí, los miércoles con tarjeta Visa podés pagar hasta en 3 cuotas sin interés.",
+  "respuesta_a_calificar": "Los miércoles, con tarjeta Visa, hasta 3 cuotas sin interés."
+ },
+ {
+  "id": "i0255",
+  "negocio": "W2_n2",
+  "turnos_previos_del_cliente": [
+   "cuanto cuesta el club de lectura mensual"
+  ],
+  "cliente": "quiero reservar el libro de octubre del club, me lo confirman ahora?",
+  "tipo": "instruccion",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "No confirmes pedidos especiales ni reservas del club de lectura como definitivos por este medio; explicá que se debe abonar la seña del 50% en el local o coordinar con Marcela Duhalde.",
+  "respuesta_ideal": "Por acá no puedo confirmar la reserva; hay que abonar una seña del 50% en el local o coordinarlo con Marcela.",
+  "respuesta_a_calificar": "Desde 1998 en el barrio de Once, El Aleph Sur es una librería de barrio que vende libros nuevos y usados, hace pedidos especiales y organiza un club de lectura mensual."
+ },
+ {
+  "id": "i0267",
+  "negocio": "W2_n2",
+  "turnos_previos_del_cliente": [
+   "Hola, buen día",
+   "cuanto sale un libro de tapa blanda",
+   "y el envio a mi casa cuanto cuesta",
+   "hay envio gratis si compro bastante?"
+  ],
+  "cliente": "tienen otra sucursal en Palermo?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo información de otra sucursal; que yo sepa solo estamos en Av. Corrientes 2854.",
+  "respuesta_a_calificar": "Sí, wifi gratis para nuestros clientes."
+ },
+ {
+  "id": "i0274",
+  "negocio": "W2_n2",
+  "turnos_previos_del_cliente": [
+   "Hola, buen día",
+   "cuanto sale un libro de tapa blanda",
+   "y el envio a mi casa cuanto cuesta"
+  ],
+  "cliente": "hay envio gratis si compro bastante?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "gratis en compras mayores a $40.000"
+  ],
+  "evidencia": "gratis en compras mayores a $40.000",
+  "respuesta_ideal": "Sí, el envío es gratis en compras mayores a $40.000.",
+  "respuesta_a_calificar": "Envío nacional (Correo Argentino): $3.200 — gratis en compras mayores a $40.000"
+ },
+ {
+  "id": "i0300",
+  "negocio": "W2_n2",
+  "turnos_previos_del_cliente": [
+   "compran libros usados?",
+   "y cuanto pagarian por uno en buen estado"
+  ],
+  "cliente": "compran discos de vinilo tambien?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No, no tengo información de que compremos discos, solo libros.",
+  "respuesta_a_calificar": "¿Compran libros usados?: Pagamos entre 20% y 40% del precio de tapa según el estado."
+ },
+ {
+  "id": "i0354",
+  "negocio": "W2_n2",
+  "turnos_previos_del_cliente": [
+   "tienen el libro Cien años de soledad?",
+   "hacen envios a Bariloche?"
+  ],
+  "cliente": "cuanto tarda en llegar",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "5 y 10 días hábiles"
+  ],
+  "evidencia": "demora entre 5 y 10 días hábiles",
+  "respuesta_ideal": "El envío al interior demora entre 5 y 10 días hábiles.",
+  "respuesta_a_calificar": "Envío nacional (Correo Argentino): $3.200 — gratis en compras mayores a $40.000"
+ },
+ {
+  "id": "i0364",
+  "negocio": "W2_n2",
+  "turnos_previos_del_cliente": [
+   "tienen el libro Cien años de soledad?",
+   "hacen envios a Bariloche?",
+   "cuanto tarda en llegar",
+   "compran libros usados?"
+  ],
+  "cliente": "si compro ese libro y pago el envio a Bariloche cuanto seria en total",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "$12.500",
+   "$3.200"
+  ],
+  "evidencia": "Libro de tapa blanda (nuevo): desde $12.500 ... Envío nacional (Correo Argentino): $3.200",
+  "respuesta_ideal": "En total serían $15.700: $12.500 del libro más $3.200 del envío.",
+  "respuesta_a_calificar": "Reconozco un inicio condicional, pero no tiene una única estructura «si … entonces …»."
+ },
+ {
+  "id": "i0368",
+  "negocio": "W2_n2",
+  "turnos_previos_del_cliente": [
+   "tienen el libro Cien años de soledad?"
+  ],
+  "cliente": "hacen envios a Bariloche?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "Correo Argentino"
+  ],
+  "evidencia": "Envíos a todo el país por Correo Argentino",
+  "respuesta_ideal": "Sí, hacemos envíos a todo el país por Correo Argentino, incluido Bariloche.",
+  "respuesta_a_calificar": "Sí, por Correo Argentino; El envío cuesta $3.200 y demora entre 5 y 10 días hábiles; Es gratis en compras mayores a $40.000."
+ },
+ {
+  "id": "i0388",
+  "negocio": "W2_n2",
+  "turnos_previos_del_cliente": [
+   "cual es el horario de ustedes los sabados"
+  ],
+  "cliente": "si voy el domingo a las 19 los encuentro abiertos?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "12 a 18 hs"
+  ],
+  "evidencia": "Domingos: 12 a 18 hs",
+  "respuesta_ideal": "No, los domingos cerramos a las 18 hs, así que a las 19 ya estaríamos cerrados.",
+  "respuesta_a_calificar": "Reconozco un inicio condicional, pero no tiene una única estructura «si … entonces …»."
+ },
+ {
+  "id": "i0397",
+  "negocio": "W2_n2",
+  "turnos_previos_del_cliente": [
+   "Hola, buen día",
+   "cuanto sale un libro de tapa blanda"
+  ],
+  "cliente": "y el envio a mi casa cuanto cuesta",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "$3.200"
+  ],
+  "evidencia": "Envío nacional (Correo Argentino): $3.200",
+  "respuesta_ideal": "El envío nacional por Correo Argentino cuesta $3.200.",
+  "respuesta_a_calificar": "Registré la afirmación como evidencia lingüística cruda; todavía no hay 3 apoyos independientes para inducir una relación."
+ },
+ {
+  "id": "i0433",
+  "negocio": "W2_n2",
+  "turnos_previos_del_cliente": [
+   "Hola, buen día",
+   "cuanto sale un libro de tapa blanda"
+  ],
+  "cliente": "y el envio a mi casa cuanto cuesta",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "$3.200"
+  ],
+  "evidencia": "Envío nacional (Correo Argentino): $3.200",
+  "respuesta_ideal": "El envío nacional por Correo Argentino cuesta $3.200.",
+  "respuesta_a_calificar": "¿Hacen envíos al interior del país?: El envío cuesta $3.200 y demora entre 5 y 10 días hábiles."
+ },
+ {
+  "id": "i0446",
+  "negocio": "W2_n2",
+  "turnos_previos_del_cliente": [
+   "cuanto cuesta el club de lectura mensual",
+   "quiero reservar el libro de octubre del club, me lo confirman ahora?",
+   "tienen descuento para jubilados?"
+  ],
+  "cliente": "aceptan tarjeta amex?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo esa información sobre Amex en particular, te recomiendo consultarlo en el local.",
+  "respuesta_a_calificar": "Aceptamos efectivo, débito, crédito, Mercado Pago y transferencia."
+ },
+ {
+  "id": "i0481",
+  "negocio": "W2_n2",
+  "turnos_previos_del_cliente": [],
+  "cliente": "cuanto cuesta el club de lectura mensual",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "$5.000"
+  ],
+  "evidencia": "Club de lectura mensual (incluye el libro del mes): $5.000",
+  "respuesta_ideal": "El club de lectura mensual cuesta $5.000 e incluye el libro del mes.",
+  "respuesta_a_calificar": "Club de lectura mensual (incluye el libro del mes): $5.000"
+ },
+ {
+  "id": "i0486",
+  "negocio": "W2_n2",
+  "turnos_previos_del_cliente": [
+   "tienen el libro Cien años de soledad?",
+   "hacen envios a Bariloche?",
+   "cuanto tarda en llegar"
+  ],
+  "cliente": "compran libros usados?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "tráelos para que los evaluemos"
+  ],
+  "evidencia": "Sí, tráelos para que los evaluemos.",
+  "respuesta_ideal": "Sí, compramos libros usados; podés traerlos para que los evaluemos.",
+  "respuesta_a_calificar": "Sí, tráelos para que los evaluemos; Pagamos entre 20% y 40% del precio de tapa según el estado."
+ },
+ {
+  "id": "i0488",
+  "negocio": "W2_n2",
+  "turnos_previos_del_cliente": [
+   "Hola, buen día"
+  ],
+  "cliente": "cuanto sale un libro de tapa blanda",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "$12.500"
+  ],
+  "evidencia": "Libro de tapa blanda (nuevo): desde $12.500",
+  "respuesta_ideal": "Los libros de tapa blanda nuevos arrancan desde $12.500.",
+  "respuesta_a_calificar": "500"
+ },
+ {
+  "id": "i0489",
+  "negocio": "W2_n2",
+  "turnos_previos_del_cliente": [
+   "cuanto cuesta el club de lectura mensual",
+   "quiero reservar el libro de octubre del club, me lo confirman ahora?",
+   "tienen descuento para jubilados?",
+   "aceptan tarjeta amex?"
+  ],
+  "cliente": "tienen libros en ingles?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo información sobre libros en inglés en este momento.",
+  "respuesta_a_calificar": "Desde 1998 en el barrio de Once, El Aleph Sur es una librería de barrio que vende libros nuevos y usados, hace pedidos especiales y organiza un club de lectura mensual."
+ },
+ {
+  "id": "i0497",
+  "negocio": "W2_n2",
+  "turnos_previos_del_cliente": [
+   "compran libros usados?"
+  ],
+  "cliente": "y cuanto pagarian por uno en buen estado",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "40%"
+  ],
+  "evidencia": "pagamos entre 20% y 40% del precio de tapa según el estado del ejemplar",
+  "respuesta_ideal": "Si está en buen estado podemos pagar hasta el 40% del precio de tapa.",
+  "respuesta_a_calificar": "Compra de libros usados: pagamos entre 20% y 40% del precio de tapa según el estado del ejemplar."
+ },
+ {
+  "id": "i0527",
+  "negocio": "W2_n2",
+  "turnos_previos_del_cliente": [
+   "cual es el horario de ustedes los sabados",
+   "si voy el domingo a las 19 los encuentro abiertos?",
+   "puedo pagar en cuotas?"
+  ],
+  "cliente": "tienen estacionamiento propio?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo esa información, lo siento.",
+  "respuesta_a_calificar": "Sí, wifi gratis para nuestros clientes."
+ },
+ {
+  "id": "i0530",
+  "negocio": "W2_n2",
+  "turnos_previos_del_cliente": [],
+  "cliente": "compran libros usados?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "pagamos entre 20% y 40%"
+  ],
+  "evidencia": "Compra de libros usados: pagamos entre 20% y 40% del precio de tapa según el estado del ejemplar.",
+  "respuesta_ideal": "Sí, compramos libros usados y pagamos entre 20% y 40% del precio de tapa según el estado.",
+  "respuesta_a_calificar": "Sí, tráelos para que los evaluemos; Pagamos entre 20% y 40% del precio de tapa según el estado."
+ },
+ {
+  "id": "i0554",
+  "negocio": "W2_n2",
+  "turnos_previos_del_cliente": [],
+  "cliente": "cual es el horario de ustedes los sabados",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "10 a 20 hs"
+  ],
+  "evidencia": "Lunes a sábado: 10 a 20 hs corrido",
+  "respuesta_ideal": "Los sábados atendemos de 10 a 20 hs corrido.",
+  "respuesta_a_calificar": "WhatsApp"
+ },
+ {
+  "id": "i0610",
+  "negocio": "W2_n2",
+  "turnos_previos_del_cliente": [],
+  "cliente": "cual es el horario de ustedes los sabados",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "10 a 20 hs"
+  ],
+  "evidencia": "Lunes a sábado: 10 a 20 hs corrido",
+  "respuesta_ideal": "Los sábados atendemos de 10 a 20 hs corrido.",
+  "respuesta_a_calificar": "Horarios: Lunes a sábado: 10 a 20 hs corrido"
+ },
+ {
+  "id": "i0633",
+  "negocio": "W2_n2",
+  "turnos_previos_del_cliente": [
+   "compran libros usados?"
+  ],
+  "cliente": "y cuanto pagarian por uno en buen estado",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "40%"
+  ],
+  "evidencia": "pagamos entre 20% y 40% del precio de tapa según el estado del ejemplar",
+  "respuesta_ideal": "Si está en buen estado podemos pagar hasta el 40% del precio de tapa.",
+  "respuesta_a_calificar": "Registré la afirmación como evidencia lingüística cruda; todavía no hay 3 apoyos independientes para inducir una relación."
+ },
+ {
+  "id": "i0647",
+  "negocio": "W2_n2",
+  "turnos_previos_del_cliente": [],
+  "cliente": "cuanto cuesta el club de lectura mensual",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "$5.000"
+  ],
+  "evidencia": "Club de lectura mensual (incluye el libro del mes): $5.000",
+  "respuesta_ideal": "El club de lectura mensual cuesta $5.000 e incluye el libro del mes.",
+  "respuesta_a_calificar": "Once"
+ },
+ {
+  "id": "i0664",
+  "negocio": "W2_n2",
+  "turnos_previos_del_cliente": [
+   "cual es el horario de ustedes los sabados"
+  ],
+  "cliente": "si voy el domingo a las 19 los encuentro abiertos?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "12 a 18 hs"
+  ],
+  "evidencia": "Domingos: 12 a 18 hs",
+  "respuesta_ideal": "No, los domingos cerramos a las 18 hs, así que a las 19 ya estaríamos cerrados.",
+  "respuesta_a_calificar": "Domingos: 12 a 18 hs"
+ },
+ {
+  "id": "i0736",
+  "negocio": "W2_n2",
+  "turnos_previos_del_cliente": [],
+  "cliente": "tienen el libro Cien años de soledad?",
+  "tipo": "instruccion",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "Si preguntan por la disponibilidad de un título puntual (si hay stock), aclará que no manejás el inventario en tiempo real y derivá a que llamen al local o escriban al WhatsApp 11-2233-4455.",
+  "respuesta_ideal": "No puedo confirmarte el stock en este momento; te recomiendo llamar al local o escribirnos al WhatsApp 11-2233-4455.",
+  "respuesta_a_calificar": "Desde 1998 en el barrio de Once, El Aleph Sur es una librería de barrio que vende libros nuevos y usados, hace pedidos especiales y organiza un club de lectura mensual."
+ },
+ {
+  "id": "i0008",
+  "negocio": "W4_n2",
+  "turnos_previos_del_cliente": [
+   "quiero sacar un apartado postal, que tengo que llevar?",
+   "y cuanto vale el pequeño?"
+  ],
+  "cliente": "me pueden dar tres llaves? somos tres en la oficina",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "hasta 2 llaves"
+  ],
+  "evidencia": "- Se permite hasta 2 llaves por apartado; duplicado de llave ₡3 500.",
+  "respuesta_ideal": "No, se permiten hasta 2 llaves por apartado; el duplicado cuesta ₡3 500.",
+  "respuesta_a_calificar": "Requisitos: cédula vigente (o DIMEX para extranjeros), recibo de servicio público con la dirección y pago del año completo por adelantado. La llave se entrega el mismo día. Renovación: hasta el 31 de enero de cada año; después de esa fecha el apartado se libera y hay que hacer un trámite nuevo."
+ },
+ {
+  "id": "i0013",
+  "negocio": "W4_n2",
+  "turnos_previos_del_cliente": [
+   "Necesito mandar unos documentos a Miami, cuanto vale y cuanto tardan?",
+   "y un paquete de 3 kilos a españa?",
+   "puedo mandar queso fresco y una botella de guaro a mi hijo en madrid?",
+   "pasan a recoger el paquete a mi casa?"
+  ],
+  "cliente": "cuanto tarda en llegar un paquete a españa?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo el plazo de entrega a España; solo tengo el de documentos a Estados Unidos. Puede consultarlo al 2253-4470.",
+  "respuesta_a_calificar": "España"
+ },
+ {
+  "id": "i0027",
+  "negocio": "W4_n2",
+  "turnos_previos_del_cliente": [
+   "buenas, cuanto me cobran por mandar un paquete de 3 kilos a Cartago?",
+   "y si lo ocupo que llegue hoy mismo?",
+   "y si el paquete pesa 8 kilos, en el estandar cuanto seria?"
+  ],
+  "cliente": "puedo pagar por sinpe?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "SINPE Móvil"
+  ],
+  "evidencia": "Efectivo en colones, tarjetas de débito y crédito (Visa, Mastercard), SINPE Móvil al 8811-2290.",
+  "respuesta_ideal": "Sí, aceptamos SINPE Móvil al 8811-2290, además de efectivo en colones y tarjetas.",
+  "respuesta_a_calificar": "Efectivo en colones, tarjetas de débito y crédito (Visa, Mastercard), SINPE Móvil al 8811-2290."
+ },
+ {
+  "id": "i0035",
+  "negocio": "W4_n2",
+  "turnos_previos_del_cliente": [
+   "Hola, mi paquete de amazon ya llegó? lo pedí la semana pasada",
+   "cuanto tiempo me lo guardan ahi?",
+   "puede ir mi hermano a recogerlo por mi?",
+   "cuanto voy a pagar de impuestos? el paquete vale como 150 dolares"
+  ],
+  "cliente": "puedo pasar a recogerlo el sabado?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "no se entregan paquetes que requieran pago de impuestos"
+  ],
+  "evidencia": "Los paquetes con valor declarado mayor a USD 100 pagan impuestos de aduana; la sucursal cobra ese monto al momento del retiro y entrega el comprobante de Hacienda.\nLos sábados no se entregan paquetes que requieran pago de impuestos, porque el sistema de Hacienda no está disponible.",
+  "respuesta_ideal": "Como su paquete vale más de USD 100 paga impuestos, y los sábados no se entregan paquetes que requieran pago de impuestos porque el sistema de Hacienda no está disponible; tendría que venir de lunes a viernes.",
+  "respuesta_a_calificar": "Manual de atención al público (versión marzo 2026): Los sábados no se entregan paquetes que requieran pago de impuestos, porque el sistema de Hacienda no está disponible."
+ },
+ {
+  "id": "i0050",
+  "negocio": "W4_n2",
+  "turnos_previos_del_cliente": [
+   "Necesito mandar unos documentos a Miami, cuanto vale y cuanto tardan?"
+  ],
+  "cliente": "y un paquete de 3 kilos a españa?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "122"
+  ],
+  "evidencia": "- Paquete a España, primer kilo: USD 62; kilo adicional USD 30.",
+  "respuesta_ideal": "Como referencia, el primer kilo a España son USD 62 y cada kilo adicional USD 30, así que 3 kilos serían unos USD 122; el monto exacto se confirma en el mostrador y se cobra en colones al tipo de cambio del día.",
+  "respuesta_a_calificar": "Manual de atención al público (versión marzo 2026): Paquete a España, primer kilo: USD 62; kilo adicional USD 30."
+ },
+ {
+  "id": "i0075",
+  "negocio": "W4_n2",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Necesito mandar unos documentos a Miami, cuanto vale y cuanto tardan?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "USD 30",
+   "5 a 8 días hábiles"
+  ],
+  "evidencia": "- Documentos a Estados Unidos (hasta 500 g): USD 30, llega en 5 a 8 días hábiles.",
+  "respuesta_ideal": "¡Pura vida! Documentos a Estados Unidos de hasta 500 g cuestan como referencia USD 30 y llegan en 5 a 8 días hábiles; el monto exacto se calcula en el mostrador con el peso.",
+  "respuesta_a_calificar": "Documentos a Estados Unidos (hasta 500 g): USD 30, llega en 5 a 8 días hábiles."
+ },
+ {
+  "id": "i0077",
+  "negocio": "W4_n2",
+  "turnos_previos_del_cliente": [
+   "quiero sacar un apartado postal, que tengo que llevar?",
+   "y cuanto vale el pequeño?"
+  ],
+  "cliente": "me pueden dar tres llaves? somos tres en la oficina",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "hasta 2 llaves"
+  ],
+  "evidencia": "- Se permite hasta 2 llaves por apartado; duplicado de llave ₡3 500.",
+  "respuesta_ideal": "No, se permiten hasta 2 llaves por apartado; el duplicado cuesta ₡3 500.",
+  "respuesta_a_calificar": "Procesé 2 segmentos del documento en orden."
+ },
+ {
+  "id": "i0134",
+  "negocio": "W4_n2",
+  "turnos_previos_del_cliente": [
+   "hola, a que hora abren los sabados?"
+  ],
+  "cliente": "y el lunes que es feriado, abren?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "8 a.m. a 11 a.m.",
+   "retiro de paquetes"
+  ],
+  "evidencia": "Nota: los días feriados de ley atendemos de 8 a.m. a 11 a.m. únicamente para retiro de paquetes.",
+  "respuesta_ideal": "Los feriados de ley abrimos solo de 8 a.m. a 11 a.m. y únicamente para retiro de paquetes.",
+  "respuesta_a_calificar": "(a) Por seguridad no se reciben paquetes cerrados sin que el cliente declare el contenido; el auxiliar puede pedir abrir el paquete."
+ },
+ {
+  "id": "i0142",
+  "negocio": "W4_n2",
+  "turnos_previos_del_cliente": [
+   "Necesito mandar unos documentos a Miami, cuanto vale y cuanto tardan?",
+   "y un paquete de 3 kilos a españa?"
+  ],
+  "cliente": "puedo mandar queso fresco y una botella de guaro a mi hijo en madrid?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "alimentos perecederos",
+   "líquidos"
+  ],
+  "evidencia": "No se aceptan envíos internacionales de alimentos perecederos, líquidos, baterías de litio sueltas, dinero en efectivo ni medicamentos sin receta.",
+  "respuesta_ideal": "No: en envíos internacionales no se aceptan alimentos perecederos ni líquidos, así que ni el queso ni la botella pueden ir.",
+  "respuesta_a_calificar": "Manual de atención al público (versión marzo 2026): Un envío nacional se considera extraviado si pasan 10 días hábiles sin movimiento; en ese caso se presenta un reclamo en la sucursal con el comprobante original y se responde en un máximo de 15 días hábiles."
+ },
+ {
+  "id": "i0147",
+  "negocio": "W4_n2",
+  "turnos_previos_del_cliente": [
+   "se me perdió un paquete que mandé hace 3 semanas a Limón, que hago?",
+   "y cuanto me devuelven si no aparece? no le puse seguro"
+  ],
+  "cliente": "mandan paquetes a cuba?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "Cuba no aparece en la lista de destinos que tengo (Estados Unidos, Canadá, México, Centroamérica, Panamá y Europa); no puedo confirmarle. Consulte al 2253-4470.",
+  "respuesta_a_calificar": "Nota: los días feriados de ley atendemos de 8 a.m. a 11 a.m. únicamente para retiro de paquetes."
+ },
+ {
+  "id": "i0175",
+  "negocio": "W4_n2",
+  "turnos_previos_del_cliente": [],
+  "cliente": "hola, a que hora abren los sabados?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "8:00 a.m.",
+   "12 m.d."
+  ],
+  "evidencia": "Horario: L-V 8:00 a.m. – 5:30 p.m. | Sáb 8:00 a.m. – 12 m.d. | Dom cerrado",
+  "respuesta_ideal": "¡Pura vida! Los sábados atendemos de 8:00 a.m. a 12 m.d.",
+  "respuesta_a_calificar": "Manual de atención al público (versión marzo 2026): Los sábados no se entregan paquetes que requieran pago de impuestos, porque el sistema de Hacienda no está disponible."
+ },
+ {
+  "id": "i0187",
+  "negocio": "W4_n2",
+  "turnos_previos_del_cliente": [
+   "quiero sacar un apartado postal, que tengo que llevar?"
+  ],
+  "cliente": "y cuanto vale el pequeño?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "₡24 000"
+  ],
+  "evidencia": "- Apartado pequeño: ₡24 000 al año.",
+  "respuesta_ideal": "El apartado pequeño cuesta ₡24 000 al año.",
+  "respuesta_a_calificar": "Vendemos cajas y sobres: Sobre acolchado pequeño ₡450 / mediano ₡700"
+ },
+ {
+  "id": "i0215",
+  "negocio": "W4_n2",
+  "turnos_previos_del_cliente": [
+   "quiero sacar un apartado postal, que tengo que llevar?",
+   "y cuanto vale el pequeño?",
+   "me pueden dar tres llaves? somos tres en la oficina",
+   "lo puedo poner a nombre de mi empresa?"
+  ],
+  "cliente": "si se me pasa renovar en enero, lo pierdo?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "31 de enero",
+   "se libera"
+  ],
+  "evidencia": "Renovación: hasta el 31 de enero de cada año; después de esa fecha el apartado se libera y hay que hacer un trámite nuevo.",
+  "respuesta_ideal": "Sí: la renovación es hasta el 31 de enero; después de esa fecha el apartado se libera y habría que hacer un trámite nuevo.",
+  "respuesta_a_calificar": "Reconozco un inicio condicional, pero no tiene una única estructura «si … entonces …»."
+ },
+ {
+  "id": "i0222",
+  "negocio": "W4_n2",
+  "turnos_previos_del_cliente": [
+   "Hola, mi paquete de amazon ya llegó? lo pedí la semana pasada",
+   "cuanto tiempo me lo guardan ahi?"
+  ],
+  "cliente": "puede ir mi hermano a recogerlo por mi?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "carta de autorización",
+   "copia de la cédula"
+  ],
+  "evidencia": "Si retira otra persona, debe traer carta de autorización firmada y copia de la cédula del titular.",
+  "respuesta_ideal": "Sí, siempre que lleve una carta de autorización firmada por usted, copia de la cédula del titular (la suya) y el número de guía, además de su propia cédula.",
+  "respuesta_a_calificar": "(a) Por seguridad no se reciben paquetes cerrados sin que el cliente declare el contenido; el auxiliar puede pedir abrir el paquete."
+ },
+ {
+  "id": "i0256",
+  "negocio": "W4_n2",
+  "turnos_previos_del_cliente": [
+   "buenas, cuanto me cobran por mandar un paquete de 3 kilos a Cartago?"
+  ],
+  "cliente": "y si lo ocupo que llegue hoy mismo?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "₡6 500",
+   "11 a.m."
+  ],
+  "evidencia": "Paquete express GAM (mismo día)\tmismo día si se entrega antes de 11 a.m.\thasta 5 kg\t₡6 500",
+  "respuesta_ideal": "Para eso está el paquete express GAM: ₡6 500 y llega el mismo día si lo entrega antes de las 11 a.m.",
+  "respuesta_a_calificar": "Servicio: Paquete express GAM (mismo día); Plazo de entrega: mismo día si se entrega antes de 11 a.m.; Peso máximo: hasta 5 kg; Tarifa base: ₡6 500"
+ },
+ {
+  "id": "i0258",
+  "negocio": "W4_n2",
+  "turnos_previos_del_cliente": [
+   "se me perdió un paquete que mandé hace 3 semanas a Limón, que hago?"
+  ],
+  "cliente": "y cuanto me devuelven si no aparece? no le puse seguro",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "₡20 000"
+  ],
+  "evidencia": "Sin seguro, la indemnización máxima es ₡20 000.",
+  "respuesta_ideal": "Según el manual, sin seguro la indemnización máxima es ₡20 000; el monto concreto se resuelve con el reclamo en la sucursal.",
+  "respuesta_a_calificar": "Procesé 2 segmentos del documento en orden."
+ },
+ {
+  "id": "i0281",
+  "negocio": "W4_n2",
+  "turnos_previos_del_cliente": [
+   "Hola, mi paquete de amazon ya llegó? lo pedí la semana pasada"
+  ],
+  "cliente": "cuanto tiempo me lo guardan ahi?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "30 días"
+  ],
+  "evidencia": "Los paquetes que llegan del extranjero (compras por internet) se guardan en la sucursal por 30 días naturales desde la notificación. Después de ese plazo se devuelven al remitente.",
+  "respuesta_ideal": "Los paquetes del extranjero se guardan 30 días naturales desde que se le notifica; después se devuelven al remitente.",
+  "respuesta_a_calificar": "Los paquetes que llegan del extranjero (compras por internet) se guardan en la sucursal por 30 días naturales desde la notificación."
+ },
+ {
+  "id": "i0284",
+  "negocio": "W4_n2",
+  "turnos_previos_del_cliente": [
+   "Necesito mandar unos documentos a Miami, cuanto vale y cuanto tardan?",
+   "y un paquete de 3 kilos a españa?",
+   "puedo mandar queso fresco y una botella de guaro a mi hijo en madrid?",
+   "pasan a recoger el paquete a mi casa?"
+  ],
+  "cliente": "cuanto tarda en llegar un paquete a españa?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo el plazo de entrega a España; solo tengo el de documentos a Estados Unidos. Puede consultarlo al 2253-4470.",
+  "respuesta_a_calificar": "Manual de atención al público (versión marzo 2026): Los paquetes que llegan del extranjero (compras por internet) se guardan en la sucursal por 30 días naturales desde la notificación."
+ },
+ {
+  "id": "i0287",
+  "negocio": "W4_n2",
+  "turnos_previos_del_cliente": [
+   "buenas, cuanto me cobran por mandar un paquete de 3 kilos a Cartago?",
+   "y si lo ocupo que llegue hoy mismo?",
+   "y si el paquete pesa 8 kilos, en el estandar cuanto seria?",
+   "puedo pagar por sinpe?"
+  ],
+  "cliente": "y si mando varios paquetes al mes me hacen descuento?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo información sobre descuentos por volumen; puede consultarlo al 2253-4470.",
+  "respuesta_a_calificar": "Servicio: Paquete express GAM (mismo día); Plazo de entrega: mismo día si se entrega antes de 11 a.m.; Peso máximo: hasta 5 kg; Tarifa base: ₡6 500"
+ },
+ {
+  "id": "i0308",
+  "negocio": "W4_n2",
+  "turnos_previos_del_cliente": [
+   "Necesito mandar unos documentos a Miami, cuanto vale y cuanto tardan?",
+   "y un paquete de 3 kilos a españa?",
+   "puedo mandar queso fresco y una botella de guaro a mi hijo en madrid?"
+  ],
+  "cliente": "pasan a recoger el paquete a mi casa?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo información sobre recolección a domicilio; puede preguntar al 2253-4470.",
+  "respuesta_a_calificar": "Nota: los días feriados de ley atendemos de 8 a.m. a 11 a.m. únicamente para retiro de paquetes."
+ },
+ {
+  "id": "i0310",
+  "negocio": "W4_n2",
+  "turnos_previos_del_cliente": [
+   "quiero sacar un apartado postal, que tengo que llevar?",
+   "y cuanto vale el pequeño?",
+   "me pueden dar tres llaves? somos tres en la oficina"
+  ],
+  "cliente": "lo puedo poner a nombre de mi empresa?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo ese dato; le recomiendo consultarlo al 2253-4470.",
+  "respuesta_a_calificar": "Manual de atención al público (versión marzo 2026): Nombre comercial: Envíos Tico Express, sucursal Barrio Escalante"
+ },
+ {
+  "id": "i0360",
+  "negocio": "W4_n2",
+  "turnos_previos_del_cliente": [
+   "quiero sacar un apartado postal, que tengo que llevar?",
+   "y cuanto vale el pequeño?",
+   "me pueden dar tres llaves? somos tres en la oficina",
+   "lo puedo poner a nombre de mi empresa?"
+  ],
+  "cliente": "si se me pasa renovar en enero, lo pierdo?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "31 de enero",
+   "se libera"
+  ],
+  "evidencia": "Renovación: hasta el 31 de enero de cada año; después de esa fecha el apartado se libera y hay que hacer un trámite nuevo.",
+  "respuesta_ideal": "Sí: la renovación es hasta el 31 de enero; después de esa fecha el apartado se libera y habría que hacer un trámite nuevo.",
+  "respuesta_a_calificar": "Un envío nacional se considera extraviado si pasan 10 días hábiles sin movimiento; en ese caso se presenta un reclamo en la sucursal con el comprobante original y se responde en un máximo de 15 días hábiles."
+ },
+ {
+  "id": "i0387",
+  "negocio": "W4_n2",
+  "turnos_previos_del_cliente": [
+   "Hola, mi paquete de amazon ya llegó? lo pedí la semana pasada",
+   "cuanto tiempo me lo guardan ahi?",
+   "puede ir mi hermano a recogerlo por mi?"
+  ],
+  "cliente": "cuanto voy a pagar de impuestos? el paquete vale como 150 dolares",
+  "tipo": "instruccion",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "Nunca diga cuánto va a pagar alguien de impuestos de aduana: ese cálculo lo hace Hacienda. Diga que se cobra al retirar y que la encargada Yorleny Chacón puede explicar el proceso.",
+  "respuesta_ideal": "El monto de impuestos lo calcula Hacienda, no puedo decírselo; se cobra en el momento del retiro y la encargada Yorleny Chacón le puede explicar el proceso.",
+  "respuesta_a_calificar": "Manual de atención al público (versión marzo 2026): La indemnización por extravío de carta certificada es de ₡10 000; para paquetes, el valor declarado hasta un máximo de ₡150 000, siempre que se haya pagado el seguro opcional (1,5 % del valor declarado)."
+ },
+ {
+  "id": "i0482",
+  "negocio": "W4_n2",
+  "turnos_previos_del_cliente": [
+   "hola, a que hora abren los sabados?",
+   "y el lunes que es feriado, abren?",
+   "tienen parqueo?"
+  ],
+  "cliente": "venden cajas? ocupo una grande",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "₡2 300"
+  ],
+  "evidencia": "Caja grande (60x40x40 cm) ₡2 300",
+  "respuesta_ideal": "Sí, la caja grande de 60x40x40 cm cuesta ₡2 300, y si la compra aquí el personal le ayuda a empacar sin costo.",
+  "respuesta_a_calificar": "Caja grande (60x40x40 cm) ₡2 300"
+ },
+ {
+  "id": "i0528",
+  "negocio": "W4_n2",
+  "turnos_previos_del_cliente": [],
+  "cliente": "se me perdió un paquete que mandé hace 3 semanas a Limón, que hago?",
+  "tipo": "instruccion",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "Para reclamos por paquetes dañados o extraviados, indique que deben hacerse en persona en la sucursal con el comprobante original; no acepte reclamos por el kiosco ni prometa indemnizaciones.",
+  "respuesta_ideal": "Lamento la situación. El reclamo se presenta en persona en la sucursal con el comprobante original; desde aquí no puedo recibirlo, pero le responden en un máximo de 15 días hábiles.",
+  "respuesta_a_calificar": "Manual de atención al público (versión marzo 2026): La indemnización por extravío de carta certificada es de ₡10 000; para paquetes, el valor declarado hasta un máximo de ₡150 000, siempre que se haya pagado el seguro opcional (1,5 % del valor declarado)."
+ },
+ {
+  "id": "i0564",
+  "negocio": "W4_n2",
+  "turnos_previos_del_cliente": [
+   "hola, a que hora abren los sabados?",
+   "y el lunes que es feriado, abren?",
+   "tienen parqueo?",
+   "venden cajas? ocupo una grande"
+  ],
+  "cliente": "hay rampa para silla de ruedas?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo ese dato; puede consultarlo al 2253-4470.",
+  "respuesta_a_calificar": "Requisitos: cédula vigente (o DIMEX para extranjeros), recibo de servicio público con la dirección y pago del año completo por adelantado. La llave se entrega el mismo día. Renovación: hasta el 31 de enero de cada año; después de esa fecha el apartado se libera y hay que hacer un trámite nuevo."
+ },
+ {
+  "id": "i0577",
+  "negocio": "W4_n2",
+  "turnos_previos_del_cliente": [
+   "se me perdió un paquete que mandé hace 3 semanas a Limón, que hago?"
+  ],
+  "cliente": "y cuanto me devuelven si no aparece? no le puse seguro",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "₡20 000"
+  ],
+  "evidencia": "Sin seguro, la indemnización máxima es ₡20 000.",
+  "respuesta_ideal": "Según el manual, sin seguro la indemnización máxima es ₡20 000; el monto concreto se resuelve con el reclamo en la sucursal.",
+  "respuesta_a_calificar": "(a) Por seguridad no se reciben paquetes cerrados sin que el cliente declare el contenido; el auxiliar puede pedir abrir el paquete."
+ },
+ {
+  "id": "i0587",
+  "negocio": "W4_n2",
+  "turnos_previos_del_cliente": [
+   "hola, a que hora abren los sabados?",
+   "y el lunes que es feriado, abren?"
+  ],
+  "cliente": "tienen parqueo?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "uso exclusivo de los inquilinos",
+   "parqueo público en la esquina"
+  ],
+  "evidencia": "(b) El parqueo del edificio es de uso exclusivo de los inquilinos; hay parqueo público en la esquina, a 50 m, con tarifa propia.",
+  "respuesta_ideal": "El parqueo del edificio es de uso exclusivo de los inquilinos, pero hay un parqueo público en la esquina, a 50 m, con su propia tarifa.",
+  "respuesta_a_calificar": "(b) El parqueo del edificio es de uso exclusivo de los inquilinos; hay parqueo público en la esquina, a 50 m, con tarifa propia."
+ },
+ {
+  "id": "i0598",
+  "negocio": "W4_n2",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Hola, mi paquete de amazon ya llegó? lo pedí la semana pasada",
+  "tipo": "instruccion",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "No dé por hecho el estado de un envío ni invente dónde está un paquete. Si alguien pregunta por su paquete, pídale el número de guía y dígale que lo consulte en ticoexpress.cr/rastreo o por WhatsApp al 8811-2290.",
+  "respuesta_ideal": "¡Pura vida! Bienvenido a Tico Express Escalante. Desde aquí no puedo ver el estado de su paquete; con el número de guía puede consultarlo en ticoexpress.cr/rastreo o enviándolo por WhatsApp al 8811-2290.",
+  "respuesta_a_calificar": "Procesé 2 segmentos del documento en orden."
+ },
+ {
+  "id": "i0634",
+  "negocio": "W4_n2",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Hola, mi paquete de amazon ya llegó? lo pedí la semana pasada",
+  "tipo": "instruccion",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "No dé por hecho el estado de un envío ni invente dónde está un paquete. Si alguien pregunta por su paquete, pídale el número de guía y dígale que lo consulte en ticoexpress.cr/rastreo o por WhatsApp al 8811-2290.",
+  "respuesta_ideal": "¡Pura vida! Bienvenido a Tico Express Escalante. Desde aquí no puedo ver el estado de su paquete; con el número de guía puede consultarlo en ticoexpress.cr/rastreo o enviándolo por WhatsApp al 8811-2290.",
+  "respuesta_a_calificar": "(a) Por seguridad no se reciben paquetes cerrados sin que el cliente declare el contenido; el auxiliar puede pedir abrir el paquete."
+ },
+ {
+  "id": "i0639",
+  "negocio": "W4_n2",
+  "turnos_previos_del_cliente": [],
+  "cliente": "buenas, cuanto me cobran por mandar un paquete de 3 kilos a Cartago?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "₡2 900"
+  ],
+  "evidencia": "Paquete estándar GAM\t1 a 2 días hábiles\thasta 5 kg\t₡2 900\n\nGAM = Gran Área Metropolitana (San José, Alajuela, Cartago y Heredia centro y cantones cercanos).",
+  "respuesta_ideal": "¡Pura vida! Bienvenido a Tico Express Escalante. Cartago está dentro de la GAM, así que un paquete de hasta 5 kg va como paquete estándar GAM por ₡2 900 y llega en 1 a 2 días hábiles.",
+  "respuesta_a_calificar": "Manual de atención al público (versión marzo 2026): Servicio: Kilo adicional (cualquier paquete); Plazo de entrega: —; Peso máximo: hasta 30 kg en total; Tarifa base: ₡750 por kg"
+ },
+ {
+  "id": "i0650",
+  "negocio": "W4_n2",
+  "turnos_previos_del_cliente": [
+   "se me perdió un paquete que mandé hace 3 semanas a Limón, que hago?",
+   "y cuanto me devuelven si no aparece? no le puse seguro",
+   "mandan paquetes a cuba?"
+  ],
+  "cliente": "cual es el peso maximo para enviar dentro del pais?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "30 kg"
+  ],
+  "evidencia": "No se envían paquetes de más de 30 kg ni de más de 1,20 m en su lado más largo.",
+  "respuesta_ideal": "El máximo es 30 kg por paquete, y ningún lado puede medir más de 1,20 m.",
+  "respuesta_a_calificar": "Servicio: Paquete estándar resto del país; Plazo de entrega: 2 a 4 días hábiles; Peso máximo: hasta 5 kg; Tarifa base: ₡3 800"
+ },
+ {
+  "id": "i0653",
+  "negocio": "W4_n2",
+  "turnos_previos_del_cliente": [
+   "buenas, cuanto me cobran por mandar un paquete de 3 kilos a Cartago?",
+   "y si lo ocupo que llegue hoy mismo?"
+  ],
+  "cliente": "y si el paquete pesa 8 kilos, en el estandar cuanto seria?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "5 150"
+  ],
+  "evidencia": "Paquete estándar GAM\t1 a 2 días hábiles\thasta 5 kg\t₡2 900\nKilo adicional (cualquier paquete)\t—\thasta 30 kg en total\t₡750 por kg",
+  "respuesta_ideal": "La tarifa base cubre hasta 5 kg (₡2 900) y cada kilo adicional cuesta ₡750; con 3 kilos de más serían ₡5 150 en total.",
+  "respuesta_a_calificar": "Manual de atención al público (versión marzo 2026): Servicio: Kilo adicional (cualquier paquete); Plazo de entrega: —; Peso máximo: hasta 30 kg en total; Tarifa base: ₡750 por kg"
+ },
+ {
+  "id": "i0665",
+  "negocio": "W4_n2",
+  "turnos_previos_del_cliente": [],
+  "cliente": "quiero sacar un apartado postal, que tengo que llevar?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "cédula vigente",
+   "recibo de servicio público",
+   "año completo"
+  ],
+  "evidencia": "- Requisitos: cédula vigente (o DIMEX para extranjeros), recibo de servicio público con la dirección y pago del año completo por adelantado. La llave se entrega el mismo día.",
+  "respuesta_ideal": "Necesita cédula vigente (o DIMEX si es extranjero), un recibo de servicio público con su dirección y el pago del año completo por adelantado; la llave se la entregan el mismo día.",
+  "respuesta_a_calificar": "APARTADOS POSTALES"
+ },
+ {
+  "id": "i0677",
+  "negocio": "W4_n2",
+  "turnos_previos_del_cliente": [
+   "Hola, mi paquete de amazon ya llegó? lo pedí la semana pasada",
+   "cuanto tiempo me lo guardan ahi?",
+   "puede ir mi hermano a recogerlo por mi?"
+  ],
+  "cliente": "cuanto voy a pagar de impuestos? el paquete vale como 150 dolares",
+  "tipo": "instruccion",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "Nunca diga cuánto va a pagar alguien de impuestos de aduana: ese cálculo lo hace Hacienda. Diga que se cobra al retirar y que la encargada Yorleny Chacón puede explicar el proceso.",
+  "respuesta_ideal": "El monto de impuestos lo calcula Hacienda, no puedo decírselo; se cobra en el momento del retiro y la encargada Yorleny Chacón le puede explicar el proceso.",
+  "respuesta_a_calificar": "Procesé 2 segmentos del documento en orden."
+ },
+ {
+  "id": "i0790",
+  "negocio": "W4_n2",
+  "turnos_previos_del_cliente": [
+   "se me perdió un paquete que mandé hace 3 semanas a Limón, que hago?",
+   "y cuanto me devuelven si no aparece? no le puse seguro",
+   "mandan paquetes a cuba?"
+  ],
+  "cliente": "cual es el peso maximo para enviar dentro del pais?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "30 kg"
+  ],
+  "evidencia": "No se envían paquetes de más de 30 kg ni de más de 1,20 m en su lado más largo.",
+  "respuesta_ideal": "El máximo es 30 kg por paquete, y ningún lado puede medir más de 1,20 m.",
+  "respuesta_a_calificar": "peso"
+ },
+ {
+  "id": "i0793",
+  "negocio": "W4_n2",
+  "turnos_previos_del_cliente": [
+   "hola, a que hora abren los sabados?",
+   "y el lunes que es feriado, abren?",
+   "tienen parqueo?"
+  ],
+  "cliente": "venden cajas? ocupo una grande",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "₡2 300"
+  ],
+  "evidencia": "Caja grande (60x40x40 cm) ₡2 300",
+  "respuesta_ideal": "Sí, la caja grande de 60x40x40 cm cuesta ₡2 300, y si la compra aquí el personal le ayuda a empacar sin costo.",
+  "respuesta_a_calificar": "Procesé 2 segmentos del documento en orden."
+ },
+ {
+  "id": "i0056",
+  "negocio": "W6_n2",
+  "turnos_previos_del_cliente": [
+   "¿Abrís en agosto?"
+  ],
+  "cliente": "¿Y el día de Navidad está abierto?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "cerrado"
+  ],
+  "evidencia": "24 y 31 de diciembre: abierto hasta las 14:00. 25 de diciembre y 1 de enero: cerrado.",
+  "respuesta_ideal": "No, el 25 de diciembre está cerrado.",
+  "respuesta_a_calificar": "Las plazas se renuevan cada trimestre y los alumnos actuales tienen prioridad hasta el día 20 del último mes del trimestre."
+ },
+ {
+  "id": "i0067",
+  "negocio": "W6_n2",
+  "turnos_previos_del_cliente": [],
+  "cliente": "¿Abrís en agosto?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "17 al 31 de agosto"
+  ],
+  "evidencia": "Cierre técnico anual por mantenimiento: del 17 al 31 de agosto.",
+  "respuesta_ideal": "Sí, pero solo hasta el 16: del 17 al 31 de agosto cerramos por mantenimiento.",
+  "respuesta_a_calificar": "Cierre técnico anual por mantenimiento: del 17 al 31 de agosto."
+ },
+ {
+  "id": "i0079",
+  "negocio": "W6_n2",
+  "turnos_previos_del_cliente": [
+   "Buenas, ¿cuánto cuesta la matrícula para hacerse socio?",
+   "¿Y cuánto se paga al mes siendo adulto?",
+   "Somos mi pareja, yo y dos críos de 6 y 9 años. ¿Hay algo para familias?",
+   "La de 9 querría apuntarse a cursillo. Si somos socios, ¿cuánto pagaríamos al trimestre?"
+  ],
+  "cliente": "¿Y qué días serían las clases?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "lunes y miércoles",
+   "martes y jueves"
+  ],
+  "evidencia": "· Infantil II (6 a 12 años): lunes y miércoles a las 18:00, o martes y jueves a las 18:30 — 110 €",
+  "respuesta_ideal": "El Infantil II tiene dos grupos: lunes y miércoles a las 18:00, o martes y jueves a las 18:30.",
+  "respuesta_a_calificar": "Las cuotas se cobran por domiciliación bancaria entre el día 1 y el 5 de cada mes. La baja se comunica por escrito, en recepción o por correo a info@cncabanyal.es, antes del día 25; si se avisa después, se cobra el mes siguiente completo."
+ },
+ {
+  "id": "i0137",
+  "negocio": "W6_n2",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Hola! a que hora cerrais hoy? es martes",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "22:30"
+  ],
+  "evidencia": "Lunes a viernes ......... 07:00 – 22:30",
+  "respuesta_ideal": "¡Hola, bienvenido al Club Natació Cabanyal! De lunes a viernes cerramos a las 22:30, aunque el acceso al agua se cierra 30 minutos antes.",
+  "respuesta_a_calificar": "Procesé 3 segmentos del documento en orden."
+ },
+ {
+  "id": "i0148",
+  "negocio": "W6_n2",
+  "turnos_previos_del_cliente": [
+   "¿Qué horario de entrenos tiene el equipo de competición?"
+  ],
+  "cliente": "Mi hija quiere hacer la prueba de nivel para entrar, ¿cuándo puede hacerla?",
+  "tipo": "instruccion",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "- Todo lo relativo al equipo de competición (pruebas de nivel, fichas federativas, competiciones) lo lleva Marta Ferrer: remite a competicio@cncabanyal.es.",
+  "respuesta_ideal": "Las pruebas de nivel las lleva Marta Ferrer, la coordinadora deportiva; escríbele a competicio@cncabanyal.es.",
+  "respuesta_a_calificar": "Para entrar en el equipo hay que superar una prueba de nivel."
+ },
+ {
+  "id": "i0176",
+  "negocio": "W6_n2",
+  "turnos_previos_del_cliente": [
+   "Buenas, ¿cuánto cuesta la matrícula para hacerse socio?",
+   "¿Y cuánto se paga al mes siendo adulto?",
+   "Somos mi pareja, yo y dos críos de 6 y 9 años. ¿Hay algo para familias?"
+  ],
+  "cliente": "La de 9 querría apuntarse a cursillo. Si somos socios, ¿cuánto pagaríamos al trimestre?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "88"
+  ],
+  "evidencia": "· Infantil II (6 a 12 años): lunes y miércoles a las 18:00, o martes y jueves a las 18:30 — 110 €",
+  "respuesta_ideal": "Le corresponde el Infantil II, que cuesta 110 € al trimestre; con el 20 % de descuento de socio serían 88 €.",
+  "respuesta_a_calificar": "Procesé 2 segmentos del documento en orden."
+ },
+ {
+  "id": "i0184",
+  "negocio": "W6_n2",
+  "turnos_previos_del_cliente": [
+   "¿Abrís en agosto?",
+   "¿Y el día de Navidad está abierto?",
+   "¿y en nochebuena?",
+   "¿Hay sitio para dejar la bici?"
+  ],
+  "cliente": "¿Vendeis gorros y gafas en recepción? Me he olvidado el gorro",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "- Si te preguntan algo que no aparece en la información del club, no lo supongas: di que no tienes ese dato y que pueden preguntarlo en recepción o llamando al 963 55 21 40.",
+  "respuesta_ideal": "No tengo ese dato; pregúntalo en recepción o en el 963 55 21 40. Eso sí, recuerda que el gorro es obligatorio para entrar al agua.",
+  "respuesta_a_calificar": "Las cuotas se cobran por domiciliación bancaria entre el día 1 y el 5 de cada mes. La baja se comunica por escrito, en recepción o por correo a info@cncabanyal.es, antes del día 25; si se avisa después, se cobra el mes siguiente completo."
+ },
+ {
+  "id": "i0190",
+  "negocio": "W6_n2",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Mi hijo tiene 13 años, ¿puede venir solo a nadar por las tardes?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "acompañados de un adulto"
+  ],
+  "evidencia": "Los menores de 14 años solo pueden usar el baño libre acompañados de un adulto que también esté en la instalación.",
+  "respuesta_ideal": "Solo no: los menores de 14 años solo pueden usar el baño libre acompañados de un adulto que también esté en la instalación.",
+  "respuesta_a_calificar": "Los menores de 14 años solo pueden usar el baño libre acompañados de un adulto que también esté en la instalación."
+ },
+ {
+  "id": "i0193",
+  "negocio": "W6_n2",
+  "turnos_previos_del_cliente": [
+   "Hola! a que hora cerrais hoy? es martes",
+   "¿y el domingo?",
+   "Vale, entonces hoy si llego a las 22:15 ¿me da tiempo a nadar un rato?",
+   "¿Teneis sauna o baño turco para después?"
+  ],
+  "cliente": "¿Qué profundidad tiene la piscina grande? es que no hago pie",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "- Si te preguntan algo que no aparece en la información del club, no lo supongas: di que no tienes ese dato y que pueden preguntarlo en recepción o llamando al 963 55 21 40.",
+  "respuesta_ideal": "La profundidad de la piscina de 25 m no la tengo; solo sé que el vaso de enseñanza tiene 90 cm. Puedes preguntarlo en recepción o llamando al 963 55 21 40.",
+  "respuesta_a_calificar": "Contamos con una piscina cubierta de 25 m y 6 calles, climatizada entre 27 y 28 °C, y un vaso de enseñanza de 12,5 m con 90 cm de profundidad, donde se dan los cursillos infantiles y el aquagym."
+ },
+ {
+  "id": "i0208",
+  "negocio": "W6_n2",
+  "turnos_previos_del_cliente": [
+   "Hola! a que hora cerrais hoy? es martes"
+  ],
+  "cliente": "¿y el domingo?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "14:00"
+  ],
+  "evidencia": "Domingos y festivos ..... 09:00 – 14:00",
+  "respuesta_ideal": "Los domingos abrimos de 09:00 a 14:00.",
+  "respuesta_a_calificar": "25 de diciembre y 1 de enero: cerrado."
+ },
+ {
+  "id": "i0224",
+  "negocio": "W6_n2",
+  "turnos_previos_del_cliente": [
+   "Buenas, ¿cuánto cuesta la matrícula para hacerse socio?",
+   "¿Y cuánto se paga al mes siendo adulto?"
+  ],
+  "cliente": "Somos mi pareja, yo y dos críos de 6 y 9 años. ¿Hay algo para familias?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "89"
+  ],
+  "evidencia": "Cuota familiar (2 adultos + hijos menores de 14 años): 89 €/mes",
+  "respuesta_ideal": "Sí, la cuota familiar, para 2 adultos más los hijos menores de 14 años, cuesta 89 € al mes.",
+  "respuesta_a_calificar": "Procesé 2 segmentos del documento en orden."
+ },
+ {
+  "id": "i0247",
+  "negocio": "W6_n2",
+  "turnos_previos_del_cliente": [
+   "¿Qué horario de entrenos tiene el equipo de competición?",
+   "Mi hija quiere hacer la prueba de nivel para entrar, ¿cuándo puede hacerla?",
+   "Y para darme de alta yo, ¿que tengo que traer?",
+   "si luego me quiero dar de baja, ¿hasta qué día tengo que avisar?"
+  ],
+  "cliente": "¿Y me devuelven la matrícula?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "no se devuelve"
+  ],
+  "evidencia": "La matrícula no se devuelve en ningún caso.",
+  "respuesta_ideal": "No, la matrícula no se devuelve en ningún caso.",
+  "respuesta_a_calificar": "ALTAS Y BAJAS: La matrícula no se devuelve en ningún caso."
+ },
+ {
+  "id": "i0269",
+  "negocio": "W6_n2",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Buenas, ¿cuánto cuesta la matrícula para hacerse socio?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "35"
+  ],
+  "evidencia": "Matrícula de alta (pago único): 35 €",
+  "respuesta_ideal": "La matrícula de alta es un pago único de 35 €.",
+  "respuesta_a_calificar": "Buenas. CURSILLOS (precio por trimestre para no socios): Infantil I (3 a 5 años): martes y jueves a las 17:30 — 120 €"
+ },
+ {
+  "id": "i0309",
+  "negocio": "W6_n2",
+  "turnos_previos_del_cliente": [
+   "¿Abrís en agosto?",
+   "¿Y el día de Navidad está abierto?",
+   "¿y en nochebuena?",
+   "¿Hay sitio para dejar la bici?"
+  ],
+  "cliente": "¿Vendeis gorros y gafas en recepción? Me he olvidado el gorro",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "- Si te preguntan algo que no aparece en la información del club, no lo supongas: di que no tienes ese dato y que pueden preguntarlo en recepción o llamando al 963 55 21 40.",
+  "respuesta_ideal": "No tengo ese dato; pregúntalo en recepción o en el 963 55 21 40. Eso sí, recuerda que el gorro es obligatorio para entrar al agua.",
+  "respuesta_a_calificar": "Procesé 2 segmentos del documento en orden."
+ },
+ {
+  "id": "i0385",
+  "negocio": "W6_n2",
+  "turnos_previos_del_cliente": [
+   "Buenas, ¿cuánto cuesta la matrícula para hacerse socio?"
+  ],
+  "cliente": "¿Y cuánto se paga al mes siendo adulto?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "44"
+  ],
+  "evidencia": "Cuota mensual adulto (26 a 64 años): 44 €",
+  "respuesta_ideal": "La cuota mensual de adulto, de 26 a 64 años, es de 44 €.",
+  "respuesta_a_calificar": "Bebés (de 6 a 36 meses, con un adulto dentro del agua): sábados a las 10:00 o a las 11:00 — 95 €"
+ },
+ {
+  "id": "i0420",
+  "negocio": "W6_n2",
+  "turnos_previos_del_cliente": [
+   "Hola! a que hora cerrais hoy? es martes",
+   "¿y el domingo?"
+  ],
+  "cliente": "Vale, entonces hoy si llego a las 22:15 ¿me da tiempo a nadar un rato?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "30 minutos antes"
+  ],
+  "evidencia": "El acceso al agua se cierra 30 minutos antes del cierre de la instalación.",
+  "respuesta_ideal": "No: hoy cerramos a las 22:30 y el acceso al agua se cierra 30 minutos antes, a las 22:00, así que a las 22:15 ya no podrías entrar al agua.",
+  "respuesta_a_calificar": "Las cuotas se cobran por domiciliación bancaria entre el día 1 y el 5 de cada mes. La baja se comunica por escrito, en recepción o por correo a info@cncabanyal.es, antes del día 25; si se avisa después, se cobra el mes siguiente completo."
+ },
+ {
+  "id": "i0429",
+  "negocio": "W6_n2",
+  "turnos_previos_del_cliente": [
+   "Buenas, ¿cuánto cuesta la matrícula para hacerse socio?"
+  ],
+  "cliente": "¿Y cuánto se paga al mes siendo adulto?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "44"
+  ],
+  "evidencia": "Cuota mensual adulto (26 a 64 años): 44 €",
+  "respuesta_ideal": "La cuota mensual de adulto, de 26 a 64 años, es de 44 €.",
+  "respuesta_a_calificar": "14 años"
+ },
+ {
+  "id": "i0435",
+  "negocio": "W6_n2",
+  "turnos_previos_del_cliente": [
+   "Mi hijo tiene 13 años, ¿puede venir solo a nadar por las tardes?"
+  ],
+  "cliente": "¿Las taquillas tienen candado o hay que traerse uno?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "1 €"
+  ],
+  "evidencia": "Las taquillas funcionan con una moneda de 1 € que se recupera al abrirlas.",
+  "respuesta_ideal": "No hace falta candado: las taquillas funcionan con una moneda de 1 € que se recupera al abrirlas.",
+  "respuesta_a_calificar": "Las taquillas funcionan con una moneda de 1 € que se recupera al abrirlas."
+ },
+ {
+  "id": "i0438",
+  "negocio": "W6_n2",
+  "turnos_previos_del_cliente": [
+   "¿Abrís en agosto?",
+   "¿Y el día de Navidad está abierto?"
+  ],
+  "cliente": "¿y en nochebuena?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "14:00"
+  ],
+  "evidencia": "24 y 31 de diciembre: abierto hasta las 14:00. 25 de diciembre y 1 de enero: cerrado.",
+  "respuesta_ideal": "El 24 de diciembre abrimos hasta las 14:00.",
+  "respuesta_a_calificar": "Información para socios y usuarios · Temporada 2026-2027: El Club Natació Cabanyal es una entidad deportiva sin ánimo de lucro fundada en 1979 por un grupo de vecinos del barrio."
+ },
+ {
+  "id": "i0471",
+  "negocio": "W6_n2",
+  "turnos_previos_del_cliente": [
+   "¿Abrís en agosto?",
+   "¿Y el día de Navidad está abierto?",
+   "¿y en nochebuena?"
+  ],
+  "cliente": "¿Hay sitio para dejar la bici?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "- Si te preguntan algo que no aparece en la información del club, no lo supongas: di que no tienes ese dato y que pueden preguntarlo en recepción o llamando al 963 55 21 40.",
+  "respuesta_ideal": "No tengo ese dato; puedes preguntarlo en recepción o llamando al 963 55 21 40.",
+  "respuesta_a_calificar": "Para darse de alta hay que pasar por recepción con el DNI o NIE y una foto tamaño carnet."
+ },
+ {
+  "id": "i0476",
+  "negocio": "W6_n2",
+  "turnos_previos_del_cliente": [
+   "¿Qué horario de entrenos tiene el equipo de competición?"
+  ],
+  "cliente": "Mi hija quiere hacer la prueba de nivel para entrar, ¿cuándo puede hacerla?",
+  "tipo": "instruccion",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "- Todo lo relativo al equipo de competición (pruebas de nivel, fichas federativas, competiciones) lo lleva Marta Ferrer: remite a competicio@cncabanyal.es.",
+  "respuesta_ideal": "Las pruebas de nivel las lleva Marta Ferrer, la coordinadora deportiva; escríbele a competicio@cncabanyal.es.",
+  "respuesta_a_calificar": "el equipo hay que superar"
+ },
+ {
+  "id": "i0478",
+  "negocio": "W6_n2",
+  "turnos_previos_del_cliente": [
+   "Mi hijo tiene 13 años, ¿puede venir solo a nadar por las tardes?",
+   "¿Las taquillas tienen candado o hay que traerse uno?",
+   "Me operaron de la rodilla hace tres semanas, ¿puedo empezar ya a nadar?",
+   "¿Hay socorrista durante todo el horario?"
+  ],
+  "cliente": "Ayer me deje unas gafas en el vestuario, ¿donde puedo preguntar?",
+  "tipo": "instruccion",
+  "accion_esperada": "responder",
+  "claves": [
+   "recepción",
+   "un mes"
+  ],
+  "evidencia": "- Si preguntan por objetos perdidos, indica que se guardan en recepción durante un mes.",
+  "respuesta_ideal": "Los objetos perdidos se guardan en recepción durante un mes; pregunta allí por tus gafas.",
+  "respuesta_a_calificar": "Los menores de 14 años solo pueden usar el baño libre acompañados de un adulto que también esté en la instalación."
+ },
+ {
+  "id": "i0514",
+  "negocio": "W6_n2",
+  "turnos_previos_del_cliente": [
+   "¿Qué horario de entrenos tiene el equipo de competición?",
+   "Mi hija quiere hacer la prueba de nivel para entrar, ¿cuándo puede hacerla?",
+   "Y para darme de alta yo, ¿que tengo que traer?"
+  ],
+  "cliente": "si luego me quiero dar de baja, ¿hasta qué día tengo que avisar?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "25"
+  ],
+  "evidencia": "La baja se comunica por escrito, en recepción o por correo a info@cncabanyal.es, antes del día 25; si se avisa después, se cobra el mes siguiente completo.",
+  "respuesta_ideal": "Tienes que comunicarlo por escrito antes del día 25, en recepción o a info@cncabanyal.es; si no, se cobra el mes siguiente completo.",
+  "respuesta_a_calificar": "Las cuotas se cobran por domiciliación bancaria entre el día 1 y el 5 de cada mes. La baja se comunica por escrito, en recepción o por correo a info@cncabanyal.es, antes del día 25; si se avisa después, se cobra el mes siguiente completo."
+ },
+ {
+  "id": "i0532",
+  "negocio": "W6_n2",
+  "turnos_previos_del_cliente": [
+   "Mi hijo tiene 13 años, ¿puede venir solo a nadar por las tardes?",
+   "¿Las taquillas tienen candado o hay que traerse uno?",
+   "Me operaron de la rodilla hace tres semanas, ¿puedo empezar ya a nadar?"
+  ],
+  "cliente": "¿Hay socorrista durante todo el horario?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "- Si te preguntan algo que no aparece en la información del club, no lo supongas: di que no tienes ese dato y que pueden preguntarlo en recepción o llamando al 963 55 21 40.",
+  "respuesta_ideal": "No tengo ese dato; puedes preguntarlo en recepción o llamando al 963 55 21 40.",
+  "respuesta_a_calificar": "Hoy somos más de 1.400 socios y tenemos escuela de natación para todas las edades, actividades acuáticas para adultos y un equipo de competición que participa en los campeonatos autonómicos."
+ },
+ {
+  "id": "i0550",
+  "negocio": "W6_n2",
+  "turnos_previos_del_cliente": [
+   "¿Qué horario de entrenos tiene el equipo de competición?",
+   "Mi hija quiere hacer la prueba de nivel para entrar, ¿cuándo puede hacerla?",
+   "Y para darme de alta yo, ¿que tengo que traer?"
+  ],
+  "cliente": "si luego me quiero dar de baja, ¿hasta qué día tengo que avisar?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "25"
+  ],
+  "evidencia": "La baja se comunica por escrito, en recepción o por correo a info@cncabanyal.es, antes del día 25; si se avisa después, se cobra el mes siguiente completo.",
+  "respuesta_ideal": "Tienes que comunicarlo por escrito antes del día 25, en recepción o a info@cncabanyal.es; si no, se cobra el mes siguiente completo.",
+  "respuesta_a_calificar": "Reconozco un inicio condicional, pero no tiene una única estructura «si … entonces …»."
+ },
+ {
+  "id": "i0559",
+  "negocio": "W6_n2",
+  "turnos_previos_del_cliente": [
+   "Hola! a que hora cerrais hoy? es martes",
+   "¿y el domingo?",
+   "Vale, entonces hoy si llego a las 22:15 ¿me da tiempo a nadar un rato?",
+   "¿Teneis sauna o baño turco para después?"
+  ],
+  "cliente": "¿Qué profundidad tiene la piscina grande? es que no hago pie",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "- Si te preguntan algo que no aparece en la información del club, no lo supongas: di que no tienes ese dato y que pueden preguntarlo en recepción o llamando al 963 55 21 40.",
+  "respuesta_ideal": "La profundidad de la piscina de 25 m no la tengo; solo sé que el vaso de enseñanza tiene 90 cm. Puedes preguntarlo en recepción o llamando al 963 55 21 40.",
+  "respuesta_a_calificar": "Procesé 2 segmentos del documento en orden."
+ },
+ {
+  "id": "i0570",
+  "negocio": "W6_n2",
+  "turnos_previos_del_cliente": [
+   "¿Qué horario de entrenos tiene el equipo de competición?",
+   "Mi hija quiere hacer la prueba de nivel para entrar, ¿cuándo puede hacerla?"
+  ],
+  "cliente": "Y para darme de alta yo, ¿que tengo que traer?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "DNI",
+   "foto"
+  ],
+  "evidencia": "Para darse de alta hay que pasar por recepción con el DNI o NIE y una foto tamaño carnet.",
+  "respuesta_ideal": "Tienes que pasar por recepción con tu DNI o NIE y una foto tamaño carnet.",
+  "respuesta_a_calificar": "Para darse de alta hay que pasar por recepción con el DNI o NIE y una foto tamaño carnet."
+ },
+ {
+  "id": "i0608",
+  "negocio": "W6_n2",
+  "turnos_previos_del_cliente": [],
+  "cliente": "¿Qué horario de entrenos tiene el equipo de competición?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "06:45",
+   "18:30"
+  ],
+  "evidencia": "Entrenamientos de lunes a viernes, de 06:45 a 08:15 y de 18:30 a 20:30.",
+  "respuesta_ideal": "El equipo entrena de lunes a viernes, de 06:45 a 08:15 y de 18:30 a 20:30.",
+  "respuesta_a_calificar": "natación"
+ },
+ {
+  "id": "i0668",
+  "negocio": "W6_n2",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Hola! a que hora cerrais hoy? es martes",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "22:30"
+  ],
+  "evidencia": "Lunes a viernes ......... 07:00 – 22:30",
+  "respuesta_ideal": "¡Hola, bienvenido al Club Natació Cabanyal! De lunes a viernes cerramos a las 22:30, aunque el acceso al agua se cierra 30 minutos antes.",
+  "respuesta_a_calificar": "Infantil II (6 a 12 años): lunes y miércoles a las 18:00, o martes y jueves a las 18:30 — 110 €"
+ },
+ {
+  "id": "i0708",
+  "negocio": "W6_n2",
+  "turnos_previos_del_cliente": [
+   "Mi hijo tiene 13 años, ¿puede venir solo a nadar por las tardes?",
+   "¿Las taquillas tienen candado o hay que traerse uno?"
+  ],
+  "cliente": "Me operaron de la rodilla hace tres semanas, ¿puedo empezar ya a nadar?",
+  "tipo": "instruccion",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "- No des consejos médicos ni sobre lesiones. Si alguien pregunta si puede nadar tras una operación, con una lesión, estando embarazada o con cualquier problema de salud, dile que lo consulte con su médico.",
+  "respuesta_ideal": "Eso no te lo puedo decir yo; lo mejor es que lo consultes con tu médico antes de empezar.",
+  "respuesta_a_calificar": "Los menores de 14 años solo pueden usar el baño libre acompañados de un adulto que también esté en la instalación."
+ },
+ {
+  "id": "i0721",
+  "negocio": "W6_n2",
+  "turnos_previos_del_cliente": [],
+  "cliente": "¿Qué horario de entrenos tiene el equipo de competición?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "06:45",
+   "18:30"
+  ],
+  "evidencia": "Entrenamientos de lunes a viernes, de 06:45 a 08:15 y de 18:30 a 20:30.",
+  "respuesta_ideal": "El equipo entrena de lunes a viernes, de 06:45 a 08:15 y de 18:30 a 20:30.",
+  "respuesta_a_calificar": "Hoy somos más de 1.400 socios y tenemos escuela de natación para todas las edades, actividades acuáticas para adultos y un equipo de competición que participa en los campeonatos autonómicos."
+ },
+ {
+  "id": "i0728",
+  "negocio": "W6_n2",
+  "turnos_previos_del_cliente": [
+   "Buenas, ¿cuánto cuesta la matrícula para hacerse socio?",
+   "¿Y cuánto se paga al mes siendo adulto?"
+  ],
+  "cliente": "Somos mi pareja, yo y dos críos de 6 y 9 años. ¿Hay algo para familias?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "89"
+  ],
+  "evidencia": "Cuota familiar (2 adultos + hijos menores de 14 años): 89 €/mes",
+  "respuesta_ideal": "Sí, la cuota familiar, para 2 adultos más los hijos menores de 14 años, cuesta 89 € al mes.",
+  "respuesta_a_calificar": "CURSILLOS (precio por trimestre para no socios): Los grupos son de 8 alumnos como máximo (4 parejas en bebés)."
+ },
+ {
+  "id": "i0745",
+  "negocio": "W6_n2",
+  "turnos_previos_del_cliente": [
+   "Buenas, ¿cuánto cuesta la matrícula para hacerse socio?",
+   "¿Y cuánto se paga al mes siendo adulto?",
+   "Somos mi pareja, yo y dos críos de 6 y 9 años. ¿Hay algo para familias?"
+  ],
+  "cliente": "La de 9 querría apuntarse a cursillo. Si somos socios, ¿cuánto pagaríamos al trimestre?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "88"
+  ],
+  "evidencia": "· Infantil II (6 a 12 años): lunes y miércoles a las 18:00, o martes y jueves a las 18:30 — 110 €",
+  "respuesta_ideal": "Le corresponde el Infantil II, que cuesta 110 € al trimestre; con el 20 % de descuento de socio serían 88 €.",
+  "respuesta_a_calificar": "CURSILLOS (precio por trimestre para no socios): Los grupos son de 8 alumnos como máximo (4 parejas en bebés)."
+ },
+ {
+  "id": "i0747",
+  "negocio": "W6_n2",
+  "turnos_previos_del_cliente": [
+   "¿Qué horario de entrenos tiene el equipo de competición?",
+   "Mi hija quiere hacer la prueba de nivel para entrar, ¿cuándo puede hacerla?",
+   "Y para darme de alta yo, ¿que tengo que traer?",
+   "si luego me quiero dar de baja, ¿hasta qué día tengo que avisar?",
+   "¿Y me devuelven la matrícula?"
+  ],
+  "cliente": "¿Se puede congelar la cuota un par de meses si me voy de Erasmus?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "- Si te preguntan algo que no aparece en la información del club, no lo supongas: di que no tienes ese dato y que pueden preguntarlo en recepción o llamando al 963 55 21 40.",
+  "respuesta_ideal": "No tengo ese dato; puedes preguntarlo en recepción o llamando al 963 55 21 40.",
+  "respuesta_a_calificar": "Las cuotas se cobran por domiciliación bancaria entre el día 1 y el 5 de cada mes. La baja se comunica por escrito, en recepción o por correo a info@cncabanyal.es, antes del día 25; si se avisa después, se cobra el mes siguiente completo."
+ },
+ {
+  "id": "i0782",
+  "negocio": "W6_n2",
+  "turnos_previos_del_cliente": [
+   "Buenas, ¿cuánto cuesta la matrícula para hacerse socio?",
+   "¿Y cuánto se paga al mes siendo adulto?",
+   "Somos mi pareja, yo y dos críos de 6 y 9 años. ¿Hay algo para familias?",
+   "La de 9 querría apuntarse a cursillo. Si somos socios, ¿cuánto pagaríamos al trimestre?",
+   "¿Y qué días serían las clases?"
+  ],
+  "cliente": "¿Hace falta llevar certificado médico para apuntarla?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "- Si te preguntan algo que no aparece en la información del club, no lo supongas: di que no tienes ese dato y que pueden preguntarlo en recepción o llamando al 963 55 21 40.",
+  "respuesta_ideal": "No tengo ese dato; puedes preguntarlo en recepción o llamando al 963 55 21 40.",
+  "respuesta_a_calificar": "Información para socios y usuarios · Temporada 2026-2027: El Club Natació Cabanyal es una entidad deportiva sin ánimo de lucro fundada en 1979 por un grupo de vecinos del barrio; Hoy somos más de 1.400 socios y tenemos escuela de natación para todas las edades, actividades acuáticas para adultos y un equipo de competición que participa en los campeonatos autonómicos."
+ },
+ {
+  "id": "i0785",
+  "negocio": "W6_n2",
+  "turnos_previos_del_cliente": [
+   "Hola! a que hora cerrais hoy? es martes",
+   "¿y el domingo?",
+   "Vale, entonces hoy si llego a las 22:15 ¿me da tiempo a nadar un rato?"
+  ],
+  "cliente": "¿Teneis sauna o baño turco para después?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "- Si te preguntan algo que no aparece en la información del club, no lo supongas: di que no tienes ese dato y que pueden preguntarlo en recepción o llamando al 963 55 21 40.",
+  "respuesta_ideal": "No tengo ese dato; puedes preguntarlo en recepción o llamando al 963 55 21 40.",
+  "respuesta_a_calificar": "Las cuotas se cobran por domiciliación bancaria entre el día 1 y el 5 de cada mes. La baja se comunica por escrito, en recepción o por correo a info@cncabanyal.es, antes del día 25; si se avisa después, se cobra el mes siguiente completo."
+ }
+]

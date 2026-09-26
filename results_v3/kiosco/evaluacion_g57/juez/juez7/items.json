@@ -1,0 +1,1888 @@
+[
+ {
+  "id": "i0028",
+  "negocio": "W2_n3",
+  "turnos_previos_del_cliente": [],
+  "cliente": "puedo cancelar la reserva sin costo",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "Cancelación gratuita hasta 48 horas antes"
+  ],
+  "evidencia": "Cancelación gratuita hasta 48 horas antes de la recogida; pasado ese plazo se cobra la primera noche.",
+  "respuesta_ideal": "Sí, puede cancelar gratis hasta 48 horas antes de la recogida.",
+  "respuesta_a_calificar": "Cancelación gratuita hasta 48 horas antes de la recogida; pasado ese plazo se cobra la primera noche."
+ },
+ {
+  "id": "i0043",
+  "negocio": "W2_n3",
+  "turnos_previos_del_cliente": [
+   "cuanto es la fianza para un SUV",
+   "aceptan tarjeta de debito para la fianza"
+  ],
+  "cliente": "puedo pagar la fianza en efectivo",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo esa información sobre pagar la fianza en efectivo; le recomiendo consultarlo con reservas.",
+  "respuesta_a_calificar": "Fianza: Se retiene con tarjeta de crédito (no se acepta débito): 300 € para económico y compacto, 500 € para SUV y furgoneta."
+ },
+ {
+  "id": "i0048",
+  "negocio": "W2_n3",
+  "turnos_previos_del_cliente": [
+   "hasta que hora atiende la oficina del centro los sabados"
+  ],
+  "cliente": "si alquilo un compacto con GPS y silla infantil por un dia cuanto seria en total",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "32 €",
+   "4 €/día",
+   "5 €/día"
+  ],
+  "evidencia": "| Compacto | Seat Ibiza o similar | 32 € | ... Navegador GPS: 4 €/día ... Silla infantil: 5 €/día",
+  "respuesta_ideal": "En total serían 41 € por día: 32 € del compacto, 4 € del GPS y 5 € de la silla infantil.",
+  "respuesta_a_calificar": "Reconozco un inicio condicional, pero no tiene una única estructura «si … entonces …»."
+ },
+ {
+  "id": "i0064",
+  "negocio": "W2_n3",
+  "turnos_previos_del_cliente": [
+   "puedo cancelar la reserva sin costo",
+   "tuve un choque con el auto, que hago"
+  ],
+  "cliente": "el seguro cubre todo sin franquicia?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "900 €",
+   "12 €/día"
+  ],
+  "evidencia": "la franquicia estándar del seguro a todo riesgo es de 900 € ... Reducción de franquicia a 0 €: 12 €/día adicionales",
+  "respuesta_ideal": "El seguro tiene una franquicia estándar de 900 €, aunque se puede reducir a 0 € pagando 12 € adicionales por día.",
+  "respuesta_a_calificar": "Reducción de franquicia a 0 €: 12 €/día adicionales (la franquicia estándar del seguro a todo riesgo es de 900 €)"
+ },
+ {
+  "id": "i0083",
+  "negocio": "W2_n3",
+  "turnos_previos_del_cliente": [
+   "puedo cancelar la reserva sin costo",
+   "tuve un choque con el auto, que hago",
+   "el seguro cubre todo sin franquicia?",
+   "cuanto cuesta el GPS"
+  ],
+  "cliente": "tienen coches automaticos disponibles?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo información sobre si hay coches automáticos disponibles; se lo puede confirmar reservas.",
+  "respuesta_a_calificar": "¿Qué hago si tengo un accidente?: Llame de inmediato al teléfono de emergencias 951 99 88 77, disponible las 24 horas, y no mueva el vehículo si hay heridos."
+ },
+ {
+  "id": "i0089",
+  "negocio": "W2_n3",
+  "turnos_previos_del_cliente": [
+   "Buenas, quería consultar algo",
+   "cuanto cuesta alquilar un coche economico por dia",
+   "y el compacto?"
+  ],
+  "cliente": "si alquilo el economico por una semana entera cuanto pagaria con el descuento",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "25 €",
+   "10%"
+  ],
+  "evidencia": "| Económico | Fiat Panda o similar | 25 € | ... Alquilando una semana completa (7 días) se aplica un 10% de descuento sobre el total.",
+  "respuesta_ideal": "Serían 175 € por los 7 días, y con el 10% de descuento por semana completa quedaría en 157,50 €.",
+  "respuesta_a_calificar": "Reconozco un inicio condicional, pero no tiene una única estructura «si … entonces …»."
+ },
+ {
+  "id": "i0125",
+  "negocio": "W2_n3",
+  "turnos_previos_del_cliente": [
+   "puedo cancelar la reserva sin costo",
+   "tuve un choque con el auto, que hago",
+   "el seguro cubre todo sin franquicia?"
+  ],
+  "cliente": "cuanto cuesta el GPS",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "4 €/día"
+  ],
+  "evidencia": "Navegador GPS: 4 €/día",
+  "respuesta_ideal": "El GPS cuesta 4 € por día.",
+  "respuesta_a_calificar": "Navegador GPS: 4 €/día"
+ },
+ {
+  "id": "i0127",
+  "negocio": "W2_n3",
+  "turnos_previos_del_cliente": [
+   "Buenas, quería consultar algo",
+   "cuanto cuesta alquilar un coche economico por dia"
+  ],
+  "cliente": "y el compacto?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "32 €"
+  ],
+  "evidencia": "| Compacto | Seat Ibiza o similar | 32 € |",
+  "respuesta_ideal": "El compacto cuesta 32 € por día.",
+  "respuesta_a_calificar": "No, me contaste lo contrario."
+ },
+ {
+  "id": "i0180",
+  "negocio": "W2_n3",
+  "turnos_previos_del_cliente": [
+   "hasta que hora atiende la oficina del centro los sabados",
+   "si alquilo un compacto con GPS y silla infantil por un dia cuanto seria en total"
+  ],
+  "cliente": "puedo devolver el coche en Madrid?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo información de devoluciones en Madrid; solo sé que se puede en Sevilla o Granada.",
+  "respuesta_a_calificar": "Sí, aceptamos devolución en Sevilla o Granada con un recargo de 60 €."
+ },
+ {
+  "id": "i0188",
+  "negocio": "W2_n3",
+  "turnos_previos_del_cliente": [
+   "cuanto es la fianza para un SUV",
+   "aceptan tarjeta de debito para la fianza",
+   "puedo pagar la fianza en efectivo"
+  ],
+  "cliente": "y para el economico cuanto es la fianza",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "300 €"
+  ],
+  "evidencia": "300 € para económico y compacto",
+  "respuesta_ideal": "Para el económico la fianza es de 300 €.",
+  "respuesta_a_calificar": "Registré el ejemplo y sigo comparando qué roles son realmente necesarios."
+ },
+ {
+  "id": "i0202",
+  "negocio": "W2_n3",
+  "turnos_previos_del_cliente": [
+   "Buenas, quería consultar algo",
+   "cuanto cuesta alquilar un coche economico por dia"
+  ],
+  "cliente": "y el compacto?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "32 €"
+  ],
+  "evidencia": "| Compacto | Seat Ibiza o similar | 32 € |",
+  "respuesta_ideal": "El compacto cuesta 32 € por día.",
+  "respuesta_a_calificar": "Se retiene con tarjeta de crédito (no se acepta débito): 300 € para económico y compacto, 500 € para SUV y furgoneta."
+ },
+ {
+  "id": "i0212",
+  "negocio": "W2_n3",
+  "turnos_previos_del_cliente": [
+   "Buenas, quería consultar algo",
+   "cuanto cuesta alquilar un coche economico por dia",
+   "y el compacto?"
+  ],
+  "cliente": "si alquilo el economico por una semana entera cuanto pagaria con el descuento",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "25 €",
+   "10%"
+  ],
+  "evidencia": "| Económico | Fiat Panda o similar | 25 € | ... Alquilando una semana completa (7 días) se aplica un 10% de descuento sobre el total.",
+  "respuesta_ideal": "Serían 175 € por los 7 días, y con el 10% de descuento por semana completa quedaría en 157,50 €.",
+  "respuesta_a_calificar": "Nuestra flota (precio por día): Alquilando una semana completa (7 días) se aplica un 10% de descuento sobre el total."
+ },
+ {
+  "id": "i0245",
+  "negocio": "W2_n3",
+  "turnos_previos_del_cliente": [
+   "puedo cancelar la reserva sin costo"
+  ],
+  "cliente": "tuve un choque con el auto, que hago",
+  "tipo": "instruccion",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "Ante un accidente o una emergencia con el vehículo, indica de inmediato el teléfono de emergencias 951 99 88 77 y recuerda no mover el vehículo si hay heridos; no des ningún otro consejo.",
+  "respuesta_ideal": "Llame de inmediato al teléfono de emergencias 951 99 88 77 y no mueva el vehículo si hay heridos.",
+  "respuesta_a_calificar": "Registré la afirmación como evidencia lingüística cruda; todavía no hay 3 apoyos independientes para inducir una relación."
+ },
+ {
+  "id": "i0253",
+  "negocio": "W2_n3",
+  "turnos_previos_del_cliente": [
+   "puedo cancelar la reserva sin costo"
+  ],
+  "cliente": "tuve un choque con el auto, que hago",
+  "tipo": "instruccion",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "Ante un accidente o una emergencia con el vehículo, indica de inmediato el teléfono de emergencias 951 99 88 77 y recuerda no mover el vehículo si hay heridos; no des ningún otro consejo.",
+  "respuesta_ideal": "Llame de inmediato al teléfono de emergencias 951 99 88 77 y no mueva el vehículo si hay heridos.",
+  "respuesta_a_calificar": "¿Qué hago si tengo un accidente?: Llame de inmediato al teléfono de emergencias 951 99 88 77, disponible las 24 horas, y no mueva el vehículo si hay heridos."
+ },
+ {
+  "id": "i0261",
+  "negocio": "W2_n3",
+  "turnos_previos_del_cliente": [
+   "hasta que hora atiende la oficina del centro los sabados",
+   "si alquilo un compacto con GPS y silla infantil por un dia cuanto seria en total",
+   "puedo devolver el coche en Madrid?"
+  ],
+  "cliente": "puedo devolver el coche en Granada?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "Sí, aceptamos devolución en Sevilla o Granada con un recargo de 60 €"
+  ],
+  "evidencia": "Sí, aceptamos devolución en Sevilla o Granada con un recargo de 60 €.",
+  "respuesta_ideal": "Sí, puede devolverlo en Granada con un recargo de 60 €.",
+  "respuesta_a_calificar": "¿Puedo devolver el coche en otra ciudad?: Sí, aceptamos devolución en Sevilla o Granada con un recargo de 60 €."
+ },
+ {
+  "id": "i0264",
+  "negocio": "W2_n3",
+  "turnos_previos_del_cliente": [],
+  "cliente": "puedo cancelar la reserva sin costo",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "Cancelación gratuita hasta 48 horas antes"
+  ],
+  "evidencia": "Cancelación gratuita hasta 48 horas antes de la recogida; pasado ese plazo se cobra la primera noche.",
+  "respuesta_ideal": "Sí, puede cancelar gratis hasta 48 horas antes de la recogida.",
+  "respuesta_a_calificar": "Registré la afirmación como evidencia lingüística cruda; todavía no hay 3 apoyos independientes para inducir una relación."
+ },
+ {
+  "id": "i0273",
+  "negocio": "W2_n3",
+  "turnos_previos_del_cliente": [
+   "hasta que hora atiende la oficina del centro los sabados"
+  ],
+  "cliente": "si alquilo un compacto con GPS y silla infantil por un dia cuanto seria en total",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "32 €",
+   "4 €/día",
+   "5 €/día"
+  ],
+  "evidencia": "| Compacto | Seat Ibiza o similar | 32 € | ... Navegador GPS: 4 €/día ... Silla infantil: 5 €/día",
+  "respuesta_ideal": "En total serían 41 € por día: 32 € del compacto, 4 € del GPS y 5 € de la silla infantil.",
+  "respuesta_a_calificar": "Silla infantil: 5 €/día"
+ },
+ {
+  "id": "i0298",
+  "negocio": "W2_n3",
+  "turnos_previos_del_cliente": [
+   "cuanto es la fianza para un SUV",
+   "aceptan tarjeta de debito para la fianza"
+  ],
+  "cliente": "puedo pagar la fianza en efectivo",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo esa información sobre pagar la fianza en efectivo; le recomiendo consultarlo con reservas.",
+  "respuesta_a_calificar": "Registré la afirmación como evidencia lingüística cruda; todavía no hay 3 apoyos independientes para inducir una relación."
+ },
+ {
+  "id": "i0352",
+  "negocio": "W2_n3",
+  "turnos_previos_del_cliente": [],
+  "cliente": "donde puedo recoger el auto",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "Aeropuerto de Málaga-Costa del Sol",
+   "Calle Especería, 8"
+  ],
+  "evidencia": "Dos puntos de recogida: el Aeropuerto de Málaga-Costa del Sol (Terminal 3) y nuestra oficina en el centro, Calle Especería, 8.",
+  "respuesta_ideal": "Puede recoger el coche en el Aeropuerto de Málaga-Costa del Sol o en nuestra oficina del centro, en Calle Especería, 8.",
+  "respuesta_a_calificar": "Sí, aceptamos devolución en Sevilla o Granada con un recargo de 60 €."
+ },
+ {
+  "id": "i0384",
+  "negocio": "W2_n3",
+  "turnos_previos_del_cliente": [
+   "cuanto es la fianza para un SUV"
+  ],
+  "cliente": "aceptan tarjeta de debito para la fianza",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "no se acepta débito"
+  ],
+  "evidencia": "Se retiene con tarjeta de crédito (no se acepta débito)",
+  "respuesta_ideal": "No, la fianza solo se retiene con tarjeta de crédito, no se acepta débito.",
+  "respuesta_a_calificar": "Fianza: Se retiene con tarjeta de crédito (no se acepta débito): 300 € para económico y compacto, 500 € para SUV y furgoneta."
+ },
+ {
+  "id": "i0399",
+  "negocio": "W2_n3",
+  "turnos_previos_del_cliente": [
+   "donde puedo recoger el auto"
+  ],
+  "cliente": "quiero reservar el SUV para el 10 de octubre, me lo confirman ya?",
+  "tipo": "instruccion",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "No confirmes reservas de vehículos por este medio; para reservar, indica que deben llamar al +34 951 22 33 44, escribir al WhatsApp +34 611 222 333 o hacerlo en la web.",
+  "respuesta_ideal": "No puedo confirmar reservas por aquí; para reservar el SUV puede llamarnos al +34 951 22 33 44 o escribir al WhatsApp +34 611 222 333.",
+  "respuesta_a_calificar": "Se retiene con tarjeta de crédito (no se acepta débito): 300 € para económico y compacto, 500 € para SUV y furgoneta."
+ },
+ {
+  "id": "i0457",
+  "negocio": "W2_n3",
+  "turnos_previos_del_cliente": [
+   "Buenas, quería consultar algo"
+  ],
+  "cliente": "cuanto cuesta alquilar un coche economico por dia",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "25 €"
+  ],
+  "evidencia": "| Económico | Fiat Panda o similar | 25 € |",
+  "respuesta_ideal": "El coche económico cuesta 25 € por día.",
+  "respuesta_a_calificar": "Nuestra flota (precio por día): Alquilando una semana completa (7 días) se aplica un 10% de descuento sobre el total."
+ },
+ {
+  "id": "i0475",
+  "negocio": "W2_n3",
+  "turnos_previos_del_cliente": [
+   "donde puedo recoger el auto",
+   "quiero reservar el SUV para el 10 de octubre, me lo confirman ya?",
+   "tienen motos en alquiler?"
+  ],
+  "cliente": "cuanto cuesta la silla infantil",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "5 €/día"
+  ],
+  "evidencia": "Silla infantil: 5 €/día",
+  "respuesta_ideal": "La silla infantil cuesta 5 € por día.",
+  "respuesta_a_calificar": "día"
+ },
+ {
+  "id": "i0513",
+  "negocio": "W2_n3",
+  "turnos_previos_del_cliente": [],
+  "cliente": "donde puedo recoger el auto",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "Aeropuerto de Málaga-Costa del Sol",
+   "Calle Especería, 8"
+  ],
+  "evidencia": "Dos puntos de recogida: el Aeropuerto de Málaga-Costa del Sol (Terminal 3) y nuestra oficina en el centro, Calle Especería, 8.",
+  "respuesta_ideal": "Puede recoger el coche en el Aeropuerto de Málaga-Costa del Sol o en nuestra oficina del centro, en Calle Especería, 8.",
+  "respuesta_a_calificar": "Sol"
+ },
+ {
+  "id": "i0529",
+  "negocio": "W2_n3",
+  "turnos_previos_del_cliente": [
+   "cuanto es la fianza para un SUV",
+   "aceptan tarjeta de debito para la fianza",
+   "puedo pagar la fianza en efectivo"
+  ],
+  "cliente": "y para el economico cuanto es la fianza",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "300 €"
+  ],
+  "evidencia": "300 € para económico y compacto",
+  "respuesta_ideal": "Para el económico la fianza es de 300 €.",
+  "respuesta_a_calificar": "Fianza: Se retiene con tarjeta de crédito (no se acepta débito): 300 € para económico y compacto, 500 € para SUV y furgoneta."
+ },
+ {
+  "id": "i0536",
+  "negocio": "W2_n3",
+  "turnos_previos_del_cliente": [
+   "donde puedo recoger el auto",
+   "quiero reservar el SUV para el 10 de octubre, me lo confirman ya?"
+  ],
+  "cliente": "tienen motos en alquiler?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No, no tengo información de que alquilemos motos, solo coches y una furgoneta.",
+  "respuesta_a_calificar": "Alquiler de coches en Málaga desde 2010."
+ },
+ {
+  "id": "i0545",
+  "negocio": "W2_n3",
+  "turnos_previos_del_cliente": [
+   "Buenas, quería consultar algo"
+  ],
+  "cliente": "cuanto cuesta alquilar un coche economico por dia",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "25 €"
+  ],
+  "evidencia": "| Económico | Fiat Panda o similar | 25 € |",
+  "respuesta_ideal": "El coche económico cuesta 25 € por día.",
+  "respuesta_a_calificar": "2010"
+ },
+ {
+  "id": "i0555",
+  "negocio": "W2_n3",
+  "turnos_previos_del_cliente": [],
+  "cliente": "hasta que hora atiende la oficina del centro los sabados",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "09:00–14:00"
+  ],
+  "evidencia": "Sáb 09:00–14:00",
+  "respuesta_ideal": "Los sábados la oficina del centro atiende de 09:00 a 14:00.",
+  "respuesta_a_calificar": "Oficina centro: L-V 09:00–19:00 · Sáb 09:00–14:00 · Dom cerrado"
+ },
+ {
+  "id": "i0565",
+  "negocio": "W2_n3",
+  "turnos_previos_del_cliente": [
+   "donde puedo recoger el auto",
+   "quiero reservar el SUV para el 10 de octubre, me lo confirman ya?",
+   "tienen motos en alquiler?"
+  ],
+  "cliente": "cuanto cuesta la silla infantil",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "5 €/día"
+  ],
+  "evidencia": "Silla infantil: 5 €/día",
+  "respuesta_ideal": "La silla infantil cuesta 5 € por día.",
+  "respuesta_a_calificar": "Silla infantil: 5 €/día"
+ },
+ {
+  "id": "i0585",
+  "negocio": "W2_n3",
+  "turnos_previos_del_cliente": [],
+  "cliente": "hasta que hora atiende la oficina del centro los sabados",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "09:00–14:00"
+  ],
+  "evidencia": "Sáb 09:00–14:00",
+  "respuesta_ideal": "Los sábados la oficina del centro atiende de 09:00 a 14:00.",
+  "respuesta_a_calificar": "Registré la afirmación como evidencia lingüística cruda; todavía no hay 3 apoyos independientes para inducir una relación."
+ },
+ {
+  "id": "i0624",
+  "negocio": "W2_n3",
+  "turnos_previos_del_cliente": [
+   "Buenas, quería consultar algo",
+   "cuanto cuesta alquilar un coche economico por dia",
+   "y el compacto?",
+   "si alquilo el economico por una semana entera cuanto pagaria con el descuento"
+  ],
+  "cliente": "necesito tener 25 años para alquilar?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "Edad mínima: 21 años"
+  ],
+  "evidencia": "Edad mínima: 21 años, con carné de conducir con al menos 1 año de antigüedad.",
+  "respuesta_ideal": "No, la edad mínima es 21 años, aunque de 21 a 24 años se aplica un recargo de 15 € por día.",
+  "respuesta_a_calificar": "Las multas de tráfico durante el alquiler corren por cuenta del cliente, más 25 € de gestión."
+ },
+ {
+  "id": "i0630",
+  "negocio": "W2_n3",
+  "turnos_previos_del_cliente": [
+   "puedo cancelar la reserva sin costo",
+   "tuve un choque con el auto, que hago",
+   "el seguro cubre todo sin franquicia?"
+  ],
+  "cliente": "cuanto cuesta el GPS",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "4 €/día"
+  ],
+  "evidencia": "Navegador GPS: 4 €/día",
+  "respuesta_ideal": "El GPS cuesta 4 € por día.",
+  "respuesta_a_calificar": "GPS"
+ },
+ {
+  "id": "i0655",
+  "negocio": "W2_n3",
+  "turnos_previos_del_cliente": [],
+  "cliente": "cuanto es la fianza para un SUV",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "500 €"
+  ],
+  "evidencia": "500 € para SUV y furgoneta.",
+  "respuesta_ideal": "La fianza para el SUV es de 500 €.",
+  "respuesta_a_calificar": "Fianza: Se retiene con tarjeta de crédito (no se acepta débito): 300 € para económico y compacto, 500 € para SUV y furgoneta."
+ },
+ {
+  "id": "i0749",
+  "negocio": "W2_n3",
+  "turnos_previos_del_cliente": [],
+  "cliente": "cuanto es la fianza para un SUV",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "500 €"
+  ],
+  "evidencia": "500 € para SUV y furgoneta.",
+  "respuesta_ideal": "La fianza para el SUV es de 500 €.",
+  "respuesta_a_calificar": "500"
+ },
+ {
+  "id": "i0807",
+  "negocio": "W2_n3",
+  "turnos_previos_del_cliente": [
+   "cuanto es la fianza para un SUV"
+  ],
+  "cliente": "aceptan tarjeta de debito para la fianza",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "no se acepta débito"
+  ],
+  "evidencia": "Se retiene con tarjeta de crédito (no se acepta débito)",
+  "respuesta_ideal": "No, la fianza solo se retiene con tarjeta de crédito, no se acepta débito.",
+  "respuesta_a_calificar": "Registré la afirmación como evidencia lingüística cruda; todavía no hay 3 apoyos independientes para inducir una relación."
+ },
+ {
+  "id": "i0001",
+  "negocio": "W4_n3",
+  "turnos_previos_del_cliente": [
+   "hola, cuánto cuesta la entrada?"
+  ],
+  "cliente": "y si voy un miércoles?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "€10"
+  ],
+  "evidencia": "Día del espectador: los miércoles todas las entradas cuestan €10.",
+  "respuesta_ideal": "Los miércoles es el día del espectador y todas las entradas cuestan €10.",
+  "respuesta_a_calificar": "Cambios y devoluciones: Las entradas no se devuelven salvo cancelación o cambio de fecha por parte del teatro; en ese caso se devuelve el importe íntegro (incluidos los gastos de gestión) en un plazo de 15 días por el mismo medio de pago."
+ },
+ {
+  "id": "i0034",
+  "negocio": "W4_n3",
+  "turnos_previos_del_cliente": [
+   "hola, cuánto cuesta la entrada?",
+   "y si voy un miércoles?",
+   "compro por internet o en taquilla? hay diferencia de precio?",
+   "somos 4 amigos, cuanto nos sale en total si vamos el miercoles?",
+   "quedan entradas para este sabado?"
+  ],
+  "cliente": "vale, ¿y a qué hora empieza?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "20:30"
+  ],
+  "evidencia": "Las funciones de martes a sábado empiezan a las 20:30 h; los domingos hay función a las 18:00 h (además de la familiar).",
+  "respuesta_ideal": "Las funciones de martes a sábado empiezan a las 20:30 h; las puertas se abren 20 minutos antes.",
+  "respuesta_a_calificar": "Las funciones de martes a sábado empiezan a las 20:30 h; los domingos hay función a las 18:00 h (además de la familiar)."
+ },
+ {
+  "id": "i0065",
+  "negocio": "W4_n3",
+  "turnos_previos_del_cliente": [
+   "Si llego 10 minutos tarde me dejáis entrar?",
+   "y si no puedo entrar me devolvéis el dinero?",
+   "puedo entrar en la sala con la caña del bar?"
+  ],
+  "cliente": "se puede pagar con bizum en la taquilla?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "efectivo y tarjeta"
+  ],
+  "evidencia": "En taquilla: efectivo y tarjeta. Online: tarjeta y Bizum.",
+  "respuesta_ideal": "No, en taquilla se paga con efectivo y tarjeta; Bizum solo está disponible en la compra online.",
+  "respuesta_a_calificar": "Online: tarjeta y Bizum."
+ },
+ {
+  "id": "i0071",
+  "negocio": "W4_n3",
+  "turnos_previos_del_cliente": [
+   "Quiero llevar a mis hijos a la obra de los domingos, cuánto pagan los niños?"
+  ],
+  "cliente": "somos dos adultos y dos niños de 5 y 8 años, cuánto pagamos en total?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "31,80"
+  ],
+  "evidencia": "Ciclo familiar de los domingos (11:30 h): adultos €9,90 y niños de 3 a 12 años €6.",
+  "respuesta_ideal": "Dos adultos a €9,90 y dos niños a €6 suman €31,80 en taquilla.",
+  "respuesta_a_calificar": "Ciclo familiar de los domingos (11:30 h): adultos €9,90 y niños de 3 a 12 años €6."
+ },
+ {
+  "id": "i0078",
+  "negocio": "W4_n3",
+  "turnos_previos_del_cliente": [],
+  "cliente": "hola, dónde está exactamente el teatro? voy en metro",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "Carrer de la Cera, 14",
+   "Sant Antoni"
+  ],
+  "evidencia": "Teatro La Farola es una sala de 180 butacas situada en el Carrer de la Cera, 14, 08001 Barcelona (barrio del Raval), a cinco minutos andando de la parada de metro Sant Antoni (L2) y a diez de Liceu (L3).",
+  "respuesta_ideal": "Bienvenido/a al Teatro La Farola. Estamos en el Carrer de la Cera, 14, en el Raval, a cinco minutos andando del metro Sant Antoni (L2) y a diez de Liceu (L3).",
+  "respuesta_a_calificar": "Procesé 2 segmentos del documento en orden."
+ },
+ {
+  "id": "i0093",
+  "negocio": "W4_n3",
+  "turnos_previos_del_cliente": [],
+  "cliente": "hola, dónde está exactamente el teatro? voy en metro",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "Carrer de la Cera, 14",
+   "Sant Antoni"
+  ],
+  "evidencia": "Teatro La Farola es una sala de 180 butacas situada en el Carrer de la Cera, 14, 08001 Barcelona (barrio del Raval), a cinco minutos andando de la parada de metro Sant Antoni (L2) y a diez de Liceu (L3).",
+  "respuesta_ideal": "Bienvenido/a al Teatro La Farola. Estamos en el Carrer de la Cera, 14, en el Raval, a cinco minutos andando del metro Sant Antoni (L2) y a diez de Liceu (L3).",
+  "respuesta_a_calificar": "Teatro La Farola es una sala de 180 butacas situada en el Carrer de la Cera, 14, 08001 Barcelona (barrio del Raval), a cinco minutos andando de la parada de metro Sant Antoni (L2) y a diez de Liceu (L3)."
+ },
+ {
+  "id": "i0105",
+  "negocio": "W4_n3",
+  "turnos_previos_del_cliente": [
+   "hola, cuánto cuesta la entrada?",
+   "y si voy un miércoles?",
+   "compro por internet o en taquilla? hay diferencia de precio?",
+   "somos 4 amigos, cuanto nos sale en total si vamos el miercoles?",
+   "quedan entradas para este sabado?"
+  ],
+  "cliente": "vale, ¿y a qué hora empieza?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "20:30"
+  ],
+  "evidencia": "Las funciones de martes a sábado empiezan a las 20:30 h; los domingos hay función a las 18:00 h (además de la familiar).",
+  "respuesta_ideal": "Las funciones de martes a sábado empiezan a las 20:30 h; las puertas se abren 20 minutos antes.",
+  "respuesta_a_calificar": "el vestíbulo"
+ },
+ {
+  "id": "i0139",
+  "negocio": "W4_n3",
+  "turnos_previos_del_cliente": [
+   "Compré dos entradas para el viernes que viene pero no puedo ir, me devolvéis el dinero?",
+   "y cómo hago el cambio?",
+   "puedo dárselas a un amigo para que vaya él?"
+  ],
+  "cliente": "la de tres tristes tigres es en catalán?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "catalán",
+   "sobretítulos",
+   "viernes"
+  ],
+  "evidencia": "| 16 oct – 8 nov | «Tres tristes tigres» | comedia | 80 min | catalán, con sobretítulos en castellano los viernes |",
+  "respuesta_ideal": "Sí, «Tres tristes tigres» es en catalán, con sobretítulos en castellano los viernes.",
+  "respuesta_a_calificar": "Programación de otoño 2026: Fechas: 16 oct – 8 nov; Espectáculo: «Tres tristes tigres»; Género: comedia; Duración: 80 min; Idioma: catalán, con sobretítulos en castellano los viernes"
+ },
+ {
+  "id": "i0141",
+  "negocio": "W4_n3",
+  "turnos_previos_del_cliente": [],
+  "cliente": "hola, cuánto cuesta la entrada?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "€18"
+  ],
+  "evidencia": "Precio general: €18",
+  "respuesta_ideal": "Bienvenido/a al Teatro La Farola. La entrada general cuesta €18; hay precio reducido de €13 para menores de 30, mayores de 65 y otros colectivos con documento.",
+  "respuesta_a_calificar": "10"
+ },
+ {
+  "id": "i0155",
+  "negocio": "W4_n3",
+  "turnos_previos_del_cliente": [
+   "Quiero llevar a mis hijos a la obra de los domingos, cuánto pagan los niños?",
+   "somos dos adultos y dos niños de 5 y 8 años, cuánto pagamos en total?"
+  ],
+  "cliente": "y la pequeña, que tiene 2 años, paga?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "no pagan"
+  ],
+  "evidencia": "Los menores de 3 años no pagan, pero no ocupan butaca.",
+  "respuesta_ideal": "No, los menores de 3 años no pagan, pero no ocupan butaca: irá en brazos.",
+  "respuesta_a_calificar": "Fechas: domingos de octubre y noviembre, 11:30 h; Espectáculo: «El pez que quería volar»; Género: familiar (a partir de 3 años); Duración: 50 min; Idioma: castellano"
+ },
+ {
+  "id": "i0160",
+  "negocio": "W4_n3",
+  "turnos_previos_del_cliente": [
+   "hola, dónde está exactamente el teatro? voy en metro",
+   "hay parking cerca?",
+   "tenéis descuento para personas con discapacidad?"
+  ],
+  "cliente": "a qué hora es la función del domingo por la tarde?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "18:00"
+  ],
+  "evidencia": "los domingos hay función a las 18:00 h (además de la familiar)",
+  "respuesta_ideal": "Los domingos la función de tarde es a las 18:00 h.",
+  "respuesta_a_calificar": "En el vestíbulo hay un bar que abre una hora antes de cada función y durante el descanso."
+ },
+ {
+  "id": "i0164",
+  "negocio": "W4_n3",
+  "turnos_previos_del_cliente": [
+   "Quiero llevar a mis hijos a la obra de los domingos, cuánto pagan los niños?",
+   "somos dos adultos y dos niños de 5 y 8 años, cuánto pagamos en total?",
+   "y la pequeña, que tiene 2 años, paga?"
+  ],
+  "cliente": "hay alzadores o cojines para que los niños vean bien?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo ese dato; escribe a entradas@teatrolafarola.cat y te lo confirman.",
+  "respuesta_a_calificar": "Ciclo familiar de los domingos (11:30 h): adultos €9,90 y niños de 3 a 12 años €6."
+ },
+ {
+  "id": "i0226",
+  "negocio": "W4_n3",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Si llego 10 minutos tarde me dejáis entrar?",
+  "tipo": "instruccion",
+  "accion_esperada": "responder",
+  "claves": [
+   "descanso"
+  ],
+  "evidencia": "1. Las puertas se abren 20 minutos antes de la función. Una vez empezada, no se permite la entrada hasta el descanso, si lo hay; si no lo hay, no se podrá entrar. En ese caso no se devuelve el importe.\nSi un cliente llega tarde o pregunta si puede entrar una vez empezada la función, explícale la norma 1 y no hagas excepciones.",
+  "respuesta_ideal": "Una vez empezada la función no se permite la entrada hasta el descanso, si lo hay; si la obra no tiene descanso, no se puede entrar. Te recomiendo llegar antes: las puertas se abren 20 minutos antes.",
+  "respuesta_a_calificar": "Reconozco un inicio condicional, pero no tiene una única estructura «si … entonces …»."
+ },
+ {
+  "id": "i0265",
+  "negocio": "W4_n3",
+  "turnos_previos_del_cliente": [
+   "Quiero llevar a mis hijos a la obra de los domingos, cuánto pagan los niños?",
+   "somos dos adultos y dos niños de 5 y 8 años, cuánto pagamos en total?",
+   "y la pequeña, que tiene 2 años, paga?",
+   "hay alzadores o cojines para que los niños vean bien?"
+  ],
+  "cliente": "tengo el abono de 5 funciones, me sirve para la del domingo de los niños?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "excepto los estrenos y el ciclo familiar"
+  ],
+  "evidencia": "Sirve para cualquier función excepto los estrenos y el ciclo familiar.",
+  "respuesta_ideal": "No, el abono sirve para cualquier función excepto los estrenos y el ciclo familiar, así que para la de los domingos hay que comprar entrada.",
+  "respuesta_a_calificar": "Abono 5 funciones: €65, válido durante la temporada (de septiembre a junio), nominal e intransferible."
+ },
+ {
+  "id": "i0294",
+  "negocio": "W4_n3",
+  "turnos_previos_del_cliente": [
+   "hola, dónde está exactamente el teatro? voy en metro",
+   "hay parking cerca?",
+   "tenéis descuento para personas con discapacidad?"
+  ],
+  "cliente": "a qué hora es la función del domingo por la tarde?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "18:00"
+  ],
+  "evidencia": "los domingos hay función a las 18:00 h (además de la familiar)",
+  "respuesta_ideal": "Los domingos la función de tarde es a las 18:00 h.",
+  "respuesta_a_calificar": "durante el descanso"
+ },
+ {
+  "id": "i0307",
+  "negocio": "W4_n3",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Compré dos entradas para el viernes que viene pero no puedo ir, me devolvéis el dinero?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "no se devuelven",
+   "48 horas"
+  ],
+  "evidencia": "Las entradas no se devuelven salvo cancelación o cambio de fecha por parte del teatro; en ese caso se devuelve el importe íntegro (incluidos los gastos de gestión) en un plazo de 15 días por el mismo medio de pago. Se admite un cambio de fecha para el mismo espectáculo, sin coste, hasta 48 horas antes de la función, escribiendo a entradas@teatrolafarola.cat; después de ese plazo no se hacen cambios.",
+  "respuesta_ideal": "Las entradas no se devuelven salvo que el teatro cancele, pero puedes cambiarlas de fecha para el mismo espectáculo sin coste hasta 48 horas antes de la función.",
+  "respuesta_a_calificar": "Las puertas se abren 20 minutos antes de la función. Una vez empezada, no se permite la entrada hasta el descanso, si lo hay; si no lo hay, no se podrá entrar. En ese caso no se devuelve el importe."
+ },
+ {
+  "id": "i0319",
+  "negocio": "W4_n3",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Quiero llevar a mis hijos a la obra de los domingos, cuánto pagan los niños?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "€6"
+  ],
+  "evidencia": "Ciclo familiar de los domingos (11:30 h): adultos €9,90 y niños de 3 a 12 años €6. Los menores de 3 años no pagan, pero no ocupan butaca.",
+  "respuesta_ideal": "Bienvenido/a al Teatro La Farola. En el ciclo familiar de los domingos los niños de 3 a 12 años pagan €6 y los adultos €9,90.",
+  "respuesta_a_calificar": "Ciclo familiar de los domingos (11:30 h): adultos €9,90 y niños de 3 a 12 años €6."
+ },
+ {
+  "id": "i0361",
+  "negocio": "W4_n3",
+  "turnos_previos_del_cliente": [
+   "Quiero llevar a mis hijos a la obra de los domingos, cuánto pagan los niños?"
+  ],
+  "cliente": "somos dos adultos y dos niños de 5 y 8 años, cuánto pagamos en total?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "31,80"
+  ],
+  "evidencia": "Ciclo familiar de los domingos (11:30 h): adultos €9,90 y niños de 3 a 12 años €6.",
+  "respuesta_ideal": "Dos adultos a €9,90 y dos niños a €6 suman €31,80 en taquilla.",
+  "respuesta_a_calificar": "11"
+ },
+ {
+  "id": "i0378",
+  "negocio": "W4_n3",
+  "turnos_previos_del_cliente": [
+   "hola, dónde está exactamente el teatro? voy en metro"
+  ],
+  "cliente": "hay parking cerca?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "Mercat de Sant Antoni"
+  ],
+  "evidencia": "¿Hay parking? No tenemos parking propio. El más cercano es el del Mercat de Sant Antoni.",
+  "respuesta_ideal": "No tenemos parking propio; el más cercano es el del Mercat de Sant Antoni.",
+  "respuesta_a_calificar": "¿Hay parking?"
+ },
+ {
+  "id": "i0401",
+  "negocio": "W4_n3",
+  "turnos_previos_del_cliente": [
+   "Si llego 10 minutos tarde me dejáis entrar?",
+   "y si no puedo entrar me devolvéis el dinero?"
+  ],
+  "cliente": "puedo entrar en la sala con la caña del bar?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "salvo agua"
+  ],
+  "evidencia": "2. No se puede comer ni beber dentro de la sala, salvo agua.",
+  "respuesta_ideal": "No, dentro de la sala no se puede comer ni beber, salvo agua; la caña te la tomas en el vestíbulo.",
+  "respuesta_a_calificar": "Normas de la sala: Las puertas se abren 20 minutos antes de la función. Una vez empezada, no se permite la entrada hasta el descanso, si lo hay; si no lo hay, no se podrá entrar. En ese caso no se devuelve el importe."
+ },
+ {
+  "id": "i0505",
+  "negocio": "W4_n3",
+  "turnos_previos_del_cliente": [
+   "hola, dónde está exactamente el teatro? voy en metro",
+   "hay parking cerca?"
+  ],
+  "cliente": "tenéis descuento para personas con discapacidad?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo un descuento registrado para personas con discapacidad; los reducidos publicados son para menores de 30, mayores de 65, personas en paro, familias numerosas y carnet de bibliotecas. Pregunta en entradas@teatrolafarola.cat.",
+  "respuesta_a_calificar": "¿Hay descuento para estudiantes?"
+ },
+ {
+  "id": "i0509",
+  "negocio": "W4_n3",
+  "turnos_previos_del_cliente": [],
+  "cliente": "buenas tardes, cuánto cuesta el curso de interpretación para adultos?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "€95",
+   "€40"
+  ],
+  "evidencia": "La Escuela de la Farola ofrece un curso anual de interpretación para adultos (martes y jueves de 19:00 a 21:00 h, de octubre a mayo) por €95 al mes, con matrícula de €40",
+  "respuesta_ideal": "Bienvenido/a al Teatro La Farola. El curso anual de interpretación para adultos cuesta €95 al mes más una matrícula de €40; es martes y jueves de 19:00 a 21:00 h, de octubre a mayo.",
+  "respuesta_a_calificar": "La Escuela de la Farola ofrece un curso anual de interpretación para adultos (martes y jueves de 19:00 a 21:00 h, de octubre a mayo) por €95 al mes, con matrícula de €40, y un taller de teatro para jóvenes de 13 a 17 años los sábados de 11:00 a 13:00 h por €55 al mes. Las plazas son limitadas (16 por grupo) y se reservan por orden de inscripción en la web. Hay una clase de prueba gratuita la primera semana de octubre."
+ },
+ {
+  "id": "i0520",
+  "negocio": "W4_n3",
+  "turnos_previos_del_cliente": [
+   "Compré dos entradas para el viernes que viene pero no puedo ir, me devolvéis el dinero?",
+   "y cómo hago el cambio?"
+  ],
+  "cliente": "puedo dárselas a un amigo para que vaya él?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo información sobre ceder entradas a otra persona; consúltalo en entradas@teatrolafarola.cat.",
+  "respuesta_a_calificar": "¿Puedo ir con un bebé a una función de noche?"
+ },
+ {
+  "id": "i0548",
+  "negocio": "W4_n3",
+  "turnos_previos_del_cliente": [
+   "Compré dos entradas para el viernes que viene pero no puedo ir, me devolvéis el dinero?"
+  ],
+  "cliente": "y cómo hago el cambio?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "entradas@teatrolafarola.cat"
+  ],
+  "evidencia": "Se admite un cambio de fecha para el mismo espectáculo, sin coste, hasta 48 horas antes de la función, escribiendo a entradas@teatrolafarola.cat; después de ese plazo no se hacen cambios.",
+  "respuesta_ideal": "Escribiendo a entradas@teatrolafarola.cat antes de que falten 48 horas para la función.",
+  "respuesta_a_calificar": "Cambios y devoluciones: Se admite un cambio de fecha para el mismo espectáculo, sin coste, hasta 48 horas antes de la función, escribiendo a entradas@teatrolafarola.cat; después de ese plazo no se hacen cambios."
+ },
+ {
+  "id": "i0558",
+  "negocio": "W4_n3",
+  "turnos_previos_del_cliente": [
+   "hola, cuánto cuesta la entrada?",
+   "y si voy un miércoles?"
+  ],
+  "cliente": "compro por internet o en taquilla? hay diferencia de precio?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "€1,20"
+  ],
+  "evidencia": "La compra online tiene gastos de gestión de €1,20 por entrada; en taquilla no hay gastos.",
+  "respuesta_ideal": "Puedes hacer las dos cosas: online en www.teatrolafarola.cat hay gastos de gestión de €1,20 por entrada, y en taquilla no hay gastos.",
+  "respuesta_a_calificar": "Web y venta online: www.teatrolafarola.cat. La compra online tiene gastos de gestión de €1,20 por entrada; en taquilla no hay gastos."
+ },
+ {
+  "id": "i0561",
+  "negocio": "W4_n3",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Quiero llevar a mis hijos a la obra de los domingos, cuánto pagan los niños?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "€6"
+  ],
+  "evidencia": "Ciclo familiar de los domingos (11:30 h): adultos €9,90 y niños de 3 a 12 años €6. Los menores de 3 años no pagan, pero no ocupan butaca.",
+  "respuesta_ideal": "Bienvenido/a al Teatro La Farola. En el ciclo familiar de los domingos los niños de 3 a 12 años pagan €6 y los adultos €9,90.",
+  "respuesta_a_calificar": "11"
+ },
+ {
+  "id": "i0576",
+  "negocio": "W4_n3",
+  "turnos_previos_del_cliente": [],
+  "cliente": "hola, cuánto cuesta la entrada?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "€18"
+  ],
+  "evidencia": "Precio general: €18",
+  "respuesta_ideal": "Bienvenido/a al Teatro La Farola. La entrada general cuesta €18; hay precio reducido de €13 para menores de 30, mayores de 65 y otros colectivos con documento.",
+  "respuesta_a_calificar": "Web y venta online: www.teatrolafarola.cat. La compra online tiene gastos de gestión de €1,20 por entrada; en taquilla no hay gastos."
+ },
+ {
+  "id": "i0583",
+  "negocio": "W4_n3",
+  "turnos_previos_del_cliente": [
+   "Compré dos entradas para el viernes que viene pero no puedo ir, me devolvéis el dinero?",
+   "y cómo hago el cambio?",
+   "puedo dárselas a un amigo para que vaya él?",
+   "la de tres tristes tigres es en catalán?"
+  ],
+  "cliente": "tiene descanso esa obra?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo ese dato; sé que dura 80 minutos, pero no si tiene descanso. Puedes preguntarlo en entradas@teatrolafarola.cat.",
+  "respuesta_a_calificar": "Las puertas se abren 20 minutos antes de la función. Una vez empezada, no se permite la entrada hasta el descanso, si lo hay; si no lo hay, no se podrá entrar. En ese caso no se devuelve el importe."
+ },
+ {
+  "id": "i0591",
+  "negocio": "W4_n3",
+  "turnos_previos_del_cliente": [
+   "buenas tardes, cuánto cuesta el curso de interpretación para adultos?",
+   "mi hijo tiene 12 años, se puede apuntar al taller de jóvenes?",
+   "quién da las clases?"
+  ],
+  "cliente": "soy profe y quiero llevar a 25 alumnos del instituto a ver La casa de enfrente, cómo lo hago?",
+  "tipo": "instruccion",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "Grupos de 10 o más personas y escuelas: pídeles que escriban a grupos@teatrolafarola.cat, donde los atiende Marta Puig. No des precios de grupo distintos de los publicados.",
+  "respuesta_ideal": "Los grupos y escuelas los gestiona Marta Puig: escribe a grupos@teatrolafarola.cat con al menos 7 días de antelación; el precio de grupo publicado es €12 por persona.",
+  "respuesta_a_calificar": "Fechas: 18 sep – 11 oct; Espectáculo: «La casa de enfrente»; Género: drama; Duración: 95 min; Idioma: castellano"
+ },
+ {
+  "id": "i0615",
+  "negocio": "W4_n3",
+  "turnos_previos_del_cliente": [
+   "hola, cuánto cuesta la entrada?",
+   "y si voy un miércoles?"
+  ],
+  "cliente": "compro por internet o en taquilla? hay diferencia de precio?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "€1,20"
+  ],
+  "evidencia": "La compra online tiene gastos de gestión de €1,20 por entrada; en taquilla no hay gastos.",
+  "respuesta_ideal": "Puedes hacer las dos cosas: online en www.teatrolafarola.cat hay gastos de gestión de €1,20 por entrada, y en taquilla no hay gastos.",
+  "respuesta_a_calificar": "Procesé 2 segmentos del documento en orden."
+ },
+ {
+  "id": "i0632",
+  "negocio": "W4_n3",
+  "turnos_previos_del_cliente": [
+   "Compré dos entradas para el viernes que viene pero no puedo ir, me devolvéis el dinero?"
+  ],
+  "cliente": "y cómo hago el cambio?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "entradas@teatrolafarola.cat"
+  ],
+  "evidencia": "Se admite un cambio de fecha para el mismo espectáculo, sin coste, hasta 48 horas antes de la función, escribiendo a entradas@teatrolafarola.cat; después de ese plazo no se hacen cambios.",
+  "respuesta_ideal": "Escribiendo a entradas@teatrolafarola.cat antes de que falten 48 horas para la función.",
+  "respuesta_a_calificar": "devoluciones"
+ },
+ {
+  "id": "i0673",
+  "negocio": "W4_n3",
+  "turnos_previos_del_cliente": [
+   "Si llego 10 minutos tarde me dejáis entrar?"
+  ],
+  "cliente": "y si no puedo entrar me devolvéis el dinero?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "no se devuelve"
+  ],
+  "evidencia": "En ese caso no se devuelve el importe.",
+  "respuesta_ideal": "No, en ese caso no se devuelve el importe.",
+  "respuesta_a_calificar": "Las puertas se abren 20 minutos antes de la función. Una vez empezada, no se permite la entrada hasta el descanso, si lo hay; si no lo hay, no se podrá entrar. En ese caso no se devuelve el importe."
+ },
+ {
+  "id": "i0714",
+  "negocio": "W4_n3",
+  "turnos_previos_del_cliente": [
+   "hola, cuánto cuesta la entrada?",
+   "y si voy un miércoles?",
+   "compro por internet o en taquilla? hay diferencia de precio?"
+  ],
+  "cliente": "somos 4 amigos, cuanto nos sale en total si vamos el miercoles?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "40"
+  ],
+  "evidencia": "Día del espectador: los miércoles todas las entradas cuestan €10.",
+  "respuesta_ideal": "El miércoles cada entrada cuesta €10, así que las cuatro son €40 en taquilla (online se suman €1,20 por entrada).",
+  "respuesta_a_calificar": "Día del espectador: los miércoles todas las entradas cuestan €10."
+ },
+ {
+  "id": "i0725",
+  "negocio": "W4_n3",
+  "turnos_previos_del_cliente": [
+   "hola, cuánto cuesta la entrada?",
+   "y si voy un miércoles?",
+   "compro por internet o en taquilla? hay diferencia de precio?",
+   "somos 4 amigos, cuanto nos sale en total si vamos el miercoles?"
+  ],
+  "cliente": "quedan entradas para este sabado?",
+  "tipo": "instruccion",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "Si preguntan si quedan entradas para una función, di que no puedes consultar la disponibilidad y remite a la web o al teléfono de taquilla 93 441 78 20.",
+  "respuesta_ideal": "No puedo consultar la disponibilidad desde aquí; míralo en www.teatrolafarola.cat o llama a taquilla al 93 441 78 20 en su horario.",
+  "respuesta_a_calificar": "Taquilla: de martes a sábado de 17:00 a 21:00 h y los domingos de 10:30 a 13:00 h. Los lunes la sala está cerrada."
+ },
+ {
+  "id": "i0748",
+  "negocio": "W4_n3",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Si llego 10 minutos tarde me dejáis entrar?",
+  "tipo": "instruccion",
+  "accion_esperada": "responder",
+  "claves": [
+   "descanso"
+  ],
+  "evidencia": "1. Las puertas se abren 20 minutos antes de la función. Una vez empezada, no se permite la entrada hasta el descanso, si lo hay; si no lo hay, no se podrá entrar. En ese caso no se devuelve el importe.\nSi un cliente llega tarde o pregunta si puede entrar una vez empezada la función, explícale la norma 1 y no hagas excepciones.",
+  "respuesta_ideal": "Una vez empezada la función no se permite la entrada hasta el descanso, si lo hay; si la obra no tiene descanso, no se puede entrar. Te recomiendo llegar antes: las puertas se abren 20 minutos antes.",
+  "respuesta_a_calificar": "Las puertas se abren 20 minutos antes de la función. Una vez empezada, no se permite la entrada hasta el descanso, si lo hay; si no lo hay, no se podrá entrar. En ese caso no se devuelve el importe."
+ },
+ {
+  "id": "i0767",
+  "negocio": "W4_n3",
+  "turnos_previos_del_cliente": [
+   "buenas tardes, cuánto cuesta el curso de interpretación para adultos?"
+  ],
+  "cliente": "mi hijo tiene 12 años, se puede apuntar al taller de jóvenes?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "13 a 17"
+  ],
+  "evidencia": "un taller de teatro para jóvenes de 13 a 17 años los sábados de 11:00 a 13:00 h por €55 al mes",
+  "respuesta_ideal": "No, el taller de jóvenes es para chicos de 13 a 17 años; con 12 todavía no podría apuntarse.",
+  "respuesta_a_calificar": "La Escuela de la Farola ofrece un curso anual de interpretación para adultos (martes y jueves de 19:00 a 21:00 h, de octubre a mayo) por €95 al mes, con matrícula de €40, y un taller de teatro para jóvenes de 13 a 17 años los sábados de 11:00 a 13:00 h por €55 al mes. Las plazas son limitadas (16 por grupo) y se reservan por orden de inscripción en la web. Hay una clase de prueba gratuita la primera semana de octubre."
+ },
+ {
+  "id": "i0777",
+  "negocio": "W4_n3",
+  "turnos_previos_del_cliente": [
+   "buenas tardes, cuánto cuesta el curso de interpretación para adultos?",
+   "mi hijo tiene 12 años, se puede apuntar al taller de jóvenes?"
+  ],
+  "cliente": "quién da las clases?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo el nombre del profesorado; escribe a entradas@teatrolafarola.cat y te lo dirán.",
+  "respuesta_a_calificar": "La Escuela de la Farola ofrece un curso anual de interpretación para adultos (martes y jueves de 19:00 a 21:00 h, de octubre a mayo) por €95 al mes, con matrícula de €40, y un taller de teatro para jóvenes de 13 a 17 años los sábados de 11:00 a 13:00 h por €55 al mes. Las plazas son limitadas (16 por grupo) y se reservan por orden de inscripción en la web. Hay una clase de prueba gratuita la primera semana de octubre."
+ },
+ {
+  "id": "i0795",
+  "negocio": "W4_n3",
+  "turnos_previos_del_cliente": [
+   "buenas tardes, cuánto cuesta el curso de interpretación para adultos?",
+   "mi hijo tiene 12 años, se puede apuntar al taller de jóvenes?"
+  ],
+  "cliente": "quién da las clases?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo el nombre del profesorado; escribe a entradas@teatrolafarola.cat y te lo dirán.",
+  "respuesta_a_calificar": "de prueba gratuita la primera semana de octubre"
+ },
+ {
+  "id": "i0804",
+  "negocio": "W4_n3",
+  "turnos_previos_del_cliente": [],
+  "cliente": "buenas tardes, cuánto cuesta el curso de interpretación para adultos?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "€95",
+   "€40"
+  ],
+  "evidencia": "La Escuela de la Farola ofrece un curso anual de interpretación para adultos (martes y jueves de 19:00 a 21:00 h, de octubre a mayo) por €95 al mes, con matrícula de €40",
+  "respuesta_ideal": "Bienvenido/a al Teatro La Farola. El curso anual de interpretación para adultos cuesta €95 al mes más una matrícula de €40; es martes y jueves de 19:00 a 21:00 h, de octubre a mayo.",
+  "respuesta_a_calificar": "19"
+ },
+ {
+  "id": "i0005",
+  "negocio": "W6_n3",
+  "turnos_previos_del_cliente": [
+   "Buenas!",
+   "cuanto cobran por bañar y cortar un perro mediano?",
+   "¿y si es un golden de 32 kilos?",
+   "¿Cuánto me saldría en total el baño con corte del golden más cortarle las uñas?"
+  ],
+  "cliente": "Perfecto, apúntamelo para el sábado a las 10 porfa",
+  "tipo": "instruccion",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "Tú no agendas ni confirmas citas de grooming. Las citas se sacan únicamente por WhatsApp al 6671-2045.",
+  "respuesta_ideal": "Yo no puedo agendar citas; las citas de grooming se sacan únicamente por WhatsApp al 6671-2045.",
+  "respuesta_a_calificar": "Aquí no vendemos perros ni gatos. El último sábado de cada mes hacemos una feria de adopción junto con la Fundación Huellitas Panamá, de 10:00 a.m. a 2:00 p.m."
+ },
+ {
+  "id": "i0007",
+  "negocio": "W6_n3",
+  "turnos_previos_del_cliente": [
+   "¿Bañan gatos también? ¿cuánto?"
+  ],
+  "cliente": "¿y los sábados no se puede?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "solo los martes y jueves"
+  ],
+  "evidencia": "Gatos: baño a $25 (cualquier tamaño), solo los martes y jueves.",
+  "respuesta_ideal": "No, a los gatos los bañamos solo los martes y jueves.",
+  "respuesta_a_calificar": "Aquí no vendemos perros ni gatos. El último sábado de cada mes hacemos una feria de adopción junto con la Fundación Huellitas Panamá, de 10:00 a.m. a 2:00 p.m."
+ },
+ {
+  "id": "i0014",
+  "negocio": "W6_n3",
+  "turnos_previos_del_cliente": [],
+  "cliente": "a que hora cierran los domingos",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "6:00"
+  ],
+  "evidencia": "- Domingos: 10:00 a.m. – 6:00 p.m.",
+  "respuesta_ideal": "Los domingos cerramos a las 6:00 p.m.",
+  "respuesta_a_calificar": "10"
+ },
+ {
+  "id": "i0019",
+  "negocio": "W6_n3",
+  "turnos_previos_del_cliente": [
+   "¿Cómo funciona lo de los puntos del club?",
+   "¿Mi esposo puede usar mis puntos con su cédula?"
+  ],
+  "cliente": "Compré un arnés y le queda chico, pero ya le quité la etiqueta. ¿Me lo cambian igual?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "con la etiqueta puesta"
+  ],
+  "evidencia": "- Accesorios: 30 días con factura y con la etiqueta puesta.",
+  "respuesta_ideal": "Lo siento, no: los accesorios se cambian dentro de 30 días con factura y con la etiqueta puesta.",
+  "respuesta_a_calificar": "Accesorios: 30 días con factura y con la etiqueta puesta."
+ },
+ {
+  "id": "i0039",
+  "negocio": "W6_n3",
+  "turnos_previos_del_cliente": [],
+  "cliente": "¿Venden perritos?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "no vendemos perros ni gatos"
+  ],
+  "evidencia": "- Aquí no vendemos perros ni gatos. El último sábado de cada mes hacemos una feria de adopción junto con la Fundación Huellitas Panamá, de 10:00 a.m. a 2:00 p.m.",
+  "respuesta_ideal": "No, aquí no vendemos perros ni gatos, pero hacemos una feria de adopción el último sábado de cada mes.",
+  "respuesta_a_calificar": "¿Venden comida a granel?"
+ },
+ {
+  "id": "i0150",
+  "negocio": "W6_n3",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Vivo en El Cangrejo y quiero pedir un saco de Pro Plan de $62, ¿cuánto me cobran de envío?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "gratis"
+  ],
+  "evidencia": "- Envío gratis en compras desde $50 en San Francisco, Bella Vista, Obarrio, El Cangrejo, Betania y Pueblo Nuevo.",
+  "respuesta_ideal": "Nada: en El Cangrejo el envío es gratis en compras desde $50, y tu pedido es de $62.",
+  "respuesta_a_calificar": "Envío gratis en compras desde $50 en San Francisco, Bella Vista, Obarrio, El Cangrejo, Betania y Pueblo Nuevo."
+ },
+ {
+  "id": "i0151",
+  "negocio": "W6_n3",
+  "turnos_previos_del_cliente": [
+   "Buenas!",
+   "cuanto cobran por bañar y cortar un perro mediano?",
+   "¿y si es un golden de 32 kilos?"
+  ],
+  "cliente": "¿Cuánto me saldría en total el baño con corte del golden más cortarle las uñas?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "46"
+  ],
+  "evidencia": "Adicionales: corte de uñas $6 · limpieza de oídos $5 · pelo muy enredado o con nudos: recargo de $10.",
+  "respuesta_ideal": "Serían $40 del baño con corte más $6 del corte de uñas: $46 en total.",
+  "respuesta_a_calificar": "GROOMING (BAÑO Y PELUQUERÍA) — precios en US$: Adicionales: corte de uñas $6 · limpieza de oídos $5 · pelo muy enredado o con nudos: recargo de $10."
+ },
+ {
+  "id": "i0163",
+  "negocio": "W6_n3",
+  "turnos_previos_del_cliente": [
+   "Vivo en El Cangrejo y quiero pedir un saco de Pro Plan de $62, ¿cuánto me cobran de envío?"
+  ],
+  "cliente": "Si lo pido hoy por whatsapp me llega hoy mismo?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "3:00"
+  ],
+  "evidencia": "- Pedidos por WhatsApp antes de las 3:00 p.m. se entregan el mismo día, de lunes a sábado.",
+  "respuesta_ideal": "Sí, si lo pides por WhatsApp antes de las 3:00 p.m., de lunes a sábado, te llega el mismo día.",
+  "respuesta_a_calificar": "Pedidos por WhatsApp antes de las 3:00 p.m. se entregan el mismo día, de lunes a sábado."
+ },
+ {
+  "id": "i0171",
+  "negocio": "W6_n3",
+  "turnos_previos_del_cliente": [
+   "¿Venden perritos?"
+  ],
+  "cliente": "¿Y cuándo es lo de la adopción?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "último sábado",
+   "10:00"
+  ],
+  "evidencia": "- Aquí no vendemos perros ni gatos. El último sábado de cada mes hacemos una feria de adopción junto con la Fundación Huellitas Panamá, de 10:00 a.m. a 2:00 p.m.",
+  "respuesta_ideal": "La feria de adopción es el último sábado de cada mes, de 10:00 a.m. a 2:00 p.m., con la Fundación Huellitas Panamá.",
+  "respuesta_a_calificar": "junto"
+ },
+ {
+  "id": "i0196",
+  "negocio": "W6_n3",
+  "turnos_previos_del_cliente": [
+   "Vivo en El Cangrejo y quiero pedir un saco de Pro Plan de $62, ¿cuánto me cobran de envío?",
+   "Si lo pido hoy por whatsapp me llega hoy mismo?"
+  ],
+  "cliente": "¿Mandan a La Chorrera? es para mi mamá",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "No hacemos envíos a Panamá Oeste"
+  ],
+  "evidencia": "- No hacemos envíos a Panamá Oeste (Arraiján, La Chorrera) ni al interior.",
+  "respuesta_ideal": "Lo siento. No hacemos envíos a Panamá Oeste, y La Chorrera queda ahí.",
+  "respuesta_a_calificar": "No hacemos envíos a Panamá Oeste (Arraiján, La Chorrera) ni al interior."
+ },
+ {
+  "id": "i0204",
+  "negocio": "W6_n3",
+  "turnos_previos_del_cliente": [],
+  "cliente": "¿Bañan gatos también? ¿cuánto?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "25",
+   "martes y jueves"
+  ],
+  "evidencia": "Gatos: baño a $25 (cualquier tamaño), solo los martes y jueves.",
+  "respuesta_ideal": "Sí, el baño de gatos cuesta $25, de cualquier tamaño, y se hace solo los martes y jueves.",
+  "respuesta_a_calificar": "Procesé 2 segmentos del documento en orden."
+ },
+ {
+  "id": "i0218",
+  "negocio": "W6_n3",
+  "turnos_previos_del_cliente": [],
+  "cliente": "a que hora cierran los domingos",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "6:00"
+  ],
+  "evidencia": "- Domingos: 10:00 a.m. – 6:00 p.m.",
+  "respuesta_ideal": "Los domingos cerramos a las 6:00 p.m.",
+  "respuesta_a_calificar": "El grooming es solo con cita y tarda aprox. de 2 a 3 horas."
+ },
+ {
+  "id": "i0238",
+  "negocio": "W6_n3",
+  "turnos_previos_del_cliente": [
+   "Vivo en El Cangrejo y quiero pedir un saco de Pro Plan de $62, ¿cuánto me cobran de envío?"
+  ],
+  "cliente": "Si lo pido hoy por whatsapp me llega hoy mismo?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "3:00"
+  ],
+  "evidencia": "- Pedidos por WhatsApp antes de las 3:00 p.m. se entregan el mismo día, de lunes a sábado.",
+  "respuesta_ideal": "Sí, si lo pides por WhatsApp antes de las 3:00 p.m., de lunes a sábado, te llega el mismo día.",
+  "respuesta_a_calificar": "Reconozco un inicio condicional, pero no tiene una única estructura «si … entonces …»."
+ },
+ {
+  "id": "i0280",
+  "negocio": "W6_n3",
+  "turnos_previos_del_cliente": [
+   "¿Venden perritos?",
+   "¿Y cuándo es lo de la adopción?",
+   "¿Cuánto cuesta adoptar? ¿hay que pagarle algo a la fundación?"
+  ],
+  "cliente": "¿Tienen comida a granel? ¿a cuánto?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "1.25"
+  ],
+  "evidencia": "¿Venden comida a granel? Sí, el alimento Pancito para perro adulto se vende a granel a $1.25 la libra.",
+  "respuesta_ideal": "Sí, el alimento Pancito para perro adulto se vende a granel a $1.25 la libra.",
+  "respuesta_a_calificar": "Procesé 2 segmentos del documento en orden."
+ },
+ {
+  "id": "i0282",
+  "negocio": "W6_n3",
+  "turnos_previos_del_cliente": [
+   "a que hora cierran los domingos"
+  ],
+  "cliente": "¿Y en carnaval abren?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "lunes y martes de Carnaval"
+  ],
+  "evidencia": "- Cerrado: 1 de enero, lunes y martes de Carnaval, y Viernes Santo.",
+  "respuesta_ideal": "El lunes y martes de Carnaval cerramos.",
+  "respuesta_a_calificar": "Cerrado: 1 de enero, lunes y martes de Carnaval, y Viernes Santo."
+ },
+ {
+  "id": "i0290",
+  "negocio": "W6_n3",
+  "turnos_previos_del_cliente": [
+   "¿Venden perritos?",
+   "¿Y cuándo es lo de la adopción?",
+   "¿Cuánto cuesta adoptar? ¿hay que pagarle algo a la fundación?",
+   "¿Tienen comida a granel? ¿a cuánto?"
+  ],
+  "cliente": "Entonces si llevo 4 libras cuanto seria",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "5"
+  ],
+  "evidencia": "¿Venden comida a granel? Sí, el alimento Pancito para perro adulto se vende a granel a $1.25 la libra.",
+  "respuesta_ideal": "Serían $5: 4 libras a $1.25 cada una.",
+  "respuesta_a_calificar": "Registré la afirmación como evidencia lingüística cruda; todavía no hay 3 apoyos independientes para inducir una relación."
+ },
+ {
+  "id": "i0314",
+  "negocio": "W6_n3",
+  "turnos_previos_del_cliente": [
+   "¿Venden perritos?"
+  ],
+  "cliente": "¿Y cuándo es lo de la adopción?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "último sábado",
+   "10:00"
+  ],
+  "evidencia": "- Aquí no vendemos perros ni gatos. El último sábado de cada mes hacemos una feria de adopción junto con la Fundación Huellitas Panamá, de 10:00 a.m. a 2:00 p.m.",
+  "respuesta_ideal": "La feria de adopción es el último sábado de cada mes, de 10:00 a.m. a 2:00 p.m., con la Fundación Huellitas Panamá.",
+  "respuesta_a_calificar": "Aquí no vendemos perros ni gatos. El último sábado de cada mes hacemos una feria de adopción junto con la Fundación Huellitas Panamá, de 10:00 a.m. a 2:00 p.m."
+ },
+ {
+  "id": "i0317",
+  "negocio": "W6_n3",
+  "turnos_previos_del_cliente": [
+   "¿Cómo funciona lo de los puntos del club?"
+  ],
+  "cliente": "¿Mi esposo puede usar mis puntos con su cédula?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo ese dato; no sé si los puntos se pueden pasar a otra persona.",
+  "respuesta_a_calificar": "¿Puedo entrar con mi mascota?"
+ },
+ {
+  "id": "i0320",
+  "negocio": "W6_n3",
+  "turnos_previos_del_cliente": [
+   "Buenas!",
+   "cuanto cobran por bañar y cortar un perro mediano?"
+  ],
+  "cliente": "¿y si es un golden de 32 kilos?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "40"
+  ],
+  "evidencia": "Baño + corte\t22.00\t30.00\t40.00",
+  "respuesta_ideal": "Con 32 kilos entra como grande (más de 25 kg), así que el baño con corte cuesta $40.",
+  "respuesta_a_calificar": "El grooming es solo con cita y tarda aprox. de 2 a 3 horas."
+ },
+ {
+  "id": "i0331",
+  "negocio": "W6_n3",
+  "turnos_previos_del_cliente": [
+   "¿Cómo funciona lo de los puntos del club?",
+   "¿Mi esposo puede usar mis puntos con su cédula?",
+   "Compré un arnés y le queda chico, pero ya le quité la etiqueta. ¿Me lo cambian igual?"
+  ],
+  "cliente": "¿Hasta qué hora reciben perros para grooming?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo el dato de la hora del último turno de grooming; solo sé que el servicio tarda de 2 a 3 horas y es con cita.",
+  "respuesta_a_calificar": "LO QUE ENCONTRARÁS: Aquí no vendemos perros ni gatos. El último sábado de cada mes hacemos una feria de adopción junto con la Fundación Huellitas Panamá, de 10:00 a.m. a 2:00 p.m."
+ },
+ {
+  "id": "i0338",
+  "negocio": "W6_n3",
+  "turnos_previos_del_cliente": [
+   "Buenas!",
+   "cuanto cobran por bañar y cortar un perro mediano?",
+   "¿y si es un golden de 32 kilos?",
+   "¿Cuánto me saldría en total el baño con corte del golden más cortarle las uñas?"
+  ],
+  "cliente": "Perfecto, apúntamelo para el sábado a las 10 porfa",
+  "tipo": "instruccion",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "Tú no agendas ni confirmas citas de grooming. Las citas se sacan únicamente por WhatsApp al 6671-2045.",
+  "respuesta_ideal": "Yo no puedo agendar citas; las citas de grooming se sacan únicamente por WhatsApp al 6671-2045.",
+  "respuesta_a_calificar": "Registré la afirmación como evidencia lingüística cruda; todavía no hay 3 apoyos independientes para inducir una relación."
+ },
+ {
+  "id": "i0349",
+  "negocio": "W6_n3",
+  "turnos_previos_del_cliente": [
+   "¿Venden perritos?",
+   "¿Y cuándo es lo de la adopción?"
+  ],
+  "cliente": "¿Cuánto cuesta adoptar? ¿hay que pagarle algo a la fundación?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo ese dato; no sé si la fundación cobra algo por la adopción.",
+  "respuesta_a_calificar": "LO QUE ENCONTRARÁS: Aquí no vendemos perros ni gatos. El último sábado de cada mes hacemos una feria de adopción junto con la Fundación Huellitas Panamá, de 10:00 a.m. a 2:00 p.m."
+ },
+ {
+  "id": "i0412",
+  "negocio": "W6_n3",
+  "turnos_previos_del_cliente": [
+   "Buenas!",
+   "cuanto cobran por bañar y cortar un perro mediano?",
+   "¿y si es un golden de 32 kilos?",
+   "¿Cuánto me saldría en total el baño con corte del golden más cortarle las uñas?",
+   "Perfecto, apúntamelo para el sábado a las 10 porfa"
+  ],
+  "cliente": "¿Qué papeles tengo que llevar para el baño?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "carné de vacunas"
+  ],
+  "evidencia": "Requisitos: carné de vacunas al día (rabia y séxtuple en perros; triple felina en gatos).",
+  "respuesta_ideal": "Tienes que llevar su carné de vacunas al día (rabia y séxtuple, en el caso de perros).",
+  "respuesta_a_calificar": "Gatos: baño a $25 (cualquier tamaño), solo los martes y jueves."
+ },
+ {
+  "id": "i0414",
+  "negocio": "W6_n3",
+  "turnos_previos_del_cliente": [
+   "¿Cómo funciona lo de los puntos del club?",
+   "¿Mi esposo puede usar mis puntos con su cédula?",
+   "Compré un arnés y le queda chico, pero ya le quité la etiqueta. ¿Me lo cambian igual?"
+  ],
+  "cliente": "¿Hasta qué hora reciben perros para grooming?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo el dato de la hora del último turno de grooming; solo sé que el servicio tarda de 2 a 3 horas y es con cita.",
+  "respuesta_a_calificar": "Royal Canin"
+ },
+ {
+  "id": "i0416",
+  "negocio": "W6_n3",
+  "turnos_previos_del_cliente": [
+   "Buenas!"
+  ],
+  "cliente": "cuanto cobran por bañar y cortar un perro mediano?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "30"
+  ],
+  "evidencia": "Baño + corte\t22.00\t30.00\t40.00",
+  "respuesta_ideal": "El baño con corte para un perro mediano (10 a 25 kg) cuesta $30.",
+  "respuesta_a_calificar": "GROOMING (BAÑO Y PELUQUERÍA) — precios en US$: Servicio: Baño completo; Pequeño (hasta 10 kg): 15.00; Mediano (10 a 25 kg): 20.00; Grande (más de 25 kg): 28.00"
+ },
+ {
+  "id": "i0428",
+  "negocio": "W6_n3",
+  "turnos_previos_del_cliente": [
+   "¿Venden perritos?",
+   "¿Y cuándo es lo de la adopción?",
+   "¿Cuánto cuesta adoptar? ¿hay que pagarle algo a la fundación?"
+  ],
+  "cliente": "¿Tienen comida a granel? ¿a cuánto?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "1.25"
+  ],
+  "evidencia": "¿Venden comida a granel? Sí, el alimento Pancito para perro adulto se vende a granel a $1.25 la libra.",
+  "respuesta_ideal": "Sí, el alimento Pancito para perro adulto se vende a granel a $1.25 la libra.",
+  "respuesta_a_calificar": "¿Venden comida a granel?"
+ },
+ {
+  "id": "i0448",
+  "negocio": "W6_n3",
+  "turnos_previos_del_cliente": [],
+  "cliente": "¿Cómo funciona lo de los puntos del club?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "1 punto",
+   "100 puntos"
+  ],
+  "evidencia": "Por cada B/. 1.00 de compra acumulas 1 punto, y con 100 puntos recibes B/. 5.00 de descuento en tu próxima compra.",
+  "respuesta_ideal": "Por cada B/. 1.00 de compra acumulas 1 punto, y con 100 puntos recibes B/. 5.00 de descuento en tu próxima compra. La afiliación es gratis con tu cédula.",
+  "respuesta_a_calificar": "12 meses"
+ },
+ {
+  "id": "i0496",
+  "negocio": "W6_n3",
+  "turnos_previos_del_cliente": [
+   "Vivo en El Cangrejo y quiero pedir un saco de Pro Plan de $62, ¿cuánto me cobran de envío?",
+   "Si lo pido hoy por whatsapp me llega hoy mismo?",
+   "¿Mandan a La Chorrera? es para mi mamá",
+   "¿Y a San Miguelito?"
+  ],
+  "cliente": "Si pido tres sacos de 15 kilos, ¿me cobran algo extra por el peso?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo información sobre recargos por peso; lo que sé es la tarifa por zona.",
+  "respuesta_a_calificar": "Reconozco un inicio condicional, pero no tiene una única estructura «si … entonces …»."
+ },
+ {
+  "id": "i0504",
+  "negocio": "W6_n3",
+  "turnos_previos_del_cliente": [
+   "¿Venden perritos?",
+   "¿Y cuándo es lo de la adopción?"
+  ],
+  "cliente": "¿Cuánto cuesta adoptar? ¿hay que pagarle algo a la fundación?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo ese dato; no sé si la fundación cobra algo por la adopción.",
+  "respuesta_a_calificar": "Procesé 2 segmentos del documento en orden."
+ },
+ {
+  "id": "i0508",
+  "negocio": "W6_n3",
+  "turnos_previos_del_cliente": [
+   "a que hora cierran los domingos",
+   "¿Y en carnaval abren?"
+  ],
+  "cliente": "¿Tienen estacionamiento ahí en la plaza?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo información sobre estacionamiento; te puedo dar la dirección: Vía Porras, Plaza Las Palmeras, local 3.",
+  "respuesta_a_calificar": "Vía Porras, Plaza Las Palmeras, local 3 (diagonal al Parque Omar), San Francisco, Ciudad de Panamá."
+ },
+ {
+  "id": "i0547",
+  "negocio": "W6_n3",
+  "turnos_previos_del_cliente": [
+   "¿Cómo funciona lo de los puntos del club?",
+   "¿Mi esposo puede usar mis puntos con su cédula?"
+  ],
+  "cliente": "Compré un arnés y le queda chico, pero ya le quité la etiqueta. ¿Me lo cambian igual?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "con la etiqueta puesta"
+  ],
+  "evidencia": "- Accesorios: 30 días con factura y con la etiqueta puesta.",
+  "respuesta_ideal": "Lo siento, no: los accesorios se cambian dentro de 30 días con factura y con la etiqueta puesta.",
+  "respuesta_a_calificar": "Procesé 2 segmentos del documento en orden."
+ },
+ {
+  "id": "i0606",
+  "negocio": "W6_n3",
+  "turnos_previos_del_cliente": [],
+  "cliente": "¿Bañan gatos también? ¿cuánto?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "25",
+   "martes y jueves"
+  ],
+  "evidencia": "Gatos: baño a $25 (cualquier tamaño), solo los martes y jueves.",
+  "respuesta_ideal": "Sí, el baño de gatos cuesta $25, de cualquier tamaño, y se hace solo los martes y jueves.",
+  "respuesta_a_calificar": "Gatos: baño a $25 (cualquier tamaño), solo los martes y jueves."
+ },
+ {
+  "id": "i0612",
+  "negocio": "W6_n3",
+  "turnos_previos_del_cliente": [
+   "¿Bañan gatos también? ¿cuánto?",
+   "¿y los sábados no se puede?"
+  ],
+  "cliente": "¿Y a los conejos también los bañan? tengo uno",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo ese dato; en la información del grooming solo aparecen perros y gatos.",
+  "respuesta_a_calificar": "LO QUE ENCONTRARÁS: Alimento y accesorios para aves, hámsters y conejos."
+ },
+ {
+  "id": "i0621",
+  "negocio": "W6_n3",
+  "turnos_previos_del_cliente": [],
+  "cliente": "¿Cómo funciona lo de los puntos del club?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "1 punto",
+   "100 puntos"
+  ],
+  "evidencia": "Por cada B/. 1.00 de compra acumulas 1 punto, y con 100 puntos recibes B/. 5.00 de descuento en tu próxima compra.",
+  "respuesta_ideal": "Por cada B/. 1.00 de compra acumulas 1 punto, y con 100 puntos recibes B/. 5.00 de descuento en tu próxima compra. La afiliación es gratis con tu cédula.",
+  "respuesta_a_calificar": "CLUB PATITAS: El grooming también suma puntos."
+ },
+ {
+  "id": "i0689",
+  "negocio": "W6_n3",
+  "turnos_previos_del_cliente": [
+   "¿Venden perritos?",
+   "¿Y cuándo es lo de la adopción?",
+   "¿Cuánto cuesta adoptar? ¿hay que pagarle algo a la fundación?",
+   "¿Tienen comida a granel? ¿a cuánto?"
+  ],
+  "cliente": "Entonces si llevo 4 libras cuanto seria",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "5"
+  ],
+  "evidencia": "¿Venden comida a granel? Sí, el alimento Pancito para perro adulto se vende a granel a $1.25 la libra.",
+  "respuesta_ideal": "Serían $5: 4 libras a $1.25 cada una.",
+  "respuesta_a_calificar": "Sí, el alimento Pancito para perro adulto se vende a granel a $1.25 la libra."
+ },
+ {
+  "id": "i0704",
+  "negocio": "W6_n3",
+  "turnos_previos_del_cliente": [
+   "¿Cómo funciona lo de los puntos del club?",
+   "¿Mi esposo puede usar mis puntos con su cédula?",
+   "Compré un arnés y le queda chico, pero ya le quité la etiqueta. ¿Me lo cambian igual?",
+   "¿Hasta qué hora reciben perros para grooming?"
+  ],
+  "cliente": "Tengo un refugio y quisiera comprar unos 20 sacos de alimento al mes, ¿me hacen precio?",
+  "tipo": "instruccion",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "Las compras al por mayor (criaderos, refugios, veterinarias, fundaciones) las atiende el gerente, Iván Castillo, en el correo ventas@patitasyco.com.pa.",
+  "respuesta_ideal": "Las compras al por mayor las atiende nuestro gerente, Iván Castillo; escríbele a ventas@patitasyco.com.pa.",
+  "respuesta_a_calificar": "GROOMING (BAÑO Y PELUQUERÍA) — precios en US$: Servicio: Baño completo; Pequeño (hasta 10 kg): 15.00; Mediano (10 a 25 kg): 20.00; Grande (más de 25 kg): 28.00"
+ },
+ {
+  "id": "i0717",
+  "negocio": "W6_n3",
+  "turnos_previos_del_cliente": [
+   "Vivo en El Cangrejo y quiero pedir un saco de Pro Plan de $62, ¿cuánto me cobran de envío?",
+   "Si lo pido hoy por whatsapp me llega hoy mismo?"
+  ],
+  "cliente": "¿Mandan a La Chorrera? es para mi mamá",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "No hacemos envíos a Panamá Oeste"
+  ],
+  "evidencia": "- No hacemos envíos a Panamá Oeste (Arraiján, La Chorrera) ni al interior.",
+  "respuesta_ideal": "Lo siento. No hacemos envíos a Panamá Oeste, y La Chorrera queda ahí.",
+  "respuesta_a_calificar": "Procesé 2 segmentos del documento en orden."
+ },
+ {
+  "id": "i0720",
+  "negocio": "W6_n3",
+  "turnos_previos_del_cliente": [
+   "Vivo en El Cangrejo y quiero pedir un saco de Pro Plan de $62, ¿cuánto me cobran de envío?",
+   "Si lo pido hoy por whatsapp me llega hoy mismo?",
+   "¿Mandan a La Chorrera? es para mi mamá",
+   "¿Y a San Miguelito?"
+  ],
+  "cliente": "Si pido tres sacos de 15 kilos, ¿me cobran algo extra por el peso?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo información sobre recargos por peso; lo que sé es la tarifa por zona.",
+  "respuesta_a_calificar": "Alimento: solo con la bolsa sellada, dentro de los 15 días y con factura."
+ },
+ {
+  "id": "i0751",
+  "negocio": "W6_n3",
+  "turnos_previos_del_cliente": [
+   "Vivo en El Cangrejo y quiero pedir un saco de Pro Plan de $62, ¿cuánto me cobran de envío?",
+   "Si lo pido hoy por whatsapp me llega hoy mismo?",
+   "¿Mandan a La Chorrera? es para mi mamá"
+  ],
+  "cliente": "¿Y a San Miguelito?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "$6"
+  ],
+  "evidencia": "- Resto de la ciudad (incluye Costa del Este y San Miguelito): $6.",
+  "respuesta_ideal": "A San Miguelito sí: el envío cuesta $6.",
+  "respuesta_a_calificar": "Resto de la ciudad (incluye Costa del Este y San Miguelito): $6."
+ },
+ {
+  "id": "i0784",
+  "negocio": "W6_n3",
+  "turnos_previos_del_cliente": [
+   "a que hora cierran los domingos",
+   "¿Y en carnaval abren?",
+   "¿Tienen estacionamiento ahí en la plaza?"
+  ],
+  "cliente": "¿Tienen ahorita el saco grande de Royal Canin para gato castrado?",
+  "tipo": "instruccion",
+  "accion_esperada": "responder",
+  "claves": [
+   "caja",
+   "WhatsApp"
+  ],
+  "evidencia": "Si preguntan si hay un producto en existencia, explica que el inventario cambia todos los días y que lo pueden confirmar en caja o por WhatsApp.",
+  "respuesta_ideal": "El inventario cambia todos los días, así que te recomiendo confirmarlo en caja o por WhatsApp al 6671-2045.",
+  "respuesta_a_calificar": "LO QUE ENCONTRARÁS: Alimento seco y húmedo para perros y gatos: Royal Canin, Pro Plan, Hill's, Acana y nuestra marca económica Pancito."
+ },
+ {
+  "id": "i0786",
+  "negocio": "W6_n3",
+  "turnos_previos_del_cliente": [
+   "¿Bañan gatos también? ¿cuánto?",
+   "¿y los sábados no se puede?",
+   "¿Y a los conejos también los bañan? tengo uno"
+  ],
+  "cliente": "Mi gata lleva dos días sin comer y vomita, ¿qué le puedo dar?",
+  "tipo": "instruccion",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "Nunca des diagnósticos ni recomiendes medicamentos, antipulgas, desparasitantes o dosis. Si el cliente te cuenta que su mascota está enferma o tiene síntomas (vómitos, diarrea, heridas, que no come, que está decaída), dile que la lleve al veterinario y recomiéndale nuestra clínica aliada: Clínica Veterinaria San Roque, en Vía Argentina, tel. 263-7710.",
+  "respuesta_ideal": "No puedo recomendarte medicamentos; lo mejor es que la lleves al veterinario. Te recomendamos la Clínica Veterinaria San Roque, en Vía Argentina, tel. 263-7710.",
+  "respuesta_a_calificar": "CAMBIOS Y DEVOLUCIONES: No devolvemos dinero; te damos un crédito en tienda por el valor del producto."
+ },
+ {
+  "id": "i0806",
+  "negocio": "W6_n3",
+  "turnos_previos_del_cliente": [
+   "¿Bañan gatos también? ¿cuánto?",
+   "¿y los sábados no se puede?"
+  ],
+  "cliente": "¿Y a los conejos también los bañan? tengo uno",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo ese dato; en la información del grooming solo aparecen perros y gatos.",
+  "respuesta_a_calificar": "Procesé 2 segmentos del documento en orden."
+ }
+]

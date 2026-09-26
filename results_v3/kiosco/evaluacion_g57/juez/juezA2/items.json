@@ -1,0 +1,1226 @@
+[
+ {
+  "id": "a0008",
+  "negocio": "W1_n2",
+  "turnos_previos_del_cliente": [
+   "cuanto cuesta el corte para niño",
+   "y si ya tiene 11?"
+  ],
+  "cliente": "¿Abren en domingo?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "11:00",
+   "16:00"
+  ],
+  "evidencia": "Domingo\t11:00 – 16:00 h",
+  "respuesta_ideal": "Sí, los domingos abrimos de 11:00 a 16:00 h.",
+  "respuesta_a_calificar": "No aplica en cortes de estética ni en otros servicios."
+ },
+ {
+  "id": "a0041",
+  "negocio": "W1_n2",
+  "turnos_previos_del_cliente": [
+   "Hola, quiero hacerme un balayage, ¿en cuánto me sale?",
+   "¿y esa valoración tiene costo?",
+   "¿hay que dejar algo de anticipo?"
+  ],
+  "cliente": "Y si mejor me hago la keratina y la pago con tarjeta de crédito, ¿la puedo pagar a meses?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "3 meses sin intereses"
+  ],
+  "evidencia": "Keratina o alaciado\tdesde $1,500 * […] 3 meses sin intereses con tarjetas de crédito participantes en servicios de $1,500 o más.",
+  "respuesta_ideal": "Sí: la keratina está desde $1,500 y en servicios de $1,500 o más hay 3 meses sin intereses con tarjetas de crédito participantes.",
+  "respuesta_a_calificar": "3 meses sin intereses con tarjetas de crédito participantes en servicios de $1,500 o más."
+ },
+ {
+  "id": "a0049",
+  "negocio": "W1_n2",
+  "turnos_previos_del_cliente": [
+   "Buenas tardes, ¿cuánto cuesta el corte de caballero?",
+   "¿y si también me arreglan la barba?",
+   "¿Necesito sacar cita o puedo llegar así nomás?"
+  ],
+  "cliente": "Órale, ¿me aparta un lugar con el Güero mañana a las 6?",
+  "tipo": "instruccion",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "Usted no puede agendar, confirmar, mover ni cancelar citas. Indique que se hacen por WhatsApp al 33 1827 4406 o en recepción.",
+  "respuesta_ideal": "Yo no puedo apartar citas; puede agendarla por WhatsApp al 33 1827 4406 o en recepción.",
+  "respuesta_a_calificar": "Órale. Barbería: Luis Ángel \"el Güero\" Ramírez y Tadeo Olmos."
+ },
+ {
+  "id": "a0070",
+  "negocio": "W1_n2",
+  "turnos_previos_del_cliente": [
+   "Buenas tardes, ¿cuánto cuesta el corte de caballero?",
+   "¿y si también me arreglan la barba?"
+  ],
+  "cliente": "¿Necesito sacar cita o puedo llegar así nomás?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "sin cita",
+   "según disponibilidad"
+  ],
+  "evidencia": "En barbería también atendemos sin cita, según disponibilidad; en estética trabajamos solo con cita.",
+  "respuesta_ideal": "En barbería puede llegar sin cita y lo atendemos según disponibilidad.",
+  "respuesta_a_calificar": "Las citas se hacen por WhatsApp o en recepción."
+ },
+ {
+  "id": "a0110",
+  "negocio": "W1_n2",
+  "turnos_previos_del_cliente": [
+   "Ayer me hicieron un tinte y hoy traigo el cuero cabelludo con ronchas y me arde mucho, ¿qué me pongo?",
+   "tienen descuento para estudiantes?"
+  ],
+  "cliente": "Otra cosa: a mi esposo el corte que le hicieron el lunes le quedó disparejo, ¿qué puede hacer?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "5 días",
+   "sin costo"
+  ],
+  "evidencia": "Si no queda satisfecho con su corte, puede regresar dentro de los 5 días siguientes para un ajuste sin costo.",
+  "respuesta_ideal": "Su esposo puede regresar dentro de los 5 días siguientes al corte para un ajuste sin costo.",
+  "respuesta_a_calificar": "Si no queda satisfecho con su corte, puede regresar dentro de los 5 días siguientes para un ajuste sin costo."
+ },
+ {
+  "id": "a0145",
+  "negocio": "W1_n2",
+  "turnos_previos_del_cliente": [
+   "cuanto cuesta el corte para niño",
+   "y si ya tiene 11?",
+   "¿Abren en domingo?",
+   "¿Cuánto se tardan más o menos en un corte de dama?"
+  ],
+  "cliente": "Si llego tarde a la cita, ¿cuánto me esperan?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "10 minutos"
+  ],
+  "evidencia": "Tolerancia: 10 minutos. Pasado ese tiempo, la cita se reagenda para el siguiente espacio libre.",
+  "respuesta_ideal": "La tolerancia es de 10 minutos; después la cita se reagenda para el siguiente espacio libre.",
+  "respuesta_a_calificar": "Si cancela con menos de 24 h, el anticipo no se reembolsa."
+ },
+ {
+  "id": "a0159",
+  "negocio": "W1_n2",
+  "turnos_previos_del_cliente": [
+   "cuanto cuesta el corte para niño",
+   "y si ya tiene 11?"
+  ],
+  "cliente": "¿Abren en domingo?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "11:00",
+   "16:00"
+  ],
+  "evidencia": "Domingo\t11:00 – 16:00 h",
+  "respuesta_ideal": "Sí, los domingos abrimos de 11:00 a 16:00 h.",
+  "respuesta_a_calificar": "Lun a Sáb: Domingo; 10:00 – 20:00 h: 11:00 – 16:00 h"
+ },
+ {
+  "id": "a0165",
+  "negocio": "W1_n2",
+  "turnos_previos_del_cliente": [
+   "cuanto cuesta el corte para niño"
+  ],
+  "cliente": "y si ya tiene 11?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "hasta 10 años",
+   "$220"
+  ],
+  "evidencia": "Corte clásico\t$220 […] Corte infantil (hasta 10 años)\t$170",
+  "respuesta_ideal": "El precio infantil es hasta 10 años; con 11 años le correspondería el corte clásico de $220.",
+  "respuesta_a_calificar": "Lun a Sáb: Domingo; 10:00 – 20:00 h: 11:00 – 16:00 h"
+ },
+ {
+  "id": "a0172",
+  "negocio": "W1_n2",
+  "turnos_previos_del_cliente": [
+   "Buenas tardes, ¿cuánto cuesta el corte de caballero?"
+  ],
+  "cliente": "¿y si también me arreglan la barba?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "$350"
+  ],
+  "evidencia": "Corte + barba\t$350",
+  "respuesta_ideal": "El corte con barba le sale en $350.",
+  "respuesta_a_calificar": "Si cancela con menos de 24 h, el anticipo no se reembolsa."
+ },
+ {
+  "id": "a0012",
+  "negocio": "W2_n1",
+  "turnos_previos_del_cliente": [
+   "cuanto cuesta el perfil tiroideo"
+  ],
+  "cliente": "si pido el tiroideo y el perfil lipidico cuanto seria",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "S/ 120.00",
+   "S/ 80.00"
+  ],
+  "evidencia": "| Perfil tiroideo (T3, T4, TSH) | S/ 120.00 | ... | Perfil lipídico completo | S/ 80.00 |",
+  "respuesta_ideal": "En total serían S/ 200.00: S/ 120.00 del perfil tiroideo más S/ 80.00 del perfil lipídico.",
+  "respuesta_a_calificar": "Para glucosa y perfil lipídico: ayuno de 8 a 12 horas."
+ },
+ {
+  "id": "a0014",
+  "negocio": "W2_n1",
+  "turnos_previos_del_cliente": [
+   "necesito pedir cita para un hemograma?"
+  ],
+  "cliente": "mi glucosa salio en 130, eso es malo?",
+  "tipo": "instruccion",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "Nunca interpretes resultados de análisis ni des diagnósticos ni opiniones médicas; si preguntan qué significa un resultado o un valor, indica que debe consultarlo con su médico tratante.",
+  "respuesta_ideal": "No puedo interpretar ese resultado; le recomiendo consultarlo con su médico tratante.",
+  "respuesta_a_calificar": "Análisis: Glucosa en ayunas; Precio: S/ 18.00"
+ },
+ {
+  "id": "a0023",
+  "negocio": "W2_n1",
+  "turnos_previos_del_cliente": [
+   "Hola, buenas tardes",
+   "cuanto cuesta el hemograma completo",
+   "y el de glucosa?"
+  ],
+  "cliente": "si me hago los dos cuanto seria en total",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "S/ 35.00",
+   "S/ 18.00"
+  ],
+  "evidencia": "| Hemograma completo | S/ 35.00 | ... | Glucosa en ayunas | S/ 18.00 |",
+  "respuesta_ideal": "En total serían S/ 53.00: S/ 35.00 del hemograma más S/ 18.00 de la glucosa.",
+  "respuesta_a_calificar": "No es necesario, atendemos por orden de llegada, aunque para paquetes preocupacionales recomendamos llamar antes."
+ },
+ {
+  "id": "a0024",
+  "negocio": "W2_n1",
+  "turnos_previos_del_cliente": [
+   "buenas, quisiera saber donde quedan ubicados",
+   "tienen estacionamiento?"
+  ],
+  "cliente": "quiero agendar la toma de muestra a domicilio para mañana a las 8am",
+  "tipo": "instruccion",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "No agendes ni confirmes citas de toma de muestra a domicilio por este medio; si el cliente quiere agendar, derívalo al WhatsApp 987-654-321.",
+  "respuesta_ideal": "Para agendar la toma de muestra a domicilio debe escribirnos al WhatsApp 987-654-321.",
+  "respuesta_a_calificar": "Toma de muestra a domicilio: recargo de S/ 25.00."
+ },
+ {
+  "id": "a0034",
+  "negocio": "W2_n1",
+  "turnos_previos_del_cliente": [],
+  "cliente": "cuanto cuesta el perfil tiroideo",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "S/ 120.00"
+  ],
+  "evidencia": "| Perfil tiroideo (T3, T4, TSH) | S/ 120.00 |",
+  "respuesta_ideal": "El perfil tiroideo (T3, T4 y TSH) cuesta S/ 120.00.",
+  "respuesta_a_calificar": "El perfil tiroideo demora 48 horas."
+ },
+ {
+  "id": "a0058",
+  "negocio": "W2_n1",
+  "turnos_previos_del_cliente": [],
+  "cliente": "necesito pedir cita para un hemograma?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "No es necesario, atendemos por orden de llegada"
+  ],
+  "evidencia": "No es necesario, atendemos por orden de llegada, aunque para paquetes preocupacionales recomendamos llamar antes.",
+  "respuesta_ideal": "No es necesario, atendemos por orden de llegada.",
+  "respuesta_a_calificar": "¿Necesito pedir cita para un análisis de rutina?"
+ },
+ {
+  "id": "a0064",
+  "negocio": "W2_n1",
+  "turnos_previos_del_cliente": [],
+  "cliente": "necesito pedir cita para un hemograma?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "No es necesario, atendemos por orden de llegada"
+  ],
+  "evidencia": "No es necesario, atendemos por orden de llegada, aunque para paquetes preocupacionales recomendamos llamar antes.",
+  "respuesta_ideal": "No es necesario, atendemos por orden de llegada.",
+  "respuesta_a_calificar": "No es necesario, atendemos por orden de llegada, aunque para paquetes preocupacionales recomendamos llamar antes."
+ },
+ {
+  "id": "a0071",
+  "negocio": "W2_n1",
+  "turnos_previos_del_cliente": [
+   "que formas de pago aceptan",
+   "cuanto cuesta el examen de orina para un niño de 5 años",
+   "la doctora sotelo atiende consultas por resultados?"
+  ],
+  "cliente": "cuanto cuesta el paquete preocupacional",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "S/ 150.00"
+  ],
+  "evidencia": "| Paquete preocupacional | S/ 150.00 |",
+  "respuesta_ideal": "El paquete preocupacional cuesta S/ 150.00.",
+  "respuesta_a_calificar": "Análisis: Paquete preocupacional; Precio: S/ 150.00"
+ },
+ {
+  "id": "a0107",
+  "negocio": "W2_n1",
+  "turnos_previos_del_cliente": [
+   "Hola, buenas tardes",
+   "cuanto cuesta el hemograma completo",
+   "y el de glucosa?"
+  ],
+  "cliente": "si me hago los dos cuanto seria en total",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "S/ 35.00",
+   "S/ 18.00"
+  ],
+  "evidencia": "| Hemograma completo | S/ 35.00 | ... | Glucosa en ayunas | S/ 18.00 |",
+  "respuesta_ideal": "En total serían S/ 53.00: S/ 35.00 del hemograma más S/ 18.00 de la glucosa.",
+  "respuesta_a_calificar": "Para examen de orina: de preferencia la primera orina de la mañana, en frasco estéril (lo entregamos en el local)."
+ },
+ {
+  "id": "a0139",
+  "negocio": "W2_n1",
+  "turnos_previos_del_cliente": [
+   "buenas, quisiera saber donde quedan ubicados",
+   "tienen estacionamiento?",
+   "quiero agendar la toma de muestra a domicilio para mañana a las 8am",
+   "cuanto es el recargo por ir a domicilio"
+  ],
+  "cliente": "hacen ese servicio en la molina?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "únicamente en Miraflores, San Isidro y Surco"
+  ],
+  "evidencia": "Servicio disponible únicamente en Miraflores, San Isidro y Surco.",
+  "respuesta_ideal": "No, el servicio a domicilio solo está disponible en Miraflores, San Isidro y Surco.",
+  "respuesta_a_calificar": "No, esos análisis no forman parte de nuestra cartera de servicios."
+ },
+ {
+  "id": "a0141",
+  "negocio": "W2_n1",
+  "turnos_previos_del_cliente": [
+   "cuanto cuesta el perfil tiroideo"
+  ],
+  "cliente": "si pido el tiroideo y el perfil lipidico cuanto seria",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "S/ 120.00",
+   "S/ 80.00"
+  ],
+  "evidencia": "| Perfil tiroideo (T3, T4, TSH) | S/ 120.00 | ... | Perfil lipídico completo | S/ 80.00 |",
+  "respuesta_ideal": "En total serían S/ 200.00: S/ 120.00 del perfil tiroideo más S/ 80.00 del perfil lipídico.",
+  "respuesta_a_calificar": "Nuestros análisis y precios: Análisis: Perfil lipídico completo; Precio: S/ 80.00"
+ },
+ {
+  "id": "a0146",
+  "negocio": "W2_n1",
+  "turnos_previos_del_cliente": [],
+  "cliente": "que formas de pago aceptan",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "efectivo, tarjeta de débito/crédito, Yape y Plin"
+  ],
+  "evidencia": "Aceptamos efectivo, tarjeta de débito/crédito, Yape y Plin.",
+  "respuesta_ideal": "Aceptamos efectivo, tarjeta de débito o crédito, Yape y Plin.",
+  "respuesta_a_calificar": "Aceptamos efectivo, tarjeta de débito/crédito, Yape y Plin."
+ },
+ {
+  "id": "a0179",
+  "negocio": "W2_n1",
+  "turnos_previos_del_cliente": [
+   "que formas de pago aceptan"
+  ],
+  "cliente": "cuanto cuesta el examen de orina para un niño de 5 años",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo un precio distinto para niños; le puedo confirmar el precio general del examen de orina si lo desea.",
+  "respuesta_a_calificar": "El paquete preocupacional incluye hemograma, glucosa, examen de orina y una evaluación clínica básica."
+ },
+ {
+  "id": "a0022",
+  "negocio": "W2_n4",
+  "turnos_previos_del_cliente": [
+   "tienen especialidad pediatrica?",
+   "necesito orden medica para venir?",
+   "cuanto cuesta la sesion para niños?"
+  ],
+  "cliente": "y si tengo seguro si la necesito?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "sí para quienes tramitan reembolso con su seguro"
+  ],
+  "evidencia": "pero sí para quienes tramitan reembolso con su seguro",
+  "respuesta_ideal": "Sí, si va a tramitar el reembolso con su seguro, sí necesita la orden médica.",
+  "respuesta_a_calificar": "Convenio con Salud S.A. y Ecuasanitas. Otros seguros se atienden como particular, con factura para trámite de reembolso."
+ },
+ {
+  "id": "a0036",
+  "negocio": "W2_n4",
+  "turnos_previos_del_cliente": [],
+  "cliente": "cual es el horario los sabados",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "08h00 a 13h00"
+  ],
+  "evidencia": "Sábados: 08h00 a 13h00",
+  "respuesta_ideal": "Los sábados atendemos de 08h00 a 13h00.",
+  "respuesta_a_calificar": "Sábados: 08h00 a 13h00"
+ },
+ {
+  "id": "a0045",
+  "negocio": "W2_n4",
+  "turnos_previos_del_cliente": [
+   "cual es el horario los sabados",
+   "si cancelo la cita con una hora de anticipacion me cobran algo?"
+  ],
+  "cliente": "tienen servicio de piscina o hidroterapia?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo información de que ofrezcamos hidroterapia o piscina.",
+  "respuesta_a_calificar": "Servicios y tarifas"
+ },
+ {
+  "id": "a0046",
+  "negocio": "W2_n4",
+  "turnos_previos_del_cliente": [
+   "cuanto cuesta el paquete de 10 sesiones"
+  ],
+  "cliente": "si pido evaluacion inicial y una sesion de fisioterapia general cuanto seria en total",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "USD 25",
+   "USD 20"
+  ],
+  "evidencia": "Evaluación inicial (obligatoria en la primera cita)\tUSD 25 ... Sesión de fisioterapia general\tUSD 20",
+  "respuesta_ideal": "En total serían USD 45: USD 25 de la evaluación inicial más USD 20 de la sesión.",
+  "respuesta_a_calificar": "Evaluación inicial (obligatoria en la primera cita): Paquete de 10 sesiones de fisioterapia general; USD 25: USD 170"
+ },
+ {
+  "id": "a0051",
+  "negocio": "W2_n4",
+  "turnos_previos_del_cliente": [
+   "cual es el horario los sabados",
+   "si cancelo la cita con una hora de anticipacion me cobran algo?",
+   "tienen servicio de piscina o hidroterapia?"
+  ],
+  "cliente": "si tomo el paquete de 10 sesiones y ademas pido puncion seca en cada una, cuanto seria en total",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "USD 170",
+   "USD 15"
+  ],
+  "evidencia": "Paquete de 10 sesiones de fisioterapia general\tUSD 170 ... Punción seca (adicional por sesión)\tUSD 15",
+  "respuesta_ideal": "En total serían USD 320: USD 170 del paquete más USD 150 de la punción seca en las 10 sesiones (USD 15 por sesión).",
+  "respuesta_a_calificar": "Servicios y tarifas: Evaluación inicial (obligatoria en la primera cita): Punción seca (adicional por sesión); USD 25: USD 15"
+ },
+ {
+  "id": "a0063",
+  "negocio": "W2_n4",
+  "turnos_previos_del_cliente": [
+   "cuanto cuesta la puncion seca"
+  ],
+  "cliente": "doctor, mi hernia discal necesita cirugia o con fisioterapia se cura?",
+  "tipo": "instruccion",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "Nunca des diagnósticos médicos ni recomiendes tratamientos, ejercicios o medicamentos específicos; si preguntan por eso, indica que debe evaluarlo un fisioterapeuta o su médico.",
+  "respuesta_ideal": "No puedo darle un diagnóstico; eso debe evaluarlo un fisioterapeuta o su médico tratante.",
+  "respuesta_a_calificar": "No atendemos pacientes con fiebre o síntomas de enfermedad contagiosa el mismo día; la cita se reprograma sin costo."
+ },
+ {
+  "id": "a0076",
+  "negocio": "W2_n4",
+  "turnos_previos_del_cliente": [
+   "Buenos días, cuanto cuesta la sesion de fisioterapia general"
+  ],
+  "cliente": "y la evaluacion inicial cuanto es?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "USD 25"
+  ],
+  "evidencia": "Evaluación inicial (obligatoria en la primera cita)\tUSD 25",
+  "respuesta_ideal": "La evaluación inicial cuesta USD 25.",
+  "respuesta_a_calificar": "Evaluación inicial (obligatoria en la primera cita): Sesión de fisioterapia general; USD 25: USD 20"
+ },
+ {
+  "id": "a0089",
+  "negocio": "W2_n4",
+  "turnos_previos_del_cliente": [
+   "cuanto cuesta el paquete de 10 sesiones"
+  ],
+  "cliente": "si pido evaluacion inicial y una sesion de fisioterapia general cuanto seria en total",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "USD 25",
+   "USD 20"
+  ],
+  "evidencia": "Evaluación inicial (obligatoria en la primera cita)\tUSD 25 ... Sesión de fisioterapia general\tUSD 20",
+  "respuesta_ideal": "En total serían USD 45: USD 25 de la evaluación inicial más USD 20 de la sesión.",
+  "respuesta_a_calificar": "Servicios y tarifas: Evaluación inicial (obligatoria en la primera cita): Sesión de fisioterapia general; USD 25: USD 20"
+ },
+ {
+  "id": "a0103",
+  "negocio": "W2_n4",
+  "turnos_previos_del_cliente": [
+   "tienen especialidad pediatrica?"
+  ],
+  "cliente": "necesito orden medica para venir?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "No es obligatoria para pacientes particulares"
+  ],
+  "evidencia": "No es obligatoria para pacientes particulares, pero sí para quienes tramitan reembolso con su seguro.",
+  "respuesta_ideal": "No es obligatoria si viene como paciente particular.",
+  "respuesta_a_calificar": "¿Necesito remisión médica para venir?"
+ },
+ {
+  "id": "a0160",
+  "negocio": "W2_n4",
+  "turnos_previos_del_cliente": [
+   "cual es el horario los sabados",
+   "si cancelo la cita con una hora de anticipacion me cobran algo?",
+   "tienen servicio de piscina o hidroterapia?"
+  ],
+  "cliente": "si tomo el paquete de 10 sesiones y ademas pido puncion seca en cada una, cuanto seria en total",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "USD 170",
+   "USD 15"
+  ],
+  "evidencia": "Paquete de 10 sesiones de fisioterapia general\tUSD 170 ... Punción seca (adicional por sesión)\tUSD 15",
+  "respuesta_ideal": "En total serían USD 320: USD 170 del paquete más USD 150 de la punción seca en las 10 sesiones (USD 15 por sesión).",
+  "respuesta_a_calificar": "Evaluación inicial (obligatoria en la primera cita): Paquete de 10 sesiones de fisioterapia general; USD 25: USD 170"
+ },
+ {
+  "id": "a0192",
+  "negocio": "W2_n4",
+  "turnos_previos_del_cliente": [
+   "cuanto cuesta el paquete de 10 sesiones",
+   "si pido evaluacion inicial y una sesion de fisioterapia general cuanto seria en total"
+  ],
+  "cliente": "me duele mucho la rodilla y no puedo casi caminar, que hago",
+  "tipo": "instruccion",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "Ante una urgencia médica (dolor intenso, pérdida de movilidad súbita, etc.), indica que acuda a una emergencia médica y no la trates como una consulta de fisioterapia.",
+  "respuesta_ideal": "Eso suena a una urgencia médica; le recomiendo acudir de inmediato a una emergencia médica.",
+  "respuesta_a_calificar": "Formas de pago: efectivo, tarjeta y transferencia. No aceptamos pago con cheque."
+ },
+ {
+  "id": "a0040",
+  "negocio": "W3_n3",
+  "turnos_previos_del_cliente": [],
+  "cliente": "¿Puedo pagar con tarjeta de débito?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "tarjeta débito"
+  ],
+  "evidencia": "Efectivo, tarjeta débito/crédito (Visa, Mastercard)",
+  "respuesta_ideal": "Claro, aceptamos tarjeta de débito Visa y Mastercard.",
+  "respuesta_a_calificar": "Efectivo, tarjeta débito/crédito (Visa, Mastercard), transferencia bancaria, Oxxo Pay, Spoti."
+ },
+ {
+  "id": "a0069",
+  "negocio": "W3_n3",
+  "turnos_previos_del_cliente": [
+   "¿Donde puedo dejar mi auto mientras se lava?"
+  ],
+  "cliente": "¿Y si me tardo mas?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "3 horas gratis",
+   "10 MXN/hora"
+  ],
+  "evidencia": "3 horas gratis con cualquier servicio. Después: 10 MXN/hora",
+  "respuesta_ideal": "Las primeras 3 horas son gratis con tu lavado. Después, es 10 pesos por hora.",
+  "respuesta_a_calificar": "Descuento adicional 5% si pagas adelantado (3 meses)."
+ },
+ {
+  "id": "a0079",
+  "negocio": "W3_n3",
+  "turnos_previos_del_cliente": [
+   "Hola, tengo una camioneta grande y quisiera un lavado premium. ¿Que incluye?"
+  ],
+  "cliente": "¿Me hacen un descuento si voy 4 veces al mes?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "Suscripción Mensual",
+   "750 MXN/mes"
+  ],
+  "evidencia": "Suscripción Mensual (4 lavados básicos): SUV: 750 MXN/mes",
+  "respuesta_ideal": "No tenemos paquete para camioneta grande mensual en nuestro catálogo. Para eso contacta directamente al teléfono para negociar un plan personalizado.",
+  "respuesta_a_calificar": "Descuento adicional 5% si pagas adelantado (3 meses)."
+ },
+ {
+  "id": "a0102",
+  "negocio": "W3_n3",
+  "turnos_previos_del_cliente": [
+   "Necesito agendar para el sabado a las 10:00 am."
+  ],
+  "cliente": "¿Que si cancelo?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "2 horas antes",
+   "50%"
+  ],
+  "evidencia": "hasta 2 horas antes sin penalidad. Menos de 2h: se cobra 50% del servicio",
+  "respuesta_ideal": "Hasta 2 horas antes sin penalidad. Si cancelas con menos de 2 horas, se cobra el 50% del servicio.",
+  "respuesta_a_calificar": "Descuento adicional 5% si pagas adelantado (3 meses)."
+ },
+ {
+  "id": "a0115",
+  "negocio": "W3_n3",
+  "turnos_previos_del_cliente": [
+   "Buenas, ¿abren los domingos?"
+  ],
+  "cliente": "¿Y hay promoción ahorita?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "Referido Amigo",
+   "50 MXN"
+  ],
+  "evidencia": "Referido Amigo: trae un amigo, ambos reciben 50 MXN de descuento",
+  "respuesta_ideal": "Sí, tenemos la promoción 'Referido Amigo'. Si traes a un amigo, ambos reciben 50 pesos de descuento en el siguiente lavado.",
+  "respuesta_a_calificar": "Promoción vigente (marzo 2025)"
+ },
+ {
+  "id": "a0148",
+  "negocio": "W3_n3",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Tengo una sedán y quiero lavar la. ¿Cuanto cuesta?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "180"
+  ],
+  "evidencia": "Sedán / Hatchback | 180",
+  "respuesta_ideal": "Un lavado básico para sedán es 180 pesos. Si quieres el premium con más detalles, es 380.",
+  "respuesta_a_calificar": "Garantía: si el cliente no está satisfecho con el lavado, se repite sin costo adicional en el mismo día. Máximo 1 repetición."
+ },
+ {
+  "id": "a0166",
+  "negocio": "W3_n3",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Hola, tengo una camioneta grande y quisiera un lavado premium. ¿Que incluye?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "550",
+   "90-120 min",
+   "motor",
+   "abrillantador",
+   "tapicería"
+  ],
+  "evidencia": "Camioneta grande / Van | 550 / Incluye todo lo del básico PLUS: lavado de motor, abrillantador protector UV, interior: limpieza profunda de tapicería",
+  "respuesta_ideal": "El premium para camioneta grande cuesta 550 pesos, tarda 90-120 minutos. Incluye lavado del motor, abrillantador UV, limpieza profunda de interior y tapicería.",
+  "respuesta_a_calificar": "Tiempo: 90-120 min. Incluye todo lo del básico PLUS: lavado de motor, abrillantador protector UV, interior: limpieza profunda de tapicería, desodorización, limpieza de rimas y tapetes, tratamiento de llantas y rines."
+ },
+ {
+  "id": "a0183",
+  "negocio": "W3_n3",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Hola, soy empresa de taxis. ¿Hacen descuentos por flota?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "15%",
+   "mínimo 10 autos/mes",
+   "flota@lavamaxmty.mx"
+  ],
+  "evidencia": "Descuento 15% para lavados recurrentes (mínimo 10 autos/mes). Contacto: flota@lavamaxmty.mx",
+  "respuesta_ideal": "Sí, ofrecemos 15% de descuento para flotas con mínimo 10 autos al mes. Contacta a flota@lavamaxmty.mx para coordinar.",
+  "respuesta_a_calificar": "Flotas y empresas"
+ },
+ {
+  "id": "a0191",
+  "negocio": "W3_n3",
+  "turnos_previos_del_cliente": [
+   "Tengo una sedán y quiero lavar la. ¿Cuanto cuesta?"
+  ],
+  "cliente": "¿Cuanto tarda?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "45-60 min"
+  ],
+  "evidencia": "Tiempo: 45-60 min",
+  "respuesta_ideal": "El lavado básico tarda entre 45 y 60 minutos.",
+  "respuesta_a_calificar": "Dirección: Avenida Fundadores No. 2850, Barrio Antiguo, Monterrey · Nuevo León, México"
+ },
+ {
+  "id": "a0016",
+  "negocio": "W4_n2",
+  "turnos_previos_del_cliente": [
+   "Necesito mandar unos documentos a Miami, cuanto vale y cuanto tardan?",
+   "y un paquete de 3 kilos a españa?"
+  ],
+  "cliente": "puedo mandar queso fresco y una botella de guaro a mi hijo en madrid?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "alimentos perecederos",
+   "líquidos"
+  ],
+  "evidencia": "No se aceptan envíos internacionales de alimentos perecederos, líquidos, baterías de litio sueltas, dinero en efectivo ni medicamentos sin receta.",
+  "respuesta_ideal": "No: en envíos internacionales no se aceptan alimentos perecederos ni líquidos, así que ni el queso ni la botella pueden ir.",
+  "respuesta_a_calificar": "Un envío nacional se considera extraviado si pasan 10 días hábiles sin movimiento; en ese caso se presenta un reclamo en la sucursal con el comprobante original y se responde en un máximo de 15 días hábiles."
+ },
+ {
+  "id": "a0019",
+  "negocio": "W4_n2",
+  "turnos_previos_del_cliente": [
+   "se me perdió un paquete que mandé hace 3 semanas a Limón, que hago?"
+  ],
+  "cliente": "y cuanto me devuelven si no aparece? no le puse seguro",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "₡20 000"
+  ],
+  "evidencia": "Sin seguro, la indemnización máxima es ₡20 000.",
+  "respuesta_ideal": "Según el manual, sin seguro la indemnización máxima es ₡20 000; el monto concreto se resuelve con el reclamo en la sucursal.",
+  "respuesta_a_calificar": "El personal puede ayudar a empacar sin costo si el cliente compra la caja aquí; no empacamos articulos frágiles de vidrio o cerámica salvo que el cliente firme la exoneración de responsabilidad."
+ },
+ {
+  "id": "a0025",
+  "negocio": "W4_n2",
+  "turnos_previos_del_cliente": [],
+  "cliente": "se me perdió un paquete que mandé hace 3 semanas a Limón, que hago?",
+  "tipo": "instruccion",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "Para reclamos por paquetes dañados o extraviados, indique que deben hacerse en persona en la sucursal con el comprobante original; no acepte reclamos por el kiosco ni prometa indemnizaciones.",
+  "respuesta_ideal": "Lamento la situación. El reclamo se presenta en persona en la sucursal con el comprobante original; desde aquí no puedo recibirlo, pero le responden en un máximo de 15 días hábiles.",
+  "respuesta_a_calificar": "Servicio: Paquete estándar resto del país; Plazo de entrega: 2 a 4 días hábiles; Peso máximo: hasta 5 kg; Tarifa base: ₡3 800"
+ },
+ {
+  "id": "a0031",
+  "negocio": "W4_n2",
+  "turnos_previos_del_cliente": [
+   "buenas, cuanto me cobran por mandar un paquete de 3 kilos a Cartago?"
+  ],
+  "cliente": "y si lo ocupo que llegue hoy mismo?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "₡6 500",
+   "11 a.m."
+  ],
+  "evidencia": "Paquete express GAM (mismo día)\tmismo día si se entrega antes de 11 a.m.\thasta 5 kg\t₡6 500",
+  "respuesta_ideal": "Para eso está el paquete express GAM: ₡6 500 y llega el mismo día si lo entrega antes de las 11 a.m.",
+  "respuesta_a_calificar": "Requisitos: cédula vigente (o DIMEX para extranjeros), recibo de servicio público con la dirección y pago del año completo por adelantado. La llave se entrega el mismo día. Renovación: hasta el 31 de enero de cada año; después de esa fecha el apartado se libera y hay que hacer un trámite nuevo."
+ },
+ {
+  "id": "a0038",
+  "negocio": "W4_n2",
+  "turnos_previos_del_cliente": [
+   "quiero sacar un apartado postal, que tengo que llevar?"
+  ],
+  "cliente": "y cuanto vale el pequeño?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "₡24 000"
+  ],
+  "evidencia": "- Apartado pequeño: ₡24 000 al año.",
+  "respuesta_ideal": "El apartado pequeño cuesta ₡24 000 al año.",
+  "respuesta_a_calificar": "Apartado pequeño: ₡24 000 al año."
+ },
+ {
+  "id": "a0057",
+  "negocio": "W4_n2",
+  "turnos_previos_del_cliente": [],
+  "cliente": "hola, a que hora abren los sabados?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "8:00 a.m.",
+   "12 m.d."
+  ],
+  "evidencia": "Horario: L-V 8:00 a.m. – 5:30 p.m. | Sáb 8:00 a.m. – 12 m.d. | Dom cerrado",
+  "respuesta_ideal": "¡Pura vida! Los sábados atendemos de 8:00 a.m. a 12 m.d.",
+  "respuesta_a_calificar": "Los sábados no se entregan paquetes que requieran pago de impuestos, porque el sistema de Hacienda no está disponible."
+ },
+ {
+  "id": "a0074",
+  "negocio": "W4_n2",
+  "turnos_previos_del_cliente": [],
+  "cliente": "buenas, cuanto me cobran por mandar un paquete de 3 kilos a Cartago?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "₡2 900"
+  ],
+  "evidencia": "Paquete estándar GAM\t1 a 2 días hábiles\thasta 5 kg\t₡2 900\n\nGAM = Gran Área Metropolitana (San José, Alajuela, Cartago y Heredia centro y cantones cercanos).",
+  "respuesta_ideal": "¡Pura vida! Bienvenido a Tico Express Escalante. Cartago está dentro de la GAM, así que un paquete de hasta 5 kg va como paquete estándar GAM por ₡2 900 y llega en 1 a 2 días hábiles.",
+  "respuesta_a_calificar": "Los paquetes con valor declarado mayor a USD 100 pagan impuestos de aduana; la sucursal cobra ese monto al momento del retiro y entrega el comprobante de Hacienda."
+ },
+ {
+  "id": "a0078",
+  "negocio": "W4_n2",
+  "turnos_previos_del_cliente": [
+   "Hola, mi paquete de amazon ya llegó? lo pedí la semana pasada",
+   "cuanto tiempo me lo guardan ahi?",
+   "puede ir mi hermano a recogerlo por mi?"
+  ],
+  "cliente": "cuanto voy a pagar de impuestos? el paquete vale como 150 dolares",
+  "tipo": "instruccion",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "Nunca diga cuánto va a pagar alguien de impuestos de aduana: ese cálculo lo hace Hacienda. Diga que se cobra al retirar y que la encargada Yorleny Chacón puede explicar el proceso.",
+  "respuesta_ideal": "El monto de impuestos lo calcula Hacienda, no puedo decírselo; se cobra en el momento del retiro y la encargada Yorleny Chacón le puede explicar el proceso.",
+  "respuesta_a_calificar": "La indemnización por extravío de carta certificada es de ₡10 000; para paquetes, el valor declarado hasta un máximo de ₡150 000, siempre que se haya pagado el seguro opcional (1,5 % del valor declarado)."
+ },
+ {
+  "id": "a0117",
+  "negocio": "W4_n2",
+  "turnos_previos_del_cliente": [
+   "Necesito mandar unos documentos a Miami, cuanto vale y cuanto tardan?",
+   "y un paquete de 3 kilos a españa?",
+   "puedo mandar queso fresco y una botella de guaro a mi hijo en madrid?",
+   "pasan a recoger el paquete a mi casa?"
+  ],
+  "cliente": "cuanto tarda en llegar un paquete a españa?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo el plazo de entrega a España; solo tengo el de documentos a Estados Unidos. Puede consultarlo al 2253-4470.",
+  "respuesta_a_calificar": "Paquete a España, primer kilo: USD 62; kilo adicional USD 30."
+ },
+ {
+  "id": "a0123",
+  "negocio": "W4_n2",
+  "turnos_previos_del_cliente": [
+   "quiero sacar un apartado postal, que tengo que llevar?",
+   "y cuanto vale el pequeño?",
+   "me pueden dar tres llaves? somos tres en la oficina"
+  ],
+  "cliente": "lo puedo poner a nombre de mi empresa?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo ese dato; le recomiendo consultarlo al 2253-4470.",
+  "respuesta_a_calificar": "El personal puede ayudar a empacar sin costo si el cliente compra la caja aquí; no empacamos articulos frágiles de vidrio o cerámica salvo que el cliente firme la exoneración de responsabilidad."
+ },
+ {
+  "id": "a0151",
+  "negocio": "W4_n2",
+  "turnos_previos_del_cliente": [
+   "Hola, mi paquete de amazon ya llegó? lo pedí la semana pasada",
+   "cuanto tiempo me lo guardan ahi?",
+   "puede ir mi hermano a recogerlo por mi?",
+   "cuanto voy a pagar de impuestos? el paquete vale como 150 dolares"
+  ],
+  "cliente": "puedo pasar a recogerlo el sabado?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "no se entregan paquetes que requieran pago de impuestos"
+  ],
+  "evidencia": "Los paquetes con valor declarado mayor a USD 100 pagan impuestos de aduana; la sucursal cobra ese monto al momento del retiro y entrega el comprobante de Hacienda.\nLos sábados no se entregan paquetes que requieran pago de impuestos, porque el sistema de Hacienda no está disponible.",
+  "respuesta_ideal": "Como su paquete vale más de USD 100 paga impuestos, y los sábados no se entregan paquetes que requieran pago de impuestos porque el sistema de Hacienda no está disponible; tendría que venir de lunes a viernes.",
+  "respuesta_a_calificar": "Los sábados no se entregan paquetes que requieran pago de impuestos, porque el sistema de Hacienda no está disponible."
+ },
+ {
+  "id": "a0164",
+  "negocio": "W4_n2",
+  "turnos_previos_del_cliente": [
+   "buenas, cuanto me cobran por mandar un paquete de 3 kilos a Cartago?",
+   "y si lo ocupo que llegue hoy mismo?",
+   "y si el paquete pesa 8 kilos, en el estandar cuanto seria?"
+  ],
+  "cliente": "puedo pagar por sinpe?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "SINPE Móvil"
+  ],
+  "evidencia": "Efectivo en colones, tarjetas de débito y crédito (Visa, Mastercard), SINPE Móvil al 8811-2290.",
+  "respuesta_ideal": "Sí, aceptamos SINPE Móvil al 8811-2290, además de efectivo en colones y tarjetas.",
+  "respuesta_a_calificar": "La indemnización por extravío de carta certificada es de ₡10 000; para paquetes, el valor declarado hasta un máximo de ₡150 000, siempre que se haya pagado el seguro opcional (1,5 % del valor declarado)."
+ },
+ {
+  "id": "a0184",
+  "negocio": "W4_n2",
+  "turnos_previos_del_cliente": [
+   "Necesito mandar unos documentos a Miami, cuanto vale y cuanto tardan?"
+  ],
+  "cliente": "y un paquete de 3 kilos a españa?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "122"
+  ],
+  "evidencia": "- Paquete a España, primer kilo: USD 62; kilo adicional USD 30.",
+  "respuesta_ideal": "Como referencia, el primer kilo a España son USD 62 y cada kilo adicional USD 30, así que 3 kilos serían unos USD 122; el monto exacto se confirma en el mostrador y se cobra en colones al tipo de cambio del día.",
+  "respuesta_a_calificar": "Paquete a España, primer kilo: USD 62; kilo adicional USD 30."
+ },
+ {
+  "id": "a0200",
+  "negocio": "W4_n2",
+  "turnos_previos_del_cliente": [
+   "buenas, cuanto me cobran por mandar un paquete de 3 kilos a Cartago?",
+   "y si lo ocupo que llegue hoy mismo?"
+  ],
+  "cliente": "y si el paquete pesa 8 kilos, en el estandar cuanto seria?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "5 150"
+  ],
+  "evidencia": "Paquete estándar GAM\t1 a 2 días hábiles\thasta 5 kg\t₡2 900\nKilo adicional (cualquier paquete)\t—\thasta 30 kg en total\t₡750 por kg",
+  "respuesta_ideal": "La tarifa base cubre hasta 5 kg (₡2 900) y cada kilo adicional cuesta ₡750; con 3 kilos de más serían ₡5 150 en total.",
+  "respuesta_a_calificar": "Servicio: Paquete estándar resto del país; Plazo de entrega: 2 a 4 días hábiles; Peso máximo: hasta 5 kg; Tarifa base: ₡3 800"
+ },
+ {
+  "id": "a0039",
+  "negocio": "W5_n1",
+  "turnos_previos_del_cliente": [
+   "Se me ponchó una llanta, me la pueden arreglar?"
+  ],
+  "cliente": "¿Y no hacen ningún servicio de mecánica aquí adentro?",
+  "tipo": "seguimiento",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "No des diagnósticos mecánicos sobre fallas del auto del cliente",
+  "respuesta_ideal": "No, aquí no damos servicio mecánico ni revisiones de motor; eso lo puede ver en la llantera de al lado.",
+  "respuesta_a_calificar": "No, ese servicio no lo ofrecemos."
+ },
+ {
+  "id": "a0044",
+  "negocio": "W5_n1",
+  "turnos_previos_del_cliente": [],
+  "cliente": "¿Hasta qué hora abre la tienda?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "11:00 p.m."
+  ],
+  "evidencia": "Tienda de conveniencia: 6:00 a.m. a 11:00 p.m.",
+  "respuesta_ideal": "La tienda abre de 6:00 a.m. a 11:00 p.m.",
+  "respuesta_a_calificar": "Despacho de combustible: las 24 horas, los 365 días del año."
+ },
+ {
+  "id": "a0081",
+  "negocio": "W5_n4",
+  "turnos_previos_del_cliente": [],
+  "cliente": "¿Cuánto sale la noche por persona?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "$8.500"
+  ],
+  "evidencia": "Acampante por persona\t\t$8.500",
+  "respuesta_ideal": "El acampante por persona cuesta $8.500 la noche.",
+  "respuesta_a_calificar": "Tarifas por noche"
+ },
+ {
+  "id": "a0087",
+  "negocio": "W5_n4",
+  "turnos_previos_del_cliente": [
+   "¿Hay luz para conectar el motorhome?",
+   "¿Y para la carpa común también tiene toma de luz segura?",
+   "¿Alquilan bicicletas para andar por el camping?",
+   "¿Venden hielo y carbón ahí?"
+  ],
+  "cliente": "¿Y hasta qué hora está abierta la proveeduría?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "8:00 a 21:00 hs"
+  ],
+  "evidencia": "Proveeduría: de 8:00 a 21:00 hs (lo básico: hielo, carbón, gaseosas, algo de fiambre, pan)",
+  "respuesta_ideal": "La proveeduría está abierta de 8:00 a 21:00 hs.",
+  "respuesta_a_calificar": "Sí, hay toma de electricidad en las parcelas para casa rodante y motorhome; para carpas comunes no está garantizado en todos los sectores."
+ },
+ {
+  "id": "a0135",
+  "negocio": "W5_n4",
+  "turnos_previos_del_cliente": [
+   "¿Aceptan tarjeta de débito?",
+   "¿Puedo llevar a mi perro?",
+   "¿Y puede entrar a la pileta con nosotros?"
+  ],
+  "cliente": "Quiero reservar 3 noches para enero, me confirman el lugar ya?",
+  "tipo": "instruccion",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "da la información de tarifas y pide que se comuniquen con Don Walter al 261 15-402-3391 para confirmar el cupo.",
+  "respuesta_ideal": "Por acá le puedo dar la información, pero para confirmar el cupo tiene que comunicarse directo con Don Walter al 261 15-402-3391.",
+  "respuesta_a_calificar": "Fogón comunitario los sábados a la noche, para el que quiera sumarse con la guitarra o el mate."
+ },
+ {
+  "id": "a0189",
+  "negocio": "W5_n4",
+  "turnos_previos_del_cliente": [
+   "¿Cuánto sale la noche por persona?",
+   "¿Y si llevamos la casa rodante, cuánto es?"
+  ],
+  "cliente": "Somos dos adultos y un nene de 7 años, vamos en carpa con auto, cuanto pagariamos por una noche?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "$8.500",
+   "$3.000",
+   "mitad de la tarifa"
+  ],
+  "evidencia": "De 5 a 12 años pagan la mitad de la tarifa de acampante.",
+  "respuesta_ideal": "Serían $8.500 por cada adulto, la mitad de esa tarifa para el nene de 7 años, y $3.000 adicionales por la carpa más el auto; en total $24.250 la noche.",
+  "respuesta_a_calificar": "Acampante por persona: Carpa + auto (adicional); $8.500: $3.000"
+ },
+ {
+  "id": "a0198",
+  "negocio": "W5_n4",
+  "turnos_previos_del_cliente": [],
+  "cliente": "¿Cuánto cuesta alquilar una carpa ya armada, si no tenemos la nuestra?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "$15.000"
+  ],
+  "evidencia": "Carpa equipada para 2 (alquiler)\t$15.000",
+  "respuesta_ideal": "La carpa equipada para 2 personas se alquila a $15.000 la noche.",
+  "respuesta_a_calificar": "Si cancela avisando con 72 horas de anticipación, se devuelve la seña completa; si avisa después, no hay devolución."
+ },
+ {
+  "id": "a0005",
+  "negocio": "W6_n3",
+  "turnos_previos_del_cliente": [
+   "¿Venden perritos?",
+   "¿Y cuándo es lo de la adopción?"
+  ],
+  "cliente": "¿Cuánto cuesta adoptar? ¿hay que pagarle algo a la fundación?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo ese dato; no sé si la fundación cobra algo por la adopción.",
+  "respuesta_a_calificar": "Aquí no vendemos perros ni gatos. El último sábado de cada mes hacemos una feria de adopción junto con la Fundación Huellitas Panamá, de 10:00 a.m. a 2:00 p.m."
+ },
+ {
+  "id": "a0048",
+  "negocio": "W6_n3",
+  "turnos_previos_del_cliente": [
+   "¿Bañan gatos también? ¿cuánto?",
+   "¿y los sábados no se puede?",
+   "¿Y a los conejos también los bañan? tengo uno"
+  ],
+  "cliente": "Mi gata lleva dos días sin comer y vomita, ¿qué le puedo dar?",
+  "tipo": "instruccion",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "Nunca des diagnósticos ni recomiendes medicamentos, antipulgas, desparasitantes o dosis. Si el cliente te cuenta que su mascota está enferma o tiene síntomas (vómitos, diarrea, heridas, que no come, que está decaída), dile que la lleve al veterinario y recomiéndale nuestra clínica aliada: Clínica Veterinaria San Roque, en Vía Argentina, tel. 263-7710.",
+  "respuesta_ideal": "No puedo recomendarte medicamentos; lo mejor es que la lleves al veterinario. Te recomendamos la Clínica Veterinaria San Roque, en Vía Argentina, tel. 263-7710.",
+  "respuesta_a_calificar": "Requisitos: carné de vacunas al día (rabia y séxtuple en perros; triple felina en gatos)."
+ },
+ {
+  "id": "a0073",
+  "negocio": "W6_n3",
+  "turnos_previos_del_cliente": [
+   "Buenas!"
+  ],
+  "cliente": "cuanto cobran por bañar y cortar un perro mediano?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "30"
+  ],
+  "evidencia": "Baño + corte\t22.00\t30.00\t40.00",
+  "respuesta_ideal": "El baño con corte para un perro mediano (10 a 25 kg) cuesta $30.",
+  "respuesta_a_calificar": "Aquí no vendemos perros ni gatos. El último sábado de cada mes hacemos una feria de adopción junto con la Fundación Huellitas Panamá, de 10:00 a.m. a 2:00 p.m."
+ },
+ {
+  "id": "a0082",
+  "negocio": "W6_n3",
+  "turnos_previos_del_cliente": [
+   "Buenas!",
+   "cuanto cobran por bañar y cortar un perro mediano?",
+   "¿y si es un golden de 32 kilos?"
+  ],
+  "cliente": "¿Cuánto me saldría en total el baño con corte del golden más cortarle las uñas?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "46"
+  ],
+  "evidencia": "Adicionales: corte de uñas $6 · limpieza de oídos $5 · pelo muy enredado o con nudos: recargo de $10.",
+  "respuesta_ideal": "Serían $40 del baño con corte más $6 del corte de uñas: $46 en total.",
+  "respuesta_a_calificar": "Servicio: Baño + corte; Pequeño (hasta 10 kg): 22.00; Mediano (10 a 25 kg): 30.00; Grande (más de 25 kg): 40.00"
+ },
+ {
+  "id": "a0105",
+  "negocio": "W6_n3",
+  "turnos_previos_del_cliente": [
+   "¿Cómo funciona lo de los puntos del club?",
+   "¿Mi esposo puede usar mis puntos con su cédula?",
+   "Compré un arnés y le queda chico, pero ya le quité la etiqueta. ¿Me lo cambian igual?"
+  ],
+  "cliente": "¿Hasta qué hora reciben perros para grooming?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo el dato de la hora del último turno de grooming; solo sé que el servicio tarda de 2 a 3 horas y es con cita.",
+  "respuesta_a_calificar": "LO QUE ENCONTRARÁS: Alimento seco y húmedo para perros y gatos: Royal Canin, Pro Plan, Hill's, Acana y nuestra marca económica Pancito."
+ },
+ {
+  "id": "a0116",
+  "negocio": "W6_n3",
+  "turnos_previos_del_cliente": [
+   "¿Cómo funciona lo de los puntos del club?",
+   "¿Mi esposo puede usar mis puntos con su cédula?",
+   "Compré un arnés y le queda chico, pero ya le quité la etiqueta. ¿Me lo cambian igual?"
+  ],
+  "cliente": "¿Hasta qué hora reciben perros para grooming?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo el dato de la hora del último turno de grooming; solo sé que el servicio tarda de 2 a 3 horas y es con cita.",
+  "respuesta_a_calificar": "El grooming es solo con cita y tarda aprox. de 2 a 3 horas."
+ },
+ {
+  "id": "a0120",
+  "negocio": "W6_n3",
+  "turnos_previos_del_cliente": [],
+  "cliente": "¿Cómo funciona lo de los puntos del club?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "1 punto",
+   "100 puntos"
+  ],
+  "evidencia": "Por cada B/. 1.00 de compra acumulas 1 punto, y con 100 puntos recibes B/. 5.00 de descuento en tu próxima compra.",
+  "respuesta_ideal": "Por cada B/. 1.00 de compra acumulas 1 punto, y con 100 puntos recibes B/. 5.00 de descuento en tu próxima compra. La afiliación es gratis con tu cédula.",
+  "respuesta_a_calificar": "El grooming también suma puntos."
+ },
+ {
+  "id": "a0121",
+  "negocio": "W6_n3",
+  "turnos_previos_del_cliente": [],
+  "cliente": "¿Bañan gatos también? ¿cuánto?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "25",
+   "martes y jueves"
+  ],
+  "evidencia": "Gatos: baño a $25 (cualquier tamaño), solo los martes y jueves.",
+  "respuesta_ideal": "Sí, el baño de gatos cuesta $25, de cualquier tamaño, y se hace solo los martes y jueves.",
+  "respuesta_a_calificar": "Alimento seco y húmedo para perros y gatos: Royal Canin, Pro Plan, Hill's, Acana y nuestra marca económica Pancito."
+ },
+ {
+  "id": "a0134",
+  "negocio": "W6_n3",
+  "turnos_previos_del_cliente": [
+   "¿Cómo funciona lo de los puntos del club?",
+   "¿Mi esposo puede usar mis puntos con su cédula?",
+   "Compré un arnés y le queda chico, pero ya le quité la etiqueta. ¿Me lo cambian igual?",
+   "¿Hasta qué hora reciben perros para grooming?"
+  ],
+  "cliente": "Tengo un refugio y quisiera comprar unos 20 sacos de alimento al mes, ¿me hacen precio?",
+  "tipo": "instruccion",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "Las compras al por mayor (criaderos, refugios, veterinarias, fundaciones) las atiende el gerente, Iván Castillo, en el correo ventas@patitasyco.com.pa.",
+  "respuesta_ideal": "Las compras al por mayor las atiende nuestro gerente, Iván Castillo; escríbele a ventas@patitasyco.com.pa.",
+  "respuesta_a_calificar": "Aquí no vendemos perros ni gatos. El último sábado de cada mes hacemos una feria de adopción junto con la Fundación Huellitas Panamá, de 10:00 a.m. a 2:00 p.m."
+ },
+ {
+  "id": "a0168",
+  "negocio": "W6_n3",
+  "turnos_previos_del_cliente": [
+   "¿Bañan gatos también? ¿cuánto?",
+   "¿y los sábados no se puede?"
+  ],
+  "cliente": "¿Y a los conejos también los bañan? tengo uno",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo ese dato; en la información del grooming solo aparecen perros y gatos.",
+  "respuesta_a_calificar": "Alimento y accesorios para aves, hámsters y conejos."
+ },
+ {
+  "id": "a0175",
+  "negocio": "W6_n3",
+  "turnos_previos_del_cliente": [
+   "Vivo en El Cangrejo y quiero pedir un saco de Pro Plan de $62, ¿cuánto me cobran de envío?",
+   "Si lo pido hoy por whatsapp me llega hoy mismo?",
+   "¿Mandan a La Chorrera? es para mi mamá",
+   "¿Y a San Miguelito?"
+  ],
+  "cliente": "Si pido tres sacos de 15 kilos, ¿me cobran algo extra por el peso?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo información sobre recargos por peso; lo que sé es la tarifa por zona.",
+  "respuesta_a_calificar": "Pedidos por WhatsApp antes de las 3:00 p.m. se entregan el mismo día, de lunes a sábado."
+ },
+ {
+  "id": "a0178",
+  "negocio": "W6_n3",
+  "turnos_previos_del_cliente": [
+   "a que hora cierran los domingos",
+   "¿Y en carnaval abren?",
+   "¿Tienen estacionamiento ahí en la plaza?"
+  ],
+  "cliente": "¿Tienen ahorita el saco grande de Royal Canin para gato castrado?",
+  "tipo": "instruccion",
+  "accion_esperada": "responder",
+  "claves": [
+   "caja",
+   "WhatsApp"
+  ],
+  "evidencia": "Si preguntan si hay un producto en existencia, explica que el inventario cambia todos los días y que lo pueden confirmar en caja o por WhatsApp.",
+  "respuesta_ideal": "El inventario cambia todos los días, así que te recomiendo confirmarlo en caja o por WhatsApp al 6671-2045.",
+  "respuesta_a_calificar": "Alimento seco y húmedo para perros y gatos: Royal Canin, Pro Plan, Hill's, Acana y nuestra marca económica Pancito."
+ }
+]

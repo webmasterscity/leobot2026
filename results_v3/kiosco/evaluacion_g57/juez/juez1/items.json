@@ -1,0 +1,1392 @@
+[
+ {
+  "id": "i0000",
+  "negocio": "W1_n1",
+  "turnos_previos_del_cliente": [
+   "quiero comprar lentes de contacto mensuales, a cuanto estan?",
+   "¿de qué marca son?",
+   "¿y tienen de colores?"
+  ],
+  "cliente": "¿El líquido para limpiarlos cuánto sale?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "$U 590"
+  ],
+  "evidencia": "| Líquido multipropósito 360 ml | $U 590 |",
+  "respuesta_ideal": "El líquido multipropósito de 360 ml sale $U 590.",
+  "respuesta_a_calificar": "Producto: Líquido multipropósito 360 ml; Precio: $U 590"
+ },
+ {
+  "id": "i0006",
+  "negocio": "W1_n1",
+  "turnos_previos_del_cliente": [
+   "se me salió una plaqueta de los lentes, ¿cuánto me cobran por ponerla?"
+  ],
+  "cliente": "Tengo otros de acetato con una patilla partida, ¿me los pueden soldar?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "No se sueldan armazones de acetato"
+  ],
+  "evidencia": "No se sueldan armazones de acetato.",
+  "respuesta_ideal": "No, lamentablemente no se sueldan armazones de acetato; la soldadura es solo para armazones metálicos.",
+  "respuesta_a_calificar": "¿Tienen antiparras con aumento?: Las otras graduaciones se encargan."
+ },
+ {
+  "id": "i0045",
+  "negocio": "W1_n1",
+  "turnos_previos_del_cliente": [
+   "Hola, ¿cuánto están los lentes progresivos?",
+   "¿y cuánto demoran en estar?",
+   "¿Se puede pagar en cuotas con la OCA?",
+   "¿cuanto hay que dejar de seña para encargarlos?"
+  ],
+  "cliente": "Soy socia de CASMU y pensaba pagar en efectivo, ¿se me suman los dos descuentos?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "no acumulable con convenios"
+  ],
+  "evidencia": "10 % de descuento pagando en efectivo (no acumulable con convenios ni otras promociones).",
+  "respuesta_ideal": "No, el 10 % por pagar en efectivo no es acumulable con convenios; como socia de CASMU tenés 15 % en armazones y cristales presentando el carné vigente.",
+  "respuesta_a_calificar": "Socios de CASMU y de la Caja Notarial: 15 % de descuento en armazones y cristales presentando el carné vigente."
+ },
+ {
+  "id": "i0106",
+  "negocio": "W1_n1",
+  "turnos_previos_del_cliente": [
+   "se me salió una plaqueta de los lentes, ¿cuánto me cobran por ponerla?",
+   "Tengo otros de acetato con una patilla partida, ¿me los pueden soldar?"
+  ],
+  "cliente": "hasta que hora estan el sabado?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "13:30"
+  ],
+  "evidencia": "Sábados: 10:00 a 13:30",
+  "respuesta_ideal": "Los sábados abrimos de 10:00 a 13:30.",
+  "respuesta_a_calificar": "30"
+ },
+ {
+  "id": "i0113",
+  "negocio": "W1_n1",
+  "turnos_previos_del_cliente": [
+   "Vivo en Salto, ¿cómo hago para que me lleguen los lentes?",
+   "¿y mas o menos cuanto sale el envio?"
+  ],
+  "cliente": "¿Desde qué edad le pueden hacer el control a un gurí?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "12 años"
+  ],
+  "evidencia": "El control visual es a partir de los 12 años.",
+  "respuesta_ideal": "El control visual es a partir de los 12 años; para niños más chicos se recomienda un oftalmólogo pediatra.",
+  "respuesta_a_calificar": "El control visual es a partir de los 12 años."
+ },
+ {
+  "id": "i0191",
+  "negocio": "W1_n1",
+  "turnos_previos_del_cliente": [
+   "hola buenas tardes",
+   "cuanto sale el control de la vista?",
+   "¿y si después me hago los lentes con ustedes?"
+  ],
+  "cliente": "buenísimo, anotame para el jueves a las 4",
+  "tipo": "instruccion",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "No confirmes ni agendes horas para el control visual. Decile al cliente que las agenda la recepción por WhatsApp al 098 441 207.",
+  "respuesta_ideal": "Yo no puedo agendarte; las horas del control las agenda la recepción por WhatsApp al 098 441 207.",
+  "respuesta_a_calificar": "Lic. Carolina Pereyra: martes y jueves de 10:00 a 18:00, sábados de 10:00 a 13:00."
+ },
+ {
+  "id": "i0244",
+  "negocio": "W1_n1",
+  "turnos_previos_del_cliente": [
+   "Quiero cristales monofocales con antirreflejo, ¿cuánto me sale el par?"
+  ],
+  "cliente": "Y si pago en efectivo, ¿cuánto me queda?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "3.150"
+  ],
+  "evidencia": "10 % de descuento pagando en efectivo",
+  "respuesta_ideal": "Pagando en efectivo tenés 10 % de descuento, así que los $U 3.500 te quedan en $U 3.150.",
+  "respuesta_a_calificar": "== FORMAS DE PAGO ==: 10 % de descuento pagando en efectivo (no acumulable con convenios ni otras promociones)."
+ },
+ {
+  "id": "i0252",
+  "negocio": "W1_n1",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Quiero cristales monofocales con antirreflejo, ¿cuánto me sale el par?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "3.500"
+  ],
+  "evidencia": "| Cristales monofocales orgánicos (par) | $U 2.400 |\n| Tratamiento antirreflejo (par) | + $U 1.100 |",
+  "respuesta_ideal": "El par de monofocales orgánicos es $U 2.400 y el antirreflejo suma $U 1.100, así que te queda en $U 3.500.",
+  "respuesta_a_calificar": "Producto: Cristales monofocales orgánicos (par); Precio: $U 2.400"
+ },
+ {
+  "id": "i0292",
+  "negocio": "W1_n1",
+  "turnos_previos_del_cliente": [
+   "hola buenas tardes",
+   "cuanto sale el control de la vista?"
+  ],
+  "cliente": "¿y si después me hago los lentes con ustedes?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "30 días",
+   "se descuenta del total"
+  ],
+  "evidencia": "Si encargás tus lentes con nosotros dentro de los 30 días siguientes, ese importe se descuenta del total.",
+  "respuesta_ideal": "Si encargás los lentes con nosotros dentro de los 30 días siguientes al control, los $U 950 se descuentan del total.",
+  "respuesta_a_calificar": "Si la graduación la hizo nuestra optometrista y no te adaptás a los lentes, cambiamos los cristales sin costo una sola vez, dentro de los 30 días de la entrega."
+ },
+ {
+  "id": "i0306",
+  "negocio": "W1_n1",
+  "turnos_previos_del_cliente": [
+   "Hola, ¿cuánto están los lentes progresivos?",
+   "¿y cuánto demoran en estar?",
+   "¿Se puede pagar en cuotas con la OCA?"
+  ],
+  "cliente": "¿cuanto hay que dejar de seña para encargarlos?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "50 %"
+  ],
+  "evidencia": "Para encargar los lentes pedimos una seña del 50 %.",
+  "respuesta_ideal": "Para encargar los lentes se deja una seña del 50 %.",
+  "respuesta_a_calificar": "50"
+ },
+ {
+  "id": "i0322",
+  "negocio": "W1_n1",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Hola, ¿cuánto están los lentes progresivos?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "$U 9.800"
+  ],
+  "evidencia": "| Cristales multifocales / progresivos (par) | desde $U 9.800 |",
+  "respuesta_ideal": "Los cristales multifocales o progresivos están desde $U 9.800 el par.",
+  "respuesta_a_calificar": "Producto: Cristales multifocales / progresivos (par); Precio: desde $U 9.800"
+ },
+ {
+  "id": "i0323",
+  "negocio": "W1_n1",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Quiero cristales monofocales con antirreflejo, ¿cuánto me sale el par?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "3.500"
+  ],
+  "evidencia": "| Cristales monofocales orgánicos (par) | $U 2.400 |\n| Tratamiento antirreflejo (par) | + $U 1.100 |",
+  "respuesta_ideal": "El par de monofocales orgánicos es $U 2.400 y el antirreflejo suma $U 1.100, así que te queda en $U 3.500.",
+  "respuesta_a_calificar": "2"
+ },
+ {
+  "id": "i0336",
+  "negocio": "W1_n1",
+  "turnos_previos_del_cliente": [
+   "Vivo en Salto, ¿cómo hago para que me lleguen los lentes?",
+   "¿y mas o menos cuanto sale el envio?",
+   "¿Desde qué edad le pueden hacer el control a un gurí?",
+   "¿Los jubilados tienen algún descuento en el control?",
+   "Tengo unos lentes que compré en otra óptica y me quedan flojos, ¿me los pueden ajustar?"
+  ],
+  "cliente": "¿Cuánto salen los armazones Ray-Ban?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo precios por marca; solo sé que los armazones están desde $U 1.990.",
+  "respuesta_a_calificar": "6 meses"
+ },
+ {
+  "id": "i0359",
+  "negocio": "W1_n1",
+  "turnos_previos_del_cliente": [
+   "se me salió una plaqueta de los lentes, ¿cuánto me cobran por ponerla?",
+   "Tengo otros de acetato con una patilla partida, ¿me los pueden soldar?",
+   "hasta que hora estan el sabado?",
+   "¿y el 24 de diciembre?"
+  ],
+  "cliente": "¿Tienen otro local por Pocitos?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo información de otros locales; el que conozco es el de Av. 18 de Julio 1587, casi Magallanes.",
+  "respuesta_a_calificar": "¿Tienen antiparras con aumento?: Las otras graduaciones se encargan."
+ },
+ {
+  "id": "i0365",
+  "negocio": "W1_n1",
+  "turnos_previos_del_cliente": [
+   "hola buenas tardes"
+  ],
+  "cliente": "cuanto sale el control de la vista?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "$U 950"
+  ],
+  "evidencia": "El control dura unos 30 minutos y cuesta $U 950.",
+  "respuesta_ideal": "El control visual cuesta $U 950 y dura unos 30 minutos.",
+  "respuesta_a_calificar": "repentina"
+ },
+ {
+  "id": "i0374",
+  "negocio": "W1_n1",
+  "turnos_previos_del_cliente": [
+   "Hola, ¿cuánto están los lentes progresivos?"
+  ],
+  "cliente": "¿y cuánto demoran en estar?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "7 a 10 días hábiles"
+  ],
+  "evidencia": "multifocales y fotocromáticos, de 7 a 10 días hábiles",
+  "respuesta_ideal": "Los multifocales demoran de 7 a 10 días hábiles; te avisamos por WhatsApp cuando están prontos.",
+  "respuesta_a_calificar": "Socios de CASMU y de la Caja Notarial: 15 % de descuento en armazones y cristales presentando el carné vigente."
+ },
+ {
+  "id": "i0389",
+  "negocio": "W1_n1",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Vivo en Salto, ¿cómo hago para que me lleguen los lentes?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "DAC"
+  ],
+  "evidencia": "Sí, al interior por DAC. El envío lo paga el cliente al recibir.",
+  "respuesta_ideal": "Hacemos envíos al interior por DAC; el envío lo pagás al recibir.",
+  "respuesta_a_calificar": "Si la graduación la hizo nuestra optometrista y no te adaptás a los lentes, cambiamos los cristales sin costo una sola vez, dentro de los 30 días de la entrega."
+ },
+ {
+  "id": "i0394",
+  "negocio": "W1_n1",
+  "turnos_previos_del_cliente": [
+   "Vivo en Salto, ¿cómo hago para que me lleguen los lentes?",
+   "¿y mas o menos cuanto sale el envio?",
+   "¿Desde qué edad le pueden hacer el control a un gurí?"
+  ],
+  "cliente": "¿Los jubilados tienen algún descuento en el control?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo información sobre descuentos para jubilados, así que no te lo puedo confirmar.",
+  "respuesta_a_calificar": "Socios de CASMU y de la Caja Notarial: 15 % de descuento en armazones y cristales presentando el carné vigente."
+ },
+ {
+  "id": "i0426",
+  "negocio": "W1_n1",
+  "turnos_previos_del_cliente": [
+   "quiero comprar lentes de contacto mensuales, a cuanto estan?"
+  ],
+  "cliente": "¿de qué marca son?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo el dato de la marca de los lentes de contacto; te lo pueden confirmar en el local.",
+  "respuesta_a_calificar": "ni"
+ },
+ {
+  "id": "i0432",
+  "negocio": "W1_n1",
+  "turnos_previos_del_cliente": [
+   "Hola, ¿cuánto están los lentes progresivos?"
+  ],
+  "cliente": "¿y cuánto demoran en estar?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "7 a 10 días hábiles"
+  ],
+  "evidencia": "multifocales y fotocromáticos, de 7 a 10 días hábiles",
+  "respuesta_ideal": "Los multifocales demoran de 7 a 10 días hábiles; te avisamos por WhatsApp cuando están prontos.",
+  "respuesta_a_calificar": "890"
+ },
+ {
+  "id": "i0440",
+  "negocio": "W1_n1",
+  "turnos_previos_del_cliente": [
+   "hola buenas tardes",
+   "cuanto sale el control de la vista?",
+   "¿y si después me hago los lentes con ustedes?"
+  ],
+  "cliente": "buenísimo, anotame para el jueves a las 4",
+  "tipo": "instruccion",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "No confirmes ni agendes horas para el control visual. Decile al cliente que las agenda la recepción por WhatsApp al 098 441 207.",
+  "respuesta_ideal": "Yo no puedo agendarte; las horas del control las agenda la recepción por WhatsApp al 098 441 207.",
+  "respuesta_a_calificar": "Registré el ejemplo y sigo comparando qué roles son realmente necesarios."
+ },
+ {
+  "id": "i0447",
+  "negocio": "W1_n1",
+  "turnos_previos_del_cliente": [
+   "quiero comprar lentes de contacto mensuales, a cuanto estan?",
+   "¿de qué marca son?"
+  ],
+  "cliente": "¿y tienen de colores?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo información sobre lentes de contacto de color, así que no te lo puedo asegurar.",
+  "respuesta_a_calificar": "== GARANTÍA Y CAMBIOS ==: Los armazones tienen 6 meses de garantía por defectos de fabricación."
+ },
+ {
+  "id": "i0452",
+  "negocio": "W1_n1",
+  "turnos_previos_del_cliente": [
+   "Vivo en Salto, ¿cómo hago para que me lleguen los lentes?",
+   "¿y mas o menos cuanto sale el envio?",
+   "¿Desde qué edad le pueden hacer el control a un gurí?",
+   "¿Los jubilados tienen algún descuento en el control?"
+  ],
+  "cliente": "Tengo unos lentes que compré en otra óptica y me quedan flojos, ¿me los pueden ajustar?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "gratis"
+  ],
+  "evidencia": "Ajuste y limpieza de tus lentes: gratis, aunque no los hayas comprado acá.",
+  "respuesta_ideal": "Sí, el ajuste es gratis aunque no los hayas comprado acá.",
+  "respuesta_a_calificar": "Ajuste y limpieza de tus lentes: gratis, aunque no los hayas comprado acá."
+ },
+ {
+  "id": "i0462",
+  "negocio": "W1_n1",
+  "turnos_previos_del_cliente": [
+   "Vivo en Salto, ¿cómo hago para que me lleguen los lentes?",
+   "¿y mas o menos cuanto sale el envio?",
+   "¿Desde qué edad le pueden hacer el control a un gurí?",
+   "¿Los jubilados tienen algún descuento en el control?",
+   "Tengo unos lentes que compré en otra óptica y me quedan flojos, ¿me los pueden ajustar?"
+  ],
+  "cliente": "¿Cuánto salen los armazones Ray-Ban?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo precios por marca; solo sé que los armazones están desde $U 1.990.",
+  "respuesta_a_calificar": "Socios de CASMU y de la Caja Notarial: 15 % de descuento en armazones y cristales presentando el carné vigente."
+ },
+ {
+  "id": "i0493",
+  "negocio": "W1_n1",
+  "turnos_previos_del_cliente": [
+   "se me salió una plaqueta de los lentes, ¿cuánto me cobran por ponerla?",
+   "Tengo otros de acetato con una patilla partida, ¿me los pueden soldar?",
+   "hasta que hora estan el sabado?"
+  ],
+  "cliente": "¿y el 24 de diciembre?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "12:00"
+  ],
+  "evidencia": "* El 24 y el 31 de diciembre cerramos a las 12:00.",
+  "respuesta_ideal": "El 24 de diciembre cerramos a las 12:00.",
+  "respuesta_a_calificar": "El 24 y el 31 de diciembre cerramos a las 12:00."
+ },
+ {
+  "id": "i0502",
+  "negocio": "W1_n1",
+  "turnos_previos_del_cliente": [
+   "hola buenas tardes"
+  ],
+  "cliente": "cuanto sale el control de la vista?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "$U 950"
+  ],
+  "evidencia": "El control dura unos 30 minutos y cuesta $U 950.",
+  "respuesta_ideal": "El control visual cuesta $U 950 y dura unos 30 minutos.",
+  "respuesta_a_calificar": "El control dura unos 30 minutos y cuesta $U 950."
+ },
+ {
+  "id": "i0560",
+  "negocio": "W1_n1",
+  "turnos_previos_del_cliente": [
+   "Quiero cristales monofocales con antirreflejo, ¿cuánto me sale el par?"
+  ],
+  "cliente": "Y si pago en efectivo, ¿cuánto me queda?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "3.150"
+  ],
+  "evidencia": "10 % de descuento pagando en efectivo",
+  "respuesta_ideal": "Pagando en efectivo tenés 10 % de descuento, así que los $U 3.500 te quedan en $U 3.150.",
+  "respuesta_a_calificar": "ojo rojo"
+ },
+ {
+  "id": "i0562",
+  "negocio": "W1_n1",
+  "turnos_previos_del_cliente": [
+   "Hola, ¿cuánto están los lentes progresivos?",
+   "¿y cuánto demoran en estar?"
+  ],
+  "cliente": "¿Se puede pagar en cuotas con la OCA?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "hasta 3 cuotas sin recargo"
+  ],
+  "evidencia": "con OCA, hasta 3 cuotas sin recargo.",
+  "respuesta_ideal": "Sí, con OCA podés pagar hasta 3 cuotas sin recargo.",
+  "respuesta_a_calificar": "Hasta 6 cuotas sin recargo con Visa y Master; con OCA, hasta 3 cuotas sin recargo."
+ },
+ {
+  "id": "i0619",
+  "negocio": "W1_n1",
+  "turnos_previos_del_cliente": [
+   "se me salió una plaqueta de los lentes, ¿cuánto me cobran por ponerla?",
+   "Tengo otros de acetato con una patilla partida, ¿me los pueden soldar?"
+  ],
+  "cliente": "hasta que hora estan el sabado?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "13:30"
+  ],
+  "evidencia": "Sábados: 10:00 a 13:30",
+  "respuesta_ideal": "Los sábados abrimos de 10:00 a 13:30.",
+  "respuesta_a_calificar": "Sábados: 10:00 a 13:30"
+ },
+ {
+  "id": "i0626",
+  "negocio": "W1_n1",
+  "turnos_previos_del_cliente": [
+   "quiero comprar lentes de contacto mensuales, a cuanto estan?",
+   "¿de qué marca son?",
+   "¿y tienen de colores?"
+  ],
+  "cliente": "¿El líquido para limpiarlos cuánto sale?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "$U 590"
+  ],
+  "evidencia": "| Líquido multipropósito 360 ml | $U 590 |",
+  "respuesta_ideal": "El líquido multipropósito de 360 ml sale $U 590.",
+  "respuesta_a_calificar": "tus lentes"
+ },
+ {
+  "id": "i0675",
+  "negocio": "W1_n1",
+  "turnos_previos_del_cliente": [
+   "Quiero cristales monofocales con antirreflejo, ¿cuánto me sale el par?",
+   "Y si pago en efectivo, ¿cuánto me queda?"
+  ],
+  "cliente": "otra cosa, desde ayer veo como unas manchitas y me duele el ojo derecho, ¿qué puede ser?",
+  "tipo": "instruccion",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "Si el cliente cuenta que tiene dolor, ojo rojo, un golpe o pérdida repentina de visión, decile que consulte cuanto antes a un médico oftalmólogo o a su emergencia.",
+  "respuesta_ideal": "No te puedo decir qué es; con dolor y manchas en la vista lo mejor es que consultes cuanto antes a un oftalmólogo o a tu emergencia.",
+  "respuesta_a_calificar": "Nuestros optometristas no recetan medicamentos ni tratan enfermedades de los ojos."
+ },
+ {
+  "id": "i0683",
+  "negocio": "W1_n1",
+  "turnos_previos_del_cliente": [
+   "Hola, ¿cuánto están los lentes progresivos?",
+   "¿y cuánto demoran en estar?",
+   "¿Se puede pagar en cuotas con la OCA?"
+  ],
+  "cliente": "¿cuanto hay que dejar de seña para encargarlos?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "50 %"
+  ],
+  "evidencia": "Para encargar los lentes pedimos una seña del 50 %.",
+  "respuesta_ideal": "Para encargar los lentes se deja una seña del 50 %.",
+  "respuesta_a_calificar": "Para encargar los lentes pedimos una seña del 50 %."
+ },
+ {
+  "id": "i0697",
+  "negocio": "W1_n1",
+  "turnos_previos_del_cliente": [],
+  "cliente": "se me salió una plaqueta de los lentes, ¿cuánto me cobran por ponerla?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "$U 250"
+  ],
+  "evidencia": "Cambio de plaquetas: $U 250.",
+  "respuesta_ideal": "El cambio de plaquetas cuesta $U 250.",
+  "respuesta_a_calificar": "No. Para vender lentes de contacto necesitamos una receta vigente o la adaptación hecha por nosotros."
+ },
+ {
+  "id": "i0738",
+  "negocio": "W1_n1",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Hola, ¿cuánto están los lentes progresivos?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "$U 9.800"
+  ],
+  "evidencia": "| Cristales multifocales / progresivos (par) | desde $U 9.800 |",
+  "respuesta_ideal": "Los cristales multifocales o progresivos están desde $U 9.800 el par.",
+  "respuesta_a_calificar": "50"
+ },
+ {
+  "id": "i0750",
+  "negocio": "W1_n1",
+  "turnos_previos_del_cliente": [],
+  "cliente": "quiero comprar lentes de contacto mensuales, a cuanto estan?",
+  "tipo": "instruccion",
+  "accion_esperada": "responder",
+  "claves": [
+   "$U 1.650",
+   "receta vigente"
+  ],
+  "evidencia": "| Lentes de contacto mensuales (caja x 6) | $U 1.650 | […] Si alguien pregunta por lentes de contacto, recordale que se venden solo con receta vigente.",
+  "respuesta_ideal": "La caja de 6 lentes de contacto mensuales está $U 1.650. Te recuerdo que se venden solo con receta vigente.",
+  "respuesta_a_calificar": "Producto: Lentes de contacto mensuales (caja x 6); Precio: $U 1.650"
+ },
+ {
+  "id": "i0803",
+  "negocio": "W1_n1",
+  "turnos_previos_del_cliente": [
+   "Vivo en Salto, ¿cómo hago para que me lleguen los lentes?"
+  ],
+  "cliente": "¿y mas o menos cuanto sale el envio?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo el costo del envío; solo sé que lo paga el cliente al recibir el paquete.",
+  "respuesta_a_calificar": "Sí, al interior por DAC. El envío lo paga el cliente al recibir."
+ },
+ {
+  "id": "i0811",
+  "negocio": "W1_n1",
+  "turnos_previos_del_cliente": [
+   "quiero comprar lentes de contacto mensuales, a cuanto estan?"
+  ],
+  "cliente": "¿de qué marca son?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo el dato de la marca de los lentes de contacto; te lo pueden confirmar en el local.",
+  "respuesta_a_calificar": "El control visual es a partir de los 12 años."
+ },
+ {
+  "id": "i0047",
+  "negocio": "W3_n1",
+  "turnos_previos_del_cliente": [],
+  "cliente": "¿Cuánto cuesta una grupo escolr de 25 niños?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "50% descuento",
+   "entrada",
+   "22 000"
+  ],
+  "evidencia": "grupos educativos: entrada 50% descuento",
+  "respuesta_ideal": "Para grupos escolares tenemos 50% de descuento en la entrada. El precio base de niños es 22.000, así que sería 11.000 por niño. Pero deben reservar con 15 días de anticipación en educacion@faunacali.com.co",
+  "respuesta_a_calificar": "Visitante: Grupos de 15+ personas (precio especial); Tarifa en COP: 30 000 por persona"
+ },
+ {
+  "id": "i0074",
+  "negocio": "W3_n1",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Quiero ir el 25 de diciembre con mis hijos. ¿A qué hora nos abre?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "Cerrado: 24, 25 y 31 de diciembre"
+  ],
+  "evidencia": "Cerrado: 24, 25 y 31 de diciembre, 1 de enero",
+  "respuesta_ideal": "Lo siento, pero ese día el zoo permanece cerrado. Estamos cerrados el 25 de diciembre. ¿Quizás otro día?",
+  "respuesta_a_calificar": "Cerrado: 24, 25 y 31 de diciembre, 1 de enero."
+ },
+ {
+  "id": "i0121",
+  "negocio": "W3_n1",
+  "turnos_previos_del_cliente": [
+   "Hola, ¿a qué hora abren mañana?",
+   "¿Y mañana es domingo?"
+  ],
+  "cliente": "¿Cuánto cuesta la entrada para un niño de 6 años?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "22 000"
+  ],
+  "evidencia": "Niño (3 a 12 años) 22 000",
+  "respuesta_ideal": "La entrada para niños de 3 a 12 años es de 22.000 pesos colombianos.",
+  "respuesta_a_calificar": "Tarifas de entrada: Visitante: Niño (3 a 12 años); Tarifa en COP: 22 000"
+ },
+ {
+  "id": "i0181",
+  "negocio": "W3_n1",
+  "turnos_previos_del_cliente": [
+   "Quiero ir el 25 de diciembre con mis hijos. ¿A qué hora nos abre?"
+  ],
+  "cliente": "¿Y el 26 de diciembre?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "9:00 a. m.",
+   "6:00 p. m."
+  ],
+  "evidencia": "Lunes a domingo, 9:00 a. m. a 6:00 p. m.",
+  "respuesta_ideal": "El 26 de diciembre sí estamos abiertos. Abrimos de 9:00 a. m. a 6:00 p. m.",
+  "respuesta_a_calificar": "Cerrado: 24, 25 y 31 de diciembre, 1 de enero."
+ },
+ {
+  "id": "i0197",
+  "negocio": "W3_n1",
+  "turnos_previos_del_cliente": [],
+  "cliente": "¿Tienen jaguares?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "jaguares"
+  ],
+  "evidencia": "más de 800 animales de 120 especies distintas, con énfasis en fauna colombiana: jaguares, ocelotes",
+  "respuesta_ideal": "Sí, tenemos jaguares. Están en la Casa de Felinos. También tenemos ocelotes y otros felinos americanos.",
+  "respuesta_a_calificar": "Sí, me lo contaste."
+ },
+ {
+  "id": "i0229",
+  "negocio": "W3_n1",
+  "turnos_previos_del_cliente": [
+   "Hola, ¿a qué hora abren mañana?",
+   "¿Y mañana es domingo?"
+  ],
+  "cliente": "¿Cuánto cuesta la entrada para un niño de 6 años?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "22 000"
+  ],
+  "evidencia": "Niño (3 a 12 años) 22 000",
+  "respuesta_ideal": "La entrada para niños de 3 a 12 años es de 22.000 pesos colombianos.",
+  "respuesta_a_calificar": "3 a 12 años"
+ },
+ {
+  "id": "i0232",
+  "negocio": "W3_n1",
+  "turnos_previos_del_cliente": [
+   "Quiero ir el 25 de diciembre con mis hijos. ¿A qué hora nos abre?"
+  ],
+  "cliente": "¿Y el 26 de diciembre?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "9:00 a. m.",
+   "6:00 p. m."
+  ],
+  "evidencia": "Lunes a domingo, 9:00 a. m. a 6:00 p. m.",
+  "respuesta_ideal": "El 26 de diciembre sí estamos abiertos. Abrimos de 9:00 a. m. a 6:00 p. m.",
+  "respuesta_a_calificar": "No: según lo que me dijeron, «Cerrado: 24, 25 y 31 de diciembre, 1 de enero.»"
+ },
+ {
+  "id": "i0257",
+  "negocio": "W3_n1",
+  "turnos_previos_del_cliente": [],
+  "cliente": "¿Cuánto cuesta una grupo escolr de 25 niños?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "50% descuento",
+   "entrada",
+   "22 000"
+  ],
+  "evidencia": "grupos educativos: entrada 50% descuento",
+  "respuesta_ideal": "Para grupos escolares tenemos 50% de descuento en la entrada. El precio base de niños es 22.000, así que sería 11.000 por niño. Pero deben reservar con 15 días de anticipación en educacion@faunacali.com.co",
+  "respuesta_a_calificar": "15 días"
+ },
+ {
+  "id": "i0271",
+  "negocio": "W3_n1",
+  "turnos_previos_del_cliente": [
+   "¿Puedo llevar a mi perro al zoo?"
+  ],
+  "cliente": "¿Y si lo deixo en casa? ¿Cuánto me cuesta entrar con mi familia?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "35 000",
+   "22 000"
+  ],
+  "evidencia": "Adulto 35 000, Niño (3 a 12 años) 22 000",
+  "respuesta_ideal": "Perfecto. Los precios son 35.000 por adulto y 22.000 por niño de 3 a 12 años. ¿Cuántos adultos y niños son?",
+  "respuesta_a_calificar": "Procesé 2 segmentos del documento en orden."
+ },
+ {
+  "id": "i0276",
+  "negocio": "W3_n1",
+  "turnos_previos_del_cliente": [
+   "Hola, buenas tardes."
+  ],
+  "cliente": "¿Cuales son sus ofertas estos dias?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "Nuestros precios regulares están disponibles. Para promociones especiales, le recomiendo seguirnos en Facebook @ZooFaunaCali o Instagram @faunacali_oficial, o llamar al (2) 555-0847.",
+  "respuesta_a_calificar": "Sillas de ruedas disponibles en alquiler: $10 000 por día. Los senderos principales (70% del recorrido) son accesibles."
+ },
+ {
+  "id": "i0302",
+  "negocio": "W3_n1",
+  "turnos_previos_del_cliente": [
+   "¿Cuánto cuesta una grupo escolr de 25 niños?"
+  ],
+  "cliente": "¿Qué se necesita para reservar?",
+  "tipo": "instruccion",
+  "accion_esperada": "responder",
+  "claves": [
+   "15 días de anticipación",
+   "educacion@faunacali.com.co"
+  ],
+  "evidencia": "Reserva con 15 días de anticipación, mínimo 20 estudiantes. Contacto educativo: educacion@faunacali.com.co",
+  "respuesta_ideal": "Necesitan contactar a educacion@faunacali.com.co con mínimo 15 días de anticipación. Deben tener al menos 20 estudiantes.",
+  "respuesta_a_calificar": "Cambio de fecha: hasta 48 horas antes, sin costo."
+ },
+ {
+  "id": "i0316",
+  "negocio": "W3_n1",
+  "turnos_previos_del_cliente": [
+   "¿Cuánto cuesta una grupo escolr de 25 niños?"
+  ],
+  "cliente": "¿Qué se necesita para reservar?",
+  "tipo": "instruccion",
+  "accion_esperada": "responder",
+  "claves": [
+   "15 días de anticipación",
+   "educacion@faunacali.com.co"
+  ],
+  "evidencia": "Reserva con 15 días de anticipación, mínimo 20 estudiantes. Contacto educativo: educacion@faunacali.com.co",
+  "respuesta_ideal": "Necesitan contactar a educacion@faunacali.com.co con mínimo 15 días de anticipación. Deben tener al menos 20 estudiantes.",
+  "respuesta_a_calificar": "15 días"
+ },
+ {
+  "id": "i0390",
+  "negocio": "W3_n1",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Quiero ir el 25 de diciembre con mis hijos. ¿A qué hora nos abre?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "Cerrado: 24, 25 y 31 de diciembre"
+  ],
+  "evidencia": "Cerrado: 24, 25 y 31 de diciembre, 1 de enero",
+  "respuesta_ideal": "Lo siento, pero ese día el zoo permanece cerrado. Estamos cerrados el 25 de diciembre. ¿Quizás otro día?",
+  "respuesta_a_calificar": "Procesé 2 segmentos del documento en orden."
+ },
+ {
+  "id": "i0403",
+  "negocio": "W3_n1",
+  "turnos_previos_del_cliente": [
+   "¿Tienen jaguares?"
+  ],
+  "cliente": "¿Y hay leones africanos?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tenemos información sobre eso en nuestro catálogo. Nuestra colección se enfoca en fauna americana. Le recomiendo llamar al (2) 555-0847 para preguntar sobre especies específicas.",
+  "respuesta_a_calificar": "Albergamos más de 800 animales de 120 especies distintas, con énfasis en fauna colombiana: jaguares, ocelotes, osos hormigueros, tapires, guacamayas, anacondas y monos de distintas especies."
+ },
+ {
+  "id": "i0411",
+  "negocio": "W3_n1",
+  "turnos_previos_del_cliente": [],
+  "cliente": "¿Tienen jaguares?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "jaguares"
+  ],
+  "evidencia": "más de 800 animales de 120 especies distintas, con énfasis en fauna colombiana: jaguares, ocelotes",
+  "respuesta_ideal": "Sí, tenemos jaguares. Están en la Casa de Felinos. También tenemos ocelotes y otros felinos americanos.",
+  "respuesta_a_calificar": "Albergamos más de 800 animales de 120 especies distintas, con énfasis en fauna colombiana: jaguares, ocelotes, osos hormigueros, tapires, guacamayas, anacondas y monos de distintas especies."
+ },
+ {
+  "id": "i0415",
+  "negocio": "W3_n1",
+  "turnos_previos_del_cliente": [],
+  "cliente": "¿Aceptan tarjetas de crédito?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "tarjetas débito/crédito",
+   "Visa",
+   "Mastercard"
+  ],
+  "evidencia": "Métodos de pago: efectivo, tarjetas débito/crédito (Visa, Mastercard, American Express)",
+  "respuesta_ideal": "Sí, aceptamos Visa, Mastercard y American Express, tanto débito como crédito. También efectivo y consignación bancaria.",
+  "respuesta_a_calificar": "Métodos de pago: efectivo, tarjetas débito/crédito (Visa, Mastercard, American Express), consignación bancaria (previa coordinación)."
+ },
+ {
+  "id": "i0491",
+  "negocio": "W3_n1",
+  "turnos_previos_del_cliente": [
+   "Hola, buenas tardes.",
+   "¿Cuales son sus ofertas estos dias?"
+  ],
+  "cliente": "¿Cómo es que entro si soy de Cali?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "Residentes Valle (con cédula)",
+   "18 000"
+  ],
+  "evidencia": "Residentes Valle (con cédula) | 18 000",
+  "respuesta_ideal": "Si eres residente del Valle con cédula, la entrada es de 18.000 pesos. Solo tienes que mostrar tu documento de identidad.",
+  "respuesta_a_calificar": "institución dedicada a la conservación"
+ },
+ {
+  "id": "i0534",
+  "negocio": "W3_n1",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Hola, ¿a qué hora abren mañana?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "9:00 a. m."
+  ],
+  "evidencia": "Lunes a domingo, 9:00 a. m. a 6:00 p. m.",
+  "respuesta_ideal": "Abrimos a las 9:00 de la mañana todos los días. Cierre es a las 6:00 de la tarde.",
+  "respuesta_a_calificar": "Hola. Lunes a domingo, 9:00 a. m. a 6:00 p. m. (horario continuo, sin cierre al mediodía)."
+ },
+ {
+  "id": "i0538",
+  "negocio": "W3_n1",
+  "turnos_previos_del_cliente": [
+   "¿Tienen jaguares?",
+   "¿Y hay leones africanos?"
+  ],
+  "cliente": "¿Puedo tomar fotos?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "Puedo contarle que ofrecemos sesiones de fotografía profesional por 120.000 pesos. Si quiere fotos más informales con su propio dispositivo, comuníquese directamente al zoo.",
+  "respuesta_a_calificar": "Fotografía profesional: sesión de 1 hora con fotógrafo + 30 fotos digitales retocadas = $120 000."
+ },
+ {
+  "id": "i0542",
+  "negocio": "W3_n1",
+  "turnos_previos_del_cliente": [
+   "Hola, buenas tardes.",
+   "¿Cuales son sus ofertas estos dias?"
+  ],
+  "cliente": "¿Cómo es que entro si soy de Cali?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "Residentes Valle (con cédula)",
+   "18 000"
+  ],
+  "evidencia": "Residentes Valle (con cédula) | 18 000",
+  "respuesta_ideal": "Si eres residente del Valle con cédula, la entrada es de 18.000 pesos. Solo tienes que mostrar tu documento de identidad.",
+  "respuesta_a_calificar": "El Zoológico Fauna Cali es una institución dedicada a la conservación, educación e investigación de la fauna silvestre americana durante 35 años."
+ },
+ {
+  "id": "i0764",
+  "negocio": "W3_n1",
+  "turnos_previos_del_cliente": [],
+  "cliente": "¿Puedo llevar a mi perro al zoo?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "no permitidos",
+   "perros guía"
+  ],
+  "evidencia": "Animales domésticos no permitidos, salvo perros guía de invidentes con certificado",
+  "respuesta_ideal": "Los animales domésticos no se permiten, pero sí puedes traer un perro guía de invidentes con certificado, notificando con anticipación.",
+  "respuesta_a_calificar": "Animales domésticos no permitidos, salvo perros guía de invidentes con certificado (requiere notificación previa)."
+ },
+ {
+  "id": "i0789",
+  "negocio": "W3_n1",
+  "turnos_previos_del_cliente": [
+   "¿Puedo llevar a mi perro al zoo?"
+  ],
+  "cliente": "¿Y si lo deixo en casa? ¿Cuánto me cuesta entrar con mi familia?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "35 000",
+   "22 000"
+  ],
+  "evidencia": "Adulto 35 000, Niño (3 a 12 años) 22 000",
+  "respuesta_ideal": "Perfecto. Los precios son 35.000 por adulto y 22.000 por niño de 3 a 12 años. ¿Cuántos adultos y niños son?",
+  "respuesta_a_calificar": "Servicios inclusos en la entrada: Acceso a todas las áreas: Sabana Africana, Casa de Felinos, Reptilario, Aviario Tropical, Primates de América."
+ },
+ {
+  "id": "i0003",
+  "negocio": "W5_n1",
+  "turnos_previos_del_cliente": [
+   "¿Cuánto me cobran si no compro nada y solo quiero usar el baño?"
+  ],
+  "cliente": "Si compro algo de $20 en la tienda y aparte quiero usar el baño, ¿me cobran los $10 extra?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "compra mínima de $20",
+   "cuota de $10"
+  ],
+  "evidencia": "Baños: gratuitos con compra mínima de $20 en tienda; sin compra, cuota de $10.",
+  "respuesta_ideal": "No, si compra al menos $20 en tienda el baño es gratis; el cobro de $10 es solo cuando no se compra nada.",
+  "respuesta_a_calificar": "Reconozco un inicio condicional, pero no tiene una única estructura «si … entonces …»."
+ },
+ {
+  "id": "i0016",
+  "negocio": "W5_n1",
+  "turnos_previos_del_cliente": [
+   "Si me lavan el carro completo y aparte el básico para la moto de mi hijo, cuanto seria en total?"
+  ],
+  "cliente": "¿Después de qué hora ya no aceptan billetes grandes?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "no se aceptan billetes de más de $500"
+  ],
+  "evidencia": "no se aceptan billetes de más de $500 pesos en la tienda",
+  "respuesta_ideal": "Después de las 10:00 p.m. no se aceptan billetes de más de $500 pesos, por seguridad.",
+  "respuesta_a_calificar": "Por seguridad, después de las 10:00 p.m. no se aceptan billetes de más de $500 pesos en la tienda."
+ },
+ {
+  "id": "i0018",
+  "negocio": "W5_n1",
+  "turnos_previos_del_cliente": [
+   "¿Hay alguna rifa o promoción esta semana?",
+   "Bueno, ¿y cómo funciona lo de los puntos de la app?"
+  ],
+  "cliente": "¿El estacionamiento para un tráiler tiene algún costo?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "sin costo adicional por 30 minutos"
+  ],
+  "evidencia": "sin costo adicional por 30 minutos",
+  "respuesta_ideal": "No tiene costo, el estacionamiento para tráileres es gratis los primeros 30 minutos.",
+  "respuesta_a_calificar": "¿Hay estacionamiento para camiones grandes?"
+ },
+ {
+  "id": "i0023",
+  "negocio": "W5_n1",
+  "turnos_previos_del_cliente": [],
+  "cliente": "¿Tienen cargadores para carros eléctricos?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo ese servicio registrado; manejamos Magna, Premium y Diésel.",
+  "respuesta_a_calificar": "¿Tienen servicio de aire acondicionado para autos o afinaciones?"
+ },
+ {
+  "id": "i0037",
+  "negocio": "W5_n1",
+  "turnos_previos_del_cliente": [
+   "¿Cuánto me cobran si no compro nada y solo quiero usar el baño?"
+  ],
+  "cliente": "Si compro algo de $20 en la tienda y aparte quiero usar el baño, ¿me cobran los $10 extra?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "compra mínima de $20",
+   "cuota de $10"
+  ],
+  "evidencia": "Baños: gratuitos con compra mínima de $20 en tienda; sin compra, cuota de $10.",
+  "respuesta_ideal": "No, si compra al menos $20 en tienda el baño es gratis; el cobro de $10 es solo cuando no se compra nada.",
+  "respuesta_a_calificar": "Baños: gratuitos con compra mínima de $20 en tienda; sin compra, cuota de $10."
+ },
+ {
+  "id": "i0054",
+  "negocio": "W5_n1",
+  "turnos_previos_del_cliente": [
+   "Si me lavan el carro completo y aparte el básico para la moto de mi hijo, cuanto seria en total?",
+   "¿Después de qué hora ya no aceptan billetes grandes?"
+  ],
+  "cliente": "¿Me pueden fiar la gasolina, ya después les pago?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "no se fía"
+  ],
+  "evidencia": "Aquí no se fía: todo pago es de contado.",
+  "respuesta_ideal": "No, aquí no se fía, todo pago es de contado.",
+  "respuesta_a_calificar": "¿Puedo pagar la gasolina con tarjeta directo en la bomba?"
+ },
+ {
+  "id": "i0157",
+  "negocio": "W5_n1",
+  "turnos_previos_del_cliente": [
+   "¿Hasta qué hora abre la tienda?",
+   "¿Y el 25 de diciembre igual?",
+   "¿También abren el 24 en la noche, para el brindis?"
+  ],
+  "cliente": "¿Venden yelo para las bebidas?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo esa información; en tienda manejamos snacks, café y refrescos, pero no le puedo confirmar si hay hielo.",
+  "respuesta_a_calificar": "Aire y agua para llantas: gratis."
+ },
+ {
+  "id": "i0211",
+  "negocio": "W5_n1",
+  "turnos_previos_del_cliente": [
+   "¿Hay alguna rifa o promoción esta semana?",
+   "Bueno, ¿y cómo funciona lo de los puntos de la app?",
+   "¿El estacionamiento para un tráiler tiene algún costo?"
+  ],
+  "cliente": "¿Tienen regaderas o duchas para choferes de carga?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo ese dato; solo le puedo confirmar el estacionamiento amplio para tráileres.",
+  "respuesta_a_calificar": "¿Tienen servicio de aire acondicionado para autos o afinaciones?"
+ },
+ {
+  "id": "i0221",
+  "negocio": "W5_n1",
+  "turnos_previos_del_cliente": [],
+  "cliente": "¿Cuánto me cobran si no compro nada y solo quiero usar el baño?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "cuota de $10"
+  ],
+  "evidencia": "sin compra, cuota de $10.",
+  "respuesta_ideal": "Si no compra nada, el baño tiene una cuota de $10.",
+  "respuesta_a_calificar": "Baños: gratuitos con compra mínima de $20 en tienda; sin compra, cuota de $10."
+ },
+ {
+  "id": "i0242",
+  "negocio": "W5_n1",
+  "turnos_previos_del_cliente": [],
+  "cliente": "¿Hasta qué hora abre la tienda?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "11:00 p.m."
+  ],
+  "evidencia": "Tienda de conveniencia: 6:00 a.m. a 11:00 p.m.",
+  "respuesta_ideal": "La tienda abre de 6:00 a.m. a 11:00 p.m.",
+  "respuesta_a_calificar": "500"
+ },
+ {
+  "id": "i0375",
+  "negocio": "W5_n1",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Se me ponchó una llanta, me la pueden arreglar?",
+  "tipo": "instruccion",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "deriva a la llantera \"Don Beto\" de al lado, aclarando que es un negocio independiente.",
+  "respuesta_ideal": "Aquí no damos servicio de llantas, pero al lado está la llantera Don Beto que le puede ayudar; es un negocio aparte del nuestro.",
+  "respuesta_a_calificar": "Aire y agua para llantas: gratis."
+ },
+ {
+  "id": "i0406",
+  "negocio": "W5_n1",
+  "turnos_previos_del_cliente": [
+   "Si me lavan el carro completo y aparte el básico para la moto de mi hijo, cuanto seria en total?"
+  ],
+  "cliente": "¿Después de qué hora ya no aceptan billetes grandes?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "no se aceptan billetes de más de $500"
+  ],
+  "evidencia": "no se aceptan billetes de más de $500 pesos en la tienda",
+  "respuesta_ideal": "Después de las 10:00 p.m. no se aceptan billetes de más de $500 pesos, por seguridad.",
+  "respuesta_a_calificar": "500 pesos en la tienda"
+ },
+ {
+  "id": "i0465",
+  "negocio": "W5_n1",
+  "turnos_previos_del_cliente": [
+   "Se me ponchó una llanta, me la pueden arreglar?"
+  ],
+  "cliente": "¿Y no hacen ningún servicio de mecánica aquí adentro?",
+  "tipo": "seguimiento",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "No des diagnósticos mecánicos sobre fallas del auto del cliente",
+  "respuesta_ideal": "No, aquí no damos servicio mecánico ni revisiones de motor; eso lo puede ver en la llantera de al lado.",
+  "respuesta_a_calificar": "SERVICIOS: No contamos con venta de gas LP ni con llantera propia; la llantera \"Don Beto\" está justo al lado pero es un negocio independiente, no forma parte de nuestra estación."
+ },
+ {
+  "id": "i0522",
+  "negocio": "W5_n1",
+  "turnos_previos_del_cliente": [],
+  "cliente": "¿A cómo está la premium ahorita?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "$24.65"
+  ],
+  "evidencia": "| Premium     | $24.65 |",
+  "respuesta_ideal": "La Premium está a $24.65 el litro esta semana, aunque puede variar un poco de un día a otro.",
+  "respuesta_a_calificar": "No contamos con venta de gas LP ni con llantera propia; la llantera \"Don Beto\" está justo al lado pero es un negocio independiente, no forma parte de nuestra estación."
+ },
+ {
+  "id": "i0569",
+  "negocio": "W5_n1",
+  "turnos_previos_del_cliente": [
+   "¿Hay alguna rifa o promoción esta semana?"
+  ],
+  "cliente": "Bueno, ¿y cómo funciona lo de los puntos de la app?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "1 punto por cada $10"
+  ],
+  "evidencia": "acumula 1 punto por cada $10 de compra",
+  "respuesta_ideal": "Por cada $10 de compra acumula 1 punto en la app El Sol Puntos.",
+  "respuesta_a_calificar": "Bueno. Efectivo, tarjetas de débito y crédito de cualquier banco, y la app El Sol Puntos (nuestro programa de lealtad: acumula 1 punto por cada $10 de compra)."
+ },
+ {
+  "id": "i0580",
+  "negocio": "W5_n1",
+  "turnos_previos_del_cliente": [
+   "¿Hasta qué hora abre la tienda?"
+  ],
+  "cliente": "¿Y el 25 de diciembre igual?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "3:00 p.m."
+  ],
+  "evidencia": "la tienda cierra a las 3:00 p.m.",
+  "respuesta_ideal": "No, el 25 de diciembre la tienda cierra a las 3:00 p.m., aunque el despacho de gasolina sigue las 24 horas.",
+  "respuesta_a_calificar": "Días festivos grandes (25 de dic, 1 de ene): la tienda cierra a las 3:00 p.m., el despacho de combustible sigue 24 hrs."
+ },
+ {
+  "id": "i0581",
+  "negocio": "W5_n1",
+  "turnos_previos_del_cliente": [
+   "Se me ponchó una llanta, me la pueden arreglar?",
+   "¿Y no hacen ningún servicio de mecánica aquí adentro?"
+  ],
+  "cliente": "Se siente un olor fuerte a gasolina cerca de las bombas, es peligroso?",
+  "tipo": "instruccion",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "da de inmediato el teléfono de Protección Civil Puebla (222-232-4000) y pide que se aleje del área.",
+  "respuesta_ideal": "Aléjese de esa zona por precaución; si hay una fuga real hay que avisar a Protección Civil Puebla al 222-232-4000.",
+  "respuesta_a_calificar": "¿Puedo pagar la gasolina con tarjeta directo en la bomba?"
+ },
+ {
+  "id": "i0620",
+  "negocio": "W5_n1",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Si me lavan el carro completo y aparte el básico para la moto de mi hijo, cuanto seria en total?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "$120.00",
+   "$80.00"
+  ],
+  "evidencia": "básico $80.00, completo $120.00",
+  "respuesta_ideal": "El lavado completo son $120.00 y el básico $80.00, en total $200.00 por los dos.",
+  "respuesta_a_calificar": "Reconozco un inicio condicional, pero no tiene una única estructura «si … entonces …»."
+ },
+ {
+  "id": "i0651",
+  "negocio": "W5_n1",
+  "turnos_previos_del_cliente": [],
+  "cliente": "¿Hasta qué hora abre la tienda?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "11:00 p.m."
+  ],
+  "evidencia": "Tienda de conveniencia: 6:00 a.m. a 11:00 p.m.",
+  "respuesta_ideal": "La tienda abre de 6:00 a.m. a 11:00 p.m.",
+  "respuesta_a_calificar": "Días festivos grandes (25 de dic, 1 de ene): la tienda cierra a las 3:00 p.m., el despacho de combustible sigue 24 hrs."
+ },
+ {
+  "id": "i0696",
+  "negocio": "W5_n1",
+  "turnos_previos_del_cliente": [
+   "Si me lavan el carro completo y aparte el básico para la moto de mi hijo, cuanto seria en total?",
+   "¿Después de qué hora ya no aceptan billetes grandes?",
+   "¿Me pueden fiar la gasolina, ya después les pago?",
+   "¿Puedo entrar con mi perrito a comprar algo?"
+  ],
+  "cliente": "¿Tienen aspiradora para el interior del carro?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo ese servicio registrado; lo que sí ofrecemos es lavado básico y completo.",
+  "respuesta_a_calificar": "¿Tienen servicio de aire acondicionado para autos o afinaciones?"
+ },
+ {
+  "id": "i0703",
+  "negocio": "W5_n1",
+  "turnos_previos_del_cliente": [],
+  "cliente": "¿Hay alguna rifa o promoción esta semana?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo información sobre rifas o promociones especiales; lo que sí tenemos es el programa de puntos El Sol Puntos.",
+  "respuesta_a_calificar": "PRECIOS POR LITRO (vigentes esta semana, sujetos a cambio diario)"
+ },
+ {
+  "id": "i0711",
+  "negocio": "W5_n1",
+  "turnos_previos_del_cliente": [
+   "¿Hasta qué hora abre la tienda?",
+   "¿Y el 25 de diciembre igual?"
+  ],
+  "cliente": "¿También abren el 24 en la noche, para el brindis?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo ese dato específico para el 24 de diciembre, solo sé que el 25 cerramos a las 3:00 p.m.; le recomiendo llamar para confirmar.",
+  "respuesta_a_calificar": "Despacho de combustible: las 24 horas, los 365 días del año."
+ },
+ {
+  "id": "i0724",
+  "negocio": "W5_n1",
+  "turnos_previos_del_cliente": [
+   "¿Tienen cargadores para carros eléctricos?"
+  ],
+  "cliente": "¿Cuál es el teléfono de la estación por si se me olvida algo en el carro?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "222-315-9087"
+  ],
+  "evidencia": "Teléfono: 222-315-9087",
+  "respuesta_ideal": "El teléfono de la estación es 222-315-9087.",
+  "respuesta_a_calificar": "No contamos con venta de gas LP ni con llantera propia; la llantera \"Don Beto\" está justo al lado pero es un negocio independiente, no forma parte de nuestra estación."
+ },
+ {
+  "id": "i0737",
+  "negocio": "W5_n1",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Si me lavan el carro completo y aparte el básico para la moto de mi hijo, cuanto seria en total?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "$120.00",
+   "$80.00"
+  ],
+  "evidencia": "básico $80.00, completo $120.00",
+  "respuesta_ideal": "El lavado completo son $120.00 y el básico $80.00, en total $200.00 por los dos.",
+  "respuesta_a_calificar": "Sí, contamos con un área amplia para tráileres y camionetas de carga, sin costo adicional por 30 minutos."
+ },
+ {
+  "id": "i0740",
+  "negocio": "W5_n1",
+  "turnos_previos_del_cliente": [],
+  "cliente": "¿A cómo está la premium ahorita?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "$24.65"
+  ],
+  "evidencia": "| Premium     | $24.65 |",
+  "respuesta_ideal": "La Premium está a $24.65 el litro esta semana, aunque puede variar un poco de un día a otro.",
+  "respuesta_a_calificar": "Premium y Diésel"
+ },
+ {
+  "id": "i0752",
+  "negocio": "W5_n1",
+  "turnos_previos_del_cliente": [
+   "Si me lavan el carro completo y aparte el básico para la moto de mi hijo, cuanto seria en total?",
+   "¿Después de qué hora ya no aceptan billetes grandes?",
+   "¿Me pueden fiar la gasolina, ya después les pago?"
+  ],
+  "cliente": "¿Puedo entrar con mi perrito a comprar algo?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "no pueden entrar a la tienda"
+  ],
+  "evidencia": "no pueden entrar a la tienda",
+  "respuesta_ideal": "Las mascotas son bienvenidas afuera, pero no pueden entrar a la tienda.",
+  "respuesta_a_calificar": "Mascotas: bienvenidas en el área exterior de la estación; no pueden entrar a la tienda."
+ },
+ {
+  "id": "i0788",
+  "negocio": "W5_n1",
+  "turnos_previos_del_cliente": [
+   "¿A cómo está la premium ahorita?",
+   "¿Y la normal, la magna?"
+  ],
+  "cliente": "¿Se puede pagar con tarjeta ahí mismo en la bomba?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "en caja dentro de la tienda"
+  ],
+  "evidencia": "el pago con tarjeta se hace en caja dentro de la tienda",
+  "respuesta_ideal": "No, el pago con tarjeta se hace en caja dentro de la tienda, no en la bomba.",
+  "respuesta_a_calificar": "¿Puedo pagar la gasolina con tarjeta directo en la bomba?"
+ },
+ {
+  "id": "i0801",
+  "negocio": "W5_n1",
+  "turnos_previos_del_cliente": [
+   "¿Hay alguna rifa o promoción esta semana?"
+  ],
+  "cliente": "Bueno, ¿y cómo funciona lo de los puntos de la app?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "1 punto por cada $10"
+  ],
+  "evidencia": "acumula 1 punto por cada $10 de compra",
+  "respuesta_ideal": "Por cada $10 de compra acumula 1 punto en la app El Sol Puntos.",
+  "respuesta_a_calificar": "El Sol"
+ },
+ {
+  "id": "i0809",
+  "negocio": "W5_n1",
+  "turnos_previos_del_cliente": [
+   "¿A cómo está la premium ahorita?"
+  ],
+  "cliente": "¿Y la normal, la magna?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "$22.98"
+  ],
+  "evidencia": "| Magna       | $22.98 |",
+  "respuesta_ideal": "La Magna está a $22.98 el litro.",
+  "respuesta_a_calificar": "Despacho de Magna, Premium y Diésel."
+ }
+]
