@@ -1,0 +1,260 @@
+[
+  [
+    {
+      "cliente": "Hola, ¿cuánto sale el kilo de queso sardo?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": [
+        "$9.800"
+      ],
+      "evidencia": "| Sardo | $9.800 |",
+      "respuesta_ideal": "El kilo de queso sardo cuesta $9.800."
+    },
+    {
+      "cliente": "¿Y el reggianito?",
+      "tipo": "seguimiento",
+      "accion": "responder",
+      "claves": [
+        "$14.200"
+      ],
+      "evidencia": "| Reggianito | $14.200 |",
+      "respuesta_ideal": "El reggianito sale $14.200 el kilo."
+    },
+    {
+      "cliente": "¿Tienen queso de cabra?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": [
+        "De cabra | $18.700"
+      ],
+      "evidencia": "| De cabra | $18.700 |",
+      "respuesta_ideal": "Sí, tenemos queso De cabra | $18.700 el kilo."
+    },
+    {
+      "cliente": "Quiero reservar la cata del sábado a las 6",
+      "tipo": "instruccion",
+      "accion": "derivar",
+      "claves": [],
+      "evidencia": "No confirmar reservas de catas: solo informar el procedimiento (reservar por WhatsApp con un día de anticipación) y derivar al WhatsApp para concretarla.",
+      "respuesta_ideal": "Para reservar la cata tenés que escribir por WhatsApp al 0249 15-442-1187 con un día de anticipación; yo no puedo confirmarla directamente."
+    },
+    {
+      "cliente": "¿Esa cata sirve para mi hija de 14 años?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": [
+        "no incluyen a menores de 16 años"
+      ],
+      "evidencia": "Las catas no incluyen a menores de 16 años.",
+      "respuesta_ideal": "No, las catas no incluyen a menores de 16 años, así que tu hija no podría participar."
+    },
+    {
+      "cliente": "El maridaje es con vino tinto o tambien hay blanco?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No tengo el detalle de qué vinos exactos se sirven en el maridaje; podés preguntarlo al reservar por WhatsApp."
+    },
+    {
+      "cliente": "Buenísimo, gracias!",
+      "tipo": "charla",
+      "accion": "charla",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "¡De nada! Te esperamos en la quesería o escribinos por WhatsApp para la cata."
+    }
+  ],
+  [
+    {
+      "cliente": "¿A qué hora abren los sábados?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": [
+        "9 a 19"
+      ],
+      "evidencia": "lunes a sábado de 9 a 19 h corrido",
+      "respuesta_ideal": "Los sábados abrimos de 9 a 19 h corrido, igual que de lunes a sábado."
+    },
+    {
+      "cliente": "¿Y los domingos?",
+      "tipo": "seguimiento",
+      "accion": "responder",
+      "claves": [
+        "10 a 14"
+      ],
+      "evidencia": "Domingos de 10 a 14 h.",
+      "respuesta_ideal": "Los domingos abrimos de 10 a 14 h."
+    },
+    {
+      "cliente": "¿Abren el 25 de diciembre?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": [
+        "permanecemos cerrados"
+      ],
+      "evidencia": "salvo 1° de enero y 25 de diciembre que permanecemos cerrados.",
+      "respuesta_ideal": "No, el 25 de diciembre permanecemos cerrados."
+    },
+    {
+      "cliente": "¿Cuánto cuesta el dulce de leche?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": [
+        "$3.200"
+      ],
+      "evidencia": "dulce de leche artesanal ($3.200 el frasco de 400 g)",
+      "respuesta_ideal": "El dulce de leche artesanal cuesta $3.200 el frasco de 400 g."
+    },
+    {
+      "cliente": "¿Y la miel cuánto sale?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": [
+        "$4.100"
+      ],
+      "evidencia": "miel de las sierras ($4.100 el frasco)",
+      "respuesta_ideal": "La miel de las sierras sale $4.100 el frasco."
+    },
+    {
+      "cliente": "¿Tienen dulce de leche light o dietético?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No tengo información sobre una versión light o dietética del dulce de leche."
+    },
+    {
+      "cliente": "Hola, buenas tardes",
+      "tipo": "charla",
+      "accion": "charla",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "¡Hola, buenas tardes! ¿En qué te puedo ayudar?"
+    }
+  ],
+  [
+    {
+      "cliente": "¿Hacen envíos a domicilio?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": [
+        "envíos a domicilio dentro de Tandil"
+      ],
+      "evidencia": "Hacemos envíos a domicilio dentro de Tandil sin cargo en compras mayores a $15.000.",
+      "respuesta_ideal": "Sí, hacemos envíos a domicilio dentro de Tandil, sin cargo en compras mayores a $15.000."
+    },
+    {
+      "cliente": "Si compro por 20 mil pesos, ¿el envío es gratis?",
+      "tipo": "combinada",
+      "accion": "responder",
+      "claves": [
+        "sin cargo en compras mayores a $15.000"
+      ],
+      "evidencia": "Hacemos envíos a domicilio dentro de Tandil sin cargo en compras mayores a $15.000.",
+      "respuesta_ideal": "Sí, el envío es sin cargo en compras mayores a $15.000 y tu compra los supera."
+    },
+    {
+      "cliente": "¿Envían a Mar del Plata?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": [
+        "despachamos por correo a todo el país"
+      ],
+      "evidencia": "Fuera de Tandil despachamos por correo a todo el país, con un adicional según destino (se cotiza al momento del pedido).",
+      "respuesta_ideal": "Sí, fuera de Tandil despachamos por correo a todo el país; el costo adicional se cotiza según el destino."
+    },
+    {
+      "cliente": "¿Cuánto tarda en llegar?",
+      "tipo": "seguimiento",
+      "accion": "responder",
+      "claves": [
+        "3 y 5 días hábiles"
+      ],
+      "evidencia": "El envío por correo tarda entre 3 y 5 días hábiles.",
+      "respuesta_ideal": "El envío por correo tarda entre 3 y 5 días hábiles."
+    },
+    {
+      "cliente": "¿Envían a Uruguay?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No tengo información sobre envíos internacionales; te recomiendo consultarlo por WhatsApp."
+    },
+    {
+      "cliente": "¿Puedo pagar con Mercado Pago?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": [
+        "Mercado Pago"
+      ],
+      "evidencia": "Aceptamos efectivo, débito, crédito (hasta 3 cuotas sin interés con tarjeta Cabal) y Mercado Pago.",
+      "respuesta_ideal": "Sí, aceptamos pago con Mercado Pago."
+    },
+    {
+      "cliente": "¿Puedo pagar en dólares?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No tengo información sobre pagos en dólares; te recomiendo consultarlo en la tienda."
+    }
+  ],
+  [
+    {
+      "cliente": "¿Puedo llevar a mi perro?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": [
+        "mascotas atadas en el patio externo"
+      ],
+      "evidencia": "Se permiten mascotas atadas en el patio externo de la tienda.",
+      "respuesta_ideal": "Sí, podés llevarlo, pero debe quedarse con mascotas atadas en el patio externo de la tienda."
+    },
+    {
+      "cliente": "¿Puede entrar a la sala donde hacen las catas?",
+      "tipo": "seguimiento",
+      "accion": "responder",
+      "claves": [
+        "No pueden ingresar a la sala de catas"
+      ],
+      "evidencia": "No pueden ingresar a la sala de catas por razones de higiene alimentaria.",
+      "respuesta_ideal": "No pueden ingresar a la sala de catas por razones de higiene alimentaria."
+    },
+    {
+      "cliente": "Si vamos dos personas a la cata, ¿cuánto sale en total?",
+      "tipo": "combinada",
+      "accion": "responder",
+      "claves": [
+        "$8.500 por persona"
+      ],
+      "evidencia": "Valor: $8.500 por persona, incluye una tabla para compartir.",
+      "respuesta_ideal": "Como la cata vale $8.500 por persona, para dos personas serían $17.000 en total."
+    },
+    {
+      "cliente": "Necesito 50 kilos de queso para un evento, ¿lo pueden hacer?",
+      "tipo": "instruccion",
+      "accion": "derivar",
+      "claves": [],
+      "evidencia": "Si preguntan por pedidos grandes o mayoristas, derivar a hablar directamente con Marcela Aguirre al mismo teléfono.",
+      "respuesta_ideal": "Para un pedido tan grande te conviene hablar directamente con Marcela Aguirre al 0249 15-442-1187."
+    },
+    {
+      "cliente": "¿Hacen descuento por cantidad si compro varios kilos para casa?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No tengo información sobre descuentos por cantidad para consumo particular; te sugiero preguntarlo en la tienda."
+    },
+    {
+      "cliente": "Perfecto, muchas gracias por todo",
+      "tipo": "charla",
+      "accion": "charla",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "¡De nada! Te esperamos en la quesería o escribinos por WhatsApp."
+    }
+  ]
+]

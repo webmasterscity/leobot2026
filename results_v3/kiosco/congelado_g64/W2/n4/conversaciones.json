@@ -1,0 +1,291 @@
+[
+  [
+    {
+      "cliente": "Hola, ¿cuánto cuesta el ceviche mixto?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": [
+        "S/ 38"
+      ],
+      "evidencia": "Ceviche mixto (pescado + mariscos) — S/ 38",
+      "respuesta_ideal": "El ceviche mixto cuesta S/ 38."
+    },
+    {
+      "cliente": "¿Y el de pescado solo?",
+      "tipo": "seguimiento",
+      "accion": "responder",
+      "claves": [
+        "S/ 28"
+      ],
+      "evidencia": "Ceviche de pescado — S/ 28",
+      "respuesta_ideal": "El ceviche de pescado solo cuesta S/ 28."
+    },
+    {
+      "cliente": "¿Cuánto vale el arroz con mariscos?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": [
+        "S/ 32"
+      ],
+      "evidencia": "Arroz con mariscos — S/ 32",
+      "respuesta_ideal": "El arroz con mariscos vale S/ 32."
+    },
+    {
+      "cliente": "Si pedimos dos ceviches de pescado y una gaseosa, ¿cuánto sería en total?",
+      "tipo": "combinada",
+      "accion": "responder",
+      "claves": [
+        "S/ 28",
+        "S/ 6"
+      ],
+      "evidencia": "Ceviche de pescado — S/ 28",
+      "respuesta_ideal": "Cada ceviche de pescado cuesta S/ 28 y la gaseosa S/ 6, en total serían S/ 62."
+    },
+    {
+      "cliente": "¿Tienen alguna opción vegetariana?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No tengo información sobre opciones vegetarianas en la carta."
+    },
+    {
+      "cliente": "Buenas, quería ver la carta",
+      "tipo": "charla",
+      "accion": "charla",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "¡Buenas! Con gusto, te cuento los platos que tenemos."
+    }
+  ],
+  [
+    {
+      "cliente": "¿Cuánto sale la jalea mixta?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": [
+        "S/ 55"
+      ],
+      "evidencia": "Jalea mixta (porción para 2 personas) — S/ 55",
+      "respuesta_ideal": "La jalea mixta sale S/ 55."
+    },
+    {
+      "cliente": "¿Esa jalea alcanza para dos personas?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": [
+        "porción para 2 personas"
+      ],
+      "evidencia": "Jalea mixta (porción para 2 personas) — S/ 55",
+      "respuesta_ideal": "Sí, la jalea mixta es porción para 2 personas."
+    },
+    {
+      "cliente": "Si pedimos el ceviche mixto para compartir entre dos con arroz extra, ¿cuánto sale?",
+      "tipo": "combinada",
+      "accion": "responder",
+      "claves": [
+        "S/ 38",
+        "S/ 5"
+      ],
+      "evidencia": "Ceviche mixto (pescado + mariscos) — S/ 38",
+      "respuesta_ideal": "El ceviche mixto cuesta S/ 38 y el arroz extra para compartir S/ 5 adicionales, en total S/ 43."
+    },
+    {
+      "cliente": "Para mi hijo de 6 años, ¿cuánto costaría el arroz con mariscos con el descuento de niños?",
+      "tipo": "combinada",
+      "accion": "responder",
+      "claves": [
+        "30% de descuento",
+        "S/ 32"
+      ],
+      "evidencia": "preparamos media porción de arroz con mariscos para niños con 30% de descuento sobre ese plato.",
+      "respuesta_ideal": "Le preparamos media porción de arroz con mariscos con un 30% de descuento sobre el precio de S/ 32, es decir, unos S/ 22.40."
+    },
+    {
+      "cliente": "¿El local tiene estacionamiento?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No tengo información sobre estacionamiento en el local."
+    },
+    {
+      "cliente": "Ya, gracias",
+      "tipo": "charla",
+      "accion": "charla",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "¡De nada! Cualquier otra consulta avisame."
+    }
+  ],
+  [
+    {
+      "cliente": "¿Qué días atienden?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": [
+        "martes a domingo"
+      ],
+      "evidencia": "Atendemos de martes a domingo, de 10:00 a.m. a 5:00 p.m.",
+      "respuesta_ideal": "Atendemos de martes a domingo, de 10:00 a.m. a 5:00 p.m."
+    },
+    {
+      "cliente": "¿Los lunes están cerrados entonces?",
+      "tipo": "seguimiento",
+      "accion": "responder",
+      "claves": [
+        "Los lunes permanecemos cerrados"
+      ],
+      "evidencia": "Los lunes permanecemos cerrados, es el día de descanso de todo el personal.",
+      "respuesta_ideal": "Sí, Los lunes permanecemos cerrados, es el día de descanso del personal."
+    },
+    {
+      "cliente": "Si pedimos bien picante, ¿lo preparan así?",
+      "tipo": "seguimiento",
+      "accion": "responder",
+      "claves": [
+        "salvo que el cliente pida expresamente"
+      ],
+      "evidencia": "el ají se sirve aparte de cada plato, salvo que el cliente pida expresamente \"bien picante\".",
+      "respuesta_ideal": "Sí, normalmente el ají va aparte, salvo que el cliente pida expresamente \"bien picante\"."
+    },
+    {
+      "cliente": "¿El pescado que usan es fresco del día?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No tengo ese detalle sobre el origen o frescura diaria del pescado."
+    },
+    {
+      "cliente": "¿Puedo llevar a mi perrito?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": [
+        "no se permite el ingreso de mascotas"
+      ],
+      "evidencia": "no se permite el ingreso de mascotas, salvo perros guía.",
+      "respuesta_ideal": "No, no se permite el ingreso de mascotas, salvo perros guía."
+    },
+    {
+      "cliente": "¿Tienen wifi para los clientes?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No tengo información sobre wifi para clientes."
+    }
+  ],
+  [
+    {
+      "cliente": "¿Cuánto cobran el delivery?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": [
+        "S/ 6"
+      ],
+      "evidencia": "Costo del envío: S/ 6.",
+      "respuesta_ideal": "El delivery cuesta S/ 6."
+    },
+    {
+      "cliente": "¿Y cuánto demora en llegar?",
+      "tipo": "seguimiento",
+      "accion": "responder",
+      "claves": [
+        "40 minutos"
+      ],
+      "evidencia": "Tiempo estimado: 40 minutos.",
+      "respuesta_ideal": "El tiempo estimado de entrega es 40 minutos."
+    },
+    {
+      "cliente": "¿Hacen envío hasta Pimentel?",
+      "tipo": "instruccion",
+      "accion": "responder",
+      "claves": [
+        "No hacemos envíos fuera de Chiclayo"
+      ],
+      "evidencia": "No hacemos envíos fuera de Chiclayo.",
+      "respuesta_ideal": "No, No hacemos envíos fuera de Chiclayo, a Pimentel no llegamos."
+    },
+    {
+      "cliente": "¿Puedo pagar con tarjeta?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": [
+        "tarjeta"
+      ],
+      "evidencia": "Efectivo, Yape, Plin y tarjeta (no aceptamos American Express).",
+      "respuesta_ideal": "Sí, en el local aceptamos efectivo, Yape, Plin y tarjeta."
+    },
+    {
+      "cliente": "¿Aceptan American Express?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": [
+        "no aceptamos American Express"
+      ],
+      "evidencia": "Efectivo, Yape, Plin y tarjeta (no aceptamos American Express).",
+      "respuesta_ideal": "No, no aceptamos American Express."
+    },
+    {
+      "cliente": "¿Puedo pagar en dólares?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No tengo información sobre pago en dólares."
+    }
+  ],
+  [
+    {
+      "cliente": "¿Quién es la chef del local?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": [
+        "Rosa Lalopú"
+      ],
+      "evidencia": "Nuestra chef a cargo es Rosa Lalopú, con 20 años preparando comida marina chiclayana.",
+      "respuesta_ideal": "Nuestra chef a cargo es Rosa Lalopú, con 20 años de experiencia."
+    },
+    {
+      "cliente": "Somos un grupo de 12 personas, ¿nos reservan mesa para el sábado?",
+      "tipo": "instruccion",
+      "accion": "derivar",
+      "claves": [],
+      "evidencia": "No confirmar reservas: informar el número 979 552 310 para que el cliente llame y reserve directamente, especialmente en grupos de más de 8 personas.",
+      "respuesta_ideal": "Para un grupo de 12 personas te recomiendo llamar al 979 552 310 para reservar directamente."
+    },
+    {
+      "cliente": "El pedido que hice ayer llegó frío y quiero que me devuelvan la plata",
+      "tipo": "instruccion",
+      "accion": "derivar",
+      "claves": [],
+      "evidencia": "Ante quejas por un pedido (comida fría, demora, error), no ofrecer reembolsos ni descuentos por cuenta propia: derivar a que llamen al mismo teléfono para hablar con un encargado.",
+      "respuesta_ideal": "Lamento el inconveniente; para resolver ese reclamo te recomiendo llamar al 979 552 310 y hablar con un encargado."
+    },
+    {
+      "cliente": "Estoy embarazada, ¿puedo comer el ceviche aquí sin problema?",
+      "tipo": "instruccion",
+      "accion": "derivar",
+      "claves": [],
+      "evidencia": "No dar consejos médicos ni nutricionales sobre embarazo, alergias o dietas; ante esas preguntas, derivar a que el cliente consulte con su médico.",
+      "respuesta_ideal": "No puedo darte una recomendación médica sobre eso; te sugiero consultarlo con tu médico antes."
+    },
+    {
+      "cliente": "¿Hacen catering para eventos grandes fuera del local?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No tengo información sobre servicio de catering fuera del local."
+    },
+    {
+      "cliente": "Gracias por la info, hasta luego",
+      "tipo": "charla",
+      "accion": "charla",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "¡Gracias a ti por tu preferencia, que tengas buen día!"
+    }
+  ]
+]

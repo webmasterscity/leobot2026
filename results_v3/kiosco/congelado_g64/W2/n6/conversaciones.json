@@ -1,0 +1,229 @@
+[
+  [
+    {
+      "cliente": "¡Ayuda, mi papá se está desmayando y le cuesta respirar!",
+      "tipo": "instruccion",
+      "accion": "derivar",
+      "claves": [],
+      "evidencia": "decirle de inmediato que llame a la central 054-771 200 y no seguir con más preguntas de conversación.",
+      "respuesta_ideal": "Llame de inmediato a la central 054-771 200, es la línea de emergencias las 24 horas."
+    },
+    {
+      "cliente": "¿Esa línea atiende también de madrugada?",
+      "tipo": "seguimiento",
+      "accion": "responder",
+      "claves": [
+        "24 horas",
+        "365 días"
+      ],
+      "evidencia": "atención las 24 horas, los 365 días del año",
+      "respuesta_ideal": "Sí, la central atiende las 24 horas, los 365 días del año."
+    }
+  ],
+  [
+    {
+      "cliente": "Hola, ¿cuánto cuesta un traslado de emergencia dentro del cercado?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": [
+        "S/ 120"
+      ],
+      "evidencia": "Traslado de emergencia dentro del cercado: S/ 120",
+      "respuesta_ideal": "El traslado de emergencia dentro del cercado cuesta S/ 120."
+    },
+    {
+      "cliente": "¿Y si es en Yura?",
+      "tipo": "seguimiento",
+      "accion": "responder",
+      "claves": [
+        "S/ 180"
+      ],
+      "evidencia": "Traslado de emergencia a distritos alejados (Cerro Colorado, Yura, Characato): S/ 180",
+      "respuesta_ideal": "A distritos alejados como Yura, el traslado de emergencia cuesta S/ 180."
+    },
+    {
+      "cliente": "Si el vehículo espera 1 hora, ¿cuánto se suma?",
+      "tipo": "combinada",
+      "accion": "responder",
+      "claves": [
+        "S/ 20 por cada 30 minutos adicionales"
+      ],
+      "evidencia": "Espera del vehículo (más de 30 minutos): S/ 20 por cada 30 minutos adicionales",
+      "respuesta_ideal": "La espera cuesta S/ 20 por cada 30 minutos adicionales, así que por 1 hora extra se sumarían S/ 40."
+    },
+    {
+      "cliente": "¿Puedo pagar con Yape?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": [
+        "Yape"
+      ],
+      "evidencia": "Efectivo, Yape, Plin y transferencia bancaria.",
+      "respuesta_ideal": "Sí, aceptamos Yape, además de efectivo, Plin y transferencia bancaria."
+    },
+    {
+      "cliente": "Gracias por la información",
+      "tipo": "charla",
+      "accion": "charla",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "Con gusto, cualquier otra consulta aquí estamos."
+    }
+  ],
+  [
+    {
+      "cliente": "Necesito llevar a mi mamá a una cita médica el jueves a las 10 a.m., ¿la pueden recoger a las 9:30?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": [
+        "al menos 3 horas de anticipación"
+      ],
+      "evidencia": "se coordina con al menos 3 horas de anticipación.",
+      "respuesta_ideal": "Sí, se puede coordinar, solo debe solicitarse con al menos 3 horas de anticipación."
+    },
+    {
+      "cliente": "¿Cuánto cuesta ese traslado programado?",
+      "tipo": "seguimiento",
+      "accion": "responder",
+      "claves": [
+        "S/ 90"
+      ],
+      "evidencia": "Traslado programado dentro de la ciudad: S/ 90",
+      "respuesta_ideal": "El traslado programado dentro de la ciudad cuesta S/ 90."
+    },
+    {
+      "cliente": "¿Tengo que pagar todo por adelantado?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": [
+        "adelanto del 50%"
+      ],
+      "evidencia": "en traslados programados se pide adelanto del 50% al confirmar.",
+      "respuesta_ideal": "No todo, en traslados programados se pide un adelanto del 50% al confirmar."
+    },
+    {
+      "cliente": "Tengo un seguro EPS, ¿ustedes cobran directo a mi seguro?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": [
+        "entregamos el comprobante de pago y la factura"
+      ],
+      "evidencia": "nosotros entregamos el comprobante de pago y la factura para que el cliente gestione el reembolso con su aseguradora.",
+      "respuesta_ideal": "No cobramos directo al seguro, entregamos el comprobante de pago y la factura para que gestione el reembolso con su aseguradora."
+    },
+    {
+      "cliente": "¿Tienen convenio con la Clínica Arequipa?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": [
+        "convenio con",
+        "Clínica Arequipa"
+      ],
+      "evidencia": "Tenemos convenio con la Clínica San Juan de Dios y con la Clínica Arequipa para traslados con tarifa preferencial",
+      "respuesta_ideal": "Sí, tenemos convenio con la Clínica Arequipa para traslados con tarifa preferencial."
+    }
+  ],
+  [
+    {
+      "cliente": "Quiero llevar a mi tío a Tacna, ¿ustedes hacen eso?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": [
+        "interprovincial",
+        "oficina administrativa"
+      ],
+      "evidencia": "Traslado interprovincial (a Moquegua, Tacna, Puno u otras ciudades): se coordina solo con la oficina administrativa, no por la central de emergencias.",
+      "respuesta_ideal": "Sí, ese es un traslado interprovincial y se coordina solo con la oficina administrativa."
+    },
+    {
+      "cliente": "¿Cuánto me costaría ese viaje a Tacna?",
+      "tipo": "instruccion",
+      "accion": "derivar",
+      "claves": [],
+      "evidencia": "No inventar tarifas para traslados interprovinciales ni para eventos: decir que se cotizan según el caso.",
+      "respuesta_ideal": "Los traslados interprovinciales se cotizan según el caso; te recomiendo coordinar directamente con la oficina administrativa."
+    },
+    {
+      "cliente": "¿La oficina atiende los domingos?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No tengo el horario de la oficina para los domingos, solo tengo el de lunes a viernes."
+    },
+    {
+      "cliente": "¿A qué hora abre la oficina entre semana?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": [
+        "9:00 a.m. a 6:00 p.m."
+      ],
+      "evidencia": "Atención de oficina: lunes a viernes de 9:00 a.m. a 6:00 p.m.",
+      "respuesta_ideal": "La oficina atiende de lunes a viernes de 9:00 a.m. a 6:00 p.m."
+    },
+    {
+      "cliente": "¿Dónde queda esa oficina?",
+      "tipo": "seguimiento",
+      "accion": "responder",
+      "claves": [
+        "Calle Mercaderes 312"
+      ],
+      "evidencia": "Calle Mercaderes 312, Cercado, Arequipa.",
+      "respuesta_ideal": "La oficina administrativa queda en Calle Mercaderes 312, Cercado, Arequipa."
+    }
+  ],
+  [
+    {
+      "cliente": "Mi hijo tiene fiebre alta, ¿qué le puedo dar?",
+      "tipo": "instruccion",
+      "accion": "derivar",
+      "claves": [],
+      "evidencia": "No dar diagnósticos médicos ni indicar qué hacer con un paciente por teléfono; siempre derivar a la central de emergencias o al personal en sitio.",
+      "respuesta_ideal": "No puedo indicarle un tratamiento por teléfono; si es una urgencia llame a la central 054-771 200 para que lo evalúen."
+    },
+    {
+      "cliente": "Le voy a mandar fotos por WhatsApp para que me digan si es grave",
+      "tipo": "instruccion",
+      "accion": "derivar",
+      "claves": [],
+      "evidencia": "No use WhatsApp ni redes sociales para reportar una emergencia, porque la respuesta puede demorar.",
+      "respuesta_ideal": "Para emergencias no se debe usar WhatsApp porque la respuesta puede demorar; mejor llame directo a la central 054-771 200."
+    },
+    {
+      "cliente": "¿Cuántas ambulancias tienen disponibles?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": [
+        "4 ambulancias"
+      ],
+      "evidencia": "Contamos con 4 ambulancias equipadas: desfibrilador, oxígeno, camilla con inmovilizador y kit de trauma.",
+      "respuesta_ideal": "Contamos con 4 ambulancias equipadas con desfibrilador, oxígeno, camilla con inmovilizador y kit de trauma."
+    },
+    {
+      "cliente": "¿Quién es el director médico?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": [
+        "Dr. Óscar Ramos Cárdenas"
+      ],
+      "evidencia": "Director médico: Dr. Óscar Ramos Cárdenas.",
+      "respuesta_ideal": "El director médico es el Dr. Óscar Ramos Cárdenas."
+    },
+    {
+      "cliente": "¿Hacen descuentos para adultos mayores?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No tengo información sobre descuentos para adultos mayores."
+    },
+    {
+      "cliente": "Buenas tardes",
+      "tipo": "charla",
+      "accion": "charla",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "Buenas tardes, Ambulancias Vida AQP le saluda, ¿en qué le podemos ayudar?"
+    }
+  ]
+]

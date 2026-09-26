@@ -1,0 +1,118 @@
+[
+  [
+    {
+      "cliente": "¿A qué hora cierran hoy?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["18:30"],
+      "evidencia": "Lunes a viernes: 08:00 - 12:30 y 14:30 - 18:30",
+      "respuesta_ideal": "Si es lunes a viernes, cerramos a las 18:30. Tenemos un descanso de 12:30 a 14:30."
+    },
+    {
+      "cliente": "¿Venden pisos cerámicos?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["PISOS CERÁMICOS"],
+      "evidencia": "PISOS CERÁMICOS",
+      "respuesta_ideal": "Sí, tenemos pisos cerámicos en varios formatos, colores y acabados. ¿Qué estás buscando?"
+    },
+    {
+      "cliente": "¿Cuál es el precio de los pisos?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["$850 ARS/m²", "porcelánicos: $1.200 ARS/m²"],
+      "evidencia": "Resistencia hasta 4 (resistente): $850 ARS/m² (porcelánicos: $1.200 ARS/m²)",
+      "respuesta_ideal": "Los pisos cerámicos cuestan desde $850 ARS por metro cuadrado. Si quieres porcelánicos son más caros, desde $1.200 ARS/m²."
+    }
+  ],
+  [
+    {
+      "cliente": "Necesito 20 metros cuadrados de piso. ¿Cuánto me cuesta?",
+      "tipo": "combinada",
+      "accion": "responder",
+      "claves": ["$850 ARS/m²"],
+      "evidencia": "Resistencia hasta 4 (resistente): $850 ARS/m²",
+      "respuesta_ideal": "20 metros cuadrados a $850 por metro son $17.000 ARS en total. Si necesitas porcelánicos, sería $24.000 ARS."
+    },
+    {
+      "cliente": "¿Me hacen descuento si compro con efectivo?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["Efectivo: 5% descuento"],
+      "evidencia": "Efectivo: 5% descuento",
+      "respuesta_ideal": "Sí, si pagas en efectivo te hacemos 5% de descuento. También si pagas por transferencia."
+    }
+  ],
+  [
+    {
+      "cliente": "¿Se puede pagar en cuotas?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["Crédito: sin interés hasta 3 cuotas", "Plan de financiación Oca: hasta 12 cuotas"],
+      "evidencia": "Crédito: sin interés hasta 3 cuotas | Plan de financiación Oca: hasta 12 cuotas",
+      "respuesta_ideal": "Sí, con tarjeta de crédito hasta 3 cuotas sin interés, o plan Oca hasta 12 cuotas."
+    },
+    {
+      "cliente": "¿Hacen entregas?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["Envíos a todo Tucumán: $500 a $2.000 ARS", "Cantidad mínima de envío: 5 m²"],
+      "evidencia": "Envíos a todo Tucumán: $500 a $2.000 ARS según distancia | Cantidad mínima de envío: 5 m²",
+      "respuesta_ideal": "Sí hacemos entregas a todo Tucumán. El costo depende de la distancia, entre $500 y $2.000. El mínimo es 5 metros cuadrados."
+    }
+  ],
+  [
+    {
+      "cliente": "¿Tienen azulejos para pared?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["REVESTIMIENTOS"],
+      "evidencia": "REVESTIMIENTOS (AZULEJOS DE PARED)",
+      "respuesta_ideal": "Sí, tenemos revestimientos para pared en varios tamaños y colores. ¿Para dónde los necesitas?"
+    },
+    {
+      "cliente": "Para el baño, ¿cuál me recomiendas?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "Eso depende de tu gusto y presupuesto. Te recomiendo que vengas a la tienda para ver los colores en persona o llama al +54 381 421-7823 para que nuestros vendedores te asesoren."
+    }
+  ],
+  [
+    {
+      "cliente": "¿Me cortan los azulejos a medida?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["Cortamos a medida sin costo adicional si la compra es en tienda"],
+      "evidencia": "Servicio de corte: Cortamos a medida sin costo adicional si la compra es en tienda",
+      "respuesta_ideal": "Sí, te cortamos gratis si compras en la tienda. El corte lo entregamos en 24 a 48 horas."
+    },
+    {
+      "cliente": "¿Qué pasa si el material llega roto?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "Tenemos garantía contra defectos de fabricación. Si te llega roto, contacta al +54 381 421-7823 con fotos del material."
+    }
+  ],
+  [
+    {
+      "cliente": "¿Tienen en oferta algo?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["Revestimientos: lleva 2 m² paga 1,5 m² (descuento 25%)", "Pegamento + lechada: compra 2 bolsas, 3ª a 50%", "Porcelánicos grandes: 10%"],
+      "evidencia": "Revestimientos: lleva 2 m² paga 1,5 m² (descuento 25%) | Pegamento + lechada: compra 2 bolsas, 3ª a 50% | Porcelánicos grandes: 10% en compras mayores a 30 m²",
+      "respuesta_ideal": "Sí, tenemos promociones. Revestimientos con 25% de descuento, pegamento y lechada con oferta, y porcelánicos grandes con 10% si compras más de 30 metros."
+    },
+    {
+      "cliente": "¿Hasta cuándo duran las ofertas?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["hasta 31 de octubre"],
+      "evidencia": "Promociones vigentes (hasta 31 de octubre)",
+      "respuesta_ideal": "Las promociones son válidas hasta el 31 de octubre. Apúrate si quieres aprovecharlas."
+    }
+  ]
+]

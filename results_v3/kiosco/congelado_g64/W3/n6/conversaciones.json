@@ -1,0 +1,118 @@
+[
+  [
+    {
+      "cliente": "Hola, buenos días. ¿A qué hora abren?",
+      "tipo": "charla",
+      "accion": "charla",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "Buenos días, ¿cómo estás? Abrimos de martes a viernes a las 9:00 AM, y sábado-domingo a las 10:00 AM."
+    },
+    {
+      "cliente": "¿Cuánto cuesta la entrada?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["$8 USD por persona"],
+      "evidencia": "Entrada general: $8 USD por persona",
+      "respuesta_ideal": "La entrada general es $8 USD. Hay descuentos para niños, estudiantes y adultos mayores."
+    },
+    {
+      "cliente": "¿Cuánto cuesta la entrada de un niño de 4 años?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["Niños de 3 a 12 años: $5 USD"],
+      "evidencia": "Niños de 3 a 12 años: $5 USD",
+      "respuesta_ideal": "Los niños de 3 a 12 años pagan $5 USD. Es la mitad que los adultos."
+    }
+  ],
+  [
+    {
+      "cliente": "Quiero hacer una fiesta de cumpleaños. ¿Cómo funciona?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["Paquete cumpleañero (8 niños + 1 adulto): $120 USD", "área privada 2 horas"],
+      "evidencia": "Cumpleaños: Paquete cumpleañero (8 niños + 1 adulto): $120 USD | Incluye: entrada, área privada 2 horas, refrigerio",
+      "respuesta_ideal": "Tenemos paquete especial: $120 USD para 8 niños y 1 adulto, con entrada, área privada 2 horas, y refrigerio. Si hay más gente, cuesta extra."
+    },
+    {
+      "cliente": "¿Incluye pastel?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["pastel (traer el propio o $15 USD adicional)"],
+      "evidencia": "Incluye: entrada, área privada 2 horas, refrigerio, pastel (traer el propio o $15 USD adicional)",
+      "respuesta_ideal": "Puedes traer tu propio pastel sin costo, o nosotros lo proporcionamos por $15 USD adicionales."
+    }
+  ],
+  [
+    {
+      "cliente": "¿Tienen talleres de robótica?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["Taller de robótica (1,5 horas): $20 USD"],
+      "evidencia": "Taller de robótica (1,5 horas): $20 USD por persona",
+      "respuesta_ideal": "Sí, tenemos taller de robótica por $20 USD por persona, 1 hora y media. Necesita reserva con 48 horas de anticipación."
+    },
+    {
+      "cliente": "¿Puedo contratar hoy para este fin de semana?",
+      "tipo": "seguimiento",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No, los talleres requieren reserva 48 horas antes. Si llamas hoy viernes para el sábado no alcanza. Puedes reservar para la semana que viene."
+    }
+  ],
+  [
+    {
+      "cliente": "¿Puedo traer a mi sobrino de 7 años?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["Menores de 8 años deben ir acompañados de un adulto"],
+      "evidencia": "Menores de 8 años deben ir acompañados de un adulto",
+      "respuesta_ideal": "Sí, pero tiene que ir acompañado de un adulto. Esa es la norma para menores de 8 años."
+    },
+    {
+      "cliente": "¿Se puede grabar video?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["videos personales sin propósito comercial"],
+      "evidencia": "Se permite: cámaras para fotos (sin flash), videos personales sin propósito comercial",
+      "respuesta_ideal": "Sí, videos personales sin flash está permitido. Pero no con propósito comercial."
+    }
+  ],
+  [
+    {
+      "cliente": "¿Se pueden traer alimentos de afuera?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["No se permiten: comidas, bebidas (excepto agua)"],
+      "evidencia": "No se permiten: comidas, bebidas (excepto agua)",
+      "respuesta_ideal": "No, no se puede traer comida. Solo agua. Pero tenemos tienda dentro donde puedes comprar refrigerios."
+    },
+    {
+      "cliente": "¿Somos 20 estudiantes de una escuela. ¿Hay descuento?",
+      "tipo": "combinada",
+      "accion": "responder",
+      "claves": ["Grupos (mínimo 15 personas): $6 USD", "Descuento escolar adicional: 20%"],
+      "evidencia": "Grupos (mínimo 15 personas): Entrada grupal: $6 USD por persona | Descuento escolar adicional: 20% sobre entrada grupal si se reserva 2 semanas antes",
+      "respuesta_ideal": "Sí, como grupo de 20 pagan $6 USD cada uno. Si reservan 2 semanas antes, descuento escolar adicional 20%."
+    }
+  ],
+  [
+    {
+      "cliente": "¿Cuál es el parqueadero?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["Parqueadero: $2 USD"],
+      "evidencia": "Parqueadero: $2 USD por auto (máximo 4 horas incluidas en entrada)",
+      "respuesta_ideal": "El parqueadero cuesta $2 USD. Están incluidas las 4 primeras horas. Después cuesta $1 USD por hora adicional."
+    },
+    {
+      "cliente": "¿Tienen planetario?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["Planetario digital: proyecciones de 30 min"],
+      "evidencia": "Planetario digital: proyecciones de 30 min (cada hora)",
+      "respuesta_ideal": "Sí, tenemos planetario digital con proyecciones de 30 minutos cada hora. Es una de nuestras zonas más populares."
+    }
+  ]
+]

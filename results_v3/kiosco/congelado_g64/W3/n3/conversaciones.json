@@ -1,0 +1,126 @@
+[
+  [
+    {
+      "cliente": "¿Cuál es el horario de atención?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["martes a domingo: 08:00 - 18:00", "Lunes: CERRADO"],
+      "evidencia": "De martes a domingo: 08:00 - 18:00 | Lunes: CERRADO",
+      "respuesta_ideal": "Abrimos de martes a domingo de 8:00 AM a 6:00 PM. Los lunes estamos cerrados."
+    },
+    {
+      "cliente": "¿Cuánto cuesta entrar?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["$12 USD por persona"],
+      "evidencia": "Entrada general: $12 USD por persona",
+      "respuesta_ideal": "La entrada general cuesta $12 USD por persona. Hay descuentos para niños, estudiantes y adultos mayores."
+    },
+    {
+      "cliente": "¿Mi hija de 8 años paga completo?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["Niños de 5 a 12 años: $6 USD"],
+      "evidencia": "Niños de 5 a 12 años: $6 USD",
+      "respuesta_ideal": "No, los niños de 5 a 12 años pagan solo $6 USD. Es la mitad."
+    }
+  ],
+  [
+    {
+      "cliente": "¿Puedo traer mi perro?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["No permitidas: mascotas"],
+      "evidencia": "No permitidas: mascotas",
+      "respuesta_ideal": "Lamentablemente no permitimos mascotas. Deberás dejar a tu perro en casa."
+    },
+    {
+      "cliente": "¿Debo llevar algo especial?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "Recomendamos llevar ropa cómoda, chanclas, bloqueador solar y toalla. Aunque también renta toallas por $2 USD."
+    },
+    {
+      "cliente": "¿Cuántas piscinas termales hay?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["6 piscinas naturales de agua termal"],
+      "evidencia": "El complejo ofrece 6 piscinas naturales de agua termal (entre 38°C y 42°C)",
+      "respuesta_ideal": "Tenemos 6 piscinas naturales de agua termal. Las temperaturas varían entre 38 y 42 grados centígrados."
+    }
+  ],
+  [
+    {
+      "cliente": "¿Se puede llevar comida de afuera?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["No se admiten: comida de fuera (excepto bebés y personas con dietas especiales)"],
+      "evidencia": "No se admiten: comida de fuera (excepto bebés y personas con dietas especiales)",
+      "respuesta_ideal": "No permitimos comida de fuera, excepto si tienes bebé o una dieta especial. Tenemos restaurante dentro del complejo."
+    },
+    {
+      "cliente": "¿Y botellas de vidrio?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["No se admiten: botellas de vidrio"],
+      "evidencia": "No se admiten: botellas de vidrio",
+      "respuesta_ideal": "No, botellas de vidrio no se admiten por seguridad. Pero puedes traer cerveza en lata o gaseosas en envase."
+    }
+  ],
+  [
+    {
+      "cliente": "¿Cuál es la temperatura de las piscinas?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["entre 38°C y 42°C"],
+      "evidencia": "6 piscinas naturales de agua termal (entre 38°C y 42°C)",
+      "respuesta_ideal": "Las aguas termales tienen temperaturas entre 38 y 42 grados centígrados. Muy agradables y con propiedades minerales."
+    },
+    {
+      "cliente": "¿Cura la artritis?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No soy doctor, pero las aguas tienen propiedades minerales que alivian dolores articulares y musculares. Para cura médica, consulta a un profesional."
+    }
+  ],
+  [
+    {
+      "cliente": "Estoy embarazada, ¿puedo entrar?",
+      "tipo": "instruccion",
+      "accion": "derivar",
+      "claves": ["primer trimestre de embarazo", "Recomendamos consultar médico"],
+      "evidencia": "Según estudios, exponerse a altas temperaturas en el primer trimestre de embarazo puede ser riesgoso. Recomendamos a mujeres embarazadas consultar su médico.",
+      "respuesta_ideal": "Te recomendamos consultar a tu médico primero. Las altas temperaturas en el primer trimestre podrían ser riesgosas. Es una precaución."
+    },
+    {
+      "cliente": "¿Hay servicio de masajes?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["Masaje termal: $40 USD por 50 minutos", "Masaje descontracturante: $45 USD"],
+      "evidencia": "Servicios spa: Masaje termal: $40 USD por 50 minutos | Masaje descontracturante: $45 USD por 50 minutos",
+      "respuesta_ideal": "Sí, ofrecemos masaje termal por $40 USD y masaje descontracturante por $45 USD, ambos de 50 minutos. Requieren reserva 24 horas antes."
+    }
+  ],
+  [
+    {
+      "cliente": "¿Cuánto cuesta alquilar traje de baño?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["$8 USD (medio día)", "$12 USD (día completo)"],
+      "evidencia": "Traje de baño: $8 USD (alquiler de medio día) o $12 USD (alquiler de día completo)",
+      "respuesta_ideal": "Alquilamos trajes de baño por $8 USD si es medio día o $12 USD si es día completo."
+    },
+    {
+      "cliente": "¿A qué distancia queda de Quito?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["65 km", "1 hora y 20 minutos"],
+      "evidencia": "Distancia desde Quito: 65 km (aproximadamente 1 hora y 20 minutos en auto)",
+      "respuesta_ideal": "Estamos a 65 km de Quito, aproximadamente 1 hora y 20 minutos en auto."
+    }
+  ]
+]

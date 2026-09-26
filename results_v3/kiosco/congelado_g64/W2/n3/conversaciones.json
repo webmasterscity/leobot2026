@@ -1,0 +1,289 @@
+[
+  [
+    {
+      "cliente": "Hola, ¿a cómo está la tabla de pino de 1 por 6?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": [
+        "$180"
+      ],
+      "evidencia": "Tabla de pino 1\"x6\" ................ $180 el metro lineal",
+      "respuesta_ideal": "La tabla de pino de 1 por 6 está a $180 el metro lineal."
+    },
+    {
+      "cliente": "¿Y el machimbre para piso?",
+      "tipo": "seguimiento",
+      "accion": "responder",
+      "claves": [
+        "$410"
+      ],
+      "evidencia": "Machimbre (piso/revestimiento) ...... $410 el m²",
+      "respuesta_ideal": "El machimbre para piso está a $410 el metro cuadrado."
+    },
+    {
+      "cliente": "¿Y el tirante de eucalipto de 2 por 2?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": [
+        "$95"
+      ],
+      "evidencia": "Tirante de eucalipto 2\"x2\" .......... $95 el metro lineal",
+      "respuesta_ideal": "El tirante de eucalipto de 2 por 2 está a $95 el metro lineal."
+    },
+    {
+      "cliente": "Si compro 3 metros de tabla de pino, ¿cuánto sería?",
+      "tipo": "combinada",
+      "accion": "responder",
+      "claves": [
+        "$180"
+      ],
+      "evidencia": "Tabla de pino 1\"x6\" ................ $180 el metro lineal",
+      "respuesta_ideal": "Como la tabla de pino está a $180 el metro lineal, por 3 metros serían $540."
+    },
+    {
+      "cliente": "¿El corte a medida es gratis si compro poco?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": [
+        "recargo de $300"
+      ],
+      "evidencia": "Para compras menores, el corte a medida tiene un recargo de $300.",
+      "respuesta_ideal": "No, si la compra es menor a $8.000 el corte a medida tiene un recargo de $300."
+    },
+    {
+      "cliente": "Ah bueno, gracias",
+      "tipo": "charla",
+      "accion": "charla",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "De nada, cualquier otra consulta avisá."
+    }
+  ],
+  [
+    {
+      "cliente": "¿Cuánto sale el poste de eucalipto impregnado?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": [
+        "$250"
+      ],
+      "evidencia": "Postes de eucalipto impregnado ...... $250 c/u",
+      "respuesta_ideal": "El poste de eucalipto impregnado sale $250 la unidad."
+    },
+    {
+      "cliente": "Necesito 10 postes para un alambrado, ¿cuánto sale?",
+      "tipo": "combinada",
+      "accion": "responder",
+      "claves": [
+        "$250"
+      ],
+      "evidencia": "Postes de eucalipto impregnado ...... $250 c/u",
+      "respuesta_ideal": "Como cada poste sale $250, 10 postes serían $2.500."
+    },
+    {
+      "cliente": "¿Qué garantía tienen contra termitas?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": [
+        "5 años"
+      ],
+      "evidencia": "Tienen garantía de 5 años contra ataque de termitas, siempre que se usen enterrados o a la intemperie según lo indicado.",
+      "respuesta_ideal": "Tienen garantía de 5 años contra ataque de termitas, usados como corresponde."
+    },
+    {
+      "cliente": "¿Vienen con factura para pasar a Brasil?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No tengo información sobre trámites de factura para pasar a Brasil; te recomiendo consultarlo directamente."
+    },
+    {
+      "cliente": "¿Los tirantes también vienen impregnados como los postes?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No tengo ese dato específico sobre los tirantes; te sugiero preguntarlo al comprar."
+    },
+    {
+      "cliente": "Necesito 200 tablas para la semana que viene, ¿me las reservan?",
+      "tipo": "instruccion",
+      "accion": "derivar",
+      "claves": [],
+      "evidencia": "No confirmar pedidos ni reservar stock: informar el precio y las condiciones, y derivar a hablar con Wilson Silveira al mismo teléfono para concretar la compra.",
+      "respuesta_ideal": "Yo no puedo reservarte el pedido; para eso tenés que hablar con Wilson Silveira al 4622 3390."
+    }
+  ],
+  [
+    {
+      "cliente": "¿A qué hora abren los sábados?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": [
+        "8:00 a 12:00"
+      ],
+      "evidencia": "Sábados: 8:00 a 12:00",
+      "respuesta_ideal": "Los sábados abrimos de 8:00 a 12:00."
+    },
+    {
+      "cliente": "¿Y los sábados hacen corte a medida?",
+      "tipo": "seguimiento",
+      "accion": "responder",
+      "claves": [
+        "no se realizan cortes a medida"
+      ],
+      "evidencia": "los sábados no se realizan cortes a medida, solo venta de lo que ya está cortado en stock, porque el operario de la sierra no trabaja ese día.",
+      "respuesta_ideal": "No, los sábados no se realizan cortes a medida, solo se vende lo que ya está cortado en stock."
+    },
+    {
+      "cliente": "¿Trabajan los domingos?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": [
+        "cerrado"
+      ],
+      "evidencia": "Domingos: cerrado",
+      "respuesta_ideal": "No, los domingos permanecemos cerrado."
+    },
+    {
+      "cliente": "¿Tienen madera de cedro?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No tengo información sobre madera de cedro; trabajamos principalmente eucalipto, pino y lapacho."
+    },
+    {
+      "cliente": "¿Hacen reparación de techos de madera?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No tengo información sobre servicio de reparación de techos."
+    },
+    {
+      "cliente": "Buenas, quería consultar algo",
+      "tipo": "charla",
+      "accion": "charla",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "Buenas, decime en qué te puedo ayudar."
+    }
+  ],
+  [
+    {
+      "cliente": "¿Cómo puedo pagar?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": [
+        "efectivo en pesos uruguayos"
+      ],
+      "evidencia": "Aceptamos efectivo en pesos uruguayos, efectivo en reales brasileños (al cambio del día) y transferencia bancaria.",
+      "respuesta_ideal": "Podés pagar en efectivo en pesos uruguayos, en reales brasileños al cambio del día, o por transferencia bancaria."
+    },
+    {
+      "cliente": "¿Aceptan tarjeta de crédito?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": [
+        "No trabajamos con tarjetas de crédito"
+      ],
+      "evidencia": "No trabajamos con tarjetas de crédito ni débito.",
+      "respuesta_ideal": "No trabajamos con tarjetas de crédito ni débito."
+    },
+    {
+      "cliente": "¿Aceptan pesos argentinos?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No tengo información sobre pago en pesos argentinos; solo consta pesos uruguayos y reales."
+    },
+    {
+      "cliente": "¿Hacen entrega a domicilio?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": [
+        "Entregamos a domicilio dentro de Rivera ciudad"
+      ],
+      "evidencia": "Entregamos a domicilio dentro de Rivera ciudad; el flete se cobra según la distancia y el volumen del pedido, se cotiza al momento de la compra.",
+      "respuesta_ideal": "Sí, Entregamos a domicilio dentro de Rivera ciudad; el flete se cotiza según distancia y volumen."
+    },
+    {
+      "cliente": "¿Envían hasta Tacuarembó?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": [
+        "No realizamos envíos fuera del departamento de Rivera"
+      ],
+      "evidencia": "No realizamos envíos fuera del departamento de Rivera.",
+      "respuesta_ideal": "No, No realizamos envíos fuera del departamento de Rivera."
+    },
+    {
+      "cliente": "¿Y hasta Tranqueras, que queda cerca?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No tengo precisado si Tranqueras entra en el reparto local; te recomiendo consultarlo al comprar."
+    }
+  ],
+  [
+    {
+      "cliente": "¿Cuánto sale el metro cúbico de leña?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": [
+        "$1.200"
+      ],
+      "evidencia": "Leña de eucalipto .................... $1.200 el m³",
+      "respuesta_ideal": "El metro cúbico de leña de eucalipto sale $1.200."
+    },
+    {
+      "cliente": "¿El precio de la leña es igual para pino que para eucalipto?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No tengo precio específico de leña de pino, solo consta el de leña de eucalipto."
+    },
+    {
+      "cliente": "¿Desde cuántos metros cúbicos hacen descuento?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": [
+        "más de 5 m³",
+        "10%"
+      ],
+      "evidencia": "A constructoras y obras que compren más de 5 m³ en un mismo pedido les hacemos un descuento del 10% sobre el total.",
+      "respuesta_ideal": "A partir de más de 5 m³ en un mismo pedido hacemos un descuento del 10% sobre el total."
+    },
+    {
+      "cliente": "Somos una constructora y necesitamos 8 metros cúbicos para una obra grande",
+      "tipo": "instruccion",
+      "accion": "derivar",
+      "claves": [],
+      "evidencia": "Ante pedidos grandes de constructoras u obras, mencionar el descuento por volumen y derivar a Wilson Silveira para coordinar los detalles.",
+      "respuesta_ideal": "Para ese volumen les corresponde el descuento por volumen; para coordinar los detalles conviene hablar con Wilson Silveira al 4622 3390."
+    },
+    {
+      "cliente": "Para una obra de 6 metros cúbicos, ¿nos hacen el descuento del 10%?",
+      "tipo": "combinada",
+      "accion": "responder",
+      "claves": [
+        "10%"
+      ],
+      "evidencia": "A constructoras y obras que compren más de 5 m³ en un mismo pedido les hacemos un descuento del 10% sobre el total.",
+      "respuesta_ideal": "Sí, como supera los 5 m³, les corresponde el descuento del 10% sobre el total."
+    },
+    {
+      "cliente": "Perfecto, muchas gracias por la info, buen día",
+      "tipo": "charla",
+      "accion": "charla",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "Buen día, gracias por la consulta."
+    }
+  ]
+]

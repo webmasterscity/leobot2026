@@ -1,0 +1,118 @@
+[
+  [
+    {
+      "cliente": "¿Cuál es vuestro horario?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["De lunes a viernes: 09:00 - 14:00 y 16:00 - 19:00", "Sábados: 10:00 - 13:00 (cita previa)"],
+      "evidencia": "De lunes a viernes: 09:00 - 14:00 y 16:00 - 19:00 | Sábados: 10:00 - 13:00 (cita previa)",
+      "respuesta_ideal": "De lunes a viernes de 9:00 a 14:00 y de 16:00 a 19:00. Los sábados de 10:00 a 13:00, pero solo con cita previa."
+    },
+    {
+      "cliente": "¿Hacen proyectos arquitectónicos?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["PROYECTOS ARQUITECTÓNICOS"],
+      "evidencia": "PROYECTOS ARQUITECTÓNICOS",
+      "respuesta_ideal": "Sí, hacemos proyectos arquitectónicos desde proyecto básico hasta proyecto de ejecución completo."
+    },
+    {
+      "cliente": "¿Cuánto cuesta un proyecto?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["Proyecto básico: desde €3.500", "Proyecto de ejecución completo: desde €6.500"],
+      "evidencia": "Proyecto básico: desde €3.500 | Proyecto de ejecución completo: desde €6.500",
+      "respuesta_ideal": "Un proyecto básico cuesta desde €3.500 y un proyecto de ejecución completo desde €6.500. Ambos incluyen planos y diseño 3D."
+    }
+  ],
+  [
+    {
+      "cliente": "¿Cuánto tarda hacer un proyecto?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["8-12 semanas"],
+      "evidencia": "Tiempo medio: 8-12 semanas desde la toma de datos",
+      "respuesta_ideal": "El tiempo medio es de 8 a 12 semanas desde que tomamos los datos de tu obra."
+    },
+    {
+      "cliente": "¿Y si necesito reforma integral?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["Plazo: 3-4 meses por cada 100 m²", "a partir de €20.000"],
+      "evidencia": "Plazo: 3-4 meses por cada 100 m² | Presupuesto: a partir de €20.000",
+      "respuesta_ideal": "Una reforma integral toma 3 a 4 meses por cada 100 metros cuadrados. El presupuesto mínimo es de €20.000 para 50 m²."
+    }
+  ],
+  [
+    {
+      "cliente": "¿Cuánto cuesta reformar un baño?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["€8.000 - €18.000"],
+      "evidencia": "Cocina o baño: €8.000 - €18.000 según acabados",
+      "respuesta_ideal": "Reformar un baño cuesta entre €8.000 y €18.000 dependiendo de los acabados que elijas."
+    },
+    {
+      "cliente": "¿Es ese precio final o hay más gastos?",
+      "tipo": "seguimiento",
+      "accion": "responder",
+      "claves": ["Presupuesto sin compromiso"],
+      "evidencia": "Presupuesto sin compromiso",
+      "respuesta_ideal": "Ese es un presupuesto sin compromiso. Te daremos un presupuesto personalizado después de ver tu baño."
+    }
+  ],
+  [
+    {
+      "cliente": "¿Cómo funciona el proceso de reforma?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "El proceso es: primera consulta sin costo, toma de datos, propuesta, aprobación, licencias si aplica, ejecución y entrega. Te explico mejor si vienes al estudio o hacemos videollamada."
+    },
+    {
+      "cliente": "¿Puedo pagar en cuotas?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["30% al inicio, 40% a mitad de obra, 30% al final"],
+      "evidencia": "Pago: 30% al inicio, 40% a mitad de obra, 30% al final",
+      "respuesta_ideal": "Sí, el esquema es 30% al empezar, 40% a mitad de la obra y 30% al final. También tenemos facilidades con entidades financieras colaboradoras."
+    }
+  ],
+  [
+    {
+      "cliente": "¿Tienen referencias de clientes?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "Tenemos más de 200 proyectos ejecutados desde 2005. Si necesitas referencias específicas, puedo pasarte contactos si vienes al estudio."
+    },
+    {
+      "cliente": "¿Qué pasa si quiero cambiar algo durante la obra?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["Los cambios durante la obra se presupuestan adicionales", "Cambios menores (acabados, colores) sin costo si se comunican antes"],
+      "evidencia": "Los cambios durante la obra se presupuestan adicionales. Cambios menores (acabados, colores) sin costo si se comunican antes de iniciar esa fase.",
+      "respuesta_ideal": "Los cambios se cobran extra. Pero si comunicas cambios menores de acabados o colores antes de esa fase, no tienen costo adicional."
+    }
+  ],
+  [
+    {
+      "cliente": "¿Me hacen presupuesto sin costo?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["Primera consulta (sin costo)"],
+      "evidencia": "Primera consulta (sin costo): visite a estudio o videollamada",
+      "respuesta_ideal": "Sí, la primera consulta es gratis. Puedes venir al estudio o hacer una videollamada."
+    },
+    {
+      "cliente": "¿Y la toma de datos?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["Toma de datos en sitio: €150 (se descuenta del proyecto si contrata)"],
+      "evidencia": "Toma de datos en sitio: €150 (se descuenta del proyecto si contrata)",
+      "respuesta_ideal": "La toma de datos cuesta €150, pero se te descuenta del presupuesto final si contratas el proyecto."
+    }
+  ]
+]

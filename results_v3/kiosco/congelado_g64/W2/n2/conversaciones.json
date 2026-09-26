@@ -1,0 +1,291 @@
+[
+  [
+    {
+      "cliente": "Hola, buenas, ¿cuánto cuesta la hora de cancha entre semana en el día?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": [
+        "COP 120.000"
+      ],
+      "evidencia": "Horario diurno (6:00 a.m. a 6:00 p.m.), entre semana: COP 120.000",
+      "respuesta_ideal": "La hora entre semana en horario diurno cuesta COP 120.000."
+    },
+    {
+      "cliente": "¿Y de noche sale más caro?",
+      "tipo": "seguimiento",
+      "accion": "responder",
+      "claves": [
+        "COP 150.000"
+      ],
+      "evidencia": "Horario nocturno (6:00 p.m. a 11:00 p.m.), entre semana: COP 150.000",
+      "respuesta_ideal": "Sí, en horario nocturno entre semana la hora sale COP 150.000."
+    },
+    {
+      "cliente": "¿Y en fin de semana?",
+      "tipo": "seguimiento",
+      "accion": "responder",
+      "claves": [
+        "COP 160.000"
+      ],
+      "evidencia": "Fines de semana, cualquier horario: COP 160.000",
+      "respuesta_ideal": "Los fines de semana la hora cuesta COP 160.000 en cualquier horario."
+    },
+    {
+      "cliente": "¿Cuánto hay que dar de anticipo para reservar?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": [
+        "anticipo del 50%"
+      ],
+      "evidencia": "Para reservar se debe pagar un anticipo del 50% del valor de la hora.",
+      "respuesta_ideal": "Para reservar hay que pagar un anticipo del 50% del valor de la hora."
+    },
+    {
+      "cliente": "Si cancelo el mismo día de la reserva, ¿me devuelven la plata?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": [
+        "el anticipo no se devuelve"
+      ],
+      "evidencia": "Si el cliente cancela con menos de 24 horas de anticipación, el anticipo no se devuelve.",
+      "respuesta_ideal": "No, si cancelás con menos de 24 horas de anticipación el anticipo no se devuelve."
+    },
+    {
+      "cliente": "Quiero reservar la cancha 1 para mañana a las 8pm, ¿me la aparta ya?",
+      "tipo": "instruccion",
+      "accion": "derivar",
+      "claves": [],
+      "evidencia": "No confirmar una reserva ni bloquear un horario: solo indicar el valor, el anticipo necesario y derivar al WhatsApp 300 654 2210 para concretarla con el administrador.",
+      "respuesta_ideal": "Yo no puedo apartarte la cancha directamente; escribí al WhatsApp 300 654 2210 con el administrador Jhon Pérez para concretar la reserva."
+    }
+  ],
+  [
+    {
+      "cliente": "¿Alquilan balones?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": [
+        "COP 5.000"
+      ],
+      "evidencia": "Balón: alquiler COP 5.000.",
+      "respuesta_ideal": "Sí, alquilamos balones por COP 5.000."
+    },
+    {
+      "cliente": "¿Y guantes de arquero?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": [
+        "COP 8.000"
+      ],
+      "evidencia": "Guantes de arquero: alquiler COP 8.000.",
+      "respuesta_ideal": "También alquilamos guantes de arquero por COP 8.000."
+    },
+    {
+      "cliente": "Si alquilo balón y guantes para el partido, ¿cuánto pago en total?",
+      "tipo": "combinada",
+      "accion": "responder",
+      "claves": [
+        "COP 5.000",
+        "COP 8.000"
+      ],
+      "evidencia": "Balón: alquiler COP 5.000.",
+      "respuesta_ideal": "El balón cuesta COP 5.000 y los guantes COP 8.000, en total serían COP 13.000."
+    },
+    {
+      "cliente": "¿Los petos también se cobran aparte?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": [
+        "sin costo"
+      ],
+      "evidencia": "Petos (chalecos): sin costo, incluidos en el alquiler.",
+      "respuesta_ideal": "No, los petos son sin costo, ya están incluidos en el alquiler de la cancha."
+    },
+    {
+      "cliente": "¿Alquilan guayos o tenis deportivos también?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No tengo información sobre alquiler de guayos o tenis; te recomiendo preguntar al llegar o por WhatsApp."
+    },
+    {
+      "cliente": "Listo, muchas gracias",
+      "tipo": "charla",
+      "accion": "charla",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "¡Con gusto! Cualquier otra duda, escribinos."
+    }
+  ],
+  [
+    {
+      "cliente": "¿Cómo es el torneo de los domingos?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": [
+        "torneo relámpago desde las 3:00 p.m."
+      ],
+      "evidencia": "Todos los domingos organizamos un torneo relámpago desde las 3:00 p.m.",
+      "respuesta_ideal": "Todos los domingos hacemos un torneo relámpago desde las 3:00 p.m."
+    },
+    {
+      "cliente": "¿Cuánto cuesta la inscripción por equipo?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": [
+        "COP 180.000"
+      ],
+      "evidencia": "Inscripción por equipo: COP 180.000.",
+      "respuesta_ideal": "La inscripción por equipo cuesta COP 180.000."
+    },
+    {
+      "cliente": "Si inscribimos dos equipos de la misma empresa, ¿cuánto pagamos en total?",
+      "tipo": "combinada",
+      "accion": "responder",
+      "claves": [
+        "COP 180.000"
+      ],
+      "evidencia": "Inscripción por equipo: COP 180.000.",
+      "respuesta_ideal": "Cada equipo paga COP 180.000 de inscripción, así que por dos equipos serían COP 360.000 en total."
+    },
+    {
+      "cliente": "¿Y si ganamos qué nos ganamos?",
+      "tipo": "seguimiento",
+      "accion": "responder",
+      "claves": [
+        "medallas y un bono de una hora de cancha gratis"
+      ],
+      "evidencia": "El equipo campeón recibe medallas y un bono de una hora de cancha gratis para su próxima reserva.",
+      "respuesta_ideal": "El equipo campeón recibe medallas y un bono de una hora de cancha gratis para su próxima reserva."
+    },
+    {
+      "cliente": "¿El torneo tiene categoría femenina aparte?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No tengo información sobre una categoría femenina en el torneo; te sugiero consultarlo por WhatsApp."
+    },
+    {
+      "cliente": "¿Hay premio en dinero para el campeón?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No tengo información sobre premio en dinero; lo que consta es medallas y una hora de cancha gratis."
+    }
+  ],
+  [
+    {
+      "cliente": "¿Tienen parqueadero?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": [
+        "Parqueadero gratuito"
+      ],
+      "evidencia": "Parqueadero gratuito para los clientes que juegan en el complejo.",
+      "respuesta_ideal": "Sí, tenemos Parqueadero gratuito para los clientes que juegan en el complejo."
+    },
+    {
+      "cliente": "¿Las duchas tienen agua caliente?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": [
+        "duchas de agua caliente"
+      ],
+      "evidencia": "Vestuarios con duchas de agua caliente.",
+      "respuesta_ideal": "Sí, los vestuarios tienen duchas de agua caliente."
+    },
+    {
+      "cliente": "¿Puedo llevar mi propio balón?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": [
+        "Sí, no hay problema"
+      ],
+      "evidencia": "¿Puedo llevar mi propio balón? Sí, no hay problema.",
+      "respuesta_ideal": "Sí, no hay problema en que lleves tu propio balón."
+    },
+    {
+      "cliente": "¿Dan clases de fútbol para niños?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No tengo información sobre clases de fútbol; te recomiendo consultarlo directamente."
+    },
+    {
+      "cliente": "¿Hacen descuento si reservo varias semanas seguidas?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No tengo información sobre descuentos por reservas recurrentes; te sugiero consultarlo por WhatsApp."
+    },
+    {
+      "cliente": "Hola, buenas noches, una pregunta",
+      "tipo": "charla",
+      "accion": "charla",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "¡Hola, buenas noches! Decime en qué te puedo ayudar."
+    }
+  ],
+  [
+    {
+      "cliente": "¿Las canchas tienen iluminación para jugar de noche?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": [
+        "techadas y tienen iluminación artificial"
+      ],
+      "evidencia": "Sí, las tres canchas son techadas y tienen iluminación artificial, se puede jugar de noche sin inconveniente.",
+      "respuesta_ideal": "Sí, las tres canchas son techadas y tienen iluminación artificial, se puede jugar de noche sin problema."
+    },
+    {
+      "cliente": "Si llueve fuerte a mitad del partido, ¿pierdo la hora que pagué?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": [
+        "se reprograma la cancha sin costo adicional"
+      ],
+      "evidencia": "Si el juego se suspende por lluvia fuerte antes de completar la hora, por seguridad de los jugadores, se reprograma la cancha sin costo adicional.",
+      "respuesta_ideal": "No, si el juego se suspende por lluvia fuerte se reprograma la cancha sin costo adicional."
+    },
+    {
+      "cliente": "¿Y si esta lloviznando suave tambien paran el partido?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No tengo el criterio exacto para llovizna suave, solo consta la política para lluvia fuerte; te recomiendo consultarlo al llegar."
+    },
+    {
+      "cliente": "¿Qué venden en el kiosko?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": [
+        "Kiosko de bebidas y snacks"
+      ],
+      "evidencia": "Kiosko de bebidas y snacks (gaseosas, agua, papas, arepas de huevo).",
+      "respuesta_ideal": "Tenemos Kiosko de bebidas y snacks: gaseosas, agua, papas y arepas de huevo."
+    },
+    {
+      "cliente": "Ayer me caí jugando y me duele el tobillo, ¿qué me recomiendan?",
+      "tipo": "instruccion",
+      "accion": "derivar",
+      "claves": [],
+      "evidencia": "Ante quejas por lesiones o accidentes dentro del complejo, no dar indicaciones médicas: derivar a contactar directamente al administrador Jhon Pérez.",
+      "respuesta_ideal": "No puedo darte indicaciones médicas; te recomiendo contactar directamente al administrador Jhon Pérez."
+    },
+    {
+      "cliente": "¿Tienen botiquín o enfermería en el complejo?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No tengo información sobre botiquín o enfermería en el complejo."
+    }
+  ]
+]
