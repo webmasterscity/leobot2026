@@ -1,0 +1,244 @@
+[
+  [
+    {
+      "cliente": "hola, arriendan carpas?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["4 personas"],
+      "evidencia": "Arriendo de equipo (precio por día)\nCarpa 4 personas ............ $12.000",
+      "respuesta_ideal": "Sí, arrendamos carpas de 4 personas a $12.000 por día; recuerda que para arrendar se pide cédula de identidad vigente y una garantía."
+    },
+    {
+      "cliente": "cuanto sale por dia?",
+      "tipo": "seguimiento",
+      "accion": "responder",
+      "claves": ["12.000"],
+      "evidencia": "Carpa 4 personas ............ $12.000",
+      "respuesta_ideal": "La carpa de 4 personas cuesta $12.000 por día."
+    },
+    {
+      "cliente": "y si la quiero de viernes a domingo, cuanto seria en total?",
+      "tipo": "combinada",
+      "accion": "responder",
+      "claves": ["36.000"],
+      "evidencia": "Carpa 4 personas ............ $12.000 […] Condiciones de arriendo: mínimo 2 días.",
+      "respuesta_ideal": "De viernes a domingo son 3 días, así que serían $36.000 (el mínimo de arriendo es de 2 días, así que no hay problema)."
+    },
+    {
+      "cliente": "que necesito llevar para arrendar?",
+      "tipo": "instruccion",
+      "accion": "responder",
+      "claves": ["cédula", "garantía"],
+      "evidencia": "Se pide cédula de identidad vigente y una garantía de $30.000 por artículo, en efectivo o como retención en tarjeta, que se devuelve al entregar el equipo limpio y en buen estado.",
+      "respuesta_ideal": "Necesitas tu cédula de identidad vigente y dejar una garantía de $30.000 por artículo, en efectivo o como retención en tarjeta; se devuelve cuando entregas el equipo limpio y en buen estado."
+    },
+    {
+      "cliente": "arriendan kayaks tambien?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No tengo información sobre arriendo de kayaks; en la lista de arriendo aparecen carpas, sacos, cocinillas y colchonetas. Puedes confirmarlo con un vendedor al +56 9 8765 4321."
+    },
+    {
+      "cliente": "y la carpa hasta cuando tendria que devolverla?",
+      "tipo": "combinada",
+      "accion": "responder",
+      "claves": ["lunes", "13:00"],
+      "evidencia": "La devolución es hasta las 13:00 hrs del día siguiente al último día arrendado; si ese día la tienda está cerrada (domingo o festivo), se devuelve el siguiente día hábil antes de las 13:00 hrs sin recargo. […] Domingos y festivos: cerrado.",
+      "respuesta_ideal": "Como el último día es domingo y ese día cerramos, la devuelves el lunes antes de las 13:00 hrs, sin recargo."
+    }
+  ],
+  [
+    {
+      "cliente": "Buenas tardes, se me trabó el carrete de spinning, lo pueden revisar?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["8.000"],
+      "evidencia": "Mantención y reparación de carretes: spinning $8.000, carretes de mosca $12.000.",
+      "respuesta_ideal": "Buenas tardes. Sí, en el taller hacemos mantención y reparación de carretes spinning por $8.000; incluye limpieza, lubricación y cambio de rodamientos estándar."
+    },
+    {
+      "cliente": "cuanto demora?",
+      "tipo": "seguimiento",
+      "accion": "responder",
+      "claves": ["5 días hábiles"],
+      "evidencia": "El trabajo demora 5 días hábiles; se avisa por WhatsApp cuando está listo.",
+      "respuesta_ideal": "El trabajo demora 5 días hábiles y te avisamos por WhatsApp cuando esté listo."
+    },
+    {
+      "cliente": "y si fuera un carrete de mosca?",
+      "tipo": "seguimiento",
+      "accion": "responder",
+      "claves": ["12.000"],
+      "evidencia": "Mantención y reparación de carretes: spinning $8.000, carretes de mosca $12.000.",
+      "respuesta_ideal": "Para carretes de mosca la mantención cuesta $12.000."
+    },
+    {
+      "cliente": "reparan cañas quebradas?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No tengo ese dato; el taller que figura en la información es de carretes. Consúltalo con un vendedor al +56 9 8765 4321."
+    },
+    {
+      "cliente": "venden repuestos de carretes sueltos, tipo bobinas?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No tengo información sobre venta de repuestos sueltos; puedes confirmarlo con un vendedor al WhatsApp +56 9 8765 4321."
+    },
+    {
+      "cliente": "hasta que hora atienden los sabados?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["14:00"],
+      "evidencia": "sábados de 10:00 a 14:00 hrs",
+      "respuesta_ideal": "Los sábados atendemos de 10:00 a 14:00 hrs."
+    }
+  ],
+  [
+    {
+      "cliente": "hola, venden la licencia de pesca?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["Sernapesca"],
+      "evidencia": "No vendemos la licencia de pesca recreativa: se obtiene en línea en el sitio de Sernapesca. Si tienes problemas para sacarla, en la tienda te ayudamos a hacerla sin costo.",
+      "respuesta_ideal": "No, la licencia de pesca recreativa se obtiene en línea en el sitio de Sernapesca; si te complica sacarla, en la tienda te ayudamos sin costo."
+    },
+    {
+      "cliente": "conocen algun guia para ir a pescar al Petrohué?",
+      "tipo": "instruccion",
+      "accion": "derivar",
+      "claves": [],
+      "evidencia": "No tomes reservas de salidas guiadas: entrega el contacto del guía Rodrigo Mancilla (+56 9 5555 2210) y que él coordine.",
+      "respuesta_ideal": "Trabajamos con Rodrigo Mancilla, guía de pesca con mosca acreditado; escríbele al WhatsApp +56 9 5555 2210 y él coordina contigo fechas y valores."
+    },
+    {
+      "cliente": "y es seguro pescar ahi con el caudal que hay estos dias?",
+      "tipo": "instruccion",
+      "accion": "derivar",
+      "claves": [],
+      "evidencia": "No opines sobre si es seguro pescar, navegar o acampar en un lugar, ni sobre el clima o el caudal de los ríos. Deriva a la Capitanía de Puerto o al guía.",
+      "respuesta_ideal": "Sobre las condiciones del río no puedo opinar; te recomiendo consultarlo con la Capitanía de Puerto o directamente con el guía Rodrigo Mancilla."
+    },
+    {
+      "cliente": "que fechas es la temporada de pesca?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No tengo las fechas de la temporada de pesca en la información de la tienda; puedes consultarlas con un vendedor al +56 9 8765 4321 o en Sernapesca."
+    },
+    {
+      "cliente": "hacen cursos de pesca con mosca para alguien que nunca ha pescado?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["45.000"],
+      "evidencia": "Curso de pesca con mosca para principiantes\nSábados de noviembre a marzo, de 9:00 a 13:00 hrs, en el río Chamiza. Valor: $45.000 por persona, equipo incluido.",
+      "respuesta_ideal": "Sí, tenemos un curso para principiantes los sábados de noviembre a marzo, de 9:00 a 13:00 en el río Chamiza; vale $45.000 por persona con equipo incluido."
+    },
+    {
+      "cliente": "cuantas personas van por curso?",
+      "tipo": "seguimiento",
+      "accion": "responder",
+      "claves": ["6"],
+      "evidencia": "Cupo máximo: 6 personas por curso.",
+      "respuesta_ideal": "El cupo máximo es de 6 personas por curso."
+    }
+  ],
+  [
+    {
+      "cliente": "cuanto vale el chaleco salvavidas de adulto?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["24.990"],
+      "evidencia": "- Chaleco salvavidas adulto ............. $24.990",
+      "respuesta_ideal": "El chaleco salvavidas de adulto cuesta $24.990."
+    },
+    {
+      "cliente": "hacen envios a Coyhaique?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["todo Chile"],
+      "evidencia": "Enviamos a todo Chile por Starken o Chilexpress, por pagar en destino.",
+      "respuesta_ideal": "Sí, enviamos a todo Chile por Starken o Chilexpress, con el envío por pagar en destino."
+    },
+    {
+      "cliente": "y el envio es gratis?",
+      "tipo": "seguimiento",
+      "accion": "responder",
+      "claves": ["80.000", "Los Lagos"],
+      "evidencia": "Enviamos a todo Chile por Starken o Chilexpress, por pagar en destino. Dentro de la Región de Los Lagos el envío es gratis en compras sobre $80.000.",
+      "respuesta_ideal": "Solo es gratis dentro de la Región de Los Lagos en compras sobre $80.000; a las demás regiones el envío se paga en destino."
+    },
+    {
+      "cliente": "si compro unos waders y no me quedan bien, los puedo cambiar?",
+      "tipo": "instruccion",
+      "accion": "responder",
+      "claves": ["10 días", "boleta"],
+      "evidencia": "Cambios y devoluciones: hasta 10 días desde la compra, con boleta y producto sin uso, con sus etiquetas y embalaje.",
+      "respuesta_ideal": "Sí, tienes hasta 10 días desde la compra para cambiarlos; trae la boleta y el producto sin uso, con etiquetas y embalaje."
+    },
+    {
+      "cliente": "puedo pagar con tarjeta de credito en cuotas?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["3 cuotas"],
+      "evidencia": "Aceptamos efectivo, tarjetas de débito y crédito (hasta 3 cuotas sin interés con tarjetas de crédito) y transferencia bancaria.",
+      "respuesta_ideal": "Sí, con tarjeta de crédito puedes pagar hasta en 3 cuotas sin interés."
+    },
+    {
+      "cliente": "tienen waders en talla XXL?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "En la lista los waders figuran en tallas S a XL; no tengo información de XXL y el stock se confirma con un vendedor al +56 9 8765 4321."
+    }
+  ],
+  [
+    {
+      "cliente": "buenas! donde estan ubicados?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["Diego Portales 1240"],
+      "evidencia": "Estamos en Av. Diego Portales 1240, local 3, a dos cuadras del terminal de buses de Puerto Montt.",
+      "respuesta_ideal": "¡Hola! Estamos en Av. Diego Portales 1240, local 3, a dos cuadras del terminal de buses de Puerto Montt."
+    },
+    {
+      "cliente": "abren en feriados?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["cerrado"],
+      "evidencia": "Domingos y festivos: cerrado.",
+      "respuesta_ideal": "No, los domingos y festivos estamos cerrados."
+    },
+    {
+      "cliente": "cuanto cuesta la cocinilla a gas, la de venta, no la de arriendo?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["15.990"],
+      "evidencia": "- Cocinilla a gas Patagón (incluye 1 cartucho) ... $15.990",
+      "respuesta_ideal": "La cocinilla a gas Patagón cuesta $15.990 e incluye un cartucho."
+    },
+    {
+      "cliente": "venden carnada viva?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No tengo ese dato en la información de la tienda; puedes preguntarle a un vendedor al WhatsApp +56 9 8765 4321."
+    },
+    {
+      "cliente": "ya, gracias, nos vemos",
+      "tipo": "charla",
+      "accion": "charla",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "¡De nada! Que tengas buena pesca, te esperamos en la tienda."
+    }
+  ]
+]

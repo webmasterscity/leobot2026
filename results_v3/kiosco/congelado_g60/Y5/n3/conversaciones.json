@@ -1,0 +1,266 @@
+[
+  [
+    {
+      "cliente": "Hola buenas, quiero información de los cursos",
+      "tipo": "charla",
+      "accion": "charla",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "¡Hola, buenas! Con gusto le cuento sobre nuestros cursos, ¿cuál le interesa?"
+    },
+    {
+      "cliente": "¿cuánto cuesta el curso básico de cocina peruana?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": [
+        "S/ 450"
+      ],
+      "evidencia": "Básico de cocina peruana | 8 semanas | Sábados 9:00-13:00 | S/ 450",
+      "respuesta_ideal": "El curso básico de cocina peruana cuesta S/ 450."
+    },
+    {
+      "cliente": "¿y cuánto dura?",
+      "tipo": "seguimiento",
+      "accion": "responder",
+      "claves": [
+        "8 semanas"
+      ],
+      "evidencia": "Básico de cocina peruana | 8 semanas | Sábados 9:00-13:00 | S/ 450",
+      "respuesta_ideal": "Dura 8 semanas, los sábados de 9:00 a 13:00."
+    },
+    {
+      "cliente": "¿necesito experiencia previa para ese curso?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": [
+        "No se requiere experiencia previa para el curso básico"
+      ],
+      "evidencia": "No se requiere experiencia previa para el curso básico.",
+      "respuesta_ideal": "No, no se requiere experiencia previa para el curso básico."
+    },
+    {
+      "cliente": "genial, muchas gracias",
+      "tipo": "charla",
+      "accion": "charla",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "¡De nada! Cualquier otra duda, aquí estamos."
+    }
+  ],
+  [
+    {
+      "cliente": "¿a qué hora son las clases de pastelería?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": [
+        "Martes y jueves 18:00-20:00"
+      ],
+      "evidencia": "Pastelería | 6 semanas | Martes y jueves 18:00-20:00 | S/ 380",
+      "respuesta_ideal": "Las clases de pastelería son los martes y jueves de 18:00 a 20:00."
+    },
+    {
+      "cliente": "si me matriculo en pastelería y también en el intensivo de cocina norteña, ¿cuánto pago en total?",
+      "tipo": "combinada",
+      "accion": "responder",
+      "claves": [
+        "S/ 380",
+        "S/ 620"
+      ],
+      "evidencia": "Pastelería | 6 semanas | Martes y jueves 18:00-20:00 | S/ 380\nIntensivo de cocina norteña | 2 semanas | Lunes a viernes 15:00-18:00 | S/ 620",
+      "respuesta_ideal": "Serían S/ 380 de pastelería más S/ 620 del intensivo de cocina norteña, un total de S/ 1,000."
+    },
+    {
+      "cliente": "cuanto cuesta el uniforme si no tengo?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": [
+        "S/ 65"
+      ],
+      "evidencia": "Se pueden comprar en la escuela por S/ 65 o traer los propios.",
+      "respuesta_ideal": "El uniforme (mandil y toca) se puede comprar en la escuela por S/ 65, o puede traer el suyo."
+    },
+    {
+      "cliente": "mi hijo tiene 15 años, ¿se puede matricular solo?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": [
+        "los menores necesitan autorización del apoderado"
+      ],
+      "evidencia": "Ser mayor de 16 años (los menores necesitan autorización del apoderado).",
+      "respuesta_ideal": "Puede matricularse, pero al ser menor de edad necesita la autorización de su apoderado."
+    },
+    {
+      "cliente": "perfecto, gracias",
+      "tipo": "charla",
+      "accion": "charla",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "¡Con gusto! Esperamos verlos pronto en la escuela."
+    }
+  ],
+  [
+    {
+      "cliente": "cuanto cuesta el diplomado?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": [
+        "S/ 2,800"
+      ],
+      "evidencia": "Diplomado profesional | 6 meses | Consultar horario | S/ 2,800",
+      "respuesta_ideal": "El diplomado profesional cuesta S/ 2,800."
+    },
+    {
+      "cliente": "¿el diplomado se puede pagar en partes?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": [
+        "El diplomado se puede pagar en dos partes"
+      ],
+      "evidencia": "¿Puedo pagar en cuotas? El diplomado se puede pagar en dos partes; los demás cursos se pagan por adelantado.",
+      "respuesta_ideal": "Sí, el diplomado se puede pagar en dos partes; los demás cursos se pagan por adelantado."
+    },
+    {
+      "cliente": "¿el diplomado tiene alguna especialidad en repostería vegana?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No tengo esa información específica sobre especialidades del diplomado."
+    },
+    {
+      "cliente": "¿dan alojamiento para alumnos de otras ciudades?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No cuento con esa información sobre alojamiento; le recomiendo consultarlo directamente con la escuela."
+    }
+  ],
+  [
+    {
+      "cliente": "mi hija es alérgica a los mariscos, ¿le pueden hacer platos aparte en el curso intensivo?",
+      "tipo": "instruccion",
+      "accion": "responder",
+      "claves": [
+        "avisar directamente al instructor antes de iniciar el curso"
+      ],
+      "evidencia": "Si preguntan por alergias alimentarias o condiciones médicas para participar en las clases, indicar que deben avisar directamente al instructor antes de iniciar el curso.",
+      "respuesta_ideal": "Debe avisar directamente al instructor sobre la alergia antes de iniciar el curso, para que puedan tenerlo en cuenta."
+    },
+    {
+      "cliente": "si falto a una clase la puedo recuperar?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": [
+        "se permite reponer una clase perdida por curso",
+        "avisando con 24 horas de anticipación"
+      ],
+      "evidencia": "Inasistencias: se permite reponer una clase perdida por curso, avisando con 24 horas de anticipación.",
+      "respuesta_ideal": "Sí, se permite reponer una clase perdida por curso, avisando con 24 horas de anticipación."
+    },
+    {
+      "cliente": "si cancelo antes de que empiece el curso, ¿me devuelven la plata?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": [
+        "se devuelve el 100%"
+      ],
+      "evidencia": "Devoluciones: si se cancela la matrícula antes de iniciar el curso, se devuelve el 100%.",
+      "respuesta_ideal": "Sí, si cancela antes de que inicie el curso se devuelve el 100% de lo pagado."
+    },
+    {
+      "cliente": "¿tienen convenio con algún banco para financiar el diplomado?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No tengo esa información sobre convenios bancarios; puede consultarlo directamente con la dirección académica."
+    }
+  ],
+  [
+    {
+      "cliente": "para sacar el certificado cuanta asistencia necesito?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": [
+        "85% de asistencia"
+      ],
+      "evidencia": "El certificado se entrega solo con un mínimo de 85% de asistencia.",
+      "respuesta_ideal": "Necesita un mínimo de 85% de asistencia para que le entreguen el certificado."
+    },
+    {
+      "cliente": "¿el certificado del diplomado sirve para trabajar en Europa?",
+      "tipo": "instruccion",
+      "accion": "derivar",
+      "claves": [],
+      "evidencia": "Si preguntan por convalidación de certificados en el extranjero o validez oficial ante el Ministerio de Educación, derivar a la dirección académica (Chef Rodrigo Salcedo) al 044 471 2298.",
+      "respuesta_ideal": "Para la validez del certificado en el extranjero debe consultarlo directamente con la dirección académica, con el Chef Rodrigo Salcedo, al 044 471 2298."
+    },
+    {
+      "cliente": "¿si pago con tarjeta me cobran algo extra?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": [
+        "esta última con un recargo del 5%"
+      ],
+      "evidencia": "Formas de pago: efectivo, Yape, Plin o tarjeta (esta última con un recargo del 5%).",
+      "respuesta_ideal": "Sí, pagar con tarjeta tiene un recargo del 5%."
+    },
+    {
+      "cliente": "¿tienen curso de coctelería?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No tengo información de un curso de coctelería; los cursos que manejamos son el básico, pastelería, el intensivo norteño y el diplomado."
+    }
+  ],
+  [
+    {
+      "cliente": "¿cuál es el cupo máximo por curso?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": [
+        "cupo máximo de 12 alumnos"
+      ],
+      "evidencia": "Cada curso tiene un cupo máximo de 12 alumnos, para garantizar atención personalizada.",
+      "respuesta_ideal": "Cada curso tiene un cupo máximo de 12 alumnos."
+    },
+    {
+      "cliente": "¿el diplomado también tiene ese máximo de alumnos?",
+      "tipo": "seguimiento",
+      "accion": "responder",
+      "claves": [
+        "cupo máximo de 12 alumnos"
+      ],
+      "evidencia": "Cada curso tiene un cupo máximo de 12 alumnos, para garantizar atención personalizada.",
+      "respuesta_ideal": "Sí, el límite de 12 alumnos aplica a todos los cursos, incluido el diplomado."
+    },
+    {
+      "cliente": "si el curso básico ya está lleno, ¿qué puedo hacer?",
+      "tipo": "combinada",
+      "accion": "responder",
+      "claves": [
+        "se abre una lista de espera"
+      ],
+      "evidencia": "Si el curso está lleno, se abre una lista de espera.",
+      "respuesta_ideal": "Si el curso está lleno puede anotarse en la lista de espera."
+    },
+    {
+      "cliente": "¿el diplomado incluye viaje a algún restaurante en Lima?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No tengo esa información; sé que el diplomado incluye prácticas en un restaurante aliado, pero no el detalle de viajes."
+    },
+    {
+      "cliente": "muchas gracias, que tengan buen día",
+      "tipo": "charla",
+      "accion": "charla",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "¡Gracias a usted, que tenga muy buen día!"
+    }
+  ]
+]

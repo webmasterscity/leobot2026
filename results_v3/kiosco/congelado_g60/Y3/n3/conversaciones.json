@@ -1,0 +1,138 @@
+[
+  {
+    "cliente": "Hola, quería saber por qué me subió tanto la factura este mes.",
+    "tipo": "charla",
+    "accion": "charla",
+    "claves": [],
+    "evidencia": null,
+    "respuesta_ideal": "Buenos días, lamento que hayas notado un aumento. Para ayudarte mejor, ¿cuál es tu número de medidor o dirección? Así puedo revisar tu consumo y explicar las causas posibles."
+  },
+  {
+    "cliente": "¿Cuál es la tarifa por kilovatio?",
+    "tipo": "directa",
+    "accion": "responder",
+    "claves": ["Tramo 1 (0 - 100 kWh/mes): ₡76,50/kWh"],
+    "evidencia": "Tramo 1 (0 - 100 kWh/mes): ₡76,50/kWh\nTramo 2 (101 - 300 kWh/mes): ₡87,20/kWh\nTramo 3 (301 - 500 kWh/mes): ₡103,40/kWh\nTramo 4 (>500 kWh/mes): ₡125,80/kWh",
+    "respuesta_ideal": "Tenemos tarifa progresiva. Los primeros 100 kWh cuestan ₡76,50 cada uno. Del 101 al 300 es ₡87,20. Del 301 al 500 es ₡103,40, y más de 500 es ₡125,80."
+  },
+  {
+    "cliente": "Mi consumo fue de 250 kilowatios el mes pasado. ¿Más o menos cuánto pagaría?",
+    "tipo": "combinada",
+    "accion": "responder",
+    "claves": ["Tramo 1 (0 - 100 kWh/mes): ₡76,50/kWh", "Tramo 2 (101 - 300 kWh/mes): ₡87,20/kWh", "Cargo fijo mensual: ₡2 100"],
+    "evidencia": "Tramo 1 (0 - 100 kWh/mes): ₡76,50/kWh\nTramo 2 (101 - 300 kWh/mes): ₡87,20/kWh\nCargo fijo mensual: ₡2 100\nAlumbrado público: 8 % del consumo\nImpuesto sobre energía: 3,5 % del total",
+    "respuesta_ideal": "Con 250 kWh: 100 x 76,50 (primer tramo) + 150 x 87,20 (segundo tramo) = ₡20 310 en consumo, más cargo fijo ₡2 100, alumbrado y impuesto. Aproximadamente ₡24 500-25 000 colones."
+  },
+  {
+    "cliente": "¿Se pueden pagar las facturas en línea?",
+    "tipo": "si_no",
+    "accion": "responder",
+    "claves": ["En línea (tarjeta de crédito/débito y transferencia)"],
+    "evidencia": "En línea (tarjeta de crédito/débito y transferencia)",
+    "respuesta_ideal": "Sí, puedes pagar en línea con tarjeta de crédito o débito, o mediante transferencia bancaria. También puedes hacerlo en puntos SAC, por teléfono o con domiciliación."
+  },
+  {
+    "cliente": "¿Qué pasa si no pago a tiempo?",
+    "tipo": "directa",
+    "accion": "responder",
+    "claves": ["Después de 30 días sin pago, se aplica interés moratorio del 2 % mensual", "Corte de servicio por mora: se ejecuta tras 60 días"],
+    "evidencia": "Después de 30 días sin pago, se aplica interés moratorio del 2 % mensual.\nCorte de servicio por mora: se ejecuta tras 60 días de impago sin avisos previos legales",
+    "respuesta_ideal": "Después de 30 días sin pago, se agrega interés moratorio del 2 % mensual. Si pasas 60 días sin pagar, SEP puede cortar tu servicio. Te recomendamos pagar antes del vencimiento del 15 de cada mes."
+  },
+  {
+    "cliente": "¿Y si me cortan el servicio, cuánto cuesta que lo reconecten?",
+    "tipo": "seguimiento",
+    "accion": "responder",
+    "claves": ["Reconexión: ₡25 000"],
+    "evidencia": "Reconexión: ₡25 000 (máximo 5 días hábiles después del pago)",
+    "respuesta_ideal": "La reconexión cuesta ₡25 000 y se hace como máximo en 5 días hábiles después de que pagues tu deuda completa."
+  },
+  {
+    "cliente": "Mi energía se cortó hace dos horas y no sé por qué. ¿Qué hago?",
+    "tipo": "instruccion",
+    "accion": "derivar",
+    "claves": [],
+    "evidencia": null,
+    "respuesta_ideal": "Llama inmediatamente a nuestra línea de emergencias al (506) 2400-1112, disponible 24 horas. Ellos pueden revisar si hay un corte general o si es algo específico de tu medidor. Tenemos también el número de atención regular (506) 2400-1111."
+  },
+  {
+    "cliente": "¿Tienen medidores inteligentes?",
+    "tipo": "si_no",
+    "accion": "responder",
+    "claves": ["Hemos iniciado despliegue de medidores inteligentes"],
+    "evidencia": "Hemos iniciado despliegue de medidores inteligentes en la zona.",
+    "respuesta_ideal": "Sí, estamos desplegando medidores inteligentes en la zona. Ofrecen lectura remota, detección de anomalías y consulta de consumo en tiempo real por el portal."
+  },
+  {
+    "cliente": "¿Cómo puedo reclamar si creo que me cobraron de más?",
+    "tipo": "instruccion",
+    "accion": "responder",
+    "claves": ["Plazo de respuesta: 15 días hábiles", "número de expediente"],
+    "evidencia": "Para reclamos por sobrecobro, errores de lectura o servicio deficiente:\n1. Contacta al 2400-1111 y solicita un reclamo formal\n2. Recibirás número de expediente\n3. Plazo de respuesta: 15 días hábiles",
+    "respuesta_ideal": "Contacta al (506) 2400-1111 y solicita un reclamo formal. Te darán un número de expediente. SEP responderá en 15 días hábiles. Si no quedas conforme, puedes apelar ante ARESEP."
+  },
+  {
+    "cliente": "¿Cuánto cuesta una nueva conexión?",
+    "tipo": "combinada",
+    "accion": "responder",
+    "claves": ["Nueva conexión doméstica", "instalación de medidor (₡12 500)", "Depósito de garantía: ₡30 000"],
+    "evidencia": "Nueva conexión doméstica: se requiere inspección previa e instalación de medidor (₡12 500)\nDepósito de garantía: ₡30 000 (reembolsable al terminar la cuenta)",
+    "respuesta_ideal": "Para una nueva conexión necesitas inspección previa, instalación de medidor (₡12 500) y depósito de garantía (₡30 000, que se devuelve al terminar la cuenta). Rellena el formulario en www.suministrospac.cr/mi-cuenta."
+  },
+  {
+    "cliente": "¿Ese depósito de 30 mil colones es para siempre?",
+    "tipo": "seguimiento",
+    "accion": "responder",
+    "claves": ["reembolsable al terminar la cuenta"],
+    "evidencia": "Depósito de garantía: ₡30 000 (reembolsable al terminar la cuenta)",
+    "respuesta_ideal": "No, ese depósito es reembolsable. Te lo devolvemos cuando termines tu cuenta con nosotros, en un período de 30 días."
+  },
+  {
+    "cliente": "¿Hay descuento si pago con domiciliación bancaria?",
+    "tipo": "si_no",
+    "accion": "responder",
+    "claves": ["Domiciliación bancaria (descuento de 2 % a partir del segundo mes)"],
+    "evidencia": "Domiciliación bancaria (descuento de 2 % a partir del segundo mes)",
+    "respuesta_ideal": "Sí, si utilizas domiciliación bancaria tienes descuento del 2 % a partir del segundo mes. Es una buena forma de no olvidar pagos y ahorrar un poco."
+  },
+  {
+    "cliente": "¿Puedo pedir un reclamo si desapareció luz en mi zona?",
+    "tipo": "sin_respuesta",
+    "accion": "derivar",
+    "claves": [],
+    "evidencia": null,
+    "respuesta_ideal": "Para cortes de servicio en tu zona, llama inmediatamente a la línea de emergencias (506) 2400-1112 (24 horas). Ellos pueden revisar si hay un apagón general o si es algo de tu medidor. Posteriormente puedes hacer un reclamo si lo consideras necesario."
+  },
+  {
+    "cliente": "Tengo aire acondicionado nuevo y mi consumo subió mucho. ¿Es normal?",
+    "tipo": "sin_respuesta",
+    "accion": "responder",
+    "claves": ["Usar aire acondicionado entre 24-26 °C"],
+    "evidencia": "Usar aire acondicionado entre 24-26 °C",
+    "respuesta_ideal": "Es completamente normal que un aire acondicionado nuevo aumente tu consumo. Un consejo: úsalo entre 24 y 26 °C para ahorrar energía. También puedes apagar electrodomésticos en standby y cambiar a LED."
+  },
+  {
+    "cliente": "¿Cuál es el vencimiento para pagar?",
+    "tipo": "directa",
+    "accion": "responder",
+    "claves": ["Fecha de vencimiento: 15 de cada mes"],
+    "evidencia": "Fecha de vencimiento: 15 de cada mes. Después de 30 días sin pago, se aplica interés moratorio del 2 % mensual.",
+    "respuesta_ideal": "El vencimiento es el 15 de cada mes. Si no pagas antes, después de 30 días se aplica interés moratorio del 2 % mensual."
+  },
+  {
+    "cliente": "¿Puedo cambiar de domicilio pero seguir con la cuenta?",
+    "tipo": "sin_respuesta",
+    "accion": "derivar",
+    "claves": [],
+    "evidencia": null,
+    "respuesta_ideal": "Para cambios de punto de suministro hay una tarifa de ₡5 500. Contacta al (506) 2400-1111 para coordinar el trámite con el área correspondiente."
+  },
+  {
+    "cliente": "Gracias por tu ayuda.",
+    "tipo": "charla",
+    "accion": "charla",
+    "claves": [],
+    "evidencia": null,
+    "respuesta_ideal": "De nada, es un placer atenderte. Cualquier otra duda, no dudes en llamar. Gracias por ser cliente de Suministros Eléctricos del Pacífico."
+  }
+]

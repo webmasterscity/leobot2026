@@ -1,0 +1,178 @@
+[
+  {
+    "cliente": "Hola, ¿cuánto cuesta estacionar aquí una hora?",
+    "tipo": "directa",
+    "accion": "responder",
+    "claves": ["Hasta 1 hora: 6,50 soles"],
+    "evidencia": "Hasta 1 hora: 6,50 soles",
+    "respuesta_ideal": "Hola, bienvenido. Estacionar hasta una hora cuesta 6,50 soles. ¿Necesitas ayuda con algo más?"
+  },
+  {
+    "cliente": "¿A qué hora cierran los domingos?",
+    "tipo": "directa",
+    "accion": "responder",
+    "claves": ["Cierre: 12:00 a. m.", "domingos"],
+    "evidencia": "Cierre: 12:00 a. m. (medianoche) sábados y domingos",
+    "respuesta_ideal": "Los domingos cerramos a las 12:00 de la noche (medianoche). Abrimos todos los días a las 6:00 a. m."
+  },
+  {
+    "cliente": "¿Puedo estacionar una moto aquí?",
+    "tipo": "si_no",
+    "accion": "responder",
+    "claves": ["No se admiten", "motocicletas, motos lineales"],
+    "evidencia": "Se prohíben: vehículos con fugas de aceite, motocicletas, motos lineales, caravanas.",
+    "respuesta_ideal": "No, lamentablemente no aceptamos motocicletas ni motos lineales. Pero te recomendamos buscar un estacionamiento especializado para motos cercano."
+  },
+  {
+    "cliente": "¿Qué pasa si necesito estacionar 10 horas?",
+    "tipo": "combinada",
+    "accion": "responder",
+    "claves": ["De 8 a 24 horas: 45 soles"],
+    "evidencia": "De 8 a 24 horas: 45 soles",
+    "respuesta_ideal": "Para estacionamientos de 8 a 24 horas, el costo es 45 soles. Además, si superas 6 horas, incluimos café gratis."
+  },
+  {
+    "cliente": "¿Y si estaciono justo 4 horas?",
+    "tipo": "seguimiento",
+    "accion": "responder",
+    "claves": ["De 4 a 8 horas: 32 soles"],
+    "evidencia": "De 4 a 8 horas: 32 soles",
+    "respuesta_ideal": "Para 4 horas, la tarifa es 32 soles, que corresponde al rango de 4 a 8 horas."
+  },
+  {
+    "cliente": "¿Aceptan tarjetas?",
+    "tipo": "si_no",
+    "accion": "responder",
+    "claves": ["tarjetas de débito, tarjetas de crédito"],
+    "evidencia": "Formas de pago: Efectivo, tarjetas de débito, tarjetas de crédito, billeteras digitales (Yape, Plin)",
+    "respuesta_ideal": "Claro, aceptamos tarjetas de débito, de crédito, efectivo y billeteras digitales como Yape y Plin."
+  },
+  {
+    "cliente": "¿Puedo fumar dentro del estacionamiento?",
+    "tipo": "si_no",
+    "accion": "responder",
+    "claves": ["Prohibido fumar"],
+    "evidencia": "Prohibido fumar en el interior del estacionamiento.",
+    "respuesta_ideal": "No, fumar está prohibido dentro del estacionamiento. Es una norma para proteger la seguridad de todos."
+  },
+  {
+    "cliente": "¿Ofrecen estacionamiento para vehículos grandes como caravanas?",
+    "tipo": "si_no",
+    "accion": "responder",
+    "claves": ["Se prohíben", "caravanas"],
+    "evidencia": "Se prohíben: vehículos con fugas de aceite, motocicletas, motos lineales, caravanas.",
+    "respuesta_ideal": "No, no aceptamos caravanas. Contamos con 180 espacios para autos regulares con vigilancia 24 horas."
+  },
+  {
+    "cliente": "¿Cuál es el horario mañana? Es festivo, ¿verdad?",
+    "tipo": "instruccion",
+    "accion": "responder",
+    "claves": ["Festivos: Abrimos de 7:00 a. m. a 9:00 p. m."],
+    "evidencia": "Festivos: Abrimos de 7:00 a. m. a 9:00 p. m.",
+    "respuesta_ideal": "Sí, mañana es festivo y estaremos abiertos de 7:00 a. m. a 9:00 p. m. Si tienes dudas, puedes llamar al (511) 4473-2945."
+  },
+  {
+    "cliente": "¿Tienen servicio de cambio de aceite?",
+    "tipo": "sin_respuesta",
+    "accion": "abstenerse",
+    "claves": [],
+    "evidencia": null,
+    "respuesta_ideal": "No contamos con ese servicio. Ofrecemos lavado, aspirado, pulido y carga de batería. Para más detalles técnicos, contacta al (511) 4473-2945 ext. 1."
+  },
+  {
+    "cliente": "¿Qué cobertura tiene el seguro en caso de robo?",
+    "tipo": "sin_respuesta",
+    "accion": "derivar",
+    "claves": ["hasta 3 000 soles"],
+    "evidencia": "El seguro básico cubre hasta 3 000 soles por evento.",
+    "respuesta_ideal": "El seguro básico incluido cubre hasta 3 000 soles. Para consultas más detalladas sobre cobertura de robo, contacta a la gerencia: info@estacionamientosegurocentral.pe o (511) 4473-2945."
+  },
+  {
+    "cliente": "¿Cuántos espacios tienen disponibles ahora?",
+    "tipo": "sin_respuesta",
+    "accion": "abstenerse",
+    "claves": [],
+    "evidencia": null,
+    "respuesta_ideal": "Contamos con más de 180 espacios disponibles. Si llegas en horario pico, te recomendamos llamar al (511) 4473-2945 para confirmar."
+  },
+  {
+    "cliente": "¿Es verdad que el pulido cuesta 60 soles?",
+    "tipo": "si_no",
+    "accion": "responder",
+    "claves": ["Pulido: 60 soles"],
+    "evidencia": "Pulido: 60 soles (requiere reserva previa)",
+    "respuesta_ideal": "Sí, el pulido cuesta 60 soles. Requiere reserva previa, así que te pedimos que llames con anticipación."
+  },
+  {
+    "cliente": "¿Y si paso más de 24 horas?",
+    "tipo": "sin_respuesta",
+    "accion": "derivar",
+    "claves": [],
+    "evidencia": null,
+    "respuesta_ideal": "Para estacionamientos mayores a 24 horas, puedo ofrecerte reserva anticipada con 10 % de descuento. Te recomendamos llamar al (511) 4473-2945 para coordinar."
+  },
+  {
+    "cliente": "Buenos días, ¿quisiera saber si puedo hacer una reserva para 7 días?",
+    "tipo": "instruccion",
+    "accion": "responder",
+    "claves": ["Reservas de más de 5 días", "Descuento de 10 %", "llamada o WhatsApp"],
+    "evidencia": "Disponible para reservas de más de 5 días mediante llamada o WhatsApp. Descuento de 10 % en tarifa diária.",
+    "respuesta_ideal": "Claro, ofrecemos reservas para más de 5 días con un descuento del 10 %. Por favor, llama o envía WhatsApp al (511) 4473-2945 para coordinar tu reserva."
+  },
+  {
+    "cliente": "¿A qué número envío el WhatsApp?",
+    "tipo": "seguimiento",
+    "accion": "responder",
+    "claves": ["(511) 4473-2945"],
+    "evidencia": "Teléfono: (511) 4473-2945",
+    "respuesta_ideal": "Al (511) 4473-2945. Ellos van a coordinar contigo la reserva y responder todas tus dudas."
+  },
+  {
+    "cliente": "Hola, necesito saber el precio de 6 horas.",
+    "tipo": "combinada",
+    "accion": "responder",
+    "claves": ["De 4 a 8 horas: 32 soles"],
+    "evidencia": "De 4 a 8 horas: 32 soles",
+    "respuesta_ideal": "Para 6 horas, el costo sería 32 soles. Además, como superas las 6 horas, te incluimos café gratis como obsequio."
+  },
+  {
+    "cliente": "¿El lavado está incluído en la tarifa?",
+    "tipo": "sin_respuesta",
+    "accion": "abstenerse",
+    "claves": [],
+    "evidencia": null,
+    "respuesta_ideal": "El lavado es un servicio adicional que cuesta 35 soles. No está incluido en el estacionamiento básico."
+  },
+  {
+    "cliente": "¿Qué tal los sábados, ¿a qué hora cierran?",
+    "tipo": "directa",
+    "accion": "responder",
+    "claves": ["Cierre: 12:00 a. m.", "sábados"],
+    "evidencia": "Cierre: 12:00 a. m. (medianoche) sábados y domingos",
+    "respuesta_ideal": "Los sábados cerramos a las 12:00 de la noche. Abrimos a las 6:00 a. m."
+  },
+  {
+    "cliente": "Muchas gracias por la información.",
+    "tipo": "charla",
+    "accion": "charla",
+    "claves": [],
+    "evidencia": null,
+    "respuesta_ideal": "De nada, es un placer ayudarte. Esperamos verte pronto en nuestro estacionamiento. ¡Que tengas un excelente día!"
+  },
+  {
+    "cliente": "¿Se pueden dejar autos sin placa aquí?",
+    "tipo": "si_no",
+    "accion": "responder",
+    "claves": ["No se admiten vehículos sin placa"],
+    "evidencia": "No se admiten vehículos sin placa.",
+    "respuesta_ideal": "No, todos los vehículos deben tener placa vigente. Es una norma de seguridad del estacionamiento."
+  },
+  {
+    "cliente": "¿Puedo dejar mi auto mientras estoy en una reunión de 3 horas?",
+    "tipo": "combinada",
+    "accion": "responder",
+    "claves": ["De 2 a 4 horas: 18 soles"],
+    "evidencia": "De 2 a 4 horas: 18 soles",
+    "respuesta_ideal": "Claro, para 3 horas pagarías 18 soles. El estacionamiento tendrá vigilancia 24 horas mientras estés en tu reunión."
+  }
+]

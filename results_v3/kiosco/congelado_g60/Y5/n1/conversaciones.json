@@ -1,0 +1,288 @@
+[
+  [
+    {
+      "cliente": "Hola, buenas tardes",
+      "tipo": "charla",
+      "accion": "charla",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "¡Hola, buenas tardes! ¿En qué puedo ayudarle?"
+    },
+    {
+      "cliente": "¿Cuánto cuesta una habitación individual por mes?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": [
+        "$850.000"
+      ],
+      "evidencia": "Individual|$850.000|Incluye pensión completa",
+      "respuesta_ideal": "La habitación individual cuesta $850.000 por mes e incluye pensión completa."
+    },
+    {
+      "cliente": "¿Y la compartida cuánto sale?",
+      "tipo": "seguimiento",
+      "accion": "responder",
+      "claves": [
+        "$620.000"
+      ],
+      "evidencia": "Compartida (2 personas)|$620.000 por persona|Con PAMI, 20% de descuento",
+      "respuesta_ideal": "La habitación compartida cuesta $620.000 por mes por persona."
+    },
+    {
+      "cliente": "Mi papá tiene PAMI, ¿le hacen descuento en esa habitación?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": [
+        "20% de descuento"
+      ],
+      "evidencia": "Con PAMI, 20% de descuento",
+      "respuesta_ideal": "Sí, con PAMI hay un 20% de descuento en la habitación compartida."
+    },
+    {
+      "cliente": "¿qué necesito para que lo admitan como residente?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": [
+        "mayor de 60 años",
+        "Evaluación médica previa",
+        "Historia clínica actualizada",
+        "Entrevista con la familia"
+      ],
+      "evidencia": "1. Ser mayor de 60 años.\n2. Evaluación médica previa (sin costo).\n3. Historia clínica actualizada.\n4. Entrevista con la familia.\n5. Documento de identidad y afiliación a obra social o PAMI.",
+      "respuesta_ideal": "Se necesita ser mayor de 60 años, una evaluación médica previa sin costo, historia clínica actualizada, entrevista con la familia y DNI con obra social o PAMI."
+    },
+    {
+      "cliente": "Muchas gracias, muy amables",
+      "tipo": "charla",
+      "accion": "charla",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "¡Gracias a usted! Cualquier otra consulta, con gusto la respondemos."
+    }
+  ],
+  [
+    {
+      "cliente": "que dias puedo ir a visitar a mi abuela",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": [
+        "15:00 a 19:00hs",
+        "10:00 a 20:00hs"
+      ],
+      "evidencia": "Lunes a viernes: 15:00 a 19:00hs\n- Sábados y domingos: 10:00 a 20:00hs",
+      "respuesta_ideal": "De lunes a viernes puede visitarla de 15 a 19 hs, y sábados y domingos de 10 a 20 hs."
+    },
+    {
+      "cliente": "¿y si voy un feriado?",
+      "tipo": "seguimiento",
+      "accion": "responder",
+      "claves": [
+        "10 a 14hs"
+      ],
+      "evidencia": "Feriados: horario reducido, de 10 a 14hs",
+      "respuesta_ideal": "Los feriados el horario de visitas es reducido, de 10 a 14 hs."
+    },
+    {
+      "cliente": "¿la puedo sacar a pasear el sábado?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": [
+        "avisando con un día de anticipación"
+      ],
+      "evidencia": "¿Puedo llevar a mi familiar de paseo los fines de semana? Sí, avisando con un día de anticipación a la coordinación.",
+      "respuesta_ideal": "Sí, puede sacarla a pasear avisando con un día de anticipación a la coordinación."
+    },
+    {
+      "cliente": "¿tienen habitaciones libres para el mes que viene?",
+      "tipo": "instruccion",
+      "accion": "derivar",
+      "claves": [],
+      "evidencia": "No confirmar cupos ni reservas de habitación por chat; toda reserva debe formalizarse con administración de forma presencial o telefónica.",
+      "respuesta_ideal": "La disponibilidad de habitaciones se confirma directamente con administración, de forma presencial o telefónica."
+    },
+    {
+      "cliente": "¿hay wifi para las visitas?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": [
+        "Wifi gratuito en las áreas comunes"
+      ],
+      "evidencia": "Wifi gratuito en las áreas comunes.",
+      "respuesta_ideal": "Sí, hay wifi gratuito en las áreas comunes."
+    }
+  ],
+  [
+    {
+      "cliente": "como estuvo mi mama hoy, ayer la note mal",
+      "tipo": "instruccion",
+      "accion": "derivar",
+      "claves": [],
+      "evidencia": "Nunca dar diagnósticos médicos ni opinar sobre el estado de salud de un residente en particular; para eso derivar a la Dra. Marisol Etchart o a enfermería al (0223) 493-2210.",
+      "respuesta_ideal": "Para el estado de salud puntual de un residente debe comunicarse con enfermería al (0223) 493-2210."
+    },
+    {
+      "cliente": "¿tienen médico psiquiatra en la residencia?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No tengo ese dato específico; le recomiendo consultarlo directamente llamando a la residencia."
+    },
+    {
+      "cliente": "¿tienen estacionamiento para las visitas?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No cuento con esa información sobre estacionamiento; puede consultarlo al llamar a la residencia."
+    },
+    {
+      "cliente": "¿puedo pagar con tarjeta de crédito?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No tengo esa información; sé que se puede pagar por transferencia bancaria o débito automático."
+    }
+  ],
+  [
+    {
+      "cliente": "si mi tío se queda 3 meses en la suite con balcón ¿cuánto seria en total?",
+      "tipo": "combinada",
+      "accion": "responder",
+      "claves": [
+        "$980.000"
+      ],
+      "evidencia": "Suite con balcón|$980.000|Vista al jardín",
+      "respuesta_ideal": "Tres meses en la suite con balcón saldrían $2.940.000 en total, a $980.000 por mes."
+    },
+    {
+      "cliente": "¿el corte de pelo cuánto sale?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": [
+        "NO está incluida",
+        "$4.000"
+      ],
+      "evidencia": "La peluquería NO está incluida: el corte cuesta $4.000.",
+      "respuesta_ideal": "La peluquería no está incluida; el corte cuesta $4.000 aparte."
+    },
+    {
+      "cliente": "¿hacen alguna actividad especial los fines de semana?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No tengo el detalle de actividades de fin de semana; entre semana hay taller de memoria, gimnasia y cine los jueves."
+    },
+    {
+      "cliente": "¿le puedo llevar comida casera a mi tía?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": [
+        "No se permite el ingreso de alimentos sin autorización previa"
+      ],
+      "evidencia": "No se permite el ingreso de alimentos sin autorización previa del área de nutrición, por las dietas especiales de cada residente.",
+      "respuesta_ideal": "No se puede ingresar alimentos sin autorización previa del área de nutrición, por las dietas especiales de cada residente."
+    },
+    {
+      "cliente": "muchas gracias por la info, que tengan buen dia",
+      "tipo": "charla",
+      "accion": "charla",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "¡Gracias a usted, que tenga muy buen día!"
+    }
+  ],
+  [
+    {
+      "cliente": "hola, ¿cuánto cobran por las sesiones de kinesiología extra?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": [
+        "$12.500"
+      ],
+      "evidencia": "kinesiología (2 sesiones semanales incluidas; sesión adicional $12.500)",
+      "respuesta_ideal": "Las sesiones de kinesiología incluidas son 2 por semana; cada sesión adicional cuesta $12.500."
+    },
+    {
+      "cliente": "¿y la podología también se paga aparte?",
+      "tipo": "seguimiento",
+      "accion": "responder",
+      "claves": [
+        "La podología mensual está incluida"
+      ],
+      "evidencia": "La podología mensual está incluida.",
+      "respuesta_ideal": "No, la podología mensual está incluida en el servicio."
+    },
+    {
+      "cliente": "¿puedo llevar a mi perrito cuando la visite?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": [
+        "No se permiten mascotas"
+      ],
+      "evidencia": "No se permiten mascotas dentro del edificio, salvo visitas terapéuticas programadas.",
+      "respuesta_ideal": "No se permiten mascotas, salvo que sea una visita terapéutica programada."
+    },
+    {
+      "cliente": "¿tienen enfermeras de noche también?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": [
+        "Atención médica las 24 hs",
+        "enfermería permanente"
+      ],
+      "evidencia": "Atención médica las 24 hs, enfermería permanente",
+      "respuesta_ideal": "Sí, hay atención médica las 24 horas y enfermería permanente, incluida la noche."
+    }
+  ],
+  [
+    {
+      "cliente": "hola queria consultar algo",
+      "tipo": "charla",
+      "accion": "charla",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "¡Hola! Cuénteme, ¿en qué le puedo ayudar?"
+    },
+    {
+      "cliente": "¿cuánto sale la evaluación médica previa a la admisión?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": [
+        "sin costo"
+      ],
+      "evidencia": "Evaluación médica previa (sin costo).",
+      "respuesta_ideal": "La evaluación médica previa no tiene costo."
+    },
+    {
+      "cliente": "si cancelo la reserva de la habitacion con una semana de anticipacion, ¿me devuelven la seña?",
+      "tipo": "combinada",
+      "accion": "responder",
+      "claves": [
+        "se retiene el 50%"
+      ],
+      "evidencia": "con menos de 15 días se retiene el 50%.",
+      "respuesta_ideal": "No se devuelve completa: con menos de 15 días de anticipación se retiene el 50% de la seña."
+    }
+  ],
+  [
+    {
+      "cliente": "¿tienen servicio de fisioterapia respiratoria?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No tengo esa información específica; le recomiendo consultarlo directamente con la residencia."
+    },
+    {
+      "cliente": "¿los familiares pueden quedarse a dormir si el residente está grave?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No cuento con esa información; le recomiendo consultarlo directamente con enfermería."
+    }
+  ]
+]

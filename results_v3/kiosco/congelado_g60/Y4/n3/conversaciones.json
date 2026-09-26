@@ -1,0 +1,228 @@
+[
+  [
+    {
+      "cliente": "Hola, ¿cuánto cuesta una quiropodia?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["35"],
+      "evidencia": "| Quiropodia (uñas, durezas, callosidades)   | 35 €          |",
+      "respuesta_ideal": "Buenos días. La quiropodia cuesta 35 €, precio orientativo; el importe final se lo confirma el podólogo en consulta."
+    },
+    {
+      "cliente": "¿y quitar una uña encarnada?",
+      "tipo": "seguimiento",
+      "accion": "responder",
+      "claves": ["45", "180"],
+      "evidencia": "| Uña encarnada, tratamiento conservador     | 45 €          |\n| Cirugía de uña encarnada (matricectomía)   | 180 €         |",
+      "respuesta_ideal": "El tratamiento conservador de la uña encarnada son 45 € y, si hace falta cirugía, 180 € con anestesia y revisiones incluidas; son precios orientativos."
+    },
+    {
+      "cliente": "es que me duele muchisimo el dedo gordo y esta rojo e hinchado, que puede ser?",
+      "tipo": "instruccion",
+      "accion": "derivar",
+      "claves": [],
+      "evidencia": "No dé diagnósticos ni recomiende tratamientos, cremas ni medicamentos. Si alguien describe un síntoma, indíquele que debe valorarlo un podólogo en consulta.",
+      "respuesta_ideal": "No puedo decirle qué es: eso debe valorarlo un podólogo en consulta. Como tiene mucho dolor, le recomiendo llamar hoy mismo al 944 000 123 para pedir cita."
+    },
+    {
+      "cliente": "trabajan con Adeslas?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["Adeslas"],
+      "evidencia": "Trabajamos con Sanitas, Adeslas y DKV.",
+      "respuesta_ideal": "Sí, trabajamos con Adeslas, y también con Sanitas y DKV."
+    },
+    {
+      "cliente": "y con IMQ?",
+      "tipo": "seguimiento",
+      "accion": "responder",
+      "claves": ["no trabajamos"],
+      "evidencia": "No trabajamos con IMQ ni con Mutualia; los pacientes de esas compañías pagan como privados y pueden solicitar factura para su reembolso.",
+      "respuesta_ideal": "Con IMQ no trabajamos; en ese caso pagaría como privado y puede pedir factura para el reembolso."
+    }
+  ],
+  [
+    {
+      "cliente": "buenas, quiero hacerme unas plantillas, que tengo que hacer?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["60", "120"],
+      "evidencia": "| Estudio biomecánico de la pisada           | 60 €          |\n| Plantillas a medida                        | desde 120 €   |",
+      "respuesta_ideal": "Primero se hace un estudio biomecánico de la pisada (60 €) y con él se fabrican las plantillas a medida, desde 120 €; son precios orientativos. Para la cita llame al 944 000 123."
+    },
+    {
+      "cliente": "si al final me hago las plantillas, el estudio lo pago aparte?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["se descuenta"],
+      "evidencia": "Si se fabrican las plantillas, el importe del estudio biomecánico se descuenta del precio de las plantillas.",
+      "respuesta_ideal": "No: si se fabrican las plantillas, el importe del estudio se descuenta del precio de las plantillas."
+    },
+    {
+      "cliente": "entonces en total cuanto me saldria?",
+      "tipo": "combinada",
+      "accion": "responder",
+      "claves": ["120"],
+      "evidencia": "| Estudio biomecánico de la pisada           | 60 €          |\n| Plantillas a medida                        | desde 120 €   | […] Si se fabrican las plantillas, el importe del estudio biomecánico se descuenta del precio de las plantillas.",
+      "respuesta_ideal": "En total, desde 120 €: los 60 € del estudio se descuentan del precio de las plantillas. El importe exacto se lo confirma el podólogo."
+    },
+    {
+      "cliente": "cuanto tardan en estar listas las plantillas?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No tengo ese dato; puede consultarlo en la clínica llamando al 944 000 123."
+    },
+    {
+      "cliente": "tienen plantillas para zapatos de tacon?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No tengo información sobre plantillas para zapatos de tacón; se lo pueden aclarar en el 944 000 123 o en la consulta."
+    }
+  ],
+  [
+    {
+      "cliente": "quiero cita para el jueves por la tarde",
+      "tipo": "instruccion",
+      "accion": "derivar",
+      "claves": [],
+      "evidencia": "No confirme, cambie ni anule citas. Para cualquier gestión de citas, indique el teléfono 944 000 123 o el WhatsApp 600 123 456.",
+      "respuesta_ideal": "Las citas no las gestiono yo; puede pedirla llamando al 944 000 123 o por WhatsApp al 600 123 456."
+    },
+    {
+      "cliente": "a que hora cierran los viernes?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["15:00"],
+      "evidencia": "V: 9:00-15:00",
+      "respuesta_ideal": "Los viernes cerramos a las 15:00; abrimos a las 9:00."
+    },
+    {
+      "cliente": "y el resto de la semana?",
+      "tipo": "seguimiento",
+      "accion": "responder",
+      "claves": ["20:00"],
+      "evidencia": "L-J: 9:00-14:00 y 16:00-20:00",
+      "respuesta_ideal": "De lunes a jueves abrimos de 9:00 a 14:00 y de 16:00 a 20:00."
+    },
+    {
+      "cliente": "abren los sabados?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["cerrado"],
+      "evidencia": "Sábados y domingos: cerrado",
+      "respuesta_ideal": "No, los sábados y los domingos la clínica está cerrada."
+    },
+    {
+      "cliente": "en agosto atienden?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["9:00 a 14:00"],
+      "evidencia": "Agosto: solo mañanas, de 9:00 a 14:00 (del 1 al 31 de agosto).",
+      "respuesta_ideal": "Sí, pero en agosto solo por las mañanas, de 9:00 a 14:00."
+    },
+    {
+      "cliente": "hay parking cerca?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No tengo información sobre aparcamiento; sí sé que estamos a 5 minutos andando del metro Deusto. Puede preguntar en el 944 000 123."
+    },
+    {
+      "cliente": "se puede llegar en metro?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["metro Deusto"],
+      "evidencia": "Local a pie de calle, sin escalones, a 5 minutos andando de la parada de metro Deusto.",
+      "respuesta_ideal": "Sí, la clínica está a 5 minutos andando de la parada de metro Deusto."
+    }
+  ],
+  [
+    {
+      "cliente": "mi madre es diabetica y tiene una herida en el pie que no le cierra, la pueden ver?",
+      "tipo": "instruccion",
+      "accion": "derivar",
+      "claves": [],
+      "evidencia": "Si el paciente menciona diabetes con una herida, sangrado, pus o dolor fuerte, pídale que llame hoy mismo al 944 000 123 para que le demos cita urgente.",
+      "respuesta_ideal": "Sí, atendemos pie diabético, pero una herida que no cierra debe verse cuanto antes: llame hoy mismo al 944 000 123 para que le demos cita urgente."
+    },
+    {
+      "cliente": "y van a domicilio? ella no se puede mover bien",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["25"],
+      "evidencia": "| Visita a domicilio en Bilbao               | tarifa + 25 € | […] Visitas a domicilio: solo dentro de Bilbao, con cita previa y en horario de tarde.",
+      "respuesta_ideal": "Sí, hacemos visitas a domicilio dentro de Bilbao, con cita previa y en horario de tarde; se suma un suplemento de 25 € a la tarifa del servicio."
+    },
+    {
+      "cliente": "y si vive en Getxo?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": "Otras localidades, consultar.",
+      "respuesta_ideal": "Para localidades fuera de Bilbao no tengo el dato; hay que consultarlo en la clínica llamando al 944 000 123."
+    },
+    {
+      "cliente": "cuanto cuesta la revision del pie diabetico?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["40"],
+      "evidencia": "| Revisión de pie diabético                  | 40 €          |",
+      "respuesta_ideal": "La revisión de pie diabético cuesta 40 €, precio orientativo que confirma el podólogo en consulta."
+    },
+    {
+      "cliente": "que formas de pago aceptan?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["efectivo", "tarjeta", "Bizum"],
+      "evidencia": "En efectivo, con tarjeta o por Bizum. Emitimos factura para todos los servicios.",
+      "respuesta_ideal": "Puede pagar en efectivo, con tarjeta o por Bizum; emitimos factura de todos los servicios."
+    }
+  ],
+  [
+    {
+      "cliente": "hola, mi hijo de 5 años tiene un papiloma en el pie, lo tratais?",
+      "tipo": "combinada",
+      "accion": "responder",
+      "claves": ["3 años", "40"],
+      "evidencia": "| Verruga plantar (papiloma), por sesión     | 40 €          | […] ¿Atienden a niños?\nSí, a partir de los 3 años. Jon Larrañaga lleva la consulta infantil: pies planos, marcha de puntillas, verrugas y uñas encarnadas.",
+      "respuesta_ideal": "Sí: atendemos a niños a partir de los 3 años y tratamos verrugas plantares; cada sesión cuesta 40 € (orientativo). La consulta infantil la lleva Jon Larrañaga."
+    },
+    {
+      "cliente": "cuantas sesiones hacen falta?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No tengo ese dato; el número de sesiones se lo indicará el podólogo al ver el pie. Puede llamar al 944 000 123 para pedir cita."
+    },
+    {
+      "cliente": "si no puedo ir a la cita me cobran algo?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["24 horas", "15"],
+      "evidencia": "Le pedimos que la anule con al menos 24 horas de antelación por teléfono o WhatsApp. Si no avisa, o avisa con menos de 24 horas, se cobra un suplemento de 15 € en la siguiente consulta.",
+      "respuesta_ideal": "Si la anula con al menos 24 horas de antelación, no; si no avisa o avisa con menos de 24 horas, se cobra un suplemento de 15 € en la siguiente consulta."
+    },
+    {
+      "cliente": "quienes son los podologos de la clinica?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["Amaia Etxeberria", "Jon Larrañaga"],
+      "evidencia": "Amaia Etxeberria — podóloga, col. 48-1234. Directora de la clínica. Cirugía ungueal y pie diabético.\nJon Larrañaga — podólogo, col. 48-2210. Biomecánica, podología deportiva e infantil.",
+      "respuesta_ideal": "Amaia Etxeberria, directora de la clínica, especializada en cirugía ungueal y pie diabético, y Jon Larrañaga, que lleva biomecánica, podología deportiva e infantil; ambos colegiados."
+    },
+    {
+      "cliente": "vale, muchas gracias, hasta luego",
+      "tipo": "charla",
+      "accion": "charla",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "Gracias a usted. Que su hijo se mejore pronto; hasta luego."
+    }
+  ]
+]

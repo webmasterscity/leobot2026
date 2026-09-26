@@ -1,0 +1,264 @@
+[
+  [
+    {
+      "cliente": "Hola, buenos días",
+      "tipo": "charla",
+      "accion": "charla",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "¡Hola, buenos días! Bienvenido al Jardín Botánico Bosque de Niebla, ¿en qué le puedo ayudar?"
+    },
+    {
+      "cliente": "¿cuánto cuesta la entrada para un adulto?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": [
+        "$18.000"
+      ],
+      "evidencia": "Adultos | $18.000 COP",
+      "respuesta_ideal": "La entrada para un adulto cuesta $18.000 COP."
+    },
+    {
+      "cliente": "¿y para niños?",
+      "tipo": "seguimiento",
+      "accion": "responder",
+      "claves": [
+        "$9.000"
+      ],
+      "evidencia": "Niños de 5 a 12 años | $9.000 COP",
+      "respuesta_ideal": "Para niños de 5 a 12 años la entrada cuesta $9.000 COP."
+    },
+    {
+      "cliente": "¿y si tiene 3 años?",
+      "tipo": "seguimiento",
+      "accion": "responder",
+      "claves": [
+        "Gratis"
+      ],
+      "evidencia": "Niños menores de 5 años | Gratis",
+      "respuesta_ideal": "Los menores de 5 años entran gratis."
+    },
+    {
+      "cliente": "genial, gracias",
+      "tipo": "charla",
+      "accion": "charla",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "¡Con gusto! Que disfrute su visita."
+    }
+  ],
+  [
+    {
+      "cliente": "somos 2 adultos y un niño de 8 años, ¿cuánto pagamos en total?",
+      "tipo": "combinada",
+      "accion": "responder",
+      "claves": [
+        "$18.000",
+        "$9.000"
+      ],
+      "evidencia": "Adultos | $18.000 COP\nNiños de 5 a 12 años | $9.000 COP",
+      "respuesta_ideal": "Serían $18.000 por cada adulto y $9.000 por el niño, un total de $45.000 COP."
+    },
+    {
+      "cliente": "¿qué días abren?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": [
+        "martes a domingo",
+        "8:00 a.m. – 5:00 p.m."
+      ],
+      "evidencia": "Horario: martes a domingo, 8:00 a.m. – 5:00 p.m.",
+      "respuesta_ideal": "Abrimos de martes a domingo, de 8:00 a.m. a 5:00 p.m."
+    },
+    {
+      "cliente": "¿abren los lunes?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": [
+        "Cerrado los lunes por mantenimiento"
+      ],
+      "evidencia": "Cerrado los lunes por mantenimiento.",
+      "respuesta_ideal": "No, los lunes permanecemos cerrados por mantenimiento."
+    },
+    {
+      "cliente": "quiero llevar a mi perro, ¿se puede?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": [
+        "No se permite el ingreso de mascotas, salvo perros guía"
+      ],
+      "evidencia": "No se permite el ingreso de mascotas, salvo perros guía.",
+      "respuesta_ideal": "No se permite el ingreso de mascotas, salvo que sea un perro guía."
+    }
+  ],
+  [
+    {
+      "cliente": "cuanto cuesta el recorrido nocturno de las luciernagas?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": [
+        "$25.000"
+      ],
+      "evidencia": "Recorrido nocturno de luciérnagas: solo viernes y sábados de temporada seca, $25.000 COP, incluye linterna.",
+      "respuesta_ideal": "El recorrido nocturno de luciérnagas cuesta $25.000 COP e incluye linterna, solo los viernes y sábados de temporada seca."
+    },
+    {
+      "cliente": "¿y el guiado normal?",
+      "tipo": "seguimiento",
+      "accion": "responder",
+      "claves": [
+        "$6.000 COP adicionales por persona"
+      ],
+      "evidencia": "Recorrido guiado grupal (mínimo 8 personas): $6.000 COP adicionales por persona.",
+      "respuesta_ideal": "El recorrido guiado grupal cuesta $6.000 COP adicionales por persona, con un grupo mínimo de 8 personas."
+    },
+    {
+      "cliente": "somos un grupo de 10, ¿nos pueden reservar el recorrido guiado de las 10 para el sabado?",
+      "tipo": "instruccion",
+      "accion": "derivar",
+      "claves": [],
+      "evidencia": "No confirmar reservas de recorridos guiados grupales por chat; indicar que deben llamar con anticipación para coordinar el grupo mínimo de 8 personas.",
+      "respuesta_ideal": "Para reservar el recorrido guiado grupal debe llamar con anticipación al PBX para coordinarlo, ya que no se confirma por este medio."
+    },
+    {
+      "cliente": "¿hay recorrido guiado en inglés?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No tengo esa información sobre recorridos en inglés; le recomiendo consultarlo llamando al jardín."
+    }
+  ],
+  [
+    {
+      "cliente": "cuanto vale la membresia familiar?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": [
+        "$350.000"
+      ],
+      "evidencia": "Familiar anual (hasta 4 personas): $350.000 COP.",
+      "respuesta_ideal": "La membresía familiar anual, hasta 4 personas, cuesta $350.000 COP."
+    },
+    {
+      "cliente": "¿la membresía individual da descuento en la cafetería?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": [
+        "10% de descuento en tienda y cafetería"
+      ],
+      "evidencia": "Individual anual: $120.000 COP. Entrada ilimitada todo el año + 10% de descuento en tienda y cafetería.",
+      "respuesta_ideal": "Sí, la membresía individual da un 10% de descuento en tienda y cafetería."
+    },
+    {
+      "cliente": "¿la membresía se puede pagar en cuotas mensuales?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No tengo esa información sobre pago en cuotas para la membresía; puede consultarlo directamente."
+    },
+    {
+      "cliente": "¿tienen servicio de restaurante con almuerzos completos o solo cafetería?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "Solo tengo información de la cafetería El Roble; no sé si ofrecen almuerzos completos."
+    },
+    {
+      "cliente": "¿tienen zona de camping dentro del jardín?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No tengo información sobre zona de camping en el jardín."
+    }
+  ],
+  [
+    {
+      "cliente": "hasta que hora atiende la cafeteria?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": [
+        "4:30 p.m."
+      ],
+      "evidencia": "Cafetería \"El Roble\" (abierta hasta las 4:30 p.m.)",
+      "respuesta_ideal": "La cafetería El Roble atiende hasta las 4:30 p.m."
+    },
+    {
+      "cliente": "¿puedo entrar con mi dron para tomar fotos?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": [
+        "No se permiten drones sin autorización previa por escrito"
+      ],
+      "evidencia": "No se permiten drones sin autorización previa por escrito.",
+      "respuesta_ideal": "No, no se permiten drones sin autorización previa por escrito."
+    },
+    {
+      "cliente": "quiero hacer las fotos de mi boda aquí, ¿cómo hago?",
+      "tipo": "instruccion",
+      "accion": "derivar",
+      "claves": [],
+      "evidencia": "Si preguntan por eventos privados, alquiler de espacios para bodas o fotografía comercial, derivar a administración al mismo PBX, porque requiere cotización aparte.",
+      "respuesta_ideal": "Para fotografía de bodas debe coordinarlo con administración al PBX (601) 745 6600, porque requiere una cotización aparte."
+    },
+    {
+      "cliente": "perfecto, muchas gracias por la ayuda",
+      "tipo": "charla",
+      "accion": "charla",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "¡Con mucho gusto! Que tenga un excelente día."
+    }
+  ],
+  [
+    {
+      "cliente": "prestan sillas de ruedas?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": [
+        "alquiler de sillas de ruedas sin costo"
+      ],
+      "evidencia": "alquiler de sillas de ruedas sin costo (se deja un documento en garantía)",
+      "respuesta_ideal": "Sí, prestamos sillas de ruedas sin costo, dejando un documento en garantía."
+    },
+    {
+      "cliente": "si somos un grupo escolar de 20 estudiantes, ¿cuánto pagaría cada uno?",
+      "tipo": "combinada",
+      "accion": "responder",
+      "claves": [
+        "$12.000"
+      ],
+      "evidencia": "¿Hay descuento para grupos escolares? Sí, los grupos escolares con más de 15 estudiantes tienen el valor de estudiante ($12.000 COP) por persona, coordinando la visita con anticipación.",
+      "respuesta_ideal": "Cada estudiante pagaría $12.000 COP, ya que los grupos escolares de más de 15 estudiantes tienen ese valor por persona."
+    },
+    {
+      "cliente": "perdi mis lentes la semana pasada, los tienen guardados?",
+      "tipo": "instruccion",
+      "accion": "responder",
+      "claves": [
+        "acercarse al punto de información ubicado en la entrada principal"
+      ],
+      "evidencia": "Si preguntan por objetos perdidos, indicar que deben acercarse al punto de información ubicado en la entrada principal.",
+      "respuesta_ideal": "Para objetos perdidos debe acercarse al punto de información ubicado en la entrada principal."
+    },
+    {
+      "cliente": "¿el festival de las orquídeas tiene alguna fecha exacta este año?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "Solo sé que el Festival de las Orquídeas es en abril; no tengo la fecha exacta."
+    },
+    {
+      "cliente": "muchas gracias, hasta luego",
+      "tipo": "charla",
+      "accion": "charla",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "¡Hasta luego, gracias por su visita!"
+    }
+  ]
+]

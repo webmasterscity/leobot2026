@@ -1,0 +1,170 @@
+[
+  {
+    "cliente": "Buenas, ¿cuánto cuesta un trastero mediano al mes?",
+    "tipo": "directa",
+    "accion": "responder",
+    "claves": ["Trasteros medianos (8 m²): 85 €/mes"],
+    "evidencia": "Trasteros medianos (8 m²): 85 €/mes",
+    "respuesta_ideal": "Hola, un trastero mediano de 8 m² cuesta 85 € al mes. Si contratas por más tiempo, tenemos descuentos."
+  },
+  {
+    "cliente": "¿Aceptan efectivo para el pago?",
+    "tipo": "si_no",
+    "accion": "responder",
+    "claves": ["Efectivo: no se acepta"],
+    "evidencia": "Efectivo: no se acepta",
+    "respuesta_ideal": "No, no aceptamos efectivo. Ofrecemos domiciliación bancaria, transferencia o tarjeta de crédito (con comisión del 2 %)."
+  },
+  {
+    "cliente": "¿Puedo guardar mis trastos de jardín rotos?",
+    "tipo": "si_no",
+    "accion": "responder",
+    "claves": [],
+    "evidencia": null,
+    "respuesta_ideal": "Sí, puedes guardar trastos de jardín sin problema. No están en la lista de prohibidos. Te recomendamos revisar el contrato antes de firmar."
+  },
+  {
+    "cliente": "¿Y qué pasa si necesito acceder de noche?",
+    "tipo": "instruccion",
+    "accion": "responder",
+    "claves": ["Acceso nocturno previa solicitud: sin coste adicional"],
+    "evidencia": "Acceso nocturno previa solicitud: sin coste adicional",
+    "respuesta_ideal": "Puedes acceder de noche sin problema adicional. El acceso a trasteros está disponible hasta las 22:00 horas todos los días. Si necesitas acceso permanente fuera de ese horario, puedes contratarlo por 5 €/mes."
+  },
+  {
+    "cliente": "¿Cuántos meses mínimo tengo que contratar?",
+    "tipo": "directa",
+    "accion": "responder",
+    "claves": ["Contrato mínimo: 3 meses"],
+    "evidencia": "Contrato mínimo: 3 meses",
+    "respuesta_ideal": "El contrato mínimo es de 3 meses. Después puedes renovar o terminar con 15 días de preaviso."
+  },
+  {
+    "cliente": "¿Hay descuento si firmo por un año?",
+    "tipo": "si_no",
+    "accion": "responder",
+    "claves": ["Contrato anual: -10 %"],
+    "evidencia": "Contrato anual: -10 %",
+    "respuesta_ideal": "Sí, si contratas por un año tienes un descuento del 10 %. Por 2 años es -15 % y por 3 años o más es -20 %."
+  },
+  {
+    "cliente": "¿Es verdad que hay climatización?",
+    "tipo": "si_no",
+    "accion": "responder",
+    "claves": ["Climatización (temperatura entre 10 y 25 ºC)"],
+    "evidencia": "Climatización (temperatura entre 10 y 25 ºC)",
+    "respuesta_ideal": "Claro, todos nuestros trasteros están climatizados. Mantenemos la temperatura entre 10 y 25 grados Celsius para proteger tus cosas."
+  },
+  {
+    "cliente": "¿Cuánto me costaría un grande de 12 m² por 2 años?",
+    "tipo": "combinada",
+    "accion": "responder",
+    "claves": ["Trasteros grandes (12 m²): 115 €/mes", "-15 %"],
+    "evidencia": "Trasteros grandes (12 m²): 115 €/mes\nContrato de 2 años: -15 %",
+    "respuesta_ideal": "Un trastero grande de 12 m² cuesta 115 € al mes. Con contrato de 2 años tienes 15 % de descuento, así que pagarías 97,75 € mensuales, o 2 346 € por los dos años."
+  },
+  {
+    "cliente": "¿Y esos 115 euros incluyen algo?",
+    "tipo": "seguimiento",
+    "accion": "responder",
+    "claves": ["Seguridad 24/7", "Climatización", "Iluminación automática", "Acceso con tarjeta personalizada"],
+    "evidencia": "SERVICIOS INCLUIDOS:\n✓ Seguridad 24/7 con cámaras y vigilancia\n✓ Climatización\n✓ Iluminación automática en pasillos\n✓ Acceso con tarjeta personalizada\n✓ Revisiones mensuales de garantía",
+    "respuesta_ideal": "Sí, incluye seguridad 24/7 con cámaras, climatización, iluminación automática, acceso con tarjeta personalizada y revisiones mensuales de garantía."
+  },
+  {
+    "cliente": "¿Puedo guardar mi coche allí?",
+    "tipo": "combinada",
+    "accion": "responder",
+    "claves": ["Boxes para vehículos (20 m²): 180 €/mes"],
+    "evidencia": "Boxes para vehículos (20 m²): 180 €/mes",
+    "respuesta_ideal": "Sí, tenemos boxes especiales para vehículos de 20 m² a 180 € al mes. También aplican nuestros descuentos por permanencia si firmas contrato más largo."
+  },
+  {
+    "cliente": "¿Se puede subarrendar el trastero a otra persona?",
+    "tipo": "si_no",
+    "accion": "responder",
+    "claves": ["No se permiten subarrendamientos"],
+    "evidencia": "No se permiten subarrendamientos",
+    "respuesta_ideal": "No, no está permitido subarrendar el trastero a otra persona. El contrato debe estar a tu nombre y bajo tu responsabilidad."
+  },
+  {
+    "cliente": "¿Puedo guardar productos químicos de limpieza?",
+    "tipo": "si_no",
+    "accion": "responder",
+    "claves": ["Prohibido guardar", "productos químicos"],
+    "evidencia": "Prohibido guardar: materiales explosivos, productos químicos, alimentos perecederos, vehículos sin permiso expreso",
+    "respuesta_ideal": "No, los productos químicos están prohibidos. Tampoco aceptamos explosivos, alimentos perecederos ni vehículos sin permiso expreso. Por seguridad de todos."
+  },
+  {
+    "cliente": "¿Qué pasa si quiero cambiar de trastero después de un tiempo?",
+    "tipo": "instruccion",
+    "accion": "responder",
+    "claves": ["Cambio de trastero: 20 €"],
+    "evidencia": "Cambio de trastero: 20 € (si lo solicita el cliente)",
+    "respuesta_ideal": "Si quieres cambiar de trastero, hay una tarifa de 20 €. Debes contactar con la gerencia en el 976 41 39 15 ext. 2 o alquiler@guardalzado.es para coordinar."
+  },
+  {
+    "cliente": "¿Guardalzado se responsabiliza si me roban cosas del trastero?",
+    "tipo": "sin_respuesta",
+    "accion": "abstenerse",
+    "claves": [],
+    "evidencia": null,
+    "respuesta_ideal": "Contamos con seguridad 24/7 con cámaras. Sin embargo, Guardalzado no se responsabiliza de robos si no has contratado el seguro opcional (8 € al mes). Te recomendamos asegurarte para mayor tranquilidad."
+  },
+  {
+    "cliente": "¿Ofrecen servicio de mudanza?",
+    "tipo": "sin_respuesta",
+    "accion": "responder",
+    "claves": ["Furgoneta de mudanza (dentro del radio de 15 km): 60 €"],
+    "evidencia": "Furgoneta de mudanza (dentro del radio de 15 km): 60 €",
+    "respuesta_ideal": "Sí, ofrecemos furgoneta de mudanza dentro de 15 km por 60 €. También tenemos personal de carga por 25 €/hora (mínimo 2 horas). Debes acordarlo previamente."
+  },
+  {
+    "cliente": "¿Cuántos días de aviso necesito para cancelar?",
+    "tipo": "directa",
+    "accion": "responder",
+    "claves": ["Período de preaviso para rescisión: 15 días naturales"],
+    "evidencia": "Período de preaviso para rescisión: 15 días naturales",
+    "respuesta_ideal": "Necesitas dar 15 días de preaviso para cancelar el contrato. Recuerda que tienes contrato mínimo de 3 meses."
+  },
+  {
+    "cliente": "Buenos días, ¿cuántos trasteros tienen disponibles ahora?",
+    "tipo": "sin_respuesta",
+    "accion": "abstenerse",
+    "claves": [],
+    "evidencia": null,
+    "respuesta_ideal": "Tenemos 127 trasteros en total de diversos tamaños. Para saber la disponibilidad específica, te recomendamos llamar al 976 41 39 15 o escribir a alquiler@guardalzado.es."
+  },
+  {
+    "cliente": "¿Hacen inspecciones dentro de los trasteros?",
+    "tipo": "si_no",
+    "accion": "responder",
+    "claves": ["Inspecciones trimestrales"],
+    "evidencia": "Inspecciones trimestrales por parte del personal de Guardalzado",
+    "respuesta_ideal": "Sí, realizamos inspecciones trimestrales para verificar que se cumplen las normas del contrato. Es solo de verificación, no es una invasión de privacidad."
+  },
+  {
+    "cliente": "¿Es verdad que el pequeño de 4 m² cuesta 45 euros?",
+    "tipo": "si_no",
+    "accion": "responder",
+    "claves": ["Trasteros pequeños (4 m²): 45 €/mes"],
+    "evidencia": "Trasteros pequeños (4 m²): 45 €/mes",
+    "respuesta_ideal": "Exacto, el trastero pequeño de 4 m² cuesta 45 € al mes. Es perfecto si solo necesitas guardar poco volumen."
+  },
+  {
+    "cliente": "Gracias por la información, voy a pensarlo.",
+    "tipo": "charla",
+    "accion": "charla",
+    "claves": [],
+    "evidencia": null,
+    "respuesta_ideal": "Perfecto, no dudes en llamarnos si tienes más preguntas. Puedes contactarnos al 976 41 39 15 o por WhatsApp al 657 892 344. ¡Nos encantaría contar contigo!"
+  },
+  {
+    "cliente": "¿Hacen packs especiales para empresas pequeñas?",
+    "tipo": "sin_respuesta",
+    "accion": "derivar",
+    "claves": [],
+    "evidencia": null,
+    "respuesta_ideal": "Sí, trabajamos con pequeñas empresas. Para presupuestos y ofertas especiales, te recomendamos contactar directamente con el gerente Luis Martínez al 976 41 39 15 ext. 2 o luis.martinez@guardalzado.es."
+  }
+]

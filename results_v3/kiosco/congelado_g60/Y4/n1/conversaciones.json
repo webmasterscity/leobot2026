@@ -1,0 +1,244 @@
+[
+  [
+    {
+      "cliente": "Hola! Soy docente de una escuela de Río Segundo, cuánto sale la visita por chico?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["9.500", "14.000"],
+      "evidencia": "Media jornada | 9:30 a 12:30 | $9.500 | 3 actividades + merienda\nJornada completa | 9:30 a 15:30 | $14.000 | 5 actividades + almuerzo + merienda",
+      "respuesta_ideal": "¡Hola! Depende del programa: la media jornada cuesta $9.500 por alumno y la jornada completa, $14.000 por alumno."
+    },
+    {
+      "cliente": "y la completa hasta que hora es?",
+      "tipo": "seguimiento",
+      "accion": "responder",
+      "claves": ["15:30"],
+      "evidencia": "Jornada completa | 9:30 a 15:30 | $14.000 | 5 actividades + almuerzo + merienda",
+      "respuesta_ideal": "La jornada completa va de 9:30 a 15:30."
+    },
+    {
+      "cliente": "somos 40 chicos y 4 maestras, cuanto nos saldria la completa?",
+      "tipo": "combinada",
+      "accion": "responder",
+      "claves": ["560.000"],
+      "evidencia": "Jornada completa | 9:30 a 15:30 | $14.000 | 5 actividades + almuerzo + merienda […] Docentes acompañantes: 1 docente sin cargo cada 10 alumnos.",
+      "respuesta_ideal": "Con 40 alumnos a $14.000 son $560.000; las 4 maestras entran sin cargo, porque corresponde un docente gratis cada 10 alumnos."
+    },
+    {
+      "cliente": "donde quedan exactamente?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["Camino a Alta Gracia km 12"],
+      "evidencia": "Dirección: Camino a Alta Gracia km 12, Falda del Carmen, Departamento Santa María, Córdoba.",
+      "respuesta_ideal": "Estamos en Camino a Alta Gracia km 12, Falda del Carmen, Departamento Santa María, Córdoba."
+    },
+    {
+      "cliente": "podemos reservar para el martes 14 de octubre?",
+      "tipo": "instruccion",
+      "accion": "derivar",
+      "claves": [],
+      "evidencia": "No confirmes reservas, fechas ni disponibilidad. Las reservas las confirma únicamente Marcela Ferreyra por WhatsApp al 351 555 0142; indicá ese número.",
+      "respuesta_ideal": "Las fechas y la disponibilidad las confirma Marcela Ferreyra por WhatsApp al 351 555 0142; escribile ahí con la fecha y la cantidad de alumnos y ella te confirma."
+    },
+    {
+      "cliente": "tienen estacionamiento para el micro?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No tengo ese dato; podés consultarlo con Marcela por WhatsApp al 351 555 0142."
+    }
+  ],
+  [
+    {
+      "cliente": "buenas, se puede ir un sabado en familia sin ser de una escuela?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["sábados"],
+      "evidencia": "Los sábados de marzo a noviembre abrimos al público general de 10 a 17 h, sin reserva previa.",
+      "respuesta_ideal": "Sí, los sábados de marzo a noviembre abrimos al público general de 10 a 17 h, sin reserva previa."
+    },
+    {
+      "cliente": "cuanto cuesta la entrada?",
+      "tipo": "seguimiento",
+      "accion": "responder",
+      "claves": ["6.000"],
+      "evidencia": "Entrada general: $6.000 por persona (mayores de 3 años).",
+      "respuesta_ideal": "La entrada general cuesta $6.000 por persona, para mayores de 3 años."
+    },
+    {
+      "cliente": "mi nena tiene 2 años, paga?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["menores de 3 años no pagan"],
+      "evidencia": "Los menores de 3 años no pagan.",
+      "respuesta_ideal": "No, los menores de 3 años no pagan."
+    },
+    {
+      "cliente": "entonces somos 2 adultos, un nene de 7 y la nena de 2, cuanto pagamos en total?",
+      "tipo": "combinada",
+      "accion": "responder",
+      "claves": ["18.000"],
+      "evidencia": "Entrada general: $6.000 por persona (mayores de 3 años). Los menores de 3 años no pagan.",
+      "respuesta_ideal": "Pagan 3 entradas de $6.000, o sea $18.000 en total; la nena de 2 años no paga."
+    },
+    {
+      "cliente": "hay descuento para jubilados?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No tengo información sobre descuentos para jubilados; lo podés consultar con Marcela al 351 555 0142."
+    },
+    {
+      "cliente": "podemos llevar al perro?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["mascotas"],
+      "evidencia": "No se permite el ingreso de mascotas.",
+      "respuesta_ideal": "No, no se permite el ingreso de mascotas a la granja."
+    }
+  ],
+  [
+    {
+      "cliente": "Hola, tengo un alumno celíaco, tienen comida para él?",
+      "tipo": "instruccion",
+      "accion": "responder",
+      "claves": ["sin TACC", "48 h"],
+      "evidencia": "Contamos con menú sin TACC y opción vegetariana sin costo adicional; la escuela debe avisar con 48 h de anticipación la cantidad y el tipo de menú especial.",
+      "respuesta_ideal": "Sí, tenemos menú sin TACC sin costo adicional; recordá avisarlo con 48 h de anticipación indicando cuántos menús especiales necesitan."
+    },
+    {
+      "cliente": "a que numero escribo para reservar?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["351 555 0142"],
+      "evidencia": "WhatsApp de reservas: 351 555 0142 (lunes a viernes de 9 a 17 h).",
+      "respuesta_ideal": "Al WhatsApp de reservas 351 555 0142, que atiende Marcela de lunes a viernes de 9 a 17 h."
+    },
+    {
+      "cliente": "el colegio necesita factura A, como hacemos?",
+      "tipo": "instruccion",
+      "accion": "derivar",
+      "claves": [],
+      "evidencia": "Los pedidos de factura A, órdenes de compra, pagos de municipios o cooperadoras se derivan a administración: administracion@granjalostalas.com.ar.",
+      "respuesta_ideal": "Ese trámite lo gestiona administración: escriban a administracion@granjalostalas.com.ar con los datos del colegio."
+    },
+    {
+      "cliente": "el saldo se puede pagar con tarjeta de credito?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["tarjetas"],
+      "evidencia": "El saldo se abona el día de la visita, en efectivo o transferencia. No aceptamos tarjetas de crédito ni de débito.",
+      "respuesta_ideal": "No, no aceptamos tarjetas de crédito ni de débito; el saldo se paga el día de la visita en efectivo o por transferencia."
+    },
+    {
+      "cliente": "y con mercado pago?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No tengo ese dato; la información solo menciona efectivo y transferencia. Consultalo con Marcela al 351 555 0142."
+    }
+  ],
+  [
+    {
+      "cliente": "si el dia que vamos llueve que pasa?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["reprograma", "7:30"],
+      "evidencia": "Si el pronóstico es de lluvia, la visita se reprograma sin costo para otra fecha disponible. La escuela debe avisar antes de las 7:30 del mismo día por WhatsApp.",
+      "respuesta_ideal": "Si el pronóstico es de lluvia, la visita se reprograma sin costo para otra fecha; la escuela tiene que avisar por WhatsApp antes de las 7:30 de ese mismo día."
+    },
+    {
+      "cliente": "y si somos nosotros los que cancelamos dos dias antes, perdemos algo?",
+      "tipo": "combinada",
+      "accion": "responder",
+      "claves": ["seña"],
+      "evidencia": "Cancelaciones con menos de 72 h de anticipacion pierden la seña.",
+      "respuesta_ideal": "Sí: dos días son menos de 72 h de anticipación, así que se pierde la seña."
+    },
+    {
+      "cliente": "cuanto es la seña?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["30"],
+      "evidencia": "Se confirma con una seña del 30 % del total por transferencia bancaria.",
+      "respuesta_ideal": "La seña es el 30 % del total y se paga por transferencia bancaria."
+    },
+    {
+      "cliente": "en enero hacen visitas?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["cerrada"],
+      "evidencia": "En enero y febrero la granja permanece cerrada.",
+      "respuesta_ideal": "No, en enero y febrero la granja permanece cerrada; las visitas van de marzo a noviembre."
+    },
+    {
+      "cliente": "cuanto dura el paseo en carro?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No tengo el dato de cuánto dura el paseo en carro; podés preguntarle a Marcela al 351 555 0142."
+    }
+  ],
+  [
+    {
+      "cliente": "hola, reciben chicos de secundaria o es solo para los mas chiquitos?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["secundaria"],
+      "evidencia": "Recibimos grupos de jardín, primaria y secundaria de martes a viernes, de marzo a noviembre.",
+      "respuesta_ideal": "Recibimos grupos de jardín, primaria y también de secundaria, de martes a viernes entre marzo y noviembre."
+    },
+    {
+      "cliente": "el transporte esta incluido en el precio?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["no está incluido"],
+      "evidencia": "El transporte no está incluido. Si la escuela lo necesita, trabajamos con Transportes Sierras Chicas (tel. 3541 42-8890), que cotiza por separado.",
+      "respuesta_ideal": "No, el transporte no está incluido; si lo necesitan, trabajamos con Transportes Sierras Chicas (tel. 3541 42-8890), que cotiza aparte."
+    },
+    {
+      "cliente": "cuantos alumnos tienen que ser como minimo?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["20"],
+      "evidencia": "Grupo mínimo: 20 alumnos. Máximo: 90 alumnos por día.",
+      "respuesta_ideal": "El grupo mínimo es de 20 alumnos, y el máximo por día, 90."
+    },
+    {
+      "cliente": "a que hora abren los sabados?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["10"],
+      "evidencia": "Los sábados de marzo a noviembre abrimos al público general de 10 a 17 h, sin reserva previa.",
+      "respuesta_ideal": "Los sábados abrimos a las 10 y cerramos a las 17 h, de marzo a noviembre."
+    },
+    {
+      "cliente": "hay wifi para los docentes?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No tengo información sobre wifi en la granja; podés consultarlo con Marcela al 351 555 0142."
+    },
+    {
+      "cliente": "los baños estan adaptados para silla de ruedas?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "Sobre los baños no tengo el dato; sé que la mayoría de los sectores son accesibles en silla de ruedas con ayuda. Lo mejor es consultar con Marcela al 351 555 0142."
+    },
+    {
+      "cliente": "genial, muchas gracias!",
+      "tipo": "charla",
+      "accion": "charla",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "¡Gracias a vos por la consulta! Los esperamos en la granja."
+    }
+  ]
+]

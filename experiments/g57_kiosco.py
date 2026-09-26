@@ -43,7 +43,10 @@ def contains(answer: str, key: str) -> bool:
 
 def conversations_of(data):
     """A list of conversations, each a list of turns; a conversation written as an object with a single list of
-    turns inside (one redactor of G-59 did so) is read as that list.  Form only; no content changes."""
+    turns inside (one redactor of G-59 did so) is read as that list; a file that is a flat list of turns (one redactor
+    of G-60 did so) is read as a single conversation in its written order.  Form only; no content changes."""
+    if data and all(isinstance(t, dict) and 'cliente' in t for t in data):
+        return [list(data)]
     out = []
     for conv in data:
         if isinstance(conv, dict):

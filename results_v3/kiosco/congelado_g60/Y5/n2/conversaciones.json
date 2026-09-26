@@ -1,0 +1,238 @@
+[
+  [
+    {
+      "cliente": "Buenas tardes",
+      "tipo": "charla",
+      "accion": "charla",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "¡Buenas tardes! Bienvenido a Quinta Los Fresnos, ¿en qué le puedo ayudar con su evento?"
+    },
+    {
+      "cliente": "si somos 100 invitados y elegimos el paquete Oro, ¿cuánto sería el total?",
+      "tipo": "combinada",
+      "accion": "responder",
+      "claves": [
+        "$1,150 MXN"
+      ],
+      "evidencia": "Oro | $1,150 MXN | Todo lo del paquete Plata + barra libre nacional 5 horas, DJ, decoración temática",
+      "respuesta_ideal": "El paquete Oro cuesta $1,150 MXN por persona, así que para 100 invitados serían $115,000 MXN en total."
+    },
+    {
+      "cliente": "¿y el diamante para el mismo número de invitados?",
+      "tipo": "seguimiento",
+      "accion": "responder",
+      "claves": [
+        "$1,650 MXN"
+      ],
+      "evidencia": "Diamante | $1,650 MXN | Todo lo del paquete Oro + banquete de mariscos, pista de baile iluminada, fotografía profesional",
+      "respuesta_ideal": "El paquete Diamante para 100 invitados costaría $165,000 MXN, a $1,650 MXN por persona."
+    },
+    {
+      "cliente": "¿cuánta gente cabe en el jardín?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": [
+        "400 personas"
+      ],
+      "evidencia": "jardín exterior con capacidad para 400 personas",
+      "respuesta_ideal": "El jardín exterior tiene capacidad para 400 personas."
+    },
+    {
+      "cliente": "¿el paquete oro incluye fotografía?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": [
+        "No, la fotografía profesional solo está incluida en el paquete Diamante"
+      ],
+      "evidencia": "¿El paquete Oro incluye fotografía? No, la fotografía profesional solo está incluida en el paquete Diamante.",
+      "respuesta_ideal": "No, la fotografía profesional solo viene incluida en el paquete Diamante."
+    }
+  ],
+  [
+    {
+      "cliente": "cuanto piden de anticipo para apartar la fecha?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": [
+        "40%"
+      ],
+      "evidencia": "Se requiere un anticipo del 40% del total para apartar la fecha.",
+      "respuesta_ideal": "Se requiere un anticipo del 40% del total para apartar la fecha."
+    },
+    {
+      "cliente": "si cancelo con dos meses de anticipación, ¿me devuelven todo?",
+      "tipo": "seguimiento",
+      "accion": "responder",
+      "claves": [
+        "80%"
+      ],
+      "evidencia": "Con más de 60 días de anticipación: se devuelve el 80% del anticipo.",
+      "respuesta_ideal": "No, no se devuelve todo: con más de 60 días de anticipación se devuelve el 80% del anticipo."
+    },
+    {
+      "cliente": "¿se puede llevar pastel de otro lado?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": [
+        "Se permite el ingreso de pastel externo",
+        "$15 por persona"
+      ],
+      "evidencia": "Se permite el ingreso de pastel externo, con un costo de descorche de $15 por persona.",
+      "respuesta_ideal": "Sí, se permite llevar pastel externo, con un costo de descorche de $15 por persona."
+    },
+    {
+      "cliente": "¿hasta qué hora puede durar el evento un sábado?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": [
+        "2:00 a.m."
+      ],
+      "evidencia": "viernes y sábado, hasta las 2:00 a.m., por reglamento municipal de ruido.",
+      "respuesta_ideal": "Los sábados el evento puede durar hasta las 2:00 a.m., por reglamento municipal de ruido."
+    }
+  ],
+  [
+    {
+      "cliente": "¿puedo meter globos de helio dentro del salón?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": [
+        "No se permiten globos con helio dentro del salón techado"
+      ],
+      "evidencia": "No se permiten globos con helio dentro del salón techado, por riesgo de daño al equipo de aire acondicionado (sí se permiten en el jardín exterior).",
+      "respuesta_ideal": "No, dentro del salón techado no se permiten globos con helio, pero sí se pueden usar en el jardín exterior."
+    },
+    {
+      "cliente": "¿tienen estacionamiento?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": [
+        "Estacionamiento gratuito para 150 vehículos"
+      ],
+      "evidencia": "Estacionamiento gratuito para 150 vehículos",
+      "respuesta_ideal": "Sí, contamos con estacionamiento gratuito para 150 vehículos."
+    },
+    {
+      "cliente": "¿tienen servicio de renta de vajilla de cristal, aparte de la que ya incluyen?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No tengo esa información específica; le recomiendo consultarlo directamente con la coordinadora de eventos."
+    },
+    {
+      "cliente": "¿manejan algún paquete especial para XV años con descuento?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No contamos con un paquete especial distinto a los tres que manejamos; para una cotización particular debe hablar con la coordinadora de eventos."
+    }
+  ],
+  [
+    {
+      "cliente": "¿cuánto cuesta la mesa de dulces?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": [
+        "$45 por persona"
+      ],
+      "evidencia": "Mesa de dulces: desde $45 por persona",
+      "respuesta_ideal": "La mesa de dulces cuesta desde $45 MXN por persona."
+    },
+    {
+      "cliente": "si quiero mantelería de color en 20 mesas, ¿cuánto se suma al total?",
+      "tipo": "combinada",
+      "accion": "responder",
+      "claves": [
+        "$25 extra por mesa"
+      ],
+      "evidencia": "Mantelería de color (no blanca): $25 extra por mesa",
+      "respuesta_ideal": "La mantelería de color cuesta $25 extra por mesa, así que en 20 mesas serían $500 MXN adicionales."
+    },
+    {
+      "cliente": "¿aceptan pagos en dólares?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No tengo esa información; le sugiero preguntar directamente con administración."
+    },
+    {
+      "cliente": "muy bien, muchas gracias por su ayuda",
+      "tipo": "charla",
+      "accion": "charla",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "¡Con gusto! Esperamos poder ayudarle a organizar su evento."
+    }
+  ],
+  [
+    {
+      "cliente": "¿puedo llevar a mi perro pequeño al evento?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": [
+        "No se permiten mascotas durante los eventos, excepto perros guía"
+      ],
+      "evidencia": "No se permiten mascotas durante los eventos, excepto perros guía.",
+      "respuesta_ideal": "No se permiten mascotas durante los eventos, salvo que sea un perro guía."
+    },
+    {
+      "cliente": "¿el paquete plata incluye barra libre?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": [
+        "Salón, mesas, sillas, mantelería blanca, menú de 3 tiempos"
+      ],
+      "evidencia": "Plata | $850 MXN | Salón, mesas, sillas, mantelería blanca, menú de 3 tiempos",
+      "respuesta_ideal": "No, el paquete Plata no incluye barra libre; solo incluye salón, mesas, sillas, mantelería blanca y menú de 3 tiempos. La barra libre aparece desde el paquete Oro."
+    },
+    {
+      "cliente": "quiero pagar el anticipo con tarjeta de crédito a 12 meses sin intereses, ¿se puede?",
+      "tipo": "instruccion",
+      "accion": "derivar",
+      "claves": [],
+      "evidencia": "Si preguntan por pagos con tarjeta de crédito, meses sin intereses o facturación, derivar a administración.",
+      "respuesta_ideal": "Para pagos con tarjeta y meses sin intereses debe consultarlo directamente con administración."
+    },
+    {
+      "cliente": "gracias, nos vemos",
+      "tipo": "charla",
+      "accion": "charla",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "¡Hasta pronto, que tenga excelente día!"
+    }
+  ],
+  [
+    {
+      "cliente": "¿qué incluye el paquete diamante además del banquete de mariscos?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": [
+        "pista de baile iluminada",
+        "fotografía profesional"
+      ],
+      "evidencia": "Diamante | $1,650 MXN | Todo lo del paquete Oro + banquete de mariscos, pista de baile iluminada, fotografía profesional",
+      "respuesta_ideal": "El paquete Diamante incluye, además del banquete de mariscos, todo lo del paquete Oro, pista de baile iluminada y fotografía profesional."
+    },
+    {
+      "cliente": "¿tienen servicio de transporte para los invitados desde el centro de Puebla?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No tengo esa información sobre transporte; puede preguntarlo directamente con la coordinadora de eventos."
+    },
+    {
+      "cliente": "¿puedo hacer el evento un martes con el mismo precio?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No tengo información sobre variación de precio según el día de la semana; eso conviene confirmarlo con la coordinadora de eventos."
+    }
+  ]
+]

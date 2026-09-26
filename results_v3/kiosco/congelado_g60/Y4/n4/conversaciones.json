@@ -1,0 +1,252 @@
+[
+  [
+    {
+      "cliente": "Buenas, cuanto cuesta cambiar las tapas de unos zapatos de mujer?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["20"],
+      "evidencia": "- Cambio de tapas (tacos) de mujer: Bs 20",
+      "respuesta_ideal": "Bienvenido a Calzados y Taller Don Ramiro. El cambio de tapas de mujer cuesta Bs 20 el par; el precio final se confirma al ver el calzado."
+    },
+    {
+      "cliente": "y de hombre?",
+      "tipo": "seguimiento",
+      "accion": "responder",
+      "claves": ["25"],
+      "evidencia": "- Cambio de tapas de hombre: Bs 25",
+      "respuesta_ideal": "Las tapas de hombre cuestan Bs 25 el par."
+    },
+    {
+      "cliente": "si los dejo hoy a las 10 de la mañana, para cuando estan?",
+      "tipo": "combinada",
+      "accion": "responder",
+      "claves": ["mismo día"],
+      "evidencia": "- Trabajos simples (tapas, costuras, lustrado): se entregan el mismo día si el calzado se deja antes de las 11:00; si se deja después, al día siguiente.",
+      "respuesta_ideal": "Si los deja a las 10, antes de las 11:00, se los entregamos el mismo día."
+    },
+    {
+      "cliente": "los arreglos tienen garantia?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["30 días"],
+      "evidencia": "Todos los arreglos tienen garantía de 30 días a partir de la entrega. Cubre defectos del trabajo (pegado, costura); no cubre desgaste normal ni daños por agua o mal uso.",
+      "respuesta_ideal": "Sí, todos los arreglos tienen garantía de 30 días desde la entrega; cubre defectos del trabajo, no el desgaste normal ni daños por agua o mal uso."
+    },
+    {
+      "cliente": "arreglan carteras de cuero tambien?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No tengo ese dato; en la lista solo figuran trabajos de calzado. Puede consultarlo al 4 4520 118."
+    },
+    {
+      "cliente": "y zapatillas deportivas, las arreglan?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No tengo información sobre arreglos de zapatillas deportivas; lo mejor es preguntar al 4 4520 118 o traerlas para que don Ramiro las vea."
+    }
+  ],
+  [
+    {
+      "cliente": "hola, mis botas tienen la suela gastada, cuanto me cobran por cambiar la suela completa?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["120", "180"],
+      "evidencia": "- Suela completa de goma: Bs 120\n- Suela completa de cuero: Bs 180",
+      "respuesta_ideal": "Bienvenido. La suela completa de goma cuesta Bs 120 y la de cuero Bs 180, por par; el precio final se confirma al ver las botas."
+    },
+    {
+      "cliente": "cuanto demoran?",
+      "tipo": "seguimiento",
+      "accion": "responder",
+      "claves": ["3 días"],
+      "evidencia": "- Medias suelas y suelas completas: 3 días hábiles.",
+      "respuesta_ideal": "Las suelas completas demoran 3 días hábiles."
+    },
+    {
+      "cliente": "las necesito para mañana, se puede?",
+      "tipo": "instruccion",
+      "accion": "derivar",
+      "claves": [],
+      "evidencia": "No prometas plazos distintos a los de la lista. Si el cliente necesita el trabajo con urgencia, dile que lo consulte directamente con don Ramiro por WhatsApp al 70712345.",
+      "respuesta_ideal": "El plazo normal es de 3 días hábiles; si lo necesita con urgencia, consúltelo directamente con don Ramiro por WhatsApp al 70712345."
+    },
+    {
+      "cliente": "el cierre de una bota tambien esta malo, cuanto seria en total con suela de goma mas el cierre?",
+      "tipo": "combinada",
+      "accion": "responder",
+      "claves": ["165"],
+      "evidencia": "- Suela completa de goma: Bs 120 […] - Cambio de cierre en bota: Bs 45",
+      "respuesta_ideal": "Serían Bs 120 de la suela de goma más Bs 45 del cierre de bota: Bs 165 en total, a confirmar cuando veamos las botas."
+    },
+    {
+      "cliente": "aceptan pago con QR?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["QR"],
+      "evidencia": "Efectivo, pago con QR y tarjetas de débito o crédito (con recargo del 3 %). No aceptamos cheques.",
+      "respuesta_ideal": "Sí, aceptamos pago con QR, además de efectivo y tarjetas (estas con recargo del 3 %)."
+    },
+    {
+      "cliente": "hacen descuento si traigo varios pares?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No tengo información sobre descuentos por varios pares; puede consultarlo al 4 4520 118."
+    }
+  ],
+  [
+    {
+      "cliente": "deje unos zapatos la semana pasada, ya estan listos?",
+      "tipo": "instruccion",
+      "accion": "derivar",
+      "claves": [],
+      "evidencia": "No confirmes si un trabajo ya está listo: el cliente debe llamar al 4 4520 118 con su número de ticket.",
+      "respuesta_ideal": "Eso no lo puedo confirmar desde aquí; llame al 4 4520 118 con su número de ticket y le dicen si ya está listo."
+    },
+    {
+      "cliente": "es que perdi el ticket",
+      "tipo": "instruccion",
+      "accion": "responder",
+      "claves": ["cédula"],
+      "evidencia": "Si el cliente perdió el ticket, debe presentar su cédula de identidad y buscamos el trabajo por su nombre.",
+      "respuesta_ideal": "No se preocupe: traiga su cédula de identidad y buscamos el trabajo por su nombre."
+    },
+    {
+      "cliente": "hasta cuando puedo recoger? me voy de viaje",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["60 días"],
+      "evidencia": "- Los trabajos no recogidos en 60 días se donan a la parroquia San Antonio. No hay exepciones.",
+      "respuesta_ideal": "Tiene hasta 60 días; los trabajos que no se recogen en ese plazo se donan a la parroquia San Antonio, sin excepciones."
+    },
+    {
+      "cliente": "hacen entrega a domicilio?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["10", "20"],
+      "evidencia": "Marcos entrega los trabajos terminados y las compras a domicilio: Bs 10 en el casco viejo y zona norte, Bs 20 en zona sur. Se coordina por WhatsApp y se paga al recibir.",
+      "respuesta_ideal": "Sí: Bs 10 en el casco viejo y zona norte, Bs 20 en zona sur; se coordina por WhatsApp y se paga al recibir."
+    },
+    {
+      "cliente": "y a Quillacollo?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No tengo información de entregas a Quillacollo; solo figuran casco viejo, zona norte y zona sur. Consúltelo al 4 4520 118."
+    }
+  ],
+  [
+    {
+      "cliente": "buenas tardes, tienen zapatos escolares? cuanto cuestan?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["150"],
+      "evidencia": "Zapatos escolares (niño y niña): desde Bs 150",
+      "respuesta_ideal": "Bienvenido. Sí, tenemos zapatos escolares de niño y niña desde Bs 150."
+    },
+    {
+      "cliente": "y de que numero a que numero tienen?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["35", "45"],
+      "evidencia": "Tallas en tienda: del 35 al 45.",
+      "respuesta_ideal": "En tienda tenemos tallas del 35 al 45."
+    },
+    {
+      "cliente": "mi hijo calza 46, tienen?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["pedido", "15 días"],
+      "evidencia": "Tallas mayores al 45 solo a pedido, con anticipo del 50 % y entrega en 15 días.",
+      "respuesta_ideal": "En tienda no; las tallas mayores al 45 se hacen a pedido, con un anticipo del 50 % y entrega en 15 días."
+    },
+    {
+      "cliente": "si no le quedan bien los puedo cambiar?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["7 días"],
+      "evidencia": "Se aceptan cambios de calzado nuevo hasta 7 días después de la compra, con recibo y sin señales de uso (suela limpia).",
+      "respuesta_ideal": "Sí, hasta 7 días después de la compra, con el recibo y sin señales de uso."
+    },
+    {
+      "cliente": "y me devuelven la plata?",
+      "tipo": "seguimiento",
+      "accion": "responder",
+      "claves": ["no se devuelve"],
+      "evidencia": "No se devuelve dinero: solo cambio por otro producto o nota de crédito por el mismo valor.",
+      "respuesta_ideal": "No, no se devuelve dinero: solo se cambia por otro producto o se da una nota de crédito por el mismo valor."
+    },
+    {
+      "cliente": "tienen zapatos ortopedicos para pie plano?",
+      "tipo": "instruccion",
+      "accion": "derivar",
+      "claves": [],
+      "evidencia": "No des consejos médicos sobre los pies ni recomiendes calzado ortopédico; sugiere que consulte a un médico.",
+      "respuesta_ideal": "No fabricamos calzado ortopédico y no puedo aconsejarle sobre eso; le sugiero consultarlo con un médico."
+    },
+    {
+      "cliente": "gracias!",
+      "tipo": "charla",
+      "accion": "charla",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "Gracias a usted. ¡Que le vaya bien!"
+    }
+  ],
+  [
+    {
+      "cliente": "hola, hacen zapatos a medida? cuanto cuestan?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["450"],
+      "evidencia": "Calzado a medida: fabricamos calzado a medida para hombre desde Bs 450; requiere dos pruebas y el plazo es de 3 semanas.",
+      "respuesta_ideal": "Bienvenido. Sí, fabricamos calzado a medida para hombre desde Bs 450; requiere dos pruebas."
+    },
+    {
+      "cliente": "cuanto tiempo tarda?",
+      "tipo": "seguimiento",
+      "accion": "responder",
+      "claves": ["3 semanas"],
+      "evidencia": "requiere dos pruebas y el plazo es de 3 semanas.",
+      "respuesta_ideal": "El plazo es de 3 semanas, con dos pruebas en el medio."
+    },
+    {
+      "cliente": "y para mujer tambien hacen a medida?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "La información solo menciona calzado a medida para hombre; para mujer no tengo el dato. Puede consultarlo al 4 4520 118."
+    },
+    {
+      "cliente": "a que hora abren en la mañana?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["8:30"],
+      "evidencia": "Lunes a sábado: 8:30 a 12:30 y 14:30 a 19:00",
+      "respuesta_ideal": "Abrimos a las 8:30, de lunes a sábado; cerramos al mediodía de 12:30 a 14:30 y por la tarde atendemos hasta las 19:00."
+    },
+    {
+      "cliente": "los domingos atienden?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["cerrado"],
+      "evidencia": "Domingos y feriados: cerrado",
+      "respuesta_ideal": "No, los domingos y feriados estamos cerrados."
+    },
+    {
+      "cliente": "tienen sucursal en la zona sur?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No tengo información de otra sucursal; la tienda que conozco es la de la calle España N° 356, en la zona central. Puede confirmarlo al 4 4520 118."
+    }
+  ]
+]

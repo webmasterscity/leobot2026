@@ -1,0 +1,170 @@
+[
+  {
+    "cliente": "¿Cuánto cuesta un pasaje de Puerto Montt a Ancud?",
+    "tipo": "directa",
+    "accion": "responder",
+    "claves": ["Tarifa pasajero simple: $8 500 CLP"],
+    "evidencia": "Tarifa pasajero simple: $8 500 CLP",
+    "respuesta_ideal": "Un pasaje simple de Puerto Montt a Ancud cuesta $8 500. Si quieres ida y vuelta, es $15 000."
+  },
+  {
+    "cliente": "¿A qué hora salen los ferris en la mañana?",
+    "tipo": "directa",
+    "accion": "responder",
+    "claves": ["Salidas diarias: 6:30, 9:00, 11:30, 14:00, 16:30, 19:00 horas"],
+    "evidencia": "Salidas diarias: 6:30, 9:00, 11:30, 14:00, 16:30, 19:00 horas",
+    "respuesta_ideal": "Tenemos salidas a las 6:30, 9:00 y 11:30 de la mañana. También a las 14:00, 16:30 y 19:00 horas."
+  },
+  {
+    "cliente": "¿Se pueden llevar mascotas en el ferri?",
+    "tipo": "si_no",
+    "accion": "responder",
+    "claves": ["Mascotas: permitidas solo en jaulas o transportines (sin costo adicional)"],
+    "evidencia": "Mascotas: permitidas solo en jaulas o transportines (sin costo adicional)",
+    "respuesta_ideal": "Sí, las mascotas son permitidas siempre que vayan en jaulas o transportines. No hay costo adicional por ellas."
+  },
+  {
+    "cliente": "¿Cuánto tiempo tarda el viaje?",
+    "tipo": "directa",
+    "accion": "responder",
+    "claves": ["Duración: 1 hora 45 minutos"],
+    "evidencia": "Duración: 1 hora 45 minutos",
+    "respuesta_ideal": "El viaje de Puerto Montt a Ancud dura aproximadamente 1 hora y 45 minutos."
+  },
+  {
+    "cliente": "Quiero llevar mi auto. ¿Cuánto cuesta?",
+    "tipo": "seguimiento",
+    "accion": "responder",
+    "claves": ["Vehículo pequeño (hasta 5 m): $52 000 CLP", "Vehículo grande (5-7 m): $78 000 CLP"],
+    "evidencia": "Vehículo pequeño (hasta 5 m): $52 000 CLP\nVehículo grande (5-7 m): $78 000 CLP",
+    "respuesta_ideal": "Depende del tamaño. Un auto pequeño de hasta 5 metros cuesta $52 000. Si es más grande (5 a 7 metros), es $78 000."
+  },
+  {
+    "cliente": "¿Hay salidas en diciembre? Mi familia y yo vamos de vacaciones.",
+    "tipo": "instruccion",
+    "accion": "responder",
+    "claves": ["Período estival (dic-feb): se agregandas salidas"],
+    "evidencia": "Período estival (dic-feb): se agregan salidas los martes y viernes a las 17:30 horas en la ruta principal",
+    "respuesta_ideal": "Claro, en diciembre tenemos horarios especiales de verano. Se agregan salidas extra los martes y viernes a las 17:30, además de las seis salidas regulares."
+  },
+  {
+    "cliente": "¿Puedo cancelar mi reserva si cambio de planes?",
+    "tipo": "si_no",
+    "accion": "responder",
+    "claves": ["Cancelación hasta 48 horas antes: reembolso total"],
+    "evidencia": "Cancelación hasta 48 horas antes: reembolso total\nCancelación entre 24-48 horas: descuento del 50 %\nCancelación menos de 24 horas: sin reembolso",
+    "respuesta_ideal": "Sí, puedes cancelar. Si lo haces hasta 48 horas antes, te devolvemos el dinero completo. Entre 24 y 48 horas es 50 % de reembolso. Menos de 24 horas, no hay reembolso."
+  },
+  {
+    "cliente": "¿Puedo cambiar el día de mi viaje sin perder dinero?",
+    "tipo": "seguimiento",
+    "accion": "responder",
+    "claves": ["Cambio de fecha: sin costo si se solicita 7 días antes"],
+    "evidencia": "Cambio de fecha: sin costo si se solicita 7 días antes",
+    "respuesta_ideal": "Sí, si solicitas el cambio 7 días o más antes de tu viaje, no cuesta nada. Si es menos tiempo, aplican las políticas de cancelación."
+  },
+  {
+    "cliente": "¿Qué documentación necesito?",
+    "tipo": "directa",
+    "accion": "responder",
+    "claves": ["Todos los pasajeros deben portar cédula de identidad o pasaporte vigente"],
+    "evidencia": "Todos los pasajeros deben portar cédula de identidad o pasaporte vigente",
+    "respuesta_ideal": "Debes traer cédula de identidad o pasaporte vigente. Los menores de 18 sin documento pueden ir si vienen acompañados por un mayor de edad."
+  },
+  {
+    "cliente": "¿Puedo llevar mi bicicleta?",
+    "tipo": "si_no",
+    "accion": "responder",
+    "claves": ["Bicicletas: $3 500 extra; deben atarse en área de carga"],
+    "evidencia": "Bicicletas: $3 500 extra; deben atarse en área de carga",
+    "respuesta_ideal": "Sí, puedes llevar bicicleta por $3 500 adicionales. Debe estar asegurada en el área de carga del ferri."
+  },
+  {
+    "cliente": "¿Hay forma de ahorrar en los pasajes?",
+    "tipo": "instruccion",
+    "accion": "responder",
+    "claves": ["Tarjeta estudiante: 25 % descuento", "Tarjeta seniorasajero 65+: 20 % descuento", "Grupo 10+ personas: 15 % descuento", "bonos prepagados (10 % descuento en pack de 10 pasajes)"],
+    "evidencia": "Tarjeta estudiante: 25 % descuento (acreditación requerida)\nTarjeta seniorasajero 65+: 20 % descuento\nGrupo 10+ personas: 15 % descuento en pasajes\nSistema de bonos prepagados (10 % descuento en pack de 10 pasajes)",
+    "respuesta_ideal": "Sí, hay varias opciones. Estudiantes: 25 % descuento. Mayores de 65: 20 %. Grupos de 10+: 15 %. También puedes comprar bonos de 10 pasajes con 10 % descuento."
+  },
+  {
+    "cliente": "Soy estudiante. ¿Qué necesito para el descuento?",
+    "tipo": "seguimiento",
+    "accion": "responder",
+    "claves": ["Tarjeta estudiante", "acreditación requerida"],
+    "evidencia": "Tarjeta estudiante: 25 % descuento (acreditación requerida)",
+    "respuesta_ideal": "Necesitas acreditar que eres estudiante. Trae tu carnet o certificado de matrícula de la escuela o universidad."
+  },
+  {
+    "cliente": "¿Hay wifi a bordo?",
+    "tipo": "si_no",
+    "accion": "responder",
+    "claves": ["Wifi gratis a bordo (conexión limitada)"],
+    "evidencia": "Wifi gratis a bordo (conexión limitada)",
+    "respuesta_ideal": "Sí, hay wifi gratis. Ten en cuenta que la conexión es limitada, así que es mejor para mensajes rápidos que para videos."
+  },
+  {
+    "cliente": "¿Tienen ruta a Quellón también?",
+    "tipo": "directa",
+    "accion": "responder",
+    "claves": ["RUTA SECUNDARIA: Ancud ↔ Quellón", "Salidas: viernes y domingo a las 7:00 horas"],
+    "evidencia": "RUTA SECUNDARIA: Ancud ↔ Quellón (dentro de Chiloé)\nDistancia: 87 km | Duración: 4 horas 30 minutos\nSalidas: viernes y domingo a las 7:00 horas",
+    "respuesta_ideal": "Sí, tenemos ruta Ancud-Quellón. Sale los viernes y domingos a las 7:00 de la mañana. El viaje dura 4 horas y media."
+  },
+  {
+    "cliente": "¿Qué pasa si pierdo mi equipaje en el ferri?",
+    "tipo": "instruccion",
+    "accion": "derivar",
+    "claves": [],
+    "evidencia": null,
+    "respuesta_ideal": "Si pierdes equipaje, contacta a reclamos@navieraprerez.cl dentro de 48 horas. Ten a mano los datos de tu viaje y una descripción del equipaje."
+  },
+  {
+    "cliente": "¿Cuántos pasajeros caben en cada ferri?",
+    "tipo": "directa",
+    "accion": "responder",
+    "claves": ["Barcos con capacidad para 280 pasajeros"],
+    "evidencia": "Barcos con capacidad para 280 pasajeros",
+    "respuesta_ideal": "Nuestros barcos tienen capacidad para 280 pasajeros. Está muy bien equipado para la seguridad de todos."
+  },
+  {
+    "cliente": "¿Qué hay para comer en el barco?",
+    "tipo": "directa",
+    "accion": "responder",
+    "claves": ["Cafetería a bordo (bebidas, sándwiches, postres)"],
+    "evidencia": "Cafetería a bordo (bebidas, sándwiches, postres)",
+    "respuesta_ideal": "Tenemos cafetería a bordo donde puedes comprar bebidas, sándwiches y postres durante el viaje."
+  },
+  {
+    "cliente": "¿Aceptan tarjeta de crédito para pagar?",
+    "tipo": "si_no",
+    "accion": "responder",
+    "claves": ["Tarjeta de débito y crédito"],
+    "evidencia": "Tarjeta de débito y crédito",
+    "respuesta_ideal": "Sí, aceptamos tarjeta de débito y crédito. También transferencia bancaria, efectivo en taquilla y billetera digital."
+  },
+  {
+    "cliente": "Tengo una bicicleta y dos bultos grandes. ¿Cuánto me cuesta todo?",
+    "tipo": "combinada",
+    "accion": "responder",
+    "claves": ["Tarifa pasajero simple: $8 500 CLP", "Bicicletas: $3 500 extra", "Carga suelta (por kg): $450/kg (mínimo $5 000)"],
+    "evidencia": "Tarifa pasajero simple: $8 500 CLP\nBicicletas: $3 500 extra; deben atarse en área de carga\nCarga suelta (por kg): $450/kg (mínimo $5 000)",
+    "respuesta_ideal": "Tu pasaje es $8 500. La bicicleta $3 500 extra. Los bultos se cobran por peso a $450 por kilo, con mínimo de $5 000. Necesitaría saber el peso de tus bultos para presupuesto exacto."
+  },
+  {
+    "cliente": "¿Cuando es buena época para viajar sin problemas de mar?",
+    "tipo": "sin_respuesta",
+    "accion": "abstenerse",
+    "claves": [],
+    "evidencia": null,
+    "respuesta_ideal": "Eso depende del clima y las condiciones del mar. Te recomendamos que consultes directamente en el teléfono (56-65) 2234-4567 o por WhatsApp. Pueden darte mejores consejos sobre las condiciones actuales."
+  },
+  {
+    "cliente": "Gracias por la informacion.",
+    "tipo": "charla",
+    "accion": "charla",
+    "claves": [],
+    "evidencia": null,
+    "respuesta_ideal": "De nada, fue un placer ayudarte. ¡Buen viaje a Chiloé! Si tienes más dudas, no dudes en llamar al (56-65) 2234-4567 o visita www.navieraprerez.cl."
+  }
+]
