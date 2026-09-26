@@ -117,3 +117,43 @@ Se informa el desacuerdo entre los dos primeros.
 - medidas generales ≤ 30 min.
 
 Hasta 16 procesos, con al menos 2 GB de RAM libres.
+
+## Resultado (2026-09-26, banco congelado de 24 negocios nuevos y 639 turnos; conteo automático)
+
+**G-60 no supera la puerta 1, y no se promueve.** El kiosco de referencia sigue siendo `estable-G-17` (`freeze-G-58r`).
+
+| Variante (mismo banco) | Útiles en directa + sí/no | Citas | Útiles · no útiles · sin dato |
+|---|---|---|---|
+| **G-60** (7 rasgos, desde 0,7) | **29/267** | 45 | 35 · 6 · 4 (78 % útiles) |
+| Control: dos rasgos a 0,7 | 30/267 | 38 | 31 · 5 · 2 |
+| Rasgos barajados | 16/267 | 55 | 24 · 15 · 16 |
+| G-60 desde 0,5 (diagnóstico) | 67/267 | 125 | 86 · 26 · 13 (69 %) |
+| G-58r desplegado (diagnóstico) | 82/268 | 190 | 107 · 40 · 42 (56 %) |
+| Contestando siempre: G-60 · G-58r | 137/267 · 134/267 | — | — |
+
+**Por qué no se corrió el juez doble.**
+- En preguntas directas o de sí/no, G-60 cita solo 31 veces. Aunque todas fueran útiles, no llega a 1,3 × los 30 útiles del control ni a +5.
+- Para pasar, el juez tendría que dejar el control en 23 o menos. En las 654 citas juzgadas antes, el conteo automático dio 1 solo falso positivo.
+- Juzgar no cambiaría ninguna decisión (regla 14 de `CLAUDE.md`). Se declara como desvío del protocolo, y las cifras de arriba son del conteo automático.
+- Tampoco se midió el desacuerdo entre dos jueces (propuesta 2 del plan 3). Queda pendiente para cuando decida algo.
+
+**Controles:**
+- rasgos barajados: menos útiles (16) y menos acierto (44 %). Las cuentas importan.
+- otro negocio: 0 útiles y 612/639 «No lo sé» (95,8 %);
+- reinicio: 639/639 idénticas;
+- renombrado estricto: 636/639 (99,5 %).
+
+**Lo que la medida enseña.**
+1. **La ventaja de desarrollo no se transfirió.** Con validación cruzada en los bancos gastados, los 7 rasgos daban 1,6 a 1,75 veces más útiles que la celda de dos rasgos a 0,7. En el banco nuevo dan lo mismo: 29 frente a 30. Los tramos altos de la calibración reúnen pocos casos por negocio y no se sostienen en negocios nuevos.
+2. **Los rasgos sí suben el acierto de lo que se cita.** Desde 0,5, el 69 % de las citas de G-60 son útiles, frente al 56 % de G-58r. Pero muestra menos útiles: 67 frente a 82. Esto viene del banco, ahora gastado, y no se usa como resultado.
+3. **Citar desde 0,7 deja al kiosco casi mudo:** muestra algo en 45 de 639 turnos. El plan 3 lo pedía por el examen privado. Aquí se ve su precio: 29 útiles frente a 82.
+4. **Cuánto sirve la unidad elegida:** contestando siempre, sirve en el 51 % de las preguntas (137/267). Mientras la unidad buena no esté más veces en primer lugar, ninguna confianza puede mostrar mucho más sin engañar.
+
+**Pruebas generales sobre `freeze-G-60`:**
+- regresión 664/6/0;
+- conversación 101/21/36 = 158;
+- MFAQ `valid` 57,46 % frente a 57,24 %;
+- SQuAD-es: unidad con la respuesta 0,8013 frente a 0,7987, F1 0,2485;
+- p95 de `answer` 0,41 ms.
+
+**Retención 5.9:** la confianza de siete rasgos no pasa la puerta 1 y se retira como punto de operación. El código queda inerte sin un modelo contado en la base (sin `confidence`, deciden las celdas de G-58). Se conserva porque el siguiente paso lo usa para otra cosa (ver el estado).
