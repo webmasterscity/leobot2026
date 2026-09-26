@@ -72,3 +72,32 @@ Congelado `freeze-G-59`; semilla de su huella.
 ## Presupuesto
 
 Educación ≤ 5 min. Banco y juez ≤ 1 h. Hasta 16 procesos, con al menos 2 GB de RAM libres.
+
+## Enmienda previa al congelado (2026-09-26, desarrollo)
+
+**1. El contraste es el exceso, sin normalizar:** δ(q) = π_propia(q) − π_ajena(q), y lo mismo en el puente. La forma normalizada, (π_propia − π_ajena) / (1 − π_ajena), amplifica el ruido de las palabras que están en casi toda respuesta larga: «de» da 0,22 y «el» 0,23. Con el exceso dan 0,02 y 0,016, mientras «control» da 0,60 y «mascota» 0,77.
+
+**2. Tercer cambio, la clase de respuesta pedida** (interruptor `answer_class`). Para la clase de pregunta (interrogativa, con su sustantivo si lo hay), se toma de G-53 (SQuAD-es) la clase más frecuente de la respuesta y su proporción s. Cada unidad sabe qué clases contiene (etiquetador aprendido de AnCora). La unidad que contiene esa clase suma log(s/p₀ + 1 − s); la que no, log(1 − s). Se usa la clase más frecuente sin exigir dominio, porque en la mezcla una clase débil o común pesa poco por sí sola: «cuánto» pide número (63 %) y «quién» pide nombre propio (68 %). Control: sin clase.
+
+**3. Diagnóstico añadido** (no es puerta), con conteo automático: contestando siempre, G-59 frente a G-58r en el banco nuevo, y posición de la unidad correcta.
+
+**Cifras de desarrollo (conteo automático).** Unidad correcta en 1.ª posición, o entre las 3 primeras:
+
+| Variante | Bancos de G-57 y G-58 (508) | A–F (264) |
+|---|---|---|
+| G-58r | 49,6 % / 69,9 % | 53,8 % / 71,2 % |
+| Exceso, sin clase | 52,4 % / 73,6 % | 56,8 % / 72,7 % |
+| **G-59 (exceso, clase, títulos fuera)** | **54,1 % / 74,6 %** | **58,0 % / 74,2 %** |
+
+Las tablas de G-59 se contaron en los bancos de G-57 y G-58, que ya son desarrollo.
+
+**Citas útiles en directa + sí/no en A–F** (no usado para las tablas):
+
+| Parte | G-59 | G-58r |
+|---|---|---|
+| A–D | 44/181 | 48/181 |
+| E–F | 26/95 | 26/95 |
+
+G-59 cita menos en preguntas sin respuesta (A–D: 11 frente a 18) y con más precisión (63 % frente a 58 % de citas útiles).
+
+**Expectativa, declarada antes de medir:** el orden mejora y se transfiere a A–F, pero las citas útiles no suben en desarrollo, porque la celda «2,3» (122 casos) queda en el 48 %, bajo el umbral del 50 %. **La puerta 1 (+5 puntos) puede no pasar.** Los umbrales no cambian.

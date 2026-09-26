@@ -21,6 +21,8 @@ import math
 import re
 import unicodedata
 
+from .reading import KIND_SUPPORT
+
 _TOKEN = re.compile(r'\w+|[^\w\s]')
 _LIST_MARK = re.compile(r'^\s*(?:[-*•·–—]+|\d{1,3}[.)])\s+')
 _MD_HEADING = re.compile(r'^#{1,6}\s*')
@@ -166,7 +168,7 @@ class ContextMixin:
         def add(display: str, kind: str) -> None:
             heading = question or section
             units.append({'text': display, 'heading': heading, 'kind': kind, 'source': source,
-                          'terms': sorted(set(self.context_terms(display)))})
+                          'terms': sorted(set(self.context_terms(display))), 'classes': self._classes(display)})
 
         lines = [raw.strip() for raw in str(text).splitlines()]
         following = [''] * len(lines)
@@ -216,13 +218,36 @@ class ContextMixin:
                     section, question = body, ''
                 # The heading is also a unit.
                 units.append({'text': body, 'heading': '', 'kind': 'question' if line.endswith('?') else 'heading',
-                              'source': source, 'terms': sorted(set(self.context_terms(body)))})
+                              'source': source, 'terms': sorted(set(self.context_terms(body))), 'classes': []})
                 continue
             for sentence in _SENTENCE_END.split(line):
                 if sentence.strip():
                     add(sentence.strip(), 'sentence' if sentence != line else 'line')
         self._layout_title = title
         return units
+
+    def _classes(self, text: str) -> list[str]:
+        """G-59: the learned word classes (AnCora tagger) present in a unit."""
+        if not self.syntax_model.get('sentences'):
+            return []
+        words = self.split_words(text)
+        return sorted(set(self.tag_words(words) or [])) if words else []
+
+    def _asked_class(self, question: str):
+        """G-59: the class of answer this kind of question asks for, learned
+        in G-53 by counting worked questions (SQuAD-es): its most frequent
+        class and that class's share.  A weak or common class weighs little
+        by itself in the mixture, so no dominance threshold is needed."""
+        if not self.syntax_model.get('sentences') or not getattr(self, 'answer_class', True):
+            return None
+        words = [w.lower() for w in self.split_words(question) if w[:1].isalnum()]
+        table = self.reading_model.get('answer_kinds', {})
+        for key in reversed(self._kind_keys(words)):
+            row = table.get(key)
+            if row and row['n'] >= KIND_SUPPORT:
+                cls, count = max(sorted(row['classes'].items()), key=lambda kv: kv[1])
+                return cls, count / row['n']
+        return None
 
     def load_context(self, text: str, instructions: str = '') -> dict:
         """Replace the loaded context with a text and its instructions."""
@@ -238,15 +263,15 @@ class ContextMixin:
         if getattr(self, '_context_index', None) is None:
             postings: dict = {}
             for i, unit in enumerate(self.context_units):
-                if unit['kind'] == 'question':
-                    continue  # a question heads its answer; it is never the answer
+                if unit['kind'] == 'question' or (unit['kind'] == 'heading' and not getattr(self, 'bare_headings', False)):
+                    continue  # a question or a heading heads its answer; it is never the answer (G-59)
                 for term in unit['terms']:
                     postings.setdefault(term, []).append(i)
             self._context_index = postings
         return self._context_index
 
     # ----- retrieval ----------------------------------------------------
-    def _rank(self, terms: list[str]) -> dict | None:
+    def _rank(self, terms: list[str], question: str = '') -> dict | None:
         """The best unit for these question words and its calibration cell."""
         units = self.context_units
         if not units:
@@ -275,6 +300,19 @@ class ContextMixin:
                 gains[i] = gains.get(i, 0.0) + gain
                 how.setdefault(i, {})[q] = kind
             how.setdefault(None, {})[q] = 0.0 if q in title else delta
+        asked = self._asked_class(question) if question else None
+        if asked is not None:
+            # The answer holds a word of the asked class (share learned in G-53),
+            # or it holds one by chance, like any unit of this text.
+            cls, share = asked
+            share = min(share, 1 - 1e-4)
+            having = [i for i, u in enumerate(units) if cls in u.get('classes', ())
+                      and u['kind'] not in ('question', 'heading')]
+            p0 = (len(having) + 0.5) / (total + 1)
+            absent = math.log(1 - share)
+            base += absent
+            for i in having:
+                gains[i] = gains.get(i, 0.0) + math.log(share / p0 + 1 - share) - absent
         if not gains:
             order = [(base, 0)]
         else:
@@ -346,7 +384,7 @@ class ContextMixin:
             said = (opening or text).strip(' ,.;:')
             return {'text': (said[:1].upper() + said[1:] + '.') if said else '', 'status': 'phatic',
                     'evidence': None, 'confidence': None}
-        ranked = self._rank(self.context_terms(text))
+        ranked = self._rank(self.context_terms(text), text)
         level = self._level(ranked)
         prefix = (opening[:1].upper() + opening[1:] + '. ') if opening else ''
         table = self.context_model.get('closest_cells' if level == 'closest' else 'cells', {})

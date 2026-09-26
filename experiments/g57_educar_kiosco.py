@@ -94,8 +94,10 @@ def admit(cells: dict) -> list[str]:
 
 
 def main():
-    base, out = Path(sys.argv[1]), Path(sys.argv[2])
-    mfaq = Path(sys.argv[3]) if len(sys.argv) > 3 else Path('/tmp/mfaq_es_train.jsonl')
+    args = [a for a in sys.argv[1:] if not a.startswith('--')]
+    contrast = '--sin-contraste' not in sys.argv   # G-59: δ contra una respuesta ajena del mismo dominio
+    base, out = Path(args[0]), Path(args[1])
+    mfaq = Path(args[2]) if len(args) > 2 else Path('/tmp/mfaq_es_train.jsonl')
     if hashlib.sha256(mfaq.read_bytes()).hexdigest() != MFAQ_SHA:
         raise RuntimeError('MFAQ es train cambió.')
     t0 = time.time()
@@ -153,11 +155,37 @@ def main():
         # δ: how often an answer holds the word *because* its question has it.
         return max(0.0, (repeat - anywhere) / (1 - anywhere)) if anywhere < 1 else 0.0
 
-    delta = {t: round(mixture((n_self.get(t, 0) + 1) / (n + 2), n_a.get(t, 0) / n_pairs), 4)
-             for t, n in n_q.items() if n >= PI_MIN}
-    rare = [t for t, n in n_q.items() if RARE[0] <= n <= RARE[1]]
-    rare_delta = round(mixture((sum(n_self.get(t, 0) for t in rare) + 1) / (sum(n_q[t] for t in rare) + 2),
-                               sum(n_a.get(t, 0) for t in rare) / max(1, len(rare)) / n_pairs), 4)
+    # G-59: the other answer of each pair, from the same domain (same style and length), chosen with a seed.
+    others = []
+    for rows, domain in zip(tokenized, sorted(reservoir)):
+        if len(rows) < 2:
+            others.append(None)
+            continue
+        shift = random.Random(f'{SEED}:{domain}').randrange(1, len(rows))
+        others.append([rows[(i + shift) % len(rows)][1] for i in range(len(rows))])
+    excess = '--normalizado' not in sys.argv
+    contrast_weight = (lambda own, other: max(0.0, own - other)) if excess else mixture
+    if contrast:
+        n_c, own_c, other_c = {}, {}, {}
+        for rows, alien in zip(tokenized, others):
+            if alien is None:
+                continue
+            for (q, a), a2 in zip(rows, alien):
+                for t in q:
+                    n_c[t] = n_c.get(t, 0) + 1
+                    own_c[t] = own_c.get(t, 0) + (t in a)
+                    other_c[t] = other_c.get(t, 0) + (t in a2)
+        delta = {t: round(contrast_weight((own_c[t] + 1) / (n + 2), (other_c[t] + 1) / (n + 2)), 4)
+                 for t, n in n_c.items() if n >= PI_MIN}
+        rare = [t for t, n in n_c.items() if RARE[0] <= n <= RARE[1]]
+        rare_delta = round(contrast_weight((sum(own_c[t] for t in rare) + 1) / (sum(n_c[t] for t in rare) + 2),
+                                           (sum(other_c[t] for t in rare) + 1) / (sum(n_c[t] for t in rare) + 2)), 4)
+    else:
+        delta = {t: round(mixture((n_self.get(t, 0) + 1) / (n + 2), n_a.get(t, 0) / n_pairs), 4)
+                 for t, n in n_q.items() if n >= PI_MIN}
+        rare = [t for t, n in n_q.items() if RARE[0] <= n <= RARE[1]]
+        rare_delta = round(mixture((sum(n_self.get(t, 0) for t in rare) + 1) / (sum(n_q[t] for t in rare) + 2),
+                                   sum(n_a.get(t, 0) for t in rare) / max(1, len(rare)) / n_pairs), 4)
     # Puente: pares (q, a) con q y a presentes en ≥ BRIDGE_SUPPORT dominios.
     q_ok = {t for t, n in dom_q.items() if n >= BRIDGE_SUPPORT}
     a_ok = {t for t, n in dom_a.items() if n >= BRIDGE_SUPPORT}
@@ -172,21 +200,45 @@ def main():
                     local.add(key)
         for key in local:
             support[key] = support.get(key, 0) + 1
+    kept = {key for key, s in support.items() if s >= BRIDGE_SUPPORT}
+    if contrast:
+        # G-59: the same association in the other answer of the pair.
+        joint_own, joint_other, n_pair = {}, {}, {}
+        for rows, alien in zip(tokenized, others):
+            if alien is None:
+                continue
+            for (q, a), a2 in zip(rows, alien):
+                for x in q & q_ok:
+                    n_pair[x] = n_pair.get(x, 0) + 1
+                    for y in (a & a_ok) - q:
+                        key = x + '\x1f' + y
+                        if key in kept:
+                            joint_own[key] = joint_own.get(key, 0) + 1
+                    for y in (a2 & a_ok) - q:
+                        key = x + '\x1f' + y
+                        if key in kept:
+                            joint_other[key] = joint_other.get(key, 0) + 1
     rows_by_q = {}
-    for key, s in support.items():
-        if s < BRIDGE_SUPPORT:
-            continue
+    for key in kept:
         x, y = key.split('\x1f')
         p_cond = joint[key] / n_q[x]
         if p_cond / (n_a[y] / n_pairs) < BRIDGE_LIFT:
             continue
-        rows_by_q.setdefault(x, []).append((mixture(p_cond, n_a[y] / n_pairs), y))
+        if contrast:
+            n = n_pair.get(x, 0)
+            if not n:
+                continue
+            weight = contrast_weight(joint_own.get(key, 0) / n, joint_other.get(key, 0) / n)
+        else:
+            weight = mixture(p_cond, n_a[y] / n_pairs)
+        if weight > 0:
+            rows_by_q.setdefault(x, []).append((weight, y))
     bridge = {x: '|'.join(f'{y}:{p:.4f}' for p, y in sorted(rows, key=lambda r: (-r[0], r[1]))[:BRIDGE_TOP])
               for x, rows in sorted(rows_by_q.items())}
     del joint, support, tokenized
     t_bridge = time.time() - t0
     bot.context_model = {'delta': delta, 'rare_delta': rare_delta, 'bridge': bridge, 'admitted': [], 'cells': {},
-                         'source': {'mfaq': MFAQ_URL, 'sha256': MFAQ_SHA, 'pairs': n_pairs,
+                         'source': {'mfaq': MFAQ_URL, 'sha256': MFAQ_SHA, 'pairs': n_pairs, 'contrast': contrast,
                                     'domains': len(reservoir), 'calibration_domains': len(calib_pages)}}
     # Calibración en los dominios reservados.
     cells, questions = {}, 0
