@@ -1,0 +1,742 @@
+[
+ {
+  "id": "i0009",
+  "negocio": "Q1_n1",
+  "turnos_previos_del_cliente": [
+   "Mi hijo tiene 15 años, puede saltar?"
+  ],
+  "cliente": "cual es el peso máximo para saltar?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "100 kg"
+  ],
+  "evidencia": "Peso máximo: 100 kg con ropa. Entre 95 y 100 kg se cobra un suplemento de 30 €.",
+  "respuesta_ideal": "El peso máximo es 100 kg con ropa; entre 95 y 100 kg se cobra un suplemento de 30 €.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Peso máximo: 100 kg con ropa. Entre 95 y 100 kg se cobra un suplemento de 30 €»."
+ },
+ {
+  "id": "i0045",
+  "negocio": "Q1_n1",
+  "turnos_previos_del_cliente": [
+   "Buenos días! venden bonos para regalar un salto?",
+   "y si al final no lo usa, le devuelven el dinero?",
+   "hasta que altura suben?",
+   "y cuanto dura la caida libre?"
+  ],
+  "cliente": "cuánto cuesta el curso para aprender a saltar solo?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo el precio del curso AFF; puedes consultarlo en recepción o escribir a aff@celobertskydive.es.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «¿Hacéis cursos para saltar solo?»."
+ },
+ {
+  "id": "i0062",
+  "negocio": "Q1_n1",
+  "turnos_previos_del_cliente": [
+   "Hola buenas! cuánto cuesta saltar en paracaídas con un instructor?"
+  ],
+  "cliente": "y con video?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "379 €",
+   "449 €"
+  ],
+  "evidencia": "| Tándem + vídeo y fotos (cámara de mano del instructor) | 379 € |\n| Tándem + vídeo y fotos con camarógrafo externo | 449 € |",
+  "respuesta_ideal": "Con vídeo y fotos grabados por la cámara de mano de tu instructor son 379 €; si lo graba un camarógrafo externo, 449 €.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Producto: Tándem + vídeo y fotos con camarógrafo externo; Precio: 449 €»."
+ },
+ {
+  "id": "i0133",
+  "negocio": "Q1_n1",
+  "turnos_previos_del_cliente": [
+   "Buenos días! venden bonos para regalar un salto?",
+   "y si al final no lo usa, le devuelven el dinero?",
+   "hasta que altura suben?",
+   "y cuanto dura la caida libre?"
+  ],
+  "cliente": "cuánto cuesta el curso para aprender a saltar solo?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo el precio del curso AFF; puedes consultarlo en recepción o escribir a aff@celobertskydive.es.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Consulta en recepción o escribe a aff@celobertskydive.es»."
+ },
+ {
+  "id": "i0140",
+  "negocio": "Q1_n1",
+  "turnos_previos_del_cliente": [
+   "Hola buenas! cuánto cuesta saltar en paracaídas con un instructor?",
+   "y con video?",
+   "somos 7 amigos, nos hacen algun descuento por ser grupo?",
+   "y cuanto pagaría cada uno entonces, sin video?"
+  ],
+  "cliente": "el descuento sirve tambien si cogemos el video?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "no aplica al vídeo"
+  ],
+  "evidencia": "Grupos de 6 o más personas: 10 % de descuento en el salto (no aplica al vídeo).",
+  "respuesta_ideal": "El descuento es solo sobre el salto; no aplica al vídeo.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Grupos de 6 o más personas: 10 % de descuento en el salto (no aplica al vídeo)»."
+ },
+ {
+  "id": "i0156",
+  "negocio": "Q1_n1",
+  "turnos_previos_del_cliente": [
+   "Hola buenas! cuánto cuesta saltar en paracaídas con un instructor?",
+   "y con video?"
+  ],
+  "cliente": "somos 7 amigos, nos hacen algun descuento por ser grupo?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "10 %"
+  ],
+  "evidencia": "Grupos de 6 o más personas: 10 % de descuento en el salto (no aplica al vídeo).",
+  "respuesta_ideal": "Sí, los grupos de 6 o más personas tienen un 10 % de descuento en el salto.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Grupos de 6 o más personas: 10 % de descuento en el salto (no aplica al vídeo)»."
+ },
+ {
+  "id": "i0163",
+  "negocio": "Q1_n1",
+  "turnos_previos_del_cliente": [
+   "Mi hijo tiene 15 años, puede saltar?",
+   "cual es el peso máximo para saltar?",
+   "yo peso 97 kilos, cuanto me saldría el salto con el video que graba el instructor?"
+  ],
+  "cliente": "me operaron de una hernia discal hace un año, puedo saltar sin problema?",
+  "tipo": "instruccion",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "No des opiniones médicas ni digas si alguien puede saltar con una lesión, operación o enfermedad concreta. Dile que traiga certificado médico y que hable con la jefa de instructores, Marta Vilanova, en recepción.",
+  "respuesta_ideal": "No puedo valorar tu caso médico. Trae un certificado médico y habla con la jefa de instructores, Marta Vilanova, en recepción.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Mayores de 60 años o personas con problemas cardíacos, de espalda o epilepsia deben traer un certificado médico firmado en los últimos 3 meses»."
+ },
+ {
+  "id": "i0191",
+  "negocio": "Q1_n1",
+  "turnos_previos_del_cliente": [
+   "Buenos días! venden bonos para regalar un salto?",
+   "y si al final no lo usa, le devuelven el dinero?",
+   "hasta que altura suben?"
+  ],
+  "cliente": "y cuanto dura la caida libre?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "50 segundos"
+  ],
+  "evidencia": "unos 50 segundos de caída libre a 200 km/h y de 5 a 7 minutos bajo la campana",
+  "respuesta_ideal": "Son unos 50 segundos de caída libre a 200 km/h, y luego de 5 a 7 minutos bajo la campana.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Primero registro y firma de la declaración de riesgos, luego un briefing de 20 minutos con tu instructor, equipamiento, vuelo y salto: unos 50 segundos de caída libre a 200 km/h y de 5 a 7 minutos bajo la campana»."
+ },
+ {
+  "id": "i0267",
+  "negocio": "Q1_n1",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Hola buenas! cuánto cuesta saltar en paracaídas con un instructor?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "289 €"
+  ],
+  "evidencia": "| Salto tándem desde 4.000 m | 289 € |",
+  "respuesta_ideal": "¡Hola, bienvenido a Cel Obert Skydive! El salto tándem desde 4.000 m con instructor cuesta 289 €, IVA incluido.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Mayores de 60 años o personas con problemas cardíacos, de espalda o epilepsia deben traer un certificado médico firmado en los últimos 3 meses»."
+ },
+ {
+  "id": "i0270",
+  "negocio": "Q1_n1",
+  "turnos_previos_del_cliente": [
+   "a que hora abren en octubre?",
+   "y los lunes?",
+   "cuánto tiempo tengo que calcular que voy a estar allí?",
+   "mi novia viene conmigo pero no salta, tiene que pagar algo por mirar?"
+  ],
+  "cliente": "la cafeteria tiene opciones veganas?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo información sobre la carta de la cafetería La Manga; puedes preguntarlo en recepción, en el +34 972 45 88 10.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Sí. La zona de aterrizaje y la cafetería La Manga son de acceso libre y gratuito»."
+ },
+ {
+  "id": "i0280",
+  "negocio": "Q1_n1",
+  "turnos_previos_del_cliente": [
+   "a que hora abren en octubre?",
+   "y los lunes?"
+  ],
+  "cliente": "cuánto tiempo tengo que calcular que voy a estar allí?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "3 o 4 horas"
+  ],
+  "evidencia": "Cuenta con pasar unas 3 o 4 horas en el centro.",
+  "respuesta_ideal": "Cuenta con pasar unas 3 o 4 horas en el centro.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Volamos con dos Pilatus Porter y un Twin Otter que suben a 4.000 metros en unos 15 minutos»."
+ },
+ {
+  "id": "i0302",
+  "negocio": "Q1_n1",
+  "turnos_previos_del_cliente": [],
+  "cliente": "a que hora abren en octubre?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "9:00",
+   "18:30"
+  ],
+  "evidencia": "Temporada media (marzo a mayo y del 16 de septiembre a octubre): de miércoles a domingo, de 9:00 a 18:30.",
+  "respuesta_ideal": "En octubre abrimos de miércoles a domingo, de 9:00 a 18:30.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Temporada media (marzo a mayo y del 16 de septiembre a octubre): de miércoles a domingo, de 9:00 a 18:30»."
+ },
+ {
+  "id": "i0023",
+  "negocio": "Q3_n1",
+  "turnos_previos_del_cliente": [
+   "Hola, ¿a qué hora cierran hoy?",
+   "¿Cuánto cuesta un chocolate de 50 gramos?",
+   "¿Hacen envíos a Quito?",
+   "¿Se puede llegar en tour a la fábrica los domingos?",
+   "Mañana vamos 12 adultos y 3 niños de 8 años. ¿Cuánto saldría el tour?",
+   "¿Necesitamos reservar con anticipación?",
+   "¿A qué hora sale el próximo tour?"
+  ],
+  "cliente": "¿El chocolate de ustedes tiene frutos secos adentro?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "Nuestro chocolate se elabora en instalaciones que procesan frutos secos (almendras, maní). Información detallada sobre ingredientes: disponible en la tienda con el encargado.",
+  "respuesta_ideal": "Es importante que hables directamente con nuestro encargado en la tienda sobre eso. Nuestro chocolate se hace en un lugar donde procesamos frutos secos, así que podría haber trazas. Llama al +593 2 290-0123 para más detalles sobre los ingredientes exactos.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Nuestro chocolate se elabora en instalaciones que procesan frutos secos (almendras, maní)»."
+ },
+ {
+  "id": "i0054",
+  "negocio": "Q3_n1",
+  "turnos_previos_del_cliente": [
+   "Hola, ¿a qué hora cierran hoy?",
+   "¿Cuánto cuesta un chocolate de 50 gramos?",
+   "¿Hacen envíos a Quito?",
+   "¿Se puede llegar en tour a la fábrica los domingos?",
+   "Mañana vamos 12 adultos y 3 niños de 8 años. ¿Cuánto saldría el tour?",
+   "¿Necesitamos reservar con anticipación?",
+   "¿A qué hora sale el próximo tour?",
+   "¿El chocolate de ustedes tiene frutos secos adentro?",
+   "¿Venden caramelos de chocolate?",
+   "¿Hacen chocolates sin azúcar?"
+  ],
+  "cliente": "¿Cuánto tiempo dura el tour?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "45 minutos"
+  ],
+  "evidencia": "El tour dura 45 minutos.",
+  "respuesta_ideal": "El tour dura 45 minutos. Es suficiente para ver todo el proceso y una pequeña charla sobre nuestros métodos.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «El tour dura 45 minutos»."
+ },
+ {
+  "id": "i0061",
+  "negocio": "Q3_n1",
+  "turnos_previos_del_cliente": [
+   "Hola, ¿a qué hora cierran hoy?",
+   "¿Cuánto cuesta un chocolate de 50 gramos?",
+   "¿Hacen envíos a Quito?",
+   "¿Se puede llegar en tour a la fábrica los domingos?",
+   "Mañana vamos 12 adultos y 3 niños de 8 años. ¿Cuánto saldría el tour?",
+   "¿Necesitamos reservar con anticipación?",
+   "¿A qué hora sale el próximo tour?",
+   "¿El chocolate de ustedes tiene frutos secos adentro?",
+   "¿Venden caramelos de chocolate?"
+  ],
+  "cliente": "¿Hacen chocolates sin azúcar?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "Tabletas de chocolate sin azúcar (85 g): $4,50"
+  ],
+  "evidencia": "Tabletas de chocolate sin azúcar (85 g): $4,50",
+  "respuesta_ideal": "Sí, tenemos tabletas sin azúcar de 85 gramos a $4,50 cada una.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Sin llanta de repuesto (suministramos la llanta): $55,00»."
+ },
+ {
+  "id": "i0087",
+  "negocio": "Q3_n1",
+  "turnos_previos_del_cliente": [
+   "Hola, ¿a qué hora cierran hoy?",
+   "¿Cuánto cuesta un chocolate de 50 gramos?",
+   "¿Hacen envíos a Quito?"
+  ],
+  "cliente": "¿Se puede llegar en tour a la fábrica los domingos?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "lunes a sábado",
+   "no hay tours ese día"
+  ],
+  "evidencia": "Ofrecemos tours de la fábrica de lunes a sábado.",
+  "respuesta_ideal": "No, los tours de la fábrica son de lunes a sábado. El domingo cerramos los tours, pero la tienda está abierta de 10 a.m. a 5 p.m.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «El tour dura 45 minutos»."
+ },
+ {
+  "id": "i0122",
+  "negocio": "Q3_n1",
+  "turnos_previos_del_cliente": [
+   "Hola, ¿a qué hora cierran hoy?",
+   "¿Cuánto cuesta un chocolate de 50 gramos?",
+   "¿Hacen envíos a Quito?",
+   "¿Se puede llegar en tour a la fábrica los domingos?",
+   "Mañana vamos 12 adultos y 3 niños de 8 años. ¿Cuánto saldría el tour?",
+   "¿Necesitamos reservar con anticipación?",
+   "¿A qué hora sale el próximo tour?",
+   "¿El chocolate de ustedes tiene frutos secos adentro?",
+   "¿Venden caramelos de chocolate?",
+   "¿Hacen chocolates sin azúcar?",
+   "¿Cuánto tiempo dura el tour?",
+   "¿Se puede grabar video en la fábrica?",
+   "Necesito 20 barras de chocolate para un regalo corporativo. ¿Cuál es el precio por mayor?",
+   "¿Se aceptan tarjetas en el tour?"
+  ],
+  "cliente": "Hola, ¿cómo están?",
+  "tipo": "charla",
+  "accion_esperada": "charla",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "Hola, muy bien. Bienvenido a Nube Mindo. ¿En qué te ayudamos?",
+  "respuesta_a_calificar": "Hola. No lo tengo seguro. Lo más cercano que dice el texto es: «Nuestros operadores están certificados en primeros auxilios y manejo seguro»."
+ },
+ {
+  "id": "i0161",
+  "negocio": "Q3_n1",
+  "turnos_previos_del_cliente": [
+   "Hola, ¿a qué hora cierran hoy?",
+   "¿Cuánto cuesta un chocolate de 50 gramos?",
+   "¿Hacen envíos a Quito?",
+   "¿Se puede llegar en tour a la fábrica los domingos?",
+   "Mañana vamos 12 adultos y 3 niños de 8 años. ¿Cuánto saldría el tour?",
+   "¿Necesitamos reservar con anticipación?",
+   "¿A qué hora sale el próximo tour?",
+   "¿El chocolate de ustedes tiene frutos secos adentro?",
+   "¿Venden caramelos de chocolate?",
+   "¿Hacen chocolates sin azúcar?",
+   "¿Cuánto tiempo dura el tour?"
+  ],
+  "cliente": "¿Se puede grabar video en la fábrica?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "No está permitido",
+   "sin permiso"
+  ],
+  "evidencia": "No está permitido tocar la maquinaria ni grabar video sin permiso.",
+  "respuesta_ideal": "No está permitido grabar video sin permiso. Puedes preguntar a nuestro guía durante el tour si hay alguna excepción.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «No está permitido tocar la maquinaria ni grabar video sin permiso»."
+ },
+ {
+  "id": "i0198",
+  "negocio": "Q3_n1",
+  "turnos_previos_del_cliente": [
+   "Hola, ¿a qué hora cierran hoy?",
+   "¿Cuánto cuesta un chocolate de 50 gramos?",
+   "¿Hacen envíos a Quito?",
+   "¿Se puede llegar en tour a la fábrica los domingos?",
+   "Mañana vamos 12 adultos y 3 niños de 8 años. ¿Cuánto saldría el tour?"
+  ],
+  "cliente": "¿Necesitamos reservar con anticipación?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "llamar",
+   "tours@nubemindo.ec",
+   "2 días de anticipación"
+  ],
+  "evidencia": "Reservas: Llamar al +593 2 290-0123 o enviar correo a tours@nubemindo.ec; inglés disponible con 2 días de anticipación",
+  "respuesta_ideal": "Sí, es mejor reservar. Puedes llamar al +593 2 290-0123 o escribir a tours@nubemindo.ec. Si necesitan guía en inglés, avísanos con al menos 2 días de anticipación.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Se requiere pagar con anticipación solo si reserva un grupo de más de 15 personas»."
+ },
+ {
+  "id": "i0217",
+  "negocio": "Q3_n1",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Hola, ¿a qué hora cierran hoy?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "9:00 a.m. - 6:00 p.m.",
+   "lunes a jueves"
+  ],
+  "evidencia": "De lunes a jueves: 9:00 a.m. - 6:00 p.m.",
+  "respuesta_ideal": "Hola, hoy es lunes así que cerramos a las 6:00 p.m. Todavía tenemos tiempo para atenderte.",
+  "respuesta_a_calificar": "Hola. No lo tengo seguro. Lo más cercano que dice el texto es: «Los viajeros que llegan a Mindo en busca de naturaleza y autenticidad encuentran en nuestro chocolate la esencia de la región»."
+ },
+ {
+  "id": "i0241",
+  "negocio": "Q3_n1",
+  "turnos_previos_del_cliente": [
+   "Hola, ¿a qué hora cierran hoy?",
+   "¿Cuánto cuesta un chocolate de 50 gramos?",
+   "¿Hacen envíos a Quito?",
+   "¿Se puede llegar en tour a la fábrica los domingos?",
+   "Mañana vamos 12 adultos y 3 niños de 8 años. ¿Cuánto saldría el tour?",
+   "¿Necesitamos reservar con anticipación?",
+   "¿A qué hora sale el próximo tour?",
+   "¿El chocolate de ustedes tiene frutos secos adentro?"
+  ],
+  "cliente": "¿Venden caramelos de chocolate?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo información sobre eso. En la tienda vendemos barras, trufas, cacao en polvo y souvenirs. Si quieres saber qué otras cosas tenemos, te recomiendo que llames o visites en persona.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Nuestra tienda en el centro de Mindo vende chocolates artesanales, barras gourmet, trufas de origen único, cacao en polvo para preparar en casa y souvenirs con temática de cacao»."
+ },
+ {
+  "id": "i0268",
+  "negocio": "Q3_n1",
+  "turnos_previos_del_cliente": [
+   "Hola, ¿a qué hora cierran hoy?"
+  ],
+  "cliente": "¿Cuánto cuesta un chocolate de 50 gramos?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "$3,50"
+  ],
+  "evidencia": "Barras de 50 g: $3,50",
+  "respuesta_ideal": "Una barra de 50 gramos cuesta $3,50.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Tabletas de chocolate sin azúcar (85 g): $4,50»."
+ },
+ {
+  "id": "i0301",
+  "negocio": "Q3_n1",
+  "turnos_previos_del_cliente": [
+   "Hola, ¿a qué hora cierran hoy?",
+   "¿Cuánto cuesta un chocolate de 50 gramos?",
+   "¿Hacen envíos a Quito?",
+   "¿Se puede llegar en tour a la fábrica los domingos?",
+   "Mañana vamos 12 adultos y 3 niños de 8 años. ¿Cuánto saldría el tour?",
+   "¿Necesitamos reservar con anticipación?",
+   "¿A qué hora sale el próximo tour?",
+   "¿El chocolate de ustedes tiene frutos secos adentro?",
+   "¿Venden caramelos de chocolate?"
+  ],
+  "cliente": "¿Hacen chocolates sin azúcar?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "Tabletas de chocolate sin azúcar (85 g): $4,50"
+  ],
+  "evidencia": "Tabletas de chocolate sin azúcar (85 g): $4,50",
+  "respuesta_ideal": "Sí, tenemos tabletas sin azúcar de 85 gramos a $4,50 cada una.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Tabletas de chocolate sin azúcar (85 g): $4,50»."
+ },
+ {
+  "id": "i0306",
+  "negocio": "Q3_n1",
+  "turnos_previos_del_cliente": [
+   "Hola, ¿a qué hora cierran hoy?",
+   "¿Cuánto cuesta un chocolate de 50 gramos?",
+   "¿Hacen envíos a Quito?",
+   "¿Se puede llegar en tour a la fábrica los domingos?",
+   "Mañana vamos 12 adultos y 3 niños de 8 años. ¿Cuánto saldría el tour?",
+   "¿Necesitamos reservar con anticipación?",
+   "¿A qué hora sale el próximo tour?",
+   "¿El chocolate de ustedes tiene frutos secos adentro?",
+   "¿Venden caramelos de chocolate?",
+   "¿Hacen chocolates sin azúcar?",
+   "¿Cuánto tiempo dura el tour?",
+   "¿Se puede grabar video en la fábrica?"
+  ],
+  "cliente": "Necesito 20 barras de chocolate para un regalo corporativo. ¿Cuál es el precio por mayor?",
+  "tipo": "instruccion",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "Si necesita un pedido personalizado de chocolate para un evento (cumpleaños, boda, regalo corporativo), debe venir en persona para discutir el diseño y los detalles.",
+  "respuesta_ideal": "Para pedidos especiales y corporativos, tienes que venir a la tienda a hablar directamente con el gerente. Ellos pueden ofrecerte opciones personalizadas y precios ajustados. El tiempo mínimo es 7 días.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Si necesita un pedido personalizado de chocolate para un evento (cumpleaños, boda, regalo corporativo), debe venir en persona para discutir el diseño y los detalles»."
+ },
+ {
+  "id": "i0320",
+  "negocio": "Q3_n1",
+  "turnos_previos_del_cliente": [
+   "Hola, ¿a qué hora cierran hoy?",
+   "¿Cuánto cuesta un chocolate de 50 gramos?",
+   "¿Hacen envíos a Quito?",
+   "¿Se puede llegar en tour a la fábrica los domingos?"
+  ],
+  "cliente": "Mañana vamos 12 adultos y 3 niños de 8 años. ¿Cuánto saldría el tour?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "$6,50 por adulto",
+   "$4,00",
+   "12 adultos",
+   "3 niños"
+  ],
+  "evidencia": "Grupos de 10 o más personas: $6,50 por adulto; Niños de 6 a 12 años: $4,00",
+  "respuesta_ideal": "Perfecto, como son 12 adultos, les aplico el descuento de grupo: $6,50 por adulto. Los tres niños pagan $4,00 cada uno. En total serían $102 más $12 = $114.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Niños de 6 a 12 años: $4,00»."
+ },
+ {
+  "id": "i0015",
+  "negocio": "Q5_n1",
+  "turnos_previos_del_cliente": [
+   "Hola buenas, queria saber donde quedan ustedes"
+  ],
+  "cliente": "y que dias atienden los sabados?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "10:00 a 15:00"
+  ],
+  "evidencia": "Sábados y domingos: 10:00 a 15:00 hs",
+  "respuesta_ideal": "Los sábados atendemos de 10:00 a 15:00 hs.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Día: Sábado; Horario: 10:00-11:30; Actividad: Circo para niños»."
+ },
+ {
+  "id": "i0027",
+  "negocio": "Q5_n1",
+  "turnos_previos_del_cliente": [
+   "hola queria saber como hago para ser voluntario",
+   "esa charla tiene costo?",
+   "vi un vecino maltratando a su perro, que hago?",
+   "y ustedes van a buscar al animal si lo denuncio?"
+  ],
+  "cliente": "gracias por la ayuda",
+  "tipo": "charla",
+  "accion_esperada": "charla",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "De nada, gracias a vos por preocuparte por el bienestar animal.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Todos los alumnos activos están cubiertos por un seguro contra accidentes que la escuela contrata anualmente; se solicita el DNI para el alta en el seguro antes de la primera clase»."
+ },
+ {
+  "id": "i0056",
+  "negocio": "Q5_n1",
+  "turnos_previos_del_cliente": [
+   "tienen servicio de peluqueria o baño para mascotas?",
+   "puedo dejar a mi perro en guarderia unos dias mientras viajo?"
+  ],
+  "cliente": "puedo anotarme para la castracion comunitaria de mi gata aunque no sea del refugio?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "castramos gratis mascotas de vecinos de Montevideo (no solo animales del refugio)"
+  ],
+  "evidencia": "Los terceros miércoles de cada mes castramos gratis mascotas de vecinos de Montevideo (no solo animales del refugio), con cupos limitados.",
+  "respuesta_ideal": "Sí, los terceros miércoles de cada mes castramos gratis mascotas de vecinos de Montevideo, no solo animales del refugio, aunque hay cupos limitados.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Los terceros miércoles de cada mes castramos gratis mascotas de vecinos de Montevideo (no solo animales del refugio), con cupos limitados»."
+ },
+ {
+  "id": "i0106",
+  "negocio": "Q5_n1",
+  "turnos_previos_del_cliente": [
+   "tienen servicio de peluqueria o baño para mascotas?",
+   "puedo dejar a mi perro en guarderia unos dias mientras viajo?",
+   "puedo anotarme para la castracion comunitaria de mi gata aunque no sea del refugio?"
+  ],
+  "cliente": "genial, como me anoto?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "Hay que anotarse con al menos una semana de anticipación"
+  ],
+  "evidencia": "Hay que anotarse con al menos una semana de anticipación.",
+  "respuesta_ideal": "Tenés que anotarte con al menos una semana de anticipación antes de la fecha de la campaña.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Hay que anotarse con al menos una semana de anticipación»."
+ },
+ {
+  "id": "i0114",
+  "negocio": "Q5_n1",
+  "turnos_previos_del_cliente": [
+   "cuanto cuesta adoptar un gato?"
+  ],
+  "cliente": "si no puedo pagar esos 500 pesos me dejan adoptar igual?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "nadie se queda sin adoptar por no poder pagarla"
+  ],
+  "evidencia": "La donación sugerida es de $500 pesos uruguayos por adopción, pero nadie se queda sin adoptar por no poder pagarla.",
+  "respuesta_ideal": "Sí, no te preocupes: nadie se queda sin adoptar por no poder pagar la donación sugerida.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Todos los animales se entregan castrados, vacunados y con microchip. La donación sugerida es de $500 pesos uruguayos por adopción, pero nadie se queda sin adoptar por no poder pagarla»."
+ },
+ {
+  "id": "i0117",
+  "negocio": "Q5_n1",
+  "turnos_previos_del_cliente": [
+   "Hola buenas, queria saber donde quedan ustedes",
+   "y que dias atienden los sabados?",
+   "los lunes tambien abren?"
+  ],
+  "cliente": "Muchas gracias, buen dia",
+  "tipo": "charla",
+  "accion_esperada": "charla",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "¡De nada, que tengas buen día!",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Lunes: cerrado (día de desinfección de instalaciones)»."
+ },
+ {
+  "id": "i0125",
+  "negocio": "Q5_n1",
+  "turnos_previos_del_cliente": [
+   "cuanto cuesta adoptar un gato?",
+   "si no puedo pagar esos 500 pesos me dejan adoptar igual?",
+   "los gatos vienen castrados?"
+  ],
+  "cliente": "hacen envios a otras ciudades del interior?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "No, la entrega es siempre presencial"
+  ],
+  "evidencia": "¿Hacen envíos a otros departamentos? No, la entrega es siempre presencial en nuestras instalaciones.",
+  "respuesta_ideal": "No, no hacemos envíos; la entrega siempre es presencial en nuestras instalaciones.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «¿Hacen envíos a otros departamentos?»."
+ },
+ {
+  "id": "i0137",
+  "negocio": "Q5_n1",
+  "turnos_previos_del_cliente": [
+   "si adopto un perro y despues no me puedo quedar con el que hago",
+   "si voy un sabado a las 4 de la tarde llego a horario?"
+  ],
+  "cliente": "y si voy un domingo a la 1 de la tarde?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "10:00 a 15:00"
+  ],
+  "evidencia": "Sábados y domingos: 10:00 a 15:00 hs",
+  "respuesta_ideal": "Sí, los domingos también atendemos de 10:00 a 15:00 hs, así que a la 1 de la tarde estamos abiertos.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Sí, pero recomendamos empezar por uno y esperar al menos dos meses de adaptación antes de sumar otro»."
+ },
+ {
+  "id": "i0153",
+  "negocio": "Q5_n1",
+  "turnos_previos_del_cliente": [
+   "cuanto cuesta adoptar un gato?",
+   "si no puedo pagar esos 500 pesos me dejan adoptar igual?",
+   "los gatos vienen castrados?"
+  ],
+  "cliente": "hacen envios a otras ciudades del interior?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "No, la entrega es siempre presencial"
+  ],
+  "evidencia": "¿Hacen envíos a otros departamentos? No, la entrega es siempre presencial en nuestras instalaciones.",
+  "respuesta_ideal": "No, no hacemos envíos; la entrega siempre es presencial en nuestras instalaciones.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «No, la entrega es siempre presencial en nuestras instalaciones»."
+ },
+ {
+  "id": "i0216",
+  "negocio": "Q5_n1",
+  "turnos_previos_del_cliente": [
+   "Hola buenas, queria saber donde quedan ustedes",
+   "y que dias atienden los sabados?",
+   "los lunes tambien abren?"
+  ],
+  "cliente": "Muchas gracias, buen dia",
+  "tipo": "charla",
+  "accion_esperada": "charla",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "¡De nada, que tengas buen día!",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Día: Lunes; Horario: 18:00-19:30; Actividad: Tela aérea inicial»."
+ },
+ {
+  "id": "i0219",
+  "negocio": "Q5_n1",
+  "turnos_previos_del_cliente": [
+   "Hola buenas, queria saber donde quedan ustedes",
+   "y que dias atienden los sabados?"
+  ],
+  "cliente": "los lunes tambien abren?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "Lunes: cerrado"
+  ],
+  "evidencia": "Lunes: cerrado (día de desinfección de instalaciones)",
+  "respuesta_ideal": "No, los lunes permanecemos cerrados porque es el día de desinfección de las instalaciones.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Lunes: cerrado (día de desinfección de instalaciones)»."
+ },
+ {
+  "id": "i0255",
+  "negocio": "Q5_n1",
+  "turnos_previos_del_cliente": [
+   "Hola, quiero adoptar un perrito, que necesito llevar?",
+   "Vivo en un apartamento, hay algun problema?",
+   "tienen algun perro llamado Rocky?"
+  ],
+  "cliente": "Y la Bimba, la perra grande, cuantos años tiene?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "7 años"
+  ],
+  "evidencia": "|Bimba|Perra|7 años|Grande|Requiere patio, no apartamento|",
+  "respuesta_ideal": "Bimba tiene 7 años aproximadamente.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Nombre: Bimba; Especie: Perra; Edad aprox.: 7 años; Tamaño: Grande; Observación: Requiere patio, no apartamento»."
+ },
+ {
+  "id": "i0285",
+  "negocio": "Q5_n1",
+  "turnos_previos_del_cliente": [
+   "si adopto un perro y despues no me puedo quedar con el que hago",
+   "si voy un sabado a las 4 de la tarde llego a horario?",
+   "y si voy un domingo a la 1 de la tarde?"
+  ],
+  "cliente": "perfecto, muchas gracias, hasta luego",
+  "tipo": "charla",
+  "accion_esperada": "charla",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "¡Hasta luego, te esperamos!",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Luego, si hay interés mutuo, se hace la entrevista con el equipo social»."
+ },
+ {
+  "id": "i0287",
+  "negocio": "Q5_n1",
+  "turnos_previos_del_cliente": [],
+  "cliente": "cuanto cuesta adoptar un gato?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "$500 pesos uruguayos"
+  ],
+  "evidencia": "La donación sugerida es de $500 pesos uruguayos por adopción, pero nadie se queda sin adoptar por no poder pagarla.",
+  "respuesta_ideal": "La donación sugerida es de $500 pesos uruguayos, pero no es obligatoria: nadie se queda sin adoptar por no poder pagarla.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Nombre: Michi; Especie: Gato; Edad aprox.: 8 meses; Tamaño: -; Observación: Convive bien con otros gatos»."
+ },
+ {
+  "id": "i0342",
+  "negocio": "Q5_n1",
+  "turnos_previos_del_cliente": [
+   "tienen servicio de peluqueria o baño para mascotas?",
+   "puedo dejar a mi perro en guarderia unos dias mientras viajo?",
+   "puedo anotarme para la castracion comunitaria de mi gata aunque no sea del refugio?",
+   "genial, como me anoto?"
+  ],
+  "cliente": "si llevo dos gatos para adoptar, la donacion seria de $1000 en total?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "$500 pesos uruguayos"
+  ],
+  "evidencia": "La donación sugerida es de $500 pesos uruguayos por adopción, pero nadie se queda sin adoptar por no poder pagarla.",
+  "respuesta_ideal": "Sí, si adoptás dos gatos la donación sugerida sería de $500 por cada uno, es decir $1000 en total, aunque no es obligatoria.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Somos el refugio municipal de Montevideo dedicado a la adopción responsable de perros y gatos rescatados de la vía pública o entregados en tenencia por sus antiguos dueños»."
+ }
+]

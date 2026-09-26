@@ -96,3 +96,45 @@ Congelado `freeze-G-62`; semilla de su huella.
 ## Presupuesto
 
 Implementación y conteo ≤ 30 min; banco ≤ 40 min; juez ≤ 1 h; medidas generales ≤ 40 min; auditoría ≤ 1 h. Hasta 16 procesos, con al menos 2 GB de RAM libres.
+
+## Resultado (2026-09-26, banco congelado de 24 negocios nuevos y 647 turnos; juez ciego de 8 jueces nuevos, Opus)
+
+| Puerta | Umbral | G-62 | G-58r, mismo banco | ¿Pasa? |
+|---|---|---|---|---|
+| 1. Útiles en directa + sí/no | ≥ G-58r + 5 puntos | **99/276 (35,9 %)** | 69/276 (25,0 %) | **sí (+10,9)** |
+| 2. Citas engañosas | ≤ 15 % y ≤ G-58r + 2 puntos | **5/199 (2,5 %)** | 2/149 (1,3 %) | sí (+1,2) |
+| 3. Inventadas · planas | 0 · — | **0** · ninguna | 0 | sí |
+| 4. Sin respuesta bien llevadas | ≥ 90 % | **99,4 %** | 100 % | sí |
+| 5. Eco de datos | 0 | **0** | 0 | sí |
+
+El 68,3 % de las citas de G-62 son útiles, frente al 67,1 % de G-58r. Contestando siempre (conteo automático): 134/276 frente a 126/276.
+
+**Controles:**
+- alcance de G-61 (todo encabezado): 103/276, con 2,0 % de engañosas. Da 4 útiles más en el kiosco, pero es el alcance que bajaba MFAQ.
+- sin herencia: 86/276 (2,8 %);
+- sin pregunta en línea: 93/276 (2,5 %);
+- rasgos barajados: 13/276 y 26,4 % de citas útiles. La confianza contada importa.
+- otro negocio: 1/276 útil (0,4 %) y 580/647 «No lo sé» (89,6 %).
+  - Los jueces marcaron 9 de sus citas como «inventadas»: son texto literal del documento cargado, que es de otro negocio, igual que en G-59 y G-61.
+  - De sus 36 citas, 20 engañan: la objeción 2 de G-58r sigue abierta.
+- reinicio: 647/647;
+- renombrado estricto: 640/647 (98,9 %).
+
+**Retención 5.9:**
+- el alcance nuevo da 99 útiles frente a 86 sin herencia (+13, pedía ≥ +3), con engañosas 2,5 % frente a 2,8 %, y MFAQ no baja. **Se queda.**
+- la pregunta en línea da 99 frente a 93 (+6), con engañosas 2,5 % frente a 2,5 %. **Se queda.**
+
+**Pruebas generales (`freeze-G-62`):**
+- MFAQ `valid` contestando siempre: **57,24 %**, igual que G-58r. Pasa «no menor» por igualdad, como se declaró antes de medir.
+- SQuAD-es: unidad con la respuesta 0,8013 (G-58r 0,7987), F1 0,2485;
+- conversación 101/21/36 = 158;
+- regresión 667/6/0;
+- latencia intercalada con `estable-G-17`, 3 rondas × 3 semillas ([resumen](../results_v3/latency_rounds_g18/resumen.json)): p95 entre −7,6 % y +1,2 %, límites pasan, RAM 220 MB. p95 de `answer` en el banco: 0,26 ms.
+- tablero: MLQA con bot fresco 0/20, sin cambio;
+- sonda de lectura: 0/4, sin cambio.
+
+**Defectos vistos por los jueces, declarados:**
+- Una frase corta con la que el cliente abre su pregunta («Mi mamá camina poco.») se repite como saludo antes de la cita. Es el eco breve de la objeción 3 de G-58r; la puerta 5 no lo mide.
+- Con el documento de otro negocio, las citas engañan más de la mitad de las veces.
+
+**G-62 supera sus puertas.** Queda pendiente la auditoría 5.10 antes del tag.

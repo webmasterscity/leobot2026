@@ -1,0 +1,756 @@
+[
+ {
+  "id": "i0004",
+  "negocio": "Q1_n2",
+  "turnos_previos_del_cliente": [
+   "Oiga, las capsulas tienen clima?",
+   "donde puedo lavar mi ropa y cuanto cuesta?",
+   "hay plancha para la ropa?"
+  ],
+  "cliente": "a que hora cierran la terraza?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "23:00"
+  ],
+  "evidencia": "Terraza en la azotea: abierta de 7:00 a 23:00.",
+  "respuesta_ideal": "La terraza de la azotea está abierta de 7:00 a 23:00.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Terraza en la azotea: abierta de 7:00 a 23:00»."
+ },
+ {
+  "id": "i0113",
+  "negocio": "Q1_n2",
+  "turnos_previos_del_cliente": [
+   "Buenas noches, cuánto sale la noche en una cápsula individual?",
+   "y si llego el viernes y me quedo 2 noches?",
+   "eso ya trae los impuestos?"
+  ],
+  "cliente": "tienen desayuno incluido?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "no está incluido"
+  ],
+  "evidencia": "Desayuno: no está incluido. Tenemos convenio con Café Brújula, en la planta baja del edificio: 10% de descuento mostrando tu pulsera de huésped.",
+  "respuesta_ideal": "No, el desayuno no está incluido, pero con su pulsera de huésped tiene 10% de descuento en Café Brújula, en la planta baja.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Desayuno: no está incluido»."
+ },
+ {
+  "id": "i0141",
+  "negocio": "Q1_n2",
+  "turnos_previos_del_cliente": [
+   "Buen día. Puedo pagar en dólares?"
+  ],
+  "cliente": "¿y con American Express?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "American Express"
+  ],
+  "evidencia": "Aceptamos efectivo en pesos, tarjetas Visa, Mastercard y American Express, y transferencia SPEI (solo para reservas anticipadas).",
+  "respuesta_ideal": "Sí, aceptamos American Express, además de Visa y Mastercard.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Aceptamos efectivo en pesos, tarjetas Visa, Mastercard y American Express, y transferencia SPEI (solo para reservas anticipadas)»."
+ },
+ {
+  "id": "i0173",
+  "negocio": "Q1_n2",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Buen día. Puedo pagar en dólares?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "dólares en efectivo"
+  ],
+  "evidencia": "No aceptamos dólares en efectivo.",
+  "respuesta_ideal": "Buen día. En efectivo no: no aceptamos dólares en efectivo. Puede pagar en pesos, con tarjeta o por SPEI si reserva por adelantado.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «(precios en dólares; se puede pagar en bolívares a la tasa BCV del día)»."
+ },
+ {
+  "id": "i0194",
+  "negocio": "Q1_n2",
+  "turnos_previos_del_cliente": [
+   "Buen día. Puedo pagar en dólares?",
+   "¿y con American Express?"
+  ],
+  "cliente": "hay que dejar algún depósito?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "$300"
+  ],
+  "evidencia": "Al llegar se deja un depósito de $300 MXN por la tarjeta-llave y el candado, que se devuelve en el check-out.",
+  "respuesta_ideal": "Sí, al llegar se deja un depósito de $300 MXN por la tarjeta-llave y el candado, que se le devuelve en el check-out.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Al llegar se deja un depósito de $300 MXN por la tarjeta-llave y el candado, que se devuelve en el check-out»."
+ },
+ {
+  "id": "i0256",
+  "negocio": "Q1_n2",
+  "turnos_previos_del_cliente": [
+   "Buen día. Puedo pagar en dólares?",
+   "¿y con American Express?",
+   "hay que dejar algún depósito?",
+   "necesito factura para mi empresa, como le hago?",
+   "si cancelo un dia antes me cobran algo?"
+  ],
+  "cliente": "de cuantos megas es el wifi?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "Sé que el Wi-Fi es gratis en todo el edificio, pero no tengo el dato de la velocidad.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «El más cercano es el Estacionamiento Público Colima, a media cuadra (pensión por noche aprox. $250)»."
+ },
+ {
+  "id": "i0314",
+  "negocio": "Q1_n2",
+  "turnos_previos_del_cliente": [
+   "Hola, viajo con mi pareja, qué opción tienen para dos personas?"
+  ],
+  "cliente": "¿esa está en el piso de solo mujeres?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "piso 3",
+   "mixto"
+  ],
+  "evidencia": "Ubicación: solo en el piso 3 (mixto)",
+  "respuesta_ideal": "No, la Cápsula Doble está solo en el piso 3, que es mixto.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Ubicación: pisos 1 y 2 (piso 1 mixto, piso 2 solo mujeres)»."
+ },
+ {
+  "id": "i0316",
+  "negocio": "Q1_n2",
+  "turnos_previos_del_cliente": [
+   "Buenas noches, cuánto sale la noche en una cápsula individual?",
+   "y si llego el viernes y me quedo 2 noches?"
+  ],
+  "cliente": "eso ya trae los impuestos?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "IVA",
+   "3.5%"
+  ],
+  "evidencia": "Los precios incluyen IVA. El impuesto sobre hospedaje (ISH) del 3.5% se cobra aparte.",
+  "respuesta_ideal": "El precio ya incluye IVA; el impuesto sobre hospedaje (ISH) del 3.5% se cobra aparte.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Los precios incluyen IVA. El impuesto sobre hospedaje (ISH) del 3.5% se cobra aparte»."
+ },
+ {
+  "id": "i0335",
+  "negocio": "Q1_n2",
+  "turnos_previos_del_cliente": [
+   "Oiga, las capsulas tienen clima?",
+   "donde puedo lavar mi ropa y cuanto cuesta?",
+   "hay plancha para la ropa?",
+   "a que hora cierran la terraza?",
+   "se puede fumar alla arriba?"
+  ],
+  "cliente": "un amigo me viene a ver en la noche, donde lo puedo recibir?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "lounge",
+   "22:00"
+  ],
+  "evidencia": "No se permiten visitas en los pisos de cápsulas; tus visitas pueden esperarte en el lounge hasta las 22:00.",
+  "respuesta_ideal": "Las visitas no pueden subir a los pisos de cápsulas, pero puede recibirlo en el lounge hasta las 22:00.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «El más cercano es el Estacionamiento Público Colima, a media cuadra (pensión por noche aprox. $250)»."
+ },
+ {
+  "id": "i0011",
+  "negocio": "Q3_n2",
+  "turnos_previos_del_cliente": [
+   "Mi auto no enciende. Necesito que me halen",
+   "¿Cuánto cuesta remolcar un automóvil?",
+   "¿Se puede pagar con tarjeta?",
+   "¿Cuál es el número para llamar?",
+   "¿Tienen servicio a Ensenada?",
+   "Necesito cambiar una llanta y traigo llanta de repuesto",
+   "¿Y si no tengo llanta?",
+   "¿Cuánto cobran por un salto de corriente?",
+   "¿Cuál es el precio para remolcar una camioneta?",
+   "¿Qué pasa si están muy ocupados y tardo más de una hora en remolcar?",
+   "¿Aceptan dólares?",
+   "¿Necesito papeles para que me remolquen?",
+   "¿Cuánto tiempo se tarda en llegar?",
+   "Mi moto se quedó sin gasolina en la carretera. ¿Cuánto cuesta?",
+   "Necesito más de 5 galones. ¿Cuánto sería?",
+   "¿Pueden abrir una puerta si dejo las llaves adentro?"
+  ],
+  "cliente": "¿Debo contratar un seguro adicional de transporte?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": "Nuestros vehículos tienen seguro. Si deseas que tu vehículo remolcado esté cubierto por una póliza adicional (responsabilidad civil), puedes contratar un seguro de tránsito por $15,00 por remolque.",
+  "respuesta_ideal": "Nuestros vehículos están asegurados. Si quieres cobertura adicional para tu auto, puedes contratar un seguro de tránsito por $15,00. Pregunta en el momento del servicio.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Si deseas que tu vehículo remolcado esté cubierto por una póliza adicional (responsabilidad civil), puedes contratar un seguro de tránsito por $15,00 por remolque»."
+ },
+ {
+  "id": "i0024",
+  "negocio": "Q3_n2",
+  "turnos_previos_del_cliente": [
+   "Mi auto no enciende. Necesito que me halen",
+   "¿Cuánto cuesta remolcar un automóvil?",
+   "¿Se puede pagar con tarjeta?",
+   "¿Cuál es el número para llamar?",
+   "¿Tienen servicio a Ensenada?",
+   "Necesito cambiar una llanta y traigo llanta de repuesto",
+   "¿Y si no tengo llanta?"
+  ],
+  "cliente": "¿Cuánto cobran por un salto de corriente?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "$25,00"
+  ],
+  "evidencia": "Salto de corriente: $25,00",
+  "respuesta_ideal": "Un salto de corriente cuesta $25,00. Usamos nuestra batería de grúa.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Salto de corriente: $25,00»."
+ },
+ {
+  "id": "i0037",
+  "negocio": "Q3_n2",
+  "turnos_previos_del_cliente": [
+   "Mi auto no enciende. Necesito que me halen"
+  ],
+  "cliente": "¿Cuánto cuesta remolcar un automóvil?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "$85,00",
+   "automóvil"
+  ],
+  "evidencia": "Automóvil: $85,00",
+  "respuesta_ideal": "Remolcar un automóvil cuesta $85,00 dentro del área de cobertura.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Tiempo: 3-5 días»."
+ },
+ {
+  "id": "i0070",
+  "negocio": "Q3_n2",
+  "turnos_previos_del_cliente": [
+   "Mi auto no enciende. Necesito que me halen",
+   "¿Cuánto cuesta remolcar un automóvil?",
+   "¿Se puede pagar con tarjeta?",
+   "¿Cuál es el número para llamar?",
+   "¿Tienen servicio a Ensenada?",
+   "Necesito cambiar una llanta y traigo llanta de repuesto",
+   "¿Y si no tengo llanta?",
+   "¿Cuánto cobran por un salto de corriente?",
+   "¿Cuál es el precio para remolcar una camioneta?",
+   "¿Qué pasa si están muy ocupados y tardo más de una hora en remolcar?",
+   "¿Aceptan dólares?",
+   "¿Necesito papeles para que me remolquen?",
+   "¿Cuánto tiempo se tarda en llegar?",
+   "Mi moto se quedó sin gasolina en la carretera. ¿Cuánto cuesta?",
+   "Necesito más de 5 galones. ¿Cuánto sería?"
+  ],
+  "cliente": "¿Pueden abrir una puerta si dejo las llaves adentro?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "$50,00",
+   "apertura de puerta"
+  ],
+  "evidencia": "Apertura de puerta con llave adentro: $50,00",
+  "respuesta_ideal": "Sí, podemos abrir la puerta. El servicio cuesta $50,00.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Apertura de puerta con llave adentro: $50,00»."
+ },
+ {
+  "id": "i0102",
+  "negocio": "Q3_n2",
+  "turnos_previos_del_cliente": [
+   "Mi auto no enciende. Necesito que me halen",
+   "¿Cuánto cuesta remolcar un automóvil?"
+  ],
+  "cliente": "¿Se puede pagar con tarjeta?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "tarjetas de débito y crédito",
+   "Visa, Mastercard"
+  ],
+  "evidencia": "Aceptamos efectivo en pesos mexicanos (MXN) y dólares estadounidenses (USD). También tarjetas de débito y crédito (Visa, Mastercard).",
+  "respuesta_ideal": "Sí, aceptamos tarjetas de débito y crédito: Visa y Mastercard. También efectivo en pesos o dólares.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «En tienda: efectivo en pesos colombianos (COP), transferencia bancaria, tarjetas de débito y crédito (Visa, Mastercard), y daviplata»."
+ },
+ {
+  "id": "i0136",
+  "negocio": "Q3_n2",
+  "turnos_previos_del_cliente": [
+   "Mi auto no enciende. Necesito que me halen",
+   "¿Cuánto cuesta remolcar un automóvil?",
+   "¿Se puede pagar con tarjeta?"
+  ],
+  "cliente": "¿Cuál es el número para llamar?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "+52 664-555-0123"
+  ],
+  "evidencia": "Teléfono de emergencia: +52 664-555-0123",
+  "respuesta_ideal": "El número de emergencia es +52 664-555-0123. También puedes escribir por WhatsApp al +52 664-555-0124.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Si el vehículo no es tuyo, documento que pruebe que tienes autorización (contrato de arrendamiento, autorización del dueño escrita, o título del vehículo)»."
+ },
+ {
+  "id": "i0167",
+  "negocio": "Q3_n2",
+  "turnos_previos_del_cliente": [
+   "Mi auto no enciende. Necesito que me halen",
+   "¿Cuánto cuesta remolcar un automóvil?",
+   "¿Se puede pagar con tarjeta?",
+   "¿Cuál es el número para llamar?",
+   "¿Tienen servicio a Ensenada?",
+   "Necesito cambiar una llanta y traigo llanta de repuesto",
+   "¿Y si no tengo llanta?",
+   "¿Cuánto cobran por un salto de corriente?",
+   "¿Cuál es el precio para remolcar una camioneta?",
+   "¿Qué pasa si están muy ocupados y tardo más de una hora en remolcar?",
+   "¿Aceptan dólares?",
+   "¿Necesito papeles para que me remolquen?",
+   "¿Cuánto tiempo se tarda en llegar?",
+   "Mi moto se quedó sin gasolina en la carretera. ¿Cuánto cuesta?",
+   "Necesito más de 5 galones. ¿Cuánto sería?",
+   "¿Pueden abrir una puerta si dejo las llaves adentro?",
+   "¿Debo contratar un seguro adicional de transporte?",
+   "¿Ustedes tienen servicio 24 horas?"
+  ],
+  "cliente": "Tengo un remolque averiado. ¿Lo pueden remolcar?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "Para remolques especiales, tendrías que llamar a la gerencia: +52 664-555-0123. Ellos te dirán si es posible y qué cuesta.",
+  "respuesta_a_calificar": "Tengo un remolque averiado. No lo tengo seguro. Lo más cercano que dice el texto es: «Tarifa puede variar si el artículo es frágil (imágenes, cristos)»."
+ },
+ {
+  "id": "i0169",
+  "negocio": "Q3_n2",
+  "turnos_previos_del_cliente": [
+   "Mi auto no enciende. Necesito que me halen",
+   "¿Cuánto cuesta remolcar un automóvil?",
+   "¿Se puede pagar con tarjeta?",
+   "¿Cuál es el número para llamar?",
+   "¿Tienen servicio a Ensenada?",
+   "Necesito cambiar una llanta y traigo llanta de repuesto"
+  ],
+  "cliente": "¿Y si no tengo llanta?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "$55,00",
+   "sin llanta de repuesto"
+  ],
+  "evidencia": "Sin llanta de repuesto (suministramos la llanta): $55,00",
+  "respuesta_ideal": "Si no tienes llanta, nosotros te la suministramos y el costo es $55,00.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Si el vehículo no es tuyo, documento que pruebe que tienes autorización (contrato de arrendamiento, autorización del dueño escrita, o título del vehículo)»."
+ },
+ {
+  "id": "i0178",
+  "negocio": "Q3_n2",
+  "turnos_previos_del_cliente": [
+   "Mi auto no enciende. Necesito que me halen"
+  ],
+  "cliente": "¿Cuánto cuesta remolcar un automóvil?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "$85,00",
+   "automóvil"
+  ],
+  "evidencia": "Automóvil: $85,00",
+  "respuesta_ideal": "Remolcar un automóvil cuesta $85,00 dentro del área de cobertura.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Automóvil: $85,00»."
+ },
+ {
+  "id": "i0184",
+  "negocio": "Q3_n2",
+  "turnos_previos_del_cliente": [
+   "Mi auto no enciende. Necesito que me halen",
+   "¿Cuánto cuesta remolcar un automóvil?"
+  ],
+  "cliente": "¿Se puede pagar con tarjeta?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "tarjetas de débito y crédito",
+   "Visa, Mastercard"
+  ],
+  "evidencia": "Aceptamos efectivo en pesos mexicanos (MXN) y dólares estadounidenses (USD). También tarjetas de débito y crédito (Visa, Mastercard).",
+  "respuesta_ideal": "Sí, aceptamos tarjetas de débito y crédito: Visa y Mastercard. También efectivo en pesos o dólares.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «También tarjetas de débito y crédito (Visa, Mastercard)»."
+ },
+ {
+  "id": "i0209",
+  "negocio": "Q3_n2",
+  "turnos_previos_del_cliente": [
+   "Mi auto no enciende. Necesito que me halen",
+   "¿Cuánto cuesta remolcar un automóvil?",
+   "¿Se puede pagar con tarjeta?",
+   "¿Cuál es el número para llamar?",
+   "¿Tienen servicio a Ensenada?",
+   "Necesito cambiar una llanta y traigo llanta de repuesto",
+   "¿Y si no tengo llanta?",
+   "¿Cuánto cobran por un salto de corriente?"
+  ],
+  "cliente": "¿Cuál es el precio para remolcar una camioneta?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "$105,00",
+   "camioneta"
+  ],
+  "evidencia": "Camioneta o SUV: $105,00",
+  "respuesta_ideal": "Remolcar una camioneta o SUV cuesta $105,00.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Si el vehículo no es tuyo, documento que pruebe que tienes autorización (contrato de arrendamiento, autorización del dueño escrita, o título del vehículo)»."
+ },
+ {
+  "id": "i0290",
+  "negocio": "Q3_n2",
+  "turnos_previos_del_cliente": [
+   "Mi auto no enciende. Necesito que me halen",
+   "¿Cuánto cuesta remolcar un automóvil?",
+   "¿Se puede pagar con tarjeta?",
+   "¿Cuál es el número para llamar?",
+   "¿Tienen servicio a Ensenada?",
+   "Necesito cambiar una llanta y traigo llanta de repuesto",
+   "¿Y si no tengo llanta?",
+   "¿Cuánto cobran por un salto de corriente?",
+   "¿Cuál es el precio para remolcar una camioneta?",
+   "¿Qué pasa si están muy ocupados y tardo más de una hora en remolcar?"
+  ],
+  "cliente": "¿Aceptan dólares?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "dólares estadounidenses",
+   "17 pesos por dólar"
+  ],
+  "evidencia": "Aceptamos efectivo en pesos mexicanos (MXN) y dólares estadounidenses (USD). Nota: para pagos en USD, el tipo de cambio es de 17 pesos por dólar.",
+  "respuesta_ideal": "Sí, aceptamos dólares estadounidenses. El cambio que usamos es 17 pesos por dólar.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Aceptamos efectivo en pesos mexicanos (MXN) y dólares estadounidenses (USD)»."
+ },
+ {
+  "id": "i0291",
+  "negocio": "Q3_n2",
+  "turnos_previos_del_cliente": [
+   "Mi auto no enciende. Necesito que me halen",
+   "¿Cuánto cuesta remolcar un automóvil?",
+   "¿Se puede pagar con tarjeta?",
+   "¿Cuál es el número para llamar?",
+   "¿Tienen servicio a Ensenada?",
+   "Necesito cambiar una llanta y traigo llanta de repuesto",
+   "¿Y si no tengo llanta?",
+   "¿Cuánto cobran por un salto de corriente?",
+   "¿Cuál es el precio para remolcar una camioneta?",
+   "¿Qué pasa si están muy ocupados y tardo más de una hora en remolcar?",
+   "¿Aceptan dólares?",
+   "¿Necesito papeles para que me remolquen?",
+   "¿Cuánto tiempo se tarda en llegar?",
+   "Mi moto se quedó sin gasolina en la carretera. ¿Cuánto cuesta?",
+   "Necesito más de 5 galones. ¿Cuánto sería?",
+   "¿Pueden abrir una puerta si dejo las llaves adentro?",
+   "¿Debo contratar un seguro adicional de transporte?",
+   "¿Ustedes tienen servicio 24 horas?"
+  ],
+  "cliente": "Tengo un remolque averiado. ¿Lo pueden remolcar?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "Para remolques especiales, tendrías que llamar a la gerencia: +52 664-555-0123. Ellos te dirán si es posible y qué cuesta.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Si deseas que tu vehículo remolcado esté cubierto por una póliza adicional (responsabilidad civil), puedes contratar un seguro de tránsito por $15,00 por remolque»."
+ },
+ {
+  "id": "i0294",
+  "negocio": "Q3_n2",
+  "turnos_previos_del_cliente": [
+   "Mi auto no enciende. Necesito que me halen",
+   "¿Cuánto cuesta remolcar un automóvil?",
+   "¿Se puede pagar con tarjeta?",
+   "¿Cuál es el número para llamar?",
+   "¿Tienen servicio a Ensenada?",
+   "Necesito cambiar una llanta y traigo llanta de repuesto",
+   "¿Y si no tengo llanta?",
+   "¿Cuánto cobran por un salto de corriente?",
+   "¿Cuál es el precio para remolcar una camioneta?",
+   "¿Qué pasa si están muy ocupados y tardo más de una hora en remolcar?",
+   "¿Aceptan dólares?",
+   "¿Necesito papeles para que me remolquen?"
+  ],
+  "cliente": "¿Cuánto tiempo se tarda en llegar?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "10-20 minutos",
+   "promedio",
+   "depende del tráfico"
+  ],
+  "evidencia": "Dentro de la ciudad de Tijuana: respuesta en 10-20 minutos promedio. En horas pico (7-9 a.m., 5-7 p.m.): sumar 10-15 minutos a la espera.",
+  "respuesta_ideal": "En la ciudad normalmente tardamos 10-20 minutos. Si es hora pico puede ser un poco más. La ubicación exacta importa mucho.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «En horas pico (7-9 a.m., 5-7 p.m.): sumar 10-15 minutos a la espera»."
+ },
+ {
+  "id": "i0308",
+  "negocio": "Q3_n2",
+  "turnos_previos_del_cliente": [
+   "Mi auto no enciende. Necesito que me halen",
+   "¿Cuánto cuesta remolcar un automóvil?",
+   "¿Se puede pagar con tarjeta?",
+   "¿Cuál es el número para llamar?",
+   "¿Tienen servicio a Ensenada?",
+   "Necesito cambiar una llanta y traigo llanta de repuesto",
+   "¿Y si no tengo llanta?",
+   "¿Cuánto cobran por un salto de corriente?",
+   "¿Cuál es el precio para remolcar una camioneta?",
+   "¿Qué pasa si están muy ocupados y tardo más de una hora en remolcar?",
+   "¿Aceptan dólares?",
+   "¿Necesito papeles para que me remolquen?"
+  ],
+  "cliente": "¿Cuánto tiempo se tarda en llegar?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "10-20 minutos",
+   "promedio",
+   "depende del tráfico"
+  ],
+  "evidencia": "Dentro de la ciudad de Tijuana: respuesta en 10-20 minutos promedio. En horas pico (7-9 a.m., 5-7 p.m.): sumar 10-15 minutos a la espera.",
+  "respuesta_ideal": "En la ciudad normalmente tardamos 10-20 minutos. Si es hora pico puede ser un poco más. La ubicación exacta importa mucho.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Dentro de la ciudad de Tijuana: respuesta en 10-20 minutos promedio»."
+ },
+ {
+  "id": "i0340",
+  "negocio": "Q3_n2",
+  "turnos_previos_del_cliente": [
+   "Mi auto no enciende. Necesito que me halen",
+   "¿Cuánto cuesta remolcar un automóvil?",
+   "¿Se puede pagar con tarjeta?",
+   "¿Cuál es el número para llamar?",
+   "¿Tienen servicio a Ensenada?"
+  ],
+  "cliente": "Necesito cambiar una llanta y traigo llanta de repuesto",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "$30,00",
+   "con llanta de repuesto"
+  ],
+  "evidencia": "Con llanta de repuesto: $30,00",
+  "respuesta_ideal": "El cambio de llanta con tu llanta de repuesto cuesta $30,00.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Con llanta de repuesto: $30,00»."
+ },
+ {
+  "id": "i0002",
+  "negocio": "Q5_n2",
+  "turnos_previos_del_cliente": [
+   "Hola! Quiero anotar a mi hijo de 8 años en circo, tienen clases para esa edad?",
+   "que dia es esa clase entre semana?"
+  ],
+  "cliente": "y los sabados tambien hay?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "Sábado",
+   "10:00-11:30"
+  ],
+  "evidencia": "| Sábado | 10:00-11:30 | Circo para niños |",
+  "respuesta_ideal": "Sí, también hay clase los sábados de 10:00 a 11:30.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Sábados y domingos: funciones cada hora de 11:00 a 22:00»."
+ },
+ {
+  "id": "i0026",
+  "negocio": "Q5_n2",
+  "turnos_previos_del_cliente": [
+   "quien da las clases de trapecio?"
+  ],
+  "cliente": "hacen alguna muestra o presentacion en el año?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "diciembre",
+   "Centro Cultural Konex"
+  ],
+  "evidencia": "Todos los años, en diciembre, hacemos una muestra abierta a familiares y amigos en el Centro Cultural Konex.",
+  "respuesta_ideal": "Sí, todos los años en diciembre hacemos una muestra abierta a familiares y amigos en el Centro Cultural Konex.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Menores de 12 años no pagan en Atraco al Banco si van acompañados de un adulto pagante»."
+ },
+ {
+  "id": "i0032",
+  "negocio": "Q5_n2",
+  "turnos_previos_del_cliente": [
+   "quiero empezar trapecio, que necesito?",
+   "y si no tengo ese certificado me dejan subir igual una vez para probar?",
+   "tengo problemas de espalda, puedo hacer trapecio igual?"
+  ],
+  "cliente": "la clase de prueba tiene costo?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "La primera clase de prueba es gratuita"
+  ],
+  "evidencia": "La primera clase de prueba es gratuita, se debe reservar turno antes.",
+  "respuesta_ideal": "No, la primera clase de prueba es gratuita, pero hay que reservar el turno antes.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «La primera clase de prueba es gratuita, se debe reservar turno antes»."
+ },
+ {
+  "id": "i0084",
+  "negocio": "Q5_n2",
+  "turnos_previos_del_cliente": [
+   "quiero empezar trapecio, que necesito?"
+  ],
+  "cliente": "y si no tengo ese certificado me dejan subir igual una vez para probar?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "sin excepciones"
+  ],
+  "evidencia": "Sin ese certificado no se permite subir al aparato, sin excepciones.",
+  "respuesta_ideal": "No, sin el certificado médico no se permite subir al aparato bajo ninguna circunstancia.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Sin ese certificado no se permite subir al aparato, sin excepciones»."
+ },
+ {
+  "id": "i0089",
+  "negocio": "Q5_n2",
+  "turnos_previos_del_cliente": [],
+  "cliente": "quien da las clases de trapecio?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "Valentina Ríos"
+  ],
+  "evidencia": "El equipo docente está a cargo de Valentina Ríos (trapecio y aéreos) y Nazareno Duarte (acrobacia, clown y niños).",
+  "respuesta_ideal": "Las clases de trapecio y disciplinas aéreas están a cargo de Valentina Ríos.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «El equipo docente está a cargo de Valentina Ríos (trapecio y aéreos) y Nazareno Duarte (acrobacia, clown y niños)»."
+ },
+ {
+  "id": "i0097",
+  "negocio": "Q5_n2",
+  "turnos_previos_del_cliente": [
+   "quien da las clases de trapecio?"
+  ],
+  "cliente": "hacen alguna muestra o presentacion en el año?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "diciembre",
+   "Centro Cultural Konex"
+  ],
+  "evidencia": "Todos los años, en diciembre, hacemos una muestra abierta a familiares y amigos en el Centro Cultural Konex.",
+  "respuesta_ideal": "Sí, todos los años en diciembre hacemos una muestra abierta a familiares y amigos en el Centro Cultural Konex.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Todos los años, en diciembre, hacemos una muestra abierta a familiares y amigos en el Centro Cultural Konex»."
+ },
+ {
+  "id": "i0101",
+  "negocio": "Q5_n2",
+  "turnos_previos_del_cliente": [
+   "Hola! Quiero anotar a mi hijo de 8 años en circo, tienen clases para esa edad?",
+   "que dia es esa clase entre semana?",
+   "y los sabados tambien hay?",
+   "cuanto sale la mensualidad?",
+   "y si quiere ir los dos dias, martes y sabado?",
+   "y si en vez de eso viene suelto, sin abonarse, unas 3 veces en el mes, cuanto gastaria?"
+  ],
+  "cliente": "genial, muchas gracias",
+  "tipo": "charla",
+  "accion_esperada": "charla",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "¡De nada! Te esperamos en Aire y Lona.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Ropa cómoda y ajustada al cuerpo (evitar ropa muy suelta que se enganche), pelo recogido, sin joyas ni relojes»."
+ },
+ {
+  "id": "i0105",
+  "negocio": "Q5_n2",
+  "turnos_previos_del_cliente": [
+   "quiero empezar trapecio, que necesito?",
+   "y si no tengo ese certificado me dejan subir igual una vez para probar?",
+   "tengo problemas de espalda, puedo hacer trapecio igual?",
+   "la clase de prueba tiene costo?"
+  ],
+  "cliente": "como reservo esa clase de prueba?",
+  "tipo": "instruccion",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "No confirmes cupo ni reserves turno de clase de prueba por chat: pedí nombre y teléfono y avisá que alguien de administración lo va a contactar para confirmar el horario.",
+  "respuesta_ideal": "Pasame tu nombre y un teléfono de contacto, y alguien de administración se va a comunicar para confirmar el horario de tu clase de prueba.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «La primera clase de prueba es gratuita, se debe reservar turno antes»."
+ },
+ {
+  "id": "i0121",
+  "negocio": "Q5_n2",
+  "turnos_previos_del_cliente": [
+   "quien da las clases de trapecio?",
+   "hacen alguna muestra o presentacion en el año?"
+  ],
+  "cliente": "es obligatorio participar de esa muestra?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "La participación es opcional"
+  ],
+  "evidencia": "La participación es opcional.",
+  "respuesta_ideal": "No, participar de la muestra es opcional.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Para las disciplinas aéreas (trapecio, tela, aro) es obligatorio presentar un certificado médico apto físico con menos de un año de antigüedad»."
+ },
+ {
+  "id": "i0172",
+  "negocio": "Q5_n2",
+  "turnos_previos_del_cliente": [
+   "mi hija se lastimo el tobillo en la clase de acrobacia, con quien hablo?"
+  ],
+  "cliente": "estan cubiertos por algun seguro?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "seguro contra accidentes"
+  ],
+  "evidencia": "Todos los alumnos activos están cubiertos por un seguro contra accidentes que la escuela contrata anualmente; se solicita el DNI para el alta en el seguro antes de la primera clase.",
+  "respuesta_ideal": "Sí, todos los alumnos activos están cubiertos por un seguro contra accidentes que la escuela contrata anualmente.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Todos los alumnos activos están cubiertos por un seguro contra accidentes que la escuela contrata anualmente; se solicita el DNI para el alta en el seguro antes de la primera clase»."
+ },
+ {
+  "id": "i0225",
+  "negocio": "Q5_n2",
+  "turnos_previos_del_cliente": [
+   "Hola! Quiero anotar a mi hijo de 8 años en circo, tienen clases para esa edad?",
+   "que dia es esa clase entre semana?"
+  ],
+  "cliente": "y los sabados tambien hay?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "Sábado",
+   "10:00-11:30"
+  ],
+  "evidencia": "| Sábado | 10:00-11:30 | Circo para niños |",
+  "respuesta_ideal": "Sí, también hay clase los sábados de 10:00 a 11:30.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Día: Sábado; Horario: 10:00-11:30; Actividad: Circo para niños»."
+ },
+ {
+  "id": "i0252",
+  "negocio": "Q5_n2",
+  "turnos_previos_del_cliente": [
+   "mi hija se lastimo el tobillo en la clase de acrobacia, con quien hablo?",
+   "estan cubiertos por algun seguro?"
+  ],
+  "cliente": "muchas gracias, buenas tardes",
+  "tipo": "charla",
+  "accion_esperada": "charla",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "Buenas tardes, gracias por tu mensaje.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Ropa cómoda y ajustada al cuerpo (evitar ropa muy suelta que se enganche), pelo recogido, sin joyas ni relojes»."
+ },
+ {
+  "id": "i0315",
+  "negocio": "Q5_n2",
+  "turnos_previos_del_cliente": [],
+  "cliente": "tienen estacionamiento propio?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo esa información en lo que manejo, te recomiendo consultarlo al llegar o por WhatsApp.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «La escuela presta arnés y colchonetas; las mallas propias son opcionales»."
+ }
+]

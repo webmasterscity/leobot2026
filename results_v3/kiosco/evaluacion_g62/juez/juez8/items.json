@@ -1,0 +1,859 @@
+[
+ {
+  "id": "i0033",
+  "negocio": "Q2_n4",
+  "turnos_previos_del_cliente": [
+   "hace dos dias que no puedo respirar bien de noche y ahora siento un dolor fuerte en el pecho, que hago?",
+   "y si no es una urgencia, y solo quiero pedir un turno, necesito orden medica?",
+   "me pueden dar el resultado de mi estudio por whatsapp, ya lo hice la semana pasada?"
+  ],
+  "cliente": "cuanto tarda la consulta, cuantos minutos?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo ese dato, se lo pueden confirmar en administración.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «El tour dura 45 minutos»."
+ },
+ {
+  "id": "i0043",
+  "negocio": "Q2_n4",
+  "turnos_previos_del_cliente": [
+   "que tengo que hacer antes de la polisomnografia?"
+  ],
+  "cliente": "y para la poligrafia en mi casa, hay que hacer algo especial?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "16:00 y las 18:00",
+   "antes de las 10:00"
+  ],
+  "evidencia": "El equipo se retira en el centro entre las 16:00 y las 18:00, y se devuelve al día siguiente antes de las 10:00.",
+  "respuesta_ideal": "Debe retirar el equipo en el centro entre las 16:00 y las 18:00, y devolverlo al día siguiente antes de las 10:00.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «No, siempre se indica después de la consulta inicial con el especialista»."
+ },
+ {
+  "id": "i0050",
+  "negocio": "Q2_n4",
+  "turnos_previos_del_cliente": [
+   "hace dos dias que no puedo respirar bien de noche y ahora siento un dolor fuerte en el pecho, que hago?",
+   "y si no es una urgencia, y solo quiero pedir un turno, necesito orden medica?"
+  ],
+  "cliente": "me pueden dar el resultado de mi estudio por whatsapp, ya lo hice la semana pasada?",
+  "tipo": "instruccion",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": "No se entregan resultados por teléfono ni por WhatsApp.",
+  "respuesta_ideal": "No podemos entregar resultados por WhatsApp, eso se entrega siempre en consulta presencial con el especialista.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «No se entregan resultados por teléfono ni por WhatsApp»."
+ },
+ {
+  "id": "i0069",
+  "negocio": "Q2_n4",
+  "turnos_previos_del_cliente": [
+   "quiero sacar un turno para la semana que viene",
+   "cual es el horario de atencion administrativa?"
+  ],
+  "cliente": "puedo hacerme la poligrafia sin haber tenido consulta antes?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "No, siempre se indica después de la consulta inicial"
+  ],
+  "evidencia": "No, siempre se indica después de la consulta inicial con el especialista.",
+  "respuesta_ideal": "No, la poligrafía siempre se indica después de haber tenido la consulta inicial con el especialista.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «No, siempre se indica después de la consulta inicial con el especialista»."
+ },
+ {
+  "id": "i0074",
+  "negocio": "Q2_n4",
+  "turnos_previos_del_cliente": [
+   "cuanto cuesta la consulta inicial?",
+   "y la polisomnografia completa?",
+   "si me hago la consulta inicial y despues la polisomnografia, cuanto seria en total?"
+  ],
+  "cliente": "tienen convenio con OSDE?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "OSDE"
+  ],
+  "evidencia": "Tenemos convenio con OSDE, Swiss Medical y PAMI.",
+  "respuesta_ideal": "Sí, tenemos convenio con OSDE, además de Swiss Medical y PAMI.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Tenemos convenio con OSDE, Swiss Medical y PAMI»."
+ },
+ {
+  "id": "i0103",
+  "negocio": "Q2_n4",
+  "turnos_previos_del_cliente": [
+   "quiero sacar un turno para la semana que viene",
+   "cual es el horario de atencion administrativa?"
+  ],
+  "cliente": "puedo hacerme la poligrafia sin haber tenido consulta antes?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "No, siempre se indica después de la consulta inicial"
+  ],
+  "evidencia": "No, siempre se indica después de la consulta inicial con el especialista.",
+  "respuesta_ideal": "No, la poligrafía siempre se indica después de haber tenido la consulta inicial con el especialista.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «¿Puedo hacer la poligrafía sin haber tenido antes una consulta?»."
+ },
+ {
+  "id": "i0149",
+  "negocio": "Q2_n4",
+  "turnos_previos_del_cliente": [
+   "cuanto sale alquilar un cpap por mes?",
+   "y si lo quiero comprar en vez de alquilar?",
+   "aceptan tarjeta de credito para pagar?",
+   "el estacionamiento es techado?"
+  ],
+  "cliente": "tienen lugar para estacionar?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "4 lugares propios para pacientes"
+  ],
+  "evidencia": "Contamos con 4 lugares propios para pacientes, sin costo, sujetos a disponibilidad.",
+  "respuesta_ideal": "Sí, contamos con 4 lugares propios para pacientes, gratuitos y sujetos a disponibilidad.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Contamos con 4 lugares propios para pacientes, sin costo, sujetos a disponibilidad»."
+ },
+ {
+  "id": "i0157",
+  "negocio": "Q2_n4",
+  "turnos_previos_del_cliente": [
+   "quiero sacar un turno para la semana que viene",
+   "cual es el horario de atencion administrativa?",
+   "puedo hacerme la poligrafia sin haber tenido consulta antes?",
+   "tienen algun especialista pediatra especificamente para el sueño de los chicos?",
+   "si cancelo un turno de polisomnografia con menos de 24 horas, cuanto tendria que pagar de la mitad del estudio?"
+  ],
+  "cliente": "hacen las polisomnografias los sabados?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo ese dato específico, se lo pueden confirmar en administración.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Horario administrativo: lunes a viernes de 8:00 a 19:00, sábados de 9:00 a 13:00»."
+ },
+ {
+  "id": "i0160",
+  "negocio": "Q2_n4",
+  "turnos_previos_del_cliente": [
+   "cuanto cuesta la consulta inicial?"
+  ],
+  "cliente": "y la polisomnografia completa?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "$180.000"
+  ],
+  "evidencia": "Polisomnografía nocturna completa (en el centro)|$180.000",
+  "respuesta_ideal": "La polisomnografía nocturna completa en el centro cuesta $180.000.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Acceso a la fábrica y observación del proceso completo»."
+ },
+ {
+  "id": "i0170",
+  "negocio": "Q2_n4",
+  "turnos_previos_del_cliente": [
+   "hace dos dias que no puedo respirar bien de noche y ahora siento un dolor fuerte en el pecho, que hago?"
+  ],
+  "cliente": "y si no es una urgencia, y solo quiero pedir un turno, necesito orden medica?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "No es obligatoria"
+  ],
+  "evidencia": "No es obligatoria para la consulta inicial, pero sí se recomienda traer estudios previos si los tiene.",
+  "respuesta_ideal": "No es obligatoria para la consulta inicial, pero es recomendable traer estudios previos si los tiene.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «¿Necesito orden médica para pedir un turno?»."
+ },
+ {
+  "id": "i0182",
+  "negocio": "Q2_n4",
+  "turnos_previos_del_cliente": [
+   "quiero sacar un turno para la semana que viene"
+  ],
+  "cliente": "cual es el horario de atencion administrativa?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "8:00 a 19:00"
+  ],
+  "evidencia": "Horario administrativo: lunes a viernes de 8:00 a 19:00, sábados de 9:00 a 13:00",
+  "respuesta_ideal": "El horario administrativo es de lunes a viernes de 8:00 a 19:00 y sábados de 9:00 a 13:00.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Horario administrativo: lunes a viernes de 8:00 a 19:00, sábados de 9:00 a 13:00»."
+ },
+ {
+  "id": "i0200",
+  "negocio": "Q2_n4",
+  "turnos_previos_del_cliente": [
+   "cuanto sale alquilar un cpap por mes?",
+   "y si lo quiero comprar en vez de alquilar?",
+   "aceptan tarjeta de credito para pagar?"
+  ],
+  "cliente": "el estacionamiento es techado?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo ese dato, se lo pueden confirmar en administración.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Estacionamiento»."
+ },
+ {
+  "id": "i0202",
+  "negocio": "Q2_n4",
+  "turnos_previos_del_cliente": [
+   "quiero sacar un turno para la semana que viene",
+   "cual es el horario de atencion administrativa?",
+   "puedo hacerme la poligrafia sin haber tenido consulta antes?",
+   "tienen algun especialista pediatra especificamente para el sueño de los chicos?"
+  ],
+  "cliente": "si cancelo un turno de polisomnografia con menos de 24 horas, cuanto tendria que pagar de la mitad del estudio?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "$180.000",
+   "50%"
+  ],
+  "evidencia": "La inasistencia sin aviso a un estudio agendado (polisomnografía o poligrafía) tiene un cobro del 50% del valor del estudio.",
+  "respuesta_ideal": "Sería $90.000, la mitad del valor de la polisomnografía, que es $180.000.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Los turnos se cancelan con un mínimo de 24 horas de anticipación»."
+ },
+ {
+  "id": "i0214",
+  "negocio": "Q2_n4",
+  "turnos_previos_del_cliente": [
+   "que tengo que hacer antes de la polisomnografia?",
+   "y para la poligrafia en mi casa, hay que hacer algo especial?",
+   "si devuelvo el equipo dos dias tarde, cuanto tendria que pagar de recargo?"
+  ],
+  "cliente": "atienden niños de 4 años?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "desde los 6 años"
+  ],
+  "evidencia": "Atendemos desde los 6 años, siempre acompañados de un adulto responsable.",
+  "respuesta_ideal": "No, atendemos desde los 6 años, siempre acompañados de un adulto responsable.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Niños de 6 a 12 años: $4,00»."
+ },
+ {
+  "id": "i0236",
+  "negocio": "Q2_n4",
+  "turnos_previos_del_cliente": [],
+  "cliente": "cuanto cuesta la consulta inicial?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "$45.000"
+  ],
+  "evidencia": "Consulta inicial|$45.000",
+  "respuesta_ideal": "La consulta inicial cuesta $45.000.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Servicio: Consulta inicial; Valor: $45.000»."
+ },
+ {
+  "id": "i0265",
+  "negocio": "Q2_n4",
+  "turnos_previos_del_cliente": [
+   "cuanto sale alquilar un cpap por mes?",
+   "y si lo quiero comprar en vez de alquilar?"
+  ],
+  "cliente": "aceptan tarjeta de credito para pagar?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo esa información, se la pueden confirmar en administración.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «En la tienda aceptamos efectivo en USD, tarjetas de débito y crédito (Visa, Mastercard, American Express), y transferencias bancarias»."
+ },
+ {
+  "id": "i0289",
+  "negocio": "Q2_n4",
+  "turnos_previos_del_cliente": [
+   "cuanto cuesta la consulta inicial?"
+  ],
+  "cliente": "y la polisomnografia completa?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "$180.000"
+  ],
+  "evidencia": "Polisomnografía nocturna completa (en el centro)|$180.000",
+  "respuesta_ideal": "La polisomnografía nocturna completa en el centro cuesta $180.000.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Servicio: Polisomnografía nocturna completa (en el centro); Valor: $180.000»."
+ },
+ {
+  "id": "i0321",
+  "negocio": "Q2_n4",
+  "turnos_previos_del_cliente": [
+   "hace dos dias que no puedo respirar bien de noche y ahora siento un dolor fuerte en el pecho, que hago?"
+  ],
+  "cliente": "y si no es una urgencia, y solo quiero pedir un turno, necesito orden medica?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "No es obligatoria"
+  ],
+  "evidencia": "No es obligatoria para la consulta inicial, pero sí se recomienda traer estudios previos si los tiene.",
+  "respuesta_ideal": "No es obligatoria para la consulta inicial, pero es recomendable traer estudios previos si los tiene.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «No es obligatoria para la consulta inicial, pero sí se recomienda traer estudios previos si los tiene»."
+ },
+ {
+  "id": "i0339",
+  "negocio": "Q2_n4",
+  "turnos_previos_del_cliente": [
+   "quiero sacar un turno para la semana que viene",
+   "cual es el horario de atencion administrativa?",
+   "puedo hacerme la poligrafia sin haber tenido consulta antes?"
+  ],
+  "cliente": "tienen algun especialista pediatra especificamente para el sueño de los chicos?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo ese dato específico, en el equipo veo a la Dra. Zambrano y al Dr. Aráoz; se lo pueden confirmar en administración.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Dra. Carolina Zambrano — neumonóloga, especialista en medicina del sueño»."
+ },
+ {
+  "id": "i0005",
+  "negocio": "Q4_n4",
+  "turnos_previos_del_cliente": [],
+  "cliente": "¿Cómo llego desde Tarija si no tengo auto?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "Corrales"
+  ],
+  "evidencia": "En transporte público: los trufis a Valle de la Concepción salen de la calle Corrales (frente al mercado Campesino) cada 20 minutos aprox. y el pasaje cuesta Bs. 5; pida bajar en el km 18, en la parada \"Cerro Sama\".",
+  "respuesta_ideal": "Puede tomar un trufi a Valle de la Concepción en la calle Corrales, frente al mercado Campesino; salen cada 20 minutos, cuesta Bs. 5 y pide bajar en el km 18, parada Cerro Sama.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «En auto: desde Tarija tomar la ruta a Valle de la Concepción; a la altura del km 18 verá el portón de piedra a mano derecha»."
+ },
+ {
+  "id": "i0014",
+  "negocio": "Q4_n4",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Hola! ¿Cuánto cuesta la visita con degustación?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "70",
+   "150"
+  ],
+  "evidencia": "Clásica\tRecorrido por viñedo y bodega + degustación de 3 vinos\t60 min\t10:00, 12:00 y 15:00\tBs. 70\nPremium\tRecorrido por viñedo y bodega + degustación de 5 vinos con tabla de quesos y jamón\t90 min\t10:00, 12:00 y 15:00\tBs. 150",
+  "respuesta_ideal": "¡Bienvenido a Cerro Sama! Tenemos la visita clásica, con degustación de 3 vinos, a Bs. 70 por persona, y la premium, con 5 vinos y tabla de quesos y jamón, a Bs. 150.",
+  "respuesta_a_calificar": "Hola!. No lo tengo seguro. Lo más cercano que dice el texto es: «Visita: Premium; Qué incluye: Recorrido por viñedo y bodega + degustación de 5 vinos con tabla de quesos y jamón; Duración: 90 min; Horarios de salida: 10:00, 12:00 y 15:00; Precio: Bs. 150»."
+ },
+ {
+  "id": "i0028",
+  "negocio": "Q4_n4",
+  "turnos_previos_del_cliente": [
+   "Hola! ¿Cuánto cuesta la visita con degustación?"
+  ],
+  "cliente": "¿y cuál es la diferencia entre las dos?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "quesos"
+  ],
+  "evidencia": "Clásica\tRecorrido por viñedo y bodega + degustación de 3 vinos\t60 min\t10:00, 12:00 y 15:00\tBs. 70\nPremium\tRecorrido por viñedo y bodega + degustación de 5 vinos con tabla de quesos y jamón\t90 min\t10:00, 12:00 y 15:00\tBs. 150",
+  "respuesta_ideal": "La clásica dura 60 minutos e incluye 3 vinos; la premium dura 90 minutos, con 5 vinos y una tabla de quesos y jamón.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Singani en dos presentaciones: Bs. 95 y Bs. 160»."
+ },
+ {
+  "id": "i0081",
+  "negocio": "Q4_n4",
+  "turnos_previos_del_cliente": [
+   "Hola! ¿Cuánto cuesta la visita con degustación?",
+   "¿y cuál es la diferencia entre las dos?",
+   "¿a qué hora salen?",
+   "somos 4 adultos y 2 niños de 8 y 10 años, ¿cuánto pagaríamos por la clásica?",
+   "¿los niños pueden probar un poquito de vino?"
+  ],
+  "cliente": "¿hace falta reservar para 6 personas?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "8"
+  ],
+  "evidencia": "Recomendamos reservar; es obligatorio para grupos de 8 o más personas y para la visita con almuerzo, con 24 horas de anticipación como mínimo.",
+  "respuesta_ideal": "Para 6 personas no es obligatorio, solo desde 8 o para la visita con almuerzo; de todos modos se lo recomendamos.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Recomendamos reservar; es obligatorio para grupos de 8 o más personas y para la visita con almuerzo, con 24 horas de anticipación como mínimo»."
+ },
+ {
+  "id": "i0115",
+  "negocio": "Q4_n4",
+  "turnos_previos_del_cliente": [
+   "Buenas tardes, ¿hacen visitas en inglés? vienen unos amigos de Estados Unidos",
+   "¿cuánto cuesta la fiesta de la vendimia?",
+   "¿y en qué mes es?"
+  ],
+  "cliente": "¿puedo pagar en dólares?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "cambio"
+  ],
+  "evidencia": "Aceptamos dólares al tipo de cambio del día.",
+  "respuesta_ideal": "Sí, aceptamos dólares al tipo de cambio del día.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Efectivo en bolivianos, tarjetas de crédito y débito, y pago por QR. Aceptamos dólares al tipo de cambio del día»."
+ },
+ {
+  "id": "i0174",
+  "negocio": "Q4_n4",
+  "turnos_previos_del_cliente": [
+   "compré una caja de vinos en la visita y me la mandaron a La Paz, llegó con dos botellas rotas, ¿qué hago?"
+  ],
+  "cliente": "¿cuánto cuesta el envío a Cochabamba?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo una tarifa: el envío se cotiza según el destino y la cantidad de botellas; puede pedir la cotización a ventas@cerrosama.bo.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Hacemos envíos a La Paz, Cochabamba y Santa Cruz a traves de empresas de transporte; el envío se cotiza según destino y cantidad de botellas»."
+ },
+ {
+  "id": "i0192",
+  "negocio": "Q4_n4",
+  "turnos_previos_del_cliente": [
+   "compré una caja de vinos en la visita y me la mandaron a La Paz, llegó con dos botellas rotas, ¿qué hago?",
+   "¿cuánto cuesta el envío a Cochabamba?",
+   "¿cuál es el vino más barato que venden?",
+   "¿y singani también venden? cuánto cuesta"
+  ],
+  "cliente": "si compro 6 botellas me hacen descuento?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo información de descuentos por cantidad en la tienda; puede consultarlo por WhatsApp al +591 7218 5530.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Sí, la tienda atiende en el mismo horario de visitas»."
+ },
+ {
+  "id": "i0222",
+  "negocio": "Q4_n4",
+  "turnos_previos_del_cliente": [
+   "Buenas tardes, ¿hacen visitas en inglés? vienen unos amigos de Estados Unidos"
+  ],
+  "cliente": "¿cuánto cuesta la fiesta de la vendimia?",
+  "tipo": "instruccion",
+  "accion_esperada": "responder",
+  "claves": [
+   "febrero"
+  ],
+  "evidencia": "Si preguntan por los precios o el programa de la Fiesta de la Vendimia, di que aún no están publicados y que salen en febrero; no des cifras.",
+  "respuesta_ideal": "Los precios de la Fiesta de la Vendimia todavía no están publicados; salen en febrero en nuestras redes.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Fiesta de la Vendimia: se celebra cada año en marzo, con vendimia participativa, música y almuerzo. Los precios y el programa se publican en febrero en nuestras redes»."
+ },
+ {
+  "id": "i0235",
+  "negocio": "Q4_n4",
+  "turnos_previos_del_cliente": [
+   "buenas, quiero ir el sábado con almuerzo, ¿qué precio tiene?"
+  ],
+  "cliente": "¿y a qué hora es?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "12:00"
+  ],
+  "evidencia": "Con almuerzo\tVisita premium + almuerzo de tres pasos en el restaurante, con maridaje\t3 horas\t12:00 únicamente\tBs. 260",
+  "respuesta_ideal": "La visita con almuerzo sale únicamente a las 12:00 y dura unas 3 horas.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Sábados y domingos: 10:00 a 15:00 hs»."
+ },
+ {
+  "id": "i0244",
+  "negocio": "Q4_n4",
+  "turnos_previos_del_cliente": [
+   "¿Cómo llego desde Tarija si no tengo auto?"
+  ],
+  "cliente": "¿y a qué hora sale el último trufi de vuelta a la ciudad?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo los horarios de regreso de los trufis; puede consultarlo por WhatsApp al +591 7218 5530.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «En transporte público: los trufis a Valle de la Concepción salen de la calle Corrales (frente al mercado Campesino) cada 20 minutos aprox. y el pasaje cuesta Bs. 5; pida bajar en el km 18, en la parada \"Cerro Sama\"»."
+ },
+ {
+  "id": "i0254",
+  "negocio": "Q4_n4",
+  "turnos_previos_del_cliente": [
+   "¿Cómo llego desde Tarija si no tengo auto?",
+   "¿y a qué hora sale el último trufi de vuelta a la ciudad?",
+   "¿puedo llevar a mi perro?"
+  ],
+  "cliente": "mi mamá va en silla de ruedas, ¿puede hacer el recorrido?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "viñedo",
+   "accesible"
+  ],
+  "evidencia": "- El recorrido por el viñedo tiene pendiente y tramos de tierra; no es apto para sillas de ruedas. La bodega, la sala de degustación y el restaurante sí son accesibles.",
+  "respuesta_ideal": "El recorrido por el viñedo no es apto para sillas de ruedas porque tiene pendiente y tramos de tierra, pero la bodega, la sala de degustación y el restaurante sí son accesibles.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «El recorrido por el viñedo tiene pendiente y tramos de tierra; no es apto para sillas de ruedas. La bodega, la sala de degustación y el restaurante sí son accesibles»."
+ },
+ {
+  "id": "i0305",
+  "negocio": "Q4_n4",
+  "turnos_previos_del_cliente": [
+   "compré una caja de vinos en la visita y me la mandaron a La Paz, llegó con dos botellas rotas, ¿qué hago?",
+   "¿cuánto cuesta el envío a Cochabamba?",
+   "¿cuál es el vino más barato que venden?"
+  ],
+  "cliente": "¿y singani también venden? cuánto cuesta",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "95",
+   "160"
+  ],
+  "evidencia": "Singani en dos presentaciones: Bs. 95 y Bs. 160.",
+  "respuesta_ideal": "Sí, tenemos singani en dos presentaciones, a Bs. 95 y a Bs. 160.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Visita: Singani; Qué incluye: Recorrido por la destilería + degustación de 3 singanis; Duración: 45 min; Horarios de salida: 11:00 y 16:00; Precio: Bs. 90»."
+ },
+ {
+  "id": "i0341",
+  "negocio": "Q4_n4",
+  "turnos_previos_del_cliente": [],
+  "cliente": "hola, ¿cuánto dura la visita premium?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "90"
+  ],
+  "evidencia": "Premium\tRecorrido por viñedo y bodega + degustación de 5 vinos con tabla de quesos y jamón\t90 min\t10:00, 12:00 y 15:00\tBs. 150",
+  "respuesta_ideal": "¡Bienvenido a Cerro Sama! La visita premium dura 90 minutos.",
+  "respuesta_a_calificar": "Hola. No lo tengo seguro. Lo más cercano que dice el texto es: «Visita: Con almuerzo; Qué incluye: Visita premium + almuerzo de tres pasos en el restaurante, con maridaje; Duración: 3 horas; Horarios de salida: 12:00 únicamente; Precio: Bs. 260»."
+ },
+ {
+  "id": "i0000",
+  "negocio": "Q6_n4",
+  "turnos_previos_del_cliente": [
+   "Hola, mi hija tiene 15 años y quiere hacer defensa personal, ¿cuándo es la clase?",
+   "¿Cuánto cuesta el trimestre?",
+   "¿Van chicos también a esa clase?"
+  ],
+  "cliente": "¿La que da la clase es mujer?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo información sobre quién imparte la clase de defensa personal. En recepción te lo confirman: 963 41 27 90.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Disciplina: Defensa personal (solo mujeres); Días: S; Hora: 11:00-12:30; Edad: desde 15 años»."
+ },
+ {
+  "id": "i0006",
+  "negocio": "Q6_n4",
+  "turnos_previos_del_cliente": [
+   "Buenas, ¿cuánto es la cuota si voy tres días a la semana a una sola cosa?",
+   "Para kick boxing, ¿tengo que comprarme guantes?"
+  ],
+  "cliente": "¿Y a cuánto venden los guantes ahí?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo el precio de los guantes; solo sé que el karategi y el judogi se venden desde 28 €. En recepción te lo pueden decir: 963 41 27 90.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Karategi y judogi a la venta en recepción desde 28 €. Para kick boxing necesitas guantes, vendas y protector bucal; los primeros 2 meses te prestamos los guantes»."
+ },
+ {
+  "id": "i0008",
+  "negocio": "Q6_n4",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Hola, mi hija tiene 15 años y quiere hacer defensa personal, ¿cuándo es la clase?",
+  "tipo": "instruccion",
+  "accion_esperada": "responder",
+  "claves": [
+   "11:00",
+   "autorización firmada"
+  ],
+  "evidencia": "Cuando se trate de un menor de 16 años, recuerda que necesita la autorización firmada de su madre, padre o tutor. […] Defensa personal (solo mujeres)\tS\t11:00-12:30\tdesde 15 años",
+  "respuesta_ideal": "La clase de defensa personal es los sábados de 11:00 a 12:30 y admite desde los 15 años. Como tu hija es menor de 16, necesita la autorización firmada de su madre, padre o tutor.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Disciplina: Defensa personal (solo mujeres); Días: S; Hora: 11:00-12:30; Edad: desde 15 años»."
+ },
+ {
+  "id": "i0042",
+  "negocio": "Q6_n4",
+  "turnos_previos_del_cliente": [
+   "¡Hola! Quiero apuntar a mi hijo de 7 años a karate, ¿qué días tiene clase?"
+  ],
+  "cliente": "¿Y cuánto es al mes?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "35 €"
+  ],
+  "evidencia": "Infantil (karate o judo): 35 €/mes.",
+  "respuesta_ideal": "La cuota infantil de karate es de 35 € al mes.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Primero registro y firma de la declaración de riesgos, luego un briefing de 20 minutos con tu instructor, equipamiento, vuelo y salto: unos 50 segundos de caída libre a 200 km/h y de 5 a 7 minutos bajo la campana»."
+ },
+ {
+  "id": "i0055",
+  "negocio": "Q6_n4",
+  "turnos_previos_del_cliente": [
+   "¿Cuándo cerráis por vacaciones?",
+   "¿Y en Fallas?",
+   "¿Hay clases los domingos?",
+   "¿Hacéis descuento a estudiantes universitarios?"
+  ],
+  "cliente": "¿Dónde puedo aparcar el coche?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "zona azul"
+  ],
+  "evidencia": "No disponemos de parking; hay zona azul en la calle.",
+  "respuesta_ideal": "El dojo no tiene parking; hay zona azul en la calle.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «La cuota se cobra por domiciliación bancaria del 1 al 5 de cada mes. Tambien se puede pagar con Bizum o con tarjeta en recepción. No aceptamos efectivo»."
+ },
+ {
+  "id": "i0073",
+  "negocio": "Q6_n4",
+  "turnos_previos_del_cliente": [
+   "¡Hola! Quiero apuntar a mi hijo de 7 años a karate, ¿qué días tiene clase?",
+   "¿Y cuánto es al mes?",
+   "¿Hay que pagar algo más al inscribirse?"
+  ],
+  "cliente": "Si también apunto a su hermana a judo infantil, ¿cuánto pagaría al mes por los dos?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "66,50"
+  ],
+  "evidencia": "Infantil (karate o judo): 35 €/mes. Segundo hermano: 10 % de descuento en su cuota.",
+  "respuesta_ideal": "Serían 35 € por el primero y 31,50 € por la hermana, con el 10 % de descuento de segundo hermano: 66,50 € al mes.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «La cuota se cobra por domiciliación bancaria del 1 al 5 de cada mes. Tambien se puede pagar con Bizum o con tarjeta en recepción. No aceptamos efectivo»."
+ },
+ {
+  "id": "i0082",
+  "negocio": "Q6_n4",
+  "turnos_previos_del_cliente": [
+   "Buenas, ¿cuánto es la cuota si voy tres días a la semana a una sola cosa?"
+  ],
+  "cliente": "Para kick boxing, ¿tengo que comprarme guantes?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "2 meses"
+  ],
+  "evidencia": "Para kick boxing necesitas guantes, vendas y protector bucal; los primeros 2 meses te prestamos los guantes.",
+  "respuesta_ideal": "Para kick boxing necesitas guantes, vendas y protector bucal, pero los primeros 2 meses te prestamos los guantes.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Karategi y judogi a la venta en recepción desde 28 €. Para kick boxing necesitas guantes, vendas y protector bucal; los primeros 2 meses te prestamos los guantes»."
+ },
+ {
+  "id": "i0090",
+  "negocio": "Q6_n4",
+  "turnos_previos_del_cliente": [
+   "¡Hola! Quiero apuntar a mi hijo de 7 años a karate, ¿qué días tiene clase?"
+  ],
+  "cliente": "¿Y cuánto es al mes?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "35 €"
+  ],
+  "evidencia": "Infantil (karate o judo): 35 €/mes.",
+  "respuesta_ideal": "La cuota infantil de karate es de 35 € al mes.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «La cuota se cobra por domiciliación bancaria del 1 al 5 de cada mes. Tambien se puede pagar con Bizum o con tarjeta en recepción. No aceptamos efectivo»."
+ },
+ {
+  "id": "i0110",
+  "negocio": "Q6_n4",
+  "turnos_previos_del_cliente": [
+   "Me quiero dar de baja, ¿qué tengo que hacer?",
+   "Si me lesiono, ¿puedo congelar la cuota?"
+  ],
+  "cliente": "¿Puedo pagar en efectivo?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "No aceptamos efectivo"
+  ],
+  "evidencia": "No aceptamos efectivo.",
+  "respuesta_ideal": "No aceptamos efectivo. Se paga por domiciliación bancaria, Bizum o tarjeta en recepción.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «El resto se paga el día del salto en efectivo, tarjeta Visa/Mastercard o Bizum»."
+ },
+ {
+  "id": "i0139",
+  "negocio": "Q6_n4",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Si hago karate adultos los tres días y además BJJ los dos días, ¿me sale mejor la tarifa ilimitada?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "89,80",
+   "69 €"
+  ],
+  "evidencia": "- 1 disciplina, 2 días/semana: 39,90 €\n- 1 disciplina, 3 días/semana: 49,90 €\n- Tarifa ilimitada (todas las clases de adultos + open mat): 69 €",
+  "respuesta_ideal": "Sí: por separado serían 49,90 € de karate más 39,90 € de BJJ, 89,80 € al mes, y la tarifa ilimitada cuesta 69 €.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Tarifa ilimitada (todas las clases de adultos + open mat): 69 €»."
+ },
+ {
+  "id": "i0154",
+  "negocio": "Q6_n4",
+  "turnos_previos_del_cliente": [
+   "Me quiero dar de baja, ¿qué tengo que hacer?",
+   "Si me lesiono, ¿puedo congelar la cuota?",
+   "¿Puedo pagar en efectivo?",
+   "¿Dais clases particulares?",
+   "¿Cuándo son los exámenes de cinturón y cuánto cuestan?",
+   "¿Y el de BJJ también cuesta eso?"
+  ],
+  "cliente": "Vale, ¡gracias! Hasta luego",
+  "tipo": "charla",
+  "accion_esperada": "charla",
+  "claves": [],
+  "evidencia": "Despídete con un \"¡Oss! Te esperamos en el tatami\".",
+  "respuesta_ideal": "¡Oss! Te esperamos en el tatami.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Por lesión, con informe médico, se puede congelar la cuota hasta 3 meses»."
+ },
+ {
+  "id": "i0185",
+  "negocio": "Q6_n4",
+  "turnos_previos_del_cliente": [
+   "Me quiero dar de baja, ¿qué tengo que hacer?",
+   "Si me lesiono, ¿puedo congelar la cuota?",
+   "¿Puedo pagar en efectivo?",
+   "¿Dais clases particulares?"
+  ],
+  "cliente": "¿Cuándo son los exámenes de cinturón y cuánto cuestan?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "junio y diciembre",
+   "20 €"
+  ],
+  "evidencia": "Exámenes de cinturón (karate y judo): en junio y diciembre. Tasa de examen: 20 €.",
+  "respuesta_ideal": "Los exámenes de cinturón de karate y judo son en junio y diciembre, y la tasa de examen es de 20 €.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Exámenes de cinturón (karate y judo): en junio y diciembre»."
+ },
+ {
+  "id": "i0210",
+  "negocio": "Q6_n4",
+  "turnos_previos_del_cliente": [
+   "Me quiero dar de baja, ¿qué tengo que hacer?"
+  ],
+  "cliente": "Si me lesiono, ¿puedo congelar la cuota?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "hasta 3 meses"
+  ],
+  "evidencia": "Por lesión, con informe médico, se puede congelar la cuota hasta 3 meses.",
+  "respuesta_ideal": "Sí, por lesión y con informe médico puedes congelar la cuota hasta 3 meses.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Por lesión, con informe médico, se puede congelar la cuota hasta 3 meses»."
+ },
+ {
+  "id": "i0221",
+  "negocio": "Q6_n4",
+  "turnos_previos_del_cliente": [
+   "¿Cuándo cerráis por vacaciones?",
+   "¿Y en Fallas?"
+  ],
+  "cliente": "¿Hay clases los domingos?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "cerrado"
+  ],
+  "evidencia": "Domingos cerrado.",
+  "respuesta_ideal": "No, los domingos está cerrado.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Fallas (del 15 al 19 de marzo): solo hay clases de 17:00 a 20:00»."
+ },
+ {
+  "id": "i0224",
+  "negocio": "Q6_n4",
+  "turnos_previos_del_cliente": [
+   "Si hago karate adultos los tres días y además BJJ los dos días, ¿me sale mejor la tarifa ilimitada?"
+  ],
+  "cliente": "¿A qué hora es el BJJ?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "20:45"
+  ],
+  "evidencia": "Brazilian jiu-jitsu (BJJ)\tM y J\t20:45-22:00\tdesde 16 años",
+  "respuesta_ideal": "El BJJ es los martes y jueves de 20:45 a 22:00.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Disciplina: Brazilian jiu-jitsu (BJJ); Días: M y J; Hora: 20:45-22:00; Edad: desde 16 años»."
+ },
+ {
+  "id": "i0259",
+  "negocio": "Q6_n4",
+  "turnos_previos_del_cliente": [
+   "Hola, mi hija tiene 15 años y quiere hacer defensa personal, ¿cuándo es la clase?"
+  ],
+  "cliente": "¿Cuánto cuesta el trimestre?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "65 €"
+  ],
+  "evidencia": "- Defensa personal femenina: 25 €/mes, o curso trimestral por 65 €",
+  "respuesta_ideal": "El curso trimestral de defensa personal cuesta 65 € (o 25 € al mes).",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Por lesión, con informe médico, se puede congelar la cuota hasta 3 meses»."
+ },
+ {
+  "id": "i0275",
+  "negocio": "Q6_n4",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Buenas, ¿cuánto es la cuota si voy tres días a la semana a una sola cosa?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "49,90 €"
+  ],
+  "evidencia": "- 1 disciplina, 3 días/semana: 49,90 €",
+  "respuesta_ideal": "Una disciplina tres días a la semana cuesta 49,90 € al mes.",
+  "respuesta_a_calificar": "Buenas. No lo tengo seguro. Lo más cercano que dice el texto es: «1 disciplina, 2 días/semana: 39,90 €»."
+ },
+ {
+  "id": "i0296",
+  "negocio": "Q6_n4",
+  "turnos_previos_del_cliente": [
+   "Si hago karate adultos los tres días y además BJJ los dos días, ¿me sale mejor la tarifa ilimitada?",
+   "¿A qué hora es el BJJ?"
+  ],
+  "cliente": "¿Cuántos alumnos hay por clase mas o menos?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo ese dato. Puedes preguntarlo en recepción al 963 41 27 90.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Disciplina: Open mat (práctica libre); Días: S; Hora: 12:30-14:00; Edad: solo alumnos inscritos»."
+ },
+ {
+  "id": "i0322",
+  "negocio": "Q6_n4",
+  "turnos_previos_del_cliente": [
+   "Me quiero dar de baja, ¿qué tengo que hacer?",
+   "Si me lesiono, ¿puedo congelar la cuota?"
+  ],
+  "cliente": "¿Puedo pagar en efectivo?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "No aceptamos efectivo"
+  ],
+  "evidencia": "No aceptamos efectivo.",
+  "respuesta_ideal": "No aceptamos efectivo. Se paga por domiciliación bancaria, Bizum o tarjeta en recepción.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «La cuota se cobra por domiciliación bancaria del 1 al 5 de cada mes. Tambien se puede pagar con Bizum o con tarjeta en recepción. No aceptamos efectivo»."
+ },
+ {
+  "id": "i0330",
+  "negocio": "Q6_n4",
+  "turnos_previos_del_cliente": [
+   "¡Hola! Quiero apuntar a mi hijo de 7 años a karate, ¿qué días tiene clase?"
+  ],
+  "cliente": "¿Y cuánto es al mes?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "35 €"
+  ],
+  "evidencia": "Infantil (karate o judo): 35 €/mes.",
+  "respuesta_ideal": "La cuota infantil de karate es de 35 € al mes.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Karategi y judogi a la venta en recepción desde 28 €. Para kick boxing necesitas guantes, vendas y protector bucal; los primeros 2 meses te prestamos los guantes»."
+ }
+]

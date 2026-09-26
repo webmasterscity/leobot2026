@@ -1,0 +1,829 @@
+[
+ {
+  "id": "i0025",
+  "negocio": "Q2_n1",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Buenas, ¿cuánto vale un marco sencillo?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "18€"
+  ],
+  "evidencia": "Marco sencillo (madera o aluminio)|18€",
+  "respuesta_ideal": "Un marco sencillo de madera o aluminio cuesta desde 18€.",
+  "respuesta_a_calificar": "Buenas. No lo tengo seguro. Lo más cercano que dice el texto es: «Producto: Marco sencillo (madera o aluminio); Precio desde: 18€»."
+ },
+ {
+  "id": "i0029",
+  "negocio": "Q2_n1",
+  "turnos_previos_del_cliente": [
+   "a que hora abren los sabados?",
+   "abren domingos?"
+  ],
+  "cliente": "Quiero apuntarme al curso de enmarcado del sábado que viene, ¿me reserva plaza?",
+  "tipo": "instruccion",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "para cursos y presupuestos de restauración, derivar a Manuela, que atiende los sábados en el mismo teléfono de la tienda.",
+  "respuesta_ideal": "Para reservar plaza en el curso debe hablar con Manuela, que atiende los sábados en el mismo teléfono de la tienda.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Un sábado al mes damos un curso de iniciación al enmarcado artesanal»."
+ },
+ {
+  "id": "i0039",
+  "negocio": "Q2_n1",
+  "turnos_previos_del_cliente": [
+   "Buenas, ¿cuánto vale un marco sencillo?",
+   "¿y con paspartú cuánto sería?"
+  ],
+  "cliente": "vale, y si le pongo también el cristal que no da reflejos, ¿cuánto sería en total?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "28€",
+   "12€"
+  ],
+  "evidencia": "|Marco con paspartú|28€|\n|Cristal antirreflejo (suplemento)|12€|",
+  "respuesta_ideal": "Serían 40€ en total: 28€ del marco con paspartú más 12€ del suplemento de cristal antirreflejo.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Los precios de restauración son siempre orientativos: hay que ver la pieza en persona o mandar una foto por WhatsApp al 611 234 567 para dar un precio cerrado»."
+ },
+ {
+  "id": "i0041",
+  "negocio": "Q2_n1",
+  "turnos_previos_del_cliente": [
+   "cuanto cuesta montar un puzle de 1000 piezas?"
+  ],
+  "cliente": "tienen marcos redondos u ovalados?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo esa información, le recomiendo preguntar directamente en la tienda.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «R: Sí, tenemos marcos especiales tipo caja (shadow box) para camisetas, desde 55€»."
+ },
+ {
+  "id": "i0052",
+  "negocio": "Q2_n1",
+  "turnos_previos_del_cliente": [
+   "Tengo un marco antiguo dorado de mi abuela, con el estuco algo roto, ¿cuánto me costaría restaurarlo?",
+   "¿tienen dónde aparcar cerca?"
+  ],
+  "cliente": "¿hacen recogida a domicilio para piezas grandes?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo esa información, se lo puedo confirmar si llama directamente a la tienda.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «No hacemos envíos a domicilio»."
+ },
+ {
+  "id": "i0058",
+  "negocio": "Q2_n1",
+  "turnos_previos_del_cliente": [
+   "enmarcan camisetas de futbol?",
+   "puedo llevar a mi perro a la tienda?",
+   "hacen envios a mi casa?"
+  ],
+  "cliente": "quiero enmarcar 3 diplomas iguales con marco sencillo, ¿cuánto seria en total?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "18€"
+  ],
+  "evidencia": "Marco sencillo (madera o aluminio)|18€",
+  "respuesta_ideal": "Serían 54€ en total, a 18€ cada marco sencillo.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Aceptamos encargos de empresas para enmarcar diplomas o cuadros corporativos en volumen, con descuento a partir de 10 unidades (consultar)»."
+ },
+ {
+  "id": "i0063",
+  "negocio": "Q2_n1",
+  "turnos_previos_del_cliente": [
+   "Buenas, ¿cuánto vale un marco sencillo?",
+   "¿y con paspartú cuánto sería?",
+   "vale, y si le pongo también el cristal que no da reflejos, ¿cuánto sería en total?"
+  ],
+  "cliente": "puedo pagar con Bizum?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "Bizum"
+  ],
+  "evidencia": "Aceptamos efectivo, tarjeta y Bizum.",
+  "respuesta_ideal": "Sí, aceptamos Bizum, además de efectivo y tarjeta.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Aceptamos efectivo, tarjeta y Bizum»."
+ },
+ {
+  "id": "i0096",
+  "negocio": "Q2_n1",
+  "turnos_previos_del_cliente": [
+   "enmarcan camisetas de futbol?",
+   "puedo llevar a mi perro a la tienda?"
+  ],
+  "cliente": "hacen envios a mi casa?",
+  "tipo": "instruccion",
+  "accion_esperada": "responder",
+  "claves": [
+   "No hacemos envíos a domicilio"
+  ],
+  "evidencia": "Si preguntan por envíos, aclarar que no se hacen envíos a domicilio, solo recogida en tienda.",
+  "respuesta_ideal": "No hacemos envíos a domicilio, todo pedido se recoge en la tienda.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «No hacemos envíos a domicilio»."
+ },
+ {
+  "id": "i0126",
+  "negocio": "Q2_n1",
+  "turnos_previos_del_cliente": [],
+  "cliente": "enmarcan camisetas de futbol?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "55€"
+  ],
+  "evidencia": "tenemos marcos especiales tipo caja (shadow box) para camisetas, desde 55€.",
+  "respuesta_ideal": "Sí, tenemos marcos especiales tipo caja para camisetas, desde 55€.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «R: Sí, tenemos marcos especiales tipo caja (shadow box) para camisetas, desde 55€»."
+ },
+ {
+  "id": "i0146",
+  "negocio": "Q2_n1",
+  "turnos_previos_del_cliente": [
+   "enmarcan camisetas de futbol?"
+  ],
+  "cliente": "puedo llevar a mi perro a la tienda?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "Se admiten perros pequeños atados"
+  ],
+  "evidencia": "Se admiten perros pequeños atados dentro de la tienda.",
+  "respuesta_ideal": "Sí, se admiten perros pequeños siempre que vayan atados.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Se admiten perros pequeños atados dentro de la tienda»."
+ },
+ {
+  "id": "i0155",
+  "negocio": "Q2_n1",
+  "turnos_previos_del_cliente": [
+   "a que hora abren los sabados?",
+   "abren domingos?",
+   "Quiero apuntarme al curso de enmarcado del sábado que viene, ¿me reserva plaza?"
+  ],
+  "cliente": "¿y cuánto cuesta el curso?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "40€"
+  ],
+  "evidencia": "Precio: 40€ con materiales incluidos.",
+  "respuesta_ideal": "El curso cuesta 40€, con materiales incluidos.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Los sábados por la mañana también atiende Manuela, encargada de cursos y presupuestos de restauración»."
+ },
+ {
+  "id": "i0177",
+  "negocio": "Q2_n1",
+  "turnos_previos_del_cliente": [
+   "si lo necesito urgente, en cuanto me lo pueden tener?"
+  ],
+  "cliente": "y si es un marco sencillo de 18 euros con la urgencia, cuanto seria?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "18€",
+   "20%"
+  ],
+  "evidencia": "Si necesita el trabajo con urgencia lo podemos tener en 48 horas con un recargo del 20% sobre el precio.",
+  "respuesta_ideal": "Serían unos 21,60€: el marco sencillo de 18€ más el recargo del 20% por urgencia.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Si necesita el trabajo con urgencia lo podemos tener en 48 horas con un recargo del 20% sobre el precio»."
+ },
+ {
+  "id": "i0188",
+  "negocio": "Q2_n1",
+  "turnos_previos_del_cliente": [],
+  "cliente": "cuanto cuesta montar un puzle de 1000 piezas?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "22€"
+  ],
+  "evidencia": "Montaje de puzle hasta 1000 piezas|22€",
+  "respuesta_ideal": "Montar un puzle de hasta 1000 piezas cuesta 22€.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Producto: Montaje de puzle hasta 1000 piezas; Precio desde: 22€»."
+ },
+ {
+  "id": "i0190",
+  "negocio": "Q2_n1",
+  "turnos_previos_del_cliente": [
+   "a que hora abren los sabados?",
+   "abren domingos?",
+   "Quiero apuntarme al curso de enmarcado del sábado que viene, ¿me reserva plaza?",
+   "¿y cuánto cuesta el curso?"
+  ],
+  "cliente": "vale, muchas gracias, hasta luego",
+  "tipo": "charla",
+  "accion_esperada": "charla",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "Hasta luego, que tenga un buen día.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Producto: Montaje de puzle hasta 1000 piezas; Precio desde: 22€»."
+ },
+ {
+  "id": "i0233",
+  "negocio": "Q2_n1",
+  "turnos_previos_del_cliente": [
+   "Buenas, ¿cuánto vale un marco sencillo?"
+  ],
+  "cliente": "¿y con paspartú cuánto sería?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "28€"
+  ],
+  "evidencia": "Marco con paspartú|28€",
+  "respuesta_ideal": "Con paspartú el precio sube a 28€ desde.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Producto: Marco con paspartú; Precio desde: 28€»."
+ },
+ {
+  "id": "i0243",
+  "negocio": "Q2_n1",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Tengo un marco antiguo dorado de mi abuela, con el estuco algo roto, ¿cuánto me costaría restaurarlo?",
+  "tipo": "instruccion",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "Los precios de restauración son siempre orientativos: hay que ver la pieza en persona o mandar una foto por WhatsApp al 611 234 567 para dar un precio cerrado.",
+  "respuesta_ideal": "El precio de restauración depende del estado de la pieza; puede traerla a la tienda o enviarnos una foto por WhatsApp al 611 234 567 para darle un precio cerrado.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Restauración de marcos antiguos (dorado, estuco, madera)»."
+ },
+ {
+  "id": "i0263",
+  "negocio": "Q2_n1",
+  "turnos_previos_del_cliente": [
+   "cuanto cuesta montar un puzle de 1000 piezas?",
+   "tienen marcos redondos u ovalados?"
+  ],
+  "cliente": "hacen descuento a estudiantes?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo ese dato, en la tienda se lo podrán confirmar.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Aceptamos encargos de empresas para enmarcar diplomas o cuadros corporativos en volumen, con descuento a partir de 10 unidades (consultar)»."
+ },
+ {
+  "id": "i0278",
+  "negocio": "Q2_n1",
+  "turnos_previos_del_cliente": [
+   "enmarcan camisetas de futbol?",
+   "puedo llevar a mi perro a la tienda?",
+   "hacen envios a mi casa?"
+  ],
+  "cliente": "quiero enmarcar 3 diplomas iguales con marco sencillo, ¿cuánto seria en total?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "18€"
+  ],
+  "evidencia": "Marco sencillo (madera o aluminio)|18€",
+  "respuesta_ideal": "Serían 54€ en total, a 18€ cada marco sencillo.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Oficina: Av. Ramón Picarte 1450, oficina 3, Valdivia (atención con cita, no es local de atención en calle)»."
+ },
+ {
+  "id": "i0281",
+  "negocio": "Q2_n1",
+  "turnos_previos_del_cliente": [],
+  "cliente": "si lo necesito urgente, en cuanto me lo pueden tener?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "48 horas"
+  ],
+  "evidencia": "Si necesita el trabajo con urgencia lo podemos tener en 48 horas con un recargo del 20% sobre el precio.",
+  "respuesta_ideal": "Con urgencia lo podemos tener en 48 horas, con un recargo del 20% sobre el precio.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Si necesita el trabajo con urgencia lo podemos tener en 48 horas con un recargo del 20% sobre el precio»."
+ },
+ {
+  "id": "i0333",
+  "negocio": "Q2_n1",
+  "turnos_previos_del_cliente": [],
+  "cliente": "a que hora abren los sabados?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "10:00 a 14:00"
+  ],
+  "evidencia": "Sábados: 10:00 a 14:00",
+  "respuesta_ideal": "Los sábados abrimos de 10:00 a 14:00.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Sábados: 10:00 a 14:00»."
+ },
+ {
+  "id": "i0007",
+  "negocio": "Q4_n1",
+  "turnos_previos_del_cliente": [
+   "Me restauraron una mesa hace 6 meses y se le ha abierto una pata, ¿qué hago?"
+  ],
+  "cliente": "¿la garantia cuanto dura?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "2 años",
+   "1 año"
+  ],
+  "evidencia": "- 2 años en trabajos estructurales (encolados, ensambles, refuerzos).\n- 1 año en acabados y tapizados.",
+  "respuesta_ideal": "La garantía es de 2 años en trabajos estructurales y de 1 año en acabados y tapizados.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «La garantía no cubre daños por humedad, golpes, exposición al sol ni uso indebido»."
+ },
+ {
+  "id": "i0031",
+  "negocio": "Q4_n1",
+  "turnos_previos_del_cliente": [
+   "Hola, buenas. ¿A qué hora abren por las tardes?"
+  ],
+  "cliente": "¿Y los sábados?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "10:00",
+   "13:30"
+  ],
+  "evidencia": "Sábados: 10:00 a 13:30 (solo recogidas, entregas y presupuestos; no se trabaja en el banco).",
+  "respuesta_ideal": "Los sábados abrimos de 10:00 a 13:30, solo para recogidas, entregas y presupuestos.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Sábados: 10:00 a 13:30 (solo recogidas, entregas y presupuestos; no se trabaja en el banco)»."
+ },
+ {
+  "id": "i0051",
+  "negocio": "Q4_n1",
+  "turnos_previos_del_cliente": [
+   "Me restauraron una mesa hace 6 meses y se le ha abierto una pata, ¿qué hago?",
+   "¿la garantia cuanto dura?",
+   "¿y si se ha hinchado por humedad, entra?"
+  ],
+  "cliente": "vale gracias, ¿puedo pagar con tarjeta cuando vaya?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "Bizum"
+  ],
+  "evidencia": "Efectivo, transferencia o Bizum. No aceptamos tarjeta.",
+  "respuesta_ideal": "No, no aceptamos tarjeta; puede pagar en efectivo, por transferencia o por Bizum.",
+  "respuesta_a_calificar": "Vale gracias. No lo tengo seguro. Lo más cercano que dice el texto es: «No aceptamos tarjeta»."
+ },
+ {
+  "id": "i0053",
+  "negocio": "Q4_n1",
+  "turnos_previos_del_cliente": [
+   "Me restauraron una mesa hace 6 meses y se le ha abierto una pata, ¿qué hago?",
+   "¿la garantia cuanto dura?",
+   "¿y si se ha hinchado por humedad, entra?"
+  ],
+  "cliente": "vale gracias, ¿puedo pagar con tarjeta cuando vaya?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "Bizum"
+  ],
+  "evidencia": "Efectivo, transferencia o Bizum. No aceptamos tarjeta.",
+  "respuesta_ideal": "No, no aceptamos tarjeta; puede pagar en efectivo, por transferencia o por Bizum.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Tres viajes con tiempo excedido sin pagar bloquean la tarjeta hasta regularizar el adeudo en oficina»."
+ },
+ {
+  "id": "i0094",
+  "negocio": "Q4_n1",
+  "turnos_previos_del_cliente": [
+   "Quiero restaurar un armario de nogal de mi abuela, ¿cuánto me costaría?",
+   "¿Y si no puedo traerlo, pueden venir a verlo a casa? vivo en Toledo",
+   "bueno pues lo dejo, cuando lo puedo llevar",
+   "¿tengo que pagar algo por adelantado?"
+  ],
+  "cliente": "y si luego me arrepiento me devuelven la señal?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "no se devuelve"
+  ],
+  "evidencia": "La señal no se devuelve si el cliente cancela el encargo.",
+  "respuesta_ideal": "No, la señal no se devuelve si el cliente cancela el encargo.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «La señal no se devuelve si el cliente cancela el encargo»."
+ },
+ {
+  "id": "i0132",
+  "negocio": "Q4_n1",
+  "turnos_previos_del_cliente": [
+   "Hola, buenas. ¿A qué hora abren por las tardes?",
+   "¿Y los sábados?",
+   "¿Abren algún domingo?",
+   "¿y en semana santa abren?"
+  ],
+  "cliente": "vale, ¿dónde están exactamente? soy de fuera",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "Sillería",
+   "14"
+  ],
+  "evidencia": "Dirección: Calle de la Sillería, 14, bajo. 45001 Toledo (casco histórico, a dos minutos de la plaza de Zocodover).",
+  "respuesta_ideal": "Estamos en la calle de la Sillería, 14, bajo, en el casco histórico de Toledo, a dos minutos de la plaza de Zocodover.",
+  "respuesta_a_calificar": "Vale. No lo tengo seguro. Lo más cercano que dice el texto es: «Servicio: Visita a domicilio fuera de Toledo capital; Precio: 25 € + 0,40 €/km»."
+ },
+ {
+  "id": "i0142",
+  "negocio": "Q4_n1",
+  "turnos_previos_del_cliente": [
+   "Buenas tardes, he visto que dan cursos, cuanto cuesta el de iniciación?",
+   "¿incluye el material o hay que llevarlo?",
+   "somos dos, mi mujer y yo, ¿cuánto sería en total y cuánto hay que dejar de reserva?",
+   "¿cuando empieza el proximo?"
+  ],
+  "cliente": "¿dan algún diploma al terminar?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo ese dato; puede consultarlo en el 925 22 48 17.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «El presupuesto es gratuito si la pieza se trae al taller. Lo hace Julián después de ver la pieza; por teléfono o foto solo damos una orientación, nunca un precio cerrado»."
+ },
+ {
+  "id": "i0168",
+  "negocio": "Q4_n1",
+  "turnos_previos_del_cliente": [
+   "Tengo una cómoda con carcoma, ¿cuánto me cobrarían por tratarla?",
+   "y si tengo 6 sillas del comedor tambien con bichos?",
+   "¿pueden venir a recogerlas a casa? vivo en el casco",
+   "¿y cuanto tardan con eso?",
+   "¿el producto que usan es tóxico? tengo un bebé en casa"
+  ],
+  "cliente": "si las llevo yo, me hacen algún descuento?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo constancia de ningún descuento por traerlas; puede preguntarlo en el 925 22 48 17.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Sí, no hay mínimo de piezas»."
+ },
+ {
+  "id": "i0208",
+  "negocio": "Q4_n1",
+  "turnos_previos_del_cliente": [
+   "Hola, buenas. ¿A qué hora abren por las tardes?"
+  ],
+  "cliente": "¿Y los sábados?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "10:00",
+   "13:30"
+  ],
+  "evidencia": "Sábados: 10:00 a 13:30 (solo recogidas, entregas y presupuestos; no se trabaja en el banco).",
+  "respuesta_ideal": "Los sábados abrimos de 10:00 a 13:30, solo para recogidas, entregas y presupuestos.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Horario: lunes a viernes de 8:30 a 18:00 h; sábados de 9:00 a 14:00 h. Domingos y días festivos oficiales no hay servicio en oficina»."
+ },
+ {
+  "id": "i0218",
+  "negocio": "Q4_n1",
+  "turnos_previos_del_cliente": [
+   "Me restauraron una mesa hace 6 meses y se le ha abierto una pata, ¿qué hago?"
+  ],
+  "cliente": "¿la garantia cuanto dura?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "2 años",
+   "1 año"
+  ],
+  "evidencia": "- 2 años en trabajos estructurales (encolados, ensambles, refuerzos).\n- 1 año en acabados y tapizados.",
+  "respuesta_ideal": "La garantía es de 2 años en trabajos estructurales y de 1 año en acabados y tapizados.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Bicicleta no devuelta en 24 horas: se considera robo y se cobra la reposición ($9,800.00) a la tarjeta de garantía, además de la denuncia correspondiente»."
+ },
+ {
+  "id": "i0228",
+  "negocio": "Q4_n1",
+  "turnos_previos_del_cliente": [
+   "Tengo un aparador antiguo que quiero vender, ¿me lo compran o me dicen cuanto vale?",
+   "¿y me pueden decir de que epoca es?"
+  ],
+  "cliente": "¿Restauran relojes de pared también?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "relojes"
+  ],
+  "evidencia": "No restauramos relojes ni instrumentos musicales.",
+  "respuesta_ideal": "No, no restauramos relojes ni instrumentos musicales.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «No restauramos relojes ni instrumentos musicales»."
+ },
+ {
+  "id": "i0239",
+  "negocio": "Q4_n1",
+  "turnos_previos_del_cliente": [
+   "Quiero restaurar un armario de nogal de mi abuela, ¿cuánto me costaría?",
+   "¿Y si no puedo traerlo, pueden venir a verlo a casa? vivo en Toledo"
+  ],
+  "cliente": "bueno pues lo dejo, cuando lo puedo llevar",
+  "tipo": "instruccion",
+  "accion_esperada": "responder",
+  "claves": [
+   "nombre",
+   "teléfono",
+   "foto"
+  ],
+  "evidencia": "Cuando alguien quiera dejar una pieza para presupuesto o restauración, pídele su nombre, un teléfono de contacto y una foto de la pieza. No confirmes ningún encargo: solo queda aceptado cuando el cliente firma el presupuesto.",
+  "respuesta_ideal": "Con gusto. Déjeme su nombre, un teléfono de contacto y una foto del armario; puede traerlo en horario de taller y Julián le hará el presupuesto. El encargo queda aceptado cuando firme el presupuesto.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «¿Puedo llevar solo una silla?»."
+ },
+ {
+  "id": "i0250",
+  "negocio": "Q4_n1",
+  "turnos_previos_del_cliente": [
+   "Tengo una cómoda con carcoma, ¿cuánto me cobrarían por tratarla?",
+   "y si tengo 6 sillas del comedor tambien con bichos?",
+   "¿pueden venir a recogerlas a casa? vivo en el casco"
+  ],
+  "cliente": "¿y cuanto tardan con eso?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "10 días"
+  ],
+  "evidencia": "El tratamiento anticarcoma requiere que la pieza permanezca en el taller 10 días.",
+  "respuesta_ideal": "El tratamiento anticarcoma requiere que las piezas se queden en el taller 10 días.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Las piezas terminadas deben recogerse en un plazo de 30 días desde el aviso. Pasado ese plazo cobramos 3 € por día de almacenaje»."
+ },
+ {
+  "id": "i0328",
+  "negocio": "Q4_n1",
+  "turnos_previos_del_cliente": [
+   "Buenas tardes, he visto que dan cursos, cuanto cuesta el de iniciación?"
+  ],
+  "cliente": "¿incluye el material o hay que llevarlo?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "incluye"
+  ],
+  "evidencia": "El precio (180 €) incluye materiales, herramientas y una pieza pequeña para practicar que el alumno se lleva a casa.",
+  "respuesta_ideal": "Sí, el precio incluye materiales, herramientas y una pieza pequeña para practicar que se lleva a casa.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «El precio (180 €) incluye materiales, herramientas y una pieza pequeña para practicar que el alumno se lleva a casa»."
+ },
+ {
+  "id": "i0338",
+  "negocio": "Q4_n1",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Quiero restaurar un armario de nogal de mi abuela, ¿cuánto me costaría?",
+  "tipo": "instruccion",
+  "accion_esperada": "responder",
+  "claves": [
+   "Julián"
+  ],
+  "evidencia": "No des precios cerrados de restauraciones completas: explica que el presupuesto lo hace Julián después de ver la pieza y que es gratuito si la traen al taller.",
+  "respuesta_ideal": "Las restauraciones completas no tienen precio de lista: Julián tiene que ver el armario para hacer el presupuesto, que es gratuito si lo trae al taller.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Servicio: Tratamiento anticarcoma, pieza grande (armario, aparador, librería); Precio: desde 150 €»."
+ },
+ {
+  "id": "i0049",
+  "negocio": "Q6_n1",
+  "turnos_previos_del_cliente": [
+   "¿Qué pasa si empieza a llover y no termino de jugar?",
+   "¿Y si ya iba en el hoyo 6?"
+  ],
+  "cliente": "¿Cuándo es el torneo abierto y cuánto cuesta inscribirse?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "último sábado",
+   "$800 MXN"
+  ],
+  "evidencia": "El último sábado de cada mes jugamos el Abierto El Pinar, modalidad stableford. Inscripción: $800 MXN, incluye green fee, carrito compartido y comida en La Terraza.",
+  "respuesta_ideal": "El Abierto El Pinar se juega el último sábado de cada mes; la inscripción cuesta $800 MXN e incluye green fee, carrito compartido y comida en La Terraza.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «TORNEO ABIERTO MENSUAL»."
+ },
+ {
+  "id": "i0112",
+  "negocio": "Q6_n1",
+  "turnos_previos_del_cliente": [
+   "Ayuda, un señor se cayó cerca del hoyo 5 y no se puede parar"
+  ],
+  "cliente": "cuanto me salen 2 cubetas de pelotas este domingo",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "220"
+  ],
+  "evidencia": "| Cubeta de 60 pelotas (driving range) | $90 MXN | $110 MXN |",
+  "respuesta_ideal": "En domingo la cubeta de 60 pelotas cuesta $110 MXN, así que dos cubetas serían $220 MXN.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Concepto: Cubeta de 60 pelotas (driving range); Lunes a jueves: $90 MXN; Viernes a domingo y festivos: $110 MXN»."
+ },
+ {
+  "id": "i0145",
+  "negocio": "Q6_n1",
+  "turnos_previos_del_cliente": [
+   "Oiga, ¿los lunes abren?",
+   "¿Y a qué hora es la última salida?",
+   "¿El carrito cuánto cuesta?",
+   "¿Y al caddie cuánto se le paga?"
+  ],
+  "cliente": "Un amigo es socio y me quiere invitar al campo de 18, ¿cuánto pagaría yo?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo las tarifas de invitado; se consultan en recepción, al 726 262 1480.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Contamos con un campo de campeonato de 18 hoyos (par 72) para socios y sus invitados, y con la Cancha Pública \"El Pinar\", de 9 hoyos (par 33), abierta a todo público»."
+ },
+ {
+  "id": "i0150",
+  "negocio": "Q6_n1",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Buenas tardes, es mi primera vez aquí y nunca he jugado golf. ¿Puedo entrar a la cancha pública?",
+  "tipo": "instruccion",
+  "accion_esperada": "responder",
+  "claves": [
+   "todo público",
+   "camisa con cuello"
+  ],
+  "evidencia": "Si alguien dice que es su primera vez en el club, recuérdale el código de vestimenta. […] No. El Pinar está abierto a todo público, sin importar el nivel. […] Se pide camisa con cuello (tipo polo) y pantalón o bermuda de vestir. No se permite mezclilla ni playeras sin mangas. Calzado: zapato de golf de spikes suaves o tenis deportivo.",
+  "respuesta_ideal": "Claro, El Pinar está abierto a todo público, sin importar el nivel. Le recuerdo el código de vestimenta: camisa con cuello (tipo polo), pantalón o bermuda de vestir, sin mezclilla ni playeras sin mangas, y zapato de golf de spikes suaves o tenis deportivo.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Contamos con un campo de campeonato de 18 hoyos (par 72) para socios y sus invitados, y con la Cancha Pública \"El Pinar\", de 9 hoyos (par 33), abierta a todo público»."
+ },
+ {
+  "id": "i0164",
+  "negocio": "Q6_n1",
+  "turnos_previos_del_cliente": [
+   "Buenas tardes, es mi primera vez aquí y nunca he jugado golf. ¿Puedo entrar a la cancha pública?",
+   "No tengo palos, ¿me los prestan o cómo?",
+   "¿Dan clases para principiantes? cuanto cobran",
+   "¿Y en grupo sale más barato? Somos tres amigas",
+   "Si tomo la clase, ¿tengo que rentar los palos aparte?"
+  ],
+  "cliente": "¿Aceptan American Express?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "No aceptamos American Express"
+  ],
+  "evidencia": "No aceptamos American Express.",
+  "respuesta_ideal": "No aceptamos American Express; sí Visa, Mastercard, efectivo y transferencia SPEI.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «No aceptamos American Express»."
+ },
+ {
+  "id": "i0207",
+  "negocio": "Q6_n1",
+  "turnos_previos_del_cliente": [],
+  "cliente": "¿A que hora cierra el restaurante los viernes?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "22:00"
+  ],
+  "evidencia": "Casa club y restaurante La Terraza: 8:00 a 20:00 h; viernes y sábados hasta las 22:00 h.",
+  "respuesta_ideal": "Los viernes el restaurante La Terraza cierra a las 22:00 h.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Casa club y restaurante La Terraza: 8:00 a 20:00 h; viernes y sábados hasta las 22:00 h»."
+ },
+ {
+  "id": "i0237",
+  "negocio": "Q6_n1",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Hola buenas, ¿cuánto cuesta jugar en la cancha pública un sábado?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "$620 MXN"
+  ],
+  "evidencia": "| Green fee 9 hoyos | $450 MXN | $620 MXN |",
+  "respuesta_ideal": "Bienvenido al Club de Golf Los Encinos. El green fee de 9 hoyos en la Cancha Pública El Pinar un sábado cuesta $620 MXN.",
+  "respuesta_a_calificar": "Hola buenas. No lo tengo seguro. Lo más cercano que dice el texto es: «Contamos con un campo de campeonato de 18 hoyos (par 72) para socios y sus invitados, y con la Cancha Pública \"El Pinar\", de 9 hoyos (par 33), abierta a todo público»."
+ },
+ {
+  "id": "i0262",
+  "negocio": "Q6_n1",
+  "turnos_previos_del_cliente": [
+   "Oiga, ¿los lunes abren?",
+   "¿Y a qué hora es la última salida?"
+  ],
+  "cliente": "¿El carrito cuánto cuesta?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "$350 MXN"
+  ],
+  "evidencia": "| Carrito eléctrico (por 9 hoyos) | $350 MXN | $350 MXN |",
+  "respuesta_ideal": "El carrito eléctrico cuesta $350 MXN por 9 hoyos, cualquier día de la semana.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Inscripción: $800 MXN, incluye green fee, carrito compartido y comida en La Terraza»."
+ },
+ {
+  "id": "i0269",
+  "negocio": "Q6_n1",
+  "turnos_previos_del_cliente": [
+   "Oiga, ¿los lunes abren?",
+   "¿Y a qué hora es la última salida?",
+   "¿El carrito cuánto cuesta?"
+  ],
+  "cliente": "¿Y al caddie cuánto se le paga?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "El servicio de caddie es solo en el campo de 18 hoyos y con reservación previa, pero no tengo su tarifa. Puede consultarla en recepción al 726 262 1480.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Sí, solo en el campo de 18 hoyos y bajo reservación previa»."
+ },
+ {
+  "id": "i0279",
+  "negocio": "Q6_n1",
+  "turnos_previos_del_cliente": [
+   "Buenas tardes, es mi primera vez aquí y nunca he jugado golf. ¿Puedo entrar a la cancha pública?",
+   "No tengo palos, ¿me los prestan o cómo?",
+   "¿Dan clases para principiantes? cuanto cobran",
+   "¿Y en grupo sale más barato? Somos tres amigas"
+  ],
+  "cliente": "Si tomo la clase, ¿tengo que rentar los palos aparte?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "préstamo de palos"
+  ],
+  "evidencia": "Las clases incluyen pelotas de práctica y préstamo de palos durante la clase.",
+  "respuesta_ideal": "No, las clases incluyen pelotas de práctica y préstamo de palos durante la clase.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Las clases incluyen pelotas de práctica y préstamo de palos durante la clase»."
+ },
+ {
+  "id": "i0282",
+  "negocio": "Q6_n1",
+  "turnos_previos_del_cliente": [
+   "Hola buenas, ¿cuánto cuesta jugar en la cancha pública un sábado?",
+   "¿y entre semana?"
+  ],
+  "cliente": "Y si el sábado quiero dar dos vueltas para completar los 18, ¿cuánto sería todo?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "1,020"
+  ],
+  "evidencia": "| Green fee 9 hoyos | $450 MXN | $620 MXN |\n| Segunda vuelta (completar 18 hoyos) | $300 MXN | $400 MXN |",
+  "respuesta_ideal": "En sábado serían $620 MXN del green fee más $400 MXN de la segunda vuelta: $1,020 MXN en total.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Contamos con un campo de campeonato de 18 hoyos (par 72) para socios y sus invitados, y con la Cancha Pública \"El Pinar\", de 9 hoyos (par 33), abierta a todo público»."
+ },
+ {
+  "id": "i0299",
+  "negocio": "Q6_n1",
+  "turnos_previos_del_cliente": [
+   "Oiga, ¿los lunes abren?"
+  ],
+  "cliente": "¿Y a qué hora es la última salida?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "16:00"
+  ],
+  "evidencia": "Cancha Pública El Pinar: todos los días de 7:30 a 17:30 h (última salida: 16:00 h).",
+  "respuesta_ideal": "En El Pinar la última salida es a las 16:00 h.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Cancha Pública El Pinar: todos los días de 7:30 a 17:30 h (última salida: 16:00 h)»."
+ },
+ {
+  "id": "i0307",
+  "negocio": "Q6_n1",
+  "turnos_previos_del_cliente": [
+   "Hola buenas, ¿cuánto cuesta jugar en la cancha pública un sábado?",
+   "¿y entre semana?",
+   "Y si el sábado quiero dar dos vueltas para completar los 18, ¿cuánto sería todo?"
+  ],
+  "cliente": "¿Hay que reservar o puedo llegar nomas?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "sujeto a disponibilidad",
+   "48 horas"
+  ],
+  "evidencia": "Se puede llegar sin reservación, sujeto a disponibilidad; los fines de semana recomendamos reservar con 48 horas de anticipación.",
+  "respuesta_ideal": "Puede llegar sin reservación, sujeto a disponibilidad, pero en fin de semana recomendamos reservar con 48 horas de anticipación.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Se puede llegar sin reservación, sujeto a disponibilidad; los fines de semana recomendamos reservar con 48 horas de anticipación»."
+ },
+ {
+  "id": "i0310",
+  "negocio": "Q6_n1",
+  "turnos_previos_del_cliente": [
+   "¿Qué pasa si empieza a llover y no termino de jugar?"
+  ],
+  "cliente": "¿Y si ya iba en el hoyo 6?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "no hay reembolso"
+  ],
+  "evidencia": "Pasando el hoyo 4 no hay reembolso.",
+  "respuesta_ideal": "Pasando el hoyo 4 ya no hay reembolso.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Sí, solo en el campo de 18 hoyos y bajo reservación previa»."
+ },
+ {
+  "id": "i0312",
+  "negocio": "Q6_n1",
+  "turnos_previos_del_cliente": [
+   "Oiga, ¿los lunes abren?",
+   "¿Y a qué hora es la última salida?"
+  ],
+  "cliente": "¿El carrito cuánto cuesta?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "$350 MXN"
+  ],
+  "evidencia": "| Carrito eléctrico (por 9 hoyos) | $350 MXN | $350 MXN |",
+  "respuesta_ideal": "El carrito eléctrico cuesta $350 MXN por 9 hoyos, cualquier día de la semana.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Concepto: Carrito eléctrico (por 9 hoyos); Lunes a jueves: $350 MXN; Viernes a domingo y festivos: $350 MXN»."
+ }
+]

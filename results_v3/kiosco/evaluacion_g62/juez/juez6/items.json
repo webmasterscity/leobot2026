@@ -1,0 +1,776 @@
+[
+ {
+  "id": "i0012",
+  "negocio": "Q2_n2",
+  "turnos_previos_del_cliente": [
+   "hacen limpieza en niebla?",
+   "y si vivo en Corral, igual pueden ir?"
+  ],
+  "cliente": "si uso mis propios productos de limpieza, me hacen descuento?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "$2.000"
+  ],
+  "evidencia": "Si prefieres que usemos los tuyos, te descontamos $2.000 del valor de la visita.",
+  "respuesta_ideal": "Sí, si usas tus propios productos te descontamos $2.000 del valor de la visita.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Si contratas limpieza semanal fija (contrato mensual), tienes 10% de descuento sobre el valor de cada visita»."
+ },
+ {
+  "id": "i0036",
+  "negocio": "Q2_n2",
+  "turnos_previos_del_cliente": [],
+  "cliente": "necesito estar en la casa mientras limpian?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "No es obligatorio"
+  ],
+  "evidencia": "No es obligatorio, muchos clientes dejan la llave con un vecino o nos esperan la primera vez para conocer al equipo.",
+  "respuesta_ideal": "No es obligatorio, muchos clientes dejan la llave con un vecino o esperan la primera vez para conocer al equipo.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «¿Tengo que estar en la casa mientras limpian?»."
+ },
+ {
+  "id": "i0047",
+  "negocio": "Q2_n2",
+  "turnos_previos_del_cliente": [
+   "quiero agendar una limpieza para mañana en la tarde",
+   "hacen limpieza de tapices o sillones?",
+   "aceptan tarjeta?"
+  ],
+  "cliente": "necesito cancelar la visita de mañana, ya avisenle a alguien",
+  "tipo": "instruccion",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "Si preguntan por cancelaciones de una visita ya agendada, derivar también a Marisol por WhatsApp, no cancelar tú.",
+  "respuesta_ideal": "Para cancelar debes avisar directamente a Marisol por WhatsApp; recuerda que si es con menos de 12 horas de anticipación se cobra el 50% del valor de la visita.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Si necesitas cancelar, avisa con al menos 12 horas de anticipación»."
+ },
+ {
+  "id": "i0068",
+  "negocio": "Q2_n2",
+  "turnos_previos_del_cliente": [
+   "hola, cuanto cobran la hora de limpieza?",
+   "y si van dos personas?",
+   "si vienen 2 personas y se quedan 3 horas, cuanto seria en total?"
+  ],
+  "cliente": "trabajan los domingos?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "Los domingos no trabajamos"
+  ],
+  "evidencia": "Los domingos no trabajamos.",
+  "respuesta_ideal": "No, los domingos no trabajamos.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «El equipo trabaja de lunes a sábado, entre las 8:00 y las 19:00 hrs. Los domingos no trabajamos»."
+ },
+ {
+  "id": "i0071",
+  "negocio": "Q2_n2",
+  "turnos_previos_del_cliente": [
+   "necesito estar en la casa mientras limpian?",
+   "hacen deshollinado de estufa a leña?"
+  ],
+  "cliente": "hola, buenas tardes, queria preguntar el horario de atencion telefonica",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "8:30 a 18:00"
+  ],
+  "evidencia": "Horario de atención telefónica: lunes a viernes de 8:30 a 18:00, sábados de 9:00 a 13:00",
+  "respuesta_ideal": "Atendemos por teléfono de lunes a viernes de 8:30 a 18:00 y los sábados de 9:00 a 13:00.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Horario de atención telefónica: lunes a viernes de 8:30 a 18:00, sábados de 9:00 a 13:00»."
+ },
+ {
+  "id": "i0100",
+  "negocio": "Q2_n2",
+  "turnos_previos_del_cliente": [
+   "tienen algun cargo si cancelo la visita?",
+   "puedo pedir que siempre vaya la misma persona?",
+   "quien es la trabajadora que me van a mandar, cual es su numero?",
+   "hacen limpieza de auto tambien?"
+  ],
+  "cliente": "ya, gracias igual",
+  "tipo": "charla",
+  "accion_esperada": "charla",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "De nada, ¿necesitas algo más?",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Sí, se puede acotar el servicio, pero se cobra igual el mínimo de horas de la tarifa»."
+ },
+ {
+  "id": "i0119",
+  "negocio": "Q2_n2",
+  "turnos_previos_del_cliente": [
+   "tienen algun cargo si cancelo la visita?",
+   "puedo pedir que siempre vaya la misma persona?"
+  ],
+  "cliente": "quien es la trabajadora que me van a mandar, cual es su numero?",
+  "tipo": "instruccion",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": "No dar información de otras trabajadoras ni datos personales del personal.",
+  "respuesta_ideal": "No puedo compartir datos personales del personal; si necesitas coordinar algo puntual, te puedo derivar con Marisol.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Al finalizar y cumplir la asistencia, se entrega el certificado propio de la Academia BGA Style con el número de horas cursadas»."
+ },
+ {
+  "id": "i0128",
+  "negocio": "Q2_n2",
+  "turnos_previos_del_cliente": [
+   "quiero agendar una limpieza para mañana en la tarde",
+   "hacen limpieza de tapices o sillones?"
+  ],
+  "cliente": "aceptan tarjeta?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "no aceptamos tarjeta de crédito ni débito"
+  ],
+  "evidencia": "Por ahora no aceptamos tarjeta de crédito ni débito.",
+  "respuesta_ideal": "Por ahora no, solo aceptamos efectivo y transferencia bancaria.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Efectivo, tarjeta débito o crédito (crédito a más de 3 cuotas tiene recargo del 3%), Nequi y Daviplata»."
+ },
+ {
+  "id": "i0129",
+  "negocio": "Q2_n2",
+  "turnos_previos_del_cliente": [],
+  "cliente": "necesito estar en la casa mientras limpian?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "No es obligatorio"
+  ],
+  "evidencia": "No es obligatorio, muchos clientes dejan la llave con un vecino o nos esperan la primera vez para conocer al equipo.",
+  "respuesta_ideal": "No es obligatorio, muchos clientes dejan la llave con un vecino o esperan la primera vez para conocer al equipo.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «No hay problema con mascotas en la casa»."
+ },
+ {
+  "id": "i0158",
+  "negocio": "Q2_n2",
+  "turnos_previos_del_cliente": [
+   "cuanto cobran por planchado?",
+   "si contrato limpieza semanal fija, con el descuento, cuanto pagaria por una visita de 1 persona de 3 horas?",
+   "tengo un perro grande pero es tranquilo, hay problema?"
+  ],
+  "cliente": "hacen limpieza de conductos de aire acondicionado?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo esa información, te recomiendo consultarlo directamente con Marisol.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «No hacemos deshollinado ni limpieza de conductos de estufas a leña»."
+ },
+ {
+  "id": "i0238",
+  "negocio": "Q2_n2",
+  "turnos_previos_del_cliente": [
+   "cuanto cobran por planchado?",
+   "si contrato limpieza semanal fija, con el descuento, cuanto pagaria por una visita de 1 persona de 3 horas?"
+  ],
+  "cliente": "tengo un perro grande pero es tranquilo, hay problema?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "No hay problema con mascotas"
+  ],
+  "evidencia": "No hay problema con mascotas en la casa.",
+  "respuesta_ideal": "No hay problema, solo avísanos si tu perro es agresivo o desconfiado con extraños.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Eso sí, avísanos antes si el perro es agresivo o desconfiado con extraños»."
+ },
+ {
+  "id": "i0248",
+  "negocio": "Q2_n2",
+  "turnos_previos_del_cliente": [],
+  "cliente": "tienen algun cargo si cancelo la visita?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "50%"
+  ],
+  "evidencia": "Cancelaciones con menos aviso tienen un cobro del 50% del valor de la visita.",
+  "respuesta_ideal": "Si cancelas con menos de 12 horas de anticipación, se cobra el 50% del valor de la visita.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Si contratas limpieza semanal fija (contrato mensual), tienes 10% de descuento sobre el valor de cada visita»."
+ },
+ {
+  "id": "i0258",
+  "negocio": "Q2_n2",
+  "turnos_previos_del_cliente": [],
+  "cliente": "cuanto cobran por planchado?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "$5.000"
+  ],
+  "evidencia": "Planchado de ropa: $5.000 la hora adicional",
+  "respuesta_ideal": "El planchado de ropa cuesta $5.000 la hora adicional.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Planchado de ropa: $5.000 la hora adicional»."
+ },
+ {
+  "id": "i0261",
+  "negocio": "Q2_n2",
+  "turnos_previos_del_cliente": [
+   "tienen algun cargo si cancelo la visita?"
+  ],
+  "cliente": "puedo pedir que siempre vaya la misma persona?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "puedes pedir que siempre vaya la misma persona"
+  ],
+  "evidencia": "Si quieres, puedes pedir que siempre vaya la misma persona en tus visitas recurrentes.",
+  "respuesta_ideal": "Sí, puedes pedir que siempre vaya la misma persona en tus visitas recurrentes.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Si quieres, puedes pedir que siempre vaya la misma persona en tus visitas recurrentes»."
+ },
+ {
+  "id": "i0274",
+  "negocio": "Q2_n2",
+  "turnos_previos_del_cliente": [
+   "necesito estar en la casa mientras limpian?"
+  ],
+  "cliente": "hacen deshollinado de estufa a leña?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "No hacemos deshollinado"
+  ],
+  "evidencia": "No hacemos deshollinado ni limpieza de conductos de estufas a leña.",
+  "respuesta_ideal": "No, no hacemos deshollinado ni limpieza de conductos de estufas a leña.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «No hacemos deshollinado ni limpieza de conductos de estufas a leña»."
+ },
+ {
+  "id": "i0297",
+  "negocio": "Q2_n2",
+  "turnos_previos_del_cliente": [
+   "cuanto cobran por planchado?"
+  ],
+  "cliente": "si contrato limpieza semanal fija, con el descuento, cuanto pagaria por una visita de 1 persona de 3 horas?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "$8.500",
+   "10%"
+  ],
+  "evidencia": "Si contratas limpieza semanal fija (contrato mensual), tienes 10% de descuento sobre el valor de cada visita.",
+  "respuesta_ideal": "Con el 10% de descuento por contrato mensual, una visita de 3 horas con una persona ($25.500) quedaría en $22.950.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Si contratas limpieza semanal fija (contrato mensual), tienes 10% de descuento sobre el valor de cada visita»."
+ },
+ {
+  "id": "i0298",
+  "negocio": "Q2_n2",
+  "turnos_previos_del_cliente": [],
+  "cliente": "hola, cuanto cobran la hora de limpieza?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "$8.500"
+  ],
+  "evidencia": "1 persona: $8.500 CLP la hora, mínimo 3 horas por visita.",
+  "respuesta_ideal": "Con una persona, la hora cuesta $8.500 CLP, con un mínimo de 3 horas por visita.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Sí, se puede acotar el servicio, pero se cobra igual el mínimo de horas de la tarifa»."
+ },
+ {
+  "id": "i0304",
+  "negocio": "Q2_n2",
+  "turnos_previos_del_cliente": [
+   "hola, cuanto cobran la hora de limpieza?"
+  ],
+  "cliente": "y si van dos personas?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "$15.000"
+  ],
+  "evidencia": "2 personas: $15.000 CLP la hora, mínimo 2 horas por visita.",
+  "respuesta_ideal": "Con dos personas, la hora cuesta $15.000 CLP, con un mínimo de 2 horas.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Si quieres, puedes pedir que siempre vaya la misma persona en tus visitas recurrentes»."
+ },
+ {
+  "id": "i0317",
+  "negocio": "Q2_n2",
+  "turnos_previos_del_cliente": [
+   "quiero agendar una limpieza para mañana en la tarde",
+   "hacen limpieza de tapices o sillones?"
+  ],
+  "cliente": "aceptan tarjeta?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "no aceptamos tarjeta de crédito ni débito"
+  ],
+  "evidencia": "Por ahora no aceptamos tarjeta de crédito ni débito.",
+  "respuesta_ideal": "Por ahora no, solo aceptamos efectivo y transferencia bancaria.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Por ahora no aceptamos tarjeta de crédito ni débito»."
+ },
+ {
+  "id": "i0326",
+  "negocio": "Q2_n2",
+  "turnos_previos_del_cliente": [],
+  "cliente": "necesito estar en la casa mientras limpian?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "No es obligatorio"
+  ],
+  "evidencia": "No es obligatorio, muchos clientes dejan la llave con un vecino o nos esperan la primera vez para conocer al equipo.",
+  "respuesta_ideal": "No es obligatorio, muchos clientes dejan la llave con un vecino o esperan la primera vez para conocer al equipo.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «No es obligatorio, muchos clientes dejan la llave con un vecino o nos esperan la primera vez para conocer al equipo»."
+ },
+ {
+  "id": "i0095",
+  "negocio": "Q4_n2",
+  "turnos_previos_del_cliente": [
+   "Hola, quiero saber cuanto cuesta el plan anual"
+  ],
+  "cliente": "¿y hay descuento de estudiante?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "416"
+  ],
+  "evidencia": "Anual estudiante\t$416.00 MXN\t365 días\tSolo en oficina, con credencial escolar vigente (20 % de descuento)",
+  "respuesta_ideal": "Sí, el anual para estudiantes tiene 20 % de descuento y cuesta $416.00; solo se tramita en la oficina con credencial escolar vigente.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Plan: Anual estudiante; Precio: $416.00 MXN; Vigencia: 365 días; Dónde se compra: Solo en oficina, con credencial escolar vigente (20 % de descuento)»."
+ },
+ {
+  "id": "i0111",
+  "negocio": "Q4_n2",
+  "turnos_previos_del_cliente": [
+   "perdi mi tarjeta, cuanto cuesta la reposicion?",
+   "¿dónde hago el trámite, se puede en línea?"
+  ],
+  "cliente": "¿a qué hora cierran hoy? es sábado",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "14:00"
+  ],
+  "evidencia": "Horario: lunes a viernes de 8:30 a 18:00 h; sábados de 9:00 a 14:00 h.",
+  "respuesta_ideal": "Los sábados la oficina atiende de 9:00 a 14:00 h.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Horario: lunes a viernes de 8:30 a 18:00 h; sábados de 9:00 a 14:00 h. Domingos y días festivos oficiales no hay servicio en oficina»."
+ },
+ {
+  "id": "i0131",
+  "negocio": "Q4_n2",
+  "turnos_previos_del_cliente": [
+   "Buenas, mi hijo tiene 16, ¿puede sacar el plan anual?",
+   "¿en qué municipios hay estaciones?"
+  ],
+  "cliente": "¿cuál es la estación más cercana al estadio Jalisco?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo esa información; puede verlo en el mapa en tiempo real de la app.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Consulte la app: le regala 15 minutos extra para llegar a la estación más cercana con espacio»."
+ },
+ {
+  "id": "i0147",
+  "negocio": "Q4_n2",
+  "turnos_previos_del_cliente": [
+   "perdi mi tarjeta, cuanto cuesta la reposicion?",
+   "¿dónde hago el trámite, se puede en línea?",
+   "¿a qué hora cierran hoy? es sábado",
+   "¿cuánto tarda en estar lista la tarjeta nueva?",
+   "mientras tanto puedo seguir usando las bicis con la app?"
+  ],
+  "cliente": "y si alguien la encuentra y la usa, me lo cobran a mi?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "se cobran a su cuenta"
+  ],
+  "evidencia": "- Reporte el extravío de inmediato al 33 3614 2270: los viajes hechos antes del reporte se cobran a su cuenta.",
+  "respuesta_ideal": "Sí: los viajes hechos antes del reporte se cobran a su cuenta, por eso conviene reportar el extravío de inmediato al 33 3614 2270.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Bicicleta no devuelta en 24 horas: se considera robo y se cobra la reposición ($9,800.00) a la tarjeta de garantía, además de la denuncia correspondiente»."
+ },
+ {
+  "id": "i0187",
+  "negocio": "Q4_n2",
+  "turnos_previos_del_cliente": [
+   "Buenas, mi hijo tiene 16, ¿puede sacar el plan anual?"
+  ],
+  "cliente": "¿en qué municipios hay estaciones?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "Zapopan",
+   "Tlaquepaque"
+  ],
+  "evidencia": "RuedaGDL es el sistema de bicicletas públicas operado por el Gobierno Municipal de Guadalajara junto con los municipios de Zapopan y San Pedro Tlaquepaque.",
+  "respuesta_ideal": "Hay estaciones en Guadalajara, Zapopan y San Pedro Tlaquepaque.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Sí, en cualquier estación de Guadalajara, Zapopan o Tlaquepaque»."
+ },
+ {
+  "id": "i0199",
+  "negocio": "Q4_n2",
+  "turnos_previos_del_cliente": [
+   "Me operaron de la rodilla y no voy a poder andar en bici por dos meses, ¿me devuelven el dinero del anual?"
+  ],
+  "cliente": "¿la constancia tiene que ser del IMSS o sirve de un médico particular?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo ese detalle; en ventanilla le indican qué constancia aceptan.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «El plan anual se puede pausar hasta 30 días por año por motivos médicos, presentando constancia médica en la oficina; los días de pausa se agregan al final de la vigencia»."
+ },
+ {
+  "id": "i0213",
+  "negocio": "Q4_n2",
+  "turnos_previos_del_cliente": [
+   "La bici que tomé tiene la llanta ponchada y no me deja regresarla, ¿que hago?",
+   "¿ese número atiende de noche?",
+   "¿cuántas estaciones hay en total?",
+   "¿tienen cascos en las estaciones?"
+  ],
+  "cliente": "¿puedo llevar a mi hijo de 5 años conmigo en la bici?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo información sobre llevar niños en la bici; le sugiero preguntar en ventanilla o al 33 3614 2270 opción 1.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «El plan anual se puede pausar hasta 30 días por año por motivos médicos, presentando constancia médica en la oficina; los días de pausa se agregan al final de la vigencia»."
+ },
+ {
+  "id": "i0247",
+  "negocio": "Q4_n2",
+  "turnos_previos_del_cliente": [
+   "Necesito factura de mi plan trimestral que pagué ayer"
+  ],
+  "cliente": "¿puedo pagar en efectivo si voy a la oficina?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "efectivo"
+  ],
+  "evidencia": "En oficina: efectivo y tarjeta de crédito o débito. En línea y en tótem: únicamente tarjeta. No se aceptan cheques ni vales.",
+  "respuesta_ideal": "Sí, en la oficina se acepta efectivo y también tarjeta de crédito o débito.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «En oficina: efectivo y tarjeta de crédito o débito»."
+ },
+ {
+  "id": "i0249",
+  "negocio": "Q4_n2",
+  "turnos_previos_del_cliente": [],
+  "cliente": "La bici que tomé tiene la llanta ponchada y no me deja regresarla, ¿que hago?",
+  "tipo": "instruccion",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "Si el usuario reporta una bicicleta dañada, un accidente, una bici que no se desancla o que no se deja devolver, indícale que llame al 33 3614 2270 opción 2, que atiende las 24 horas. No intentes resolverlo tú.",
+  "respuesta_ideal": "Llame ahora mismo al 33 3614 2270, opción 2; ahí le indican dónde dejarla y evitan que se le cobre tiempo excedido.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Si la bicicleta falla durante el viaje (llanta, cadena, frenos), llame de inmediato a la opción 2 para que no se le cobre tiempo excedido y se le indique dónde dejarla»."
+ },
+ {
+  "id": "i0257",
+  "negocio": "Q4_n2",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Necesito factura de mi plan trimestral que pagué ayer",
+  "tipo": "instruccion",
+  "accion_esperada": "responder",
+  "claves": [
+   "facturas@ruedagdl.mx",
+   "5 días"
+  ],
+  "evidencia": "La factura se solicita por correo a facturas@ruedagdl.mx dentro de los 5 días siguientes al pago, adjuntando el comprobante y la constancia de situación fiscal. Pasado ese plazo no es posible facturar.",
+  "respuesta_ideal": "Solicítela por correo a facturas@ruedagdl.mx adjuntando el comprobante y su constancia de situación fiscal; tiene 5 días desde el pago, así que hágalo pronto.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Trámites que se realizan en la oficina: alta de plan anual, reposición de tarjeta, aclaraciones de cobros, cambio de datos, pausa de plan por motivos médicos y solicitud de factura»."
+ },
+ {
+  "id": "i0264",
+  "negocio": "Q4_n2",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Buenas, mi hijo tiene 16, ¿puede sacar el plan anual?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "autorización"
+  ],
+  "evidencia": "4. Ser mayor de 18 años. Los jóvenes de 16 y 17 años pueden registrarse con carta de autorización firmada por el padre, madre o tutor, quien debe acompañarlos a la oficina con su identificación.",
+  "respuesta_ideal": "Sí, con carta de autorización firmada por usted como padre o tutor, y debe acompañarlo a la oficina con su identificación.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Ser mayor de 18 años. Los jóvenes de 16 y 17 años pueden registrarse con carta de autorización firmada por el padre, madre o tutor, quien debe acompañarlos a la oficina con su identificación»."
+ },
+ {
+  "id": "i0303",
+  "negocio": "Q4_n2",
+  "turnos_previos_del_cliente": [
+   "Hola, quiero saber cuanto cuesta el plan anual",
+   "¿y hay descuento de estudiante?",
+   "¿el plan empieza a contar desde que pago o desde el primer viaje?"
+  ],
+  "cliente": "¿cuánto tiempo puedo usar la bici en cada viaje?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "30 minutos"
+  ],
+  "evidencia": "Todos los planes incluyen viajes ilimitados de hasta 30 minutos cada uno.",
+  "respuesta_ideal": "Cada viaje puede durar hasta 30 minutos, y puede hacer todos los viajes que quiera.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Todos los planes incluyen viajes ilimitados de hasta 30 minutos cada uno. Si un viaje dura más de 30 minutos, se cobra un cargo de $20.00 por cada 30 minutos adicionales o fracción»."
+ },
+ {
+  "id": "i0318",
+  "negocio": "Q4_n2",
+  "turnos_previos_del_cliente": [
+   "Hola, quiero saber cuanto cuesta el plan anual",
+   "¿y hay descuento de estudiante?",
+   "¿el plan empieza a contar desde que pago o desde el primer viaje?",
+   "¿cuánto tiempo puedo usar la bici en cada viaje?",
+   "y si me paso, cuanto me cobran?"
+  ],
+  "cliente": "O sea que si hago un viaje de hora y media, ¿cuánto pago de extra?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "40"
+  ],
+  "evidencia": "Si un viaje dura más de 30 minutos, se cobra un cargo de $20.00 por cada 30 minutos adicionales o fracción.",
+  "respuesta_ideal": "Serían 60 minutos extra, es decir, dos bloques de 30, así que pagaría $40.00 adicionales.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Todos los planes incluyen viajes ilimitados de hasta 30 minutos cada uno. Si un viaje dura más de 30 minutos, se cobra un cargo de $20.00 por cada 30 minutos adicionales o fracción»."
+ },
+ {
+  "id": "i0345",
+  "negocio": "Q4_n2",
+  "turnos_previos_del_cliente": [
+   "La bici que tomé tiene la llanta ponchada y no me deja regresarla, ¿que hago?",
+   "¿ese número atiende de noche?"
+  ],
+  "cliente": "¿cuántas estaciones hay en total?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "320"
+  ],
+  "evidencia": "Cuenta con 320 estaciones y más de 3,000 bicicletas.",
+  "respuesta_ideal": "El sistema tiene 320 estaciones y más de 3,000 bicicletas.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Plan: Semanal; Precio: $110.00 MXN; Vigencia: 7 días; Dónde se compra: En línea o en el tótem de cualquier estación»."
+ },
+ {
+  "id": "i0022",
+  "negocio": "Q6_n2",
+  "turnos_previos_del_cliente": [
+   "¿Cuánto está el paquete de botellitas chicas?",
+   "¿Y tienen de un litro?",
+   "¿Aceptan Yape?"
+  ],
+  "cliente": "¿Y con tarjeta al repartidor?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "no lleva POS"
+  ],
+  "evidencia": "El repartidor no lleva POS, así que no se puede pagar con tarjeta en la entrega.",
+  "respuesta_ideal": "No, el repartidor no lleva POS, así que no se puede pagar con tarjeta en la entrega. En la oficina sí aceptamos tarjeta Visa.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «El repartidor no lleva POS, así que no se puede pagar con tarjeta en la entrega»."
+ },
+ {
+  "id": "i0040",
+  "negocio": "Q6_n2",
+  "turnos_previos_del_cliente": [
+   "hola reparten en sullana?"
+  ],
+  "cliente": "¿Y a Catacaos?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "10 bidones a más"
+  ],
+  "evidencia": "3. Catacaos y Tacalá: solo pedidos de 10 bidones a más, con coordinación previa.",
+  "respuesta_ideal": "A Catacaos solo se reparten pedidos de 10 bidones a más, con coordinación previa.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Catacaos y Tacalá: solo pedidos de 10 bidones a más, con coordinación previa»."
+ },
+ {
+  "id": "i0066",
+  "negocio": "Q6_n2",
+  "turnos_previos_del_cliente": [
+   "¿Cuánto está el paquete de botellitas chicas?",
+   "¿Y tienen de un litro?",
+   "¿Aceptan Yape?"
+  ],
+  "cliente": "¿Y con tarjeta al repartidor?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "no lleva POS"
+  ],
+  "evidencia": "El repartidor no lleva POS, así que no se puede pagar con tarjeta en la entrega.",
+  "respuesta_ideal": "No, el repartidor no lleva POS, así que no se puede pagar con tarjeta en la entrega. En la oficina sí aceptamos tarjeta Visa.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «En el Castillo San Felipe y en el Museo Histórico, sí. En el Convento de la Popa solo reciben efectivo»."
+ },
+ {
+  "id": "i0138",
+  "negocio": "Q6_n2",
+  "turnos_previos_del_cliente": [
+   "¿Qué es eso del plan hogar?",
+   "¿Si me mudo a mitad de mes me devuelven lo que pagué?",
+   "¿Alquilan dispensador que enfríe el agua?"
+  ],
+  "cliente": "Si tomo el plan hogar y alquilo ese dispensador, ¿cuánto pago el primer mes contando la garantía?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "151"
+  ],
+  "evidencia": "Dispensador eléctrico frío/caliente\talquiler S/ 15 al mes (garantía S/ 100, reembolsable al devolverlo) […] Reciba 4 bidones al mes (uno por semana, en día fijo) por S/ 36.00 mensuales, con delivery incluido.",
+  "respuesta_ideal": "El primer mes serían S/ 36.00 del Plan Hogar, S/ 15 del alquiler y S/ 100 de garantía: S/ 151.00 en total.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «El pago es adelantado, a inicio de mes. Disponible solo en Zona 1 y Zona 2»."
+ },
+ {
+  "id": "i0151",
+  "negocio": "Q6_n2",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Buenas, ¿a cuánto está la recarga del bidón de 20 litros?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "S/ 10.00"
+  ],
+  "evidencia": "Recarga bidón 20 L (cambio de envase)\tS/ 10.00",
+  "respuesta_ideal": "Bienvenido a Agua Tallán. La recarga del bidón de 20 L, con cambio de envase, cuesta S/ 10.00.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Producto: Recarga bidón 20 L (cambio de envase); Precio: S/ 10.00»."
+ },
+ {
+  "id": "i0159",
+  "negocio": "Q6_n2",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Hola! ¿atienden los domingos?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "1:00 p. m."
+  ],
+  "evidencia": "Domingos: 8:00 a. m. a 1:00 p. m. (solo reparto; la oficina no atiende)",
+  "respuesta_ideal": "Los domingos solo hay reparto, de 8:00 a. m. a 1:00 p. m.; la oficina no atiende.",
+  "respuesta_a_calificar": "Hola!. No lo tengo seguro. Lo más cercano que dice el texto es: «Domingos: 8:00 a. m. a 1:00 p. m. (solo reparto; la oficina no atiende)»."
+ },
+ {
+  "id": "i0195",
+  "negocio": "Q6_n2",
+  "turnos_previos_del_cliente": [
+   "Buenas, ¿a cuánto está la recarga del bidón de 20 litros?",
+   "¿Y si no tengo bidón?"
+  ],
+  "cliente": "Vivo en Castilla, si pido 2 ¿me cobran delivery?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "gratis desde 2 bidones"
+  ],
+  "evidencia": "1. Zona 1 (Piura cercado, Castilla, urb. Santa Ana, Miraflores, Los Ejidos): delivery gratis desde 2 bidones.",
+  "respuesta_ideal": "No. Castilla está en la Zona 1, donde el delivery es gratis desde 2 bidones.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Zona 1 (Piura cercado, Castilla, urb. Santa Ana, Miraflores, Los Ejidos): delivery gratis desde 2 bidones. Por 1 solo bidón se cobra S/ 2.00»."
+ },
+ {
+  "id": "i0212",
+  "negocio": "Q6_n2",
+  "turnos_previos_del_cliente": [
+   "¿Cuánto está el paquete de botellitas chicas?",
+   "¿Y tienen de un litro?",
+   "¿Aceptan Yape?",
+   "¿Y con tarjeta al repartidor?"
+  ],
+  "cliente": "Si paso yo a recoger a la planta 3 paquetes de las botellas de 2.5 litros, ¿cuánto sería?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "48.00"
+  ],
+  "evidencia": "Paquete x 6 botellas de 2.5 L\tS/ 16.00",
+  "respuesta_ideal": "Cada paquete de 6 botellas de 2.5 L cuesta S/ 16.00, así que los 3 paquetes serían S/ 48.00.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Producto: Paquete x 6 botellas de 2.5 L; Precio: S/ 16.00»."
+ },
+ {
+  "id": "i0227",
+  "negocio": "Q6_n2",
+  "turnos_previos_del_cliente": [
+   "hola reparten en sullana?",
+   "¿Y a Catacaos?"
+  ],
+  "cliente": "Le pregunto porque trabajo en un colegio y necesitaríamos unos 40 bidones por semana",
+  "tipo": "instruccion",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "Pedidos de empresas, colegios, obras o eventos de más de 20 bidones los atiende el área comercial: ventas@aguatallan.pe.",
+  "respuesta_ideal": "Los pedidos de colegios de más de 20 bidones los atiende nuestra área comercial; escríbales a ventas@aguatallan.pe.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Reciba 4 bidones al mes (uno por semana, en día fijo) por S/ 36.00 mensuales, con delivery incluido»."
+ },
+ {
+  "id": "i0230",
+  "negocio": "Q6_n2",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Buenas tardes. El bidón que me dejaron ayer tiene un olor raro y mi hijo ya tomó un vaso, ¿qué hago?",
+  "tipo": "instruccion",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "Si un cliente dice que el agua tiene mal olor, sabor raro o partículas, o que alguien se sintió mal después de tomarla, pídele que no la consuma y derívalo con la Sra. Rocío Chunga (administración) al (073) 30 5512, anexo 2. No opines sobre temas de salud.",
+  "respuesta_ideal": "Por favor no siga consumiendo esa agua y comuníquese con la Sra. Rocío Chunga, de administración, al (073) 30 5512, anexo 2.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Cambiamos envases de otras marcas siempre que estén en buen estado y sin rajaduras»."
+ },
+ {
+  "id": "i0232",
+  "negocio": "Q6_n2",
+  "turnos_previos_del_cliente": [
+   "¿Qué es eso del plan hogar?",
+   "¿Si me mudo a mitad de mes me devuelven lo que pagué?",
+   "¿Alquilan dispensador que enfríe el agua?",
+   "Si tomo el plan hogar y alquilo ese dispensador, ¿cuánto pago el primer mes contando la garantía?",
+   "¿Y la limpieza del dispensador cuánto cuesta?"
+  ],
+  "cliente": "¿El dispensador de cerámica tiene garantía?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "Cuando no encuentres la respuesta en la información de la empresa, no la supongas: dile al cliente que un asesor le responderá por WhatsApp al 969 402 118.",
+  "respuesta_ideal": "No tengo información sobre la garantía del dispensador de mesa. Un asesor le responderá por WhatsApp al 969 402 118.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Producto: Dispensador eléctrico frío/caliente; Precio: alquiler S/ 15 al mes (garantía S/ 100, reembolsable al devolverlo)»."
+ },
+ {
+  "id": "i0234",
+  "negocio": "Q6_n2",
+  "turnos_previos_del_cliente": [
+   "¿Qué es eso del plan hogar?",
+   "¿Si me mudo a mitad de mes me devuelven lo que pagué?",
+   "¿Alquilan dispensador que enfríe el agua?",
+   "Si tomo el plan hogar y alquilo ese dispensador, ¿cuánto pago el primer mes contando la garantía?"
+  ],
+  "cliente": "¿Y la limpieza del dispensador cuánto cuesta?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "S/ 20.00"
+  ],
+  "evidencia": "Limpieza y desinfección de dispensador a domicilio\tS/ 20.00",
+  "respuesta_ideal": "La limpieza y desinfección del dispensador a domicilio cuesta S/ 20.00.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Producto: Limpieza y desinfección de dispensador a domicilio; Precio: S/ 20.00»."
+ },
+ {
+  "id": "i0286",
+  "negocio": "Q6_n2",
+  "turnos_previos_del_cliente": [
+   "Buenas tardes. El bidón que me dejaron ayer tiene un olor raro y mi hijo ya tomó un vaso, ¿qué hago?",
+   "¿Me lo cambian?"
+  ],
+  "cliente": "Vivo en Miraflores en un quinto piso, si pido 2 recargas ¿cuánto pago en total?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "22.00"
+  ],
+  "evidencia": "Recarga bidón 20 L (cambio de envase)\tS/ 10.00 […] 1. Zona 1 (Piura cercado, Castilla, urb. Santa Ana, Miraflores, Los Ejidos): delivery gratis desde 2 bidones. […] Del 4to piso para arriba se cobra S/ 1.00 adicional por bidón.",
+  "respuesta_ideal": "Las 2 recargas son S/ 20.00, el delivery a Miraflores es gratis desde 2 bidones y por ser quinto piso se suma S/ 1.00 por bidón: S/ 22.00 en total.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «El pago es adelantado, a inicio de mes. Disponible solo en Zona 1 y Zona 2»."
+ },
+ {
+  "id": "i0309",
+  "negocio": "Q6_n2",
+  "turnos_previos_del_cliente": [],
+  "cliente": "¿Qué es eso del plan hogar?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "4 bidones al mes",
+   "S/ 36.00"
+  ],
+  "evidencia": "Reciba 4 bidones al mes (uno por semana, en día fijo) por S/ 36.00 mensuales, con delivery incluido.",
+  "respuesta_ideal": "Con el Plan Hogar recibe 4 bidones al mes, uno por semana en día fijo, por S/ 36.00 mensuales con delivery incluido. Se paga por adelantado a inicio de mes.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «El pago es adelantado, a inicio de mes. Disponible solo en Zona 1 y Zona 2»."
+ }
+]

@@ -1,0 +1,623 @@
+[
+ {
+  "id": "i0010",
+  "negocio": "Q1_n3",
+  "turnos_previos_del_cliente": [
+   "Buenas tardes! a que hora abren hoy? es miércoles"
+  ],
+  "cliente": "y cuanto cuesta la hora por niño",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "USD 5"
+  ],
+  "evidencia": "Primera hora: USD 5 por niño.",
+  "respuesta_ideal": "La primera hora cuesta USD 5 por niño, y cada media hora adicional USD 2.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Plan Fiesta — USD 290: 3 horas, hasta 25 niños, 3 animadoras, decoración temática, tequeños y jugo para los niños, y piñata»."
+ },
+ {
+  "id": "i0064",
+  "negocio": "Q1_n3",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Hola, quiero celebrarle el cumple a mi hija ahi, que planes tienen?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "USD 180",
+   "USD 290"
+  ],
+  "evidencia": "Plan Básico — USD 180: 3 horas de uso exclusivo del local, hasta 15 niños, 2 animadoras, decoración sencilla con globos.\nPlan Fiesta — USD 290: 3 horas, hasta 25 niños, 3 animadoras, decoración temática, tequeños y jugo para los niños, y piñata.",
+  "respuesta_ideal": "¡Hola! Tenemos el Plan Básico por USD 180 (3 horas, hasta 15 niños, 2 animadoras y decoración con globos) y el Plan Fiesta por USD 290 (3 horas, hasta 25 niños, 3 animadoras, decoración temática, tequeños, jugo y piñata).",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Los cumpleaños se hacen los lunes todo el día o los domingos de 3:00 a 6:00 p. m. Se reserva con el 50 % del plan y el resto se paga el mismo día antes de empezar»."
+ },
+ {
+  "id": "i0104",
+  "negocio": "Q1_n3",
+  "turnos_previos_del_cliente": [
+   "El taller de arcilla es para niños de que edad?",
+   "y a que hora es?",
+   "cuantos niños aceptan por taller?"
+  ],
+  "cliente": "y que talleres van a tener el mes que viene?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "Solo tengo los talleres de este mes; para los del mes que viene escribe al WhatsApp 0414-635 2218.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «3:00 p. m. Taller de arcilla y pintura (5 a 10 años) — USD 8, materiales incluidos»."
+ },
+ {
+  "id": "i0124",
+  "negocio": "Q1_n3",
+  "turnos_previos_del_cliente": [
+   "Hola, quiero celebrarle el cumple a mi hija ahi, que planes tienen?"
+  ],
+  "cliente": "cual trae piñata?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "Plan Fiesta"
+  ],
+  "evidencia": "Plan Fiesta — USD 290: 3 horas, hasta 25 niños, 3 animadoras, decoración temática, tequeños y jugo para los niños, y piñata.",
+  "respuesta_ideal": "La piñata viene en el Plan Fiesta, de USD 290.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Plan Fiesta — USD 290: 3 horas, hasta 25 niños, 3 animadoras, decoración temática, tequeños y jugo para los niños, y piñata»."
+ },
+ {
+  "id": "i0130",
+  "negocio": "Q1_n3",
+  "turnos_previos_del_cliente": [
+   "las muchachas que cuidan a los niños son maestras?",
+   "hay que llevar medias especiales?",
+   "y le puedo llevar su merienda?",
+   "y que venden de comer ahi?"
+  ],
+  "cliente": "a cuanto el tequeño?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo los precios del cafetín; puedes preguntarlos por WhatsApp al 0414-635 2218.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Plan Fiesta — USD 290: 3 horas, hasta 25 niños, 3 animadoras, decoración temática, tequeños y jugo para los niños, y piñata»."
+ },
+ {
+  "id": "i0215",
+  "negocio": "Q1_n3",
+  "turnos_previos_del_cliente": [
+   "Hola! hay wifi para los papas mientras esperamos?",
+   "tienen donde estacionar?"
+  ],
+  "cliente": "si se va la luz cierran?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "planta eléctrica"
+  ],
+  "evidencia": "Todo el local tiene aire acondicionado y planta eléctrica, así que abrimos aunque se vaya la luz.",
+  "respuesta_ideal": "No, tenemos planta eléctrica, así que abrimos aunque se vaya la luz.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Todo el local tiene aire acondicionado y planta eléctrica, así que abrimos aunque se vaya la luz»."
+ },
+ {
+  "id": "i0283",
+  "negocio": "Q1_n3",
+  "turnos_previos_del_cliente": [
+   "las muchachas que cuidan a los niños son maestras?",
+   "hay que llevar medias especiales?"
+  ],
+  "cliente": "y le puedo llevar su merienda?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "No se permite entrar con comida"
+  ],
+  "evidencia": "No se permite entrar con comida ni chucherías; tenemos un cafetín con jugos naturales, tequeños y cachitos.",
+  "respuesta_ideal": "No se permite entrar con comida ni chucherías, pero tenemos un cafetín.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Te recomendamos usar el móvil: todos los vehículos llevan soporte y cargador USB»."
+ },
+ {
+  "id": "i0313",
+  "negocio": "Q1_n3",
+  "turnos_previos_del_cliente": [
+   "El taller de arcilla es para niños de que edad?"
+  ],
+  "cliente": "y a que hora es?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "3:00 p. m."
+  ],
+  "evidencia": "3:00 p. m. Taller de arcilla y pintura (5 a 10 años) — USD 8, materiales incluidos",
+  "respuesta_ideal": "Es los sábados a las 3:00 p. m.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Lunes a viernes: 9.00–13.30 y 16.00–19.00»."
+ },
+ {
+  "id": "i0018",
+  "negocio": "Q3_n3",
+  "turnos_previos_del_cliente": [
+   "¿Cuánto cuesta un rosario de madera?",
+   "¿Tienen rosarios de piedra?",
+   "¿A qué hora abren mañana?",
+   "¿Cuesta más enviar a otro país?",
+   "¿Venden biblias?",
+   "Quiero una imagen de San José. ¿Cuál es el precio?",
+   "¿Pueden grabar mi nombre en una pulsera?"
+  ],
+  "cliente": "¿Cuál es el horario del domingo?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "Domingo: 1:00 p.m. - 5:00 p.m."
+  ],
+  "evidencia": "Domingo: 1:00 p.m. - 5:00 p.m.",
+  "respuesta_ideal": "El domingo estamos abiertos de 1:00 p.m. a 5:00 p.m.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Cerrado 25 de diciembre»."
+ },
+ {
+  "id": "i0020",
+  "negocio": "Q3_n3",
+  "turnos_previos_del_cliente": [
+   "¿Cuánto cuesta un rosario de madera?",
+   "¿Tienen rosarios de piedra?",
+   "¿A qué hora abren mañana?",
+   "¿Cuesta más enviar a otro país?",
+   "¿Venden biblias?",
+   "Quiero una imagen de San José. ¿Cuál es el precio?",
+   "¿Pueden grabar mi nombre en una pulsera?",
+   "¿Cuál es el horario del domingo?"
+  ],
+  "cliente": "¿Se puede pagar por transferencia?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "transferencia bancaria"
+  ],
+  "evidencia": "En tienda: efectivo en pesos colombianos (COP), transferencia bancaria, tarjetas de débito y crédito (Visa, Mastercard), y daviplata.",
+  "respuesta_ideal": "Sí, aceptamos transferencia bancaria. También efectivo, tarjetas y daviplata.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Transferencia bancaria: solo para grupos de 10 o más personas, con 48 horas de anticipación»."
+ },
+ {
+  "id": "i0044",
+  "negocio": "Q3_n3",
+  "turnos_previos_del_cliente": [
+   "¿Cuánto cuesta un rosario de madera?",
+   "¿Tienen rosarios de piedra?",
+   "¿A qué hora abren mañana?",
+   "¿Cuesta más enviar a otro país?",
+   "¿Venden biblias?",
+   "Quiero una imagen de San José. ¿Cuál es el precio?",
+   "¿Pueden grabar mi nombre en una pulsera?",
+   "¿Cuál es el horario del domingo?",
+   "¿Se puede pagar por transferencia?",
+   "Compré una imagen y llegó rota. ¿Qué hago?",
+   "Quiero un cristo de madera. ¿Cuánto vale?",
+   "¿Cómo pido un envío dentro de Popayán?",
+   "¿Venden velas?"
+  ],
+  "cliente": "¿Cuánto tarda un envío a Cali?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "$12.000 - $18.000 COP",
+   "fuera del Cauca"
+  ],
+  "evidencia": "Fuera del Cauca, dentro de Colombia: $12.000 - $18.000 COP (según destino)",
+  "respuesta_ideal": "Un envío a Cali cuesta entre $12.000 y $18.000 COP. El tiempo normal es 3-5 días dentro de Colombia.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Dentro de Popayán: envío gratis con compra mayor a $50.000 COP»."
+ },
+ {
+  "id": "i0072",
+  "negocio": "Q3_n3",
+  "turnos_previos_del_cliente": [
+   "¿Cuánto cuesta un rosario de madera?",
+   "¿Tienen rosarios de piedra?",
+   "¿A qué hora abren mañana?",
+   "¿Cuesta más enviar a otro país?",
+   "¿Venden biblias?",
+   "Quiero una imagen de San José. ¿Cuál es el precio?",
+   "¿Pueden grabar mi nombre en una pulsera?",
+   "¿Cuál es el horario del domingo?",
+   "¿Se puede pagar por transferencia?",
+   "Compré una imagen y llegó rota. ¿Qué hago?",
+   "Quiero un cristo de madera. ¿Cuánto vale?",
+   "¿Cómo pido un envío dentro de Popayán?",
+   "¿Venden velas?",
+   "¿Cuánto tarda un envío a Cali?",
+   "¿Qué santo rezar para un examen?"
+  ],
+  "cliente": "Quiero comprar un medallón de San Cristóbal para mi auto.",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "$7.500 COP"
+  ],
+  "evidencia": "Medallones de san Cristóbal para auto: $7.500 COP",
+  "respuesta_ideal": "Excelente, tenemos medallones de san Cristóbal para auto a $7.500 COP.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Medallones de san Cristóbal para auto: $7.500 COP»."
+ },
+ {
+  "id": "i0080",
+  "negocio": "Q3_n3",
+  "turnos_previos_del_cliente": [
+   "¿Cuánto cuesta un rosario de madera?",
+   "¿Tienen rosarios de piedra?",
+   "¿A qué hora abren mañana?",
+   "¿Cuesta más enviar a otro país?",
+   "¿Venden biblias?",
+   "Quiero una imagen de San José. ¿Cuál es el precio?",
+   "¿Pueden grabar mi nombre en una pulsera?",
+   "¿Cuál es el horario del domingo?",
+   "¿Se puede pagar por transferencia?",
+   "Compré una imagen y llegó rota. ¿Qué hago?",
+   "Quiero un cristo de madera. ¿Cuánto vale?",
+   "¿Cómo pido un envío dentro de Popayán?",
+   "¿Venden velas?",
+   "¿Cuánto tarda un envío a Cali?"
+  ],
+  "cliente": "¿Qué santo rezar para un examen?",
+  "tipo": "instruccion",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "NO HAGAS RECOMENDACIONES ESPIRITUALES",
+  "respuesta_ideal": "Esa es una pregunta hermosa, pero es mejor que la hagas con tu sacerdote o pastor. Yo puedo ayudarte a encontrar la imagen o rosario que necesites, pero la orientación espiritual la deben dar ellos.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Medallones de san Cristóbal para auto: $7.500 COP»."
+ },
+ {
+  "id": "i0086",
+  "negocio": "Q3_n3",
+  "turnos_previos_del_cliente": [
+   "¿Cuánto cuesta un rosario de madera?",
+   "¿Tienen rosarios de piedra?",
+   "¿A qué hora abren mañana?",
+   "¿Cuesta más enviar a otro país?",
+   "¿Venden biblias?",
+   "Quiero una imagen de San José. ¿Cuál es el precio?",
+   "¿Pueden grabar mi nombre en una pulsera?",
+   "¿Cuál es el horario del domingo?",
+   "¿Se puede pagar por transferencia?",
+   "Compré una imagen y llegó rota. ¿Qué hago?",
+   "Quiero un cristo de madera. ¿Cuánto vale?",
+   "¿Cómo pido un envío dentro de Popayán?",
+   "¿Venden velas?",
+   "¿Cuánto tarda un envío a Cali?",
+   "¿Qué santo rezar para un examen?",
+   "Quiero comprar un medallón de San Cristóbal para mi auto.",
+   "¿Venden palmas benditas todo el año?",
+   "¿Es auténtica la reliquia que venden?",
+   "¿Puedo devolver un rosario de vidrio que no me gustó?"
+  ],
+  "cliente": "Buenos días, ¿cómo están?",
+  "tipo": "charla",
+  "accion_esperada": "charla",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "Buenos días, muy bien. Bienvenido a Tienda Sagrada. ¿En qué puedo ayudarte?",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Tiempo: 15-30 días»."
+ },
+ {
+  "id": "i0098",
+  "negocio": "Q3_n3",
+  "turnos_previos_del_cliente": [
+   "¿Cuánto cuesta un rosario de madera?",
+   "¿Tienen rosarios de piedra?",
+   "¿A qué hora abren mañana?",
+   "¿Cuesta más enviar a otro país?",
+   "¿Venden biblias?",
+   "Quiero una imagen de San José. ¿Cuál es el precio?",
+   "¿Pueden grabar mi nombre en una pulsera?",
+   "¿Cuál es el horario del domingo?",
+   "¿Se puede pagar por transferencia?",
+   "Compré una imagen y llegó rota. ¿Qué hago?",
+   "Quiero un cristo de madera. ¿Cuánto vale?",
+   "¿Cómo pido un envío dentro de Popayán?",
+   "¿Venden velas?",
+   "¿Cuánto tarda un envío a Cali?",
+   "¿Qué santo rezar para un examen?",
+   "Quiero comprar un medallón de San Cristóbal para mi auto."
+  ],
+  "cliente": "¿Venden palmas benditas todo el año?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "domingos de Ramos",
+   "estacionales"
+  ],
+  "evidencia": "Palmas benditas: $2.000 COP (domingos de Ramos)",
+  "respuesta_ideal": "No, las palmas benditas solo las vendemos en el domingo de Ramos. Son un artículo estacional.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Palmas benditas: $2.000 COP (domingos de Ramos)»."
+ },
+ {
+  "id": "i0144",
+  "negocio": "Q3_n3",
+  "turnos_previos_del_cliente": [
+   "¿Cuánto cuesta un rosario de madera?",
+   "¿Tienen rosarios de piedra?",
+   "¿A qué hora abren mañana?",
+   "¿Cuesta más enviar a otro país?"
+  ],
+  "cliente": "¿Venden biblias?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "Biblia tapa dura",
+   "$42.000 - $68.000 COP"
+  ],
+  "evidencia": "Biblia tapa dura (varias ediciones): $42.000 - $68.000 COP",
+  "respuesta_ideal": "Sí, vendemos biblias en tapa dura con varias ediciones, de $42.000 a $68.000 COP.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Encuadernación de libros o biblias: consultar precio, mínimo 1 semana»."
+ },
+ {
+  "id": "i0166",
+  "negocio": "Q3_n3",
+  "turnos_previos_del_cliente": [
+   "¿Cuánto cuesta un rosario de madera?",
+   "¿Tienen rosarios de piedra?",
+   "¿A qué hora abren mañana?",
+   "¿Cuesta más enviar a otro país?",
+   "¿Venden biblias?",
+   "Quiero una imagen de San José. ¿Cuál es el precio?",
+   "¿Pueden grabar mi nombre en una pulsera?",
+   "¿Cuál es el horario del domingo?",
+   "¿Se puede pagar por transferencia?",
+   "Compré una imagen y llegó rota. ¿Qué hago?"
+  ],
+  "cliente": "Quiero un cristo de madera. ¿Cuánto vale?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "$60.000 - $180.000 COP",
+   "Cristo de madera tallada"
+  ],
+  "evidencia": "Cristos de madera tallada (varios tamaños): $60.000 - $180.000 COP",
+  "respuesta_ideal": "Los cristos de madera tallada cuestan entre $60.000 y $180.000 COP, según el tamaño.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Cristos de madera tallada (varios tamaños): $60.000 - $180.000 COP»."
+ },
+ {
+  "id": "i0204",
+  "negocio": "Q3_n3",
+  "turnos_previos_del_cliente": [
+   "¿Cuánto cuesta un rosario de madera?",
+   "¿Tienen rosarios de piedra?",
+   "¿A qué hora abren mañana?",
+   "¿Cuesta más enviar a otro país?",
+   "¿Venden biblias?",
+   "Quiero una imagen de San José. ¿Cuál es el precio?",
+   "¿Pueden grabar mi nombre en una pulsera?",
+   "¿Cuál es el horario del domingo?",
+   "¿Se puede pagar por transferencia?",
+   "Compré una imagen y llegó rota. ¿Qué hago?",
+   "Quiero un cristo de madera. ¿Cuánto vale?",
+   "¿Cómo pido un envío dentro de Popayán?",
+   "¿Venden velas?",
+   "¿Cuánto tarda un envío a Cali?",
+   "¿Qué santo rezar para un examen?",
+   "Quiero comprar un medallón de San Cristóbal para mi auto.",
+   "¿Venden palmas benditas todo el año?",
+   "¿Es auténtica la reliquia que venden?",
+   "¿Puedo devolver un rosario de vidrio que no me gustó?",
+   "Buenos días, ¿cómo están?"
+  ],
+  "cliente": "Voy a enviar un regalo a Ecuador. ¿Cuánto más cuesta?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "$45 USD",
+   "internacional",
+   "$100.000 COP"
+  ],
+  "evidencia": "Internacional: $45 USD mínimo (solo para pedidos mayores a $100.000 COP). Tiempo: 15-30 días.",
+  "respuesta_ideal": "Para envíos internacionales cobro $45 USD, pero solo si el pedido es mayor a $100.000 COP. Tarda entre 15 y 30 días.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Dentro de Popayán: envío gratis con compra mayor a $50.000 COP»."
+ },
+ {
+  "id": "i0240",
+  "negocio": "Q3_n3",
+  "turnos_previos_del_cliente": [
+   "¿Cuánto cuesta un rosario de madera?",
+   "¿Tienen rosarios de piedra?",
+   "¿A qué hora abren mañana?",
+   "¿Cuesta más enviar a otro país?",
+   "¿Venden biblias?",
+   "Quiero una imagen de San José. ¿Cuál es el precio?",
+   "¿Pueden grabar mi nombre en una pulsera?",
+   "¿Cuál es el horario del domingo?",
+   "¿Se puede pagar por transferencia?",
+   "Compré una imagen y llegó rota. ¿Qué hago?",
+   "Quiero un cristo de madera. ¿Cuánto vale?"
+  ],
+  "cliente": "¿Cómo pido un envío dentro de Popayán?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "gratis con compra mayor a $50.000 COP",
+   "dentro de Popayán"
+  ],
+  "evidencia": "Dentro de Popayán: envío gratis con compra mayor a $50.000 COP.",
+  "respuesta_ideal": "Si compras por más de $50.000 COP, el envío es gratis en Popayán. Menos de eso, pregunta por el costo.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Dentro de Popayán: envío gratis con compra mayor a $50.000 COP»."
+ },
+ {
+  "id": "i0245",
+  "negocio": "Q3_n3",
+  "turnos_previos_del_cliente": [],
+  "cliente": "¿Cuánto cuesta un rosario de madera?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "$18.000 COP",
+   "rosario tradicional",
+   "cuentas de madera"
+  ],
+  "evidencia": "Rosario tradicional (cuentas de madera, cruz plateada): $18.000 COP",
+  "respuesta_ideal": "Un rosario tradicional con cuentas de madera y cruz plateada cuesta $18.000 COP.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Rosario tradicional (cuentas de madera, cruz plateada): $18.000 COP»."
+ },
+ {
+  "id": "i0266",
+  "negocio": "Q3_n3",
+  "turnos_previos_del_cliente": [
+   "¿Cuánto cuesta un rosario de madera?"
+  ],
+  "cliente": "¿Tienen rosarios de piedra?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "piedra semipreciosa",
+   "$32.000 - $45.000 COP"
+  ],
+  "evidencia": "Rosario de piedra semipreciosa (cuarzo, amatista): $32.000 - $45.000 COP",
+  "respuesta_ideal": "Sí, tenemos rosarios de piedra semipreciosa como cuarzo y amatista, entre $32.000 y $45.000 COP.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Rosario de piedra semipreciosa (cuarzo, amatista): $32.000 - $45.000 COP»."
+ },
+ {
+  "id": "i0327",
+  "negocio": "Q3_n3",
+  "turnos_previos_del_cliente": [
+   "¿Cuánto cuesta un rosario de madera?",
+   "¿Tienen rosarios de piedra?",
+   "¿A qué hora abren mañana?",
+   "¿Cuesta más enviar a otro país?",
+   "¿Venden biblias?",
+   "Quiero una imagen de San José. ¿Cuál es el precio?",
+   "¿Pueden grabar mi nombre en una pulsera?",
+   "¿Cuál es el horario del domingo?"
+  ],
+  "cliente": "¿Se puede pagar por transferencia?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "transferencia bancaria"
+  ],
+  "evidencia": "En tienda: efectivo en pesos colombianos (COP), transferencia bancaria, tarjetas de débito y crédito (Visa, Mastercard), y daviplata.",
+  "respuesta_ideal": "Sí, aceptamos transferencia bancaria. También efectivo, tarjetas y daviplata.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Envíos: aceptamos Nequi, Daviplata o transferencia por anticipado»."
+ },
+ {
+  "id": "i0030",
+  "negocio": "Q5_n3",
+  "turnos_previos_del_cliente": [
+   "tienen alguna sala nueva en construccion?"
+  ],
+  "cliente": "el parqueadero es gratis?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo ese dato porque el parqueadero no es nuestro, es un parqueadero público a media cuadra; te recomiendo preguntar directamente ahí.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Sí, hay un parqueadero público a media cuadra, no es propiedad de Cripta»."
+ },
+ {
+  "id": "i0099",
+  "negocio": "Q5_n3",
+  "turnos_previos_del_cliente": [
+   "tienen alguna sala nueva en construccion?",
+   "el parqueadero es gratis?"
+  ],
+  "cliente": "puedo pagar con paypal?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "No manejamos pagos con PayPal"
+  ],
+  "evidencia": "Aceptamos efectivo, tarjetas débito y crédito, y transferencia Nequi o Daviplata. No manejamos pagos con PayPal.",
+  "respuesta_ideal": "No, no manejamos pagos con PayPal; aceptamos efectivo, tarjetas débito y crédito, o transferencia por Nequi o Daviplata.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «No manejamos pagos con PayPal»."
+ },
+ {
+  "id": "i0183",
+  "negocio": "Q5_n3",
+  "turnos_previos_del_cliente": [
+   "si reservamos y no podemos ir, nos devuelven la plata?"
+  ],
+  "cliente": "si llegamos tarde nos dejan entrar?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "tolerancia de 10 minutos"
+  ],
+  "evidencia": "Se pide llegar 15 minutos antes de la hora reservada; hay una tolerancia de 10 minutos, pasado ese tiempo se pierde el cupo y no hay reembolso.",
+  "respuesta_ideal": "Hay una tolerancia de 10 minutos después de la hora reservada; pasado ese tiempo se pierde el cupo y no hay reembolso.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Se pide llegar 15 minutos antes de la hora reservada; hay una tolerancia de 10 minutos, pasado ese tiempo se pierde el cupo y no hay reembolso»."
+ },
+ {
+  "id": "i0201",
+  "negocio": "Q5_n3",
+  "turnos_previos_del_cliente": [
+   "Hola, cuanto cuesta la sala del banco para el sabado?",
+   "y si vamos entre semana sale mas barato?",
+   "somos 4 adultos y 2 niños de 8 años, cuanto pagariamos entre semana?"
+  ],
+  "cliente": "esa sala es apta para los niños?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "Atraco al Banco es apta para todo público, incluidos niños desde 6 años acompañados"
+  ],
+  "evidencia": "Atraco al Banco es apta para todo público, incluidos niños desde 6 años acompañados.",
+  "respuesta_ideal": "Sí, Atraco al Banco es apta para todo público, incluidos niños desde 6 años si van acompañados.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Atraco al Banco es apta para todo público, incluidos niños desde 6 años acompañados»."
+ },
+ {
+  "id": "i0206",
+  "negocio": "Q5_n3",
+  "turnos_previos_del_cliente": [
+   "la sala del laboratorio es muy dificil?"
+  ],
+  "cliente": "tengo claustrofobia, me la recomiendan?",
+  "tipo": "instruccion",
+  "accion_esperada": "responder",
+  "claves": [
+   "no son recomendables para personas con claustrofobia severa"
+  ],
+  "evidencia": "La Mansión Embrujada y El Laboratorio Secreto no son recomendables para personas con claustrofobia severa o epilepsia fotosensible, ya que incluyen espacios reducidos y efectos de luz.",
+  "respuesta_ideal": "Esa sala no es recomendable para personas con claustrofobia severa, ya que incluye espacios reducidos; si tenés dudas te sugiero consultarlo antes de reservar.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «La Mansión Embrujada y El Laboratorio Secreto no son recomendables para personas con claustrofobia severa o epilepsia fotosensible, ya que incluyen espacios reducidos y efectos de luz»."
+ },
+ {
+  "id": "i0277",
+  "negocio": "Q5_n3",
+  "turnos_previos_del_cliente": [
+   "la sala del laboratorio es muy dificil?",
+   "tengo claustrofobia, me la recomiendan?"
+  ],
+  "cliente": "y la del banco tambien tiene espacios reducidos?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "Atraco al Banco es apta para todo público"
+  ],
+  "evidencia": "Atraco al Banco es apta para todo público, incluidos niños desde 6 años acompañados.",
+  "respuesta_ideal": "No, Atraco al Banco es apta para todo público y no tiene esa advertencia.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «La Mansión Embrujada y El Laboratorio Secreto no son recomendables para personas con claustrofobia severa o epilepsia fotosensible, ya que incluyen espacios reducidos y efectos de luz»."
+ },
+ {
+  "id": "i0323",
+  "negocio": "Q5_n3",
+  "turnos_previos_del_cliente": [
+   "Hola, cuanto cuesta la sala del banco para el sabado?",
+   "y si vamos entre semana sale mas barato?"
+  ],
+  "cliente": "somos 4 adultos y 2 niños de 8 años, cuanto pagariamos entre semana?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "$45.000",
+   "no pagan en Atraco al Banco si van acompañados de un adulto pagante"
+  ],
+  "evidencia": "Menores de 12 años no pagan en Atraco al Banco si van acompañados de un adulto pagante",
+  "respuesta_ideal": "Los 4 adultos pagarían $45.000 cada uno entre semana, y como es Atraco al Banco, los niños de 8 años no pagan por ir acompañados de un adulto pagante; en total serían $180.000.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Atraco al Banco — dificultad baja-media, ideal para principiantes y grupos con niños, 3 a 8 jugadores, 60 minutos»."
+ },
+ {
+  "id": "i0343",
+  "negocio": "Q5_n3",
+  "turnos_previos_del_cliente": [],
+  "cliente": "la sala del laboratorio es muy dificil?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "dificultad alta"
+  ],
+  "evidencia": "El Laboratorio Secreto — dificultad alta, ciencia ficción, 2 a 5 jugadores, 60 minutos.",
+  "respuesta_ideal": "Sí, El Laboratorio Secreto tiene dificultad alta y es de temática de ciencia ficción.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «El Laboratorio Secreto — dificultad alta, ciencia ficción, 2 a 5 jugadores, 60 minutos»."
+ }
+]
