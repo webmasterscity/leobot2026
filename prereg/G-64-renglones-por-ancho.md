@@ -64,3 +64,11 @@ Bancos de G-59 a G-62 (1116 preguntas directas y de sí/no). Con el texto origin
 Confirmación en los bancos de G-57, G-58 y desarrollo, a 70 (819 preguntas): V0 255, V1 247, V2 255 y V3 255. V2 no queda por debajo de V0. Allí casi no cambia nada, porque esos textos tienen pocos renglones largos y la prueba de «viene partido» no se activa.
 
 **Elegida: V2.** Empata con V3 en todo. La regla de desempate no se había escrito, así que se declara aquí: se elige la más simple, porque la coma de V3 solo actúa en documentos no partidos, y ahí V1 bajó de 255 a 247. V2 supera a V0 a 70 por 27 útiles (pedía ≥ 10) y cumple las tres condiciones: a 50 y a 90 no pierde, tal cual es idéntica y las citas sin dato suben 0,4 puntos. **Pasa desarrollo.**
+
+## Precisión del control de renombrado (antes de tener el banco)
+
+El evaluador de G-63 ya renombraba **antes** de partir. El 89 % de G-63 incluye, por tanto, que los nombres nuevos cambian dónde se corta cada renglón. Para separar las dos cosas, se mide la coincidencia de decisión y línea con el turno sin renombrar:
+- **G-64, texto tal cual:** ≥ 95 %. Esta es la puerta.
+- **G-64, texto partido:** no más de 2 puntos por debajo de `estable-G-18` con el texto partido y renombrado igual. Así se ve si el defecto es de la unión o del texto partido.
+
+Evaluador: `experiments/g64_evaluar.py`. Añade a 55 columnas (diagnóstico), el renombrado tal cual y `estable-G-18` renombrado y partido.
