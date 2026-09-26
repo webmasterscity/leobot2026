@@ -1,0 +1,872 @@
+[
+ {
+  "id": "i0085",
+  "negocio": "W1_n3",
+  "turnos_previos_del_cliente": [
+   "Estoy embarazada de 5 meses, ¿puedo subir hasta la cumbre?",
+   "¿y si me siento mal allá hay dónde atenderme?",
+   "¿Cuánto cuesta ir solo hasta La Laguna?"
+  ],
+  "cliente": "el restaurante de La Laguna tiene comida vegetariana?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo información sobre el menú del restaurante El Páramo.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Estación: 3. La Laguna; Altitud: 3.450 m; Servicios: Restaurante El Páramo, baños, enfermería»."
+ },
+ {
+  "id": "i0102",
+  "negocio": "W1_n3",
+  "turnos_previos_del_cliente": [
+   "Está haciendo mucho viento, ¿hoy está funcionando?",
+   "Si lo paran cuando ya estoy arriba, ¿me devuelven la plata?"
+  ],
+  "cliente": "¿Abren el lunes 3 de agosto?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "todos los días"
+  ],
+  "evidencia": "Lunes y martes cerrado por mantenimiento, excepto feriados y temporada alta (Carnaval, Semana Santa, agosto y diciembre), cuando abrimos todos los días.",
+  "respuesta_ideal": "Sí: aunque normalmente los lunes cerramos, agosto es temporada alta y abrimos todos los días.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Lunes y martes cerrado por mantenimiento, excepto feriados y temporada alta (Carnaval, Semana Santa, agosto y diciembre), cuando abrimos todos los días»."
+ },
+ {
+  "id": "i0130",
+  "negocio": "W1_n3",
+  "turnos_previos_del_cliente": [
+   "Queremos traer a 40 alumnos del liceo, ¿cómo hacemos?"
+  ],
+  "cliente": "¿Se puede pagar en bolívares?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "BCV"
+  ],
+  "evidencia": "Formas de pago en taquilla: efectivo (dólares o bolívares al cambio oficial del BCV del día), pago móvil y tarjetas de débito nacionales.",
+  "respuesta_ideal": "Sí, en bolívares al cambio oficial del BCV del día, en efectivo, por pago móvil o con débito nacional.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Formas de pago en taquilla: efectivo (dólares o bolívares al cambio oficial del BCV del día), pago móvil y tarjetas de débito nacionales»."
+ },
+ {
+  "id": "i0155",
+  "negocio": "W1_n3",
+  "turnos_previos_del_cliente": [
+   "Estoy embarazada de 5 meses, ¿puedo subir hasta la cumbre?",
+   "¿y si me siento mal allá hay dónde atenderme?",
+   "¿Cuánto cuesta ir solo hasta La Laguna?",
+   "el restaurante de La Laguna tiene comida vegetariana?"
+  ],
+  "cliente": "¿Puedo llevar a mi perrita?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "No se permiten mascotas"
+  ],
+  "evidencia": "No se permiten mascotas, salvo perros de asistencia.",
+  "respuesta_ideal": "No, no se permiten mascotas, salvo perros de asistencia.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Bienvenido al teleférico que lo lleva desde la ciudad de Mérida (1.640 m s. n. m.) hasta el Mirador del Espejo, a 4.600 metros, en plena Sierra Nevada»."
+ },
+ {
+  "id": "i0157",
+  "negocio": "W1_n3",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Buenos días, ¿a qué hora abre el teleférico?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "8:00 a. m.",
+   "3:00 p. m."
+  ],
+  "evidencia": "De miércoles a domingo, de 8:00 a. m. a 3:00 p. m.",
+  "respuesta_ideal": "Buenos días. Abrimos de miércoles a domingo, de 8:00 a. m. a 3:00 p. m.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Sábados y domingos, a las 9:00 y a las 15:00»."
+ },
+ {
+  "id": "i0164",
+  "negocio": "W1_n3",
+  "turnos_previos_del_cliente": [
+   "Estoy embarazada de 5 meses, ¿puedo subir hasta la cumbre?",
+   "¿y si me siento mal allá hay dónde atenderme?",
+   "¿Cuánto cuesta ir solo hasta La Laguna?"
+  ],
+  "cliente": "el restaurante de La Laguna tiene comida vegetariana?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo información sobre el menú del restaurante El Páramo.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «2. Los Frailejones: 3. La Laguna; 2.450 m: 3.450 m; Mirador y sendero corto de 20 minutos: Restaurante El Páramo, baños, enfermería»."
+ },
+ {
+  "id": "i0171",
+  "negocio": "W1_n3",
+  "turnos_previos_del_cliente": [
+   "Queremos traer a 40 alumnos del liceo, ¿cómo hacemos?",
+   "¿Se puede pagar en bolívares?"
+  ],
+  "cliente": "que tamaño de morral se puede llevar?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "20 litros"
+  ],
+  "evidencia": "Solo mochilas de hasta 20 litros; no se permiten maletas.",
+  "respuesta_ideal": "Solo mochilas de hasta 20 litros; no se permiten maletas.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Bienvenido al teleférico que lo lleva desde la ciudad de Mérida (1.640»."
+ },
+ {
+  "id": "i0173",
+  "negocio": "W1_n3",
+  "turnos_previos_del_cliente": [
+   "Estoy embarazada de 5 meses, ¿puedo subir hasta la cumbre?",
+   "¿y si me siento mal allá hay dónde atenderme?"
+  ],
+  "cliente": "¿Cuánto cuesta ir solo hasta La Laguna?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "USD 12"
+  ],
+  "evidencia": "Tramo corto, solo hasta La Laguna, ida y vuelta: USD 12 (tarifa única)",
+  "respuesta_ideal": "El tramo corto hasta La Laguna, ida y vuelta, cuesta USD 12 (tarifa única).",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Tramo corto, solo hasta La Laguna, ida y vuelta: USD 12 (tarifa única)»."
+ },
+ {
+  "id": "i0175",
+  "negocio": "W1_n3",
+  "turnos_previos_del_cliente": [
+   "Buenos días, ¿a qué hora abre el teleférico?",
+   "¿y hasta qué hora dejan subir?",
+   "¿Cuánto cuesta la entrada para un adulto venezolano?",
+   "Vamos mi esposa y yo, y mi mamá que tiene 65, todos venezolanos. ¿Cuánto pagamos en total?",
+   "¿Puedo pagar con tarjeta de crédito en la taquilla?"
+  ],
+  "cliente": "¿cuántas personas caben en cada cabina?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo ese dato sobre la capacidad de las cabinas.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Por su cuenta, o con nuestra movilidad, que sale de la tienda de la calle Sucre 45 minutos antes de cada visita: Bs 30 por persona, ida y vuelta»."
+ },
+ {
+  "id": "i0198",
+  "negocio": "W1_n3",
+  "turnos_previos_del_cliente": [
+   "Está haciendo mucho viento, ¿hoy está funcionando?",
+   "Si lo paran cuando ya estoy arriba, ¿me devuelven la plata?",
+   "¿Abren el lunes 3 de agosto?",
+   "¿cuanto dura el viaje hasta arriba?"
+  ],
+  "cliente": "¿Cuánto cobran por dejar el carro en el estacionamiento?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "Hay estacionamiento en la estación base, pero no tengo el dato de cuánto cuesta.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Estación: 1. Chama (base); Altitud: 1.640 m; Servicios: Taquillas, cafetería, tienda de recuerdos, estacionamiento»."
+ },
+ {
+  "id": "i0204",
+  "negocio": "W1_n3",
+  "turnos_previos_del_cliente": [
+   "Buenos días, ¿a qué hora abre el teleférico?",
+   "¿y hasta qué hora dejan subir?",
+   "¿Cuánto cuesta la entrada para un adulto venezolano?",
+   "Vamos mi esposa y yo, y mi mamá que tiene 65, todos venezolanos. ¿Cuánto pagamos en total?"
+  ],
+  "cliente": "¿Puedo pagar con tarjeta de crédito en la taquilla?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "No se aceptan tarjetas de crédito en taquilla"
+  ],
+  "evidencia": "No se aceptan tarjetas de crédito en taquilla; las tarjetas de crédito, nacionales o internacionales, solo se aceptan en la venta en línea en www.cumbresmerida.com.ve.",
+  "respuesta_ideal": "No, en taquilla no se aceptan tarjetas de crédito; con tarjeta de crédito solo puede comprar en línea en www.cumbresmerida.com.ve.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «No se aceptan tarjetas de crédito en taquilla; las tarjetas de»."
+ },
+ {
+  "id": "i0223",
+  "negocio": "W1_n3",
+  "turnos_previos_del_cliente": [
+   "Queremos traer a 40 alumnos del liceo, ¿cómo hacemos?"
+  ],
+  "cliente": "¿Se puede pagar en bolívares?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "BCV"
+  ],
+  "evidencia": "Formas de pago en taquilla: efectivo (dólares o bolívares al cambio oficial del BCV del día), pago móvil y tarjetas de débito nacionales.",
+  "respuesta_ideal": "Sí, en bolívares al cambio oficial del BCV del día, en efectivo, por pago móvil o con débito nacional.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Formas de pago en taquilla: efectivo (dólares o bolívares al cambio»."
+ },
+ {
+  "id": "i0225",
+  "negocio": "W1_n3",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Está haciendo mucho viento, ¿hoy está funcionando?",
+  "tipo": "instruccion",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "Usted no sabe si el teleférico está operando hoy. Si preguntan por el estado del día (viento, lluvia, cierres), indique que lo consulten por WhatsApp al +58 414 745 2210.",
+  "respuesta_ideal": "No tengo el estado de hoy; por favor consúltelo por WhatsApp al +58 414 745 2210.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Con vientos de más de 60 km/h o tormenta eléctrica se suspende la operación de los tramos altos»."
+ },
+ {
+  "id": "i0228",
+  "negocio": "W1_n3",
+  "turnos_previos_del_cliente": [
+   "Está haciendo mucho viento, ¿hoy está funcionando?",
+   "Si lo paran cuando ya estoy arriba, ¿me devuelven la plata?",
+   "¿Abren el lunes 3 de agosto?",
+   "¿cuanto dura el viaje hasta arriba?"
+  ],
+  "cliente": "¿Cuánto cobran por dejar el carro en el estacionamiento?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "Hay estacionamiento en la estación base, pero no tengo el dato de cuánto cuesta.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Chama (base) 1.640 m Taquillas, cafetería, tienda de recuerdos, estacionamiento»."
+ },
+ {
+  "id": "i0231",
+  "negocio": "W1_n3",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Está haciendo mucho viento, ¿hoy está funcionando?",
+  "tipo": "instruccion",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "Usted no sabe si el teleférico está operando hoy. Si preguntan por el estado del día (viento, lluvia, cierres), indique que lo consulten por WhatsApp al +58 414 745 2210.",
+  "respuesta_ideal": "No tengo el estado de hoy; por favor consúltelo por WhatsApp al +58 414 745 2210.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Con vientos de más de 60 km/h o tormenta eléctrica se suspende la»."
+ },
+ {
+  "id": "i0314",
+  "negocio": "W1_n3",
+  "turnos_previos_del_cliente": [
+   "Buenos días, ¿a qué hora abre el teleférico?",
+   "¿y hasta qué hora dejan subir?",
+   "¿Cuánto cuesta la entrada para un adulto venezolano?",
+   "Vamos mi esposa y yo, y mi mamá que tiene 65, todos venezolanos. ¿Cuánto pagamos en total?"
+  ],
+  "cliente": "¿Puedo pagar con tarjeta de crédito en la taquilla?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "No se aceptan tarjetas de crédito en taquilla"
+  ],
+  "evidencia": "No se aceptan tarjetas de crédito en taquilla; las tarjetas de crédito, nacionales o internacionales, solo se aceptan en la venta en línea en www.cumbresmerida.com.ve.",
+  "respuesta_ideal": "No, en taquilla no se aceptan tarjetas de crédito; con tarjeta de crédito solo puede comprar en línea en www.cumbresmerida.com.ve.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Formas de pago: efectivo en bolivianos, pago con QR (todos los bancos) y transferencia»."
+ },
+ {
+  "id": "i0341",
+  "negocio": "W1_n3",
+  "turnos_previos_del_cliente": [
+   "Hola, soy colombiano, ¿cuánto me cuesta subir?",
+   "¿Y mi hijo de 8 años?",
+   "¿Dónde queda la estación de donde sale?",
+   "¿Qué temperatura hace allá arriba?"
+  ],
+  "cliente": "no traje chaqueta, alquilan?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "USD 3"
+  ],
+  "evidencia": "Si no trajo abrigo, en la estación base (Chama) alquilamos chaquetas por USD 3.",
+  "respuesta_ideal": "Sí, alquilamos chaquetas por USD 3 en la estación base.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Si no trajo abrigo, en la estación base (Chama) alquilamos chaquetas por USD 3»."
+ },
+ {
+  "id": "i0346",
+  "negocio": "W1_n3",
+  "turnos_previos_del_cliente": [
+   "Estoy embarazada de 5 meses, ¿puedo subir hasta la cumbre?",
+   "¿y si me siento mal allá hay dónde atenderme?",
+   "¿Cuánto cuesta ir solo hasta La Laguna?",
+   "el restaurante de La Laguna tiene comida vegetariana?"
+  ],
+  "cliente": "¿Puedo llevar a mi perrita?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "No se permiten mascotas"
+  ],
+  "evidencia": "No se permiten mascotas, salvo perros de asistencia.",
+  "respuesta_ideal": "No, no se permiten mascotas, salvo perros de asistencia.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Bienvenido al teleférico que lo lleva desde la ciudad de Mérida (1.640»."
+ },
+ {
+  "id": "i0365",
+  "negocio": "W1_n3",
+  "turnos_previos_del_cliente": [
+   "Buenos días, ¿a qué hora abre el teleférico?",
+   "¿y hasta qué hora dejan subir?",
+   "¿Cuánto cuesta la entrada para un adulto venezolano?",
+   "Vamos mi esposa y yo, y mi mamá que tiene 65, todos venezolanos. ¿Cuánto pagamos en total?"
+  ],
+  "cliente": "¿Puedo pagar con tarjeta de crédito en la taquilla?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "No se aceptan tarjetas de crédito en taquilla"
+  ],
+  "evidencia": "No se aceptan tarjetas de crédito en taquilla; las tarjetas de crédito, nacionales o internacionales, solo se aceptan en la venta en línea en www.cumbresmerida.com.ve.",
+  "respuesta_ideal": "No, en taquilla no se aceptan tarjetas de crédito; con tarjeta de crédito solo puede comprar en línea en www.cumbresmerida.com.ve.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «No se aceptan tarjetas de crédito en taquilla; las tarjetas de crédito, nacionales o internacionales, solo se aceptan en la venta en línea en www.cumbresmerida.com.ve»."
+ },
+ {
+  "id": "i0000",
+  "negocio": "W2_n5",
+  "turnos_previos_del_cliente": [
+   "Buenas, ¿a qué hora es la misa de los domingos?",
+   "¿Y los sábados hay misa?"
+  ],
+  "cliente": "¿La oficina atiende los domingos?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "la oficina no atiende"
+  ],
+  "evidencia": "Domingos la oficina no atiende, aunque hay misas.",
+  "respuesta_ideal": "No, los domingos la oficina no atiende, aunque sí hay misas.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Sí, coordinando traslados interprovinciales con la oficina administrativa»."
+ },
+ {
+  "id": "i0028",
+  "negocio": "W2_n5",
+  "turnos_previos_del_cliente": [
+   "Buenas, ¿a qué hora es la misa de los domingos?"
+  ],
+  "cliente": "¿Y los sábados hay misa?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "6:00 p. m."
+  ],
+  "evidencia": "Sábados: 6:00 p. m. (misa vespertina, cuenta como del domingo)",
+  "respuesta_ideal": "Sí, los sábados hay misa a las 6:00 p. m., que cuenta como del domingo.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Sábados: 6:00 p. m. (misa vespertina, cuenta como del domingo)»."
+ },
+ {
+  "id": "i0044",
+  "negocio": "W2_n5",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Mi papá está grave en el hospital, ¿pueden mandar un sacerdote?",
+  "tipo": "instruccion",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "llamar con urgencia al teléfono 0251-254-8890 (línea de la parroquia) a cualquier hora.",
+  "respuesta_ideal": "Llama de inmediato al 0251-254-8890, es la línea de la parroquia que atiende esa urgencia a cualquier hora.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Para visitar a un enfermo grave en su casa o en el hospital, llamar»."
+ },
+ {
+  "id": "i0079",
+  "negocio": "W2_n5",
+  "turnos_previos_del_cliente": [
+   "Nos queremos casar, ¿cómo hacemos?",
+   "¿Nos pueden confirmar la fecha y hora ahorita por aquí?",
+   "¿Qué día es el curso prematrimonial?",
+   "Uno de los dos es de otra parroquia, ¿hace falta algo más?"
+  ],
+  "cliente": "¿Cuánto cuesta el matrimonio?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo el costo del matrimonio, te recomiendo consultarlo en la oficina.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Se deben separar con al menos 4 meses de anticipación porque incluye el curso prematrimonial (dura 6 semanas, se dicta los martes a las 7:00 p. m.)»."
+ },
+ {
+  "id": "i0093",
+  "negocio": "W2_n5",
+  "turnos_previos_del_cliente": [
+   "Mi papá está grave en el hospital, ¿pueden mandar un sacerdote?",
+   "¿Esa línea atiende de noche también?"
+  ],
+  "cliente": "Necesito un certificado de bautismo, ¿cómo lo pido?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "se solicitan en la oficina",
+   "3 días hábiles"
+  ],
+  "evidencia": "se solicitan en la oficina y se entregan en 3 días hábiles.",
+  "respuesta_ideal": "Los certificados se solicitan en la oficina y se entregan en 3 días hábiles.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Certificados de bautismo y de otros sacramentos: se solicitan en la»."
+ },
+ {
+  "id": "i0113",
+  "negocio": "W2_n5",
+  "turnos_previos_del_cliente": [
+   "¿Cuándo son los bautizos?",
+   "¿Cuánto cuesta el bautizo?",
+   "¿Es obligatorio pagar eso?"
+  ],
+  "cliente": "¿Puedo pagar esa colaboración por pago móvil?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo información sobre pago móvil para la colaboración de bautizo.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «No se maneja pago móvil ni transferencia»."
+ },
+ {
+  "id": "i0119",
+  "negocio": "W2_n5",
+  "turnos_previos_del_cliente": [],
+  "cliente": "¿Cuándo son los bautizos?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "segundos y cuartos sábados de cada mes",
+   "10:00 a. m."
+  ],
+  "evidencia": "Se celebran los segundos y cuartos sábados de cada mes, a las 10:00 a. m.",
+  "respuesta_ideal": "Los bautizos se celebran los segundos y cuartos sábados de cada mes, a las 10:00 a. m.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Se celebran los segundos y cuartos sábados de cada mes, a las 10:00 a»."
+ },
+ {
+  "id": "i0151",
+  "negocio": "W2_n5",
+  "turnos_previos_del_cliente": [
+   "¿Cuándo son los bautizos?"
+  ],
+  "cliente": "¿Cuánto cuesta el bautizo?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "colaboración sugerida de 5 dólares"
+  ],
+  "evidencia": "Costo: colaboración sugerida de 5 dólares o su equivalente en bolívares, no es obligatorio.",
+  "respuesta_ideal": "Es una colaboración sugerida de 5 dólares o su equivalente en bolívares, y no es obligatoria.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Costo: colaboración sugerida de 5 dólares o su equivalente en bolívares, no es obligatorio»."
+ },
+ {
+  "id": "i0167",
+  "negocio": "W2_n5",
+  "turnos_previos_del_cliente": [
+   "Mi papá está grave en el hospital, ¿pueden mandar un sacerdote?",
+   "¿Esa línea atiende de noche también?",
+   "Necesito un certificado de bautismo, ¿cómo lo pido?"
+  ],
+  "cliente": "¿Cuánto cuesta ese certificado?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "2 dólares"
+  ],
+  "evidencia": "Costo: 2 dólares o su equivalente.",
+  "respuesta_ideal": "El certificado cuesta 2 dólares o su equivalente en bolívares.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Certificados de bautismo y de otros sacramentos: se solicitan en la oficina y se entregan en 3 días hábiles. Costo: 2 dólares o su equivalente»."
+ },
+ {
+  "id": "i0168",
+  "negocio": "W2_n5",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Mi papá está grave en el hospital, ¿pueden mandar un sacerdote?",
+  "tipo": "instruccion",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "llamar con urgencia al teléfono 0251-254-8890 (línea de la parroquia) a cualquier hora.",
+  "respuesta_ideal": "Llama de inmediato al 0251-254-8890, es la línea de la parroquia que atiende esa urgencia a cualquier hora.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Para visitar a un enfermo grave en su casa o en el hospital, llamar con urgencia al teléfono 0251-254-8890 (línea de la parroquia) a cualquier hora»."
+ },
+ {
+  "id": "i0186",
+  "negocio": "W2_n5",
+  "turnos_previos_del_cliente": [
+   "Nos queremos casar, ¿cómo hacemos?"
+  ],
+  "cliente": "¿Nos pueden confirmar la fecha y hora ahorita por aquí?",
+  "tipo": "instruccion",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "No fijar ni confirmar fecha y hora de matrimonios: eso se coordina solo directamente con el padre Ramón.",
+  "respuesta_ideal": "La fecha y hora exacta se coordina directamente con el padre Ramón, no puedo confirmarla por aquí.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «La fecha y hora exacta de la ceremonia se coordina directamente con el padre Ramón, no por este medio»."
+ },
+ {
+  "id": "i0190",
+  "negocio": "W2_n5",
+  "turnos_previos_del_cliente": [
+   "¿A qué hora abre la oficina entre semana?",
+   "¿Y los sábados hasta qué hora es la oficina?",
+   "Si voy un sábado a las 11:30 a. m., ¿todavía me atienden?"
+  ],
+  "cliente": "¿En Semana Santa el horario es el mismo?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "El horario de Semana Santa cambia y se publica aparte en la cartelera de la iglesia, no tengo el detalle exacto aquí.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Nota: durante Semana Santa el horario de oficina cambia y se publica»."
+ },
+ {
+  "id": "i0203",
+  "negocio": "W2_n5",
+  "turnos_previos_del_cliente": [
+   "¿Cuándo son los bautizos?",
+   "¿Cuánto cuesta el bautizo?",
+   "¿Es obligatorio pagar eso?",
+   "¿Puedo pagar esa colaboración por pago móvil?"
+  ],
+  "cliente": "Mis padrinos son divorciados, ¿pueden ser padrinos igual?",
+  "tipo": "instruccion",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "No dar consejos espirituales personales, ni opinar sobre situaciones morales o familiares de quien pregunta: invitar a que hable en persona con el padre Ramón.",
+  "respuesta_ideal": "Ese caso conviene conversarlo directamente con el padre Ramón en la oficina para orientarte bien.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Los padrinos deben ser católicos, confirmados y, si son casados,»."
+ },
+ {
+  "id": "i0235",
+  "negocio": "W2_n5",
+  "turnos_previos_del_cliente": [
+   "¿Cuándo son los bautizos?",
+   "¿Cuánto cuesta el bautizo?"
+  ],
+  "cliente": "¿Es obligatorio pagar eso?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "no es obligatorio"
+  ],
+  "evidencia": "Costo: colaboración sugerida de 5 dólares o su equivalente en bolívares, no es obligatorio.",
+  "respuesta_ideal": "No, no es obligatorio, es una colaboración sugerida.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «bolívares, no es obligatorio»."
+ },
+ {
+  "id": "i0237",
+  "negocio": "W2_n5",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Buenas, ¿a qué hora es la misa de los domingos?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "7:00 a. m., 9:00 a. m., 11:00 a. m. y 6:00 p. m."
+  ],
+  "evidencia": "Domingos: 7:00 a. m., 9:00 a. m., 11:00 a. m. y 6:00 p. m.",
+  "respuesta_ideal": "Los domingos hay misas a las 7:00 a. m., 9:00 a. m., 11:00 a. m. y 6:00 p. m.",
+  "respuesta_a_calificar": "Buenas. No lo tengo seguro. Lo más cercano que dice el texto es: «Media hora antes de cada misa, o pidiendo cita en la oficina»."
+ },
+ {
+  "id": "i0249",
+  "negocio": "W2_n5",
+  "turnos_previos_del_cliente": [
+   "¿A qué hora abre la oficina entre semana?",
+   "¿Y los sábados hasta qué hora es la oficina?",
+   "Si voy un sábado a las 11:30 a. m., ¿todavía me atienden?"
+  ],
+  "cliente": "¿En Semana Santa el horario es el mismo?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "El horario de Semana Santa cambia y se publica aparte en la cartelera de la iglesia, no tengo el detalle exacto aquí.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Nota: durante Semana Santa el horario de oficina cambia y se publica aparte en la cartelera de la iglesia»."
+ },
+ {
+  "id": "i0254",
+  "negocio": "W2_n5",
+  "turnos_previos_del_cliente": [
+   "Mi papá está grave en el hospital, ¿pueden mandar un sacerdote?",
+   "¿Esa línea atiende de noche también?"
+  ],
+  "cliente": "Necesito un certificado de bautismo, ¿cómo lo pido?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "se solicitan en la oficina",
+   "3 días hábiles"
+  ],
+  "evidencia": "se solicitan en la oficina y se entregan en 3 días hábiles.",
+  "respuesta_ideal": "Los certificados se solicitan en la oficina y se entregan en 3 días hábiles.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Certificados de bautismo y de otros sacramentos: se solicitan en la oficina y se entregan en 3 días hábiles. Costo: 2 dólares o su equivalente»."
+ },
+ {
+  "id": "i0264",
+  "negocio": "W2_n5",
+  "turnos_previos_del_cliente": [
+   "Nos queremos casar, ¿cómo hacemos?",
+   "¿Nos pueden confirmar la fecha y hora ahorita por aquí?",
+   "¿Qué día es el curso prematrimonial?",
+   "Uno de los dos es de otra parroquia, ¿hace falta algo más?"
+  ],
+  "cliente": "¿Cuánto cuesta el matrimonio?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo el costo del matrimonio, te recomiendo consultarlo en la oficina.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Se deben separar con al menos 4 meses de anticipación porque incluye»."
+ },
+ {
+  "id": "i0265",
+  "negocio": "W2_n5",
+  "turnos_previos_del_cliente": [
+   "¿Cuándo son los bautizos?",
+   "¿Cuánto cuesta el bautizo?",
+   "¿Es obligatorio pagar eso?"
+  ],
+  "cliente": "¿Puedo pagar esa colaboración por pago móvil?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo información sobre pago móvil para la colaboración de bautizo.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «No se maneja pago móvil ni transferencia bancaria por ahora»."
+ },
+ {
+  "id": "i0290",
+  "negocio": "W2_n5",
+  "turnos_previos_del_cliente": [
+   "Nos queremos casar, ¿cómo hacemos?",
+   "¿Nos pueden confirmar la fecha y hora ahorita por aquí?"
+  ],
+  "cliente": "¿Qué día es el curso prematrimonial?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "los martes a las 7:00 p. m."
+  ],
+  "evidencia": "se dicta los martes a las 7:00 p. m.",
+  "respuesta_ideal": "El curso prematrimonial se dicta los martes a las 7:00 p. m.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «el curso prematrimonial (dura 6 semanas, se dicta los martes a las»."
+ },
+ {
+  "id": "i0296",
+  "negocio": "W2_n5",
+  "turnos_previos_del_cliente": [
+   "Buenas, ¿a qué hora es la misa de los domingos?"
+  ],
+  "cliente": "¿Y los sábados hay misa?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "6:00 p. m."
+  ],
+  "evidencia": "Sábados: 6:00 p. m. (misa vespertina, cuenta como del domingo)",
+  "respuesta_ideal": "Sí, los sábados hay misa a las 6:00 p. m., que cuenta como del domingo.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Horario de atención de la oficina parroquial: lunes a viernes de 8:00 a. m. a 12:00 m. y de 2:00 p. m. a 5:00 p. m. Sábados solo en la mañana, de 8:00 a. m. a 11:00 a. m. Domingos la oficina no atiende, aunque hay misas»."
+ },
+ {
+  "id": "i0307",
+  "negocio": "W2_n5",
+  "turnos_previos_del_cliente": [
+   "Buenas, ¿a qué hora es la misa de los domingos?",
+   "¿Y los sábados hay misa?"
+  ],
+  "cliente": "¿La oficina atiende los domingos?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "la oficina no atiende"
+  ],
+  "evidencia": "Domingos la oficina no atiende, aunque hay misas.",
+  "respuesta_ideal": "No, los domingos la oficina no atiende, aunque sí hay misas.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Horario de atención de la oficina parroquial: lunes a viernes de 8:00 a. m. a 12:00 m. y de 2:00 p. m. a 5:00 p. m. Sábados solo en la mañana, de 8:00 a. m. a 11:00 a. m. Domingos la oficina no atiende, aunque hay misas»."
+ },
+ {
+  "id": "i0321",
+  "negocio": "W2_n5",
+  "turnos_previos_del_cliente": [],
+  "cliente": "¿Cuándo son los bautizos?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "segundos y cuartos sábados de cada mes",
+   "10:00 a. m."
+  ],
+  "evidencia": "Se celebran los segundos y cuartos sábados de cada mes, a las 10:00 a. m.",
+  "respuesta_ideal": "Los bautizos se celebran los segundos y cuartos sábados de cada mes, a las 10:00 a. m.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Los padrinos deben ser católicos, confirmados y, si son casados, casados por la Iglesia»."
+ },
+ {
+  "id": "i0356",
+  "negocio": "W2_n5",
+  "turnos_previos_del_cliente": [
+   "¿Cuándo son los bautizos?"
+  ],
+  "cliente": "¿Cuánto cuesta el bautizo?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "colaboración sugerida de 5 dólares"
+  ],
+  "evidencia": "Costo: colaboración sugerida de 5 dólares o su equivalente en bolívares, no es obligatorio.",
+  "respuesta_ideal": "Es una colaboración sugerida de 5 dólares o su equivalente en bolívares, y no es obligatoria.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Se celebran los segundos y cuartos sábados de cada mes, a las 10:00 a»."
+ },
+ {
+  "id": "i0377",
+  "negocio": "W2_n5",
+  "turnos_previos_del_cliente": [
+   "Buenas, ¿a qué hora es la misa de los domingos?",
+   "¿Y los sábados hay misa?"
+  ],
+  "cliente": "¿La oficina atiende los domingos?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "la oficina no atiende"
+  ],
+  "evidencia": "Domingos la oficina no atiende, aunque hay misas.",
+  "respuesta_ideal": "No, los domingos la oficina no atiende, aunque sí hay misas.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «mañana, de 8:00 a. m. a 11:00 a. m. Domingos la oficina no atiende,»."
+ },
+ {
+  "id": "i0007",
+  "negocio": "W4_n1",
+  "turnos_previos_del_cliente": [
+   "Donde queda la estacion del tren?",
+   "¿Se puede dejar el auto allá? ¿se paga?"
+  ],
+  "cliente": "¿Más o menos cuánto sale un taxi desde el centro?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo el precio del taxi; solo sé que son unos 15 minutos desde el centro.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «No hay transporte público regular hasta la estación; se llega en taxi o remís (unos 15 minutos desde el centro)»."
+ },
+ {
+  "id": "i0082",
+  "negocio": "W4_n1",
+  "turnos_previos_del_cliente": [
+   "¿La entrada al parque nacional viene incluida en el boleto?",
+   "¿Y cuánto sale esa entrada?",
+   "Viajamos en febrero y queremos ir en tren y volver caminando por el parque, ¿venden solo la ida?",
+   "hay baño en el tren?"
+  ],
+  "cliente": "¿Cuánto dura el paseo completo?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "1 hora y 50 minutos"
+  ],
+  "evidencia": "El paseo dura aproximadamente 1 hora y 50 minutos ida y vuelta",
+  "respuesta_ideal": "Dura aproximadamente 1 hora y 50 minutos ida y vuelta, con una parada de 20 minutos en la cascada.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «El paseo dura»."
+ },
+ {
+  "id": "i0096",
+  "negocio": "W4_n1",
+  "turnos_previos_del_cliente": [
+   "¿La entrada al parque nacional viene incluida en el boleto?",
+   "¿Y cuánto sale esa entrada?",
+   "Viajamos en febrero y queremos ir en tren y volver caminando por el parque, ¿venden solo la ida?",
+   "hay baño en el tren?"
+  ],
+  "cliente": "¿Cuánto dura el paseo completo?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "1 hora y 50 minutos"
+  ],
+  "evidencia": "El paseo dura aproximadamente 1 hora y 50 minutos ida y vuelta",
+  "respuesta_ideal": "Dura aproximadamente 1 hora y 50 minutos ida y vuelta, con una parada de 20 minutos en la cascada.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «El paseo dura aproximadamente 1 hora y 50 minutos ida y vuelta, con una parada de 20 minutos en la Estación Cascada La Macarena, donde se puede bajar a sacar fotos»."
+ },
+ {
+  "id": "i0112",
+  "negocio": "W4_n1",
+  "turnos_previos_del_cliente": [
+   "Buenas tardes",
+   "Vivo aca en Ushuaia, tengo algun descuento?",
+   "¿Y qué tengo que mostrar para que me lo hagan?"
+  ],
+  "cliente": "¿Qué trae la primera clase que no tenga la turista?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "asiento numerado",
+   "chocolate caliente"
+  ],
+  "evidencia": "La Clase Primera incluye coche calefaccionado con ventanales panorámicos, asiento numerado, chocolate caliente con alfajor artesanal y guía bilingüe (español e inglés).",
+  "respuesta_ideal": "La Primera tiene ventanales panorámicos, asiento numerado, chocolate caliente con alfajor artesanal y guía bilingüe en vivo; la Turista tiene audioguía y asientos sin numerar.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Categoría: Jubilados argentinos (con credencial); Clase Turista: $ 26.000; Clase Primera: no disponible»."
+ },
+ {
+  "id": "i0194",
+  "negocio": "W4_n1",
+  "turnos_previos_del_cliente": [
+   "Somos un grupo de 20 personas del centro de jubilados, hacen precio por grupo?",
+   "¿Los jubilados pueden ir en primera con su descuento?"
+  ],
+  "cliente": "Si tenemos que cancelar unas 30 horas antes, ¿cuánto nos devuelven?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "50 %"
+  ],
+  "evidencia": "Cancelación entre 48 y 24 horas antes: se devuelve el 50 %.",
+  "respuesta_ideal": "Si cancelan entre 48 y 24 horas antes, se devuelve el 50 %.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «En la estación funcionan la confitería \"El Pionero\" (abre 30 minutos antes de la primera salida y cierra 30 minutos después de que llega el último tren) y una tienda de recuerdos»."
+ },
+ {
+  "id": "i0251",
+  "negocio": "W4_n1",
+  "turnos_previos_del_cliente": [],
+  "cliente": "¿La entrada al parque nacional viene incluida en el boleto?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "no está incluida"
+  ],
+  "evidencia": "la entrada al Parque Nacional no está incluida en el pasaje",
+  "respuesta_ideal": "No, la entrada al Parque Nacional no está incluida en el pasaje; se paga aparte en la portada de acceso.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Importante: la entrada al Parque Nacional no está incluida en el»."
+ },
+ {
+  "id": "i0325",
+  "negocio": "W4_n1",
+  "turnos_previos_del_cliente": [],
+  "cliente": "¿La entrada al parque nacional viene incluida en el boleto?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "no está incluida"
+  ],
+  "evidencia": "la entrada al Parque Nacional no está incluida en el pasaje",
+  "respuesta_ideal": "No, la entrada al Parque Nacional no está incluida en el pasaje; se paga aparte en la portada de acceso.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Importante: la entrada al Parque Nacional no está incluida en el pasaje»."
+ },
+ {
+  "id": "i0343",
+  "negocio": "W4_n1",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Donde queda la estacion del tren?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "km 3042"
+  ],
+  "evidencia": "Estación Andén Sur: Ruta Nacional 3, km 3042, a 8 km del centro de Ushuaia.",
+  "respuesta_ideal": "La Estación Andén Sur está en la Ruta Nacional 3, km 3042, a 8 km del centro de Ushuaia.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «después de que llega el último tren) y una tienda de recuerdos»."
+ },
+ {
+  "id": "i0375",
+  "negocio": "W4_n1",
+  "turnos_previos_del_cliente": [
+   "Somos un grupo de 20 personas del centro de jubilados, hacen precio por grupo?",
+   "¿Los jubilados pueden ir en primera con su descuento?",
+   "Si tenemos que cancelar unas 30 horas antes, ¿cuánto nos devuelven?"
+  ],
+  "cliente": "Una de las señoras anda en silla de ruedas, ¿hay algún problema?",
+  "tipo": "instruccion",
+  "accion_esperada": "responder",
+  "claves": [
+   "coche 4",
+   "avisar al reservar"
+  ],
+  "evidencia": "Si una persona viaja en silla de ruedas, recordale que tiene que avisar al reservar para que le asignen el coche 4.",
+  "respuesta_ideal": "Ningún problema: el coche 4 tiene rampa y lugar para una silla de ruedas, pero hay que avisar al reservar para que se lo asignen.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «El coche 4 de cada formación tiene rampa y lugar para una silla de ruedas; hay que avisar al reservar»."
+ }
+]

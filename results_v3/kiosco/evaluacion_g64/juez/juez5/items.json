@@ -1,0 +1,739 @@
+[
+ {
+  "id": "i0002",
+  "negocio": "W1_n5",
+  "turnos_previos_del_cliente": [
+   "Vivo en Baños, ¿cobran algo extra por ir a instalar?",
+   "¿Cuánto cuesta que vayan a tomar las medidas?",
+   "y si les contrato la instalacion igual pago eso?",
+   "¿Trabajan vidrio doble, de ese termoacústico?",
+   "Hace dos semanas me instalaron un espejo y ya se rajó"
+  ],
+  "cliente": "¿Arreglan parabrisas?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "No trabajamos vidrios para vehículos"
+  ],
+  "evidencia": "No trabajamos vidrios para vehículos (parabrisas ni ventanas de carro).",
+  "respuesta_ideal": "No, no trabajamos vidrios para vehículos.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «No trabajamos vidrios para vehículos (parabrisas ni ventanas de carro)»."
+ },
+ {
+  "id": "i0025",
+  "negocio": "W1_n5",
+  "turnos_previos_del_cliente": [
+   "Vivo en Baños, ¿cobran algo extra por ir a instalar?"
+  ],
+  "cliente": "¿Cuánto cuesta que vayan a tomar las medidas?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "$ 10,00"
+  ],
+  "evidencia": "Visita técnica para tomar medidas: $ 10,00. Si luego se contrata el trabajo, ese valor se descuenta.",
+  "respuesta_ideal": "La visita técnica para tomar medidas cuesta $ 10,00.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Visita técnica para tomar medidas: $ 10,00. Si luego se contrata el»."
+ },
+ {
+  "id": "i0046",
+  "negocio": "W1_n5",
+  "turnos_previos_del_cliente": [
+   "Quiero poner una mampara en la ducha, ¿cuánto cuesta?",
+   "¿Y si la hago con vidrio normal de 4 mm para que salga más barato?",
+   "¿Cuánto se demoran en hacer el templado?"
+  ],
+  "cliente": "¿Después me pueden hacer los huecos para las bisagras?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "No se puede cortar ni perforar después de templado"
+  ],
+  "evidencia": "No se puede cortar ni perforar después de templado, así que las medidas y los huecos se definen antes.",
+  "respuesta_ideal": "No: el vidrio no se puede cortar ni perforar después de templado, así que los huecos se definen antes.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Vidrio templado: se fabrica bajo pedido y se entrega en 8 días laborables. No se puede cortar ni perforar después de templado, así que las medidas y los huecos se definen antes»."
+ },
+ {
+  "id": "i0056",
+  "negocio": "W1_n5",
+  "turnos_previos_del_cliente": [
+   "Quiero poner una mampara en la ducha, ¿cuánto cuesta?",
+   "¿Y si la hago con vidrio normal de 4 mm para que salga más barato?",
+   "¿Cuánto se demoran en hacer el templado?",
+   "¿Después me pueden hacer los huecos para las bisagras?",
+   "¿el templado lo hacen en color bronce?"
+  ],
+  "cliente": "¿Aceptan tarjeta?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "5 %"
+  ],
+  "evidencia": "Tarjetas de crédito y débito con un recargo del 5 %.",
+  "respuesta_ideal": "Sí, tarjetas de crédito y débito, con un recargo del 5 %.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Aceptamos efectivo en colones o dólares, Visa, Mastercard y American Express»."
+ },
+ {
+  "id": "i0074",
+  "negocio": "W1_n5",
+  "turnos_previos_del_cliente": [
+   "si tomé mal las medidas, ¿puedo devolver el espejo?"
+  ],
+  "cliente": "¿Cuánto tiempo de garantía tiene la instalación?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "6 meses"
+  ],
+  "evidencia": "La instalación tiene garantía de 6 meses. No cubre golpes, mal uso ni daños por movimientos de la estructura.",
+  "respuesta_ideal": "La instalación tiene garantía de 6 meses.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «La instalación tiene garantía de 6 meses. No cubre golpes, mal uso»."
+ },
+ {
+  "id": "i0104",
+  "negocio": "W1_n5",
+  "turnos_previos_del_cliente": [
+   "Buenas tardes, ¿a qué hora atienden los sábados?"
+  ],
+  "cliente": "¿Cuánto está el metro de espejo?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "$ 32,00",
+   "$ 38,00"
+  ],
+  "evidencia": "| Espejo plata                 | 4 mm    | $ 32,00   |\n| Espejo bronce                | 4 mm    | $ 38,00   |",
+  "respuesta_ideal": "El metro cuadrado de espejo plata de 4 mm está en $ 32,00 y el de espejo bronce en $ 38,00, con IVA incluido.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Biselado de espejos (bisel de 1 cm): $ 4,00 por metro lineal»."
+ },
+ {
+  "id": "i0106",
+  "negocio": "W1_n5",
+  "turnos_previos_del_cliente": [
+   "Quiero poner una mampara en la ducha, ¿cuánto cuesta?",
+   "¿Y si la hago con vidrio normal de 4 mm para que salga más barato?",
+   "¿Cuánto se demoran en hacer el templado?",
+   "¿Después me pueden hacer los huecos para las bisagras?",
+   "¿el templado lo hacen en color bronce?"
+  ],
+  "cliente": "¿Aceptan tarjeta?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "5 %"
+  ],
+  "evidencia": "Tarjetas de crédito y débito con un recargo del 5 %.",
+  "respuesta_ideal": "Sí, tarjetas de crédito y débito, con un recargo del 5 %.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Tarjetas de crédito y débito con un»."
+ },
+ {
+  "id": "i0107",
+  "negocio": "W1_n5",
+  "turnos_previos_del_cliente": [],
+  "cliente": "cuanto vale el vidrio templado de 10",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "$ 85,00"
+  ],
+  "evidencia": "| Vidrio templado claro        | 10 mm   | $ 85,00   |",
+  "respuesta_ideal": "El vidrio templado claro de 10 mm cuesta $ 85,00 el metro cuadrado.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Producto: Vidrio templado claro; Espesor: 10 mm; Precio m²: $ 85,00»."
+ },
+ {
+  "id": "i0129",
+  "negocio": "W1_n5",
+  "turnos_previos_del_cliente": [
+   "si tomé mal las medidas, ¿puedo devolver el espejo?"
+  ],
+  "cliente": "¿Cuánto tiempo de garantía tiene la instalación?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "6 meses"
+  ],
+  "evidencia": "La instalación tiene garantía de 6 meses. No cubre golpes, mal uso ni daños por movimientos de la estructura.",
+  "respuesta_ideal": "La instalación tiene garantía de 6 meses.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «La instalación tiene garantía de 6 meses. No cubre golpes, mal uso ni daños por movimientos de la estructura»."
+ },
+ {
+  "id": "i0156",
+  "negocio": "W1_n5",
+  "turnos_previos_del_cliente": [
+   "Quiero poner una mampara en la ducha, ¿cuánto cuesta?",
+   "¿Y si la hago con vidrio normal de 4 mm para que salga más barato?"
+  ],
+  "cliente": "¿Cuánto se demoran en hacer el templado?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "8 días laborables"
+  ],
+  "evidencia": "Vidrio templado: se fabrica bajo pedido y se entrega en 8 días laborables.",
+  "respuesta_ideal": "El vidrio templado se fabrica bajo pedido y se entrega en 8 días laborables.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Vidrio templado: se fabrica bajo pedido y se entrega en 8 días»."
+ },
+ {
+  "id": "i0185",
+  "negocio": "W1_n5",
+  "turnos_previos_del_cliente": [
+   "Vivo en Baños, ¿cobran algo extra por ir a instalar?"
+  ],
+  "cliente": "¿Cuánto cuesta que vayan a tomar las medidas?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "$ 10,00"
+  ],
+  "evidencia": "Visita técnica para tomar medidas: $ 10,00. Si luego se contrata el trabajo, ese valor se descuenta.",
+  "respuesta_ideal": "La visita técnica para tomar medidas cuesta $ 10,00.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Corte a medida: sin costo al comprar el vidrio o el espejo. Listo en 24 horas; si el pedido se hace antes de las 10h00, se entrega el mismo día»."
+ },
+ {
+  "id": "i0229",
+  "negocio": "W1_n5",
+  "turnos_previos_del_cliente": [
+   "si tomé mal las medidas, ¿puedo devolver el espejo?",
+   "¿Cuánto tiempo de garantía tiene la instalación?",
+   "¿Y si mi hijo le pega un pelotazo?",
+   "¿Hacen instalaciones en Azogues?",
+   "¿Venden láminas de seguridad o polarizado para ventanas?"
+  ],
+  "cliente": "Gracias, hasta luego",
+  "tipo": "charla",
+  "accion_esperada": "charla",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "Gracias por preferir Vidriería Tomebamba. ¡Hasta luego!",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Cancelaciones gratis hasta 24 horas antes»."
+ },
+ {
+  "id": "i0278",
+  "negocio": "W1_n5",
+  "turnos_previos_del_cliente": [
+   "cuanto vale el vidrio templado de 10",
+   "Un vidrio normal de 6 mm de 20 x 30 cm, ¿cuánto me cuesta?",
+   "¿Tienen vidrio esmerilado, de ese que no se ve a través?"
+  ],
+  "cliente": "¿Hay que dejar algo de anticipo?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "60 %"
+  ],
+  "evidencia": "Para trabajos a medida se pide un anticipo del 60 % y el saldo se paga contra entrega.",
+  "respuesta_ideal": "Sí, para trabajos a medida se pide un anticipo del 60 % y el saldo se paga contra entrega.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Para trabajos a medida se pide un anticipo del 60 % y el saldo se paga»."
+ },
+ {
+  "id": "i0281",
+  "negocio": "W1_n5",
+  "turnos_previos_del_cliente": [
+   "cuanto vale el vidrio templado de 10",
+   "Un vidrio normal de 6 mm de 20 x 30 cm, ¿cuánto me cuesta?",
+   "¿Tienen vidrio esmerilado, de ese que no se ve a través?"
+  ],
+  "cliente": "¿Hay que dejar algo de anticipo?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "60 %"
+  ],
+  "evidencia": "Para trabajos a medida se pide un anticipo del 60 % y el saldo se paga contra entrega.",
+  "respuesta_ideal": "Sí, para trabajos a medida se pide un anticipo del 60 % y el saldo se paga contra entrega.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Para trabajos a medida se pide un anticipo del 60 % y el saldo se paga contra entrega»."
+ },
+ {
+  "id": "i0335",
+  "negocio": "W1_n5",
+  "turnos_previos_del_cliente": [
+   "Vivo en Baños, ¿cobran algo extra por ir a instalar?",
+   "¿Cuánto cuesta que vayan a tomar las medidas?",
+   "y si les contrato la instalacion igual pago eso?",
+   "¿Trabajan vidrio doble, de ese termoacústico?",
+   "Hace dos semanas me instalaron un espejo y ya se rajó"
+  ],
+  "cliente": "¿Arreglan parabrisas?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "No trabajamos vidrios para vehículos"
+  ],
+  "evidencia": "No trabajamos vidrios para vehículos (parabrisas ni ventanas de carro).",
+  "respuesta_ideal": "No, no trabajamos vidrios para vehículos.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «No trabajamos vidrios para vehículos (parabrisas ni ventanas de»."
+ },
+ {
+  "id": "i0358",
+  "negocio": "W1_n5",
+  "turnos_previos_del_cliente": [
+   "Quiero poner una mampara en la ducha, ¿cuánto cuesta?",
+   "¿Y si la hago con vidrio normal de 4 mm para que salga más barato?",
+   "¿Cuánto se demoran en hacer el templado?",
+   "¿Después me pueden hacer los huecos para las bisagras?",
+   "¿el templado lo hacen en color bronce?"
+  ],
+  "cliente": "¿Aceptan tarjeta?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "5 %"
+  ],
+  "evidencia": "Tarjetas de crédito y débito con un recargo del 5 %.",
+  "respuesta_ideal": "Sí, tarjetas de crédito y débito, con un recargo del 5 %.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Tarjetas de crédito y débito con un recargo del 5 %»."
+ },
+ {
+  "id": "i0360",
+  "negocio": "W1_n5",
+  "turnos_previos_del_cliente": [
+   "Buenas tardes, ¿a qué hora atienden los sábados?",
+   "¿Cuánto está el metro de espejo?",
+   "¿Y tienen espejo de 6 mm?",
+   "Necesito uno plata de 1 metro por 50 cm, ¿cuánto sale?",
+   "y si le pongo bisel?"
+  ],
+  "cliente": "¿Me lo pueden llevar a la casa?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "$ 5,00"
+  ],
+  "evidencia": "Entrega a domicilio sin instalación: $ 5,00 dentro de Cuenca urbana.",
+  "respuesta_ideal": "Sí, la entrega a domicilio sin instalación cuesta $ 5,00 dentro de Cuenca urbana.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «No se permiten mascotas en el parque»."
+ },
+ {
+  "id": "i0083",
+  "negocio": "W3_n1",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Hola, buenos días. ¿Cuál es el horario de atención?",
+  "tipo": "charla",
+  "accion_esperada": "charla",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "Buenos días, ¿cómo estás? Atendemos de lunes a viernes de 8:30 a 17:30, y los sábados de 9:00 a 13:00.",
+  "respuesta_a_calificar": "Hola, buenos días. No lo tengo seguro. Lo más cercano que dice el texto es: «Festivos nacionales: Cerrado (excepto el 19 de mayo que abrimos 10:00 - 12:30)»."
+ },
+ {
+  "id": "i0238",
+  "negocio": "W3_n1",
+  "turnos_previos_del_cliente": [],
+  "cliente": "¿Qué pasa si traigo billetes rotos?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "No aceptamos billetes dañados, rotos o marcados"
+  ],
+  "evidencia": "No aceptamos billetes dañados, rotos o marcados",
+  "respuesta_ideal": "No aceptamos billetes rotos. Deben estar en buen estado para poder cambiarlos.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «No aceptamos billetes dañados, rotos o marcados»."
+ },
+ {
+  "id": "i0299",
+  "negocio": "W3_n1",
+  "turnos_previos_del_cliente": [
+   "Necesito cambiar 1.500 dólares. ¿Qué documentos me piden?",
+   "¿Qué comisión me cobran?"
+  ],
+  "cliente": "¿Puedo venir el domingo a cambiar?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "Domingos y festivos: Cerrado"
+  ],
+  "evidencia": "Domingos y festivos: Cerrado",
+  "respuesta_ideal": "Lamentablemente no, estamos cerrados los domingos y festivos. Puedes venir de lunes a sábado.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Las tasas se actualizan cada hora según mercado internacional»."
+ },
+ {
+  "id": "i0304",
+  "negocio": "W3_n1",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Hola, buenos días. ¿Cuál es el horario de atención?",
+  "tipo": "charla",
+  "accion_esperada": "charla",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "Buenos días, ¿cómo estás? Atendemos de lunes a viernes de 8:30 a 17:30, y los sábados de 9:00 a 13:00.",
+  "respuesta_a_calificar": "Hola, buenos días. No lo tengo seguro. Lo más cercano que dice el texto es: «Festivos nacionales: Cerrado (excepto el 19 de mayo que abrimos 10:00»."
+ },
+ {
+  "id": "i0348",
+  "negocio": "W3_n1",
+  "turnos_previos_del_cliente": [],
+  "cliente": "¿Cambian pesos mexicanos?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "Peso mexicano (MXN)"
+  ],
+  "evidencia": "Peso mexicano (MXN) en la lista de divisas",
+  "respuesta_ideal": "Sí, cambiamos pesos mexicanos. Consulta en la sucursal cuál es la tasa actual.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Peso mexicano (MXN)»."
+ },
+ {
+  "id": "i0010",
+  "negocio": "W4_n3",
+  "turnos_previos_del_cliente": [
+   "Quiero una piñata de Bluey para el cumple de mi hija, ¿sí las hacen?",
+   "¿Con cuánto tiempo se la tengo que encargar?",
+   "¿Y hay que dejar adelanto?"
+  ],
+  "cliente": "¿Le pueden poner el nombre de mi hija? ¿cobran extra por eso?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "sin costo extra"
+  ],
+  "evidencia": "Sí, en piñatas de personaje ponemos el nombre sin costo extra.",
+  "respuesta_ideal": "Sí, en las piñatas de personaje ponemos el nombre sin costo extra.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Sí, en piñatas de personaje ponemos el nombre sin costo extra»."
+ },
+ {
+  "id": "i0020",
+  "negocio": "W4_n3",
+  "turnos_previos_del_cliente": [
+   "a como el paquete de globos?",
+   "¿Y cuánto cobran por inflarlos con helio?",
+   "Si quiero 20 inflados con helio, ¿cuánto me sale nomás el inflado?",
+   "¿Y cuánto les dura el helio?"
+  ],
+  "cliente": "¿Tienen el número 7 de los globos metálicos grandes?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "$65"
+  ],
+  "evidencia": "- Globos metálicos de número (0 al 9), 40\": $65 c/u",
+  "respuesta_ideal": "Sí, manejamos globos metálicos de número del 0 al 9, de 40\", a $65 cada uno.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Globos metálicos de número (0 al 9), 40\": $65 c/u»."
+ },
+ {
+  "id": "i0022",
+  "negocio": "W4_n3",
+  "turnos_previos_del_cliente": [
+   "¿Cuánto cobran de envío a Metepec?",
+   "¿Y a Lerma?"
+  ],
+  "cliente": "¿Cuánto se tarda en llegar el envío?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo el tiempo de entrega; puede consultarlo al 722 214 6603.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Envío gratis en compras mayores a $1,200»."
+ },
+ {
+  "id": "i0049",
+  "negocio": "W4_n3",
+  "turnos_previos_del_cliente": [
+   "Soy maestra, si compro 12 piñatas para el kínder, ¿me hacen descuento?",
+   "Uno de los niños es alérgico al cacahuate, ¿el dulce surtido es seguro para él?",
+   "¿Rentan mesas y sillas también?",
+   "tienen estacionamiento?"
+  ],
+  "cliente": "Muchas gracias, que le vaya bien",
+  "tipo": "charla",
+  "accion_esperada": "charla",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "¡Gracias a usted! Que tenga muy bonita fiesta.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Corta solo las fresas bien rojas; las verdes o blancas no maduran después de cortadas»."
+ },
+ {
+  "id": "i0068",
+  "negocio": "W4_n3",
+  "turnos_previos_del_cliente": [
+   "a como el paquete de globos?",
+   "¿Y cuánto cobran por inflarlos con helio?",
+   "Si quiero 20 inflados con helio, ¿cuánto me sale nomás el inflado?"
+  ],
+  "cliente": "¿Y cuánto les dura el helio?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo ese dato; puede preguntarlo al teléfono de la tienda, 722 214 6603.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Inflado con helio: $25 por globo de látex, $60 por globo metálico»."
+ },
+ {
+  "id": "i0073",
+  "negocio": "W4_n3",
+  "turnos_previos_del_cliente": [],
+  "cliente": "a como el paquete de globos?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "$85"
+  ],
+  "evidencia": "- Globos de látex No. 9, paquete de 50 pzas: $85 (colores lisos) / $110 (metálicos perlados)",
+  "respuesta_ideal": "El paquete de 50 globos de látex está en $85 en colores lisos y en $110 los metálicos perlados.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Globos de látex No. 9, paquete de 50 pzas: $85 (colores lisos) /»."
+ },
+ {
+  "id": "i0077",
+  "negocio": "W4_n3",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Buenas tardes joven",
+  "tipo": "charla",
+  "accion_esperada": "charla",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "¡Buenas tardes! ¿En qué le puedo ayudar?",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Ubicación: Carretera Jarabacoa–Manabao, km 6, entrada por el letrero amarillo, sector Buena Vista, Jarabacoa, provincia La Vega»."
+ },
+ {
+  "id": "i0088",
+  "negocio": "W4_n3",
+  "turnos_previos_del_cliente": [
+   "Buenas tardes joven",
+   "¿Cuánto cuesta una piñata de picos grande?",
+   "¿y la mediana?"
+  ],
+  "cliente": "¿Ya viene con dulces adentro?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "se venden vacías"
+  ],
+  "evidencia": "No, se venden vacías. El dulce se compra aparte.",
+  "respuesta_ideal": "No, las piñatas se venden vacías; el dulce se compra aparte.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «El dulce se compra aparte»."
+ },
+ {
+  "id": "i0111",
+  "negocio": "W4_n3",
+  "turnos_previos_del_cliente": [
+   "Buenas tardes joven"
+  ],
+  "cliente": "¿Cuánto cuesta una piñata de picos grande?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "$390"
+  ],
+  "evidencia": "Piñata de 7 picos tradicional\tGrande (1 m)\t$390",
+  "respuesta_ideal": "La piñata de 7 picos grande, de 1 metro, cuesta $390.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Tipo: Piñata de 7 picos tradicional; Tamaño: Grande (1 m); Precio: $390»."
+ },
+ {
+  "id": "i0114",
+  "negocio": "W4_n3",
+  "turnos_previos_del_cliente": [
+   "Quiero una piñata de Bluey para el cumple de mi hija, ¿sí las hacen?",
+   "¿Con cuánto tiempo se la tengo que encargar?"
+  ],
+  "cliente": "¿Y hay que dejar adelanto?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "50 %"
+  ],
+  "evidencia": "Piñatas de personaje: se piden con mínimo 5 días hábiles de anticipación y se deja un anticipo del 50 %.",
+  "respuesta_ideal": "Sí, se deja un anticipo del 50 %; si se cancela el pedido, el anticipo no se devuelve.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Piñatas de personaje: se piden con mínimo 5 días hábiles de anticipación y se deja un anticipo del 50 %. Si el cliente cancela el pedido, el anticipo no se devuelve»."
+ },
+ {
+  "id": "i0127",
+  "negocio": "W4_n3",
+  "turnos_previos_del_cliente": [
+   "Buenas tardes joven",
+   "¿Cuánto cuesta una piñata de picos grande?"
+  ],
+  "cliente": "¿y la mediana?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "$260"
+  ],
+  "evidencia": "Piñata de 7 picos tradicional\tMediana (80 cm)\t$260",
+  "respuesta_ideal": "La mediana, de 80 cm, cuesta $260.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Tipo: Piñata de 7 picos tradicional; Tamaño: Mediana (80 cm); Precio: $260»."
+ },
+ {
+  "id": "i0165",
+  "negocio": "W4_n3",
+  "turnos_previos_del_cliente": [
+   "Quiero una piñata de Bluey para el cumple de mi hija, ¿sí las hacen?",
+   "¿Con cuánto tiempo se la tengo que encargar?",
+   "¿Y hay que dejar adelanto?",
+   "¿Le pueden poner el nombre de mi hija? ¿cobran extra por eso?"
+  ],
+  "cliente": "¿De qué tamaño salen las de personaje?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo el dato del tamaño de las piñatas de personaje; puede consultarlo al 722 214 6603 o al WhatsApp de pedidos.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Tipo: Piñata de personaje (el que usted elija); Tamaño: Sobre pedido; Precio: desde $450»."
+ },
+ {
+  "id": "i0170",
+  "negocio": "W4_n3",
+  "turnos_previos_del_cliente": [
+   "¿Cuánto cobran de envío a Metepec?",
+   "¿Y a Lerma?",
+   "¿Cuánto se tarda en llegar el envío?"
+  ],
+  "cliente": "¿Cobran algo extra si pago con tarjeta de crédito?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "3 %"
+  ],
+  "evidencia": "Con tarjeta de débito no cobramos comisión; con tarjeta de crédito se cobra 3 % de comisión.",
+  "respuesta_ideal": "Sí, con tarjeta de crédito se cobra 3 % de comisión; con débito no se cobra comisión.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Con tarjeta de débito no cobramos comisión; con tarjeta de crédito se cobra 3 % de comisión»."
+ },
+ {
+  "id": "i0172",
+  "negocio": "W4_n3",
+  "turnos_previos_del_cliente": [
+   "Buenas tardes joven",
+   "¿Cuánto cuesta una piñata de picos grande?",
+   "¿y la mediana?",
+   "¿Ya viene con dulces adentro?"
+  ],
+  "cliente": "Entonces me llevo la grande y dos kilos de dulce surtido, ¿cuánto sería?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "$630"
+  ],
+  "evidencia": "- Bolsa de dulce surtido para piñata, 1 kg ..... $120",
+  "respuesta_ideal": "Serían $630: $390 de la piñata grande más $240 de los dos kilos de dulce surtido.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Bolsa de dulce surtido para piñata, 1 kg ..... $120»."
+ },
+ {
+  "id": "i0187",
+  "negocio": "W4_n3",
+  "turnos_previos_del_cliente": [
+   "a como el paquete de globos?",
+   "¿Y cuánto cobran por inflarlos con helio?"
+  ],
+  "cliente": "Si quiero 20 inflados con helio, ¿cuánto me sale nomás el inflado?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "$500"
+  ],
+  "evidencia": "- Inflado con helio: $25 por globo de látex, $60 por globo metálico",
+  "respuesta_ideal": "Inflar 20 globos de látex con helio le sale en $500 ($25 cada uno).",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Inflado con helio: $25 por globo de látex, $60 por globo metálico»."
+ },
+ {
+  "id": "i0200",
+  "negocio": "W4_n3",
+  "turnos_previos_del_cliente": [
+   "¿Cuánto cobran de envío a Metepec?",
+   "¿Y a Lerma?",
+   "¿Cuánto se tarda en llegar el envío?"
+  ],
+  "cliente": "¿Cobran algo extra si pago con tarjeta de crédito?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "3 %"
+  ],
+  "evidencia": "Con tarjeta de débito no cobramos comisión; con tarjeta de crédito se cobra 3 % de comisión.",
+  "respuesta_ideal": "Sí, con tarjeta de crédito se cobra 3 % de comisión; con débito no se cobra comisión.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «débito no cobramos comisión; con tarjeta de crédito se cobra 3 % de»."
+ },
+ {
+  "id": "i0207",
+  "negocio": "W4_n3",
+  "turnos_previos_del_cliente": [
+   "Buenas tardes joven",
+   "¿Cuánto cuesta una piñata de picos grande?",
+   "¿y la mediana?"
+  ],
+  "cliente": "¿Ya viene con dulces adentro?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "se venden vacías"
+  ],
+  "evidencia": "No, se venden vacías. El dulce se compra aparte.",
+  "respuesta_ideal": "No, las piñatas se venden vacías; el dulce se compra aparte.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «El dulce se»."
+ },
+ {
+  "id": "i0209",
+  "negocio": "W4_n3",
+  "turnos_previos_del_cliente": [
+   "a como el paquete de globos?"
+  ],
+  "cliente": "¿Y cuánto cobran por inflarlos con helio?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "$25"
+  ],
+  "evidencia": "- Inflado con helio: $25 por globo de látex, $60 por globo metálico",
+  "respuesta_ideal": "El inflado con helio cuesta $25 por globo de látex y $60 por globo metálico.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Inflado con helio: $25 por globo de látex, $60 por globo metálico»."
+ },
+ {
+  "id": "i0289",
+  "negocio": "W4_n3",
+  "turnos_previos_del_cliente": [
+   "Quiero una piñata de Bluey para el cumple de mi hija, ¿sí las hacen?",
+   "¿Con cuánto tiempo se la tengo que encargar?"
+  ],
+  "cliente": "¿Y hay que dejar adelanto?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "50 %"
+  ],
+  "evidencia": "Piñatas de personaje: se piden con mínimo 5 días hábiles de anticipación y se deja un anticipo del 50 %.",
+  "respuesta_ideal": "Sí, se deja un anticipo del 50 %; si se cancela el pedido, el anticipo no se devuelve.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «anticipación y se deja un anticipo del 50 %. Si el cliente cancela el»."
+ },
+ {
+  "id": "i0310",
+  "negocio": "W4_n3",
+  "turnos_previos_del_cliente": [],
+  "cliente": "a como el paquete de globos?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "$85"
+  ],
+  "evidencia": "- Globos de látex No. 9, paquete de 50 pzas: $85 (colores lisos) / $110 (metálicos perlados)",
+  "respuesta_ideal": "El paquete de 50 globos de látex está en $85 en colores lisos y en $110 los metálicos perlados.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Globos de látex No. 9, paquete de 50 pzas: $85 (colores lisos) / $110 (metálicos perlados)»."
+ },
+ {
+  "id": "i0355",
+  "negocio": "W4_n3",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Soy maestra, si compro 12 piñatas para el kínder, ¿me hacen descuento?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "15 %"
+  ],
+  "evidencia": "Descuento de mayoreo: en compras de 10 piñatas o más (del mismo o distinto tipo) le hacemos 15 % de descuento.",
+  "respuesta_ideal": "Sí, en compras de 10 piñatas o más le hacemos 15 % de descuento.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Descuento de mayoreo: en compras de 10 piñatas o más (del mismo o distinto tipo) le hacemos 15 % de descuento»."
+ },
+ {
+  "id": "i0361",
+  "negocio": "W4_n3",
+  "turnos_previos_del_cliente": [
+   "Soy maestra, si compro 12 piñatas para el kínder, ¿me hacen descuento?",
+   "Uno de los niños es alérgico al cacahuate, ¿el dulce surtido es seguro para él?",
+   "¿Rentan mesas y sillas también?",
+   "tienen estacionamiento?"
+  ],
+  "cliente": "Muchas gracias, que le vaya bien",
+  "tipo": "charla",
+  "accion_esperada": "charla",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "¡Gracias a usted! Que tenga muy bonita fiesta.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Tipo: Piñata de personaje (el que usted elija); Tamaño: Sobre pedido; Precio: desde $450»."
+ }
+]

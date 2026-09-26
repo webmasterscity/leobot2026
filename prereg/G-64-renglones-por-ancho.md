@@ -99,3 +99,24 @@ Banco congelado de 24 negocios nuevos y 585 turnos (`results_v3/kiosco/congelado
 **Juez ciego pendiente:** los 8 jueces se cortaron por el límite de sesión de la API sin dejar veredictos. Para retomar, se preparan de nuevo con la misma semilla (la preparación es determinista):
 `JUECES_SISTEMAS=partido,g18_partido,tratamiento,otro_negocio JUECES_OTROS=g18,sin_unir_partido,reinicio_partido JUECES_SEMILLA=$(git rev-parse freeze-G-64:leobot) python3 -m experiments.g58_juez preparar <eval64> results_v3/kiosco/congelado_g64 <jueces64> 8`
 El directorio `<eval64>` es `results_v3/kiosco/evaluacion_g64`. Se lanzan 8 jueces Opus con el encargo de G-58 y se reúne con `g58_juez reunir`, con las mismas variables.
+
+## Resultado final (2026-09-26; juez ciego de 8 jueces nuevos, Opus; relanzados tras el corte, con las mismas carpetas)
+
+| Puerta | Umbral | G-64 | `estable-G-18` | ¿Pasa? |
+|---|---|---|---|---|
+| 1. Útiles en directa + sí/no, texto partido | ≥ `estable-G-18` + 5 puntos | **102/266 (38,3 %)** | 95/266 (35,7 %) | **no (+2,6)** |
+| 2. Texto tal cual | idénticas ≥ 98 %, útiles no menores | 585/585; 102/266 | 102/266 | sí |
+| 3. Citas engañosas | ≤ 15 % y ≤ +2 puntos | partido **4,3 %**; tal cual 4,4 % | partido 7,1 %; tal cual 4,4 % | sí (partido −2,8) |
+| 4. Inventadas | 0 | 0 | 0 | sí |
+| 5. Sin respuesta bien llevadas | ≥ 90 % | 99,4 % | 100 %; 99,4 % | sí |
+| 6. Eco de datos | 0 | 0 | 0 | sí |
+| 7. Controles | — | sin unir = `estable-G-18` partido (585/585); reinicio 585/585; otro negocio 0 útiles y 516/585 «No lo sé»; renombrado tal cual 97,8 % | — | sí |
+| 8. Pruebas generales | sin retroceso | ver resultado preliminar | — | sí |
+
+**En los turnos pareados** con texto partido, G-64 gana 15 y pierde 8 frente a `estable-G-18`. Evita 5 citas engañosas y crea 1 nueva.
+
+**Techo del banco:** con el texto partido, G-64 contesta exactamente igual de bien que con el texto limpio: 102 frente a 102, sin ninguna pregunta que acierte en uno y falle en el otro. En este banco, **ninguna forma de unir renglones podía ganar más de +2,6 puntos**. El juez considera útiles muchas citas cortadas de `estable-G-18` porque el renglón cortado aún lleva el dato. El daño del texto partido se ve sobre todo en las citas engañosas: 7,1 % frente a 4,4 % con el texto limpio. G-64 lo elimina (4,3 %).
+
+**Decisión (reglas 5.1 y 5.9):** la puerta 1 no pasa, así que **G-64 no entra** a main por sus propias reglas. La meta no se mueve. Queda en la rama `G-64` y en `freeze-G-64`. Solo el usuario puede decidir una excepción.
+
+**Lección de medida:** la puerta 1 medía útiles y fijó +5 sin calcular antes el techo, que es lo que se gana con el texto limpio. Un preregistro futuro de este tipo debe fijar la vara respecto a ese techo, antes de medir.

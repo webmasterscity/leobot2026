@@ -1,0 +1,830 @@
+[
+ {
+  "id": "i0018",
+  "negocio": "W1_n2",
+  "turnos_previos_del_cliente": [
+   "Necesito un bastidor de 1,20 x 1 metro, cuánto me sale?"
+  ],
+  "cliente": "aceptan cheque?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "No aceptamos cheques"
+  ],
+  "evidencia": "No aceptamos cheques.",
+  "respuesta_ideal": "No, no aceptamos cheques.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «No aceptamos cheques»."
+ },
+ {
+  "id": "i0021",
+  "negocio": "W1_n2",
+  "turnos_previos_del_cliente": [
+   "Necesito un bastidor de 1,20 x 1 metro, cuánto me sale?",
+   "aceptan cheque?"
+  ],
+  "cliente": "¿Se puede pagar en cuotas?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "3 cuotas sin interés",
+   "$ 40.000"
+  ],
+  "evidencia": "Crédito en 3 cuotas sin interés con Visa y Mastercard, en compras desde $ 40.000.",
+  "respuesta_ideal": "Sí, en 3 cuotas sin interés con Visa y Mastercard, en compras desde $ 40.000.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Crédito en 3 cuotas sin interés con Visa y Mastercard, en compras»."
+ },
+ {
+  "id": "i0030",
+  "negocio": "W1_n2",
+  "turnos_previos_del_cliente": [
+   "Buenas! estudio en la facu de artes, qué descuento me hacen?",
+   "y si pago en efectivo se suma con el otro?",
+   "venden arcilla para modelar?"
+  ],
+  "cliente": "cuanto esta el metro de lienzo",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "$ 14.000"
+  ],
+  "evidencia": "Lienzo de algodón crudo, por metro (1,60 m de ancho)  $ 14.000",
+  "respuesta_ideal": "El lienzo de algodón crudo sale $ 14.000 el metro (1,60 m de ancho).",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Lienzo de algodón crudo, por metro (1,60 m de ancho)  $ 14.000»."
+ },
+ {
+  "id": "i0031",
+  "negocio": "W1_n2",
+  "turnos_previos_del_cliente": [
+   "Hola, a qué hora abren el sábado?"
+  ],
+  "cliente": "y los días de semana a la tarde?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "16:30 a 20:30"
+  ],
+  "evidencia": "Lunes a viernes: 9 a 13 hs y 16:30 a 20:30 hs",
+  "respuesta_ideal": "De lunes a viernes a la tarde abrimos de 16:30 a 20:30 hs (a la mañana, de 9 a 13 hs).",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Lunes y martes cerrado por mantenimiento, excepto feriados y temporada alta (Carnaval, Semana Santa, agosto y diciembre), cuando abrimos todos los días»."
+ },
+ {
+  "id": "i0061",
+  "negocio": "W1_n2",
+  "turnos_previos_del_cliente": [
+   "cuánto cobran el envío a Godoy Cruz?",
+   "y si compro por 70 mil?"
+  ],
+  "cliente": "¿Cuánto tarda en llegar?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "24 a 48 hs hábiles"
+  ],
+  "evidencia": "Llega en 24 a 48 hs hábiles.",
+  "respuesta_ideal": "Llega en 24 a 48 hs hábiles.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Llega en 24 a 48 hs hábiles»."
+ },
+ {
+  "id": "i0097",
+  "negocio": "W1_n2",
+  "turnos_previos_del_cliente": [
+   "Hola, el taller de acuarela qué día es?",
+   "cuanto cuesta por mes?"
+  ],
+  "cliente": "Los materiales vienen incluidos?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "Materiales no incluidos"
+  ],
+  "evidencia": "Materiales no incluidos (te damos una lista al inscribirte).",
+  "respuesta_ideal": "No, los materiales no están incluidos; te damos una lista al inscribirte.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Materiales no incluidos (te damos»."
+ },
+ {
+  "id": "i0101",
+  "negocio": "W1_n2",
+  "turnos_previos_del_cliente": [
+   "Si compro algo y no me sirve lo puedo cambiar?",
+   "Llevo dos bastidores de 30x40 y un block de acuarela, cuánto es?"
+  ],
+  "cliente": "aceptan dolares?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "Si no sabés algo (stock, colores, precios que no están en la lista), decilo con claridad y ofrecé el WhatsApp de ventas 261 555-0192.",
+  "respuesta_ideal": "No tengo ese dato; consultalo por el WhatsApp de ventas, 261 555-0192.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Formas de pago en taquilla: efectivo (dólares o bolívares al cambio oficial del BCV del día), pago móvil y tarjetas de débito nacionales»."
+ },
+ {
+  "id": "i0109",
+  "negocio": "W1_n2",
+  "turnos_previos_del_cliente": [
+   "Necesito un bastidor de 1,20 x 1 metro, cuánto me sale?",
+   "aceptan cheque?"
+  ],
+  "cliente": "¿Se puede pagar en cuotas?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "3 cuotas sin interés",
+   "$ 40.000"
+  ],
+  "evidencia": "Crédito en 3 cuotas sin interés con Visa y Mastercard, en compras desde $ 40.000.",
+  "respuesta_ideal": "Sí, en 3 cuotas sin interés con Visa y Mastercard, en compras desde $ 40.000.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Crédito en 3 cuotas sin interés con Visa y Mastercard, en compras desde $ 40.000»."
+ },
+ {
+  "id": "i0124",
+  "negocio": "W1_n2",
+  "turnos_previos_del_cliente": [
+   "Hola, el taller de acuarela qué día es?",
+   "cuanto cuesta por mes?"
+  ],
+  "cliente": "Los materiales vienen incluidos?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "Materiales no incluidos"
+  ],
+  "evidencia": "Materiales no incluidos (te damos una lista al inscribirte).",
+  "respuesta_ideal": "No, los materiales no están incluidos; te damos una lista al inscribirte.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Materiales no incluidos (te damos una lista al inscribirte)»."
+ },
+ {
+  "id": "i0158",
+  "negocio": "W1_n2",
+  "turnos_previos_del_cliente": [
+   "Buenas! estudio en la facu de artes, qué descuento me hacen?"
+  ],
+  "cliente": "y si pago en efectivo se suma con el otro?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "No se acumula"
+  ],
+  "evidencia": "No se acumula con el descuento por efectivo: se aplica el mayor.",
+  "respuesta_ideal": "No se acumula con el descuento por efectivo: se aplica el mayor, o sea tu 15%.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Crédito en 3 cuotas sin interés con Visa y Mastercard, en compras»."
+ },
+ {
+  "id": "i0208",
+  "negocio": "W1_n2",
+  "turnos_previos_del_cliente": [
+   "cuánto cobran el envío a Godoy Cruz?",
+   "y si compro por 70 mil?"
+  ],
+  "cliente": "¿Cuánto tarda en llegar?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "24 a 48 hs hábiles"
+  ],
+  "evidencia": "Llega en 24 a 48 hs hábiles.",
+  "respuesta_ideal": "Llega en 24 a 48 hs hábiles.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «En la cumbre la temperatura suele estar entre -2 °C y 6 °C. Traiga chaqueta, gorro y guantes»."
+ },
+ {
+  "id": "i0232",
+  "negocio": "W1_n2",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Buenas! estudio en la facu de artes, qué descuento me hacen?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "15%",
+   "credencial"
+  ],
+  "evidencia": "15% presentando credencial vigente de la Facultad de Artes y Diseño (UNCuyo) o de la Escuela Provincial de Bellas Artes.",
+  "respuesta_ideal": "Tenés un 15% de descuento presentando tu credencial vigente de la Facultad de Artes y Diseño.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «15% presentando credencial vigente de la Facultad de Artes y Diseño (UNCuyo) o de la Escuela Provincial de Bellas Artes»."
+ },
+ {
+  "id": "i0267",
+  "negocio": "W1_n2",
+  "turnos_previos_del_cliente": [
+   "Buenas! estudio en la facu de artes, qué descuento me hacen?"
+  ],
+  "cliente": "y si pago en efectivo se suma con el otro?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "No se acumula"
+  ],
+  "evidencia": "No se acumula con el descuento por efectivo: se aplica el mayor.",
+  "respuesta_ideal": "No se acumula con el descuento por efectivo: se aplica el mayor, o sea tu 15%.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Formas de pago en taquilla: efectivo (dólares o bolívares al cambio oficial del BCV del día), pago móvil y tarjetas de débito nacionales»."
+ },
+ {
+  "id": "i0302",
+  "negocio": "W1_n2",
+  "turnos_previos_del_cliente": [
+   "Si compro algo y no me sirve lo puedo cambiar?"
+  ],
+  "cliente": "Llevo dos bastidores de 30x40 y un block de acuarela, cuánto es?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "$ 29.200"
+  ],
+  "evidencia": "Block para acuarela 300 g, A4, 12 hojas ............. $ 11.400\nBastidor entelado 30 x 40 cm ........................ $ 8.900",
+  "respuesta_ideal": "Son $ 29.200 a precio de lista: dos bastidores de $ 8.900 y el block de $ 11.400.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Block para acuarela 300 g, A4, 12 hojas ............. $ 11.400 Bastidor entelado 30 x 40 cm ........................ $ 8.900»."
+ },
+ {
+  "id": "i0338",
+  "negocio": "W1_n2",
+  "turnos_previos_del_cliente": [
+   "Necesito un bastidor de 1,20 x 1 metro, cuánto me sale?"
+  ],
+  "cliente": "aceptan cheque?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "No aceptamos cheques"
+  ],
+  "evidencia": "No aceptamos cheques.",
+  "respuesta_ideal": "No, no aceptamos cheques.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «No se aceptan tarjetas de crédito en taquilla; las tarjetas de crédito, nacionales o internacionales, solo se aceptan en la venta en línea en www.cumbresmerida.com.ve»."
+ },
+ {
+  "id": "i0366",
+  "negocio": "W1_n2",
+  "turnos_previos_del_cliente": [
+   "Hola, el taller de acuarela qué día es?"
+  ],
+  "cliente": "cuanto cuesta por mes?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "$ 38.000"
+  ],
+  "evidencia": "Cuota mensual: $ 38.000 (4 clases).",
+  "respuesta_ideal": "La cuota mensual es de $ 38.000 por 4 clases.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Si ya compró su boleto, le devolvemos la parte proporcional o le damos un pase para otro día, válido por 30 días»."
+ },
+ {
+  "id": "i0003",
+  "negocio": "W2_n4",
+  "turnos_previos_del_cliente": [
+   "¿Cuánto cobran el delivery?"
+  ],
+  "cliente": "¿Y cuánto demora en llegar?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "40 minutos"
+  ],
+  "evidencia": "Tiempo estimado: 40 minutos.",
+  "respuesta_ideal": "El tiempo estimado de entrega es 40 minutos.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Para visitar a un enfermo grave en su casa o en el hospital, llamar con urgencia al teléfono 0251-254-8890 (línea de la parroquia) a cualquier hora»."
+ },
+ {
+  "id": "i0015",
+  "negocio": "W2_n4",
+  "turnos_previos_del_cliente": [
+   "Hola, ¿cuánto cuesta el ceviche mixto?",
+   "¿Y el de pescado solo?"
+  ],
+  "cliente": "¿Cuánto vale el arroz con mariscos?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "S/ 32"
+  ],
+  "evidencia": "Arroz con mariscos — S/ 32",
+  "respuesta_ideal": "El arroz con mariscos vale S/ 32.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «de arroz con mariscos para niños con 30% de descuento sobre ese plato»."
+ },
+ {
+  "id": "i0027",
+  "negocio": "W2_n4",
+  "turnos_previos_del_cliente": [
+   "¿Quién es la chef del local?"
+  ],
+  "cliente": "Somos un grupo de 12 personas, ¿nos reservan mesa para el sábado?",
+  "tipo": "instruccion",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "No confirmar reservas: informar el número 979 552 310 para que el cliente llame y reserve directamente, especialmente en grupos de más de 8 personas.",
+  "respuesta_ideal": "Para un grupo de 12 personas te recomiendo llamar al 979 552 310 para reservar directamente.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Para grupos de más de 8 personas recomendamos reservar con un día de»."
+ },
+ {
+  "id": "i0038",
+  "negocio": "W2_n4",
+  "turnos_previos_del_cliente": [
+   "¿Quién es la chef del local?"
+  ],
+  "cliente": "Somos un grupo de 12 personas, ¿nos reservan mesa para el sábado?",
+  "tipo": "instruccion",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "No confirmar reservas: informar el número 979 552 310 para que el cliente llame y reserve directamente, especialmente en grupos de más de 8 personas.",
+  "respuesta_ideal": "Para un grupo de 12 personas te recomiendo llamar al 979 552 310 para reservar directamente.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Para grupos de más de 8 personas recomendamos reservar con un día de anticipación, llamando al 979 552 310»."
+ },
+ {
+  "id": "i0039",
+  "negocio": "W2_n4",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Hola, ¿cuánto cuesta el ceviche mixto?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "S/ 38"
+  ],
+  "evidencia": "Ceviche mixto (pescado + mariscos) — S/ 38",
+  "respuesta_ideal": "El ceviche mixto cuesta S/ 38.",
+  "respuesta_a_calificar": "Hola. No lo tengo seguro. Lo más cercano que dice el texto es: «Nota 1: si desea compartir el ceviche mixto entre dos personas, se puede pedir una porción extra de arroz por S/ 5 adicionales»."
+ },
+ {
+  "id": "i0047",
+  "negocio": "W2_n4",
+  "turnos_previos_del_cliente": [],
+  "cliente": "¿Cuánto sale la jalea mixta?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "S/ 55"
+  ],
+  "evidencia": "Jalea mixta (porción para 2 personas) — S/ 55",
+  "respuesta_ideal": "La jalea mixta sale S/ 55.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Jalea mixta (porción para 2 personas) — S/ 55»."
+ },
+ {
+  "id": "i0070",
+  "negocio": "W2_n4",
+  "turnos_previos_del_cliente": [
+   "¿Qué días atienden?",
+   "¿Los lunes están cerrados entonces?"
+  ],
+  "cliente": "Si pedimos bien picante, ¿lo preparan así?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "salvo que el cliente pida expresamente"
+  ],
+  "evidencia": "el ají se sirve aparte de cada plato, salvo que el cliente pida expresamente \"bien picante\".",
+  "respuesta_ideal": "Sí, normalmente el ají va aparte, salvo que el cliente pida expresamente \"bien picante\".",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Nota 2: el ají se sirve aparte de cada plato, salvo que el cliente pida expresamente \"bien picante\"»."
+ },
+ {
+  "id": "i0075",
+  "negocio": "W2_n4",
+  "turnos_previos_del_cliente": [
+   "¿Qué días atienden?"
+  ],
+  "cliente": "¿Los lunes están cerrados entonces?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "Los lunes permanecemos cerrados"
+  ],
+  "evidencia": "Los lunes permanecemos cerrados, es el día de descanso de todo el personal.",
+  "respuesta_ideal": "Sí, Los lunes permanecemos cerrados, es el día de descanso del personal.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Atendemos de martes a domingo, de 10:00 a.m. a 5:00 p.m. Los lunes permanecemos cerrados, es el día de descanso de todo el personal»."
+ },
+ {
+  "id": "i0095",
+  "negocio": "W2_n4",
+  "turnos_previos_del_cliente": [
+   "¿Qué días atienden?",
+   "¿Los lunes están cerrados entonces?"
+  ],
+  "cliente": "Si pedimos bien picante, ¿lo preparan así?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "salvo que el cliente pida expresamente"
+  ],
+  "evidencia": "el ají se sirve aparte de cada plato, salvo que el cliente pida expresamente \"bien picante\".",
+  "respuesta_ideal": "Sí, normalmente el ají va aparte, salvo que el cliente pida expresamente \"bien picante\".",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «pida expresamente \"bien picante\"»."
+ },
+ {
+  "id": "i0121",
+  "negocio": "W2_n4",
+  "turnos_previos_del_cliente": [
+   "Hola, ¿cuánto cuesta el ceviche mixto?"
+  ],
+  "cliente": "¿Y el de pescado solo?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "S/ 28"
+  ],
+  "evidencia": "Ceviche de pescado — S/ 28",
+  "respuesta_ideal": "El ceviche de pescado solo cuesta S/ 28.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Todos nuestros platos se preparan con pescado y/o mariscos en la misma»."
+ },
+ {
+  "id": "i0125",
+  "negocio": "W2_n4",
+  "turnos_previos_del_cliente": [
+   "¿Cuánto sale la jalea mixta?"
+  ],
+  "cliente": "¿Esa jalea alcanza para dos personas?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "porción para 2 personas"
+  ],
+  "evidencia": "Jalea mixta (porción para 2 personas) — S/ 55",
+  "respuesta_ideal": "Sí, la jalea mixta es porción para 2 personas.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Jalea mixta (porción para 2 personas) — S/ 55»."
+ },
+ {
+  "id": "i0140",
+  "negocio": "W2_n4",
+  "turnos_previos_del_cliente": [
+   "Hola, ¿cuánto cuesta el ceviche mixto?",
+   "¿Y el de pescado solo?"
+  ],
+  "cliente": "¿Cuánto vale el arroz con mariscos?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "S/ 32"
+  ],
+  "evidencia": "Arroz con mariscos — S/ 32",
+  "respuesta_ideal": "El arroz con mariscos vale S/ 32.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «No contamos con menú infantil como tal, pero preparamos media porción de arroz con mariscos para niños con 30% de descuento sobre ese plato»."
+ },
+ {
+  "id": "i0174",
+  "negocio": "W2_n4",
+  "turnos_previos_del_cliente": [
+   "¿Cuánto sale la jalea mixta?",
+   "¿Esa jalea alcanza para dos personas?",
+   "Si pedimos el ceviche mixto para compartir entre dos con arroz extra, ¿cuánto sale?"
+  ],
+  "cliente": "Para mi hijo de 6 años, ¿cuánto costaría el arroz con mariscos con el descuento de niños?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "30% de descuento",
+   "S/ 32"
+  ],
+  "evidencia": "preparamos media porción de arroz con mariscos para niños con 30% de descuento sobre ese plato.",
+  "respuesta_ideal": "Le preparamos media porción de arroz con mariscos con un 30% de descuento sobre el precio de S/ 32, es decir, unos S/ 22.40.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «de arroz con mariscos para niños con 30% de descuento sobre ese plato»."
+ },
+ {
+  "id": "i0193",
+  "negocio": "W2_n4",
+  "turnos_previos_del_cliente": [
+   "¿Cuánto cobran el delivery?",
+   "¿Y cuánto demora en llegar?",
+   "¿Hacen envío hasta Pimentel?"
+  ],
+  "cliente": "¿Puedo pagar con tarjeta?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "tarjeta"
+  ],
+  "evidencia": "Efectivo, Yape, Plin y tarjeta (no aceptamos American Express).",
+  "respuesta_ideal": "Sí, en el local aceptamos efectivo, Yape, Plin y tarjeta.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «No se maneja pago móvil ni transferencia bancaria por ahora»."
+ },
+ {
+  "id": "i0250",
+  "negocio": "W2_n4",
+  "turnos_previos_del_cliente": [
+   "¿Cuánto sale la jalea mixta?",
+   "¿Esa jalea alcanza para dos personas?"
+  ],
+  "cliente": "Si pedimos el ceviche mixto para compartir entre dos con arroz extra, ¿cuánto sale?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "S/ 38",
+   "S/ 5"
+  ],
+  "evidencia": "Ceviche mixto (pescado + mariscos) — S/ 38",
+  "respuesta_ideal": "El ceviche mixto cuesta S/ 38 y el arroz extra para compartir S/ 5 adicionales, en total S/ 43.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Nota 1: si desea compartir el ceviche mixto entre dos personas, se puede pedir una porción extra de arroz por S/ 5 adicionales»."
+ },
+ {
+  "id": "i0293",
+  "negocio": "W2_n4",
+  "turnos_previos_del_cliente": [
+   "Hola, ¿cuánto cuesta el ceviche mixto?"
+  ],
+  "cliente": "¿Y el de pescado solo?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "S/ 28"
+  ],
+  "evidencia": "Ceviche de pescado — S/ 28",
+  "respuesta_ideal": "El ceviche de pescado solo cuesta S/ 28.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Todos nuestros platos se preparan con pescado y/o mariscos en la misma cocina»."
+ },
+ {
+  "id": "i0301",
+  "negocio": "W2_n4",
+  "turnos_previos_del_cliente": [
+   "Hola, ¿cuánto cuesta el ceviche mixto?"
+  ],
+  "cliente": "¿Y el de pescado solo?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "S/ 28"
+  ],
+  "evidencia": "Ceviche de pescado — S/ 28",
+  "respuesta_ideal": "El ceviche de pescado solo cuesta S/ 28.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Horario de atención de la oficina parroquial: lunes a viernes de 8:00 a. m. a 12:00 m. y de 2:00 p. m. a 5:00 p. m. Sábados solo en la mañana, de 8:00 a. m. a 11:00 a. m. Domingos la oficina no atiende, aunque hay misas»."
+ },
+ {
+  "id": "i0320",
+  "negocio": "W2_n4",
+  "turnos_previos_del_cliente": [
+   "¿Cuánto cobran el delivery?",
+   "¿Y cuánto demora en llegar?",
+   "¿Hacen envío hasta Pimentel?",
+   "¿Puedo pagar con tarjeta?"
+  ],
+  "cliente": "¿Aceptan American Express?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "no aceptamos American Express"
+  ],
+  "evidencia": "Efectivo, Yape, Plin y tarjeta (no aceptamos American Express).",
+  "respuesta_ideal": "No, no aceptamos American Express.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Efectivo, Yape, Plin y tarjeta (no aceptamos American Express)»."
+ },
+ {
+  "id": "i0322",
+  "negocio": "W2_n4",
+  "turnos_previos_del_cliente": [
+   "Hola, ¿cuánto cuesta el ceviche mixto?",
+   "¿Y el de pescado solo?",
+   "¿Cuánto vale el arroz con mariscos?"
+  ],
+  "cliente": "Si pedimos dos ceviches de pescado y una gaseosa, ¿cuánto sería en total?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "S/ 28",
+   "S/ 6"
+  ],
+  "evidencia": "Ceviche de pescado — S/ 28",
+  "respuesta_ideal": "Cada ceviche de pescado cuesta S/ 28 y la gaseosa S/ 6, en total serían S/ 62.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Nota 1: si desea compartir el ceviche mixto entre dos personas, se puede pedir una porción extra de arroz por S/ 5 adicionales»."
+ },
+ {
+  "id": "i0326",
+  "negocio": "W2_n4",
+  "turnos_previos_del_cliente": [
+   "¿Cuánto sale la jalea mixta?",
+   "¿Esa jalea alcanza para dos personas?",
+   "Si pedimos el ceviche mixto para compartir entre dos con arroz extra, ¿cuánto sale?"
+  ],
+  "cliente": "Para mi hijo de 6 años, ¿cuánto costaría el arroz con mariscos con el descuento de niños?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "30% de descuento",
+   "S/ 32"
+  ],
+  "evidencia": "preparamos media porción de arroz con mariscos para niños con 30% de descuento sobre ese plato.",
+  "respuesta_ideal": "Le preparamos media porción de arroz con mariscos con un 30% de descuento sobre el precio de S/ 32, es decir, unos S/ 22.40.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «No contamos con menú infantil como tal, pero preparamos media porción de arroz con mariscos para niños con 30% de descuento sobre ese plato»."
+ },
+ {
+  "id": "i0333",
+  "negocio": "W2_n4",
+  "turnos_previos_del_cliente": [
+   "¿Cuánto cobran el delivery?",
+   "¿Y cuánto demora en llegar?",
+   "¿Hacen envío hasta Pimentel?"
+  ],
+  "cliente": "¿Puedo pagar con tarjeta?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "tarjeta"
+  ],
+  "evidencia": "Efectivo, Yape, Plin y tarjeta (no aceptamos American Express).",
+  "respuesta_ideal": "Sí, en el local aceptamos efectivo, Yape, Plin y tarjeta.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Efectivo, Yape, Plin y tarjeta (no aceptamos American Express)»."
+ },
+ {
+  "id": "i0354",
+  "negocio": "W2_n4",
+  "turnos_previos_del_cliente": [],
+  "cliente": "¿Qué días atienden?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "martes a domingo"
+  ],
+  "evidencia": "Atendemos de martes a domingo, de 10:00 a.m. a 5:00 p.m.",
+  "respuesta_ideal": "Atendemos de martes a domingo, de 10:00 a.m. a 5:00 p.m.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Este es el único trámite que se atiende fuera del horario de oficina»."
+ },
+ {
+  "id": "i0363",
+  "negocio": "W2_n4",
+  "turnos_previos_del_cliente": [
+   "¿Cuánto sale la jalea mixta?",
+   "¿Esa jalea alcanza para dos personas?"
+  ],
+  "cliente": "Si pedimos el ceviche mixto para compartir entre dos con arroz extra, ¿cuánto sale?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "S/ 38",
+   "S/ 5"
+  ],
+  "evidencia": "Ceviche mixto (pescado + mariscos) — S/ 38",
+  "respuesta_ideal": "El ceviche mixto cuesta S/ 38 y el arroz extra para compartir S/ 5 adicionales, en total S/ 43.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Nota 1: si desea compartir el ceviche mixto entre dos personas, se»."
+ },
+ {
+  "id": "i0367",
+  "negocio": "W2_n4",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Hola, ¿cuánto cuesta el ceviche mixto?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "S/ 38"
+  ],
+  "evidencia": "Ceviche mixto (pescado + mariscos) — S/ 38",
+  "respuesta_ideal": "El ceviche mixto cuesta S/ 38.",
+  "respuesta_a_calificar": "Hola. No lo tengo seguro. Lo más cercano que dice el texto es: «Nota 1: si desea compartir el ceviche mixto entre dos personas, se»."
+ },
+ {
+  "id": "i0050",
+  "negocio": "W3_n6",
+  "turnos_previos_del_cliente": [
+   "Hola, buenos días. ¿A qué hora abren?"
+  ],
+  "cliente": "¿Cuánto cuesta la entrada?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "$8 USD por persona"
+  ],
+  "evidencia": "Entrada general: $8 USD por persona",
+  "respuesta_ideal": "La entrada general es $8 USD. Hay descuentos para niños, estudiantes y adultos mayores.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Incluye: entrada, área privada 2 horas, refrigerio, pastel (traer el»."
+ },
+ {
+  "id": "i0181",
+  "negocio": "W3_n6",
+  "turnos_previos_del_cliente": [
+   "¿Puedo traer a mi sobrino de 7 años?"
+  ],
+  "cliente": "¿Se puede grabar video?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "videos personales sin propósito comercial"
+  ],
+  "evidencia": "Se permite: cámaras para fotos (sin flash), videos personales sin propósito comercial",
+  "respuesta_ideal": "Sí, videos personales sin flash está permitido. Pero no con propósito comercial.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Se permite: cámaras para fotos (sin flash), videos personales sin»."
+ },
+ {
+  "id": "i0236",
+  "negocio": "W3_n6",
+  "turnos_previos_del_cliente": [
+   "¿Puedo traer a mi sobrino de 7 años?"
+  ],
+  "cliente": "¿Se puede grabar video?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "videos personales sin propósito comercial"
+  ],
+  "evidencia": "Se permite: cámaras para fotos (sin flash), videos personales sin propósito comercial",
+  "respuesta_ideal": "Sí, videos personales sin flash está permitido. Pero no con propósito comercial.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Se permite: cámaras para fotos (sin flash), videos personales sin propósito comercial»."
+ },
+ {
+  "id": "i0257",
+  "negocio": "W3_n6",
+  "turnos_previos_del_cliente": [],
+  "cliente": "¿Tienen talleres de robótica?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "Taller de robótica (1,5 horas): $20 USD"
+  ],
+  "evidencia": "Taller de robótica (1,5 horas): $20 USD por persona",
+  "respuesta_ideal": "Sí, tenemos taller de robótica por $20 USD por persona, 1 hora y media. Necesita reserva con 48 horas de anticipación.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Taller de tecnología: coding básico, robótica, impresión 3D (reserva previa)»."
+ },
+ {
+  "id": "i0270",
+  "negocio": "W3_n6",
+  "turnos_previos_del_cliente": [],
+  "cliente": "¿Cuál es el parqueadero?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "Parqueadero: $2 USD"
+  ],
+  "evidencia": "Parqueadero: $2 USD por auto (máximo 4 horas incluidas en entrada)",
+  "respuesta_ideal": "El parqueadero cuesta $2 USD. Están incluidas las 4 primeras horas. Después cuesta $1 USD por hora adicional.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Parqueadero: $2 USD por auto (máximo 4 horas incluidas en entrada;»."
+ },
+ {
+  "id": "i0316",
+  "negocio": "W3_n6",
+  "turnos_previos_del_cliente": [],
+  "cliente": "¿Tienen talleres de robótica?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "Taller de robótica (1,5 horas): $20 USD"
+  ],
+  "evidencia": "Taller de robótica (1,5 horas): $20 USD por persona",
+  "respuesta_ideal": "Sí, tenemos taller de robótica por $20 USD por persona, 1 hora y media. Necesita reserva con 48 horas de anticipación.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Taller de tecnología: coding básico, robótica, impresión 3D (reserva»."
+ },
+ {
+  "id": "i0323",
+  "negocio": "W3_n6",
+  "turnos_previos_del_cliente": [
+   "Quiero hacer una fiesta de cumpleaños. ¿Cómo funciona?"
+  ],
+  "cliente": "¿Incluye pastel?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "pastel (traer el propio o $15 USD adicional)"
+  ],
+  "evidencia": "Incluye: entrada, área privada 2 horas, refrigerio, pastel (traer el propio o $15 USD adicional)",
+  "respuesta_ideal": "Puedes traer tu propio pastel sin costo, o nosotros lo proporcionamos por $15 USD adicionales.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Incluye: entrada, área privada 2 horas, refrigerio, pastel (traer el propio o $15 USD adicional)»."
+ },
+ {
+  "id": "i0330",
+  "negocio": "W3_n6",
+  "turnos_previos_del_cliente": [
+   "Quiero hacer una fiesta de cumpleaños. ¿Cómo funciona?"
+  ],
+  "cliente": "¿Incluye pastel?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "pastel (traer el propio o $15 USD adicional)"
+  ],
+  "evidencia": "Incluye: entrada, área privada 2 horas, refrigerio, pastel (traer el propio o $15 USD adicional)",
+  "respuesta_ideal": "Puedes traer tu propio pastel sin costo, o nosotros lo proporcionamos por $15 USD adicionales.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Incluye: entrada, área privada 2 horas, refrigerio, pastel (traer el»."
+ },
+ {
+  "id": "i0331",
+  "negocio": "W3_n6",
+  "turnos_previos_del_cliente": [
+   "¿Cuál es el parqueadero?"
+  ],
+  "cliente": "¿Tienen planetario?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "Planetario digital: proyecciones de 30 min"
+  ],
+  "evidencia": "Planetario digital: proyecciones de 30 min (cada hora)",
+  "respuesta_ideal": "Sí, tenemos planetario digital con proyecciones de 30 minutos cada hora. Es una de nuestras zonas más populares.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Planetario digital: proyecciones de 30 min (cada hora)»."
+ },
+ {
+  "id": "i0332",
+  "negocio": "W3_n6",
+  "turnos_previos_del_cliente": [],
+  "cliente": "¿Cuál es el parqueadero?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "Parqueadero: $2 USD"
+  ],
+  "evidencia": "Parqueadero: $2 USD por auto (máximo 4 horas incluidas en entrada)",
+  "respuesta_ideal": "El parqueadero cuesta $2 USD. Están incluidas las 4 primeras horas. Después cuesta $1 USD por hora adicional.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Parqueadero: $2 USD por auto (máximo 4 horas incluidas en entrada; exceso $1 USD/hora)»."
+ },
+ {
+  "id": "i0364",
+  "negocio": "W3_n6",
+  "turnos_previos_del_cliente": [
+   "Hola, buenos días. ¿A qué hora abren?"
+  ],
+  "cliente": "¿Cuánto cuesta la entrada?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "$8 USD por persona"
+  ],
+  "evidencia": "Entrada general: $8 USD por persona",
+  "respuesta_ideal": "La entrada general es $8 USD. Hay descuentos para niños, estudiantes y adultos mayores.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Incluye: entrada, área privada 2 horas, refrigerio, pastel (traer el propio o $15 USD adicional)»."
+ }
+]
