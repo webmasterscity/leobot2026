@@ -167,6 +167,40 @@ class ContextMixin:
             return None
         return cells if sum(bool(c) for c in cells) >= 2 else None
 
+    def _unwrapped(self, lines: list[str]) -> list[str]:
+        """G-63: a sentence broken across lines (text pasted from a page or a
+        document) is one line again: a long line that does not close its
+        sentence continues on the next when that one starts in lowercase or
+        with a figure and is not a list item or a table row.
+
+        G-64: the document tells its own width, the length of its longest
+        line.  A line was cut by that width when the first word of the next
+        one would not have fitted.  When the text comes cut (at least 4 such
+        lines, and at least a fifth of its lines), a cut line continues on
+        the next whatever its case or punctuation."""
+        def mergeable(prev: str, line: str) -> bool:
+            return bool(prev and line) and not self._heading_like(prev) and not _LIST_MARK.match(line) \
+                and self._cells(line) is None and self._cells(prev) is None
+
+        texty = [line for line in lines if line]
+        width = max((len(line) for line in texty), default=0)
+
+        def cut(line: str, following: str) -> bool:
+            return bool(line and following) and len(line) + 1 + len(following.split()[0]) > width
+        cuts = sum(cut(a, b) for a, b in zip(lines, lines[1:]))
+        by_width = cuts >= 4 and cuts >= 0.2 * len(texty)
+        out: list[str] = []
+        raw = ''
+        for line in lines:
+            prev = out[-1] if out else ''
+            if mergeable(prev, line) and (cut(raw, line) if by_width else
+                                          prev[-1].isalnum() and (line[0].islower() or line[0].isdigit())):
+                out[-1] = prev + ' ' + line
+            else:
+                out.append(line)
+            raw = line
+        return out
+
     def _layout_units(self, text: str, source: str) -> list[dict]:
         units, title, section, question, header = [], '', '', '', None
         section_kind, block_open = '', False
@@ -188,6 +222,8 @@ class ContextMixin:
                           'terms': own, 'inherited': inherited, 'classes': self._classes(display)})
 
         lines = [raw.strip() for raw in str(text).splitlines()]
+        if getattr(self, 'join_wrapped', True):
+            lines = self._unwrapped(lines)
         following = [''] * len(lines)
         upcoming = ''
         for k in range(len(lines) - 1, -1, -1):

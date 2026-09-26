@@ -1,0 +1,152 @@
+[
+  [
+    {
+      "cliente": "Hola, buenos días. ¿Cuál es el horario de atención?",
+      "tipo": "charla",
+      "accion": "charla",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "Buenos días, ¿cómo estás? Atendemos de lunes a viernes de 8:30 a 17:30, y los sábados de 9:00 a 13:00."
+    },
+    {
+      "cliente": "¿Cambiam dólares ahí?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["Dólar estadounidense (USD)"],
+      "evidencia": "Divisas que operamos: Dólar estadounidense (USD)",
+      "respuesta_ideal": "Sí, claro. Cambiamos dólares estadounidenses. ¿A cuánto necesitas cambiar?"
+    },
+    {
+      "cliente": "¿Cuál es la tasa de venta del dólar?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["Venta USD: 7.450 PYG"],
+      "evidencia": "Venta USD: 7.450 PYG",
+      "respuesta_ideal": "La tasa de venta del dólar es 7.450 guaraníes por cada dólar. Las tasas se actualizan cada hora según el mercado."
+    },
+    {
+      "cliente": "¿Cuántos guaraníes me dan por 500 dólares sin comisión?",
+      "tipo": "combinada",
+      "accion": "responder",
+      "claves": ["7.450 PYG", "Transacciones hasta USD 1.000: sin comisión"],
+      "evidencia": "Venta USD: 7.450 PYG | Transacciones hasta USD 1.000: sin comisión",
+      "respuesta_ideal": "Por 500 dólares sin comisión (porque está por debajo de USD 1.000), te daríamos 3.725.000 guaraníes a la tasa actual de 7.450."
+    }
+  ],
+  [
+    {
+      "cliente": "Necesito cambiar 1.500 dólares. ¿Qué documentos me piden?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["USD 500 a USD 2.000: cédula, comprobante de domicilio"],
+      "evidencia": "Para cambios de USD 500 a USD 2.000: cédula, comprobante de domicilio (factura de servicios, contrato de alquiler)",
+      "respuesta_ideal": "Para cambiar USD 1.500 necesitas tu cédula de identidad y un comprobante de domicilio como factura de servicios o contrato de alquiler."
+    },
+    {
+      "cliente": "¿Qué comisión me cobran?",
+      "tipo": "seguimiento",
+      "accion": "responder",
+      "claves": ["0,5%"],
+      "evidencia": "Transacciones de USD 1.001 a USD 5.000: 0,5%",
+      "respuesta_ideal": "Para esa cantidad, la comisión es 0,5%, lo que significa que pagarías unos 7,50 dólares de comisión sobre los 1.500."
+    },
+    {
+      "cliente": "¿Puedo venir el domingo a cambiar?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["Domingos y festivos: Cerrado"],
+      "evidencia": "Domingos y festivos: Cerrado",
+      "respuesta_ideal": "Lamentablemente no, estamos cerrados los domingos y festivos. Puedes venir de lunes a sábado."
+    }
+  ],
+  [
+    {
+      "cliente": "¿Qué pasa si traigo billetes rotos?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["No aceptamos billetes dañados, rotos o marcados"],
+      "evidencia": "No aceptamos billetes dañados, rotos o marcados",
+      "respuesta_ideal": "No aceptamos billetes rotos. Deben estar en buen estado para poder cambiarlos."
+    },
+    {
+      "cliente": "¿Y si están un poco marcados?",
+      "tipo": "seguimiento",
+      "accion": "responder",
+      "claves": ["No aceptamos billetes dañados, rotos o marcados"],
+      "evidencia": "No aceptamos billetes dañados, rotos o marcados",
+      "respuesta_ideal": "No, tampoco aceptamos billetes marcados. Tienen que estar en perfectas condiciones. Verificamos con detector de luz ultravioleta también."
+    }
+  ],
+  [
+    {
+      "cliente": "¿Tienen sucursal en Argentina?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": "Sucursales: También contamos con oficina en Foz de Iguazú, Brasil",
+      "respuesta_ideal": "No tengo ese dato. Solo sé que tenemos una sucursal en Foz de Iguazú, Brasil. Te recomiendo llamar al +595 61 500847 para confirmar si hay alguna otra ubicación."
+    },
+    {
+      "cliente": "¿Qué diferencia hay entre la tasa de compra y venta del dólar?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "Eso es una pregunta técnica sobre economía que no es mi función explicar. Lo importante es que la diferencia entre compra (7.200) y venta (7.450) es el margen del negocio. Si necesitas más detalles, puedes llamar al +595 961 234567."
+    }
+  ],
+  [
+    {
+      "cliente": "Quiero cambiar USD 8.000 que me envió un familiar del exterior. ¿Puedo traerlos acá?",
+      "tipo": "instruccion",
+      "accion": "derivar",
+      "claves": ["comprobante de origen de fondos"],
+      "evidencia": "Para cambios mayores a USD 2.000: se requiere comprobante de origen de fondos (transferencia bancaria, comprobante de salario, factura comercial)",
+      "respuesta_ideal": "Para esa cantidad necesitas un comprobante de origen de fondos, como la transferencia del exterior o un documento que muestre de dónde viene el dinero. Contacta a info@cambioexpress.com.py con fotocopia de tu documento para que te asesor de mejor."
+    },
+    {
+      "cliente": "¿Tienen servicio de transferencia internacional?",
+      "tipo": "sin_respuesta",
+      "accion": "derivar",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No ofrecemos transferencias internacionales. Somos una casa de cambio, no un banco. Para transferencias deberías consultar con tu banco o con empresas especializadas en envíos de dinero."
+    }
+  ],
+  [
+    {
+      "cliente": "¿Cambian pesos mexicanos?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["Peso mexicano (MXN)"],
+      "evidencia": "Peso mexicano (MXN) en la lista de divisas",
+      "respuesta_ideal": "Sí, cambiamos pesos mexicanos. Consulta en la sucursal cuál es la tasa actual."
+    },
+    {
+      "cliente": "¿Y euros también?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["Euro (EUR)"],
+      "evidencia": "Euro (EUR)",
+      "respuesta_ideal": "Sí, también cambiamos euros. Las tasas de euros son especiales, sobre todo si cambias volúmenes mayores. Consulta en la sucursal."
+    }
+  ],
+  [
+    {
+      "cliente": "Perdón, ¿cuál es la dirección exacta?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["Av. Rodríguez de Francia 456, Ciudad del Este", "frente al Shopping del Puerto"],
+      "evidencia": "Ubicación: Av. Rodríguez de Francia 456, Ciudad del Este, Paraguay (frente al Shopping del Puerto)",
+      "respuesta_ideal": "Av. Rodríguez de Francia 456, frente al Shopping del Puerto. Es acá en Ciudad del Este."
+    },
+    {
+      "cliente": "¿Cuál es el número para llamar si necesito aclarar algo el viernes por la tarde?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["+595 61 500847"],
+      "evidencia": "Teléfono: +595 61 500847 | Lunes a viernes 08:00 - 18:00: +595 61 500847",
+      "respuesta_ideal": "Puedes llamar al +595 61 500847. Atendemos de lunes a viernes hasta las 18:00, así que si llamas el viernes por la tarde tenemos atención."
+    }
+  ]
+]

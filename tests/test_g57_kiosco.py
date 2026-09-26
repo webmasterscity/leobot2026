@@ -230,6 +230,38 @@ class WhatGovernsTests(unittest.TestCase):
         self.assertTrue({u['text']: u for u in bot.context_units}['Todo con IVA incluido.']['inherited'])
 
 
+class WrappedLinesTests(unittest.TestCase):
+    """G-63: a sentence broken across lines is read as one unit."""
+
+    def test_a_broken_sentence_is_one_unit(self):
+        bot = Bot()
+        bot.load_context('HOTEL\nLos menores de doce años no pagan alojamiento cuando comparten la habitación con dos\n'
+                         'adultos, y el desayuno para ellos cuesta la mitad.\n- Piscina\n- sauna\nHorarios\nde 8 a 18')
+        texts = [u['text'] for u in bot.context_units]
+        self.assertIn('Los menores de doce años no pagan alojamiento cuando comparten la habitación con dos '
+                      'adultos, y el desayuno para ellos cuesta la mitad.', texts)
+        self.assertIn('sauna', texts)
+        bot.join_wrapped = False
+        bot.load_context('HOTEL\nLos menores de doce años no pagan alojamiento cuando comparten la habitación con dos\n'
+                         'adultos, y el desayuno para ellos cuesta la mitad.')
+        self.assertIn('adultos, y el desayuno para ellos cuesta la mitad.', [u['text'] for u in bot.context_units])
+
+    def test_a_text_cut_by_its_width_is_read_whole(self):
+        """G-64: in a text cut at a fixed width, a cut line continues on the next even when it starts in capitals."""
+        para = ('El alquiler de la cabaña grande cuesta 90 dólares por noche y la pequeña 60 dólares. Aceptamos pagos '
+                'con Visa, Mastercard y transferencia bancaria desde cualquier banco del país. El desayuno se sirve '
+                'en el comedor principal de siete a diez de la mañana todos los días de la semana. Los niños menores '
+                'de cinco años no pagan si duermen en la cama de sus padres.')
+        import textwrap
+        bot = Bot()
+        bot.load_context('CABAÑAS\n' + '\n'.join(textwrap.wrap(para, 50)))
+        texts = [u['text'] for u in bot.context_units]
+        self.assertIn('Aceptamos pagos con Visa, Mastercard y transferencia bancaria desde cualquier banco del país.', texts)
+        self.assertIn('Los niños menores de cinco años no pagan si duermen en la cama de sus padres.', texts)
+        bot.load_context('CABAÑAS\nHorario de atención de lunes a viernes de ocho a seis\nSábados de nueve a una')
+        self.assertIn('Sábados de nueve a una', [u['text'] for u in bot.context_units])
+
+
 class PrivacyTests(unittest.TestCase):
     def test_what_one_client_says_is_not_kept_for_the_next(self):
         bot = Bot()

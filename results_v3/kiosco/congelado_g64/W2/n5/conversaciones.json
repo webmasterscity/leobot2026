@@ -1,0 +1,258 @@
+[
+  [
+    {
+      "cliente": "Buenas, ¿a qué hora es la misa de los domingos?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": [
+        "7:00 a. m., 9:00 a. m., 11:00 a. m. y 6:00 p. m."
+      ],
+      "evidencia": "Domingos: 7:00 a. m., 9:00 a. m., 11:00 a. m. y 6:00 p. m.",
+      "respuesta_ideal": "Los domingos hay misas a las 7:00 a. m., 9:00 a. m., 11:00 a. m. y 6:00 p. m."
+    },
+    {
+      "cliente": "¿Y los sábados hay misa?",
+      "tipo": "seguimiento",
+      "accion": "responder",
+      "claves": [
+        "6:00 p. m."
+      ],
+      "evidencia": "Sábados: 6:00 p. m. (misa vespertina, cuenta como del domingo)",
+      "respuesta_ideal": "Sí, los sábados hay misa a las 6:00 p. m., que cuenta como del domingo."
+    },
+    {
+      "cliente": "¿La oficina atiende los domingos?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": [
+        "la oficina no atiende"
+      ],
+      "evidencia": "Domingos la oficina no atiende, aunque hay misas.",
+      "respuesta_ideal": "No, los domingos la oficina no atiende, aunque sí hay misas."
+    },
+    {
+      "cliente": "Quiero bautizar a mi hijo, ¿qué necesito?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": [
+        "Partida de nacimiento",
+        "Cédula de los padres"
+      ],
+      "evidencia": "Partida de nacimiento del niño (original y copia).",
+      "respuesta_ideal": "Necesita Partida de nacimiento del niño y Cédula de los padres, además de padrinos católicos y confirmados y asistir a la charla prebautismal."
+    },
+    {
+      "cliente": "Buen día, quisiera información",
+      "tipo": "charla",
+      "accion": "charla",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "¡Buen día! Con gusto te ayudo, ¿qué necesitas saber?"
+    }
+  ],
+  [
+    {
+      "cliente": "¿Cuándo son los bautizos?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": [
+        "segundos y cuartos sábados de cada mes",
+        "10:00 a. m."
+      ],
+      "evidencia": "Se celebran los segundos y cuartos sábados de cada mes, a las 10:00 a. m.",
+      "respuesta_ideal": "Los bautizos se celebran los segundos y cuartos sábados de cada mes, a las 10:00 a. m."
+    },
+    {
+      "cliente": "¿Cuánto cuesta el bautizo?",
+      "tipo": "seguimiento",
+      "accion": "responder",
+      "claves": [
+        "colaboración sugerida de 5 dólares"
+      ],
+      "evidencia": "Costo: colaboración sugerida de 5 dólares o su equivalente en bolívares, no es obligatorio.",
+      "respuesta_ideal": "Es una colaboración sugerida de 5 dólares o su equivalente en bolívares, y no es obligatoria."
+    },
+    {
+      "cliente": "¿Es obligatorio pagar eso?",
+      "tipo": "seguimiento",
+      "accion": "responder",
+      "claves": [
+        "no es obligatorio"
+      ],
+      "evidencia": "Costo: colaboración sugerida de 5 dólares o su equivalente en bolívares, no es obligatorio.",
+      "respuesta_ideal": "No, no es obligatorio, es una colaboración sugerida."
+    },
+    {
+      "cliente": "¿Puedo pagar esa colaboración por pago móvil?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No tengo información sobre pago móvil para la colaboración de bautizo."
+    },
+    {
+      "cliente": "Mis padrinos son divorciados, ¿pueden ser padrinos igual?",
+      "tipo": "instruccion",
+      "accion": "derivar",
+      "claves": [],
+      "evidencia": "No dar consejos espirituales personales, ni opinar sobre situaciones morales o familiares de quien pregunta: invitar a que hable en persona con el padre Ramón.",
+      "respuesta_ideal": "Ese caso conviene conversarlo directamente con el padre Ramón en la oficina para orientarte bien."
+    }
+  ],
+  [
+    {
+      "cliente": "Nos queremos casar, ¿cómo hacemos?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": [
+        "al menos 4 meses de anticipación",
+        "curso prematrimonial"
+      ],
+      "evidencia": "Se deben separar con al menos 4 meses de anticipación porque incluye el curso prematrimonial",
+      "respuesta_ideal": "Deben separar la fecha con al menos 4 meses de anticipación porque incluye el curso prematrimonial de 6 semanas."
+    },
+    {
+      "cliente": "¿Nos pueden confirmar la fecha y hora ahorita por aquí?",
+      "tipo": "instruccion",
+      "accion": "derivar",
+      "claves": [],
+      "evidencia": "No fijar ni confirmar fecha y hora de matrimonios: eso se coordina solo directamente con el padre Ramón.",
+      "respuesta_ideal": "La fecha y hora exacta se coordina directamente con el padre Ramón, no puedo confirmarla por aquí."
+    },
+    {
+      "cliente": "¿Qué día es el curso prematrimonial?",
+      "tipo": "seguimiento",
+      "accion": "responder",
+      "claves": [
+        "los martes a las 7:00 p. m."
+      ],
+      "evidencia": "se dicta los martes a las 7:00 p. m.",
+      "respuesta_ideal": "El curso prematrimonial se dicta los martes a las 7:00 p. m."
+    },
+    {
+      "cliente": "Uno de los dos es de otra parroquia, ¿hace falta algo más?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": [
+        "carta del párroco de origen"
+      ],
+      "evidencia": "si alguno es de otra parroquia, carta del párroco de origen.",
+      "respuesta_ideal": "Sí, hace falta una carta del párroco de origen de esa persona."
+    },
+    {
+      "cliente": "¿Cuánto cuesta el matrimonio?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No tengo el costo del matrimonio, te recomiendo consultarlo en la oficina."
+    }
+  ],
+  [
+    {
+      "cliente": "Mi papá está grave en el hospital, ¿pueden mandar un sacerdote?",
+      "tipo": "instruccion",
+      "accion": "derivar",
+      "claves": [],
+      "evidencia": "llamar con urgencia al teléfono 0251-254-8890 (línea de la parroquia) a cualquier hora.",
+      "respuesta_ideal": "Llama de inmediato al 0251-254-8890, es la línea de la parroquia que atiende esa urgencia a cualquier hora."
+    },
+    {
+      "cliente": "¿Esa línea atiende de noche también?",
+      "tipo": "seguimiento",
+      "accion": "responder",
+      "claves": [
+        "a cualquier hora"
+      ],
+      "evidencia": "llamar con urgencia al teléfono 0251-254-8890 (línea de la parroquia) a cualquier hora.",
+      "respuesta_ideal": "Sí, esa línea atiende a cualquier hora, incluida la noche."
+    },
+    {
+      "cliente": "Necesito un certificado de bautismo, ¿cómo lo pido?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": [
+        "se solicitan en la oficina",
+        "3 días hábiles"
+      ],
+      "evidencia": "se solicitan en la oficina y se entregan en 3 días hábiles.",
+      "respuesta_ideal": "Los certificados se solicitan en la oficina y se entregan en 3 días hábiles."
+    },
+    {
+      "cliente": "¿Cuánto cuesta ese certificado?",
+      "tipo": "seguimiento",
+      "accion": "responder",
+      "claves": [
+        "2 dólares"
+      ],
+      "evidencia": "Costo: 2 dólares o su equivalente.",
+      "respuesta_ideal": "El certificado cuesta 2 dólares o su equivalente en bolívares."
+    },
+    {
+      "cliente": "Vale, mil gracias por la ayuda",
+      "tipo": "charla",
+      "accion": "charla",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "Con gusto, que Dios te bendiga."
+    }
+  ],
+  [
+    {
+      "cliente": "¿A qué hora abre la oficina entre semana?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": [
+        "8:00 a. m. a 12:00 m. y de 2:00 p. m. a 5:00 p. m."
+      ],
+      "evidencia": "lunes a viernes de 8:00 a. m. a 12:00 m. y de 2:00 p. m. a 5:00 p. m.",
+      "respuesta_ideal": "De lunes a viernes la oficina atiende de 8:00 a. m. a 12:00 m. y de 2:00 p. m. a 5:00 p. m."
+    },
+    {
+      "cliente": "¿Y los sábados hasta qué hora es la oficina?",
+      "tipo": "seguimiento",
+      "accion": "responder",
+      "claves": [
+        "8:00 a. m. a 11:00 a. m."
+      ],
+      "evidencia": "Sábados solo en la mañana, de 8:00 a. m. a 11:00 a. m.",
+      "respuesta_ideal": "Los sábados la oficina atiende solo en la mañana, de 8:00 a. m. a 11:00 a. m."
+    },
+    {
+      "cliente": "Si voy un sábado a las 11:30 a. m., ¿todavía me atienden?",
+      "tipo": "combinada",
+      "accion": "responder",
+      "claves": [
+        "8:00 a. m. a 11:00 a. m."
+      ],
+      "evidencia": "Sábados solo en la mañana, de 8:00 a. m. a 11:00 a. m.",
+      "respuesta_ideal": "No, los sábados la oficina atiende de 8:00 a. m. a 11:00 a. m., así que a las 11:30 a. m. ya no."
+    },
+    {
+      "cliente": "¿En Semana Santa el horario es el mismo?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "El horario de Semana Santa cambia y se publica aparte en la cartelera de la iglesia, no tengo el detalle exacto aquí."
+    },
+    {
+      "cliente": "¿Quién es el párroco?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": [
+        "Pbro. Ramón Antonio Yépez"
+      ],
+      "evidencia": "Párroco: Pbro. Ramón Antonio Yépez.",
+      "respuesta_ideal": "El párroco es el Pbro. Ramón Antonio Yépez."
+    },
+    {
+      "cliente": "Hola, buenas tardes",
+      "tipo": "charla",
+      "accion": "charla",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "Buenas tardes, bienvenido a la Parroquia San José Obrero, ¿en qué te puedo ayudar?"
+    }
+  ]
+]

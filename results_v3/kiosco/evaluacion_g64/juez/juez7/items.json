@@ -1,0 +1,925 @@
+[
+ {
+  "id": "i0013",
+  "negocio": "W2_n1",
+  "turnos_previos_del_cliente": [
+   "Hola, ¿cuánto sale el kilo de queso sardo?"
+  ],
+  "cliente": "¿Y el reggianito?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "$14.200"
+  ],
+  "evidencia": "| Reggianito | $14.200 |",
+  "respuesta_ideal": "El reggianito sale $14.200 el kilo.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Queso: Reggianito; Precio: $14.200»."
+ },
+ {
+  "id": "i0026",
+  "negocio": "W2_n1",
+  "turnos_previos_del_cliente": [],
+  "cliente": "¿Puedo llevar a mi perro?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "mascotas atadas en el patio externo"
+  ],
+  "evidencia": "Se permiten mascotas atadas en el patio externo de la tienda.",
+  "respuesta_ideal": "Sí, podés llevarlo, pero debe quedarse con mascotas atadas en el patio externo de la tienda.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Sí, no hay problema»."
+ },
+ {
+  "id": "i0064",
+  "negocio": "W2_n1",
+  "turnos_previos_del_cliente": [
+   "¿Hacen envíos a domicilio?",
+   "Si compro por 20 mil pesos, ¿el envío es gratis?",
+   "¿Envían a Mar del Plata?"
+  ],
+  "cliente": "¿Cuánto tarda en llegar?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "3 y 5 días hábiles"
+  ],
+  "evidencia": "El envío por correo tarda entre 3 y 5 días hábiles.",
+  "respuesta_ideal": "El envío por correo tarda entre 3 y 5 días hábiles.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «El envío por correo tarda entre 3 y 5 días hábiles»."
+ },
+ {
+  "id": "i0081",
+  "negocio": "W2_n1",
+  "turnos_previos_del_cliente": [
+   "¿Hacen envíos a domicilio?",
+   "Si compro por 20 mil pesos, ¿el envío es gratis?",
+   "¿Envían a Mar del Plata?",
+   "¿Cuánto tarda en llegar?",
+   "¿Envían a Uruguay?"
+  ],
+  "cliente": "¿Puedo pagar con Mercado Pago?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "Mercado Pago"
+  ],
+  "evidencia": "Aceptamos efectivo, débito, crédito (hasta 3 cuotas sin interés con tarjeta Cabal) y Mercado Pago.",
+  "respuesta_ideal": "Sí, aceptamos pago con Mercado Pago.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Aceptamos efectivo, débito, crédito (hasta 3 cuotas sin interés con tarjeta Cabal) y Mercado Pago»."
+ },
+ {
+  "id": "i0086",
+  "negocio": "W2_n1",
+  "turnos_previos_del_cliente": [
+   "¿A qué hora abren los sábados?",
+   "¿Y los domingos?",
+   "¿Abren el 25 de diciembre?"
+  ],
+  "cliente": "¿Cuánto cuesta el dulce de leche?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "$3.200"
+  ],
+  "evidencia": "dulce de leche artesanal ($3.200 el frasco de 400 g)",
+  "respuesta_ideal": "El dulce de leche artesanal cuesta $3.200 el frasco de 400 g.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «También vendemos dulce de leche artesanal ($3.200 el frasco de 400 g) y miel de las sierras ($4.100 el frasco)»."
+ },
+ {
+  "id": "i0089",
+  "negocio": "W2_n1",
+  "turnos_previos_del_cliente": [
+   "¿A qué hora abren los sábados?",
+   "¿Y los domingos?"
+  ],
+  "cliente": "¿Abren el 25 de diciembre?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "permanecemos cerrados"
+  ],
+  "evidencia": "salvo 1° de enero y 25 de diciembre que permanecemos cerrados.",
+  "respuesta_ideal": "No, el 25 de diciembre permanecemos cerrados.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Domingos de 10 a 14 h. Los feriados abrimos de 10 a 13 h, salvo 1° de enero y 25 de diciembre que permanecemos cerrados»."
+ },
+ {
+  "id": "i0091",
+  "negocio": "W2_n1",
+  "turnos_previos_del_cliente": [
+   "¿A qué hora abren los sábados?",
+   "¿Y los domingos?",
+   "¿Abren el 25 de diciembre?",
+   "¿Cuánto cuesta el dulce de leche?"
+  ],
+  "cliente": "¿Y la miel cuánto sale?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "$4.100"
+  ],
+  "evidencia": "miel de las sierras ($4.100 el frasco)",
+  "respuesta_ideal": "La miel de las sierras sale $4.100 el frasco.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «También vendemos dulce de leche artesanal ($3.200 el frasco de 400 g) y miel de las sierras ($4.100 el frasco)»."
+ },
+ {
+  "id": "i0098",
+  "negocio": "W2_n1",
+  "turnos_previos_del_cliente": [
+   "Hola, ¿cuánto sale el kilo de queso sardo?",
+   "¿Y el reggianito?",
+   "¿Tienen queso de cabra?"
+  ],
+  "cliente": "Quiero reservar la cata del sábado a las 6",
+  "tipo": "instruccion",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "No confirmar reservas de catas: solo informar el procedimiento (reservar por WhatsApp con un día de anticipación) y derivar al WhatsApp para concretarla.",
+  "respuesta_ideal": "Para reservar la cata tenés que escribir por WhatsApp al 0249 15-442-1187 con un día de anticipación; yo no puedo confirmarla directamente.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Los viernes y sábados a las 18 h hacemos una cata guiada de 6 quesos»."
+ },
+ {
+  "id": "i0118",
+  "negocio": "W2_n1",
+  "turnos_previos_del_cliente": [
+   "¿Puedo llevar a mi perro?",
+   "¿Puede entrar a la sala donde hacen las catas?",
+   "Si vamos dos personas a la cata, ¿cuánto sale en total?",
+   "Necesito 50 kilos de queso para un evento, ¿lo pueden hacer?",
+   "¿Hacen descuento por cantidad si compro varios kilos para casa?"
+  ],
+  "cliente": "Perfecto, muchas gracias por todo",
+  "tipo": "charla",
+  "accion_esperada": "charla",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "¡De nada! Te esperamos en la quesería o escribinos por WhatsApp.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Todos los domingos organizamos un torneo relámpago desde las 3:00 p.m. Inscripción por equipo: COP 180.000»."
+ },
+ {
+  "id": "i0143",
+  "negocio": "W2_n1",
+  "turnos_previos_del_cliente": [
+   "¿Hacen envíos a domicilio?"
+  ],
+  "cliente": "Si compro por 20 mil pesos, ¿el envío es gratis?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "sin cargo en compras mayores a $15.000"
+  ],
+  "evidencia": "Hacemos envíos a domicilio dentro de Tandil sin cargo en compras mayores a $15.000.",
+  "respuesta_ideal": "Sí, el envío es sin cargo en compras mayores a $15.000 y tu compra los supera.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Sí, ofrecemos una pequeña degustación gratuita de hasta dos quesos por visita, fuera del horario de catas»."
+ },
+ {
+  "id": "i0144",
+  "negocio": "W2_n1",
+  "turnos_previos_del_cliente": [
+   "¿Puedo llevar a mi perro?",
+   "¿Puede entrar a la sala donde hacen las catas?",
+   "Si vamos dos personas a la cata, ¿cuánto sale en total?",
+   "Necesito 50 kilos de queso para un evento, ¿lo pueden hacer?",
+   "¿Hacen descuento por cantidad si compro varios kilos para casa?"
+  ],
+  "cliente": "Perfecto, muchas gracias por todo",
+  "tipo": "charla",
+  "accion_esperada": "charla",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "¡De nada! Te esperamos en la quesería o escribinos por WhatsApp.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Fuera de Tandil despachamos por correo a todo el país, con un adicional según destino (se cotiza al momento del pedido)»."
+ },
+ {
+  "id": "i0153",
+  "negocio": "W2_n1",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Hola, ¿cuánto sale el kilo de queso sardo?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "$9.800"
+  ],
+  "evidencia": "| Sardo | $9.800 |",
+  "respuesta_ideal": "El kilo de queso sardo cuesta $9.800.",
+  "respuesta_a_calificar": "Hola. No lo tengo seguro. Lo más cercano que dice el texto es: «Queso: Sardo; Precio: $9.800»."
+ },
+ {
+  "id": "i0166",
+  "negocio": "W2_n1",
+  "turnos_previos_del_cliente": [
+   "¿A qué hora abren los sábados?",
+   "¿Y los domingos?",
+   "¿Abren el 25 de diciembre?",
+   "¿Cuánto cuesta el dulce de leche?",
+   "¿Y la miel cuánto sale?"
+  ],
+  "cliente": "¿Tienen dulce de leche light o dietético?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo información sobre una versión light o dietética del dulce de leche.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «También vendemos dulce de leche artesanal ($3.200 el frasco de 400 g) y miel de las sierras ($4.100 el frasco)»."
+ },
+ {
+  "id": "i0189",
+  "negocio": "W2_n1",
+  "turnos_previos_del_cliente": [
+   "Hola, ¿cuánto sale el kilo de queso sardo?",
+   "¿Y el reggianito?"
+  ],
+  "cliente": "¿Tienen queso de cabra?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "De cabra | $18.700"
+  ],
+  "evidencia": "| De cabra | $18.700 |",
+  "respuesta_ideal": "Sí, tenemos queso De cabra | $18.700 el kilo.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Queso: De cabra; Precio: $18.700»."
+ },
+ {
+  "id": "i0196",
+  "negocio": "W2_n1",
+  "turnos_previos_del_cliente": [
+   "¿A qué hora abren los sábados?",
+   "¿Y los domingos?",
+   "¿Abren el 25 de diciembre?",
+   "¿Cuánto cuesta el dulce de leche?",
+   "¿Y la miel cuánto sale?"
+  ],
+  "cliente": "¿Tienen dulce de leche light o dietético?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo información sobre una versión light o dietética del dulce de leche.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «También vendemos dulce de leche artesanal ($3.200 el frasco de 400 g)»."
+ },
+ {
+  "id": "i0199",
+  "negocio": "W2_n1",
+  "turnos_previos_del_cliente": [
+   "¿Hacen envíos a domicilio?",
+   "Si compro por 20 mil pesos, ¿el envío es gratis?",
+   "¿Envían a Mar del Plata?",
+   "¿Cuánto tarda en llegar?",
+   "¿Envían a Uruguay?",
+   "¿Puedo pagar con Mercado Pago?"
+  ],
+  "cliente": "¿Puedo pagar en dólares?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo información sobre pagos en dólares; te recomiendo consultarlo en la tienda.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «No aceptamos cheques ni pagos en dólares»."
+ },
+ {
+  "id": "i0201",
+  "negocio": "W2_n1",
+  "turnos_previos_del_cliente": [],
+  "cliente": "¿Hacen envíos a domicilio?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "envíos a domicilio dentro de Tandil"
+  ],
+  "evidencia": "Hacemos envíos a domicilio dentro de Tandil sin cargo en compras mayores a $15.000.",
+  "respuesta_ideal": "Sí, hacemos envíos a domicilio dentro de Tandil, sin cargo en compras mayores a $15.000.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Hacemos envíos a domicilio dentro de Tandil sin cargo en compras»."
+ },
+ {
+  "id": "i0206",
+  "negocio": "W2_n1",
+  "turnos_previos_del_cliente": [
+   "Hola, ¿cuánto sale el kilo de queso sardo?",
+   "¿Y el reggianito?",
+   "¿Tienen queso de cabra?"
+  ],
+  "cliente": "Quiero reservar la cata del sábado a las 6",
+  "tipo": "instruccion",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "No confirmar reservas de catas: solo informar el procedimiento (reservar por WhatsApp con un día de anticipación) y derivar al WhatsApp para concretarla.",
+  "respuesta_ideal": "Para reservar la cata tenés que escribir por WhatsApp al 0249 15-442-1187 con un día de anticipación; yo no puedo confirmarla directamente.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Los viernes y sábados a las 18 h hacemos una cata guiada de 6 quesos con maridaje de vinos de la zona»."
+ },
+ {
+  "id": "i0214",
+  "negocio": "W2_n1",
+  "turnos_previos_del_cliente": [
+   "¿A qué hora abren los sábados?"
+  ],
+  "cliente": "¿Y los domingos?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "10 a 14"
+  ],
+  "evidencia": "Domingos de 10 a 14 h.",
+  "respuesta_ideal": "Los domingos abrimos de 10 a 14 h.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «que permanecemos cerrados»."
+ },
+ {
+  "id": "i0216",
+  "negocio": "W2_n1",
+  "turnos_previos_del_cliente": [
+   "¿Puedo llevar a mi perro?"
+  ],
+  "cliente": "¿Puede entrar a la sala donde hacen las catas?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "No pueden ingresar a la sala de catas"
+  ],
+  "evidencia": "No pueden ingresar a la sala de catas por razones de higiene alimentaria.",
+  "respuesta_ideal": "No pueden ingresar a la sala de catas por razones de higiene alimentaria.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «pueden ingresar a la sala de catas por razones de higiene alimentaria»."
+ },
+ {
+  "id": "i0234",
+  "negocio": "W2_n1",
+  "turnos_previos_del_cliente": [
+   "¿A qué hora abren los sábados?",
+   "¿Y los domingos?"
+  ],
+  "cliente": "¿Abren el 25 de diciembre?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "permanecemos cerrados"
+  ],
+  "evidencia": "salvo 1° de enero y 25 de diciembre que permanecemos cerrados.",
+  "respuesta_ideal": "No, el 25 de diciembre permanecemos cerrados.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Los feriados abrimos de 10 a 13 h, salvo 1° de enero y 25 de diciembre»."
+ },
+ {
+  "id": "i0243",
+  "negocio": "W2_n1",
+  "turnos_previos_del_cliente": [
+   "¿A qué hora abren los sábados?"
+  ],
+  "cliente": "¿Y los domingos?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "10 a 14"
+  ],
+  "evidencia": "Domingos de 10 a 14 h.",
+  "respuesta_ideal": "Los domingos abrimos de 10 a 14 h.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «El equipo campeón recibe medallas y un bono de una hora de cancha gratis para su próxima reserva»."
+ },
+ {
+  "id": "i0244",
+  "negocio": "W2_n1",
+  "turnos_previos_del_cliente": [
+   "¿Puedo llevar a mi perro?",
+   "¿Puede entrar a la sala donde hacen las catas?",
+   "Si vamos dos personas a la cata, ¿cuánto sale en total?",
+   "Necesito 50 kilos de queso para un evento, ¿lo pueden hacer?",
+   "¿Hacen descuento por cantidad si compro varios kilos para casa?"
+  ],
+  "cliente": "Perfecto, muchas gracias por todo",
+  "tipo": "charla",
+  "accion_esperada": "charla",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "¡De nada! Te esperamos en la quesería o escribinos por WhatsApp.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Fuera de Tandil despachamos por correo a todo el»."
+ },
+ {
+  "id": "i0261",
+  "negocio": "W2_n1",
+  "turnos_previos_del_cliente": [
+   "¿A qué hora abren los sábados?",
+   "¿Y los domingos?",
+   "¿Abren el 25 de diciembre?"
+  ],
+  "cliente": "¿Cuánto cuesta el dulce de leche?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "$3.200"
+  ],
+  "evidencia": "dulce de leche artesanal ($3.200 el frasco de 400 g)",
+  "respuesta_ideal": "El dulce de leche artesanal cuesta $3.200 el frasco de 400 g.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «También vendemos dulce de leche artesanal ($3.200 el frasco de 400 g)»."
+ },
+ {
+  "id": "i0283",
+  "negocio": "W2_n1",
+  "turnos_previos_del_cliente": [
+   "¿Hacen envíos a domicilio?",
+   "Si compro por 20 mil pesos, ¿el envío es gratis?",
+   "¿Envían a Mar del Plata?",
+   "¿Cuánto tarda en llegar?",
+   "¿Envían a Uruguay?"
+  ],
+  "cliente": "¿Puedo pagar con Mercado Pago?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "Mercado Pago"
+  ],
+  "evidencia": "Aceptamos efectivo, débito, crédito (hasta 3 cuotas sin interés con tarjeta Cabal) y Mercado Pago.",
+  "respuesta_ideal": "Sí, aceptamos pago con Mercado Pago.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «tarjeta Cabal) y Mercado Pago»."
+ },
+ {
+  "id": "i0297",
+  "negocio": "W2_n1",
+  "turnos_previos_del_cliente": [],
+  "cliente": "¿Hacen envíos a domicilio?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "envíos a domicilio dentro de Tandil"
+  ],
+  "evidencia": "Hacemos envíos a domicilio dentro de Tandil sin cargo en compras mayores a $15.000.",
+  "respuesta_ideal": "Sí, hacemos envíos a domicilio dentro de Tandil, sin cargo en compras mayores a $15.000.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Hacemos envíos a domicilio dentro de Tandil sin cargo en compras mayores a $15.000»."
+ },
+ {
+  "id": "i0308",
+  "negocio": "W2_n1",
+  "turnos_previos_del_cliente": [
+   "¿A qué hora abren los sábados?"
+  ],
+  "cliente": "¿Y los domingos?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "10 a 14"
+  ],
+  "evidencia": "Domingos de 10 a 14 h.",
+  "respuesta_ideal": "Los domingos abrimos de 10 a 14 h.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Domingos de 10 a 14 h. Los feriados abrimos de 10 a 13 h, salvo 1° de enero y 25 de diciembre que permanecemos cerrados»."
+ },
+ {
+  "id": "i0379",
+  "negocio": "W2_n1",
+  "turnos_previos_del_cliente": [
+   "¿A qué hora abren los sábados?",
+   "¿Y los domingos?",
+   "¿Abren el 25 de diciembre?",
+   "¿Cuánto cuesta el dulce de leche?"
+  ],
+  "cliente": "¿Y la miel cuánto sale?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "$4.100"
+  ],
+  "evidencia": "miel de las sierras ($4.100 el frasco)",
+  "respuesta_ideal": "La miel de las sierras sale $4.100 el frasco.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «y miel de las sierras ($4.100 el frasco)»."
+ },
+ {
+  "id": "i0004",
+  "negocio": "W3_n3",
+  "turnos_previos_del_cliente": [],
+  "cliente": "¿Cuánto cuesta alquilar traje de baño?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "$8 USD (medio día)",
+   "$12 USD (día completo)"
+  ],
+  "evidencia": "Traje de baño: $8 USD (alquiler de medio día) o $12 USD (alquiler de día completo)",
+  "respuesta_ideal": "Alquilamos trajes de baño por $8 USD si es medio día o $12 USD si es día completo.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Traje de baño: $8 USD (alquiler de medio día) o $12 USD (alquiler de»."
+ },
+ {
+  "id": "i0055",
+  "negocio": "W3_n3",
+  "turnos_previos_del_cliente": [
+   "¿Cuál es la temperatura de las piscinas?"
+  ],
+  "cliente": "¿Cura la artritis?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No soy doctor, pero las aguas tienen propiedades minerales que alivian dolores articulares y musculares. Para cura médica, consulta a un profesional.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Las aguas tienen propiedades minerales que alivian artritis y dolores musculares»."
+ },
+ {
+  "id": "i0062",
+  "negocio": "W3_n3",
+  "turnos_previos_del_cliente": [
+   "¿Cuál es la temperatura de las piscinas?"
+  ],
+  "cliente": "¿Cura la artritis?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No soy doctor, pero las aguas tienen propiedades minerales que alivian dolores articulares y musculares. Para cura médica, consulta a un profesional.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Las aguas tienen propiedades minerales que alivian artritis y dolores»."
+ },
+ {
+  "id": "i0076",
+  "negocio": "W3_n3",
+  "turnos_previos_del_cliente": [
+   "¿Puedo traer mi perro?",
+   "¿Debo llevar algo especial?"
+  ],
+  "cliente": "¿Cuántas piscinas termales hay?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "6 piscinas naturales de agua termal"
+  ],
+  "evidencia": "El complejo ofrece 6 piscinas naturales de agua termal (entre 38°C y 42°C)",
+  "respuesta_ideal": "Tenemos 6 piscinas naturales de agua termal. Las temperaturas varían entre 38 y 42 grados centígrados.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «El complejo ofrece 6 piscinas naturales de agua termal (entre 38°C y 42°C), sauna húmedo, área de descanso, zona de picnic y restaurante»."
+ },
+ {
+  "id": "i0141",
+  "negocio": "W3_n3",
+  "turnos_previos_del_cliente": [],
+  "cliente": "¿Cuánto cuesta alquilar traje de baño?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "$8 USD (medio día)",
+   "$12 USD (día completo)"
+  ],
+  "evidencia": "Traje de baño: $8 USD (alquiler de medio día) o $12 USD (alquiler de día completo)",
+  "respuesta_ideal": "Alquilamos trajes de baño por $8 USD si es medio día o $12 USD si es día completo.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Traje de baño: $8 USD (alquiler de medio día) o $12 USD (alquiler de día completo)»."
+ },
+ {
+  "id": "i0178",
+  "negocio": "W3_n3",
+  "turnos_previos_del_cliente": [],
+  "cliente": "¿Cuál es el horario de atención?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "martes a domingo: 08:00 - 18:00",
+   "Lunes: CERRADO"
+  ],
+  "evidencia": "De martes a domingo: 08:00 - 18:00 | Lunes: CERRADO",
+  "respuesta_ideal": "Abrimos de martes a domingo de 8:00 AM a 6:00 PM. Los lunes estamos cerrados.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Cortamos a medida sin costo adicional si la compra es en tienda»."
+ },
+ {
+  "id": "i0182",
+  "negocio": "W3_n3",
+  "turnos_previos_del_cliente": [
+   "¿Cuánto cuesta alquilar traje de baño?"
+  ],
+  "cliente": "¿A qué distancia queda de Quito?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "65 km",
+   "1 hora y 20 minutos"
+  ],
+  "evidencia": "Distancia desde Quito: 65 km (aproximadamente 1 hora y 20 minutos en auto)",
+  "respuesta_ideal": "Estamos a 65 km de Quito, aproximadamente 1 hora y 20 minutos en auto.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Distancia desde Quito: 65 km (aproximadamente 1 hora y 20 minutos en auto)»."
+ },
+ {
+  "id": "i0188",
+  "negocio": "W3_n3",
+  "turnos_previos_del_cliente": [
+   "¿Cuánto cuesta alquilar traje de baño?"
+  ],
+  "cliente": "¿A qué distancia queda de Quito?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "65 km",
+   "1 hora y 20 minutos"
+  ],
+  "evidencia": "Distancia desde Quito: 65 km (aproximadamente 1 hora y 20 minutos en auto)",
+  "respuesta_ideal": "Estamos a 65 km de Quito, aproximadamente 1 hora y 20 minutos en auto.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Distancia desde Quito: 65 km (aproximadamente 1 hora y 20 minutos en»."
+ },
+ {
+  "id": "i0222",
+  "negocio": "W3_n3",
+  "turnos_previos_del_cliente": [
+   "¿Se puede llevar comida de afuera?"
+  ],
+  "cliente": "¿Y botellas de vidrio?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "No se admiten: botellas de vidrio"
+  ],
+  "evidencia": "No se admiten: botellas de vidrio",
+  "respuesta_ideal": "No, botellas de vidrio no se admiten por seguridad. Pero puedes traer cerveza en lata o gaseosas en envase.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «No se admiten: botellas de vidrio, comida de fuera (excepto bebés y»."
+ },
+ {
+  "id": "i0259",
+  "negocio": "W3_n3",
+  "turnos_previos_del_cliente": [
+   "¿Se puede llevar comida de afuera?"
+  ],
+  "cliente": "¿Y botellas de vidrio?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "No se admiten: botellas de vidrio"
+  ],
+  "evidencia": "No se admiten: botellas de vidrio",
+  "respuesta_ideal": "No, botellas de vidrio no se admiten por seguridad. Pero puedes traer cerveza en lata o gaseosas en envase.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «No se admiten: botellas de vidrio, comida de fuera (excepto bebés y personas con dietas especiales)»."
+ },
+ {
+  "id": "i0274",
+  "negocio": "W3_n3",
+  "turnos_previos_del_cliente": [
+   "¿Puedo traer mi perro?"
+  ],
+  "cliente": "¿Debo llevar algo especial?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "Recomendamos llevar ropa cómoda, chanclas, bloqueador solar y toalla. Aunque también renta toallas por $2 USD.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Revestimientos: lleva 2 m² paga 1,5 m² (descuento 25%)»."
+ },
+ {
+  "id": "i0324",
+  "negocio": "W3_n3",
+  "turnos_previos_del_cliente": [],
+  "cliente": "¿Cuál es la temperatura de las piscinas?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "entre 38°C y 42°C"
+  ],
+  "evidencia": "6 piscinas naturales de agua termal (entre 38°C y 42°C)",
+  "respuesta_ideal": "Las aguas termales tienen temperaturas entre 38 y 42 grados centígrados. Muy agradables y con propiedades minerales.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Clima: frío durante la madrugada; temperaturas entre 10°C y 20°C. Las piscinas termales contrastan con el aire frío»."
+ },
+ {
+  "id": "i0337",
+  "negocio": "W3_n3",
+  "turnos_previos_del_cliente": [
+   "¿Puedo traer mi perro?",
+   "¿Debo llevar algo especial?"
+  ],
+  "cliente": "¿Cuántas piscinas termales hay?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "6 piscinas naturales de agua termal"
+  ],
+  "evidencia": "El complejo ofrece 6 piscinas naturales de agua termal (entre 38°C y 42°C)",
+  "respuesta_ideal": "Tenemos 6 piscinas naturales de agua termal. Las temperaturas varían entre 38 y 42 grados centígrados.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «El complejo ofrece 6 piscinas naturales de agua termal (entre 38°C y»."
+ },
+ {
+  "id": "i0001",
+  "negocio": "W4_n5",
+  "turnos_previos_del_cliente": [
+   "buenas noches",
+   "cuanto cuesta patinar?",
+   "¿y un niño de 6 años?",
+   "Entonces yo y mis dos hijos de 6 y 9, ¿cuánto pagamos?"
+  ],
+  "cliente": "¿Y mi hija de 3 años puede patinar un ratito?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "menores de 4 años"
+  ],
+  "evidencia": "Niños menores de 4 años no pueden patinar por seguridad.",
+  "respuesta_ideal": "Lo siento, los niños menores de 4 años no pueden patinar por seguridad.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Niños menores de 4 años no pueden patinar por seguridad»."
+ },
+ {
+  "id": "i0060",
+  "negocio": "W4_n5",
+  "turnos_previos_del_cliente": [
+   "¿Hace mucho frío adentro?",
+   "Es obligatorio usar guantes? no traje"
+  ],
+  "cliente": "¿Me sellan el ticket del parqueo?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "2 horas gratis"
+  ],
+  "evidencia": "Sellamos su ticket en taquilla: 2 horas gratis con la compra de cualquier sesión.",
+  "respuesta_ideal": "Sí, sellamos su ticket en taquilla: tiene 2 horas gratis con la compra de cualquier sesión.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Sellamos su ticket en taquilla: 2 horas gratis con la compra de cualquier sesión»."
+ },
+ {
+  "id": "i0099",
+  "negocio": "W4_n5",
+  "turnos_previos_del_cliente": [
+   "¿Hace mucho frío adentro?"
+  ],
+  "cliente": "Es obligatorio usar guantes? no traje",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "obligatorio",
+   "Q25"
+  ],
+  "evidencia": "- Guantes: su uso es obligatorio para todos los patinadores. Si no trae, los vendemos a Q25.00 el par.",
+  "respuesta_ideal": "Sí, el uso de guantes es obligatorio para todos; si no trajo, los vendemos a Q25.00 el par.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Guantes: su uso es obligatorio para todos los patinadores. Si no trae, los vendemos a Q25.00 el par»."
+ },
+ {
+  "id": "i0131",
+  "negocio": "W4_n5",
+  "turnos_previos_del_cliente": [
+   "¿A qué hora abren el sábado?"
+  ],
+  "cliente": "¿y el lunes?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "Cerrado"
+  ],
+  "evidencia": "Lunes\tCerrado (mantenimiento del hielo)",
+  "respuesta_ideal": "Lunes: Cerrado, por mantenimiento del hielo.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Sí, con cita previa, de lunes a viernes por la mañana»."
+ },
+ {
+  "id": "i0138",
+  "negocio": "W4_n5",
+  "turnos_previos_del_cliente": [
+   "¿Dan clases para adultos que nunca han patinado?",
+   "¿Quién da las clases?"
+  ],
+  "cliente": "¿Cuándo empieza el próximo curso?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo la fecha de inicio del próximo curso; le sugiero consultarlo en taquilla, al 2366-4400.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Curso de iniciación de 8 clases, sábados a las 9:00, para personas desde 6 años (también adultos)»."
+ },
+ {
+  "id": "i0154",
+  "negocio": "W4_n5",
+  "turnos_previos_del_cliente": [
+   "¿Dan clases para adultos que nunca han patinado?"
+  ],
+  "cliente": "¿Quién da las clases?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "Andrea Monzón"
+  ],
+  "evidencia": "Instructora principal: Andrea Monzón, ex patinadora de la selección nacional.",
+  "respuesta_ideal": "La instructora principal es Andrea Monzón, ex patinadora de la selección nacional.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Curso de iniciación de 8 clases, sábados a las 9:00, para personas desde 6 años (también adultos)»."
+ },
+ {
+  "id": "i0162",
+  "negocio": "W4_n5",
+  "turnos_previos_del_cliente": [
+   "¿Dan clases para adultos que nunca han patinado?",
+   "¿Quién da las clases?",
+   "¿Cuándo empieza el próximo curso?"
+  ],
+  "cliente": "¿Y una clase privada cuánto sale?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "Q200"
+  ],
+  "evidencia": "Clase privada: 45 minutos, Q200.00 por persona.",
+  "respuesta_ideal": "La clase privada dura 45 minutos y cuesta Q200.00 por persona; se agenda en taquilla.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Clase privada: 45 minutos, Q200.00 por persona»."
+ },
+ {
+  "id": "i0212",
+  "negocio": "W4_n5",
+  "turnos_previos_del_cliente": [
+   "¿Dan clases para adultos que nunca han patinado?",
+   "¿Quién da las clases?"
+  ],
+  "cliente": "¿Cuándo empieza el próximo curso?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo la fecha de inicio del próximo curso; le sugiero consultarlo en taquilla, al 2366-4400.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Curso de iniciación de 8 clases, sábados a las 9:00, para personas»."
+ },
+ {
+  "id": "i0219",
+  "negocio": "W4_n5",
+  "turnos_previos_del_cliente": [
+   "¿Dan clases para adultos que nunca han patinado?"
+  ],
+  "cliente": "¿Quién da las clases?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "Andrea Monzón"
+  ],
+  "evidencia": "Instructora principal: Andrea Monzón, ex patinadora de la selección nacional.",
+  "respuesta_ideal": "La instructora principal es Andrea Monzón, ex patinadora de la selección nacional.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Curso de iniciación de 8 clases, sábados a las 9:00, para personas»."
+ },
+ {
+  "id": "i0226",
+  "negocio": "W4_n5",
+  "turnos_previos_del_cliente": [],
+  "cliente": "¿A qué hora abren el sábado?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "10:00"
+  ],
+  "evidencia": "Sábado\t10:00 – 22:00",
+  "respuesta_ideal": "Los sábados abrimos de 10:00 a 22:00.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Fechas: un fin de semana al mes (sábado 9:00–14:00 y 15:30–19:30; domingo 9:00–14:00)»."
+ },
+ {
+  "id": "i0271",
+  "negocio": "W4_n5",
+  "turnos_previos_del_cliente": [
+   "¿Hace mucho frío adentro?",
+   "Es obligatorio usar guantes? no traje"
+  ],
+  "cliente": "¿Me sellan el ticket del parqueo?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "2 horas gratis"
+  ],
+  "evidencia": "Sellamos su ticket en taquilla: 2 horas gratis con la compra de cualquier sesión.",
+  "respuesta_ideal": "Sí, sellamos su ticket en taquilla: tiene 2 horas gratis con la compra de cualquier sesión.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Sellamos su ticket en taquilla: 2»."
+ },
+ {
+  "id": "i0286",
+  "negocio": "W4_n5",
+  "turnos_previos_del_cliente": [
+   "buenas noches"
+  ],
+  "cliente": "cuanto cuesta patinar?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "Q75"
+  ],
+  "evidencia": "Adultos (12 años en adelante): Q75.00",
+  "respuesta_ideal": "La sesión para adultos cuesta Q75.00 e incluye el alquiler de patines.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Niños menores de 4 años no pueden patinar por seguridad»."
+ },
+ {
+  "id": "i0303",
+  "negocio": "W4_n5",
+  "turnos_previos_del_cliente": [
+   "¿Hace mucho frío adentro?"
+  ],
+  "cliente": "Es obligatorio usar guantes? no traje",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "obligatorio",
+   "Q25"
+  ],
+  "evidencia": "- Guantes: su uso es obligatorio para todos los patinadores. Si no trae, los vendemos a Q25.00 el par.",
+  "respuesta_ideal": "Sí, el uso de guantes es obligatorio para todos; si no trajo, los vendemos a Q25.00 el par.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Guantes: su uso es obligatorio para todos los patinadores. Si no»."
+ },
+ {
+  "id": "i0317",
+  "negocio": "W4_n5",
+  "turnos_previos_del_cliente": [
+   "¿A qué hora abren el sábado?",
+   "¿y el lunes?"
+  ],
+  "cliente": "cuanto dura cada turno de patinaje?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "50 minutos"
+  ],
+  "evidencia": "Las sesiones de patinaje comienzan cada hora en punto y duran 50 minutos; los 10 minutos restantes se usan para pulir el hielo.",
+  "respuesta_ideal": "Cada sesión dura 50 minutos y empieza cada hora en punto; los otros 10 minutos se usan para pulir el hielo.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Las sesiones de patinaje comienzan cada hora en punto y duran 50»."
+ },
+ {
+  "id": "i0357",
+  "negocio": "W4_n5",
+  "turnos_previos_del_cliente": [
+   "¿A qué hora abren el sábado?"
+  ],
+  "cliente": "¿y el lunes?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "Cerrado"
+  ],
+  "evidencia": "Lunes\tCerrado (mantenimiento del hielo)",
+  "respuesta_ideal": "Lunes: Cerrado, por mantenimiento del hielo.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Lunes: Martes a jueves; Cerrado (mantenimiento del hielo): 14:00 – 21:00»."
+ }
+]

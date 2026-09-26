@@ -1,0 +1,128 @@
+# G-64 — unir renglones partidos usando el ancho del propio documento
+
+Fecha: 2026-09-26. Preregistro escrito **antes** de medir en desarrollo y antes de tocar el motor. Base: `freeze-G-63` (la unión de renglones de G-63, que no entró). Pedido del usuario: subir la ganancia de G-63 con texto partido sin trampas.
+
+## Fallo medido
+
+G-63 unía un renglón con el siguiente solo si el siguiente empezaba en minúscula o con una cifra y el primero terminaba en letra o cifra. En su banco congelado, con texto partido, dio +4,4 puntos frente a `estable-G-18` (pedía +5).
+
+En desarrollo (bancos de G-59 a G-62, partidos a 70 columnas), con texto partido y unido acierta 366 de 1116, y con el texto original 403; esos 37 útiles son lo que la unión todavía no recupera. **No se mira el banco de G-63**: está gastado.
+
+## Variantes candidatas (declaradas antes de medir)
+
+Todas son reglas de forma del texto, sin listas de palabras. Ninguna ajusta números con el banco.
+
+- **V0 (G-63):** la regla de G-63, tal cual.
+- **V1 (coma):** V0, pero el renglón también continúa si termina en coma.
+- **V2 (ancho del documento):** se estima el ancho `W` del documento como la longitud del renglón más largo. Un renglón «se cortó por el ancho» si la primera palabra del siguiente no cabía: `largo(renglón) + 1 + largo(primera palabra del siguiente) > W`. El documento «viene partido» si al menos 4 renglones y al menos el 20 % de sus renglones con texto cumplen esa prueba. En un documento partido, un renglón cortado por el ancho se une con el siguiente, sin mirar mayúsculas ni puntuación. Las condiciones de V0 que no dependen de las letras se mantienen: el siguiente no es elemento de lista, ninguno es fila de tabla, el renglón no parece título. En un documento no partido se aplica V0.
+- **V3:** V2 con la coma de V1 para los documentos no partidos.
+
+## Cómo se elige (desarrollo)
+
+- Material: bancos de G-59 a G-62 (1116 preguntas directas y de sí/no), conteo automático por claves, base de `estable-G-18`.
+- Presentaciones: partido a 70 columnas (principal), partido a 50 y a 90 (para que no se ajuste a un ancho) y tal cual.
+- Se elige la variante con más útiles a 70 entre las que cumplen:
+  1. a 50 y a 90, no menos útiles que V0;
+  2. tal cual, respuestas idénticas a `estable-G-18` en ≥ 98 % de los turnos;
+  3. citas sin dato no más que V0 + 2 puntos.
+- Confirmación en otro material de desarrollo: bancos de G-57, G-58 y desarrollo, partidos a 70. La variante elegida no debe quedar por debajo de V0 ahí.
+- **Si ninguna variante supera a V0 a 70 por al menos 10 útiles (0,9 puntos) en desarrollo, se para aquí y no se gasta en banco nuevo.**
+
+## Medida (si pasa desarrollo)
+
+Congelado `freeze-G-64`; semilla de su huella. Banco congelado nuevo de 24 negocios de sectores distintos de los 192 anteriores, redactores nuevos con worktree y el encargo neutral de siempre, en git antes de ejecutar. Presentación partida a 70 columnas, como en G-63; a 55 columnas solo como diagnóstico automático.
+
+**Juez ciego** (8 jueces nuevos, Opus, encargo de G-58): G-64 y `estable-G-18`, texto partido y tal cual.
+
+**Puertas:** las mismas de G-63, sin cambios:
+1. útiles en directa + sí/no con texto partido ≥ `estable-G-18` partido + 5 puntos;
+2. texto tal cual: respuestas idénticas a `estable-G-18` en ≥ 98 % de los turnos y útiles no menores;
+3. citas engañosas ≤ 15 % y no más de 2 puntos por encima de `estable-G-18`, en cada presentación;
+4. 0 inventadas;
+5. sin respuesta bien llevadas ≥ 90 %;
+6. eco 0;
+7. controles: sin unir (= `estable-G-18` partido), reinicio 100 %, otro negocio (útiles ≤ 5 %, «No lo sé» ≥ 80 %), renombrado estricto: se informa. En G-63 dio 89 %. Si la causa es que el renombrado cambia dónde se parte el texto, se mide también renombrando **antes** de partir, y ahí se pide ≥ 95 %.
+8. Pruebas generales sin retroceso: MFAQ normalizado no menor, SQuAD-es ≥ 0,8013, conversación 158, regresión sin fallos, latencia.
+
+**Tag estable:** si pasa, con auditoría 5.10.
+
+## Presupuesto
+
+Desarrollo ≤ 30 min de CPU, hasta 4 procesos, con al menos 2 GB de RAM libres. Banco ≤ 40 min; juez ≤ 1 h.
+
+## Resultado en desarrollo (2026-09-26; conteo automático; `g64_dev.py` en el cuaderno de la sesión)
+
+Bancos de G-59 a G-62 (1116 preguntas directas y de sí/no). Con el texto original, 403 útiles.
+
+| Variante | Partido a 70 | a 50 | a 90 | Tal cual (idénticas a `estable-G-18`) | Citas sin dato, a 70 |
+|---|---|---|---|---|---|
+| V0 (G-63) | 366 | 265 | 373 | 2558/2558 | 103/801 (12,9 %) |
+| V1 (coma) | 372 | 277 | 376 | 2558/2558 | 105/811 (12,9 %) |
+| **V2 (ancho)** | **393** | **317** | **402** | 2558/2558 | 109/817 (13,3 %) |
+| V3 (V2 + coma) | 393 | 317 | 402 | 2558/2558 | 109/817 (13,3 %) |
+
+Confirmación en los bancos de G-57, G-58 y desarrollo, a 70 (819 preguntas): V0 255, V1 247, V2 255 y V3 255. V2 no queda por debajo de V0. Allí casi no cambia nada, porque esos textos tienen pocos renglones largos y la prueba de «viene partido» no se activa.
+
+**Elegida: V2.** Empata con V3 en todo. La regla de desempate no se había escrito, así que se declara aquí: se elige la más simple, porque la coma de V3 solo actúa en documentos no partidos, y ahí V1 bajó de 255 a 247. V2 supera a V0 a 70 por 27 útiles (pedía ≥ 10) y cumple las tres condiciones: a 50 y a 90 no pierde, tal cual es idéntica y las citas sin dato suben 0,4 puntos. **Pasa desarrollo.**
+
+## Precisión del control de renombrado (antes de tener el banco)
+
+El evaluador de G-63 ya renombraba **antes** de partir. El 89 % de G-63 incluye, por tanto, que los nombres nuevos cambian dónde se corta cada renglón. Para separar las dos cosas, se mide la coincidencia de decisión y línea con el turno sin renombrar:
+- **G-64, texto tal cual:** ≥ 95 %. Esta es la puerta.
+- **G-64, texto partido:** no más de 2 puntos por debajo de `estable-G-18` con el texto partido y renombrado igual. Así se ve si el defecto es de la unión o del texto partido.
+
+Evaluador: `experiments/g64_evaluar.py`. Añade a 55 columnas (diagnóstico), el renombrado tal cual y `estable-G-18` renombrado y partido.
+
+## Resultado preliminar (2026-09-26; conteo automático; **sin juez todavía**, no decide puertas)
+
+Banco congelado de 24 negocios nuevos y 585 turnos (`results_v3/kiosco/congelado_g64`).
+
+| Presentación | G-64 | `estable-G-18` |
+|---|---|---|
+| Tal cual: útiles en directa + sí/no | 90/266 | 90/266 (585/585 respuestas idénticas) |
+| Partido a 70 | **90/266** | 73/266 |
+| Partido a 55 (diagnóstico) | 84/266 | 60/266 |
+
+**Controles automáticos:**
+- sin unir: respuestas idénticas a `estable-G-18` partido en 585/585;
+- reinicio: 585/585;
+- otro negocio: 516/585 «No lo sé»;
+- renombrado estricto (respuestas iguales tras deshacer el renombrado, la medida de G-62): tal cual 572/585 (97,8 %); partido 568/585 (97,1 %), frente a 558/585 (95,4 %) de `estable-G-18` partido.
+
+**Pruebas generales (`freeze-G-64`):**
+- MFAQ normalizado: 57,31 %;
+- SQuAD-es: 0,8013;
+- conversación: 158;
+- regresión: 669/6/0;
+- latencia intercalada con `estable-G-18`, 3 rondas × 3 semillas ([resumen](../results_v3/latency_rounds_g19/resumen.json)): p95 entre −2,5 % y +2,9 %, RAM 220 MB, límites pasan.
+
+**Juez ciego pendiente:** los 8 jueces se cortaron por el límite de sesión de la API sin dejar veredictos. Para retomar, se preparan de nuevo con la misma semilla (la preparación es determinista):
+`JUECES_SISTEMAS=partido,g18_partido,tratamiento,otro_negocio JUECES_OTROS=g18,sin_unir_partido,reinicio_partido JUECES_SEMILLA=$(git rev-parse freeze-G-64:leobot) python3 -m experiments.g58_juez preparar <eval64> results_v3/kiosco/congelado_g64 <jueces64> 8`
+El directorio `<eval64>` es `results_v3/kiosco/evaluacion_g64`. Se lanzan 8 jueces Opus con el encargo de G-58 y se reúne con `g58_juez reunir`, con las mismas variables.
+
+## Resultado final (2026-09-26; juez ciego de 8 jueces nuevos, Opus; relanzados tras el corte, con las mismas carpetas)
+
+| Puerta | Umbral | G-64 | `estable-G-18` | ¿Pasa? |
+|---|---|---|---|---|
+| 1. Útiles en directa + sí/no, texto partido | ≥ `estable-G-18` + 5 puntos | **102/266 (38,3 %)** | 95/266 (35,7 %) | **no (+2,6)** |
+| 2. Texto tal cual | idénticas ≥ 98 %, útiles no menores | 585/585; 102/266 | 102/266 | sí |
+| 3. Citas engañosas | ≤ 15 % y ≤ +2 puntos | partido **4,3 %**; tal cual 4,4 % | partido 7,1 %; tal cual 4,4 % | sí (partido −2,8) |
+| 4. Inventadas | 0 | 0 | 0 | sí |
+| 5. Sin respuesta bien llevadas | ≥ 90 % | 99,4 % | 100 %; 99,4 % | sí |
+| 6. Eco de datos | 0 | 0 | 0 | sí |
+| 7. Controles | — | sin unir = `estable-G-18` partido (585/585); reinicio 585/585; otro negocio 0 útiles y 516/585 «No lo sé»; renombrado tal cual 97,8 % | — | sí |
+| 8. Pruebas generales | sin retroceso | ver resultado preliminar | — | sí |
+
+**En los turnos pareados** con texto partido, G-64 gana 15 y pierde 8 frente a `estable-G-18`. Evita 5 citas engañosas y crea 1 nueva.
+
+**Techo del banco:** con el texto partido, G-64 contesta exactamente igual de bien que con el texto limpio: 102 frente a 102, sin ninguna pregunta que acierte en uno y falle en el otro. En este banco, **ninguna forma de unir renglones podía ganar más de +2,6 puntos**. El juez considera útiles muchas citas cortadas de `estable-G-18` porque el renglón cortado aún lleva el dato. El daño del texto partido se ve sobre todo en las citas engañosas: 7,1 % frente a 4,4 % con el texto limpio. G-64 lo elimina (4,3 %).
+
+**Decisión (reglas 5.1 y 5.9):** la puerta 1 no pasa, así que **G-64 no entra** a main por sus propias reglas. La meta no se mueve. Queda en la rama `G-64` y en `freeze-G-64`. Solo el usuario puede decidir una excepción.
+
+**Lección de medida:** la puerta 1 medía útiles y fijó +5 sin calcular antes el techo, que es lo que se gana con el texto limpio. Un preregistro futuro de este tipo debe fijar la vara respecto a ese techo, antes de medir.
+
+## Excepción decidida por el usuario (2026-09-26)
+
+El usuario, en su ventana, decidió aceptar G-64 aunque no pasa la puerta 1: «si acepta G-64». **Es una excepción suya, no un cambio de la vara.** La puerta 1 sigue constando como no superada. La razón que se le presentó: en este banco el máximo posible era +2,6 y G-64 lo alcanza. Además, con texto limpio no cambia nada, las engañosas bajan y todas las demás puertas y pruebas generales pasan.
+
+Antes del tag `estable-G-19`: auditoría 5.10 y mediciones de la sección 7.

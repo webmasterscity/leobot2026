@@ -1,0 +1,126 @@
+[
+  [
+    {
+      "cliente": "Hola, ¿a qué hora vuelan los globos?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["05:30 AM", "amanecer"],
+      "evidencia": "Únicamente salidas al amanecer: 05:30 AM",
+      "respuesta_ideal": "Únicamente volamos al amanecer, a las 05:30 AM. Es la mejor hora para las vistas y el clima."
+    },
+    {
+      "cliente": "¿Cuánto dura el vuelo?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["1 hora aproximadamente"],
+      "evidencia": "Duración del vuelo: 1 hora aproximadamente",
+      "respuesta_ideal": "El vuelo dura aproximadamente 1 hora, pero la actividad total con transporte, briefing y desayuno toma 4 horas."
+    },
+    {
+      "cliente": "¿Cuál es el precio para una persona?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["$1.899 MXN por persona"],
+      "evidencia": "Vuelo Individual - Precio: $1.899 MXN por persona",
+      "respuesta_ideal": "El vuelo individual cuesta $1.899 MXN por persona e incluye transporte desde tu hotel, casco, arnés, desayuno champagne y certificado."
+    }
+  ],
+  [
+    {
+      "cliente": "Vamos a ser 14 personas. ¿Hay descuento para grupo?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["10% en grupos mayores a 12 personas", "$1.699 MXN"],
+      "evidencia": "Descuentos para empresas: 10% en grupos mayores a 12 personas | Vuelo Corporativo: $1.699 MXN por persona",
+      "respuesta_ideal": "Excelente, como son 14 personas tienen 10% de descuento. El precio para grupos es $1.699 MXN por persona, incluyendo todo lo que tiene el vuelo individual."
+    },
+    {
+      "cliente": "¿Eso es ya con el descuento?",
+      "tipo": "seguimiento",
+      "accion": "responder",
+      "claves": ["$1.699 MXN", "10%"],
+      "evidencia": "Descuentos para empresas: 10% en grupos mayores a 12 personas",
+      "respuesta_ideal": "Sí, $1.699 MXN ya es el precio con descuento aplicado para grupos de 12 o más personas."
+    }
+  ],
+  [
+    {
+      "cliente": "¿Cuál es la edad mínima para volar?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["Edad mínima: 7 años"],
+      "evidencia": "Edad mínima: 7 años",
+      "respuesta_ideal": "La edad mínima para volar es 7 años. Niños y adultos pagan lo mismo."
+    },
+    {
+      "cliente": "Mi papá tiene 82 años, ¿puede volar?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["Edad máxima: sin límite (debe estar en buen estado de salud)"],
+      "evidencia": "Edad máxima: sin límite (debe estar en buen estado de salud)",
+      "respuesta_ideal": "Sí puede, no hay límite de edad. Lo importante es que esté en buen estado de salud. Si tiene alguna condición cardíaca o de tensión, consulta con el médico primero."
+    },
+    {
+      "cliente": "¿Hay restricción de peso?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["Peso mínimo: 40 kg", "Peso máximo: 120 kg"],
+      "evidencia": "Peso mínimo: 40 kg | Peso máximo: 120 kg por seguridad del globo",
+      "respuesta_ideal": "Sí, el peso debe estar entre 40 y 120 kg. Es por seguridad del globo, no por discriminación. ¿Hay algo más que necesites saber?"
+    }
+  ],
+  [
+    {
+      "cliente": "¿Qué ocurre si al día siguiente llueve?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No sé qué pase mañana, pero si llueve el día de tu vuelo, se reprograma sin costo adicional o te devolvemos el dinero. La confirmación se hace la noche anterior según el pronóstico."
+    },
+    {
+      "cliente": "Mi esposa está embarazada, ¿puede volar?",
+      "tipo": "instruccion",
+      "accion": "derivar",
+      "claves": ["Mujeres embarazadas: no se permite volar"],
+      "evidencia": "Mujeres embarazadas: no se permite volar",
+      "respuesta_ideal": "Lamentablemente, mujeres embarazadas no pueden volar por seguridad. Es una restricción por protección del bebé. Sugiero que espere a después del parto para tener esta experiencia con nosotros."
+    }
+  ],
+  [
+    {
+      "cliente": "¿Puedo llevar mi teléfono para grabar?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["Se permite usar drones ni otros equipos sin autorización"],
+      "evidencia": "¿Puedo grabar video? Sí, pero no se permite usar drones ni otros equipos sin autorización.",
+      "respuesta_ideal": "Sí, puedes grabar con tu teléfono o cámara. Lo que no permitimos es usar drones sin autorización previa. Si quieres fotos profesionales, podemos arreglartelo."
+    },
+    {
+      "cliente": "¿Cuánto cuesta la foto profesional?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "La foto profesional viene incluida en el paquete de Vuelo en Pareja ($3.498 MXN para dos personas). Si quieres fotos profesionales solo, consulta directamente al +52 594 956 0847."
+    }
+  ],
+  [
+    {
+      "cliente": "¿Tengo que pagar todo ahora?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["50% por anticipado", "50% el día del vuelo"],
+      "evidencia": "Pago: 50% por anticipado y 50% el día del vuelo",
+      "respuesta_ideal": "No, pagas 50% al hacer la reserva y 50% el día del vuelo. Puedes pagar en línea, transferencia o efectivo."
+    },
+    {
+      "cliente": "¿Puedo cancelar si me arrepiento?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["hasta 48 horas antes sin penalidad", "después de ese plazo, se pierde el 50% del depósito", "No reembolsamos por cancelación personal"],
+      "evidencia": "Cancelaciones: hasta 48 horas antes sin penalidad; después de ese plazo, se pierda el 50% del depósito. No reembolsamos por cancelación personal",
+      "respuesta_ideal": "Puedes cancelar sin penalidad hasta 48 horas antes. Si cancelas después, pierdes el 50% que pagaste por adelantado. Cancelaciones por clima no tienen penalidad."
+    }
+  ]
+]
