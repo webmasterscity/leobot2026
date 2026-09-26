@@ -198,7 +198,8 @@ def main():
     off = tuple(x for x in (args[args.index('--apagar') + 1].split(',') if '--apagar' in args else []) if x)
     positional = [a for i, a in enumerate(args) if not a.startswith('--') and (i == 0 or args[i - 1] not in ('--sistema', '--apagar'))]
     base, out, folders = Path(positional[0]), Path(positional[1]), positional[2:]
-    rows = run(base, folders, system, off, other='--otro-negocio' in flags, restart='--reinicio' in flags)
+    rows = run(base, folders, system, off, other='--otro-negocio' in flags, restart='--reinicio' in flags,
+               rename='--renombrar' in flags, strict='--estricto' in flags)
     report = {'sistema': system, 'apagados': list(off), 'base_sha256_16': hashlib.sha256(base.read_bytes()).hexdigest()[:16],
               'carpetas': folders, **totals(rows)}
     if '--respuestas' in flags and '--ciega' not in flags:
