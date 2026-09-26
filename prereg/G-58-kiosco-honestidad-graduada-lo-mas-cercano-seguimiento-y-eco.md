@@ -132,3 +132,27 @@ Implementación ≤ 1 h; banco y juez ≤ 1 h; medidas generales ≤ 30 min. Has
 - ecos 0.
 
 Pasa las mismas puertas. La base no cambia (`1c0db7a6`): la tabla de lo más cercano ya se contó sin seguimiento.
+
+## Verificación independiente 5.10 (auditor nuevo, Opus, copia aislada; [informe](../results_v3/auditoria_g58r.md))
+
+**Confirmado:**
+- orden en git;
+- base idéntica (`1c0db7a6…`), sin texto de los bancos, con la tabla contada solo en el banco de G-57;
+- respuestas de `freeze-G-58r` idénticas a `sin_seguimiento` con `PYTHONHASHSEED` 0 y 1; reinicio 630/630;
+- puertas del juez reproducidas byte a byte; el auditor coincide en 29 de 30 veredictos revisados a mano;
+- regresión 661/6/0;
+- sin hardcodeo ni filtraciones; la frase de aviso es voz del motor aceptable.
+
+**Objeciones, declaradas aquí:**
+1. **Medidas generales de `freeze-G-58r`:**
+   - latencia intercalada con `estable-G-16`: p95 entre −1,5 % y +1,0 %, RAM 220 MB (commit 196727b);
+   - tablero MLQA fresco 0/20 y sonda 0/4;
+   - SQuAD-es no se volvió a correr: `dialogue.py` y `reading.py` no cambiaron desde `freeze-G-57` (la diferencia en `leobot/` entre `freeze-G-57` y `freeze-G-58r` está solo en `context.py`), así que vale el F1 de 0,2485.
+2. **Con el texto de otro negocio, el 28,8 % de las citas de G-58r engañan.** El control pasa por sus umbrales (0 útiles y 84 % de «No lo sé»), pero cuando cita, cita cosas que confunden.
+3. **El eco todavía repite datos personales breves** («Me llamo Ana» → «Me llamo Ana.»). La puerta 5 solo mide turnos con cifras o de más de 4 palabras.
+4. **La tabla de lo más cercano es menos útil de lo anunciado:** el preregistro dice 74 %, la tabla contada da 67 % y, fuera de muestra, 59,9 %. Aun así supera el umbral del 50 %.
+5. **Lejos de un kiosco real:**
+   - el 71,5 % de las preguntas con respuesta acaban en «No lo sé»;
+   - todo lo útil llega con duda;
+   - hay citas que son solo un título (G-59 lo ataca) o una respuesta sin su pregunta;
+   - una tabla sin encabezado mezcla precios.
