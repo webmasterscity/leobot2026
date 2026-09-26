@@ -138,3 +138,28 @@ El 68,3 % de las citas de G-62 son útiles, frente al 67,1 % de G-58r. Contestan
 - Con el documento de otro negocio, las citas engañan más de la mitad de las veces.
 
 **G-62 supera sus puertas.** Queda pendiente la auditoría 5.10 antes del tag.
+
+## Verificación independiente 5.10 (auditor nuevo, Opus, copia aislada; [informe](../results_v3/auditoria_g62.md))
+
+**Confirmado:**
+- **Respuestas:** las de los 11 sistemas × 647 turnos salen idénticas a las guardadas, con `PYTHONHASHSEED` 0 y 1 y con una base reconstruida.
+- **Puertas del juez**, reproducidas: 99/276 frente a 69/276, engañosas 2,5 %, 0 inventadas, sin respuesta 99,4 %.
+- **La ganancia es real:** en los turnos pareados, G-62 gana 36 y pierde 6 frente a G-58r. Remuestreando por negocio, la diferencia va de +5,9 a +16,4 puntos.
+- **Pruebas generales:** MFAQ 57,24 %; regresión 667/6/0.
+- **Orden en git:** el banco entró después del congelado y antes de la evaluación.
+- **Sin trampas:**
+  - no hay listas de palabras ni reglas por negocio o por pregunta;
+  - el motor no lee bancos;
+  - la confianza no usa el banco de G-62.
+- **Juez:** el auditor coincide en 29 de 30 veredictos revisados a mano.
+
+**Objeciones, declaradas aquí:**
+1. **La puerta de MFAQ no es una medida limpia.** El alcance se eligió midiendo MFAQ `valid`, el mismo conjunto de la puerta, y la variante elegida da justo el umbral. La diferencia que hundió a G-61 y deja pasar a G-62 son unas 9 preguntas de 2687, dentro del ruido. MFAQ `valid` queda desde ahora como diagnóstico ya usado; hace falta otra prueba general de lectura limpia.
+2. **Aporte propio del alcance nuevo.** Los +10,9 puntos son de todos los cambios de G-59 a G-62 juntos. Frente al alcance de G-61, el de G-62 da 99 frente a 103 (2 turnos ganados y 6 perdidos, no significativo). Pasa porque la regla de retención lo compara con «sin herencia».
+3. **La base no se reconstruye byte a byte** con las órdenes dadas (`589facc1…` frente a `6c3c11b0…`). Solo difieren metadatos que el motor no lee (`cells_mfaq`, `source.closest`), y ninguna respuesta cambia.
+4. **El preregistro precede al código solo en el papel** (57 segundos). El diseño final y sus cifras de desarrollo ya existían antes, como dice el propio preregistro.
+5. **«Sin respuesta bien llevadas 99,4 %» mide que no inventa, no que siga las instrucciones.** En 50 de los 58 turnos en que el negocio pide derivar a una persona, el kiosco solo dice «No lo sé», sin el contacto que dan las instrucciones.
+6. **Menores:**
+   - `answer` tarda el doble (p95 0,26 ms), muy por debajo de 10 ms;
+   - la regla depende del formato de los títulos;
+   - el banco lo escribieron modelos de lenguaje, no personas.
