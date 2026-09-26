@@ -1,0 +1,194 @@
+[
+  {
+    "cliente": "Hola, quisiera una consulta con nutricionista. ¿Cuánto cuesta?",
+    "tipo": "directa",
+    "accion": "responder",
+    "claves": ["$60 USD", "60 minutos"],
+    "evidencia": "Consulta inicial\nTarifa: $60 USD\nDuración: 60 minutos",
+    "respuesta_ideal": "La consulta inicial es $60 USD y dura 60 minutos. Incluye plan personalizado y análisis completo."
+  },
+  {
+    "cliente": "¿Qué incluye la primera consulta?",
+    "tipo": "directa",
+    "accion": "responder",
+    "claves": ["Historia clínica", "Análisis de hábitos", "Medidas antropométricas", "Plan nutricional personalizado"],
+    "evidencia": "Incluye:\n- Historia clínica completa\n- Análisis de hábitos alimentarios\n- Toma de medidas antropométricas\n- Plan nutricional personalizado",
+    "respuesta_ideal": "Incluye historia clínica, análisis de tus hábitos, medidas corporales, cálculo del IMC, y un plan personalizado escrito."
+  },
+  {
+    "cliente": "¿Cuál es el horario?",
+    "tipo": "directa",
+    "accion": "responder",
+    "claves": ["lunes a viernes: 08:00 a 18:00", "sábados: 09:00 a 13:00"],
+    "evidencia": "Lunes a viernes: 08:00 a 18:00 h\nSábados: 09:00 a 13:00 h\nDomingos y feriados: cerrado",
+    "respuesta_ideal": "De lunes a viernes 08:00 a 18:00, sábados 09:00 a 13:00. Domingos cerramos."
+  },
+  {
+    "cliente": "¿Hacen consultas de seguimiento?",
+    "tipo": "si_no",
+    "accion": "responder",
+    "claves": ["primera revisión a los 15 días: $40 USD", "posteriores, cada 30 días: $35 USD"],
+    "evidencia": "Consultas de seguimiento\nTarifa: $40 USD (primera revisión a los 15 días)\nTarifa: $35 USD (posteriores, cada 30 días)",
+    "respuesta_ideal": "Sí. La primera revisión a los 15 días cuesta $40 USD, y las posteriores cada 30 días salen $35 USD."
+  },
+  {
+    "cliente": "Necesito perder peso. ¿Hay un programa?",
+    "tipo": "directa",
+    "accion": "responder",
+    "claves": ["Pérdida de peso: $250 USD", "3 meses", "4 consultas"],
+    "evidencia": "Programas especializados:\n* Pérdida de peso: $250 USD (3 meses, 4 consultas)",
+    "respuesta_ideal": "Sí, tenemos un programa de pérdida de peso: $250 USD por 3 meses, con 4 consultas incluidas."
+  },
+  {
+    "cliente": "¿Soy diabético. ¿Hay algo para eso?",
+    "tipo": "directa",
+    "accion": "responder",
+    "claves": ["Manejo de diabetes: $220 USD", "3 meses", "4 consultas"],
+    "evidencia": "* Manejo de diabetes: $220 USD (3 meses, 4 consultas)",
+    "respuesta_ideal": "Sí, hay programa de manejo de diabetes: $220 USD por 3 meses, con 4 consultas."
+  },
+  {
+    "cliente": "¿Dónde quedan?",
+    "tipo": "directa",
+    "accion": "responder",
+    "claves": ["Calle 9 No. 547", "Sector Urdenor", "Guayaquil"],
+    "evidencia": "Calle 9 No. 547 entre Av. 10 y 11, Sector Urdenor, Guayaquil.",
+    "respuesta_ideal": "Calle 9 No. 547 entre Av. 10 y 11, Sector Urdenor."
+  },
+  {
+    "cliente": "¿Se puede pagar con tarjeta?",
+    "tipo": "si_no",
+    "accion": "responder",
+    "claves": ["Tarjeta de débito y crédito", "Visa, Mastercard, American Express"],
+    "evidencia": "Tarjeta de débito y crédito (Visa, Mastercard, American Express).",
+    "respuesta_ideal": "Sí, aceptamos visa, Mastercard y American Express, además de efectivo."
+  },
+  {
+    "cliente": "¿Cuánto cuesta el análisis de composición corporal?",
+    "tipo": "directa",
+    "accion": "responder",
+    "claves": ["bioimpedancia", "$15 USD"],
+    "evidencia": "Análisis de composición corporal (bioimpedancia): $15 USD (standalone o con consulta)",
+    "respuesta_ideal": "El análisis de composición corporal (bioimpedancia) sale $15 USD, puede ser independiente o sumado a una consulta."
+  },
+  {
+    "cliente": "Quiero cancelar mi cita de mañana. ¿Hay costo?",
+    "tipo": "directa",
+    "accion": "responder",
+    "claves": ["menos de 48 horas", "50 % de la tarifa"],
+    "evidencia": "Cancelación con menos de 48 horas: 50 % de la tarifa.",
+    "respuesta_ideal": "Como es menos de 48 horas, se cobra el 50 % de la tarifa de la consulta."
+  },
+  {
+    "cliente": "¿Puedo cancelar con más tiempo?",
+    "tipo": "seguimiento",
+    "accion": "responder",
+    "claves": ["48 horas de anticipación", "sin costo"],
+    "evidencia": "Cancelación con 48 horas de anticipación: sin costo.",
+    "respuesta_ideal": "Sí, si cancelas con 48 horas de anticipación no hay costo."
+  },
+  {
+    "cliente": "¿Qué nutricionistas atienden?",
+    "tipo": "directa",
+    "accion": "responder",
+    "claves": ["Patricia Mejía", "Daniel Ruiz", "nutrición clínica y deportiva", "nutrición pediátrica"],
+    "evidencia": "Lic. Patricia Mejía Cerón — Nutricionista. Especialización en nutrición clínica y deportiva. 15 años de experiencia.\nLic. Daniel Ruiz Torres — Nutricionista. Especialización en patología y nutrición pediátrica. 8 años de experiencia.",
+    "respuesta_ideal": "Tenemos a Patricia Mejía (nutrición clínica y deportiva, 15 años) y Daniel Ruiz (nutrición pediátrica, 8 años)."
+  },
+  {
+    "cliente": "Estoy embarazada. ¿Tienen programa?",
+    "tipo": "directa",
+    "accion": "responder",
+    "claves": ["Nutrición en embarazo y lactancia: $200 USD", "3 meses", "3 consultas"],
+    "evidencia": "* Nutrición en embarazo y lactancia: $200 USD (3 meses, 3 consultas)",
+    "respuesta_ideal": "Sí, hay programa especial: $200 USD por 3 meses, con 3 consultas para embarazo y lactancia."
+  },
+  {
+    "cliente": "¿Hacen seguimiento por email?",
+    "tipo": "si_no",
+    "accion": "responder",
+    "claves": ["Seguimiento online por correo entre citas: incluido sin costo"],
+    "evidencia": "Seguimiento online por correo entre citas: incluido sin costo",
+    "respuesta_ideal": "Sí, incluyo seguimiento por correo entre citas sin costo adicional."
+  },
+  {
+    "cliente": "¿Qué necesito traer en la primera cita?",
+    "tipo": "directa",
+    "accion": "responder",
+    "claves": ["documento de identidad válido", "Si hay condiciones médicas preexistentes", "últimos análisis clínicos"],
+    "evidencia": "Se solicita: documento de identidad válido, número de teléfono, correo electrónico. Si hay condiciones médicas preexistentes (diabetes, hipertensión, etc.), traer últimos análisis clínicos si los tienes.",
+    "respuesta_ideal": "Cédula, teléfono y email. Si tienes condiciones médicas (diabetes, hipertensión), trae los últimos análisis clínicos si tienes."
+  },
+  {
+    "cliente": "¿Hacen programas para deportistas?",
+    "tipo": "directa",
+    "accion": "responder",
+    "claves": ["Nutrición deportiva: $280 USD", "3 meses", "4 consultas"],
+    "evidencia": "* Nutrición deportiva: $280 USD (3 meses, 4 consultas)",
+    "respuesta_ideal": "Sí, programa de nutrición deportiva: $280 USD por 3 meses, con 4 consultas."
+  },
+  {
+    "cliente": "Tengo síndrome del colon irritable. ¿Qué me recomiendas?",
+    "tipo": "sin_respuesta",
+    "accion": "derivar",
+    "claves": [],
+    "evidencia": null,
+    "respuesta_ideal": "Tenemos un programa especializado (FODMAP) para eso, pero la recomendación exacta te la hace el nutricionista en la consulta. Agendamos."
+  },
+  {
+    "cliente": "¿Hacen asesoramiento en el supermercado?",
+    "tipo": "si_no",
+    "accion": "responder",
+    "claves": ["Asesoramiento de compra en supermercado (presencial): $25 USD"],
+    "evidencia": "Asesoramiento de compra en supermercado (presencial): $25 USD",
+    "respuesta_ideal": "Sí, asesoramiento de compra en el supermercado por $25 USD."
+  },
+  {
+    "cliente": "¿Se puede agendar por teléfono?",
+    "tipo": "directa",
+    "accion": "responder",
+    "claves": ["+593 4 238-4721", "+593 99 412-5847"],
+    "evidencia": "Teléfono: +593 4 238-4721\nCelular: +593 99 412-5847",
+    "respuesta_ideal": "Sí, puedes llamar al +593 4 238-4721 o al celular +593 99 412-5847 para agendar."
+  },
+  {
+    "cliente": "¿Atienden a niños?",
+    "tipo": "directa",
+    "accion": "responder",
+    "claves": ["Daniel Ruiz", "nutrición pediátrica"],
+    "evidencia": "Lic. Daniel Ruiz Torres — Nutricionista. Especialización en patología y nutrición pediátrica.",
+    "respuesta_ideal": "Sí, Daniel Ruiz es especialista en nutrición pediátrica. Atiende a niños."
+  },
+  {
+    "cliente": "¿Hay estacionamiento?",
+    "tipo": "si_no",
+    "accion": "responder",
+    "claves": ["Estacionamiento disponible en la calle", "edificio contiguo", "$1,50 USD/hora"],
+    "evidencia": "Estacionamiento disponible en la calle y edificio contiguo ($1,50 USD/hora).",
+    "respuesta_ideal": "Sí, hay estacionamiento en la calle y edificio contiguo a $1,50 USD la hora."
+  },
+  {
+    "cliente": "¿Ustedes recetan medicinas?",
+    "tipo": "sin_respuesta",
+    "accion": "abstenerse",
+    "claves": [],
+    "evidencia": null,
+    "respuesta_ideal": "No, somos nutricionistas. Si necesitas medicinas, debe verlas un médico. Para casos complejos coordinamos con médicos."
+  },
+  {
+    "cliente": "Tengo celiaquía. ¿Puede aterderme?",
+    "tipo": "directa",
+    "accion": "responder",
+    "claves": ["carta de referencia médica"],
+    "evidencia": "Para condiciones complejas (celiaquía, alergias severas, comorbilidades múltiples), solicitamos carta de referencia médica.",
+    "respuesta_ideal": "Sí podemos, pero te pedimos que traigas una carta de referencia de tu médico. Es por la complejidad del caso."
+  },
+  {
+    "cliente": "¿Escriben recetas personalizadas?",
+    "tipo": "si_no",
+    "accion": "responder",
+    "claves": ["Recetas personalizadas: $10 USD por receta", "mínimo 5"],
+    "evidencia": "Recetas personalizadas: $10 USD por receta (mínimo 5)",
+    "respuesta_ideal": "Sí, $10 USD por receta, con mínimo de 5 recetas."
+  }
+]

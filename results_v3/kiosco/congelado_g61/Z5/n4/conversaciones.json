@@ -1,0 +1,233 @@
+[
+  [
+    {
+      "cliente": "¿Cuánto cobran por persona en un coffee break sencillo?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": [
+        "$95"
+      ],
+      "evidencia": "Coffee break sencillo: $95 MXN",
+      "respuesta_ideal": "El coffee break sencillo cuesta $95 MXN por persona."
+    },
+    {
+      "cliente": "¿Cuál es el mínimo de personas para contratarlos?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": [
+        "15 personas"
+      ],
+      "evidencia": "MENÚS Y PRECIOS POR PERSONA (mínimo 15 personas)",
+      "respuesta_ideal": "El mínimo para contratar el servicio es de 15 personas."
+    },
+    {
+      "cliente": "¿Y ese precio incluye mesero?",
+      "tipo": "seguimiento",
+      "accion": "responder",
+      "claves": [
+        "opcional",
+        "$500"
+      ],
+      "evidencia": "En los coffee breaks el servicio de meseros es opcional, con un costo de $500 por mesero.",
+      "respuesta_ideal": "No, en los coffee breaks el mesero es opcional y tiene un costo aparte de $500."
+    },
+    {
+      "cliente": "¿Rentan proyector o pantalla para la presentación?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No tengo ese servicio en la información que manejo; nosotros nos enfocamos en alimentos y bebidas."
+    },
+    {
+      "cliente": "Ok, gracias, lo voy a platicar con mi jefe",
+      "tipo": "charla",
+      "accion": "charla",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "Con gusto, quedamos atentos a lo que decidan."
+    }
+  ],
+  [
+    {
+      "cliente": "¿Cuánto cuesta la comida ejecutiva de 3 tiempos?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": [
+        "$320"
+      ],
+      "evidencia": "Comida ejecutiva de 3 tiempos: $320 MXN",
+      "respuesta_ideal": "La comida ejecutiva de 3 tiempos cuesta $320 MXN por persona."
+    },
+    {
+      "cliente": "¿Tienen opción vegetariana?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": [
+        "sin costo adicional"
+      ],
+      "evidencia": "Ofrecemos opción vegetariana y opción sin gluten, sin costo adicional, avisando con anticipación al hacer el pedido.",
+      "respuesta_ideal": "Sí, ofrecemos opción vegetariana sin costo adicional, avisando al hacer el pedido."
+    },
+    {
+      "cliente": "Somos 25 personas y queremos comida ejecutiva con meseros, ¿cuántos meseros nos tocarían?",
+      "tipo": "combinada",
+      "accion": "responder",
+      "claves": [
+        "1 mesero por cada 20"
+      ],
+      "evidencia": "Se incluye 1 mesero por cada 20 invitados en comidas y cenas.",
+      "respuesta_ideal": "Como se incluye 1 mesero por cada 20 invitados, para 25 personas les corresponderían 2 meseros."
+    },
+    {
+      "cliente": "¿Con cuánto tiempo debo pedirlo?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": [
+        "48 horas"
+      ],
+      "evidencia": "Pedido mínimo con 48 horas de anticipación.",
+      "respuesta_ideal": "El pedido debe hacerse con al menos 48 horas de anticipación."
+    },
+    {
+      "cliente": "¿Pueden cocinar platillos veganos, sin ningún producto animal?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No tengo ese dato específico; la información que manejo solo menciona opción vegetariana y sin gluten. Le recomiendo confirmarlo al hacer el pedido."
+    }
+  ],
+  [
+    {
+      "cliente": "¿Hacen eventos en domingo?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": [
+        "una semana de anticipación"
+      ],
+      "evidencia": "Sí, se pueden programar eventos en domingo con al menos una semana de anticipación, aunque la oficina esté cerrada ese día.",
+      "respuesta_ideal": "Sí, se pueden programar eventos en domingo, avisando con al menos una semana de anticipación."
+    },
+    {
+      "cliente": "Estamos en Apodaca, ¿cubren esa zona?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": [
+        "Apodaca"
+      ],
+      "evidencia": "Atendemos toda el área metropolitana de Monterrey: San Pedro, San Nicolás, Guadalupe, Apodaca y Santa Catarina.",
+      "respuesta_ideal": "Sí, Apodaca está dentro de nuestra zona de cobertura habitual."
+    },
+    {
+      "cliente": "Mi evento es en Saltillo, ¿cuánto me cobrarían?",
+      "tipo": "instruccion",
+      "accion": "derivar",
+      "claves": [],
+      "evidencia": "Si el evento es fuera de la zona de cobertura habitual (San Pedro, San Nicolás, Guadalupe, Apodaca, Santa Catarina), no des un precio exacto: indica que ese caso se cotiza aparte.",
+      "respuesta_ideal": "Saltillo está fuera de nuestra zona habitual, así que ese caso se cotiza aparte; le recomiendo contactarnos para armar la cotización."
+    },
+    {
+      "cliente": "Si cancelo con dos días de anticipación, ¿cuánto me devuelven?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": [
+        "50%"
+      ],
+      "evidencia": "Entre 24 y 72 horas antes: reembolso del 50%.",
+      "respuesta_ideal": "Con dos días de anticipación, que caen entre 24 y 72 horas antes, se reembolsa el 50%."
+    },
+    {
+      "cliente": "Gracias, buenas tardes",
+      "tipo": "charla",
+      "accion": "charla",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "Buenas tardes, con gusto la atendemos cuando guste."
+    }
+  ],
+  [
+    {
+      "cliente": "Ya les mandé todos los datos de mi evento, ¿ya quedó agendado?",
+      "tipo": "instruccion",
+      "accion": "derivar",
+      "claves": [],
+      "evidencia": "No confirmes un pedido como agendado en definitiva sin el anticipo del 40%: si preguntan si su evento ya quedó confirmado, deriva con el área de cuentas (Lic. Daniela Garza, dgarza@mesanorte.mx) o al teléfono de oficina (81) 8347-2200.",
+      "respuesta_ideal": "El pedido queda confirmado hasta que se reciba el anticipo del 40%; para verificar su caso, contacte al área de cuentas con la Lic. Daniela Garza."
+    },
+    {
+      "cliente": "¿Cuánto es el anticipo para confirmar?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": [
+        "40%"
+      ],
+      "evidencia": "Se requiere un anticipo del 40% del total para confirmar el pedido.",
+      "respuesta_ideal": "Se requiere un anticipo del 40% del total para confirmar el pedido."
+    },
+    {
+      "cliente": "El evento del viernes pasado llegó tarde la comida, quiero quejarme",
+      "tipo": "instruccion",
+      "accion": "derivar",
+      "claves": [],
+      "evidencia": "Ante una queja sobre un evento ya realizado, deriva siempre directamente a la Lic. Daniela Garza.",
+      "respuesta_ideal": "Lamento el inconveniente; para atender su queja lo mejor es que se contacte directamente con la Lic. Daniela Garza, responsable de cuentas."
+    },
+    {
+      "cliente": "¿Tienen servicio de chef en vivo tipo teppanyaki?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No tengo ese servicio en la información que manejo."
+    }
+  ],
+  [
+    {
+      "cliente": "¿Incluyen vino en la cena de fin de año?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": [
+        "descorche de vino está incluido"
+      ],
+      "evidencia": "El descorche de vino está incluido solo en la cena de fin de año; otras bebidas alcohólicas se cotizan aparte.",
+      "respuesta_ideal": "Sí, el descorche de vino está incluido en la cena de fin de año."
+    },
+    {
+      "cliente": "Uno de los invitados es alérgico a los mariscos, ¿pueden garantizar que no habrá contacto?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": [
+        "no garantizamos un ambiente 100% libre de alérgenos"
+      ],
+      "evidencia": "Tomamos precauciones en la preparación, pero no garantizamos un ambiente 100% libre de alérgenos.",
+      "respuesta_ideal": "Tomamos precauciones al preparar los alimentos, pero no podemos garantizar un ambiente 100% libre de alérgenos."
+    },
+    {
+      "cliente": "¿Facturan con IVA desglosado?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": [
+        "IVA desglosado"
+      ],
+      "evidencia": "Transferencia, depósito o tarjeta empresarial. Facturamos con IVA desglosado.",
+      "respuesta_ideal": "Sí, facturamos con el IVA desglosado."
+    },
+    {
+      "cliente": "¿Aceptan pago en dólares?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No tengo ese dato; la información que manejo indica pagos por transferencia, depósito o tarjeta empresarial, sin especificar moneda extranjera."
+    },
+    {
+      "cliente": "Perfecto, muchas gracias por su tiempo",
+      "tipo": "charla",
+      "accion": "charla",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "Al contrario, gracias a usted por contactarnos."
+    }
+  ]
+]

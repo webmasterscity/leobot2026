@@ -1,0 +1,233 @@
+[
+  [
+    {
+      "cliente": "¿Cuánto cuesta el paquete para una fiesta con luces?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": [
+        "Q1,450"
+      ],
+      "evidencia": "Paquete Fiesta: bocinas, luces LED y máquina de humo — Q1,450",
+      "respuesta_ideal": "El Paquete Fiesta, con bocinas, luces LED y máquina de humo, cuesta Q1,450."
+    },
+    {
+      "cliente": "¿Y ese incluye máquina de humo?",
+      "tipo": "seguimiento",
+      "accion": "responder",
+      "claves": [
+        "máquina de humo"
+      ],
+      "evidencia": "Paquete Fiesta: bocinas, luces LED y máquina de humo — Q1,450",
+      "respuesta_ideal": "Sí, el Paquete Fiesta incluye máquina de humo, además de bocinas y luces LED."
+    },
+    {
+      "cliente": "Si necesito 2 horas extra, ¿cuánto sería en total?",
+      "tipo": "combinada",
+      "accion": "responder",
+      "claves": [
+        "Q1,450",
+        "Q150"
+      ],
+      "evidencia": "Hora adicional: Q150 por hora.",
+      "respuesta_ideal": "El paquete son Q1,450 y cada hora extra cuesta Q150, así que 2 horas más serían Q1,750 en total."
+    },
+    {
+      "cliente": "¿Tienen pantallas LED para proyectar videos?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No tengo ese servicio en la información que manejo; le recomiendo consultarlo directo por WhatsApp al 5521-8890."
+    },
+    {
+      "cliente": "Gracias, después les escribo",
+      "tipo": "charla",
+      "accion": "charla",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "Con gusto, quedamos atentos."
+    }
+  ],
+  [
+    {
+      "cliente": "¿Cuánto cuesta el paquete para una boda?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": [
+        "Q2,900"
+      ],
+      "evidencia": "Paquete Boda: sonido completo, iluminación decorativa y pista de luces — Q2,900",
+      "respuesta_ideal": "El Paquete Boda cuesta Q2,900 e incluye sonido completo, iluminación decorativa y pista de luces."
+    },
+    {
+      "cliente": "¿Cuánto hay que dejar de depósito para apartar la fecha?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": [
+        "50% del total"
+      ],
+      "evidencia": "Para apartar una fecha se requiere un depósito del 50% del total.",
+      "respuesta_ideal": "Para apartar la fecha se requiere un depósito del 50% del total del evento."
+    },
+    {
+      "cliente": "Tengo una fecha en mente, ¿me la pueden reservar ya mismo?",
+      "tipo": "instruccion",
+      "accion": "derivar",
+      "claves": [],
+      "evidencia": "No confirmes una fecha como reservada hasta que el cliente haya pagado el depósito del 50%: si preguntan por disponibilidad o quieren apartar una fecha, indica que deben coordinar el pago con el área de reservas al 5521-8890.",
+      "respuesta_ideal": "Para apartar la fecha necesita coordinar el pago del depósito con el área de reservas, al 5521-8890."
+    },
+    {
+      "cliente": "Si cancelo con una semana de anticipación, ¿me devuelven todo el depósito?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": [
+        "80%"
+      ],
+      "evidencia": "Más de 7 días antes del evento: devolución del 80% del depósito.",
+      "respuesta_ideal": "No todo: con más de 7 días de anticipación se devuelve el 80% del depósito, no el 100%."
+    },
+    {
+      "cliente": "¿Tienen paquetes para bodas religiosas con música en vivo?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No tengo ese dato específico; le recomiendo consultarlo por WhatsApp al 5521-8890."
+    }
+  ],
+  [
+    {
+      "cliente": "Mi evento es en Antigua Guatemala, ¿cuánto me costaría?",
+      "tipo": "instruccion",
+      "accion": "derivar",
+      "claves": [],
+      "evidencia": "No des el precio final de un evento fuera de la ciudad de Guatemala sin conocer la distancia exacta: da el precio base del paquete, explica el cargo por kilómetro adicional, y deriva la cotización final a WhatsApp (5521-8890).",
+      "respuesta_ideal": "Fuera de la ciudad se cobra Q3.50 por km adicional sobre el precio base del paquete; para la cotización exacta escríbanos al WhatsApp 5521-8890."
+    },
+    {
+      "cliente": "¿Qué necesito de electricidad en el lugar?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": [
+        "110V",
+        "2 tomacorrientes"
+      ],
+      "evidencia": "El espacio debe contar con energía eléctrica de 110V y un mínimo de 2 tomacorrientes cercanos al área de montaje.",
+      "respuesta_ideal": "El lugar debe tener energía de 110V y al menos 2 tomacorrientes cerca del área de montaje."
+    },
+    {
+      "cliente": "¿Llevan su propia planta eléctrica si no tengo suficiente energía?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": [
+        "Q400"
+      ],
+      "evidencia": "Planta eléctrica de respaldo (si el lugar no tiene suficiente energía): Q400 adicional.",
+      "respuesta_ideal": "Sí, podemos llevar planta eléctrica de respaldo por Q400 adicionales."
+    },
+    {
+      "cliente": "¿El técnico también puede armar el escenario o tarima?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No tengo ese dato; le recomiendo consultarlo directamente al 5521-8890."
+    },
+    {
+      "cliente": "Perfecto, muchas gracias",
+      "tipo": "charla",
+      "accion": "charla",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "Con gusto, cualquier otra duda me dice."
+    }
+  ],
+  [
+    {
+      "cliente": "¿Puedo alquilar el equipo sin el técnico?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": [
+        "sin técnico",
+        "depósito de garantía de Q1,000"
+      ],
+      "evidencia": "Para clientes con experiencia comprobada, alquilamos el equipo sin técnico, sujeto a disponibilidad. Requiere un depósito de garantía de Q1,000.",
+      "respuesta_ideal": "Sí, para clientes con experiencia comprobada se puede rentar sin técnico, pero se pide un depósito de garantía de Q1,000."
+    },
+    {
+      "cliente": "¿Incluyen DJ en el servicio?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": [
+        "solo de equipo y técnico de sonido"
+      ],
+      "evidencia": "No, el servicio es solo de equipo y técnico de sonido; si desean DJ pueden contratarlo aparte y nosotros coordinamos la conexión de sus equipos.",
+      "respuesta_ideal": "No, el servicio es solo de equipo y técnico de sonido; el DJ se contrata aparte y nosotros coordinamos la conexión."
+    },
+    {
+      "cliente": "El día de mi evento el sonido empezó a fallar, ¿a quién llamo?",
+      "tipo": "instruccion",
+      "accion": "derivar",
+      "claves": [],
+      "evidencia": "Si hay una emergencia técnica el día del evento, da el contacto de Marvin Castillo, coordinador técnico, al 5521-8890.",
+      "respuesta_ideal": "Para emergencias técnicas el día del evento, contacte a Marvin Castillo, nuestro coordinador técnico, al 5521-8890."
+    },
+    {
+      "cliente": "¿Tienen servicio de fotografía o video para el evento?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No ofrecemos ese servicio según la información que tengo; solo manejamos sonido e iluminación."
+    },
+    {
+      "cliente": "Ok, gracias por la ayuda",
+      "tipo": "charla",
+      "accion": "charla",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "De nada, quedamos a su disposición."
+    }
+  ],
+  [
+    {
+      "cliente": "¿Puedo pagar todo con tarjeta de crédito?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": [
+        "recargo del 5%"
+      ],
+      "evidencia": "Transferencia, depósito bancario o tarjeta (con un recargo del 5% en pagos con tarjeta).",
+      "respuesta_ideal": "Sí, se puede pagar con tarjeta, pero tiene un recargo del 5%."
+    },
+    {
+      "cliente": "¿Puedo ir a ver el equipo antes de decidirme?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": [
+        "cita previa"
+      ],
+      "evidencia": "¿Puedo ver el equipo antes de contratar? Sí, con cita previa en nuestra bodega de zona 10.",
+      "respuesta_ideal": "Sí, puede verlo antes de contratar, agendando una cita previa en nuestra bodega de zona 10."
+    },
+    {
+      "cliente": "¿Manejan servicio de banquetes o comida para el evento?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No, ese servicio no lo ofrecemos; nosotros solo nos encargamos del sonido y la iluminación."
+    },
+    {
+      "cliente": "Si pago Q1,450 con tarjeta, ¿cuánto sería el recargo en quetzales?",
+      "tipo": "combinada",
+      "accion": "responder",
+      "claves": [
+        "recargo del 5%"
+      ],
+      "evidencia": "Transferencia, depósito bancario o tarjeta (con un recargo del 5% en pagos con tarjeta).",
+      "respuesta_ideal": "El recargo es del 5% sobre Q1,450, así que serían aproximadamente Q72.50 adicionales."
+    }
+  ]
+]

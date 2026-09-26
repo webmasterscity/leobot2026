@@ -1,0 +1,210 @@
+[
+  {
+    "cliente": "Hola, ¿cuanto cuesta alquilar un scooter por un día?",
+    "tipo": "directa",
+    "accion": "responder",
+    "claves": ["50cc: $45 EUR/día", "125cc: $55 EUR/día", "300cc: $85 EUR/día"],
+    "evidencia": "Scooters (automáticos)\n- 50cc: $45 EUR/día\n- 125cc: $55 EUR/día\n- 300cc maxi: $85 EUR/día",
+    "respuesta_ideal": "Los scooters van desde €45/día (50cc, automático) hasta €85/día (300cc). ¿Cuál te interesa?"
+  },
+  {
+    "cliente": "¿Qué necesito para alquilar?",
+    "tipo": "directa",
+    "accion": "responder",
+    "claves": ["documento de identidad válido", "carnet de conducir", "tarjeta de crédito"],
+    "evidencia": "Entrega: presentar documento de identidad válido (pasaporte, DNI, carnet de conducir), carnet de conducir con la categoría correspondiente, tarjeta de crédito (para depósito).",
+    "respuesta_ideal": "Necesitás pasaporte o DNI válido, carnet de conducir con la categoría correspondiente, y tarjeta de crédito para el depósito."
+  },
+  {
+    "cliente": "¿Qué tal si alquilo por una semana?",
+    "tipo": "combinada",
+    "accion": "responder",
+    "claves": ["Semana (7 días): 10 % de descuento"],
+    "evidencia": "Semana (7 días): 10 % de descuento.",
+    "respuesta_ideal": "Por una semana tenés 10 % de descuento sobre la tarifa diaria."
+  },
+  {
+    "cliente": "¿Hay motos grandes?",
+    "tipo": "directa",
+    "accion": "responder",
+    "claves": ["Grandes cilindradas (1000cc+): $180 EUR/día", "bajo consulta"],
+    "evidencia": "Grandes cilindradas (1000cc+): $180 EUR/día (bajo consulta, depende de disponibilidad). Carnet A sin limitaciones.",
+    "respuesta_ideal": "Sí, tenemos motos de 1000cc+ a €180/día, pero depende de disponibilidad. Mejor que consultes directamente."
+  },
+  {
+    "cliente": "¿Qué edad mínima hay?",
+    "tipo": "directa",
+    "accion": "responder",
+    "claves": ["18 años"],
+    "evidencia": "La edad mínima es 18 años para scooters 50cc; 24 años para el resto (excepto jóvenes con carnet A1 específico).",
+    "respuesta_ideal": "Mínimo 18 años para scooters 50cc; para el resto es 24 años, excepto si tenés carnet A1 específico."
+  },
+  {
+    "cliente": "¿Cómo es el seguro?",
+    "tipo": "directa",
+    "accion": "responder",
+    "claves": ["Seguro de terceros obligatorio", "Seguro a todo riesgo (opcional): €20/día"],
+    "evidencia": "Seguro de terceros obligatorio (cobertura básica)... Seguro a todo riesgo (opcional): €20/día. Reduce el depósito a €100 y cubre robo, daños y terceros ampliados.",
+    "respuesta_ideal": "Incluyo seguro de terceros básico. Hay un seguro opcional a todo riesgo por €20/día que cubre robo, daños y terceros ampliados, y reduce el depósito a €100."
+  },
+  {
+    "cliente": "¿Cuál es el depósito?",
+    "tipo": "directa",
+    "accion": "responder",
+    "claves": ["€400", "reembolsable"],
+    "evidencia": "Depósito de garantía: €400 (reembolsable si el vehículo regresa sin daños).",
+    "respuesta_ideal": "€400 de depósito, reembolsable si el vehículo regresa sin daños."
+  },
+  {
+    "cliente": "¿Se incluye gasolina?",
+    "tipo": "si_no",
+    "accion": "responder",
+    "claves": ["tanque lleno", "se devuelven llenos"],
+    "evidencia": "Los vehículos se entregan con el tanque lleno. Deben devolverse llenos.",
+    "respuesta_ideal": "Se entregan con tanque lleno y deben devolverse llenos. Si no, se cobra repostaje."
+  },
+  {
+    "cliente": "¿Hay GPS?",
+    "tipo": "si_no",
+    "accion": "responder",
+    "claves": ["GPS básico"],
+    "evidencia": "GPS básico.",
+    "respuesta_ideal": "Sí, incluyo GPS básico en todos los alquileres."
+  },
+  {
+    "cliente": "¿Cuánto por un mes?",
+    "tipo": "combinada",
+    "accion": "responder",
+    "claves": ["Mes (30 días): 30 % de descuento + gasolina gratis"],
+    "evidencia": "Mes (30 días): 30 % de descuento + gasolina gratis.",
+    "respuesta_ideal": "Por un mes tenés 30 % de descuento y la gasolina corre por nuestra cuenta."
+  },
+  {
+    "cliente": "¿Abren los domingos?",
+    "tipo": "si_no",
+    "accion": "responder",
+    "claves": ["Lunes a domingo: 08:00 a 20:00"],
+    "evidencia": "Lunes a domingo: 08:00 a 20:00 h",
+    "respuesta_ideal": "Sí, abrimos de lunes a domingo de 08:00 a 20:00 h, todos los días."
+  },
+  {
+    "cliente": "¿Puedo dejar una moto en otro sitio?",
+    "tipo": "instruccion",
+    "accion": "responder",
+    "claves": ["cajas seguras"],
+    "evidencia": "Almacenamiento de documentos en cajas seguras (sin costo).",
+    "respuesta_ideal": "La devolución es en nuestra oficina, en horario de atención. No se puede dejar en otro lado."
+  },
+  {
+    "cliente": "¿Qué pasa si me cae la moto?",
+    "tipo": "directa",
+    "accion": "responder",
+    "claves": ["Rasguños menores (menos de 5 cm)", "uso normal", "Daños mayores", "se cobra reparación"],
+    "evidencia": "Rasguños menores (menos de 5 cm, pintura) y pequeños arañazos de manejo se consideran 'uso normal'... Daños mayores (golpes, cristales rotos, caídas): se cobra reparación.",
+    "respuesta_ideal": "Rasguños pequeños (menos de 5 cm) se consideran uso normal. Daños mayores se cobran según el costo de reparación."
+  },
+  {
+    "cliente": "¿Qué tipo de moto me recomendas para recorrer la isla?",
+    "tipo": "sin_respuesta",
+    "accion": "abstenerse",
+    "claves": [],
+    "evidencia": null,
+    "respuesta_ideal": "Depende de tu experiencia y gusto. Una 500cc o 650cc es buena para recorrer con comodidad. Consulta con el equipo en la tienda."
+  },
+  {
+    "cliente": "¿Hay oferta para grupos?",
+    "tipo": "directa",
+    "accion": "responder",
+    "claves": ["Grupos (5 o más vehículos): descuento adicional del 5 %"],
+    "evidencia": "Grupos (5 o más vehículos): descuento adicional del 5 %. Contactar directamente.",
+    "respuesta_ideal": "Para grupos de 5 o más vehículos hay un descuento adicional del 5 %. Mejor que llames para coordinar."
+  },
+  {
+    "cliente": "¿Funciona en julio y agosto?",
+    "tipo": "si_no",
+    "accion": "responder",
+    "claves": ["Julio y agosto: tarifa + 15 %", "abierto todo el año"],
+    "evidencia": "Abierto todo el año... Julio y agosto: tarifa + 15 % por alta demanda.",
+    "respuesta_ideal": "Sí, abierto todo el año. Pero en julio y agosto la tarifa sube un 15 % por la demanda."
+  },
+  {
+    "cliente": "¿Venden cascos?",
+    "tipo": "si_no",
+    "accion": "responder",
+    "claves": ["Casco incluido (homologado, varios tamaños)"],
+    "evidencia": "Casco incluido (homologado, varios tamaños).",
+    "respuesta_ideal": "Sí, casco homologado incluido. Hay varios tamaños disponibles."
+  },
+  {
+    "cliente": "¿Se pueden alquilar quads?",
+    "tipo": "si_no",
+    "accion": "responder",
+    "claves": ["Quad de 250cc: $95 EUR/día", "Quad de 500cc: $130 EUR/día"],
+    "evidencia": "Quad de 250cc: $95 EUR/día... Quad de 500cc: $130 EUR/día.",
+    "respuesta_ideal": "Sí, quads de 250cc a €95/día o 500cc a €130/día."
+  },
+  {
+    "cliente": "¿Dónde queda la oficina?",
+    "tipo": "directa",
+    "accion": "responder",
+    "claves": ["Paseo de la Maruja s/n", "Playa d'en Bossa"],
+    "evidencia": "Paseo de la Maruja s/n, Playa d'en Bossa, Ibiza 07819.",
+    "respuesta_ideal": "Paseo de la Maruja s/n, en Playa d'en Bossa, frente a la playa. A 15 minutos en taxi del puerto o aeropuerto."
+  },
+  {
+    "cliente": "¿Puedo alquilar y dejarla el domingo a la noche?",
+    "tipo": "seguimiento",
+    "accion": "responder",
+    "claves": ["Entrega de vehículos: hasta las 19:30"],
+    "evidencia": "Entrega de vehículos: hasta las 19:30 h.",
+    "respuesta_ideal": "La devolución debe ser antes de las 19:30 h. Después de esa hora ya estamos cerrados."
+  },
+  {
+    "cliente": "¿Qué teléfono tienen?",
+    "tipo": "directa",
+    "accion": "responder",
+    "claves": ["+34 971 396 874"],
+    "evidencia": "Teléfono: +34 971 396 874",
+    "respuesta_ideal": "El teléfono es +34 971 396 874. Para emergencias 24/7, WhatsApp al +34 673 451 289."
+  },
+  {
+    "cliente": "¿Hay descuento si reservo por internet?",
+    "tipo": "directa",
+    "accion": "responder",
+    "claves": ["Reserva online: descuento de 10 %", "mínimo 3 días"],
+    "evidencia": "Reserva online: descuento de 10 % (mínimo 3 días).",
+    "respuesta_ideal": "Sí, reserva online con 10 % de descuento, con mínimo 3 días de alquiler."
+  },
+  {
+    "cliente": "¿Qué pasa si pierdo la moto?",
+    "tipo": "directa",
+    "accion": "responder",
+    "claves": ["Pérdida o robo: se cobra el valor de reposición del vehículo (desde €3000)"],
+    "evidencia": "Pérdida o robo: se cobra el valor de reposición del vehículo (desde €3000).",
+    "respuesta_ideal": "Si se pierde o se roba, se cobra el valor de reposición de la moto, desde €3000."
+  },
+  {
+    "cliente": "¿Hay asistencia 24/7?",
+    "tipo": "si_no",
+    "accion": "responder",
+    "claves": ["Asistencia 24/7 en español, inglés y catalán"],
+    "evidencia": "Asistencia 24/7 en español, inglés y catalán.",
+    "respuesta_ideal": "Sí, asistencia 24/7 en español, inglés y catalán."
+  },
+  {
+    "cliente": "¿Cuáles son los requisitos para alquilar un quad?",
+    "tipo": "seguimiento",
+    "accion": "responder",
+    "claves": ["Requiere carnet de coche", "A1", "carnet A"],
+    "evidencia": "Quad de 250cc: $95 EUR/día. Requiere carnet de coche o A1.\nQuad de 500cc: $130 EUR/día. Requiere carnet de coche o superior.",
+    "respuesta_ideal": "Quad 250cc: carnet de coche o A1. Quad 500cc: carnet de coche o categoría A."
+  },
+  {
+    "cliente": "¿Hay estacionamiento?",
+    "tipo": "si_no",
+    "accion": "responder",
+    "claves": ["aparcamiento gratuito"],
+    "evidencia": "Frente a la playa, con aparcamiento gratuito.",
+    "respuesta_ideal": "Sí, aparcamiento gratuito en la oficina."
+  }
+]

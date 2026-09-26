@@ -1,0 +1,210 @@
+[
+  {
+    "cliente": "Hola, buenos días. ¿A qué hora abren ustedes?",
+    "tipo": "charla",
+    "accion": "charla",
+    "claves": [],
+    "evidencia": null,
+    "respuesta_ideal": "Buenos días, bienvenido. Abiertos de 10:00 a 19:00 de lunes a viernes, y de 09:00 a 20:00 los fines de semana."
+  },
+  {
+    "cliente": "¿Qué tipos de artesanías venden?",
+    "tipo": "directa",
+    "accion": "responder",
+    "claves": ["Textiles y bordados", "Cerámica y barro negro", "Joyería en plata y cobre", "Alebrijes", "Cestería", "Madera tallada", "Retablos"],
+    "evidencia": "Nuestros artesanos ofrecen:\n• Textiles y bordados (huipiles, rebozos, manteles)\n• Cerámica y barro negro de Coyotepec\n• Joyería en plata y cobre\n• Alebrijes (figuras decorativas talladas)\n• Cestería y artículos de palma\n• Madera tallada y figuras de ocote\n• Retablos e iconografía",
+    "respuesta_ideal": "Tenemos de todo: textiles, cerámica, joyería, alebrijes, cestería, madera tallada y retablos. Todos hechos a mano por artesanos locales."
+  },
+  {
+    "cliente": "¿Cuánto cuesta un alebrinque?",
+    "tipo": "directa",
+    "accion": "responder",
+    "claves": ["$120 a $5000 MXN"],
+    "evidencia": "Alebrijes (figuras decorativas talladas) — $120 a $5000 MXN",
+    "respuesta_ideal": "Los alebrijes van desde $120 hasta $5000 MXN, dependiendo del tamaño y la complejidad del trabajo."
+  },
+  {
+    "cliente": "¿Hay estacionamiento?",
+    "tipo": "si_no",
+    "accion": "responder",
+    "claves": ["Estacionamiento disponible en la calle", "estacionamiento privado"],
+    "evidencia": "Estacionamiento disponible en la calle (tarifa $15 MXN/hora) y a media cuadra hay un estacionamiento privado con tarifa de $20 MXN/hora.",
+    "respuesta_ideal": "Sí, hay estacionamiento en la calle a $15 MXN la hora, o un privado a media cuadra a $20 MXN la hora."
+  },
+  {
+    "cliente": "¿Se puede pagar con tarjeta?",
+    "tipo": "si_no",
+    "accion": "responder",
+    "claves": ["tarjeta de crédito", "Visa, Mastercard, American Express", "comisión de 4 %"],
+    "evidencia": "Aceptamos tarjetas de débito y crédito (Visa, Mastercard, American Express) con comisión de 4 %.",
+    "respuesta_ideal": "Sí, aceptamos tarjeta de crédito y débito: Visa, Mastercard y American Express. Hay una comisión del 4 %."
+  },
+  {
+    "cliente": "¿Venden huipiles? ¿Cuánto salen?",
+    "tipo": "combinada",
+    "accion": "responder",
+    "claves": ["huipiles", "$300 a $3500 MXN"],
+    "evidencia": "Textiles y bordados (huipiles, rebozos, manteles) — $300 a $3500 MXN",
+    "respuesta_ideal": "Sí, tenemos huipiles bordados. Los precios van de $300 a $3500 MXN según el tamaño y la complejidad del bordado."
+  },
+  {
+    "cliente": "¿Qué hay de joyería? Busco algo en cobre.",
+    "tipo": "directa",
+    "accion": "responder",
+    "claves": ["Joyería en plata y cobre", "$150 a $2000 MXN"],
+    "evidencia": "Joyería en plata y cobre — $150 a $2000 MXN",
+    "respuesta_ideal": "Tenemos joyería en plata y cobre, con precios desde $150 hasta $2000 MXN. Varias opciones de anillos, collares y pulseras."
+  },
+  {
+    "cliente": "¿Cuál es la dirección exacta?",
+    "tipo": "directa",
+    "accion": "responder",
+    "claves": ["Calle Macedonio Alcalá 307", "Centro Histórico"],
+    "evidencia": "Calle Macedonio Alcalá 307, Centro Histórico.",
+    "respuesta_ideal": "Calle Macedonio Alcalá 307, en el Centro Histórico de Oaxaca."
+  },
+  {
+    "cliente": "¿Y los domingos? ¿Abren?",
+    "tipo": "seguimiento",
+    "accion": "responder",
+    "claves": ["domingos", "09:00 a 20:00"],
+    "evidencia": "Sábados y domingos: 09:00 a 20:00 h",
+    "respuesta_ideal": "Sí, abrimos los domingos de 09:00 a 20:00 h."
+  },
+  {
+    "cliente": "¿Hacen envíos a otros países?",
+    "tipo": "si_no",
+    "accion": "responder",
+    "claves": ["Enviamos", "extranjero", "Internacional"],
+    "evidencia": "Enviamos a cualquier parte de México y al extranjero.",
+    "respuesta_ideal": "Sí, hacemos envíos al extranjero. Los tiempos y costos dependen del país y el peso del artículo."
+  },
+  {
+    "cliente": "¿Cómo es el envío? ¿Cuánto me cobran?",
+    "tipo": "directa",
+    "accion": "responder",
+    "claves": ["según peso y destino", "10-21 días", "Empacamos con cuidado"],
+    "evidencia": "Internacional: cotización según país y peso, 10-21 días. Empacamos con cuidado y aseguramos piezas frágiles. El comprador corre con los gastos de envío.",
+    "respuesta_ideal": "El costo depende del país y el peso. Te damos una cotización exacta si me dices adónde y qué artículo quieres enviar. Empaques con cuidado y aseguramos lo frágil."
+  },
+  {
+    "cliente": "¿Hacen trabajos a medida?",
+    "tipo": "instruccion",
+    "accion": "derivar",
+    "claves": [],
+    "evidencia": "Si buscas algo que no ves expuesto, puedes encargar trabajos personalizados; el tiempo de elaboración va de 15 a 60 días según la complejidad.",
+    "respuesta_ideal": "Sí, hacemos encargos personalizados. El tiempo va de 15 a 60 días según lo que pidas. Te paso con alguien del equipo que coordina eso."
+  },
+  {
+    "cliente": "¿Se puede negociar el precio de un alebrinque?",
+    "tipo": "instruccion",
+    "accion": "responder",
+    "claves": ["precios son justos", "No negociamos precios ni hacemos descuentos"],
+    "evidencia": "No negociamos precios ni hacemos descuentos.",
+    "respuesta_ideal": "Los precios están fijos porque son justos con el artesano que hace cada pieza. No hacemos descuentos, pero tenemos opciones desde $120 MXN."
+  },
+  {
+    "cliente": "Compré algo hace 10 días y tiene un defecto. ¿Puedo devolverlo?",
+    "tipo": "directa",
+    "accion": "responder",
+    "claves": ["7 días", "condiciones sin usar ni dañar", "dinero se reintegra"],
+    "evidencia": "Compras de artículos nuevos se pueden devolver en un plazo de 7 días, siempre que estén en condiciones sin usar ni dañar. El dinero se reintegra en efectivo o se cambia por otro producto.",
+    "respuesta_ideal": "El plazo de devolución es de 7 días desde la compra. Como ya pasó, mejor derivarte con nuestro equipo para revisar tu caso específico."
+  },
+  {
+    "cliente": "¿Atienden el 25 de diciembre?",
+    "tipo": "si_no",
+    "accion": "responder",
+    "claves": ["25 de diciembre", "12:00 a 18:00 h"],
+    "evidencia": "Durante festividades (25 de diciembre, 1 de enero, Día de Muertos) el horario es de 12:00 a 18:00 h.",
+    "respuesta_ideal": "Sí, abrimos el 25 de diciembre, pero con horario reducido: de 12:00 a 18:00 h."
+  },
+  {
+    "cliente": "¿Cuánto cuesta una visita guiada?",
+    "tipo": "directa",
+    "accion": "responder",
+    "claves": ["$150 MXN por persona", "90 minutos", "bebida refrescante"],
+    "evidencia": "Tarifa: $150 MXN por persona. Incluye muestra de textiles y bebida refrescante.",
+    "respuesta_ideal": "Los tours cuestan $150 MXN por persona, duran 90 minutos e incluyen explicación del proceso artesanal, muestras y una bebida."
+  },
+  {
+    "cliente": "¿Tienen cerámica azul?",
+    "tipo": "sin_respuesta",
+    "accion": "abstenerse",
+    "claves": [],
+    "evidencia": null,
+    "respuesta_ideal": "Tenemos cerámica de barro negro principalmente, pero te recomiendo que hables directamente con nuestro equipo para ver si hay otras opciones disponibles."
+  },
+  {
+    "cliente": "¿A qué hora llegan las nuevas colecciones?",
+    "tipo": "sin_respuesta",
+    "accion": "derivar",
+    "claves": [],
+    "evidencia": null,
+    "respuesta_ideal": "Ese es un detalle que maneja nuestro equipo. Te paso con ellos para que te den la información exacta."
+  },
+  {
+    "cliente": "¿Venden máscaras de madera?",
+    "tipo": "sin_respuesta",
+    "accion": "abstenerse",
+    "claves": [],
+    "evidencia": null,
+    "respuesta_ideal": "Las máscaras de madera no aparecen en nuestro catálogo actual, pero podría haber disponibilidad. Mejor te conecto con el equipo para verificar."
+  },
+  {
+    "cliente": "Gracias, fueron muy atentos.",
+    "tipo": "charla",
+    "accion": "charla",
+    "claves": [],
+    "evidencia": null,
+    "respuesta_ideal": "De nada, fue un gusto. ¡Vuelve pronto!"
+  },
+  {
+    "cliente": "¿Se pueden tocar los productos antes de comprar?",
+    "tipo": "si_no",
+    "accion": "responder",
+    "claves": [],
+    "evidencia": null,
+    "respuesta_ideal": "Claro, puedes ver y tocar todo. Así conoces la calidad del trabajo artesanal."
+  },
+  {
+    "cliente": "¿El precio que ven en la tienda incluye algo más, o es el final?",
+    "tipo": "directa",
+    "accion": "responder",
+    "claves": ["precios son justos", "No negociamos precios"],
+    "evidencia": "Contamos con una política de respeto a los artesanos: todos los precios son justos y ya incluyen su compensación.",
+    "respuesta_ideal": "El precio que ves es el final. Incluye la compensación justa al artesano y no hay cargos escondidos."
+  },
+  {
+    "cliente": "¿Hay ofertas o descuentos ahora?",
+    "tipo": "sin_respuesta",
+    "accion": "abstenerse",
+    "claves": [],
+    "evidencia": null,
+    "respuesta_ideal": "No tengo información sobre ofertas puntuales. Te recomiendo preguntar directamente en la tienda o llamar al 951-514-4821."
+  },
+  {
+    "cliente": "¿Se pueden encomendar regalos desde el extranjero?",
+    "tipo": "combinada",
+    "accion": "responder",
+    "claves": ["Enviamos a cualquier parte", "al extranjero"],
+    "evidencia": "Enviamos a cualquier parte de México y al extranjero.",
+    "respuesta_ideal": "Sí, podemos enviar como regalo al extranjero. Coordinámos la cotización exacta según el destino."
+  },
+  {
+    "cliente": "¿Qué teléfono tienen para consultas?",
+    "tipo": "directa",
+    "accion": "responder",
+    "claves": ["+52 951 514 4821"],
+    "evidencia": "Teléfono: +52 951 514 4821",
+    "respuesta_ideal": "El teléfono es +52 951 514 4821. También están disponibles por WhatsApp en el mismo número, de lunes a viernes 10:00-18:00 h."
+  },
+  {
+    "cliente": "¿Y si compro algo y luego cambio de idea, en cuántos días puedo devolverlo?",
+    "tipo": "seguimiento",
+    "accion": "responder",
+    "claves": ["7 días"],
+    "evidencia": "Compras de artículos nuevos se pueden devolver en un plazo de 7 días, siempre que estén en condiciones sin usar ni dañar.",
+    "respuesta_ideal": "Tienes 7 días para devolverlo, siempre que esté sin usar y sin daños."
+  }
+]

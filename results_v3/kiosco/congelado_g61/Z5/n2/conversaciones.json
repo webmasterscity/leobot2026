@@ -1,0 +1,261 @@
+[
+  [
+    {
+      "cliente": "Hola, ¿cuánto cuesta el coche de bebé plegable?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": [
+        "S/ 450"
+      ],
+      "evidencia": "Coche de bebé plegable                        | S/ 450",
+      "respuesta_ideal": "El coche de bebé plegable cuesta S/ 450."
+    },
+    {
+      "cliente": "¿Hacen envío a domicilio en Chiclayo?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": [
+        "gratis",
+        "S/ 150"
+      ],
+      "evidencia": "Dentro de Chiclayo: gratis en compras mayores a S/ 150; si la compra es menor, el envío cuesta S/ 8.",
+      "respuesta_ideal": "Sí, dentro de Chiclayo el envío es gratis en compras mayores a S/ 150."
+    },
+    {
+      "cliente": "¿Y si compro menos de eso?",
+      "tipo": "seguimiento",
+      "accion": "responder",
+      "claves": [
+        "S/ 8"
+      ],
+      "evidencia": "si la compra es menor, el envío cuesta S/ 8",
+      "respuesta_ideal": "Si la compra es menor a S/ 150, el envío cuesta S/ 8."
+    },
+    {
+      "cliente": "¿Tienen coches de bebé para gemelos, de dos puestos?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No tengo ese dato específico; le recomiendo escribirnos al WhatsApp 979 542 118 para confirmarlo."
+    },
+    {
+      "cliente": "Ya, muchas gracias",
+      "tipo": "charla",
+      "accion": "charla",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "Con gusto, cualquier otra consulta aquí estamos."
+    }
+  ],
+  [
+    {
+      "cliente": "Cuanto sale una cuna de madera",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": [
+        "S/ 680"
+      ],
+      "evidencia": "Cuna de madera                                | S/ 680",
+      "respuesta_ideal": "La cuna de madera cuesta S/ 680."
+    },
+    {
+      "cliente": "¿Tiene garantía la cuna?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": [
+        "6 meses"
+      ],
+      "evidencia": "Los coches de bebé y las cunas tienen garantía de 6 meses por defectos de fabricación.",
+      "respuesta_ideal": "Sí, las cunas tienen garantía de 6 meses por defectos de fabricación."
+    },
+    {
+      "cliente": "Si no me gusta la puedo cambiar?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": [
+        "15 días",
+        "boleta",
+        "etiqueta"
+      ],
+      "evidencia": "Se aceptan cambios hasta 15 días después de la compra, presentando la boleta y con la etiqueta puesta.",
+      "respuesta_ideal": "Sí, puede cambiarla hasta 15 días después de la compra, presentando la boleta y con la etiqueta puesta."
+    },
+    {
+      "cliente": "¿La cuna se puede convertir en cama para cuando crezca?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No tengo ese dato sobre la cuna; se lo puedo confirmar por WhatsApp al 979 542 118."
+    },
+    {
+      "cliente": "¿Y el coche también tiene garantía de 6 meses?",
+      "tipo": "seguimiento",
+      "accion": "responder",
+      "claves": [
+        "6 meses"
+      ],
+      "evidencia": "Los coches de bebé y las cunas tienen garantía de 6 meses por defectos de fabricación.",
+      "respuesta_ideal": "Sí, el coche de bebé también tiene 6 meses de garantía por defectos de fabricación."
+    }
+  ],
+  [
+    {
+      "cliente": "¿Venden pañales al por mayor?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": [
+        "por mayor"
+      ],
+      "evidencia": "Coches de bebé, cunas de madera, ropa de 0 a 24 meses (incluida nuestra marca propia Osito Feliz), pañales por mayor y menor, biberones, sillas para carro, y artículos de lactancia.",
+      "respuesta_ideal": "Sí, vendemos pañales tanto por mayor como por menor."
+    },
+    {
+      "cliente": "¿Cuánto cuesta el paquete de pañales para recién nacido?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": [
+        "S/ 39.90"
+      ],
+      "evidencia": "Pañales talla RN, paquete x50                 | S/ 39.90",
+      "respuesta_ideal": "El paquete de pañales talla RN, de 50 unidades, cuesta S/ 39.90."
+    },
+    {
+      "cliente": "Vivo en Ferreñafe, ¿me hacen envío y cuánto tardaría?",
+      "tipo": "combinada",
+      "accion": "responder",
+      "claves": [
+        "S/ 15",
+        "2-3 días hábiles"
+      ],
+      "evidencia": "A otras provincias de Lambayeque: S/ 15, entrega en 2-3 días hábiles.",
+      "respuesta_ideal": "Sí, Ferreñafe está en Lambayeque, así que el envío cuesta S/ 15 y llega en 2-3 días hábiles."
+    },
+    {
+      "cliente": "¿Tienen pañales de tela para adultos también?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No tengo ese producto en la información de la tienda; solo manejamos artículos para bebés."
+    },
+    {
+      "cliente": "¿Hacen envíos a otras regiones del Perú, fuera de Lambayeque?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": [
+        "WhatsApp",
+        "979 542 118"
+      ],
+      "evidencia": "A otras regiones del Perú: escríbanos por WhatsApp (979 542 118) para cotizar el flete.",
+      "respuesta_ideal": "Sí, para otras regiones del Perú nos puede escribir al WhatsApp 979 542 118 y le cotizamos el flete."
+    }
+  ],
+  [
+    {
+      "cliente": "Mi bebé no sube de peso, ¿qué me recomiendan?",
+      "tipo": "instruccion",
+      "accion": "derivar",
+      "claves": [],
+      "evidencia": "No des consejos médicos ni de lactancia fuera de la asesoría con la nutricionista: si preguntan temas de salud del bebé, deriva a la asesoría de los martes o recomienda consultar con un pediatra.",
+      "respuesta_ideal": "Para ese tema le recomiendo la asesoría gratuita de lactancia con nuestra nutricionista los martes, o consultarlo con su pediatra."
+    },
+    {
+      "cliente": "¿Ese servicio de asesoría tiene costo?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": [
+        "gratuita"
+      ],
+      "evidencia": "Todos los martes contamos con una nutricionista invitada que brinda asesoría gratuita de lactancia, con cita previa.",
+      "respuesta_ideal": "No, la asesoría de lactancia de los martes es gratuita, solo se necesita cita previa."
+    },
+    {
+      "cliente": "¿La nutricionista atiende los sábados también?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No tengo ese dato; la información que manejo es que atiende los martes. Puede confirmar otros días por WhatsApp."
+    },
+    {
+      "cliente": "Está bien, gracias",
+      "tipo": "charla",
+      "accion": "charla",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "Con gusto, cualquier cosa nos escribe."
+    }
+  ],
+  [
+    {
+      "cliente": "¿Tienen ropa para bebés prematuros?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": [
+        "prematuros desde 1.5 kg"
+      ],
+      "evidencia": "Sí, contamos con ropa para prematuros desde 1.5 kg.",
+      "respuesta_ideal": "Sí, tenemos ropa para bebés prematuros desde 1.5 kg."
+    },
+    {
+      "cliente": "¿Tienen en stock ahorita la talla 3 meses del body pack Osito Feliz?",
+      "tipo": "instruccion",
+      "accion": "derivar",
+      "claves": [],
+      "evidencia": "No confirmes stock exacto de un producto concreto sin verificarlo: para eso deriva a WhatsApp 979 542 118.",
+      "respuesta_ideal": "No le puedo confirmar el stock exacto en este momento; escríbanos al WhatsApp 979 542 118 y se lo verificamos."
+    },
+    {
+      "cliente": "¿Alquilan coches de bebé para un evento?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": [
+        "todos los productos son de venta"
+      ],
+      "evidencia": "¿Alquilan coches de bebé? No, todos los productos son de venta.",
+      "respuesta_ideal": "No, no alquilamos; todos nuestros productos son de venta."
+    },
+    {
+      "cliente": "¿Tienen coches de bebé de segunda mano, más económicos?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No tengo ese dato; en la información que manejo solo vendemos productos nuevos."
+    }
+  ],
+  [
+    {
+      "cliente": "¿Aceptan tarjeta de crédito?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": [
+        "tarjeta"
+      ],
+      "evidencia": "Yape, Plin, tarjeta de crédito/débito y efectivo.",
+      "respuesta_ideal": "Sí, aceptamos tarjeta de crédito y débito, además de Yape, Plin y efectivo."
+    },
+    {
+      "cliente": "Si compro un coche de S/450 y una cuna de S/680, ¿cuánto pago en total y me sale el envío gratis?",
+      "tipo": "combinada",
+      "accion": "responder",
+      "claves": [
+        "S/ 450",
+        "S/ 680",
+        "S/ 150"
+      ],
+      "evidencia": "gratis en compras mayores a S/ 150",
+      "respuesta_ideal": "En total pagaría S/ 1,130, y como supera los S/ 150, el envío dentro de Chiclayo sería gratis."
+    },
+    {
+      "cliente": "Perfecto, muchísimas gracias por la info",
+      "tipo": "charla",
+      "accion": "charla",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "Con mucho gusto, la esperamos en la tienda."
+    }
+  ]
+]
