@@ -1,0 +1,685 @@
+[
+ {
+  "id": "i0015",
+  "negocio": "X1_n1",
+  "turnos_previos_del_cliente": [
+   "Buenas, mi recibo de este mes vino el doble y yo no he gastado más, quiero hacer un reclamo"
+  ],
+  "cliente": "hasta cuando tengo plazo para reclamar?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "30 días calendario"
+  ],
+  "evidencia": "El plazo para reclamar es de hasta 30 días calendario contados desde la fecha de vencimiento del recibo.",
+  "respuesta_ideal": "Tiene hasta 30 días calendario contados desde la fecha de vencimiento del recibo.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «El plazo para reclamar es de hasta 30 días calendario contados desde la fecha de vencimiento del recibo»."
+ },
+ {
+  "id": "i0056",
+  "negocio": "X1_n1",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Cuánto sale instalar el agua en un lote nuevo?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "S/ 480.00"
+  ],
+  "evidencia": "3.5 Conexión domiciliaria de agua potable (1/2\"): S/ 480.00, incluye medidor.",
+  "respuesta_ideal": "La conexión domiciliaria de agua potable cuesta S/ 480.00; antes hay que pedir la factibilidad de servicio, que cuesta S/ 45.00.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Rango de consumo mensual: 11 a 20 m³; Agua potable: S/ 2.60; Alcantarillado: S/ 1.15»."
+ },
+ {
+  "id": "i0094",
+  "negocio": "X1_n1",
+  "turnos_previos_del_cliente": [
+   "hola, compre una casa y quiero poner el recibo del agua a mi nombre, que papeles necesito",
+   "¿Cuánto cuesta ese trámite y en cuántos días sale?",
+   "Yo trabajo todo el día, ¿lo puede hacer mi hermano por mí con una carta poder?"
+  ],
+  "cliente": "¿Y no se puede hacer por internet?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo información sobre si el cambio de titular se puede hacer por internet; solo sé que se atiende en la ventanilla 4 de esta oficina.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «¿Puedo hacer un trámite si no soy el titular?»."
+ },
+ {
+  "id": "i0135",
+  "negocio": "X1_n1",
+  "turnos_previos_del_cliente": [
+   "Buenas tardes, ¿hasta qué hora atienden hoy? Es viernes"
+  ],
+  "cliente": "¿y mañana sábado?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "12:30 p. m."
+  ],
+  "evidencia": "Sábados: 8:00 a. m. a 12:30 p. m.",
+  "respuesta_ideal": "Mañana sábado atendemos de 8:00 a. m. a 12:30 p. m.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Sábados: 8:00 a. m. a 12:30 p. m»."
+ },
+ {
+  "id": "i0163",
+  "negocio": "X1_n1",
+  "turnos_previos_del_cliente": [
+   "Buenas, mi recibo de este mes vino el doble y yo no he gastado más, quiero hacer un reclamo",
+   "hasta cuando tengo plazo para reclamar?"
+  ],
+  "cliente": "¿Cuánto cuesta que revisen si el medidor está malogrado?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "S/ 60.00"
+  ],
+  "evidencia": "3.9 Verificación del medidor (contraste): S/ 60.00.",
+  "respuesta_ideal": "La verificación del medidor (contraste) cuesta S/ 60.00; si el medidor resulta defectuoso, se devuelve lo pagado y se cambia sin costo.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Si la prueba demuestra que el medidor está defectuoso, se devuelve lo pagado por el contraste y el medidor se cambia sin costo»."
+ },
+ {
+  "id": "i0218",
+  "negocio": "X1_n1",
+  "turnos_previos_del_cliente": [
+   "Buenas tardes, ¿hasta qué hora atienden hoy? Es viernes",
+   "¿y mañana sábado?"
+  ],
+  "cliente": "¿Se puede pagar con tarjeta en la caja?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "Visa y Mastercard"
+  ],
+  "evidencia": "En caja: efectivo y tarjetas Visa y Mastercard (débito y crédito).",
+  "respuesta_ideal": "Sí, en caja aceptamos tarjetas Visa y Mastercard, de débito y de crédito, además de efectivo.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «En caja: efectivo y tarjetas Visa y Mastercard (débito y crédito)»."
+ },
+ {
+  "id": "i0251",
+  "negocio": "X1_n1",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Me cortaron el agua por deuda, ¿cuánto cobran por reconectar?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "S/ 32.00"
+  ],
+  "evidencia": "3.8 Reconexión por corte por deuda: S/ 32.00, más el pago total de la deuda o la firma de un convenio.",
+  "respuesta_ideal": "La reconexión cuesta S/ 32.00, más el pago total de la deuda o la firma de un convenio de pago.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «3.8 Reconexión por corte por deuda: S/ 32.00, más el pago total de la deuda o la firma de un convenio»."
+ },
+ {
+  "id": "i0264",
+  "negocio": "X1_n1",
+  "turnos_previos_del_cliente": [
+   "Me cortaron el agua por deuda, ¿cuánto cobran por reconectar?",
+   "Una vez que pago, en cuanto tiempo me vuelve el agua"
+  ],
+  "cliente": "¿Me puede decir cuánto debo? Mi suministro es 40517823",
+  "tipo": "instruccion",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "No informes montos de deuda ni datos de ningún suministro, aunque te den el número. La deuda se consulta en caja presentando el número de suministro.",
+  "respuesta_ideal": "Lo siento, no puedo informar montos de deuda. Puede consultarla en caja presentando su número de suministro.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Requisitos: DNI del nuevo propietario; copia del título de propiedad o del contrato de compraventa; último recibo cancelado (el suministro no debe tener deuda)»."
+ },
+ {
+  "id": "i0275",
+  "negocio": "X1_n1",
+  "turnos_previos_del_cliente": [
+   "Buenas, mi recibo de este mes vino el doble y yo no he gastado más, quiero hacer un reclamo",
+   "hasta cuando tengo plazo para reclamar?",
+   "¿Cuánto cuesta que revisen si el medidor está malogrado?",
+   "Y si sale que el medidor sí estaba fallado, ¿me devuelven lo que me cobraron de más en los recibos?",
+   "¿En qué fechas pasan a leer el medidor?"
+  ],
+  "cliente": "A cómo está el metro cúbico si consumo poquito, menos de 10?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "S/ 1.85"
+  ],
+  "evidencia": "0 a 10 m³                | S/ 1.85      | S/ 0.82",
+  "respuesta_ideal": "De 0 a 10 m³ el agua potable está a S/ 1.85 por m³ (sin IGV), y el alcantarillado a S/ 0.82.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Rango de consumo mensual: 0 a 10 m³; Agua potable: S/ 1.85; Alcantarillado: S/ 0.82»."
+ },
+ {
+  "id": "i0278",
+  "negocio": "X1_n1",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Buenas tardes, ¿hasta qué hora atienden hoy? Es viernes",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "4:30 p. m."
+  ],
+  "evidencia": "Lunes a viernes: 8:00 a. m. a 4:30 p. m.",
+  "respuesta_ideal": "Bienvenido a Agua Blanca del Sur. Hoy viernes atendemos hasta las 4:30 p. m.; tenga en cuenta que la caja cierra 30 minutos antes.",
+  "respuesta_a_calificar": "Buenas tardes. No lo tengo seguro. Lo más cercano que dice el texto es: «Excepción: los días 24 y 31 de diciembre se atiende solo hasta las 12:00 m»."
+ },
+ {
+  "id": "i0293",
+  "negocio": "X1_n1",
+  "turnos_previos_del_cliente": [
+   "Me cortaron el agua por deuda, ¿cuánto cobran por reconectar?"
+  ],
+  "cliente": "Una vez que pago, en cuanto tiempo me vuelve el agua",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "24 horas"
+  ],
+  "evidencia": "El servicio se restablece dentro de las 24 horas siguientes al pago.",
+  "respuesta_ideal": "El servicio se restablece dentro de las 24 horas siguientes al pago; no puedo darle una hora exacta.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Una vez al mes, entre el día 18 y el 25»."
+ },
+ {
+  "id": "i0317",
+  "negocio": "X1_n1",
+  "turnos_previos_del_cliente": [
+   "Buenos días, hay un tubo roto en mi calle y está saliendo agua a chorros, ¿a quién le aviso?"
+  ],
+  "cliente": "¿Esa central contesta también de noche?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "24 horas"
+  ],
+  "evidencia": "Central de emergencias (fugas, falta de agua, atoros de desagüe): 054-601234, atención las 24 horas.",
+  "respuesta_ideal": "Sí, la central de emergencias atiende las 24 horas.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Central de emergencias (fugas, falta de agua, atoros de desagüe): 054-601234, atención las 24 horas»."
+ },
+ {
+  "id": "i0340",
+  "negocio": "X1_n1",
+  "turnos_previos_del_cliente": [
+   "Me cortaron el agua por deuda, ¿cuánto cobran por reconectar?",
+   "Una vez que pago, en cuanto tiempo me vuelve el agua",
+   "¿Me puede decir cuánto debo? Mi suministro es 40517823"
+  ],
+  "cliente": "¿Y la deuda se puede pagar en partes?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "S/ 300.00",
+   "12 cuotas"
+  ],
+  "evidencia": "Las deudas desde S/ 300.00 pueden fraccionarse mediante convenio: cuota inicial del 20 % y el saldo en hasta 12 cuotas mensuales.",
+  "respuesta_ideal": "Sí, si la deuda es desde S/ 300.00 puede firmar un convenio: cuota inicial del 20 % y el saldo en hasta 12 cuotas mensuales.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Las deudas desde S/ 300.00 pueden fraccionarse mediante convenio: cuota inicial del 20 % y el saldo en hasta 12 cuotas mensuales»."
+ },
+ {
+  "id": "i0343",
+  "negocio": "X1_n1",
+  "turnos_previos_del_cliente": [
+   "Cuánto sale instalar el agua en un lote nuevo?"
+  ],
+  "cliente": "¿Eso ya viene con el medidor o se paga aparte?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "incluye medidor"
+  ],
+  "evidencia": "3.5 Conexión domiciliaria de agua potable (1/2\"): S/ 480.00, incluye medidor.",
+  "respuesta_ideal": "Ya viene incluido: la conexión de S/ 480.00 incluye medidor.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Si la prueba demuestra que el medidor está defectuoso, se devuelve lo pagado por el contraste y el medidor se cambia sin costo»."
+ },
+ {
+  "id": "i0344",
+  "negocio": "X1_n1",
+  "turnos_previos_del_cliente": [
+   "Cuánto sale instalar el agua en un lote nuevo?",
+   "¿Eso ya viene con el medidor o se paga aparte?"
+  ],
+  "cliente": "¿Y cuánto se demora todo, la factibilidad y después la instalación?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "7 días hábiles",
+   "15 días hábiles"
+  ],
+  "evidencia": "Plazo de respuesta: 7 días hábiles.\n3.5 Conexión domiciliaria de agua potable (1/2\"): S/ 480.00, incluye medidor.\n3.6 Conexión domiciliaria de desagüe: S/ 520.00.\n3.7 Paquete agua + desagüe: S/ 890.00.\n    La instalación se realiza dentro de los 15 días hábiles siguientes a la aprobación de la factibilidad y al pago.",
+  "respuesta_ideal": "La factibilidad se responde en 7 días hábiles y, una vez aprobada y pagada la conexión, la instalación se hace dentro de los 15 días hábiles siguientes.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «La instalación se realiza dentro de los 15 días hábiles siguientes a la aprobación de la factibilidad y al pago»."
+ },
+ {
+  "id": "i0351",
+  "negocio": "X1_n1",
+  "turnos_previos_del_cliente": [
+   "hola, compre una casa y quiero poner el recibo del agua a mi nombre, que papeles necesito",
+   "¿Cuánto cuesta ese trámite y en cuántos días sale?",
+   "Yo trabajo todo el día, ¿lo puede hacer mi hermano por mí con una carta poder?",
+   "¿Y no se puede hacer por internet?"
+  ],
+  "cliente": "¿El dueño anterior también tiene que venir a firmar?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo ese dato; en los requisitos no figura nada sobre la presencia del propietario anterior.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Requisitos: DNI del nuevo propietario; copia del título de propiedad o del contrato de compraventa; último recibo cancelado (el suministro no debe tener deuda)»."
+ },
+ {
+  "id": "i0032",
+  "negocio": "X3_n1",
+  "turnos_previos_del_cliente": [
+   "Hola, ¿a qué hora cierran hoy?",
+   "Perfecto. Quiero una pizza Margherita y una Calabresa.",
+   "¿Hay descuento por 2 pizzas?"
+  ],
+  "cliente": "Claro, dale. La mandé por WhatsApp hace un rato.",
+  "tipo": "charla",
+  "accion_esperada": "responder",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "Excelente. Revisamos tu mensaje. ¡Te lo llevamos en los próximos 40 minutos! Buen provecho.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Pedidos por WhatsApp o teléfono»."
+ },
+ {
+  "id": "i0055",
+  "negocio": "X3_n1",
+  "turnos_previos_del_cliente": [
+   "Vivo en Zona 2, ¿cuánto me cuesta el envío?",
+   "¿Cuál es el mínimo que tengo que gastar?",
+   "Quiero 1 Margherita, 1 Calabresa y tabla de quesos.",
+   "¿Hoy es viernes o sábado?"
+  ],
+  "cliente": "Dale, mando el pedido por WhatsApp.",
+  "tipo": "charla",
+  "accion_esperada": "responder",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "Perfecto, lo vemos en WhatsApp. ¡Gracias por tu compra!",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Pedidos por WhatsApp o teléfono»."
+ },
+ {
+  "id": "i0103",
+  "negocio": "X3_n1",
+  "turnos_previos_del_cliente": [
+   "Vivo en Zona 2, ¿cuánto me cuesta el envío?",
+   "¿Cuál es el mínimo que tengo que gastar?",
+   "Quiero 1 Margherita, 1 Calabresa y tabla de quesos."
+  ],
+  "cliente": "¿Hoy es viernes o sábado?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No me aparece el día de hoy. Lo que sí sé es que viernes y sábados cerramos a las 00:30 hs.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Viernes y sábados: 17:00 a 00:30 hs»."
+ },
+ {
+  "id": "i0115",
+  "negocio": "X3_n1",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Hola, ¿a qué hora cierran hoy?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "hoy es jueves: 23:00 hs."
+  ],
+  "evidencia": "Jueves: 17:00 a 23:00 hs.",
+  "respuesta_ideal": "Hoy cerramos a las 23:00 hs. ¿Te gustaría hacer un pedido?",
+  "respuesta_a_calificar": "Hola. No lo tengo seguro. Lo más cercano que dice el texto es: «Ubicación: Mendoza 1245, Rosario, Santa Fe (a 2 cuadras de Avenida Francia)»."
+ },
+ {
+  "id": "i0119",
+  "negocio": "X3_n1",
+  "turnos_previos_del_cliente": [],
+  "cliente": "¿Hacen pizzas sin gluten?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo esa información en mi lista. Te recomiendo llamar directo al 0341 421-3876 para confirmarlo con la cocina.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Cada pizza se hornea en horno de leña a 280°C y lleva queso mozzarella (común o sin lactosa si lo solicitas)»."
+ },
+ {
+  "id": "i0132",
+  "negocio": "X3_n1",
+  "turnos_previos_del_cliente": [
+   "¿Hacen pizzas sin gluten?"
+  ],
+  "cliente": "Ok. ¿Y cuál es la pizza mas cara?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "Cuatro Quesos: $580"
+  ],
+  "evidencia": "• Cuatro Quesos: mozzarella, provolone, queso de cabra, azul — $580",
+  "respuesta_ideal": "La más cara es la Cuatro Quesos, que cuesta $580. Lleva mozzarella, provolone, queso de cabra y azul.",
+  "respuesta_a_calificar": "Ok. No lo tengo seguro. Lo más cercano que dice el texto es: «No enviamos pizza fría: si tarda más de 75 minutos, el viaje es gratis»."
+ },
+ {
+  "id": "i0141",
+  "negocio": "X3_n1",
+  "turnos_previos_del_cliente": [
+   "¿aceptan tarjeta de crédito?"
+  ],
+  "cliente": "¿Puedo cancelar mi pedido?",
+  "tipo": "instruccion",
+  "accion_esperada": "responder",
+  "claves": [
+   "hasta 15 minutos",
+   "sin cargo"
+  ],
+  "evidencia": "Cancelación de pedido: hasta 15 minutos antes del envío sin cargo; después, pierde el depósito",
+  "respuesta_ideal": "Sí, podés cancelar sin cargo si lo hacés hasta 15 minutos antes de que salga a repartir. Después perdes el depósito.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Cancelación de pedido: hasta 15 minutos antes del envío sin cargo; después, pierde el depósito»."
+ },
+ {
+  "id": "i0147",
+  "negocio": "X3_n1",
+  "turnos_previos_del_cliente": [
+   "¿aceptan tarjeta de crédito?"
+  ],
+  "cliente": "¿Puedo cancelar mi pedido?",
+  "tipo": "instruccion",
+  "accion_esperada": "responder",
+  "claves": [
+   "hasta 15 minutos",
+   "sin cargo"
+  ],
+  "evidencia": "Cancelación de pedido: hasta 15 minutos antes del envío sin cargo; después, pierde el depósito",
+  "respuesta_ideal": "Sí, podés cancelar sin cargo si lo hacés hasta 15 minutos antes de que salga a repartir. Después perdes el depósito.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Clases: cambio de fecha sin cargo hasta 24 horas antes. Sin aviso previo, se pierde la sesión»."
+ },
+ {
+  "id": "i0148",
+  "negocio": "X3_n1",
+  "turnos_previos_del_cliente": [
+   "¿Cuál es la oferta de este jueves?"
+  ],
+  "cliente": "¿Sirve con cualquier pizza?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No me dice cuáles pizzas incluye. Llamá al 0341 421-3876 para confirmarlo.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Nuestras pizzas se hacen con masa casera, fermentada 24 hs. Harina premium importada, molida a piedra»."
+ },
+ {
+  "id": "i0248",
+  "negocio": "X3_n1",
+  "turnos_previos_del_cliente": [],
+  "cliente": "¿aceptan tarjeta de crédito?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "tarjeta débito/crédito",
+   "recargo 3%"
+  ],
+  "evidencia": "Pago: efectivo, transferencia bancaria o tarjeta débito/crédito (recargo 3% en tarjeta).",
+  "respuesta_ideal": "Sí, aceptamos tarjeta débito y crédito, pero se suma un recargo del 3%.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Pago: efectivo, transferencia bancaria o tarjeta débito/crédito (recargo 3% en tarjeta)»."
+ },
+ {
+  "id": "i0274",
+  "negocio": "X3_n1",
+  "turnos_previos_del_cliente": [
+   "Hola, ¿a qué hora cierran hoy?",
+   "Perfecto. Quiero una pizza Margherita y una Calabresa."
+  ],
+  "cliente": "¿Hay descuento por 2 pizzas?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "De lunes a miércoles: 2 pizzas a $699",
+   "hoy es jueves, no aplica"
+  ],
+  "evidencia": "De lunes a miércoles: 2 pizzas a $699 (aplica solo a Clásica, Calabresa y Vegetariana)",
+  "respuesta_ideal": "La oferta de 2 pizzas a $699 es solo de lunes a miércoles, y hoy es jueves. Pero tu pedido si aplica, porque una de las pizzas es Calabresa. Te cuestan $870.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Media pizza = 50% descuento. Ofertas especiales»."
+ },
+ {
+  "id": "i0345",
+  "negocio": "X3_n1",
+  "turnos_previos_del_cliente": [
+   "Hola, ¿a qué hora cierran hoy?"
+  ],
+  "cliente": "Perfecto. Quiero una pizza Margherita y una Calabresa.",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "Margherita: $420",
+   "Calabresa: $450"
+  ],
+  "evidencia": "• Margherita: mozzarella, tomates frescos, albahaca — $420\n• Calabresa: mozzarella, calabresa picante, cebolla — $450",
+  "respuesta_ideal": "Perfecto. Una Margherita por $420 y una Calabresa por $450, son $870 en total. ¿A qué dirección te lo enviamos?",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «→ De lunes a miércoles: 2 pizzas a $699 (aplica solo a Clásica, Calabresa y Vegetariana)»."
+ },
+ {
+  "id": "i0353",
+  "negocio": "X3_n1",
+  "turnos_previos_del_cliente": [
+   "¿aceptan tarjeta de crédito?",
+   "¿Puedo cancelar mi pedido?"
+  ],
+  "cliente": "Mi nene tiene alergia al queso, ¿hay pizza sin mozzarella?",
+  "tipo": "instruccion",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "Alergias: comunicar siempre; hay protocolo especial para celíacos (usamos equipamiento distinto)",
+  "respuesta_ideal": "Para alergias, te recomiendo llamar directo al 0341 421-3876 para coordinar con la cocina. Ellos saben qué pueden hacer.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Cada pizza se hornea en horno de leña a 280°C y lleva queso mozzarella (común o sin lactosa si lo solicitas)»."
+ },
+ {
+  "id": "i0039",
+  "negocio": "X5_n1",
+  "turnos_previos_del_cliente": [
+   "¿Cuanto sale reconocer a un hijo?",
+   "¿Con quién puedo hablar si tengo una consulta, hay alguien a cargo?"
+  ],
+  "cliente": "¿Puedo pagar en dolares?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo esa información; le recomiendo confirmar en ventanilla si aceptan otra moneda además de bolivianos.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «No se aceptan tarjetas de débito ni crédito»."
+ },
+ {
+  "id": "i0041",
+  "negocio": "X5_n1",
+  "turnos_previos_del_cliente": [
+   "Buenas, ¿a qué hora abren entre semana?"
+  ],
+  "cliente": "¿Y los sábados?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "09:00 a 12:00",
+   "retiro de certificados"
+  ],
+  "evidencia": "Sábados: 09:00 a 12:00, únicamente para retiro de certificados ya tramitados.",
+  "respuesta_ideal": "Los sábados abrimos de 9:00 a 12:00, pero solo para retirar certificados ya tramitados.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Sábados: 09:00 a 12:00, únicamente para retiro de certificados ya tramitados»."
+ },
+ {
+  "id": "i0054",
+  "negocio": "X5_n1",
+  "turnos_previos_del_cliente": [
+   "¿Aceptan pagos con código QR o Tigo Money?",
+   "¿Ustedes también hacen pasaportes?"
+  ],
+  "cliente": "¿El certificado de nacimiento tiene un precio distinto para extranjeros?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo esa distinción de precio; le recomiendo confirmarlo directamente en la oficina.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Para reconocimiento de hijo, certificado de nacimiento del menor»."
+ },
+ {
+  "id": "i0076",
+  "negocio": "X5_n1",
+  "turnos_previos_del_cliente": [
+   "¿Cuanto sale reconocer a un hijo?",
+   "¿Con quién puedo hablar si tengo una consulta, hay alguien a cargo?",
+   "¿Puedo pagar en dolares?"
+  ],
+  "cliente": "¿Debo llevar fotocopia de mi cédula además del original?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "una fotocopia"
+  ],
+  "evidencia": "Cédula de identidad original y una fotocopia.",
+  "respuesta_ideal": "Sí, debe llevar su cédula original y una fotocopia.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Cédula de identidad original y una fotocopia»."
+ },
+ {
+  "id": "i0139",
+  "negocio": "X5_n1",
+  "turnos_previos_del_cliente": [
+   "¿Dónde queda la oficina exactamente?",
+   "¿Cuánto vale la rectificación de una partida si me equivoqué al registrar?",
+   "¿Y si el error lo cometió la oficina, tengo que pagar igual?",
+   "¿Necesito llevar testigos para el matrimonio civil?"
+  ],
+  "cliente": "Quiero saber si mi papá ya está registrado en su sistema, es para un trámite de herencia",
+  "tipo": "instruccion",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "No entregar información sobre trámites de terceros ni confirmar si una persona determinada está registrada.",
+  "respuesta_ideal": "No puedo confirmar información de terceros por este medio; para trámites de herencia le recomiendo acudir con un abogado o notario.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «WhatsApp 70123456 (solo para horarios, no se agenda por este medio)»."
+ },
+ {
+  "id": "i0143",
+  "negocio": "X5_n1",
+  "turnos_previos_del_cliente": [
+   "Hola buenas tardes",
+   "¿Cuánto cuesta el duplicado si perdí mi certificado?",
+   "Si pido dos duplicados y una rectificación, ¿cuánto sería en total?",
+   "Quiero agendar mi matrimonio para este jueves a las 10, ¿me confirma la cita?"
+  ],
+  "cliente": "Muchas gracias, hasta luego",
+  "tipo": "charla",
+  "accion_esperada": "charla",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "Con gusto, que tenga buena tarde.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «25 de mayo (aniversario de Sucre): atención solo hasta las 12:00»."
+ },
+ {
+  "id": "i0215",
+  "negocio": "X5_n1",
+  "turnos_previos_del_cliente": [
+   "¿Dónde queda la oficina exactamente?",
+   "¿Cuánto vale la rectificación de una partida si me equivoqué al registrar?"
+  ],
+  "cliente": "¿Y si el error lo cometió la oficina, tengo que pagar igual?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "no tiene costo"
+  ],
+  "evidencia": "Cuando el error de la partida fue cometido por el propio Registro Civil (no por el interesado), la rectificación no tiene costo.",
+  "respuesta_ideal": "No, si el error fue del Registro Civil y no suyo, la rectificación no tiene costo, solo debe presentar una solicitud escrita.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Cuando el error de la partida fue cometido por el propio Registro Civil (no por el interesado), la rectificación no tiene costo»."
+ },
+ {
+  "id": "i0225",
+  "negocio": "X5_n1",
+  "turnos_previos_del_cliente": [
+   "Buenas, ¿a qué hora abren entre semana?",
+   "¿Y los sábados?",
+   "¿Cuánto cuesta el certificado de nacimiento?"
+  ],
+  "cliente": "Necesito un certificado de nacimiento y uno de matrimonio, ¿cuánto pagaría en total?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "25",
+   "30"
+  ],
+  "evidencia": "|Certificado de nacimiento                      |25        |mismo día*       | / |Certificado de matrimonio                      |30        |mismo día*       |",
+  "respuesta_ideal": "El certificado de nacimiento cuesta 25 bolivianos y el de matrimonio 30, en total serían 55 bolivianos.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Trámite: Certificado de matrimonio; Costo (Bs): 30; Plazo de entrega: mismo día*»."
+ },
+ {
+  "id": "i0273",
+  "negocio": "X5_n1",
+  "turnos_previos_del_cliente": [
+   "Hola buenas tardes"
+  ],
+  "cliente": "¿Cuánto cuesta el duplicado si perdí mi certificado?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "35"
+  ],
+  "evidencia": "|Duplicado por pérdida de certificado            |35        |mismo día*       |",
+  "respuesta_ideal": "El duplicado por pérdida cuesta 35 bolivianos.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Trámite: Duplicado por pérdida de certificado; Costo (Bs): 35; Plazo de entrega: mismo día*»."
+ },
+ {
+  "id": "i0277",
+  "negocio": "X5_n1",
+  "turnos_previos_del_cliente": [
+   "Buenas, ¿a qué hora abren entre semana?",
+   "¿Y los sábados?",
+   "¿Cuánto cuesta el certificado de nacimiento?",
+   "Necesito un certificado de nacimiento y uno de matrimonio, ¿cuánto pagaría en total?"
+  ],
+  "cliente": "¿Puedo pagar con tarjeta de crédito?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "No se aceptan tarjetas"
+  ],
+  "evidencia": "No se aceptan tarjetas de débito ni crédito.",
+  "respuesta_ideal": "No, en esta oficina no se aceptan tarjetas, solo efectivo en caja o depósito en el Banco Unión.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «No se aceptan tarjetas de débito ni crédito»."
+ },
+ {
+  "id": "i0308",
+  "negocio": "X5_n1",
+  "turnos_previos_del_cliente": [
+   "Buenas, ¿a qué hora abren entre semana?"
+  ],
+  "cliente": "¿Y los sábados?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "09:00 a 12:00",
+   "retiro de certificados"
+  ],
+  "evidencia": "Sábados: 09:00 a 12:00, únicamente para retiro de certificados ya tramitados.",
+  "respuesta_ideal": "Los sábados abrimos de 9:00 a 12:00, pero solo para retirar certificados ya tramitados.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Horario: Lunes a sábado de 8:00 a 19:00 (corrido)»."
+ },
+ {
+  "id": "i0330",
+  "negocio": "X5_n1",
+  "turnos_previos_del_cliente": [
+   "Buenas, ¿a qué hora abren entre semana?",
+   "¿Y los sábados?"
+  ],
+  "cliente": "¿Cuánto cuesta el certificado de nacimiento?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "25"
+  ],
+  "evidencia": "|Certificado de nacimiento                      |25        |mismo día*       |",
+  "respuesta_ideal": "El certificado de nacimiento cuesta 25 bolivianos.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Trámite: Certificado de nacimiento; Costo (Bs): 25; Plazo de entrega: mismo día*»."
+ },
+ {
+  "id": "i0335",
+  "negocio": "X5_n1",
+  "turnos_previos_del_cliente": [],
+  "cliente": "¿Dónde queda la oficina exactamente?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "Aniceto Arce"
+  ],
+  "evidencia": "Dirección: Calle Aniceto Arce N.º 25, entre Plaza 25 de Mayo y Nicolás Ortiz, Sucre.",
+  "respuesta_ideal": "Estamos en la calle Aniceto Arce N.º 25, entre la Plaza 25 de Mayo y la calle Nicolás Ortiz, en Sucre.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «No, la oficina permanece cerrada los domingos»."
+ }
+]

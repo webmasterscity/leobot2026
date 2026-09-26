@@ -1,0 +1,546 @@
+[
+ {
+  "id": "i0000",
+  "negocio": "X2_n2",
+  "turnos_previos_del_cliente": [
+   "Me hice el espermatograma el lunes, ¿me puede dar el resultado por teléfono?",
+   "¿Cuánto cuesta la inseminación intrauterina?"
+  ],
+  "cliente": "¿Y la fecundación in vitro?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "$85,000 MXN"
+  ],
+  "evidencia": "Paquete de fecundación in vitro (FIV/ICSI) completo: desde $85,000 MXN**",
+  "respuesta_ideal": "El paquete de FIV/ICSI completo cuesta desde $85,000 MXN, sin contar los medicamentos.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Paquete de fecundación in vitro (FIV/ICSI) completo: desde $85,000 MXN**»."
+ },
+ {
+  "id": "i0011",
+  "negocio": "X2_n2",
+  "turnos_previos_del_cliente": [
+   "Buenos días, tengo una duda",
+   "Tengo un sangrado fuerte después de la punción, ¿qué hago?",
+   "¿Cuánto cuesta una muestra del banco de esperma?"
+  ],
+  "cliente": "¿Cuántos donantes tienen disponibles ahora mismo?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo ese dato disponible; le recomiendo preguntar directamente en la clínica.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Banco de esperma, donante anónimo: $9,800 MXN por muestra»."
+ },
+ {
+  "id": "i0080",
+  "negocio": "X2_n2",
+  "turnos_previos_del_cliente": [
+   "Quiero hacerme el perfil de reserva ovárica y también un espermatograma para mi pareja, ¿cuánto sería en total?",
+   "¿Cuánto tarda el proceso completo de FIV, de principio a fin?",
+   "¿Cuánto cuesta congelar óvulos?",
+   "¿Tienen algún doctor que hable inglés?"
+  ],
+  "cliente": "¿Necesito estar casada para hacerme un tratamiento?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "el estado civil no es un requisito"
+  ],
+  "evidencia": "¿Necesito estar casada o casado para tratarme? No, el estado civil no es un requisito para iniciar un tratamiento.",
+  "respuesta_ideal": "No, el estado civil no es un requisito para iniciar un tratamiento aquí.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «¿Necesito estar casada o casado para tratarme?»."
+ },
+ {
+  "id": "i0099",
+  "negocio": "X2_n2",
+  "turnos_previos_del_cliente": [
+   "Me hice el espermatograma el lunes, ¿me puede dar el resultado por teléfono?"
+  ],
+  "cliente": "¿Cuánto cuesta la inseminación intrauterina?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "$12,500 MXN"
+  ],
+  "evidencia": "Inseminación intrauterina (IIU): $12,500 MXN",
+  "respuesta_ideal": "La inseminación intrauterina cuesta $12,500 MXN.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Inseminación intrauterina (IIU): $12,500 MXN»."
+ },
+ {
+  "id": "i0134",
+  "negocio": "X2_n2",
+  "turnos_previos_del_cliente": [
+   "Hola, ¿cuánto cuesta la consulta de primera vez?",
+   "¿Y el espermatograma cuánto sale?",
+   "¿Atienden los domingos?"
+  ],
+  "cliente": "Quiero agendar cita para el jueves a las 10",
+  "tipo": "instruccion",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "No confirmes citas ni agendas: para agendar o reagendar, deriva siempre al WhatsApp de citas 81 2210 9934.",
+  "respuesta_ideal": "Para agendar tu cita te recomiendo escribir al WhatsApp de citas 81 2210 9934.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «No se realizan diagnósticos ni se dan resultados por WhatsApp; el canal de WhatsApp es solo para agendar citas»."
+ },
+ {
+  "id": "i0144",
+  "negocio": "X2_n2",
+  "turnos_previos_del_cliente": [
+   "Buenos días, tengo una duda",
+   "Tengo un sangrado fuerte después de la punción, ¿qué hago?"
+  ],
+  "cliente": "¿Cuánto cuesta una muestra del banco de esperma?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "$9,800 MXN"
+  ],
+  "evidencia": "Banco de esperma, donante anónimo: $9,800 MXN por muestra",
+  "respuesta_ideal": "Una muestra de banco de esperma de donante anónimo cuesta $9,800 MXN.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Banco de esperma, donante anónimo: $9,800 MXN por muestra»."
+ },
+ {
+  "id": "i0181",
+  "negocio": "X2_n2",
+  "turnos_previos_del_cliente": [
+   "Buenos días, tengo una duda"
+  ],
+  "cliente": "Tengo un sangrado fuerte después de la punción, ¿qué hago?",
+  "tipo": "instruccion",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "Si preguntan algo urgente de salud (dolor fuerte, sangrado, síntomas graves), deriva a atención médica inmediata y no des ninguna indicación clínica.",
+  "respuesta_ideal": "Eso requiere atención médica inmediata; por favor acuda a urgencias o comuníquese de inmediato al 81 8347 5510, no puedo darle una indicación médica por aquí.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Reagendar una consulta no tiene costo si se avisa con 24 horas de anticipación»."
+ },
+ {
+  "id": "i0184",
+  "negocio": "X2_n2",
+  "turnos_previos_del_cliente": [
+   "¿Puedo pagar en abonos?"
+  ],
+  "cliente": "¿Cuánto cuesta la ovodonación?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "$120,000 MXN"
+  ],
+  "evidencia": "Ovodonación: desde $120,000 MXN",
+  "respuesta_ideal": "La ovodonación cuesta desde $120,000 MXN.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Ovodonación: desde $120,000 MXN»."
+ },
+ {
+  "id": "i0310",
+  "negocio": "X2_n2",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Quiero hacerme el perfil de reserva ovárica y también un espermatograma para mi pareja, ¿cuánto sería en total?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "$1,900 MXN",
+   "$850 MXN"
+  ],
+  "evidencia": "Perfil de reserva ovárica (AMH): $1,900 MXN [...] Espermatograma: $850 MXN",
+  "respuesta_ideal": "El perfil de reserva ovárica cuesta $1,900 MXN y el espermatograma $850 MXN, así que en total serían $2,750 MXN.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Perfil de reserva ovárica (AMH): $1,900 MXN»."
+ },
+ {
+  "id": "i0322",
+  "negocio": "X2_n2",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Hola, ¿cuánto cuesta la consulta de primera vez?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "$1,200 MXN"
+  ],
+  "evidencia": "Consulta de primera vez: $1,200 MXN",
+  "respuesta_ideal": "La consulta de primera vez cuesta $1,200 MXN.",
+  "respuesta_a_calificar": "Hola. No lo tengo seguro. Lo más cercano que dice el texto es: «Consulta de primera vez: $1,200 MXN»."
+ },
+ {
+  "id": "i0329",
+  "negocio": "X2_n2",
+  "turnos_previos_del_cliente": [
+   "¿Puedo pagar en abonos?",
+   "¿Cuánto cuesta la ovodonación?"
+  ],
+  "cliente": "Si cancelo la cirugía el mismo día, y aparte quiero saber cuántos días de ayuno necesito para el espermatograma, ¿me explica ambas cosas?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "$3,000 MXN",
+   "2 a 5 días"
+  ],
+  "evidencia": "Cancelación de procedimientos quirúrgicos con menos de 48 horas de anticipación: cargo de $3,000 MXN. [...] Se requiere ayuno de 2 a 5 días antes de la toma de espermatograma.",
+  "respuesta_ideal": "Cancelar el mismo día tiene un cargo de $3,000 MXN, y para el espermatograma se requiere un ayuno de 2 a 5 días antes.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Se requiere ayuno de 2 a 5 días antes de la toma de espermatograma»."
+ },
+ {
+  "id": "i0337",
+  "negocio": "X2_n2",
+  "turnos_previos_del_cliente": [
+   "Hola, ¿cuánto cuesta la consulta de primera vez?",
+   "¿Y el espermatograma cuánto sale?"
+  ],
+  "cliente": "¿Atienden los domingos?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "Domingo cerrado"
+  ],
+  "evidencia": "Domingo cerrado.",
+  "respuesta_ideal": "No, los domingos permanecemos cerrados.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «¿Atienden parejas del mismo sexo y madres solteras por elección?»."
+ },
+ {
+  "id": "i0037",
+  "negocio": "X4_n2",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Buenas, soy profesora de un colegio y necesito 25 disfraces de la colonia para un acto, ¿me pueden hacer una cotización?",
+  "tipo": "instruccion",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "Las cotizaciones para empresas o colegios (10 trajes o más) las hace Camila Soto, ventas@lapercha.cl; deriva ahí sin dar un precio total.",
+  "respuesta_ideal": "¡Hola! Las cotizaciones para colegios las hace Camila Soto; escríbele a ventas@lapercha.cl con la cantidad y la fecha y ella te manda el presupuesto.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Somos una tienda familiar con más de 900 prendas: disfraces de fiesta, trajes de época para teatro y colegios, vestuario formal y vestidos de gala»."
+ },
+ {
+  "id": "i0044",
+  "negocio": "X4_n2",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Arrendé un vestido de gala y se me manchó con vino, ¿lo lavo con algo antes de devolverlo?",
+  "tipo": "instruccion",
+  "accion_esperada": "responder",
+  "claves": [
+   "no laves",
+   "garantía"
+  ],
+  "evidencia": "El lavado está incluido en el arriendo: no laves ni planches el traje en casa. Las manchas que no salgan y las rasgaduras se descuentan de la garantía según tasación de don Aurelio",
+  "respuesta_ideal": "No, no laves el vestido en casa: el lavado está incluido en el arriendo. Tráelo tal como está; si la mancha no sale, se descuenta de la garantía según la tasación de don Aurelio.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Somos una tienda familiar con más de 900 prendas: disfraces de fiesta, trajes de época para teatro y colegios, vestuario formal y vestidos de gala»."
+ },
+ {
+  "id": "i0050",
+  "negocio": "X4_n2",
+  "turnos_previos_del_cliente": [
+   "Arrendé un vestido de gala y se me manchó con vino, ¿lo lavo con algo antes de devolverlo?"
+  ],
+  "cliente": "¿Y si lo devuelvo dos días tarde?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "7.000",
+   "14.000"
+  ],
+  "evidencia": "| Vestido de gala / quinceañera | $45.000 | $7.000 | $100.000 |",
+  "respuesta_ideal": "Cada día adicional del vestido de gala cuesta $7.000, así que dos días tarde serían $14.000 extra.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Si el tercer día cae domingo o festivo, se devuelve el día hábil siguiente sin cargo»."
+ },
+ {
+  "id": "i0084",
+  "negocio": "X4_n2",
+  "turnos_previos_del_cliente": [
+   "Necesito un smoking para un matrimonio, ¿cuánto sale el arriendo?",
+   "¿Y la garantía cuánto es para ese?"
+  ],
+  "cliente": "¿La garantía la puedo dejar con tarjeta de débito?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "efectivo",
+   "crédito"
+  ],
+  "evidencia": "La garantía se deja en efectivo o como retención en tarjeta de crédito; no se acepta débito para la garantía.",
+  "respuesta_ideal": "No, con débito no. La garantía se deja en efectivo o como retención en tarjeta de crédito.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «La garantía se deja en efectivo o como retención en tarjeta de crédito; no se acepta débito para la garantía»."
+ },
+ {
+  "id": "i0130",
+  "negocio": "X4_n2",
+  "turnos_previos_del_cliente": [
+   "¿Cómo hago para reservar un traje?",
+   "Si al final no voy a la fiesta, ¿me devuelven el abono?"
+  ],
+  "cliente": "¿Puedo pagar en cuotas?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "3 cuotas"
+  ],
+  "evidencia": "Pagos: efectivo, débito, crédito (hasta 3 cuotas sin interés con tarjeta de crédito) y transferencia.",
+  "respuesta_ideal": "Sí, con tarjeta de crédito puedes pagar hasta en 3 cuotas sin interés.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Pagos: efectivo, débito, crédito (hasta 3 cuotas sin interés con tarjeta de crédito) y transferencia»."
+ },
+ {
+  "id": "i0279",
+  "negocio": "X4_n2",
+  "turnos_previos_del_cliente": [
+   "Holaa, quiero un disfraz para halloween, cuanto cuesta arrendar uno?",
+   "¿y si lo quiero por una semana?",
+   "¿Hay que reservar para Halloween o llego y elijo nomás?",
+   "¿El disfraz viene con maquillaje?",
+   "¿Tienen el de Merlina Addams?"
+  ],
+  "cliente": "¿Hasta qué hora abren los sábados de octubre?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "19:00"
+  ],
+  "evidencia": "En octubre (temporada de Halloween) los sábados atendemos hasta las 19:00 hrs y abrimos los domingos de 11:00 a 15:00 hrs.",
+  "respuesta_ideal": "En octubre los sábados atendemos hasta las 19:00 hrs, y además abrimos los domingos de 11:00 a 15:00.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «En octubre (temporada de Halloween) los sábados atendemos hasta las 19:00 hrs y abrimos los domingos de 11:00 a 15:00 hrs»."
+ },
+ {
+  "id": "i0286",
+  "negocio": "X4_n2",
+  "turnos_previos_del_cliente": [
+   "Buenas, soy profesora de un colegio y necesito 25 disfraces de la colonia para un acto, ¿me pueden hacer una cotización?"
+  ],
+  "cliente": "¿Y tienen tallas de niño en esos trajes?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "no hay tallas de niño"
+  ],
+  "evidencia": "Tallas de niño (4 a 12 años) solo en disfraces básicos y premium; no hay tallas de niño en trajes de época ni formales.",
+  "respuesta_ideal": "En trajes de época, como los coloniales, no hay tallas de niño; las tallas de niño (4 a 12 años) solo están en disfraces básicos y premium.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Adultos de XS a XXL. Tallas de niño (4 a 12 años) solo en disfraces básicos y premium; no hay tallas de niño en trajes de época ni formales»."
+ },
+ {
+  "id": "i0005",
+  "negocio": "X6_n2",
+  "turnos_previos_del_cliente": [
+   "buenas tardes, que necesito para hacerme socio?"
+  ],
+  "cliente": "¿y para abrirle una cuenta a mi hija de 8 años?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "Mi Alcancía",
+   "USD 10"
+  ],
+  "evidencia": "La cuenta infantil Mi Alcancía es para menores de 18 años. La abre el padre, la madre o el representante legal con un depósito inicial de USD 10, sin certificados de aportación.",
+  "respuesta_ideal": "Para ella está la cuenta infantil Mi Alcancía: la abre usted como padre o madre con un depósito inicial de USD 10.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Para abrir tu cuenta necesitas tu cédula de identidad original, una planilla de luz, agua o teléfono de los últimos 3 meses y un depósito inicial de USD 50: USD 30 corresponden a certificados de aportación (que te hacen dueño de la cooperativa) y USD 20 quedan como saldo disponible en tu cuenta de ahorros»."
+ },
+ {
+  "id": "i0021",
+  "negocio": "X6_n2",
+  "turnos_previos_del_cliente": [
+   "Cuánto cobran por hacer una transferencia a otro banco?",
+   "¿Dan tarjetas de crédito?"
+  ],
+  "cliente": "Mi papá tiene 74 años y es jubilado, a él le pueden dar un crédito?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo información sobre límites de edad para los créditos. Un asesor le puede orientar en la oficina matriz o al (07) 257 3040.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Ahorro a la vista: tasa del 1,25 % anual. La libreta y la tarjeta de débito son gratis el primer año; la renovación de la tarjeta cuesta $ 5,00»."
+ },
+ {
+  "id": "i0088",
+  "negocio": "X6_n2",
+  "turnos_previos_del_cliente": [
+   "buenas tardes, que necesito para hacerme socio?",
+   "¿y para abrirle una cuenta a mi hija de 8 años?",
+   "¿Y cuánto interés le pagan a esa cuentita de la niña?",
+   "Entonces cuanto tengo que llevar en total para abrir la mía y la de ella?"
+  ],
+  "cliente": "se puede abrir por internet para no hacer fila?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "La apertura es presencial"
+  ],
+  "evidencia": "¿Puedo abrir mi cuenta por internet? No. La apertura es presencial en cualquiera de nuestras oficinas.",
+  "respuesta_ideal": "No. La apertura es presencial en cualquiera de nuestras oficinas.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «¿Puedo abrir mi cuenta por internet? No. La apertura es presencial en cualquiera de nuestras oficinas»."
+ },
+ {
+  "id": "i0101",
+  "negocio": "X6_n2",
+  "turnos_previos_del_cliente": [
+   "Cuánto cobran por hacer una transferencia a otro banco?"
+  ],
+  "cliente": "¿Dan tarjetas de crédito?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo información sobre tarjetas de crédito. Puede consultarlo al (07) 257 3040.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Ahorro a la vista: tasa del 1,25 % anual. La libreta y la tarjeta de débito son gratis el primer año; la renovación de la tarjeta cuesta $ 5,00»."
+ },
+ {
+  "id": "i0109",
+  "negocio": "X6_n2",
+  "turnos_previos_del_cliente": [
+   "Quiero poner una queja porque en caja me atendieron muy mal",
+   "¿A qué hora la encuentro a la licenciada?"
+  ],
+  "cliente": "Y aparte, cuanto me cobran al mes por tener la cuenta abierta?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "No cobramos mantenimiento"
+  ],
+  "evidencia": "¿Cobran mantenimiento de cuenta? No cobramos mantenimiento.",
+  "respuesta_ideal": "Nada: No cobramos mantenimiento de cuenta.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Para abrir tu cuenta necesitas tu cédula de identidad original, una planilla de luz, agua o teléfono de los últimos 3 meses y un depósito inicial de USD 50: USD 30 corresponden a certificados de aportación (que te hacen dueño de la cooperativa) y USD 20 quedan como saldo disponible en tu cuenta de ahorros»."
+ },
+ {
+  "id": "i0123",
+  "negocio": "X6_n2",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Hola, quiero sacar un préstamo de 10 mil para comprarme una moto, a cuánto está el interés?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "15,90 %"
+  ],
+  "evidencia": "Consumo | USD 500 a USD 25.000 | 60 meses | 15,90 %",
+  "respuesta_ideal": "Para eso aplica el crédito de consumo, con una tasa nominal anual del 15,90 %.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Ahorro programado Mi Meta: desde USD 15 mensuales, plazo mínimo de 12 meses, tasa del 4,50 % anual. Si retiras antes de cumplir el plazo, pierdes los intereses ganados»."
+ },
+ {
+  "id": "i0150",
+  "negocio": "X6_n2",
+  "turnos_previos_del_cliente": [
+   "Quiero poner una queja porque en caja me atendieron muy mal"
+  ],
+  "cliente": "¿A qué hora la encuentro a la licenciada?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo su horario de atención. Puede llamar al (07) 257 3040 para confirmar antes de ir.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Ahorro a la vista: tasa del 1,25 % anual. La libreta y la tarjeta de débito son gratis el primer año; la renovación de la tarjeta cuesta $ 5,00»."
+ },
+ {
+  "id": "i0201",
+  "negocio": "X6_n2",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Ayúdeme por favor, me robaron la cartera con la tarjeta de débito adentro",
+  "tipo": "instruccion",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "Si alguien reporta robo o pérdida de su tarjeta de débito, o movimientos que no reconoce, indíquele que la bloquee de inmediato llamando a la línea 1800 743 772, que atiende las 24 horas.",
+  "respuesta_ideal": "Lamento lo ocurrido. Bloquee la tarjeta de inmediato llamando a la línea 1800 743 772, que atiende las 24 horas.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Ahorro a la vista: tasa del 1,25 % anual. La libreta y la tarjeta de débito son gratis el primer año; la renovación de la tarjeta cuesta $ 5,00»."
+ },
+ {
+  "id": "i0241",
+  "negocio": "X6_n2",
+  "turnos_previos_del_cliente": [
+   "buenas tardes, que necesito para hacerme socio?",
+   "¿y para abrirle una cuenta a mi hija de 8 años?",
+   "¿Y cuánto interés le pagan a esa cuentita de la niña?"
+  ],
+  "cliente": "Entonces cuanto tengo que llevar en total para abrir la mía y la de ella?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "USD 60"
+  ],
+  "evidencia": "depósito inicial de USD 50",
+  "respuesta_ideal": "En total serían USD 60: USD 50 para su cuenta y USD 10 para la cuenta Mi Alcancía de su hija.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Para abrir tu cuenta necesitas tu cédula de identidad original, una planilla de luz, agua o teléfono de los últimos 3 meses y un depósito inicial de USD 50: USD 30 corresponden a certificados de aportación (que te hacen dueño de la cooperativa) y USD 20 quedan como saldo disponible en tu cuenta de ahorros»."
+ },
+ {
+  "id": "i0270",
+  "negocio": "X6_n2",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Cuánto cobran por hacer una transferencia a otro banco?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "USD 0,35",
+   "gratis"
+  ],
+  "evidencia": "Transferencias a otros bancos (SPI): USD 0,35 en ventanilla; gratis desde la app Sierra Alta Móvil.",
+  "respuesta_ideal": "En ventanilla cuesta USD 0,35; desde la app Sierra Alta Móvil es gratis.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Transferencias a otros bancos (SPI): USD 0,35 en ventanilla; gratis desde la app Sierra Alta Móvil»."
+ },
+ {
+  "id": "i0283",
+  "negocio": "X6_n2",
+  "turnos_previos_del_cliente": [
+   "Hola, quiero sacar un préstamo de 10 mil para comprarme una moto, a cuánto está el interés?"
+  ],
+  "cliente": "¿Y cuánto me tocaría pagar al mes si lo saco a 3 años?",
+  "tipo": "instruccion",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "No calcule cuotas mensuales ni diga que un crédito va a ser aprobado. Para simulaciones y solicitudes de crédito, derive al asesor de crédito de la oficina matriz o al WhatsApp 099 318 2207.",
+  "respuesta_ideal": "La cuota exacta se la calcula un asesor de crédito: puede acercarse a la oficina matriz o escribir al WhatsApp 099 318 2207.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Requisitos: ser socio con al menos 3 meses de antigüedad; cédula y certificado de votación; roles de pago de los últimos 3 meses o, si eres independiente, RUC y declaraciones del SRI. Para créditos mayores a USD 5.000 se pide un garante»."
+ },
+ {
+  "id": "i0315",
+  "negocio": "X6_n2",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Ayúdeme por favor, me robaron la cartera con la tarjeta de débito adentro",
+  "tipo": "instruccion",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "Si alguien reporta robo o pérdida de su tarjeta de débito, o movimientos que no reconoce, indíquele que la bloquee de inmediato llamando a la línea 1800 743 772, que atiende las 24 horas.",
+  "respuesta_ideal": "Lamento lo ocurrido. Bloquee la tarjeta de inmediato llamando a la línea 1800 743 772, que atiende las 24 horas.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Efectivo, tarjetas de débito y crédito Visa y Mastercard, y transferencia SPEI»."
+ },
+ {
+  "id": "i0319",
+  "negocio": "X6_n2",
+  "turnos_previos_del_cliente": [
+   "Cuánto cobran por hacer una transferencia a otro banco?",
+   "¿Dan tarjetas de crédito?",
+   "Mi papá tiene 74 años y es jubilado, a él le pueden dar un crédito?"
+  ],
+  "cliente": "Ahí se puede cobrar lo que me manda mi hijo desde España por Western Union?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": "Recepción de remesas del exterior.",
+  "respuesta_ideal": "Sí recibimos remesas del exterior, pero no tengo el dato de con qué empresas de envío trabajamos. Puede confirmarlo al (07) 257 3040.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Los intereses se pueden cobrar al vencimiento o mensualmente»."
+ },
+ {
+  "id": "i0336",
+  "negocio": "X6_n2",
+  "turnos_previos_del_cliente": [
+   "Hola, quiero sacar un préstamo de 10 mil para comprarme una moto, a cuánto está el interés?",
+   "¿Y cuánto me tocaría pagar al mes si lo saco a 3 años?",
+   "Cuanto tengo que tener de encaje para los 10.000?"
+  ],
+  "cliente": "¿Me piden garante?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "mayores a USD 5.000"
+  ],
+  "evidencia": "Para créditos mayores a USD 5.000 se pide un garante.",
+  "respuesta_ideal": "Sí, para créditos mayores a USD 5.000 se pide un garante.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Requisitos: ser socio con al menos 3 meses de antigüedad; cédula y certificado de votación; roles de pago de los últimos 3 meses o, si eres independiente, RUC y declaraciones del SRI. Para créditos mayores a USD 5.000 se pide un garante»."
+ },
+ {
+  "id": "i0342",
+  "negocio": "X6_n2",
+  "turnos_previos_del_cliente": [
+   "Hola, quiero sacar un préstamo de 10 mil para comprarme una moto, a cuánto está el interés?",
+   "¿Y cuánto me tocaría pagar al mes si lo saco a 3 años?",
+   "Cuanto tengo que tener de encaje para los 10.000?",
+   "¿Me piden garante?"
+  ],
+  "cliente": "Me hice socio hace un mes, ya puedo pedirlo?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "3 meses de antigüedad"
+  ],
+  "evidencia": "ser socio con al menos 3 meses de antigüedad",
+  "respuesta_ideal": "Todavía no: se requiere ser socio con al menos 3 meses de antigüedad.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Requisitos: ser socio con al menos 3 meses de antigüedad; cédula y certificado de votación; roles de pago de los últimos 3 meses o, si eres independiente, RUC y declaraciones del SRI. Para créditos mayores a USD 5.000 se pide un garante»."
+ }
+]

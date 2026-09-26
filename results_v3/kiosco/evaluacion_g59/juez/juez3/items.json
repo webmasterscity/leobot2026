@@ -1,0 +1,520 @@
+[
+ {
+  "id": "i0010",
+  "negocio": "X1_n3",
+  "turnos_previos_del_cliente": [
+   "Hola! Cuánto cuesta alquilar una bici todo el día?",
+   "¿y por horas?",
+   "¿El casco va incluido?"
+  ],
+  "cliente": "¿Qué hay que dejar de fianza?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "150 €"
+  ],
+  "evidencia": "Fianza: 150 € que se bloquean en la tarjeta y se liberan al devolver la bici.",
+  "respuesta_ideal": "La fianza es de 150 €, que se bloquean en la tarjeta y se liberan al devolver la bici.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Fianza: 150 € que se bloquean en la tarjeta y se liberan al devolver la bici»."
+ },
+ {
+  "id": "i0013",
+  "negocio": "X1_n3",
+  "turnos_previos_del_cliente": [
+   "Si compro una bici y no me convence, ¿cuántos días tengo para devolverla?",
+   "Vivo en Madrid, ¿me la podéis enviar a casa?"
+  ],
+  "cliente": "¿Cuánto cuesta la primera revisión después de comprarla?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "gratis",
+   "60 días"
+  ],
+  "evidencia": "Primera revisión gratis durante los primeros 60 días desde la compra.",
+  "respuesta_ideal": "La primera revisión es gratis si la haces durante los primeros 60 días desde la compra.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Desde 2009 enseñamos idiomas a chicos y chicas de 3 a 14 años, con grupos reducidos, juegos, canciones y mucho uso del idioma desde la primera clase»."
+ },
+ {
+  "id": "i0018",
+  "negocio": "X1_n3",
+  "turnos_previos_del_cliente": [
+   "Si compro una bici y no me convence, ¿cuántos días tengo para devolverla?",
+   "Vivo en Madrid, ¿me la podéis enviar a casa?",
+   "¿Cuánto cuesta la primera revisión después de comprarla?",
+   "¿Vendéis cascos? ¿A qué precio?"
+  ],
+  "cliente": "¿Hay alguna ayuda del Ayuntamiento para comprar una eléctrica?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo información sobre ayudas del Ayuntamiento.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Tienda, alquiler y taller de bicicletas eléctricas»."
+ },
+ {
+  "id": "i0034",
+  "negocio": "X1_n3",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Hola! Cuánto cuesta alquilar una bici todo el día?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "35 €"
+  ],
+  "evidencia": "- Día completo (de 10:00 a 20:00): 35 €",
+  "respuesta_ideal": "¡Hola! Bienvenido a Volta Bikes. El alquiler de día completo, de 10:00 a 20:00, cuesta 35 €.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Devoluciones: tienes 14 días desde la compra para devolver la bici, siempre que esté sin usar (menos de 10 km en el contador) y con su embalaje original»."
+ },
+ {
+  "id": "i0036",
+  "negocio": "X1_n3",
+  "turnos_previos_del_cliente": [
+   "Busco una plegable para meterla en el tren de cercanías, ¿qué precio tiene?",
+   "¿Y cuántos km aguanta la batería?"
+  ],
+  "cliente": "¿Cuánto pesa?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo el dato del peso de la Volta Fold.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Primera revisión gratis durante los primeros 60 días desde la compra»."
+ },
+ {
+  "id": "i0052",
+  "negocio": "X1_n3",
+  "turnos_previos_del_cliente": [
+   "A qué hora abris por la tarde?",
+   "¿Y los sábados por la tarde?",
+   "¿Qué días cerráis en verano?"
+  ],
+  "cliente": "¿Dónde estáis exactamente y qué metro me pilla cerca?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "Sardenya 245",
+   "Sagrada Família"
+  ],
+  "evidencia": "Carrer de Sardenya 245, 08013 Barcelona\nMetro: Sagrada Família (L2 y L5), a 4 minutos a pie",
+  "respuesta_ideal": "Estamos en el Carrer de Sardenya 245; el metro más cercano es Sagrada Família (L2 y L5), a 4 minutos a pie.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Metro: Sagrada Família (L2 y L5), a 4 minutos a pie»."
+ },
+ {
+  "id": "i0077",
+  "negocio": "X1_n3",
+  "turnos_previos_del_cliente": [
+   "Hola! Cuánto cuesta alquilar una bici todo el día?"
+  ],
+  "cliente": "¿y por horas?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "9,90 €",
+   "mínimo 2 h"
+  ],
+  "evidencia": "- Por horas: 9,90 €/hora (mínimo 2 h)",
+  "respuesta_ideal": "Por horas son 9,90 € la hora, con un mínimo 2 h.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Por horas: 9,90 €/hora (mínimo 2 h)»."
+ },
+ {
+  "id": "i0097",
+  "negocio": "X1_n3",
+  "turnos_previos_del_cliente": [
+   "A qué hora abris por la tarde?"
+  ],
+  "cliente": "¿Y los sábados por la tarde?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "14:00"
+  ],
+  "evidencia": "Sábados: 10:00–14:00",
+  "respuesta_ideal": "Los sábados no abrimos por la tarde: el horario es de 10:00 a 14:00.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Lunes a viernes de 13.30 a 20 h. Sábados de 9 a 12.30 h»."
+ },
+ {
+  "id": "i0110",
+  "negocio": "X1_n3",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Si compro una bici y no me convence, ¿cuántos días tengo para devolverla?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "14 días",
+   "sin usar"
+  ],
+  "evidencia": "Devoluciones: tienes 14 días desde la compra para devolver la bici, siempre que esté sin usar (menos de 10 km en el contador) y con su embalaje original.",
+  "respuesta_ideal": "Tienes 14 días desde la compra, siempre que esté sin usar (menos de 10 km en el contador) y con su embalaje original.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Devoluciones: tienes 14 días desde la compra para devolver la bici, siempre que esté sin usar (menos de 10 km en el contador) y con su embalaje original»."
+ },
+ {
+  "id": "i0133",
+  "negocio": "X1_n3",
+  "turnos_previos_del_cliente": [
+   "A qué hora abris por la tarde?",
+   "¿Y los sábados por la tarde?"
+  ],
+  "cliente": "¿Qué días cerráis en verano?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "del 10 al 24 de agosto"
+  ],
+  "evidencia": "Vacaciones de verano: cerramos del 10 al 24 de agosto (ambos incluidos).",
+  "respuesta_ideal": "Cerramos por vacaciones del 10 al 24 de agosto, ambos incluidos.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Devoluciones: tienes 14 días desde la compra para devolver la bici, siempre que esté sin usar (menos de 10 km en el contador) y con su embalaje original»."
+ },
+ {
+  "id": "i0165",
+  "negocio": "X1_n3",
+  "turnos_previos_del_cliente": [
+   "A qué hora abris por la tarde?"
+  ],
+  "cliente": "¿Y los sábados por la tarde?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "14:00"
+  ],
+  "evidencia": "Sábados: 10:00–14:00",
+  "respuesta_ideal": "Los sábados no abrimos por la tarde: el horario es de 10:00 a 14:00.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Sábados: 10:00–14:00»."
+ },
+ {
+  "id": "i0169",
+  "negocio": "X1_n3",
+  "turnos_previos_del_cliente": [
+   "Si compro una bici y no me convence, ¿cuántos días tengo para devolverla?",
+   "Vivo en Madrid, ¿me la podéis enviar a casa?"
+  ],
+  "cliente": "¿Cuánto cuesta la primera revisión después de comprarla?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "gratis",
+   "60 días"
+  ],
+  "evidencia": "Primera revisión gratis durante los primeros 60 días desde la compra.",
+  "respuesta_ideal": "La primera revisión es gratis si la haces durante los primeros 60 días desde la compra.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Primera revisión gratis durante los primeros 60 días desde la compra»."
+ },
+ {
+  "id": "i0176",
+  "negocio": "X1_n3",
+  "turnos_previos_del_cliente": [
+   "Buenas, ¿cuánto cobráis por una revisión completa de una e-bike?"
+  ],
+  "cliente": "¿Arregláis también patinetes eléctricos?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "No reparamos patinetes eléctricos"
+  ],
+  "evidencia": "No reparamos patinetes eléctricos.",
+  "respuesta_ideal": "Lo siento, no. No reparamos patinetes eléctricos.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «No reparamos patinetes eléctricos»."
+ },
+ {
+  "id": "i0177",
+  "negocio": "X1_n3",
+  "turnos_previos_del_cliente": [
+   "Hola! Cuánto cuesta alquilar una bici todo el día?",
+   "¿y por horas?",
+   "¿El casco va incluido?",
+   "¿Qué hay que dejar de fianza?",
+   "Si la alquilo el finde, ¿cuánto sale y hasta qué hora del lunes la puedo tener?"
+  ],
+  "cliente": "¿Puedo dejarla en mi hotel al terminar en vez de traerla a la tienda?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo ese dato; no dispongo de información sobre devolver la bici en otro lugar.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Los perros son bienvenidos en la tienda»."
+ },
+ {
+  "id": "i0242",
+  "negocio": "X1_n3",
+  "turnos_previos_del_cliente": [
+   "Busco una plegable para meterla en el tren de cercanías, ¿qué precio tiene?",
+   "¿Y cuántos km aguanta la batería?",
+   "¿Cuánto pesa?",
+   "¿Se puede pagar a plazos?",
+   "¿Y cuánto me quedaría la cuota al mes con la plegable?"
+  ],
+  "cliente": "¿Qué garantía tiene la batería?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "2 años o 500 ciclos"
+  ],
+  "evidencia": "Batería: 2 años o 500 ciclos de carga (lo que ocurra primero).",
+  "respuesta_ideal": "La batería tiene 2 años o 500 ciclos de carga de garantía, lo que ocurra primero.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Batería: 2 años o 500 ciclos de carga (lo que ocurra primero)»."
+ },
+ {
+  "id": "i0321",
+  "negocio": "X1_n3",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Buenas, ¿cuánto cobráis por una revisión completa de una e-bike?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "69 €"
+  ],
+  "evidencia": "Revisión completa e-bike (motor, batería y software) ....... 69 €",
+  "respuesta_ideal": "La revisión completa de e-bike (motor, batería y software) cuesta 69 €.",
+  "respuesta_a_calificar": "Buenas. No lo tengo seguro. Lo más cercano que dice el texto es: «Revisión completa e-bike (motor, batería y software) ....... 69 €»."
+ },
+ {
+  "id": "i0003",
+  "negocio": "X3_n3",
+  "turnos_previos_del_cliente": [],
+  "cliente": "¿Qué aceites tienen?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "Aceite mineral 10W40",
+   "Aceite sintético 5W30"
+  ],
+  "evidencia": "- Aceite mineral 10W40 (cuarto): USD 5\n- Aceite sintético 5W30 (cuarto): USD 9",
+  "respuesta_ideal": "Tenemos aceite mineral 10W40 por USD 5, o sintético 5W30 por USD 9. ¿Cuál necesitás para tu auto?",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Aceite mineral 10W40 (cuarto): USD 5»."
+ },
+ {
+  "id": "i0157",
+  "negocio": "X3_n3",
+  "turnos_previos_del_cliente": [],
+  "cliente": "¿Haces encargos?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "Podemos encargarlo. Tarda 2-4 semanas y se requiere 50% de anticipo"
+  ],
+  "evidencia": "Encargos especiales o importaciones: Si el repuesto no está en stock, podemos ordenarlo. Tiempo de espera: 2-4 semanas. Anticipo del 50% requerido.",
+  "respuesta_ideal": "Sí hacemos encargos. Tardamos 2-4 semanas y necesitamos 50% de anticipo. ¿Qué repuesto necesitás?",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Encargos especiales o importaciones»."
+ },
+ {
+  "id": "i0158",
+  "negocio": "X3_n3",
+  "turnos_previos_del_cliente": [],
+  "cliente": "¿Cuánto cuesta un filtro de aire?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "USD 8",
+   "BsF 250"
+  ],
+  "evidencia": "- Filtro de aire (compatible con la mayoría de modelos): USD 8 | BsF 250",
+  "respuesta_ideal": "El filtro de aire cuesta USD 8 o BsF 250. Pero confirmá el precio en BsF por WhatsApp porque el cambio varía diariamente.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «- Filtro de aire (compatible con la mayoría de modelos): USD 8: - Filtro de cabina (aire acondicionado): USD 12; BsF 250: BsF 370»."
+ },
+ {
+  "id": "i0162",
+  "negocio": "X3_n3",
+  "turnos_previos_del_cliente": [
+   "¿Venden batería?"
+  ],
+  "cliente": "¿Cual es la mas cara?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "industrial 12V 140A: USD 110"
+  ],
+  "evidencia": "- Batería industrial 12V 140A: USD 110",
+  "respuesta_ideal": "La más cara es la batería industrial 140A por USD 110.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Devoluciones: reembolso 30% si el cliente cambió de idea; 100% si el repuesto es defectuoso»."
+ },
+ {
+  "id": "i0178",
+  "negocio": "X3_n3",
+  "turnos_previos_del_cliente": [
+   "¿Venden batería?",
+   "¿Cual es la mas cara?",
+   "¿Tienen garantía?"
+  ],
+  "cliente": "Bueno, me llevas una de 100A.",
+  "tipo": "charla",
+  "accion_esperada": "responder",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "Perfecto. Confirmá por WhatsApp tu dirección y forma de pago, y te lo enviamos.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Batería 12V 100A: USD 75»."
+ },
+ {
+  "id": "i0206",
+  "negocio": "X3_n3",
+  "turnos_previos_del_cliente": [
+   "¿Cuánto cuesta un filtro de aire?"
+  ],
+  "cliente": "¿Lo tenés ahora en stock?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "La disponibilidad varía. Lo mejor es que me escribas por WhatsApp (+58 414 5678-910) para verificar si lo tenemos ahora.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Si el repuesto no está en stock, podemos ordenarlo»."
+ },
+ {
+  "id": "i0214",
+  "negocio": "X3_n3",
+  "turnos_previos_del_cliente": [
+   "¿Qué aceites tienen?"
+  ],
+  "cliente": "No sé. ¿Vos sabés qué tipo es mejor para un Chevrolet 2010?",
+  "tipo": "instruccion",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "Asesoría técnica: Nuestro gerente de taller (Ismael Díaz, +58 251 234-5678 ext. 2) responde preguntas sobre compatibilidad, instalación o diagnóstico.",
+  "respuesta_ideal": "Eso es mejor que lo consultes con nuestro gerente de taller Ismael. Llamá al 0251 234-5678 ext. 2 y él te asesora sin cargo.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Régimen de precios: con la volatilidad del tipo de cambio, los precios en USD y BsF se actualizan diariamente»."
+ },
+ {
+  "id": "i0296",
+  "negocio": "X3_n3",
+  "turnos_previos_del_cliente": [
+   "¿Cuánto cuesta un filtro de aire?",
+   "¿Lo tenés ahora en stock?"
+  ],
+  "cliente": "¿Cuánto tiempo tarda la entrega?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "¿Vos donde vives? Barquisimeto centro tarda 24-48 horas. Si es otra zona, varía. Dime la ubicación y te digo exacto.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Tiempo: 48-72 horas»."
+ },
+ {
+  "id": "i0332",
+  "negocio": "X3_n3",
+  "turnos_previos_del_cliente": [
+   "¿Venden batería?",
+   "¿Cual es la mas cara?"
+  ],
+  "cliente": "¿Tienen garantía?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "Todo producto tiene garantía de fábrica"
+  ],
+  "evidencia": "- Todo producto tiene garantía de fábrica (verificar en factura)",
+  "respuesta_ideal": "Sí, todas nuestras baterías tienen garantía de fábrica. Te lo detallamos en la factura.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Todo producto tiene garantía de fábrica (verificar en factura)»."
+ },
+ {
+  "id": "i0001",
+  "negocio": "X5_n3",
+  "turnos_previos_del_cliente": [
+   "¿Tienen clases de tango?",
+   "¿Cuánto cuesta la mensualidad del grupo infantil si va dos veces por semana?"
+  ],
+  "cliente": "¿A qué hora exacta es la audición para el festival de diciembre?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo el horario exacto de las audiciones; se anuncian en octubre, te recomiendo estar pendiente en esa fecha.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Cada diciembre participamos en el Festival de Salsa de Cali»."
+ },
+ {
+  "id": "i0085",
+  "negocio": "X5_n3",
+  "turnos_previos_del_cliente": [
+   "Quiero inscribirme ya mismo, ¿me guarda el cupo y me cobra por acá?",
+   "¿Cuánto vale una clase suelta?"
+  ],
+  "cliente": "¿Me conviene más comprar 10 clases sueltas o pagarlas una por una?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "$25.000",
+   "$220.000"
+  ],
+  "evidencia": "Clase suelta: $25.000 / Paquete de 10 clases sueltas: $220.000",
+  "respuesta_ideal": "Diez clases sueltas por separado costarían $250.000, pero el paquete de 10 clases cuesta $220.000, así que le conviene más el paquete.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Paquete de 10 clases sueltas: $220.000»."
+ },
+ {
+  "id": "i0092",
+  "negocio": "X5_n3",
+  "turnos_previos_del_cliente": [
+   "Quiero inscribirme ya mismo, ¿me guarda el cupo y me cobra por acá?",
+   "¿Cuánto vale una clase suelta?",
+   "¿Me conviene más comprar 10 clases sueltas o pagarlas una por una?"
+  ],
+  "cliente": "¿Si dejo de ir un mes me devuelven la plata?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "salvo incapacidad médica certificada"
+  ],
+  "evidencia": "No hay devolución de dinero por mensualidades no usadas, salvo incapacidad médica certificada.",
+  "respuesta_ideal": "No, no hay devolución de dinero por mensualidades no usadas, salvo que presente una incapacidad médica certificada.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Clases perdidas: se pueden reponer en otro horario del mismo nivel dentro del mismo mes, avisando con un día de anticipación a secretaría»."
+ },
+ {
+  "id": "i0219",
+  "negocio": "X5_n3",
+  "turnos_previos_del_cliente": [
+   "¿A qué hora es la clase de bachata?"
+  ],
+  "cliente": "¿Y la de kizomba?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "7:00-8:00 p. m."
+  ],
+  "evidencia": "Kizomba: viernes, 7:00-8:00 p. m.",
+  "respuesta_ideal": "La clase de kizomba es también los viernes, de 7:00 a 8:00 p.m., justo después de bachata.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Katherine Mosquera, dicta bachata y kizomba»."
+ },
+ {
+  "id": "i0261",
+  "negocio": "X5_n3",
+  "turnos_previos_del_cliente": [
+   "¿Dónde queda la academia?",
+   "¿Desde qué edad pueden inscribirse los niños al grupo infantil?"
+  ],
+  "cliente": "¿La primera clase es gratis?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "primera clase de cualquier nivel es gratuita"
+  ],
+  "evidencia": "¿Hay clase de prueba gratis? Sí, la primera clase de cualquier nivel es gratuita para conocer la academia.",
+  "respuesta_ideal": "Sí, la primera clase de cualquier nivel es gratuita para que conozca la academia.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Sí, la primera clase de cualquier nivel es gratuita para conocer la academia»."
+ },
+ {
+  "id": "i0313",
+  "negocio": "X5_n3",
+  "turnos_previos_del_cliente": [],
+  "cliente": "¿Dónde queda la academia?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "Calle 5 # 38-20"
+  ],
+  "evidencia": "Calle 5 # 38-20, Barrio Tequendama, Cali",
+  "respuesta_ideal": "Estamos en la Calle 5 # 38-20, Barrio Tequendama, en Cali.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Wilson Ramírez, director de la academia, dicta salsa caleña e intermedio»."
+ },
+ {
+  "id": "i0338",
+  "negocio": "X5_n3",
+  "turnos_previos_del_cliente": [
+   "Quiero inscribirme ya mismo, ¿me guarda el cupo y me cobra por acá?"
+  ],
+  "cliente": "¿Cuánto vale una clase suelta?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "$25.000"
+  ],
+  "evidencia": "Clase suelta: $25.000",
+  "respuesta_ideal": "Una clase suelta cuesta $25.000.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Clase suelta: $25.000»."
+ }
+]

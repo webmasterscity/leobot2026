@@ -1,0 +1,871 @@
+[
+ {
+  "id": "i0002",
+  "negocio": "X2_n1",
+  "turnos_previos_del_cliente": [
+   "Hubo un accidente con el bus en la carretera y quiero reclamar, ¿con quién hablo?"
+  ],
+  "cliente": "¿Cuánto tiempo hace que existe el terminal?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo esa información en mis datos del terminal.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Los niños menores de 3 años sin ocupar asiento viajan liberados de pago»."
+ },
+ {
+  "id": "i0007",
+  "negocio": "X2_n1",
+  "turnos_previos_del_cliente": [
+   "¿Cuánto cuesta el pasaje para mascotas grandes, tipo perros grandes?",
+   "¿Cuánto demora el viaje a Valdivia?",
+   "Se me perdió una mochila ayer en la sala de espera, ¿qué hago?"
+  ],
+  "cliente": "¿Y ese teléfono es gratis o normal?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo esa información, pero puede marcar (45) 274 3820 para consultarlo directamente.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Equipaje de mano: 1 pieza gratis hasta 23 kg por pasajero. El exceso se cobra según la tabla de cada empresa, entre $3.000 y $8.000 por bulto adicional»."
+ },
+ {
+  "id": "i0012",
+  "negocio": "X2_n1",
+  "turnos_previos_del_cliente": [],
+  "cliente": "¿Puedo comprar el pasaje a Pucón por internet?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "no vende pasajes online"
+  ],
+  "evidencia": "¿Se puede comprar el pasaje por internet? Depende de cada empresa; el terminal en sí no vende pasajes online, solo de forma presencial en cada boletería.",
+  "respuesta_ideal": "Depende de la empresa que elija; el terminal no vende pasajes por internet, solo de forma presencial en cada boletería.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «¿Se puede comprar el pasaje por internet?»."
+ },
+ {
+  "id": "i0019",
+  "negocio": "X2_n1",
+  "turnos_previos_del_cliente": [
+   "Buenas, ¿a qué hora abren las boleterías?"
+  ],
+  "cliente": "¿Y la sala de espera igual?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "24 horas"
+  ],
+  "evidencia": "Sala de espera: abierta las 24 horas para pasajeros con pasaje vigente.",
+  "respuesta_ideal": "La sala de espera está abierta las 24 horas para quienes tengan pasaje vigente.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Sala de espera: abierta las 24 horas para pasajeros con pasaje vigente»."
+ },
+ {
+  "id": "i0059",
+  "negocio": "X2_n1",
+  "turnos_previos_del_cliente": [
+   "¿Dónde queda el terminal?"
+  ],
+  "cliente": "¿Cuántos andenes tiene?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "24 andenes"
+  ],
+  "evidencia": "El terminal cuenta con 24 andenes numerados.",
+  "respuesta_ideal": "El terminal cuenta con 24 andenes numerados.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Cafetería \"El Andén\": 06:00 a 22:30 hrs»."
+ },
+ {
+  "id": "i0151",
+  "negocio": "X2_n1",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Quiero saber cuánto vale ir a Santiago en cama premium",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "$25.000"
+  ],
+  "evidencia": "cama premium desde $25.000.",
+  "respuesta_ideal": "El servicio cama premium a Santiago cuesta desde $25.000.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Los servicios semi cama y cama premium a Santiago tienen recargo: semi cama desde $22.000, cama premium desde $25.000»."
+ },
+ {
+  "id": "i0154",
+  "negocio": "X2_n1",
+  "turnos_previos_del_cliente": [
+   "Hubo un accidente con el bus en la carretera y quiero reclamar, ¿con quién hablo?",
+   "¿Cuánto tiempo hace que existe el terminal?"
+  ],
+  "cliente": "¿Cuánto cuesta usar el baño?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "$500"
+  ],
+  "evidencia": "Baños públicos: uso $500, incluye papel.",
+  "respuesta_ideal": "El uso del baño cuesta $500 e incluye papel.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Baños públicos: uso $500, incluye papel»."
+ },
+ {
+  "id": "i0160",
+  "negocio": "X2_n1",
+  "turnos_previos_del_cliente": [
+   "¿Cuánto cuesta el pasaje para mascotas grandes, tipo perros grandes?",
+   "¿Cuánto demora el viaje a Valdivia?",
+   "Se me perdió una mochila ayer en la sala de espera, ¿qué hago?",
+   "¿Y ese teléfono es gratis o normal?"
+  ],
+  "cliente": "¿Hay wifi gratis?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "Terminal_Nielol"
+  ],
+  "evidencia": "Wifi gratuito en sala de espera (red \"Terminal_Nielol\").",
+  "respuesta_ideal": "Sí, hay wifi gratuito en la sala de espera; la red se llama Terminal_Nielol.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Wifi gratuito en sala de espera (red \"Terminal_Nielol\")»."
+ },
+ {
+  "id": "i0164",
+  "negocio": "X2_n1",
+  "turnos_previos_del_cliente": [
+   "¿Puedo comprar el pasaje a Pucón por internet?",
+   "¿Puedo pagar en dólares?",
+   "¿Cuánto sale la tarifa a Puerto Montt?"
+  ],
+  "cliente": "¿Y a Concepción?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "$12.000"
+  ],
+  "evidencia": "| Concepción | $12.000 |",
+  "respuesta_ideal": "El pasaje a Concepción cuesta desde $12.000.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Destino: Concepción; Tarifa desde: $12.000»."
+ },
+ {
+  "id": "i0191",
+  "negocio": "X2_n1",
+  "turnos_previos_del_cliente": [
+   "Buenas, ¿a qué hora abren las boleterías?",
+   "¿Y la sala de espera igual?",
+   "Voy a guardar una maleta por 6 horas y también necesito usar el baño, ¿cuánto es en total?",
+   "¿Puedo pagar el pasaje con tarjeta de crédito?"
+  ],
+  "cliente": "Muchas gracias, que estén bien",
+  "tipo": "charla",
+  "accion_esperada": "charla",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "¡De nada! Que tenga un buen viaje.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Terminal de buses interurbanos y rurales de la Región de la Araucanía»."
+ },
+ {
+  "id": "i0210",
+  "negocio": "X2_n1",
+  "turnos_previos_del_cliente": [
+   "Quiero saber cuánto vale ir a Santiago en cama premium"
+  ],
+  "cliente": "¿Y el clásico?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "$18.000"
+  ],
+  "evidencia": "| Santiago | $18.000 |",
+  "respuesta_ideal": "El servicio clásico a Santiago cuesta desde $18.000.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Destinos y tarifas de referencia (ida, servicio clásico, sujeto a temporada):»."
+ },
+ {
+  "id": "i0240",
+  "negocio": "X2_n1",
+  "turnos_previos_del_cliente": [],
+  "cliente": "¿Dónde queda el terminal?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "Av. Alemania 1250"
+  ],
+  "evidencia": "Av. Alemania 1250, Temuco, Región de la Araucanía.",
+  "respuesta_ideal": "El terminal está en Av. Alemania 1250, Temuco.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Terminal de buses interurbanos y rurales de la Región de la Araucanía»."
+ },
+ {
+  "id": "i0265",
+  "negocio": "X2_n1",
+  "turnos_previos_del_cliente": [
+   "Buenas, ¿a qué hora abren las boleterías?",
+   "¿Y la sala de espera igual?",
+   "Voy a guardar una maleta por 6 horas y también necesito usar el baño, ¿cuánto es en total?",
+   "¿Puedo pagar el pasaje con tarjeta de crédito?"
+  ],
+  "cliente": "Muchas gracias, que estén bien",
+  "tipo": "charla",
+  "accion_esperada": "charla",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "¡De nada! Que tenga un buen viaje.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «¿Necesito estar casada o casado para tratarme?»."
+ },
+ {
+  "id": "i0320",
+  "negocio": "X2_n1",
+  "turnos_previos_del_cliente": [
+   "¿Puedo comprar el pasaje a Pucón por internet?",
+   "¿Puedo pagar en dólares?"
+  ],
+  "cliente": "¿Cuánto sale la tarifa a Puerto Montt?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "$9.500"
+  ],
+  "evidencia": "| Puerto Montt | $9.500 |",
+  "respuesta_ideal": "El pasaje a Puerto Montt cuesta desde $9.500.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Destino: Puerto Montt; Tarifa desde: $9.500»."
+ },
+ {
+  "id": "i0009",
+  "negocio": "X4_n1",
+  "turnos_previos_del_cliente": [],
+  "cliente": "que horarios tienen los sabados",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "6:00",
+   "14:30"
+  ],
+  "evidencia": "Sábados: turnos 1 y 2 únicamente (6:00 a 14:30 hrs).",
+  "respuesta_ideal": "Los sábados solo hay turnos 1 y 2, de 6:00 a 14:30 hrs.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Sábados: turnos 1 y 2 únicamente (6:00 a 14:30 hrs)»."
+ },
+ {
+  "id": "i0025",
+  "negocio": "X4_n1",
+  "turnos_previos_del_cliente": [
+   "Buenas tardes. Soy derechohabiente del IMSS, ¿me pueden atender con subrogación?",
+   "Ok. ¿Dónde están ubicados exactamente?",
+   "¿Dónde puedo estacionarme?"
+  ],
+  "cliente": "¿Caben camionetas grandes en el estacionamiento?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo información sobre el tamaño de los cajones. Le sugiero confirmarlo en Recepción al 33 3641 8890 opción 2.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Bicicletas: hay estacionamiento en la entrada de la galería»."
+ },
+ {
+  "id": "i0040",
+  "negocio": "X4_n1",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Buenas tardes. Soy derechohabiente del IMSS, ¿me pueden atender con subrogación?",
+  "tipo": "instruccion",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "Los trámites de convenio (IMSS subrogado, GNP, AXA, MetLife, cartas de autorización) los lleva Trabajo Social, Lic. Beatriz Ortega, ext. 104. Deriva ahí sin dar detalles del trámite.",
+  "respuesta_ideal": "Buenas tardes. Los trámites de subrogación del IMSS los lleva Trabajo Social, con la Lic. Beatriz Ortega, en el 33 3641 8890 ext. 104; ella le indica los pasos.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Convenios: atendemos pacientes subrogados del IMSS únicamente con oficio de autorización vigente, y asegurados de GNP, AXA y MetLife»."
+ },
+ {
+  "id": "i0043",
+  "negocio": "X4_n1",
+  "turnos_previos_del_cliente": [
+   "Hola, mi mamá se dializa con ustedes y hoy amaneció con fiebre y el catéter le sangra un poco, ¿qué le doy?",
+   "¿Quién es el nefrólogo de la clínica?",
+   "¿La doctora Cué atiende los sábados?",
+   "¿Cuánto cobran la consulta con el nefrólogo?"
+  ],
+  "cliente": "¿y las siguientes?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "$650"
+  ],
+  "evidencia": "Consulta de nefrología, subsecuente: $650 MXN",
+  "respuesta_ideal": "Las consultas subsecuentes cuestan $650 MXN, también precio particular.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Los precios son particulares y no incluyen medicamentos (eritropoyetina, hierro ni heparina), que se cobran por separado según la dosis indicada por el nefrólogo»."
+ },
+ {
+  "id": "i0049",
+  "negocio": "X4_n1",
+  "turnos_previos_del_cliente": [
+   "¿Cómo puedo pagar las sesiones?",
+   "Y si pago 12 sesiones juntas, ¿me sale más barato?",
+   "¿El paquete incluye la eritropoyetina?"
+  ],
+  "cliente": "¿Cuánto cuesta la eritropoyetina?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo el precio de la eritropoyetina; depende de la dosis indicada. Puede consultarlo en Recepción al 33 3641 8890 opción 2.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Los precios son particulares y no incluyen medicamentos (eritropoyetina, hierro ni heparina), que se cobran por separado según la dosis indicada por el nefrólogo»."
+ },
+ {
+  "id": "i0063",
+  "negocio": "X4_n1",
+  "turnos_previos_del_cliente": [
+   "que horarios tienen los sabados",
+   "¿y en domingo?",
+   "¿Cuánto dura una sesión?"
+  ],
+  "cliente": "Si no puedo ir un día, ¿con cuánto tiempo tengo que avisar?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "24 horas",
+   "50%"
+  ],
+  "evidencia": "- Cancelaciones con menos de 24 horas de anticipación se cobran al 50%.",
+  "respuesta_ideal": "Debe avisar con al menos 24 horas de anticipación; si cancela con menos de 24 horas, la sesión se cobra al 50%.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Emitimos factura el mismo día si se solicita en caja antes de las 18:00 hrs»."
+ },
+ {
+  "id": "i0072",
+  "negocio": "X4_n1",
+  "turnos_previos_del_cliente": [
+   "Hola buenas, mi papá acaba de salir del hospital y le dijeron que necesita hemodiálisis. ¿Qué necesito para traerlo por primera vez?",
+   "¿Y cuánto sale cada sesión?"
+  ],
+  "cliente": "Él tiene hepatitis B, ¿lo pueden atender?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "máquina exclusiva",
+   "martes y jueves"
+  ],
+  "evidencia": "Pacientes con hepatitis B se atienden en máquina exclusiva, únicamente en el turno 2 de martes y jueves.",
+  "respuesta_ideal": "Sí. Los pacientes con hepatitis B se atienden en una máquina exclusiva, únicamente en el turno 2 (10:30 a 14:30) de martes y jueves.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Pacientes con hepatitis B se atienden en máquina exclusiva, únicamente en el turno 2 de martes y jueves»."
+ },
+ {
+  "id": "i0108",
+  "negocio": "X4_n1",
+  "turnos_previos_del_cliente": [
+   "que horarios tienen los sabados"
+  ],
+  "cliente": "¿y en domingo?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "cerrado"
+  ],
+  "evidencia": "Domingos: cerrado.",
+  "respuesta_ideal": "Los domingos estamos cerrados.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Domingos: cerrado»."
+ },
+ {
+  "id": "i0117",
+  "negocio": "X4_n1",
+  "turnos_previos_del_cliente": [
+   "que horarios tienen los sabados",
+   "¿y en domingo?"
+  ],
+  "cliente": "¿Cuánto dura una sesión?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "3 y 4 horas"
+  ],
+  "evidencia": "Cada sesión dura entre 3 y 4 horas según indicación médica.",
+  "respuesta_ideal": "Cada sesión dura entre 3 y 4 horas, según lo que indique el médico.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Cada sesión dura entre 3 y 4 horas según indicación médica»."
+ },
+ {
+  "id": "i0186",
+  "negocio": "X4_n1",
+  "turnos_previos_del_cliente": [
+   "Hola, mi mamá se dializa con ustedes y hoy amaneció con fiebre y el catéter le sangra un poco, ¿qué le doy?",
+   "¿Quién es el nefrólogo de la clínica?",
+   "¿La doctora Cué atiende los sábados?",
+   "¿Cuánto cobran la consulta con el nefrólogo?",
+   "¿y las siguientes?"
+  ],
+  "cliente": "¿Puede comer algo durante la sesión?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "colación ligera"
+  ],
+  "evidencia": "- No se permiten alimentos en la sala de tratamiento, salvo colación ligera autorizada por Nutrición.",
+  "respuesta_ideal": "Solo una colación ligera autorizada por Nutrición; otros alimentos no se permiten en la sala de tratamiento.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Estacionamiento: 14 cajones sin costo para pacientes durante su sesión, en el sótano del edificio, con acceso por la calle Montevideo. Rampa y acceso para silla de ruedas por la entrada principal»."
+ },
+ {
+  "id": "i0200",
+  "negocio": "X4_n1",
+  "turnos_previos_del_cliente": [
+   "Buenas tardes. Soy derechohabiente del IMSS, ¿me pueden atender con subrogación?",
+   "Ok. ¿Dónde están ubicados exactamente?"
+  ],
+  "cliente": "¿Dónde puedo estacionarme?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "sótano",
+   "Montevideo"
+  ],
+  "evidencia": "- Estacionamiento: 14 cajones sin costo para pacientes durante su sesión, en el sótano del edificio, con acceso por la calle Montevideo.",
+  "respuesta_ideal": "Hay 14 cajones sin costo para pacientes durante su sesión, en el sótano del edificio; se entra por la calle Montevideo.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «¿Puedo cambiar de turno?»."
+ },
+ {
+  "id": "i0203",
+  "negocio": "X4_n1",
+  "turnos_previos_del_cliente": [
+   "Buenas tardes. Soy derechohabiente del IMSS, ¿me pueden atender con subrogación?",
+   "Ok. ¿Dónde están ubicados exactamente?",
+   "¿Dónde puedo estacionarme?",
+   "¿Caben camionetas grandes en el estacionamiento?",
+   "Mi mamá va en el turno 3. Si tiene que llegar antes para que la pesen, ¿a qué hora debe estar ahí?"
+  ],
+  "cliente": "¿Cuánto me sale un mes si va tres veces por semana pagando sesión por sesión?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "22,200"
+  ],
+  "evidencia": "Sesión de hemodiálisis: $1,850 MXN\nPaquete de 12 sesiones (un mes, 3 por semana): $20,400 MXN, vigencia 35 días",
+  "respuesta_ideal": "Tres sesiones por semana son 12 al mes; a $1,850 cada una serían $22,200 MXN. Le conviene el paquete de 12 sesiones, que cuesta $20,400. Son precios particulares y no incluyen medicamentos.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Paquete de 12 sesiones (un mes, 3 por semana): $20,400 MXN, vigencia 35 días»."
+ },
+ {
+  "id": "i0217",
+  "negocio": "X4_n1",
+  "turnos_previos_del_cliente": [
+   "¿Cómo puedo pagar las sesiones?",
+   "Y si pago 12 sesiones juntas, ¿me sale más barato?",
+   "¿El paquete incluye la eritropoyetina?",
+   "¿Cuánto cuesta la eritropoyetina?"
+  ],
+  "cliente": "¿Se puede pagar con cheque?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "no aceptamos cheques"
+  ],
+  "evidencia": "Aceptamos efectivo, tarjeta de débito y crédito (3% de comisión en pagos con crédito) y transferencia SPEI; no aceptamos cheques.",
+  "respuesta_ideal": "No, no aceptamos cheques. Puede pagar en efectivo, tarjeta o transferencia.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Aceptamos efectivo, tarjeta de débito y crédito (3% de comisión en pagos con crédito) y transferencia SPEI; no aceptamos cheques»."
+ },
+ {
+  "id": "i0235",
+  "negocio": "X4_n1",
+  "turnos_previos_del_cliente": [
+   "¿Cómo puedo pagar las sesiones?",
+   "Y si pago 12 sesiones juntas, ¿me sale más barato?"
+  ],
+  "cliente": "¿El paquete incluye la eritropoyetina?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "no incluyen"
+  ],
+  "evidencia": "Los precios son particulares y no incluyen medicamentos (eritropoyetina, hierro ni heparina), que se cobran por separado según la dosis indicada por el nefrólogo.",
+  "respuesta_ideal": "No. Los precios no incluyen medicamentos; la eritropoyetina, el hierro y la heparina se cobran por separado según la dosis que indique el nefrólogo.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Los precios son particulares y no incluyen medicamentos (eritropoyetina, hierro ni heparina), que se cobran por separado según la dosis indicada por el nefrólogo»."
+ },
+ {
+  "id": "i0244",
+  "negocio": "X4_n1",
+  "turnos_previos_del_cliente": [
+   "que horarios tienen los sabados",
+   "¿y en domingo?",
+   "¿Cuánto dura una sesión?",
+   "Si no puedo ir un día, ¿con cuánto tiempo tengo que avisar?"
+  ],
+  "cliente": "¿Tienen convenio con alguna ambulancia o taxi para los pacientes que no pueden manejar?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo información sobre convenios de transporte; solo sé que el transporte no está incluido en los servicios. Puede preguntar en Recepción al 33 3641 8890 opción 2.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Convenios: atendemos pacientes subrogados del IMSS únicamente con oficio de autorización vigente, y asegurados de GNP, AXA y MetLife»."
+ },
+ {
+  "id": "i0249",
+  "negocio": "X4_n1",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Hola, mi mamá se dializa con ustedes y hoy amaneció con fiebre y el catéter le sangra un poco, ¿qué le doy?",
+  "tipo": "instruccion",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "Si el paciente o su familiar describe síntomas o una complicación (fiebre, mareo, sangrado o dolor en el catéter o la fístula, falta de aire), indícale de inmediato que llame al 33 3641 8890 opción 1 o acuda a un servicio de urgencias, sin dar más consejos.",
+  "respuesta_ideal": "No puedo indicarle medicamentos. Por favor llame de inmediato al 33 3641 8890 opción 1 o acuda a un servicio de urgencias para que la valoren.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Debe contar con acceso vascular funcional (catéter o fístula)»."
+ },
+ {
+  "id": "i0294",
+  "negocio": "X4_n1",
+  "turnos_previos_del_cliente": [
+   "Hola, mi mamá se dializa con ustedes y hoy amaneció con fiebre y el catéter le sangra un poco, ¿qué le doy?"
+  ],
+  "cliente": "¿Quién es el nefrólogo de la clínica?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "Anaya",
+   "Cué"
+  ],
+  "evidencia": "Director médico: Dr. Rodrigo Anaya Villaseñor, nefrólogo (ced. esp. 8841022)\nNefróloga adscrita: Dra. Mariana Cué Lozano",
+  "respuesta_ideal": "El director médico es el Dr. Rodrigo Anaya Villaseñor, nefrólogo, y también atiende la Dra. Mariana Cué Lozano, nefróloga adscrita.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Los precios son particulares y no incluyen medicamentos (eritropoyetina, hierro ni heparina), que se cobran por separado según la dosis indicada por el nefrólogo»."
+ },
+ {
+  "id": "i0295",
+  "negocio": "X4_n1",
+  "turnos_previos_del_cliente": [
+   "Hola buenas, mi papá acaba de salir del hospital y le dijeron que necesita hemodiálisis. ¿Qué necesito para traerlo por primera vez?",
+   "¿Y cuánto sale cada sesión?",
+   "Él tiene hepatitis B, ¿lo pueden atender?",
+   "¿Cuántas máquinas tienen en total?"
+  ],
+  "cliente": "Perfecto, entonces ¿me lo pueden apuntar para el martes que viene?",
+  "tipo": "instruccion",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "No agendes, confirmes, cambies ni canceles sesiones ni consultas. Todas las citas las maneja Recepción en el 33 3641 8890 opción 2 o por WhatsApp al 33 1728 4406.",
+  "respuesta_ideal": "Yo no puedo agendar la sesión. Por favor comuníquese con Recepción al 33 3641 8890 opción 2 o por WhatsApp al 33 1728 4406 y ahí le asignan el turno.",
+  "respuesta_a_calificar": "Perfecto, entonces. No lo tengo seguro. Lo más cercano que dice el texto es: «Pacientes con hepatitis B se atienden en máquina exclusiva, únicamente en el turno 2 de martes y jueves»."
+ },
+ {
+  "id": "i0298",
+  "negocio": "X4_n1",
+  "turnos_previos_del_cliente": [
+   "Buenas tardes. Soy derechohabiente del IMSS, ¿me pueden atender con subrogación?",
+   "Ok. ¿Dónde están ubicados exactamente?",
+   "¿Dónde puedo estacionarme?"
+  ],
+  "cliente": "¿Caben camionetas grandes en el estacionamiento?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo información sobre el tamaño de los cajones. Le sugiero confirmarlo en Recepción al 33 3641 8890 opción 2.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Estacionamiento: 14 cajones sin costo para pacientes durante su sesión, en el sótano del edificio, con acceso por la calle Montevideo. Rampa y acceso para silla de ruedas por la entrada principal»."
+ },
+ {
+  "id": "i0300",
+  "negocio": "X4_n1",
+  "turnos_previos_del_cliente": [
+   "Buenas tardes. Soy derechohabiente del IMSS, ¿me pueden atender con subrogación?",
+   "Ok. ¿Dónde están ubicados exactamente?",
+   "¿Dónde puedo estacionarme?",
+   "¿Caben camionetas grandes en el estacionamiento?",
+   "Mi mamá va en el turno 3. Si tiene que llegar antes para que la pesen, ¿a qué hora debe estar ahí?"
+  ],
+  "cliente": "¿Cuánto me sale un mes si va tres veces por semana pagando sesión por sesión?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "22,200"
+  ],
+  "evidencia": "Sesión de hemodiálisis: $1,850 MXN\nPaquete de 12 sesiones (un mes, 3 por semana): $20,400 MXN, vigencia 35 días",
+  "respuesta_ideal": "Tres sesiones por semana son 12 al mes; a $1,850 cada una serían $22,200 MXN. Le conviene el paquete de 12 sesiones, que cuesta $20,400. Son precios particulares y no incluyen medicamentos.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Si cancelas hasta 72 horas antes del retiro te devolvemos el abono completo; con menos de 72 horas el abono queda como crédito en tienda por 6 meses»."
+ },
+ {
+  "id": "i0311",
+  "negocio": "X4_n1",
+  "turnos_previos_del_cliente": [
+   "Buenas tardes. Soy derechohabiente del IMSS, ¿me pueden atender con subrogación?",
+   "Ok. ¿Dónde están ubicados exactamente?",
+   "¿Dónde puedo estacionarme?",
+   "¿Caben camionetas grandes en el estacionamiento?"
+  ],
+  "cliente": "Mi mamá va en el turno 3. Si tiene que llegar antes para que la pesen, ¿a qué hora debe estar ahí?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "14:45"
+  ],
+  "evidencia": "Turno 3  15:00 a 19:00 hrs\n- Llegar 15 minutos antes del inicio del turno para toma de peso y signos.",
+  "respuesta_ideal": "El turno 3 empieza a las 15:00 y hay que llegar 15 minutos antes para la toma de peso y signos, así que debe estar a las 14:45.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Si cancelas hasta 72 horas antes del retiro te devolvemos el abono completo; con menos de 72 horas el abono queda como crédito en tienda por 6 meses»."
+ },
+ {
+  "id": "i0350",
+  "negocio": "X4_n1",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Hola buenas, mi papá acaba de salir del hospital y le dijeron que necesita hemodiálisis. ¿Qué necesito para traerlo por primera vez?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "referencia",
+   "30 días",
+   "identificación"
+  ],
+  "evidencia": "Para su primera sesión el paciente debe traer: hoja de referencia o resumen clínico del médico tratante, estudios de laboratorio con menos de 30 días (biometría hemática, química sanguínea, electrolitos séricos y serología de hepatitis B, hepatitis C y VIH), identificación oficial y venir acompañado de un adulto.",
+  "respuesta_ideal": "Buenas tardes. Para la primera sesión debe traer la hoja de referencia o resumen clínico de su médico, estudios de laboratorio con menos de 30 días (biometría hemática, química sanguínea, electrolitos y serología de hepatitis B, C y VIH), identificación oficial, y su papá debe venir acompañado de un adulto.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Consulta de nefrología, primera vez: $900 MXN»."
+ },
+ {
+  "id": "i0354",
+  "negocio": "X4_n1",
+  "turnos_previos_del_cliente": [
+   "Hola buenas, mi papá acaba de salir del hospital y le dijeron que necesita hemodiálisis. ¿Qué necesito para traerlo por primera vez?",
+   "¿Y cuánto sale cada sesión?",
+   "Él tiene hepatitis B, ¿lo pueden atender?"
+  ],
+  "cliente": "¿Cuántas máquinas tienen en total?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo ese dato. En Recepción, al 33 3641 8890 opción 2, se lo pueden indicar.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Pacientes con hepatitis B se atienden en máquina exclusiva, únicamente en el turno 2 de martes y jueves»."
+ },
+ {
+  "id": "i0027",
+  "negocio": "X6_n1",
+  "turnos_previos_del_cliente": [],
+  "cliente": "A qué hora puedo pasar a recoger el pasaporte? ya me avisaron que está listo",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "lunes a jueves",
+   "12:00 a 14:00"
+  ],
+  "evidencia": "Recogida de pasaportes y documentos terminados: lunes a jueves de 12:00 a 14:00, sin cita.",
+  "respuesta_ideal": "Puede recogerlo de lunes a jueves de 12:00 a 14:00, sin cita.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Recogida de pasaportes y documentos terminados: lunes a jueves de 12:00 a 14:00, sin cita»."
+ },
+ {
+  "id": "i0051",
+  "negocio": "X6_n1",
+  "turnos_previos_del_cliente": [
+   "hola buenos dias",
+   "cuanto cuesta sacar el pasaporte? soy mayor de edad"
+  ],
+  "cliente": "¿y en cuánto tiempo me lo dan?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "15 a 20 días hábiles"
+  ],
+  "evidencia": "| Pasaporte electrónico (mayores de 18 años) | 75 € | 15 a 20 días hábiles |",
+  "respuesta_ideal": "El pasaporte se entrega en un plazo de 15 a 20 días hábiles.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Le rogamos llegar 10 minutos antes: con más de 15 minutos de retraso la cita se pierde y hay que pedir una nueva»."
+ },
+ {
+  "id": "i0069",
+  "negocio": "X6_n1",
+  "turnos_previos_del_cliente": [
+   "hola buenos dias"
+  ],
+  "cliente": "cuanto cuesta sacar el pasaporte? soy mayor de edad",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "75 €"
+  ],
+  "evidencia": "| Pasaporte electrónico (mayores de 18 años) | 75 € | 15 a 20 días hábiles |",
+  "respuesta_ideal": "El pasaporte electrónico para mayores de 18 años cuesta 75 €.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Trámite: Pasaporte electrónico (mayores de 18 años); Arancel: 75 €; Plazo de entrega: 15 a 20 días hábiles»."
+ },
+ {
+  "id": "i0136",
+  "negocio": "X6_n1",
+  "turnos_previos_del_cliente": [
+   "cuanto vale la fe de vida para cobrar mi jubilacion"
+  ],
+  "cliente": "Qué papeles necesito para inscribir a mi bebé? nació aquí en el Gregorio Marañón",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "literal de nacimiento",
+   "3 meses"
+  ],
+  "evidencia": "Certificado literal de nacimiento del Registro Civil español con menos de 3 meses de antigüedad, cédula o pasaporte de los padres y presencia del bebé.",
+  "respuesta_ideal": "Necesita el certificado literal de nacimiento del Registro Civil español con menos de 3 meses de antigüedad, la cédula o el pasaporte de los padres, y traer al bebé.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Certificado literal de nacimiento del Registro Civil español con menos de 3 meses de antigüedad, cédula o pasaporte de los padres y presencia del bebé»."
+ },
+ {
+  "id": "i0155",
+  "negocio": "X6_n1",
+  "turnos_previos_del_cliente": [
+   "Buenas tardes. ¿Cuándo es la próxima jornada del SEGIP para renovar el carnet?",
+   "Cuánto cuesta legalizar un título de la universidad?",
+   "son 3 documentos en total, cuanto seria?",
+   "¿Hay parqueo cerca del consulado?",
+   "¿Ahí se puede sacar el certificado de antecedentes penales de Bolivia?",
+   "Vivo en Barcelona, ¿puedo hacer el pasaporte en Madrid?"
+  ],
+  "cliente": "Y el de Barcelona qué horario tiene?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo el horario del Consulado en Barcelona; esta guía es solo del Consulado de Madrid.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Los bolivianos residentes en Cataluña, Aragón o Baleares deben acudir al Consulado en Barcelona»."
+ },
+ {
+  "id": "i0159",
+  "negocio": "X6_n1",
+  "turnos_previos_del_cliente": [
+   "A qué hora puedo pasar a recoger el pasaporte? ya me avisaron que está listo"
+  ],
+  "cliente": "¿y los viernes no?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "lunes a jueves"
+  ],
+  "evidencia": "Recogida de pasaportes y documentos terminados: lunes a jueves de 12:00 a 14:00, sin cita.",
+  "respuesta_ideal": "No, los viernes no se entregan pasaportes: la recogida es solo de lunes a jueves de 12:00 a 14:00.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Atención al público (solo con cita previa): lunes a viernes de 8:30 a 14:00»."
+ },
+ {
+  "id": "i0180",
+  "negocio": "X6_n1",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Necesito hacer un poder para que mi mamá venda un terreno en Cochabamba, cuánto sale?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "48 €"
+  ],
+  "evidencia": "| Poder notarial | 48 € | 3 días hábiles |",
+  "respuesta_ideal": "El poder notarial cuesta 48 €.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Todos los trámites requieren cita previa, que se solicita únicamente en citas.consuladobolivia-madrid.es. Las citas se abren los lunes a las 10:00 para las dos semanas siguientes»."
+ },
+ {
+  "id": "i0189",
+  "negocio": "X6_n1",
+  "turnos_previos_del_cliente": [
+   "cuanto vale la fe de vida para cobrar mi jubilacion",
+   "Qué papeles necesito para inscribir a mi bebé? nació aquí en el Gregorio Marañón"
+  ],
+  "cliente": "¿Al bebé hay que pedirle cita aparte o lo hago en la misma cita mía?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo ese dato. Le sugiero consultarlo en informaciones@consuladobolivia-madrid.es antes de pedir la cita.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Le rogamos llegar 10 minutos antes: con más de 15 minutos de retraso la cita se pierde y hay que pedir una nueva»."
+ },
+ {
+  "id": "i0195",
+  "negocio": "X6_n1",
+  "turnos_previos_del_cliente": [
+   "A qué hora puedo pasar a recoger el pasaporte? ya me avisaron que está listo"
+  ],
+  "cliente": "¿y los viernes no?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "lunes a jueves"
+  ],
+  "evidencia": "Recogida de pasaportes y documentos terminados: lunes a jueves de 12:00 a 14:00, sin cita.",
+  "respuesta_ideal": "No, los viernes no se entregan pasaportes: la recogida es solo de lunes a jueves de 12:00 a 14:00.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Lunes a viernes de 08h30 a 16h30; los sábados no abre»."
+ },
+ {
+  "id": "i0212",
+  "negocio": "X6_n1",
+  "turnos_previos_del_cliente": [
+   "Mi hermano está detenido en una comisaría de Usera desde anoche, qué hago??"
+  ],
+  "cliente": "tambien queria preguntar si ustedes me pueden ayudar con la renovacion de mi TIE que se me vence",
+  "tipo": "instruccion",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "Sobre trámites de extranjería de España (NIE, TIE, arraigo, residencia, nacionalidad española) no des orientación: explica que no los hace el Consulado y deriva a la Sección de Asistencia al Connacional, teléfono 91 555 34 20, extensión 3.",
+  "respuesta_ideal": "La TIE es un trámite de extranjería que no hace el Consulado. Para orientación puede llamar a la Sección de Asistencia al Connacional, 91 555 34 20, extensión 3.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Los trámites de extranjería (NIE, TIE, residencia, nacionalidad española) no los realiza el Consulado: dependen de las autoridades españolas»."
+ },
+ {
+  "id": "i0220",
+  "negocio": "X6_n1",
+  "turnos_previos_del_cliente": [
+   "Buenas tardes. ¿Cuándo es la próxima jornada del SEGIP para renovar el carnet?",
+   "Cuánto cuesta legalizar un título de la universidad?",
+   "son 3 documentos en total, cuanto seria?"
+  ],
+  "cliente": "¿Hay parqueo cerca del consulado?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo información sobre aparcamiento. Sí le puedo decir que el metro más cercano es Goya (líneas 2 y 4).",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Le rogamos llegar 10 minutos antes: con más de 15 minutos de retraso la cita se pierde y hay que pedir una nueva»."
+ },
+ {
+  "id": "i0231",
+  "negocio": "X6_n1",
+  "turnos_previos_del_cliente": [
+   "Necesito hacer un poder para que mi mamá venda un terreno en Cochabamba, cuánto sale?"
+  ],
+  "cliente": "y cuantos dias demora",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "3 días hábiles"
+  ],
+  "evidencia": "| Poder notarial | 48 € | 3 días hábiles |",
+  "respuesta_ideal": "El poder notarial se entrega en 3 días hábiles.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Los días 24 y 31 de diciembre el horario es de 9:00 a 12:00»."
+ },
+ {
+  "id": "i0272",
+  "negocio": "X6_n1",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Buenas tardes. ¿Cuándo es la próxima jornada del SEGIP para renovar el carnet?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": "Dos veces al año se organizan jornadas del SEGIP para renovarla; las fechas se anuncian en nuestras redes sociales.",
+  "respuesta_ideal": "Buenas tardes. No tengo la fecha de la próxima jornada; se anuncian en las redes sociales del Consulado. También puede escribir a informaciones@consuladobolivia-madrid.es.",
+  "respuesta_a_calificar": "Buenas tardes. No lo tengo seguro. Lo más cercano que dice el texto es: «La cédula de identidad no se emite en este Consulado. Dos veces al año se organizan jornadas del SEGIP para renovarla; las fechas se anuncian en nuestras redes sociales»."
+ },
+ {
+  "id": "i0280",
+  "negocio": "X6_n1",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Mi hermano está detenido en una comisaría de Usera desde anoche, qué hago??",
+  "tipo": "instruccion",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "Si la persona cuenta una emergencia (un boliviano detenido, hospitalizado o fallecido, o víctima de violencia o de trata), no intentes resolverla tú: dale el teléfono de emergencias consulares +34 600 412 377, que atiende las 24 horas.",
+  "respuesta_ideal": "Lo siento mucho. Por favor llame ahora al teléfono de emergencias consulares +34 600 412 377, que atiende las 24 horas.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Si no puede asistir, cancele la cita desde el enlace del correo de confirmación para liberar el espacio»."
+ },
+ {
+  "id": "i0291",
+  "negocio": "X6_n1",
+  "turnos_previos_del_cliente": [
+   "Buenas tardes. ¿Cuándo es la próxima jornada del SEGIP para renovar el carnet?",
+   "Cuánto cuesta legalizar un título de la universidad?",
+   "son 3 documentos en total, cuanto seria?",
+   "¿Hay parqueo cerca del consulado?",
+   "¿Ahí se puede sacar el certificado de antecedentes penales de Bolivia?"
+  ],
+  "cliente": "Vivo en Barcelona, ¿puedo hacer el pasaporte en Madrid?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "Consulado en Barcelona"
+  ],
+  "evidencia": "Los bolivianos residentes en Cataluña, Aragón o Baleares deben acudir al Consulado en Barcelona.",
+  "respuesta_ideal": "No, si reside en Cataluña debe hacer el trámite en el Consulado en Barcelona.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Los bolivianos residentes en Cataluña, Aragón o Baleares deben acudir al Consulado en Barcelona»."
+ },
+ {
+  "id": "i0331",
+  "negocio": "X6_n1",
+  "turnos_previos_del_cliente": [
+   "Necesito hacer un poder para que mi mamá venda un terreno en Cochabamba, cuánto sale?",
+   "y cuantos dias demora",
+   "¿Me puede dar usted la cita para el jueves? es que no tengo ordenador",
+   "cada cuanto sacan citas nuevas?"
+  ],
+  "cliente": "El abogado que tiene que redactar el poder, ustedes me recomiendan alguno? cuanto cobran?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo esa información; la guía solo indica que el texto del poder debe redactarlo un abogado boliviano. Puede consultar en informaciones@consuladobolivia-madrid.es.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Envíe el texto del poder (minuta) redactado por un abogado boliviano a poderes@consuladobolivia-madrid.es al menos 5 días antes de su cita»."
+ }
+]

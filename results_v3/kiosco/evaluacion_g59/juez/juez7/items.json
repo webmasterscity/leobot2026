@@ -1,0 +1,959 @@
+[
+ {
+  "id": "i0033",
+  "negocio": "X2_n3",
+  "turnos_previos_del_cliente": [
+   "¿A qué hora abren los sábados?",
+   "¿Y los domingos?"
+  ],
+  "cliente": "¿Aceptan tarjeta de crédito?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "tarjeta de débito y crédito"
+  ],
+  "evidencia": "Efectivo, tarjeta de débito y crédito, transferencia.",
+  "respuesta_ideal": "Sí, aceptamos tarjeta de débito y de crédito, además de efectivo y transferencia.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Efectivo, tarjeta de débito y crédito, transferencia»."
+ },
+ {
+  "id": "i0045",
+  "negocio": "X2_n3",
+  "turnos_previos_del_cliente": [
+   "¿A qué hora abren los sábados?",
+   "¿Y los domingos?"
+  ],
+  "cliente": "¿Aceptan tarjeta de crédito?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "tarjeta de débito y crédito"
+  ],
+  "evidencia": "Efectivo, tarjeta de débito y crédito, transferencia.",
+  "respuesta_ideal": "Sí, aceptamos tarjeta de débito y de crédito, además de efectivo y transferencia.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Formas de pago: efectivo, tarjeta débito/crédito, Nequi y Daviplata»."
+ },
+ {
+  "id": "i0047",
+  "negocio": "X2_n3",
+  "turnos_previos_del_cliente": [
+   "¿Tienen plantas de arándano?"
+  ],
+  "cliente": "¿Cuánto cuesta el ficus para exteriores?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "$12.00"
+  ],
+  "evidencia": "Ficus para exteriores | $12.00",
+  "respuesta_ideal": "El ficus para exteriores cuesta $12.00.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Producto: Ficus para exteriores; Precio: $12.00»."
+ },
+ {
+  "id": "i0048",
+  "negocio": "X2_n3",
+  "turnos_previos_del_cliente": [
+   "¿Cuánto cobran por la visita técnica para cotizar el jardín?",
+   "¿Tienen garantía las plantas si se mueren?",
+   "¿Y necesito algo más aparte del recibo?",
+   "Compré un rosal hace 2 meses y se me murió, ¿me lo cambian?"
+  ],
+  "cliente": "¿Cuánto cuesta el sustrato para suculentas?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "$3.50"
+  ],
+  "evidencia": "Sustrato para suculentas 5 kg | $3.50",
+  "respuesta_ideal": "El sustrato para suculentas de 5 kg cuesta $3.50.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Producto: Sustrato para suculentas 5 kg; Precio: $3.50»."
+ },
+ {
+  "id": "i0065",
+  "negocio": "X2_n3",
+  "turnos_previos_del_cliente": [
+   "¿Cuánto cobran por la visita técnica para cotizar el jardín?"
+  ],
+  "cliente": "¿Tienen garantía las plantas si se mueren?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "garantía de 30 días"
+  ],
+  "evidencia": "Las plantas de vivero tienen garantía de 30 días por muerte de la planta, siempre que se presente la planta junto con el recibo de compra.",
+  "respuesta_ideal": "Sí, las plantas tienen garantía de 30 días por muerte, presentando la planta y el recibo de compra.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Las plantas de vivero tienen garantía de 30 días por muerte de la planta, siempre que se presente la planta junto con el recibo de compra»."
+ },
+ {
+  "id": "i0093",
+  "negocio": "X2_n3",
+  "turnos_previos_del_cliente": [
+   "¿Tienen servicio de decoración de eventos con plantas, como para una boda?",
+   "¿Puedo dejar plantas en consignación para que ustedes las vendan?"
+  ],
+  "cliente": "¿Cuánto cuesta una planta nativa como la chuquiragua?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "desde $4.00"
+  ],
+  "evidencia": "Planta nativa (quinua ornamental, chuquiragua) | desde $4.00",
+  "respuesta_ideal": "Las plantas nativas, como la chuquiragua, cuestan desde $4.00.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Producto: Planta nativa (quinua ornamental, chuquiragua); Precio: desde $4.00»."
+ },
+ {
+  "id": "i0098",
+  "negocio": "X2_n3",
+  "turnos_previos_del_cliente": [
+   "¿Tienen servicio de decoración de eventos con plantas, como para una boda?"
+  ],
+  "cliente": "¿Puedo dejar plantas en consignación para que ustedes las vendan?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo ese dato; puede preguntarlo directamente en el vivero.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Nota: los precios de plantas grandes o de temporada especial (como árboles navideños) pueden variar y se confirman en el local, ya que dependen de la disponibilidad del proveedor»."
+ },
+ {
+  "id": "i0105",
+  "negocio": "X2_n3",
+  "turnos_previos_del_cliente": [],
+  "cliente": "¿A qué hora abren los sábados?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "8h00 a 17h30"
+  ],
+  "evidencia": "Lunes a sábado: 8h00 a 17h30",
+  "respuesta_ideal": "Los sábados abrimos de 8h00 a 17h30.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Lunes a sábado: 8h00 a 17h30»."
+ },
+ {
+  "id": "i0121",
+  "negocio": "X2_n3",
+  "turnos_previos_del_cliente": [],
+  "cliente": "¿Cuánto cobran por la visita técnica para cotizar el jardín?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "sin costo"
+  ],
+  "evidencia": "Visita técnica dentro del cantón Cuenca: sin costo.",
+  "respuesta_ideal": "La visita técnica dentro del cantón Cuenca no tiene costo.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Diseño de jardines y paisajismo: desde $150, el valor final depende de los metros cuadrados y se cotiza tras una visita técnica»."
+ },
+ {
+  "id": "i0129",
+  "negocio": "X2_n3",
+  "turnos_previos_del_cliente": [],
+  "cliente": "¿Tienen servicio de poda de árboles grandes?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo ese dato específico sobre poda de árboles grandes; le recomiendo consultarlo directamente en el vivero.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Nota: los precios de plantas grandes o de temporada especial (como árboles navideños) pueden variar y se confirman en el local, ya que dependen de la disponibilidad del proveedor»."
+ },
+ {
+  "id": "i0140",
+  "negocio": "X2_n3",
+  "turnos_previos_del_cliente": [
+   "¿A qué hora abren los sábados?"
+  ],
+  "cliente": "¿Y los domingos?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "9h00 a 13h00"
+  ],
+  "evidencia": "Domingo: 9h00 a 13h00",
+  "respuesta_ideal": "Los domingos atendemos de 9h00 a 13h00.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Solo se acepta cambio por otro producto de igual o mayor valor, pagando la diferencia si corresponde»."
+ },
+ {
+  "id": "i0173",
+  "negocio": "X2_n3",
+  "turnos_previos_del_cliente": [],
+  "cliente": "¿A qué hora abren los sábados?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "8h00 a 17h30"
+  ],
+  "evidencia": "Lunes a sábado: 8h00 a 17h30",
+  "respuesta_ideal": "Los sábados abrimos de 8h00 a 17h30.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Atendemos de lunes a sábado de 10:00 a.m. a 8:00 p.m., y domingos y festivos de 11:00 a.m. a 6:00 p.m»."
+ },
+ {
+  "id": "i0175",
+  "negocio": "X2_n3",
+  "turnos_previos_del_cliente": [
+   "¿Tienen plantas de arándano?",
+   "¿Cuánto cuesta el ficus para exteriores?",
+   "¿Cuánto tiempo demora en crecer un aguacate injertado hasta dar frutos?",
+   "Quiero que me diseñen todo el jardín de mi casa, ¿con quién hablo?"
+  ],
+  "cliente": "¿Cuánto cuesta la maceta de barro mediana?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "$5.00"
+  ],
+  "evidencia": "Maceta de barro mediana | $5.00",
+  "respuesta_ideal": "La maceta de barro mediana cuesta $5.00.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Producto: Maceta de barro mediana; Precio: $5.00»."
+ },
+ {
+  "id": "i0179",
+  "negocio": "X2_n3",
+  "turnos_previos_del_cliente": [
+   "¿A qué hora abren los sábados?",
+   "¿Y los domingos?",
+   "¿Aceptan tarjeta de crédito?"
+  ],
+  "cliente": "Quiero comprar 3 rosales y un saco de tierra abonada, ¿cuánto sería?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "$8.00",
+   "$6.00"
+  ],
+  "evidencia": "Rosal | $8.00 [...] Saco de tierra abonada 40 kg | $6.00",
+  "respuesta_ideal": "Tres rosales a $8.00 cada uno serían $24.00, más el saco de tierra a $6.00, un total de $30.00.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Producto: Saco de tierra abonada 40 kg; Precio: $6.00»."
+ },
+ {
+  "id": "i0192",
+  "negocio": "X2_n3",
+  "turnos_previos_del_cliente": [
+   "¿Tienen servicio de poda de árboles grandes?"
+  ],
+  "cliente": "¿Cuánto cuesta el mantenimiento mensual de un jardín?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "$80"
+  ],
+  "evidencia": "Mantenimiento mensual de áreas verdes: $80",
+  "respuesta_ideal": "El mantenimiento mensual de áreas verdes cuesta $80 para jardines residenciales estándar.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Mantenimiento mensual de áreas verdes: $80 (jardines residenciales estándar; jardines grandes se cotizan aparte)»."
+ },
+ {
+  "id": "i0199",
+  "negocio": "X2_n3",
+  "turnos_previos_del_cliente": [
+   "¿Tienen servicio de poda de árboles grandes?",
+   "¿Cuánto cuesta el mantenimiento mensual de un jardín?"
+  ],
+  "cliente": "¿Y si mi jardín es más grande?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "jardines grandes se cotizan aparte"
+  ],
+  "evidencia": "jardines grandes se cotizan aparte",
+  "respuesta_ideal": "Si el jardín es más grande, el mantenimiento se cotiza aparte.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «¿Se puede pagar el diseño de jardín en cuotas?»."
+ },
+ {
+  "id": "i0221",
+  "negocio": "X2_n3",
+  "turnos_previos_del_cliente": [
+   "¿Tienen servicio de poda de árboles grandes?",
+   "¿Cuánto cuesta el mantenimiento mensual de un jardín?",
+   "¿Y si mi jardín es más grande?"
+  ],
+  "cliente": "Buenas tardes, un gusto",
+  "tipo": "charla",
+  "accion_esperada": "charla",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "¡Buenas tardes! El gusto es nuestro, bienvenido al vivero.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Los juegos ya abiertos NO tienen devolución de dinero ni cambio por gusto, solo garantía por defecto de fábrica comprobado, válida 30 días»."
+ },
+ {
+  "id": "i0233",
+  "negocio": "X2_n3",
+  "turnos_previos_del_cliente": [],
+  "cliente": "¿Puedo pagar el diseño del jardín en cuotas?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "dividir en 3 pagos"
+  ],
+  "evidencia": "¿Se puede pagar el diseño de jardín en cuotas? Sí, se puede dividir en 3 pagos: al iniciar, a la mitad del proyecto y al entregar.",
+  "respuesta_ideal": "Sí, se puede pagar en 3 cuotas: al iniciar el proyecto, a la mitad y al entregar.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «¿Se puede pagar el diseño de jardín en cuotas?»."
+ },
+ {
+  "id": "i0334",
+  "negocio": "X2_n3",
+  "turnos_previos_del_cliente": [
+   "¿Puedo pagar el diseño del jardín en cuotas?",
+   "¿Qué fumigación me recomienda para la cochinilla en mis rosas?",
+   "¿Tienen plantas de interior que no necesiten mucha luz?"
+  ],
+  "cliente": "¿Cuánto cuesta la entrega a domicilio dentro de Cuenca?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "$5"
+  ],
+  "evidencia": "Entrega a domicilio dentro de Cuenca: $5.",
+  "respuesta_ideal": "La entrega a domicilio dentro de Cuenca cuesta $5.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Entrega a domicilio dentro de Cuenca: $5. Fuera de la ciudad se cotiza según distancia»."
+ },
+ {
+  "id": "i0339",
+  "negocio": "X2_n3",
+  "turnos_previos_del_cliente": [
+   "¿Cuánto cobran por la visita técnica para cotizar el jardín?",
+   "¿Tienen garantía las plantas si se mueren?",
+   "¿Y necesito algo más aparte del recibo?"
+  ],
+  "cliente": "Compré un rosal hace 2 meses y se me murió, ¿me lo cambian?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "garantía de 30 días"
+  ],
+  "evidencia": "Las plantas de vivero tienen garantía de 30 días por muerte de la planta, siempre que se presente la planta junto con el recibo de compra.",
+  "respuesta_ideal": "La garantía por muerte de la planta es de 30 días, así que a los 2 meses ya no aplicaría el cambio por esa garantía.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Producto: Rosal; Precio: $8.00»."
+ },
+ {
+  "id": "i0014",
+  "negocio": "X4_n3",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Me llegaron 6 sábanas menos de las que mandé, ¿qué hago?",
+  "tipo": "instruccion",
+  "accion_esperada": "responder",
+  "claves": [
+   "remisión",
+   "48 horas"
+  ],
+  "evidencia": "Ante un reclamo por prendas faltantes o dañadas, pida el número de remisión y la fecha de entrega, y recuerde que el reclamo debe hacerse dentro de las 48 horas siguientes a la entrega.",
+  "respuesta_ideal": "Lamento el inconveniente. Por favor indíqueme el número de remisión y la fecha de entrega para registrar el reclamo; tenga en cuenta que debe reportarse dentro de las 48 horas siguientes a la entrega.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Ropa hotelera plana (sábanas, fundas, duvets): Ropa hospitalaria (proceso térmico y desinfección); $ 3.200 / kg: $ 6.800 / kg»."
+ },
+ {
+  "id": "i0030",
+  "negocio": "X4_n3",
+  "turnos_previos_del_cliente": [
+   "Hola, ¿me lavan un edredón king? Es de mi casa",
+   "que horario tienen en la bodega",
+   "¿y los sábados?"
+  ],
+  "cliente": "¿Dónde quedan?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "Carrera 50",
+   "Guayabal"
+  ],
+  "evidencia": "Planta:\tCarrera 50 # 12 Sur-85, bodega 4, Zona Industrial de Guayabal, Medellín",
+  "respuesta_ideal": "La planta está en la Carrera 50 # 12 Sur-85, bodega 4, en la Zona Industrial de Guayabal, Medellín.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Lavandería industrial con 14 años de experiencia en Medellín»."
+ },
+ {
+  "id": "i0031",
+  "negocio": "X4_n3",
+  "turnos_previos_del_cliente": [
+   "Buenos días, tengo un hotel pequeño en Laureles, ¿cuánto cobran el kilo de sábanas?",
+   "¿y las toallas?",
+   "Si les mando 50 kilos de sábanas a la semana, ¿cuánto me sale?",
+   "¿Tienen pedido mínimo?"
+  ],
+  "cliente": "¿Me pueden dejar unos carros o canastas para ir acumulando la ropa sucia?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo información sobre préstamo de carros o canastas. Puede consultarlo en el PBX (604) 444 20 17 o con el Ing. Jorge Restrepo, ext. 201.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Sí, con línea separada para ropa hospitalaria y certificado de desinfeccion térmica»."
+ },
+ {
+  "id": "i0061",
+  "negocio": "X4_n3",
+  "turnos_previos_del_cliente": [
+   "Somos una IPS y necesitamos lavado de ropa hospitalaria con certificado, ¿ustedes manejan eso?",
+   "¿Qué papeles necesito para abrir el contrato?",
+   "¿Cómo es el pago cuando uno tiene contrato?"
+  ],
+  "cliente": "¿Trabajan los festivos?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "cerrada"
+  ],
+  "evidencia": "Festivos: planta cerrada; las recogidas programadas en festivo pasan al día hábil siguiente.",
+  "respuesta_ideal": "No, los festivos la planta está cerrada; las recogidas que caigan en festivo pasan al día hábil siguiente.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Festivos: planta cerrada; las recogidas programadas en festivo pasan al día hábil siguiente»."
+ },
+ {
+  "id": "i0073",
+  "negocio": "X4_n3",
+  "turnos_previos_del_cliente": [
+   "Somos una IPS y necesitamos lavado de ropa hospitalaria con certificado, ¿ustedes manejan eso?",
+   "¿Qué papeles necesito para abrir el contrato?"
+  ],
+  "cliente": "¿Cómo es el pago cuando uno tiene contrato?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "30 días"
+  ],
+  "evidencia": "Con contrato: facturación quincenal o mensual y pago a 30 días con cupo de crédito aprobado.",
+  "respuesta_ideal": "Con contrato se factura quincenal o mensualmente y el pago es a 30 días, siempre que tenga cupo de crédito aprobado.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «CONTRATOS, FACTURACIÓN Y PAGOS»."
+ },
+ {
+  "id": "i0090",
+  "negocio": "X4_n3",
+  "turnos_previos_del_cliente": [
+   "Somos una IPS y necesitamos lavado de ropa hospitalaria con certificado, ¿ustedes manejan eso?",
+   "¿Qué papeles necesito para abrir el contrato?",
+   "¿Cómo es el pago cuando uno tiene contrato?",
+   "¿Trabajan los festivos?",
+   "¿Cuánta ropa pueden procesar por día?"
+  ],
+  "cliente": "¿Ustedes ponen las bolsas rojas para la ropa contaminada o las ponemos nosotros?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo información sobre el suministro de bolsas. Le sugiero consultarlo con el Ing. Jorge Restrepo, ext. 201, o en el PBX (604) 444 20 17.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Sí, con línea separada para ropa hospitalaria y certificado de desinfeccion térmica»."
+ },
+ {
+  "id": "i0102",
+  "negocio": "X4_n3",
+  "turnos_previos_del_cliente": [
+   "¿Lavan uniformes llenos de grasa de un taller mecánico?",
+   "¿Cuánto se demoran en entregar?"
+  ],
+  "cliente": "¿Y si lo necesito para mañana?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "40%"
+  ],
+  "evidencia": "Servicio urgente (entrega en 24 horas): recargo del 40% sobre la tarifa.",
+  "respuesta_ideal": "Hay servicio urgente con entrega en 24 horas, con un recargo del 40% sobre la tarifa. Más rápido que eso no es posible.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Martes a viernes: funciones para público general a las 16:00 y 18:00 h. Las funciones de la mañana (9:30 y 11:00 h) son exclusivas para centros educativos con reserva»."
+ },
+ {
+  "id": "i0104",
+  "negocio": "X4_n3",
+  "turnos_previos_del_cliente": [
+   "Buenos días, tengo un hotel pequeño en Laureles, ¿cuánto cobran el kilo de sábanas?",
+   "¿y las toallas?",
+   "Si les mando 50 kilos de sábanas a la semana, ¿cuánto me sale?"
+  ],
+  "cliente": "¿Tienen pedido mínimo?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "30 kg"
+  ],
+  "evidencia": "Pedido mínimo: 30 kg por recogida.",
+  "respuesta_ideal": "Sí, el pedido mínimo es de 30 kg por recogida.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «General: Centros educativos; $ 250: $ 90 por alumno (mínimo 20 alumnos); docentes gratis, 1 por cada 10 alumnos»."
+ },
+ {
+  "id": "i0114",
+  "negocio": "X4_n3",
+  "turnos_previos_del_cliente": [
+   "Hola, ¿me lavan un edredón king? Es de mi casa",
+   "que horario tienen en la bodega"
+  ],
+  "cliente": "¿y los sábados?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "7:00 am",
+   "1:00 pm"
+  ],
+  "evidencia": "Recepción en bodega y rutas: lunes a viernes de 6:00 am a 6:00 pm; sábados de 7:00 am a 1:00 pm.",
+  "respuesta_ideal": "Los sábados atendemos de 7:00 am a 1:00 pm.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Recepción en bodega y rutas: lunes a viernes de 6:00 am a 6:00 pm; sábados de 7:00 am a 1:00 pm»."
+ },
+ {
+  "id": "i0116",
+  "negocio": "X4_n3",
+  "turnos_previos_del_cliente": [
+   "¿Lavan uniformes llenos de grasa de un taller mecánico?",
+   "¿Cuánto se demoran en entregar?",
+   "¿Y si lo necesito para mañana?"
+  ],
+  "cliente": "Ok, entonces 60 kilos de uniformes con lo urgente, ¿cuánto sería?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "462.000"
+  ],
+  "evidencia": "Uniformes industriales con desengrase\t$ 5.500 / kg\nServicio urgente (entrega en 24 horas): recargo del 40% sobre la tarifa.\nRecogida y entrega incluidas para pedidos de 60 kg o más dentro del Valle de Aburrá.",
+  "respuesta_ideal": "60 kg a $ 5.500 son $ 330.000; con el recargo urgente del 40% queda en $ 462.000. Al ser 60 kg, el transporte dentro del Valle de Aburrá va incluido.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Ropa hotelera plana (sábanas, fundas, duvets): Uniformes industriales con desengrase; $ 3.200 / kg: $ 5.500 / kg»."
+ },
+ {
+  "id": "i0124",
+  "negocio": "X4_n3",
+  "turnos_previos_del_cliente": [
+   "¿Lavan uniformes llenos de grasa de un taller mecánico?"
+  ],
+  "cliente": "¿Cuánto se demoran en entregar?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "48 horas"
+  ],
+  "evidencia": "Tiempo de entrega estándar: 48 horas hábiles contadas desde la recogida.",
+  "respuesta_ideal": "La entrega estándar es en 48 horas hábiles contadas desde la recogida.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Toda diferencia en cantidades o prendas dañadas debe reportarse dentro de las 48 horas siguientes a la entrega, indicando el número de remisión y la fecha»."
+ },
+ {
+  "id": "i0138",
+  "negocio": "X4_n3",
+  "turnos_previos_del_cliente": [
+   "Somos una IPS y necesitamos lavado de ropa hospitalaria con certificado, ¿ustedes manejan eso?"
+  ],
+  "cliente": "¿Qué papeles necesito para abrir el contrato?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "Cámara de Comercio",
+   "RUT"
+  ],
+  "evidencia": "Documentos para abrir contrato: certificado de Cámara de Comercio con menos de 30 días, RUT, cédula del representante legal y una referencia comercial.",
+  "respuesta_ideal": "Certificado de Cámara de Comercio con menos de 30 días, RUT, cédula del representante legal y una referencia comercial. El contrato lo formaliza el Ing. Jorge Restrepo, ext. 201.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Documentos para abrir contrato: certificado de Cámara de Comercio con menos de 30 días, RUT, cédula del representante legal y una referencia comercial»."
+ },
+ {
+  "id": "i0171",
+  "negocio": "X4_n3",
+  "turnos_previos_del_cliente": [],
+  "cliente": "¿Lavan uniformes llenos de grasa de un taller mecánico?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "desengrase",
+   "5.500"
+  ],
+  "evidencia": "Uniformes industriales con desengrase\t$ 5.500 / kg\n¿Lavan ropa con grasa de taller? Sí, en la línea de uniformes industriales con desengrase.",
+  "respuesta_ideal": "Sí. Tenemos una línea de uniformes industriales con desengrase, a $ 5.500 por kilo.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «¿Lavan ropa con grasa de taller?»."
+ },
+ {
+  "id": "i0208",
+  "negocio": "X4_n3",
+  "turnos_previos_del_cliente": [
+   "Buenos días, tengo un hotel pequeño en Laureles, ¿cuánto cobran el kilo de sábanas?",
+   "¿y las toallas?",
+   "Si les mando 50 kilos de sábanas a la semana, ¿cuánto me sale?",
+   "¿Tienen pedido mínimo?",
+   "¿Me pueden dejar unos carros o canastas para ir acumulando la ropa sucia?"
+  ],
+  "cliente": "Quiero que me recojan los lunes a las 7 de la mañana, ¿se puede?",
+  "tipo": "instruccion",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "Cualquier solicitud de programar, cambiar o cancelar una recogida o entrega se pasa a Diana Cardona, coordinadora de rutas, ext. 205.",
+  "respuesta_ideal": "La programación de las recogidas la hace Diana Cardona, coordinadora de rutas, en la ext. 205 del PBX (604) 444 20 17; ella le confirma el horario.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Recepción en bodega y rutas: lunes a viernes de 6:00 am a 6:00 pm; sábados de 7:00 am a 1:00 pm»."
+ },
+ {
+  "id": "i0254",
+  "negocio": "X4_n3",
+  "turnos_previos_del_cliente": [
+   "Buenos días, tengo un hotel pequeño en Laureles, ¿cuánto cobran el kilo de sábanas?"
+  ],
+  "cliente": "¿y las toallas?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "3.600"
+  ],
+  "evidencia": "Toallas y felpa\t$ 3.600 / kg",
+  "respuesta_ideal": "Las toallas y demás felpa cuestan $ 3.600 por kilo.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Ropa hotelera plana (sábanas, fundas, duvets): Alquiler de lencería hotelera (sábanas y toallas); $ 3.200 / kg: cotización con el gerente comercial»."
+ },
+ {
+  "id": "i0292",
+  "negocio": "X4_n3",
+  "turnos_previos_del_cliente": [
+   "Buenos días, tengo un hotel pequeño en Laureles, ¿cuánto cobran el kilo de sábanas?",
+   "¿y las toallas?",
+   "Si les mando 50 kilos de sábanas a la semana, ¿cuánto me sale?"
+  ],
+  "cliente": "¿Tienen pedido mínimo?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "30 kg"
+  ],
+  "evidencia": "Pedido mínimo: 30 kg por recogida.",
+  "respuesta_ideal": "Sí, el pedido mínimo es de 30 kg por recogida.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Pedido mínimo: 30 kg por recogida»."
+ },
+ {
+  "id": "i0314",
+  "negocio": "X4_n3",
+  "turnos_previos_del_cliente": [
+   "Me llegaron 6 sábanas menos de las que mandé, ¿qué hago?"
+  ],
+  "cliente": "¿Y cuánto me reconocen por cada una?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "45.000"
+  ],
+  "evidencia": "Por prenda extraviada o dañada por causa nuestra reconocemos hasta $ 45.000 por unidad, previa verificación contra la remisión.",
+  "respuesta_ideal": "Por cada prenda extraviada por causa nuestra se reconocen hasta $ 45.000 por unidad, previa verificación contra la remisión.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Para clientes del sector salud entregamos certificado de desinfección térmica con cada entrega»."
+ },
+ {
+  "id": "i0333",
+  "negocio": "X4_n3",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Buenos días, tengo un hotel pequeño en Laureles, ¿cuánto cobran el kilo de sábanas?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "3.200"
+  ],
+  "evidencia": "Ropa hotelera plana (sábanas, fundas, duvets)\t$ 3.200 / kg",
+  "respuesta_ideal": "Buenos días, le habla Textilav. La ropa hotelera plana, como sábanas y fundas, cuesta $ 3.200 por kilo, con IVA incluido; el pedido mínimo es de 30 kg por recogida.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Documentos para abrir contrato: certificado de Cámara de Comercio con menos de 30 días, RUT, cédula del representante legal y una referencia comercial»."
+ },
+ {
+  "id": "i0341",
+  "negocio": "X4_n3",
+  "turnos_previos_del_cliente": [
+   "Hola, ¿me lavan un edredón king? Es de mi casa"
+  ],
+  "cliente": "que horario tienen en la bodega",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "6:00 am",
+   "6:00 pm"
+  ],
+  "evidencia": "Recepción en bodega y rutas: lunes a viernes de 6:00 am a 6:00 pm; sábados de 7:00 am a 1:00 pm.",
+  "respuesta_ideal": "La bodega recibe de lunes a viernes de 6:00 am a 6:00 pm y los sábados de 7:00 am a 1:00 pm.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Recepción en bodega y rutas: lunes a viernes de 6:00 am a 6:00 pm; sábados de 7:00 am a 1:00 pm»."
+ },
+ {
+  "id": "i0352",
+  "negocio": "X4_n3",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Somos una IPS y necesitamos lavado de ropa hospitalaria con certificado, ¿ustedes manejan eso?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "certificado",
+   "6.800"
+  ],
+  "evidencia": "Ropa hospitalaria (proceso térmico y desinfección)\t$ 6.800 / kg\nPara clientes del sector salud entregamos certificado de desinfección térmica con cada entrega.",
+  "respuesta_ideal": "Sí. La ropa hospitalaria se procesa en una línea separada con proceso térmico y desinfección, a $ 6.800 por kilo, y con cada entrega se emite el certificado de desinfección térmica.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Sí, con línea separada para ropa hospitalaria y certificado de desinfeccion térmica»."
+ },
+ {
+  "id": "i0057",
+  "negocio": "X6_n3",
+  "turnos_previos_del_cliente": [
+   "Cuánto está el kilo de arroz integral?",
+   "y si me llevo 3 kilos de frijol negro cuanto seria?"
+  ],
+  "cliente": "¿Todavía les quedan canastas grandes hoy?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": "Si no sabes algo (por ejemplo, si hoy hay cierto producto o cuántas piezas quedan), dilo tal cual y sugiere escribir al WhatsApp.",
+  "respuesta_ideal": "No sé cuántas quedan hoy; escríbenos al WhatsApp 55 3102 4478 y te dicen al momento.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Canasta de temporada grande (8 a 9 kg) ....... $650»."
+ },
+ {
+  "id": "i0060",
+  "negocio": "X6_n3",
+  "turnos_previos_del_cliente": [
+   "Cómo le hago para pedir factura?",
+   "Oye, hoy en la mañana compré unas fresas y venían echadas a perder",
+   "¿Me regresan el dinero?",
+   "Otra cosa, cuánto cuesta el taller de composta y cuándo es?",
+   "mi hijo tiene 10 años, puede entrar? paga lo mismo?"
+  ],
+  "cliente": "Gracias, nos vemos",
+  "tipo": "charla",
+  "accion_esperada": "charla",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "¡Gracias a ti! Nos vemos pronto en Raíz Viva.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Los precios pueden cambiar según la temporada y la cosecha. Lo que no ves en esta lista, pregúntalo en tienda»."
+ },
+ {
+  "id": "i0067",
+  "negocio": "X6_n3",
+  "turnos_previos_del_cliente": [
+   "hola! a que hora cierran hoy? es domingo",
+   "y entre semana?",
+   "que dias venden tortillas?",
+   "a cuanto el kilo?"
+  ],
+  "cliente": "¿Qué tarjetas aceptan?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "Visa",
+   "Mastercard"
+  ],
+  "evidencia": "Efectivo, tarjetas de débito y crédito Visa y Mastercard, y transferencia SPEI. No aceptamos American Express ni vales de despensa.",
+  "respuesta_ideal": "Aceptamos tarjetas de débito y crédito Visa y Mastercard; American Express no.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Efectivo, tarjetas de débito y crédito Visa y Mastercard, y transferencia SPEI»."
+ },
+ {
+  "id": "i0095",
+  "negocio": "X6_n3",
+  "turnos_previos_del_cliente": [
+   "Cómo le hago para pedir factura?",
+   "Oye, hoy en la mañana compré unas fresas y venían echadas a perder"
+  ],
+  "cliente": "¿Me regresan el dinero?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "No hay devoluciones en efectivo"
+  ],
+  "evidencia": "No hay devoluciones en efectivo; en su lugar te damos una nota de crédito.",
+  "respuesta_ideal": "No hay devoluciones en efectivo; como avisaste el mismo día, te reponemos las fresas (o te damos una nota de crédito).",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Efectivo, tarjetas de débito y crédito Visa y Mastercard, y transferencia SPEI»."
+ },
+ {
+  "id": "i0113",
+  "negocio": "X6_n3",
+  "turnos_previos_del_cliente": [],
+  "cliente": "La miel melipona sirve para las cataratas? es para mi abuelita",
+  "tipo": "instruccion",
+  "accion_esperada": "responder",
+  "claves": [
+   "médico"
+  ],
+  "evidencia": "No digas que un producto cura, previene o sirve para tratar alguna enfermedad, ni recomiendes productos para una condición de salud (diabetes, embarazo, alergias, etc.). En esos casos sugiere que lo consulten con su médico.",
+  "respuesta_ideal": "No te puedo decir que sirva para tratar ninguna enfermedad; para lo de tu abuelita lo mejor es que lo consulten con su médico.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Miel de abeja melipona, frasco de 250 ml ....... $180»."
+ },
+ {
+  "id": "i0145",
+  "negocio": "X6_n3",
+  "turnos_previos_del_cliente": [
+   "Buenas, tienen pan sin gluten?",
+   "El cafe lo venden molido o en grano?",
+   "¿Tienen estacionamiento?",
+   "Puedo ir con mi perrito?",
+   "Qué días les llega la verdura fresca?"
+  ],
+  "cliente": "y donde quedan exactamente?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "Calle Tabasco 214",
+   "Roma Norte"
+  ],
+  "evidencia": "Dirección: Calle Tabasco 214, local B, col. Roma Norte, alcaldía Cuauhtémoc, CDMX, C.P. 06700",
+  "respuesta_ideal": "Estamos en Calle Tabasco 214, local B, colonia Roma Norte, entre Córdoba y Mérida.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Todos nuestros productores tienen certificación orgánica o forman parte de un Sistema Participativo de Garantía (SPG), donde otros productores y consumidores visitan las parcelas; en cada anaquel te decimos cuál de los dos aplica»."
+ },
+ {
+  "id": "i0152",
+  "negocio": "X6_n3",
+  "turnos_previos_del_cliente": [
+   "hola! a que hora cierran hoy? es domingo",
+   "y entre semana?",
+   "que dias venden tortillas?",
+   "a cuanto el kilo?"
+  ],
+  "cliente": "¿Qué tarjetas aceptan?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "Visa",
+   "Mastercard"
+  ],
+  "evidencia": "Efectivo, tarjetas de débito y crédito Visa y Mastercard, y transferencia SPEI. No aceptamos American Express ni vales de despensa.",
+  "respuesta_ideal": "Aceptamos tarjetas de débito y crédito Visa y Mastercard; American Express no.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Aceptamos ATH Móvil, tarjetas de crédito y débito, y efectivo»."
+ },
+ {
+  "id": "i0161",
+  "negocio": "X6_n3",
+  "turnos_previos_del_cliente": [
+   "hola! a que hora cierran hoy? es domingo"
+  ],
+  "cliente": "y entre semana?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "9:00",
+   "20:00"
+  ],
+  "evidencia": "Horario: lun a sáb 9:00–20:00 | dom 10:00–16:00",
+  "respuesta_ideal": "De lunes a sábado abrimos de 9:00 a 20:00.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Referencia: entre Córdoba y Mérida, a 3 cuadras del Metrobús Álvaro Obregón»."
+ },
+ {
+  "id": "i0170",
+  "negocio": "X6_n3",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Cuánto está el kilo de arroz integral?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "$48"
+  ],
+  "evidencia": "- Arroz integral de Morelos a granel ....... $48/kg",
+  "respuesta_ideal": "El arroz integral de Morelos a granel está en $48 el kilo.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Arroz integral de Morelos a granel ....... $48/kg»."
+ },
+ {
+  "id": "i0172",
+  "negocio": "X6_n3",
+  "turnos_previos_del_cliente": [
+   "hola! a que hora cierran hoy? es domingo",
+   "y entre semana?"
+  ],
+  "cliente": "que dias venden tortillas?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "solo sábados y domingos"
+  ],
+  "evidencia": "- Tortilla de maíz criollo nixtamalizado, 1 kg ....... $38 (solo sábados y domingos)",
+  "respuesta_ideal": "Las tortillas de maíz criollo las tenemos solo sábados y domingos.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Tortilla de maíz criollo nixtamalizado, 1 kg ....... $38 (solo sábados y domingos)»."
+ },
+ {
+  "id": "i0194",
+  "negocio": "X6_n3",
+  "turnos_previos_del_cliente": [
+   "Hacen envios a la Narvarte? cuanto cobran",
+   "Si pido la canasta grande y una tapa de huevo, cuánto sería todo ya con envío?"
+  ],
+  "cliente": "Y si le agrego un café de Chiapas ya no pago envío, verdad?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "$900",
+   "gratis"
+  ],
+  "evidencia": "Envío gratis en compras de $900 o más (sin contar el envío).",
+  "respuesta_ideal": "Así es: con el café tu compra sube a $1,025 y el envío es gratis en compras de $900 o más.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Café de altura de Chiapas, bolsa de 500 g ....... $210»."
+ },
+ {
+  "id": "i0202",
+  "negocio": "X6_n3",
+  "turnos_previos_del_cliente": [
+   "Cómo le hago para pedir factura?",
+   "Oye, hoy en la mañana compré unas fresas y venían echadas a perder",
+   "¿Me regresan el dinero?"
+  ],
+  "cliente": "Otra cosa, cuánto cuesta el taller de composta y cuándo es?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "$150",
+   "sábado de cada mes"
+  ],
+  "evidencia": "Primer sábado de cada mes, de 11:00 a 12:30. Cuesta $150 por persona y el cupo es de 12.",
+  "respuesta_ideal": "Es el primer sábado de cada mes, de 11:00 a 12:30, y cuesta $150 por persona.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Cuesta $150 por persona y el cupo es de 12»."
+ },
+ {
+  "id": "i0209",
+  "negocio": "X6_n3",
+  "turnos_previos_del_cliente": [
+   "Buenas, tienen pan sin gluten?",
+   "El cafe lo venden molido o en grano?"
+  ],
+  "cliente": "¿Tienen estacionamiento?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo información de estacionamiento. Lo que sí te puedo decir es que estamos a 3 cuadras del Metrobús Álvaro Obregón.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «También está el estacionamiento municipal de la Calle Loíza, a una cuadra»."
+ },
+ {
+  "id": "i0276",
+  "negocio": "X6_n3",
+  "turnos_previos_del_cliente": [
+   "Buenas, tienen pan sin gluten?",
+   "El cafe lo venden molido o en grano?",
+   "¿Tienen estacionamiento?"
+  ],
+  "cliente": "Puedo ir con mi perrito?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "con correa"
+  ],
+  "evidencia": "Los perros con correa son bienvenidos.",
+  "respuesta_ideal": "¡Claro! Los perros con correa son bienvenidos, y hay bebedero en la entrada.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Los precios pueden cambiar según la temporada y la cosecha. Lo que no ves en esta lista, pregúntalo en tienda»."
+ },
+ {
+  "id": "i0299",
+  "negocio": "X6_n3",
+  "turnos_previos_del_cliente": [
+   "Cómo le hago para pedir factura?",
+   "Oye, hoy en la mañana compré unas fresas y venían echadas a perder",
+   "¿Me regresan el dinero?"
+  ],
+  "cliente": "Otra cosa, cuánto cuesta el taller de composta y cuándo es?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "$150",
+   "sábado de cada mes"
+  ],
+  "evidencia": "Primer sábado de cada mes, de 11:00 a 12:30. Cuesta $150 por persona y el cupo es de 12.",
+  "respuesta_ideal": "Es el primer sábado de cada mes, de 11:00 a 12:30, y cuesta $150 por persona.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «TALLER DE COMPOSTA»."
+ },
+ {
+  "id": "i0304",
+  "negocio": "X6_n3",
+  "turnos_previos_del_cliente": [
+   "Cómo le hago para pedir factura?",
+   "Oye, hoy en la mañana compré unas fresas y venían echadas a perder",
+   "¿Me regresan el dinero?",
+   "Otra cosa, cuánto cuesta el taller de composta y cuándo es?",
+   "mi hijo tiene 10 años, puede entrar? paga lo mismo?"
+  ],
+  "cliente": "Gracias, nos vemos",
+  "tipo": "charla",
+  "accion_esperada": "charla",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "¡Gracias a ti! Nos vemos pronto en Raíz Viva.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Recibes una galería privada en línea para ver y descargar tus fotos en 10 días laborables (maternidad y newborn: 15 días laborables)»."
+ },
+ {
+  "id": "i0359",
+  "negocio": "X6_n3",
+  "turnos_previos_del_cliente": [
+   "Cómo le hago para pedir factura?",
+   "Oye, hoy en la mañana compré unas fresas y venían echadas a perder"
+  ],
+  "cliente": "¿Me regresan el dinero?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "No hay devoluciones en efectivo"
+  ],
+  "evidencia": "No hay devoluciones en efectivo; en su lugar te damos una nota de crédito.",
+  "respuesta_ideal": "No hay devoluciones en efectivo; como avisaste el mismo día, te reponemos las fresas (o te damos una nota de crédito).",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Kombucha de jamaica 475 ml ....... $65 (regresa la botella de vidrio y te devolvemos $10)»."
+ }
+]

@@ -1,0 +1,770 @@
+[
+ {
+  "id": "i0004",
+  "negocio": "X1_n4",
+  "turnos_previos_del_cliente": [
+   "q idiomas dan ademas de ingles"
+  ],
+  "cliente": "y frances?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "No dictamos francés"
+  ],
+  "evidencia": "(No dictamos francés ni alemán por el momento.)",
+  "respuesta_ideal": "No dictamos francés por el momento.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «(No dictamos francés ni alemán por el momento.)»."
+ },
+ {
+  "id": "i0029",
+  "negocio": "X1_n4",
+  "turnos_previos_del_cliente": [
+   "q idiomas dan ademas de ingles",
+   "y frances?",
+   "desde que edad pueden hacer portugues",
+   "¿Tienen clases online, por si nos vamos de viaje un tiempo?"
+  ],
+  "cliente": "¿Los preparan para rendir los exámenes de Cambridge?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "Starters, Movers, Flyers y KET"
+  ],
+  "evidencia": "Sí, preparamos para los exámenes de Cambridge (Starters, Movers, Flyers y KET).",
+  "respuesta_ideal": "Sí, preparamos para los exámenes de Cambridge: Starters, Movers, Flyers y KET.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Sí, preparamos para los exámenes de Cambridge (Starters, Movers, Flyers y KET)»."
+ },
+ {
+  "id": "i0038",
+  "negocio": "X1_n4",
+  "turnos_previos_del_cliente": [],
+  "cliente": "hasta que dia tengo para pagar la cuota",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "10 de cada mes"
+  ],
+  "evidencia": "La cuota se paga del 1 al 10 de cada mes.",
+  "respuesta_ideal": "La cuota se paga del 1 al 10 de cada mes.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «La cuota se paga del 1 al 10 de cada mes. Después del día 10 se aplica un recargo del 8 %»."
+ },
+ {
+  "id": "i0071",
+  "negocio": "X1_n4",
+  "turnos_previos_del_cliente": [
+   "Hola! mi hija tiene 4 años, ¿en qué nivel de inglés entraría?",
+   "y cuanto sale por mes?",
+   "¿La matrícula cuánto es y qué incluye?",
+   "¿Tengo que comprarle libro?",
+   "Genial. ¿La podés anotar para una clase de prueba el sábado?"
+  ],
+  "cliente": "¿Las profes son nativas?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo ese dato sobre las profesoras.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «*Los descuentos no son acumulables»."
+ },
+ {
+  "id": "i0083",
+  "negocio": "X1_n4",
+  "turnos_previos_del_cliente": [
+   "Hola! mi hija tiene 4 años, ¿en qué nivel de inglés entraría?",
+   "y cuanto sale por mes?",
+   "¿La matrícula cuánto es y qué incluye?",
+   "¿Tengo que comprarle libro?"
+  ],
+  "cliente": "Genial. ¿La podés anotar para una clase de prueba el sábado?",
+  "tipo": "instruccion",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "No inscribas, no reserves lugar y no anotes a nadie en la clase de prueba. Para eso, pediles que escriban al WhatsApp 261 555-0198 o que pasen por secretaría.",
+  "respuesta_ideal": "Yo no puedo anotarla; para la clase de prueba escribí al WhatsApp 261 555-0198 o pasá por secretaría.",
+  "respuesta_a_calificar": "Genial. No lo tengo seguro. Lo más cercano que dice el texto es: «Sí, una clase de prueba gratuita»."
+ },
+ {
+  "id": "i0174",
+  "negocio": "X1_n4",
+  "turnos_previos_del_cliente": [
+   "hasta que dia tengo para pagar la cuota",
+   "¿y si me paso?",
+   "¿Me pasás el alias para transferir?",
+   "¿En la sede de Chacras hay horarios a la mañana?"
+  ],
+  "cliente": "Mi nena está en Kids y le está costando mucho, ¿le conviene bajar de nivel?",
+  "tipo": "instruccion",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "Si preguntan por el nivel de un chico en particular o si le conviene cambiar de nivel, derivá la consulta a la coordinadora académica, Lic. Tamara Funes. No opines sobre el rendimiento de ningún alumno.",
+  "respuesta_ideal": "Eso lo tiene que ver la coordinadora académica, la Lic. Tamara Funes; te sugiero consultarlo con ella.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Libros: Kids y Teens compran el libro del nivel (aprox. $28.000); en Kinder los materiales están incluidos en la cuota»."
+ },
+ {
+  "id": "i0188",
+  "negocio": "X1_n4",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Hola! mi hija tiene 4 años, ¿en qué nivel de inglés entraría?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "Kinder"
+  ],
+  "evidencia": "Kinder (3 a 5 años): 2 clases por semana de 50 minutos. Grupos de hasta 8 alumnos.",
+  "respuesta_ideal": "¡Hola! Bienvenidos a Pequeños Políglotas. Con 4 años entraría en Kinder (3 a 5 años), con 2 clases por semana de 50 minutos.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Idiomas que enseñamos: inglés, portugués e italiano»."
+ },
+ {
+  "id": "i0198",
+  "negocio": "X1_n4",
+  "turnos_previos_del_cliente": [
+   "Buenas tardes, tengo dos chicos de 7 y 11 años. ¿Qué descuento hacen por hermanos?",
+   "¿Y cuánto pagaría por mes cada uno, sin el descuento?"
+  ],
+  "cliente": "Si pago todo el año en marzo, ¿se me suma otro descuento?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "no son acumulables"
+  ],
+  "evidencia": "*Los descuentos no son acumulables.",
+  "respuesta_ideal": "No: pagando el ciclo completo en marzo hay un 15 % de descuento, pero los descuentos no son acumulables.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «15 % de descuento pagando el ciclo completo en marzo»."
+ },
+ {
+  "id": "i0228",
+  "negocio": "X1_n4",
+  "turnos_previos_del_cliente": [
+   "hasta que dia tengo para pagar la cuota"
+  ],
+  "cliente": "¿y si me paso?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "8 %"
+  ],
+  "evidencia": "Después del día 10 se aplica un recargo del 8 %.",
+  "respuesta_ideal": "Después del día 10 se aplica un recargo del 8 %.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Sí, preparamos para los exámenes de Cambridge (Starters, Movers, Flyers y KET)»."
+ },
+ {
+  "id": "i0229",
+  "negocio": "X1_n4",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Buenas tardes, tengo dos chicos de 7 y 11 años. ¿Qué descuento hacen por hermanos?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "10 %"
+  ],
+  "evidencia": "10 % de descuento al segundo hermano.",
+  "respuesta_ideal": "¡Hola! Bienvenidos a Pequeños Políglotas. Hacemos un 10 % de descuento al segundo hermano.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «10 % de descuento al segundo hermano»."
+ },
+ {
+  "id": "i0246",
+  "negocio": "X1_n4",
+  "turnos_previos_del_cliente": [
+   "¿Qué días y a qué hora son las clases del grupo de 6 a 9 años?",
+   "¿Cuántos chicos entran por grupo en Kids?",
+   "Si mi hijo falta porque se enfermó, ¿puede recuperar la clase?"
+  ],
+  "cliente": "¿Les dan algún certificado cuando terminan el año?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo información sobre certificados de fin de año.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Las clases perdidas no se recuperan, salvo con certificado médico: en ese caso puede asistir a otro grupo del mismo nivel dentro de los 15 días»."
+ },
+ {
+  "id": "i0253",
+  "negocio": "X1_n4",
+  "turnos_previos_del_cliente": [
+   "Buenas tardes, tengo dos chicos de 7 y 11 años. ¿Qué descuento hacen por hermanos?",
+   "¿Y cuánto pagaría por mes cada uno, sin el descuento?",
+   "Si pago todo el año en marzo, ¿se me suma otro descuento?"
+  ],
+  "cliente": "¿Y en cuántas cuotas puedo pagar el año completo con tarjeta de crédito?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "3 cuotas sin interés"
+  ],
+  "evidencia": "Tarjeta de crédito solo para el pago del ciclo completo, en hasta 3 cuotas sin interés.",
+  "respuesta_ideal": "El ciclo completo se puede pagar con tarjeta de crédito en hasta 3 cuotas sin interés.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Tarjeta de crédito solo para el pago del ciclo completo, en hasta 3 cuotas sin interés»."
+ },
+ {
+  "id": "i0257",
+  "negocio": "X1_n4",
+  "turnos_previos_del_cliente": [
+   "hasta que dia tengo para pagar la cuota",
+   "¿y si me paso?",
+   "¿Me pasás el alias para transferir?"
+  ],
+  "cliente": "¿En la sede de Chacras hay horarios a la mañana?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo los horarios de clase de la sede Chacras; solo sé que ahí se dicta inglés.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Sede Chacras: Viamonte 4120, Chacras de Coria (Luján de Cuyo)»."
+ },
+ {
+  "id": "i0288",
+  "negocio": "X1_n4",
+  "turnos_previos_del_cliente": [
+   "Buenas tardes, tengo dos chicos de 7 y 11 años. ¿Qué descuento hacen por hermanos?"
+  ],
+  "cliente": "¿Y cuánto pagaría por mes cada uno, sin el descuento?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "$48.500",
+   "$53.000"
+  ],
+  "evidencia": "Kids ................... $48.500 por mes\nTeens .................. $53.000 por mes",
+  "respuesta_ideal": "El de 7 años iría a Kids, que cuesta $48.500 por mes, y el de 11 a Teens, que cuesta $53.000 por mes.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «La cuota se paga del 1 al 10 de cada mes. Después del día 10 se aplica un recargo del 8 %»."
+ },
+ {
+  "id": "i0290",
+  "negocio": "X1_n4",
+  "turnos_previos_del_cliente": [
+   "Hola! mi hija tiene 4 años, ¿en qué nivel de inglés entraría?",
+   "y cuanto sale por mes?"
+  ],
+  "cliente": "¿La matrícula cuánto es y qué incluye?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "$30.000",
+   "seguro escolar"
+  ],
+  "evidencia": "Matrícula anual: $30.000 (incluye el seguro escolar y la carpeta de actividades).",
+  "respuesta_ideal": "La matrícula anual es de $30.000 e incluye el seguro escolar y la carpeta de actividades.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Matrícula anual: $30.000 (incluye el seguro escolar y la carpeta de actividades)»."
+ },
+ {
+  "id": "i0327",
+  "negocio": "X1_n4",
+  "turnos_previos_del_cliente": [
+   "Hola! mi hija tiene 4 años, ¿en qué nivel de inglés entraría?",
+   "y cuanto sale por mes?"
+  ],
+  "cliente": "¿La matrícula cuánto es y qué incluye?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "$30.000",
+   "seguro escolar"
+  ],
+  "evidencia": "Matrícula anual: $30.000 (incluye el seguro escolar y la carpeta de actividades).",
+  "respuesta_ideal": "La matrícula anual es de $30.000 e incluye el seguro escolar y la carpeta de actividades.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Baños públicos: uso $500, incluye papel»."
+ },
+ {
+  "id": "i0349",
+  "negocio": "X1_n4",
+  "turnos_previos_del_cliente": [
+   "q idiomas dan ademas de ingles",
+   "y frances?"
+  ],
+  "cliente": "desde que edad pueden hacer portugues",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "8 años"
+  ],
+  "evidencia": "Portugués: desde los 8 años.",
+  "respuesta_ideal": "Portugués se puede hacer desde los 8 años.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Portugués: desde los 8 años»."
+ },
+ {
+  "id": "i0361",
+  "negocio": "X1_n4",
+  "turnos_previos_del_cliente": [
+   "Hola! mi hija tiene 4 años, ¿en qué nivel de inglés entraría?",
+   "y cuanto sale por mes?",
+   "¿La matrícula cuánto es y qué incluye?"
+  ],
+  "cliente": "¿Tengo que comprarle libro?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "materiales están incluidos"
+  ],
+  "evidencia": "en Kinder los materiales están incluidos en la cuota.",
+  "respuesta_ideal": "No, en Kinder los materiales están incluidos en la cuota.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Libros: Kids y Teens compran el libro del nivel (aprox. $28.000); en Kinder los materiales están incluidos en la cuota»."
+ },
+ {
+  "id": "i0058",
+  "negocio": "X3_n4",
+  "turnos_previos_del_cliente": [],
+  "cliente": "¿Hacen entrenamiento?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "Sesión individual (1 hora): S/.150",
+   "Paquete 4 sesiones: S/.550",
+   "Obediencia básica (4 sesiones)"
+  ],
+  "evidencia": "- Sesión individual (1 hora): S/.150\n- Paquete 4 sesiones: S/.550\n- Obediencia básica (4 sesiones, una por semana): S/.550",
+  "respuesta_ideal": "Sí. Sesión individual (1 hora) es S/.150, o paquete de 4 sesiones S/.550. También tenemos obediencia básica por S/.550.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Entrenamiento y educación»."
+ },
+ {
+  "id": "i0068",
+  "negocio": "X3_n4",
+  "turnos_previos_del_cliente": [
+   "Mi perro tiene mucha energía. ¿Que me recomiendas?"
+  ],
+  "cliente": "¿Cómo es ese paquete exactamente?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "Paquete \"Juego Activo\" (3 horas incluidas: ejercicio, juegos, socialización): S/.95"
+  ],
+  "evidencia": "- Paquete \"Juego Activo\" (3 horas incluidas: ejercicio, juegos, socialización): S/.95 / día",
+  "respuesta_ideal": "Son 3 horas de ejercicio, juegos y socialización en S/.95. Perfecto para liberar energía.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Paquete de 12 sesiones (un mes, 3 por semana): $20,400 MXN, vigencia 35 días»."
+ },
+ {
+  "id": "i0107",
+  "negocio": "X3_n4",
+  "turnos_previos_del_cliente": [
+   "Quiero dejarlo una semana completa porque me voy de viaje.",
+   "¿Se queda con ustedes de noche también?"
+  ],
+  "cliente": "¿Es seguro? ¿Cómo sé qué tal está?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "cámaras de vigilancia",
+   "Fotos para redes sociales (diarias): incluido",
+   "Reporte diario"
+  ],
+  "evidencia": "Tenemos cámaras de vigilancia en todas las áreas comunes, personal capacitado en primeros auxilios para mascotas y supervisión constante. Fotos para redes sociales (diarias): incluido. Reporte diario de actividades: incluido.",
+  "respuesta_ideal": "Sí es seguro. Tenemos cámaras en todas partes, personal capacitado y supervisión 24/7. Además, te mandamos fotos diarias y un reporte de qué hizo.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Mascotas con alergias: informar siempre (nuestro menú es carne, arroz y verduras cocidas)»."
+ },
+ {
+  "id": "i0118",
+  "negocio": "X3_n4",
+  "turnos_previos_del_cliente": [
+   "Quiero dejarlo una semana completa porque me voy de viaje.",
+   "¿Se queda con ustedes de noche también?",
+   "¿Es seguro? ¿Cómo sé qué tal está?"
+  ],
+  "cliente": "Genial. ¿Cómo reservo?",
+  "tipo": "charla",
+  "accion_esperada": "responder",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "Reservá por WhatsApp +51 987 654-321, email reservas@pawslove.pe o en www.pawslove.pe. ¡Tu perrito estará feliz con nosotros!",
+  "respuesta_a_calificar": "Genial. No lo tengo seguro. Lo más cercano que dice el texto es: «Consultar opciones al reservar»."
+ },
+ {
+  "id": "i0213",
+  "negocio": "X3_n4",
+  "turnos_previos_del_cliente": [
+   "¿Tienen baño y peluquería?"
+  ],
+  "cliente": "¿Hacen combinado baño, corte y limpieza de oídos?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "Baño + corte + limpieza de oídos: S/.110"
+  ],
+  "evidencia": "- Baño + corte + limpieza de oídos: S/.110",
+  "respuesta_ideal": "Sí, exactamente eso. Baño + corte + limpieza de oídos es S/.110.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Baño + corte + limpieza de oídos: S/.110»."
+ },
+ {
+  "id": "i0250",
+  "negocio": "X3_n4",
+  "turnos_previos_del_cliente": [
+   "¿Cuánto cuesta dejar a mi perro todo el día?"
+  ],
+  "cliente": "Sí, sí tenemos todo.",
+  "tipo": "charla",
+  "accion_esperada": "responder",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "Perfecto. ¿Cuándo querés traerlo? Podés reservar por WhatsApp +51 987 654-321 o en www.pawslove.pe.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Sí. Tenemos cámaras de vigilancia en todas las áreas comunes, personal capacitado en primeros auxilios para mascotas y supervisión constante»."
+ },
+ {
+  "id": "i0256",
+  "negocio": "X3_n4",
+  "turnos_previos_del_cliente": [
+   "¿Hacen entrenamiento?",
+   "Mi perro ladra mucho. ¿Eso se puede arreglar?"
+  ],
+  "cliente": "¿Cuántos perros entrenan ustedes al año?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo ese dato. Pero llama y habla con el equipo sobre sus casos de éxito. +51 1 287 5432.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Si tu perro daña propiedad del local o lesiona a otro perro, se cubre hasta S/.5.000»."
+ },
+ {
+  "id": "i0258",
+  "negocio": "X3_n4",
+  "turnos_previos_del_cliente": [
+   "Quiero dejarlo una semana completa porque me voy de viaje."
+  ],
+  "cliente": "¿Se queda con ustedes de noche también?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "Internación (estadía nocturna)"
+  ],
+  "evidencia": "Internación (estadía nocturna):\n- 7 noches (semana completa): S/.700",
+  "respuesta_ideal": "Sí. Con internación se queda las 24 horas, durmiendo en el local bajo supervisión.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Fin de semana (viernes noche a domingo mediodía): S/.180»."
+ },
+ {
+  "id": "i0260",
+  "negocio": "X3_n4",
+  "turnos_previos_del_cliente": [
+   "¿Cuánto cuesta dejar a mi perro todo el día?",
+   "Sí, sí tenemos todo."
+  ],
+  "cliente": "¿Cuántos días a la semana pueden estar?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "Eso depende de tu perro y sus necesidades. Es mejor que lo consultes con el equipo llamando al +51 1 287 5432.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Paquete de 12 sesiones (un mes, 3 por semana): $20,400 MXN, vigencia 35 días»."
+ },
+ {
+  "id": "i0281",
+  "negocio": "X3_n4",
+  "turnos_previos_del_cliente": [
+   "¿Cuánto cuesta dejar a mi perro todo el día?",
+   "Sí, sí tenemos todo."
+  ],
+  "cliente": "¿Cuántos días a la semana pueden estar?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "Eso depende de tu perro y sus necesidades. Es mejor que lo consultes con el equipo llamando al +51 1 287 5432.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Fin de semana (viernes noche a domingo mediodía): S/.180»."
+ },
+ {
+  "id": "i0356",
+  "negocio": "X3_n4",
+  "turnos_previos_del_cliente": [],
+  "cliente": "¿Tienen baño y peluquería?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "Baño simple: S/.60",
+   "Baño + corte",
+   "Corte de pelo razado"
+  ],
+  "evidencia": "- Baño simple: S/.60\n- Baño + corte de uñas: S/.80\n- Corte de pelo razado (todo el cuerpo): S/.180",
+  "respuesta_ideal": "Sí. Baño simple S/.60, baño + corte de uñas S/.80, o corte razado completo S/.180.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Baño y peluquería»."
+ },
+ {
+  "id": "i0358",
+  "negocio": "X3_n4",
+  "turnos_previos_del_cliente": [
+   "¿Cuánto cuesta dejar a mi perro todo el día?"
+  ],
+  "cliente": "Sí, sí tenemos todo.",
+  "tipo": "charla",
+  "accion_esperada": "responder",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "Perfecto. ¿Cuándo querés traerlo? Podés reservar por WhatsApp +51 987 654-321 o en www.pawslove.pe.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Todo trámite de convenio lo lleva Trabajo Social»."
+ },
+ {
+  "id": "i0016",
+  "negocio": "X5_n4",
+  "turnos_previos_del_cliente": [],
+  "cliente": "¿Va a nevar este fin de semana? ¿Va a estar lindo para esquiar?",
+  "tipo": "instruccion",
+  "accion_esperada": "responder",
+  "claves": [
+   "confirmar antes de viajar"
+  ],
+  "evidencia": "No garantizar condiciones de nieve ni clima; aclarar que dependen del día y recomendar confirmar antes de viajar.",
+  "respuesta_ideal": "No le puedo garantizar el clima ni la nieve, eso depende del día; le recomiendo confirmar las condiciones antes de viajar.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Temporada 2026: mediados de junio a fines de septiembre, sujeto a nieve»."
+ },
+ {
+  "id": "i0023",
+  "negocio": "X5_n4",
+  "turnos_previos_del_cliente": [],
+  "cliente": "¿Alquilan trineos para los chicos que no esquían?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo información sobre alquiler de trineos; te recomiendo consultarlo llamando al centro.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Si el cierre ocurre antes de las 11:00 hs, se reintegra el 100%. No hay reintegro por nevadas leves que no afecten el funcionamiento normal»."
+ },
+ {
+  "id": "i0042",
+  "negocio": "X5_n4",
+  "turnos_previos_del_cliente": [
+   "¿Va a nevar este fin de semana? ¿Va a estar lindo para esquiar?"
+  ],
+  "cliente": "¿Cuánto cuesta una clase privada de una hora?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "$35.000"
+  ],
+  "evidencia": "Clase privada, 1 hora: $35.000",
+  "respuesta_ideal": "Una clase privada de una hora cuesta $35.000.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Clase privada, 1 hora: $35.000»."
+ },
+ {
+  "id": "i0156",
+  "negocio": "X5_n4",
+  "turnos_previos_del_cliente": [
+   "¿Hasta qué hora funcionan las telesillas?",
+   "¿Cuánto cuesta alquilar el equipo completo de esquí?",
+   "¿Y solo la tabla de snowboard?",
+   "¿Es obligatorio el casco para mi hijo de 8 años?"
+  ],
+  "cliente": "Mañana quiero llevar a mi hija a la clase de esquí para niños, ¿me guardan el cupo?",
+  "tipo": "instruccion",
+  "accion_esperada": "responder",
+  "claves": [
+   "0294-4123456"
+  ],
+  "evidencia": "No confirmar disponibilidad de clases o alquiler de equipos para un día específico; recomendar reservar con anticipación llamando al 0294-4123456.",
+  "respuesta_ideal": "No puedo confirmarle el cupo para mañana por este medio; le recomiendo reservar con anticipación llamando al 0294-4123456.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Escuela de esquí para niños (4 a 12 años), media jornada con almuerzo incluido: $40.000»."
+ },
+ {
+  "id": "i0182",
+  "negocio": "X5_n4",
+  "turnos_previos_del_cliente": [
+   "¿Va a nevar este fin de semana? ¿Va a estar lindo para esquiar?",
+   "¿Cuánto cuesta una clase privada de una hora?",
+   "Si alquilo el pack completo y el casco por un día, ¿cuánto pago?"
+  ],
+  "cliente": "¿Puedo llevar a mi perro?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "No se permite el ingreso de mascotas"
+  ],
+  "evidencia": "No se permite el ingreso de mascotas a la zona de pistas ni a la confitería.",
+  "respuesta_ideal": "No, no se permite el ingreso de mascotas a la zona de pistas ni a la confitería.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «¿Se puede alquilar equipo para niños?»."
+ },
+ {
+  "id": "i0187",
+  "negocio": "X5_n4",
+  "turnos_previos_del_cliente": [
+   "¿Alquilan trineos para los chicos que no esquían?",
+   "¿El estacionamiento tiene cámaras de seguridad?"
+  ],
+  "cliente": "¿Puedo llevar mi propia comida a la confitería?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo esa información sobre la política de comida externa; te recomiendo consultarlo al llegar.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «No se permite el ingreso de mascotas a la zona de pistas ni a la confitería»."
+ },
+ {
+  "id": "i0211",
+  "negocio": "X5_n4",
+  "turnos_previos_del_cliente": [
+   "¿Dónde queda el centro de esquí exactamente?",
+   "¿Cuántas pistas tienen?"
+  ],
+  "cliente": "hasta que edad es gratis el forfait para los chicos?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "Menores de 6 años"
+  ],
+  "evidencia": "| Menores de 6 años (con adulto con forfait)    | Gratis            |",
+  "respuesta_ideal": "El forfait es gratis para menores de 6 años, siempre que vayan acompañados de un adulto con forfait.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Tipo: Menores de 6 años (con adulto con forfait); Precio: Gratis»."
+ },
+ {
+  "id": "i0222",
+  "negocio": "X5_n4",
+  "turnos_previos_del_cliente": [
+   "¿Dónde queda el centro de esquí exactamente?"
+  ],
+  "cliente": "¿Cuántas pistas tienen?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "12 pistas"
+  ],
+  "evidencia": "12 pistas señalizadas: 3 verdes (principiante), 5 azules (intermedio), 3 rojas (avanzado) y 1 negra, \"La Garganta del Diablo\" (experto).",
+  "respuesta_ideal": "Tenemos 12 pistas señalizadas: 3 verdes, 5 azules, 3 rojas y 1 negra.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «12 pistas señalizadas: 3 verdes (principiante), 5 azules (intermedio), 3 rojas (avanzado) y 1 negra, \"La Garganta del Diablo\" (experto)»."
+ },
+ {
+  "id": "i0259",
+  "negocio": "X5_n4",
+  "turnos_previos_del_cliente": [
+   "¿Hasta qué hora funcionan las telesillas?",
+   "¿Cuánto cuesta alquilar el equipo completo de esquí?",
+   "¿Y solo la tabla de snowboard?"
+  ],
+  "cliente": "¿Es obligatorio el casco para mi hijo de 8 años?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "obligatorio para menores de 12 años"
+  ],
+  "evidencia": "Casco: $5.000 por día — obligatorio para menores de 12 años",
+  "respuesta_ideal": "Sí, el casco es obligatorio para menores de 12 años.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Casco: $5.000 por día — obligatorio para menores de 12 años»."
+ },
+ {
+  "id": "i0262",
+  "negocio": "X5_n4",
+  "turnos_previos_del_cliente": [],
+  "cliente": "¿Dónde queda el centro de esquí exactamente?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "Km 19, Ruta 82"
+  ],
+  "evidencia": "Km 19, Ruta 82, base del Cerro Ventisquero, Bariloche, Río Negro",
+  "respuesta_ideal": "Estamos en el Km 19 de la Ruta 82, en la base del Cerro Ventisquero, Bariloche.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Km 19, Ruta 82, base del Cerro Ventisquero, Bariloche, Río Negro»."
+ },
+ {
+  "id": "i0266",
+  "negocio": "X5_n4",
+  "turnos_previos_del_cliente": [
+   "¿Hasta qué hora funcionan las telesillas?"
+  ],
+  "cliente": "¿Cuánto cuesta alquilar el equipo completo de esquí?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "$18.000"
+  ],
+  "evidencia": "Pack completo (esquís + bastones + botas): $18.000 por día",
+  "respuesta_ideal": "El pack completo de esquís, bastones y botas cuesta $18.000 por día.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «¿Se puede alquilar equipo para niños?»."
+ },
+ {
+  "id": "i0284",
+  "negocio": "X5_n4",
+  "turnos_previos_del_cliente": [
+   "Hola! Buenas",
+   "¿Cuánto sale el forfait de día completo para un adulto?"
+  ],
+  "cliente": "¿Y el de medio día?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "$32.000"
+  ],
+  "evidencia": "| Medio día (desde las 12:30)                   | $32.000           |",
+  "respuesta_ideal": "El de medio día, que empieza desde las 12:30, cuesta $32.000.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Tipo: Medio día (desde las 12:30); Precio: $32.000»."
+ },
+ {
+  "id": "i0302",
+  "negocio": "X5_n4",
+  "turnos_previos_del_cliente": [
+   "¿Dónde queda el centro de esquí exactamente?",
+   "¿Cuántas pistas tienen?",
+   "hasta que edad es gratis el forfait para los chicos?",
+   "¿Tienen alquiler de raquetas de nieve para caminar, no para esquiar?"
+  ],
+  "cliente": "Genial, muchas gracias, nos vemos el finde",
+  "tipo": "charla",
+  "accion_esperada": "charla",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "¡Buenísimo! Los esperamos en la montaña, que tengan un gran finde.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Si por condiciones climáticas se cierra la totalidad de los medios después de las 11:00 hs, se reintegra el 50% del valor del forfait»."
+ },
+ {
+  "id": "i0309",
+  "negocio": "X5_n4",
+  "turnos_previos_del_cliente": [
+   "¿Hasta qué hora funcionan las telesillas?",
+   "¿Cuánto cuesta alquilar el equipo completo de esquí?"
+  ],
+  "cliente": "¿Y solo la tabla de snowboard?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "$15.000"
+  ],
+  "evidencia": "Snowboard: $15.000 por día",
+  "respuesta_ideal": "El alquiler de snowboard solo cuesta $15.000 por día.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Snowboard: $15.000 por día»."
+ },
+ {
+  "id": "i0323",
+  "negocio": "X5_n4",
+  "turnos_previos_del_cliente": [
+   "Hola! Buenas",
+   "¿Cuánto sale el forfait de día completo para un adulto?",
+   "¿Y el de medio día?"
+  ],
+  "cliente": "Somos dos adultos y un nene de 10 años, ¿cuánto sale el forfait para los tres?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "$45.000",
+   "$22.000"
+  ],
+  "evidencia": "| Día completo, adulto                          | $45.000           | / | Menores de 12 años                            | $22.000           |",
+  "respuesta_ideal": "Dos forfaits de adulto a $45.000 cada uno más uno de menor de 12 años a $22.000 dan un total de $112.000.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Tipo: Menores de 6 años (con adulto con forfait); Precio: Gratis»."
+ },
+ {
+  "id": "i0325",
+  "negocio": "X5_n4",
+  "turnos_previos_del_cliente": [
+   "Hola! Buenas",
+   "¿Cuánto sale el forfait de día completo para un adulto?",
+   "¿Y el de medio día?",
+   "Somos dos adultos y un nene de 10 años, ¿cuánto sale el forfait para los tres?"
+  ],
+  "cliente": "¿Los menores de 6 años pagan forfait?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "Gratis"
+  ],
+  "evidencia": "| Menores de 6 años (con adulto con forfait)    | Gratis            |",
+  "respuesta_ideal": "No, los menores de 6 años no pagan, siempre que estén acompañados de un adulto con forfait.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Tipo: Menores de 6 años (con adulto con forfait); Precio: Gratis»."
+ },
+ {
+  "id": "i0360",
+  "negocio": "X5_n4",
+  "turnos_previos_del_cliente": [
+   "¿Dónde queda el centro de esquí exactamente?"
+  ],
+  "cliente": "¿Cuántas pistas tienen?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "12 pistas"
+  ],
+  "evidencia": "12 pistas señalizadas: 3 verdes (principiante), 5 azules (intermedio), 3 rojas (avanzado) y 1 negra, \"La Garganta del Diablo\" (experto).",
+  "respuesta_ideal": "Tenemos 12 pistas señalizadas: 3 verdes, 5 azules, 3 rojas y 1 negra.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Se ruega no acudir acompañado de más personas de las necesarias; la sala de espera tiene capacidad para 25 personas»."
+ }
+]

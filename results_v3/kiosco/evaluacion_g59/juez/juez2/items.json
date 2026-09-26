@@ -1,0 +1,750 @@
+[
+ {
+  "id": "i0006",
+  "negocio": "X1_n2",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Si no puedo ir a mi cita, ¿con cuánto tiempo tengo que avisar?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "12 horas"
+  ],
+  "evidencia": "- Cancelaciones: avisa con al menos 12 horas de anticipación.",
+  "respuesta_ideal": "Debes avisar con al menos 12 horas de anticipación.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Cancelaciones: avisa con al menos 12 horas de anticipación. Si no avisas, se cobra una penalización de $5 en tu siguiente cita»."
+ },
+ {
+  "id": "i0024",
+  "negocio": "X1_n2",
+  "turnos_previos_del_cliente": [
+   "Hola, estoy embarazada de 4 meses, ¿me puedo hacer láser en las piernas?"
+  ],
+  "cliente": "¿y con cera sí puedo?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "Si te preguntan algo que no aparece en la información del centro, di que no tienes ese dato y que pueden consultarlo por WhatsApp al 0414-555-0123.",
+  "respuesta_ideal": "No tengo ese dato para la cera; consúltalo por WhatsApp al 0414-555-0123.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Martes de cera: 10 % de descuento en todos los servicios de depilación con cera (no aplica a láser ni a paquetes)»."
+ },
+ {
+  "id": "i0028",
+  "negocio": "X1_n2",
+  "turnos_previos_del_cliente": [
+   "q metodos de pago aceptan"
+  ],
+  "cliente": "¿Y cuánto es en bolívares la pierna completa con cera?",
+  "tipo": "instruccion",
+  "accion_esperada": "responder",
+  "claves": [
+   "$25",
+   "tasa BCV"
+  ],
+  "evidencia": "Todos los precios están en dólares. Si piden el monto en bolívares, explica que se calcula a la tasa BCV del día al momento de pagar y no des una cifra.",
+  "respuesta_ideal": "La pierna completa con cera cuesta $25; el monto en bolívares se calcula a la tasa BCV del día al momento de pagar.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Efectivo en dólares (billetes en buen estado; no recibimos billetes rotos ni manchados), Zelle, pago móvil en bolívares a la tasa BCV del día y punto de venta: solo tarjetas de débito de bancos nacionales»."
+ },
+ {
+  "id": "i0035",
+  "negocio": "X1_n2",
+  "turnos_previos_del_cliente": [
+   "¿Dónde queda el local?",
+   "¿El descuento de los martes sirve también para el láser?"
+  ],
+  "cliente": "cuanto cuesta el diseño de cejas con henna",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "$18"
+  ],
+  "evidencia": "- Diseño de cejas con henna: $18",
+  "respuesta_ideal": "El diseño de cejas con henna cuesta $18.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Diseño de cejas con henna: $18»."
+ },
+ {
+  "id": "i0120",
+  "negocio": "X1_n2",
+  "turnos_previos_del_cliente": [
+   "q metodos de pago aceptan",
+   "¿Y cuánto es en bolívares la pierna completa con cera?"
+  ],
+  "cliente": "¿Puedo pagar con tarjeta de crédito?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "solo tarjetas de débito"
+  ],
+  "evidencia": "punto de venta: solo tarjetas de débito de bancos nacionales.",
+  "respuesta_ideal": "No, en el punto de venta aceptamos solo tarjetas de débito de bancos nacionales.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Fianza: 150 € que se bloquean en la tarjeta y se liberan al devolver la bici»."
+ },
+ {
+  "id": "i0122",
+  "negocio": "X1_n2",
+  "turnos_previos_del_cliente": [],
+  "cliente": "¿Dónde queda el local?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "C.C. Los Cedros",
+   "2-14"
+  ],
+  "evidencia": "C.C. Los Cedros, nivel 2, local 2-14, Av. Bolívar Norte, Valencia.",
+  "respuesta_ideal": "Estamos en el C.C. Los Cedros, nivel 2, local 2-14, Av. Bolívar Norte, Valencia.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «C.C. Los Cedros, nivel 2, local 2-14, Av. Bolívar Norte, Valencia»."
+ },
+ {
+  "id": "i0137",
+  "negocio": "X1_n2",
+  "turnos_previos_del_cliente": [
+   "Buenas tardes. ¿Qué horario tienen los domingos?",
+   "Perfecto, ¿me anotas para este domingo a las 11 para una limpieza facial?"
+  ],
+  "cliente": "¿Cuánto dura la limpieza facial y qué precio tiene?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "60 min",
+   "$28"
+  ],
+  "evidencia": "- Limpieza facial profunda (60 min): $28",
+  "respuesta_ideal": "La limpieza facial profunda dura 60 min y cuesta $28.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Limpieza facial profunda (60 min): $28»."
+ },
+ {
+  "id": "i0142",
+  "negocio": "X1_n2",
+  "turnos_previos_del_cliente": [
+   "Buenas tardes. ¿Qué horario tienen los domingos?",
+   "Perfecto, ¿me anotas para este domingo a las 11 para una limpieza facial?",
+   "¿Cuánto dura la limpieza facial y qué precio tiene?"
+  ],
+  "cliente": "¿Y el hidrafacial?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "75 min",
+   "$55"
+  ],
+  "evidencia": "- Hidrafacial (75 min): $55",
+  "respuesta_ideal": "El hidrafacial dura 75 min y cuesta $55.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Hidrafacial (75 min): $55»."
+ },
+ {
+  "id": "i0167",
+  "negocio": "X1_n2",
+  "turnos_previos_del_cliente": [
+   "¿Dónde queda el local?",
+   "¿El descuento de los martes sirve también para el láser?",
+   "cuanto cuesta el diseño de cejas con henna",
+   "Mi esposo quiere hacerse la espalda con láser, ¿cuánto le saldría?"
+  ],
+  "cliente": "¿Venden gift cards para regalar un servicio?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "Si te preguntan algo que no aparece en la información del centro, di que no tienes ese dato y que pueden consultarlo por WhatsApp al 0414-555-0123.",
+  "respuesta_ideal": "No tengo ese dato; puedes consultarlo por WhatsApp al 0414-555-0123. ¡Te esperamos pronto!",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Trae a una amiga: si una persona referida por ti se hace su primera sesión, tú recibes $5 de descuento en tu próximo servicio»."
+ },
+ {
+  "id": "i0216",
+  "negocio": "X1_n2",
+  "turnos_previos_del_cliente": [
+   "hola buenas, cuanto cuesta depilarse las axilas con cera?"
+  ],
+  "cliente": "y con laser?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "$30",
+   "valoración"
+  ],
+  "evidencia": "Axilas | $30 | $150",
+  "respuesta_ideal": "Con láser, axilas cuesta $30 la sesión (o $150 el paquete de 6). Antes de la primera sesión se hace una valoración gratuita.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Martes de cera: 10 % de descuento en todos los servicios de depilación con cera (no aplica a láser ni a paquetes)»."
+ },
+ {
+  "id": "i0234",
+  "negocio": "X1_n2",
+  "turnos_previos_del_cliente": [
+   "¿Dónde queda el local?"
+  ],
+  "cliente": "¿El descuento de los martes sirve también para el láser?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "no aplica a láser"
+  ],
+  "evidencia": "Martes de cera: 10 % de descuento en todos los servicios de depilación con cera (no aplica a láser ni a paquetes).",
+  "respuesta_ideal": "No, el 10 % de los martes es solo para depilación con cera; no aplica a láser ni a paquetes.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Martes de cera: 10 % de descuento en todos los servicios de depilación con cera (no aplica a láser ni a paquetes)»."
+ },
+ {
+  "id": "i0236",
+  "negocio": "X1_n2",
+  "turnos_previos_del_cliente": [
+   "q metodos de pago aceptan",
+   "¿Y cuánto es en bolívares la pierna completa con cera?",
+   "¿Puedo pagar con tarjeta de crédito?"
+  ],
+  "cliente": "Si pago con un billete de 100 dólares, ¿me dan el vuelto en dólares?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "Si te preguntan algo que no aparece en la información del centro, di que no tienes ese dato y que pueden consultarlo por WhatsApp al 0414-555-0123.",
+  "respuesta_ideal": "No tengo ese dato; puedes consultarlo por WhatsApp al 0414-555-0123.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Efectivo en dólares (billetes en buen estado; no recibimos billetes rotos ni manchados), Zelle, pago móvil en bolívares a la tasa BCV del día y punto de venta: solo tarjetas de débito de bancos nacionales»."
+ },
+ {
+  "id": "i0269",
+  "negocio": "X1_n2",
+  "turnos_previos_del_cliente": [
+   "q metodos de pago aceptan",
+   "¿Y cuánto es en bolívares la pierna completa con cera?"
+  ],
+  "cliente": "¿Puedo pagar con tarjeta de crédito?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "solo tarjetas de débito"
+  ],
+  "evidencia": "punto de venta: solo tarjetas de débito de bancos nacionales.",
+  "respuesta_ideal": "No, en el punto de venta aceptamos solo tarjetas de débito de bancos nacionales.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Efectivo en dólares (billetes en buen estado; no recibimos billetes rotos ni manchados), Zelle, pago móvil en bolívares a la tasa BCV del día y punto de venta: solo tarjetas de débito de bancos nacionales»."
+ },
+ {
+  "id": "i0271",
+  "negocio": "X1_n2",
+  "turnos_previos_del_cliente": [
+   "Si no puedo ir a mi cita, ¿con cuánto tiempo tengo que avisar?",
+   "¿y si no aviso qué pasa?",
+   "Compré un paquete de láser y ya no lo voy a usar, ¿me devuelven la plata?"
+  ],
+  "cliente": "¿Y cuánto tiempo tengo para usar las sesiones que me quedan?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "12 meses"
+  ],
+  "evidencia": "- Paquetes: las sesiones vencen a los 12 meses de la compra.",
+  "respuesta_ideal": "Las sesiones vencen a los 12 meses de la compra.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Devoluciones: tienes 14 días desde la compra para devolver la bici, siempre que esté sin usar (menos de 10 km en el contador) y con su embalaje original»."
+ },
+ {
+  "id": "i0316",
+  "negocio": "X1_n2",
+  "turnos_previos_del_cliente": [],
+  "cliente": "q metodos de pago aceptan",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "Zelle",
+   "pago móvil",
+   "tarjetas de débito"
+  ],
+  "evidencia": "Efectivo en dólares (billetes en buen estado; no recibimos billetes rotos ni manchados), Zelle, pago móvil en bolívares a la tasa BCV del día y punto de venta: solo tarjetas de débito de bancos nacionales.",
+  "respuesta_ideal": "Aceptamos efectivo en dólares (billetes en buen estado), Zelle, pago móvil en bolívares a la tasa BCV del día y punto de venta con tarjetas de débito de bancos nacionales.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Efectivo en dólares (billetes en buen estado; no recibimos billetes rotos ni manchados), Zelle, pago móvil en bolívares a la tasa BCV del día y punto de venta: solo tarjetas de débito de bancos nacionales»."
+ },
+ {
+  "id": "i0357",
+  "negocio": "X1_n2",
+  "turnos_previos_del_cliente": [],
+  "cliente": "q metodos de pago aceptan",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "Zelle",
+   "pago móvil",
+   "tarjetas de débito"
+  ],
+  "evidencia": "Efectivo en dólares (billetes en buen estado; no recibimos billetes rotos ni manchados), Zelle, pago móvil en bolívares a la tasa BCV del día y punto de venta: solo tarjetas de débito de bancos nacionales.",
+  "respuesta_ideal": "Aceptamos efectivo en dólares (billetes en buen estado), Zelle, pago móvil en bolívares a la tasa BCV del día y punto de venta con tarjetas de débito de bancos nacionales.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Fianza: 150 € que se bloquean en la tarjeta y se liberan al devolver la bici»."
+ },
+ {
+  "id": "i0064",
+  "negocio": "X3_n2",
+  "turnos_previos_del_cliente": [
+   "Mi hijo tiene 10 años, ¿puede venir?"
+  ],
+  "cliente": "¿Hay campamento en agosto?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "julio y agosto"
+  ],
+  "evidencia": "Campamento de verano (julio y agosto)",
+  "respuesta_ideal": "Sí, tenemos campamento en agosto. Es de lunes a viernes, de 9:00 a 14:00, y cuesta €240 la semana. Incluye almuerzo.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Campamento de verano (julio y agosto)»."
+ },
+ {
+  "id": "i0079",
+  "negocio": "X3_n2",
+  "turnos_previos_del_cliente": [
+   "¿Cuánto cuesta entrar un día?"
+  ],
+  "cliente": "¿Y si vengo más días, hay descuento?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "membresías",
+   "4 sesiones/mes: €28"
+  ],
+  "evidencia": "- 4 sesiones/mes: €28/mes",
+  "respuesta_ideal": "Sí, con membresía. Por ejemplo, 4 sesiones al mes cuestan €28. O acceso ilimitado por €65/mes.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Primer mes: 15% descuento si pagas por 3 meses de una vez»."
+ },
+ {
+  "id": "i0091",
+  "negocio": "X3_n2",
+  "turnos_previos_del_cliente": [
+   "¿Cuánto cuesta entrar un día?",
+   "¿Y si vengo más días, hay descuento?",
+   "¿Dónde estáis?"
+  ],
+  "cliente": "Perfecto, iré el sábado.",
+  "tipo": "charla",
+  "accion_esperada": "responder",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "¡Excelente! El sábado abrimos de 10:00 a 20:00. ¡Te esperamos!",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Abierto: lunes a viernes 09:00-17:30 · sábados 09:00-13:00»."
+ },
+ {
+  "id": "i0100",
+  "negocio": "X3_n2",
+  "turnos_previos_del_cliente": [
+   "¿Se puede hacer una sesión con entrenador privado?",
+   "¿Puedo traer a mi amigo que pesa 140 kg?"
+  ],
+  "cliente": "Tengo un esguince de tobillo, ¿puedo escalar?",
+  "tipo": "instruccion",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "Personas con lesiones previas: consultar antes de acceder",
+  "respuesta_ideal": "Por seguridad, te recomiendo que llames antes al 91 234 5678 para consultar con nuestro equipo sobre tu lesión.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Monitores certificados: todos nuestros instructores tienen certificación IFSC (Federación Internacional de Escalada Deportiva) y primeros auxilios»."
+ },
+ {
+  "id": "i0127",
+  "negocio": "X3_n2",
+  "turnos_previos_del_cliente": [
+   "¿Cuánto cuesta entrar un día?",
+   "¿Y si vengo más días, hay descuento?"
+  ],
+  "cliente": "¿Dónde estáis?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "Carrera de San Jerónimo, 28",
+   "junto a la Estación de Atocha"
+  ],
+  "evidencia": "Dirección: Carrera de San Jerónimo, 28, Madrid 28014 (junto a la Estación de Atocha)",
+  "respuesta_ideal": "Estamos en Carrera de San Jerónimo, 28, muy cerca de la Estación de Atocha.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Se requiere estar en condiciones físicas razonables. Personas con lesiones previas: consultar antes de acceder»."
+ },
+ {
+  "id": "i0128",
+  "negocio": "X3_n2",
+  "turnos_previos_del_cliente": [
+   "¿A qué hora abren los fines de semana?",
+   "¿Necesito experiencia previa?"
+  ],
+  "cliente": "¿Cómo son las clases de iniciación?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "Iniciación (6 sesiones): €120",
+   "Martes y jueves, 18:00 h."
+  ],
+  "evidencia": "Iniciación (6 sesiones): €120 — Martes y jueves, 18:00 h.",
+  "respuesta_ideal": "Son 6 sesiones por €120, los martes y jueves a las 18:00. Grupos pequeños, máximo 8 personas.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Clases: cambio de fecha sin cargo hasta 24 horas antes. Sin aviso previo, se pierde la sesión»."
+ },
+ {
+  "id": "i0149",
+  "negocio": "X3_n2",
+  "turnos_previos_del_cliente": [
+   "¿Se puede hacer una sesión con entrenador privado?"
+  ],
+  "cliente": "¿Puedo traer a mi amigo que pesa 140 kg?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "Peso máximo recomendado: 130 kg"
+  ],
+  "evidencia": "Peso máximo recomendado: 130 kg",
+  "respuesta_ideal": "El peso máximo recomendado es 130 kg. Te sugiero que llame antes para consultar con nuestro equipo sobre su caso específico.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Técnica avanzada (4 sesiones): €140 — Sábados, 11:00 h»."
+ },
+ {
+  "id": "i0204",
+  "negocio": "X3_n2",
+  "turnos_previos_del_cliente": [
+   "¿Cuánto cuesta entrar un día?",
+   "¿Y si vengo más días, hay descuento?"
+  ],
+  "cliente": "¿Dónde estáis?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "Carrera de San Jerónimo, 28",
+   "junto a la Estación de Atocha"
+  ],
+  "evidencia": "Dirección: Carrera de San Jerónimo, 28, Madrid 28014 (junto a la Estación de Atocha)",
+  "respuesta_ideal": "Estamos en Carrera de San Jerónimo, 28, muy cerca de la Estación de Atocha.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Bienvenido a Repuestos Díaz, donde encontrás calidad garantizada desde 1998»."
+ },
+ {
+  "id": "i0205",
+  "negocio": "X3_n2",
+  "turnos_previos_del_cliente": [
+   "¿Se puede hacer una sesión con entrenador privado?",
+   "¿Puedo traer a mi amigo que pesa 140 kg?",
+   "Tengo un esguince de tobillo, ¿puedo escalar?"
+  ],
+  "cliente": "¿Hay casilleros?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "casilleros seguros (taquilla digital)",
+   "€2 adicionales",
+   "gratis con membresía anual"
+  ],
+  "evidencia": "el local dispone de casilleros seguros (taquilla digital con código): acceso todo el día por €2 adicionales o gratis con membresía anual",
+  "respuesta_ideal": "Sí, tenemos taquillas digitales. Cuestan €2 por uso, o te las regalamos si tienes membresía anual.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «El local dispone de casilleros seguros (taquilla digital con código): acceso todo el día por €2 adicionales o gratis con membresía anual»."
+ },
+ {
+  "id": "i0224",
+  "negocio": "X3_n2",
+  "turnos_previos_del_cliente": [
+   "¿A qué hora abren los fines de semana?"
+  ],
+  "cliente": "¿Necesito experiencia previa?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "Podés venir sin experiencia. Cuando llegues, nuestro equipo te orienta. O si querés, tenemos clases de iniciación.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Se requiere estar en condiciones físicas razonables. Personas con lesiones previas: consultar antes de acceder»."
+ },
+ {
+  "id": "i0268",
+  "negocio": "X3_n2",
+  "turnos_previos_del_cliente": [
+   "¿cuanto cuesta la membresía de un año?"
+  ],
+  "cliente": "¿Y si pago 3 meses de una vez?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "Acceso libre: €65/mes",
+   "15% descuento si pagas por 3 meses"
+  ],
+  "evidencia": "- Acceso libre: €65/mes (ilimitado)\nPrimer mes: 15% descuento si pagas por 3 meses de una vez.",
+  "respuesta_ideal": "Si pagas 3 meses de acceso libre ahora, te hacemos 15% de descuento. Son 3 × €65 = €195 menos el 15%, o sea €165,75 los 3 meses.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Primer mes: 15% descuento si pagas por 3 meses de una vez»."
+ },
+ {
+  "id": "i0287",
+  "negocio": "X3_n2",
+  "turnos_previos_del_cliente": [
+   "Mi hijo tiene 10 años, ¿puede venir?",
+   "¿Hay campamento en agosto?"
+  ],
+  "cliente": "¿Para todas las edades?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "Edades 7-16 años"
+  ],
+  "evidencia": "Edades 7-16 años.",
+  "respuesta_ideal": "Es para edades 7 a 16 años. Tu hijo de 10 encaja perfecto. Inscripciones en www.verticalclimbing.es o por teléfono.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Edades 7-16 años»."
+ },
+ {
+  "id": "i0318",
+  "negocio": "X3_n2",
+  "turnos_previos_del_cliente": [],
+  "cliente": "¿Se puede hacer una sesión con entrenador privado?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo esa información. Llamá al 91 234 5678 para preguntar sobre opciones de entrenamiento personalizado.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Fotografía de eventos: podemos coordinar sesiones privadas de fotos para cumpleaños o eventos (€85 la sesión)»."
+ },
+ {
+  "id": "i0026",
+  "negocio": "X5_n2",
+  "turnos_previos_del_cliente": [],
+  "cliente": "¿Hasta qué hora abren los sábados?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "19:00"
+  ],
+  "evidencia": "Horario: Lunes a sábado de 8:00 a 19:00 (corrido).",
+  "respuesta_ideal": "Los sábados atendemos de 8:00 a 19:00, igual que entre semana.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Horario: Lunes a sábado de 8:00 a 19:00 (corrido)»."
+ },
+ {
+  "id": "i0053",
+  "negocio": "X5_n2",
+  "turnos_previos_del_cliente": [
+   "Hola, buenas!"
+  ],
+  "cliente": "¿Cuánto cuesta un colchón matrimonial?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "1.850.000"
+  ],
+  "evidencia": "Colchón resortes                   | Matrimonial | 1.850.000",
+  "respuesta_ideal": "El colchón matrimonial de resortes cuesta Gs. 1.850.000.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Producto: Colchón resortes; Medida: Matrimonial; Precio (Gs.): 1.850.000»."
+ },
+ {
+  "id": "i0070",
+  "negocio": "X5_n2",
+  "turnos_previos_del_cliente": [
+   "El colchón que compré la semana pasada vino con una costura rota, quiero reclamar",
+   "¿Puedo cambiar el colchón si no me gusta después de dormir unas semanas?"
+  ],
+  "cliente": "¿Tengo que pagar algo por ese cambio?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "el flete del cambio"
+  ],
+  "evidencia": "El cliente cubre el costo del flete del cambio.",
+  "respuesta_ideal": "Sí, usted debe cubrir el costo del flete del cambio.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Fuera de esa zona el flete tiene costo adicional según la distancia, se cotiza al momento de la compra»."
+ },
+ {
+  "id": "i0081",
+  "negocio": "X5_n2",
+  "turnos_previos_del_cliente": [
+   "El colchón que compré la semana pasada vino con una costura rota, quiero reclamar"
+  ],
+  "cliente": "¿Puedo cambiar el colchón si no me gusta después de dormir unas semanas?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "30 días de prueba"
+  ],
+  "evidencia": "Política de cambio: 30 días de prueba desde la entrega.",
+  "respuesta_ideal": "Sí, tiene 30 días de prueba desde la entrega para cambiarlo una sola vez si no le resulta cómodo.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Se puede cambiar el colchón una sola vez si no resulta cómodo, siempre que se haya usado con la funda protectora original puesta»."
+ },
+ {
+  "id": "i0086",
+  "negocio": "X5_n2",
+  "turnos_previos_del_cliente": [],
+  "cliente": "cuanto sale el colchon individual de espuma?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "950.000"
+  ],
+  "evidencia": "Colchón espuma alta densidad       | Individual  | 950.000",
+  "respuesta_ideal": "El colchón individual de espuma de alta densidad cuesta Gs. 950.000.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Producto: Colchón espuma alta densidad; Medida: Individual; Precio (Gs.): 950.000»."
+ },
+ {
+  "id": "i0089",
+  "negocio": "X5_n2",
+  "turnos_previos_del_cliente": [],
+  "cliente": "¿Tienen colchones para cuna de bebé?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo información sobre colchones de cuna en este momento; te recomiendo llamar a la tienda para consultarlo.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Sí, tenemos modelos de exhibición para acostarse y probar antes de comprar»."
+ },
+ {
+  "id": "i0111",
+  "negocio": "X5_n2",
+  "turnos_previos_del_cliente": [
+   "Hola, buenas!",
+   "¿Cuánto cuesta un colchón matrimonial?"
+  ],
+  "cliente": "¿Y el queen viscoelástico?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "3.200.000"
+  ],
+  "evidencia": "Colchón viscoelástico              | Queen       | 3.200.000",
+  "respuesta_ideal": "El colchón viscoelástico queen cuesta Gs. 3.200.000.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Producto: Colchón viscoelástico; Medida: Queen; Precio (Gs.): 3.200.000»."
+ },
+ {
+  "id": "i0112",
+  "negocio": "X5_n2",
+  "turnos_previos_del_cliente": [
+   "¿Tienen colchones para cuna de bebé?"
+  ],
+  "cliente": "¿Puedo pagar con Tigo Money?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo esa información sobre esa forma de pago; te sugiero confirmarlo llamando a la tienda.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «¿Puedo pagar en cuotas con tarjeta de débito?»."
+ },
+ {
+  "id": "i0131",
+  "negocio": "X5_n2",
+  "turnos_previos_del_cliente": [
+   "Hola, buenas!",
+   "¿Cuánto cuesta un colchón matrimonial?",
+   "¿Y el queen viscoelástico?"
+  ],
+  "cliente": "Si compro el queen y una almohada, ¿cuánto pago en total?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "3.200.000",
+   "180.000"
+  ],
+  "evidencia": "Colchón viscoelástico              | Queen       | 3.200.000 / Almohada viscoelástica             | unidad      | 180.000",
+  "respuesta_ideal": "El queen sale Gs. 3.200.000 y la almohada Gs. 180.000, en total serían Gs. 3.380.000.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Somos una colchonería familiar con más de 15 años en el barrio, especializada en colchones, sommiers y almohadas para todo tipo de descanso»."
+ },
+ {
+  "id": "i0183",
+  "negocio": "X5_n2",
+  "turnos_previos_del_cliente": [
+   "Hola, buenas!",
+   "¿Cuánto cuesta un colchón matrimonial?",
+   "¿Y el queen viscoelástico?",
+   "Si compro el queen y una almohada, ¿cuánto pago en total?"
+  ],
+  "cliente": "¿Tienen entrega gratis?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "gratis en Asunción"
+  ],
+  "evidencia": "Entrega: gratis en Asunción y Gran Asunción para compras desde Gs. 1.500.000.",
+  "respuesta_ideal": "Sí, la entrega es gratis en Asunción y Gran Asunción para compras desde Gs. 1.500.000.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Entrega: gratis en Asunción y Gran Asunción para compras desde Gs. 1.500.000»."
+ },
+ {
+  "id": "i0207",
+  "negocio": "X5_n2",
+  "turnos_previos_del_cliente": [
+   "cuanto sale el colchon individual de espuma?",
+   "Si llevo dos almohadas y un sommier, ¿cuánto es en total?"
+  ],
+  "cliente": "¿Puedo pagar en 12 cuotas sin interés con cualquier tarjeta?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "Visa y Mastercard de Itaú y Continental"
+  ],
+  "evidencia": "Financiación: hasta 12 cuotas sin interés con tarjetas Visa y Mastercard de Itaú y Continental.",
+  "respuesta_ideal": "No, las 12 cuotas sin interés son solo con tarjetas Visa y Mastercard de Itaú y Continental; con otras tarjetas son hasta 6 cuotas.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Financiación: hasta 12 cuotas sin interés con tarjetas Visa y Mastercard de Itaú y Continental»."
+ },
+ {
+  "id": "i0230",
+  "negocio": "X5_n2",
+  "turnos_previos_del_cliente": [
+   "¿Hasta qué hora abren los sábados?",
+   "¿Están abiertos los domingos?",
+   "¿Cuántos años de garantía tiene el colchón de resortes?"
+  ],
+  "cliente": "¿Y el viscoelástico?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "10 años"
+  ],
+  "evidencia": "Garantía: 5 años en colchones de resortes y 10 años en viscoelásticos, contra defectos de fabricación.",
+  "respuesta_ideal": "El viscoelástico tiene 10 años de garantía.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Garantía: 5 años en colchones de resortes y 10 años en viscoelásticos, contra defectos de fabricación»."
+ },
+ {
+  "id": "i0245",
+  "negocio": "X5_n2",
+  "turnos_previos_del_cliente": [],
+  "cliente": "¿Dónde queda el local exactamente?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "Mariscal López 2350"
+  ],
+  "evidencia": "Avda. Mariscal López 2350 c/ Perú, Asunción — a dos cuadras de la Shopping del Sol.",
+  "respuesta_ideal": "Estamos en la Avenida Mariscal López 2350 casi Perú, en Asunción, a dos cuadras de la Shopping del Sol.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «¿Puedo probar el colchón en el local?»."
+ },
+ {
+  "id": "i0247",
+  "negocio": "X5_n2",
+  "turnos_previos_del_cliente": [],
+  "cliente": "El colchón que compré la semana pasada vino con una costura rota, quiero reclamar",
+  "tipo": "instruccion",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "Ante quejas o reclamos por productos defectuosos, derivar siempre a Marta Duarte al 021-445678 o WhatsApp 0981-234567.",
+  "respuesta_ideal": "Para reclamos por productos defectuosos lo mejor es que hable directamente con Marta Duarte, al 021-445678 o por WhatsApp al 0981-234567.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Se puede cambiar el colchón una sola vez si no resulta cómodo, siempre que se haya usado con la funda protectora original puesta»."
+ },
+ {
+  "id": "i0255",
+  "negocio": "X5_n2",
+  "turnos_previos_del_cliente": [
+   "¿Hasta qué hora abren los sábados?",
+   "¿Están abiertos los domingos?"
+  ],
+  "cliente": "¿Cuántos años de garantía tiene el colchón de resortes?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "5 años"
+  ],
+  "evidencia": "Garantía: 5 años en colchones de resortes y 10 años en viscoelásticos, contra defectos de fabricación.",
+  "respuesta_ideal": "El colchón de resortes tiene 5 años de garantía por defectos de fabricación.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Garantía: 5 años en colchones de resortes y 10 años en viscoelásticos, contra defectos de fabricación»."
+ },
+ {
+  "id": "i0285",
+  "negocio": "X5_n2",
+  "turnos_previos_del_cliente": [
+   "cuanto sale el colchon individual de espuma?"
+  ],
+  "cliente": "Si llevo dos almohadas y un sommier, ¿cuánto es en total?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "180.000",
+   "600.000"
+  ],
+  "evidencia": "Almohada viscoelástica             | unidad      | 180.000 / Sommier (base)                     | desde       | 600.000",
+  "respuesta_ideal": "Dos almohadas a Gs. 180.000 cada una y un sommier desde Gs. 600.000 suman al menos Gs. 960.000 en total.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Somos una colchonería familiar con más de 15 años en el barrio, especializada en colchones, sommiers y almohadas para todo tipo de descanso»."
+ },
+ {
+  "id": "i0328",
+  "negocio": "X5_n2",
+  "turnos_previos_del_cliente": [
+   "¿Dónde queda el local exactamente?",
+   "¿Cómo se llama la encargada de la tienda?"
+  ],
+  "cliente": "¿Puedo probar los colchones antes de comprar?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "modelos de exhibición"
+  ],
+  "evidencia": "¿Puedo probar el colchón en el local? Sí, tenemos modelos de exhibición para acostarse y probar antes de comprar.",
+  "respuesta_ideal": "Sí, tenemos modelos de exhibición donde puede acostarse y probarlos antes de comprar.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Sí, tenemos modelos de exhibición para acostarse y probar antes de comprar»."
+ }
+]

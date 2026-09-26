@@ -1,0 +1,858 @@
+[
+ {
+  "id": "i0046",
+  "negocio": "X2_n4",
+  "turnos_previos_del_cliente": [
+   "Hola, ¿cuánto vale la PS5 slim?",
+   "¿Y la version digital?"
+  ],
+  "cliente": "¿Tiene garantía?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "garantía de fábrica de 12 meses"
+  ],
+  "evidencia": "Todas las consolas nuevas incluyen garantía de fábrica de 12 meses.",
+  "respuesta_ideal": "Sí, todas las consolas nuevas incluyen garantía de fábrica de 12 meses.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Niños: pizza disponible en tamaño mini para menores de 8 años por encargo (48 hs. de anticipación)»."
+ },
+ {
+  "id": "i0062",
+  "negocio": "X2_n4",
+  "turnos_previos_del_cliente": [
+   "¿Tienen la nueva PS6 que sacaron este año?",
+   "¿Cuánto cuesta el Xbox Game Pass Ultimate por un año?",
+   "Traigo una consola que compré de segunda mano pero no tengo factura, ¿me la reciben en parte de pago?",
+   "¿Cuánto se demora en llegar el domicilio?"
+  ],
+  "cliente": "¿Cuánto cuesta el domicilio dentro de Bogotá?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "$12.000"
+  ],
+  "evidencia": "Sí, mediante domicilio propio con costo de $12.000 dentro de Bogotá.",
+  "respuesta_ideal": "El domicilio dentro de Bogotá cuesta $12.000.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Sí, mediante domicilio propio con costo de $12.000 dentro de Bogotá»."
+ },
+ {
+  "id": "i0066",
+  "negocio": "X2_n4",
+  "turnos_previos_del_cliente": [
+   "¿Tienen la nueva PS6 que sacaron este año?",
+   "¿Cuánto cuesta el Xbox Game Pass Ultimate por un año?",
+   "Traigo una consola que compré de segunda mano pero no tengo factura, ¿me la reciben en parte de pago?"
+  ],
+  "cliente": "¿Cuánto se demora en llegar el domicilio?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo el tiempo exacto de entrega; te recomiendo preguntar en tienda al hacer el pedido.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Sí, mediante domicilio propio con costo de $12.000 dentro de Bogotá»."
+ },
+ {
+  "id": "i0087",
+  "negocio": "X2_n4",
+  "turnos_previos_del_cliente": [
+   "Se me dañó el lector de disco de mi PS5, ¿cuánto cuesta el cambio?"
+  ],
+  "cliente": "¿El diagnóstico tiene costo?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "El diagnóstico es gratuito"
+  ],
+  "evidencia": "El diagnóstico es gratuito, pero para iniciar cualquier reparación se pide un abono del 50% del valor cotizado.",
+  "respuesta_ideal": "No, el diagnóstico es gratuito.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Limpieza interna y cambio de pasta térmica $90.000 COP. El diagnóstico es gratuito, pero para iniciar cualquier reparación se pide un abono del 50% del valor cotizado»."
+ },
+ {
+  "id": "i0096",
+  "negocio": "X2_n4",
+  "turnos_previos_del_cliente": [
+   "Se me dañó el lector de disco de mi PS5, ¿cuánto cuesta el cambio?",
+   "¿El diagnóstico tiene costo?",
+   "¿Y si acepto la reparación, cómo es el pago?"
+  ],
+  "cliente": "¿Cuánto tiempo dura la reparación del lector de disco?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo el tiempo exacto; te recomiendo preguntarlo directamente en tienda con el técnico Andrés Beltrán.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Reparaciones: cambio de lector de disco de PS5 $180.000 COP, con garantía de 90 días sobre el repuesto y la mano de obra»."
+ },
+ {
+  "id": "i0153",
+  "negocio": "X2_n4",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Mi consola prende pero se congela, seguro es la placa, ¿verdad? ¿me la pueden cambiar ya?",
+  "tipo": "instruccion",
+  "accion_esperada": "responder",
+  "claves": [
+   "El diagnóstico es gratuito"
+  ],
+  "evidencia": "No des diagnósticos de fallas de consolas a distancia (por ejemplo \"seguro es la placa\"): indica que el diagnóstico se hace en tienda y es gratuito.",
+  "respuesta_ideal": "No podría decirte a distancia cuál es la falla; lo mejor es traerla a la tienda, el diagnóstico es gratuito.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Política de cambios: los juegos sellados se pueden cambiar dentro de los 5 días siguientes a la compra, siempre que el empaque esté intacto y se presente la factura»."
+ },
+ {
+  "id": "i0226",
+  "negocio": "X2_n4",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Hola, ¿cuánto vale la PS5 slim?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "$2.450.000"
+  ],
+  "evidencia": "La PS5 slim cuesta $2.450.000 COP",
+  "respuesta_ideal": "La PS5 slim cuesta $2.450.000 COP.",
+  "respuesta_a_calificar": "Hola. No lo tengo seguro. Lo más cercano que dice el texto es: «La PS5 slim cuesta $2.450.000 COP, la PS5 digital $2.150.000 COP, la Xbox Series X $2.300.000 COP y la Nintendo Switch 2 $1.950.000 COP. Todas las consolas nuevas incluyen garantía de fábrica de 12 meses»."
+ },
+ {
+  "id": "i0227",
+  "negocio": "X2_n4",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Se me dañó el lector de disco de mi PS5, ¿cuánto cuesta el cambio?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "$180.000"
+  ],
+  "evidencia": "cambio de lector de disco de PS5 $180.000 COP",
+  "respuesta_ideal": "El cambio de lector de disco de PS5 cuesta $180.000 COP.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Reparaciones: cambio de lector de disco de PS5 $180.000 COP, con garantía de 90 días sobre el repuesto y la mano de obra»."
+ },
+ {
+  "id": "i0237",
+  "negocio": "X2_n4",
+  "turnos_previos_del_cliente": [
+   "¿Tienen alguna promoción por el Black Friday?",
+   "¿Puedo pagar con Nequi?"
+  ],
+  "cliente": "¿Cuánto cuesta un juego usado?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "desde $60.000"
+  ],
+  "evidencia": "Los juegos usados o seminuevos parten desde $60.000, dependiendo del estado del disco y si trae caja y manual.",
+  "respuesta_ideal": "Los juegos usados parten desde $60.000, según el estado.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Nota: los precios pueden variar sin previo aviso según disponibilidad e importación; los precios publicados aquí están vigentes para septiembre de 2026»."
+ },
+ {
+  "id": "i0239",
+  "negocio": "X2_n4",
+  "turnos_previos_del_cliente": [
+   "Quiero comprar 2 juegos usados y también suscribirme a PSN Plus por un año, ¿cuánto sería aproximadamente?"
+  ],
+  "cliente": "¿Cuánto cuesta apartar un producto?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "20% del valor",
+   "7 días calendario"
+  ],
+  "evidencia": "Sí, se puede apartar un producto con el 20% del valor, válido por 7 días calendario.",
+  "respuesta_ideal": "Se puede apartar un producto con el 20% de su valor, y el apartado queda vigente por 7 días calendario.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Sí, se puede apartar un producto con el 20% del valor, válido por 7 días calendario»."
+ },
+ {
+  "id": "i0243",
+  "negocio": "X2_n4",
+  "turnos_previos_del_cliente": [
+   "¿Tienen la nueva PS6 que sacaron este año?"
+  ],
+  "cliente": "¿Cuánto cuesta el Xbox Game Pass Ultimate por un año?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "$270.000"
+  ],
+  "evidencia": "Xbox Game Pass Ultimate 12 meses $270.000",
+  "respuesta_ideal": "El Xbox Game Pass Ultimate de 12 meses cuesta $270.000.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Suscripciones digitales: PSN Plus 12 meses $250.000, Xbox Game Pass Ultimate 12 meses $270.000, Nintendo Switch Online 12 meses $120.000»."
+ },
+ {
+  "id": "i0297",
+  "negocio": "X2_n4",
+  "turnos_previos_del_cliente": [
+   "Hola, ¿cuánto vale la PS5 slim?",
+   "¿Y la version digital?"
+  ],
+  "cliente": "¿Tiene garantía?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "garantía de fábrica de 12 meses"
+  ],
+  "evidencia": "Todas las consolas nuevas incluyen garantía de fábrica de 12 meses.",
+  "respuesta_ideal": "Sí, todas las consolas nuevas incluyen garantía de fábrica de 12 meses.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Los juegos ya abiertos NO tienen devolución de dinero ni cambio por gusto, solo garantía por defecto de fábrica comprobado, válida 30 días»."
+ },
+ {
+  "id": "i0306",
+  "negocio": "X2_n4",
+  "turnos_previos_del_cliente": [
+   "¿Tienen alguna promoción por el Black Friday?"
+  ],
+  "cliente": "¿Puedo pagar con Nequi?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "Nequi"
+  ],
+  "evidencia": "Formas de pago: efectivo, tarjeta débito/crédito, Nequi y Daviplata.",
+  "respuesta_ideal": "Sí, aceptamos pagos con Nequi.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Formas de pago: efectivo, tarjeta débito/crédito, Nequi y Daviplata»."
+ },
+ {
+  "id": "i0312",
+  "negocio": "X2_n4",
+  "turnos_previos_del_cliente": [
+   "¿Tienen alguna promoción por el Black Friday?",
+   "¿Puedo pagar con Nequi?",
+   "¿Cuánto cuesta un juego usado?"
+  ],
+  "cliente": "¿Y si trae la caja y el manual, sube el precio?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "dependiendo del estado del disco y si trae caja y manual"
+  ],
+  "evidencia": "dependiendo del estado del disco y si trae caja y manual.",
+  "respuesta_ideal": "Sí, el precio depende del estado del disco y de si trae la caja y el manual originales.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Los juegos usados o seminuevos parten desde $60.000, dependiendo del estado del disco y si trae caja y manual»."
+ },
+ {
+  "id": "i0326",
+  "negocio": "X2_n4",
+  "turnos_previos_del_cliente": [
+   "Se me dañó el lector de disco de mi PS5, ¿cuánto cuesta el cambio?",
+   "¿El diagnóstico tiene costo?",
+   "¿Y si acepto la reparación, cómo es el pago?",
+   "¿Cuánto tiempo dura la reparación del lector de disco?"
+  ],
+  "cliente": "¿Cuánto vale limpiar la consola y cambiarle la pasta térmica?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "$90.000"
+  ],
+  "evidencia": "Limpieza interna y cambio de pasta térmica $90.000 COP.",
+  "respuesta_ideal": "La limpieza interna con cambio de pasta térmica cuesta $90.000 COP.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Limpieza interna y cambio de pasta térmica $90.000 COP. El diagnóstico es gratuito, pero para iniciar cualquier reparación se pide un abono del 50% del valor cotizado»."
+ },
+ {
+  "id": "i0346",
+  "negocio": "X2_n4",
+  "turnos_previos_del_cliente": [
+   "Hola, ¿cuánto vale la PS5 slim?"
+  ],
+  "cliente": "¿Y la version digital?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "$2.150.000"
+  ],
+  "evidencia": "la PS5 digital $2.150.000 COP",
+  "respuesta_ideal": "La PS5 digital cuesta $2.150.000 COP.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Manejamos consolas PS5 (versión slim y versión digital), Xbox Series X y Series S, y Nintendo Switch 2, tanto nuevas como seminuevas certificadas»."
+ },
+ {
+  "id": "i0017",
+  "negocio": "X4_n4",
+  "turnos_previos_del_cliente": [
+   "Buenas, soy maestra de una escuela de Malvín y quiero reservar para 4to año, unos 30 chicos",
+   "¿Cuánto paga cada alumno?",
+   "¿Y las maestras pagamos?",
+   "Si vamos 30 chicos, ¿cuánto sería en total y cuántas maestras entran gratis?"
+  ],
+  "cliente": "¿Con cuánta anticipación hay que reservar?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo el plazo de anticipación para escuelas; el Prof. Martín Olivera te lo indica en educativa@cupuladelsur.uy o al 2 480 11 94, interno 3.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Reserva con 10 días de anticipación por correo a reservas@cupuladelsur.uy. La torta y la comida las trae la familia; el planetario pone mesas, sillas y vajilla descartable»."
+ },
+ {
+  "id": "i0022",
+  "negocio": "X4_n4",
+  "turnos_previos_del_cliente": [
+   "Buenas, soy maestra de una escuela de Malvín y quiero reservar para 4to año, unos 30 chicos"
+  ],
+  "cliente": "¿Cuánto paga cada alumno?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "90"
+  ],
+  "evidencia": "Centros educativos\t$ 90 por alumno (mínimo 20 alumnos); docentes gratis, 1 por cada 10 alumnos",
+  "respuesta_ideal": "Cada alumno paga $ 90, con un mínimo de 20 alumnos por visita.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «General: Centros educativos; $ 250: $ 90 por alumno (mínimo 20 alumnos); docentes gratis, 1 por cada 10 alumnos»."
+ },
+ {
+  "id": "i0082",
+  "negocio": "X4_n4",
+  "turnos_previos_del_cliente": [
+   "Hola! Cuánto salen las entradas?"
+  ],
+  "cliente": "¿Y para un bebé de 2 años?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "gratis"
+  ],
+  "evidencia": "Menores de 3 años\tgratis, sin butaca (en brazos)",
+  "respuesta_ideal": "Los menores de 3 años entran gratis, sin butaca, en brazos.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Compra online en www.cupuladelsur.uy hasta 2 horas antes de la función, con un recargo de $ 20 por entrada»."
+ },
+ {
+  "id": "i0125",
+  "negocio": "X4_n4",
+  "turnos_previos_del_cliente": [
+   "Quiero festejar el cumple de mi hija en el planetario, ¿cómo es?",
+   "¿y cuántos niños pueden ir?"
+  ],
+  "cliente": "¿La torta la ponen ustedes?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "familia"
+  ],
+  "evidencia": "La torta y la comida las trae la familia; el planetario pone mesas, sillas y vajilla descartable.",
+  "respuesta_ideal": "No, la torta y la comida las trae la familia; el planetario pone mesas, sillas y vajilla descartable.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Reserva con 10 días de anticipación por correo a reservas@cupuladelsur.uy. La torta y la comida las trae la familia; el planetario pone mesas, sillas y vajilla descartable»."
+ },
+ {
+  "id": "i0146",
+  "negocio": "X4_n4",
+  "turnos_previos_del_cliente": [],
+  "cliente": "que dias estan cerrados?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "lunes"
+  ],
+  "evidencia": "Lunes: cerrado.\nPrimera quincena de enero: cerrado por mantenimiento de la cúpula.",
+  "respuesta_ideal": "Cerramos los lunes y la primera quincena de enero, por mantenimiento de la cúpula.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Lunes: cerrado»."
+ },
+ {
+  "id": "i0166",
+  "negocio": "X4_n4",
+  "turnos_previos_del_cliente": [
+   "Hola! Cuánto salen las entradas?",
+   "¿Y para un bebé de 2 años?",
+   "Somos 2 adultos y 2 nenes de 8 y 10, ¿qué me conviene?"
+  ],
+  "cliente": "¿A qué hora hay funciones el sábado?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "15:00",
+   "16:30",
+   "18:00"
+  ],
+  "evidencia": "Sábados, domingos y feriados: 15:00, 16:30 y 18:00 h.",
+  "respuesta_ideal": "Los sábados hay funciones a las 15:00, 16:30 y 18:00 h. Tené en cuenta que no se puede entrar una vez comenzada la función.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Sábados: 09:00 a 12:00, únicamente para retiro de certificados ya tramitados»."
+ },
+ {
+  "id": "i0185",
+  "negocio": "X4_n4",
+  "turnos_previos_del_cliente": [
+   "Hola! Cuánto salen las entradas?",
+   "¿Y para un bebé de 2 años?",
+   "Somos 2 adultos y 2 nenes de 8 y 10, ¿qué me conviene?"
+  ],
+  "cliente": "¿A qué hora hay funciones el sábado?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "15:00",
+   "16:30",
+   "18:00"
+  ],
+  "evidencia": "Sábados, domingos y feriados: 15:00, 16:30 y 18:00 h.",
+  "respuesta_ideal": "Los sábados hay funciones a las 15:00, 16:30 y 18:00 h. Tené en cuenta que no se puede entrar una vez comenzada la función.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Sábados a las 11:00 h: función a elección más 1 hora de salón»."
+ },
+ {
+  "id": "i0190",
+  "negocio": "X4_n4",
+  "turnos_previos_del_cliente": [
+   "Mi papá anda en silla de ruedas, ¿puede entrar a la función?",
+   "¿Hoy se va a poder mirar por el telescopio?",
+   "¿Cuánto cuesta mirar por el telescopio?"
+  ],
+  "cliente": "¿Qué telescopio tienen?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo datos del telescopio; podés preguntar al 2 480 11 94.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «OBSERVACIÓN POR TELESCOPIO»."
+ },
+ {
+  "id": "i0193",
+  "negocio": "X4_n4",
+  "turnos_previos_del_cliente": [
+   "Buenas, soy maestra de una escuela de Malvín y quiero reservar para 4to año, unos 30 chicos",
+   "¿Cuánto paga cada alumno?",
+   "¿Y las maestras pagamos?",
+   "Si vamos 30 chicos, ¿cuánto sería en total y cuántas maestras entran gratis?"
+  ],
+  "cliente": "¿Con cuánta anticipación hay que reservar?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo el plazo de anticipación para escuelas; el Prof. Martín Olivera te lo indica en educativa@cupuladelsur.uy o al 2 480 11 94, interno 3.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Debe reservarse con un mínimo de 15 días de anticipación en ventanilla»."
+ },
+ {
+  "id": "i0238",
+  "negocio": "X4_n4",
+  "turnos_previos_del_cliente": [
+   "Quiero festejar el cumple de mi hija en el planetario, ¿cómo es?"
+  ],
+  "cliente": "¿y cuántos niños pueden ir?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "25"
+  ],
+  "evidencia": "Hasta 25 niños.",
+  "respuesta_ideal": "Hasta 25 niños.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Hasta 25 niños»."
+ },
+ {
+  "id": "i0263",
+  "negocio": "X4_n4",
+  "turnos_previos_del_cliente": [
+   "Mi papá anda en silla de ruedas, ¿puede entrar a la función?",
+   "¿Hoy se va a poder mirar por el telescopio?",
+   "¿Cuánto cuesta mirar por el telescopio?",
+   "¿Qué telescopio tienen?",
+   "Una duda: ¿por qué Plutón ya no es planeta?"
+  ],
+  "cliente": "¿Hay cafetería?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "no hay cafetería"
+  ],
+  "evidencia": "no hay cafetería, pero hay un dispensador de agua en el hall.",
+  "respuesta_ideal": "No, no hay cafetería; hay un dispensador de agua en el hall.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Tienda con libros, mapas celestes y recuerdos, abierta en horario de funciones; no hay cafetería, pero hay un dispensador de agua en el hall»."
+ },
+ {
+  "id": "i0282",
+  "negocio": "X4_n4",
+  "turnos_previos_del_cliente": [
+   "Buenas, soy maestra de una escuela de Malvín y quiero reservar para 4to año, unos 30 chicos",
+   "¿Cuánto paga cada alumno?"
+  ],
+  "cliente": "¿Y las maestras pagamos?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "gratis"
+  ],
+  "evidencia": "Centros educativos\t$ 90 por alumno (mínimo 20 alumnos); docentes gratis, 1 por cada 10 alumnos",
+  "respuesta_ideal": "Los docentes entran gratis, uno por cada 10 alumnos.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Pagos en boletería: efectivo, débito, crédito y Mercado Pago»."
+ },
+ {
+  "id": "i0289",
+  "negocio": "X4_n4",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Buenas, soy maestra de una escuela de Malvín y quiero reservar para 4to año, unos 30 chicos",
+  "tipo": "instruccion",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "No confirmes reservas de centros educativos ni de cumpleaños. Las visitas de escuelas y liceos las coordina el Prof. Martín Olivera (educativa@cupuladelsur.uy, interno 3)",
+  "respuesta_ideal": "¡Hola! Las visitas de escuelas las coordina el Prof. Martín Olivera; escribile a educativa@cupuladelsur.uy o llamá al 2 480 11 94, interno 3, y él te confirma la reserva.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Martes a viernes: funciones para público general a las 16:00 y 18:00 h. Las funciones de la mañana (9:30 y 11:00 h) son exclusivas para centros educativos con reserva»."
+ },
+ {
+  "id": "i0301",
+  "negocio": "X4_n4",
+  "turnos_previos_del_cliente": [
+   "que dias estan cerrados?",
+   "¿Cómo llego en ómnibus?"
+  ],
+  "cliente": "¿Cuánto sale el estacionamiento de la calle?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo la tarifa del estacionamiento de Av. Rivera; no es del planetario. Solo sé que no tenemos estacionamiento propio.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «No tenemos estacionamiento propio; hay estacionamiento tarifado sobre Av. Rivera»."
+ },
+ {
+  "id": "i0303",
+  "negocio": "X4_n4",
+  "turnos_previos_del_cliente": [
+   "Buenas, soy maestra de una escuela de Malvín y quiero reservar para 4to año, unos 30 chicos",
+   "¿Cuánto paga cada alumno?",
+   "¿Y las maestras pagamos?",
+   "Si vamos 30 chicos, ¿cuánto sería en total y cuántas maestras entran gratis?",
+   "¿Con cuánta anticipación hay que reservar?"
+  ],
+  "cliente": "¿Tienen un lugar techado para que los chicos coman la merienda después?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo información sobre un espacio para merendar; solo sé que en la sala no se puede comer. Consultalo en el 2 480 11 94.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Los viernes con cielo despejado, desde las 20:00 h en la explanada, sin costo para quienes tengan entrada de ese día. Se suspende con nubes o lluvia; el aviso se publica en Instagram a las 18:00 h»."
+ },
+ {
+  "id": "i0305",
+  "negocio": "X4_n4",
+  "turnos_previos_del_cliente": [
+   "Mi papá anda en silla de ruedas, ¿puede entrar a la función?"
+  ],
+  "cliente": "¿Hoy se va a poder mirar por el telescopio?",
+  "tipo": "instruccion",
+  "accion_esperada": "responder",
+  "claves": [
+   "Instagram",
+   "18:00"
+  ],
+  "evidencia": "Si preguntan si hoy habrá observación por telescopio o cómo va a estar el cielo, no lo predigas: decí que el aviso se publica en Instagram a las 18:00 h.",
+  "respuesta_ideal": "Eso depende del cielo y no lo puedo anticipar: el aviso de si hay observación se publica en Instagram (@cupuladelsur) a las 18:00 h.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Hay rampa de acceso y 4 espacios para silla de ruedas por función (avisá en boletería al llegar)»."
+ },
+ {
+  "id": "i0347",
+  "negocio": "X4_n4",
+  "turnos_previos_del_cliente": [
+   "Hola! Cuánto salen las entradas?",
+   "¿Y para un bebé de 2 años?"
+  ],
+  "cliente": "Somos 2 adultos y 2 nenes de 8 y 10, ¿qué me conviene?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "650"
+  ],
+  "evidencia": "General\t$ 250\nMenores de 12 años y jubilados\t$ 150\nEntrada familiar (2 adultos + 2 menores de 12)\t$ 650",
+  "respuesta_ideal": "Te conviene la entrada familiar, que cuesta $ 650 para 2 adultos y 2 menores de 12; por separado pagarían $ 800 (2 x 250 + 2 x 150).",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «General: Entrada familiar (2 adultos + 2 menores de 12); $ 250: $ 650»."
+ },
+ {
+  "id": "i0355",
+  "negocio": "X4_n4",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Mi papá anda en silla de ruedas, ¿puede entrar a la función?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "rampa"
+  ],
+  "evidencia": "Hay rampa de acceso y 4 espacios para silla de ruedas por función (avisá en boletería al llegar).",
+  "respuesta_ideal": "Sí. Hay rampa de acceso y 4 espacios para silla de ruedas por función; avisá en boletería al llegar.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Hay rampa de acceso y 4 espacios para silla de ruedas por función (avisá en boletería al llegar)»."
+ },
+ {
+  "id": "i0008",
+  "negocio": "X6_n4",
+  "turnos_previos_del_cliente": [],
+  "cliente": "cuánto cuestan las fotos de pasaporte y hay que sacar cita?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "$15",
+   "Sin cita"
+  ],
+  "evidencia": "5. Fotos de pasaporte — $15\nDos fotos de 2x2 pulgadas. Sin cita, mientras haya un fotógrafo disponible; están listas en 10 minutos.",
+  "respuesta_ideal": "Cuestan $15 por dos fotos de 2x2 pulgadas. Sin cita: te atendemos mientras haya un fotógrafo disponible y están listas en 10 minutos.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Fotos de pasaporte — $15»."
+ },
+ {
+  "id": "i0020",
+  "negocio": "X6_n4",
+  "turnos_previos_del_cliente": [
+   "Hola, tengo 7 meses de embarazo y quiero fotos newborn de mi bebé, cuánto cuesta?"
+  ],
+  "cliente": "¿Qué edad tiene que tener el bebé para la sesión?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "5 a 15 días"
+  ],
+  "evidencia": "Para bebés de 5 a 15 días de nacidos.",
+  "respuesta_ideal": "La sesión es para bebés de 5 a 15 días de nacidos.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Para bebés de 5 a 15 días de nacidos»."
+ },
+ {
+  "id": "i0074",
+  "negocio": "X6_n4",
+  "turnos_previos_del_cliente": [
+   "Mi hermana se hizo una sesión la semana pasada, me pueden mandar a mí sus fotos?",
+   "hay parking?",
+   "Cuánto cuesta cada foto editada extra?"
+  ],
+  "cliente": "Si al final no puedo ir el día de la sesión, me devuelven el depósito?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "no es reembolsable",
+   "72 horas"
+  ],
+  "evidencia": "El depósito no es reembolsable, pero puedes mover tu sesión una sola vez si nos avisas con al menos 72 horas.",
+  "respuesta_ideal": "No, el depósito no es reembolsable, pero puedes mover tu sesión una sola vez si avisas con al menos 72 horas.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «El depósito no es reembolsable, pero puedes mover tu sesión una sola vez si nos avisas con al menos 72 horas»."
+ },
+ {
+  "id": "i0075",
+  "negocio": "X6_n4",
+  "turnos_previos_del_cliente": [
+   "cuánto cuestan las fotos de pasaporte y hay que sacar cita?",
+   "Sirven para la visa de Canadá?"
+  ],
+  "cliente": "a qué hora abren los sábados?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "9:00 a. m.",
+   "5:00 p. m."
+  ],
+  "evidencia": "Sábados: 9:00 a. m. – 5:00 p. m.",
+  "respuesta_ideal": "Los sábados abrimos de 9:00 a. m. a 5:00 p. m.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Días feriados cerramos, excepto el sábado antes del Día de las Madres, que abrimos de 8:00 a. m. a 6:00 p. m»."
+ },
+ {
+  "id": "i0078",
+  "negocio": "X6_n4",
+  "turnos_previos_del_cliente": [
+   "cuánto cuestan las fotos de pasaporte y hay que sacar cita?",
+   "Sirven para la visa de Canadá?",
+   "a qué hora abren los sábados?"
+  ],
+  "cliente": "¿Cómo se puede pagar?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "ATH Móvil",
+   "efectivo"
+  ],
+  "evidencia": "Aceptamos ATH Móvil, tarjetas de crédito y débito, y efectivo. No aceptamos cheques personales.",
+  "respuesta_ideal": "Aceptamos ATH Móvil, tarjetas de crédito y débito, y efectivo; cheques personales no.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Si la prueba demuestra que el medidor está defectuoso, se devuelve lo pagado por el contraste y el medidor se cambia sin costo»."
+ },
+ {
+  "id": "i0106",
+  "negocio": "X6_n4",
+  "turnos_previos_del_cliente": [
+   "Hi! cuánto cuestan los headshots?",
+   "y cuántas fotos me dan?"
+  ],
+  "cliente": "Me pueden dar también los archivos originales sin editar?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "No entregamos archivos RAW"
+  ],
+  "evidencia": "No entregamos archivos RAW ni fotos sin editar.",
+  "respuesta_ideal": "No. No entregamos archivos RAW ni fotos sin editar; si quieres más, cada foto editada adicional cuesta $12.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «No entregamos archivos RAW ni fotos sin editar»."
+ },
+ {
+  "id": "i0126",
+  "negocio": "X6_n4",
+  "turnos_previos_del_cliente": [
+   "Buenas! Somos 8 en la familia, cuánto nos saldría la sesión?",
+   "¿Y ya con el IVU cuánto sería?",
+   "Podemos llevar al perro?",
+   "Y si la hacemos en la playa en Ocean Park?"
+  ],
+  "cliente": "cuanto cuesta imprimir una grande en canvas?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "$95"
+  ],
+  "evidencia": "16x20 en canvas\t$95",
+  "respuesta_ideal": "La impresión de 16x20 en canvas cuesta $95.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Tamaño: 16x20 en canvas; Precio: $95»."
+ },
+ {
+  "id": "i0168",
+  "negocio": "X6_n4",
+  "turnos_previos_del_cliente": [
+   "Hola, tengo 7 meses de embarazo y quiero fotos newborn de mi bebé, cuánto cuesta?",
+   "¿Qué edad tiene que tener el bebé para la sesión?",
+   "Mi esposo y mi nena de 4 años pueden estar?",
+   "¿Y en cuánto tiempo me entregan las fotos?"
+  ],
+  "cliente": "¿Hacen álbumes impresos?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo información sobre álbumes; solo tengo precios de impresiones sueltas. Puedes preguntar por WhatsApp al (787) 555-0142.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Hacemos sesiones en exteriores con un cargo adicional de $75 dentro del área metro»."
+ },
+ {
+  "id": "i0196",
+  "negocio": "X6_n4",
+  "turnos_previos_del_cliente": [
+   "Mi hermana se hizo una sesión la semana pasada, me pueden mandar a mí sus fotos?",
+   "hay parking?"
+  ],
+  "cliente": "Cuánto cuesta cada foto editada extra?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "$12"
+  ],
+  "evidencia": "Cada foto editada adicional cuesta $12.",
+  "respuesta_ideal": "Cada foto editada adicional cuesta $12.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Cada foto editada adicional cuesta $12»."
+ },
+ {
+  "id": "i0197",
+  "negocio": "X6_n4",
+  "turnos_previos_del_cliente": [
+   "cuánto cuestan las fotos de pasaporte y hay que sacar cita?",
+   "Sirven para la visa de Canadá?",
+   "a qué hora abren los sábados?"
+  ],
+  "cliente": "¿Cómo se puede pagar?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "ATH Móvil",
+   "efectivo"
+  ],
+  "evidencia": "Aceptamos ATH Móvil, tarjetas de crédito y débito, y efectivo. No aceptamos cheques personales.",
+  "respuesta_ideal": "Aceptamos ATH Móvil, tarjetas de crédito y débito, y efectivo; cheques personales no.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Para separar la fecha pagas un depósito del 50% del paquete»."
+ },
+ {
+  "id": "i0223",
+  "negocio": "X6_n4",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Buenas! Somos 8 en la familia, cuánto nos saldría la sesión?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "$290"
+  ],
+  "evidencia": "1 hora, hasta 6 personas, 15 fotos editadas. Cada persona adicional: $20.",
+  "respuesta_ideal": "La sesión familiar cubre hasta 6 personas por $250 y cada persona adicional cuesta $20, así que para 8 serían $290, más IVU.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Las mascotas son bienvenidas sin costo extra (una por familia)»."
+ },
+ {
+  "id": "i0232",
+  "negocio": "X6_n4",
+  "turnos_previos_del_cliente": [
+   "Mi hermana se hizo una sesión la semana pasada, me pueden mandar a mí sus fotos?",
+   "hay parking?",
+   "Cuánto cuesta cada foto editada extra?",
+   "Si al final no puedo ir el día de la sesión, me devuelven el depósito?",
+   "¿Y cuánto cobran por un quinceañero?"
+  ],
+  "cliente": "¿Natalia es la que hace todas las sesiones o hay otros fotógrafos?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo esa información. Puedes preguntarlo por WhatsApp al (787) 555-0142.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Si llegas más de 20 minutos tarde, la sesión se acorta; no podemos extender el tiempo porque hay otra cita después»."
+ },
+ {
+  "id": "i0252",
+  "negocio": "X6_n4",
+  "turnos_previos_del_cliente": [
+   "Hi! cuánto cuestan los headshots?",
+   "y cuántas fotos me dan?",
+   "Me pueden dar también los archivos originales sin editar?",
+   "¿Dónde están ubicados?"
+  ],
+  "cliente": "Perfecto, quiero reservar para este jueves a las 4, hay espacio?",
+  "tipo": "instruccion",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "Tú no confirmas reservas ni puedes ver qué fechas están disponibles. Para reservar o preguntar por espacio, la persona debe llamar o escribir por WhatsApp a Yaritza Colón, nuestra coordinadora, al (787) 555-0142, de martes a sábado.",
+  "respuesta_ideal": "Yo no puedo ver ni confirmar fechas. Para reservar, llama o escribe por WhatsApp a Yaritza Colón, nuestra coordinadora, al (787) 555-0142.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Tenemos 2 espacios frente al estudio para clientes con cita»."
+ },
+ {
+  "id": "i0267",
+  "negocio": "X6_n4",
+  "turnos_previos_del_cliente": [
+   "Buenas! Somos 8 en la familia, cuánto nos saldría la sesión?",
+   "¿Y ya con el IVU cuánto sería?",
+   "Podemos llevar al perro?"
+  ],
+  "cliente": "Y si la hacemos en la playa en Ocean Park?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "$75"
+  ],
+  "evidencia": "Hacemos sesiones en exteriores con un cargo adicional de $75 dentro del área metro.",
+  "respuesta_ideal": "Se puede: las sesiones en exteriores dentro del área metro, como Ocean Park, tienen un cargo adicional de $75.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «¿Prefieres el Viejo San Juan o la playa de Ocean Park?»."
+ },
+ {
+  "id": "i0307",
+  "negocio": "X6_n4",
+  "turnos_previos_del_cliente": [
+   "Mi hermana se hizo una sesión la semana pasada, me pueden mandar a mí sus fotos?",
+   "hay parking?",
+   "Cuánto cuesta cada foto editada extra?",
+   "Si al final no puedo ir el día de la sesión, me devuelven el depósito?",
+   "¿Y cuánto cobran por un quinceañero?",
+   "¿Natalia es la que hace todas las sesiones o hay otros fotógrafos?"
+  ],
+  "cliente": "Y fotos de productos para mi negocio hacen?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo información sobre fotos de productos; nuestros paquetes son de retrato, familia, maternidad, newborn y pasaporte. Escríbenos al WhatsApp (787) 555-0142 para confirmar.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «30 minutos, 1 cambio de ropa y 5 fotos editadas»."
+ },
+ {
+  "id": "i0324",
+  "negocio": "X6_n4",
+  "turnos_previos_del_cliente": [
+   "Mi hermana se hizo una sesión la semana pasada, me pueden mandar a mí sus fotos?",
+   "hay parking?",
+   "Cuánto cuesta cada foto editada extra?",
+   "Si al final no puedo ir el día de la sesión, me devuelven el depósito?"
+  ],
+  "cliente": "¿Y cuánto cobran por un quinceañero?",
+  "tipo": "instruccion",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "Para bodas, quinceañeros, eventos corporativos o sesiones fuera del área metro no des precios: pide que escriban a eventos@estudiofarol.pr.",
+  "respuesta_ideal": "Los quinceañeros son por cotización: escribe a eventos@estudiofarol.pr y te preparan el precio.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Bodas, quinceañeros y eventos»."
+ },
+ {
+  "id": "i0348",
+  "negocio": "X6_n4",
+  "turnos_previos_del_cliente": [
+   "Buenas! Somos 8 en la familia, cuánto nos saldría la sesión?"
+  ],
+  "cliente": "¿Y ya con el IVU cuánto sería?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "$323.35"
+  ],
+  "evidencia": "Todos los precios son en dólares y no incluyen el IVU (11.5%).",
+  "respuesta_ideal": "Con el IVU de 11.5% el total sería $323.35.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Todos los precios son en dólares y no incluyen el IVU (11.5%)»."
+ }
+]

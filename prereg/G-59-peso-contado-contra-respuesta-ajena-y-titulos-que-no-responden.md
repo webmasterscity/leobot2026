@@ -101,3 +101,49 @@ Las tablas de G-59 se contaron en los bancos de G-57 y G-58, que ya son desarrol
 G-59 cita menos en preguntas sin respuesta (A–D: 11 frente a 18) y con más precisión (63 % frente a 58 % de citas útiles).
 
 **Expectativa, declarada antes de medir:** el orden mejora y se transfiere a A–F, pero las citas útiles no suben en desarrollo, porque la celda «2,3» (122 casos) queda en el 48 %, bajo el umbral del 50 %. **La puerta 1 (+5 puntos) puede no pasar.** Los umbrales no cambian.
+
+## Resultado (2026-09-26, banco congelado de 24 negocios nuevos y 621 turnos; juez ciego de 8 jueces nuevos, Opus)
+
+| Puerta | Umbral | G-59 | G-58r, mismo banco | ¿Pasa? |
+|---|---|---|---|---|
+| 1. Útiles en directa + sí/no | ≥ G-58r + 5 puntos (≥ 35,6 %) | **78/271 (28,8 %)** | 83/271 (30,6 %) | **no** (−1,8 puntos) |
+| 2. Inventadas | 0 | **0** | 0 | sí |
+| 2. Respuestas planas | error ≤ 2 % | ninguna | ninguna | vacía |
+| 3. Sin respuesta bien llevadas | ≥ 90 % | **179/181 (98,9 %)** | 179/181 | sí |
+| 4. Citas engañosas | ≤ 15 % | **7/156 (4,5 %)** | 8/180 (4,4 %) | sí |
+| 5. Eco de datos | 0 | **0** | 0 | sí |
+
+**G-59 no supera la puerta 1 y no se promueve.** El kiosco de referencia sigue siendo `estable-G-17` (`freeze-G-58r`).
+
+**Qué cambió de verdad.**
+- G-59 cita menos, 156 veces frente a 180, pero con más acierto: el 65,4 % de sus citas son útiles, frente al 56,7 % de G-58r.
+- Las útiles en directa + sí/no bajan de 83 a 78.
+- Contestando siempre (diagnóstico, conteo automático), el orden sí mejora: 146/271 frente a 133/271 (+4,8 puntos).
+
+**Controles:**
+- otro negocio: 0 útiles y 572/621 «No lo sé» (92,1 %), pasa.
+  - Uno de sus 31 textos citados lo marcó un juez como «inventado». Es texto literal del documento cargado, que es de otro negocio, y el juez tenía delante el del negocio de la pregunta. No es invención del motor.
+  - 18 de esas 31 citas engañan (58 %). La objeción 2 de G-58r sigue abierta.
+- reinicio: 621/621 idénticas;
+- renombrado estricto: 613/621 (98,7 %);
+- tabla barajada: 26/271 útiles (9,6 %) y 27,1 % de citas útiles. La tabla contada importa.
+
+**Retención 5.9 (útiles en directa + sí/no según el juez; engañosas en puntos):**
+
+| Cambio | Con él | Sin él (control) | Engañosas | Decisión |
+|---|---|---|---|---|
+| Contraste con respuesta ajena | 78 | 78 (sin contraste) | 4,5 % frente a 3,4 % | **se retira** (no aporta) |
+| Títulos fuera de la búsqueda | 78 | 79 (con títulos) | 4,5 % frente a 4,4 % | **se retira** (no aporta) |
+| Clase de respuesta pedida | 78 | 76 (sin clase) | 4,5 % frente a 4,4 % | se queda por la regla (+2, dentro del ruido) |
+
+**Lectura general:**
+- MFAQ `valid`, contestando siempre: cobertura 58,84 % frente a 57,24 % de G-58r (no menor);
+- SQuAD-es (los mismos 1570 casos): «la mejor unidad contiene la respuesta» 0,8019 frente a 0,7987 (no menor); F1 de `respond` 0,2485, sin cambio.
+
+**Pruebas generales:** regresión 661/6/0; conversación 158; tablero 0/20 y sonda 0/4 sin cambio (`dialogue.py` y `reading.py` no cambiaron); p95 de `answer` 0,32 ms.
+
+**Por qué no subió (análisis posterior, en bancos gastados, no en este).** Se juntaron las 654 citas juzgadas en los bancos de G-58 y G-59 y se comparó el veredicto del juez con dos etiquetas automáticas:
+- «contiene todas las claves»: coincide con el juez en el 95,3 %, con 1 falso positivo y 30 falsos negativos;
+- «la mitad de la línea está en la evidencia»: coincide en el 91,0 %.
+
+Así que la tabla no se estropeó por mezclar etiquetas del juez con el conteo: el conteo es conservador pero casi nunca da por buena una cita mala. El límite está en los dos rasgos de la celda (δ sin explicar y ventaja sobre la segunda). Separan poco lo que responde de lo que solo se parece. Un orden mejor sube el acierto de las citas, pero no cuántas se atreve a mostrar. Esto coincide con el diagnóstico del plan 3 del coordinador.
