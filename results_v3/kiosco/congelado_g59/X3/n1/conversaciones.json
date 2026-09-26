@@ -1,0 +1,174 @@
+[
+  {
+    "conversacion": [
+      {
+        "cliente": "Hola, ¿a qué hora cierran hoy?",
+        "tipo": "directa",
+        "accion": "responder",
+        "claves": ["hoy es jueves: 23:00 hs."],
+        "evidencia": "Jueves: 17:00 a 23:00 hs.",
+        "respuesta_ideal": "Hoy cerramos a las 23:00 hs. ¿Te gustaría hacer un pedido?"
+      },
+      {
+        "cliente": "Perfecto. Quiero una pizza Margherita y una Calabresa.",
+        "tipo": "directa",
+        "accion": "responder",
+        "claves": ["Margherita: $420", "Calabresa: $450"],
+        "evidencia": "• Margherita: mozzarella, tomates frescos, albahaca — $420\n• Calabresa: mozzarella, calabresa picante, cebolla — $450",
+        "respuesta_ideal": "Perfecto. Una Margherita por $420 y una Calabresa por $450, son $870 en total. ¿A qué dirección te lo enviamos?"
+      },
+      {
+        "cliente": "¿Hay descuento por 2 pizzas?",
+        "tipo": "si_no",
+        "accion": "responder",
+        "claves": ["De lunes a miércoles: 2 pizzas a $699", "hoy es jueves, no aplica"],
+        "evidencia": "De lunes a miércoles: 2 pizzas a $699 (aplica solo a Clásica, Calabresa y Vegetariana)",
+        "respuesta_ideal": "La oferta de 2 pizzas a $699 es solo de lunes a miércoles, y hoy es jueves. Pero tu pedido si aplica, porque una de las pizzas es Calabresa. Te cuestan $870."
+      },
+      {
+        "cliente": "Claro, dale. La mandé por WhatsApp hace un rato.",
+        "tipo": "charla",
+        "accion": "responder",
+        "claves": [],
+        "evidencia": null,
+        "respuesta_ideal": "Excelente. Revisamos tu mensaje. ¡Te lo llevamos en los próximos 40 minutos! Buen provecho."
+      }
+    ]
+  },
+  {
+    "conversacion": [
+      {
+        "cliente": "¿Hacen pizzas sin gluten?",
+        "tipo": "sin_respuesta",
+        "accion": "abstenerse",
+        "claves": [],
+        "evidencia": null,
+        "respuesta_ideal": "No tengo esa información en mi lista. Te recomiendo llamar directo al 0341 421-3876 para confirmarlo con la cocina."
+      },
+      {
+        "cliente": "Ok. ¿Y cuál es la pizza mas cara?",
+        "tipo": "directa",
+        "accion": "responder",
+        "claves": ["Cuatro Quesos: $580"],
+        "evidencia": "• Cuatro Quesos: mozzarella, provolone, queso de cabra, azul — $580",
+        "respuesta_ideal": "La más cara es la Cuatro Quesos, que cuesta $580. Lleva mozzarella, provolone, queso de cabra y azul."
+      },
+      {
+        "cliente": "¿Y cuanta queda para que me la traigan a Zona 2?",
+        "tipo": "sin_respuesta",
+        "accion": "abstenerse",
+        "claves": [],
+        "evidencia": null,
+        "respuesta_ideal": "Eso depende de cuántos pedidos hay en cola. Te recomiendo hacer el pedido por WhatsApp y preguntar directamente: +54 9 341 512-4890."
+      }
+    ]
+  },
+  {
+    "conversacion": [
+      {
+        "cliente": "Vivo en Zona 2, ¿cuánto me cuesta el envío?",
+        "tipo": "directa",
+        "accion": "responder",
+        "claves": ["Zona 2: $75"],
+        "evidencia": "Zona 2 (sur y oeste): $75 de costo, 45-60 minutos",
+        "respuesta_ideal": "Te cuesta $75 de envío. El pedido llega en 45 a 60 minutos."
+      },
+      {
+        "cliente": "¿Cuál es el mínimo que tengo que gastar?",
+        "tipo": "directa",
+        "accion": "responder",
+        "claves": ["Mínimo de pedido: $300"],
+        "evidencia": "Mínimo de pedido: $300",
+        "respuesta_ideal": "El mínimo de pedido es $300. Con los $75 del envío a Zona 2, te sale en total desde $375."
+      },
+      {
+        "cliente": "Quiero 1 Margherita, 1 Calabresa y tabla de quesos.",
+        "tipo": "combinada",
+        "accion": "responder",
+        "claves": ["Margherita $420", "Calabresa $450", "Tabla de quesos y embutidos $320"],
+        "evidencia": "• Margherita: mozzarella, tomates frescos, albahaca — $420\n• Calabresa: mozzarella, calabresa picante, cebolla — $450\nTabla de quesos y embutidos | $320",
+        "respuesta_ideal": "Son $420 + $450 + $320 = $1.190, más $75 del envío. Total: $1.265. Perfecto, superás el mínimo."
+      },
+      {
+        "cliente": "¿Hoy es viernes o sábado?",
+        "tipo": "sin_respuesta",
+        "accion": "abstenerse",
+        "claves": [],
+        "evidencia": null,
+        "respuesta_ideal": "No me aparece el día de hoy. Lo que sí sé es que viernes y sábados cerramos a las 00:30 hs."
+      },
+      {
+        "cliente": "Dale, mando el pedido por WhatsApp.",
+        "tipo": "charla",
+        "accion": "responder",
+        "claves": [],
+        "evidencia": null,
+        "respuesta_ideal": "Perfecto, lo vemos en WhatsApp. ¡Gracias por tu compra!"
+      }
+    ]
+  },
+  {
+    "conversacion": [
+      {
+        "cliente": "¿aceptan tarjeta de crédito?",
+        "tipo": "si_no",
+        "accion": "responder",
+        "claves": ["tarjeta débito/crédito", "recargo 3%"],
+        "evidencia": "Pago: efectivo, transferencia bancaria o tarjeta débito/crédito (recargo 3% en tarjeta).",
+        "respuesta_ideal": "Sí, aceptamos tarjeta débito y crédito, pero se suma un recargo del 3%."
+      },
+      {
+        "cliente": "¿Puedo cancelar mi pedido?",
+        "tipo": "instruccion",
+        "accion": "responder",
+        "claves": ["hasta 15 minutos", "sin cargo"],
+        "evidencia": "Cancelación de pedido: hasta 15 minutos antes del envío sin cargo; después, pierde el depósito",
+        "respuesta_ideal": "Sí, podés cancelar sin cargo si lo hacés hasta 15 minutos antes de que salga a repartir. Después perdes el depósito."
+      },
+      {
+        "cliente": "Mi nene tiene alergia al queso, ¿hay pizza sin mozzarella?",
+        "tipo": "instruccion",
+        "accion": "derivar",
+        "claves": [],
+        "evidencia": "Alergias: comunicar siempre; hay protocolo especial para celíacos (usamos equipamiento distinto)",
+        "respuesta_ideal": "Para alergias, te recomiendo llamar directo al 0341 421-3876 para coordinar con la cocina. Ellos saben qué pueden hacer."
+      }
+    ]
+  },
+  {
+    "conversacion": [
+      {
+        "cliente": "¿Cuál es la oferta de este jueves?",
+        "tipo": "directa",
+        "accion": "responder",
+        "claves": ["Jueves \"Noche de Amigos\": 2 pizzas + 2 sodas 1 L. = $899"],
+        "evidencia": "Jueves \"Noche de Amigos\": 2 pizzas + 2 sodas 1 L. = $899",
+        "respuesta_ideal": "El jueves tenemos \"Noche de Amigos\": 2 pizzas + 2 sodas de 1 litro por $899."
+      },
+      {
+        "cliente": "¿Sirve con cualquier pizza?",
+        "tipo": "sin_respuesta",
+        "accion": "abstenerse",
+        "claves": [],
+        "evidencia": null,
+        "respuesta_ideal": "No me dice cuáles pizzas incluye. Llamá al 0341 421-3876 para confirmarlo."
+      },
+      {
+        "cliente": "Bueno, quiero una pizza BBQ Carnívora.",
+        "tipo": "directa",
+        "accion": "responder",
+        "claves": ["BBQ Carnívora: $550"],
+        "evidencia": "• BBQ Carnívora: carnes variadas, cheddar, salsa BBQ — $550",
+        "respuesta_ideal": "La BBQ Carnívora cuesta $550. Lleva carnes variadas, cheddar y salsa BBQ."
+      },
+      {
+        "cliente": "¿Se puede pedir media pizza nada más?",
+        "tipo": "si_no",
+        "accion": "responder",
+        "claves": ["Media pizza = 50% descuento"],
+        "evidencia": "Media pizza = 50% descuento.",
+        "respuesta_ideal": "Sí, podés pedir media pizza con 50% descuento. Sería $275 la media BBQ Carnívora."
+      }
+    ]
+  }
+]

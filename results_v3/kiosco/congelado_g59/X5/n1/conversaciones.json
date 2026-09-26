@@ -1,0 +1,240 @@
+[
+  [
+    {
+      "cliente": "Buenas, ¿a qué hora abren entre semana?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": [
+        "08:30 a 16:30"
+      ],
+      "evidencia": "Lunes a viernes: 08:30 a 16:30, jornada continua.",
+      "respuesta_ideal": "Atendemos de lunes a viernes de 8:30 a 16:30, en horario continuo."
+    },
+    {
+      "cliente": "¿Y los sábados?",
+      "tipo": "seguimiento",
+      "accion": "responder",
+      "claves": [
+        "09:00 a 12:00",
+        "retiro de certificados"
+      ],
+      "evidencia": "Sábados: 09:00 a 12:00, únicamente para retiro de certificados ya tramitados.",
+      "respuesta_ideal": "Los sábados abrimos de 9:00 a 12:00, pero solo para retirar certificados ya tramitados."
+    },
+    {
+      "cliente": "¿Cuánto cuesta el certificado de nacimiento?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": [
+        "25"
+      ],
+      "evidencia": "|Certificado de nacimiento                      |25        |mismo día*       |",
+      "respuesta_ideal": "El certificado de nacimiento cuesta 25 bolivianos."
+    },
+    {
+      "cliente": "Necesito un certificado de nacimiento y uno de matrimonio, ¿cuánto pagaría en total?",
+      "tipo": "combinada",
+      "accion": "responder",
+      "claves": [
+        "25",
+        "30"
+      ],
+      "evidencia": "|Certificado de nacimiento                      |25        |mismo día*       | / |Certificado de matrimonio                      |30        |mismo día*       |",
+      "respuesta_ideal": "El certificado de nacimiento cuesta 25 bolivianos y el de matrimonio 30, en total serían 55 bolivianos."
+    },
+    {
+      "cliente": "¿Puedo pagar con tarjeta de crédito?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": [
+        "No se aceptan tarjetas"
+      ],
+      "evidencia": "No se aceptan tarjetas de débito ni crédito.",
+      "respuesta_ideal": "No, en esta oficina no se aceptan tarjetas, solo efectivo en caja o depósito en el Banco Unión."
+    },
+    {
+      "cliente": "Quiero tramitar la sucesión de mi papá, ¿ustedes hacen eso?",
+      "tipo": "instruccion",
+      "accion": "derivar",
+      "claves": [],
+      "evidencia": "Ante consultas legales complejas (herencias, tutela, disputas familiares), derivar a un abogado o notario; el asistente no da asesoría legal.",
+      "respuesta_ideal": "Ese trámite no lo manejamos en esta oficina; le recomiendo acudir a un abogado o notario para la sucesión."
+    }
+  ],
+  [
+    {
+      "cliente": "¿Aceptan pagos con código QR o Tigo Money?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No tengo esa información precisa; le recomiendo confirmar en ventanilla o llamando al 4-6912345."
+    },
+    {
+      "cliente": "¿Ustedes también hacen pasaportes?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No tengo información sobre ese trámite en esta oficina; le sugiero consultar en la entidad correspondiente."
+    },
+    {
+      "cliente": "¿El certificado de nacimiento tiene un precio distinto para extranjeros?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No tengo esa distinción de precio; le recomiendo confirmarlo directamente en la oficina."
+    },
+    {
+      "cliente": "¿Hacen envío del certificado a mi casa o tengo que ir a recogerlo?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No tengo esa información sobre envíos a domicilio; le recomiendo consultarlo en la oficina."
+    }
+  ],
+  [
+    {
+      "cliente": "¿Dónde queda la oficina exactamente?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": [
+        "Aniceto Arce"
+      ],
+      "evidencia": "Dirección: Calle Aniceto Arce N.º 25, entre Plaza 25 de Mayo y Nicolás Ortiz, Sucre.",
+      "respuesta_ideal": "Estamos en la calle Aniceto Arce N.º 25, entre la Plaza 25 de Mayo y la calle Nicolás Ortiz, en Sucre."
+    },
+    {
+      "cliente": "¿Cuánto vale la rectificación de una partida si me equivoqué al registrar?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": [
+        "80",
+        "10 días hábiles"
+      ],
+      "evidencia": "|Rectificación de partida (error de tipeo)       |80        |10 días hábiles  |",
+      "respuesta_ideal": "La rectificación de partida cuesta 80 bolivianos y el trámite tarda 10 días hábiles."
+    },
+    {
+      "cliente": "¿Y si el error lo cometió la oficina, tengo que pagar igual?",
+      "tipo": "seguimiento",
+      "accion": "responder",
+      "claves": [
+        "no tiene costo"
+      ],
+      "evidencia": "Cuando el error de la partida fue cometido por el propio Registro Civil (no por el interesado), la rectificación no tiene costo.",
+      "respuesta_ideal": "No, si el error fue del Registro Civil y no suyo, la rectificación no tiene costo, solo debe presentar una solicitud escrita."
+    },
+    {
+      "cliente": "¿Necesito llevar testigos para el matrimonio civil?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": [
+        "dos testigos"
+      ],
+      "evidencia": "Se requieren dos testigos mayores de edad, cada uno con su cédula de identidad vigente.",
+      "respuesta_ideal": "Sí, se necesitan dos testigos mayores de edad, cada uno con su cédula vigente."
+    },
+    {
+      "cliente": "Quiero saber si mi papá ya está registrado en su sistema, es para un trámite de herencia",
+      "tipo": "instruccion",
+      "accion": "derivar",
+      "claves": [],
+      "evidencia": "No entregar información sobre trámites de terceros ni confirmar si una persona determinada está registrada.",
+      "respuesta_ideal": "No puedo confirmar información de terceros por este medio; para trámites de herencia le recomiendo acudir con un abogado o notario."
+    }
+  ],
+  [
+    {
+      "cliente": "Hola buenas tardes",
+      "tipo": "charla",
+      "accion": "charla",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "¡Buenas tardes! Bienvenido al Registro Civil de Sucre, ¿en qué puedo ayudarle?"
+    },
+    {
+      "cliente": "¿Cuánto cuesta el duplicado si perdí mi certificado?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": [
+        "35"
+      ],
+      "evidencia": "|Duplicado por pérdida de certificado            |35        |mismo día*       |",
+      "respuesta_ideal": "El duplicado por pérdida cuesta 35 bolivianos."
+    },
+    {
+      "cliente": "Si pido dos duplicados y una rectificación, ¿cuánto sería en total?",
+      "tipo": "combinada",
+      "accion": "responder",
+      "claves": [
+        "35",
+        "80"
+      ],
+      "evidencia": "|Duplicado por pérdida de certificado            |35        |mismo día*       | / |Rectificación de partida (error de tipeo)       |80        |10 días hábiles  |",
+      "respuesta_ideal": "Dos duplicados a 35 bolivianos cada uno y una rectificación de 80 suman 150 bolivianos en total."
+    },
+    {
+      "cliente": "Quiero agendar mi matrimonio para este jueves a las 10, ¿me confirma la cita?",
+      "tipo": "instruccion",
+      "accion": "responder",
+      "claves": [
+        "ventanilla",
+        "15 días de anticipación"
+      ],
+      "evidencia": "No confirmar citas de matrimonio civil por este medio: siempre indicar que la reserva se hace en ventanilla, con al menos 15 días de anticipación.",
+      "respuesta_ideal": "No puedo confirmar la cita por este medio; la reserva de matrimonio se hace en ventanilla y debe solicitarse con al menos 15 días de anticipación."
+    },
+    {
+      "cliente": "Muchas gracias, hasta luego",
+      "tipo": "charla",
+      "accion": "charla",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "Con gusto, que tenga buena tarde."
+    }
+  ],
+  [
+    {
+      "cliente": "¿Cuanto sale reconocer a un hijo?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": [
+        "60",
+        "5 días hábiles"
+      ],
+      "evidencia": "|Reconocimiento de hijo                          |60        |5 días hábiles   |",
+      "respuesta_ideal": "Reconocer a un hijo cuesta 60 bolivianos y el trámite tarda 5 días hábiles."
+    },
+    {
+      "cliente": "¿Con quién puedo hablar si tengo una consulta, hay alguien a cargo?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": [
+        "Rosario Fernández Quispe"
+      ],
+      "evidencia": "Responsable: Sra. Rosario Fernández Quispe, Oficial de Registro Civil.",
+      "respuesta_ideal": "La responsable de la oficina es la señora Rosario Fernández Quispe, Oficial de Registro Civil."
+    },
+    {
+      "cliente": "¿Puedo pagar en dolares?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No tengo esa información; le recomiendo confirmar en ventanilla si aceptan otra moneda además de bolivianos."
+    },
+    {
+      "cliente": "¿Debo llevar fotocopia de mi cédula además del original?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": [
+        "una fotocopia"
+      ],
+      "evidencia": "Cédula de identidad original y una fotocopia.",
+      "respuesta_ideal": "Sí, debe llevar su cédula original y una fotocopia."
+    }
+  ]
+]

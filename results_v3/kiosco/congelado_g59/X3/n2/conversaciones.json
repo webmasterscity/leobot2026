@@ -1,0 +1,182 @@
+[
+  {
+    "conversacion": [
+      {
+        "cliente": "¿Cuánto cuesta entrar un día?",
+        "tipo": "directa",
+        "accion": "responder",
+        "claves": ["Adultos: €18"],
+        "evidencia": "Adultos: €18 / Menores de 14 años: €12 / Grupo (8+ pers.): €14/pers.",
+        "respuesta_ideal": "Entrar un día te cuesta €18. El equipo (arnés, casco, cuerdas) está incluido."
+      },
+      {
+        "cliente": "¿Y si vengo más días, hay descuento?",
+        "tipo": "si_no",
+        "accion": "responder",
+        "claves": ["membresías", "4 sesiones/mes: €28"],
+        "evidencia": "- 4 sesiones/mes: €28/mes",
+        "respuesta_ideal": "Sí, con membresía. Por ejemplo, 4 sesiones al mes cuestan €28. O acceso ilimitado por €65/mes."
+      },
+      {
+        "cliente": "¿Dónde estáis?",
+        "tipo": "directa",
+        "accion": "responder",
+        "claves": ["Carrera de San Jerónimo, 28", "junto a la Estación de Atocha"],
+        "evidencia": "Dirección: Carrera de San Jerónimo, 28, Madrid 28014 (junto a la Estación de Atocha)",
+        "respuesta_ideal": "Estamos en Carrera de San Jerónimo, 28, muy cerca de la Estación de Atocha."
+      },
+      {
+        "cliente": "Perfecto, iré el sábado.",
+        "tipo": "charla",
+        "accion": "responder",
+        "claves": [],
+        "evidencia": null,
+        "respuesta_ideal": "¡Excelente! El sábado abrimos de 10:00 a 20:00. ¡Te esperamos!"
+      }
+    ]
+  },
+  {
+    "conversacion": [
+      {
+        "cliente": "Mi hijo tiene 10 años, ¿puede venir?",
+        "tipo": "instruccion",
+        "accion": "responder",
+        "claves": ["Menores de 14 años: requieren autorización escrita"],
+        "evidencia": "Menores de 14 años: requieren autorización escrita de un progenitor",
+        "respuesta_ideal": "Sí puede venir, pero necesitamos tu autorización escrita. ¿Querés hacer un campamento de verano o clases regulares?"
+      },
+      {
+        "cliente": "¿Hay campamento en agosto?",
+        "tipo": "si_no",
+        "accion": "responder",
+        "claves": ["julio y agosto"],
+        "evidencia": "Campamento de verano (julio y agosto)",
+        "respuesta_ideal": "Sí, tenemos campamento en agosto. Es de lunes a viernes, de 9:00 a 14:00, y cuesta €240 la semana. Incluye almuerzo."
+      },
+      {
+        "cliente": "¿Para todas las edades?",
+        "tipo": "seguimiento",
+        "accion": "responder",
+        "claves": ["Edades 7-16 años"],
+        "evidencia": "Edades 7-16 años.",
+        "respuesta_ideal": "Es para edades 7 a 16 años. Tu hijo de 10 encaja perfecto. Inscripciones en www.verticalclimbing.es o por teléfono."
+      },
+      {
+        "cliente": "¿Qué necesito para inscribirlo?",
+        "tipo": "sin_respuesta",
+        "accion": "abstenerse",
+        "claves": [],
+        "evidencia": null,
+        "respuesta_ideal": "Para los detalles de la inscripción y documentos necesarios, llamá al 91 234 5678 o entra en www.verticalclimbing.es."
+      }
+    ]
+  },
+  {
+    "conversacion": [
+      {
+        "cliente": "¿A qué hora abren los fines de semana?",
+        "tipo": "directa",
+        "accion": "responder",
+        "claves": ["Sábados y domingos: 10:00 – 20:00 h."],
+        "evidencia": "Sábados y domingos: 10:00 – 20:00 h.",
+        "respuesta_ideal": "Fines de semana abrimos de 10:00 a 20:00."
+      },
+      {
+        "cliente": "¿Necesito experiencia previa?",
+        "tipo": "sin_respuesta",
+        "accion": "abstenerse",
+        "claves": [],
+        "evidencia": null,
+        "respuesta_ideal": "Podés venir sin experiencia. Cuando llegues, nuestro equipo te orienta. O si querés, tenemos clases de iniciación."
+      },
+      {
+        "cliente": "¿Cómo son las clases de iniciación?",
+        "tipo": "directa",
+        "accion": "responder",
+        "claves": ["Iniciación (6 sesiones): €120", "Martes y jueves, 18:00 h."],
+        "evidencia": "Iniciación (6 sesiones): €120 — Martes y jueves, 18:00 h.",
+        "respuesta_ideal": "Son 6 sesiones por €120, los martes y jueves a las 18:00. Grupos pequeños, máximo 8 personas."
+      },
+      {
+        "cliente": "¿Debo reservar lugar o me presento?",
+        "tipo": "instruccion",
+        "accion": "derivar",
+        "claves": [],
+        "evidencia": "Inscripciones: solo online en www.verticalclimbing.es o por llamada telefónica.",
+        "respuesta_ideal": "Tienes que inscribirte. Podés hacerlo online en www.verticalclimbing.es o llamando al 91 234 5678."
+      },
+      {
+        "cliente": "Vale, me llamo mañana entonces.",
+        "tipo": "charla",
+        "accion": "responder",
+        "claves": [],
+        "evidencia": null,
+        "respuesta_ideal": "Perfecto. Nuestro equipo te ayuda con gusto. ¡Hasta pronto!"
+      }
+    ]
+  },
+  {
+    "conversacion": [
+      {
+        "cliente": "¿cuanto cuesta la membresía de un año?",
+        "tipo": "directa",
+        "accion": "responder",
+        "claves": ["€590"],
+        "evidencia": "€590 (equivalente a 9 meses de acceso libre). Válido por 12 meses desde la compra.",
+        "respuesta_ideal": "La membresía anual cuesta €590 y tienes acceso ilimitado durante 12 meses."
+      },
+      {
+        "cliente": "¿Y si pago 3 meses de una vez?",
+        "tipo": "combinada",
+        "accion": "responder",
+        "claves": ["Acceso libre: €65/mes", "15% descuento si pagas por 3 meses"],
+        "evidencia": "- Acceso libre: €65/mes (ilimitado)\nPrimer mes: 15% descuento si pagas por 3 meses de una vez.",
+        "respuesta_ideal": "Si pagas 3 meses de acceso libre ahora, te hacemos 15% de descuento. Son 3 × €65 = €195 menos el 15%, o sea €165,75 los 3 meses."
+      },
+      {
+        "cliente": "Eso es muy poco descuento. ¿Qué tal el bono anual?",
+        "tipo": "seguimiento",
+        "accion": "responder",
+        "claves": ["€590"],
+        "evidencia": "€590 (equivalente a 9 meses de acceso libre). Válido por 12 meses desde la compra.",
+        "respuesta_ideal": "El bono anual es €590, que equivale a 9 meses de acceso ilimitado. Es mejor que pagar mes a mes."
+      }
+    ]
+  },
+  {
+    "conversacion": [
+      {
+        "cliente": "¿Se puede hacer una sesión con entrenador privado?",
+        "tipo": "sin_respuesta",
+        "accion": "abstenerse",
+        "claves": [],
+        "evidencia": null,
+        "respuesta_ideal": "No tengo esa información. Llamá al 91 234 5678 para preguntar sobre opciones de entrenamiento personalizado."
+      },
+      {
+        "cliente": "¿Puedo traer a mi amigo que pesa 140 kg?",
+        "tipo": "si_no",
+        "accion": "responder",
+        "claves": ["Peso máximo recomendado: 130 kg"],
+        "evidencia": "Peso máximo recomendado: 130 kg",
+        "respuesta_ideal": "El peso máximo recomendado es 130 kg. Te sugiero que llame antes para consultar con nuestro equipo sobre su caso específico."
+      },
+      {
+        "cliente": "Tengo un esguince de tobillo, ¿puedo escalar?",
+        "tipo": "instruccion",
+        "accion": "derivar",
+        "claves": [],
+        "evidencia": "Personas con lesiones previas: consultar antes de acceder",
+        "respuesta_ideal": "Por seguridad, te recomiendo que llames antes al 91 234 5678 para consultar con nuestro equipo sobre tu lesión."
+      },
+      {
+        "cliente": "¿Hay casilleros?",
+        "tipo": "directa",
+        "accion": "responder",
+        "claves": ["casilleros seguros (taquilla digital)", "€2 adicionales", "gratis con membresía anual"],
+        "evidencia": "el local dispone de casilleros seguros (taquilla digital con código): acceso todo el día por €2 adicionales o gratis con membresía anual",
+        "respuesta_ideal": "Sí, tenemos taquillas digitales. Cuestan €2 por uso, o te las regalamos si tienes membresía anual."
+      }
+    ]
+  }
+]

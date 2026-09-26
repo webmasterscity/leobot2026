@@ -1,0 +1,228 @@
+[
+  [
+    {
+      "cliente": "Holaaa buenas tardes",
+      "tipo": "charla",
+      "accion": "charla",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "¡Hola, buenas tardes! Bienvenido a Pasos de Cali, ¿en qué te puedo ayudar?"
+    },
+    {
+      "cliente": "¿Cuánto cuesta la mensualidad si voy dos veces por semana?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": [
+        "$180.000"
+      ],
+      "evidencia": "Mensualidad 2 clases por semana: $180.000",
+      "respuesta_ideal": "La mensualidad de 2 clases por semana cuesta $180.000."
+    },
+    {
+      "cliente": "¿Y si quiero ir a todas las clases?",
+      "tipo": "seguimiento",
+      "accion": "responder",
+      "claves": [
+        "$250.000"
+      ],
+      "evidencia": "Mensualidad libre (todas las clases del horario regular): $250.000",
+      "respuesta_ideal": "La mensualidad libre, con todas las clases del horario regular, cuesta $250.000."
+    },
+    {
+      "cliente": "Si me matriculo y pago la mensualidad de una clase por semana, ¿cuánto pago el primer mes?",
+      "tipo": "combinada",
+      "accion": "responder",
+      "claves": [
+        "$30.000",
+        "$120.000"
+      ],
+      "evidencia": "Matrícula única al inscribirse: $30.000 (incluye camiseta de la academia). / Mensualidad 1 clase por semana: $120.000",
+      "respuesta_ideal": "La matrícula cuesta $30.000 y la mensualidad de una clase semanal $120.000, en total $150.000 el primer mes."
+    },
+    {
+      "cliente": "¿Necesito llevar pareja para inscribirme a salsa?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": [
+        "No es necesario"
+      ],
+      "evidencia": "¿Debo ir con pareja para salsa? No es necesario, en las clases regulares se rota de pareja.",
+      "respuesta_ideal": "No es necesario, en las clases regulares se rota de pareja."
+    }
+  ],
+  [
+    {
+      "cliente": "¿Tienen clases de tango?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No tengo información de clases de tango en la academia; te recomiendo llamar para confirmarlo."
+    },
+    {
+      "cliente": "¿Cuánto cuesta la mensualidad del grupo infantil si va dos veces por semana?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No tengo esa tarifa específica; te recomiendo consultarlo en secretaría."
+    },
+    {
+      "cliente": "¿A qué hora exacta es la audición para el festival de diciembre?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No tengo el horario exacto de las audiciones; se anuncian en octubre, te recomiendo estar pendiente en esa fecha."
+    },
+    {
+      "cliente": "¿Dan certificado o diploma al terminar un nivel?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No tengo esa información sobre certificados; te recomiendo consultarlo en secretaría."
+    }
+  ],
+  [
+    {
+      "cliente": "¿A qué hora es la clase de bachata?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": [
+        "6:00-7:00 p. m."
+      ],
+      "evidencia": "Bachata: viernes, 6:00-7:00 p. m.",
+      "respuesta_ideal": "La clase de bachata es los viernes de 6:00 a 7:00 p.m."
+    },
+    {
+      "cliente": "¿Y la de kizomba?",
+      "tipo": "seguimiento",
+      "accion": "responder",
+      "claves": [
+        "7:00-8:00 p. m."
+      ],
+      "evidencia": "Kizomba: viernes, 7:00-8:00 p. m.",
+      "respuesta_ideal": "La clase de kizomba es también los viernes, de 7:00 a 8:00 p.m., justo después de bachata."
+    },
+    {
+      "cliente": "quien da las clases de salsa?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": [
+        "Wilson Ramírez"
+      ],
+      "evidencia": "Wilson Ramírez, director de la academia, dicta salsa caleña e intermedio.",
+      "respuesta_ideal": "Las clases de salsa las dicta Wilson Ramírez, el director de la academia."
+    },
+    {
+      "cliente": "¿Puedo entrar a la clase con tenis normales?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": [
+        "No se permite"
+      ],
+      "evidencia": "No se permite el ingreso a pista con tenis de goma porque daña el piso.",
+      "respuesta_ideal": "No, no se permite el ingreso con tenis de goma porque daña el piso; debe usar zapatos de suela lisa."
+    },
+    {
+      "cliente": "Tengo una lesión en la rodilla, ¿puedo tomar clases de salsa igual?",
+      "tipo": "instruccion",
+      "accion": "responder",
+      "claves": [
+        "consultar a un médico"
+      ],
+      "evidencia": "Ante preguntas sobre lesiones o condiciones médicas para bailar, no dar consejo médico; recomendar consultar a un médico antes de inscribirse.",
+      "respuesta_ideal": "No puedo darle una recomendación médica; le sugiero consultar con un médico antes de inscribirse para asegurarse de que puede bailar sin riesgo."
+    }
+  ],
+  [
+    {
+      "cliente": "Quiero inscribirme ya mismo, ¿me guarda el cupo y me cobra por acá?",
+      "tipo": "instruccion",
+      "accion": "derivar",
+      "claves": [],
+      "evidencia": "No confirmar inscripciones ni pagos por este medio; indicar siempre que se formalizan en secretaría o llamando al 314-5567890.",
+      "respuesta_ideal": "Las inscripciones y pagos se hacen en secretaría o llamando al 314-5567890; por acá no puedo confirmarle el cupo."
+    },
+    {
+      "cliente": "¿Cuánto vale una clase suelta?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": [
+        "$25.000"
+      ],
+      "evidencia": "Clase suelta: $25.000",
+      "respuesta_ideal": "Una clase suelta cuesta $25.000."
+    },
+    {
+      "cliente": "¿Me conviene más comprar 10 clases sueltas o pagarlas una por una?",
+      "tipo": "combinada",
+      "accion": "responder",
+      "claves": [
+        "$25.000",
+        "$220.000"
+      ],
+      "evidencia": "Clase suelta: $25.000 / Paquete de 10 clases sueltas: $220.000",
+      "respuesta_ideal": "Diez clases sueltas por separado costarían $250.000, pero el paquete de 10 clases cuesta $220.000, así que le conviene más el paquete."
+    },
+    {
+      "cliente": "¿Si dejo de ir un mes me devuelven la plata?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": [
+        "salvo incapacidad médica certificada"
+      ],
+      "evidencia": "No hay devolución de dinero por mensualidades no usadas, salvo incapacidad médica certificada.",
+      "respuesta_ideal": "No, no hay devolución de dinero por mensualidades no usadas, salvo que presente una incapacidad médica certificada."
+    },
+    {
+      "cliente": "Listo, muchas gracias, nos vemos",
+      "tipo": "charla",
+      "accion": "charla",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "¡Con mucho gusto! Te esperamos por acá o síguenos en Instagram @pasosdecali."
+    }
+  ],
+  [
+    {
+      "cliente": "¿Dónde queda la academia?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": [
+        "Calle 5 # 38-20"
+      ],
+      "evidencia": "Calle 5 # 38-20, Barrio Tequendama, Cali",
+      "respuesta_ideal": "Estamos en la Calle 5 # 38-20, Barrio Tequendama, en Cali."
+    },
+    {
+      "cliente": "¿Desde qué edad pueden inscribirse los niños al grupo infantil?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": [
+        "8 a 13 años"
+      ],
+      "evidencia": "Grupo infantil (8 a 13 años): sábados, 10:00-11:00 a. m.",
+      "respuesta_ideal": "El grupo infantil recibe niños de 8 a 13 años, los sábados de 10:00 a 11:00 a.m."
+    },
+    {
+      "cliente": "¿La primera clase es gratis?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": [
+        "primera clase de cualquier nivel es gratuita"
+      ],
+      "evidencia": "¿Hay clase de prueba gratis? Sí, la primera clase de cualquier nivel es gratuita para conocer la academia.",
+      "respuesta_ideal": "Sí, la primera clase de cualquier nivel es gratuita para que conozca la academia."
+    },
+    {
+      "cliente": "¿Tienen clases de salsa para adultos mayores?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No tengo información de un grupo específico para adultos mayores; te recomiendo consultarlo en secretaría."
+    }
+  ]
+]

@@ -1,0 +1,166 @@
+[
+  {
+    "conversacion": [
+      {
+        "cliente": "¿Cuánto cuesta un filtro de aire?",
+        "tipo": "directa",
+        "accion": "responder",
+        "claves": ["USD 8", "BsF 250"],
+        "evidencia": "- Filtro de aire (compatible con la mayoría de modelos): USD 8 | BsF 250",
+        "respuesta_ideal": "El filtro de aire cuesta USD 8 o BsF 250. Pero confirmá el precio en BsF por WhatsApp porque el cambio varía diariamente."
+      },
+      {
+        "cliente": "¿Lo tenés ahora en stock?",
+        "tipo": "sin_respuesta",
+        "accion": "abstenerse",
+        "claves": [],
+        "evidencia": null,
+        "respuesta_ideal": "La disponibilidad varía. Lo mejor es que me escribas por WhatsApp (+58 414 5678-910) para verificar si lo tenemos ahora."
+      },
+      {
+        "cliente": "¿Cuánto tiempo tarda la entrega?",
+        "tipo": "sin_respuesta",
+        "accion": "abstenerse",
+        "claves": [],
+        "evidencia": null,
+        "respuesta_ideal": "¿Vos donde vives? Barquisimeto centro tarda 24-48 horas. Si es otra zona, varía. Dime la ubicación y te digo exacto."
+      },
+      {
+        "cliente": "Vivo en Los Rastrojos.",
+        "tipo": "seguimiento",
+        "accion": "responder",
+        "claves": ["Zona metropolitana (Los Rastrojos, Cabudare)", "USD 4", "48-72 horas"],
+        "evidencia": "Zona metropolitana (Los Rastrojos, Cabudare):\n- Compra mínima: USD 25\n- Costo: USD 4 | BsF 125\n- Tiempo: 48-72 horas",
+        "respuesta_ideal": "Para Los Rastrojos el envío cuesta USD 4 y tarda 48-72 horas. Pero necesitás compra mínima de USD 25."
+      }
+    ]
+  },
+  {
+    "conversacion": [
+      {
+        "cliente": "¿Qué aceites tienen?",
+        "tipo": "directa",
+        "accion": "responder",
+        "claves": ["Aceite mineral 10W40", "Aceite sintético 5W30"],
+        "evidencia": "- Aceite mineral 10W40 (cuarto): USD 5\n- Aceite sintético 5W30 (cuarto): USD 9",
+        "respuesta_ideal": "Tenemos aceite mineral 10W40 por USD 5, o sintético 5W30 por USD 9. ¿Cuál necesitás para tu auto?"
+      },
+      {
+        "cliente": "No sé. ¿Vos sabés qué tipo es mejor para un Chevrolet 2010?",
+        "tipo": "instruccion",
+        "accion": "derivar",
+        "claves": [],
+        "evidencia": "Asesoría técnica: Nuestro gerente de taller (Ismael Díaz, +58 251 234-5678 ext. 2) responde preguntas sobre compatibilidad, instalación o diagnóstico.",
+        "respuesta_ideal": "Eso es mejor que lo consultes con nuestro gerente de taller Ismael. Llamá al 0251 234-5678 ext. 2 y él te asesora sin cargo."
+      },
+      {
+        "cliente": "¿Hacen cambio de aceite en el local?",
+        "tipo": "sin_respuesta",
+        "accion": "abstenerse",
+        "claves": [],
+        "evidencia": null,
+        "respuesta_ideal": "No tengo esa información. Pregun por WhatsApp si hacen servicio de instalación o si recomiendan un taller de confianza."
+      }
+    ]
+  },
+  {
+    "conversacion": [
+      {
+        "cliente": "¿Venden batería?",
+        "tipo": "directa",
+        "accion": "responder",
+        "claves": ["Batería 12V 60A: USD 45", "Batería 12V 100A: USD 75", "Batería industrial 12V 140A: USD 110"],
+        "evidencia": "- Batería 12V 60A: USD 45\n- Batería 12V 100A: USD 75\n- Batería industrial 12V 140A: USD 110",
+        "respuesta_ideal": "Sí. Tenemos de 60A por USD 45, 100A por USD 75, o la industrial de 140A por USD 110."
+      },
+      {
+        "cliente": "¿Cual es la mas cara?",
+        "tipo": "directa",
+        "accion": "responder",
+        "claves": ["industrial 12V 140A: USD 110"],
+        "evidencia": "- Batería industrial 12V 140A: USD 110",
+        "respuesta_ideal": "La más cara es la batería industrial 140A por USD 110."
+      },
+      {
+        "cliente": "¿Tienen garantía?",
+        "tipo": "si_no",
+        "accion": "responder",
+        "claves": ["Todo producto tiene garantía de fábrica"],
+        "evidencia": "- Todo producto tiene garantía de fábrica (verificar en factura)",
+        "respuesta_ideal": "Sí, todas nuestras baterías tienen garantía de fábrica. Te lo detallamos en la factura."
+      },
+      {
+        "cliente": "Bueno, me llevas una de 100A.",
+        "tipo": "charla",
+        "accion": "responder",
+        "claves": [],
+        "evidencia": null,
+        "respuesta_ideal": "Perfecto. Confirmá por WhatsApp tu dirección y forma de pago, y te lo enviamos."
+      }
+    ]
+  },
+  {
+    "conversacion": [
+      {
+        "cliente": "Necesito amortiguadores, ¿cuanto salen?",
+        "tipo": "directa",
+        "accion": "responder",
+        "claves": ["Amortiguador monotubo (unitario): USD 80", "Juego de amortiguadores delanteros: USD 140"],
+        "evidencia": "- Amortiguador monotubo (unitario): USD 80\n- Juego de amortiguadores delanteros: USD 140",
+        "respuesta_ideal": "Un amortiguador suelto cuesta USD 80. Si querés el juego completo de delanteros, es USD 140."
+      },
+      {
+        "cliente": "¿Y si me llevo los 4?",
+        "tipo": "sin_respuesta",
+        "accion": "abstenerse",
+        "claves": [],
+        "evidencia": null,
+        "respuesta_ideal": "Eso no sale listado. Escribí por WhatsApp para preguntar si tenemos ofertas por cantidad o precio especial para juego completo."
+      },
+      {
+        "cliente": "¿Cuál es el número de WhatsApp de nuevo?",
+        "tipo": "directa",
+        "accion": "responder",
+        "claves": ["+58 414 5678-910"],
+        "evidencia": "WhatsApp: +58 414 5678-910",
+        "respuesta_ideal": "+58 414 5678-910. Por allá consultás disponibilidad y precios especiales."
+      },
+      {
+        "cliente": "Va, gracias. Adiós.",
+        "tipo": "charla",
+        "accion": "responder",
+        "claves": [],
+        "evidencia": null,
+        "respuesta_ideal": "¡Que disfrutes el camino! Nos vemos pronto."
+      }
+    ]
+  },
+  {
+    "conversacion": [
+      {
+        "cliente": "¿Haces encargos?",
+        "tipo": "si_no",
+        "accion": "responder",
+        "claves": ["Podemos encargarlo. Tarda 2-4 semanas y se requiere 50% de anticipo"],
+        "evidencia": "Encargos especiales o importaciones: Si el repuesto no está en stock, podemos ordenarlo. Tiempo de espera: 2-4 semanas. Anticipo del 50% requerido.",
+        "respuesta_ideal": "Sí hacemos encargos. Tardamos 2-4 semanas y necesitamos 50% de anticipo. ¿Qué repuesto necesitás?"
+      },
+      {
+        "cliente": "Un alternador para un Ford Focus 2012.",
+        "tipo": "sin_respuesta",
+        "accion": "abstenerse",
+        "claves": [],
+        "evidencia": null,
+        "respuesta_ideal": "Tenemos alternador reconstruido de USD 95, pero no sé si es compatible con Ford Focus 2012. Llamá a Ismael al ext. 2 para confirmar compatibilidad y precio final."
+      },
+      {
+        "cliente": "¿Y por qué no me lo envían directo?",
+        "tipo": "instruccion",
+        "accion": "derivar",
+        "claves": [],
+        "evidencia": "Entregas a personas no identificadas: no realizamos. Solicitamos nombre completo y número de cédula de identidad para registro.",
+        "respuesta_ideal": "Necesitamos tu nombre completo y número de cédula para el registro. Eso se coordina directamente al +58 414 5678-910 por WhatsApp."
+      }
+    ]
+  }
+]

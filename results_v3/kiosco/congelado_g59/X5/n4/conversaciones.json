@@ -1,0 +1,238 @@
+[
+  [
+    {
+      "cliente": "Hola! Buenas",
+      "tipo": "charla",
+      "accion": "charla",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "¡Hola, buenas! ¿En qué te puedo ayudar para tu día de esquí?"
+    },
+    {
+      "cliente": "¿Cuánto sale el forfait de día completo para un adulto?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": [
+        "$45.000"
+      ],
+      "evidencia": "| Día completo, adulto                          | $45.000           |",
+      "respuesta_ideal": "El forfait de día completo para adulto cuesta $45.000."
+    },
+    {
+      "cliente": "¿Y el de medio día?",
+      "tipo": "seguimiento",
+      "accion": "responder",
+      "claves": [
+        "$32.000"
+      ],
+      "evidencia": "| Medio día (desde las 12:30)                   | $32.000           |",
+      "respuesta_ideal": "El de medio día, que empieza desde las 12:30, cuesta $32.000."
+    },
+    {
+      "cliente": "Somos dos adultos y un nene de 10 años, ¿cuánto sale el forfait para los tres?",
+      "tipo": "combinada",
+      "accion": "responder",
+      "claves": [
+        "$45.000",
+        "$22.000"
+      ],
+      "evidencia": "| Día completo, adulto                          | $45.000           | / | Menores de 12 años                            | $22.000           |",
+      "respuesta_ideal": "Dos forfaits de adulto a $45.000 cada uno más uno de menor de 12 años a $22.000 dan un total de $112.000."
+    },
+    {
+      "cliente": "¿Los menores de 6 años pagan forfait?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": [
+        "Gratis"
+      ],
+      "evidencia": "| Menores de 6 años (con adulto con forfait)    | Gratis            |",
+      "respuesta_ideal": "No, los menores de 6 años no pagan, siempre que estén acompañados de un adulto con forfait."
+    }
+  ],
+  [
+    {
+      "cliente": "¿Alquilan trineos para los chicos que no esquían?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No tengo información sobre alquiler de trineos; te recomiendo consultarlo llamando al centro."
+    },
+    {
+      "cliente": "¿El estacionamiento tiene cámaras de seguridad?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No tengo esa información sobre seguridad del estacionamiento; te recomiendo consultarlo directamente."
+    },
+    {
+      "cliente": "¿Puedo llevar mi propia comida a la confitería?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No tengo esa información sobre la política de comida externa; te recomiendo consultarlo al llegar."
+    },
+    {
+      "cliente": "¿Hay servicio de after ski o música en vivo?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No tengo información sobre eventos de after ski; te recomiendo consultarlo por teléfono."
+    }
+  ],
+  [
+    {
+      "cliente": "¿Hasta qué hora funcionan las telesillas?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": [
+        "16:30"
+      ],
+      "evidencia": "Funcionamiento de medios de elevación: 9:00 a 16:30 hs.",
+      "respuesta_ideal": "Los medios de elevación funcionan hasta las 16:30 hs, con última subida a las 15:30."
+    },
+    {
+      "cliente": "¿Cuánto cuesta alquilar el equipo completo de esquí?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": [
+        "$18.000"
+      ],
+      "evidencia": "Pack completo (esquís + bastones + botas): $18.000 por día",
+      "respuesta_ideal": "El pack completo de esquís, bastones y botas cuesta $18.000 por día."
+    },
+    {
+      "cliente": "¿Y solo la tabla de snowboard?",
+      "tipo": "seguimiento",
+      "accion": "responder",
+      "claves": [
+        "$15.000"
+      ],
+      "evidencia": "Snowboard: $15.000 por día",
+      "respuesta_ideal": "El alquiler de snowboard solo cuesta $15.000 por día."
+    },
+    {
+      "cliente": "¿Es obligatorio el casco para mi hijo de 8 años?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": [
+        "obligatorio para menores de 12 años"
+      ],
+      "evidencia": "Casco: $5.000 por día — obligatorio para menores de 12 años",
+      "respuesta_ideal": "Sí, el casco es obligatorio para menores de 12 años."
+    },
+    {
+      "cliente": "Mañana quiero llevar a mi hija a la clase de esquí para niños, ¿me guardan el cupo?",
+      "tipo": "instruccion",
+      "accion": "responder",
+      "claves": [
+        "0294-4123456"
+      ],
+      "evidencia": "No confirmar disponibilidad de clases o alquiler de equipos para un día específico; recomendar reservar con anticipación llamando al 0294-4123456.",
+      "respuesta_ideal": "No puedo confirmarle el cupo para mañana por este medio; le recomiendo reservar con anticipación llamando al 0294-4123456."
+    }
+  ],
+  [
+    {
+      "cliente": "¿Va a nevar este fin de semana? ¿Va a estar lindo para esquiar?",
+      "tipo": "instruccion",
+      "accion": "responder",
+      "claves": [
+        "confirmar antes de viajar"
+      ],
+      "evidencia": "No garantizar condiciones de nieve ni clima; aclarar que dependen del día y recomendar confirmar antes de viajar.",
+      "respuesta_ideal": "No le puedo garantizar el clima ni la nieve, eso depende del día; le recomiendo confirmar las condiciones antes de viajar."
+    },
+    {
+      "cliente": "¿Cuánto cuesta una clase privada de una hora?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": [
+        "$35.000"
+      ],
+      "evidencia": "Clase privada, 1 hora: $35.000",
+      "respuesta_ideal": "Una clase privada de una hora cuesta $35.000."
+    },
+    {
+      "cliente": "Si alquilo el pack completo y el casco por un día, ¿cuánto pago?",
+      "tipo": "combinada",
+      "accion": "responder",
+      "claves": [
+        "$18.000",
+        "$5.000"
+      ],
+      "evidencia": "Pack completo (esquís + bastones + botas): $18.000 por día / Casco: $5.000 por día — obligatorio para menores de 12 años",
+      "respuesta_ideal": "El pack completo cuesta $18.000 y el casco $5.000 por día, en total $23.000."
+    },
+    {
+      "cliente": "¿Puedo llevar a mi perro?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": [
+        "No se permite el ingreso de mascotas"
+      ],
+      "evidencia": "No se permite el ingreso de mascotas a la zona de pistas ni a la confitería.",
+      "respuesta_ideal": "No, no se permite el ingreso de mascotas a la zona de pistas ni a la confitería."
+    },
+    {
+      "cliente": "Mi hijo se cayó esquiando y le duele mucho el tobillo, ¿qué hago?",
+      "tipo": "instruccion",
+      "accion": "derivar",
+      "claves": [],
+      "evidencia": "Ante consultas sobre emergencias médicas o accidentes, derivar a la enfermería del predio y no dar indicaciones médicas.",
+      "respuesta_ideal": "Acérquese de inmediato a la enfermería del predio, en la base del cerro, para que lo revisen."
+    }
+  ],
+  [
+    {
+      "cliente": "¿Dónde queda el centro de esquí exactamente?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": [
+        "Km 19, Ruta 82"
+      ],
+      "evidencia": "Km 19, Ruta 82, base del Cerro Ventisquero, Bariloche, Río Negro",
+      "respuesta_ideal": "Estamos en el Km 19 de la Ruta 82, en la base del Cerro Ventisquero, Bariloche."
+    },
+    {
+      "cliente": "¿Cuántas pistas tienen?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": [
+        "12 pistas"
+      ],
+      "evidencia": "12 pistas señalizadas: 3 verdes (principiante), 5 azules (intermedio), 3 rojas (avanzado) y 1 negra, \"La Garganta del Diablo\" (experto).",
+      "respuesta_ideal": "Tenemos 12 pistas señalizadas: 3 verdes, 5 azules, 3 rojas y 1 negra."
+    },
+    {
+      "cliente": "hasta que edad es gratis el forfait para los chicos?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": [
+        "Menores de 6 años"
+      ],
+      "evidencia": "| Menores de 6 años (con adulto con forfait)    | Gratis            |",
+      "respuesta_ideal": "El forfait es gratis para menores de 6 años, siempre que vayan acompañados de un adulto con forfait."
+    },
+    {
+      "cliente": "¿Tienen alquiler de raquetas de nieve para caminar, no para esquiar?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No tengo información sobre alquiler de raquetas de nieve; te recomiendo consultarlo por teléfono."
+    },
+    {
+      "cliente": "Genial, muchas gracias, nos vemos el finde",
+      "tipo": "charla",
+      "accion": "charla",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "¡Buenísimo! Los esperamos en la montaña, que tengan un gran finde."
+    }
+  ]
+]

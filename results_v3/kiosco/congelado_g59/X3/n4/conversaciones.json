@@ -1,0 +1,166 @@
+[
+  {
+    "conversacion": [
+      {
+        "cliente": "¿Cuánto cuesta dejar a mi perro todo el día?",
+        "tipo": "directa",
+        "accion": "responder",
+        "claves": ["Jornada completa (08:00-18:00 h.): S/.85"],
+        "evidencia": "- Jornada completa (08:00-18:00 h.): S/.85 / día",
+        "respuesta_ideal": "Cuidado todo el día (8 am a 6 pm) cuesta S/.85. ¿Tiene carnet de vacunación y desparasitación al día?"
+      },
+      {
+        "cliente": "Sí, sí tenemos todo.",
+        "tipo": "charla",
+        "accion": "responder",
+        "claves": [],
+        "evidencia": null,
+        "respuesta_ideal": "Perfecto. ¿Cuándo querés traerlo? Podés reservar por WhatsApp +51 987 654-321 o en www.pawslove.pe."
+      },
+      {
+        "cliente": "¿Cuántos días a la semana pueden estar?",
+        "tipo": "sin_respuesta",
+        "accion": "abstenerse",
+        "claves": [],
+        "evidencia": null,
+        "respuesta_ideal": "Eso depende de tu perro y sus necesidades. Es mejor que lo consultes con el equipo llamando al +51 1 287 5432."
+      }
+    ]
+  },
+  {
+    "conversacion": [
+      {
+        "cliente": "¿Tienen baño y peluquería?",
+        "tipo": "si_no",
+        "accion": "responder",
+        "claves": ["Baño simple: S/.60", "Baño + corte", "Corte de pelo razado"],
+        "evidencia": "- Baño simple: S/.60\n- Baño + corte de uñas: S/.80\n- Corte de pelo razado (todo el cuerpo): S/.180",
+        "respuesta_ideal": "Sí. Baño simple S/.60, baño + corte de uñas S/.80, o corte razado completo S/.180."
+      },
+      {
+        "cliente": "¿Hacen combinado baño, corte y limpieza de oídos?",
+        "tipo": "directa",
+        "accion": "responder",
+        "claves": ["Baño + corte + limpieza de oídos: S/.110"],
+        "evidencia": "- Baño + corte + limpieza de oídos: S/.110",
+        "respuesta_ideal": "Sí, exactamente eso. Baño + corte + limpieza de oídos es S/.110."
+      },
+      {
+        "cliente": "¿Cuándo me lo devolverían?",
+        "tipo": "sin_respuesta",
+        "accion": "abstenerse",
+        "claves": [],
+        "evidencia": null,
+        "respuesta_ideal": "Eso depende si es solo grooming o si se queda en guardería también. Escribí por WhatsApp para coordinar horarios exactos."
+      }
+    ]
+  },
+  {
+    "conversacion": [
+      {
+        "cliente": "Quiero dejarlo una semana completa porque me voy de viaje.",
+        "tipo": "directa",
+        "accion": "responder",
+        "claves": ["7 noches (semana completa): S/.700"],
+        "evidencia": "- 7 noches (semana completa): S/.700 (descuento 15%)",
+        "respuesta_ideal": "Una semana completa (7 noches) cuesta S/.700. Ya incluye 15% de descuento."
+      },
+      {
+        "cliente": "¿Se queda con ustedes de noche también?",
+        "tipo": "si_no",
+        "accion": "responder",
+        "claves": ["Internación (estadía nocturna)"],
+        "evidencia": "Internación (estadía nocturna):\n- 7 noches (semana completa): S/.700",
+        "respuesta_ideal": "Sí. Con internación se queda las 24 horas, durmiendo en el local bajo supervisión."
+      },
+      {
+        "cliente": "¿Es seguro? ¿Cómo sé qué tal está?",
+        "tipo": "seguimiento",
+        "accion": "responder",
+        "claves": ["cámaras de vigilancia", "Fotos para redes sociales (diarias): incluido", "Reporte diario"],
+        "evidencia": "Tenemos cámaras de vigilancia en todas las áreas comunes, personal capacitado en primeros auxilios para mascotas y supervisión constante. Fotos para redes sociales (diarias): incluido. Reporte diario de actividades: incluido.",
+        "respuesta_ideal": "Sí es seguro. Tenemos cámaras en todas partes, personal capacitado y supervisión 24/7. Además, te mandamos fotos diarias y un reporte de qué hizo."
+      },
+      {
+        "cliente": "Genial. ¿Cómo reservo?",
+        "tipo": "charla",
+        "accion": "responder",
+        "claves": [],
+        "evidencia": null,
+        "respuesta_ideal": "Reservá por WhatsApp +51 987 654-321, email reservas@pawslove.pe o en www.pawslove.pe. ¡Tu perrito estará feliz con nosotros!"
+      }
+    ]
+  },
+  {
+    "conversacion": [
+      {
+        "cliente": "Mi perro tiene mucha energía. ¿Que me recomiendas?",
+        "tipo": "sin_respuesta",
+        "accion": "abstenerse",
+        "claves": [],
+        "evidencia": null,
+        "respuesta_ideal": "Tenemos el paquete 'Juego Activo' (S/.95/día) con 3 horas de ejercicio y socialización. Es ideal para perros activos. Pero lo mejor es que hables con el equipo."
+      },
+      {
+        "cliente": "¿Cómo es ese paquete exactamente?",
+        "tipo": "directa",
+        "accion": "responder",
+        "claves": ["Paquete \"Juego Activo\" (3 horas incluidas: ejercicio, juegos, socialización): S/.95"],
+        "evidencia": "- Paquete \"Juego Activo\" (3 horas incluidas: ejercicio, juegos, socialización): S/.95 / día",
+        "respuesta_ideal": "Son 3 horas de ejercicio, juegos y socialización en S/.95. Perfecto para liberar energía."
+      },
+      {
+        "cliente": "¿Puedo visitarlo mientras está en el paquete?",
+        "tipo": "si_no",
+        "accion": "responder",
+        "claves": ["visitas de 15 minutos sin costo adicional"],
+        "evidencia": "¿Puedo visitarlo durante el día?\nPermitimos visitas de 15 minutos sin costo adicional, coordinar previamente por WhatsApp.",
+        "respuesta_ideal": "Sí, visitas de 15 minutos sin cargo. Coordina previamente por WhatsApp para que el equipo te avise."
+      },
+      {
+        "cliente": "Me late. Voy a averiguar más detalles.",
+        "tipo": "charla",
+        "accion": "responder",
+        "claves": [],
+        "evidencia": null,
+        "respuesta_ideal": "Dale, escribí sin problema. El equipo está para ayudarte. +51 987 654-321 o www.pawslove.pe."
+      }
+    ]
+  },
+  {
+    "conversacion": [
+      {
+        "cliente": "¿Hacen entrenamiento?",
+        "tipo": "directa",
+        "accion": "responder",
+        "claves": ["Sesión individual (1 hora): S/.150", "Paquete 4 sesiones: S/.550", "Obediencia básica (4 sesiones)"],
+        "evidencia": "- Sesión individual (1 hora): S/.150\n- Paquete 4 sesiones: S/.550\n- Obediencia básica (4 sesiones, una por semana): S/.550",
+        "respuesta_ideal": "Sí. Sesión individual (1 hora) es S/.150, o paquete de 4 sesiones S/.550. También tenemos obediencia básica por S/.550."
+      },
+      {
+        "cliente": "Mi perro ladra mucho. ¿Eso se puede arreglar?",
+        "tipo": "si_no",
+        "accion": "responder",
+        "claves": ["Control de ladridos (programa 3 semanas): S/.420"],
+        "evidencia": "- Control de ladridos (programa 3 semanas): S/.420",
+        "respuesta_ideal": "Sí. Tenemos un programa específico de control de ladridos en 3 semanas por S/.420."
+      },
+      {
+        "cliente": "¿Cuántos perros entrenan ustedes al año?",
+        "tipo": "sin_respuesta",
+        "accion": "abstenerse",
+        "claves": [],
+        "evidencia": null,
+        "respuesta_ideal": "No tengo ese dato. Pero llama y habla con el equipo sobre sus casos de éxito. +51 1 287 5432."
+      },
+      {
+        "cliente": "Ok, gracias.",
+        "tipo": "charla",
+        "accion": "responder",
+        "claves": [],
+        "evidencia": null,
+        "respuesta_ideal": "¡De nada! Estamos para ayudarte. Nos vemos en Paws & Love."
+      }
+    ]
+  }
+]

@@ -1,0 +1,269 @@
+[
+  [
+    {
+      "cliente": "Buenas tardes, ¿hasta qué hora atienden hoy? Es viernes",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": [
+        "4:30 p. m."
+      ],
+      "evidencia": "Lunes a viernes: 8:00 a. m. a 4:30 p. m.",
+      "respuesta_ideal": "Bienvenido a Agua Blanca del Sur. Hoy viernes atendemos hasta las 4:30 p. m.; tenga en cuenta que la caja cierra 30 minutos antes."
+    },
+    {
+      "cliente": "¿y mañana sábado?",
+      "tipo": "seguimiento",
+      "accion": "responder",
+      "claves": [
+        "12:30 p. m."
+      ],
+      "evidencia": "Sábados: 8:00 a. m. a 12:30 p. m.",
+      "respuesta_ideal": "Mañana sábado atendemos de 8:00 a. m. a 12:30 p. m."
+    },
+    {
+      "cliente": "¿Se puede pagar con tarjeta en la caja?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": [
+        "Visa y Mastercard"
+      ],
+      "evidencia": "En caja: efectivo y tarjetas Visa y Mastercard (débito y crédito).",
+      "respuesta_ideal": "Sí, en caja aceptamos tarjetas Visa y Mastercard, de débito y de crédito, además de efectivo."
+    },
+    {
+      "cliente": "Muchas gracias, eso era todo",
+      "tipo": "charla",
+      "accion": "charla",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "Con gusto. Gracias por su visita."
+    }
+  ],
+  [
+    {
+      "cliente": "hola, compre una casa y quiero poner el recibo del agua a mi nombre, que papeles necesito",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": [
+        "DNI del nuevo propietario",
+        "contrato de compraventa",
+        "último recibo cancelado"
+      ],
+      "evidencia": "Requisitos: DNI del nuevo propietario; copia del título de propiedad o del contrato de compraventa; último recibo cancelado (el suministro no debe tener deuda).",
+      "respuesta_ideal": "Para el cambio de titular necesita el DNI del nuevo propietario, copia del título de propiedad o del contrato de compraventa y el último recibo cancelado, sin deuda pendiente."
+    },
+    {
+      "cliente": "¿Cuánto cuesta ese trámite y en cuántos días sale?",
+      "tipo": "combinada",
+      "accion": "responder",
+      "claves": [
+        "S/ 18.50",
+        "3 días hábiles"
+      ],
+      "evidencia": "3.3 Cambio de titular: S/ 18.50.\n    Requisitos: DNI del nuevo propietario; copia del título de propiedad o del contrato de compraventa; último recibo cancelado (el suministro no debe tener deuda).\n    Plazo: 3 días hábiles.",
+      "respuesta_ideal": "El cambio de titular cuesta S/ 18.50 y el plazo es de 3 días hábiles."
+    },
+    {
+      "cliente": "Yo trabajo todo el día, ¿lo puede hacer mi hermano por mí con una carta poder?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": [
+        "solo puede solicitarlo el nuevo propietario"
+      ],
+      "evidencia": "Excepto el cambio de titular, que solo puede solicitarlo el nuevo propietario.",
+      "respuesta_ideal": "No; la carta poder sirve para otros trámites, pero el cambio de titular solo puede solicitarlo el nuevo propietario."
+    },
+    {
+      "cliente": "¿Y no se puede hacer por internet?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No tengo información sobre si el cambio de titular se puede hacer por internet; solo sé que se atiende en la ventanilla 4 de esta oficina."
+    },
+    {
+      "cliente": "¿El dueño anterior también tiene que venir a firmar?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No tengo ese dato; en los requisitos no figura nada sobre la presencia del propietario anterior."
+    }
+  ],
+  [
+    {
+      "cliente": "Cuánto sale instalar el agua en un lote nuevo?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": [
+        "S/ 480.00"
+      ],
+      "evidencia": "3.5 Conexión domiciliaria de agua potable (1/2\"): S/ 480.00, incluye medidor.",
+      "respuesta_ideal": "La conexión domiciliaria de agua potable cuesta S/ 480.00; antes hay que pedir la factibilidad de servicio, que cuesta S/ 45.00."
+    },
+    {
+      "cliente": "¿Eso ya viene con el medidor o se paga aparte?",
+      "tipo": "seguimiento",
+      "accion": "responder",
+      "claves": [
+        "incluye medidor"
+      ],
+      "evidencia": "3.5 Conexión domiciliaria de agua potable (1/2\"): S/ 480.00, incluye medidor.",
+      "respuesta_ideal": "Ya viene incluido: la conexión de S/ 480.00 incluye medidor."
+    },
+    {
+      "cliente": "¿Y cuánto se demora todo, la factibilidad y después la instalación?",
+      "tipo": "combinada",
+      "accion": "responder",
+      "claves": [
+        "7 días hábiles",
+        "15 días hábiles"
+      ],
+      "evidencia": "Plazo de respuesta: 7 días hábiles.\n3.5 Conexión domiciliaria de agua potable (1/2\"): S/ 480.00, incluye medidor.\n3.6 Conexión domiciliaria de desagüe: S/ 520.00.\n3.7 Paquete agua + desagüe: S/ 890.00.\n    La instalación se realiza dentro de los 15 días hábiles siguientes a la aprobación de la factibilidad y al pago.",
+      "respuesta_ideal": "La factibilidad se responde en 7 días hábiles y, una vez aprobada y pagada la conexión, la instalación se hace dentro de los 15 días hábiles siguientes."
+    },
+    {
+      "cliente": "¿También hacen conexiones para un local comercial, tipo restaurante?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No tengo información sobre conexiones para locales comerciales; lo que tengo son las conexiones domiciliarias."
+    }
+  ],
+  [
+    {
+      "cliente": "Buenos días, hay un tubo roto en mi calle y está saliendo agua a chorros, ¿a quién le aviso?",
+      "tipo": "instruccion",
+      "accion": "derivar",
+      "claves": [],
+      "evidencia": "Si alguien reporta una fuga, un tubo roto, falta de agua o un desagüe atorado, no tomes el reporte: indícale que llame a la central de emergencias 054-601234, que atiende las 24 horas.",
+      "respuesta_ideal": "Bienvenido a Agua Blanca del Sur. Para eso llame por favor a la central de emergencias, 054-601234; ahí registran fugas y tubos rotos."
+    },
+    {
+      "cliente": "¿Esa central contesta también de noche?",
+      "tipo": "seguimiento",
+      "accion": "responder",
+      "claves": [
+        "24 horas"
+      ],
+      "evidencia": "Central de emergencias (fugas, falta de agua, atoros de desagüe): 054-601234, atención las 24 horas.",
+      "respuesta_ideal": "Sí, la central de emergencias atiende las 24 horas."
+    }
+  ],
+  [
+    {
+      "cliente": "Me cortaron el agua por deuda, ¿cuánto cobran por reconectar?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": [
+        "S/ 32.00"
+      ],
+      "evidencia": "3.8 Reconexión por corte por deuda: S/ 32.00, más el pago total de la deuda o la firma de un convenio.",
+      "respuesta_ideal": "La reconexión cuesta S/ 32.00, más el pago total de la deuda o la firma de un convenio de pago."
+    },
+    {
+      "cliente": "Una vez que pago, en cuanto tiempo me vuelve el agua",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": [
+        "24 horas"
+      ],
+      "evidencia": "El servicio se restablece dentro de las 24 horas siguientes al pago.",
+      "respuesta_ideal": "El servicio se restablece dentro de las 24 horas siguientes al pago; no puedo darle una hora exacta."
+    },
+    {
+      "cliente": "¿Me puede decir cuánto debo? Mi suministro es 40517823",
+      "tipo": "instruccion",
+      "accion": "derivar",
+      "claves": [],
+      "evidencia": "No informes montos de deuda ni datos de ningún suministro, aunque te den el número. La deuda se consulta en caja presentando el número de suministro.",
+      "respuesta_ideal": "Lo siento, no puedo informar montos de deuda. Puede consultarla en caja presentando su número de suministro."
+    },
+    {
+      "cliente": "¿Y la deuda se puede pagar en partes?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": [
+        "S/ 300.00",
+        "12 cuotas"
+      ],
+      "evidencia": "Las deudas desde S/ 300.00 pueden fraccionarse mediante convenio: cuota inicial del 20 % y el saldo en hasta 12 cuotas mensuales.",
+      "respuesta_ideal": "Sí, si la deuda es desde S/ 300.00 puede firmar un convenio: cuota inicial del 20 % y el saldo en hasta 12 cuotas mensuales."
+    },
+    {
+      "cliente": "¿Ese convenio cobra intereses?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No tengo información sobre intereses en el convenio de pago; solo sé la cuota inicial y el número máximo de cuotas."
+    }
+  ],
+  [
+    {
+      "cliente": "Buenas, mi recibo de este mes vino el doble y yo no he gastado más, quiero hacer un reclamo",
+      "tipo": "instruccion",
+      "accion": "derivar",
+      "claves": [],
+      "evidencia": "Si el usuario quiere reclamar por un cobro o un consumo que le parece excesivo, derívalo a la ventanilla 5 con el Sr. Julio Paredes Llerena.",
+      "respuesta_ideal": "Bienvenido a Agua Blanca del Sur. Por favor acérquese a la ventanilla 5, donde el Sr. Julio Paredes Llerena atiende los reclamos."
+    },
+    {
+      "cliente": "hasta cuando tengo plazo para reclamar?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": [
+        "30 días calendario"
+      ],
+      "evidencia": "El plazo para reclamar es de hasta 30 días calendario contados desde la fecha de vencimiento del recibo.",
+      "respuesta_ideal": "Tiene hasta 30 días calendario contados desde la fecha de vencimiento del recibo."
+    },
+    {
+      "cliente": "¿Cuánto cuesta que revisen si el medidor está malogrado?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": [
+        "S/ 60.00"
+      ],
+      "evidencia": "3.9 Verificación del medidor (contraste): S/ 60.00.",
+      "respuesta_ideal": "La verificación del medidor (contraste) cuesta S/ 60.00; si el medidor resulta defectuoso, se devuelve lo pagado y se cambia sin costo."
+    },
+    {
+      "cliente": "Y si sale que el medidor sí estaba fallado, ¿me devuelven lo que me cobraron de más en los recibos?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No tengo ese dato. Solo sé que se devuelve lo pagado por el contraste y el medidor se cambia sin costo; sobre lo cobrado en los recibos no tengo información."
+    },
+    {
+      "cliente": "¿En qué fechas pasan a leer el medidor?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": [
+        "entre el día 18 y el 25"
+      ],
+      "evidencia": "Una vez al mes, entre el día 18 y el 25.",
+      "respuesta_ideal": "El medidor se lee una vez al mes, entre el día 18 y el 25."
+    },
+    {
+      "cliente": "A cómo está el metro cúbico si consumo poquito, menos de 10?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": [
+        "S/ 1.85"
+      ],
+      "evidencia": "0 a 10 m³                | S/ 1.85      | S/ 0.82",
+      "respuesta_ideal": "De 0 a 10 m³ el agua potable está a S/ 1.85 por m³ (sin IGV), y el alcantarillado a S/ 0.82."
+    },
+    {
+      "cliente": "¿Hay algún descuento para jubilados?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No tengo información sobre descuentos para jubilados; lo que sí hay es atención preferencial para adultos mayores en la ventanilla 1."
+    }
+  ]
+]

@@ -1,0 +1,260 @@
+[
+  [
+    {
+      "cliente": "Hola, buenas!",
+      "tipo": "charla",
+      "accion": "charla",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "¡Hola, buenas! ¿En qué te puedo ayudar?"
+    },
+    {
+      "cliente": "¿Cuánto cuesta un colchón matrimonial?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": [
+        "1.850.000"
+      ],
+      "evidencia": "Colchón resortes                   | Matrimonial | 1.850.000",
+      "respuesta_ideal": "El colchón matrimonial de resortes cuesta Gs. 1.850.000."
+    },
+    {
+      "cliente": "¿Y el queen viscoelástico?",
+      "tipo": "seguimiento",
+      "accion": "responder",
+      "claves": [
+        "3.200.000"
+      ],
+      "evidencia": "Colchón viscoelástico              | Queen       | 3.200.000",
+      "respuesta_ideal": "El colchón viscoelástico queen cuesta Gs. 3.200.000."
+    },
+    {
+      "cliente": "Si compro el queen y una almohada, ¿cuánto pago en total?",
+      "tipo": "combinada",
+      "accion": "responder",
+      "claves": [
+        "3.200.000",
+        "180.000"
+      ],
+      "evidencia": "Colchón viscoelástico              | Queen       | 3.200.000 / Almohada viscoelástica             | unidad      | 180.000",
+      "respuesta_ideal": "El queen sale Gs. 3.200.000 y la almohada Gs. 180.000, en total serían Gs. 3.380.000."
+    },
+    {
+      "cliente": "¿Tienen entrega gratis?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": [
+        "gratis en Asunción"
+      ],
+      "evidencia": "Entrega: gratis en Asunción y Gran Asunción para compras desde Gs. 1.500.000.",
+      "respuesta_ideal": "Sí, la entrega es gratis en Asunción y Gran Asunción para compras desde Gs. 1.500.000."
+    }
+  ],
+  [
+    {
+      "cliente": "¿Tienen colchones para cuna de bebé?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No tengo información sobre colchones de cuna en este momento; te recomiendo llamar a la tienda para consultarlo."
+    },
+    {
+      "cliente": "¿Puedo pagar con Tigo Money?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No tengo esa información sobre esa forma de pago; te sugiero confirmarlo llamando a la tienda."
+    },
+    {
+      "cliente": "¿Cuánto tarda en llegar el pedido si vivo en Luque?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No tengo el tiempo exacto de entrega para esa zona; te recomiendo consultarlo por teléfono al coordinar la compra."
+    },
+    {
+      "cliente": "¿Tienen sucursal en otra ciudad?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No tengo esa información; te recomiendo consultarlo directamente en la tienda."
+    }
+  ],
+  [
+    {
+      "cliente": "¿Hasta qué hora abren los sábados?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": [
+        "19:00"
+      ],
+      "evidencia": "Horario: Lunes a sábado de 8:00 a 19:00 (corrido).",
+      "respuesta_ideal": "Los sábados atendemos de 8:00 a 19:00, igual que entre semana."
+    },
+    {
+      "cliente": "¿Están abiertos los domingos?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": [
+        "Domingo de 9:00 a 13:00"
+      ],
+      "evidencia": "Domingo de 9:00 a 13:00.",
+      "respuesta_ideal": "Sí, los domingos atendemos de 9:00 a 13:00."
+    },
+    {
+      "cliente": "¿Cuántos años de garantía tiene el colchón de resortes?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": [
+        "5 años"
+      ],
+      "evidencia": "Garantía: 5 años en colchones de resortes y 10 años en viscoelásticos, contra defectos de fabricación.",
+      "respuesta_ideal": "El colchón de resortes tiene 5 años de garantía por defectos de fabricación."
+    },
+    {
+      "cliente": "¿Y el viscoelástico?",
+      "tipo": "seguimiento",
+      "accion": "responder",
+      "claves": [
+        "10 años"
+      ],
+      "evidencia": "Garantía: 5 años en colchones de resortes y 10 años en viscoelásticos, contra defectos de fabricación.",
+      "respuesta_ideal": "El viscoelástico tiene 10 años de garantía."
+    },
+    {
+      "cliente": "Tengo problemas de columna, ¿cuál colchón me recomendás?",
+      "tipo": "instruccion",
+      "accion": "responder",
+      "claves": [
+        "consultar con un profesional"
+      ],
+      "evidencia": "No dar diagnóstico médico sobre qué colchón conviene para dolores de espalda u otros problemas de salud; recomendar consultar con un profesional y mostrar las opciones disponibles.",
+      "respuesta_ideal": "No puedo darle un diagnóstico médico; le recomiendo consultar con un profesional de la salud, y mientras tanto puedo mostrarle nuestras opciones de colchones."
+    }
+  ],
+  [
+    {
+      "cliente": "El colchón que compré la semana pasada vino con una costura rota, quiero reclamar",
+      "tipo": "instruccion",
+      "accion": "derivar",
+      "claves": [],
+      "evidencia": "Ante quejas o reclamos por productos defectuosos, derivar siempre a Marta Duarte al 021-445678 o WhatsApp 0981-234567.",
+      "respuesta_ideal": "Para reclamos por productos defectuosos lo mejor es que hable directamente con Marta Duarte, al 021-445678 o por WhatsApp al 0981-234567."
+    },
+    {
+      "cliente": "¿Puedo cambiar el colchón si no me gusta después de dormir unas semanas?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": [
+        "30 días de prueba"
+      ],
+      "evidencia": "Política de cambio: 30 días de prueba desde la entrega.",
+      "respuesta_ideal": "Sí, tiene 30 días de prueba desde la entrega para cambiarlo una sola vez si no le resulta cómodo."
+    },
+    {
+      "cliente": "¿Tengo que pagar algo por ese cambio?",
+      "tipo": "seguimiento",
+      "accion": "responder",
+      "claves": [
+        "el flete del cambio"
+      ],
+      "evidencia": "El cliente cubre el costo del flete del cambio.",
+      "respuesta_ideal": "Sí, usted debe cubrir el costo del flete del cambio."
+    },
+    {
+      "cliente": "¿Hacen algo con mi colchón viejo, se lo pueden llevar?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": [
+        "50.000"
+      ],
+      "evidencia": "Retiro del colchón viejo: servicio de reciclaje con cargo de Gs. 50.000, coordinando con 48 horas de anticipación.",
+      "respuesta_ideal": "Sí, ofrecemos el retiro del colchón viejo por Gs. 50.000, coordinando con 48 horas de anticipación."
+    },
+    {
+      "cliente": "Buenísimo, muchas gracias por la info",
+      "tipo": "charla",
+      "accion": "charla",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "¡De nada! Te esperamos en el local para que pruebes los colchones."
+    }
+  ],
+  [
+    {
+      "cliente": "cuanto sale el colchon individual de espuma?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": [
+        "950.000"
+      ],
+      "evidencia": "Colchón espuma alta densidad       | Individual  | 950.000",
+      "respuesta_ideal": "El colchón individual de espuma de alta densidad cuesta Gs. 950.000."
+    },
+    {
+      "cliente": "Si llevo dos almohadas y un sommier, ¿cuánto es en total?",
+      "tipo": "combinada",
+      "accion": "responder",
+      "claves": [
+        "180.000",
+        "600.000"
+      ],
+      "evidencia": "Almohada viscoelástica             | unidad      | 180.000 / Sommier (base)                     | desde       | 600.000",
+      "respuesta_ideal": "Dos almohadas a Gs. 180.000 cada una y un sommier desde Gs. 600.000 suman al menos Gs. 960.000 en total."
+    },
+    {
+      "cliente": "¿Puedo pagar en 12 cuotas sin interés con cualquier tarjeta?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": [
+        "Visa y Mastercard de Itaú y Continental"
+      ],
+      "evidencia": "Financiación: hasta 12 cuotas sin interés con tarjetas Visa y Mastercard de Itaú y Continental.",
+      "respuesta_ideal": "No, las 12 cuotas sin interés son solo con tarjetas Visa y Mastercard de Itaú y Continental; con otras tarjetas son hasta 6 cuotas."
+    },
+    {
+      "cliente": "¿Tienen protectores impermeables para el colchón?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No tengo esa información sobre protectores impermeables; te recomiendo consultarlo en la tienda."
+    }
+  ],
+  [
+    {
+      "cliente": "¿Dónde queda el local exactamente?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": [
+        "Mariscal López 2350"
+      ],
+      "evidencia": "Avda. Mariscal López 2350 c/ Perú, Asunción — a dos cuadras de la Shopping del Sol.",
+      "respuesta_ideal": "Estamos en la Avenida Mariscal López 2350 casi Perú, en Asunción, a dos cuadras de la Shopping del Sol."
+    },
+    {
+      "cliente": "¿Cómo se llama la encargada de la tienda?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": [
+        "Marta Duarte"
+      ],
+      "evidencia": "Atención personalizada a cargo de Marta Duarte, encargada de sucursal.",
+      "respuesta_ideal": "La encargada de la sucursal es Marta Duarte."
+    },
+    {
+      "cliente": "¿Puedo probar los colchones antes de comprar?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": [
+        "modelos de exhibición"
+      ],
+      "evidencia": "¿Puedo probar el colchón en el local? Sí, tenemos modelos de exhibición para acostarse y probar antes de comprar.",
+      "respuesta_ideal": "Sí, tenemos modelos de exhibición donde puede acostarse y probarlos antes de comprar."
+    }
+  ]
+]
