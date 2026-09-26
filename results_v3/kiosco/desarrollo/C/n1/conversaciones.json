@@ -1,0 +1,188 @@
+[
+  [
+    {
+      "cliente": "Hola, buenos días",
+      "tipo": "charla",
+      "accion": "charla",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "Buenos días, bienvenido a El Pastel de Tres Leches. ¿En qué puedo ayudarte?"
+    },
+    {
+      "cliente": "¿Cuál es su horario?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["12:00 p. m. – 11:00 p. m.", "Lunes a jueves"],
+      "evidencia": "Lunes a jueves: 12:00 p. m. – 11:00 p. m.\nViernes y sábado: 12:00 p. m. – 12:00 a. m.",
+      "respuesta_ideal": "Abrimos de lunes a jueves de 12:00 p. m. a 11:00 p. m., viernes y sábado hasta medianoche, y domingos de 1:00 p. m. a 10:00 p. m."
+    },
+    {
+      "cliente": "¿Dónde estan ubicados?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["Avenida Paseo de la Reforma 505", "Cuauhtémoc"],
+      "evidencia": "Avenida Paseo de la Reforma 505, Despacho 210, Cuauhtémoc, CDMX 06500",
+      "respuesta_ideal": "Estamos en Avenida Paseo de la Reforma 505, Despacho 210, Cuauhtémoc, muy cercanos al Metro Insurgentes."
+    },
+    {
+      "cliente": "Gracias, voy a visitarlos",
+      "tipo": "charla",
+      "accion": "charla",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "Te esperamos. ¡Que disfrutes en El Pastel de Tres Leches!"
+    }
+  ],
+  [
+    {
+      "cliente": "¿Cuanto cuesta una porción del pastel de tres leches?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["$180"],
+      "evidencia": "Pastel de tres leches: $180 (reb. individual)",
+      "respuesta_ideal": "La porción individual cuesta $180. Si prefieres el pastel completo, te cobraremos $550."
+    },
+    {
+      "cliente": "¿y el pastel completo cuanto es?",
+      "tipo": "seguimiento",
+      "accion": "responder",
+      "claves": ["$550"],
+      "evidencia": "Pastel de tres leches: $180 (reb. individual), $550 (completo)",
+      "respuesta_ideal": "El pastel completo sale $550."
+    },
+    {
+      "cliente": "Se puede pagar con tarjeta?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["todas las tarjetas de crédito y débito"],
+      "evidencia": "Pago: aceptamos efectivo, todas las tarjetas de crédito y débito, y transferencias bancarias",
+      "respuesta_ideal": "Sí, aceptamos todas las tarjetas de crédito y débito, además de efectivo y transferencias bancarias."
+    },
+    {
+      "cliente": "¿tienen menu para niños?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No tengo esa información. Te sugiero llamar al restaurante al +52 55 5208-4712 para preguntar si ofrecemos opciones especiales para niños."
+    },
+    {
+      "cliente": "Tengo alergia al gluten, ¿puedo comer ahí?",
+      "tipo": "instruccion",
+      "accion": "responder",
+      "claves": ["avísale al camarero", "no podemos garantizar ambiente 100 % libre"],
+      "evidencia": "Alergias e intolerancias: avísale al camarero si eres alérgico a cacahuate, nueces, lácteos o gluten. No podemos garantizar ambiente 100 % libre de estos productos.",
+      "respuesta_ideal": "Es importante que avises al camarero cuando llegues. Ten en cuenta que nuestras cocina maneja gluten, así que no podemos garantizar un ambiente 100 % libre de ese alérgeno."
+    }
+  ],
+  [
+    {
+      "cliente": "¿qué bebidas alcoholicas tiene?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["vinos desde $120", "mezcal desde $140", "cócteles"],
+      "evidencia": "Bebidas alcohólicas: vinos desde $120, mezcal desde $140, cócteles $160-200",
+      "respuesta_ideal": "Ofrecemos vinos a partir de $120, mezcal desde $140 y cócteles entre $160 y $200."
+    },
+    {
+      "cliente": "¿cuanto sería un pastel de tres leches y dos cafés?",
+      "tipo": "combinada",
+      "accion": "responder",
+      "claves": ["$180", "$65"],
+      "evidencia": "Pastel de tres leches: $180 (reb. individual)\nCafé de espresso único (origen Oaxaca): $65",
+      "respuesta_ideal": "Serían $180 por la porción de pastel más $130 por dos cafés, un total de $310 más IVA."
+    },
+    {
+      "cliente": "¿se pueden llevar mascotas?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["no se admiten", "perros de servicio"],
+      "evidencia": "Mascotas: no se admiten animales de compañía, excepto perros de servicio.",
+      "respuesta_ideal": "No se admiten mascotas, excepto perros de servicio."
+    },
+    {
+      "cliente": "Cual de los postres es el mejor?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "Todos nuestros postres son deliciosos, pero el Pastel de Tres Leches es nuestro postre insignia. Te recomendaría probar ese, pero realmente depende de tus gustos personales."
+    }
+  ],
+  [
+    {
+      "cliente": "Buen día, quiero comer algo ahora",
+      "tipo": "charla",
+      "accion": "charla",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "Buen día, con gusto te ayudo. ¿Qué te gustaría saber?"
+    },
+    {
+      "cliente": "¿A que hora cierran hoy?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["11:00 p. m."],
+      "evidencia": "Lunes a jueves: 12:00 p. m. – 11:00 p. m.",
+      "respuesta_ideal": "Hoy cerramos a las 11:00 p. m., así que tienes tiempo para venir."
+    },
+    {
+      "cliente": "¿Y mañana?",
+      "tipo": "seguimiento",
+      "accion": "responder",
+      "claves": ["12:00 a. m.", "medianoche"],
+      "evidencia": "Viernes y sábado: 12:00 p. m. – 12:00 a. m. (medianoche)",
+      "respuesta_ideal": "Mañana, siendo viernes, abrimos desde las 12:00 p. m. y cerramos a medianoche."
+    },
+    {
+      "cliente": "¿tienen wifi?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No tengo esa información disponible. Llama al restaurante al +52 55 5208-4712 y pregunta directamente."
+    },
+    {
+      "cliente": "Quiero hacer una reserva para 10 personas",
+      "tipo": "instruccion",
+      "accion": "derivar",
+      "claves": ["Grupos de 8 o más", "reservas"],
+      "evidencia": "Reservas: aceptamos todo el año. Grupos de 8 o más personas: descuento 10 %. Las reservas deben confirmarse 24 horas antes.",
+      "respuesta_ideal": "Para grupos de 8 o más personas, te recomiendo que llames al +52 55 5208-4712 o escribas a reservas@pasteldetresleches.mx. Tenemos un descuento del 10 % y necesitamos confirmación 24 horas antes."
+    }
+  ],
+  [
+    {
+      "cliente": "Necesito la dirección exacta del restaurante",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["Avenida Paseo de la Reforma 505", "Despacho 210"],
+      "evidencia": "Avenida Paseo de la Reforma 505, Despacho 210, Cuauhtémoc, CDMX 06500",
+      "respuesta_ideal": "Somos Avenida Paseo de la Reforma 505, Despacho 210, Cuauhtémoc, CDMX 06500. Estamos a 5 minutos del Metro Insurgentes."
+    },
+    {
+      "cliente": "¿hay estacionamiento?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["parquímetro", "garage"],
+      "evidencia": "Estacionamiento: parquímetro en la acera. El edificio tiene garage; preguntar al personal.",
+      "respuesta_ideal": "Sí, hay parquímetro en la acera y el edificio tiene garage. Puedes preguntar al personal cuando llegues."
+    },
+    {
+      "cliente": "¿tienen opciones vegetarianas?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No aparece un menú específicamente vegetariano en mi información. Te recomiendo llamar al +52 55 5208-4712 para confirmar qué opciones pueden adaptarse a una dieta vegetariana."
+    },
+    {
+      "cliente": "Muchas gracias, nos vemos pronto",
+      "tipo": "charla",
+      "accion": "charla",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "¡Excelente! Te esperamos en El Pastel de Tres Leches. ¡Que tengas un gran día!"
+    }
+  ]
+]

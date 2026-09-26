@@ -153,3 +153,53 @@ Se reportan aparte, sin puerta, los tipos que G-57 no ataca: combinada (cuentas)
 Educación ≤ 30 min con hasta 16 procesos y RAM total ≤ disponible − 2 GB. Evaluación ≤ 1 h. Desarrollo con material escrito por 6 redactores antes del congelado:
 - 4 partes abiertas (A–D), que puedo leer;
 - 2 partes ciegas (E, F): solo miro los totales.
+
+## Enmienda previa al congelado (2026-09-26, desarrollo con las partes A–D abiertas y E–F ciegas)
+
+Todo lo de abajo se decidió con el material de desarrollo, antes de `freeze-G-57`. Las puertas no cambian.
+
+**1. La verosimilitud es una mezcla, no π/p₀.** Con π/p₀, las palabras presentes en casi toda respuesta («ser») pesaban como contenido: «¿Cuál es su horario?» → «Somos un restaurante…». Ahora el modelo es de mezcla:
+- δ(q) = (π(q) − P_A(q)) / (1 − P_A(q)), donde P_A es la fracción de respuestas de MFAQ que contienen q; δ es la probabilidad de que la respuesta tenga q *porque* la pregunta la tiene;
+- presente: log(δ/p₀ + 1 − δ); ausente: log(1 − δ);
+- el puente usa el mismo δ con P(a | q);
+- el rasgo de calibración usa el mayor δ no explicado.
+
+**2. El título del documento** no entra en los índices (sus palabras estaban en todas las unidades y anulaban la búsqueda): sus palabras cuentan como explicadas en todas.
+
+**3. Los títulos también son unidades.** Si la pregunta da con un título, o con una unidad solo a través de su título, se contesta la **sección** entera (hasta 8 unidades). Es título, además de la línea corta seguida de contenido:
+- una línea en mayúsculas o que termina en «:» (tipografía);
+- la pregunta de una sección de preguntas frecuentes, cuya respuesta termina en la línea en blanco.
+
+**4. Lemas sin tildes y reglas de terminación.** El lema aprendido de AnCora se busca sin tildes («cuanto», «alcoholicas»). Las palabras que AnCora no vio toman la regla de terminación inducida de sus anotaciones: la que sigue al menos el 80 % de 20 o más formas con esa terminación.
+
+**5. Forma de las cifras** como palabra más: «9», «9:9», «9.9», «9,9», «$», «€», «£» y «%». El puente contado aprende así que «cuánto» pide «$» y que «hora» pide «9:9».
+
+**6. Las oraciones solo se parten** tras una palabra de 4 o más letras, una cifra o un cierre. No se parte tras «Av.» ni tras puntos de relleno.
+
+**7. Calibración.**
+- **Con MFAQ no se admite ninguna celda:** la mejor acierta el 84 % (páginas de viajes con plantilla y respuestas casi iguales). Resultado negativo registrado; las cuentas quedan en `cells_mfaq`.
+- **La tabla se cuenta en las partes abiertas del banco de desarrollo (A–D)**, con la misma regla (Clopper–Pearson al 95 %, error acumulado ≤ 2 %). Ese texto lo redactaron modelos de lenguaje; se declara, y solo se guardan cuentas por celda.
+- **Tampoco se admite ninguna celda:** la mejor acierta el 79 % (391 turnos, conteo automático).
+- **Otros rasgos probados en A–D, sin ninguno que aísle un grupo fiable:**
+  - fracción de δ explicada;
+  - estabilidad al quitar cada palabra;
+  - todas las palabras de δ alto explicadas.
+
+  Lo mejor fue un 92 % en solo 12 casos.
+- **Consecuencia (se mantiene la meta):** el motor congelado contesta `unknown` («No lo sé…») a toda pregunta con contenido. La interfaz entrega aparte, en `candidate`, la mejor unidad y la precisión contada de su celda, sin afirmarla.
+- **El experimento mide la búsqueda con el control «contesta siempre»** (`calibrated` apagado), y la regla de retención 5.9 del silencio calibrado se aplica como está escrita.
+
+**8. `respond`** devuelve la respuesta a la última parte que es pregunta, o a la última parte. El resto del resultado se conserva (`sentences`, `total`) y el estado del documento va en `document_status`.
+
+**Cifras de desarrollo, conteo automático** (clave contenida; subestima: una respuesta buena a la que le falta una clave de otra línea cuenta como equivocada):
+
+| Sistema | Abiertas A–D: directa + sí/no | Ciegas E–F: directa + sí/no |
+|---|---|---|
+| `estable-G-15` (`ingest_document_text` + `respond`) | 5/181 | 5/95 |
+| G-57, contestando siempre | 103/181 (57 %) | 55/95 (58 %) |
+
+- Error entre lo contestado, contestando siempre: 65 % en A–D (incluye las 112 preguntas sin respuesta).
+- `estable-G-15` se equivoca en el 96,5 % de lo que contesta en A–D y en el 93 % en E–F.
+- p95 de `answer`: 0,16–0,27 ms.
+
+Lo ganado en la parte abierta se sostiene en la ciega: 57 % frente a 58 %.

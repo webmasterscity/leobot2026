@@ -1,0 +1,204 @@
+[
+  [
+    {
+      "cliente": "¿Qué idiomas enseñan?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["inglés", "francés", "alemán", "portugués", "mandarín"],
+      "evidencia": "Enseñamos inglés, francés, alemán, portugués y mandarín.",
+      "respuesta_ideal": "Enseñamos inglés, francés, alemán, portugués brasileño y mandarín."
+    },
+    {
+      "cliente": "¿Cuál es el nivel de inglés para principiantes?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["A1", "3 meses"],
+      "evidencia": "Principiante (A1): 3 meses, 2 clases/semana",
+      "respuesta_ideal": "El nivel A1 es nuestro curso de principiantes. Dura 3 meses con 2 clases por semana."
+    },
+    {
+      "cliente": "¿Tienen horarios en la noche?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["8:00 a. m. – 9:00 p. m.", "hasta las 8:30 p. m."],
+      "evidencia": "Lunes a viernes: 8:00 a. m. – 9:00 p. m. Clases disponibles desde las 8:00 a. m. hasta las 8:30 p. m.",
+      "respuesta_ideal": "Sí, tenemos clases hasta las 8:30 p. m. de lunes a viernes, y los viernes hay conversación hasta las 9:00 p. m."
+    },
+    {
+      "cliente": "¿Cuanto cuesta el nivel intermedio de inglés?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["$380.000/mes"],
+      "evidencia": "Intermedio (B1): 3 meses, 2 clases/semana, $380.000/mes",
+      "respuesta_ideal": "El nivel Intermedio (B1) cuesta $380.000 por mes con 2 clases semanales."
+    },
+    {
+      "cliente": "¿Ofrecen clases particulares?",
+      "tipo": "sin_respuesta",
+      "accion": "responder",
+      "claves": ["$65.000/hora", "clases privadas"],
+      "evidencia": "Clases privadas: $65.000/hora (mínimo 10 horas por contrato)",
+      "respuesta_ideal": "Sí, ofrecemos clases privadas a $65.000 la hora, con un mínimo de 10 horas para contratar."
+    }
+  ],
+  [
+    {
+      "cliente": "¿A que hora abren los lunes?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["8:00 a. m.", "lunes a viernes"],
+      "evidencia": "Lunes a viernes: 8:00 a. m. – 9:00 p. m.",
+      "respuesta_ideal": "Abrimos a las 8:00 a. m. de lunes a viernes."
+    },
+    {
+      "cliente": "¿Y los sabados?",
+      "tipo": "sin_respuesta",
+      "accion": "responder",
+      "claves": ["9:00 a. m. – 3:00 p. m."],
+      "evidencia": "Sábados: 9:00 a. m. – 3:00 p. m.",
+      "respuesta_ideal": "Los sábados abrimos a las 9:00 a. m. y cerramos a las 3:00 p. m."
+    },
+    {
+      "cliente": "Si tomo inglés por 3 meses, ¿cuanto es el total?",
+      "tipo": "combinada",
+      "accion": "responder",
+      "claves": ["$150.000", "$350.000", "matrícula"],
+      "evidencia": "Matrícula: $150.000 (única, no reembolsable)\nPrincipiante (A1): 3 meses, 2 clases/semana, $350.000/mes",
+      "respuesta_ideal": "La matrícula es $150.000 (única) y luego $350.000 por mes durante 3 meses, para un total de $1.200.000."
+    },
+    {
+      "cliente": "¿Qué profesor enseña el nivel B1?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No tengo esa información disponible. Llama al +57 1 619 2847 para conocer el horario específico y quién será tu profesor."
+    },
+    {
+      "cliente": "¿Puedo pagar con tarjeta de credito?",
+      "tipo": "seguimiento",
+      "accion": "responder",
+      "claves": ["Tarjeta débito/crédito", "sin recargo"],
+      "evidencia": "Formas de pago: Efectivo en caja, Transferencia bancaria, Tarjeta débito/crédito (sin recargo), Cheque posfechado",
+      "respuesta_ideal": "Sí, aceptamos tarjeta de crédito sin recargo, transferencia bancaria, efectivo y cheque posfechado."
+    }
+  ],
+  [
+    {
+      "cliente": "¿Las clases privadas son más efectivas que las de grupo?",
+      "tipo": "si_no",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "Ambas tienen beneficios diferentes. Las privadas son personalizadas, pero las de grupo ofrecen conversación con otros estudiantes. Para recomendación, llama al +57 1 619 2847."
+    },
+    {
+      "cliente": "¿Cuánto cuesta una clase privada?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["$65.000/hora", "10 horas"],
+      "evidencia": "Clases privadas: $65.000/hora (mínimo 10 horas por contrato)",
+      "respuesta_ideal": "La clase privada cuesta $65.000 la hora, con mínimo 10 horas de contratación."
+    },
+    {
+      "cliente": "No sé qué nivel de inglés tengo. ¿Cómo hago?",
+      "tipo": "instruccion",
+      "accion": "derivar",
+      "claves": ["prueba de nivel", "llamar"],
+      "evidencia": null,
+      "respuesta_ideal": "Podemos hacerte una prueba de nivel gratuita. Llama al +57 1 619 2847 o escribe por WhatsApp al +57 321 5738492 para agendar."
+    },
+    {
+      "cliente": "¿Tienen otros idiomas como chino simplificado?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "Enseñamos mandarín, pero no tengo información sobre chino simplificado. Para consultar alternativas, llama a la academia."
+    }
+  ],
+  [
+    {
+      "cliente": "¿Enseñan francés?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["Francés", "A1-B2", "$340.000/mes"],
+      "evidencia": "Francés: A1-B2, $340.000/mes (2 clases/semana)",
+      "respuesta_ideal": "Sí, ofrecemos francés desde nivel A1 hasta B2 a $340.000 por mes con 2 clases semanales."
+    },
+    {
+      "cliente": "¿Y el portugués?",
+      "tipo": "seguimiento",
+      "accion": "responder",
+      "claves": ["Portugués brasileño", "A1-B1", "$320.000/mes"],
+      "evidencia": "Portugués brasileño: A1-B1, $320.000/mes (2 clases/semana)",
+      "respuesta_ideal": "Sí, enseñamos portugués brasileño de A1 a B1 a $320.000 por mes."
+    },
+    {
+      "cliente": "¿Quién es el mejor profesor de francés?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "Todos nuestros profesores tienen certificación internacional y mucha experiencia. Para información sobre disponibilidad y horarios, contacta a la academia."
+    },
+    {
+      "cliente": "¿Se puede pagar en dos cuotas?",
+      "tipo": "instruccion",
+      "accion": "derivar",
+      "claves": ["pago", "formas de pago"],
+      "evidencia": null,
+      "respuesta_ideal": "Las formas de pago disponibles son efectivo, transferencia, tarjeta y cheque. Para consultar opciones de cuotas especiales, llama al +57 1 619 2847."
+    },
+    {
+      "cliente": "Gracias, voy a escribir entonces",
+      "tipo": "charla",
+      "accion": "charla",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "Con gusto. Escribe a info@idiomasproglobal.com.co o por WhatsApp. ¡Te esperamos!"
+    }
+  ],
+  [
+    {
+      "cliente": "Hola, buenos días",
+      "tipo": "charla",
+      "accion": "charla",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "Buenos días, ¿cómo estás? ¿En qué te puedo ayudar?"
+    },
+    {
+      "cliente": "¿Dónde quedan ubicados?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["Carrera 11 # 85-14", "Chapinero", "Bogotá"],
+      "evidencia": "Carrera 11 # 85-14, Localidad de Chapinero, Bogotá D.C. 110121",
+      "respuesta_ideal": "Estamos en Carrera 11 # 85-14, en la localidad de Chapinero, Bogotá."
+    },
+    {
+      "cliente": "¿Aceptan tarjeta de débito?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["Tarjeta débito/crédito"],
+      "evidencia": "Tarjeta débito/crédito (sin recargo)",
+      "respuesta_ideal": "Sí, aceptamos tarjeta de débito sin recargo."
+    },
+    {
+      "cliente": "¿Hacen traducciones de documentos?",
+      "tipo": "sin_respuesta",
+      "accion": "responder",
+      "claves": ["Traducción de documentos", "$35 por página"],
+      "evidencia": "Traducción de documentos: tarifa $35 por página",
+      "respuesta_ideal": "Sí, ofrecemos traducción de documentos a $35 por página. Puedes consultar disponibilidad llamando al +57 1 619 2847."
+    },
+    {
+      "cliente": "¿Y si pago 3 meses adelantados hay descuento?",
+      "tipo": "sin_respuesta",
+      "accion": "responder",
+      "claves": ["15 %", "3 meses adelantados"],
+      "evidencia": "Descuentos: 15 % si pagás 3 meses adelantados",
+      "respuesta_ideal": "Sí, tenemos un descuento del 15 % si pagas 3 meses adelantados."
+    }
+  ]
+]

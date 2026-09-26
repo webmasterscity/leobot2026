@@ -34,6 +34,10 @@ COGNITIVE_FIELDS = (
     'reading_utterances',
     'reading_model',
     'syntax_model',
+    'context_model',
+    'context_units',
+    'context_title',
+    'context_instructions',
 )
 
 

@@ -1,0 +1,204 @@
+[
+  [
+    {
+      "cliente": "¿Cuanto cuesta lavar ropa?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["$350", "kilo", "lavado simple"],
+      "evidencia": "Lavado simple (secado a aire): Kilo de ropa: $350 (mínimo 2 kg)",
+      "respuesta_ideal": "Lavado simple (secado a aire) sale $350 por kilo, con mínimo 2 kilos. Si quieres secado en máquina, es $450 por kilo."
+    },
+    {
+      "cliente": "¿Y el planchado?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["$200", "$350", "$500"],
+      "evidencia": "Planchado: Opcional: +$200 por carga pequeña, +$350 mediana, +$500 grande",
+      "respuesta_ideal": "El planchado se suma al lavado: +$200 por carga pequeña, +$350 mediana, +$500 grande. O si quieres prendas sueltas, $120 por camisa, $90 por pantalón."
+    },
+    {
+      "cliente": "¿Ustedes lavan edredones?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["Edredón", "$1.900"],
+      "evidencia": "Edredón | $1.900",
+      "respuesta_ideal": "Sí, lavamos edredones a $1.900 cada uno."
+    },
+    {
+      "cliente": "¿Se puede retirar el mismo día?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["Mismo día", "antes de las 11:00 a. m.", "5:00 p. m."],
+      "evidencia": "Mismo día: si traes ropa antes de las 11:00 a. m., entregamos a las 5:00 p. m. (solo lavado simple).",
+      "respuesta_ideal": "Sí, si traes la ropa antes de las 11:00 a. m., te la entregamos a las 5:00 p. m., pero solo para lavado simple."
+    },
+    {
+      "cliente": "Listo, voy a llevar ahora entonces",
+      "tipo": "charla",
+      "accion": "charla",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "¡Perfecto! Te esperamos. Estamos en Milán 1247, esquina Soriano."
+    }
+  ],
+  [
+    {
+      "cliente": "¿Dónde estan ubicados exactamente?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["Milán 1247", "Soriano", "Centro"],
+      "evidencia": "Milán 1247, esquina Soriano, Barrio Centro, Montevideo 11100, Uruguay",
+      "respuesta_ideal": "Estamos en Milán 1247, esquina Soriano, en el Barrio Centro de Montevideo."
+    },
+    {
+      "cliente": "¿Abren los sábados?",
+      "tipo": "seguimiento",
+      "accion": "responder",
+      "claves": ["8:00 a. m. – 2:00 p. m."],
+      "evidencia": "Sábados: 8:00 a. m. – 2:00 p. m.",
+      "respuesta_ideal": "Sí, los sábados abrimos de 8:00 a. m. a 2:00 p. m."
+    },
+    {
+      "cliente": "Si traigo 5 kilos de ropa con secado en máquina y planchado mediano, cuanto me cuesta?",
+      "tipo": "combinada",
+      "accion": "responder",
+      "claves": ["$450", "$350"],
+      "evidencia": "Lavado y secado en máquina: Kilo de ropa: $450\nPlanchado: Opcional: +$200 por carga pequeña, +$350 mediana, +$500 grande",
+      "respuesta_ideal": "Serían 5 kilos a $450 cada uno ($2.250), más $350 de planchado mediano, total $2.600 más IVA."
+    },
+    {
+      "cliente": "¿Hacen impermeabilización?",
+      "tipo": "sin_respuesta",
+      "accion": "responder",
+      "claves": ["Impermeabilización", "+$200"],
+      "evidencia": "Impermeabilización | +$200/panda",
+      "respuesta_ideal": "Sí, ofrecemos impermeabilización a $200 adicionales por carga. Consulta si tus prendas lo necesitan."
+    },
+    {
+      "cliente": "Gracias, voy a escribirles entonces",
+      "tipo": "charla",
+      "accion": "charla",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "Claro, escribe por WhatsApp al +598 99 427653 o llama al +598 2 901 7844. ¡Te esperamos!"
+    }
+  ],
+  [
+    {
+      "cliente": "¿Aceptan tarjeta de credito?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["tarjeta de débito y crédito"],
+      "evidencia": "Aceptamos efectivo (pesos uruguayos), tarjeta de débito y crédito, Mercado Pago, y transferencia bancaria",
+      "respuesta_ideal": "Sí, aceptamos tarjeta de débito y crédito sin recargo, además de efectivo, Mercado Pago y transferencia."
+    },
+    {
+      "cliente": "¿Como es la política si me dañan una prenda?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["defecto causado por nosotros", "7 días", "devolvemos"],
+      "evidencia": "Si encontramos un defecto causado por nosotros (mancha, rotura), devolvemos el dinero sin preguntas dentro de 7 días.",
+      "respuesta_ideal": "Si el daño es culpa nuestra, te devolvemos el dinero dentro de 7 días sin problemas. Las manchas preexistentes no las cubrimos, así que consulta antes si tienes dudas."
+    },
+    {
+      "cliente": "Tengo una tela muy delicada, ¿que hago?",
+      "tipo": "instruccion",
+      "accion": "derivar",
+      "claves": ["Prendas delicadas", "Advísanos"],
+      "evidencia": "Prendas delicadas: Advísanos si tienes lana, seda, algodón delicado o ropa de diseñador. Tratamiento especial sin costo extra.",
+      "respuesta_ideal": "Trae la prenda cuando vengas y avísanos si es lana, seda o algodón delicado. Hacemos tratamiento especial sin costo extra. También puedes llamar al +598 2 901 7844 para consultar antes."
+    },
+    {
+      "cliente": "¿Tienen seguro para prendas valiosas?",
+      "tipo": "sin_respuesta",
+      "accion": "responder",
+      "claves": ["seguro", "USD 500"],
+      "evidencia": "Nuestro seguro cubre pérdidas por valor hasta USD 500. Para prendas más valiosas, avísanos al recibir.",
+      "respuesta_ideal": "Sí, tenemos seguro que cubre pérdidas hasta USD 500. Si tu prenda vale más, avísanos al traerla."
+    }
+  ],
+  [
+    {
+      "cliente": "¿Hacen entrega a domicilio?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["Retiro y entrega", "+$180"],
+      "evidencia": "Retiro y entrega: +$180 por viaje (radio 5 km desde la tienda).",
+      "respuesta_ideal": "Sí, hacemos retiro y entrega a $180 por viaje dentro de 5 km desde la tienda."
+    },
+    {
+      "cliente": "¿Y si es más lejos que eso?",
+      "tipo": "seguimiento",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "Para distancias mayores a 5 km, llama al +598 2 901 7844 y consulta. Podría haber un costo adicional."
+    },
+    {
+      "cliente": "¿Lavan zapatos deportivos?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No tengo esa información. Te recomiendo que llames o escribas por WhatsApp para consultar si es posible."
+    },
+    {
+      "cliente": "¿Que productos usan para lavar?",
+      "tipo": "instruccion",
+      "accion": "responder",
+      "claves": ["biodegradables", "sin químicos agresivos", "pieles sensibles"],
+      "evidencia": "Detergentes biodegradables. Perfumes y suavizantes sin químicos agresivos. Apto para pieles sensibles.",
+      "respuesta_ideal": "Usamos detergentes biodegradables y suavizantes sin químicos agresivos, aptos para pieles sensibles."
+    },
+    {
+      "cliente": "Listo, muchas gracias",
+      "tipo": "charla",
+      "accion": "charla",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "¡De nada! Nos vemos pronto en Lavandería Azul Marino."
+    }
+  ],
+  [
+    {
+      "cliente": "Hola, buenos días",
+      "tipo": "charla",
+      "accion": "charla",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "Buenos días, ¿cómo estás? ¿En qué te ayudamos?"
+    },
+    {
+      "cliente": "¿Cuanto tarda el lavado de una sábana?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["juego", "$380"],
+      "evidencia": "Sábanas (juego) | $380",
+      "respuesta_ideal": "Un juego de sábanas cuesta $380. Si las traes antes de las 11:00 a. m., las entregamos a las 5:00 p. m."
+    },
+    {
+      "cliente": "¿Se pueden lavar alfombras?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["Alfombra / tapiz", "$650"],
+      "evidencia": "Alfombra / tapiz (m²) | $650",
+      "respuesta_ideal": "Sí, lavamos alfombras y tapices a $650 por metro cuadrado."
+    },
+    {
+      "cliente": "¿Que otros servicios especiales hay además de esos?",
+      "tipo": "sin_respuesta",
+      "accion": "responder",
+      "claves": ["Cortinas", "Edredón", "$480"],
+      "evidencia": "Cortinas | $480",
+      "respuesta_ideal": "También lavamos cortinas a $480, edredones a $1.900, hacemos impermeabilización y tenemos servicio de secado en salón por $300 adicionales."
+    },
+    {
+      "cliente": "¿Hay descuento por cantidad?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No tengo información sobre eso. Llama al +598 2 901 7844 y pregunta si pueden hacer algo especial en tu caso."
+    }
+  ]
+]

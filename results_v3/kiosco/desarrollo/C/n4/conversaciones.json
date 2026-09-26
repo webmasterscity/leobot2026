@@ -1,0 +1,212 @@
+[
+  [
+    {
+      "cliente": "¿Qué tours tienen disponibles?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["tours de 1-2 días", "tours de 3-5 días", "tours especiales"],
+      "evidencia": "Tours de 1-2 días:\n— Galápagos desde la costa, Otavalo, Quilotoa, Misahuallí\n\nTours de 3-5 días:\n— Amazonía, Petroglifos, Volcanes",
+      "respuesta_ideal": "Tenemos tours de 1-2 días (Otavalo, Quilotoa, Misahuallí, Galápagos), tours de 3-5 días (Amazonía, volcanes, petroglifos) y tours especiales (birding, gastronomía, UNESCO)."
+    },
+    {
+      "cliente": "¿Cuanto cuesta el tour a Otavalo?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["$55", "USD 55", "1 día"],
+      "evidencia": "Otavalo y mercado indígena: 1 día, salidas martes y sábado, desde USD 55 p.p.",
+      "respuesta_ideal": "El tour a Otavalo y el mercado indígena cuesta desde USD 55 por persona, es de 1 día, y salimos martes y sábado."
+    },
+    {
+      "cliente": "¿El tour incluye comidas?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["desayuno, almuerzo, cena"],
+      "evidencia": "Incluido: Comidas según el itinerario (desayuno, almuerzo, cena)",
+      "respuesta_ideal": "Sí, incluye desayuno, almuerzo y cena según el itinerario. También transporte, guía y entrada a los lugares."
+    },
+    {
+      "cliente": "¿Necesito algún documento de identificación?",
+      "tipo": "sin_respuesta",
+      "accion": "responder",
+      "claves": ["Cédula o pasaporte"],
+      "evidencia": "Cédula o pasaporte requeridos para identificación",
+      "respuesta_ideal": "Sí, requiere cédula o pasaporte para identificación. Avísanos con anticipación si tienes algún requisito especial."
+    },
+    {
+      "cliente": "Dale, voy a reservar entonces",
+      "tipo": "charla",
+      "accion": "charla",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "¡Excelente! Llama al +593 2 255-8392 o escribe a reservas@aventurasandinas.com. Te esperamos."
+    }
+  ],
+  [
+    {
+      "cliente": "¿Hacen tours a la Amazonía?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["Amazonía completa", "3 días", "USD 450"],
+      "evidencia": "Amazonía completa (Tena, Coca): 3 días / 2 noches, alojamiento en la selva, desde USD 450 p.p. (mín. 2 pax)",
+      "respuesta_ideal": "Sí, tenemos un tour de Amazonía completa de 3 días y 2 noches desde USD 450 por persona. Mínimo 2 personas."
+    },
+    {
+      "cliente": "¿Y también el rio Napo?",
+      "tipo": "seguimiento",
+      "accion": "responder",
+      "claves": ["Misahuallí", "río Napo", "2 días"],
+      "evidencia": "Misahuallí y río Napo (Amazonía): 2 días / 1 noche, cabaña con comidas, desde USD 185 p.p.",
+      "respuesta_ideal": "Sí, ofrecemos Misahuallí y río Napo por USD 185 por persona, de 2 días y 1 noche, también con alojamiento y comidas."
+    },
+    {
+      "cliente": "Si llevo a mi pareja y queremos la Amazonía de 3 dias, cuanto costaria en total?",
+      "tipo": "combinada",
+      "accion": "responder",
+      "claves": ["$450", "2 pax", "USD 900"],
+      "evidencia": "Amazonía completa (Tena, Coca): 3 días / 2 noches, alojamiento en la selva, desde USD 450 p.p. (mín. 2 pax)",
+      "respuesta_ideal": "Para dos personas en el tour de Amazonía de 3 días, sería USD 450 por cada uno, total USD 900 más un depósito del 30 % para confirmar."
+    },
+    {
+      "cliente": "¿Que tan difícil es el tour de volcanes? ¿Puedo ir siendo mayor de 60?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "El tour de volcanes implica escaladas. No puedo evaluarte, pero te recomiendo consultar con tu médico primero, especialmente por la altura de Quito (2.850 m). Luego contacta con la agencia."
+    },
+    {
+      "cliente": "Gracias, voy a consultar con mi doctor",
+      "tipo": "charla",
+      "accion": "charla",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "Perfecto, es buena idea. Cuando tengas el visto bueno, escríbenos y reservamos tu lugar."
+    }
+  ],
+  [
+    {
+      "cliente": "¿Se puede cambiar la fecha de una reserva?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["Cambios de fecha", "gratis hasta 7 días antes"],
+      "evidencia": "Cambios de fecha: gratis hasta 7 días antes de la salida.",
+      "respuesta_ideal": "Sí, puedes cambiar de fecha gratis hasta 7 días antes de la salida. Después de eso, contacta con la agencia para ver opciones."
+    },
+    {
+      "cliente": "¿Que formas de pago aceptan?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["Transferencia bancaria", "Tarjeta de crédito/débito", "Efectivo", "dólares USA"],
+      "evidencia": "Transferencia bancaria (Pichincha, Produbanco, Banco del Pacífico): sin costo\nTarjeta de crédito/débito (en la oficina): sin recargo\nEfectivo (dólares USA o USD equivalente): aceptado",
+      "respuesta_ideal": "Aceptamos transferencia bancaria sin costo, tarjeta de crédito/débito sin recargo, efectivo en dólares, y PayPal con 3 % adicional."
+    },
+    {
+      "cliente": "¿Que necesito saber sobre las vacunas para la Amazonía?",
+      "tipo": "instruccion",
+      "accion": "derivar",
+      "claves": ["vacunas", "médico", "centro de vacunación"],
+      "evidencia": "Vacunas: consulta con tu médico para Amazonía",
+      "respuesta_ideal": "Es importante que consultes con un médico o centro de vacunación sobre las recomendaciones para la Amazonía. Nosotros te damos todas las instrucciones, pero la salud requiere asesoramiento médico."
+    },
+    {
+      "cliente": "¿A que hora hacen las salidas?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "La hora de salida depende del tour específico. Llama al +593 2 255-8392 o escribe a reservas@aventurasandinas.com con la fecha que te interesa."
+    },
+    {
+      "cliente": "¿Enseñan idioma indígena en algún tour?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No tengo esa información. Consulta directamente con la agencia sobre tours culturales que incluyan enseñanza de idiomas locales."
+    }
+  ],
+  [
+    {
+      "cliente": "¿Cual es el precio del tour de Galápagos?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["Galápagos", "USD 650", "2 días"],
+      "evidencia": "Galápagos desde la costa (Salinas): 2 días / 1 noche, crucero pequeño, desde USD 650 p.p. (mín. 4 pax)",
+      "respuesta_ideal": "El tour a Galápagos cuesta desde USD 650 por persona, 2 días y 1 noche en crucero pequeño. Mínimo 4 personas."
+    },
+    {
+      "cliente": "¿El vuelo a Galápagos está incluído?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["No incluido", "Vuelos domésticos"],
+      "evidencia": "No incluido: Vuelos domésticos e internacionales",
+      "respuesta_ideal": "No, los vuelos no están incluidos. El precio cubre el crucero, alojamiento y comidas desde la costa. Tú compras el vuelo por tu cuenta."
+    },
+    {
+      "cliente": "Si voy con mi familia completa (4 personas) al tour de Quilotoa, cuanto pagaríamos?",
+      "tipo": "combinada",
+      "accion": "responder",
+      "claves": ["USD 65", "$65", "4 personas", "USD 260"],
+      "evidencia": "Quilotoa y lagunas andinas: 1 día, salidas miércoles y domingo, desde USD 65 p.p.",
+      "respuesta_ideal": "Serían USD 65 por persona. Para 4 personas, el total es USD 260. Se requiere un depósito del 30 % (USD 78) para confirmar."
+    },
+    {
+      "cliente": "¿Puedo hacer un tour personalizado a medida?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "Probablemente sí, pero eso es algo que debes negociar directamente con la agencia. Llama al +593 2 255-8392 y habla con el gerente Carlos."
+    },
+    {
+      "cliente": "Perfecto, muchas gracias por la info",
+      "tipo": "charla",
+      "accion": "charla",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "¡De nada! Cualquier duda adicional, escribe por WhatsApp al +593 98 456 7890 o llama. ¡Esperamos tu reserva!"
+    }
+  ],
+  [
+    {
+      "cliente": "Hola, ¿cuales son sus horarios de atención?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["9:00 a. m. – 6:00 p. m.", "Lunes a viernes"],
+      "evidencia": "Oficina abierta: Lunes a viernes: 9:00 a. m. – 6:00 p. m. Sábados: 9:00 a. m. – 1:00 p. m.",
+      "respuesta_ideal": "Abrimos lunes a viernes de 9:00 a. m. a 6:00 p. m., sábados de 9:00 a. m. a 1:00 p. m. Los domingos solo respondemos por WhatsApp."
+    },
+    {
+      "cliente": "¿Hacen tours el domingo?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["Todos los días del año"],
+      "evidencia": "Salidas de tours: Todos los días del año.",
+      "respuesta_ideal": "Sí, hacemos tours todos los días del año, incluso domingos. Lo que cierra el domingo es la oficina física."
+    },
+    {
+      "cliente": "¿Que tour incluye observacion de aves?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["Birding", "USD 250", "2 días"],
+      "evidencia": "Birding (observación de aves) | 2 días | USD 250",
+      "respuesta_ideal": "Tenemos un tour de Birding (observación de aves) de 2 días desde USD 250 por persona. Mínimo 2 personas."
+    },
+    {
+      "cliente": "¿Cuales son los horarios exactos en que salen los tours?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "Los horarios varían según el tour. Escribe a reservas@aventurasandinas.com con el tour que quieres y te damos la hora exacta de salida."
+    },
+    {
+      "cliente": "Gracias de todas formas",
+      "tipo": "charla",
+      "accion": "charla",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "¡Que disfrutes tu aventura por Ecuador! Nos vemos en Aventuras Andinas Tours."
+    }
+  ]
+]

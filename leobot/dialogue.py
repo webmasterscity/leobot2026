@@ -760,8 +760,12 @@ class DialogueMixin:
             rows=[]
             for part in parts:
                 rows.append(self.respond(part))
-            return {'text':f'Procesé {len(rows)} segmentos del documento en orden.',
-                    'status':'document_processed','sentences':rows,
+            # G-57: the reply is the one to the last question, or to the last
+            # part; an internal message is never shown as a reply.
+            asked=[r for part,r in zip(parts,rows) if self._question_like(part)]
+            chosen=(asked or rows)[-1]
+            return {**chosen,'status':chosen.get('status'),'document_status':'document_processed',
+                    'sentences':rows,
                     'successful':sum(r.get('status') not in ('unrecognized','ambiguous') for r in rows),
                     'total':len(rows)}
         original=parts[0]
