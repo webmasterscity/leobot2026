@@ -1,0 +1,36 @@
+[
+  [
+    {"cliente": "Hola buenas tardes", "tipo": "charla", "accion": "charla", "claves": [], "evidencia": null, "respuesta_ideal": "¡Hola, buenas tardes! Bienvenido a Manos y Tela, ¿en qué mueble está pensando?"},
+    {"cliente": "¿cuanto cuesta tapizar un sillon de un cuerpo?", "tipo": "directa", "accion": "responder", "claves": ["$U 3.500"], "evidencia": "Tapizado de sillón de 1 cuerpo: desde $U 3.500 (según tela y estado del mueble)", "respuesta_ideal": "El tapizado de un sillón de un cuerpo arranca desde $U 3.500, según la tela y el estado del mueble."},
+    {"cliente": "¿y eso incluye la tela?", "tipo": "seguimiento", "accion": "responder", "claves": ["NO incluyen la tela"], "evidencia": "los precios de arriba NO incluyen la tela.", "respuesta_ideal": "No, ese precio no incluye la tela."},
+    {"cliente": "¿cual es el horario los sabados?", "tipo": "directa", "accion": "responder", "claves": ["9:00 a 12:00"], "evidencia": "Sáb 9:00 a 12:00.", "respuesta_ideal": "Los sábados atendemos de 9:00 a 12:00."},
+    {"cliente": "¿Atienden los domingos?", "tipo": "si_no", "accion": "responder", "claves": ["Dom cerrado"], "evidencia": "Dom cerrado.", "respuesta_ideal": "No, los domingos permanecemos cerrados."},
+    {"cliente": "¿tienen local en Paysandú también?", "tipo": "sin_respuesta", "accion": "abstenerse", "claves": [], "evidencia": null, "respuesta_ideal": "No tengo información de otro local fuera de Salto, solo contamos con la dirección de Uruguay 862 esquina Brasil."}
+  ],
+  [
+    {"cliente": "¿Cuánto tarda un sofá de 3 cuerpos?", "tipo": "directa", "accion": "responder", "claves": ["15 días hábiles"], "evidencia": "Un sofá de 3 cuerpos puede demorar hasta 15 días hábiles.", "respuesta_ideal": "Un sofá de 3 cuerpos puede demorar hasta 15 días hábiles."},
+    {"cliente": "quiero tapizar 3 sillas de comedor con tela propia, ¿cuánto pagaría en total?", "tipo": "combinada", "accion": "responder", "claves": ["$U 1.200"], "evidencia": "Tapizado de silla de comedor (unidad): $U 1.200", "respuesta_ideal": "Las 3 sillas saldrían $U 3.600 en total, a $U 1.200 cada una."},
+    {"cliente": "¿cuánto cobran por metro de tela si la ponen ustedes?", "tipo": "directa", "accion": "responder", "claves": ["$U 450", "$U 900"], "evidencia": "el metraje se cobra aparte, entre $U 450 y $U 900 el metro según el tejido.", "respuesta_ideal": "El metro de tela, si la ponemos nosotros, sale entre $U 450 y $U 900 según el tejido."},
+    {"cliente": "¿me pueden confirmar que el sillón estará listo el viernes que viene?", "tipo": "instruccion", "accion": "derivar", "claves": [], "evidencia": "No confirmes fechas de entrega exactas ni turnos: eso se coordina directamente en el taller al 099 812 445.", "respuesta_ideal": "No le puedo confirmar una fecha exacta por acá; para coordinarla le recomiendo llamar directamente al taller al 099 812 445."},
+    {"cliente": "Dale, muchas gracias, buenas tardes", "tipo": "charla", "accion": "charla", "claves": [], "evidencia": null, "respuesta_ideal": "De nada, ¡buenas tardes, lo esperamos!"}
+  ],
+  [
+    {"cliente": "¿hacen tapizado de cabeceras de cama con luces led incorporadas?", "tipo": "sin_respuesta", "accion": "abstenerse", "claves": [], "evidencia": null, "respuesta_ideal": "No tengo información sobre cabeceras con luces led; solo se menciona el tapizado de cabeceras en general."},
+    {"cliente": "¿tapizan asientos de auto?", "tipo": "si_no", "accion": "responder", "claves": ["Retapizado de asientos de auto clásico"], "evidencia": "Retapizado de asientos de auto clásico: consultar, varía mucho según el modelo", "respuesta_ideal": "Sí, hacemos retapizado de asientos de auto clásico."},
+    {"cliente": "¿y cuánto cuesta eso?", "tipo": "seguimiento", "accion": "responder", "claves": ["consultar, varía mucho según el modelo"], "evidencia": "Retapizado de asientos de auto clásico: consultar, varía mucho según el modelo", "respuesta_ideal": "El precio no es fijo, varía mucho según el modelo del auto, así que hay que consultarlo puntualmente."},
+    {"cliente": "¿puedo pagar en cuotas con tarjeta de credito?", "tipo": "si_no", "accion": "responder", "claves": ["No trabajamos con tarjeta de crédito en cuotas"], "evidencia": "No trabajamos con tarjeta de crédito en cuotas.", "respuesta_ideal": "No, no trabajamos con tarjeta de crédito en cuotas; aceptamos efectivo, transferencia bancaria y Mercado Pago."},
+    {"cliente": "El sillón que me tapizaron hace 2 meses se descosió, ¿qué hago?", "tipo": "instruccion", "accion": "derivar", "claves": [], "evidencia": "Si preguntan por reclamos de garantía, pedir que traigan el mueble al taller para evaluarlo, no resolver el reclamo por el chat.", "respuesta_ideal": "Como está dentro de los 6 meses de garantía contra descosidos, le pido que traiga el sillón al taller para que lo evaluemos en persona."}
+  ],
+  [
+    {"cliente": "¿Qué formas de pago aceptan?", "tipo": "directa", "accion": "responder", "claves": ["efectivo", "transferencia bancaria", "Mercado Pago"], "evidencia": "Aceptamos efectivo, transferencia bancaria y Mercado Pago.", "respuesta_ideal": "Aceptamos efectivo, transferencia bancaria y Mercado Pago."},
+    {"cliente": "¿cuánto hay que dejar de seña?", "tipo": "directa", "accion": "responder", "claves": ["50%"], "evidencia": "Se pide una seña del 50% al dejar el mueble y el saldo se paga al retirarlo.", "respuesta_ideal": "Se pide una seña del 50% al dejar el mueble, y el resto se paga al retirarlo."},
+    {"cliente": "¿hacen envios a Montevideo por encomienda?", "tipo": "sin_respuesta", "accion": "abstenerse", "claves": [], "evidencia": null, "respuesta_ideal": "No tengo información de envíos por encomienda a Montevideo; solo contamos con retiro y entrega a domicilio en la zona de Salto."},
+    {"cliente": "Gracias, che, un gusto", "tipo": "charla", "accion": "charla", "claves": [], "evidencia": null, "respuesta_ideal": "¡Un gusto para nosotros, cualquier cosa nos escribe!"}
+  ],
+  [
+    {"cliente": "¿Cuánto sale el retiro a domicilio dentro de Salto?", "tipo": "directa", "accion": "responder", "claves": ["$U 400"], "evidencia": "Hacemos retiro y entrega a domicilio dentro del radio de Salto capital por $U 400 el viaje (ida y vuelta).", "respuesta_ideal": "El retiro y entrega a domicilio dentro de Salto capital cuesta $U 400 el viaje, ida y vuelta."},
+    {"cliente": "¿la garantia cubre si mi perro rompe la tela?", "tipo": "si_no", "accion": "responder", "claves": ["no cubre roturas por mal uso ni por mascotas"], "evidencia": "La garantía no cubre roturas por mal uso ni por mascotas.", "respuesta_ideal": "No, la garantía no cubre roturas por mal uso ni causadas por mascotas."},
+    {"cliente": "¿puedo elegir el color exacto de la tela por catálogo online?", "tipo": "sin_respuesta", "accion": "abstenerse", "claves": [], "evidencia": null, "respuesta_ideal": "No tengo confirmado si hay catálogo online; el muestrario de más de 40 telas está disponible para verlo en el taller."},
+    {"cliente": "¿con quién puedo coordinar la cotización por WhatsApp?", "tipo": "directa", "accion": "responder", "claves": ["099 812 445"], "evidencia": "mandar fotos por WhatsApp al 099 812 445 para una idea aproximada", "respuesta_ideal": "Puede escribir por WhatsApp al 099 812 445 para coordinar la cotización con fotos del mueble."}
+  ]
+]
