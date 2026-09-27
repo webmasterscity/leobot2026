@@ -1,0 +1,493 @@
+{
+  "experiment": "G93",
+  "scope": "spent business development; external semantic-class prototype; not production",
+  "repository_engine_sha": "11a1ef5836382d81a643cad0b217a8669ce0f2d1",
+  "effective_selector_reference": "fe2f3116e8d2bf0a6c76eabfce496dbb4780d973",
+  "reference_sha256": {
+    "leobot/context.py": "3c907f07775aa9da574df693fa043a33ae773adc8ff78ec6470d6a86f93feddd",
+    "experiments/par2_seleccion.py": "54d4337cdd9d5bfeaa482cb9ba89de248d2d4fbe45c567e29c62bac9c0397eb1"
+  },
+  "sources_sha256": {
+    "experiments/g93_semantic_types.py": "28c38590d8f6a88f1f521ca2fec2b744da250fc77910dc8e1996fb61c32df1d9",
+    "experiments/test_g93_semantic_types.py": "2365c07d06f7c3a9906812e26e0a28bb81157490e46cc2c8ffca139ddf448dc8",
+    "experiments/g85_human_selection.py": "c71ed5b519b84b04fde23c65bcbb12e99a27c8861ce92fa1ee4ab09c64e3f0e9",
+    "experiments/g84_indirect_alignment.py": "718f001e3839e5c8ff77c28bce5a0a4ccece48f3bc81df9a5c455182addde522",
+    "experiments/g84b_compact_replay.py": "a6f30fe340d5f63be71ee96ad1730d335f353d646c096e9769513ac3eb366029",
+    "experiments/g79_joint_selection.py": "8521df478c0ec3aeb4d5f3a5e8d82b1a55a4d3a913049de3b9407c03361204aa",
+    "experiments/g68_confianza.py": "e564ac88b8307caeac219a2ecbee7ff9d2857799c0b089402541c5a73ca0ef00",
+    "experiments/g75_relational_evidence.py": "abaab742e407c8e53655e20714e192f5bb9ac0c7c644979fc575c093fe981459",
+    "results_v3/g93_source_manifest.json": "525bc20db753f49ce8588665dc37dd84c723dcb90bd71c57d7175a32760def2e",
+    "prereg/G-93-clases-amplias-aprendidas-de-respuestas.md": "59041fb9117fe399073e0dec5dbae7eb9c57f57db3081bfd1d7b07e744e5f59b"
+  },
+  "g84_models_sha256": "fd528ab70a602289c271916835c00c570e21b7b2d5ca0f08207515f2bf0384b7",
+  "base_sha256": "6fff61c20fcd5812d785eec22b6c595e19568f98ec31559e689c7fb95fe6d79f",
+  "education": {
+    "source": {
+      "articles": 3064,
+      "eligible": 14752,
+      "selected": 10000,
+      "groups": 2926,
+      "exclusions": {
+        "published_example": 1,
+        "no_rival_without_answer": 274,
+        "invalid_or_crossing_span": 9
+      },
+      "selected_ids_sha256": "4256855319693a57756546fbd4136dd7d5e4ebdb4a00abd60f665558eb0a21ba",
+      "source_sha256": "1d5c76176646e2ae7bdcd8b5ec6f18349102a9363aa25ad7d0e48262d7480d43"
+    },
+    "coverage": {
+      "semantic_answers": 8647,
+      "grammar_answers": 9930,
+      "without_question_key": 70,
+      "shuffled_rows_changed": 769
+    },
+    "supported_keys": {
+      "semantic": 18,
+      "grammar": 25,
+      "shuffled": 18
+    },
+    "lexicon": {
+      "noun_entries": 100336,
+      "joined_entries": 70610,
+      "multiword_excluded": 29331,
+      "split_excluded": 395,
+      "words": 41705,
+      "classes": 26,
+      "ambiguous_words": 6903
+    },
+    "acquisition_cpu_s": 6.7853696569999995,
+    "removed": {
+      "turns": 3520,
+      "rows": 20629,
+      "features": [
+        "alignment1_distance",
+        "alignment1_known",
+        "alignment1_margin",
+        "alignment1_score",
+        "alignment2_distance",
+        "alignment2_known",
+        "alignment2_margin",
+        "alignment2_score",
+        "cifra",
+        "cls",
+        "cov",
+        "exp_ADJ",
+        "exp_NOUN",
+        "exp_NUM",
+        "exp_OTRO",
+        "exp_PROPN",
+        "exp_VERB",
+        "forma",
+        "heredado",
+        "largo",
+        "margen",
+        "nexp_ADJ",
+        "nexp_NOUN",
+        "nexp_NUM",
+        "nexp_OTRO",
+        "nexp_PROPN",
+        "nexp_VERB",
+        "propio",
+        "puente",
+        "rango",
+        "raro",
+        "tipo",
+        "u"
+      ],
+      "preparation_and_learning_cpu_s": 36.720610663
+    },
+    "semantic": {
+      "turns": 3520,
+      "rows": 20629,
+      "features": [
+        "alignment1_distance",
+        "alignment1_known",
+        "alignment1_margin",
+        "alignment1_score",
+        "alignment2_distance",
+        "alignment2_known",
+        "alignment2_margin",
+        "alignment2_score",
+        "cifra",
+        "cls",
+        "cov",
+        "exp_ADJ",
+        "exp_NOUN",
+        "exp_NUM",
+        "exp_OTRO",
+        "exp_PROPN",
+        "exp_VERB",
+        "forma",
+        "heredado",
+        "largo",
+        "margen",
+        "nexp_ADJ",
+        "nexp_NOUN",
+        "nexp_NUM",
+        "nexp_OTRO",
+        "nexp_PROPN",
+        "nexp_VERB",
+        "propio",
+        "puente",
+        "rango",
+        "raro",
+        "semantic_agreement",
+        "semantic_available",
+        "semantic_known",
+        "semantic_margin",
+        "tipo",
+        "u"
+      ],
+      "preparation_and_learning_cpu_s": 46.464601842
+    },
+    "grammar": {
+      "turns": 3520,
+      "rows": 20629,
+      "features": [
+        "alignment1_distance",
+        "alignment1_known",
+        "alignment1_margin",
+        "alignment1_score",
+        "alignment2_distance",
+        "alignment2_known",
+        "alignment2_margin",
+        "alignment2_score",
+        "cifra",
+        "cls",
+        "cov",
+        "exp_ADJ",
+        "exp_NOUN",
+        "exp_NUM",
+        "exp_OTRO",
+        "exp_PROPN",
+        "exp_VERB",
+        "forma",
+        "heredado",
+        "largo",
+        "margen",
+        "nexp_ADJ",
+        "nexp_NOUN",
+        "nexp_NUM",
+        "nexp_OTRO",
+        "nexp_PROPN",
+        "nexp_VERB",
+        "propio",
+        "puente",
+        "rango",
+        "raro",
+        "semantic_agreement",
+        "semantic_available",
+        "semantic_known",
+        "semantic_margin",
+        "tipo",
+        "u"
+      ],
+      "preparation_and_learning_cpu_s": 41.93242915500001
+    },
+    "shuffled": {
+      "turns": 3520,
+      "rows": 20629,
+      "features": [
+        "alignment1_distance",
+        "alignment1_known",
+        "alignment1_margin",
+        "alignment1_score",
+        "alignment2_distance",
+        "alignment2_known",
+        "alignment2_margin",
+        "alignment2_score",
+        "cifra",
+        "cls",
+        "cov",
+        "exp_ADJ",
+        "exp_NOUN",
+        "exp_NUM",
+        "exp_OTRO",
+        "exp_PROPN",
+        "exp_VERB",
+        "forma",
+        "heredado",
+        "largo",
+        "margen",
+        "nexp_ADJ",
+        "nexp_NOUN",
+        "nexp_NUM",
+        "nexp_OTRO",
+        "nexp_PROPN",
+        "nexp_VERB",
+        "propio",
+        "puente",
+        "rango",
+        "raro",
+        "semantic_agreement",
+        "semantic_available",
+        "semantic_known",
+        "semantic_margin",
+        "tipo",
+        "u"
+      ],
+      "preparation_and_learning_cpu_s": 45.50131537600001
+    }
+  },
+  "fits": [
+    {
+      "cpu_s": 4.828670813999999,
+      "rows": 10486,
+      "features": 33,
+      "iterations": 8
+    },
+    {
+      "cpu_s": 4.553344989000003,
+      "rows": 10143,
+      "features": 33,
+      "iterations": 8
+    },
+    {
+      "cpu_s": 9.109173814000002,
+      "rows": 20629,
+      "features": 33,
+      "iterations": 8
+    },
+    {
+      "cpu_s": 7.27301288999999,
+      "rows": 10486,
+      "features": 37,
+      "iterations": 8
+    },
+    {
+      "cpu_s": 7.089294727999999,
+      "rows": 10143,
+      "features": 37,
+      "iterations": 8
+    },
+    {
+      "cpu_s": 11.087637490000006,
+      "rows": 20629,
+      "features": 37,
+      "iterations": 8
+    },
+    {
+      "cpu_s": 5.929466349000009,
+      "rows": 10486,
+      "features": 37,
+      "iterations": 8
+    },
+    {
+      "cpu_s": 5.85708167300001,
+      "rows": 10143,
+      "features": 37,
+      "iterations": 8
+    },
+    {
+      "cpu_s": 11.373581827999985,
+      "rows": 20629,
+      "features": 37,
+      "iterations": 8
+    },
+    {
+      "cpu_s": 6.0262099169999885,
+      "rows": 10486,
+      "features": 37,
+      "iterations": 8
+    },
+    {
+      "cpu_s": 5.978921127999996,
+      "rows": 10143,
+      "features": 37,
+      "iterations": 8
+    },
+    {
+      "cpu_s": 13.08932903600001,
+      "rows": 20629,
+      "features": 37,
+      "iterations": 8
+    }
+  ],
+  "candidates": {
+    "baseline": {
+      "core": 816,
+      "useful_core": 269,
+      "quotes": 580,
+      "absent_n": 488,
+      "quotes_without_data": 74,
+      "p50_ms": 0.29716899734921753,
+      "p95_ms": 0.5580099968938157,
+      "max_ms": 1.5168320023803972,
+      "response_sha256": "48913f9d34378663039f5619568320ad5347ff38112ef08499e27e672578a897",
+      "nonliteral_evidence": 0
+    },
+    "removed": {
+      "core": 816,
+      "useful_core": 327,
+      "quotes": 636,
+      "absent_n": 488,
+      "quotes_without_data": 73,
+      "p50_ms": 1.9847479998134077,
+      "p95_ms": 3.766353998798877,
+      "max_ms": 9.329788998002186,
+      "response_sha256": "ec018000f4401ea22f31c45206668ee888eaadcc00e61b8e124207b3727cd47f",
+      "nonliteral_evidence": 0
+    },
+    "semantic": {
+      "core": 816,
+      "useful_core": 331,
+      "quotes": 635,
+      "absent_n": 488,
+      "quotes_without_data": 73,
+      "p50_ms": 2.2199829982127994,
+      "p95_ms": 4.017568993731402,
+      "max_ms": 7.171006996941287,
+      "response_sha256": "517220d05cce4332b286418141f3f56ddff83d461003ca1d84ec6376c6dbe296",
+      "nonliteral_evidence": 0
+    },
+    "grammar": {
+      "core": 816,
+      "useful_core": 327,
+      "quotes": 634,
+      "absent_n": 488,
+      "quotes_without_data": 70,
+      "p50_ms": 2.1699229982914403,
+      "p95_ms": 4.14540599740576,
+      "max_ms": 7.285289000719786,
+      "response_sha256": "8c1a43727f2a2944cd4981a5bcc180f3e26097b7311d31c8323a059e0cf94c90",
+      "nonliteral_evidence": 0
+    },
+    "shuffled": {
+      "core": 816,
+      "useful_core": 352,
+      "quotes": 711,
+      "absent_n": 488,
+      "quotes_without_data": 89,
+      "p50_ms": 2.2521709979628213,
+      "p95_ms": 4.413844006194267,
+      "max_ms": 13.664351994520985,
+      "response_sha256": "fa523c0f8415fae62d50f4fbc839c5fea4297a6e55f8453485b89bf3f9942cf9",
+      "nonliteral_evidence": 0
+    },
+    "restored_direct": {
+      "core": 816,
+      "useful_core": 327,
+      "quotes": 636,
+      "absent_n": 488,
+      "quotes_without_data": 73,
+      "p50_ms": 2.1449039995786734,
+      "p95_ms": 4.4902299996465445,
+      "max_ms": 9.054231995833106,
+      "response_sha256": "ec018000f4401ea22f31c45206668ee888eaadcc00e61b8e124207b3727cd47f",
+      "nonliteral_evidence": 0
+    },
+    "disabled": {
+      "core": 816,
+      "useful_core": 269,
+      "quotes": 580,
+      "absent_n": 488,
+      "quotes_without_data": 74,
+      "p50_ms": 0.34848699579015374,
+      "p95_ms": 0.6695060001220554,
+      "max_ms": 3.640820999862626,
+      "response_sha256": "48913f9d34378663039f5619568320ad5347ff38112ef08499e27e672578a897",
+      "nonliteral_evidence": 0
+    }
+  },
+  "selection_without_abstention": {
+    "removed": {
+      "core": 816,
+      "correct_first": 482
+    },
+    "semantic": {
+      "core": 816,
+      "correct_first": 482
+    },
+    "grammar": {
+      "core": 816,
+      "correct_first": 482
+    },
+    "shuffled": {
+      "core": 816,
+      "correct_first": 481
+    }
+  },
+  "controls": {
+    "disabled_exact": true,
+    "direct_exact": true,
+    "reload_exact": true
+  },
+  "compaction": {
+    "source_sha256": "33fbe7059860f04b27aad8d6d60d311d3ab1677d7d05eaff6738477c87662e1d",
+    "source_unchanged": true,
+    "compact_sha256": "78eb2a8a24092d7358622e915fafb0b8ae77cecc474c6a98e45d40cbe3b78fb3",
+    "source_bytes": 112764825,
+    "compact_bytes": 79272859,
+    "same_top_level_keys": true,
+    "cpu_s": 10.960115174,
+    "peak_rss_kib": 586120
+  },
+  "restart": {
+    "result": {
+      "core": 816,
+      "useful_core": 331,
+      "quotes": 635,
+      "absent_n": 488,
+      "quotes_without_data": 73,
+      "p50_ms": 2.320955005416181,
+      "p95_ms": 4.573263999191113,
+      "max_ms": 8.740013006899972,
+      "response_sha256": "517220d05cce4332b286418141f3f56ddff83d461003ca1d84ec6376c6dbe296",
+      "nonliteral_evidence": 0
+    },
+    "error": null,
+    "cpu_s": 13.584355127,
+    "context_preparation_included": {
+      "alignment": {
+        "decode_cpu_s": 0.1397659769999997,
+        "context_cpu_s": 0.5396075989999964,
+        "decodes": 1,
+        "contexts": 72,
+        "identical_signal_check_cpu_s": 0.004001965000000496
+      },
+      "types": {
+        "context_cpu_s": 0.29174420499999965,
+        "contexts": 72
+      }
+    },
+    "peak_rss_kib": 566924
+  },
+  "gates": {
+    "useful_gain": false,
+    "absent": true,
+    "selection_gain": false,
+    "class_gain": false,
+    "literal": true,
+    "controls": true,
+    "base_size": true,
+    "latency": false,
+    "budget": true
+  },
+  "passes": false,
+  "cost": {
+    "teaching_cpu_s": 182.32823324400002,
+    "evaluation_cpu_s": 135.54749787999998,
+    "preparation_included": {
+      "alignment": {
+        "decode_cpu_s": 0.13099139500000767,
+        "context_cpu_s": 8.643970253000045,
+        "decodes": 2,
+        "contexts": 1153,
+        "identical_signal_check_cpu_s": 0.00300100900000011
+      },
+      "types": {
+        "context_cpu_s": 2.4666830180006727,
+        "contexts": 865
+      }
+    },
+    "total_cpu_s": 318.062615572,
+    "wall_s": 320.0393447089955,
+    "peak_rss_kib": 889376,
+    "parent_rss_during_children_kib": 303256,
+    "models_bytes": 13936115,
+    "base_bytes": 79272859,
+    "source_cpu_s": 0.9383594840000001,
+    "source_wall_s": 4.431000269003562,
+    "previous_g84_cpu_s": 144.275087572
+  }
+}
