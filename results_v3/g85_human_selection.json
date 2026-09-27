@@ -1,0 +1,267 @@
+{
+  "experiment": "G85",
+  "scope": "spent development; human education at selector; not production",
+  "repository_engine_sha": "11a1ef5836382d81a643cad0b217a8669ce0f2d1",
+  "effective_selector_reference": "fe2f3116e8d2bf0a6c76eabfce496dbb4780d973",
+  "reference_sha256": {
+    "leobot/context.py": "3c907f07775aa9da574df693fa043a33ae773adc8ff78ec6470d6a86f93feddd",
+    "experiments/par2_seleccion.py": "54d4337cdd9d5bfeaa482cb9ba89de248d2d4fbe45c567e29c62bac9c0397eb1"
+  },
+  "sources_sha256": {
+    "experiments/g85_human_selection.py": "c71ed5b519b84b04fde23c65bcbb12e99a27c8861ce92fa1ee4ab09c64e3f0e9",
+    "experiments/test_g85_human_selection.py": "1f70446fafd4fcf605e26e33867327e892daa6a2ad8a53f5171e797be5488a5d",
+    "experiments/g84_indirect_alignment.py": "718f001e3839e5c8ff77c28bce5a0a4ccece48f3bc81df9a5c455182addde522",
+    "experiments/g84b_compact_replay.py": "a6f30fe340d5f63be71ee96ad1730d335f353d646c096e9769513ac3eb366029",
+    "experiments/g78_localized_education.py": "3cc1004dfb7268f256dafdbe6fa92214a08e20e3b91f4d2cb5203f78396e4280",
+    "experiments/g79_joint_selection.py": "8521df478c0ec3aeb4d5f3a5e8d82b1a55a4d3a913049de3b9407c03361204aa",
+    "experiments/g68_confianza.py": "e564ac88b8307caeac219a2ecbee7ff9d2857799c0b089402541c5a73ca0ef00",
+    "experiments/g75_relational_evidence.py": "abaab742e407c8e53655e20714e192f5bb9ac0c7c644979fc575c093fe981459",
+    "prereg/G-85-educar-selector-con-evidencia-humana.md": "1f17b108cbc5ef10c1229efe3ae2a988392bfa4109ee93f8180df101a43dc198"
+  },
+  "g84_models_sha256": "fd528ab70a602289c271916835c00c570e21b7b2d5ca0f08207515f2bf0384b7",
+  "base_sha256": "6fff61c20fcd5812d785eec22b6c595e19568f98ec31559e689c7fb95fe6d79f",
+  "education": {
+    "source": {
+      "articles": 3064,
+      "eligible": 14752,
+      "selected": 10000,
+      "groups": 2926,
+      "exclusions": {
+        "published_example": 1,
+        "no_rival_without_answer": 274,
+        "invalid_or_crossing_span": 9
+      },
+      "selected_ids_sha256": "4256855319693a57756546fbd4136dd7d5e4ebdb4a00abd60f665558eb0a21ba",
+      "source_sha256": "1d5c76176646e2ae7bdcd8b5ec6f18349102a9363aa25ad7d0e48262d7480d43"
+    },
+    "contexts": 4622,
+    "contexts_without_units": 3,
+    "turns": 9666,
+    "rows": 47534,
+    "positive_rows": 9667,
+    "ambiguous_candidate_rows_excluded": 1115,
+    "excluded_turns": {
+      "no_positive_candidate": 317,
+      "no_negative_candidate": 17
+    },
+    "shuffled_label_changes": 14938
+  },
+  "parity": {
+    "exact": true,
+    "turns": 3520,
+    "rows": 20629
+  },
+  "fits": [
+    {
+      "cpu_s": 4.471629661999998,
+      "rows": 10486,
+      "features": 33,
+      "iterations": 8
+    },
+    {
+      "cpu_s": 4.227804229000014,
+      "rows": 10143,
+      "features": 33,
+      "iterations": 8
+    },
+    {
+      "cpu_s": 8.365059971999983,
+      "rows": 20629,
+      "features": 33,
+      "iterations": 8
+    },
+    {
+      "cpu_s": 22.926811415000003,
+      "rows": 58020,
+      "features": 33,
+      "iterations": 8
+    },
+    {
+      "cpu_s": 22.95481971000001,
+      "rows": 57677,
+      "features": 33,
+      "iterations": 8
+    },
+    {
+      "cpu_s": 27.03581527700001,
+      "rows": 68163,
+      "features": 33,
+      "iterations": 8
+    },
+    {
+      "cpu_s": 20.388857274999992,
+      "rows": 58020,
+      "features": 33,
+      "iterations": 7
+    },
+    {
+      "cpu_s": 19.905693389999982,
+      "rows": 57677,
+      "features": 33,
+      "iterations": 7
+    },
+    {
+      "cpu_s": 23.51692131300001,
+      "rows": 68163,
+      "features": 33,
+      "iterations": 7
+    }
+  ],
+  "candidates": {
+    "baseline": {
+      "core": 816,
+      "useful_core": 269,
+      "quotes": 580,
+      "absent_n": 488,
+      "quotes_without_data": 74,
+      "p50_ms": 0.2974460003315471,
+      "p95_ms": 0.6532919978781138,
+      "max_ms": 1.624213000468444,
+      "response_sha256": "48913f9d34378663039f5619568320ad5347ff38112ef08499e27e672578a897",
+      "nonliteral_evidence": 0
+    },
+    "without_human": {
+      "core": 816,
+      "useful_core": 327,
+      "quotes": 636,
+      "absent_n": 488,
+      "quotes_without_data": 73,
+      "p50_ms": 1.9988929998362437,
+      "p95_ms": 4.941077000694349,
+      "max_ms": 10.6399220021558,
+      "response_sha256": "ec018000f4401ea22f31c45206668ee888eaadcc00e61b8e124207b3727cd47f",
+      "nonliteral_evidence": 0
+    },
+    "human": {
+      "core": 816,
+      "useful_core": 268,
+      "quotes": 535,
+      "absent_n": 488,
+      "quotes_without_data": 74,
+      "p50_ms": 1.8740510022325907,
+      "p95_ms": 3.315284997370327,
+      "max_ms": 9.321724999608705,
+      "response_sha256": "eeaa1f0c5a13c7029441b23f0e30ff5c3b1b1946e1edaa47d3b9f3756dc0bbea",
+      "nonliteral_evidence": 0
+    },
+    "shuffled": {
+      "core": 816,
+      "useful_core": 258,
+      "quotes": 596,
+      "absent_n": 488,
+      "quotes_without_data": 98,
+      "p50_ms": 2.022984001087025,
+      "p95_ms": 5.287490999762667,
+      "max_ms": 12.342350997641915,
+      "response_sha256": "e6e1624a0d38ff9120e83ae6e3513b32c3f5d2220031afb31c8ae7d8ba55e888",
+      "nonliteral_evidence": 0
+    },
+    "disabled": {
+      "core": 816,
+      "useful_core": 269,
+      "quotes": 580,
+      "absent_n": 488,
+      "quotes_without_data": 74,
+      "p50_ms": 0.28374999965308234,
+      "p95_ms": 0.4786460012837779,
+      "max_ms": 1.230074998602504,
+      "response_sha256": "48913f9d34378663039f5619568320ad5347ff38112ef08499e27e672578a897",
+      "nonliteral_evidence": 0
+    }
+  },
+  "selection_without_abstention": {
+    "without_human": {
+      "core": 816,
+      "correct_first": 482
+    },
+    "human": {
+      "core": 816,
+      "correct_first": 460
+    },
+    "shuffled": {
+      "core": 816,
+      "correct_first": 443
+    }
+  },
+  "controls": {
+    "disabled_exact": true,
+    "features_exact": true,
+    "without_human_exact": true,
+    "reload_exact": true
+  },
+  "compaction": {
+    "source_sha256": "befad4cb7006cf7cde12f073122d85aaf3f8b8d929537026be0d995fd72a783b",
+    "source_unchanged": true,
+    "compact_sha256": "5fa94938471a49e087006b9c5f9a9bb0303401bde58066251118db183b18c0f8",
+    "source_bytes": 110319909,
+    "compact_bytes": 78311981,
+    "same_top_level_keys": true,
+    "cpu_s": 8.658557999,
+    "peak_rss_kib": 622248
+  },
+  "restart": {
+    "result": {
+      "core": 816,
+      "useful_core": 268,
+      "quotes": 535,
+      "absent_n": 488,
+      "quotes_without_data": 74,
+      "p50_ms": 1.8728209979599342,
+      "p95_ms": 3.4626710003067274,
+      "max_ms": 10.643024001183221,
+      "response_sha256": "eeaa1f0c5a13c7029441b23f0e30ff5c3b1b1946e1edaa47d3b9f3756dc0bbea",
+      "nonliteral_evidence": 0
+    },
+    "error": null,
+    "cpu_s": 11.6602404,
+    "context_preparation_included": {
+      "decode_cpu_s": 0.10799239900000002,
+      "context_cpu_s": 0.4889013099999904,
+      "decodes": 1,
+      "contexts": 72,
+      "identical_signal_check_cpu_s": 0.0030016729999999825
+    },
+    "peak_rss_kib": 622248
+  },
+  "gates": {
+    "useful_gain": false,
+    "absent": false,
+    "selection_gain": false,
+    "education_gain": false,
+    "literal": true,
+    "controls": true,
+    "base_size": true,
+    "latency": false,
+    "budget": true
+  },
+  "passes": false,
+  "cost": {
+    "teaching_cpu_s": 282.156057744,
+    "teaching_stages": {
+      "parity_and_business_preparation_cpu_s": 37.666903274,
+      "human_preparation_cpu_s": 85.180048831,
+      "selection_learning_cpu_s": 154.844013716
+    },
+    "teaching_preparation_included": {
+      "decode_cpu_s": 0.058999463999999335,
+      "context_cpu_s": 11.073763796001089,
+      "decodes": 1,
+      "contexts": 4766,
+      "identical_signal_check_cpu_s": 0.00200118300000085
+    },
+    "all_preparation_included": {
+      "decode_cpu_s": 0.11298694299999923,
+      "context_cpu_s": 14.179797799001477,
+      "decodes": 2,
+      "contexts": 5199,
+      "identical_signal_check_cpu_s": 0.00200118300000085
+    },
+    "evaluation_cpu_s": 92.74415123599994,
+    "total_cpu_s": 375.107741656,
+    "wall_s": 375.6723066210034,
+    "peak_rss_kib": 942172,
+    "parent_rss_during_children_kib": 319924,
+    "models_bytes": 8771439,
+    "base_bytes": 78311981
+  }
+}
