@@ -1,0 +1,160 @@
+{
+  "provenance": "Texto completo y orden proporcionados por el usuario el 2026-09-27; diagnóstico visible, no enseñanza ni reserva.",
+  "text": "Panadería La Espiga\nHorario: lunes a sábado de 7:00 a 19:00. Domingos cerrado.\nDirección: Calle Real 12, frente a la plaza.\nPagos: efectivo y tarjeta. No aceptamos cheques.\nProductos: pan de trigo, pan integral, croissants y tortas por encargo.\nLas tortas por encargo se piden con dos días de anticipación.\n",
+  "instructions": "",
+  "base_sha256": "6fff61c20fcd5812d785eec22b6c595e19568f98ec31559e689c7fb95fe6d79f",
+  "rows": [
+    {
+      "question": "¿A qué hora abren?",
+      "reply": {
+        "text": "No lo sé: no encontré esa información en el texto que tengo.",
+        "status": "unknown",
+        "evidence": null,
+        "confidence": null,
+        "cell": "2,2",
+        "candidate": {
+          "text": "Horario: lunes a sábado de 7:00 a 19:00.",
+          "precision": 0.2784
+        }
+      },
+      "candidate_rank": {
+        "unit": 0,
+        "score": 0.21204625789994713,
+        "margin": 1.0574198551734386,
+        "unaddressed": 0.4948,
+        "cell": "2,2",
+        "explained": {
+          "a": "direct",
+          "hora": "bridge"
+        },
+        "covered": 0.5245727206224645,
+        "asked": [
+          "NOUN",
+          0.47368421052631576
+        ],
+        "features": {
+          "u": "2",
+          "m": "2",
+          "form": "wh",
+          "cls": "NOUN:2",
+          "cov": "2",
+          "kind": "sentence",
+          "len": "1"
+        },
+        "useful": 0.2784
+      },
+      "ms": 0.3969330000472837
+    },
+    {
+      "question": "¿Aceptan cheques?",
+      "reply": {
+        "text": "No lo tengo seguro. Lo más cercano que dice el texto es: «No aceptamos cheques».",
+        "status": "closest",
+        "evidence": {
+          "unit": "No aceptamos cheques.",
+          "heading": "",
+          "index": 4
+        },
+        "confidence": 0.8667,
+        "cell": "0,4"
+      },
+      "candidate_rank": {
+        "unit": 4,
+        "score": 2.419736656227259,
+        "margin": 4.001246221102543,
+        "unaddressed": 0.0,
+        "cell": "0,4",
+        "explained": {
+          "aceptar": "direct",
+          "cheque": "direct"
+        },
+        "covered": 1.0,
+        "asked": null,
+        "features": {
+          "u": "0",
+          "m": "4",
+          "form": "sn",
+          "cls": "na",
+          "cov": "4",
+          "kind": "sentence",
+          "len": "0"
+        },
+        "useful": 0.8667
+      },
+      "ms": 0.10447900058352388
+    },
+    {
+      "question": "¿Tienen estacionamiento?",
+      "reply": {
+        "text": "No lo sé: no encontré esa información en el texto que tengo.",
+        "status": "unknown",
+        "evidence": null,
+        "confidence": null,
+        "cell": "4,0",
+        "candidate": {
+          "text": "Horario: lunes a sábado de 7:00 a 19:00.",
+          "precision": 0.0222
+        }
+      },
+      "candidate_rank": {
+        "unit": 0,
+        "score": -3.476895216978808,
+        "margin": 0.0,
+        "unaddressed": 0.9567,
+        "cell": "4,0",
+        "explained": {},
+        "covered": 0.0,
+        "asked": null,
+        "features": {
+          "u": "4",
+          "m": "0",
+          "form": "sn",
+          "cls": "na",
+          "cov": "0",
+          "kind": "sentence",
+          "len": "1"
+        },
+        "useful": 0.0222
+      },
+      "ms": 0.0840659995446913
+    },
+    {
+      "question": "¿Dónde quedan?",
+      "reply": {
+        "text": "No lo sé: no encontré esa información en el texto que tengo.",
+        "status": "unknown",
+        "evidence": null,
+        "confidence": null,
+        "cell": "1,2",
+        "candidate": {
+          "text": "Dirección: Calle Real 12, frente a la plaza.",
+          "precision": 0.2302
+        }
+      },
+      "candidate_rank": {
+        "unit": 2,
+        "score": 0.8651851826092829,
+        "margin": 1.9449760060635164,
+        "unaddressed": 0.244,
+        "cell": "1,2",
+        "explained": {},
+        "covered": 0.0,
+        "asked": [
+          "PROPN",
+          0.5291402192729371
+        ],
+        "features": {
+          "u": "1",
+          "m": "2",
+          "form": "wh",
+          "cls": "PROPN:2",
+          "cov": "0",
+          "kind": "line",
+          "len": "1"
+        },
+        "useful": 0.2302
+      },
+      "ms": 0.07410499983961927
+    }
+  ]
+}

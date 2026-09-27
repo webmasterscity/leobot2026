@@ -91,4 +91,4 @@ cuando el dato no exista.
 
 ## Resultado de desarrollo (2026-09-27)
 
-No pasó: promedio seleccionado por error fuera de enseñanza, 242–245/816 útiles frente a 269/816 de la base. Caso completo del usuario sigue absteniéndose en horario/dirección. CPU 14,6 s; RAM 522 MiB. No integrado. Auditoría independiente pendiente.
+No pasó: promedio seleccionado por error fuera de enseñanza, 242–245/816 útiles frente a 269/816 de la base. Caso completo del usuario sigue absteniéndose en horario/dirección. CPU 14,6 s; RAM 522 MiB. No integrado. Auditoría independiente: métricas reproducidas con hashseed 1; ver `results_v3/auditoria_g68_g70.md`. Verificación posterior mediante `Bot.answer` real confirma los mismos conteos (`results_v3/g68_g70_respuestas_reales.json`). No hubo reserva ni juez nuevos.

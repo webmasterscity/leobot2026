@@ -1,0 +1,155 @@
+{
+  "engine": "11a1ef5836382d81a643cad0b217a8669ce0f2d1",
+  "base_sha256": "6fff61c20fcd5812d785eec22b6c595e19568f98ec31559e689c7fb95fe6d79f",
+  "examples": 3520,
+  "preparation_cpu_s": 9.568476277,
+  "baseline": {
+    "n": 1698,
+    "core": 816,
+    "ceiling": 420,
+    "useful_core": 269,
+    "useful_rate": 0.32965686274509803,
+    "quotes": 580,
+    "useful_quotes": 340,
+    "absent_n": 488,
+    "quotes_without_data": 74,
+    "quotes_without_data_rate": 0.15163934426229508,
+    "brier": 0.1660527498174323
+  },
+  "candidates": {
+    "tree": {
+      "n": 1698,
+      "core": 816,
+      "ceiling": 420,
+      "useful_core": 223,
+      "useful_rate": 0.27328431372549017,
+      "quotes": 422,
+      "useful_quotes": 273,
+      "absent_n": 488,
+      "quotes_without_data": 59,
+      "quotes_without_data_rate": 0.12090163934426229,
+      "brier": 0.17031971419369196,
+      "oof_brier": 0.173036601122642,
+      "cpu_s": 0.1793846230000007,
+      "confidence_p95_ms": 0.0015620007616234943,
+      "gate": false
+    },
+    "forest_0": {
+      "n": 1698,
+      "core": 816,
+      "ceiling": 420,
+      "useful_core": 242,
+      "useful_rate": 0.2965686274509804,
+      "quotes": 480,
+      "useful_quotes": 301,
+      "absent_n": 488,
+      "quotes_without_data": 69,
+      "quotes_without_data_rate": 0.1413934426229508,
+      "brier": 0.1653390938765864,
+      "oof_brier": 0.16659673122112942,
+      "cpu_s": 2.6278554770000007,
+      "confidence_p95_ms": 0.008484999852953479,
+      "gate": false
+    },
+    "forest_1": {
+      "n": 1698,
+      "core": 816,
+      "ceiling": 420,
+      "useful_core": 245,
+      "useful_rate": 0.3002450980392157,
+      "quotes": 511,
+      "useful_quotes": 310,
+      "absent_n": 488,
+      "quotes_without_data": 82,
+      "quotes_without_data_rate": 0.1680327868852459,
+      "brier": 0.16604243562720997,
+      "oof_brier": 0.16622516894346945,
+      "cpu_s": 2.4664026329999995,
+      "confidence_p95_ms": 0.008521000381733757,
+      "gate": false
+    },
+    "forest_2": {
+      "n": 1698,
+      "core": 816,
+      "ceiling": 420,
+      "useful_core": 245,
+      "useful_rate": 0.3002450980392157,
+      "quotes": 502,
+      "useful_quotes": 306,
+      "absent_n": 488,
+      "quotes_without_data": 82,
+      "quotes_without_data_rate": 0.1680327868852459,
+      "brier": 0.16846011693594637,
+      "oof_brier": 0.1665921222828586,
+      "cpu_s": 2.4394653290000026,
+      "confidence_p95_ms": 0.007980000191309955,
+      "gate": false
+    }
+  },
+  "nb_counts_match_base": true,
+  "ties_corrected": {
+    "n": 1698,
+    "core": 816,
+    "ceiling": 420,
+    "useful_core": 271,
+    "useful_rate": 0.3321078431372549,
+    "quotes": 583,
+    "useful_quotes": 342,
+    "absent_n": 488,
+    "quotes_without_data": 75,
+    "quotes_without_data_rate": 0.15368852459016394,
+    "brier": 0.16631097150429905
+  },
+  "old_calibration_duplicate_boundaries": 0,
+  "selected": "forest",
+  "selected_gate": false,
+  "user_diagnostic_only": [
+    {
+      "question": "¿A qué hora abren?",
+      "baseline_p": 0.2784,
+      "candidate": "Horario: lunes a sábado de 7:00 a 19:00.",
+      "p": {
+        "tree": 0.22702702702702704,
+        "forest_0": 0.23333333333333334,
+        "forest_1": 0.22905027932960895,
+        "forest_2": 0.2234910277324633
+      }
+    },
+    {
+      "question": "¿Aceptan cheques?",
+      "baseline_p": 0.8667,
+      "candidate": "No aceptamos cheques.",
+      "p": {
+        "tree": 0.8461538461538461,
+        "forest_0": 0.8620689655172413,
+        "forest_1": 0.8559670781893004,
+        "forest_2": 0.8488888888888889
+      }
+    },
+    {
+      "question": "¿Tienen estacionamiento?",
+      "baseline_p": 0.0222,
+      "candidate": "Horario: lunes a sábado de 7:00 a 19:00.",
+      "p": {
+        "tree": 0.06,
+        "forest_0": 0.020833333333333332,
+        "forest_1": 0.028985507246376812,
+        "forest_2": 0.025906735751295335
+      }
+    },
+    {
+      "question": "¿Dónde quedan?",
+      "baseline_p": 0.2302,
+      "candidate": "Dirección: Calle Real 12, frente a la plaza.",
+      "p": {
+        "tree": 0.26785714285714285,
+        "forest_0": 0.29333333333333333,
+        "forest_1": 0.23148148148148148,
+        "forest_2": 0.2234910277324633
+      }
+    }
+  ],
+  "cpu_s": 17.30401771,
+  "rss_mib": 526.62890625,
+  "engine_unchanged": true
+}

@@ -1,0 +1,140 @@
+{
+  "engine": "11a1ef5836382d81a643cad0b217a8669ce0f2d1",
+  "base_sha256": "6fff61c20fcd5812d785eec22b6c595e19568f98ec31559e689c7fb95fe6d79f",
+  "preparation_cpu_s": 24.35446695,
+  "alignment": {
+    "examples": 31762,
+    "q_features": 2443,
+    "a_features": 8869,
+    "candidates": 1270457,
+    "kept": 1270457,
+    "minimum_pair_count": 1,
+    "setup_cpu_s": 1.5930588750000005,
+    "rounds_cpu_s": [
+      3.1418917339999997,
+      3.15049127,
+      3.1865162789999992,
+      3.183056828999998,
+      3.174959904999998
+    ],
+    "total_cpu_s": 17.430001349
+  },
+  "consolidation_cpu_s": 8.443114851000004,
+  "candidates": {
+    "counted": {
+      "n": 1698,
+      "core": 816,
+      "ceiling": 416,
+      "useful_core": 243,
+      "useful_rate": 0.2977941176470588,
+      "quotes": 508,
+      "useful_quotes": 296,
+      "absent_n": 488,
+      "quotes_without_data": 59,
+      "quotes_without_data_rate": 0.12090163934426229,
+      "brier": 0.17066288224970552,
+      "oof_brier": 0.17121848310369356,
+      "training_cpu_s": 4.997979551999997,
+      "validation_cpu_s": 2.4011928490000045,
+      "bridge_words": 1260,
+      "associations": 7900,
+      "gate": false
+    },
+    "competitive": {
+      "n": 1698,
+      "core": 816,
+      "ceiling": 418,
+      "useful_core": 275,
+      "useful_rate": 0.33700980392156865,
+      "quotes": 578,
+      "useful_quotes": 344,
+      "absent_n": 488,
+      "quotes_without_data": 74,
+      "quotes_without_data_rate": 0.15163934426229508,
+      "brier": 0.16081956025912839,
+      "oof_brier": 0.16907620191595144,
+      "training_cpu_s": 5.084172930000001,
+      "validation_cpu_s": 2.4430818240000036,
+      "bridge_words": 877,
+      "associations": 4522,
+      "gate": false
+    }
+  },
+  "baseline": {
+    "n": 1698,
+    "core": 816,
+    "ceiling": 420,
+    "useful_core": 269,
+    "useful_rate": 0.32965686274509803,
+    "quotes": 580,
+    "useful_quotes": 340,
+    "absent_n": 488,
+    "quotes_without_data": 74,
+    "quotes_without_data_rate": 0.15163934426229508,
+    "brier": 0.1660527498174323
+  },
+  "selected": "competitive",
+  "selected_gate": false,
+  "user_diagnostic_only": [
+    {
+      "question": "¿A qué hora abren?",
+      "reply": {
+        "text": "No lo sé: no encontré esa información en el texto que tengo.",
+        "status": "unknown",
+        "evidence": null,
+        "confidence": null,
+        "cell": "2,0",
+        "candidate": {
+          "text": "Horario: lunes a sábado de 7:00 a 19:00.",
+          "precision": 0.1966
+        }
+      }
+    },
+    {
+      "question": "¿Aceptan cheques?",
+      "reply": {
+        "text": "No lo tengo seguro. Lo más cercano que dice el texto es: «No aceptamos cheques».",
+        "status": "closest",
+        "evidence": {
+          "unit": "No aceptamos cheques.",
+          "heading": "",
+          "index": 4
+        },
+        "confidence": 0.9355,
+        "cell": "0,4"
+      }
+    },
+    {
+      "question": "¿Tienen estacionamiento?",
+      "reply": {
+        "text": "No lo sé: no encontré esa información en el texto que tengo.",
+        "status": "unknown",
+        "evidence": null,
+        "confidence": null,
+        "cell": "4,0",
+        "candidate": {
+          "text": "No aceptamos cheques.",
+          "precision": 0.0643
+        }
+      }
+    },
+    {
+      "question": "¿Dónde quedan?",
+      "reply": {
+        "text": "No lo sé: no encontré esa información en el texto que tengo.",
+        "status": "unknown",
+        "evidence": null,
+        "confidence": null,
+        "cell": "1,3",
+        "candidate": {
+          "text": "Dirección: Calle Real 12, frente a la plaza.",
+          "precision": 0.3841
+        }
+      }
+    }
+  ],
+  "model_sha256": "3ff0a3ce5d7c6ad6bf08e01b07ab8b393cc6ed24edb2fcf6b05157d65a8af027",
+  "cpu_s": 49.989987114,
+  "rss_mib": 888.17578125,
+  "engine_unchanged": true
+}

@@ -88,4 +88,4 @@ de la panadería no le enseñará ninguna respuesta.
 
 ## Resultado de desarrollo (2026-09-27)
 
-No pasó: competencia seleccionada, 275/816 útiles frente a 269/816, ambas 74/488 citas sin dato. Conteo 243/816. El caso completo sigue sin horario/dirección. CPU 49,5 s; RAM 863 MiB. No se sustituyó la base del usuario. Auditoría independiente pendiente.
+No pasó: competencia seleccionada, 275/816 útiles frente a 269/816, ambas 74/488 citas sin dato. Conteo 243/816. El caso completo sigue sin horario/dirección. CPU 49,5 s; RAM 863 MiB. No se sustituyó la base del usuario. Auditoría independiente: métricas reproducidas con hashseed 1; ver `results_v3/auditoria_g68_g70.md`. Verificación posterior mediante `Bot.answer` real confirma los mismos conteos (`results_v3/g68_g70_respuestas_reales.json`). No hubo reserva ni juez nuevos.
