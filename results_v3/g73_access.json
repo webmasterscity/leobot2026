@@ -1,0 +1,48 @@
+{
+  "experiment": "G-73",
+  "status": "access_pending",
+  "content_gate": "not_evaluated",
+  "engine_sha": "11a1ef5836382d81a643cad0b217a8669ce0f2d1",
+  "downloads": {
+    "corpus": {
+      "url": "https://clic.ub.edu/corpus/system/files/2022-01/ancora-3.0.1es_1.zip",
+      "available": false,
+      "attempts": [
+        {
+          "tls_verified": true,
+          "ok": false,
+          "error": "certificate validation failed; recovered from control flow, not a saved log"
+        },
+        {
+          "tls_verified": false,
+          "ok": false,
+          "error": "HTTP Error 403: Forbidden; observed traceback"
+        }
+      ],
+      "cpu_s": null,
+      "wall_s": null,
+      "note": "Initial downloader aborted before recording failed attempts. No archive was created. Do not retry within G-73."
+    },
+    "lexicon": {
+      "url": "https://clic.ub.edu/corpus/system/files/2022-01/ancoralex-es-2.0.3.zip",
+      "available": false,
+      "attempts": [
+        {
+          "tls_verified": true,
+          "ok": false,
+          "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1000)>"
+        },
+        {
+          "tls_verified": false,
+          "ok": false,
+          "error": "HTTP Error 403: Forbidden"
+        }
+      ],
+      "cpu_s": 0.024142961999999997,
+      "wall_s": 1.0207239270021091
+    }
+  },
+  "xml_files_examined": 0,
+  "learned_models": 0,
+  "note": "Both official archive endpoints refused download with HTTP 403 after the local TLS verification problem. No archive or content counts obtained. Initial failure costs uninstrumented."
+}

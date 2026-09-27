@@ -85,3 +85,18 @@ antes del lector y congelación del lector antes de contar el corpus completo.
 Resultado permitido: fuente disponible/contenido suficiente, contenido
 insuficiente, formato no verificado o acceso pendiente. Ninguno cambia el
 35,9 %, resuelve la panadería ni cierra la fase G.
+
+## Resultado de acceso
+
+Ambos enlaces oficiales respondieron HTTP 403 después del fallo de verificación
+TLS local. Dos intentos por archivo, sin más reintentos. No se descargaron ZIP
+ni se inspeccionó XML. La puerta de contenido queda **sin evaluar**, no fallida.
+El primer lector no guardó el fallo antes de salir: se reconstruyó ese registro
+desde la traza y se declaró su costo no instrumentado. La segunda descarga
+fallida sí quedó medida: 0,024 s CPU y 1,021 s transcurridos.
+Ver [registro de acceso](../results_v3/g73_access.json).
+
+Se identificó otra fuente primaria, [Predicate Matrix 1.3](https://adimen.ehu.eus/web/PredicateMatrix),
+con correspondencias de AnCora-Nom. Se examinará bajo G-73b con un criterio de
+contenido propio: no se sustituirá silenciosamente por el corpus solicitado
+ni se tratarán sus correspondencias como frases anotadas o preguntas humanas.
