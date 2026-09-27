@@ -104,6 +104,36 @@ G-71 no pasó. En dos particiones, F1 de participantes subió aproximadamente
 1,5 puntos, pero al barajar los enlaces educativos obtuvo prácticamente lo mismo.
 No demuestra la capacidad buscada. Reinicio y renombrado pasaron; la medición
 parcial fue rápida en el percentil 95, aunque hubo máximos superiores a cinco
-milisegundos. Los detalles y costos están en el preregistro. No se probó todavía
-la red de compatibilidad entre verbos y construcciones. La adaptación fallida
-no refuta esa pieza ni valida copiar el sistema completo con su parte neuronal.
+milisegundos. Los detalles y costos están en el preregistro. No se probó en
+G-71 la red de compatibilidad entre verbos y construcciones.
+
+## Segunda adaptación: compatibilidad aprendida
+
+[G-72](../prereg/G-72-compatibilidad-aprendida.md) prueba una transferencia propia
+de esa compatibilidad mediante perfiles estructurales de verbos. Usa frases de
+documentos educativos separados, ocultando sus etiquetas semánticas. En ambas
+particiones, la calibración prefirió prescindir del mecanismo: mismo resultado
+que G-71, sin aporte. No se promueve. Las dos adaptaciones costaron 30,72 s CPU
+en sus cuatro corridas finales, hasta 149,6 MiB; excluye la descarga/interrupción
+inicial registrada. No refutan toda la propuesta de los autores, que es distinta
+y depende de capacidades que no se copiaron.
+
+## Pista adicional sobre la educación que falta
+
+Como antecedente anterior pertinente se revisó
+[QANom, COLING 2020](https://aclanthology.org/2020.coling-main.274/), con
+[datos y código de sus autores](https://github.com/kleinay/QANom). Sus preguntas
+anotadas por personas vinculan participantes de acciones expresadas como
+sustantivos con preguntas formuladas mediante verbos: más de 10 000 frases
+y 26 000 pares en inglés. El sistema publicado usa BERT, recursos léxicos y
+reglas de sufijos manuales; esos componentes no son adoptables aquí. Además,
+excluye varias relaciones nominales que no provienen de verbos. No demuestra
+resolver encabezados como «Horario» ni transferencia al español sin educación.
+
+**Inferencia pendiente:** buscar educación humana que identifique la misma
+relación en preguntas, verbos, expresiones nominales y condiciones; comprobar
+primero disponibilidad y cobertura en español. La novedad por probar sería
+esa correspondencia de significado con participantes y condiciones, no otra
+tabla de sinónimos ni más pares aislados como G-65. No se encontró y verificó
+todavía una fuente española equivalente en esta revisión. No se declara
+agotada su búsqueda ni bloqueado el proyecto; debe preceder a un nuevo diseño.

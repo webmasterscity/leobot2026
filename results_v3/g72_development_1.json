@@ -1,0 +1,813 @@
+{
+  "experiment": "G-72",
+  "scope": "development; supplied syntax/predicate; no kiosk claims",
+  "partition": 1,
+  "seed": 295804505,
+  "engine_sha": "11a1ef5836382d81a643cad0b217a8669ce0f2d1",
+  "sources_sha256": {
+    "experiments/g72_compatibility.py": "c47fa45261d738155406937341c9e07c560b568baa7d5189c6c3683392d0c115",
+    "experiments/g71_joint_constructions.py": "b23f96e2608bc7e9a0c4c0a590ac096f4391bb54217cbe6b0ee30fcac2d35327",
+    "experiments/g22_ancora_source_gate.py": "1569cdfce0ed00595046cab103077be90f9b3a61fa5dbedbf880bbc51fba9893",
+    "experiments/g23_role_paths.py": "c1227f373f722090274220532859d32f8ce32cc6cec1e9acdfad73e3a98b91fd",
+    "experiments/g24_calibrated_roles.py": "43325ba0138a50f6b1e17b7d7feebd590a4132e82167a8fb2ae1003f5e5af260",
+    "prereg/G-72-compatibilidad-aprendida.md": "abd569026e70c4e63f47ad2694b87795c437e93302469a1c6681f4fa0256150b"
+  },
+  "frozen_after": true,
+  "splits": {
+    "fit": {
+      "docs": 718,
+      "lemmas": 777,
+      "groups": 6923,
+      "candidates": 138728,
+      "gold": 10938,
+      "represented": 10834
+    },
+    "calibration": {
+      "docs": 210,
+      "lemmas": 167,
+      "groups": 834,
+      "candidates": 16492,
+      "gold": 1279,
+      "represented": 1267
+    },
+    "development": {
+      "docs": 284,
+      "lemmas": 257,
+      "groups": 1272,
+      "candidates": 25870,
+      "gold": 2014,
+      "represented": 1999
+    }
+  },
+  "source_counts": {
+    "candidates": 181090,
+    "ambiguous_excluded": 0,
+    "nonverb_or_missing": 8146,
+    "external_cross_excluded": 8045,
+    "internal_cross_excluded": 4855,
+    "missing_pair_or_document": 461,
+    "token_id_mismatch_sentences": 221
+  },
+  "channel": {
+    "predicates": 12672,
+    "candidates": 254459,
+    "verbs": 1389,
+    "docs": 738,
+    "development_verbs_with_prior_unlabelled_syntax": 211,
+    "development_groups_with_prior_unlabelled_syntax": 1221,
+    "development_groups_with_compiled_index": 0
+  },
+  "calibration": {
+    "0": {
+      "tp": 726,
+      "fp": 481,
+      "fn": 553,
+      "precision": 0.6014913007456504,
+      "recall": 0.5676309616888194,
+      "f1": 0.584070796460177,
+      "represented_only": {
+        "tp": 726,
+        "fp": 481,
+        "fn": 541,
+        "precision": 0.6014913007456504,
+        "recall": 0.5730071033938438,
+        "f1": 0.5869037995149555
+      },
+      "roles_represented_only": {
+        "A0": {
+          "tp": 286,
+          "fp": 292,
+          "fn": 135,
+          "precision": 0.49480968858131485,
+          "recall": 0.6793349168646081,
+          "f1": 0.5725725725725725
+        },
+        "A1": {
+          "tp": 440,
+          "fp": 189,
+          "fn": 284,
+          "precision": 0.699523052464229,
+          "recall": 0.6077348066298343,
+          "f1": 0.6504065040650406
+        },
+        "A2": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 122,
+          "precision": 0,
+          "recall": 0.0,
+          "f1": 0.0
+        }
+      },
+      "roles": {
+        "A0": {
+          "tp": 286,
+          "fp": 292,
+          "fn": 145,
+          "precision": 0.49480968858131485,
+          "recall": 0.6635730858468677,
+          "f1": 0.5668979187314173
+        },
+        "A1": {
+          "tp": 440,
+          "fp": 189,
+          "fn": 285,
+          "precision": 0.699523052464229,
+          "recall": 0.6068965517241379,
+          "f1": 0.6499261447562777
+        },
+        "A2": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 123,
+          "precision": 0,
+          "recall": 0.0,
+          "f1": 0.0
+        }
+      },
+      "gold_outside_extractor": 12,
+      "exact": 293,
+      "groups": 834,
+      "exact_rate": 0.3513189448441247,
+      "prediction_sha256": "4309d2fce95ae9dbf9c81dc6365c56a40972b7e7b6f478f74b8d8d2db0336db8"
+    },
+    "16": {
+      "tp": 698,
+      "fp": 458,
+      "fn": 581,
+      "precision": 0.6038062283737025,
+      "recall": 0.54573885848319,
+      "f1": 0.573305954825462,
+      "represented_only": {
+        "tp": 698,
+        "fp": 458,
+        "fn": 569,
+        "precision": 0.6038062283737025,
+        "recall": 0.5509076558800315,
+        "f1": 0.5761452744531572
+      },
+      "roles_represented_only": {
+        "A0": {
+          "tp": 277,
+          "fp": 277,
+          "fn": 144,
+          "precision": 0.5,
+          "recall": 0.6579572446555819,
+          "f1": 0.5682051282051283
+        },
+        "A1": {
+          "tp": 421,
+          "fp": 181,
+          "fn": 303,
+          "precision": 0.6993355481727574,
+          "recall": 0.5814917127071824,
+          "f1": 0.6349924585218703
+        },
+        "A2": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 122,
+          "precision": 0,
+          "recall": 0.0,
+          "f1": 0.0
+        }
+      },
+      "roles": {
+        "A0": {
+          "tp": 277,
+          "fp": 277,
+          "fn": 154,
+          "precision": 0.5,
+          "recall": 0.642691415313225,
+          "f1": 0.5624365482233502
+        },
+        "A1": {
+          "tp": 421,
+          "fp": 181,
+          "fn": 304,
+          "precision": 0.6993355481727574,
+          "recall": 0.5806896551724138,
+          "f1": 0.6345139412207988
+        },
+        "A2": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 123,
+          "precision": 0,
+          "recall": 0.0,
+          "f1": 0.0
+        }
+      },
+      "gold_outside_extractor": 12,
+      "exact": 280,
+      "groups": 834,
+      "exact_rate": 0.33573141486810554,
+      "prediction_sha256": "8938f1423d0e20f8e0ccc747396fc32a4b800af29113dbe08cd70446bb60c062"
+    },
+    "4": {
+      "tp": 669,
+      "fp": 395,
+      "fn": 610,
+      "precision": 0.6287593984962406,
+      "recall": 0.5230648944487881,
+      "f1": 0.5710627400768246,
+      "represented_only": {
+        "tp": 669,
+        "fp": 395,
+        "fn": 598,
+        "precision": 0.6287593984962406,
+        "recall": 0.5280189423835833,
+        "f1": 0.574002574002574
+      },
+      "roles_represented_only": {
+        "A0": {
+          "tp": 255,
+          "fp": 226,
+          "fn": 166,
+          "precision": 0.5301455301455301,
+          "recall": 0.6057007125890737,
+          "f1": 0.565410199556541
+        },
+        "A1": {
+          "tp": 414,
+          "fp": 169,
+          "fn": 310,
+          "precision": 0.7101200686106347,
+          "recall": 0.5718232044198895,
+          "f1": 0.6335118592195869
+        },
+        "A2": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 122,
+          "precision": 0,
+          "recall": 0.0,
+          "f1": 0.0
+        }
+      },
+      "roles": {
+        "A0": {
+          "tp": 255,
+          "fp": 226,
+          "fn": 176,
+          "precision": 0.5301455301455301,
+          "recall": 0.5916473317865429,
+          "f1": 0.5592105263157895
+        },
+        "A1": {
+          "tp": 414,
+          "fp": 169,
+          "fn": 311,
+          "precision": 0.7101200686106347,
+          "recall": 0.5710344827586207,
+          "f1": 0.6330275229357798
+        },
+        "A2": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 123,
+          "precision": 0,
+          "recall": 0.0,
+          "f1": 0.0
+        }
+      },
+      "gold_outside_extractor": 12,
+      "exact": 275,
+      "groups": 834,
+      "exact_rate": 0.32973621103117506,
+      "prediction_sha256": "9dd612a2fbcc632cf000786ff83ff340b2989e6bab474b7472ca2b09a1213d22"
+    },
+    "1": {
+      "tp": 584,
+      "fp": 285,
+      "fn": 695,
+      "precision": 0.6720368239355581,
+      "recall": 0.45660672400312746,
+      "f1": 0.5437616387337058,
+      "represented_only": {
+        "tp": 584,
+        "fp": 285,
+        "fn": 683,
+        "precision": 0.6720368239355581,
+        "recall": 0.46093133385951063,
+        "f1": 0.5468164794007491
+      },
+      "roles_represented_only": {
+        "A0": {
+          "tp": 200,
+          "fp": 147,
+          "fn": 221,
+          "precision": 0.5763688760806917,
+          "recall": 0.4750593824228028,
+          "f1": 0.5208333333333334
+        },
+        "A1": {
+          "tp": 384,
+          "fp": 132,
+          "fn": 340,
+          "precision": 0.7441860465116279,
+          "recall": 0.5303867403314917,
+          "f1": 0.6193548387096774
+        },
+        "A2": {
+          "tp": 0,
+          "fp": 6,
+          "fn": 122,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        }
+      },
+      "roles": {
+        "A0": {
+          "tp": 200,
+          "fp": 147,
+          "fn": 231,
+          "precision": 0.5763688760806917,
+          "recall": 0.46403712296983757,
+          "f1": 0.5141388174807198
+        },
+        "A1": {
+          "tp": 384,
+          "fp": 132,
+          "fn": 341,
+          "precision": 0.7441860465116279,
+          "recall": 0.5296551724137931,
+          "f1": 0.6188557614826753
+        },
+        "A2": {
+          "tp": 0,
+          "fp": 6,
+          "fn": 123,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        }
+      },
+      "gold_outside_extractor": 12,
+      "exact": 262,
+      "groups": 834,
+      "exact_rate": 0.31414868105515587,
+      "prediction_sha256": "1eafab0059abef1382babe5bea58c79888101a98122576463083ab647e241338"
+    }
+  },
+  "chosen_neighbors": 0,
+  "thresholds": [
+    -1,
+    -1,
+    1
+  ],
+  "constructions": 1599,
+  "verbs_with_supervised_constructions": 756,
+  "compiled_links": 0,
+  "excluded_frames": {
+    "incomplete": 103,
+    "empty": 444
+  },
+  "metrics": {
+    "independent": {
+      "tp": 1160,
+      "fp": 979,
+      "fn": 854,
+      "precision": 0.5423094904160822,
+      "recall": 0.5759682224428997,
+      "f1": 0.5586323139898868,
+      "represented_only": {
+        "tp": 1160,
+        "fp": 979,
+        "fn": 839,
+        "precision": 0.5423094904160822,
+        "recall": 0.5802901450725363,
+        "f1": 0.5606573223779604
+      },
+      "roles_represented_only": {
+        "A0": {
+          "tp": 501,
+          "fp": 606,
+          "fn": 155,
+          "precision": 0.45257452574525747,
+          "recall": 0.7637195121951219,
+          "f1": 0.5683494044242768
+        },
+        "A1": {
+          "tp": 659,
+          "fp": 373,
+          "fn": 433,
+          "precision": 0.6385658914728682,
+          "recall": 0.6034798534798534,
+          "f1": 0.620527306967985
+        },
+        "A2": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 251,
+          "precision": 0,
+          "recall": 0.0,
+          "f1": 0.0
+        }
+      },
+      "roles": {
+        "A0": {
+          "tp": 501,
+          "fp": 606,
+          "fn": 168,
+          "precision": 0.45257452574525747,
+          "recall": 0.7488789237668162,
+          "f1": 0.5641891891891891
+        },
+        "A1": {
+          "tp": 659,
+          "fp": 373,
+          "fn": 435,
+          "precision": 0.6385658914728682,
+          "recall": 0.6023765996343693,
+          "f1": 0.6199435559736595
+        },
+        "A2": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 251,
+          "precision": 0,
+          "recall": 0.0,
+          "f1": 0.0
+        }
+      },
+      "gold_outside_extractor": 15,
+      "exact": 399,
+      "groups": 1272,
+      "exact_rate": 0.3136792452830189,
+      "prediction_sha256": "bf9ec19e87e7e926279dc2f74bb15cbfa69ffd79e9396f693340250d03e2b0e7"
+    },
+    "shared": {
+      "tp": 1116,
+      "fp": 764,
+      "fn": 898,
+      "precision": 0.5936170212765958,
+      "recall": 0.5541211519364448,
+      "f1": 0.5731895223420647,
+      "represented_only": {
+        "tp": 1116,
+        "fp": 764,
+        "fn": 883,
+        "precision": 0.5936170212765958,
+        "recall": 0.5582791395697849,
+        "f1": 0.5754060324825986
+      },
+      "roles_represented_only": {
+        "A0": {
+          "tp": 469,
+          "fp": 462,
+          "fn": 187,
+          "precision": 0.5037593984962406,
+          "recall": 0.7149390243902439,
+          "f1": 0.591052299936988
+        },
+        "A1": {
+          "tp": 647,
+          "fp": 302,
+          "fn": 445,
+          "precision": 0.6817702845100105,
+          "recall": 0.5924908424908425,
+          "f1": 0.6340029397354238
+        },
+        "A2": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 251,
+          "precision": 0,
+          "recall": 0.0,
+          "f1": 0.0
+        }
+      },
+      "roles": {
+        "A0": {
+          "tp": 469,
+          "fp": 462,
+          "fn": 200,
+          "precision": 0.5037593984962406,
+          "recall": 0.7010463378176383,
+          "f1": 0.58625
+        },
+        "A1": {
+          "tp": 647,
+          "fp": 302,
+          "fn": 447,
+          "precision": 0.6817702845100105,
+          "recall": 0.5914076782449725,
+          "f1": 0.6333822809593734
+        },
+        "A2": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 251,
+          "precision": 0,
+          "recall": 0.0,
+          "f1": 0.0
+        }
+      },
+      "gold_outside_extractor": 15,
+      "exact": 431,
+      "groups": 1272,
+      "exact_rate": 0.3388364779874214,
+      "prediction_sha256": "007f519d14e2f22cafaebc31e5f39f522158364fa46d911a21683ecefb185003"
+    },
+    "treatment": {
+      "tp": 1116,
+      "fp": 764,
+      "fn": 898,
+      "precision": 0.5936170212765958,
+      "recall": 0.5541211519364448,
+      "f1": 0.5731895223420647,
+      "represented_only": {
+        "tp": 1116,
+        "fp": 764,
+        "fn": 883,
+        "precision": 0.5936170212765958,
+        "recall": 0.5582791395697849,
+        "f1": 0.5754060324825986
+      },
+      "roles_represented_only": {
+        "A0": {
+          "tp": 469,
+          "fp": 462,
+          "fn": 187,
+          "precision": 0.5037593984962406,
+          "recall": 0.7149390243902439,
+          "f1": 0.591052299936988
+        },
+        "A1": {
+          "tp": 647,
+          "fp": 302,
+          "fn": 445,
+          "precision": 0.6817702845100105,
+          "recall": 0.5924908424908425,
+          "f1": 0.6340029397354238
+        },
+        "A2": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 251,
+          "precision": 0,
+          "recall": 0.0,
+          "f1": 0.0
+        }
+      },
+      "roles": {
+        "A0": {
+          "tp": 469,
+          "fp": 462,
+          "fn": 200,
+          "precision": 0.5037593984962406,
+          "recall": 0.7010463378176383,
+          "f1": 0.58625
+        },
+        "A1": {
+          "tp": 647,
+          "fp": 302,
+          "fn": 447,
+          "precision": 0.6817702845100105,
+          "recall": 0.5914076782449725,
+          "f1": 0.6333822809593734
+        },
+        "A2": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 251,
+          "precision": 0,
+          "recall": 0.0,
+          "f1": 0.0
+        }
+      },
+      "gold_outside_extractor": 15,
+      "exact": 431,
+      "groups": 1272,
+      "exact_rate": 0.3388364779874214,
+      "prediction_sha256": "007f519d14e2f22cafaebc31e5f39f522158364fa46d911a21683ecefb185003"
+    },
+    "confused": {
+      "tp": 1116,
+      "fp": 764,
+      "fn": 898,
+      "precision": 0.5936170212765958,
+      "recall": 0.5541211519364448,
+      "f1": 0.5731895223420647,
+      "represented_only": {
+        "tp": 1116,
+        "fp": 764,
+        "fn": 883,
+        "precision": 0.5936170212765958,
+        "recall": 0.5582791395697849,
+        "f1": 0.5754060324825986
+      },
+      "roles_represented_only": {
+        "A0": {
+          "tp": 469,
+          "fp": 462,
+          "fn": 187,
+          "precision": 0.5037593984962406,
+          "recall": 0.7149390243902439,
+          "f1": 0.591052299936988
+        },
+        "A1": {
+          "tp": 647,
+          "fp": 302,
+          "fn": 445,
+          "precision": 0.6817702845100105,
+          "recall": 0.5924908424908425,
+          "f1": 0.6340029397354238
+        },
+        "A2": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 251,
+          "precision": 0,
+          "recall": 0.0,
+          "f1": 0.0
+        }
+      },
+      "roles": {
+        "A0": {
+          "tp": 469,
+          "fp": 462,
+          "fn": 200,
+          "precision": 0.5037593984962406,
+          "recall": 0.7010463378176383,
+          "f1": 0.58625
+        },
+        "A1": {
+          "tp": 647,
+          "fp": 302,
+          "fn": 447,
+          "precision": 0.6817702845100105,
+          "recall": 0.5914076782449725,
+          "f1": 0.6333822809593734
+        },
+        "A2": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 251,
+          "precision": 0,
+          "recall": 0.0,
+          "f1": 0.0
+        }
+      },
+      "gold_outside_extractor": 15,
+      "exact": 431,
+      "groups": 1272,
+      "exact_rate": 0.3388364779874214,
+      "prediction_sha256": "007f519d14e2f22cafaebc31e5f39f522158364fa46d911a21683ecefb185003"
+    },
+    "reloaded": {
+      "tp": 1116,
+      "fp": 764,
+      "fn": 898,
+      "precision": 0.5936170212765958,
+      "recall": 0.5541211519364448,
+      "f1": 0.5731895223420647,
+      "represented_only": {
+        "tp": 1116,
+        "fp": 764,
+        "fn": 883,
+        "precision": 0.5936170212765958,
+        "recall": 0.5582791395697849,
+        "f1": 0.5754060324825986
+      },
+      "roles_represented_only": {
+        "A0": {
+          "tp": 469,
+          "fp": 462,
+          "fn": 187,
+          "precision": 0.5037593984962406,
+          "recall": 0.7149390243902439,
+          "f1": 0.591052299936988
+        },
+        "A1": {
+          "tp": 647,
+          "fp": 302,
+          "fn": 445,
+          "precision": 0.6817702845100105,
+          "recall": 0.5924908424908425,
+          "f1": 0.6340029397354238
+        },
+        "A2": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 251,
+          "precision": 0,
+          "recall": 0.0,
+          "f1": 0.0
+        }
+      },
+      "roles": {
+        "A0": {
+          "tp": 469,
+          "fp": 462,
+          "fn": 200,
+          "precision": 0.5037593984962406,
+          "recall": 0.7010463378176383,
+          "f1": 0.58625
+        },
+        "A1": {
+          "tp": 647,
+          "fp": 302,
+          "fn": 447,
+          "precision": 0.6817702845100105,
+          "recall": 0.5914076782449725,
+          "f1": 0.6333822809593734
+        },
+        "A2": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 251,
+          "precision": 0,
+          "recall": 0.0,
+          "f1": 0.0
+        }
+      },
+      "gold_outside_extractor": 15,
+      "exact": 431,
+      "groups": 1272,
+      "exact_rate": 0.3388364779874214,
+      "prediction_sha256": "007f519d14e2f22cafaebc31e5f39f522158364fa46d911a21683ecefb185003"
+    }
+  },
+  "controls": {
+    "restart_mismatches": 0,
+    "rename_mismatches": 0,
+    "g71_outcome_counts_unchanged": true
+  },
+  "latency": {
+    "independent": {
+      "p50_ms": 0.14380100037669763,
+      "p95_ms": 0.2234719995612977,
+      "max_ms": 6.352022997816675
+    },
+    "shared": {
+      "p50_ms": 0.22458500006905524,
+      "p95_ms": 0.35202099934394937,
+      "max_ms": 6.498796998130274
+    },
+    "treatment": {
+      "p50_ms": 0.22423000064009102,
+      "p95_ms": 0.3526150012476137,
+      "max_ms": 6.4952299999276875
+    },
+    "confused": {
+      "p50_ms": 0.22374350010068156,
+      "p95_ms": 0.3529250006977236,
+      "max_ms": 6.486979998953757
+    },
+    "reloaded": {
+      "p50_ms": 0.22496550081996247,
+      "p95_ms": 0.35581100019044243,
+      "max_ms": 6.4978629980032565
+    }
+  },
+  "search": {
+    "independent": {},
+    "shared": {
+      "patterns_considered": 82543,
+      "applications": 32015,
+      "exhausted": 0
+    },
+    "treatment": {
+      "patterns_considered": 82543,
+      "applications": 32015,
+      "exhausted": 0
+    },
+    "confused": {
+      "patterns_considered": 82543,
+      "applications": 32015,
+      "exhausted": 0
+    },
+    "reloaded": {
+      "patterns_considered": 82543,
+      "applications": 32015,
+      "exhausted": 0
+    }
+  },
+  "gates": {
+    "f1": false,
+    "confused": false,
+    "precision": true,
+    "a2": true,
+    "exact": false,
+    "controls": true,
+    "latency": true,
+    "budget": true
+  },
+  "passes": false,
+  "cost": {
+    "acquisition_cpu_s": 0.429015261,
+    "supervised_extraction_cpu_s": 2.023777995,
+    "unlabelled_channel_cpu_s": 2.0958359289999997,
+    "learning_compilation_calibration_cpu_s": 4.756783915000001,
+    "evaluation_and_controls_cpu_s": 1.1279039209999997,
+    "total_cpu_s": 10.434316099,
+    "wall_s": 10.434952199999316,
+    "peak_rss_kib": 151540,
+    "model_bytes": 2,
+    "similarity_products": 14148909,
+    "confused_similarity_products": 13892417
+  }
+}

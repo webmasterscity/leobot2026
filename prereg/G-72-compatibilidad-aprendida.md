@@ -110,3 +110,26 @@ Pruebas focales para verificar que el filtro excluye construcciones incompatible
 y que su ausencia conserva G-71. La prueba rápida de la sesión ya pasó 13/13;
 regresión completa solo si se intenta un tag estable. Auditoría independiente
 solo conforme a MISION 5.10. No alterar los resultados negativos previos.
+
+## Resultado de desarrollo
+
+No pasó. La calibración eligió **inventario común**, sin usar vecinos, en las
+dos semillas. F1 de calibración para común/16/4/1 vecinos:
+0,6288/0,6205/0,6282/0,5963 y 0,5841/0,5733/0,5711/0,5438.
+Por tanto, desarrollo y control confundido reproducen G-71: 0,5769 y 0,5732.
+No hay aporte demostrado de compatibilidad. La igualdad del control confundido
+es aquí consecuencia de que no se seleccionó el mecanismo; no demuestra
+invariancia de un aprendizaje que sí estuviera activo.
+
+El canal adicional vio 1 415/1 389 verbos en documentos permitidos. No vio
+documentos de calibración/evaluación. Reinicio y renombrado sin diferencias;
+los conteos de resultados G-24/G-71 anteriores quedaron idénticos. Estos
+controles son limitados cuando el filtro elegido está desactivado; la prueba
+focal sí comprueba un filtro activo. No se declara validado para producción.
+
+[Partición 0](../results_v3/g72_development_0.json) y
+[partición 1](../results_v3/g72_development_1.json): 21,17 s CPU totales,
+RAM máxima 149,6 MiB. p95 parcial 0,335/0,353 ms; máximos 0,593/6,495 ms.
+Sin invenciones evaluadas, sin preguntas del kiosco ni reserva nueva. El motor
+permanece idéntico; no se promueve. Se descarta este traslado por semejanza
+estructural, no cualquier red de construcciones ni toda la fase G.
