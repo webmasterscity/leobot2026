@@ -86,3 +86,8 @@ Preparación/educación ≤300 s CPU, calibración/evaluación ≤200 s, ≤1 Gi
 registrar interrupciones. Pruebas focales de offsets, contraste y aislamiento;
 comprobar equivalencia de conteos con la fórmula existente. Congelar como
 `freeze-G78-prototipo` antes de medir, sin afinar criterios sobre DEV.
+
+El reinicio se verifica guardando una base completa, vaciando antes el contexto
+de evaluación y cargándola con `Bot.load` en un proceso nuevo con hashseed 1.
+Se libera el bot del padre antes de abrir el hijo. CPU y memoria del hijo se
+incluyen en presupuesto; no basta recargar un diccionario en el mismo objeto.
