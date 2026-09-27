@@ -1,0 +1,157 @@
+{
+  "experiment": "G-73b",
+  "scope": "source inspection, no trained model or kiosk evaluation",
+  "engine_sha": "11a1ef5836382d81a643cad0b217a8669ce0f2d1",
+  "sources_sha256": {
+    "experiments/g73b_predicate_source.py": "9cd449ee890f4b729f0d5cdb71205ddcd3d1fbcd4cfade5c030825bb1022c2e4",
+    "prereg/G-73b-fuente-correspondencias.md": "761cdadbd695b706e4cc06587e0c49c766a4c227e67c2b65d509b89ed3a369b2"
+  },
+  "archive_sha256": "4630d1c9aa74e1012238167d43d0a6707589dad8873993d1c023d6e69652f781",
+  "frozen_after": true,
+  "license_in_readme": "CC BY 3.0",
+  "table_bytes": 140813653,
+  "counts": {
+    "rows": 426696,
+    "valid_rows": 426691,
+    "exact_duplicate_rows": 24322,
+    "invalid_identity": 5
+  },
+  "unique_rows": 402369,
+  "unique_four_field_indices": 54414,
+  "indices_with_multiple_rows": 41744,
+  "language_pos": {
+    "cat:v": {
+      "rows": 98091,
+      "predicates": 3562
+    },
+    "eng:n": {
+      "rows": 48898,
+      "predicates": 2963
+    },
+    "eng:v": {
+      "rows": 66881,
+      "predicates": 5299
+    },
+    "eus:v": {
+      "rows": 10167,
+      "predicates": 314
+    },
+    "spa:n": {
+      "rows": 86439,
+      "predicates": 2684
+    },
+    "spa:v": {
+      "rows": 116215,
+      "predicates": 4208
+    }
+  },
+  "spanish_role_predicates": {
+    "n:arg0": 2441,
+    "n:arg1": 2593,
+    "n:arg2": 1602,
+    "n:arg3": 426,
+    "n:arg4": 194,
+    "n:arg5": 7,
+    "n:argL": 1,
+    "n:argM/adv": 68,
+    "n:argM/atr": 15,
+    "n:argM/cau": 25,
+    "n:argM/ext": 5,
+    "n:argM/fin": 27,
+    "n:argM/loc": 53,
+    "n:argM/mnr": 3,
+    "n:argM/tmp": 3,
+    "v:arg": 2,
+    "v:arg0": 3806,
+    "v:arg1": 4032,
+    "v:arg2": 2355,
+    "v:arg3": 470,
+    "v:arg4": 214,
+    "v:arg5": 7,
+    "v:argL": 19,
+    "v:argM/adv": 80,
+    "v:argM/agt": 1,
+    "v:argM/atr": 17,
+    "v:argM/cau": 40,
+    "v:argM/con": 1,
+    "v:argM/ext": 5,
+    "v:argM/fin": 25,
+    "v:argM/loc": 75,
+    "v:argM/mnr": 12,
+    "v:argM/tmp": 7,
+    "v:arrgM": 1
+  },
+  "spanish_slots_missing_projection": {
+    "n": 0,
+    "v": 0
+  },
+  "spanish_common_predicate_role_keys": 3729,
+  "spanish_nominal_predicates_with_join_candidates": 2684,
+  "spanish_nominal_slots_aligned": 7463,
+  "spanish_verbal_slots_aligned": 9463,
+  "spanish_join_candidate_pairs": 17459,
+  "nominal_predicates_with_multiple_verb_candidates": 2454,
+  "verb_candidates_per_nominal_histogram": {
+    "1": 230,
+    "2": 379,
+    "3": 274,
+    "4": 309,
+    "5": 280,
+    "6": 192,
+    "7": 161,
+    "8": 119,
+    "9": 128,
+    "10": 117,
+    "11": 57,
+    "12": 61,
+    "13": 81,
+    "14": 56,
+    "15": 78,
+    "16": 37,
+    "17": 30,
+    "18": 28,
+    "19": 9,
+    "20": 19,
+    "21": 6,
+    "22": 19,
+    "24": 2,
+    "25": 3,
+    "26": 3,
+    "27": 2,
+    "28": 2,
+    "41": 2
+  },
+  "aligned_role_nominal_predicates": {
+    "arg0": 2441,
+    "arg1": 2593,
+    "arg2": 1602,
+    "arg3": 426,
+    "arg4": 194,
+    "arg5": 7,
+    "argL": 1,
+    "argM/adv": 68,
+    "argM/atr": 15,
+    "argM/cau": 25,
+    "argM/ext": 5,
+    "argM/fin": 27,
+    "argM/loc": 53,
+    "argM/mnr": 3,
+    "argM/tmp": 3
+  },
+  "direct_nominal_to_origin_verb_field": false,
+  "spanish_human_questions_or_sentences": 0,
+  "content_gate": true,
+  "budget_ok": true,
+  "cost": {
+    "inspection_cpu_s": 2.939502446,
+    "inspection_wall_s": 2.940176727999642,
+    "peak_rss_kib": 96332,
+    "download_cpu_s": 0.121630571,
+    "download_wall_s": 2.838319834001595
+  },
+  "limits": [
+    "Projected joins are candidates, not human-verified equivalences.",
+    "Multiple rows per source index include alternative alignments.",
+    "No operational learning; G-73 original corpus gate still unevaluated."
+  ]
+}

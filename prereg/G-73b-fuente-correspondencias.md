@@ -90,3 +90,29 @@ por separado. Estos últimos pueden ser alineamientos alternativos legítimos.
 No eliminar ambigüedades ni imponer equivalencias por compartir solo palabra,
 sin preservar predicado y papel. Registrar todos los códigos de papel español
 para ver si la fuente ofrece condiciones adicionales; no inventarlas.
+
+## Resultado de inspección
+
+Puerta parcial de contenido **superada**; [cifras completas](../results_v3/g73b_content.json).
+426 696 filas: 426 691 con identidad válida, cinco sin ella; 24 322 duplicadas
+exactas. 54 414 índices distintos y 41 744 con varias filas, que pueden ser
+alineamientos alternativos, no necesariamente contradicciones.
+
+Español: 2 684 sentidos nominales y 4 208 verbales. Al unir predicado **y** papel
+compartidos se obtienen 17 459 pares candidatos; los 2 684 sentidos nominales
+participan, pero **2 454 tienen más de un verbo candidato** y solo 230 tienen
+uno. Cinco papeles nucleares superan 50 sentidos nominales; también hay
+modificadores, con cobertura temporal especialmente reducida: tres sentidos
+nominales y siete verbales tienen `argM/tmp`. No hay preguntas ni frases
+anotadas en el paquete ni columna directa del verbo de origen.
+
+Descarga: 0,122 s CPU, 2,838 s transcurridos, TLS normal verificado. Conteo:
+2,940 s CPU, 2,940 s transcurridos, RAM máxima 94,1 MiB. La lectura inicial de
+README/encabezado no instrumentó CPU propia y no se incluye en esa suma.
+Motor y lector congelados durante el conteo. No se entrenó un modelo.
+
+Decisión: la fuente permite investigar conjuntos de hipótesis con participantes
+alineados; **no autoriza un diccionario de equivalencias seguras**. Antes de
+usarla, un nuevo preregistro deberá resolver ambigüedad con evidencia textual
+independiente y comparar contra equivalencias léxicas sin roles. G-73 original
+sigue con acceso pendiente; este resultado no cierra G ni resuelve el horario.

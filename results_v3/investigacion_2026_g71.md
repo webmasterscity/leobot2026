@@ -137,3 +137,29 @@ esa correspondencia de significado con participantes y condiciones, no otra
 tabla de sinónimos ni más pares aislados como G-65. No se encontró y verificó
 todavía una fuente española equivalente en esta revisión. No se declara
 agotada su búsqueda ni bloqueado el proyecto; debe preceder a un nuevo diseño.
+
+## Fuente española localizada después
+
+La búsqueda posterior encontró las publicaciones de
+[AnCora-Nom](https://aclanthology.org/J12-4005/) e
+[IARG-AnCora](https://clic.ub.edu/corpus/en/iargancora). Describen sentidos
+nominales y participantes implícitos con revisión humana de anotaciones
+automáticas. G-73 no pudo comprobar sus archivos: ambos enlaces oficiales
+rechazaron la descarga con HTTP 403. Su puerta de contenido quedó sin evaluar.
+
+Sí se obtuvo [Predicate Matrix 1.3, LREC 2016](https://aclanthology.org/L16-1423/)
+desde [sus autores](https://adimen.ehu.eus/web/PredicateMatrix), con TLS normal.
+Integra predicados y papeles de varias fuentes, incluyendo AnCora-Verb y
+AnCora-Nom. Su método mezcla correspondencias anteriores y ampliaciones
+automáticas: no es educación humana infalible ni un equivalente del corpus.
+
+El conteo propio [G-73b](../prereg/G-73b-fuente-correspondencias.md) encontró
+2 684 sentidos nominales españoles con candidatos verbales al unir predicado
+y papel compartidos. Hay 17 459 pares candidatos; 2 454 sentidos nominales
+tienen varios destinos. Solo tres sentidos nominales y siete verbales anotan
+explícitamente tiempo. No contiene frases ni preguntas humanas.
+
+La fuente sirve para investigar hipótesis que preserven participantes; copiar
+sus enlaces como equivalencias seguras sería injustificado. Falta aprender a
+elegir entre significados con evidencia del texto y medir el aporte frente a
+un simple diccionario. No se entrenó el motor ni mejoró su cifra de utilidad.
