@@ -32,28 +32,33 @@ def collect(bot, banks):
         for name, text, instructions, conversations in businesses(sorted(p for p in root.iterdir() if p.is_dir())):
             bot.load_context(text, instructions)
             group = bank+'/'+name
-            digest = int(hashlib.sha256(group.encode()).hexdigest(), 16)
-            for c, conv in enumerate(conversations):
-                for i, turn in enumerate(conv):
-                    action = turn.get('accion', 'responder')
-                    if action == 'charla':
-                        continue
-                    reply = bot.answer(turn['cliente'])
-                    if reply['status'] != 'answered':
-                        continue
-                    keys = [k for k in turn.get('claves', []) or [] if plain(k)]
-                    if action not in ('abstenerse', 'derivar') and not keys:
-                        continue
-                    _, question = bot._question_part(turn['cliente'])
-                    ranked = bot._rank(bot.context_terms(question), question)
-                    absent = action in ('abstenerse', 'derivar')
-                    useful = int(not absent and all(contains(reply['text'], k) for k in keys))
-                    rows.append({'id': f'{group}/{c}/{i}', 'group': group, 'fold': digest % 5,
-                                 'half': digest % 2, 'y': useful, 'f': ranked['features'],
-                                 'core': action == 'responder' and turn.get('tipo') in ('directa', 'si_no'),
-                                 'absent': absent, 'baseline_p': ranked['useful']})
+            rows.extend(collect_context(bot, group, conversations))
     return rows
 
+
+def collect_context(bot, group, conversations):
+    rows = []
+    digest = int(hashlib.sha256(group.encode()).hexdigest(), 16)
+    for c, conv in enumerate(conversations):
+        for i, turn in enumerate(conv):
+            action = turn.get('accion', 'responder')
+            if action == 'charla':
+                continue
+            reply = bot.answer(turn['cliente'])
+            if reply['status'] != 'answered':
+                continue
+            keys = [k for k in turn.get('claves', []) or [] if plain(k)]
+            if action not in ('abstenerse', 'derivar') and not keys:
+                continue
+            _, question = bot._question_part(turn['cliente'])
+            ranked = bot._rank(bot.context_terms(question), question)
+            absent = action in ('abstenerse', 'derivar')
+            useful = int(not absent and all(contains(reply['text'], k) for k in keys))
+            rows.append({'id': f'{group}/{c}/{i}', 'group': group, 'fold': digest % 5,
+                         'half': digest % 2, 'y': useful, 'f': ranked['features'],
+                         'core': action == 'responder' and turn.get('tipo') in ('directa', 'si_no'),
+                         'absent': absent, 'baseline_p': ranked['useful']})
+    return rows
 
 def grow(rows, depth=6, prior=None):
     n, pos = len(rows), sum(r['y'] for r in rows)

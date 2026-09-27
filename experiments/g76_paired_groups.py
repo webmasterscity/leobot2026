@@ -11,10 +11,10 @@ import time
 
 from leobot import Bot
 from experiments.g65_correspondencias import examples
-from experiments.g68_confianza import TRAIN, DEV, collect, metrics
+from experiments.g68_confianza import TRAIN, DEV, collect, collect_context, metrics
 from experiments.g74_relation_coverage import ROOT, ENGINE, BASE_SHA
 from experiments.g75_relational_evidence import (
-    RelationalRanker, fit_confidence, public_measure, WEIGHTS, check_budget,
+    RelationalRanker, fit_confidence, public_measure, WEIGHTS, check_budget, training_contexts,
 )
 
 FIELDS = ('topic_score', 'topic_margin', 'topic_known')
@@ -96,7 +96,7 @@ def train(rows, qsize, asize, *, seed, groups=32, rounds=12, deadline=None):
                    'cpu_s': time.process_time()-begin}
 
 
-def teaching_pairs(bot):
+def teaching_pairs(bot, *, with_domains=False):
     sampled = examples(bot, ROOT / '.leobot-data/mfaq_es_train.jsonl')
     eligible = [(domain, q, a) for domain, q, a in sampled if len(q) <= 24 and len(a) <= 64]
     rows = sorted(eligible, key=lambda row: sha256(json.dumps(row, ensure_ascii=False).encode()).digest())[:4000]
@@ -126,7 +126,8 @@ def teaching_pairs(bot):
               'domains': len(per_domain), 'q_vocabulary': len(qv), 'a_vocabulary': len(av),
               'empty_q': sum(not q for q, _ in encoded), 'empty_a': sum(not a for _, a in encoded),
               'shuffled_changed': sum(a != b for (_, a), (_, b) in zip(encoded, permuted))}
-    return qv, av, encoded, permuted, report
+    result = (qv, av, encoded, permuted, report)
+    return (*result, [domain for domain, _, _ in rows]) if with_domains else result
 
 
 class TopicRanker(RelationalRanker):
@@ -138,6 +139,13 @@ class TopicRanker(RelationalRanker):
 
     def load(self, *args, **kwargs):
         result = self.original_load(*args, **kwargs)
+        self.prepare_units()
+        return result
+
+    def project(self, model, ids, side):
+        return posterior(model, ids, side)
+
+    def prepare_units(self):
         start = time.process_time()
         self.prepared, self.units, self.query_cache, self.analyses = [], [], {}, {}
         self.unit_topics = []
@@ -145,17 +153,16 @@ class TopicRanker(RelationalRanker):
             terms = set(self.bot.context_terms(unit['text'])) | set(unit.get('inherited', ()))
             ids = sorted({self.bundle['av'][w] for w in terms if w in self.bundle['av']})
             self.prepared.append((terms, {}))
-            self.unit_topics.append([posterior(m, ids, 'alog') for m in self.bundle['models']]
+            self.unit_topics.append([self.project(m, ids, 'alog') for m in self.bundle['models']]
                                    if ids and self.weight else None)
         self.preparation_cpu += time.process_time()-start
-        return result
 
     def evidence(self, question, terms):
         ids = sorted({self.bundle['qv'][w] for w in terms if w in self.bundle['qv']})
         if not ids:
             return {}
         coverage = sum(w in self.bundle['qv'] for w in set(terms))/max(1, len(set(terms)))
-        query = [posterior(model, ids, 'qlog') for model in self.bundle['models']]
+        query = [self.project(model, ids, 'qlog') for model in self.bundle['models']]
         scores = {}
         for i, answers in enumerate(self.unit_topics):
             if answers is not None:
@@ -168,43 +175,63 @@ class TopicRanker(RelationalRanker):
                                        else ordered[0]), coverage) for i, value in scores.items()}
 
 
-def fingerprint():
+def fingerprint(extra=()):
     files = ('experiments/g76_paired_groups.py', 'experiments/g75_relational_evidence.py',
              'experiments/g65_correspondencias.py', 'experiments/g68_confianza.py',
-             'prereg/G-76-grupos-de-preguntas-y-respuestas.md')
+             'prereg/G-76-grupos-de-preguntas-y-respuestas.md') + tuple(extra)
     git = lambda *args: subprocess.check_output(['git', *args], cwd=ROOT, text=True).strip()
     if git('rev-parse', 'HEAD:leobot') != ENGINE or git('status', '--porcelain', '--', 'leobot', *files):
         raise RuntimeError('G76 motor o prototipo sin congelar')
     return {name: sha256((ROOT/name).read_bytes()).hexdigest() for name in files}
 
 
-def main():
-    resource.setrlimit(resource.RLIMIT_CPU, (755, 760))
+def collect_weights(bot, ranker, *, contexts=None, deadline=None):
+    rows = {weight: [] for weight in WEIGHTS}
+    bot.calibrated, bot.closest = False, False
+    for n, (group, text, instructions, conversations) in enumerate(
+            training_contexts() if contexts is None else contexts, 1):
+        check_budget(deadline)
+        ranker.weight = 1.
+        bot.load_context(text, instructions)
+        for weight in WEIGHTS:
+            ranker.weight = weight
+            rows[weight].extend(collect_context(bot, group, conversations))
+        if n % 35 == 0:
+            print(json.dumps({'stage': 'training_contexts', 'n': n}), flush=True)
+    return rows
+
+
+def main(*, producer=None, ranker_type=TopicRanker, experiment='G76',
+         validation_seconds=150, extra_sources=(), reuse_training_contexts=False):
+    resource.setrlimit(resource.RLIMIT_CPU, (605+validation_seconds, 610+validation_seconds))
     resource.setrlimit(resource.RLIMIT_AS, (1024**3, 1024**3))
-    hashes = fingerprint()
+    hashes = fingerprint(extra_sources)
     start_cpu, start_wall = time.process_time(), time.monotonic()
     base = ROOT / '.leobot-data/base_kiosco.json'
     if sha256(base.read_bytes()).hexdigest() != BASE_SHA:
         raise RuntimeError('G76 base distinta')
     bot = Bot.load(base)
-    qv, av, pairs, permuted, teaching = teaching_pairs(bot)
-    acquisition = time.process_time()-start_cpu
-    seed0 = int(ENGINE[:8], 16)
-    bundles, learning = {}, {}
-    model_path = ROOT / '.leobot-data/g76_models.json'
-    for mode, data in (('full', pairs), ('shuffled', permuted)):
-        bundles[mode] = {'qv': qv, 'av': av, 'models': []}
-        learning[mode] = []
-        for offset in range(3):
-            model, report = train(data, len(qv), len(av), seed=seed0+offset, deadline=start_cpu+600)
-            bundles[mode]['models'].append(model)
-            learning[mode].append(report)
-            model_path.write_text(json.dumps({'models': bundles, 'learning': learning,
-                                             'teaching': teaching, 'sources_sha256': hashes}, ensure_ascii=False))
-            print(json.dumps({'stage': 'learned', 'mode': mode, 'seed': seed0+offset,
-                              'cpu_s': report['cpu_s']}), flush=True)
+    model_path = ROOT / f'.leobot-data/{experiment.lower()}_models.json'
+    if producer is None:
+        qv, av, pairs, permuted, teaching = teaching_pairs(bot)
+        acquisition = time.process_time()-start_cpu
+        seed0 = int(ENGINE[:8], 16)
+        bundles, learning = {}, {}
+        for mode, data in (('full', pairs), ('shuffled', permuted)):
+            bundles[mode] = {'qv': qv, 'av': av, 'models': []}
+            learning[mode] = []
+            for offset in range(3):
+                model, report = train(data, len(qv), len(av), seed=seed0+offset, deadline=start_cpu+600)
+                bundles[mode]['models'].append(model)
+                learning[mode].append(report)
+                model_path.write_text(json.dumps({'models': bundles, 'learning': learning,
+                                                 'teaching': teaching, 'sources_sha256': hashes}, ensure_ascii=False))
+                print(json.dumps({'stage': 'learned', 'mode': mode, 'seed': seed0+offset,
+                                  'cpu_s': report['cpu_s']}), flush=True)
+    else:
+        bundles, learning, teaching, acquisition = producer(bot, start_cpu, hashes, model_path)
     teaching_cpu = time.process_time()-start_cpu
-    deadline = time.process_time()+150
+    deadline = time.process_time()+validation_seconds
     t = time.process_time()
     baseline_rows = collect(bot, TRAIN)
     baseline_fit = metrics(baseline_rows, [r['baseline_p'] for r in baseline_rows])
@@ -212,13 +239,14 @@ def main():
     assert (baseline['useful_core'], baseline['quotes_without_data']) == (269, 74)
     choices, confidence, fitted = {}, {}, {}
     for mode, bundle in bundles.items():
-        ranker = TopicRanker(bot, bundle)
+        ranker = ranker_type(bot, bundle)
         best = (baseline_fit['useful_core'], -baseline_fit['quotes_without_data'], 0.)
         choices[mode], confidence[mode], fitted[mode] = 0., None, {}
+        shared = collect_weights(bot, ranker, deadline=deadline) if reuse_training_contexts else None
         for weight in WEIGHTS:
             check_budget(deadline)
             ranker.weight = weight
-            rows = collect(bot, TRAIN)
+            rows = shared[weight] if shared is not None else collect(bot, TRAIN)
             learned, probabilities = fit_confidence(rows, FIELDS)
             result = metrics(rows, probabilities)
             fitted[mode][str(weight)] = result
@@ -232,7 +260,7 @@ def main():
     t = time.process_time()
     results, details, raw, seed_results = {}, {}, {}, []
     for mode, bundle in bundles.items():
-        ranker = TopicRanker(bot, bundle, weight=choices[mode])
+        ranker = ranker_type(bot, bundle, weight=choices[mode])
         ranker.confidence = confidence[mode]
         results[mode] = public_measure(bot, ranker, deadline=deadline)
         raw_rows = collect(bot, DEV)
@@ -246,15 +274,15 @@ def main():
              'learning': learning, 'teaching': teaching, 'sources_sha256': hashes}
     model_path.write_text(json.dumps(saved, ensure_ascii=False))
     saved = json.loads(model_path.read_text())
-    replay = TopicRanker(bot, saved['models']['full'], weight=saved['choices']['full'])
+    replay = ranker_type(bot, saved['models']['full'], weight=saved['choices']['full'])
     replay.confidence = saved['confidence']['full']
     restored = public_measure(bot, replay, deadline=deadline)
     replay.restore()
-    zero = TopicRanker(bot, bundles['full'], weight=0.)
+    zero = ranker_type(bot, bundles['full'], weight=0.)
     unmodified = public_measure(bot, zero, deadline=deadline)
     zero.restore()
     for model in bundles['full']['models']:
-        ranker = TopicRanker(bot, {**bundles['full'], 'models': [model]}, weight=choices['full'])
+        ranker = ranker_type(bot, {**bundles['full'], 'models': [model]}, weight=choices['full'])
         ranker.confidence = confidence['full']
         seed_results.append(public_measure(bot, ranker, deadline=deadline))
         ranker.restore()
@@ -268,10 +296,12 @@ def main():
              'absent': primary['quotes_without_data'] <= baseline['quotes_without_data'],
              'latency': primary['p95_ms'] < 5 and primary['max_ms'] < 5,
              'controls': all(controls.values()), 'literal': primary['nonliteral_evidence'] == 0,
-             'budget': teaching_cpu <= 600 and selection_cpu+evaluation_cpu <= 150
-                       and rss <= 1024**2 and time.monotonic()-start_wall <= 1000}
-    assert fingerprint() == hashes
-    report = {'experiment': 'G76', 'scope': 'spent development, external prototype, no promotion',
+             'budget': teaching_cpu <= 600 and selection_cpu+evaluation_cpu <= validation_seconds
+                       and rss <= 1024**2 and time.monotonic()-start_wall <= 700+2*validation_seconds}
+    if 'global' in results:
+        gates['background_gain'] = primary['useful_core'] >= results['global']['useful_core']+.02*baseline['core']
+    assert fingerprint(extra_sources) == hashes
+    report = {'experiment': experiment, 'scope': 'spent development, external prototype, no promotion',
               'engine_sha': ENGINE, 'engine_unchanged': True, 'base_sha256': BASE_SHA,
               'sources_sha256': hashes, 'teaching': teaching, 'learning': learning,
               'baseline': baseline, 'training_baseline': baseline_fit, 'training_choices': fitted,
@@ -282,7 +312,7 @@ def main():
                        'selection_cpu_s': selection_cpu, 'evaluation_cpu_s': evaluation_cpu,
                        'total_cpu_s': time.process_time()-start_cpu, 'wall_s': time.monotonic()-start_wall,
                        'peak_rss_kib': rss, 'model_bytes': model_path.stat().st_size}}
-    (ROOT / 'results_v3/g76_paired_groups.json').write_text(json.dumps(report, ensure_ascii=False, indent=2)+'\n')
+    (ROOT / f'results_v3/{experiment.lower()}_paired_groups.json').write_text(json.dumps(report, ensure_ascii=False, indent=2)+'\n')
     print(json.dumps({'gates': gates, 'results': results, 'cost': report['cost']}), flush=True)
 
 
