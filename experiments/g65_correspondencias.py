@@ -29,7 +29,7 @@ def grams(words, width):
             for i in range(len(words)-n+1)}
 
 
-def examples(bot, path):
+def examples(bot, path, *, raw=False):
     if hashlib.sha256(path.read_bytes()).hexdigest() != MFAQ_SHA:
         raise ValueError('MFAQ no coincide con la fuente registrada')
     reservoir, seen = {}, Counter()
@@ -54,7 +54,7 @@ def examples(bot, path):
         for question, answer in pairs:
             q, a = tuple(bot.context_terms(question)), tuple(bot.context_terms(answer))
             if q and a and (q, a) not in unique:
-                rows.append((domain, q, a))
+                rows.append((domain, question, answer) if raw else (domain, q, a))
                 unique.add((q, a))
     return rows
 
