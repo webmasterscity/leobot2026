@@ -46,8 +46,8 @@ def new_tagger(model=None):
     return tagger
 
 
-def read_data(name):
-    manifest = json.loads((ROOT/'results_v3/g89_source_manifest.json').read_text())
+def read_data(name, manifest_path=ROOT/'results_v3/g89_source_manifest.json'):
+    manifest = json.loads(Path(manifest_path).read_text())
     expected = next(f for f in manifest['files'] if f['name'] == name)
     compressed = (ROOT/'.leobot-data/g89'/name).read_bytes()
     assert hashlib.sha256(compressed).hexdigest() == expected['compressed_sha256']
