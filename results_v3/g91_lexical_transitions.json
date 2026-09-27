@@ -1,0 +1,517 @@
+{
+  "experiment": "G91",
+  "scope": "count-backed lexical transitions; spent NER development; no QA claim",
+  "repository_engine_sha": "11a1ef5836382d81a643cad0b217a8669ce0f2d1",
+  "sources_sha256": {
+    "experiments/g91_lexical_transitions.py": "804a584316d4cfad6e80bfc304c983c576ed01a2b8f6a9cd1e52906b86a74622",
+    "experiments/test_g91_lexical_transitions.py": "46ba8daa03f71800e9f9be3acfc8d582446f2fa4721a1e2493f4824d2f9e513c",
+    "experiments/g90_observed_transitions.py": "0c954fa6e113b0d75793a195a628360b48d456c3faf80936b993a7ddd620b627",
+    "experiments/g89_semantic_categories.py": "e912b55f114dd5b2242c9a60660316991844674e47899e19bf74e39cf33e968f",
+    "leobot/syntax.py": "41272159f562fa36d59b6760b9e2e041782d380c91b7587e699adbefca72cf45",
+    "results_v3/g89_source_manifest.json": "dfbe121e36b754ffdcecc568ab1936ff5eda7de1773df28b1977890ce2d46b6d",
+    "prereg/G-91-contexto-lexico-en-transiciones.md": "20117a15555ffc0784dbcd65ca676b4dcb7764678e11c7babb6dc9ca37c14bc4"
+  },
+  "g89_model_sha256": "7020a285adf4c9673c89ad0379f24735ca766d2f0da239e299113391f238d140",
+  "source": {
+    "name": "esp.train.gz",
+    "encoding": "latin-1",
+    "sequences": 8323,
+    "tokens": 264715,
+    "tags": {
+      "B-LOC": 4913,
+      "B-MISC": 2173,
+      "B-ORG": 7390,
+      "B-PER": 4321,
+      "I-LOC": 1891,
+      "I-MISC": 3212,
+      "I-ORG": 4992,
+      "I-PER": 3903,
+      "O": 231920
+    },
+    "invalid_i_transitions": 1,
+    "sha256": "ec4eea28449f2503fab38009e66a25708aaf2aba9368382a4c112f1e3ba86c21"
+  },
+  "development": {
+    "name": "esp.testa.gz",
+    "encoding": "latin-1",
+    "sequences": 1915,
+    "tokens": 52923,
+    "tags": {
+      "B-LOC": 984,
+      "B-MISC": 445,
+      "B-ORG": 1700,
+      "B-PER": 1222,
+      "I-LOC": 337,
+      "I-MISC": 654,
+      "I-ORG": 1366,
+      "I-PER": 859,
+      "O": 45356
+    },
+    "invalid_i_transitions": 1,
+    "sha256": "cdbef0e0338d55bd5166bef07cb65192c0f7d35a846417bb9f6b1f1298b9b7e8"
+  },
+  "education": {
+    "previous_tags": 10,
+    "lexical_contexts": 29047,
+    "outcomes": 30913,
+    "shuffled_rows_changed": 22183
+  },
+  "transition_uses": {
+    "baseline": {
+      "observed": 0,
+      "unseen": 0
+    },
+    "learned": {
+      "observed": 731686,
+      "unseen": 144524
+    },
+    "erased": {
+      "observed": 873463,
+      "unseen": 0
+    },
+    "shuffled": {
+      "observed": 729389,
+      "unseen": 144520
+    },
+    "disabled": {
+      "observed": 731686,
+      "unseen": 144524
+    }
+  },
+  "candidates": {
+    "baseline": {
+      "spans": {
+        "correct": 2885,
+        "predicted": 4532,
+        "gold": 4352,
+        "precision": 0.6365842894969108,
+        "recall": 0.6629136029411765,
+        "f1": 0.6494822152183701
+      },
+      "token_accuracy": 0.9463749220565728,
+      "tokens": 52923,
+      "per_class": {
+        "LOC": {
+          "correct": 798,
+          "predicted": 1372,
+          "gold": 985,
+          "precision": 0.5816326530612245,
+          "recall": 0.8101522842639594,
+          "f1": 0.677131947390751
+        },
+        "MISC": {
+          "correct": 175,
+          "predicted": 445,
+          "gold": 445,
+          "precision": 0.39325842696629215,
+          "recall": 0.39325842696629215,
+          "f1": 0.39325842696629215
+        },
+        "ORG": {
+          "correct": 1056,
+          "predicted": 1570,
+          "gold": 1700,
+          "precision": 0.6726114649681528,
+          "recall": 0.6211764705882353,
+          "f1": 0.6458715596330276
+        },
+        "PER": {
+          "correct": 856,
+          "predicted": 1145,
+          "gold": 1222,
+          "precision": 0.7475982532751092,
+          "recall": 0.7004909983633388,
+          "f1": 0.7232784114913392
+        }
+      },
+      "unseen_entity_text": {
+        "correct": 899,
+        "predicted": 1987,
+        "gold": 1968,
+        "precision": 0.4524408656265727,
+        "recall": 0.4568089430894309,
+        "f1": 0.45461441213653603
+      },
+      "entity_with_unseen_token": {
+        "correct": 596,
+        "predicted": 1251,
+        "gold": 1343,
+        "precision": 0.47641886490807356,
+        "recall": 0.4437825763216679,
+        "f1": 0.45952197378565923
+      },
+      "invalid_i_predictions": 197,
+      "prediction_sha256": "570785fbc9531c980e9e453990453b73794a6c9c0b09e720dc6060fc8b70b0b1",
+      "sequence_p50_ms": 1.2454430034267716,
+      "sequence_p95_ms": 3.9654180000070482,
+      "sequence_max_ms": 20.64060500561027,
+      "cpu_s": 3.0170956369999997
+    },
+    "learned": {
+      "spans": {
+        "correct": 2995,
+        "predicted": 4515,
+        "gold": 4352,
+        "precision": 0.6633444075304541,
+        "recall": 0.6881893382352942,
+        "f1": 0.6755385135897146
+      },
+      "token_accuracy": 0.9500028343064452,
+      "tokens": 52923,
+      "per_class": {
+        "LOC": {
+          "correct": 790,
+          "predicted": 1307,
+          "gold": 985,
+          "precision": 0.6044376434583014,
+          "recall": 0.8020304568527918,
+          "f1": 0.6893542757417103
+        },
+        "MISC": {
+          "correct": 182,
+          "predicted": 462,
+          "gold": 445,
+          "precision": 0.3939393939393939,
+          "recall": 0.40898876404494383,
+          "f1": 0.4013230429988975
+        },
+        "ORG": {
+          "correct": 1134,
+          "predicted": 1629,
+          "gold": 1700,
+          "precision": 0.6961325966850829,
+          "recall": 0.6670588235294118,
+          "f1": 0.6812856713727846
+        },
+        "PER": {
+          "correct": 889,
+          "predicted": 1117,
+          "gold": 1222,
+          "precision": 0.7958818263205013,
+          "recall": 0.7274959083469722,
+          "f1": 0.7601539119281744
+        }
+      },
+      "unseen_entity_text": {
+        "correct": 984,
+        "predicted": 1967,
+        "gold": 1968,
+        "precision": 0.5002541942043721,
+        "recall": 0.5,
+        "f1": 0.5001270648030496
+      },
+      "entity_with_unseen_token": {
+        "correct": 687,
+        "predicted": 1275,
+        "gold": 1343,
+        "precision": 0.5388235294117647,
+        "recall": 0.5115413253909159,
+        "f1": 0.5248281130634072
+      },
+      "invalid_i_predictions": 192,
+      "prediction_sha256": "342daf93d175ab661e50de5f80cb9a8a2ae33dc0a54cd2438d722651acc4716c",
+      "sequence_p50_ms": 1.434751000488177,
+      "sequence_p95_ms": 4.013147001387551,
+      "sequence_max_ms": 22.968999997829087,
+      "cpu_s": 3.2232948869999998
+    },
+    "erased": {
+      "spans": {
+        "correct": 2839,
+        "predicted": 4415,
+        "gold": 4352,
+        "precision": 0.6430351075877689,
+        "recall": 0.65234375,
+        "f1": 0.6476559826622562
+      },
+      "token_accuracy": 0.9461670729172571,
+      "tokens": 52923,
+      "per_class": {
+        "LOC": {
+          "correct": 787,
+          "predicted": 1342,
+          "gold": 985,
+          "precision": 0.5864381520119225,
+          "recall": 0.798984771573604,
+          "f1": 0.6764073914911903
+        },
+        "MISC": {
+          "correct": 166,
+          "predicted": 435,
+          "gold": 445,
+          "precision": 0.3816091954022989,
+          "recall": 0.37303370786516854,
+          "f1": 0.37727272727272726
+        },
+        "ORG": {
+          "correct": 1055,
+          "predicted": 1557,
+          "gold": 1700,
+          "precision": 0.6775850995504175,
+          "recall": 0.6205882352941177,
+          "f1": 0.6478354313785692
+        },
+        "PER": {
+          "correct": 831,
+          "predicted": 1081,
+          "gold": 1222,
+          "precision": 0.7687326549491211,
+          "recall": 0.6800327332242226,
+          "f1": 0.7216673903603995
+        }
+      },
+      "unseen_entity_text": {
+        "correct": 856,
+        "predicted": 1917,
+        "gold": 1968,
+        "precision": 0.44653103808033384,
+        "recall": 0.4349593495934959,
+        "f1": 0.4406692406692407
+      },
+      "entity_with_unseen_token": {
+        "correct": 561,
+        "predicted": 1197,
+        "gold": 1343,
+        "precision": 0.46867167919799496,
+        "recall": 0.4177215189873418,
+        "f1": 0.44173228346456694
+      },
+      "invalid_i_predictions": 133,
+      "prediction_sha256": "89348ddd3e02e2a466d91c4aa7ce870bc3db77bee7d49cea0e4c32bfa485c452",
+      "sequence_p50_ms": 1.3658649986609817,
+      "sequence_p95_ms": 3.8210060010896996,
+      "sequence_max_ms": 25.010065000969917,
+      "cpu_s": 3.0586577089999993
+    },
+    "shuffled": {
+      "spans": {
+        "correct": 2862,
+        "predicted": 4469,
+        "gold": 4352,
+        "precision": 0.6404117252181696,
+        "recall": 0.6576286764705882,
+        "f1": 0.6489060197256546
+      },
+      "token_accuracy": 0.9465071896906827,
+      "tokens": 52923,
+      "per_class": {
+        "LOC": {
+          "correct": 793,
+          "predicted": 1359,
+          "gold": 985,
+          "precision": 0.5835172921265637,
+          "recall": 0.8050761421319796,
+          "f1": 0.6766211604095563
+        },
+        "MISC": {
+          "correct": 174,
+          "predicted": 444,
+          "gold": 445,
+          "precision": 0.3918918918918919,
+          "recall": 0.39101123595505616,
+          "f1": 0.3914510686164229
+        },
+        "ORG": {
+          "correct": 1046,
+          "predicted": 1537,
+          "gold": 1700,
+          "precision": 0.6805465191932336,
+          "recall": 0.6152941176470588,
+          "f1": 0.6462774173617547
+        },
+        "PER": {
+          "correct": 849,
+          "predicted": 1129,
+          "gold": 1222,
+          "precision": 0.7519929140832595,
+          "recall": 0.6947626841243862,
+          "f1": 0.7222458528285836
+        }
+      },
+      "unseen_entity_text": {
+        "correct": 878,
+        "predicted": 1947,
+        "gold": 1968,
+        "precision": 0.4509501797637391,
+        "recall": 0.44613821138211385,
+        "f1": 0.44853128991060026
+      },
+      "entity_with_unseen_token": {
+        "correct": 578,
+        "predicted": 1216,
+        "gold": 1343,
+        "precision": 0.4753289473684211,
+        "recall": 0.43037974683544306,
+        "f1": 0.4517389605314576
+      },
+      "invalid_i_predictions": 199,
+      "prediction_sha256": "bb3e6ba18858360de58d6e43b14a53eb40a1eceddc59336bec8edc509df1a907",
+      "sequence_p50_ms": 1.432919001672417,
+      "sequence_p95_ms": 3.8952809991315007,
+      "sequence_max_ms": 23.109785994165577,
+      "cpu_s": 3.2133106330000007
+    },
+    "disabled": {
+      "spans": {
+        "correct": 2885,
+        "predicted": 4532,
+        "gold": 4352,
+        "precision": 0.6365842894969108,
+        "recall": 0.6629136029411765,
+        "f1": 0.6494822152183701
+      },
+      "token_accuracy": 0.9463749220565728,
+      "tokens": 52923,
+      "per_class": {
+        "LOC": {
+          "correct": 798,
+          "predicted": 1372,
+          "gold": 985,
+          "precision": 0.5816326530612245,
+          "recall": 0.8101522842639594,
+          "f1": 0.677131947390751
+        },
+        "MISC": {
+          "correct": 175,
+          "predicted": 445,
+          "gold": 445,
+          "precision": 0.39325842696629215,
+          "recall": 0.39325842696629215,
+          "f1": 0.39325842696629215
+        },
+        "ORG": {
+          "correct": 1056,
+          "predicted": 1570,
+          "gold": 1700,
+          "precision": 0.6726114649681528,
+          "recall": 0.6211764705882353,
+          "f1": 0.6458715596330276
+        },
+        "PER": {
+          "correct": 856,
+          "predicted": 1145,
+          "gold": 1222,
+          "precision": 0.7475982532751092,
+          "recall": 0.7004909983633388,
+          "f1": 0.7232784114913392
+        }
+      },
+      "unseen_entity_text": {
+        "correct": 899,
+        "predicted": 1987,
+        "gold": 1968,
+        "precision": 0.4524408656265727,
+        "recall": 0.4568089430894309,
+        "f1": 0.45461441213653603
+      },
+      "entity_with_unseen_token": {
+        "correct": 596,
+        "predicted": 1251,
+        "gold": 1343,
+        "precision": 0.47641886490807356,
+        "recall": 0.4437825763216679,
+        "f1": 0.45952197378565923
+      },
+      "invalid_i_predictions": 197,
+      "prediction_sha256": "570785fbc9531c980e9e453990453b73794a6c9c0b09e720dc6060fc8b70b0b1",
+      "sequence_p50_ms": 1.1926130027859472,
+      "sequence_p95_ms": 3.4175629989476874,
+      "sequence_max_ms": 20.616132002032828,
+      "cpu_s": 2.760201412999999
+    }
+  },
+  "controls": {
+    "baseline_exact": true,
+    "disabled_exact": true,
+    "reload_exact": true
+  },
+  "restart": {
+    "result": {
+      "spans": {
+        "correct": 2995,
+        "predicted": 4515,
+        "gold": 4352,
+        "precision": 0.6633444075304541,
+        "recall": 0.6881893382352942,
+        "f1": 0.6755385135897146
+      },
+      "token_accuracy": 0.9500028343064452,
+      "tokens": 52923,
+      "per_class": {
+        "LOC": {
+          "correct": 790,
+          "predicted": 1307,
+          "gold": 985,
+          "precision": 0.6044376434583014,
+          "recall": 0.8020304568527918,
+          "f1": 0.6893542757417103
+        },
+        "MISC": {
+          "correct": 182,
+          "predicted": 462,
+          "gold": 445,
+          "precision": 0.3939393939393939,
+          "recall": 0.40898876404494383,
+          "f1": 0.4013230429988975
+        },
+        "ORG": {
+          "correct": 1134,
+          "predicted": 1629,
+          "gold": 1700,
+          "precision": 0.6961325966850829,
+          "recall": 0.6670588235294118,
+          "f1": 0.6812856713727846
+        },
+        "PER": {
+          "correct": 889,
+          "predicted": 1117,
+          "gold": 1222,
+          "precision": 0.7958818263205013,
+          "recall": 0.7274959083469722,
+          "f1": 0.7601539119281744
+        }
+      },
+      "unseen_entity_text": {
+        "correct": 984,
+        "predicted": 1967,
+        "gold": 1968,
+        "precision": 0.5002541942043721,
+        "recall": 0.5,
+        "f1": 0.5001270648030496
+      },
+      "entity_with_unseen_token": {
+        "correct": 687,
+        "predicted": 1275,
+        "gold": 1343,
+        "precision": 0.5388235294117647,
+        "recall": 0.5115413253909159,
+        "f1": 0.5248281130634072
+      },
+      "invalid_i_predictions": 192,
+      "prediction_sha256": "342daf93d175ab661e50de5f80cb9a8a2ae33dc0a54cd2438d722651acc4716c",
+      "sequence_p50_ms": 1.4441160019487143,
+      "sequence_p95_ms": 4.032350996567402,
+      "sequence_max_ms": 22.770638002839405
+    },
+    "cpu_s": 4.259154200999999,
+    "peak_rss_kib": 90188
+  },
+  "gates": {
+    "span_f1": true,
+    "baseline_gain": true,
+    "context_gain": true,
+    "new_names": true,
+    "controls": true,
+    "budget": true
+  },
+  "continue_to_separate_check": true,
+  "cost": {
+    "reuse_and_education_cpu_s": 1.131275398,
+    "evaluation_cpu_s": 19.730005711,
+    "total_cpu_s": 20.861281109000004,
+    "wall_s": 20.995776588002627,
+    "peak_rss_kib": 162292,
+    "parent_rss_during_child_kib": 72104,
+    "model_bytes": 2443864
+  }
+}
