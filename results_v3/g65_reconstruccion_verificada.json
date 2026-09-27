@@ -1,0 +1,86 @@
+{
+  "engine": "11a1ef5836382d81a643cad0b217a8669ce0f2d1",
+  "cases": 585,
+  "same_ids": true,
+  "different_responses": 0,
+  "same_responses": true,
+  "reference": "results_v3/kiosco/evaluacion_g64/tratamiento.json",
+  "cpu_s": 2.512996901,
+  "rss_mib": 521.6875,
+  "p50_ms": 0.127,
+  "p95_ms": 0.225,
+  "max_ms": 0.517,
+  "responses_at_least_5ms": 0,
+  "base_sha256": "6fff61c20fcd5812d785eec22b6c595e19568f98ec31559e689c7fb95fe6d79f",
+  "totals": {
+    "turnos": 585,
+    "veredictos": {
+      "abstencion_correcta": 131,
+      "abstencion_indebida": 218,
+      "charla_ok": 20,
+      "charla_otro": 15,
+      "cita_no_util": 58,
+      "cita_sin_dato": 27,
+      "cita_util": 116
+    },
+    "por_tipo": {
+      "charla": {
+        "charla_ok": 20,
+        "charla_otro": 15
+      },
+      "combinada": {
+        "abstencion_indebida": 27,
+        "cita_no_util": 11,
+        "cita_util": 5
+      },
+      "directa": {
+        "abstencion_indebida": 103,
+        "cita_no_util": 26,
+        "cita_util": 58
+      },
+      "instruccion": {
+        "abstencion_correcta": 37,
+        "abstencion_indebida": 9,
+        "cita_no_util": 1,
+        "cita_sin_dato": 7,
+        "cita_util": 1
+      },
+      "seguimiento": {
+        "abstencion_correcta": 1,
+        "abstencion_indebida": 41,
+        "cita_no_util": 11,
+        "cita_util": 20
+      },
+      "si_no": {
+        "abstencion_indebida": 38,
+        "cita_no_util": 9,
+        "cita_util": 32
+      },
+      "sin_respuesta": {
+        "abstencion_correcta": 93,
+        "cita_sin_dato": 20
+      }
+    },
+    "directa_si_no_utiles": "90/266",
+    "sin_respuesta_no_lo_se_o_cita": "158/158",
+    "directa_si_no_correctas": "0/266",
+    "directa_si_no_pct": 0.0,
+    "con_respuesta_correctas": "0/392",
+    "error_entre_contestadas_pct": null,
+    "contestadas": 0,
+    "sin_respuesta_calladas": "131/158",
+    "p50_ms": 0.127,
+    "p95_ms": 0.225
+  },
+  "user_example_diagnostic_only": {
+    "text": "No lo tengo seguro. Lo más cercano que dice el texto es: «Horario: 7:00 a 19:00».",
+    "status": "closest",
+    "evidence": {
+      "unit": "Horario: 7:00 a 19:00",
+      "heading": "",
+      "index": 0
+    },
+    "confidence": 0.4416,
+    "cell": "2,2"
+  }
+}

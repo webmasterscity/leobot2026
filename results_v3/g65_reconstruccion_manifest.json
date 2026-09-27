@@ -1,0 +1,59 @@
+{
+  "python": "3.12.3 (main, Aug 31 2026, 10:18:26) [GCC 13.3.0]",
+  "inputs": {
+    "es_ancora-ud-train.conllu": {
+      "file": "/media/leonardo/data/corpus_ud/es_ancora-ud-train.conllu",
+      "sha256": "47b6fc49d6ed48a016e7fa5ad9f5c7ecf3ec21e9db005df3ea14d10f07c6deb6"
+    },
+    "es_coser-ud-train.conllu": {
+      "file": "/media/leonardo/data/corpus_ud/es_coser-ud-train.conllu",
+      "sha256": "a0b35d4f9d9dd9aeae3809b88b211dac785de795a7384c34b2c27e7c7c2aa121"
+    },
+    "mfaq_es_train.jsonl": {
+      "url": "https://huggingface.co/datasets/clips/mfaq/resolve/main/data/es/train.jsonl",
+      "sha256": "c985eb099bcdadf87baa778786148e4de6c9a84057e68b4268ea2f832b884c66",
+      "file": "/media/leonardo/data/leobot2026/.leobot-data/mfaq_es_train.jsonl"
+    },
+    "squad_es_train_v1.1.json": {
+      "url": "https://raw.githubusercontent.com/ccasimiro88/TranslateAlignRetrieve/master/SQuAD-es-v1.1/train-v1.1-es.json",
+      "sha256": "196cfa14b6ba7d903f02e6edc20485bb959b72c965b6a2d6883b8ffd74dc2c3b",
+      "file": "/media/leonardo/data/leobot2026/.leobot-data/squad_es_train_v1.1.json"
+    },
+    "leobot_mlqa_v1.zip": {
+      "url": "https://dl.fbaipublicfiles.com/MLQA/MLQA_V1.zip",
+      "sha256": "246e8089933d13007fe80684d5c5c0713d6834cf8b3b4a0ec7c66f0a0d2baac8",
+      "file": "/media/leonardo/data/leobot2026/.leobot-data/leobot_mlqa_v1.zip"
+    }
+  },
+  "stages": [
+    {
+      "module": "base_educada",
+      "seconds": 146.18523073200004,
+      "stdout": "{\"feats\": true, \"cpu_s\": 145.7, \"mib\": 95.7, \"rss_mib\": 438.3}",
+      "stderr": ""
+    },
+    {
+      "module": "g57_educar_kiosco",
+      "seconds": 17.052045120000002,
+      "stdout": "{\"pares\": 33787, \"dominios\": 1118, \"delta\": 7039, \"rare_delta\": 0.5977, \"puente_q\": 155, \"puente_pares\": 960, \"calibracion_preguntas\": 3885, \"admitidas\": [], \"contestadas\": 0, \"correctas\": 0, \"segundos\": {\"lectura\": 2.5, \"palabras\": 7.2, \"puente\": 9.8, \"total\": 16.7}, \"ram_mb\": 520, \"bytes\": 100567810}",
+      "stderr": ""
+    },
+    {
+      "module": "g57_calibrar_kiosco",
+      "seconds": 5.192434783999943,
+      "stdout": "{\"celdas\": 24, \"admitidas\": [], \"turnos\": 391, \"correctos\": 134, \"mejor_precision\": 0.8666666666666667}",
+      "stderr": ""
+    },
+    {
+      "module": "g60_calibrar_confianza",
+      "seconds": 9.672609318000013,
+      "stdout": "{\"turnos\": 3520, \"utiles\": 1175, \"tramos\": [[0.0, 37], [0.0169, 59], [0.0222, 45], [0.0803, 498], [0.0857, 35], [0.1369, 358], [0.1576, 165], [0.1867, 166], [0.2302, 252], [0.2593, 54], [0.2784, 352], [0.3023, 43], [0.3146, 89], [0.3596, 203], [0.4416, 231], [0.5338, 296], [0.5846, 65], [0.59, 100], [0.6907, 97], [0.7647, 34], [0.7654, 81], [0.8039, 51], [0.8537, 41], [0.8667, 105], [0.9333, 30], [1.0, 33]], \"cruzado_citas\": 1163, \"cruzado_utiles\": 739, \"celdas_dos_rasgos\": [\"0,4\", \"1,4\"]}",
+      "stderr": ""
+    }
+  ],
+  "engine": "11a1ef5836382d81a643cad0b217a8669ce0f2d1",
+  "base": {
+    "file": "/media/leonardo/data/leobot2026/.leobot-data/base_kiosco.json",
+    "sha256": "6fff61c20fcd5812d785eec22b6c595e19568f98ec31559e689c7fb95fe6d79f"
+  }
+}

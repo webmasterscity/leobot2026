@@ -18,6 +18,7 @@ from __future__ import annotations
 
 import inspect
 import json
+import os
 import random
 import resource
 import sys
@@ -31,7 +32,7 @@ from leobot import Bot
 
 SQUAD_TRAIN_URL = 'https://raw.githubusercontent.com/ccasimiro88/TranslateAlignRetrieve/master/SQuAD-es-v1.1/train-v1.1-es.json'
 SQUAD_TRAIN_SHA = '196cfa14b6ba7d903f02e6edc20485bb959b72c965b6a2d6883b8ffd74dc2c3b'
-SQUAD_TRAIN_CACHE = Path('/tmp/squad_es_train_v1.1.json')
+SQUAD_TRAIN_CACHE = Path(os.environ.get('SQUAD_TRAIN_CACHE', '/tmp/squad_es_train_v1.1.json'))
 
 
 def squad_es_train():

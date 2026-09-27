@@ -19,11 +19,17 @@ python3 -m experiments.meta_active_probe          # elección de pruebas para se
 
 ## Kiosco: interfaz para integrar (G-57/G-58)
 
-Carga una vez la información de un negocio y responde a cada persona. Todo ocurre en el mismo proceso, con la biblioteca estándar de Python. La base educada (unos 100 MB) se prepara con `experiments/g57_educar_kiosco.py`, `experiments/g57_calibrar_kiosco.py` y `experiments/g58_calibrar_cercano.py`.
+Carga una vez la información de un negocio y responde a cada persona. Todo ocurre en el mismo proceso, con la biblioteca estándar de Python. La base educada ocupa unos 100 MB. Para reconstruir la educación de la versión estable, incluyendo sus fuentes verificadas y la confianza de G-62:
+
+```bash
+timeout 1500s python3 -m experiments.reconstruir_kiosco /ruta/corpus_ud .leobot-data
+```
+
+La carpeta de entrada debe contener `es_ancora-ud-train.conllu` y `es_coser-ud-train.conllu`. La salida queda en `.leobot-data/base_kiosco.json`; `manifest.json` registra las fuentes, sus huellas y los tiempos. Esa carpeta persiste al reiniciar y no entra en Git. Este proceso reconstruye lo ya aprendido; no acredita capacidades nuevas.
 
 ```python
 from leobot import Bot
-bot = Bot.load('base_kiosco.json')                  # una vez
+bot = Bot.load('.leobot-data/base_kiosco.json')     # una vez
 bot.load_context(texto_del_negocio, instrucciones)  # una vez por negocio
 r = bot.answer('¿Cuánto cuesta la habitación doble?', historial)
 r['text']      # lo único que se dice a la persona
