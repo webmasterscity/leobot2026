@@ -24,11 +24,13 @@ SOURCES = {
 
 def download():
     CACHE.mkdir(parents=True, exist_ok=True)
-    manifest = {}
+    manifest_path = CACHE / 'manifest.json'
+    manifest = json.loads(manifest_path.read_text()) if manifest_path.exists() else {}
     for name, url in SOURCES.items():
         path = CACHE / (name + '.zip')
-        if path.exists():
-            raise RuntimeError('No sobrescribir una fuente existente')
+        if name in manifest or path.exists():
+            print(json.dumps({'skipped_existing_record': name}), flush=True)
+            continue
         begin, cpu0 = time.monotonic(), time.process_time()
         attempts, raw = [], b''
         for verify in (True, False):
@@ -51,19 +53,24 @@ def download():
             except URLError as exc:
                 attempts.append({'tls_verified': verify, 'ok': False, 'error': str(exc)})
                 if not verify or not isinstance(exc.reason, ssl.SSLCertVerificationError):
-                    raise
+                    break
         if not raw:
-            raise RuntimeError('Fuente vacía')
+            manifest[name] = {'url': url, 'available': False, 'attempts': attempts,
+                              'cpu_s': time.process_time() - cpu0,
+                              'wall_s': time.monotonic() - begin}
+            manifest_path.write_text(json.dumps(manifest, indent=2) + '\n')
+            print(json.dumps({name: manifest[name]}), flush=True)
+            continue
         path.write_bytes(raw)
         with zipfile.ZipFile(path) as archive:
             validate_archive(archive)
-        manifest[name] = {'url': url, 'final_url': final_url, 'bytes': len(raw),
+        manifest[name] = {'url': url, 'available': True, 'final_url': final_url, 'bytes': len(raw),
                           'sha256': sha256(raw).hexdigest(), 'attempts': attempts,
                           'cpu_s': time.process_time() - cpu0,
                           'wall_s': time.monotonic() - begin}
         print(json.dumps({name: manifest[name]}), flush=True)
         # Retain successful acquisition information if the next download fails.
-        (CACHE / 'manifest.json').write_text(json.dumps(manifest, indent=2) + '\n')
+        manifest_path.write_text(json.dumps(manifest, indent=2) + '\n')
 
 
 def validate_archive(archive):
