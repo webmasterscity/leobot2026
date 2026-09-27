@@ -1,5 +1,6 @@
 """Controles del experimento, no evidencia de comprensión del lenguaje."""
 import importlib.util
+import inspect
 import unittest
 
 
@@ -36,6 +37,19 @@ class JointConstructionContract(unittest.TestCase):
         )
         self.assertTrue(stats['exhausted'])
         self.assertEqual(answer, ('NONE', 'NONE'))
+
+    def test_compatibility_filter_cannot_select_a_disallowed_construction(self):
+        # Ignoring a learned compatibility restriction would return b/NONE/c.
+        learner = self.learner()
+        self.assertIn('allowed', inspect.signature(learner.predict).parameters)
+        model = learner.learn([[('u', 'a'), ('v', 'b')],
+                               [('u', 'b'), ('w', 'c')]])
+        keys = ['u', 'v', 'w']
+        margins = [{'a': 5, 'b': 6}, {'b': 4}, {'c': 5}]
+        answer, _ = model.predict(keys, margins, allowed={0})
+        self.assertEqual(answer, ('a', 'b', 'NONE'))
+        answer, _ = model.predict(keys, margins, allowed=set())
+        self.assertEqual(answer, ('NONE', 'NONE', 'NONE'))
 
 
 if __name__ == '__main__':

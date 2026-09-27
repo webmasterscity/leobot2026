@@ -61,11 +61,13 @@ class JointConstructions:
                    for pattern, _ in patterns]
         return cls(patterns, anchors)
 
-    def predict(self, keys, margins, limit=2048):
+    def predict(self, keys, margins, limit=2048, allowed=None):
         available = defaultdict(list)
         for idx, key in enumerate(keys):
             available[key].append(idx)
         ids = sorted({idx for key in available for idx in self.index.get(key, ())})
+        if allowed is not None:
+            ids = [idx for idx in ids if idx in allowed]
         empty = (NONE,) * len(keys)
         best, answer = (0.0, 0), empty
         stats = {'patterns_considered': len(ids), 'applications': 0,
@@ -216,7 +218,8 @@ def acquire(seed):
                     raise RuntimeError('Más de dos millones de candidatos')
                 parts[part].append({'cases': cases, 'gold': gold,
                                     'represented': represented, 'feature_ms': elapsed,
-                                    'missed_roles': dict(missed_roles)})
+                                    'missed_roles': dict(missed_roles),
+                                    'lemma': lemma, 'doc': doc})
                 for kind, value in (('docs', doc), ('lemmas', lemma)):
                     symbols[part][kind].add(value)
     for left, right in itertools.combinations(parts, 2):
