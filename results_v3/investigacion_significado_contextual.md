@@ -53,4 +53,4 @@ y participantes, con alcance limitado por Predicate Matrix. PAR-1 agrupa palabra
 PAR-3, en la otra carpeta, consulta ejemplos humanos parecidos. Una alternativa
 basada en grupos de preguntas completas tendría que transferir sin conservar
 los ejemplos y superar un control con parejas pregunta/respuesta desordenadas.
-No se ha implementado ni preregistrado esa alternativa en esta revisión.
+La adaptación acotada quedó después preregistrada como [G-76](../prereg/G-76-grupos-de-preguntas-y-respuestas.md).

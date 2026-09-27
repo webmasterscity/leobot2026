@@ -182,9 +182,9 @@ def education(bot, mapping):
                                'observations': dict(counts), 'parsing': dict(views.stats)}
 
 
-def intervals(rows):
+def intervals(rows, fields=RAW):
     result = {}
-    for name in RAW:
+    for name in fields:
         values = sorted(r['f'][name] for r in rows)
         result[name] = sorted({values[int((len(values)-1)*q)] for q in (.25, .5, .75)})
     return result
@@ -195,11 +195,11 @@ def discretize(features, edges):
             for name, value in features.items()}
 
 
-def fit_confidence(rows):
-    active = [r for r in rows if RAW[0] in r['f']]
+def fit_confidence(rows, fields=RAW):
+    active = [r for r in rows if fields[0] in r['f']]
     if len(active) < 60 or any(sum(r['half'] == h for r in active) < 30 for h in (0, 1)):
         return None, [r['baseline_p'] for r in rows]
-    edges = intervals(active)
+    edges = intervals(active, fields)
     binned = [{**r, 'f': discretize(r['f'], edges)} for r in active]
     points, raw = [], {}
     for half in (0, 1):
@@ -215,6 +215,8 @@ def fit_confidence(rows):
 
 
 class RelationalRanker:
+    feature_fields = RAW
+
     def __init__(self, bot, mapping, weights, mode='full', weight=1.):
         self.bot, self.mapping, self.weights = bot, mapping, weights
         self.mode, self.weight, self.confidence = mode, weight, None
@@ -303,7 +305,7 @@ class RelationalRanker:
         ranked['cell'] = cell_key(ranked['unaddressed'], ranked['margin'])
         ranked['features'] = self.bot._features(ranked, question)
         _, lex, bindings, ambiguity = evidence[best]
-        ranked['features'].update(semantic_score=lex, binding_score=bindings, interpretations=ambiguity)
+        ranked['features'].update(zip(self.feature_fields, (lex, bindings, ambiguity)))
         if self.confidence is not None:
             f = discretize(ranked['features'], self.confidence['edges'])
             ranked['useful'] = calibrated(self.confidence['calibration'], score(self.confidence['model'], f))
