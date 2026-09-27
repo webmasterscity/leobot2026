@@ -74,3 +74,8 @@ Guardar cada modelo antes de seguir y registrar interrupciones. Pruebas focales
 con símbolos, actualización del documento y renombrado de sitios. Commit previo
 y congelación `freeze-G77-prototipo` antes de medir. Si falla, conservarlo; no
 ampliar grupos ni rondas. Si pasa, integración y prueba externa antes de promover.
+
+Durante selección se reutiliza la preparación del documento para sus cuatro
+pesos, como en G-75. Se extrae el recorrido común de turnos de G-68 para evitar
+duplicar el evaluador. Prueba focal: mismas filas que recorridos separados.
+No se reutilizan respuestas ni se adelanta análisis de preguntas al medir latencia.
