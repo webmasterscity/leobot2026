@@ -1,0 +1,498 @@
+{
+  "experiment": "G86",
+  "scope": "spent development; external prototype; not production",
+  "repository_engine_sha": "11a1ef5836382d81a643cad0b217a8669ce0f2d1",
+  "effective_selector_reference": "fe2f3116e8d2bf0a6c76eabfce496dbb4780d973",
+  "reference_sha256": {
+    "leobot/context.py": "3c907f07775aa9da574df693fa043a33ae773adc8ff78ec6470d6a86f93feddd",
+    "experiments/par2_seleccion.py": "54d4337cdd9d5bfeaa482cb9ba89de248d2d4fbe45c567e29c62bac9c0397eb1"
+  },
+  "sources_sha256": {
+    "experiments/g86_ordered_fragments.py": "ef27b9271b26d21d9ffe0cba34f701f37c273598950ba3f2fc1cd661e474b176",
+    "experiments/test_g86_ordered_fragments.py": "f08fd334ff29afa1648ee80c5d4658ab88025c71448575594536bffc7beedaa5",
+    "experiments/g85_human_selection.py": "c71ed5b519b84b04fde23c65bcbb12e99a27c8861ce92fa1ee4ab09c64e3f0e9",
+    "experiments/g84_indirect_alignment.py": "718f001e3839e5c8ff77c28bce5a0a4ccece48f3bc81df9a5c455182addde522",
+    "experiments/g84b_compact_replay.py": "a6f30fe340d5f63be71ee96ad1730d335f353d646c096e9769513ac3eb366029",
+    "experiments/g65_correspondencias.py": "d5e786e32f329f802f894ec30c853fdffbe9878561eac0cc3454abdba6b01ffa",
+    "experiments/g79_joint_selection.py": "8521df478c0ec3aeb4d5f3a5e8d82b1a55a4d3a913049de3b9407c03361204aa",
+    "experiments/g68_confianza.py": "e564ac88b8307caeac219a2ecbee7ff9d2857799c0b089402541c5a73ca0ef00",
+    "experiments/g75_relational_evidence.py": "abaab742e407c8e53655e20714e192f5bb9ac0c7c644979fc575c093fe981459",
+    "prereg/G-86-orden-de-fragmentos-relacionados.md": "08f3e24f76fa8bb502939ba71d0af5f8265b1283717b65c736cd394552688673"
+  },
+  "g84_models_sha256": "fd528ab70a602289c271916835c00c570e21b7b2d5ca0f08207515f2bf0384b7",
+  "base_sha256": "6fff61c20fcd5812d785eec22b6c595e19568f98ec31559e689c7fb95fe6d79f",
+  "education": {
+    "source": {
+      "sampled": 31762,
+      "eligible": 16156,
+      "chosen": 6000,
+      "domains": 650,
+      "exclusions": {
+        "too_long": 15413,
+        "no_distinct_background": 193
+      },
+      "selected_sha256": "c9b084f84f1a886ac599332960706f660d759d2fbb305f581d1336a9d34a44bb",
+      "source_sha256": "c985eb099bcdadf87baa778786148e4de6c9a84057e68b4268ea2f832b884c66"
+    },
+    "features": {
+      "ordered": 13721,
+      "unordered": 6415,
+      "shuffled": 13721
+    },
+    "stages": {
+      "example_selection_cpu_s": 14.704830722999999,
+      "human_preparation_cpu_s": 21.378883250000005,
+      "ordered_counts_cpu_s": 1.7189098460000025,
+      "unordered_counts_cpu_s": 1.6128155379999995,
+      "shuffled_counts_cpu_s": 1.8038786679999959
+    }
+  },
+  "selection_education": {
+    "removed": {
+      "turns": 3520,
+      "rows": 20629,
+      "features": [
+        "alignment1_distance",
+        "alignment1_known",
+        "alignment1_margin",
+        "alignment1_score",
+        "alignment2_distance",
+        "alignment2_known",
+        "alignment2_margin",
+        "alignment2_score",
+        "cifra",
+        "cls",
+        "cov",
+        "exp_ADJ",
+        "exp_NOUN",
+        "exp_NUM",
+        "exp_OTRO",
+        "exp_PROPN",
+        "exp_VERB",
+        "forma",
+        "heredado",
+        "largo",
+        "margen",
+        "nexp_ADJ",
+        "nexp_NOUN",
+        "nexp_NUM",
+        "nexp_OTRO",
+        "nexp_PROPN",
+        "nexp_VERB",
+        "propio",
+        "puente",
+        "rango",
+        "raro",
+        "tipo",
+        "u"
+      ],
+      "preparation_cpu_s": 15.987942735000004
+    },
+    "ordered": {
+      "turns": 3520,
+      "rows": 20629,
+      "features": [
+        "alignment1_distance",
+        "alignment1_known",
+        "alignment1_margin",
+        "alignment1_score",
+        "alignment2_distance",
+        "alignment2_known",
+        "alignment2_margin",
+        "alignment2_score",
+        "cifra",
+        "cls",
+        "cov",
+        "exp_ADJ",
+        "exp_NOUN",
+        "exp_NUM",
+        "exp_OTRO",
+        "exp_PROPN",
+        "exp_VERB",
+        "forma",
+        "fragment1_margin",
+        "fragment1_score",
+        "fragment2_margin",
+        "fragment2_score",
+        "fragment3_margin",
+        "fragment3_score",
+        "heredado",
+        "largo",
+        "margen",
+        "nexp_ADJ",
+        "nexp_NOUN",
+        "nexp_NUM",
+        "nexp_OTRO",
+        "nexp_PROPN",
+        "nexp_VERB",
+        "propio",
+        "puente",
+        "rango",
+        "raro",
+        "tipo",
+        "u"
+      ],
+      "preparation_cpu_s": 26.111801354999997
+    },
+    "unordered": {
+      "turns": 3520,
+      "rows": 20629,
+      "features": [
+        "alignment1_distance",
+        "alignment1_known",
+        "alignment1_margin",
+        "alignment1_score",
+        "alignment2_distance",
+        "alignment2_known",
+        "alignment2_margin",
+        "alignment2_score",
+        "cifra",
+        "cls",
+        "cov",
+        "exp_ADJ",
+        "exp_NOUN",
+        "exp_NUM",
+        "exp_OTRO",
+        "exp_PROPN",
+        "exp_VERB",
+        "forma",
+        "fragment1_margin",
+        "fragment1_score",
+        "fragment2_margin",
+        "fragment2_score",
+        "fragment3_margin",
+        "fragment3_score",
+        "heredado",
+        "largo",
+        "margen",
+        "nexp_ADJ",
+        "nexp_NOUN",
+        "nexp_NUM",
+        "nexp_OTRO",
+        "nexp_PROPN",
+        "nexp_VERB",
+        "propio",
+        "puente",
+        "rango",
+        "raro",
+        "tipo",
+        "u"
+      ],
+      "preparation_cpu_s": 28.073560326000006
+    },
+    "shuffled": {
+      "turns": 3520,
+      "rows": 20629,
+      "features": [
+        "alignment1_distance",
+        "alignment1_known",
+        "alignment1_margin",
+        "alignment1_score",
+        "alignment2_distance",
+        "alignment2_known",
+        "alignment2_margin",
+        "alignment2_score",
+        "cifra",
+        "cls",
+        "cov",
+        "exp_ADJ",
+        "exp_NOUN",
+        "exp_NUM",
+        "exp_OTRO",
+        "exp_PROPN",
+        "exp_VERB",
+        "forma",
+        "fragment1_margin",
+        "fragment1_score",
+        "fragment2_margin",
+        "fragment2_score",
+        "fragment3_margin",
+        "fragment3_score",
+        "heredado",
+        "largo",
+        "margen",
+        "nexp_ADJ",
+        "nexp_NOUN",
+        "nexp_NUM",
+        "nexp_OTRO",
+        "nexp_PROPN",
+        "nexp_VERB",
+        "propio",
+        "puente",
+        "rango",
+        "raro",
+        "tipo",
+        "u"
+      ],
+      "preparation_cpu_s": 26.678922127999982
+    }
+  },
+  "fits": [
+    {
+      "cpu_s": 4.531012757000006,
+      "rows": 10486,
+      "features": 33,
+      "iterations": 8
+    },
+    {
+      "cpu_s": 4.216774396999995,
+      "rows": 10143,
+      "features": 33,
+      "iterations": 8
+    },
+    {
+      "cpu_s": 8.286253156,
+      "rows": 20629,
+      "features": 33,
+      "iterations": 8
+    },
+    {
+      "cpu_s": 7.498345959000005,
+      "rows": 10486,
+      "features": 39,
+      "iterations": 9
+    },
+    {
+      "cpu_s": 6.198391106999992,
+      "rows": 10143,
+      "features": 39,
+      "iterations": 8
+    },
+    {
+      "cpu_s": 14.246277180999996,
+      "rows": 20629,
+      "features": 39,
+      "iterations": 9
+    },
+    {
+      "cpu_s": 7.853896732999999,
+      "rows": 10486,
+      "features": 39,
+      "iterations": 9
+    },
+    {
+      "cpu_s": 6.918450344999997,
+      "rows": 10143,
+      "features": 39,
+      "iterations": 8
+    },
+    {
+      "cpu_s": 13.37479534100001,
+      "rows": 20629,
+      "features": 39,
+      "iterations": 9
+    },
+    {
+      "cpu_s": 6.165865244999992,
+      "rows": 10486,
+      "features": 39,
+      "iterations": 8
+    },
+    {
+      "cpu_s": 5.917408850000015,
+      "rows": 10143,
+      "features": 39,
+      "iterations": 8
+    },
+    {
+      "cpu_s": 11.38990111199999,
+      "rows": 20629,
+      "features": 39,
+      "iterations": 8
+    }
+  ],
+  "candidates": {
+    "baseline": {
+      "core": 816,
+      "useful_core": 269,
+      "quotes": 580,
+      "absent_n": 488,
+      "quotes_without_data": 74,
+      "p50_ms": 0.28720499904011376,
+      "p95_ms": 0.4774110020662192,
+      "max_ms": 1.4762699975108262,
+      "response_sha256": "48913f9d34378663039f5619568320ad5347ff38112ef08499e27e672578a897",
+      "nonliteral_evidence": 0
+    },
+    "removed": {
+      "core": 816,
+      "useful_core": 327,
+      "quotes": 636,
+      "absent_n": 488,
+      "quotes_without_data": 73,
+      "p50_ms": 1.8781459984893445,
+      "p95_ms": 3.2969839994620997,
+      "max_ms": 4.974889001459815,
+      "response_sha256": "ec018000f4401ea22f31c45206668ee888eaadcc00e61b8e124207b3727cd47f",
+      "nonliteral_evidence": 0
+    },
+    "ordered": {
+      "core": 816,
+      "useful_core": 313,
+      "quotes": 584,
+      "absent_n": 488,
+      "quotes_without_data": 66,
+      "p50_ms": 2.9800250013067853,
+      "p95_ms": 5.063002001406858,
+      "max_ms": 7.357157999649644,
+      "response_sha256": "50e8c1d0c6d16df036f4c276a37d43ccab4df36b1433bf68dac085f7029f3d21",
+      "nonliteral_evidence": 0
+    },
+    "unordered": {
+      "core": 816,
+      "useful_core": 318,
+      "quotes": 605,
+      "absent_n": 488,
+      "quotes_without_data": 71,
+      "p50_ms": 2.985492999869166,
+      "p95_ms": 5.095529999380233,
+      "max_ms": 7.370870000158902,
+      "response_sha256": "f0e896371d45adb801f512ef608ea79000cf6dda5945049d5a7bf4eb0eb7cecb",
+      "nonliteral_evidence": 0
+    },
+    "shuffled": {
+      "core": 816,
+      "useful_core": 332,
+      "quotes": 647,
+      "absent_n": 488,
+      "quotes_without_data": 76,
+      "p50_ms": 2.979959001095267,
+      "p95_ms": 5.192271997657372,
+      "max_ms": 16.86306999908993,
+      "response_sha256": "00c8fd9702c5d70de516ab515677cf308c529d66001a8746baebc0d563ab2b06",
+      "nonliteral_evidence": 0
+    },
+    "disabled": {
+      "core": 816,
+      "useful_core": 269,
+      "quotes": 580,
+      "absent_n": 488,
+      "quotes_without_data": 74,
+      "p50_ms": 0.2737180002441164,
+      "p95_ms": 0.453976997960126,
+      "max_ms": 1.4660679989901837,
+      "response_sha256": "48913f9d34378663039f5619568320ad5347ff38112ef08499e27e672578a897",
+      "nonliteral_evidence": 0
+    }
+  },
+  "selection_without_abstention": {
+    "removed": {
+      "core": 816,
+      "correct_first": 482
+    },
+    "ordered": {
+      "core": 816,
+      "correct_first": 489
+    },
+    "unordered": {
+      "core": 816,
+      "correct_first": 483
+    },
+    "shuffled": {
+      "core": 816,
+      "correct_first": 483
+    }
+  },
+  "controls": {
+    "disabled_exact": true,
+    "removed_exact": true,
+    "reload_exact": true
+  },
+  "compaction": {
+    "source_sha256": "8ce2704e76f59fe8592325645198311e5a092ab0353a90b7508e2c1e84112793",
+    "source_unchanged": true,
+    "compact_sha256": "c8ce6328e927cdfe7bfa361d4720d56ec9200197a9204b155ebae95191db4f89",
+    "source_bytes": 111417031,
+    "compact_bytes": 79271480,
+    "same_top_level_keys": true,
+    "cpu_s": 8.358746893000001,
+    "peak_rss_kib": 576288
+  },
+  "restart": {
+    "result": {
+      "core": 816,
+      "useful_core": 313,
+      "quotes": 584,
+      "absent_n": 488,
+      "quotes_without_data": 66,
+      "p50_ms": 2.8880550016765483,
+      "p95_ms": 4.841147001570789,
+      "max_ms": 7.147363998228684,
+      "response_sha256": "50e8c1d0c6d16df036f4c276a37d43ccab4df36b1433bf68dac085f7029f3d21",
+      "nonliteral_evidence": 0
+    },
+    "error": null,
+    "cpu_s": 15.268411463000001,
+    "preparation_included": {
+      "alignment": {
+        "decode_cpu_s": 0.09799235700000031,
+        "context_cpu_s": 0.4499570459999953,
+        "decodes": 1,
+        "contexts": 72,
+        "identical_signal_check_cpu_s": 0.002001023000000046
+      },
+      "fragments": {
+        "context_cpu_s": 2.823680666999997,
+        "contexts": 72,
+        "long_units": 15,
+        "long_questions": 7,
+        "comparisons": 10267
+      }
+    },
+    "peak_rss_kib": 567616
+  },
+  "gates": {
+    "useful_gain": false,
+    "absent": true,
+    "selection_gain": false,
+    "structural_gain": false,
+    "literal": true,
+    "controls": true,
+    "base_size": true,
+    "latency": false,
+    "budget": true
+  },
+  "passes": false,
+  "cost": {
+    "teaching_cpu_s": 240.37960658,
+    "teaching_preparation_included": {
+      "alignment": {
+        "decode_cpu_s": 0.0529879710000003,
+        "context_cpu_s": 3.8934266080000413,
+        "decodes": 1,
+        "contexts": 576,
+        "identical_signal_check_cpu_s": 0.0030003890000003253
+      },
+      "fragments": {
+        "context_cpu_s": 18.889152464999825,
+        "contexts": 432,
+        "long_units": 108,
+        "long_questions": 51,
+        "comparisons": 61887
+      }
+    },
+    "all_preparation_included": {
+      "alignment": {
+        "decode_cpu_s": 0.10698809600001624,
+        "context_cpu_s": 7.684021468000779,
+        "decodes": 2,
+        "contexts": 1153,
+        "identical_signal_check_cpu_s": 0.0030003890000003253
+      },
+      "fragments": {
+        "context_cpu_s": 36.579649052999684,
+        "contexts": 865,
+        "long_units": 198,
+        "long_questions": 114,
+        "comparisons": 152487
+      }
+    },
+    "evaluation_cpu_s": 145.431601425,
+    "total_cpu_s": 385.950368181,
+    "wall_s": 386.5202551939983,
+    "peak_rss_kib": 922556,
+    "parent_rss_during_children_kib": 346268,
+    "models_bytes": 14124911,
+    "base_bytes": 79271480
+  }
+}
