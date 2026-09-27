@@ -89,3 +89,18 @@ Conservar costos por preparación humana, ajuste, preparación de contexto,
 guardado y evaluación. Congelar `freeze-G85-prototipo` antes de medir. Pruebas
 focales de localización/ambigüedad, paridad de cálculo repetido, separación de
 calibración y persistencia; trece rápidas del proyecto.
+
+## Interrupción de preparación y aclaración previa a corregir
+
+El primer intento comprobó paridad exacta en los 3 520 turnos/20 629 candidatas,
+pero se interrumpió antes de ajustar o medir DEV: algunos párrafos con separador
+vertical se interpretan como cabecera de tabla y dejan cero unidades. La interfaz
+interna de candidatas supone al menos una y lanza IndexError. Se reprodujo en
+tres contextos fuente; sus SHA están en el informe de interrupción.
+
+La exclusión ya prevista de preguntas sin candidata positiva incluye unidades
+vacías. Comprobar ese caso **antes** de pedir candidatas, contarlo y continuar;
+no cambiar segmentación ni la base. Añadir prueba focal del caso y registrar
+cualquier excepción de preparación. CPU exacto del intento inicial no capturado:
+paridad 19,994 s es solo una cota inferior. Diagnóstico adicional 4,527 s.
+Refijar como `freeze-G85-prototipo-b` antes de repetir; mismas puertas y datos.
