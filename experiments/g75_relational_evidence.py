@@ -16,6 +16,7 @@ from leobot.context import cell_key
 from experiments.g23_role_paths import route
 from experiments.g60_calibrar_confianza import naive_bayes, score
 from experiments.g65_correspondencias import examples, baseline_scores
+from experiments.g57_kiosco import businesses, contains, plain
 from experiments.g68_confianza import TRAIN, DEV, collect, metrics, isotonic, calibrated
 from experiments.g74_relation_coverage import inventory, new_links, prepare, BASE_SHA, ENGINE, ROOT
 
@@ -219,7 +220,7 @@ class RelationalRanker:
         self.mode, self.weight, self.confidence = mode, weight, None
         self.original_rank, self.original_load = bot._rank, bot.load_context
         self.views = Views(bot, mapping)
-        self.units, self.prepared, self.query_cache = [], [], {}
+        self.units, self.prepared, self.query_cache, self.analyses = [], [], {}, {}
         self.stats = Counter()
         self.preparation_cpu = 0.
         bot._rank, bot.load_context = self.rank, self.load
@@ -230,7 +231,7 @@ class RelationalRanker:
     def load(self, *args, **kwargs):
         result = self.original_load(*args, **kwargs)
         t = time.process_time()
-        self.units, self.prepared, self.query_cache = [], [], {}
+        self.units, self.prepared, self.query_cache, self.analyses = [], [], {}, {}
         for unit in self.bot.context_units:
             text = unit['text'] + (' ' + unit['heading'] if unit.get('inherited') else '')
             view = self.views.get(text) if self.weight else {'terms': self.bot.context_terms(text), 'nodes': {}}
@@ -242,6 +243,19 @@ class RelationalRanker:
     def evidence(self, question, terms):
         if question in self.query_cache:
             return self.query_cache[question]
+        if question not in self.analyses:
+            self.analyses[question] = self.analyze(question, terms)
+        rows = {}
+        for i, (features, stats) in self.analyses[question].items():
+            lexical = feature_score(self.weights, features, lexical=True)
+            full = feature_score(self.weights, features)
+            rows[i] = (lexical if self.mode == 'lexical' else full,
+                       lexical, 0. if self.mode == 'lexical' else full - lexical,
+                       stats['interpretations'])
+        self.query_cache[question] = rows
+        return rows
+
+    def analyze(self, question, terms):
         rows = {}
         if len(self.bot.split_words(question)) <= 24:
             candidates = [i for i, p in enumerate(self.prepared) if new_links(terms, p, self.mapping)[1]]
@@ -254,12 +268,7 @@ class RelationalRanker:
                     self.stats['pair_exhaustions'] += stats['exhausted']
                     if stats['exhausted'] or not stats['novel']:
                         continue
-                    lexical = feature_score(self.weights, features, lexical=True)
-                    full = feature_score(self.weights, features)
-                    rows[i] = (lexical if self.mode == 'lexical' else full,
-                               lexical, 0. if self.mode == 'lexical' else full - lexical,
-                               stats['interpretations'])
-        self.query_cache[question] = rows
+                    rows[i] = features, stats
         return rows
 
     def rank(self, terms, question=''):
@@ -303,6 +312,62 @@ class RelationalRanker:
         return ranked
 
 
+def training_contexts():
+    for bank in TRAIN:
+        root = Path('results_v3/kiosco') / bank
+        for name, text, instructions, conversations in businesses(sorted(p for p in root.iterdir() if p.is_dir())):
+            yield bank+'/'+name, text, instructions, conversations
+
+
+def check_budget(deadline):
+    if deadline is not None and time.process_time() > deadline:
+        raise TimeoutError('Presupuesto de selección y evaluación G75 agotado')
+
+
+def collect_variants(bot, mapping, weights, shuffled, contexts=None, deadline=None):
+    """Same rows as collect, changing traversal order to parse each context once."""
+    rows = {(mode, weight): [] for mode in ('full', 'lexical', 'shuffled') for weight in WEIGHTS}
+    ranker = RelationalRanker(bot, mapping, weights)
+    bot.calibrated, bot.closest = False, False
+    begin = time.process_time()
+    try:
+        for n, (group, text, instructions, conversations) in enumerate(
+                training_contexts() if contexts is None else contexts, 1):
+            bot.load_context(text, instructions)
+            digest = int(sha256(group.encode()).hexdigest(), 16)
+            for (mode, weight), target in rows.items():
+                check_budget(deadline)
+                ranker.mode = 'lexical' if mode == 'lexical' else 'full'
+                ranker.weights = shuffled if mode == 'shuffled' else weights
+                ranker.weight, ranker.query_cache = weight, {}
+                for c, conv in enumerate(conversations):
+                    for i, turn in enumerate(conv):
+                        action = turn.get('accion', 'responder')
+                        if action == 'charla':
+                            continue
+                        reply = bot.answer(turn['cliente'])
+                        if reply['status'] != 'answered':
+                            continue
+                        keys = [k for k in turn.get('claves', []) or [] if plain(k)]
+                        if action not in ('abstenerse', 'derivar') and not keys:
+                            continue
+                        _, question = bot._question_part(turn['cliente'])
+                        ranked = bot._rank(bot.context_terms(question), question)
+                        absent = action in ('abstenerse', 'derivar')
+                        useful = int(not absent and all(contains(reply['text'], k) for k in keys))
+                        target.append({'id': f'{group}/{c}/{i}', 'group': group, 'fold': digest % 5,
+                                       'half': digest % 2, 'y': useful, 'f': ranked['features'],
+                                       'core': action == 'responder' and turn.get('tipo') in ('directa', 'si_no'),
+                                       'absent': absent, 'baseline_p': ranked['useful']})
+            if n % 5 == 0:
+                print(json.dumps({'stage': 'training_contexts', 'n': n,
+                                  'cpu_s': time.process_time()-begin}), flush=True)
+    finally:
+        ranker.restore()
+    return rows, {'cpu_s': time.process_time()-begin, 'parsing': dict(ranker.views.stats),
+                  'preparation_cpu_s': ranker.preparation_cpu}
+
+
 def fingerprint():
     names = ['experiments/g75_relational_evidence.py', 'experiments/g65_correspondencias.py',
              'experiments/g74_relation_coverage.py', 'prereg/G-75-relaciones-con-participantes.md']
@@ -312,13 +377,17 @@ def fingerprint():
     return {name: sha256((ROOT/name).read_bytes()).hexdigest() for name in names}
 
 
-def public_measure(bot):
+def public_measure(bot, ranker=None, deadline=None):
     from experiments.g68_g70_respuestas_reales import measure
     bot.calibrated, bot.closest = True, True
     original_answer = bot.answer
     digest, literal_failures = sha256(), 0
     def recorded(question, history=None):
         nonlocal literal_failures
+        check_budget(deadline)
+        if ranker is not None:
+            ranker.query_cache.clear()
+            ranker.analyses.clear()
         reply = original_answer(question, history)
         digest.update(json.dumps(reply, ensure_ascii=False, sort_keys=True).encode())
         digest.update(b'\n')
@@ -347,24 +416,27 @@ def main():
     mapping, source = inventory(bot)
     weights, shuffled, education_report = education(bot, mapping)
     teaching_cpu = time.process_time() - cpu0
+    checkpoint = ROOT / '.leobot-data/g75_education_checkpoint.json'
+    checkpoint.write_text(json.dumps({'weights': weights, 'shuffled': shuffled,
+                                     'education': education_report, 'sources_sha256': hashes,
+                                     'teaching_cpu_s': teaching_cpu}, ensure_ascii=False))
     print(json.dumps({'stage': 'learned', 'cpu_s': teaching_cpu, 'education': education_report}), flush=True)
     t = time.process_time()
+    deadline = t + 300
     baseline_train = collect(bot, TRAIN)
     baseline_fit = metrics(baseline_train, [r['baseline_p'] for r in baseline_train])
-    baseline = public_measure(bot)
+    baseline = public_measure(bot, deadline=deadline)
     if (baseline['core'], baseline['useful_core'], baseline['absent_n'], baseline['quotes_without_data']) != (816, 269, 488, 74):
         raise RuntimeError('La referencia no se reproduce')
     choices, fits, retained = {}, {}, {}
+    training_rows, preparation = collect_variants(bot, mapping, weights, shuffled, deadline=deadline)
     # Select each learner entirely in TRAIN, then fix the choices before DEV.
     for mode in ('full', 'lexical', 'shuffled'):
-        ranker = RelationalRanker(bot, mapping, shuffled if mode == 'shuffled' else weights,
-                                 mode='lexical' if mode == 'lexical' else 'full')
         best = (baseline_fit['useful_core'], -baseline_fit['quotes_without_data'], 0.)
         selected, learned = 0., None
         fits[mode] = {}
         for w in WEIGHTS:
-            ranker.weight, ranker.confidence = w, None
-            rows = collect(bot, TRAIN)
+            rows = training_rows[(mode, w)]
             confidence, probabilities = fit_confidence(rows)
             fitted = metrics(rows, probabilities)
             fits[mode][str(w)] = fitted
@@ -374,7 +446,6 @@ def main():
                 best, selected, learned = candidate, w, confidence
         choices[mode] = selected
         retained[mode] = learned
-        ranker.restore()
         print(json.dumps({'stage': 'selected', 'mode': mode, 'weight': selected}), flush=True)
     validation_cpu = time.process_time() - t
     t = time.process_time()
@@ -383,22 +454,23 @@ def main():
         ranker = RelationalRanker(bot, mapping, shuffled if mode == 'shuffled' else weights,
                                  mode='lexical' if mode == 'lexical' else 'full', weight=choices[mode])
         ranker.confidence = retained[mode]
-        results[mode] = public_measure(bot)
+        results[mode] = public_measure(bot, ranker, deadline=deadline)
         details[mode] = {'stats': dict(ranker.stats), 'load_preparation_cpu_s': ranker.preparation_cpu,
                          'parsing': dict(ranker.views.stats)}
         ranker.restore()
+        print(json.dumps({'stage': 'measured', 'mode': mode, 'results': results[mode]}), flush=True)
     model_path = ROOT / '.leobot-data/g75_relational_models.json'
     model_path.write_text(json.dumps({'weights': weights, 'shuffled': shuffled,
                                       'choices': choices, 'confidence': retained}, ensure_ascii=False))
     saved = json.loads(model_path.read_text())
     replay = RelationalRanker(bot, mapping, saved['weights'], weight=saved['choices']['full'])
     replay.confidence = saved['confidence']['full']
-    restored = public_measure(bot)
+    restored = public_measure(bot, replay, deadline=deadline)
     replay.restore()
     counting = ('core', 'useful_core', 'quotes', 'absent_n', 'quotes_without_data', 'response_sha256')
     controls = {'reload_counts_equal': all(restored[k] == results['full'][k] for k in counting)}
     zero = RelationalRanker(bot, mapping, {}, weight=0.)
-    unmodified = public_measure(bot)
+    unmodified = public_measure(bot, deadline=deadline)
     zero.restore()
     controls['disabled_counts_equal'] = all(unmodified[k] == baseline[k] for k in counting)
     evaluation_cpu = time.process_time() - t
@@ -417,6 +489,7 @@ def main():
               'engine_sha': ENGINE, 'sources_sha256': hashes, 'engine_unchanged': True,
               'source': source, 'education': education_report, 'baseline': baseline,
               'training_baseline': baseline_fit, 'training_choices': fits, 'chosen_weights': choices,
+              'training_preparation': preparation,
               'candidates': results, 'details': details, 'controls': controls,
               'gates': gates, 'passes': all(gates.values()),
               'cost': {'teaching_cpu_s': teaching_cpu, 'selection_cpu_s': validation_cpu,
@@ -428,4 +501,13 @@ def main():
 
 
 if __name__ == '__main__':
-    main()
+    start_cpu, start_wall = time.process_time(), time.monotonic()
+    try:
+        main()
+    except TimeoutError as error:
+        (ROOT / 'results_v3/g75_budget_interruption.json').write_text(json.dumps({
+            'status': 'interrupted_budget', 'error': str(error),
+            'cpu_s': time.process_time()-start_cpu, 'wall_s': time.monotonic()-start_wall,
+            'peak_rss_kib': resource.getrusage(resource.RUSAGE_SELF).ru_maxrss,
+        }, ensure_ascii=False, indent=2)+'\n')
+        raise

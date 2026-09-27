@@ -1,6 +1,7 @@
 """Opaque examples check binding and resource semantics, not kiosk quality."""
 import importlib.util
 import unittest
+from unittest.mock import patch
 
 
 class RelationalEvidenceContract(unittest.TestCase):
@@ -51,6 +52,31 @@ class RelationalEvidenceContract(unittest.TestCase):
         ranker.restore()
         self.assertEqual(bot._rank, old_rank)
         self.assertEqual(bot.load_context, old_load)
+
+    def test_training_reuse_equals_separate_runs_across_documents_and_models(self):
+        m = self.module()
+        from leobot import Bot
+        bot = Bot()
+        mapping = {'p': {'f': {'v': {'0'}}}, 'r': {'f': {'v': {'0'}}}}
+        weights, shuffled = {m.key('R', 'f'): 1.}, {m.key('R', 'f'): -1.}
+        turns = [[{'cliente': 'u p v?', 'claves': ['u'], 'tipo': 'directa'},
+                  {'cliente': 'v p u?', 'accion': 'abstenerse'}]]
+        data = [('a', 'u r v.\nv r u.', '', turns),
+                ('b', 'v r u.\nu r v.', '', turns)]
+        contexts = [('congelado/'+name, text, instructions, conv)
+                    for name, text, instructions, conv in data]
+        shared, _ = m.collect_variants(bot, mapping, weights, shuffled, contexts)
+        self.assertTrue(shared[('full', .25)])
+        self.assertTrue(any(m.RAW[0] in row['f'] for row in shared[('full', .25)]))
+        for (mode, weight), actual in shared.items():
+            ranker = m.RelationalRanker(bot, mapping, shuffled if mode == 'shuffled' else weights,
+                                       mode='lexical' if mode == 'lexical' else 'full', weight=weight)
+            try:
+                with patch('experiments.g68_confianza.businesses', return_value=data):
+                    expected = m.collect(bot, ('congelado',))
+            finally:
+                ranker.restore()
+            self.assertEqual(actual, expected, (mode, weight))
 
 
 if __name__ == '__main__':
