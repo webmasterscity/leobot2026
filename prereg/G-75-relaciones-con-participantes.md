@@ -108,3 +108,25 @@ excluidos y huellas. Pruebas focales de vinculación, límites y aislamiento;
 regresión completa solo para tag estable. Commit del preregistro antes de
 implementar, tag `freeze-G75-prototipo` antes del ensayo. No sustituir objetivo
 por éxito en la panadería ni detener el proyecto si este complemento falla.
+
+## Corrección de ejecución antes de medir resultados
+
+La primera corrida se interrumpió tras unos 391 s CPU, 80,376 de enseñanza y
+unos 311 de selección: excedió el presupuesto de selección. No llegó a elegir
+un modelo ni a evaluar su calidad. Se conserva en `g75_interruption.json`.
+Un perfil sobre 83 turnos gastados muestra 181 análisis sintácticos y 3,201 s
+en el analizador, de 3,879 s totales. La carga de tres documentos tomó 2,855 s.
+
+Sin cambiar ejemplos, rasgos, coeficientes ni puertas, se recorrerá TRAIN una
+sola vez por negocio y se compararán allí las doce combinaciones de variante
+y peso. Los árboles y rasgos de una pregunta/documento se pueden reutilizar
+durante ese ajuste; los puntajes y respuestas se recalculan para cada modelo.
+Una prueba compara las filas obtenidas con el recorrido original independiente.
+Los datos reutilizados se descartan al cambiar el documento.
+
+Se guardará la enseñanza al terminarla y se mostrarán tiempos parciales. En la
+medición pública se borrarán los análisis de preguntas en cada llamada: p50,
+p95 y máximo incluirán análisis nuevo, también si se repite una pregunta. La
+preparación de unidades al cargar sigue separada y contabilizada. Se conservan
+los límites originales por nueva corrida, registrando además el costo total
+de ambos intentos. Congelación nueva: `freeze-G75-prototipo-b`.

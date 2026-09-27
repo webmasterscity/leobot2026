@@ -1,0 +1,11 @@
+{
+  "experiment": "G-75",
+  "status": "interrupted_during_selection",
+  "observed_teaching_cpu_s": 80.376076576,
+  "observed_process_cpu_s_approx": 391,
+  "observed_process_wall_s_approx": 392,
+  "observed_rss_kib_at_interruption": 381892,
+  "selection_complete": false,
+  "development_evaluated": false,
+  "reason": "Repeated deterministic parsing/feature preparation across selection candidates; selection had already consumed approximately 311 CPU seconds, above the 300 s selection+evaluation allocation. Interrupted with SIGINT; no quality outcomes available. Need phase timing and reuse of invariant analyses, without cached test-query latency."
+}
