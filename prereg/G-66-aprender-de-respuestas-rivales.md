@@ -75,3 +75,7 @@ que no la responde. Si prefiere el equivocado, ajusta lo aprendido. Queremos
 comprobar si esas correcciones le ayudan con otros negocios. Nadie le escribirá
 qué significa cada palabra. Solo se aceptará el cambio si encuentra suficientes
 respuestas nuevas, conserva su prudencia y responde a tiempo.
+
+## Resultado de desarrollo (2026-09-27)
+
+Ambas variantes eligen peso cero en A–D; 346/633 en cada una de las tres semillas. Ninguna puerta pasó. CPU 152,7 s; RAM 609 MiB. Auditoría pendiente. Motor sin cambios.

@@ -62,3 +62,7 @@ comprobar si Leobot aprende mejor al practicar con la parte más relacionada con
 la pregunta. Él la elige usando lo que ya aprendió, por lo que también puede
 elegir mal. Mediremos el resultado con otros negocios y mantendremos el cambio
 solo si cumple las metas acordadas.
+
+## Resultado de desarrollo (2026-09-27)
+
+Palabras: 349/633; pares: 346/633; preferencias: 346/633 en las tres semillas. Ninguna puerta pasó. CPU 174,7 s; RAM 681 MiB. Auditoría pendiente. Motor sin cambios.

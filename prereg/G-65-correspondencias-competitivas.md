@@ -100,3 +100,7 @@ Le mostraremos preguntas reales y sus textos correspondientes, sin escribirle
 listas de equivalencias. Después deberá encontrar el texto adecuado en negocios
 que no enseñaron esas relaciones. Si confunde temas, no llega a la mejora acordada
 o se vuelve lento, conservaremos el resultado y descartaremos el cambio.
+
+## Resultado de desarrollo (2026-09-27)
+
+Palabras: 361/633 (57,0 %), pares: 351/633 (55,5 %), base: 346/633 (54,7 %). Ninguna puerta pasó. Auditoría 5.10 reproduce las métricas con hashseed 1. El prototipo queda fuera del motor.
