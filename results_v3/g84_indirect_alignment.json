@@ -1,0 +1,381 @@
+{
+  "experiment": "G84",
+  "scope": "spent development; external prototype; not production",
+  "repository_engine_sha": "11a1ef5836382d81a643cad0b217a8669ce0f2d1",
+  "effective_selector_reference": "fe2f3116e8d2bf0a6c76eabfce496dbb4780d973",
+  "reference_sha256": {
+    "leobot/context.py": "3c907f07775aa9da574df693fa043a33ae773adc8ff78ec6470d6a86f93feddd",
+    "experiments/par2_seleccion.py": "54d4337cdd9d5bfeaa482cb9ba89de248d2d4fbe45c567e29c62bac9c0397eb1"
+  },
+  "sources_sha256": {
+    "experiments/g84_indirect_alignment.py": "718f001e3839e5c8ff77c28bce5a0a4ccece48f3bc81df9a5c455182addde522",
+    "experiments/test_g84_indirect_alignment.py": "e39297a7f6d3332baf912bf8564b4a0cf6d0faf3349ca75a55a1e4a682cd3c75",
+    "experiments/g65_correspondencias.py": "d5e786e32f329f802f894ec30c853fdffbe9878561eac0cc3454abdba6b01ffa",
+    "experiments/g79_joint_selection.py": "8521df478c0ec3aeb4d5f3a5e8d82b1a55a4d3a913049de3b9407c03361204aa",
+    "experiments/g80_factorized_selection.py": "ec0f6d6e15f368c2f1a662aa0158dfd3069aa38ae4223d8f0f58227a81e0efcc",
+    "experiments/g68_confianza.py": "e564ac88b8307caeac219a2ecbee7ff9d2857799c0b089402541c5a73ca0ef00",
+    "experiments/g75_relational_evidence.py": "abaab742e407c8e53655e20714e192f5bb9ac0c7c644979fc575c093fe981459",
+    "prereg/G-84-correspondencias-indirectas-acotadas.md": "ffcda7f6e0477f1d7d0fc9d77110174fe727c7f0774dd73c0a7ba3ab282d24f5"
+  },
+  "g79_models_sha256": "3f17e19a3f1f4edeac3b16b00684cca45d4b04f593e3575ec582544ca6abf465",
+  "base_sha256": "6fff61c20fcd5812d785eec22b6c595e19568f98ec31559e689c7fb95fe6d79f",
+  "education_source_sha256": "c985eb099bcdadf87baa778786148e4de6c9a84057e68b4268ea2f832b884c66",
+  "alignment_education": {
+    "examples": 31762,
+    "q_features": 2443,
+    "a_features": 8869,
+    "candidates": 1270457,
+    "kept": 1270457,
+    "minimum_pair_count": 1,
+    "setup_cpu_s": 1.6829267359999989,
+    "rounds_cpu_s": [
+      2.838802212000001,
+      3.1874012169999997,
+      2.9773817800000018,
+      3.129526552999998,
+      2.8936288979999993
+    ],
+    "total_cpu_s": 16.709667396
+  },
+  "compilation": {
+    "answer_columns": 8869,
+    "question_terms": 2443,
+    "mean_retained_mass": 0.8245637023082598,
+    "minimum_retained_mass": 0.2979458709885331,
+    "one_edges": 70952,
+    "one_empty": 0,
+    "two_edges": 70952,
+    "two_empty": 0,
+    "shuffled_edges": 70952,
+    "shuffled_empty": 0,
+    "two_new_edges": 34307
+  },
+  "selection_education": {
+    "direct": {
+      "turns": 3520,
+      "rows": 20629,
+      "features": [
+        "alignment1_distance",
+        "alignment1_known",
+        "alignment1_margin",
+        "alignment1_score",
+        "alignment2_distance",
+        "alignment2_known",
+        "alignment2_margin",
+        "alignment2_score",
+        "cifra",
+        "cls",
+        "cov",
+        "exp_ADJ",
+        "exp_NOUN",
+        "exp_NUM",
+        "exp_OTRO",
+        "exp_PROPN",
+        "exp_VERB",
+        "forma",
+        "heredado",
+        "largo",
+        "margen",
+        "nexp_ADJ",
+        "nexp_NOUN",
+        "nexp_NUM",
+        "nexp_OTRO",
+        "nexp_PROPN",
+        "nexp_VERB",
+        "propio",
+        "puente",
+        "rango",
+        "raro",
+        "tipo",
+        "u"
+      ]
+    },
+    "indirect": {
+      "turns": 3520,
+      "rows": 20629,
+      "features": [
+        "alignment1_distance",
+        "alignment1_known",
+        "alignment1_margin",
+        "alignment1_score",
+        "alignment2_distance",
+        "alignment2_known",
+        "alignment2_margin",
+        "alignment2_score",
+        "cifra",
+        "cls",
+        "cov",
+        "exp_ADJ",
+        "exp_NOUN",
+        "exp_NUM",
+        "exp_OTRO",
+        "exp_PROPN",
+        "exp_VERB",
+        "forma",
+        "heredado",
+        "largo",
+        "margen",
+        "nexp_ADJ",
+        "nexp_NOUN",
+        "nexp_NUM",
+        "nexp_OTRO",
+        "nexp_PROPN",
+        "nexp_VERB",
+        "propio",
+        "puente",
+        "rango",
+        "raro",
+        "tipo",
+        "u"
+      ]
+    },
+    "shuffled": {
+      "turns": 3520,
+      "rows": 20629,
+      "features": [
+        "alignment1_distance",
+        "alignment1_known",
+        "alignment1_margin",
+        "alignment1_score",
+        "alignment2_distance",
+        "alignment2_known",
+        "alignment2_margin",
+        "alignment2_score",
+        "cifra",
+        "cls",
+        "cov",
+        "exp_ADJ",
+        "exp_NOUN",
+        "exp_NUM",
+        "exp_OTRO",
+        "exp_PROPN",
+        "exp_VERB",
+        "forma",
+        "heredado",
+        "largo",
+        "margen",
+        "nexp_ADJ",
+        "nexp_NOUN",
+        "nexp_NUM",
+        "nexp_OTRO",
+        "nexp_PROPN",
+        "nexp_VERB",
+        "propio",
+        "puente",
+        "rango",
+        "raro",
+        "tipo",
+        "u"
+      ]
+    }
+  },
+  "fits": [
+    {
+      "cpu_s": 2.524893768999995,
+      "rows": 10486,
+      "features": 33,
+      "iterations": 8
+    },
+    {
+      "cpu_s": 2.4398983729999983,
+      "rows": 10143,
+      "features": 33,
+      "iterations": 8
+    },
+    {
+      "cpu_s": 4.745593925000001,
+      "rows": 20629,
+      "features": 33,
+      "iterations": 8
+    },
+    {
+      "cpu_s": 2.5997444429999987,
+      "rows": 10486,
+      "features": 33,
+      "iterations": 8
+    },
+    {
+      "cpu_s": 2.554313563000001,
+      "rows": 10143,
+      "features": 33,
+      "iterations": 8
+    },
+    {
+      "cpu_s": 4.772574378000002,
+      "rows": 20629,
+      "features": 33,
+      "iterations": 8
+    },
+    {
+      "cpu_s": 2.5208599970000023,
+      "rows": 10486,
+      "features": 33,
+      "iterations": 8
+    },
+    {
+      "cpu_s": 2.4337765239999953,
+      "rows": 10143,
+      "features": 33,
+      "iterations": 8
+    },
+    {
+      "cpu_s": 4.838394256000001,
+      "rows": 20629,
+      "features": 33,
+      "iterations": 8
+    }
+  ],
+  "candidates": {
+    "baseline": {
+      "core": 816,
+      "useful_core": 269,
+      "quotes": 580,
+      "absent_n": 488,
+      "quotes_without_data": 74,
+      "p50_ms": 0.1652549981372431,
+      "p95_ms": 0.27046499963034876,
+      "max_ms": 4.395301002659835,
+      "response_sha256": "48913f9d34378663039f5619568320ad5347ff38112ef08499e27e672578a897",
+      "nonliteral_evidence": 0
+    },
+    "g79": {
+      "core": 816,
+      "useful_core": 326,
+      "quotes": 691,
+      "absent_n": 488,
+      "quotes_without_data": 90,
+      "p50_ms": 0.5687450029654428,
+      "p95_ms": 1.0671929994714446,
+      "max_ms": 1.9393340007809456,
+      "response_sha256": "e35c4f5459663a14569147dadb1beb73d429552408a3ec1c06c38384c7ca14c6",
+      "nonliteral_evidence": 0
+    },
+    "direct": {
+      "core": 816,
+      "useful_core": 327,
+      "quotes": 636,
+      "absent_n": 488,
+      "quotes_without_data": 73,
+      "p50_ms": 1.8975639977725223,
+      "p95_ms": 3.6987650019000284,
+      "max_ms": 7.085826997354161,
+      "response_sha256": "ec018000f4401ea22f31c45206668ee888eaadcc00e61b8e124207b3727cd47f",
+      "nonliteral_evidence": 0
+    },
+    "indirect": {
+      "core": 816,
+      "useful_core": 334,
+      "quotes": 646,
+      "absent_n": 488,
+      "quotes_without_data": 69,
+      "p50_ms": 1.5357230004156008,
+      "p95_ms": 2.707185001781909,
+      "max_ms": 4.448046001925832,
+      "response_sha256": "29178db825bd645d88096d847241744f567bd63c9929913c85cc1ca8cdf52dc3",
+      "nonliteral_evidence": 0
+    },
+    "shuffled": {
+      "core": 816,
+      "useful_core": 341,
+      "quotes": 664,
+      "absent_n": 488,
+      "quotes_without_data": 80,
+      "p50_ms": 1.5719629991508555,
+      "p95_ms": 2.7417540004535113,
+      "max_ms": 4.367434001324,
+      "response_sha256": "4812245d3552c62c4afe5a7485dde8b2c1da2cc59da3572f8f216bdbe20c64fd",
+      "nonliteral_evidence": 0
+    },
+    "restored_g79": {
+      "core": 816,
+      "useful_core": 326,
+      "quotes": 691,
+      "absent_n": 488,
+      "quotes_without_data": 90,
+      "p50_ms": 0.5586689985648263,
+      "p95_ms": 1.0360859996580984,
+      "max_ms": 1.6416209982708097,
+      "response_sha256": "e35c4f5459663a14569147dadb1beb73d429552408a3ec1c06c38384c7ca14c6",
+      "nonliteral_evidence": 0
+    },
+    "disabled": {
+      "core": 816,
+      "useful_core": 269,
+      "quotes": 580,
+      "absent_n": 488,
+      "quotes_without_data": 74,
+      "p50_ms": 0.16498900004080497,
+      "p95_ms": 0.27533399770618416,
+      "max_ms": 0.671351001074072,
+      "response_sha256": "48913f9d34378663039f5619568320ad5347ff38112ef08499e27e672578a897",
+      "nonliteral_evidence": 0
+    }
+  },
+  "selection_without_abstention": {
+    "direct": {
+      "core": 816,
+      "correct_first": 482
+    },
+    "indirect": {
+      "core": 816,
+      "correct_first": 482
+    },
+    "shuffled": {
+      "core": 816,
+      "correct_first": 482
+    }
+  },
+  "controls": {
+    "disabled_exact": true,
+    "g79_restored_exact": true,
+    "reload_exact": false
+  },
+  "restart": {
+    "result": null,
+    "error": "ValueError('La memoria excede el límite de carga de 100 MiB.')",
+    "cpu_s": 0.0,
+    "context_preparation_included": null,
+    "peak_rss_kib": 613740
+  },
+  "gates": {
+    "useful_gain": true,
+    "absent": true,
+    "selection_gain": false,
+    "controls_gain": false,
+    "literal": true,
+    "controls": false,
+    "base_size": false,
+    "latency": true,
+    "budget": true
+  },
+  "passes": false,
+  "cost": {
+    "teaching_cpu_s": 88.193669156,
+    "teaching_stages": {
+      "load_cpu_s": 1.9642736909999998,
+      "examples_cpu_s": 5.7615510080000005,
+      "alignment_learning_cpu_s": 16.709667396,
+      "compilation_cpu_s": 1.0278716450000012,
+      "selection_learning_cpu_s": 62.607215983
+    },
+    "teaching_preparation_included": {
+      "decode_cpu_s": 0.10398939699999232,
+      "context_cpu_s": 1.6510541810000205,
+      "decodes": 3,
+      "contexts": 432
+    },
+    "all_preparation_included": {
+      "decode_cpu_s": 0.25493126099998165,
+      "context_cpu_s": 3.4113528049998934,
+      "decodes": 7,
+      "contexts": 865
+    },
+    "evaluation_cpu_s": 55.970544889999985,
+    "total_cpu_s": 144.275087572,
+    "wall_s": 144.48095893999925,
+    "peak_rss_kib": 914508,
+    "parent_rss_during_child_kib": 300768,
+    "models_bytes": 8769217,
+    "base_bytes": 110314166
+  }
+}
