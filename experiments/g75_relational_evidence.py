@@ -196,7 +196,7 @@ def discretize(features, edges):
 
 
 def fit_confidence(rows, fields=RAW):
-    active = [r for r in rows if fields[0] in r['f']]
+    active = [r for r in rows if not fields or fields[0] in r['f']]
     if len(active) < 60 or any(sum(r['half'] == h for r in active) < 30 for h in (0, 1)):
         return None, [r['baseline_p'] for r in rows]
     edges = intervals(active, fields)
