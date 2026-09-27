@@ -85,3 +85,7 @@ con la pregunta. Probaremos enseñarle más de esas relaciones con preguntas
 reales, y después enseñarle cuándo esas pistas merecen confianza. Tendrá que
 ayudar en otros negocios y seguir callando cuando falte información. La prueba
 de la panadería no le enseñará ninguna respuesta.
+
+## Resultado de desarrollo (2026-09-27)
+
+No pasó: competencia seleccionada, 275/816 útiles frente a 269/816, ambas 74/488 citas sin dato. Conteo 243/816. El caso completo sigue sin horario/dirección. CPU 49,5 s; RAM 863 MiB. No se sustituyó la base del usuario. Auditoría independiente pendiente.

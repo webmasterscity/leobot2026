@@ -88,3 +88,7 @@ a mostrarlas. Probaremos si puede aprender mejor cuándo su elección sirve, mir
 varias pistas juntas. No le diremos qué contestar a esa panadería ni bajaremos la
 exigencia para responder. Tendrá que mejorar con otros negocios y seguir callando
 cuando el dato no exista.
+
+## Resultado de desarrollo (2026-09-27)
+
+No pasó: promedio seleccionado por error fuera de enseñanza, 242–245/816 útiles frente a 269/816 de la base. Caso completo del usuario sigue absteniéndose en horario/dirección. CPU 14,6 s; RAM 522 MiB. No integrado. Auditoría independiente pendiente.

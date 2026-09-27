@@ -65,3 +65,7 @@ Una palabra puede tener varios sentidos. Vamos a comprobar si Leobot aprende
 mejor la relación con un texto cuando también mira la palabra que tiene al lado.
 Lo aprenderá con preguntas reales y tendrá que mejorar al cambiar de negocio.
 No enseñaremos ni programaremos la respuesta de la panadería como arreglo.
+
+## Resultado de desarrollo (2026-09-27)
+
+No pasó: 262/816 útiles frente a 269/816, 60/488 citas sin dato frente a 74/488. Control de expansión vacía idéntico. Caso completo sigue sin horario/dirección. CPU 69,5 s; RAM 891 MiB. Motor intacto. Auditoría independiente pendiente.
