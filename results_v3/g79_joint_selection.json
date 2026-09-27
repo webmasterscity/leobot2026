@@ -1,0 +1,300 @@
+{
+  "experiment": "G79",
+  "scope": "spent development; external fixed PAR2 code; no production promotion",
+  "repository_engine_sha": "11a1ef5836382d81a643cad0b217a8669ce0f2d1",
+  "repository_engine_unchanged": true,
+  "effective_selector_reference": "fe2f3116e8d2bf0a6c76eabfce496dbb4780d973",
+  "reference_sha256": {
+    "leobot/context.py": "3c907f07775aa9da574df693fa043a33ae773adc8ff78ec6470d6a86f93feddd",
+    "experiments/par2_seleccion.py": "54d4337cdd9d5bfeaa482cb9ba89de248d2d4fbe45c567e29c62bac9c0397eb1"
+  },
+  "sources_sha256": {
+    "experiments/g79_joint_selection.py": "8521df478c0ec3aeb4d5f3a5e8d82b1a55a4d3a913049de3b9407c03361204aa",
+    "experiments/g60_calibrar_confianza.py": "5af44adcf35210a2bdd41b0d5ec6f21baf43cbae42bbccf93215f268d4877aec",
+    "experiments/g68_confianza.py": "e564ac88b8307caeac219a2ecbee7ff9d2857799c0b089402541c5a73ca0ef00",
+    "experiments/g75_relational_evidence.py": "abaab742e407c8e53655e20714e192f5bb9ac0c7c644979fc575c093fe981459",
+    "prereg/G-79-complementar-educacion-y-seleccion.md": "72786e5aa1c7e78690dfd31cc3c55f9499600484f59477a302f57a3c6ae9f49d"
+  },
+  "g78_tables_sha256": "630399f00c5aa06e987a564b46544f88340726871fffffa1c173639c40ef6fb7",
+  "base_sha256": "6fff61c20fcd5812d785eec22b6c595e19568f98ec31559e689c7fb95fe6d79f",
+  "education": {
+    "plain": {
+      "turns": 3520,
+      "candidate_rows": 20624,
+      "features": [
+        "cifra",
+        "cls",
+        "cov",
+        "exp_ADJ",
+        "exp_NOUN",
+        "exp_NUM",
+        "exp_OTRO",
+        "exp_PROPN",
+        "exp_VERB",
+        "forma",
+        "heredado",
+        "largo",
+        "margen",
+        "nexp_ADJ",
+        "nexp_NOUN",
+        "nexp_NUM",
+        "nexp_OTRO",
+        "nexp_PROPN",
+        "nexp_VERB",
+        "propio",
+        "puente",
+        "rango",
+        "raro",
+        "tipo",
+        "u"
+      ]
+    },
+    "native": {
+      "turns": 3520,
+      "candidate_rows": 20629,
+      "features": [
+        "cifra",
+        "cls",
+        "cov",
+        "exp_ADJ",
+        "exp_NOUN",
+        "exp_NUM",
+        "exp_OTRO",
+        "exp_PROPN",
+        "exp_VERB",
+        "forma",
+        "heredado",
+        "largo",
+        "margen",
+        "nexp_ADJ",
+        "nexp_NOUN",
+        "nexp_NUM",
+        "nexp_OTRO",
+        "nexp_PROPN",
+        "nexp_VERB",
+        "propio",
+        "puente",
+        "rango",
+        "raro",
+        "tipo",
+        "u"
+      ]
+    }
+  },
+  "fits": [
+    {
+      "cpu_s": 2.658711575999998,
+      "rows": 10483,
+      "distinct_rows": 10447,
+      "iterations": 8
+    },
+    {
+      "cpu_s": 2.6310828140000027,
+      "rows": 10141,
+      "distinct_rows": 10103,
+      "iterations": 8
+    },
+    {
+      "cpu_s": 5.325724258999998,
+      "rows": 20624,
+      "distinct_rows": 20467,
+      "iterations": 8
+    },
+    {
+      "cpu_s": 2.6288280049999955,
+      "rows": 10486,
+      "distinct_rows": 10424,
+      "iterations": 8
+    },
+    {
+      "cpu_s": 2.541637422000008,
+      "rows": 10143,
+      "distinct_rows": 10090,
+      "iterations": 8
+    },
+    {
+      "cpu_s": 4.987811992000005,
+      "rows": 20629,
+      "distinct_rows": 20418,
+      "iterations": 8
+    },
+    {
+      "cpu_s": 2.2828819430000067,
+      "rows": 10486,
+      "distinct_rows": 10433,
+      "iterations": 7
+    },
+    {
+      "cpu_s": 2.21307984500001,
+      "rows": 10143,
+      "distinct_rows": 10099,
+      "iterations": 7
+    },
+    {
+      "cpu_s": 4.4276028259999975,
+      "rows": 20629,
+      "distinct_rows": 20443,
+      "iterations": 7
+    }
+  ],
+  "candidates": {
+    "baseline": {
+      "core": 816,
+      "useful_core": 269,
+      "quotes": 580,
+      "absent_n": 488,
+      "quotes_without_data": 74,
+      "p50_ms": 0.28528999973786995,
+      "p95_ms": 0.48564799726591446,
+      "max_ms": 1.183131000288995,
+      "response_sha256": "48913f9d34378663039f5619568320ad5347ff38112ef08499e27e672578a897",
+      "nonliteral_evidence": 0
+    },
+    "reference_disabled": {
+      "core": 816,
+      "useful_core": 269,
+      "quotes": 580,
+      "absent_n": 488,
+      "quotes_without_data": 74,
+      "p50_ms": 0.2865919996111188,
+      "p95_ms": 0.4726109982584603,
+      "max_ms": 0.7277969998540357,
+      "response_sha256": "48913f9d34378663039f5619568320ad5347ff38112ef08499e27e672578a897",
+      "nonliteral_evidence": 0
+    },
+    "native_only": {
+      "core": 816,
+      "useful_core": 267,
+      "quotes": 547,
+      "absent_n": 488,
+      "quotes_without_data": 57,
+      "p50_ms": 0.2906440022343304,
+      "p95_ms": 0.48584400065010414,
+      "max_ms": 1.0897009997279383,
+      "response_sha256": "4ac889c29525d8274778213480f6ec5789f608bdfb89ea0e1aae476862b86c51",
+      "nonliteral_evidence": 0
+    },
+    "selector_legacy": {
+      "core": 816,
+      "useful_core": 299,
+      "quotes": 588,
+      "absent_n": 488,
+      "quotes_without_data": 70,
+      "p50_ms": 0.9653470006014686,
+      "p95_ms": 1.7739579998305999,
+      "max_ms": 3.1413599972438533,
+      "response_sha256": "5d60fc628842aec93e064e72d294ff0bf988277e1b8c49a9e734f64b3cf9207c",
+      "nonliteral_evidence": 0
+    },
+    "selector": {
+      "core": 816,
+      "useful_core": 299,
+      "quotes": 588,
+      "absent_n": 488,
+      "quotes_without_data": 70,
+      "p50_ms": 0.9512569995422382,
+      "p95_ms": 1.7268100018554833,
+      "max_ms": 2.78947100014193,
+      "response_sha256": "5d60fc628842aec93e064e72d294ff0bf988277e1b8c49a9e734f64b3cf9207c",
+      "nonliteral_evidence": 0
+    },
+    "combined": {
+      "core": 816,
+      "useful_core": 326,
+      "quotes": 691,
+      "absent_n": 488,
+      "quotes_without_data": 90,
+      "p50_ms": 0.9561979968566447,
+      "p95_ms": 1.752451000356814,
+      "max_ms": 2.7758380019804463,
+      "response_sha256": "e35c4f5459663a14569147dadb1beb73d429552408a3ec1c06c38384c7ca14c6",
+      "nonliteral_evidence": 0
+    },
+    "shuffled": {
+      "core": 816,
+      "useful_core": 0,
+      "quotes": 0,
+      "absent_n": 488,
+      "quotes_without_data": 0,
+      "p50_ms": 0.9476650011492893,
+      "p95_ms": 1.7529649994685315,
+      "max_ms": 2.823144997819327,
+      "response_sha256": "e0626fdaa87c6c3c567e2a90bfbf0e6cc60e8e3d82300784d0036ea1fdaf31ba",
+      "nonliteral_evidence": 0
+    },
+    "disabled": {
+      "core": 816,
+      "useful_core": 269,
+      "quotes": 580,
+      "absent_n": 488,
+      "quotes_without_data": 74,
+      "p50_ms": 0.2729740008362569,
+      "p95_ms": 0.44047499977750704,
+      "max_ms": 1.023294000333408,
+      "response_sha256": "48913f9d34378663039f5619568320ad5347ff38112ef08499e27e672578a897",
+      "nonliteral_evidence": 0
+    }
+  },
+  "selection_without_abstention": {
+    "selector_legacy": {
+      "core": 816,
+      "correct_first": 468
+    },
+    "selector": {
+      "core": 816,
+      "correct_first": 468
+    },
+    "combined": {
+      "core": 816,
+      "correct_first": 474
+    },
+    "shuffled": {
+      "core": 816,
+      "correct_first": 210
+    }
+  },
+  "controls": {
+    "disabled_exact": true,
+    "reference_without_model_exact": true,
+    "native_without_selector_exact": true,
+    "reload_exact": true
+  },
+  "restart": {
+    "result": {
+      "core": 816,
+      "useful_core": 326,
+      "quotes": 691,
+      "absent_n": 488,
+      "quotes_without_data": 90,
+      "p50_ms": 0.9545579996483866,
+      "p95_ms": 1.7388689993822481,
+      "max_ms": 2.797168002871331,
+      "response_sha256": "e35c4f5459663a14569147dadb1beb73d429552408a3ec1c06c38384c7ca14c6",
+      "nonliteral_evidence": 0
+    },
+    "error": null,
+    "cpu_s": 8.364967574,
+    "peak_rss_kib": 541624
+  },
+  "gates": {
+    "gain": true,
+    "component_gain": true,
+    "shuffled_gain": true,
+    "absent": false,
+    "controls": true,
+    "literal": true,
+    "latency": true,
+    "budget": true
+  },
+  "passes": false,
+  "cost": {
+    "teaching_cpu_s": 57.107452355999996,
+    "evaluation_cpu_s": 81.035065683,
+    "total_cpu_s": 138.14527903699997,
+    "wall_s": 138.5437697289999,
+    "peak_rss_kib": 725648,
+    "parent_rss_during_child_kib": 184024,
+    "models_bytes": 768903,
+    "base_bytes": 100670661
+  }
+}
