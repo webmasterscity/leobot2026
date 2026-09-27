@@ -1,0 +1,68 @@
+{
+  "experiment": "G84b",
+  "scope": "serialization and replay only; G84 quality gates remain failed",
+  "sources_sha256": {
+    "experiments/g84b_compact_replay.py": "a6f30fe340d5f63be71ee96ad1730d335f353d646c096e9769513ac3eb366029",
+    "experiments/g84_indirect_alignment.py": "718f001e3839e5c8ff77c28bce5a0a4ccece48f3bc81df9a5c455182addde522",
+    "prereg/G-84b-reinicio-con-archivo-compacto.md": "3fe77fada2a7f473548b7607547371b56ec3256bdaf749fb473c24d495fe9fbb"
+  },
+  "compaction": {
+    "source_sha256": "99aa03935a80c426a6b63eccf1a7be88d0096991a4d5fe0b4dd21828b0e6bee6",
+    "source_unchanged": true,
+    "compact_sha256": "2cd6a4ef84ca4f1300738d07c41013372b11290423c27fc70f2000be6ca2e575",
+    "source_bytes": 110314166,
+    "compact_bytes": 78306247,
+    "same_top_level_keys": true,
+    "cpu_s": 5.325315003,
+    "peak_rss_kib": 571992
+  },
+  "replay": {
+    "result": {
+      "core": 816,
+      "useful_core": 334,
+      "quotes": 646,
+      "absent_n": 488,
+      "quotes_without_data": 69,
+      "p50_ms": 1.5205310010060202,
+      "p95_ms": 2.7506679980433546,
+      "max_ms": 4.7448219993384555,
+      "response_sha256": "29178db825bd645d88096d847241744f567bd63c9929913c85cc1ca8cdf52dc3",
+      "nonliteral_evidence": 0
+    },
+    "error": null,
+    "cpu_s": 7.233154611000001,
+    "context_preparation_included": {
+      "decode_cpu_s": 0.0645909039999999,
+      "context_cpu_s": 0.2732342659999951,
+      "decodes": 1,
+      "contexts": 72
+    },
+    "peak_rss_kib": 515812
+  },
+  "original_quality_gates": {
+    "useful_gain": true,
+    "absent": true,
+    "selection_gain": false,
+    "controls_gain": false,
+    "literal": true,
+    "controls": false,
+    "base_size": false,
+    "latency": true,
+    "budget": true
+  },
+  "transport_gates": {
+    "file_fits_existing_limit": true,
+    "source_unchanged": true,
+    "top_level_keys": true,
+    "responses_exact": true,
+    "literal": true,
+    "budget": true
+  },
+  "transport_passes": true,
+  "promotable": false,
+  "cost": {
+    "cpu_s": 12.560107672000001,
+    "wall_s": 12.824825829000474,
+    "peak_rss_kib": 595940
+  }
+}
