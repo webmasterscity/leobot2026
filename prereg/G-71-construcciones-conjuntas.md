@@ -132,3 +132,16 @@ timeout 900s env PYTHONHASHSEED=0 python3 -m experiments.g71_joint_constructions
 No requiere auditor independiente para esta prueba ordinaria de desarrollo
 (MISION 5.10); sí antes de promover, ante un resultado sospechoso o al cerrar
 una fase. No crea versión estable ni altera las respuestas del usuario.
+
+## Incidencia de preparación, antes de obtener resultados
+
+El primer lanzamiento se interrumpió durante la adquisición: el prototipo
+detenía el proceso cuando UP y UD no alineaban palabras. Son las mismas **222
+frases** excluidas por los lectores G-22b/G-24, comprobadas en los registros
+anteriores y recontadas con las fuentes de SHA fijo. Se corrige para contarlas
+y excluirlas como G-24, antes de ajustar modelos o medir la evaluación. No se
+cambia muestra por acierto ni puerta. Congelación corregida:
+`freeze-G71-prototipo-b`; se conserva el tag anterior. Esta interrupción no
+produjo métricas y su tiempo completo no quedó instrumentado; la descarga
+inicial quedó en caché, por lo que las corridas siguientes son con fuentes
+locales. No atribuir sus tiempos a una primera descarga completa.

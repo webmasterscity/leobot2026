@@ -170,7 +170,8 @@ def acquire(seed):
                 continue
             ids = tuple(row[0] for row in rows if len(row) >= 3 and token_id(row[0]))
             if ids != entry[0]:
-                raise RuntimeError('Las fuentes no alinean sus palabras')
+                counts['token_id_mismatch_sentences'] += 1
+                continue
             nodes = nodes_from_ud(rows)
             if nodes is None:
                 counts['invalid_tree'] += 1
