@@ -63,3 +63,30 @@ Resultados posibles: contenido suficiente/insuficiente, formato no verificado
 o acceso pendiente. No implica mejora del 60 %, prueba de comprensión ni
 solución de la panadería. Regresión completa y auditoría no corresponden a una
 inspección de datos sin cambio de motor.
+
+## Esquema fijado tras leer documentación y encabezado, antes de contar
+
+Descarga autenticada por TLS normal: 5 280 450 bytes, SHA256
+`4630d1c9aa74e1012238167d43d0a6707589dad8873993d1c023d6e69652f781`.
+Contiene README y una tabla de 27 columnas, 140 813 653 bytes. README confirma
+CC BY 3.0. No contiene XML del corpus original.
+
+El encabezado identifica lengua, clase de palabra, predicado y papel en las
+primeras cuatro columnas. Campos 16/17: predicado y argumento de PropBank;
+10 y 13/15: papel de VerbNet y marco/papel de FrameNet. Los prefijos antes de
+dos puntos indican el recurso; `NULL` significa campo ausente. Español: `spa`;
+nombre/verbo: `n`/`v`. Son códigos del formato, no palabras del negocio.
+
+La tabla no trae una columna de verbo de origen. Se contarán **por separado**
+(a) enlaces directos al recurso común y (b) candidatos nominal-verbo obtenidos
+al compartir predicado **y** papel en ese recurso. Estos últimos son una unión
+de correspondencias, no equivalencias comprobadas por personas. La puerta
+parcial de disponibilidad se aplica a esos candidatos y sus papeles alineados;
+no prueba la verdad de las correspondencias ni su utilidad. Informar número
+de destinos por nombre, uniones ambiguas y cobertura ausente sin filtrarlas.
+
+Contar duplicados exactos de fila y múltiples filas por índice de cuatro campos
+por separado. Estos últimos pueden ser alineamientos alternativos legítimos.
+No eliminar ambigüedades ni imponer equivalencias por compartir solo palabra,
+sin preservar predicado y papel. Registrar todos los códigos de papel español
+para ver si la fuente ofrece condiciones adicionales; no inventarlas.
