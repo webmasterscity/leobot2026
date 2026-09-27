@@ -1,0 +1,117 @@
+{
+  "engine": "11a1ef5836382d81a643cad0b217a8669ce0f2d1",
+  "base_sha256": "b9c30cb6ad974dfd02f903851fae3295321119c1a3877275ff1369ad6c0d6a2f",
+  "acquisition_cpu_s": 5.912600275,
+  "training": {
+    "words": {
+      "examples": 31762,
+      "q_features": 2443,
+      "a_features": 8869,
+      "candidates": 1270457,
+      "kept": 1270457,
+      "minimum_pair_count": 1,
+      "setup_cpu_s": 1.3300795259999996,
+      "rounds_cpu_s": [
+        2.268508335,
+        2.2091253460000004,
+        2.2384570969999995,
+        2.2504198990000006,
+        2.2185869159999996
+      ],
+      "total_cpu_s": 12.515191687000002
+    },
+    "phrases": {
+      "examples": 31762,
+      "q_features": 6135,
+      "a_features": 37402,
+      "candidates": 7027022,
+      "kept": 1480791,
+      "minimum_pair_count": 3,
+      "setup_cpu_s": 4.4420390659999995,
+      "rounds_cpu_s": [
+        5.959629494000001,
+        6.1514245749999965,
+        5.778366274,
+        5.883851006999997,
+        5.9357165110000025
+      ],
+      "total_cpu_s": 34.151040563
+    }
+  },
+  "fit": {
+    "n": 181,
+    "ceiling": 173,
+    "baseline": 102,
+    "models": {
+      "words": {
+        "correct": {
+          "0": 102,
+          "0.25": 103,
+          "0.5": 103,
+          "1": 106,
+          "2": 104
+        },
+        "p50_ms": 0.3499960002955049,
+        "p95_ms": 0.7809919998180703
+      },
+      "phrases": {
+        "correct": {
+          "0": 102,
+          "0.25": 106,
+          "0.5": 107,
+          "1": 92,
+          "2": 88
+        },
+        "p50_ms": 0.609350000104314,
+        "p95_ms": 1.4316490000965132
+      }
+    }
+  },
+  "separate": {
+    "n": 633,
+    "ceiling": 592,
+    "baseline": 346,
+    "models": {
+      "words": {
+        "correct": {
+          "0": 346,
+          "0.25": 349,
+          "0.5": 357,
+          "1": 361,
+          "2": 350
+        },
+        "p50_ms": 0.3424930000619497,
+        "p95_ms": 0.7413220000671572
+      },
+      "phrases": {
+        "correct": {
+          "0": 346,
+          "0.25": 356,
+          "0.5": 351,
+          "1": 340,
+          "2": 323
+        },
+        "p50_ms": 0.6043240000508376,
+        "p95_ms": 1.2974729997949908
+      }
+    }
+  },
+  "chosen_weights": {
+    "words": 1,
+    "phrases": 0.5
+  },
+  "chosen_hits": {
+    "words": 361,
+    "phrases": 351
+  },
+  "development_gate": {
+    "words": false,
+    "phrases": false
+  },
+  "phrase_retention": false,
+  "validation_cpu_s": 3.3276908059999997,
+  "total_cpu_s": 56.066058872999996,
+  "rss_mib": 966.8359375,
+  "engine_after": "11a1ef5836382d81a643cad0b217a8669ce0f2d1",
+  "engine_unchanged": true
+}
