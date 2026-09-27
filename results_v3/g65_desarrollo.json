@@ -1,0 +1,117 @@
+{
+  "engine": "11a1ef5836382d81a643cad0b217a8669ce0f2d1",
+  "base_sha256": "b9c30cb6ad974dfd02f903851fae3295321119c1a3877275ff1369ad6c0d6a2f",
+  "acquisition_cpu_s": 5.816577578,
+  "training": {
+    "words": {
+      "examples": 31762,
+      "q_features": 2443,
+      "a_features": 8869,
+      "candidates": 1270457,
+      "kept": 1270457,
+      "minimum_pair_count": 1,
+      "setup_cpu_s": 1.2950665170000004,
+      "rounds_cpu_s": [
+        2.2015182320000006,
+        2.1806778940000004,
+        2.183675182,
+        2.2842940700000014,
+        2.2191796739999994
+      ],
+      "total_cpu_s": 12.364427568
+    },
+    "phrases": {
+      "examples": 31762,
+      "q_features": 6135,
+      "a_features": 37402,
+      "candidates": 7027022,
+      "kept": 1480791,
+      "minimum_pair_count": 3,
+      "setup_cpu_s": 4.465674674000002,
+      "rounds_cpu_s": [
+        5.85347393,
+        6.350260756000001,
+        6.80044504,
+        6.264114231000001,
+        6.70312449
+      ],
+      "total_cpu_s": 36.437113159
+    }
+  },
+  "fit": {
+    "n": 181,
+    "ceiling": 173,
+    "baseline": 102,
+    "models": {
+      "words": {
+        "correct": {
+          "0": 102,
+          "0.25": 103,
+          "0.5": 103,
+          "1": 106,
+          "2": 104
+        },
+        "p50_ms": 0.3616880001118261,
+        "p95_ms": 0.803416000053403
+      },
+      "phrases": {
+        "correct": {
+          "0": 102,
+          "0.25": 106,
+          "0.5": 107,
+          "1": 92,
+          "2": 88
+        },
+        "p50_ms": 0.645092000013392,
+        "p95_ms": 1.4014509999924485
+      }
+    }
+  },
+  "separate": {
+    "n": 633,
+    "ceiling": 592,
+    "baseline": 346,
+    "models": {
+      "words": {
+        "correct": {
+          "0": 346,
+          "0.25": 349,
+          "0.5": 357,
+          "1": 361,
+          "2": 350
+        },
+        "p50_ms": 0.3184869999586226,
+        "p95_ms": 0.6611789999624307
+      },
+      "phrases": {
+        "correct": {
+          "0": 346,
+          "0.25": 356,
+          "0.5": 351,
+          "1": 340,
+          "2": 323
+        },
+        "p50_ms": 0.5444060000172612,
+        "p95_ms": 1.184197000156928
+      }
+    }
+  },
+  "chosen_weights": {
+    "words": 1,
+    "phrases": 0.5
+  },
+  "chosen_hits": {
+    "words": 361,
+    "phrases": 351
+  },
+  "development_gate": {
+    "words": false,
+    "phrases": false
+  },
+  "phrase_retention": false,
+  "validation_cpu_s": 3.1617520579999976,
+  "total_cpu_s": 57.956255918000004,
+  "rss_mib": 965.55078125,
+  "engine_after": "11a1ef5836382d81a643cad0b217a8669ce0f2d1",
+  "engine_unchanged": true
+}
