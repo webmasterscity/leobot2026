@@ -1,5 +1,6 @@
 import importlib
 import unittest
+from unittest.mock import patch
 
 
 class HumanSelectionContract(unittest.TestCase):
@@ -14,6 +15,19 @@ class HumanSelectionContract(unittest.TestCase):
         self.assertIsNone(m.unit_label(context, 'u tiene 11.', '11', start))
         self.assertEqual(m.unit_label(context, 'w tiene 22.', '11', start), 0)
         self.assertFalse(m.covers(context, 'v tiene', start, 2))
+
+    def test_empty_layout_is_excluded_before_requesting_candidates(self):
+        m = self.module()
+        from leobot import Bot
+        from experiments.g79_joint_selection import Components
+        bot = Bot()
+        reference = Components().bind(bot)
+        qa = {'context': 'u | v. w.', 'question': 'u?', 'answer': 'v', 'start': 4}
+        with patch.object(m, 'select_human', return_value=([qa], {})):
+            turns, metadata = m.human_turns(bot)
+        self.assertEqual(turns, [])
+        self.assertEqual(metadata['excluded_turns']['no_positive_candidate'], 1)
+        reference.restore()
 
     def test_repeated_signal_matches_reference_before_and_after_new_context(self):
         m = self.module()

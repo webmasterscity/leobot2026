@@ -108,9 +108,13 @@ def human_turns(bot):
     by_context = defaultdict(list)
     for qa in selected:
         by_context[qa['context']].append(qa)
-    turns, excluded, ambiguous, positive_rows = [], Counter(), 0, 0
+    turns, excluded, ambiguous, positive_rows, empty_contexts = [], Counter(), 0, 0, 0
     for context, questions in sorted(by_context.items()):
         bot.load_context(context, '')
+        if not bot.context_units:
+            empty_contexts += 1
+            excluded['no_positive_candidate'] += len(questions)
+            continue
         for qa in questions:
             rows = []
             for i, features in bot.selection_candidates(qa['question'], 6):
@@ -127,7 +131,8 @@ def human_turns(bot):
                 continue
             turns.append({'half': -1, 'rows': rows})
             positive_rows += sum(y for _, y in rows)
-    return turns, {'source': source, 'contexts': len(by_context), 'turns': len(turns),
+    return turns, {'source': source, 'contexts': len(by_context), 'contexts_without_units': empty_contexts,
+                   'turns': len(turns),
                    'rows': sum(len(t['rows']) for t in turns), 'positive_rows': positive_rows,
                    'ambiguous_candidate_rows_excluded': ambiguous, 'excluded_turns': dict(excluded)}
 
@@ -319,7 +324,7 @@ if __name__ == '__main__':
         start_cpu, start_wall = time.process_time(), time.monotonic()
         try:
             main()
-        except (TimeoutError, AssertionError, MemoryError) as error:
+        except Exception as error:
             children = resource.getrusage(resource.RUSAGE_CHILDREN)
             (ROOT/'results_v3/g85_interruption.json').write_text(json.dumps({
                 'error': repr(error), 'cpu_s': time.process_time()-start_cpu+children.ru_utime+children.ru_stime,
