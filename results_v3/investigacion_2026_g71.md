@@ -97,3 +97,13 @@ La primera se ejecuta como [G-71](../prereg/G-71-construcciones-conjuntas.md).
 La segunda y la tercera **no han sido probadas aquí**. No se incorporan por
 su fecha ni por sus resultados ajenos. Tampoco se reabren ARC ni las variantes
 de coincidencias/confianza G-65–G-70. El motor sigue congelado durante la prueba.
+
+## Resultado de la primera adaptación
+
+G-71 no pasó. En dos particiones, F1 de participantes subió aproximadamente
+1,5 puntos, pero al barajar los enlaces educativos obtuvo prácticamente lo mismo.
+No demuestra la capacidad buscada. Reinicio y renombrado pasaron; la medición
+parcial fue rápida en el percentil 95, aunque hubo máximos superiores a cinco
+milisegundos. Los detalles y costos están en el preregistro. No se probó todavía
+la red de compatibilidad entre verbos y construcciones. La adaptación fallida
+no refuta esa pieza ni valida copiar el sistema completo con su parte neuronal.

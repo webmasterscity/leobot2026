@@ -145,3 +145,23 @@ cambia muestra por acierto ni puerta. Congelación corregida:
 produjo métricas y su tiempo completo no quedó instrumentado; la descarga
 inicial quedó en caché, por lo que las corridas siguientes son con fuentes
 locales. No atribuir sus tiempos a una primera descarga completa.
+
+## Resultado de desarrollo
+
+No pasó en ninguna partición. [Partición 0](../results_v3/g71_development_0.json):
+F1 completo 0,5612 → 0,5769; barajado 0,5772. Asignaciones completas
+363 → 386 de 1 161. A2 empeora 0,2851 → 0,2742.
+[Partición 1](../results_v3/g71_development_1.json): 0,5586 → 0,5732;
+barajado 0,5717. Completas 399 → 431 de 1 272. A2 permanece en cero.
+La ganancia pequeña también aparece al destruir los enlaces educativos:
+no demuestra que se hayan aprendido relaciones útiles.
+
+Se aprendieron 1 697/1 599 construcciones; reinicio y renombrado sin diferencias,
+sin agotar aplicaciones. Dos ejecuciones finales: 9,55 s CPU en total,
+RAM máxima 100,1 MiB. Extracción dada más decisión: p95 0,372/0,391 ms;
+máximos observados 11,743/6,321 ms. **No demuestra respuesta siempre <5 ms**,
+ni incluye analizar texto libre. Descarga inicial/interrupción anterior fuera
+de ese total. Motor idéntico. Sin reserva nueva, juez, auditoría independiente
+ni promoción. Se descarta esta restricción por inventario; no todo el método
+del artículo ni la fase G. La red de compatibilidad léxica del artículo no se
+implementó aquí y requiere una hipótesis distinta, antes de probarla.
