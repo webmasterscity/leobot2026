@@ -77,3 +77,23 @@ y tag `freeze-G74-alcance` antes de evaluar.
 ```bash
 timeout 300s env PYTHONHASHSEED=0 python3 -m experiments.g74_relation_coverage
 ```
+
+## Resultado
+
+[Conteo](../results_v3/g74_relation_coverage.json), motor intacto y referencia
+pública reproducida: 269/816 útiles por claves y 74/488 citas sin dato. La
+fuente ofrece evidencia nueva en alguna unidad correcta para 95 preguntas;
+67 son pérdidas de la referencia. Límite favorable: **336/816, 41,2 %**.
+Por tanto, esta familia no puede alcanzar sola el 60 % en este banco.
+
+La ganancia máxima parcial es 8,2 puntos, suficiente para una prueba de
+aprendizaje complementario. La comprobación de casillas declaradas en la fuente
+no reduce los candidatos respecto de compartir solo predicado: ambos límites
+son iguales. Hay señal relacional en **290/488 preguntas sin dato**. No basta
+para subir confianza ni permite llamarla prueba de participantes correctamente
+vinculados. El vínculo nominal-verbo explica como máximo 51 mejoras adicionales.
+
+CPU: 3,668 s preparación y 3,060 s evaluación; 6,729 s total. RAM 522,3 MiB.
+Se excluyeron 61 filas multipalabra, fuera de la familia definida por términos
+individuales; no hubo formatos de identificador desconocidos. No se entrenó
+ni promovió un modelo; estos límites no son porcentajes de un candidato real.

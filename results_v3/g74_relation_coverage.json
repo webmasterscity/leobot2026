@@ -1,0 +1,94 @@
+{
+  "experiment": "G-74",
+  "scope": "spent development; optimistic availability only",
+  "engine_sha": "11a1ef5836382d81a643cad0b217a8669ce0f2d1",
+  "sources_sha256": {
+    "experiments/g74_relation_coverage.py": "8a9700ba61af91a006f342f501fd4e79b9b310288ae663fa5b63b49e1b53c92d",
+    "prereg/G-74-alcance-de-relaciones.md": "9b49507ff5212f66b5ffa7ac71f1304eb7a5c90507c18edbfe1fd23dec41af91"
+  },
+  "engine_unchanged": true,
+  "base_sha256": "6fff61c20fcd5812d785eec22b6c595e19568f98ec31559e689c7fb95fe6d79f",
+  "matrix_sha256": "4630d1c9aa74e1012238167d43d0a6707589dad8873993d1c023d6e69652f781",
+  "source": {
+    "spanish_rows": 202654,
+    "multiword_rows_outside_token_family": 61,
+    "terms": 3528,
+    "term_frame_links": 6588
+  },
+  "counts": {
+    "core": 816,
+    "baseline_useful": 269,
+    "literal_unit_exists": 741,
+    "question_with_mapped_term": 711,
+    "lexical_gold_evidence": 95,
+    "lexical_optimistic_useful": 336,
+    "lexical_possible_gain": 67,
+    "role_gold_evidence": 95,
+    "role_optimistic_useful": 336,
+    "role_possible_gain": 67,
+    "nominal_gold_evidence": 75,
+    "nominal_optimistic_useful": 320,
+    "nominal_possible_gain": 51,
+    "absent": 488,
+    "baseline_absent_quotes": 74,
+    "absent_with_potential_lexical_signal": 290,
+    "absent_with_potential_role_signal": 290
+  },
+  "banks": {
+    "congelado_g62": {
+      "core": 276,
+      "baseline_useful": 86,
+      "literal_unit_exists": 251,
+      "question_with_mapped_term": 244,
+      "lexical_gold_evidence": 42,
+      "lexical_optimistic_useful": 115,
+      "lexical_possible_gain": 29,
+      "role_gold_evidence": 42,
+      "role_optimistic_useful": 115,
+      "role_possible_gain": 29,
+      "nominal_gold_evidence": 30,
+      "nominal_optimistic_useful": 105,
+      "nominal_possible_gain": 19
+    },
+    "congelado_g63": {
+      "core": 274,
+      "baseline_useful": 93,
+      "literal_unit_exists": 252,
+      "question_with_mapped_term": 242,
+      "lexical_gold_evidence": 27,
+      "lexical_optimistic_useful": 114,
+      "lexical_possible_gain": 21,
+      "role_gold_evidence": 27,
+      "role_optimistic_useful": 114,
+      "role_possible_gain": 21,
+      "nominal_gold_evidence": 21,
+      "nominal_optimistic_useful": 110,
+      "nominal_possible_gain": 17
+    },
+    "congelado_g64": {
+      "core": 266,
+      "baseline_useful": 90,
+      "literal_unit_exists": 238,
+      "question_with_mapped_term": 225,
+      "lexical_gold_evidence": 26,
+      "lexical_optimistic_useful": 107,
+      "lexical_possible_gain": 17,
+      "role_gold_evidence": 26,
+      "role_optimistic_useful": 107,
+      "role_possible_gain": 17,
+      "nominal_gold_evidence": 24,
+      "nominal_optimistic_useful": 105,
+      "nominal_possible_gain": 15
+    }
+  },
+  "can_alone_reach_60_in_this_family": false,
+  "enough_possible_gain_for_learner": true,
+  "cost": {
+    "acquisition_cpu_s": 3.667514164,
+    "validation_cpu_s": 3.0604372989999997,
+    "total_cpu_s": 6.728853228,
+    "wall_s": 6.738820467999176,
+    "peak_rss_kib": 534784
+  },
+  "budget_ok": true
+}
