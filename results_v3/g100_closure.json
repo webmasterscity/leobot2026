@@ -1,0 +1,138 @@
+{
+  "experiment": "G100",
+  "status": "negative_no_promotion",
+  "prereg": "be1c6d3",
+  "education_freeze": "107d11e",
+  "prototype_freeze": "f42d84c",
+  "primary": "lexical_business_90",
+  "scope": "Spent development, automatic judge; no new independent reserve",
+  "useful": {
+    "baseline": 29,
+    "localized": 32,
+    "lexical_business_40": 29,
+    "lexical_business_90": 29,
+    "lexical_general_40": 29,
+    "lexical_general_90": 29,
+    "lexical_shuffled_40": 29,
+    "lexical_shuffled_90": 29,
+    "interaction_business_40": 29,
+    "interaction_business_90": 29,
+    "interaction_general_40": 29,
+    "interaction_general_90": 29,
+    "interaction_shuffled_40": 29,
+    "interaction_shuffled_90": 29,
+    "history_business_40": 29,
+    "history_business_90": 29,
+    "history_general_40": 29,
+    "history_general_90": 29,
+    "history_shuffled_40": 29,
+    "history_shuffled_90": 29
+  },
+  "calibration_maxima": {
+    "lexical_business": 0.3958333333333333,
+    "lexical_general": 0.32786885245901637,
+    "lexical_shuffled": 0.0967741935483871,
+    "interaction_business": 0.18055555555555555,
+    "interaction_general": 0.2653061224489796,
+    "interaction_shuffled": 0.031088082901554404,
+    "history_business": 0.2727272727272727,
+    "history_general": 0.24528301886792453,
+    "history_shuffled": 0.04411764705882353
+  },
+  "raw_choices": {
+    "lexical_business": {
+      "answerable": 61,
+      "correct_raw": 13,
+      "absent": 40,
+      "null_on_absent": 34,
+      "null_on_answerable": 41
+    },
+    "lexical_general": {
+      "answerable": 61,
+      "correct_raw": 17,
+      "absent": 40,
+      "null_on_absent": 14,
+      "null_on_answerable": 8
+    },
+    "lexical_shuffled": {
+      "answerable": 61,
+      "correct_raw": 6,
+      "absent": 40,
+      "null_on_absent": 40,
+      "null_on_answerable": 61
+    },
+    "interaction_business": {
+      "answerable": 61,
+      "correct_raw": 10,
+      "absent": 40,
+      "null_on_absent": 27,
+      "null_on_answerable": 24
+    },
+    "interaction_general": {
+      "answerable": 61,
+      "correct_raw": 11,
+      "absent": 40,
+      "null_on_absent": 24,
+      "null_on_answerable": 16
+    },
+    "interaction_shuffled": {
+      "answerable": 61,
+      "correct_raw": 4,
+      "absent": 40,
+      "null_on_absent": 24,
+      "null_on_answerable": 49
+    },
+    "history_business": {
+      "answerable": 61,
+      "correct_raw": 11,
+      "absent": 40,
+      "null_on_absent": 29,
+      "null_on_answerable": 31
+    },
+    "history_general": {
+      "answerable": 61,
+      "correct_raw": 12,
+      "absent": 40,
+      "null_on_absent": 32,
+      "null_on_answerable": 31
+    },
+    "history_shuffled": {
+      "answerable": 61,
+      "correct_raw": 2,
+      "absent": 40,
+      "null_on_absent": 18,
+      "null_on_answerable": 34
+    }
+  },
+  "same_responses_on_restart": {
+    "baseline": true,
+    "localized": true,
+    "lexical_business_40": true,
+    "lexical_business_90": true,
+    "lexical_general_40": true,
+    "lexical_general_90": true,
+    "lexical_shuffled_40": true,
+    "lexical_shuffled_90": true,
+    "interaction_business_40": true,
+    "interaction_business_90": true,
+    "interaction_general_40": true,
+    "interaction_general_90": true,
+    "interaction_shuffled_40": true,
+    "interaction_shuffled_90": true,
+    "history_business_40": true,
+    "history_business_90": true,
+    "history_general_40": true,
+    "history_general_90": true,
+    "history_shuffled_40": true,
+    "history_shuffled_90": true
+  },
+  "criteria": {
+    "sixty_percent": false,
+    "no_new_errors": true,
+    "latency_primary_both_runs": true
+  },
+  "known_cpu_s": 78.807026956,
+  "cost_note": "Education and three evaluation processes, including imports/raw diagnostics. Reused prior models/data; final shared tests and minor commands accounted separately.",
+  "result": "All eighteen new operating points reproduce stable 29/102; maximum learned confidence remains below .4. Raw principal selection falls from G99 lexical19/61 to13/61; validation gain did not transfer. No threshold rescue.",
+  "next": "User suggests Model2Vec; preregistered separate G101 trial, keep these failures."
+}
