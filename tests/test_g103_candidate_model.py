@@ -25,6 +25,7 @@ def model(**pairs):
 class ShapeAndPrefixTests(unittest.TestCase):
     def test_shapes_abstract_characters_not_words(self):
         self.assertEqual(_shapes('Sábados $250.000 8:00 Av. Central'), ['SH:$d.d', 'SH:d:d'])
+        self.assertEqual(_shapes('escriba a ana@casa.co o al +57 315 (Bogotá)'), ['SH:+d', 'SH:a@a.a', 'SH:d'])
         self.assertEqual(_shapes('sin cifras ni símbolos'), [])
 
     def test_words_that_begin_alike_are_related(self):

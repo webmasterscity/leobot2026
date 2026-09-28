@@ -46,6 +46,8 @@ LENGTH_BINS = (6, 13, 26)
 CITE_FROM = 0.7
 UNKNOWN_TEXT = 'No lo sé: no encontré esa información en el texto que tengo.'
 CLOSEST_TEXT = 'No lo tengo seguro. Lo más cercano que dice el texto es: «{}».'
+INSTRUCTION_TEXT = 'Sobre eso, las indicaciones del negocio dicen: «{}».'
+FALLBACK_TEXT = ' Las indicaciones del negocio para estos casos dicen: «{}».'
 ECHO_WORDS = 4
 # G-103: words that share a beginning are morphological relatives (pagar, pago; hora, horario).
 SOFT_PREFIX = 3
@@ -58,7 +60,7 @@ DENSE_FEATURES = ('rank', 'gain', 'gap', 'second', 'bm25', 'own', 'inherited', '
                   'unexplained_max', 'unexplained_sum', 'indirect', 'length', 'kind', 'digits', 'headed', 'position',
                   'terms', 'mass', 'interrogative', 'asked_share', 'asked_count',
                   'history', 'carried_mass', 'same_heading', 'same_unit', 'carried_gain', 'carried_mass_alone',
-                  'same_heading_alone')
+                  'same_heading_alone', 'instruction')
 CARRIED_WEIGHT = 0.5
 
 
@@ -68,13 +70,14 @@ def _plain(word: str) -> str:
 
 
 def _shapes(text: str) -> list[str]:
-    """G-103: the character-class shape of each word that holds a digit or a symbol
-    («$250.000» → «SH:$d.d», «8:00» → «SH:d:d»), so a learned association can tell
-    what kind of value a unit holds without any list of words."""
+    """G-103: the character-class shape of each word that is not made of letters alone
+    («$250.000» → «SH:$d.d», «8:00» → «SH:d:d», «ana@x.co» → «SH:a@a.a»), so a learned
+    association can tell what kind of value a unit holds; no list of words or symbols."""
     out = set()
     for word in text.split():
-        if any(ch.isdigit() for ch in word) or any(ch in '$€@%+:/#' for ch in word):
-            shape = re.sub(r'\d+', 'd', re.sub(r'[^\W\d_]+', 'a', word.strip('.,;()')))
+        word = word.rstrip('.,;:!?)»"').lstrip('(¿¡«"')
+        if word and not word.isalpha():
+            shape = re.sub(r'\d+', 'd', re.sub(r'[^\W\d_]+', 'a', word))
             out.add('SH:' + shape[:8])
     return sorted(out)
 
@@ -352,8 +355,49 @@ class ContextMixin:
         self.context_title = sorted(set(self.context_terms(self._layout_title)))
         self.context_instructions = self._layout_units(instructions, 'instructions') if instructions else []
         self._context_index = None
+        self._instruction_space = None
+        self._fallback = None
         return {'status': 'context_loaded', 'units': len(self.context_units),
                 'instructions': len(self.context_instructions)}
+
+    def _instruction_view(self):
+        """G-105: the instructions as a text of their own: the same object seen with the
+        instruction units, their own index and no title, so the same ranking and the
+        same usefulness model read them."""
+        if not getattr(self, 'follow_instructions', True) or not getattr(self, 'context_instructions', None):
+            return None
+        view = getattr(self, '_instruction_space', None)
+        if view is None:
+            view = object.__new__(type(self))
+            view.__dict__.update(self.__dict__)
+            view.context_units = self.context_instructions
+            view.context_title = []
+            view._context_index = None
+            view._prefix_buckets = None
+            view._unit_term_sets = None
+            view._instruction_space = None
+            self._instruction_space = view
+        return view
+
+    def _fallback_exit(self):
+        """G-105: the instruction that says what to do when something is not known: the
+        instruction sentence the counted classifier gives the highest chance, when that
+        chance reaches its threshold.  It does not depend on the question."""
+        model = self.context_model.get('fallback')
+        if not model or not getattr(self, 'follow_instructions', True) or not getattr(self, 'context_instructions', None):
+            return None
+        if getattr(self, '_fallback', None) is None:
+            best, at = None, -1
+            for k, unit in enumerate(self.context_instructions):
+                if unit['kind'] in ('heading', 'question'):
+                    continue
+                z = model['bias'] + sum(model['weights'].get(t, 0.0) for t in set(unit['terms']))
+                chance = 1.0 / (1.0 + math.exp(-z)) if z > -30 else 0.0
+                if chance >= model['threshold'] and (best is None or chance > best):
+                    best, at = chance, k
+            self._fallback = (at,)
+        at = self._fallback[0]
+        return None if at < 0 else self.context_instructions[at]
 
     def _index(self):
         if getattr(self, '_context_index', None) is None:
@@ -596,6 +640,10 @@ class ContextMixin:
             pairs += [q + '|' + shape for q in distinct for shape in unit.get('shapes', ())]
             pairs += [q + '|K' + unit['kind'] for q in distinct]
             pairs += ['K' + unit['kind'] + '|' + w for w in held]
+            instruction = unit.get('source') == 'instructions'
+            if instruction:
+                pairs += [q + '|SRC' for q in distinct] + ['SRC|' + w for w in held]
+            dense.append(1.0 if instruction else 0.0)
             table.append({'unit': i, 'gain': gains.get(i, 0.0), 'dense': dense, 'pairs': pairs})
         return table
 
@@ -630,9 +678,12 @@ class ContextMixin:
                   'candidates': len(table)}
         ranked['features'] = self._features(ranked, question)
 
+        curve = model.get('calibration_instructions') if self.context_units[top].get('source') == 'instructions' else None
+        curve = curve or model['calibration']
+
         def calibrated(z):
-            rate = model['calibration'][0][1]
-            for low, block_rate, _ in model['calibration']:
+            rate = curve[0][1]
+            for low, block_rate, _ in curve:
                 if z >= low:
                     rate = block_rate
             return rate
@@ -729,7 +780,11 @@ class ContextMixin:
         if getattr(self, 'short_echo', True) and (len(text.split()) > ECHO_WORDS or any(c.isdigit() for c in text)):
             return False
         postings = self._index()
-        return not any(t in postings for t in self.context_terms(text))
+        terms = self.context_terms(text)
+        view = self._instruction_view() if self._active_model() is not None else None
+        if view is not None and any(t in view._index() for t in terms):
+            return False
+        return not any(t in postings for t in terms)
 
     def _question_part(self, question: str) -> tuple[str, str]:
         """A greeting that opens a question is set apart from it."""
@@ -754,7 +809,16 @@ class ContextMixin:
             return {'text': (said[:1].upper() + said[1:] + '.') if said else '', 'status': 'phatic',
                     'evidence': None, 'confidence': None}
         previous = self._previous_topic(history) if self._active_model() is not None else None
-        ranked = self._rank(self.context_terms(text), text, previous)
+        terms = self.context_terms(text)
+        ranked = self._rank(terms, text, previous)
+        source, units = 'context', self.context_units
+        view = self._instruction_view() if self._active_model() is not None else None
+        if view is not None:
+            # G-105: the best sentence of the instructions competes with the best unit of the text.
+            other = view._rank(terms, text)
+            if other is not None and other.get('unit') is not None and (
+                    ranked is None or ranked.get('unit') is None or other['useful'] > ranked['useful']):
+                ranked, source, units = other, 'instructions', self.context_instructions
         level = self._level(ranked)
         prefix = (opening[:1].upper() + opening[1:] + '. ') if opening else ''
         table = self.context_model.get('closest_cells' if level == 'closest' else 'cells', {})
@@ -765,12 +829,22 @@ class ContextMixin:
         if level == 'unknown':
             # Not asserted: the best unit and its counted precision go to the
             # caller apart from the reply, so an integrator can decide.
-            candidate = ({'text': self._shown(ranked), 'precision': precision}
+            candidate = ({'text': units[ranked['unit']]['text'], 'precision': precision, 'source': source}
                          if ranked is not None and ranked['unit'] is not None else None)
-            return {'text': prefix + UNKNOWN_TEXT, 'status': 'unknown', 'evidence': None,
-                    'confidence': None, 'cell': ranked['cell'] if ranked else None, 'candidate': candidate}
-        unit = self.context_units[ranked['unit']]
-        shown = self._shown(ranked)
+            exit_unit = self._fallback_exit()
+            text_out = prefix + UNKNOWN_TEXT + (FALLBACK_TEXT.format(exit_unit['text'].rstrip('.')) if exit_unit else '')
+            result = {'text': text_out, 'status': 'unknown', 'evidence': None,
+                      'confidence': None, 'cell': ranked['cell'] if ranked else None, 'candidate': candidate}
+            if exit_unit:
+                result['fallback'] = exit_unit['text']
+            return result
+        unit = units[ranked['unit']]
+        shown = unit['text']
+        if source == 'instructions':
+            return {'text': prefix + INSTRUCTION_TEXT.format(shown.rstrip('.')), 'status': 'instruction',
+                    'evidence': {'unit': unit['text'], 'heading': unit['heading'], 'index': ranked['unit'],
+                                 'source': 'instructions'},
+                    'confidence': precision, 'cell': ranked['cell']}
         reply = shown if level == 'answered' else CLOSEST_TEXT.format(shown.rstrip('.'))
         return {'text': prefix + reply, 'status': level,
                 'evidence': {'unit': unit['text'], 'heading': unit['heading'], 'index': ranked['unit']},
