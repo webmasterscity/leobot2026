@@ -1,0 +1,568 @@
+{
+  "counts": {
+    "baseline": {
+      "util_respaldada": 0,
+      "abstencion_correcta": 0,
+      "abstencion_indebida": 0,
+      "cita_incorrecta": 0,
+      "afirmacion_sin_respaldo": 0,
+      "problema_en_prueba": 96
+    },
+    "rules": {
+      "util_respaldada": 0,
+      "abstencion_correcta": 0,
+      "abstencion_indebida": 0,
+      "cita_incorrecta": 0,
+      "afirmacion_sin_respaldo": 0,
+      "problema_en_prueba": 96
+    },
+    "trained": {
+      "util_respaldada": 0,
+      "abstencion_correcta": 0,
+      "abstencion_indebida": 0,
+      "cita_incorrecta": 0,
+      "afirmacion_sin_respaldo": 0,
+      "problema_en_prueba": 96
+    },
+    "random": {
+      "util_respaldada": 0,
+      "abstencion_correcta": 0,
+      "abstencion_indebida": 0,
+      "cita_incorrecta": 0,
+      "afirmacion_sin_respaldo": 0,
+      "problema_en_prueba": 96
+    },
+    "shuffled": {
+      "util_respaldada": 0,
+      "abstencion_correcta": 0,
+      "abstencion_indebida": 0,
+      "cita_incorrecta": 0,
+      "afirmacion_sin_respaldo": 0,
+      "problema_en_prueba": 96
+    }
+  },
+  "comparisons": {
+    "baseline": {
+      "new_useful": 0,
+      "new_incorrect": 0
+    },
+    "rules": {
+      "new_useful": 0,
+      "new_incorrect": 0
+    },
+    "trained": {
+      "new_useful": 0,
+      "new_incorrect": 0
+    },
+    "random": {
+      "new_useful": 0,
+      "new_incorrect": 0
+    },
+    "shuffled": {
+      "new_useful": 0,
+      "new_incorrect": 0
+    }
+  },
+  "judgments": [
+    {
+      "id": "dcc5ac5ffab2afdb",
+      "label": "problema_en_prueba",
+      "reason": "El campo question es solo el nombre 'Marcela' y el output es 'Marcela.'; no hay pregunta real del cliente ni respuesta verificable contra el documento."
+    },
+    {
+      "id": "343bc6aa51d0068d",
+      "label": "problema_en_prueba",
+      "reason": "Igual que el turno anterior, no existe pregunta ni respuesta con contenido; solo se repite el nombre."
+    },
+    {
+      "id": "bce84664c22c0fc5",
+      "label": "problema_en_prueba",
+      "reason": "No hay pregunta formulada sobre parqueadero ni ningún tema; el output es solo el nombre repetido."
+    },
+    {
+      "id": "608855845be796a8",
+      "label": "problema_en_prueba",
+      "reason": "El question/output es solo 'Andrés.'; no hay pregunta sobre el ponqué que se pueda verificar."
+    },
+    {
+      "id": "c5ab785574165c6f",
+      "label": "problema_en_prueba",
+      "reason": "No hay pregunta real sobre personalización con nombres; solo se repite 'Andrés.'"
+    },
+    {
+      "id": "58a4977a740b2aec",
+      "label": "problema_en_prueba",
+      "reason": "No hay pregunta ni respuesta sobre el abono; el output es solo el nombre repetido."
+    },
+    {
+      "id": "d8d9d0d132e0f388",
+      "label": "problema_en_prueba",
+      "reason": "El campo question es 'Julián' sin contenido sobre productos sin gluten; no evaluable."
+    },
+    {
+      "id": "a67ffcf818bb0e7b",
+      "label": "problema_en_prueba",
+      "reason": "No hay pregunta de seguimiento real sobre los días; solo se repite el nombre."
+    },
+    {
+      "id": "3614ee29783b195d",
+      "label": "problema_en_prueba",
+      "reason": "No hay pregunta sobre tarjetas de crédito; el output es solo 'Julián.'"
+    },
+    {
+      "id": "b8e9fa6fa47ed1f6",
+      "label": "problema_en_prueba",
+      "reason": "No hay pregunta sobre devoluciones; el output es solo 'Rocío.'"
+    },
+    {
+      "id": "059408026cf23692",
+      "label": "problema_en_prueba",
+      "reason": "No hay pregunta sobre fidelización; solo se repite el nombre sin contenido."
+    },
+    {
+      "id": "ed999c6a9c6dda66",
+      "label": "problema_en_prueba",
+      "reason": "No hay pregunta sobre pedidos personalizados o WhatsApp; el output es solo el nombre."
+    },
+    {
+      "id": "243bff5512a0129f",
+      "label": "problema_en_prueba",
+      "reason": "El question/output es solo 'Diana.'; no hay pregunta sobre horario de domingo verificable."
+    },
+    {
+      "id": "692e12b26aaad4ed",
+      "label": "problema_en_prueba",
+      "reason": "No hay pregunta real sobre urgencias nocturnas; solo se repite el nombre."
+    },
+    {
+      "id": "f6f80d817d00b16d",
+      "label": "problema_en_prueba",
+      "reason": "No hay pregunta sobre recogida a domicilio; el output carece de contenido."
+    },
+    {
+      "id": "a10e80826e58da7a",
+      "label": "problema_en_prueba",
+      "reason": "El campo question es 'Felipe' sin pregunta sobre el costo de consulta; no evaluable."
+    },
+    {
+      "id": "a2cd764425b134f4",
+      "label": "problema_en_prueba",
+      "reason": "No hay pregunta de seguimiento sobre laboratorio; solo se repite el nombre."
+    },
+    {
+      "id": "63caf99574fd5b7c",
+      "label": "problema_en_prueba",
+      "reason": "No hay pregunta sobre radiografías; el output es solo 'Felipe.'"
+    },
+    {
+      "id": "ced9e4062e7fc7d9",
+      "label": "problema_en_prueba",
+      "reason": "No hay pregunta sobre edad de vacunación; el output es solo 'Marta.'"
+    },
+    {
+      "id": "6a86126f4068da36",
+      "label": "problema_en_prueba",
+      "reason": "No hay pregunta de seguimiento sobre refuerzo anual; solo se repite el nombre."
+    },
+    {
+      "id": "f1803f153c8bd4fc",
+      "label": "problema_en_prueba",
+      "reason": "No hay pregunta sobre vacuna de tos de las perreras; el output carece de contenido."
+    },
+    {
+      "id": "5a5da7246d58a878",
+      "label": "problema_en_prueba",
+      "reason": "No hay pregunta sobre esterilización; el output es solo 'Esteban.'"
+    },
+    {
+      "id": "2329f6ae61e633bd",
+      "label": "problema_en_prueba",
+      "reason": "No hay pregunta sobre medios de pago; solo se repite el nombre."
+    },
+    {
+      "id": "89183176652b835e",
+      "label": "problema_en_prueba",
+      "reason": "No hay pregunta sobre financiación a cuotas; el output carece de contenido."
+    },
+    {
+      "id": "fe70cccc7a99e6cf",
+      "label": "problema_en_prueba",
+      "reason": "El campo question es 'Camila' sin pregunta sobre el plan mensual; no evaluable."
+    },
+    {
+      "id": "a65ad36b9ed89f2e",
+      "label": "problema_en_prueba",
+      "reason": "No hay pregunta de seguimiento sobre plan trimestral; solo se repite el nombre."
+    },
+    {
+      "id": "37096c3c7a2af7f9",
+      "label": "problema_en_prueba",
+      "reason": "No hay pregunta sobre descuento estudiantil; el output carece de contenido."
+    },
+    {
+      "id": "422ec52fdde3aaed",
+      "label": "problema_en_prueba",
+      "reason": "No hay pregunta sobre menores de edad; el output es solo 'Iván.'"
+    },
+    {
+      "id": "383846d638f2b8de",
+      "label": "problema_en_prueba",
+      "reason": "No hay pregunta de seguimiento sobre autorización firmada; solo se repite el nombre."
+    },
+    {
+      "id": "a133beb77ac9b29f",
+      "label": "problema_en_prueba",
+      "reason": "No hay pregunta sobre rutinas para adolescentes; el output carece de contenido."
+    },
+    {
+      "id": "8ebe2922078b67a3",
+      "label": "problema_en_prueba",
+      "reason": "No hay pregunta sobre entrenamiento personalizado; el output es solo 'Patricia.'"
+    },
+    {
+      "id": "37be36aab833df04",
+      "label": "problema_en_prueba",
+      "reason": "No hay pregunta de seguimiento sobre tiempo de anticipación; solo se repite el nombre."
+    },
+    {
+      "id": "5b9a48a27ae94473",
+      "label": "problema_en_prueba",
+      "reason": "No hay pregunta sobre asesoría nutricional; el output carece de contenido."
+    },
+    {
+      "id": "562cb20ceaef49a0",
+      "label": "problema_en_prueba",
+      "reason": "No hay pregunta sobre congelamiento de membresía; el output es solo 'Ricardo.'"
+    },
+    {
+      "id": "392b1a05eb263e5d",
+      "label": "problema_en_prueba",
+      "reason": "No hay pregunta de seguimiento sobre días de gracia; solo se repite el nombre."
+    },
+    {
+      "id": "57e8703eb51b416e",
+      "label": "problema_en_prueba",
+      "reason": "No hay pregunta sobre convenios de parqueadero; el output carece de contenido."
+    },
+    {
+      "id": "65f56510b1ba9dee",
+      "label": "problema_en_prueba",
+      "reason": "El campo question es 'Nicolás' sin pregunta sobre cambio de aceite; no evaluable."
+    },
+    {
+      "id": "39a050ab5a843be7",
+      "label": "problema_en_prueba",
+      "reason": "No hay pregunta de seguimiento sobre tiempo del proceso; solo se repite el nombre."
+    },
+    {
+      "id": "0a98235ea001b8d7",
+      "label": "problema_en_prueba",
+      "reason": "No hay pregunta sobre aseguradoras; el output carece de contenido."
+    },
+    {
+      "id": "36ab3a2562cb6930",
+      "label": "problema_en_prueba",
+      "reason": "No hay pregunta sobre vehículos eléctricos; el output es solo 'Laura.'"
+    },
+    {
+      "id": "839e8f7423ad4428",
+      "label": "problema_en_prueba",
+      "reason": "No hay pregunta sobre servicio de grúa; el output carece de contenido."
+    },
+    {
+      "id": "47056603678cf191",
+      "label": "problema_en_prueba",
+      "reason": "No hay pregunta sobre garantía de repuestos; solo se repite el nombre."
+    },
+    {
+      "id": "a7c69645f428e4f7",
+      "label": "problema_en_prueba",
+      "reason": "No hay pregunta sobre revisión de frenos; el output es solo 'Jorge.'"
+    },
+    {
+      "id": "63e94c3faffd31ca",
+      "label": "problema_en_prueba",
+      "reason": "No hay pregunta de seguimiento sobre clientes frecuentes; solo se repite el nombre."
+    },
+    {
+      "id": "f4b9f21197eee53d",
+      "label": "problema_en_prueba",
+      "reason": "No hay pregunta sobre plan de mantenimiento mensual; el output carece de contenido."
+    },
+    {
+      "id": "d9ef7c282847c926",
+      "label": "problema_en_prueba",
+      "reason": "No hay pregunta sobre diagnóstico computarizado; el output es solo 'Sandra.'"
+    },
+    {
+      "id": "832b3b3a1dcc8372",
+      "label": "problema_en_prueba",
+      "reason": "No hay pregunta sobre medios de pago; solo se repite el nombre."
+    },
+    {
+      "id": "9052d290568c778c",
+      "label": "problema_en_prueba",
+      "reason": "No hay pregunta sobre lavado incluido; el output carece de contenido."
+    },
+    {
+      "id": "a977be807c6f7b47",
+      "label": "problema_en_prueba",
+      "reason": "El campo question es 'Vanessa' sin pregunta sobre el corte de dama; no evaluable."
+    },
+    {
+      "id": "9a2688f9aab98adf",
+      "label": "problema_en_prueba",
+      "reason": "No hay pregunta sobre niños en corte de cabello; solo se repite el nombre."
+    },
+    {
+      "id": "31ec8a7449f8a94e",
+      "label": "problema_en_prueba",
+      "reason": "No hay pregunta sobre corte a domicilio; el output carece de contenido."
+    },
+    {
+      "id": "970ae8c268608701",
+      "label": "problema_en_prueba",
+      "reason": "No hay pregunta sobre manicure/pedicure; el output es solo 'Tatiana.'"
+    },
+    {
+      "id": "15d644b0de7dfc8f",
+      "label": "problema_en_prueba",
+      "reason": "No hay pregunta de seguimiento sobre exfoliación incluida; solo se repite el nombre."
+    },
+    {
+      "id": "4e836b00e0ca5c0b",
+      "label": "problema_en_prueba",
+      "reason": "No hay pregunta sobre uñas acrílicas; el output carece de contenido."
+    },
+    {
+      "id": "be79a7ca9e08e7b1",
+      "label": "problema_en_prueba",
+      "reason": "No hay pregunta sobre cancelación de citas; el output es solo 'Diego.'"
+    },
+    {
+      "id": "fea0ea401523c460",
+      "label": "problema_en_prueba",
+      "reason": "No hay pregunta sobre inasistencia vs cancelación con aviso; el output carece de contenido."
+    },
+    {
+      "id": "64b49746712d3a08",
+      "label": "problema_en_prueba",
+      "reason": "No hay pregunta sobre ingreso de mascotas; solo se repite el nombre."
+    },
+    {
+      "id": "97620dbe4866a956",
+      "label": "problema_en_prueba",
+      "reason": "No hay pregunta sobre el descuento de miércoles; el output es solo 'Gloria.'"
+    },
+    {
+      "id": "31376478214e63c5",
+      "label": "problema_en_prueba",
+      "reason": "No hay pregunta sobre certificación del personal; solo se repite el nombre."
+    },
+    {
+      "id": "0ea01e53a7632b6d",
+      "label": "problema_en_prueba",
+      "reason": "No hay pregunta sobre paquete de novia; el output carece de contenido."
+    },
+    {
+      "id": "8f0c46455491a572",
+      "label": "problema_en_prueba",
+      "reason": "El campo question es 'Luisa' sin pregunta sobre el precio de copias; no evaluable."
+    },
+    {
+      "id": "1a70162a40a6b6f7",
+      "label": "problema_en_prueba",
+      "reason": "No hay pregunta de comparación de precios; solo se repite el nombre."
+    },
+    {
+      "id": "7800fddd1af4206d",
+      "label": "problema_en_prueba",
+      "reason": "No hay pregunta sobre promociones universitarias; el output carece de contenido."
+    },
+    {
+      "id": "04de9ffcfe68b442",
+      "label": "problema_en_prueba",
+      "reason": "No hay pregunta sobre descuento a colegios; el output es solo 'Beatriz.'"
+    },
+    {
+      "id": "c9b08b86f5299dda",
+      "label": "problema_en_prueba",
+      "reason": "No hay pregunta sobre combinar títulos distintos; solo se repite el nombre."
+    },
+    {
+      "id": "c0638b5bd4b6a210",
+      "label": "problema_en_prueba",
+      "reason": "No hay pregunta sobre pedidos por WhatsApp; el output carece de contenido."
+    },
+    {
+      "id": "95151759391d78ed",
+      "label": "problema_en_prueba",
+      "reason": "No hay pregunta sobre el abono para apartar libros; el output es solo 'Mauricio.'"
+    },
+    {
+      "id": "f3bcda25f8b4597a",
+      "label": "problema_en_prueba",
+      "reason": "No hay pregunta de seguimiento sobre el saldo pendiente; solo se repite el nombre."
+    },
+    {
+      "id": "4d634edaf99301b7",
+      "label": "problema_en_prueba",
+      "reason": "No hay pregunta sobre catálogo digital; el output carece de contenido."
+    },
+    {
+      "id": "7f1f923b8adcfe70",
+      "label": "problema_en_prueba",
+      "reason": "No hay pregunta sobre horario extendido de enero; el output es solo 'Paola.'"
+    },
+    {
+      "id": "f56dee6207399811",
+      "label": "problema_en_prueba",
+      "reason": "No hay pregunta sobre envíos a otros municipios; el output carece de contenido."
+    },
+    {
+      "id": "dfbdc14d2db250fe",
+      "label": "problema_en_prueba",
+      "reason": "No hay pregunta sobre encuadernación; solo se repite el nombre."
+    },
+    {
+      "id": "93251c295f43934d",
+      "label": "problema_en_prueba",
+      "reason": "El campo question es 'Camilo' sin pregunta sobre matrícula/mensualidad; no evaluable."
+    },
+    {
+      "id": "63096a8c8e371dc2",
+      "label": "problema_en_prueba",
+      "reason": "No hay pregunta sobre el material didáctico; solo se repite el nombre."
+    },
+    {
+      "id": "b2d8e93c3ff89cfc",
+      "label": "problema_en_prueba",
+      "reason": "No hay pregunta sobre curso de francés; el output carece de contenido."
+    },
+    {
+      "id": "c80a8c7de281995b",
+      "label": "problema_en_prueba",
+      "reason": "No hay pregunta sobre examen de clasificación; el output es solo 'Sofía.'"
+    },
+    {
+      "id": "e384d59299d0acd8",
+      "label": "problema_en_prueba",
+      "reason": "No hay pregunta de seguimiento sobre gratuidad del examen; solo se repite el nombre."
+    },
+    {
+      "id": "7b7a1a6f126c7d42",
+      "label": "problema_en_prueba",
+      "reason": "No hay pregunta sobre duración total del programa; el output carece de contenido."
+    },
+    {
+      "id": "5b6e02256dcf3be5",
+      "label": "problema_en_prueba",
+      "reason": "No hay pregunta sobre consecuencias de faltar a clases; el output es solo 'Esteban.'"
+    },
+    {
+      "id": "8a27d3178c6a7640",
+      "label": "problema_en_prueba",
+      "reason": "No hay pregunta sobre el club de conversación; solo se repite el nombre."
+    },
+    {
+      "id": "365c7f1c7a4462c7",
+      "label": "problema_en_prueba",
+      "reason": "No hay pregunta sobre asistencia de externos al club; el output carece de contenido."
+    },
+    {
+      "id": "61f8df5b40f7784a",
+      "label": "problema_en_prueba",
+      "reason": "No hay pregunta sobre la edad mínima de inscripción; el output es solo 'Natalia.'"
+    },
+    {
+      "id": "bb04ed1d6345915c",
+      "label": "problema_en_prueba",
+      "reason": "No hay pregunta sobre descuento por pago anticipado; solo se repite el nombre."
+    },
+    {
+      "id": "8d6aef0864ccc4b4",
+      "label": "problema_en_prueba",
+      "reason": "No hay pregunta sobre convenios con universidades; el output carece de contenido."
+    },
+    {
+      "id": "c3d923a66668760d",
+      "label": "problema_en_prueba",
+      "reason": "El campo question es 'Wilson' sin pregunta sobre urgencias; no evaluable."
+    },
+    {
+      "id": "fca1dbd32897ffd4",
+      "label": "problema_en_prueba",
+      "reason": "No hay pregunta de seguimiento sobre el recargo; solo se repite el nombre."
+    },
+    {
+      "id": "8baeffcb04ee215b",
+      "label": "problema_en_prueba",
+      "reason": "No hay pregunta sobre tiempo de respuesta en festivos; el output carece de contenido."
+    },
+    {
+      "id": "890eb2955921ac87",
+      "label": "problema_en_prueba",
+      "reason": "No hay pregunta sobre cobertura de zonas; el output es solo 'Ángela.'"
+    },
+    {
+      "id": "125a2386004595e0",
+      "label": "problema_en_prueba",
+      "reason": "No hay pregunta sobre calentadores eléctricos; solo se repite el nombre."
+    },
+    {
+      "id": "38b5c4a334d651e2",
+      "label": "problema_en_prueba",
+      "reason": "No hay pregunta sobre descuento a adultos mayores; el output carece de contenido."
+    },
+    {
+      "id": "15aa4d62bac58994",
+      "label": "problema_en_prueba",
+      "reason": "No hay pregunta sobre visita de diagnóstico; el output es solo 'Rubén.'"
+    },
+    {
+      "id": "9377129bd4b9615a",
+      "label": "problema_en_prueba",
+      "reason": "No hay pregunta sobre alcance de la garantía; solo se repite el nombre."
+    },
+    {
+      "id": "9cd424c49449362a",
+      "label": "problema_en_prueba",
+      "reason": "No hay pregunta sobre suscripción mensual; el output carece de contenido."
+    },
+    {
+      "id": "b032aaa36e9718a9",
+      "label": "problema_en_prueba",
+      "reason": "No hay pregunta sobre destape de tuberías; el output es solo 'Consuelo.'"
+    },
+    {
+      "id": "f343d130a7021999",
+      "label": "problema_en_prueba",
+      "reason": "No hay pregunta sobre cotización previa; solo se repite el nombre."
+    },
+    {
+      "id": "590779b8f31d7b94",
+      "label": "problema_en_prueba",
+      "reason": "No hay pregunta sobre contrato de mantenimiento anual; el output carece de contenido."
+    }
+  ],
+  "wall_s": 82.52539430400066,
+  "model_usage": {
+    "claude-sonnet-5": {
+      "inputTokens": 2,
+      "outputTokens": 8933,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 30190,
+      "webSearchRequests": 0,
+      "costUSD": 0.210094,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 64000,
+      "thinkingTokens": 2225,
+      "canonicalModel": "claude-sonnet-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "cost_usd_reported": 0.210094,
+  "remote_cpu": "not reported",
+  "source_evaluation_sha256": "f3e68f50aa75b19d19b0c2ac91a5d6e4d2fbe7da1fd85badd95299ba032c56d5"
+}
