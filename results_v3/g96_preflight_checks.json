@@ -1,0 +1,26 @@
+{
+  "experiment": "G96",
+  "preregistration_commit": "18924a5",
+  "focal_before_implementation": {
+    "tests": 3,
+    "errors": 3,
+    "reason": "ModuleNotFoundError: experiments.g96_projected_alignment",
+    "reported_unittest_s": 0.001
+  },
+  "focal_after_implementation": {
+    "tests": 3,
+    "errors": 0,
+    "reported_unittest_s": 0.066
+  },
+  "quick": {
+    "tests": 13,
+    "errors": 0,
+    "reported_unittest_s": 8.249,
+    "cpu_user_s": 8.28,
+    "cpu_system_s": 0.02,
+    "wall_s": 8.32,
+    "timeout_s": 40
+  },
+  "review": "Formula, controls, source separation and budget compared with preregistration before measurement; no engine change. No independent audit or new reserve.",
+  "limits": "Focal test CPU was not separately instrumented. Matrix reconstruction checks are not QA quality evidence."
+}
