@@ -1,4 +1,5 @@
 """Blind independent judgment of G97 reserve outputs; no learning."""
+import argparse
 import hashlib
 import json
 from pathlib import Path
@@ -13,8 +14,14 @@ LABELS=['util_respaldada','abstencion_correcta','abstencion_indebida','cita_inco
 
 
 def main():
-    reserve=json.loads((ROOT/'results_v3/g97_reserve.json').read_text())
-    run=json.loads((ROOT/'results_v3/g97_reserve_evaluation.json').read_text())
+    parser=argparse.ArgumentParser()
+    parser.add_argument('--dataset',default='results_v3/g97_reserve.json')
+    parser.add_argument('--evaluation',default='results_v3/g97_reserve_evaluation.json')
+    parser.add_argument('--prefix',default='g97')
+    args=parser.parse_args()
+    reserve=json.loads((ROOT/args.dataset).read_text())
+    run=json.loads((ROOT/args.evaluation).read_text())
+    artifact=lambda suffix:ROOT/'results_v3'/f'{args.prefix}_{suffix}.json'
     indexed={}
     for r in run['rows']: indexed.setdefault(r['id'],[]).append(r)
     mapping={}; packet=[]; rng=random.Random(97)
@@ -51,17 +58,18 @@ Datos de evaluación:
               'properties':{'id':{'type':'string'},'label':{'enum':LABELS},'reason':{'type':'string'}},
               'required':['id','label','reason'],'additionalProperties':False}}},
             'required':['judgments'],'additionalProperties':False}
-    (ROOT/'results_v3/g97_blind_input.json').write_text(json.dumps({'packet':packet,'mapping':mapping},ensure_ascii=False,indent=2)+'\n')
+    artifact('blind_input').write_text(json.dumps({'packet':packet,'mapping':mapping},ensure_ascii=False,indent=2)+'\n')
     begin=time.monotonic()
     with tempfile.TemporaryDirectory(prefix='leobot-g97-judge-') as folder:
-        args=['/home/leonardo/.local/bin/claude','-p','--model','sonnet','--tools','',
+        command=['/home/leonardo/.local/bin/claude','-p','--model','sonnet','--effort','low','--tools','',
               '--no-session-persistence','--strict-mcp-config','--mcp-config','{"mcpServers":{}}',
               '--output-format','json','--json-schema',json.dumps(schema)]
-        p=subprocess.run(args,input=prompt,cwd=folder,text=True,capture_output=True,timeout=600)
+        p=subprocess.run(command,input=prompt,cwd=folder,text=True,capture_output=True,timeout=600)
     raw={'exit_code':p.returncode,'stdout':p.stdout,'stderr':p.stderr,'wall_s':time.monotonic()-begin,
          'prompt_sha256':hashlib.sha256(prompt.encode()).hexdigest(),'outputs':len(mapping),
          'scope':'fresh independent session; no tools; model identities excluded from prompt'}
-    (ROOT/'results_v3/g97_judge_raw.json').write_text(json.dumps(raw,ensure_ascii=False,indent=2)+'\n')
+    raw['effort']='low'
+    artifact('judge_raw').write_text(json.dumps(raw,ensure_ascii=False,indent=2)+'\n')
     if p.returncode: raise RuntimeError(f'judge failed {p.returncode}')
     response=json.loads(p.stdout)
     output=response.get('structured_output')
@@ -82,8 +90,8 @@ Datos de evaluación:
     report={'counts':counts,'comparisons':comparisons,'judgments':output['judgments'],
             'wall_s':raw['wall_s'],'model_usage':response.get('modelUsage'),
             'cost_usd_reported':response.get('total_cost_usd'),'remote_cpu':'not reported',
-            'source_evaluation_sha256':hashlib.sha256((ROOT/'results_v3/g97_reserve_evaluation.json').read_bytes()).hexdigest()}
-    (ROOT/'results_v3/g97_judgment.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n')
+            'source_evaluation_sha256':hashlib.sha256((ROOT/args.evaluation).read_bytes()).hexdigest()}
+    artifact('judgment').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n')
     print(json.dumps({'counts':counts,'comparisons':comparisons,'wall_s':raw['wall_s']}),flush=True)
 
 
