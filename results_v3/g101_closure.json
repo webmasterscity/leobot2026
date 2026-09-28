@@ -1,0 +1,220 @@
+{
+  "experiment": "G101",
+  "date": "2026-09-27",
+  "status": "negative_no_promotion",
+  "prereg": "c0dad07",
+  "education_freeze": "ccfce73",
+  "prototype_freeze": "79771ba",
+  "primary": "hybrid_90",
+  "scope": "Same 157 spent turns, 102 with data; automatic judge; no independent new business reserve",
+  "reports": {
+    "baseline": {
+      "useful": 29,
+      "new_incorrect": 0,
+      "incorrect_quotes": 12,
+      "quotes_without_data": 7,
+      "latency": {
+        "n": 157,
+        "p50_ms": 0.15066999912960455,
+        "p95_ms": 0.24615399888716638,
+        "max_ms": 0.6480740048573352
+      },
+      "activated_latency": {
+        "n": 0,
+        "p50_ms": null,
+        "p95_ms": null,
+        "max_ms": null
+      }
+    },
+    "localized": {
+      "useful": 32,
+      "new_incorrect": 7,
+      "incorrect_quotes": 16,
+      "quotes_without_data": 10,
+      "latency": {
+        "n": 157,
+        "p50_ms": 0.26465599512448534,
+        "p95_ms": 0.4546769996522926,
+        "max_ms": 0.5912439955864102
+      },
+      "activated_latency": {
+        "n": 104,
+        "p50_ms": 0.3060989984078333,
+        "p95_ms": 0.47830900439294055,
+        "max_ms": 0.5887989973416552
+      }
+    },
+    "static_40": {
+      "useful": 29,
+      "new_incorrect": 0,
+      "incorrect_quotes": 12,
+      "quotes_without_data": 7,
+      "latency": {
+        "n": 157,
+        "p50_ms": 1.421551001840271,
+        "p95_ms": 1.9644999993033707,
+        "max_ms": 2.223516996309627
+      },
+      "activated_latency": {
+        "n": 104,
+        "p50_ms": 1.6343489987775683,
+        "p95_ms": 1.9891010015271604,
+        "max_ms": 2.2226330038392916
+      }
+    },
+    "static_90": {
+      "useful": 29,
+      "new_incorrect": 0,
+      "incorrect_quotes": 12,
+      "quotes_without_data": 7,
+      "latency": {
+        "n": 157,
+        "p50_ms": 1.3680710035259835,
+        "p95_ms": 1.8834960064850748,
+        "max_ms": 2.11411299824249
+      },
+      "activated_latency": {
+        "n": 104,
+        "p50_ms": 1.5695820038672537,
+        "p95_ms": 1.8993560006492771,
+        "max_ms": 2.1131879984750412
+      }
+    },
+    "hybrid_40": {
+      "useful": 31,
+      "new_incorrect": 7,
+      "incorrect_quotes": 17,
+      "quotes_without_data": 9,
+      "latency": {
+        "n": 157,
+        "p50_ms": 1.3852819974999875,
+        "p95_ms": 1.8636419990798458,
+        "max_ms": 2.144069003406912
+      },
+      "activated_latency": {
+        "n": 104,
+        "p50_ms": 1.5968970037647523,
+        "p95_ms": 1.884113997220993,
+        "max_ms": 2.1432190042105503
+      }
+    },
+    "hybrid_90": {
+      "useful": 29,
+      "new_incorrect": 0,
+      "incorrect_quotes": 12,
+      "quotes_without_data": 7,
+      "latency": {
+        "n": 157,
+        "p50_ms": 1.389905002724845,
+        "p95_ms": 1.9329119968460873,
+        "max_ms": 2.140808996045962
+      },
+      "activated_latency": {
+        "n": 104,
+        "p50_ms": 1.6184640044230036,
+        "p95_ms": 1.9415479982853867,
+        "max_ms": 2.1400490004452877
+      }
+    },
+    "shuffled_40": {
+      "useful": 29,
+      "new_incorrect": 0,
+      "incorrect_quotes": 12,
+      "quotes_without_data": 7,
+      "latency": {
+        "n": 157,
+        "p50_ms": 1.4322999995783903,
+        "p95_ms": 1.901909003208857,
+        "max_ms": 2.2279129989328794
+      },
+      "activated_latency": {
+        "n": 104,
+        "p50_ms": 1.6258769974228926,
+        "p95_ms": 1.933106999786105,
+        "max_ms": 2.2268859975156374
+      }
+    },
+    "shuffled_90": {
+      "useful": 29,
+      "new_incorrect": 0,
+      "incorrect_quotes": 12,
+      "quotes_without_data": 7,
+      "latency": {
+        "n": 157,
+        "p50_ms": 1.4128980037639849,
+        "p95_ms": 1.898873997561168,
+        "max_ms": 2.172412998334039
+      },
+      "activated_latency": {
+        "n": 104,
+        "p50_ms": 1.58571099746041,
+        "p95_ms": 1.9669920002343133,
+        "max_ms": 2.1713890018872917
+      }
+    }
+  },
+  "raw_choices": {
+    "static": {
+      "answerable": 61,
+      "correct_raw": 18,
+      "absent": 40,
+      "null_on_absent": 0,
+      "null_on_answerable": 0,
+      "calibrated_brier_sum": 14.594851188936227,
+      "calibrated_brier_n": 101,
+      "calibrated_brier": 0.14450347711818046
+    },
+    "hybrid": {
+      "answerable": 61,
+      "correct_raw": 19,
+      "absent": 40,
+      "null_on_absent": 28,
+      "null_on_answerable": 21,
+      "calibrated_brier_sum": 15.507524310194773,
+      "calibrated_brier_n": 101,
+      "calibrated_brier": 0.1535398446553938
+    },
+    "shuffled": {
+      "answerable": 61,
+      "correct_raw": 10,
+      "absent": 40,
+      "null_on_absent": 38,
+      "null_on_answerable": 49,
+      "calibrated_brier_sum": 8.967577584204331,
+      "calibrated_brier_n": 101,
+      "calibrated_brier": 0.08878789687331021
+    }
+  },
+  "criteria": {
+    "sixty_percent_primary": false,
+    "no_new_errors_primary": true,
+    "sixty_percent_secondary": false,
+    "no_new_errors_secondary": false,
+    "latency_primary_both_runs": true
+  },
+  "same_after_restart": {
+    "baseline": true,
+    "localized": true,
+    "static_40": true,
+    "static_90": true,
+    "hybrid_40": true,
+    "hybrid_90": true,
+    "shuffled_40": true,
+    "shuffled_90": true
+  },
+  "cpu_s_instrumented_by_stage": {
+    "acquisition": 7.432663037999999,
+    "installation": 1.5,
+    "preflight": 1.944276073,
+    "education": 49.374712341,
+    "common": 9.171026341000001,
+    "restart": 9.214368421,
+    "bakery": 5.867891277,
+    "shared_final_tests": 10.5,
+    "shared_integration": 3.9829837630000005
+  },
+  "cpu_s_instrumented_lower_bound": 98.987921254,
+  "current_turn_g99_g100_g101_known_cpu_lower_bound": 277.073914738,
+  "missing_costs": "Minor reads, creation of venv, early tests and orchestration not fully instrumented; prior base/corpus/G97/G98 costs reused. No remote inference or GPU training.",
+  "recommendation": "Do not use cosine similarity as correctness confidence. Keep Model2Vec experimental; this hybrid scores31/102 with7 new wrong quotes versus G98 32/102 with7. Prioritize better selection and evidence verification, preserving uncertainty. No integration or general success claim."
+}

@@ -22,5 +22,25 @@
   "educational_hashes_same_g98": true,
   "models_match_recorded_hashes": true,
   "library_inference_uses_one_shared_readonly_table": true,
-  "memory_note": "Model table loaded before torch/Bot to keep transient load peak within original 3GiB RSS budget; source weights hashed in chunks, no limit increase."
+  "memory_note": "Model table loaded before torch/Bot to keep transient load peak within original 3GiB RSS budget; source weights hashed in chunks, no limit increase.",
+  "final_shared_tests": {
+    "tests": 24,
+    "unittest_s": 9.973,
+    "failures": 0,
+    "cpu_user_s": 10.11,
+    "cpu_system_s": 0.39,
+    "wall_s": 10.53,
+    "peak_rss_kib": 777404
+  },
+  "integration_source": "g99_g100_g101_integration.json",
+  "restart_exact": {
+    "baseline": true,
+    "localized": true,
+    "static_40": true,
+    "static_90": true,
+    "hybrid_40": true,
+    "hybrid_90": true,
+    "shuffled_40": true,
+    "shuffled_90": true
+  }
 }
