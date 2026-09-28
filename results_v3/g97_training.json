@@ -1,0 +1,77 @@
+{
+  "source_sha256": "c985eb099bcdadf87baa778786148e4de6c9a84057e68b4268ea2f832b884c66",
+  "base_sha256": "6fff61c20fcd5812d785eec22b6c595e19568f98ec31559e689c7fb95fe6d79f",
+  "engine": "11a1ef5836382d81a643cad0b217a8669ce0f2d1",
+  "training_pairs": 6000,
+  "validation_pairs": 1000,
+  "training_domains": 703,
+  "validation_domains": 136,
+  "training_sha256": "40d0f9ab22baa8f2f36feaf2ad09cd10d846a31a452808d8df7d0a595be09d01",
+  "validation_sha256": "c73fa1fad4a4e1c997d2088c453103bf5fcfb7acba17ea4a0f1d7ec9de8effc7",
+  "torch": "2.12.1+cu130",
+  "numpy": "2.4.1",
+  "models": {
+    "random": {
+      "parameters": 1288384,
+      "epochs": [],
+      "cpu_s": 0.06112055400000038,
+      "export_max_error": 1.1920928955078125e-07,
+      "validation_top1_of16": 70,
+      "validation_n": 1000,
+      "sha256": "d909a9efb32e94f6463b6a2b69d2e07d7949444f054ab11e3e436a6110aaf6c0"
+    },
+    "trained": {
+      "parameters": 1288384,
+      "epochs": [
+        3.2866663171889936,
+        1.9386379033961194,
+        1.3308713144444404,
+        0.950754830811886,
+        0.6946018100418943,
+        0.5218245212702041
+      ],
+      "cpu_s": 4.825500910000001,
+      "export_max_error": 1.1920928955078125e-07,
+      "validation_top1_of16": 581,
+      "validation_n": 1000,
+      "sha256": "695f279a25e272fbc529360b931a6e396dbd82f3e762296138d64775cd93dcef"
+    },
+    "shuffled": {
+      "parameters": 1288384,
+      "epochs": [
+        4.064811247460385,
+        3.3860345038961857,
+        2.607046322619661,
+        1.9144686676086264,
+        1.4073180632388338,
+        1.0443258367954416
+      ],
+      "cpu_s": 4.76790388,
+      "export_max_error": 1.1920928955078125e-07,
+      "validation_top1_of16": 397,
+      "validation_n": 1000,
+      "sha256": "cacc56848c355a1cd3c7cc832878c7b7f443ec0f17aa599ef0308e9189007fd1"
+    }
+  },
+  "shuffled_changed": 5308,
+  "gate_cpu_s": 7.357691903000003,
+  "cpu_s": 26.545734921999998,
+  "wall_s": 25.098325936000037,
+  "peak_rss_kib": 1140960,
+  "source_code_sha256": "6b93bb5d8e65f9ca81779c8570fed0f4186f5fe1ed94c053ae2351c4c835ba6c",
+  "gates": {
+    "random": {
+      "rows": 2352,
+      "correct_proposals": 32
+    },
+    "trained": {
+      "rows": 2352,
+      "correct_proposals": 148
+    },
+    "shuffled": {
+      "rows": 2352,
+      "correct_proposals": 72
+    }
+  },
+  "model_metadata_sha256": "4f95790a909fad86f8831eb817fe7212f7053f2c6cbfa612e6353638c2a36070"
+}
