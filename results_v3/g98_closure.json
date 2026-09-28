@@ -1,0 +1,45 @@
+{
+  "experiment": "G98",
+  "date": "2026-09-27",
+  "status": "development_negative_no_promotion",
+  "prereg_commit": "01e49fe",
+  "education_freeze": "14b0954",
+  "prototype_freeze": "0e3183c",
+  "training_met_predeclared_resources": true,
+  "criteria": {
+    "requested_double_useful": false,
+    "original_sixty_percent": false,
+    "no_new_errors": false,
+    "beat_both_controls_by_three": true,
+    "raw_selection_improves": true,
+    "literal": true,
+    "latency_both_runs": true,
+    "restart_all_exact": true
+  },
+  "same_responses_after_restart": {
+    "baseline": true,
+    "original": true,
+    "more": true,
+    "localized": true,
+    "shuffled": true
+  },
+  "relative_useful_gain": 0.10344827586206895,
+  "raw_selection_optimistic_ceiling_on_sample": 37,
+  "cpu_s_instrumented_by_stage": {
+    "training_preparation_calibration": 125.37145159299999,
+    "common_with_imports_and_raw": 7.445196794,
+    "bakery_with_imports_and_raw": 5.830944663,
+    "restart_with_imports_and_raw": 5.914965775,
+    "final_tests": 10.799999999999999,
+    "integration_checks": 2.142136203
+  },
+  "cpu_s_instrumented_lower_bound": 157.504695028,
+  "cost_limits": "Early quick/focal tests, small parsing/audit commands and orchestration CPU not fully instrumented. G97 model, stable base and corpus acquisition costs reused, excluded. No new download, paid training, inference API or remote judge.",
+  "scope": "157 spent turns, 102 answerable; automatic existing key judge; no new independent reserve. Education holdout groups disjoint from additional weight training/calibration. Original model and stable base are pre-existing knowledge.",
+  "new_errors": {
+    "answerable_wrong_quotes": 4,
+    "absent_quotes": 3
+  },
+  "outcome": "Extra MFAQ epochs 29/102. Localized education 32/102 but seven new wrong quotes by automatic judge. Bakery hours learned, location still unknown. No threshold change, no stable integration.",
+  "next": "Close this bounded retraining batch with results; no further experiments without a new instruction."
+}

@@ -18,5 +18,32 @@
     "normalized_document_hash_conflicts_train_validation_calibration_spent_dev": 0
   },
   "artifact_hashes_match_training": true,
-  "models_frozen_before_common_evaluation": true
+  "models_frozen_before_common_evaluation": true,
+  "final_tests": {
+    "tests": 19,
+    "unittest_s": 10.412,
+    "failures": 0,
+    "cpu_user_s": 10.37,
+    "cpu_system_s": 0.43,
+    "wall_s": 11.04,
+    "peak_rss_kib": 775728
+  },
+  "trained_model_integration": {
+    "disabled_exact": true,
+    "document_replaced_without_stale_evidence": true,
+    "replacement_reply": {
+      "status": "closest",
+      "text": "Encontré este fragmento: «Horario: lunes a viernes de 9:00 a 17:00.».",
+      "evidence": {
+        "unit": "Horario: lunes a viernes de 9:00 a 17:00.",
+        "heading": "",
+        "index": 0
+      },
+      "confidence": 0.4523809523809524,
+      "backup": "localized"
+    },
+    "empty_context_abstains": true,
+    "engine_base_and_g97_unchanged": true,
+    "cpu_s_with_imports": 2.142136203
+  }
 }
