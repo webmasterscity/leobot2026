@@ -1,0 +1,580 @@
+{
+  "experiment": "G96",
+  "scope": "spent development; linear projection of learned correspondences only",
+  "repository_engine_sha": "11a1ef5836382d81a643cad0b217a8669ce0f2d1",
+  "effective_selector_reference": "fe2f3116e8d2bf0a6c76eabfce496dbb4780d973",
+  "reference_sha256": {
+    "leobot/context.py": "3c907f07775aa9da574df693fa043a33ae773adc8ff78ec6470d6a86f93feddd",
+    "experiments/par2_seleccion.py": "54d4337cdd9d5bfeaa482cb9ba89de248d2d4fbe45c567e29c62bac9c0397eb1"
+  },
+  "sources_sha256": {
+    "experiments/g96_projected_alignment.py": "216ca7eaa007138df08a1d947302d7946ddc9a3182ee6b74359a06e9c8693d07",
+    "experiments/test_g96_projected_alignment.py": "4182da2e0503d762bd029d01a2532ce5c1b4917e5a2620a75ddd2789317a6fb4",
+    "experiments/g85_human_selection.py": "c71ed5b519b84b04fde23c65bcbb12e99a27c8861ce92fa1ee4ab09c64e3f0e9",
+    "experiments/g84_indirect_alignment.py": "718f001e3839e5c8ff77c28bce5a0a4ccece48f3bc81df9a5c455182addde522",
+    "experiments/g84b_compact_replay.py": "a6f30fe340d5f63be71ee96ad1730d335f353d646c096e9769513ac3eb366029",
+    "experiments/g79_joint_selection.py": "8521df478c0ec3aeb4d5f3a5e8d82b1a55a4d3a913049de3b9407c03361204aa",
+    "experiments/g68_confianza.py": "e564ac88b8307caeac219a2ecbee7ff9d2857799c0b089402541c5a73ca0ef00",
+    "experiments/g75_relational_evidence.py": "abaab742e407c8e53655e20714e192f5bb9ac0c7c644979fc575c093fe981459",
+    "prereg/G-96-proyeccion-de-correspondencias.md": "65daaead997c313d6c136247d77bf96b7bca938b1d6d5b3fb315af2d933dc383"
+  },
+  "g84_models_sha256": "fd528ab70a602289c271916835c00c570e21b7b2d5ca0f08207515f2bf0384b7",
+  "base_sha256": "6fff61c20fcd5812d785eec22b6c595e19568f98ec31559e689c7fb95fe6d79f",
+  "education": {
+    "removed": {
+      "turns": 3520,
+      "rows": 20629,
+      "features": [
+        "alignment1_distance",
+        "alignment1_known",
+        "alignment1_margin",
+        "alignment1_score",
+        "alignment2_distance",
+        "alignment2_known",
+        "alignment2_margin",
+        "alignment2_score",
+        "cifra",
+        "cls",
+        "cov",
+        "exp_ADJ",
+        "exp_NOUN",
+        "exp_NUM",
+        "exp_OTRO",
+        "exp_PROPN",
+        "exp_VERB",
+        "forma",
+        "heredado",
+        "largo",
+        "margen",
+        "nexp_ADJ",
+        "nexp_NOUN",
+        "nexp_NUM",
+        "nexp_OTRO",
+        "nexp_PROPN",
+        "nexp_VERB",
+        "propio",
+        "puente",
+        "rango",
+        "raro",
+        "tipo",
+        "u"
+      ],
+      "preparation_and_learning_cpu_s": 18.965017647000003
+    },
+    "full": {
+      "turns": 3520,
+      "rows": 20629,
+      "features": [
+        "alignment1_distance",
+        "alignment1_known",
+        "alignment1_margin",
+        "alignment1_score",
+        "alignment2_distance",
+        "alignment2_known",
+        "alignment2_margin",
+        "alignment2_score",
+        "cifra",
+        "cls",
+        "cov",
+        "exp_ADJ",
+        "exp_NOUN",
+        "exp_NUM",
+        "exp_OTRO",
+        "exp_PROPN",
+        "exp_VERB",
+        "forma",
+        "heredado",
+        "largo",
+        "margen",
+        "nexp_ADJ",
+        "nexp_NOUN",
+        "nexp_NUM",
+        "nexp_OTRO",
+        "nexp_PROPN",
+        "nexp_VERB",
+        "projection_aknown",
+        "projection_margin",
+        "projection_qknown",
+        "projection_score",
+        "propio",
+        "puente",
+        "rango",
+        "raro",
+        "tipo",
+        "u"
+      ],
+      "preparation_and_learning_cpu_s": 21.707766730000003
+    },
+    "random": {
+      "turns": 3520,
+      "rows": 20629,
+      "features": [
+        "alignment1_distance",
+        "alignment1_known",
+        "alignment1_margin",
+        "alignment1_score",
+        "alignment2_distance",
+        "alignment2_known",
+        "alignment2_margin",
+        "alignment2_score",
+        "cifra",
+        "cls",
+        "cov",
+        "exp_ADJ",
+        "exp_NOUN",
+        "exp_NUM",
+        "exp_OTRO",
+        "exp_PROPN",
+        "exp_VERB",
+        "forma",
+        "heredado",
+        "largo",
+        "margen",
+        "nexp_ADJ",
+        "nexp_NOUN",
+        "nexp_NUM",
+        "nexp_OTRO",
+        "nexp_PROPN",
+        "nexp_VERB",
+        "projection_aknown",
+        "projection_margin",
+        "projection_qknown",
+        "projection_score",
+        "propio",
+        "puente",
+        "rango",
+        "raro",
+        "tipo",
+        "u"
+      ],
+      "preparation_and_learning_cpu_s": 21.416984426999996
+    },
+    "learned": {
+      "turns": 3520,
+      "rows": 20629,
+      "features": [
+        "alignment1_distance",
+        "alignment1_known",
+        "alignment1_margin",
+        "alignment1_score",
+        "alignment2_distance",
+        "alignment2_known",
+        "alignment2_margin",
+        "alignment2_score",
+        "cifra",
+        "cls",
+        "cov",
+        "exp_ADJ",
+        "exp_NOUN",
+        "exp_NUM",
+        "exp_OTRO",
+        "exp_PROPN",
+        "exp_VERB",
+        "forma",
+        "heredado",
+        "largo",
+        "margen",
+        "nexp_ADJ",
+        "nexp_NOUN",
+        "nexp_NUM",
+        "nexp_OTRO",
+        "nexp_PROPN",
+        "nexp_VERB",
+        "projection_aknown",
+        "projection_margin",
+        "projection_qknown",
+        "projection_score",
+        "propio",
+        "puente",
+        "rango",
+        "raro",
+        "tipo",
+        "u"
+      ],
+      "preparation_and_learning_cpu_s": 21.50513480299999
+    },
+    "shuffled": {
+      "turns": 3520,
+      "rows": 20629,
+      "features": [
+        "alignment1_distance",
+        "alignment1_known",
+        "alignment1_margin",
+        "alignment1_score",
+        "alignment2_distance",
+        "alignment2_known",
+        "alignment2_margin",
+        "alignment2_score",
+        "cifra",
+        "cls",
+        "cov",
+        "exp_ADJ",
+        "exp_NOUN",
+        "exp_NUM",
+        "exp_OTRO",
+        "exp_PROPN",
+        "exp_VERB",
+        "forma",
+        "heredado",
+        "largo",
+        "margen",
+        "nexp_ADJ",
+        "nexp_NOUN",
+        "nexp_NUM",
+        "nexp_OTRO",
+        "nexp_PROPN",
+        "nexp_VERB",
+        "projection_aknown",
+        "projection_margin",
+        "projection_qknown",
+        "projection_score",
+        "propio",
+        "puente",
+        "rango",
+        "raro",
+        "tipo",
+        "u"
+      ],
+      "preparation_and_learning_cpu_s": 21.634252091999997
+    }
+  },
+  "projection": {
+    "learned": {
+      "rank": 32,
+      "requested_rank": 32,
+      "iterations": 2,
+      "seed": 1,
+      "learned": true,
+      "nonzero_edges": 66956,
+      "qsize": 2443,
+      "asize": 8869,
+      "matrix_squared_norm": 1881494.2634424448,
+      "relative_residual": 0.9626456485040175,
+      "orthogonality_error": 2.220446049250313e-16,
+      "cpu_s": 2.1358828809999997
+    },
+    "random": {
+      "rank": 32,
+      "requested_rank": 32,
+      "iterations": 0,
+      "seed": 1,
+      "learned": false,
+      "nonzero_edges": 66956,
+      "qsize": 2443,
+      "asize": 8869,
+      "matrix_squared_norm": 1881494.2634424448,
+      "relative_residual": 0.9934247785433129,
+      "orthogonality_error": 2.220446049250313e-16,
+      "cpu_s": 0.4539779529999999
+    }
+  },
+  "fits": [
+    {
+      "cpu_s": 2.5536592270000007,
+      "rows": 10486,
+      "features": 33,
+      "iterations": 8
+    },
+    {
+      "cpu_s": 2.4558383950000007,
+      "rows": 10143,
+      "features": 33,
+      "iterations": 8
+    },
+    {
+      "cpu_s": 4.800379817,
+      "rows": 20629,
+      "features": 33,
+      "iterations": 8
+    },
+    {
+      "cpu_s": 3.1638658789999994,
+      "rows": 10486,
+      "features": 37,
+      "iterations": 8
+    },
+    {
+      "cpu_s": 3.063831739000001,
+      "rows": 10143,
+      "features": 37,
+      "iterations": 8
+    },
+    {
+      "cpu_s": 5.891661782,
+      "rows": 20629,
+      "features": 37,
+      "iterations": 8
+    },
+    {
+      "cpu_s": 3.0999257249999985,
+      "rows": 10486,
+      "features": 37,
+      "iterations": 8
+    },
+    {
+      "cpu_s": 2.9858570909999997,
+      "rows": 10143,
+      "features": 37,
+      "iterations": 8
+    },
+    {
+      "cpu_s": 5.822703852999993,
+      "rows": 20629,
+      "features": 37,
+      "iterations": 8
+    },
+    {
+      "cpu_s": 3.137889143999999,
+      "rows": 10486,
+      "features": 37,
+      "iterations": 8
+    },
+    {
+      "cpu_s": 2.998872875999993,
+      "rows": 10143,
+      "features": 37,
+      "iterations": 8
+    },
+    {
+      "cpu_s": 5.864546263999998,
+      "rows": 20629,
+      "features": 37,
+      "iterations": 8
+    },
+    {
+      "cpu_s": 3.124767790000007,
+      "rows": 10486,
+      "features": 37,
+      "iterations": 8
+    },
+    {
+      "cpu_s": 3.0137217269999894,
+      "rows": 10143,
+      "features": 37,
+      "iterations": 8
+    },
+    {
+      "cpu_s": 5.891391977999987,
+      "rows": 20629,
+      "features": 37,
+      "iterations": 8
+    }
+  ],
+  "candidates": {
+    "baseline": {
+      "core": 816,
+      "useful_core": 269,
+      "quotes": 580,
+      "absent_n": 488,
+      "quotes_without_data": 74,
+      "p50_ms": 0.16407300427090377,
+      "p95_ms": 0.27040200075134635,
+      "max_ms": 0.8789470011834055,
+      "response_sha256": "48913f9d34378663039f5619568320ad5347ff38112ef08499e27e672578a897",
+      "nonliteral_evidence": 0
+    },
+    "removed": {
+      "core": 816,
+      "useful_core": 327,
+      "quotes": 636,
+      "absent_n": 488,
+      "quotes_without_data": 73,
+      "p50_ms": 1.063290997990407,
+      "p95_ms": 1.8488830028218217,
+      "max_ms": 2.8274080032133497,
+      "response_sha256": "ec018000f4401ea22f31c45206668ee888eaadcc00e61b8e124207b3727cd47f",
+      "nonliteral_evidence": 0
+    },
+    "full": {
+      "core": 816,
+      "useful_core": 343,
+      "quotes": 677,
+      "absent_n": 488,
+      "quotes_without_data": 78,
+      "p50_ms": 1.0869790057768114,
+      "p95_ms": 1.8675200044526719,
+      "max_ms": 2.849520002200734,
+      "response_sha256": "26072504f8723fdf89390dcfbdce14bf26e947d3574615e87d52a3b823f57094",
+      "nonliteral_evidence": 0
+    },
+    "random": {
+      "core": 816,
+      "useful_core": 337,
+      "quotes": 650,
+      "absent_n": 488,
+      "quotes_without_data": 71,
+      "p50_ms": 1.1265259963693097,
+      "p95_ms": 1.8983940026373602,
+      "max_ms": 2.8831279996666126,
+      "response_sha256": "bff7b84b7f454696379b9312deaa7922a9c2a20bcf7a9d3fa3458fad052eb030",
+      "nonliteral_evidence": 0
+    },
+    "learned": {
+      "core": 816,
+      "useful_core": 338,
+      "quotes": 650,
+      "absent_n": 488,
+      "quotes_without_data": 71,
+      "p50_ms": 1.1197010026080534,
+      "p95_ms": 1.9153300017933361,
+      "max_ms": 2.9078650040901266,
+      "response_sha256": "bd491df4b0369b89281bc54e35867b0e59687a80add9fe89eef6b20a7de0dc7e",
+      "nonliteral_evidence": 0
+    },
+    "shuffled": {
+      "core": 816,
+      "useful_core": 314,
+      "quotes": 588,
+      "absent_n": 488,
+      "quotes_without_data": 59,
+      "p50_ms": 1.1255319986958057,
+      "p95_ms": 1.906224999402184,
+      "max_ms": 2.939193000202067,
+      "response_sha256": "19d2c8b873f8992ca5638b49335d0cc7315155c3b927c575463fc449142bfab7",
+      "nonliteral_evidence": 0
+    },
+    "restored_direct": {
+      "core": 816,
+      "useful_core": 327,
+      "quotes": 636,
+      "absent_n": 488,
+      "quotes_without_data": 73,
+      "p50_ms": 1.0536909976508468,
+      "p95_ms": 1.8292539971298538,
+      "max_ms": 2.8556280012708157,
+      "response_sha256": "ec018000f4401ea22f31c45206668ee888eaadcc00e61b8e124207b3727cd47f",
+      "nonliteral_evidence": 0
+    },
+    "disabled": {
+      "core": 816,
+      "useful_core": 269,
+      "quotes": 580,
+      "absent_n": 488,
+      "quotes_without_data": 74,
+      "p50_ms": 0.15921499289106578,
+      "p95_ms": 0.2629869995871559,
+      "max_ms": 0.6381780040101148,
+      "response_sha256": "48913f9d34378663039f5619568320ad5347ff38112ef08499e27e672578a897",
+      "nonliteral_evidence": 0
+    }
+  },
+  "selection_without_abstention": {
+    "removed": {
+      "core": 816,
+      "correct_first": 482
+    },
+    "full": {
+      "core": 816,
+      "correct_first": 476
+    },
+    "random": {
+      "core": 816,
+      "correct_first": 481
+    },
+    "learned": {
+      "core": 816,
+      "correct_first": 480
+    },
+    "shuffled": {
+      "core": 816,
+      "correct_first": 482
+    }
+  },
+  "controls": {
+    "disabled_exact": true,
+    "direct_exact": true,
+    "reload_exact": true
+  },
+  "compaction": {
+    "source_sha256": "a412dec535148990be1a650a3a2b90523218c6ac5bf9554e1d706b0c6ec0cd9e",
+    "source_unchanged": true,
+    "compact_sha256": "d0b399c01164bbc833ff78569933fc5c353a1e7e2885a0b6737dedacc65468ef",
+    "source_bytes": 120092632,
+    "compact_bytes": 83899228,
+    "same_top_level_keys": true,
+    "cpu_s": 5.4016265610000005,
+    "peak_rss_kib": 624984
+  },
+  "restart": {
+    "result": {
+      "core": 816,
+      "useful_core": 338,
+      "quotes": 650,
+      "absent_n": 488,
+      "quotes_without_data": 71,
+      "p50_ms": 1.131463999627158,
+      "p95_ms": 1.9198869995307177,
+      "max_ms": 2.9487219944712706,
+      "response_sha256": "bd491df4b0369b89281bc54e35867b0e59687a80add9fe89eef6b20a7de0dc7e",
+      "nonliteral_evidence": 0
+    },
+    "error": null,
+    "cpu_s": 6.607339046,
+    "preparation_included": {
+      "alignment": {
+        "decode_cpu_s": 0.06399972400000009,
+        "context_cpu_s": 0.2720122469999995,
+        "decodes": 1,
+        "contexts": 72,
+        "identical_signal_check_cpu_s": 0.0010007920000001391
+      },
+      "projection": {
+        "decode_cpu_s": 0.0,
+        "context_cpu_s": 0.16697990700000354,
+        "feature_cpu_s": 0.09399389100000066,
+        "contexts": 72,
+        "calls": 1784,
+        "candidates": 10267
+      }
+    },
+    "peak_rss_kib": 624984
+  },
+  "gates": {
+    "useful_gain": false,
+    "absent": true,
+    "selection_gain": false,
+    "projection_gain": false,
+    "literal": true,
+    "controls": true,
+    "base_size": true,
+    "latency": true,
+    "budget": true
+  },
+  "passes": false,
+  "cost": {
+    "teaching_cpu_s": 111.372708279,
+    "evaluation_cpu_s": 78.28779632499999,
+    "teaching_computations_included": {
+      "decode_cpu_s": 0.04299366000000049,
+      "context_cpu_s": 1.3339692619999717,
+      "feature_cpu_s": 0.7569286939998427,
+      "contexts": 576,
+      "calls": 14080,
+      "candidates": 82516
+    },
+    "preparation_included": {
+      "alignment": {
+        "decode_cpu_s": 0.06700057000000115,
+        "context_cpu_s": 5.522080855000533,
+        "decodes": 2,
+        "contexts": 1441,
+        "identical_signal_check_cpu_s": 0.0020005049999998192
+      },
+      "projection": {
+        "decode_cpu_s": 0.08399311599999493,
+        "context_cpu_s": 2.6956424079996744,
+        "feature_cpu_s": 1.7267542770002997,
+        "contexts": 1153,
+        "calls": 34884,
+        "candidates": 203316
+      }
+    },
+    "total_cpu_s": 189.769696492,
+    "wall_s": 190.1142643330022,
+    "peak_rss_kib": 943000,
+    "parent_rss_during_children_kib": 318016,
+    "models_bytes": 32473220,
+    "base_bytes": 83899228,
+    "previous_g84_cpu_s": 144.275087572
+  }
+}
