@@ -1,0 +1,150 @@
+{
+  "experiment": "G97 / G97R / G97R2",
+  "date": "2026-09-27",
+  "status": "closed_incomplete_protocol_no_promotion",
+  "user_stop_instruction": "Cerrar esta tanda y parar; no buscar nuevas cosas ni ideas. Entregar resultados y propuesta.",
+  "original_six_mode_common_comparison_complete": false,
+  "valid_independent_reserve_complete": false,
+  "promotion": false,
+  "engine": "11a1ef5836382d81a643cad0b217a8669ce0f2d1",
+  "base_sha256": "6fff61c20fcd5812d785eec22b6c595e19568f98ec31559e689c7fb95fe6d79f",
+  "inference_source_unchanged_since_freeze": true,
+  "r2_author_parts": [
+    {
+      "file": "g97_author_part1.json",
+      "sector": "biblioteca",
+      "formally_valid": false,
+      "turns": 12,
+      "answerable": 9,
+      "absent": 3,
+      "nonliteral_keys": 0,
+      "wall_s": 17.795890722001786,
+      "cost_usd_reported": 0.060099400000000004,
+      "error": "AssertionError()"
+    },
+    {
+      "file": "g97_author_part2.json",
+      "sector": "taller de bicicletas",
+      "formally_valid": false,
+      "turns": 12,
+      "answerable": 9,
+      "absent": 3,
+      "nonliteral_keys": 0,
+      "wall_s": 17.794674251999822,
+      "cost_usd_reported": 0.059715399999999995,
+      "error": "AssertionError()"
+    },
+    {
+      "file": "g97_author_part3.json",
+      "sector": "vivero",
+      "formally_valid": false,
+      "turns": 12,
+      "answerable": 9,
+      "absent": 3,
+      "nonliteral_keys": 0,
+      "wall_s": 17.309774500005005,
+      "cost_usd_reported": 0.0607954,
+      "error": "AssertionError()"
+    },
+    {
+      "file": "g97_author_part4.json",
+      "sector": "escuela de música",
+      "formally_valid": true,
+      "turns": 12,
+      "answerable": 8,
+      "absent": 4,
+      "nonliteral_keys": 0,
+      "wall_s": 16.10163889600517,
+      "cost_usd_reported": 0.0594434,
+      "error": null
+    },
+    {
+      "file": "g97_author_part5.json",
+      "sector": "lavandería",
+      "formally_valid": true,
+      "turns": 12,
+      "answerable": 8,
+      "absent": 4,
+      "nonliteral_keys": 0,
+      "wall_s": 14.407231398996373,
+      "cost_usd_reported": 0.0592374,
+      "error": null
+    },
+    {
+      "file": "g97_author_part6.json",
+      "sector": "alquiler de herramientas",
+      "formally_valid": true,
+      "turns": 12,
+      "answerable": 8,
+      "absent": 4,
+      "nonliteral_keys": 0,
+      "wall_s": 15.83736857400072,
+      "cost_usd_reported": 0.0592694,
+      "error": null
+    },
+    {
+      "file": "g97_author_part7.json",
+      "sector": "centro de fisioterapia",
+      "formally_valid": true,
+      "turns": 12,
+      "answerable": 8,
+      "absent": 4,
+      "nonliteral_keys": 0,
+      "wall_s": 16.143759121994663,
+      "cost_usd_reported": 0.0597454,
+      "error": null
+    },
+    {
+      "file": "g97_author_part8.json",
+      "sector": "hotel",
+      "formally_valid": false,
+      "turns": 12,
+      "answerable": 9,
+      "absent": 3,
+      "nonliteral_keys": 0,
+      "wall_s": 16.11220002399932,
+      "cost_usd_reported": 0.0596934,
+      "error": "AssertionError()"
+    }
+  ],
+  "r2_failure": "Four jobs returned 9 answerable and 3 absent instead of the preregistered 8/4. No subset evaluated, no labels edited, no further author retries.",
+  "common_fast_source": "g97_common_fast.json",
+  "common_quality_scope": "Automatic existing key-based judge on 157 previously used turns, 102 answerable; not a new independent quality estimate.",
+  "bakery_source": "g97_user_diagnostic.json",
+  "restart_source": "g97_restart.json",
+  "invalid_quality_files": [
+    "g97_reserve_evaluation.json"
+  ],
+  "local_cost": {
+    "instrumented_cpu_s_by_stage": {
+      "g97_acquisition": 137.504986436,
+      "g97_training": 26.545734921999998,
+      "g97_common_fast": 3.090245253,
+      "g97_reserve_evaluation": 2.40292352,
+      "g97_user_diagnostic": 7.279762849,
+      "g97_user_replay": 7.3462008910000005,
+      "g97_common_raw_proposals": 2.277705842,
+      "g97_extended_comparison_observed_before_stop": 459.89,
+      "g97_initial_quick_tests": 8.31,
+      "g97_preflight_partial": 0.24448588300000001
+    },
+    "instrumented_cpu_s_lower_bound": 654.892045596,
+    "exact_total_known": false,
+    "missing": "C++ wrapper compilation, some checks/author orchestration, preflight loading and termination overhead not fully instrumented. Reused base and source corpus prior acquisition costs excluded. No global budget compliance claim.",
+    "measured_training_peak_rss_kib": 1140960
+  },
+  "external_cost": {
+    "first_author_wall_s": 460.2660854269998,
+    "first_judge_wall_s": 82.52539430400066,
+    "second_author_timeout_s": 600,
+    "r2_sum_individual_wall_s": 131.50253748900286,
+    "r2_global_wall_s": null,
+    "r2_note": "Two concurrent jobs; sum of individual durations is not elapsed wall time. Global duration not captured on failure.",
+    "reported_list_cost_usd_known": 1.4596444,
+    "second_author_cost": null,
+    "remote_cpu_s": null,
+    "actual_invoice_cost": null
+  },
+  "conclusion": "No tested prototype demonstrates the combination of >=60% useful, no wrong answers and <5 ms. Manual rules improve the spent sample and known bakery. The trained selector adds no answers; the tested public LLM is slow and errs on bakery location. Generalization remains unverified.",
+  "next_action": "Stop as requested. Any further work needs a new user instruction."
+}
