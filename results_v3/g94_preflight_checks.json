@@ -1,0 +1,53 @@
+{
+  "experiment": "G94",
+  "focal": {
+    "tests": 3,
+    "passes": 3,
+    "wall_s": 0.363,
+    "fixture_correction_before_freeze": "Uniform short lines were merged by existing wrapping detector; fixtures changed to distinct lengths. The split-response fixture now uses an actual sentence boundary. Method and development data untouched."
+  },
+  "quick_checks": {
+    "complete_suite_within_40s": false,
+    "functional_tests_passed_across_batches": 13,
+    "assertion_failures_seen": 0,
+    "runs": [
+      {
+        "kind": "quiet",
+        "timeout_s": 40,
+        "exit": 124,
+        "cpu_s": null,
+        "cost_limit_known_only": true
+      },
+      {
+        "kind": "quiet",
+        "wall_s": 40.0,
+        "user_cpu_s": 38.64,
+        "system_cpu_s": 0.19,
+        "exit": 124
+      },
+      {
+        "kind": "verbose",
+        "wall_s": 40.01,
+        "user_cpu_s": 38.3,
+        "system_cpu_s": 0.21,
+        "exit": 124,
+        "completed_passes": 9
+      },
+      {
+        "kind": "remaining_four",
+        "wall_s": 11.79,
+        "user_cpu_s": 11.4,
+        "system_cpu_s": 0.07,
+        "exit": 0,
+        "completed_passes": 4
+      }
+    ]
+  },
+  "observed_environment": {
+    "concurrent_ffmpeg_cpu_pct": 1138,
+    "cpu0_frequency_khz": 1100000,
+    "load_1m": 30.66,
+    "caveat": "Snapshots after first timeout, not proof of cause; no other process or system setting modified."
+  },
+  "engine_sha": "11a1ef5836382d81a643cad0b217a8669ce0f2d1"
+}
