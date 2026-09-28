@@ -1,0 +1,87 @@
+{
+  "experiment": "G99",
+  "status": "negative_no_promotion",
+  "prereg": "5880d6f",
+  "education_freeze": "04ea40e",
+  "prototype_freeze": "3cda48f",
+  "scope": "Spent development, automatic existing judge, no new independent reserve",
+  "useful": {
+    "baseline": 29,
+    "localized": 32,
+    "lexical_40": 29,
+    "lexical_90": 29,
+    "interaction_40": 29,
+    "interaction_90": 29,
+    "history_40": 29,
+    "history_90": 29,
+    "shuffled_40": 29,
+    "shuffled_90": 29
+  },
+  "calibration_maxima": {
+    "lexical": 0.28846153846153844,
+    "interaction": 0.16770186335403728,
+    "history": 0.25,
+    "shuffled": 0.0457516339869281
+  },
+  "raw_choices": {
+    "lexical": {
+      "answerable": 61,
+      "correct_raw": 19,
+      "absent": 40,
+      "null_on_absent": 26,
+      "null_on_answerable": 20
+    },
+    "interaction": {
+      "answerable": 61,
+      "correct_raw": 10,
+      "absent": 40,
+      "null_on_absent": 26,
+      "null_on_answerable": 20
+    },
+    "history": {
+      "answerable": 61,
+      "correct_raw": 9,
+      "absent": 40,
+      "null_on_absent": 31,
+      "null_on_answerable": 29
+    },
+    "shuffled": {
+      "answerable": 61,
+      "correct_raw": 4,
+      "absent": 40,
+      "null_on_absent": 13,
+      "null_on_answerable": 25
+    }
+  },
+  "same_responses_on_restart": {
+    "baseline": true,
+    "localized": true,
+    "lexical_40": true,
+    "lexical_90": true,
+    "interaction_40": true,
+    "interaction_90": true,
+    "history_40": true,
+    "history_90": true,
+    "shuffled_40": true,
+    "shuffled_90": true
+  },
+  "primary": "history_90",
+  "primary_fails_utility": true,
+  "primary_latency_gate_passes_both_runs": false,
+  "primary_latency_first": {
+    "n": 157,
+    "p50_ms": 2.2872849949635565,
+    "p95_ms": 3.5819760014419444,
+    "max_ms": 3.8128930027596653
+  },
+  "primary_latency_restart": {
+    "n": 157,
+    "p50_ms": 2.526453994505573,
+    "p95_ms": 5.683889001375064,
+    "max_ms": 7.954333996167406
+  },
+  "known_cpu_s": 99.278966528,
+  "cpu_note": "Includes education and three evaluation processes, including their imports/raw diagnostics. Early tests, small audits/orchestration not all timed as CPU. Prior G97/G98 costs reused.",
+  "engine_changed": false,
+  "next_experiment_preregistered": "G100: stage adaptation on existing business education; do not lower thresholds after seeing this result."
+}
