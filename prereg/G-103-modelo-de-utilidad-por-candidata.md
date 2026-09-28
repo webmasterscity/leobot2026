@@ -67,3 +67,14 @@ Entrenando con seis bancos y probando con los tres últimos: 0,810 → 0,867. Cu
 - Las asociaciones se aprenden de texto de modelos de lenguaje y se miden con texto de modelos de lenguaje: no equivale a clientes reales.
 - Un sector muy distinto puede no compartir asociaciones; el banco nuevo exige sectores nuevos.
 - Los bancos gastados ya sirvieron a sesiones anteriores; aquí solo enseñan y validan por negocio, nunca cuentan como reserva.
+
+## Enmienda 1 (2026-09-28, antes de congelar y de escribir el banco nuevo): umbral de cita
+Con el umbral 0,4 de la línea base, el modelo cita mucho más y también cita más preguntas sin respuesta (desarrollo, bancos G-62 a G-64:
+110 frente a 71 de 488). Comparar a igual umbral mide otra política, no el mecanismo. Regla fijada ahora, con datos de enseñanza y sin
+mirar el banco nuevo: el umbral de cita es el menor cuya tasa de citas sobre los turnos sin respuesta de enseñanza, medida con
+puntajes cruzados (modelos que no vieron ese negocio), no supera la tasa de la confianza anterior a 0,4 en los mismos turnos
+(`experiments/g103_educar.py`, campo `cite_from`; también se guarda `cite_budget`). Se informa además el resultado con 0,4.
+Los umbrales de éxito 1 a 5 no cambian.
+
+Cifras de desarrollo con esta regla (enseñado con seis bancos, bancos G-62 a G-64 sin ver; conteo automático, no el juez):
+directas + sí/no útiles 228 → 265 (solo prefijos) → 292/816 (tratamiento); citas sin dato 71 → 61 de 488; p95 0,30 → 1,2 ms.
