@@ -1,6 +1,6 @@
 """G-103: enseñanza del modelo de utilidad por candidata (regresión logística, biblioteca estándar).
 
-python3 -m experiments.g103_educar BASE.json SALIDA.json CARPETA_BANCO... [--sin-pares] [--barajar-pares] [--semilla N]
+python3 -m experiments.g103_educar BASE.json SALIDA.json CARPETA_BANCO... [--sin-pares] [--barajar-pares] [--sin-historial] [--semilla N]
 
 Cada turno con acción `responder` y claves (con al menos una unidad que las contiene) o con acción `abstenerse`/`derivar`
 enseña: para cada una de las primeras ocho candidatas, etiqueta 1 si la unidad contiene todas las claves. Las preguntas
@@ -40,8 +40,43 @@ def contains(text: str, keys) -> bool:
     return all(f' {plain(k)} ' in haystack for k in keys if plain(k))
 
 
+def one_turn(bot, turn, group, history, shuffle_pairs, rng):
+    action = turn.get('accion', 'responder')
+    if action == 'charla':
+        return None
+    keys = [k for k in turn.get('claves') or [] if plain(k)]
+    _, question = bot._question_part(turn['cliente'])
+    terms = bot.context_terms(question)
+    if not terms:
+        return None
+    gold = set()
+    if action == 'responder':
+        if not keys:
+            return None
+        gold = {i for i, u in enumerate(bot.context_units) if u['kind'] != 'question' and contains(u['text'], keys)}
+        if not gold:
+            return None
+    bot.soft_prefix = False
+    old = bot._rank(terms, question)      # línea base: confianza de siete rasgos, sin prefijos
+    bot.soft_prefix = True
+    previous = bot._previous_topic(history)
+    base, gains, how, asked = bot._gains(terms, question)
+    table = bot._candidate_table(terms, question, base, gains, how, asked, previous)
+    if not table:
+        return None
+    if shuffle_pairs:
+        donors = [c['pairs'] for c in table]
+        rng.shuffle(donors)
+        for c, pairs in zip(table, donors):
+            c['pairs'] = pairs
+    return {'group': group, 'answerable': action == 'responder',
+            'b0_cites': bool(old and old.get('useful') is not None and old['useful'] >= B0_CITE),
+            'candidates': [(c['dense'], c['pairs'], int(c['unit'] in gold)) for c in table]}
+
+
 def extract(bot: Bot, folders, shuffle_pairs=False, seed=0):
-    """One record per teaching turn: business group, candidates (dense, pairs, label)."""
+    """One record per teaching turn: business group, candidates (dense, pairs, label).  The earlier turns of the
+    conversation are the history, as the caller of `Bot.answer` would send them."""
     rng = random.Random(seed)
     records = []
     for folder in folders:
@@ -49,38 +84,12 @@ def extract(bot: Bot, folders, shuffle_pairs=False, seed=0):
             bot.load_context(text, instructions)
             group = int(hashlib.sha256(f'{Path(folder).name}/{name}'.encode()).hexdigest(), 16) % FOLDS
             for conversation in conversations:
+                history = []
                 for turn in conversation:
-                    action = turn.get('accion', 'responder')
-                    if action == 'charla':
-                        continue
-                    keys = [k for k in turn.get('claves') or [] if plain(k)]
-                    _, question = bot._question_part(turn['cliente'])
-                    terms = bot.context_terms(question)
-                    if not terms:
-                        continue
-                    gold = set()
-                    if action == 'responder':
-                        if not keys:
-                            continue
-                        gold = {i for i, u in enumerate(bot.context_units)
-                                if u['kind'] != 'question' and contains(u['text'], keys)}
-                        if not gold:
-                            continue
-                    bot.soft_prefix = False
-                    old = bot._rank(terms, question)      # línea base: confianza de siete rasgos, sin prefijos
-                    bot.soft_prefix = True
-                    base, gains, how, asked = bot._gains(terms, question)
-                    table = bot._candidate_table(terms, question, base, gains, how, asked)
-                    if not table:
-                        continue
-                    if shuffle_pairs:
-                        donors = [c['pairs'] for c in table]
-                        rng.shuffle(donors)
-                        for c, pairs in zip(table, donors):
-                            c['pairs'] = pairs
-                    records.append({'group': group, 'answerable': action == 'responder',
-                                    'b0_cites': bool(old and old.get('useful') is not None and old['useful'] >= B0_CITE),
-                                    'candidates': [(c['dense'], c['pairs'], int(c['unit'] in gold)) for c in table]})
+                    record = one_turn(bot, turn, group, history, shuffle_pairs, rng)
+                    history.append({'role': 'user', 'text': turn['cliente']})
+                    if record is not None:
+                        records.append(record)
     return records
 
 
@@ -170,6 +179,7 @@ def main():
     t0 = time.process_time()
     bot = Bot.load(base)
     bot.candidate_model = False
+    bot.history_features = '--sin-historial' not in sys.argv
     records = extract(bot, folders, shuffle_pairs='--barajar-pares' in sys.argv, seed=seed)
     t_extract = time.process_time() - t0
     cross = []

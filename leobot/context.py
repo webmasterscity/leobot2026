@@ -56,7 +56,10 @@ BM25_B = 0.75
 USEFUL_KINDS = {'line': 0, 'sentence': 1, 'item': 2, 'row': 3, 'heading': 4}
 DENSE_FEATURES = ('rank', 'gain', 'gap', 'second', 'bm25', 'own', 'inherited', 'own_share', 'own_mass', 'inherited_mass',
                   'unexplained_max', 'unexplained_sum', 'indirect', 'length', 'kind', 'digits', 'headed', 'position',
-                  'terms', 'mass', 'interrogative', 'asked_share', 'asked_count')
+                  'terms', 'mass', 'interrogative', 'asked_share', 'asked_count',
+                  'history', 'carried_mass', 'same_heading', 'same_unit', 'carried_gain', 'carried_mass_alone',
+                  'same_heading_alone')
+CARRIED_WEIGHT = 0.5
 
 
 def _plain(word: str) -> str:
@@ -446,7 +449,7 @@ class ContextMixin:
                 gains[i] = gains.get(i, 0.0) + math.log(share / p0 + 1 - share) - absent
         return base, gains, how, asked
 
-    def _rank(self, terms: list[str], question: str = '') -> dict | None:
+    def _rank(self, terms: list[str], question: str = '', previous: dict | None = None) -> dict | None:
         """The best unit for these question words and its calibration cell."""
         units = self.context_units
         if not units:
@@ -454,7 +457,7 @@ class ContextMixin:
         base, gains, how, asked = self._gains(terms, question)
         model = self.context_model.get('usefulness')
         if model and getattr(self, 'candidate_model', True):
-            return self._rank_by_model(model, terms, question, base, gains, how, asked)
+            return self._rank_by_model(model, terms, question, base, gains, how, asked, previous)
         if not gains:
             order = [(base, 0)]
         else:
@@ -506,15 +509,46 @@ class ContextMixin:
                         tf + BM25_K1 * (1 - BM25_B + BM25_B * length / self._mean_length))
         return scores
 
-    def _candidate_table(self, terms: list[str], question: str, base: float, gains: dict, how: dict, asked):
+    def _previous_topic(self, history) -> dict | None:
+        """G-104: the last thing the person asked that names something in the text: its
+        words and the unit the mixture gives it by itself.  Only what the caller sends."""
+        if not history or not getattr(self, 'history_features', True) or not self.context_units:
+            return None
+        for entry in reversed(list(history)):
+            role, said = (entry.get('role', 'user'), entry.get('text', '')) if isinstance(entry, dict) else ('user', entry)
+            if role != 'user':
+                continue
+            _, text = self._question_part(str(said))
+            if not text or self._phatic(text):
+                continue
+            terms = self.context_terms(text)
+            if not terms:
+                continue
+            _, gains, _, _ = self._gains(terms, '')
+            units = self.context_units
+            unit = min(((-g, i) for i, g in gains.items() if units[i]['kind'] not in ('heading', 'question')),
+                       default=(0.0, None))[1]
+            return {'terms': terms, 'unit': unit}
+        return None
+
+    def _candidate_table(self, terms: list[str], question: str, base: float, gains: dict, how: dict, asked,
+                         previous: dict | None = None):
         """The first CANDIDATES units (headings are never an answer) with the general
         features and the sparse pairs the usefulness model reads."""
         units, sets = self.context_units, self._unit_sets()
-        order = [i for _, i in sorted(((-g, i) for i, g in gains.items() if units[i]['kind'] not in ('heading', 'question')))]
+        distinct = list(dict.fromkeys(terms))
+        carried, carried_gains, carried_how = [], {}, {}
+        if previous is not None:
+            carried = [t for t in dict.fromkeys(previous['terms']) if t not in distinct]
+            if carried:
+                _, carried_gains, carried_how, _ = self._gains(carried, '')
+        pool = dict(gains)
+        for i, g in carried_gains.items():
+            pool[i] = pool.get(i, 0.0) + CARRIED_WEIGHT * g
+        order = [i for _, i in sorted(((-g, i) for i, g in pool.items() if units[i]['kind'] not in ('heading', 'question')))]
         order = order[:CANDIDATES]
         if not order:
             return []
-        distinct = list(dict.fromkeys(terms))
         title = set(getattr(self, 'context_title', ()))
         asked_for = how.get(None, {})
         mass = sum(asked_for.values())
@@ -524,8 +558,11 @@ class ContextMixin:
         words = [_plain(w) for w in self.split_words(question) if w[:1].isalnum()] if question else []
         wh = 1.0 if any(w in asking for w in words) else 0.0
         share = asked[1] if asked is not None else 0.0
-        top = gains[order[0]]
-        second = gains[order[1]] if len(order) > 1 else 0.0
+        top = max(gains.get(i, 0.0) for i in order)
+        second = sorted((gains.get(i, 0.0) for i in order), reverse=True)[1] if len(order) > 1 else 0.0
+        carried_mass = sum(carried_how.get(None, {}).values())
+        carried_top = max(carried_gains.values(), default=0.0) or 1.0
+        prior = units[previous['unit']]['heading'] if previous is not None and previous.get('unit') is not None else ''
         table = []
         for rank, i in enumerate(order):
             unit, held = units[i], sets[i]
@@ -534,7 +571,7 @@ class ContextMixin:
             weight = lambda q: 0.0 if q in title else asked_for.get(q, 0.0)
             unexplained = [asked_for.get(q, 0.0) for q in distinct if q not in explained]
             dense = [
-                float(rank), gains[i], top - gains[i], second, bm.get(i, 0.0) / bm_top,
+                float(rank), gains.get(i, 0.0), top - gains.get(i, 0.0), second, bm.get(i, 0.0) / bm_top,
                 float(sum(q in own for q in distinct)), float(sum(q in inherited and q not in own for q in distinct)),
                 sum(q in own for q in distinct) / len(distinct),
                 sum(weight(q) for q in distinct if q in own) / mass if mass else 0.0,
@@ -546,15 +583,24 @@ class ContextMixin:
                 i / len(units), float(len(distinct)), mass, wh, share,
                 float(min(unit.get('classes', {}).get(asked[0], 0), 2)) if asked is not None else 0.0,
             ]
+            if previous is None:
+                dense += [0.0] * 7
+            else:
+                explained_before = sum(w for q, w in carried_how.get(None, {}).items() if q in carried_how.get(i, {}))
+                shared = 1.0 if prior and unit['heading'] == prior else 0.0
+                alone = 1.0 - min(1.0, dense[8] + dense[9])
+                held_mass = explained_before / carried_mass if carried_mass else 0.0
+                dense += [1.0, held_mass, shared, 1.0 if i == previous.get('unit') else 0.0,
+                          carried_gains.get(i, 0.0) / carried_top, held_mass * alone, shared * alone]
             pairs = [q + '|' + w for q in distinct if q not in held for w in held if w != q]
             pairs += [q + '|' + shape for q in distinct for shape in unit.get('shapes', ())]
             pairs += [q + '|K' + unit['kind'] for q in distinct]
             pairs += ['K' + unit['kind'] + '|' + w for w in held]
-            table.append({'unit': i, 'gain': gains[i], 'dense': dense, 'pairs': pairs})
+            table.append({'unit': i, 'gain': gains.get(i, 0.0), 'dense': dense, 'pairs': pairs})
         return table
 
-    def _rank_by_model(self, model, terms, question, base, gains, how, asked):
-        table = self._candidate_table(terms, question, base, gains, how, asked)
+    def _rank_by_model(self, model, terms, question, base, gains, how, asked, previous=None):
+        table = self._candidate_table(terms, question, base, gains, how, asked, previous)
         asked_for = how.get(None, {})
         if not table:
             ranked = {'unit': None, 'score': base, 'margin': 0.0, 'unaddressed': max(asked_for.values(), default=0.0),
@@ -583,11 +629,16 @@ class ContextMixin:
                   'explained': explained, 'covered': covered, 'asked': asked, 'raw': best['z'],
                   'candidates': len(table)}
         ranked['features'] = self._features(ranked, question)
-        rate = model['calibration'][0][1]
-        for low, block_rate, _ in model['calibration']:
-            if best['z'] >= low:
-                rate = block_rate
-        ranked['useful'] = rate
+
+        def calibrated(z):
+            rate = model['calibration'][0][1]
+            for low, block_rate, _ in model['calibration']:
+                if z >= low:
+                    rate = block_rate
+            return rate
+        ranked['useful'] = calibrated(best['z'])
+        ranked['alternatives'] = [(c['unit'], calibrated(c['z'])) for c in
+                                  sorted(table, key=lambda c: -c['z']) if c['unit'] != top][:2]
         return ranked
 
     def _features(self, ranked: dict, question: str) -> dict:
@@ -702,7 +753,8 @@ class ContextMixin:
             said = (opening or text).strip(' ,.;:')
             return {'text': (said[:1].upper() + said[1:] + '.') if said else '', 'status': 'phatic',
                     'evidence': None, 'confidence': None}
-        ranked = self._rank(self.context_terms(text), text)
+        previous = self._previous_topic(history) if self._active_model() is not None else None
+        ranked = self._rank(self.context_terms(text), text, previous)
         level = self._level(ranked)
         prefix = (opening[:1].upper() + opening[1:] + '. ') if opening else ''
         table = self.context_model.get('closest_cells' if level == 'closest' else 'cells', {})
