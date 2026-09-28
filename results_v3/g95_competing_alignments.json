@@ -1,0 +1,472 @@
+{
+  "experiment": "G95",
+  "scope": "spent development; token competition as learned selection evidence only",
+  "repository_engine_sha": "11a1ef5836382d81a643cad0b217a8669ce0f2d1",
+  "effective_selector_reference": "fe2f3116e8d2bf0a6c76eabfce496dbb4780d973",
+  "reference_sha256": {
+    "leobot/context.py": "3c907f07775aa9da574df693fa043a33ae773adc8ff78ec6470d6a86f93feddd",
+    "experiments/par2_seleccion.py": "54d4337cdd9d5bfeaa482cb9ba89de248d2d4fbe45c567e29c62bac9c0397eb1"
+  },
+  "sources_sha256": {
+    "experiments/g95_competing_alignments.py": "f4f7cb7a636a89c3912fd9c82658459313ba4241ea7fc2419cf6da0489195074",
+    "experiments/test_g95_competing_alignments.py": "1b61d549ea030727df0d509e3f8e8ce7a02d9721847501e81f01a374dc3ca3e1",
+    "experiments/g85_human_selection.py": "c71ed5b519b84b04fde23c65bcbb12e99a27c8861ce92fa1ee4ab09c64e3f0e9",
+    "experiments/g84_indirect_alignment.py": "718f001e3839e5c8ff77c28bce5a0a4ccece48f3bc81df9a5c455182addde522",
+    "experiments/g84b_compact_replay.py": "a6f30fe340d5f63be71ee96ad1730d335f353d646c096e9769513ac3eb366029",
+    "experiments/g79_joint_selection.py": "8521df478c0ec3aeb4d5f3a5e8d82b1a55a4d3a913049de3b9407c03361204aa",
+    "experiments/g68_confianza.py": "e564ac88b8307caeac219a2ecbee7ff9d2857799c0b089402541c5a73ca0ef00",
+    "experiments/g75_relational_evidence.py": "abaab742e407c8e53655e20714e192f5bb9ac0c7c644979fc575c093fe981459",
+    "prereg/G-95-competencia-entre-correspondencias.md": "447b7d3d1519942597bfa79059525409d95e395ef74cd9a6a426fefe006fd0fa"
+  },
+  "g84_models_sha256": "fd528ab70a602289c271916835c00c570e21b7b2d5ca0f08207515f2bf0384b7",
+  "base_sha256": "6fff61c20fcd5812d785eec22b6c595e19568f98ec31559e689c7fb95fe6d79f",
+  "education": {
+    "removed": {
+      "turns": 3520,
+      "rows": 20629,
+      "features": [
+        "alignment1_distance",
+        "alignment1_known",
+        "alignment1_margin",
+        "alignment1_score",
+        "alignment2_distance",
+        "alignment2_known",
+        "alignment2_margin",
+        "alignment2_score",
+        "cifra",
+        "cls",
+        "cov",
+        "exp_ADJ",
+        "exp_NOUN",
+        "exp_NUM",
+        "exp_OTRO",
+        "exp_PROPN",
+        "exp_VERB",
+        "forma",
+        "heredado",
+        "largo",
+        "margen",
+        "nexp_ADJ",
+        "nexp_NOUN",
+        "nexp_NUM",
+        "nexp_OTRO",
+        "nexp_PROPN",
+        "nexp_VERB",
+        "propio",
+        "puente",
+        "rango",
+        "raro",
+        "tipo",
+        "u"
+      ],
+      "preparation_and_learning_cpu_s": 18.926240862
+    },
+    "free": {
+      "turns": 3520,
+      "rows": 20629,
+      "features": [
+        "alignment1_distance",
+        "alignment1_known",
+        "alignment1_margin",
+        "alignment1_score",
+        "alignment2_distance",
+        "alignment2_known",
+        "alignment2_margin",
+        "alignment2_score",
+        "assignment_known",
+        "assignment_loss",
+        "assignment_margin",
+        "assignment_score",
+        "cifra",
+        "cls",
+        "cov",
+        "exp_ADJ",
+        "exp_NOUN",
+        "exp_NUM",
+        "exp_OTRO",
+        "exp_PROPN",
+        "exp_VERB",
+        "forma",
+        "heredado",
+        "largo",
+        "margen",
+        "nexp_ADJ",
+        "nexp_NOUN",
+        "nexp_NUM",
+        "nexp_OTRO",
+        "nexp_PROPN",
+        "nexp_VERB",
+        "propio",
+        "puente",
+        "rango",
+        "raro",
+        "tipo",
+        "u"
+      ],
+      "preparation_and_learning_cpu_s": 21.899323602000003
+    },
+    "assignment": {
+      "turns": 3520,
+      "rows": 20629,
+      "features": [
+        "alignment1_distance",
+        "alignment1_known",
+        "alignment1_margin",
+        "alignment1_score",
+        "alignment2_distance",
+        "alignment2_known",
+        "alignment2_margin",
+        "alignment2_score",
+        "assignment_known",
+        "assignment_loss",
+        "assignment_margin",
+        "assignment_score",
+        "cifra",
+        "cls",
+        "cov",
+        "exp_ADJ",
+        "exp_NOUN",
+        "exp_NUM",
+        "exp_OTRO",
+        "exp_PROPN",
+        "exp_VERB",
+        "forma",
+        "heredado",
+        "largo",
+        "margen",
+        "nexp_ADJ",
+        "nexp_NOUN",
+        "nexp_NUM",
+        "nexp_OTRO",
+        "nexp_PROPN",
+        "nexp_VERB",
+        "propio",
+        "puente",
+        "rango",
+        "raro",
+        "tipo",
+        "u"
+      ],
+      "preparation_and_learning_cpu_s": 22.370113017
+    },
+    "shuffled": {
+      "turns": 3520,
+      "rows": 20629,
+      "features": [
+        "alignment1_distance",
+        "alignment1_known",
+        "alignment1_margin",
+        "alignment1_score",
+        "alignment2_distance",
+        "alignment2_known",
+        "alignment2_margin",
+        "alignment2_score",
+        "assignment_known",
+        "assignment_loss",
+        "assignment_margin",
+        "assignment_score",
+        "cifra",
+        "cls",
+        "cov",
+        "exp_ADJ",
+        "exp_NOUN",
+        "exp_NUM",
+        "exp_OTRO",
+        "exp_PROPN",
+        "exp_VERB",
+        "forma",
+        "heredado",
+        "largo",
+        "margen",
+        "nexp_ADJ",
+        "nexp_NOUN",
+        "nexp_NUM",
+        "nexp_OTRO",
+        "nexp_PROPN",
+        "nexp_VERB",
+        "propio",
+        "puente",
+        "rango",
+        "raro",
+        "tipo",
+        "u"
+      ],
+      "preparation_and_learning_cpu_s": 21.863043331
+    }
+  },
+  "fits": [
+    {
+      "cpu_s": 2.536844585999999,
+      "rows": 10486,
+      "features": 33,
+      "iterations": 8
+    },
+    {
+      "cpu_s": 2.4388288960000004,
+      "rows": 10143,
+      "features": 33,
+      "iterations": 8
+    },
+    {
+      "cpu_s": 4.774606731999999,
+      "rows": 20629,
+      "features": 33,
+      "iterations": 8
+    },
+    {
+      "cpu_s": 3.534815071000004,
+      "rows": 10486,
+      "features": 37,
+      "iterations": 9
+    },
+    {
+      "cpu_s": 3.0407967259999964,
+      "rows": 10143,
+      "features": 37,
+      "iterations": 8
+    },
+    {
+      "cpu_s": 5.946557091999999,
+      "rows": 20629,
+      "features": 37,
+      "iterations": 8
+    },
+    {
+      "cpu_s": 3.5565765670000005,
+      "rows": 10486,
+      "features": 37,
+      "iterations": 9
+    },
+    {
+      "cpu_s": 3.061703460000004,
+      "rows": 10143,
+      "features": 37,
+      "iterations": 8
+    },
+    {
+      "cpu_s": 5.904461903000005,
+      "rows": 20629,
+      "features": 37,
+      "iterations": 8
+    },
+    {
+      "cpu_s": 3.1836631300000136,
+      "rows": 10486,
+      "features": 37,
+      "iterations": 8
+    },
+    {
+      "cpu_s": 3.058716366999988,
+      "rows": 10143,
+      "features": 37,
+      "iterations": 8
+    },
+    {
+      "cpu_s": 5.912488995000004,
+      "rows": 20629,
+      "features": 37,
+      "iterations": 8
+    }
+  ],
+  "candidates": {
+    "baseline": {
+      "core": 816,
+      "useful_core": 269,
+      "quotes": 580,
+      "absent_n": 488,
+      "quotes_without_data": 74,
+      "p50_ms": 0.16078000044217333,
+      "p95_ms": 0.26171799981966615,
+      "max_ms": 0.8340260028489865,
+      "response_sha256": "48913f9d34378663039f5619568320ad5347ff38112ef08499e27e672578a897",
+      "nonliteral_evidence": 0
+    },
+    "removed": {
+      "core": 816,
+      "useful_core": 327,
+      "quotes": 636,
+      "absent_n": 488,
+      "quotes_without_data": 73,
+      "p50_ms": 1.0495740061742254,
+      "p95_ms": 1.8183420033892617,
+      "max_ms": 2.8374829998938367,
+      "response_sha256": "ec018000f4401ea22f31c45206668ee888eaadcc00e61b8e124207b3727cd47f",
+      "nonliteral_evidence": 0
+    },
+    "free": {
+      "core": 816,
+      "useful_core": 297,
+      "quotes": 542,
+      "absent_n": 488,
+      "quotes_without_data": 53,
+      "p50_ms": 1.1639449949143454,
+      "p95_ms": 2.0064039999851957,
+      "max_ms": 3.069406004215125,
+      "response_sha256": "89c569044d9d350f04171e06acc3d07ed414b5a41c5f0630ec6fef50f65f6e4a",
+      "nonliteral_evidence": 0
+    },
+    "assignment": {
+      "core": 816,
+      "useful_core": 280,
+      "quotes": 495,
+      "absent_n": 488,
+      "quotes_without_data": 46,
+      "p50_ms": 1.2922980022267438,
+      "p95_ms": 2.2478059981949627,
+      "max_ms": 3.5989569951198064,
+      "response_sha256": "251f1f730909fb989f5ff36dba039ffa5f9ee03fc9c9fbd7d365c5df0dd33a72",
+      "nonliteral_evidence": 0
+    },
+    "shuffled": {
+      "core": 816,
+      "useful_core": 326,
+      "quotes": 623,
+      "absent_n": 488,
+      "quotes_without_data": 66,
+      "p50_ms": 1.2477409982238896,
+      "p95_ms": 2.1595199941657484,
+      "max_ms": 3.703048001625575,
+      "response_sha256": "03138224921e0130c5734bc83506f2174a9a36aea736c6fa8c9351ead6a16ccc",
+      "nonliteral_evidence": 0
+    },
+    "restored_direct": {
+      "core": 816,
+      "useful_core": 327,
+      "quotes": 636,
+      "absent_n": 488,
+      "quotes_without_data": 73,
+      "p50_ms": 1.065114003722556,
+      "p95_ms": 1.848690000770148,
+      "max_ms": 3.5300589952385053,
+      "response_sha256": "ec018000f4401ea22f31c45206668ee888eaadcc00e61b8e124207b3727cd47f",
+      "nonliteral_evidence": 0
+    },
+    "disabled": {
+      "core": 816,
+      "useful_core": 269,
+      "quotes": 580,
+      "absent_n": 488,
+      "quotes_without_data": 74,
+      "p50_ms": 0.1634540021768771,
+      "p95_ms": 0.301223000860773,
+      "max_ms": 0.8464610000373796,
+      "response_sha256": "48913f9d34378663039f5619568320ad5347ff38112ef08499e27e672578a897",
+      "nonliteral_evidence": 0
+    }
+  },
+  "selection_without_abstention": {
+    "removed": {
+      "core": 816,
+      "correct_first": 482
+    },
+    "free": {
+      "core": 816,
+      "correct_first": 484
+    },
+    "assignment": {
+      "core": 816,
+      "correct_first": 484
+    },
+    "shuffled": {
+      "core": 816,
+      "correct_first": 482
+    }
+  },
+  "controls": {
+    "disabled_exact": true,
+    "direct_exact": true,
+    "reload_exact": true
+  },
+  "compaction": {
+    "source_sha256": "a7c10f8bb0bfac8bbbe425e06f1579cb0ecf87b79fcf80849533a0363c1ffbea",
+    "source_unchanged": true,
+    "compact_sha256": "af30302bcffe343b284c3dd72213182f2a4acdf7e15c53fd7bd5037b1a730a97",
+    "source_bytes": 110320686,
+    "compact_bytes": 78312561,
+    "same_top_level_keys": true,
+    "cpu_s": 5.106490902,
+    "peak_rss_kib": 573040
+  },
+  "restart": {
+    "result": {
+      "core": 816,
+      "useful_core": 280,
+      "quotes": 495,
+      "absent_n": 488,
+      "quotes_without_data": 46,
+      "p50_ms": 1.3068350017420016,
+      "p95_ms": 2.340915998502169,
+      "max_ms": 3.7855279952054843,
+      "response_sha256": "251f1f730909fb989f5ff36dba039ffa5f9ee03fc9c9fbd7d365c5df0dd33a72",
+      "nonliteral_evidence": 0
+    },
+    "error": null,
+    "cpu_s": 6.699699647,
+    "preparation_included": {
+      "alignment": {
+        "decode_cpu_s": 0.06399335499999981,
+        "context_cpu_s": 0.2659815470000013,
+        "decodes": 1,
+        "contexts": 72,
+        "identical_signal_check_cpu_s": 0.0020007969999999986
+      },
+      "competition": {
+        "decode_cpu_s": 0.0,
+        "feature_cpu_s": 0.4129528320000022,
+        "calls": 1784,
+        "matrices": 10267,
+        "maximum_query_terms": 21,
+        "maximum_answer_terms": 45
+      }
+    },
+    "peak_rss_kib": 567684
+  },
+  "gates": {
+    "useful_gain": false,
+    "absent": true,
+    "selection_gain": false,
+    "competition_gain": false,
+    "literal": true,
+    "controls": true,
+    "base_size": true,
+    "latency": true,
+    "budget": true
+  },
+  "passes": false,
+  "cost": {
+    "teaching_cpu_s": 87.49919573000001,
+    "evaluation_cpu_s": 67.88736232599999,
+    "teaching_computations_included": {
+      "decode_cpu_s": 0.0010005040000038434,
+      "feature_cpu_s": 2.062617902999836,
+      "calls": 10560,
+      "matrices": 61887,
+      "maximum_query_terms": 21,
+      "maximum_answer_terms": 51
+    },
+    "preparation_included": {
+      "alignment": {
+        "decode_cpu_s": 0.09098733100000223,
+        "context_cpu_s": 4.337783382999845,
+        "decodes": 2,
+        "contexts": 1153,
+        "identical_signal_check_cpu_s": 0.0020007109999999884
+      },
+      "competition": {
+        "decode_cpu_s": 0.002999970000004737,
+        "feature_cpu_s": 4.885500839999867,
+        "calls": 26163,
+        "matrices": 152487,
+        "maximum_query_terms": 21,
+        "maximum_answer_terms": 51
+      }
+    },
+    "total_cpu_s": 155.47999400199998,
+    "wall_s": 155.81296630799625,
+    "peak_rss_kib": 854136,
+    "parent_rss_during_children_kib": 281096,
+    "models_bytes": 11698306,
+    "base_bytes": 78312561,
+    "previous_g84_cpu_s": 144.275087572
+  }
+}
