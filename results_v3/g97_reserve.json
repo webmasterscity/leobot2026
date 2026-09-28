@@ -1,0 +1,965 @@
+{
+  "businesses": [
+    {
+      "id": "panaderia-pan-y-miel",
+      "text": "Panadería y Pastelería Pan y Miel atiende de lunes a sábado de 6:30 a.m. a 8:00 p.m., y los domingos de 7:00 a.m. a 1:00 p.m. Estamos ubicados en la Calle 45 #12-30, barrio Laureles. Ofrecemos pan artesanal horneado tres veces al día, croissants, ponqués por pedido y una línea de galletas decoradas. El ponqué clásico de vainilla para 20 porciones tiene un valor de $85.000 y debe encargarse con mínimo 48 horas de anticipación. Aceptamos pagos en efectivo, tarjeta débito y crédito, y transferencias Nequi. No contamos con servicio de domicilios propio, pero los pedidos se pueden recoger en el local. Manejamos una línea reducida de productos sin gluten los días martes y jueves, sujeta a disponibilidad. Los pedidos personalizados de tortas para eventos requieren un abono del 50% al momento de confirmar el diseño. No se aceptan devoluciones de productos de panadería fresca una vez entregados, salvo error en el pedido. Para consultas sobre diseños de tortas especiales pueden escribirnos por WhatsApp al número que aparece en nuestra vitrina.",
+      "instructions": "Eres el asistente virtual de Panadería Pan y Miel. Responde a los clientes usando únicamente la información del documento entregado. Si la pregunta no puede resolverse con esos datos, dilo con claridad y sugiere que el cliente escriba directamente al negocio. Sé breve y amable.",
+      "conversations": [
+        [
+          {
+            "cliente": "Marcela",
+            "accion": "responder",
+            "tipo": "directa",
+            "claves": [
+              "de lunes a sábado de 6:30 a.m. a 8:00 p.m."
+            ],
+            "justificacion": "El horario de sábado está incluido en el rango de lunes a sábado indicado en el texto."
+          },
+          {
+            "cliente": "Marcela",
+            "accion": "responder",
+            "tipo": "si_no",
+            "claves": [
+              "los domingos de 7:00 a.m. a 1:00 p.m."
+            ],
+            "justificacion": "El texto especifica un horario distinto y más corto para los domingos."
+          },
+          {
+            "cliente": "Marcela",
+            "accion": "abstenerse",
+            "tipo": "si_no",
+            "claves": [],
+            "justificacion": "El documento no menciona nada sobre parqueadero disponible."
+          }
+        ],
+        [
+          {
+            "cliente": "Andrés",
+            "accion": "responder",
+            "tipo": "directa",
+            "claves": [
+              "$85.000",
+              "48 horas de anticipación"
+            ],
+            "justificacion": "El precio y el tiempo de anticipación del ponqué de 20 porciones están explícitos."
+          },
+          {
+            "cliente": "Andrés",
+            "accion": "abstenerse",
+            "tipo": "si_no",
+            "claves": [],
+            "justificacion": "El texto no aclara si el precio base incluye personalización con nombres."
+          },
+          {
+            "cliente": "Andrés",
+            "accion": "responder",
+            "tipo": "si_no",
+            "claves": [
+              "abono del 50% al momento de confirmar el diseño"
+            ],
+            "justificacion": "El documento indica que solo se pide un abono parcial, no el pago total."
+          }
+        ],
+        [
+          {
+            "cliente": "Julián",
+            "accion": "responder",
+            "tipo": "directa",
+            "claves": [
+              "línea reducida de productos sin gluten los días martes y jueves"
+            ],
+            "justificacion": "El texto menciona explícitamente la existencia de productos sin gluten y sus días."
+          },
+          {
+            "cliente": "Julián",
+            "accion": "responder",
+            "tipo": "si_no",
+            "claves": [
+              "martes y jueves"
+            ],
+            "justificacion": "Con base en el turno anterior, el texto limita esta oferta solo a esos dos días."
+          },
+          {
+            "cliente": "Julián",
+            "accion": "abstenerse",
+            "tipo": "si_no",
+            "claves": [],
+            "justificacion": "El documento no especifica si la tarjeta de crédito aceptada debe ser nacional o internacional."
+          }
+        ],
+        [
+          {
+            "cliente": "Rocío",
+            "accion": "responder",
+            "tipo": "si_no",
+            "claves": [
+              "No se aceptan devoluciones de productos de panadería fresca una vez entregados, salvo error en el pedido"
+            ],
+            "justificacion": "La política de devoluciones está descrita de forma directa en el texto."
+          },
+          {
+            "cliente": "Rocío",
+            "accion": "abstenerse",
+            "tipo": "si_no",
+            "claves": [],
+            "justificacion": "No hay mención de programas de fidelización o puntos."
+          },
+          {
+            "cliente": "Rocío",
+            "accion": "responder",
+            "tipo": "si_no",
+            "claves": [
+              "Los pedidos personalizados de tortas para eventos",
+              "diseños de tortas especiales pueden escribirnos por WhatsApp"
+            ],
+            "justificacion": "El documento habilita pedidos personalizados y consultas de diseños especiales por WhatsApp."
+          }
+        ]
+      ]
+    },
+    {
+      "id": "veterinaria-huellas-felices",
+      "text": "Clínica Veterinaria Huellas Felices presta atención de lunes a viernes de 8:00 a.m. a 6:00 p.m. y sábados de 9:00 a.m. a 2:00 p.m. No abrimos los domingos ni festivos. La consulta general tiene un costo de $45.000 e incluye valoración y orientación básica; los procedimientos adicionales como exámenes de laboratorio se cotizan aparte. Aplicamos el esquema de vacunación antirrábica a partir de los tres meses de edad del animal, con refuerzo anual obligatorio. Contamos con servicio de peluquería canina y felina los martes, miércoles y viernes, previa reserva. No manejamos servicio de urgencias fuera de nuestro horario de atención; en caso de emergencia nocturna recomendamos dirigirse a la Clínica Veterinaria 24 Horas del Norte. Las citas se pueden agendar por teléfono o presencialmente, y se recomienda llegar con 10 minutos de anticipación. Vendemos alimento balanceado de las marcas Pro Plan y Hill's, con descuento del 5% para clientes que traigan su mascota esterilizada en nuestra clínica. El servicio de esterilización canina tiene un valor de $180.000 e incluye control post-operatorio a los ocho días. Aceptamos pagos en efectivo y con tarjeta; no manejamos transferencias bancarias.",
+      "instructions": "Eres el asistente virtual de la Clínica Veterinaria Huellas Felices. Responde solo con base en el documento suministrado. Si la información solicitada no aparece, indícalo y recomienda contactar directamente a la clínica. Mantén un tono cordial y profesional.",
+      "conversations": [
+        [
+          {
+            "cliente": "Diana",
+            "accion": "responder",
+            "tipo": "si_no",
+            "claves": [
+              "No abrimos los domingos ni festivos"
+            ],
+            "justificacion": "El texto declara explícitamente que no hay atención los domingos."
+          },
+          {
+            "cliente": "Diana",
+            "accion": "responder",
+            "tipo": "si_no",
+            "claves": [
+              "No manejamos servicio de urgencias fuera de nuestro horario de atención",
+              "Clínica Veterinaria 24 Horas del Norte"
+            ],
+            "justificacion": "Retomando la conversación anterior, el documento indica que no hay urgencias nocturnas y a dónde remitir al cliente."
+          },
+          {
+            "cliente": "Diana",
+            "accion": "abstenerse",
+            "tipo": "si_no",
+            "claves": [],
+            "justificacion": "No se menciona ningún servicio de recogida a domicilio de mascotas."
+          }
+        ],
+        [
+          {
+            "cliente": "Felipe",
+            "accion": "responder",
+            "tipo": "directa",
+            "claves": [
+              "$45.000"
+            ],
+            "justificacion": "El valor de la consulta general está indicado directamente."
+          },
+          {
+            "cliente": "Felipe",
+            "accion": "responder",
+            "tipo": "si_no",
+            "claves": [
+              "los procedimientos adicionales como exámenes de laboratorio se cotizan aparte"
+            ],
+            "justificacion": "El texto aclara que los exámenes de laboratorio no están incluidos en la consulta."
+          },
+          {
+            "cliente": "Felipe",
+            "accion": "abstenerse",
+            "tipo": "si_no",
+            "claves": [],
+            "justificacion": "El documento no menciona servicio de radiografías."
+          }
+        ],
+        [
+          {
+            "cliente": "Marta",
+            "accion": "responder",
+            "tipo": "directa",
+            "claves": [
+              "a partir de los tres meses de edad"
+            ],
+            "justificacion": "La edad mínima para la vacuna antirrábica está indicada en el texto."
+          },
+          {
+            "cliente": "Marta",
+            "accion": "responder",
+            "tipo": "si_no",
+            "claves": [
+              "refuerzo anual obligatorio"
+            ],
+            "justificacion": "Siguiendo la pregunta anterior, el texto confirma que la vacuna debe reforzarse cada año."
+          },
+          {
+            "cliente": "Marta",
+            "accion": "abstenerse",
+            "tipo": "si_no",
+            "claves": [],
+            "justificacion": "No hay información sobre la vacuna contra la tos de las perreras."
+          }
+        ],
+        [
+          {
+            "cliente": "Esteban",
+            "accion": "responder",
+            "tipo": "directa",
+            "claves": [
+              "$180.000",
+              "control post-operatorio a los ocho días"
+            ],
+            "justificacion": "El costo y lo incluido en la esterilización canina están explícitos."
+          },
+          {
+            "cliente": "Esteban",
+            "accion": "responder",
+            "tipo": "si_no",
+            "claves": [
+              "no manejamos transferencias bancarias"
+            ],
+            "justificacion": "El texto excluye explícitamente las transferencias como medio de pago."
+          },
+          {
+            "cliente": "Esteban",
+            "accion": "abstenerse",
+            "tipo": "si_no",
+            "claves": [],
+            "justificacion": "No se menciona ningún plan de financiación a cuotas."
+          }
+        ]
+      ]
+    },
+    {
+      "id": "gimnasio-fuerza-vital",
+      "text": "Fuerza Vital Gimnasio funciona de lunes a viernes de 5:00 a.m. a 10:00 p.m. y los sábados de 6:00 a.m. a 4:00 p.m.; permanecemos cerrados los domingos. El plan mensual básico cuesta $120.000 e incluye acceso a máquinas de peso y cardio, además de las clases grupales de spinning y rumba aeróbica. El plan trimestral tiene un valor de $320.000 y otorga un 10% de descuento frente al pago mes a mes. Los menores de 16 años solo pueden ingresar acompañados de un adulto responsable y con autorización firmada. Ofrecemos servicio de casilleros sin costo adicional, pero el gimnasio no se hace responsable por objetos de valor dejados en ellos. El entrenamiento personalizado con instructor certificado tiene un costo adicional de $25.000 por sesión y debe agendarse con un día de anticipación. Las membresías se pueden congelar hasta por 15 días al año por motivos de salud, presentando incapacidad médica. En caso de retraso en el pago mensual, se otorgan 3 días de gracia antes de suspender el acceso. No contamos con parqueadero propio, pero hay un parqueadero público a media cuadra. Las cancelaciones de membresía deben solicitarse con un mes de anticipación.",
+      "instructions": "Eres el asistente virtual del gimnasio Fuerza Vital. Contesta las preguntas de los usuarios apoyándote solo en el documento entregado. Si el dato no está disponible, comunícalo y sugiere consultar en recepción. Sé claro y motivador en el tono.",
+      "conversations": [
+        [
+          {
+            "cliente": "Camila",
+            "accion": "responder",
+            "tipo": "directa",
+            "claves": [
+              "$120.000",
+              "acceso a máquinas de peso y cardio",
+              "clases grupales de spinning y rumba aeróbica"
+            ],
+            "justificacion": "El plan mensual básico y su contenido están descritos en el texto."
+          },
+          {
+            "cliente": "Camila",
+            "accion": "responder",
+            "tipo": "si_no",
+            "claves": [
+              "$320.000",
+              "10% de descuento frente al pago mes a mes"
+            ],
+            "justificacion": "El plan trimestral y su descuento frente al pago mensual están explícitos."
+          },
+          {
+            "cliente": "Camila",
+            "accion": "abstenerse",
+            "tipo": "si_no",
+            "claves": [],
+            "justificacion": "No se menciona ningún descuento para estudiantes."
+          }
+        ],
+        [
+          {
+            "cliente": "Iván",
+            "accion": "responder",
+            "tipo": "si_no",
+            "claves": [
+              "Los menores de 16 años solo pueden ingresar acompañados de un adulto responsable"
+            ],
+            "justificacion": "El texto establece la condición de acompañamiento para menores de 16 años."
+          },
+          {
+            "cliente": "Iván",
+            "accion": "responder",
+            "tipo": "si_no",
+            "claves": [
+              "autorización firmada"
+            ],
+            "justificacion": "Además del acompañamiento, el documento exige una autorización firmada."
+          },
+          {
+            "cliente": "Iván",
+            "accion": "abstenerse",
+            "tipo": "si_no",
+            "claves": [],
+            "justificacion": "No hay información sobre rutinas diseñadas específicamente para adolescentes."
+          }
+        ],
+        [
+          {
+            "cliente": "Patricia",
+            "accion": "responder",
+            "tipo": "directa",
+            "claves": [
+              "$25.000 por sesión"
+            ],
+            "justificacion": "El costo del entrenamiento personalizado está indicado directamente."
+          },
+          {
+            "cliente": "Patricia",
+            "accion": "responder",
+            "tipo": "directa",
+            "claves": [
+              "un día de anticipación"
+            ],
+            "justificacion": "El texto indica el tiempo mínimo para agendar esa sesión."
+          },
+          {
+            "cliente": "Patricia",
+            "accion": "abstenerse",
+            "tipo": "si_no",
+            "claves": [],
+            "justificacion": "El documento no menciona asesoría nutricional por parte de los entrenadores."
+          }
+        ],
+        [
+          {
+            "cliente": "Ricardo",
+            "accion": "responder",
+            "tipo": "si_no",
+            "claves": [
+              "Las membresías se pueden congelar hasta por 15 días al año por motivos de salud, presentando incapacidad médica"
+            ],
+            "justificacion": "El texto contempla el congelamiento de membresía por salud con incapacidad médica."
+          },
+          {
+            "cliente": "Ricardo",
+            "accion": "responder",
+            "tipo": "si_no",
+            "claves": [
+              "se otorgan 3 días de gracia antes de suspender el acceso"
+            ],
+            "justificacion": "El documento indica un periodo de gracia antes de suspender el servicio."
+          },
+          {
+            "cliente": "Ricardo",
+            "accion": "abstenerse",
+            "tipo": "si_no",
+            "claves": [],
+            "justificacion": "No se menciona ningún convenio con parqueaderos cercanos."
+          }
+        ]
+      ]
+    },
+    {
+      "id": "taller-autoexpertos",
+      "text": "Taller AutoExpertos atiende de lunes a sábado de 7:30 a.m. a 5:30 p.m., sin servicio los domingos. Realizamos cambio de aceite y filtros, alineación y balanceo, diagnóstico computarizado, mantenimiento de frenos y revisión general antes de viajes largos. El cambio de aceite sintético tiene un costo de $95.000 incluyendo filtro, y el proceso toma aproximadamente 40 minutos. La revisión de frenos es gratuita si el cliente ya es cliente frecuente del taller; para clientes nuevos tiene un costo de $20.000. Todos los repuestos instalados por el taller cuentan con garantía de tres meses o 5.000 kilómetros, lo que ocurra primero. No contamos con vehículos sustitutos mientras el carro está en reparación. Aceptamos pagos en efectivo, tarjeta débito y crédito; no se reciben cheques. Actualmente no realizamos mantenimiento a vehículos eléctricos ni híbridos, solo a motores de combustión. Se recomienda agendar cita previa para diagnóstico computarizado, ya que la demanda de este servicio es alta. Estamos ubicados en la Avenida 68 #34-12.",
+      "instructions": "Eres el asistente virtual del Taller AutoExpertos. Responde apoyándote exclusivamente en el documento del negocio. Si la pregunta no tiene respaldo en el texto, indícalo y sugiere llamar al taller. Usa un tono directo y confiable.",
+      "conversations": [
+        [
+          {
+            "cliente": "Nicolás",
+            "accion": "responder",
+            "tipo": "directa",
+            "claves": [
+              "$95.000",
+              "incluyendo filtro"
+            ],
+            "justificacion": "El costo del cambio de aceite con filtro está indicado en el texto."
+          },
+          {
+            "cliente": "Nicolás",
+            "accion": "responder",
+            "tipo": "directa",
+            "claves": [
+              "40 minutos"
+            ],
+            "justificacion": "El tiempo aproximado del proceso está explícito."
+          },
+          {
+            "cliente": "Nicolás",
+            "accion": "abstenerse",
+            "tipo": "si_no",
+            "claves": [],
+            "justificacion": "No se menciona ningún convenio con aseguradoras para siniestros."
+          }
+        ],
+        [
+          {
+            "cliente": "Laura",
+            "accion": "responder",
+            "tipo": "si_no",
+            "claves": [
+              "no realizamos mantenimiento a vehículos eléctricos ni híbridos"
+            ],
+            "justificacion": "El texto excluye explícitamente a los vehículos eléctricos e híbridos."
+          },
+          {
+            "cliente": "Laura",
+            "accion": "abstenerse",
+            "tipo": "si_no",
+            "claves": [],
+            "justificacion": "No hay mención de servicio de grúa."
+          },
+          {
+            "cliente": "Laura",
+            "accion": "responder",
+            "tipo": "directa",
+            "claves": [
+              "garantía de tres meses o 5.000 kilómetros"
+            ],
+            "justificacion": "La garantía de los repuestos instalados está descrita en el texto."
+          }
+        ],
+        [
+          {
+            "cliente": "Jorge",
+            "accion": "responder",
+            "tipo": "directa",
+            "claves": [
+              "$20.000"
+            ],
+            "justificacion": "El costo de la revisión de frenos para clientes nuevos está indicado."
+          },
+          {
+            "cliente": "Jorge",
+            "accion": "responder",
+            "tipo": "si_no",
+            "claves": [
+              "gratuita si el cliente ya es cliente frecuente del taller"
+            ],
+            "justificacion": "Con base en el turno anterior, el texto aclara que para clientes frecuentes el servicio es gratuito."
+          },
+          {
+            "cliente": "Jorge",
+            "accion": "abstenerse",
+            "tipo": "si_no",
+            "claves": [],
+            "justificacion": "No se menciona ningún plan de mantenimiento con tarifa fija mensual."
+          }
+        ],
+        [
+          {
+            "cliente": "Sandra",
+            "accion": "responder",
+            "tipo": "si_no",
+            "claves": [
+              "Se recomienda agendar cita previa para diagnóstico computarizado"
+            ],
+            "justificacion": "El texto recomienda agendar cita previa para ese servicio."
+          },
+          {
+            "cliente": "Sandra",
+            "accion": "responder",
+            "tipo": "si_no",
+            "claves": [
+              "no se reciben cheques"
+            ],
+            "justificacion": "El documento excluye los cheques como medio de pago."
+          },
+          {
+            "cliente": "Sandra",
+            "accion": "abstenerse",
+            "tipo": "si_no",
+            "claves": [],
+            "justificacion": "No se menciona servicio de lavado incluido tras la reparación."
+          }
+        ]
+      ]
+    },
+    {
+      "id": "spa-bella-piel",
+      "text": "Spa y Peluquería Bella Piel atiende de martes a domingo de 9:00 a.m. a 7:00 p.m.; los lunes permanecemos cerrados para mantenimiento y capacitación del equipo. El corte de cabello para dama tiene un valor de $35.000 y el corte para caballero $20.000. El servicio de manicure y pedicure combinado cuesta $60.000 e incluye exfoliación. Ofrecemos masajes relajantes de 50 minutos por $90.000, con aceites esenciales de la marca Aromas Naturales. Los miércoles tenemos promoción del 15% de descuento en tintes y mechas para clientes que agenden antes de las 12:00 m. Se recomienda cancelar o reprogramar las citas con al menos 4 horas de anticipación; de lo contrario se cobra el 20% del valor del servicio como penalidad. Atendemos niños mayores de 5 años para corte de cabello, siempre acompañados de un adulto. No se permite el ingreso de mascotas al local por normas de salubridad. Todo nuestro personal de estilismo cuenta con certificación del SENA. Contamos con wifi gratuito para nuestros clientes mientras esperan su turno.",
+      "instructions": "Eres el asistente virtual del Spa y Peluquería Bella Piel. Responde solo con la información del documento entregado. Si no hay evidencia suficiente, dilo con honestidad y sugiere comunicarse con el spa. Mantén un tono cálido.",
+      "conversations": [
+        [
+          {
+            "cliente": "Vanessa",
+            "accion": "responder",
+            "tipo": "directa",
+            "claves": [
+              "$35.000"
+            ],
+            "justificacion": "El valor del corte de dama está indicado directamente."
+          },
+          {
+            "cliente": "Vanessa",
+            "accion": "responder",
+            "tipo": "si_no",
+            "claves": [
+              "Atendemos niños mayores de 5 años para corte de cabello, siempre acompañados de un adulto"
+            ],
+            "justificacion": "El texto define la edad mínima y la condición de acompañamiento para niños."
+          },
+          {
+            "cliente": "Vanessa",
+            "accion": "abstenerse",
+            "tipo": "si_no",
+            "claves": [],
+            "justificacion": "No se menciona servicio de corte a domicilio."
+          }
+        ],
+        [
+          {
+            "cliente": "Tatiana",
+            "accion": "responder",
+            "tipo": "directa",
+            "claves": [
+              "$60.000"
+            ],
+            "justificacion": "El precio del combo de manicure y pedicure está explícito."
+          },
+          {
+            "cliente": "Tatiana",
+            "accion": "responder",
+            "tipo": "si_no",
+            "claves": [
+              "e incluye exfoliación"
+            ],
+            "justificacion": "El texto aclara que la exfoliación ya está incluida en ese precio."
+          },
+          {
+            "cliente": "Tatiana",
+            "accion": "abstenerse",
+            "tipo": "si_no",
+            "claves": [],
+            "justificacion": "No se menciona si ofrecen uñas acrílicas."
+          }
+        ],
+        [
+          {
+            "cliente": "Diego",
+            "accion": "responder",
+            "tipo": "directa",
+            "claves": [
+              "cancelar o reprogramar las citas con al menos 4 horas de anticipación",
+              "se cobra el 20% del valor del servicio como penalidad"
+            ],
+            "justificacion": "La política de cancelación y su penalidad están descritas en el texto."
+          },
+          {
+            "cliente": "Diego",
+            "accion": "abstenerse",
+            "tipo": "si_no",
+            "claves": [],
+            "justificacion": "El documento no distingue el caso de no presentarse frente al de cancelar con aviso."
+          },
+          {
+            "cliente": "Diego",
+            "accion": "responder",
+            "tipo": "si_no",
+            "claves": [
+              "No se permite el ingreso de mascotas al local"
+            ],
+            "justificacion": "El texto prohíbe explícitamente el ingreso de mascotas."
+          }
+        ],
+        [
+          {
+            "cliente": "Gloria",
+            "accion": "responder",
+            "tipo": "si_no",
+            "claves": [
+              "Los miércoles tenemos promoción del 15% de descuento en tintes y mechas"
+            ],
+            "justificacion": "El descuento de los miércoles está indicado en el texto."
+          },
+          {
+            "cliente": "Gloria",
+            "accion": "responder",
+            "tipo": "si_no",
+            "claves": [
+              "certificación del SENA"
+            ],
+            "justificacion": "El texto confirma que el personal de estilismo tiene certificación oficial."
+          },
+          {
+            "cliente": "Gloria",
+            "accion": "abstenerse",
+            "tipo": "si_no",
+            "claves": [],
+            "justificacion": "No se menciona ningún paquete de novia con maquillaje."
+          }
+        ]
+      ]
+    },
+    {
+      "id": "libreria-el-saber",
+      "text": "Librería y Papelería El Saber abre de lunes a sábado de 8:00 a.m. a 7:00 p.m. Durante el mes de enero, por temporada escolar, extendemos el horario hasta las 8:00 p.m. La copia en blanco y negro tiene un costo de $150 por hoja y la copia a color $800 por hoja. Ofrecemos servicio de encuadernación con espiral por $6.000, entregado el mismo día. Realizamos envíos a domicilio dentro del municipio con un costo adicional de $5.000, sin importar el monto de la compra. Los colegios y instituciones educativas que compren más de 50 unidades de un mismo título reciben un descuento del 12%. Es posible apartar libros escolares con un abono del 30% del valor total, y el saldo debe cancelarse antes de retirar el pedido. No compramos ni vendemos libros usados. Los pedidos también se pueden realizar por WhatsApp, indicando el listado escolar del colegio. No contamos con servicio de impresión de fotografías profesionales.",
+      "instructions": "Eres el asistente virtual de la Librería y Papelería El Saber. Contesta usando solo el documento del negocio. Si el dato no aparece, indícalo y sugiere preguntar en el local. Tono cordial y práctico.",
+      "conversations": [
+        [
+          {
+            "cliente": "Luisa",
+            "accion": "responder",
+            "tipo": "directa",
+            "claves": [
+              "$800 por hoja"
+            ],
+            "justificacion": "El precio de la copia a color está indicado directamente."
+          },
+          {
+            "cliente": "Luisa",
+            "accion": "responder",
+            "tipo": "si_no",
+            "claves": [
+              "$150 por hoja"
+            ],
+            "justificacion": "Comparando con el turno anterior, la copia en blanco y negro es más económica según el texto."
+          },
+          {
+            "cliente": "Luisa",
+            "accion": "abstenerse",
+            "tipo": "si_no",
+            "claves": [],
+            "justificacion": "No se menciona ningún servicio de promociones para universitarios."
+          }
+        ],
+        [
+          {
+            "cliente": "Beatriz",
+            "accion": "responder",
+            "tipo": "directa",
+            "claves": [
+              "descuento del 12%"
+            ],
+            "justificacion": "El descuento para colegios por compras de más de 50 unidades está explícito."
+          },
+          {
+            "cliente": "Beatriz",
+            "accion": "abstenerse",
+            "tipo": "si_no",
+            "claves": [],
+            "justificacion": "El texto no aclara si el descuento aplica combinando títulos distintos."
+          },
+          {
+            "cliente": "Beatriz",
+            "accion": "responder",
+            "tipo": "si_no",
+            "claves": [
+              "Los pedidos también se pueden realizar por WhatsApp, indicando el listado escolar"
+            ],
+            "justificacion": "El documento habilita hacer pedidos completos por WhatsApp con el listado escolar."
+          }
+        ],
+        [
+          {
+            "cliente": "Mauricio",
+            "accion": "responder",
+            "tipo": "directa",
+            "claves": [
+              "abono del 30% del valor total"
+            ],
+            "justificacion": "El porcentaje de abono para apartar libros está indicado en el texto."
+          },
+          {
+            "cliente": "Mauricio",
+            "accion": "responder",
+            "tipo": "directa",
+            "claves": [
+              "el saldo debe cancelarse antes de retirar el pedido"
+            ],
+            "justificacion": "El texto indica cuándo debe pagarse el saldo restante."
+          },
+          {
+            "cliente": "Mauricio",
+            "accion": "abstenerse",
+            "tipo": "si_no",
+            "claves": [],
+            "justificacion": "No se menciona catálogo digital de los libros disponibles."
+          }
+        ],
+        [
+          {
+            "cliente": "Paola",
+            "accion": "responder",
+            "tipo": "si_no",
+            "claves": [
+              "extendemos el horario hasta las 8:00 p.m."
+            ],
+            "justificacion": "El texto confirma un horario extendido en enero por temporada escolar."
+          },
+          {
+            "cliente": "Paola",
+            "accion": "abstenerse",
+            "tipo": "si_no",
+            "claves": [],
+            "justificacion": "No se menciona envíos a municipios distintos al propio."
+          },
+          {
+            "cliente": "Paola",
+            "accion": "responder",
+            "tipo": "directa",
+            "claves": [
+              "entregado el mismo día"
+            ],
+            "justificacion": "El tiempo de entrega de la encuadernación con espiral está indicado en el texto."
+          }
+        ]
+      ]
+    },
+    {
+      "id": "academia-global-talk",
+      "text": "Academia de Idiomas Global Talk ofrece cursos de inglés en niveles desde A1 hasta C1, cada uno con duración de 8 semanas y clases dos veces por semana de 6:00 p.m. a 8:00 p.m., o los sábados de 8:00 a.m. a 12:00 m. en la modalidad intensiva. La matrícula tiene un costo único de $50.000 y la mensualidad por nivel es de $180.000. Ofrecemos clases tanto presenciales como virtuales por Zoom, y el estudiante puede alternar entre ambas modalidades según disponibilidad de cupo. Al finalizar cada nivel se entrega un certificado avalado por la academia. El examen de clasificación para ingresar directamente a un nivel según el conocimiento previo del estudiante no tiene costo. Los estudiantes que falten a más del 20% de las clases de un nivel deberán repetirlo. El material didáctico (libro de texto y guías) no está incluido en la mensualidad y se compra por separado. Contamos con un club de conversación los viernes en la tarde, sin costo adicional para estudiantes activos. Quienes paguen el semestre completo por adelantado obtienen un descuento del 8%. La edad mínima de inscripción es 12 años; los menores deben estar acompañados de un adulto responsable el día de la inscripción.",
+      "instructions": "Eres el asistente virtual de la Academia de Idiomas Global Talk. Responde apoyándote solo en el documento entregado. Si la información no está disponible, indícalo y sugiere contactar a la academia. Tono claro y motivador.",
+      "conversations": [
+        [
+          {
+            "cliente": "Camilo",
+            "accion": "responder",
+            "tipo": "directa",
+            "claves": [
+              "$50.000",
+              "$180.000"
+            ],
+            "justificacion": "El costo de matrícula y mensualidad están indicados directamente."
+          },
+          {
+            "cliente": "Camilo",
+            "accion": "responder",
+            "tipo": "si_no",
+            "claves": [
+              "El material didáctico (libro de texto y guías) no está incluido en la mensualidad"
+            ],
+            "justificacion": "El texto aclara que el libro se compra por separado."
+          },
+          {
+            "cliente": "Camilo",
+            "accion": "abstenerse",
+            "tipo": "si_no",
+            "claves": [],
+            "justificacion": "No se menciona ningún curso de francés."
+          }
+        ],
+        [
+          {
+            "cliente": "Sofía",
+            "accion": "responder",
+            "tipo": "directa",
+            "claves": [
+              "examen de clasificación",
+              "no tiene costo"
+            ],
+            "justificacion": "El documento describe el examen de clasificación para ubicar al estudiante en el nivel adecuado."
+          },
+          {
+            "cliente": "Sofía",
+            "accion": "responder",
+            "tipo": "si_no",
+            "claves": [
+              "no tiene costo"
+            ],
+            "justificacion": "Retomando la pregunta anterior, el texto confirma que ese examen es gratuito."
+          },
+          {
+            "cliente": "Sofía",
+            "accion": "abstenerse",
+            "tipo": "directa",
+            "claves": [],
+            "justificacion": "El texto no indica la duración total del programa completo hasta el nivel más avanzado."
+          }
+        ],
+        [
+          {
+            "cliente": "Esteban",
+            "accion": "responder",
+            "tipo": "si_no",
+            "claves": [
+              "Los estudiantes que falten a más del 20% de las clases de un nivel deberán repetirlo"
+            ],
+            "justificacion": "La consecuencia de faltar mucho está descrita en el texto, no implica expulsión sino repetición del nivel."
+          },
+          {
+            "cliente": "Esteban",
+            "accion": "responder",
+            "tipo": "directa",
+            "claves": [
+              "club de conversación los viernes en la tarde",
+              "sin costo adicional"
+            ],
+            "justificacion": "El espacio de práctica de conversación y su gratuidad están indicados."
+          },
+          {
+            "cliente": "Esteban",
+            "accion": "abstenerse",
+            "tipo": "si_no",
+            "claves": [],
+            "justificacion": "No se especifica si personas externas pueden asistir al club de conversación."
+          }
+        ],
+        [
+          {
+            "cliente": "Natalia",
+            "accion": "responder",
+            "tipo": "si_no",
+            "claves": [
+              "La edad mínima de inscripción es 12 años"
+            ],
+            "justificacion": "El texto establece la edad mínima de inscripción, que excluye a un niño de 10 años."
+          },
+          {
+            "cliente": "Natalia",
+            "accion": "responder",
+            "tipo": "si_no",
+            "claves": [
+              "descuento del 8%"
+            ],
+            "justificacion": "El descuento por pago anticipado del semestre está indicado en el texto."
+          },
+          {
+            "cliente": "Natalia",
+            "accion": "abstenerse",
+            "tipo": "si_no",
+            "claves": [],
+            "justificacion": "No se menciona ningún convenio con universidades para validar niveles."
+          }
+        ]
+      ]
+    },
+    {
+      "id": "plomeria-rapida-24",
+      "text": "Plomería Rápida 24 presta atención en horario regular de lunes a sábado de 8:00 a.m. a 6:00 p.m., y contamos con línea de urgencias las 24 horas del día, todos los días del año, con un recargo del 30% sobre la tarifa normal cuando el servicio se solicita fuera del horario regular. La visita de diagnóstico tiene un costo de $30.000, valor que se descuenta del total si el cliente decide realizar la reparación con nosotros. Cubrimos los barrios del sector norte y centro de la ciudad; para zonas fuera de esta cobertura se debe consultar disponibilidad. El tiempo de respuesta estimado para una urgencia es de 45 minutos en zona de cobertura. Realizamos instalación y mantenimiento de calentadores de agua a gas y eléctricos. Todas nuestras reparaciones cuentan con garantía de 6 meses sobre mano de obra, no sobre repuestos. Contamos con máquina especializada para destape de tuberías con obstrucciones profundas, servicio que tiene un costo adicional según la complejidad del caso. Siempre entregamos una cotización previa antes de iniciar cualquier trabajo, la cual el cliente debe aprobar. Aceptamos pagos en efectivo y transferencia; no manejamos pagos con tarjeta por el momento.",
+      "instructions": "Eres el asistente virtual de Plomería Rápida 24. Responde solo con la información del documento del negocio. Si la pregunta no puede resolverse con esos datos, dilo con claridad y recomienda llamar directamente. Tono resolutivo y cercano.",
+      "conversations": [
+        [
+          {
+            "cliente": "Wilson",
+            "accion": "responder",
+            "tipo": "si_no",
+            "claves": [
+              "línea de urgencias las 24 horas del día, todos los días del año"
+            ],
+            "justificacion": "El texto confirma la disponibilidad de urgencias todos los días, incluidos domingos en la noche."
+          },
+          {
+            "cliente": "Wilson",
+            "accion": "responder",
+            "tipo": "si_no",
+            "claves": [
+              "recargo del 30% sobre la tarifa normal cuando el servicio se solicita fuera del horario regular"
+            ],
+            "justificacion": "Siguiendo el turno anterior, el texto indica el recargo aplicable fuera del horario regular."
+          },
+          {
+            "cliente": "Wilson",
+            "accion": "abstenerse",
+            "tipo": "si_no",
+            "claves": [],
+            "justificacion": "El texto no confirma si el tiempo de respuesta rápido aplica también en días festivos."
+          }
+        ],
+        [
+          {
+            "cliente": "Ángela",
+            "accion": "responder",
+            "tipo": "si_no",
+            "claves": [
+              "Cubrimos los barrios del sector norte y centro",
+              "para zonas fuera de esta cobertura se debe consultar disponibilidad"
+            ],
+            "justificacion": "El documento define la cobertura y qué hacer si la zona está fuera de ella."
+          },
+          {
+            "cliente": "Ángela",
+            "accion": "responder",
+            "tipo": "si_no",
+            "claves": [
+              "instalación y mantenimiento de calentadores de agua a gas y eléctricos"
+            ],
+            "justificacion": "El texto confirma que se instalan calentadores eléctricos."
+          },
+          {
+            "cliente": "Ángela",
+            "accion": "abstenerse",
+            "tipo": "si_no",
+            "claves": [],
+            "justificacion": "No se menciona ningún descuento para adultos mayores."
+          }
+        ],
+        [
+          {
+            "cliente": "Rubén",
+            "accion": "responder",
+            "tipo": "directa",
+            "claves": [
+              "$30.000",
+              "se descuenta del total si el cliente decide realizar la reparación"
+            ],
+            "justificacion": "El costo de la visita de diagnóstico y su descuento en caso de reparación están explícitos."
+          },
+          {
+            "cliente": "Rubén",
+            "accion": "responder",
+            "tipo": "si_no",
+            "claves": [
+              "garantía de 6 meses sobre mano de obra, no sobre repuestos"
+            ],
+            "justificacion": "El texto aclara que la garantía cubre mano de obra pero no los repuestos."
+          },
+          {
+            "cliente": "Rubén",
+            "accion": "abstenerse",
+            "tipo": "si_no",
+            "claves": [],
+            "justificacion": "No se menciona ningún servicio de suscripción mensual para revisiones."
+          }
+        ],
+        [
+          {
+            "cliente": "Consuelo",
+            "accion": "responder",
+            "tipo": "si_no",
+            "claves": [
+              "máquina especializada para destape de tuberías con obstrucciones profundas"
+            ],
+            "justificacion": "El texto confirma que cuentan con maquinaria especializada para ese tipo de destape."
+          },
+          {
+            "cliente": "Consuelo",
+            "accion": "responder",
+            "tipo": "si_no",
+            "claves": [
+              "Siempre entregamos una cotización previa antes de iniciar cualquier trabajo"
+            ],
+            "justificacion": "El documento indica que siempre se entrega cotización previa antes de trabajar."
+          },
+          {
+            "cliente": "Consuelo",
+            "accion": "abstenerse",
+            "tipo": "si_no",
+            "claves": [],
+            "justificacion": "No se menciona ningún contrato de mantenimiento preventivo anual."
+          }
+        ]
+      ]
+    }
+  ],
+  "provenance": {
+    "engine": "11a1ef5836382d81a643cad0b217a8669ce0f2d1",
+    "prompt_seed": 3989338480,
+    "cost": {
+      "wall_s": 460.2660854269998,
+      "model_usage": {
+        "claude-sonnet-5": {
+          "inputTokens": 4,
+          "outputTokens": 54015,
+          "cacheReadInputTokens": 15606,
+          "cacheCreationInputTokens": 57068,
+          "webSearchRequests": 0,
+          "costUSD": 0.7715512,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 64000,
+          "thinkingTokens": 26586,
+          "canonicalModel": "claude-sonnet-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "cost_usd_reported": 0.7715512,
+      "remote_cpu": "not reported"
+    },
+    "author_model": "sonnet alias; resolved model in raw modelUsage",
+    "scope": "independent LLM-written business reserve, not human-authored data"
+  }
+}

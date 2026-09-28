@@ -1,0 +1,148 @@
+{
+  "experiment": "G97",
+  "route": "public_llm",
+  "original_common_comparison": "incomplete",
+  "reason": "Stopped extended quality evaluation after strict latency gate already failed; no quality estimate inferred from unfinished calls.",
+  "cpu_s_observed_before_stop": 459.89,
+  "pid": 187424,
+  "known_preflight_complete_call_ms": 243.664617,
+  "protocol_deviation": "Original six-mode common/reserve comparison will not be complete. Continue unchanged fast variants; diagnose all routes on exact known user case. Do not call this successful G97.",
+  "completed_progress": [
+    {
+      "stage": "business",
+      "mode": "baseline",
+      "business": "congelado_g62/Q1/n1",
+      "rows": 30
+    },
+    {
+      "stage": "business",
+      "mode": "baseline",
+      "business": "congelado_g62/Q1/n4",
+      "rows": 60
+    },
+    {
+      "stage": "business",
+      "mode": "baseline",
+      "business": "congelado_g63/R1/n3",
+      "rows": 89
+    },
+    {
+      "stage": "business",
+      "mode": "baseline",
+      "business": "congelado_g63/R5/n1",
+      "rows": 114
+    },
+    {
+      "stage": "business",
+      "mode": "baseline",
+      "business": "congelado_g64/W3/n4",
+      "rows": 127
+    },
+    {
+      "stage": "business",
+      "mode": "baseline",
+      "business": "congelado_g64/W2/n2",
+      "rows": 157
+    },
+    {
+      "stage": "measured",
+      "mode": "baseline",
+      "answerable": 102,
+      "useful": 29,
+      "incorrect_quotes": 12,
+      "absent": 47,
+      "quotes_without_data": 7,
+      "literal_failures": 0,
+      "latency": {
+        "n": 157,
+        "p50_ms": 0.14948700118111446,
+        "p95_ms": 0.24238899641204625,
+        "max_ms": 0.5858770018676296
+      },
+      "activated_latency": {
+        "n": 0,
+        "p50_ms": null,
+        "p95_ms": null,
+        "max_ms": null
+      },
+      "first_answer_ms": 0.5858770018676296,
+      "preparation_cpu_s": 0.34140299499999993,
+      "response_sha256": "8264fbd3ffd13f275d7233c878a8f1e636cdf245c3db8ce2136601b522ed83c6",
+      "parent_cpu_s": 0.36970028300000024,
+      "child_cpu_s": 0.0,
+      "wall_s": 0.3697299569976167,
+      "peak_rss_kib": 537920
+    },
+    {
+      "stage": "business",
+      "mode": "rules",
+      "business": "congelado_g62/Q1/n1",
+      "rows": 30
+    },
+    {
+      "stage": "business",
+      "mode": "rules",
+      "business": "congelado_g62/Q1/n4",
+      "rows": 60
+    },
+    {
+      "stage": "business",
+      "mode": "rules",
+      "business": "congelado_g63/R1/n3",
+      "rows": 89
+    },
+    {
+      "stage": "business",
+      "mode": "rules",
+      "business": "congelado_g63/R5/n1",
+      "rows": 114
+    },
+    {
+      "stage": "business",
+      "mode": "rules",
+      "business": "congelado_g64/W3/n4",
+      "rows": 127
+    },
+    {
+      "stage": "business",
+      "mode": "rules",
+      "business": "congelado_g64/W2/n2",
+      "rows": 157
+    },
+    {
+      "stage": "measured",
+      "mode": "rules",
+      "answerable": 102,
+      "useful": 36,
+      "incorrect_quotes": 12,
+      "absent": 47,
+      "quotes_without_data": 7,
+      "literal_failures": 0,
+      "latency": {
+        "n": 157,
+        "p50_ms": 0.3429670032346621,
+        "p95_ms": 0.8312589998240583,
+        "max_ms": 1.007702994684223
+      },
+      "activated_latency": {
+        "n": 104,
+        "p50_ms": 0.43535900476854295,
+        "p95_ms": 0.8991479990072548,
+        "max_ms": 1.0068620031233877
+      },
+      "first_answer_ms": 0.6813469954067841,
+      "preparation_cpu_s": 0.18326737899999923,
+      "response_sha256": "a4d1612600d8341c5bc9af256313f9e55cb67a55f8d72800e7b758cd1daec95a",
+      "parent_cpu_s": 0.24826174399999967,
+      "child_cpu_s": 0.0,
+      "wall_s": 0.2482847130013397,
+      "peak_rss_kib": 537920
+    },
+    {
+      "stage": "business",
+      "mode": "llm",
+      "business": "congelado_g62/Q1/n1",
+      "rows": 30
+    }
+  ]
+}
