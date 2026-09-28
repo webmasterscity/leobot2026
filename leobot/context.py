@@ -636,16 +636,35 @@ class ContextMixin:
                 held_mass = explained_before / carried_mass if carried_mass else 0.0
                 dense += [1.0, held_mass, shared, 1.0 if i == previous.get('unit') else 0.0,
                           carried_gains.get(i, 0.0) / carried_top, held_mass * alone, shared * alone]
-            pairs = [q + '|' + w for q in distinct if q not in held for w in held if w != q]
+            ordered = sorted(held)
+            pairs = [q + '|' + w for q in distinct if q not in held for w in ordered if w != q]
             pairs += [q + '|' + shape for q in distinct for shape in unit.get('shapes', ())]
             pairs += [q + '|K' + unit['kind'] for q in distinct]
-            pairs += ['K' + unit['kind'] + '|' + w for w in held]
+            pairs += ['K' + unit['kind'] + '|' + w for w in ordered]
             instruction = unit.get('source') == 'instructions'
             if instruction:
-                pairs += [q + '|SRC' for q in distinct] + ['SRC|' + w for w in held]
+                pairs += [q + '|SRC' for q in distinct] + ['SRC|' + w for w in ordered]
             dense.append(1.0 if instruction else 0.0)
             table.append({'unit': i, 'gain': gains.get(i, 0.0), 'dense': dense, 'pairs': pairs})
         return table
+
+    def _pair_weights(self, model) -> dict:
+        """The learned pair weights as one dictionary.  They are stored grouped by the
+        word of the question, ``{head: 'tail:w;tail:w'}``, to keep the file small."""
+        stored = model['pairs']
+        cache = getattr(self, '_pair_cache', None)
+        if cache is None or cache[0] is not stored:
+            flat = {}
+            for head, row in stored.items():
+                if isinstance(row, str):
+                    for item in row.split(';'):
+                        tail, weight = item.rsplit(':', 1)
+                        flat[head + '|' + tail] = float(weight)
+                else:
+                    flat[head] = row
+            cache = (stored, flat)
+            self._pair_cache = cache
+        return cache[1]
 
     def _rank_by_model(self, model, terms, question, base, gains, how, asked, previous=None):
         table = self._candidate_table(terms, question, base, gains, how, asked, previous)
@@ -656,7 +675,7 @@ class ContextMixin:
             ranked['features'] = self._features(ranked, question)
             ranked['useful'] = 0.0
             return ranked
-        pairs, scale = model['pairs'], model['pair_scale']
+        pairs, scale = self._pair_weights(model), model['pair_scale']
         best = None
         for candidate in table:
             z = model['bias'] + sum(w * (x - m) / s for x, m, s, w in

@@ -146,7 +146,7 @@ def fit(records, use_pairs=True, seed=0):
                 support[key] = support.get(key, 0) + 1
     vocabulary = sorted(k for k, v in support.items() if v >= PAIR_SUPPORT)
     index = {k: j for j, k in enumerate(vocabulary)}
-    data = [([(x - m) / s for x, m, s in zip(dense, mean, scale)], [index[k] for k in set(pairs) if k in index], label)
+    data = [([(x - m) / s for x, m, s in zip(dense, mean, scale)], [index[k] for k in sorted(set(pairs)) if k in index], label)
             for dense, pairs, label in rows]
     w = [0.0] * n_features
     b = math.log((sum(r[2] for r in data) + 1) / (len(data) - sum(r[2] for r in data) + 1))
@@ -171,9 +171,18 @@ def fit(records, use_pairs=True, seed=0):
                 g = err * PAIR_SCALE + decay * v[j]
                 gv[j] += g * g
                 v[j] -= ETA * g / math.sqrt(gv[j])
-    pairs_weights = {k: round(v[j], 4) for k, j in index.items() if abs(v[j]) >= PAIR_KEEP}
+    pairs_weights = {k: round(v[j], 3) for k, j in index.items() if abs(v[j]) >= PAIR_KEEP and k.count('|') == 1 and ';' not in k}
     return {'dense': list(DENSE_FEATURES), 'mean': [round(m, 6) for m in mean], 'scale': [round(s, 6) for s in scale],
             'weights': [round(x, 5) for x in w], 'bias': round(b, 5), 'pairs': pairs_weights, 'pair_scale': PAIR_SCALE}
+
+
+def grouped(pairs: dict) -> dict:
+    """Guardado compacto: ``{palabra de la pregunta o marca: 'resto:peso;resto:peso'}``."""
+    out: dict = {}
+    for key, weight in sorted(pairs.items()):
+        head, tail = key.split('|')
+        out.setdefault(head, []).append(f'{tail}:{weight:g}')
+    return {head: ';'.join(items) for head, items in out.items()}
 
 
 def fit_fallback(examples, seed=0):
@@ -184,7 +193,7 @@ def fit_fallback(examples, seed=0):
             support[t] = support.get(t, 0) + 1
     vocabulary = sorted(t for t, n in support.items() if n >= 2)
     index = {t: j for j, t in enumerate(vocabulary)}
-    data = [([index[t] for t in set(terms) if t in index], label) for _, terms, label in examples]
+    data = [([index[t] for t in sorted(set(terms)) if t in index], label) for _, terms, label in examples]
     positives = sum(label for _, label in data)
     b = math.log((positives + 1) / (len(data) - positives + 1))
     w, gw, gb = [0.0] * len(vocabulary), [1e-8] * len(vocabulary), 1e-8
@@ -321,6 +330,8 @@ def main():
     final['source'] = {'folders': [Path(f).name for f in folders], 'turns': len(records),
                        'candidates': sum(len(r['candidates']) for r in records), 'pairs': len(final['pairs']),
                        'use_pairs': use_pairs, 'shuffled_pairs': '--barajar-pares' in sys.argv, 'seed': seed}
+    final['source']['pairs'] = len(final['pairs'])
+    final['pairs'] = grouped(final['pairs'])
     bot.context_model['usefulness'] = final
     if FALLBACK_EXAMPLES and getattr(bot, 'follow_instructions', True):
         exit_model = fallback_model(FALLBACK_EXAMPLES, seed)
@@ -331,7 +342,7 @@ def main():
     print(json.dumps({'cite_from': final['cite_from'], 'presupuesto_citas_sin_dato': final['cite_budget'],
                       'acierto_entre_respondibles_cruzado': round(top1, 4),
                       'fallback': {k: v for k, v in bot.context_model.get('fallback', {}).items() if k not in ('weights',)},
-                      'turnos': len(records), 'pares': len(final['pairs']), 'bloques': len(final['calibration']),
+                      'turnos': len(records), 'pares': final['source']['pairs'], 'bloques': len(final['calibration']),
                       'cpu_extraer_s': round(t_extract, 1), 'cpu_total_s': round(time.process_time() - t0, 1),
                       'bytes': out.stat().st_size}))
 
