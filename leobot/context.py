@@ -617,7 +617,7 @@ class ContextMixin:
             dense = [
                 float(rank), gains.get(i, 0.0), top - gains.get(i, 0.0), second, bm.get(i, 0.0) / bm_top,
                 float(sum(q in own for q in distinct)), float(sum(q in inherited and q not in own for q in distinct)),
-                sum(q in own for q in distinct) / len(distinct),
+                sum(q in own for q in distinct) / (len(distinct) or 1),
                 sum(weight(q) for q in distinct if q in own) / mass if mass else 0.0,
                 sum(weight(q) for q in distinct if q in inherited and q not in own) / mass if mass else 0.0,
                 max(unexplained, default=0.0), sum(unexplained),
