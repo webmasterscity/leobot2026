@@ -1,0 +1,26 @@
+{
+  "focal_red": {
+    "tests": 2,
+    "missing_modules": 2
+  },
+  "focal_green": {
+    "tests": 5,
+    "unittest_s": 1.843,
+    "failures": 0
+  },
+  "installer": {
+    "cpu_user_s": 1.45,
+    "cpu_system_s": 0.05,
+    "wall_s": 1.79,
+    "peak_rss_kib": 60708
+  },
+  "package_versions": {
+    "model2vec": "0.9.0",
+    "safetensors": "0.8.0"
+  },
+  "isolated_venv": ".leobot-data/g101/venv",
+  "educational_hashes_same_g98": true,
+  "models_match_recorded_hashes": true,
+  "library_inference_uses_one_shared_readonly_table": true,
+  "memory_note": "Model table loaded before torch/Bot to keep transient load peak within original 3GiB RSS budget; source weights hashed in chunks, no limit increase."
+}
