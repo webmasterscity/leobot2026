@@ -1,0 +1,868 @@
+{
+  "experiment": "G97",
+  "engine": "11a1ef5836382d81a643cad0b217a8669ce0f2d1",
+  "base_sha256": "6fff61c20fcd5812d785eec22b6c595e19568f98ec31559e689c7fb95fe6d79f",
+  "dataset_sha256": "4381d5e758571889f1616c35d5975acebf1f68b7cad6a5c0547c8c7a704b0dea",
+  "source_sha256": {
+    "experiments/g97_acquire.py": "01127fb5897254bdfa15a23c4ef85f2436c4f88573ec4a88e601b62156651042",
+    "experiments/g97_author_v2.py": "17e6c3be0646a16baa3cea02de63a59cd21216c56499556cbad4664de5780758",
+    "experiments/g97_backups.py": "3c6fa91d9f34348ce595fc428a424848950a29b0a5f1c2e69ca861be970d8218",
+    "experiments/g97_controls.py": "d95b57c8d762360cfb68f40e753a33fe93d3101fd2831da67819d1821cd5df73",
+    "experiments/g97_evaluate.py": "362860360e920eb7347ab785c9d21d80f20d1f25b344f23c915619d98573f410",
+    "experiments/g97_independent.py": "2bd1daa9f8ee67d428169ce2ceda8faaa19f8bb41604f565a23ab86c0c11261e",
+    "experiments/g97_judge.py": "08bf5a97b83e6f1193c0efc04fdd01f226cb1eb24c461ac7b8078bea9337555f",
+    "experiments/g97_llm.cpp": "29a48c6dbca3f96e915b68ab0f8978f5aa5476d520a40e098f0b71915030543e",
+    "experiments/g97_llm.py": "c35797f3c50d4e2530325cdee31c7cc9fcba52132ab3b8207249d6fb1b1e226f",
+    "experiments/g97_neural.py": "6b93bb5d8e65f9ca81779c8570fed0f4186f5fe1ed94c053ae2351c4c835ba6c"
+  },
+  "businesses": [
+    "panaderia_usuario"
+  ],
+  "reports": {
+    "baseline": {
+      "answerable": 3,
+      "useful": 1,
+      "incorrect_quotes": 0,
+      "absent": 1,
+      "quotes_without_data": 0,
+      "literal_failures": 0,
+      "latency": {
+        "n": 4,
+        "p50_ms": 0.13433599815471098,
+        "p95_ms": 0.428234001446981,
+        "max_ms": 0.428234001446981
+      },
+      "activated_latency": {
+        "n": 0,
+        "p50_ms": null,
+        "p95_ms": null,
+        "max_ms": null
+      },
+      "first_answer_ms": 0.428234001446981,
+      "preparation_cpu_s": 0.18084283,
+      "response_sha256": "d64b75ba39025281c6dc91f78235c5e4f0e486949e51989171e528b98ad319fa",
+      "parent_cpu_s": 0.18187866400000008,
+      "child_cpu_s": 0.0,
+      "wall_s": 0.1818968860025052,
+      "peak_rss_kib": 537384,
+      "new_useful": 0,
+      "new_incorrect": 0,
+      "changed_existing_answers": 0,
+      "fallback_useful_ceiling": 3
+    },
+    "rules": {
+      "answerable": 3,
+      "useful": 3,
+      "incorrect_quotes": 0,
+      "absent": 1,
+      "quotes_without_data": 0,
+      "literal_failures": 0,
+      "latency": {
+        "n": 4,
+        "p50_ms": 0.29557699599536136,
+        "p95_ms": 0.3491379975457676,
+        "max_ms": 0.3491379975457676
+      },
+      "activated_latency": {
+        "n": 3,
+        "p50_ms": 0.29475200426531956,
+        "p95_ms": 0.34695299837039784,
+        "max_ms": 0.34695299837039784
+      },
+      "first_answer_ms": 0.3491379975457676,
+      "preparation_cpu_s": 0.002144338999999995,
+      "response_sha256": "7ecbdc2c4a9f043557364822928c6e120ae0874f241c1297a7270dd53292ca03",
+      "parent_cpu_s": 0.0038244160000000527,
+      "child_cpu_s": 0.0,
+      "wall_s": 0.0038250569996307604,
+      "peak_rss_kib": 537384,
+      "new_useful": 2,
+      "new_incorrect": 0,
+      "changed_existing_answers": 0,
+      "fallback_useful_ceiling": 3
+    },
+    "llm": {
+      "answerable": 3,
+      "useful": 1,
+      "incorrect_quotes": 1,
+      "absent": 1,
+      "quotes_without_data": 0,
+      "literal_failures": 0,
+      "latency": {
+        "n": 4,
+        "p50_ms": 1617.2476260035182,
+        "p95_ms": 1872.7156530003413,
+        "max_ms": 1872.7156530003413
+      },
+      "activated_latency": {
+        "n": 3,
+        "p50_ms": 1617.2457959983149,
+        "p95_ms": 1872.7135449953494,
+        "max_ms": 1872.7135449953494
+      },
+      "first_answer_ms": 1617.2476260035182,
+      "preparation_cpu_s": 0.002116146999999735,
+      "response_sha256": "cb11ba61ced478acc7285bea3272bd6dd92205b83f078d5ba143093b1322929f",
+      "parent_cpu_s": 0.0046916270000001425,
+      "child_cpu_s": 5.302288000000001,
+      "wall_s": 5.31778427700192,
+      "peak_rss_kib": 537384,
+      "llm": {
+        "load_ms": 192.86174300214043,
+        "ready": {
+          "load_ms": 190.435368,
+          "peak_rss_kib": 537384,
+          "ready": true
+        },
+        "calls": 3,
+        "invalid_or_zero": 2,
+        "native_latency": {
+          "n": 3,
+          "p50_ms": 1616.622138,
+          "p95_ms": 1872.206815,
+          "max_ms": 1872.206815
+        },
+        "errors": [],
+        "peak_rss_kib": 537384
+      },
+      "new_useful": 0,
+      "new_incorrect": 1,
+      "changed_existing_answers": 0,
+      "fallback_useful_ceiling": 3
+    },
+    "trained": {
+      "answerable": 3,
+      "useful": 1,
+      "incorrect_quotes": 0,
+      "absent": 1,
+      "quotes_without_data": 0,
+      "literal_failures": 0,
+      "latency": {
+        "n": 4,
+        "p50_ms": 0.19219000387238339,
+        "p95_ms": 0.279380998108536,
+        "max_ms": 0.279380998108536
+      },
+      "activated_latency": {
+        "n": 3,
+        "p50_ms": 0.191368002560921,
+        "p95_ms": 0.2782239971566014,
+        "max_ms": 0.2782239971566014
+      },
+      "first_answer_ms": 0.279380998108536,
+      "preparation_cpu_s": 0.002646756999999944,
+      "response_sha256": "d64b75ba39025281c6dc91f78235c5e4f0e486949e51989171e528b98ad319fa",
+      "parent_cpu_s": 0.07151475299999976,
+      "child_cpu_s": -1.3877787807814457e-17,
+      "wall_s": 0.07200831700174604,
+      "peak_rss_kib": 537384,
+      "new_useful": 0,
+      "new_incorrect": 0,
+      "changed_existing_answers": 0,
+      "fallback_useful_ceiling": 3
+    },
+    "random": {
+      "answerable": 3,
+      "useful": 1,
+      "incorrect_quotes": 0,
+      "absent": 1,
+      "quotes_without_data": 0,
+      "literal_failures": 0,
+      "latency": {
+        "n": 4,
+        "p50_ms": 0.1737139973556623,
+        "p95_ms": 0.22836599964648485,
+        "max_ms": 0.22836599964648485
+      },
+      "activated_latency": {
+        "n": 3,
+        "p50_ms": 0.17289499373873696,
+        "p95_ms": 0.22697000531479716,
+        "max_ms": 0.22697000531479716
+      },
+      "first_answer_ms": 0.22836599964648485,
+      "preparation_cpu_s": 0.0024182989999999016,
+      "response_sha256": "d64b75ba39025281c6dc91f78235c5e4f0e486949e51989171e528b98ad319fa",
+      "parent_cpu_s": 0.01161309399999988,
+      "child_cpu_s": -1.3877787807814457e-17,
+      "wall_s": 0.011613647002377547,
+      "peak_rss_kib": 537384,
+      "new_useful": 0,
+      "new_incorrect": 0,
+      "changed_existing_answers": 0,
+      "fallback_useful_ceiling": 3
+    },
+    "shuffled": {
+      "answerable": 3,
+      "useful": 1,
+      "incorrect_quotes": 0,
+      "absent": 1,
+      "quotes_without_data": 0,
+      "literal_failures": 0,
+      "latency": {
+        "n": 4,
+        "p50_ms": 0.1792760012904182,
+        "p95_ms": 0.22890699619892985,
+        "max_ms": 0.22890699619892985
+      },
+      "activated_latency": {
+        "n": 3,
+        "p50_ms": 0.1784330015652813,
+        "p95_ms": 0.22789200011175126,
+        "max_ms": 0.22789200011175126
+      },
+      "first_answer_ms": 0.22890699619892985,
+      "preparation_cpu_s": 0.0024379149999997907,
+      "response_sha256": "d64b75ba39025281c6dc91f78235c5e4f0e486949e51989171e528b98ad319fa",
+      "parent_cpu_s": 0.01105576099999972,
+      "child_cpu_s": -1.3877787807814457e-17,
+      "wall_s": 0.011067136998462956,
+      "peak_rss_kib": 537384,
+      "new_useful": 0,
+      "new_incorrect": 0,
+      "changed_existing_answers": 0,
+      "fallback_useful_ceiling": 3
+    }
+  },
+  "rows": [
+    {
+      "id": "panaderia_usuario/0/0",
+      "mode": "baseline",
+      "question": "¿A qué hora abren?",
+      "turn": {
+        "cliente": "¿A qué hora abren?",
+        "accion": "responder",
+        "tipo": "directa",
+        "claves": [
+          "7:00"
+        ]
+      },
+      "reply": {
+        "text": "No lo sé: no encontré esa información en el texto que tengo.",
+        "status": "unknown",
+        "evidence": null,
+        "confidence": null,
+        "cell": "2,2",
+        "candidate": {
+          "text": "Horario: lunes a sábado de 7:00 a 19:00.",
+          "precision": 0.2784
+        }
+      },
+      "ms": 0.428234001446981,
+      "literal": true,
+      "verdict": "abstencion_indebida"
+    },
+    {
+      "id": "panaderia_usuario/0/1",
+      "mode": "baseline",
+      "question": "¿Aceptan cheques?",
+      "turn": {
+        "cliente": "¿Aceptan cheques?",
+        "accion": "responder",
+        "tipo": "directa",
+        "claves": [
+          "No aceptamos cheques"
+        ]
+      },
+      "reply": {
+        "text": "No lo tengo seguro. Lo más cercano que dice el texto es: «No aceptamos cheques».",
+        "status": "closest",
+        "evidence": {
+          "unit": "No aceptamos cheques.",
+          "heading": "",
+          "index": 4
+        },
+        "confidence": 0.8667,
+        "cell": "0,4"
+      },
+      "ms": 0.13433599815471098,
+      "literal": true,
+      "verdict": "cita_util"
+    },
+    {
+      "id": "panaderia_usuario/0/2",
+      "mode": "baseline",
+      "question": "¿Tienen estacionamiento?",
+      "turn": {
+        "cliente": "¿Tienen estacionamiento?",
+        "accion": "abstenerse",
+        "tipo": "directa",
+        "claves": []
+      },
+      "reply": {
+        "text": "No lo sé: no encontré esa información en el texto que tengo.",
+        "status": "unknown",
+        "evidence": null,
+        "confidence": null,
+        "cell": "4,0",
+        "candidate": {
+          "text": "Horario: lunes a sábado de 7:00 a 19:00.",
+          "precision": 0.0222
+        }
+      },
+      "ms": 0.10453999857418239,
+      "literal": true,
+      "verdict": "abstencion_correcta"
+    },
+    {
+      "id": "panaderia_usuario/1/0",
+      "mode": "baseline",
+      "question": "¿Dónde quedan?",
+      "turn": {
+        "cliente": "¿Dónde quedan?",
+        "accion": "responder",
+        "tipo": "directa",
+        "claves": [
+          "Calle Real 12"
+        ]
+      },
+      "reply": {
+        "text": "No lo sé: no encontré esa información en el texto que tengo.",
+        "status": "unknown",
+        "evidence": null,
+        "confidence": null,
+        "cell": "1,2",
+        "candidate": {
+          "text": "Dirección: Calle Real 12, frente a la plaza.",
+          "precision": 0.2302
+        }
+      },
+      "ms": 0.09386600140715018,
+      "literal": true,
+      "verdict": "abstencion_indebida"
+    },
+    {
+      "id": "panaderia_usuario/0/0",
+      "mode": "rules",
+      "question": "¿A qué hora abren?",
+      "turn": {
+        "cliente": "¿A qué hora abren?",
+        "accion": "responder",
+        "tipo": "directa",
+        "claves": [
+          "7:00"
+        ]
+      },
+      "reply": {
+        "status": "closest",
+        "text": "Encontré este fragmento: «Horario: lunes a sábado de 7:00 a 19:00.».",
+        "evidence": {
+          "unit": "Horario: lunes a sábado de 7:00 a 19:00.",
+          "heading": "",
+          "index": 0
+        },
+        "confidence": null,
+        "backup": "rules"
+      },
+      "ms": 0.3491379975457676,
+      "literal": true,
+      "verdict": "cita_util"
+    },
+    {
+      "id": "panaderia_usuario/0/1",
+      "mode": "rules",
+      "question": "¿Aceptan cheques?",
+      "turn": {
+        "cliente": "¿Aceptan cheques?",
+        "accion": "responder",
+        "tipo": "directa",
+        "claves": [
+          "No aceptamos cheques"
+        ]
+      },
+      "reply": {
+        "text": "No lo tengo seguro. Lo más cercano que dice el texto es: «No aceptamos cheques».",
+        "status": "closest",
+        "evidence": {
+          "unit": "No aceptamos cheques.",
+          "heading": "",
+          "index": 4
+        },
+        "confidence": 0.8667,
+        "cell": "0,4"
+      },
+      "ms": 0.11631700181169435,
+      "literal": true,
+      "verdict": "cita_util"
+    },
+    {
+      "id": "panaderia_usuario/0/2",
+      "mode": "rules",
+      "question": "¿Tienen estacionamiento?",
+      "turn": {
+        "cliente": "¿Tienen estacionamiento?",
+        "accion": "abstenerse",
+        "tipo": "directa",
+        "claves": []
+      },
+      "reply": {
+        "text": "No lo sé: no encontré esa información en el texto que tengo.",
+        "status": "unknown",
+        "evidence": null,
+        "confidence": null,
+        "cell": "4,0",
+        "candidate": {
+          "text": "Horario: lunes a sábado de 7:00 a 19:00.",
+          "precision": 0.0222
+        }
+      },
+      "ms": 0.29557699599536136,
+      "literal": true,
+      "verdict": "abstencion_correcta"
+    },
+    {
+      "id": "panaderia_usuario/1/0",
+      "mode": "rules",
+      "question": "¿Dónde quedan?",
+      "turn": {
+        "cliente": "¿Dónde quedan?",
+        "accion": "responder",
+        "tipo": "directa",
+        "claves": [
+          "Calle Real 12"
+        ]
+      },
+      "reply": {
+        "status": "closest",
+        "text": "Encontré este fragmento: «Dirección: Calle Real 12, frente a la plaza.».",
+        "evidence": {
+          "unit": "Dirección: Calle Real 12, frente a la plaza.",
+          "heading": "",
+          "index": 2
+        },
+        "confidence": null,
+        "backup": "rules"
+      },
+      "ms": 0.17678700532997027,
+      "literal": true,
+      "verdict": "cita_util"
+    },
+    {
+      "id": "panaderia_usuario/0/0",
+      "mode": "llm",
+      "question": "¿A qué hora abren?",
+      "turn": {
+        "cliente": "¿A qué hora abren?",
+        "accion": "responder",
+        "tipo": "directa",
+        "claves": [
+          "7:00"
+        ]
+      },
+      "reply": {
+        "text": "No lo sé: no encontré esa información en el texto que tengo.",
+        "status": "unknown",
+        "evidence": null,
+        "confidence": null,
+        "cell": "2,2",
+        "candidate": {
+          "text": "Horario: lunes a sábado de 7:00 a 19:00.",
+          "precision": 0.2784
+        }
+      },
+      "ms": 1617.2476260035182,
+      "literal": true,
+      "verdict": "abstencion_indebida"
+    },
+    {
+      "id": "panaderia_usuario/0/1",
+      "mode": "llm",
+      "question": "¿Aceptan cheques?",
+      "turn": {
+        "cliente": "¿Aceptan cheques?",
+        "accion": "responder",
+        "tipo": "directa",
+        "claves": [
+          "No aceptamos cheques"
+        ]
+      },
+      "reply": {
+        "text": "No lo tengo seguro. Lo más cercano que dice el texto es: «No aceptamos cheques».",
+        "status": "closest",
+        "evidence": {
+          "unit": "No aceptamos cheques.",
+          "heading": "",
+          "index": 4
+        },
+        "confidence": 0.8667,
+        "cell": "0,4"
+      },
+      "ms": 0.1670179990469478,
+      "literal": true,
+      "verdict": "cita_util"
+    },
+    {
+      "id": "panaderia_usuario/0/2",
+      "mode": "llm",
+      "question": "¿Tienen estacionamiento?",
+      "turn": {
+        "cliente": "¿Tienen estacionamiento?",
+        "accion": "abstenerse",
+        "tipo": "directa",
+        "claves": []
+      },
+      "reply": {
+        "text": "No lo sé: no encontré esa información en el texto que tengo.",
+        "status": "unknown",
+        "evidence": null,
+        "confidence": null,
+        "cell": "4,0",
+        "candidate": {
+          "text": "Horario: lunes a sábado de 7:00 a 19:00.",
+          "precision": 0.0222
+        }
+      },
+      "ms": 1872.7156530003413,
+      "literal": true,
+      "verdict": "abstencion_correcta"
+    },
+    {
+      "id": "panaderia_usuario/1/0",
+      "mode": "llm",
+      "question": "¿Dónde quedan?",
+      "turn": {
+        "cliente": "¿Dónde quedan?",
+        "accion": "responder",
+        "tipo": "directa",
+        "claves": [
+          "Calle Real 12"
+        ]
+      },
+      "reply": {
+        "status": "closest",
+        "text": "Encontré este fragmento: «Las tortas por encargo se piden con dos días de anticipación.».",
+        "evidence": {
+          "unit": "Las tortas por encargo se piden con dos días de anticipación.",
+          "heading": "",
+          "index": 6
+        },
+        "confidence": null,
+        "backup": "llm"
+      },
+      "ms": 1600.4103660015971,
+      "literal": true,
+      "verdict": "cita_no_util"
+    },
+    {
+      "id": "panaderia_usuario/0/0",
+      "mode": "trained",
+      "question": "¿A qué hora abren?",
+      "turn": {
+        "cliente": "¿A qué hora abren?",
+        "accion": "responder",
+        "tipo": "directa",
+        "claves": [
+          "7:00"
+        ]
+      },
+      "reply": {
+        "text": "No lo sé: no encontré esa información en el texto que tengo.",
+        "status": "unknown",
+        "evidence": null,
+        "confidence": null,
+        "cell": "2,2",
+        "candidate": {
+          "text": "Horario: lunes a sábado de 7:00 a 19:00.",
+          "precision": 0.2784
+        }
+      },
+      "ms": 0.279380998108536,
+      "literal": true,
+      "verdict": "abstencion_indebida"
+    },
+    {
+      "id": "panaderia_usuario/0/1",
+      "mode": "trained",
+      "question": "¿Aceptan cheques?",
+      "turn": {
+        "cliente": "¿Aceptan cheques?",
+        "accion": "responder",
+        "tipo": "directa",
+        "claves": [
+          "No aceptamos cheques"
+        ]
+      },
+      "reply": {
+        "text": "No lo tengo seguro. Lo más cercano que dice el texto es: «No aceptamos cheques».",
+        "status": "closest",
+        "evidence": {
+          "unit": "No aceptamos cheques.",
+          "heading": "",
+          "index": 4
+        },
+        "confidence": 0.8667,
+        "cell": "0,4"
+      },
+      "ms": 0.12627099931705743,
+      "literal": true,
+      "verdict": "cita_util"
+    },
+    {
+      "id": "panaderia_usuario/0/2",
+      "mode": "trained",
+      "question": "¿Tienen estacionamiento?",
+      "turn": {
+        "cliente": "¿Tienen estacionamiento?",
+        "accion": "abstenerse",
+        "tipo": "directa",
+        "claves": []
+      },
+      "reply": {
+        "text": "No lo sé: no encontré esa información en el texto que tengo.",
+        "status": "unknown",
+        "evidence": null,
+        "confidence": null,
+        "cell": "4,0",
+        "candidate": {
+          "text": "Horario: lunes a sábado de 7:00 a 19:00.",
+          "precision": 0.0222
+        }
+      },
+      "ms": 0.19219000387238339,
+      "literal": true,
+      "verdict": "abstencion_correcta"
+    },
+    {
+      "id": "panaderia_usuario/1/0",
+      "mode": "trained",
+      "question": "¿Dónde quedan?",
+      "turn": {
+        "cliente": "¿Dónde quedan?",
+        "accion": "responder",
+        "tipo": "directa",
+        "claves": [
+          "Calle Real 12"
+        ]
+      },
+      "reply": {
+        "text": "No lo sé: no encontré esa información en el texto que tengo.",
+        "status": "unknown",
+        "evidence": null,
+        "confidence": null,
+        "cell": "1,2",
+        "candidate": {
+          "text": "Dirección: Calle Real 12, frente a la plaza.",
+          "precision": 0.2302
+        }
+      },
+      "ms": 0.16326600598404184,
+      "literal": true,
+      "verdict": "abstencion_indebida"
+    },
+    {
+      "id": "panaderia_usuario/0/0",
+      "mode": "random",
+      "question": "¿A qué hora abren?",
+      "turn": {
+        "cliente": "¿A qué hora abren?",
+        "accion": "responder",
+        "tipo": "directa",
+        "claves": [
+          "7:00"
+        ]
+      },
+      "reply": {
+        "text": "No lo sé: no encontré esa información en el texto que tengo.",
+        "status": "unknown",
+        "evidence": null,
+        "confidence": null,
+        "cell": "2,2",
+        "candidate": {
+          "text": "Horario: lunes a sábado de 7:00 a 19:00.",
+          "precision": 0.2784
+        }
+      },
+      "ms": 0.22836599964648485,
+      "literal": true,
+      "verdict": "abstencion_indebida"
+    },
+    {
+      "id": "panaderia_usuario/0/1",
+      "mode": "random",
+      "question": "¿Aceptan cheques?",
+      "turn": {
+        "cliente": "¿Aceptan cheques?",
+        "accion": "responder",
+        "tipo": "directa",
+        "claves": [
+          "No aceptamos cheques"
+        ]
+      },
+      "reply": {
+        "text": "No lo tengo seguro. Lo más cercano que dice el texto es: «No aceptamos cheques».",
+        "status": "closest",
+        "evidence": {
+          "unit": "No aceptamos cheques.",
+          "heading": "",
+          "index": 4
+        },
+        "confidence": 0.8667,
+        "cell": "0,4"
+      },
+      "ms": 0.12008199701085687,
+      "literal": true,
+      "verdict": "cita_util"
+    },
+    {
+      "id": "panaderia_usuario/0/2",
+      "mode": "random",
+      "question": "¿Tienen estacionamiento?",
+      "turn": {
+        "cliente": "¿Tienen estacionamiento?",
+        "accion": "abstenerse",
+        "tipo": "directa",
+        "claves": []
+      },
+      "reply": {
+        "text": "No lo sé: no encontré esa información en el texto que tengo.",
+        "status": "unknown",
+        "evidence": null,
+        "confidence": null,
+        "cell": "4,0",
+        "candidate": {
+          "text": "Horario: lunes a sábado de 7:00 a 19:00.",
+          "precision": 0.0222
+        }
+      },
+      "ms": 0.1737139973556623,
+      "literal": true,
+      "verdict": "abstencion_correcta"
+    },
+    {
+      "id": "panaderia_usuario/1/0",
+      "mode": "random",
+      "question": "¿Dónde quedan?",
+      "turn": {
+        "cliente": "¿Dónde quedan?",
+        "accion": "responder",
+        "tipo": "directa",
+        "claves": [
+          "Calle Real 12"
+        ]
+      },
+      "reply": {
+        "text": "No lo sé: no encontré esa información en el texto que tengo.",
+        "status": "unknown",
+        "evidence": null,
+        "confidence": null,
+        "cell": "1,2",
+        "candidate": {
+          "text": "Dirección: Calle Real 12, frente a la plaza.",
+          "precision": 0.2302
+        }
+      },
+      "ms": 0.15492300008190796,
+      "literal": true,
+      "verdict": "abstencion_indebida"
+    },
+    {
+      "id": "panaderia_usuario/0/0",
+      "mode": "shuffled",
+      "question": "¿A qué hora abren?",
+      "turn": {
+        "cliente": "¿A qué hora abren?",
+        "accion": "responder",
+        "tipo": "directa",
+        "claves": [
+          "7:00"
+        ]
+      },
+      "reply": {
+        "text": "No lo sé: no encontré esa información en el texto que tengo.",
+        "status": "unknown",
+        "evidence": null,
+        "confidence": null,
+        "cell": "2,2",
+        "candidate": {
+          "text": "Horario: lunes a sábado de 7:00 a 19:00.",
+          "precision": 0.2784
+        }
+      },
+      "ms": 0.22890699619892985,
+      "literal": true,
+      "verdict": "abstencion_indebida"
+    },
+    {
+      "id": "panaderia_usuario/0/1",
+      "mode": "shuffled",
+      "question": "¿Aceptan cheques?",
+      "turn": {
+        "cliente": "¿Aceptan cheques?",
+        "accion": "responder",
+        "tipo": "directa",
+        "claves": [
+          "No aceptamos cheques"
+        ]
+      },
+      "reply": {
+        "text": "No lo tengo seguro. Lo más cercano que dice el texto es: «No aceptamos cheques».",
+        "status": "closest",
+        "evidence": {
+          "unit": "No aceptamos cheques.",
+          "heading": "",
+          "index": 4
+        },
+        "confidence": 0.8667,
+        "cell": "0,4"
+      },
+      "ms": 0.12465000327210873,
+      "literal": true,
+      "verdict": "cita_util"
+    },
+    {
+      "id": "panaderia_usuario/0/2",
+      "mode": "shuffled",
+      "question": "¿Tienen estacionamiento?",
+      "turn": {
+        "cliente": "¿Tienen estacionamiento?",
+        "accion": "abstenerse",
+        "tipo": "directa",
+        "claves": []
+      },
+      "reply": {
+        "text": "No lo sé: no encontré esa información en el texto que tengo.",
+        "status": "unknown",
+        "evidence": null,
+        "confidence": null,
+        "cell": "4,0",
+        "candidate": {
+          "text": "Horario: lunes a sábado de 7:00 a 19:00.",
+          "precision": 0.0222
+        }
+      },
+      "ms": 0.1792760012904182,
+      "literal": true,
+      "verdict": "abstencion_correcta"
+    },
+    {
+      "id": "panaderia_usuario/1/0",
+      "mode": "shuffled",
+      "question": "¿Dónde quedan?",
+      "turn": {
+        "cliente": "¿Dónde quedan?",
+        "accion": "responder",
+        "tipo": "directa",
+        "claves": [
+          "Calle Real 12"
+        ]
+      },
+      "reply": {
+        "text": "No lo sé: no encontré esa información en el texto que tengo.",
+        "status": "unknown",
+        "evidence": null,
+        "confidence": null,
+        "cell": "1,2",
+        "candidate": {
+          "text": "Dirección: Calle Real 12, frente a la plaza.",
+          "precision": 0.2302
+        }
+      },
+      "ms": 0.15226200048346072,
+      "literal": true,
+      "verdict": "abstencion_indebida"
+    }
+  ],
+  "cpu_s": 7.3462008910000005,
+  "wall_s": 7.35878516700177,
+  "neural_metadata_sha256": "4f95790a909fad86f8831eb817fe7212f7053f2c6cbfa612e6353638c2a36070"
+}
