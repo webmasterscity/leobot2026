@@ -108,3 +108,14 @@ conteo en AnCora + SQuAD-es (6 295 formas con variante dominante ≥ 90 %).
 coincidencia de palabras. Lo que falta no es texto (ya lo hay) sino **recuperar la frase que habla de lo preguntado** entre decenas de
 miles y saber qué tipo de respuesta se pide (un número, un lugar, una cosa). La biblioteca queda como mecanismo opcional (no se adjunta
 por defecto; `attach_library`).
+
+## 7. G-109: modelo de utilidad por lista (ListNet) — negativo en desarrollo ([preregistro](../prereg/G-109-utilidad-por-lista.md))
+Mismos rasgos y datos que el modelo puntual sin pares (216 negocios), solo cambia el objetivo (softmax por turno).
+| modelo | acierto cruzado | útiles con ≤ 100 malas | con ≤ 150 malas |
+|---|---|---|---|
+| puntual, semilla 0 | 0,599 | 149 | 162 |
+| puntual, semilla 1 | 0,603 | 146 | 157 |
+| por lista, semilla 0 | 0,604 | 122 | 141 |
+| por lista, semilla 1 | 0,607 | 122 | 142 |
+Ordena apenas mejor (+0,5 puntos) y calibra mucho peor (la softmax no fija una escala común entre turnos). Umbral preregistrado
+(+8 útiles y +2 puntos) no se cumple. **No repetir**: cambiar solo el objetivo de aprendizaje con los mismos rasgos.
