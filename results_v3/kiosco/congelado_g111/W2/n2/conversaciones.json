@@ -1,0 +1,282 @@
+[
+ [
+  {
+   "cliente": "hola, cuanto cuesta alquilar una sala para unas 150 personas?",
+   "tipo": "combinada",
+   "accion": "responder",
+   "claves": [
+    "Sala Coral",
+    "USD 2,200"
+   ],
+   "evidencia": "Sala Coral | 200 personas | USD 2,200",
+   "respuesta_ideal": "La sala que le sirve es la Sala Coral, con capacidad para 200 personas, a USD 2,200 por día de 8 horas."
+  },
+  {
+   "cliente": "y esa tarifa incluye el impuesto?",
+   "tipo": "seguimiento",
+   "accion": "responder",
+   "claves": [
+    "no incluyen el ITBMS (7 %)"
+   ],
+   "evidencia": "Las tarifas no incluyen el ITBMS (7 %).",
+   "respuesta_ideal": "No, las tarifas no incluyen el ITBMS (7 %)."
+  },
+  {
+   "cliente": "si la alquilo dos dias cuanto seria con el impuesto?",
+   "tipo": "combinada",
+   "accion": "responder",
+   "claves": [
+    "USD 2,200",
+    "7 %"
+   ],
+   "evidencia": "Sala Coral | 200 personas | USD 2,200\nSala Marea | 80 personas | USD 900\nSala Brisa | 40 personas | USD 450\n\nLas tarifas no incluyen el ITBMS (7 %).",
+   "respuesta_ideal": "Dos días de Sala Coral son USD 4,400, más el ITBMS del 7 %: USD 4,708 en total."
+  },
+  {
+   "cliente": "cuanto piden de deposito para separar la fecha?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "30 %"
+   ],
+   "evidencia": "Para bloquear una fecha se paga un depósito del 30 % del valor de la sala.",
+   "respuesta_ideal": "Se paga un depósito del 30 % del valor de la sala."
+  },
+  {
+   "cliente": "y si cancelo con 3 meses de anticipacion me devuelven algo?",
+   "tipo": "si_no",
+   "accion": "responder",
+   "claves": [
+    "se devuelve el 50 % del depósito"
+   ],
+   "evidencia": "Si se cancela con más de 60 días de anticipación, se devuelve el 50 % del depósito",
+   "respuesta_ideal": "Sí, con más de 60 días de anticipación se devuelve el 50 % del depósito."
+  },
+  {
+   "cliente": "tienen la sala Coral libre el 12 de marzo?",
+   "tipo": "instruccion",
+   "accion": "derivar",
+   "claves": [],
+   "evidencia": "No confirmes disponibilidad de fechas ni cotizaciones finales. Para eso, deriva a la ejecutiva comercial, Marcela Quintero, al +507 300-4500 ext. 204.",
+   "respuesta_ideal": "Eso lo confirma nuestra ejecutiva comercial, Marcela Quintero, en el +507 300-4500 ext. 204."
+  }
+ ],
+ [
+  {
+   "cliente": "tienen wifi?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "Wi-Fi incluido hasta 500 dispositivos"
+   ],
+   "evidencia": "Wi-Fi incluido hasta 500 dispositivos. Conexión dedicada: USD 250 por día.",
+   "respuesta_ideal": "Sí, el Wi-Fi está incluido hasta 500 dispositivos; una conexión dedicada cuesta USD 250 por día."
+  },
+  {
+   "cliente": "puedo traer mi propio catering?",
+   "tipo": "si_no",
+   "accion": "responder",
+   "claves": [
+    "solo con el catering del centro"
+   ],
+   "evidencia": "Alimentos y bebidas: solo con el catering del centro.",
+   "respuesta_ideal": "No, los alimentos y bebidas se contratan solo con el catering del centro."
+  },
+  {
+   "cliente": "y cuanto cuesta el almuerzo?",
+   "tipo": "seguimiento",
+   "accion": "responder",
+   "claves": [
+    "USD 28"
+   ],
+   "evidencia": "almuerzo desde USD 28 por persona",
+   "respuesta_ideal": "El almuerzo cuesta desde USD 28 por persona."
+  },
+  {
+   "cliente": "para 100 personas con coffee break y almuerzo cuanto seria por persona?",
+   "tipo": "combinada",
+   "accion": "responder",
+   "claves": [
+    "USD 9",
+    "USD 28"
+   ],
+   "evidencia": "Coffee break USD 9 por persona; almuerzo desde USD 28 por persona.",
+   "respuesta_ideal": "El coffee break son USD 9 y el almuerzo desde USD 28: desde USD 37 por persona."
+  },
+  {
+   "cliente": "tienen interprete simultaneo?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "USD 400 por día"
+   ],
+   "evidencia": "Intérprete simultáneo (cabinas y equipos): USD 400 por día, sin incluir a los intérpretes.",
+   "respuesta_ideal": "Sí, el servicio de cabinas y equipos cuesta USD 400 por día, sin incluir a los intérpretes."
+  },
+  {
+   "cliente": "y cuanto cobran los interpretes?",
+   "tipo": "sin_respuesta",
+   "accion": "abstenerse",
+   "claves": [],
+   "evidencia": null,
+   "respuesta_ideal": "No tengo ese dato; el costo de los intérpretes no está incluido en el servicio. Puede escribir a eventos@convencionesbahia.com.pa."
+  },
+  {
+   "cliente": "cuanto cuesta el parqueo?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "USD 5 por vehículo"
+   ],
+   "evidencia": "Parqueo para asistentes: USD 5 por vehículo, cobro único por evento.",
+   "respuesta_ideal": "El parqueo cuesta USD 5 por vehículo, con cobro único por evento."
+  },
+  {
+   "cliente": "hasta que hora puede durar el evento",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "11:00 p. m."
+   ],
+   "evidencia": "El horario del evento puede extenderse como máximo hasta las 11:00 p. m.",
+   "respuesta_ideal": "Puede extenderse como máximo hasta las 11:00 p. m."
+  },
+  {
+   "cliente": "el catering tiene menu vegetariano?",
+   "tipo": "sin_respuesta",
+   "accion": "abstenerse",
+   "claves": [],
+   "evidencia": null,
+   "respuesta_ideal": "No tengo información sobre los menús. Puede escribir a eventos@convencionesbahia.com.pa."
+  }
+ ],
+ [
+  {
+   "cliente": "buenas tardes",
+   "tipo": "charla",
+   "accion": "charla",
+   "claves": [],
+   "evidencia": null,
+   "respuesta_ideal": "Bienvenido al Centro de Convenciones Bahía Central, ¿en qué le ayudo?"
+  },
+  {
+   "cliente": "quiero hacer mi boda alla, se puede?",
+   "tipo": "si_no",
+   "accion": "responder",
+   "claves": [
+    "No realizamos bodas"
+   ],
+   "evidencia": "No realizamos bodas, quinceañeros ni fiestas infantiles",
+   "respuesta_ideal": "No, no realizamos bodas: solo eventos corporativos, académicos y ferias comerciales."
+  },
+  {
+   "cliente": "aceptan american express?",
+   "tipo": "si_no",
+   "accion": "responder",
+   "claves": [
+    "No aceptamos American Express"
+   ],
+   "evidencia": "No aceptamos American Express.",
+   "respuesta_ideal": "No, aceptamos Visa y Mastercard, transferencia o cheque certificado."
+  },
+  {
+   "cliente": "hay algun hotel cerca con precio especial para mis invitados? cual?",
+   "tipo": "sin_respuesta",
+   "accion": "derivar",
+   "claves": [],
+   "evidencia": null,
+   "respuesta_ideal": "Tenemos convenio con hoteles de la zona, pero no tengo los nombres; consulte con la ejecutiva comercial."
+  },
+  {
+   "cliente": "me pueden hacer descuento si es un evento grande?",
+   "tipo": "instruccion",
+   "accion": "derivar",
+   "claves": [],
+   "evidencia": "Nunca prometas descuentos: los descuentos los aprueba solamente la gerencia.",
+   "respuesta_ideal": "No puedo prometer descuentos; los aprueba la gerencia. Puede consultarlo con la ejecutiva comercial."
+  },
+  {
+   "cliente": "tienen sala para 500 personas?",
+   "tipo": "combinada",
+   "accion": "responder",
+   "claves": [
+    "Gran Salón Océano",
+    "USD 6,500"
+   ],
+   "evidencia": "Gran Salón Océano | 1.200 personas | USD 6,500",
+   "respuesta_ideal": "Sí, el Gran Salón Océano es para 1.200 personas y cuesta USD 6,500 por día de 8 horas."
+  }
+ ],
+ [
+  {
+   "cliente": "quiero mandar mi hoja de vida, a quien se la doy",
+   "tipo": "instruccion",
+   "accion": "derivar",
+   "claves": [],
+   "evidencia": "Si alguien pregunta por trabajo o por enviar su hoja de vida, derívalo a Recursos Humanos.",
+   "respuesta_ideal": "Eso lo maneja Recursos Humanos, en rrhh@convencionesbahia.com.pa."
+  },
+  {
+   "cliente": "un señor se desmayo en el lobby!!",
+   "tipo": "instruccion",
+   "accion": "derivar",
+   "claves": [],
+   "evidencia": "Si hay una emergencia médica, dile que avise de inmediato al personal de seguridad en la entrada principal o que llame al 911.",
+   "respuesta_ideal": "Avise de inmediato al personal de seguridad en la entrada principal o llame al 911."
+  },
+  {
+   "cliente": "que altura tiene el techo del salon oceano?",
+   "tipo": "sin_respuesta",
+   "accion": "abstenerse",
+   "claves": [],
+   "evidencia": null,
+   "respuesta_ideal": "No tengo ese dato. Puede escribir a eventos@convencionesbahia.com.pa."
+  },
+  {
+   "cliente": "hasta que hora atienden en la oficina los sabados?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "1:00 p. m."
+   ],
+   "evidencia": "sábados de 9:00 a. m. a 1:00 p. m.",
+   "respuesta_ideal": "Los sábados la oficina comercial atiende de 9:00 a. m. a 1:00 p. m."
+  },
+  {
+   "cliente": "se puede conocer el lugar antes de decidir?",
+   "tipo": "si_no",
+   "accion": "responder",
+   "claves": [
+    "martes y jueves a las 10:00 a. m."
+   ],
+   "evidencia": "Recorrido guiado gratuito los martes y jueves a las 10:00 a. m., previa cita por teléfono o correo.",
+   "respuesta_ideal": "Sí, hay recorrido guiado los martes y jueves a las 10:00 a. m., previa cita."
+  },
+  {
+   "cliente": "y tiene costo esa visita?",
+   "tipo": "seguimiento",
+   "accion": "responder",
+   "claves": [
+    "gratuito"
+   ],
+   "evidencia": "Recorrido guiado gratuito",
+   "respuesta_ideal": "No, el recorrido es gratuito y dura aproximadamente 45 minutos."
+  },
+  {
+   "cliente": "cuanto cobran por servicio de seguridad para el evento?",
+   "tipo": "sin_respuesta",
+   "accion": "abstenerse",
+   "claves": [],
+   "evidencia": null,
+   "respuesta_ideal": "No tengo información sobre servicio de seguridad. Puede escribir a eventos@convencionesbahia.com.pa."
+  },
+  {
+   "cliente": "gracias, hasta luego",
+   "tipo": "charla",
+   "accion": "charla",
+   "claves": [],
+   "evidencia": null,
+   "respuesta_ideal": "Gracias por visitarnos."
+  }
+ ]
+]

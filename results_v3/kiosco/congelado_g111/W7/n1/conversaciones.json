@@ -1,0 +1,228 @@
+[
+  [
+    {
+      "cliente": "Hola, necesito sacar un turno para una limpieza dental.",
+      "tipo": "charla",
+      "accion": "responder",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "Hola, bienvenido a Smile Plus. Para reservar un turno, podés comunicarte al (011) 4952-7834, por correo a consultas@smileplus.com.ar o por nuestro sitio web."
+    },
+    {
+      "cliente": "¿Cuánto cuesta la limpieza?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["$4.500"],
+      "evidencia": "Limpieza y destartarización: $4.500",
+      "respuesta_ideal": "La limpieza y destartarización cuesta $4.500."
+    },
+    {
+      "cliente": "¿Y si me hago la limpieza y también me hago un control?",
+      "tipo": "combinada",
+      "accion": "responder",
+      "claves": ["$6.200"],
+      "evidencia": "Paquete limpieza + control: $6.200 (descto. 15 %)",
+      "respuesta_ideal": "Contamos con un paquete de limpieza más control por $6.200, que tiene un descuento del 15%."
+    },
+    {
+      "cliente": "¿Aceptan tarjeta de crédito?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["Tarjetas de crédito"],
+      "evidencia": "Formas de pago: Efectivo | Tarjetas de débito y crédito (Visa, Mastercard, American Express)",
+      "respuesta_ideal": "Sí, aceptamos tarjetas de crédito: Visa, Mastercard y American Express."
+    },
+    {
+      "cliente": "Tengo un dolor de muela muy fuerte. ¿Qué me recomiendas que haga?",
+      "tipo": "instruccion",
+      "accion": "derivar",
+      "claves": [],
+      "evidencia": "No proporciones diagnósticos ni sugerencias médicas... indícale que se comunique de inmediato al (011) 4952-7834 durante el horario de atención o por WhatsApp +54 9 11 5927-3341 fuera de horario.",
+      "respuesta_ideal": "No puedo darte diagnósticos, pero si tenés dolor urgente, llamá al (011) 4952-7834 durante el horario de atención. Si es fuera de horario, podés contactar por WhatsApp al +54 9 11 5927-3341."
+    }
+  ],
+  [
+    {
+      "cliente": "¿Cuál es el horario de atención?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["Lunes a viernes: 08:00 – 19:00 hs", "Sábados: 09:00 – 13:00 hs"],
+      "evidencia": "HORARIO DE ATENCIÓN\nLunes a viernes: 08:00 – 19:00 hs\nSábados: 09:00 – 13:00 hs",
+      "respuesta_ideal": "Atendemos de lunes a viernes de 8 a 19 horas y sábados de 9 a 13 horas."
+    },
+    {
+      "cliente": "¿Y los domingos?",
+      "tipo": "seguimiento",
+      "accion": "responder",
+      "claves": ["Domingos y feriados: CERRADO"],
+      "evidencia": "Domingos y feriados: CERRADO",
+      "respuesta_ideal": "Los domingos y feriados estamos cerrados."
+    },
+    {
+      "cliente": "¿Cuánto cuesta una obturación?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["$6.800", "$9.200"],
+      "evidencia": "Obturación (1 o 2 superficies): $6.800 | (3 o más superficies): $9.200",
+      "respuesta_ideal": "Depende del tipo: entre 1 y 2 superficies cuesta $6.800, y de 3 o más superficies $9.200."
+    },
+    {
+      "cliente": "¿Se puede financiar una obturación?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No tengo información sobre financiación para obturaciones. Te recomiendo llamar al (011) 4952-7834 para consultar las opciones disponibles."
+    },
+    {
+      "cliente": "¿Dónde están ubicados?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["Av. Corrientes 3245, Piso 5", "San Nicolás, Buenos Aires"],
+      "evidencia": "Av. Corrientes 3245, Piso 5 — San Nicolás, Buenos Aires",
+      "respuesta_ideal": "Estamos en Avenida Corrientes 3245, Piso 5, en el barrio de San Nicolás."
+    }
+  ],
+  [
+    {
+      "cliente": "Hola, necesito saber si hacen endodoncias.",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["Endodoncia"],
+      "evidencia": "Endodoncia (tratamiento de conducto): $18.500",
+      "respuesta_ideal": "Sí, realizamos endodoncias. El costo es de $18.500."
+    },
+    {
+      "cliente": "¿Quién hace las endodoncias?",
+      "tipo": "sin_respuesta",
+      "accion": "responder",
+      "claves": ["Dr. Marcelo Rojas"],
+      "evidencia": "Dr. Marcelo Rojas (Director) — Odontología General, Endodoncia",
+      "respuesta_ideal": "El Dr. Marcelo Rojas, quien es el director de la clínica, es especialista en endodoncia."
+    },
+    {
+      "cliente": "¿Atienden a menores de edad?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["Menores de edad: acompañamiento obligatorio de mayor responsable"],
+      "evidencia": "Menores de edad: acompañamiento obligatorio de mayor responsable",
+      "respuesta_ideal": "Sí, pero con la condición de que un mayor responsable acompañe al menor durante todo el tratamiento."
+    },
+    {
+      "cliente": "¿Tenés ortodoncista?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["Dra. Laura González", "Ortodoncia"],
+      "evidencia": "Dra. Laura González — Ortodoncia",
+      "respuesta_ideal": "Sí, contamos con la Dra. Laura González, quien es especialista en ortodoncia."
+    },
+    {
+      "cliente": "¿Cuánto cuesta un tratamiento de ortodoncia por mes?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["$8.000"],
+      "evidencia": "Ortodoncia (aparatología fija, por mes): $8.000",
+      "respuesta_ideal": "El costo de ortodoncia con aparatología fija es de $8.000 por mes."
+    },
+    {
+      "cliente": "¿Hacen ortodoncias para chicos chicos?",
+      "tipo": "sin_respuesta",
+      "accion": "responder",
+      "claves": ["ortodoncia pediátrica"],
+      "evidencia": "contamos con especialistas en ortodoncia pediátrica",
+      "respuesta_ideal": "Sí, contamos con especialistas en ortodoncia pediátrica. Para más detalles, llamá al (011) 4952-7834."
+    }
+  ],
+  [
+    {
+      "cliente": "Buenas, ¿hacen implantes dentales?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["implantes", "$32.000"],
+      "evidencia": "Colocación de implantes: $32.000 (evaluación y colocación)",
+      "respuesta_ideal": "Sí, realizamos colocación de implantes. El costo incluye evaluación y colocación: $32.000."
+    },
+    {
+      "cliente": "¿Es ese precio por cada implante?",
+      "tipo": "seguimiento",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No especifico si es por cada implante o un tratamiento completo. Te recomiendo llamar al (011) 4952-7834 para aclarar los detalles."
+    },
+    {
+      "cliente": "¿Cuánto sale una corona?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["$14.200"],
+      "evidencia": "Corona de porcelana: $14.200",
+      "respuesta_ideal": "Una corona de porcelana cuesta $14.200."
+    },
+    {
+      "cliente": "¿Cuál es la diferencia entre una corona y un implante?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No puedo darte detalles técnicos sobre eso. Te recomiendo que hables directamente con el Dr. Rojas o alguno de nuestros especialistas llamando al (011) 4952-7834."
+    },
+    {
+      "cliente": "¿El Dr. Díaz es especialista en implantes?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["Dr. Fernando Díaz", "Implantología"],
+      "evidencia": "Dr. Fernando Díaz — Cirugía Maxilofacial, Implantología",
+      "respuesta_ideal": "Sí, el Dr. Fernando Díaz es especialista en cirugía maxilofacial e implantología."
+    }
+  ],
+  [
+    {
+      "cliente": "¿Cuándo hacen paro o cierre?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["Receso invernal: 20 de julio – 3 de agosto"],
+      "evidencia": "Receso invernal: 20 de julio – 3 de agosto",
+      "respuesta_ideal": "Tenemos un receso invernal del 20 de julio al 3 de agosto."
+    },
+    {
+      "cliente": "¿Hacen blanqueamiento dental?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["Blanqueamiento dental"],
+      "evidencia": "Blanqueamiento dental (sesión): $7.500",
+      "respuesta_ideal": "Sí, realizamos blanqueamiento dental por $7.500 la sesión."
+    },
+    {
+      "cliente": "¿Cuántas sesiones necesito?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No tengo información sobre la cantidad de sesiones necesarias. Dependerá de tu caso particular. Te recomiendo consultar al (011) 4952-7834."
+    },
+    {
+      "cliente": "¿Si me refiero un amigo me dan descuento?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["Referidos: quién refiera un paciente nuevo recibe $1.500 en descuento"],
+      "evidencia": "Referidos: quién refiera un paciente nuevo recibe $1.500 en descuento para su próxima consulta",
+      "respuesta_ideal": "Sí, si referís a un amigo nuevo, vos recibís $1.500 de descuento en tu próxima consulta."
+    },
+    {
+      "cliente": "¿Trabajan con obra social?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No tengo información sobre las obras sociales que aceptamos. Por favor, llamá al (011) 4952-7834 y el personal administrativo podrá ayudarte con ese tema."
+    },
+    {
+      "cliente": "¿Qué me cobran por una extracción simple?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["$5.200"],
+      "evidencia": "Extracción simple: $5.200",
+      "respuesta_ideal": "Una extracción simple cuesta $5.200."
+    }
+  ]
+]

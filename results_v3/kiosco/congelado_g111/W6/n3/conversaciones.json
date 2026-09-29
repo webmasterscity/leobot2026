@@ -1,0 +1,258 @@
+[
+ [
+  {
+   "cliente": "buen dia, cuanto cuesta el quintal de urea?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "L. 990.00"
+   ],
+   "evidencia": "Urea 46%, quintal: L. 990.00",
+   "respuesta_ideal": "El quintal de urea 46% cuesta L. 990.00."
+  },
+  {
+   "cliente": "y el de 18-46-0?",
+   "tipo": "seguimiento",
+   "accion": "responder",
+   "claves": [
+    "L. 1,180.00"
+   ],
+   "evidencia": "Fertilizante 18-46-0, quintal: L. 1,180.00",
+   "respuesta_ideal": "El quintal de 18-46-0 cuesta L. 1,180.00."
+  },
+  {
+   "cliente": "si compro 5 quintales de urea cuanto seria?",
+   "tipo": "combinada",
+   "accion": "responder",
+   "claves": [
+    "L. 990.00"
+   ],
+   "evidencia": "Urea 46%, quintal: L. 990.00",
+   "respuesta_ideal": "Serían L. 4,950.00 (5 x L. 990.00)."
+  },
+  {
+   "cliente": "hacen entrega a domicilio?",
+   "tipo": "si_no",
+   "accion": "responder",
+   "claves": [
+    "Entrega a domicilio gratis en compras mayores a L. 5,000.00"
+   ],
+   "evidencia": "Entrega a domicilio gratis en compras mayores a L. 5,000.00, para fincas y comunidades hasta 15 km del casco urbano. Para fincas a más de 15 km, la entrega cuesta L. 12.00 por cada kilómetro que pase de los 15.",
+   "respuesta_ideal": "Sí, es gratis en compras mayores a L. 5,000.00 para fincas y comunidades hasta 15 km del casco urbano."
+  },
+  {
+   "cliente": "mi finca queda a 25 km del casco urbano, cuanto me cobran por el flete?",
+   "tipo": "combinada",
+   "accion": "responder",
+   "claves": [
+    "L. 12.00"
+   ],
+   "evidencia": "Entrega a domicilio gratis en compras mayores a L. 5,000.00, para fincas y comunidades hasta 15 km del casco urbano. Para fincas a más de 15 km, la entrega cuesta L. 12.00 por cada kilómetro que pase de los 15.",
+   "respuesta_ideal": "Se cobran L. 12.00 por cada kilómetro que pase de los 15; a 25 km serían 10 km, o sea L. 120.00."
+  }
+ ],
+ [
+  {
+   "cliente": "tienen semilla de maiz?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "Semilla de maíz híbrido",
+    "L. 2,300.00"
+   ],
+   "evidencia": "Semilla de maíz híbrido, bolsa de 20 kg: L. 2,300.00",
+   "respuesta_ideal": "Sí, semilla de maíz híbrido en bolsa de 20 kg a L. 2,300.00."
+  },
+  {
+   "cliente": "y de frijol? a como la libra",
+   "tipo": "seguimiento",
+   "accion": "responder",
+   "claves": [
+    "L. 38.00"
+   ],
+   "evidencia": "Semilla de frijol rojo, libra: L. 38.00",
+   "respuesta_ideal": "La libra de semilla de frijol rojo cuesta L. 38.00."
+  },
+  {
+   "cliente": "cuanto vale la semilla de sorgo?",
+   "tipo": "sin_respuesta",
+   "accion": "abstenerse",
+   "claves": [],
+   "evidencia": null,
+   "respuesta_ideal": "No tengo el precio de la semilla de sorgo. Puede llamar al 2773-4120."
+  },
+  {
+   "cliente": "tienen hoy disponible el fertilizante? no quiero ir en balde",
+   "tipo": "instruccion",
+   "accion": "derivar",
+   "claves": [],
+   "evidencia": "No apartes ni reserves productos ni confirmes existencias: las existencias las confirma el bodeguero, Don Marvin Zelaya, por teléfono.",
+   "respuesta_ideal": "No puedo confirmar existencias; el bodeguero, Don Marvin Zelaya, las confirma por teléfono, al 2773-4120."
+  }
+ ],
+ [
+  {
+   "cliente": "hasta que hora abren el sabado?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "5:30 p. m."
+   ],
+   "evidencia": "Horario: Lunes a sábado: 6:30 a. m. a 5:30 p. m.",
+   "respuesta_ideal": "Los sábados atendemos hasta las 5:30 p. m."
+  },
+  {
+   "cliente": "y el domingo?",
+   "tipo": "seguimiento",
+   "accion": "responder",
+   "claves": [
+    "7:00 a. m.",
+    "12:00 m."
+   ],
+   "evidencia": "Domingos: 7:00 a. m. a 12:00 m.",
+   "respuesta_ideal": "Los domingos abrimos de 7:00 a. m. a 12:00 m."
+  },
+  {
+   "cliente": "abren en semana santa?",
+   "tipo": "si_no",
+   "accion": "responder",
+   "claves": [
+    "cerramos jueves y viernes santos"
+   ],
+   "evidencia": "En Semana Santa cerramos jueves y viernes santos.",
+   "respuesta_ideal": "Sí abrimos, salvo que cerramos jueves y viernes santos."
+  },
+  {
+   "cliente": "y el 1 de mayo abren?",
+   "tipo": "sin_respuesta",
+   "accion": "abstenerse",
+   "claves": [],
+   "evidencia": null,
+   "respuesta_ideal": "No tengo ese dato. Puede llamar al 2773-4120."
+  }
+ ],
+ [
+  {
+   "cliente": "mis gallinas tienen manchas en la cresta y no ponen, que les doy?",
+   "tipo": "instruccion",
+   "accion": "derivar",
+   "claves": [],
+   "evidencia": "No recomiendes dosis de agroquímicos ni diagnostiques plagas o enfermedades de cultivos o animales; deriva esas consultas al ingeniero Mairena.",
+   "respuesta_ideal": "No puedo diagnosticar; lo derivo al ingeniero agrónomo José Luis Mairena."
+  },
+  {
+   "cliente": "cuando atiende el ingeniero?",
+   "tipo": "seguimiento",
+   "accion": "responder",
+   "claves": [
+    "martes y jueves de 8:00 a 12:00"
+   ],
+   "evidencia": "El ingeniero agrónomo José Luis Mairena atiende los martes y jueves de 8:00 a 12:00.",
+   "respuesta_ideal": "Atiende los martes y jueves de 8:00 a 12:00."
+  },
+  {
+   "cliente": "y tiene costo la consulta?",
+   "tipo": "si_no",
+   "accion": "responder",
+   "claves": [
+    "gratuita"
+   ],
+   "evidencia": "La asesoría técnica es gratuita para clientes.",
+   "respuesta_ideal": "No, la asesoría técnica es gratuita para clientes."
+  },
+  {
+   "cliente": "cuanto cuesta el concentrado para vacas lecheras?",
+   "tipo": "sin_respuesta",
+   "accion": "abstenerse",
+   "claves": [],
+   "evidencia": null,
+   "respuesta_ideal": "No tengo ese precio; solo tengo concentrado para cerdos de engorde y gallinas ponedoras. Puede llamar al 2773-4120."
+  }
+ ],
+ [
+  {
+   "cliente": "mi hijo tiene 16, puede ir a comprar glifosato?",
+   "tipo": "instruccion",
+   "accion": "responder",
+   "claves": [
+    "menores de 18 años"
+   ],
+   "evidencia": "Los agroquímicos no se venden a menores de 18 años.",
+   "respuesta_ideal": "No, los agroquímicos no se venden a menores de 18 años."
+  },
+  {
+   "cliente": "cuanto cuesta el litro de glifosato?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "L. 165.00"
+   ],
+   "evidencia": "Glifosato, litro: L. 165.00",
+   "respuesta_ideal": "El litro de glifosato cuesta L. 165.00."
+  },
+  {
+   "cliente": "aceptan tarjeta?",
+   "tipo": "si_no",
+   "accion": "responder",
+   "claves": [
+    "tarjeta de crédito o débito",
+    "4%"
+   ],
+   "evidencia": "Efectivo, transferencia (BAC y Ficohsa) y tarjeta de crédito o débito. Las compras con tarjeta llevan un recargo del 4%.",
+   "respuesta_ideal": "Sí, con tarjeta de crédito o débito, con un recargo del 4%."
+  },
+  {
+   "cliente": "como funciona el credito?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "30 días",
+    "L. 20,000.00"
+   ],
+   "evidencia": "Crédito a 30 días para productores inscritos, con un límite de L. 20,000.00. Sin intereses el primer mes; después se cobra 2% mensual sobre el saldo.",
+   "respuesta_ideal": "Es un crédito a 30 días para productores inscritos, hasta L. 20,000.00; sin intereses el primer mes y luego 2% mensual."
+  },
+  {
+   "cliente": "quiero solicitar un crédito, con quien hablo?",
+   "tipo": "instruccion",
+   "accion": "derivar",
+   "claves": [],
+   "evidencia": "Para solicitar un crédito, deriva a la encargada de crédito, Licda. Nora Pineda.",
+   "respuesta_ideal": "Con la encargada de crédito, la Licda. Nora Pineda."
+  },
+  {
+   "cliente": "alquilan fumigadoras?",
+   "tipo": "sin_respuesta",
+   "accion": "abstenerse",
+   "claves": [],
+   "evidencia": null,
+   "respuesta_ideal": "No tengo ese dato; vendemos fumigadora de mochila de 20 litros a L. 1,450.00. Puede llamar al 2773-4120."
+  },
+  {
+   "cliente": "cuanto cuesta la fumigadora electrica?",
+   "tipo": "sin_respuesta",
+   "accion": "abstenerse",
+   "claves": [],
+   "evidencia": null,
+   "respuesta_ideal": "No tengo el precio de una fumigadora eléctrica; solo la de mochila de 20 litros."
+  },
+  {
+   "cliente": "si compro un fertilizante y no lo uso, lo puedo devolver?",
+   "tipo": "si_no",
+   "accion": "responder",
+   "claves": [
+    "dentro de 8 días con la factura"
+   ],
+   "evidencia": "Se aceptan devoluciones de productos sellados dentro de 8 días con la factura.",
+   "respuesta_ideal": "Sí, si el producto está sellado, dentro de 8 días y con la factura."
+  },
+  {
+   "cliente": "gracias, hasta luego",
+   "tipo": "charla",
+   "accion": "charla",
+   "claves": [],
+   "evidencia": null,
+   "respuesta_ideal": "Gracias a usted, hasta pronto."
+  }
+ ]
+]

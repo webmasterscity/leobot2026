@@ -1,0 +1,180 @@
+[
+  [
+    {
+      "cliente": "Hola, necesito que me revisen el carro porque hace un ruido raro.",
+      "tipo": "charla",
+      "accion": "responder",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "Hola, bienvenido a La Confianza. Nuestros mecánicos pueden diagnosticarlo cuando lo traigas. Te recomendamos llamar al (4) 3660-2847 para agendar una cita."
+    },
+    {
+      "cliente": "¿Cuánto cobran la mano de obra?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["$80.000/hora"],
+      "evidencia": "Mano de obra general: $80.000/hora",
+      "respuesta_ideal": "La mano de obra es $80.000 por hora. Pero el costo total depende de lo que haya que reparar."
+    },
+    {
+      "cliente": "¿Vienen a recoger el carro a mi casa?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No tengo información sobre ese servicio. Llamá al (4) 3660-2847 y el equipo de recepción podría ayudarte."
+    },
+    {
+      "cliente": "¿Aceptan tarjeta de crédito?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["NO aceptamos tarjeta de crédito"],
+      "evidencia": "NO aceptamos tarjeta de crédito",
+      "respuesta_ideal": "No, no aceptamos tarjeta de crédito. Aceptamos efectivo, tarjeta de débito, transferencia bancaria y PSE."
+    },
+    {
+      "cliente": "¿Aceptan piezas que yo traiga?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["Realizamos trabajos con piezas que trae el cliente"],
+      "evidencia": "Realizamos trabajos con piezas que trae el cliente",
+      "respuesta_ideal": "Sí, aceptamos piezas que trae el cliente. También disponemos de piezas de calidad certificada si lo prefieres."
+    }
+  ],
+  [
+    {
+      "cliente": "¿Hacen cambio de aceite?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["Cambio de aceite y filtro"],
+      "evidencia": "Cambio de aceite y filtro: $220.000",
+      "respuesta_ideal": "Sí, hacemos cambio de aceite y filtro por $220.000."
+    },
+    {
+      "cliente": "¿Hay alguna promoción para eso?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["cambio de aceite + revisión: $200.000"],
+      "evidencia": "Cambio de aceite + revisión: $200.000 (descto. 10%)",
+      "respuesta_ideal": "Sí, si incluyes una revisión general, el paquete cuesta $200.000, un descuento del 10%."
+    },
+    {
+      "cliente": "¿Qué reparaciones ustedes no hacen?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["NO reparamos motos, vehículos comerciales pesados ni diesel"],
+      "evidencia": "NO reparamos motos, vehículos comerciales pesados ni diesel",
+      "respuesta_ideal": "No reparamos motos, vehículos comerciales pesados ni diesel. Nos especializamos en automóviles de gasolina."
+    },
+    {
+      "cliente": "Tengo una moto que necesita reparación. ¿Puedo traerla?",
+      "tipo": "seguimiento",
+      "accion": "responder",
+      "claves": ["NO reparamos motos"],
+      "evidencia": "NO reparamos motos",
+      "respuesta_ideal": "Lo sentimos, no reparamos motos. Estamos especializados en automóviles de gasolina."
+    }
+  ],
+  [
+    {
+      "cliente": "¿A qué hora abren?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["7:00 a.m."],
+      "evidencia": "Lunes a viernes: 7:00 a.m. – 6:00 p.m.",
+      "respuesta_ideal": "Abrimos a las 7:00 a.m. de lunes a viernes, y sábados a las 8:00 a.m."
+    },
+    {
+      "cliente": "¿Trabajan los domingos?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["Domingos y feriados: CERRADO"],
+      "evidencia": "Domingos y feriados: CERRADO",
+      "respuesta_ideal": "No, estamos cerrados domingos y feriados."
+    },
+    {
+      "cliente": "¿Puedo pasar a las 12:30 a.m. sin cita?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["Cierre por almuerzo: 12:00 – 1:00 p.m."],
+      "evidencia": "Cierre por almuerzo: 12:00 – 1:00 p.m.",
+      "respuesta_ideal": "No, de 12:00 a 1:00 p.m. cerramos por almuerzo. Mejor llama para agendar cita."
+    },
+    {
+      "cliente": "¿Cuánto tiempo se demora un diagnóstico?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["Diagnóstico computarizado: $150.000"],
+      "evidencia": "Diagnóstico computarizado: $150.000 (incluye reporte)",
+      "respuesta_ideal": "El diagnóstico computarizado cuesta $150.000 e incluye un reporte. El tiempo depende de cada caso."
+    }
+  ],
+  [
+    {
+      "cliente": "¿Hacen reparación de aire acondicionado?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["Recarga de aire acondicionado"],
+      "evidencia": "Recarga de aire acondicionado: $320.000 con prueba incluida",
+      "respuesta_ideal": "Sí, hacemos recarga de aire acondicionado por $320.000 con prueba incluida."
+    },
+    {
+      "cliente": "¿Cuánta garantía dan en el trabajo?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["3 meses en mano de obra", "6 meses en piezas originales"],
+      "evidencia": "GARANTÍA\n3 meses en mano de obra | 6 meses en piezas originales | 3 meses en piezas genéricas",
+      "respuesta_ideal": "Garantía de 3 meses en mano de obra, 6 meses en piezas originales y 3 meses en piezas genéricas."
+    },
+    {
+      "cliente": "Mi carro no enciende. ¿Cuánto cuesta arreglarlo?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No puedo decirte el costo sin revisar el carro. Trae el vehículo y hacemos un diagnóstico. Llamá al (4) 3660-2847 para agendar."
+    },
+    {
+      "cliente": "¿Si traigo piezas nuevas, ustedes las instalan?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["Realizamos trabajos con piezas que trae el cliente"],
+      "evidencia": "Realizamos trabajos con piezas que trae el cliente",
+      "respuesta_ideal": "Sí, claro. Realizamos trabajos con piezas que el cliente trae."
+    }
+  ],
+  [
+    {
+      "cliente": "¿Hacen alineación de llantas?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["Alineación y balanceo (4 llantas): $320.000"],
+      "evidencia": "Alineación y balanceo (4 llantas): $320.000",
+      "respuesta_ideal": "Sí, alineación y balanceo de 4 llantas por $320.000."
+    },
+    {
+      "cliente": "¿Qué pasa si pido un trabajo que no saben hacer?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "Es mejor que preguntes directamente. Llamá al (4) 3660-2847 y describe lo que necesitas. El personal te dirá si pueden hacerlo."
+    },
+    {
+      "cliente": "¿Cuál es el especialista en transmisiones?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["Carlos Puertas", "transmisiones y cajas automáticas"],
+      "evidencia": "Carlos Puertas — Especialista en transmisiones y cajas automáticas",
+      "respuesta_ideal": "Carlos Puertas es el especialista en transmisiones y cajas automáticas."
+    },
+    {
+      "cliente": "¿Dónde están ubicados?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["Carrera 48 #34-12", "Barrio Laureles", "Medellín"],
+      "evidencia": "Carrera 48 #34-12, Barrio Laureles — Medellín",
+      "respuesta_ideal": "Estamos en Carrera 48 #34-12, Barrio Laureles, Medellín. Tenemos parqueadero propio."
+    }
+  ]
+]

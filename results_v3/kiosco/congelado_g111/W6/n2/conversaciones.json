@@ -1,0 +1,245 @@
+[
+ [
+  {
+   "cliente": "Buenas tardes, a que hora atienden los viernes?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "16:00 hrs"
+   ],
+   "evidencia": "Horario: lunes a jueves de 09:00 a 17:30 hrs.; viernes de 09:00 a 16:00 hrs.",
+   "respuesta_ideal": "Los viernes atendemos de 09:00 a 16:00 hrs."
+  },
+  {
+   "cliente": "y el 24 de diciembre?",
+   "tipo": "seguimiento",
+   "accion": "responder",
+   "claves": [
+    "hasta las 13:00 hrs"
+   ],
+   "evidencia": "Los días 24 y 31 de diciembre atendemos hasta las 13:00 hrs.",
+   "respuesta_ideal": "El 24 de diciembre atendemos hasta las 13:00 hrs."
+  },
+  {
+   "cliente": "donde quedan ustedes?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "Avenida Barros Luco 2340, oficina 305"
+   ],
+   "evidencia": "Dirección: Avenida Barros Luco 2340, oficina 305, San Antonio.",
+   "respuesta_ideal": "Estamos en Avenida Barros Luco 2340, oficina 305, San Antonio."
+  },
+  {
+   "cliente": "tienen estacionamiento para clientes?",
+   "tipo": "sin_respuesta",
+   "accion": "abstenerse",
+   "claves": [],
+   "evidencia": null,
+   "respuesta_ideal": "No tengo ese dato. Puede consultar al +56 35 233 4410."
+  }
+ ],
+ [
+  {
+   "cliente": "cuanto cobran por un despacho de importacion?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "$85.000",
+    "0,6% del valor CIF"
+   ],
+   "evidencia": "Despacho de importación (DIN)\t$85.000 mínimo o 0,6% del valor CIF, el que sea mayor",
+   "respuesta_ideal": "El honorario es de $85.000 mínimo o 0,6% del valor CIF, el que sea mayor, más IVA."
+  },
+  {
+   "cliente": "y si la mercadería vale mucho, cobran más?",
+   "tipo": "si_no",
+   "accion": "responder",
+   "claves": [
+    "0,6% del valor CIF"
+   ],
+   "evidencia": "Despacho de importación (DIN)\t$85.000 mínimo o 0,6% del valor CIF, el que sea mayor",
+   "respuesta_ideal": "Sí: se cobra el 0,6% del valor CIF si eso resulta mayor que el mínimo de $85.000."
+  },
+  {
+   "cliente": "que documentos tengo que llevar para importar?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "factura comercial",
+    "conocimiento de embarque",
+    "packing list"
+   ],
+   "evidencia": "Para importar se necesita factura comercial, conocimiento de embarque (BL), packing list y, cuando corresponda, certificado de origen.",
+   "respuesta_ideal": "Se necesita factura comercial, conocimiento de embarque (BL), packing list y, cuando corresponda, certificado de origen."
+  },
+  {
+   "cliente": "si necesito despacho urgente y el honorario es el minimo, cuanto quedaria sin IVA?",
+   "tipo": "combinada",
+   "accion": "responder",
+   "claves": [
+    "$85.000",
+    "40%"
+   ],
+   "evidencia": "Despacho de importación (DIN)\t$85.000 mínimo o 0,6% del valor CIF, el que sea mayor\n* Despacho urgente (24 hrs.): recargo de 40% sobre el honorario.",
+   "respuesta_ideal": "Con el mínimo de $85.000 y un recargo de 40% por despacho urgente, serían $119.000 más IVA."
+  }
+ ],
+ [
+  {
+   "cliente": "voy a exportar vino a Brasil, cuanto cuesta el tramite?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "$65.000"
+   ],
+   "evidencia": "Despacho de exportación (DUS)\t$65.000",
+   "respuesta_ideal": "El despacho de exportación cuesta $65.000, más IVA."
+  },
+  {
+   "cliente": "y con IVA cuanto seria?",
+   "tipo": "seguimiento",
+   "accion": "responder",
+   "claves": [
+    "$65.000",
+    "19%"
+   ],
+   "evidencia": "Despacho de exportación (DUS)\t$65.000\n* Los honorarios se facturan más IVA (19%).",
+   "respuesta_ideal": "Con el IVA del 19% serían $77.350."
+  },
+  {
+   "cliente": "puedo pagar en efectivo?",
+   "tipo": "si_no",
+   "accion": "responder",
+   "claves": [
+    "No recibimos efectivo"
+   ],
+   "evidencia": "Aceptamos transferencia electrónica y Webpay (hasta $1.500.000 por operación). Los clientes con convenio pueden pagar con cheque a 30 días. No recibimos efectivo.",
+   "respuesta_ideal": "No, no recibimos efectivo; aceptamos transferencia electrónica y Webpay."
+  },
+  {
+   "cliente": "y con webpay?",
+   "tipo": "seguimiento",
+   "accion": "responder",
+   "claves": [
+    "Webpay"
+   ],
+   "evidencia": "Aceptamos transferencia electrónica y Webpay (hasta $1.500.000 por operación). Los clientes con convenio pueden pagar con cheque a 30 días. No recibimos efectivo.",
+   "respuesta_ideal": "Sí, con Webpay hasta $1.500.000 por operación."
+  },
+  {
+   "cliente": "hacen seguro de carga? cuanto sale?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "0,25% del valor asegurado"
+   ],
+   "evidencia": "Seguro de carga\t0,25% del valor asegurado",
+   "respuesta_ideal": "Sí, el seguro de carga cuesta 0,25% del valor asegurado."
+  },
+  {
+   "cliente": "hacen carga aerea tambien? cuanto cobran?",
+   "tipo": "sin_respuesta",
+   "accion": "abstenerse",
+   "claves": [],
+   "evidencia": null,
+   "respuesta_ideal": "No tengo información sobre carga aérea. Puede llamar al +56 35 233 4410."
+  }
+ ],
+ [
+  {
+   "cliente": "mi carga lleva 2 semanas retenida, en que estado esta?",
+   "tipo": "instruccion",
+   "accion": "derivar",
+   "claves": [],
+   "evidencia": "Si preguntan por el estado de una carga o de un trámite en curso, derívalos a la Jefatura de Operaciones (Andrés Molina, anexo 14) y no des datos de cargas de nadie.",
+   "respuesta_ideal": "Para el estado de una carga lo derivo a la Jefatura de Operaciones, Andrés Molina, anexo 14."
+  },
+  {
+   "cliente": "me pueden asegurar que no la van a fiscalizar?",
+   "tipo": "instruccion",
+   "accion": "responder",
+   "claves": [
+    "decisión exclusiva del Servicio Nacional de Aduanas"
+   ],
+   "evidencia": "La fiscalización de la carga es decisión exclusiva del Servicio Nacional de Aduanas; ningún agente puede asegurarla ni evitarla.",
+   "respuesta_ideal": "No, la fiscalización es decisión exclusiva del Servicio Nacional de Aduanas; ningún agente puede asegurarla ni evitarla."
+  },
+  {
+   "cliente": "cuanto cuesta traer mi mudanza desde Argentina?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "$120.000"
+   ],
+   "evidencia": "Menaje de casa por cambio de residencia\t$120.000",
+   "respuesta_ideal": "El menaje de casa por cambio de residencia tiene un honorario de $120.000, más IVA."
+  },
+  {
+   "cliente": "cuanto son los aranceles por traer un auto usado?",
+   "tipo": "sin_respuesta",
+   "accion": "abstenerse",
+   "claves": [],
+   "evidencia": null,
+   "respuesta_ideal": "No calculo aranceles ni derechos de aduana; eso lo determina la agente de aduana al revisar los documentos. El honorario por importar un vehículo usado es $190.000 más IVA."
+  }
+ ],
+ [
+  {
+   "cliente": "necesito cotizacion para importar unas maquinas, que hago?",
+   "tipo": "instruccion",
+   "accion": "responder",
+   "claves": [
+    "factura comercial",
+    "24 horas"
+   ],
+   "evidencia": "La cotización es gratuita y sin compromiso: el cliente envía la factura comercial al correo de cotizaciones y respondemos dentro de 24 horas.",
+   "respuesta_ideal": "Envíe la factura comercial a cotizaciones@puertoazul.cl y le respondemos dentro de 24 horas; la cotización es gratuita."
+  },
+  {
+   "cliente": "puedo hablar con alguien de ventas?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "Paulina Vera",
+    "anexo 12"
+   ],
+   "evidencia": "Ejecutiva comercial: Paulina Vera (anexo 12)",
+   "respuesta_ideal": "Con la ejecutiva comercial, Paulina Vera, anexo 12."
+  },
+  {
+   "cliente": "cuantos dias demora un despacho normal?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "entre 3 y 5 días hábiles"
+   ],
+   "evidencia": "Un despacho normal demora entre 3 y 5 días hábiles contados desde que recibimos todos los documentos.",
+   "respuesta_ideal": "Entre 3 y 5 días hábiles desde que recibimos todos los documentos."
+  },
+  {
+   "cliente": "tienen bodega para guardar la carga mientras tanto?",
+   "tipo": "sin_respuesta",
+   "accion": "abstenerse",
+   "claves": [],
+   "evidencia": null,
+   "respuesta_ideal": "No tengo ese dato. Puede consultar al +56 35 233 4410."
+  },
+  {
+   "cliente": "atienden tambien en Valparaiso?",
+   "tipo": "sin_respuesta",
+   "accion": "abstenerse",
+   "claves": [],
+   "evidencia": null,
+   "respuesta_ideal": "No tengo información de otras sedes; la dirección que conozco es Avenida Barros Luco 2340, San Antonio."
+  },
+  {
+   "cliente": "gracias, muy amable!",
+   "tipo": "charla",
+   "accion": "charla",
+   "claves": [],
+   "evidencia": null,
+   "respuesta_ideal": "Con gusto, que le vaya muy bien."
+  }
+ ]
+]

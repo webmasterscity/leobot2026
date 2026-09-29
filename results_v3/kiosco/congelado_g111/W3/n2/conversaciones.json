@@ -1,0 +1,160 @@
+[
+  [
+    {
+      "cliente": "Hola, me duele mucho la espalda baja. ¿Qué me cobran por la primera visita?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["150 soles", "evaluación completa"],
+      "evidencia": "Atención inicial (primera cita) — 150 soles. Incluye evaluación completa, pruebas de movimiento, diagnóstico preliminar e informe.",
+      "respuesta_ideal": "La primera consulta cuesta 150 soles e incluye evaluación completa, pruebas de movimiento y un diagnóstico preliminar."
+    },
+    {
+      "cliente": "¿Cuánto cuesta cada sesión después de eso?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["120 soles", "sesiones de fisioterapia"],
+      "evidencia": "Sesiones de fisioterapia — 120 soles / sesión",
+      "respuesta_ideal": "Las sesiones de fisioterapia cuestan 120 soles cada una."
+    },
+    {
+      "cliente": "¿Hay descuento si pago varias sesiones de una vez?",
+      "tipo": "combinada",
+      "accion": "responder",
+      "claves": ["10 sesiones", "1050 soles", "5 % descuento"],
+      "evidencia": "- Paquete básico: 10 sesiones de fisioterapia — 1050 soles (5 % descuento; válido 3 meses)",
+      "respuesta_ideal": "Sí, si compras 10 sesiones de una vez son 1050 soles, lo que te sale a 105 soles por sesión (5% off)."
+    }
+  ],
+  [
+    {
+      "cliente": "Mi hijo se lastimó la rodilla jugando fútbol. ¿Pueden atenderlo?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["menores", "especialista pediátrico"],
+      "evidencia": "- Menores: se atienden de lunes a viernes, 3 p. m. a 6 p. m. (especialista pediátrico disponible).",
+      "respuesta_ideal": "Sí, atendemos menores de lunes a viernes de 3 a 6 p. m. Tenemos un especialista pediátrico."
+    },
+    {
+      "cliente": "¿Cuántas sesiones necesitaría más o menos?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "Eso lo determina el especialista después de evaluar a tu hijo. Llama para agendar la primera cita y ahí te dicen cuántas sesiones estima."
+    }
+  ],
+  [
+    {
+      "cliente": "Soy deportista. ¿Hacen preparación deportiva?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["medicina deportiva", "Rodrigo Paz", "preparación"],
+      "evidencia": "- Especialista en Medicina Deportiva — Lic. Rodrigo Paz (atletas, prevención de lesiones)",
+      "respuesta_ideal": "Sí, tenemos un especialista en medicina deportiva. Se llama Rodrigo Paz y trabaja con atletas para prevención y preparación."
+    },
+    {
+      "cliente": "¿Cuánto cuesta la sesión con él?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["180 soles", "terapia de movimiento avanzada"],
+      "evidencia": "Terapia de movimiento avanzada — 180 soles / sesión. Para casos complejos o deportistas: incluye evaluación biomecánica, trabajo postural, entrenamiento de fuerza dirigido.",
+      "respuesta_ideal": "Las sesiones de terapia avanzada con él salen 180 soles e incluyen evaluación biomecánica y entrenamiento de fuerza."
+    },
+    {
+      "cliente": "¿Hay paquete para deportistas?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["850 soles", "5 sesiones terapia avanzada", "2 masajes", "10 %"],
+      "evidencia": "- Paquete deportivo: 5 sesiones terapia avanzada + 2 masajes — 850 soles (10 % desc.; válido 4 meses)",
+      "respuesta_ideal": "Sí, el paquete deportivo tiene 5 sesiones de terapia avanzada más 2 masajes deportivos por 850 soles (10% descuento, válido 4 meses)."
+    }
+  ],
+  [
+    {
+      "cliente": "¿Atienden a embarazadas?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["embarazadas", "prenatal y postnatal", "especialista certificada"],
+      "evidencia": "- Embarazadas: fisioterapia prenatal y postnatal con especialista certificada.",
+      "respuesta_ideal": "Sí, tenemos fisioterapia para embarazadas, tanto prenatal como postnatal, con una especialista certificada."
+    },
+    {
+      "cliente": "¿Cuánto cuesta la sesión prenatal?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No tengo el precio específico de eso. Llama al +51 1 242-9016 para que te den los detalles."
+    }
+  ],
+  [
+    {
+      "cliente": "Tengo seguro Mapfre. ¿Ustedes aceptan?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["Mapfre", "aceptamos"],
+      "evidencia": "Aceptamos: Clínica San Felipe, Póliza Salud S.A., Mapfre, Prima AFP, y pago directo.",
+      "respuesta_ideal": "Sí, trabajamos con Mapfre. Avisa cuando agendes para que verifiquemos tu cobertura exacta."
+    },
+    {
+      "cliente": "¿Cuál es el horario de atención?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["8:00 a. m. a 7:00 p. m.", "Sábados: 9:00 a. m. a 2:00 p. m.", "cerrado domingos"],
+      "evidencia": "Horarios\nLunes a viernes: 8:00 a. m. a 7:00 p. m.\nSábados: 9:00 a. m. a 2:00 p. m.\nCerrado: domingos y feriados nacionales",
+      "respuesta_ideal": "Lunes a viernes de 8 a. m. a 7 p. m., sábados de 9 a. m. a 2 p. m. Cerrado domingos y feriados."
+    }
+  ],
+  [
+    {
+      "cliente": "¿Hay estacionamiento?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["estacionamiento", "lote privado", "5 soles"],
+      "evidencia": "Ubicados a media cuadra de la estación de Metropolitano \"Arcadia\". Estacionamiento en lote privado: 5 soles la hora.",
+      "respuesta_ideal": "Sí, tenemos lote privado que cuesta 5 soles la hora. También puedes dejar el auto en la puerta para descargar."
+    },
+    {
+      "cliente": "¿Se puede hacer una cita de fisio el próximo lunes a las 4 p.m.?",
+      "tipo": "instruccion",
+      "accion": "derivar",
+      "claves": [],
+      "evidencia": "Cuando alguien pregunte por disponibilidad o quiera agendar, no prometas directamente. Di: 'Puedo anotar tu consulta, pero debes confirmar con nuestro sistema. Mejor llama al +51 1 242-9016 o manda WhatsApp al +51 987-645-321 para confirmar tu horario'.",
+      "respuesta_ideal": "Claro, puedo anotar tu preferencia. Pero para confirmar el horario, llama al +51 1 242-9016 o manda WhatsApp al +51 987-645-321."
+    }
+  ],
+  [
+    {
+      "cliente": "Buenas. ¿Hacen masaje terapéutico?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["Masaje deportivo", "100 soles", "30 minutos"],
+      "evidencia": "Masaje deportivo — 100 soles / sesión. Preparación previa a competencias, recuperación muscular post-entrenamiento. Sesión de 30 minutos.",
+      "respuesta_ideal": "Sí, hacemos masaje deportivo a 100 soles la sesión de 30 minutos. Sirve para preparación o recuperación muscular."
+    },
+    {
+      "cliente": "¿Necesito agendar o puedo llegar sin cita?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "Mejor agenda con anticipación para garantizar disponibilidad. Llama al +51 1 242-9016 o WhatsApp +51 987-645-321."
+    },
+    {
+      "cliente": "¿Qué pasa si debo cancelar mi cita?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["24 horas antes", "no hay cargo"],
+      "evidencia": "Cancelación: si cancelas 24 horas antes, no hay cargo; menos de eso, pierdes la sesión.",
+      "respuesta_ideal": "Si cancelas con 24 horas de anticipación, no te cobran. Si es menos tiempo, pierdes la sesión."
+    },
+    {
+      "cliente": "Gracias, muy útil.",
+      "tipo": "charla",
+      "accion": "charla",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "De nada. Si tienes más preguntas, no dudes en llamar. Estamos en Arequipa 2847, Miraflores."
+    }
+  ]
+]

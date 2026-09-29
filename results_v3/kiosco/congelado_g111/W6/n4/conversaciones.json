@@ -1,0 +1,268 @@
+[
+ [
+  {
+   "cliente": "hola! cuanto sale el suv montaña?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "U$S 27.800"
+   ],
+   "evidencia": "SUV Montaña 2.0 | U$S 27.800",
+   "respuesta_ideal": "El SUV Montaña 2.0 cuesta U$S 27.800."
+  },
+  {
+   "cliente": "y la pick up?",
+   "tipo": "seguimiento",
+   "accion": "responder",
+   "claves": [
+    "U$S 34.500"
+   ],
+   "evidencia": "Pick-up Rural 4x4 | U$S 34.500",
+   "respuesta_ideal": "La Pick-up Rural 4x4 cuesta U$S 34.500."
+  },
+  {
+   "cliente": "el precio incluye la patente?",
+   "tipo": "si_no",
+   "accion": "responder",
+   "claves": [
+    "no incluyen"
+   ],
+   "evidencia": "Los precios de lista no incluyen los gastos de patente y empadronamiento.",
+   "respuesta_ideal": "No, los precios de lista no incluyen los gastos de patente y empadronamiento."
+  },
+  {
+   "cliente": "vi el mismo modelo en otra concesionaria mas barato, me pueden hacer descuento?",
+   "tipo": "instruccion",
+   "accion": "derivar",
+   "claves": [],
+   "evidencia": "No des descuentos ni negocies precios: si el cliente pide una rebaja, derívalo al gerente comercial, Sr. Gonzalo Techera, que es quien los define.",
+   "respuesta_ideal": "Los descuentos los define el gerente comercial, el Sr. Gonzalo Techera; lo derivo con él."
+  },
+  {
+   "cliente": "se puede financiar?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "anticipo mínimo del 30%",
+    "hasta 60 cuotas"
+   ],
+   "evidencia": "Financiación en dólares: anticipo mínimo del 30% y hasta 60 cuotas, sujeta a aprobación de la asesora de financiación.",
+   "respuesta_ideal": "Sí, con anticipo mínimo del 30% y hasta 60 cuotas, sujeta a aprobación."
+  },
+  {
+   "cliente": "y con que tasa de interes?",
+   "tipo": "sin_respuesta",
+   "accion": "abstenerse",
+   "claves": [],
+   "evidencia": null,
+   "respuesta_ideal": "No tengo el dato de la tasa. La asesora de financiación es la Cra. Valeria Olivera; puede escribir al WhatsApp 099 123 456."
+  },
+  {
+   "cliente": "si el sedan urbano sale lo de lista y doy el anticipo minimo, cuanto quedaria para financiar?",
+   "tipo": "combinada",
+   "accion": "responder",
+   "claves": [
+    "U$S 16.900",
+    "30%"
+   ],
+   "evidencia": "Sedán Urbano 1.4 | U$S 16.900\nFinanciación en dólares: anticipo mínimo del 30% y hasta 60 cuotas, sujeta a aprobación de la asesora de financiación.",
+   "respuesta_ideal": "El Sedán Urbano cuesta U$S 16.900; con un anticipo de 30% quedarían U$S 11.830 para financiar."
+  }
+ ],
+ [
+  {
+   "cliente": "quiero hacer una prueba de manejo, que necesito llevar?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "cédula de identidad",
+    "libreta de conducir vigente"
+   ],
+   "evidencia": "Para probar un vehículo se necesita cédula de identidad y libreta de conducir vigente.",
+   "respuesta_ideal": "Necesita cédula de identidad y libreta de conducir vigente."
+  },
+  {
+   "cliente": "tengo 19 años, puedo probarlo?",
+   "tipo": "si_no",
+   "accion": "responder",
+   "claves": [
+    "Edad mínima: 21 años"
+   ],
+   "evidencia": "Edad mínima: 21 años.",
+   "respuesta_ideal": "No, la edad mínima para la prueba de manejo es de 21 años."
+  },
+  {
+   "cliente": "puedo llevarme el auto un fin de semana completo para probarlo?",
+   "tipo": "sin_respuesta",
+   "accion": "abstenerse",
+   "claves": [],
+   "evidencia": null,
+   "respuesta_ideal": "No tengo ese dato. Puede consultar al 2600 4455."
+  }
+ ],
+ [
+  {
+   "cliente": "a que hora abren los sabados?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "9:00 a 13:00"
+   ],
+   "evidencia": "Salón de ventas: lunes a viernes de 9:00 a 19:00; sábados de 9:00 a 13:00.",
+   "respuesta_ideal": "El salón de ventas abre los sábados de 9:00 a 13:00."
+  },
+  {
+   "cliente": "y el taller?",
+   "tipo": "seguimiento",
+   "accion": "responder",
+   "claves": [
+    "sábados cerrado"
+   ],
+   "evidencia": "Taller: lunes a viernes de 8:00 a 17:00; sábados cerrado.",
+   "respuesta_ideal": "El taller atiende de lunes a viernes de 8:00 a 17:00 y los sábados está cerrado."
+  },
+  {
+   "cliente": "cuanto cuesta un cambio de aceite?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "$U 4.200"
+   ],
+   "evidencia": "Cambio de aceite y filtro | $U 4.200",
+   "respuesta_ideal": "El cambio de aceite y filtro cuesta $U 4.200."
+  },
+  {
+   "cliente": "y el service de los 10.000?",
+   "tipo": "seguimiento",
+   "accion": "responder",
+   "claves": [
+    "$U 6.900"
+   ],
+   "evidencia": "Servicio de 10.000 km | $U 6.900",
+   "respuesta_ideal": "El servicio de 10.000 km cuesta $U 6.900."
+  },
+  {
+   "cliente": "si hago el de 10.000 km y ademas alineacion y balanceo, cuanto pago?",
+   "tipo": "combinada",
+   "accion": "responder",
+   "claves": [
+    "$U 6.900",
+    "$U 1.800"
+   ],
+   "evidencia": "Servicio de 10.000 km | $U 6.900\nAlineación y balanceo | $U 1.800",
+   "respuesta_ideal": "Serían $U 8.700 en total ($U 6.900 más $U 1.800)."
+  },
+  {
+   "cliente": "hacen service de frenos? cuanto sale?",
+   "tipo": "sin_respuesta",
+   "accion": "abstenerse",
+   "claves": [],
+   "evidencia": null,
+   "respuesta_ideal": "No tengo ese servicio ni su precio en mi información. Puede escribir al WhatsApp 099 123 456."
+  }
+ ],
+ [
+  {
+   "cliente": "compre un auto hace un mes y hace un ruido raro en el motor, esta en garantia?",
+   "tipo": "instruccion",
+   "accion": "derivar",
+   "claves": [],
+   "evidencia": "Si preguntan por un problema con un vehículo ya comprado o por un reclamo de garantía, derívalos al jefe de taller, Sr. Ramiro Pintos.",
+   "respuesta_ideal": "Para un reclamo de garantía lo derivo al jefe de taller, el Sr. Ramiro Pintos."
+  },
+  {
+   "cliente": "cuanto dura la garantia de un 0 km?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "3 años o 100.000 km"
+   ],
+   "evidencia": "0 km: 3 años o 100.000 km, lo que ocurra primero. Usados: 6 meses o 10.000 km en motor y caja.",
+   "respuesta_ideal": "Son 3 años o 100.000 km, lo que ocurra primero."
+  },
+  {
+   "cliente": "y la de los usados?",
+   "tipo": "seguimiento",
+   "accion": "responder",
+   "claves": [
+    "6 meses o 10.000 km"
+   ],
+   "evidencia": "0 km: 3 años o 100.000 km, lo que ocurra primero. Usados: 6 meses o 10.000 km en motor y caja.",
+   "respuesta_ideal": "Los usados tienen 6 meses o 10.000 km en motor y caja."
+  }
+ ],
+ [
+  {
+   "cliente": "quiero vender mi auto, me lo toman?",
+   "tipo": "instruccion",
+   "accion": "responder",
+   "claves": [
+    "marca, modelo, año y kilometraje"
+   ],
+   "evidencia": "Si alguien quiere vender o tasar su usado, pídele marca, modelo, año y kilometraje, y dile que la tasación final se hace en persona.",
+   "respuesta_ideal": "Con el plan canje recibimos su usado como parte de pago. Indíqueme marca, modelo, año y kilometraje; la tasación final se hace en persona."
+  },
+  {
+   "cliente": "cuanto tarda la tasacion?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "30 minutos"
+   ],
+   "evidencia": "La tasación es gratuita y demora unos 30 minutos.",
+   "respuesta_ideal": "La tasación es gratuita y demora unos 30 minutos."
+  },
+  {
+   "cliente": "puedo reservar hoy el sedan urbano azul?",
+   "tipo": "instruccion",
+   "accion": "derivar",
+   "claves": [],
+   "evidencia": "No confirmes que un vehículo está disponible ni lo reserves, porque el stock cambia cada día; sugiere consultar por teléfono al 2600 4455.",
+   "respuesta_ideal": "No puedo reservar ni confirmar disponibilidad porque el stock cambia cada día; consulte por teléfono al 2600 4455."
+  },
+  {
+   "cliente": "y cuanto es la seña?",
+   "tipo": "seguimiento",
+   "accion": "responder",
+   "claves": [
+    "U$S 500"
+   ],
+   "evidencia": "Seña de reserva: U$S 500, reembolsable dentro de las 48 horas.",
+   "respuesta_ideal": "La seña de reserva es de U$S 500, reembolsable dentro de las 48 horas."
+  },
+  {
+   "cliente": "aceptan tarjeta de credito?",
+   "tipo": "si_no",
+   "accion": "responder",
+   "claves": [
+    "hasta en 6 cuotas sin recargo"
+   ],
+   "evidencia": "También se puede pagar por transferencia, cheque diferido o tarjeta de crédito hasta en 6 cuotas sin recargo.",
+   "respuesta_ideal": "Sí, con tarjeta de crédito hasta en 6 cuotas sin recargo."
+  },
+  {
+   "cliente": "tienen autos electricos?",
+   "tipo": "sin_respuesta",
+   "accion": "abstenerse",
+   "claves": [],
+   "evidencia": null,
+   "respuesta_ideal": "No tengo ese dato en mi información. Puede escribir al WhatsApp 099 123 456."
+  },
+  {
+   "cliente": "cuantos kilometros tiene el usado que vi en la web?",
+   "tipo": "sin_respuesta",
+   "accion": "abstenerse",
+   "claves": [],
+   "evidencia": null,
+   "respuesta_ideal": "No tengo el detalle de cada usado. Puede escribir al WhatsApp 099 123 456."
+  },
+  {
+   "cliente": "muchas gracias, buenas tardes",
+   "tipo": "charla",
+   "accion": "charla",
+   "claves": [],
+   "evidencia": null,
+   "respuesta_ideal": "Gracias a usted, buenas tardes."
+  }
+ ]
+]

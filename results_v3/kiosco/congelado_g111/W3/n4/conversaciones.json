@@ -1,0 +1,162 @@
+[
+  [
+    {
+      "cliente": "Necesito un escritorio personalizado para mi oficina. ¿Cuánto cuesta?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["$350.000", "mínimo presupuesto", "presupuesto exacto"],
+      "evidencia": "Mínimo presupuesto: $350.000 (CLP). Plazo estándar: 4-6 semanas.",
+      "respuesta_ideal": "El costo depende del tamaño, material y diseño. El mínimo es $350.000. Para un presupuesto exacto, necesitamos una consulta de diseño gratuita donde vemos tus necesidades."
+    },
+    {
+      "cliente": "¿La consulta cuesta algo?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["gratuita", "45 minutos", "sin compromiso"],
+      "evidencia": "Consulta de diseño (gratuita, 45 minutos)",
+      "respuesta_ideal": "No, es completamente gratuita. Dura 45 minutos y sin ningún compromiso de tu parte."
+    },
+    {
+      "cliente": "¿Cuánto tiempo tarda en hacerlo?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["4-6 semanas", "plazo estándar"],
+      "evidencia": "Plazo estándar: 4-6 semanas.",
+      "respuesta_ideal": "El plazo estándar es 4 a 6 semanas desde que firmas el contrato."
+    }
+  ],
+  [
+    {
+      "cliente": "Quiero un comedor en roble macizo. ¿Es muy caro?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["roble", "+40%", "madera nativa"],
+      "evidencia": "- Madera nativa (roble, ñadi, lingüe): +40% sobre precio base",
+      "respuesta_ideal": "El roble es madera nativa, así que cuesta 40% más que el precio base. Pero es muy bonito y duradero. La consulta es gratis y ahí te damos el costo exacto."
+    },
+    {
+      "cliente": "¿Qué otras maderas tienen?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["pino", "roble", "ñadi", "lingüe", "nogal", "cedro", "laurel"],
+      "evidencia": "Maderas: Pino, Roble, Ñadi, Lingüe, Nogal, Cedro, Laurel.",
+      "respuesta_ideal": "Tenemos pino, roble, ñadi, lingüe, nogal, cedro y laurel. Las nativas cuestan más, el pino es la más económica."
+    }
+  ],
+  [
+    {
+      "cliente": "Mi apartamento es pequeño. ¿Pueden hacer algo a medida que me ahorre espacio?",
+      "tipo": "sin_respuesta",
+      "accion": "responder",
+      "claves": ["consulta de diseño", "diseñador"],
+      "evidencia": "Visitamos tu espacio o recibes un diseñador en nuestro taller. Proponemos materiales, estilos y presupuesto.",
+      "respuesta_ideal": "Claro, eso es exactamente lo que hacemos. Un diseñador va a tu casa, ve el espacio y propone soluciones a medida. La consulta es gratis."
+    },
+    {
+      "cliente": "¿Puedo cambiar el diseño después de comenzar la fabricación?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["2 cambios sin costo", "$25.000 c/u", "posteriores"],
+      "evidencia": "Modificaciones: hasta 2 cambios en diseño sin costo adicional. Cambios posteriores: $25.000 c/u.",
+      "respuesta_ideal": "Puedes cambiar el diseño 2 veces sin costo. Después de eso, cada cambio te cuesta $25.000 adicionales."
+    }
+  ],
+  [
+    {
+      "cliente": "¿Incluye entrega?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["incluido en muebles", "región del Maule"],
+      "evidencia": "Incluido en muebles de fabricación propia, si están dentro de la región del Maule.",
+      "respuesta_ideal": "Sí, la entrega está incluida si vives dentro de la región del Maule. Si es fuera, hay un costo adicional."
+    },
+    {
+      "cliente": "¿Cuánto es fuera de la región?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["$15.000-45.000", "según distancia"],
+      "evidencia": "Para fuera de la región: $15.000-45.000 según distancia.",
+      "respuesta_ideal": "Entre $15.000 y $45.000 dependiendo de qué tan lejos vivas."
+    }
+  ],
+  [
+    {
+      "cliente": "¿Qué garantía dan?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["estructura: 5 años", "acabados y tapices: 2 años", "defectos de fabricación"],
+      "evidencia": "Garantía. Estructura: 5 años. Acabados y tapices: 2 años. Cubren defectos de fabricación, no uso ni accidentes.",
+      "respuesta_ideal": "La estructura tiene 5 años de garantía. Acabados y tapices, 2 años. Cubre defectos de fabricación, no uso ni accidentes."
+    },
+    {
+      "cliente": "Si me arrepiento, ¿puedo devolver?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["No se hacen devoluciones", "muebles fabricados a medida"],
+      "evidencia": "Devolución: No se hacen devoluciones de muebles fabricados a medida.",
+      "respuesta_ideal": "No, los muebles hechos a medida no se devuelven. Por eso está la consulta gratuita: para que estés seguro del diseño antes de fabricar."
+    }
+  ],
+  [
+    {
+      "cliente": "¿Cuánto hay que pagar por adelantado?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["50% al firmar contrato", "50% a la entrega"],
+      "evidencia": "Anticipo: 50% al firmar contrato. Saldo: 50% a la entrega.",
+      "respuesta_ideal": "Es 50% cuando firmas el contrato y el otro 50% cuando entregamos el mueble."
+    },
+    {
+      "cliente": "¿Aceptan tarjeta de crédito?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["transferencia bancaria", "efectivo", "cheques"],
+      "evidencia": "Efectivo (CLP), transferencia bancaria, cheques (máx. 3 meses). No aceptamos tarjeta de crédito directa; si necesitas, agregamos 3.5% de comisión.",
+      "respuesta_ideal": "Preferimos efectivo, transferencia o cheques. Si es tarjeta, agregamos 3.5% de comisión."
+    }
+  ],
+  [
+    {
+      "cliente": "Tengo un mueble antiguo roto. ¿Lo pueden reparar?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["reparación y restauración", "$45.000"],
+      "evidencia": "Reparación y restauración. Reparamos muebles antiguos, cambiamos tapices, refuerzo de estructuras. Costo: desde $45.000 (consultar por caso específico)",
+      "respuesta_ideal": "Sí, restauramos muebles antiguos. Cuesta desde $45.000, pero depende del caso. Cuéntanos qué necesita."
+    },
+    {
+      "cliente": "¿Cuánto tiempo lleva reparar un sillón?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "Eso depende de lo que haya que hacer. Mejor vienes con el sillón o manda fotos a WhatsApp +56 9 8762-4531 y Roberto, nuestro especialista, te da un plazo exacto."
+    },
+    {
+      "cliente": "¿Pueden cambiar el tapiz de mi sofá?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["cambiamos tapices"],
+      "evidencia": "Reparamos muebles antiguos, cambiamos tapices, refuerzo de estructuras.",
+      "respuesta_ideal": "Sí, cambiamos tapices. Tenemos tela nacional en 30+ colores, cuero sintético y cuero genuino."
+    }
+  ],
+  [
+    {
+      "cliente": "Hola, buenos días. ¿Están abiertos?",
+      "tipo": "charla",
+      "accion": "charla",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "Hola, claro. Estamos abiertos de lunes a viernes 9:30 a.m. a 6 p.m., sábados 10 a.m. a 2 p.m. ¿En qué te podemos ayudar?"
+    },
+    {
+      "cliente": "¿Tienen portafolio de proyectos anteriores?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["200+ proyectos", "www.tallamadera.cl"],
+      "evidencia": "Nuestro portafolio de 200+ proyectos está en www.tallamadera.cl y en nuestras redes sociales.",
+      "respuesta_ideal": "Sí, 200+ proyectos están en www.tallamadera.cl y en nuestras redes. También podemos dar referencias de clientes si lo necesitas."
+    }
+  ]
+]

@@ -1,0 +1,172 @@
+[
+  [
+    {
+      "cliente": "Hola, estoy buscando una chaqueta de invierno.",
+      "tipo": "charla",
+      "accion": "responder",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "Hola, bienvenido a Estilo Nord. Tenemos una buena selección de chaquetas de invierno. ¿Qué talla necesitas?"
+    },
+    {
+      "cliente": "¿Cuánto cuesta aproximadamente una chaqueta de invierno?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["€110–€320"],
+      "evidencia": "Abrigos de invierno: €110–€320",
+      "respuesta_ideal": "Las chaquetas de invierno oscilan entre €110 y €320, dependiendo del modelo y la marca."
+    },
+    {
+      "cliente": "¿Hacen devoluciones?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["Plazo: 30 días desde la compra (con etiqueta)"],
+      "evidencia": "Plazo: 30 días desde la compra (con etiqueta)",
+      "respuesta_ideal": "Sí, aceptamos devoluciones hasta 30 días después de la compra si la prenda tiene etiqueta."
+    },
+    {
+      "cliente": "¿Si compro 3 prendas me hacen descuento?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["a partir de 3 prendas, 10%"],
+      "evidencia": "Descuento por cantidad: a partir de 3 prendas, 10% en total",
+      "respuesta_ideal": "Sí, si compras 3 prendas o más, te hacemos un descuento del 10% sobre el total."
+    }
+  ],
+  [
+    {
+      "cliente": "¿Cuál es el horario de apertura?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["lunes a viernes: 10:00 a 19:00 h", "Sábados: 10:00 a 20:00 h"],
+      "evidencia": "De lunes a viernes: 10:00 a 19:00 h\nSábados: 10:00 a 20:00 h",
+      "respuesta_ideal": "De lunes a viernes abrimos de 10 a 19 horas, y los sábados de 10 a 20 horas."
+    },
+    {
+      "cliente": "¿Y los domingos?",
+      "tipo": "seguimiento",
+      "accion": "responder",
+      "claves": ["Domingos: 11:00 a 19:00 h"],
+      "evidencia": "Domingos: 11:00 a 19:00 h",
+      "respuesta_ideal": "Los domingos abrimos de 11 a 19 horas."
+    },
+    {
+      "cliente": "¿Dónde está la tienda?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["Passeig de Gràcia, 47", "Eixample, Barcelona"],
+      "evidencia": "Passeig de Gràcia, 47 - 3r piso — Eixample, Barcelona 08007",
+      "respuesta_ideal": "Estamos en Passeig de Gràcia 47, 3r piso, en la zona de Eixample."
+    },
+    {
+      "cliente": "¿Hay ascensor?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["Acceso para personas de movilidad reducida: sí (ascensor)"],
+      "evidencia": "Acceso para personas de movilidad reducida: sí (ascensor)",
+      "respuesta_ideal": "Sí, disponemos de ascensor."
+    }
+  ],
+  [
+    {
+      "cliente": "¿Venden ropa de hombre?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["HOMBRE"],
+      "evidencia": "HOMBRE\nCamisetas y polos: €20–€50\nPantalones: €60–€130",
+      "respuesta_ideal": "Sí, tenemos una sección completa de ropa para hombre: camisetas, pantalones, chaquetas, camisas y abrigos."
+    },
+    {
+      "cliente": "¿Cuánto cuesta una camiseta de hombre?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["€20–€50"],
+      "evidencia": "Camisetas y polos: €20–€50",
+      "respuesta_ideal": "Las camisetas y polos de hombre cuestan entre €20 y €50."
+    },
+    {
+      "cliente": "¿Tienen la talla XXL?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "Disponemos de tallas desde XS hasta XXL, pero para confirmar si tenemos tu talla en el modelo que buscas, llama al (+34) 93-476-5234 o visita www.estilonoerd.cat."
+    },
+    {
+      "cliente": "¿Si no me queda bien puedo cambiarla?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["Cambio de talla/color: sin coste adicional"],
+      "evidencia": "Cambio de talla/color: sin coste adicional",
+      "respuesta_ideal": "Sí, puedes cambiarla de talla o color sin coste adicional, siempre que tenga etiqueta y sea dentro de 30 días."
+    }
+  ],
+  [
+    {
+      "cliente": "¿Venden accesorios como bolsos?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["Bolsos y mochilas: €40–€180"],
+      "evidencia": "ACCESORIOS (AMBOS)\nBolsos y mochilas: €40–€180",
+      "respuesta_ideal": "Sí, tenemos bolsos y mochilas entre €40 y €180."
+    },
+    {
+      "cliente": "¿Ofrecen servicio de envoltorio de regalo?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["Envoltura regalo: gratuita en compras > €40"],
+      "evidencia": "Envoltura regalo: gratuita en compras > €40",
+      "respuesta_ideal": "Sí, ofrecemos envoltura de regalo gratuita en compras superiores a €40."
+    },
+    {
+      "cliente": "¿Dónde puedo comprar online?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["www.estilonoerd.cat"],
+      "evidencia": "www.estilonoerd.cat",
+      "respuesta_ideal": "Puedes comprar online en www.estilonoerd.cat. También disponemos de una aplicación móvil que te da -€5 en tu primera compra."
+    },
+    {
+      "cliente": "¿Cobran por el envío online?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["envío gratis a partir de €60"],
+      "evidencia": "Pedidos online: envío gratis a partir de €60",
+      "respuesta_ideal": "Enviamos gratis a partir de €60. Si quieres entrega express en 24 horas, añadimos €12."
+    }
+  ],
+  [
+    {
+      "cliente": "¿Se puede cambiar de talla sin pagar extra?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["Cambio de talla/color: sin coste adicional"],
+      "evidencia": "Cambio de talla/color: sin coste adicional",
+      "respuesta_ideal": "Sí, el cambio de talla es gratuito mientras la prenda tenga etiqueta y sea dentro de 30 días."
+    },
+    {
+      "cliente": "¿Qué tal me va una M?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "Depende de tus preferencias. Disponemos de una tabla de equivalencias de tallas. Para asesoramiento personalizado, puedes llamar al (+34) 93-476-5234."
+    },
+    {
+      "cliente": "¿Tienen faldas?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["Faldas: €45–€95"],
+      "evidencia": "Faldas: €45–€95",
+      "respuesta_ideal": "Sí, tenemos faldas entre €45 y €95."
+    },
+    {
+      "cliente": "¿Puedo devolver una prenda de baño si no me va?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["NO se aceptan devoluciones en prendas de baño"],
+      "evidencia": "NO se aceptan devoluciones en prendas de baño, lencería ni accesorios usados",
+      "respuesta_ideal": "No, no aceptamos devoluciones en prendas de baño. Pero sí en otros artículos dentro de 30 días con etiqueta."
+    }
+  ]
+]

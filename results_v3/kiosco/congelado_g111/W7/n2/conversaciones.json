@@ -1,0 +1,172 @@
+[
+  [
+    {
+      "cliente": "Hola, me gustaría viajar a Cancún. ¿Cuánto cuesta?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["desde $5,800"],
+      "evidencia": "A Cancún (redondo, 3 noches hotel): desde $5,800",
+      "respuesta_ideal": "Contamos con paquetes a Cancún desde $5,800 por persona, incluye vuelo redondo y 3 noches de hotel."
+    },
+    {
+      "cliente": "¿Está incluido el hotel en ese precio?",
+      "tipo": "seguimiento",
+      "accion": "responder",
+      "claves": ["3 noches hotel"],
+      "evidencia": "A Cancún (redondo, 3 noches hotel): desde $5,800",
+      "respuesta_ideal": "Sí, el precio incluye el vuelo redondo y 3 noches de hospedaje."
+    },
+    {
+      "cliente": "¿Para cuándo tienen disponibilidad?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No tengo la disponibilidad de fechas. Te recomiendo que llames al (55) 3600-4528 o envíes un WhatsApp y nuestro equipo te dirá qué fechas están disponibles."
+    },
+    {
+      "cliente": "¿Puedo llevar a mi hijo de 8 años?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["Para menores: acta de nacimiento y autorización de padres"],
+      "evidencia": "Para menores: acta de nacimiento y autorización de padres",
+      "respuesta_ideal": "Sí, pero necesitarás el acta de nacimiento original y una autorización firmada de ambos progenitores."
+    }
+  ],
+  [
+    {
+      "cliente": "¿Hacen viajes a Estados Unidos?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["Nueva York", "Miami", "Orlando"],
+      "evidencia": "VUELOS INTERNACIONALES\nA Nueva York (5 noches): desde $12,000\nA Miami (5 noches): desde $9,200\nA Orlando (4 noches): desde $8,500",
+      "respuesta_ideal": "Sí, ofrecemos viajes a Nueva York desde $12,000, Miami desde $9,200 y Orlando desde $8,500, todos con hospedaje incluido."
+    },
+    {
+      "cliente": "¿Cuál es más barato, Miami u Orlando?",
+      "tipo": "combinada",
+      "accion": "responder",
+      "claves": ["Orlando", "$8,500", "Miami", "$9,200"],
+      "evidencia": "A Miami (5 noches): desde $9,200\nA Orlando (4 noches): desde $8,500",
+      "respuesta_ideal": "Orlando es más barato: $8,500 por 4 noches, mientras que Miami cuesta $9,200 por 5 noches."
+    },
+    {
+      "cliente": "¿Necesito visa para viajar a Miami?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "Los requisitos de visa cambian. Karina Mendez, nuestra agente de documentación, puede asesorarte. Llamá al (55) 3600-4528 y ella te orientará sobre lo que necesitas."
+    },
+    {
+      "cliente": "¿Qué documentos necesito llevar?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["Pasaporte vigente", "6 meses de validez", "Comprobante de domicilio"],
+      "evidencia": "Pasaporte vigente (mínimo 6 meses de validez)\n... Comprobante de domicilio reciente",
+      "respuesta_ideal": "Necesitás pasaporte vigente con al menos 6 meses de validez desde tu fecha de viaje, comprobante de domicilio reciente, y datos bancarios para el reembolso si corresponde."
+    }
+  ],
+  [
+    {
+      "cliente": "¿Tienen luna de miel en Costa Rica?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["Costa Rica, 5 noches, hotel 5 estrellas", "$18,500"],
+      "evidencia": "Viaje de luna de miel (Costa Rica, 5 noches, hotel 5 estrellas): $18,500 por pareja",
+      "respuesta_ideal": "Sí, contamos con paquetes de luna de miel en Costa Rica de 5 noches en hotel 5 estrellas por $18,500 por pareja."
+    },
+    {
+      "cliente": "¿Incluye comida o es solo hospedaje?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No tengo los detalles de qué está incluido en las comidas. Llamá al (55) 3600-4528 y Maria Castillo, especialista en destinos latinoamericanos, podrá darte todos los detalles."
+    },
+    {
+      "cliente": "¿Se puede pagar en cuotas?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["Financiamiento disponible: hasta 6 meses sin interés para paquetes mayores a $10,000"],
+      "evidencia": "Financiamiento disponible: hasta 6 meses sin interés para paquetes mayores a $10,000",
+      "respuesta_ideal": "Sí, hay financiamiento hasta 6 meses sin interés para paquetes mayores a $10,000. Te recomiendo llamar para los detalles."
+    },
+    {
+      "cliente": "¿Qué pasa si necesito cambiar la fecha del viaje?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["$250", "si hay disponibilidad"],
+      "evidencia": "Cambio de fecha en paquete confirmado: $250 (si hay disponibilidad)",
+      "respuesta_ideal": "El cambio de fecha tiene un costo de $250, si hay disponibilidad. Consulta con nuestro equipo para coordinar."
+    }
+  ],
+  [
+    {
+      "cliente": "¿Recomiendan comprar seguro de viaje?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["Se sugiere viajar con seguro de viaje"],
+      "evidencia": "Se sugiere viajar con seguro de viaje",
+      "respuesta_ideal": "Sí, recomendamos viajar con seguro. Contamos con coberturas estándar y premium para protegerte."
+    },
+    {
+      "cliente": "¿Cuánto cuesta el seguro?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["$650", "$1,200"],
+      "evidencia": "Cobertura estándar (viaje hasta USD $5,000): $650\nCobertura premium (viaje hasta USD $10,000): $1,200",
+      "respuesta_ideal": "La cobertura estándar cuesta $650 y cubre hasta USD $5,000. La premium cuesta $1,200 y cubre hasta USD $10,000."
+    },
+    {
+      "cliente": "¿El seguro cubre si me enfermo en el viaje?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No tengo los detalles específicos de cobertura médica. Karina Mendez, nuestra agente de seguros, puede explicarte exactamente qué cubre. Llamá al (55) 3600-4528."
+    }
+  ],
+  [
+    {
+      "cliente": "¿Cuánto cobran por gestionar una visa?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["$1,500"],
+      "evidencia": "Gestión de visa: $1,500",
+      "respuesta_ideal": "La gestión de visa cuesta $1,500. Te recomendamos consultarlo con al menos 30 días de anticipación."
+    },
+    {
+      "cliente": "¿Hacen viajes en grupo?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["Grupo corporativo (mínimo 10 personas): 10 % descuento"],
+      "evidencia": "Grupo corporativo (mínimo 10 personas): 10 % descuento sobre cualquier destino",
+      "respuesta_ideal": "Sí, hacemos viajes en grupo. Con mínimo 10 personas, ofrecemos un descuento del 10% sobre cualquier destino."
+    },
+    {
+      "cliente": "¿A dónde puedo viajar con ese descuento?",
+      "tipo": "seguimiento",
+      "accion": "responder",
+      "claves": ["10 % descuento sobre cualquier destino"],
+      "evidencia": "Grupo corporativo (mínimo 10 personas): 10 % descuento sobre cualquier destino",
+      "respuesta_ideal": "El descuento del 10% aplica a cualquiera de nuestros destinos: nacionales e internacionales."
+    },
+    {
+      "cliente": "¿Cuándo cierran para vacaciones?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["24 de diciembre – 2 de enero"],
+      "evidencia": "Vacaciones: 24 de diciembre – 2 de enero",
+      "respuesta_ideal": "Estamos cerrados del 24 de diciembre al 2 de enero."
+    },
+    {
+      "cliente": "¿Qué pasa si me arrepiento y quiero cancelar el viaje?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["7 días antes de viajar", "80 % del monto pagado"],
+      "evidencia": "Devolución de paquete (7 días antes de viajar): 80 % del monto pagado",
+      "respuesta_ideal": "Si cancelas con 7 días de anticipación, se devuelve el 80% del monto pagado. Después de eso, no hay reembolso."
+    }
+  ]
+]

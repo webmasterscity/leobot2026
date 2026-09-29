@@ -1,0 +1,168 @@
+[
+  [
+    {
+      "cliente": "¿Cuánto cuesta el tour de cascadas?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["95.000 COP", "Cascadas del Río Ñambi"],
+      "evidencia": "Tour Cascadas del Río Ñambi — 95.000 COP / persona",
+      "respuesta_ideal": "El tour de cascadas cuesta 95 mil pesos por persona. Dura 4 horas, incluye guía bilingüe y snacks."
+    },
+    {
+      "cliente": "¿A qué hora sale?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["8 a.m.", "diariamente"],
+      "evidencia": "Sale a las 8 a.m. diariamente.",
+      "respuesta_ideal": "Sale a las 8 de la mañana todos los días."
+    },
+    {
+      "cliente": "¿Puedo ir solo o necesito un grupo?",
+      "tipo": "combinada",
+      "accion": "responder",
+      "claves": ["mínimo 2", "máximo 8"],
+      "evidencia": "Grupos mínimo 2, máximo 8.",
+      "respuesta_ideal": "Se necesita mínimo 2 personas. El grupo máximo es de 8 para poder disfrutar bien."
+    }
+  ],
+  [
+    {
+      "cliente": "Hola, voy con mis dos hijos de 10 y 12 años. ¿Hay descuento para ellos?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["descuento 20 %", "8-14 años"],
+      "evidencia": "- Menores: descuento 20 % si tienen 8-14 años.",
+      "respuesta_ideal": "Sí, los niños de 8 a 14 años tienen descuento del 20%. Tus hijos entran en ese rango."
+    },
+    {
+      "cliente": "¿Qué tour es mejor para niños? ¿El kayak?",
+      "tipo": "combinada",
+      "accion": "responder",
+      "claves": ["saber nadar", "se recomienda"],
+      "evidencia": "Aventura Kayak Laguna Azul — 130.000 COP / persona. Se recomienda saber nadar.",
+      "respuesta_ideal": "El kayak es bonito, pero se recomienda que sepan nadar. Las cascadas son más seguros para niños."
+    }
+  ],
+  [
+    {
+      "cliente": "Quiero hacer el campamento. ¿Cuándo puedo ir?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["viernes y sábado", "15 días antes"],
+      "evidencia": "Campamento Selva Profunda — 450.000 COP / persona. 2 días / 1 noche. [...] Viernes y sábado (reserva mínimo 15 días antes).",
+      "respuesta_ideal": "Solo viernes y sábado. Necesitas reservar con mínimo 15 días de anticipación."
+    },
+    {
+      "cliente": "¿Qué incluye el campamento?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["cena y desayuno", "tienda", "pesca con línea", "caminata nocturna"],
+      "evidencia": "Campamento Selva Profunda — 2 días / 1 noche. Caminata nocturna, pesca con línea, fogata, tienda en campamento rústico. Cena y desayuno.",
+      "respuesta_ideal": "Incluye tienda, cena y desayuno, caminata nocturna, pesca con línea y fogata."
+    },
+    {
+      "cliente": "¿Cuánto cuesta el campamento?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["450.000 COP"],
+      "evidencia": "Campamento Selva Profunda — 450.000 COP / persona",
+      "respuesta_ideal": "450 mil pesos por persona para los 2 días con 1 noche."
+    }
+  ],
+  [
+    {
+      "cliente": "¿Qué debo llevar para el tour?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["ropa de trekking", "zapatos impermeables", "bloqueador solar", "cámara"],
+      "evidencia": "Recomendamos traer: ropa de trekking, zapatos impermeables, bloqueador solar, cámara, cambio de ropa.",
+      "respuesta_ideal": "Ropa de trekking, zapatos que se sequen rápido, bloqueador, cámara y un cambio de ropa. Nosotros damos mochilas y cantimploras."
+    },
+    {
+      "cliente": "¿Es peligroso? ¿Hay animales grandes?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "Los tours son seguros con guías certificados. Sobre fauna específica, el guía te da detalles cuando llegues. Llama para más información: +57 314-891-2045."
+    }
+  ],
+  [
+    {
+      "cliente": "¿Cuál es el horario de la oficina?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["lunes a viernes: 9 a.m. a 6 p.m.", "sábados y domingos: 9 a.m. a 4 p.m."],
+      "evidencia": "La oficina abre:\n- Lunes a viernes: 9 a.m. a 6 p.m.\n- Sábados y domingos: 9 a.m. a 4 p.m.",
+      "respuesta_ideal": "Lunes a viernes de 9 a.m. a 6 p.m., sábados y domingos de 9 a.m. a 4 p.m."
+    },
+    {
+      "cliente": "¿Qué pasa si llueve?",
+      "tipo": "sin_respuesta",
+      "accion": "responder",
+      "claves": ["lluvia durante todo el año", "los tours se hacen igual"],
+      "evidencia": "La zona es tropical: lluvia durante todo el año (más en abril-mayo y octubre-noviembre). Pero los tours se hacen igual; solo trae ropa impermeable y zapatos que sequen rápido.",
+      "respuesta_ideal": "Llueve bastante aquí, especialmente abril-mayo y octubre-noviembre. Pero los tours se hacen igual; solo necesitas ropa impermeable."
+    }
+  ],
+  [
+    {
+      "cliente": "Queremos hacer el taller de cocina. ¿A qué hora?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["3 p.m.", "diariamente"],
+      "evidencia": "Taller de Cocina Tradicional — 60.000 COP / persona. 2 horas. [...] Diariamente a las 3 p.m.",
+      "respuesta_ideal": "Todos los días a las 3 de la tarde. Cuesta 60 mil pesos por persona y dura 2 horas."
+    },
+    {
+      "cliente": "¿Puedo cancelar si me arrepiento?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["48 horas", "reembolso completo", "50 %"],
+      "evidencia": "Cancelación: hasta 48 horas antes = reembolso completo. Menos de 48h = pierden 50 %.",
+      "respuesta_ideal": "Si cancelas 48 horas antes, te devolvemos todo. Si es menos tiempo, pierdes el 50%."
+    },
+    {
+      "cliente": "¿Cuántas personas máximo vamos al taller?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["máximo 10 personas"],
+      "evidencia": "Taller de Cocina Tradicional — 60.000 COP / persona. 2 horas. [...] Máximo 10 personas.",
+      "respuesta_ideal": "El máximo es 10 personas para que el chef pueda enseñar bien."
+    }
+  ],
+  [
+    {
+      "cliente": "Hola, ¿hacen visitas a comunidades indígenas?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["Visita Comunidad Indígena Awá", "80.000 COP"],
+      "evidencia": "Visita Comunidad Indígena Awá — 80.000 COP / persona",
+      "respuesta_ideal": "Sí, visitamos la comunidad Awá. Cuesta 80 mil pesos y el dinero va directo a la comunidad."
+    },
+    {
+      "cliente": "¿Cuándo sale ese tour?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["miércoles y domingo"],
+      "evidencia": "Miércoles y domingo.",
+      "respuesta_ideal": "Miércoles y domingo. Dura medio día."
+    },
+    {
+      "cliente": "¿Necesito un grupo o puedo ir solo?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["mínimo 4 personas"],
+      "evidencia": "Mínimo 4 personas.",
+      "respuesta_ideal": "Se necesita mínimo 4 personas."
+    },
+    {
+      "cliente": "¡Buenísimo! ¿Cómo hago la reserva?",
+      "tipo": "instruccion",
+      "accion": "derivar",
+      "claves": [],
+      "evidencia": "Sobre reservas: di que pueden reservar por WhatsApp +57 314-891-2045 o email reservas@aventuraverdtours.co.",
+      "respuesta_ideal": "Puedes reservar por WhatsApp al +57 314-891-2045 o por email a reservas@aventuraverdtours.co. También puedes llamar a la oficina al +57 (2) 7384-1902."
+    }
+  ]
+]

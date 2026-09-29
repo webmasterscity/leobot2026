@@ -1,0 +1,275 @@
+[
+ [
+  {
+   "cliente": "buenas, a que hora abre la pescaderia?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "10:00 a 13:30",
+    "17:30 a 20:00"
+   ],
+   "evidencia": "lunes a viernes de 10:00 a 13:30 y de 17:30 a 20:00",
+   "respuesta_ideal": "De lunes a viernes abre de 10:00 a 13:30 y de 17:30 a 20:00."
+  },
+  {
+   "cliente": "y los sabados?",
+   "tipo": "seguimiento",
+   "accion": "responder",
+   "claves": [
+    "9:30 a 13:30"
+   ],
+   "evidencia": "sábados de 9:30 a 13:30",
+   "respuesta_ideal": "Los sábados abre de 9:30 a 13:30."
+  },
+  {
+   "cliente": "a cuanto esta hoy la merluza?",
+   "tipo": "instruccion",
+   "accion": "derivar",
+   "claves": [],
+   "evidencia": "No des precios del pescado del día ni digas qué especies hay: cambian a diario. Deriva a la pescadería, teléfono 981 740 013.",
+   "respuesta_ideal": "Los precios cambian a diario; llame a la pescadería al 981 740 013."
+  },
+  {
+   "cliente": "aceptan bizum?",
+   "tipo": "si_no",
+   "accion": "responder",
+   "claves": [
+    "Bizum"
+   ],
+   "evidencia": "Se puede pagar en efectivo, con tarjeta o por Bizum.",
+   "respuesta_ideal": "Sí, se puede pagar por Bizum, además de efectivo o tarjeta."
+  },
+  {
+   "cliente": "cuanto cuesta la lata de bonito",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "4,90 €"
+   ],
+   "evidencia": "Lata de bonito del norte: 4,90 €",
+   "respuesta_ideal": "La lata de bonito del norte cuesta 4,90 €."
+  },
+  {
+   "cliente": "y la de mejillon?",
+   "tipo": "seguimiento",
+   "accion": "responder",
+   "claves": [
+    "3,20 €"
+   ],
+   "evidencia": "Mejillón en escabeche (lata): 3,20 €",
+   "respuesta_ideal": "La lata de mejillón en escabeche cuesta 3,20 €."
+  },
+  {
+   "cliente": "me llevo 2 latas de bonito y 3 de mejillon, cuanto es?",
+   "tipo": "combinada",
+   "accion": "responder",
+   "claves": [
+    "4,90 €",
+    "3,20 €"
+   ],
+   "evidencia": "Lata de bonito del norte: 4,90 €\n  - Mejillón en escabeche (lata): 3,20 €",
+   "respuesta_ideal": "Dos latas de bonito son 9,80 € y tres de mejillón 9,60 €: 19,40 € en total."
+  }
+ ],
+ [
+  {
+   "cliente": "quiero ir a ver la subasta con mi familia, cuando se puede?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "martes y jueves"
+   ],
+   "evidencia": "Los martes y jueves a las 17:00 h, con reserva previa de al menos 48 horas.",
+   "respuesta_ideal": "Las visitas guiadas son los martes y jueves a las 17:00 h, con reserva previa de al menos 48 horas."
+  },
+  {
+   "cliente": "cuanto vale la entrada para 2 adultos y un niño de 8 años?",
+   "tipo": "combinada",
+   "accion": "responder",
+   "claves": [
+    "adultos 6 €",
+    "niños de 6 a 12 años 3 €"
+   ],
+   "evidencia": "Entrada: adultos 6 €; niños de 6 a 12 años 3 €; menores de 6 años, gratis.",
+   "respuesta_ideal": "Dos adultos son 12 € y el niño 3 €: 15 € en total."
+  },
+  {
+   "cliente": "y si tengo otro de 4?",
+   "tipo": "seguimiento",
+   "accion": "responder",
+   "claves": [
+    "menores de 6 años, gratis"
+   ],
+   "evidencia": "menores de 6 años, gratis",
+   "respuesta_ideal": "El de 4 años entra gratis."
+  },
+  {
+   "cliente": "puedo llevar a mi perro?",
+   "tipo": "si_no",
+   "accion": "responder",
+   "claves": [
+    "No se admiten mascotas"
+   ],
+   "evidencia": "No se admiten mascotas en la lonja por higiene.",
+   "respuesta_ideal": "No, no se admiten mascotas en la lonja por higiene."
+  },
+  {
+   "cliente": "y ir con sandalias?",
+   "tipo": "seguimiento",
+   "accion": "responder",
+   "claves": [
+    "no se puede entrar con calzado abierto"
+   ],
+   "evidencia": "no se puede entrar con calzado abierto",
+   "respuesta_ideal": "No, no se puede entrar con calzado abierto; se prestan botas de goma y bata."
+  },
+  {
+   "cliente": "cuanto dura la visita?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "60 minutos"
+   ],
+   "evidencia": "Duración: 60 minutos.",
+   "respuesta_ideal": "La visita dura 60 minutos."
+  },
+  {
+   "cliente": "reservo con usted ahora mismo?",
+   "tipo": "instruccion",
+   "accion": "derivar",
+   "claves": [],
+   "evidencia": "No confirmes reservas de visitas; indica que se piden por correo o en secretaría.",
+   "respuesta_ideal": "Yo no puedo confirmar reservas; se piden por correo o en secretaría."
+  },
+  {
+   "cliente": "hay visitas en ingles?",
+   "tipo": "sin_respuesta",
+   "accion": "abstenerse",
+   "claves": [],
+   "evidencia": null,
+   "respuesta_ideal": "No tengo información sobre visitas en inglés."
+  }
+ ],
+ [
+  {
+   "cliente": "hola, como se llama el patron mayor?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "Ramón Otero"
+   ],
+   "evidencia": "Patrón mayor: D. Ramón Otero.",
+   "respuesta_ideal": "El patrón mayor es D. Ramón Otero."
+  },
+  {
+   "cliente": "y la secretaria?",
+   "tipo": "seguimiento",
+   "accion": "responder",
+   "claves": [
+    "Lucía Barral"
+   ],
+   "evidencia": "Secretaria: Lucía Barral.",
+   "respuesta_ideal": "La secretaria es Lucía Barral."
+  },
+  {
+   "cliente": "quiero embarcarme de marinero en un barco de aqui",
+   "tipo": "instruccion",
+   "accion": "derivar",
+   "claves": [],
+   "evidencia": "Si preguntan por trabajar en un barco, por hacerse socio o por trámites de la flota, deriva a secretaría.",
+   "respuesta_ideal": "Eso se gestiona en secretaría, teléfono 981 740 012."
+  },
+  {
+   "cliente": "cuanto es la cuota de entrada para hacerse socio?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "300 €"
+   ],
+   "evidencia": "La cuota de entrada es de 300 €.",
+   "respuesta_ideal": "La cuota de entrada es de 300 €."
+  },
+  {
+   "cliente": "me venden gasoil para mi lancha de recreo?",
+   "tipo": "si_no",
+   "accion": "responder",
+   "claves": [
+    "solo para embarcaciones socias"
+   ],
+   "evidencia": "es solo para embarcaciones socias",
+   "respuesta_ideal": "No, el surtidor es solo para embarcaciones socias."
+  },
+  {
+   "cliente": "abren el 16 de julio?",
+   "tipo": "si_no",
+   "accion": "responder",
+   "claves": [
+    "permanece cerrada"
+   ],
+   "evidencia": "El 16 de julio (Virgen del Carmen) la Cofradía permanece cerrada.",
+   "respuesta_ideal": "No, el 16 de julio la Cofradía permanece cerrada."
+  },
+  {
+   "cliente": "hay subasta los sabados?",
+   "tipo": "si_no",
+   "accion": "responder",
+   "claves": [
+    "no hay subasta los sábados"
+   ],
+   "evidencia": "no hay subasta los sábados",
+   "respuesta_ideal": "No, no hay subasta los sábados, domingos ni festivos."
+  },
+  {
+   "cliente": "cuanto cuesta amarrar mi velero en el puerto?",
+   "tipo": "sin_respuesta",
+   "accion": "abstenerse",
+   "claves": [],
+   "evidencia": null,
+   "respuesta_ideal": "No tengo información sobre amarres."
+  }
+ ],
+ [
+  {
+   "cliente": "cuanto cuesta un saco de hielo?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "1,50 €"
+   ],
+   "evidencia": "Saco de hielo: 1,50 €",
+   "respuesta_ideal": "El saco de hielo cuesta 1,50 €."
+  },
+  {
+   "cliente": "tienen restaurante para comer despues de la visita?",
+   "tipo": "sin_respuesta",
+   "accion": "abstenerse",
+   "claves": [],
+   "evidencia": null,
+   "respuesta_ideal": "No tengo información sobre restaurante."
+  },
+  {
+   "cliente": "cuantos barcos tiene la flota?",
+   "tipo": "sin_respuesta",
+   "accion": "abstenerse",
+   "claves": [],
+   "evidencia": null,
+   "respuesta_ideal": "No tengo ese dato."
+  },
+  {
+   "cliente": "hay parking para los visitantes?",
+   "tipo": "sin_respuesta",
+   "accion": "abstenerse",
+   "claves": [],
+   "evidencia": null,
+   "respuesta_ideal": "No tengo información sobre aparcamiento."
+  },
+  {
+   "cliente": "muchas gracias, adios",
+   "tipo": "charla",
+   "accion": "charla",
+   "claves": [],
+   "evidencia": null,
+   "respuesta_ideal": "Boa sorte na compra."
+  }
+ ]
+]
