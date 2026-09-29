@@ -68,3 +68,23 @@ como rasgos de candidata con pares «palabra junto al número | comparación».
 ## Qué se conserva
 El almacén de saber general (cantidad: 0 → 228 254 relaciones de fuentes humanas) y las pruebas `tests/test_g106_saber.py`; los
 interruptores `general_knowledge`, `number_compare` y `general_route` dejan el motor como antes cuando la base no trae saber.
+
+## 5. G-107b: búsqueda por intersección — negativo en desarrollo ([preregistro](../prereg/G-107b-busqueda-por-interseccion.md))
+Depuración en D1 (Sonnet, 102 contestables + 18 sin respuesta), tres versiones:
+| versión | correctas | malas | contesta sin dato |
+|---|---|---|---|
+| intersección pura (≥ 2 enlaces, mejor único) | 2 | 29 | 9 |
+| + la respuesta debe ser «un tipo de» (1–2 pasos) una palabra de la pregunta | 4 | 34 | 9 |
+| + solo sustantivos como clase | 5 | 27 | 11 |
+Comprobación preregistrada en D2 (Haiku, no mirado antes; 106 contestables + 14 sin respuesta), mecanismo fijo:
+**3 correctas (2,8 %), 27 malas, 4 contestadas sin dato; precisión 3/34 (9 %)** frente a lo exigido (≥ 10 % y ≥ 60 %). No se pide reserva.
+La intersección devuelve asociados, no respuestas («capital de Francia» → «estado»; «herramienta para clavar» → «reducir»):
+el almacén léxico mezcla sentidos (lemas de verbo y sustantivo que coinciden, «es un» figurado de Wiktionary) y no guarda
+los hechos que piden las preguntas cotidianas (capitales, cuántos, colores de cosas, qué hace un animal).
+**No repetir**: responder preguntas generales por plantillas, por lectura de relaciones verbalizadas ni por intersección sobre
+WordNet/ConceptNet. Las rutas quedan **apagadas por defecto** (`general_route = None`); la guarda contra el «No» por contraste
+se conserva porque solo impide respuestas.
+**Clasificación**: «no pudo» (entender qué pide una pregunta cotidiana y combinar restricciones con un almacén ruidoso) y «no sabía»
+sin comprobar (faltan hechos: capitales, cifras, calendario, cuentas). El siguiente intento necesita fuentes de texto humano con
+definiciones y hechos (Wikipedia/Wiktionary en español, bloqueadas en este entorno) o un mecanismo que aprenda la forma de las
+preguntas cotidianas a partir de pares pregunta–respuesta humanos de ese tipo.

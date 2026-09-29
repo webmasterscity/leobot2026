@@ -209,6 +209,67 @@ class KnowledgeMixin:
         text = text[:1].upper() + text[1:]
         return text if text[-1:] in '.!?' else text + '.'
 
+    def _neighbours(self, term: str) -> set:
+        """Every term one relation away from this one, in either direction."""
+        cache = self._knowledge().setdefault('neighbours', {})
+        found = cache.get(term)
+        if found is None:
+            index = self._knowledge()
+            found = set()
+            for side in ('forward', 'backward'):
+                for table in index[side].values():
+                    found.update(t for t, _ in table.get(term, ()))
+            found.discard(term)
+            cache[term] = found
+        return found
+
+    def answer_by_intersection(self, question: str) -> dict | None:
+        """G-107b: the term that the question's content words point to together (intersection
+        search in semantic memory).  Each word linked to a candidate adds 1 / log(2 + its number
+        of links); the best candidate is said only when it is linked to at least two different
+        words of the question and strictly ahead of the second."""
+        if not getattr(self, 'general_knowledge', True) or not self.knowledge_model['count']:
+            return None
+        if self.asking_word(self.split_words(question)) is None:
+            return None
+        words = self.split_words(question)
+        tags = self.tag_words(words) if words and self.syntax_model.get('sentences') else None
+        if not tags:
+            return None
+        pairs = [(self._term(w), tag) for w, tag in zip(words, tags) if w[:1].isalnum() and tag in ('NOUN', 'PROPN', 'ADJ', 'VERB')]
+        nouns = {t for t, tag in pairs if tag == 'NOUN'}
+        asked = [t for t in dict.fromkeys(t for t, _ in pairs) if self._neighbours(t)]
+        if len(asked) < 2:
+            return None
+        # The answer is a kind of something the question names (one or two «is a» links below it):
+        # that word is its class; the other words must point to it.
+        below = self._knowledge()['backward'].get('IsA', {})
+        kinds: dict = {}
+        for term in asked:
+            if term not in nouns:
+                continue
+            for child, _ in below.get(term, ()):
+                kinds.setdefault(child, term)
+                for grandchild, _ in below.get(child, ()):
+                    kinds.setdefault(grandchild, term)
+        score, support = {}, {}
+        for term in asked:
+            links = self._neighbours(term)
+            weight = 1.0 / math.log(2 + len(links))
+            for other in links:
+                if other in asked or other not in kinds or kinds[other] == term:
+                    continue
+                score[other] = score.get(other, 0.0) + weight
+                support.setdefault(other, []).append(term)
+        ranked = sorted(score.items(), key=lambda kv: (-kv[1], kv[0]))
+        if not ranked or (len(ranked) > 1 and ranked[1][1] >= ranked[0][1]):
+            return None
+        best = ranked[0][0]
+        support[best] = [kinds[best]] + support[best]
+        because = ', '.join(self._display(t) for t in support[best])
+        return {'text': f'Por lo que sé en general: {self._display(best)} (lo relaciono con {because}).',
+                'status': 'general_intersection', 'answer': self._display(best), 'links': support[best]}
+
     def answer_general_by_reading(self, question: str) -> dict | None:
         """G-107 (variant B): the named things' relations are said with the people's templates
         and the learned reader answers from them, as from any text it has read."""

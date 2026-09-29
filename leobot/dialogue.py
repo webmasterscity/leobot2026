@@ -842,9 +842,12 @@ class DialogueMixin:
         """G-107: the general-knowledge route chosen by ``general_route`` (templates or reading)."""
         if not hasattr(self, 'answer_general'):
             return None
-        route = getattr(self, 'general_route', 'templates')
+        # Off unless chosen: in development every route said more wrong things than right ones (G-107, G-107b).
+        route = getattr(self, 'general_route', None)
         if route == 'reading':
             return self.answer_general_by_reading(text)
+        if route == 'intersection':
+            return self.answer_by_intersection(text) or self.answer_general(text)
         return self.answer_general(text) if route == 'templates' else None
 
     def _answer_literally(self, text: str) -> dict | None:
