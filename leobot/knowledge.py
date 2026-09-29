@@ -226,6 +226,7 @@ class KnowledgeMixin:
         view.__dict__.update(self.__dict__)
         view.reading_utterances = rows
         view._reading_index_cache = None
+        view.general_route = None
         answer = view._answer_literally(question)
         if not answer or answer.get('status') in ('literal_unknown', 'unknown', None):
             return None

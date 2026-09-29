@@ -1,0 +1,70 @@
+# G-106 y G-107 — resultados de desarrollo (2026-09-29, sesión de nube)
+
+Motor de partida `fa15c4a`; código nuevo en `1391c6f` y siguientes (`leobot/knowledge.py`, cambios en `context.py`, `dialogue.py`,
+`reading.py`, guardado JSON compacto). **Nada de esto se congeló ni se promovió.** Todo lo que sigue es desarrollo: el banco
+`congelado_g103` ya está gastado y los bancos D1/D2 de conocimiento general son de desarrollo.
+
+## Base reconstruida
+`nube_base` 94 s de CPU, `nube_educar` 50 s; `base_kiosco_nube.json` SHA `b9aafc1bd9e1547cbb96e2ecb48f8690b7511bf16d89015597f45114e9eb6a15`
+(la sesión anterior no registró el suyo; B0 da aquí 104/383 frente a 92/383 entonces, así que las bases difieren).
+
+## 1. Familias de pares (paso 1 del traspaso anterior) — cerrado, negativo
+Conteo automático en `congelado_g103`, directas + sí/no útiles de 383 (sin respuesta bien manejadas de 214):
+| variante | útiles | sin respuesta bien |
+|---|---|---|
+| B0 | 104 | 214 |
+| prefijos solos | **129** | 214 |
+| modelo sin pares | **129** | 205 |
+| pares abstractos (src, kind, shape) | 114 | 205 |
+| todas las familias (375 508 pares) | 126 | 195 |
+Ningún par aprendido mejora a los prefijos solos. **No repetir** la búsqueda de familias de pares palabra|palabra.
+
+## 2. Diagnóstico por etapas (modelo sin pares; `experiments/g106_diagnostico.py`)
+383 turnos: cita la unidad correcta 133 · elige otra teniendo la correcta entre las 8 candidatas **104** · elige bien pero calla 55 ·
+ninguna unidad contiene las claves 41 · la correcta fuera de candidatas 38 · sin ninguna palabra en común 12.
+
+## 3. G-106: saber general y cantidades en el kiosco — refutado en desarrollo (dos diseños)
+Saber general: 260 142 relaciones leídas de WordNet español (MCR/OMW 1.4), ConceptNet 5.7 en español y Open Mind en inglés con
+traducción humana de una palabra; 228 254 guardadas sobre 113 065 términos (9 s de CPU; base 78 MB en JSON compacto).
+Conteo automático en `congelado_g103` (útiles / citas no útiles / citas sin dato):
+| variante | útiles | no útiles | sin dato |
+|---|---|---|---|
+| prefijos solos | 129 | 101 | 50 |
+| solo cantidades (rasgos + pares CMP) | 122 | 85 | 40 |
+| solo saber (tasa por tipo de enlace) | 160 | 164 | 87 |
+| saber + cantidades | 153 | 157 | 80 |
+El +31 del saber viene **solo** de un umbral de cita más bajo (0,29 frente a 0,50). Curva de operación (`experiments/g106_curva.py`,
+útiles con a lo sumo N citas malas):
+| N malas | sin saber | saber | saber corregido por azar | saber + cantidades | cantidades |
+|---|---|---|---|---|---|
+| 50 | 108 | 106 | 100 | 105 | 103 |
+| 100 | **149** | 134 | 139 | 134 | 144 |
+| 150 | **162** | 155 | 156 | 153 | 158 |
+| 250 | **180** | 175 | 178 | 174 | 179 |
+A igual número de citas malas, ni el saber general (con o sin corrección por azar de la tasa por tipo) ni la comparación de cantidades
+mejoran la elección. Por la regla de selección preregistrada ninguna variante nueva pasa, así que **G-106 no va a reserva**.
+Tasas aprendidas por tipo (corregidas por azar): «sirve para» 0,26, «puede» 0,31, «derivado de» 0,32, «relacionado» 0,13,
+«es un» 0,05, «es un» a dos pasos 0,003, antónimo 0,06–0,08 (los antónimos conviven en la misma unidad: «abierto… cerrado»).
+**No repetir**: enlaces léxicos de WordNet/ConceptNet como puente en la mezcla o como rasgo del modelo; comparación de cantidades
+como rasgos de candidata con pares «palabra junto al número | comparación».
+
+## 4. G-107: responder conocimiento general — negativo en desarrollo
+- Regla de transitividad preregistrada (cierre ≥ 0,05 y ≥ 5× la mediana): **ninguna relación se encadena** («es un» cierra 2,3 %
+  de sus caminos en ConceptNet, porque no afirma todos los atajos).
+- Banco de desarrollo D1 (120 preguntas, redactor independiente Sonnet; D2, 120, Haiku, aún sin usar): **0 correctas de 102
+  contestables** con la ruta por plantillas (6 respuestas malas, p. ej. «Se usa ropa para anuncio»), 0 con la ruta por lectura
+  (3 malas, p50 14,7 ms) y 0 sin saber general. Sondas propias: elige mal la relación («¿Qué es un perro?» → «Perro puede correr»),
+  ruido de traducción («cuchillo para cortés»), «No» falsos con la ruta de lectura («¿La rueda es parte del coche?» → «No: rueda
+  es parte de monopatín»).
+- Supervisión distante para aprender qué relación pide una pregunta: en SQuAD-es enlaza 3 278 de 30 000 preguntas, casi todas
+  «es un» (preguntas enciclopédicas); en Tatoeba 9 882 enlaces, conectores dominados por preposiciones; «para qué sirve» no aparece.
+- Por qué: las preguntas cotidianas se piden **al revés** del almacén («¿Qué cubierto se usa para tomar la sopa?» → cuchara). Techo en
+  D1: la respuesta está en el almacén en 86/102; enlazada directamente con alguna palabra de la pregunta en 40; con todas, en 6.
+  Además faltan cuentas («¿Cuánto es 15 más 27?»), calendario y cifras («días de la semana»), geografía (capitales).
+- Fuentes que faltan y el entorno bloquea: Wikipedia y Wiktionary en español, Tatoeba oficial, DBpedia, Hugging Face (403/000).
+- Tatoeba vía GitHub (`doozan/spanish_data`, 160 913 frases): el filtro gramatical (presente, sujeto nominal, sin 1.ª/2.ª persona ni
+  nombres propios) deja 21 318, de las que a ojo solo un tercio son saber general; no se usa como fuente de hechos.
+
+## Qué se conserva
+El almacén de saber general (cantidad: 0 → 228 254 relaciones de fuentes humanas) y las pruebas `tests/test_g106_saber.py`; los
+interruptores `general_knowledge`, `number_compare` y `general_route` dejan el motor como antes cuando la base no trae saber.

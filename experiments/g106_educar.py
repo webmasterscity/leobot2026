@@ -37,7 +37,7 @@ g103.family = family
 
 
 def shares(bot: Bot, folders) -> dict:
-    hits, seen = {}, {}
+    hits, seen, chance = {}, {}, [0, 0]
     for _, text, instructions, conversations in businesses(folders):
         bot.load_context(text, instructions)
         units, postings = bot.context_units, bot._index()
@@ -53,6 +53,10 @@ def shares(bot: Bot, folders) -> dict:
                 held = set().union(*(set(u['terms']) | set(u.get('inherited', ())) for u in gold))
                 _, question = bot._question_part(turn['cliente'])
                 terms = bot.context_terms(question)
+                # Chance: any word of the text (not asked) that is in a right unit.
+                others = [w for w in postings if w not in terms]
+                chance[0] += sum(w in held for w in others)
+                chance[1] += len(others)
                 for q in dict.fromkeys(terms):
                     if q in title:
                         continue
@@ -61,7 +65,15 @@ def shares(bot: Bot, folders) -> dict:
                             continue
                         seen[link] = seen.get(link, 0) + 1
                         hits[link] = hits.get(link, 0) + (word in held)
-    return {link: round(hits[link] / n, 4) for link, n in sorted(seen.items()) if n >= SUPPORT and hits[link]}, seen
+    # As δ in G-57, the share is corrected for chance: (rate − P) / (1 − P), P the rate of any word of the text.
+    base = chance[0] / chance[1] if chance[1] else 0.0
+    table = {}
+    for link, n in sorted(seen.items()):
+        corrected = (hits[link] / n - base) / (1 - base)
+        if n >= SUPPORT and corrected > 0:
+            table[link] = round(corrected, 4)
+    seen['_azar'] = round(base, 4)
+    return table, seen
 
 
 def main():

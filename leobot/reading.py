@@ -448,6 +448,10 @@ class ReadingMemoryMixin:
                     said = self._contrast(structure, row, negators)
                     if said is None and getattr(self, 'kind_contrast', True):
                         said = self._contrast(structure, row, negators, by_kind=True)
+                    if said is not None and hasattr(self, 'includes') and self.includes(
+                            self._knowledge_term(str(said)), self._knowledge_term(structure['norms'].get(value, value))):
+                        # G-107: what was said is a kind of what is asked: no contrast.
+                        said = None
                     if said is not None:
                         return {'text': self._voiced('contrast', [row]) or f'No: según lo que me dijeron, «{row["text"]}»',
                                 'status': 'literal_contrast',
