@@ -1684,6 +1684,10 @@ class ReadingMemoryMixin:
         if documents_only:
             candidates = [p for p in candidates
                           if not str(self.reading_utterances[p].get('document', '')).startswith('conversación')]
+        if not getattr(self, 'library_span_reading', False):
+            # G-108: this reader was calibrated on a question about one related text; over a
+            # library of unrelated sentences its overlap threshold does not hold, so it does not guess there.
+            candidates = [p for p in candidates if not self.reading_utterances[p].get('library')]
         word_sets = self._reading_index_cache[3]
         literal = {p: self._reading_overlap(qtokens, word_sets[p]) for p in candidates}
         scored = [(literal[p], p) for p in candidates]

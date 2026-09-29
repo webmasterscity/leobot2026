@@ -24,11 +24,12 @@ from .reference import ReferenceMixin
 from .entities import EntityMixin
 from .context import ContextMixin, _empty_context_model
 from .knowledge import KnowledgeMixin, _empty_knowledge
+from .library import LibraryMixin
 from .state_fields import plain_state, restore_plain_state
 
 
 class Bot(DocumentLearningMixin, LanguageAcquisitionMixin, ConditionalLearningMixin, DialogueMixin,
-          ReadingMemoryMixin, ReferenceMixin, EntityMixin, SyntaxMixin, ContextMixin, KnowledgeMixin):
+          ReadingMemoryMixin, ReferenceMixin, EntityMixin, SyntaxMixin, ContextMixin, KnowledgeMixin, LibraryMixin):
     def __init__(self, kb=None, grounded_language: bool = True, grounding_min_support: int = 2,
                  raw_relation_min_support: int = 3, allow_extensional_grounding: bool = False,
                  raw_relation_max_arity: int = 8) -> None:
@@ -697,6 +698,9 @@ class Bot(DocumentLearningMixin, LanguageAcquisitionMixin, ConditionalLearningMi
             'symbolic_entities': sorted(self.symbolic_entities),
         }
         data.update(plain_state(self))
+        # G-108: an attached library is a file of its own, never part of the memory.
+        if any(row.get('library') for row in self.reading_utterances):
+            data['reading_utterances'] = [row for row in self.reading_utterances if not row.get('library')]
         return data
 
     def save(self, path: str | Path) -> None:
