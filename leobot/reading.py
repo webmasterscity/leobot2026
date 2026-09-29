@@ -420,7 +420,9 @@ class ReadingMemoryMixin:
                 supports[self.negated(sum(w in negators for w in said))].append(row['source'])
         same, opposite = supports[polarity], supports[1 - polarity]
         # G-54: the rows behind an answer, for its voice.
-        rows_of = lambda sources: [r for r in self.reading_utterances if r['source'] in set(sources)]
+        def rows_of(sources):
+            wanted = set(sources)
+            return [r for r in self.reading_utterances if r['source'] in wanted]
         if same and opposite:
             return {'text': self._voiced('contradiction', rows_of(same + opposite))
                     or 'No lo sé: lo que me dijeron se contradice.', 'status': 'literal_contradiction',
