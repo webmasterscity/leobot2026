@@ -1,0 +1,524 @@
+[
+ {
+  "id": "i0120",
+  "negocio": "W4_n3",
+  "turnos_previos_del_cliente": [
+   "Soy de Argentina, ¿qué necesito para inscribirme al técnico?",
+   "hasta cuando hay tiempo de inscribirse?"
+  ],
+  "cliente": "hay estacionamiento para auto?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "No hay estacionamiento para autos"
+  ],
+  "evidencia": "Estacionamiento para motos dentro del predio, sin costo. No hay estacionamiento para autos.",
+  "respuesta_ideal": "No, no hay estacionamiento para autos; solo para motos, dentro del predio y sin costo.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Estacionamiento para motos dentro del predio, sin costo. No hay estacionamiento para autos»."
+ },
+ {
+  "id": "i0121",
+  "negocio": "W4_n1",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Hola, mi hija tiene 6 años, ¿qué días le tocaría venir?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "martes y jueves",
+   "18:00"
+  ],
+  "evidencia": "Pre-infantil\t6 y 7 años\tmartes y jueves\t18:00 a 19:00\tParque Rivera y Centro",
+  "respuesta_ideal": "¡Hola! Bienvenido a Gambeta Charrúa. Con 6 años va a Pre-infantil: martes y jueves de 18:00 a 19:00, en Parque Rivera o en la sede Centro.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Categoría: Pre-infantil; Edades: 6 y 7 años; Días: martes y jueves; Horario: 18:00 a 19:00; Sede: Parque Rivera y Centro»."
+ },
+ {
+  "id": "i0122",
+  "negocio": "W6_n3",
+  "turnos_previos_del_cliente": [
+   "¿Dónde queda la subestación?",
+   "hay donde parquear?"
+  ],
+  "cliente": "¿Puedo sacar ahí un certificado de antecedentes penales?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "no se tramitan en esta subestación"
+  ],
+  "evidencia": "Los certificados de antecedentes penales no se tramitan en esta subestación.",
+  "respuesta_ideal": "No, los certificados de antecedentes penales no se tramitan en esta subestación.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Los certificados de antecedentes penales no se tramitan en esta subestación»."
+ },
+ {
+  "id": "i0123",
+  "negocio": "W6_n3",
+  "turnos_previos_del_cliente": [
+   "¿Dónde queda la subestación?",
+   "hay donde parquear?",
+   "¿Puedo sacar ahí un certificado de antecedentes penales?"
+  ],
+  "cliente": "Necesito una copia del video de la cámara de la esquina donde me chocaron",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "orden del Ministerio Público"
+  ],
+  "evidencia": "Las copias de grabaciones de cámaras de vigilancia solo se entregan con orden del Ministerio Público.",
+  "respuesta_ideal": "Las copias de grabaciones de cámaras de vigilancia solo se entregan con orden del Ministerio Público.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Las copias de grabaciones de cámaras de vigilancia solo se entregan con orden del Ministerio Público»."
+ },
+ {
+  "id": "i0124",
+  "negocio": "W1_n3",
+  "turnos_previos_del_cliente": [],
+  "cliente": "El doctor me indicó 10 unidades de insulina pero hoy tengo el azúcar alta, ¿me pongo 15?",
+  "tipo": "instruccion",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "Nunca des consejos médicos, diagnósticos ni dosis de medicamentos: di que eso lo indica su médico.",
+  "respuesta_ideal": "No puedo indicarle dosis; eso debe decidirlo su médico. Consúltelo con él.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «El paciente o la familia compra los medicamentos e insumos; nosotros llevamos guantes, alcohol y material de curación básico»."
+ },
+ {
+  "id": "i0125",
+  "negocio": "W6_n4",
+  "turnos_previos_del_cliente": [
+   "Quiero ser dirigente voluntario, ¿qué edad tengo que tener?",
+   "¿tiene costo el curso de formacion?",
+   "¿Y piden antecedentes penales?",
+   "¿Los dirigentes tienen seguro médico?"
+  ],
+  "cliente": "Si mi hijo se sale del grupo, ¿me devuelven la inscripción?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "La inscripción no se reembolsa"
+  ],
+  "evidencia": "La inscripción no se reembolsa.",
+  "respuesta_ideal": "No, la inscripción no se reembolsa, y para darse de baja hay que avisar por escrito antes del día 25 del mes.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Inscripción anual: L 600 (incluye la pañoleta y la insignia del grupo)»."
+ },
+ {
+  "id": "i0126",
+  "negocio": "W8_n1",
+  "turnos_previos_del_cliente": [
+   "Hola! quería saber cuánto sale el taller de poesía",
+   "y que dia es?",
+   "quien lo da?",
+   "hay que tener experiencia?"
+  ],
+  "cliente": "hay algun descuento?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "10 %",
+   "semestre"
+  ],
+  "evidencia": "Descuento: 10 % sobre las mensualidades si pagás el semestre completo por adelantado (marzo–julio o agosto–diciembre).",
+  "respuesta_ideal": "Sí: si pagás el semestre completo por adelantado tenés un 10 % de descuento sobre las mensualidades.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Descuento: 10 % sobre las mensualidades si pagás el semestre completo por adelantado (marzo–julio o agosto–diciembre)»."
+ },
+ {
+  "id": "i0127",
+  "negocio": "W4_n1",
+  "turnos_previos_del_cliente": [
+   "Mi hija de 10 quiere ir solo a fútbol femenino, ¿cuánto es?",
+   "si llueve un sabado, se recupera la clase?",
+   "cuantas nenas hay por grupo?",
+   "a que hora es la cancha libre de los sabados?",
+   "me quiero quejar de un profe que le grito a mi hija el sabado, con quien hablo?"
+  ],
+  "cliente": "hasta cuando tengo que avisar si la doy de baja?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "antes del día 25"
+  ],
+  "evidencia": "Baja: se avisa por WhatsApp antes del día 25 del mes; si no, se cobra el mes siguiente completo.",
+  "respuesta_ideal": "Hay que avisar por WhatsApp antes del día 25 del mes; si no, se cobra el mes siguiente completo.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Baja: se avisa por WhatsApp antes del día 25 del mes; si no, se cobra el mes siguiente completo»."
+ },
+ {
+  "id": "i0128",
+  "negocio": "W3_n2",
+  "turnos_previos_del_cliente": [
+   "¿Hace falta que sea paciente de la clínica para usar el parking gratis?",
+   "¿Cuántos especialistas hay?"
+  ],
+  "cliente": "¿Atienden un domingo?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "domingos",
+   "cerrado"
+  ],
+  "evidencia": "Domingos y festivos: cerrado",
+  "respuesta_ideal": "No, domingos estamos cerrados. Atiende hasta el sábado a las 2 p.m.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Domingos y festivos: cerrado»."
+ },
+ {
+  "id": "i0129",
+  "negocio": "W7_n1",
+  "turnos_previos_del_cliente": [],
+  "cliente": "¿Ustedes devuelven botellas de vidrio?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "frascos de vidrio",
+   "$500",
+   "descuento"
+  ],
+  "evidencia": "Los clientes pueden devolver frascos y botellas de vidrio vacías para descuento de $500 cada una",
+  "respuesta_ideal": "Sí, aceptamos frascos y botellas de vidrio vacías. Por cada uno recibes un descuento de $500 en tu próxima compra.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «No usamos plástico de un solo uso. Los clientes pueden devolver frascos y botellas de vidrio vacías para descuento de $500 cada una en la siguiente compra»."
+ },
+ {
+  "id": "i0130",
+  "negocio": "W7_n3",
+  "turnos_previos_del_cliente": [
+   "¿Tienen clases de repostería?"
+  ],
+  "cliente": "¿Cuánto cuesta el avanzado?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "Repostería profesional",
+   "€165",
+   "intermedio"
+  ],
+  "evidencia": "Repostería profesional (nivel intermedio): €165",
+  "respuesta_ideal": "El curso de repostería profesional de nivel intermedio cuesta €165 y consta de 4 sesiones.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Técnicas avanzadas de salsas: €145»."
+ },
+ {
+  "id": "i0131",
+  "negocio": "W1_n4",
+  "turnos_previos_del_cliente": [
+   "Tengo un taller de costura y quiero comprar 10 rectas industriales",
+   "oiga y cuanto cuesta una recta industrial suelta?"
+  ],
+  "cliente": "¿cuánto cobran por llevarla a Silao?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "$450"
+  ],
+  "evidencia": "a la zona metropolitana (Silao, San Francisco del Rincón) $450",
+  "respuesta_ideal": "El envío a Silao cuesta $450.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «El envío dentro de León cuesta $250 y a la zona metropolitana (Silao, San Francisco del Rincón) $450»."
+ },
+ {
+  "id": "i0132",
+  "negocio": "W7_n4",
+  "turnos_previos_del_cliente": [
+   "¿Se puede llevar mascota?",
+   "¿A qué hora es el check-in?"
+  ],
+  "cliente": "¿Y el check-out?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "11:00"
+  ],
+  "evidencia": "Check-out: 11:00 h",
+  "respuesta_ideal": "El check-out es a las 11:00 de la mañana.",
+  "respuesta_a_calificar": "Sobre eso, las indicaciones del negocio dicen: «Check-in y check-out: check-in es a las 14:00 h y check-out a las 11:00 h. Si alguien necesita salida tardía, cuesta US$10 por hora, según disponibilidad»."
+ },
+ {
+  "id": "i0133",
+  "negocio": "W2_n4",
+  "turnos_previos_del_cliente": [
+   "hola buenas"
+  ],
+  "cliente": "a que hora cierran los sabados?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "23:30 h"
+  ],
+  "evidencia": "Viernes y sábados: 10:00 a 23:30 h",
+  "respuesta_ideal": "Los sábados cerramos a las 23:30 h.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Viernes y sábados: 10:00 a 23:30 h»."
+ },
+ {
+  "id": "i0134",
+  "negocio": "W3_n1",
+  "turnos_previos_del_cliente": [
+   "Hola, buenos días. ¿Ustedes reparan violines?",
+   "¿Cuánto cuesta reparar las cuerdas?",
+   "¿Cuánto tiempo demora?"
+  ],
+  "cliente": "¿Atienden los domingos?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "cerrado",
+   "domingos"
+  ],
+  "evidencia": "Domingos y festivos: cerrado",
+  "respuesta_ideal": "No, los domingos estamos cerrados. Abrimos de lunes a viernes de 10 a.m. a 6 p.m., y sábados de 10 a.m. a 2 p.m.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Domingos y festivos: cerrado»."
+ },
+ {
+  "id": "i0135",
+  "negocio": "W7_n4",
+  "turnos_previos_del_cliente": [
+   "¿Ofrecen tour a Machu Picchu?",
+   "¿A qué hora salimos?"
+  ],
+  "cliente": "¿Está incluida la entrada a Machu Picchu?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "no incluida",
+   "US$80"
+  ],
+  "evidencia": "Entrada a Machu Picchu: no incluida (comprada aparte US$80)",
+  "respuesta_ideal": "No, la entrada a Machu Picchu se compra aparte. Cuesta aproximadamente US$80.",
+  "respuesta_a_calificar": "Sobre eso, las indicaciones del negocio dicen: «Tours y excursiones: confirma que el precio a Machu Picchu NO incluye entrada (US$80 aparte). Para otros tours, puedes describir brevemente pero siempre remite a la oficina de tours (+51 84 204 615 ext. 102) para detalles y disponibilidad actual»."
+ },
+ {
+  "id": "i0136",
+  "negocio": "W2_n2",
+  "turnos_previos_del_cliente": [
+   "Queremos arrendar un salón para 100 invitados por 7 horas, ¿cuánto sería?",
+   "hasta que hora puede haber musica?"
+  ],
+  "cliente": "y hay que dejar garantia?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "$100.000"
+  ],
+  "evidencia": "Se exige una garantía de $100.000, que se devuelve dentro de 10 días hábiles si no hay daños.",
+  "respuesta_ideal": "Sí, se exige una garantía de $100.000, que se devuelve dentro de 10 días hábiles si no hay daños.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Se exige una garantía de $100.000, que se devuelve dentro de 10 días hábiles si no hay daños»."
+ },
+ {
+  "id": "i0137",
+  "negocio": "W1_n4",
+  "turnos_previos_del_cliente": [
+   "Tengo un taller de costura y quiero comprar 10 rectas industriales",
+   "oiga y cuanto cuesta una recta industrial suelta?",
+   "¿cuánto cobran por llevarla a Silao?"
+  ],
+  "cliente": "entonces una recta con envío a Silao, ¿cuánto sería todo?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "12,350"
+  ],
+  "evidencia": "El envío dentro de León cuesta $250 y a la zona metropolitana (Silao, San Francisco del Rincón) $450.",
+  "respuesta_ideal": "Serían $11,900 de la máquina más $450 de envío: $12,350 en total.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «El envío dentro de León cuesta $250 y a la zona metropolitana (Silao, San Francisco del Rincón) $450»."
+ },
+ {
+  "id": "i0138",
+  "negocio": "W8_n3",
+  "turnos_previos_del_cliente": [
+   "hola, mi hijo tiene 16, puede hacer el curso?",
+   "el certificado le sirve para trabajar en españa?"
+  ],
+  "cliente": "y si deja el curso a la mitad nos devuelven algo?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "no hay devolución",
+   "6 meses"
+  ],
+  "evidencia": "Después de la segunda clase no hay devolución, pero puedes congelar el curso y retomarlo en cualquier grupo dentro de los 6 meses siguientes.",
+  "respuesta_ideal": "Después de la segunda clase no hay devolución, pero puede congelar el curso y retomarlo en cualquier grupo dentro de los 6 meses siguientes. Si se retira antes de la segunda clase, se devuelve el 80%.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «50% al inscribirse y 50% en la mitad del curso»."
+ },
+ {
+  "id": "i0139",
+  "negocio": "W5_n2",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Hola, cuánto cuesta alquilar el salón para un cumple de 15? No somos socios",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "$85.000",
+   "5 horas"
+  ],
+  "evidencia": "- No socios: $85.000 por evento de hasta 5 horas.",
+  "respuesta_ideal": "Para no socios el salón cuesta $85.000 por evento de hasta 5 horas.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «La limpieza queda a cargo de quien alquila. Si prefieren, ofrecemos servicio de limpieza por $15.000»."
+ },
+ {
+  "id": "i0140",
+  "negocio": "W6_n1",
+  "turnos_previos_del_cliente": [
+   "Buenas tardes, ¿hasta qué hora atienden los viernes?"
+  ],
+  "cliente": "¿y los sábados?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "cerrado"
+  ],
+  "evidencia": "Sábados y domingos: cerrado.",
+  "respuesta_ideal": "Los sábados y domingos la ventanilla está cerrada.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Sábados y domingos: cerrado»."
+ },
+ {
+  "id": "i0141",
+  "negocio": "W6_n2",
+  "turnos_previos_del_cliente": [],
+  "cliente": "hola, a que hora abren los sabados?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "10 a 18 h"
+  ],
+  "evidencia": "Tienda: martes a sábado de 10 a 18 h. Lunes y domingos: cerrado. Feriados: cerrado.",
+  "respuesta_ideal": "¡Hola! La tienda abre de martes a sábado de 10 a 18 h, así que los sábados abrimos a las 10.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Tienda: martes a sábado de 10 a 18 h. Lunes y domingos: cerrado»."
+ },
+ {
+  "id": "i0142",
+  "negocio": "W8_n4",
+  "turnos_previos_del_cliente": [
+   "hola, cuanto vale un felpudo con mi apellido puesto?",
+   "y puede ser mas grande de 60x40?"
+  ],
+  "cliente": "me lo enviais a mallorca? cuanto es el envio",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "25"
+  ],
+  "evidencia": "Baleares: 25 €.",
+  "respuesta_ideal": "Sí, el envío a Baleares cuesta 25 €.",
+  "respuesta_a_calificar": "Sobre eso, las indicaciones del negocio dicen: «No des presupuestos de limpieza de alfombras de seda, anudadas a mano o antiguas: pide que envíen una foto y las medidas al WhatsApp 611 40 22 18 y Paco les hace el presupuesto»."
+ },
+ {
+  "id": "i0143",
+  "negocio": "W3_n4",
+  "turnos_previos_del_cliente": [
+   "¿Qué cursos hacen en sábado?"
+  ],
+  "cliente": "¿Es válido el certificado en toda Argentina?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "IRAM",
+   "SRT",
+   "Argentina"
+  ],
+  "evidencia": "Certificado: Válido en toda la Argentina; Certificado: Reconocido por la SRT",
+  "respuesta_ideal": "Sí, es válido en toda Argentina. Lo avala el IRAM y lo reconoce la SRT (Superintendencia de Riesgos del Trabajo).",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Certificado: Válido en toda la Argentina»."
+ },
+ {
+  "id": "i0144",
+  "negocio": "W8_n2",
+  "turnos_previos_del_cliente": [
+   "Buenas, mi permiso de turista se me vence la otra semana, puedo extenderlo aquí?",
+   "cuanto cuesta?",
+   "que tengo que llevar?",
+   "las fotos las puedo tomar con mis lentes? es que no veo nada sin ellos"
+  ],
+  "cliente": "necesito cita o solo llego?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "cita",
+   "775-4411"
+  ],
+  "evidencia": "Los trámites marcados con «Sí» requieren cita previa, que se agenda solo por la línea 775-4411 o en el portal de citas.",
+  "respuesta_ideal": "La prórroga requiere cita previa; se agenda por la línea 775-4411, de lunes a viernes de 8:00 a. m. a 12:00 m., o en el portal de citas.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Los trámites marcados con «Sí» requieren cita previa, que se agenda solo por la línea 775-4411 o en el portal de citas»."
+ },
+ {
+  "id": "i0145",
+  "negocio": "W4_n2",
+  "turnos_previos_del_cliente": [
+   "Buenas tardes, quiero una serenata para mi mamá en Zapopan. ¿Cuánto cuesta la de una hora?",
+   "donde esta su oficina por si paso a pagar?",
+   "y si la hago un jueves, cuanto me quedaria?"
+  ],
+  "cliente": "tocan Cielito lindo y El rey?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "Cielito Lindo",
+   "El Rey"
+  ],
+  "evidencia": "Tocamos \"Las Mañanitas\", \"Cielito Lindo\", \"El Son de la Negra\", \"Amor Eterno\", \"El Rey\", \"Hermoso Cariño\", \"Volver, volver\", \"Si nos dejan\" y \"La Bikina\", entre muchas otras.",
+  "respuesta_ideal": "Sí, tanto \"Cielito Lindo\" como \"El Rey\" están en nuestro repertorio.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Tocamos \"Las Mañanitas\", \"Cielito Lindo\", \"El Son de la Negra\", \"Amor Eterno\", \"El Rey\", \"Hermoso Cariño\", \"Volver, volver\", \"Si nos dejan\" y \"La Bikina\", entre muchas otras»."
+ },
+ {
+  "id": "i0146",
+  "negocio": "W1_n4",
+  "turnos_previos_del_cliente": [
+   "Hola, dan clases de costura?",
+   "¿qué días son?",
+   "Si compro la electrónica de 60 puntadas, ¿me regalan el curso?",
+   "quiero apartar esa electrónica, ¿cuánto tengo que dejar?",
+   "¿Dan constancia al terminar el curso?"
+  ],
+  "cliente": "¿abren el domingo?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "cerrado"
+  ],
+  "evidencia": "Domingo cerrado.",
+  "respuesta_ideal": "No, el domingo está cerrado; el sábado abrimos de 10:00 a 15:00 hrs.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Horario: lunes a viernes de 9:30 a 19:00 hrs, sábado de 10:00 a 15:00 hrs. Domingo cerrado»."
+ },
+ {
+  "id": "i0147",
+  "negocio": "W4_n3",
+  "turnos_previos_del_cliente": [
+   "Soy de Argentina, ¿qué necesito para inscribirme al técnico?",
+   "hasta cuando hay tiempo de inscribirse?",
+   "hay estacionamiento para auto?",
+   "tienen residencia o pension para estudiantes de afuera?",
+   "si pago todo el año adelantado me hacen descuento?"
+  ],
+  "cliente": "cuantos alumnos entran por turno?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "40"
+  ],
+  "evidencia": "Cupo: 40 alumnos por turno.",
+  "respuesta_ideal": "El cupo es de 40 alumnos por turno. Lo invito a visitar el instituto de lunes a viernes en horario de Secretaría.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Cupo: 40 alumnos por turno»."
+ },
+ {
+  "id": "i0148",
+  "negocio": "W3_n2",
+  "turnos_previos_del_cliente": [
+   "Buenos días. Tengo mareos frecuentes y me han dicho que vaya a una clínica de vértigo.",
+   "¿Cuánto cuesta la primera consulta?"
+  ],
+  "cliente": "¿Qué días atienden?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "Lunes a viernes",
+   "9 a.m.",
+   "7 p.m."
+  ],
+  "evidencia": "Lunes a viernes: 9 a.m. - 7 p.m.",
+  "respuesta_ideal": "De lunes a viernes de 9 a.m. a 7 p.m., y sábados de 9 a.m. a 2 p.m.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Resultados de pruebas: entrega el mismo día si es sencilla; las más complejas en 48h»."
+ },
+ {
+  "id": "i0149",
+  "negocio": "W7_n3",
+  "turnos_previos_del_cliente": [
+   "Hola, quisiera aprender a hacer paella. ¿Tienen algún taller?"
+  ],
+  "cliente": "¿Cuál es la próxima fecha disponible?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "Para ver las próximas fechas disponibles, consulta nuestro calendario en www.sazoncontemporaneo.es o llama al +34 91 445 78 23.",
+  "respuesta_a_calificar": "Sobre eso, las indicaciones del negocio dicen: «Fechas y disponibilidad: no hagas reservas directo. Si preguntan cuándo es el próximo taller, responde: «Consulta nuestro calendario en www.sazoncontemporaneo.es o llama al +34 91 445 78 23 para conocer las próximas fechas disponibles.»»."
+ }
+]

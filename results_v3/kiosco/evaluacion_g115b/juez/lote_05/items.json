@@ -1,0 +1,500 @@
+[
+ {
+  "id": "i0150",
+  "negocio": "W2_n4",
+  "turnos_previos_del_cliente": [
+   "cuanto vale una tetera para compartir?",
+   "y el chai latte?",
+   "quiero un matcha latte con leche de avena, ¿cuánto es?",
+   "que incluye la merienda inglesa?",
+   "y cuanto sale por persona?"
+  ],
+  "cliente": "quiero encargar una merienda inglesa para mañana a las 17:00, ¿me la confirmas?",
+  "tipo": "instruccion",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "Nunca confirmes reservas, encargos ni inscripciones a talleres: explica que se hacen por teléfono, al 954 55 01 23, y deriva allí.",
+  "respuesta_ideal": "No puedo confirmar encargos; llama al 954 55 01 23 (hay que encargarla con 24 horas de antelación).",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «La merienda inglesa se sirve de 16:00 a 19:00 h y hay que encargarla por teléfono con 24 horas de antelación»."
+ },
+ {
+  "id": "i0151",
+  "negocio": "W4_n1",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Tengo dos hijos, de 9 y de 12. ¿Cuánto pagaría por mes por los dos?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "3.900",
+   "20 %",
+   "7.020"
+  ],
+  "evidencia": "Cuota mensual, 3 clases por semana (Infantil A y B): $U 3.900 / Segundo hermano: 20 % de descuento en la cuota mensual (no en la matrícula).",
+  "respuesta_ideal": "Los dos van a categorías de 3 clases por semana, $U 3.900 cada uno, y el segundo hermano tiene 20 % de descuento: en total $U 7.020 por mes. La matrícula de $U 1.800 por cada uno se paga aparte.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Escuelita de Verano (febrero, lunes a viernes de 9 a 12 h, 4 semanas): $U 6.500 el mes completo o $U 2.000 la semana suelta»."
+ },
+ {
+  "id": "i0152",
+  "negocio": "W4_n4",
+  "turnos_previos_del_cliente": [
+   "Necesito factura a nombre de mi empresa, ¿se puede?",
+   "si tengo que cancelar 3 dias antes, me devuelven el anticipo?",
+   "hacen precio especial para empresas o pedidos grandes?"
+  ],
+  "cliente": "puedo pagar el anticipo con una transferencia desde un banco de Estados Unidos?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo información sobre transferencias desde el extranjero; aquí aceptamos transferencia o depósito en Banrural y Banco Industrial. Consúltelo con Lucho al 5514 7730.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Aceptamos efectivo, transferencia o depósito (Banrural y Banco Industrial) y tarjeta de crédito o débito en la oficina con un recargo del 5 %. Emitimos factura electrónica (FEL) a nombre del cliente si la pide antes de pagar»."
+ },
+ {
+  "id": "i0153",
+  "negocio": "W7_n2",
+  "turnos_previos_del_cliente": [],
+  "cliente": "¿Ofrecen clases en grupo?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "clases grupales",
+   "martes y jueves",
+   "$120.000"
+  ],
+  "evidencia": "Clases grupales de bajo impacto, aquagym y estiramientos: martes y jueves 17:30 h, sábado 10:00 h. Inscripción: $120.000 mes",
+  "respuesta_ideal": "Sí, ofrecemos clases grupales de bajo impacto, aquagym y estiramientos los martes, jueves a las 17:30 h y sábados a las 10:00 h. La inscripción mensual cuesta $120.000 por 4 clases.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Clases grupales de bajo impacto, aquagym y estiramientos: martes y jueves 17:30 h, sábado 10:00 h. Inscripción: $120.000 mes (4 clases)»."
+ },
+ {
+  "id": "i0154",
+  "negocio": "W8_n2",
+  "turnos_previos_del_cliente": [],
+  "cliente": "hola, necesito renovar mi pasaporte panameño, que requisitos piden?",
+  "tipo": "instruccion",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "Pasaportes, permisos de trabajo y naturalización no se tramitan en esta oficina: diga a qué institución corresponden y no dé más detalles sobre esos trámites.",
+  "respuesta_ideal": "Los pasaportes no se tramitan en esta oficina; corresponden a la Autoridad de Pasaportes, que tiene una agencia en David, en el Palacio Municipal.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Trámite: Renovación de carné de residente; Tarifa: B/. 100.00; Cita: Sí; Requisitos principales: Pasaporte; carné vencido; 2 fotos»."
+ },
+ {
+  "id": "i0155",
+  "negocio": "W1_n1",
+  "turnos_previos_del_cliente": [
+   "Hola, quiero venderles arroz en cáscara, a cómo están pagando la saca?",
+   "que papeles necesito si es la primera vez que vendo",
+   "y me pagan en efectivo o como?"
+  ],
+  "cliente": "si mi arroz llega con 23 de humedad cuanto me descuentan?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "4,5"
+  ],
+  "evidencia": "por cada punto de humedad sobre 20 % se descuenta 1,5 % del peso",
+  "respuesta_ideal": "Son 3 puntos sobre el 20 %, a 1,5 % cada uno: se le descontaría el 4,5 % del peso.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Es por saca de 200 libras con 20 % de humedad y 5 % de impurezas»."
+ },
+ {
+  "id": "i0156",
+  "negocio": "W2_n1",
+  "turnos_previos_del_cliente": [
+   "Vamos 2 adultos y 2 niños de 10 y 7 años, queremos museo y torre, ¿cuánto sería en total?",
+   "el de 7 años entra gratis?",
+   "se puede pagar con tarjeta de credito?"
+  ],
+  "cliente": "Mi papá va en silla de ruedas, ¿puede visitar el faro?",
+  "tipo": "instruccion",
+  "accion_esperada": "responder",
+  "claves": [
+   "accesible para sillas de ruedas por rampa",
+   "la torre no"
+  ],
+  "evidencia": "Accesibilidad: el museo de sitio es accesible para sillas de ruedas por rampa; la torre no.",
+  "respuesta_ideal": "Puede visitar el museo de sitio, que es accesible para sillas de ruedas por rampa; la torre no es accesible.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Accesibilidad: el museo de sitio es accesible para sillas de ruedas por rampa; la torre no»."
+ },
+ {
+  "id": "i0157",
+  "negocio": "W7_n4",
+  "turnos_previos_del_cliente": [
+   "¿Se puede llevar mascota?"
+  ],
+  "cliente": "¿A qué hora es el check-in?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "14:00"
+  ],
+  "evidencia": "Check-in: 14:00 h",
+  "respuesta_ideal": "El check-in es a las 14:00 horas.",
+  "respuesta_a_calificar": "Sobre eso, las indicaciones del negocio dicen: «Check-in y check-out: check-in es a las 14:00 h y check-out a las 11:00 h. Si alguien necesita salida tardía, cuesta US$10 por hora, según disponibilidad»."
+ },
+ {
+  "id": "i0158",
+  "negocio": "W5_n1",
+  "turnos_previos_del_cliente": [
+   "Buenas tardes",
+   "a que hora cierran los viernes?"
+  ],
+  "cliente": "¿y los sábados atienden?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "9:00 a 13:00"
+  ],
+  "evidencia": "Sábados: solo sesiones agendadas, de 9:00 a 13:00",
+  "respuesta_ideal": "Los sábados solo hay sesiones agendadas, de 9:00 a 13:00.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Sábados: solo sesiones agendadas, de 9:00 a 13:00»."
+ },
+ {
+  "id": "i0159",
+  "negocio": "W5_n3",
+  "turnos_previos_del_cliente": [
+   "la DIAN me rechazó una factura y el cliente me está esperando, ayuda!!",
+   "me acaba de llegar un codigo al celular 448120, se lo doy para que lo revisen?",
+   "si escribo al correo en cuanto me responden?"
+  ],
+  "cliente": "y por whatsapp?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "30 minutos"
+  ],
+  "evidencia": "Tiempos de respuesta: chat y WhatsApp, menos de 30 minutos en horario hábil; correo, 1 día hábil.",
+  "respuesta_ideal": "Por WhatsApp responden en menos de 30 minutos en horario hábil.",
+  "respuesta_a_calificar": "Sobre eso, las indicaciones del negocio dicen: «Si el cliente dice que la DIAN le rechazó una factura, pídale el número de la factura y remítalo a soporte técnico por WhatsApp al 315 604 2281»."
+ },
+ {
+  "id": "i0160",
+  "negocio": "W2_n3",
+  "turnos_previos_del_cliente": [
+   "hola",
+   "cuanto cuesta el paquete plus para un sabado?"
+  ],
+  "cliente": "cuantos niños entran?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "25"
+  ],
+  "evidencia": "Plus | 25 | $4,200 | $5,100",
+  "respuesta_ideal": "El paquete Plus incluye 25 niños.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Paquete: Plus; Niños incl.: 25; Entre semana (mar-vie): $4,200; Fin de semana (sáb-dom): $5,100»."
+ },
+ {
+  "id": "i0161",
+  "negocio": "W4_n1",
+  "turnos_previos_del_cliente": [],
+  "cliente": "buenas, la nena tiene 5 años. la sede del centro donde queda?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "Canelones 1187"
+  ],
+  "evidencia": "Sede Centro (solo categorías 4-7 años): Gimnasio del Colegio Sagrado Corazón, Canelones 1187.",
+  "respuesta_ideal": "¡Hola! Bienvenida a Gambeta Charrúa. La sede Centro es en el gimnasio del Colegio Sagrado Corazón, Canelones 1187; con 5 años iría a Semillitas, martes y jueves de 17:00 a 17:50.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Categoría: Semillitas; Edades: 4 y 5 años; Días: martes y jueves; Horario: 17:00 a 17:50; Sede: Parque Rivera y Centro»."
+ },
+ {
+  "id": "i0162",
+  "negocio": "W2_n4",
+  "turnos_previos_del_cliente": [
+   "cuanto cuestan 50 g de te verde sencha?",
+   "y la bolsa de 100 g?",
+   "hacen envios a Canarias?"
+  ],
+  "cliente": "si compro 45 euros en te hay descuento? cuanto pagaria?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "10% de descuento",
+   "€40"
+  ],
+  "evidencia": "- 10% de descuento en compras superiores a €40.",
+  "respuesta_ideal": "Sí, en compras superiores a €40 hay 10% de descuento: €45 quedarían en €40,50 (más envío si lo quieres a domicilio).",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «10% de descuento en compras superiores a €40»."
+ },
+ {
+  "id": "i0163",
+  "negocio": "W6_n4",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Quiero ser dirigente voluntario, ¿qué edad tengo que tener?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "mayores de 21 años"
+  ],
+  "evidencia": "Pueden ser dirigentes las personas mayores de 21 años.",
+  "respuesta_ideal": "Pueden ser dirigentes las personas mayores de 21 años.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Pueden ser dirigentes las personas mayores de 21 años»."
+ },
+ {
+  "id": "i0164",
+  "negocio": "W2_n1",
+  "turnos_previos_del_cliente": [
+   "hola buenas tardes",
+   "¿a qué hora abren y hasta cuándo?",
+   "¿y los lunes?",
+   "¿cuánto sale subir a la torre para un adulto?"
+  ],
+  "cliente": "¿y para un nene de 8 años?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "$U 160"
+  ],
+  "evidencia": "| Niños de 6 a 12 años | $U 90 | $U 160 |",
+  "respuesta_ideal": "Para niños de 6 a 12 años, museo más torre cuesta $U 160.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «El faro emite un destello blanco cada 8 segundos y se ve hasta 22 millas náuticas»."
+ },
+ {
+  "id": "i0165",
+  "negocio": "W1_n2",
+  "turnos_previos_del_cliente": [
+   "Mi inquilino se fue y me dejó la casa rota. ¿Le puedo descontar todo del depósito? ¿Qué dice la ley?",
+   "¿y a qué hora atiende ese consultorio?"
+  ],
+  "cliente": "¿Cuánto dura una audiencia?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "2 horas"
+  ],
+  "evidencia": "Primera audiencia: dura hasta 2 horas.",
+  "respuesta_ideal": "La primera audiencia dura hasta 2 horas, y puede haber hasta 4 audiencias por caso.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Primera audiencia: dura hasta 2 horas. Se pueden hacer hasta 4 audiencias por caso»."
+ },
+ {
+  "id": "i0166",
+  "negocio": "W2_n2",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Buenas! quería saber cuanto cuesta el curso de italiano",
+  "tipo": "instruccion",
+  "accion_esperada": "responder",
+  "claves": [
+   "$189.000",
+   "20%"
+  ],
+  "evidencia": "Valor por nivel: $189.000 (público general) y $151.200 (socios).",
+  "respuesta_ideal": "Cada nivel cuesta $189.000 para el público general y $151.200 para socios, que tienen un 20% de descuento.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «El libro no está incluido y se compra aparte (unos $24.000)»."
+ },
+ {
+  "id": "i0167",
+  "negocio": "W6_n2",
+  "turnos_previos_del_cliente": [
+   "hola, a que hora abren los sabados?"
+  ],
+  "cliente": "y los domingos?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "cerrado"
+  ],
+  "evidencia": "Tienda: martes a sábado de 10 a 18 h. Lunes y domingos: cerrado. Feriados: cerrado.",
+  "respuesta_ideal": "Los domingos la tienda está cerrada, igual que los lunes y feriados.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Tienda: martes a sábado de 10 a 18 h. Lunes y domingos: cerrado»."
+ },
+ {
+  "id": "i0168",
+  "negocio": "W4_n2",
+  "turnos_previos_del_cliente": [
+   "Hola, me caso en Chapala en octubre. ¿Cuánto sale el paquete de boda?",
+   "que incluye ese paquete?",
+   "cuantos kilometros son de su oficina a Chapala?",
+   "si la fiesta se alarga, cuanto cobran la hora extra?",
+   "ustedes a que hora llegan, cuanto antes de la misa?"
+  ],
+  "cliente": "llevan su propio equipo de sonido?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "no llevamos equipo de sonido"
+  ],
+  "evidencia": "Sonido: en eventos de más de 150 personas recomendamos que el salón tenga micrófonos; nosotros no llevamos equipo de sonido.",
+  "respuesta_ideal": "No, nosotros no llevamos equipo de sonido; si son más de 150 invitados le recomendamos que el salón tenga micrófonos.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Sonido: en eventos de más de 150 personas recomendamos que el salón tenga micrófonos; nosotros no llevamos equipo de sonido»."
+ },
+ {
+  "id": "i0169",
+  "negocio": "W6_n4",
+  "turnos_previos_del_cliente": [
+   "¿Cuánto cuesta el campamento de Semana Santa?"
+  ],
+  "cliente": "¿y qué incluye?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "transporte, alimentación y seguro"
+  ],
+  "evidencia": "- Campamento de Semana Santa: L 2,800. Dura 5 días e incluye transporte, alimentación y seguro.",
+  "respuesta_ideal": "Dura 5 días e incluye transporte, alimentación y seguro.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Campamento de Semana Santa: L 2,800. Dura 5 días e incluye transporte, alimentación y seguro»."
+ },
+ {
+  "id": "i0170",
+  "negocio": "W3_n1",
+  "turnos_previos_del_cliente": [
+   "Necesito reparar una guitarra. ¿Hacen eso?"
+  ],
+  "cliente": "¿Es caro cambiar los trastes?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "$120.000",
+   "$200.000"
+  ],
+  "evidencia": "Cambio de trastes (guitarra): $120.000 - $200.000",
+  "respuesta_ideal": "El cambio de trastes cuesta entre $120.000 y $200.000. Depende del estado de la guitarra y cuántos trastes necesites cambiar.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Cambio de trastes (guitarra): $120.000 - $200.000»."
+ },
+ {
+  "id": "i0171",
+  "negocio": "W5_n2",
+  "turnos_previos_del_cliente": [
+   "hola! cuanto sale la cuota de socio?",
+   "y para jubilados?",
+   "dale, me quiero asociar. que tengo que llevar?"
+  ],
+  "cliente": "se puede pagar con transferencia o tiene que ser en efectivo?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "LOMA.HERMOSA.VECINAL"
+  ],
+  "evidencia": "Se abona en secretaría en efectivo o por transferencia al alias LOMA.HERMOSA.VECINAL (enviar el comprobante por mensaje con nombre y dirección).",
+  "respuesta_ideal": "Sí, podés pagar por transferencia al alias LOMA.HERMOSA.VECINAL (mandando el comprobante con nombre y dirección) o en efectivo en secretaría.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Jubilados y pensionados pagan $1.800 por mes. Se abona en secretaría en efectivo o por transferencia al alias LOMA.HERMOSA.VECINAL (enviar el comprobante por mensaje con nombre y dirección)»."
+ },
+ {
+  "id": "i0172",
+  "negocio": "W8_n2",
+  "turnos_previos_del_cliente": [
+   "buenas tardes, voy a sacar el carné de residente temporal por primera vez, cuanto pago en total?"
+  ],
+  "cliente": "el depósito ese de 250 me lo devuelven en algún momento?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "se devuelve"
+  ],
+  "evidencia": "El depósito de repatriación se paga una sola vez y se devuelve cuando la persona cancela su residencia y sale del país definitivamente.",
+  "respuesta_ideal": "Sí: se paga una sola vez y se devuelve cuando usted cancela su residencia y sale del país definitivamente.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Trámite: Carné de residente temporal, primera vez; Tarifa: B/. 100.00 + depósito de repatriación de B/. 250.00; Cita: Sí; Requisitos principales: Pasaporte; resolución aprobada; 2 fotos; documentos del país de origen apostillados (3)»."
+ },
+ {
+  "id": "i0173",
+  "negocio": "W6_n1",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Buenas tardes, ¿hasta qué hora atienden los viernes?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "3:00 p.m."
+  ],
+  "evidencia": "Viernes: 8:00 a.m. a 3:00 p.m.",
+  "respuesta_ideal": "Buenas tardes, los viernes atendemos de 8:00 a.m. a 3:00 p.m.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Viernes: 8:00 a.m. a 3:00 p.m»."
+ },
+ {
+  "id": "i0174",
+  "negocio": "W5_n2",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Buenas, a que hora es zumba?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "lunes y miércoles",
+   "19:00 a 20:00"
+  ],
+  "evidencia": "| Zumba                   | lunes y miércoles  | 19:00 a 20:00   | $9.000                    |",
+  "respuesta_ideal": "Zumba es los lunes y miércoles de 19:00 a 20:00.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Taller: Zumba; Días: lunes y miércoles; Horario: 19:00 a 20:00; Valor mensual (no socios): $9.000»."
+ },
+ {
+  "id": "i0175",
+  "negocio": "W4_n3",
+  "turnos_previos_del_cliente": [
+   "Buenas tardes, mi hija quiere hacer el curso de auxiliar. ¿En qué horario es?",
+   "la matricula mas la primera cuota, cuanto seria en total?"
+  ],
+  "cliente": "y el uniforme donde se compra?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "Uniformes Rivarola"
+  ],
+  "evidencia": "El uniforme puede comprarse en el instituto o en Uniformes Rivarola (Mcal. López 1650); es obligatorio, blanco, con el logo bordado, desde la primera semana de clases.",
+  "respuesta_ideal": "Puede comprarlo aquí en el instituto o en Uniformes Rivarola, en Mcal. López 1650. El juego cuesta Gs. 320.000 y es obligatorio desde la primera semana de clases.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «El uniforme puede comprarse en el instituto o en Uniformes Rivarola (Mcal. López 1650); es obligatorio, blanco, con el logo bordado, desde la primera semana de clases»."
+ },
+ {
+  "id": "i0176",
+  "negocio": "W1_n2",
+  "turnos_previos_del_cliente": [
+   "Yo no vivo en Salta capital, soy de Cerrillos. ¿Tengo que pagar algo?",
+   "si son 3 audiencias pago 3 veces?"
+  ],
+  "cliente": "y si además necesito 2 copias certificadas del acta, cuánto sería todo junto?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "23.000"
+  ],
+  "evidencia": "Copias certificadas del acta: $ 2.500 cada una.",
+  "respuesta_ideal": "Serían $ 18.000 del arancel más 2 copias a $ 2.500: $ 23.000 en total.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Copias certificadas del acta: $ 2.500 cada una»."
+ },
+ {
+  "id": "i0177",
+  "negocio": "W3_n4",
+  "turnos_previos_del_cliente": [
+   "¿Qué cursos hacen en sábado?",
+   "¿Es válido el certificado en toda Argentina?"
+  ],
+  "cliente": "¿Cuánto cuesta Primeros Auxilios?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "70 dólares",
+   "12 horas"
+  ],
+  "evidencia": "PRIMEROS AUXILIOS — 12 horas (70 dólares)",
+  "respuesta_ideal": "Primeros Auxilios cuesta 70 dólares y son 12 horas teórico-prácticas con maniquíes.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «PRIMEROS AUXILIOS — 12 horas (70 dólares)»."
+ },
+ {
+  "id": "i0178",
+  "negocio": "W8_n3",
+  "turnos_previos_del_cliente": [
+   "buenas, quiero hacer TIG, ya sé soldar con electrodo pero no he hecho cursos",
+   "la prueba cuanto cuesta y cuando la puedo dar?"
+  ],
+  "cliente": "si pago todo de una hay descuento?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "10%"
+  ],
+  "evidencia": "10% de descuento si pagas el curso completo al contado al momento de inscribirte.",
+  "respuesta_ideal": "Sí, hay un 10% de descuento si pagas el curso completo al contado al inscribirte.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «10% de descuento si pagas el curso completo al contado al momento de inscribirte»."
+ },
+ {
+  "id": "i0179",
+  "negocio": "W5_n2",
+  "turnos_previos_del_cliente": [
+   "hola necesito un certificado de domicilio lo hacen ahi?"
+  ],
+  "cliente": "otra cosa, el apoyo escolar se paga?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "gratuito"
+  ],
+  "evidencia": "| Apoyo escolar primaria  | lunes a jueves     | 14:00 a 16:00   | gratuito                  |",
+  "respuesta_ideal": "No, el apoyo escolar de primaria es gratuito, de lunes a jueves de 14:00 a 16:00.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Taller: Apoyo escolar primaria; Días: lunes a jueves; Horario: 14:00 a 16:00; Valor mensual (no socios): gratuito»."
+ }
+]

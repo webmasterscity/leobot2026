@@ -1,0 +1,488 @@
+[
+ {
+  "id": "i0210",
+  "negocio": "W1_n4",
+  "turnos_previos_del_cliente": [
+   "¡Buenas! cuanto cuesta una overlock para la casa?",
+   "¿y trae garantía?",
+   "¿la puedo sacar a meses?"
+  ],
+  "cliente": "¿Aceptan American Express?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "no American Express"
+  ],
+  "evidencia": "Efectivo, tarjeta de débito y de crédito (Visa y Mastercard; no American Express) y transferencia.",
+  "respuesta_ideal": "No, aceptamos Visa y Mastercard, pero no American Express.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Efectivo, tarjeta de débito y de crédito (Visa y Mastercard; no American Express) y transferencia»."
+ },
+ {
+  "id": "i0211",
+  "negocio": "W7_n2",
+  "turnos_previos_del_cliente": [
+   "¿A qué horarios atienden los sábados?",
+   "¿Y los domingos también abren?"
+  ],
+  "cliente": "¿Tienen estacionamiento?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "disponible",
+   "$5.000",
+   "$100.000 mes"
+  ],
+  "evidencia": "Estacionamiento disponible: $5.000 por día o $100.000 mes",
+  "respuesta_ideal": "Sí, tenemos estacionamiento disponible a $5.000 por día o $100.000 al mes si prefieres un lugar fijo.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Estacionamiento disponible: $5.000 por día o $100.000 mes»."
+ },
+ {
+  "id": "i0212",
+  "negocio": "W5_n3",
+  "turnos_previos_del_cliente": [
+   "hola",
+   "donde queda la oficina de ustedes?",
+   "el sabado a que horas abren",
+   "hay parqueadero en el edificio?"
+  ],
+  "cliente": "¿puedo ir a pagar en efectivo allá?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "efectivo"
+  ],
+  "evidencia": "Tarjeta de crédito o débito, PSE y consignación bancaria. No se reciben pagos en efectivo en la oficina.",
+  "respuesta_ideal": "No, en la oficina no se reciben pagos en efectivo; puede pagar con tarjeta de crédito o débito, PSE o consignación bancaria.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «No se reciben pagos en efectivo en la oficina»."
+ },
+ {
+  "id": "i0213",
+  "negocio": "W8_n4",
+  "turnos_previos_del_cliente": [],
+  "cliente": "hola buenas, cuanto me cobrariais por limpiar una alfombra de lana de 2 por 3 metros? es de las tejidas a maquina",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "84"
+  ],
+  "evidencia": "| Lana tejida a máquina | 14 €/m² |",
+  "respuesta_ideal": "Hola. Son 6 m² a 14 €/m², así que 84 €; el pedido mínimo es de 25 € y por ser más de 60 € la recogida y entrega en Granada capital es gratis.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Tipo de alfombra: Lana tejida a máquina; Precio: 14 €/m²»."
+ },
+ {
+  "id": "i0214",
+  "negocio": "W6_n2",
+  "turnos_previos_del_cliente": [
+   "¿Tienen probadores?",
+   "¿y baño para el público?"
+  ],
+  "cliente": "¿Cuánto sale un libro de tapa dura?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "$U 120"
+  ],
+  "evidencia": "- Libros de tapa blanda: $U 80 / tapa dura: $U 120",
+  "respuesta_ideal": "Los libros de tapa dura cuestan $U 120.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Libros de tapa blanda: $U 80 / tapa dura: $U 120»."
+ },
+ {
+  "id": "i0215",
+  "negocio": "W8_n2",
+  "turnos_previos_del_cliente": [],
+  "cliente": "hola, necesito el certificado de movimiento migratorio para hoy mismo, se puede?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "11:00"
+  ],
+  "evidencia": "El certificado de movimiento migratorio se entrega el mismo día si se solicita antes de las 11:00 a. m.; después de esa hora se entrega el siguiente día hábil.",
+  "respuesta_ideal": "Sí, siempre que lo solicite antes de las 11:00 a. m.; después de esa hora se entrega el siguiente día hábil. No necesita cita, se atiende con ticket por orden de llegada.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «El certificado de movimiento migratorio se entrega el mismo día si se solicita antes de las 11:00 a. m.; después de esa hora se entrega el siguiente día hábil»."
+ },
+ {
+  "id": "i0216",
+  "negocio": "W8_n3",
+  "turnos_previos_del_cliente": [
+   "buenas, quiero hacer TIG, ya sé soldar con electrodo pero no he hecho cursos",
+   "la prueba cuanto cuesta y cuando la puedo dar?",
+   "si pago todo de una hay descuento?"
+  ],
+  "cliente": "entonces cuanto pagaria por el TIG con ese descuento?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "468"
+  ],
+  "evidencia": "| Soldadura TIG (acero inoxidable y aluminio) | 60 h | USD 520 | Haber aprobado Soldadura básica o rendir prueba práctica |\n\n10% de descuento si pagas el curso completo al contado al momento de inscribirte.",
+  "respuesta_ideal": "USD 520 menos el 10% son USD 468, pagando todo al contado al inscribirte.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «10% de descuento si pagas el curso completo al contado al momento de inscribirte»."
+ },
+ {
+  "id": "i0217",
+  "negocio": "W1_n1",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Puedo entrar con mi hijo de 10 años a ver las maquinas?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "menores de 14 años"
+  ],
+  "evidencia": "Prohibido el ingreso de menores de 14 años a la zona de máquinas.",
+  "respuesta_ideal": "No, está prohibido el ingreso de menores de 14 años a la zona de máquinas.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Prohibido el ingreso de menores de 14 años a la zona de máquinas»."
+ },
+ {
+  "id": "i0218",
+  "negocio": "W1_n2",
+  "turnos_previos_del_cliente": [
+   "atienden a la tarde?",
+   "y en enero?",
+   "mi abuela habla quechua nomas, alguien le entiende?",
+   "¿Se puede hacer la audiencia un sábado?",
+   "mi hermano vive en Tucumán, ¿puede participar por videollamada?",
+   "¿El edificio tiene rampa o ascensor para silla de ruedas?"
+  ],
+  "cliente": "¿Cuánto tarda el juzgado en homologar el acuerdo?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo ese dato; la homologación se hace en el juzgado con su abogado o con la Defensoría.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Si hay acuerdo, se firma un acta. Los acuerdos familiares se pueden llevar a homologar al juzgado; ese trámite lo hace cada uno con su abogado o con la Defensoría»."
+ },
+ {
+  "id": "i0219",
+  "negocio": "W5_n1",
+  "turnos_previos_del_cliente": [
+   "Buenas tardes"
+  ],
+  "cliente": "a que hora cierran los viernes?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "16:00"
+  ],
+  "evidencia": "Viernes: 8:30 a 16:00",
+  "respuesta_ideal": "Los viernes atendemos de 8:30 a 16:00 (en enero y febrero, solo hasta las 13:00).",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Viernes: 8:30 a 16:00»."
+ },
+ {
+  "id": "i0220",
+  "negocio": "W7_n3",
+  "turnos_previos_del_cliente": [
+   "¿Hacen clases para niños?",
+   "Mi hijo tiene 14 años. ¿Puede entrar en los cursos normales?"
+  ],
+  "cliente": "¿A qué horario atendéis los sábados?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "10:00 a 18:00"
+  ],
+  "evidencia": "Sábado: 10:00 a 18:00 h",
+  "respuesta_ideal": "Los sábados atendemos de 10:00 a 18:00 horas.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Sábado: 10:00 a 18:00 h»."
+ },
+ {
+  "id": "i0221",
+  "negocio": "W4_n1",
+  "turnos_previos_del_cliente": [
+   "buenas, la nena tiene 5 años. la sede del centro donde queda?",
+   "hay vestuarios ahi?",
+   "que papeles tengo que llevar para inscribirla?",
+   "la nena tiene asma, puede hacer futbol igual?",
+   "quien es la profe de los mas chiquitos?"
+  ],
+  "cliente": "y ella tiene titulo de educacion fisica?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo ese dato de Lucía; sé que el director, Marcelo Ibarra, es licenciado en Educación Física y que todos los profes tienen curso de primeros auxilios. Podés consultarlo con Andrea al 099 412 780.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Director técnico: Prof. Marcelo Ibarra (licenciado en Educación Física, ISEF)»."
+ },
+ {
+  "id": "i0222",
+  "negocio": "W7_n2",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Buenas, ¿hacen fisioterapia?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "Sesiones individuales de 45 minutos",
+   "fisioterapia"
+  ],
+  "evidencia": "Fisioterapia y rehabilitación: Sesiones individuales de 45 minutos: $65.000 por sesión",
+  "respuesta_ideal": "Sí, ofrecemos fisioterapia y rehabilitación. Las sesiones individuales duran 45 minutos y cuestan $65.000 cada una.",
+  "respuesta_a_calificar": "Buenas. No lo sé: no encontré esa información en el texto que tengo."
+ },
+ {
+  "id": "i0223",
+  "negocio": "W4_n2",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Buenas. Di un anticipo para una serenata que es en 10 días pero ya no la quiero, ¿me regresan el dinero?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "mitad"
+  ],
+  "evidencia": "Cancelación entre 15 y 3 días antes: se devuelve la mitad del anticipo.",
+  "respuesta_ideal": "¡Qué tal! Como faltan 10 días, está entre 15 y 3 días antes del servicio: se le devuelve la mitad del anticipo.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Para apartar fecha se paga un anticipo del 50 % del paquete. Sin anticipo no hay fecha apartada, aunque ya hayamos platicado»."
+ },
+ {
+  "id": "i0224",
+  "negocio": "W5_n3",
+  "turnos_previos_del_cliente": [
+   "la DIAN me rechazó una factura y el cliente me está esperando, ayuda!!",
+   "me acaba de llegar un codigo al celular 448120, se lo doy para que lo revisen?"
+  ],
+  "cliente": "si escribo al correo en cuanto me responden?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "1 día hábil"
+  ],
+  "evidencia": "Tiempos de respuesta: chat y WhatsApp, menos de 30 minutos en horario hábil; correo, 1 día hábil.",
+  "respuesta_ideal": "Por correo la respuesta llega en 1 día hábil.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Firma digital. Nosotros la tramitamos: va incluida en los planes Pyme y Pro; en el plan Emprende tiene un costo de $ 85.000»."
+ },
+ {
+  "id": "i0225",
+  "negocio": "W1_n2",
+  "turnos_previos_del_cliente": [
+   "Yo no vivo en Salta capital, soy de Cerrillos. ¿Tengo que pagar algo?",
+   "si son 3 audiencias pago 3 veces?",
+   "y si además necesito 2 copias certificadas del acta, cuánto sería todo junto?"
+  ],
+  "cliente": "¿Puedo pagar ahí mismo en efectivo?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "no se maneja efectivo"
+  ],
+  "evidencia": "Formas de pago: solo en la caja municipal o por transferencia; en el centro no se maneja efectivo.",
+  "respuesta_ideal": "No, en el centro no se maneja efectivo; se paga en la caja municipal o por transferencia.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Formas de pago: solo en la caja municipal o por transferencia; en el centro no se maneja efectivo»."
+ },
+ {
+  "id": "i0226",
+  "negocio": "W6_n2",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Tengo 4 bolsas de ropa para donar, ¿dónde las llevo?",
+  "tipo": "instruccion",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "2. No aceptes ni confirmes donaciones ni retiros a domicilio: los coordina Nicolás Rebollo por WhatsApp al 099 412 336.",
+  "respuesta_ideal": "Como son más de 3 bolsas, hay que avisar con anticipación; comuníquese con el coordinador, Nicolás Rebollo, por WhatsApp al 099 412 336.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Bolsa de la Suerte (5 kg de ropa surtida): $U 500»."
+ },
+ {
+  "id": "i0227",
+  "negocio": "W5_n1",
+  "turnos_previos_del_cliente": [
+   "¿la otra persona está obligada a venir?",
+   "y si no quiere venir que pasa"
+  ],
+  "cliente": "cuanto demora todo el proceso mas o menos",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "4 y 6 semanas"
+  ],
+  "evidencia": "El proceso completo dura en promedio entre 4 y 6 semanas.",
+  "respuesta_ideal": "En promedio, el proceso completo dura entre 4 y 6 semanas.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Comunidades de copropietarios (condominios de más de 20 unidades) ... $45.000 por proceso, pagado por la administración»."
+ },
+ {
+  "id": "i0228",
+  "negocio": "W5_n4",
+  "turnos_previos_del_cliente": [
+   "buenas tardes, a que hora puedo entrar para dormir?",
+   "¿me asegura que hay cama para hoy?"
+  ],
+  "cliente": "cuantas noches me puedo quedar",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "7 noches"
+  ],
+  "evidencia": "La estancia es de máximo 7 noches por persona.",
+  "respuesta_ideal": "La estancia es de máximo 7 noches por persona.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Las familias con niñas o niños menores de 5 años y las mujeres embarazadas pueden quedarse hasta 15 noches»."
+ },
+ {
+  "id": "i0229",
+  "negocio": "W8_n2",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Buenos días, me pasé tres meses de mi estadía de turista, cuánto es la multa?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "150"
+  ],
+  "evidencia": "Multa por estadía vencida\tB/. 50.00 por cada mes o fracción\t—\tSe paga en caja antes de cualquier otro trámite",
+  "respuesta_ideal": "La multa es de B/. 50.00 por cada mes o fracción, así que por tres meses serían B/. 150.00. Se paga en caja, que cierra a las 2:30 p. m., antes de cualquier otro trámite.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Trámite: Multa por estadía vencida; Tarifa: B/. 50.00 por cada mes o fracción; Cita: —; Requisitos principales: Se paga en caja antes de cualquier otro trámite»."
+ },
+ {
+  "id": "i0230",
+  "negocio": "W6_n4",
+  "turnos_previos_del_cliente": [
+   "¿Cuánto cuesta el campamento de Semana Santa?",
+   "¿y qué incluye?",
+   "¿y el de fin de semana?"
+  ],
+  "cliente": "¿a qué lugar van este año al campamento de Semana Santa?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo el lugar del campamento. Puede consultarlo al Jefe de Grupo por WhatsApp al 9812-3340 o al 2550-4471.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Campamento de Semana Santa: L 2,800. Dura 5 días e incluye transporte, alimentación y seguro»."
+ },
+ {
+  "id": "i0231",
+  "negocio": "W1_n3",
+  "turnos_previos_del_cliente": [
+   "El doctor me indicó 10 unidades de insulina pero hoy tengo el azúcar alta, ¿me pongo 15?",
+   "¿vienen a medir la glucosa a la casa?"
+  ],
+  "cliente": "¿Atienden en Warnes?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "Bs 40"
+  ],
+  "evidencia": "Recargo por zona (Warnes, Cotoca, La Guardia): Bs 40 por visita.",
+  "respuesta_ideal": "Sí, en Warnes atendemos con un recargo de Bs 40 por visita.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «En Warnes, Cotoca y La Guardia también atendemos, con recargo»."
+ },
+ {
+  "id": "i0232",
+  "negocio": "W1_n2",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Quiero hacer un acuerdo de visitas con el papá de mis hijos, pero la última vez me pegó y le tengo miedo",
+  "tipo": "instruccion",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "Si la persona menciona violencia, golpes, amenazas o que tiene miedo, no sigas con el trámite: indicale que llame al 144 (violencia de género) o al 911 si hay peligro inmediato, y derivá a la trabajadora social, Lic. Marcela Guantay.",
+  "respuesta_ideal": "Lamento mucho lo que le pasó. Puede llamar al 144, o al 911 si está en peligro ahora; y la trabajadora social, Lic. Marcela Guantay, la puede atender.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Acuerdos familiares de régimen de comunicación (visitas) y cuota alimentaria, siempre que no haya violencia»."
+ },
+ {
+  "id": "i0233",
+  "negocio": "W5_n3",
+  "turnos_previos_del_cliente": [
+   "la DIAN me rechazó una factura y el cliente me está esperando, ayuda!!"
+  ],
+  "cliente": "me acaba de llegar un codigo al celular 448120, se lo doy para que lo revisen?",
+  "tipo": "instruccion",
+  "accion_esperada": "responder",
+  "claves": [
+   "no los comparta"
+  ],
+  "evidencia": "Nunca pida ni reciba contraseñas, claves de la firma digital ni códigos que le lleguen al cliente al celular. Si el cliente intenta darlos, dígale que no los comparta con nadie.",
+  "respuesta_ideal": "No, por favor: esos códigos no los comparta con nadie, tampoco conmigo.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Firma digital. Nosotros la tramitamos: va incluida en los planes Pyme y Pro; en el plan Emprende tiene un costo de $ 85.000»."
+ },
+ {
+  "id": "i0234",
+  "negocio": "W3_n3",
+  "turnos_previos_del_cliente": [
+   "¿Qué documentos necesito traer de parte del proveedor?",
+   "¿Y si es mi primera importación?"
+  ],
+  "cliente": "¿Ustedes hacen logística también?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "puerta a puerta",
+   "logística incluida"
+  ],
+  "evidencia": "Gestión integral puerta a puerta (logística incluida)",
+  "respuesta_ideal": "Sí, hacemos gestión integral puerta a puerta con logística. Es más caro pero más fácil para ti. Te damos una cotización aparte.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Gestión integral puerta a puerta (logística incluida)»."
+ },
+ {
+  "id": "i0235",
+  "negocio": "W8_n4",
+  "turnos_previos_del_cliente": [],
+  "cliente": "buenas, quiero una alfombra a medida para el salon, de lana, de 3 por 2,5. cuanto me saldria?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "360"
+  ],
+  "evidencia": "Alfombra de lana tejida a máquina, cortada a la medida que nos digas y con los bordes rematados: 48 €/m² (remate incluido).",
+  "respuesta_ideal": "Son 7,5 m² a 48 €/m² con el remate incluido: 360 €.",
+  "respuesta_a_calificar": "Sobre eso, las indicaciones del negocio dicen: «No des presupuestos de limpieza de alfombras de seda, anudadas a mano o antiguas: pide que envíen una foto y las medidas al WhatsApp 611 40 22 18 y Paco les hace el presupuesto»."
+ },
+ {
+  "id": "i0236",
+  "negocio": "W2_n1",
+  "turnos_previos_del_cliente": [
+   "Vamos 2 adultos y 2 niños de 10 y 7 años, queremos museo y torre, ¿cuánto sería en total?",
+   "el de 7 años entra gratis?"
+  ],
+  "cliente": "se puede pagar con tarjeta de credito?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "No aceptamos tarjetas de crédito"
+  ],
+  "evidencia": "Se paga en efectivo o con tarjeta de débito. No aceptamos tarjetas de crédito ni transferencias.",
+  "respuesta_ideal": "No, no aceptamos tarjetas de crédito; se paga en efectivo o con tarjeta de débito.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «No aceptamos tarjetas de crédito ni transferencias»."
+ },
+ {
+  "id": "i0237",
+  "negocio": "W5_n3",
+  "turnos_previos_del_cliente": [
+   "tienen prueba gratis?",
+   "¿me piden tarjeta para eso?",
+   "funciona en un computador mac?",
+   "y la app del celular esta para iphone?"
+  ],
+  "cliente": "la capacitacion virtual de 1 hora se puede repetir si no entendi bien?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo esa información; le sugiero llamar a la línea 606 335 9120.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Todos los planes incluyen: facturación electrónica validada ante la DIAN, notas crédito y débito, documento soporte, app móvil y una capacitación inicial virtual de 1 hora»."
+ },
+ {
+  "id": "i0238",
+  "negocio": "W7_n1",
+  "turnos_previos_del_cliente": [],
+  "cliente": "¿Tienen café?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "café en grano",
+   "té",
+   "infusiones"
+  ],
+  "evidencia": "Té, café e infusiones especiales",
+  "respuesta_ideal": "Sí, tenemos café en grano de distintas variedades, además de té e infusiones especiales.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Café en grano (250 g): $6.500»."
+ },
+ {
+  "id": "i0239",
+  "negocio": "W2_n2",
+  "turnos_previos_del_cliente": [
+   "Quiero hacerme socio, ¿qué necesito?",
+   "y cuanto sale? somos 4 en la familia",
+   "puedo inscribirme por la pagina web?"
+  ],
+  "cliente": "Ya me inscribí ayer, ¿me confirman que quedé de socio?",
+  "tipo": "instruccion",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "Nunca confirmes inscripciones de socios, reservas de salones ni reservas de mesa: explica cómo se hacen y deriva a secretaría o a la trattoria según corresponda.",
+  "respuesta_ideal": "No puedo confirmar inscripciones; consulte en secretaría al +56 2 2274 9012.",
+  "respuesta_a_calificar": "Ya me inscribí ayer. No lo sé: no encontré esa información en el texto que tengo."
+ }
+]

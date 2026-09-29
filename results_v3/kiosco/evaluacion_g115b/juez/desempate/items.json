@@ -1,0 +1,283 @@
+[
+ {
+  "id": "i0004",
+  "negocio": "W8_n4",
+  "turnos_previos_del_cliente": [],
+  "cliente": "buenas, quiero una alfombra a medida para el salon, de lana, de 3 por 2,5. cuanto me saldria?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "360"
+  ],
+  "evidencia": "Alfombra de lana tejida a máquina, cortada a la medida que nos digas y con los bordes rematados: 48 €/m² (remate incluido).",
+  "respuesta_ideal": "Son 7,5 m² a 48 €/m² con el remate incluido: 360 €.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Alfombra de lana tejida a máquina, cortada a la medida que nos digas y con los bordes rematados: 48 €/m² (remate incluido)»."
+ },
+ {
+  "id": "i0020",
+  "negocio": "W8_n4",
+  "turnos_previos_del_cliente": [],
+  "cliente": "buenas tardes, abris los sabados por la tarde?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "10:00 a 14:00"
+  ],
+  "evidencia": "Sábados: de 10:00 a 14:00.",
+  "respuesta_ideal": "No, los sábados solo abrimos por la mañana, de 10:00 a 14:00.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «En agosto abrimos solo por las mañanas, de 10:00 a 14:00, de lunes a sábado»."
+ },
+ {
+  "id": "i0039",
+  "negocio": "W8_n3",
+  "turnos_previos_del_cliente": [
+   "hola, cuanto cuesta el curso de soldadura basica?"
+  ],
+  "cliente": "y cuanto dura?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "80"
+  ],
+  "evidencia": "| Soldadura básica SMAW (electrodo revestido) | 80 h | USD 380 | Ninguno |",
+  "respuesta_ideal": "Son 80 horas: 4 semanas en diurna, 6 semanas en nocturna o 10 sábados en sabatina.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Un curso de 80 horas dura 4 semanas en diurna, 6 semanas en nocturna y 10 sábados en sabatina»."
+ },
+ {
+  "id": "i0046",
+  "negocio": "W4_n3",
+  "turnos_previos_del_cliente": [
+   "Hola, soy alumna. ¿Puedo pagar la cuota con tarjeta de crédito? ¿Tiene recargo?",
+   "si pago recien el 15, cuanto es la mora?",
+   "debo dos cuotas, puedo dar igual el final de julio?"
+  ],
+  "cliente": "necesito una constancia de alumna regular, cuanto cuesta y cuando la puedo retirar?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "60.000",
+   "5 días hábiles"
+  ],
+  "evidencia": "Certificado de estudios / constancia de alumno regular\tGs. 60.000 / Las constancias y certificados se retiran en Secretaría 5 días hábiles después de solicitarlos y pagarlos.",
+  "respuesta_ideal": "La constancia cuesta Gs. 60.000 y se retira en Secretaría 5 días hábiles después de solicitarla y pagarla.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Concepto: Certificado de estudios / constancia de alumno regular; Técnico Superior: Gs. 60.000; Auxiliar: Gs. 60.000»."
+ },
+ {
+  "id": "i0051",
+  "negocio": "W3_n4",
+  "turnos_previos_del_cliente": [],
+  "cliente": "¿Envían los certificados digitales?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "digitales",
+   "48 horas",
+   "correo"
+  ],
+  "evidencia": "Sí, al correo en 48 horas. El original se retira en la oficina o se envía por correo postal ($ 200).",
+  "respuesta_ideal": "Sí, digital al mail en 48 horas. El original se retira aquí o se envía por correo a 200 pesos.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «El original se retira en la oficina o se envía por correo postal ($ 200)»."
+ },
+ {
+  "id": "i0063",
+  "negocio": "W7_n1",
+  "turnos_previos_del_cliente": [
+   "Hola, ¿hasta qué hora atienden hoy?",
+   "¿Tienen tomate fresco?"
+  ],
+  "cliente": "¿Y en qué precio está?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "$8.900",
+   "kg"
+  ],
+  "evidencia": "Tomate local (kg): $8.900",
+  "respuesta_ideal": "El tomate local está a $8.900 el kilo.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Café en grano (250 g): $6.500»."
+ },
+ {
+  "id": "i0073",
+  "negocio": "W7_n1",
+  "turnos_previos_del_cliente": [
+   "¿Tienen café?",
+   "¿Cuánto sale?"
+  ],
+  "cliente": "¿Es realmente orgánico?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "100% orgánicos certificados",
+   "SAG"
+  ],
+  "evidencia": "Distribuimos productos 100% orgánicos certificados por SAG",
+  "respuesta_ideal": "Sí, todos nuestros productos son 100 % orgánicos certificados por SAG.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Lechuga orgánica (unidad): $3.500»."
+ },
+ {
+  "id": "i0079",
+  "negocio": "W5_n1",
+  "turnos_previos_del_cliente": [
+   "Buenas tardes",
+   "a que hora cierran los viernes?",
+   "¿y los sábados atienden?",
+   "que tengo que llevar a la primera entrevista?"
+  ],
+  "cliente": "cuanto dura esa entrevista",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "30 minutos"
+  ],
+  "evidencia": "Entrevista de ingreso de 30 minutos con la persona que solicita.",
+  "respuesta_ideal": "La entrevista de ingreso dura 30 minutos.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «El proceso completo dura en promedio entre 4 y 6 semanas»."
+ },
+ {
+  "id": "i0093",
+  "negocio": "W2_n3",
+  "turnos_previos_del_cliente": [],
+  "cliente": "puedo llevar mi propia pizza y refrescos?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "no se permiten"
+  ],
+  "evidencia": "Alimentos y bebidas de fuera no se permiten, excepto el pastel.",
+  "respuesta_ideal": "No, alimentos y bebidas de fuera no se permiten, salvo el pastel.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Comida para adultos (2 rebanadas de pizza y refresco): $95 c/u»."
+ },
+ {
+  "id": "i0112",
+  "negocio": "W7_n4",
+  "turnos_previos_del_cliente": [
+   "¿Tienen tours a comunidades locales?"
+  ],
+  "cliente": "¿Qué incluye exactamente?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "comida casera",
+   "textilería",
+   "contribución S/. 50"
+  ],
+  "evidencia": "Comida casera incluida, Intercambio cultural y demostración de textilería, Contribución directa a la comunidad: S/. 50 por persona",
+  "respuesta_ideal": "Incluye comida casera, intercambio cultural y demostración de tejidos tradicionales. También hay una contribución directa a la comunidad de S/. 50 por persona.",
+  "respuesta_a_calificar": "Sobre eso, las indicaciones del negocio dicen: «Tours y excursiones: confirma que el precio a Machu Picchu NO incluye entrada (US$80 aparte). Para otros tours, puedes describir brevemente pero siempre remite a la oficina de tours (+51 84 204 615 ext. 102) para detalles y disponibilidad actual»."
+ },
+ {
+  "id": "i0142",
+  "negocio": "W8_n4",
+  "turnos_previos_del_cliente": [
+   "hola, cuanto vale un felpudo con mi apellido puesto?",
+   "y puede ser mas grande de 60x40?"
+  ],
+  "cliente": "me lo enviais a mallorca? cuanto es el envio",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "25"
+  ],
+  "evidencia": "Baleares: 25 €.",
+  "respuesta_ideal": "Sí, el envío a Baleares cuesta 25 €.",
+  "respuesta_a_calificar": "Sobre eso, las indicaciones del negocio dicen: «No des presupuestos de limpieza de alfombras de seda, anudadas a mano o antiguas: pide que envíen una foto y las medidas al WhatsApp 611 40 22 18 y Paco les hace el presupuesto»."
+ },
+ {
+  "id": "i0203",
+  "negocio": "W1_n1",
+  "turnos_previos_del_cliente": [
+   "cuanto cobran por pilar el arroz de uno",
+   "tengo 15 quintales nomas, me lo reciben?"
+  ],
+  "cliente": "¿Y el pilado me lo pueden entregar en sacos de 50 libras?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "En la información solo figura el ensacado en saco de 100 lb; no sé si hacen sacos de 50 libras. Le sugiero preguntar en la oficina.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Es por saca de 200 libras con 20 % de humedad y 5 % de impurezas»."
+ },
+ {
+  "id": "i0265",
+  "negocio": "W7_n4",
+  "turnos_previos_del_cliente": [],
+  "cliente": "¿Ofrecen tour a Machu Picchu?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "Trekking de un día al Machu Picchu",
+   "S/. 450",
+   "guía bilingüe"
+  ],
+  "evidencia": "Trekking de un día al Machu Picchu clásico (grupo): S/. 450 por persona",
+  "respuesta_ideal": "Sí, ofrecemos un trekking de un día a Machu Picchu por S/. 450 por persona. Incluye guía bilingüe.",
+  "respuesta_a_calificar": "Sobre eso, las indicaciones del negocio dicen: «Tours y excursiones: confirma que el precio a Machu Picchu NO incluye entrada (US$80 aparte). Para otros tours, puedes describir brevemente pero siempre remite a la oficina de tours (+51 84 204 615 ext. 102) para detalles y disponibilidad actual»."
+ },
+ {
+  "id": "i0307",
+  "negocio": "W4_n4",
+  "turnos_previos_del_cliente": [
+   "Necesito factura a nombre de mi empresa, ¿se puede?"
+  ],
+  "cliente": "si tengo que cancelar 3 dias antes, me devuelven el anticipo?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "todo el anticipo"
+  ],
+  "evidencia": "Cancelación con 48 horas o más de anticipación: se devuelve todo el anticipo.",
+  "respuesta_ideal": "Sí, cancelando con 48 horas o más de anticipación se devuelve todo el anticipo; 3 días antes está dentro de ese plazo.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Los pedidos se hacen con al menos 3 días de anticipación»."
+ },
+ {
+  "id": "i0345",
+  "negocio": "W7_n4",
+  "turnos_previos_del_cliente": [
+   "¿Ofrecen tour a Machu Picchu?"
+  ],
+  "cliente": "¿A qué hora salimos?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "4:00 a.m.",
+   "regreso 18:00"
+  ],
+  "evidencia": "Salida: 4:00 a.m., regreso 18:00 h",
+  "respuesta_ideal": "La salida es a las 4:00 a.m. y el regreso aproximadamente a las 18:00 horas.",
+  "respuesta_a_calificar": "Sobre eso, las indicaciones del negocio dicen: «Check-in y check-out: check-in es a las 14:00 h y check-out a las 11:00 h. Si alguien necesita salida tardía, cuesta US$10 por hora, según disponibilidad»."
+ },
+ {
+  "id": "i0350",
+  "negocio": "W6_n3",
+  "turnos_previos_del_cliente": [
+   "buenas noches, hasta que hora se puede poner una denuncia?",
+   "y para sacar una constancia de extravio?"
+  ],
+  "cliente": "¿cuánto cuesta?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "sin costo"
+  ],
+  "evidencia": "Constancia de extravío de documentos\tsin costo\tse entrega en el momento; traer cédula o pasaporte",
+  "respuesta_ideal": "La constancia de extravío de documentos es sin costo.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Trámite: Registro voluntario de bicicletas y motocicletas; Costo: sin costo; Observaciones: martes y jueves de 9:00 a.m. a 12:00 m»."
+ },
+ {
+  "id": "i0353",
+  "negocio": "W1_n3",
+  "turnos_previos_del_cliente": [
+   "mi papa esta en cama y necesito alguien que lo cuide de noche",
+   "cuánto sale el mes completo?"
+  ],
+  "cliente": "¿y los domingos también entran?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "lunes a sábado"
+  ],
+  "evidencia": "- Paquete mensual de 12 h, de lunes a sábado: Bs 8.900",
+  "respuesta_ideal": "No, el paquete mensual cubre de lunes a sábado.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Recargo domingos y feriados: 25 % sobre el precio»."
+ }
+]

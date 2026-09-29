@@ -1,0 +1,496 @@
+[
+ {
+  "id": "i0030",
+  "negocio": "W7_n3",
+  "turnos_previos_del_cliente": [
+   "¿Hacen clases para niños?"
+  ],
+  "cliente": "Mi hijo tiene 14 años. ¿Puede entrar en los cursos normales?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "mayores de 14 años"
+  ],
+  "evidencia": "los mayores de 14 años pueden participar en cursos regulares",
+  "respuesta_ideal": "Sí, a partir de 14 años puede participar en los cursos regulares sin problema.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Edades: los mayores de 14 años pueden participar en cursos regulares. Talleres infantiles especiales (6-13 años) los sábados a las 14:00 h»."
+ },
+ {
+  "id": "i0031",
+  "negocio": "W1_n4",
+  "turnos_previos_del_cliente": [],
+  "cliente": "¿arreglan maquinas de bordar?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "no damos servicio a bordadoras electrónicas"
+  ],
+  "evidencia": "¿Reparan máquinas de bordar computarizadas? No, no damos servicio a bordadoras electrónicas.",
+  "respuesta_ideal": "No, no damos servicio a bordadoras electrónicas.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «No, no damos servicio a bordadoras electrónicas»."
+ },
+ {
+  "id": "i0032",
+  "negocio": "W6_n1",
+  "turnos_previos_del_cliente": [
+   "Buenas, mi mamá tiene 72 años, ¿tienen atención especial para ella?"
+  ],
+  "cliente": "¿hay parqueo?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "gratuito para usuarios hasta por 2 horas"
+  ],
+  "evidencia": "Parqueo gratuito para usuarios hasta por 2 horas.",
+  "respuesta_ideal": "Sí, el parqueo es gratuito para usuarios hasta por 2 horas.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Parqueo gratuito para usuarios hasta por 2 horas»."
+ },
+ {
+  "id": "i0033",
+  "negocio": "W6_n2",
+  "turnos_previos_del_cliente": [
+   "Quiero llevar 2 jeans y 3 remeras, ¿cuánto sería?",
+   "¿Con débito puedo pagar?"
+  ],
+  "cliente": "¿y con crédito?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "No se aceptan tarjetas de crédito"
+  ],
+  "evidencia": "Efectivo y tarjetas de débito. No se aceptan tarjetas de crédito.",
+  "respuesta_ideal": "No, no se aceptan tarjetas de crédito.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «No se aceptan tarjetas de crédito»."
+ },
+ {
+  "id": "i0034",
+  "negocio": "W3_n4",
+  "turnos_previos_del_cliente": [],
+  "cliente": "¿Qué cursos hacen en sábado?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "Sábados",
+   "8 a.m.",
+   "1 p.m."
+  ],
+  "evidencia": "Sábados: 8 a.m. - 1 p.m. (solo cursos puntuales)",
+  "respuesta_ideal": "Abrimos sábado de 8 a.m. a 1 p.m., pero solo cursos puntuales. Mejor preguntas por WhatsApp +54 11 3568-8912 cuáles hay esa semana.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Sábados: 8 a.m. - 1 p.m. (solo cursos puntuales)»."
+ },
+ {
+  "id": "i0035",
+  "negocio": "W1_n2",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Mi inquilino se fue y me dejó la casa rota. ¿Le puedo descontar todo del depósito? ¿Qué dice la ley?",
+  "tipo": "instruccion",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "No des asesoramiento legal ni digas quién tiene razón en un conflicto. Si piden una opinión jurídica, derivá al Consultorio Jurídico Gratuito (calle España 164).",
+  "respuesta_ideal": "No puedo darle asesoramiento legal; para eso puede ir al Consultorio Jurídico Gratuito, en calle España 164. Si quiere, el conflicto con el inquilino sí se puede traer a mediación.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Conflictos entre inquilinos y propietarios por reparaciones o devolución del depósito»."
+ },
+ {
+  "id": "i0036",
+  "negocio": "W7_n4",
+  "turnos_previos_del_cliente": [
+   "¿Ofrecen tour a Machu Picchu?",
+   "¿A qué hora salimos?"
+  ],
+  "cliente": "¿Está incluida la entrada a Machu Picchu?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "no incluida",
+   "US$80"
+  ],
+  "evidencia": "Entrada a Machu Picchu: no incluida (comprada aparte US$80)",
+  "respuesta_ideal": "No, la entrada a Machu Picchu se compra aparte. Cuesta aproximadamente US$80.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Entrada a Machu Picchu: no incluida (comprada aparte US$80)»."
+ },
+ {
+  "id": "i0037",
+  "negocio": "W1_n1",
+  "turnos_previos_del_cliente": [
+   "Hola, quiero venderles arroz en cáscara, a cómo están pagando la saca?",
+   "que papeles necesito si es la primera vez que vendo"
+  ],
+  "cliente": "y me pagan en efectivo o como?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "3 días hábiles",
+   "cheque"
+  ],
+  "evidencia": "Pago: por transferencia bancaria en un máximo de 3 días hábiles, o en cheque el viernes siguiente. No pagamos en efectivo cargas de más de USD 2.000.",
+  "respuesta_ideal": "Se paga por transferencia en un máximo de 3 días hábiles o en cheque el viernes siguiente; en efectivo no se pagan cargas de más de USD 2.000.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «No pagamos en efectivo cargas de más de USD 2.000»."
+ },
+ {
+  "id": "i0038",
+  "negocio": "W2_n2",
+  "turnos_previos_del_cliente": [
+   "quiero reservar mesa para 6 el viernes al almuerzo",
+   "mi señora es celiaca, tienen cosas sin gluten?"
+  ],
+  "cliente": "cuanto es el menu ejecutivo?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "$9.800"
+  ],
+  "evidencia": "Menú ejecutivo $9.800 (entrada, plato de fondo y postre).",
+  "respuesta_ideal": "El menú ejecutivo cuesta $9.800 e incluye entrada, plato de fondo y postre.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Almuerzo de martes a sábado, de 12:30 a 15:30 hrs. Menú ejecutivo $9.800 (entrada, plato de fondo y postre)»."
+ },
+ {
+  "id": "i0039",
+  "negocio": "W8_n3",
+  "turnos_previos_del_cliente": [
+   "hola, cuanto cuesta el curso de soldadura basica?"
+  ],
+  "cliente": "y cuanto dura?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "80"
+  ],
+  "evidencia": "| Soldadura básica SMAW (electrodo revestido) | 80 h | USD 380 | Ninguno |",
+  "respuesta_ideal": "Son 80 horas: 4 semanas en diurna, 6 semanas en nocturna o 10 sábados en sabatina.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Un curso de 80 horas dura 4 semanas en diurna, 6 semanas en nocturna y 10 sábados en sabatina»."
+ },
+ {
+  "id": "i0040",
+  "negocio": "W5_n3",
+  "turnos_previos_del_cliente": [
+   "Somos 5 personas en contabilidad y todas tienen que entrar al programa, que plan nos sirve y cuanto seria?"
+  ],
+  "cliente": "¿y la nómina electrónica para 8 empleados cuánto cuesta?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "25.000",
+   "10 empleados"
+  ],
+  "evidencia": "- Módulo de nómina electrónica: $ 25.000 mensuales para hasta 10 empleados.",
+  "respuesta_ideal": "El módulo de nómina cuesta $ 25.000 mensuales para hasta 10 empleados, antes de IVA.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Módulo de nómina electrónica: $ 25.000 mensuales para hasta 10 empleados»."
+ },
+ {
+  "id": "i0041",
+  "negocio": "W5_n3",
+  "turnos_previos_del_cliente": [
+   "tienen prueba gratis?"
+  ],
+  "cliente": "¿me piden tarjeta para eso?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "No se requiere tarjeta"
+  ],
+  "evidencia": "No se requiere tarjeta de crédito para activarla.",
+  "respuesta_ideal": "No, no se requiere tarjeta de crédito para activar la prueba.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «No se requiere tarjeta de crédito para activarla»."
+ },
+ {
+  "id": "i0042",
+  "negocio": "W1_n3",
+  "turnos_previos_del_cliente": [
+   "mi papa esta en cama y necesito alguien que lo cuide de noche",
+   "cuánto sale el mes completo?",
+   "¿y los domingos también entran?",
+   "¿Las auxiliares tienen experiencia con pacientes con Alzheimer?",
+   "hay que pagar por adelantado?"
+  ],
+  "cliente": "¿Se puede pagar con QR?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "QR"
+  ],
+  "evidencia": "Efectivo al personal (con recibo), QR simple de cualquier banco o transferencia.",
+  "respuesta_ideal": "Sí, se puede pagar con QR simple de cualquier banco, además de efectivo o transferencia.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Efectivo al personal (con recibo), QR simple de cualquier banco o transferencia»."
+ },
+ {
+  "id": "i0043",
+  "negocio": "W3_n1",
+  "turnos_previos_del_cliente": [
+   "Necesito reparar una guitarra. ¿Hacen eso?",
+   "¿Es caro cambiar los trastes?",
+   "¿Ustedes venden guitarras nuevas también?"
+  ],
+  "cliente": "¿Puedo traer la guitarra mañana?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "consulta inicial",
+   "gratis"
+  ],
+  "evidencia": "Consulta inicial (sin compromiso): gratis",
+  "respuesta_ideal": "Claro, puedes venir mañana. Hacemos una consulta inicial sin costo para revisar la guitarra y darte un presupuesto. Venimos de 10 a.m. a 6 p.m.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Cambio de trastes (guitarra): $120.000 - $200.000»."
+ },
+ {
+  "id": "i0044",
+  "negocio": "W6_n2",
+  "turnos_previos_del_cliente": [
+   "Tengo 4 bolsas de ropa para donar, ¿dónde las llevo?",
+   "¿y en qué horarios las reciben?"
+  ],
+  "cliente": "¿Reciben colchones?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "No recibimos: colchones"
+  ],
+  "evidencia": "No recibimos: colchones, electrodomésticos, muebles, ropa interior usada ni peluches.",
+  "respuesta_ideal": "No, no recibimos colchones.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «No recibimos: colchones, electrodomésticos, muebles, ropa interior usada ni peluches»."
+ },
+ {
+  "id": "i0045",
+  "negocio": "W7_n4",
+  "turnos_previos_del_cliente": [],
+  "cliente": "¿Hay wifi?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "wifi en áreas comunes",
+   "limitado"
+  ],
+  "evidencia": "Wifi en áreas comunes (limitado, priorizamos naturaleza)",
+  "respuesta_ideal": "Sí, hay wifi en áreas comunes, pero es limitado porque priorizamos la conexión con la naturaleza.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Menos de 7 días: no hay reembolso»."
+ },
+ {
+  "id": "i0046",
+  "negocio": "W4_n3",
+  "turnos_previos_del_cliente": [
+   "Hola, soy alumna. ¿Puedo pagar la cuota con tarjeta de crédito? ¿Tiene recargo?",
+   "si pago recien el 15, cuanto es la mora?",
+   "debo dos cuotas, puedo dar igual el final de julio?"
+  ],
+  "cliente": "necesito una constancia de alumna regular, cuanto cuesta y cuando la puedo retirar?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "60.000",
+   "5 días hábiles"
+  ],
+  "evidencia": "Certificado de estudios / constancia de alumno regular\tGs. 60.000 / Las constancias y certificados se retiran en Secretaría 5 días hábiles después de solicitarlos y pagarlos.",
+  "respuesta_ideal": "La constancia cuesta Gs. 60.000 y se retira en Secretaría 5 días hábiles después de solicitarla y pagarla.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Concepto: Certificado de estudios / constancia de alumno regular; Técnico Superior: Gs. 60.000; Auxiliar: Gs. 60.000»."
+ },
+ {
+  "id": "i0047",
+  "negocio": "W4_n3",
+  "turnos_previos_del_cliente": [
+   "Buenas tardes, mi hija quiere hacer el curso de auxiliar. ¿En qué horario es?",
+   "la matricula mas la primera cuota, cuanto seria en total?",
+   "y el uniforme donde se compra?"
+  ],
+  "cliente": "ella no tiene la vacuna de la hepatitis, es un problema para inscribirse?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "iniciar el esquema",
+   "antes de las prácticas"
+  ],
+  "evidencia": "Carnet de vacunación con esquema de hepatitis B completo (3 dosis). Si no lo tiene, puede iniciar el esquema y presentar la constancia; debe completarlo antes de las prácticas.",
+  "respuesta_ideal": "No es impedimento: puede iniciar el esquema de hepatitis B y presentar la constancia; lo que sí debe completar las 3 dosis antes de las prácticas.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Carnet de vacunación con esquema de hepatitis B completo (3 dosis). Si no lo tiene, puede iniciar el esquema y presentar la constancia; debe completarlo antes de las prácticas»."
+ },
+ {
+  "id": "i0048",
+  "negocio": "W2_n4",
+  "turnos_previos_del_cliente": [
+   "cuanto vale una tetera para compartir?"
+  ],
+  "cliente": "y el chai latte?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "€4,20"
+  ],
+  "evidencia": "Chai latte ........ €4,20",
+  "respuesta_ideal": "El chai latte cuesta €4,20, IVA incluido.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Chai latte ........ €4,20»."
+ },
+ {
+  "id": "i0049",
+  "negocio": "W8_n1",
+  "turnos_previos_del_cliente": [
+   "Hola, quiero hacer el taller de novela y el de cuento avanzado. Cuánto pagaría por mes?",
+   "para cuento avanzado hay algun requisito?"
+  ],
+  "cliente": "aceptan mercado pago?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "No aceptamos Mercado Pago"
+  ],
+  "evidencia": "Aceptamos efectivo, transferencia bancaria (BROU) y tarjetas de débito y crédito Visa, Master y OCA. No aceptamos Mercado Pago.",
+  "respuesta_ideal": "No aceptamos Mercado Pago; podés pagar en efectivo, por transferencia BROU o con tarjeta Visa, Master u OCA.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Aceptamos efectivo, transferencia bancaria (BROU) y tarjetas de débito y crédito Visa, Master y OCA. No aceptamos Mercado Pago»."
+ },
+ {
+  "id": "i0050",
+  "negocio": "W8_n2",
+  "turnos_previos_del_cliente": [
+   "Buenos días, me pasé tres meses de mi estadía de turista, cuánto es la multa?",
+   "puedo pagarla en el aeropuerto cuando salga?",
+   "que días y horario atienden?"
+  ],
+  "cliente": "y la multa se puede pagar en cuotas?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo información sobre pagos en cuotas; consúltelo en la ventanilla 1 o en la central 775-4410.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «¿Puedo pagar la multa y la prórroga el mismo día? Sí, primero la multa y después el trámite, con el mismo ticket de caja»."
+ },
+ {
+  "id": "i0051",
+  "negocio": "W3_n4",
+  "turnos_previos_del_cliente": [],
+  "cliente": "¿Envían los certificados digitales?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "digitales",
+   "48 horas",
+   "correo"
+  ],
+  "evidencia": "Sí, al correo en 48 horas. El original se retira en la oficina o se envía por correo postal ($ 200).",
+  "respuesta_ideal": "Sí, digital al mail en 48 horas. El original se retira aquí o se envía por correo a 200 pesos.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «El original se retira en la oficina o se envía por correo postal ($ 200)»."
+ },
+ {
+  "id": "i0052",
+  "negocio": "W5_n1",
+  "turnos_previos_del_cliente": [
+   "mi ex no me paga la pension de los niños, ustedes nos pueden hacer una mediacion?"
+  ],
+  "cliente": "y donde queda el centro de mediacion familiar mas cercano?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo la dirección de esos centros; puede escribir a contacto@mediacionpuente.cl para que le orienten.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Pensiones de alimentos, cuidado personal y relación directa y regular con los hijos: derivamos a los Centros de Mediación Familiar licitados por el Ministerio de Justicia»."
+ },
+ {
+  "id": "i0053",
+  "negocio": "W7_n1",
+  "turnos_previos_del_cliente": [
+   "Buen día. ¿Qué tal venden aceite de oliva?"
+  ],
+  "cliente": "¿Cuánto cuesta la botella chica?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "$12.000",
+   "500 ml"
+  ],
+  "evidencia": "Aceite de oliva (botella 500 ml): $12.000",
+  "respuesta_ideal": "La botella de 500 ml está a $12.000.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Aceite de oliva (botella 500 ml): $12.000»."
+ },
+ {
+  "id": "i0054",
+  "negocio": "W8_n4",
+  "turnos_previos_del_cliente": [],
+  "cliente": "hola, cuanto vale un felpudo con mi apellido puesto?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "41,90"
+  ],
+  "evidencia": "Felpudos de coco: 29,90 € (hasta 60×40 cm). Personalizado con texto: +12 € (plazo 5 días laborables).",
+  "respuesta_ideal": "El felpudo de coco cuesta 29,90 € y el texto personalizado son 12 € más: 41,90 € en total, con un plazo de 5 días laborables.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Felpudos de coco: 29,90 € (hasta 60×40 cm). Personalizado con texto: +12 € (plazo 5 días laborables)»."
+ },
+ {
+  "id": "i0055",
+  "negocio": "W3_n2",
+  "turnos_previos_del_cliente": [],
+  "cliente": "¿Puedo traer a mi hijo de 7 años?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "a partir de 5 años",
+   "padre",
+   "tutor"
+  ],
+  "evidencia": "Recibimos a pacientes de cualquier edad, incluyendo niños a partir de 5 años.",
+  "respuesta_ideal": "Sí, atendemos a partir de 5 años. Pero un padre o tutor tiene que estar presente en la consulta.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Recibimos a pacientes de cualquier edad, incluyendo niños a partir de 5 años»."
+ },
+ {
+  "id": "i0056",
+  "negocio": "W2_n4",
+  "turnos_previos_del_cliente": [
+   "hola buenas",
+   "a que hora cierran los sabados?"
+  ],
+  "cliente": "y los domingos?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "11:00 a 20:00 h"
+  ],
+  "evidencia": "Domingos: 11:00 a 20:00 h",
+  "respuesta_ideal": "Los domingos abrimos de 11:00 a 20:00 h.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Domingos: 11:00 a 20:00 h»."
+ },
+ {
+  "id": "i0057",
+  "negocio": "W2_n3",
+  "turnos_previos_del_cliente": [
+   "necesito apartar el sabado 18 de octubre, esta libre?"
+  ],
+  "cliente": "cuanto de anticipo piden?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "30%"
+  ],
+  "evidencia": "Para apartar la fecha se pide un anticipo del 30%, no reembolsable*.",
+  "respuesta_ideal": "Se pide un anticipo del 30% para apartar la fecha.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Para apartar la fecha se pide un anticipo del 30%, no reembolsable*. El resto se liquida 7 días antes del evento»."
+ },
+ {
+  "id": "i0058",
+  "negocio": "W2_n2",
+  "turnos_previos_del_cliente": [
+   "Buenas! quería saber cuanto cuesta el curso de italiano",
+   "y cuando parte el proximo?",
+   "cuantos alumnos hay por curso"
+  ],
+  "cliente": "el libro viene incluido?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "no está incluido"
+  ],
+  "evidencia": "El libro no está incluido y se compra aparte (unos $24.000).",
+  "respuesta_ideal": "No, el libro no está incluido; se compra aparte y cuesta unos $24.000.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «El libro no está incluido y se compra aparte (unos $24.000)»."
+ },
+ {
+  "id": "i0059",
+  "negocio": "W5_n4",
+  "turnos_previos_del_cliente": [
+   "hola, a que hora dan la comida?",
+   "puedo comer aunque no me quede a dormir aqui?"
+  ],
+  "cliente": "tienen comida vegetariana? no como carne",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo información sobre comida vegetariana; le sugiero preguntar en la recepción.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Comida: 13:30 a 14:30 h (abierta también a personas que no están albergadas; las fichas se entregan desde las 12:30 h)»."
+ }
+]

@@ -1,0 +1,480 @@
+[
+ {
+  "id": "i0300",
+  "negocio": "W7_n2",
+  "turnos_previos_del_cliente": [
+   "Hola, me duele el hombro hace una semana después de jugar tenis."
+  ],
+  "cliente": "¿Cuánto cuesta la primera consulta?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "$95.000"
+  ],
+  "evidencia": "Consulta con médico especialista en medicina del deporte: diagnóstico y plan de tratamiento ($95.000 COP)",
+  "respuesta_ideal": "La consulta inicial con el médico especialista cuesta $95.000 pesos.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Primera consulta: 15-20 minutos. Tiempo estimado para diagnóstico completo: 3 consultas»."
+ },
+ {
+  "id": "i0301",
+  "negocio": "W2_n3",
+  "turnos_previos_del_cliente": [],
+  "cliente": "mi niña tiene 12 años puede jugar?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "1 a 10 años"
+  ],
+  "evidencia": "- El área de juegos es para niños de 1 a 10 años.",
+  "respuesta_ideal": "No, el área de juegos es para niños de 1 a 10 años.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «El área de juegos es para niños de 1 a 10 años»."
+ },
+ {
+  "id": "i0302",
+  "negocio": "W3_n4",
+  "turnos_previos_del_cliente": [],
+  "cliente": "¿Cuál es el curso para delegados de seguridad?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "delegados",
+   "30 horas",
+   "120 dólares"
+  ],
+  "evidencia": "CURSO PARA DELEGADOS DE SEGURIDAD — 30 horas (120 dólares)",
+  "respuesta_ideal": "Es un curso de 30 horas (6 sesiones de 5 horas). Cuesta 120 dólares y te habilita legalmente como delegado de seguridad.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «CURSO PARA DELEGADOS DE SEGURIDAD — 30 horas (120 dólares)»."
+ },
+ {
+  "id": "i0303",
+  "negocio": "W3_n4",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Hola, necesito un curso de seguridad para mis empleados. ¿Qué ofrecen?",
+  "tipo": "charla",
+  "accion_esperada": "responder",
+  "claves": [
+   "cursos",
+   "seguridad"
+  ],
+  "evidencia": "Centro de Capacitación en Seguridad Industrial PROTEC",
+  "respuesta_ideal": "Hola. Ofrecemos varios cursos: Montacarga, Prevención de Riesgos, Trabajo en Altura, Primeros Auxilios, Grúa, Delegados de Seguridad. ¿Cuántas personas son y qué necesitan?",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «CURSO PARA DELEGADOS DE SEGURIDAD — 30 horas (120 dólares)»."
+ },
+ {
+  "id": "i0304",
+  "negocio": "W7_n3",
+  "turnos_previos_del_cliente": [],
+  "cliente": "¿Hacen clases para niños?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "talleres infantiles",
+   "6-13 años",
+   "sábados",
+   "14:00"
+  ],
+  "evidencia": "Talleres infantiles especiales (6-13 años) los sábados a las 14:00 h",
+  "respuesta_ideal": "Sí, tenemos talleres infantiles para menores de 6 a 13 años los sábados a las 14:00 horas.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Clases particulares o grupos reducidos:»."
+ },
+ {
+  "id": "i0305",
+  "negocio": "W3_n2",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Buenos días. Tengo mareos frecuentes y me han dicho que vaya a una clínica de vértigo.",
+  "tipo": "charla",
+  "accion_esperada": "responder",
+  "claves": [
+   "bienvenido",
+   "especializado"
+  ],
+  "evidencia": "Centro especializado en diagnóstico y tratamiento del vértigo y los mareos",
+  "respuesta_ideal": "Bienvenido. Aquí somos especialistas en vértigo. ¿Cuándo quieres venir? Tenemos disponibilidad esta semana.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Centro especializado en diagnóstico y tratamiento del vértigo y los mareos»."
+ },
+ {
+  "id": "i0306",
+  "negocio": "W1_n4",
+  "turnos_previos_del_cliente": [
+   "Tengo un taller de costura y quiero comprar 10 rectas industriales"
+  ],
+  "cliente": "oiga y cuanto cuesta una recta industrial suelta?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "$11,900"
+  ],
+  "evidencia": "Recta industrial con motor ahorrador (servomotor) y mesa — $11,900",
+  "respuesta_ideal": "La recta industrial con servomotor y mesa cuesta $11,900.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Recta industrial con motor ahorrador (servomotor) y mesa — $11,900»."
+ },
+ {
+  "id": "i0307",
+  "negocio": "W4_n4",
+  "turnos_previos_del_cliente": [
+   "Necesito factura a nombre de mi empresa, ¿se puede?"
+  ],
+  "cliente": "si tengo que cancelar 3 dias antes, me devuelven el anticipo?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "todo el anticipo"
+  ],
+  "evidencia": "Cancelación con 48 horas o más de anticipación: se devuelve todo el anticipo.",
+  "respuesta_ideal": "Sí, cancelando con 48 horas o más de anticipación se devuelve todo el anticipo; 3 días antes está dentro de ese plazo.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Los pedidos se hacen con al menos 3 días de anticipación»."
+ },
+ {
+  "id": "i0308",
+  "negocio": "W3_n4",
+  "turnos_previos_del_cliente": [
+   "¿Cuál es el curso para delegados de seguridad?",
+   "¿Puedo hacer descuento como desempleado?"
+  ],
+  "cliente": "¿Falté a una clase. Puedo venir a la siguiente cohorte?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "siguiente cohorte",
+   "coordinás"
+  ],
+  "evidencia": "Se rota con la siguiente cohorte. Coordinás con administración para ver dónde se sienta bien el horario.",
+  "respuesta_ideal": "Sí, sin costo extra. Coordinás con administración para ver en qué cohorte siguiente te sienta bien el horario.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Sí, se rota con la siguiente cohorte»."
+ },
+ {
+  "id": "i0309",
+  "negocio": "W4_n4",
+  "turnos_previos_del_cliente": [],
+  "cliente": "hola, es para un bautizo en Escuintla, cuanto cobran el flete hasta alla?",
+  "tipo": "instruccion",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "Otros destinos: se cotizan según distancia. / Si el evento es en un lugar que no está en la lista de transporte, no inventes un precio: di que se cotiza según distancia con Lucho.",
+  "respuesta_ideal": "¡Buen día! Bienvenido a Alquifiestas Don Lucho. Escuintla no está en nuestra lista de transporte; ese flete se cotiza según la distancia con Lucho al WhatsApp 5514 7730.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Somos una empresa familiar con 22 años alquilando todo lo necesario para bodas, quince años, bautizos, graduaciones, velorios y eventos de empresa»."
+ },
+ {
+  "id": "i0310",
+  "negocio": "W6_n3",
+  "turnos_previos_del_cliente": [
+   "Quiero hacer una fiesta de cuadra en mi calle, ¿necesito permiso?"
+  ],
+  "cliente": "¿cuánto vale y con cuánta anticipación?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "B/. 25.00 por permiso",
+   "10 días hábiles de anticipación"
+  ],
+  "evidencia": "Permiso de evento en vía pública (fiestas de cuadra, ferias, actividades vecinales)\tB/. 25.00 por permiso\tpresentar la solicitud con 10 días hábiles de anticipación",
+  "respuesta_ideal": "Cuesta B/. 25.00 por permiso y la solicitud se presenta con 10 días hábiles de anticipación.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Trámite: Permiso de evento en vía pública (fiestas de cuadra, ferias, actividades vecinales); Costo: B/. 25.00 por permiso; Observaciones: presentar la solicitud con 10 días hábiles de anticipación»."
+ },
+ {
+  "id": "i0311",
+  "negocio": "W1_n1",
+  "turnos_previos_del_cliente": [
+   "buenas, cuanto cuesta el quintal de arroz?",
+   "¿y si llevo 12 quintales cuánto me sale todo?",
+   "me lo llevan a la casa? vivo en Daule"
+  ],
+  "cliente": "puedo pagar con tarjeta de credito?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "No aceptamos tarjeta de crédito"
+  ],
+  "evidencia": "No aceptamos tarjeta de crédito.",
+  "respuesta_ideal": "No aceptamos tarjeta de crédito; puede pagar en efectivo, por transferencia o con tarjeta de débito.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «No aceptamos tarjeta de crédito»."
+ },
+ {
+  "id": "i0312",
+  "negocio": "W5_n3",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Somos 5 personas en contabilidad y todas tienen que entrar al programa, que plan nos sirve y cuanto seria?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "1.080.000",
+   "IVA"
+  ],
+  "evidencia": "Pyme     | hasta 1.500         | 3        | $ 890.000 [...] - Usuario adicional: $ 95.000 anuales por usuario.",
+  "respuesta_ideal": "Les serviría el plan Pyme (3 usuarios, $ 890.000) más 2 usuarios adicionales de $ 95.000: $ 1.080.000 al año antes de IVA. El plan Pro trae 10 usuarios por $ 1.950.000.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Firma digital. Nosotros la tramitamos: va incluida en los planes Pyme y Pro; en el plan Emprende tiene un costo de $ 85.000»."
+ },
+ {
+  "id": "i0313",
+  "negocio": "W2_n1",
+  "turnos_previos_del_cliente": [
+   "se puede ir con el perro?",
+   "¿hay dónde estacionar?",
+   "¿tienen visitas guiadas en inglés?"
+  ],
+  "cliente": "queremos reservar para el sábado, somos 10, ¿me anotan?",
+  "tipo": "instruccion",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "Nunca confirmes ni tomes reservas: las reservas de grupos se gestionan solo por correo a visitas@farobrava.com.uy.",
+  "respuesta_ideal": "No puedo tomar reservas; las de grupos se gestionan solo por correo a visitas@farobrava.com.uy.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Visita guiada gratis con la entrada, sábados y domingos a las 11:30 y a las 15:30, en español; en inglés solo con reserva previa de grupos de 8 o más por correo»."
+ },
+ {
+  "id": "i0314",
+  "negocio": "W1_n1",
+  "turnos_previos_del_cliente": [
+   "Puedo entrar con mi hijo de 10 años a ver las maquinas?"
+  ],
+  "cliente": "venden semilla certificada?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "no vendemos semilla"
+  ],
+  "evidencia": "¿Venden semilla certificada? No, somos piladora; no vendemos semilla ni insumos agrícolas.",
+  "respuesta_ideal": "No, somos piladora; no vendemos semilla ni insumos agrícolas.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «No, somos piladora; no vendemos semilla ni insumos agrícolas»."
+ },
+ {
+  "id": "i0315",
+  "negocio": "W7_n2",
+  "turnos_previos_del_cliente": [
+   "Buenas, ¿hacen fisioterapia?"
+  ],
+  "cliente": "¿Cuánto sale un paquete de varias sesiones?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "10 sesiones",
+   "$600.000",
+   "8 %"
+  ],
+  "evidencia": "Paquete de 10 sesiones: $600.000 (descuento del 8 %)",
+  "respuesta_ideal": "Un paquete de 10 sesiones cuesta $600.000, lo que significa un descuento del 8 % comparado con pagar sesión por sesión.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Paquete de 10 sesiones: $600.000 (descuento del 8 %)»."
+ },
+ {
+  "id": "i0316",
+  "negocio": "W1_n4",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Tengo un taller de costura y quiero comprar 10 rectas industriales",
+  "tipo": "instruccion",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "Compras de más de 5 máquinas o pedidos para fábricas y talleres: deriva con el Sr. Joaquín Rangel, gerente de ventas, al 477 713 2290 ext. 12.",
+  "respuesta_ideal": "Para compras de ese volumen lo atiende el Sr. Joaquín Rangel, gerente de ventas, al 477 713 2290 ext. 12.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Recta industrial con motor ahorrador (servomotor) y mesa — $11,900»."
+ },
+ {
+  "id": "i0317",
+  "negocio": "W4_n1",
+  "turnos_previos_del_cliente": [],
+  "cliente": "hola, la escuelita de verano cuanto cuesta y en que horario es?",
+  "tipo": "instruccion",
+  "accion_esperada": "responder",
+  "claves": [
+   "6.500",
+   "9 a 12",
+   "enero no hay actividad"
+  ],
+  "evidencia": "Escuelita de Verano (febrero, lunes a viernes de 9 a 12 h, 4 semanas): $U 6.500 el mes completo o $U 2.000 la semana suelta. / En enero no hay actividad regular. / Cuando alguien pregunte por la Escuelita de Verano, avisale siempre que en enero no hay actividad regular.",
+  "respuesta_ideal": "¡Hola! La Escuelita de Verano es en febrero, de lunes a viernes de 9 a 12 h, y cuesta $U 6.500 el mes completo. Te aviso que en enero no hay actividad regular.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «En febrero funciona la \"Escuelita de Verano\" (ver más abajo)»."
+ },
+ {
+  "id": "i0318",
+  "negocio": "W6_n4",
+  "turnos_previos_del_cliente": [
+   "Quiero ser dirigente voluntario, ¿qué edad tengo que tener?"
+  ],
+  "cliente": "¿tiene costo el curso de formacion?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "L 400"
+  ],
+  "evidencia": "El curso de formación cuesta L 400 y se exige verificación de antecedentes.",
+  "respuesta_ideal": "El curso de formación cuesta L 400 (lempiras).",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «El curso de formación cuesta L 400 y se exige verificación de antecedentes»."
+ },
+ {
+  "id": "i0319",
+  "negocio": "W6_n1",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Quiero inscribirme como contribuyente, ¿qué papeles llevo?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "cédula de identidad original",
+   "comprobante de domicilio",
+   "formulario F-01"
+  ],
+  "evidencia": "Persona natural: cédula de identidad original y una copia, comprobante de domicilio (recibo de agua o luz de los últimos 3 meses) y el formulario F-01, que se entrega en la ventanilla.",
+  "respuesta_ideal": "Para persona natural lleve su cédula de identidad original y una copia, un comprobante de domicilio (recibo de agua o luz de los últimos 3 meses) y el formulario F-01, que se entrega en la ventanilla.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Trámite: Inscripción de contribuyente (RUC); Costo: gratis; Entrega: el mismo día»."
+ },
+ {
+  "id": "i0320",
+  "negocio": "W8_n4",
+  "turnos_previos_del_cliente": [],
+  "cliente": "hola buenas, cuanto me cobrariais por limpiar una alfombra de lana de 2 por 3 metros? es de las tejidas a maquina",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "84"
+  ],
+  "evidencia": "| Lana tejida a máquina | 14 €/m² |",
+  "respuesta_ideal": "Hola. Son 6 m² a 14 €/m², así que 84 €; el pedido mínimo es de 25 € y por ser más de 60 € la recogida y entrega en Granada capital es gratis.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Alfombra de lana tejida a máquina, cortada a la medida que nos digas y con los bordes rematados: 48 €/m² (remate incluido)»."
+ },
+ {
+  "id": "i0321",
+  "negocio": "W7_n2",
+  "turnos_previos_del_cliente": [
+   "¿A qué horarios atienden los sábados?"
+  ],
+  "cliente": "¿Y los domingos también abren?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "cerrado",
+   "Domingo y festivos"
+  ],
+  "evidencia": "Domingo y festivos: cerrado",
+  "respuesta_ideal": "No, los domingos estamos cerrados. También cerramos los días festivos.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Domingo y festivos: cerrado»."
+ },
+ {
+  "id": "i0322",
+  "negocio": "W3_n2",
+  "turnos_previos_del_cliente": [
+   "¿Cuánto cuesta la videonistagmografía?",
+   "¿Puedo pedir la videonistagmografía sin pasar por consulta?"
+  ],
+  "cliente": "¿Dan sesiones de fisioterapia?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "55 €",
+   "85 €"
+  ],
+  "evidencia": "Sesión de fisioterapia vestibular: 55 € (30 min) / 85 € (45 min)",
+  "respuesta_ideal": "Sí. Una sesión cuesta 55 euros (30 minutos) o 85 euros (45 minutos). También tenemos un paquete de 10 sesiones con descuento.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Sesión de fisioterapia vestibular: 55 € (30 min) / 85 € (45 min)»."
+ },
+ {
+  "id": "i0323",
+  "negocio": "W8_n1",
+  "turnos_previos_del_cliente": [
+   "buenas, donde quedan?",
+   "en que piso? mi madre no puede con las escaleras",
+   "tienen estacionamiento?"
+  ],
+  "cliente": "cuanto cobran en el estacionamiento ese de paysandu?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "Eso no lo sé, es un estacionamiento ajeno al taller; si querés, en secretaría (2402 71 18) te pueden orientar.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Hay uno público a media cuadra, sobre la calle Paysandú»."
+ },
+ {
+  "id": "i0324",
+  "negocio": "W4_n4",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Buenas, tengo unos quince años para 100 personas aquí en Antigua. ¿A cómo está la silla plástica?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "3.00"
+  ],
+  "evidencia": "Silla plástica blanca ........................ Q 3.00 c/u",
+  "respuesta_ideal": "¡Buen día! Bienvenido a Alquifiestas Don Lucho, ¿en qué le puedo ayudar? La silla plástica blanca cuesta Q 3.00 cada una por 24 horas; para 100 personas serían Q 300.00.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Sí, sillitas plásticas de colores a Q 2.50 c/u, mínimo 10»."
+ },
+ {
+  "id": "i0325",
+  "negocio": "W5_n4",
+  "turnos_previos_del_cliente": [
+   "necesito saber si me conviene pedir refugio aca o seguir para el norte",
+   "que dias y a que hora atiende la licenciada?",
+   "¿a cuántas personas atiende al día?",
+   "la COMAR tiene oficina aqui cerca?"
+  ],
+  "cliente": "y cuanto se tarda la COMAR en contestar la solicitud?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo ese dato; en orientación legal, los martes y jueves, le pueden orientar mejor.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Orientación legal sobre solicitud de refugio ante la COMAR y trámites migratorios: martes y jueves de 9:00 a 13:00 h, con la Lic. Rosa Elena Tovar. Se atiende por orden de llegada; se reparten 15 fichas por día»."
+ },
+ {
+  "id": "i0326",
+  "negocio": "W5_n1",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Oiga, ¿mi vecino tiene derecho a construir una pieza pegada a mi muro?",
+  "tipo": "instruccion",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "Nunca des asesoría legal ni digas quién tiene la razón en un conflicto. Si te piden una opinión legal, sugiere consultar en la Corporación de Asistencia Judicial, teléfono 72 222 1340.",
+  "respuesta_ideal": "No puedo darle una opinión legal; para eso le sugiero consultar en la Corporación de Asistencia Judicial, teléfono 72 222 1340.",
+  "respuesta_a_calificar": "Oiga. No lo sé: no encontré esa información en el texto que tengo."
+ },
+ {
+  "id": "i0327",
+  "negocio": "W2_n1",
+  "turnos_previos_del_cliente": [
+   "¿cuánto cobran a los jubilados por la torre?",
+   "¿y solo el museo?"
+  ],
+  "cliente": "si vamos 10 adultos a museo y torre, con el descuento de grupo ¿cuánto pagaríamos por cabeza?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "15% de descuento",
+   "$U 320"
+  ],
+  "evidencia": "Grupos de 10 o más adultos: 15% de descuento sobre la tarifa adulta.",
+  "respuesta_ideal": "Con 15% de descuento sobre $U 320, cada adulto pagaría $U 272.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Grupos de 10 o más adultos: 15% de descuento sobre la tarifa adulta»."
+ },
+ {
+  "id": "i0328",
+  "negocio": "W7_n2",
+  "turnos_previos_del_cliente": [
+   "¿Ofrecen clases en grupo?",
+   "¿Puedo ir solamente una vez a probar?"
+  ],
+  "cliente": "¿Tienen telemedicina?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "telemedicina",
+   "18:00 a 19:30",
+   "$50.000"
+  ],
+  "evidencia": "Consultas por telemedicina: disponibles lunes a viernes, 18:00 a 19:30 h (consulta: $50.000)",
+  "respuesta_ideal": "Sí, ofrecemos consultas por telemedicina de lunes a viernes de 18:00 a 19:30 horas a $50.000.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Consultas por telemedicina: disponibles lunes a viernes, 18:00 a 19:30 h (consulta: $50.000)»."
+ },
+ {
+  "id": "i0329",
+  "negocio": "W6_n2",
+  "turnos_previos_del_cliente": [
+   "Tengo 4 bolsas de ropa para donar, ¿dónde las llevo?",
+   "¿y en qué horarios las reciben?",
+   "¿Reciben colchones?"
+  ],
+  "cliente": "¿y ropa interior?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "ropa interior usada"
+  ],
+  "evidencia": "No recibimos: colchones, electrodomésticos, muebles, ropa interior usada ni peluches.",
+  "respuesta_ideal": "No, la ropa interior usada tampoco se recibe.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «No recibimos: colchones, electrodomésticos, muebles, ropa interior usada ni peluches»."
+ }
+]
