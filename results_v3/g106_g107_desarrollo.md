@@ -88,3 +88,23 @@ se conserva porque solo impide respuestas.
 sin comprobar (faltan hechos: capitales, cifras, calendario, cuentas). El siguiente intento necesita fuentes de texto humano con
 definiciones y hechos (Wikipedia/Wiktionary en español, bloqueadas en este entorno) o un mecanismo que aprenda la forma de las
 preguntas cotidianas a partir de pares pregunta–respuesta humanos de ese tipo.
+
+## 6. G-108: leer Wikipedia en español como biblioteca compilada — negativo en desarrollo ([preregistro](../prereg/G-108-leer-wikipedia.md))
+Fuente hallada en un depósito público alcanzable: `s3.amazonaws.com/datasets.huggingface.co/wikipedia_multilingual/raw/es.all` (2020,
+3 389 106 618 bytes, SHA-256 `48f67d80…b643`, sin tildes; también hay OSCAR en español en el mismo depósito). Tildes restauradas por
+conteo en AnCora + SQuAD-es (6 295 formas con variante dominante ≥ 90 %).
+- Biblioteca (`experiments/g108_biblioteca.py`, `leobot/library.py`): 1 082 987 artículos leídos; 23 575 con título de sustantivo común
+  (AnCora/WordNet) y el resto por longitud; 46 808 artículos, **89 396 frases** (dos primeras de ≤ 40 palabras), 89 290 analizadas;
+  44,8 MB; análisis 482 s de reloj en 4 procesos; adjuntar 21 s.
+- Primer intento con detector de títulos defectuoso (perdía los artículos que empiezan por «El/La»): D1 1 correcta, 7 malas, máximo 13 s
+  (índice construido en la primera pregunta). Corregido: índice al adjuntar, lector de tramos G-28 fuera de la biblioteca.
+- D1 con la biblioteca corregida: **0 correctas, 9 malas**; p50/p95 14/31 ms. La lectura estructural elige mal entre muchas frases que
+  contienen las palabras de la pregunta («capital de Francia» → frase de un municipio de Oise en «Alta Francia»).
+- Comprobación preregistrada en D2: **1 correcta, 18 malas, 2 contestadas sin dato**; p95 65 ms, **máximo 2,1 s** (> 1 s). No pasa
+  (exigido ≥ 15 % y ≥ 60 %); no se pide reserva.
+- Búsqueda inversa por definición (diccionario inverso) medida en D1 con un guion: ingenua 8/76 correctas; estricta (todas las palabras en
+  la definición, sustantivo preguntado presente, artículo único) 1/3. No se implementó en el motor.
+**No repetir**: responder preguntas cotidianas desde las primeras frases de Wikipedia con la lectura estructural o con búsqueda inversa por
+coincidencia de palabras. Lo que falta no es texto (ya lo hay) sino **recuperar la frase que habla de lo preguntado** entre decenas de
+miles y saber qué tipo de respuesta se pide (un número, un lugar, una cosa). La biblioteca queda como mecanismo opcional (no se adjunta
+por defecto; `attach_library`).
