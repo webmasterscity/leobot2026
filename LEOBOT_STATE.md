@@ -50,6 +50,7 @@
 
 ## Historial de ciclos
 
+- 2026-09-29 · **G-114: mejora demostrada con juez ciego doble en banco nuevo, no promovible por un turno** ([resumen](results_v3/g114_resumen.md), `freeze-G114-1` = `339dd02`, banco `congelado_g114`): modelo denso G-112 frente a B0, útiles 35,8 % frente a 27,8 % (+8,06 [+3,44, +12,71]), engañosas 15 frente a 22; criterio 3 (sin respuesta ≥ 97 %) 96,9 % por cinco turnos contradictorios del redactor. Siguiente: banco 5 con el criterio 3 sobre turnos coherentes.
 - 2026-09-29 · **G-113 diagnóstico**: curva de aprendizaje plana desde 54 negocios (≈ 280 no mejora) en los tres bancos nuevos: el kiosco es «no pudo» (capacidad), no «no sabía» ([resumen](results_v3/g113_resumen.md)).
 - 2026-09-29 · **G-112 negativo en banco nuevo** ([resumen](results_v3/g112_resumen.md), `freeze-G112-1` = `342dc4b`, banco `congelado_g112`): modelo denso con umbral que iguala todas las citas malas de B0: +0,55 puntos [−2,75, +3,83]; serie +5,2 / +2,4 / +0,55 en tres bancos.
 - 2026-09-29 · **G-111b negativo en banco nuevo** ([resumen](results_v3/g111b_resumen.md), `freeze-G111-1` = `62a688a`, banco `congelado_g111` de 32 negocios): pares en ≥ 25 negocios −1,1/−0,5/+1,3 puntos frente al modelo denso. Observación: a igual número de citas malas el modelo denso supera a prefijos en +5,9/+5,1/+2,4 puntos → G-112.

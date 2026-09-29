@@ -1,0 +1,471 @@
+[
+ {
+  "id": "i0180",
+  "negocio": "W5_n1",
+  "turnos_previos_del_cliente": [],
+  "cliente": "buenas, quiero un castillo para la feria de mi aldea, cuanto sale?",
+  "tipo": "instruccion",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "Si alguien quiere un espectáculo, un castillo o un torito, no le des precios, ni siquiera el precio desde: pásale el contacto del Ing. Rodrigo Chacón, 4480-1177, que es quien cotiza.",
+  "respuesta_ideal": "Los castillos se hacen por encargo y los cotiza el Ing. Rodrigo Chacón; puede llamarle al 4480-1177.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Compras al por mayor: 10 % de descuento en compras a partir de Q 2,000.00 (no aplica en toritos ni castillos)»."
+ },
+ {
+  "id": "i0181",
+  "negocio": "W8_n2",
+  "turnos_previos_del_cliente": [
+   "Hola, ¿puedo ir con mi perro?"
+  ],
+  "cliente": "¿Lo puedo meter al mar?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "entre las 10 y las 18"
+  ],
+  "evidencia": "Los perros no pueden bañarse en el mar en el sector del balneario entre las 10 y las 18 hs (ordenanza municipal).",
+  "respuesta_ideal": "Entre las 10 y las 18 hs no, por ordenanza municipal; fuera de ese horario sí.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Los perros no pueden bañarse en el mar en el sector del balneario entre las 10 y las 18 hs (ordenanza municipal)»."
+ },
+ {
+  "id": "i0182",
+  "negocio": "W5_n3",
+  "turnos_previos_del_cliente": [
+   "ustedes limpian pozos viejos? cuanto cobran",
+   "el mio tiene como 90 metros"
+  ],
+  "cliente": "otra cosa, ese pozo lo hizo el dueño anterior y creo que no tenia permiso, me pueden multar?",
+  "tipo": "instruccion",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "No opine sobre temas legales (concesiones, multas, pozos sin permiso, denuncias). Refiera a Karla Vindas en la oficina, 2666-4310, extensión 1.",
+  "respuesta_ideal": "No le puedo orientar en temas legales; esa consulta la atiende Karla Vindas en la oficina, al 2666-4310, extensión 1.",
+  "respuesta_a_calificar": "Sobre eso, las indicaciones del negocio dicen: «No opine sobre temas legales (concesiones, multas, pozos sin permiso, denuncias). Refiera a Karla Vindas en la oficina, 2666-4310, extensión 1»."
+ },
+ {
+  "id": "i0183",
+  "negocio": "W4_n4",
+  "turnos_previos_del_cliente": [
+   "hola, mi certificado de alturas se vencio hace 3 meses, tengo que hacer todo el curso otra vez?"
+  ],
+  "cliente": "y si se hubiera vencido hace 2 años?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "curso completo"
+  ],
+  "evidencia": "si venció hace más tiempo, debe hacer el curso completo otra vez.",
+  "respuesta_ideal": "En ese caso sí tendría que hacer el curso completo otra vez.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «² Si el participante llega más de 15 minutos tarde a la primera sesión, pierde el cupo y se reprograma para el siguiente grupo»."
+ },
+ {
+  "id": "i0184",
+  "negocio": "W5_n1",
+  "turnos_previos_del_cliente": [
+   "a mi sobrino le cayo una chispa en la mano y se le hizo ampolla, que le pongo?"
+  ],
+  "cliente": "venden extintores tambien?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo información de que vendamos extintores; puede preguntarlo al 6631-2290.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «No se vende a personas en estado de ebriedad»."
+ },
+ {
+  "id": "i0185",
+  "negocio": "W4_n2",
+  "turnos_previos_del_cliente": [
+   "buenas, tengo una fosa septica de 5000 litros en una casa de campo en Sangonera, cuanto cuesta vaciarla?",
+   "me dais algun papel de que se ha vaciado?"
+  ],
+  "cliente": "cada cuanto tiempo hay que vaciarla?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo información sobre cada cuánto conviene vaciarla; en la oficina, en el 968 80 12 34, se lo pueden indicar.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Servicio: Vaciado de fosa séptica, cada 1.000 litros adicionales; Precio: 45 €»."
+ },
+ {
+  "id": "i0186",
+  "negocio": "W1_n2",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Tengo 4 pesas patrón clase M1, cuanto me sale calibrarlas todas?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "1.680"
+  ],
+  "evidencia": "| Pesas patrón | por pesa, clase M1 o F2 | $U 420 | 5 días hábiles |",
+  "respuesta_ideal": "Son $U 420 por pesa, así que las 4 salen $U 1.680 más IVA.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Servicio: Pesas patrón; Alcance: por pesa, clase M1 o F2; Precio: $U 420; Plazo habitual: 5 días hábiles»."
+ },
+ {
+  "id": "i0187",
+  "negocio": "W3_n3",
+  "turnos_previos_del_cliente": [
+   "¿Reparan impresoras?",
+   "¿Y acondicionadores de aire?"
+  ],
+  "cliente": "¿Ustedes son certificados?",
+  "tipo": "charla",
+  "accion_esperada": "responder",
+  "claves": [
+   "Certificado en reparación de electrónica por SENA",
+   "16 años de experiencia"
+  ],
+  "evidencia": "Certificado en reparación de electrónica por SENA; 16 años de experiencia en Bogotá",
+  "respuesta_ideal": "Sí, somos certificados por SENA y tenemos 16 años de experiencia. Atendemos empresas importantes como Bancolombia y Colpatria.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Certificado en reparación de electrónica por SENA (Servicio Nacional de Aprendizaje)»."
+ },
+ {
+  "id": "i0188",
+  "negocio": "W8_n3",
+  "turnos_previos_del_cliente": [
+   "hola, en mi casa de campo en Jesús María quiero una noria para uso de la casa, que precio tiene",
+   "solo necesito como 20 metros, me cobran solo esos?",
+   "entonces cuanto me saldria lo minimo",
+   "¿La noria lleva incluido el brocal o la tapa de concreto?"
+  ],
+  "cliente": "¿hasta cuánto se puede pagar en efectivo?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "20,000"
+  ],
+  "evidencia": "Pagos por transferencia o cheque a nombre de la empresa. No se recibe efectivo por montos mayores a $ 20,000.00 MXN.",
+  "respuesta_ideal": "Solo hasta $ 20,000.00 MXN; por montos mayores el pago es por transferencia o cheque a nombre de la empresa.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Pagos por transferencia o cheque a nombre de la empresa. No se recibe efectivo por montos mayores a $ 20,000.00 MXN»."
+ },
+ {
+  "id": "i0189",
+  "negocio": "W5_n2",
+  "turnos_previos_del_cliente": [],
+  "cliente": "tengo un libro de mi bisabuelo de 1890 que se esta desarmando, cuanto me cobrarian por arreglarlo?",
+  "tipo": "instruccion",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "En restauraciones no des ningún precio final: explicá que el presupuesto se hace viendo el libro y derivá a Gonzalo Píriz (martes y jueves, tel. 2408 7731).",
+  "respuesta_ideal": "El presupuesto de restauración se hace viendo el libro y no tiene costo; lo atiende Gonzalo Píriz los martes y jueves, tel. 2408 7731.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Los trabajos de restauración tienen un mínimo de $U 3.500»."
+ },
+ {
+  "id": "i0190",
+  "negocio": "W7_n2",
+  "turnos_previos_del_cliente": [
+   "Mi pantalla tiene líneas verdes. ¿Cuánto cuesta arreglarlo?"
+  ],
+  "cliente": "¿El presupuesto incluye la mano de obra?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "reparación incluye garantía de 6 meses en mano de obra"
+  ],
+  "evidencia": "Toda reparación incluye garantía de 6 meses en mano de obra",
+  "respuesta_ideal": "Sí, la mano de obra está incluida. Además, toda reparación lleva garantía de 6 meses.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Toda reparación incluye garantía de 6 meses en mano de obra»."
+ },
+ {
+  "id": "i0191",
+  "negocio": "W8_n3",
+  "turnos_previos_del_cliente": [
+   "hola, a que hora cierran los sabados?"
+  ],
+  "cliente": "Si ya firmé y luego cancelo antes de que llegue la máquina, ¿me devuelven todo el anticipo?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "5,000"
+  ],
+  "evidencia": "- Cancelación antes de movilizar la máquina: se devuelve el anticipo menos $ 5,000.00 MXN de gastos administrativos.",
+  "respuesta_ideal": "Casi todo: si cancela antes de movilizar la máquina se devuelve el anticipo menos $ 5,000.00 MXN de gastos administrativos.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Cancelación antes de movilizar la máquina: se devuelve el anticipo menos $ 5,000.00 MXN de gastos administrativos»."
+ },
+ {
+  "id": "i0192",
+  "negocio": "W3_n1",
+  "turnos_previos_del_cliente": [
+   "Hola, ¿a qué hora cierran hoy?",
+   "Perfecto. ¿Y mañana me pueden atender a las 8:30?"
+  ],
+  "cliente": "Che, ¿abren los domingos?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "Domingos: Cerrado"
+  ],
+  "evidencia": "Domingos: Cerrado",
+  "respuesta_ideal": "No, los domingos estamos cerrados. Atendemos de lunes a sábado.",
+  "respuesta_a_calificar": "Che. No lo tengo seguro. Lo más cercano que dice el texto es: «Domingos: Cerrado»."
+ },
+ {
+  "id": "i0193",
+  "negocio": "W2_n4",
+  "turnos_previos_del_cliente": [],
+  "cliente": "a que hora es la misa del domingo?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "8:00 a. m."
+  ],
+  "evidencia": "Misa dominical: 8:00 a. m.",
+  "respuesta_ideal": "La misa dominical es a las 8:00 a. m.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Misa dominical: 8:00 a. m»."
+ },
+ {
+  "id": "i0194",
+  "negocio": "W4_n3",
+  "turnos_previos_del_cliente": [
+   "Hola! mi hijo tiene 9 años y quiere aprender magia, que curso le sirve?",
+   "que dias es?"
+  ],
+  "cliente": "incluye la baraja?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "no incluyen materiales"
+  ],
+  "evidencia": "Los demás cursos no incluyen materiales; el instructor indica la lista en la primera clase.",
+  "respuesta_ideal": "No, solo Cartomagia nivel 1 incluye baraja; los demás cursos no incluyen materiales y el instructor da la lista en la primera clase.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Materiales: el precio de Cartomagia nivel 1 incluye una baraja Bicycle»."
+ },
+ {
+  "id": "i0195",
+  "negocio": "W8_n1",
+  "turnos_previos_del_cliente": [
+   "Buen día. ¿Los baños tienen luz adentro? El evento es de noche"
+  ],
+  "cliente": "¿Y el baño VIP tiene aire acondicionado?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo ese dato; del VIP solo sé que tiene lavamanos y espejo. Podés preguntarlo en la oficina al 2508 44 71.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Servicio: Baño VIP con lavamanos y espejo, evento (hasta 48 h); Precio: $ 7.800 por unidad»."
+ },
+ {
+  "id": "i0196",
+  "negocio": "W6_n1",
+  "turnos_previos_del_cliente": [],
+  "cliente": "¿Cuánto cuesta la membresía Plus?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "₡6.500 al mes"
+  ],
+  "evidencia": "₡6.500 al mes. Incluye 12 % de descuento en todos los kWh y reserva de cargadores semirrápidos con 2 horas de anticipación desde la app.",
+  "respuesta_ideal": "La membresía Plus cuesta ₡6.500 al mes.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «₡6.500 al mes. Incluye 12 % de descuento en todos los kWh y reserva de cargadores semirrápidos con 2 horas de anticipación desde la app»."
+ },
+ {
+  "id": "i0197",
+  "negocio": "W1_n2",
+  "turnos_previos_del_cliente": [
+   "Dejé un manómetro la semana pasada, ¿ya está pronto?",
+   "cuanto cuesta calibrar un tensiometro de presion",
+   "¿Y si lo quiero con ajuste?",
+   "¿Calibran también oxímetros de pulso?"
+  ],
+  "cliente": "¿Cada cuánto hay que calibrar el tensiómetro?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "una vez por año"
+  ],
+  "evidencia": "- ¿Cada cuánto hay que calibrar? Depende del uso y de la norma que siga su empresa; como referencia, la mayoría de nuestros clientes calibra una vez por año.",
+  "respuesta_ideal": "Depende del uso y de la norma que siga; como referencia, la mayoría de los clientes calibra una vez por año.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «¿Cada cuánto hay que calibrar? Depende del uso y de la norma que siga su empresa; como referencia, la mayoría de nuestros clientes calibra una vez por año»."
+ },
+ {
+  "id": "i0198",
+  "negocio": "W7_n4",
+  "turnos_previos_del_cliente": [
+   "¿Venden pasteles congelados de otras marcas?"
+  ],
+  "cliente": "¿Hacen entregas a domicilio?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "pedidos mayores a L. 500"
+  ],
+  "evidencia": "Entregas a domicilio en Tegucigalpa para pedidos mayores a L. 500 (sin costo adicional)",
+  "respuesta_ideal": "Sí, en Tegucigalpa entregamos a domicilio si tu pedido es mayor a L. 500, sin costo. Pago al momento de entrega.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «✓ Entregas a domicilio en Tegucigalpa para pedidos mayores a L. 500 (sin costo adicional)»."
+ },
+ {
+  "id": "i0199",
+  "negocio": "W8_n2",
+  "turnos_previos_del_cliente": [
+   "hola! cuanto sale una carpa por dia?"
+  ],
+  "cliente": "¿Y si vamos 7 personas, entra toda la familia en una carpa?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "6 personas por carpa"
+  ],
+  "evidencia": "Capacidad máxima: 6 personas por carpa.",
+  "respuesta_ideal": "No, la capacidad máxima es de 6 personas por carpa; con 7 necesitarían una carpa más o sumar una sombrilla.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Somos un balneario familiar sobre la playa de Villa Gesell, con 84 carpas, 40 sombrillas, parador con cocina, duchas de agua dulce, baños, vestuarios, guardavidas propio y juegos para chicos»."
+ },
+ {
+  "id": "i0200",
+  "negocio": "W8_n2",
+  "turnos_previos_del_cliente": [
+   "Buen dia, ¿un domingo de marzo a que hora abren?",
+   "perdi unos lentes de sol ayer en la carpa 31, los tendran?"
+  ],
+  "cliente": "me olvidé la llave del locker en casa, cuanto cobran si la pierdo?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "10.000"
+  ],
+  "evidencia": "- Lockers en la boletería: $ 3.000 por día, con llave; la pérdida de la llave cuesta $ 10.000.",
+  "respuesta_ideal": "La pérdida de la llave del locker cuesta $ 10.000.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Lockers en la boletería: $ 3.000 por día, con llave; la pérdida de la llave cuesta $ 10.000»."
+ },
+ {
+  "id": "i0201",
+  "negocio": "W3_n3",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Buenas, ¿reparan televisores Samsung?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "Samsung"
+  ],
+  "evidencia": "Aceptamos prácticamente cualquier marca: Samsung, LG, Whirlpool...",
+  "respuesta_ideal": "Sí, claro. Reparamos Samsung y todas las grandes marcas. ¿Qué problema tiene tu tele?",
+  "respuesta_a_calificar": "Buenas. No lo sé: no encontré esa información en el texto que tengo."
+ },
+ {
+  "id": "i0202",
+  "negocio": "W4_n1",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Hola, tengo reserva de carpa para la quincena de febrero pero se me complicó. Si cancelo 5 dias antes me devuelven la seña?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "50 %"
+  ],
+  "evidencia": "Cancelaciones: hasta 10 días antes de la fecha se devuelve la seña completa. Entre 9 y 3 días antes se devuelve el 50 %. Con menos de 3 días no hay devolución.",
+  "respuesta_ideal": "Cancelando 5 días antes te devuelven el 50 % de la seña, porque entra en el tramo de entre 9 y 3 días antes.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Cancelaciones: hasta 10 días antes de la fecha se devuelve la seña completa. Entre 9 y 3 días antes se devuelve el 50 %. Con menos de 3 días no hay devolución»."
+ },
+ {
+  "id": "i0203",
+  "negocio": "W6_n4",
+  "turnos_previos_del_cliente": [
+   "cuanto sale la cena con show?",
+   "¿y para un nene de 8 años?",
+   "somos 2 adultos y un nene de 8, cuanto seria?",
+   "mi nena tiene 5 años, paga?"
+  ],
+  "cliente": "hay descuento para jubilados?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "15 % de descuento"
+  ],
+  "evidencia": "- Jubilados: 15 % de descuento con DNI, los miércoles y jueves.",
+  "respuesta_ideal": "Sí, los jubilados tienen 15 % de descuento con DNI, los miércoles y jueves.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Jubilados: 15 % de descuento con DNI, los miércoles y jueves»."
+ },
+ {
+  "id": "i0204",
+  "negocio": "W4_n4",
+  "turnos_previos_del_cliente": [
+   "buenos dias, cuanto vale el curso de alturas basico?"
+  ],
+  "cliente": "y cuanto dura?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "8 horas"
+  ],
+  "evidencia": "Trabajo seguro en alturas – nivel básico operativo\t8 horas (1 día)\tpresencial\t$ 185.000",
+  "respuesta_ideal": "Dura 8 horas, en un solo día.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Programa: Espacios confinados – entrante y vigía; Duración: 16 horas (2 días); Modalidad: presencial; Valor: $ 260.000»."
+ },
+ {
+  "id": "i0205",
+  "negocio": "W6_n2",
+  "turnos_previos_del_cliente": [
+   "¿cuanto vale la miel?"
+  ],
+  "cliente": "¿y el aceite de sacha inchi?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "Bs 68"
+  ],
+  "evidencia": "Aceite de sacha inchi\tfrasco 60 ml\tBs 68",
+  "respuesta_ideal": "El aceite de sacha inchi, frasco de 60 ml, cuesta Bs 68.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Producto: Aceite de sacha inchi; Presentación: frasco 60 ml; Precio: Bs 68»."
+ },
+ {
+  "id": "i0206",
+  "negocio": "W8_n1",
+  "turnos_previos_del_cliente": [
+   "hola, a que hora abren los sabados?"
+  ],
+  "cliente": "¿Puedo pasar por el depósito de Camino Carrasco a ver los baños?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "cita previa"
+  ],
+  "evidencia": "Depósito: Camino Carrasco 5860, esq. Veracierto, Montevideo (no atendemos público en el depósito sin cita previa).",
+  "respuesta_ideal": "Solo con cita previa: en el depósito no se atiende público sin cita. Coordinala con la oficina al 2508 44 71.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Depósito: Camino Carrasco 5860, esq. Veracierto, Montevideo (no atendemos público en el depósito sin cita previa)»."
+ },
+ {
+  "id": "i0207",
+  "negocio": "W4_n4",
+  "turnos_previos_del_cliente": [
+   "hice el curso la semana pasada y no me ha llegado el certificado al correo",
+   "cuanto tiempo se demoran normalmente en mandarlo?",
+   "y si lo quiero impreso?",
+   "cuanto tiempo vale el certificado?"
+  ],
+  "cliente": "me sirve para trabajar en bogota?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "todo el territorio nacional"
+  ],
+  "evidencia": "¿El certificado sirve en otras ciudades del país? Sí, es válido en todo el territorio nacional.",
+  "respuesta_ideal": "Sí, el certificado es válido en todo el territorio nacional.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Certificado médico de aptitud para trabajo en alturas con vigencia no mayor a 1 año, expedido por médico con licencia en seguridad y salud en el trabajo. (No lo expedimos nosotros; ver preguntas frecuentes.)»."
+ },
+ {
+  "id": "i0208",
+  "negocio": "W2_n2",
+  "turnos_previos_del_cliente": [],
+  "cliente": "cuanto cobran por destapar el lavadero de la cocina",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "desde S/ 90"
+  ],
+  "evidencia": "- Destape de lavatorio o lavadero: desde S/ 90.",
+  "respuesta_ideal": "El destape de lavadero cuesta desde S/ 90.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Destape de lavatorio o lavadero: desde S/ 90»."
+ },
+ {
+  "id": "i0209",
+  "negocio": "W8_n2",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Buenas, queremos alquilar una carpa del 16 al 31 de enero, cuanto cuesta la quincena en esas fechas",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "540.500"
+  ],
+  "evidencia": "- Carpa por quincena (15 días corridos): $ 470.000",
+  "respuesta_ideal": "La quincena de carpa es $ 470.000, pero la segunda quincena de enero tiene un recargo del 15 %, así que queda en $ 540.500.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Segunda quincena de enero (16 al 31): recargo del 15 % sobre todas las tarifas»."
+ }
+]

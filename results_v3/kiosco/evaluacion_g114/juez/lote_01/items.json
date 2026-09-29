@@ -1,0 +1,481 @@
+[
+ {
+  "id": "i0030",
+  "negocio": "W2_n3",
+  "turnos_previos_del_cliente": [
+   "como puedo llegar desde Cuenca si no tengo carro?"
+  ],
+  "cliente": "cuanto cuesta ese bus?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "USD 3 ida y vuelta"
+  ],
+  "evidencia": "3) Bus turístico desde el Terminal Terrestre de Cuenca: USD 3 ida y vuelta por persona.",
+  "respuesta_ideal": "El bus cuesta USD 3 ida y vuelta por persona.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Bus turístico desde el Terminal Terrestre de Cuenca: USD 3 ida y vuelta por persona. Solo sábados y domingos. Sale a las 08h00 y regresa a las 17h30»."
+ },
+ {
+  "id": "i0031",
+  "negocio": "W4_n3",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Hola! mi hijo tiene 9 años y quiere aprender magia, que curso le sirve?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "Magia infantil inicial",
+   "7 a 11 años",
+   "$2,400"
+  ],
+  "evidencia": "| Magia infantil inicial | 7 a 11 años | 8 clases de 1 h | sábados 10:30 | $2,400 MXN |",
+  "respuesta_ideal": "¡Bienvenido a El Sombrero de Copa! Para un niño de 9 años le queda el curso de Magia infantil inicial, que es para 7 a 11 años: son 8 clases de 1 h los sábados a las 10:30 y cuesta $2,400 MXN.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Kits para principiantes: \"Mi primera magia\" (a partir de 6 años) $390; \"Kit Castel\" (12 años en adelante) $890»."
+ },
+ {
+  "id": "i0032",
+  "negocio": "W7_n1",
+  "turnos_previos_del_cliente": [
+   "Hola, necesito hacer una remodelación en casa y no sé qué materiales comprar."
+  ],
+  "cliente": "¿Hacen trabajos de instalación? Necesito que cambien una lámpara.",
+  "tipo": "instruccion",
+  "accion_esperada": "responder",
+  "claves": [
+   "No realizamos trabajos de instalación"
+  ],
+  "evidencia": "No realizamos trabajos de instalación (solo venta de materiales)",
+  "respuesta_ideal": "Nosotros solo vendemos los materiales y las lámparas. Para la instalación, te recomiendo que consultes con un electricista profesional.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «No realizamos trabajos de instalación (solo venta de materiales)»."
+ },
+ {
+  "id": "i0033",
+  "negocio": "W5_n3",
+  "turnos_previos_del_cliente": [
+   "la bomba del pozo dejó de funcionar esta mañana y estamos sin agua",
+   "no, no tengo contrato. cuanto sale ese contrato?",
+   "que incluye?"
+  ],
+  "cliente": "y sin contrato cuanto me cobran por venir hoy a revisar la bomba?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo el precio de una visita sin contrato; le recomiendo llamar a la oficina al 2666-4310.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Servicio: Instalación de bomba sumergible (sin la bomba); Precio: desde ₡350.000»."
+ },
+ {
+  "id": "i0034",
+  "negocio": "W2_n4",
+  "turnos_previos_del_cliente": [
+   "puedo visitar el jardin sin quedarme a dormir?"
+  ],
+  "cliente": "y los lunes?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "Los lunes la casa permanece cerrada"
+  ],
+  "evidencia": "Los lunes la casa permanece cerrada.",
+  "respuesta_ideal": "Los lunes la casa permanece cerrada.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Los lunes la casa permanece cerrada»."
+ },
+ {
+  "id": "i0035",
+  "negocio": "W5_n3",
+  "turnos_previos_del_cliente": [],
+  "cliente": "la bomba del pozo dejó de funcionar esta mañana y estamos sin agua",
+  "tipo": "instruccion",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "Si alguien dice que su bomba dejó de funcionar, pregúntele si tiene contrato de mantenimiento. Si lo tiene, dele el número de emergencias 8830-2255.",
+  "respuesta_ideal": "Lamento el problema. ¿Tiene contrato de mantenimiento con nosotros? Si lo tiene, llame al número de emergencias 8830-2255, que atiende las 24 horas.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Servicio: Instalación de bomba sumergible (sin la bomba); Precio: desde ₡350.000»."
+ },
+ {
+  "id": "i0036",
+  "negocio": "W5_n3",
+  "turnos_previos_del_cliente": [
+   "buenas tardes"
+  ],
+  "cliente": "¿cuánto cobran por metro de pozo?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "62.000",
+   "78.000"
+  ],
+  "evidencia": "Perforación diámetro 6\"\t₡62.000 por metro lineal\nPerforación diámetro 8\"\t₡78.000 por metro lineal",
+  "respuesta_ideal": "La perforación de 6 pulgadas cuesta ₡62.000 por metro lineal y la de 8 pulgadas ₡78.000 por metro lineal, más IVA.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Si el pozo resulta seco (sin caudal aprovechable), se cobra solamente el 60 % de los metros perforados»."
+ },
+ {
+  "id": "i0037",
+  "negocio": "W6_n4",
+  "turnos_previos_del_cliente": [],
+  "cliente": "tienen estacionamiento?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "20 autos"
+  ],
+  "evidencia": "* Estacionamiento gratuito para 20 autos.",
+  "respuesta_ideal": "Sí, hay estacionamiento gratuito para 20 autos.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Estacionamiento gratuito para 20 autos»."
+ },
+ {
+  "id": "i0038",
+  "negocio": "W1_n4",
+  "turnos_previos_del_cliente": [],
+  "cliente": "¿Trabajan en Andorra?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No lo sé: trabajamos en toda España y, con despachos colaboradores, en Portugal y Francia, pero no tengo información sobre Andorra.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Sí, en toda España, y en Portugal y Francia mediante despachos colaboradores»."
+ },
+ {
+  "id": "i0039",
+  "negocio": "W6_n1",
+  "turnos_previos_del_cliente": [],
+  "cliente": "cuanto cobran el kWh en el cargador rapido",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "₡260 por kWh"
+  ],
+  "evidencia": "Rápido CC | 6 | 150 kW | CCS2 y CHAdeMO | ₡260 por kWh",
+  "respuesta_ideal": "El cargador rápido cuesta ₡260 por kWh, con IVA incluido.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «₡6.500 al mes. Incluye 12 % de descuento en todos los kWh y reserva de cargadores semirrápidos con 2 horas de anticipación desde la app»."
+ },
+ {
+  "id": "i0040",
+  "negocio": "W3_n3",
+  "turnos_previos_del_cliente": [
+   "Hola, mi refrigerador no enfría bien. ¿Cuanto cuesta arreglarlo?"
+  ],
+  "cliente": "¿Cuanto tarda el diagnóstico?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "1 día hábil",
+   "generalmente en el mismo día"
+  ],
+  "evidencia": "Diagnóstico: 1 día hábil (generalmente en el mismo día)",
+  "respuesta_ideal": "El diagnóstico generalmente se hace el mismo día. Trae el equipo en la mañana y por la tarde tenemos la evaluación.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Diagnóstico: 1 día hábil (generalmente en el mismo día)»."
+ },
+ {
+  "id": "i0041",
+  "negocio": "W8_n4",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Hola, ¿cuánto sale un loteamiento de 3 lotes?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "5 lotes",
+   "1.900.000"
+  ],
+  "evidencia": "Loteamiento (fraccionamiento) urbano: Gs. 380.000 por lote resultante, mínimo 5 lotes",
+  "respuesta_ideal": "¡Buenas! El loteamiento urbano se cobra a Gs. 380.000 por lote resultante con un mínimo de 5 lotes, así que aunque sean 3 se cobra el mínimo: Gs. 1.900.000 de referencia. ¿Me pasa el número de finca y el distrito?",
+  "respuesta_a_calificar": "Hola. No lo tengo seguro. Lo más cercano que dice el texto es: «Loteamiento (fraccionamiento) urbano: Gs. 380.000 por lote resultante, mínimo 5 lotes»."
+ },
+ {
+  "id": "i0042",
+  "negocio": "W2_n2",
+  "turnos_previos_del_cliente": [
+   "cuanto demora en llegar el tecnico si es una emergencia"
+  ],
+  "cliente": "aceptan tarjeta?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "No contamos con POS para tarjetas"
+  ],
+  "evidencia": "No contamos con POS para tarjetas.",
+  "respuesta_ideal": "No contamos con POS para tarjetas. Aceptamos efectivo, Yape, Plin y transferencia bancaria.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «No contamos con POS para tarjetas»."
+ },
+ {
+  "id": "i0043",
+  "negocio": "W4_n4",
+  "turnos_previos_del_cliente": [
+   "buenos dias, cuanto vale el curso de alturas basico?",
+   "y cuanto dura?",
+   "que dia empieza?"
+  ],
+  "cliente": "ustedes me hacen el examen medico?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "No lo expedimos nosotros"
+  ],
+  "evidencia": "(No lo expedimos nosotros; ver preguntas frecuentes.)",
+  "respuesta_ideal": "No lo expedimos nosotros; se hace en cualquier IPS de salud ocupacional. Cerca de la sede está Salud Laboral del Caribe, en la Calle 30 # 10-22.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Cerca de la sede está Salud Laboral del Caribe, Calle 30 # 10-22 (no tiene relación con nosotros)»."
+ },
+ {
+  "id": "i0044",
+  "negocio": "W1_n2",
+  "turnos_previos_del_cliente": [
+   "Hola, ¿ustedes están acreditados para calibrar calibres pie de rey?"
+  ],
+  "cliente": "¿Y cuánto sale calibrar un micrómetro?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo el precio de calibración de micrómetros en la lista.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Somos un laboratorio de metrología con más de 20 años calibrando instrumentos para la industria, la salud y el comercio»."
+ },
+ {
+  "id": "i0045",
+  "negocio": "W5_n1",
+  "turnos_previos_del_cliente": [
+   "buenas tardes",
+   "hasta que hora atienden los sabados?",
+   "¿y el domingo?",
+   "¿y el 15 de septiembre abren?"
+  ],
+  "cliente": "otra cosa, las baterias de 100 tiros cuantos minutos duran?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo el dato de cuánto dura la batería de 100 tiros; se lo pueden decir en la sala de ventas, al 6631-2290.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Producto: Batería de 100 tiros; Presentación: unidad; Precio: Q 550.00»."
+ },
+ {
+  "id": "i0046",
+  "negocio": "W2_n3",
+  "turnos_previos_del_cliente": [
+   "hola, a que hora abren?",
+   "y los lunes?"
+  ],
+  "cliente": "y si el lunes es feriado?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "Los feriados abrimos"
+  ],
+  "evidencia": "Los feriados abrimos, incluso si caen lunes o martes.",
+  "respuesta_ideal": "Si el lunes es feriado, sí abrimos: los feriados abrimos incluso si caen lunes o martes.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Los feriados abrimos, incluso si caen lunes o martes»."
+ },
+ {
+  "id": "i0047",
+  "negocio": "W6_n3",
+  "turnos_previos_del_cliente": [
+   "buen dia",
+   "cuanto sale una hora de compu?",
+   "y la sala gamer?"
+  ],
+  "cliente": "¿hay paquete de horas?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "Paquete de 5 horas por 40.000 Gs."
+  ],
+  "evidencia": "1.2 PC gamer (sala aparte): 9.000 Gs. la hora. Paquete de 5 horas por 40.000 Gs.",
+  "respuesta_ideal": "Sí, en la sala gamer hay un paquete de 5 horas por 40.000 Gs.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Paquete de 5 horas por 40.000 Gs»."
+ },
+ {
+  "id": "i0048",
+  "negocio": "W8_n1",
+  "turnos_previos_del_cliente": [
+   "Hola, buenas! Estoy organizando un cumpleaños de 15 para unas 150 personas, ¿cuánto sale un baño químico para un evento?"
+  ],
+  "cliente": "¿Y cuántos me recomiendan para esa cantidad de gente? Va a haber barra con alcohol.",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "1 cada 50 personas",
+   "3 baños"
+  ],
+  "evidencia": "1 cada 50 personas si hay venta de bebidas alcohólicas.",
+  "respuesta_ideal": "Con bebidas alcohólicas recomendamos 1 cada 50 personas, así que para 150 invitados serían 3 baños.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Cantidad recomendada para eventos: 1 baño cada 75 personas para eventos de hasta 4 horas; 1 cada 50 personas si hay venta de bebidas alcohólicas»."
+ },
+ {
+  "id": "i0049",
+  "negocio": "W5_n3",
+  "turnos_previos_del_cliente": [
+   "donde queda la oficina?"
+  ],
+  "cliente": "atienden los sábados?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "11:30"
+  ],
+  "evidencia": "Sábados ................ 7:00 a. m. – 11:30 a. m.",
+  "respuesta_ideal": "Sí, los sábados la oficina atiende de 7:00 a. m. a 11:30 a. m.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Las cuadrillas de perforación trabajan en campo de lunes a sábado»."
+ },
+ {
+  "id": "i0050",
+  "negocio": "W2_n3",
+  "turnos_previos_del_cliente": [
+   "puedo llevar mi dron para grabar la represa?",
+   "y tomar fotos con el celular si puedo?",
+   "puedo entrar con mi perrito?",
+   "es accesible para silla de ruedas?"
+  ],
+  "cliente": "los guias hablan quichua?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo información sobre quichua; sé que los guías hablan español y que hay guía en inglés con solicitud previa. Puede consultarlo al (07) 555-0123.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Los guías hablan español; guía en inglés solo con solicitud previa de 48 horas»."
+ },
+ {
+  "id": "i0051",
+  "negocio": "W1_n3",
+  "turnos_previos_del_cliente": [
+   "Hola! Cuánto sale embalsamar la cabeza de un ciervo?",
+   "y cuanto tarda?"
+  ],
+  "cliente": "¿Con el escudo de caldén cuánto me queda todo?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "525.000"
+  ],
+  "evidencia": "Escudo de madera de caldén con placa grabada\t$ 45.000\tse entrega con la pieza",
+  "respuesta_ideal": "El escudo con placa suma $ 45.000, así que en total serían $ 525.000.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Trabajo: Escudo de madera de caldén con placa grabada; Precio: $ 45.000; Demora aprox.: se entrega con la pieza»."
+ },
+ {
+  "id": "i0052",
+  "negocio": "W3_n1",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Hola, ¿cuanto cuesta el cemento?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "$8.450",
+   "50 kg"
+  ],
+  "evidencia": "Cemento Portland (bolsas de 50 kg): $8.450",
+  "respuesta_ideal": "El cemento Portland en bolsa de 50 kg cuesta $8.450. ¿Cuantas bolsas necesitás?",
+  "respuesta_a_calificar": "Hola. No lo sé: no encontré esa información en el texto que tengo."
+ },
+ {
+  "id": "i0053",
+  "negocio": "W5_n1",
+  "turnos_previos_del_cliente": [
+   "cuanto cuestan las estrellitas",
+   "¿las venden sueltas?"
+  ],
+  "cliente": "entonces deme 3 cajas de estrellitas y 2 volcancitos, cuanto es",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "Q 66.00"
+  ],
+  "evidencia": "| Estrellitas (luces de bengala) | caja de 10 | Q 12.00 |\n| Volcancitos | unidad | Q 15.00 |",
+  "respuesta_ideal": "Tres cajas de estrellitas (Q 36.00) y dos volcancitos (Q 30.00) suman Q 66.00. Recuerde que se pide DPI y solo vendemos a mayores de 18 años.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Producto: Estrellitas (luces de bengala); Presentación: caja de 10; Precio: Q 12.00»."
+ },
+ {
+  "id": "i0054",
+  "negocio": "W5_n4",
+  "turnos_previos_del_cliente": [
+   "hacen verificacion de antecedentes de postulantes para empresas?",
+   "son 4 candidatos, cuanto seria?",
+   "tienen descuento si son mas de 20?"
+  ],
+  "cliente": "y que pasa con los datos de la gente despues?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "6 meses"
+  ],
+  "evidencia": "Los antecedentes del caso se eliminan 6 meses después de cerrado, salvo que el cliente pida por escrito que se conserven.",
+  "respuesta_ideal": "Los antecedentes del caso se eliminan 6 meses después de cerrado, salvo que el cliente pida por escrito que se conserven.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Tampoco entregamos datos de personas a terceros sin un contrato firmado»."
+ },
+ {
+  "id": "i0055",
+  "negocio": "W3_n3",
+  "turnos_previos_del_cliente": [
+   "Hola, mi refrigerador no enfría bien. ¿Cuanto cuesta arreglarlo?",
+   "¿Cuanto tarda el diagnóstico?"
+  ],
+  "cliente": "¿Y después cuanto tarda la reparación?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "2-3 días hábiles",
+   "reparaciones simples"
+  ],
+  "evidencia": "Reparaciones simples (cambio de partes comunes): 2-3 días hábiles",
+  "respuesta_ideal": "Dependiendo del problema, entre 2 y 3 días hábiles para reparaciones simples, o hasta 5-7 días si es más complejo.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Garantía nula si el cliente abre el equipo después de entregado»."
+ },
+ {
+  "id": "i0056",
+  "negocio": "W6_n2",
+  "turnos_previos_del_cliente": [
+   "tengo una tienda y quisiera comprarles por mayor"
+  ],
+  "cliente": "¿tienen quinua en stock?",
+  "tipo": "instruccion",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "- No confirmes si hay stock de un producto: eso lo verifica el personal del mostrador, teléfono 2-2455890.",
+  "respuesta_ideal": "No puedo confirmar el stock; el personal del mostrador lo verifica en el 2-2455890.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Producto: Quinua real orgánica; Presentación: bolsa 1 kg; Precio: Bs 35»."
+ },
+ {
+  "id": "i0057",
+  "negocio": "W5_n2",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Hola buen día, cuánto me sale encuadernar la tesis en tapa dura?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "$U 1.450"
+  ],
+  "evidencia": "Tesis y monografías en tapa dura, con título dorado en el lomo y la tapa: $U 1.450 el primer ejemplar",
+  "respuesta_ideal": "Buen día. El primer ejemplar en tapa dura con título dorado cuesta $U 1.450 y cada ejemplar adicional del mismo trabajo, $U 1.100.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Tesis y monografías en tapa dura, con título dorado en el lomo y la tapa: $U 1.450 el primer ejemplar; cada ejemplar adicional del mismo trabajo, $U 1.100»."
+ },
+ {
+  "id": "i0058",
+  "negocio": "W6_n3",
+  "turnos_previos_del_cliente": [
+   "quiero imprimir 10 hojas a color y usar la compu 2 horas ¿cuanto seria?",
+   "¿imprimen en A3?"
+  ],
+  "cliente": "cuanto cobran la fotocopia",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "300 Gs."
+  ],
+  "evidencia": "Fotocopia B/N | 300 Gs.",
+  "respuesta_ideal": "La fotocopia en blanco y negro cuesta 300 Gs.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Servicio: Fotocopia B/N; Precio: 300 Gs»."
+ },
+ {
+  "id": "i0059",
+  "negocio": "W7_n4",
+  "turnos_previos_del_cliente": [
+   "Hola, ¿qué panes frescos tienen?",
+   "¿Cuál es el precio de la baguette?",
+   "¿Y los bolillos?"
+  ],
+  "cliente": "¿Tienen pan integral?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "pan integral"
+  ],
+  "evidencia": "Panes: Baguette tradicional, pan integral, pan casero, bolillos, roscas de queso",
+  "respuesta_ideal": "Sí, tenemos pan integral. El kilo cuesta L. 60.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Panes: Baguette tradicional, pan integral, pan casero, bolillos, roscas de queso»."
+ }
+]

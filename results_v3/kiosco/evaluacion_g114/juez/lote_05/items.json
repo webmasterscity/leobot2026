@@ -1,0 +1,487 @@
+[
+ {
+  "id": "i0150",
+  "negocio": "W8_n4",
+  "turnos_previos_del_cliente": [
+   "¿Atienden los sábados a la tarde?",
+   "Quiero hablar directamente con la agrimensora Benítez, ¿cuándo la encuentro en la oficina?"
+  ],
+  "cliente": "Dale, agendame para el jueves a las 3",
+  "tipo": "instruccion",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "No agende ni confirme fechas de visita a campo ni turnos en la oficina; para agendar, derive a la secretaria Fátima Ayala al 0985 771 402.",
+  "respuesta_ideal": "Yo no puedo agendar turnos; escríbale a la secretaria Fátima Ayala al 0985 771 402 y ella le confirma el jueves.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Los agrimensores están en campo la mayor parte de la semana; en la oficina reciben consultas los martes y jueves de 14:00 a 17:30, con turno previo»."
+ },
+ {
+  "id": "i0151",
+  "negocio": "W3_n3",
+  "turnos_previos_del_cliente": [],
+  "cliente": "¿Reparan impresoras?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "Impresoras"
+  ],
+  "evidencia": "Impresoras: $25.000 a $90.000 COP",
+  "respuesta_ideal": "Sí, reparamos impresoras de todos los tipos. El costo varía entre $25.000 y $90.000 COP.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Impresoras: $25.000 a $90.000 COP»."
+ },
+ {
+  "id": "i0152",
+  "negocio": "W7_n4",
+  "turnos_previos_del_cliente": [
+   "¿A qué hora abren mañana?",
+   "¿Cierran los domingos?"
+  ],
+  "cliente": "¿Atienden en Navidad?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "Cerrado: Navidad"
+  ],
+  "evidencia": "Cerrado: Martes de Carnaval y Navidad",
+  "respuesta_ideal": "No, en Navidad estamos cerrado. También cerramos el Martes de Carnaval. Abrimos nuevamente el día siguiente.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Hacemos promociones especiales en aniversario (agosto) y temporada de Navidad»."
+ },
+ {
+  "id": "i0153",
+  "negocio": "W4_n1",
+  "turnos_previos_del_cliente": [
+   "Hola, tengo reserva de carpa para la quincena de febrero pero se me complicó. Si cancelo 5 dias antes me devuelven la seña?",
+   "y si cancelo el dia anterior?",
+   "puedo pagar el saldo con tarjeta de credito?",
+   "hay descuento de jubilados para la carpa?"
+  ],
+  "cliente": "si llueve toda la mañana me reponen el dia?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "bandera roja por tormenta antes de las 12"
+  ],
+  "evidencia": "Días de lluvia: si hay bandera roja por tormenta antes de las 12, el día se repone al final de la estadía, sujeto a disponibilidad. Si llueve solo por la tarde no se repone.",
+  "respuesta_ideal": "Se repone al final de la estadía solo si hay bandera roja por tormenta antes de las 12, sujeto a disponibilidad; si llueve solo por la tarde no se repone.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Días de lluvia: si hay bandera roja por tormenta antes de las 12, el día se repone al final de la estadía, sujeto a disponibilidad. Si llueve solo por la tarde no se repone»."
+ },
+ {
+  "id": "i0154",
+  "negocio": "W2_n1",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Hola buenas, a qué hora abren los domingos?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "11:00 a. m. a 6:00 p. m."
+  ],
+  "evidencia": "Domingos: 11:00 a. m. a 6:00 p. m.",
+  "respuesta_ideal": "Los domingos atendemos de 11:00 a. m. a 6:00 p. m.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Domingos: 11:00 a. m. a 6:00 p. m»."
+ },
+ {
+  "id": "i0155",
+  "negocio": "W4_n3",
+  "turnos_previos_del_cliente": [
+   "hola, compre un truco de monedas ayer y no me sale, me dicen como se hace?",
+   "entonces lo puedo devolver? ya lo abri"
+  ],
+  "cliente": "y si estuviera cerrado?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "7 días naturales"
+  ],
+  "evidencia": "Con empaque cerrado y ticket se cambian dentro de 7 días naturales.",
+  "respuesta_ideal": "Con el empaque cerrado y el ticket se cambia dentro de 7 días naturales.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Cambios y devoluciones: los artículos de magia no tienen devolución una vez abiertos, por la naturaleza del secreto. Con empaque cerrado y ticket se cambian dentro de 7 días naturales. Los libros y DVD no tienen cambio»."
+ },
+ {
+  "id": "i0156",
+  "negocio": "W3_n2",
+  "turnos_previos_del_cliente": [
+   "Hola, necesito un paquete para 2 adultos y 1 niño de 8 años. ¿Qué me recomiendas?",
+   "¿Y el costo total para los 3?"
+  ],
+  "cliente": "Perfecto. ¿Puedo pagar a plazos?",
+  "tipo": "instruccion",
+  "accion_esperada": "responder",
+  "claves": [
+   "6 meses sin interés",
+   "compras mayores a $8.000 MXN"
+  ],
+  "evidencia": "Pago a plazos: con tarjeta a 6 meses sin interés (compras mayores a $8.000 MXN)",
+  "respuesta_ideal": "Sí, con tarjeta de crédito podés hacer 6 meses sin interés. Tu compra de $25.610 MXN entra perfectamente.",
+  "respuesta_a_calificar": "Perfecto. No lo sé: no encontré esa información en el texto que tengo."
+ },
+ {
+  "id": "i0157",
+  "negocio": "W5_n3",
+  "turnos_previos_del_cliente": [
+   "buenas tardes",
+   "¿cuánto cobran por metro de pozo?"
+  ],
+  "cliente": "si es de 6 pulgadas y 50 metros cuanto seria",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "3.100.000"
+  ],
+  "evidencia": "Perforación diámetro 6\"\t₡62.000 por metro lineal",
+  "respuesta_ideal": "Serían ₡3.100.000 (50 metros a ₡62.000), más IVA.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Servicio: Perforación diámetro 6\"; Precio: ₡62.000 por metro lineal»."
+ },
+ {
+  "id": "i0158",
+  "negocio": "W2_n4",
+  "turnos_previos_del_cliente": [],
+  "cliente": "puedo visitar el jardin sin quedarme a dormir?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "abiertos al público, sin costo"
+  ],
+  "evidencia": "El jardín y la capilla están abiertos al público, sin costo, de martes a domingo de 8:00 a. m. a 5:00 p. m.",
+  "respuesta_ideal": "Sí, el jardín y la capilla están abiertos al público, sin costo, de martes a domingo de 8:00 a. m. a 5:00 p. m.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «El jardín y la capilla están abiertos al público, sin costo, de martes a domingo de 8:00 a. m. a 5:00 p. m»."
+ },
+ {
+  "id": "i0159",
+  "negocio": "W4_n1",
+  "turnos_previos_del_cliente": [],
+  "cliente": "hola, cuanto sale la carpa por dia en enero?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "$ 62.000"
+  ],
+  "evidencia": "Carpa (hasta 6 personas, 2 reposeras y mesa incluidas):\n- Diciembre y marzo: $ 38.000\n- Enero: $ 62.000",
+  "respuesta_ideal": "¡Hola! Bienvenido a La Caleta. La carpa en enero sale $ 62.000 por día e incluye dos reposeras y mesa, para hasta 6 personas.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Quincena de carpa en enero (15 días corridos): $ 780.000»."
+ },
+ {
+  "id": "i0160",
+  "negocio": "W4_n4",
+  "turnos_previos_del_cliente": [
+   "buenos dias, cuanto vale el curso de alturas basico?",
+   "y cuanto dura?",
+   "que dia empieza?",
+   "ustedes me hacen el examen medico?"
+  ],
+  "cliente": "y cuanto cuesta el examen en esa IPS?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo ese dato; Salud Laboral del Caribe no tiene relación con nosotros, así que tendría que consultarlo directamente con ellos.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «En cualquier IPS de salud ocupacional»."
+ },
+ {
+  "id": "i0161",
+  "negocio": "W7_n3",
+  "turnos_previos_del_cliente": [
+   "Hola, busco departamento para comprar. Algo barato, ¿tienen opciones?",
+   "Un departamento de 1 dormitorio máximo."
+  ],
+  "cliente": "¿En qué zonas tienen propiedades?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "responder",
+  "claves": [
+   "zona centro",
+   "Cintura Verde",
+   "playa",
+   "cerros"
+  ],
+  "evidencia": "Casas: residencias en zona centro, Cintura Verde, playa y cerros",
+  "respuesta_ideal": "Tenemos propiedades en varias zonas: centro, Cintura Verde, playa y cerros. ¿Hay alguna zona que prefieras?",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Casas: residencias en zona centro, Cintura Verde, playa y cerros»."
+ },
+ {
+  "id": "i0162",
+  "negocio": "W6_n1",
+  "turnos_previos_del_cliente": [
+   "¿Cuánto cuesta la membresía Plus?",
+   "¿y qué trae?"
+  ],
+  "cliente": "si soy Plus y cargo 40 kWh en el rápido cuánto pagaría?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "₡260 por kWh",
+   "12 % de descuento"
+  ],
+  "evidencia": "Rápido CC | 6 | 150 kW | CCS2 y CHAdeMO | ₡260 por kWh",
+  "respuesta_ideal": "40 kWh a ₡260 por kWh son ₡10.400; con el 12 % de descuento de la membresía Plus serían ₡9.152.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «₡6.500 al mes. Incluye 12 % de descuento en todos los kWh y reserva de cargadores semirrápidos con 2 horas de anticipación desde la app»."
+ },
+ {
+  "id": "i0163",
+  "negocio": "W1_n1",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Cuánto sale la batería de cien tiros?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "Q350.00"
+  ],
+  "evidencia": "- Batería de 100 tiros Gran Final: Q350.00",
+  "respuesta_ideal": "La batería de 100 tiros Gran Final cuesta Q350.00.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Batería de 25 tiros: Q95.00»."
+ },
+ {
+  "id": "i0164",
+  "negocio": "W2_n1",
+  "turnos_previos_del_cliente": [
+   "cuanto cuesta una muestra chiquita para probar un perfume antes de comprarlo?",
+   "y hay decants de los perfumes arabes tambien?"
+  ],
+  "cliente": "y el Oud Nocturno completo cuanto vale?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "RD$ 3,200"
+  ],
+  "evidencia": "| Oud Nocturno 100 ml (árabe) | RD$ 3,200 |",
+  "respuesta_ideal": "El Oud Nocturno de 100 ml cuesta RD$ 3,200.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Producto: Oud Nocturno 100 ml (árabe); Precio: RD$ 3,200»."
+ },
+ {
+  "id": "i0165",
+  "negocio": "W8_n1",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Hola, tengo una obra en Pando y preciso dos baños por varios meses. ¿Cuánto me sale por mes?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "13.800"
+  ],
+  "evidencia": "| Baño químico estándar, alquiler mensual (obra) | $ 6.900 por mes |",
+  "respuesta_ideal": "El baño estándar de obra cuesta $ 6.900 por mes, así que dos baños son $ 13.800 mensuales; como Pando está fuera de Montevideo, el flete se cobra aparte a $ 48 por km.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Servicio: Baño químico estándar, alquiler mensual (obra); Precio: $ 6.900 por mes»."
+ },
+ {
+  "id": "i0166",
+  "negocio": "W4_n4",
+  "turnos_previos_del_cliente": [
+   "hice el curso la semana pasada y no me ha llegado el certificado al correo",
+   "cuanto tiempo se demoran normalmente en mandarlo?",
+   "y si lo quiero impreso?"
+  ],
+  "cliente": "cuanto tiempo vale el certificado?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "1 año"
+  ],
+  "evidencia": "- Vigencia del certificado de alturas: 1 año; después hay que hacer reentrenamiento.",
+  "respuesta_ideal": "El certificado de alturas tiene vigencia de 1 año; después hay que hacer reentrenamiento.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Para reentrenamiento: certificado anterior con menos de 12 meses de vencido; si venció hace más tiempo, debe hacer el curso completo otra vez»."
+ },
+ {
+  "id": "i0167",
+  "negocio": "W8_n2",
+  "turnos_previos_del_cliente": [
+   "Buenas, queremos alquilar una carpa del 16 al 31 de enero, cuanto cuesta la quincena en esas fechas",
+   "¿Cuánto hay que dejar de seña?",
+   "Si pago el resto con tarjeta de credito, me cobran algo mas?",
+   "Somos un grupo de 20 para una despedida de soltera, ¿se puede hacer en el balneario?"
+  ],
+  "cliente": "Dale. ¿Con cuánta anticipación hay que reservar la quincena?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo un plazo mínimo de anticipación; mandá las fechas y la cantidad de personas al WhatsApp 11 5 421 7788 y en boletería te dicen la disponibilidad.",
+  "respuesta_a_calificar": "Dale. Sobre eso, las indicaciones del negocio dicen: «No confirmes reservas ni digas que hay carpas disponibles: la disponibilidad la maneja la boletería. Si quieren reservar semana o quincena, pediles las fechas y la cantidad de personas y deciles que escriban al WhatsApp 11 5 421 7788»."
+ },
+ {
+  "id": "i0168",
+  "negocio": "W2_n3",
+  "turnos_previos_del_cliente": [
+   "hola, a que hora abren?"
+  ],
+  "cliente": "y los lunes?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "Lunes y martes cerrado"
+  ],
+  "evidencia": "Lunes y martes cerrado por mantenimiento.",
+  "respuesta_ideal": "Los lunes y martes permanecemos cerrados por mantenimiento.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Lunes y martes cerrado por mantenimiento»."
+ },
+ {
+  "id": "i0169",
+  "negocio": "W4_n1",
+  "turnos_previos_del_cliente": [
+   "Buenas, se puede venir con el perro?"
+  ],
+  "cliente": "ni en el parador tampoco?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "ni en el parador"
+  ],
+  "evidencia": "No se admiten mascotas en el sector de carpas y sombrillas ni en el parador.",
+  "respuesta_ideal": "Tampoco: no entran ni en el parador.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «No se admiten mascotas en el sector de carpas y sombrillas ni en el parador»."
+ },
+ {
+  "id": "i0170",
+  "negocio": "W3_n1",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Hola, ¿a qué hora cierran hoy?",
+  "tipo": "charla",
+  "accion_esperada": "responder",
+  "claves": [
+   "6:00 p.m."
+  ],
+  "evidencia": "Lunes a viernes: 7:00 a.m. a 6:00 p.m.",
+  "respuesta_ideal": "Hoy cerramos a las 6:00 de la tarde. ¿Necesitás algo?",
+  "respuesta_a_calificar": "Hola. No lo sé: no encontré esa información en el texto que tengo."
+ },
+ {
+  "id": "i0171",
+  "negocio": "W6_n4",
+  "turnos_previos_del_cliente": [],
+  "cliente": "¿qué se come en la cena?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "Empanadas salteñas",
+   "asado criollo"
+  ],
+  "evidencia": "Empanadas salteñas, locro, humita en chala, asado criollo y postre de cayote con nuez. Hay menú vegetariano con 24 horas de aviso.",
+  "respuesta_ideal": "El menú fijo incluye empanadas salteñas, locro, humita en chala, asado criollo y postre de cayote con nuez.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Grupos desde 15 personas: 10 % de descuento en cena + show»."
+ },
+ {
+  "id": "i0172",
+  "negocio": "W2_n1",
+  "turnos_previos_del_cliente": [
+   "Hola buenas, a qué hora abren los domingos?"
+  ],
+  "cliente": "y los feriados?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "3:00 p. m."
+  ],
+  "evidencia": "Feriados: cerramos a las 3:00 p. m.",
+  "respuesta_ideal": "En los feriados cerramos a las 3:00 p. m.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Feriados: cerramos a las 3:00 p. m»."
+ },
+ {
+  "id": "i0173",
+  "negocio": "W1_n2",
+  "turnos_previos_del_cliente": [
+   "Hola, ¿ustedes están acreditados para calibrar calibres pie de rey?",
+   "¿Y cuánto sale calibrar un micrómetro?"
+  ],
+  "cliente": "Donde queda el laboratorio?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "General Flores 3412"
+  ],
+  "evidencia": "Dirección: Av. General Flores 3412, esquina Bvar. José Batlle y Ordóñez, Montevideo",
+  "respuesta_ideal": "Estamos en Av. General Flores 3412, esquina Bvar. José Batlle y Ordóñez, Montevideo.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «METROLAB URUGUAY — Laboratorio de Calibración y Ensayos»."
+ },
+ {
+  "id": "i0174",
+  "negocio": "W2_n2",
+  "turnos_previos_del_cliente": [
+   "buenas tardes, hasta que hora atienden en la oficina los sabados?"
+  ],
+  "cliente": "y si tengo una emergencia un domingo?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "24 horas"
+  ],
+  "evidencia": "Domingos y feriados la oficina está cerrada, pero las emergencias se atienden las 24 horas, todos los días del año.",
+  "respuesta_ideal": "Las emergencias se atienden las 24 horas, todos los días del año, también los domingos. Puede llamar al 987 555 214.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Domingos y feriados la oficina está cerrada, pero las emergencias se atienden las 24 horas, todos los días del año»."
+ },
+ {
+  "id": "i0175",
+  "negocio": "W4_n4",
+  "turnos_previos_del_cliente": [],
+  "cliente": "buenos dias, cuanto vale el curso de alturas basico?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "$ 185.000",
+   "ARL"
+  ],
+  "evidencia": "Trabajo seguro en alturas – nivel básico operativo\t8 horas (1 día)\tpresencial\t$ 185.000",
+  "respuesta_ideal": "Buenos días, bienvenido a Altura Segura. El nivel básico operativo cuesta $ 185.000 con IVA; recuerde que necesita el certificado médico vigente y la afiliación a ARL y EPS.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Programa: Trabajo seguro en alturas – nivel básico operativo; Duración: 8 horas (1 día); Modalidad: presencial; Valor: $ 185.000»."
+ },
+ {
+  "id": "i0176",
+  "negocio": "W7_n4",
+  "turnos_previos_del_cliente": [
+   "¿A qué hora abren mañana?"
+  ],
+  "cliente": "¿Cierran los domingos?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "Domingos: 7:00 AM a 2:00 PM"
+  ],
+  "evidencia": "Domingos: 7:00 AM a 2:00 PM",
+  "respuesta_ideal": "No cerramos domingo, pero tenemos horario reducido: abrimos a las 7:00 AM y cerramos a las 2:00 PM.",
+  "respuesta_a_calificar": "Sobre eso, las indicaciones del negocio dicen: «Horario: Abierto lunes a viernes 6:00 AM a 7:00 PM, sábados 7:00 AM a 6:00 PM, domingos 7:00 AM a 2:00 PM. Cerrado Martes de Carnaval y Navidad. Sé preciso si pregunta por un día específico»."
+ },
+ {
+  "id": "i0177",
+  "negocio": "W4_n1",
+  "turnos_previos_del_cliente": [
+   "buenas tardes, cuanto esta el menu del dia en el parador?"
+  ],
+  "cliente": "tienen algo sin tacc?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "(SG)"
+  ],
+  "evidencia": "Sin gluten: hay opciones marcadas con (SG) en la carta.",
+  "respuesta_ideal": "Sí, en la carta hay opciones sin gluten, marcadas con (SG).",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Estacionamiento: $ 9.000 por día para quienes no tienen carpa ni sombrilla; sin cargo para carperos y sombrilleros (un vehículo por unidad)»."
+ },
+ {
+  "id": "i0178",
+  "negocio": "W6_n4",
+  "turnos_previos_del_cliente": [
+   "Buenas noches",
+   "¿a qué hora empieza el show?",
+   "¿y la cena?"
+  ],
+  "cliente": "¿y en feriados abren?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "salvo el 24 y el 31 de diciembre"
+  ],
+  "evidencia": "Abrimos de miércoles a domingo. La cena se sirve desde las 20:30 hs y el show comienza a las 21:30 hs. Abrimos también los feriados, salvo el 24 y el 31 de diciembre.",
+  "respuesta_ideal": "Sí, abrimos también los feriados, salvo el 24 y el 31 de diciembre.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «La cena se sirve desde las 20:30 hs y el show comienza a las 21:30 hs. Abrimos también los feriados, salvo el 24 y el 31 de diciembre»."
+ },
+ {
+  "id": "i0179",
+  "negocio": "W3_n2",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Hola, ¿qué paquetes tienen para Playa del Carmen?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "Paquete Playa Relax",
+   "3 noches / 4 días",
+   "$9.850 MXN"
+  ],
+  "evidencia": "Paquete Playa Relax (3 noches / 4 días) Destino: Playa del Carmen o Tulum",
+  "respuesta_ideal": "Tenemos el Paquete Playa Relax de 3 noches y 4 días a $9.850 MXN por persona. Incluye vuelo redondo, hotel 4*, desayuno y traslado al hotel.",
+  "respuesta_a_calificar": "Hola. No lo sé: no encontré esa información en el texto que tengo."
+ }
+]

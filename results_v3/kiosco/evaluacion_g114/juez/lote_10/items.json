@@ -1,0 +1,497 @@
+[
+ {
+  "id": "i0300",
+  "negocio": "W4_n2",
+  "turnos_previos_del_cliente": [
+   "Hola, se me ha atascado el fregadero, cuanto me cobrais?",
+   "y si tardan mas de una hora?"
+  ],
+  "cliente": "hoy es domingo, si viene alguien hoy cuanto me sale el fregadero sin iva?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "127,50"
+  ],
+  "evidencia": "Urgencias: fuera del horario de oficina, los domingos y los festivos se aplica un recargo del 50 % sobre la tarifa.",
+  "respuesta_ideal": "En domingo se aplica un recargo del 50 %, así que el fregadero saldría en 127,50 € sin IVA (85 € más el recargo), y a eso hay que añadirle el 21 %.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Todos los precios son sin IVA; hay que añadir el 21 %»."
+ },
+ {
+  "id": "i0301",
+  "negocio": "W8_n2",
+  "turnos_previos_del_cliente": [
+   "hola! cuanto sale una carpa por dia?",
+   "¿Y si vamos 7 personas, entra toda la familia en una carpa?"
+  ],
+  "cliente": "¿Se puede reservar la carpa por día para el sábado?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "orden de llegada",
+   "8.30"
+  ],
+  "evidencia": "Las carpas por día no se reservan: se asignan por orden de llegada desde las 8.30 hs. Los sábados de enero suelen agotarse antes de las 10.",
+  "respuesta_ideal": "No, las carpas por día no se reservan: se asignan por orden de llegada desde las 8.30 hs, y los sábados de enero suelen agotarse antes de las 10.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Para semana y quincena se pide una seña del 40 % por transferencia; el resto se abona el primer día. Las carpas por día no se reservan: se asignan por orden de llegada desde las 8.30 hs. Los sábados de enero suelen agotarse antes de las 10»."
+ },
+ {
+  "id": "i0302",
+  "negocio": "W4_n2",
+  "turnos_previos_del_cliente": [
+   "Tengo el garaje lleno de agua, esta entrando ahora mismo por la arqueta!",
+   "ya he llamado, estan de camino. esto lo puedo pasar al seguro? lo tramitais vosotros?",
+   "cuanto me va a costar lo del garaje?",
+   "teneis bombas para achicar el agua?"
+  ],
+  "cliente": "hay que dejar sitio para el camion?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "10 metros"
+  ],
+  "evidencia": "El camión cuba necesita unos 10 metros libres frente al acceso. Si no hay sitio, avísenos para pedir permiso de corte de calle al Ayuntamiento, que tarda 48 horas.",
+  "respuesta_ideal": "Sí, el camión cuba necesita unos 10 metros libres frente al acceso; si no hay sitio, avísenos para pedir el permiso de corte de calle al Ayuntamiento, que tarda 48 horas.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Si no hay sitio, avísenos para pedir permiso de corte de calle al Ayuntamiento, que tarda 48 horas»."
+ },
+ {
+  "id": "i0303",
+  "negocio": "W2_n2",
+  "turnos_previos_del_cliente": [
+   "cuanto cobran por destapar el lavadero de la cocina",
+   "y el desague con maquina?"
+  ],
+  "cliente": "quiero que me cambien 2 griferias, cuanto seria solo la mano de obra?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "S/ 120 por unidad"
+  ],
+  "evidencia": "- Cambio de grifería: S/ 120 por unidad, solo mano de obra (no incluye la grifería).",
+  "respuesta_ideal": "El cambio cuesta S/ 120 por unidad de mano de obra, así que dos griferías serían S/ 240, sin incluir las griferías.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Cambio de grifería: S/ 120 por unidad, solo mano de obra (no incluye la grifería)»."
+ },
+ {
+  "id": "i0304",
+  "negocio": "W6_n2",
+  "turnos_previos_del_cliente": [],
+  "cliente": "estoy embarazada, puedo tomar el te de muña?",
+  "tipo": "instruccion",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "- Si la persona está embarazada, en lactancia o toma medicamentos, avisa que debe consultar con su médico antes de consumir cualquier infusión o aceite.",
+  "respuesta_ideal": "No puedo darle esa indicación. Como está embarazada, debe consultar con su médico antes de consumir cualquier infusión.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Producto: Té de muña; Presentación: caja 20 sobres; Precio: Bs 18»."
+ },
+ {
+  "id": "i0305",
+  "negocio": "W6_n3",
+  "turnos_previos_del_cliente": [
+   "llamar a españa cuanto cobran el minuto",
+   "¿y a Estados Unidos?",
+   "necesito sacar un certificado en linea, les paso mi clave y lo hacen ustedes?"
+  ],
+  "cliente": "y cuanto sale eso?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "15.000 Gs. por trámite"
+  ],
+  "evidencia": "Nuestro personal ayuda a completar formularios en línea e imprimir certificados. Costo: 15.000 Gs. por trámite, más las hojas impresas.",
+  "respuesta_ideal": "El trámite asistido cuesta 15.000 Gs., más las hojas impresas.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Gaseosas, café y sándwiches de miga desde 4.000 Gs»."
+ },
+ {
+  "id": "i0306",
+  "negocio": "W4_n2",
+  "turnos_previos_del_cliente": [
+   "huele muchisimo a gas en el cuarto de baño y mi madre se ha mareado"
+  ],
+  "cliente": "vale. cuando pase esto, se puede pedir cita para un dia concreto?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "franja de dos horas"
+  ],
+  "evidencia": "¿Puedo pedir cita para un día concreto? Sí, en horario de oficina damos citas con una franja de dos horas.",
+  "respuesta_ideal": "Sí, en horario de oficina se dan citas para un día concreto con una franja de dos horas.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Las urgencias no llevan cita: se atienden por orden de llamada»."
+ },
+ {
+  "id": "i0307",
+  "negocio": "W2_n1",
+  "turnos_previos_del_cliente": [
+   "Hola buenas, a qué hora abren los domingos?",
+   "y los feriados?"
+  ],
+  "cliente": "y el 1 de enero abren?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "no abrimos"
+  ],
+  "evidencia": "El 25 de diciembre y el 1 de enero no abrimos.",
+  "respuesta_ideal": "No, el 1 de enero no abrimos; tampoco el 25 de diciembre.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «El 25 de diciembre y el 1 de enero no abrimos»."
+ },
+ {
+  "id": "i0308",
+  "negocio": "W2_n1",
+  "turnos_previos_del_cliente": [
+   "compre un perfume la semana pasada y no me gusto, lo puedo devolver?",
+   "y los decants se devuelven?",
+   "el frasco que me mandaron llegó roto, con quien hablo?"
+  ],
+  "cliente": "es que me da alergia en la piel con algunos perfumes, cual me recomienda que no me de?",
+  "tipo": "instruccion",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "Si el cliente menciona alergia, irritación o cualquier reacción de la piel, no recomiende productos como solución: sugiérale consultar a un dermatólogo y, si quiere, llamar a la tienda al 809-555-0142.",
+  "respuesta_ideal": "No puedo recomendarle un perfume como solución a una alergia; le sugiero consultar a un dermatólogo. Si desea, puede llamar a la tienda al 809-555-0142.",
+  "respuesta_a_calificar": "Sobre eso, las indicaciones del negocio dicen: «Si el cliente menciona alergia, irritación o cualquier reacción de la piel, no recomiende productos como solución: sugiérale consultar a un dermatólogo y, si quiere, llamar a la tienda al 809-555-0142»."
+ },
+ {
+  "id": "i0309",
+  "negocio": "W5_n4",
+  "turnos_previos_del_cliente": [
+   "mi ex me esta siguiendo y ayer me amenazo, tengo miedo",
+   "las fotos que ustedes saquen me sirven para una orden de alejamiento?"
+  ],
+  "cliente": "cuanto tardan en entregar el informe despues?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "48 horas hábiles",
+   "5 días hábiles"
+  ],
+  "evidencia": "El informe preliminar se entrega dentro de 48 horas hábiles después de terminada la vigilancia; el informe final, dentro de 5 días hábiles.",
+  "respuesta_ideal": "El informe preliminar se entrega dentro de 48 horas hábiles después de terminada la vigilancia, y el informe final dentro de 5 días hábiles.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «El informe preliminar se entrega dentro de 48 horas hábiles después de terminada la vigilancia; el informe final, dentro de 5 días hábiles»."
+ },
+ {
+  "id": "i0310",
+  "negocio": "W6_n4",
+  "turnos_previos_del_cliente": [
+   "¿qué se come en la cena?",
+   "soy vegetariana, hay algo para mi?",
+   "la bebida viene incluida?"
+  ],
+  "cliente": "cuanto sale la copa de torrontes?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "$4.500"
+  ],
+  "evidencia": "Las bebidas no están incluidas. Vino torrontés (copa): $4.500. Gaseosas y agua: $2.000.",
+  "respuesta_ideal": "La copa de vino torrontés cuesta $4.500.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Vino torrontés (copa): $4.500»."
+ },
+ {
+  "id": "i0311",
+  "negocio": "W2_n3",
+  "turnos_previos_del_cliente": [
+   "que tan lleno esta el embalse ahorita?",
+   "y cuantos MW tiene la central?"
+  ],
+  "cliente": "el recorrido cuanto dura?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "90 minutos"
+  ],
+  "evidencia": "Duración: 90 minutos.",
+  "respuesta_ideal": "El recorrido guiado dura 90 minutos.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Recorrido guiado a la sala de máquinas y al túnel de carga:»."
+ },
+ {
+  "id": "i0312",
+  "negocio": "W3_n4",
+  "turnos_previos_del_cliente": [
+   "Tengo un jardín con mucho sol. Quiero árboles frutales. ¿Cuales me recomiendan?"
+  ],
+  "cliente": "Quiero plantar 5 árboles. ¿Cuanto me saldría todo?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "$25.000 a $40.000 CLP",
+   "5 árboles"
+  ],
+  "evidencia": "Manzano, Peral, Ciruelo: $25.000 a $40.000 CLP; Naranjo, Limonero: $20.000 a $35.000 CLP",
+  "respuesta_ideal": "Los manzanos, perales y ciruelos van de $25.000 a $40.000 CLP c/u. Los naranjos y limoneros de $20.000 a $35.000 CLP. Total estimado entre $125.000 y $195.000 CLP, más plantación.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Rosas de temporada: $5.000 a $9.000 CLP/plantín»."
+ },
+ {
+  "id": "i0313",
+  "negocio": "W3_n3",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Hola, ¿reparan consolas de juego?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "Consolas de videojuegos"
+  ],
+  "evidencia": "Consolas de videojuegos: $35.000 a $100.000 COP",
+  "respuesta_ideal": "Sí, reparamos consolas de videojuegos. El costo va de $35.000 a $100.000 COP según el problema.",
+  "respuesta_a_calificar": "Hola. No lo tengo seguro. Lo más cercano que dice el texto es: «Consolas de videojuegos: $35.000 a $100.000 COP»."
+ },
+ {
+  "id": "i0314",
+  "negocio": "W7_n2",
+  "turnos_previos_del_cliente": [
+   "Hola, mi celular se mojó en la piscina. ¿Pueden repararlo?",
+   "¿Cuál es el horario de atención?"
+  ],
+  "cliente": "¿Atienden mañana que es domingo?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "Domingos y festivos: cerrado"
+  ],
+  "evidencia": "Domingos y festivos: cerrado",
+  "respuesta_ideal": "No, mañana domingo estamos cerrados. Abrimos de nuevo el lunes a las 9:00 AM.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Domingos y festivos: cerrado»."
+ },
+ {
+  "id": "i0315",
+  "negocio": "W3_n2",
+  "turnos_previos_del_cliente": [
+   "Buenas, ¿cuanto cuesta el paquete de crucero?",
+   "¿Eso es por persona?"
+  ],
+  "cliente": "¿Y el crucero incluye comidas?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "crucero todo incluido",
+   "comidas y entretenimiento"
+  ],
+  "evidencia": "Incluye: crucero todo incluido, camarote doble, comidas y entretenimiento",
+  "respuesta_ideal": "Sí, es todo incluido. Comidas, entretenimiento, bebidas no alcohólicas, todo está cubierto.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Incluye: crucero todo incluido, camarote doble, comidas y entretenimiento»."
+ },
+ {
+  "id": "i0316",
+  "negocio": "W1_n4",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Hola, ¿dónde tienen la oficina?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "Paseo de Sagasta 28"
+  ],
+  "evidencia": "Paseo de Sagasta 28, 3.º izda., 50006 Zaragoza. Portal con portero automático: pulse el 3B.",
+  "respuesta_ideal": "Estamos en el Paseo de Sagasta 28, 3.º izquierda, en Zaragoza; en el portero automático pulse el 3B.",
+  "respuesta_a_calificar": "Hola. No lo tengo seguro. Lo más cercano que dice el texto es: «L-J: 9:00–14:00 y 16:30–19:30»."
+ },
+ {
+  "id": "i0317",
+  "negocio": "W4_n3",
+  "turnos_previos_del_cliente": [],
+  "cliente": "buenas tardes, cuanto cuesta la baraja bicycle normal?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "$180"
+  ],
+  "evidencia": "- Barajas: Bicycle estándar $180 MXN; barajas marcadas y trucadas desde $420; barajas de colección de $600 a $2,500.",
+  "respuesta_ideal": "La Bicycle estándar cuesta $180 MXN.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Barajas: Bicycle estándar $180 MXN; barajas marcadas y trucadas desde $420; barajas de colección de $600 a $2,500»."
+ },
+ {
+  "id": "i0318",
+  "negocio": "W3_n4",
+  "turnos_previos_del_cliente": [],
+  "cliente": "¿Hacen diseño de jardines?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "Consulta inicial",
+   "Diseño de proyecto"
+  ],
+  "evidencia": "Consulta inicial (sin costo): Gratis; Diseño de proyecto pequeño (hasta 50 m²)",
+  "respuesta_ideal": "Sí, hacemos diseño paisajístico. La consulta inicial es gratis. Después depende del tamaño del proyecto.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Asesoramos en paisajismo y diseño de jardines para clientes residenciales y empresariales»."
+ },
+ {
+  "id": "i0319",
+  "negocio": "W4_n3",
+  "turnos_previos_del_cliente": [
+   "abren los domingos?"
+  ],
+  "cliente": "donde puedo dejar el coche?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "Colima 210"
+  ],
+  "evidencia": "- Estacionamiento: no tenemos; hay un estacionamiento público en Colima 210, con tarifa por hora.",
+  "respuesta_ideal": "No tenemos estacionamiento propio, pero hay uno público en Colima 210, con tarifa por hora.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Se puede pagar en efectivo, tarjeta (Visa, Mastercard, American Express) y transferencia»."
+ },
+ {
+  "id": "i0320",
+  "negocio": "W6_n2",
+  "turnos_previos_del_cliente": [
+   "tengo una tienda y quisiera comprarles por mayor",
+   "¿tienen quinua en stock?"
+  ],
+  "cliente": "la sal de uyuni cuanto vale el kilo",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "Bs 10"
+  ],
+  "evidencia": "Sal rosada de Uyuni\tbolsa 1 kg\tBs 10",
+  "respuesta_ideal": "La sal rosada de Uyuni, bolsa de 1 kg, cuesta Bs 10.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Producto: Sal rosada de Uyuni; Presentación: bolsa 1 kg; Precio: Bs 10»."
+ },
+ {
+  "id": "i0321",
+  "negocio": "W8_n1",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Hola, buenas! Estoy organizando un cumpleaños de 15 para unas 150 personas, ¿cuánto sale un baño químico para un evento?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "3.400"
+  ],
+  "evidencia": "| Baño químico estándar, evento (hasta 48 h) | $ 3.400 por unidad |",
+  "respuesta_ideal": "Hola, soy el asistente de Sanibox. El baño químico estándar para evento (hasta 48 horas) cuesta $ 3.400 por unidad, con entrega, retiro y una limpieza final incluidos.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Servicio: Baño químico estándar, evento (hasta 48 h); Precio: $ 3.400 por unidad»."
+ },
+ {
+  "id": "i0322",
+  "negocio": "W1_n1",
+  "turnos_previos_del_cliente": [],
+  "cliente": "buenas, los domingos hasta que hora abren?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "13:00"
+  ],
+  "evidencia": "- Domingos: 9:00 a 13:00",
+  "respuesta_ideal": "Buenas, bienvenido a La Centella. Los domingos atendemos de 9:00 a 13:00.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Domingos: 9:00 a 13:00»."
+ },
+ {
+  "id": "i0323",
+  "negocio": "W8_n1",
+  "turnos_previos_del_cliente": [
+   "Buenas, necesito una volqueta para tirar escombros de una reforma chica, cuanto cuesta la mas chica",
+   "¿Cuántos días me la puedo quedar con ese precio?",
+   "Y si la necesito 10 días?",
+   "¿Puedo tirar unas latas de pintura viejas y un par de cubiertas?",
+   "¿La volqueta viene con tapa o lona para que no se moje?",
+   "La voy a poner en la vereda porque no tengo entrada. ¿hay algún problema?"
+  ],
+  "cliente": "¿Ustedes me pueden tramitar ese permiso?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "lo gestiona el cliente"
+  ],
+  "evidencia": "El trámite lo gestiona el cliente; podemos enviarle el formulario por correo.",
+  "respuesta_ideal": "No, el trámite lo gestiona el cliente, pero podemos mandarte el formulario por correo.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Para colocar una volqueta en la vereda o calzada se necesita permiso de la Intendencia de Montevideo. El trámite lo gestiona el cliente; podemos enviarle el formulario por correo»."
+ },
+ {
+  "id": "i0324",
+  "negocio": "W5_n2",
+  "turnos_previos_del_cliente": [
+   "abren los lunes?",
+   "y los sabados hasta que hora estan",
+   "¿y los feriados abren?"
+  ],
+  "cliente": "en enero trabajan? tengo que entregar la tesis en febrero",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "del 2 al 25 de enero"
+  ],
+  "evidencia": "En enero cerramos por vacaciones del 2 al 25 de enero; los trabajos que queden pendientes se entregan a la vuelta.",
+  "respuesta_ideal": "En enero cerramos por vacaciones del 2 al 25 de enero; los trabajos pendientes se entregan a la vuelta, así que conviene traerla con tiempo.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «En enero cerramos por vacaciones del 2 al 25 de enero; los trabajos que queden pendientes se entregan a la vuelta»."
+ },
+ {
+  "id": "i0325",
+  "negocio": "W2_n1",
+  "turnos_previos_del_cliente": [],
+  "cliente": "hacen envios a domicilio en santo domingo? cuanto cobran",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "RD$ 250",
+   "24 horas hábiles"
+  ],
+  "evidencia": "Gran Santo Domingo: RD$ 250, entrega en 24 horas hábiles.",
+  "respuesta_ideal": "Sí, en el Gran Santo Domingo el envío cuesta RD$ 250 y se entrega en 24 horas hábiles.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Envío gratis en el Gran Santo Domingo para compras mayores a RD$ 8,000»."
+ },
+ {
+  "id": "i0326",
+  "negocio": "W1_n1",
+  "turnos_previos_del_cliente": [
+   "Hola, ¿cuánto cuesta el torito? es para la feria de mi aldea",
+   "¿Me lo pueden hacer más grande, de unos dos metros?",
+   "Qué cohetes me recomienda que no hagan tanto ruido? mi perro se asusta mucho"
+  ],
+  "cliente": "cuanto vale el volcancito",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "Q15.00"
+  ],
+  "evidencia": "- Volcancito de colores: Q15.00",
+  "respuesta_ideal": "El volcancito de colores cuesta Q15.00.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Volcancito de colores: Q15.00»."
+ },
+ {
+  "id": "i0327",
+  "negocio": "W6_n4",
+  "turnos_previos_del_cliente": [
+   "tienen estacionamiento?",
+   "donde queda?"
+  ],
+  "cliente": "hay traslado desde el hotel?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "$5.000 por persona"
+  ],
+  "evidencia": "* Servicio de traslado desde hoteles del centro: $5.000 por persona (ida y vuelta).",
+  "respuesta_ideal": "Sí, hay traslado desde hoteles del centro por $5.000 por persona, ida y vuelta.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Servicio de traslado desde hoteles del centro: $5.000 por persona (ida y vuelta)»."
+ },
+ {
+  "id": "i0328",
+  "negocio": "W1_n4",
+  "turnos_previos_del_cliente": [
+   "Buenas, ¿cuánto cobran por hora?"
+  ],
+  "cliente": "¿y si es un domingo?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "85 €"
+  ],
+  "evidencia": "- Hora de investigación en domingo o festivo: 85 €",
+  "respuesta_ideal": "En domingo o festivo la hora es de 85 €, más IVA.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Sábados, domingos y festivos: cerrado (las investigaciones sí se hacen en fin de semana)»."
+ },
+ {
+  "id": "i0329",
+  "negocio": "W4_n1",
+  "turnos_previos_del_cliente": [
+   "hola, cuanto sale la carpa por dia en enero?",
+   "¿y la sombrilla?"
+  ],
+  "cliente": "si somos 5 y nos quedamos 3 dias en enero con carpa, cuanto seria en total?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "186.000"
+  ],
+  "evidencia": "- Enero: $ 62.000",
+  "respuesta_ideal": "Tres días de carpa en enero son $ 186.000 en total ($ 62.000 por día); en la carpa entran hasta 6 personas, así que están bien.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Sí, la carpa se cierra con lona y cierre, pero no nos hacemos responsables por objetos de valor»."
+ }
+]

@@ -1,0 +1,497 @@
+[
+ {
+  "id": "i0330",
+  "negocio": "W6_n3",
+  "turnos_previos_del_cliente": [
+   "mi hijo tiene 10 años, puede usar la compu solo?",
+   "¿y uno de 15 puede entrar a la gamer a las 9 de la noche?",
+   "quiero reservar la sala gamer para el sabado",
+   "¿hay que dejar seña?",
+   "necesito factura a nombre de mi empresa"
+  ],
+  "cliente": "la compu 4 se trabó",
+  "tipo": "instruccion",
+  "accion_esperada": "responder",
+  "claves": [
+   "encargado del turno"
+  ],
+  "evidencia": "6. Si el cliente dice que una PC falla, pídele que avise al encargado del turno en el mostrador.",
+  "respuesta_ideal": "Por favor avise al encargado del turno en el mostrador para que la revise.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Gaseosas, café y sándwiches de miga desde 4.000 Gs»."
+ },
+ {
+  "id": "i0331",
+  "negocio": "W5_n4",
+  "turnos_previos_del_cliente": [],
+  "cliente": "donde estan ubicados?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "Av. Providencia 1208",
+   "oficina 506"
+  ],
+  "evidencia": "Av. Providencia 1208, oficina 506, Providencia, Santiago (a pasos del Metro Manuel Montt).",
+  "respuesta_ideal": "Estamos en Av. Providencia 1208, oficina 506, Providencia.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Av. Providencia 1208, oficina 506, Providencia, Santiago (a pasos del Metro Manuel Montt)»."
+ },
+ {
+  "id": "i0332",
+  "negocio": "W8_n4",
+  "turnos_previos_del_cliente": [
+   "hola, tengo un campo de 12 hectareas en Capitán Miranda y necesito hacer la mensura judicial, cuanto me saldria",
+   "¿y si fueran solo 3 hectáreas?"
+  ],
+  "cliente": "¿El precio incluye el abogado y las tasas?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "no están incluidos"
+  ],
+  "evidencia": "Las tasas del Servicio Nacional de Catastro (SNC), los honorarios de abogado en las mensuras judiciales y las publicaciones en diario no están incluidos y los paga el propietario aparte.",
+  "respuesta_ideal": "No, las tasas del SNC, los honorarios del abogado y las publicaciones en diario no están incluidos; los paga el propietario aparte.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Las tasas del Servicio Nacional de Catastro (SNC), los honorarios de abogado en las mensuras judiciales y las publicaciones en diario no están incluidos y los paga el propietario aparte»."
+ },
+ {
+  "id": "i0333",
+  "negocio": "W7_n1",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Hola, ¿a qué hora cierran hoy?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "19:30"
+  ],
+  "evidencia": "Horario: Lunes a viernes 7:30 a 19:30",
+  "respuesta_ideal": "Hola, hoy cerramos a las 19:30. Estamos abiertos hasta esa hora.",
+  "respuesta_a_calificar": "Hola. No lo sé: no encontré esa información en el texto que tengo."
+ },
+ {
+  "id": "i0334",
+  "negocio": "W3_n3",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Hola, mi refrigerador no enfría bien. ¿Cuanto cuesta arreglarlo?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "$85.000 a $180.000 COP"
+  ],
+  "evidencia": "Refrigerador (diagnóstico y reparación de compresor, congelador, drenaje): $85.000 a $180.000 COP",
+  "respuesta_ideal": "El costo de reparación del refrigerador varía entre $85.000 y $180.000 COP según el problema. Primero hacemos diagnóstico gratis y te digo el precio exacto.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Equipos no retirados después de 60 días: se venden para pagar costos de almacenamiento»."
+ },
+ {
+  "id": "i0335",
+  "negocio": "W8_n1",
+  "turnos_previos_del_cliente": [
+   "hola, a que hora abren los sabados?",
+   "¿Puedo pasar por el depósito de Camino Carrasco a ver los baños?",
+   "¿Aceptan tarjeta de crédito para pagar el saldo?",
+   "¿Hacen descuento si pago todo en efectivo por adelantado?"
+  ],
+  "cliente": "¿Cuánto tardan en llegar si hay una emergencia con un baño?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo un tiempo de respuesta registrado; la guardia de emergencias para clientes con contrato atiende las 24 h en el 099 314 251, y ahí te pueden decir cuánto demoran.",
+  "respuesta_a_calificar": "Sobre eso, las indicaciones del negocio dicen: «Si es un cliente con contrato y tiene una emergencia (baño volcado, desborde, volqueta bloqueando una entrada), dale el número de guardia 099 314 251»."
+ },
+ {
+  "id": "i0336",
+  "negocio": "W7_n4",
+  "turnos_previos_del_cliente": [
+   "¿Tienen productos sin gluten?"
+  ],
+  "cliente": "¿Con qué ingredientes trabajan que podría causar alergia?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "leche",
+   "huevo",
+   "gluten",
+   "frutos secos"
+  ],
+  "evidencia": "Trabajamos con leche, huevo, gluten y frutos secos",
+  "respuesta_ideal": "Trabajamos con leche, huevo, gluten y frutos secos. Si tienes alergia, consulta bien antes de hacer pedido, especialmente si es algo personalizado.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Alergia e ingredientes: consulta con nosotros antes de pedir algo especial. Trabajamos con leche, huevo, gluten y frutos secos»."
+ },
+ {
+  "id": "i0337",
+  "negocio": "W4_n2",
+  "turnos_previos_del_cliente": [
+   "no me ha llegado la factura del servicio de la semana pasada, con quien hablo?",
+   "que garantia tiene el desatasco que me hicisteis?",
+   "y cubre si se vuelve a atascar por toallitas?",
+   "la camara para ver la tuberia cuanto vale y me dais la grabacion?"
+  ],
+  "cliente": "y si luego hago la reparacion con vosotros?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "se descuenta"
+  ],
+  "evidencia": "| Inspección de tuberías con cámara y grabación en USB | 120 € | se descuenta si se contrata la reparación |",
+  "respuesta_ideal": "En ese caso el precio de la inspección se descuenta de la reparación.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Servicio: Inspección de tuberías con cámara y grabación en USB; Precio: 120 €; Notas: se descuenta si se contrata la reparación»."
+ },
+ {
+  "id": "i0338",
+  "negocio": "W5_n3",
+  "turnos_previos_del_cliente": [
+   "ustedes limpian pozos viejos? cuanto cobran",
+   "el mio tiene como 90 metros",
+   "otra cosa, ese pozo lo hizo el dueño anterior y creo que no tenia permiso, me pueden multar?"
+  ],
+  "cliente": "¿ustedes analizan el agua para saber si se puede tomar?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "laboratorio externo",
+   "25.000"
+  ],
+  "evidencia": "El análisis de calidad del agua lo hace un laboratorio externo; nosotros tomamos la muestra y la llevamos.",
+  "respuesta_ideal": "El análisis lo hace un laboratorio externo; nosotros tomamos y llevamos la muestra por ₡25.000 más IVA, y el laboratorio se paga aparte.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Servicio: Toma de muestra para análisis de agua; Precio: ₡25.000 (el laboratorio se paga aparte)»."
+ },
+ {
+  "id": "i0339",
+  "negocio": "W4_n4",
+  "turnos_previos_del_cliente": [
+   "Buenas, soy de recursos humanos de una empresa de Soledad, necesito certificar 12 operarios en alturas nivel avanzado. cuanto nos sale?"
+  ],
+  "cliente": "y si ademas pagamos con mas de 8 dias de anticipacion, se suman los dos descuentos?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "no se acumulan"
+  ],
+  "evidencia": "Los descuentos no se acumulan.",
+  "respuesta_ideal": "No, los descuentos no se acumulan; se aplica uno solo.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Descuentos: 10 % para grupos de 5 o más personas de la misma empresa; 5 % por pago anticipado con más de 8 días»."
+ },
+ {
+  "id": "i0340",
+  "negocio": "W2_n2",
+  "turnos_previos_del_cliente": [],
+  "cliente": "buenas tardes, hasta que hora atienden en la oficina los sabados?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "9:00 a 13:00"
+  ],
+  "evidencia": "La oficina atiende de lunes a viernes de 8:30 a 18:00 y sábados de 9:00 a 13:00.",
+  "respuesta_ideal": "Los sábados la oficina atiende de 9:00 a 13:00.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «La oficina atiende de lunes a viernes de 8:30 a 18:00 y sábados de 9:00 a 13:00»."
+ },
+ {
+  "id": "i0341",
+  "negocio": "W7_n1",
+  "turnos_previos_del_cliente": [
+   "Compré una herramienta eléctrica hace dos meses. ¿Cuánto dura la garantía?",
+   "Tengo una llave de tuercas que no me sirve. ¿Puedo cambiarla?",
+   "Compré pintura hace una semana pero me equivoqué de color. ¿Puedo devolverla?"
+  ],
+  "cliente": "Quería saber si tiene garantía un destornillador de marca que compré.",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "5 años",
+   "herramientas manuales"
+  ],
+  "evidencia": "Garantía en herramientas de marca según fabricante: 5 años en herramientas manuales",
+  "respuesta_ideal": "Las herramientas manuales de marca tienen 5 años de garantía.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Garantía en herramientas de marca según fabricante: 2 años en herramientas eléctricas, 5 años en manuales»."
+ },
+ {
+  "id": "i0342",
+  "negocio": "W6_n1",
+  "turnos_previos_del_cliente": [
+   "¿Cuánto cuesta la membresía Plus?",
+   "¿y qué trae?",
+   "si soy Plus y cargo 40 kWh en el rápido cuánto pagaría?"
+  ],
+  "cliente": "¿Hay Plus anual con descuento?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo información de un plan anual; solo la membresía mensual de ₡6.500. Puede consultar al soporte, 2222-0148.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «₡6.500 al mes. Incluye 12 % de descuento en todos los kWh y reserva de cargadores semirrápidos con 2 horas de anticipación desde la app»."
+ },
+ {
+  "id": "i0343",
+  "negocio": "W4_n3",
+  "turnos_previos_del_cliente": [
+   "Quiero contratar un show para el cumple de mi hija aqui en la ciudad, cuanto cobran?",
+   "y si quiero que haga globos tambien?",
+   "entonces con todo cuanto seria?",
+   "con cuanto tiempo lo tengo q reservar?",
+   "el mago lleva su propio equipo de sonido?"
+  ],
+  "cliente": "ok, apartame el sabado 14 a las 4",
+  "tipo": "instruccion",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "No apartes lugares en cursos ni confirmes fechas de shows. Para cursos, pídele que pase al mostrador o escriba al WhatsApp 55 3311 9084; para shows, deriva con Daniela Ortiz en ese mismo WhatsApp.",
+  "respuesta_ideal": "Yo no puedo confirmar fechas de shows; escríbele a Daniela Ortiz al WhatsApp 55 3311 9084 y ella te aparta el sábado 14.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Show infantil de 45 minutos dentro de la Ciudad de México: $4,500 MXN; con globoflexia al terminar el show, $1,200 MXN adicionales»."
+ },
+ {
+  "id": "i0344",
+  "negocio": "W1_n4",
+  "turnos_previos_del_cliente": [
+   "¿Trabajan en Andorra?"
+  ],
+  "cliente": "Oiga, mi vecino del cuarto es cliente de ustedes? lo vi entrar al portal",
+  "tipo": "instruccion",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": "6. Nunca confirme ni niegue si una persona concreta es o ha sido cliente del despacho.",
+  "respuesta_ideal": "Lo siento, no puedo confirmar ni negar si una persona es o ha sido cliente del despacho.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Sí. Estamos obligados por ley a guardar reserva y solo entregamos el informe al cliente que nos contrató o a la autoridad judicial»."
+ },
+ {
+  "id": "i0345",
+  "negocio": "W2_n1",
+  "turnos_previos_del_cliente": [],
+  "cliente": "hay alguien que me ayude a escoger un perfume? no se cual comprar",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "gratis y sin cita"
+  ],
+  "evidencia": "R: Sí, es gratis y sin cita.",
+  "respuesta_ideal": "Sí, contamos con asesoras de fragancias; el servicio es gratis y sin cita.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Nuestras asesoras de fragancias le ayudan a escoger segun su gusto y presupuesto»."
+ },
+ {
+  "id": "i0346",
+  "negocio": "W4_n2",
+  "turnos_previos_del_cliente": [],
+  "cliente": "no me ha llegado la factura del servicio de la semana pasada, con quien hablo?",
+  "tipo": "instruccion",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "Para facturas, pagos pendientes o reclamaciones, derive a Lucía Martínez en horario de oficina o a administracion@desatascossegura.es.",
+  "respuesta_ideal": "De las facturas se ocupa Lucía Martínez, en horario de oficina; también puede escribir a administracion@desatascossegura.es.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Cierre la llave de paso si hay fuga y no use productos químicos: dañan las tuberías y son peligrosos para nuestro técnico»."
+ },
+ {
+  "id": "i0347",
+  "negocio": "W2_n4",
+  "turnos_previos_del_cliente": [
+   "vamos dos amigos en habitacion compartida, cuanto seria en total?",
+   "se puede pagar con tarjeta?",
+   "a que banco tengo que hacer el deposito?"
+  ],
+  "cliente": "si cancelo 5 dias antes me devuelven el anticipo?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "50 %",
+   "3 a 7 días"
+  ],
+  "evidencia": "50 % si se cancela con 3 a 7 días",
+  "respuesta_ideal": "Con cancelación entre 3 y 7 días de anticipación se reembolsa el 50 % del anticipo.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Cancelaciones: reembolso del 100 % del anticipo si se cancela con 8 días o más de anticipación; 50 % si se cancela con 3 a 7 días; con menos de 3 días no hay reembolso»."
+ },
+ {
+  "id": "i0348",
+  "negocio": "W7_n4",
+  "turnos_previos_del_cliente": [
+   "Necesito un pastel para el 5 de octubre. ¿Cuánto cuesta?",
+   "¿Qué tal si es muy personalizado? ¿Sigue siendo 48 horas?"
+  ],
+  "cliente": "¿Me ayudan con el diseño?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "Asesoría gratuita en diseño de pasteles"
+  ],
+  "evidencia": "Asesoría gratuita en diseño de pasteles para eventos",
+  "respuesta_ideal": "Claro, ofrecemos asesoría gratuita en diseño. Llama o pasa por acá y hablamos con Julio, nuestro pastelero, sobre tu idea.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Alergia e ingredientes: consulta con nosotros antes de pedir algo especial. Trabajamos con leche, huevo, gluten y frutos secos»."
+ },
+ {
+  "id": "i0349",
+  "negocio": "W6_n4",
+  "turnos_previos_del_cliente": [
+   "cuanto sale la cena con show?",
+   "¿y para un nene de 8 años?"
+  ],
+  "cliente": "somos 2 adultos y un nene de 8, cuanto seria?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "$42.000",
+   "$21.000"
+  ],
+  "evidencia": "- Cena + show: $42.000",
+  "respuesta_ideal": "Dos adultos a $42.000 y un niño a $21.000 suman $105.000.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Gaseosas y agua: $2.000»."
+ },
+ {
+  "id": "i0350",
+  "negocio": "W3_n4",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Necesito una maceta grande para un árbol. ¿Que tienen?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "Maceteros grandes",
+   "$35.000 a $85.000 CLP"
+  ],
+  "evidencia": "Maceteros grandes (tipo urna, 60 cm): $35.000 a $85.000 CLP",
+  "respuesta_ideal": "Tenemos maceteros grandes tipo urna de 60 cm entre $35.000 y $85.000 CLP. ¿Qué árbol vas a meter?",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Maceteros grandes (tipo urna, 60 cm): $35.000 a $85.000 CLP»."
+ },
+ {
+  "id": "i0351",
+  "negocio": "W8_n1",
+  "turnos_previos_del_cliente": [
+   "Hola, buenas! Estoy organizando un cumpleaños de 15 para unas 150 personas, ¿cuánto sale un baño químico para un evento?",
+   "¿Y cuántos me recomiendan para esa cantidad de gente? Va a haber barra con alcohol.",
+   "Entonces si alquilo 3 baños estándar, ¿cuánto sería el total?",
+   "¿Tienen baños para niños o con cambiador de bebés?"
+  ],
+  "cliente": "el evento es en un salón en Ciudad de la Costa, ¿el flete está incluido?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "48 por km"
+  ],
+  "evidencia": "Flete dentro de Montevideo: incluido. Fuera de Montevideo: $ 48 por km recorrido desde el depósito, ida y vuelta.",
+  "respuesta_ideal": "El flete está incluido solo dentro de Montevideo; para Ciudad de la Costa se cobra $ 48 por km recorrido desde el depósito, ida y vuelta.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Retiro y colocación en Montevideo: incluidos. Canelones (Ciudad de la Costa, Pando, Las Piedras): recargo fijo de $ 900»."
+ },
+ {
+  "id": "i0352",
+  "negocio": "W2_n1",
+  "turnos_previos_del_cliente": [
+   "tienen perfumes de Dior?"
+  ],
+  "cliente": "los perfumes son originales o son imitacion?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "100 % originales"
+  ],
+  "evidencia": "- Perfumes de marcas de diseñador para dama, caballero y unisex. Son 100 % originales, con sello de autenticidad.",
+  "respuesta_ideal": "Los perfumes de marcas de diseñador son 100 % originales, con sello de autenticidad.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Perfumes de marcas de diseñador para dama, caballero y unisex. Son 100 % originales, con sello de autenticidad»."
+ },
+ {
+  "id": "i0353",
+  "negocio": "W8_n3",
+  "turnos_previos_del_cliente": [
+   "Ustedes me equiparon el pozo en marzo y ahora la bomba no arranca, ¿qué puede ser?",
+   "¿Cuánto tiempo de garantía tiene la bomba?",
+   "¿Cuánto tardan en venir a verla?"
+  ],
+  "cliente": "¿Trabajan los domingos las brigadas?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "lunes a sábado"
+  ],
+  "evidencia": "Las brigadas en campo trabajan de lunes a sábado de 7:00 a 19:00.",
+  "respuesta_ideal": "No, las brigadas trabajan de lunes a sábado de 7:00 a 19:00.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Las brigadas en campo trabajan de lunes a sábado de 7:00 a 19:00»."
+ },
+ {
+  "id": "i0354",
+  "negocio": "W4_n1",
+  "turnos_previos_del_cliente": [],
+  "cliente": "buenas tardes, cuanto esta el menu del dia en el parador?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "$ 18.500"
+  ],
+  "evidencia": "Menú del día (entrada, plato principal y bebida): $ 18.500.",
+  "respuesta_ideal": "Buenas tardes. El menú del día, con entrada, plato principal y bebida, cuesta $ 18.500.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Menú del día (entrada, plato principal y bebida): $ 18.500»."
+ },
+ {
+  "id": "i0355",
+  "negocio": "W2_n3",
+  "turnos_previos_del_cliente": [
+   "que tan lleno esta el embalse ahorita?"
+  ],
+  "cliente": "y cuantos MW tiene la central?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "74 MW"
+  ],
+  "evidencia": "La central tiene una potencia instalada de 74 MW y entró en operación en 2016.",
+  "respuesta_ideal": "La central tiene una potencia instalada de 74 MW.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «La central tiene una potencia instalada de 74 MW y entró en operación en 2016»."
+ },
+ {
+  "id": "i0356",
+  "negocio": "W6_n3",
+  "turnos_previos_del_cliente": [
+   "quiero pagar la luz ¿cuanto cobran de comision?",
+   "¿y si mi factura es de 3 millones?",
+   "¿pagan facturas de Tigo tambien?"
+  ],
+  "cliente": "¿Puedo pagar con Tigo Money?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "Tigo Money"
+  ],
+  "evidencia": "Efectivo, Tigo Money, Personal Pay y tarjetas de débito. No se aceptan cheques. Emitimos factura legal con RUC si lo pide antes de pagar.",
+  "respuesta_ideal": "Sí, aceptamos Tigo Money, además de efectivo, Personal Pay y tarjetas de débito.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Efectivo, Tigo Money, Personal Pay y tarjetas de débito»."
+ },
+ {
+  "id": "i0357",
+  "negocio": "W3_n3",
+  "turnos_previos_del_cliente": [
+   "Mi laptop Dell está lenta. ¿Que me pueden hacer?",
+   "¿Que garantía dan en los cambios de partes?",
+   "¿Puedo pagar con tarjeta?"
+  ],
+  "cliente": "¿Y puedo pagar después de terminar la reparación?",
+  "tipo": "instruccion",
+  "accion_esperada": "responder",
+  "claves": [
+   "pago al retirar",
+   "requiere seña de 50 %"
+  ],
+  "evidencia": "Pago al retirar: opción disponible; se requiere seña de 50 % al autorizar reparación",
+  "respuesta_ideal": "Sí, puedes pagar al retirar. Pero necesitamos una seña del 50 % cuando autorizas la reparación.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Equipos no retirados después de 60 días: se venden para pagar costos de almacenamiento»."
+ },
+ {
+  "id": "i0358",
+  "negocio": "W7_n3",
+  "turnos_previos_del_cliente": [
+   "¿Cuál es el horario de atención?",
+   "¿Atienden feriados?"
+  ],
+  "cliente": "Quiero ver una propiedad el domingo a las 5 PM. ¿Es posible?",
+  "tipo": "instruccion",
+  "accion_esperada": "responder",
+  "claves": [
+   "por cita previa únicamente"
+  ],
+  "evidencia": "Atención de propiedades fuera de horario: por cita previa únicamente",
+  "respuesta_ideal": "Normalmente cerramos domingos, pero para ver propiedades fuera de horario se puede agendar cita previa. Llama al (58) 2240-8765 y coordinamos.",
+  "respuesta_a_calificar": "Sobre eso, las indicaciones del negocio dicen: «Horario: Lunes a viernes 9:00 AM a 6:00 PM, sábados 10:00 AM a 2:00 PM. Domingos y feriados cerrado. Para ver propiedades fuera de horario, es por cita previa»."
+ },
+ {
+  "id": "i0359",
+  "negocio": "W4_n4",
+  "turnos_previos_del_cliente": [],
+  "cliente": "hice el curso la semana pasada y no me ha llegado el certificado al correo",
+  "tipo": "instruccion",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "Todo lo relacionado con certificados ya emitidos (que no llegó, error en el nombre, duplicado, verificación) se pasa a Carlos Meza, en la sede o al correo inscripciones@alturasegura.co.",
+  "respuesta_ideal": "Eso lo revisa Carlos Meza, el auxiliar de certificados; búsquelo en la sede o escriba a inscripciones@alturasegura.co.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Certificado médico de aptitud para trabajo en alturas con vigencia no mayor a 1 año, expedido por médico con licencia en seguridad y salud en el trabajo. (No lo expedimos nosotros; ver preguntas frecuentes.)»."
+ }
+]

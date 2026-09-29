@@ -1,0 +1,509 @@
+[
+ {
+  "id": "i0210",
+  "negocio": "W5_n4",
+  "turnos_previos_del_cliente": [
+   "cuanto cuesta revisar si tengo microfonos escondidos en mi casa?",
+   "¿y en la oficina de mi empresa? es como de 80 metros",
+   "y si fuera de 200 metros cuadrados?"
+  ],
+  "cliente": "cuanto se demoran en hacer el barrido?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo información sobre cuánto demora el barrido.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Barrido electrónico (detección de micrófonos y cámaras ocultas): domicilio $250.000; oficina de hasta 100 m² $320.000»."
+ },
+ {
+  "id": "i0211",
+  "negocio": "W8_n4",
+  "turnos_previos_del_cliente": [
+   "Buenas, necesito marcar los límites de mi terreno en el barrio San Pedro porque el vecino puso un alambrado medio dudoso. ¿Cuánto cuesta?",
+   "Mi lote tiene 6 esquinas, ¿cambia el precio?",
+   "¿En cuánto tiempo vienen a medir?",
+   "¿Tengo que avisarle a mi vecino o ustedes le avisan?",
+   "¿Los mojones tienen alguna garantía si se rompen?",
+   "Si el vecino no acepta los mojones y me quiere hacer juicio, ¿ustedes me defienden?"
+  ],
+  "cliente": "Ok. ¿Puedo pagar con tarjeta de crédito?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "No aceptamos tarjetas"
+  ],
+  "evidencia": "- Aceptamos efectivo, transferencia bancaria y Tigo Money. No aceptamos tarjetas de crédito ni cheques.",
+  "respuesta_ideal": "No, no aceptamos tarjetas de crédito ni cheques; puede pagar en efectivo, por transferencia bancaria o con Tigo Money.",
+  "respuesta_a_calificar": "Ok. No lo tengo seguro. Lo más cercano que dice el texto es: «Aceptamos efectivo, transferencia bancaria y Tigo Money. No aceptamos tarjetas de crédito ni cheques»."
+ },
+ {
+  "id": "i0212",
+  "negocio": "W8_n1",
+  "turnos_previos_del_cliente": [
+   "hola, a que hora abren los sabados?",
+   "¿Puedo pasar por el depósito de Camino Carrasco a ver los baños?"
+  ],
+  "cliente": "¿Aceptan tarjeta de crédito para pagar el saldo?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "No aceptamos tarjeta de crédito"
+  ],
+  "evidencia": "El saldo se paga contra entrega en efectivo, transferencia o tarjeta de débito. No aceptamos tarjeta de crédito ni cheques de terceros.",
+  "respuesta_ideal": "No, no aceptamos tarjeta de crédito; el saldo se paga contra entrega en efectivo, transferencia o tarjeta de débito.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Se confirma con seña del 30 % (transferencia bancaria o Mercado Pago). El saldo se paga contra entrega en efectivo, transferencia o tarjeta de débito. No aceptamos tarjeta de crédito ni cheques de terceros»."
+ },
+ {
+  "id": "i0213",
+  "negocio": "W2_n1",
+  "turnos_previos_del_cliente": [
+   "tienen perfumes de Dior?",
+   "los perfumes son originales o son imitacion?"
+  ],
+  "cliente": "cuanto cuesta el parqueo?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "RD$ 60 por hora",
+   "RD$ 1,500"
+  ],
+  "evidencia": "El estacionamiento de la plaza cuesta RD$ 60 por hora. Con una compra mínima de RD$ 1,500 sellamos su ticket y obtiene 2 horas gratis.",
+  "respuesta_ideal": "El estacionamiento de la plaza cuesta RD$ 60 por hora, pero con una compra mínima de RD$ 1,500 sellamos su ticket y obtiene 2 horas gratis.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «El estacionamiento de la plaza cuesta RD$ 60 por hora»."
+ },
+ {
+  "id": "i0214",
+  "negocio": "W1_n1",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Hola, ¿cuánto cuesta el torito? es para la feria de mi aldea",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "Q1,250.00",
+   "10 días"
+  ],
+  "evidencia": "- Torito tradicional (armazón con cohetería, para fiestas patronales): Q1,250.00, se encarga con 10 días de anticipación.",
+  "respuesta_ideal": "El torito tradicional cuesta Q1,250.00 y hay que encargarlo con 10 días de anticipación.",
+  "respuesta_a_calificar": "Hola. No lo sé: no encontré esa información en el texto que tengo."
+ },
+ {
+  "id": "i0215",
+  "negocio": "W5_n4",
+  "turnos_previos_del_cliente": [
+   "hola buenas tardes",
+   "cuanto cobran por seguir a una persona?",
+   "y si son dos dias de 6 horas cada uno?"
+  ],
+  "cliente": "¿eso es con IVA?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "19%"
+  ],
+  "evidencia": "Los valores son netos; a todos se les suma IVA (19%).",
+  "respuesta_ideal": "No, los valores son netos; a todos se les suma el IVA del 19%.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Los valores son netos; a todos se les suma IVA (19%)»."
+ },
+ {
+  "id": "i0216",
+  "negocio": "W1_n2",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Buen día, cuánto sale calibrar una balanza de 20 kilos?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "$U 1.850",
+   "IVA"
+  ],
+  "evidencia": "| Balanza de mostrador | hasta 30 kg | $U 1.850 | 3 días hábiles |",
+  "respuesta_ideal": "Buen día, bienvenido a Metrolab. Una balanza de mostrador de hasta 30 kg cuesta $U 1.850, más IVA.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Somos un laboratorio de metrología con más de 20 años calibrando instrumentos para la industria, la salud y el comercio»."
+ },
+ {
+  "id": "i0217",
+  "negocio": "W6_n2",
+  "turnos_previos_del_cliente": [
+   "tengo una tienda y quisiera comprarles por mayor",
+   "¿tienen quinua en stock?",
+   "la sal de uyuni cuanto vale el kilo",
+   "si compro un té y no me gusta lo puedo devolver?",
+   "¿cuánto dura la miel antes de vencer?"
+  ],
+  "cliente": "¿donde queda la tienda?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "Calle Illampu 812"
+  ],
+  "evidencia": "Nos encontrará en la Calle Illampu 812, esquina Santa Cruz, Zona Rosario.",
+  "respuesta_ideal": "Estamos en la Calle Illampu 812, esquina Santa Cruz, Zona Rosario.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Somos una tienda familiar en el corazón de La Paz, Bolivia»."
+ },
+ {
+  "id": "i0218",
+  "negocio": "W5_n3",
+  "turnos_previos_del_cliente": [],
+  "cliente": "me garantizan que va a salir agua?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "Ningún estudio puede garantizar"
+  ],
+  "evidencia": "No. Ningún estudio puede garantizar la presencia de agua ni el caudal.",
+  "respuesta_ideal": "No. Ningún estudio puede garantizar la presencia de agua ni el caudal; el estudio hidrogeológico reduce el riesgo, pero no lo elimina.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «No. Ningún estudio puede garantizar la presencia de agua ni el caudal»."
+ },
+ {
+  "id": "i0219",
+  "negocio": "W8_n2",
+  "turnos_previos_del_cliente": [
+   "Hola, ¿puedo ir con mi perro?",
+   "¿Lo puedo meter al mar?"
+  ],
+  "cliente": "¿Y a la ducha puede entrar para sacarle la arena?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "ni a las duchas"
+  ],
+  "evidencia": "No pueden entrar al parador ni a las duchas.",
+  "respuesta_ideal": "No, los perros no pueden entrar ni al parador ni a las duchas.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «No pueden entrar al parador ni a las duchas»."
+ },
+ {
+  "id": "i0220",
+  "negocio": "W1_n3",
+  "turnos_previos_del_cliente": [
+   "Hola! Cuánto sale embalsamar la cabeza de un ciervo?",
+   "y cuanto tarda?",
+   "¿Con el escudo de caldén cuánto me queda todo?"
+  ],
+  "cliente": "¿Y de seña cuánto tendría que dejar?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "40 %",
+   "210.000"
+  ],
+  "evidencia": "Se pide una seña del 40 % al dejar la pieza y el resto al retirarla.",
+  "respuesta_ideal": "La seña es del 40 % al dejar la pieza: sobre $ 525.000 serían $ 210.000, y el resto al retirarla.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Se pide una seña del 40 % al dejar la pieza y el resto al retirarla»."
+ },
+ {
+  "id": "i0221",
+  "negocio": "W3_n2",
+  "turnos_previos_del_cliente": [
+   "Hola, necesito un paquete para 2 adultos y 1 niño de 8 años. ¿Qué me recomiendas?",
+   "¿Y el costo total para los 3?"
+  ],
+  "cliente": "Perfecto. ¿Puedo pagar a plazos?",
+  "tipo": "instruccion",
+  "accion_esperada": "responder",
+  "claves": [
+   "6 meses sin interés",
+   "compras mayores a $8.000 MXN"
+  ],
+  "evidencia": "Pago a plazos: con tarjeta a 6 meses sin interés (compras mayores a $8.000 MXN)",
+  "respuesta_ideal": "Sí, con tarjeta de crédito podés hacer 6 meses sin interés. Tu compra de $25.610 MXN entra perfectamente.",
+  "respuesta_a_calificar": "Perfecto. No lo tengo seguro. Lo más cercano que dice el texto es: «Pago a plazos: con tarjeta a 6 meses sin interés (compras mayores a $8.000 MXN)»."
+ },
+ {
+  "id": "i0222",
+  "negocio": "W1_n4",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Buenas, ¿cuánto cobran por hora?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "65 €",
+   "IVA"
+  ],
+  "evidencia": "- Hora de investigación por detective: 65 €",
+  "respuesta_ideal": "Buenas tardes, Argos Investigaciones. La hora de investigación por detective es de 65 €, IVA no incluido; es una tarifa orientativa.",
+  "respuesta_a_calificar": "Buenas. No lo tengo seguro. Lo más cercano que dice el texto es: «Hora de investigación por detective: 65 €»."
+ },
+ {
+  "id": "i0223",
+  "negocio": "W7_n2",
+  "turnos_previos_del_cliente": [
+   "Mi iPhone está lento y lleno de virus. ¿Lo pueden limpiar?",
+   "¿Garantizan que no pierda mis fotos?"
+  ],
+  "cliente": "¿Qué formas de pago aceptan?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "Efectivo",
+   "Tarjeta de débito",
+   "Tarjeta de crédito"
+  ],
+  "evidencia": "Formas de pago: Efectivo (USD) | Tarjeta de débito | Tarjeta de crédito | Transferencia bancaria",
+  "respuesta_ideal": "Aceptamos efectivo en USD, tarjeta de débito, tarjeta de crédito y transferencia bancaria para montos mayores a $100.",
+  "respuesta_a_calificar": "Sobre eso, las indicaciones del negocio dicen: «Formas de pago: Efectivo en USD, tarjeta de débito, tarjeta de crédito, transferencia bancaria (solo para más de $100). Di cuáles aceptamos sin inventar»."
+ },
+ {
+  "id": "i0224",
+  "negocio": "W5_n3",
+  "turnos_previos_del_cliente": [
+   "buenas tardes",
+   "¿cuánto cobran por metro de pozo?",
+   "si es de 6 pulgadas y 50 metros cuanto seria",
+   "¿y eso incluye el tubo?",
+   "mi lote está en Nosara, a cuántos metros voy a encontrar agua?"
+  ],
+  "cliente": "¿y cuánto se paga de timbres para el permiso?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "Los timbres corren por cuenta del cliente, pero no tengo el monto; se lo pueden indicar en la oficina.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Servicio: Gestión del permiso de perforación; Precio: ₡180.000 + timbres a cargo del cliente»."
+ },
+ {
+  "id": "i0225",
+  "negocio": "W8_n4",
+  "turnos_previos_del_cliente": [
+   "hola, tengo un campo de 12 hectareas en Capitán Miranda y necesito hacer la mensura judicial, cuanto me saldria",
+   "¿y si fueran solo 3 hectáreas?",
+   "¿El precio incluye el abogado y las tasas?"
+  ],
+  "cliente": "Capitán Miranda queda a unos 15 km de la oficina, ¿cobran viáticos?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "4.000 por km",
+   "120.000"
+  ],
+  "evidencia": "Fuera de Encarnación, dentro de Itapúa, se cobra Gs. 4.000 por km recorrido desde la oficina, ida y vuelta, por cada día de campo.",
+  "respuesta_ideal": "Sí, fuera de Encarnación se cobra Gs. 4.000 por km ida y vuelta por cada día de campo: con 15 km son 30 km recorridos, unos Gs. 120.000 por día.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Fuera de Encarnación, dentro de Itapúa, se cobra Gs. 4.000 por km recorrido desde la oficina, ida y vuelta, por cada día de campo»."
+ },
+ {
+  "id": "i0226",
+  "negocio": "W8_n3",
+  "turnos_previos_del_cliente": [
+   "Buen día, tengo un pozo que me perforó otra empresa hace años y ya casi no da agua, ¿lo pueden revisar?",
+   "¿cuánto cobran esa inspección?",
+   "mi pozo tiene 260 metros, aplica el mismo precio?"
+  ],
+  "cliente": "Y la rehabilitación en cuánto anda",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "28,000"
+  ],
+  "evidencia": "3.6 Rehabilitación de pozo (cepillado, pistoneo y desazolve): desde $ 28,000.00 MXN, según diagnóstico.",
+  "respuesta_ideal": "La rehabilitación (cepillado, pistoneo y desazolve) va desde $ 28,000.00 MXN, según el diagnóstico de la videoinspección.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «3.6 Rehabilitación de pozo (cepillado, pistoneo y desazolve): desde $ 28,000.00 MXN, según diagnóstico»."
+ },
+ {
+  "id": "i0227",
+  "negocio": "W6_n1",
+  "turnos_previos_del_cliente": [
+   "que tipo de conectores tienen?"
+  ],
+  "cliente": "y sirve para un carro chino con conector GB/T?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "no son compatibles"
+  ],
+  "evidencia": "Los vehículos con conector GB/T no son compatibles con ninguno de nuestros cargadores.",
+  "respuesta_ideal": "No, los vehículos con conector GB/T no son compatibles con ninguno de nuestros cargadores.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Los vehículos con conector GB/T no son compatibles con ninguno de nuestros cargadores»."
+ },
+ {
+  "id": "i0228",
+  "negocio": "W8_n1",
+  "turnos_previos_del_cliente": [
+   "hola, a que hora abren los sabados?",
+   "¿Puedo pasar por el depósito de Camino Carrasco a ver los baños?",
+   "¿Aceptan tarjeta de crédito para pagar el saldo?",
+   "¿Hacen descuento si pago todo en efectivo por adelantado?",
+   "¿Cuánto tardan en llegar si hay una emergencia con un baño?"
+  ],
+  "cliente": "Soy cliente con contrato y se me volcó un baño en la obra, está todo desbordado, ¿qué hago?",
+  "tipo": "instruccion",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "Si es un cliente con contrato y tiene una emergencia (baño volcado, desborde, volqueta bloqueando una entrada), dale el número de guardia 099 314 251.",
+  "respuesta_ideal": "Llamá ya a la guardia de emergencias al 099 314 251, que atiende las 24 h para clientes con contrato.",
+  "respuesta_a_calificar": "Sobre eso, las indicaciones del negocio dicen: «Si es un cliente con contrato y tiene una emergencia (baño volcado, desborde, volqueta bloqueando una entrada), dale el número de guardia 099 314 251»."
+ },
+ {
+  "id": "i0229",
+  "negocio": "W1_n1",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Hola, ¿cuánto cuesta el torito? es para la feria de mi aldea",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "Q1,250.00",
+   "10 días"
+  ],
+  "evidencia": "- Torito tradicional (armazón con cohetería, para fiestas patronales): Q1,250.00, se encarga con 10 días de anticipación.",
+  "respuesta_ideal": "El torito tradicional cuesta Q1,250.00 y hay que encargarlo con 10 días de anticipación.",
+  "respuesta_a_calificar": "Hola. No lo tengo seguro. Lo más cercano que dice el texto es: «Torito tradicional (armazón con cohetería, para fiestas patronales): Q1,250.00, se encarga con 10 días de anticipación»."
+ },
+ {
+  "id": "i0230",
+  "negocio": "W1_n2",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Hola, trabajan en semana de turismo?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "martes y miércoles"
+  ],
+  "evidencia": "Durante la Semana de Turismo atendemos únicamente martes y miércoles, de 9 a 13 hs.",
+  "respuesta_ideal": "Sí, pero solo martes y miércoles, de 9 a 13 hs.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Durante la Semana de Turismo atendemos únicamente martes y miércoles, de 9 a 13 hs»."
+ },
+ {
+  "id": "i0231",
+  "negocio": "W4_n4",
+  "turnos_previos_del_cliente": [
+   "buenos dias, cuanto vale el curso de alturas basico?",
+   "y cuanto dura?"
+  ],
+  "cliente": "que dia empieza?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "lunes"
+  ],
+  "evidencia": "Los cursos de alturas inician los lunes; el de primeros auxilios y el de extintores se dictan los sábados.",
+  "respuesta_ideal": "Los cursos de alturas inician los lunes; el grupo se abre con mínimo 6 inscritos.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Programa: Espacios confinados – entrante y vigía; Duración: 16 horas (2 días); Modalidad: presencial; Valor: $ 260.000»."
+ },
+ {
+  "id": "i0232",
+  "negocio": "W7_n4",
+  "turnos_previos_del_cliente": [
+   "Hola, ¿qué panes frescos tienen?"
+  ],
+  "cliente": "¿Cuál es el precio de la baguette?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "L. 18"
+  ],
+  "evidencia": "Baguette tradicional... Baguette: L. 18",
+  "respuesta_ideal": "La baguette cuesta L. 18.",
+  "respuesta_a_calificar": "Sobre eso, las indicaciones del negocio dicen: «Precios: Son indicativos. El precio de la baguette es L. 18, bolillo L. 8, porción de tres leches L. 35, pastel decorado L. 250–350. Pero aclara que pueden cambiar según costo de harina»."
+ },
+ {
+  "id": "i0233",
+  "negocio": "W4_n1",
+  "turnos_previos_del_cliente": [],
+  "cliente": "A que hora abren las carpas?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "9 a 20"
+  ],
+  "evidencia": "Horario de playa: carpas y sombrillas de 9 a 20 h.",
+  "respuesta_ideal": "Las carpas y sombrillas están abiertas de 9 a 20 h.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Horario de playa: carpas y sombrillas de 9 a 20 h»."
+ },
+ {
+  "id": "i0234",
+  "negocio": "W6_n1",
+  "turnos_previos_del_cliente": [
+   "Hola, buenas tardes",
+   "a q hora abren?"
+  ],
+  "cliente": "y la cafetería?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "6:00 a. m. a 10:00 p. m."
+  ],
+  "evidencia": "Cafetería y baños: 6:00 a. m. a 10:00 p. m.",
+  "respuesta_ideal": "La cafetería y los baños abren de 6:00 a. m. a 10:00 p. m.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Cafetería y baños: 6:00 a. m. a 10:00 p. m»."
+ },
+ {
+  "id": "i0235",
+  "negocio": "W7_n2",
+  "turnos_previos_del_cliente": [
+   "Hola, mi celular se mojó en la piscina. ¿Pueden repararlo?"
+  ],
+  "cliente": "¿Cuál es el horario de atención?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "9:00 AM — 6:00 PM",
+   "10:00 AM — 2:00 PM"
+  ],
+  "evidencia": "Lunes a viernes: 9:00 AM — 6:00 PM | Sábados: 10:00 AM — 2:00 PM",
+  "respuesta_ideal": "De lunes a viernes atendemos de 9:00 AM a 6:00 PM. Los sábados de 10:00 AM a 2:00 PM.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Somos especialistas en reparación de dispositivos electrónicos desde 2015»."
+ },
+ {
+  "id": "i0236",
+  "negocio": "W4_n1",
+  "turnos_previos_del_cliente": [
+   "buenas tardes, cuanto esta el menu del dia en el parador?",
+   "tienen algo sin tacc?",
+   "que platos son sin gluten exactamente?"
+  ],
+  "cliente": "hasta que hora sirven la cena en enero?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "20 a 24"
+  ],
+  "evidencia": "Cena de 20 a 24 (solo enero y febrero).",
+  "respuesta_ideal": "En enero la cena se sirve de 20 a 24.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Cena de 20 a 24 (solo enero y febrero)»."
+ },
+ {
+  "id": "i0237",
+  "negocio": "W5_n2",
+  "turnos_previos_del_cliente": [],
+  "cliente": "se puede pagar con credito en cuotas?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "3 cuotas sin recargo"
+  ],
+  "evidencia": "Con tarjeta de crédito, hasta 3 cuotas sin recargo.",
+  "respuesta_ideal": "Sí, con tarjeta de crédito puede pagar hasta en 3 cuotas sin recargo.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Con tarjeta de crédito, hasta 3 cuotas sin recargo»."
+ },
+ {
+  "id": "i0238",
+  "negocio": "W1_n2",
+  "turnos_previos_del_cliente": [
+   "Tengo 4 pesas patrón clase M1, cuanto me sale calibrarlas todas?",
+   "¿Se puede pagar con Mercado Pago?"
+  ],
+  "cliente": "Puedo ir el sábado a dejarlas?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "solo retiro de equipos"
+  ],
+  "evidencia": "Sábados: solo retiro de equipos, de 9 a 12 hs",
+  "respuesta_ideal": "No, los sábados es solo retiro de equipos; para dejarlas tiene que venir de lunes a viernes de 8.30 a 17 hs.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «¿Reparan equipos? No. Si su instrumento está fuera de tolerancia y no se puede ajustar, le devolvemos un informe y puede llevarlo al servicio técnico de la marca»."
+ },
+ {
+  "id": "i0239",
+  "negocio": "W6_n3",
+  "turnos_previos_del_cliente": [
+   "mi hijo tiene 10 años, puede usar la compu solo?",
+   "¿y uno de 15 puede entrar a la gamer a las 9 de la noche?",
+   "quiero reservar la sala gamer para el sabado",
+   "¿hay que dejar seña?"
+  ],
+  "cliente": "necesito factura a nombre de mi empresa",
+  "tipo": "instruccion",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "4. Si piden factura a nombre de una empresa o quieren hacer un reclamo, deriva a Lourdes Amarilla, administración, (021) 220 3345.",
+  "respuesta_ideal": "Para facturas a empresas, comuníquese con Lourdes Amarilla, de administración, al (021) 220 3345.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Administración (facturas a empresas, reclamos): Lourdes Amarilla, tel. (021) 220 3345, lunes a viernes de 8:00 a 16:00 hs»."
+ }
+]
