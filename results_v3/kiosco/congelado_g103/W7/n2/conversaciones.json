@@ -1,0 +1,140 @@
+[
+  [
+    {
+      "cliente": "Hola, cuánto cuesta una consulta con el veterinario?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["$85 000", "Consulta general", "Perros y gatos"],
+      "evidencia": "Consulta general: Perros y gatos: $85 000 COP",
+      "respuesta_ideal": "Una consulta general para perros o gatos cuesta $85 000 COP."
+    },
+    {
+      "cliente": "¿Y si tengo un conejo?",
+      "tipo": "seguimiento",
+      "accion": "responder",
+      "claves": ["$60 000", "Pequeños roedores"],
+      "evidencia": "Pequeños roedores (conejo, hamster, cobayo): $60 000 COP",
+      "respuesta_ideal": "Para pequeños roedores como conejos la consulta es $60 000 COP."
+    },
+    {
+      "cliente": "Mi perrita necesita castración. ¿Cuánto sale?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["$320 000"],
+      "evidencia": "Esterilización de gatas: $320 000 COP",
+      "respuesta_ideal": "La esterilización de una perra cuesta entre $380 000 y $480 000 COP dependiendo de su peso."
+    }
+  ],
+  [
+    {
+      "cliente": "¿Me pueden poner la vacuna antirrábica a mi perro?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["Vacuna antirrábica", "sí"],
+      "evidencia": "Vacuna antirrábica (todos los animales): $28 000 COP",
+      "respuesta_ideal": "Sí, aplicamos vacuna antirrábica a $28 000 COP."
+    },
+    {
+      "cliente": "¿Y las otras vacunas caninas?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["$42 000", "polivalentes"],
+      "evidencia": "Vacunas caninas (polivalentes): $42 000 COP",
+      "respuesta_ideal": "Las vacunas caninas polivalentes cuestan $42 000 COP."
+    },
+    {
+      "cliente": "¿Necesito hacer cita o puedo llegar sin avisar?",
+      "tipo": "sin_respuesta",
+      "accion": "derivar",
+      "claves": [],
+      "evidencia": "Instrucción: referir a (601) 744-3829 para agendamiento",
+      "respuesta_ideal": "Mejor llama al (601) 744-3829 o escribe por WhatsApp +57 320-5847291 para agendar. Así aseguran que esté el veterinario disponible."
+    }
+  ],
+  [
+    {
+      "cliente": "¡Ayuda! Mi gato se cayó y sangra mucho.",
+      "tipo": "instruccion",
+      "accion": "derivar",
+      "claves": [],
+      "evidencia": "Instrucción 1: emergencia, derivar inmediatamente al (601) 744-3829",
+      "respuesta_ideal": "¡Es una emergencia! Llama ahora mismo al (601) 744-3829. Hay protocolo de emergencias disponible 24/7. ¡Ánimo, vamos a ayudar a tu gato!"
+    },
+    {
+      "cliente": "Gracias, estoy llamando.",
+      "tipo": "charla",
+      "accion": "charla",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "¡Vamos, te estamos esperando! Que llegue bien."
+    }
+  ],
+  [
+    {
+      "cliente": "Dra. Sofía es buena para limpiar dientes?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["Dra. Sofía Ramírez", "Odontología"],
+      "evidencia": "Dra. Sofía Ramírez (Odontología, gestión)",
+      "respuesta_ideal": "Sí, la Dra. Sofía Ramírez es especialista en odontología veterinaria."
+    },
+    {
+      "cliente": "¿Cuánto cuesta la limpieza de dientes?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["$200 000"],
+      "evidencia": "Limpieza dental: $200 000 COP",
+      "respuesta_ideal": "La limpieza dental cuesta $200 000 COP."
+    },
+    {
+      "cliente": "¿Sofía está el jueves?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["Miércoles a viernes"],
+      "evidencia": "Dra. Sofía Ramírez (Odontología, gestión) — Miércoles a viernes",
+      "respuesta_ideal": "Sí, la Dra. Sofía atiende miércoles a viernes."
+    },
+    {
+      "cliente": "¿Como hago para agendar con ella?",
+      "tipo": "instruccion",
+      "accion": "derivar",
+      "claves": [],
+      "evidencia": "Instrucción: referir a (601) 744-3829 o WhatsApp",
+      "respuesta_ideal": "Llama al (601) 744-3829 o escribe por WhatsApp +57 320-5847291 y piden específicamente con la Dra. Sofía."
+    }
+  ],
+  [
+    {
+      "cliente": "¿Tienen servicio de hotel para animales?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["Hospedaje", "$60 000"],
+      "evidencia": "Hospedaje por día: $60 000 COP (incluye alimentación)",
+      "respuesta_ideal": "Sí, ofrecemos hospedaje a $60 000 COP por día e incluye alimentación."
+    },
+    {
+      "cliente": "¿Cuántos días como mínimo?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No tengo esos detalles. Llama al (601) 744-3829 o WhatsApp +57 320-5847291 para consultar disponibilidad y reservar."
+    },
+    {
+      "cliente": "¿Se hacen planes de pago para cirugías?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["planes de pago sin interés"],
+      "evidencia": "Ofrecemos planes de pago sin interés para cirugías (mínimo $500 000).",
+      "respuesta_ideal": "Sí, ofrecemos planes de pago sin interés para cirugías con mínimo de $500 000 COP."
+    },
+    {
+      "cliente": "Perfecto, mañana llevo a mi gato para que lo revise el Dr. Julio.",
+      "tipo": "charla",
+      "accion": "charla",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "¡Excelente! El Dr. Julio es muy bueno. Te esperamos mañana. ¡Que esté bien tu gato!"
+    }
+  ]
+]

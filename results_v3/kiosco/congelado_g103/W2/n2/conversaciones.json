@@ -1,0 +1,300 @@
+[
+ [
+  {
+   "cliente": "Buenas, cuanto cobran de peaje a un carro normal?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "1.50",
+    "1.20"
+   ],
+   "evidencia": "Cat. 1   Automóviles, jeeps y camionetas       B/. 1.50   B/. 1.20",
+   "respuesta_ideal": "Por cada plaza de peaje, un automóvil paga B/. 1.50 en efectivo o B/. 1.20 con PasaYa."
+  },
+  {
+   "cliente": "¿y un bus?",
+   "tipo": "seguimiento",
+   "accion": "responder",
+   "claves": [
+    "3.00",
+    "2.40"
+   ],
+   "evidencia": "Cat. 2   Buses y camiones de 2 ejes            B/. 3.00   B/. 2.40",
+   "respuesta_ideal": "Un bus (Categoría 2) paga B/. 3.00 en efectivo o B/. 2.40 con PasaYa por cada plaza."
+  },
+  {
+   "cliente": "Si voy en mi carro de un extremo al otro del corredor y regreso, ¿cuánto pago con el TAG?",
+   "tipo": "combinada",
+   "accion": "responder",
+   "claves": [
+    "1.20"
+   ],
+   "evidencia": "El peaje se cobra en cada plaza y en ambos sentidos. Un recorrido completo, de un extremo al otro, pasa por las dos plazas (Curundú y Vista Alegre).\nCategoría                                      Efectivo   PasaYa\nCat. M   Motocicletas (150 cc o más)           B/. 0.75   B/. 0.60\nCat. 1   Automóviles, jeeps y camionetas       B/. 1.50   B/. 1.20",
+   "respuesta_ideal": "Un recorrido completo pasa por las dos plazas y el peaje se cobra en ambos sentidos: ida y vuelta son 4 pasos x B/. 1.20 = B/. 4.80 con PasaYa."
+  },
+  {
+   "cliente": "¿y en efectivo?",
+   "tipo": "seguimiento",
+   "accion": "responder",
+   "claves": [
+    "1.50"
+   ],
+   "evidencia": "El peaje se cobra en cada plaza y en ambos sentidos. Un recorrido completo, de un extremo al otro, pasa por las dos plazas (Curundú y Vista Alegre).\nCategoría                                      Efectivo   PasaYa\nCat. M   Motocicletas (150 cc o más)           B/. 0.75   B/. 0.60\nCat. 1   Automóviles, jeeps y camionetas       B/. 1.50   B/. 1.20",
+   "respuesta_ideal": "En efectivo serían 4 pasos x B/. 1.50 = B/. 6.00."
+  },
+  {
+   "cliente": "¿En la caseta puedo pagar con tarjeta de crédito?",
+   "tipo": "si_no",
+   "accion": "responder",
+   "claves": [
+    "no se acepta tarjeta de crédito"
+   ],
+   "evidencia": "En las casetas se acepta únicamente efectivo o PasaYa; no se acepta tarjeta de crédito ni de débito. Las casetas dan cambio hasta de B/. 20.",
+   "respuesta_ideal": "No: en las casetas se acepta únicamente efectivo o PasaYa; no se acepta tarjeta de crédito ni de débito."
+  },
+  {
+   "cliente": "Un tráiler de 5 ejes con TAG, ¿cuánto paga de un extremo al otro del corredor?",
+   "tipo": "combinada",
+   "accion": "responder",
+   "claves": [
+    "5.00"
+   ],
+   "evidencia": "El peaje se cobra en cada plaza y en ambos sentidos. Un recorrido completo, de un extremo al otro, pasa por las dos plazas (Curundú y Vista Alegre).\nCategoría                                      Efectivo   PasaYa\nCat. M   Motocicletas (150 cc o más)           B/. 0.75   B/. 0.60\nCat. 1   Automóviles, jeeps y camionetas       B/. 1.50   B/. 1.20\nCat. 2   Buses y camiones de 2 ejes            B/. 3.00   B/. 2.40\nCat. 3   Camiones de 3 ejes                    B/. 4.50   B/. 3.60\nCat. 4   Camiones de 4 ejes o más y tráileres  B/. 6.25   B/. 5.00",
+   "respuesta_ideal": "Un tráiler de 5 ejes es Categoría 4: con PasaYa paga B/. 5.00 por plaza y un recorrido completo pasa por 2 plazas, 2 pasos x B/. 5.00 = B/. 10.00."
+  },
+  {
+   "cliente": "¿Cuánto paga una moto de 200 cc?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "0.75",
+    "0.60"
+   ],
+   "evidencia": "Cat. M   Motocicletas (150 cc o más)           B/. 0.75   B/. 0.60",
+   "respuesta_ideal": "Una moto de 200 cc (Categoría M) paga B/. 0.75 en efectivo o B/. 0.60 con PasaYa por cada plaza."
+  },
+  {
+   "cliente": "¿Tienen descuento por pasar muchas veces al mes?",
+   "tipo": "sin_respuesta",
+   "accion": "derivar",
+   "claves": [],
+   "evidencia": "2. Si no tienes el dato que te piden, dilo y remite al cliente a la línea comercial 302-4500. Nunca inventes tarifas, plazos ni fechas.",
+   "respuesta_ideal": "No tengo información sobre descuentos por uso frecuente. Puede consultarlo en la línea comercial, 302-4500."
+  }
+ ],
+ [
+  {
+   "cliente": "quiero sacar el TAG, cuanto cuesta y cuanta plata tengo que dejarle?",
+   "tipo": "combinada",
+   "accion": "responder",
+   "claves": [
+    "USD 10",
+    "B/. 15"
+   ],
+   "evidencia": "El TAG PasaYa cuesta USD 10 (no reembolsable). La recarga mínima inicial es de B/. 15.",
+   "respuesta_ideal": "El TAG PasaYa cuesta USD 10 (no reembolsable) y la recarga mínima inicial es de B/. 15; en total 25."
+  },
+  {
+   "cliente": "¿Dónde lo puedo recargar?",
+   "tipo": "seguimiento",
+   "accion": "responder",
+   "claves": [
+    "BahíaVerde Móvil",
+    "farmacias afiliadas"
+   ],
+   "evidencia": "Recargas: en la oficina comercial, en la app BahíaVerde Móvil o en farmacias afiliadas.",
+   "respuesta_ideal": "Puede recargarlo en la oficina comercial, en la app BahíaVerde Móvil o en farmacias afiliadas."
+  },
+  {
+   "cliente": "¿Se puede recargar con tarjeta de crédito?",
+   "tipo": "sin_respuesta",
+   "accion": "derivar",
+   "claves": [],
+   "evidencia": "2. Si no tienes el dato que te piden, dilo y remite al cliente a la línea comercial 302-4500. Nunca inventes tarifas, plazos ni fechas.",
+   "respuesta_ideal": "No tengo ese dato; para saber si se puede recargar con tarjeta de crédito consulte la línea comercial, 302-4500."
+  },
+  {
+   "cliente": "¿Qué pasa si llego a la barrera y no tengo saldo?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "carril mixto"
+   ],
+   "evidencia": "Si el saldo es insuficiente, la barrera no se abre y hay que pasar por el carril mixto para pagar en efectivo.",
+   "respuesta_ideal": "Si el saldo es insuficiente la barrera no se abre y hay que pasar por el carril mixto para pagar en efectivo."
+  },
+  {
+   "cliente": "cuanto es la multa si me paso la caseta sin pagar?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "B/. 20"
+   ],
+   "evidencia": "Pasar sin pagar tiene un recargo de B/. 20 por cada paso.",
+   "respuesta_ideal": "Pasar sin pagar tiene un recargo de B/. 20 por cada paso."
+  },
+  {
+   "cliente": "¿Me puede decir cuánto saldo tiene mi TAG? Mi placa es AB1234.",
+   "tipo": "instruccion",
+   "accion": "derivar",
+   "claves": [],
+   "evidencia": "4. No puedes consultar saldos ni movimientos de ningún TAG. Si preguntan por el saldo de su cuenta, indica que lo vean en la app BahíaVerde Móvil o que llamen a la línea comercial.",
+   "respuesta_ideal": "No puedo consultar saldos ni movimientos de un TAG. Puede verlo en la app BahíaVerde Móvil o llamar a la línea comercial, 302-4500."
+  },
+  {
+   "cliente": "¿El TAG me sirve también en otros corredores?",
+   "tipo": "si_no",
+   "accion": "responder",
+   "claves": [
+    "solo en el Corredor Bahía Verde"
+   ],
+   "evidencia": "- ¿El TAG sirve en otros corredores? No, solo en el Corredor Bahía Verde.",
+   "respuesta_ideal": "No, el TAG sirve solo en el Corredor Bahía Verde."
+  }
+ ],
+ [
+  {
+   "cliente": "Mi hijo tiene discapacidad y el carro tiene placa especial, ¿pagamos peaje?",
+   "tipo": "si_no",
+   "accion": "responder",
+   "claves": [
+    "exentos del peaje en Categoría 1"
+   ],
+   "evidencia": "Vehículos con placa de discapacidad: exentos del peaje en Categoría 1, previa inscripción en la oficina comercial con la tarjeta de propiedad y el carné de discapacidad.",
+   "respuesta_ideal": "Sí: los vehículos con placa de discapacidad están exentos del peaje en Categoría 1, previa inscripción en la oficina comercial."
+  },
+  {
+   "cliente": "¿Qué documentos llevo para inscribirlo?",
+   "tipo": "seguimiento",
+   "accion": "responder",
+   "claves": [
+    "tarjeta de propiedad",
+    "carné de discapacidad"
+   ],
+   "evidencia": "Vehículos con placa de discapacidad: exentos del peaje en Categoría 1, previa inscripción en la oficina comercial con la tarjeta de propiedad y el carné de discapacidad.",
+   "respuesta_ideal": "Para inscribirlo debe llevar la tarjeta de propiedad y el carné de discapacidad a la oficina comercial."
+  },
+  {
+   "cliente": "Se me pinchó una llanta en el corredor, ¿qué hago?",
+   "tipo": "instruccion",
+   "accion": "responder",
+   "claves": [
+    "800-8373"
+   ],
+   "evidencia": "Auxilio vial 24 horas: 800-8373. Si hay heridos, llame además al 911.",
+   "respuesta_ideal": "Llame de inmediato al auxilio vial, 800-8373, que atiende las 24 horas; si hay heridos, llame también al 911."
+  },
+  {
+   "cliente": "¿Cuánto cobran por cambiarme la llanta?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "gratuita"
+   ],
+   "evidencia": "La asistencia en el corredor es gratuita: cambio de neumático, paso de corriente y hasta 1 galón de combustible (el combustible se cobra al precio de la estación).",
+   "respuesta_ideal": "Nada: la asistencia en el corredor es gratuita e incluye el cambio de neumático."
+  },
+  {
+   "cliente": "Si necesito grúa, ¿me llevan hasta mi taller sin costo?",
+   "tipo": "si_no",
+   "accion": "responder",
+   "claves": [
+    "se cobra aparte"
+   ],
+   "evidencia": "Grúa: el traslado hasta la salida más cercana está incluido; el traslado a un taller se cobra aparte.",
+   "respuesta_ideal": "No del todo: el traslado hasta la salida más cercana está incluido, pero el traslado hasta un taller se cobra aparte."
+  }
+ ],
+ [
+  {
+   "cliente": "¿Cuál es la velocidad máxima?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "100 km/h"
+   ],
+   "evidencia": "Velocidad: máxima 100 km/h, mínima 60 km/h.",
+   "respuesta_ideal": "La velocidad máxima es de 100 km/h (la mínima es de 60 km/h)."
+  },
+  {
+   "cliente": "¿Cuántos kilómetros tiene el corredor?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "27 km"
+   ],
+   "evidencia": "Tramo: 27 km entre el enlace de Curundú (Ciudad de Panamá) y el enlace de Vista Alegre (Arraiján).",
+   "respuesta_ideal": "El corredor tiene 27 km, entre el enlace de Curundú y el enlace de Vista Alegre."
+  },
+  {
+   "cliente": "¿Van a cerrar el corredor este fin de semana por obras?",
+   "tipo": "sin_respuesta",
+   "accion": "derivar",
+   "claves": [],
+   "evidencia": "2. Si no tienes el dato que te piden, dilo y remite al cliente a la línea comercial 302-4500. Nunca inventes tarifas, plazos ni fechas.",
+   "respuesta_ideal": "No tengo información sobre cierres de este fin de semana. Le sugiero consultar la línea comercial, 302-4500."
+  },
+  {
+   "cliente": "¿A qué hora abre la oficina los sábados?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "8:00 a. m. a 12:00 m."
+   ],
+   "evidencia": "Horario de la oficina: lunes a viernes de 7:30 a. m. a 5:00 p. m.; sábados de 8:00 a. m. a 12:00 m.; domingos y feriados cerrada.",
+   "respuesta_ideal": "Los sábados la oficina comercial atiende de 8:00 a. m. a 12:00 m."
+  },
+  {
+   "cliente": "¿Y el domingo?",
+   "tipo": "seguimiento",
+   "accion": "responder",
+   "claves": [
+    "domingos y feriados cerrada"
+   ],
+   "evidencia": "Horario de la oficina: lunes a viernes de 7:30 a. m. a 5:00 p. m.; sábados de 8:00 a. m. a 12:00 m.; domingos y feriados cerrada.",
+   "respuesta_ideal": "Los domingos y feriados la oficina está cerrada."
+  }
+ ],
+ [
+  {
+   "cliente": "¿Emiten factura electrónica con RUC?",
+   "tipo": "sin_respuesta",
+   "accion": "derivar",
+   "claves": [],
+   "evidencia": "2. Si no tienes el dato que te piden, dilo y remite al cliente a la línea comercial 302-4500. Nunca inventes tarifas, plazos ni fechas.",
+   "respuesta_ideal": "No tengo ese dato; sobre facturación electrónica consulte la línea comercial, 302-4500."
+  },
+  {
+   "cliente": "¿Cuánto demora en llegar el auxilio vial?",
+   "tipo": "sin_respuesta",
+   "accion": "derivar",
+   "claves": [],
+   "evidencia": "2. Si no tienes el dato que te piden, dilo y remite al cliente a la línea comercial 302-4500. Nunca inventes tarifas, plazos ni fechas.",
+   "respuesta_ideal": "No tengo información sobre los tiempos de llegada del auxilio. Para más detalles consulte la línea comercial, 302-4500."
+  },
+  {
+   "cliente": "¿Hay estaciones de servicio o baños dentro del corredor?",
+   "tipo": "sin_respuesta",
+   "accion": "derivar",
+   "claves": [],
+   "evidencia": "2. Si no tienes el dato que te piden, dilo y remite al cliente a la línea comercial 302-4500. Nunca inventes tarifas, plazos ni fechas.",
+   "respuesta_ideal": "No tengo información sobre servicios dentro del corredor. Puede consultarlo en la línea comercial, 302-4500."
+  },
+  {
+   "cliente": "Me cobraron dos veces en la misma plaza y quiero reclamar.",
+   "tipo": "instruccion",
+   "accion": "derivar",
+   "claves": [],
+   "evidencia": "5. Ante reclamos por cobros repetidos o indebidos no admitas ni niegues el error ni prometas devoluciones: pide que acudan a la oficina comercial con la placa y la fecha del cobro.",
+   "respuesta_ideal": "Lamento el inconveniente. No puedo confirmar ni descartar el error; por favor acuda a la oficina comercial con la placa del vehículo y la fecha del cobro para que lo revisen."
+  },
+  {
+   "cliente": "Gracias, buenas tardes.",
+   "tipo": "charla",
+   "accion": "charla",
+   "claves": [],
+   "evidencia": null,
+   "respuesta_ideal": "Con gusto. Que tenga buen viaje."
+  }
+ ]
+]

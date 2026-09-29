@@ -1,0 +1,156 @@
+[
+  [
+    {
+      "cliente": "Hola, quiero aprender inglés. ¿Cuánto cuesta?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["$189 000"],
+      "evidencia": "Inglés Básico (A1-A2): $189 000 CLP\nIngles Intermedio (B1-B2): $189 000 CLP",
+      "respuesta_ideal": "Las clases de inglés cuestan $189 000 CLP por 12 clases de 90 minutos. El precio es igual para nivel básico e intermedio."
+    },
+    {
+      "cliente": "¿Tienen clases online?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["Clases online"],
+      "evidencia": "Clases online: Disponibles en todos los horarios.",
+      "respuesta_ideal": "Sí, tenemos clases online disponibles en todos los horarios."
+    },
+    {
+      "cliente": "¿Cuándo puedo empezar?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["Primeros lunes de cada mes"],
+      "evidencia": "Entrada de nuevos grupos: Primeros lunes de cada mes.",
+      "respuesta_ideal": "Los grupos nuevos entran los primeros lunes de cada mes."
+    },
+    {
+      "cliente": "Ah, eso significa que no puedo empezar esta semana?",
+      "tipo": "seguimiento",
+      "accion": "responder",
+      "claves": ["Primeros lunes"],
+      "evidencia": "Entrada de nuevos grupos: Primeros lunes de cada mes.",
+      "respuesta_ideal": "Exacto, la próxima entrada será el primer lunes del próximo mes. Pero puedes hacer tu prueba de nivel gratis ya para prepararte."
+    }
+  ],
+  [
+    {
+      "cliente": "¿Ofrecen francés?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["Francés"],
+      "evidencia": "Francés (A1 a B2)",
+      "respuesta_ideal": "Sí, enseñamos francés desde nivel A1 hasta B2."
+    },
+    {
+      "cliente": "¿Cuanto cuesta francés?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["$210 000"],
+      "evidencia": "Otros idiomas Básico: $210 000 CLP",
+      "respuesta_ideal": "Las clases de francés cuestan $210 000 CLP por 12 clases de 90 minutos."
+    },
+    {
+      "cliente": "¿Tienen programa intensivo?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["Programa Intensivo"],
+      "evidencia": "Programa Intensivo (20 horas por semana, 4 semanas): Cualquier idioma, cualquier nivel: $1 200 000 CLP",
+      "respuesta_ideal": "Sí, el Programa Intensivo es 20 horas por semana durante 4 semanas a $1 200 000 CLP."
+    },
+    {
+      "cliente": "¿Me puedes dar el teléfono de contacto?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["+56 2 2945-7832"],
+      "evidencia": "Teléfono: +56 2 2945-7832",
+      "respuesta_ideal": "El teléfono es +56 2 2945-7832. También puedes escribir a contacto@puenteslinguisticos.cl."
+    }
+  ],
+  [
+    {
+      "cliente": "Quiero preparación para el TOEFL. ¿Tienen?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["Preparación para TOEFL"],
+      "evidencia": "Preparación para TOEFL/IELTS: $350 000 CLP (8 clases)",
+      "respuesta_ideal": "Sí, ofrecemos preparación para TOEFL con 8 clases por $350 000 CLP."
+    },
+    {
+      "cliente": "¿Y cuanto cuesta el examen simulado?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["$60 000"],
+      "evidencia": "Examen TOEFL simulado: $60 000 CLP",
+      "respuesta_ideal": "El examen simulado de TOEFL cuesta $60 000 CLP."
+    },
+    {
+      "cliente": "¿Que profesores tienen? ¿Son buenos?",
+      "tipo": "sin_respuesta",
+      "accion": "responder",
+      "claves": ["título universitario", "experiencia de mínimo 3 años"],
+      "evidencia": "Todos los profesores tienen título universitario en lengua/educación y experiencia de mínimo 3 años.",
+      "respuesta_ideal": "Todos nuestros profesores tienen título universitario y mínimo 3 años de experiencia. Tenemos profesores nativos certificados."
+    }
+  ],
+  [
+    {
+      "cliente": "¿Enseñan chino?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["Chino Mandarín"],
+      "evidencia": "Chino Mandarín (A1 a A2)",
+      "respuesta_ideal": "Sí, enseñamos Chino Mandarín desde nivel A1 a A2."
+    },
+    {
+      "cliente": "¿Hasta qué nivel llega?",
+      "tipo": "seguimiento",
+      "accion": "responder",
+      "claves": ["A1 a A2"],
+      "evidencia": "Chino Mandarín (A1 a A2)",
+      "respuesta_ideal": "Chino Mandarín va desde nivel A1 (principiante) hasta A2 (elemental)."
+    },
+    {
+      "cliente": "¿Hay clases privadas disponibles para el chino?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["Clases Privadas"],
+      "evidencia": "Clases Privadas (1 a 1): Otros idiomas: $50 000 CLP por clase de 60 min",
+      "respuesta_ideal": "Sí, las clases privadas están disponibles para chino a $50 000 CLP por clase de 60 minutos."
+    }
+  ],
+  [
+    {
+      "cliente": "¿Necesito una prueba antes de empezar?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["prueba de nivel gratuita"],
+      "evidencia": "Prueba de nivel: Gratuita, duracion 30 minutos.",
+      "respuesta_ideal": "Sí, es obligatorio hacer una prueba de nivel gratuita de 30 minutos antes de ingresar."
+    },
+    {
+      "cliente": "¿Cuánta asistencia necesito para conseguir certificado?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["80 %"],
+      "evidencia": "Asistencia: Mínimo 80 % para certificación.",
+      "respuesta_ideal": "Necesitas asistir mínimo al 80 % de las clases para obtener certificado."
+    },
+    {
+      "cliente": "¿Se puede cambiar de grupo si no me gusta el horario?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["Una sola vez por semestre sin costo"],
+      "evidencia": "Cambio de grupo: Una sola vez por semestre sin costo. Después: $30 000 CLP.",
+      "respuesta_ideal": "Sí, puedes cambiar de grupo una sola vez por semestre sin costo. Si cambias una segunda vez, cuesta $30 000 CLP."
+    },
+    {
+      "cliente": "¿Cuales son las formas de pago?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["Efectivo", "transferencia", "tarjeta débito/crédito", "cuotas sin interés"],
+      "evidencia": "Pago: Efectivo, transferencia, tarjeta débito/crédito. Cuotas sin interés hasta 3 meses.",
+      "respuesta_ideal": "Aceptamos efectivo, transferencia y tarjetas débito/crédito. Ofrecemos cuotas sin interés hasta 3 meses."
+    }
+  ]
+]

@@ -1,0 +1,39 @@
+[
+  [
+    {"cliente": "Hola, buenos días", "tipo": "charla", "accion": "charla", "claves": [], "evidencia": null, "respuesta_ideal": "Buenos días. Bienvenido a Farmacia Dr. Sánchez. ¿En qué podemos ayudarte?"},
+    {"cliente": "Necesito paracetamol", "tipo": "directa", "accion": "responder", "claves": ["Paracetamol 500mg - 30 tabletas: ₡2 500"], "evidencia": "Paracetamol 500mg - 30 tabletas: ₡2 500", "respuesta_ideal": "Tenemos paracetamol 500mg en tabletas. La presentación de 30 tabletas cuesta ₡2 500."},
+    {"cliente": "¿Lo tiene en stock?", "tipo": "sin_respuesta", "accion": "abstenerse", "claves": [], "evidencia": null, "respuesta_ideal": "Para confirmar disponibilidad exacta, le recomiendo llamar al 2223-4567 o escribir al WhatsApp 8765-4321."}
+  ],
+  [
+    {"cliente": "¿A qué hora cierran hoy?", "tipo": "directa", "accion": "responder", "claves": ["8:00 p.m"], "evidencia": "Lunes a viernes: 8:00 a.m. - 8:00 p.m.", "respuesta_ideal": "Hoy abrimos hasta las 8:00 p.m."},
+    {"cliente": "¿Y el domingo?", "tipo": "seguimiento", "accion": "responder", "claves": ["10:00 a.m. - 4:00 p.m."], "evidencia": "Domingo: 10:00 a.m. - 4:00 p.m.", "respuesta_ideal": "El domingo abrimos de 10:00 a.m. a 4:00 p.m."},
+    {"cliente": "¿Cierran en feriados?", "tipo": "si_no", "accion": "responder", "claves": ["Feriados: cerrado"], "evidencia": "Feriados: cerrado", "respuesta_ideal": "Sí, cerramos completamente en feriados."}
+  ],
+  [
+    {"cliente": "Me duele la cabeza, ¿qué me recomienda?", "tipo": "instruccion", "accion": "responder", "claves": ["médico", "consulte"], "evidencia": "DIAGNÓSTICOS Y SÍNTOMAS: NUNCA intentes diagnosticar enfermedades ni recomiendes qué medicamento usar.", "respuesta_ideal": "Le recomiendo que visite a un médico para que diagnostique. Nuestro farmacéutico puede asesorarlo sobre medicamentos disponibles si trae receta médica."},
+    {"cliente": "¿Dónde puedo encontrar un médico cercano?", "tipo": "sin_respuesta", "accion": "abstenerse", "claves": [], "evidencia": null, "respuesta_ideal": "Disculpe, no tenemos esa información. Puede buscar en línea o llamar a su EPS."}
+  ],
+  [
+    {"cliente": "¿Hacen entregas a domicilio?", "tipo": "directa", "accion": "responder", "claves": ["entregas a domicilio", "martes y jueves"], "evidencia": "Martes y jueves entre las 2:00 p.m. y las 6:00 p.m.", "respuesta_ideal": "Sí, hacemos entregas a domicilio en San José los martes y jueves de 2:00 p.m. a 6:00 p.m."},
+    {"cliente": "¿Cuánto cuesta?", "tipo": "seguimiento", "accion": "responder", "claves": ["₡1 500", "gratis para compras mayores a ₡15 000"], "evidencia": "Costo: ₡1 500 (gratis para compras mayores a ₡15 000)", "respuesta_ideal": "El envío cuesta ₡1 500, pero es gratis si tu compra supera ₡15 000."},
+    {"cliente": "¿Cuánto demoran?", "tipo": "seguimiento", "accion": "responder", "claves": ["máximo 48 horas"], "evidencia": "Tiempo de entrega: máximo 48 horas", "respuesta_ideal": "Entregamos dentro de máximo 48 horas."},
+    {"cliente": "¿También hacen entregas lunes?", "tipo": "si_no", "accion": "responder", "claves": ["martes y jueves"], "evidencia": "Martes y jueves entre las 2:00 p.m. y las 6:00 p.m.", "respuesta_ideal": "No, solo hacemos entregas los martes y jueves."}
+  ],
+  [
+    {"cliente": "Compré un medicamento ayer pero cambié de opinión", "tipo": "instruccion", "accion": "responder", "claves": ["7 días", "comprobante", "caja original sin abrir"], "evidencia": "Las devoluciones se aceptan dentro de 7 días con el comprobante y la caja original sin abrir", "respuesta_ideal": "Aceptamos devoluciones dentro de 7 días con el comprobante y la caja original sin abrir. ¿Tienes estos requisitos?"},
+    {"cliente": "La caja ya está abierta porque vi el contenido", "tipo": "seguimiento", "accion": "responder", "claves": ["NO devolvemos medicamentos abiertos"], "evidencia": "NO devolvemos medicamentos abiertos ni sin empacar original", "respuesta_ideal": "Desafortunadamente, no podemos recibir devoluciones de medicamentos que ya fueron abiertos."},
+    {"cliente": "¿Puedo usar mi tarjeta de crédito?", "tipo": "si_no", "accion": "responder", "claves": ["tarjeta de crédito/débito", "Visa, MasterCard"], "evidencia": "Aceptamos efectivo, tarjeta de crédito/débito (Visa, MasterCard, SINPE)", "respuesta_ideal": "Sí, aceptamos Visa y MasterCard."}
+  ],
+  [
+    {"cliente": "¿Dónde quedan ustedes exactamente?", "tipo": "directa", "accion": "responder", "claves": ["Centro Comercial San José, Local 23"], "evidencia": "Centro Comercial San José, Local 23 - San José, Costa Rica", "respuesta_ideal": "Estamos en el Centro Comercial San José, Local 23."},
+    {"cliente": "¿Cuál es su número de teléfono?", "tipo": "directa", "accion": "responder", "claves": ["+506 2223-4567"], "evidencia": "Tel: +506 2223-4567 | WhatsApp: +506 8765-4321", "respuesta_ideal": "Nuestro teléfono es +506 2223-4567. También puedes escribirnos al WhatsApp +506 8765-4321."},
+    {"cliente": "¿Tienen vitaminas?", "tipo": "directa", "accion": "responder", "claves": ["Suplementos vitamínicos"], "evidencia": "✓ Suplementos vitamínicos y herbolarios", "respuesta_ideal": "Sí, tenemos suplementos vitamínicos. Los precios varían entre ₡6 500 y ₡9 500."},
+    {"cliente": "¿Me pueden hacer envío si compro menos de ₡15 000?", "tipo": "si_no", "accion": "responder", "claves": ["costo es ₡1 500"], "evidencia": "Costo: ₡1 500 (gratis para compras mayores a ₡15 000)", "respuesta_ideal": "Sí, pero tendríamos que cobrar ₡1 500 por el envío."},
+    {"cliente": "¿Cuándo puede llegar?", "tipo": "seguimiento", "accion": "responder", "claves": ["máximo 48 horas"], "evidencia": "Tiempo de entrega: máximo 48 horas", "respuesta_ideal": "Dentro de máximo 48 horas."}
+  ],
+  [
+    {"cliente": "Necesito un jarabe para la tos", "tipo": "directa", "accion": "responder", "claves": ["Jarabe para la tos: ₡3 500 - ₡4 200"], "evidencia": "Jarabe para la tos: ₡3 500 - ₡4 200", "respuesta_ideal": "Tenemos jarabe para la tos. Los precios están entre ₡3 500 y ₡4 200 dependiendo de la marca."},
+    {"cliente": "¿Cuál recomiendas?", "tipo": "sin_respuesta", "accion": "abstenerse", "claves": [], "evidencia": null, "respuesta_ideal": "Nuestro farmacéutico estaría encantado de recomendarte la mejor opción. Atiende lunes a viernes de 8am a 1pm y 3pm a 7pm."},
+    {"cliente": "Sí, gracias por la ayuda", "tipo": "charla", "accion": "charla", "claves": [], "evidencia": null, "respuesta_ideal": "De nada. Que te mejores pronto. ¡Visítanos cuando necesites!"}
+  ]
+]

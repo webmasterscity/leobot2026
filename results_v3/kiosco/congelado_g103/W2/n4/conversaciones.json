@@ -1,0 +1,305 @@
+[
+ [
+  {
+   "cliente": "Buenas! cuanto cuesta entrar a un partido en sombra?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "$8.00"
+   ],
+   "evidencia": "- Sombra general: $8.00",
+   "respuesta_ideal": "Entrar en Sombra general cuesta $8.00."
+  },
+  {
+   "cliente": "¿y en sol?",
+   "tipo": "seguimiento",
+   "accion": "responder",
+   "claves": [
+    "$5.00"
+   ],
+   "evidencia": "- Sol general: $5.00",
+   "respuesta_ideal": "En Sol general cuesta $5.00."
+  },
+  {
+   "cliente": "Voy con mi esposa y dos hijos de 8 y 3 años, en sol. ¿Cuánto pagaríamos?",
+   "tipo": "combinada",
+   "accion": "responder",
+   "claves": [
+    "$5.00",
+    "la mitad"
+   ],
+   "evidencia": "- Sol general: $5.00\n- Sombra general: $8.00\n- Preferencial: $15.00\n- Palco (por asiento): $30.00\n- Abono de temporada regular (12 partidos en casa): Sol $48.00 · Sombra $75.00. Es nominal; el cambio de nombre cuesta $5.00.\n- Niños menores de 5 años no pagan (sin asiento). Niños de 5 a 12 años pagan la mitad en Sol y Sombra general.",
+   "respuesta_ideal": "Los dos adultos en Sol pagan $5.00 cada uno ($10.00); el niño de 8 años paga la mitad ($2.50) y el de 3 años no paga porque es menor de 5 años (sin asiento). Total: $12.50."
+  },
+  {
+   "cliente": "¿Puedo pagar con tarjeta en la taquilla?",
+   "tipo": "si_no",
+   "accion": "responder",
+   "claves": [
+    "tarjeta de crédito o débito"
+   ],
+   "evidencia": "- Formas de pago en taquilla: efectivo y tarjeta de crédito o débito.",
+   "respuesta_ideal": "Sí, en la taquilla se paga en efectivo o con tarjeta de crédito o débito."
+  },
+  {
+   "cliente": "¿Cuánto cuesta un asiento en palco?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "$30.00"
+   ],
+   "evidencia": "- Palco (por asiento): $30.00",
+   "respuesta_ideal": "El palco cuesta $30.00 por asiento."
+  },
+  {
+   "cliente": "¿El palco incluye parqueo?",
+   "tipo": "sin_respuesta",
+   "accion": "abstenerse",
+   "claves": [],
+   "evidencia": null,
+   "respuesta_ideal": "No tengo ese dato: no cuento con información sobre si el palco incluye parqueo."
+  },
+  {
+   "cliente": "¿Hay descuento en la entrada para adultos mayores?",
+   "tipo": "sin_respuesta",
+   "accion": "abstenerse",
+   "claves": [],
+   "evidencia": null,
+   "respuesta_ideal": "No tengo ese dato: no cuento con información sobre descuentos para adultos mayores."
+  },
+  {
+   "cliente": "El partido se suspendió por lluvia, ¿mi entrada sirve para la nueva fecha?",
+   "tipo": "si_no",
+   "accion": "responder",
+   "claves": [
+    "fecha reprogramada"
+   ],
+   "evidencia": "- Si un partido se suspende, la entrada sirve para la fecha reprogramada. No hay reembolso salvo cancelación definitiva.",
+   "respuesta_ideal": "Sí: si un partido se suspende, la entrada sirve para la fecha reprogramada."
+  }
+ ],
+ [
+  {
+   "cliente": "¿Cuánto cuesta el abono de sombra?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "$75.00"
+   ],
+   "evidencia": "- Abono de temporada regular (12 partidos en casa): Sol $48.00 · Sombra $75.00. Es nominal; el cambio de nombre cuesta $5.00.",
+   "respuesta_ideal": "El abono de Sombra para la temporada regular (12 partidos en casa) cuesta $75.00."
+  },
+  {
+   "cliente": "¿Cuánto me ahorro con ese abono frente a comprar los 12 partidos sueltos en sombra?",
+   "tipo": "combinada",
+   "accion": "responder",
+   "claves": [
+    "$75.00",
+    "$8.00"
+   ],
+   "evidencia": "- Sombra general: $8.00\n- Preferencial: $15.00\n- Palco (por asiento): $30.00\n- Abono de temporada regular (12 partidos en casa): Sol $48.00 · Sombra $75.00. Es nominal; el cambio de nombre cuesta $5.00.",
+   "respuesta_ideal": "Los 12 partidos sueltos en Sombra serían 12 x $8.00 = $96.00; el abono cuesta $75.00, así que se ahorra $21.00."
+  },
+  {
+   "cliente": "¿Se puede pagar el abono en cuotas?",
+   "tipo": "sin_respuesta",
+   "accion": "abstenerse",
+   "claves": [],
+   "evidencia": null,
+   "respuesta_ideal": "No tengo ese dato: no cuento con información sobre pago del abono en cuotas."
+  },
+  {
+   "cliente": "¿Puedo pasarle mi abono a mi hermano?",
+   "tipo": "si_no",
+   "accion": "responder",
+   "claves": [
+    "$5.00"
+   ],
+   "evidencia": "- Abono de temporada regular (12 partidos en casa): Sol $48.00 · Sombra $75.00. Es nominal; el cambio de nombre cuesta $5.00.",
+   "respuesta_ideal": "Sí: el abono es nominal, pero se puede cambiar el nombre por $5.00."
+  }
+ ],
+ [
+  {
+   "cliente": "hacen visitas guiadas al estadio?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "10 a. m.",
+    "11:30 a. m."
+   ],
+   "evidencia": "Sábados a las 10 a. m. y a las 11:30 a. m. (duración: 60 minutos). Incluye camerinos, cancha y sala de trofeos.",
+   "respuesta_ideal": "Sí, hay visitas guiadas los sábados a las 10 a. m. y a las 11:30 a. m., con una duración de 60 minutos."
+  },
+  {
+   "cliente": "¿Cuánto sale?",
+   "tipo": "seguimiento",
+   "accion": "responder",
+   "claves": [
+    "$6.00",
+    "$3.00"
+   ],
+   "evidencia": "Precio: $6.00 adultos, $3.00 niños de 5 a 12 años.",
+   "respuesta_ideal": "Cuesta $6.00 para adultos y $3.00 para niños de 5 a 12 años."
+  },
+  {
+   "cliente": "Somos 20 de una escuela, ¿hay descuento?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "10 %",
+    "visitas@aguilasdellempa.com.sv"
+   ],
+   "evidencia": "Grupos de más de 15 personas: 10 % de descuento reservando con 5 días de anticipación en visitas@aguilasdellempa.com.sv",
+   "respuesta_ideal": "Sí: los grupos de más de 15 personas tienen 10 % de descuento reservando con 5 días de anticipación en visitas@aguilasdellempa.com.sv."
+  },
+  {
+   "cliente": "Si el sábado hay partido, ¿igual hacen el tour?",
+   "tipo": "si_no",
+   "accion": "responder",
+   "claves": [
+    "No se realizan tours"
+   ],
+   "evidencia": "No se realizan tours los días de partido.",
+   "respuesta_ideal": "No: no se realizan tours los días de partido."
+  }
+ ],
+ [
+  {
+   "cliente": "Necesito una camiseta para mi hijo, ¿cuánto vale?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "$28.00"
+   ],
+   "evidencia": "Camiseta réplica adulto $35.00 · camiseta niño $28.00 · gorra $12.00.",
+   "respuesta_ideal": "La camiseta réplica de niño cuesta $28.00."
+  },
+  {
+   "cliente": "¿Y le pueden poner su nombre?",
+   "tipo": "seguimiento",
+   "accion": "responder",
+   "claves": [
+    "$6.00"
+   ],
+   "evidencia": "Personalización con nombre y número: $6.00.",
+   "respuesta_ideal": "Sí, la personalización con nombre y número cuesta $6.00."
+  },
+  {
+   "cliente": "Si me queda chica y ya tiene el nombre, ¿me la cambian?",
+   "tipo": "si_no",
+   "accion": "responder",
+   "claves": [
+    "no se cambian"
+   ],
+   "evidencia": "Personalización con nombre y número: $6.00.\nCambios: dentro de 8 días con factura, sin uso y con etiqueta. No hay devoluciones de dinero. Las prendas personalizadas no se cambian.",
+   "respuesta_ideal": "No: las prendas personalizadas no se cambian."
+  },
+  {
+   "cliente": "¿Venden camisetas de portero?",
+   "tipo": "sin_respuesta",
+   "accion": "abstenerse",
+   "claves": [],
+   "evidencia": null,
+   "respuesta_ideal": "No tengo ese dato: no cuento con información sobre camisetas de portero."
+  },
+  {
+   "cliente": "Un señor afuera del estadio me ofrece entradas más baratas, ¿sirven?",
+   "tipo": "instruccion",
+   "accion": "responder",
+   "claves": [
+    "taquilla"
+   ],
+   "evidencia": "4. Si preguntan por entradas de reventa o compradas a un revendedor, advierte que solo son válidas las que se compran en la taquilla o en la web oficial.",
+   "respuesta_ideal": "No lo recomiendo: solo son válidas las entradas que se compran en la taquilla del estadio o en la web oficial, aguilasdellempa.com.sv."
+  }
+ ],
+ [
+  {
+   "cliente": "Mi niño tiene 9 años, ¿hay escuela de fútbol?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "6 a 14 años"
+   ],
+   "evidencia": "Niños y niñas de 6 a 14 años. Entrenamientos los sábados de 8 a 10 a. m. en la cancha auxiliar.",
+   "respuesta_ideal": "Sí, la escuela de fútbol infantil recibe niños y niñas de 6 a 14 años y entrena los sábados de 8 a 10 a. m."
+  },
+  {
+   "cliente": "¿Cuánto cuesta inscribirlo y pagar el primer mes?",
+   "tipo": "combinada",
+   "accion": "responder",
+   "claves": [
+    "$15.00",
+    "$25.00"
+   ],
+   "evidencia": "Inscripción: $15.00 (incluye uniforme). Mensualidad: $25.00.",
+   "respuesta_ideal": "La inscripción cuesta $15.00 (incluye uniforme) y la mensualidad $25.00: $40.00 el primer mes."
+  },
+  {
+   "cliente": "¿Qué documentos piden?",
+   "tipo": "seguimiento",
+   "accion": "responder",
+   "claves": [
+    "partida de nacimiento",
+    "certificado médico"
+   ],
+   "evidencia": "Documentos: copia de la partida de nacimiento y certificado médico reciente.",
+   "respuesta_ideal": "Piden copia de la partida de nacimiento y un certificado médico reciente."
+  },
+  {
+   "cliente": "¿Puedo entrar al estadio con mi mochila?",
+   "tipo": "si_no",
+   "accion": "responder",
+   "claves": [
+    "mochilas"
+   ],
+   "evidencia": "No se permiten: mochilas, botellas de vidrio, bebidas alcohólicas, sombrillas ni cámaras profesionales. Bolsos de mano hasta 30 x 30 cm.",
+   "respuesta_ideal": "No: las mochilas no se permiten; solo bolsos de mano de hasta 30 x 30 cm."
+  },
+  {
+   "cliente": "¿Cuándo juega el próximo partido en casa?",
+   "tipo": "sin_respuesta",
+   "accion": "abstenerse",
+   "claves": [],
+   "evidencia": "2. Si no tienes el dato, dilo con sencillez y no lo inventes. No des fechas de partidos, resultados ni pronósticos.",
+   "respuesta_ideal": "No tengo ese dato: no manejo el calendario de partidos."
+  },
+  {
+   "cliente": "¿Tú qué opinas, ganará el sábado el equipo?",
+   "tipo": "sin_respuesta",
+   "accion": "abstenerse",
+   "claves": [],
+   "evidencia": "3. No opines sobre jugadores, árbitros, rivales ni sobre el resultado de un partido. Si te lo piden, responde amablemente que eres el asistente del club y ofrece ayuda con entradas, tienda, visitas o escuela de fútbol.",
+   "respuesta_ideal": "No opino sobre resultados ni pronósticos; soy el asistente del club y puedo ayudarle con entradas, tienda, visitas o la escuela de fútbol."
+  }
+ ],
+ [
+  {
+   "cliente": "Hay una pelea en la tribuna de sol, ¿a quién aviso?",
+   "tipo": "instruccion",
+   "accion": "responder",
+   "claves": [
+    "2393-0199"
+   ],
+   "evidencia": "Seguridad del estadio en día de partido: 2393-0199.",
+   "respuesta_ideal": "Avise de inmediato a Seguridad del estadio, 2393-0199, y llame también al 911."
+  },
+  {
+   "cliente": "Quiero hablar con el presidente del club para proponerle un patrocinio.",
+   "tipo": "instruccion",
+   "accion": "derivar",
+   "claves": [],
+   "evidencia": "5. Si alguien pide una acreditación de prensa o quiere hablar con un periodista, un patrocinador o un directivo, remítelo a Comunicaciones y prensa, sin dar tú ninguna respuesta por el club.",
+   "respuesta_ideal": "Para patrocinios debe dirigirse a Comunicaciones y prensa: prensa@aguilasdellempa.com.sv."
+  },
+  {
+   "cliente": "Gracias, ¡hasta luego!",
+   "tipo": "charla",
+   "accion": "charla",
+   "claves": [],
+   "evidencia": "1. Saluda con \"¡Bienvenido a la casa de las Águilas!\" y despídete con \"¡Vamos Águilas!\".",
+   "respuesta_ideal": "¡Gracias por visitarnos! ¡Vamos Águilas!"
+  }
+ ]
+]

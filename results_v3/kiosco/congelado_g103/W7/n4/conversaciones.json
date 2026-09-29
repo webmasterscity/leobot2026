@@ -1,0 +1,148 @@
+[
+  [
+    {
+      "cliente": "Hola, ¿hacen talleres de cerámica para principiantes?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["Taller Introductorio"],
+      "evidencia": "Taller Introductorio \"Mi Primera Pieza\" (4 horas)",
+      "respuesta_ideal": "Sí, tenemos el Taller Introductorio 'Mi Primera Pieza' para principiantes de 4 horas."
+    },
+    {
+      "cliente": "¿Cuánto cuesta?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["$450 MXN"],
+      "evidencia": "Precio: $450 MXN por persona",
+      "respuesta_ideal": "El taller cuesta $450 MXN por persona e incluye arcilla, herramientas, esmalte y cocción."
+    },
+    {
+      "cliente": "¿A que horas es?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["martes y jueves a las 10:00 am", "sábados a las 2:00 pm"],
+      "evidencia": "Frecuencia: Martes y jueves a las 10:00 am, sábados a las 2:00 pm",
+      "respuesta_ideal": "Martes y jueves a las 10:00 am, o sábados a las 2:00 pm."
+    },
+    {
+      "cliente": "¿Puedo traer a mi hijo de 10 años?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["A partir de 8 años", "acompañante mayor de 18 años"],
+      "evidencia": "Edades: A partir de 8 años. Menores: Requieren acompañante mayor de 18 años.",
+      "respuesta_ideal": "Sí, a partir de 8 años pueden venir, pero necesitan que un adulto mayor de 18 años los acompañe."
+    }
+  ],
+  [
+    {
+      "cliente": "¿Venden piezas también?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["TIENDA DE PIEZAS"],
+      "evidencia": "TIENDA DE PIEZAS: Disponibles en el taller o en línea por WhatsApp",
+      "respuesta_ideal": "Sí, vendemos piezas de cerámica artesanal en el taller y también por WhatsApp."
+    },
+    {
+      "cliente": "¿Cuál es el precio de una cazuela?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["$85 MXN", "$120 MXN"],
+      "evidencia": "Cazuelas de barro (pequeñas): $85 MXN. Cazuelas de barro (medianas): $120 MXN",
+      "respuesta_ideal": "Las cazuelas pequeñas cuestan $85 MXN y las medianas $120 MXN."
+    },
+    {
+      "cliente": "¿Tienen figuras artesanales?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["Figuras artesanales", "Alebrijes"],
+      "evidencia": "Figuras artesanales (Alebrijes): $180 - $400 MXN",
+      "respuesta_ideal": "Sí, tenemos figuras artesanales Alebrijes de $180 a $400 MXN."
+    },
+    {
+      "cliente": "Quiero una pieza con mi nombre. ¿Se puede?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["Piezas personalizadas", "2 semanas de plazo"],
+      "evidencia": "Piezas personalizadas: bajo pedido, 2 semanas de plazo",
+      "respuesta_ideal": "Sí, hacemos piezas personalizadas bajo pedido con 2 semanas de plazo. Contáctanos por WhatsApp para cotizar."
+    }
+  ],
+  [
+    {
+      "cliente": "Hay taller de 3 días?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["Taller Intensivo", "Tirador de Barro"],
+      "evidencia": "Taller Intensivo \"Tirador de Barro\" (3 días, 6 horas por día)",
+      "respuesta_ideal": "Sí, el Taller Intensivo 'Tirador de Barro' dura 3 días con 6 horas cada día."
+    },
+    {
+      "cliente": "¿Cuánto cuesta ese taller?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["$1 200 MXN"],
+      "evidencia": "Precio: $1 200 MXN. Incluye: Todo el material y almuerzo del mediodía",
+      "respuesta_ideal": "Cuesta $1 200 MXN e incluye material y almuerzo del mediodía."
+    },
+    {
+      "cliente": "¿Cuándo comienzan?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["Primeros lunes de cada mes"],
+      "evidencia": "Inicio: Primeros lunes de cada mes",
+      "respuesta_ideal": "El taller intensivo comienza los primeros lunes de cada mes."
+    },
+    {
+      "cliente": "¿Es necesario haber hecho el taller introductorio antes?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["Intermedio (requiere haber completado el introductorio)"],
+      "evidencia": "Nivel: Intermedio (requiere haber completado el introductorio)",
+      "respuesta_ideal": "Sí, es nivel intermedio y necesitas haber completado el Taller Introductorio antes."
+    }
+  ],
+  [
+    {
+      "cliente": "¿Cuanto tardan en entregar una pieza que hago en el taller?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["al día siguiente", "2 días hábiles"],
+      "evidencia": "Entregas: Piezas sin pintar se entregan al día siguiente. Piezas pintadas: 2 días hábiles.",
+      "respuesta_ideal": "Piezas sin pintar se entregan al día siguiente. Si están pintadas, tardan 2 días hábiles."
+    },
+    {
+      "cliente": "¿Puedo cancelar si cambio de idea?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["Libre hasta 48 horas antes"],
+      "evidencia": "Cancelación de taller: Libre hasta 48 horas antes del inicio.",
+      "respuesta_ideal": "Sí, la cancelación es libre hasta 48 horas antes del taller. Después pierdes tu pago."
+    }
+  ],
+  [
+    {
+      "cliente": "El maestro Miguel, ¿qué tal hace cerámica?",
+      "tipo": "sin_respuesta",
+      "accion": "responder",
+      "claves": ["premio", "Manos de Oaxaca", "décadas", "hornos de leña"],
+      "evidencia": "El maestro Miguel Flores aprendió cerámica con su abuelo a los 7 años. Ganó el premio \"Manos de Oaxaca\" en 2015.",
+      "respuesta_ideal": "El maestro Miguel es excelente. Aprendió desde los 7 años con su abuelo y ganó el premio 'Manos de Oaxaca' en 2015."
+    },
+    {
+      "cliente": "¿Dónde está el taller?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["Avenida Independencia 502", "Centro Histórico"],
+      "evidencia": "Dirección: Avenida Independencia 502, Centro Histórico, Oaxaca de Juárez",
+      "respuesta_ideal": "Estamos en Avenida Independencia 502, en el Centro Histórico de Oaxaca."
+    },
+    {
+      "cliente": "¿Hay estacionamiento?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["No disponemos de estacionamiento propio"],
+      "evidencia": "No disponemos de estacionamiento propio. La zona es de estacionamiento público en la calle.",
+      "respuesta_ideal": "No tenemos estacionamiento propio, pero hay estacionamiento público en la calle cercano al Centro Histórico."
+    }
+  ]
+]

@@ -1,0 +1,36 @@
+[
+  [
+    {"cliente": "¿Cuánto cuesta una noche en la habitación estándar?", "tipo": "directa", "accion": "responder", "claves": ["$89 USD/noche"], "evidencia": "Estándar (1 cama queen): $89 USD/noche | Capacidad: 1-2 personas", "respuesta_ideal": "La habitación estándar cuesta $89 USD por noche, con capacidad para 1-2 personas."},
+    {"cliente": "¿Qué incluye?", "tipo": "seguimiento", "accion": "responder", "claves": ["WiFi gratis", "aire acondicionado", "desayuno"], "evidencia": "Todos incluyen: WiFi gratis, aire acondicionado, TV de 42\", minibar, cafetera, baño privado, toallas incluidas. Desayuno buffet: incluido en todas las tarifas", "respuesta_ideal": "Incluye WiFi gratis, aire acondicionado, TV, minibar, cafetera y desayuno buffet."}
+  ],
+  [
+    {"cliente": "Quisiera reservar para el 15 de marzo", "tipo": "instruccion", "accion": "responder", "claves": ["contactar", "reservas@casadobada.mx", "WhatsApp"], "evidencia": "Si el cliente quiere hacer una reserva nueva, toma fecha de entrada, salida, número de habitaciones, tipo de habitación si prefiere, y número de personas", "respuesta_ideal": "Claro, para hacer una reserva necesito saber: ¿hasta qué fecha? ¿Cuántas noches? ¿Cuántas personas? ¿Prefieres algún tipo de habitación?"},
+    {"cliente": "Una noche, dos personas", "tipo": "seguimiento", "accion": "responder", "claves": ["reservas@casadobada.mx", "+55 1234-5678"], "evidencia": "Pueden confirmar vía email (reservas@casadobada.mx) o WhatsApp (+55 1234-5678)", "respuesta_ideal": "Perfecto. Para una noche con 2 personas en habitación estándar sería $89 USD. Confirma tu reserva a reservas@casadobada.mx o al WhatsApp +55 1234-5678."}
+  ],
+  [
+    {"cliente": "¿Aceptan mascotas?", "tipo": "si_no", "accion": "responder", "claves": ["no se permiten mascotas"], "evidencia": "Mascotas: no se permiten", "respuesta_ideal": "No, desafortunadamente no permitimos mascotas en el hotel."},
+    {"cliente": "¿Qué tal si es un gato pequeño?", "tipo": "seguimiento", "accion": "charla", "claves": [], "evidencia": null, "respuesta_ideal": "Lamento, nuestra política es sin mascotas sin excepciones. Pero hay hoteles pet-friendly en la zona."}
+  ],
+  [
+    {"cliente": "¿Cuál es el horario de check-in?", "tipo": "directa", "accion": "responder", "claves": ["3:00 p.m."], "evidencia": "Check-in: a partir de las 3:00 p.m.", "respuesta_ideal": "El check-in es a partir de las 3:00 p.m."},
+    {"cliente": "¿Puedo entrar a las 2 p.m.?", "tipo": "si_no", "accion": "responder", "claves": ["sujeto a disponibilidad, sin costo adicional"], "evidencia": "Check-in anticipado (antes de las 3:00 p.m.): sujeto a disponibilidad, sin costo adicional si hay rooms limpias", "respuesta_ideal": "Si hay habitaciones limpias disponibles, sí puedes entrar antes. Sin costo adicional. Verifica directamente en recepción."},
+    {"cliente": "¿A qué hora debo dejar la habitación?", "tipo": "directa", "accion": "responder", "claves": ["11:00 a.m."], "evidencia": "Check-out: hasta las 11:00 a.m.", "respuesta_ideal": "El check-out es hasta las 11:00 a.m."},
+    {"cliente": "¿Puedo quedarme hasta las 2pm?", "tipo": "si_no", "accion": "responder", "claves": ["$30 USD extra"], "evidencia": "Check-out tardío disponible (hasta 2:00 p.m.): $30 USD extra", "respuesta_ideal": "Sí, puedes solicitar check-out tardío hasta las 2 p.m. por $30 USD adicionales."}
+  ],
+  [
+    {"cliente": "¿Incluye desayuno?", "tipo": "si_no", "accion": "responder", "claves": ["incluido en todas las tarifas"], "evidencia": "Desayuno buffet: incluido en todas las tarifas (6:30-10:00 a.m.)", "respuesta_ideal": "Sí, el desayuno buffet está incluido en todas nuestras tarifas, de 6:30 a 10:00 a.m."},
+    {"cliente": "¿Hay opciones vegetarianas?", "tipo": "sin_respuesta", "accion": "abstenerse", "claves": [], "evidencia": null, "respuesta_ideal": "Sobre las opciones específicas del menú, te recomiendo que preguntes directamente en recepción o al restaurante cuando llegues."},
+    {"cliente": "¿Hay estacionamiento?", "tipo": "directa", "accion": "responder", "claves": ["$10 USD/noche", "vigilado"], "evidencia": "Estacionamiento: $10 USD/noche (vigilado)", "respuesta_ideal": "Sí, hay estacionamiento vigilado. Cuesta $10 USD por noche."}
+  ],
+  [
+    {"cliente": "Si cancelo dentro de 2 días de mi llegada, ¿pierdo todo?", "tipo": "directa", "accion": "responder", "claves": ["se cobra el 50% del monto"], "evidencia": "Cancelaciones dentro de 48 horas: se cobra 50% del monto", "respuesta_ideal": "Si cancelas dentro de 48 horas antes del check-in, se cobra el 50% del monto de tu reserva."},
+    {"cliente": "¿Puedo hacer una reserva larga y obtener descuento?", "tipo": "directa", "accion": "responder", "claves": ["7+ noches: 10% de descuento", "30+ noches: 20% de descuento"], "evidencia": "7+ noches: 10% de descuento sobre tarifa diaria / 30+ noches: 20% de descuento + piso gratis de mensajería", "respuesta_ideal": "Sí. De 7 a 29 noches es 10% de descuento. De 30+ noches es 20% de descuento más servicio de mensajería gratis."}
+  ],
+  [
+    {"cliente": "¿Qué tal la Suite? ¿Cuántas habitaciones tiene?", "tipo": "directa", "accion": "responder", "claves": ["Suite (2 habitaciones + sala): $299 USD/noche"], "evidencia": "Suite (2 habitaciones + sala): $299 USD/noche | Capacidad: 1-6 personas", "respuesta_ideal": "La Suite tiene 2 habitaciones, una sala, y cuesta $299 USD por noche. Tiene capacidad para hasta 6 personas."},
+    {"cliente": "¿Dónde está el hotel exactamente?", "tipo": "directa", "accion": "responder", "claves": ["Calle Morelos 456, Coyoacán"], "evidencia": "Calle Morelos 456, Coyoacán, Ciudad de México", "respuesta_ideal": "Estamos en Calle Morelos 456, en Coyoacán, Ciudad de México."},
+    {"cliente": "¿Qué hay cerca?", "tipo": "directa", "accion": "responder", "claves": ["Metro Coyoacán a 5 minutos", "Museos cercanos", "Centro Histórico"], "evidencia": "Metro Coyoacán a 5 minutos / Museos cercanos (Frida Kahlo, Anahuacalli) a 10-15 minutos / Centro Histórico a 20-25 minutos", "respuesta_ideal": "Estamos a 5 minutos del Metro Coyoacán, cerca de museos como Frida Kahlo y Anahuacalli. El Centro Histórico está a 20-25 minutos."},
+    {"cliente": "¿Qué métodos de pago aceptan?", "tipo": "directa", "accion": "responder", "claves": ["Efectivo", "tarjetas débito/crédito", "transferencia bancaria", "PayPal"], "evidencia": "Efectivo (MXN o USD), tarjetas débito/crédito, transferencia bancaria, PayPal", "respuesta_ideal": "Aceptamos efectivo (MXN o USD), tarjetas débito/crédito, transferencia bancaria y PayPal."},
+    {"cliente": "¿Necesito dejar un depósito de seguridad?", "tipo": "si_no", "accion": "responder", "claves": ["Depósito de seguridad: $50 USD"], "evidencia": "Depósito de seguridad: $50 USD en efectivo o bloqueo en tarjeta", "respuesta_ideal": "Sí, se solicita un depósito de seguridad de $50 USD en efectivo o un bloqueo en tarjeta."}
+  ]
+]

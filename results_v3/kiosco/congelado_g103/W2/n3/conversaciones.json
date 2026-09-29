@@ -1,0 +1,300 @@
+[
+ [
+  {
+   "cliente": "Buenas noches, ¿a qué hora cierra el mall hoy? Es sábado.",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "10 p. m."
+   ],
+   "evidencia": "Viernes y sábados: 10 a. m. – 10 p. m.",
+   "respuesta_ideal": "Los viernes y sábados cerramos a las 10 p. m."
+  },
+  {
+   "cliente": "¿y mañana domingo?",
+   "tipo": "seguimiento",
+   "accion": "responder",
+   "claves": [
+    "8 p. m."
+   ],
+   "evidencia": "Domingos: 11 a. m. – 8 p. m.",
+   "respuesta_ideal": "Los domingos abrimos de 11 a. m. a 8 p. m."
+  },
+  {
+   "cliente": "¿El supermercado abre igual que el mall?",
+   "tipo": "si_no",
+   "accion": "responder",
+   "claves": [
+    "8 a. m. a 10 p. m."
+   ],
+   "evidencia": "El supermercado SuperCibao tiene su propio horario: abre todos los días de 8 a. m. a 10 p. m.",
+   "respuesta_ideal": "No: SuperCibao tiene su propio horario y abre todos los días de 8 a. m. a 10 p. m."
+  },
+  {
+   "cliente": "¿A qué hora cierran el 24 de diciembre?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "6 p. m."
+   ],
+   "evidencia": "Feriados: cerramos a las 7 p. m. El 24 y el 31 de diciembre cerramos a las 6 p. m.",
+   "respuesta_ideal": "El 24 de diciembre cerramos a las 6 p. m."
+  },
+  {
+   "cliente": "¿A qué hora es la última función del cine?",
+   "tipo": "sin_respuesta",
+   "accion": "derivar",
+   "claves": [],
+   "evidencia": "2. Si no tienes el dato, dilo con claridad, no adivines y remite al cliente al mostrador de Servicio al Cliente, nivel 1.",
+   "respuesta_ideal": "No tengo el horario de las funciones del cine. Le sugiero consultarlo en el mostrador de Servicio al Cliente, nivel 1."
+  }
+ ],
+ [
+  {
+   "cliente": "cuanto cobran el parqueo?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "RD$ 50",
+    "RD$ 300"
+   ],
+   "evidencia": "Las dos primeras horas son gratis presentando la factura sellada de cualquier compra de RD$ 500 o más. Después se cobran RD$ 50 por hora o fracción, con un tope diario de RD$ 300. Boleto perdido: RD$ 400.",
+   "respuesta_ideal": "Las dos primeras horas son gratis con la factura sellada de una compra de RD$ 500 o más; después cuesta RD$ 50 por hora o fracción, con un tope diario de RD$ 300."
+  },
+  {
+   "cliente": "estuve 5 horas y compre algo de 1,200 pesos, cuanto pago?",
+   "tipo": "combinada",
+   "accion": "responder",
+   "claves": [
+    "RD$ 50"
+   ],
+   "evidencia": "Las dos primeras horas son gratis presentando la factura sellada de cualquier compra de RD$ 500 o más. Después se cobran RD$ 50 por hora o fracción, con un tope diario de RD$ 300. Boleto perdido: RD$ 400.",
+   "respuesta_ideal": "Con la factura sellada las 2 primeras horas son gratis; las 3 horas restantes son 3 x RD$ 50 = RD$ 150 en total."
+  },
+  {
+   "cliente": "Perdí el boleto del parqueo, ¿qué pasa?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "RD$ 400"
+   ],
+   "evidencia": "Las dos primeras horas son gratis presentando la factura sellada de cualquier compra de RD$ 500 o más. Después se cobran RD$ 50 por hora o fracción, con un tope diario de RD$ 300. Boleto perdido: RD$ 400.",
+   "respuesta_ideal": "El boleto perdido tiene un costo de RD$ 400."
+  },
+  {
+   "cliente": "¿Puedo dejar la moto en el parqueo?",
+   "tipo": "si_no",
+   "accion": "responder",
+   "claves": [
+    "zona lateral"
+   ],
+   "evidencia": "Las motocicletas estacionan gratis en la zona lateral.",
+   "respuesta_ideal": "Sí, las motocicletas estacionan gratis en la zona lateral."
+  },
+  {
+   "cliente": "¿Hay valet parking? ¿Cuánto cuesta?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "RD$ 200"
+   ],
+   "evidencia": "Valet parking: RD$ 200 por servicio, de viernes a domingo de 5 p. m. a 10 p. m.",
+   "respuesta_ideal": "Sí, el valet parking cuesta RD$ 200 por servicio y funciona de viernes a domingo de 5 p. m. a 10 p. m."
+  },
+  {
+   "cliente": "Me rayaron el carro en el parqueo, ¿quién se hace cargo?",
+   "tipo": "instruccion",
+   "accion": "derivar",
+   "claves": [],
+   "evidencia": "5. Si reportan daños o robos a un vehículo en el parqueo, no tomes posición: recuérdales guardar el boleto y derívalos a la Administración, ext. 2.",
+   "respuesta_ideal": "Lamento lo ocurrido. Guarde su boleto y comuníquese con la Administración, ext. 2 del 809-555-0142."
+  }
+ ],
+ [
+  {
+   "cliente": "Tengo dos niños de 4 y 7 años, ¿cuánto sería una hora en la zona infantil?",
+   "tipo": "combinada",
+   "accion": "responder",
+   "claves": [
+    "RD$ 350",
+    "paga la mitad"
+   ],
+   "evidencia": "Niños de 3 a 10 años. RD$ 350 por niño por hora; el segundo hermano paga la mitad. Los adultos acompañantes entran gratis. Es obligatorio usar calcetines antideslizantes (se venden en la entrada a RD$ 100).",
+   "respuesta_ideal": "La hora cuesta RD$ 350 por el primer niño y el segundo hermano paga la mitad, RD$ 175: en total RD$ 525 por hora. Los adultos acompañantes entran gratis."
+  },
+  {
+   "cliente": "¿Yo también tengo que pagar?",
+   "tipo": "seguimiento",
+   "accion": "responder",
+   "claves": [
+    "entran gratis"
+   ],
+   "evidencia": "Niños de 3 a 10 años. RD$ 350 por niño por hora; el segundo hermano paga la mitad. Los adultos acompañantes entran gratis. Es obligatorio usar calcetines antideslizantes (se venden en la entrada a RD$ 100).",
+   "respuesta_ideal": "No, los adultos acompañantes entran gratis."
+  },
+  {
+   "cliente": "Mi hija tiene 12 años, ¿puede entrar?",
+   "tipo": "si_no",
+   "accion": "responder",
+   "claves": [
+    "3 a 10 años"
+   ],
+   "evidencia": "Niños de 3 a 10 años. RD$ 350 por niño por hora; el segundo hermano paga la mitad. Los adultos acompañantes entran gratis. Es obligatorio usar calcetines antideslizantes (se venden en la entrada a RD$ 100).",
+   "respuesta_ideal": "No: Aventuritas es para niños de 3 a 10 años."
+  },
+  {
+   "cliente": "¿Qué necesito llevar para que mi hijo juegue?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "calcetines antideslizantes"
+   ],
+   "evidencia": "Niños de 3 a 10 años. RD$ 350 por niño por hora; el segundo hermano paga la mitad. Los adultos acompañantes entran gratis. Es obligatorio usar calcetines antideslizantes (se venden en la entrada a RD$ 100).",
+   "respuesta_ideal": "Es obligatorio usar calcetines antideslizantes; se venden en la entrada a RD$ 100."
+  },
+  {
+   "cliente": "¿Hacen fiestas de cumpleaños en Aventuritas?",
+   "tipo": "sin_respuesta",
+   "accion": "derivar",
+   "claves": [],
+   "evidencia": "2. Si no tienes el dato, dilo con claridad, no adivines y remite al cliente al mostrador de Servicio al Cliente, nivel 1.",
+   "respuesta_ideal": "No tengo información sobre fiestas de cumpleaños. Le sugiero preguntar en Servicio al Cliente, nivel 1."
+  }
+ ],
+ [
+  {
+   "cliente": "¿Hay wifi gratis?",
+   "tipo": "si_no",
+   "accion": "responder",
+   "claves": [
+    "PlazaYaque_Free"
+   ],
+   "evidencia": "- Wifi gratuito: red PlazaYaque_Free.",
+   "respuesta_ideal": "Sí, tenemos wifi gratuito en la red PlazaYaque_Free."
+  },
+  {
+   "cliente": "¿Puedo entrar con mi perrito chihuahua en su bolso?",
+   "tipo": "si_no",
+   "accion": "responder",
+   "claves": [
+    "no se admiten"
+   ],
+   "evidencia": "- Mascotas: no se admiten, excepto perros de asistencia. Tampoco patinetas ni scooters.",
+   "respuesta_ideal": "No, no se admiten mascotas, salvo perros de asistencia."
+  },
+  {
+   "cliente": "Ayer perdí una cartera aquí, ¿cómo hago para recuperarla?",
+   "tipo": "instruccion",
+   "accion": "responder",
+   "claves": [
+    "ext. 100"
+   ],
+   "evidencia": "- Objetos perdidos: oficina de Seguridad, nivel 1, entrada norte. Se guardan por 30 días.\n- Seguridad 24 horas: 809-555-0142, ext. 100.",
+   "respuesta_ideal": "Vaya de inmediato a la oficina de Seguridad, en el nivel 1 junto a la entrada norte, o llame al 809-555-0142, ext. 100. Los objetos perdidos se guardan por 30 días."
+  },
+  {
+   "cliente": "¿Dónde queda el cajero automático?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "entrada norte"
+   ],
+   "evidencia": "Banco Cibao Popular\t1\tSucursal y cajeros automáticos, entrada norte",
+   "respuesta_ideal": "El Banco Cibao Popular y sus cajeros automáticos están en el nivel 1, por la entrada norte."
+  },
+  {
+   "cliente": "¿Y la farmacia?",
+   "tipo": "seguimiento",
+   "accion": "responder",
+   "claves": [
+    "Farmacia Vida Plus"
+   ],
+   "evidencia": "Farmacia Vida Plus\t1\tFarmacia",
+   "respuesta_ideal": "La Farmacia Vida Plus está en el nivel 1."
+  }
+ ],
+ [
+  {
+   "cliente": "¿Hay tienda de ropa deportiva?",
+   "tipo": "sin_respuesta",
+   "accion": "derivar",
+   "claves": [],
+   "evidencia": "2. Si no tienes el dato, dilo con claridad, no adivines y remite al cliente al mostrador de Servicio al Cliente, nivel 1.",
+   "respuesta_ideal": "No tengo ese dato. Le sugiero preguntar en Servicio al Cliente, nivel 1."
+  },
+  {
+   "cliente": "¿Cuánto cuesta la entrada al cine para un niño?",
+   "tipo": "sin_respuesta",
+   "accion": "derivar",
+   "claves": [],
+   "evidencia": "2. Si no tienes el dato, dilo con claridad, no adivines y remite al cliente al mostrador de Servicio al Cliente, nivel 1.",
+   "respuesta_ideal": "No tengo los precios del cine. Le sugiero preguntar en Servicio al Cliente, nivel 1."
+  },
+  {
+   "cliente": "¿Se puede cargar el celular en algún lado del mall?",
+   "tipo": "sin_respuesta",
+   "accion": "derivar",
+   "claves": [],
+   "evidencia": "2. Si no tienes el dato, dilo con claridad, no adivines y remite al cliente al mostrador de Servicio al Cliente, nivel 1.",
+   "respuesta_ideal": "No tengo información sobre puntos de carga de celulares. Le sugiero preguntar en Servicio al Cliente, nivel 1."
+  },
+  {
+   "cliente": "¿Hay ofertas de celulares hoy en Tecno Punto?",
+   "tipo": "instruccion",
+   "accion": "derivar",
+   "claves": [],
+   "evidencia": "4. No confirmes ofertas, promociones, precios ni existencias de productos de las tiendas: el centro comercial no los controla. Dile que pregunte directamente en la tienda.",
+   "respuesta_ideal": "No puedo confirmar ofertas de las tiendas; por favor pregunte directamente en Tecno Punto."
+  }
+ ],
+ [
+  {
+   "cliente": "Quiero regalar una gift card, ¿de cuánto las hay?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "500",
+    "1,000",
+    "2,000"
+   ],
+   "evidencia": "Disponible en montos de RD$ 500, RD$ 1,000 y RD$ 2,000. Válida por 12 meses en las tiendas participantes; no sirve en SuperCibao ni en la farmacia. Se compra en Servicio al Cliente.",
+   "respuesta_ideal": "La gift card se ofrece en montos de RD$ 500, RD$ 1,000 y RD$ 2,000, con validez de 12 meses."
+  },
+  {
+   "cliente": "¿Sirve en el supermercado?",
+   "tipo": "seguimiento",
+   "accion": "responder",
+   "claves": [
+    "no sirve en SuperCibao"
+   ],
+   "evidencia": "Disponible en montos de RD$ 500, RD$ 1,000 y RD$ 2,000. Válida por 12 meses en las tiendas participantes; no sirve en SuperCibao ni en la farmacia. Se compra en Servicio al Cliente.",
+   "respuesta_ideal": "No: la gift card no sirve en SuperCibao ni en la farmacia."
+  },
+  {
+   "cliente": "¿Cuánto cuesta alquilar una isla comercial?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "25,000"
+   ],
+   "evidencia": "Alquiler de islas comerciales: RD$ 25,000 al mes.",
+   "respuesta_ideal": "El alquiler de islas comerciales cuesta RD$ 25,000 al mes."
+  },
+  {
+   "cliente": "¿Hacen envíos a domicilio de lo que uno compra?",
+   "tipo": "sin_respuesta",
+   "accion": "derivar",
+   "claves": [],
+   "evidencia": "2. Si no tienes el dato, dilo con claridad, no adivines y remite al cliente al mostrador de Servicio al Cliente, nivel 1.",
+   "respuesta_ideal": "No tengo información sobre envíos a domicilio. Le sugiero preguntar en Servicio al Cliente, nivel 1."
+  },
+  {
+   "cliente": "Muchas gracias, hasta luego",
+   "tipo": "charla",
+   "accion": "charla",
+   "claves": [],
+   "evidencia": null,
+   "respuesta_ideal": "Con mucho gusto. ¡Hasta luego!"
+  }
+ ]
+]
