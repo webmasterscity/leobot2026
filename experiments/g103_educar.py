@@ -30,6 +30,8 @@ PAIR_SCALE = 0.5
 import os
 PAIR_SUPPORT = int(os.environ.get('PAIR_SUPPORT', '4'))
 PAIR_KEEP = float(os.environ.get('PAIR_KEEP', '0.04'))
+FAMILIES = set(os.environ.get('PAIR_FAMILIES', 'lex,shape,kind,src').split(','))
+KINDS = {'Kline', 'Ksentence', 'Kitem', 'Krow', 'Kheading', 'Kquestion'}
 C = float(os.environ.get('C_REG', '0.3'))
 EPOCHS = int(os.environ.get('EPOCHS', '25'))
 ETA = 0.3
@@ -134,6 +136,18 @@ def extract(bot: Bot, folders, shuffle_pairs=False, seed=0):
     return records
 
 
+def family(key: str) -> str:
+    """Familia de un par: `src` (origen instrucción), `kind` (tipo de unidad), `shape` (forma de un valor) o `lex` (palabra|palabra)."""
+    head, tail = key.split('|')
+    if head == 'SRC' or tail == 'SRC':
+        return 'src'
+    if head in KINDS or tail in KINDS:
+        return 'kind'
+    if tail.startswith('SH:'):
+        return 'shape'
+    return 'lex'
+
+
 def fit(records, use_pairs=True, seed=0):
     rows = [(dense, pairs, label) for r in records for dense, pairs, label, _ in r['candidates']]
     n_features = len(DENSE_FEATURES)
@@ -143,7 +157,8 @@ def fit(records, use_pairs=True, seed=0):
     if use_pairs:
         for _, pairs, _ in rows:
             for key in set(pairs):
-                support[key] = support.get(key, 0) + 1
+                if key.count('|') == 1 and family(key) in FAMILIES:
+                    support[key] = support.get(key, 0) + 1
     vocabulary = sorted(k for k, v in support.items() if v >= PAIR_SUPPORT)
     index = {k: j for j, k in enumerate(vocabulary)}
     data = [([(x - m) / s for x, m, s in zip(dense, mean, scale)], [index[k] for k in sorted(set(pairs)) if k in index], label)
