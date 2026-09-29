@@ -26,3 +26,7 @@ antes; si pasa, auditoría 5.10 y tag estable.
 Con `soft_prefix`, `candidate_model`, `general_knowledge` y `number_compare` apagados, el motor actual (`d1c92eb7…`) da las **585 respuestas
 del banco G-64 idénticas** a las del motor de `estable-G-19` (`11a1ef58…`, commit `ccd895f`) sobre la misma base `base_kiosco_nube.json`
 (resumen `47c1e2c6cf5e4509`), también con `PYTHONHASHSEED` 1 (`experiments/g114_compat585.py`).
+Regresión completa (`experiments.regression_batches`, motor `d1c92eb7…`): **Python 3.12.3: 684 pruebas, 6 fallos esperados, 0 fallos**
+(125 s). Con Python 3.11.15 falla `test_meta_v57` (2 casos, `meta_role_set_transfer` en vez de `cross_modal_projection_transfer`); falla igual
+con el motor del inicio de la sesión (`fa15c4a`) y pasa con 3.12 y 3.13: **defecto preexistente de dependencia de versión** (probablemente
+la suma de flotantes compensada de `sum()` desde 3.12), registrado; no afecta al kiosco.
