@@ -1,0 +1,228 @@
+[
+  [
+    {
+      "cliente": "Buenas tardes, hasta que hora atienden hoy viernes?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["6:00 p.m."],
+      "evidencia": "Lunes a viernes: 8:30 a.m. a 12:30 p.m. y de 2:00 p.m. a 6:00 p.m.",
+      "respuesta_ideal": "Buenas, bienvenido a Núñez & Asociados. De lunes a viernes atendemos hasta las 6:00 p.m."
+    },
+    {
+      "cliente": "y los sabados?",
+      "tipo": "seguimiento",
+      "accion": "responder",
+      "claves": ["9:00 a.m. a 12:00 m."],
+      "evidencia": "Sábados: 9:00 a.m. a 12:00 m.",
+      "respuesta_ideal": "Los sábados atendemos de 9:00 a.m. a 12:00 m."
+    },
+    {
+      "cliente": "abren los domingos?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["Domingos y feriados: cerrado"],
+      "evidencia": "Domingos y feriados: cerrado.",
+      "respuesta_ideal": "No, los domingos y feriados permanecemos cerrados."
+    },
+    {
+      "cliente": "quiero una cita para el sabado a las 10 de la mañana",
+      "tipo": "instruccion",
+      "accion": "responder",
+      "claves": ["nombre", "teléfono"],
+      "evidencia": "No confirme citas usted mismo: pida el nombre y el teléfono de la persona y explique que recepción le confirmará la cita por WhatsApp.",
+      "respuesta_ideal": "Con gusto. Deme su nombre y su teléfono y recepción le confirmará la cita por WhatsApp."
+    },
+    {
+      "cliente": "y si ese dia no puedo ir tengo que avisar?",
+      "tipo": "seguimiento",
+      "accion": "responder",
+      "claves": ["24 horas", "RD$ 500.00"],
+      "evidencia": "Si no puede asistir, avísenos con 24 horas de anticipación. Las ausencias sin aviso tienen un cargo de RD$ 500.00.",
+      "respuesta_ideal": "Sí, si no puede asistir avísenos con 24 horas de anticipación; las ausencias sin aviso tienen un cargo de RD$ 500.00."
+    },
+    {
+      "cliente": "tienen parqueo para clientes?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No tengo información sobre parqueo para clientes."
+    }
+  ],
+  [
+    {
+      "cliente": "cuanto cobran por hacer la declaracion de renta?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["RD$ 2,800.00"],
+      "evidencia": "Declaración jurada de renta de persona física (IR-1): RD$ 2,800.00.",
+      "respuesta_ideal": "La declaración jurada de renta de persona física (IR-1) cuesta RD$ 2,800.00."
+    },
+    {
+      "cliente": "¿y si tengo un apartamento alquilado?",
+      "tipo": "seguimiento",
+      "accion": "responder",
+      "claves": ["RD$ 4,200.00"],
+      "evidencia": "Si tiene ingresos por alquileres: RD$ 4,200.00.",
+      "respuesta_ideal": "Con ingresos por alquileres la declaración cuesta RD$ 4,200.00."
+    },
+    {
+      "cliente": "si hago la declaracion de renta con ingresos de alquiler y pago con tarjeta de credito, cuanto seria?",
+      "tipo": "combinada",
+      "accion": "responder",
+      "claves": ["RD$ 4,200.00", "recargo de 3 %"],
+      "evidencia": "Los pagos con tarjeta de crédito llevan un recargo de 3 %.",
+      "respuesta_ideal": "La declaración con ingresos por alquileres es RD$ 4,200.00 y pagar con tarjeta de crédito lleva un recargo de 3 %, o sea RD$ 4,326.00; recuerde que los precios no incluyen ITBIS (18 %)."
+    },
+    {
+      "cliente": "los precios que me dio incluyen el ITBIS?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["no incluyen ITBIS (18 %)"],
+      "evidencia": "Los precios no incluyen ITBIS (18 %).",
+      "respuesta_ideal": "No, los precios no incluyen ITBIS (18 %)."
+    },
+    {
+      "cliente": "yo gano como 85 mil al mes, cuanto me toca pagar de impuestos este año?",
+      "tipo": "instruccion",
+      "accion": "derivar",
+      "claves": [],
+      "evidencia": "No dé asesoría fiscal ni legal, ni calcule cuánto impuesto debe pagar una persona. Diga que eso se ve en una consulta con una contadora y recuerde que la primera consulta es gratis.",
+      "respuesta_ideal": "No puedo calcular cuánto impuesto le corresponde; eso se ve en una consulta con una contadora, y la primera consulta es gratis."
+    },
+    {
+      "cliente": "y de multa por declarar tarde cuanto cobra la DGII?",
+      "tipo": "instruccion",
+      "accion": "derivar",
+      "claves": [],
+      "evidencia": "Para multas, recargos o intereses de la DGII, no dé cifras: diga que dependen de cada caso y que se ven en consulta.",
+      "respuesta_ideal": "No puedo darle cifras; los recargos dependen de cada caso y se ven en una consulta."
+    }
+  ],
+  [
+    {
+      "cliente": "cuanto sale la contabilidad mensual para un colmado?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["RD$ 6,500.00", "50 transacciones"],
+      "evidencia": "Contabilidad mensual para pequeñas empresas: RD$ 6,500.00 al mes, hasta 50 transacciones.",
+      "respuesta_ideal": "La contabilidad mensual cuesta RD$ 6,500.00 al mes, hasta 50 transacciones."
+    },
+    {
+      "cliente": "mi negocio hace como 60 movimientos al mes, cuanto me saldria la contabilidad mensual?",
+      "tipo": "combinada",
+      "accion": "responder",
+      "claves": ["RD$ 6,500.00", "RD$ 90.00"],
+      "evidencia": "Contabilidad mensual para pequeñas empresas: RD$ 6,500.00 al mes, hasta 50 transacciones. Cada transacción adicional: RD$ 90.00.",
+      "respuesta_ideal": "Serían RD$ 7,400.00 al mes: RD$ 6,500.00 por las primeras 50 transacciones más RD$ 90.00 por cada una de las 10 adicionales (sin ITBIS)."
+    },
+    {
+      "cliente": "la contabilidad mensual incluye las declaraciones del ITBIS?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["Incluye las declaraciones mensuales de ITBIS (IT-1) y retenciones"],
+      "evidencia": "Incluye las declaraciones mensuales de ITBIS (IT-1) y retenciones.",
+      "respuesta_ideal": "Sí, incluye las declaraciones mensuales de ITBIS (IT-1) y retenciones."
+    },
+    {
+      "cliente": "que documentos tengo que llevar para la contabilidad mensual?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["RNC", "facturas de compras y ventas con NCF", "estados de cuenta bancarios"],
+      "evidencia": "Contabilidad mensual: RNC; facturas de compras y ventas con NCF; estados de cuenta bancarios.",
+      "respuesta_ideal": "Debe traer su RNC, las facturas de compras y ventas con NCF y los estados de cuenta bancarios."
+    },
+    {
+      "cliente": "tengo 3 empleados, me pueden llevar la nomina?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["5 empleados o más"],
+      "evidencia": "Nómina (TSS y pago de empleados): RD$ 250.00 por empleado al mes, para empresas con 5 empleados o más.",
+      "respuesta_ideal": "Nuestro servicio de nómina es para empresas con 5 empleados o más, así que con 3 empleados no lo ofrecemos."
+    },
+    {
+      "cliente": "hacen auditorias?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No tengo información sobre auditorías entre nuestros servicios."
+    },
+    {
+      "cliente": "cuanto cobran por cerrar una empresa?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No tengo la tarifa para el cierre de una empresa."
+    }
+  ],
+  [
+    {
+      "cliente": "cuanto cuesta montar una SRL y cuanto tardan?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["RD$ 38,000.00", "15 días laborables"],
+      "evidencia": "Constitución de compañía SRL (nombre comercial, registro mercantil y RNC): RD$ 38,000.00, en un plazo de 15 días laborables.",
+      "respuesta_ideal": "La constitución de una SRL cuesta RD$ 38,000.00 y toma 15 días laborables."
+    },
+    {
+      "cliente": "¿eso incluye los impuestos de registro?",
+      "tipo": "seguimiento",
+      "accion": "responder",
+      "claves": ["No incluye los impuestos de registro"],
+      "evidencia": "No incluye los impuestos de registro.",
+      "respuesta_ideal": "No, no incluye los impuestos de registro."
+    },
+    {
+      "cliente": "que necesito llevar para constituir la compañia?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["cédulas de los socios", "3 opciones de nombre comercial", "capital inicial acordado"],
+      "evidencia": "Constitución de SRL: cédulas de los socios; 3 opciones de nombre comercial; capital inicial acordado.",
+      "respuesta_ideal": "Necesita las cédulas de los socios, 3 opciones de nombre comercial y el capital inicial acordado."
+    },
+    {
+      "cliente": "y una sociedad anonima o una EIRL cuanto sale?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No tengo la tarifa para otro tipo de sociedad; solo tengo la de compañía SRL."
+    }
+  ],
+  [
+    {
+      "cliente": "puedo mandar los documentos por whatsapp?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["(829) 555-0177"],
+      "evidencia": "Sí, puede enviar fotos legibles al (829) 555-0177; los originales se entregan en la ofisina.",
+      "respuesta_ideal": "Sí, puede enviar fotos legibles al (829) 555-0177; los originales se entregan en la oficina."
+    },
+    {
+      "cliente": "deje mis papeles hace dos semanas, como va mi tramite con la DGII?",
+      "tipo": "instruccion",
+      "accion": "derivar",
+      "claves": [],
+      "evidencia": "Si alguien pregunta por el estado de un trámite ya iniciado, remítalo al Lic. Ernesto Bidó, ext. 3.",
+      "respuesta_ideal": "Para saber cómo va su trámite comuníquese con el Lic. Ernesto Bidó, ext. 3."
+    },
+    {
+      "cliente": "atienden en ingles?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No tengo información sobre atención en inglés."
+    },
+    {
+      "cliente": "muchas gracias, hasta luego",
+      "tipo": "charla",
+      "accion": "charla",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "A usted, que tenga un buen día."
+    }
+  ]
+]

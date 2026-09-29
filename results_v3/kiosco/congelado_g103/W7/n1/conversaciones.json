@@ -1,0 +1,188 @@
+[
+  [
+    {
+      "cliente": "¡Hola! Quisiera saber cuánto cuesta una habitación doble para dos noches.",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["$7.200"],
+      "evidencia": "Habitación Standard Doble: $7.200",
+      "respuesta_ideal": "Nuestras Habitaciones Standard Doble cuestan $7.200 por noche, lo que incluye desayuno buffet."
+    },
+    {
+      "cliente": "¿Y las suites? ¿Cuánto valen?",
+      "tipo": "seguimiento",
+      "accion": "responder",
+      "claves": ["$13.500", "$18.900"],
+      "evidencia": "Suite Junior: $13.500\nSuite Premium con terraza privada: $18.900",
+      "respuesta_ideal": "Tenemos Suite Junior a $13.500 y Suite Premium con terraza privada a $18.900 por noche, ambas con desayuno incluido."
+    },
+    {
+      "cliente": "¿Puedo llevar a mi perro?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["No se admiten mascotas"],
+      "evidencia": "Mascotas: No se admiten mascotas de ningún tamaño.",
+      "respuesta_ideal": "Lamentablemente no se admiten mascotas de ningún tamaño en Casa Aromas."
+    },
+    {
+      "cliente": "Gracias por la info, muy útil. ¿A qué hora puedo entrar mañana?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["14:00"],
+      "evidencia": "Check-in: 14:00",
+      "respuesta_ideal": "El check-in es a las 14:00 horas."
+    },
+    {
+      "cliente": "¿Ofrecen servicio de niñera durante la noche?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No contamos con ese servicio. Si te interesa, puedo pasarte con el gerente Martín Vázquez para que vea si puede recomendarte algo."
+    },
+    {
+      "cliente": "Listo, voy a reservar entonces.",
+      "tipo": "charla",
+      "accion": "derivar",
+      "claves": [],
+      "evidencia": "Instrucción 1: referir a reservas@casaaromas.com.ar o +54 11 4307-8925",
+      "respuesta_ideal": "¡Perfecto! Para hacer tu reserva, contacta a nuestro equipo en +54 11 4307-8925 o reservas@casaaromas.com.ar. ¡Esperamos verte pronto!"
+    }
+  ],
+  [
+    {
+      "cliente": "¿Qué tal, es verdad que tienen WiFi en la habitación?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["WiFi de alta velocidad"],
+      "evidencia": "WiFi de alta velocidad en todas las áreas",
+      "respuesta_ideal": "Sí, ofrecemos WiFi de alta velocidad en todas las áreas del hotel."
+    },
+    {
+      "cliente": "¿Está incluido en el precio o cobran extra?",
+      "tipo": "seguimiento",
+      "accion": "responder",
+      "claves": ["Servicios incluidos"],
+      "evidencia": "Servicios incluidos: - WiFi de alta velocidad en todas las áreas",
+      "respuesta_ideal": "El WiFi está totalmente incluido en tu tarifa de habitación, sin cargo adicional."
+    },
+    {
+      "cliente": "Excelente. ¿Tienen desayuno?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["desayuno buffet", "7:00 a 10:00"],
+      "evidencia": "Desayuno continental\nDesayuno buffet de 7:00 a 10:00 am",
+      "respuesta_ideal": "Sí, incluimos desayuno buffet continental de 7:00 a 10:00 am en la tarifa."
+    },
+    {
+      "cliente": "¿Sirven gluten free?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No tengo ese detalle del menú. Te recomiendo llamar a recepción al +54 11 4307-8925 para confirmar opciones especiales para alergias e intolerancias."
+    }
+  ],
+  [
+    {
+      "cliente": "Buenas tardes. Quiero guardar el auto. ¿Tienen estacionamiento?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["estacionamiento", "$400"],
+      "evidencia": "Estacionamiento en cochera: $400 por día",
+      "respuesta_ideal": "Sí, contamos con estacionamiento en cochera a $400 por día."
+    },
+    {
+      "cliente": "¿Hay descuento si dejo el auto una semana?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["$2.200 por semana"],
+      "evidencia": "Estacionamiento en cochera: $400 por día | $2.200 por semana",
+      "respuesta_ideal": "Sí, por una semana el estacionamiento sale $2.200, que es más económico que pagar día a día."
+    },
+    {
+      "cliente": "¿Cuanto sería para 15 días?",
+      "tipo": "combinada",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "Para períodos más largos que una semana no tengo tarifa específica. Te sugiero que llamés a recepción al +54 11 4307-8925 para consultar tarifas especiales."
+    },
+    {
+      "cliente": "Ok, ¿me decís dónde queda el hotel?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["Avenida Paseo Colón 1845", "San Telmo"],
+      "evidencia": "Dirección: Avenida Paseo Colón 1845, San Telmo, Buenos Aires",
+      "respuesta_ideal": "Estamos en Avenida Paseo Colón 1845, en el barrio de San Telmo."
+    }
+  ],
+  [
+    {
+      "cliente": "Buen día. Voy a viajar con mi hijo de 8 años. ¿Me cobran extra?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["menores de 12 años comparten habitación sin cargo"],
+      "evidencia": "Niños menores de 12 años comparten habitación sin cargo adicional.",
+      "respuesta_ideal": "Los niños menores de 12 años comparten tu habitación sin cargo adicional."
+    },
+    {
+      "cliente": "¿Y si necesitamos cuna? ¿Tiene costo?",
+      "tipo": "seguimiento",
+      "accion": "responder",
+      "claves": ["cuna", "sin costo"],
+      "evidencia": "Se proporciona cuna si lo necesita (sin costo).",
+      "respuesta_ideal": "La cuna se proporciona sin costo si la necesitas."
+    },
+    {
+      "cliente": "¿Hay pileta para que se bañe?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No tengo esa información. Llama a recepción al +54 11 4307-8925 y te confirman si disponemos de pileta."
+    },
+    {
+      "cliente": "¿Hacen descuentos para familias?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No tengo informacion sobre descuentos familiares especiales. Consulta directamente al equipo de reservas en +54 11 4307-8925."
+    },
+    {
+      "cliente": "Perfecto, muchas gracias.",
+      "tipo": "charla",
+      "accion": "charla",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "¡De nada! Nos encantaría recibirte a ti y a tu hijo en Casa Aromas."
+    }
+  ],
+  [
+    {
+      "cliente": "¿Hasta qué hora puedo desayunar el domingo?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["7:30 a 11:00 am", "domingos"],
+      "evidencia": "Sábados y domingos: 7:30 a 11:00 am",
+      "respuesta_ideal": "Los domingos el desayuno está disponible de 7:30 a 11:00 am."
+    },
+    {
+      "cliente": "¿Es diferente el desayuno en feriados?",
+      "tipo": "combinada",
+      "accion": "responder",
+      "claves": ["8:00 a 12:00 pm", "Días festivos"],
+      "evidencia": "Días festivos (1º de enero, 25 de mayo, 9 de julio, 17 de agosto, 12 de octubre, 20 de noviembre, 8 y 25 de diciembre): 8:00 a 12:00 pm",
+      "respuesta_ideal": "Sí, en días festivos el desayuno se sirve de 8:00 a 12:00 pm, con horario extendido."
+    },
+    {
+      "cliente": "¿Me pueden guardar equipaje después del check-out?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "Eso no lo sé con certeza. Contacta a recepción al +54 11 4307-8925 ext. 200 y confirman si es posible guardar tu equipaje."
+    }
+  ]
+]

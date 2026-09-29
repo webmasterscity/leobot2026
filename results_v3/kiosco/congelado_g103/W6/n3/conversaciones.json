@@ -1,0 +1,228 @@
+[
+  [
+    {
+      "cliente": "Buenas, cuanto cuesta el peaje para un carro normal?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["₡1 300"],
+      "evidencia": "Automóviles, pick-ups y microbuses de hasta 9 pasajeros\t₡1 300",
+      "respuesta_ideal": "Pura vida, bienvenido a Autopista Valle Dorado. Para automóviles la tarifa es de ₡1 300."
+    },
+    {
+      "cliente": "¿y una moto?",
+      "tipo": "seguimiento",
+      "accion": "responder",
+      "claves": ["₡600"],
+      "evidencia": "Motocicletas\t₡600",
+      "respuesta_ideal": "Las motocicletas pagan ₡600."
+    },
+    {
+      "cliente": "¿y un camion de 3 ejes?",
+      "tipo": "seguimiento",
+      "accion": "responder",
+      "claves": ["₡3 900"],
+      "evidencia": "Camiones de 3 ejes\t₡3 900",
+      "respuesta_ideal": "Los camiones de 3 ejes pagan ₡3 900."
+    },
+    {
+      "cliente": "si mi carro lleva un remolque pago como carro normal?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["₡5 200"],
+      "evidencia": "Camiones de 4 ejes o más, y vehículos con remolque\t₡5 200",
+      "respuesta_ideal": "No, los vehículos con remolque pagan la categoría 5, que es de ₡5 200."
+    },
+    {
+      "cliente": "con TAG cuanto pagaria mi carro particular?",
+      "tipo": "combinada",
+      "accion": "responder",
+      "claves": ["10 % menos", "₡1 300"],
+      "evidencia": "Quienes pasan con TAG pagan 10 % menos que la tarifa de caseta.",
+      "respuesta_ideal": "Con TAG se paga 10 % menos que la tarifa de caseta de ₡1 300 para automóviles, o sea ₡1 170."
+    },
+    {
+      "cliente": "los adultos mayores pagan menos?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No tengo información sobre tarifas especiales para adultos mayores."
+    },
+    {
+      "cliente": "y cuando van a subir las tarifas?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No tengo ese dato."
+    }
+  ],
+  [
+    {
+      "cliente": "cuanto cuesta el TAG?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["₡8 500", "no tiene mensualidad"],
+      "evidencia": "El dispositivo cuesta ₡8 500 y no tiene mensualidad.",
+      "respuesta_ideal": "El dispositivo TAG Pase Rápido cuesta ₡8 500 y no tiene mensualidad."
+    },
+    {
+      "cliente": "y para empezar a usarlo cuanto necesito en total, con la recarga?",
+      "tipo": "seguimiento",
+      "accion": "responder",
+      "claves": ["₡8 500", "₡10 000"],
+      "evidencia": "Recarga mínima: ₡10 000.",
+      "respuesta_ideal": "En total ₡18 500: ₡8 500 del dispositivo más ₡10 000 de recarga mínima."
+    },
+    {
+      "cliente": "que papeles piden para inscribir el TAG?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["cédula de identidad", "título de propiedad"],
+      "evidencia": "Para inscribirlo: cédula de identidad (o DIMEX o pasaporte) y copia del título de propiedad del vehículo, o carta de autorización si el vehículo está a nombre de una empresa.",
+      "respuesta_ideal": "Necesita cédula de identidad (o DIMEX o pasaporte) y copia del título de propiedad del vehículo, o una carta de autorización si el vehículo está a nombre de una empresa."
+    },
+    {
+      "cliente": "donde puedo recargar el saldo?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["Valle Dorado Móvil"],
+      "evidencia": "Recarga mínima: ₡10 000. Se recarga en la app \"Valle Dorado Móvil\", en la oficina o en los puntos autorizados.",
+      "respuesta_ideal": "Se recarga en la app Valle Dorado Móvil, en la oficina o en los puntos autorizados."
+    },
+    {
+      "cliente": "mi TAG sirve en otras autopistas?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["solo funciona en la Autopista Valle Dorado"],
+      "evidencia": "No, el Pase Rápido solo funciona en la Autopista Valle Dorado.",
+      "respuesta_ideal": "No, el Pase Rápido solo funciona en la Autopista Valle Dorado."
+    },
+    {
+      "cliente": "me cobraron doble el peaje aunque pase con el TAG, quiero que me devuelvan la plata",
+      "tipo": "instruccion",
+      "accion": "derivar",
+      "claves": [],
+      "evidencia": "Para saldos, cobros dobles o reembolsos, derive a la Oficina de Servicio al Usuario, tel. 2555-0138, y no prometa devoluciones.",
+      "respuesta_ideal": "Lamento lo ocurrido. Para cobros dobles debe comunicarse con la Oficina de Servicio al Usuario, tel. 2555-0138; no puedo prometerle una devolución."
+    },
+    {
+      "cliente": "se puede pagar con SINPE Movil?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No tengo información sobre pagos con SINPE Móvil."
+    }
+  ],
+  [
+    {
+      "cliente": "a que hora abre la oficina de servicio al usuario?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["7:30 a.m."],
+      "evidencia": "Oficina de Servicio al Usuario: lunes a viernes de 7:30 a.m. a 4:30 p.m.",
+      "respuesta_ideal": "De lunes a viernes abre a las 7:30 a.m. y atiende hasta las 4:30 p.m."
+    },
+    {
+      "cliente": "¿y los sabados?",
+      "tipo": "seguimiento",
+      "accion": "responder",
+      "claves": ["8:00 a.m. a 12:00 del mediodía"],
+      "evidencia": "sábados de 8:00 a.m. a 12:00 del mediodía",
+      "respuesta_ideal": "Los sábados atiende de 8:00 a.m. a 12:00 del mediodía."
+    },
+    {
+      "cliente": "el peaje funciona en feriado?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["el peaje y el auxilio vial siguen 24 horas"],
+      "evidencia": "Feriados de ley: la oficina cierra; el peaje y el auxilio vial siguen 24 horas.",
+      "respuesta_ideal": "Sí, en feriados de ley el peaje y el auxilio vial siguen funcionando las 24 horas; solo la oficina cierra."
+    },
+    {
+      "cliente": "a cuanto es la velocidad maxima por la zona de Rio Claro?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["60 km/h"],
+      "evidencia": "Velocidad máxima: 100 km/h en autopista y 60 km/h en el tramo urbano de Río Claro.",
+      "respuesta_ideal": "En el tramo urbano de Río Claro la velocidad máxima es de 60 km/h (en autopista es de 100 km/h)."
+    },
+    {
+      "cliente": "hay estacion de servicio o banos en la autopista?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No tengo información sobre estaciones de servicio ni baños en la autopista."
+    }
+  ],
+  [
+    {
+      "cliente": "se me paso pagar el peaje con mi carro particular, cuanto tengo que pagar para arreglarlo?",
+      "tipo": "combinada",
+      "accion": "responder",
+      "claves": ["₡5 000", "5 días hábiles"],
+      "evidencia": "Si cruzó la plaza sin pagar, tiene 5 días hábiles para regularizar en la oficina o en línea pagando la tarifa más ₡5 000 de recargo administrativo.",
+      "respuesta_ideal": "Debe pagar la tarifa de ₡1 300 más ₡5 000 de recargo administrativo, es decir ₡6 300, dentro de 5 días hábiles, en la oficina o en línea."
+    },
+    {
+      "cliente": "si el carro se me descompone dentro de la autopista, la grua tiene costo?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["gratuitas dentro del corredor"],
+      "evidencia": "Grúa y asistencia mecánica básica gratuitas dentro del corredor, las 24 horas, llamando al 800-2020.",
+      "respuesta_ideal": "No, la grúa y la asistencia mecánica básica son gratuitas dentro del corredor, las 24 horas, llamando al 800-2020; si debe llevarse fuera del corredor, el traslado lo paga el usuario."
+    },
+    {
+      "cliente": "mi carro choco en el km 30 y sale humo",
+      "tipo": "instruccion",
+      "accion": "derivar",
+      "claves": [],
+      "evidencia": "Si alguien reporta un accidente, una avería, humo, un animal en la vía o cualquier peligro, lo primero es pedirle que llame de inmediato al 800-2020 (auxilio vial, 24 horas) o al 911.",
+      "respuesta_ideal": "Llame de inmediato al 800-2020 (auxilio vial, 24 horas) o al 911."
+    },
+    {
+      "cliente": "como esta el trafico ahorita hacia San Jose?",
+      "tipo": "instruccion",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": "No informe el estado del tráfico ni el tiempo de viaje: no tiene ese dato.",
+      "respuesta_ideal": "No tengo información sobre el estado del tráfico ni el tiempo de viaje."
+    },
+    {
+      "cliente": "me pusieron una multa de transito en la autopista, cuanto es y como la pago?",
+      "tipo": "instruccion",
+      "accion": "derivar",
+      "claves": [],
+      "evidencia": "Las multas de tránsito son de las autoridades de tránsito y no de la concesionaria: no dé montos ni opine, solo indique que se consultan con ellas.",
+      "respuesta_ideal": "Las multas de tránsito no son de la concesionaria; el monto y el pago se consultan con las autoridades de tránsito."
+    },
+    {
+      "cliente": "cuantos kilometros tiene la autopista?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No tengo el dato de la longitud de la autopista."
+    }
+  ],
+  [
+    {
+      "cliente": "una ambulancia paga peaje?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["No pagan peaje"],
+      "evidencia": "No pagan peaje: ambulancias, bomberos, Cruz Roja y vehículos de la Fuerza Pública en servicio oficial.",
+      "respuesta_ideal": "No, las ambulancias no pagan peaje, igual que bomberos, Cruz Roja y vehículos de la Fuerza Pública en servicio oficial."
+    },
+    {
+      "cliente": "ok gracias, pura vida",
+      "tipo": "charla",
+      "accion": "charla",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "Pura vida, que tenga buen viaje."
+    }
+  ]
+]

@@ -1,0 +1,244 @@
+[
+  [
+    {
+      "cliente": "Buen dia, a que hora atienden en administracion?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["7:00 a 15:00 hs"],
+      "evidencia": "Atención administrativa (trámites, inscripciones, cobros): lunes a viernes de 7:00 a 15:00 hs.",
+      "respuesta_ideal": "Buen día, gracias por su interés en los bomberos. La administración atiende de lunes a viernes de 7:00 a 15:00 hs."
+    },
+    {
+      "cliente": "el curso de primeros auxilios es los sabados?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["sábados de 8:00 a 12:00 hs"],
+      "evidencia": "Primeros auxilios y uso de extintores: sábados de 8:00 a 12:00 hs.",
+      "respuesta_ideal": "Sí, el curso de primeros auxilios y uso de extintores se dicta los sábados de 8:00 a 12:00 hs."
+    },
+    {
+      "cliente": "¿y cuanto cuesta?",
+      "tipo": "seguimiento",
+      "accion": "responder",
+      "claves": ["Gs. 120.000"],
+      "evidencia": "Arancel: Gs. 120.000 por persona.",
+      "respuesta_ideal": "El arancel es de Gs. 120.000 por persona."
+    },
+    {
+      "cliente": "¿y si vamos varios de una empresa?",
+      "tipo": "seguimiento",
+      "accion": "responder",
+      "claves": ["Gs. 100.000", "desde 10 participantes"],
+      "evidencia": "Grupos de empresa (desde 10 participantes): Gs. 100.000 por persona.",
+      "respuesta_ideal": "Los grupos de empresa, desde 10 participantes, pagan Gs. 100.000 por persona."
+    },
+    {
+      "cliente": "somos 12 empleados de una farmacia, cuanto saldria para todos?",
+      "tipo": "combinada",
+      "accion": "responder",
+      "claves": ["Gs. 100.000", "desde 10 participantes"],
+      "evidencia": "Grupos de empresa (desde 10 participantes): Gs. 100.000 por persona.",
+      "respuesta_ideal": "Como es un grupo de empresa de 10 o más participantes, son Gs. 100.000 por persona: 12 personas serían Gs. 1.200.000."
+    },
+    {
+      "cliente": "mi hijo tiene 15 años, puede hacer el curso?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["edad mínima 16 años"],
+      "evidencia": "Cursos (edad mínima 16 años, certificado incluido)",
+      "respuesta_ideal": "No todavía: los cursos tienen una edad mínima de 16 años."
+    },
+    {
+      "cliente": "se puede pagar con tarjeta?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["no se aceptan tarjetas"],
+      "evidencia": "Efectivo en administración o transferencia bancaria; no se aceptan tarjetas.",
+      "respuesta_ideal": "No, no se aceptan tarjetas; se paga en efectivo en administración o por transferencia bancaria."
+    },
+    {
+      "cliente": "hay descuento para estudiantes en el curso?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No tengo información sobre descuentos para estudiantes; solo conozco el arancel por persona y el de grupos de empresa."
+    }
+  ],
+  [
+    {
+      "cliente": "cuanto cobran por inspeccionar un local de 80 metros cuadrados?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["Gs. 250.000"],
+      "evidencia": "| hasta 100 m2 | Gs. 250.000 |",
+      "respuesta_ideal": "Para locales de hasta 100 m2 el arancel de la inspección es de Gs. 250.000."
+    },
+    {
+      "cliente": "¿y uno de 200 metros?",
+      "tipo": "seguimiento",
+      "accion": "responder",
+      "claves": ["Gs. 450.000"],
+      "evidencia": "| de 101 a 300 m2 | Gs. 450.000 |",
+      "respuesta_ideal": "Entre 101 y 300 m2 el arancel es de Gs. 450.000."
+    },
+    {
+      "cliente": "¿y uno de 500?",
+      "tipo": "seguimiento",
+      "accion": "responder",
+      "claves": ["presupuesto a pedido"],
+      "evidencia": "| más de 300 m2 | presupuesto a pedido |",
+      "respuesta_ideal": "Para más de 300 m2 se hace un presupuesto a pedido; no hay una tarifa fija."
+    },
+    {
+      "cliente": "que necesito para pedir la inspeccion?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["cédula del propietario", "RUC del local"],
+      "evidencia": "Se solicita en administración, presentando la cédula del propietario y el RUC del local.",
+      "respuesta_ideal": "Se solicita en administración presentando la cédula del propietario y el RUC del local."
+    },
+    {
+      "cliente": "cuanto tarda en salir el certificado y cuanto tiempo sirve?",
+      "tipo": "combinada",
+      "accion": "responder",
+      "claves": ["7 días hábiles", "1 año"],
+      "evidencia": "El certificado tiene validez de 1 año y se entrega dentro de los 7 días hábiles posteriores a la inspección.",
+      "respuesta_ideal": "Se entrega dentro de los 7 días hábiles posteriores a la inspección y tiene validez de 1 año."
+    },
+    {
+      "cliente": "quiero pedir la inspeccion para el lunes, me la confirman ya?",
+      "tipo": "instruccion",
+      "accion": "responder",
+      "claves": ["administración"],
+      "evidencia": "No confirme visitas, inscripciones ni inspecciones: explique que se solicitan en administración y que allí se las confirman.",
+      "respuesta_ideal": "Yo no puedo confirmarla; la inspección se solicita en administración y allí se la confirman."
+    },
+    {
+      "cliente": "y la habilitacion municipal de mi comercio la tramitan ustedes?",
+      "tipo": "instruccion",
+      "accion": "derivar",
+      "claves": [],
+      "evidencia": "Para permisos municipales, habilitaciones comerciales o multas, diga que no es competencia de los bomberos y remita a la Municipalidad de Ñemby.",
+      "respuesta_ideal": "No, las habilitaciones comerciales no son competencia de los bomberos; debe consultar en la Municipalidad de Ñemby."
+    },
+    {
+      "cliente": "hacen recarga de extintores?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No tengo información sobre recarga de extintores."
+    }
+  ],
+  [
+    {
+      "cliente": "cuanto cuesta la ambulancia si no soy socio?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["Gs. 180.000"],
+      "evidencia": "No socios: Gs. 180.000 dentro de Ñemby.",
+      "respuesta_ideal": "Para no socios el servicio de ambulancia cuesta Gs. 180.000 dentro de Ñemby."
+    },
+    {
+      "cliente": "me pueden llevar en ambulancia a mi mama a una consulta el jueves?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["no se realizan traslados programados"],
+      "evidencia": "Solo para emergencias; no se realizan traslados programados (por ejemplo, para consultas o estudios).",
+      "respuesta_ideal": "No, la ambulancia es solo para emergencias y no se realizan traslados programados, por ejemplo para consultas o estudios."
+    },
+    {
+      "cliente": "cuanto se paga por mes para ser socio y que incluye?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["Gs. 25.000", "ambulancia sin costo"],
+      "evidencia": "Aporte mensual: Gs. 25.000. Incluye ambulancia sin costo para el titular y su familia directa (cónyuge e hijos menores de 18 años).",
+      "respuesta_ideal": "El aporte mensual es de Gs. 25.000 e incluye ambulancia sin costo para el titular y su familia directa."
+    },
+    {
+      "cliente": "si me hago socio colaborador, cuanto pagaria en total en un año?",
+      "tipo": "combinada",
+      "accion": "responder",
+      "claves": ["Gs. 25.000"],
+      "evidencia": "Aporte mensual: Gs. 25.000.",
+      "respuesta_ideal": "El aporte mensual es de Gs. 25.000, así que en un año serían Gs. 300.000."
+    },
+    {
+      "cliente": "¿y mis hijos de 20 años tambien tienen la ambulancia gratis?",
+      "tipo": "seguimiento",
+      "accion": "responder",
+      "claves": ["hijos menores de 18 años"],
+      "evidencia": "(cónyuge e hijos menores de 18 años)",
+      "respuesta_ideal": "No, la familia directa cubierta incluye al cónyuge y a los hijos menores de 18 años."
+    },
+    {
+      "cliente": "cuanto tardan en llegar los bomberos a mi barrio?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No tengo ese dato; ante una emergencia llame al 132."
+    }
+  ],
+  [
+    {
+      "cliente": "hay olor fuerte a gas en mi casa, que hago??",
+      "tipo": "instruccion",
+      "accion": "derivar",
+      "claves": [],
+      "evidencia": "Ante cualquier emergencia (fuego, accidente, persona en peligro, olor a gas), lo primero y lo único que debe decir es que llamen de inmediato al 132.",
+      "respuesta_ideal": "Llame de inmediato al 132."
+    }
+  ],
+  [
+    {
+      "cliente": "quiero ser bombero voluntario, que edad tengo que tener?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["de 18 a 35 años"],
+      "evidencia": "Edad: de 18 a 35 años.",
+      "respuesta_ideal": "Gracias por su interés. Para ser bombero voluntario se requiere una edad de 18 a 35 años."
+    },
+    {
+      "cliente": "¿y cuando son las inscripciones?",
+      "tipo": "seguimiento",
+      "accion": "responder",
+      "claves": ["abril y en septiembre"],
+      "evidencia": "Inscripciones abiertas en abril y en septiembre.",
+      "respuesta_ideal": "Las inscripciones están abiertas en abril y en septiembre."
+    },
+    {
+      "cliente": "el curso de ingreso tiene costo?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No tengo información sobre el costo del curso de ingreso; sé que dura 6 meses y se dicta los domingos de 7:00 a 12:00 hs."
+    },
+    {
+      "cliente": "las escuelas pueden visitar el cuartel? cuando?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["martes y jueves de 8:30 a 11:00 hs"],
+      "evidencia": "Escuelas y colegios: martes y jueves de 8:30 a 11:00 hs, con nota de solicitud presentada 10 días antes.",
+      "respuesta_ideal": "Sí, las escuelas y colegios pueden visitarlo los martes y jueves de 8:30 a 11:00 hs, con nota de solicitud presentada 10 días antes."
+    },
+    {
+      "cliente": "y yo puedo visitar el cuartel con mi familia un sabado?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No tengo información sobre visitas para el público general; solo sé de las visitas de escuelas y colegios."
+    },
+    {
+      "cliente": "gracias, chau",
+      "tipo": "charla",
+      "accion": "charla",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "Gracias a usted por su interés en los bomberos. Si desea ayudar a la compañía, puede hacerse socio colaborador."
+    }
+  ]
+]

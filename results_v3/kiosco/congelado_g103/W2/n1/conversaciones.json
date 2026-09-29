@@ -1,0 +1,277 @@
+[
+ [
+  {
+   "cliente": "Hola, buenas tardes. Quiero suscribirme al diario, ¿cuánto sale la impresa de todos los días?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "1.290"
+   ],
+   "evidencia": "| Impresa completa      | lunes a domingo en su domicilio      | $U 1.290 |",
+   "respuesta_ideal": "La suscripción Impresa completa, con entrega de lunes a domingo en su domicilio, cuesta $U 1.290 por mes."
+  },
+  {
+   "cliente": "y si vivo en Salto me lo llevan a casa?",
+   "tipo": "seguimiento",
+   "accion": "responder",
+   "claves": [
+    "220",
+    "un día de atraso"
+   ],
+   "evidencia": "- La entrega a domicilio es solo en Montevideo y Ciudad de la Costa. En el resto del país el diario viaja por correo, con un recargo de $U 220 mensuales, y llega con un día de atraso.",
+   "respuesta_ideal": "A domicilio no: la entrega es solo en Montevideo y Ciudad de la Costa. En el resto del país el diario llega por correo, con un recargo de $U 220 mensuales y un día de atraso."
+  },
+  {
+   "cliente": "Soy jubilada, ¿tengo algún descuento?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "20 %",
+    "Digital",
+    "Impresa fin de semana"
+   ],
+   "evidencia": "- Jubilados y pensionistas tienen 20 % de descuento en los planes Digital e Impresa fin de semana (con cédula y recibo de la jubilación). El descuento no aplica a los otros planes.",
+   "respuesta_ideal": "Sí: los jubilados y pensionistas tienen 20 % de descuento en los planes Digital e Impresa fin de semana, presentando la cédula y el recibo de la jubilación."
+  },
+  {
+   "cliente": "y con el combo tambien me lo descuentan?",
+   "tipo": "si_no",
+   "accion": "responder",
+   "claves": [
+    "no aplica a los otros planes"
+   ],
+   "evidencia": "- Jubilados y pensionistas tienen 20 % de descuento en los planes Digital e Impresa fin de semana (con cédula y recibo de la jubilación). El descuento no aplica a los otros planes.",
+   "respuesta_ideal": "No, el descuento no aplica al plan Combo; solo rige para Digital e Impresa fin de semana."
+  },
+  {
+   "cliente": "¿Cuánto pagaría entonces por el plan digital con mi descuento?",
+   "tipo": "combinada",
+   "accion": "responder",
+   "claves": [
+    "390",
+    "20 %"
+   ],
+   "evidencia": "| Digital               | edición digital y archivo desde 1995 | $U 390   |\n\n- Jubilados y pensionistas tienen 20 % de descuento en los planes Digital e Impresa fin de semana (con cédula y recibo de la jubilación). El descuento no aplica a los otros planes.",
+   "respuesta_ideal": "El plan Digital cuesta $U 390 al mes y con el 20 % de descuento queda en $U 312 mensuales."
+  },
+  {
+   "cliente": "¿Y tienen plan anual con descuento?",
+   "tipo": "sin_respuesta",
+   "accion": "abstenerse",
+   "claves": [],
+   "evidencia": null,
+   "respuesta_ideal": "No tengo ese dato: no cuento con información sobre un plan anual ni sobre descuentos por pago anual."
+  }
+ ],
+ [
+  {
+   "cliente": "Quiero publicar un aviso para vender mi auto, ¿cuánto cobran?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "38",
+    "52"
+   ],
+   "evidencia": "Precio por palabra: $U 38 de lunes a viernes y $U 52 sábados y domingos. Mínimo 10 palabras.",
+   "respuesta_ideal": "Los avisos clasificados cuestan $U 38 por palabra de lunes a viernes y $U 52 por palabra sábados y domingos, con un mínimo de 10 palabras."
+  },
+  {
+   "cliente": "Un aviso de 20 palabras que salga un sábado, con foto, ¿cuánto seria?",
+   "tipo": "combinada",
+   "accion": "responder",
+   "claves": [
+    "52",
+    "450"
+   ],
+   "evidencia": "Precio por palabra: $U 38 de lunes a viernes y $U 52 sábados y domingos. Mínimo 10 palabras.\nRecuadro destacado: recargo de $U 300 por aviso. Foto: $U 450 adicionales.",
+   "respuesta_ideal": "20 palabras a $U 52 son $U 1.040, más $U 450 de la foto: $U 1.490 en total."
+  },
+  {
+   "cliente": "¿Hasta qué hora tengo que llevarlo para que salga mañana?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "15:00"
+   ],
+   "evidencia": "Los avisos se reciben hasta las 15:00 para salir al día siguiente, en la oficina o en nuestra web (pago con tarjeta).",
+   "respuesta_ideal": "Los avisos se reciben hasta las 15:00 para salir al día siguiente."
+  },
+  {
+   "cliente": "¿Lo puedo dejar por whatsapp?",
+   "tipo": "si_no",
+   "accion": "responder",
+   "claves": [
+    "no se toman avisos ni pagos"
+   ],
+   "evidencia": "Teléfono general: 2900 4400. Consultas por WhatsApp: 099 123 456 (solo consultas; por WhatsApp no se toman avisos ni pagos).",
+   "respuesta_ideal": "No: por WhatsApp solo se atienden consultas. Los avisos se reciben en la oficina o en la web del diario."
+  },
+  {
+   "cliente": "¿Hacen descuento si el aviso sale varios días seguidos?",
+   "tipo": "sin_respuesta",
+   "accion": "abstenerse",
+   "claves": [],
+   "evidencia": null,
+   "respuesta_ideal": "No tengo ese dato: no cuento con información sobre descuentos por publicar varios días."
+  }
+ ],
+ [
+  {
+   "cliente": "Mi papá falleció esta mañana, tengo que publicar un aviso.",
+   "tipo": "instruccion",
+   "accion": "responder",
+   "claves": [
+    "2900 4455"
+   ],
+   "evidencia": "Avisos fúnebres: se reciben todos los días, feriados incluidos, de 8:00 a 21:00, únicamente por teléfono al 2900 4455.",
+   "respuesta_ideal": "Lamento mucho su pérdida. Los avisos fúnebres se toman todos los días, feriados incluidos, de 8:00 a 21:00, por teléfono al 2900 4455."
+  },
+  {
+   "cliente": "¿Y hasta qué hora me atienden? Hoy es domingo.",
+   "tipo": "seguimiento",
+   "accion": "responder",
+   "claves": [
+    "8:00 a 21:00"
+   ],
+   "evidencia": "Avisos fúnebres: se reciben todos los días, feriados incluidos, de 8:00 a 21:00, únicamente por teléfono al 2900 4455.",
+   "respuesta_ideal": "Los avisos fúnebres se reciben todos los días, domingos incluidos, de 8:00 a 21:00, al 2900 4455."
+  },
+  {
+   "cliente": "cuanto sale con la cruz?",
+   "tipo": "seguimiento",
+   "accion": "responder",
+   "claves": [
+    "3.200"
+   ],
+   "evidencia": "Aviso fúnebre simple (hasta 40 palabras): tarifa fija de $U 2.100. Con cruz y marco: $U 3.200. Quien lo contrata debe indicar su cédula.",
+   "respuesta_ideal": "Con cruz y marco el aviso fúnebre cuesta $U 3.200; el aviso simple, de hasta 40 palabras, cuesta $U 2.100."
+  },
+  {
+   "cliente": "¿Se puede poner la foto de mi papá en el aviso?",
+   "tipo": "sin_respuesta",
+   "accion": "abstenerse",
+   "claves": [],
+   "evidencia": null,
+   "respuesta_ideal": "No tengo ese dato: no cuento con información sobre si se admiten fotos en los avisos fúnebres."
+  }
+ ],
+ [
+  {
+   "cliente": "Hoy no me llegó el diario, soy suscriptor en Montevideo.",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "2900 4400",
+    "10:00"
+   ],
+   "evidencia": "- Reclamo por diario no entregado: llamar antes de las 10:00 al 2900 4400 y se reenvía en moto el mismo día. Pasadas las 10:00, el ejemplar se acredita en la factura del mes siguiente.",
+   "respuesta_ideal": "Lamento el inconveniente. Llame antes de las 10:00 al 2900 4400 y le reenvían el diario en moto el mismo día."
+  },
+  {
+   "cliente": "Ya son las 11, ¿qué hago?",
+   "tipo": "seguimiento",
+   "accion": "responder",
+   "claves": [
+    "se acredita en la factura del mes siguiente"
+   ],
+   "evidencia": "- Reclamo por diario no entregado: llamar antes de las 10:00 al 2900 4400 y se reenvía en moto el mismo día. Pasadas las 10:00, el ejemplar se acredita en la factura del mes siguiente.",
+   "respuesta_ideal": "Pasadas las 10:00 ya no se reenvía el ejemplar: se acredita en la factura del mes siguiente."
+  },
+  {
+   "cliente": "Esto ya me pasó tres veces, ¡quiero hablar con un responsable ahora mismo!",
+   "tipo": "instruccion",
+   "accion": "derivar",
+   "claves": [],
+   "evidencia": "5. Si el cliente reclama con enojo, pide hablar con un responsable o amenaza con darse de baja, no discutas: derívalo a la jefa de Atención al Lector, Marcela Techera, interno 214 del 2900 4400.",
+   "respuesta_ideal": "Lamento lo ocurrido. Lo derivo con la jefa de Atención al Lector, Marcela Techera, interno 214 del 2900 4400."
+  },
+  {
+   "cliente": "¿Puedo cambiar la dirección de entrega si me mudo?",
+   "tipo": "sin_respuesta",
+   "accion": "abstenerse",
+   "claves": [],
+   "evidencia": null,
+   "respuesta_ideal": "No tengo ese dato: no cuento con información sobre cambios de dirección de entrega."
+  }
+ ],
+ [
+  {
+   "cliente": "Necesito ver un diario de 1987 para un trámite y sacarle copia, ¿cómo hago?",
+   "tipo": "combinada",
+   "accion": "responder",
+   "claves": [
+    "martes a jueves de 10:00 a 16:00",
+    "no se fotocopian"
+   ],
+   "evidencia": "Hemeroteca (archivo de ediciones antiguas): primer piso, martes a jueves de 10:00 a 16:00. Hay que presentar la cédula de identidad.\nFotocopia de páginas: $U 25 la hoja. Las ediciones anteriores a 1990 no se fotocopian; se pueden fotografiar con el celular.",
+   "respuesta_ideal": "La hemeroteca (primer piso) atiende de martes a jueves de 10:00 a 16:00, con cédula de identidad. Las ediciones anteriores a 1990 no se fotocopian, pero puede fotografiarlas con el celular."
+  },
+  {
+   "cliente": "y los viernes no abren?",
+   "tipo": "si_no",
+   "accion": "responder",
+   "claves": [
+    "martes a jueves de 10:00 a 16:00"
+   ],
+   "evidencia": "Hemeroteca (archivo de ediciones antiguas): primer piso, martes a jueves de 10:00 a 16:00. Hay que presentar la cédula de identidad.",
+   "respuesta_ideal": "No: la hemeroteca atiende solo de martes a jueves, de 10:00 a 16:00."
+  },
+  {
+   "cliente": "Y un diario del 2005, ¿cuánto cuesta la fotocopia de una página?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "25"
+   ],
+   "evidencia": "Fotocopia de páginas: $U 25 la hoja. Las ediciones anteriores a 1990 no se fotocopian; se pueden fotografiar con el celular.",
+   "respuesta_ideal": "La fotocopia cuesta $U 25 la hoja; al ser una edición posterior a 1990 sí se puede fotocopiar."
+  }
+ ],
+ [
+  {
+   "cliente": "Tengo una denuncia sobre una obra municipal, ¿pueden mandar un periodista a mi casa?",
+   "tipo": "instruccion",
+   "accion": "responder",
+   "claves": [
+    "redaccion@lacostanera.com.uy"
+   ],
+   "evidencia": "La redacción no atiende público en persona. Denuncias y notas: redaccion@lacostanera.com.uy.",
+   "respuesta_ideal": "La redacción no atiende público en persona. Las denuncias y notas se envían por correo a redaccion@lacostanera.com.uy."
+  },
+  {
+   "cliente": "¿Quién es el director del diario?",
+   "tipo": "sin_respuesta",
+   "accion": "abstenerse",
+   "claves": [],
+   "evidencia": null,
+   "respuesta_ideal": "No tengo ese dato: no cuento con información sobre quién dirige el diario."
+  },
+  {
+   "cliente": "Quiero mandar una carta de lectores, ¿hay algún límite de palabras?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "200 palabras",
+    "cartas@lacostanera.com.uy"
+   ],
+   "evidencia": "Cartas de lectores: hasta 200 palabras, a cartas@lacostanera.com.uy. Se publican a criterio de la editorial y no tienen costo.",
+   "respuesta_ideal": "Las cartas de lectores pueden tener hasta 200 palabras y se envían a cartas@lacostanera.com.uy; se publican a criterio de la editorial y no tienen costo."
+  },
+  {
+   "cliente": "¿Tienen algún plan para estudiantes?",
+   "tipo": "sin_respuesta",
+   "accion": "abstenerse",
+   "claves": [],
+   "evidencia": null,
+   "respuesta_ideal": "No tengo ese dato: no cuento con información sobre planes para estudiantes."
+  },
+  {
+   "cliente": "Muchas gracias, muy amable. ¡Chau!",
+   "tipo": "charla",
+   "accion": "charla",
+   "claves": [],
+   "evidencia": "1. Saluda diciendo que eres el asistente virtual del Diario La Costanera y despídete deseando un buen día.",
+   "respuesta_ideal": "Gracias a usted. ¡Que tenga un buen día!"
+  }
+ ]
+]

@@ -46,12 +46,40 @@ LENGTH_BINS = (6, 13, 26)
 CITE_FROM = 0.7
 UNKNOWN_TEXT = 'No lo sé: no encontré esa información en el texto que tengo.'
 CLOSEST_TEXT = 'No lo tengo seguro. Lo más cercano que dice el texto es: «{}».'
+INSTRUCTION_TEXT = 'Sobre eso, las indicaciones del negocio dicen: «{}».'
+FALLBACK_TEXT = ' Las indicaciones del negocio para estos casos dicen: «{}».'
 ECHO_WORDS = 4
+# G-103: words that share a beginning are morphological relatives (pagar, pago; hora, horario).
+SOFT_PREFIX = 3
+SOFT_RATIO = 0.5
+CANDIDATES = 8
+BM25_K1 = 1.2
+BM25_B = 0.75
+USEFUL_KINDS = {'line': 0, 'sentence': 1, 'item': 2, 'row': 3, 'heading': 4}
+DENSE_FEATURES = ('rank', 'gain', 'gap', 'second', 'bm25', 'own', 'inherited', 'own_share', 'own_mass', 'inherited_mass',
+                  'unexplained_max', 'unexplained_sum', 'indirect', 'length', 'kind', 'digits', 'headed', 'position',
+                  'terms', 'mass', 'interrogative', 'asked_share', 'asked_count',
+                  'history', 'carried_mass', 'same_heading', 'same_unit', 'carried_gain', 'carried_mass_alone',
+                  'same_heading_alone', 'instruction')
+CARRIED_WEIGHT = 0.5
 
 
 def _plain(word: str) -> str:
     decomposed = unicodedata.normalize('NFKD', word.lower())
     return ''.join(ch for ch in decomposed if not unicodedata.combining(ch))
+
+
+def _shapes(text: str) -> list[str]:
+    """G-103: the character-class shape of each word that is not made of letters alone
+    («$250.000» → «SH:$d.d», «8:00» → «SH:d:d», «ana@x.co» → «SH:a@a.a»), so a learned
+    association can tell what kind of value a unit holds; no list of words or symbols."""
+    out = set()
+    for word in text.split():
+        word = word.rstrip('.,;:!?)»"').lstrip('(¿¡«"')
+        if word and not word.isalpha():
+            shape = re.sub(r'\d+', 'd', re.sub(r'[^\W\d_]+', 'a', word))
+            out.add('SH:' + shape[:8])
+    return sorted(out)
 
 
 def _bin(value: float, edges) -> int:
@@ -207,7 +235,8 @@ class ContextMixin:
 
         def add(display: str, kind: str, asked: str = '') -> None:
             heading = asked or question or section
-            own = sorted(set(self.context_terms(display)))
+            sequence = self.context_terms(display)
+            own = sorted(set(sequence))
             # G-61: a unit is read under its heading, so it also answers to the
             # heading's words (a price row under «Extras», an answer under its question).
             # G-62: a question governs its answer; a title marked by typography
@@ -219,7 +248,8 @@ class ContextMixin:
             governing = asked or question or (section if governs else '')
             inherited = sorted(set(self.context_terms(governing)) - set(own)) if governing else []
             units.append({'text': display, 'heading': heading, 'kind': kind, 'source': source,
-                          'terms': own, 'inherited': inherited, 'classes': self._classes(display)})
+                          'terms': own, 'inherited': inherited, 'classes': self._classes(display),
+                          'sequence': sequence, 'shapes': _shapes(display)})
 
         lines = [raw.strip() for raw in str(text).splitlines()]
         if getattr(self, 'join_wrapped', True):
@@ -325,8 +355,49 @@ class ContextMixin:
         self.context_title = sorted(set(self.context_terms(self._layout_title)))
         self.context_instructions = self._layout_units(instructions, 'instructions') if instructions else []
         self._context_index = None
+        self._instruction_space = None
+        self._fallback = None
         return {'status': 'context_loaded', 'units': len(self.context_units),
                 'instructions': len(self.context_instructions)}
+
+    def _instruction_view(self):
+        """G-105: the instructions as a text of their own: the same object seen with the
+        instruction units, their own index and no title, so the same ranking and the
+        same usefulness model read them."""
+        if not getattr(self, 'follow_instructions', True) or not getattr(self, 'context_instructions', None):
+            return None
+        view = getattr(self, '_instruction_space', None)
+        if view is None:
+            view = object.__new__(type(self))
+            view.__dict__.update(self.__dict__)
+            view.context_units = self.context_instructions
+            view.context_title = []
+            view._context_index = None
+            view._prefix_buckets = None
+            view._unit_term_sets = None
+            view._instruction_space = None
+            self._instruction_space = view
+        return view
+
+    def _fallback_exit(self):
+        """G-105: the instruction that says what to do when something is not known: the
+        instruction sentence the counted classifier gives the highest chance, when that
+        chance reaches its threshold.  It does not depend on the question."""
+        model = self.context_model.get('fallback')
+        if not model or not getattr(self, 'follow_instructions', True) or not getattr(self, 'context_instructions', None):
+            return None
+        if getattr(self, '_fallback', None) is None:
+            best, at = None, -1
+            for k, unit in enumerate(self.context_instructions):
+                if unit['kind'] in ('heading', 'question'):
+                    continue
+                z = model['bias'] + sum(model['weights'].get(t, 0.0) for t in set(unit['terms']))
+                chance = 1.0 / (1.0 + math.exp(-z)) if z > -30 else 0.0
+                if chance >= model['threshold'] and (best is None or chance > best):
+                    best, at = chance, k
+            self._fallback = (at,)
+        at = self._fallback[0]
+        return None if at < 0 else self.context_instructions[at]
 
     def _index(self):
         if getattr(self, '_context_index', None) is None:
@@ -338,16 +409,45 @@ class ContextMixin:
                 for term in terms:
                     postings.setdefault(term, []).append(i)
             self._context_index = postings
+            self._prefix_buckets = None
+            self._unit_term_sets = None
         return self._context_index
 
+    def _related(self, term: str) -> list[tuple[str, float]]:
+        """G-103: the words of the text that begin like this one (at least SOFT_PREFIX
+        letters and half of the longer word), with the share of the longer word
+        that they have in common."""
+        if len(term) < SOFT_PREFIX:
+            return []
+        postings = self._index()
+        if getattr(self, '_prefix_buckets', None) is None:
+            buckets: dict = {}
+            for word in postings:
+                buckets.setdefault(word[:SOFT_PREFIX], []).append(word)
+            self._prefix_buckets = buckets
+        out = []
+        for word in self._prefix_buckets.get(term[:SOFT_PREFIX], ()):
+            if word == term:
+                continue
+            common = 0
+            for a, b in zip(term, word):
+                if a != b:
+                    break
+                common += 1
+            share = common / max(len(term), len(word))
+            if share >= SOFT_RATIO:
+                out.append((word, share))
+        return out
+
     # ----- retrieval ----------------------------------------------------
-    def _rank(self, terms: list[str], question: str = '') -> dict | None:
-        """The best unit for these question words and its calibration cell."""
+    def _gains(self, terms: list[str], question: str = ''):
+        """The mixture model of G-57: for each unit, how much better than chance it
+        explains the question words, and how (directly, through a counted bridge or,
+        G-103, through a word that begins like the question's word)."""
         units = self.context_units
-        if not units:
-            return None
         postings, total = self._index(), len(units)
         bridge = self._bridge() if getattr(self, 'bridge', True) else {}
+        soft = getattr(self, 'soft_prefix', True)
         title = set(getattr(self, 'context_title', ()))
         base, gains, how = 0.0, {}, {}
         # Mixture model: the answer unit holds q because the question asks for
@@ -360,6 +460,14 @@ class ContextMixin:
             best: dict = {}
             for i in postings.get(q, ()):
                 best[i] = (math.log(delta / p0 + 1 - delta) - absent, 'direct', q)
+            if soft and q not in title:
+                for word, share in self._related(q):
+                    d_w = delta * share
+                    pw0 = (len(postings.get(word, ())) + 0.5) / (total + 1)
+                    gain = math.log(d_w / pw0 + 1 - d_w) - absent
+                    for i in postings[word]:
+                        if i not in best or best[i][0] < gain:
+                            best[i] = (gain, 'soft', word)
             for a, d_a in bridge.get(q, ()):
                 pa0 = (len(postings.get(a, ())) + 0.5) / (total + 1)
                 gain = math.log(d_a / pa0 + 1 - d_a)
@@ -383,6 +491,17 @@ class ContextMixin:
             base += absent
             for i in having:
                 gains[i] = gains.get(i, 0.0) + math.log(share / p0 + 1 - share) - absent
+        return base, gains, how, asked
+
+    def _rank(self, terms: list[str], question: str = '', previous: dict | None = None) -> dict | None:
+        """The best unit for these question words and its calibration cell."""
+        units = self.context_units
+        if not units:
+            return None
+        base, gains, how, asked = self._gains(terms, question)
+        model = self.context_model.get('usefulness')
+        if model and getattr(self, 'candidate_model', True):
+            return self._rank_by_model(model, terms, question, base, gains, how, asked, previous)
         if not gains:
             order = [(base, 0)]
         else:
@@ -400,6 +519,196 @@ class ContextMixin:
                   'asked': asked}
         ranked['features'] = self._features(ranked, question)
         ranked['useful'] = self._usefulness(ranked['features'])
+        return ranked
+
+    # ----- G-103: usefulness of each candidate --------------------------------
+    def _unit_sets(self):
+        self._index()
+        if getattr(self, '_unit_term_sets', None) is None:
+            self._unit_term_sets = [frozenset(u['terms']) | frozenset(u.get('inherited', ())) for u in self.context_units]
+            valid = [u for u in self.context_units if u['kind'] != 'question']
+            self._mean_length = sum(max(1, len(u.get('sequence', u['terms']))) for u in valid) / max(1, len(valid))
+            self._valid_units = len(valid)
+        return self._unit_term_sets
+
+    def _bm25(self, terms: list[str]) -> dict:
+        """Okapi BM25 of each unit for the question words (title words left out); the
+        words of the governing heading count half."""
+        self._unit_sets()
+        postings, units = self._index(), self.context_units
+        title = set(getattr(self, 'context_title', ()))
+        scores: dict = {}
+        for q in dict.fromkeys(terms):
+            listed = postings.get(q)
+            if q in title or not listed:
+                continue
+            idf = math.log(1 + (self._valid_units - len(listed) + 0.5) / (len(listed) + 0.5))
+            for i in listed:
+                unit = units[i]
+                sequence = unit.get('sequence', unit['terms'])
+                tf = sequence.count(q) or (0.5 if q in unit.get('inherited', ()) else 0)
+                if tf:
+                    length = max(1, len(sequence))
+                    scores[i] = scores.get(i, 0.0) + idf * tf * (BM25_K1 + 1) / (
+                        tf + BM25_K1 * (1 - BM25_B + BM25_B * length / self._mean_length))
+        return scores
+
+    def _previous_topic(self, history) -> dict | None:
+        """G-104: the last thing the person asked that names something in the text: its
+        words and the unit the mixture gives it by itself.  Only what the caller sends."""
+        if not history or not getattr(self, 'history_features', True) or not self.context_units:
+            return None
+        for entry in reversed(list(history)):
+            role, said = (entry.get('role', 'user'), entry.get('text', '')) if isinstance(entry, dict) else ('user', entry)
+            if role != 'user':
+                continue
+            _, text = self._question_part(str(said))
+            if not text or self._phatic(text):
+                continue
+            terms = self.context_terms(text)
+            if not terms:
+                continue
+            _, gains, _, _ = self._gains(terms, '')
+            units = self.context_units
+            unit = min(((-g, i) for i, g in gains.items() if units[i]['kind'] not in ('heading', 'question')),
+                       default=(0.0, None))[1]
+            return {'terms': terms, 'unit': unit}
+        return None
+
+    def _candidate_table(self, terms: list[str], question: str, base: float, gains: dict, how: dict, asked,
+                         previous: dict | None = None):
+        """The first CANDIDATES units (headings are never an answer) with the general
+        features and the sparse pairs the usefulness model reads."""
+        units, sets = self.context_units, self._unit_sets()
+        distinct = list(dict.fromkeys(terms))
+        carried, carried_gains, carried_how = [], {}, {}
+        if previous is not None:
+            carried = [t for t in dict.fromkeys(previous['terms']) if t not in distinct]
+            if carried:
+                _, carried_gains, carried_how, _ = self._gains(carried, '')
+        pool = dict(gains)
+        for i, g in carried_gains.items():
+            pool[i] = pool.get(i, 0.0) + CARRIED_WEIGHT * g
+        order = [i for _, i in sorted(((-g, i) for i, g in pool.items() if units[i]['kind'] not in ('heading', 'question')))]
+        order = order[:CANDIDATES]
+        if not order:
+            return []
+        title = set(getattr(self, 'context_title', ()))
+        asked_for = how.get(None, {})
+        mass = sum(asked_for.values())
+        bm = self._bm25(terms)
+        bm_top = max(bm.values(), default=0.0) or 1.0
+        asking = {_plain(w) for w in self.syntax_model.get('interrogatives', ())}
+        words = [_plain(w) for w in self.split_words(question) if w[:1].isalnum()] if question else []
+        wh = 1.0 if any(w in asking for w in words) else 0.0
+        share = asked[1] if asked is not None else 0.0
+        top = max(gains.get(i, 0.0) for i in order)
+        second = sorted((gains.get(i, 0.0) for i in order), reverse=True)[1] if len(order) > 1 else 0.0
+        carried_mass = sum(carried_how.get(None, {}).values())
+        carried_top = max(carried_gains.values(), default=0.0) or 1.0
+        prior = units[previous['unit']]['heading'] if previous is not None and previous.get('unit') is not None else ''
+        table = []
+        for rank, i in enumerate(order):
+            unit, held = units[i], sets[i]
+            own, inherited = set(unit['terms']), set(unit.get('inherited', ()))
+            explained = how.get(i, {})
+            weight = lambda q: 0.0 if q in title else asked_for.get(q, 0.0)
+            unexplained = [asked_for.get(q, 0.0) for q in distinct if q not in explained]
+            dense = [
+                float(rank), gains.get(i, 0.0), top - gains.get(i, 0.0), second, bm.get(i, 0.0) / bm_top,
+                float(sum(q in own for q in distinct)), float(sum(q in inherited and q not in own for q in distinct)),
+                sum(q in own for q in distinct) / (len(distinct) or 1),
+                sum(weight(q) for q in distinct if q in own) / mass if mass else 0.0,
+                sum(weight(q) for q in distinct if q in inherited and q not in own) / mass if mass else 0.0,
+                max(unexplained, default=0.0), sum(unexplained),
+                float(sum(kind != 'direct' for kind in explained.values())),
+                float(len(unit['text'].split())), float(USEFUL_KINDS.get(unit['kind'], 5)),
+                float(sum(ch.isdigit() for ch in unit['text'])), 1.0 if unit['heading'] else 0.0,
+                i / len(units), float(len(distinct)), mass, wh, share,
+                float(min(unit.get('classes', {}).get(asked[0], 0), 2)) if asked is not None else 0.0,
+            ]
+            if previous is None:
+                dense += [0.0] * 7
+            else:
+                explained_before = sum(w for q, w in carried_how.get(None, {}).items() if q in carried_how.get(i, {}))
+                shared = 1.0 if prior and unit['heading'] == prior else 0.0
+                alone = 1.0 - min(1.0, dense[8] + dense[9])
+                held_mass = explained_before / carried_mass if carried_mass else 0.0
+                dense += [1.0, held_mass, shared, 1.0 if i == previous.get('unit') else 0.0,
+                          carried_gains.get(i, 0.0) / carried_top, held_mass * alone, shared * alone]
+            ordered = sorted(held)
+            pairs = [q + '|' + w for q in distinct if q not in held for w in ordered if w != q]
+            pairs += [q + '|' + shape for q in distinct for shape in unit.get('shapes', ())]
+            pairs += [q + '|K' + unit['kind'] for q in distinct]
+            pairs += ['K' + unit['kind'] + '|' + w for w in ordered]
+            instruction = unit.get('source') == 'instructions'
+            if instruction:
+                pairs += [q + '|SRC' for q in distinct] + ['SRC|' + w for w in ordered]
+            dense.append(1.0 if instruction else 0.0)
+            table.append({'unit': i, 'gain': gains.get(i, 0.0), 'dense': dense, 'pairs': pairs})
+        return table
+
+    def _pair_weights(self, model) -> dict:
+        """The learned pair weights as one dictionary.  They are stored grouped by the
+        word of the question, ``{head: 'tail:w;tail:w'}``, to keep the file small."""
+        stored = model['pairs']
+        cache = getattr(self, '_pair_cache', None)
+        if cache is None or cache[0] is not stored:
+            flat = {}
+            for head, row in stored.items():
+                if isinstance(row, str):
+                    for item in row.split(';'):
+                        tail, weight = item.rsplit(':', 1)
+                        flat[head + '|' + tail] = float(weight)
+                else:
+                    flat[head] = row
+            cache = (stored, flat)
+            self._pair_cache = cache
+        return cache[1]
+
+    def _rank_by_model(self, model, terms, question, base, gains, how, asked, previous=None):
+        table = self._candidate_table(terms, question, base, gains, how, asked, previous)
+        asked_for = how.get(None, {})
+        if not table:
+            ranked = {'unit': None, 'score': base, 'margin': 0.0, 'unaddressed': max(asked_for.values(), default=0.0),
+                      'cell': cell_key(1.0, 0.0), 'explained': {}, 'covered': 0.0, 'asked': asked, 'candidates': 0}
+            ranked['features'] = self._features(ranked, question)
+            ranked['useful'] = 0.0
+            return ranked
+        pairs, scale = self._pair_weights(model), model['pair_scale']
+        best = None
+        for candidate in table:
+            z = model['bias'] + sum(w * (x - m) / s for x, m, s, w in
+                                    zip(candidate['dense'], model['mean'], model['scale'], model['weights']))
+            z += scale * sum(pairs.get(key, 0.0) for key in candidate['pairs'])
+            candidate['z'] = z
+            if best is None or z > best['z']:
+                best = candidate
+        top = best['unit']
+        explained = how.get(top, {})
+        runner = sorted((g for i, g in gains.items() if i != top and self.context_units[i]['kind'] != 'heading'),
+                        reverse=True)[:1]
+        unaddressed = max((pi for q, pi in asked_for.items() if q not in explained), default=0.0)
+        mass = sum(asked_for.values())
+        covered = sum(pi for q, pi in asked_for.items() if q in explained) / mass if mass else 0.0
+        ranked = {'unit': top, 'score': best['gain'] + base, 'margin': best['gain'] - (runner[0] if runner else 0.0),
+                  'unaddressed': unaddressed, 'cell': cell_key(unaddressed, best['gain'] - (runner[0] if runner else 0.0)),
+                  'explained': explained, 'covered': covered, 'asked': asked, 'raw': best['z'],
+                  'candidates': len(table)}
+        ranked['features'] = self._features(ranked, question)
+
+        curve = model.get('calibration_instructions') if self.context_units[top].get('source') == 'instructions' else None
+        curve = curve or model['calibration']
+
+        def calibrated(z):
+            rate = curve[0][1]
+            for low, block_rate, _ in curve:
+                if z >= low:
+                    rate = block_rate
+            return rate
+        ranked['useful'] = calibrated(best['z'])
+        ranked['alternatives'] = [(c['unit'], calibrated(c['z'])) for c in
+                                  sorted(table, key=lambda c: -c['z']) if c['unit'] != top][:2]
         return ranked
 
     def _features(self, ranked: dict, question: str) -> dict:
@@ -439,9 +748,17 @@ class ContextMixin:
                 rate = block_rate
         return rate
 
+    def _active_model(self):
+        """G-103: the usefulness model of the candidates, when it is taught and on."""
+        model = self.context_model.get('usefulness')
+        return model if model and getattr(self, 'candidate_model', True) else None
+
     def _admitted(self, ranked: dict | None) -> bool:
         if ranked is None:
             return False
+        model = self._active_model()
+        if model is not None:
+            return 'plain_from' in model and ranked['useful'] >= model['plain_from']
         if not getattr(self, 'calibrated', True):
             return True
         return ranked['cell'] in set(self.context_model.get('admitted', ()))
@@ -455,7 +772,8 @@ class ContextMixin:
             return 'unknown'
         if ranked.get('useful') is not None:
             # G-60: quoted only where it is counted useful often enough.
-            cite_from = self.context_model['confidence'].get('cite_from', CITE_FROM)
+            source = self._active_model() or self.context_model['confidence']
+            cite_from = source.get('cite_from', CITE_FROM)
             return 'closest' if ranked['useful'] >= cite_from else 'unknown'
         return 'closest' if ranked['cell'] in set(self.context_model.get('closest', ())) else 'unknown'
 
@@ -481,7 +799,11 @@ class ContextMixin:
         if getattr(self, 'short_echo', True) and (len(text.split()) > ECHO_WORDS or any(c.isdigit() for c in text)):
             return False
         postings = self._index()
-        return not any(t in postings for t in self.context_terms(text))
+        terms = self.context_terms(text)
+        view = self._instruction_view() if self._active_model() is not None else None
+        if view is not None and any(t in view._index() for t in terms):
+            return False
+        return not any(t in postings for t in terms)
 
     def _question_part(self, question: str) -> tuple[str, str]:
         """A greeting that opens a question is set apart from it."""
@@ -505,7 +827,17 @@ class ContextMixin:
             said = (opening or text).strip(' ,.;:')
             return {'text': (said[:1].upper() + said[1:] + '.') if said else '', 'status': 'phatic',
                     'evidence': None, 'confidence': None}
-        ranked = self._rank(self.context_terms(text), text)
+        previous = self._previous_topic(history) if self._active_model() is not None else None
+        terms = self.context_terms(text)
+        ranked = self._rank(terms, text, previous)
+        source, units = 'context', self.context_units
+        view = self._instruction_view() if self._active_model() is not None else None
+        if view is not None:
+            # G-105: the best sentence of the instructions competes with the best unit of the text.
+            other = view._rank(terms, text)
+            if other is not None and other.get('unit') is not None and (
+                    ranked is None or ranked.get('unit') is None or other['useful'] > ranked['useful']):
+                ranked, source, units = other, 'instructions', self.context_instructions
         level = self._level(ranked)
         prefix = (opening[:1].upper() + opening[1:] + '. ') if opening else ''
         table = self.context_model.get('closest_cells' if level == 'closest' else 'cells', {})
@@ -516,12 +848,22 @@ class ContextMixin:
         if level == 'unknown':
             # Not asserted: the best unit and its counted precision go to the
             # caller apart from the reply, so an integrator can decide.
-            candidate = ({'text': self._shown(ranked), 'precision': precision}
+            candidate = ({'text': units[ranked['unit']]['text'], 'precision': precision, 'source': source}
                          if ranked is not None and ranked['unit'] is not None else None)
-            return {'text': prefix + UNKNOWN_TEXT, 'status': 'unknown', 'evidence': None,
-                    'confidence': None, 'cell': ranked['cell'] if ranked else None, 'candidate': candidate}
-        unit = self.context_units[ranked['unit']]
-        shown = self._shown(ranked)
+            exit_unit = self._fallback_exit()
+            text_out = prefix + UNKNOWN_TEXT + (FALLBACK_TEXT.format(exit_unit['text'].rstrip('.')) if exit_unit else '')
+            result = {'text': text_out, 'status': 'unknown', 'evidence': None,
+                      'confidence': None, 'cell': ranked['cell'] if ranked else None, 'candidate': candidate}
+            if exit_unit:
+                result['fallback'] = exit_unit['text']
+            return result
+        unit = units[ranked['unit']]
+        shown = unit['text']
+        if source == 'instructions':
+            return {'text': prefix + INSTRUCTION_TEXT.format(shown.rstrip('.')), 'status': 'instruction',
+                    'evidence': {'unit': unit['text'], 'heading': unit['heading'], 'index': ranked['unit'],
+                                 'source': 'instructions'},
+                    'confidence': precision, 'cell': ranked['cell']}
         reply = shown if level == 'answered' else CLOSEST_TEXT.format(shown.rstrip('.'))
         return {'text': prefix + reply, 'status': level,
                 'evidence': {'unit': unit['text'], 'heading': unit['heading'], 'index': ranked['unit']},

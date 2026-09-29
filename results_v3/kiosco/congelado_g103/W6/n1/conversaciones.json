@@ -1,0 +1,236 @@
+[
+  [
+    {
+      "cliente": "hola buenas, cuanto sale estacionar como una hora y media?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["$ 60"],
+      "evidencia": "Hasta 2 horas: $ 60",
+      "respuesta_ideal": "Bienvenido/a a Shopping Costa Urbana. Hasta 2 horas el estacionamiento cuesta $ 60 (la primera hora es sin costo)."
+    },
+    {
+      "cliente": "¿y las motos?",
+      "tipo": "seguimiento",
+      "accion": "responder",
+      "claves": ["sin costo"],
+      "evidencia": "Motos: sin costo",
+      "respuesta_ideal": "Las motos estacionan sin costo."
+    },
+    {
+      "cliente": "y si dejo el auto 4 horas cuanto pago en total?",
+      "tipo": "combinada",
+      "accion": "responder",
+      "claves": ["$ 60", "$ 45"],
+      "evidencia": "Hasta 2 horas: $ 60\n- Cada hora o fracción adicional: $ 45",
+      "respuesta_ideal": "Pagaría $ 150: $ 60 por las primeras 2 horas más $ 45 por cada una de las 2 horas adicionales (el tope diario es de $ 260)."
+    },
+    {
+      "cliente": "si gasto 2000 pesos en un local me sale gratis el estacionamiento?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["gratis por 3 horas"],
+      "evidencia": "Con compras de $ 1.500 o más en cualquier local, sellando el ticket en Atención al Cliente, el estacionamiento es gratis por 3 horas.",
+      "respuesta_ideal": "Sí: con compras de $ 1.500 o más y el ticket sellado en Atención al Cliente, el estacionamiento es gratis por 3 horas."
+    },
+    {
+      "cliente": "¿el estacionamiento tiene servicio de lavado de autos?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No tengo información sobre un servicio de lavado de autos en el estacionamiento."
+    }
+  ],
+  [
+    {
+      "cliente": "a q hora cierran los locales?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["10:00 a 22:00"],
+      "evidencia": "Locales y galerías: todos los días de 10:00 a 22:00 hs.",
+      "respuesta_ideal": "Los locales y galerías abren todos los días de 10:00 a 22:00 hs."
+    },
+    {
+      "cliente": "y el patio de comidas un sabado?",
+      "tipo": "seguimiento",
+      "accion": "responder",
+      "claves": ["11:00 a 00:30"],
+      "evidencia": "viernes, sábados y vísperas de feriado 11:00 a 00:30",
+      "respuesta_ideal": "Los sábados el patio de comidas atiende de 11:00 a 00:30."
+    },
+    {
+      "cliente": "el 1 de mayo abren?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["permanece cerrado"],
+      "evidencia": "el 1 de enero, el 1 de mayo y el 25 de diciembre el shopping permanece cerrado",
+      "respuesta_ideal": "No, el 1 de mayo el shopping permanece cerrado."
+    },
+    {
+      "cliente": "en nochebuena, el 24 de diciembre, hasta que hora estan abiertos?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["20:00 hs"],
+      "evidencia": "El 24 y el 31 de diciembre cerramos a las 20:00 hs.",
+      "respuesta_ideal": "El 24 de diciembre cerramos a las 20:00 hs."
+    },
+    {
+      "cliente": "a que hora abre la boleteria del cine?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["13:00 hs"],
+      "evidencia": "Cine Ágora (nivel 2, 6 salas): la boletería abre a las 13:00 hs.",
+      "respuesta_ideal": "La boletería del Cine Ágora abre a las 13:00 hs."
+    },
+    {
+      "cliente": "que peliculas hay hoy?",
+      "tipo": "instruccion",
+      "accion": "derivar",
+      "claves": [],
+      "evidencia": "No informes qué películas hay ni a qué hora es una función: la cartelera cambia cada semana. Decí que se consulta en la boletería del Cine Ágora.",
+      "respuesta_ideal": "No le puedo informar la cartelera ni los horarios de las funciones porque cambian cada semana; se consultan en la boletería del Cine Ágora."
+    },
+    {
+      "cliente": "cuanto sale la entrada al cine?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No tengo el precio de las entradas del cine."
+    }
+  ],
+  [
+    {
+      "cliente": "cuanto cobran por una hora en arena kids",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["$ 220"],
+      "evidencia": "Tarifas por niño: 1 hora $ 220 | 2 horas $ 350.",
+      "respuesta_ideal": "Una hora en Arena Kids cuesta $ 220 por niño."
+    },
+    {
+      "cliente": "¿y por dos horas?",
+      "tipo": "seguimiento",
+      "accion": "responder",
+      "claves": ["$ 350"],
+      "evidencia": "Tarifas por niño: 1 hora $ 220 | 2 horas $ 350.",
+      "respuesta_ideal": "Dos horas cuestan $ 350 por niño."
+    },
+    {
+      "cliente": "mi nena tiene 2 años, la dejan entrar?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["3 a 10 años"],
+      "evidencia": "Juegos para niños de 3 a 10 años, todos los días de 12:00 a 21:00 hs.",
+      "respuesta_ideal": "Arena Kids es para niños de 3 a 10 años, así que con 2 años no podría ingresar."
+    },
+    {
+      "cliente": "y si voy con mi hijo de 6, una hora, y tengo que comprar las medias, cuanto gasto en total?",
+      "tipo": "combinada",
+      "accion": "responder",
+      "claves": ["$ 220", "$ 60"],
+      "evidencia": "Es obligatorio el uso de medias antideslizantes (se venden en el local a $ 60).",
+      "respuesta_ideal": "Serían $ 280: $ 220 por la hora de juego más $ 60 de las medias antideslizantes, que son obligatorias."
+    },
+    {
+      "cliente": "hacen descuento por hermanos?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No tengo información sobre descuentos por hermanos en Arena Kids."
+    }
+  ],
+  [
+    {
+      "cliente": "necesito una silla de ruedas, donde la pido?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["Atención al Cliente", "cédula de identidad"],
+      "evidencia": "se retiran en Atención al Cliente dejando la cédula de identidad en garantía",
+      "respuesta_ideal": "Se presta sin costo en Atención al Cliente, en planta baja, dejando la cédula de identidad en garantía, por un máximo de 4 horas."
+    },
+    {
+      "cliente": "hay wifi? cual es la clave",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["CostaUrbana-Free", "sin contraseña"],
+      "evidencia": "Wi-Fi gratuito: red \"CostaUrbana-Free\", sin contraseña.",
+      "respuesta_ideal": "Sí, hay Wi-Fi gratuito: la red es CostaUrbana-Free y no tiene contraseña."
+    },
+    {
+      "cliente": "puedo entrar con mi perrito chico?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["no se permite el ingreso"],
+      "evidencia": "Mascotas: no se permite el ingreso, salvo perros guía y de asistencia.",
+      "respuesta_ideal": "No, no se permite el ingreso de mascotas, salvo perros guía y de asistencia."
+    },
+    {
+      "cliente": "tienen cajero del banco republica?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "Hay 2 cajeros automáticos en planta baja, pero no tengo el dato de a qué banco pertenecen."
+    },
+    {
+      "cliente": "me cobraron de mas en la jugueteria y encima me atendieron mal, quiero hacer un reclamo",
+      "tipo": "instruccion",
+      "accion": "derivar",
+      "claves": [],
+      "evidencia": "Reclamos y problemas con un cobro o con la atención de un local: derivá a Atención al Cliente (planta baja) o al WhatsApp 094 512 330.",
+      "respuesta_ideal": "Lamento lo ocurrido. Para su reclamo puede acercarse a Atención al Cliente, en planta baja, o escribir al WhatsApp 094 512 330."
+    },
+    {
+      "cliente": "quiero alquilar un local en el shopping, con quien hablo?",
+      "tipo": "instruccion",
+      "accion": "derivar",
+      "claves": [],
+      "evidencia": "Si alguien quiere alquilar un local o un stand, o hacer publicidad en el shopping, derivalo a Valeria Techera, gerente comercial, interno 4.",
+      "respuesta_ideal": "Para alquilar un local debe hablar con Valeria Techera, gerente comercial, en el interno 4."
+    }
+  ],
+  [
+    {
+      "cliente": "el hiper abre desde que hora?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["8:00 a 23:00"],
+      "evidencia": "Hipermercado Ceibo (planta baja): todos los días de 8:00 a 23:00 hs.",
+      "respuesta_ideal": "El Hipermercado Ceibo abre todos los días de 8:00 a 23:00 hs."
+    },
+    {
+      "cliente": "mi papa es jubilado y va el miercoles a hacer una compra de 3000 pesos en el hiper, cuanto paga?",
+      "tipo": "combinada",
+      "accion": "responder",
+      "claves": ["10 % de descuento"],
+      "evidencia": "Miércoles de jubilados: 10 % de descuento en Hipermercado Ceibo presentando cédula y carné de jubilado.",
+      "respuesta_ideal": "Pagaría $ 2.700: los miércoles los jubilados tienen 10 % de descuento en el Hipermercado Ceibo (sobre $ 3.000 son $ 300), presentando cédula y carné de jubilado."
+    },
+    {
+      "cliente": "cuanto cuesta un locker por todo el dia?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No tengo una tarifa por todo el día; solo sé que los lockers cuestan $ 80 por 4 horas."
+    },
+    {
+      "cliente": "ayuda!! mi hijo se perdio en el shopping",
+      "tipo": "instruccion",
+      "accion": "derivar",
+      "claves": [],
+      "evidencia": "Si alguien menciona una emergencia médica o de seguridad (se descompensó, un robo, un niño perdido), pedile que llame de inmediato a Seguridad, interno 9, o al 911.",
+      "respuesta_ideal": "Llame de inmediato a Seguridad, interno 9, o al 911."
+    },
+    {
+      "cliente": "gracias!! chau",
+      "tipo": "charla",
+      "accion": "charla",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "Con gusto, que tenga un excelente día."
+    }
+  ]
+]

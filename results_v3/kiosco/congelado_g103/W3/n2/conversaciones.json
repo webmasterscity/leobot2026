@@ -1,0 +1,33 @@
+[
+  [
+    {"cliente": "¿Qué café me recomiendas?", "tipo": "charla", "accion": "charla", "claves": [], "evidencia": null, "respuesta_ideal": "Depende de tu gusto. Si te gusta fuerte, un americano o café negro. Si prefieres algo más suave, un cappuccino o latte están muy ricos."},
+    {"cliente": "¿Cuánto cuesta un cappuccino grande?", "tipo": "directa", "accion": "responder", "claves": ["$8 500"], "evidencia": "Cappuccino: $6 500 | $8 500 (grande)", "respuesta_ideal": "Un cappuccino grande cuesta $8 500."},
+    {"cliente": "¿Y si es pequeño?", "tipo": "seguimiento", "accion": "responder", "claves": ["$6 500"], "evidencia": "Cappuccino: $6 500 | $8 500 (grande)", "respuesta_ideal": "El pequeño cuesta $6 500."}
+  ],
+  [
+    {"cliente": "¿Me das WiFi?", "tipo": "directa", "accion": "responder", "claves": ["WiFi gratis"], "evidencia": "WiFi gratis - contraseña: cafearrebato2024", "respuesta_ideal": "Claro, WiFi es gratis. La contraseña es cafearrebato2024."},
+    {"cliente": "Quiero trabajar aquí 4 horas mañana al mediodía", "tipo": "instruccion", "accion": "responder", "claves": ["máximo 1 hora", "horas pico"], "evidencia": "Máximo 1 hora de permanencia en horas pico (12-2pm, 6-8pm)", "respuesta_ideal": "Entre 12 y 2 de la tarde solo puedes estar máximo 1 hora debido al flujo de clientes. Después de esa hora, puedes quedarte más tiempo."},
+    {"cliente": "¿Hay enchufes?", "tipo": "directa", "accion": "responder", "claves": ["Enchufes disponibles en todas las mesas"], "evidencia": "Enchufes disponibles en todas las mesas", "respuesta_ideal": "Sí, hay enchufes en todas las mesas."}
+  ],
+  [
+    {"cliente": "Voy con mi perro", "tipo": "instruccion", "accion": "responder", "claves": ["No aceptamos mascotas"], "evidencia": "No aceptamos mascotas dentro del local", "respuesta_ideal": "Disculpe, no podemos permitir mascotas dentro del café. Puedes sentarte en la puerta si la zona lo permite, pero no dentro."},
+    {"cliente": "¿Por qué? Otros cafés lo permiten", "tipo": "seguimiento", "accion": "charla", "claves": [], "evidencia": null, "respuesta_ideal": "Entiendo, pero es nuestra política para mantener el espacio cómodo para todos. Te invitamos a venir sin tu mascota."}
+  ],
+  [
+    {"cliente": "¿A qué hora abren el domingo?", "tipo": "directa", "accion": "responder", "claves": ["9:00 a.m."], "evidencia": "Domingo: 9:00 a.m. - 7:00 p.m.", "respuesta_ideal": "El domingo abrimos a las 9:00 a.m."},
+    {"cliente": "Tengo un grupo de 10 personas", "tipo": "instruccion", "accion": "responder", "claves": ["llamar al 365-2847"], "evidencia": "Reservas solo para grupos mayores a 8 personas (llamar al 365-2847)", "respuesta_ideal": "Para un grupo de 10 personas, debes llamar al (4) 365-2847 para reservar."},
+    {"cliente": "¿Hay descuento el domingo?", "tipo": "directa", "accion": "responder", "claves": ["compra 2 bebidas", "1 croissant gratis"], "evidencia": "Domingo: compra 2 bebidas y recibe un croissant gratis", "respuesta_ideal": "Sí, los domingos si compras 2 bebidas te damos un croissant gratis."}
+  ],
+  [
+    {"cliente": "¿Cuánto es el desayuno colombiano?", "tipo": "directa", "accion": "responder", "claves": ["$9 000"], "evidencia": "Desayuno colombiano (arepa, queso, jamón, café): $9 000", "respuesta_ideal": "El desayuno colombiano cuesta $9 000 e incluye arepa, queso, jamón y café."},
+    {"cliente": "¿Eso incluye café?", "tipo": "seguimiento", "accion": "responder", "claves": ["café"], "evidencia": "Desayuno colombiano (arepa, queso, jamón, café): $9 000", "respuesta_ideal": "Sí, el café está incluido."},
+    {"cliente": "¿Me pueden hacer uno con queso doble?", "tipo": "sin_respuesta", "accion": "abstenerse", "claves": [], "evidencia": null, "respuesta_ideal": "Las personalizaciones las habla directamente con el personal en el café. Ellos te pueden hacer esos ajustes."},
+    {"cliente": "¿Aceptan tarjeta de crédito?", "tipo": "si_no", "accion": "responder", "claves": ["tarjeta débito/crédito", "Visa, MasterCard"], "evidencia": "Efectivo, tarjeta débito/crédito (Visa, MasterCard, American Express), Daviplata, Apple Pay", "respuesta_ideal": "Sí, aceptamos Visa, MasterCard y American Express."}
+  ],
+  [
+    {"cliente": "¿Tienen opciones sin azúcar?", "tipo": "sin_respuesta", "accion": "abstenerse", "claves": [], "evidencia": null, "respuesta_ideal": "Sobre opciones sin azúcar y detalles nutricionales, te recomiendo que preguntes directamente en el café."},
+    {"cliente": "¿De qué están hechas las empanadas?", "tipo": "sin_respuesta", "accion": "abstenerse", "claves": [], "evidencia": null, "respuesta_ideal": "Los ingredientes exactos los confirma el personal en el café. Ellos pueden informarte sobre alergias también."},
+    {"cliente": "¿Dónde están ubicados?", "tipo": "directa", "accion": "responder", "claves": ["Carrera 37 # 11A-45, Zona Rosa"], "evidencia": "Carrera 37 # 11A-45, Zona Rosa, Medellín - Colombia", "respuesta_ideal": "Estamos en la Carrera 37 # 11A-45, en la Zona Rosa de Medellín."},
+    {"cliente": "¿Es fácil llegar en bus?", "tipo": "sin_respuesta", "accion": "abstenerse", "claves": [], "evidencia": null, "respuesta_ideal": "Sobre transporte en Medellín, te recomiendo consultar Google Maps. Nosotros estamos en Zona Rosa, que es central."}
+  ]
+]
