@@ -1,0 +1,291 @@
+Eres redactor independiente de material de prueba (regla 5.10 de MISION.md, tipo «redactor de pruebas»). No leas nada del repositorio: ni `leobot/`, ni `tests/`, ni `experiments/`, ni `results_v3/`, ni `prereg/`, ni el estado. Solo escribes archivos nuevos en la carpeta que se te indica.
+
+## Contexto mínimo
+Un asistente conversacional atenderá en un kiosco a clientes reales de un negocio. Al asistente se le entrega, en texto plano, toda la información del negocio y unas instrucciones del negocio para el asistente. Los clientes le hacen preguntas en español, a veces en varios turnos. El asistente debe responder con lo que dice el texto, no inventar nada, decir que no tiene el dato cuando no está (o derivar a una persona si las instrucciones lo piden) y seguir las instrucciones del negocio.
+
+Tu trabajo es escribir negocios ficticios pero realistas, con sus instrucciones y conversaciones de clientes con la respuesta esperada. No sabes cómo funciona el asistente y no debes intentar adivinarlo: escribe como lo haría un negocio real y como preguntan clientes reales.
+
+## Qué entregar
+En la carpeta CARPETA (créala), una subcarpeta por negocio (`n1`, `n2`, …), con tres archivos:
+
+1. `negocio.txt` — la información del negocio tal como la escribiría el propio negocio para su sitio web, un folleto o su manual interno de atención. Entre 250 y 900 palabras. Varía la forma entre negocios: títulos y secciones, listas con guiones o números, pares «Campo: valor», tablas escritas con `|` o con tabulaciones, párrafos corridos, una sección de preguntas frecuentes, notas al pie, abreviaturas, precios con distintos formatos (`$12.500`, `12 500 COP`, `€9,90`, `USD 30`), horarios en distintos formatos. Datos concretos y coherentes: dirección, horarios, precios, servicios, requisitos, políticas (cancelación, devoluciones, mascotas, pagos), personas o cargos, teléfonos, excepciones («los festivos cerramos a las 2 p. m.»). Algún error de tipeo ocasional es bienvenido.
+2. `instrucciones.txt` — entre 3 y 10 instrucciones del negocio para el asistente, en lenguaje corriente: qué hacer cuando no sabe algo, a quién o a qué teléfono derivar ciertos temas, qué no debe hacer (p. ej. no dar diagnósticos, no confirmar reservas), cómo saludar o despedirse, datos que debe pedir o avisos que debe dar en ciertas situaciones.
+3. `conversaciones.json` — una lista de conversaciones; cada conversación es una lista de turnos del cliente. Entre 4 y 7 conversaciones por negocio y entre 18 y 30 turnos en total por negocio. Cada turno es un objeto:
+   ```
+   {"cliente": "<lo que dice el cliente>",
+    "tipo": "directa | si_no | combinada | seguimiento | instruccion | sin_respuesta | charla",
+    "accion": "responder | abstenerse | derivar | charla",
+    "claves": ["<fragmento corto que una respuesta correcta debe contener>", ...],
+    "evidencia": "<copia literal del trozo de negocio.txt o instrucciones.txt que respalda la respuesta, o null>",
+    "respuesta_ideal": "<cómo respondería bien un empleado atento, en una o dos frases>"}
+   ```
+   - `claves`: fragmentos cortos copiados literalmente del texto (un precio, una hora, un nombre, un teléfono, «no se admiten»). Todos deben aparecer en una respuesta correcta. Vacío si la acción es abstenerse, derivar o charla. Si la respuesta correcta es un sí o un no, pon como clave el fragmento del texto que lo respalda.
+   - Tipos:
+     - `directa`: el dato está en el texto; el cliente lo pide con sus propias palabras (no copies las del texto: parafrasea como habla la gente: «¿cuánto vale…?», «¿a qué hora cierran?», «¿dónde quedan?», «¿se puede pagar con tarjeta?»).
+     - `si_no`: pregunta de sí o no cuyo sí o no se sigue del texto.
+     - `combinada`: hay que juntar dos datos del texto o hacer una cuenta sencilla (dos noches, tres entradas, total con recargo).
+     - `seguimiento`: solo se entiende con el turno anterior («¿y los domingos?», «¿y para niños?», «¿cuánto cuesta esa?»).
+     - `instruccion`: la situación activa una de las instrucciones del negocio (acción `derivar` o `responder` según la instrucción).
+     - `sin_respuesta`: pregunta razonable sobre el negocio cuyo dato NO está en el texto ni se deduce; la acción correcta es abstenerse (o derivar si las instrucciones lo piden).
+     - `charla`: saludo, agradecimiento o despedida, solos o junto con una pregunta (si trae pregunta, clasifícala por la pregunta).
+   - Proporciones aproximadas por negocio: 35 % directa, 12 % si_no, 10 % combinada, 12 % seguimiento, 8 % instruccion, 25 % sin_respuesta, y unas pocas de charla. Algunas preguntas con faltas de ortografía o sin tildes, como escribe la gente.
+   - Que las `sin_respuesta` sean tentadoras: sobre temas cercanos a lo que sí dice el texto (p. ej. el texto da el precio de adultos pero no el de niños), no preguntas absurdas.
+
+## Formato y cierre
+- Español natural, variado. Evita que todos los negocios se parezcan.
+- JSON válido (compruébalo con `python3 -c "import json,sys; json.load(open(sys.argv[1]))" archivo`).
+- Al terminar, responde solo con la lista de negocios (sector, ciudad y país, número de turnos). No expliques nada más.
+
+
+## Sectores que NO debes usar
+Ya existen negocios de estos sectores (solo sus nombres). Elige sectores claramente distintos de todos ellos y distintos entre sí; si dudas si un sector se parece, elige otro:
+- ÓPTICA MIRADOR
+- LA TIJERA DE ORO — Barbería & Estética
+- ACADEMIA DE CONDUCCIÓN VÍA LIBRE S.A.S.
+- Florería Cerro Alegre
+- LABORATORIO CLÍNICO VITALAB
+- LIBRERÍA EL ALEPH SUR
+- RENT A CAR COSTA AZUL — MÁLAGA
+- CENTRO DE FISIOTERAPIA RENACER
+- Zoológico Fauna Cali
+- WorkHub Madrid Centro
+- LavaMax Monterrey — Lavado Profesional de Autos
+- Ciclos Rosario — Tienda y Taller de Bicicletas
+- MUDANZAS CORDILLERA LTDA.
+- ENVÍOS TICO EXPRESS – SUCURSAL BARRIO ESCALANTE
+- TEATRO LA FAROLA
+- Jardín Infantil Semillitas del Valle
+- GASOLINERA Y TIENDA "EL SOL DE PUEBLA"
+- HOGAR TOTAL — Electrodomésticos y Climatización
+- Aseguradora Andina Confiable Ltda. — Agencia Bogotá Centro
+- CAMPING LOS ÁLAMOS DEL CERRO
+- MUEBLERÍA SILLAR & CEDRO
+- CLUB NATACIÓ CABANYAL
+- PATITAS & CO.
+- SASTRERÍA ILLIMANI
+- KALLPA AIR — MOSTRADOR AEROPUERTO INTERNACIONAL JORGE CHÁVEZ
+- OLAS LOCAS PARQUE ACUÁTICO · ACAPULCO
+- UNIVERSIDAD DEL MAPOCHO (UDM)
+- ALMENDRO · Ropa hecha en España
+- CENTRO DE VACUNACIÓN VIDAPLENA
+- CUERDAS DEL SUR — Instrumentos Musicales
+- ESCUELA DE MÚSICA NUEVA ARMONÍA
+- RESIDENCIAL LOS AROMOS
+- CAFÉ LA MONTAÑA
+- COMPUWORLD GUATEMALA
+- CERRAJERÍA SEVILLA & SEGURIDAD
+- PRINTEXPRESS — Imprenta y Copistería
+- ACUARIO MARINA BLAVA — València
+- TINTA NEGRA ESTUDIO — Tatuajes y perforaciones
+- ESCUELA DE SURF MUELLE VIEJO — Máncora, Piura (Perú)
+- BONETTI SERVICE — Reparación de electrodomésticos
+- FUNERARIA LOS ÁNGELES DEL DESCANSO
+- PET SPA PATITAS FELICES
+- AGENCIA DE EMPLEOS TALENTO CARACAS
+- BOLICHE PINOS DEL NORTE
+- HELADERÍA NEVADA SERRANA
+- Espai Arrel Ioga · Gràcia
+- MOTOTALLER LOS FARALLONES S.A.S.
+- MUNICIPALIDAD PROVINCIAL DEL CUSCO
+- AGUA BLANCA DEL SUR S.A.
+- PIEL DE SEDA
+- VOLTA BIKES BCN
+- Pequeños Políglotas
+- TERMINAL TERRESTRE ÑIELOL — TEMUCO
+- INSTITUTO DE FERTILIDAD Y REPRODUCCIÓN ASISTIDA DEL NORTE
+- VIVERO Y JARDÍN EL PARAÍSO
+- LevelUp Games Bogotá
+- PIZZERÍA LA NONNA
+- VERTICAL CLIMBING · Gimnasio de Escalada Indoor
+- REPUESTOS DÍAZ
+- PAWS & LOVE GUARDERÍA CANINA
+- CLÍNICA RENAL PROVIDENCIA
+- LA PERCHA · Arriendo de trajes, disfraces y vestuario de épo
+- TEXTILAV S.A.S. — LAVANDERÍA INDUSTRIAL
+- PLANETARIO CÚPULA DEL SUR
+- OFICINA MUNICIPAL DE REGISTRO CIVIL — SUCRE
+- COLCHONERÍA EL BUEN DORMIR
+- ESCUELA DE BAILE PASOS DE CALI
+- CERRO VENTISQUERO — CENTRO DE ESQUÍ
+- CONSULADO GENERAL DEL ESTADO PLURINACIONAL DE BOLIVIA EN MAD
+- COOPERATIVA DE AHORRO Y CRÉDITO SIERRA ALTA LTDA.
+- RAÍZ VIVA · mercado orgánico y a granel
+- ESTUDIO FAROL
+- ESTUDIO TAMBORÁ
+- CENTRO AUDITIVO OÍR BIEN
+- UNIDAD EDUCATIVA PARTICULAR ALBORADA
+- EL LLAGAR DE XUANÓN — Casa de aldea y granja
+- RAÍZ VERDE — Restaurante Vegetariano
+- CLUB DE TENIS Y PÁDEL ITAPÉ
+- JOYERÍA Y RELOJERÍA CERVANTES
+- Consulta Psicológica Mente Clara
+- ESTACIONAMIENTO SEGURO CENTRAL
+- GUARDALZADO — Trasteros y Almacenaje Seguro
+- SUMINISTROS ELÉCTRICOS DEL PACÍFICO — Oficina de Atención al
+- NAVIERA PÉREZ — Ferris y Transporte Marítimo Chiloé
+- GRANJA ESCUELA LOS TALAS
+- AVENTURA AUSTRAL – Pesca y Camping
+- PODOLOGÍA DEUSTO
+- CALZADOS Y TALLER "DON RAMIRO"
+- RESIDENCIA GERIÁTRICA "AMANECER DORADO"
+- Salón de Eventos y Banquetes "Quinta Los Fresnos"
+- ESCUELA DE COCINA "SAZÓN DEL NORTE"
+- JARDÍN BOTÁNICO "BOSQUE DE NIEBLA"
+- ESCUELA DE EQUITACIÓN EL MANGRULLO
+- CONECTA FIBRA, S. de R.L.
+- EL FARO — Casa de Empeño y Préstamos, S.A.
+- KART ZONE — Pista de karting
+- VALLE LIMPIO – Control Integrado de Plagas S.A.S.
+- CLUB NÁUTICO LAS GAVIOTAS · MARINA Y ESCUELA DE VELA
+- RADIO TAXI LOS PRÓCERES, S.R.L.
+- LUMINARIA OLAVIDE
+- ACADEMIA PREUNIVERSITARIA "RAÍCES DEL SABER"
+- ARRECIFE AZUL DIVE CENTER
+- PORTEÑO SUITES — ALQUILER TEMPORARIO DE DEPARTAMENTOS
+- BANCO DE SANGRE VIDA NUEVA DEL CARIBE
+- Mercado de Artesanías San Felipe Neri — Oaxaca de Juárez, Mé
+- Bodega Central — Tienda de Vinos y Licores de Mendoza
+- Ibiza Moto Rental — Alquiler de Motos, Scooters y Quads
+- Nutrición Integral Guayaquil — Consultorio de Nutricionista
+- TALLER BARRO VIVO — Cerámica artesanal y clases
+- MERCERÍA Y TELAS ILLIMANI — Manual de atención (uso interno 
+- MONTEGAS S.A. — Distribución de gas por cañería
+- FOTO TURIA · Tienda de fotografía y laboratorio
+- ACADEMIA DE AJEDREZ "JAQUE REAL" — Córdoba
+- OSITO FELIZ — Tienda de Productos para Bebés
+- SONOMAX EVENTOS
+- MESA NORTE — Catering Empresarial
+- REBOTA PARK · Parque de Trampolines
+- PUNTO LIMPIO MUNICIPAL DE LANDABEN
+- Estudio Bustos Aráoz · Traducciones Públicas
+- CLÍNICA DERMATOLÓGICA PIEL SANA
+- CEL OBERT SKYDIVE — Centro de paracaidismo
+- NIDO · Hotel Cápsula Roma Norte
+- Ludoteca El Papagayo Lector
+- GUAGUA LIBRE
+- ENMARCACIONES GIRALDA
+- BRILLO AUSTRAL – Limpieza de hogares por horas
+- ACADEMIA BGA STYLE — Peluquería y Barbería
+- INSTITUTO DEL SUEÑO NOA
+- CHOCOLATERÍA NUBE MINDO
+- GRÚAS Y AUXILIO VIAL TIJUANA — GVT
+- TIENDA SAGRADA — ARTÍCULOS RELIGIOSOS POPAYÁN
+- TITICACA KAYAK ADVENTURES
+- TALLER VARGAS · RESTAURACIÓN DE MUEBLES ANTIGUOS
+- RuedaGDL – Sistema de Bicicleta Pública del Área Metropolita
+- LABORATORIO TERRAAQUA S.R.L.
+- BODEGA CERRO SAMA
+- CENTRO MUNICIPAL DE ADOPCIÓN Y BIENESTAR ANIMAL "LOS CERRILL
+- ESCUELA DE CIRCO AIRE Y LONA
+- CRIPTA ESCAPE ROOM
+- CONSTRURENTA EL PROGRESO
+- CLUB DE GOLF LOS ENCINOS · VALLE DE BRAVO
+- AGUA TALLÁN S.A.C.
+- OFICINA MUNICIPAL DE INFORMACIÓN TURÍSTICA
+- DOJO TURIA — Escuela de Artes Marciales
+- TOSTADURÍA LA CUMBRE
+- ORTOPEDIA TORMES
+- Rumbo Sur Intercambios
+- CENTRO FONOAUDIOLÓGICO HABLEMOS
+- LA TORRE DE DADOS – Juegos de Mesa & Café
+- REFUGIO PIEDRAS BLANCAS
+- BANCO DE ALIMENTOS DE LEÓN, A.C.
+- ARCHIVO HISTÓRICO MUNICIPAL Y HEMEROTECA DE QUETZALTENANGO
+- AUDITORIO MUNICIPAL "JOSÉ LUIS GÓMEZ"
+- ACUARIOS MARACAY — Tienda de Acuarismo y Peces Ornamentales
+- DESPACHO LEGÍTIMA DEFENSORA — Abogados Laboralistas en Grana
+- ACADEMIA CODELAB IQUITOS — Programación y Robótica para Niño
+- Gomería y Vulcanizadora Don Ramón
+- LA OTRA ESCENA — Escuela de Teatro para Adultos
+- CARNICERÍA CHARCUTERÍA HERMANOS PARDO
+- TRASLADOS BAHÍA VALLARTA
+- MARIPOSARIO ALAS DEL PODOCARPUS
+- TAPICERÍA MANOS Y TELA
+- UNIFORMES Y ROPA DE TRABAJO "EL OBRERO FELIZ"
+- CONSULTORIO DE ACUPUNTURA BIENESTAR TOTAL
+- PISCINAS CRISTAL DEL ESTE
+- ACADEMIA ALCÁZAR
+- CONSIGNA «EL EQUIPAJERO»
+- VELO & ENCAJE NOVIAS
+- CERVECERÍA NIEBLA SUR
+- CASA PIGMENTO
+- TELEFÉRICO CUMBRES DE MÉRIDA
+- APIARIO FLOR DE CHURQUI
+- VIDRIERÍA TOMEBAMBA CÍA. LTDA.
+- NUBOSA CANOPY PARK
+- QUESERÍA LA SERRANA — Tandil, Buenos Aires
+- COMPLEJO DEPORTIVO LOS MANGOS
+- ASERRADERO Y MADERERA SILVEIRA HNOS.
+- CEVICHERÍA Y MARISQUERÍA EL MUELLE CHICLAYANO
+- PARROQUIA SAN JOSÉ OBRERO — OFICINA PARROQUIAL
+- AMBULANCIAS VIDA AQP
+- CAMBIO EXPRESS CIUDAD DEL ESTE
+- VUELA CON NOSOTROS - GLOBOS AEROSTÁTICOS TEOTIHUACÁN
+- CENTRO TERMAL PAPALLACTA - AGUAS TERMALES DE LA NATURALEZA
+- CERAMARTE - DISTRIBUIDORA DE PISOS Y REVESTIMIENTOS
+- ESTUDIO ARQ - ARQUITECTURA Y REFORMAS INTEGRALES
+- MUSEO CIENCIA INTERACTIVA - QUITO
+- EXPRESO AUSTRAL
+- LA SEGUNDA PIEL
+- PIÑATERÍA DOÑA CHELO
+- FINCA FRESA ALTA
+- PISTA DE HIELO QUETZAL
+- FORJA CARRIÓN · Herrería y forja artística desde 1987
+- CASA BALCONES — HOTEL BOUTIQUE
+- ODONTOLOGÍA INTEGRAL CHAPALITA
+- ATALAYA FITNESS CHAMBERÍ
+- SUPERMERCADO LA FAMILIA
+- CLÍNICA VETERINARIA "PATITAS FELICES"
+- TALLER MOTOR VIVO
+- MUSEO WARI DE ARTE PRECOLOMBINO
+- FARMACIA SAN VICENTE
+- EL PASTEL DE TRES LECHES
+- IDIOMAS GLOBAL BOGOTÁ
+- LAVANDERÍA AZUL MARINO
+- AVENTURAS ANDINAS TOURS
+- BANCO FONTERRA S. A. — SUCURSAL CABECERA (BUCARAMANGA)
+- CINES GUADALQUIVIR · Sevilla
+- TECNOCELU VILLA MORRA
+- IKAL SPA & TEMAZCAL — Cancún, Quintana Roo
+- HOSTAL KILLA WASI — Cusco, Perú
+- FERRETERÍA EL TORNILLO FELIZ
+- Consultorio de Pediatría Vidal-Soler
+- PANADERÍA Y PASTELERÍA LA ESPIGA DORADA
+- NOTARÍA 94 DEL CÍRCULO DE BOGOTÁ
+- PARQUE SIERRA MÁGICA — Monterrey, N.L.
+- PROPIEDADES LOS MAITENES
+- BIBLIOTECA PÚBLICA MUNICIPAL RÍO HUERVA
+
+## Cantidad
+Escribe exactamente 4 negocios (`n1` a `n4`), de países hispanohablantes distintos si puedes.
+- CENTRO COMERCIAL PORTAL ANDALIÉN
+- SALA DE BINGO LAS MORERAS
+- CUEVAS DEL JAGUA SANTO
+- AUTOPISTA RUTA DEL VOLCÁN S.A.
+- DIARIO LA COSTANERA
+- AUTOPISTA BAHÍA VERDE, S.A.
+- PLAZA YAQUE SHOPPING CENTER
+- ÁGUILAS DEL LEMPA F.C.
+- FARMACIA DR. SÁNCHEZ
+- CAFÉ ARREBATO
+- HOTEL CASA DORADA
+- REMATES AGUERRE & CÍA.
+- RADIO CIBAO VIVA 98.7 FM
+- CONTADORES ISTMO & ASOCIADOS
+- CLUB VÉRTIGO
+- VOCES KARAOKE BOX
+- ZONA CERO PAINTBALL
+- TABACALERA HERMANOS ALMÁNZAR
+- GESTORÍA EBRO
+- SHOPPING COSTA URBANA
+- NÚÑEZ & ASOCIADOS
+- VALLE DORADO · CONCESIONARIA VIAL, S.A.
+- COMPAÑÍA DE BOMBEROS VOLUNTARIOS «TAPE PORÃ» — ÑEMBY
+- CASA AROMAS · Hotel Boutique · San Telmo, Buenos Aires
+- PATAS SALUDABLES — Clínica Veterinaria Integral
+- PUENTES LINGÜÍSTICOS
+- BARRO Y FUEGO — Taller de Cerámica Artesanal
+- PLANTA DE REVISIÓN TÉCNICA BÍO BÍO SUR
+- Estudio Contable Gómez & Villagra
+- SANITARIA DEL PRADO
+- SOLTIERRA CARIBE, S.R.L.
