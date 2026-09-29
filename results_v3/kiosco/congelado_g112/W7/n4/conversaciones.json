@@ -1,0 +1,190 @@
+[
+  {
+    "conversacion": [
+      {
+        "cliente": "Hola, necesito hacerme unos exámenes de rutina.",
+        "tipo": "charla",
+        "accion": "charla",
+        "claves": [],
+        "evidencia": null,
+        "respuesta_ideal": "¡Hola! Te puedo ayudar con eso. ¿Qué exámenes buscas o tienes dudas sobre nuestros servicios?"
+      },
+      {
+        "cliente": "¿Hacen hemograma?",
+        "tipo": "directa",
+        "accion": "responder",
+        "claves": ["Hemograma (recuento de células): $35.000 CLP"],
+        "evidencia": "EXÁMENES DE LABORATORIO: Hemograma (recuento de células): $35.000 CLP",
+        "respuesta_ideal": "Sí, ofrecemos hemograma a $35.000 CLP. Puedes hacer los exámenes de laboratorio sin cita previa, con sistema de turnos."
+      },
+      {
+        "cliente": "¿Tengo que ayunar?",
+        "tipo": "seguimiento",
+        "accion": "responder",
+        "claves": ["Para evaluaciones de rutina: no requiere ayuno"],
+        "evidencia": "RECOMENDACIONES: Para evaluaciones de rutina: no requiere ayuno.",
+        "respuesta_ideal": "Para un hemograma simple, no necesitas ayunar. Pero si haces un perfil metabólico, sí se requieren 8 horas de ayuno."
+      }
+    ]
+  },
+  {
+    "conversacion": [
+      {
+        "cliente": "Me duele el pecho de vez en cuando. ¿Qué prueba me recomiendas?",
+        "tipo": "instruccion",
+        "accion": "derivar",
+        "claves": [],
+        "evidencia": "INSTRUCCIONES: No recomiendes exámenes específicos. Si alguien describe síntomas, derivalo a consultar con un médico.",
+        "respuesta_ideal": "Eso necesitas consultarlo con un médico. Te recomiendo que agendes una evaluación médica integral con uno de nuestros doctores. ¿Te gustaría agendar?"
+      },
+      {
+        "cliente": "Está bien, ¿cuánto cuesta esa evaluación?",
+        "tipo": "directa",
+        "accion": "responder",
+        "claves": ["Evaluación de rutina (sin antecedentes graves): $180.000 CLP"],
+        "evidencia": "EVALUACIÓN MÉDICA INTEGRAL: Evaluación de rutina (sin antecedentes graves): $180.000 CLP",
+        "respuesta_ideal": "Una evaluación médica integral cuesta $180.000 CLP e incluye consulta con el médico, toma de presión y análisis de síntomas."
+      }
+    ]
+  },
+  {
+    "conversacion": [
+      {
+        "cliente": "Tengo antecedentes de presión alta. ¿Cuánto es una evaluación para eso?",
+        "tipo": "directa",
+        "accion": "responder",
+        "claves": ["Evaluación para pacientes con antecedentes de hipertensión o diabetes: $250.000 CLP"],
+        "evidencia": "EVALUACIÓN MÉDICA INTEGRAL: Evaluación para pacientes con antecedentes de hipertensión o diabetes: $250.000 CLP",
+        "respuesta_ideal": "Tenemos evaluación especializada para pacientes con antecedentes de hipertensión a $250.000 CLP."
+      },
+      {
+        "cliente": "¿Eso incluye algunos exámenes de laboratorio?",
+        "tipo": "sin_respuesta",
+        "accion": "abstenerse",
+        "claves": [],
+        "evidencia": null,
+        "respuesta_ideal": "No sé si están incluidos o son aparte. Puedes preguntar cuando agendes la cita o llamar al teléfono."
+      }
+    ]
+  },
+  {
+    "conversacion": [
+      {
+        "cliente": "¿Hacen prueba de covid?",
+        "tipo": "directa",
+        "accion": "responder",
+        "claves": ["Test de covid (antígeno rápido): $25.000 CLP"],
+        "evidencia": "EXÁMENES DE LABORATORIO: Test de covid (antígeno rápido): $25.000 CLP",
+        "respuesta_ideal": "Sí, test de covid por antígeno rápido a $25.000 CLP."
+      },
+      {
+        "cliente": "¿Cuánto tarda en salir el resultado?",
+        "tipo": "sin_respuesta",
+        "accion": "abstenerse",
+        "claves": [],
+        "evidencia": null,
+        "respuesta_ideal": "El antígeno es rápido. Para más detalles sobre tiempo de resultado, consulta cuando vengas o llama al teléfono."
+      }
+    ]
+  },
+  {
+    "conversacion": [
+      {
+        "cliente": "¿Tienen nutricionista?",
+        "tipo": "directa",
+        "accion": "responder",
+        "claves": ["Asesoría nutricional (dietista): $120.000 CLP por sesión"],
+        "evidencia": "ASESORÍAS Y PROGRAMAS: Asesoría nutricional (dietista): $120.000 CLP por sesión",
+        "respuesta_ideal": "Sí, tenemos nutricionista. Una sesión de asesoría cuesta $120.000 CLP."
+      },
+      {
+        "cliente": "¿Hay algún paquete para control de peso?",
+        "tipo": "directa",
+        "accion": "responder",
+        "claves": ["Programa de control de peso (4 sesiones): $380.000 CLP"],
+        "evidencia": "ASESORÍAS Y PROGRAMAS: Programa de control de peso (4 sesiones): $380.000 CLP",
+        "respuesta_ideal": "Sí, programa de control de peso de 4 sesiones a $380.000 CLP."
+      }
+    ]
+  },
+  {
+    "conversacion": [
+      {
+        "cliente": "¿Cuál es el horario de atención?",
+        "tipo": "directa",
+        "accion": "responder",
+        "claves": ["Lunes a viernes: 8:00 a.m. — 6:00 p.m.", "Sábado: 9:00 a.m. — 1:00 p.m."],
+        "evidencia": "HORARIO DE ATENCIÓN: Lunes a viernes: 8:00 a.m. — 6:00 p.m. Sábado: 9:00 a.m. — 1:00 p.m.",
+        "respuesta_ideal": "Lunes a viernes de 8 a.m. a 6 p.m., y sábado de 9 a.m. a 1 p.m."
+      },
+      {
+        "cliente": "¿Abren los domingos?",
+        "tipo": "si_no",
+        "accion": "responder",
+        "claves": ["Domingo y feriados: Cerrado"],
+        "evidencia": "HORARIO DE ATENCIÓN: Domingo y feriados: Cerrado",
+        "respuesta_ideal": "No, los domingos estamos cerrados."
+      }
+    ]
+  },
+  {
+    "conversacion": [
+      {
+        "cliente": "¿Tengo que agendar cita con anticipación?",
+        "tipo": "directa",
+        "accion": "responder",
+        "claves": ["Se recomienda agendar con al menos 48 horas de anticipación para evaluaciones médicas", "Exámenes de laboratorio: pueden hacerse sin agendar previo"],
+        "evidencia": "AGENDAR CITA: Se recomienda agendar con al menos 48 horas de anticipación para evaluaciones médicas. Exámenes de laboratorio: pueden hacerse sin agendar previo (sistema de turno).",
+        "respuesta_ideal": "Para evaluaciones médicas recomendamos 48 horas de anticipación. Para exámenes de laboratorio puedes venir sin cita, tenemos sistema de turnos."
+      },
+      {
+        "cliente": "¿Cuál es el teléfono para agendar?",
+        "tipo": "directa",
+        "accion": "responder",
+        "claves": ["+56 (41) 2765-3400"],
+        "evidencia": "Teléfono: +56 (41) 2765-3400",
+        "respuesta_ideal": "El teléfono es +56 (41) 2765-3400. También puedes escribir por WhatsApp al +56 9 8234-5678."
+      }
+    ]
+  },
+  {
+    "conversacion": [
+      {
+        "cliente": "¿Hacen ecografía?",
+        "tipo": "directa",
+        "accion": "responder",
+        "claves": ["Ecografía abdominal: $180.000 CLP", "Ecografía cardiaca: $220.000 CLP"],
+        "evidencia": "SERVICIOS DIAGNÓSTICOS: Ecografía abdominal: $180.000 CLP. Ecografía cardiaca: $220.000 CLP",
+        "respuesta_ideal": "Sí, hacemos ecografía abdominal ($180.000 CLP) y ecografía cardiaca ($220.000 CLP)."
+      },
+      {
+        "cliente": "¿Hay que prepararse para la ecografía abdominal?",
+        "tipo": "seguimiento",
+        "accion": "responder",
+        "claves": ["Para ecografía abdominal: evitar alimentos grasosos 2 horas antes"],
+        "evidencia": "RECOMENDACIONES: Para ecografía abdominal: evitar alimentos grasosos 2 horas antes.",
+        "respuesta_ideal": "Sí, evita alimentos grasosos 2 horas antes de la ecografía abdominal."
+      }
+    ]
+  },
+  {
+    "conversacion": [
+      {
+        "cliente": "¿Tengo cobertura si tengo Isapre?",
+        "tipo": "si_no",
+        "accion": "responder",
+        "claves": ["Seguros de salud privados (ISAPRE): Cobertura variable según plan", "Consulta tu cobertura antes de agendar"],
+        "evidencia": "PLANES DE SALUD Y SEGUROS: Seguros de salud privados (ISAPRE): Cobertura variable según plan. Consulta tu cobertura antes de agendar.",
+        "respuesta_ideal": "Sí, atendemos ISAPRE pero la cobertura varía según tu plan. Verifica tu cobertura antes de venir."
+      },
+      {
+        "cliente": "¿Puedo traer mi carnet?",
+        "tipo": "sin_respuesta",
+        "accion": "abstenerse",
+        "claves": [],
+        "evidencia": null,
+        "respuesta_ideal": "Sí, trae tu carnet de ISAPRE. Mejor llama antes para confirmar que acepta esa cita o si hay algo que debas saber."
+      }
+    ]
+  }
+]

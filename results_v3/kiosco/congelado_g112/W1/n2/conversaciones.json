@@ -1,0 +1,43 @@
+[
+  [
+    {"cliente": "buenas, a como la bolsa de hielo de 5 kilos?", "tipo": "directa", "accion": "responder", "claves": ["65"], "evidencia": "Bolsa de cubitos 5 kg\tC$ 65", "respuesta_ideal": "Buenas. La bolsa de cubitos de 5 kg cuesta C$ 65."},
+    {"cliente": "y la de dos?", "tipo": "seguimiento", "accion": "responder", "claves": ["30"], "evidencia": "Bolsa de cubitos 2 kg\tC$ 30", "respuesta_ideal": "La bolsa de 2 kg cuesta C$ 30."},
+    {"cliente": "Voy a llevar 3 de 5 kg y 2 de 2 kg, cuanto seria?", "tipo": "combinada", "accion": "responder", "claves": ["255"], "evidencia": "Bolsa de cubitos 2 kg\tC$ 30\nBolsa de cubitos 5 kg\tC$ 65", "respuesta_ideal": "Serían C$ 255: tres bolsas de 5 kg (C$ 195) y dos de 2 kg (C$ 60)."},
+    {"cliente": "¿Puedo pagar eso con tarjeta?", "tipo": "si_no", "accion": "responder", "claves": ["mayores de C$ 300"], "evidencia": "tarjeta de débito o crédito solo en compras mayores de C$ 300.", "respuesta_ideal": "No, la tarjeta solo se acepta en compras mayores de C$ 300; esa compra la puede pagar en efectivo o por transferencia a BANPRO o LAFISE."},
+    {"cliente": "y una bolsa de 5 kilos cuanto me aguanta en el termo?", "tipo": "sin_respuesta", "accion": "abstenerse", "claves": [], "evidencia": null, "respuesta_ideal": "No tengo el dato de cuánto dura una bolsa de 5 kg; puede consultarlo al WhatsApp 8854-2210."}
+  ],
+  [
+    {"cliente": "Hola, ¿venden hielo seco?", "tipo": "si_no", "accion": "responder", "claves": ["No vendemos hielo seco"], "evidencia": "** No vendemos hielo seco.", "respuesta_ideal": "Hola. No vendemos hielo seco."},
+    {"cliente": "¿Hacen entregas en Las Peñitas?", "tipo": "directa", "accion": "responder", "claves": ["C$ 250"], "evidencia": "Fuera del casco urbano solo llegamos a Poneloya y Las Peñitas, con un costo fijo de C$ 250 y un pedido mínimo de C$ 1.500.", "respuesta_ideal": "Sí, llegamos a Las Peñitas con un costo fijo de envío de C$ 250."},
+    {"cliente": "¿Cuál es el pedido mínimo pa' allá?", "tipo": "seguimiento", "accion": "responder", "claves": ["C$ 1.500"], "evidencia": "con un costo fijo de C$ 250 y un pedido mínimo de C$ 1.500.", "respuesta_ideal": "Para Las Peñitas el pedido mínimo es de C$ 1.500."},
+    {"cliente": "¿Me lo pueden llevar hoy mismo en la tarde?", "tipo": "instruccion", "accion": "responder", "claves": ["24 horas"], "evidencia": "No prometás entregas para el mismo día. Explicá que los domicilios se piden por WhatsApp al 8854-2210 con 24 horas de anticipación y que lo del mismo día depende de la disponibilidad del camión.", "respuesta_ideal": "No le puedo asegurar entrega hoy: los domicilios se piden por WhatsApp al 8854-2210 con 24 horas de anticipación, y lo del mismo día depende de la disponibilidad del camión."},
+    {"cliente": "¿Cuánto tarda el camión en llegar a la playa?", "tipo": "sin_respuesta", "accion": "abstenerse", "claves": [], "evidencia": null, "respuesta_ideal": "No tengo ese dato; puede preguntarlo al WhatsApp 8854-2210."}
+  ],
+  [
+    {"cliente": "Tengo una pulperia y quiero sacar hielo al credito", "tipo": "instruccion", "accion": "derivar", "claves": [], "evidencia": "Si un negocio quiere comprar al crédito o abrir cuenta, pasale el contacto de don Esteban Mayorga, gerente, al 8854-2299.", "respuesta_ideal": "Para abrir una cuenta de crédito comuníquese con don Esteban Mayorga, el gerente, al 8854-2299."},
+    {"cliente": "¿Cuántas bolsas tengo que comprar para que me den precio de mayoreo?", "tipo": "directa", "accion": "responder", "claves": ["20 bolsas", "C$ 58"], "evidencia": "Precio de mayoreo: a partir de 20 bolsas de 5 kg en una misma compra, cada bolsa sale a C$ 58.", "respuesta_ideal": "A partir de 20 bolsas de 5 kg en una misma compra, cada una sale a C$ 58."},
+    {"cliente": "¿Y el precio de mayoreo también aplica para las barras?", "tipo": "sin_respuesta", "accion": "abstenerse", "claves": [], "evidencia": null, "respuesta_ideal": "No tengo información de precio de mayoreo para las barras; puede consultarlo al WhatsApp 8854-2210."},
+    {"cliente": "¿Aceptan transferencia?", "tipo": "directa", "accion": "responder", "claves": ["BANPRO", "LAFISE"], "evidencia": "transferencia a BANPRO o LAFISE", "respuesta_ideal": "Sí, se puede pagar por transferencia a BANPRO o LAFISE."}
+  ],
+  [
+    {"cliente": "Buenas tardes!", "tipo": "charla", "accion": "charla", "claves": [], "evidencia": null, "respuesta_ideal": "Buenas tardes, bienvenido. ¿En qué le puedo ayudar?"},
+    {"cliente": "Voy a hacer una fiesta de 50 personas como de 4 horas, cuanto hielo ocupo?", "tipo": "combinada", "accion": "responder", "claves": ["50"], "evidencia": "Para una fiesta de unas 4 horas calcule 1 kg de hielo por persona.", "respuesta_ideal": "Calcule 1 kg por persona: unos 50 kg de hielo, por ejemplo dos barras de 25 kg."},
+    {"cliente": "¿y cuánto me saldría eso en barras?", "tipo": "seguimiento", "accion": "responder", "claves": ["360"], "evidencia": "Barra de hielo 25 kg (marqueta)\tC$ 180", "respuesta_ideal": "Dos barras de 25 kg le salen en C$ 360."},
+    {"cliente": "¿Me prestan una hielera para la fiesta?", "tipo": "directa", "accion": "responder", "claves": ["C$ 500"], "evidencia": "Se deja un depósito de C$ 500 por hielera, que se devuelve completo si la hielera se entrega limpia dentro de las 48 horas.", "respuesta_ideal": "Sí, prestamos hieleras; se deja un depósito de C$ 500 que se le devuelve si la entrega limpia dentro de las 48 horas."},
+    {"cliente": "¿De qué tamaño son?", "tipo": "seguimiento", "accion": "responder", "claves": ["100 litros"], "evidencia": "Para fiestas y eventos prestamos hieleras de 100 litros.", "respuesta_ideal": "Son hieleras de 100 litros."},
+    {"cliente": "¿Y si la devuelvo un día tarde cuánto me cobran?", "tipo": "sin_respuesta", "accion": "abstenerse", "claves": [], "evidencia": null, "respuesta_ideal": "No tengo el dato de qué pasa con el depósito si se devuelve tarde; puede consultarlo al WhatsApp 8854-2210."}
+  ],
+  [
+    {"cliente": "El hielo de ustedes se puede echar en la bebida?", "tipo": "instruccion", "accion": "responder", "claves": ["purificado", "RS-0457-2019"], "evidencia": "Si preguntan si el hielo se puede echar en bebidas o si es apto para tomar, respondé que sí, que es hielo purificado, y mencioná el registro sanitario RS-0457-2019.", "respuesta_ideal": "Sí, es hielo purificado, apto para consumo humano, con registro sanitario RS-0457-2019."},
+    {"cliente": "¿abren el domingo en la tarde?", "tipo": "si_no", "accion": "responder", "claves": ["12:00 m"], "evidencia": "Domingos: 6:00 a.m. a 12:00 m.", "respuesta_ideal": "No, los domingos atendemos de 6:00 a.m. a 12:00 m."},
+    {"cliente": "¿Y el viernes santo?", "tipo": "seguimiento", "accion": "responder", "claves": ["cerrado"], "evidencia": "Jueves y Viernes Santo: cerrado.", "respuesta_ideal": "El Jueves y el Viernes Santo está cerrado."},
+    {"cliente": "¿Tienen sucursal en Chinandega?", "tipo": "sin_respuesta", "accion": "abstenerse", "claves": [], "evidencia": null, "respuesta_ideal": "No tengo información sobre una sucursal en Chinandega; puede consultarlo al WhatsApp 8854-2210."}
+  ],
+  [
+    {"cliente": "encontré una bolsa con basurita adentro, que hago", "tipo": "instruccion", "accion": "derivar", "claves": [], "evidencia": "Si alguien reclama por una bolsa sucia, con mal olor o con algo adentro, pedile disculpas, pedile el número de lote que viene impreso en la bolsa y derivalo a control de calidad con la Lic. Rosa Téllez, 8854-2233.", "respuesta_ideal": "Disculpe mucho. ¿Me da el número de lote impreso en la bolsa? El caso lo atiende control de calidad, Lic. Rosa Téllez, al 8854-2233."},
+    {"cliente": "¿Hasta qué hora puedo pasar a comprar hoy sábado?", "tipo": "directa", "accion": "responder", "claves": ["7:00 p.m."], "evidencia": "Lunes a sábado: 6:00 a.m. a 7:00 p.m.", "respuesta_ideal": "Los sábados atendemos hasta las 7:00 p.m."},
+    {"cliente": "¿El precio ya trae el IVA?", "tipo": "si_no", "accion": "responder", "claves": ["incluyen IVA"], "evidencia": "* Todos los precios incluyen IVA.", "respuesta_ideal": "Sí, todos los precios incluyen IVA."},
+    {"cliente": "¿Me dan factura a nombre de mi negocio?", "tipo": "sin_respuesta", "accion": "abstenerse", "claves": [], "evidencia": null, "respuesta_ideal": "No tengo esa información; puede consultarlo al WhatsApp 8854-2210."},
+    {"cliente": "Gracias, muy amable", "tipo": "charla", "accion": "charla", "claves": [], "evidencia": null, "respuesta_ideal": "Con gusto, que le vaya bien."}
+  ]
+]

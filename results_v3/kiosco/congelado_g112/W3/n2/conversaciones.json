@@ -1,0 +1,172 @@
+[
+  [
+    {
+      "cliente": "Hola, ¿a qué horas abren?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["Lunes a viernes: 8:00 a. m. — 7:00 p. m."],
+      "evidencia": "Lunes a viernes: 8:00 a. m. — 7:00 p. m.",
+      "respuesta_ideal": "Abrimos de lunes a viernes de 8 de la mañana a 7 de la noche."
+    },
+    {
+      "cliente": "¿Abren los sábados?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["Sábados: 9:00 a. m. — 2:00 p. m."],
+      "evidencia": "Sábados: 9:00 a. m. — 2:00 p. m.",
+      "respuesta_ideal": "Sí, los sábados abrimos de 9 de la mañana a 2 de la tarde."
+    },
+    {
+      "cliente": "¿Cuánto cuesta una consulta médica?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["$350 MXN"],
+      "evidencia": "Consulta médica general: $350 MXN",
+      "respuesta_ideal": "La consulta médica general cuesta $350 pesos mexicanos."
+    },
+    {
+      "cliente": "Tengo dolor en el pecho desde hace dos horas.",
+      "tipo": "instruccion",
+      "accion": "derivar",
+      "claves": ["911", "Hospital Civil"],
+      "evidencia": "En caso de emergencia grave (infarto, accidente, pérdida de conciencia), llama al 911 o acude al Hospital Civil de Guadalajara.",
+      "respuesta_ideal": "Por favor ve al 911 o al Hospital Civil inmediatamente. El dolor de pecho es una emergencia."
+    }
+  ],
+  [
+    {
+      "cliente": "Quiero agendar una cita para mañana.",
+      "tipo": "combinada",
+      "accion": "responder",
+      "claves": ["llamar al (33) 3827-4456"],
+      "evidencia": "Citas programadas: 12:00 p. m. — 7:00 p. m. (llamar para agendar)",
+      "respuesta_ideal": "Para agendar una cita, debes llamar al (33) 3827-4456 en nuestro horario de atención."
+    },
+    {
+      "cliente": "¿Puedo ir sin cita?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["Consulta sin cita: 8:00 a. m. — 12:00 p. m."],
+      "evidencia": "Consulta sin cita: 8:00 a. m. — 12:00 p. m. (orden de llegada)",
+      "respuesta_ideal": "Sí, puedes venir sin cita de 8 a 12 del mediodía, por orden de llegada."
+    },
+    {
+      "cliente": "¿Aceptan tarjeta de crédito?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["No aceptamos"],
+      "evidencia": "Tarjetas de crédito: No aceptamos",
+      "respuesta_ideal": "No, aceptamos efectivo, transferencia bancaria y débito, pero no crédito."
+    },
+    {
+      "cliente": "¿Cuánto cuesta la vacuna de influenza?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["Influenza anual: $220"],
+      "evidencia": "Influenza anual: $220",
+      "respuesta_ideal": "La vacuna de influenza cuesta $220 pesos."
+    }
+  ],
+  [
+    {
+      "cliente": "¿Tienen un pediatra?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["Dra. Sandra Reyes Soto (pediatra)"],
+      "evidencia": "Dra. Sandra Reyes Soto (pediatra, especialista en vacunación)",
+      "respuesta_ideal": "Sí, contamos con la Dra. Sandra Reyes Soto, pediatra especialista en vacunación."
+    },
+    {
+      "cliente": "Mi hijo tiene 14 años. ¿Puede ir solo a la consulta?",
+      "tipo": "instruccion",
+      "accion": "responder",
+      "claves": ["menores de 18 años requieren acompañante"],
+      "evidencia": "Pacientes menores de 18 años requieren acompañante.",
+      "respuesta_ideal": "No, los menores de 18 años deben ir acompañados de un adulto."
+    },
+    {
+      "cliente": "¿Cuánto es la consulta con pediatra?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["Consulta especialista", "$450 MXN"],
+      "evidencia": "Consulta especialista (dermatología, pediatría): $450 MXN",
+      "respuesta_ideal": "La consulta con pediatra cuesta $450 pesos."
+    },
+    {
+      "cliente": "¿Sirven análisis de sangre?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["Análisis de sangre básico"],
+      "evidencia": "Análisis de sangre básico (hasta 10 estudios): $320",
+      "respuesta_ideal": "Sí, hacemos análisis de sangre básico con hasta 10 estudios por $320."
+    }
+  ],
+  [
+    {
+      "cliente": "¿Hacen cirugía?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["No realizamos cirugías"],
+      "evidencia": "No realizamos cirugías: derivamos a centros especializados.",
+      "respuesta_ideal": "No, derivamos a centros especializados para cirugías."
+    },
+    {
+      "cliente": "¿Dónde quedan exactamente?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["Avenida Chapultepec 1842"],
+      "evidencia": "Avenida Chapultepec 1842, Esquina Esteban Alatorre",
+      "respuesta_ideal": "Estamos en Avenida Chapultepec 1842, esquina Esteban Alatorre."
+    },
+    {
+      "cliente": "¿Qué tan rápido tengo los resultados del análisis de sangre?",
+      "tipo": "combinada",
+      "accion": "responder",
+      "claves": ["24-48 horas"],
+      "evidencia": "Los análisis de sangre se procesan en laboratorio aliado con resultados en 24-48 horas.",
+      "respuesta_ideal": "Los resultados llegan en 24 a 48 horas después del análisis."
+    },
+    {
+      "cliente": "No puedo venir mañana. ¿Pierdo mi cita?",
+      "tipo": "instruccion",
+      "accion": "responder",
+      "claves": ["avisar con 72 horas", "perderás el turno"],
+      "evidencia": "Si falta a una cita, comunícate con 72 horas de anticipo o perderás el turno.",
+      "respuesta_ideal": "Si avísas con 72 horas de anticipación, no pierdes el turno. Pero si no avisas, lamentablemente sí lo pierdes."
+    }
+  ],
+  [
+    {
+      "cliente": "¿Tienen especialista en próstata?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No aparece en nuestros servicios. Llama al (33) 3827-4456 y preguntan si pueden derivarte a un urólogo de confianza."
+    },
+    {
+      "cliente": "¿Cuál es tu nombre?",
+      "tipo": "charla",
+      "accion": "charla",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "Soy el asistente de la Clínica del Centro. ¿En qué puedo ayudarte?"
+    },
+    {
+      "cliente": "¿Venden medicinas ahi?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["farmacia interna", "medicamentos genéricos"],
+      "evidencia": "Contamos con farmacia interna con medicamentos genéricos a precios accesibles.",
+      "respuesta_ideal": "Sí, tenemos farmacia con medicamentos genéricos a precios accesibles dentro de la clínica."
+    },
+    {
+      "cliente": "¿Puedo hacer un EKG?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["EKG (electrocardiograma): $280"],
+      "evidencia": "EKG (electrocardiograma): $280",
+      "respuesta_ideal": "Sí, hacemos electrocardiogramas por $280 pesos."
+    }
+  ]
+]

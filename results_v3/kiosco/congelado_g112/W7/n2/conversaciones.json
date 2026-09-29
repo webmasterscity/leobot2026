@@ -1,0 +1,178 @@
+[
+  {
+    "conversacion": [
+      {
+        "cliente": "Hola, buenos días.",
+        "tipo": "charla",
+        "accion": "charla",
+        "claves": [],
+        "evidencia": null,
+        "respuesta_ideal": "¡Hola! Bienvenido a English World Academy. ¿En qué puedo ayudarte?"
+      },
+      {
+        "cliente": "¿Cuánto cuesta un curso de inglés básico?",
+        "tipo": "directa",
+        "accion": "responder",
+        "claves": ["Nivel Básico: $180.000 COP"],
+        "evidencia": "TARIFAS MENSUALES (Programa Regular): Nivel Básico: $180.000 COP",
+        "respuesta_ideal": "El curso de nivel Básico cuesta $180.000 COP al mes, y dura 12 semanas con 60 horas de clase."
+      },
+      {
+        "cliente": "¿Y eso incluye el libro?",
+        "tipo": "seguimiento",
+        "accion": "responder",
+        "claves": ["No están incluidos en la matrícula", "Los materiales (libros y recursos digitales) cuestan entre $80.000 y $120.000 COP"],
+        "evidencia": "MATERIALES DE ESTUDIO: Los materiales (libros y recursos digitales) cuestan entre $80.000 y $120.000 COP según el nivel y se pagan una sola vez al iniciar el nivel. No están incluidos en la matrícula.",
+        "respuesta_ideal": "No, los materiales no están incluidos. Los libros y recursos cuestan entre $80.000 y $120.000 COP según el nivel, y se pagan una sola vez."
+      }
+    ]
+  },
+  {
+    "conversacion": [
+      {
+        "cliente": "Tengo 8 años, ¿puedo tomar clases?",
+        "tipo": "directa",
+        "accion": "responder",
+        "claves": ["Mini English 1, 2, 3: Grupos reducidos", "4 A 12 AÑOS"],
+        "evidencia": "CLASES PARA NIÑOS (4 A 12 AÑOS): Mini English 1, 2, 3: Grupos reducidos, enfoque lúdico y conversacional.",
+        "respuesta_ideal": "Sí, ofrecemos el programa Mini English para niños de 4 a 12 años con grupos reducidos y enfoque divertido."
+      },
+      {
+        "cliente": "¿Cuánto cuesta y cuándo son las clases?",
+        "tipo": "combinada",
+        "accion": "responder",
+        "claves": ["Mini English (niños): $150.000 COP", "Clases entre las 3:00 p.m. y las 6:00 p.m., sábados 9:00 a.m. — 12:00 p.m."],
+        "evidencia": "CLASES PARA NIÑOS: Horario: Clases entre las 3:00 p.m. y las 6:00 p.m., sábados 9:00 a.m. — 12:00 p.m. TARIFAS: Mini English (niños): $150.000 COP",
+        "respuesta_ideal": "Cuesta $150.000 COP al mes. Las clases son entre las 3 p.m. y 6 p.m. entre semana, o sábados de 9 a.m. a 12 p.m."
+      },
+      {
+        "cliente": "¿Cada cuánto tiempo son las clases?",
+        "tipo": "seguimiento",
+        "accion": "responder",
+        "claves": ["Duración: 8 semanas por módulo"],
+        "evidencia": "CLASES PARA NIÑOS: Duración: 8 semanas por módulo.",
+        "respuesta_ideal": "Cada módulo dura 8 semanas."
+      }
+    ]
+  },
+  {
+    "conversacion": [
+      {
+        "cliente": "Mi empresa necesita un curso de inglés para 5 empleados. ¿Hacen programas así?",
+        "tipo": "directa",
+        "accion": "responder",
+        "claves": ["Cursos in-situ o en nuestras instalaciones", "Disponible para empresas con mínimo 8 participantes"],
+        "evidencia": "CLASES PARA EMPRESA: Cursos in-situ o en nuestras instalaciones, diseñados según las necesidades del equipo. Disponible para empresas con mínimo 8 participantes.",
+        "respuesta_ideal": "Hacemos programas empresariales personalizados, pero necesitamos mínimo 8 participantes. Te recomiendo contactar directamente al WhatsApp o teléfono."
+      },
+      {
+        "cliente": "¿Cuál es el WhatsApp de la academia?",
+        "tipo": "directa",
+        "accion": "responder",
+        "claves": ["+57 318-5678942"],
+        "evidencia": "WhatsApp: +57 318-5678942",
+        "respuesta_ideal": "El WhatsApp es +57 318-5678942. Pueden escribir allí con tus requerimientos."
+      }
+    ]
+  },
+  {
+    "conversacion": [
+      {
+        "cliente": "¿Me hacen descuento si me inscribo ahora?",
+        "tipo": "sin_respuesta",
+        "accion": "abstenerse",
+        "claves": [],
+        "evidencia": null,
+        "respuesta_ideal": "No sé de promociones vigentes en este momento. Pregunta directamente en la oficina o escribe al WhatsApp para saber qué descuentos hay ahora."
+      },
+      {
+        "cliente": "Pero vi que hay descuento por pago semestral. ¿Es cierto?",
+        "tipo": "si_no",
+        "accion": "responder",
+        "claves": ["10 % de descuento por pago semestral anticipado"],
+        "evidencia": "DESCUENTOS DISPONIBLES: 10 % de descuento por pago semestral anticipado (6 meses de clases)",
+        "respuesta_ideal": "Sí, hay 10 % de descuento si pagas 6 meses por adelantado."
+      }
+    ]
+  },
+  {
+    "conversacion": [
+      {
+        "cliente": "¿Qué horarios tienen disponibles?",
+        "tipo": "directa",
+        "accion": "responder",
+        "claves": ["matutino (6:00 a.m. — 7:30 a.m.)", "vespertino (4:00 p.m. — 5:30 p.m.)", "nocturno (7:00 p.m. — 8:30 p.m.)"],
+        "evidencia": "PROGRAMAS Y NIVELES: Frecuencia: Clases 2 o 3 veces por semana, en horarios matutino (6:00 a.m. — 7:30 a.m.), vespertino (4:00 p.m. — 5:30 p.m.) y nocturno (7:00 p.m. — 8:30 p.m.).",
+        "respuesta_ideal": "Tenemos horarios matutino (6 a.m.), vespertino (4 p.m.) y nocturno (7 p.m.). Las clases son 2 o 3 veces por semana."
+      },
+      {
+        "cliente": "¿Hay disponibilidad en la tarde para nivel intermedio?",
+        "tipo": "sin_respuesta",
+        "accion": "abstenerse",
+        "claves": [],
+        "evidencia": null,
+        "respuesta_ideal": "Para verificar disponibilidad de cupos en un grupo específico, contáctanos al WhatsApp +57 318-5678942 o al teléfono (4) 4456-2301."
+      }
+    ]
+  },
+  {
+    "conversacion": [
+      {
+        "cliente": "¿Cómo sé qué nivel necesito?",
+        "tipo": "directa",
+        "accion": "responder",
+        "claves": ["Prueba de diagnóstico gratuita"],
+        "evidencia": "REQUISITOS PARA LA INSCRIPCIÓN: Prueba de diagnóstico gratuita (evaluación para determinar nivel)",
+        "respuesta_ideal": "Ofrecemos una prueba de diagnóstico gratuita que nos ayuda a determinar tu nivel exacto."
+      },
+      {
+        "cliente": "¿Puedo cambiar de nivel si me doy cuenta que no es el mío?",
+        "tipo": "si_no",
+        "accion": "responder",
+        "claves": ["Cambio a nivel diferente: es permitido dentro de los primeros 7 días"],
+        "evidencia": "POLÍTICA DE CANCELACIÓN: Cambio a nivel diferente: es permitido dentro de los primeros 7 días de iniciado el curso.",
+        "respuesta_ideal": "Sí, puedes cambiar de nivel dentro de los primeros 7 días de iniciado el curso."
+      },
+      {
+        "cliente": "¿Y después de 7 días?",
+        "tipo": "seguimiento",
+        "accion": "responder",
+        "claves": ["Cambio de horario: Se autoriza cambio de grupo o jornada dentro del mismo nivel, máximo una vez por nivel"],
+        "evidencia": "POLÍTICA DE CANCELACIÓN: Cambio de horario: Se autoriza cambio de grupo o jornada dentro del mismo nivel, máximo una vez por nivel.",
+        "respuesta_ideal": "Después de 7 días, solo puedes cambiar de horario dentro del mismo nivel, máximo una vez."
+      }
+    ]
+  },
+  {
+    "conversacion": [
+      {
+        "cliente": "¿Qué idiomas enseñan además del inglés?",
+        "tipo": "sin_respuesta",
+        "accion": "abstenerse",
+        "claves": [],
+        "evidencia": null,
+        "respuesta_ideal": "Solo enseñamos inglés. Si te interesa otro idioma, puedo anotar tu solicitud y verificar con la academia."
+      }
+    ]
+  },
+  {
+    "conversacion": [
+      {
+        "cliente": "Me dijeron que ustedes preparan para Cambridge y TOEFL. ¿Es verdad?",
+        "tipo": "si_no",
+        "accion": "responder",
+        "claves": ["Al finalizar cada nivel, los estudiantes pueden presentarse a exámenes oficiales de Cambridge (FCE, CAE) o TOEFL con descuento"],
+        "evidencia": "CERTIFICACIONES: Al finalizar cada nivel, los estudiantes pueden presentarse a exámenes oficiales de Cambridge (FCE, CAE) o TOEFL con descuento en aranceles ($150.000 COP de ahorro aproximadamente).",
+        "respuesta_ideal": "Sí, al terminar cada nivel puedes presentarte a Cambridge o TOEFL con descuento de unos $150.000 COP en los aranceles."
+      },
+      {
+        "cliente": "¿Cuántos años de experiencia tienen los profes?",
+        "tipo": "directa",
+        "accion": "responder",
+        "claves": ["Todos nuestros docentes son bilingües certificados con mínimo 3 años de experiencia"],
+        "evidencia": "DOCENTES: Todos nuestros docentes son bilingües certificados con mínimo 3 años de experiencia.",
+        "respuesta_ideal": "Todos nuestros docentes son bilingües certificados con al menos 3 años de experiencia."
+      }
+    ]
+  }
+]

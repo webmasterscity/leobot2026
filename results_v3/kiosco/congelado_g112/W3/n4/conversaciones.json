@@ -1,0 +1,156 @@
+[
+  [
+    {
+      "cliente": "¿Cuánto cuesta una habitación doble?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["70–95 euros/noche"],
+      "evidencia": "Habitación Doble Estándar: 70–95 euros/noche",
+      "respuesta_ideal": "La Habitación Doble Estándar cuesta entre 70 y 95 euros por noche, sujeto a disponibilidad."
+    },
+    {
+      "cliente": "¿Dónde están exactamente?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["Plaza Maimonides", "Centro Histórico", "14002"],
+      "evidencia": "Plaza Maimonides s/n (esquina Calle Judíos), Centro Histórico, 14002 Córdoba, España",
+      "respuesta_ideal": "Estamos en Plaza Maimonides en el Centro Histórico de Córdoba, justo en la esquina de Calle Judíos."
+    },
+    {
+      "cliente": "¿A qué hora es el check-in?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["14:00 horas"],
+      "evidencia": "Registro de entrada: 14:00 horas",
+      "respuesta_ideal": "El check-in es a las 14:00 horas (2 de la tarde)."
+    },
+    {
+      "cliente": "¿Tienen WiFi?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["WiFi en todas las habitaciones: incluido"],
+      "evidencia": "WiFi en todas las habitaciones: incluido sin coste",
+      "respuesta_ideal": "Sí, WiFi incluido en todas las habitaciones sin cargo extra."
+    }
+  ],
+  [
+    {
+      "cliente": "Quiero reservar para 6 personas. ¿Qué me recomiendas?",
+      "tipo": "combinada",
+      "accion": "responder",
+      "claves": ["Habitación Familiar", "hasta 4 personas", "140–180 euros"],
+      "evidencia": "Habitación Familiar (hasta 4 personas): 140–180 euros/noche",
+      "respuesta_ideal": "Para 6 personas necesitarían dos habitaciones. Una Familiar es para máximo 4. Te recomiendo una Familiar más una Doble, o comunícate con recepción para opciones."
+    },
+    {
+      "cliente": "¿Aceptan perros?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["no se aceptan", "perros de servicio"],
+      "evidencia": "Mascotas: no se aceptan (excepto perros de servicio)",
+      "respuesta_ideal": "No aceptamos mascotas, excepto perros de servicio."
+    },
+    {
+      "cliente": "¿Se puede pagar con tarjeta?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["Tarjeta de crédito (Visa, Mastercard, Amex)"],
+      "evidencia": "Tarjeta de crédito (Visa, Mastercard, Amex)",
+      "respuesta_ideal": "Sí, aceptamos Visa, Mastercard y American Express."
+    }
+  ],
+  [
+    {
+      "cliente": "¿Cuál es la diferencia entre Doble Estándar y Doble Superior?",
+      "tipo": "combinada",
+      "accion": "responder",
+      "claves": ["Superior", "bañera", "minibar", "escritorio"],
+      "evidencia": "Habitación Doble Superior: 95–130 euros/noche - Cama de matrimonio, baño con bañera, escritorio, minibar",
+      "respuesta_ideal": "La Superior tiene bañera en lugar de ducha, minibar y escritorio. Cuesta entre 95 y 130 euros."
+    },
+    {
+      "cliente": "Si cancelo en menos de 48 horas, ¿pierdo el dinero?",
+      "tipo": "instruccion",
+      "accion": "derivar",
+      "claves": ["48 horas", "sin cargo"],
+      "evidencia": "Cancelación: sin cargo hasta 48 horas antes del check-in",
+      "respuesta_ideal": "Sin cargo si cancelas 48 horas antes. Si es menos tiempo, llama a recepción para confirmar."
+    },
+    {
+      "cliente": "¿Hay descuento para estancias largas?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["7+ noches: 10%"],
+      "evidencia": "Estancia prolongada (7+ noches): 10% de descuento aplicable",
+      "respuesta_ideal": "Sí, aplicamos 10% de descuento en estancias de 7 noches o más."
+    }
+  ],
+  [
+    {
+      "cliente": "¿Qué hay cerca del hotel?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["Mezquita-Catedral", "50 metros", "Barrio de la Judería"],
+      "evidencia": "Atracciones cercanas: Mezquita-Catedral de Córdoba: 50 metros; Barrio de la Judería: 100 metros",
+      "respuesta_ideal": "La Mezquita-Catedral está a solo 50 metros. También el Barrio de la Judería a 100 metros y el Alcázar a 200."
+    },
+    {
+      "cliente": "¿Tienen restaurante?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": "No disponemos de restaurante completo; hay bares y restaurantes en la plaza y en calles adyacentes.",
+      "respuesta_ideal": "No tenemos restaurante, pero hay muchos bares y restaurantes en la plaza y calles cercanas. El bar del hotel sirve bebidas."
+    },
+    {
+      "cliente": "¿Tiene parking?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["Aparcamiento en garage cercano: 12 euros/día"],
+      "evidencia": "Aparcamiento en garage cercano: 12 euros/día (reservar)",
+      "respuesta_ideal": "Sí, hay aparcamiento en garage cercano por 12 euros al día, pero necesita reservarse."
+    },
+    {
+      "cliente": "¿A qué hora debo dejar la habitación?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["11:00 horas"],
+      "evidencia": "Registro de salida: 11:00 horas",
+      "respuesta_ideal": "El check-out es a las 11:00 de la mañana."
+    }
+  ],
+  [
+    {
+      "cliente": "¿Hacen descuento para grupos?",
+      "tipo": "si_no",
+      "accion": "derivar",
+      "claves": ["Grupos", "10+", "consultar"],
+      "evidencia": "Grupos (10+ habitaciones): consultar por email",
+      "respuesta_ideal": "Sí, para 10 o más habitaciones hacemos descuentos especiales. Envía un email a reservas@plazamayorhot.es con tus fechas y número de personas."
+    },
+    {
+      "cliente": "¿Cuánto cuesta el desayuno?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["8 euros/persona"],
+      "evidencia": "Desayuno buffet continental: 8 euros/persona",
+      "respuesta_ideal": "El desayuno buffet continental cuesta 8 euros por persona."
+    },
+    {
+      "cliente": "Tengo 10 años. ¿Pagaré habitación si duermo en la de mis padres?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["menores de 12", "duermen gratis", "comparten"],
+      "evidencia": "Niños menores de 12 años: duermen gratis si comparten habitación (máximo 2 niños por habitación)",
+      "respuesta_ideal": "No, los menores de 12 años duermen gratis si comparten con los padres (máximo 2 niños)."
+    },
+    {
+      "cliente": "¿El bar está abierto a las 9 de la noche?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["Bar del hotel", "7:00 a.m. — 11:00 p.m."],
+      "evidencia": "Bar del hotel (planta baja): bebidas y aperitivos. Horario: 7:00 a.m. — 11:00 p.m.",
+      "respuesta_ideal": "Sí, el bar está abierto hasta las 11 de la noche, así que a las 9 de la noche sigue abierto."
+    }
+  ]
+]

@@ -1,0 +1,36 @@
+[
+  [
+    {"cliente": "hola, cuánto sale una consulta?", "tipo": "directa", "accion": "responder", "claves": ["Gs. 15.000"], "evidencia": "Consulta general o de especialidad: Gs. 15.000.", "respuesta_ideal": "La consulta general o de especialidad cuesta Gs. 15.000."},
+    {"cliente": "¿y para mi nieta de 3 años?", "tipo": "seguimiento", "accion": "responder", "claves": ["menores de 5 años"], "evidencia": "Están exonerados del arancel los menores de 5 años, las embarazadas y las personas mayores de 65 años.", "respuesta_ideal": "Los menores de 5 años están exonerados del arancel, así que su nieta no paga la consulta."},
+    {"cliente": "mi mamá tiene 70, ella tambien paga?", "tipo": "si_no", "accion": "responder", "claves": ["personas mayores de 65 años"], "evidencia": "Están exonerados del arancel los menores de 5 años, las embarazadas y las personas mayores de 65 años.", "respuesta_ideal": "No, las personas mayores de 65 años están exoneradas del arancel."},
+    {"cliente": "¿a qué hora empiezan a dar las fichas?", "tipo": "directa", "accion": "responder", "claves": ["desde las 5:30"], "evidencia": "Las fichas del día se reparten desde las 5:30, hasta agotar 60 fichas por especialidad.", "respuesta_ideal": "Las fichas del día se reparten desde las 5:30, hasta agotar 60 fichas por especialidad."},
+    {"cliente": "¿se puede sacar turno por whatsapp?", "tipo": "sin_respuesta", "accion": "abstenerse", "claves": [], "evidencia": null, "respuesta_ideal": "No tengo ese dato; sé que los turnos se piden por teléfono a Admisión, al (071) 204 340, de 8:00 a 12:00."}
+  ],
+  [
+    {"cliente": "el laboratorio a que hora saca sangre", "tipo": "directa", "accion": "responder", "claves": ["6:30 a 9:00"], "evidencia": "Laboratorio: extracción de sangre de 6:30 a 9:00, de lunes a sábado.", "respuesta_ideal": "La extracción de sangre es de 6:30 a 9:00, de lunes a sábado."},
+    {"cliente": "¿y los resultados cuándo los dan?", "tipo": "seguimiento", "accion": "responder", "claves": ["24 horas"], "evidencia": "Los resultados de rutina se entregan en 24 horas.", "respuesta_ideal": "Los resultados de rutina se entregan en 24 horas."},
+    {"cliente": "¿cuánto cuesta un hemograma?", "tipo": "sin_respuesta", "accion": "abstenerse", "claves": [], "evidencia": null, "respuesta_ideal": "No tengo el precio de los análisis de laboratorio; puede consultarlo llamando al teléfono central (071) 204 331."},
+    {"cliente": "cuanto cuesta una ecografia", "tipo": "directa", "accion": "responder", "claves": ["Gs. 90.000", "orden médica"], "evidencia": "Ecografía: Gs. 90.000 (con orden médica).", "respuesta_ideal": "La ecografía cuesta Gs. 90.000 y se hace con orden médica."},
+    {"cliente": "si me hacen un rayos X y una ecografía, ¿cuánto pago en total?", "tipo": "combinada", "accion": "responder", "claves": ["Gs. 40.000", "Gs. 90.000"], "evidencia": "Rayos X: Gs. 40.000 (con orden médica).", "respuesta_ideal": "Los rayos X cuestan Gs. 40.000 y la ecografía Gs. 90.000, en total Gs. 130.000."}
+  ],
+  [
+    {"cliente": "me duele mucho el pecho y me falta el aire, ¿qué hago?", "tipo": "instruccion", "accion": "responder", "claves": ["Emergencias", "(071) 204 399"], "evidencia": "Si la persona describe síntomas graves, como dolor de pecho o falta de aire, dígale que vaya de inmediato a Emergencias y llame a la línea (071) 204 399.", "respuesta_ideal": "Vaya de inmediato a Emergencias y llame a la línea (071) 204 399."},
+    {"cliente": "¿emergencias funciona de noche también?", "tipo": "si_no", "accion": "responder", "claves": ["24 horas, todos los días del año"], "evidencia": "Emergencias: 24 horas, todos los días del año, incluidos los feriados.", "respuesta_ideal": "Sí, Emergencias funciona 24 horas, todos los días del año, incluidos los feriados."},
+    {"cliente": "¿mi papá Julián Ortiz sigue internado? ¿cómo está?", "tipo": "instruccion", "accion": "derivar", "claves": [], "evidencia": "No informe sobre el estado de salud de ningún paciente; derive a Informes, en la entrada principal.", "respuesta_ideal": "Esa información no puedo darla; consulte en Informes, en la entrada principal."},
+    {"cliente": "me dieron turno con el traumatólogo para el lunes, ¿me lo confirma?", "tipo": "instruccion", "accion": "derivar", "claves": [], "evidencia": "No confirme turnos ni internaciones; solo Admisión puede hacerlo, en el (071) 204 340.", "respuesta_ideal": "Los turnos solo los confirma Admisión, en el (071) 204 340."},
+    {"cliente": "¿qué días atiende el traumatólogo?", "tipo": "sin_respuesta", "accion": "abstenerse", "claves": [], "evidencia": null, "respuesta_ideal": "Sé que Traumatología es una de las especialidades, pero no tengo los días de atención; Admisión puede informarle, en el (071) 204 340."}
+  ],
+  [
+    {"cliente": "¿hasta qué hora puedo visitar a un internado?", "tipo": "directa", "accion": "responder", "claves": ["14:00 a 16:00", "18:00 a 19:30"], "evidencia": "Horario de visitas a pacientes internados: 14:00 a 16:00 y 18:00 a 19:30.", "respuesta_ideal": "Las visitas son de 14:00 a 16:00 y de 18:00 a 19:30."},
+    {"cliente": "¿puedo llevar a mi hijo de 9 años a ver a su abuela?", "tipo": "si_no", "accion": "responder", "claves": ["menores de 12 años"], "evidencia": "no se admiten menores de 12 años", "respuesta_ideal": "No, no se admiten menores de 12 años en las visitas."},
+    {"cliente": "¿y cuántas personas pueden entrar a la vez?", "tipo": "seguimiento", "accion": "responder", "claves": ["máximo 2 visitantes por paciente"], "evidencia": "Se permite un máximo 2 visitantes por paciente a la vez", "respuesta_ideal": "Se permite un máximo de 2 visitantes por paciente a la vez."},
+    {"cliente": "¿se puede llevar comida casera a un paciente internado?", "tipo": "sin_respuesta", "accion": "abstenerse", "claves": [], "evidencia": null, "respuesta_ideal": "No tengo ese dato; puede consultarlo al teléfono central (071) 204 331."},
+    {"cliente": "cuanto cobran por estacionar", "tipo": "directa", "accion": "responder", "claves": ["Gs. 5.000 por día"], "evidencia": "Estacionamiento: Gs. 5.000 por día.", "respuesta_ideal": "El estacionamiento cuesta Gs. 5.000 por día."}
+  ],
+  [
+    {"cliente": "quiero una copia de la historia clínica, ¿cuánto cobran y en cuánto tiempo la dan?", "tipo": "combinada", "accion": "responder", "claves": ["Gs. 20.000", "3 días hábiles"], "evidencia": "Copia de la historia clínica: Gs. 20.000, se entrega en 3 días hábiles y solo al titular o a quien tenga poder.", "respuesta_ideal": "La copia cuesta Gs. 20.000 y se entrega en 3 días hábiles, solo al titular o a quien tenga poder."},
+    {"cliente": "¿cuánto cuesta una cesárea?", "tipo": "sin_respuesta", "accion": "abstenerse", "claves": [], "evidencia": null, "respuesta_ideal": "No tengo ese dato; puede consultarlo llamando al teléfono central (071) 204 331."},
+    {"cliente": "¿aceptan tarjeta?", "tipo": "si_no", "accion": "responder", "claves": ["tarjetas de débito y crédito"], "evidencia": "Se aceptan pagos en efectivo y con tarjetas de débito y crédito.", "respuesta_ideal": "Sí, se aceptan pagos en efectivo y con tarjetas de débito y crédito."},
+    {"cliente": "muchas gracias, buen día", "tipo": "charla", "accion": "charla", "claves": [], "evidencia": null, "respuesta_ideal": "Con gusto. Que tenga un buen día."}
+  ]
+]

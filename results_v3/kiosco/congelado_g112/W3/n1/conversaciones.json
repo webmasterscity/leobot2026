@@ -1,0 +1,164 @@
+[
+  [
+    {
+      "cliente": "Hola, ¿a qué hora abren?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["11:30 a. m."],
+      "evidencia": "Lunes a domingo: 11:30 a. m. — 10:00 p. m.",
+      "respuesta_ideal": "Abrimos de lunes a domingo a las 11:30 de la mañana."
+    },
+    {
+      "cliente": "¿Y a qué hora cierran?",
+      "tipo": "seguimiento",
+      "accion": "responder",
+      "claves": ["10:00 p. m."],
+      "evidencia": "Lunes a domingo: 11:30 a. m. — 10:00 p. m.",
+      "respuesta_ideal": "Cerramos a las 10 de la noche todos los días."
+    },
+    {
+      "cliente": "¿Sirven ceviche?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["Ceviche mixto"],
+      "evidencia": "Ceviche mixto: S/ 32",
+      "respuesta_ideal": "Sí, tenemos ceviche mixto por S/ 32."
+    },
+    {
+      "cliente": "¿Cuánto cuesta el lomo saltado?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["S/ 38"],
+      "evidencia": "Lomo saltado con papas: S/ 38",
+      "respuesta_ideal": "El lomo saltado cuesta S/ 38."
+    }
+  ],
+  [
+    {
+      "cliente": "Hola, ¿aceptan tarjeta de crédito?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["tarjeta de débito/crédito", "Visa, MasterCard"],
+      "evidencia": "Aceptamos pago en efectivo y tarjeta de débito/crédito (Visa, MasterCard).",
+      "respuesta_ideal": "Sí, aceptamos Visa y MasterCard, tanto débito como crédito."
+    },
+    {
+      "cliente": "Están cerca de la plaza, ¿cierto?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "Estamos en la Calle Loreto 156 en el Centro Histórico. Si no conoces la zona, te recomiendo que llames al 084 223456 para indicaciones."
+    },
+    {
+      "cliente": "¿Tienen opciones para diabéticos?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "Para comidas especiales por salud, es mejor que consultes directamente con el chef. Puedes llamar al 084 223456 y ellos te asesoraran."
+    },
+    {
+      "cliente": "¿Cuánta gente cabe en el local?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["60 comensales"],
+      "evidencia": "Local de dos niveles con capacidad para 60 comensales.",
+      "respuesta_ideal": "Tenemos capacidad para 60 personas en total, distribuidas en dos niveles."
+    }
+  ],
+  [
+    {
+      "cliente": "Quisiera hacer una reserva para 12 personas.",
+      "tipo": "instruccion",
+      "accion": "derivar",
+      "claves": ["llamar al 084 223456", "una semana de anticipo"],
+      "evidencia": "Grupos mayores de 8 personas pueden reservar con una semana de anticipación llamando al 084 223456.",
+      "respuesta_ideal": "Para grupos de 12 personas, debes llamar con una semana de anticipación al 084 223456."
+    },
+    {
+      "cliente": "¿Cuál es el plato más caro del menú?",
+      "tipo": "combinada",
+      "accion": "responder",
+      "claves": ["Trucha a la mantequilla", "S/ 42"],
+      "evidencia": "Trucha a la mantequilla: S/ 42",
+      "respuesta_ideal": "El plato más caro es la trucha a la mantequilla por S/ 42."
+    },
+    {
+      "cliente": "¿Y cuál es el más barato?",
+      "tipo": "seguimiento",
+      "accion": "responder",
+      "claves": ["Agua mineral", "S/ 3"],
+      "evidencia": "Agua mineral (S/ 3)",
+      "respuesta_ideal": "Si hablamos de bebida, el agua mineral cuesta S/ 3. Si es de comida, las sopas desde S/ 12."
+    }
+  ],
+  [
+    {
+      "cliente": "¿Tienen tacacho?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No aparece en nuestro menú actual, pero te recomiendo que llames para saber si hoy el chef prepara algo similar."
+    },
+    {
+      "cliente": "Muchas gracias por la información.",
+      "tipo": "charla",
+      "accion": "charla",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "De nada, ¡nos encantaría verte en Casa Doña Rosa!"
+    },
+    {
+      "cliente": "¿Hacen envíos a domicilio?",
+      "tipo": "sin_respuesta",
+      "accion": "derivar",
+      "claves": ["catering"],
+      "evidencia": "Ofrecemos servicio de catering para eventos fuera del local: consultar disponibilidad y presupuesto.",
+      "respuesta_ideal": "No hacemos delivery regular, pero sí servicio de catering. Para eso, llama al 084 223456."
+    },
+    {
+      "cliente": "¿Hay estacionamiento?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["estacionamiento para 8 vehículos"],
+      "evidencia": "Disponemos de estacionamiento para 8 vehículos en la puerta de atrás.",
+      "respuesta_ideal": "Sí, tenemos lugar para 8 vehículos en el estacionamiento de atrás."
+    },
+    {
+      "cliente": "¿Puedo fumar dentro del restaurante?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["solo al aire libre"],
+      "evidencia": "Zona fumadores solo al aire libre.",
+      "respuesta_ideal": "Los fumadores solo pueden fumar en la zona al aire libre, no dentro del local."
+    }
+  ],
+  [
+    {
+      "cliente": "¿Qué tienen de almuerzo ejecutivo?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["entrada, plato de fondo, bebida y postre", "S/ 24"],
+      "evidencia": "El almuerzo ejecutivo (lunes a viernes, 12:00 a 2:30 p. m.) incluye entrada, plato de fondo, bebida y postre por S/ 24.",
+      "respuesta_ideal": "El almuerzo ejecutivo de lunes a viernes de 12 a 2:30 p.m. incluye entrada, plato fuerte, bebida y postre por S/ 24."
+    },
+    {
+      "cliente": "¿Y los sábados tienen almuerzo ejecutivo?",
+      "tipo": "seguimiento",
+      "accion": "responder",
+      "claves": ["lunes a viernes"],
+      "evidencia": "El almuerzo ejecutivo (lunes a viernes, 12:00 a 2:30 p. m.)",
+      "respuesta_ideal": "El almuerzo ejecutivo es solo de lunes a viernes. Los sábados tenemos la parrilla mixta por S/ 85."
+    },
+    {
+      "cliente": "¿Cuál es el horario de cocina?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["9:45 p. m.", "últimos pedidos a las 9:30 p. m."],
+      "evidencia": "Horario de cocina: cierra a las 9:45 p. m. (últimos pedidos a las 9:30 p. m.).",
+      "respuesta_ideal": "La cocina cierra a las 9:45 p.m., y los últimos pedidos se reciben a las 9:30 p.m."
+    }
+  ]
+]

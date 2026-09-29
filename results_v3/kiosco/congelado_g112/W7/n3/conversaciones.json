@@ -1,0 +1,198 @@
+[
+  {
+    "conversacion": [
+      {
+        "cliente": "Hola! Quisiera cortarme el pelo.",
+        "tipo": "charla",
+        "accion": "charla",
+        "claves": [],
+        "evidencia": null,
+        "respuesta_ideal": "¡Hola! Bienvenida al salón Indigo. Nos encantaría ayudarte con tu corte."
+      },
+      {
+        "cliente": "¿Cuánto cuesta un corte para mujer?",
+        "tipo": "directa",
+        "accion": "responder",
+        "claves": ["Corte mujer (incluye lavado): $850 ARS"],
+        "evidencia": "CORTE Y PEINADO: Corte mujer (incluye lavado): $850 ARS",
+        "respuesta_ideal": "El corte de mujer cuesta $850 ARS e incluye lavado."
+      },
+      {
+        "cliente": "¿Puedo agendar para mañana a las 3 p.m.?",
+        "tipo": "sin_respuesta",
+        "accion": "abstenerse",
+        "claves": [],
+        "evidencia": null,
+        "respuesta_ideal": "Para hacer la reserva, prefiero que llames al teléfono o escribas por WhatsApp para confirmar disponibilidad. Nuestro número es +54 (261) 5234-8901."
+      }
+    ]
+  },
+  {
+    "conversacion": [
+      {
+        "cliente": "¿Hacen tratamiento para la caída de cabello?",
+        "tipo": "directa",
+        "accion": "responder",
+        "claves": ["Tratamiento anticaída: $1.300 ARS (3 sesiones recomendadas)"],
+        "evidencia": "TRATAMIENTOS CAPILARES: Tratamiento anticaída: $1.300 ARS (3 sesiones recomendadas)",
+        "respuesta_ideal": "Sí, tenemos tratamiento anticaída a $1.300 ARS. Se recomiendan 3 sesiones."
+      },
+      {
+        "cliente": "¿Cuál es la diferencia entre la keratina y el botox capilar?",
+        "tipo": "sin_respuesta",
+        "accion": "abstenerse",
+        "claves": [],
+        "evidencia": null,
+        "respuesta_ideal": "Ambos son tratamientos alisadores. Te sugiero que lo consultes con nuestras estilistas para saber cuál es el mejor para tu cabello."
+      },
+      {
+        "cliente": "¿Cuánto dura el efecto de la keratina?",
+        "tipo": "directa",
+        "accion": "responder",
+        "claves": ["Keratina alisadora (6 a 8 semanas de duración)"],
+        "evidencia": "TRATAMIENTOS CAPILARES: Keratina alisadora (6 a 8 semanas de duración): $2.200 ARS",
+        "respuesta_ideal": "La keratina dura de 6 a 8 semanas. Cuesta $2.200 ARS."
+      }
+    ]
+  },
+  {
+    "conversacion": [
+      {
+        "cliente": "Quiero hacerme una manicura permanente. ¿Qué es exactamente eso?",
+        "tipo": "directa",
+        "accion": "responder",
+        "claves": ["Manicura permanente (semipermanente): $600 ARS"],
+        "evidencia": "MANICURA Y PEDICURA: Manicura permanente (semipermanente): $600 ARS",
+        "respuesta_ideal": "Es una manicura semipermanente que dura más que la clásica. Cuesta $600 ARS."
+      },
+      {
+        "cliente": "¿Y si quiero que me hagan un diseño especial?",
+        "tipo": "seguimiento",
+        "accion": "responder",
+        "claves": ["Diseño de uñas (arte en uñas): +$200 ARS"],
+        "evidencia": "MANICURA Y PEDICURA: Diseño de uñas (arte en uñas): +$200 ARS",
+        "respuesta_ideal": "Claro, el diseño de arte en uñas cuesta $200 ARS adicionales."
+      }
+    ]
+  },
+  {
+    "conversacion": [
+      {
+        "cliente": "¿Qué es un masaje descontracturante?",
+        "tipo": "sin_respuesta",
+        "accion": "abstenerse",
+        "claves": [],
+        "evidencia": null,
+        "respuesta_ideal": "Es un tipo especial de masaje. Cuesta $750 ARS y dura 60 minutos aproximadamente. Consulta con nuestro masajista para más detalles."
+      },
+      {
+        "cliente": "¿Cuánto es el drenaje linfático?",
+        "tipo": "directa",
+        "accion": "responder",
+        "claves": ["Drenaje linfático (60 min): $850 ARS"],
+        "evidencia": "MASAJES: Drenaje linfático (60 min): $850 ARS",
+        "respuesta_ideal": "El drenaje linfático cuesta $850 ARS y dura 60 minutos."
+      }
+    ]
+  },
+  {
+    "conversacion": [
+      {
+        "cliente": "¿Tienen paquetes promocionales?",
+        "tipo": "directa",
+        "accion": "responder",
+        "claves": ["Paquete Relax (60 min de masaje + facial express): $1.200 ARS", "Paquete Novia", "Paquete Capilares"],
+        "evidencia": "PAQUETES PROMOCIONALES: Paquete Relax (60 min de masaje + facial express): $1.200 ARS. Paquete Novia (corte + peinado + maquillaje + manicura): $3.500 ARS. Paquete Capilares (corte + tintado + tratamiento): desde $3.000 ARS",
+        "respuesta_ideal": "Sí, tenemos varios: Paquete Relax ($1.200 ARS), Paquete Novia ($3.500 ARS) y Paquete Capilares (desde $3.000 ARS)."
+      },
+      {
+        "cliente": "¿Incluye maquillaje el Paquete Novia?",
+        "tipo": "seguimiento",
+        "accion": "responder",
+        "claves": ["corte + peinado + maquillaje + manicura"],
+        "evidencia": "PAQUETES PROMOCIONALES: Paquete Novia (corte + peinado + maquillaje + manicura): $3.500 ARS",
+        "respuesta_ideal": "Sí, incluye corte, peinado, maquillaje y manicura a $3.500 ARS."
+      }
+    ]
+  },
+  {
+    "conversacion": [
+      {
+        "cliente": "Necesito cancelar mi cita para mañana. ¿Hay cargo?",
+        "tipo": "seguimiento",
+        "accion": "responder",
+        "claves": ["Cancelaciones con menos de 48 horas: se cobra el 50 % del servicio"],
+        "evidencia": "CANCELACIONES Y REPROGRAMACIÓN: Cancelaciones con menos de 48 horas: se cobra el 50 % del servicio.",
+        "respuesta_ideal": "Sí hay cargo. Como es menos de 48 horas, te cobran el 50 % del servicio."
+      },
+      {
+        "cliente": "Eso es poco justo. ¿No hay excepciones?",
+        "tipo": "sin_respuesta",
+        "accion": "abstenerse",
+        "claves": [],
+        "evidencia": null,
+        "respuesta_ideal": "Es nuestra política. Si tienes una situación especial, puedes hablar directamente con el salón al teléfono o visitando presencialmente."
+      }
+    ]
+  },
+  {
+    "conversacion": [
+      {
+        "cliente": "¿Qué pasa si no voy a mi cita?",
+        "tipo": "si_no",
+        "accion": "responder",
+        "claves": ["No presentarse a una cita sin aviso previo: se cobra el 100 % del servicio"],
+        "evidencia": "CANCELACIONES Y REPROGRAMACIÓN: No presentarse a una cita sin aviso previo: se cobra el 100 % del servicio.",
+        "respuesta_ideal": "Si no te presentas sin avisar, se cobra el 100 % del servicio."
+      },
+      {
+        "cliente": "¿Cuál es su Instagram?",
+        "tipo": "directa",
+        "accion": "responder",
+        "claves": ["@salonindigo_mdz"],
+        "evidencia": "Instagram: @salonindigo_mdz",
+        "respuesta_ideal": "Es @salonindigo_mdz. Puedes escribir por ahí también para agendar."
+      }
+    ]
+  },
+  {
+    "conversacion": [
+      {
+        "cliente": "¿Hacen depilación láser?",
+        "tipo": "directa",
+        "accion": "responder",
+        "claves": ["Tratamiento láser (sesiones): $350 — $600 ARS por sesión"],
+        "evidencia": "DEPILACIÓN: Tratamiento láser (sesiones): $350 — $600 ARS por sesión",
+        "respuesta_ideal": "Sí, ofrecemos depilación láser a $350-$600 ARS por sesión, según la zona."
+      },
+      {
+        "cliente": "¿Es seguro ese tratamiento?",
+        "tipo": "sin_respuesta",
+        "accion": "abstenerse",
+        "claves": [],
+        "evidencia": null,
+        "respuesta_ideal": "Es mejor que lo consultes con nuestras profesionales cuando vengas. Ellas pueden resolver todas tus dudas de seguridad."
+      }
+    ]
+  },
+  {
+    "conversacion": [
+      {
+        "cliente": "¿Tienen tarjeta de cliente frecuente?",
+        "tipo": "directa",
+        "accion": "responder",
+        "claves": ["Tarjeta de cliente frecuente: acumula $1 por cada $10 gastados", "al alcanzar $100 descuenta $10"],
+        "evidencia": "PAQUETES PROMOCIONALES: Tarjeta de cliente frecuente: acumula $1 por cada $10 gastados; al alcanzar $100 descuenta $10 de tu próxima cita.",
+        "respuesta_ideal": "Sí, acumulas $1 por cada $10 que gastas. Cuando llegas a $100, tienes $10 de descuento."
+      },
+      {
+        "cliente": "¿Cómo consigo la tarjeta?",
+        "tipo": "sin_respuesta",
+        "accion": "abstenerse",
+        "claves": [],
+        "evidencia": null,
+        "respuesta_ideal": "Puedes pedirla presencialmente en el salón o preguntar cuando vayas a agendar."
+      }
+    ]
+  }
+]
