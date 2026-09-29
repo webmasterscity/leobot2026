@@ -1,0 +1,171 @@
+[
+  {
+    "conversacion": 1,
+    "turnos": [
+      {
+        "cliente": "Hola, ¿hasta qué hora atienden hoy?",
+        "tipo": "charla",
+        "accion": "responder",
+        "claves": ["19:00"],
+        "evidencia": "Lunes a viernes: 10:00 a 19:00 h",
+        "respuesta_ideal": "Hola, hoy atendemos hasta las 19:00 horas. ¿En qué te puedo ayudar?"
+      },
+      {
+        "cliente": "¿Tienen tomate fresco?",
+        "tipo": "directa",
+        "accion": "responder",
+        "claves": ["tomate local", "Tenemos entregas de verdura los miércoles y sábados"],
+        "evidencia": "Frutas y verduras de temporada — reciben entregas miércoles y sábados",
+        "respuesta_ideal": "Sí, tenemos tomate local. Las entregas de verdura fresca son los miércoles y sábados. Te recomiendo venir en esos días para la mejor disponibilidad."
+      },
+      {
+        "cliente": "¿Y en qué precio está?",
+        "tipo": "directa",
+        "accion": "responder",
+        "claves": ["$8.900", "kg"],
+        "evidencia": "Tomate local (kg): $8.900",
+        "respuesta_ideal": "El tomate local está a $8.900 el kilo."
+      }
+    ]
+  },
+  {
+    "conversacion": 2,
+    "turnos": [
+      {
+        "cliente": "Buen día. ¿Qué tal venden aceite de oliva?",
+        "tipo": "si_no",
+        "accion": "responder",
+        "claves": ["vinagas del Maule", "aceite de oliva"],
+        "evidencia": "Aceite de oliva virgen de viñas del Maule (botellas de 500 ml y 1 litro)",
+        "respuesta_ideal": "Sí, vendemos aceite de oliva virgen de las viñas del Maule en botellas de 500 ml y 1 litro."
+      },
+      {
+        "cliente": "¿Cuánto cuesta la botella chica?",
+        "tipo": "directa",
+        "accion": "responder",
+        "claves": ["$12.000", "500 ml"],
+        "evidencia": "Aceite de oliva (botella 500 ml): $12.000",
+        "respuesta_ideal": "La botella de 500 ml está a $12.000."
+      },
+      {
+        "cliente": "Muy bien. ¿Puedo pagar con débito?",
+        "tipo": "si_no",
+        "accion": "responder",
+        "claves": ["débito", "aceptamos"],
+        "evidencia": "Formas de pago: efectivo, débito, crédito (Visa, Mastercard), transferencia bancaria",
+        "respuesta_ideal": "Claro que sí, aceptamos débito."
+      }
+    ]
+  },
+  {
+    "conversacion": 3,
+    "turnos": [
+      {
+        "cliente": "Hola, quería hacer una compra online. ¿Cómo funciona?",
+        "tipo": "instruccion",
+        "accion": "derivar",
+        "claves": [],
+        "evidencia": "Servicio de compra online y delivery",
+        "respuesta_ideal": "Sí, tenemos servicio de compra online y delivery. Te paso con nuestro equipo para que te expliquen cómo hacer el pedido y los detalles de entrega. Llama al +56 2 2664 8234."
+      },
+      {
+        "cliente": "¿Cuál es el monto mínimo?",
+        "tipo": "directa",
+        "accion": "responder",
+        "claves": ["$25.000"],
+        "evidencia": "Entregas dentro de la comuna de Santiago los martes, jueves y sábados (mínimo $25.000)",
+        "respuesta_ideal": "El mínimo para delivery es $25.000."
+      },
+      {
+        "cliente": "¿Y si vivo fuera de Santiago?",
+        "tipo": "sin_respuesta",
+        "accion": "abstenerse",
+        "claves": [],
+        "evidencia": "Envío a otras comunas bajo consulta",
+        "respuesta_ideal": "Envíos fuera de Santiago se hacen bajo consulta. Te recomiendo que llames al teléfono para confirmar si es posible a tu zona."
+      }
+    ]
+  },
+  {
+    "conversacion": 4,
+    "turnos": [
+      {
+        "cliente": "¿Tienen café?",
+        "tipo": "si_no",
+        "accion": "responder",
+        "claves": ["café en grano", "té", "infusiones"],
+        "evidencia": "Té, café e infusiones especiales",
+        "respuesta_ideal": "Sí, tenemos café en grano de distintas variedades, además de té e infusiones especiales."
+      },
+      {
+        "cliente": "¿Cuánto sale?",
+        "tipo": "directa",
+        "accion": "responder",
+        "claves": ["$6.500", "250 g"],
+        "evidencia": "Café en grano (250 g): $6.500",
+        "respuesta_ideal": "El café en grano lo vendemos en bolsas de 250 gramos a $6.500."
+      },
+      {
+        "cliente": "¿Es realmente orgánico?",
+        "tipo": "si_no",
+        "accion": "responder",
+        "claves": ["100% orgánicos certificados", "SAG"],
+        "evidencia": "Distribuimos productos 100% orgánicos certificados por SAG",
+        "respuesta_ideal": "Sí, todos nuestros productos son 100 % orgánicos certificados por SAG."
+      },
+      {
+        "cliente": "Perfecto. ¿Tienen promoción en compras al por mayor?",
+        "tipo": "sin_respuesta",
+        "accion": "abstenerse",
+        "claves": [],
+        "evidencia": null,
+        "respuesta_ideal": "No tenemos información sobre compras al por mayor. Te recomiendo contactarnos directamente al +56 2 2664 8234 para consultar sobre opciones especiales."
+      }
+    ]
+  },
+  {
+    "conversacion": 5,
+    "turnos": [
+      {
+        "cliente": "¿Ustedes devuelven botellas de vidrio?",
+        "tipo": "si_no",
+        "accion": "responder",
+        "claves": ["frascos de vidrio", "$500", "descuento"],
+        "evidencia": "Los clientes pueden devolver frascos y botellas de vidrio vacías para descuento de $500 cada una",
+        "respuesta_ideal": "Sí, aceptamos frascos y botellas de vidrio vacías. Por cada uno recibes un descuento de $500 en tu próxima compra."
+      },
+      {
+        "cliente": "¿Y qué pasa si el producto viene con defecto?",
+        "tipo": "instruccion",
+        "accion": "responder",
+        "claves": ["24 horas", "comprobante"],
+        "evidencia": "Verduras y frutas con defecto se cambian dentro de 24 horas con comprobante",
+        "respuesta_ideal": "Si encuentras defectos en frutas o verduras, las cambiamos dentro de 24 horas. Solo necesitas traer el comprobante."
+      },
+      {
+        "cliente": "¿Comprueban que sea orgánico realmente o es solo lo que dicen?",
+        "tipo": "sin_respuesta",
+        "accion": "abstenerse",
+        "claves": [],
+        "evidencia": null,
+        "respuesta_ideal": "Todos nuestros productos cuentan con certificación oficial de SAG. Si quieres más detalles sobre cómo se certifican o sobre algún productor en particular, nuestro equipo puede asesorarte con más detalle."
+      },
+      {
+        "cliente": "¿Abren los domingos?",
+        "tipo": "directa",
+        "accion": "responder",
+        "claves": ["11:00 a 17:00"],
+        "evidencia": "Domingo: 11:00 a 17:00 h",
+        "respuesta_ideal": "Sí, abrimos los domingos de 11:00 a 17:00 horas."
+      },
+      {
+        "cliente": "Gracias, muy útil la información.",
+        "tipo": "charla",
+        "accion": "charla",
+        "claves": [],
+        "evidencia": null,
+        "respuesta_ideal": "De nada, es un gusto ayudarte. Te esperamos en Semilla Pura."
+      }
+    ]
+  }
+]

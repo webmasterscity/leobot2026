@@ -1,0 +1,235 @@
+[
+ [
+  {
+   "cliente": "buenas tardes, cuanto cobran por poner una inyeccion en la casa?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "Bs 60"
+   ],
+   "evidencia": "Inyectable intramuscular o subcutáneo\tBs 60",
+   "respuesta_ideal": "Buenas tardes. Un inyectable intramuscular o subcutáneo a domicilio cuesta Bs 60 por visita."
+  },
+  {
+   "cliente": "¿y un suero?",
+   "tipo": "seguimiento",
+   "accion": "responder",
+   "claves": [
+    "Bs 180"
+   ],
+   "evidencia": "Colocación de suero / vía endovenosa\tBs 180",
+   "respuesta_ideal": "La colocación de suero o vía endovenosa cuesta Bs 180."
+  },
+  {
+   "cliente": "es para el domingo, cuánto sería el suero ese día?",
+   "tipo": "combinada",
+   "accion": "responder",
+   "claves": [
+    "225"
+   ],
+   "evidencia": "Recargo domingos y feriados: 25 % sobre el precio.",
+   "respuesta_ideal": "Los domingos hay un recargo del 25 %, así que el suero saldría Bs 225."
+  },
+  {
+   "cliente": "¿La enfermera lleva el suero y el medicamento?",
+   "tipo": "si_no",
+   "accion": "responder",
+   "claves": [
+    "compra los medicamentos e insumos"
+   ],
+   "evidencia": "El paciente o la familia compra los medicamentos e insumos; nosotros llevamos guantes, alcohol y material de curación básico.",
+   "respuesta_ideal": "No, la familia compra los medicamentos e insumos; la enfermera lleva guantes, alcohol y material de curación básico."
+  },
+  {
+   "cliente": "¿Me confirman que la enfermera llegue a las 9 de la mañana?",
+   "tipo": "instruccion",
+   "accion": "derivar",
+   "claves": [],
+   "evidencia": "No confirmes horarios de visita: los asigna el coordinador de turnos, Lic. Marcelo Añez, por la central 3-3412277.",
+   "respuesta_ideal": "No puedo confirmarle la hora; los horarios los asigna el coordinador de turnos, Lic. Marcelo Añez, por la central 3-3412277."
+  }
+ ],
+ [
+  {
+   "cliente": "mi papa esta en cama y necesito alguien que lo cuide de noche",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "Bs 400",
+    "contrato"
+   ],
+   "evidencia": "Servicio nocturno (22:00 a 7:00) solo con contrato de turno.",
+   "respuesta_ideal": "Para la noche se contrata un turno de 12 horas de auxiliar de enfermería, que cuesta Bs 400; el servicio nocturno es solo con contrato de turno."
+  },
+  {
+   "cliente": "cuánto sale el mes completo?",
+   "tipo": "seguimiento",
+   "accion": "responder",
+   "claves": [
+    "Bs 8.900"
+   ],
+   "evidencia": "- Paquete mensual de 12 h, de lunes a sábado: Bs 8.900",
+   "respuesta_ideal": "El paquete mensual de 12 horas, de lunes a sábado, cuesta Bs 8.900."
+  },
+  {
+   "cliente": "¿y los domingos también entran?",
+   "tipo": "seguimiento",
+   "accion": "responder",
+   "claves": [
+    "lunes a sábado"
+   ],
+   "evidencia": "- Paquete mensual de 12 h, de lunes a sábado: Bs 8.900",
+   "respuesta_ideal": "No, el paquete mensual cubre de lunes a sábado."
+  },
+  {
+   "cliente": "¿Las auxiliares tienen experiencia con pacientes con Alzheimer?",
+   "tipo": "sin_respuesta",
+   "accion": "abstenerse",
+   "claves": [],
+   "evidencia": null,
+   "respuesta_ideal": "No tengo esa información; puede consultarlo por WhatsApp al 721 88540."
+  },
+  {
+   "cliente": "hay que pagar por adelantado?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "por adelantado"
+   ],
+   "evidencia": "Para turnos: firma de contrato y pago del primer turno por adelantado.",
+   "respuesta_ideal": "Para los turnos se firma un contrato y se paga el primer turno por adelantado."
+  },
+  {
+   "cliente": "¿Se puede pagar con QR?",
+   "tipo": "si_no",
+   "accion": "responder",
+   "claves": [
+    "QR"
+   ],
+   "evidencia": "Efectivo al personal (con recibo), QR simple de cualquier banco o transferencia.",
+   "respuesta_ideal": "Sí, se puede pagar con QR simple de cualquier banco, además de efectivo o transferencia."
+  }
+ ],
+ [
+  {
+   "cliente": "mi mamá está con dolor de pecho y le cuesta respirar, pueden mandar a alguien ya?",
+   "tipo": "instruccion",
+   "accion": "derivar",
+   "claves": [],
+   "evidencia": "Si describen una emergencia (dolor de pecho, falta de aire, desmayo, sangrado fuerte), indica de inmediato que llamen al 118 y no sigas con otro tema.",
+   "respuesta_ideal": "Eso es una emergencia: llame ahora mismo al 118 o vaya a urgencias. Nosotros no atendemos emergencias."
+  }
+ ],
+ [
+  {
+   "cliente": "El doctor me indicó 10 unidades de insulina pero hoy tengo el azúcar alta, ¿me pongo 15?",
+   "tipo": "instruccion",
+   "accion": "derivar",
+   "claves": [],
+   "evidencia": "Nunca des consejos médicos, diagnósticos ni dosis de medicamentos: di que eso lo indica su médico.",
+   "respuesta_ideal": "No puedo indicarle dosis; eso debe decidirlo su médico. Consúltelo con él."
+  },
+  {
+   "cliente": "¿vienen a medir la glucosa a la casa?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "Bs 50"
+   ],
+   "evidencia": "Control de signos vitales y glucemia\tBs 50",
+   "respuesta_ideal": "Sí, el control de signos vitales y glucemia a domicilio cuesta Bs 50."
+  },
+  {
+   "cliente": "¿Atienden en Warnes?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "Bs 40"
+   ],
+   "evidencia": "Recargo por zona (Warnes, Cotoca, La Guardia): Bs 40 por visita.",
+   "respuesta_ideal": "Sí, en Warnes atendemos con un recargo de Bs 40 por visita."
+  },
+  {
+   "cliente": "¿y cuánto me saldría allá una curación de pie diabético?",
+   "tipo": "combinada",
+   "accion": "responder",
+   "claves": [
+    "190"
+   ],
+   "evidencia": "Curación de escaras o pie diabético\tBs 150",
+   "respuesta_ideal": "La curación de pie diabético cuesta Bs 150 más Bs 40 de recargo por zona: Bs 190."
+  },
+  {
+   "cliente": "¿Tienen enfermeras que hablen guaraní?",
+   "tipo": "sin_respuesta",
+   "accion": "abstenerse",
+   "claves": [],
+   "evidencia": null,
+   "respuesta_ideal": "No tengo ese dato; puede preguntar por WhatsApp al 721 88540."
+  }
+ ],
+ [
+  {
+   "cliente": "¿Hacen quimioterapia en casa?",
+   "tipo": "si_no",
+   "accion": "responder",
+   "claves": [
+    "quimioterapias"
+   ],
+   "evidencia": "No realizamos transfusiones ni quimioterapias a domicilio.",
+   "respuesta_ideal": "No, no realizamos quimioterapias ni transfusiones a domicilio."
+  },
+  {
+   "cliente": "¿Alquilan camas de hospital o sillas de ruedas?",
+   "tipo": "sin_respuesta",
+   "accion": "abstenerse",
+   "claves": [],
+   "evidencia": null,
+   "respuesta_ideal": "No tengo información sobre alquiler de equipos; puede consultar por WhatsApp al 721 88540."
+  },
+  {
+   "cliente": "hasta que hora esta abierta la oficina el sabado",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "12:00"
+   ],
+   "evidencia": "Horario de oficina: lun–vie 8:00–18:30 / sáb 8:00–12:00",
+   "respuesta_ideal": "Los sábados la oficina atiende de 8:00 a 12:00."
+  },
+  {
+   "cliente": "¿Las enfermeras van con uniforme?",
+   "tipo": "sin_respuesta",
+   "accion": "abstenerse",
+   "claves": [],
+   "evidencia": null,
+   "respuesta_ideal": "No tengo ese dato; puede consultarlo por WhatsApp al 721 88540."
+  },
+  {
+   "cliente": "¿Hasta cuándo puedo cancelar una visita sin pagar nada?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "2 horas antes"
+   ],
+   "evidencia": "Las visitas se pueden cancelar sin costo hasta 2 horas antes.",
+   "respuesta_ideal": "Puede cancelar la visita sin costo hasta 2 horas antes."
+  },
+  {
+   "cliente": "¿Tienen convenio con la Caja Nacional de Salud?",
+   "tipo": "sin_respuesta",
+   "accion": "abstenerse",
+   "claves": [],
+   "evidencia": null,
+   "respuesta_ideal": "No tengo esa información; sé que trabajan con empresas y seguros previo convenio. Consulte por WhatsApp al 721 88540."
+  },
+  {
+   "cliente": "Gracias, muy amables",
+   "tipo": "charla",
+   "accion": "charla",
+   "claves": [],
+   "evidencia": null,
+   "respuesta_ideal": "Con gusto, que se mejore su familiar."
+  }
+ ]
+]

@@ -1,0 +1,259 @@
+[
+ [
+  {
+   "cliente": "¡Buenas! cuanto cuesta una overlock para la casa?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "$7,250"
+   ],
+   "evidencia": "Overlock (remalladora) doméstica de 4 hilos — $7,250",
+   "respuesta_ideal": "¡Bienvenido a El Dedal! La overlock doméstica de 4 hilos cuesta $7,250."
+  },
+  {
+   "cliente": "¿y trae garantía?",
+   "tipo": "seguimiento",
+   "accion": "responder",
+   "claves": [
+    "1 año"
+   ],
+   "evidencia": "Todas las máquinas nuevas tienen 1 año de garantía en partes y mano de obra",
+   "respuesta_ideal": "Sí, como toda máquina nueva tiene 1 año de garantía en partes y mano de obra."
+  },
+  {
+   "cliente": "¿la puedo sacar a meses?",
+   "tipo": "seguimiento",
+   "accion": "responder",
+   "claves": [
+    "3 y 6 MSI"
+   ],
+   "evidencia": "Meses sin intereses: 3 y 6 MSI con tarjetas de crédito participantes, en compras desde $5,000.",
+   "respuesta_ideal": "Sí, al ser una compra de más de $5,000 puede pagarla a 3 y 6 MSI con tarjetas de crédito participantes."
+  },
+  {
+   "cliente": "¿Aceptan American Express?",
+   "tipo": "si_no",
+   "accion": "responder",
+   "claves": [
+    "no American Express"
+   ],
+   "evidencia": "Efectivo, tarjeta de débito y de crédito (Visa y Mastercard; no American Express) y transferencia.",
+   "respuesta_ideal": "No, aceptamos Visa y Mastercard, pero no American Express."
+  },
+  {
+   "cliente": "¿De qué marca es esa overlock?",
+   "tipo": "sin_respuesta",
+   "accion": "abstenerse",
+   "claves": [],
+   "evidencia": null,
+   "respuesta_ideal": "No tengo el dato de la marca; puede preguntarlo en mostrador o al 477 713 2290."
+  }
+ ],
+ [
+  {
+   "cliente": "Tengo un taller de costura y quiero comprar 10 rectas industriales",
+   "tipo": "instruccion",
+   "accion": "derivar",
+   "claves": [],
+   "evidencia": "Compras de más de 5 máquinas o pedidos para fábricas y talleres: deriva con el Sr. Joaquín Rangel, gerente de ventas, al 477 713 2290 ext. 12.",
+   "respuesta_ideal": "Para compras de ese volumen lo atiende el Sr. Joaquín Rangel, gerente de ventas, al 477 713 2290 ext. 12."
+  },
+  {
+   "cliente": "oiga y cuanto cuesta una recta industrial suelta?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "$11,900"
+   ],
+   "evidencia": "Recta industrial con motor ahorrador (servomotor) y mesa — $11,900",
+   "respuesta_ideal": "La recta industrial con servomotor y mesa cuesta $11,900."
+  },
+  {
+   "cliente": "¿cuánto cobran por llevarla a Silao?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "$450"
+   ],
+   "evidencia": "a la zona metropolitana (Silao, San Francisco del Rincón) $450",
+   "respuesta_ideal": "El envío a Silao cuesta $450."
+  },
+  {
+   "cliente": "entonces una recta con envío a Silao, ¿cuánto sería todo?",
+   "tipo": "combinada",
+   "accion": "responder",
+   "claves": [
+    "12,350"
+   ],
+   "evidencia": "El envío dentro de León cuesta $250 y a la zona metropolitana (Silao, San Francisco del Rincón) $450.",
+   "respuesta_ideal": "Serían $11,900 de la máquina más $450 de envío: $12,350 en total."
+  },
+  {
+   "cliente": "¿Tienen rectas seminuevas ahorita?",
+   "tipo": "instruccion",
+   "accion": "responder",
+   "claves": [
+    "cada semana"
+   ],
+   "evidencia": "Si preguntan si hay máquinas seminuevas disponibles, no digas que hay ni que no hay: explica que las existencias cambian cada semana y que pregunten en mostrador o por WhatsApp.",
+   "respuesta_ideal": "Las existencias de seminuevas cambian cada semana; pregunte en mostrador o por WhatsApp al 477 388 1045."
+  }
+ ],
+ [
+  {
+   "cliente": "se me atora el hilo en mi brother, cuanto me cobran por arreglarla?",
+   "tipo": "instruccion",
+   "accion": "responder",
+   "claves": [
+    "$150"
+   ],
+   "evidencia": "No hagas presupuestos de reparación: el costo solo se sabe después del diagnóstico en el taller.",
+   "respuesta_ideal": "El costo de la reparación se sabe después del diagnóstico en el taller, que cuesta $150 y se descuenta si autoriza la reparación."
+  },
+  {
+   "cliente": "¿y cuánto se tardan?",
+   "tipo": "seguimiento",
+   "accion": "responder",
+   "claves": [
+    "3 a 5 días hábiles"
+   ],
+   "evidencia": "Tiempo de entrega: domésticas, 3 a 5 días hábiles",
+   "respuesta_ideal": "Las máquinas domésticas se entregan en 3 a 5 días hábiles."
+  },
+  {
+   "cliente": "¿Me la pueden recoger en mi casa?",
+   "tipo": "sin_respuesta",
+   "accion": "abstenerse",
+   "claves": [],
+   "evidencia": null,
+   "respuesta_ideal": "No tengo información de que recojan máquinas a domicilio; puede preguntarlo al 477 713 2290."
+  },
+  {
+   "cliente": "¿y si no paso por ella luego luego, cuánto tiempo me la guardan?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "60 días"
+   ],
+   "evidencia": "Las máquinas que no se recojan en 60 días después del aviso pasan a remate para cubrir gastos.",
+   "respuesta_ideal": "Tiene 60 días después del aviso para recogerla; después pasa a remate para cubrir gastos."
+  },
+  {
+   "cliente": "¿cuánto cuesta darle mantenimiento a una industrial?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "$550"
+   ],
+   "evidencia": "Mantenimiento general (limpieza, lubricación, ajuste de tensión): doméstica $350; industrial $550.",
+   "respuesta_ideal": "El mantenimiento general de una industrial cuesta $550."
+  }
+ ],
+ [
+  {
+   "cliente": "¿arreglan maquinas de bordar?",
+   "tipo": "si_no",
+   "accion": "responder",
+   "claves": [
+    "no damos servicio a bordadoras electrónicas"
+   ],
+   "evidencia": "¿Reparan máquinas de bordar computarizadas? No, no damos servicio a bordadoras electrónicas.",
+   "respuesta_ideal": "No, no damos servicio a bordadoras electrónicas."
+  },
+  {
+   "cliente": "¿Venden hilos y telas?",
+   "tipo": "sin_respuesta",
+   "accion": "abstenerse",
+   "claves": [],
+   "evidencia": null,
+   "respuesta_ideal": "No tengo información sobre hilos o telas; manejamos refacciones y accesorios como agujas, prensatelas y bobinas."
+  },
+  {
+   "cliente": "¿Tienen refacciones para una Singer antigua de pedal?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "Singer",
+    "traiga la pieza dañada"
+   ],
+   "evidencia": "Manejamos refacciones de Singer, Brother, Janome, Juki y Siruba. Para modelos muy antiguos, traiga la pieza dañada para compararla.",
+   "respuesta_ideal": "Manejamos refacciones Singer; como es un modelo antiguo, traiga la pieza dañada para compararla."
+  }
+ ],
+ [
+  {
+   "cliente": "Hola, dan clases de costura?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "$1,200"
+   ],
+   "evidencia": "Curso básico de costura (8 sesiones de 2 h, los sábados): $1,200.",
+   "respuesta_ideal": "Sí, el curso básico de costura cuesta $1,200 e incluye 8 sesiones de 2 horas."
+  },
+  {
+   "cliente": "¿qué días son?",
+   "tipo": "seguimiento",
+   "accion": "responder",
+   "claves": [
+    "sábados"
+   ],
+   "evidencia": "Curso básico de costura (8 sesiones de 2 h, los sábados): $1,200.",
+   "respuesta_ideal": "Las clases son los sábados."
+  },
+  {
+   "cliente": "Si compro la electrónica de 60 puntadas, ¿me regalan el curso?",
+   "tipo": "si_no",
+   "accion": "responder",
+   "claves": [
+    "primera clase de manejo es gratis"
+   ],
+   "evidencia": "Si compra una máquina nueva, la primera clase de manejo es gratis.",
+   "respuesta_ideal": "No el curso completo: al comprar una máquina nueva, la primera clase de manejo es gratis."
+  },
+  {
+   "cliente": "quiero apartar esa electrónica, ¿cuánto tengo que dejar?",
+   "tipo": "combinada",
+   "accion": "responder",
+   "claves": [
+    "1,378"
+   ],
+   "evidencia": "Apartado: con el 20 % de anticipo le guardamos la máquina hasta 30 días.",
+   "respuesta_ideal": "Con el 20 % de anticipo, $1,378 de los $6,890, se la guardamos hasta 30 días."
+  },
+  {
+   "cliente": "¿Dan constancia al terminar el curso?",
+   "tipo": "sin_respuesta",
+   "accion": "abstenerse",
+   "claves": [],
+   "evidencia": null,
+   "respuesta_ideal": "No tengo ese dato; puede preguntarlo en mostrador o al 477 713 2290."
+  },
+  {
+   "cliente": "¿abren el domingo?",
+   "tipo": "si_no",
+   "accion": "responder",
+   "claves": [
+    "cerrado"
+   ],
+   "evidencia": "Domingo cerrado.",
+   "respuesta_ideal": "No, el domingo está cerrado; el sábado abrimos de 10:00 a 15:00 hrs."
+  },
+  {
+   "cliente": "¿Tienen estacionamiento?",
+   "tipo": "sin_respuesta",
+   "accion": "abstenerse",
+   "claves": [],
+   "evidencia": null,
+   "respuesta_ideal": "No tengo información sobre estacionamiento; puede preguntar al 477 713 2290."
+  },
+  {
+   "cliente": "Gracias, hasta luego",
+   "tipo": "charla",
+   "accion": "charla",
+   "claves": [],
+   "evidencia": null,
+   "respuesta_ideal": "¡Gracias a usted! Lo esperamos de vuelta en El Dedal."
+  }
+ ]
+]

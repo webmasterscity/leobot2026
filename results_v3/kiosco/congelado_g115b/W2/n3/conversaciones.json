@@ -1,0 +1,39 @@
+[
+  [
+    {"cliente": "hola", "tipo": "charla", "accion": "charla", "claves": [], "evidencia": "Habla de tú a los clientes. Al saludar, presenta: \"¡Hola! Soy el asistente de Fiestalandia Monarca\".", "respuesta_ideal": "¡Hola! Soy el asistente de Fiestalandia Monarca. ¿En qué te puedo ayudar?"},
+    {"cliente": "cuanto cuesta el paquete plus para un sabado?", "tipo": "directa", "accion": "responder", "claves": ["$5,100"], "evidencia": "Plus | 25 | $4,200 | $5,100", "respuesta_ideal": "El paquete Plus en fin de semana cuesta $5,100 MXN, con IVA incluido."},
+    {"cliente": "cuantos niños entran?", "tipo": "seguimiento", "accion": "responder", "claves": ["25"], "evidencia": "Plus | 25 | $4,200 | $5,100", "respuesta_ideal": "El paquete Plus incluye 25 niños."},
+    {"cliente": "y si son 32 niños?", "tipo": "combinada", "accion": "responder", "claves": ["$110", "$5,100"], "evidencia": "- Niño adicional: $110 c/u", "respuesta_ideal": "Serían el paquete Plus ($5,100) más 7 niños adicionales a $110 cada uno ($770), en total $5,870 con IVA incluido; el paquete Súper de $6,900 sale más caro."},
+    {"cliente": "y el domingo por la mañana hay lugar de horario?", "tipo": "si_no", "accion": "responder", "claves": ["Turno mañana: 11:00 a 14:00 (solo sáb. y dom.)"], "evidencia": "Turno mañana: 11:00 a 14:00 (solo sáb. y dom.)", "respuesta_ideal": "Sí, existe el turno de mañana los domingos de 11:00 a 14:00; para saber si la fecha está libre, escribe al WhatsApp (442) 555 01 87."}
+  ],
+  [
+    {"cliente": "necesito apartar el sabado 18 de octubre, esta libre?", "tipo": "instruccion", "accion": "derivar", "claves": [], "evidencia": "Nunca confirmes ni apartes fechas, ni digas si una fecha está libre: la disponibilidad solo la da el equipo por WhatsApp al (442) 555 01 87.", "respuesta_ideal": "No puedo confirmar disponibilidad; escribe al WhatsApp (442) 555 01 87 y el equipo te dice."},
+    {"cliente": "cuanto de anticipo piden?", "tipo": "directa", "accion": "responder", "claves": ["30%"], "evidencia": "Para apartar la fecha se pide un anticipo del 30%, no reembolsable*.", "respuesta_ideal": "Se pide un anticipo del 30% para apartar la fecha."},
+    {"cliente": "si luego no puedo se devuelve?", "tipo": "si_no", "accion": "responder", "claves": ["no reembolsable"], "evidencia": "Para apartar la fecha se pide un anticipo del 30%, no reembolsable*.", "respuesta_ideal": "No, el anticipo no es reembolsable; sí puedes cambiar la fecha sin costo hasta 15 días antes, sujeto a disponibilidad."},
+    {"cliente": "puedo cambiar la fecha?", "tipo": "directa", "accion": "responder", "claves": ["15 días antes"], "evidencia": "Cambio de fecha sin costo hasta 15 días antes*.", "respuesta_ideal": "Sí, el cambio de fecha es sin costo hasta 15 días antes, sujeto a disponibilidad."}
+  ],
+  [
+    {"cliente": "puedo llevar mi propia pizza y refrescos?", "tipo": "si_no", "accion": "responder", "claves": ["no se permiten"], "evidencia": "Alimentos y bebidas de fuera no se permiten, excepto el pastel.", "respuesta_ideal": "No, alimentos y bebidas de fuera no se permiten, salvo el pastel."},
+    {"cliente": "y el pastel?", "tipo": "seguimiento", "accion": "responder", "claves": ["excepto el pastel"], "evidencia": "Alimentos y bebidas de fuera no se permiten, excepto el pastel.", "respuesta_ideal": "El pastel sí puedes llevarlo; el servicio de corte es sin costo."},
+    {"cliente": "tienen show de payasos? cuanto cuesta", "tipo": "directa", "accion": "responder", "claves": ["$1,300"], "evidencia": "- Show de payasos o de burbujas: $1,300 (1 hora)", "respuesta_ideal": "Sí, el show de payasos o de burbujas cuesta $1,300 por 1 hora, con IVA incluido."},
+    {"cliente": "la piñata ya viene con dulces?", "tipo": "si_no", "accion": "responder", "claves": ["sin dulces"], "evidencia": "piñata (sin dulces)", "respuesta_ideal": "No, la piñata viene sin dulces."},
+    {"cliente": "hacen pasteles ustedes?", "tipo": "sin_respuesta", "accion": "abstenerse", "claves": [], "evidencia": null, "respuesta_ideal": "No tengo ese dato; escribe al WhatsApp (442) 555 01 87. Lo que sé es que el pastel no está incluido y puedes llevar el tuyo."}
+  ],
+  [
+    {"cliente": "mi hijo es alergico a la nuez, tienen algo para el?", "tipo": "instruccion", "accion": "derivar", "claves": [], "evidencia": "Si preguntan por alergias alimentarias de un niño, no des garantías: indica que deben avisar al equipo antes de apartar la fecha, por WhatsApp al (442) 555 01 87.", "respuesta_ideal": "No puedo dar garantías sobre alergias; avisa al equipo antes de apartar la fecha por WhatsApp al (442) 555 01 87."},
+    {"cliente": "aceptan amex?", "tipo": "si_no", "accion": "responder", "claves": ["American Express no"], "evidencia": "Formas de pago: efectivo, transferencia y tarjetas Visa y Mastercard (American Express no).", "respuesta_ideal": "No, American Express no; aceptamos efectivo, transferencia y tarjetas Visa y Mastercard."},
+    {"cliente": "hay estacionamiento?", "tipo": "directa", "accion": "responder", "claves": ["Estacionamiento gratuito"], "evidencia": "- Estacionamiento gratuito.", "respuesta_ideal": "Sí, el estacionamiento es gratuito."},
+    {"cliente": "hacen decoracion tematica de superheroes?", "tipo": "sin_respuesta", "accion": "abstenerse", "claves": [], "evidencia": null, "respuesta_ideal": "No tengo ese dato; escribe al WhatsApp (442) 555 01 87."}
+  ],
+  [
+    {"cliente": "mi niña tiene 12 años puede jugar?", "tipo": "si_no", "accion": "responder", "claves": ["1 a 10 años"], "evidencia": "- El área de juegos es para niños de 1 a 10 años.", "respuesta_ideal": "No, el área de juegos es para niños de 1 a 10 años."},
+    {"cliente": "necesito calcetas especiales?", "tipo": "directa", "accion": "responder", "claves": ["antiderrapantes", "$45"], "evidencia": "- Calcetas antiderrapantes obligatorias (se venden en recepción a $45 el par).", "respuesta_ideal": "Sí, son obligatorias las calcetas antiderrapantes; se venden en recepción a $45 el par."},
+    {"cliente": "cuanto seria el total para 20 niños entre semana, con 10 adultos que coman y una hora extra?", "tipo": "combinada", "accion": "responder", "claves": ["$2,900", "$110", "$95", "$650"], "evidencia": "- Niño adicional: $110 c/u\n- Comida para adultos (2 rebanadas de pizza y refresco): $95 c/u\n- Hora extra: $650", "respuesta_ideal": "Paquete Mini entre semana $2,900 (15 niños) más 5 niños adicionales a $110 ($550), 10 comidas de adultos a $95 ($950) y una hora extra $650: total $5,050 con IVA incluido."},
+    {"cliente": "gracias, eso era todo", "tipo": "charla", "accion": "charla", "claves": [], "evidencia": "Al despedirte, di \"¡Que tengan una fiesta increíble!\".", "respuesta_ideal": "¡Que tengan una fiesta increíble!"}
+  ],
+  [
+    {"cliente": "que dias cierran?", "tipo": "directa", "accion": "responder", "claves": ["Lunes cerrado"], "evidencia": "Lunes cerrado.", "respuesta_ideal": "Los lunes están cerrados para eventos."},
+    {"cliente": "abren en dias festivos como el 16 de septiembre?", "tipo": "sin_respuesta", "accion": "abstenerse", "claves": [], "evidencia": null, "respuesta_ideal": "No tengo información sobre festivos; escribe al WhatsApp (442) 555 01 87."},
+    {"cliente": "tienen fotografo para la fiesta?", "tipo": "sin_respuesta", "accion": "abstenerse", "claves": [], "evidencia": null, "respuesta_ideal": "No tengo ese dato de fotógrafo; solo sé que hay cabina de fotos por $950 (1 hora)."}
+  ]
+]

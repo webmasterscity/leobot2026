@@ -1,0 +1,132 @@
+[
+  [
+    {
+      "cliente": "Hola, quiero importar mercancía de China. ¿Cómo funciona?",
+      "tipo": "charla",
+      "accion": "responder",
+      "claves": ["Importación de mercancía"],
+      "evidencia": "Importación de mercancía (desde cualquier país)",
+      "respuesta_ideal": "Hola, aquí hacemos importaciones desde cualquier país, incluyendo China. Te envío una cotización. Me dices qué quieres traer, cantidad, peso y valor."
+    },
+    {
+      "cliente": "¿Cuál es el costo aproximado?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["S/ 180", "S/ 250"],
+      "evidencia": "Gestión de importación simple: S/ 180 - S/ 250",
+      "respuesta_ideal": "Va de S/ 180 a S/ 250 para una importación simple, si SUNAT no pide inspección. Pero te mando una cotización exacta cuando me des los detalles."
+    },
+    {
+      "cliente": "¿Cuánto tiempo se demora?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["5-7 días", "10-15 días"],
+      "evidencia": "Importación simple: 5-7 días hábiles (si no hay revisión de SUNAT); Importación con inspección: 10-15 días hábiles",
+      "respuesta_ideal": "De 5 a 7 días si no hay inspección de SUNAT. Si SUNAT pide revisar físicamente, puede ser 10 a 15 días. Te aviso en tiempo real."
+    }
+  ],
+  [
+    {
+      "cliente": "¿Qué documentos necesito traer de parte del proveedor?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["Factura comercial", "Packing list", "Bill of Lading"],
+      "evidencia": "Importación: Factura comercial o proforma del proveedor, Packing list detallado, Bill of Lading o Airwaybill, RUC del importador",
+      "respuesta_ideal": "Necesitas factura del proveedor, packing list detallado, y el Bill of Lading (si viene por mar) o Airwaybill (si viene por aire). Además tu RUC."
+    },
+    {
+      "cliente": "¿Y si es mi primera importación?",
+      "tipo": "seguimiento",
+      "accion": "responder",
+      "claves": ["Acta de responsabilidad"],
+      "evidencia": "RUC del importador; Acta de responsabilidad (si es primera vez)",
+      "respuesta_ideal": "También pides un acta de responsabilidad ante SUNAT. Es un documento que te piden la primera vez. Nosotros te asesoramos en eso."
+    },
+    {
+      "cliente": "¿Ustedes hacen logística también?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["puerta a puerta", "logística incluida"],
+      "evidencia": "Gestión integral puerta a puerta (logística incluida)",
+      "respuesta_ideal": "Sí, hacemos gestión integral puerta a puerta con logística. Es más caro pero más fácil para ti. Te damos una cotización aparte."
+    }
+  ],
+  [
+    {
+      "cliente": "¿Atienden el sábado?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["Sábados", "8 a.m.", "1 p.m."],
+      "evidencia": "Sábados 8 a.m. - 1 p.m.",
+      "respuesta_ideal": "Sí, sábados de 8 a.m. a 1 p.m."
+    },
+    {
+      "cliente": "¿Tienen oficina en Callao también?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["Callao", "Pasaje Grau"],
+      "evidencia": "Dirección Secundaria: Pasaje Grau 15, Callao (puerto)",
+      "respuesta_ideal": "Sí, tenemos sucursal en Callao en Pasaje Grau 15, frente al puerto. Atendemos de 8 a.m. a 6 p.m. de lunes a viernes."
+    },
+    {
+      "cliente": "¿Qué pasa si SUNAT encuentra un problema con mis documentos?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "Depende del problema. Hablas con uno de los agentes aduanales y ve cómo se arregla. Lo mejor es venir con los documentos bien hechos desde el inicio."
+    }
+  ],
+  [
+    {
+      "cliente": "¿Cuánto cuesta exportar productos?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["S/ 150", "S/ 200"],
+      "evidencia": "Gestión de exportación: S/ 150 - S/ 200",
+      "respuesta_ideal": "La exportación cuesta de S/ 150 a S/ 200. Te paso una cotización exacta si me das detalles de lo que quieres enviar."
+    },
+    {
+      "cliente": "¿Cómo funciona el certificado de origen?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["Certificado de origen", "S/ 60"],
+      "evidencia": "Certificado de origen (comercial): S/ 60",
+      "respuesta_ideal": "El certificado de origen cuesta S/ 60 y certifica que tu producto es hecho en Perú. Se hace en 1 a 2 días."
+    },
+    {
+      "cliente": "¿A dónde se puede exportar?",
+      "tipo": "sin_respuesta",
+      "accion": "responder",
+      "claves": ["cualquier país"],
+      "evidencia": "Exportación de productos peruanos y latinoamericanos",
+      "respuesta_ideal": "Se puede exportar a muchos países. Eso depende de regulaciones del destino. Habla con los agentes si tienes dudas sobre un país en particular."
+    }
+  ],
+  [
+    {
+      "cliente": "¿Tienen sistema para seguimiento online?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["ADUANET", "seguimiento en línea"],
+      "evidencia": "Acceso directo al portal ADUANET de la SUNAT; Sistema de seguimiento en línea (cliente puede consultar estado)",
+      "respuesta_ideal": "Sí, tienes acceso al portal ADUANET para ver el estado en tiempo real. Te mandamos la clave cuando empezamos el trámite."
+    },
+    {
+      "cliente": "¿Qué pasa si cambio de idea después de empezar el trámite?",
+      "tipo": "instruccion",
+      "accion": "responder",
+      "claves": ["100 %", "trabajo ya hecho"],
+      "evidencia": "Cambios de destino: Si el cliente cambia de idea tras iniciar el trámite, se cobra el 100 % del servicio ya ejecutado",
+      "respuesta_ideal": "Si cancelas después de haber comenzado, se cobra el 100 % del trabajo que ya hicimos. Es por eso que te damos una cotización clara al inicio."
+    },
+    {
+      "cliente": "¿Cuál es el teléfono de los agentes para una consulta técnica?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["221-5544"],
+      "evidencia": "Teléfono Principal: +51 1 221-5544",
+      "respuesta_ideal": "Llama al +51 1 221-5544 y pides hablar con Ing. Mendoza o Ing. Ruiz. Te cobran S/ 80 por una consulta técnica."
+    }
+  ]
+]

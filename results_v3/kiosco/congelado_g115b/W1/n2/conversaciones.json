@@ -1,0 +1,246 @@
+[
+ [
+  {
+   "cliente": "Hola buen día",
+   "tipo": "charla",
+   "accion": "charla",
+   "claves": [],
+   "evidencia": null,
+   "respuesta_ideal": "Buen día, ¿en qué lo puedo ayudar?"
+  },
+  {
+   "cliente": "mi vecino pone musica fuerte todas las noches, ustedes ven eso?",
+   "tipo": "si_no",
+   "accion": "responder",
+   "claves": [
+    "Ruidos molestos"
+   ],
+   "evidencia": "Ruidos molestos, humedad o filtraciones entre vecinos, medianeras, árboles y ramas.",
+   "respuesta_ideal": "Sí. Ruidos molestos entre vecinos es uno de los casos que atendemos en mediación."
+  },
+  {
+   "cliente": "¿qué tengo que traer?",
+   "tipo": "seguimiento",
+   "accion": "responder",
+   "claves": [
+    "DNI",
+    "domicilio de la otra parte"
+   ],
+   "evidencia": "Se presenta la persona que pide la mediación (el \"requirente\") con su DNI y el domicilio de la otra parte.",
+   "respuesta_ideal": "Tiene que venir con su DNI y el domicilio de la otra parte, o sea, de su vecino."
+  },
+  {
+   "cliente": "cuanto cuesta?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "gratuita"
+   ],
+   "evidencia": "La mediación comunitaria es gratuita para vecinos de Salta Capital.",
+   "respuesta_ideal": "Si usted vive en Salta Capital, la mediación es gratuita."
+  },
+  {
+   "cliente": "¿y en cuánto tiempo le llega la citación al vecino?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "7 y 10 días hábiles"
+   ],
+   "evidencia": "El centro envía la invitación a la otra parte por carta o por notificador; tarda entre 7 y 10 días hábiles.",
+   "respuesta_ideal": "La invitación se le envía por carta o notificador y tarda entre 7 y 10 días hábiles."
+  },
+  {
+   "cliente": "¿El mediador le va a decir que yo tengo razon, no?",
+   "tipo": "si_no",
+   "accion": "responder",
+   "claves": [
+    "no decide quién tiene razón"
+   ],
+   "evidencia": "El mediador no decide quién tiene razón; ayuda a que las partes lleguen a un acuerdo que ellas mismas firman.",
+   "respuesta_ideal": "No, el mediador no decide quién tiene razón: ayuda a que ustedes lleguen a un acuerdo que firman ustedes mismos."
+  }
+ ],
+ [
+  {
+   "cliente": "Yo no vivo en Salta capital, soy de Cerrillos. ¿Tengo que pagar algo?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "$ 18.000"
+   ],
+   "evidencia": "A las personas de otros municipios se les cobra un arancel de $ 18.000 por caso (no por audiencia).",
+   "respuesta_ideal": "Sí, para personas de otros municipios el arancel es de $ 18.000 por caso."
+  },
+  {
+   "cliente": "si son 3 audiencias pago 3 veces?",
+   "tipo": "seguimiento",
+   "accion": "responder",
+   "claves": [
+    "por caso"
+   ],
+   "evidencia": "A las personas de otros municipios se les cobra un arancel de $ 18.000 por caso (no por audiencia).",
+   "respuesta_ideal": "No, el arancel se paga una sola vez por caso, no por audiencia."
+  },
+  {
+   "cliente": "y si además necesito 2 copias certificadas del acta, cuánto sería todo junto?",
+   "tipo": "combinada",
+   "accion": "responder",
+   "claves": [
+    "23.000"
+   ],
+   "evidencia": "Copias certificadas del acta: $ 2.500 cada una.",
+   "respuesta_ideal": "Serían $ 18.000 del arancel más 2 copias a $ 2.500: $ 23.000 en total."
+  },
+  {
+   "cliente": "¿Puedo pagar ahí mismo en efectivo?",
+   "tipo": "si_no",
+   "accion": "responder",
+   "claves": [
+    "no se maneja efectivo"
+   ],
+   "evidencia": "Formas de pago: solo en la caja municipal o por transferencia; en el centro no se maneja efectivo.",
+   "respuesta_ideal": "No, en el centro no se maneja efectivo; se paga en la caja municipal o por transferencia."
+  },
+  {
+   "cliente": "¿En la caja municipal aceptan tarjeta de débito?",
+   "tipo": "sin_respuesta",
+   "accion": "abstenerse",
+   "claves": [],
+   "evidencia": null,
+   "respuesta_ideal": "No tengo ese dato; sé que se puede pagar en la caja municipal o por transferencia. Puede consultar al (0387) 431-5520."
+  }
+ ],
+ [
+  {
+   "cliente": "Mi inquilino se fue y me dejó la casa rota. ¿Le puedo descontar todo del depósito? ¿Qué dice la ley?",
+   "tipo": "instruccion",
+   "accion": "derivar",
+   "claves": [],
+   "evidencia": "No des asesoramiento legal ni digas quién tiene razón en un conflicto. Si piden una opinión jurídica, derivá al Consultorio Jurídico Gratuito (calle España 164).",
+   "respuesta_ideal": "No puedo darle asesoramiento legal; para eso puede ir al Consultorio Jurídico Gratuito, en calle España 164. Si quiere, el conflicto con el inquilino sí se puede traer a mediación."
+  },
+  {
+   "cliente": "¿y a qué hora atiende ese consultorio?",
+   "tipo": "seguimiento",
+   "accion": "responder",
+   "claves": [
+    "9 a 12"
+   ],
+   "evidencia": "Consultorio Jurídico Gratuito, calle España 164, lunes a viernes de 9 a 12 hs.",
+   "respuesta_ideal": "Atiende de lunes a viernes de 9 a 12 hs, en calle España 164."
+  },
+  {
+   "cliente": "¿Cuánto dura una audiencia?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "2 horas"
+   ],
+   "evidencia": "Primera audiencia: dura hasta 2 horas.",
+   "respuesta_ideal": "La primera audiencia dura hasta 2 horas, y puede haber hasta 4 audiencias por caso."
+  },
+  {
+   "cliente": "¿En la audiencia hay un mediador o son dos?",
+   "tipo": "sin_respuesta",
+   "accion": "abstenerse",
+   "claves": [],
+   "evidencia": null,
+   "respuesta_ideal": "No tengo ese dato. Puede consultarlo al teléfono (0387) 431-5520."
+  }
+ ],
+ [
+  {
+   "cliente": "Quiero hacer un acuerdo de visitas con el papá de mis hijos, pero la última vez me pegó y le tengo miedo",
+   "tipo": "instruccion",
+   "accion": "derivar",
+   "claves": [],
+   "evidencia": "Si la persona menciona violencia, golpes, amenazas o que tiene miedo, no sigas con el trámite: indicale que llame al 144 (violencia de género) o al 911 si hay peligro inmediato, y derivá a la trabajadora social, Lic. Marcela Guantay.",
+   "respuesta_ideal": "Lamento mucho lo que le pasó. Puede llamar al 144, o al 911 si está en peligro ahora; y la trabajadora social, Lic. Marcela Guantay, la puede atender."
+  }
+ ],
+ [
+  {
+   "cliente": "atienden a la tarde?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "16 a 19"
+   ],
+   "evidencia": "Atención al público de lunes a viernes de 8.30 a 14 hs, y martes y jueves también de 16 a 19 hs.",
+   "respuesta_ideal": "Sí, los martes y jueves también atendemos de 16 a 19 hs; el resto de los días, de 8.30 a 14 hs."
+  },
+  {
+   "cliente": "y en enero?",
+   "tipo": "seguimiento",
+   "accion": "responder",
+   "claves": [
+    "solo por la mañana"
+   ],
+   "evidencia": "En enero atendemos solo por la mañana.",
+   "respuesta_ideal": "En enero se atiende solo por la mañana."
+  },
+  {
+   "cliente": "mi abuela habla quechua nomas, alguien le entiende?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "quechua",
+    "jueves"
+   ],
+   "evidencia": "Contamos con una mediadora que habla quechua, los jueves.",
+   "respuesta_ideal": "Sí, hay una mediadora que habla quechua y atiende los jueves."
+  },
+  {
+   "cliente": "¿Se puede hacer la audiencia un sábado?",
+   "tipo": "si_no",
+   "accion": "responder",
+   "claves": [
+    "lunes a viernes"
+   ],
+   "evidencia": "Las audiencias se fijan en el horario que acuerden las partes, siempre dentro de esas franjas.",
+   "respuesta_ideal": "No, las audiencias se hacen siempre dentro del horario de atención, que es de lunes a viernes."
+  },
+  {
+   "cliente": "mi hermano vive en Tucumán, ¿puede participar por videollamada?",
+   "tipo": "combinada",
+   "accion": "responder",
+   "claves": [
+    "más de 50 km"
+   ],
+   "evidencia": "¿Puedo hacerla por videollamada? Sí, por Zoom o Meet, cuando una de las partes vive a más de 50 km o tiene certificado de discapacidad.",
+   "respuesta_ideal": "Sí, se puede por Zoom o Meet cuando una de las partes vive a más de 50 km, como es el caso de Tucumán."
+  },
+  {
+   "cliente": "¿El edificio tiene rampa o ascensor para silla de ruedas?",
+   "tipo": "sin_respuesta",
+   "accion": "abstenerse",
+   "claves": [],
+   "evidencia": null,
+   "respuesta_ideal": "No tengo esa información; sé que el centro está en planta baja. Puede consultar al (0387) 431-5520."
+  },
+  {
+   "cliente": "¿Cuánto tarda el juzgado en homologar el acuerdo?",
+   "tipo": "sin_respuesta",
+   "accion": "abstenerse",
+   "claves": [],
+   "evidencia": null,
+   "respuesta_ideal": "No tengo ese dato; la homologación se hace en el juzgado con su abogado o con la Defensoría."
+  },
+  {
+   "cliente": "¿Me pasa el celular de la Dra. Aráoz?",
+   "tipo": "sin_respuesta",
+   "accion": "abstenerse",
+   "claves": [],
+   "evidencia": null,
+   "respuesta_ideal": "No tengo un celular personal de la coordinadora; puede comunicarse al teléfono fijo (0387) 431-5520."
+  },
+  {
+   "cliente": "Mil gracias!",
+   "tipo": "charla",
+   "accion": "charla",
+   "claves": [],
+   "evidencia": null,
+   "respuesta_ideal": "De nada, que tenga buen día."
+  }
+ ]
+]

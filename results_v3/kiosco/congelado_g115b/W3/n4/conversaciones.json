@@ -1,0 +1,158 @@
+[
+  [
+    {
+      "cliente": "Hola, necesito un curso de seguridad para mis empleados. ¿Qué ofrecen?",
+      "tipo": "charla",
+      "accion": "responder",
+      "claves": ["cursos", "seguridad"],
+      "evidencia": "Centro de Capacitación en Seguridad Industrial PROTEC",
+      "respuesta_ideal": "Hola. Ofrecemos varios cursos: Montacarga, Prevención de Riesgos, Trabajo en Altura, Primeros Auxilios, Grúa, Delegados de Seguridad. ¿Cuántas personas son y qué necesitan?"
+    },
+    {
+      "cliente": "¿Hacen descuentos para grupos?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["15 %", "4 o más personas"],
+      "evidencia": "Grupos (4 o más personas del mismo sector): 15 % de descuento en el total",
+      "respuesta_ideal": "Sí, con 4 o más personas hacemos 15 % de descuento en el total. Si quieres un curso a medida para tu empresa, llamás y hablás con nuestro coordinador."
+    },
+    {
+      "cliente": "¿Cuánto tiempo toma el curso de montacarga?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["40 horas", "5 días", "160 dólares"],
+      "evidencia": "OPERADOR DE MONTACARGA Y AUTOELEVADORES — 40 horas (160 dólares). Duración: 5 días (8 horas diarias) o 10 sesiones (4 horas)",
+      "respuesta_ideal": "Son 40 horas. Puedes hacerlo en 5 días (8 horas diarias) o en 10 sesiones de 4 horas. Cuesta 160 dólares."
+    },
+    {
+      "cliente": "¿Incluye práctica en una máquina real?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["práctica", "cancha", "4 máquinas"],
+      "evidencia": "Incluye: Teoría en aula + práctica en la cancha (4 máquinas disponibles)",
+      "respuesta_ideal": "Sí, incluye. Tenemos 4 autoelevadores en la cancha para que practiques. La práctica es obligatoria."
+    }
+  ],
+  [
+    {
+      "cliente": "¿Qué cursos hacen en sábado?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["Sábados", "8 a.m.", "1 p.m."],
+      "evidencia": "Sábados: 8 a.m. - 1 p.m. (solo cursos puntuales)",
+      "respuesta_ideal": "Abrimos sábado de 8 a.m. a 1 p.m., pero solo cursos puntuales. Mejor preguntas por WhatsApp +54 11 3568-8912 cuáles hay esa semana."
+    },
+    {
+      "cliente": "¿Es válido el certificado en toda Argentina?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["IRAM", "SRT", "Argentina"],
+      "evidencia": "Certificado: Válido en toda la Argentina; Certificado: Reconocido por la SRT",
+      "respuesta_ideal": "Sí, es válido en toda Argentina. Lo avala el IRAM y lo reconoce la SRT (Superintendencia de Riesgos del Trabajo)."
+    },
+    {
+      "cliente": "¿Cuánto cuesta Primeros Auxilios?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["70 dólares", "12 horas"],
+      "evidencia": "PRIMEROS AUXILIOS — 12 horas (70 dólares)",
+      "respuesta_ideal": "Primeros Auxilios cuesta 70 dólares y son 12 horas teórico-prácticas con maniquíes."
+    }
+  ],
+  [
+    {
+      "cliente": "Quiero hacer Trabajo en Altura. ¿Necesito algo antes?",
+      "tipo": "instruccion",
+      "accion": "responder",
+      "claves": ["Aptitud psicofísica previa"],
+      "evidencia": "Requisito: Aptitud psicofísica previa",
+      "respuesta_ideal": "Sí, necesitas un certificado de aptitud psicofísica de un médico antes. Es obligatorio por ley. Te pasamos referencias de médicos que lo hacen rápido."
+    },
+    {
+      "cliente": "¿Cuánto cuesta ese curso?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["110 dólares", "16 horas"],
+      "evidencia": "TRABAJO EN ALTURA — 16 horas (110 dólares)",
+      "respuesta_ideal": "Cuesta 110 dólares. Son 16 horas: teoría + práctica con simulador de escaleras."
+    },
+    {
+      "cliente": "¿Ustedes alquilan los equipos de protección?",
+      "tipo": "sin_respuesta",
+      "accion": "responder",
+      "claves": ["equipos de la escuela", "arnés", "casco"],
+      "evidencia": "Incluye: Arnés, casco, cuerdas de seguridad",
+      "respuesta_ideal": "Los equipos son de la escuela y se usan durante el curso: arnés, casco, cuerdas. Si necesitas llevar los tuyos propios al trabajo después, eso es tuyo."
+    }
+  ],
+  [
+    {
+      "cliente": "¿Cuánto sale el curso de Grúa?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["180 dólares", "48 horas"],
+      "evidencia": "OPERADOR DE GRÚA — 48 horas (180 dólares)",
+      "respuesta_ideal": "El curso de Grúa cuesta 180 dólares y son 48 horas. Incluye teoría y práctica en grúa real."
+    },
+    {
+      "cliente": "¿Cómo puedo pagar?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["tarjeta", "transferencia", "efectivo"],
+      "evidencia": "Efectivo o transferencia bancaria (descuento adicional 5 % en efectivo); Tarjeta de débito y crédito (sin recargo)",
+      "respuesta_ideal": "Efectivo, transferencia, tarjeta de débito o crédito. Si pagas en efectivo, hay 5 % de descuento. Y hasta 3 cuotas sin interés en tarjeta."
+    },
+    {
+      "cliente": "¿Si no apruebo, puedo repetir?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["2 exámenes", "recuperación", "costo extra"],
+      "evidencia": "Se pueden tomar hasta 2 exámenes de recuperación sin costo extra. Si necesitas una tercera, se cobra S/ 50 adicional.",
+      "respuesta_ideal": "Sí, hasta 2 recuperatorios sin costo. Si necesitas un tercero, cobra 50 pesos."
+    }
+  ],
+  [
+    {
+      "cliente": "¿Cuál es el curso para delegados de seguridad?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["delegados", "30 horas", "120 dólares"],
+      "evidencia": "CURSO PARA DELEGADOS DE SEGURIDAD — 30 horas (120 dólares)",
+      "respuesta_ideal": "Es un curso de 30 horas (6 sesiones de 5 horas). Cuesta 120 dólares y te habilita legalmente como delegado de seguridad."
+    },
+    {
+      "cliente": "¿Puedo hacer descuento como desempleado?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["desempleados", "20 %", "ANSES"],
+      "evidencia": "Desempleados: 20 % de descuento (presentar DNI + comprobante ANSES)",
+      "respuesta_ideal": "Sí, 20 % de descuento. Trae DNI y comprobante de ANSES cuando vengas a inscribirte."
+    },
+    {
+      "cliente": "¿Falté a una clase. Puedo venir a la siguiente cohorte?",
+      "tipo": "seguimiento",
+      "accion": "responder",
+      "claves": ["siguiente cohorte", "coordinás"],
+      "evidencia": "Se rota con la siguiente cohorte. Coordinás con administración para ver dónde se sienta bien el horario.",
+      "respuesta_ideal": "Sí, sin costo extra. Coordinás con administración para ver en qué cohorte siguiente te sienta bien el horario."
+    }
+  ],
+  [
+    {
+      "cliente": "¿Envían los certificados digitales?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["digitales", "48 horas", "correo"],
+      "evidencia": "Sí, al correo en 48 horas. El original se retira en la oficina o se envía por correo postal ($ 200).",
+      "respuesta_ideal": "Sí, digital al mail en 48 horas. El original se retira aquí o se envía por correo a 200 pesos."
+    },
+    {
+      "cliente": "Somos 5 personas de la misma empresa. ¿Cuánto sería el total?",
+      "tipo": "combinada",
+      "accion": "responder",
+      "claves": ["15 %", "160 dólares", "montacarga"],
+      "evidencia": "Grupos (4 o más personas del mismo sector): 15 % de descuento en el total; OPERADOR DE MONTACARGA Y AUTOELEVADORES — 40 horas (160 dólares)",
+      "respuesta_ideal": "Para 5 personas del Montacarga: 160 dólares × 5 = 800. Con 15 % de descuento = 680 dólares total."
+    }
+  ]
+]

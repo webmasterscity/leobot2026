@@ -1,0 +1,168 @@
+[
+  {
+    "conversacion": 1,
+    "turnos": [
+      {
+        "cliente": "Hola, me interesa conocer sobre el lodge. ¿Cuál es el precio de una noche?",
+        "tipo": "directa",
+        "accion": "responder",
+        "claves": ["US$85", "habitación estándar", "desayuno"],
+        "evidencia": "Habitaciones estándar (habitación doble, baño compartido): Tarifa: US$85 por noche (desayuno incluido)",
+        "respuesta_ideal": "Bienvenido. Nuestras habitaciones estándar cuestan US$85 por noche, incluido el desayuno. Tenemos también opciones con baño privado y suites familiares."
+      },
+      {
+        "cliente": "¿Qué precio tienen las habitaciones con baño privado?",
+        "tipo": "directa",
+        "accion": "responder",
+        "claves": ["US$120", "baño privado"],
+        "evidencia": "Habitaciones con baño privado: Tarifa: US$120 por noche (desayuno incluido)",
+        "respuesta_ideal": "Las habitaciones con baño privado cuestan US$120 por noche, desayuno incluido."
+      },
+      {
+        "cliente": "¿Cuándo podría reservar?",
+        "tipo": "instruccion",
+        "accion": "derivar",
+        "claves": [],
+        "evidencia": null,
+        "respuesta_ideal": "Para hacer una reserva, llama al +51 84 204 615 ext. 102 o escribe a reservas@vegaandinalodge.com. También puedes usar WhatsApp al +51 987 654 321."
+      }
+    ]
+  },
+  {
+    "conversacion": 2,
+    "turnos": [
+      {
+        "cliente": "¿Ofrecen tour a Machu Picchu?",
+        "tipo": "si_no",
+        "accion": "responder",
+        "claves": ["Trekking de un día al Machu Picchu", "S/. 450", "guía bilingüe"],
+        "evidencia": "Trekking de un día al Machu Picchu clásico (grupo): S/. 450 por persona",
+        "respuesta_ideal": "Sí, ofrecemos un trekking de un día a Machu Picchu por S/. 450 por persona. Incluye guía bilingüe."
+      },
+      {
+        "cliente": "¿A qué hora salimos?",
+        "tipo": "directa",
+        "accion": "responder",
+        "claves": ["4:00 a.m.", "regreso 18:00"],
+        "evidencia": "Salida: 4:00 a.m., regreso 18:00 h",
+        "respuesta_ideal": "La salida es a las 4:00 a.m. y el regreso aproximadamente a las 18:00 horas."
+      },
+      {
+        "cliente": "¿Está incluida la entrada a Machu Picchu?",
+        "tipo": "si_no",
+        "accion": "responder",
+        "claves": ["no incluida", "US$80"],
+        "evidencia": "Entrada a Machu Picchu: no incluida (comprada aparte US$80)",
+        "respuesta_ideal": "No, la entrada a Machu Picchu se compra aparte. Cuesta aproximadamente US$80."
+      }
+    ]
+  },
+  {
+    "conversacion": 3,
+    "turnos": [
+      {
+        "cliente": "¿Tienen tours a comunidades locales?",
+        "tipo": "si_no",
+        "accion": "responder",
+        "claves": ["comunidades quechua", "día completo", "S/. 280"],
+        "evidencia": "Visita a comunidades quechua (día completo, máx. 8 personas): S/. 280",
+        "respuesta_ideal": "Sí, ofrecemos visitas a comunidades quechua de día completo a S/. 280. Incluye comida casera e intercambio cultural."
+      },
+      {
+        "cliente": "¿Qué incluye exactamente?",
+        "tipo": "directa",
+        "accion": "responder",
+        "claves": ["comida casera", "textilería", "contribución S/. 50"],
+        "evidencia": "Comida casera incluida, Intercambio cultural y demostración de textilería, Contribución directa a la comunidad: S/. 50 por persona",
+        "respuesta_ideal": "Incluye comida casera, intercambio cultural y demostración de tejidos tradicionales. También hay una contribución directa a la comunidad de S/. 50 por persona."
+      }
+    ]
+  },
+  {
+    "conversacion": 4,
+    "turnos": [
+      {
+        "cliente": "Tengo miedo del soroche. ¿Qué se puede hacer?",
+        "tipo": "instruccion",
+        "accion": "responder",
+        "claves": ["mal de altura", "oxígeno", "té de coca"],
+        "evidencia": "Mal de altura: disponible oxígeno y té de coca (gratuito)",
+        "respuesta_ideal": "Estamos a 2.850 metros de altitud. No te preocupes, disponemos de oxígeno y té de coca gratuito para los huéspedes. Nuestro personal te asesorará al llegar."
+      },
+      {
+        "cliente": "¿A qué hora se desayuna?",
+        "tipo": "directa",
+        "accion": "responder",
+        "claves": ["7:00-10:00"],
+        "evidencia": "Comedor: desayuno 7:00-10:00 h",
+        "respuesta_ideal": "El desayuno se sirve de 7:00 a 10:00 de la mañana."
+      }
+    ]
+  },
+  {
+    "conversacion": 5,
+    "turnos": [
+      {
+        "cliente": "¿Se puede llevar mascota?",
+        "tipo": "si_no",
+        "accion": "responder",
+        "claves": ["no se admiten", "perro de servicio"],
+        "evidencia": "Animales: no se admiten, salvo servicio emocional acreditado",
+        "respuesta_ideal": "No aceptamos mascotas, salvo perros de servicio emocional debidamente certificados."
+      },
+      {
+        "cliente": "¿A qué hora es el check-in?",
+        "tipo": "directa",
+        "accion": "responder",
+        "claves": ["14:00"],
+        "evidencia": "Check-in: 14:00 h",
+        "respuesta_ideal": "El check-in es a las 14:00 horas."
+      },
+      {
+        "cliente": "¿Y el check-out?",
+        "tipo": "directa",
+        "accion": "responder",
+        "claves": ["11:00"],
+        "evidencia": "Check-out: 11:00 h",
+        "respuesta_ideal": "El check-out es a las 11:00 de la mañana."
+      }
+    ]
+  },
+  {
+    "conversacion": 6,
+    "turnos": [
+      {
+        "cliente": "¿Hay wifi?",
+        "tipo": "si_no",
+        "accion": "responder",
+        "claves": ["wifi en áreas comunes", "limitado"],
+        "evidencia": "Wifi en áreas comunes (limitado, priorizamos naturaleza)",
+        "respuesta_ideal": "Sí, hay wifi en áreas comunes, pero es limitado porque priorizamos la conexión con la naturaleza."
+      },
+      {
+        "cliente": "¿Hacen talleres de tejido?",
+        "tipo": "si_no",
+        "accion": "responder",
+        "claves": ["Taller de tejido", "S/. 85", "2 horas"],
+        "evidencia": "Taller de tejido tradicional (2 horas): S/. 85",
+        "respuesta_ideal": "Sí, ofrecemos talleres de tejido tradicional con artesanas locales. Cuesta S/. 85 por 2 horas, y te llevas lo que haces."
+      },
+      {
+        "cliente": "¿Mi hijo de 8 años puede hospedarse aquí?",
+        "tipo": "si_no",
+        "accion": "responder",
+        "claves": ["6-12 años", "descuento 50 %"],
+        "evidencia": "Descuento 50 % edades 6-12 años",
+        "respuesta_ideal": "Claro que sí. Para niños de 6 a 12 años aplicamos descuento del 50 % en hospedaje."
+      },
+      {
+        "cliente": "¿Hay transporte desde Cusco?",
+        "tipo": "directa",
+        "accion": "responder",
+        "claves": ["US$60", "camioneta"],
+        "evidencia": "Camioneta de traslado desde/hacia Cusco ciudad: US$60 por trayecto (bajo demanda)",
+        "respuesta_ideal": "Sí, disponemos de traslado desde Cusco a US$60 por trayecto, bajo demanda. Coordina con recepción."
+      }
+    ]
+  }
+]

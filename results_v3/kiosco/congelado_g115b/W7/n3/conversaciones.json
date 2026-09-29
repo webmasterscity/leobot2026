@@ -1,0 +1,160 @@
+[
+  {
+    "conversacion": 1,
+    "turnos": [
+      {
+        "cliente": "Hola, quisiera aprender a hacer paella. ¿Tienen algún taller?",
+        "tipo": "directa",
+        "accion": "responder",
+        "claves": ["paella", "Cocina española tradicional", "€25"],
+        "evidencia": "Cocina española tradicional (croquetas, gazpacho, paella): €25",
+        "respuesta_ideal": "Sí, tenemos un taller de Cocina Española Tradicional que incluye paella, croquetas y gazpacho. Cuesta €25 y dura 2 horas."
+      },
+      {
+        "cliente": "¿Cuál es la próxima fecha disponible?",
+        "tipo": "sin_respuesta",
+        "accion": "derivar",
+        "claves": [],
+        "evidencia": null,
+        "respuesta_ideal": "Para ver las próximas fechas disponibles, consulta nuestro calendario en www.sazoncontemporaneo.es o llama al +34 91 445 78 23."
+      },
+      {
+        "cliente": "¿Incluye la comida?",
+        "tipo": "si_no",
+        "accion": "responder",
+        "claves": ["Degustación de lo elaborado", "Ingredientes"],
+        "evidencia": "Incluido en los talleres: Ingredientes de primera calidad... Degustación de lo elaborado",
+        "respuesta_ideal": "Sí, está incluida la degustación de lo que elabores durante el taller, más los ingredientes y bebida de bienvenida."
+      }
+    ]
+  },
+  {
+    "conversacion": 2,
+    "turnos": [
+      {
+        "cliente": "¿Cuánto cuesta el curso completo de gastronomía moderna?",
+        "tipo": "directa",
+        "accion": "responder",
+        "claves": ["€380", "8 sesiones", "16 horas"],
+        "evidencia": "Programa completo de gastronomía moderna: €380",
+        "respuesta_ideal": "El curso completo de gastronomía moderna cuesta €380. Son 8 sesiones de 16 horas en total e incluye certificado."
+      },
+      {
+        "cliente": "¿Puedo cancelar después si no me apetece?",
+        "tipo": "si_no",
+        "accion": "responder",
+        "claves": ["5 días", "100 %", "cancelación"],
+        "evidencia": "Cancelación y devolución: hasta 5 días antes del curso se devuelve el 100 %",
+        "respuesta_ideal": "Sí, si cancelas hasta 5 días antes del curso te devolvemos el 100 % del dinero."
+      }
+    ]
+  },
+  {
+    "conversacion": 3,
+    "turnos": [
+      {
+        "cliente": "¿Tienen cursos para principiantes como yo?",
+        "tipo": "directa",
+        "accion": "responder",
+        "claves": ["principiantes", "€120", "4 sesiones"],
+        "evidencia": "Curso de cocina para principiantes: €120",
+        "respuesta_ideal": "Sí, tenemos un curso de cocina para principiantes que cuesta €120 y consta de 4 sesiones de 2 horas cada una."
+      },
+      {
+        "cliente": "¿Debo traer algo especial? ¿Uniforme, cuchillos...?",
+        "tipo": "sin_respuesta",
+        "accion": "responder",
+        "claves": ["uniforme reutilizable", "utensilios"],
+        "evidencia": "La escuela proporciona uniforme de cocina reutilizable",
+        "respuesta_ideal": "No necesitas traer nada. La escuela proporciona uniforme de cocina reutilizable y todos los utensilios profesionales."
+      }
+    ]
+  },
+  {
+    "conversacion": 4,
+    "turnos": [
+      {
+        "cliente": "¿Hacen clases para niños?",
+        "tipo": "si_no",
+        "accion": "responder",
+        "claves": ["talleres infantiles", "6-13 años", "sábados", "14:00"],
+        "evidencia": "Talleres infantiles especiales (6-13 años) los sábados a las 14:00 h",
+        "respuesta_ideal": "Sí, tenemos talleres infantiles para menores de 6 a 13 años los sábados a las 14:00 horas."
+      },
+      {
+        "cliente": "Mi hijo tiene 14 años. ¿Puede entrar en los cursos normales?",
+        "tipo": "si_no",
+        "accion": "responder",
+        "claves": ["mayores de 14 años"],
+        "evidencia": "los mayores de 14 años pueden participar en cursos regulares",
+        "respuesta_ideal": "Sí, a partir de 14 años puede participar en los cursos regulares sin problema."
+      },
+      {
+        "cliente": "¿A qué horario atendéis los sábados?",
+        "tipo": "directa",
+        "accion": "responder",
+        "claves": ["10:00 a 18:00"],
+        "evidencia": "Sábado: 10:00 a 18:00 h",
+        "respuesta_ideal": "Los sábados atendemos de 10:00 a 18:00 horas."
+      }
+    ]
+  },
+  {
+    "conversacion": 5,
+    "turnos": [
+      {
+        "cliente": "¿Hacen eventos? Mi despedida de soltero es en tres semanas.",
+        "tipo": "directa",
+        "accion": "responder",
+        "claves": ["Despedidas de soltero/soltera", "€55", "8 personas"],
+        "evidencia": "Despedidas de soltero/soltera (3 h de cocina + cena): €55 por persona (mínimo 8)",
+        "respuesta_ideal": "Sí, ofrecemos despedidas de soltero y soltera. Son 3 horas de cocina más cena, a €55 por persona, con mínimo de 8 personas."
+      },
+      {
+        "cliente": "¿Podemos venir 7 personas?",
+        "tipo": "combinada",
+        "accion": "abstenerse",
+        "claves": [],
+        "evidencia": "Despedidas de soltero/soltera (3 h de cocina + cena): €55 por persona (mínimo 8)",
+        "respuesta_ideal": "El mínimo son 8 personas. Si os falta una, podría haber alternativas. Te recomiendo que llames al +34 91 445 78 23 para consultar."
+      },
+      {
+        "cliente": "¿Se puede beber vino durante el evento?",
+        "tipo": "sin_respuesta",
+        "accion": "abstenerse",
+        "claves": [],
+        "evidencia": null,
+        "respuesta_ideal": "Depende del tipo de evento y los menús. Llama para confirmar las opciones que ofrecemos para despedidas."
+      }
+    ]
+  },
+  {
+    "conversacion": 6,
+    "turnos": [
+      {
+        "cliente": "¿Tienen clases de repostería?",
+        "tipo": "directa",
+        "accion": "responder",
+        "claves": ["Repostería", "€35"],
+        "evidencia": "Repostería básica: €35",
+        "respuesta_ideal": "Sí, tenemos un taller de repostería básica que cuesta €35. También hay un curso más avanzado de repostería profesional."
+      },
+      {
+        "cliente": "¿Cuánto cuesta el avanzado?",
+        "tipo": "directa",
+        "accion": "responder",
+        "claves": ["Repostería profesional", "€165", "intermedio"],
+        "evidencia": "Repostería profesional (nivel intermedio): €165",
+        "respuesta_ideal": "El curso de repostería profesional de nivel intermedio cuesta €165 y consta de 4 sesiones."
+      },
+      {
+        "cliente": "Soy alérgica a los frutos secos. ¿Podéis adaptaros?",
+        "tipo": "instruccion",
+        "accion": "derivar",
+        "claves": [],
+        "evidencia": "Alergias alimentarias: notificar en el momento de la inscripción",
+        "respuesta_ideal": "Es muy importante que nos lo comuniques en el momento de la inscripción. Llama al +34 91 445 78 23 para que nuestro equipo pueda confirmarlo y adaptarse a tu alergia."
+      }
+    ]
+  }
+]
