@@ -1,0 +1,497 @@
+[
+ {
+  "id": "i0300",
+  "negocio": "W7_n1",
+  "turnos_previos_del_cliente": [
+   "Hola, ¿limpian prendas de cuero?"
+  ],
+  "cliente": "¿Necesito dejar un depósito?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "Depósito de garantía del 50%"
+  ],
+  "evidencia": "Depósito de garantía del 50% al entregar la prenda; se completa al retirar.",
+  "respuesta_ideal": "Sí, es el 50% del precio total al entregar la prenda. El otro 50% lo pagas cuando retiras.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «✓ Depósito de garantía del 50% al entregar la prenda; se completa al retirar»."
+ },
+ {
+  "id": "i0301",
+  "negocio": "W4_n3",
+  "turnos_previos_del_cliente": [
+   "buenas, ¿cuánto vale la hora de pool?",
+   "¿y la de carambola?",
+   "Somos 5, ¿cobran más por persona?",
+   "Si jugamos dos horas y media de pool un martes a las 8 de la noche, ¿cuánto pagamos?"
+  ],
+  "cliente": "¿Y si pagamos con tarjeta?",
+  "tipo": "instruccion",
+  "accion_esperada": "responder",
+  "claves": [
+   "3%"
+  ],
+  "evidencia": "- Cuando alguien pregunte por cuentas de una mesa o del bar, aclara siempre que con tarjeta hay un 3% adicional.",
+  "respuesta_ideal": "Con tarjeta débito o crédito se cobra un 3% adicional, así que quedarían en $ 36.050.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Se puede pagar en efectivo, Nequi, Daviplata y tarjeta débito o crédito (con tarjeta se cobra un 3% adicional). No fiamos»."
+ },
+ {
+  "id": "i0302",
+  "negocio": "W8_n4",
+  "turnos_previos_del_cliente": [
+   "hola, compre unas botas por internet hace 12 dias y quiero devolverlas, la tienda dice que no",
+   "el arbitraje ese, la tienda tiene que aceptarlo?",
+   "donde puedo ver si esta adherida?",
+   "en agosto abris?"
+  ],
+  "cliente": "si llevo 35 paginas para fotocopiar cuanto me cuesta?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "1,50"
+  ],
+  "evidencia": "- Fotocopias de la documentación que se aporta: sin coste hasta 20 páginas; a partir de ahí, 0,10 € por página según la ordenanza de tasas.",
+  "respuesta_ideal": "Las primeras 20 páginas son gratis y las 15 restantes van a 0,10 € cada una: 1,50 € en total.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Fotocopias de la documentación que se aporta: sin coste hasta 20 páginas; a partir de ahí, 0,10 € por página según la ordenanza de tasas»."
+ },
+ {
+  "id": "i0303",
+  "negocio": "W7_n3",
+  "turnos_previos_del_cliente": [
+   "Hola, ¿hacen envíos a casa?",
+   "¿Y si lo necesito rápido, en 24 horas?"
+  ],
+  "cliente": "¿Y las devoluciones? ¿Cuántos días tengo?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "14 días"
+  ],
+  "evidencia": "14 días desde la compra para cambio o devolución",
+  "respuesta_ideal": "14 días desde la compra. El producto tiene que estar sin abrir ni usar.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «14 días desde la compra para cambio o devolución»."
+ },
+ {
+  "id": "i0304",
+  "negocio": "W5_n4",
+  "turnos_previos_del_cliente": [
+   "Soy uruguayo, ¿puedo comprar acá?",
+   "¿y mi señora tiene su propio cupo o es el mismo?",
+   "¿Qué hay que mostrar en la caja?"
+  ],
+  "cliente": "Este mes ya gaste 250 dolares, me alcanza para la freidora de aire?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "US$ 89,00",
+   "USD 300"
+  ],
+  "evidencia": "Freidora de aire 4 L\tunidad\tUS$ 89,00",
+  "respuesta_ideal": "No: la freidora cuesta US$ 89,00 y con los 250 que ya gastaste pasarías el tope de USD 300 por mes (serían 339).",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Producto: Freidora de aire 4 L; Presentación: unidad; Precio: US$ 89,00»."
+ },
+ {
+  "id": "i0305",
+  "negocio": "W4_n1",
+  "turnos_previos_del_cliente": [
+   "¿Les queda aceite de la cosecha de 2023?",
+   "¿Hacen descuento a jubilados en la visita?",
+   "que acidez tiene el picual de ustedes"
+  ],
+  "cliente": "¿Cuánto pesa la caja regalo? Es para llevármela en el avión",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo el peso de la caja regalo; son tres botellas de 250 ml, pero el peso exacto se lo confirmarán en la tienda, 953 31 04 22.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Caja regalo de 3 botellas de 250 ml (picual, arbequina y temprana): €19,90»."
+ },
+ {
+  "id": "i0306",
+  "negocio": "W7_n2",
+  "turnos_previos_del_cliente": [
+   "¿Hacen sitios web?"
+  ],
+  "cliente": "¿Y una tienda online?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "Tienda online básica",
+   "50 productos",
+   "$2.500 USD"
+  ],
+  "evidencia": "Tienda online básica (hasta 50 productos): $2.500 USD",
+  "respuesta_ideal": "Tienda online hasta 50 productos: $2.500 USD. Incluye integración de pago.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Trabajamos con cafeterías, boutiques, consultorios, despachos de abogados, academias y tiendas online en Perú, Colombia, México y España»."
+ },
+ {
+  "id": "i0307",
+  "negocio": "W7_n3",
+  "turnos_previos_del_cliente": [
+   "Hola, quiero hacer un scrapbook para mi familia pero no tengo idea de por dónde empezar.",
+   "¿Y cuánto cuesta todo para un scrapbook básico?"
+  ],
+  "cliente": "¿Vendéis papeles especiales para scrapbooking?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "Papeles especiales",
+   "4€ – 12€"
+  ],
+  "evidencia": "Papeles especiales (pack 20 hojas): 4€ – 12€",
+  "respuesta_ideal": "Sí, tenemos packs de 20 hojas desde 4€ hasta 12€, dependiendo del diseño.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Papeles especiales (pack 20 hojas): 4€ – 12€»."
+ },
+ {
+  "id": "i0308",
+  "negocio": "W8_n2",
+  "turnos_previos_del_cliente": [
+   "hola, estan abiertos los sabados?",
+   "y en enero?"
+  ],
+  "cliente": "quiero comprar un dron",
+  "tipo": "instruccion",
+  "accion_esperada": "responder",
+  "claves": [
+   "para qué"
+  ],
+  "evidencia": "6. Si el cliente quiere comprar un dron, preguntale para qué lo va a usar (recreativo, fotografía o trabajo) antes de recomendar una gama.",
+  "respuesta_ideal": "¡Genial! Contame para qué lo vas a usar (recreativo, fotografía o trabajo) y te oriento sobre la gama.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Sí, en el local tenemos una jaula de vuelo de 4 x 4 metros para modelos pequeños»."
+ },
+ {
+  "id": "i0309",
+  "negocio": "W6_n3",
+  "turnos_previos_del_cliente": [
+   "¿puedo correr con mi perro?",
+   "¿y con el coche de mi bebé?"
+  ],
+  "cliente": "¿hasta qué hora está cortada la Ballivián?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "11:00 a. m."
+  ],
+  "evidencia": "La Av. Ballivián estará cerrada desde 5:30 hasta 11:00 a. m.",
+  "respuesta_ideal": "Hasta las 11:00 a. m.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «La Av. Ballivián estará cerrada desde 5:30 hasta 11:00 a. m»."
+ },
+ {
+  "id": "i0310",
+  "negocio": "W7_n4",
+  "turnos_previos_del_cliente": [
+   "Tengo una pregunta. ¿Hacen limpieza de discos?",
+   "¿Cuánto tarda?",
+   "Lindo. ¿Y si vendo mis discos, cuánto me dan?"
+  ],
+  "cliente": "Okay. ¿Venden CDs también?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "CDs"
+  ],
+  "evidencia": "CDs - CDs nuevos (nacional): 200 ARS – 400 ARS",
+  "respuesta_ideal": "Sí, CDs nuevos de 200 a 400 pesos. También usados más baratos.",
+  "respuesta_a_calificar": "Okay. No lo tengo seguro. Lo más cercano que dice el texto es: «Vinilos usados: se venden tal cual. No hay cambio si decides que no te gusta»."
+ },
+ {
+  "id": "i0311",
+  "negocio": "W8_n1",
+  "turnos_previos_del_cliente": [],
+  "cliente": "cuanto vale la mamografia?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "C$ 1,800"
+  ],
+  "evidencia": "| Mamografía digital | C$ 1,800 | 20 min | Sí |",
+  "respuesta_ideal": "La mamografía digital cuesta C$ 1,800 y se realiza con cita.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Estudio: Mamografía digital; Precio: C$ 1,800; Duración aprox.: 20 min; Requiere cita: Sí»."
+ },
+ {
+  "id": "i0312",
+  "negocio": "W2_n1",
+  "turnos_previos_del_cliente": [],
+  "cliente": "cuanto cobran por instalar el kit?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "$89.000"
+  ],
+  "evidencia": "Kit de instalación del plan Básico: $89.000 (panel, 2 sensores de apertura, 1 sensor de movimiento y sirena).",
+  "respuesta_ideal": "El kit de instalación del plan Básico cuesta $89.000 e incluye panel, sensores y sirena.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Kit de instalación del plan Básico: $89.000 (panel, 2 sensores de apertura, 1 sensor de movimiento y sirena)»."
+ },
+ {
+  "id": "i0313",
+  "negocio": "W4_n2",
+  "turnos_previos_del_cliente": [
+   "Hola, quiero jubilarme. Tengo 61 años y 32 años de trabajo, ¿me corresponde?",
+   "¿Qué tengo que llevar?",
+   "¿Y cuánto voy a cobrar más o menos?"
+  ],
+  "cliente": "ok. ¿cuanto demora el tramite?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "90 días hábiles"
+  ],
+  "evidencia": " Plazo estimado de resolución: 90 días hábiles desde que el expediente está completo (2).",
+  "respuesta_ideal": "El plazo estimado es de 90 días hábiles desde que el expediente está completo; puede extenderse si faltan constancias de empleadores.",
+  "respuesta_a_calificar": "Ok. No lo sé: no encontré esa información en el texto que tengo."
+ },
+ {
+  "id": "i0314",
+  "negocio": "W8_n2",
+  "turnos_previos_del_cliente": [
+   "hola, estan abiertos los sabados?"
+  ],
+  "cliente": "y en enero?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "11 a 17"
+  ],
+  "evidencia": "En enero abrimos solo de 11 a 17 h, de lunes a viernes.",
+  "respuesta_ideal": "En enero abrimos solo de lunes a viernes, de 11 a 17 h; los sábados de enero no abrimos.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «En enero abrimos solo de 11 a 17 h, de lunes a viernes»."
+ },
+ {
+  "id": "i0315",
+  "negocio": "W4_n2",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Buen día. Tengo 83 años, ¿tengo que sacar número para pedir una constancia de haberes?",
+  "tipo": "instruccion",
+  "accion_esperada": "responder",
+  "claves": [
+   "ventanilla 1"
+  ],
+  "evidencia": "7. Si la persona dice tener más de 80 años o una discapacidad, avisale que se atiende sin número en la ventanilla 1.",
+  "respuesta_ideal": "Buen día. No, las personas mayores de 80 años se atienden sin número, directamente en la ventanilla 1.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Plazo para presentarse sin perder haberes: 180 días desde el fallecimiento»."
+ },
+ {
+  "id": "i0316",
+  "negocio": "W1_n4",
+  "turnos_previos_del_cliente": [
+   "¿Se puede ir a ver las casas piloto un domingo?",
+   "¿Cuánto cobran por ir a ver el terreno?",
+   "¿Con cuántos días de anticipación hay que pedir la visita?",
+   "¿El modelo Rupanco viene con estufa a leña?"
+  ],
+  "cliente": "Ya, quiero cotizar el Puyehue",
+  "tipo": "instruccion",
+  "accion_esperada": "responder",
+  "claves": [
+   "nombre",
+   "comuna",
+   "teléfono"
+  ],
+  "evidencia": "Si el cliente quiere una cotización, pídele su nombre, la comuna donde está el terreno y un teléfono.",
+  "respuesta_ideal": "Con gusto. ¿Me indica su nombre, la comuna donde está el terreno y un teléfono de contacto?",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Modelo Puyehue — 72 m², 3 dormitorios, 2 baños. Kit: $ 25.600.000 · Llave en mano: $ 38.700.000»."
+ },
+ {
+  "id": "i0317",
+  "negocio": "W6_n2",
+  "turnos_previos_del_cliente": [
+   "buenas, voy a una reunión en una de las empresas, ¿qué necesito para entrar?"
+  ],
+  "cliente": "¿me prestan casco?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "se prestan en la garita sin costo"
+  ],
+  "evidencia": "En las zonas de bodegas es obligatorio el casco y el chaleco reflectivo; se prestan en la garita sin costo.",
+  "respuesta_ideal": "Sí, el casco y el chaleco se prestan en la garita sin costo.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «d) En las zonas de bodegas es obligatorio el casco y el chaleco reflectivo; se prestan en la garita sin costo»."
+ },
+ {
+  "id": "i0318",
+  "negocio": "W6_n3",
+  "turnos_previos_del_cliente": [],
+  "cliente": "hola, ¿cuándo es la carrera?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "18 de octubre de 2026"
+  ],
+  "evidencia": "La carrera se realiza el domingo 18 de octubre de 2026.",
+  "respuesta_ideal": "El domingo 18 de octubre de 2026.",
+  "respuesta_a_calificar": "Hola. No lo sé: no encontré esa información en el texto que tengo."
+ },
+ {
+  "id": "i0319",
+  "negocio": "W4_n3",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Hola, quiero apartar la mesa de snooker para el sábado a las 9 de la noche",
+  "tipo": "instruccion",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "- No apartes mesas ni confirmes reservas de la sala de eventos: pide que escriban al WhatsApp 312 448 7710 y dilo así.",
+  "respuesta_ideal": "Por acá no puedo apartarla; escriba al WhatsApp 312 448 7710 y allá se la apartan, con máximo 24 horas de anticipación.",
+  "respuesta_a_calificar": "Sobre eso, las indicaciones del negocio dicen: «No apartes mesas ni confirmes reservas de la sala de eventos: pide que escriban al WhatsApp 312 448 7710 y dilo así»."
+ },
+ {
+  "id": "i0320",
+  "negocio": "W1_n3",
+  "turnos_previos_del_cliente": [
+   "a que hora cierran entre semana",
+   "¿Cuánto vale un juego de hélices?",
+   "¿Me cobran por actualizar el firmware? Lo compré en otra tienda",
+   "¿Hacen descuento a estudiantes?"
+  ],
+  "cliente": "¿Cuánto tardan en hacer una calibración de gimbal?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "Sé que la calibración de gimbal y sensores cuesta $600, pero no tengo el dato de cuánto tarda; pregúntalo al taller por WhatsApp al 442 190 3348.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Calibración de gimbal y sensores: $600»."
+ },
+ {
+  "id": "i0321",
+  "negocio": "W1_n4",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Mi terreno está en Purranque, a unos 45 km de ustedes. ¿Cuánto me cobran por llevar la casa?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "37.500"
+  ],
+  "evidencia": "El despacho es sin costo dentro de 30 km desde la sala de ventas. Más allá, se cobra $ 2.500 por km adicional.",
+  "respuesta_ideal": "Los primeros 30 km son sin costo y luego se cobran $ 2.500 por km; por los 15 km adicionales serían $ 37.500.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «La visita técnica al terreno cuesta $ 45.000 y se descuenta si se firma contrato»."
+ },
+ {
+  "id": "i0322",
+  "negocio": "W5_n4",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Hola, ¿aceptan Pix?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "Pix"
+  ],
+  "evidencia": "Aceptamos dólares, reales, pesos uruguayos, tarjetas de crédito y débito (Visa, Mastercard, Elo) y Pix.",
+  "respuesta_ideal": "¡Bienvenido a Free Shop La Frontera! Sí, aceptamos Pix.",
+  "respuesta_a_calificar": "Hola. No lo sé: no encontré esa información en el texto que tengo."
+ },
+ {
+  "id": "i0323",
+  "negocio": "W6_n4",
+  "turnos_previos_del_cliente": [],
+  "cliente": "hola! cuánto cuesta una habitación individual con baño?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "985 €"
+  ],
+  "evidencia": "Habitación individual con baño: 985 € al mes",
+  "respuesta_ideal": "985 € al mes.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Habitación individual con baño compartido (1 baño para 2 hab.): 890 € al mes»."
+ },
+ {
+  "id": "i0324",
+  "negocio": "W2_n1",
+  "turnos_previos_del_cliente": [
+   "hasta que hora atienden el sabado en la oficina?"
+  ],
+  "cliente": "y el 31 de diciembre?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "13:00 h"
+  ],
+  "evidencia": "Excepciones: el 24 y el 31 de diciembre la oficina cierra a las 13:00 h. El 18 y 19 de septiembre no hay atención en oficina.",
+  "respuesta_ideal": "El 31 de diciembre la oficina cierra a las 13:00 h.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Excepciones: el 24 y el 31 de diciembre la oficina cierra a las 13:00 h. El 18 y 19 de septiembre no hay atención en oficina»."
+ },
+ {
+  "id": "i0325",
+  "negocio": "W3_n2",
+  "turnos_previos_del_cliente": [
+   "Necesito un transportín para mi gato. ¿Qué tamaños tienen?"
+  ],
+  "cliente": "A Coyoacán nomás.",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "Coyoacán",
+   "zona de cobertura"
+  ],
+  "evidencia": "Tienda física en Coyoacán",
+  "respuesta_ideal": "Perfecto, vívenos en Av. Coyoacán 2847. Abierto hoy hasta las 8 p.m. Ven a ver los transportines.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Entregas a domicilio en Coyoacán, Benito Juárez, Iztapalapa y zonas aledañas por encargo especial»."
+ },
+ {
+  "id": "i0326",
+  "negocio": "W3_n1",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Necesito Ibupirac 400 mg. ¿Cuanto cuesta?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "$4.500 a $5.800"
+  ],
+  "evidencia": "Ibupirac 400 mg: $4.500 a $5.800",
+  "respuesta_ideal": "El Ibupirac 400 mg está entre $4.500 y $5.800, dependiendo de la presentación. El precio exacto lo confirmas acá en la tienda.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Ibupirac 400 mg: $4.500 a $5.800»."
+ },
+ {
+  "id": "i0327",
+  "negocio": "W7_n1",
+  "turnos_previos_del_cliente": [
+   "¿Ustedes arreglan ropa también?",
+   "Y si un cierre está roto, ¿cuánto cuesta reemplazarlo?"
+  ],
+  "cliente": "¿También hacen cambio de forro en abrigos?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "Cambio de forro: $25.000"
+  ],
+  "evidencia": "Cambio de forro: $25.000",
+  "respuesta_ideal": "Sí, cambiamos forro a $25.000.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Cambio de forro: $25.000»."
+ },
+ {
+  "id": "i0328",
+  "negocio": "W2_n3",
+  "turnos_previos_del_cliente": [
+   "cuando es el taller de engaste?",
+   "cuanto cuesta y cuantos cupos hay?",
+   "el taller es apto para ninos?",
+   "y donde queda la tienda?",
+   "tienen sucursal en Cochabamba?",
+   "cuanto cuesta un anillo con azurita?"
+  ],
+  "cliente": "el 1 de mayo abren?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "el 1 de mayo",
+   "cerramos"
+  ],
+  "evidencia": "Feriados: abrimos solo hasta las 14:00. El 1 de enero, el 1 de mayo y el 25 de diciembre cerramos.",
+  "respuesta_ideal": "No, el 1 de mayo cerramos.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «El 1 de enero, el 1 de mayo y el 25 de diciembre cerramos»."
+ },
+ {
+  "id": "i0329",
+  "negocio": "W1_n3",
+  "turnos_previos_del_cliente": [
+   "Buenas! Mi hijo tiene 13 años, ¿puede tomar el curso básico?",
+   "¿cuánto cuesta el curso?",
+   "¿Y dónde se da?",
+   "Apártame dos lugares para el próximo sábado porfa, para mí y mi esposa"
+  ],
+  "cliente": "¿El campo de prácticas tiene estacionamiento?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo ese dato; la Ing. Andrea Solís te lo puede confirmar en cursos@dronezonaqro.mx.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Curso básico de vuelo: 8 horas repartidas en dos sábados (de 8:00 a 12:00 hrs), en nuestro campo de prácticas de El Marqués»."
+ }
+]

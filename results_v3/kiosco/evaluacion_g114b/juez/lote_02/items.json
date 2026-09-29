@@ -1,0 +1,510 @@
+[
+ {
+  "id": "i0060",
+  "negocio": "W4_n2",
+  "turnos_previos_del_cliente": [
+   "Buenas tardes. Mi esposo falleció hace dos meses, ¿qué papeles necesito para la pensión?"
+  ],
+  "cliente": "¿Tengo algún plazo para hacerlo?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "180 días"
+  ],
+  "evidencia": " Plazo para presentarse sin perder haberes: 180 días desde el fallecimiento. Después de ese plazo se paga desde la fecha de solicitud.",
+  "respuesta_ideal": "Para no perder haberes tiene 180 días desde el fallecimiento; si se presenta después, se paga desde la fecha de la solicitud.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Plazo para presentarse sin perder haberes: 180 días desde el fallecimiento»."
+ },
+ {
+  "id": "i0061",
+  "negocio": "W4_n2",
+  "turnos_previos_del_cliente": [
+   "hola no me depositaron la jubilacion este mes"
+  ],
+  "cliente": "Mi cédula termina en 7, ¿qué día me tocaba cobrar?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "día 4"
+  ],
+  "evidencia": "  cédulas terminadas en 0-1: día 1 · 2-3: día 2 · 4-5: día 3 · 6-7: día 4 · 8-9: día 5",
+  "respuesta_ideal": "Las cédulas terminadas en 6 y 7 cobran el día 4 de cada mes.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «cédulas terminadas en 0-1: día 1 · 2-3: día 2 · 4-5: día 3 · 6-7: día 4 · 8-9: día 5»."
+ },
+ {
+  "id": "i0062",
+  "negocio": "W1_n4",
+  "turnos_previos_del_cliente": [
+   "¿Se puede ir a ver las casas piloto un domingo?",
+   "¿Cuánto cobran por ir a ver el terreno?",
+   "¿Con cuántos días de anticipación hay que pedir la visita?"
+  ],
+  "cliente": "¿El modelo Rupanco viene con estufa a leña?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo información sobre calefacción o estufa en el modelo Rupanco; puede consultarlo con ventas.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Modelo Rupanco — 96 m² en dos pisos, 3 dormitorios, 2 baños y logia. Solo llave en mano: $ 52.000.000»."
+ },
+ {
+  "id": "i0063",
+  "negocio": "W7_n4",
+  "turnos_previos_del_cliente": [
+   "Hola, ¿venden vinilos?"
+  ],
+  "cliente": "¿Cuánto cuesta un vinilo nuevo?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "350 ARS – 800 ARS"
+  ],
+  "evidencia": "Lanzamientos recientes: 350 ARS – 800 ARS",
+  "respuesta_ideal": "Vinilos nuevos cuestan entre 350 y 800 pesos aproximadamente, según si es lanzamiento reciente o catálogo clásico.",
+  "respuesta_a_calificar": "Sobre eso, las indicaciones del negocio dicen: «Si querés una sesión de 1 hora para armar tu discoteca ideal, cuesta 300 ARS.\"»."
+ },
+ {
+  "id": "i0064",
+  "negocio": "W7_n1",
+  "turnos_previos_del_cliente": [
+   "Hola, buenos días. ¿Qué horarios tienen?",
+   "Perfecto. Quería saber cuánto sale limpiar un traje en seco."
+  ],
+  "cliente": "¿Y si quiero que sea urgente, en 24 horas?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "24-48 horas",
+   "+30%"
+  ],
+  "evidencia": "Servicio urgente (24-48 horas): +30% sobre tarifa",
+  "respuesta_ideal": "El urgente es de 24 a 48 horas y cuesta $18.000 más el 30%, es decir $23.400.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Servicio urgente (24-48 horas): +30% sobre tarifa»."
+ },
+ {
+  "id": "i0065",
+  "negocio": "W7_n1",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Hola, ¿limpian prendas de cuero?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "Prendas de cuero o gamuza: $30.000"
+  ],
+  "evidencia": "Prendas de cuero o gamuza: $30.000",
+  "respuesta_ideal": "Sí, limpiamos cuero y gamuza por $30.000.",
+  "respuesta_a_calificar": "Hola. No lo tengo seguro. Lo más cercano que dice el texto es: «Prendas de cuero o gamuza: $30.000»."
+ },
+ {
+  "id": "i0066",
+  "negocio": "W6_n1",
+  "turnos_previos_del_cliente": [
+   "Quiero reservar una visita guiada para 10 amigos el sábado, ¿me la confirma?"
+  ],
+  "cliente": "¿y cuánto dura?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "45 minutos"
+  ],
+  "evidencia": "Duración: 45 minutos, para grupos de 5 a 15 personas.",
+  "respuesta_ideal": "La visita guiada dura 45 minutos.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Tienda Trama vende catálogos ($45.000) y afiches ($25.000)»."
+ },
+ {
+  "id": "i0067",
+  "negocio": "W3_n3",
+  "turnos_previos_del_cliente": [
+   "Mi hija tiene 11 años. ¿Puede ver Aventura épica que dice PG-13?",
+   "¿Cuánto sería en total para dos entradas?"
+  ],
+  "cliente": "Está bien. ¿Puedo reservar para mañana a las 3:30?",
+  "tipo": "instruccion",
+  "accion_esperada": "responder",
+  "claves": [
+   "WhatsApp",
+   "teléfono",
+   "(2) 6729-5847"
+  ],
+  "evidencia": "Aceptamos reservas por teléfono (2) 6729-5847 y WhatsApp +56945823476",
+  "respuesta_ideal": "Claro. Puedes reservar llamando al (2) 6729-5847 o por WhatsApp al +56945823476. Atendemos de lunes a domingo de 11 a.m. a 8 p.m. Cuando hagas la reserva, pagas y recoges la boleta 15 minutos antes de la función.",
+  "respuesta_a_calificar": "Está bien. No lo sé: no encontré esa información en el texto que tengo."
+ },
+ {
+  "id": "i0068",
+  "negocio": "W5_n2",
+  "turnos_previos_del_cliente": [
+   "hola, a que hora abren el sabado",
+   "y los domingos?",
+   "¿Tienen donde parquear?"
+  ],
+  "cliente": "¿Puedo entrar a la cámara con el reloj puesto?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "relojes"
+  ],
+  "evidencia": "Celulares, relojes, audífonos electrónicos, encendedores, baterías, joyas y objetos metálicos sueltos.",
+  "respuesta_ideal": "No, los relojes no pueden entrar a la cámara; puede dejarlo en un locker con llave gratuito.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Celulares, relojes, audífonos electrónicos, encendedores, baterías, joyas y objetos metálicos sueltos»."
+ },
+ {
+  "id": "i0069",
+  "negocio": "W7_n4",
+  "turnos_previos_del_cliente": [
+   "Tengo una pregunta. ¿Hacen limpieza de discos?"
+  ],
+  "cliente": "¿Cuánto tarda?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "30 minutos"
+  ],
+  "evidencia": "Tarda 30 minutos si esperas.",
+  "respuesta_ideal": "Unos 30 minutos si esperas, o dejás el disco y volvés a buscarlo.",
+  "respuesta_a_calificar": "Sobre eso, las indicaciones del negocio dicen: «\"Limpiamos discos: básica 50 ARS, profunda 100 ARS, o limpieza + revisión 150 ARS. Tarda 30 minutos si esperas.\"»."
+ },
+ {
+  "id": "i0070",
+  "negocio": "W4_n4",
+  "turnos_previos_del_cliente": [],
+  "cliente": "hola quiero moler unos chiles secos para mole, cuando puedo ir?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "martes y jueves"
+  ],
+  "evidencia": "- Molienda de chiles secos o especias: $ 25.00 por lote (hasta 2 kg por lote). Solo martes y jueves, para no contaminar la masa.",
+  "respuesta_ideal": "¡Buenos días! Los chiles y especias se muelen solo martes y jueves, en el horario del molino, de 5:30 a 11:00 h.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Molienda de chiles secos o especias: $ 25.00 por lote (hasta 2 kg por lote). Solo martes y jueves, para no contaminar la masa»."
+ },
+ {
+  "id": "i0071",
+  "negocio": "W6_n4",
+  "turnos_previos_del_cliente": [
+   "¿a qué hora es la cena?",
+   "¿y los domingos?",
+   "soy vegetariana, ¿hay menú especial?",
+   "¿puedo tener un microondas en mi cuarto?"
+  ],
+  "cliente": "¿hay cocina para usar?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "cocina de uso común"
+  ],
+  "evidencia": "En cada planta hay una cocina de uso común.",
+  "respuesta_ideal": "Sí, en cada planta hay una cocina de uso común.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «En cada planta hay una cocina de uso común»."
+ },
+ {
+  "id": "i0072",
+  "negocio": "W5_n4",
+  "turnos_previos_del_cliente": [
+   "tengo 16, ¿me venden un vodka si viene conmigo mi primo que tiene 20?",
+   "¿Hacen descuento si compro varias cosas de electrónica juntas?"
+  ],
+  "cliente": "El guardapaquetes de la entrada se paga?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo el dato de si tiene costo; sé que podés dejar tus compras hasta la hora de cierre del local. Preguntá en la entrada.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Paquetes: podés dejar tus compras en el guardapaquetes de la entrada mientras seguís recorriendo el shopping, hasta la hora de cierre del local»."
+ },
+ {
+  "id": "i0073",
+  "negocio": "W1_n1",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Quiero 3 décimos de Navidad, ¿cuánto me sale?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "60"
+  ],
+  "evidencia": "Sorteo Extraordinario de Navidad | 20 € el décimo | 22 de diciembre",
+  "respuesta_ideal": "Cada décimo de Navidad cuesta 20 €, así que los 3 le salen por 60 €.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «En 2011 repartimos un segundo premio del Sorteo de Navidad en el barrio de Delicias, y todavía hay vecinos que vienen a por \"el décimo de la suerte\" (todos los números tienen la misma probabilidad, pero nos hace ilusión)»."
+ },
+ {
+  "id": "i0074",
+  "negocio": "W5_n1",
+  "turnos_previos_del_cliente": [
+   "hola buenas tardes"
+  ],
+  "cliente": "cuanto sale el metro de lenga?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "$ 62.000"
+  ],
+  "evidencia": "| Leña de lenga seca                | metro cúbico           | $ 62.000  |",
+  "respuesta_ideal": "El metro cúbico de leña de lenga seca está a $ 62.000, IVA incluido.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Producto: Leña de lenga seca; Unidad: metro cúbico; Precio: $ 62.000»."
+ },
+ {
+  "id": "i0075",
+  "negocio": "W8_n2",
+  "turnos_previos_del_cliente": [
+   "hola quiero cotizar un dron para fumigar campo",
+   "y para el curso de operador comercial tengo que tener el basico?",
+   "cuanto sale el de operador comercial?",
+   "el examen de la autoridad tiene costo aparte?",
+   "el certificado que dan sirve como licencia?"
+  ],
+  "cliente": "donde queda el local?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "Bulevar Artigas 1874"
+  ],
+  "evidencia": "Estamos en Bulevar Artigas 1874, esquina Rivera (a dos cuadras de la parada del 121), local 4 de la galería Portal Pocitos.",
+  "respuesta_ideal": "Estamos en Bulevar Artigas 1874, esquina Rivera, local 4 de la galería Portal Pocitos.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Estamos en Bulevar Artigas 1874, esquina Rivera (a dos cuadras de la parada del 121), local 4 de la galería Portal Pocitos»."
+ },
+ {
+  "id": "i0076",
+  "negocio": "W2_n1",
+  "turnos_previos_del_cliente": [
+   "hola buenas tardes",
+   "cuanto sale al mes el plan mas barato"
+  ],
+  "cliente": "y ese trae camara?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "Hogar Plus"
+  ],
+  "evidencia": "Hogar Plus | todo lo del Básico, más cámara de verificación y botón de pánico | $27.500",
+  "respuesta_ideal": "El Básico no incluye cámara; la cámara de verificación viene en el plan Hogar Plus.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Plan: Hogar Plus; Qué incluye: todo lo del Básico, más cámara de verificación y botón de pánico; Valor mensual: $27.500»."
+ },
+ {
+  "id": "i0077",
+  "negocio": "W7_n3",
+  "turnos_previos_del_cliente": [
+   "¿Hacen impresiones a color?",
+   "¿Y plastificación?",
+   "¿Cuánto tiempo tardan?"
+  ],
+  "cliente": "Perfecto. ¿Abren los domingos?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "Domingos",
+   "10 a.m. – 7 p.m.",
+   "Abierto 7 días"
+  ],
+  "evidencia": "Sábados y domingos, 10 a.m. – 7 p.m. Abierto 7 días a la semana",
+  "respuesta_ideal": "Sí, domingos de 10 a.m. a 7 p.m. Abrimos todos los días, incluso festivos.",
+  "respuesta_a_calificar": "Perfecto. No lo sé: no encontré esa información en el texto que tengo."
+ },
+ {
+  "id": "i0078",
+  "negocio": "W5_n4",
+  "turnos_previos_del_cliente": [
+   "Los auriculares que compré acá hace dos meses dejaron de andar",
+   "¿cuánto tiempo de garantía tienen?",
+   "¿y dónde queda eso de atención al cliente?"
+  ],
+  "cliente": "hay ascensor? voy con el carrito del bebé",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "junto a la entrada de Av. Brasil"
+  ],
+  "evidencia": "Ascensor junto a la entrada de Av. Brasil.",
+  "respuesta_ideal": "Sí, hay ascensor junto a la entrada de Av. Brasil.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Ascensor junto a la entrada de Av. Brasil»."
+ },
+ {
+  "id": "i0079",
+  "negocio": "W7_n1",
+  "turnos_previos_del_cliente": [
+   "¿Ustedes arreglan ropa también?",
+   "Y si un cierre está roto, ¿cuánto cuesta reemplazarlo?",
+   "¿También hacen cambio de forro en abrigos?"
+  ],
+  "cliente": "Tengo una camiseta que quiero teñir de negro. ¿Garantizan que quede perfecta?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "El teñido no es 100% garantizado porque el resultado depende del material original. Varía entre $40.000 y $60.000. Mejor ven y habla con Marisa, ella puede mirar tu camiseta y decirte exactamente cómo quedará.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Teñir una prenda (color uniforme): $40.000 a $60.000 según complejidad»."
+ },
+ {
+  "id": "i0080",
+  "negocio": "W1_n3",
+  "turnos_previos_del_cliente": [
+   "Compré un dron hace 3 días, ya lo volé y no me convenció, ¿lo puedo devolver?",
+   "¿Y la garantía cuánto dura?",
+   "Si pido solo una batería del Mini 2 por paquetería a Mérida, ¿cuánto me cobran de envío?"
+  ],
+  "cliente": "¿Y en cuántos días llega?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "3 a 6 días hábiles"
+  ],
+  "evidencia": "Las baterías de litio solo viajan por paquetería terrestre (3 a 6 días hábiles).",
+  "respuesta_ideal": "Las baterías de litio solo viajan por paquetería terrestre y tardan de 3 a 6 días hábiles.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Garantía de reparación: 30 días sobre la pieza cambiada y la mano de obra»."
+ },
+ {
+  "id": "i0081",
+  "negocio": "W5_n1",
+  "turnos_previos_del_cliente": [
+   "hola buenas tardes",
+   "cuanto sale el metro de lenga?",
+   "¿y el de ñirre?",
+   "si pido 3 metros de ñirre para aca mismo en coyhaique cuanto me sale todo con el flete"
+  ],
+  "cliente": "Lo pagaría con la tarjeta de crédito, ¿se puede?",
+  "tipo": "instruccion",
+  "accion_esperada": "responder",
+  "claves": [
+   "3 %"
+  ],
+  "evidencia": "Si el cliente quiere pagar con tarjeta de crédito, recuérdale el recargo de 3 %.",
+  "respuesta_ideal": "Sí, se puede pagar con tarjeta de crédito, pero tiene un recargo de 3 %.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Efectivo, transferencia, tarjeta de débito y tarjeta de crédito (el pago con crédito tiene un recargo de 3 %)»."
+ },
+ {
+  "id": "i0082",
+  "negocio": "W3_n2",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Hola, ¿qué marcas de alimento para perro grande tienen?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "Royal Canin",
+   "Hill's",
+   "Purina Pro Plan",
+   "Alpo"
+  ],
+  "evidencia": "Raza grande: marcas Premium (Royal Canin, Hill's, Purina Pro Plan) y económicas (Alpo)",
+  "respuesta_ideal": "Para perros grandes tenemos varias marcas. Las premium son Royal Canin, Hill's y Purina Pro Plan. También ofrecemos opciones más económicas como Alpo.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Alimento seco para perros: marcas Premium (Royal Canin, Hill's, Purina Pro Plan) y económicas (Alpo, Mezcla)»."
+ },
+ {
+  "id": "i0083",
+  "negocio": "W5_n1",
+  "turnos_previos_del_cliente": [
+   "La leña que me trajeron ayer estaba mojada, ¿qué hago?",
+   "otra cosa, ustedes apilan la leña adentro de la leñera?"
+  ],
+  "cliente": "entonces si son 4 metros cuanto seria eso",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "$ 20.000"
+  ],
+  "evidencia": "el apilado cuesta $ 5.000 por metro cúbico.",
+  "respuesta_ideal": "Por 4 metros cúbicos el apilado serían $ 20.000.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Producto: Leña mezcla (lenga/ñirre); Unidad: saco de 20 kg aprox.; Precio: $ 4.500»."
+ },
+ {
+  "id": "i0084",
+  "negocio": "W4_n4",
+  "turnos_previos_del_cliente": [
+   "Buenos días, ¿a cómo está el kilo de tortilla?"
+  ],
+  "cliente": "¿Y la azul?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "32.00"
+  ],
+  "evidencia": "Tortilla de maíz azul\t$ 32.00 el kg",
+  "respuesta_ideal": "La de maíz azul está a $ 32.00 el kilo.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Producto: Tortilla de maíz azul; Precio: $ 32.00 el kg»."
+ },
+ {
+  "id": "i0085",
+  "negocio": "W1_n1",
+  "turnos_previos_del_cliente": [
+   "Hola, ¿dónde estáis exactamente?",
+   "¿Hay parking por la zona?"
+  ],
+  "cliente": "¿Abrís el domingo 14 de diciembre por la mañana?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "10:00 a 14:00"
+  ],
+  "evidencia": "Campaña de Navidad (del 1 al 21 de diciembre): abrimos también los sábados por la tarde de 17:00 a 20:00 y los domingos de 10:00 a 14:00.",
+  "respuesta_ideal": "Sí, en la campaña de Navidad abrimos los domingos de 10:00 a 14:00, así que el 14 de diciembre estamos abiertos.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Campaña de Navidad (del 1 al 21 de diciembre): abrimos también los sábados por la tarde de 17:00 a 20:00 y los domingos de 10:00 a 14:00»."
+ },
+ {
+  "id": "i0086",
+  "negocio": "W2_n2",
+  "turnos_previos_del_cliente": [
+   "Hola!",
+   "cuanto cuesta entrar con mi hija de 8 años y yo?",
+   "tambien queria llevar a mi sobrino de 4"
+  ],
+  "cliente": "cuanto tiempo puedo estar dentro?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "60 minutos"
+  ],
+  "evidencia": "Adultos: 6,50 € por persona, 60 minutos, con una bebida caliente o fría a elegir.",
+  "respuesta_ideal": "La entrada incluye 60 minutos.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Menores de 6 años: no pueden entrar, por la seguridad de los gatos»."
+ },
+ {
+  "id": "i0087",
+  "negocio": "W4_n3",
+  "turnos_previos_del_cliente": [
+   "hola, hay parqueadero para carro?",
+   "¿Y el de motos hasta qué hora lo cierran?",
+   "¿y a como esta la cerveza?",
+   "Me cobraron dos horas y solo jugué una, ¿con quién reclamo?",
+   "¿Cuánto se apuesta normalmente en el torneo, hay pozo aparte entre los jugadores?",
+   "¿Tienen wifi para los clientes?"
+  ],
+  "cliente": "¿Y hay hora feliz los sabados?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "lunes a jueves"
+  ],
+  "evidencia": "Hora feliz: de lunes a jueves de 2 a 6 pm todas las mesas a $ 8.000/h.",
+  "respuesta_ideal": "No, la hora feliz es solo de lunes a jueves de 2 a 6 pm, con todas las mesas a $ 8.000 la hora.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Después de las 10 pm los viernes y sábados hay recargo de $ 2.000 por hora en todas las mesas»."
+ },
+ {
+  "id": "i0088",
+  "negocio": "W7_n1",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Buenos días, tengo una pregunta. ¿Si una prenda lleva más de 2 meses aquí y no la retiro, qué pasa?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "60 días",
+   "corren por tu cuenta"
+  ],
+  "evidencia": "Prendas no retiradas después de 60 días corren por cuenta del cliente.",
+  "respuesta_ideal": "Prendas no retiradas después de 60 días corren por tu cuenta. Te recomiendo retirar a tiempo.",
+  "respuesta_a_calificar": "Sobre eso, las indicaciones del negocio dicen: «Si pregunta qué pasa: \"Las prendas que no retires en 60 días corren por tu cuenta»."
+ },
+ {
+  "id": "i0089",
+  "negocio": "W6_n3",
+  "turnos_previos_del_cliente": [
+   "¿puedo correr con mi perro?"
+  ],
+  "cliente": "¿y con el coche de mi bebé?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "Cochecitos de bebé solo en los 5 km"
+  ],
+  "evidencia": "Cochecitos de bebé solo en los 5 km.",
+  "respuesta_ideal": "Solo en los 5 km.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Cochecitos de bebé solo en los 5 km»."
+ }
+]

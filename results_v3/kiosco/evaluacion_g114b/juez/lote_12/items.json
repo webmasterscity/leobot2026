@@ -1,0 +1,384 @@
+[
+ {
+  "id": "i0360",
+  "negocio": "W4_n2",
+  "turnos_previos_del_cliente": [
+   "¿Puedo hacer el trámite en la agencia de Paysandú si vivo allá?",
+   "¿La tarjeta prepaga del instituto tiene costo de mantenimiento?"
+  ],
+  "cliente": "atienden los sabados?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "lunes a viernes"
+  ],
+  "evidencia": "Horario de atención en mostrador: lunes a viernes de 9.15 a 15.45 h",
+  "respuesta_ideal": "No, la agencia atiende de lunes a viernes, de 9.15 a 15.45 h en mostrador.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Si la fecha cae sábado, domingo o feriado, se cobra el día hábil siguiente»."
+ },
+ {
+  "id": "i0361",
+  "negocio": "W2_n1",
+  "turnos_previos_del_cliente": [
+   "cuanto cuesta llevarme el equipo a mi casa nueva",
+   "aceptan pago en efectivo?"
+  ],
+  "cliente": "hasta que dia puedo pagar sin recargo?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "día 10 de cada mes"
+  ],
+  "evidencia": "El pago vence el día 10 de cada mes; después de esa fecha hay un recargo por mora del 3 %.",
+  "respuesta_ideal": "El pago vence el día 10 de cada mes; después hay un recargo del 3 %.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «El pago vence el día 10 de cada mes; después de esa fecha hay un recargo por mora del 3 %»."
+ },
+ {
+  "id": "i0362",
+  "negocio": "W7_n3",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Hola, ¿venden lápices de colores?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "Lápices de colores",
+   "8€ – 18€"
+  ],
+  "evidencia": "Lápices de colores (caja 24): 8€ – 18€",
+  "respuesta_ideal": "Sí, tenemos lápices de colores. Una caja de 24 cuesta entre 8 y 18 euros según la marca.",
+  "respuesta_a_calificar": "Hola. No lo tengo seguro. Lo más cercano que dice el texto es: «Lápices de colores (caja 24): 8€ – 18€»."
+ },
+ {
+  "id": "i0363",
+  "negocio": "W8_n2",
+  "turnos_previos_del_cliente": [
+   "puedo volar el dron en el parque rodo?",
+   "alquilan drones por un dia sin piloto?",
+   "y con piloto, cuanto sale la jornada completa?"
+  ],
+  "cliente": "compre un dron hace 5 dias y no lo abri, hasta cuando lo puedo cambiar?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "10 días"
+  ],
+  "evidencia": "¿Hacen cambios y devoluciones? Cambios dentro de los 10 días con el equipo sin uso y el embalaje completo.",
+  "respuesta_ideal": "Podés cambiarlo dentro de los 10 días de la compra, con el equipo sin uso y el embalaje completo.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «No hay devolución de dinero: se entrega un vale por el valor de la compra»."
+ },
+ {
+  "id": "i0364",
+  "negocio": "W6_n3",
+  "turnos_previos_del_cliente": [
+   "¿cuándo puedo recoger mi kit?",
+   "¿puede recogerlo mi hermano por mí?",
+   "¿y el domingo temprano, antes de la salida?"
+  ],
+  "cliente": "¿qué trae el kit?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "polera técnica",
+   "medalla de finalista"
+  ],
+  "evidencia": "El kit trae polera técnica, número con chip, medalla de finalista y una bolsa.",
+  "respuesta_ideal": "Polera técnica, número con chip, medalla de finalista y una bolsa.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «El kit trae polera técnica, número con chip, medalla de finalista y una bolsa»."
+ },
+ {
+  "id": "i0365",
+  "negocio": "W3_n3",
+  "turnos_previos_del_cliente": [],
+  "cliente": "¿Hay dulces en el cine?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "Palomitas",
+   "bebidas",
+   "dulces"
+  ],
+  "evidencia": "Confitería: Palomitas, Bebidas, Dulces surtidos",
+  "respuesta_ideal": "Sí, tenemos palomitas, bebidas y dulces. También combos que salen más económicos.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Descuento del 10% en dulces y bebidas de la confitería»."
+ },
+ {
+  "id": "i0366",
+  "negocio": "W7_n3",
+  "turnos_previos_del_cliente": [
+   "¿Tienen rotuladores permanentes?",
+   "¿En qué colores los tienen?"
+  ],
+  "cliente": "¿Y si digo que necesito un color específico que no tienen?",
+  "tipo": "instruccion",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "Si pregunta por un producto específico que NO está en la lista, digo: Eso no lo tenemos en stock habitualmente, pero puedo pedirlo encargado.",
+  "respuesta_ideal": "Podemos hacer encargo. Llama a la tienda y ellos cierran la pedida. Tarda un par de días.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «No se devuelven archivos digitales descargados (si ofrecemos)»."
+ },
+ {
+  "id": "i0367",
+  "negocio": "W1_n4",
+  "turnos_previos_del_cliente": [],
+  "cliente": "¿El kit trae el radier?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "fundaciones"
+  ],
+  "evidencia": "No incluye fundaciones (radier o pilotes), instalaciones eléctricas ni sanitarias, artefactos de baño y cocina, ni el armado.",
+  "respuesta_ideal": "No, el kit no incluye fundaciones (radier o pilotes); el radier sí viene en la modalidad llave en mano.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «No incluye fundaciones (radier o pilotes), instalaciones eléctricas ni sanitarias, artefactos de baño y cocina, ni el armado»."
+ },
+ {
+  "id": "i0368",
+  "negocio": "W8_n3",
+  "turnos_previos_del_cliente": [],
+  "cliente": "hasta que hora reciben hoy sabado?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "12:00"
+  ],
+  "evidencia": "Horario de recepción de material: lunes a viernes 7:00–16:30; sábado 7:00–12:00.",
+  "respuesta_ideal": "Los sábados recibimos material de 7:00 a 12:00.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Horario de recepción de material: lunes a viernes 7:00–16:30; sábado 7:00–12:00»."
+ },
+ {
+  "id": "i0369",
+  "negocio": "W4_n1",
+  "turnos_previos_del_cliente": [
+   "hola, mi medico me dijo que tengo el colesterol alto, ¿el aceite de ustedes me sirve para bajarlo?"
+  ],
+  "cliente": "Bueno. ¿Venden aceite a granel?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "€7,20"
+  ],
+  "evidencia": "¿Vendéis aceite a granel? Sí, pero solo en la tienda y trayendo tu propio envase: €7,20 el litro.",
+  "respuesta_ideal": "Sí, a granel solo en la tienda y trayendo su propio envase, a €7,20 el litro.",
+  "respuesta_a_calificar": "Bueno. No lo tengo seguro. Lo más cercano que dice el texto es: «Sí, pero solo en la tienda y trayendo tu propio envase: €7,20 el litro»."
+ },
+ {
+  "id": "i0370",
+  "negocio": "W2_n1",
+  "turnos_previos_del_cliente": [],
+  "cliente": "hasta que hora atienden el sabado en la oficina?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "sábados de 10:00 a 13:00 h"
+  ],
+  "evidencia": "Horario de la oficina: lunes a viernes de 9:00 a 18:00 h; sábados de 10:00 a 13:00 h. Domingos y festivos la oficina permanece cerrada.",
+  "respuesta_ideal": "Los sábados la oficina atiende de 10:00 a 13:00 h.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Horario de la oficina: lunes a viernes de 9:00 a 18:00 h; sábados de 10:00 a 13:00 h. Domingos y festivos la oficina permanece cerrada»."
+ },
+ {
+  "id": "i0371",
+  "negocio": "W6_n2",
+  "turnos_previos_del_cliente": [],
+  "cliente": "¡hay un derrame de químicos en la bodega 7! ¿qué hago?",
+  "tipo": "instruccion",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "dile que llame de inmediato al +504 2555-0199; no des instrucciones médicas ni de manejo del incidente.",
+  "respuesta_ideal": "Llame de inmediato a emergencias del parque: +504 2555-0199.",
+  "respuesta_a_calificar": "Sobre eso, las indicaciones del negocio dicen: «Si reportan una emergencia, un accidente o un derrame de químicos, dile que llame de inmediato al +504 2555-0199; no des instrucciones médicas ni de manejo del incidente»."
+ },
+ {
+  "id": "i0372",
+  "negocio": "W2_n4",
+  "turnos_previos_del_cliente": [
+   "cuando son los talleres?",
+   "cuanto cuesta el de galletas?",
+   "y cuantas personas caben?",
+   "si cancelo un dia antes me devuelven el anticipo?"
+  ],
+  "cliente": "sigue disponible el taller de pan de muerto?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo información de disponibilidad; solo sé que es en octubre y cuesta $650.00. Pregunta por WhatsApp.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Taller de pan de muerto (octubre): $650.00»."
+ },
+ {
+  "id": "i0373",
+  "negocio": "W7_n2",
+  "turnos_previos_del_cliente": [
+   "Hola, ¿qué tal? Quisiera saber si ofrecen diseño de logo.",
+   "¿En cuánto tiempo me lo entregan?",
+   "Bueno, quería saber también si hacen publicidad en redes sociales."
+  ],
+  "cliente": "¿Cuánto por 2 redes?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "$400 USD"
+  ],
+  "evidencia": "Administración 2 redes (30 posts/mes): $400 USD",
+  "respuesta_ideal": "$400 USD/mes para 2 redes con 30 posts cada una.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Administración 2 redes (30 posts/mes): $400 USD»."
+ },
+ {
+  "id": "i0374",
+  "negocio": "W4_n4",
+  "turnos_previos_del_cliente": [
+   "Buenos días, ¿a cómo está el kilo de tortilla?",
+   "¿Y la azul?",
+   "Deme kilo y medio de la blanca y medio kilo de azul, ¿cuánto es?"
+  ],
+  "cliente": "¿Lo puedo pagar con tarjeta?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "100"
+  ],
+  "evidencia": "Tarjeta solo en la matriz y en compras de $ 100.00 o más.",
+  "respuesta_ideal": "En este caso no: la tarjeta solo se acepta en la matriz y en compras de $ 100.00 o más; puede pagar en efectivo o por transferencia.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Tarjeta solo en la matriz y en compras de $ 100.00 o más. No aceptamos vales de despensa ni dólares»."
+ },
+ {
+  "id": "i0375",
+  "negocio": "W6_n1",
+  "turnos_previos_del_cliente": [
+   "Me gustó una pintura grande del fondo y quiero comprarla, ¿cuánto cuesta?",
+   "¿y se puede apartar mientras me decido?"
+  ],
+  "cliente": "¿hacen envios a Bogota?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "envíos nacionales"
+  ],
+  "evidencia": "Hacemos envíos nacionales con seguro.",
+  "respuesta_ideal": "Sí, hacemos envíos nacionales con seguro.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Hacemos envíos nacionales con seguro»."
+ },
+ {
+  "id": "i0376",
+  "negocio": "W4_n2",
+  "turnos_previos_del_cliente": [
+   "Buen día. Tengo 83 años, ¿tengo que sacar número para pedir una constancia de haberes?"
+  ],
+  "cliente": "¿Y si necesito un duplicado con firma certificada, cuánto sale?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "$U 380"
+  ],
+  "evidencia": " - Duplicado de constancia de haberes con firma certificada: $U 380",
+  "respuesta_ideal": "El duplicado de la constancia de haberes con firma certificada cuesta $U 380.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Duplicado de constancia de haberes con firma certificada: $U 380»."
+ },
+ {
+  "id": "i0377",
+  "negocio": "W5_n2",
+  "turnos_previos_del_cliente": [
+   "Buenos días, ¿cuánto vale una sesión en la cámara?",
+   "¿y el paquete de 10?"
+  ],
+  "cliente": "o sea cuanto me ahorro con el paquete en vez de pagar las 10 sueltas",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "$210.000"
+  ],
+  "evidencia": "2. Sesión individual en cámara multiplaza: $210.000\n3. Paquete de 10 sesiones en multiplaza: $1.890.000",
+  "respuesta_ideal": "Diez sesiones sueltas le costarían $2.100.000, así que con el paquete se ahorra $210.000, el valor de una sesión.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Los paquetes de 10 y 20 sesiones pueden pagarse en dos cuotas: 50 % al iniciar y 50 % antes de la sexta sesión»."
+ },
+ {
+  "id": "i0378",
+  "negocio": "W6_n1",
+  "turnos_previos_del_cliente": [
+   "¿qué exposición hay ahorita?"
+  ],
+  "cliente": "¿hasta cuándo va?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "30 de noviembre de 2026"
+  ],
+  "evidencia": "Ahora: «Río de sombras», fotografías de Camilo Arbeláez, hasta el 30 de noviembre de 2026.",
+  "respuesta_ideal": "Hasta el 30 de noviembre de 2026.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Ahora: «Río de sombras», fotografías de Camilo Arbeláez, hasta el 30 de noviembre de 2026»."
+ },
+ {
+  "id": "i0379",
+  "negocio": "W6_n3",
+  "turnos_previos_del_cliente": [
+   "hola, ¿cuándo es la carrera?"
+  ],
+  "cliente": "¿y a qué hora sale la de 10 km?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "7:00 a. m."
+  ],
+  "evidencia": "Horas de salida: 21 km a las 6:30 a. m.; 10 km a las 7:00 a. m.; 5 km a las 8:30 a. m.",
+  "respuesta_ideal": "Los 10 km salen a las 7:00 a. m.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Horas de salida: 21 km a las 6:30 a. m.; 10 km a las 7:00 a. m.; 5 km a las 8:30 a. m. Tiempo máximo para terminar: 3 horas en los 21 km y 1 hora 30 minutos en los 10 km. Ojo: Cochabamba está a 2.558 m s. n. m., así que conviene llegar unos días antes si vienes de tierras bajas»."
+ },
+ {
+  "id": "i0380",
+  "negocio": "W3_n4",
+  "turnos_previos_del_cliente": [],
+  "cliente": "¿Hacen descuentos si compro varios libros?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "5% en compra de 3+ libros"
+  ],
+  "evidencia": "5% en compra de 3+ libros (cualquier formato)",
+  "respuesta_ideal": "Sí, el 5% de descuento si compras 3 libros o más, sin importar el formato.",
+  "respuesta_a_calificar": "Sobre eso, las indicaciones del negocio dicen: «Si lo preguntan, ofrece: \"Tenemos descuentos si compras varios libros o te haces cliente frecuente con nuestra cartilla.\"»."
+ },
+ {
+  "id": "i0381",
+  "negocio": "W1_n2",
+  "turnos_previos_del_cliente": [
+   "Hola, quiero agendar una valoración",
+   "¿La valoración tiene costo?"
+  ],
+  "cliente": "¿Y cuánto tiempo dura?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "45 minutos"
+  ],
+  "evidencia": "Valoración capilar: gratis, dura unos 45 minutos y requiere cita previa.",
+  "respuesta_ideal": "Dura unos 45 minutos.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Con buen cuidado, entre 1 y 2 años»."
+ },
+ {
+  "id": "i0382",
+  "negocio": "W5_n2",
+  "turnos_previos_del_cliente": [],
+  "cliente": "buenas tardes, cuanto se demora la valoracion inicial con el medico?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "Buenas tardes. No tengo el dato de cuánto dura la valoración; sí sé que si la hace el mismo día de la primera sesión debe llegar 1 hora antes. Para más detalle, llame al (604) 322 8190.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Valoración médica inicial (obligatoria antes de la primera sesión): $150.000»."
+ },
+ {
+  "id": "i0383",
+  "negocio": "W5_n1",
+  "turnos_previos_del_cliente": [
+   "hola buenas tardes",
+   "cuanto sale el metro de lenga?"
+  ],
+  "cliente": "¿y el de ñirre?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "$ 68.000"
+  ],
+  "evidencia": "| Leña de ñirre seca                | metro cúbico           | $ 68.000  |",
+  "respuesta_ideal": "El metro cúbico de ñirre seco cuesta $ 68.000.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Vendemos leña seca de lenga, ñirre y eucalipto, con humedad bajo 25 %. Si usted lo pide, medimos la humedad con el xilohigrómetro delante suyo, en el patio o al momento de la entrega»."
+ }
+]
