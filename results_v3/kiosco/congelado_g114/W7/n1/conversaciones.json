@@ -1,0 +1,174 @@
+[
+  [
+    {
+      "cliente": "Hola, ¿a qué hora cierran hoy?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["19:30"],
+      "evidencia": "Horario: Lunes a viernes 7:30 a 19:30",
+      "respuesta_ideal": "Hola, hoy cerramos a las 19:30. Estamos abiertos hasta esa hora."
+    },
+    {
+      "cliente": "Perfecto, ¿atienden los domingos?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["Domingos cerrado"],
+      "evidencia": "Horario: Lunes a viernes 7:30 a 19:30 | Sábados 8:00 a 13:30 | Domingos cerrado",
+      "respuesta_ideal": "No, los domingos estamos cerrados. Abrimos de nuevo el lunes a las 7:30."
+    },
+    {
+      "cliente": "¿Y los sábados qué horario tienen?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["8:00 a 13:30"],
+      "evidencia": "Sábados 8:00 a 13:30",
+      "respuesta_ideal": "Los sábados abrimos de 8:00 a 13:30."
+    }
+  ],
+  [
+    {
+      "cliente": "Quiero comprar tuberías de PVC para un proyecto. ¿Tienen stock?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "Tenemos tuberías de PVC, pero sobre el stock específico no tengo esa información. Te invito a llamarnos al (011) 4635-2891 o pasar por el local en Av. Rivadavia 2847."
+    },
+    {
+      "cliente": "¿Cuál es el precio de un rollo de cable de cobre?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No tengo los precios específicos en este momento. Llama al (011) 4635-2891 y nuestros vendedores te darán un presupuesto."
+    },
+    {
+      "cliente": "Necesito una sierra eléctrica. ¿Qué marcas tienen?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "Vendemos sierras eléctricas de marcas de confianza. Para ver cuáles tenemos en stock y compararlas, te recomiendo que llames o pases por el local. Mauro y Daniela, nuestros vendedores técnicos, pueden aconsejarte cuál es la mejor para tu trabajo."
+    }
+  ],
+  [
+    {
+      "cliente": "¿Hacen envíos a Flores?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["zona Caballito y alrededores"],
+      "evidencia": "Entregas a domicilio en zona Caballito y alrededores",
+      "respuesta_ideal": "Hacemos entregas en zona Caballito y alrededores. Flores queda en otra zona, así que te recomiendo que llames al (011) 4635-2891 para consultar si podemos llegar allá."
+    },
+    {
+      "cliente": "¿Cuánto cuesta el envío si compro materiales?",
+      "tipo": "combinada",
+      "accion": "responder",
+      "claves": ["sin cargo", "mayores a $5.500 ARS"],
+      "evidencia": "Entregas a domicilio en zona Caballito y alrededores: sin cargo para compras mayores a $5.500 ARS",
+      "respuesta_ideal": "El envío es sin cargo en zona Caballito y alrededores si tu compra es mayor a $5.500 pesos."
+    },
+    {
+      "cliente": "¿Cuándo reparten a domicilio?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["miércoles de 9:00 a 16:00"],
+      "evidencia": "Día de atención de domicilios: miércoles de 9:00 a 16:00",
+      "respuesta_ideal": "Atendemos domicilios solo los miércoles, de 9:00 a 16:00."
+    }
+  ],
+  [
+    {
+      "cliente": "Compré una herramienta eléctrica hace dos meses. ¿Cuánto dura la garantía?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["2 años"],
+      "evidencia": "Garantía en herramientas de marca según fabricante: 2 años en herramientas eléctricas",
+      "respuesta_ideal": "Las herramientas eléctricas tienen 2 años de garantía."
+    },
+    {
+      "cliente": "Tengo una llave de tuercas que no me sirve. ¿Puedo cambiarla?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["7 días", "ticket de compra"],
+      "evidencia": "Cambios y devoluciones dentro de 7 días con ticket de compra y producto en buen estado",
+      "respuesta_ideal": "Sí, podemos cambiarla si la compra fue dentro de 7 días, tienes el ticket y la herramienta está en buen estado."
+    },
+    {
+      "cliente": "Compré pintura hace una semana pero me equivoqué de color. ¿Puedo devolverla?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["No aceptamos devoluciones de pinturas abiertas"],
+      "evidencia": "No aceptamos devoluciones de cortes de tuberías, cables cortados o pinturas abiertas",
+      "respuesta_ideal": "Lamentablemente no aceptamos devoluciones de pinturas abiertas. Si está cerrada y el sellado es perfecto, puedes consultarlo con nuestros vendedores."
+    },
+    {
+      "cliente": "Quería saber si tiene garantía un destornillador de marca que compré.",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["5 años", "herramientas manuales"],
+      "evidencia": "Garantía en herramientas de marca según fabricante: 5 años en herramientas manuales",
+      "respuesta_ideal": "Las herramientas manuales de marca tienen 5 años de garantía."
+    }
+  ],
+  [
+    {
+      "cliente": "Hola, necesito hacer una remodelación en casa y no sé qué materiales comprar.",
+      "tipo": "instruccion",
+      "accion": "responder",
+      "claves": ["asesoramiento técnico gratuito"],
+      "evidencia": "Asesoramiento técnico gratuito para proyectos de remodelación o construcción",
+      "respuesta_ideal": "Ofrecemos asesoramiento técnico gratuito. Te recomiendo hablar con Mauro o Daniela, nuestros vendedores técnicos, que atienden de lunes a viernes. Ellos pueden ayudarte a elegir los materiales correctos."
+    },
+    {
+      "cliente": "¿Hacen trabajos de instalación? Necesito que cambien una lámpara.",
+      "tipo": "instruccion",
+      "accion": "responder",
+      "claves": ["No realizamos trabajos de instalación"],
+      "evidencia": "No realizamos trabajos de instalación (solo venta de materiales)",
+      "respuesta_ideal": "Nosotros solo vendemos los materiales y las lámparas. Para la instalación, te recomiendo que consultes con un electricista profesional."
+    },
+    {
+      "cliente": "¿Venden vidrio cortado a medida?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["3 a 5 días hábiles"],
+      "evidencia": "Servicio de corte de vidrio sobre pedido (3 a 5 días hábiles)",
+      "respuesta_ideal": "Sí, hacemos corte de vidrio. Es un servicio bajo pedido que tarda entre 3 a 5 días hábiles. Debes pasar por el local para dejar las medidas."
+    },
+    {
+      "cliente": "Muchas gracias por la ayuda. ¿Mañana van a estar abiertos?",
+      "tipo": "charla",
+      "accion": "charla",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "De nada, es un placer ayudarte. Mañana estaremos abiertos en horario normal. ¡Que tengas suerte con tu proyecto!"
+    }
+  ],
+  [
+    {
+      "cliente": "¿Hacen canje de productos? Compré un destornillador pero me dieron el tamaño equivocado.",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["Cambios", "dentro de 7 días", "ticket de compra"],
+      "evidencia": "Cambios y devoluciones dentro de 7 días con ticket de compra y producto en buen estado",
+      "respuesta_ideal": "Sí, hacemos cambios si está dentro de 7 días desde la compra y tienes el ticket. ¿Todavía está en buen estado?"
+    },
+    {
+      "cliente": "Sí, no lo usé. ¿Qué debo hacer?",
+      "tipo": "instruccion",
+      "accion": "responder",
+      "claves": ["pasar por el local"],
+      "evidencia": "Cambios y devoluciones dentro de 7 días con ticket de compra",
+      "respuesta_ideal": "Perfecto. Trae el destornillador, el ticket y el producto que quieres cambiar. Pasa por el local en Av. Rivadavia 2847. Nuestros vendedores haran el cambio sin problema."
+    },
+    {
+      "cliente": "¿Necesito permiso de fábrica para devolver?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No creo que sea necesario, pero para estar seguros te recomiendo que llames al (011) 4635-2891 antes de venir. Así confirmamos todo."
+    }
+  ]
+]

@@ -1,0 +1,158 @@
+[
+  [
+    {
+      "cliente": "Hola, busco departamento para comprar. Algo barato, ¿tienen opciones?",
+      "tipo": "sin_respuesta",
+      "accion": "responder",
+      "claves": ["búsqueda personalizada"],
+      "evidencia": "Búsqueda personalizada según presupuesto y preferencias",
+      "respuesta_ideal": "Claro, tenemos varias opciones según tu presupuesto. ¿Cuántas habitaciones necesitas y cuál es tu rango de precio?"
+    },
+    {
+      "cliente": "Un departamento de 1 dormitorio máximo.",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["UF 250–350"],
+      "evidencia": "Departamento 1-dormitorio: UF 250–350",
+      "respuesta_ideal": "Para 1 dormitorio, el rango de precio del mercado es entre UF 250 y UF 350, aproximadamente. ¿Tienes un presupuesto definido?"
+    },
+    {
+      "cliente": "¿En qué zonas tienen propiedades?",
+      "tipo": "sin_respuesta",
+      "accion": "responder",
+      "claves": ["zona centro", "Cintura Verde", "playa", "cerros"],
+      "evidencia": "Casas: residencias en zona centro, Cintura Verde, playa y cerros",
+      "respuesta_ideal": "Tenemos propiedades en varias zonas: centro, Cintura Verde, playa y cerros. ¿Hay alguna zona que prefieras?"
+    },
+    {
+      "cliente": "Me gustaría algo en la playa. ¿Cuánto cuesta?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["1-dormitorio", "UF 250–350"],
+      "evidencia": "Departamento 1-dormitorio: UF 250–350",
+      "respuesta_ideal": "En playa, un departamento de 1 dormitorio rondaría entre UF 250 y UF 350, pero puede variar. Tenemos catálogo en línea. ¿Te gustaría agendar una asesoría?"
+    }
+  ],
+  [
+    {
+      "cliente": "¿Cuál es el horario de atención?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["9:00 AM a 6:00 PM", "10:00 AM a 2:00 PM"],
+      "evidencia": "Lunes a viernes: 9:00 AM a 6:00 PM | Sábados: 10:00 AM a 2:00 PM",
+      "respuesta_ideal": "De lunes a viernes atendemos de 9:00 AM a 6:00 PM. Los sábados de 10:00 AM a 2:00 PM."
+    },
+    {
+      "cliente": "¿Atienden feriados?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["Domingos y días feriados: cerrado"],
+      "evidencia": "Domingos y días feriados: cerrado",
+      "respuesta_ideal": "No, los feriados estamos cerrados. Abrimos normalmente al día siguiente."
+    },
+    {
+      "cliente": "Quiero ver una propiedad el domingo a las 5 PM. ¿Es posible?",
+      "tipo": "instruccion",
+      "accion": "responder",
+      "claves": ["por cita previa únicamente"],
+      "evidencia": "Atención de propiedades fuera de horario: por cita previa únicamente",
+      "respuesta_ideal": "Normalmente cerramos domingos, pero para ver propiedades fuera de horario se puede agendar cita previa. Llama al (58) 2240-8765 y coordinamos."
+    }
+  ],
+  [
+    {
+      "cliente": "Quiero vender mi casa. ¿Cuánto me cobran?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["3% del precio de cierre"],
+      "evidencia": "Comisión de venta: 3% del precio de cierre",
+      "respuesta_ideal": "La comisión por venta es del 3% del precio final, repartido entre comprador y vendedor según acuerdo."
+    },
+    {
+      "cliente": "¿Necesito documentos especiales para vender?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["escritura", "certificado de avalúo municipal"],
+      "evidencia": "Documentos de propiedad (escritura o contrato compraventa) | Certificado de avalúo municipal",
+      "respuesta_ideal": "Necesitas la escritura de la propiedad y el certificado de avalúo municipal (no mayor a 1 año). Una inspección técnica es opcional pero recomendada."
+    },
+    {
+      "cliente": "Tengo mis documentos listos. ¿Qué viene después?",
+      "tipo": "instruccion",
+      "accion": "responder",
+      "claves": ["Asesoría gratuita inicial"],
+      "evidencia": "Asesoría gratuita inicial (30 minutos)",
+      "respuesta_ideal": "Perfecto, te invitamos a una asesoría inicial de 30 minutos, gratuita. Vemos la propiedad, evaluamos documentos y te decimos más. ¿Cuándo te viene bien?"
+    }
+  ],
+  [
+    {
+      "cliente": "Voy a arrendar mi departamento. ¿Cuál es la comisión?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["una renta mensual"],
+      "evidencia": "Comisión de arriendo: equivalente a una renta mensual (pagada por el arrendador)",
+      "respuesta_ideal": "La comisión de arriendo es equivalente a una renta mensual, pagada por el arrendador. Además, se pide un depósito en garantía de una o dos rentas."
+    },
+    {
+      "cliente": "¿Qué pasas si me arrepiento de arrendar?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["sin penalidad si se notifica 48 horas antes"],
+      "evidencia": "Desistimiento de búsqueda o compra/venta: sin penalidad si se notifica 48 horas antes de la firma",
+      "respuesta_ideal": "No hay penalidad si notificas con 48 horas de anticipación antes de firmar el contrato."
+    }
+  ],
+  [
+    {
+      "cliente": "Quiero comprar pero no tengo plata. ¿Financian?",
+      "tipo": "instruccion",
+      "accion": "responder",
+      "claves": ["asesoría", "crédito hipotecario"],
+      "evidencia": "Crédito hipotecario: asesoría y referencia a instituciones financieras",
+      "respuesta_ideal": "No financiamos directamente, pero asesoramos sobre crédito hipotecario y referimos a bancos que lo ofrecen. Generalmente piden 10% de ahorro inicial."
+    },
+    {
+      "cliente": "¿Cuáles son los requisitos para un crédito?",
+      "tipo": "combinada",
+      "accion": "responder",
+      "claves": ["ingresos regulares", "ahorro inicial mínimo 10%", "línea de crédito"],
+      "evidencia": "asesoramos sobre requisitos (ingresos, línea de crédito, ahorro inicial mínimo 10%)",
+      "respuesta_ideal": "Los requisitos generales son: 10% de ahorro inicial, ingresos regulares comprobables y línea de crédito limpia. Los bancos pueden pedir más."
+    },
+    {
+      "cliente": "Muchas gracias por la info. ¿Cómo me contacto con ustedes?",
+      "tipo": "charla",
+      "accion": "charla",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "De nada. Puedes llamarnos al (58) 2240-8765, celular +56 9 7654-3210 o visitar www.propiedadespacifico.cl. ¡Esperamos tu contacto pronto!"
+    }
+  ],
+  [
+    {
+      "cliente": "Quisiera saber qué documentos necesito para vender mi departamento.",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["Documentos de propiedad", "Certificado de avalúo municipal"],
+      "evidencia": "Documentos de propiedad (escritura o contrato compraventa) | Certificado de avalúo municipal (no mayor a 1 año)",
+      "respuesta_ideal": "Necesitas la escritura o contrato de compraventa, y el certificado de avalúo municipal que no sea mayor a 1 año. Una inspección técnica es recomendada."
+    },
+    {
+      "cliente": "¿Cuánto tiempo tarda en venderse una propiedad?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "Depende de muchos factores: precio, ubicación, estado de la propiedad y mercado. Algunos departamentos se venden en días, otros en meses. Asesoramos caso por caso."
+    },
+    {
+      "cliente": "¿Cuál es el mejor momento del año para vender?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No hay una época única. Depende de tu situación y urgencia. Nuestros agentes Roberto, Claudio y Verónica pueden aconsejarte mejor sobre tendencias del mercado actual."
+    }
+  ]
+]

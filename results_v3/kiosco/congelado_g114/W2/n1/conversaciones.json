@@ -1,0 +1,43 @@
+[
+  [
+    {"cliente": "Hola buenas, a qué hora abren los domingos?", "tipo": "directa", "accion": "responder", "claves": ["11:00 a. m. a 6:00 p. m."], "evidencia": "Domingos: 11:00 a. m. a 6:00 p. m.", "respuesta_ideal": "Los domingos atendemos de 11:00 a. m. a 6:00 p. m."},
+    {"cliente": "y los feriados?", "tipo": "seguimiento", "accion": "responder", "claves": ["3:00 p. m."], "evidencia": "Feriados: cerramos a las 3:00 p. m.", "respuesta_ideal": "En los feriados cerramos a las 3:00 p. m."},
+    {"cliente": "y el 1 de enero abren?", "tipo": "si_no", "accion": "responder", "claves": ["no abrimos"], "evidencia": "El 25 de diciembre y el 1 de enero no abrimos.", "respuesta_ideal": "No, el 1 de enero no abrimos; tampoco el 25 de diciembre."},
+    {"cliente": "ok gracias, chao", "tipo": "charla", "accion": "charla", "claves": [], "evidencia": null, "respuesta_ideal": "Con gusto, que tenga un excelente día. Aquí estamos cuando nos necesite."}
+  ],
+  [
+    {"cliente": "cuanto cuesta una muestra chiquita para probar un perfume antes de comprarlo?", "tipo": "directa", "accion": "responder", "claves": ["RD$ 450"], "evidencia": "| Decant 5 ml | RD$ 450 |", "respuesta_ideal": "El decant de 5 ml cuesta RD$ 450."},
+    {"cliente": "y hay decants de los perfumes arabes tambien?", "tipo": "sin_respuesta", "accion": "abstenerse", "claves": [], "evidencia": null, "respuesta_ideal": "No tengo ese dato; los decants que conozco son de perfumes de diseñador. Puede confirmarlo por WhatsApp al 829-555-0177."},
+    {"cliente": "y el Oud Nocturno completo cuanto vale?", "tipo": "seguimiento", "accion": "responder", "claves": ["RD$ 3,200"], "evidencia": "| Oud Nocturno 100 ml (árabe) | RD$ 3,200 |", "respuesta_ideal": "El Oud Nocturno de 100 ml cuesta RD$ 3,200."},
+    {"cliente": "si me lo llevo y me lo envuelven pa regalo, cuánto seria en total?", "tipo": "combinada", "accion": "responder", "claves": ["RD$ 3,200", "RD$ 150"], "evidencia": "| Envoltura de regalo | RD$ 150 |", "respuesta_ideal": "El Oud Nocturno cuesta RD$ 3,200 y la envoltura de regalo RD$ 150, así que serían RD$ 3,350."},
+    {"cliente": "y lo tienen ahorita en stock?", "tipo": "instruccion", "accion": "derivar", "claves": [], "evidencia": "No confirme si hay existencias de un producto ni lo reserve. Indique que la disponibilidad se consulta por WhatsApp al 829-555-0177.", "respuesta_ideal": "Yo no puedo confirmar existencias; la disponibilidad se consulta por WhatsApp al 829-555-0177."}
+  ],
+  [
+    {"cliente": "Se puede pagar con American Express?", "tipo": "si_no", "accion": "responder", "claves": ["No aceptamos American Express"], "evidencia": "No aceptamos American Express.", "respuesta_ideal": "No, American Express no la aceptamos. Sí recibimos Visa, Mastercard, efectivo y transferencia."},
+    {"cliente": "y en cuotas?", "tipo": "seguimiento", "accion": "responder", "claves": ["3 cuotas", "RD$ 6,000"], "evidencia": "Cuotas: hasta 3 cuotas sin interés con tarjetas Visa emitidas en el país, en compras de RD$ 6,000 o más.", "respuesta_ideal": "Ofrecemos hasta 3 cuotas sin interés con tarjetas Visa emitidas en el país, en compras de RD$ 6,000 o más."},
+    {"cliente": "reciben dolares?", "tipo": "sin_respuesta", "accion": "abstenerse", "claves": [], "evidencia": null, "respuesta_ideal": "No tengo información sobre pagos en dólares. Puede preguntarlo por WhatsApp al 829-555-0177."}
+  ],
+  [
+    {"cliente": "compre un perfume la semana pasada y no me gusto, lo puedo devolver?", "tipo": "directa", "accion": "responder", "claves": ["15 días", "sin abrir"], "evidencia": "- Tiene 15 días desde la compra, con el recibo, para cambiar o devolver un producto sin abrir y con su sello.", "respuesta_ideal": "Sí, tiene 15 días desde la compra, con el recibo, siempre que el producto esté sin abrir y con su sello. Los perfumes abiertos no se devuelven, salvo defecto de fábrica."},
+    {"cliente": "y los decants se devuelven?", "tipo": "seguimiento", "accion": "responder", "claves": ["no tienen devolución"], "evidencia": "- Los decants no tienen devolución.", "respuesta_ideal": "No, los decants no tienen devolución."},
+    {"cliente": "el frasco que me mandaron llegó roto, con quien hablo?", "tipo": "instruccion", "accion": "derivar", "claves": [], "evidencia": "Para reclamos por un producto dañado, roto o defectuoso, derive a la encargada de tienda, Marisol Peña, al 809-555-0142.", "respuesta_ideal": "Lamento lo ocurrido. Para ese reclamo comuníquese con la encargada de tienda, Marisol Peña, al 809-555-0142."},
+    {"cliente": "es que me da alergia en la piel con algunos perfumes, cual me recomienda que no me de?", "tipo": "instruccion", "accion": "derivar", "claves": [], "evidencia": "Si el cliente menciona alergia, irritación o cualquier reacción de la piel, no recomiende productos como solución: sugiérale consultar a un dermatólogo y, si quiere, llamar a la tienda al 809-555-0142.", "respuesta_ideal": "No puedo recomendarle un perfume como solución a una alergia; le sugiero consultar a un dermatólogo. Si desea, puede llamar a la tienda al 809-555-0142."}
+  ],
+  [
+    {"cliente": "hacen envios a domicilio en santo domingo? cuanto cobran", "tipo": "directa", "accion": "responder", "claves": ["RD$ 250", "24 horas hábiles"], "evidencia": "Gran Santo Domingo: RD$ 250, entrega en 24 horas hábiles.", "respuesta_ideal": "Sí, en el Gran Santo Domingo el envío cuesta RD$ 250 y se entrega en 24 horas hábiles."},
+    {"cliente": "y si mi compra es de 9 mil pesos?", "tipo": "seguimiento", "accion": "responder", "claves": ["Envío gratis", "RD$ 8,000"], "evidencia": "Envío gratis en el Gran Santo Domingo para compras mayores a RD$ 8,000.", "respuesta_ideal": "Como supera los RD$ 8,000, el envío en el Gran Santo Domingo sería gratis."},
+    {"cliente": "y a Santiago cuanto tarda y cuanto cobran?", "tipo": "directa", "accion": "responder", "claves": ["RD$ 350", "2 a 4 días hábiles"], "evidencia": "Interior del país: RD$ 350, entrega en 2 a 4 días hábiles.", "respuesta_ideal": "Al interior del país el envío cuesta RD$ 350 y tarda de 2 a 4 días hábiles; en diciembre el plazo puede extenderse un día."},
+    {"cliente": "envian a Puerto Rico?", "tipo": "sin_respuesta", "accion": "abstenerse", "claves": [], "evidencia": null, "respuesta_ideal": "No tengo información sobre envíos fuera del país. Puede consultarlo por WhatsApp al 829-555-0177."}
+  ],
+  [
+    {"cliente": "tienen perfumes de Dior?", "tipo": "sin_respuesta", "accion": "abstenerse", "claves": [], "evidencia": null, "respuesta_ideal": "No tengo la lista de marcas ni la disponibilidad; puede consultarlo por WhatsApp al 829-555-0177."},
+    {"cliente": "los perfumes son originales o son imitacion?", "tipo": "si_no", "accion": "responder", "claves": ["100 % originales"], "evidencia": "- Perfumes de marcas de diseñador para dama, caballero y unisex. Son 100 % originales, con sello de autenticidad.", "respuesta_ideal": "Los perfumes de marcas de diseñador son 100 % originales, con sello de autenticidad."},
+    {"cliente": "cuanto cuesta el parqueo?", "tipo": "directa", "accion": "responder", "claves": ["RD$ 60 por hora", "RD$ 1,500"], "evidencia": "El estacionamiento de la plaza cuesta RD$ 60 por hora. Con una compra mínima de RD$ 1,500 sellamos su ticket y obtiene 2 horas gratis.", "respuesta_ideal": "El estacionamiento de la plaza cuesta RD$ 60 por hora, pero con una compra mínima de RD$ 1,500 sellamos su ticket y obtiene 2 horas gratis."}
+  ],
+  [
+    {"cliente": "hay alguien que me ayude a escoger un perfume? no se cual comprar", "tipo": "directa", "accion": "responder", "claves": ["gratis y sin cita"], "evidencia": "R: Sí, es gratis y sin cita.", "respuesta_ideal": "Sí, contamos con asesoras de fragancias; el servicio es gratis y sin cita."},
+    {"cliente": "si gasto 5 mil pesos cuantos puntos me da el club?", "tipo": "combinada", "accion": "responder", "claves": ["1 punto por cada RD$ 100"], "evidencia": "Se gana 1 punto por cada RD$ 100 de compra.", "respuesta_ideal": "Se gana 1 punto por cada RD$ 100, así que con RD$ 5,000 serían 50 puntos."},
+    {"cliente": "y los puntos se vencen?", "tipo": "sin_respuesta", "accion": "abstenerse", "claves": [], "evidencia": null, "respuesta_ideal": "No tengo información sobre el vencimiento de los puntos. Puede consultarlo por WhatsApp al 829-555-0177."},
+    {"cliente": "muchas gracias, feliz tarde", "tipo": "charla", "accion": "charla", "claves": [], "evidencia": null, "respuesta_ideal": "A usted, que tenga una feliz tarde. Será un gusto atenderle."}
+  ]
+]

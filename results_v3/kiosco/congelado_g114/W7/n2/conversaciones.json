@@ -1,0 +1,166 @@
+[
+  [
+    {
+      "cliente": "Hola, mi celular se mojó en la piscina. ¿Pueden repararlo?",
+      "tipo": "sin_respuesta",
+      "accion": "responder",
+      "claves": ["diagnóstico gratuito"],
+      "evidencia": "Diagnóstico gratuito (se descuenta del costo si decide reparar)",
+      "respuesta_ideal": "Lo siento, eso es grave. El daño por agua depende del modelo y cuánto tiempo pasó. Te recomiendo traerlo para un diagnóstico gratuito. Allá vemos si es posible repararlo."
+    },
+    {
+      "cliente": "¿Cuál es el horario de atención?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["9:00 AM — 6:00 PM", "10:00 AM — 2:00 PM"],
+      "evidencia": "Lunes a viernes: 9:00 AM — 6:00 PM | Sábados: 10:00 AM — 2:00 PM",
+      "respuesta_ideal": "De lunes a viernes atendemos de 9:00 AM a 6:00 PM. Los sábados de 10:00 AM a 2:00 PM."
+    },
+    {
+      "cliente": "¿Atienden mañana que es domingo?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["Domingos y festivos: cerrado"],
+      "evidencia": "Domingos y festivos: cerrado",
+      "respuesta_ideal": "No, mañana domingo estamos cerrados. Abrimos de nuevo el lunes a las 9:00 AM."
+    }
+  ],
+  [
+    {
+      "cliente": "Mi pantalla tiene líneas verdes. ¿Cuánto cuesta arreglarlo?",
+      "tipo": "combinada",
+      "accion": "responder",
+      "claves": ["Pantalla rota o con líneas", "$45—90 USD"],
+      "evidencia": "Pantalla rota o con líneas: $45—90 USD",
+      "respuesta_ideal": "Ese es un problema de pantalla LCD. El precio va de $45 a $90 USD según el modelo. Para una cotización exacta, necesitamos revisar tu celular."
+    },
+    {
+      "cliente": "¿El presupuesto incluye la mano de obra?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["reparación incluye garantía de 6 meses en mano de obra"],
+      "evidencia": "Toda reparación incluye garantía de 6 meses en mano de obra",
+      "respuesta_ideal": "Sí, la mano de obra está incluida. Además, toda reparación lleva garantía de 6 meses."
+    },
+    {
+      "cliente": "¿Es seguro confiarles mi celular? ¿Qué pasa con mis datos?",
+      "tipo": "instruccion",
+      "accion": "responder",
+      "claves": ["Los datos personales y contraseñas del cliente son su responsabilidad"],
+      "evidencia": "Los datos personales y contraseñas del cliente son su responsabilidad",
+      "respuesta_ideal": "Entendemos tu preocupación. Los técnicos pueden acceder a tu dispositivo durante la reparación, pero la seguridad de tus datos y contraseñas es tu responsabilidad. Recomendamos hacer backup antes."
+    }
+  ],
+  [
+    {
+      "cliente": "Mi laptop no enciende. ¿Es grave?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No sabemos sin revisar. Podría ser la batería, la fuente de poder, o un problema más serio. Te invito a traerla para un diagnóstico gratuito. Es rápido."
+    },
+    {
+      "cliente": "¿Cuánto tiempo demora la reparación?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "Depende del problema. Cosas simples como cambio de batería tardan 30 minutos. Cosas complejas como motherboard dañado pueden tomar días. Luego del diagnóstico te decimos."
+    },
+    {
+      "cliente": "¿Ofrecen servicio urgente? Necesito la laptop mañana.",
+      "tipo": "instruccion",
+      "accion": "responder",
+      "claves": ["Servicio express", "mismo día", "+15%"],
+      "evidencia": "Servicio express: mismo día (costo adicional +15% | solo para reparaciones menores)",
+      "respuesta_ideal": "Tenemos servicio express para reparaciones menores por +15%. Pero si es daño severo, no podemos garantizar mismo día. Trae la laptop mañana para un diagnóstico."
+    },
+    {
+      "cliente": "Gracias, voy a pasar mañana temprano.",
+      "tipo": "charla",
+      "accion": "charla",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "Perfecto, te esperamos. Llega con tiempo y trae los documentos que uses. ¡Hasta mañana!"
+    }
+  ],
+  [
+    {
+      "cliente": "Mi iPhone está lento y lleno de virus. ¿Lo pueden limpiar?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["Virus o software lento", "$20—50 USD"],
+      "evidencia": "Virus o software lento: $20—50 USD",
+      "respuesta_ideal": "Sí, podemos. El costo es de $20 a $50 USD según la gravedad. Incluye limpieza profunda y reinstalación de software original."
+    },
+    {
+      "cliente": "¿Garantizan que no pierda mis fotos?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["No garantizamos recuperación de datos perdidos"],
+      "evidencia": "No garantizamos recuperación de datos perdidos",
+      "respuesta_ideal": "Durante la limpieza intentamos preservar tus datos, pero no podemos garantizar recuperación de lo que ya esté perdido. Recomendamos hacer backup."
+    },
+    {
+      "cliente": "¿Qué formas de pago aceptan?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["Efectivo", "Tarjeta de débito", "Tarjeta de crédito"],
+      "evidencia": "Formas de pago: Efectivo (USD) | Tarjeta de débito | Tarjeta de crédito | Transferencia bancaria",
+      "respuesta_ideal": "Aceptamos efectivo en USD, tarjeta de débito, tarjeta de crédito y transferencia bancaria para montos mayores a $100."
+    }
+  ],
+  [
+    {
+      "cliente": "¿Compran celulares viejos? Quiero vender el mío.",
+      "tipo": "instruccion",
+      "accion": "responder",
+      "claves": ["No vendemos ni compramos dispositivos usados"],
+      "evidencia": "No vendemos ni compramos dispositivos usados (solo reparamos)",
+      "respuesta_ideal": "No, solo nos dedicamos a reparación. No compramos ni vendemos dispositivos. Pero si quieres reparar tu celular, estaremos felices de ayudarte."
+    },
+    {
+      "cliente": "¿Tienen repuestos originales para Samsung?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "Sí trabajamos con Samsung y usamos repuestos originales en muchos casos. Pero específicamente depende del modelo y la disponibilidad. Trae tu teléfono y verificamos."
+    },
+    {
+      "cliente": "¿Cuál es la diferencia entre repuesto original y compatible?",
+      "tipo": "combinada",
+      "accion": "responder",
+      "claves": ["repuestos originales tienen la garantía del fabricante", "compatibles tienen garantía de 3 meses"],
+      "evidencia": "Los repuestos originales tienen la garantía del fabricante. Los repuestos compatibles (no originales) tienen garantía de 3 meses.",
+      "respuesta_ideal": "Los originales vienen del fabricante y tienen su garantía. Los compatibles son marcas confiables pero con garantía de 3 meses. Generalmente el compatible es más barato."
+    }
+  ],
+  [
+    {
+      "cliente": "Mi tablet no enciende hace una semana. ¿La pueden arreglar rápido?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "Es difícil decir sin revisar. Podría ser batería, corto circuito o motherboard. Trae la tablet para diagnóstico gratuito y te decimos cuánto demora."
+    },
+    {
+      "cliente": "¿Hacen diagnóstico sin cargo?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["gratuito", "se descuenta del costo si decide reparar"],
+      "evidencia": "Diagnóstico gratuito (se descuenta del costo si decide reparar)",
+      "respuesta_ideal": "Sí, el diagnóstico es gratuito. Si decides reparar, el costo del diagnóstico se descuenta del presupuesto."
+    },
+    {
+      "cliente": "¿Dónde queda el taller?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["Calle Guayaquil 456", "Barrio La Mariscal"],
+      "evidencia": "Dirección: Calle Guayaquil 456, Barrio La Mariscal, Quito, Ecuador",
+      "respuesta_ideal": "Estamos en Calle Guayaquil 456, en el Barrio La Mariscal de Quito. Puedes pasar cuando quieras en horario."
+    }
+  ]
+]
