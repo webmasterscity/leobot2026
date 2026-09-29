@@ -23,11 +23,12 @@ from .syntax import SyntaxMixin, _empty_syntax
 from .reference import ReferenceMixin
 from .entities import EntityMixin
 from .context import ContextMixin, _empty_context_model
+from .knowledge import KnowledgeMixin, _empty_knowledge
 from .state_fields import plain_state, restore_plain_state
 
 
 class Bot(DocumentLearningMixin, LanguageAcquisitionMixin, ConditionalLearningMixin, DialogueMixin,
-          ReadingMemoryMixin, ReferenceMixin, EntityMixin, SyntaxMixin, ContextMixin):
+          ReadingMemoryMixin, ReferenceMixin, EntityMixin, SyntaxMixin, ContextMixin, KnowledgeMixin):
     def __init__(self, kb=None, grounded_language: bool = True, grounding_min_support: int = 2,
                  raw_relation_min_support: int = 3, allow_extensional_grounding: bool = False,
                  raw_relation_max_arity: int = 8) -> None:
@@ -169,6 +170,8 @@ class Bot(DocumentLearningMixin, LanguageAcquisitionMixin, ConditionalLearningMi
         self.context_units: list[dict] = []
         self.context_title: list[str] = []
         self.context_instructions: list[dict] = []
+        # G-106/G-107: relations between words taught from human-made resources.
+        self.knowledge_model: dict = _empty_knowledge()
         # Bounded discourse state.  This is linguistic working memory, not factual
         # truth: referents are only used to propose repairs that an already learned
         # construction can parse unambiguously.
@@ -702,7 +705,7 @@ class Bot(DocumentLearningMixin, LanguageAcquisitionMixin, ConditionalLearningMi
         fd, temporary = tempfile.mkstemp(prefix=path.name + '.', suffix='.tmp', dir=path.parent)
         try:
             with os.fdopen(fd, 'w', encoding='utf8') as out:
-                json.dump(self.as_dict(), out, ensure_ascii=False, indent=2)
+                json.dump(self.as_dict(), out, ensure_ascii=False, separators=(',', ':'))
                 out.flush()
                 os.fsync(out.fileno())
             os.replace(temporary, path)
