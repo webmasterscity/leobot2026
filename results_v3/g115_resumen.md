@@ -24,5 +24,30 @@ Cinco bancos gastados (N = 1838 turnos directa/sí-no con claves). Conteo autom�
 - El control confundido da δ' = 0 en todas las palabras y cae muy por debajo de G-112: la señal viene de la unidad correcta, no del procedimiento.
 - Lectura: el δ antiguo medía cuánto repite una respuesta la palabra de su pregunta. El nuevo mide cuánto **distingue** esa palabra a la unidad que responde de sus vecinas del mismo documento, que es lo que decide la elección. Es una estadística por palabra, pero se concentra en palabras comunes a todos los sectores (verbos ligeros, interrogativos, preposiciones) y en el respaldo por clase gramatical, y por eso puede transferir a sectores nuevos. Eso es lo que debe probar la reserva.
 
-## Reserva
-Pendiente: banco `congelado_g115` de redactores independientes, juez ciego doble.
+## Reserva: banco nuevo `congelado_g115`, juez ciego doble. **Gran mejora de utilidad, pero no promovible: fallan los criterios 2 y 3**
+- Banco: 32 negocios y 842 turnos de 8 redactores independientes, con commit `99e9eb1` antes de ejecutar.
+- Jueces: A (Opus) y B (Sonnet) en 16 lotes, con 478 respuestas distintas. Los 26 desacuerdos (5,4 %) los resolvió un tercero (Opus).
+- Datos: `kiosco/evaluacion_g115/`. `b0.json` es aquí el **control G-112** y `tratamiento.json` es G-115.
+
+| | G-112 | G-115 (δ' + G-112 reenseñado) |
+|---|---|---|
+| Útiles en directas + sí/no (N = 392, juez) | 127 (32,4 %) | **199 (50,8 %)** |
+| Engañosas (todos los turnos) | **17** | 32 |
+| Sin respuesta coherentes bien manejadas | **161/165 (97,6 %)** | 157/165 (95,2 %) |
+| Conteo automático, útiles | 117 | 185 |
+| Conteo automático, citas sin dato / no útiles | 38 / 63 | 72 / 114 |
+| `Bot.answer` p50/p95 | 1,29 / 2,06 ms | 1,29 / 2,14 ms |
+
+Umbrales preregistrados:
+1. **Pasa:** +18,37 puntos, con bootstrap por negocio [+13,52, +23,35]. Es la mayor mejora medida con juez en un banco nuevo en todo el proyecto.
+2. **Falla:** 32 engañosas, por encima del tope de 17 + 3,9 = 20,9.
+3. **Falla:** 95,2 % < 97 %.
+4. **Pasa:** reinicio idéntico (0 diferencias en 842 respuestas) y p95 de 2,14 ms.
+
+**Veredicto: no se promueve** (el preregistro exige 1–4). Se conserva así.
+
+Diagnóstico (causa, no síntoma):
+- δ' se contó en los mismos 216 negocios con los que después se calibra el umbral de cita de G-112, que sale de las puntuaciones cruzadas de esos mismos turnos.
+- Esas puntuaciones «cruzadas» ya tienen dentro a δ', aprendido con su propia respuesta correcta, así que la calibración es optimista: `cite_from` baja de 0,5167 a 0,3971.
+- En texto nuevo el sistema cita de más: +72 útiles, pero también +15 engañosas y 4 abstenciones perdidas.
+- El remedio general es contar δ' fuera de pliegue (cada negocio calibrado con un δ' que no lo vio). Va en un preregistro nuevo, G-115b, con banco nuevo; no se toca este umbral.

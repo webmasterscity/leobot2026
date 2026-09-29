@@ -1,0 +1,479 @@
+[
+ {
+  "id": "i0090",
+  "negocio": "W8_n1",
+  "turnos_previos_del_cliente": [
+   "buenas tardes, a que hora hay que retirarlos?"
+  ],
+  "cliente": "si llego 14 hs cuanto me cobran de mas?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "4.000"
+  ],
+  "evidencia": "Pasadas las 13.30 se cobra un recargo de $ 4.000 por cada media hora de demora.",
+  "respuesta_ideal": "Pasadas las 13.30 se cobran $ 4.000 por cada media hora, así que llegando a las 14 serían $ 4.000 de recargo.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Retiro: de 12.45 a 13.15. Pasadas las 13.30 se cobra un recargo de $ 4.000 por cada media hora de demora»."
+ },
+ {
+  "id": "i0091",
+  "negocio": "W8_n4",
+  "turnos_previos_del_cliente": [
+   "puedo pagar en cuotas con tarjeta?",
+   "¿Puedo pagar en reales? Soy de Brasil"
+  ],
+  "cliente": "Compré una vela grande y el frasco vino rajado, ¿me devuelven la plata?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "10 días",
+   "vale"
+  ],
+  "evidencia": "Las velas y difusores se cambian dentro de los 10 días con ticket si tienen un defecto de fabricación (pabilo torcido, frasco rajado). No se devuelve dinero: se cambia por otro producto o se entrega un vale.",
+  "respuesta_ideal": "Dinero no se devuelve, pero un frasco rajado es defecto de fabricación: dentro de los 10 días y con el ticket te la cambiamos por otro producto o te damos un vale.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Las velas y difusores se cambian dentro de los 10 días con ticket si tienen un defecto de fabricación (pabilo torcido, frasco rajado)»."
+ },
+ {
+  "id": "i0092",
+  "negocio": "W8_n3",
+  "turnos_previos_del_cliente": [],
+  "cliente": "¿Cuándo es el próximo torneo autonómico?",
+  "tipo": "instruccion",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "Si alguien pregunta por competiciones concretas, fechas de torneos o resultados, deriva al maestro Íñigo Sanz.",
+  "respuesta_ideal": "Las fechas de los torneos las lleva el maestro Íñigo Sanz; pregúntale a él en la sala o por el 983 34 12 70.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Los tiradores del grupo de competición participan en el circuito autonómico y en los torneos nacionales de su categoría»."
+ },
+ {
+  "id": "i0093",
+  "negocio": "W4_n4",
+  "turnos_previos_del_cliente": [
+   "hola, quiero marmol carrara para el tope de la cocina, que precio tiene?",
+   "cada cuanto hay que sellarlo y cuanto cuesta eso?"
+  ],
+  "cliente": "si mi tope tiene 30 pies, cuanto me sale el sellado?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "RD$ 2,500"
+  ],
+  "evidencia": "Ofrecemos servicio de sellado a RD$ 55 por pie cuadrado, mínimo RD$ 2,500 por visita.",
+  "respuesta_ideal": "30 pies a RD$ 55 serían RD$ 1,650, pero como el mínimo por visita es RD$ 2,500, le cobrarían RD$ 2,500.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Ofrecemos servicio de sellado a RD$ 55 por pie cuadrado, mínimo RD$ 2,500 por visita»."
+ },
+ {
+  "id": "i0094",
+  "negocio": "W1_n1",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Tengo un restorán en Frutillar, ¿ustedes venden por mayor?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "5 kg",
+   "Matías"
+  ],
+  "evidencia": "¿Venden a restaurantes? Sí, tenemos precio mayorista desde 5 kg semanales. Consultar con Matías.",
+  "respuesta_ideal": "Sí, tenemos precio mayorista desde 5 kg semanales. Para eso hay que hablar con Matías.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Sí, tenemos precio mayorista desde 5 kg semanales»."
+ },
+ {
+  "id": "i0095",
+  "negocio": "W2_n3",
+  "turnos_previos_del_cliente": [
+   "hay algo para las familias?"
+  ],
+  "cliente": "¿tengo que pedir cita?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "sin cita previa"
+  ],
+  "evidencia": "es gratuito y sin cita previa",
+  "respuesta_ideal": "No, es sin cita previa y gratuito.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Grupo de apoyo para familias. Todos los martes a las 6:30 p. m., es gratuito y sin cita previa»."
+ },
+ {
+  "id": "i0096",
+  "negocio": "W4_n2",
+  "turnos_previos_del_cliente": [],
+  "cliente": "hola, el 2 de noviembre a que hora es la misa?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "10:30"
+  ],
+  "evidencia": "El 2 de noviembre (Día de los Difuntos) el parque abre de 7:00 a 20:00 y se ofrece misa a las 10:30 en la capilla.",
+  "respuesta_ideal": "Buenos días. El 2 de noviembre la misa es a las 10:30 en la capilla; ese día el parque abre de 7:00 a 20:00.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «El 2 de noviembre (Día de los Difuntos) el parque abre de 7:00 a 20:00 y se ofrece misa a las 10:30 en la capilla»."
+ },
+ {
+  "id": "i0097",
+  "negocio": "W7_n2",
+  "turnos_previos_del_cliente": [
+   "¿Cuánto es el cambio de llantas?"
+  ],
+  "cliente": "¿Eso incluye los llantas nuevas?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "El precio es solo por mano de obra de cambio y balanceo. Los llantas se cotizan según la medida. Llamá al (4) 310-5847 para una cotización con llantas incluidas.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Cambio de llantas (incluye balanceo): COP $180.000»."
+ },
+ {
+  "id": "i0098",
+  "negocio": "W3_n4",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Hola, ¿tienen camisetas vintage de Peñarol años 90?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "responder",
+  "claves": [
+   "stock",
+   "Instagram",
+   "vintage"
+  ],
+  "evidencia": "Siendo tienda de vintage, el stock cambia constantemente.",
+  "respuesta_ideal": "El stock cambia constantemente. Lo mejor es que mires Instagram (@retrosportstore.uy) para ver qué tenemos en este momento, o que vengas a la tienda. Si buscas algo muy específico, escribinos por WhatsApp con la descripción.",
+  "respuesta_a_calificar": "Sobre eso, las indicaciones del negocio dicen: «Búsquedas específicas: si alguien busca algo muy específico (camiseta de tal año, marca exacta), sugiere:»."
+ },
+ {
+  "id": "i0099",
+  "negocio": "W4_n2",
+  "turnos_previos_del_cliente": [],
+  "cliente": "hola, cuanto sale una parcela para una sola persona?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "$U 68.000"
+  ],
+  "evidencia": "Parcela individual (uso perpetuo, 1 lugar)\t$U 68.000",
+  "respuesta_ideal": "Buenos días. La parcela individual, de uso perpetuo, cuesta $U 68.000.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «La capilla tiene capacidad para 60 personas sentadas»."
+ },
+ {
+  "id": "i0100",
+  "negocio": "W7_n1",
+  "turnos_previos_del_cliente": [
+   "Buenas, ¿tienen asado?",
+   "¿Me haces un asado con puré en lugar de papas?"
+  ],
+  "cliente": "¿Atienden los domingos?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "Domingos: 12:00 a 22:00"
+  ],
+  "evidencia": "Domingos: 12:00 a 22:00",
+  "respuesta_ideal": "Sí, los domingos estamos abiertos de 12:00 a 22:00.",
+  "respuesta_a_calificar": "Sobre eso, las indicaciones del negocio dicen: «Consultas sobre horarios: Recordar que estamos abiertos de lunes a viernes 11:30-15:00 y 19:00-23:30. Sábados 12:00-16:00 y 19:30-24:00. Domingos 12:00-22:00. Cerrado festivos»."
+ },
+ {
+  "id": "i0101",
+  "negocio": "W6_n3",
+  "turnos_previos_del_cliente": [
+   "buenas tardes, a q hora cierran hoy? es domingo",
+   "y mañana lunes?"
+  ],
+  "cliente": "y en feriados?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "10:00 a. m. a 4:00 p. m."
+  ],
+  "evidencia": "Feriados: 10:00 a. m. a 4:00 p. m. (no abrimos el 25 de diciembre)",
+  "respuesta_ideal": "En feriados abrimos de 10:00 a. m. a 4:00 p. m.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Feriados: 10:00 a. m. a 4:00 p. m. (no abrimos el 25 de diciembre)»."
+ },
+ {
+  "id": "i0102",
+  "negocio": "W3_n1",
+  "turnos_previos_del_cliente": [
+   "Hola, me interesa hacer el retiro de meditación de 7 días. ¿Puedo ir la próxima semana?",
+   "Ok, pero ¿cuánto cuesta el paquete de 7 días?"
+  ],
+  "cliente": "¿Puedo pagar en soles peruanos?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "efectivo",
+   "soles",
+   "USD"
+  ],
+  "evidencia": "Métodos de pago: efectivo (soles o USD)",
+  "respuesta_ideal": "Sí, aceptamos soles peruanos en efectivo. También puedes traer dólares, tarjeta de crédito o hacer transferencia bancaria.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Métodos de pago: efectivo (soles o USD), tarjeta de crédito (Visa, Mastercard con recargo del 4%), transferencia bancaria»."
+ },
+ {
+  "id": "i0103",
+  "negocio": "W3_n3",
+  "turnos_previos_del_cliente": [],
+  "cliente": "¿Tienen wifi?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "lenta",
+   "WiFi",
+   "comedor"
+  ],
+  "evidencia": "Conexión a internet: lenta pero hay. WiFi en el comedor principal.",
+  "respuesta_ideal": "Sí, hay WiFi en el comedor, pero es lenta. No esperes descargar películas ni hacer video llamadas fluidas.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Conexión a internet: lenta pero hay. WiFi en el comedor principal»."
+ },
+ {
+  "id": "i0104",
+  "negocio": "W2_n4",
+  "turnos_previos_del_cliente": [
+   "y con tarjeta se puede pagar?",
+   "hacen descuento a estudiantes universitarios?"
+  ],
+  "cliente": "si ya empece el curso y me arrepiento me devuelven la plata?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "Los cursos ya iniciados no se reembolsan"
+  ],
+  "evidencia": "Los cursos ya iniciados no se reembolsan.",
+  "respuesta_ideal": "No, los cursos ya iniciados no se reembolsan.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «La inscripción no es reembolsable. Los cursos ya iniciados no se reembolsan. Si se cancela antes de la primera clase, se devuelve el 80 % del curso»."
+ },
+ {
+  "id": "i0105",
+  "negocio": "W7_n3",
+  "turnos_previos_del_cliente": [
+   "¿Hay descuento si viajamos en grupo de 15?",
+   "¿Incluye hotel?",
+   "¿Tengo que traer pasaporte?"
+  ],
+  "cliente": "¿Hay tours en diciembre?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "Diciembre es alta temporada, así que hay tours disponibles. Para confirmar fechas y disponibilidad específica, contacta al (01) 428-3657 o WhatsApp +51 957 445 289.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Alta (junio-agosto y diciembre-enero): tours completos, precios normales»."
+ },
+ {
+  "id": "i0106",
+  "negocio": "W6_n3",
+  "turnos_previos_del_cliente": [],
+  "cliente": "necesito la constancia de antecedentes penales, me pueden ayudar?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "L 50.00",
+   "no incluye el pago del trámite"
+  ],
+  "evidencia": "* Ayudamos a llenar formularios en línea (por ejemplo, solicitud de constancia de antecedentes penales); la asistencia cuesta L 50.00 y no incluye el pago del trámite.",
+  "respuesta_ideal": "Sí, ayudamos a llenar formularios en línea; la asistencia cuesta L 50.00 y no incluye el pago del trámite.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Ayudamos a llenar formularios en línea (por ejemplo, solicitud de constancia de antecedentes penales); la asistencia cuesta L 50.00 y no incluye el pago del trámite»."
+ },
+ {
+  "id": "i0107",
+  "negocio": "W4_n1",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Quiero encargar 15 sombreros clasicos para los empleados de mi hotel, como hago?",
+  "tipo": "instruccion",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "Los pedidos de sombreros Montecristi extrafino y los pedidos de más de 10 sombreros se derivan siempre a Marcia Ordóñez, la administradora. El asistente no los toma ni los confirma.",
+  "respuesta_ideal": "Bienvenido a El Toquillero. Los pedidos de más de 10 sombreros los atiende directamente Marcia Ordóñez, la administradora; puede escribirle por WhatsApp al +593 98 411 2260 o a pedidos@eltoquillero.ec.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Sí, para contornos mayores de 62 cm o menores de 54 cm, con un costo adicional de USD 15 y un plazo de 10 días»."
+ },
+ {
+  "id": "i0108",
+  "negocio": "W4_n4",
+  "turnos_previos_del_cliente": [
+   "hola, venden pedazos sueltos de marmol para hacer una mesita?",
+   "y me los pueden cortar a la medida que yo quiera?"
+  ],
+  "cliente": "el sabado hasta que hora estan?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "1:00 p.m."
+  ],
+  "evidencia": "Lun-Vie 8:00 a.m. a 5:30 p.m. · Sáb 8:00 a.m. a 1:00 p.m. · Dom cerrado.",
+  "respuesta_ideal": "Los sábados atendemos de 8:00 a.m. a 1:00 p.m.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Vendemos retazos (piezas de hasta 30 x 60 cm) en el patio del taller a RD$ 800 la pieza, solo los sábados y sin instalación»."
+ },
+ {
+  "id": "i0109",
+  "negocio": "W5_n2",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Buenas tardes, mi madre tiene 70 años y quiere un bastón, ¿le hacéis algún descuento?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "10 %"
+  ],
+  "evidencia": "Mayores de 65 años: 10 % de descuento en bastones (enseñando el DNI).",
+  "respuesta_ideal": "Sí, los mayores de 65 años tienen un 10 % de descuento en bastones enseñando el DNI.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Mayores de 65 años: 10 % de descuento en bastones (enseñando el DNI)»."
+ },
+ {
+  "id": "i0110",
+  "negocio": "W4_n3",
+  "turnos_previos_del_cliente": [
+   "Hola! mi hija tiene 8 años, hay clases para su edad?",
+   "y cuanto es al mes?",
+   "hay que pagar algo mas al apuntarse?"
+  ],
+  "cliente": "necesita licencia federativa?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "a partir del grupo Infantil"
+  ],
+  "evidencia": "Licencia federativa anual (obligatoria a partir del grupo Infantil): 38 € para menores de 14 años, 61 € a partir de 14 años.",
+  "respuesta_ideal": "No, con 8 años no: la licencia es obligatoria a partir del grupo Infantil, o sea desde los 10 años.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Licencia federativa anual (obligatoria a partir del grupo Infantil): 38 € para menores de 14 años, 61 € a partir de 14 años»."
+ },
+ {
+  "id": "i0111",
+  "negocio": "W5_n1",
+  "turnos_previos_del_cliente": [
+   "Buen día, ¿quién está a cargo de la oficina?",
+   "quiero quejarme porque el chofer del 405 me cerró la puerta en la cara"
+  ],
+  "cliente": "Cambiando de tema, ¿el 24 de diciembre abren?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "hasta las 12:00"
+  ],
+  "evidencia": "Los días 24 y 31 de diciembre atendemos solo hasta las 12:00.",
+  "respuesta_ideal": "Sí, pero el 24 de diciembre atendemos solo hasta las 12:00.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Los días 24 y 31 de diciembre atendemos solo hasta las 12:00»."
+ },
+ {
+  "id": "i0112",
+  "negocio": "W8_n1",
+  "turnos_previos_del_cliente": [],
+  "cliente": "que zonas cubre el transporte?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "Paraná centro",
+   "Thompson",
+   "San Agustín",
+   "Oro Verde"
+  ],
+  "evidencia": "Cubren las zonas de Paraná centro, barrio Thompson, San Agustín y Oro Verde.",
+  "respuesta_ideal": "Las combis cubren Paraná centro, barrio Thompson, San Agustín y Oro Verde.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Cubren las zonas de Paraná centro, barrio Thompson, San Agustín y Oro Verde»."
+ },
+ {
+  "id": "i0113",
+  "negocio": "W5_n1",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Buen día, ¿quién está a cargo de la oficina?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "Mirta Olivera"
+  ],
+  "evidencia": "Encargada de la oficina: Sra. Mirta Olivera.",
+  "respuesta_ideal": "La encargada de la oficina es la Sra. Mirta Olivera.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Enviamos objetos chicos (llaves, billeteras sin dinero, lentes, carpetas) dentro de Montevideo por cadetería, con un costo de $U 290 a cargo del usuario»."
+ },
+ {
+  "id": "i0114",
+  "negocio": "W1_n3",
+  "turnos_previos_del_cliente": [
+   "¿Aceptan tarjeta?"
+  ],
+  "cliente": "¿Y a meses sin intereses?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "3 meses sin intereses",
+   "$2,000"
+  ],
+  "evidencia": "3 meses sin intereses en compras desde $2,000 con tarjetas participantes.",
+  "respuesta_ideal": "Sí, hay 3 meses sin intereses en compras desde $2,000 con tarjetas participantes.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «3 meses sin intereses en compras desde $2,000 con tarjetas participantes»."
+ },
+ {
+  "id": "i0115",
+  "negocio": "W8_n3",
+  "turnos_previos_del_cliente": [
+   "buenas, tengo 34 años y nunca he cogido una espada, ¿puedo apuntarme?",
+   "que horario tiene el grupo de adultos que empiezan",
+   "¿Se puede pagar la mensualidad en efectivo?",
+   "¿Cuánto cuesta el equipo si me lo quiero comprar?",
+   "¿Y cuándo tengo que tener el material propio?",
+   "¿Tengo que comprarme también el pantalón de esgrima?"
+  ],
+  "cliente": "¿Cuántos alumnos sois en el grupo de adultos?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo el número de alumnos por grupo. Pregunta en sala@esgrimacampogrande.es o en el 983 34 12 70 por la tarde.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Grupo: Adultos iniciación; Edad: 16 o más; Días: M y J; Hora: 20:00–21:30»."
+ },
+ {
+  "id": "i0116",
+  "negocio": "W8_n3",
+  "turnos_previos_del_cliente": [
+   "Tengo una hernia discal, ¿puedo hacer esgrima?",
+   "Vale. ¿El campus de verano cuánto vale las dos semanas?"
+  ],
+  "cliente": "¿y solo una?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "120"
+  ],
+  "evidencia": "120 € la semana, 210 € las dos, almuerzo de media mañana incluido.",
+  "respuesta_ideal": "Una semana suelta son 120 €.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Grupo: Veteranos (+40); Edad: 40 o más; Días: M y J; Hora: 21:30–22:30 (solo espada)»."
+ },
+ {
+  "id": "i0117",
+  "negocio": "W7_n1",
+  "turnos_previos_del_cliente": [
+   "Hola, quiero hacer una reserva para 10 personas el próximo sábado a la noche"
+  ],
+  "cliente": "¿Puedo cambiar mi reserva de mañana para pasado mañana?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "Los cambios de fecha se aceptan sin cargo si se avisan con 48 hs"
+  ],
+  "evidencia": "Los cambios de fecha se aceptan sin cargo si se avisan con 48 hs de antelación",
+  "respuesta_ideal": "Sí, podés cambiar la fecha sin cargo si lo avisas con 48 horas de anticipación. Para procesarlo, llamá al (011) 4365-8821.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Las reservas pueden cancelarse con 24 horas de anticipación sin cargo»."
+ },
+ {
+  "id": "i0118",
+  "negocio": "W1_n1",
+  "turnos_previos_del_cliente": [],
+  "cliente": "hola buen dia, ¿hay pioppino ahora en octubre?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "abril a octubre"
+  ],
+  "evidencia": "| Pioppino | $4.900 | abril a octubre |",
+  "respuesta_ideal": "¡Hola! Sí, el pioppino está disponible de abril a octubre; la bandeja cuesta $4.900.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Variedad: Pioppino; Precio: $4.900; Disponiblidad: abril a octubre»."
+ },
+ {
+  "id": "i0119",
+  "negocio": "W1_n1",
+  "turnos_previos_del_cliente": [
+   "hola! a que hora abren el sabado?"
+  ],
+  "cliente": "¿y el domingo?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "cerrado"
+  ],
+  "evidencia": "Domingo y lunes: cerrado",
+  "respuesta_ideal": "El domingo está cerrado (el lunes también).",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Domingo y lunes: cerrado»."
+ }
+]

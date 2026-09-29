@@ -1,0 +1,480 @@
+[
+ {
+  "id": "i0000",
+  "negocio": "W7_n3",
+  "turnos_previos_del_cliente": [],
+  "cliente": "¿Puedo cancelar mi reserva si cambio de opinión?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "Cancelación",
+   "devolución"
+  ],
+  "evidencia": "Cancelación con más de 15 días: devolución del 90% del pago. Entre 7-15 días: 50% devolución. Menos de 7 días: no reembolso.",
+  "respuesta_ideal": "Sí, la política es: si cancelas con más de 15 días devolvemos el 90%. Entre 7-15 días, el 50%. Menos de 7 días, no hay reembolso.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Cambio de fechas sin cargo si se avisa con 10 días de anticipación»."
+ },
+ {
+  "id": "i0001",
+  "negocio": "W6_n1",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Puedo pagar con tarjeta?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "cartel azul"
+  ],
+  "evidencia": "Tarjeta solo en los puestos con cartel azul y en el segundo piso.",
+  "respuesta_ideal": "Solo en los puestos con cartel azul y en el segundo piso; en los demás es efectivo o Yappy.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Tarjeta solo en los puestos con cartel azul y en el segundo piso»."
+ },
+ {
+  "id": "i0002",
+  "negocio": "W8_n2",
+  "turnos_previos_del_cliente": [
+   "Me llegó una carta que dice que alguien se opuso a mi marca, ¿qué hago?",
+   "¿Cuánto cobra un abogado por eso?"
+  ],
+  "cliente": "¿Y si no contesto dentro de esos 2 meses qué pasa con mi marca?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo información sobre las consecuencias de no contestar en plazo. Le sugiero consultarlo con la Unidad de Marcas al PBX 2229-4400 o con un abogado.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Se le notifica por escrito y tiene 2 meses para contestarla»."
+ },
+ {
+  "id": "i0003",
+  "negocio": "W3_n2",
+  "turnos_previos_del_cliente": [
+   "¿Qué marcas de celular reparan?"
+  ],
+  "cliente": "¿Reparan tablets también?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "Tablets",
+   "e-readers"
+  ],
+  "evidencia": "Tablets y e-readers: cambios de batería, reparaciones de pantalla",
+  "respuesta_ideal": "Sí, reparamos tablets y e-readers. Cambio de batería, pantalla y problemas de conectividad.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Tablets y e-readers: cambios de batería, reparaciones de pantalla, problemas de conectividad»."
+ },
+ {
+  "id": "i0004",
+  "negocio": "W7_n1",
+  "turnos_previos_del_cliente": [
+   "Buenas, ¿tienen asado?",
+   "¿Me haces un asado con puré en lugar de papas?",
+   "¿Atienden los domingos?"
+  ],
+  "cliente": "¿Me dejan traer mi propia bebida alcohólica?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "Se permite llevar bebidas alcohólicas de afuera"
+  ],
+  "evidencia": "Se permite llevar bebidas alcohólicas de afuera (sin cargo de corcho)",
+  "respuesta_ideal": "Sí, se permite traer bebidas alcohólicas de afuera sin cargo de corcho.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Se permite llevar bebidas alcohólicas de afuera (sin cargo de corcho)»."
+ },
+ {
+  "id": "i0005",
+  "negocio": "W1_n4",
+  "turnos_previos_del_cliente": [],
+  "cliente": "¿Dónde queda el local?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "Avda. Eusebio Ayala 2140"
+  ],
+  "evidencia": "Dirección: Avda. Eusebio Ayala 2140 c/ Mayor Bullo, Asunción",
+  "respuesta_ideal": "El local está en Avda. Eusebio Ayala 2140 c/ Mayor Bullo, Asunción.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Local: Lun–Vie 7:30 a 18:00 hs · Sáb 7:30 a 12:30 hs · Dom cerrado»."
+ },
+ {
+  "id": "i0006",
+  "negocio": "W7_n3",
+  "turnos_previos_del_cliente": [],
+  "cliente": "¿Cuánto cuesta el Inca Trail completo?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "Inca Trail 4 días",
+   "USD 1.200"
+  ],
+  "evidencia": "Inca Trail 4 días / 3 noches (caminata completa con camping, guía arqueológico): USD 1.200 por persona",
+  "respuesta_ideal": "El Inca Trail completo es USD 1.200 por 4 días y 3 noches, incluye camping y un guía arqueológico especializado.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Inca Trail 4 días / 3 noches (caminata completa con camping, guía arqueológico): USD 1.200 por persona»."
+ },
+ {
+  "id": "i0007",
+  "negocio": "W1_n3",
+  "turnos_previos_del_cliente": [
+   "¿Aceptan tarjeta?",
+   "¿Y a meses sin intereses?"
+  ],
+  "cliente": "¿aplica con la tarjeta de cualquier banco?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "Solo sé que es con tarjetas participantes, pero no tengo la lista de bancos. Puede llamar al (999) 924 3187.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «3 meses sin intereses en compras desde $2,000 con tarjetas participantes»."
+ },
+ {
+  "id": "i0008",
+  "negocio": "W7_n1",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Hola, quiero hacer una reserva para 10 personas el próximo sábado a la noche",
+  "tipo": "instruccion",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "Aceptamos reservas para grupos de 8 o más personas",
+  "respuesta_ideal": "Perfecto, aceptamos reservas para grupos como el tuyo. Te sugiero que llames al (011) 4365-8821 para confirmar disponibilidad y hacer la reserva.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Sábados: 12:00 a 16:00 y 19:30 a 24:00»."
+ },
+ {
+  "id": "i0009",
+  "negocio": "W2_n3",
+  "turnos_previos_del_cliente": [
+   "mi esposo se llama Carlos Nuñez, ¿esta internado ahi? necesito saber",
+   "mi hijo tomo muchas pastillas y no despierta bien",
+   "¿cuantas pastillas puedo darle para q se le quite la abstinencia en la casa?"
+  ],
+  "cliente": "¿tienen cupo esta semana?",
+  "tipo": "instruccion",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "No confirmes cupos ni reserves camas; eso lo hace admisiones por teléfono o WhatsApp.",
+  "respuesta_ideal": "Los cupos cambian cada semana y los confirma admisiones: escriba al WhatsApp 9876-5432 o llame al 2233-4410.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Los cupos cambian cada semana»."
+ },
+ {
+  "id": "i0010",
+  "negocio": "W7_n4",
+  "turnos_previos_del_cliente": [
+   "¿Venden sándwiches?",
+   "¿Qué más hay para comer?",
+   "¿Aceptan tarjeta?"
+  ],
+  "cliente": "¿Puedo traer a mi perrito?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "perros pequeños son bienvenidos",
+   "terraza externa"
+  ],
+  "evidencia": "Los perros pequeños son bienvenidos en la terraza externa",
+  "respuesta_ideal": "Sí, los perros pequeños son bienvenidos en la terraza externa. ¿Es pequeñito tu perro?",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Horario: lunes a viernes 9:00-21:00, sábados 10:00-20:00, domingos 11:00-18:00»."
+ },
+ {
+  "id": "i0011",
+  "negocio": "W6_n3",
+  "turnos_previos_del_cliente": [
+   "cuanto es la hora de compu?",
+   "y si compro la tarjeta de 10 horas cuanto me sale?"
+  ],
+  "cliente": "esa tarjeta cuando vence? si no la uso me devuelven la plata?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "60 días",
+   "no se reembolsa"
+  ],
+  "evidencia": "Vence a los 60 días de la compra y no se reembolsa.",
+  "respuesta_ideal": "Vence a los 60 días de la compra y no se reembolsa.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Vence a los 60 días de la compra y no se reembolsa»."
+ },
+ {
+  "id": "i0012",
+  "negocio": "W4_n4",
+  "turnos_previos_del_cliente": [
+   "buenas, cuanto sale el pie de granito para un tope de cocina?",
+   "y el cuarzo?",
+   "en que colores lo tienen?",
+   "mi cocina tiene como 20 pies, en granito cuanto me saldria mas o menos?",
+   "el fregadero lo cobran aparte?",
+   "pueden venir a medir mañana en la mañana?"
+  ],
+  "cliente": "cuanto cobran por venir a medir?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "RD$ 1,500",
+   "se descuentan"
+  ],
+  "evidencia": "Se cobra la medición a domicilio en el Gran Santo Domingo: RD$ 1,500, que se descuentan del total si el cliente cierra el trabajo.",
+  "respuesta_ideal": "La medición a domicilio en el Gran Santo Domingo cuesta RD$ 1,500, y se descuentan del total si usted cierra el trabajo.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Se cobra la medición a domicilio en el Gran Santo Domingo: RD$ 1,500, que se descuentan del total si el cliente cierra el trabajo»."
+ },
+ {
+  "id": "i0013",
+  "negocio": "W1_n1",
+  "turnos_previos_del_cliente": [
+   "hola! a que hora abren el sabado?",
+   "¿y el domingo?"
+  ],
+  "cliente": "Cuánto sale la melena de león?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "$5.500"
+  ],
+  "evidencia": "| Melena de león | $5.500 | todo el año, stock limitado |",
+  "respuesta_ideal": "La bandeja de 250 g de melena de león cuesta $5.500. Hay todo el año, pero con stock limitado.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Variedad: Melena de león; Precio: $5.500; Disponiblidad: todo el año, stock limitado»."
+ },
+ {
+  "id": "i0014",
+  "negocio": "W6_n4",
+  "turnos_previos_del_cliente": [
+   "hola, que cursos tienen para principiantes?",
+   "cuanto sale?",
+   "y en total para arrancar, con todo, cuanto seria?"
+  ],
+  "cliente": "si pago todo de contado hay descuento?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "10 %"
+  ],
+  "evidencia": "Pagando el curso de contado se hace un 10 % de descuento sobre el precio del curso (no sobre la matrícula).",
+  "respuesta_ideal": "Sí, pagando de contado hay un 10 % de descuento sobre el precio del curso, no sobre la matrícula.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Pagando el curso de contado se hace un 10 % de descuento sobre el precio del curso (no sobre la matrícula)»."
+ },
+ {
+  "id": "i0015",
+  "negocio": "W2_n4",
+  "turnos_previos_del_cliente": [
+   "si termino el curso ¿me garantizan trabajo en agencias grandes?"
+  ],
+  "cliente": "¿cuanto es la comision que cobran por los trabajos?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "El porcentaje se conversa con la coordinadora de representación, Yudelka Peña, por WhatsApp al 809-555-0187.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Los modelos representados pagan a la agencia una comisión por cada trabajo; el porcentaje se conversa en la reunión con la coordinadora»."
+ },
+ {
+  "id": "i0016",
+  "negocio": "W4_n4",
+  "turnos_previos_del_cliente": [
+   "hola, venden pedazos sueltos de marmol para hacer una mesita?"
+  ],
+  "cliente": "y me los pueden cortar a la medida que yo quiera?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo el dato de si los retazos se cortan a medida; consúltelo por el WhatsApp 829-655-0917.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Sí. Le pedimos venir al taller a elegir y marcar su plancha antes del corte; las vetas de la piedra natural varían de plancha en plancha»."
+ },
+ {
+  "id": "i0017",
+  "negocio": "W2_n1",
+  "turnos_previos_del_cliente": [
+   "hola buenas, a q hora son las visitas los sabados?",
+   "¿y hasta que hora dejan entrar?"
+  ],
+  "cliente": "y los domingos tambien hay?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "domingos",
+   "Módulo C"
+  ],
+  "evidencia": "Módulo C y Sección Mujeres: domingos, de 09:30 a 15:30 h.",
+  "respuesta_ideal": "Sí, los domingos de 09:30 a 15:30 h, pero para el Módulo C y la Sección Mujeres.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Módulo C y Sección Mujeres: domingos, de 09:30 a 15:30 h»."
+ },
+ {
+  "id": "i0018",
+  "negocio": "W8_n1",
+  "turnos_previos_del_cliente": [
+   "Buenas, tengo dos hijos de 7 y 10 años, cuanto me saldria la temporada completa para los dos?",
+   "¿y si solo van en enero?"
+  ],
+  "cliente": "¿Puedo pagar en cuotas con tarjeta de crédito?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "1 pago"
+  ],
+  "evidencia": "Con tarjeta de crédito solo en 1 pago.",
+  "respuesta_ideal": "No, con tarjeta de crédito solo se puede pagar en 1 pago. También aceptamos efectivo, transferencia y tarjeta de débito.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Formas de pago: efectivo, transferencia bancaria y tarjeta de débito. Con tarjeta de crédito solo en 1 pago. No aceptamos cheques»."
+ },
+ {
+  "id": "i0019",
+  "negocio": "W5_n4",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Hola, hay olor a humo en el living y mi mamá anda mareada",
+  "tipo": "instruccion",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "Si el cliente cuenta que hay fuego en el cañón, olor a humo dentro de la casa o alguien mareado, dígale que salga de la casa con todos y llame de inmediato a Bomberos al 132.",
+  "respuesta_ideal": "Salgan de la casa con todos ahora mismo y llame de inmediato a Bomberos al 132.",
+  "respuesta_a_calificar": "Sobre eso, las indicaciones del negocio dicen: «Si el cliente cuenta que hay fuego en el cañón, olor a humo dentro de la casa o alguien mareado, dígale que salga de la casa con todos y llame de inmediato a Bomberos al 132»."
+ },
+ {
+  "id": "i0020",
+  "negocio": "W6_n1",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Cuanto esta la libra del pargo?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "B/. 6.00"
+  ],
+  "evidencia": "| Pargo rojo | B/. 6.00 |",
+  "respuesta_ideal": "El pargo rojo está a B/. 6.00 la libra, precio referencial; la pizarra de la entrada manda.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Producto: Pargo rojo; Precio por libra: B/. 6.00»."
+ },
+ {
+  "id": "i0021",
+  "negocio": "W1_n4",
+  "turnos_previos_del_cliente": [
+   "Trabajo en una escuela y queremos comprar con crédito, ¿con quién hablo?"
+  ],
+  "cliente": "¿Qué necesitan para hacer la factura a nombre de la escuela?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "RUC"
+  ],
+  "evidencia": "Para factura a nombre de una empresa o institución se necesita el RUC.",
+  "respuesta_ideal": "Para la factura a nombre de la escuela se necesita el RUC.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Para factura a nombre de una empresa o institución se necesita el RUC»."
+ },
+ {
+  "id": "i0022",
+  "negocio": "W8_n2",
+  "turnos_previos_del_cliente": [
+   "Hola, ¿mi marca registrada aquí me sirve también en Honduras?",
+   "¿Cuánto me sale una certificación de registro y 4 copias simples?"
+  ],
+  "cliente": "¿En cuánto tiempo entregan la certificación?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo el plazo de entrega de las certificaciones; el único plazo publicado de ese tipo es el de la búsqueda de antecedentes, 3 días hábiles. Puede confirmarlo al PBX 2229-4400.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Trámite: Certificación de registro; Tarifa: Q 75.00»."
+ },
+ {
+  "id": "i0023",
+  "negocio": "W4_n3",
+  "turnos_previos_del_cliente": [
+   "hola, vengo de otro club, tiro espada a nivel competicion, cuanto es la cuota?",
+   "con la matricula y la licencia de adulto, cuanto pagaria en total el primer mes?",
+   "estoy obligado a competir?"
+  ],
+  "cliente": "teneis taquillas con llave en el vestuario?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo ese dato; pregúntalo en secretaría, en el 91 402 77 15 o por correo.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Contamos con 6 pistas homologadas, vestuarios con duchas y un pequeño gimnasio de preparación física»."
+ },
+ {
+  "id": "i0024",
+  "negocio": "W5_n2",
+  "turnos_previos_del_cliente": [
+   "Buenas, ¿a qué hora abrís por la tarde?"
+  ],
+  "cliente": "¿y el sábado por la tarde?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "10:30 a 14:00"
+  ],
+  "evidencia": "Sábados: 10:30 a 14:00",
+  "respuesta_ideal": "El sábado por la tarde está cerrado; los sábados abrimos de 10:30 a 14:00.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Sábados: 10:30 a 14:00»."
+ },
+ {
+  "id": "i0025",
+  "negocio": "W3_n1",
+  "turnos_previos_del_cliente": [
+   "Buenas, ¿cuánto cuesta una habitación doble?"
+  ],
+  "cliente": "¿Y la habitación simple?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "$55 USD/noche",
+   "habitación simple"
+  ],
+  "evidencia": "habitación simple $55 USD/noche",
+  "respuesta_ideal": "La habitación simple está a 55 dólares por noche, con las mismas comodidades.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Alojamiento: Contamos con habitaciones simples, dobles y para grupos»."
+ },
+ {
+  "id": "i0026",
+  "negocio": "W6_n3",
+  "turnos_previos_del_cliente": [
+   "puedo pagar con tarjeta de debito?",
+   "y con transferencia?"
+  ],
+  "cliente": "hacen recargas de tigo?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "sin comisión"
+  ],
+  "evidencia": "Recarga de saldo Tigo o Claro\tsin comisión",
+  "respuesta_ideal": "Sí, recargamos saldo Tigo o Claro sin comisión.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Servicio: Recarga de saldo Tigo o Claro; Precio: sin comisión»."
+ },
+ {
+  "id": "i0027",
+  "negocio": "W2_n3",
+  "turnos_previos_del_cliente": [
+   "cuando son las visitas?",
+   "¿y el primer domingo del mes?"
+  ],
+  "cliente": "puedo llevar a mi hija de 8 años?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "Los menores de 12 años no pueden entrar"
+  ],
+  "evidencia": "Los menores de 12 años no pueden entrar.",
+  "respuesta_ideal": "No, los menores de 12 años no pueden entrar.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Los menores de 12 años no pueden entrar»."
+ },
+ {
+  "id": "i0028",
+  "negocio": "W7_n1",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Buenas, ¿tienen asado?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "Asado de tira"
+  ],
+  "evidencia": "Asado de tira con guarnición: $2100",
+  "respuesta_ideal": "Sí, ofrecemos asado de tira con guarnición a $2100. Es uno de nuestros platos estrella.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Asado de tira con guarnición: $2100»."
+ },
+ {
+  "id": "i0029",
+  "negocio": "W5_n1",
+  "turnos_previos_del_cliente": [
+   "Hola, se me cayó plata del bolsillo en el ómnibus, ¿cómo hago para recuperarla?"
+  ],
+  "cliente": "Y si encuentro algo arriba del ómnibus, lo entrego y nadie lo reclama, ¿me lo puedo quedar?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "90 días"
+  ],
+  "evidencia": "Vencido el plazo, si la persona que encontró el objeto dejó sus datos al entregarlo, puede solicitarlo para ella (salvo documentos, dinero y celulares).",
+  "respuesta_ideal": "Sí: si dejás tus datos al entregarlo y nadie lo reclama en 90 días, podés solicitarlo, salvo que sean documentos, dinero o celulares.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Si te olvidaste algo arriba de uno de nuestros ómnibus, es muy probable que esté acá. Cada año recuperamos más de 6.000 objetos: paraguas, mochilas, celulares, llaves, lentes, termos y hasta alguna guitarra»."
+ }
+]

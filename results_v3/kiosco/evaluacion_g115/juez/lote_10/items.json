@@ -1,0 +1,516 @@
+[
+ {
+  "id": "i0300",
+  "negocio": "W1_n1",
+  "turnos_previos_del_cliente": [
+   "Quiero ir al taller de cultivo, ¿cuándo es?"
+  ],
+  "cliente": "¿Puedo llevar a mi hijo de 10 años?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "mayores de 14 años"
+  ],
+  "evidencia": "Solo mayores de 14 años.",
+  "respuesta_ideal": "Lo siento, no: el taller es solo para mayores de 14 años.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Solo mayores de 14 años»."
+ },
+ {
+  "id": "i0301",
+  "negocio": "W1_n1",
+  "turnos_previos_del_cliente": [
+   "hola buen dia, ¿hay pioppino ahora en octubre?",
+   "¿cuánto me duran las setas frescas en el refri?"
+  ],
+  "cliente": "Cuanto cuesta el kit para cultivar shiitake?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "$18.990"
+  ],
+  "evidencia": "Kit Shiitake: bloque de 2,5 kg, $18.990.",
+  "respuesta_ideal": "El Kit Shiitake es un bloque de 2,5 kg y cuesta $18.990. Tarda unas 3 a 5 semanas en fructificar desde que se abre la bolsa.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Kit Shiitake: bloque de 2,5 kg, $18.990»."
+ },
+ {
+  "id": "i0302",
+  "negocio": "W6_n3",
+  "turnos_previos_del_cliente": [
+   "cuanto es la hora de compu?",
+   "y si compro la tarjeta de 10 horas cuanto me sale?",
+   "esa tarjeta cuando vence? si no la uso me devuelven la plata?",
+   "sirve para la sala de juegos?"
+  ],
+  "cliente": "cuantas compus hay en la sala de juegos?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "4 equipos"
+  ],
+  "evidencia": "* La sala de juegos tiene 4 equipos y es aparte de las 12 computadoras normales.",
+  "respuesta_ideal": "La sala de juegos tiene 4 equipos, aparte de las 12 computadoras normales.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Sirve en las computadoras normales, no en la sala de juegos»."
+ },
+ {
+  "id": "i0303",
+  "negocio": "W4_n2",
+  "turnos_previos_del_cliente": [
+   "Buen dia, fallecio mi padre esta madrugada, necesito coordinar el entierro para mañana",
+   "que papeles voy a necesitar?"
+  ],
+  "cliente": "mañana es domingo, se puede hacer igual?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "no se realizan inhumaciones",
+   "administrador"
+  ],
+  "evidencia": "Los domingos no se realizan inhumaciones, salvo casos autorizados por el administrador.",
+  "respuesta_ideal": "En principio no: los domingos no se realizan inhumaciones, salvo casos autorizados por el administrador. Consúltelo al 099 640 218.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Los domingos no se realizan inhumaciones, salvo casos autorizados por el administrador»."
+ },
+ {
+  "id": "i0304",
+  "negocio": "W7_n2",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Necesito una soldadura en el tanque de gasolina. ¿Hacen eso?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "Soldadura de cuadro o tanque",
+   "COP $200.000-400.000"
+  ],
+  "evidencia": "Soldadura de cuadro o tanque: COP $200.000-400.000",
+  "respuesta_ideal": "Sí, hacemos soldadura de tanques. El costo es entre COP $200.000 y COP $400.000 dependiendo del tamaño del daño.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Soldadura de cuadro o tanque: COP $200.000-400.000»."
+ },
+ {
+  "id": "i0305",
+  "negocio": "W7_n1",
+  "turnos_previos_del_cliente": [
+   "Buenas, ¿tienen asado?",
+   "¿Me haces un asado con puré en lugar de papas?"
+  ],
+  "cliente": "¿Atienden los domingos?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "Domingos: 12:00 a 22:00"
+  ],
+  "evidencia": "Domingos: 12:00 a 22:00",
+  "respuesta_ideal": "Sí, los domingos estamos abiertos de 12:00 a 22:00.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Domingos: 12:00 a 22:00»."
+ },
+ {
+  "id": "i0306",
+  "negocio": "W1_n4",
+  "turnos_previos_del_cliente": [
+   "¿Dónde queda el local?",
+   "compre un bidon de desinfectante y no me gusto el olor, ya lo abrí, lo puedo cambiar?",
+   "¿Venden alcohol en gel?",
+   "¿Qué pasa si mezclo la lavandina con vinagre para que limpie mejor?"
+  ],
+  "cliente": "Tengo 16, ¿puedo comprar ácido muriático?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "menores de 18 años"
+  ],
+  "evidencia": "- No se vende soda cáustica ni ácido muriático a menores de 18 años.",
+  "respuesta_ideal": "No, el ácido muriático no se vende a menores de 18 años.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «No se vende soda cáustica ni ácido muriático a menores de 18 años»."
+ },
+ {
+  "id": "i0307",
+  "negocio": "W7_n4",
+  "turnos_previos_del_cliente": [
+   "¿Hacen talleres?",
+   "¿Todavia hay cupos?"
+  ],
+  "cliente": "¿Tienen club de lectura?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "Club de lectura",
+   "martes 19:30"
+  ],
+  "evidencia": "Club de lectura (martes 19:30)",
+  "respuesta_ideal": "Sí, hay club de lectura los martes a las 19:30. Para sumarte, consulta al (55) 267-4821.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Clubs de lectura (martes 19:30)»."
+ },
+ {
+  "id": "i0308",
+  "negocio": "W7_n2",
+  "turnos_previos_del_cliente": [
+   "Hola, ¿cuánto cuesta cambiar el aceite y filtro?",
+   "¿Lo puedo hacer ahorita?"
+  ],
+  "cliente": "¿Tienen servicio rápido?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "Servicio Rapidín",
+   "COP $55.000",
+   "30 minutos máximo"
+  ],
+  "evidencia": "Servicio Rapidín (sólo cambio de aceite, filtro, revisión de llantas): COP $55.000 (30 minutos máximo)",
+  "respuesta_ideal": "Sí, ofrecemos Servicio Rapidín: cambio de aceite, filtro y revisión de llantas por COP $55.000 en 30 minutos máximo.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Los repuestos originales tienen garantía del fabricante»."
+ },
+ {
+  "id": "i0309",
+  "negocio": "W7_n3",
+  "turnos_previos_del_cliente": [],
+  "cliente": "¿Hay descuento si viajamos en grupo de 15?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "Grupos de 10+ personas: descuento del 10%"
+  ],
+  "evidencia": "Grupos de 10+ personas: descuento del 10%",
+  "respuesta_ideal": "Sí, grupos de 10 o más personas reciben un descuento del 10% sobre el precio total.",
+  "respuesta_a_calificar": "Sobre eso, las indicaciones del negocio dicen: «Descuentos y grupos: Mínimo 2 personas. Grupos de 10+: 10% descuento. Niños <5 años: 50%. Estudiantes: 15% (con carnet)»."
+ },
+ {
+  "id": "i0310",
+  "negocio": "W1_n1",
+  "turnos_previos_del_cliente": [
+   "Encontré unos hongos en el patio, ¿si le muestro una foto me dice si se pueden comer?",
+   "¿La melena de león sirve para la memoria?",
+   "¿Aceptan perritos en la tienda? voy con mi perra"
+  ],
+  "cliente": "se puede pagar con cheque?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "No aceptamos cheques"
+  ],
+  "evidencia": "Efectivo, tarjetas de débito y crédito, y transferencia. No aceptamos cheques.",
+  "respuesta_ideal": "No, no aceptamos cheques. Puede pagar en efectivo, con tarjeta de débito o crédito, o por transferencia.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «No aceptamos cheques»."
+ },
+ {
+  "id": "i0311",
+  "negocio": "W8_n3",
+  "turnos_previos_del_cliente": [
+   "Hola, mi hijo tiene 8 años, ¿qué días y a qué hora tendría clase?",
+   "¿Y cuánto es al mes?"
+  ],
+  "cliente": "¿Hay que pagar algo más aparte de la mensualidad?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "30 €",
+   "52 €"
+  ],
+  "evidencia": "Cuota de socio del club (anual, obligatoria, se paga en septiembre o al inscribirse): 30 €\nLicencia federativa anual (obligatoria a partir del segundo mes): 52 € menores, 68 € mayores de 16",
+  "respuesta_ideal": "Sí: la cuota de socio anual de 30 €, que se paga en septiembre o al inscribirse, y la licencia federativa anual, que para menores son 52 € y es obligatoria a partir del segundo mes.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Domiciliación bancaria obligatoria para las cuotas mensuales; se cobran entre el 1 y el 5 de cada mes. La cuota de socio y la licencia se pueden pagar en efectivo o por bizum al 600 41 82 93»."
+ },
+ {
+  "id": "i0312",
+  "negocio": "W7_n2",
+  "turnos_previos_del_cliente": [
+   "¿Hacen reparaciones eléctricas?",
+   "Me llegó el diagnóstico: se dañó el alternador. ¿Lo reparan?"
+  ],
+  "cliente": "¿Entrega a domicilio?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "entrega a domicilio",
+   "COP $20.000"
+  ],
+  "evidencia": "Para trabajos menores y repuestos, ofrecemos entrega a domicilio en Medellín (COP $20.000 costo de envío).",
+  "respuesta_ideal": "Sí, ofrecemos entrega a domicilio en Medellín para trabajos menores y repuestos, con costo de COP $20.000.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Para trabajos menores y repuestos, ofrecemos entrega a domicilio en Medellín (COP $20.000 costo de envío)»."
+ },
+ {
+  "id": "i0313",
+  "negocio": "W5_n4",
+  "turnos_previos_del_cliente": [
+   "¿Ustedes instalan estufas?",
+   "¿Y me puede decir si puedo alargar el cañón yo mismo?",
+   "¿Venden estufas?",
+   "¿Limpian estufas a pellet?"
+  ],
+  "cliente": "¿Cuánto sale el gorro para el cañón?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "$24.990"
+  ],
+  "evidencia": "8. Sombrerete o gorro para cañón, acero inoxidable (instalado) ...... $24.990",
+  "respuesta_ideal": "El sombrerete o gorro para cañón de acero inoxidable, instalado, cuesta $24.990.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Sombrerete o gorro para cañón, acero inoxidable (instalado) ...... $24.990»."
+ },
+ {
+  "id": "i0314",
+  "negocio": "W6_n1",
+  "turnos_previos_del_cliente": [
+   "Puedo pagar con tarjeta?",
+   "y con cheque?"
+  ],
+  "cliente": "hacen entrega a domicilio?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "No tenemos servicio de entrega a domicilio",
+   "motorizados independientes"
+  ],
+  "evidencia": "- No tenemos servicio de entrega a domicilio; en la entrada norte hay motorizados independientes y la tarifa se acuerda con ellos.",
+  "respuesta_ideal": "No tenemos servicio de entrega a domicilio, pero en la entrada norte hay motorizados independientes y con ellos acuerda la tarifa.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «No tenemos servicio de entrega a domicilio; en la entrada norte hay motorizados independientes y la tarifa se acuerda con ellos»."
+ },
+ {
+  "id": "i0315",
+  "negocio": "W1_n2",
+  "turnos_previos_del_cliente": [
+   "Buenas tardes",
+   "¿A qué hora cierran hoy? es martes",
+   "cuanto cuesta la vela aromatica en vaso de barro?",
+   "¿y qué olores tiene?",
+   "¿Cuántas horas dura prendida esa de 200 g?"
+  ],
+  "cliente": "Me llevo 2 de barro y pago con tarjeta de crédito, ¿cuánto sería?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "199.50"
+  ],
+  "evidencia": "Tarjetas Visa y Mastercard; con tarjeta de crédito se cobra un recargo del 5 %.",
+  "respuesta_ideal": "Dos velas en vaso de barro son Q190.00; con el recargo del 5 % por tarjeta de crédito quedan en Q199.50. Recuerde no dejarlas encendidas sin supervisión.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Tarjetas Visa y Mastercard; con tarjeta de crédito se cobra un recargo del 5 %. Transferencia bancaria solo para pedidos de empresas»."
+ },
+ {
+  "id": "i0316",
+  "negocio": "W6_n3",
+  "turnos_previos_del_cliente": [
+   "cuanto es la hora de compu?",
+   "y si compro la tarjeta de 10 horas cuanto me sale?",
+   "esa tarjeta cuando vence? si no la uso me devuelven la plata?"
+  ],
+  "cliente": "sirve para la sala de juegos?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "no en la sala de juegos"
+  ],
+  "evidencia": "Sirve en las computadoras normales, no en la sala de juegos.",
+  "respuesta_ideal": "No, sirve en las computadoras normales, no en la sala de juegos.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Sirve en las computadoras normales, no en la sala de juegos»."
+ },
+ {
+  "id": "i0317",
+  "negocio": "W2_n1",
+  "turnos_previos_del_cliente": [
+   "¿cada cuanto puedo ir a verlo? ¿todos los fines de semana?"
+  ],
+  "cliente": "cuando reciben las encomiendas?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "miércoles",
+   "09:00 a 12:00"
+  ],
+  "evidencia": "Se reciben los miércoles de 09:00 a 12:00 h.",
+  "respuesta_ideal": "Las encomiendas se reciben los miércoles de 09:00 a 12:00 h.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Se reciben los miércoles de 09:00 a 12:00 h. Peso máximo por encomienda: 5 kg. Todas se revisan frente a los funcionarios»."
+ },
+ {
+  "id": "i0318",
+  "negocio": "W8_n2",
+  "turnos_previos_del_cliente": [
+   "Inventé un dispositivo para riego por goteo, ¿cuánto cuesta patentarlo?",
+   "¿Cuántos años me dura la patente?",
+   "¿Qué documentos técnicos debo presentar, planos, memoria descriptiva, reivindicaciones?",
+   "¿Puedo dejarle aquí los planos ahora mismo para que los revisen?"
+  ],
+  "cliente": "¿Cuánto cuesta una búsqueda de antecedentes de patentes?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "Solo tengo la tarifa de búsqueda de antecedentes de marca (Q 150.00 por clase); para patentes no tengo el dato. Puede consultarlo con la Unidad de Patentes al PBX 2229-4400.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Trámite: Búsqueda de antecedentes de marca (por clase); Tarifa: Q 150.00»."
+ },
+ {
+  "id": "i0319",
+  "negocio": "W8_n4",
+  "turnos_previos_del_cliente": [
+   "Buenas, quiero hacer el taller de jabon, cuando es y cuanto cuesta?",
+   "¿Puede venir mi hija de 14 conmigo?",
+   "¿Y el taller de velas tiene edad mínima?",
+   "¿Cómo reservo un lugar para el sábado que viene?",
+   "Si después no puedo ir ese día, ¿pierdo la seña?"
+  ],
+  "cliente": "¿Los jabones que hago en el taller los puedo usar ese mismo día?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "4 semanas"
+  ],
+  "evidencia": "te llevás 6 jabones que se terminan de curar en tu casa (4 semanas)",
+  "respuesta_ideal": "No, los jabones se terminan de curar en tu casa durante 4 semanas antes de usarlos.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Taller de jabón en frío (proceso de saponificación): sábados de 15 a 18 hs. Cupo 8 personas»."
+ },
+ {
+  "id": "i0320",
+  "negocio": "W4_n4",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Hola, soy de una constructora, necesitamos topes para 40 apartamentos, unos 900 pies en total",
+  "tipo": "instruccion",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "Las solicitudes de constructoras o de más de 500 pies cuadrados van directo a Luis Manuel de la Rosa.",
+  "respuesta_ideal": "Buenos días, bienvenido a Mármoles y Granitos del Ozama. Los proyectos de constructoras los atiende directamente Luis Manuel de la Rosa; puede contactarlo al 809-590-4412 o por cotizaciones@marmolesozama.do.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Sí, con precios por volumen a partir de 500 pies cuadrados; contactar a Luis Manuel de la Rosa»."
+ },
+ {
+  "id": "i0321",
+  "negocio": "W7_n3",
+  "turnos_previos_del_cliente": [
+   "¿Cuánto cuesta el tour a Machu Picchu?",
+   "¿Qué incluye exactamente?",
+   "¿Cuántas personas mínimo necesitan para salir?"
+  ],
+  "cliente": "¿Es seguro? ¿Hay guía?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "Guía profesional bilingüe"
+  ],
+  "evidencia": "Guía profesional bilingüe (español-inglés)",
+  "respuesta_ideal": "Sí, es muy seguro. Va un guía profesional bilingüe con cada grupo. Todos nuestros guías están entrenados en primeros auxilios.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Guías entrenados en primeros auxilios»."
+ },
+ {
+  "id": "i0322",
+  "negocio": "W2_n2",
+  "turnos_previos_del_cliente": [
+   "cuanto cuesta el baño?",
+   "¿y los niños pagan tambien?",
+   "hasta que hora sirven almuerzo en el patio de comidas?"
+  ],
+  "cliente": "¿el pescado del pabellon D es fresco del dia?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo ese dato sobre los puestos; cada puesto maneja su mercadería.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Pabellón D: pescados y mariscos»."
+ },
+ {
+  "id": "i0323",
+  "negocio": "W4_n2",
+  "turnos_previos_del_cliente": [
+   "hola, quiero ponerle una cruz de madera a la parcela de mi mama, que se puede poner?"
+  ],
+  "cliente": "y cuanto vale la placa de bronce?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "$U 6.400"
+  ],
+  "evidencia": "Placa de bronce definitiva (hasta 40 letras)\t$U 6.400",
+  "respuesta_ideal": "La placa de bronce definitiva cuesta $U 6.400, hasta 40 letras.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Servicio: Placa de bronce definitiva (hasta 40 letras); Precio: $U 6.400»."
+ },
+ {
+  "id": "i0324",
+  "negocio": "W2_n4",
+  "turnos_previos_del_cliente": [
+   "cuanto cuesta el curso de pasarela?"
+  ],
+  "cliente": "¿y cuanto dura?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "8 semanas"
+  ],
+  "evidencia": "| Pasarela básica | 8 semanas (martes y jueves, 6:00 p. m.) | RD$ 9,800 |",
+  "respuesta_ideal": "Dura 8 semanas.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Curso: Poses y fotografía; Duración: 4 semanas (sábados, 2:00 p. m.); Precio: RD$ 4,200»."
+ },
+ {
+  "id": "i0325",
+  "negocio": "W6_n4",
+  "turnos_previos_del_cliente": [],
+  "cliente": "el de retrato cuantas clases tiene?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "10 clases"
+  ],
+  "evidencia": "| Retrato e Iluminación | 10 clases | miércoles y viernes, 18:30 a 20:30 | $U 7.900 |",
+  "respuesta_ideal": "Retrato e Iluminación tiene 10 clases.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Curso: Retrato e Iluminación; Clases: 10 clases; Días y horario: miércoles y viernes, 18:30 a 20:30; Precio: $U 7.900»."
+ },
+ {
+  "id": "i0326",
+  "negocio": "W3_n2",
+  "turnos_previos_del_cliente": [],
+  "cliente": "¿Ustedes guardan los aparatos que dejan?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "30 días",
+   "sin cargo"
+  ],
+  "evidencia": "Guardamos los equipos sin cargo por 30 días.",
+  "respuesta_ideal": "Sí, dejás el dispositivo en reparación y volvés cuando puedas. Lo guardamos sin cargo durante 30 días.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Recepción de equipos: puedes dejar tu dispositivo y volver a recogerlo. Guardamos los equipos sin cargo por 30 días»."
+ },
+ {
+  "id": "i0327",
+  "negocio": "W1_n1",
+  "turnos_previos_del_cliente": [
+   "Buenas tardes. ¿El shiitake lo venden por kilo?",
+   "ok y el deshidratado cuanto?"
+  ],
+  "cliente": "¿Y cuánto dura una vez que abro el frasco?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo ese dato. Puede consultarlo llamando a la tienda al +56 65 223 4418.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Mix del bosque (ostra, shiitake y pioppino), frasco de 40 g: $7.400»."
+ },
+ {
+  "id": "i0328",
+  "negocio": "W8_n3",
+  "turnos_previos_del_cliente": [
+   "Somos dos hermanos de 12 y 14 años, cuanto pagariamos al mes entre los dos?",
+   "y la licencia, cuanto es para los dos?",
+   "¿La licencia hay que pagarla desde el primer día?"
+  ],
+  "cliente": "¿Cómo se paga la licencia?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "efectivo",
+   "bizum"
+  ],
+  "evidencia": "La cuota de socio y la licencia se pueden pagar en efectivo o por bizum al 600 41 82 93.",
+  "respuesta_ideal": "La licencia, igual que la cuota de socio, se paga en efectivo o por bizum al 600 41 82 93.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Domiciliación bancaria obligatoria para las cuotas mensuales; se cobran entre el 1 y el 5 de cada mes. La cuota de socio y la licencia se pueden pagar en efectivo o por bizum al 600 41 82 93»."
+ },
+ {
+  "id": "i0329",
+  "negocio": "W7_n4",
+  "turnos_previos_del_cliente": [
+   "¿Venden sándwiches?",
+   "¿Qué más hay para comer?"
+  ],
+  "cliente": "¿Aceptan tarjeta?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "Efectivo, débito, crédito",
+   "sin recargo"
+  ],
+  "evidencia": "Efectivo, débito, crédito (sin recargo)",
+  "respuesta_ideal": "Sí, aceptamos efectivo, débito y crédito sin recargo adicional.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Empaques especiales para regalos, selecciones temáticas, tarjetas personalizadas»."
+ }
+]

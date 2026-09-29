@@ -1,0 +1,499 @@
+[
+ {
+  "id": "i0330",
+  "negocio": "W4_n1",
+  "turnos_previos_del_cliente": [
+   "Buenas tardes, quiero mandar un sombrero a mi hermana en Madrid, cuanto sale el envio?",
+   "ese precio ya incluye los impuestos de allá?",
+   "y cuanto demora en llegar a España?"
+  ],
+  "cliente": "Un sombrero Fino con el envio a Madrid, cuanto me sale en total?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "USD 95",
+   "USD 55",
+   "150"
+  ],
+  "evidencia": "Fino | grado 8 a 10 | USD 95 … USD 55 a Europa.",
+  "respuesta_ideal": "El Fino cuesta USD 95 y el envío a Europa USD 55, en total USD 150, sin contar los impuestos de aduana en destino.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «El sombrero viaja enrollado en su tubo de cartón y con instrucciones para volver a darle forma»."
+ },
+ {
+  "id": "i0331",
+  "negocio": "W6_n3",
+  "turnos_previos_del_cliente": [
+   "cuanto es la hora de compu?"
+  ],
+  "cliente": "y si compro la tarjeta de 10 horas cuanto me sale?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "L 170"
+  ],
+  "evidencia": "Tarjeta prepagada de 10 horas por L 170.",
+  "respuesta_ideal": "La tarjeta prepagada de 10 horas cuesta L 170.",
+  "respuesta_a_calificar": "Sobre eso, las indicaciones del negocio dicen: «Cuando hables de las tarjetas de tiempo, recuerda avisar que vencen a los 60 días»."
+ },
+ {
+  "id": "i0332",
+  "negocio": "W7_n2",
+  "turnos_previos_del_cliente": [
+   "Necesito una soldadura en el tanque de gasolina. ¿Hacen eso?",
+   "¿Cuánto es exactamente para mi tanque?",
+   "¿Trabajan los domingos?",
+   "¿Puedo traer la moto hoy a las 17:00?"
+  ],
+  "cliente": "¿Tienen garantía en los trabajos?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "garantía de 30 días",
+   "garantía del fabricante"
+  ],
+  "evidencia": "Todos nuestros servicios incluyen garantía de 30 días en mano de obra. Los repuestos originales tienen garantía del fabricante.",
+  "respuesta_ideal": "Sí, todos nuestros servicios tienen garantía de 30 días en mano de obra. Los repuestos originales tienen garantía del fabricante.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Los repuestos originales tienen garantía del fabricante»."
+ },
+ {
+  "id": "i0333",
+  "negocio": "W5_n2",
+  "turnos_previos_del_cliente": [
+   "Buenas tardes, mi madre tiene 70 años y quiere un bastón, ¿le hacéis algún descuento?",
+   "Tiene artrosis en la rodilla, ¿qué bastón le va mejor?",
+   "vale, ¿y cuánto vale el que se regula?"
+  ],
+  "cliente": "¿Cuándo tenéis sombrillas de playa?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "de mayo a septiembre"
+  ],
+  "evidencia": "Sombrillas de playa: solo de mayo a septiembre, desde 35,00 €",
+  "respuesta_ideal": "Las sombrillas de playa las tenemos solo de mayo a septiembre, desde 35,00 €.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Sombrillas de playa: solo de mayo a septiembre, desde 35,00 €»."
+ },
+ {
+  "id": "i0334",
+  "negocio": "W1_n4",
+  "turnos_previos_del_cliente": [
+   "¿Dónde queda el local?",
+   "compre un bidon de desinfectante y no me gusto el olor, ya lo abrí, lo puedo cambiar?"
+  ],
+  "cliente": "¿Venden alcohol en gel?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo esa información; en mi lista no figura el alcohol en gel.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Asunción: sin costo en compras desde Gs. 150.000; compras menores, Gs. 15.000»."
+ },
+ {
+  "id": "i0335",
+  "negocio": "W7_n1",
+  "turnos_previos_del_cliente": [
+   "¿Sirven café?",
+   "¿El pollo viene con papas?",
+   "¿Qué vinos tienen?"
+  ],
+  "cliente": "¿Me sirven la tabla de quesos y fiambres?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "Tabla de quesos y fiambres",
+   "$1800"
+  ],
+  "evidencia": "Tabla de quesos y fiambres: $1800",
+  "respuesta_ideal": "Claro, la tabla de quesos y fiambres cuesta $1800 y es perfecta para compartir.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Tabla de quesos y fiambres: $1800»."
+ },
+ {
+  "id": "i0336",
+  "negocio": "W7_n4",
+  "turnos_previos_del_cliente": [
+   "¿Hacen talleres?"
+  ],
+  "cliente": "¿Todavia hay cupos?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "Para conocer disponibilidad de cupos en el próximo taller, llamá al (55) 267-4821 o envía un email a contacto@librosycafeantofagasta.cl.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Cupos limitados»."
+ },
+ {
+  "id": "i0337",
+  "negocio": "W1_n3",
+  "turnos_previos_del_cliente": [
+   "Compré una hamaca hace 2 meses y ya se le salieron unos hilos, esto es una estafa",
+   "¿Eso lo cubre la garantía? la tengo en la terraza al aire libre"
+  ],
+  "cliente": "¿Venden hamacas con algún defecto más baratas?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No cuento con esa información. Puede llamar al (999) 924 3187 para preguntar.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «6 meses contra defectos del tejido»."
+ },
+ {
+  "id": "i0338",
+  "negocio": "W4_n2",
+  "turnos_previos_del_cliente": [
+   "buenas tardes, hasta que hora se puede entrar a visitar?"
+  ],
+  "cliente": "y en julio?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "17:30"
+  ],
+  "evidencia": "(en invierno, junio a agosto, hasta las 17:30)",
+  "respuesta_ideal": "En invierno, de junio a agosto, cierra un poco antes: hasta las 17:30.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Nota: los precios rigen desde el 1.º de julio de 2026 y pueden ajustarse en enero»."
+ },
+ {
+  "id": "i0339",
+  "negocio": "W6_n3",
+  "turnos_previos_del_cliente": [
+   "puedo pagar con tarjeta de debito?"
+  ],
+  "cliente": "y con transferencia?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "efectivo y transferencia"
+  ],
+  "evidencia": "* Formas de pago: efectivo y transferencia. No aceptamos tarjeta de crédito ni débito.",
+  "respuesta_ideal": "Sí, aceptamos efectivo y transferencia.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Formas de pago: efectivo y transferencia. No aceptamos tarjeta de crédito ni débito»."
+ },
+ {
+  "id": "i0340",
+  "negocio": "W6_n4",
+  "turnos_previos_del_cliente": [
+   "el curso de laboratorio incluye los quimicos?"
+  ],
+  "cliente": "y hace falta camara para ese?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "no es necesaria cámara"
+  ],
+  "evidencia": "- Para el curso de Laboratorio no es necesaria cámara.",
+  "respuesta_ideal": "No, para el curso de Laboratorio no es necesaria cámara.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Para el curso de Laboratorio no es necesaria cámara»."
+ },
+ {
+  "id": "i0341",
+  "negocio": "W8_n1",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Hola, quiero anotar a mi nena de 4 años, ¿qué tengo que llevar para inscribirla?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "Ficha de inscripción",
+   "DNI",
+   "aptitud física",
+   "vacunas",
+   "matrícula"
+  ],
+  "evidencia": "1. Ficha de inscripción completa (se retira en la oficina o se pide por correo).\n2. Fotocopia del DNI del chico y de un adulto responsable.\n3. Certificado de aptitud física con fecha de 2026 o 2027, firmado por pediatra, que aclare si puede realizar actividades acuáticas.\n4. Carnet de vacunas al dia (fotocopia).\n5. Pago de la matrícula.",
+  "respuesta_ideal": "¡Hola! Bienvenido a la Colonia Los Sauces. Para inscribirla necesitás la ficha de inscripción completa, fotocopia del DNI de la nena y de un adulto responsable, certificado de aptitud física firmado por pediatra (de 2026 o 2027, que aclare si puede hacer actividades acuáticas), fotocopia del carnet de vacunas y el pago de la matrícula.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Somos una colonia de vacaciones para chicos y chicas de 3 a 12 años que funciona desde 2009 en el predio del Club Náutico Los Sauces, sobre la costanera de Paraná (Entre Ríos)»."
+ },
+ {
+  "id": "i0342",
+  "negocio": "W5_n1",
+  "turnos_previos_del_cliente": [],
+  "cliente": "perdi la cedula en el 102 hace tres semanas, sigue en la oficina?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "Dirección Nacional de Identificación Civil"
+  ],
+  "evidencia": "Documentos de identidad (cédula, pasaporte, credencial cívica): a los 15 días se envían a la Dirección Nacional de Identificación Civil.",
+  "respuesta_ideal": "Los documentos de identidad se envían a los 15 días a la Dirección Nacional de Identificación Civil, así que después de tres semanas tendrías que consultar allí.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Solo los objetos olvidados dentro de los ómnibus de COSUR (líneas 102, 117, 145, 180 y 405) y en las garitas de nuestras terminales»."
+ },
+ {
+  "id": "i0343",
+  "negocio": "W3_n2",
+  "turnos_previos_del_cliente": [
+   "¿Aceptan pagos en efectivo?"
+  ],
+  "cliente": "¿Aceptan UES?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "UES",
+   "aceptamos"
+  ],
+  "evidencia": "Aceptamos pagos en UES (Unidad de Estabilización).",
+  "respuesta_ideal": "Sí, también aceptamos UES (Unidad de Estabilización).",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Aceptamos pagos en UES (Unidad de Estabilización)»."
+ },
+ {
+  "id": "i0344",
+  "negocio": "W6_n1",
+  "turnos_previos_del_cliente": [
+   "voy en carro el domingo, hay parqueo?",
+   "cuanto cobran si me quedo 3 horas en el parqueo normal?",
+   "y la moto?"
+  ],
+  "cliente": "el parqueo tiene seguridad las 24 horas?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "Solo sé que el lote auxiliar de la Calle 5 tiene vigilancia; del resto no tengo información. La Administración, al 262-5410, se lo puede aclarar.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Pedidos por encargo: desde 50 libras, con 24 horas de anticipación y un abono del 30 %»."
+ },
+ {
+  "id": "i0345",
+  "negocio": "W4_n4",
+  "turnos_previos_del_cliente": [
+   "hola, quiero marmol carrara para el tope de la cocina, que precio tiene?",
+   "cada cuanto hay que sellarlo y cuanto cuesta eso?",
+   "si mi tope tiene 30 pies, cuanto me sale el sellado?"
+  ],
+  "cliente": "y si se me mancha con limon, la garantia lo cubre?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "no cubre"
+  ],
+  "evidencia": "La garantía no cubre golpes, manchas por ácidos, vinos o cítricos dejados sobre el mármol, ni rajaduras por peso excesivo.",
+  "respuesta_ideal": "No, la garantía no cubre manchas por ácidos, vinos o cítricos; solo cubre defectos de instalación durante un año.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «La garantía no cubre golpes, manchas por ácidos, vinos o cítricos dejados sobre el mármol, ni rajaduras por peso excesivo»."
+ },
+ {
+  "id": "i0346",
+  "negocio": "W6_n2",
+  "turnos_previos_del_cliente": [
+   "hola, cuanto cuesta pescar? somos 2 adultos",
+   "y las truchas que uno saca se pagan aparte?"
+  ],
+  "cliente": "vamos con una nena de 8, cuanto es su caña?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "₡5.000"
+  ],
+  "evidencia": "Caña infantil (hasta 12 años): ₡5.000 por 2 horas.",
+  "respuesta_ideal": "La caña infantil, hasta 12 años, cuesta ₡5.000 por 2 horas.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Caña infantil (hasta 12 años): ₡5.000 por 2 horas»."
+ },
+ {
+  "id": "i0347",
+  "negocio": "W7_n4",
+  "turnos_previos_del_cliente": [],
+  "cliente": "¿Hacen talleres?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "Talleres de escritura creativa",
+   "sábados",
+   "$25.000"
+  ],
+  "evidencia": "Talleres de escritura creativa (sábados 15:00-17:00, $25.000 por taller de 8 semanas)",
+  "respuesta_ideal": "Sí, ofrecemos talleres de escritura creativa los sábados de 15:00 a 17:00. Son 8 semanas a $25.000 con máximo 10 personas.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Talleres de escritura creativa (sábados 15:00-17:00, $25.000 por taller de 8 semanas)»."
+ },
+ {
+  "id": "i0348",
+  "negocio": "W2_n4",
+  "turnos_previos_del_cliente": [
+   "Hola, cuando es el casting?",
+   "¿tengo que pagar para participar?"
+  ],
+  "cliente": "y hay q sacar cita?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "no requiere cita previa"
+  ],
+  "evidencia": "Es gratuito y no requiere cita previa.",
+  "respuesta_ideal": "No, no requiere cita previa.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Se realiza el primer sábado de cada mes a las 10:00 a. m. Es gratuito y no requiere cita previa»."
+ },
+ {
+  "id": "i0349",
+  "negocio": "W2_n4",
+  "turnos_previos_del_cliente": [
+   "¿dan clases de actuacion o de maquillaje?"
+  ],
+  "cliente": "¿si llego 15 minutos tarde me dejan entrar a la clase?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "10 minutos de tolerancia"
+  ],
+  "evidencia": "hay 10 minutos de tolerancia; pasado ese tiempo no se puede entrar a la clase.",
+  "respuesta_ideal": "No, hay 10 minutos de tolerancia y pasado ese tiempo no se puede entrar.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Puntualidad: hay 10 minutos de tolerancia; pasado ese tiempo no se puede entrar a la clase»."
+ },
+ {
+  "id": "i0350",
+  "negocio": "W5_n4",
+  "turnos_previos_del_cliente": [
+   "Buenas tardes, cuanto cobran por limpiar el cañon de una estufa a leña?",
+   "mi cañon tiene 8 metros"
+  ],
+  "cliente": "Vivo en el Valle Simpson, ¿me cobran extra?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "$8.000"
+  ],
+  "evidencia": "Sectores rurales hasta 15 km (El Claro, Valle Simpson, Lago Pollux): recargo de $8.000.",
+  "respuesta_ideal": "Sí, para Valle Simpson hay un recargo de $8.000.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Sectores rurales hasta 15 km (El Claro, Valle Simpson, Lago Pollux): recargo de $8.000»."
+ },
+ {
+  "id": "i0351",
+  "negocio": "W3_n2",
+  "turnos_previos_del_cliente": [],
+  "cliente": "¿Qué marcas de celular reparan?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "todas las marcas"
+  ],
+  "evidencia": "Celulares y smartphones (todas las marcas)",
+  "respuesta_ideal": "Reparamos todas las marcas de celulares: Samsung, iPhone, Motorola, Xiaomi, Sony, etc.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Cambios de pantalla de celular: $80 000 – $180 000 (según modelo): Reparación de botones/conectores: $25 000 – $50 000; tiempo: 1–3 horas: tiempo: 45 minutos – 1 hora»."
+ },
+ {
+  "id": "i0352",
+  "negocio": "W5_n4",
+  "turnos_previos_del_cliente": [
+   "Buenas tardes, cuanto cobran por limpiar el cañon de una estufa a leña?",
+   "mi cañon tiene 8 metros",
+   "Vivo en el Valle Simpson, ¿me cobran extra?",
+   "Ya, quiero que vengan el jueves en la mañana"
+  ],
+  "cliente": "¿Y cuánto rato se demoran?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "1 hora a 1 hora y media"
+  ],
+  "evidencia": "Cada limpieza demora entre 1 hora a 1 hora y media por estufa.",
+  "respuesta_ideal": "Cada limpieza demora entre 1 hora a 1 hora y media por estufa.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Puerto Aysén: solo martes y jueves, recargo de $15.000»."
+ },
+ {
+  "id": "i0353",
+  "negocio": "W4_n3",
+  "turnos_previos_del_cliente": [
+   "hola, vengo de otro club, tiro espada a nivel competicion, cuanto es la cuota?",
+   "con la matricula y la licencia de adulto, cuanto pagaria en total el primer mes?"
+  ],
+  "cliente": "estoy obligado a competir?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "al menos a dos torneos"
+  ],
+  "evidencia": "Los tiradores de Cadete/Juvenil y de Adultos competición tienen la obligación de asistir al menos a dos torneos por temporada.",
+  "respuesta_ideal": "Sí, en Adultos competición hay que asistir al menos a dos torneos por temporada; las inscripciones las gestiona el club y las paga cada tirador.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Los tiradores de Cadete/Juvenil y de Adultos competición tienen la obligación de asistir al menos a dos torneos por temporada»."
+ },
+ {
+  "id": "i0354",
+  "negocio": "W7_n1",
+  "turnos_previos_del_cliente": [
+   "Hola, ¿a qué hora abren?",
+   "¿Tienen disponibilidad para comer hoy al mediodía?"
+  ],
+  "cliente": "¿Hacen milanesa?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "Milanesa a la napolitana con papas"
+  ],
+  "evidencia": "Milanesa a la napolitana con papas: $1450",
+  "respuesta_ideal": "Sí, ofrecemos milanesa a la napolitana con papas a $1450. Es exquisita, hecha en el momento.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Milanesa a la napolitana con papas: $1450»."
+ },
+ {
+  "id": "i0355",
+  "negocio": "W7_n3",
+  "turnos_previos_del_cliente": [
+   "¿Cuánto cuesta el tour a Machu Picchu?",
+   "¿Qué incluye exactamente?"
+  ],
+  "cliente": "¿Cuántas personas mínimo necesitan para salir?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "Mínimo 2 personas"
+  ],
+  "evidencia": "Mínimo 2 personas por tour",
+  "respuesta_ideal": "El mínimo es 2 personas, así que podés ir con un amigo o familiar sin problemas.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Mínimo 2 personas por tour»."
+ },
+ {
+  "id": "i0356",
+  "negocio": "W7_n3",
+  "turnos_previos_del_cliente": [
+   "¿Cuanto tarda a Nazca Lines?"
+  ],
+  "cliente": "¿Incluye comida?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "Para detalles sobre qué comidas incluye el tour a Nazca, consulta al (01) 428-3657 o reservas@aventuraandina.pe.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Algunas comidas (especificado por tour)»."
+ },
+ {
+  "id": "i0357",
+  "negocio": "W1_n1",
+  "turnos_previos_del_cliente": [
+   "hola buen dia, ¿hay pioppino ahora en octubre?",
+   "¿cuánto me duran las setas frescas en el refri?",
+   "Cuanto cuesta el kit para cultivar shiitake?"
+  ],
+  "cliente": "¿ese también trae pulverizador?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo ese dato para el Kit Shiitake (el que trae pulverizador es el Kit Ostra). Puede confirmarlo al +56 65 223 4418.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Viene con instrucciones impresas y un pulverizador»."
+ },
+ {
+  "id": "i0358",
+  "negocio": "W2_n1",
+  "turnos_previos_del_cliente": [
+   "hola"
+  ],
+  "cliente": "los abogados a que hora pueden ir?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "09:00 a 17:00"
+  ],
+  "evidencia": "Los abogados atienden de lunes a viernes de 09:00 a 17:00 h con credencial vigente",
+  "respuesta_ideal": "De lunes a viernes de 09:00 a 17:00 h, con credencial vigente.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Los abogados atienden de lunes a viernes de 09:00 a 17:00 h con credencial vigente, sin necesidad de inscripción de visita»."
+ },
+ {
+  "id": "i0359",
+  "negocio": "W2_n1",
+  "turnos_previos_del_cliente": [
+   "Q papeles necesito para inscribirme como visita?"
+  ],
+  "cliente": "¿me sirve la licencia de conducir?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "No sirve la licencia de conducir"
+  ],
+  "evidencia": "No sirve la licencia de conducir.",
+  "respuesta_ideal": "No, la licencia de conducir no sirve como documento.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Presentar cédula de identidad vigente (los extranjeros, pasaporte o cédula chilena para extranjeros). No sirve la licencia de conducir»."
+ }
+]
