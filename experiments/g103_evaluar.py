@@ -71,6 +71,7 @@ def main():
         'b0': dict(base=base, off=OFF['b0']), 'prefijo': dict(base=base, off=OFF['prefijo']),
         'tratamiento': dict(base=base, off=()), 'otro_negocio': dict(base=base, off=(), other=True),
         'renombrado': dict(base=base, off=(), rename=True, strict=True), 'reinicio': dict(base=base, off=(), restart=True),
+        'sin_instrucciones': dict(base=base, off=('follow_instructions',)),
         'b0_renombrado': dict(base=base, off=OFF['b0'], rename=True, strict=True),
         'sin_pares': dict(base=Path(no_pairs) if no_pairs else None, off=()),
         'pares_barajados': dict(base=Path(shuffled) if shuffled else None, off=()),
