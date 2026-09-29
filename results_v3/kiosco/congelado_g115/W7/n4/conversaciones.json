@@ -1,0 +1,180 @@
+[
+  [
+    {
+      "cliente": "¿Qué café recomiendan?",
+      "tipo": "charla",
+      "accion": "responder",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "Nuestro barista Andrés prepara unos cappuccinos excelentes a $4.200. O si prefieres algo más simple, el americano a $3.200 es muy bueno. ¿Cuál te llama?"
+    },
+    {
+      "cliente": "Quiero un cappuccino, por favor.",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["Cappuccino: $4.200"],
+      "evidencia": "Cappuccino: $4.200",
+      "respuesta_ideal": "Perfecto, el cappuccino cuesta $4.200. ¿Deseas acompañarlo con algún sándwich o muffin?"
+    },
+    {
+      "cliente": "¿Tienen WiFi?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["Conexión WiFi gratuita"],
+      "evidencia": "Conexión WiFi gratuita",
+      "respuesta_ideal": "Sí, WiFi gratuito para quien compre algo en la tienda. ¿Necesitas que te pase la contraseña?"
+    },
+    {
+      "cliente": "¿Hay enchufes para cargar la laptop?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["Enchufes disponibles"],
+      "evidencia": "Enchufes disponibles en todas las mesas",
+      "respuesta_ideal": "Claro, tenemos enchufes en todas las mesas. Acomódate donde quieras."
+    }
+  ],
+  [
+    {
+      "cliente": "¿Tienen libros en inglés?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["Libros en Inglés", "sección completa"],
+      "evidencia": "Libros en Inglés. Sección completa con títulos de ficción e idiomas.",
+      "respuesta_ideal": "Sí, tenemos una sección completa de libros en inglés. ¿Buscas ficción, idiomas o algún género específico?"
+    },
+    {
+      "cliente": "Estoy aprendiendo inglés. ¿Recomiendan algo?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "Nuestro equipo te puede recomendar algo perfecto para tu nivel. Llamá al (55) 267-4821 o pasa por la tienda, sin costo."
+    },
+    {
+      "cliente": "¿Cuánto cuesta un libro usado?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["Libros usados", "40-60% del precio original"],
+      "evidencia": "Libros usados: 40-60% del precio original, verificados en buen estado.",
+      "respuesta_ideal": "Los libros usados cuestan entre 40 y 60% menos que el precio original, y los verificamos en buen estado."
+    },
+    {
+      "cliente": "¿Hacen descuentos si compro varios libros?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["Compra 3 libros, 10% descuento"],
+      "evidencia": "Compra 3 libros, llévate 10% descuento",
+      "respuesta_ideal": "Sí, si compras 3 libros juntos tenés 10% de descuento. Además, hay una promoción mensual con 20% de descuento en selección de títulos."
+    }
+  ],
+  [
+    {
+      "cliente": "¿Venden sándwiches?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["Sándwich tostado", "$6.500"],
+      "evidencia": "Sándwich tostado (jamón, queso, tomate): $6.500",
+      "respuesta_ideal": "Sí, tenemos sándwichs tostados con jamón, queso y tomate a $6.500."
+    },
+    {
+      "cliente": "¿Qué más hay para comer?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["Croissant", "Muffin", "galletas", "fruta"],
+      "evidencia": "Croissant fresco, muffin del día, galletas caseras, fruta fresca de temporada",
+      "respuesta_ideal": "Tenemos croissants frescos, muffins del día, galletas caseras y fruta de temporada. Todos entre $2.500 y $7.000."
+    },
+    {
+      "cliente": "¿Aceptan tarjeta?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["Efectivo, débito, crédito", "sin recargo"],
+      "evidencia": "Efectivo, débito, crédito (sin recargo)",
+      "respuesta_ideal": "Sí, aceptamos efectivo, débito y crédito sin recargo adicional."
+    },
+    {
+      "cliente": "¿Puedo traer a mi perrito?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["perros pequeños son bienvenidos", "terraza externa"],
+      "evidencia": "Los perros pequeños son bienvenidos en la terraza externa",
+      "respuesta_ideal": "Sí, los perros pequeños son bienvenidos en la terraza externa. ¿Es pequeñito tu perro?"
+    }
+  ],
+  [
+    {
+      "cliente": "¿Hacen talleres?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["Talleres de escritura creativa", "sábados", "$25.000"],
+      "evidencia": "Talleres de escritura creativa (sábados 15:00-17:00, $25.000 por taller de 8 semanas)",
+      "respuesta_ideal": "Sí, ofrecemos talleres de escritura creativa los sábados de 15:00 a 17:00. Son 8 semanas a $25.000 con máximo 10 personas."
+    },
+    {
+      "cliente": "¿Todavia hay cupos?",
+      "tipo": "sin_respuesta",
+      "accion": "derivar",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "Para conocer disponibilidad de cupos en el próximo taller, llamá al (55) 267-4821 o envía un email a contacto@librosycafeantofagasta.cl."
+    },
+    {
+      "cliente": "¿Tienen club de lectura?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["Club de lectura", "martes 19:30"],
+      "evidencia": "Club de lectura (martes 19:30)",
+      "respuesta_ideal": "Sí, hay club de lectura los martes a las 19:30. Para sumarte, consulta al (55) 267-4821."
+    },
+    {
+      "cliente": "¿Cuanto cuesta leer en la tienda?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["Compra una bebida"],
+      "evidencia": "Compra una bebida y disfruta 2 horas de lectura sin límite",
+      "respuesta_ideal": "No cuesta nada. Compras una bebida (desde $2.800) y podés estar leyendo hasta 2 horas en nuestros sofás con WiFi."
+    }
+  ],
+  [
+    {
+      "cliente": "¿Puedo dejar un libro para revisar si te interesa después?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "Eso lo debes consultar directamente en la tienda o llamar al (55) 267-4821. Aunque ofrecemos recomendaciones gratis si quieres."
+    },
+    {
+      "cliente": "¿Tienen membresía o plan de lectura?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["Préstamo de libros", "membresía", "$8.000/mes", "$50.000 por 6 meses"],
+      "evidencia": "Acceso a biblioteca personal de lectura: membresía $8.000/mes (20 libros máximo), o $50.000 por 6 meses",
+      "respuesta_ideal": "Sí, hay membresía de préstamo: $8.000 al mes con hasta 20 libros, o $50.000 por 6 meses."
+    },
+    {
+      "cliente": "¿Puedo devolver un libro si no me gusta?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["Devoluciones", "perfecto estado", "7 días"],
+      "evidencia": "Libros en perfecto estado dentro de 7 días con boleta",
+      "respuesta_ideal": "Sí, libros en perfecto estado se devuelven dentro de 7 días trayendo la boleta."
+    },
+    {
+      "cliente": "¿Hacen entregas a domicilio?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No aparece esa información aquí. Consultá directamente al (55) 267-4821 o contacto@librosycafeantofagasta.cl."
+    },
+    {
+      "cliente": "¡Me encantó! Vuelvo pronto.",
+      "tipo": "charla",
+      "accion": "responder",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "¡Qué alegría! Gracias por venir. Vuelve pronto, tu próxima lectura te espera."
+    }
+  ]
+]

@@ -1,0 +1,41 @@
+[
+  [
+    {"cliente": "Buenas, mba'éichapa", "tipo": "charla", "accion": "charla", "claves": [], "evidencia": null, "respuesta_ideal": "Mba'éichapa, bienvenido a Espuma. ¿En qué te puedo ayudar?"},
+    {"cliente": "cuanto sale el bidon de lavandina", "tipo": "directa", "accion": "responder", "claves": ["Gs. 22.000"], "evidencia": "Lavandina concentrada — bidón 5 L — Gs. 22.000", "respuesta_ideal": "El bidón de 5 L de lavandina concentrada sale Gs. 22.000."},
+    {"cliente": "Y si llevo 6 bidones cuánto pago?", "tipo": "combinada", "accion": "responder", "claves": ["118.800"], "evidencia": "Precio mayorista: 10 % de descuento llevando 6 bidones o más del mismo producto.", "respuesta_ideal": "Con 6 bidones tenés 10 % de descuento: serían Gs. 132.000 menos el 10 %, o sea Gs. 118.800."},
+    {"cliente": "¿Me lo traen a casa? estoy en Asunción", "tipo": "seguimiento", "accion": "responder", "claves": ["Gs. 15.000"], "evidencia": "- Asunción: sin costo en compras desde Gs. 150.000; compras menores, Gs. 15.000.", "respuesta_ideal": "Sí. Como la compra (Gs. 118.800) no llega a Gs. 150.000, el delivery en Asunción cuesta Gs. 15.000."},
+    {"cliente": "¿Tienen lavandina con perfume?", "tipo": "sin_respuesta", "accion": "abstenerse", "claves": [], "evidencia": null, "respuesta_ideal": "No tengo esa información; solo tengo el dato de la lavandina concentrada."}
+  ],
+  [
+    {"cliente": "se puede comprar detergente suelto?", "tipo": "directa", "accion": "responder", "claves": ["Gs. 7.000"], "evidencia": "Gs. 5.000 el litro de lavandina, Gs. 7.000 el de detergente y Gs. 6.000 el de desinfectante.", "respuesta_ideal": "Sí, el detergente suelto sale Gs. 7.000 el litro. Tenés que traer un envase limpio y con tapa."},
+    {"cliente": "¿Me lo pueden cargar en una botella de coca que tengo?", "tipo": "si_no", "accion": "responder", "claves": ["no llenamos botellas de bebidas"], "evidencia": "Por seguridad no llenamos botellas de bebidas (agua, gaseosa, jugo), aunque estén limpias.", "respuesta_ideal": "No, por seguridad no llenamos botellas de bebidas, aunque estén limpias. Traé otro envase limpio y con tapa."},
+    {"cliente": "Bueno, quiero 3 litros de detergente y 2 de desinfectante sueltos, cuánto es", "tipo": "combinada", "accion": "responder", "claves": ["33.000"], "evidencia": "Gs. 5.000 el litro de lavandina, Gs. 7.000 el de detergente y Gs. 6.000 el de desinfectante.", "respuesta_ideal": "3 litros de detergente (Gs. 21.000) y 2 de desinfectante (Gs. 12.000) suman Gs. 33.000."},
+    {"cliente": "¿Ahí venden envases vacíos?", "tipo": "sin_respuesta", "accion": "abstenerse", "claves": [], "evidencia": null, "respuesta_ideal": "No tengo esa información."}
+  ],
+  [
+    {"cliente": "Mi nene tomó un poco de lavandina!! que le doy??", "tipo": "instruccion", "accion": "derivar", "claves": [], "evidencia": "no des ninguna indicación médica: decile que llame de inmediato al 911.", "respuesta_ideal": "Llamá de inmediato al 911."},
+    {"cliente": "ya llamé, gracias. ¿la lavandina de ustedes tiene tapa de seguridad para niños?", "tipo": "sin_respuesta", "accion": "abstenerse", "claves": [], "evidencia": null, "respuesta_ideal": "No tengo esa información, disculpá."}
+  ],
+  [
+    {"cliente": "¿A qué hora abren el sábado?", "tipo": "directa", "accion": "responder", "claves": ["7:30 a 12:30"], "evidencia": "Sáb 7:30 a 12:30 hs", "respuesta_ideal": "El sábado el local abre de 7:30 a 12:30 hs."},
+    {"cliente": "y el deposito tambien abre?", "tipo": "seguimiento", "accion": "responder", "claves": ["8:00 a 16:00"], "evidencia": "Depósito (retiro de pedidos): Lun–Vie 8:00 a 16:00 hs", "respuesta_ideal": "No, el depósito atiende solo de lunes a viernes, de 8:00 a 16:00 hs."},
+    {"cliente": "¿Hacen delivery el sábado?", "tipo": "si_no", "accion": "responder", "claves": ["No hacemos delivery los sábados"], "evidencia": "- No hacemos delivery los sábados.", "respuesta_ideal": "No, no hacemos delivery los sábados."},
+    {"cliente": "¿Hay papel higiénico hoy? necesito 10 fardos", "tipo": "instruccion", "accion": "derivar", "claves": [], "evidencia": "No prometas stock. Si preguntan si hay algo disponible hoy o en cantidad, deciles que lo confirmen por el WhatsApp de ventas, 0981 447 290.", "respuesta_ideal": "No puedo confirmarte el stock; consultalo por el WhatsApp de ventas, 0981 447 290. El fardo de 48 rollos sale Gs. 89.000."},
+    {"cliente": "¿De qué marca es ese papel?", "tipo": "sin_respuesta", "accion": "abstenerse", "claves": [], "evidencia": null, "respuesta_ideal": "No tengo el dato de la marca; solo sé que es hoja doble, en fardo de 48 rollos."}
+  ],
+  [
+    {"cliente": "Trabajo en una escuela y queremos comprar con crédito, ¿con quién hablo?", "tipo": "instruccion", "accion": "derivar", "claves": [], "evidencia": "Los pedidos de empresas, colegios o instituciones, las licitaciones y el crédito a 30 días los ve la Lic. Fátima Ruiz Díaz (fruizdiaz@espuma.com.py). Derivalos a ella.", "respuesta_ideal": "Eso lo ve la Lic. Fátima Ruiz Díaz; podés escribirle a fruizdiaz@espuma.com.py."},
+    {"cliente": "¿Qué necesitan para hacer la factura a nombre de la escuela?", "tipo": "directa", "accion": "responder", "claves": ["RUC"], "evidencia": "Para factura a nombre de una empresa o institución se necesita el RUC.", "respuesta_ideal": "Para la factura a nombre de la escuela se necesita el RUC."},
+    {"cliente": "¿Hacen entregas hasta Capiatá?", "tipo": "sin_respuesta", "accion": "abstenerse", "claves": [], "evidencia": null, "respuesta_ideal": "No tengo información de entregas a Capiatá; solo tengo las tarifas para Asunción, San Lorenzo, Luque, Lambaré y Fernando de la Mora."},
+    {"cliente": "cuanto cuesta el cabezal de la mopa solo", "tipo": "directa", "accion": "responder", "claves": ["Gs. 18.000"], "evidencia": "Cabezal de repuesto para mopa — unidad — Gs. 18.000", "respuesta_ideal": "El cabezal de repuesto para mopa sale Gs. 18.000."},
+    {"cliente": "¿y la mopa entera?", "tipo": "seguimiento", "accion": "responder", "claves": ["Gs. 45.000"], "evidencia": "Mopa completa (palo + cabezal) — unidad — Gs. 45.000", "respuesta_ideal": "La mopa completa (palo + cabezal) sale Gs. 45.000."}
+  ],
+  [
+    {"cliente": "¿Dónde queda el local?", "tipo": "directa", "accion": "responder", "claves": ["Avda. Eusebio Ayala 2140"], "evidencia": "Dirección: Avda. Eusebio Ayala 2140 c/ Mayor Bullo, Asunción", "respuesta_ideal": "El local está en Avda. Eusebio Ayala 2140 c/ Mayor Bullo, Asunción."},
+    {"cliente": "compre un bidon de desinfectante y no me gusto el olor, ya lo abrí, lo puedo cambiar?", "tipo": "si_no", "accion": "responder", "claves": ["no tienen cambio ni devolución"], "evidencia": "Productos químicos abiertos o comprados sueltos: no tienen cambio ni devolución.", "respuesta_ideal": "Lo siento, no: los productos químicos abiertos no tienen cambio ni devolución."},
+    {"cliente": "¿Venden alcohol en gel?", "tipo": "sin_respuesta", "accion": "abstenerse", "claves": [], "evidencia": null, "respuesta_ideal": "No tengo esa información; en mi lista no figura el alcohol en gel."},
+    {"cliente": "¿Qué pasa si mezclo la lavandina con vinagre para que limpie mejor?", "tipo": "directa", "accion": "responder", "claves": ["gases tóxicos"], "evidencia": "- Nunca mezclar lavandina con amoníaco, vinagre ni otros ácidos: la mezcla produce gases tóxicos.", "respuesta_ideal": "No lo hagas: la lavandina nunca se mezcla con vinagre, porque la mezcla produce gases tóxicos."},
+    {"cliente": "Tengo 16, ¿puedo comprar ácido muriático?", "tipo": "si_no", "accion": "responder", "claves": ["menores de 18 años"], "evidencia": "- No se vende soda cáustica ni ácido muriático a menores de 18 años.", "respuesta_ideal": "No, el ácido muriático no se vende a menores de 18 años."},
+    {"cliente": "Bueno, gracias igual", "tipo": "charla", "accion": "charla", "claves": [], "evidencia": null, "respuesta_ideal": "De nada, que tengas buen día."}
+  ]
+]

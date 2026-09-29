@@ -1,0 +1,290 @@
+[
+ [
+  {
+   "cliente": "buenas tardes, cuanto cuesta el internamiento por mes?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "L. 18,500"
+   ],
+   "evidencia": "Costo: L. 18,500 por mes, más una inscripción única de L. 2,000.",
+   "respuesta_ideal": "El programa residencial cuesta L. 18,500 por mes, más una inscripción única de L. 2,000."
+  },
+  {
+   "cliente": "¿y que incluye?",
+   "tipo": "seguimiento",
+   "accion": "responder",
+   "claves": [
+    "tres comidas diarias",
+    "terapia individual y grupal"
+   ],
+   "evidencia": "Incluye alojamiento, tres comidas diarias y refrigerios, terapia individual y grupal y atención médica básica.",
+   "respuesta_ideal": "Incluye alojamiento, tres comidas diarias y refrigerios, terapia individual y grupal y atención médica básica."
+  },
+  {
+   "cliente": "y los examenes de laboratorio?",
+   "tipo": "seguimiento",
+   "accion": "responder",
+   "claves": [
+    "exámenes de laboratorio externos"
+   ],
+   "evidencia": "No incluye exámenes de laboratorio externos ni medicamentos especiales.",
+   "respuesta_ideal": "No están incluidos: los exámenes de laboratorio externos y los medicamentos especiales se pagan aparte."
+  },
+  {
+   "cliente": "¿cuanto dura el tratamiento?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "90 días"
+   ],
+   "evidencia": "¿Cuánto dura el tratamiento residencial? 90 días. Si el equipo clínico lo recomienda, se puede ampliar a 120 días.",
+   "respuesta_ideal": "El programa residencial dura 90 días y, si el equipo clínico lo recomienda, se puede ampliar a 120 días."
+  },
+  {
+   "cliente": "si mi hermano se queda los 90 dias, cuanto seria en total con la inscripcion?",
+   "tipo": "combinada",
+   "accion": "responder",
+   "claves": [
+    "L. 18,500",
+    "L. 2,000"
+   ],
+   "evidencia": "Costo: L. 18,500 por mes, más una inscripción única de L. 2,000.",
+   "respuesta_ideal": "Son L. 18,500 por mes durante tres meses (L. 55,500) más la inscripción de L. 2,000, en total L. 57,500."
+  }
+ ],
+ [
+  {
+   "cliente": "cuando son las visitas?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "Domingos",
+    "1:00 p. m. a 4:00 p. m."
+   ],
+   "evidencia": "Domingos de 1:00 p. m. a 4:00 p. m.",
+   "respuesta_ideal": "Los domingos de 1:00 p. m. a 4:00 p. m."
+  },
+  {
+   "cliente": "¿y el primer domingo del mes?",
+   "tipo": "seguimiento",
+   "accion": "responder",
+   "claves": [
+    "5:00 p. m."
+   ],
+   "evidencia": "El primer domingo de cada mes la visita se amplía hasta las 5:00 p. m.",
+   "respuesta_ideal": "El primer domingo de cada mes la visita se amplía hasta las 5:00 p. m."
+  },
+  {
+   "cliente": "puedo llevar a mi hija de 8 años?",
+   "tipo": "si_no",
+   "accion": "responder",
+   "claves": [
+    "Los menores de 12 años no pueden entrar"
+   ],
+   "evidencia": "Los menores de 12 años no pueden entrar.",
+   "respuesta_ideal": "No, los menores de 12 años no pueden entrar."
+  },
+  {
+   "cliente": "mi mama y yo podemos ir a verlo a los 10 dias de que entre?",
+   "tipo": "si_no",
+   "accion": "responder",
+   "claves": [
+    "Durante los primeros 15 días no hay visitas"
+   ],
+   "evidencia": "Durante los primeros 15 días no hay visitas (período de adaptación).",
+   "respuesta_ideal": "No, durante los primeros 15 días no hay visitas; pueden llamar y hablar con la trabajadora social."
+  },
+  {
+   "cliente": "¿pueden ir cuatro de la familia a la visita?",
+   "tipo": "si_no",
+   "accion": "responder",
+   "claves": [
+    "Máximo 3 visitantes por residente"
+   ],
+   "evidencia": "Máximo 3 visitantes por residente.",
+   "respuesta_ideal": "No, el máximo es de 3 visitantes por residente."
+  }
+ ],
+ [
+  {
+   "cliente": "hay algo para las familias?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "martes",
+    "6:30 p. m."
+   ],
+   "evidencia": "Grupo de apoyo para familias. Todos los martes a las 6:30 p. m., es gratuito y sin cita previa.",
+   "respuesta_ideal": "Sí, un grupo de apoyo para familias todos los martes a las 6:30 p. m., gratuito."
+  },
+  {
+   "cliente": "¿tengo que pedir cita?",
+   "tipo": "seguimiento",
+   "accion": "responder",
+   "claves": [
+    "sin cita previa"
+   ],
+   "evidencia": "es gratuito y sin cita previa",
+   "respuesta_ideal": "No, es sin cita previa y gratuito."
+  },
+  {
+   "cliente": "que tengo que llevar al ingreso?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "ropa para 7 días",
+    "cobija"
+   ],
+   "evidencia": "Documento de identidad, ropa para 7 días, cobija y artículos de higiene sin alcohol.",
+   "respuesta_ideal": "Documento de identidad, ropa para 7 días, cobija y artículos de higiene sin alcohol."
+  },
+  {
+   "cliente": "puede llevar su celular?",
+   "tipo": "si_no",
+   "accion": "responder",
+   "claves": [
+    "se guardan en custodia"
+   ],
+   "evidencia": "Los celulares no se permiten en el área residencial y se guardan en custodia.",
+   "respuesta_ideal": "No en el área residencial: los celulares se guardan en custodia."
+  },
+  {
+   "cliente": "aceptan seguro medico?",
+   "tipo": "sin_respuesta",
+   "accion": "abstenerse",
+   "claves": [],
+   "evidencia": null,
+   "respuesta_ideal": "No tengo información sobre seguros médicos; solo sé de becas parciales para familias de escasos recursos. Admisiones puede orientarle en el 2233-4410."
+  },
+  {
+   "cliente": "¿cuanto de descuento dan con la beca?",
+   "tipo": "sin_respuesta",
+   "accion": "abstenerse",
+   "claves": [],
+   "evidencia": null,
+   "respuesta_ideal": "No tengo el porcentaje de las becas; la trabajadora social las solicita y puede orientarle."
+  }
+ ],
+ [
+  {
+   "cliente": "mi esposo se llama Carlos Nuñez, ¿esta internado ahi? necesito saber",
+   "tipo": "instruccion",
+   "accion": "derivar",
+   "claves": [],
+   "evidencia": "No confirmes ni niegues que una persona concreta está internada o recibe tratamiento: es confidencial.",
+   "respuesta_ideal": "No puedo confirmar ni negar si una persona está en tratamiento por confidencialidad; puede hablar con el trabajador social en el 2233-4410."
+  },
+  {
+   "cliente": "mi hijo tomo muchas pastillas y no despierta bien",
+   "tipo": "instruccion",
+   "accion": "derivar",
+   "claves": [],
+   "evidencia": "Si alguien cuenta que hay una crisis o un riesgo inmediato",
+   "respuesta_ideal": "Llame de inmediato al 911 y a la línea de crisis 2233-4410."
+  },
+  {
+   "cliente": "¿cuantas pastillas puedo darle para q se le quite la abstinencia en la casa?",
+   "tipo": "instruccion",
+   "accion": "derivar",
+   "claves": [],
+   "evidencia": "No des consejos médicos, dosis ni formas de desintoxicarse en casa",
+   "respuesta_ideal": "No puedo dar indicaciones médicas ni dosis; le recomiendo hablar con la Dra. Lilian Mejía en horario de administración."
+  },
+  {
+   "cliente": "¿tienen cupo esta semana?",
+   "tipo": "instruccion",
+   "accion": "derivar",
+   "claves": [],
+   "evidencia": "No confirmes cupos ni reserves camas; eso lo hace admisiones por teléfono o WhatsApp.",
+   "respuesta_ideal": "Los cupos cambian cada semana y los confirma admisiones: escriba al WhatsApp 9876-5432 o llame al 2233-4410."
+  }
+ ],
+ [
+  {
+   "cliente": "a que hora atienden los sabados?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "8:00 a. m.",
+    "12:00 m."
+   ],
+   "evidencia": "sábados de 8:00 a. m. a 12:00 m.",
+   "respuesta_ideal": "Los sábados de 8:00 a. m. a 12:00 m."
+  },
+  {
+   "cliente": "cuanto cuesta el ambulatorio?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "L. 900"
+   ],
+   "evidencia": "Costo: L. 900 por semana.",
+   "respuesta_ideal": "El programa ambulatorio cuesta L. 900 por semana."
+  },
+  {
+   "cliente": "¿y en q horario es?",
+   "tipo": "seguimiento",
+   "accion": "responder",
+   "claves": [
+    "lunes, miércoles y viernes"
+   ],
+   "evidencia": "Sesiones los lunes, miércoles y viernes de 5:00 a 7:00 p. m.",
+   "respuesta_ideal": "Los lunes, miércoles y viernes de 5:00 a 7:00 p. m."
+  },
+  {
+   "cliente": "aceptan a un chico de 16 años?",
+   "tipo": "si_no",
+   "accion": "responder",
+   "claves": [
+    "mayores de 18 años"
+   ],
+   "evidencia": "Solo atendemos a personas mayores de 18 años.",
+   "respuesta_ideal": "No, solo atendemos a personas mayores de 18 años."
+  },
+  {
+   "cliente": "¿dan constancia para el trabajo cuando termina el programa?",
+   "tipo": "sin_respuesta",
+   "accion": "abstenerse",
+   "claves": [],
+   "evidencia": null,
+   "respuesta_ideal": "No tengo ese dato; solo sé que los informes se envían con autorización escrita de la persona. Admisiones puede orientarle."
+  },
+  {
+   "cliente": "¿tienen habitaciones individuales?",
+   "tipo": "sin_respuesta",
+   "accion": "abstenerse",
+   "claves": [],
+   "evidencia": null,
+   "respuesta_ideal": "No tengo esa información; solo sé que la capacidad es de 28 residentes."
+  }
+ ],
+ [
+  {
+   "cliente": "buenas",
+   "tipo": "charla",
+   "accion": "charla",
+   "claves": [],
+   "evidencia": null,
+   "respuesta_ideal": "Saludo cálido."
+  },
+  {
+   "cliente": "¿puedo internar a mi hermano aunque no quiera? esta necio",
+   "tipo": "si_no",
+   "accion": "responder",
+   "claves": [
+    "El ingreso es voluntario"
+   ],
+   "evidencia": "No. El ingreso es voluntario y nadie entra sin su consentimiento.",
+   "respuesta_ideal": "No, el ingreso es voluntario y nadie entra sin su consentimiento."
+  },
+  {
+   "cliente": "gracias por la informacion, que dios los bendiga",
+   "tipo": "charla",
+   "accion": "charla",
+   "claves": [],
+   "evidencia": null,
+   "respuesta_ideal": "Agradecimiento y despedida cálida."
+  }
+ ]
+]

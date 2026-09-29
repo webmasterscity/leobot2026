@@ -1,0 +1,283 @@
+[
+ [
+  {
+   "cliente": "Mba'éichapa! a que hora abren los domingos?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "06:00"
+   ],
+   "evidencia": "| Minorista | domingos | 06:00 a 12:00 |",
+   "respuesta_ideal": "Los domingos el mercado minorista abre a las 06:00 y cierra a las 12:00."
+  },
+  {
+   "cliente": "¿y entre semana?",
+   "tipo": "seguimiento",
+   "accion": "responder",
+   "claves": [
+    "06:00",
+    "18:00"
+   ],
+   "evidencia": "| Minorista | lunes a sábado | 06:00 a 18:00 |",
+   "respuesta_ideal": "De lunes a sábado el minorista atiende de 06:00 a 18:00."
+  },
+  {
+   "cliente": "¿el mayorista tambien funciona los domingos?",
+   "tipo": "si_no",
+   "accion": "responder",
+   "claves": [
+    "lunes a sábado"
+   ],
+   "evidencia": "| Mayorista | lunes a sábado | 02:00 a 10:00 |",
+   "respuesta_ideal": "No, el sector mayorista funciona de lunes a sábado, de 02:00 a 10:00."
+  },
+  {
+   "cliente": "y para comprar por mayor, cuando es?",
+   "tipo": "instruccion",
+   "accion": "responder",
+   "claves": [
+    "02:00 a 10:00",
+    "menores de 12 años"
+   ],
+   "evidencia": "Cuando alguien pregunte por el horario mayorista, recuérdale siempre que los menores de 12 años no pueden ingresar a ese sector.",
+   "respuesta_ideal": "El mayorista funciona de lunes a sábado de 02:00 a 10:00. Recuerde que los menores de 12 años no pueden ingresar a ese sector."
+  }
+ ],
+ [
+  {
+   "cliente": "donde dejo el auto y cuanto sale?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "Gs. 5.000"
+   ],
+   "evidencia": "| Auto o moto | Gs. 5.000 por día |",
+   "respuesta_ideal": "Hay estacionamiento; para auto o moto son Gs. 5.000 por día."
+  },
+  {
+   "cliente": "¿y si voy con un camion?",
+   "tipo": "seguimiento",
+   "accion": "responder",
+   "claves": [
+    "Gs. 25.000",
+    "Gs. 8.000"
+   ],
+   "evidencia": "| Camión hasta 4 horas | Gs. 25.000 |",
+   "respuesta_ideal": "Un camión paga Gs. 25.000 hasta 4 horas y Gs. 8.000 por cada hora adicional."
+  },
+  {
+   "cliente": "si mi camion se queda 6 horas, cuanto pago en total?",
+   "tipo": "combinada",
+   "accion": "responder",
+   "claves": [
+    "Gs. 25.000",
+    "Gs. 8.000"
+   ],
+   "evidencia": "| Camión, hora adicional | Gs. 8.000 |",
+   "respuesta_ideal": "Gs. 25.000 por las primeras 4 horas más 2 horas adicionales de Gs. 8.000, en total Gs. 41.000."
+  },
+  {
+   "cliente": "¿se puede alquilar una carretilla por todo el dia con tarifa fija?",
+   "tipo": "sin_respuesta",
+   "accion": "abstenerse",
+   "claves": [],
+   "evidencia": null,
+   "respuesta_ideal": "Solo sé que el alquiler es de Gs. 3.000 la hora; no tengo información sobre alquiler por día completo."
+  },
+  {
+   "cliente": "¿se puede entrar con el perro?",
+   "tipo": "si_no",
+   "accion": "responder",
+   "claves": [
+    "No se permite el ingreso de mascotas"
+   ],
+   "evidencia": "No se permite el ingreso de mascotas.",
+   "respuesta_ideal": "No, no se permite el ingreso de mascotas."
+  }
+ ],
+ [
+  {
+   "cliente": "cuales son los pabellones de las carnes?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "Pabellón C"
+   ],
+   "evidencia": "Pabellón C: carnes, embutidos y lácteos",
+   "respuesta_ideal": "Las carnes están en el Pabellón C, junto con embutidos y lácteos."
+  },
+  {
+   "cliente": "y el pescado?",
+   "tipo": "seguimiento",
+   "accion": "responder",
+   "claves": [
+    "Pabellón D"
+   ],
+   "evidencia": "Pabellón D: pescados y mariscos",
+   "respuesta_ideal": "El pescado y los mariscos están en el Pabellón D."
+  },
+  {
+   "cliente": "¿a cuanto esta hoy el kilo de tomate?",
+   "tipo": "instruccion",
+   "accion": "responder",
+   "claves": [
+    "cada puesto"
+   ],
+   "evidencia": "Los precios de los productos los fija cada puesto y cambian a diario.",
+   "respuesta_ideal": "Cada puesto fija su propio precio y cambia a diario; no tengo listas de precios, así que no puedo darle un valor."
+  },
+  {
+   "cliente": "hay wifi gratis en el patio de comidas?",
+   "tipo": "sin_respuesta",
+   "accion": "abstenerse",
+   "claves": [],
+   "evidencia": null,
+   "respuesta_ideal": "No tengo ese dato."
+  },
+  {
+   "cliente": "hay cajero automatico dentro del mercado?",
+   "tipo": "sin_respuesta",
+   "accion": "abstenerse",
+   "claves": [],
+   "evidencia": null,
+   "respuesta_ideal": "No tengo ese dato. Puede consultar en la Administración al (021) 555 210."
+  },
+  {
+   "cliente": "aceptan tarjeta?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "solo en el Pabellón F"
+   ],
+   "evidencia": "Tarjetas de débito y crédito: solo en el Pabellón F y en la Administración.",
+   "respuesta_ideal": "Las tarjetas se aceptan solo en el Pabellón F y en la Administración; en los demás puestos casi todo es efectivo."
+  }
+ ],
+ [
+  {
+   "cliente": "cuanto cuesta el baño?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "Gs. 2.000"
+   ],
+   "evidencia": "Baños públicos | Gs. 2.000 por uso; gratis para niños hasta 8 años",
+   "respuesta_ideal": "Cada uso cuesta Gs. 2.000."
+  },
+  {
+   "cliente": "¿y los niños pagan tambien?",
+   "tipo": "seguimiento",
+   "accion": "responder",
+   "claves": [
+    "gratis para niños hasta 8 años"
+   ],
+   "evidencia": "Baños públicos | Gs. 2.000 por uso; gratis para niños hasta 8 años",
+   "respuesta_ideal": "Es gratis para niños hasta 8 años."
+  },
+  {
+   "cliente": "hasta que hora sirven almuerzo en el patio de comidas?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "15:00"
+   ],
+   "evidencia": "| Patio de comidas (Pabellón F) | todos los días | 06:00 a 15:00 |",
+   "respuesta_ideal": "El patio de comidas del Pabellón F atiende todos los días hasta las 15:00."
+  },
+  {
+   "cliente": "¿el pescado del pabellon D es fresco del dia?",
+   "tipo": "sin_respuesta",
+   "accion": "abstenerse",
+   "claves": [],
+   "evidencia": null,
+   "respuesta_ideal": "No tengo ese dato sobre los puestos; cada puesto maneja su mercadería."
+  }
+ ],
+ [
+  {
+   "cliente": "me cobraron de mas en una balanza del pabellon A, con quien reclamo?",
+   "tipo": "instruccion",
+   "accion": "derivar",
+   "claves": [],
+   "evidencia": "Los reclamos por balanzas, cobros de más o mala atención se derivan a la Sra. Blanca Caballero, encargada de reclamos, llamando al (021) 555 210, interno 4.",
+   "respuesta_ideal": "Puede comunicarse con la Sra. Blanca Caballero, encargada de reclamos, al (021) 555 210, interno 4."
+  },
+  {
+   "cliente": "cuanto cuesta alquilar un puesto?",
+   "tipo": "instruccion",
+   "accion": "derivar",
+   "claves": [],
+   "evidencia": "No des información sobre disponibilidad ni valores de alquiler de puestos; deriva a la Administración.",
+   "respuesta_ideal": "No tengo los valores de alquiler; debe presentar una solicitud en la Administración, (021) 555 210."
+  },
+  {
+   "cliente": "hasta que hora atiende la administracion?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "07:00 a 15:00"
+   ],
+   "evidencia": "Atención de la Administración: lunes a viernes de 07:00 a 15:00.",
+   "respuesta_ideal": "La Administración atiende de lunes a viernes de 07:00 a 15:00."
+  },
+  {
+   "cliente": "perdi mi billetera, donde pregunto?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "garita de seguridad",
+    "Portón 1"
+   ],
+   "evidencia": "Objetos perdidos: en la garita de seguridad, Portón 1.",
+   "respuesta_ideal": "En la garita de seguridad, en el Portón 1."
+  }
+ ],
+ [
+  {
+   "cliente": "hola",
+   "tipo": "charla",
+   "accion": "charla",
+   "claves": [],
+   "evidencia": null,
+   "respuesta_ideal": "Saludo con «Mba'éichapa» y trato cordial."
+  },
+  {
+   "cliente": "hay feria organica?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "viernes",
+    "07:00 a 12:00"
+   ],
+   "evidencia": "Todos los viernes, de 07:00 a 12:00, en el patio central.",
+   "respuesta_ideal": "Sí, todos los viernes de 07:00 a 12:00 en el patio central."
+  },
+  {
+   "cliente": "y flores donde puedo comprar?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "Pabellón G",
+    "viernes y sábados"
+   ],
+   "evidencia": "Pabellón G: flores y plantas ornamentales (solo viernes y sábados)",
+   "respuesta_ideal": "En el Pabellón G, que atiende solo viernes y sábados."
+  },
+  {
+   "cliente": "tienen estacionamiento techado?",
+   "tipo": "sin_respuesta",
+   "accion": "abstenerse",
+   "claves": [],
+   "evidencia": null,
+   "respuesta_ideal": "No tengo ese dato; solo conozco las tarifas del estacionamiento."
+  },
+  {
+   "cliente": "muchas gracias, hasta luego",
+   "tipo": "charla",
+   "accion": "charla",
+   "claves": [],
+   "evidencia": null,
+   "respuesta_ideal": "Despedida amable."
+  }
+ ]
+]

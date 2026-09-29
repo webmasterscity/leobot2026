@@ -1,0 +1,41 @@
+[
+  [
+    {"cliente": "Buenas tardes", "tipo": "charla", "accion": "charla", "claves": [], "evidencia": null, "respuesta_ideal": "Buenas, bienvenido a Cerería El Pabilo. ¿En qué le puedo ayudar?"},
+    {"cliente": "¿A qué hora cierran hoy? es martes", "tipo": "directa", "accion": "responder", "claves": ["6 p. m."], "evidencia": "Lunes a sábado de 9 a. m. a 6 p. m.", "respuesta_ideal": "Hoy martes cerramos a las 6 p. m."},
+    {"cliente": "cuanto cuesta la vela aromatica en vaso de barro?", "tipo": "directa", "accion": "responder", "claves": ["Q95.00"], "evidencia": "Vela aromática de soya en vaso de barro*\t200 g\tQ95.00", "respuesta_ideal": "La vela aromática de soya en vaso de barro, de 200 g, cuesta Q95.00."},
+    {"cliente": "¿y qué olores tiene?", "tipo": "seguimiento", "accion": "responder", "claves": ["café de Antigua", "jazmín", "eucalipto", "canela con naranja", "pino"], "evidencia": "Aromas de las velas de soya: café de Antigua, jazmín, eucalipto, canela con naranja y pino.", "respuesta_ideal": "Las hay de café de Antigua, jazmín, eucalipto, canela con naranja y pino."},
+    {"cliente": "¿Cuántas horas dura prendida esa de 200 g?", "tipo": "sin_respuesta", "accion": "abstenerse", "claves": [], "evidencia": null, "respuesta_ideal": "No tengo el dato de cuántas horas dura en total. Lo que sí le puedo decir es que no conviene encenderla más de 4 horas seguidas."},
+    {"cliente": "Me llevo 2 de barro y pago con tarjeta de crédito, ¿cuánto sería?", "tipo": "combinada", "accion": "responder", "claves": ["199.50"], "evidencia": "Tarjetas Visa y Mastercard; con tarjeta de crédito se cobra un recargo del 5 %.", "respuesta_ideal": "Dos velas en vaso de barro son Q190.00; con el recargo del 5 % por tarjeta de crédito quedan en Q199.50. Recuerde no dejarlas encendidas sin supervisión."}
+  ],
+  [
+    {"cliente": "¿Dan clases para hacer velas?", "tipo": "directa", "accion": "responder", "claves": ["Jueves y sábados", "Q150"], "evidencia": "Jueves y sábados a las 11 a. m. Dura 90 minutos y cuesta Q150 por persona.", "respuesta_ideal": "Sí, el taller «Haz tu propia vela» es los jueves y sábados a las 11 a. m. y cuesta Q150 por persona; cada participante se lleva 2 velas."},
+    {"cliente": "puede ir mi hija de 6 años?", "tipo": "si_no", "accion": "responder", "claves": ["desde 8 años"], "evidencia": "Niños desde 8 años, siempre acompañados de un adulto.", "respuesta_ideal": "Lo siento, no: el taller admite niños desde 8 años, siempre acompañados de un adulto."},
+    {"cliente": "¿Y cuánto dura la clase?", "tipo": "seguimiento", "accion": "responder", "claves": ["90 minutos"], "evidencia": "Dura 90 minutos y cuesta Q150 por persona.", "respuesta_ideal": "Dura 90 minutos."},
+    {"cliente": "¿Hay que llevar delantal o algo?", "tipo": "sin_respuesta", "accion": "abstenerse", "claves": [], "evidencia": null, "respuesta_ideal": "No tengo información sobre si hay que llevar algo al taller, así que prefiero no decirle algo equivocado."},
+    {"cliente": "Si vamos 4 amigas, ¿nos hacen descuento?", "tipo": "instruccion", "accion": "responder", "claves": ["doña Marta"], "evidencia": "No ofrezcas ni prometas descuentos. Si te piden uno, explica que solo doña Marta puede autorizarlos.", "respuesta_ideal": "Yo no puedo ofrecer descuentos; solo doña Marta puede autorizarlos. El precio es de Q150 por persona."}
+  ],
+  [
+    {"cliente": "Me caso en marzo y quiero 120 velas con nuestros nombres, ¿cuánto me saldría?", "tipo": "instruccion", "accion": "derivar", "claves": [], "evidencia": "Si alguien quiere velas para una boda, un evento o una empresa, no hagas tú la cotización: dale el contacto del Lic. Andrés Sical, tel. 5519-2088.", "respuesta_ideal": "¡Felicidades! Los pedidos para bodas los cotiza el Lic. Andrés Sical; puede llamarlo al 5519-2088."},
+    {"cliente": "¿Cuánto tardan en grabar el nombre?", "tipo": "directa", "accion": "responder", "claves": ["3 días hábiles"], "evidencia": "El grabado tarda 3 días hábiles.", "respuesta_ideal": "El grabado tarda 3 días hábiles."},
+    {"cliente": "y si despues no me gustan las personalizadas las puedo cambiar?", "tipo": "si_no", "accion": "responder", "claves": ["no tienen cambio"], "evidencia": "Las velas personalizadas no tienen cambio.", "respuesta_ideal": "No, las velas personalizadas no tienen cambio."},
+    {"cliente": "ok muchas gracias", "tipo": "charla", "accion": "charla", "claves": [], "evidencia": null, "respuesta_ideal": "Con mucho gusto, que le vaya muy bien."}
+  ],
+  [
+    {"cliente": "¿Hacen envíos a la capital?", "tipo": "directa", "accion": "responder", "claves": ["Q45", "2 días hábiles"], "evidencia": "A la Ciudad de Guatemala cobramos Q45 por paquete y llega en 2 días hábiles.", "respuesta_ideal": "Sí, a la Ciudad de Guatemala el envío cuesta Q45 por paquete y llega en 2 días hábiles."},
+    {"cliente": "¿Y a El Salvador?", "tipo": "seguimiento", "accion": "responder", "claves": ["no enviamos"], "evidencia": "Al extranjero no enviamos.", "respuesta_ideal": "No, al extranjero no enviamos."},
+    {"cliente": "¿Con qué empresa mandan los paquetes?", "tipo": "sin_respuesta", "accion": "abstenerse", "claves": [], "evidencia": null, "respuesta_ideal": "No tengo el dato de qué empresa hace los envíos."},
+    {"cliente": "¿Aceptan dólares?", "tipo": "si_no", "accion": "responder", "claves": ["tipo de cambio del día"], "evidencia": "Efectivo en quetzales o en dólares (al tipo de cambio del día).", "respuesta_ideal": "Sí, aceptamos dólares en efectivo, al tipo de cambio del día."},
+    {"cliente": "a cuanto lo estan tomando hoy?", "tipo": "sin_respuesta", "accion": "abstenerse", "claves": [], "evidencia": null, "respuesta_ideal": "No tengo el tipo de cambio de hoy; en la caja se lo pueden decir."}
+  ],
+  [
+    {"cliente": "Ayer se me cayó una vela de ustedes y se quemó el mantel y un poco mi mano, ¿qué hago?", "tipo": "instruccion", "accion": "derivar", "claves": [], "evidencia": "Si un cliente cuenta que una vela le causó una quemadura, un incendio o cualquier accidente, discúlpate, no discutas de quién fue la culpa y pídele que llame a doña Marta Cuxil al 7832-5610.", "respuesta_ideal": "Lamento mucho lo que pasó. Por favor llame a doña Marta Cuxil al 7832-5610 para que la atienda personalmente."},
+    {"cliente": "¿Dónde queda la tienda exactamente?", "tipo": "directa", "accion": "responder", "claves": ["4a. calle poniente #19"], "evidencia": "Dirección: 4a. calle poniente #19, Antigua Guatemala, Sacatepéquez", "respuesta_ideal": "Estamos en la 4a. calle poniente #19, Antigua Guatemala."},
+    {"cliente": "hay parqueo cerca?", "tipo": "sin_respuesta", "accion": "abstenerse", "claves": [], "evidencia": null, "respuesta_ideal": "No tengo información sobre parqueo cerca de la tienda."},
+    {"cliente": "¿el domingo abren?", "tipo": "si_no", "accion": "responder", "claves": ["10 a. m. a 4 p. m."], "evidencia": "Domingo de 10 a. m. a 4 p. m.", "respuesta_ideal": "Sí, el domingo abrimos de 10 a. m. a 4 p. m."}
+  ],
+  [
+    {"cliente": "quiero 3 paquetes de veladoras y 2 de las flotantes, cuanto es?", "tipo": "combinada", "accion": "responder", "claves": ["190"], "evidencia": "Veladoras de colores\tpaquete de 12\tQ40.00\nVelas flotantes\tpaquete de 6\tQ35.00", "respuesta_ideal": "Tres paquetes de veladoras (Q40.00 c/u) y dos de velas flotantes (Q35.00 c/u) suman Q190.00. Recuerde no dejarlas encendidas sin supervisión."},
+    {"cliente": "¿me lo mandan gratis aquí en Antigua?", "tipo": "seguimiento", "accion": "responder", "claves": ["Q300"], "evidencia": "Dentro de Antigua, entrega gratis en compras desde Q300.", "respuesta_ideal": "La entrega en Antigua es gratis en compras desde Q300; su compra de Q190.00 no llega a ese monto."},
+    {"cliente": "¿Las veladoras de colores son de cera de abeja o de parafina?", "tipo": "sin_respuesta", "accion": "abstenerse", "claves": [], "evidencia": null, "respuesta_ideal": "No tengo el dato del material de las veladoras de colores. Solo sé que la línea Pura, de cera de abeja, no lleva parafina."}
+  ]
+]

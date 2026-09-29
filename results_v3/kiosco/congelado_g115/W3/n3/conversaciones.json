@@ -1,0 +1,162 @@
+[
+  [
+    {
+      "cliente": "Hola, ¿qué precio tiene una habitación para 2?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["150 Bs", "habitación doble"],
+      "evidencia": "Habitaciones dobles (2 personas): 150 Bs",
+      "respuesta_ideal": "Una habitación doble sale 150 bolivianos. Incluye desayuno casero con pan y queso fresco de la zona."
+    },
+    {
+      "cliente": "¿Incluye almuerzo y cena?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["Desayuno incluido", "Almuerzo", "Cena"],
+      "evidencia": "Desayuno incluido: [...]. Almuerzo [...] $30 Bs. Cena [...] $25 Bs",
+      "respuesta_ideal": "Solo el desayuno está incluido. Almuerzo cuesta 30 Bs y cena 25 Bs. Pero la comida es de la casa, muy fresca."
+    },
+    {
+      "cliente": "¿A qué hora sirven la cena?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["19:30 a 21:00"],
+      "evidencia": "Cena (19:30 a 21:00): $25 Bs",
+      "respuesta_ideal": "Cena de 19:30 a 21:00. Después de las 21 no hay ruido ni comida, así que es buena idea ser puntual."
+    }
+  ],
+  [
+    {
+      "cliente": "Quiero hacer una caminata. ¿Qué opciones tienen?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["Caminatas al rio", "10:00 a. m.", "gratis"],
+      "evidencia": "Caminatas al rio: salidas diarias a las 10:00 a. m., 2 horas, gratis.",
+      "respuesta_ideal": "Tenemos caminatas al río todos los días a las 10 de la mañana, duran 2 horas y son gratis. Solo tienes que anotarte la noche anterior."
+    },
+    {
+      "cliente": "¿Y hay algo más?",
+      "tipo": "seguimiento",
+      "accion": "responder",
+      "claves": ["observación de aves", "taller de ordeño"],
+      "evidencia": "Taller de ordeño: [...] Costo: 25 Bs. Observación de aves: [...] 40 Bs por persona.",
+      "respuesta_ideal": "También tenemos observación de aves (miércoles y domingo) y un taller de ordeño (viernes y sábado). Cuestan 25 y 40 Bs respectivamente."
+    }
+  ],
+  [
+    {
+      "cliente": "¿Hay agua caliente en el baño?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["agua caliente", "18:00 a 21:00", "paneles solares"],
+      "evidencia": "El agua caliente viene de paneles solares, así que hay agua tibia por las mañanas y más caliente por la tarde.",
+      "respuesta_ideal": "Sí, tenemos agua caliente de 18:00 a 21:00 por los paneles solares. Por la mañana sale tibia. Si necesitas agua bien caliente, mejor ducha por la tarde."
+    },
+    {
+      "cliente": "¿Es segura el agua para beber?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "Es agua de pozo. Si tienes dudas sobre su pureza, mejor trae agua embotellada o pregunta directamente a Roberto cuando llegues. En el pueblo hay supermercado a 15 minutos."
+    }
+  ],
+  [
+    {
+      "cliente": "¿Puedo pagar con tarjeta de credito?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["No aceptamos tarjeta", "efectivo", "router"],
+      "evidencia": "No aceptamos tarjeta (el router de acá no es confiable).",
+      "respuesta_ideal": "Lamentablemente no. Internet no es confiable aquí. Solo aceptamos efectivo en bolivianos o dólares. Si necesitas algo diferente, llamá a Roberto."
+    },
+    {
+      "cliente": "Tengo alergia al gluten. ¿Hay opciones para comer?",
+      "tipo": "instruccion",
+      "accion": "responder",
+      "claves": ["comida del campo", "Doña Juana", "confirmar"],
+      "evidencia": "Menú de la casa: [...] Sin menú fijo, comemos lo que da el día y la tierra. [...] Contacta directamente",
+      "respuesta_ideal": "Acá el menú cambia cada día según lo que hay. Para una alergia como esa, es mejor que hables directamente con Doña Juana o Roberto por WhatsApp antes de venir: 7186-5523. Ellos pueden arreglar algo."
+    }
+  ],
+  [
+    {
+      "cliente": "¿Tienen wifi?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["lenta", "WiFi", "comedor"],
+      "evidencia": "Conexión a internet: lenta pero hay. WiFi en el comedor principal.",
+      "respuesta_ideal": "Sí, hay WiFi en el comedor, pero es lenta. No esperes descargar películas ni hacer video llamadas fluidas."
+    },
+    {
+      "cliente": "¿Cuál es la mejor forma de llegar desde Cochabamba?",
+      "tipo": "sin_respuesta",
+      "accion": "responder",
+      "claves": ["45 minutos", "No hay transporte público directo"],
+      "evidencia": "No hay transporte público directo desde aquí. Si necesitas ir a Cochabamba, contacta a Roberto con 2 horas de anticipación",
+      "respuesta_ideal": "Estamos a 45 minutos de Cochabamba pero no hay bus directo. Roberto (gerente) organiza transporte por 80 Bs si avisas con 2 horas. Trae gps o dirección para el taxista."
+    }
+  ],
+  [
+    {
+      "cliente": "¿A cuánto sale una habitación para 4 personas?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["250 Bs", "habitación familiar"],
+      "evidencia": "Habitación familiar (4 personas, 2 camas): 250 Bs",
+      "respuesta_ideal": "La habitación familiar para 4 personas sale 250 bolivianos. Incluye desayuno y tiene 2 camas."
+    },
+    {
+      "cliente": "¿Y la habitación simple?",
+      "tipo": "seguimiento",
+      "accion": "responder",
+      "claves": ["90 Bs", "habitación simple"],
+      "evidencia": "Habitaciones simples (1 persona): 90 Bs",
+      "respuesta_ideal": "La habitación simple para una persona es 90 Bs, también con desayuno incluido."
+    }
+  ],
+  [
+    {
+      "cliente": "¿Puedo cancelar sin perder dinero?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["gratis hasta 3 días antes", "50 %"],
+      "evidencia": "Cancelación de reserva: gratis hasta 3 días antes. Menos de 3 días: pierdes 50 %. No show: 100 %",
+      "respuesta_ideal": "Cancelación gratuita hasta 3 días antes. Pasado ese plazo, perderías 50 %. Sin presentarse, pierdes el 100 %."
+    },
+    {
+      "cliente": "¿Qué pasa si voy el lunes al mercado?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["mercado", "lunes", "comparte", "sin costo"],
+      "evidencia": "Mercado de Cochabamba: arreglos los lunes para ir al mercado ciudad. Regreso el mismo día. Sin costo de transporte, pero gas se divide entre pasajeros.",
+      "respuesta_ideal": "Los lunes hacemos viaje al mercado de Cochabamba. Salimos temprano y volvemos al atardecer. El transporte es gratis pero el gas se divide entre los que vayan."
+    }
+  ],
+  [
+    {
+      "cliente": "¿Qué teléfono tienen para contactar?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["7186-5523", "WhatsApp"],
+      "evidencia": "WhatsApp: +591 7186-5523",
+      "respuesta_ideal": "Nuestro WhatsApp es 7186-5523. Ahí podés confirmar reservas o consultar cualquier cosa."
+    },
+    {
+      "cliente": "¿Qué edad mínima pueden tener los huéspedes?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No tenemos restricción de edad. Familias con niños son bienvenidas. Mejor consulta si hay algo específico que necesites."
+    },
+    {
+      "cliente": "¿Puedo traer alcohol?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "Mejor pregunta eso a Roberto cuando llegues. La posada es un lugar tranquilo para retiros y descanso."
+    }
+  ]
+]

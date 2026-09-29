@@ -1,0 +1,170 @@
+[
+  [
+    {
+      "cliente": "Hola, tengo la pantalla del celular rota, ¿cuánto cuesta arreglarla?",
+      "tipo": "sin_respuesta",
+      "accion": "responder",
+      "claves": ["diagnóstico", "gratis"],
+      "evidencia": "Diagnóstico: GRATIS.",
+      "respuesta_ideal": "Buenas, sin problema. El diagnóstico es completamente gratis. El precio exacto lo sabremos cuando veas el dispositivo, porque varía según el modelo. ¿Qué teléfono tienes?"
+    },
+    {
+      "cliente": "Es un Samsung Galaxy A12",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["$80 000 – $180 000", "pantalla"],
+      "evidencia": "Cambios de pantalla de celular: $80 000 – $180 000 (según modelo)",
+      "respuesta_ideal": "Para el Galaxy A12, la pantalla rondaría entre 80 y 120 mil guaraníes. Pero trae el teléfono para confirmar el precio exacto tras el diagnóstico."
+    },
+    {
+      "cliente": "¿Cuánto tiempo tarda?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["1–3 horas"],
+      "evidencia": "Cambios de pantalla de celular: [...] tiempo: 1–3 horas",
+      "respuesta_ideal": "La reparación generalmente toma entre 1 y 3 horas. Depende de cuánto trabajo haya en el taller ese día."
+    }
+  ],
+  [
+    {
+      "cliente": "Mi laptop no enciende, ¿la pueden reparar?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["computadoras portátiles", "problemas de arranque"],
+      "evidencia": "Computadoras portátiles: [...] problemas de arranque",
+      "respuesta_ideal": "Sí, reparamos computadoras portátiles. Los problemas de arranque pueden tener varias causas. Trae la laptop para hacer diagnóstico gratis y te diremos qué se necesita."
+    },
+    {
+      "cliente": "¿El diagnóstico tiene costo?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["gratis", "diagnóstico"],
+      "evidencia": "Diagnóstico: GRATIS.",
+      "respuesta_ideal": "Nada, es totalmente gratis. Revisamos tu laptop sin ningún costo y te informamos qué hay que hacer."
+    },
+    {
+      "cliente": "¿Me la pueden dejar lista hoy?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "Depende de cuál sea el problema. Algunos arreglos son rápidos (batería), otros toman horas (limpieza de virus o cambio de piezas). Primero hace el diagnóstico y de ahí te damos plazo exacto."
+    }
+  ],
+  [
+    {
+      "cliente": "¿Hasta qué hora atienden hoy?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["18:30"],
+      "evidencia": "Lunes a viernes: 09:00 – 18:30",
+      "respuesta_ideal": "Entre semana atendemos hasta las 18:30. Hoy mismo tenemos tiempo si vienes pronto."
+    },
+    {
+      "cliente": "¿Y mañana sábado?",
+      "tipo": "seguimiento",
+      "accion": "responder",
+      "claves": ["09:00 – 13:30"],
+      "evidencia": "Sábado: 09:00 – 13:30",
+      "respuesta_ideal": "El sábado abrimos de 09:00 a 13:30, así que tienes la mañana disponible."
+    }
+  ],
+  [
+    {
+      "cliente": "Cambié la pantalla con ustedes hace una semana y se oscureció la esquina derecha. ¿Qué hago?",
+      "tipo": "instruccion",
+      "accion": "responder",
+      "claves": ["3 meses", "defectos de manufactura", "Luis Baranda"],
+      "evidencia": "Todas las reparaciones tienen garantía de 3 meses contra defectos de manufactura.",
+      "respuesta_ideal": "Eso suena como un defecto de manufactura. Traé el celular en los próximos días para que Luis Baranda o uno de nuestros técnicos lo revisen. Está cubierto por garantía de 3 meses."
+    },
+    {
+      "cliente": "¿Es seguro que lo arreglen sin cobrar?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["garantía de 3 meses", "defectos de manufactura"],
+      "evidencia": "Todas las reparaciones tienen garantía de 3 meses contra defectos de manufactura.",
+      "respuesta_ideal": "Sí, la garantía cubre defectos de manufactura de nuestro trabajo. Si vemos que es culpa de nosotros, se arregla sin cargo. Pero prefiero verlo primero para estar seguro."
+    }
+  ],
+  [
+    {
+      "cliente": "¿Ustedes guardan los aparatos que dejan?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["30 días", "sin cargo"],
+      "evidencia": "Guardamos los equipos sin cargo por 30 días.",
+      "respuesta_ideal": "Sí, dejás el dispositivo en reparación y volvés cuando puedas. Lo guardamos sin cargo durante 30 días."
+    },
+    {
+      "cliente": "¿Qué pasa si no lo busco en 30 días?",
+      "tipo": "sin_respuesta",
+      "accion": "derivar",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "Eso es una pregunta que mejor hacés directamente con Luis Baranda, nuestro gerente. Llamá al 21 445-892 o pasate por la tienda."
+    }
+  ],
+  [
+    {
+      "cliente": "¿Aceptan pagos en efectivo?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["Efectivo", "guaraní", "dólar"],
+      "evidencia": "Métodos de pago: Efectivo (guaraní o dólar), tarjeta de débito/crédito",
+      "respuesta_ideal": "Sí, aceptamos efectivo en guaraníes o dólares. También tarjeta de débito o crédito."
+    },
+    {
+      "cliente": "¿Aceptan UES?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["UES", "aceptamos"],
+      "evidencia": "Aceptamos pagos en UES (Unidad de Estabilización).",
+      "respuesta_ideal": "Sí, también aceptamos UES (Unidad de Estabilización)."
+    }
+  ],
+  [
+    {
+      "cliente": "¿Qué marcas de celular reparan?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["todas las marcas"],
+      "evidencia": "Celulares y smartphones (todas las marcas)",
+      "respuesta_ideal": "Reparamos todas las marcas de celulares: Samsung, iPhone, Motorola, Xiaomi, Sony, etc."
+    },
+    {
+      "cliente": "¿Reparan tablets también?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["Tablets", "e-readers"],
+      "evidencia": "Tablets y e-readers: cambios de batería, reparaciones de pantalla",
+      "respuesta_ideal": "Sí, reparamos tablets y e-readers. Cambio de batería, pantalla y problemas de conectividad."
+    }
+  ],
+  [
+    {
+      "cliente": "¿Cierran los domingos?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "Sí, los domingos estamos cerrados. Reabrimos lunes a las 09:00."
+    },
+    {
+      "cliente": "¿Dónde quedan en Asunción?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["Calle Palma 456", "Centro"],
+      "evidencia": "Dirección: Calle Palma 456, Centro, Asunción",
+      "respuesta_ideal": "Estamos en el Centro, Calle Palma 456. Es una zona bien conocida."
+    },
+    {
+      "cliente": "¿Puedo llamar para consultar antes de ir?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["21 445-892", "WhatsApp"],
+      "evidencia": "Teléfono: +595 21 445-892. WhatsApp: +595 983-442-156",
+      "respuesta_ideal": "Claro, llamá al 21 445-892 o mandá WhatsApp al 983-442-156. Es lo mejor para confirmar disponibilidad."
+    }
+  ]
+]

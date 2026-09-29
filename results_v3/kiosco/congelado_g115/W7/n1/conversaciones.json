@@ -1,0 +1,204 @@
+[
+  [
+    {
+      "cliente": "Hola, ¿a qué hora abren?",
+      "tipo": "charla",
+      "accion": "responder",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "¡Hola! Estamos abiertos de lunes a viernes de 11:30 a 15:00 y de 19:00 a 23:30. ¿En qué más te puedo ayudar?"
+    },
+    {
+      "cliente": "¿Tienen disponibilidad para comer hoy al mediodía?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "Para consultar sobre disponibilidad de mesa hoy, te recomiendo que llames al (011) 4365-8821 o nos escribas por WhatsApp. Así coordinamos tu reserva."
+    },
+    {
+      "cliente": "¿Hacen milanesa?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["Milanesa a la napolitana con papas"],
+      "evidencia": "Milanesa a la napolitana con papas: $1450",
+      "respuesta_ideal": "Sí, ofrecemos milanesa a la napolitana con papas a $1450. Es exquisita, hecha en el momento."
+    },
+    {
+      "cliente": "¿Y cuanto sale?",
+      "tipo": "seguimiento",
+      "accion": "responder",
+      "claves": ["$1450"],
+      "evidencia": "Milanesa a la napolitana con papas: $1450",
+      "respuesta_ideal": "La milanesa a la napolitana con papas sale $1450."
+    },
+    {
+      "cliente": "Tiene opciones sin carne?",
+      "tipo": "sin_respuesta",
+      "accion": "derivar",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "Nuestro menú tiene varias opciones. Para consultar sobre platos vegetarianos o adaptaciones especiales, te recomiendo llamar al (011) 4365-8821 para hablar con el equipo."
+    }
+  ],
+  [
+    {
+      "cliente": "Buenas, ¿tienen asado?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["Asado de tira"],
+      "evidencia": "Asado de tira con guarnición: $2100",
+      "respuesta_ideal": "Sí, ofrecemos asado de tira con guarnición a $2100. Es uno de nuestros platos estrella."
+    },
+    {
+      "cliente": "¿Me haces un asado con puré en lugar de papas?",
+      "tipo": "sin_respuesta",
+      "accion": "derivar",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "Para consultar sobre cambios en la guarnición, te sugiero que hables directamente con nuestro equipo en (011) 4365-8821."
+    },
+    {
+      "cliente": "¿Atienden los domingos?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["Domingos: 12:00 a 22:00"],
+      "evidencia": "Domingos: 12:00 a 22:00",
+      "respuesta_ideal": "Sí, los domingos estamos abiertos de 12:00 a 22:00."
+    },
+    {
+      "cliente": "¿Me dejan traer mi propia bebida alcohólica?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["Se permite llevar bebidas alcohólicas de afuera"],
+      "evidencia": "Se permite llevar bebidas alcohólicas de afuera (sin cargo de corcho)",
+      "respuesta_ideal": "Sí, se permite traer bebidas alcohólicas de afuera sin cargo de corcho."
+    }
+  ],
+  [
+    {
+      "cliente": "Hola, quiero hacer una reserva para 10 personas el próximo sábado a la noche",
+      "tipo": "instruccion",
+      "accion": "derivar",
+      "claves": [],
+      "evidencia": "Aceptamos reservas para grupos de 8 o más personas",
+      "respuesta_ideal": "Perfecto, aceptamos reservas para grupos como el tuyo. Te sugiero que llames al (011) 4365-8821 para confirmar disponibilidad y hacer la reserva."
+    },
+    {
+      "cliente": "¿Puedo cambiar mi reserva de mañana para pasado mañana?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["Los cambios de fecha se aceptan sin cargo si se avisan con 48 hs"],
+      "evidencia": "Los cambios de fecha se aceptan sin cargo si se avisan con 48 hs de antelación",
+      "respuesta_ideal": "Sí, podés cambiar la fecha sin cargo si lo avisas con 48 horas de anticipación. Para procesarlo, llamá al (011) 4365-8821."
+    },
+    {
+      "cliente": "¿Cual es el precio de los ravioles?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["$1100-1350", "ravioles"],
+      "evidencia": "Pastas caseras (fideos, ravioles, ñoquis): $1100-1350",
+      "respuesta_ideal": "Los ravioles caseros están a $1100. Son déliciosos, hechos en casa."
+    },
+    {
+      "cliente": "¿Los acompañan con algo?",
+      "tipo": "seguimiento",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "Los detalles de los acompañamientos los tenés que consultar directamente con nosotros en (011) 4365-8821."
+    },
+    {
+      "cliente": "¿Tienen ofertas de fideos?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No hay ofertas específicas para fideos. Nuestras promociones están en el menú del día y happy hour. Para más detalles, llamá al (011) 4365-8821."
+    }
+  ],
+  [
+    {
+      "cliente": "¿Cuánto cuesta el menú del día?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["$1750", "menú del día"],
+      "evidencia": "Menú del día (de lunes a viernes 11:30-15:00): plato principal + bebida + postre a $1750",
+      "respuesta_ideal": "El menú del día cuesta $1750 e incluye plato principal, bebida y postre. Está disponible de lunes a viernes de 11:30 a 15:00."
+    },
+    {
+      "cliente": "¿Vale la pena con lo que incluye?",
+      "tipo": "charla",
+      "accion": "responder",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "¡Claro que sí! A $1750 te llevás plato principal, bebida y postre. Es una excelente opción si te pasas al mediodía."
+    },
+    {
+      "cliente": "¿Aceptan tarjeta de crédito?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["Crédito (Visa, Mastercard, American Express)", "Recargo de 3%"],
+      "evidencia": "Efectivo, débito, crédito (Visa, Mastercard, American Express). Recargo de 3% con crédito.",
+      "respuesta_ideal": "Sí, aceptamos tarjeta de crédito (Visa, Mastercard, American Express) con un recargo del 3%."
+    },
+    {
+      "cliente": "¿Y con débito?",
+      "tipo": "seguimiento",
+      "accion": "responder",
+      "claves": ["Sin recargo con débito"],
+      "evidencia": "Sin recargo con débito",
+      "respuesta_ideal": "Con débito no hay recargo, es sin cargo."
+    },
+    {
+      "cliente": "¿Tienen acceso para sillas de ruedas?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["Rampla de acceso para sillas de ruedas", "baños adaptados"],
+      "evidencia": "Rampla de acceso para sillas de ruedas, baños adaptados.",
+      "respuesta_ideal": "Sí, contamos con rampla de acceso y baños adaptados para personas con movilidad reducida."
+    },
+    {
+      "cliente": "¿Hacen postres sin azúcar?",
+      "tipo": "sin_respuesta",
+      "accion": "derivar",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "Para consultar opciones de postres especiales sin azúcar, te recomiendo que llames al (011) 4365-8821 y preguntes directamente al equipo."
+    }
+  ],
+  [
+    {
+      "cliente": "¿Sirven café?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["Café", "$180-250"],
+      "evidencia": "Café/té: $180-250",
+      "respuesta_ideal": "Sí, servimos café a $180 o $250 dependiendo de la presentación. ¡Excelente para acompañar el postre!"
+    },
+    {
+      "cliente": "¿El pollo viene con papas?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["Pollo al horno con papas y ensalada"],
+      "evidencia": "Pollo al horno con papas y ensalada: $1200",
+      "respuesta_ideal": "Sí, el pollo al horno viene con papas y ensalada a $1200."
+    },
+    {
+      "cliente": "¿Qué vinos tienen?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "Contamos con vino de la casa. Para conocer la variedad de vinos disponibles, te invito a llamar al (011) 4365-8821."
+    },
+    {
+      "cliente": "¿Me sirven la tabla de quesos y fiambres?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["Tabla de quesos y fiambres", "$1800"],
+      "evidencia": "Tabla de quesos y fiambres: $1800",
+      "respuesta_ideal": "Claro, la tabla de quesos y fiambres cuesta $1800 y es perfecta para compartir."
+    }
+  ]
+]

@@ -1,0 +1,172 @@
+[
+  [
+    {
+      "cliente": "¿Cuánto cuesta el tour a Machu Picchu?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["Machu Picchu 2 días", "USD 450"],
+      "evidencia": "Machu Picchu 2 días / 1 noche (ida en tren, subida con guía, alimentación incluida): USD 450 por persona",
+      "respuesta_ideal": "Tenemos opciones: Machu Picchu 2 días a USD 450, o 3 días a USD 650. Ambas incluyen tren, guía y comidas. ¿Cuál te interesa?"
+    },
+    {
+      "cliente": "¿Qué incluye exactamente?",
+      "tipo": "seguimiento",
+      "accion": "responder",
+      "claves": ["tren", "guía", "alimentación incluida"],
+      "evidencia": "Machu Picchu 2 días / 1 noche (ida en tren, subida con guía, alimentación incluida): USD 450 por persona",
+      "respuesta_ideal": "Incluye el viaje en tren a Cusco, la subida a Machu Picchu con guía profesional bilingüe y alimentación. No incluye el vuelo desde Lima ni alojamiento adicional."
+    },
+    {
+      "cliente": "¿Cuántas personas mínimo necesitan para salir?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["Mínimo 2 personas"],
+      "evidencia": "Mínimo 2 personas por tour",
+      "respuesta_ideal": "El mínimo es 2 personas, así que podés ir con un amigo o familiar sin problemas."
+    },
+    {
+      "cliente": "¿Es seguro? ¿Hay guía?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["Guía profesional bilingüe"],
+      "evidencia": "Guía profesional bilingüe (español-inglés)",
+      "respuesta_ideal": "Sí, es muy seguro. Va un guía profesional bilingüe con cada grupo. Todos nuestros guías están entrenados en primeros auxilios."
+    }
+  ],
+  [
+    {
+      "cliente": "¿Hay descuento si viajamos en grupo de 15?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["Grupos de 10+ personas: descuento del 10%"],
+      "evidencia": "Grupos de 10+ personas: descuento del 10%",
+      "respuesta_ideal": "Sí, grupos de 10 o más personas reciben un descuento del 10% sobre el precio total."
+    },
+    {
+      "cliente": "¿Incluye hotel?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "El tour no incluye hotel. Pero ofrecemos conexión con hoteles de 1 a 5 estrellas en Cusco. Consulta directamente al (01) 428-3657 para precios y opciones."
+    },
+    {
+      "cliente": "¿Tengo que traer pasaporte?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["Pasaporte válido para todos"],
+      "evidencia": "Pasaporte válido para todos",
+      "respuesta_ideal": "Sí, pasaporte válido es obligatorio para todos los tours."
+    },
+    {
+      "cliente": "¿Hay tours en diciembre?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "Diciembre es alta temporada, así que hay tours disponibles. Para confirmar fechas y disponibilidad específica, contacta al (01) 428-3657 o WhatsApp +51 957 445 289."
+    }
+  ],
+  [
+    {
+      "cliente": "¿Cuánto cuesta el Inca Trail completo?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["Inca Trail 4 días", "USD 1.200"],
+      "evidencia": "Inca Trail 4 días / 3 noches (caminata completa con camping, guía arqueológico): USD 1.200 por persona",
+      "respuesta_ideal": "El Inca Trail completo es USD 1.200 por 4 días y 3 noches, incluye camping y un guía arqueológico especializado."
+    },
+    {
+      "cliente": "¿Es muy difícil? Yo no soy muy deportista.",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "Es una caminata de montaña que requiere buen estado físico. Para consultar sobre dificultad exacta y si es apta para ti, llamá al (01) 428-3657."
+    },
+    {
+      "cliente": "¿Y hay una versión más corta?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["Inca Trail 2 días", "USD 550"],
+      "evidencia": "Inca Trail 2 días / 1 noche (tramo corto, no requiere aclimatación): USD 550 por persona",
+      "respuesta_ideal": "Sí, hay una versión corta de 2 días a USD 550. No requiere aclimatación previa."
+    },
+    {
+      "cliente": "¿Que hay en la selva?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["Tambopata National Reserve", "alojamiento en lodge", "USD 450"],
+      "evidencia": "Tambopata National Reserve (3 días / 2 noches, alojamiento en lodge, paseos en bote): USD 450 por persona",
+      "respuesta_ideal": "En Puerto Maldonado tenemos tours por la Reserva Nacional Tambopata: 3 días con lodge y paseos en bote, USD 450. También hay una opción de 5 días más completa a USD 750."
+    }
+  ],
+  [
+    {
+      "cliente": "¿Puedo cancelar mi reserva si cambio de opinión?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["Cancelación", "devolución"],
+      "evidencia": "Cancelación con más de 15 días: devolución del 90% del pago. Entre 7-15 días: 50% devolución. Menos de 7 días: no reembolso.",
+      "respuesta_ideal": "Sí, la política es: si cancelas con más de 15 días devolvemos el 90%. Entre 7-15 días, el 50%. Menos de 7 días, no hay reembolso."
+    },
+    {
+      "cliente": "¿Puedo cambiar la fecha sin perder dinero?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["Cambio de fechas sin cargo", "10 días"],
+      "evidencia": "Cambio de fechas sin cargo si se avisa con 10 días de anticipación",
+      "respuesta_ideal": "Sí, podés cambiar la fecha sin cargo si avisas con 10 días de anticipación."
+    },
+    {
+      "cliente": "¿Como pago?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["Efectivo", "tarjeta", "Depósito del 30%"],
+      "evidencia": "Efectivo (soles o dólares), tarjeta débito, tarjeta crédito (sin recargo). Depósito del 30% para reservar, saldo antes de la salida.",
+      "respuesta_ideal": "Aceptamos efectivo (soles o dólares), débito y crédito sin recargo. Depósito del 30% para reservar y el saldo antes de la salida."
+    },
+    {
+      "cliente": "¿Hay tour solo a Cusco, sin Machu Picchu?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["City Tour Cusco", "USD 35"],
+      "evidencia": "City Tour Cusco (4 hrs, Plaza Mayor, Templo del Sol, arqueología): USD 35 por persona",
+      "respuesta_ideal": "Sí, el City Tour Cusco es 4 horas a USD 35, incluye Plaza Mayor, Templo del Sol y sitios arqueológicos."
+    }
+  ],
+  [
+    {
+      "cliente": "¿Cuanto tarda a Nazca Lines?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["Nazca Lines", "1 día", "USD 280"],
+      "evidencia": "Nazca Lines (vuelo + tour terrestre, 1 día desde Lima): USD 280 por persona",
+      "respuesta_ideal": "Nazca Lines es un tour de 1 día desde Lima que incluye vuelo y tour terrestre, todo por USD 280."
+    },
+    {
+      "cliente": "¿Incluye comida?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "Para detalles sobre qué comidas incluye el tour a Nazca, consulta al (01) 428-3657 o reservas@aventuraandina.pe."
+    },
+    {
+      "cliente": "Mi hijo tiene 4 años. ¿Hay descuento?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["Niños menores de 5 años: 50% de descuento"],
+      "evidencia": "Niños menores de 5 años: 50% de descuento",
+      "respuesta_ideal": "Sí, niños menores de 5 años reciben 50% de descuento en el precio del tour."
+    },
+    {
+      "cliente": "Gracias, vamos a pensarlo y te llamamos.",
+      "tipo": "charla",
+      "accion": "responder",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "¡Perfecto! Cualquier duda, llamanos al (01) 428-3657 o WhatsApp +51 957 445 289. Esperamos tu reserva."
+    }
+  ]
+]
