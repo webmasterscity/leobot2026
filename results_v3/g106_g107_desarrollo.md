@@ -119,3 +119,9 @@ Mismos rasgos y datos que el modelo puntual sin pares (216 negocios), solo cambi
 | por lista, semilla 1 | 0,607 | 122 | 142 |
 Ordena apenas mejor (+0,5 puntos) y calibra mucho peor (la softmax no fija una escala común entre turnos). Umbral preregistrado
 (+8 útiles y +2 puntos) no se cumple. **No repetir**: cambiar solo el objetivo de aprendizaje con los mismos rasgos.
+
+## 8. Diagnósticos sin ciclo (no repetir)
+- **Cuentas en preguntas combinadas** (bancos de enseñanza): 404 con clave numérica; en 223 la cifra ya está escrita en el texto; solo 55
+  se obtienen con a×b, a+b, a−b o a×b+c sobre los números de la pregunta y de las 8 candidatas. Techo ≈ 1 % de los turnos: no compensa.
+- **Confianza con la ventaja sobre la segunda candidata** (`experiments/g110_confianza_margen.py`, 4 721 turnos cruzados por negocio):
+  AUC 0,7859 solo con la puntuación, 0,7872 añadiendo la ventaja, 0,7534 con la ventaja sola. No aporta.
