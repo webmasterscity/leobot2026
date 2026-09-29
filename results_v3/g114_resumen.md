@@ -21,3 +21,8 @@ juez ciego y criterios fijados antes: +8 puntos de utilidad con **menos** respue
 juez) y contradice la lectura pesimista del conteo automático (G-112: +0,55), que no acredita respuestas correctas con otra unidad.
 Siguiente paso: repetir con un banco 5 y el criterio 3 contado solo sobre turnos coherentes (tipo y acción concordantes), preregistrado
 antes; si pasa, auditoría 5.10 y tag estable.
+
+## Compatibilidad del motor (para un eventual tag)
+Con `soft_prefix`, `candidate_model`, `general_knowledge` y `number_compare` apagados, el motor actual (`d1c92eb7…`) da las **585 respuestas
+del banco G-64 idénticas** a las del motor de `estable-G-19` (`11a1ef58…`, commit `ccd895f`) sobre la misma base `base_kiosco_nube.json`
+(resumen `47c1e2c6cf5e4509`), también con `PYTHONHASHSEED` 1 (`experiments/g114_compat585.py`).
