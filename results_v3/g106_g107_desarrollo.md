@@ -125,3 +125,16 @@ Ordena apenas mejor (+0,5 puntos) y calibra mucho peor (la softmax no fija una e
   se obtienen con a×b, a+b, a−b o a×b+c sobre los números de la pregunta y de las 8 candidatas. Techo ≈ 1 % de los turnos: no compensa.
 - **Confianza con la ventaja sobre la segunda candidata** (`experiments/g110_confianza_margen.py`, 4 721 turnos cruzados por negocio):
   AUC 0,7859 solo con la puntuación, 0,7872 añadiendo la ventaja, 0,7534 con la ventaja sola. No aporta.
+
+## 9. G-106, diseños 3 y 4 (lo que decía el preregistro: solo palabras de la pregunta que faltan en el texto)
+El código de los diseños 1–2 aplicaba el saber a todas las palabras; el preregistro decía «una palabra de la pregunta que no está en el
+texto». Diseño 3: corregido. Diseño 4: además, solo palabras de contenido según las clases aprendidas (sustantivo, nombre propio,
+adjetivo, verbo). Útiles con a lo sumo N citas malas en `congelado_g103`:
+| N | 50 | 75 | 100 | 125 | 150 | 200 | 250 |
+|---|---|---|---|---|---|---|---|
+| sin saber (semilla 0 / 1) | 108 / 109 | 134 / 133 | 149 / 146 | 156 / 153 | 162 / 157 | 175 / 170 | 180 / 179 |
+| diseño 3 | 113 | 127 | 139 | 153 | 163 | 174 | 181 |
+| diseño 4 | 112 | 136 | 150 | 157 | 165 | 174 | 181 |
+Diseño 3 frente a sin saber, turno a turno: gana 8, pierde 6 (ruido de «yo», «no», «poder»). El diseño 4 queda dentro de la variación
+entre semillas (±3–5): **sin mejora demostrable**. G-106 cierra con cuatro diseños sin ganancia; el código queda inactivo salvo que la
+base traiga `knowledge_share`.

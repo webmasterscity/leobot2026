@@ -49,6 +49,7 @@
 
 ## Historial de ciclos
 
+- 2026-09-29 · **G-106 diseños 3 y 4** (saber solo para palabras de contenido que faltan en el texto, como decía el preregistro): empate dentro del ruido entre semillas (≤ 150 malas: 165 frente a 162/157). G-106 cerrado con cuatro diseños.
 - 2026-09-29 · **G-109 negativo en desarrollo** (ListNet): acierto cruzado +0,5 puntos, útiles con ≤ 100 malas 122 frente a 146–149 del modelo puntual.
 - 2026-09-29 · **G-108 negativo en desarrollo** (preregistro `dea69bb`): biblioteca compilada de Wikipedia (89 396 frases, 44,8 MB); D1 0/102 con 9 malas, D2 1/106 con 18 malas; sin reserva.
 - 2026-09-29 · **G-107b negativo en desarrollo** (preregistro `71c0a31`): intersección en el almacén, D1 5/102 con 27 malas; comprobación D2 3/106, precisión 9 % (exigido 10 % y 60 %). Sin reserva. Rutas generales apagadas por defecto.

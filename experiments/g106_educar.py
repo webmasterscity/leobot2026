@@ -53,12 +53,14 @@ def shares(bot: Bot, folders) -> dict:
                 held = set().union(*(set(u['terms']) | set(u.get('inherited', ())) for u in gold))
                 _, question = bot._question_part(turn['cliente'])
                 terms = bot.context_terms(question)
+                words = [w for w in bot.split_words(question) if w[:1].isalnum()]
+                content = {bot._term(w) for w, tag in zip(words, bot.tag_words(words) or []) if tag in ('NOUN', 'PROPN', 'ADJ', 'VERB')}
                 # Chance: any word of the text (not asked) that is in a right unit.
                 others = [w for w in postings if w not in terms]
                 chance[0] += sum(w in held for w in others)
                 chance[1] += len(others)
                 for q in dict.fromkeys(terms):
-                    if q in title:
+                    if q in title or q in postings or q not in content:
                         continue
                     for word, link in set(bot.knowledge_related(q)):
                         if word == q or word in terms or word not in postings:

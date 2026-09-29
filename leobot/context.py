@@ -488,6 +488,14 @@ class ContextMixin:
         soft = getattr(self, 'soft_prefix', True)
         title = set(getattr(self, 'context_title', ()))
         shares = self.context_model.get('knowledge_share') if getattr(self, 'general_knowledge', True) else None
+        if shares and question:
+            # Only content words (classes learned from AnCora) are explained through general knowledge.
+            words = [w for w in self.split_words(question) if w[:1].isalnum()]
+            tags = self.tag_words(words) if words and self.syntax_model.get('sentences') else None
+            content = ({self._term(w) for w, tag in zip(words, tags) if tag in ('NOUN', 'PROPN', 'ADJ', 'VERB')}
+                       if tags else set(self.context_terms(question)))
+        else:
+            content = None
         base, gains, how = 0.0, {}, {}
         # Mixture model: the answer unit holds q because the question asks for
         # it (probability δ) or by chance, like any unit of this text (p0).
@@ -507,8 +515,9 @@ class ContextMixin:
                     for i in postings[word]:
                         if i not in best or best[i][0] < gain:
                             best[i] = (gain, 'soft', word)
-            if shares and q not in title:
-                # G-106: a word of the text that general knowledge links to this one, weighed
+            if shares and (content is None or q in content) and q not in title and q not in postings:
+                # G-106: a question word the text lacks is explained by a word of the text that general
+                # knowledge links to it, weighed
                 # by how often, in the taught businesses, a word linked that way was in the answer.
                 for word, link in self.knowledge_related(q):
                     share = shares.get(link)
