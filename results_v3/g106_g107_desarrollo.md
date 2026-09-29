@@ -138,3 +138,10 @@ adjetivo, verbo). Útiles con a lo sumo N citas malas en `congelado_g103`:
 Diseño 3 frente a sin saber, turno a turno: gana 8, pierde 6 (ruido de «yo», «no», «poder»). El diseño 4 queda dentro de la variación
 entre semillas (±3–5): **sin mejora demostrable**. G-106 cierra con cuatro diseños sin ganancia; el código queda inactivo salvo que la
 base traiga `knowledge_share`.
+
+## 10. Pares de forma del valor solos (familia `shape`) — negativo
+15 624 pares «palabra de la pregunta | forma del valor»; acierto cruzado 0,587; en `congelado_g103` 126 útiles con ≤ 100 malas y 152 con
+≤ 150 (sin pares: 149 y 162). Junto con las secciones 1, 3, 7 y 9: **todo lo aprendido por palabra en los 216 negocios de enseñanza
+(pares léxicos, abstractos, de forma, enlaces por tipo, cantidades) deja de valer en sectores nuevos**; tampoco cambiar el objetivo de
+aprendizaje. Conclusión de la sesión: con los rasgos actuales el kiosco está saturado en ≈ 150 útiles / 100 citas malas de 383 en
+desarrollo; lo que falta es comprensión (qué pide la pregunta y qué dice cada unidad), el obstáculo principal ya registrado.
