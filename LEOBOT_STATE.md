@@ -50,6 +50,8 @@
 
 ## Historial de ciclos
 
+- 2026-09-29 · **G-111b negativo en banco nuevo** ([resumen](results_v3/g111b_resumen.md), `freeze-G111-1` = `62a688a`, banco `congelado_g111` de 32 negocios): pares en ≥ 25 negocios −1,1/−0,5/+1,3 puntos frente al modelo denso. Observación: a igual número de citas malas el modelo denso supera a prefijos en +5,9/+5,1/+2,4 puntos → G-112.
+- 2026-09-29 · **G-111 en desarrollo**: pares en ≥ k negocios, acierto cruzado +1,6 a +2,2, no cumple su umbral.
 - 2026-09-29 · **G-106 diseños 3 y 4** (saber solo para palabras de contenido que faltan en el texto, como decía el preregistro): empate dentro del ruido entre semillas (≤ 150 malas: 165 frente a 162/157). G-106 cerrado con cuatro diseños.
 - 2026-09-29 · **G-109 negativo en desarrollo** (ListNet): acierto cruzado +0,5 puntos, útiles con ≤ 100 malas 122 frente a 146–149 del modelo puntual.
 - 2026-09-29 · **G-108 negativo en desarrollo** (preregistro `dea69bb`): biblioteca compilada de Wikipedia (89 396 frases, 44,8 MB); D1 0/102 con 9 malas, D2 1/106 con 18 malas; sin reserva.
