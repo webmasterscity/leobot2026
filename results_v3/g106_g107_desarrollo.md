@@ -145,3 +145,14 @@ base traiga `knowledge_share`.
 (pares léxicos, abstractos, de forma, enlaces por tipo, cantidades) deja de valer en sectores nuevos**; tampoco cambiar el objetivo de
 aprendizaje. Conclusión de la sesión: con los rasgos actuales el kiosco está saturado en ≈ 150 útiles / 100 citas malas de 383 en
 desarrollo; lo que falta es comprensión (qué pide la pregunta y qué dice cada unidad), el obstáculo principal ya registrado.
+
+## 11. G-111: pares que se repiten en ≥ k negocios distintos — no cumple su umbral en desarrollo, pero primera señal de transferencia
+([preregistro](../prereg/G-111-pares-comunes-a-muchos-negocios.md)). Útiles en `congelado_g103` con a lo sumo N citas malas:
+| variante | pares | acierto cruzado | N = 50 | 100 | 150 | 250 |
+|---|---|---|---|---|---|---|
+| sin pares, semilla 0 / 1 | 0 | 0,599 / 0,603 | 108 / 109 | 149 / 146 | 162 / 157 | 180 / 179 |
+| k = 10, semilla 0 / 1 | 41 335 | 0,625 / 0,622 | 100 / 94 | 141 / 133 | 165 / 159 | 191 / 193 |
+| k = 25, semilla 0 / 1 | 12 232 | 0,616 / 0,619 | 109 / 107 | 144 / 145 | 168 / 167 | 188 / 192 |
+Umbral preregistrado (+8 con N = 100 y 150, ambas semillas): **no se cumple** (N = 100 empeora). Es, sin embargo, la primera variante
+de pares que mejora el acierto cruzado de forma consistente (+1,6 a +2,2 puntos) y los útiles con presupuestos amplios (+8 a +14 con
+N = 250). No se cambia la meta sobre este banco: se preregistra G-111b con umbrales nuevos para un banco nuevo.
