@@ -1,0 +1,278 @@
+[
+ [
+  {
+   "cliente": "buenas",
+   "tipo": "charla",
+   "accion": "charla",
+   "claves": [],
+   "evidencia": null,
+   "respuesta_ideal": "Buenas, bienvenido a Piedra Viva. ¿En qué puedo servirle?"
+  },
+  {
+   "cliente": "a que hora abren los domingos?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "11:00 a 16:00"
+   ],
+   "evidencia": "Horario de tienda: lunes a sábado de 10:00 a 19:30. Domingos de 11:00 a 16:00.",
+   "respuesta_ideal": "Los domingos abrimos de 11:00 a 16:00."
+  },
+  {
+   "cliente": "y el museo tambien abre?",
+   "tipo": "seguimiento",
+   "accion": "responder",
+   "claves": [
+    "los domingos está cerrado"
+   ],
+   "evidencia": "El museo abre de lunes a sábado; los domingos está cerrado.",
+   "respuesta_ideal": "No, el museo abre de lunes a sábado; los domingos está cerrado."
+  },
+  {
+   "cliente": "cuanto cuesta la entrada para mi y mis dos hijos de 7 y 9?",
+   "tipo": "combinada",
+   "accion": "responder",
+   "claves": [
+    "Bs 20",
+    "Bs 10"
+   ],
+   "evidencia": "Niños de 5 a 12 años: Bs 10",
+   "respuesta_ideal": "Serían Bs 20 por usted y Bs 10 por cada niño, Bs 40 en total."
+  },
+  {
+   "cliente": "cuanto dura la visita guiada?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "40 minutos"
+   ],
+   "evidencia": "La visita guiada dura unos 40 minutos y sale cada hora en punto, de 10:00 a 18:00. Hay guía en español y en inglés.",
+   "respuesta_ideal": "La visita guiada dura unos 40 minutos."
+  }
+ ],
+ [
+  {
+   "cliente": "cuanto cuesta una geoda de cuarzo?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "Bs 250"
+   ],
+   "evidencia": "Geoda de cuarzo mediana: Bs 250",
+   "respuesta_ideal": "Una geoda de cuarzo mediana cuesta Bs 250."
+  },
+  {
+   "cliente": "tienen geodas grandes?",
+   "tipo": "sin_respuesta",
+   "accion": "abstenerse",
+   "claves": [],
+   "evidencia": null,
+   "respuesta_ideal": "No tengo información sobre geodas grandes; puede consultarlo por WhatsApp al +591 7 6612 340."
+  },
+  {
+   "cliente": "y esa viene con certificado?",
+   "tipo": "seguimiento",
+   "accion": "responder",
+   "claves": [
+    "gratis en piezas desde Bs 200"
+   ],
+   "evidencia": "Certificado de autenticidad: gratis en piezas desde Bs 200; Bs 30 en las demás",
+   "respuesta_ideal": "Sí, el certificado de autenticidad es gratis en piezas desde Bs 200, y la geoda mediana cuesta Bs 250."
+  },
+  {
+   "cliente": "aceptan dolares?",
+   "tipo": "si_no",
+   "accion": "responder",
+   "claves": [
+    "dólares (a Bs 6,96 el dólar)"
+   ],
+   "evidencia": "Aceptamos bolivianos en efectivo, dólares (a Bs 6,96 el dólar), QR interoperable y tarjetas.",
+   "respuesta_ideal": "Sí, aceptamos dólares a Bs 6,96 el dólar."
+  },
+  {
+   "cliente": "si pago con tarjeta me cobran extra?",
+   "tipo": "si_no",
+   "accion": "responder",
+   "claves": [
+    "recargo de 3 %"
+   ],
+   "evidencia": "Las tarjetas tienen un recargo de 3 %.",
+   "respuesta_ideal": "Sí, las tarjetas tienen un recargo de 3 %."
+  },
+  {
+   "cliente": "cuanto seria el collar con azurita en bolivianos?",
+   "tipo": "combinada",
+   "accion": "responder",
+   "claves": [
+    "USD 55",
+    "Bs 6,96"
+   ],
+   "evidencia": "Collar con azurita: USD 55",
+   "respuesta_ideal": "El collar cuesta USD 55, que a Bs 6,96 por dólar son unos Bs 382,80."
+  }
+ ],
+ [
+  {
+   "cliente": "quiero mandar unas piedras a España, ustedes las envian?",
+   "tipo": "si_no",
+   "accion": "responder",
+   "claves": [
+    "Al exterior no hacemos envíos"
+   ],
+   "evidencia": "Envíos dentro de Bolivia por flota o encomienda desde Bs 35, según el peso. Al exterior no hacemos envíos.",
+   "respuesta_ideal": "No, al exterior no hacemos envíos."
+  },
+  {
+   "cliente": "y que permisos necesito para sacar minerales del pais?",
+   "tipo": "instruccion",
+   "accion": "derivar",
+   "claves": [],
+   "evidencia": "Si preguntan por permisos para sacar o exportar minerales del país, no des consejo legal: derívalos al teléfono fijo.",
+   "respuesta_ideal": "Sobre permisos no puedo darle indicaciones; consulte por teléfono al +591 2 231 5580."
+  },
+  {
+   "cliente": "hacen envios a Santa Cruz?",
+   "tipo": "si_no",
+   "accion": "responder",
+   "claves": [
+    "Envíos dentro de Bolivia"
+   ],
+   "evidencia": "Envíos dentro de Bolivia por flota o encomienda desde Bs 35, según el peso.",
+   "respuesta_ideal": "Sí, enviamos dentro de Bolivia por flota o encomienda."
+  },
+  {
+   "cliente": "cuanto cuesta el envio?",
+   "tipo": "seguimiento",
+   "accion": "responder",
+   "claves": [
+    "desde Bs 35"
+   ],
+   "evidencia": "Envíos dentro de Bolivia por flota o encomienda desde Bs 35, según el peso.",
+   "respuesta_ideal": "Desde Bs 35, según el peso del paquete."
+  }
+ ],
+ [
+  {
+   "cliente": "tengo una piedra de mi abuelo, cuanto me la tasan?",
+   "tipo": "instruccion",
+   "accion": "derivar",
+   "claves": [],
+   "evidencia": "Si un cliente quiere que le tasen o valoren una piedra o mineral que trae de su casa, no des ningún valor: derívalo a Mariana Quispe por el WhatsApp.",
+   "respuesta_ideal": "No puedo darle un valor; puede escribir a Mariana Quispe al WhatsApp +591 7 6612 340."
+  },
+  {
+   "cliente": "es cierto que la sodalita ayuda con la ansiedad?",
+   "tipo": "instruccion",
+   "accion": "abstenerse",
+   "claves": [],
+   "evidencia": "Nunca prometas propiedades curativas, energéticas ni espirituales de las piedras.",
+   "respuesta_ideal": "No puedo asegurar propiedades curativas de las piedras."
+  },
+  {
+   "cliente": "puedo devolver una pieza hecha a medida?",
+   "tipo": "si_no",
+   "accion": "responder",
+   "claves": [
+    "Piezas a medida no tienen devolución"
+   ],
+   "evidencia": "Devoluciones: dentro de 7 días con el comprobante, siempre que la pieza no esté cortada ni pulida. Piezas a medida no tienen devolución.",
+   "respuesta_ideal": "No, las piezas a medida no tienen devolución."
+  },
+  {
+   "cliente": "cuanto tardan en hacer un anillo a medida?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "15 días hábiles"
+   ],
+   "evidencia": "Se entregan en 15 días hábiles. Se pide un anticipo del 50 %.",
+   "respuesta_ideal": "Se entregan en 15 días hábiles."
+  },
+  {
+   "cliente": "y hay que pagar algo por adelantado?",
+   "tipo": "seguimiento",
+   "accion": "responder",
+   "claves": [
+    "anticipo del 50 %"
+   ],
+   "evidencia": "Se entregan en 15 días hábiles. Se pide un anticipo del 50 %.",
+   "respuesta_ideal": "Sí, se pide un anticipo del 50 %."
+  }
+ ],
+ [
+  {
+   "cliente": "cuando es el taller de engaste?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "Sábados a las 15:00"
+   ],
+   "evidencia": "Duración de 3 horas, Bs 180 por persona, materiales incluidos. Cupo de 8 personas. Sábados a las 15:00. Se reserva el lugar con un anticipo del 50 %.",
+   "respuesta_ideal": "El taller es los sábados a las 15:00."
+  },
+  {
+   "cliente": "cuanto cuesta y cuantos cupos hay?",
+   "tipo": "seguimiento",
+   "accion": "responder",
+   "claves": [
+    "Bs 180 por persona",
+    "Cupo de 8 personas"
+   ],
+   "evidencia": "Duración de 3 horas, Bs 180 por persona, materiales incluidos. Cupo de 8 personas. Sábados a las 15:00. Se reserva el lugar con un anticipo del 50 %.",
+   "respuesta_ideal": "Cuesta Bs 180 por persona, con materiales incluidos, y el cupo es de 8 personas."
+  },
+  {
+   "cliente": "el taller es apto para ninos?",
+   "tipo": "sin_respuesta",
+   "accion": "abstenerse",
+   "claves": [],
+   "evidencia": null,
+   "respuesta_ideal": "No tengo información sobre una edad mínima; consulte por WhatsApp al +591 7 6612 340."
+  },
+  {
+   "cliente": "y donde queda la tienda?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "Calle Linares 880"
+   ],
+   "evidencia": "Dirección: Calle Linares 880, entre Sagárnaga y Santa Cruz, La Paz",
+   "respuesta_ideal": "Estamos en Calle Linares 880, entre Sagárnaga y Santa Cruz."
+  },
+  {
+   "cliente": "tienen sucursal en Cochabamba?",
+   "tipo": "sin_respuesta",
+   "accion": "abstenerse",
+   "claves": [],
+   "evidencia": null,
+   "respuesta_ideal": "No tengo información de otras sucursales; consulte por WhatsApp."
+  },
+  {
+   "cliente": "cuanto cuesta un anillo con azurita?",
+   "tipo": "sin_respuesta",
+   "accion": "abstenerse",
+   "claves": [],
+   "evidencia": null,
+   "respuesta_ideal": "No tengo el precio de ese anillo; solo sé del collar con azurita y del anillo con sodalita. Consulte por WhatsApp."
+  },
+  {
+   "cliente": "el 1 de mayo abren?",
+   "tipo": "si_no",
+   "accion": "responder",
+   "claves": [
+    "el 1 de mayo",
+    "cerramos"
+   ],
+   "evidencia": "Feriados: abrimos solo hasta las 14:00. El 1 de enero, el 1 de mayo y el 25 de diciembre cerramos.",
+   "respuesta_ideal": "No, el 1 de mayo cerramos."
+  },
+  {
+   "cliente": "chau muchas gracias",
+   "tipo": "charla",
+   "accion": "charla",
+   "claves": [],
+   "evidencia": null,
+   "respuesta_ideal": "Gracias a usted. Que tenga un buen día y vuelva pronto."
+  }
+ ]
+]

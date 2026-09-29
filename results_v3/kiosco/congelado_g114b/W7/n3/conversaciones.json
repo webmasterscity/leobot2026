@@ -1,0 +1,36 @@
+[
+  [
+    {"cliente": "Hola, ¿venden lápices de colores?", "tipo": "si_no", "accion": "responder", "claves": ["Lápices de colores", "8€ – 18€"], "evidencia": "Lápices de colores (caja 24): 8€ – 18€", "respuesta_ideal": "Sí, tenemos lápices de colores. Una caja de 24 cuesta entre 8 y 18 euros según la marca."},
+    {"cliente": "¿Cuál es la más barata?", "tipo": "seguimiento", "accion": "responder", "claves": ["8€"], "evidencia": "Lápices de colores (caja 24): 8€ – 18€", "respuesta_ideal": "La caja de 24 más económica es 8€."},
+    {"cliente": "Dale, me llevo esa. ¿A qué hora cierran hoy?", "tipo": "directa", "accion": "responder", "claves": ["9 p.m.", "Lunes a viernes"], "evidencia": "Horario: Lunes a viernes, 10 a.m. – 9 p.m.", "respuesta_ideal": "Hoy (si es entre semana) cierra a las 9 p.m. Tenemos tiempo de sobra."},
+    {"cliente": "Perfecto, ya voy.", "tipo": "charla", "accion": "charla", "claves": [], "evidencia": null, "respuesta_ideal": "¡Espérate! Estamos en Calle San Vicente Ferrer, 22, Malasaña."}
+  ],
+  [
+    {"cliente": "Hola, quiero hacer un scrapbook para mi familia pero no tengo idea de por dónde empezar.", "tipo": "instruccion", "accion": "responder", "claves": ["Consulta de proyecto", "gratis"], "evidencia": "Consulta de proyecto: GRATIS", "respuesta_ideal": "¡Qué genial! La consulta es gratis. Ven a la tienda y alguien te ayuda a planificar. Tenemos papeles, cintas, sellos, todo lo necesario."},
+    {"cliente": "¿Y cuánto cuesta todo para un scrapbook básico?", "tipo": "sin_respuesta", "accion": "abstenerse", "claves": [], "evidencia": null, "respuesta_ideal": "Depende del tamaño y la complejidad. Mejor ven o llama: +34 91 523 4567. Vemos tu proyecto y te damos presupuesto."},
+    {"cliente": "¿Vendéis papeles especiales para scrapbooking?", "tipo": "directa", "accion": "responder", "claves": ["Papeles especiales", "4€ – 12€"], "evidencia": "Papeles especiales (pack 20 hojas): 4€ – 12€", "respuesta_ideal": "Sí, tenemos packs de 20 hojas desde 4€ hasta 12€, dependiendo del diseño."},
+    {"cliente": "¿Y cintas para decorar?", "tipo": "directa", "accion": "responder", "claves": ["Cintas washi", "2€ – 6€"], "evidencia": "Cintas washi (rollo): 2€ – 6€", "respuesta_ideal": "Tenemos cintas washi de 2 a 6 euros el rollo. Vienen en muchos diseños."},
+    {"cliente": "Genial, voy a ir este fin de semana.", "tipo": "charla", "accion": "charla", "claves": [], "evidencia": null, "respuesta_ideal": "¡Perfecto! Los sábados y domingos abrimos de 10 a.m. a 7 p.m. Nos vemos pronto."}
+  ],
+  [
+    {"cliente": "¿Hacen impresiones a color?", "tipo": "si_no", "accion": "responder", "claves": ["Impresiones a color", "0,35€"], "evidencia": "Impresiones a color: 0,35€", "respuesta_ideal": "Sí, impresiones a color a 0,35 euros cada una."},
+    {"cliente": "¿Y plastificación?", "tipo": "directa", "accion": "responder", "claves": ["Plastificación", "0,20€ – 1€"], "evidencia": "Plastificación de documento: 0,20€ – 1€ según tamaño", "respuesta_ideal": "Hacemos plastificación desde 0,20 euros dependiendo del tamaño."},
+    {"cliente": "¿Cuánto tiempo tardan?", "tipo": "sin_respuesta", "accion": "derivar", "claves": [], "evidencia": null, "respuesta_ideal": "Normalmente el mismo día. Mejor llama: +34 91 523 4567. Así no esperas en vano."},
+    {"cliente": "Perfecto. ¿Abren los domingos?", "tipo": "directa", "accion": "responder", "claves": ["Domingos", "10 a.m. – 7 p.m.", "Abierto 7 días"], "evidencia": "Sábados y domingos, 10 a.m. – 7 p.m. Abierto 7 días a la semana", "respuesta_ideal": "Sí, domingos de 10 a.m. a 7 p.m. Abrimos todos los días, incluso festivos."},
+    {"cliente": "Dale, voy mañana.", "tipo": "charla", "accion": "charla", "claves": [], "evidencia": null, "respuesta_ideal": "¡Genial! Nos vemos mañana en Malasaña."}
+  ],
+  [
+    {"cliente": "¿Tienen rotuladores permanentes?", "tipo": "directa", "accion": "responder", "claves": ["Rotuladores permanentes", "9€ – 15€"], "evidencia": "Rotuladores permanentes (pack 12): 9€ – 15€", "respuesta_ideal": "Sí, packs de 12 rotuladores permanentes entre 9 y 15 euros."},
+    {"cliente": "¿En qué colores los tienen?", "tipo": "sin_respuesta", "accion": "derivar", "claves": [], "evidencia": null, "respuesta_ideal": "Vienen en surtidos de colores. Para ver exactamente cuáles tenemos hoy, mejor vienes a la tienda o llamas al +34 91 523 4567."},
+    {"cliente": "¿Y si digo que necesito un color específico que no tienen?", "tipo": "instruccion", "accion": "derivar", "claves": [], "evidencia": "Si pregunta por un producto específico que NO está en la lista, digo: Eso no lo tenemos en stock habitualmente, pero puedo pedirlo encargado.", "respuesta_ideal": "Podemos hacer encargo. Llama a la tienda y ellos cierran la pedida. Tarda un par de días."},
+    {"cliente": "Bien. ¿Tienen algo para hacer lettering?", "tipo": "directa", "accion": "responder", "claves": ["Kit lettering", "15€ – 22€"], "evidencia": "Kit lettering: 15€ – 22€", "respuesta_ideal": "Tenemos kits completos de lettering entre 15 y 22 euros. Todo lo necesario para empezar."},
+    {"cliente": "Suena bien. Voy a comprar.", "tipo": "charla", "accion": "charla", "claves": [], "evidencia": null, "respuesta_ideal": "¡Genial! Estamos en Calle San Vicente Ferrer, 22. ¡Que disfrutes creando!"}
+  ],
+  [
+    {"cliente": "Hola, ¿hacen envíos a casa?", "tipo": "si_no", "accion": "responder", "claves": ["Envío a domicilio", "4€"], "evidencia": "Envío a domicilio (península, pedido mín. 30€): 4€", "respuesta_ideal": "Sí, hacemos envíos a domicilio en la península desde 4 euros (pedido mínimo 30 euros)."},
+    {"cliente": "¿Y si lo necesito rápido, en 24 horas?", "tipo": "seguimiento", "accion": "responder", "claves": ["Envío urgente", "24-48 h", "8€"], "evidencia": "Envío urgente (24-48 h): 8€", "respuesta_ideal": "Sí, envío urgente en 24-48 horas por 8 euros."},
+    {"cliente": "¿Y las devoluciones? ¿Cuántos días tengo?", "tipo": "directa", "accion": "responder", "claves": ["14 días"], "evidencia": "14 días desde la compra para cambio o devolución", "respuesta_ideal": "14 días desde la compra. El producto tiene que estar sin abrir ni usar."},
+    {"cliente": "¿Cómo se hace?", "tipo": "sin_respuesta", "accion": "derivar", "claves": [], "evidencia": null, "respuesta_ideal": "Llama al +34 91 523 4567 y explicamos el proceso. Si es culpa nuestra, mandamos etiqueta prepagada."},
+    {"cliente": "Bueno, perfecto, gracias.", "tipo": "charla", "accion": "charla", "claves": [], "evidencia": null, "respuesta_ideal": "De nada. ¡Que disfrutes! Estamos para lo que necesites."}
+  ]
+]

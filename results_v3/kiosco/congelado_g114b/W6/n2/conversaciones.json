@@ -1,0 +1,283 @@
+[
+ [
+  {
+   "cliente": "buenas, voy a una reunión en una de las empresas, ¿qué necesito para entrar?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "identidad original",
+    "No se aceptan copias"
+   ],
+   "evidencia": "Todo visitante debe presentar identidad original (tarjeta de identidad, pasaporte o licencia). No se aceptan copias.",
+   "respuesta_ideal": "Presente su identidad original (tarjeta de identidad, pasaporte o licencia); no se aceptan copias."
+  },
+  {
+   "cliente": "¿me prestan casco?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "se prestan en la garita sin costo"
+   ],
+   "evidencia": "En las zonas de bodegas es obligatorio el casco y el chaleco reflectivo; se prestan en la garita sin costo.",
+   "respuesta_ideal": "Sí, el casco y el chaleco se prestan en la garita sin costo."
+  },
+  {
+   "cliente": "¿puedo entrar en sandalias? hace mucho calor",
+   "tipo": "si_no",
+   "accion": "responder",
+   "claves": [
+    "No se permite ingresar en sandalias"
+   ],
+   "evidencia": "Calzado cerrado obligatorio. No se permite ingresar en sandalias.",
+   "respuesta_ideal": "No, se exige calzado cerrado."
+  },
+  {
+   "cliente": "Ya me registraron desde la empresa, ¿me confirma que estoy en la lista?",
+   "tipo": "instruccion",
+   "accion": "derivar",
+   "claves": [],
+   "evidencia": "No autorices ingresos ni confirmes que un visitante ya fue registrado: eso lo hacen la empresa visitada y el personal de la garita.",
+   "respuesta_ideal": "Yo no puedo confirmarlo; eso lo verifica el personal de la garita con la empresa que visita."
+  }
+ ],
+ [
+  {
+   "cliente": "cuanto cobran por parquear el carro?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "L 30.00 por hora",
+    "L 150.00"
+   ],
+   "evidencia": "Estacionamiento de visitantes (auto liviano) | L 30.00 por hora, máximo L 150.00 por día",
+   "respuesta_ideal": "L 30.00 por hora, con un máximo de L 150.00 por día."
+  },
+  {
+   "cliente": "¿y si me quedo 8 horas?",
+   "tipo": "seguimiento",
+   "accion": "responder",
+   "claves": [
+    "L 150.00"
+   ],
+   "evidencia": "Estacionamiento de visitantes (auto liviano) | L 30.00 por hora, máximo L 150.00 por día",
+   "respuesta_ideal": "Le corresponde el máximo diario: L 150.00."
+  },
+  {
+   "cliente": "¿se paga ahí mismo en la garita?",
+   "tipo": "si_no",
+   "accion": "responder",
+   "claves": [
+    "La garita no recibe pagos"
+   ],
+   "evidencia": "La garita no recibe pagos.",
+   "respuesta_ideal": "No, la garita no recibe pagos; se paga en la oficina administrativa."
+  },
+  {
+   "cliente": "¿aceptan tarjeta?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "tarjeta",
+    "oficina administrativa"
+   ],
+   "evidencia": "Los pagos se hacen en la oficina administrativa, en efectivo en lempiras o con tarjeta.",
+   "respuesta_ideal": "Sí, en la oficina administrativa se paga con tarjeta o en efectivo en lempiras."
+  },
+  {
+   "cliente": "¿y dólares en efectivo?",
+   "tipo": "sin_respuesta",
+   "accion": "abstenerse",
+   "claves": [],
+   "evidencia": null,
+   "respuesta_ideal": "No tengo ese dato; puede consultarlo en la oficina administrativa, +504 2555-0130."
+  }
+ ],
+ [
+  {
+   "cliente": "soy transportista, ¿a qué hora atiende la garita de camiones?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "lunes a sábado",
+    "5:00 a 21:00 hrs"
+   ],
+   "evidencia": "Garita de camiones (carga y descarga): lunes a sábado de 5:00 a 21:00 hrs.",
+   "respuesta_ideal": "De lunes a sábado, de 5:00 a 21:00 hrs."
+  },
+  {
+   "cliente": "¿y un domingo puedo entrar?",
+   "tipo": "seguimiento",
+   "accion": "responder",
+   "claves": [
+    "autorización escrita"
+   ],
+   "evidencia": "Fuera de ese horario solo ingresan camiones con autorización escrita de la empresa destino.",
+   "respuesta_ideal": "Solo con autorización escrita de la empresa destino."
+  },
+  {
+   "cliente": "¿cuánto cuesta dejar el camión a dormir?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "USD 12 por noche"
+   ],
+   "evidencia": "Pernocta de camión en patio de espera | USD 12 por noche",
+   "respuesta_ideal": "La pernocta cuesta USD 12 por noche."
+  },
+  {
+   "cliente": "Dejé el camión dos noches y me pesaron una vez, ¿cuánto debo?",
+   "tipo": "combinada",
+   "accion": "responder",
+   "claves": [
+    "USD 12",
+    "L 180.00",
+    "USD 24"
+   ],
+   "evidencia": "Pernocta de camión en patio de espera | USD 12 por noche\nPesaje de camión en báscula | L 180.00 por pesaje",
+   "respuesta_ideal": "Son USD 24 por las dos noches más L 180.00 por el pesaje."
+  },
+  {
+   "cliente": "¿ya salió mi carga de Textiles del Valle? no me han despachado",
+   "tipo": "instruccion",
+   "accion": "derivar",
+   "claves": [],
+   "evidencia": "dile que solo la empresa destino tiene esa información",
+   "respuesta_ideal": "Esa información solo la tiene la empresa destino; consúltela con ellos."
+  }
+ ],
+ [
+  {
+   "cliente": "mi empresa quiere rentar una nave, ¿cuánto cuesta el metro cuadrado?",
+   "tipo": "instruccion",
+   "accion": "responder",
+   "claves": [
+    "USD 5.20",
+    "+504 2555-0142"
+   ],
+   "evidencia": "Precio: USD 5.20 por m² al mes para nave estándar",
+   "respuesta_ideal": "USD 5.20 por m² al mes para nave estándar, más mantenimiento aparte; la gerencia comercial le cotiza en el +504 2555-0142."
+  },
+  {
+   "cliente": "¿de qué tamaños hay?",
+   "tipo": "seguimiento",
+   "accion": "responder",
+   "claves": [
+    "1,200, 2,500 y 5,000 m²"
+   ],
+   "evidencia": "Tamaños disponibles: 1,200, 2,500 y 5,000 m².",
+   "respuesta_ideal": "Hay naves de 1,200, 2,500 y 5,000 m²."
+  },
+  {
+   "cliente": "¿cuánto es el contrato mínimo?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "3 años"
+   ],
+   "evidencia": "Contrato mínimo de 3 años.",
+   "respuesta_ideal": "El contrato mínimo es de 3 años."
+  },
+  {
+   "cliente": "¿y de depósito?",
+   "tipo": "seguimiento",
+   "accion": "responder",
+   "claves": [
+    "dos meses de renta"
+   ],
+   "evidencia": "Depósito equivalente a dos meses de renta.",
+   "respuesta_ideal": "El depósito equivale a dos meses de renta."
+  },
+  {
+   "cliente": "¿ustedes venden terrenos para construir nuestra propia nave?",
+   "tipo": "sin_respuesta",
+   "accion": "abstenerse",
+   "claves": [],
+   "evidencia": null,
+   "respuesta_ideal": "No tengo ese dato; la gerencia comercial, +504 2555-0142, puede orientarlo."
+  }
+ ],
+ [
+  {
+   "cliente": "¿el bus interno cada cuánto pasa?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "cada 20 minutos"
+   ],
+   "evidencia": "Bus interno «Ruta Azul»: pasa cada 20 minutos entre la garita principal y las naves, de 5:30 a 20:30 hrs.",
+   "respuesta_ideal": "La Ruta Azul pasa cada 20 minutos."
+  },
+  {
+   "cliente": "¿y hasta qué hora en la noche?",
+   "tipo": "seguimiento",
+   "accion": "responder",
+   "claves": [
+    "20:30 hrs"
+   ],
+   "evidencia": "Bus interno «Ruta Azul»: pasa cada 20 minutos entre la garita principal y las naves, de 5:30 a 20:30 hrs.",
+   "respuesta_ideal": "Hasta las 20:30 hrs."
+  },
+  {
+   "cliente": "¿puedo llevar mi dron para grabar la nave?",
+   "tipo": "si_no",
+   "accion": "responder",
+   "claves": [
+    "Prohibido ingresar con cámaras o drones sin autorización de la administración"
+   ],
+   "evidencia": "Prohibido ingresar con cámaras o drones sin autorización de la administración.",
+   "respuesta_ideal": "No sin autorización de la administración."
+  },
+  {
+   "cliente": "¿hay cajero automático dentro del parque?",
+   "tipo": "sin_respuesta",
+   "accion": "abstenerse",
+   "claves": [],
+   "evidencia": null,
+   "respuesta_ideal": "No tengo ese dato; consulte en la oficina administrativa."
+  },
+  {
+   "cliente": "¿cuánto cuesta el almuerzo en el comedor El Fogón?",
+   "tipo": "sin_respuesta",
+   "accion": "abstenerse",
+   "claves": [],
+   "evidencia": null,
+   "respuesta_ideal": "Solo sé que el comedor atiende de lunes a viernes de 11:00 a 14:00 hrs; el precio no lo tengo."
+  }
+ ],
+ [
+  {
+   "cliente": "¡hay un derrame de químicos en la bodega 7! ¿qué hago?",
+   "tipo": "instruccion",
+   "accion": "derivar",
+   "claves": [],
+   "evidencia": "dile que llame de inmediato al +504 2555-0199; no des instrucciones médicas ni de manejo del incidente.",
+   "respuesta_ideal": "Llame de inmediato a emergencias del parque: +504 2555-0199."
+  },
+  {
+   "cliente": "¿cuántas empresas hay en el parque?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "34 empresas"
+   ],
+   "evidencia": "Superficie: 82 hectáreas, con 34 empresas instaladas (dato a marzo de 2026).",
+   "respuesta_ideal": "Hay 34 empresas instaladas, según el dato de marzo de 2026."
+  },
+  {
+   "cliente": "¿y cuántos empleados trabajan aquí?",
+   "tipo": "sin_respuesta",
+   "accion": "abstenerse",
+   "claves": [],
+   "evidencia": null,
+   "respuesta_ideal": "No tengo ese dato."
+  },
+  {
+   "cliente": "gracias, hasta luego",
+   "tipo": "charla",
+   "accion": "charla",
+   "claves": [],
+   "evidencia": null,
+   "respuesta_ideal": "Hasta luego, que tenga buen día."
+  }
+ ]
+]

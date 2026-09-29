@@ -1,0 +1,37 @@
+[
+  [
+    {"cliente": "Hola, ¿venden vinilos?", "tipo": "si_no", "accion": "responder", "claves": ["Vinilos nuevos", "Vinilos vintage"], "evidencia": "Vinilos nuevos (importados y nacionales) - Vinilos vintage / Segunda mano", "respuesta_ideal": "Claro. Tenemos vinilos nuevos, importados y nacionales, y también vintage de segunda mano."},
+    {"cliente": "¿Cuánto cuesta un vinilo nuevo?", "tipo": "directa", "accion": "responder", "claves": ["350 ARS – 800 ARS"], "evidencia": "Lanzamientos recientes: 350 ARS – 800 ARS", "respuesta_ideal": "Vinilos nuevos cuestan entre 350 y 800 pesos aproximadamente, según si es lanzamiento reciente o catálogo clásico."},
+    {"cliente": "¿Y los usados?", "tipo": "directa", "accion": "responder", "claves": ["150 ARS – 400 ARS", "80 ARS – 200 ARS"], "evidencia": "Buen estado: 150 ARS – 400 ARS - Desgastados pero audibles: 80 ARS – 200 ARS", "respuesta_ideal": "Vinilos usados en buen estado de 150 a 400 pesos. Si están desgastados pero suenan, desde 80 pesos."},
+    {"cliente": "¿Puedo escuchar uno antes de comprarlo?", "tipo": "si_no", "accion": "responder", "claves": ["podés escuchar"], "evidencia": "En tienda podés escuchar cualquier disco que quieras antes de comprar, especialmente los usados.", "respuesta_ideal": "Sí, en tienda podes escuchar cualquier disco que quieras antes de comprar. Tenemos estetoscopio y revisamos juntos."},
+    {"cliente": "Perfecto. ¿A qué hora cierran hoy?", "tipo": "charla", "accion": "charla", "claves": [], "evidencia": null, "respuesta_ideal": "Hoy cerramos a las 9 p.m. (si es lunes a viernes). Todavía hay tiempo."}
+  ],
+  [
+    {"cliente": "¿Qué géneros tienen?", "tipo": "sin_respuesta", "accion": "abstenerse", "claves": [], "evidencia": null, "respuesta_ideal": "Tenemos de todo: jazz, clásica, rock, folklore, tango, electrónica y mucho más. Mejor vení a explorar o cuéntame qué te atrae."},
+    {"cliente": "Me encanta el tango. ¿Tienen discos de tango?", "tipo": "directa", "accion": "responder", "claves": ["tango"], "evidencia": "jazz, clásica, rock, folklore, tango, electrónica", "respuesta_ideal": "Sí, tenemos tango. Entre vinilos nuevos y usados. ¿Algún artista en particular que busques? Si no, Gustavo te asesora gratis."},
+    {"cliente": "¿Quién es Gustavo?", "tipo": "charla", "accion": "charla", "claves": [], "evidencia": null, "respuesta_ideal": "El dueño. Es coleccionista y músico. Sabe de tango y de todo. ¡Veni a hablar con él!"},
+    {"cliente": "¿Hacen asesoramiento?", "tipo": "directa", "accion": "responder", "claves": ["Asesoramiento musical", "Consulta rápida", "gratis", "sesión extendida", "1 hora", "300 ARS"], "evidencia": "Consulta rápida (recomendación, búsqueda): GRATIS - Sesión de asesoramiento extendida (1 hora, armamos tu discoteca ideal): 300 ARS", "respuesta_ideal": "Consulta rápida es gratis. Si querés una sesión de 1 hora para armar tu colección de tango ideal, 300 pesos."},
+    {"cliente": "Bueno, voy mañana.", "tipo": "charla", "accion": "charla", "claves": [], "evidencia": null, "respuesta_ideal": "¡Genial! Estamos en Av. Corrientes 1234, San Telmo. Nos vemos."}
+  ],
+  [
+    {"cliente": "Tengo una pregunta. ¿Hacen limpieza de discos?", "tipo": "si_no", "accion": "responder", "claves": ["Limpieza"], "evidencia": "Limpieza de vinilos - Limpieza básica: 50 ARS", "respuesta_ideal": "Sí, limpiamos vinilos. Limpieza básica 50 pesos, profunda 100, o con revisión de arañazos 150 pesos."},
+    {"cliente": "¿Cuánto tarda?", "tipo": "directa", "accion": "responder", "claves": ["30 minutos"], "evidencia": "Tarda 30 minutos si esperas.", "respuesta_ideal": "Unos 30 minutos si esperas, o dejás el disco y volvés a buscarlo."},
+    {"cliente": "Lindo. ¿Y si vendo mis discos, cuánto me dan?", "tipo": "instruccion", "accion": "derivar", "claves": [], "evidencia": "Buscamos colecciones. Hacemos oferta justa.", "respuesta_ideal": "Compramos colecciones. Traé fotos o los discos directo. Gustavo te hace una oferta justa."},
+    {"cliente": "Okay. ¿Venden CDs también?", "tipo": "directa", "accion": "responder", "claves": ["CDs"], "evidencia": "CDs - CDs nuevos (nacional): 200 ARS – 400 ARS", "respuesta_ideal": "Sí, CDs nuevos de 200 a 400 pesos. También usados más baratos."},
+    {"cliente": "¿Se pueden devolver los CDs?", "tipo": "si_no", "accion": "responder", "claves": ["CDs nuevos sin abrir", "devolución", "CDs usados"], "evidencia": "CDs nuevos sin abrir: sí devolvemos. CDs usados: sin devolución.", "respuesta_ideal": "CDs nuevos sin abrir, sí. CDs usados, no hay devolución."}
+  ],
+  [
+    {"cliente": "Hola, ¿hacen envíos?", "tipo": "si_no", "accion": "responder", "claves": ["Envío a domicilio", "AMBA", "300 ARS"], "evidencia": "Envío a domicilio (AMBA): 300 ARS (pedido mín. 1.000 ARS)", "respuesta_ideal": "Sí, enviamos en AMBA por 300 pesos (mínimo 1.000 pesos de compra). Interior del país, consultamos."},
+    {"cliente": "¿Y si es urgente?", "tipo": "sin_respuesta", "accion": "derivar", "claves": [], "evidencia": null, "respuesta_ideal": "Consulta con nosotros. Llama al (011) 4362-8876 y vemos si se puede acelerar."},
+    {"cliente": "¿Tienen lanzamientos de rock recientes?", "tipo": "sin_respuesta", "accion": "derivar", "claves": [], "evidencia": null, "respuesta_ideal": "Sí tenemos, pero stock varía. Mejor pregunta en Instagram (@notaviva.ba) o llama. Publicamos novedades ahí."},
+    {"cliente": "¿Aceptan Mercado Pago?", "tipo": "si_no", "accion": "responder", "claves": ["Mercado Pago"], "evidencia": "Mercado Pago (sin recargo)", "respuesta_ideal": "Sí, Mercado Pago sin recargo."},
+    {"cliente": "Perfecto, gracias.", "tipo": "charla", "accion": "charla", "claves": [], "evidencia": null, "respuesta_ideal": "¡De nada! Que disfrutes la música. Volve cuando quieras."}
+  ],
+  [
+    {"cliente": "¿Venden fundas para vinilos?", "tipo": "directa", "accion": "responder", "claves": ["Fundas exteriores para vinilos", "5 ARS"], "evidencia": "Fundas exteriores para vinilos: 5 ARS cada una", "respuesta_ideal": "Sí, fundas a 5 pesos cada una. Hay venta por mayor con descuento."},
+    {"cliente": "¿Y portadiscos para guardar?", "tipo": "directa", "accion": "responder", "claves": ["Portadiscos", "800 ARS – 2.500 ARS"], "evidencia": "Portadiscos (de madera, hasta 100 vinilos): 800 ARS – 2.500 ARS", "respuesta_ideal": "Portadiscos de madera de 800 a 2.500 pesos, para hasta 100 discos."},
+    {"cliente": "¿Qué tal la calidad?", "tipo": "sin_respuesta", "accion": "derivar", "claves": [], "evidencia": null, "respuesta_ideal": "Buena calidad. Mejor pasá y los vés. O llama y Gustavo te describe cuál se adapta mejor a tu colección."},
+    {"cliente": "¿Tienen alguna promoción?", "tipo": "directa", "accion": "responder", "claves": ["descuentos", "3+ discos"], "evidencia": "Clientes frecuentes: descuentos en lotes de 3+ discos.", "respuesta_ideal": "Clientes frecuentes tienen descuento en lotes de 3 o más discos. Seguí Instagram para otras promociones."},
+    {"cliente": "Bueno, voy a ir.", "tipo": "charla", "accion": "charla", "claves": [], "evidencia": null, "respuesta_ideal": "¡Que vengas! Estamos en Av. Corrientes 1234, San Telmo. Te esperamos."}
+  ]
+]

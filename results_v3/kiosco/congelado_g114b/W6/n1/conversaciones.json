@@ -1,0 +1,281 @@
+[
+ [
+  {
+   "cliente": "Buenas tardes, ¿hasta qué hora abren los viernes?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "6:30 p. m."
+   ],
+   "evidencia": "Martes a viernes: 10:00 a. m. – 6:30 p. m.",
+   "respuesta_ideal": "Los viernes atendemos hasta las 6:30 p. m."
+  },
+  {
+   "cliente": "¿y los sabados?",
+   "tipo": "seguimiento",
+   "accion": "responder",
+   "claves": [
+    "11:00 a. m. – 5:00 p. m."
+   ],
+   "evidencia": "Sábados: 11:00 a. m. – 5:00 p. m.",
+   "respuesta_ideal": "Los sábados abrimos de 11:00 a. m. a 5:00 p. m."
+  },
+  {
+   "cliente": "¿y los domingos?",
+   "tipo": "seguimiento",
+   "accion": "responder",
+   "claves": [
+    "cerrado"
+   ],
+   "evidencia": "Domingos y lunes: cerrado",
+   "respuesta_ideal": "Los domingos la galería está cerrada."
+  },
+  {
+   "cliente": "cuanto vale la entrada normal?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "$18.000"
+   ],
+   "evidencia": "| General | $18.000 |",
+   "respuesta_ideal": "La entrada general cuesta $18.000."
+  },
+  {
+   "cliente": "Listo, muchas gracias",
+   "tipo": "charla",
+   "accion": "charla",
+   "claves": [],
+   "evidencia": null,
+   "respuesta_ideal": "Con gusto."
+  }
+ ],
+ [
+  {
+   "cliente": "Voy con mi hijo de 8 años y mi mamá de 70, ¿cuánto pagamos en total?",
+   "tipo": "combinada",
+   "accion": "responder",
+   "claves": [
+    "$18.000",
+    "$9.000",
+    "27.000"
+   ],
+   "evidencia": "| General | $18.000 |\n| Estudiantes con carné vigente | $9.000 |\n| Mayores de 65 años | $9.000 |\n| Menores de 12 años | gratis (con adulto) |",
+   "respuesta_ideal": "Usted paga $18.000, su mamá $9.000 por ser mayor de 65 y su hijo entra gratis con adulto: en total $27.000."
+  },
+  {
+   "cliente": "¿Puedo pagar con Nequi?",
+   "tipo": "si_no",
+   "accion": "responder",
+   "claves": [
+    "Nequi"
+   ],
+   "evidencia": "Medios de pago: efectivo, tarjetas débito y crédito (Visa y Mastercard) y Nequi.",
+   "respuesta_ideal": "Sí, aceptamos Nequi."
+  },
+  {
+   "cliente": "¿y con American Express?",
+   "tipo": "seguimiento",
+   "accion": "responder",
+   "claves": [
+    "No aceptamos American Express"
+   ],
+   "evidencia": "No aceptamos American Express ni cheques.",
+   "respuesta_ideal": "No, American Express no la aceptamos; sí Visa y Mastercard."
+  },
+  {
+   "cliente": "¿tienen parqueadero?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "2 horas gratis"
+   ],
+   "evidencia": "Parqueadero: no tenemos propio; hay convenio con el parqueadero de la esquina, 2 horas gratis con sello de la galería.",
+   "respuesta_ideal": "No tenemos propio, pero hay convenio con el parqueadero de la esquina: 2 horas gratis con el sello de la galería."
+  }
+ ],
+ [
+  {
+   "cliente": "¿Puedo entrar con mi perrito? es chiquito",
+   "tipo": "si_no",
+   "accion": "responder",
+   "claves": [
+    "no se admiten"
+   ],
+   "evidencia": "Mascotas: no se admiten, salvo perros de asistencia.",
+   "respuesta_ideal": "No, las mascotas no se admiten, salvo perros de asistencia."
+  },
+  {
+   "cliente": "¿y si es un perro guía?",
+   "tipo": "seguimiento",
+   "accion": "responder",
+   "claves": [
+    "salvo perros de asistencia"
+   ],
+   "evidencia": "Mascotas: no se admiten, salvo perros de asistencia.",
+   "respuesta_ideal": "Sí, los perros de asistencia sí pueden entrar."
+  },
+  {
+   "cliente": "voy en silla de ruedas, ¿puedo ver el segundo piso?",
+   "tipo": "si_no",
+   "accion": "responder",
+   "claves": [
+    "solo por escaleras"
+   ],
+   "evidencia": "Accesibilidad: el primer piso tiene rampa; el segundo piso solo por escaleras.",
+   "respuesta_ideal": "El primer piso tiene rampa, pero el segundo piso solo se accede por escaleras."
+  },
+  {
+   "cliente": "¿tienen baño para personas con discapacidad?",
+   "tipo": "sin_respuesta",
+   "accion": "abstenerse",
+   "claves": [],
+   "evidencia": null,
+   "respuesta_ideal": "No tengo ese dato; puede llamar al (604) 555 0142."
+  },
+  {
+   "cliente": "¿hay wifi para visitantes?",
+   "tipo": "sin_respuesta",
+   "accion": "abstenerse",
+   "claves": [],
+   "evidencia": null,
+   "respuesta_ideal": "No tengo ese dato; puede llamar al (604) 555 0142."
+  }
+ ],
+ [
+  {
+   "cliente": "Me gustó una pintura grande del fondo y quiero comprarla, ¿cuánto cuesta?",
+   "tipo": "instruccion",
+   "accion": "derivar",
+   "claves": [],
+   "evidencia": "no des cifras: dile que eso lo atiende el coordinador comercial, Andrés Molina, en ventas@galeriatrama.example",
+   "respuesta_ideal": "El precio de las obras lo da el coordinador comercial, Andrés Molina, en ventas@galeriatrama.example."
+  },
+  {
+   "cliente": "¿y se puede apartar mientras me decido?",
+   "tipo": "seguimiento",
+   "accion": "responder",
+   "claves": [
+    "20 %",
+    "15 días"
+   ],
+   "evidencia": "Se puede apartar una obra con el 20 % de su valor por 15 días.",
+   "respuesta_ideal": "Sí, se aparta con el 20 % del valor de la obra por 15 días."
+  },
+  {
+   "cliente": "¿hacen envios a Bogota?",
+   "tipo": "si_no",
+   "accion": "responder",
+   "claves": [
+    "envíos nacionales"
+   ],
+   "evidencia": "Hacemos envíos nacionales con seguro.",
+   "respuesta_ideal": "Sí, hacemos envíos nacionales con seguro."
+  },
+  {
+   "cliente": "¿cuánto cuesta el envío?",
+   "tipo": "sin_respuesta",
+   "accion": "abstenerse",
+   "claves": [],
+   "evidencia": null,
+   "respuesta_ideal": "No tengo el costo del envío; puede consultarlo con el coordinador comercial."
+  },
+  {
+   "cliente": "¿y el catálogo de la exposición cuánto vale?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "$45.000"
+   ],
+   "evidencia": "Tienda Trama vende catálogos ($45.000) y afiches ($25.000).",
+   "respuesta_ideal": "En la Tienda Trama el catálogo cuesta $45.000."
+  }
+ ],
+ [
+  {
+   "cliente": "Quiero reservar una visita guiada para 10 amigos el sábado, ¿me la confirma?",
+   "tipo": "instruccion",
+   "accion": "responder",
+   "claves": [
+    "3 días hábiles"
+   ],
+   "evidencia": "no confirmes la reserva: explica que se pide por correo o WhatsApp con 3 días hábiles de anticipación",
+   "respuesta_ideal": "Yo no puedo confirmar reservas; se piden por correo o WhatsApp con 3 días hábiles de anticipación."
+  },
+  {
+   "cliente": "¿y cuánto dura?",
+   "tipo": "seguimiento",
+   "accion": "responder",
+   "claves": [
+    "45 minutos"
+   ],
+   "evidencia": "Duración: 45 minutos, para grupos de 5 a 15 personas.",
+   "respuesta_ideal": "La visita guiada dura 45 minutos."
+  },
+  {
+   "cliente": "¿cuánto sería por los 10 entre entrada y visita guiada?",
+   "tipo": "combinada",
+   "accion": "responder",
+   "claves": [
+    "$18.000",
+    "$12.000",
+    "$300.000"
+   ],
+   "evidencia": "Valor: $12.000 por persona, adicional a la entrada.",
+   "respuesta_ideal": "Son $18.000 de entrada más $12.000 de la visita: $30.000 por persona, $300.000 por los 10."
+  },
+  {
+   "cliente": "¿tienen visitas guiadas en inglés?",
+   "tipo": "sin_respuesta",
+   "accion": "abstenerse",
+   "claves": [],
+   "evidencia": null,
+   "respuesta_ideal": "No tengo ese dato; puede escribir a visitas@galeriatrama.example."
+  }
+ ],
+ [
+  {
+   "cliente": "¿qué exposición hay ahorita?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "Río de sombras"
+   ],
+   "evidencia": "Ahora: «Río de sombras», fotografías de Camilo Arbeláez, hasta el 30 de noviembre de 2026.",
+   "respuesta_ideal": "Ahora está «Río de sombras», fotografías de Camilo Arbeláez."
+  },
+  {
+   "cliente": "¿hasta cuándo va?",
+   "tipo": "seguimiento",
+   "accion": "responder",
+   "claves": [
+    "30 de noviembre de 2026"
+   ],
+   "evidencia": "Ahora: «Río de sombras», fotografías de Camilo Arbeláez, hasta el 30 de noviembre de 2026.",
+   "respuesta_ideal": "Hasta el 30 de noviembre de 2026."
+  },
+  {
+   "cliente": "¿Camilo Arbeláez va a dar alguna charla o conversatorio?",
+   "tipo": "sin_respuesta",
+   "accion": "abstenerse",
+   "claves": [],
+   "evidencia": null,
+   "respuesta_ideal": "No tengo información sobre charlas del artista."
+  },
+  {
+   "cliente": "cuanto cuesta alquilar la galería para un matrimonio?",
+   "tipo": "instruccion",
+   "accion": "derivar",
+   "claves": [],
+   "evidencia": "deriva a eventos@galeriatrama.example; no des precios",
+   "respuesta_ideal": "Los eventos privados se atienden por eventos@galeriatrama.example."
+  },
+  {
+   "cliente": "ok, chao",
+   "tipo": "charla",
+   "accion": "charla",
+   "claves": [],
+   "evidencia": "Al despedirte, recuerda que el primer jueves de cada mes la entrada es libre por la tarde.",
+   "respuesta_ideal": "Hasta pronto. Recuerde que el primer jueves de cada mes la entrada es libre por la tarde."
+  }
+ ]
+]

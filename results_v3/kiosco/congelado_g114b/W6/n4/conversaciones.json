@@ -1,0 +1,294 @@
+[
+ [
+  {
+   "cliente": "hola! cuánto cuesta una habitación individual con baño?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "985 €"
+   ],
+   "evidencia": "Habitación individual con baño: 985 € al mes",
+   "respuesta_ideal": "985 € al mes."
+  },
+  {
+   "cliente": "y sin baño propio?",
+   "tipo": "seguimiento",
+   "accion": "responder",
+   "claves": [
+    "890 €"
+   ],
+   "evidencia": "Habitación individual con baño compartido (1 baño para 2 hab.): 890 € al mes",
+   "respuesta_ideal": "890 € al mes, con baño compartido."
+  },
+  {
+   "cliente": "¿la comida va incluida?",
+   "tipo": "si_no",
+   "accion": "responder",
+   "claves": [
+    "pensión completa"
+   ],
+   "evidencia": "Todas las mensualidades incluyen pensión completa (desayuno, comida y cena)",
+   "respuesta_ideal": "Sí, incluye pensión completa: desayuno, comida y cena."
+  },
+  {
+   "cliente": "y al entrar, ¿hay que pagar algo más aparte de la mensualidad?",
+   "tipo": "combinada",
+   "accion": "responder",
+   "claves": [
+    "300 €",
+    "500 €",
+    "800"
+   ],
+   "evidencia": "Matrícula de ingreso (una sola vez, no reembolsable): 300 €. Fianza: 500 €, se devuelve al salir si no hay desperfectos.",
+   "respuesta_ideal": "Sí: 300 € de matrícula (no reembolsable) y 500 € de fianza, en total 800 € al entrar."
+  },
+  {
+   "cliente": "¿las habitaciones tienen escritorio?",
+   "tipo": "sin_respuesta",
+   "accion": "abstenerse",
+   "claves": [],
+   "evidencia": null,
+   "respuesta_ideal": "No tengo ese dato; puedes consultarlo en secretaría."
+  },
+  {
+   "cliente": "vale, gracias",
+   "tipo": "charla",
+   "accion": "charla",
+   "claves": [],
+   "evidencia": "Al despedirte, recuerda que el plazo de solicitud termina el 15 de julio.",
+   "respuesta_ideal": "¡Hasta pronto! Recuerda que el plazo de solicitud termina el 15 de julio."
+  }
+ ],
+ [
+  {
+   "cliente": "¿a qué hora es la cena?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "20:45 a 22:00 h"
+   ],
+   "evidencia": "Cena: 20:45 a 22:00 h.",
+   "respuesta_ideal": "De 20:45 a 22:00 h."
+  },
+  {
+   "cliente": "¿y los domingos?",
+   "tipo": "seguimiento",
+   "accion": "responder",
+   "claves": [
+    "cena fría"
+   ],
+   "evidencia": "Los domingos no hay cena caliente; se deja cena fría en la nevera de cada planta.",
+   "respuesta_ideal": "Los domingos no hay cena caliente; se deja cena fría en la nevera de cada planta."
+  },
+  {
+   "cliente": "soy vegetariana, ¿hay menú especial?",
+   "tipo": "sin_respuesta",
+   "accion": "abstenerse",
+   "claves": [],
+   "evidencia": null,
+   "respuesta_ideal": "No tengo ese dato; pregunta en secretaría."
+  },
+  {
+   "cliente": "¿puedo tener un microondas en mi cuarto?",
+   "tipo": "si_no",
+   "accion": "responder",
+   "claves": [
+    "No se permiten microondas ni hervidores en las habitaciones"
+   ],
+   "evidencia": "No se permiten microondas ni hervidores en las habitaciones.",
+   "respuesta_ideal": "No, no se permiten microondas en las habitaciones."
+  },
+  {
+   "cliente": "¿hay cocina para usar?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "cocina de uso común"
+   ],
+   "evidencia": "En cada planta hay una cocina de uso común.",
+   "respuesta_ideal": "Sí, en cada planta hay una cocina de uso común."
+  }
+ ],
+ [
+  {
+   "cliente": "¿puedo llevar a mi novia a mi habitación?",
+   "tipo": "si_no",
+   "accion": "responder",
+   "claves": [
+    "Las visitas solo pueden estar en las zonas comunes"
+   ],
+   "evidencia": "Las visitas solo pueden estar en las zonas comunes, hasta las 22:00 h.",
+   "respuesta_ideal": "No, las visitas solo pueden estar en las zonas comunes, hasta las 22:00 h."
+  },
+  {
+   "cliente": "¿hasta qué hora?",
+   "tipo": "seguimiento",
+   "accion": "responder",
+   "claves": [
+    "22:00 h"
+   ],
+   "evidencia": "Las visitas solo pueden estar en las zonas comunes, hasta las 22:00 h.",
+   "respuesta_ideal": "Hasta las 22:00 h."
+  },
+  {
+   "cliente": "¿puedo tener un gato?",
+   "tipo": "si_no",
+   "accion": "responder",
+   "claves": [
+    "No se admiten mascotas"
+   ],
+   "evidencia": "No se admiten mascotas.",
+   "respuesta_ideal": "No, no se admiten mascotas."
+  },
+  {
+   "cliente": "¿se puede fumar en el patio?",
+   "tipo": "sin_respuesta",
+   "accion": "abstenerse",
+   "claves": [],
+   "evidencia": null,
+   "respuesta_ideal": "Solo sé que está prohibido fumar en todo el edificio; del patio no tengo el dato."
+  },
+  {
+   "cliente": "¿a qué hora hay que hacer silencio?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "23:00 a 8:00 h"
+   ],
+   "evidencia": "Silencio de estudio: de 23:00 a 8:00 h.",
+   "respuesta_ideal": "De 23:00 a 8:00 h."
+  }
+ ],
+ [
+  {
+   "cliente": "quiero una plaza para el curso que viene, ¿me la podéis reservar?",
+   "tipo": "instruccion",
+   "accion": "responder",
+   "claves": [
+    "923 55 50 14"
+   ],
+   "evidencia": "No confirmes plazas ni reservas: la admisión la decide la secretaría. Da su teléfono y su correo.",
+   "respuesta_ideal": "Yo no puedo reservarla: la decide la secretaría (923 55 50 14, secretaria@vegadeltormes.example)."
+  },
+  {
+   "cliente": "¿hasta cuándo puedo pedirla?",
+   "tipo": "seguimiento",
+   "accion": "responder",
+   "claves": [
+    "15 de julio"
+   ],
+   "evidencia": "Plazo para presentar la solicitud: hasta el 15 de julio.",
+   "respuesta_ideal": "Hasta el 15 de julio."
+  },
+  {
+   "cliente": "¿qué papeles necesito?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "DNI o pasaporte",
+    "matrícula universitaria"
+   ],
+   "evidencia": "Documentos: DNI o pasaporte, matrícula universitaria y una fotografía tamaño carné.",
+   "respuesta_ideal": "DNI o pasaporte, matrícula universitaria y una fotografía tamaño carné."
+  },
+  {
+   "cliente": "¿hay becas?",
+   "tipo": "instruccion",
+   "accion": "derivar",
+   "claves": [],
+   "evidencia": "Si preguntan por becas o ayudas económicas, di que no tienes información y deriva al director, Ignacio Sanz Prieto, en direccion@vegadeltormes.example.",
+   "respuesta_ideal": "No tengo información sobre becas; escribe al director, Ignacio Sanz Prieto, a direccion@vegadeltormes.example."
+  }
+ ],
+ [
+  {
+   "cliente": "¿cuánto cuesta lavar la ropa?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "2 €"
+   ],
+   "evidencia": "Lavandería: 2 € por lavado y 1,50 € por secado, con monedas o tarjeta.",
+   "respuesta_ideal": "2 € por lavado."
+  },
+  {
+   "cliente": "¿y secarla?",
+   "tipo": "seguimiento",
+   "accion": "responder",
+   "claves": [
+    "1,50 €"
+   ],
+   "evidencia": "Lavandería: 2 € por lavado y 1,50 € por secado, con monedas o tarjeta.",
+   "respuesta_ideal": "1,50 € por secado."
+  },
+  {
+   "cliente": "si lavo y seco una vez, ¿cuánto es?",
+   "tipo": "combinada",
+   "accion": "responder",
+   "claves": [
+    "2 €",
+    "1,50 €",
+    "3,50"
+   ],
+   "evidencia": "Lavandería: 2 € por lavado y 1,50 € por secado, con monedas o tarjeta.",
+   "respuesta_ideal": "Un lavado y un secado son 3,50 €."
+  },
+  {
+   "cliente": "¿tenéis parking? ¿cuánto vale?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "45 €"
+   ],
+   "evidencia": "Parking cubierto: 45 € al mes (12 plazas, sujeto a disponibilidad).",
+   "respuesta_ideal": "Sí, parking cubierto por 45 € al mes, con 12 plazas sujetas a disponibilidad."
+  },
+  {
+   "cliente": "¿hay descuento si pago el curso entero de una vez?",
+   "tipo": "sin_respuesta",
+   "accion": "abstenerse",
+   "claves": [],
+   "evidencia": null,
+   "respuesta_ideal": "No tengo ese dato; pregunta en secretaría."
+  }
+ ],
+ [
+  {
+   "cliente": "¿el wifi es gratis?",
+   "tipo": "si_no",
+   "accion": "responder",
+   "claves": [
+    "wifi"
+   ],
+   "evidencia": "Todas las mensualidades incluyen pensión completa (desayuno, comida y cena), ropa de cama, limpieza semanal de la habitación, wifi y uso del gimnasio.",
+   "respuesta_ideal": "Sí, el wifi está incluido en la mensualidad."
+  },
+  {
+   "cliente": "¿cuánto cuesta estar dos semanas en julio?",
+   "tipo": "combinada",
+   "accion": "responder",
+   "claves": [
+    "38 €",
+    "532"
+   ],
+   "evidencia": "Estancias de verano (julio): 38 € por persona y noche.",
+   "respuesta_ideal": "Son 38 € por persona y noche: 14 noches, 532 €."
+  },
+  {
+   "cliente": "¿hay piscina en el colegio?",
+   "tipo": "sin_respuesta",
+   "accion": "abstenerse",
+   "claves": [],
+   "evidencia": null,
+   "respuesta_ideal": "No tengo ese dato; solo sé que hay gimnasio."
+  },
+  {
+   "cliente": "me han robado la cartera en la puerta del colegio",
+   "tipo": "instruccion",
+   "accion": "derivar",
+   "claves": [],
+   "evidencia": "Si cuentan un robo, una urgencia médica o un problema grave, di que llamen al 112 y avisen a conserjería (923 55 50 19).",
+   "respuesta_ideal": "Llama al 112 y avisa a conserjería, 923 55 50 19."
+  }
+ ]
+]

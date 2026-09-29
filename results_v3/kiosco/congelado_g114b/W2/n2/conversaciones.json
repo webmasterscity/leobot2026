@@ -1,0 +1,259 @@
+[
+ [
+  {
+   "cliente": "Hola!",
+   "tipo": "charla",
+   "accion": "charla",
+   "claves": [],
+   "evidencia": null,
+   "respuesta_ideal": "¡Miau, bienvenido a Bigotes! ¿En qué puedo ayudarte?"
+  },
+  {
+   "cliente": "cuanto cuesta entrar con mi hija de 8 años y yo?",
+   "tipo": "combinada",
+   "accion": "responder",
+   "claves": [
+    "6,50 €",
+    "4,50 €"
+   ],
+   "evidencia": "Niños de 6 a 12 años: 4,50 €, siempre acompañados de un adulto.",
+   "respuesta_ideal": "Serían 6,50 € el adulto y 4,50 € la niña, 11 € en total, con una bebida incluida en cada entrada."
+  },
+  {
+   "cliente": "tambien queria llevar a mi sobrino de 4",
+   "tipo": "si_no",
+   "accion": "responder",
+   "claves": [
+    "Menores de 6 años: no pueden entrar"
+   ],
+   "evidencia": "Menores de 6 años: no pueden entrar, por la seguridad de los gatos.",
+   "respuesta_ideal": "Lo siento, los menores de 6 años no pueden entrar, por la seguridad de los gatos."
+  },
+  {
+   "cliente": "cuanto tiempo puedo estar dentro?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "60 minutos"
+   ],
+   "evidencia": "Adultos: 6,50 € por persona, 60 minutos, con una bebida caliente o fría a elegir.",
+   "respuesta_ideal": "La entrada incluye 60 minutos."
+  },
+  {
+   "cliente": "y si quiero quedarme mas?",
+   "tipo": "seguimiento",
+   "accion": "responder",
+   "claves": [
+    "3 € cada 30 minutos"
+   ],
+   "evidencia": "Tiempo extra: 3 € cada 30 minutos.",
+   "respuesta_ideal": "Puedes ampliar el tiempo por 3 € cada 30 minutos."
+  }
+ ],
+ [
+  {
+   "cliente": "estan abiertos los lunes?",
+   "tipo": "si_no",
+   "accion": "responder",
+   "claves": [
+    "Lunes: cerrado"
+   ],
+   "evidencia": "Lunes: cerrado",
+   "respuesta_ideal": "No, los lunes permanecemos cerrados."
+  },
+  {
+   "cliente": "y el 24 de diciembre?",
+   "tipo": "seguimiento",
+   "accion": "responder",
+   "claves": [
+    "cerramos a las 15:00"
+   ],
+   "evidencia": "El 24 y el 31 de diciembre cerramos a las 15:00. El 25 de diciembre y el 1 de enero no abrimos.",
+   "respuesta_ideal": "El 24 de diciembre cerramos a las 15:00."
+  },
+  {
+   "cliente": "puedo ir sin reserva el sabado?",
+   "tipo": "si_no",
+   "accion": "responder",
+   "claves": [
+    "la reserva es obligatoria"
+   ],
+   "evidencia": "Aforo máximo: 12 personas a la vez. Los fines de semana la reserva es obligatoria.",
+   "respuesta_ideal": "No, los fines de semana la reserva es obligatoria."
+  },
+  {
+   "cliente": "quiero reservar para el sabado a las 5 para 4 personas, me lo confirmas?",
+   "tipo": "instruccion",
+   "accion": "derivar",
+   "claves": [],
+   "evidencia": "No confirmes reservas: explica que se hacen por la web o por el WhatsApp de reservas 611 22 48 90.",
+   "respuesta_ideal": "Yo no puedo confirmar reservas; puedes hacerla en www.bigotesmadrid.es o por el WhatsApp 611 22 48 90."
+  }
+ ],
+ [
+  {
+   "cliente": "cuanto cuesta adoptar un gatito",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "120 €",
+    "vacunas, chip y esterilización"
+   ],
+   "evidencia": "La tasa de adopción es de 120 € e incluye vacunas, chip y esterilización.",
+   "respuesta_ideal": "La tasa de adopción es de 120 € e incluye vacunas, chip y esterilización."
+  },
+  {
+   "cliente": "puedo adoptar si tengo 17 años?",
+   "tipo": "si_no",
+   "accion": "responder",
+   "claves": [
+    "mayor de 18 años"
+   ],
+   "evidencia": "Para adoptar hay que ser mayor de 18 años, hacer una entrevista y firmar un contrato de adopción.",
+   "respuesta_ideal": "No, para adoptar hay que ser mayor de 18 años."
+  },
+  {
+   "cliente": "y despues de adoptar hacen algo mas?",
+   "tipo": "seguimiento",
+   "accion": "responder",
+   "claves": [
+    "visita a domicilio"
+   ],
+   "evidencia": "Después hacemos una visita a domicilio.",
+   "respuesta_ideal": "Sí, después de la adopción hacemos una visita a domicilio."
+  },
+  {
+   "cliente": "quiero adoptar a la gata gris de la ventana, esta sana?",
+   "tipo": "instruccion",
+   "accion": "derivar",
+   "claves": [],
+   "evidencia": "Si preguntan por adoptar un gato concreto o por la salud de un gato, deriva a adopciones@bigotesmadrid.es.",
+   "respuesta_ideal": "Para eso escribe a adopciones@bigotesmadrid.es y te informarán sobre ella."
+  }
+ ],
+ [
+  {
+   "cliente": "tienen leche sin lactosa?",
+   "tipo": "sin_respuesta",
+   "accion": "abstenerse",
+   "claves": [],
+   "evidencia": null,
+   "respuesta_ideal": "No tengo ese dato; pregunta al personal en la barra."
+  },
+  {
+   "cliente": "cuanto cuesta el brownie",
+   "tipo": "sin_respuesta",
+   "accion": "abstenerse",
+   "claves": [],
+   "evidencia": null,
+   "respuesta_ideal": "No tengo el precio del brownie en la carta que conozco; pregunta al personal en la barra."
+  },
+  {
+   "cliente": "puedo llevar a mi perro pequeño?",
+   "tipo": "si_no",
+   "accion": "responder",
+   "claves": [
+    "No se admiten mascotas propias"
+   ],
+   "evidencia": "4. No se admiten mascotas propias.",
+   "respuesta_ideal": "No, no se admiten mascotas propias."
+  },
+  {
+   "cliente": "tengo alergia a los gatos, me pasara algo si entro?",
+   "tipo": "instruccion",
+   "accion": "responder",
+   "claves": [
+    "no podemos garantizar un ambiente sin pelo"
+   ],
+   "evidencia": "5. Personas con alergia: tenemos filtros de aire, pero no podemos garantizar un ambiente sin pelo.",
+   "respuesta_ideal": "No puedo darte consejo médico; solo sé que tenemos filtros de aire, pero no podemos garantizar un ambiente sin pelo."
+  },
+  {
+   "cliente": "tienen terraza?",
+   "tipo": "sin_respuesta",
+   "accion": "abstenerse",
+   "claves": [],
+   "evidencia": null,
+   "respuesta_ideal": "No tengo ese dato; pregunta al personal en la barra."
+  }
+ ],
+ [
+  {
+   "cliente": "aceptan bizum?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "Tarjeta, Bizum y efectivo"
+   ],
+   "evidencia": "Tarjeta, Bizum y efectivo. Wifi gratis para clientes.",
+   "respuesta_ideal": "Sí, aceptamos tarjeta, Bizum y efectivo."
+  },
+  {
+   "cliente": "cuantos gatos hay ahora?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "14 gatos rescatados"
+   ],
+   "evidencia": "Bigotes es una cafetería donde conviven 14 gatos rescatados que buscan familia.",
+   "respuesta_ideal": "Ahora conviven 14 gatos rescatados."
+  },
+  {
+   "cliente": "que metro tengo cerca?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "Metro Tribunal (L1 y L10) o Noviciado (L2)"
+   ],
+   "evidencia": "Calle del Espíritu Santo 27, bajo. Metro Tribunal (L1 y L10) o Noviciado (L2).",
+   "respuesta_ideal": "Tienes Metro Tribunal (L1 y L10) o Noviciado (L2)."
+  },
+  {
+   "cliente": "hay descuento para estudiantes?",
+   "tipo": "sin_respuesta",
+   "accion": "abstenerse",
+   "claves": [],
+   "evidencia": null,
+   "respuesta_ideal": "No tengo información sobre descuentos para estudiantes; pregunta al personal en la barra."
+  }
+ ],
+ [
+  {
+   "cliente": "hacen cumpleaños? para cuantos ninos?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "90 €",
+    "hasta 8 niños"
+   ],
+   "evidencia": "Pack cumpleaños: 90 € para hasta 8 niños, 2 horas, con tarta incluida.",
+   "respuesta_ideal": "Sí, el pack cumpleaños cuesta 90 € para hasta 8 niños, 2 horas, con tarta incluida."
+  },
+  {
+   "cliente": "y hay que avisar con tiempo?",
+   "tipo": "seguimiento",
+   "accion": "responder",
+   "claves": [
+    "7 días de antelación"
+   ],
+   "evidencia": "Hay que reservar con 7 días de antelación.",
+   "respuesta_ideal": "Sí, hay que reservar con 7 días de antelación."
+  },
+  {
+   "cliente": "tengo una queja del servicio del otro dia",
+   "tipo": "instruccion",
+   "accion": "derivar",
+   "claves": [],
+   "evidencia": "Si alguien quiere poner una queja, dile que hable con la encargada.",
+   "respuesta_ideal": "Lamento lo ocurrido; puedes hablar con la encargada, Lucía Ferrer."
+  },
+  {
+   "cliente": "vale, gracias, hasta luego!",
+   "tipo": "charla",
+   "accion": "charla",
+   "claves": [],
+   "evidencia": null,
+   "respuesta_ideal": "¡Gracias a ti! Hasta pronto."
+  }
+ ]
+]
