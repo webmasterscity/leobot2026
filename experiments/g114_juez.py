@@ -21,6 +21,8 @@ from pathlib import Path
 from experiments.g57_kiosco import conversations_of
 
 GOOD = ('util', 'correcta')
+# G-114b: criterion 3 over coherent turns only (sin_respuesta with action abstenerse/derivar).
+COHERENT = '--coherentes' in sys.argv
 BAD = ('enganosa', 'equivocada', 'inventada')
 
 
@@ -144,7 +146,7 @@ def summarize(eval_dir: Path, out: Path):
                 business[1] += 1
             bad += label in BAD
             business[2] += label in BAD
-            if row['tipo'] == 'sin_respuesta':
+            if row['tipo'] == 'sin_respuesta' and (not COHERENT or row.get('accion') in ('abstenerse', 'derivar')):
                 noans += 1
                 noans_ok += label in ('abstencion_correcta', 'honesta', 'util')
         report[system] = {'utiles': useful, 'N': useful_n, 'enganosas': bad, 'sin_respuesta_bien': [noans_ok, noans],
