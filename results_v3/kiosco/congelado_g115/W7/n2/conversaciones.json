@@ -1,0 +1,172 @@
+[
+  [
+    {
+      "cliente": "Hola, ¿cuánto cuesta cambiar el aceite y filtro?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["COP $65.000"],
+      "evidencia": "Cambio de aceite y filtro: COP $65.000",
+      "respuesta_ideal": "El cambio de aceite y filtro cuesta COP $65.000, y normalmente tarda entre 30 y 45 minutos."
+    },
+    {
+      "cliente": "¿Lo puedo hacer ahorita?",
+      "tipo": "seguimiento",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "Para saber si tenemos disponibilidad en este momento, te recomiendo que llames al (4) 310-5847 o nos escribas por WhatsApp al +57 315 456 7890."
+    },
+    {
+      "cliente": "¿Tienen servicio rápido?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["Servicio Rapidín", "COP $55.000", "30 minutos máximo"],
+      "evidencia": "Servicio Rapidín (sólo cambio de aceite, filtro, revisión de llantas): COP $55.000 (30 minutos máximo)",
+      "respuesta_ideal": "Sí, ofrecemos Servicio Rapidín: cambio de aceite, filtro y revisión de llantas por COP $55.000 en 30 minutos máximo."
+    }
+  ],
+  [
+    {
+      "cliente": "¿Cuánto es el cambio de llantas?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["COP $180.000"],
+      "evidencia": "Cambio de llantas (incluye balanceo): COP $180.000",
+      "respuesta_ideal": "El cambio de llantas con balanceo incluido cuesta COP $180.000."
+    },
+    {
+      "cliente": "¿Eso incluye los llantas nuevas?",
+      "tipo": "sin_respuesta",
+      "accion": "derivar",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "El precio es solo por mano de obra de cambio y balanceo. Los llantas se cotizan según la medida. Llamá al (4) 310-5847 para una cotización con llantas incluidas."
+    },
+    {
+      "cliente": "Trabajo con una moto Yamaha. ¿Hacen servicio para esa marca?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["todas las marcas"],
+      "evidencia": "Contamos con mecánicos especializados en motos de todas las marcas.",
+      "respuesta_ideal": "Sí, sin problema. Trabajamos con todas las marcas de motos, incluyendo Yamaha."
+    },
+    {
+      "cliente": "¿Cuánto se demora un cambio de frenos completo?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "Depende del tipo de trabajo (cilindro o tambor). Te recomiendo que consultes directamente al (4) 310-5847 o WhatsApp +57 315 456 7890 para una cotización más precisa."
+    },
+    {
+      "cliente": "Gracias, voy a pasar mañana.",
+      "tipo": "charla",
+      "accion": "responder",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "¡Excelente! Te esperamos. Estamos abiertos mañana de 8:00 a 18:00. Gracias por confiar en Moto Rápido."
+    }
+  ],
+  [
+    {
+      "cliente": "¿Aceptan tarjeta de crédito?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["Tarjeta débito/crédito (no hay recargo)"],
+      "evidencia": "Tarjeta débito/crédito (no hay recargo)",
+      "respuesta_ideal": "Sí, aceptamos tarjeta débito y crédito sin recargo adicional."
+    },
+    {
+      "cliente": "¿Y si pago en efectivo?",
+      "tipo": "seguimiento",
+      "accion": "responder",
+      "claves": ["Efectivo: descuento del 5%"],
+      "evidencia": "Efectivo: descuento del 5%",
+      "respuesta_ideal": "Con efectivo tenés un descuento del 5% sobre el precio total del servicio."
+    },
+    {
+      "cliente": "¿Tienen plan de mantenimiento?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["plan de mantenimiento", "4 cambios de aceite", "COP $180.000"],
+      "evidencia": "Plan de mantenimiento anual: 4 cambios de aceite, filtro y revisión = COP $180.000",
+      "respuesta_ideal": "Sí, ofrecemos plan de mantenimiento anual con 4 cambios de aceite, filtro y revisión por COP $180.000. Ahorras COP $80.000 comparado con precios normales."
+    },
+    {
+      "cliente": "¿Puedo pagar ese plan en cuotas?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "El plan es por COP $180.000. Para preguntar sobre opciones de pago en cuotas, llamá al (4) 310-5847."
+    }
+  ],
+  [
+    {
+      "cliente": "Necesito una soldadura en el tanque de gasolina. ¿Hacen eso?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["Soldadura de cuadro o tanque", "COP $200.000-400.000"],
+      "evidencia": "Soldadura de cuadro o tanque: COP $200.000-400.000",
+      "respuesta_ideal": "Sí, hacemos soldadura de tanques. El costo es entre COP $200.000 y COP $400.000 dependiendo del tamaño del daño."
+    },
+    {
+      "cliente": "¿Cuánto es exactamente para mi tanque?",
+      "tipo": "sin_respuesta",
+      "accion": "derivar",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "Para darte un precio exacto, necesitamos revisar el daño. Te invito a traer la moto o enviar fotos al WhatsApp +57 315 456 7890."
+    },
+    {
+      "cliente": "¿Trabajan los domingos?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["Domingos y festivos cerrado"],
+      "evidencia": "Domingos y festivos cerrado",
+      "respuesta_ideal": "No, los domingos y festivos estamos cerrados. Abrimos de lunes a sábado."
+    },
+    {
+      "cliente": "¿Puedo traer la moto hoy a las 17:00?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "Cerramos a las 18:00 hoy. Para verificar disponibilidad a esa hora, llamá rápido al (4) 310-5847 o WhatsApp +57 315 456 7890."
+    },
+    {
+      "cliente": "¿Tienen garantía en los trabajos?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["garantía de 30 días", "garantía del fabricante"],
+      "evidencia": "Todos nuestros servicios incluyen garantía de 30 días en mano de obra. Los repuestos originales tienen garantía del fabricante.",
+      "respuesta_ideal": "Sí, todos nuestros servicios tienen garantía de 30 días en mano de obra. Los repuestos originales tienen garantía del fabricante."
+    }
+  ],
+  [
+    {
+      "cliente": "¿Hacen reparaciones eléctricas?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["Reparaciones eléctricas generales", "COP $80.000 en adelante"],
+      "evidencia": "Reparaciones eléctricas generales: COP $80.000 en adelante",
+      "respuesta_ideal": "Sí, hacemos reparaciones eléctricas generales a partir de COP $80.000. El costo exacto depende del problema."
+    },
+    {
+      "cliente": "Me llegó el diagnóstico: se dañó el alternador. ¿Lo reparan?",
+      "tipo": "sin_respuesta",
+      "accion": "derivar",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "Sí, trabajamos en reparaciones eléctricas. Para una cotización de alternador específicamente, llamá al (4) 310-5847."
+    },
+    {
+      "cliente": "¿Entrega a domicilio?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["entrega a domicilio", "COP $20.000"],
+      "evidencia": "Para trabajos menores y repuestos, ofrecemos entrega a domicilio en Medellín (COP $20.000 costo de envío).",
+      "respuesta_ideal": "Sí, ofrecemos entrega a domicilio en Medellín para trabajos menores y repuestos, con costo de COP $20.000."
+    }
+  ]
+]

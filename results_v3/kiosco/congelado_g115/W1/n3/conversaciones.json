@@ -1,0 +1,39 @@
+[
+  [
+    {"cliente": "Buenas, ¿cuánto cuesta una hamaca para dos personas?", "tipo": "directa", "accion": "responder", "claves": ["$1,350", "$1,100"], "evidencia": "| Matrimonial | 2 personas | 2.4 m | $1,350 | $1,100 |", "respuesta_ideal": "Buenas tardes. La matrimonial, para 2 personas, cuesta $1,350 en algodón y $1,100 en nylon."},
+    {"cliente": "¿y cuál me conviene para la playa?", "tipo": "seguimiento", "accion": "responder", "claves": ["nylon"], "evidencia": "El nylon aguanta mejor la humedad y el sol, por eso lo recomendamos para exteriores y playa.", "respuesta_ideal": "Para la playa le recomendamos la de nylon, porque aguanta mejor la humedad y el sol."},
+    {"cliente": "Va, me llevo la matrimonial de nylon y el kit de instalación, ¿cuánto es?", "tipo": "combinada", "accion": "responder", "claves": ["1,330"], "evidencia": "- Kit de instalación (ganchos, taquetes y sogas): $230", "respuesta_ideal": "La matrimonial de nylon ($1,100) más el kit de instalación ($230) suman $1,330."},
+    {"cliente": "¿Me cobran extra si la quiero de tres colores?", "tipo": "si_no", "accion": "responder", "claves": ["no tienen costo extra"], "evidencia": "Las combinaciones de hasta 3 colores no tienen costo extra.", "respuesta_ideal": "No, las combinaciones de hasta 3 colores no tienen costo extra."},
+    {"cliente": "¿Tienen color turquesa?", "tipo": "sin_respuesta", "accion": "derivar", "claves": [], "evidencia": null, "respuesta_ideal": "Sé que manejamos 18 colores lisos, pero no cuento con la lista de colores. Puede llamar al (999) 924 3187 para confirmarlo."}
+  ],
+  [
+    {"cliente": "que tanto peso aguanta la familiar", "tipo": "directa", "accion": "responder", "claves": ["220 kg"], "evidencia": "La matrimonial, hasta 150 kg; la familiar, hasta 220 kg.", "respuesta_ideal": "La familiar aguanta hasta 220 kg."},
+    {"cliente": "¿La puedo meter a la lavadora?", "tipo": "si_no", "accion": "responder", "claves": ["No usar lavadora"], "evidencia": "A mano, con jabón neutro, y se seca a la sombra. No usar lavadora ni cloro.", "respuesta_ideal": "No, no use lavadora ni cloro: se lava a mano con jabón neutro y se seca a la sombra."},
+    {"cliente": "¿Y la individual cuánto peso aguanta?", "tipo": "sin_respuesta", "accion": "derivar", "claves": [], "evidencia": null, "respuesta_ideal": "No cuento con el dato de peso de la individual. Puede consultarlo al (999) 924 3187."},
+    {"cliente": "¿Ustedes la instalan?", "tipo": "directa", "accion": "responder", "claves": ["$350"], "evidencia": "Sí, en Mérida, por $350 (incluye ganchos). Hay que agendar con 2 días de anticipación.", "respuesta_ideal": "Sí, en Mérida la instalamos por $350; hay que agendar con 2 días de anticipación."},
+    {"cliente": "¿y eso ya trae los ganchos?", "tipo": "seguimiento", "accion": "responder", "claves": ["incluye ganchos"], "evidencia": "Sí, en Mérida, por $350 (incluye ganchos).", "respuesta_ideal": "Sí, la instalación de $350 incluye ganchos."}
+  ],
+  [
+    {"cliente": "¿Hacen envíos a Monterrey?", "tipo": "directa", "accion": "responder", "claves": ["$260", "3 a 6 días hábiles"], "evidencia": "- Resto de la República: $260 por hamaca, por paquetería; llega en 3 a 6 días hábiles.", "respuesta_ideal": "Sí, al resto de la República enviamos por paquetería a $260 por hamaca; llega en 3 a 6 días hábiles."},
+    {"cliente": "Tengo un hotel en Tulum y necesito 25 hamacas, ¿me hacen precio especial?", "tipo": "instruccion", "accion": "derivar", "claves": [], "evidencia": "Los envíos a Estados Unidos o Canadá y los pedidos de más de 10 hamacas (tiendas, hoteles, restaurantes) los atiende Rubén Canul por WhatsApp al 999 211 6604; no les dé precio usted.", "respuesta_ideal": "Los pedidos de más de 10 hamacas los atiende Rubén Canul; puede escribirle por WhatsApp al 999 211 6604."},
+    {"cliente": "¿Con qué paquetería mandan?", "tipo": "sin_respuesta", "accion": "derivar", "claves": [], "evidencia": null, "respuesta_ideal": "No cuento con esa información. Puede llamar al (999) 924 3187 para preguntarlo."},
+    {"cliente": "Si me mandan 2 individuales de algodón a Puebla, ¿cuánto pagaría con todo y envío?", "tipo": "combinada", "accion": "responder", "claves": ["2,220"], "evidencia": "- Resto de la República: $260 por hamaca, por paquetería; llega en 3 a 6 días hábiles.", "respuesta_ideal": "Dos individuales de algodón son $1,700 ($850 cada una) y el envío es de $260 por hamaca ($520), así que en total pagaría $2,220."}
+  ],
+  [
+    {"cliente": "a que hora cierran los sabados", "tipo": "directa", "accion": "responder", "claves": ["15:00"], "evidencia": "sábado 09:00–15:00 h", "respuesta_ideal": "Los sábados abrimos de 09:00 a 15:00 h."},
+    {"cliente": "¿y ese día se puede ver cómo las tejen?", "tipo": "seguimiento", "accion": "responder", "claves": ["lunes a viernes de 10:00 a 13:00"], "evidencia": "En el patio del local puede ver a nuestras tejedoras trabajando de lunes a viernes de 10:00 a 13:00 h.", "respuesta_ideal": "El sábado no: a las tejedoras se las puede ver trabajando de lunes a viernes de 10:00 a 13:00 h."},
+    {"cliente": "Soy maestra, si voy con mis alumnos (somos 30) ¿cobran la visita?", "tipo": "directa", "accion": "responder", "claves": ["gratis", "un día antes"], "evidencia": "La visita es gratis y no necesita reservación. Grupos de más de 15 personas: avisar un día antes.", "respuesta_ideal": "La visita es gratis. Como son más de 15 personas, les pedimos avisar un día antes."},
+    {"cliente": "¿Hay estacionamiento?", "tipo": "sin_respuesta", "accion": "derivar", "claves": [], "evidencia": null, "respuesta_ideal": "No cuento con esa información. Puede llamar al (999) 924 3187 para confirmarlo."}
+  ],
+  [
+    {"cliente": "Compré una hamaca hace 2 meses y ya se le salieron unos hilos, esto es una estafa", "tipo": "instruccion", "accion": "responder", "claves": ["nombre", "fecha de compra"], "evidencia": "Si un cliente se queja de una hamaca rota o defectuosa, pídale su nombre y la fecha de compra, y dígale que el taller se comunicará con él.", "respuesta_ideal": "Lamento mucho el problema. ¿Me da su nombre y la fecha de compra? El taller se comunicará con usted."},
+    {"cliente": "¿Eso lo cubre la garantía? la tengo en la terraza al aire libre", "tipo": "si_no", "accion": "responder", "claves": ["intemperie"], "evidencia": "No cubre roturas por usarla más personas de las indicadas, daños de mascotas ni el desgaste por dejarla a la intemperie.", "respuesta_ideal": "La garantía es de 6 meses contra defectos del tejido, pero no cubre el desgaste por dejarla a la intemperie; el taller revisará su caso."},
+    {"cliente": "¿Venden hamacas con algún defecto más baratas?", "tipo": "sin_respuesta", "accion": "derivar", "claves": [], "evidencia": null, "respuesta_ideal": "No cuento con esa información. Puede llamar al (999) 924 3187 para preguntar."}
+  ],
+  [
+    {"cliente": "¿Aceptan tarjeta?", "tipo": "directa", "accion": "responder", "claves": ["sin recargo"], "evidencia": "Efectivo, tarjeta de débito o crédito sin recargo y transferencia SPEI.", "respuesta_ideal": "Sí, aceptamos tarjeta de débito o crédito sin recargo, además de efectivo y transferencia SPEI."},
+    {"cliente": "¿Y a meses sin intereses?", "tipo": "seguimiento", "accion": "responder", "claves": ["3 meses sin intereses", "$2,000"], "evidencia": "3 meses sin intereses en compras desde $2,000 con tarjetas participantes.", "respuesta_ideal": "Sí, hay 3 meses sin intereses en compras desde $2,000 con tarjetas participantes."},
+    {"cliente": "¿aplica con la tarjeta de cualquier banco?", "tipo": "sin_respuesta", "accion": "derivar", "claves": [], "evidencia": null, "respuesta_ideal": "Solo sé que es con tarjetas participantes, pero no tengo la lista de bancos. Puede llamar al (999) 924 3187."},
+    {"cliente": "Gracias, muy amable", "tipo": "charla", "accion": "charla", "claves": [], "evidencia": null, "respuesta_ideal": "A usted, que tenga buen día."}
+  ]
+]

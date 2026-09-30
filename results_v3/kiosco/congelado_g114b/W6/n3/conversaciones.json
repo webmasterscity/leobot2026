@@ -1,0 +1,270 @@
+[
+ [
+  {
+   "cliente": "hola, ¿cuándo es la carrera?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "18 de octubre de 2026"
+   ],
+   "evidencia": "La carrera se realiza el domingo 18 de octubre de 2026.",
+   "respuesta_ideal": "El domingo 18 de octubre de 2026."
+  },
+  {
+   "cliente": "¿y a qué hora sale la de 10 km?",
+   "tipo": "seguimiento",
+   "accion": "responder",
+   "claves": [
+    "7:00 a. m."
+   ],
+   "evidencia": "Horas de salida: 21 km a las 6:30 a. m.; 10 km a las 7:00 a. m.; 5 km a las 8:30 a. m.",
+   "respuesta_ideal": "Los 10 km salen a las 7:00 a. m."
+  },
+  {
+   "cliente": "¿dónde queda la salida?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "Plaza 14 de Septiembre"
+   ],
+   "evidencia": "La salida y la meta están en la Plaza 14 de Septiembre.",
+   "respuesta_ideal": "La salida y la meta están en la Plaza 14 de Septiembre."
+  },
+  {
+   "cliente": "¿cuánto tiempo tengo para terminar los 21?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "3 horas"
+   ],
+   "evidencia": "Tiempo máximo para terminar: 3 horas en los 21 km y 1 hora 30 minutos en los 10 km.",
+   "respuesta_ideal": "El tiempo máximo en los 21 km es de 3 horas."
+  },
+  {
+   "cliente": "¿cuántos corredores se esperan este año?",
+   "tipo": "sin_respuesta",
+   "accion": "abstenerse",
+   "claves": [],
+   "evidencia": null,
+   "respuesta_ideal": "No tengo ese dato."
+  }
+ ],
+ [
+  {
+   "cliente": "¿cuánto sale inscribirse a los 21 km si me anoto antes de que acabe agosto?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "Bs 180"
+   ],
+   "evidencia": "21 km\tBs 180\tBs 220\tBs 260",
+   "respuesta_ideal": "Hasta el 31/08 la inscripción de 21 km cuesta Bs 180."
+  },
+  {
+   "cliente": "¿y los 10?",
+   "tipo": "seguimiento",
+   "accion": "responder",
+   "claves": [
+    "Bs 140"
+   ],
+   "evidencia": "10 km\tBs 140\tBs 170\tBs 200",
+   "respuesta_ideal": "Los 10 km cuestan Bs 140 en ese período."
+  },
+  {
+   "cliente": "Tengo 64 años, ¿me hacen descuento?",
+   "tipo": "si_no",
+   "accion": "responder",
+   "claves": [
+    "10 %"
+   ],
+   "evidencia": "Descuento de 10 % para mayores de 60 años con carnet, en cualquier etapa de precios.",
+   "respuesta_ideal": "Sí, hay 10 % de descuento para mayores de 60 años, con carnet."
+  },
+  {
+   "cliente": "Entonces, los 21 km antes del 31/08 con ese descuento, ¿cuánto pagaría?",
+   "tipo": "combinada",
+   "accion": "responder",
+   "claves": [
+    "Bs 180",
+    "10 %",
+    "162"
+   ],
+   "evidencia": "Descuento de 10 % para mayores de 60 años con carnet, en cualquier etapa de precios.",
+   "respuesta_ideal": "Bs 180 menos el 10 % da Bs 162."
+  },
+  {
+   "cliente": "¿puedo inscribirme el mismo día de la carrera?",
+   "tipo": "si_no",
+   "accion": "responder",
+   "claves": [
+    "no hay inscripción el día de la carrera"
+   ],
+   "evidencia": "no hay inscripción el día de la carrera",
+   "respuesta_ideal": "No, la inscripción cierra el sábado 10 de octubre a las 20:00."
+  },
+  {
+   "cliente": "¿se puede pagar con QR?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "QR interbancario"
+   ],
+   "evidencia": "Se paga con QR interbancario, transferencia o en efectivo en la tienda Corre Cocha (calle Bolívar).",
+   "respuesta_ideal": "Sí, con QR interbancario, transferencia o efectivo en la tienda Corre Cocha."
+  }
+ ],
+ [
+  {
+   "cliente": "¿cuándo puedo recoger mi kit?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "Jueves 15",
+    "sábado 17"
+   ],
+   "evidencia": "Jueves 15 y viernes 16 de octubre, de 10:00 a 20:00; sábado 17, de 9:00 a 18:00.",
+   "respuesta_ideal": "Jueves 15 y viernes 16 de 10:00 a 20:00, y sábado 17 de 9:00 a 18:00, en el Polideportivo de la Laguna Alalay."
+  },
+  {
+   "cliente": "¿puede recogerlo mi hermano por mí?",
+   "tipo": "si_no",
+   "accion": "responder",
+   "claves": [
+    "carta poder simple"
+   ],
+   "evidencia": "Un amigo o familiar puede recogerlo con una carta poder simple y fotocopia del carnet.",
+   "respuesta_ideal": "Sí, con una carta poder simple y fotocopia de su carnet."
+  },
+  {
+   "cliente": "¿y el domingo temprano, antes de la salida?",
+   "tipo": "seguimiento",
+   "accion": "responder",
+   "claves": [
+    "El día de la carrera no se entregan kits"
+   ],
+   "evidencia": "El día de la carrera no se entregan kits.",
+   "respuesta_ideal": "No, el día de la carrera no se entregan kits."
+  },
+  {
+   "cliente": "¿qué trae el kit?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "polera técnica",
+    "medalla de finalista"
+   ],
+   "evidencia": "El kit trae polera técnica, número con chip, medalla de finalista y una bolsa.",
+   "respuesta_ideal": "Polera técnica, número con chip, medalla de finalista y una bolsa."
+  },
+  {
+   "cliente": "¿la polera es de hombre o unisex?",
+   "tipo": "sin_respuesta",
+   "accion": "abstenerse",
+   "claves": [],
+   "evidencia": null,
+   "respuesta_ideal": "No tengo ese dato; solo sé que las tallas son S, M, L y XL."
+  }
+ ],
+ [
+  {
+   "cliente": "Me lastimé la rodilla hace dos semanas, ¿puedo correr los 10 km?",
+   "tipo": "instruccion",
+   "accion": "responder",
+   "claves": [
+    "médico"
+   ],
+   "evidencia": "recomienda consultar con su médico",
+   "respuesta_ideal": "Eso debe consultarlo con su médico."
+  },
+  {
+   "cliente": "¿para los 10 km también piden certificado médico?",
+   "tipo": "sin_respuesta",
+   "accion": "abstenerse",
+   "claves": [],
+   "evidencia": null,
+   "respuesta_ideal": "Solo tengo que para los 21 km es obligatorio; de los 10 km no tengo el dato."
+  },
+  {
+   "cliente": "Ya pagué pero mi nombre no sale en la lista, ¿me confirma que estoy inscrito?",
+   "tipo": "instruccion",
+   "accion": "derivar",
+   "claves": [],
+   "evidencia": "no confirmes pagos y no asegures cupos: explica cómo se hace y da el WhatsApp de la organización, +591 7 0055 018.",
+   "respuesta_ideal": "Yo no puedo confirmar pagos; escriba al WhatsApp de la organización, +591 7 0055 018."
+  },
+  {
+   "cliente": "el año pasado me dieron mal mi tiempo, ¿a quién reclamo?",
+   "tipo": "instruccion",
+   "accion": "derivar",
+   "claves": [],
+   "evidencia": "dile que escriba a la jefa de inscripciones, Mariela Vargas, a info@correcocha.example.",
+   "respuesta_ideal": "Escriba a la jefa de inscripciones, Mariela Vargas, a info@correcocha.example."
+  }
+ ],
+ [
+  {
+   "cliente": "¿puedo correr con mi perro?",
+   "tipo": "si_no",
+   "accion": "responder",
+   "claves": [
+    "No se permiten mascotas en el circuito"
+   ],
+   "evidencia": "No se permiten mascotas en el circuito, ni bicicletas o patines acompañando a los corredores.",
+   "respuesta_ideal": "No, no se permiten mascotas en el circuito."
+  },
+  {
+   "cliente": "¿y con el coche de mi bebé?",
+   "tipo": "seguimiento",
+   "accion": "responder",
+   "claves": [
+    "Cochecitos de bebé solo en los 5 km"
+   ],
+   "evidencia": "Cochecitos de bebé solo en los 5 km.",
+   "respuesta_ideal": "Solo en los 5 km."
+  },
+  {
+   "cliente": "¿hasta qué hora está cortada la Ballivián?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "11:00 a. m."
+   ],
+   "evidencia": "La Av. Ballivián estará cerrada desde 5:30 hasta 11:00 a. m.",
+   "respuesta_ideal": "Hasta las 11:00 a. m."
+  },
+  {
+   "cliente": "¿hay premio en dinero para el que gane los 10 km?",
+   "tipo": "si_no",
+   "accion": "responder",
+   "claves": [
+    "Premios en efectivo solo para el 21 km"
+   ],
+   "evidencia": "Premios en efectivo solo para el 21 km, en damas y varones (general)",
+   "respuesta_ideal": "No, el premio en efectivo es solo para el 21 km; en los 10 km se entrega medalla a los tres primeros."
+  },
+  {
+   "cliente": "¿hay duchas en la meta?",
+   "tipo": "sin_respuesta",
+   "accion": "abstenerse",
+   "claves": [],
+   "evidencia": null,
+   "respuesta_ideal": "No tengo ese dato; hay guardarropa gratuito y baños químicos."
+  },
+  {
+   "cliente": "¿dónde me puedo alojar cerca de la salida?",
+   "tipo": "sin_respuesta",
+   "accion": "abstenerse",
+   "claves": [],
+   "evidencia": null,
+   "respuesta_ideal": "No tengo información sobre hoteles."
+  },
+  {
+   "cliente": "muchas gracias, chau",
+   "tipo": "charla",
+   "accion": "charla",
+   "claves": [],
+   "evidencia": "al despedirte, desea buena carrera.",
+   "respuesta_ideal": "¡Chau, que tengas buena carrera!"
+  }
+ ]
+]

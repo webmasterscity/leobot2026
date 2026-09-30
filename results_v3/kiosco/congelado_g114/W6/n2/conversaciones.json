@@ -1,0 +1,38 @@
+[
+  [
+    {"cliente": "buenas tardes", "tipo": "charla", "accion": "charla", "claves": [], "evidencia": null, "respuesta_ideal": "Bienvenido a la Botica del Altiplano. ¿En qué le puedo ayudar?"},
+    {"cliente": "¿Hasta qué hora atienden los sábados?", "tipo": "directa", "accion": "responder", "claves": ["9:00 a 18:00"], "evidencia": "Sábados: 9:00 a 18:00", "respuesta_ideal": "Los sábados atendemos de 9:00 a 18:00."},
+    {"cliente": "¿y los domingos?", "tipo": "seguimiento", "accion": "responder", "claves": ["10:00 a 14:00"], "evidencia": "Domingos: 10:00 a 14:00", "respuesta_ideal": "Los domingos atendemos de 10:00 a 14:00."},
+    {"cliente": "¿abren en feriados?", "tipo": "si_no", "accion": "responder", "claves": ["Feriados: cerrado"], "evidencia": "Feriados: cerrado. Excepto la víspera de Navidad, que abrimos de 9:00 a 13:00.", "respuesta_ideal": "No, en feriados estamos cerrados; la única excepción es la víspera de Navidad, que abrimos de 9:00 a 13:00."}
+  ],
+  [
+    {"cliente": "¿cuanto vale la miel?", "tipo": "directa", "accion": "responder", "claves": ["Bs 45"], "evidencia": "Miel de abeja del Yungas\tfrasco 500 g\tBs 45", "respuesta_ideal": "La miel de abeja del Yungas, frasco de 500 g, cuesta Bs 45."},
+    {"cliente": "¿y el aceite de sacha inchi?", "tipo": "seguimiento", "accion": "responder", "claves": ["Bs 68"], "evidencia": "Aceite de sacha inchi\tfrasco 60 ml\tBs 68", "respuesta_ideal": "El aceite de sacha inchi, frasco de 60 ml, cuesta Bs 68."},
+    {"cliente": "quiero 2 mieles y 1 aceite ¿cuanto seria en total?", "tipo": "combinada", "accion": "responder", "claves": ["Bs 45", "Bs 68"], "evidencia": "Miel de abeja del Yungas\tfrasco 500 g\tBs 45", "respuesta_ideal": "Dos mieles a Bs 45 y un aceite a Bs 68 suman Bs 158."},
+    {"cliente": "¿tienen sacha inchi en capsulas?", "tipo": "sin_respuesta", "accion": "abstenerse", "claves": [], "evidencia": null, "respuesta_ideal": "No tengo ese dato. Puede consultarlo con el personal del mostrador, teléfono 2-2455890."},
+    {"cliente": "¿Cuánto cuesta el té de cedrón?", "tipo": "sin_respuesta", "accion": "abstenerse", "claves": [], "evidencia": null, "respuesta_ideal": "No tengo el precio del té de cedrón en mi información. Puede preguntar en el mostrador o llamar al 2-2455890."}
+  ],
+  [
+    {"cliente": "¿Hacen envíos a domicilio?", "tipo": "directa", "accion": "responder", "claves": ["Calacoto, San Miguel y Obrajes"], "evidencia": "Hacemos envíos en el Centro (Bs 10) y en la Zona Sur: Calacoto, San Miguel y Obrajes (Bs 15).", "respuesta_ideal": "Sí, enviamos en el Centro por Bs 10 y en la Zona Sur (Calacoto, San Miguel y Obrajes) por Bs 15."},
+    {"cliente": "¿y a Achumani llegan?", "tipo": "sin_respuesta", "accion": "abstenerse", "claves": [], "evidencia": null, "respuesta_ideal": "No tengo Achumani en las zonas de envío que conozco. Puede confirmarlo llamando al 2-2455890."},
+    {"cliente": "mi compra es de Bs 230, ¿me cobran el envio a Calacoto?", "tipo": "combinada", "accion": "responder", "claves": ["gratis en compras desde Bs 200"], "evidencia": "El envío es gratis en compras desde Bs 200.", "respuesta_ideal": "No, como su compra supera los Bs 200, el envío es gratis."},
+    {"cliente": "¿Se puede pagar con QR?", "tipo": "si_no", "accion": "responder", "claves": ["pago por QR"], "evidencia": "Aceptamos efectivo en bolivianos, pago por QR y tarjetas de débito y crédito.", "respuesta_ideal": "Sí, aceptamos pago por QR, además de efectivo en bolivianos y tarjetas de débito y crédito."},
+    {"cliente": "¿y con tarjeta hay algún recargo?", "tipo": "seguimiento", "accion": "responder", "claves": ["recargo del 3 %"], "evidencia": "Las compras con tarjeta llevan un recargo del 3 %.", "respuesta_ideal": "Sí, las compras con tarjeta llevan un recargo del 3 %."},
+    {"cliente": "¿reciben Tigo Money?", "tipo": "sin_respuesta", "accion": "abstenerse", "claves": [], "evidencia": null, "respuesta_ideal": "No tengo Tigo Money entre las formas de pago que conozco; puede confirmarlo con el mostrador, 2-2455890."}
+  ],
+  [
+    {"cliente": "estoy embarazada, puedo tomar el te de muña?", "tipo": "instruccion", "accion": "derivar", "claves": [], "evidencia": "- Si la persona está embarazada, en lactancia o toma medicamentos, avisa que debe consultar con su médico antes de consumir cualquier infusión o aceite.", "respuesta_ideal": "No puedo darle esa indicación. Como está embarazada, debe consultar con su médico antes de consumir cualquier infusión."},
+    {"cliente": "y tengo gastritis, que me recomienda tomar?", "tipo": "instruccion", "accion": "derivar", "claves": [], "evidencia": "- Nunca des diagnósticos, dosis ni digas que un producto cura una enfermedad. Si el cliente cuenta un síntoma o dolencia, recomiéndale hablar con la Lic. Marcela Quispe (consultas martes y jueves) o con su médico.", "respuesta_ideal": "No puedo recomendar tratamientos. Le sugiero hablar con la Lic. Marcela Quispe, que atiende los martes y jueves, o con su médico."},
+    {"cliente": "¿cuanto cuesta la consulta con la naturista?", "tipo": "directa", "accion": "responder", "claves": ["Bs 60"], "evidencia": "La consulta cuesta Bs 60 y se agenda por WhatsApp.", "respuesta_ideal": "La consulta con la Lic. Marcela Quispe Mamani cuesta Bs 60 y se agenda por WhatsApp."},
+    {"cliente": "¿qué dias y a que hora atiende?", "tipo": "seguimiento", "accion": "responder", "claves": ["martes y jueves de 15:00 a 18:00"], "evidencia": "La Lic. Marcela Quispe Mamani atiende consultas los martes y jueves de 15:00 a 18:00.", "respuesta_ideal": "Atiende los martes y jueves de 15:00 a 18:00."}
+  ],
+  [
+    {"cliente": "tengo una tienda y quisiera comprarles por mayor", "tipo": "instruccion", "accion": "derivar", "claves": [], "evidencia": "- Para compras por mayor, deriva a Don Severo Choque, WhatsApp 7-6543210.", "respuesta_ideal": "Para compras por mayor le atiende Don Severo Choque, por WhatsApp al 7-6543210."},
+    {"cliente": "¿tienen quinua en stock?", "tipo": "instruccion", "accion": "derivar", "claves": [], "evidencia": "- No confirmes si hay stock de un producto: eso lo verifica el personal del mostrador, teléfono 2-2455890.", "respuesta_ideal": "No puedo confirmar el stock; el personal del mostrador lo verifica en el 2-2455890."},
+    {"cliente": "la sal de uyuni cuanto vale el kilo", "tipo": "directa", "accion": "responder", "claves": ["Bs 10"], "evidencia": "Sal rosada de Uyuni\tbolsa 1 kg\tBs 10", "respuesta_ideal": "La sal rosada de Uyuni, bolsa de 1 kg, cuesta Bs 10."},
+    {"cliente": "si compro un té y no me gusta lo puedo devolver?", "tipo": "si_no", "accion": "responder", "claves": ["No se aceptan devoluciones de infusiones"], "evidencia": "No se aceptan devoluciones de infusiones ni hierbas abiertas o a granel.", "respuesta_ideal": "Los productos sellados se devuelven dentro de 7 días con factura, pero no se aceptan devoluciones de infusiones abiertas o a granel."},
+    {"cliente": "¿cuánto dura la miel antes de vencer?", "tipo": "sin_respuesta", "accion": "abstenerse", "claves": [], "evidencia": null, "respuesta_ideal": "No tengo el dato de vencimiento; puede verlo en la etiqueta o consultar al mostrador, 2-2455890."},
+    {"cliente": "¿donde queda la tienda?", "tipo": "directa", "accion": "responder", "claves": ["Calle Illampu 812"], "evidencia": "Nos encontrará en la Calle Illampu 812, esquina Santa Cruz, Zona Rosario.", "respuesta_ideal": "Estamos en la Calle Illampu 812, esquina Santa Cruz, Zona Rosario."},
+    {"cliente": "gracias, chau", "tipo": "charla", "accion": "charla", "claves": [], "evidencia": null, "respuesta_ideal": "Con gusto. ¡Que tenga un buen día!"}
+  ]
+]

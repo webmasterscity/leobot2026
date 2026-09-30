@@ -1,0 +1,495 @@
+[
+ {
+  "id": "i0120",
+  "negocio": "W3_n1",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Hola. Compré vitamina C el martes pero quedé con dudas sobre la dosis. ¿Puedo cambiarla?",
+  "tipo": "si_no",
+  "accion_esperada": "abstenerse",
+  "claves": [
+   "consultar con farmacéutica"
+  ],
+  "evidencia": "No damos diagnósticos ni recomendaciones médicas: solo orientación farmacéutica",
+  "respuesta_ideal": "Sobre la dosis correcta, deberías consultar con un médico o con nuestra farmacéutica María (de 2 a 8 p.m., lunes a viernes). Pero si la vitamina está sin abrir, dentro de 5 días puedes hacer un cambio trayendo tu recibo.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Vitaminas: Complejo B, Vitamina C, Vitamina D»."
+ },
+ {
+  "id": "i0121",
+  "negocio": "W2_n1",
+  "turnos_previos_del_cliente": [
+   "hola buenas tardes",
+   "cuanto sale al mes el plan mas barato",
+   "y ese trae camara?",
+   "si lo tomo por el minimo del contrato, cuanto pagaria en mensualidades del basico?"
+  ],
+  "cliente": "cuanto cuesta la camara suelta si ya tengo el basico? quiero una cotizacion",
+  "tipo": "instruccion",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "No confirmes contratos, cotizaciones ni descuentos. Para cotizar o pedir descuentos, deriva al teléfono comercial +56 2 2987 4410.",
+  "respuesta_ideal": "Las cotizaciones las ve el equipo comercial; puede llamar al +56 2 2987 4410.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Plan: Hogar Plus; Qué incluye: todo lo del Básico, más cámara de verificación y botón de pánico; Valor mensual: $27.500»."
+ },
+ {
+  "id": "i0122",
+  "negocio": "W4_n3",
+  "turnos_previos_del_cliente": [
+   "hola, hay parqueadero para carro?"
+  ],
+  "cliente": "¿Y el de motos hasta qué hora lo cierran?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo el horario del parqueadero; pregúntelo en la barra.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Las mesas se apartan por WhatsApp máximo con 24 horas de anticipación y se guardan hasta 15 minutos después de la hora»."
+ },
+ {
+  "id": "i0123",
+  "negocio": "W2_n1",
+  "turnos_previos_del_cliente": [
+   "tienen patrulla en Maipu?"
+  ],
+  "cliente": "y cuanto tarda en llegar a Ñuñoa?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "12 minutos"
+  ],
+  "evidencia": "Tiempo promedio de llegada de la patrulla: 12 minutos en Providencia, Ñuñoa, Las Condes y Santiago Centro.",
+  "respuesta_ideal": "El tiempo promedio de llegada de la patrulla es de 12 minutos.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Tiempo promedio de llegada de la patrulla: 12 minutos en Providencia, Ñuñoa, Las Condes y Santiago Centro»."
+ },
+ {
+  "id": "i0124",
+  "negocio": "W6_n3",
+  "turnos_previos_del_cliente": [
+   "hola, ¿cuándo es la carrera?",
+   "¿y a qué hora sale la de 10 km?",
+   "¿dónde queda la salida?",
+   "¿cuánto tiempo tengo para terminar los 21?"
+  ],
+  "cliente": "¿cuántos corredores se esperan este año?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo ese dato.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Punto de información de la Expo Corredor · Organiza: Asociación Deportiva Corre Cocha»."
+ },
+ {
+  "id": "i0125",
+  "negocio": "W8_n3",
+  "turnos_previos_del_cliente": [],
+  "cliente": "tengo un taller y saco como 2 toneladas de hierro al mes, me lo pueden ir a traer?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "no tiene costo",
+   "9877-0342"
+  ],
+  "evidencia": "Enviamos camión a recoger material dentro de San Pedro Sula, Choloma y La Lima cuando la carga estimada supera los 800 kg. El servicio no tiene costo si el material supera 1,500 kg ... Se coordina con 24 horas de anticipación al 9877-0342.",
+  "respuesta_ideal": "Sí, si el taller está en San Pedro Sula, Choloma o La Lima; con más de 1,500 kg la recolección no tiene costo, y se coordina con 24 horas de anticipación al 9877-0342.",
+  "respuesta_a_calificar": "Sobre eso, las indicaciones del negocio dicen: «Para cargas de más de una tonelada o compra de vehículos, no des precio: toma nota y deriva al Ing. Wilmer Castellanos o al WhatsApp 9877-0342»."
+ },
+ {
+  "id": "i0126",
+  "negocio": "W5_n2",
+  "turnos_previos_del_cliente": [
+   "Buenos días, ¿cuánto vale una sesión en la cámara?"
+  ],
+  "cliente": "¿y el paquete de 10?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "$1.890.000"
+  ],
+  "evidencia": "3. Paquete de 10 sesiones en multiplaza: $1.890.000",
+  "respuesta_ideal": "El paquete de 10 sesiones en multiplaza cuesta $1.890.000.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Los paquetes de 10 y 20 sesiones pueden pagarse en dos cuotas: 50 % al iniciar y 50 % antes de la sexta sesión»."
+ },
+ {
+  "id": "i0127",
+  "negocio": "W4_n4",
+  "turnos_previos_del_cliente": [
+   "¿Abren el 12 de diciembre?",
+   "¿Y el domingo a qué hora cierran?",
+   "¿Se puede apartar tortilla hecha a mano para el domingo?",
+   "¿Cuántas tortillas trae un kilo?"
+  ],
+  "cliente": "¿La salsa verde pica mucho?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo información sobre qué tanto pica; pregunte en el mostrador, con gusto le dicen.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Producto: Salsa verde o roja de la casa; Precio: $ 35.00 el frasco de 500 ml»."
+ },
+ {
+  "id": "i0128",
+  "negocio": "W7_n2",
+  "turnos_previos_del_cliente": [
+   "Hola, ¿cuánto es para redesignar un logo que ya tengo?",
+   "¿Eso incluye la guía de colores también?",
+   "¿Y si no estoy conforme con el rediseño, devuelven el dinero?"
+  ],
+  "cliente": "Bueno, ¿cuánto toman en hacerlo?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "5-7 días hábiles"
+  ],
+  "evidencia": "Diseño gráfico simple: 5-7 días hábiles",
+  "respuesta_ideal": "Entre 5 y 7 días hábiles si es un rediseño simple.",
+  "respuesta_a_calificar": "Bueno. No lo tengo seguro. Lo más cercano que dice el texto es: «El equipo está formado por 4 profesionales: 1 director creativo (12 años en publicidad), 1 especialista SEO (certificado Google), 1 community manager y 1 desarrollador web. Trabajamos con herramientas profesionales: Adobe Creative Suite, Semrush, Google Analytics, Webflow»."
+ },
+ {
+  "id": "i0129",
+  "negocio": "W4_n1",
+  "turnos_previos_del_cliente": [],
+  "cliente": "que precio tiene la garrafa de 5 litros",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "€39,50"
+  ],
+  "evidencia": "- AOVE Pandera picual, garrafa PET 5 l: €39,50",
+  "respuesta_ideal": "La garrafa de 5 litros de picual cuesta €39,50.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Precio: €0,14 por kilo de aceituna, más €1,10 por cada garrafa de 5 l que se lleve»."
+ },
+ {
+  "id": "i0130",
+  "negocio": "W6_n3",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Me lastimé la rodilla hace dos semanas, ¿puedo correr los 10 km?",
+  "tipo": "instruccion",
+  "accion_esperada": "responder",
+  "claves": [
+   "médico"
+  ],
+  "evidencia": "recomienda consultar con su médico",
+  "respuesta_ideal": "Eso debe consultarlo con su médico.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Distancia: 21 km; Hasta el 31/08: Bs 180; Del 01/09 al 30/09: Bs 220; Hasta el 10/10: Bs 260»."
+ },
+ {
+  "id": "i0131",
+  "negocio": "W4_n2",
+  "turnos_previos_del_cliente": [
+   "Tengo una empresa con 3 empleados y quiero saber cuánto tengo que aportar por ellos",
+   "Bueno. Me olvidé la clave de la web, ¿me la pueden mandar por mail?"
+  ],
+  "cliente": "¿Puedo seguir trabajando de otra cosa despues de jubilarme?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "otra afiliación"
+  ],
+  "evidencia": " ¿Puedo seguir trabajando después de jubilarme? Sí, en actividades de otra afiliación. En la misma actividad no, salvo que renuncie a la jubilación.",
+  "respuesta_ideal": "Sí, puede trabajar en actividades de otra afiliación; en la misma actividad no, salvo que renuncie a la jubilación.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Sí, en actividades de otra afiliación»."
+ },
+ {
+  "id": "i0132",
+  "negocio": "W2_n4",
+  "turnos_previos_del_cliente": [
+   "puedo pagar con tarjeta a meses?",
+   "necesito factura, que ocupo?"
+  ],
+  "cliente": "desde cuanto aplica el descuento de mayoreo?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "10 %",
+   "$3,000.00"
+  ],
+  "evidencia": "Mayoreo: 10 % de descuento en compras desde $3,000.00.",
+  "respuesta_ideal": "El descuento de mayoreo es de 10 % en compras desde $3,000.00.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Mayoreo: 10 % de descuento en compras desde $3,000.00»."
+ },
+ {
+  "id": "i0133",
+  "negocio": "W2_n4",
+  "turnos_previos_del_cliente": [
+   "cuanto cuesta el kilo de chocolate semiamargo",
+   "y la harina?",
+   "quiero 2 kilos de chocolate y 3 de harina, cuanto seria?",
+   "tienen chocolate blanco?",
+   "cuanto cuesta un molde de 30 cm?"
+  ],
+  "cliente": "y el colorante en polvo cuanto cuesta?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo el precio del colorante en polvo; solo sé del colorante en gel de 30 g.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Colorante en gel, 30 g ................. $48.00»."
+ },
+ {
+  "id": "i0134",
+  "negocio": "W8_n1",
+  "turnos_previos_del_cliente": [
+   "Hola, estoy embarazada de 5 meses y mi doctor me mando una radiografia de torax, la pueden hacer?",
+   "necesito cita para la radiografia?",
+   "hasta que hora puedo llegar hoy viernes?"
+  ],
+  "cliente": "hacen ultrasonidos a domicilio?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "rayos X portátil"
+  ],
+  "evidencia": "¿Hacen estudios a domicilio? Solo rayos X portátil dentro de Managua, con recargo de C$ 800 sobre el precio de lista.",
+  "respuesta_ideal": "No, a domicilio solo hacemos rayos X portátil dentro de Managua, con un recargo de C$ 800.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Solo rayos X portátil dentro de Managua, con recargo de C$ 800 sobre el precio de lista»."
+ },
+ {
+  "id": "i0135",
+  "negocio": "W4_n3",
+  "turnos_previos_del_cliente": [],
+  "cliente": "hola, hay parqueadero para carro?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "motos"
+  ],
+  "evidencia": "4. Tenemos parqueadero para motos ($ 3.000 el día) en el primer piso. Para carros no tenemos.",
+  "respuesta_ideal": "¡Buenas! Para carros no tenemos; solo hay parqueadero para motos en el primer piso, a $ 3.000 el día.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Tenemos parqueadero para motos ($ 3.000 el día) en el primer piso. Para carros no tenemos»."
+ },
+ {
+  "id": "i0136",
+  "negocio": "W7_n1",
+  "turnos_previos_del_cliente": [
+   "Buenos días, tengo una pregunta. ¿Si una prenda lleva más de 2 meses aquí y no la retiro, qué pasa?",
+   "¿Y si pago con efectivo, me hacen descuento?"
+  ],
+  "cliente": "Ah, ¿y qué prendas NO limpian?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "ropa deportiva mojada",
+   "Jeans con roturas decorativas"
+  ],
+  "evidencia": "Ropa deportiva mojada o con lodo (limpiar previamente) - Jeans con roturas decorativas (alto riesgo de desprendimiento)",
+  "respuesta_ideal": "No aceptamos ropa deportiva mojada sin limpiar antes, jeans con roturas decorativas ni tapizados sin autorización previa.",
+  "respuesta_a_calificar": "Ah. No lo sé: no encontré esa información en el texto que tengo."
+ },
+ {
+  "id": "i0137",
+  "negocio": "W3_n1",
+  "turnos_previos_del_cliente": [
+   "¿Hacen entregas a casa?"
+  ],
+  "cliente": "¿Cuál es el mínimo de compra para que me entreges?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "$30.000"
+  ],
+  "evidencia": "mínimo $30.000 en medicinas",
+  "respuesta_ideal": "El mínimo para entrega es de $30.000 en medicinas.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Recibimos órdenes de lunes a viernes de 8 a.m. a 6 p.m., y entregas se hacen entre 1 p.m. y 7 p.m. (mínimo $30.000 en medicinas)»."
+ },
+ {
+  "id": "i0138",
+  "negocio": "W1_n4",
+  "turnos_previos_del_cliente": [
+   "¿Cuánta garantía tiene la estructura?",
+   "¿y si compro solo el kit?"
+  ],
+  "cliente": "¿Se le puede agregar un dormitorio más al Llanquihue?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "Sé que se pueden hacer cambios de distribución interior con costo adicional, cotizados por escrito, pero no tengo información sobre agregar un dormitorio; eso habría que consultarlo con ventas.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Si lo desea, podemos armar el kit por un valor adicional de $ 3.200.000 en los modelos Chaitén y Llanquihue (otros modelos, consultar)»."
+ },
+ {
+  "id": "i0139",
+  "negocio": "W4_n2",
+  "turnos_previos_del_cliente": [
+   "hola no me depositaron la jubilacion este mes",
+   "Mi cédula termina en 7, ¿qué día me tocaba cobrar?",
+   "¿Y si el 4 cae domingo?",
+   "¿Cuánto es la jubilación mínima ahora?",
+   "¿Y cuándo viene el próximo aumento?"
+  ],
+  "cliente": "el aguinaldo cuando lo pagan?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "junio",
+   "diciembre"
+  ],
+  "evidencia": " Aguinaldo: se paga en dos partes, con el haber de junio y con el de diciembre.",
+  "respuesta_ideal": "El aguinaldo se paga en dos partes: con el haber de junio y con el de diciembre.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Aguinaldo: se paga en dos partes, con el haber de junio y con el de diciembre»."
+ },
+ {
+  "id": "i0140",
+  "negocio": "W8_n1",
+  "turnos_previos_del_cliente": [
+   "Hola, estoy embarazada de 5 meses y mi doctor me mando una radiografia de torax, la pueden hacer?",
+   "necesito cita para la radiografia?",
+   "hasta que hora puedo llegar hoy viernes?",
+   "hacen ultrasonidos a domicilio?"
+  ],
+  "cliente": "y el rayos x a domicilio lo hacen en Masaya?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "dentro de Managua"
+  ],
+  "evidencia": "Solo rayos X portátil dentro de Managua, con recargo de C$ 800 sobre el precio de lista.",
+  "respuesta_ideal": "No, el servicio a domicilio de rayos X portátil es solo dentro de Managua.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Solo rayos X portátil dentro de Managua, con recargo de C$ 800 sobre el precio de lista»."
+ },
+ {
+  "id": "i0141",
+  "negocio": "W8_n4",
+  "turnos_previos_del_cliente": [
+   "hola, compre unas botas por internet hace 12 dias y quiero devolverlas, la tienda dice que no",
+   "el arbitraje ese, la tienda tiene que aceptarlo?",
+   "donde puedo ver si esta adherida?"
+  ],
+  "cliente": "en agosto abris?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "miércoles"
+  ],
+  "evidencia": "En agosto la oficina abre únicamente los miércoles de 9:00 a 13:00 h.",
+  "respuesta_ideal": "En agosto solo abrimos los miércoles, de 9:00 a 13:00 h.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «En agosto la oficina abre únicamente los miércoles de 9:00 a 13:00 h»."
+ },
+ {
+  "id": "i0142",
+  "negocio": "W5_n4",
+  "turnos_previos_del_cliente": [
+   "Soy uruguayo, ¿puedo comprar acá?",
+   "¿y mi señora tiene su propio cupo o es el mismo?",
+   "¿Qué hay que mostrar en la caja?",
+   "Este mes ya gaste 250 dolares, me alcanza para la freidora de aire?"
+  ],
+  "cliente": "¿Y los auriculares inalámbricos?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "US$ 49,90"
+  ],
+  "evidencia": "Auriculares inalámbricos Sonet Pro\tunidad\tUS$ 49,90",
+  "respuesta_ideal": "Esos sí: cuestan US$ 49,90 y con lo que ya gastaste llegarías a 299,90, dentro del tope de USD 300.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Producto: Auriculares inalámbricos Sonet Pro; Presentación: unidad; Precio: US$ 49,90»."
+ },
+ {
+  "id": "i0143",
+  "negocio": "W7_n4",
+  "turnos_previos_del_cliente": [],
+  "cliente": "¿Venden fundas para vinilos?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "Fundas exteriores para vinilos",
+   "5 ARS"
+  ],
+  "evidencia": "Fundas exteriores para vinilos: 5 ARS cada una",
+  "respuesta_ideal": "Sí, fundas a 5 pesos cada una. Hay venta por mayor con descuento.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Fundas exteriores para vinilos: 5 ARS cada una (venta por mayor disponible)»."
+ },
+ {
+  "id": "i0144",
+  "negocio": "W4_n2",
+  "turnos_previos_del_cliente": [
+   "¿Puedo hacer el trámite en la agencia de Paysandú si vivo allá?",
+   "¿La tarjeta prepaga del instituto tiene costo de mantenimiento?",
+   "atienden los sabados?"
+  ],
+  "cliente": "¿Los testigos tienen que haber sido compañeros de trabajo míos?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "La guía solo indica que pueden ser hasta 3 testigos y que deben concurrir con cédula; no dice qué relación deben tener con usted. Consúltelo en el 0800 4477.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «d) Si hubo trabajo anterior a 1996: constancias de los empleadores o testigos (máximo 3 testigos, que deben concurrir con cédula)»."
+ },
+ {
+  "id": "i0145",
+  "negocio": "W2_n4",
+  "turnos_previos_del_cliente": [],
+  "cliente": "puedo pagar con tarjeta a meses?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "3 meses sin intereses",
+   "$1,500.00 o más"
+  ],
+  "evidencia": "Compras de $1,500.00 o más con tarjeta de crédito participante: 3 meses sin intereses.",
+  "respuesta_ideal": "Sí, en compras de $1,500.00 o más con tarjeta de crédito participante, a 3 meses sin intereses.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Compras de $1,500.00 o más con tarjeta de crédito participante: 3 meses sin intereses»."
+ },
+ {
+  "id": "i0146",
+  "negocio": "W5_n2",
+  "turnos_previos_del_cliente": [],
+  "cliente": "hola, a que hora abren el sabado",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "7:00 a. m.",
+   "1:00 p. m."
+  ],
+  "evidencia": "sábados de 7:00 a. m. a 1:00 p. m.",
+  "respuesta_ideal": "Los sábados atendemos de 7:00 a. m. a 1:00 p. m.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Horario: lunes a viernes de 6:30 a. m. a 7:30 p. m.; sábados de 7:00 a. m. a 1:00 p. m.; domingos y festivos no hay sesiones ordinarias (*)»."
+ },
+ {
+  "id": "i0147",
+  "negocio": "W4_n3",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Mi hijo tiene 15 años y quiere aprender a jugar carambola, ¿lo puedo meter a clases?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "14 años",
+   "permiso escrito"
+  ],
+  "evidencia": "Se aceptan jóvenes desde los 14 años con permiso escrito de los papás.",
+  "respuesta_ideal": "Sí, en la escuelita de los sábados se aceptan jóvenes desde los 14 años con permiso escrito de los papás; son clases de 9 a 11 am.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Torneo de tres bandas todos los miércoles a las 7:00 pm. Inscripción $ 15.000, máximo 16 jugadores, premio: el 70% de lo recaudado para el campeón»."
+ },
+ {
+  "id": "i0148",
+  "negocio": "W1_n3",
+  "turnos_previos_del_cliente": [
+   "¿Rentan drones? Es para una boda",
+   "¿Y ustedes hacen el video de la boda con dron?"
+  ],
+  "cliente": "Si me compro uno, ¿lo puedo volar en el centro histórico?",
+  "tipo": "instruccion",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "No digas dónde está permitido o prohibido volar ni qué permisos hacen falta; indica que lo consulten con la AFAC.",
+  "respuesta_ideal": "Eso no te lo puedo decir; dónde se puede volar y qué permisos hacen falta lo tienes que consultar con la AFAC.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Un dron activado o volado ya no se puede devolver; en ese caso aplica la garantía del fabricante de 1 año, que tramitamos nosotros»."
+ },
+ {
+  "id": "i0149",
+  "negocio": "W4_n3",
+  "turnos_previos_del_cliente": [
+   "Hola, quiero apartar la mesa de snooker para el sábado a las 9 de la noche",
+   "Listo. ¿Ese día hasta qué hora abren?",
+   "¿Después de las 10 cobran lo mismo?",
+   "puedo llevar mi propia botella de aguardiente?"
+  ],
+  "cliente": "¿Cuánto vale la media de aguardiente ahí?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "$ 48.000"
+  ],
+  "evidencia": "Aguardiente Antioqueño media botella: $ 48.000 / botella: $ 92.000",
+  "respuesta_ideal": "La media botella de Aguardiente Antioqueño vale $ 48.000 y la botella completa $ 92.000.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Aguardiente Antioqueño media botella: $ 48.000 / botella: $ 92.000»."
+ }
+]

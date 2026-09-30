@@ -1,0 +1,190 @@
+[
+  {
+    "conversacion": [
+      {
+        "cliente": "Hola, qué tal.",
+        "tipo": "charla",
+        "accion": "charla",
+        "claves": [],
+        "evidencia": null,
+        "respuesta_ideal": "¡Hola! ¿En qué puedo ayudarte hoy?"
+      },
+      {
+        "cliente": "Necesito zapatos para correr, algo cómodo y de buena marca.",
+        "tipo": "directa",
+        "accion": "responder",
+        "claves": ["Zapatos deportivos: $800 — $2.500 MXN", "Nike, Adidas, Puma, Reebok, Under Armour, Saucony, ASICS"],
+        "evidencia": "PRECIOS APROXIMADOS: Zapatos deportivos: $800 — $2.500 MXN (marcas reconocidas hasta $3.200 MXN). MARCAS QUE VENDEMOS: Nike, Adidas, Puma, Reebok, Under Armour, Saucony, ASICS...",
+        "respuesta_ideal": "Tenemos zapatos para correr desde $800 hasta $3.200 MXN. Marcas como Nike, Adidas, Puma, ASICS y Saucony. Te ofrecemos asesoría gratuita según tu tipo de pisada."
+      },
+      {
+        "cliente": "¿Puedo ver si tienen la talla 9 en Nike?",
+        "tipo": "sin_respuesta",
+        "accion": "abstenerse",
+        "claves": [],
+        "evidencia": null,
+        "respuesta_ideal": "No tengo acceso al inventario en este momento. Te recomiendo que llames al (33) 2456-7890 o visites la tienda para que confirmen disponibilidad."
+      }
+    ]
+  },
+  {
+    "conversacion": [
+      {
+        "cliente": "Hola, compré unos pantalones hace 20 días y no me gustan. ¿Puedo devolverlos?",
+        "tipo": "si_no",
+        "accion": "responder",
+        "claves": ["cambiar o devolver dentro de 30 días", "factura original", "producto esté en perfecto estado, sin usar"],
+        "evidencia": "POLÍTICA DE CAMBIOS Y DEVOLUCIONES: Los artículos se pueden cambiar o devolver dentro de 30 días, siempre que: Lleves la factura original; El producto esté en perfecto estado, sin usar y con su empaque.",
+        "respuesta_ideal": "Sí, puedes devolverlo o cambiarlo si tienes tu factura original, el producto está sin usar y con empaque. Tenemos 30 días para esto."
+      },
+      {
+        "cliente": "¿Y me devuelven el dinero en efectivo?",
+        "tipo": "seguimiento",
+        "accion": "responder",
+        "claves": ["devoluciones en efectivo aplican después de 15 días", "10 % de descuento de administración"],
+        "evidencia": "Las devoluciones en efectivo aplican después de 15 días (con 10 % de descuento de administración)",
+        "respuesta_ideal": "Las devoluciones en efectivo aplican después de 15 días, pero hay un descuento de 10 % por administración."
+      },
+      {
+        "cliente": "Ouch, eso es un robo. ¿No hay otra opción?",
+        "tipo": "sin_respuesta",
+        "accion": "abstenerse",
+        "claves": [],
+        "evidencia": null,
+        "respuesta_ideal": "Esa es nuestra política. Si tienes dudas, puedes hablar directamente en la tienda o llamar al (33) 2456-7890."
+      }
+    ]
+  },
+  {
+    "conversacion": [
+      {
+        "cliente": "¿Tienen promociones en este momento?",
+        "tipo": "directa",
+        "accion": "responder",
+        "claves": ["20 % de descuento", "15 % en marcas de sudaderas", "modelo «Pedal Ciudad» a $6.800 MXN"],
+        "evidencia": "PROMOCIONES VIGENTES: Hasta el 30 de septiembre: Lleva 2 artículos de ropa y recibe 20 % de descuento. Descuento especial del 15 % en marcas de sudaderas deportivas. Ofertas en bicicletas de entrada: modelo «Pedal Ciudad» a $6.800 MXN (antes $8.500).",
+        "respuesta_ideal": "Sí, hasta el 30 de septiembre: si llevas 2 artículos de ropa tienes 20 % de descuento, y hay 15 % en sudaderas. También tenemos bicicleta Pedal Ciudad a $6.800 MXN."
+      },
+      {
+        "cliente": "¿Puedo cambiar una sudadera en oferta por otra en oferta diferente?",
+        "tipo": "instruccion",
+        "accion": "responder",
+        "claves": ["No hacemos devoluciones de artículos de oferta", "no se pueden cambiar por otro en promoción distinta"],
+        "evidencia": "NOTA IMPORTANTE: No hacemos devoluciones de artículos de oferta. Los artículos comprados en promoción no se pueden cambiar por otro en promoción distinta, pero sí por artículo a precio regular (pagando la diferencia).",
+        "respuesta_ideal": "No puedes cambiar una oferta por otra oferta, pero sí puedes cambiarla por un artículo a precio regular y pagas la diferencia si hay."
+      },
+      {
+        "cliente": "Gracias, me voy a pensarlo.",
+        "tipo": "charla",
+        "accion": "charla",
+        "claves": [],
+        "evidencia": null,
+        "respuesta_ideal": "Claro, ¡vuelve pronto! Si tienes más dudas, estamos aquí."
+      }
+    ]
+  },
+  {
+    "conversacion": [
+      {
+        "cliente": "¿Arreglan bicicletas?",
+        "tipo": "directa",
+        "accion": "responder",
+        "claves": ["revisión completa, alineación de llantas, cambio de cadena", "$150 — $400 MXN"],
+        "evidencia": "SERVICIOS ADICIONALES: Ajuste de bicicletas: revisión completa, alineación de llantas, cambio de cadena ($150 — $400 MXN).",
+        "respuesta_ideal": "Sí, hacemos revisión completa, alineación de llantas y cambio de cadena. El precio va de $150 a $400 MXN."
+      },
+      {
+        "cliente": "Mi cadena está rota y la rueda está doblada. ¿Cuánto cuesta arreglarlo todo?",
+        "tipo": "sin_respuesta",
+        "accion": "derivar",
+        "claves": [],
+        "evidencia": "INSTRUCCIONES: Si es algo especializado, derívalo al teléfono.",
+        "respuesta_ideal": "Una rueda doblada es más especializado. Te recomiendo que traiga la bici o llames al (33) 2456-7890 para que nuestro técnico evalúe el daño."
+      },
+      {
+        "cliente": "¿Y cuánto tiempo tarda?",
+        "tipo": "sin_respuesta",
+        "accion": "abstenerse",
+        "claves": [],
+        "evidencia": null,
+        "respuesta_ideal": "Eso depende del daño específico. Llama al teléfono y nuestro técnico te da una estimación."
+      }
+    ]
+  },
+  {
+    "conversacion": [
+      {
+        "cliente": "Tengo un programa de puntos o algo así en esta tienda?",
+        "tipo": "directa",
+        "accion": "responder",
+        "claves": ["cada $1.000 MXN acumulas 1 punto", "10 puntos son $100 MXN de descuento"],
+        "evidencia": "SERVICIOS ADICIONALES: Programa de lealtad: por cada $1.000 MXN en compras acumulas 1 punto; cada 10 puntos son $100 MXN de descuento en tu próxima compra.",
+        "respuesta_ideal": "Sí, tenemos programa de lealtad. Por cada $1.000 MXN gastas, acumulas 1 punto. Con 10 puntos obtienes $100 MXN de descuento."
+      },
+      {
+        "cliente": "¿Tengo que registrarme o algo?",
+        "tipo": "sin_respuesta",
+        "accion": "abstenerse",
+        "claves": [],
+        "evidencia": null,
+        "respuesta_ideal": "No me dice el proceso de registro. Te recomiendo preguntar en la tienda o llamar al (33) 2456-7890."
+      },
+      {
+        "cliente": "Dale, me llevaré estos zapatos entonces.",
+        "tipo": "charla",
+        "accion": "charla",
+        "claves": [],
+        "evidencia": null,
+        "respuesta_ideal": "¡Excelente! Que disfrutes tus nuevos zapatos. ¡Gracias, vuelve pronto!"
+      }
+    ]
+  },
+  {
+    "conversacion": [
+      {
+        "cliente": "¿Hacen descuento por pago en efectivo?",
+        "tipo": "si_no",
+        "accion": "responder",
+        "claves": ["Contamos con descuento del 5 % para pagos en efectivo"],
+        "evidencia": "FORMAS DE PAGO: Efectivo, todas las tarjetas de débito y crédito, transferencia bancaria, billetera digital (Clip, PayPal, Apple Pay). Contamos con descuento del 5 % para pagos en efectivo.",
+        "respuesta_ideal": "Sí, ofrecemos 5 % de descuento para pagos en efectivo."
+      },
+      {
+        "cliente": "¿Puedo usar transferencia bancaria?",
+        "tipo": "si_no",
+        "accion": "responder",
+        "claves": ["transferencia bancaria"],
+        "evidencia": "FORMAS DE PAGO: Efectivo, todas las tarjetas de débito y crédito, transferencia bancaria, billetera digital...",
+        "respuesta_ideal": "Sí, aceptamos transferencia bancaria."
+      }
+    ]
+  },
+  {
+    "conversacion": [
+      {
+        "cliente": "¿Ustedes venden ropa para yoga?",
+        "tipo": "directa",
+        "accion": "responder",
+        "claves": ["Artículos de yoga y pilates"],
+        "evidencia": "CATEGORÍAS Y PRODUCTOS: Artículos de yoga y pilates",
+        "respuesta_ideal": "Sí, tenemos artículos para yoga y pilates."
+      },
+      {
+        "cliente": "¿Qué precios tienen?",
+        "tipo": "sin_respuesta",
+        "accion": "abstenerse",
+        "claves": [],
+        "evidencia": null,
+        "respuesta_ideal": "No tengo los precios específicos de yoga. Llama al (33) 2456-7890 o visita la tienda para ver las opciones."
+      },
+      {
+        "cliente": "¿Están abiertos mañana a las 10 a.m.?",
+        "tipo": "si_no",
+        "accion": "responder",
+        "claves": ["Lunes a viernes: 9:00 a.m. — 8:00 p.m.", "Sábado: 9:00 a.m. — 6:00 p.m.", "Domingo: 10:00 a.m. — 4:00 p.m."],
+        "evidencia": "HORARIO DE ATENCIÓN: Lunes a viernes: 9:00 a.m. — 8:00 p.m. Sábado: 9:00 a.m. — 6:00 p.m. Domingo: 10:00 a.m. — 4:00 p.m.",
+        "respuesta_ideal": "Dependiendo del día: de lunes a viernes abrimos a las 9 a.m., sábados a las 9 a.m., y domingos a las 10 a.m."
+      }
+    ]
+  }
+]

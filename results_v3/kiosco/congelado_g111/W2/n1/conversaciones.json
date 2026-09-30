@@ -1,0 +1,262 @@
+[
+ [
+  {
+   "cliente": "buenas, a que hora empieza a andar el tren los sabados?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "6:00 a. m."
+   ],
+   "evidencia": "Sábados: 6:00 a. m. a 10:00 p. m.",
+   "respuesta_ideal": "Los sábados el servicio empieza a las 6:00 a. m. y termina a las 10:00 p. m."
+  },
+  {
+   "cliente": "y los domingos?",
+   "tipo": "seguimiento",
+   "accion": "responder",
+   "claves": [
+    "7:00 a. m."
+   ],
+   "evidencia": "Domingos y feriados: 7:00 a. m. a 9:00 p. m.",
+   "respuesta_ideal": "Los domingos y feriados empieza a las 7:00 a. m. y llega hasta las 9:00 p. m."
+  },
+  {
+   "cliente": "cada cuanto pasa uno ese dia?",
+   "tipo": "seguimiento",
+   "accion": "responder",
+   "claves": [
+    "cada 15 minutos"
+   ],
+   "evidencia": "Los domingos y feriados pasa un tren cada 15 minutos.",
+   "respuesta_ideal": "Los domingos pasa un tren cada 15 minutos."
+  },
+  {
+   "cliente": "el 25 de diciembre funciona el tren?",
+   "tipo": "si_no",
+   "accion": "responder",
+   "claves": [
+    "no hay servicio"
+   ],
+   "evidencia": "El 1 de enero y el 25 de diciembre no hay servicio.",
+   "respuesta_ideal": "No, el 25 de diciembre no hay servicio."
+  }
+ ],
+ [
+  {
+   "cliente": "cuanto vale el pasaje normal",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "Bs 3,50"
+   ],
+   "evidencia": "Adulto | Bs 3,50",
+   "respuesta_ideal": "El pasaje de adulto cuesta Bs 3,50 con Valle Card."
+  },
+  {
+   "cliente": "y si soy estudiante?",
+   "tipo": "seguimiento",
+   "accion": "responder",
+   "claves": [
+    "Bs 1,75"
+   ],
+   "evidencia": "Estudiante con carnet vigente | Bs 1,75",
+   "respuesta_ideal": "Con carnet vigente el pasaje de estudiante es Bs 1,75."
+  },
+  {
+   "cliente": "y el pase mensual para mi?",
+   "tipo": "seguimiento",
+   "accion": "responder",
+   "claves": [
+    "Bs 60"
+   ],
+   "evidencia": "Pase mensual ilimitado: Bs 120 (adultos) y Bs 60 (estudiantes).",
+   "respuesta_ideal": "Siendo estudiante, el pase mensual ilimitado cuesta Bs 60."
+  },
+  {
+   "cliente": "voy con mi hijo de 4 años y mi hija de 9, cuanto pagamos en total contando conmigo?",
+   "tipo": "combinada",
+   "accion": "responder",
+   "claves": [
+    "Bs 3,50",
+    "Bs 1,75",
+    "gratis"
+   ],
+   "evidencia": "Adulto | Bs 3,50\nEstudiante con carnet vigente | Bs 1,75\nNiños de 5 a 12 años | Bs 1,75\nMenores de 5 años | gratis (máximo 2 por adulto)",
+   "respuesta_ideal": "Usted paga Bs 3,50, su hija de 9 años Bs 1,75 y su hijo de 4 años viaja gratis: en total Bs 5,25."
+  },
+  {
+   "cliente": "cuanto cuesta el pase mensual para adulto mayor?",
+   "tipo": "sin_respuesta",
+   "accion": "abstenerse",
+   "claves": [],
+   "evidencia": null,
+   "respuesta_ideal": "No tengo el precio del pase mensual para adultos mayores. Puede llamar a Atención al Pasajero al (4) 445-2300."
+  },
+  {
+   "cliente": "las maquinas aceptan tarjeta de debito?",
+   "tipo": "si_no",
+   "accion": "responder",
+   "claves": [
+    "solo efectivo"
+   ],
+   "evidencia": "Las recargas se hacen en las máquinas de cada estación y se paga solo efectivo.",
+   "respuesta_ideal": "No, en las máquinas se paga solo en efectivo."
+  },
+  {
+   "cliente": "cuanto cuesta sacar la tarjeta valle card",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "Bs 15"
+   ],
+   "evidencia": "La Valle Card cuesta Bs 15 (no reembolsable).",
+   "respuesta_ideal": "La Valle Card cuesta Bs 15 y no es reembolsable."
+  },
+  {
+   "cliente": "si se me rompe me devuelven la plata del saldo?",
+   "tipo": "si_no",
+   "accion": "responder",
+   "claves": [
+    "no se devuelve saldo en efectivo"
+   ],
+   "evidencia": "Si la tarjeta se daña, se repone por Bs 15 y se transfiere el saldo; no se devuelve saldo en efectivo.",
+   "respuesta_ideal": "No en efectivo: se repone la tarjeta por Bs 15 y se le transfiere el saldo."
+  }
+ ],
+ [
+  {
+   "cliente": "puedo subir con mi perro?",
+   "tipo": "si_no",
+   "accion": "responder",
+   "claves": [
+    "perros guía",
+    "transportín"
+   ],
+   "evidencia": "Mascotas: solo perros guía y mascotas pequeñas dentro de transportín (hasta 8 kg).",
+   "respuesta_ideal": "Solo se admiten perros guía y mascotas pequeñas dentro de transportín, de hasta 8 kg."
+  },
+  {
+   "cliente": "y la bicicleta?",
+   "tipo": "seguimiento",
+   "accion": "responder",
+   "claves": [
+    "último vagón",
+    "fuera de hora punta"
+   ],
+   "evidencia": "Bicicletas: se permiten sin costo en el último vagón, fuera de hora punta. En hora punta no se admiten.",
+   "respuesta_ideal": "Sí, sin costo, en el último vagón y fuera de hora punta."
+  },
+  {
+   "cliente": "cuanto sale el parqueo en la estacion de Quillacollo?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "Bs 5 por día"
+   ],
+   "evidencia": "Park & Ride (estacionamiento para autos) en Sacaba y Quillacollo: Bs 5 por día, abierto de 5:00 a 23:00.",
+   "respuesta_ideal": "El estacionamiento Park & Ride cuesta Bs 5 por día."
+  },
+  {
+   "cliente": "y hay lugar para dejar la moto ahi?",
+   "tipo": "sin_respuesta",
+   "accion": "abstenerse",
+   "claves": [],
+   "evidencia": null,
+   "respuesta_ideal": "No tengo información sobre estacionamiento de motos. Puede consultar en Atención al Pasajero al (4) 445-2300."
+  },
+  {
+   "cliente": "la estacion Pasarela tiene ascensor?",
+   "tipo": "si_no",
+   "accion": "responder",
+   "claves": [
+    "solo tiene rampa"
+   ],
+   "evidencia": "Todas las estaciones tienen ascensor, salvo Pasarela, que solo tiene rampa.",
+   "respuesta_ideal": "No, Pasarela solo tiene rampa."
+  },
+  {
+   "cliente": "hay baños en las estaciones?",
+   "tipo": "sin_respuesta",
+   "accion": "abstenerse",
+   "claves": [],
+   "evidencia": null,
+   "respuesta_ideal": "No tengo ese dato. Puede llamar a Atención al Pasajero al (4) 445-2300."
+  }
+ ],
+ [
+  {
+   "cliente": "buenos dias",
+   "tipo": "charla",
+   "accion": "charla",
+   "claves": [],
+   "evidencia": null,
+   "respuesta_ideal": "Bienvenido al Tren Ligero Valle Alto, ¿en qué puedo ayudarle?"
+  },
+  {
+   "cliente": "el tren esta demorado ahorita?",
+   "tipo": "instruccion",
+   "accion": "derivar",
+   "claves": [],
+   "evidencia": "No informes sobre retrasos ni incidentes del servicio en tiempo real: indica que se consulten las pantallas de la estación o al guardia más cercano.",
+   "respuesta_ideal": "No tengo información en tiempo real. Consulte las pantallas de la estación o pregunte al guardia más cercano."
+  },
+  {
+   "cliente": "ayer deje mi chompa en el tren, que hago",
+   "tipo": "instruccion",
+   "accion": "derivar",
+   "claves": [],
+   "evidencia": "Si el pasajero dice que perdió un objeto, envíalo a Objetos Perdidos.",
+   "respuesta_ideal": "Diríjase a la oficina de Objetos Perdidos en Estación Central."
+  },
+  {
+   "cliente": "y a que telefono llamo?",
+   "tipo": "seguimiento",
+   "accion": "responder",
+   "claves": [
+    "(4) 445-2310"
+   ],
+   "evidencia": "Teléfono: (4) 445-2310.",
+   "respuesta_ideal": "Puede llamar al (4) 445-2310."
+  },
+  {
+   "cliente": "me robaron la billetera en la estacion Cala Cala",
+   "tipo": "instruccion",
+   "accion": "derivar",
+   "claves": [],
+   "evidencia": "Si alguien quiere hacer un reclamo, denunciar un robo o reportar un accidente, derívalo a la Oficina de Atención al Pasajero en Estación Central y no le pidas datos personales.",
+   "respuesta_ideal": "Lamento lo ocurrido. Diríjase a la Oficina de Atención al Pasajero en Estación Central."
+  },
+  {
+   "cliente": "el tren tiene wifi?",
+   "tipo": "sin_respuesta",
+   "accion": "abstenerse",
+   "claves": [],
+   "evidencia": null,
+   "respuesta_ideal": "No tengo ese dato. Puede consultar en Atención al Pasajero al (4) 445-2300."
+  },
+  {
+   "cliente": "cuanto tarda de Sacaba a Cala Cala?",
+   "tipo": "sin_respuesta",
+   "accion": "abstenerse",
+   "claves": [],
+   "evidencia": null,
+   "respuesta_ideal": "No tengo el tiempo entre esas estaciones; solo sé que el recorrido completo dura 41 minutos."
+  },
+  {
+   "cliente": "hay descuento para universitarios extranjeros?",
+   "tipo": "sin_respuesta",
+   "accion": "abstenerse",
+   "claves": [],
+   "evidencia": null,
+   "respuesta_ideal": "No tengo información sobre eso. Puede llamar al (4) 445-2300."
+  },
+  {
+   "cliente": "gracias, chau",
+   "tipo": "charla",
+   "accion": "charla",
+   "claves": [],
+   "evidencia": null,
+   "respuesta_ideal": "¡Buen viaje!"
+  }
+ ]
+]

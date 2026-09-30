@@ -1,0 +1,508 @@
+[
+ {
+  "id": "i0150",
+  "negocio": "W4_n4",
+  "turnos_previos_del_cliente": [
+   "Hola, soy de una constructora, necesitamos topes para 40 apartamentos, unos 900 pies en total",
+   "cuanto tiempo demora la fabricacion de un tope?"
+  ],
+  "cliente": "cuanto es el avance para empezar?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "60 %"
+  ],
+  "evidencia": "Para iniciar se firma la orden y se paga el 60 % de avance. El 40 % restante se paga el día de la instalación, antes de que el equipo se retire.",
+  "respuesta_ideal": "Se firma la orden y se paga el 60 % de avance; el 40 % restante se paga el día de la instalación.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Para iniciar se firma la orden y se paga el 60 % de avance. El 40 % restante se paga el día de la instalación, antes de que el equipo se retire»."
+ },
+ {
+  "id": "i0151",
+  "negocio": "W2_n3",
+  "turnos_previos_del_cliente": [
+   "hay algo para las familias?",
+   "¿tengo que pedir cita?",
+   "que tengo que llevar al ingreso?"
+  ],
+  "cliente": "puede llevar su celular?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "se guardan en custodia"
+  ],
+  "evidencia": "Los celulares no se permiten en el área residencial y se guardan en custodia.",
+  "respuesta_ideal": "No en el área residencial: los celulares se guardan en custodia.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Los celulares no se permiten en el área residencial y se guardan en custodia»."
+ },
+ {
+  "id": "i0152",
+  "negocio": "W2_n4",
+  "turnos_previos_del_cliente": [
+   "hola buenos dias"
+  ],
+  "cliente": "¿hay estatura minima?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "mujeres 1.68 m",
+   "hombres 1.78 m"
+  ],
+  "evidencia": "Estatura mínima para pasarela: mujeres 1.68 m, hombres 1.78 m.",
+  "respuesta_ideal": "Para pasarela, mujeres 1.68 m y hombres 1.78 m; para fotografía comercial no hay estatura mínima.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Estatura mínima para pasarela: mujeres 1.68 m, hombres 1.78 m. Para fotografía comercial no hay estatura mínima»."
+ },
+ {
+  "id": "i0153",
+  "negocio": "W8_n2",
+  "turnos_previos_del_cliente": [
+   "Mi marca vence en mayo de 2027, ¿desde cuándo puedo renovarla?"
+  ],
+  "cliente": "Está en 2 clases, ¿cuánto pagaría de renovación?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "1,100",
+   "2,200"
+  ],
+  "evidencia": "Renovación de marca (por clase) | Q 1,100.00",
+  "respuesta_ideal": "La renovación cuesta Q 1,100.00 por clase, así que por 2 clases serían Q 2,200.00, en quetzales y con IVA incluido.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Trámite: Renovación de marca (por clase); Tarifa: Q 1,100.00»."
+ },
+ {
+  "id": "i0154",
+  "negocio": "W6_n2",
+  "turnos_previos_del_cliente": [],
+  "cliente": "cuanto vale el ceviche de trucha?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "₡6.900"
+  ],
+  "evidencia": "- Ceviche de trucha: ₡6.900",
+  "respuesta_ideal": "El ceviche de trucha cuesta ₡6.900, con IVA incluido.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Ceviche de trucha: ₡6.900»."
+ },
+ {
+  "id": "i0155",
+  "negocio": "W8_n1",
+  "turnos_previos_del_cliente": [
+   "Buenas, tengo dos hijos de 7 y 10 años, cuanto me saldria la temporada completa para los dos?"
+  ],
+  "cliente": "¿y si solo van en enero?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "215.000",
+   "397.750"
+  ],
+  "evidencia": "Mes de enero (4 semanas): $ 215.000",
+  "respuesta_ideal": "El mes de enero cuesta $ 215.000 por chico; con el 15 % de descuento del segundo hermano serían $ 215.000 + $ 182.750 = $ 397.750 por los dos.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «La temporada 2027 va del lunes 4 de enero al viernes 26 de febrero»."
+ },
+ {
+  "id": "i0156",
+  "negocio": "W2_n1",
+  "turnos_previos_del_cliente": [
+   "hola",
+   "los abogados a que hora pueden ir?"
+  ],
+  "cliente": "¿necesito inscribirme como visita para verlo como abogado?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "sin necesidad de inscripción de visita"
+  ],
+  "evidencia": "sin necesidad de inscripción de visita",
+  "respuesta_ideal": "No, los abogados no necesitan inscripción de visita; solo credencial vigente.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Los abogados atienden de lunes a viernes de 09:00 a 17:00 h con credencial vigente, sin necesidad de inscripción de visita»."
+ },
+ {
+  "id": "i0157",
+  "negocio": "W8_n3",
+  "turnos_previos_del_cliente": [],
+  "cliente": "buenas, tengo 34 años y nunca he cogido una espada, ¿puedo apuntarme?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "cualquier edad"
+  ],
+  "evidencia": "Enseñamos las tres armas (florete, espada y sable) a niños desde los 6 años y a adultos de cualquier edad, sin límite.",
+  "respuesta_ideal": "Sí, claro: enseñamos a adultos de cualquier edad y el grupo de adultos iniciación empieza desde cero.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «No hasta que cumpla los 6»."
+ },
+ {
+  "id": "i0158",
+  "negocio": "W8_n4",
+  "turnos_previos_del_cliente": [
+   "Buenas, quiero hacer el taller de jabon, cuando es y cuanto cuesta?",
+   "¿Puede venir mi hija de 14 conmigo?"
+  ],
+  "cliente": "¿Y el taller de velas tiene edad mínima?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "Para el taller de velas no tengo indicada una edad mínima; consultalo con Lucía por WhatsApp al 099 412 780.",
+  "respuesta_a_calificar": "Sobre eso, las indicaciones del negocio dicen: «Cuando menciones el taller de jabón, avisá que la edad mínima es 16 años porque se trabaja con soda cáustica»."
+ },
+ {
+  "id": "i0159",
+  "negocio": "W1_n2",
+  "turnos_previos_del_cliente": [],
+  "cliente": "quiero 3 paquetes de veladoras y 2 de las flotantes, cuanto es?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "190"
+  ],
+  "evidencia": "Veladoras de colores\tpaquete de 12\tQ40.00\nVelas flotantes\tpaquete de 6\tQ35.00",
+  "respuesta_ideal": "Tres paquetes de veladoras (Q40.00 c/u) y dos de velas flotantes (Q35.00 c/u) suman Q190.00. Recuerde no dejarlas encendidas sin supervisión.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Producto: Veladoras de colores; Tamaño: paquete de 12; Precio: Q40.00»."
+ },
+ {
+  "id": "i0160",
+  "negocio": "W6_n4",
+  "turnos_previos_del_cliente": [
+   "a que hora atiende la secretaria los sabados?"
+  ],
+  "cliente": "estan abiertos en enero?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "En enero la escuela está cerrada por vacaciones"
+  ],
+  "evidencia": "En enero la escuela está cerrada por vacaciones.",
+  "respuesta_ideal": "No, en enero la escuela está cerrada por vacaciones.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «En enero la escuela está cerrada por vacaciones»."
+ },
+ {
+  "id": "i0161",
+  "negocio": "W1_n2",
+  "turnos_previos_del_cliente": [
+   "Me caso en marzo y quiero 120 velas con nuestros nombres, ¿cuánto me saldría?"
+  ],
+  "cliente": "¿Cuánto tardan en grabar el nombre?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "3 días hábiles"
+  ],
+  "evidencia": "El grabado tarda 3 días hábiles.",
+  "respuesta_ideal": "El grabado tarda 3 días hábiles.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Grabamos nombres, iniciales o fechas en las velas pilar por Q20.00 adicionales por vela»."
+ },
+ {
+  "id": "i0162",
+  "negocio": "W5_n2",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Buenas, ¿a qué hora abrís por la tarde?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "16:30"
+  ],
+  "evidencia": "Lunes a viernes: 10:00–13:30 y 16:30–20:00",
+  "respuesta_ideal": "Kaixo, bienvenido a Paragüería Ibaizabal. De lunes a viernes abrimos por la tarde de 16:30 a 20:00.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «En agosto cerramos por las tardes (solo abrimos de 10:00 a 13:30)»."
+ },
+ {
+  "id": "i0163",
+  "negocio": "W4_n2",
+  "turnos_previos_del_cliente": [
+   "hola, cuanto sale una parcela para una sola persona?",
+   "y la familiar?",
+   "si pago la individual en efectivo tengo descuento? en cuanto quedaria",
+   "se puede pagar en cuotas con Cabal?"
+  ],
+  "cliente": "el mantenimiento cuanto es por mes?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "7.200",
+   "anual"
+  ],
+  "evidencia": "Cuota de mantenimiento anual, por parcela\t$U 7.200",
+  "respuesta_ideal": "La cuota de mantenimiento es anual, $U 7.200 por parcela, lo que equivale a unos $U 600 por mes; vence el 31 de marzo.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Servicio: Cuota de mantenimiento anual, por parcela; Precio: $U 7.200»."
+ },
+ {
+  "id": "i0164",
+  "negocio": "W4_n1",
+  "turnos_previos_del_cliente": [
+   "Hola buenas, a q hora abren los sabados?"
+  ],
+  "cliente": "y los domingos?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "cerrado"
+  ],
+  "evidencia": "Domingos y feriados: cerrado. Excepción: en las Fiestas de Cuenca (1 al 3 de noviembre) la tienda abre también el domingo hasta las 14h00.",
+  "respuesta_ideal": "Los domingos y feriados estamos cerrados; la única excepción es el domingo de las Fiestas de Cuenca, que abrimos hasta las 14h00.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Domingos y feriados: cerrado»."
+ },
+ {
+  "id": "i0165",
+  "negocio": "W6_n3",
+  "turnos_previos_del_cliente": [
+   "puedo pagar con tarjeta de debito?",
+   "y con transferencia?",
+   "hacen recargas de tigo?"
+  ],
+  "cliente": "y pago de luz cuanto cobran? tengo 3 recibos",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "L 15.00 por recibo",
+   "45"
+  ],
+  "evidencia": "Pago de servicios públicos (luz, agua)\tcomisión de L 15.00 por recibo",
+  "respuesta_ideal": "La comisión es de L 15.00 por recibo, o sea L 45.00 por los 3 recibos.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Servicio: Pago de servicios públicos (luz, agua); Precio: comisión de L 15.00 por recibo»."
+ },
+ {
+  "id": "i0166",
+  "negocio": "W1_n4",
+  "turnos_previos_del_cliente": [
+   "¿A qué hora abren el sábado?",
+   "y el deposito tambien abre?",
+   "¿Hacen delivery el sábado?",
+   "¿Hay papel higiénico hoy? necesito 10 fardos"
+  ],
+  "cliente": "¿De qué marca es ese papel?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo el dato de la marca; solo sé que es hoja doble, en fardo de 48 rollos.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Papel higiénico hoja doble — fardo de 48 rollos — Gs. 89.000»."
+ },
+ {
+  "id": "i0167",
+  "negocio": "W4_n2",
+  "turnos_previos_del_cliente": [
+   "buenas tardes, hasta que hora se puede entrar a visitar?",
+   "y en julio?",
+   "hasta donde puedo entrar con el auto?",
+   "estoy buscando la tumba de mi tia, Elsa Rodriguez, fallecio en 2019, en que sector esta?",
+   "puedo pasar con mi perro? es chiquito"
+  ],
+  "cliente": "hay algun lugar ahi para comprar flores?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "puesto de flores",
+   "fines de semana"
+  ],
+  "evidencia": "Hay un puesto de flores en la entrada, de un vendedor independiente, los fines de semana y el 2 de noviembre. El parque no vende flores.",
+  "respuesta_ideal": "Hay un puesto de flores de un vendedor independiente en la entrada, los fines de semana y el 2 de noviembre; el parque no vende flores. Recuerde que las flores artificiales y las velas no están permitidas.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «El parque no vende flores»."
+ },
+ {
+  "id": "i0168",
+  "negocio": "W2_n2",
+  "turnos_previos_del_cliente": [
+   "donde dejo el auto y cuanto sale?",
+   "¿y si voy con un camion?"
+  ],
+  "cliente": "si mi camion se queda 6 horas, cuanto pago en total?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "Gs. 25.000",
+   "Gs. 8.000"
+  ],
+  "evidencia": "| Camión, hora adicional | Gs. 8.000 |",
+  "respuesta_ideal": "Gs. 25.000 por las primeras 4 horas más 2 horas adicionales de Gs. 8.000, en total Gs. 41.000.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Concepto: Camión hasta 4 horas; Tarifa: Gs. 25.000»."
+ },
+ {
+  "id": "i0169",
+  "negocio": "W4_n1",
+  "turnos_previos_del_cliente": [
+   "Somos un grupo de 12 de una agencia, podemos ir mañana a las 11 a ver la demostracion? Nos reserva?",
+   "que dias hay demostracion de tejido?"
+  ],
+  "cliente": "y cuanto dura?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "40 minutos"
+  ],
+  "evidencia": "(duran unos 40 minutos)",
+  "respuesta_ideal": "Dura unos 40 minutos.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Las demostraciones de tejido se hacen solo los martes y jueves a las 11h00 y a las 15h00 (duran unos 40 minutos)»."
+ },
+ {
+  "id": "i0170",
+  "negocio": "W4_n3",
+  "turnos_previos_del_cliente": [
+   "buenas tardes, mi hijo de 12 años se ha hecho un esguince en el tobillo, puede seguir entrenando?"
+  ],
+  "cliente": "si lo tengo que dar de baja un par de meses me devolveis la cuota?",
+  "tipo": "instruccion",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "Las cuestiones de cuotas atrasadas, devoluciones o bajas las lleva Lucía Ferrer; no prometas devoluciones.",
+  "respuesta_ideal": "Las devoluciones y las bajas las lleva Lucía Ferrer, en secretaría; no puedo prometerte nada desde aquí, habla con ella.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «La cuota se domicilia entre los días 1 y 5 de cada mes. Baja: avisar por correo antes del día 25 del mes anterior»."
+ },
+ {
+  "id": "i0171",
+  "negocio": "W5_n3",
+  "turnos_previos_del_cliente": [],
+  "cliente": "buenas tardes, a q hora cierran hoy domingo?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "2:00 p. m."
+  ],
+  "evidencia": "Domingo 9:00 a. m. – 2:00 p. m.",
+  "respuesta_ideal": "Buenas, bienvenido a Variedades El Centavo. Hoy domingo la tienda central cierra a las 2:00 p. m.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Sucursal zona 3 ....... Lunes a sábado 9:00 a. m. – 6:00 p. m. / Domingos: cerrado»."
+ },
+ {
+  "id": "i0172",
+  "negocio": "W5_n1",
+  "turnos_previos_del_cliente": [
+   "Me robaron la billetera en el 180, a quién le aviso?",
+   "Encontré un celular en la parada del 117, ¿dónde lo tengo que dejar?",
+   "¿Mandan cosas al interior? vivo en Las Piedras"
+  ],
+  "cliente": "¿Y dentro de Montevideo cuánto sale?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "$U 290"
+  ],
+  "evidencia": "Enviamos objetos chicos (llaves, billeteras sin dinero, lentes, carpetas) dentro de Montevideo por cadetería, con un costo de $U 290 a cargo del usuario.",
+  "respuesta_ideal": "Dentro de Montevideo el envío por cadetería de objetos chicos cuesta $U 290, a cargo del usuario, y se coordina por WhatsApp.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Enviamos objetos chicos (llaves, billeteras sin dinero, lentes, carpetas) dentro de Montevideo por cadetería, con un costo de $U 290 a cargo del usuario»."
+ },
+ {
+  "id": "i0173",
+  "negocio": "W1_n2",
+  "turnos_previos_del_cliente": [
+   "Buenas tardes",
+   "¿A qué hora cierran hoy? es martes",
+   "cuanto cuesta la vela aromatica en vaso de barro?"
+  ],
+  "cliente": "¿y qué olores tiene?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "café de Antigua",
+   "jazmín",
+   "eucalipto",
+   "canela con naranja",
+   "pino"
+  ],
+  "evidencia": "Aromas de las velas de soya: café de Antigua, jazmín, eucalipto, canela con naranja y pino.",
+  "respuesta_ideal": "Las hay de café de Antigua, jazmín, eucalipto, canela con naranja y pino.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Las velas de la línea Pura no llevan aroma, solo el olor natural de la cera»."
+ },
+ {
+  "id": "i0174",
+  "negocio": "W5_n1",
+  "turnos_previos_del_cliente": [
+   "Me robaron la billetera en el 180, a quién le aviso?"
+  ],
+  "cliente": "Encontré un celular en la parada del 117, ¿dónde lo tengo que dejar?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "seccional policial"
+  ],
+  "evidencia": "No recibimos objetos hallados fuera de las unidades (paradas, veredas, comercios): esos deben entregarse en la seccional policial más cercana.",
+  "respuesta_ideal": "Como lo encontraste en la parada y no dentro del ómnibus, tenés que entregarlo en la seccional policial más cercana.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Solo los objetos olvidados dentro de los ómnibus de COSUR (líneas 102, 117, 145, 180 y 405) y en las garitas de nuestras terminales»."
+ },
+ {
+  "id": "i0175",
+  "negocio": "W6_n4",
+  "turnos_previos_del_cliente": [
+   "a que hora atiende la secretaria los sabados?",
+   "estan abiertos en enero?",
+   "cuando arrancan los cursos?",
+   "si falto a una clase la pierdo?"
+  ],
+  "cliente": "que asistencia hay que tener para el certificado?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "80 %"
+  ],
+  "evidencia": "- El certificado se entrega con el 80 % de asistencia.",
+  "respuesta_ideal": "El certificado se entrega con el 80 % de asistencia.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «El certificado se entrega con el 80 % de asistencia»."
+ },
+ {
+  "id": "i0176",
+  "negocio": "W8_n3",
+  "turnos_previos_del_cliente": [
+   "Quiero darme de baja, ¿hasta qué día tengo para avisar?",
+   "Es que me han cobrado junio y ya no he ido, ¿me lo devuelven?"
+  ],
+  "cliente": "¿Puedo congelar la cuota un mes si me voy de viaje?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo información sobre congelar la cuota. Pregúntalo a secretaría en secretaria@esgrimacampogrande.es.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Bajas: comunicar por escrito a secretaría antes del día 20 del mes; si no, se cobra el mes siguiente»."
+ },
+ {
+  "id": "i0177",
+  "negocio": "W4_n3",
+  "turnos_previos_del_cliente": [
+   "buenas tardes, mi hijo de 12 años se ha hecho un esguince en el tobillo, puede seguir entrenando?",
+   "si lo tengo que dar de baja un par de meses me devolveis la cuota?",
+   "y hasta que dia tengo que avisar de la baja?"
+  ],
+  "cliente": "en agosto se paga la cuota aunque este cerrado?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "Sé que en agosto el club está cerrado, pero no tengo el dato de si se cobra la cuota; pregúntaselo a Lucía Ferrer en secretaría.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «¿Se puede empezar en cualquier mes? Sí, salvo en agosto, que estamos cerrados»."
+ },
+ {
+  "id": "i0178",
+  "negocio": "W1_n1",
+  "turnos_previos_del_cliente": [
+   "Quiero ir al taller de cultivo, ¿cuándo es?",
+   "¿Puedo llevar a mi hijo de 10 años?",
+   "Entonces vamos 3 adultos, ¿cuánto pagamos en total?",
+   "Perfecto, anótame para el próximo, me llamo Rosa Paredes"
+  ],
+  "cliente": "¿el kit que dan en el taller es el de ostra o el de shiitake?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "Kit Ostra"
+  ],
+  "evidencia": "Valor: $25.000 por persona, incluye un Kit Ostra para llevar.",
+  "respuesta_ideal": "Es el Kit Ostra.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Valor: $25.000 por persona, incluye un Kit Ostra para llevar»."
+ },
+ {
+  "id": "i0179",
+  "negocio": "W2_n4",
+  "turnos_previos_del_cliente": [
+   "si termino el curso ¿me garantizan trabajo en agencias grandes?",
+   "¿cuanto es la comision que cobran por los trabajos?",
+   "donde queda la escuela?"
+  ],
+  "cliente": "abren los sabados?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "9:00 a. m.",
+   "1:00 p. m."
+  ],
+  "evidencia": "sábados de 9:00 a. m. a 1:00 p. m.",
+  "respuesta_ideal": "Sí, los sábados de 9:00 a. m. a 1:00 p. m.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Se realiza el primer sábado de cada mes a las 10:00 a. m. Es gratuito y no requiere cita previa»."
+ }
+]

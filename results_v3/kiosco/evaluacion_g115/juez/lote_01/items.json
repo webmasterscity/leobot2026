@@ -1,0 +1,484 @@
+[
+ {
+  "id": "i0030",
+  "negocio": "W5_n4",
+  "turnos_previos_del_cliente": [
+   "Hola, estamos en noviembre, ¿tienen algún descuento?",
+   "¿Con cuánta anticipación tengo que pedir hora si es para abril?",
+   "¿Trabajan los domingos?",
+   "¿Y si justo llueve fuerte el día de la visita?",
+   "¿Van a Puerto Aysén?"
+  ],
+  "cliente": "¿Y cuánto me saldría allá la limpieza de la cocina a leña?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "47.000"
+  ],
+  "evidencia": "3. Limpieza de cocina a leña (cocina económica) .................... $32.000",
+  "respuesta_ideal": "La limpieza de cocina a leña cuesta $32.000 más el recargo de $15.000 de Puerto Aysén: $47.000.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Limpieza de cocina a leña (cocina económica) .................... $32.000»."
+ },
+ {
+  "id": "i0031",
+  "negocio": "W2_n1",
+  "turnos_previos_del_cliente": [],
+  "cliente": "hola buenas, a q hora son las visitas los sabados?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "09:30 a 15:30"
+  ],
+  "evidencia": "Módulos A y B: sábados, de 09:30 a 15:30 h.",
+  "respuesta_ideal": "Los sábados la visita es de 09:30 a 15:30 h para los módulos A y B.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Módulos A y B: sábados, de 09:30 a 15:30 h»."
+ },
+ {
+  "id": "i0032",
+  "negocio": "W8_n1",
+  "turnos_previos_del_cliente": [
+   "que zonas cubre el transporte?"
+  ],
+  "cliente": "cuanto cuesta la combi",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "48.000"
+  ],
+  "evidencia": "Transporte opcional (ida y vuelta, ver zonas): $ 48.000 por mes.",
+  "respuesta_ideal": "El transporte es opcional y cuesta $ 48.000 por mes, ida y vuelta.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «La combi pasa a buscar a los chicos entre las 7.30 y las 8.20 según la zona; el recorrido exacto lo confirma el Sr. Ferreyra la semana previa al inicio»."
+ },
+ {
+  "id": "i0033",
+  "negocio": "W5_n3",
+  "turnos_previos_del_cliente": [
+   "Tengo unas manchas en la cara, ¿qué crema me recomienda?",
+   "Bueno, ¿y cuánto cuesta el esmalte de uñas?",
+   "si llevo 3 cuanto seria?"
+  ],
+  "cliente": "¿Me dan factura con mi NIT?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "NIT"
+  ],
+  "evidencia": "Se extiende factura con NIT; si el cliente no da NIT, se factura como C/F.",
+  "respuesta_ideal": "Sí, se extiende factura con su NIT.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Se extiende factura con NIT; si el cliente no da NIT, se factura como C/F»."
+ },
+ {
+  "id": "i0034",
+  "negocio": "W6_n2",
+  "turnos_previos_del_cliente": [
+   "hola, cuanto cuesta pescar? somos 2 adultos",
+   "y las truchas que uno saca se pagan aparte?",
+   "vamos con una nena de 8, cuanto es su caña?",
+   "hay limite de lo que uno se puede llevar?"
+  ],
+  "cliente": "me la entregan limpia o tengo q limpiarla yo?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "limpia y empacada con hielo"
+  ],
+  "evidencia": "La trucha se lo entregan limpia y empacada con hielo, sin costo adicional.",
+  "respuesta_ideal": "Se la entregan limpia y empacada con hielo, sin costo adicional.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «La trucha se lo entregan limpia y empacada con hielo, sin costo adicional»."
+ },
+ {
+  "id": "i0035",
+  "negocio": "W2_n1",
+  "turnos_previos_del_cliente": [
+   "Q papeles necesito para inscribirme como visita?",
+   "¿me sirve la licencia de conducir?",
+   "voy a llegar a las 13:45 un sabado que es feriado, ¿alcanzo a entrar?"
+  ],
+  "cliente": "cuanto se demora la autorizacion?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "10 días hábiles"
+  ],
+  "evidencia": "Esperar la autorización, que demora hasta 10 días hábiles.",
+  "respuesta_ideal": "La autorización demora hasta 10 días hábiles.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Esperar la autorización, que demora hasta 10 días hábiles»."
+ },
+ {
+  "id": "i0036",
+  "negocio": "W3_n1",
+  "turnos_previos_del_cliente": [
+   "Quiero el trek a Machu Picchu. ¿Cuándo salen?"
+  ],
+  "cliente": "¿Cuánto cuesta ese trek?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "$450 por persona",
+   "mínimo 4 personas"
+  ],
+  "evidencia": "Trek de 3 días a Machu Picchu desde nuestro campamento: $450 por persona (mínimo 4 personas)",
+  "respuesta_ideal": "El trek cuesta 450 dólares por persona, pero necesitamos un grupo mínimo de 4. Si vienes solo, te ayudaremos a conectarte con otros viajeros.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Trek de 3 días a Machu Picchu desde nuestro campamento: $450 por persona (mínimo 4 personas)»."
+ },
+ {
+  "id": "i0037",
+  "negocio": "W2_n4",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Hola, cuando es el casting?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "primer sábado de cada mes",
+   "10:00 a. m."
+  ],
+  "evidencia": "Se realiza el primer sábado de cada mes a las 10:00 a. m.",
+  "respuesta_ideal": "El casting abierto es el primer sábado de cada mes a las 10:00 a. m.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «CASTING ABIERTO»."
+ },
+ {
+  "id": "i0038",
+  "negocio": "W5_n3",
+  "turnos_previos_del_cliente": [
+   "Disculpe, ¿dónde queda la tienda principal?",
+   "tienen parqueo?",
+   "¿Venden piñatas?",
+   "¿Aceptan dólares?"
+  ],
+  "cliente": "El 1 de noviembre abren?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "12:00 m."
+  ],
+  "evidencia": "1 de noviembre: la tienda central cierra a las 12:00 m.",
+  "respuesta_ideal": "Sí, pero el 1 de noviembre la tienda central cierra a las 12:00 m.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «1 de noviembre: la tienda central cierra a las 12:00 m»."
+ },
+ {
+  "id": "i0039",
+  "negocio": "W8_n2",
+  "turnos_previos_del_cliente": [
+   "Mi marca vence en mayo de 2027, ¿desde cuándo puedo renovarla?",
+   "Está en 2 clases, ¿cuánto pagaría de renovación?"
+  ],
+  "cliente": "y si se me pasó el vencimiento como 3 meses?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "50 %"
+  ],
+  "evidencia": "Recargo por renovación en período de gracia | 50 % adicional",
+  "respuesta_ideal": "Todavía está dentro del período de gracia de 6 meses, pero se cobra un 50 % adicional: por 2 clases serían Q 3,300.00, IVA incluido.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Se le notifica por escrito y tiene 2 meses para contestarla»."
+ },
+ {
+  "id": "i0040",
+  "negocio": "W6_n3",
+  "turnos_previos_del_cliente": [],
+  "cliente": "buenas tardes, a q hora cierran hoy? es domingo",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "6:00 p. m."
+  ],
+  "evidencia": "Domingos: 10:00 a. m. a 6:00 p. m.",
+  "respuesta_ideal": "Hola, bienvenido a Cibernet La Esquina. Los domingos cerramos a las 6:00 p. m.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Domingos: 10:00 a. m. a 6:00 p. m»."
+ },
+ {
+  "id": "i0041",
+  "negocio": "W4_n1",
+  "turnos_previos_del_cliente": [
+   "hola, tengo un sombrero de mi abuelo todo aplastado, me lo pueden arreglar? cuanto cobran",
+   "y quien lo revisa? que dias?",
+   "cuanto cuesta cambiarle la banda de adentro?"
+  ],
+  "cliente": "hacen limpieza de sombreros de fieltro tambien?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo ese dato: la limpieza que figura es para sombreros de toquilla. Puede consultarlo por WhatsApp al +593 98 411 2260.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Limpieza y replanchado de sombrero de toquilla: USD 12 (se entrega en 2 días hábiles)»."
+ },
+ {
+  "id": "i0042",
+  "negocio": "W1_n2",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Ayer se me cayó una vela de ustedes y se quemó el mantel y un poco mi mano, ¿qué hago?",
+  "tipo": "instruccion",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "Si un cliente cuenta que una vela le causó una quemadura, un incendio o cualquier accidente, discúlpate, no discutas de quién fue la culpa y pídele que llame a doña Marta Cuxil al 7832-5610.",
+  "respuesta_ideal": "Lamento mucho lo que pasó. Por favor llame a doña Marta Cuxil al 7832-5610 para que la atienda personalmente.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Hoy la cerería la atienden sus hijos y nietos, y seguimos haciendo todo a mano en el taller que está detrás de la tienda»."
+ },
+ {
+  "id": "i0043",
+  "negocio": "W7_n1",
+  "turnos_previos_del_cliente": [
+   "Buenas, ¿tienen asado?"
+  ],
+  "cliente": "¿Me haces un asado con puré en lugar de papas?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "Para consultar sobre cambios en la guarnición, te sugiero que hables directamente con nuestro equipo en (011) 4365-8821.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Asado de tira con guarnición: $2100»."
+ },
+ {
+  "id": "i0044",
+  "negocio": "W8_n1",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Buenas, tengo dos hijos de 7 y 10 años, cuanto me saldria la temporada completa para los dos?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "385.000",
+   "15 %",
+   "712.250"
+  ],
+  "evidencia": "Temporada completa (8 semanas): $ 385.000\n- Mes de enero (4 semanas): $ 215.000\n- Mes de febrero (4 semanas): $ 215.000\n- Semana suelta: $ 62.000\n- Matrícula única de inscripción: $ 25.000 (incluye remera, gorro y seguro)\n- Descuento hermanos: 15 % sobre el arancel del segundo hermano y siguientes. No aplica sobre la matrícula.",
+  "respuesta_ideal": "La temporada completa cuesta $ 385.000 por chico y el segundo hermano tiene 15 % de descuento, así que serían $ 385.000 + $ 327.250 = $ 712.250 en total, más la matrícula de $ 25.000 por cada uno, que no tiene descuento.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Temporada completa (8 semanas): $ 385.000»."
+ },
+ {
+  "id": "i0045",
+  "negocio": "W8_n4",
+  "turnos_previos_del_cliente": [
+   "hola, abren los domingos?",
+   "¿Y este domingo hay feria?"
+  ],
+  "cliente": "¿Cuántas horas dura la vela chica?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "20 horas"
+  ],
+  "evidencia": "Vela de soja chica (frasco 120 ml, 20 horas de quemado) | $U 450",
+  "respuesta_ideal": "La vela chica, de 120 ml, tiene unas 20 horas de quemado.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Producto: Vela de soja chica (frasco 120 ml, 20 horas de quemado); Precio: $U 450»."
+ },
+ {
+  "id": "i0046",
+  "negocio": "W3_n1",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Hola, me interesa hacer el retiro de meditación de 7 días. ¿Puedo ir la próxima semana?",
+  "tipo": "instruccion",
+  "accion_esperada": "derivar",
+  "claves": [
+   "2 semanas",
+   "retiro de mediano plazo",
+   "confirmación urgente"
+  ],
+  "evidencia": "Para retiros de más de 3 días, requerimos confirmación 2 semanas antes.",
+  "respuesta_ideal": "El retiro de 7 días es hermoso, pero necesitamos confirmación con 2 semanas de anticipación. Para una solicitud urgente, llama directamente a Julio Mendoza al 84 204156 o al WhatsApp 975-662-481.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Retiro de meditación de 7 días (paquete completo): $1200 USD todo incluido»."
+ },
+ {
+  "id": "i0047",
+  "negocio": "W5_n4",
+  "turnos_previos_del_cliente": [
+   "Buenos días, necesito factura para la empresa, ¿se puede?",
+   "Otra cosa, me cobraron dos veces la limpieza del mes pasado"
+  ],
+  "cliente": "¿Cada cuánto hay que limpiar el cañón?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "2 veces al año"
+  ],
+  "evidencia": "Recomendamos limpiarlo al menos 2 veces al año: antes del invierno y a mitad de temporada.",
+  "respuesta_ideal": "Se recomienda limpiarlo al menos 2 veces al año: antes del invierno y a mitad de temporada.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Use leña seca, con menos de 25 % de humedad; la leña húmeda ensucia el cañón mucho más rápido»."
+ },
+ {
+  "id": "i0048",
+  "negocio": "W1_n2",
+  "turnos_previos_del_cliente": [
+   "Ayer se me cayó una vela de ustedes y se quemó el mantel y un poco mi mano, ¿qué hago?"
+  ],
+  "cliente": "¿Dónde queda la tienda exactamente?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "4a. calle poniente #19"
+  ],
+  "evidencia": "Dirección: 4a. calle poniente #19, Antigua Guatemala, Sacatepéquez",
+  "respuesta_ideal": "Estamos en la 4a. calle poniente #19, Antigua Guatemala.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Encargada de tienda: doña Marta Cuxil»."
+ },
+ {
+  "id": "i0049",
+  "negocio": "W6_n4",
+  "turnos_previos_del_cliente": [
+   "alquilan el estudio? cuanto por 3 horas siendo exalumna?",
+   "y me prestan una camara?"
+  ],
+  "cliente": "cuanto cuesta el curso de lightroom?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "USD 60"
+  ],
+  "evidencia": "| Edición con Lightroom (en vivo por Zoom) | 6 clases | lunes, 20:00 a 21:30 | USD 60 |",
+  "respuesta_ideal": "El curso de Edición con Lightroom cuesta USD 60.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Curso: Edición con Lightroom (en vivo por Zoom); Clases: 6 clases; Días y horario: lunes, 20:00 a 21:30; Precio: USD 60»."
+ },
+ {
+  "id": "i0050",
+  "negocio": "W8_n4",
+  "turnos_previos_del_cliente": [
+   "Tengo dermatitis, ¿cuál jabón me sirve para curarla?"
+  ],
+  "cliente": "Bueno, ¿cuál es el más suave que tienen?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "avena y miel"
+  ],
+  "evidencia": "el de avena y miel es el más suave.",
+  "respuesta_ideal": "El más suave es el de avena y miel.",
+  "respuesta_a_calificar": "Bueno. No lo tengo seguro. Lo más cercano que dice el texto es: «El de carbón activado es el que más se vende; el de avena y miel es el más suave»."
+ },
+ {
+  "id": "i0051",
+  "negocio": "W6_n1",
+  "turnos_previos_del_cliente": [
+   "Cuanto esta la libra del pargo?",
+   "y el camaron grande?"
+  ],
+  "cliente": "Si llevo 3 libras de camaron jumbo y 2 de corvina, cuanto seria en total?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "B/. 8.75",
+   "B/. 4.50",
+   "35.25"
+  ],
+  "evidencia": "| Corvina | B/. 4.50 |",
+  "respuesta_ideal": "3 libras de camarón jumbo a B/. 8.75 son 26.25 y 2 de corvina a B/. 4.50 son 9.00: en total B/. 35.25, según precios referenciales.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Producto: Camarón jumbo; Precio por libra: B/. 8.75»."
+ },
+ {
+  "id": "i0052",
+  "negocio": "W3_n3",
+  "turnos_previos_del_cliente": [],
+  "cliente": "¿Puedo cancelar sin perder dinero?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "gratis hasta 3 días antes",
+   "50 %"
+  ],
+  "evidencia": "Cancelación de reserva: gratis hasta 3 días antes. Menos de 3 días: pierdes 50 %. No show: 100 %",
+  "respuesta_ideal": "Cancelación gratuita hasta 3 días antes. Pasado ese plazo, perderías 50 %. Sin presentarse, pierdes el 100 %.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Regreso el mismo día. Sin costo de transporte, pero gas se divide entre pasajeros»."
+ },
+ {
+  "id": "i0053",
+  "negocio": "W3_n1",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Quiero el trek a Machu Picchu. ¿Cuándo salen?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "El trek de 3 días sale en grupos. Lo mejor es contactar directamente a Pedro Condori, nuestro guía principal, al WhatsApp 975-662-481 para ver las fechas próximas.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Trek de 3 días a Machu Picchu desde nuestro campamento: $450 por persona (mínimo 4 personas)»."
+ },
+ {
+  "id": "i0054",
+  "negocio": "W3_n4",
+  "turnos_previos_del_cliente": [],
+  "cliente": "¿Hacen envíos al interior del país?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "Interior del país",
+   "consultar"
+  ],
+  "evidencia": "Interior del país: consultar. Usamos Correo Uruguayo o Antel Logistics.",
+  "respuesta_ideal": "Sí, hacemos envíos al interior pero necesita consultar costo y tiempos. Mandá un mensaje por WhatsApp o llamá.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Interior del país: consultar»."
+ },
+ {
+  "id": "i0055",
+  "negocio": "W1_n2",
+  "turnos_previos_del_cliente": [
+   "¿Dan clases para hacer velas?"
+  ],
+  "cliente": "puede ir mi hija de 6 años?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "desde 8 años"
+  ],
+  "evidencia": "Niños desde 8 años, siempre acompañados de un adulto.",
+  "respuesta_ideal": "Lo siento, no: el taller admite niños desde 8 años, siempre acompañados de un adulto.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Niños desde 8 años, siempre acompañados de un adulto»."
+ },
+ {
+  "id": "i0056",
+  "negocio": "W3_n4",
+  "turnos_previos_del_cliente": [
+   "¿Hacen envíos al interior del país?",
+   "¿Venden accesorios de ropa?"
+  ],
+  "cliente": "¿Quién es la dueña?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "Carolina Méndez"
+  ],
+  "evidencia": "Dueña: Carolina Méndez (15 años en vintage y moda retro)",
+  "respuesta_ideal": "La dueña es Carolina Méndez. Tiene 15 años de experiencia en moda vintage. Es apasionada por lo retro.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Dueña: Carolina Méndez (15 años en vintage y moda retro)»."
+ },
+ {
+  "id": "i0057",
+  "negocio": "W7_n4",
+  "turnos_previos_del_cliente": [
+   "¿Tienen libros en inglés?"
+  ],
+  "cliente": "Estoy aprendiendo inglés. ¿Recomiendan algo?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "Nuestro equipo te puede recomendar algo perfecto para tu nivel. Llamá al (55) 267-4821 o pasa por la tienda, sin costo.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Contamos con más de 4.000 títulos en español, inglés y otros idiomas, especialización en literatura latinoamericana, ficción contemporánea, ensayos y libros infantiles»."
+ },
+ {
+  "id": "i0058",
+  "negocio": "W8_n3",
+  "turnos_previos_del_cliente": [
+   "Quiero darme de baja, ¿hasta qué día tengo para avisar?"
+  ],
+  "cliente": "Es que me han cobrado junio y ya no he ido, ¿me lo devuelven?",
+  "tipo": "instruccion",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "Los temas de cobros, recibos devueltos o facturas van siempre a secretaria@esgrimacampogrande.es.",
+  "respuesta_ideal": "Según las normas del club, las cuotas ya cobradas no se devuelven, pero cualquier tema de cobros lo lleva secretaría: escribe a secretaria@esgrimacampogrande.es y te lo revisan.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «No se devuelven cuotas ya cobradas»."
+ },
+ {
+  "id": "i0059",
+  "negocio": "W4_n2",
+  "turnos_previos_del_cliente": [
+   "hola, cuanto sale una parcela para una sola persona?"
+  ],
+  "cliente": "y la familiar?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "$U 195.000"
+  ],
+  "evidencia": "Parcela familiar (uso perpetuo, hasta 4 lugares)\t$U 195.000",
+  "respuesta_ideal": "La parcela familiar, con hasta 4 lugares, cuesta $U 195.000.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Servicio: Parcela familiar (uso perpetuo, hasta 4 lugares); Precio: $U 195.000»."
+ }
+]

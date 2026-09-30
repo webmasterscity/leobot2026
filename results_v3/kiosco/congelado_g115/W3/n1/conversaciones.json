@@ -1,0 +1,160 @@
+[
+  [
+    {
+      "cliente": "Hola, quisiera saber a qué hora sirven el desayuno",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["07:00–09:00"],
+      "evidencia": "Desayuno: 07:00–09:00.",
+      "respuesta_ideal": "Buenos días. El desayuno se sirve de 07:00 a 09:00 todos los días. Incluye opciones veganas y tradicionales."
+    },
+    {
+      "cliente": "¿Y si llego después de las 9?",
+      "tipo": "seguimiento",
+      "accion": "responder",
+      "claves": ["07:00–09:00", "desayuno"],
+      "evidencia": "Desayuno: 07:00–09:00.",
+      "respuesta_ideal": "Lamentablemente, el desayuno es solo hasta las 9. Si tu vuelo o actividad llega tarde, puedes pedir almuerzo temprano; cuesta $12."
+    },
+    {
+      "cliente": "¿Qué tal si el desayuno puede ser más tarde, digamos a las 10?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "Eso no está en nuestras opciones regulares, pero puedo anotar tu solicitud. Te recomiendo llamar al 84 204156 para arreglarlo directamente con Julio, nuestro gerente."
+    }
+  ],
+  [
+    {
+      "cliente": "Buenas, ¿cuánto cuesta una habitación doble?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["$85 USD/noche", "habitación doble"],
+      "evidencia": "Precio: habitación doble $85 USD/noche",
+      "respuesta_ideal": "La habitación doble cuesta 85 dólares estadounidenses por noche. Incluye agua caliente, calefacción y vista a la montaña."
+    },
+    {
+      "cliente": "¿Y la habitación simple?",
+      "tipo": "seguimiento",
+      "accion": "responder",
+      "claves": ["$55 USD/noche", "habitación simple"],
+      "evidencia": "habitación simple $55 USD/noche",
+      "respuesta_ideal": "La habitación simple está a 55 dólares por noche, con las mismas comodidades."
+    },
+    {
+      "cliente": "¿Ese precio incluye comida?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["Desayuno", "incluido"],
+      "evidencia": "Desayuno vegano o tradicional incluido.",
+      "respuesta_ideal": "El desayuno está incluido. Almuerzo y cena los cobro por separado: $12 el almuerzo y $15 la cena."
+    }
+  ],
+  [
+    {
+      "cliente": "Hola, me interesa hacer el retiro de meditación de 7 días. ¿Puedo ir la próxima semana?",
+      "tipo": "instruccion",
+      "accion": "derivar",
+      "claves": ["2 semanas", "retiro de mediano plazo", "confirmación urgente"],
+      "evidencia": "Para retiros de más de 3 días, requerimos confirmación 2 semanas antes.",
+      "respuesta_ideal": "El retiro de 7 días es hermoso, pero necesitamos confirmación con 2 semanas de anticipación. Para una solicitud urgente, llama directamente a Julio Mendoza al 84 204156 o al WhatsApp 975-662-481."
+    },
+    {
+      "cliente": "Ok, pero ¿cuánto cuesta el paquete de 7 días?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["$1200 USD", "todo incluido"],
+      "evidencia": "Retiro de meditación de 7 días (paquete completo): $1200 USD todo incluido",
+      "respuesta_ideal": "El paquete completo de 7 días cuesta 1200 dólares y está todo incluido: alojamiento, comidas, clases de yoga y meditación."
+    },
+    {
+      "cliente": "¿Puedo pagar en soles peruanos?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["efectivo", "soles", "USD"],
+      "evidencia": "Métodos de pago: efectivo (soles o USD)",
+      "respuesta_ideal": "Sí, aceptamos soles peruanos en efectivo. También puedes traer dólares, tarjeta de crédito o hacer transferencia bancaria."
+    }
+  ],
+  [
+    {
+      "cliente": "Quiero el trek a Machu Picchu. ¿Cuándo salen?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "El trek de 3 días sale en grupos. Lo mejor es contactar directamente a Pedro Condori, nuestro guía principal, al WhatsApp 975-662-481 para ver las fechas próximas."
+    },
+    {
+      "cliente": "¿Cuánto cuesta ese trek?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["$450 por persona", "mínimo 4 personas"],
+      "evidencia": "Trek de 3 días a Machu Picchu desde nuestro campamento: $450 por persona (mínimo 4 personas)",
+      "respuesta_ideal": "El trek cuesta 450 dólares por persona, pero necesitamos un grupo mínimo de 4. Si vienes solo, te ayudaremos a conectarte con otros viajeros."
+    }
+  ],
+  [
+    {
+      "cliente": "Holaaaa! Gracias por todo, fue increíble mi estadía",
+      "tipo": "charla",
+      "accion": "charla",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "¡Qué alegría! Nos encanta que hayas disfrutado. Vuelve pronto, siempre hay un lugar para ti en Refugio Montaña Blanca."
+    },
+    {
+      "cliente": "Soy vegana, ¿puedo comer bien ahí?",
+      "tipo": "instruccion",
+      "accion": "responder",
+      "claves": ["vegana", "5 días antes", "WhatsApp"],
+      "evidencia": "si el cliente menciona ser vegetariano, vegano o tener restricciones de salud (gluten, mariscos), anota SIEMPRE que debe comunicar esto por WhatsApp o teléfono al menos 5 días antes",
+      "respuesta_ideal": "Absolutamente. Rosa María, nuestra chef, es experta en cocina andina y vegana. Lo importante es que nos avises con 5 días de anticipación por WhatsApp al 975-662-481."
+    },
+    {
+      "cliente": "¿Puedo llevar a mi perro?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["no permitidas", "parking seguro"],
+      "evidencia": "Mascotas: no permitidas dentro del hotel, pero hay espacio de estacionamiento seguro para vehículos.",
+      "respuesta_ideal": "Lamentablemente, los perros no pueden entrar al refugio. Pero tenemos un área de estacionamiento segura con aire acondicionado donde puede esperar tu mascota durante el día."
+    }
+  ],
+  [
+    {
+      "cliente": "¿Cuál es la mejor época para visitar?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "El refugio está abierto todo el año, pero te recomiendo que consultes el clima con la oficina de turismo local. Puedo darte el teléfono de Pedro, nuestro guía, para que te asesore sobre la mejor temporada."
+    },
+    {
+      "cliente": "¿Hay conexión a internet?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "La conexión a internet en la zona es limitada. Es parte del encanto del retiro, para desconectarse. Mejor confirma esto directamente con nosotros al 84 204156."
+    }
+  ],
+  [
+    {
+      "cliente": "¿Cuántos días mínimo puedo quedarme?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "Aceptamos estancias de cualquier duración. No hay mínimo de noches. Puedes venir una noche o una semana, como prefieras."
+    },
+    {
+      "cliente": "¿Se puede hacer un retiro solo para 2 personas?",
+      "tipo": "sin_respuesta",
+      "accion": "derivar",
+      "claves": [],
+      "evidencia": "Para retiros de más de 3 días, requerimos confirmación 2 semanas antes.",
+      "respuesta_ideal": "Los retiros se aceptan con cualquier grupo. Llama a Julio para hablar de un retiro privado de 2 personas. Puede organizarse con anticipación."
+    }
+  ]
+]

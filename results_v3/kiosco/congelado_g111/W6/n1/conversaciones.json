@@ -1,0 +1,255 @@
+[
+ [
+  {
+   "cliente": "Buenas, cuanto sale asociarse a la cámara?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "Gs. 250.000"
+   ],
+   "evidencia": "Para asociarse se paga una cuota de inscripción única de Gs. 250.000, más la cuota mensual que corresponde a la categoría de la empresa:",
+   "respuesta_ideal": "La inscripción, que se paga una sola vez, cuesta Gs. 250.000, más una cuota mensual que depende de la categoría de la empresa."
+  },
+  {
+   "cliente": "y la mensualidad?",
+   "tipo": "seguimiento",
+   "accion": "responder",
+   "claves": [
+    "Gs. 60.000",
+    "Gs. 120.000",
+    "Gs. 240.000"
+   ],
+   "evidencia": "Micro | hasta Gs. 300 millones | Gs. 60.000\nPequeña | de Gs. 300 a 1.500 millones | Gs. 120.000\nMediana | más de Gs. 1.500 millones | Gs. 240.000",
+   "respuesta_ideal": "Depende de la facturación anual: Micro Gs. 60.000, Pequeña Gs. 120.000 y Mediana Gs. 240.000 al mes."
+  },
+  {
+   "cliente": "mi negocio factura unos 800 millones al año, cuanto pagaria por mes?",
+   "tipo": "combinada",
+   "accion": "responder",
+   "claves": [
+    "Gs. 120.000"
+   ],
+   "evidencia": "Pequeña | de Gs. 300 a 1.500 millones | Gs. 120.000",
+   "respuesta_ideal": "Con 800 millones al año queda en la categoría Pequeña: Gs. 120.000 por mes."
+  }
+ ],
+ [
+  {
+   "cliente": "Necesito un certificado de origen, cuanto cuesta si no soy socio?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "Gs. 170.000"
+   ],
+   "evidencia": "Certificado de origen: Gs. 85.000 para socios y Gs. 170.000 para no socios.",
+   "respuesta_ideal": "Para no socios cuesta Gs. 170.000."
+  },
+  {
+   "cliente": "Y en cuánto tiempo me lo dan?",
+   "tipo": "seguimiento",
+   "accion": "responder",
+   "claves": [
+    "48 horas hábiles"
+   ],
+   "evidencia": "Plazo de entrega: 48 horas hábiles. Los pedidos hechos después de las 14:00 pasan al día hábil siguiente.",
+   "respuesta_ideal": "El plazo de entrega es de 48 horas hábiles; si lo pide después de las 14:00 pasa al día hábil siguiente."
+  },
+  {
+   "cliente": "Lo puedo pagar con tarjeta de crédito?",
+   "tipo": "si_no",
+   "accion": "responder",
+   "claves": [
+    "tarjetas de débito y crédito",
+    "recargo del 3%"
+   ],
+   "evidencia": "Se aceptan efectivo, transferencia y tarjetas de débito y crédito (Bancard) en caja. Los pagos con tarjeta de crédito tienen un recargo del 3%. No se aceptan cheques.",
+   "respuesta_ideal": "Sí, se acepta tarjeta de crédito en caja, pero tiene un recargo del 3%."
+  },
+  {
+   "cliente": "y con cheque?",
+   "tipo": "seguimiento",
+   "accion": "responder",
+   "claves": [
+    "No se aceptan cheques"
+   ],
+   "evidencia": "Se aceptan efectivo, transferencia y tarjetas de débito y crédito (Bancard) en caja. Los pagos con tarjeta de crédito tienen un recargo del 3%. No se aceptan cheques.",
+   "respuesta_ideal": "No, no se aceptan cheques."
+  }
+ ],
+ [
+  {
+   "cliente": "hola, dan cursos de facturacion electronica?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "Facturación electrónica para comercios",
+    "sábados de 8:00 a 14:00"
+   ],
+   "evidencia": "Facturación electrónica para comercios: 6 horas, sábados de 8:00 a 14:00. Gs. 180.000 socios / Gs. 300.000 no socios. Próxima fecha: sábado 17 de octubre. Cupo de 30 personas. Certificado de asistencia incluido.",
+   "respuesta_ideal": "Sí, el curso Facturación electrónica para comercios dura 6 horas y es los sábados de 8:00 a 14:00; el próximo es el sábado 17 de octubre."
+  },
+  {
+   "cliente": "y cuanto cuesta siendo socio?",
+   "tipo": "seguimiento",
+   "accion": "responder",
+   "claves": [
+    "Gs. 180.000"
+   ],
+   "evidencia": "Facturación electrónica para comercios: 6 horas, sábados de 8:00 a 14:00. Gs. 180.000 socios / Gs. 300.000 no socios. Próxima fecha: sábado 17 de octubre. Cupo de 30 personas. Certificado de asistencia incluido.",
+   "respuesta_ideal": "Para socios cuesta Gs. 180.000."
+  },
+  {
+   "cliente": "Si llevo a 3 empleados y soy socio, cuanto pago en total?",
+   "tipo": "combinada",
+   "accion": "responder",
+   "claves": [
+    "Gs. 180.000"
+   ],
+   "evidencia": "Facturación electrónica para comercios: 6 horas, sábados de 8:00 a 14:00. Gs. 180.000 socios / Gs. 300.000 no socios. Próxima fecha: sábado 17 de octubre. Cupo de 30 personas. Certificado de asistencia incluido.",
+   "respuesta_ideal": "Serían Gs. 540.000 en total (3 x Gs. 180.000)."
+  },
+  {
+   "cliente": "dan certificado al terminar?",
+   "tipo": "si_no",
+   "accion": "responder",
+   "claves": [
+    "Certificado de asistencia incluido"
+   ],
+   "evidencia": "Facturación electrónica para comercios: 6 horas, sábados de 8:00 a 14:00. Gs. 180.000 socios / Gs. 300.000 no socios. Próxima fecha: sábado 17 de octubre. Cupo de 30 personas. Certificado de asistencia incluido.",
+   "respuesta_ideal": "Sí, el certificado de asistencia está incluido."
+  }
+ ],
+ [
+  {
+   "cliente": "cuánto sale alquilar el salón para una reunión? somos socios",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "Gs. 900.000"
+   ],
+   "evidencia": "Capacidad: 80 personas. Alquiler por 4 horas: Gs. 900.000 para socios y Gs. 1.500.000 para no socios. Cada hora adicional: Gs. 200.000.",
+   "respuesta_ideal": "Para socios, el alquiler por 4 horas cuesta Gs. 900.000."
+  },
+  {
+   "cliente": "y cuantas personas entran?",
+   "tipo": "seguimiento",
+   "accion": "responder",
+   "claves": [
+    "80 personas"
+   ],
+   "evidencia": "Capacidad: 80 personas. Alquiler por 4 horas: Gs. 900.000 para socios y Gs. 1.500.000 para no socios. Cada hora adicional: Gs. 200.000.",
+   "respuesta_ideal": "Tiene capacidad para 80 personas."
+  },
+  {
+   "cliente": "y si no somos socios y lo necesitamos 6 horas, cuanto seria?",
+   "tipo": "combinada",
+   "accion": "responder",
+   "claves": [
+    "Gs. 1.500.000",
+    "Gs. 200.000"
+   ],
+   "evidencia": "Capacidad: 80 personas. Alquiler por 4 horas: Gs. 900.000 para socios y Gs. 1.500.000 para no socios. Cada hora adicional: Gs. 200.000.",
+   "respuesta_ideal": "Para no socios son Gs. 1.500.000 por 4 horas más 2 horas adicionales a Gs. 200.000 cada una: Gs. 1.900.000."
+  },
+  {
+   "cliente": "me pueden recomendar un servicio de catering?",
+   "tipo": "sin_respuesta",
+   "accion": "abstenerse",
+   "claves": [],
+   "evidencia": null,
+   "respuesta_ideal": "No tengo ese dato; el salón no incluye catering, pero no tengo información de proveedores. Puede llamar al (021) 574-3300."
+  }
+ ],
+ [
+  {
+   "cliente": "Estoy en un conflicto con un proveedor, me pueden asesorar legalmente con mi caso?",
+   "tipo": "instruccion",
+   "accion": "derivar",
+   "claves": [],
+   "evidencia": "La Cámara no da asesoría legal ni tributaria individual: si alguien pide asesoría de ese tipo, derívalo a la gerencia (Lic. Marta Ojeda).",
+   "respuesta_ideal": "La Cámara no da asesoría legal individual; lo derivo a la gerencia, con la Lic. Marta Ojeda."
+  },
+  {
+   "cliente": "soy socio y quiero hacer un reclamo por la atencion que recibi",
+   "tipo": "instruccion",
+   "accion": "derivar",
+   "claves": [],
+   "evidencia": "Si un socio quiere hacer un reclamo o queja, derívalo a la Sra. Liz Cabrera, interno 102, y no discutas el reclamo.",
+   "respuesta_ideal": "Lamento eso. Para reclamos de socios puede dirigirse a la Sra. Liz Cabrera, interno 102."
+  },
+  {
+   "cliente": "mandé toda la documentación ayer, ya quedé aprobado como socio?",
+   "tipo": "instruccion",
+   "accion": "responder",
+   "claves": [
+    "primeros jueves de cada mes"
+   ],
+   "evidencia": "La solicitud la aprueba la Comisión Directiva en su reunión de los primeros jueves de cada mes.",
+   "respuesta_ideal": "No puedo confirmarlo: la solicitud la aprueba la Comisión Directiva en su reunión de los primeros jueves de cada mes."
+  },
+  {
+   "cliente": "Gracias, chau!",
+   "tipo": "charla",
+   "accion": "charla",
+   "claves": [],
+   "evidencia": null,
+   "respuesta_ideal": "Gracias a usted, que tenga un buen día."
+  }
+ ],
+ [
+  {
+   "cliente": "cuanto sale el curso de atencion al cliente?",
+   "tipo": "sin_respuesta",
+   "accion": "abstenerse",
+   "claves": [],
+   "evidencia": null,
+   "respuesta_ideal": "Ese curso dura 4 horas, pero las fechas están por confirmar y no tengo el precio. Puede llamar al (021) 574-3300."
+  },
+  {
+   "cliente": "a que hora cierran los sabados?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "11:30"
+   ],
+   "evidencia": "Sábados de 8:00 a 11:30, solo trámites de certificados.",
+   "respuesta_ideal": "Los sábados atendemos hasta las 11:30, solo para trámites de certificados."
+  },
+  {
+   "cliente": "si pago todo el año adelantado hay descuento?",
+   "tipo": "si_no",
+   "accion": "responder",
+   "claves": [
+    "10% de descuento"
+   ],
+   "evidencia": "Los socios que pagan todo el año por adelantado reciben un 10% de descuento en la cuota anual.",
+   "respuesta_ideal": "Sí, los socios que pagan todo el año por adelantado reciben un 10% de descuento en la cuota anual."
+  },
+  {
+   "cliente": "se puede estacionar ahi?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "gratuito"
+   ],
+   "evidencia": "Estacionamiento gratuito para 12 vehículos en el patio trasero, con entrada por la calle Ytororó.",
+   "respuesta_ideal": "Sí, hay estacionamiento gratuito para 12 vehículos en el patio trasero, entrando por la calle Ytororó."
+  },
+  {
+   "cliente": "puedo entrar con un camión de reparto al estacionamiento?",
+   "tipo": "sin_respuesta",
+   "accion": "abstenerse",
+   "claves": [],
+   "evidencia": null,
+   "respuesta_ideal": "No tengo ese dato; solo sé que hay lugar para 12 vehículos. Puede consultar al (021) 574-3300."
+  },
+  {
+   "cliente": "cual es el correo del presidente?",
+   "tipo": "sin_respuesta",
+   "accion": "abstenerse",
+   "claves": [],
+   "evidencia": null,
+   "respuesta_ideal": "No tengo el correo del presidente; el correo general es atencion@camarasanlorenzo.org.py."
+  }
+ ]
+]

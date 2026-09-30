@@ -1,0 +1,25 @@
+[
+  [
+    {"cliente": "Hola, ¿a qué horas abren mañana?", "tipo": "directa", "accion": "responder", "claves": ["9:30 a.m.", "lunes a viernes"], "evidencia": "Lunes a viernes: 9:30 a.m. - 2:00 p.m. y 4:30 p.m. - 8:00 p.m.", "respuesta_ideal": "Mañana es viernes, abrimos a las 9:30 de la mañana. Tenemos dos turnos: 9:30 a.m. a 2:00 p.m., y 4:30 p.m. a 8:00 p.m."},
+    {"cliente": "¿Y los sábados?", "tipo": "seguimiento", "accion": "responder", "claves": ["10:00 a.m.", "1:30 p.m.", "5:00 p.m.", "8:30 p.m.", "sábados"], "evidencia": "Sábados: 10:00 a.m. - 1:30 p.m. y 5:00 p.m. - 8:30 p.m.", "respuesta_ideal": "Los sábados abrimos de 10 a.m. a 1:30 p.m., y de 5 p.m. a 8:30 p.m. Domingos cerramos."}
+  ],
+  [
+    {"cliente": "Necesito un libro que se llama 'La Brújula de Plata'. ¿Lo tienen?", "tipo": "directa", "accion": "abstenerse", "claves": [], "evidencia": null, "respuesta_ideal": "No puedo confirmarte desde aquí sin revisar el catálogo. Llama al (96) 342-7856 y pregunta, o pasa por la tienda. Si no lo tenemos, podemos encargarlo."},
+    {"cliente": "¿Cuánto tiempo tardaría el encargo?", "tipo": "combinada", "accion": "responder", "claves": ["5-7 días hábiles"], "evidencia": "Encargos: podemos encargar cualquier libro disponible en España; entrega en 5-7 días hábiles", "respuesta_ideal": "Si lo encargamos, llega en 5-7 días hábiles. Te llamamos cuando llegue y pagas al recoger."}
+  ],
+  [
+    {"cliente": "¿Qué libros recomiendan para leer este mes?", "tipo": "sin_respuesta", "accion": "abstenerse", "claves": [], "evidencia": null, "respuesta_ideal": "Tenemos muchas opciones. María, nuestra propietaria, da recomendaciones personalizadas. Puedes venir a hablar con ella de lunes a viernes de 4:30 p.m. a 8:00 p.m. ¿Qué tipo de libros te gusta?"},
+    {"cliente": "Más que nada novelas de misterio.", "tipo": "seguimiento", "accion": "responder", "claves": ["ficción", "novela negra"], "evidencia": "Ficción: novela negra... (sección disponible)", "respuesta_ideal": "Perfecto. Tenemos una buena sección de ficción con novelas negra y de misterio. Cuando pases, pregunta por María y ella te puede dar recomendaciones de autores españoles e internacionales que tenemos en stock."}
+  ],
+  [
+    {"cliente": "¿Hacen descuentos si compro varios libros?", "tipo": "directa", "accion": "responder", "claves": ["5% en compra de 3+ libros"], "evidencia": "5% en compra de 3+ libros (cualquier formato)", "respuesta_ideal": "Sí, el 5% de descuento si compras 3 libros o más, sin importar el formato."},
+    {"cliente": "¿Y hay alguna otra promoción en estos momentos?", "tipo": "directa", "accion": "responder", "claves": ["cartilla cliente frecuente", "10% ofertas"], "evidencia": "Cartilla de cliente frecuente: 1 sello por cada €10 gastado... / 10% en libros de la sección de ofertas", "respuesta_ideal": "Tenemos nuestra cartilla de cliente frecuente: un sello por cada €10 que gastes, y con 15 sellos tienes €5 de descuento. También hay un 10% en la sección de ofertas que cambia cada semana."}
+  ],
+  [
+    {"cliente": "Quiero devolver un libro que compré hace una semana. Ya lo leí.", "tipo": "instruccion", "accion": "responder", "claves": ["14 días", "sin abrir", "estado perfecto"], "evidencia": "Cambios: libros sin abrir y en estado perfecto dentro de 14 días con ticket original", "respuesta_ideal": "Si lo ya leíste, lo sentimos, no podemos devolverlo. Los cambios son solo dentro de 14 días y si el libro está sin abrir y en estado perfecto. ¿Hay algo defectuoso en el libro?"}
+  ],
+  [
+    {"cliente": "¿Hay un club de lectura o algo así para conocer gente que lee?", "tipo": "sin_respuesta", "accion": "responder", "claves": ["Club de Lectura", "jueves", "7:00 p.m."], "evidencia": "Club de Lectura mensual (gratuito, se reúne el primer jueves de cada mes a las 7:00 p.m.)", "respuesta_ideal": "¡Excelente pregunta! Sí, tenemos un club de lectura gratuito que se reúne el primer jueves de cada mes a las 7 p.m. en la tienda. ¡Eres bienvenido!"},
+    {"cliente": "Genial. Gracias por la información.", "tipo": "charla", "accion": "charla", "claves": [], "evidencia": null, "respuesta_ideal": "De nada. Te esperamos en Páginas Abiertas. Que disfrutes leyendo."}
+  ]
+]

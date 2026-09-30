@@ -1,0 +1,487 @@
+[
+ {
+  "id": "i0000",
+  "negocio": "W8_n2",
+  "turnos_previos_del_cliente": [
+   "hola quiero cotizar un dron para fumigar campo",
+   "y para el curso de operador comercial tengo que tener el basico?"
+  ],
+  "cliente": "cuanto sale el de operador comercial?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "USD 390"
+  ],
+  "evidencia": "Curso avanzado de operador comercial: 24 horas en 3 semanas, prepara para el examen de la autoridad aeronáutica. USD 390.",
+  "respuesta_ideal": "El curso avanzado de operador comercial cuesta USD 390, son 24 horas en 3 semanas.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Curso avanzado de operador comercial: 24 horas en 3 semanas, prepara para el examen de la autoridad aeronáutica»."
+ },
+ {
+  "id": "i0001",
+  "negocio": "W5_n3",
+  "turnos_previos_del_cliente": [
+   "Le compré un coche de segunda mano a un vecino y tiene el motor fatal, ¿me pueden ayudar a reclamarle?",
+   "Otra cosa, el casero no me devuelve la fianza del piso, ¿eso lo llevan ustedes?",
+   "y una reclamacion normal cuanto tarda en resolverse"
+  ],
+  "cliente": "¿Y cuántas reclamaciones se ganan, más o menos?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo ese dato; solo sé que la mediación es voluntaria para la empresa, aunque la mayoría contesta. Puede preguntar en el 976 81 22 40.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «La OMIC de Valdecierzo es un servicio público y gratuito del Ayuntamiento que informa, orienta y ayuda a los vecinos cuando tienen un problema con una empresa o comercio: una factura de la luz o del teléfono que no cuadra, un electrodoméstico que se estropea en garantía, un viaje cancelado, un taller que cobra de más... Todos nuestros servicios son gratuitos y no hace falta abogado ni procurador»."
+ },
+ {
+  "id": "i0002",
+  "negocio": "W5_n2",
+  "turnos_previos_del_cliente": [
+   "buenas tardes, cuanto se demora la valoracion inicial con el medico?",
+   "¿El doctor Restrepo atiende los sábados?",
+   "A que correo mando la orden medica?"
+  ],
+  "cliente": "¿Puedo llevar mi libro para leer allá adentro?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "libros o revistas de papel"
+  ],
+  "evidencia": "¿Puedo llevar algo para leer? Sí, pero solo libros o revistas de papel.",
+  "respuesta_ideal": "Sí, puede llevar libros o revistas de papel; tabletas o celulares no.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Sí, pero solo libros o revistas de papel»."
+ },
+ {
+  "id": "i0003",
+  "negocio": "W8_n2",
+  "turnos_previos_del_cliente": [
+   "hola quiero cotizar un dron para fumigar campo",
+   "y para el curso de operador comercial tengo que tener el basico?",
+   "cuanto sale el de operador comercial?",
+   "el examen de la autoridad tiene costo aparte?"
+  ],
+  "cliente": "el certificado que dan sirve como licencia?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "autoridad aeronáutica"
+  ],
+  "evidencia": "Al aprobar entregamos certificado de la escuela; la licencia oficial la emite la autoridad aeronáutica, no nosotros.",
+  "respuesta_ideal": "No, nosotros damos un certificado de la escuela; la licencia oficial la emite la autoridad aeronáutica.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Al aprobar entregamos certificado de la escuela; la licencia oficial la emite la autoridad aeronáutica, no nosotros»."
+ },
+ {
+  "id": "i0004",
+  "negocio": "W2_n1",
+  "turnos_previos_del_cliente": [
+   "cuanto cobran por instalar el kit?",
+   "y cuanto demoran en dejarlo funcionando despues de firmar?",
+   "tengo un labrador de 30 kilos, me va a saltar el sensor de movimiento?",
+   "hay algun plan que no cobre instalacion?"
+  ],
+  "cliente": "y si se corta la luz sigue funcionando?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "batería de respaldo por 24 horas"
+  ],
+  "evidencia": "Si se corta la luz, el panel funciona con batería de respaldo por 24 horas.",
+  "respuesta_ideal": "Sí, el panel funciona con batería de respaldo por 24 horas.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Si se corta la luz, el panel funciona con batería de respaldo por 24 horas. El aviso viaja por chip GSM, así que no se necesita internet en la casa»."
+ },
+ {
+  "id": "i0005",
+  "negocio": "W8_n2",
+  "turnos_previos_del_cliente": [
+   "Buenas, se me cayo el dron y no prende, cuanto me cobran por verlo?",
+   "si lo arreglan me cobran igual el diagnostico?",
+   "hacen service de la marca Autel?"
+  ],
+  "cliente": "me avisaron hace 65 dias que estaba pronto y no lo fui a buscar, cuanto me cobran de deposito?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "750"
+  ],
+  "evidencia": "Los equipos no retirados a los 60 días de avisado el cliente pasan a depósito con un cargo de $U 150 por día.",
+  "respuesta_ideal": "El depósito corre a partir del día 60, a $U 150 por día: con 65 días serían 5 días, o sea $U 750.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Los equipos no retirados a los 60 días de avisado el cliente pasan a depósito con un cargo de $U 150 por día»."
+ },
+ {
+  "id": "i0006",
+  "negocio": "W5_n2",
+  "turnos_previos_del_cliente": [
+   "hola, a que hora abren el sabado",
+   "y los domingos?"
+  ],
+  "cliente": "¿Tienen donde parquear?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "$3.800 la hora",
+   "2 horas gratis"
+  ],
+  "evidencia": "El edificio tiene parqueadero público a $3.800 la hora; los pacientes tienen 2 horas gratis presentando el sello de recepción.",
+  "respuesta_ideal": "Sí, el edificio tiene parqueadero público a $3.800 la hora, y los pacientes tienen 2 horas gratis con el sello de recepción.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «El edificio tiene parqueadero público a $3.800 la hora; los pacientes tienen 2 horas gratis presentando el sello de recepción»."
+ },
+ {
+  "id": "i0007",
+  "negocio": "W2_n2",
+  "turnos_previos_del_cliente": [],
+  "cliente": "cuanto cuesta adoptar un gatito",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "120 €",
+   "vacunas, chip y esterilización"
+  ],
+  "evidencia": "La tasa de adopción es de 120 € e incluye vacunas, chip y esterilización.",
+  "respuesta_ideal": "La tasa de adopción es de 120 € e incluye vacunas, chip y esterilización.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Para adoptar hay que ser mayor de 18 años, hacer una entrevista y firmar un contrato de adopción»."
+ },
+ {
+  "id": "i0008",
+  "negocio": "W5_n1",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Disculpe, ¿qué es exactamente un metro cúbico de leña? nunca he comprado",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "1 m x 1 m x 1 m",
+   "33 cm"
+  ],
+  "evidencia": "Es leña apilada que ocupa aproximadamente 1 m x 1 m x 1 m. Nuestros trozos vienen cortados a 33 cm",
+  "respuesta_ideal": "Es leña apilada que ocupa más o menos 1 m x 1 m x 1 m; los trozos vienen cortados a 33 cm.",
+  "respuesta_a_calificar": "Disculpe. No lo tengo seguro. Lo más cercano que dice el texto es: «Es leña apilada que ocupa aproximadamente 1 m x 1 m x 1 m. Nuestros trozos vienen cortados a 33 cm, que es la medida de la mayoría de las estufas de combustión lenta»."
+ },
+ {
+  "id": "i0009",
+  "negocio": "W8_n2",
+  "turnos_previos_del_cliente": [
+   "hola quiero cotizar un dron para fumigar campo",
+   "y para el curso de operador comercial tengo que tener el basico?",
+   "cuanto sale el de operador comercial?"
+  ],
+  "cliente": "el examen de la autoridad tiene costo aparte?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo información sobre el costo del examen de la autoridad aeronáutica; podés consultarlo por WhatsApp al 099 412 780.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Curso avanzado de operador comercial: 24 horas en 3 semanas, prepara para el examen de la autoridad aeronáutica»."
+ },
+ {
+  "id": "i0010",
+  "negocio": "W8_n1",
+  "turnos_previos_del_cliente": [
+   "Buenas, cuanto cuesta un ultrasonido de abdomen?",
+   "Y tengo que ir en ayunas?",
+   "puedo tomar agua antes?",
+   "el ultrasonido lo hace un doctor o una doctora?"
+  ],
+  "cliente": "Perfecto, me pueden agendar para el jueves a las 8?",
+  "tipo": "instruccion",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "3. No confirmes ni agendes citas: da el teléfono 2278-4410 o el WhatsApp 8845-2201 para agendar.",
+  "respuesta_ideal": "Desde aquí no puedo agendar la cita; puede hacerlo llamando al 2278-4410 o por WhatsApp al 8845-2201.",
+  "respuesta_a_calificar": "Sobre eso, las indicaciones del negocio dicen: «No confirmes ni agendes citas: da el teléfono 2278-4410 o el WhatsApp 8845-2201 para agendar»."
+ },
+ {
+  "id": "i0011",
+  "negocio": "W1_n2",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Buenas tardes, ¿cuánto cuesta el mantenimiento de la prótesis?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "$95.000"
+  ],
+  "evidencia": "Mantenimiento de prótesis (limpieza, cambio de adhesivo y reinstalación): $95.000.",
+  "respuesta_ideal": "El mantenimiento de la prótesis (limpieza, cambio de adhesivo y reinstalación) cuesta $95.000.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Mantenimiento de prótesis (limpieza, cambio de adhesivo y reinstalación): $95.000. Se recomienda cada 3 a 4 semanas»."
+ },
+ {
+  "id": "i0012",
+  "negocio": "W8_n3",
+  "turnos_previos_del_cliente": [],
+  "cliente": "hola, reciben baterias de carro?",
+  "tipo": "instruccion",
+  "accion_esperada": "responder",
+  "claves": [
+   "L 9.00",
+   "completas"
+  ],
+  "evidencia": "7. Si el cliente menciona que trae baterías, avísale que solo se aceptan completas y cerradas.",
+  "respuesta_ideal": "Sí, las baterías de plomo se pagan a L 9.00 el kilo, pero solo se aceptan completas y cerradas; no recibimos baterías abiertas.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Material: Baterías de plomo (vehículo); Precio: L 9.00; Observaciones: precio por kg de batería completa; no se aceptan abiertas»."
+ },
+ {
+  "id": "i0013",
+  "negocio": "W1_n2",
+  "turnos_previos_del_cliente": [],
+  "cliente": "¿Puedo pasar a comprar un champú para pelucas sin tener cita?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "sin cita"
+  ],
+  "evidencia": "No, la venta de accesorios es sin cita en el horario de atención.",
+  "respuesta_ideal": "Sí, la venta de accesorios es sin cita, en el horario de atención.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «No, la venta de accesorios es sin cita en el horario de atención»."
+ },
+ {
+  "id": "i0014",
+  "negocio": "W3_n2",
+  "turnos_previos_del_cliente": [
+   "¿Hacen baño y peluquería aquí?",
+   "¿Ustedes cuidan perros mientras uno está fuera?",
+   "Está bien. Entonces me llevo un juguete para mi perro. ¿Qué tienen?"
+  ],
+  "cliente": "¿Tienen promoción en juguetes?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "10% descuento",
+   "dos o más"
+  ],
+  "evidencia": "10% en todos los juguetes si compras dos o más",
+  "respuesta_ideal": "Sí, si compras dos juguetes o más, obtén 10% descuento.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Descuento del 10% en todos los juguetes si compras dos o más»."
+ },
+ {
+  "id": "i0015",
+  "negocio": "W2_n2",
+  "turnos_previos_del_cliente": [
+   "estan abiertos los lunes?",
+   "y el 24 de diciembre?",
+   "puedo ir sin reserva el sabado?"
+  ],
+  "cliente": "quiero reservar para el sabado a las 5 para 4 personas, me lo confirmas?",
+  "tipo": "instruccion",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "No confirmes reservas: explica que se hacen por la web o por el WhatsApp de reservas 611 22 48 90.",
+  "respuesta_ideal": "Yo no puedo confirmar reservas; puedes hacerla en www.bigotesmadrid.es o por el WhatsApp 611 22 48 90.",
+  "respuesta_a_calificar": "Sobre eso, las indicaciones del negocio dicen: «No confirmes reservas: explica que se hacen por la web o por el WhatsApp de reservas 611 22 48 90»."
+ },
+ {
+  "id": "i0016",
+  "negocio": "W4_n1",
+  "turnos_previos_del_cliente": [
+   "Buenas tardes, soy socio y quiero saber a cuánto sale la liquidación de este año"
+  ],
+  "cliente": "¿La oficina de socios abre el sábado?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "lunes a viernes"
+  ],
+  "evidencia": "| Oficina de socios | 9:00–14:00 | Cerrado | Cerrado |",
+  "respuesta_ideal": "No, los sábados está cerrada; la oficina de socios atiende de lunes a viernes de 9:00 a 14:00.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Espacio: Oficina de socios; Lunes a viernes: 9:00–14:00; Sábado: Cerrado; Domingo y festivos: Cerrado»."
+ },
+ {
+  "id": "i0017",
+  "negocio": "W2_n1",
+  "turnos_previos_del_cliente": [
+   "tienen patrulla en Maipu?",
+   "y cuanto tarda en llegar a Ñuñoa?",
+   "este mes me llegaron 3 visitas por falsa alarma, cuanto me cobran?",
+   "cuantos anos lleva la empresa funcionando?"
+  ],
+  "cliente": "cuanto cuesta agregar un sensor extra al plan Pyme?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo el precio de sensores adicionales; puede consultarlo al teléfono comercial.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Plan: Pyme; Qué incluye: hasta 3 sensores de puerta, 2 botones de pánico y monitoreo en horario extendido; Valor mensual: $39.900»."
+ },
+ {
+  "id": "i0018",
+  "negocio": "W3_n3",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Voy casi todas las semanas. ¿Hay algún descuento?",
+  "tipo": "charla",
+  "accion_esperada": "responder",
+  "claves": [
+   "15% descuento",
+   "membresía",
+   "$15.000"
+  ],
+  "evidencia": "Tarjeta de Descuento «Amigo Pantalla Grande» - Membresía anual: $15.000 - Descuento del 15% en todas las entradas",
+  "respuesta_ideal": "Claro que sí. Tenemos la membresía 'Amigo Pantalla Grande' por $15.000 anuales, que te da 15% descuento en todas las entradas y 10% en confitería. Normalmente se recupera con 3-4 películas.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Descuento del 15% en todas las entradas»."
+ },
+ {
+  "id": "i0019",
+  "negocio": "W6_n2",
+  "turnos_previos_del_cliente": [
+   "¡hay un derrame de químicos en la bodega 7! ¿qué hago?",
+   "¿cuántas empresas hay en el parque?"
+  ],
+  "cliente": "¿y cuántos empleados trabajan aquí?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo ese dato.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Garita peatonal y de vehículos livianos: 24 horas para empleados con carné»."
+ },
+ {
+  "id": "i0020",
+  "negocio": "W8_n3",
+  "turnos_previos_del_cliente": [
+   "hasta que hora reciben hoy sabado?",
+   "y si vengo con camion?",
+   "tengo unas tapaderas de alcantarilla, las compran?"
+  ],
+  "cliente": "descuentan algo si el material viene mojado?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "3 %"
+  ],
+  "evidencia": "Nota 2: se descuenta el peso de la tara (sacos, tambos, carretas) y un 3 % por humedad en material que llegue mojado.",
+  "respuesta_ideal": "Sí, al material que llega mojado se le descuenta un 3 % por humedad, además del peso de la tara.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Nota 2: se descuenta el peso de la tara (sacos, tambos, carretas) y un 3 % por humedad en material que llegue mojado»."
+ },
+ {
+  "id": "i0021",
+  "negocio": "W1_n2",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Hola, ¿cuánto valen las extensiones?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "$620.000",
+   "100 mechones"
+  ],
+  "evidencia": "Extensiones de cabello natural con queratina: paquete de 100 mechones $620.000, con instalación incluida.",
+  "respuesta_ideal": "Las extensiones de cabello natural con queratina cuestan $620.000 el paquete de 100 mechones, con instalación incluida.",
+  "respuesta_a_calificar": "Hola. No lo tengo seguro. Lo más cercano que dice el texto es: «Retiro de extensiones: $80.000»."
+ },
+ {
+  "id": "i0022",
+  "negocio": "W4_n2",
+  "turnos_previos_del_cliente": [
+   "Buen día. Tengo 83 años, ¿tengo que sacar número para pedir una constancia de haberes?",
+   "¿Y si necesito un duplicado con firma certificada, cuánto sale?",
+   "¿Se puede pagar con tarjeta de crédito?"
+  ],
+  "cliente": "¿Hay estacionamiento?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "tarifado"
+  ],
+  "evidencia": " ¿Tienen estacionamiento? No. Hay estacionamiento tarifado en la calle.",
+  "respuesta_ideal": "La agencia no tiene estacionamiento propio; hay estacionamiento tarifado en la calle.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «No. Hay estacionamiento tarifado en la calle»."
+ },
+ {
+  "id": "i0023",
+  "negocio": "W4_n3",
+  "turnos_previos_del_cliente": [
+   "Hola, quiero apartar la mesa de snooker para el sábado a las 9 de la noche"
+  ],
+  "cliente": "Listo. ¿Ese día hasta qué hora abren?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "2:00 am"
+  ],
+  "evidencia": "Viernes y sábado: 12:00 m a 2:00 am",
+  "respuesta_ideal": "Los sábados abrimos de 12:00 m a 2:00 am.",
+  "respuesta_a_calificar": "Listo. No lo sé: no encontré esa información en el texto que tengo."
+ },
+ {
+  "id": "i0024",
+  "negocio": "W5_n1",
+  "turnos_previos_del_cliente": [],
+  "cliente": "cuanto vale el saco de carbon",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "$ 9.900"
+  ],
+  "evidencia": "| Carbón vegetal de espino          | saco de 10 kg          | $ 9.900   |",
+  "respuesta_ideal": "El saco de carbón vegetal de espino cuesta $ 9.900.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Producto: Carbón vegetal de espino; Unidad: saco de 10 kg; Precio: $ 9.900»."
+ },
+ {
+  "id": "i0025",
+  "negocio": "W4_n3",
+  "turnos_previos_del_cliente": [],
+  "cliente": "buenas, ¿cuánto vale la hora de pool?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "$ 14.000"
+  ],
+  "evidencia": "Pool .............. $ 14.000/h",
+  "respuesta_ideal": "¡Buenas! La hora de pool vale $ 14.000, sin importar cuántos jueguen.",
+  "respuesta_a_calificar": "Buenas. No lo sé: no encontré esa información en el texto que tengo."
+ },
+ {
+  "id": "i0026",
+  "negocio": "W1_n2",
+  "turnos_previos_del_cliente": [
+   "Buenas tardes, ¿cuánto cuesta el mantenimiento de la prótesis?"
+  ],
+  "cliente": "¿cada cuánto hay que hacerlo?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "3 a 4 semanas"
+  ],
+  "evidencia": "Se recomienda cada 3 a 4 semanas.",
+  "respuesta_ideal": "Se recomienda cada 3 a 4 semanas.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Mantenimiento de prótesis (limpieza, cambio de adhesivo y reinstalación): $95.000. Se recomienda cada 3 a 4 semanas»."
+ },
+ {
+  "id": "i0027",
+  "negocio": "W8_n2",
+  "turnos_previos_del_cliente": [
+   "hola quiero cotizar un dron para fumigar campo"
+  ],
+  "cliente": "y para el curso de operador comercial tengo que tener el basico?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "básico"
+  ],
+  "evidencia": "Requisito: haber aprobado el básico o demostrar experiencia equivalente en una evaluación práctica.",
+  "respuesta_ideal": "Sí, hay que haber aprobado el básico, o bien demostrar experiencia equivalente en una evaluación práctica.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Curso avanzado de operador comercial: 24 horas en 3 semanas, prepara para el examen de la autoridad aeronáutica»."
+ },
+ {
+  "id": "i0028",
+  "negocio": "W2_n4",
+  "turnos_previos_del_cliente": [
+   "cuanto cuesta el kilo de chocolate semiamargo"
+  ],
+  "cliente": "y la harina?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "$32.00"
+  ],
+  "evidencia": "Harina de trigo repostera, 1 kg ........ $32.00",
+  "respuesta_ideal": "La harina de trigo repostera de 1 kg cuesta $32.00.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Harina de trigo repostera, 1 kg ........ $32.00»."
+ },
+ {
+  "id": "i0029",
+  "negocio": "W4_n4",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Tengo una taquería y necesito como 25 kilos diarios, ¿me hacen precio?",
+  "tipo": "instruccion",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "3. Los precios de mayoreo y los convenios con fondas o taquerías los trata solo la Sra. Lupita; no negocies precios ni prometas descuentos.",
+  "respuesta_ideal": "Los precios de mayoreo y los convenios los trata directamente la Sra. Lupita Hernández, la encargada de la matriz; puede llamarle al (228) 815 62 30.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Precio de mayoreo (fondas, taquerías): a partir de 20 kg diarios de tortilla, $ 21.00 el kg, con entrega incluida dentro de Xalapa»."
+ }
+]

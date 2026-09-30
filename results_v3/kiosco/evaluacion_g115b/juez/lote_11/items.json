@@ -1,0 +1,430 @@
+[
+ {
+  "id": "i0330",
+  "negocio": "W4_n4",
+  "turnos_previos_del_cliente": [
+   "Necesito factura a nombre de mi empresa, ¿se puede?",
+   "si tengo que cancelar 3 dias antes, me devuelven el anticipo?",
+   "hacen precio especial para empresas o pedidos grandes?",
+   "puedo pagar el anticipo con una transferencia desde un banco de Estados Unidos?"
+  ],
+  "cliente": "la vez pasada me cobraron un mantel manchado que yo no manche, con quien reclamo?",
+  "tipo": "instruccion",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "Los reclamos por daños cobrados o por entregas con problemas los atiende doña Marta en el teléfono de la oficina, 7832 4419; no discutas el reclamo.",
+  "respuesta_ideal": "Ese reclamo lo atiende doña Marta en el teléfono de la oficina, 7832 4419.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Silla plástica quebrada o perdida Q 60.00 · Silla Tiffany Q 250.00 · Mantel manchado que no sale con lavado Q 35.00 · Mantel quemado o roto Q 70.00 · Mesa dañada Q 350.00 · Pieza de vajilla rota o perdida Q 15.00 · Lona de carpa rota: se cotiza según el daño»."
+ },
+ {
+  "id": "i0331",
+  "negocio": "W1_n4",
+  "turnos_previos_del_cliente": [
+   "Hola, dan clases de costura?",
+   "¿qué días son?"
+  ],
+  "cliente": "Si compro la electrónica de 60 puntadas, ¿me regalan el curso?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "primera clase de manejo es gratis"
+  ],
+  "evidencia": "Si compra una máquina nueva, la primera clase de manejo es gratis.",
+  "respuesta_ideal": "No el curso completo: al comprar una máquina nueva, la primera clase de manejo es gratis.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Doméstica electrónica, 60 puntadas, ojal automático — $6,890»."
+ },
+ {
+  "id": "i0332",
+  "negocio": "W2_n1",
+  "turnos_previos_del_cliente": [
+   "¿cuánto cobran a los jubilados por la torre?"
+  ],
+  "cliente": "¿y solo el museo?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "$U 120"
+  ],
+  "evidencia": "| Jubilados y pensionistas (con cédula) | $U 120 | $U 210 |",
+  "respuesta_ideal": "Solo el museo de sitio cuesta $U 120 para jubilados y pensionistas.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Tipo de visitante: Jubilados y pensionistas (con cédula); Solo museo de sitio: $U 120; Museo + torre: $U 210»."
+ },
+ {
+  "id": "i0333",
+  "negocio": "W4_n3",
+  "turnos_previos_del_cliente": [
+   "Soy de Argentina, ¿qué necesito para inscribirme al técnico?"
+  ],
+  "cliente": "hasta cuando hay tiempo de inscribirse?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "28 de febrero"
+  ],
+  "evidencia": "Período de inscripción: del 1 de diciembre al 28 de febrero.",
+  "respuesta_ideal": "Las inscripciones van del 1 de diciembre al 28 de febrero.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Edad mínima para inscribirse: 17 años cumplidos al inicio de clases»."
+ },
+ {
+  "id": "i0334",
+  "negocio": "W2_n4",
+  "turnos_previos_del_cliente": [
+   "hola buenas",
+   "a que hora cierran los sabados?",
+   "y los domingos?"
+  ],
+  "cliente": "abren en agosto?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "del 4 al 24 de agosto"
+  ],
+  "evidencia": "Vacaciones de verano: cerrado del 4 al 24 de agosto.",
+  "respuesta_ideal": "Sí, salvo por las vacaciones de verano: estamos cerrados del 4 al 24 de agosto.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Vacaciones de verano: cerrado del 4 al 24 de agosto»."
+ },
+ {
+  "id": "i0335",
+  "negocio": "W7_n4",
+  "turnos_previos_del_cliente": [
+   "¿Hay wifi?",
+   "¿Hacen talleres de tejido?",
+   "¿Mi hijo de 8 años puede hospedarse aquí?"
+  ],
+  "cliente": "¿Hay transporte desde Cusco?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "US$60",
+   "camioneta"
+  ],
+  "evidencia": "Camioneta de traslado desde/hacia Cusco ciudad: US$60 por trayecto (bajo demanda)",
+  "respuesta_ideal": "Sí, disponemos de traslado desde Cusco a US$60 por trayecto, bajo demanda. Coordina con recepción.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Camioneta de traslado desde/hacia Cusco ciudad: US$60 por trayecto (bajo demanda)»."
+ },
+ {
+  "id": "i0336",
+  "negocio": "W7_n1",
+  "turnos_previos_del_cliente": [
+   "Buen día. ¿Qué tal venden aceite de oliva?",
+   "¿Cuánto cuesta la botella chica?"
+  ],
+  "cliente": "Muy bien. ¿Puedo pagar con débito?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "débito",
+   "aceptamos"
+  ],
+  "evidencia": "Formas de pago: efectivo, débito, crédito (Visa, Mastercard), transferencia bancaria",
+  "respuesta_ideal": "Claro que sí, aceptamos débito.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Formas de pago: efectivo, débito, crédito (Visa, Mastercard), transferencia bancaria»."
+ },
+ {
+  "id": "i0337",
+  "negocio": "W4_n1",
+  "turnos_previos_del_cliente": [
+   "Hola, mi hija tiene 6 años, ¿qué días le tocaría venir?",
+   "y cuanto sale por mes?"
+  ],
+  "cliente": "necesita carne de salud?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "a partir de los 6 años"
+  ],
+  "evidencia": "Carné de salud vigente o certificado de aptitud física (a partir de los 6 años).",
+  "respuesta_ideal": "Sí: a partir de los 6 años pedimos carné de salud vigente o certificado de aptitud física.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Carné de salud vigente o certificado de aptitud física (a partir de los 6 años)»."
+ },
+ {
+  "id": "i0338",
+  "negocio": "W8_n1",
+  "turnos_previos_del_cliente": [
+   "hola, tengo una hija de 12 que escribe cuentos todo el tiempo, tienen algo para ella?"
+  ],
+  "cliente": "y de 14 en adelante que hay?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "sábados",
+   "15:00",
+   "3.200"
+  ],
+  "evidencia": "| Escritura para adolescentes (14 a 17 años) | sábados 15:00 a 16:30 | Lucía Bentancor | $U 3.200 |",
+  "respuesta_ideal": "Está Escritura para adolescentes, de 14 a 17 años, los sábados de 15:00 a 16:30, con Lucía Bentancor; cuesta $U 3.200 por mes y la primera clase es de prueba gratuita.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Taller: Escritura para adolescentes (14 a 17 años); Día y hora: sábados 15:00 a 16:30; Coordina: Lucía Bentancor; Mensualidad: $U 3.200»."
+ },
+ {
+  "id": "i0339",
+  "negocio": "W2_n1",
+  "turnos_previos_del_cliente": [
+   "¿se puede alquilar el faro para una sesión de fotos de casamiento?",
+   "¿tienen descuento para estudiantes universitarios?",
+   "¿a cuántos metros sobre el nivel del mar queda la luz del faro?",
+   "hoy hay mucho viento? se puede subir?"
+  ],
+  "cliente": "¿cuánto cuesta un café en la cafetería?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo los precios de la cafetería; solo sé que abre de 10:30 a 17:00.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Cafetería \"La Linterna\" en la planta baja, abierta de 10:30 a 17:00»."
+ },
+ {
+  "id": "i0340",
+  "negocio": "W8_n3",
+  "turnos_previos_del_cliente": [
+   "buenas, soy mujer y quiero aprender a soldar, hay alguna beca?"
+  ],
+  "cliente": "cuanto pagaria entonces el basico con la beca?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "190"
+  ],
+  "evidencia": "| Soldadura básica SMAW (electrodo revestido) | 80 h | USD 380 | Ninguno |\n\nofrecemos una beca del 50% del valor del curso a mujeres que se inscriban en Soldadura básica o MIG/MAG.",
+  "respuesta_ideal": "Soldadura básica cuesta USD 380; con la beca del 50% pagarías USD 190. El equipo de protección personal no está incluido.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Con apoyo del municipio, ofrecemos una beca del 50% del valor del curso a mujeres que se inscriban en Soldadura básica o MIG/MAG. Hay 10 cupos por trimestre»."
+ },
+ {
+  "id": "i0341",
+  "negocio": "W4_n2",
+  "turnos_previos_del_cliente": [
+   "Hola, me caso en Chapala en octubre. ¿Cuánto sale el paquete de boda?",
+   "que incluye ese paquete?"
+  ],
+  "cliente": "cuantos kilometros son de su oficina a Chapala?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo la distancia exacta a Chapala; Rosario le puede calcular el traslado al 33 1244 9075.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Fuera de esa zona: cargo de traslado de $18.00 MXN por kilómetro desde la oficina, ida y vuelta, más viáticos si el servicio termina después de la 1:00 a.m. Sí vamos a Chapala, Tequila, Tlajomulco y Puerto Vallarta con frecuencia»."
+ },
+ {
+  "id": "i0342",
+  "negocio": "W2_n3",
+  "turnos_previos_del_cliente": [
+   "mi hijo es alergico a la nuez, tienen algo para el?",
+   "aceptan amex?"
+  ],
+  "cliente": "hay estacionamiento?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "Estacionamiento gratuito"
+  ],
+  "evidencia": "- Estacionamiento gratuito.",
+  "respuesta_ideal": "Sí, el estacionamiento es gratuito.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Estacionamiento gratuito»."
+ },
+ {
+  "id": "i0343",
+  "negocio": "W6_n4",
+  "turnos_previos_del_cliente": [
+   "Hola, mi hijo tiene 9 años, ¿en qué rama entraría?"
+  ],
+  "cliente": "¿y qué día se reúnen?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "sábados de 9:00 a.m. a 12:00 m."
+  ],
+  "evidencia": "Manada | 7 a 10 años | sábados de 9:00 a.m. a 12:00 m.",
+  "respuesta_ideal": "La Manada se reúne los sábados de 9:00 a.m. a 12:00 m.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Rama: Manada; Edades: 7 a 10 años; Día y hora: sábados de 9:00 a.m. a 12:00 m»."
+ },
+ {
+  "id": "i0344",
+  "negocio": "W3_n3",
+  "turnos_previos_del_cliente": [],
+  "cliente": "¿Tienen sistema para seguimiento online?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "ADUANET",
+   "seguimiento en línea"
+  ],
+  "evidencia": "Acceso directo al portal ADUANET de la SUNAT; Sistema de seguimiento en línea (cliente puede consultar estado)",
+  "respuesta_ideal": "Sí, tienes acceso al portal ADUANET para ver el estado en tiempo real. Te mandamos la clave cuando empezamos el trámite.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Sistema de seguimiento en línea (cliente puede consultar estado)»."
+ },
+ {
+  "id": "i0345",
+  "negocio": "W7_n4",
+  "turnos_previos_del_cliente": [
+   "¿Ofrecen tour a Machu Picchu?"
+  ],
+  "cliente": "¿A qué hora salimos?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "4:00 a.m.",
+   "regreso 18:00"
+  ],
+  "evidencia": "Salida: 4:00 a.m., regreso 18:00 h",
+  "respuesta_ideal": "La salida es a las 4:00 a.m. y el regreso aproximadamente a las 18:00 horas.",
+  "respuesta_a_calificar": "Sobre eso, las indicaciones del negocio dicen: «Check-in y check-out: check-in es a las 14:00 h y check-out a las 11:00 h. Si alguien necesita salida tardía, cuesta US$10 por hora, según disponibilidad»."
+ },
+ {
+  "id": "i0346",
+  "negocio": "W5_n1",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Buen día, soy el administrador de un condominio de 64 departamentos. ¿Cuánto sale una mediación para la comunidad?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "$45.000"
+  ],
+  "evidencia": "Comunidades de copropietarios (condominios de más de 20 unidades) ... $45.000 por proceso, pagado por la administración",
+  "respuesta_ideal": "Buenos días. Para condominios de más de 20 unidades son $45.000 por proceso, pagados por la administración.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Comunidades de copropietarios (condominios de más de 20 unidades) ... $45.000 por proceso, pagado por la administración»."
+ },
+ {
+  "id": "i0347",
+  "negocio": "W6_n2",
+  "turnos_previos_del_cliente": [],
+  "cliente": "¿Tienen probadores?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "2 probadores"
+  ],
+  "evidencia": "- La tienda tiene 2 probadores. No hay baño para el público.",
+  "respuesta_ideal": "Sí, la tienda tiene 2 probadores.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «La tienda tiene 2 probadores. No hay baño para el público»."
+ },
+ {
+  "id": "i0348",
+  "negocio": "W4_n3",
+  "turnos_previos_del_cliente": [
+   "hice dos semestres de enfermeria en otro instituto, me reconocen las materias?",
+   "cuanto cuesta ese tramite?",
+   "y cuanto tardan en contestar?"
+  ],
+  "cliente": "una materia la aprobe con 2, esa me la convalidan?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "3 o superior"
+  ],
+  "evidencia": "Solo se convalidan materias aprobadas con nota 3 o superior (escala de 1 a 5).",
+  "respuesta_ideal": "No, solo se convalidan materias aprobadas con nota 3 o superior en la escala de 1 a 5.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Convalidación de materias de otras instituciones: se presenta el programa analítico y el certificado de estudios; la Dirección Académica resuelve en un plazo de 30 días. Solo se convalidan materias aprobadas con nota 3 o superior (escala de 1 a 5)»."
+ },
+ {
+  "id": "i0349",
+  "negocio": "W5_n3",
+  "turnos_previos_del_cliente": [],
+  "cliente": "la DIAN me rechazó una factura y el cliente me está esperando, ayuda!!",
+  "tipo": "instruccion",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "Si el cliente dice que la DIAN le rechazó una factura, pídale el número de la factura y remítalo a soporte técnico por WhatsApp al 315 604 2281.",
+  "respuesta_ideal": "Claro. Por favor indíqueme el número de la factura y escriba a soporte técnico por WhatsApp al 315 604 2281 para que la revisen.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Firma digital. Nosotros la tramitamos: va incluida en los planes Pyme y Pro; en el plan Emprende tiene un costo de $ 85.000»."
+ },
+ {
+  "id": "i0350",
+  "negocio": "W6_n3",
+  "turnos_previos_del_cliente": [
+   "buenas noches, hasta que hora se puede poner una denuncia?",
+   "y para sacar una constancia de extravio?"
+  ],
+  "cliente": "¿cuánto cuesta?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "sin costo"
+  ],
+  "evidencia": "Constancia de extravío de documentos\tsin costo\tse entrega en el momento; traer cédula o pasaporte",
+  "respuesta_ideal": "La constancia de extravío de documentos es sin costo.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Trámite: Registro voluntario de bicicletas y motocicletas; Costo: sin costo; Observaciones: martes y jueves de 9:00 a.m. a 12:00 m»."
+ },
+ {
+  "id": "i0351",
+  "negocio": "W6_n4",
+  "turnos_previos_del_cliente": [],
+  "cliente": "¿Cuánto cuesta el campamento de Semana Santa?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "L 2,800"
+  ],
+  "evidencia": "- Campamento de Semana Santa: L 2,800. Dura 5 días e incluye transporte, alimentación y seguro.",
+  "respuesta_ideal": "El campamento de Semana Santa cuesta L 2,800 (lempiras).",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Campamento de Semana Santa: L 2,800. Dura 5 días e incluye transporte, alimentación y seguro»."
+ },
+ {
+  "id": "i0352",
+  "negocio": "W4_n1",
+  "turnos_previos_del_cliente": [
+   "Tengo dos hijos, de 9 y de 12. ¿Cuánto pagaría por mes por los dos?",
+   "¿y a que hora entrena cada uno?",
+   "el de 12 tiene que usar canilleras si o si?"
+  ],
+  "cliente": "desde donde puedo mirar la practica?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "tribuna"
+  ],
+  "evidencia": "Los padres pueden mirar la práctica desde la tribuna, pero no pueden entrar a la cancha ni dar indicaciones a los chicos durante la clase.",
+  "respuesta_ideal": "Podés mirar desde la tribuna; lo que no se puede es entrar a la cancha ni darles indicaciones durante la clase.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Los padres pueden mirar la práctica desde la tribuna, pero no pueden entrar a la cancha ni dar indicaciones a los chicos durante la clase»."
+ },
+ {
+  "id": "i0353",
+  "negocio": "W1_n3",
+  "turnos_previos_del_cliente": [
+   "mi papa esta en cama y necesito alguien que lo cuide de noche",
+   "cuánto sale el mes completo?"
+  ],
+  "cliente": "¿y los domingos también entran?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "lunes a sábado"
+  ],
+  "evidencia": "- Paquete mensual de 12 h, de lunes a sábado: Bs 8.900",
+  "respuesta_ideal": "No, el paquete mensual cubre de lunes a sábado.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Recargo domingos y feriados: 25 % sobre el precio»."
+ },
+ {
+  "id": "i0354",
+  "negocio": "W5_n3",
+  "turnos_previos_del_cliente": [
+   "Pagué la anualidad hace 5 días y me arrepentí, me devuelven la plata?",
+   "¿y en cuánto tiempo me llega el reembolso?"
+  ],
+  "cliente": "si me quedo, me pasan las facturas que ya tengo hechas en el programa viejo?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "no se migra"
+  ],
+  "evidencia": "Importamos sin costo sus clientes y productos desde Excel. El histórico de facturas emitidas con otro proveedor no se migra.",
+  "respuesta_ideal": "No, el histórico de facturas emitidas con otro proveedor no se migra; lo que sí importamos sin costo son sus clientes y productos desde Excel.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Firma digital. Nosotros la tramitamos: va incluida en los planes Pyme y Pro; en el plan Emprende tiene un costo de $ 85.000»."
+ },
+ {
+  "id": "i0355",
+  "negocio": "W5_n2",
+  "turnos_previos_del_cliente": [
+   "Buen dia",
+   "en la esquina de Tala se cayó un poste y hay cables sueltos tirando chispas",
+   "y el reclamo por los pozos de la calle donde lo dejo?"
+  ],
+  "cliente": "en enero atienden?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "receso"
+  ],
+  "evidencia": "En enero la secretaría permanece cerrada por receso de verano; los talleres se retoman la primera semana de marzo.",
+  "respuesta_ideal": "No, en enero la secretaría está cerrada por receso de verano.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «La secretaría atiende los martes y jueves de 17 a 20 hs y los sábados de 9 a 12 hs. En enero la secretaría permanece cerrada por receso de verano; los talleres se retoman la primera semana de marzo»."
+ }
+]

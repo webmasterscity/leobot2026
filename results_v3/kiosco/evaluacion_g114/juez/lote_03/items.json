@@ -1,0 +1,483 @@
+[
+ {
+  "id": "i0090",
+  "negocio": "W1_n3",
+  "turnos_previos_del_cliente": [
+   "Buenas, se me murió mi perro ayer y lo quiero conservar disecado, ¿lo hacen?"
+  ],
+  "cliente": "¿Y un loro? era muy querido en la familia",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "mascotas"
+  ],
+  "evidencia": "No trabajamos especies protegidas ni mascotas.",
+  "respuesta_ideal": "Tampoco: si era una mascota no lo trabajamos. Lo siento.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Somos un taller familiar fundado por Don Aníbal Quiroga en 1988 y hoy atendido por su hija, Romina Quiroga, taxidermista matriculada»."
+ },
+ {
+  "id": "i0091",
+  "negocio": "W3_n3",
+  "turnos_previos_del_cliente": [
+   "¿Ustedes tienen servicio a domicilio?"
+  ],
+  "cliente": "¿Hay requisito mínimo?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "mínimo 2 equipos o reparación mayor a $100.000 COP"
+  ],
+  "evidencia": "Servicio de domicilio disponible: $25.000 a $50.000 COP según distancia (mínimo 2 equipos o reparación mayor a $100.000 COP)",
+  "respuesta_ideal": "Sí, es mínimo 2 equipos o si la reparación es mayor a $100.000 COP. Si no, debes retirar en el taller.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Servicio de domicilio disponible: $25.000 a $50.000 COP según distancia (mínimo 2 equipos o reparación mayor a $100.000 COP)»."
+ },
+ {
+  "id": "i0092",
+  "negocio": "W7_n4",
+  "turnos_previos_del_cliente": [],
+  "cliente": "¿Venden pasteles congelados de otras marcas?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "No hacemos devoluciones de dinero",
+   "solo nuestro producto fresco"
+  ],
+  "evidencia": "Productos congelados de otras marcas no tenemos (solo nuestro producto fresco)",
+  "respuesta_ideal": "No, solo vendemos nuestros productos frescos. No tenemos marcas congeladas de otros. Todo lo nuestro es hecho acá y fresco del horno.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Productos congelados de otras marcas no tenemos (solo nuestro producto fresco)»."
+ },
+ {
+  "id": "i0093",
+  "negocio": "W8_n4",
+  "turnos_previos_del_cliente": [],
+  "cliente": "¿Atienden los sábados a la tarde?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "08:00 a 11:30"
+  ],
+  "evidencia": "Sábados de 08:00 a 11:30. Domingos y feriados no atendemos.",
+  "respuesta_ideal": "No, los sábados atendemos solo de 08:00 a 11:30.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Sábados de 08:00 a 11:30»."
+ },
+ {
+  "id": "i0094",
+  "negocio": "W6_n1",
+  "turnos_previos_del_cliente": [
+   "cuanto cobran el kWh en el cargador rapido",
+   "¿y en el más lento?"
+  ],
+  "cliente": "si cargo 30 kWh en uno de 22 kW, cuanto pago?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "₡165 por kWh"
+  ],
+  "evidencia": "Semirrápido CA | 8 | 22 kW | Tipo 2 | ₡165 por kWh",
+  "respuesta_ideal": "El cargador de 22 kW cuesta ₡165 por kWh, así que 30 kWh serían ₡4.950.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Tipo: Semirrápido CA; Cantidad: 8; Potencia: 22 kW; Conectores: Tipo 2; Tarifa: ₡165 por kWh»."
+ },
+ {
+  "id": "i0095",
+  "negocio": "W6_n3",
+  "turnos_previos_del_cliente": [],
+  "cliente": "llamar a españa cuanto cobran el minuto",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "900 Gs. el minuto"
+  ],
+  "evidencia": "Argentina, Brasil y España: 900 Gs. el minuto. Otros destinos: consultar en mostrador.",
+  "respuesta_ideal": "Las llamadas a España cuestan 900 Gs. el minuto.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Argentina, Brasil y España: 900 Gs. el minuto»."
+ },
+ {
+  "id": "i0096",
+  "negocio": "W7_n3",
+  "turnos_previos_del_cliente": [
+   "Quiero vender mi casa. ¿Cuánto me cobran?"
+  ],
+  "cliente": "¿Necesito documentos especiales para vender?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "escritura",
+   "certificado de avalúo municipal"
+  ],
+  "evidencia": "Documentos de propiedad (escritura o contrato compraventa) | Certificado de avalúo municipal",
+  "respuesta_ideal": "Necesitas la escritura de la propiedad y el certificado de avalúo municipal (no mayor a 1 año). Una inspección técnica es opcional pero recomendada.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Documentos de propiedad (escritura o contrato compraventa)»."
+ },
+ {
+  "id": "i0097",
+  "negocio": "W7_n2",
+  "turnos_previos_del_cliente": [
+   "Mi laptop no enciende. ¿Es grave?"
+  ],
+  "cliente": "¿Cuánto tiempo demora la reparación?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "Depende del problema. Cosas simples como cambio de batería tardan 30 minutos. Cosas complejas como motherboard dañado pueden tomar días. Luego del diagnóstico te decimos.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Jefe de Taller: Ing. Carlos Vega (12 años en reparación electrónica)»."
+ },
+ {
+  "id": "i0098",
+  "negocio": "W4_n1",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Buenas, se puede venir con el perro?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "No se admiten mascotas",
+   "con correa"
+  ],
+  "evidencia": "No se admiten mascotas en el sector de carpas y sombrillas ni en el parador.",
+  "respuesta_ideal": "No. No se admiten mascotas en el sector de carpas y sombrillas ni en el parador; en la playa pública sí podés pasear con el perro con correa.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Sí, la carpa se cierra con lona y cierre, pero no nos hacemos responsables por objetos de valor»."
+ },
+ {
+  "id": "i0099",
+  "negocio": "W3_n4",
+  "turnos_previos_del_cliente": [
+   "¿Venden bulbos de tulipanes?"
+  ],
+  "cliente": "¿Cuanto cuesta una bolsa?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "$3.500 a $5.500 CLP/bolsa de 10"
+  ],
+  "evidencia": "Tulipanes, Narcisos, Jacinto: $3.500 a $5.500 CLP/bolsa de 10",
+  "respuesta_ideal": "Una bolsa de 10 bulbos de tulipanes cuesta $3.500 a $5.500 CLP. Depende de la variedad.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Tulipanes, Narcisos, Jacinto: $3.500 a $5.500 CLP/bolsa de 10»."
+ },
+ {
+  "id": "i0100",
+  "negocio": "W5_n1",
+  "turnos_previos_del_cliente": [
+   "cuanto sale la bateria de 100 tiros",
+   "y si llevo dos de esas y una de 25 tiros cuanto seria"
+  ],
+  "cliente": "se puede pagar con tarjeta de credito?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "Visa y Mastercard",
+   "4 %"
+  ],
+  "evidencia": "tarjeta de crédito Visa y Mastercard. Los pagos con tarjeta de crédito tienen un recargo del 4 %.",
+  "respuesta_ideal": "Sí, aceptamos tarjeta de crédito Visa y Mastercard, pero los pagos con crédito tienen un recargo del 4 %.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Los pagos con tarjeta de crédito tienen un recargo del 4 %. La transferencia bancaria se acepta solamente para pedidos por encargo»."
+ },
+ {
+  "id": "i0101",
+  "negocio": "W6_n1",
+  "turnos_previos_del_cliente": [
+   "que tipo de conectores tienen?",
+   "y sirve para un carro chino con conector GB/T?"
+  ],
+  "cliente": "¿venden adaptadores GB/T entonces?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo información sobre adaptadores GB/T. Puede preguntar al soporte, teléfono 2222-0148.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Los vehículos con conector GB/T no son compatibles con ninguno de nuestros cargadores»."
+ },
+ {
+  "id": "i0102",
+  "negocio": "W2_n2",
+  "turnos_previos_del_cliente": [
+   "si cancelo la visita una hora antes me cobran algo?",
+   "cuanto dura la garantia?",
+   "y cubre los materiales que compre yo?"
+  ],
+  "cliente": "reparan bombas de agua o electrobombas?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo ese dato en mi información. Puede consultarlo en la central (01) 555-0198.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Reparación de fuga de agua visible: desde S/ 150»."
+ },
+ {
+  "id": "i0103",
+  "negocio": "W2_n3",
+  "turnos_previos_del_cliente": [
+   "puedo llevar mi dron para grabar la represa?",
+   "y tomar fotos con el celular si puedo?",
+   "puedo entrar con mi perrito?"
+  ],
+  "cliente": "es accesible para silla de ruedas?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "ascensor",
+   "el túnel de carga no lo es"
+  ],
+  "evidencia": "- Accesibilidad: la sala de máquinas es accesible en silla de ruedas por ascensor; el túnel de carga no lo es.",
+  "respuesta_ideal": "La sala de máquinas sí es accesible en silla de ruedas por ascensor, pero el túnel de carga no lo es.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Accesibilidad: la sala de máquinas es accesible en silla de ruedas por ascensor; el túnel de carga no lo es»."
+ },
+ {
+  "id": "i0104",
+  "negocio": "W6_n2",
+  "turnos_previos_del_cliente": [
+   "¿cuanto vale la miel?",
+   "¿y el aceite de sacha inchi?",
+   "quiero 2 mieles y 1 aceite ¿cuanto seria en total?"
+  ],
+  "cliente": "¿tienen sacha inchi en capsulas?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo ese dato. Puede consultarlo con el personal del mostrador, teléfono 2-2455890.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Producto: Aceite de sacha inchi; Presentación: frasco 60 ml; Precio: Bs 68»."
+ },
+ {
+  "id": "i0105",
+  "negocio": "W8_n2",
+  "turnos_previos_del_cliente": [
+   "Hola, ¿puedo ir con mi perro?",
+   "¿Lo puedo meter al mar?",
+   "¿Y a la ducha puede entrar para sacarle la arena?",
+   "¿Hasta qué hora hay guardavidas?",
+   "¿Mañana va a haber olas grandes? Quiero saber si se va a poder entrar al agua",
+   "¿Hay rampa o alguna silla anfibia para una persona en silla de ruedas?"
+  ],
+  "cliente": "¿Hay wifi en las carpas?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "zona del parador"
+  ],
+  "evidencia": "- WiFi gratuito en la zona del parador (no llega a las carpas del fondo).",
+  "respuesta_ideal": "Hay WiFi gratis en la zona del parador, pero no llega a las carpas del fondo.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «WiFi gratuito en la zona del parador (no llega a las carpas del fondo)»."
+ },
+ {
+  "id": "i0106",
+  "negocio": "W4_n2",
+  "turnos_previos_del_cliente": [],
+  "cliente": "buenas, tengo una fosa septica de 5000 litros en una casa de campo en Sangonera, cuanto cuesta vaciarla?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "300",
+   "21 %"
+  ],
+  "evidencia": "| Vaciado de fosa séptica hasta 3.000 litros | 210 € | incluye traslado a depuradora autorizada |\n| Vaciado de fosa séptica, cada 1.000 litros adicionales | 45 € | |",
+  "respuesta_ideal": "El vaciado hasta 3.000 litros son 210 € y cada 1.000 litros adicionales 45 €, así que 5.000 litros serían 300 € más el 21 % de IVA, con el traslado a depuradora incluido.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Servicio: Vaciado de fosa séptica, cada 1.000 litros adicionales; Precio: 45 €»."
+ },
+ {
+  "id": "i0107",
+  "negocio": "W5_n3",
+  "turnos_previos_del_cliente": [
+   "hasta cuantos metros pueden perforar?"
+  ],
+  "cliente": "dan financiamiento a meses?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo información sobre financiamiento; lo que sé es que el pago se hace en tres tractos: 30 % al firmar, 40 % al iniciar y 30 % al entregar.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «El trámite del permiso tarda aproximadamente de 2 a 4 meses»."
+ },
+ {
+  "id": "i0108",
+  "negocio": "W6_n3",
+  "turnos_previos_del_cliente": [],
+  "cliente": "quiero imprimir 10 hojas a color y usar la compu 2 horas ¿cuanto seria?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "6.000 Gs. la hora",
+   "2.000 Gs."
+  ],
+  "evidencia": "Impresión color | 2.000 Gs.",
+  "respuesta_ideal": "Dos horas de PC estándar son 12.000 Gs. y 10 hojas a color a 2.000 Gs. son 20.000 Gs.; en total 32.000 Gs.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Servicio: Impresión color; Precio: 2.000 Gs»."
+ },
+ {
+  "id": "i0109",
+  "negocio": "W3_n4",
+  "turnos_previos_del_cliente": [
+   "Necesito una maceta grande para un árbol. ¿Que tienen?"
+  ],
+  "cliente": "Voy a poner un Ficus. ¿Me lo entregan en casa?",
+  "tipo": "instruccion",
+  "accion_esperada": "responder",
+  "claves": [
+   "Entrega en Santiago Centro y alrededores",
+   "$12.000 a $35.000 CLP según distancia"
+  ],
+  "evidencia": "Entrega en Santiago Centro y alrededores: $12.000 a $35.000 CLP según distancia",
+  "respuesta_ideal": "Sí, hacemos entrega. El costo depende de tu ubicación, entre $12.000 y $35.000 CLP. ¿De qué sector eres?",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Árbol de la vida, Ficus: $35.000 a $60.000 CLP»."
+ },
+ {
+  "id": "i0110",
+  "negocio": "W1_n3",
+  "turnos_previos_del_cliente": [
+   "Hola! Cuánto sale embalsamar la cabeza de un ciervo?"
+  ],
+  "cliente": "y cuanto tarda?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "8 meses"
+  ],
+  "evidencia": "Cabeza de ciervo colorado (montaje de pared)\t$ 480.000\t8 meses",
+  "respuesta_ideal": "La demora aproximada es de 8 meses.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Trabajo: Cráneo europeo (hervido y blanqueado); Precio: $ 140.000; Demora aprox.: 2 meses»."
+ },
+ {
+  "id": "i0111",
+  "negocio": "W7_n4",
+  "turnos_previos_del_cliente": [
+   "¿A qué hora abren mañana?"
+  ],
+  "cliente": "¿Cierran los domingos?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "Domingos: 7:00 AM a 2:00 PM"
+  ],
+  "evidencia": "Domingos: 7:00 AM a 2:00 PM",
+  "respuesta_ideal": "No cerramos domingo, pero tenemos horario reducido: abrimos a las 7:00 AM y cerramos a las 2:00 PM.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Domingos: 7:00 AM a 2:00 PM»."
+ },
+ {
+  "id": "i0112",
+  "negocio": "W3_n4",
+  "turnos_previos_del_cliente": [
+   "Hola, busco suculentas bonitas. ¿Que tienen?"
+  ],
+  "cliente": "¿Y cactus?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "Cactus",
+   "$5.000 a $8.000 CLP"
+  ],
+  "evidencia": "Cactus: $5.000 a $8.000 CLP",
+  "respuesta_ideal": "Cactus también tenemos de $5.000 a $8.000 CLP. ¿Quieres llevar los dos tipos?",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Cactus: $5.000 a $8.000 CLP»."
+ },
+ {
+  "id": "i0113",
+  "negocio": "W3_n1",
+  "turnos_previos_del_cliente": [
+   "Hola, ¿cuanto cuesta el cemento?",
+   "Dale, me llevo 10 bolsas. ¿Hacen entrega?",
+   "Soy de Flores. ¿Me lo entregan hoy?"
+  ],
+  "cliente": "Perfecto, ¿puedo pagar con tarjeta?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "tarjeta de crédito"
+  ],
+  "evidencia": "aceptamos efectivo, transferencia bancaria, tarjeta de crédito (VISA, Mastercard)",
+  "respuesta_ideal": "Sí, aceptamos VISA y Mastercard. Tené en cuenta que hay un recargo del 15 % si lo hacés en más de una cuota.",
+  "respuesta_a_calificar": "Perfecto. No lo tengo seguro. Lo más cercano que dice el texto es: «Financiación: aceptamos efectivo, transferencia bancaria, tarjeta de crédito (VISA, Mastercard) con recargo del 15 % a 3 cuotas sin interés mayores a $15.000»."
+ },
+ {
+  "id": "i0114",
+  "negocio": "W3_n2",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Hola, necesito un paquete para 2 adultos y 1 niño de 8 años. ¿Qué me recomiendas?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "Paquete Playa Relax",
+   "Paquete Cenotes & Cultura"
+  ],
+  "evidencia": "Paquete Playa Relax; Paquete Cenotes & Cultura",
+  "respuesta_ideal": "Para familias con niños recomendamos el Paquete Playa Relax (relajado) o el Cenotes & Cultura (más aventura). El niño de 8 años tiene 40 % descuento en el Cenotes.",
+  "respuesta_a_calificar": "Sobre eso, las indicaciones del negocio dicen: «Preguntas sobre precios por niños: Los menores de 0-2 años viajan gratis en el paquete Playa Relax si comparten habitación. Para el paquete Cenotes & Cultura, aplica 40 % de descuento a niños 3-11 años. Si piden paquete Crucero, el precio es de ocupancia doble y suplemento individual es +40 %»."
+ },
+ {
+  "id": "i0115",
+  "negocio": "W3_n4",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Tengo un jardín con mucho sol. Quiero árboles frutales. ¿Cuales me recomiendan?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "Manzano",
+   "Peral",
+   "Ciruelo",
+   "Naranjo",
+   "Limonero"
+  ],
+  "evidencia": "Árboles frutales: Manzano, Peral, Ciruelo (injertados, 1-2 años); Naranjo, Limonero (variedades enanas)",
+  "respuesta_ideal": "Con mucho sol va bien Manzano, Peral, Ciruelo, Naranjo o Limonero. Tenemos árboles injertados de 1-2 años. ¿Cuantos queres plantar?",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Vivero especializado en plantas ornamentales, árboles frutales, flores y productos de jardinería desde hace 20 años»."
+ },
+ {
+  "id": "i0116",
+  "negocio": "W4_n2",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Tengo el garaje lleno de agua, esta entrando ahora mismo por la arqueta!",
+  "tipo": "instruccion",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "Si el cliente dice que está entrando agua en casa, que tiene el garaje inundado o una fuga ahora mismo, dígale que llame de inmediato a urgencias al 600 41 41 41 y que cierre la llave de paso.",
+  "respuesta_ideal": "Llame ahora mismo a urgencias al 600 41 41 41, atienden las 24 horas, y cierre la llave de paso mientras llegan.",
+  "respuesta_a_calificar": "Sobre eso, las indicaciones del negocio dicen: «Si el cliente dice que está entrando agua en casa, que tiene el garaje inundado o una fuga ahora mismo, dígale que llame de inmediato a urgencias al 600 41 41 41 y que cierre la llave de paso»."
+ },
+ {
+  "id": "i0117",
+  "negocio": "W5_n1",
+  "turnos_previos_del_cliente": [
+   "cuanto sale la bateria de 100 tiros"
+  ],
+  "cliente": "y si llevo dos de esas y una de 25 tiros cuanto seria",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "1,275"
+  ],
+  "evidencia": "| Batería de 25 tiros | unidad | Q 175.00 |\n| Batería de 100 tiros | unidad | Q 550.00 |",
+  "respuesta_ideal": "Dos baterías de 100 tiros (Q 1,100.00) más una de 25 tiros (Q 175.00) le salen en Q 1,275.00. Recuerde que se pide DPI y solo vendemos a mayores de 18 años.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Producto: Batería de 25 tiros; Presentación: unidad; Precio: Q 175.00»."
+ },
+ {
+  "id": "i0118",
+  "negocio": "W6_n1",
+  "turnos_previos_del_cliente": [
+   "que tipo de conectores tienen?",
+   "y sirve para un carro chino con conector GB/T?",
+   "¿venden adaptadores GB/T entonces?"
+  ],
+  "cliente": "¿prestan cable tipo 1?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "₡25.000"
+  ],
+  "evidencia": "Prestamos cable Tipo 2 a Tipo 1 con un depósito de ₡25.000, que se devuelve al regresar el cable.",
+  "respuesta_ideal": "Sí, prestamos un cable Tipo 2 a Tipo 1 con un depósito de ₡25.000 que se devuelve al regresarlo.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Prestamos cable Tipo 2 a Tipo 1 con un depósito de ₡25.000, que se devuelve al regresar el cable»."
+ },
+ {
+  "id": "i0119",
+  "negocio": "W8_n2",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Hola, ¿puedo ir con mi perro?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "con correa",
+   "uno por carpa"
+  ],
+  "evidencia": "Se permiten perros con correa en las carpas, como máximo uno por carpa, y siempre que no molesten a los vecinos.",
+  "respuesta_ideal": "Sí, se permiten perros con correa en las carpas, máximo uno por carpa y siempre que no molesten a los vecinos.",
+  "respuesta_a_calificar": "Hola. No lo sé: no encontré esa información en el texto que tengo."
+ }
+]

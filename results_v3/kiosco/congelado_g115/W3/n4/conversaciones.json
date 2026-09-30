@@ -1,0 +1,162 @@
+[
+  [
+    {
+      "cliente": "Hola, ¿tienen camisetas vintage de Peñarol años 90?",
+      "tipo": "sin_respuesta",
+      "accion": "responder",
+      "claves": ["stock", "Instagram", "vintage"],
+      "evidencia": "Siendo tienda de vintage, el stock cambia constantemente.",
+      "respuesta_ideal": "El stock cambia constantemente. Lo mejor es que mires Instagram (@retrosportstore.uy) para ver qué tenemos en este momento, o que vengas a la tienda. Si buscas algo muy específico, escribinos por WhatsApp con la descripción."
+    },
+    {
+      "cliente": "¿En qué horario atienden?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["Lunes a sábado 11:00 – 19:30", "Domingo 14:00 – 18:30"],
+      "evidencia": "Horario: Lunes a sábado 11:00 – 19:30 | Domingo 14:00 – 18:30",
+      "respuesta_ideal": "De lunes a sábado abrimos de 11:00 a 19:30. Los domingos de 14:00 a 18:30. Estamos en Pocitos, Avenida Brasil 3245."
+    }
+  ],
+  [
+    {
+      "cliente": "¿Cuánto cuestan las camisetas en general?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["$400 a $1200 UYU", "según antigüedad"],
+      "evidencia": "Camisetas deportivas: vintage de equipos de fútbol, baloncesto, tenis. Precios: $400 a $1200 UYU",
+      "respuesta_ideal": "Las camisetas vintage rondan entre $400 y $1200 pesos uruguayos, dependiendo de la antigüedad y la marca. Las más viejas y raras salen más caras."
+    },
+    {
+      "cliente": "¿Y zapatillas?",
+      "tipo": "seguimiento",
+      "accion": "responder",
+      "claves": ["$800 a $2000 UYU"],
+      "evidencia": "Zapatillas deportivas: Adidas, Nike, Puma de épocas retro. $800 a $2000 UYU.",
+      "respuesta_ideal": "Las zapatillas vintage están entre $800 y $2000. Son originales, Adidas, Nike, Puma, marcas clásicas."
+    },
+    {
+      "cliente": "¿Si pago con efectivo hay descuento?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["5 %", "efectivo"],
+      "evidencia": "Descuento por compra en efectivo: 5 %",
+      "respuesta_ideal": "Sí, si pagás con billetes en la tienda te hacemos 5 % de descuento. Con tarjeta no aplica."
+    }
+  ],
+  [
+    {
+      "cliente": "Compré una camiseta hace una semana y la costura se rompió. ¿Qué hago?",
+      "tipo": "instruccion",
+      "accion": "responder",
+      "claves": ["5 días", "sin cargo", "garantía"],
+      "evidencia": "si detectas falla al llegar a casa, contacta en 5 días y arreglamos sin cargo (pegado de costuras, cierre roto, tela deteriorada).",
+      "respuesta_ideal": "Si es un defecto (costura, cierre), y avisas dentro de 5 días, lo arreglamos sin cargo. Así que contacta ya a Carolina o a Sofía en la tienda. Trae la boleta."
+    },
+    {
+      "cliente": "¿Puedo cambiarla por otra?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["10 días", "boleta", "sin usar"],
+      "evidencia": "Cambios: 10 días desde la compra con boleta y prenda sin uso (con etiqueta).",
+      "respuesta_ideal": "Sí, cambios tenemos hasta 10 días. Pero como ya la usaste (se rompió), es garantía de defecto, no cambio. Lo arreglamos directo sin cargo si vienes en 5 días."
+    }
+  ],
+  [
+    {
+      "cliente": "¿Hacen envíos a Buenos Aires?",
+      "tipo": "sin_respuesta",
+      "accion": "responder",
+      "claves": ["No hacemos envíos internacionales"],
+      "evidencia": "Envío al exterior: no hacemos envíos internacionales en este momento.",
+      "respuesta_ideal": "Lamentablemente no. Por ahora solo enviamos dentro de Uruguay. Si estás en Montevideo, podés venir a la tienda o te hacemos envío a domicilio."
+    },
+    {
+      "cliente": "¿Cuánto sale el envío a domicilio en Montevideo?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["$150 UYU", "gratis", "$2000"],
+      "evidencia": "Dentro de Montevideo: $150 UYU a domicilio (gratis a partir de $2000 de compra).",
+      "respuesta_ideal": "Es $150 pesos, pero gratis si tu compra supera $2000. Hacemos envío rápido dentro de la capital."
+    }
+  ],
+  [
+    {
+      "cliente": "¿Aceptan ropa usada en canje?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["permuta", "crédito", "buena estado"],
+      "evidencia": "Cambio de ropa usada: si traés ropa deportiva en buen estado de tu colección, hacemos permuta por crédito.",
+      "respuesta_ideal": "Sí, hacemos permuta. Traés ropa deportiva que tengas en buen estado y te hacemos crédito según lo que valuemos en la tienda. Es crédito para comprar, no efectivo."
+    },
+    {
+      "cliente": "¿Puedo reservar algo que vi en Instagram?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["No reservamos", "WhatsApp", "visita la tienda"],
+      "evidencia": "No ofrecemos reservas por teléfono (reservamos solo si visitás la tienda o nos escribís por WhatsApp con foto).",
+      "respuesta_ideal": "Reservas por teléfono no hacemos. Pero si escribís por WhatsApp (99-256-487) con una foto de la prenda, podemos guardarla. O venís en persona a la tienda."
+    }
+  ],
+  [
+    {
+      "cliente": "¿Cuándo actualizán el Instagram?",
+      "tipo": "sin_respuesta",
+      "accion": "responder",
+      "claves": ["casi diariamente", "Instagram"],
+      "evidencia": "Visitá nuestro Instagram para ver el inventario actualizado. Publicamos casi diariamente lo nuevo que llega.",
+      "respuesta_ideal": "Publicamos casi todos los días. Seguinos en @retrosportstore.uy para ver lo nuevo que llega."
+    },
+    {
+      "cliente": "¿Cuál es el email de contacto?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["info@retrosportstore.uy"],
+      "evidencia": "Email: info@retrosportstore.uy",
+      "respuesta_ideal": "Escribinos a info@retrosportstore.uy o llamá al 2711-5894."
+    }
+  ],
+  [
+    {
+      "cliente": "¿Hacen envíos al interior del país?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["Interior del país", "consultar"],
+      "evidencia": "Interior del país: consultar. Usamos Correo Uruguayo o Antel Logistics.",
+      "respuesta_ideal": "Sí, hacemos envíos al interior pero necesita consultar costo y tiempos. Mandá un mensaje por WhatsApp o llamá."
+    },
+    {
+      "cliente": "¿Venden accesorios de ropa?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["Accesorios", "gorras", "mochilas", "cinturones"],
+      "evidencia": "Accesorios: gorras, mochilas, bolsos deportivos, cinturones, calcetines de marca.",
+      "respuesta_ideal": "Sí, tenemos gorras, mochilas, bolsos, cinturones y calcetines vintage de marca."
+    },
+    {
+      "cliente": "¿Quién es la dueña?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["Carolina Méndez"],
+      "evidencia": "Dueña: Carolina Méndez (15 años en vintage y moda retro)",
+      "respuesta_ideal": "La dueña es Carolina Méndez. Tiene 15 años de experiencia en moda vintage. Es apasionada por lo retro."
+    }
+  ],
+  [
+    {
+      "cliente": "Hola, acabo de recibir mi compra y una costura está suelta",
+      "tipo": "instruccion",
+      "accion": "responder",
+      "claves": ["15 días", "devolución", "boleta"],
+      "evidencia": "Devoluciones: hasta 15 días, con boleta. Reembolso en el mismo medio de pago.",
+      "respuesta_ideal": "Tenés 15 días para devolver. Trae la boleta y la prenda como vino. Te devolvemos el dinero en el mismo medio que pagaste."
+    },
+    {
+      "cliente": "¿Y si la cambio en la tienda?",
+      "tipo": "seguimiento",
+      "accion": "responder",
+      "claves": ["10 días", "cambios"],
+      "evidencia": "Cambios: 10 días desde la compra con boleta y prenda sin uso (con etiqueta).",
+      "respuesta_ideal": "Cambios tenemos hasta 10 días con boleta. Pero como la costura está suelta, es un defecto, así que mejor trae todo para que Carolina lo revise."
+    }
+  ]
+]

@@ -1,0 +1,240 @@
+[
+ [
+  {
+   "cliente": "buenas, cuanto cuesta el quintal de arroz?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "$63,50"
+   ],
+   "evidencia": "quintal (100 lb) ....... $63,50",
+   "respuesta_ideal": "Buenos días, bienvenido a Piladora San Jacinto. El quintal (100 lb) de arroz blanco grano largo cuesta $63,50."
+  },
+  {
+   "cliente": "¿y si llevo 12 quintales cuánto me sale todo?",
+   "tipo": "combinada",
+   "accion": "responder",
+   "claves": [
+    "738"
+   ],
+   "evidencia": "Descuento por volumen: desde 10 quintales en una misma compra, $2,00 menos por quintal.",
+   "respuesta_ideal": "Desde 10 quintales tiene $2,00 menos por quintal, o sea $61,50 cada uno: los 12 quintales le salen $738,00."
+  },
+  {
+   "cliente": "me lo llevan a la casa? vivo en Daule",
+   "tipo": "seguimiento",
+   "accion": "responder",
+   "claves": [
+    "sin costo"
+   ],
+   "evidencia": "Entregas a domicilio en Daule y Santa Lucía desde 5 quintales, sin costo.",
+   "respuesta_ideal": "Sí, en Daule entregamos a domicilio sin costo desde 5 quintales, así que sus 12 quintales se los llevamos gratis."
+  },
+  {
+   "cliente": "puedo pagar con tarjeta de credito?",
+   "tipo": "si_no",
+   "accion": "responder",
+   "claves": [
+    "No aceptamos tarjeta de crédito"
+   ],
+   "evidencia": "No aceptamos tarjeta de crédito.",
+   "respuesta_ideal": "No aceptamos tarjeta de crédito; puede pagar en efectivo, por transferencia o con tarjeta de débito."
+  },
+  {
+   "cliente": "¿El arroz que venden es de la cosecha de este año?",
+   "tipo": "sin_respuesta",
+   "accion": "abstenerse",
+   "claves": [],
+   "evidencia": null,
+   "respuesta_ideal": "No tengo ese dato; solo sé que el arroz envejecido tiene 6 meses. Puede consultarlo en la oficina al (04) 279-4410."
+  }
+ ],
+ [
+  {
+   "cliente": "Hola, quiero venderles arroz en cáscara, a cómo están pagando la saca?",
+   "tipo": "instruccion",
+   "accion": "responder",
+   "claves": [
+    "lunes",
+    "098 331 7702"
+   ],
+   "evidencia": "El precio de compra del arroz en cáscara cambia cada semana: nunca digas un precio de compra. Indica que se publica los lunes en la pizarra de la entrada y por WhatsApp al 098 331 7702.",
+   "respuesta_ideal": "El precio de compra cambia cada semana: se publica los lunes en la pizarra de la entrada y por WhatsApp al 098 331 7702."
+  },
+  {
+   "cliente": "que papeles necesito si es la primera vez que vendo",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "cédula",
+    "RUC o RISE",
+    "certificado de cuenta bancaria"
+   ],
+   "evidencia": "Requisitos para vender por primera vez: cédula, RUC o RISE, y certificado de cuenta bancaria a nombre del productor.",
+   "respuesta_ideal": "Necesita su cédula, RUC o RISE y un certificado de cuenta bancaria a nombre del productor."
+  },
+  {
+   "cliente": "y me pagan en efectivo o como?",
+   "tipo": "seguimiento",
+   "accion": "responder",
+   "claves": [
+    "3 días hábiles",
+    "cheque"
+   ],
+   "evidencia": "Pago: por transferencia bancaria en un máximo de 3 días hábiles, o en cheque el viernes siguiente. No pagamos en efectivo cargas de más de USD 2.000.",
+   "respuesta_ideal": "Se paga por transferencia en un máximo de 3 días hábiles o en cheque el viernes siguiente; en efectivo no se pagan cargas de más de USD 2.000."
+  },
+  {
+   "cliente": "si mi arroz llega con 23 de humedad cuanto me descuentan?",
+   "tipo": "combinada",
+   "accion": "responder",
+   "claves": [
+    "4,5"
+   ],
+   "evidencia": "por cada punto de humedad sobre 20 % se descuenta 1,5 % del peso",
+   "respuesta_ideal": "Son 3 puntos sobre el 20 %, a 1,5 % cada uno: se le descontaría el 4,5 % del peso."
+  },
+  {
+   "cliente": "¿cuánto cobran por ir a recoger el arroz a mi finca?",
+   "tipo": "sin_respuesta",
+   "accion": "abstenerse",
+   "claves": [],
+   "evidencia": null,
+   "respuesta_ideal": "No tengo información sobre un servicio de recogida en finca; le recomiendo consultar en la oficina al (04) 279-4410."
+  }
+ ],
+ [
+  {
+   "cliente": "cuanto cobran por pilar el arroz de uno",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "2,50"
+   ],
+   "evidencia": "| Pilado y pulido | USD 2,50 por quintal |",
+   "respuesta_ideal": "El pilado y pulido cuesta USD 2,50 por quintal; si necesita secado son USD 0,90 más por quintal."
+  },
+  {
+   "cliente": "tengo 15 quintales nomas, me lo reciben?",
+   "tipo": "seguimiento",
+   "accion": "responder",
+   "claves": [
+    "20 quintales"
+   ],
+   "evidencia": "Pedido mínimo de pilado: 20 quintales.",
+   "respuesta_ideal": "Lo siento, el pedido mínimo de pilado es de 20 quintales, así que 15 no alcanzan."
+  },
+  {
+   "cliente": "¿Y el pilado me lo pueden entregar en sacos de 50 libras?",
+   "tipo": "sin_respuesta",
+   "accion": "abstenerse",
+   "claves": [],
+   "evidencia": null,
+   "respuesta_ideal": "En la información solo figura el ensacado en saco de 100 lb; no sé si hacen sacos de 50 libras. Le sugiero preguntar en la oficina."
+  },
+  {
+   "cliente": "¿en cuántos días me lo tienen listo?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "2 a 4 días"
+   ],
+   "evidencia": "Entrega del arroz pilado: 2 a 4 días según la cola.",
+   "respuesta_ideal": "El arroz pilado se entrega en 2 a 4 días, según la cola; no le puedo dar un día exacto."
+  }
+ ],
+ [
+  {
+   "cliente": "Buenas tardes. La semana pasada me descontaron demasiado por impurezas, creo que la báscula estaba mal. ¿Con quién hablo?",
+   "tipo": "instruccion",
+   "accion": "derivar",
+   "claves": [],
+   "evidencia": "Reclamos por el pesaje o por los descuentos de humedad e impurezas: deriva a la Ing. Maritza Alvarado, en la báscula.",
+   "respuesta_ideal": "Buenas tardes. Para reclamos de pesaje o descuentos por impurezas, hable con la Ing. Maritza Alvarado, en la báscula."
+  },
+  {
+   "cliente": "otra cosa, cuanto vale el polvillo?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "$14,00"
+   ],
+   "evidencia": "Polvillo: saco de 40 kg, $14,00.",
+   "respuesta_ideal": "El polvillo cuesta $14,00 el saco de 40 kg."
+  },
+  {
+   "cliente": "¿Tienen laboratorio para analizar la semilla antes de sembrar?",
+   "tipo": "sin_respuesta",
+   "accion": "abstenerse",
+   "claves": [],
+   "evidencia": null,
+   "respuesta_ideal": "No tengo información de un servicio así; solo sé que a cada carga se le mide humedad e impurezas. Puede consultar en la oficina."
+  },
+  {
+   "cliente": "gracias, muy amable",
+   "tipo": "charla",
+   "accion": "charla",
+   "claves": [],
+   "evidencia": null,
+   "respuesta_ideal": "Con gusto, que tenga buena tarde."
+  }
+ ],
+ [
+  {
+   "cliente": "Puedo entrar con mi hijo de 10 años a ver las maquinas?",
+   "tipo": "si_no",
+   "accion": "responder",
+   "claves": [
+    "menores de 14 años"
+   ],
+   "evidencia": "Prohibido el ingreso de menores de 14 años a la zona de máquinas.",
+   "respuesta_ideal": "No, está prohibido el ingreso de menores de 14 años a la zona de máquinas."
+  },
+  {
+   "cliente": "venden semilla certificada?",
+   "tipo": "si_no",
+   "accion": "responder",
+   "claves": [
+    "no vendemos semilla"
+   ],
+   "evidencia": "¿Venden semilla certificada? No, somos piladora; no vendemos semilla ni insumos agrícolas.",
+   "respuesta_ideal": "No, somos piladora; no vendemos semilla ni insumos agrícolas."
+  },
+  {
+   "cliente": "¿A qué hora abren la tienda el sábado?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "06:00"
+   ],
+   "evidencia": "Sábados: 06:00 a 13:00",
+   "respuesta_ideal": "Los sábados abrimos a las 06:00 y atendemos hasta las 13:00."
+  },
+  {
+   "cliente": "¿hay donde dejar el carro?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "cuatro puestos"
+   ],
+   "evidencia": "¿Hay parqueo para clientes de la tienda? Sí, cuatro puestos frente a la tienda.",
+   "respuesta_ideal": "Sí, hay cuatro puestos de parqueo frente a la tienda."
+  },
+  {
+   "cliente": "¿cuánto cuesta el quintal de arroz integral?",
+   "tipo": "sin_respuesta",
+   "accion": "abstenerse",
+   "claves": [],
+   "evidencia": null,
+   "respuesta_ideal": "No tengo precio de arroz integral en la información; solo blanco grano largo, envejecido y arrocillo. Consulte en la oficina al (04) 279-4410."
+  },
+  {
+   "cliente": "ya, gracias. chao",
+   "tipo": "charla",
+   "accion": "charla",
+   "claves": [],
+   "evidencia": null,
+   "respuesta_ideal": "Gracias a usted, hasta pronto."
+  }
+ ]
+]

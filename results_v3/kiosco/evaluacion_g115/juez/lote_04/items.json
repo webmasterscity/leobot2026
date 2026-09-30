@@ -1,0 +1,490 @@
+[
+ {
+  "id": "i0120",
+  "negocio": "W6_n2",
+  "turnos_previos_del_cliente": [
+   "a que hora cierran?"
+  ],
+  "cliente": "y la cocina hasta que hora?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "3:30 p. m."
+  ],
+  "evidencia": "La cocina trabaja de 11:00 a. m. a 3:30 p. m.",
+  "respuesta_ideal": "La cocina trabaja de 11:00 a. m. a 3:30 p. m.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «La cocina trabaja de 11:00 a. m. a 3:30 p. m. La última salida a los estanques es a las 3:00 p. m»."
+ },
+ {
+  "id": "i0121",
+  "negocio": "W8_n3",
+  "turnos_previos_del_cliente": [
+   "buenas, tengo 34 años y nunca he cogido una espada, ¿puedo apuntarme?",
+   "que horario tiene el grupo de adultos que empiezan"
+  ],
+  "cliente": "¿Se puede pagar la mensualidad en efectivo?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "Domiciliación bancaria"
+  ],
+  "evidencia": "Domiciliación bancaria obligatoria para las cuotas mensuales; se cobran entre el 1 y el 5 de cada mes.",
+  "respuesta_ideal": "No, las cuotas mensuales van obligatoriamente por domiciliación bancaria y se cobran entre el 1 y el 5 de cada mes. En efectivo o bizum solo se pueden pagar la cuota de socio y la licencia.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Domiciliación bancaria obligatoria para las cuotas mensuales; se cobran entre el 1 y el 5 de cada mes. La cuota de socio y la licencia se pueden pagar en efectivo o por bizum al 600 41 82 93»."
+ },
+ {
+  "id": "i0122",
+  "negocio": "W3_n4",
+  "turnos_previos_del_cliente": [
+   "¿Hacen envíos a Buenos Aires?"
+  ],
+  "cliente": "¿Cuánto sale el envío a domicilio en Montevideo?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "$150 UYU",
+   "gratis",
+   "$2000"
+  ],
+  "evidencia": "Dentro de Montevideo: $150 UYU a domicilio (gratis a partir de $2000 de compra).",
+  "respuesta_ideal": "Es $150 pesos, pero gratis si tu compra supera $2000. Hacemos envío rápido dentro de la capital.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Dentro de Montevideo: $150 UYU a domicilio (gratis a partir de $2000 de compra)»."
+ },
+ {
+  "id": "i0123",
+  "negocio": "W1_n2",
+  "turnos_previos_del_cliente": [
+   "Me caso en marzo y quiero 120 velas con nuestros nombres, ¿cuánto me saldría?",
+   "¿Cuánto tardan en grabar el nombre?"
+  ],
+  "cliente": "y si despues no me gustan las personalizadas las puedo cambiar?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "no tienen cambio"
+  ],
+  "evidencia": "Las velas personalizadas no tienen cambio.",
+  "respuesta_ideal": "No, las velas personalizadas no tienen cambio.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Las velas personalizadas no tienen cambio»."
+ },
+ {
+  "id": "i0124",
+  "negocio": "W1_n2",
+  "turnos_previos_del_cliente": [
+   "Buenas tardes",
+   "¿A qué hora cierran hoy? es martes",
+   "cuanto cuesta la vela aromatica en vaso de barro?",
+   "¿y qué olores tiene?"
+  ],
+  "cliente": "¿Cuántas horas dura prendida esa de 200 g?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo el dato de cuántas horas dura en total. Lo que sí le puedo decir es que no conviene encenderla más de 4 horas seguidas.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Producto: Vela aromática de soya en vaso de barro*; Tamaño: 200 g; Precio: Q95.00»."
+ },
+ {
+  "id": "i0125",
+  "negocio": "W2_n1",
+  "turnos_previos_del_cliente": [
+   "quiero llevarle comida a mi hijo, como tiene q ir?"
+  ],
+  "cliente": "y de cuanto peso puede ser?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "2 kg"
+  ],
+  "evidencia": "Máximo 2 kg por visita.",
+  "respuesta_ideal": "Máximo 2 kg por visita.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Se reciben los miércoles de 09:00 a 12:00 h. Peso máximo por encomienda: 5 kg. Todas se revisan frente a los funcionarios»."
+ },
+ {
+  "id": "i0126",
+  "negocio": "W5_n3",
+  "turnos_previos_del_cliente": [
+   "Buenos días, necesito 24 cuadernos de 100 hojas para la escuela, ¿cuánto me sale?",
+   "Y si me los llevan a la escuela, que está en la zona 1 de Xela, ¿cuánto me cobran?",
+   "¿Qué formas de pago aceptan?"
+  ],
+  "cliente": "¿Me pueden dar una cotización por escrito para que la apruebe la directora?",
+  "tipo": "instruccion",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "Si el cliente pide una cotización por escrito o quiere hacer un pedido por encargo al por mayor, páselo con la Licda. Sandra Tzoc al WhatsApp 5520-3317.",
+  "respuesta_ideal": "Las cotizaciones por escrito las hace la Licda. Sandra Tzoc; escríbale al WhatsApp 5520-3317.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Transferencia o depósito bancario: solo para pedidos al por mayor»."
+ },
+ {
+  "id": "i0127",
+  "negocio": "W8_n1",
+  "turnos_previos_del_cliente": [
+   "Buenas, tengo dos hijos de 7 y 10 años, cuanto me saldria la temporada completa para los dos?",
+   "¿y si solo van en enero?",
+   "¿Puedo pagar en cuotas con tarjeta de crédito?"
+  ],
+  "cliente": "¿Hasta qué día tengo tiempo para pagar cada mes?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "1 al 10"
+  ],
+  "evidencia": "Los aranceles se abonan por adelantado, del 1 al 10 de cada mes.",
+  "respuesta_ideal": "Los aranceles se pagan por adelantado, del 1 al 10 de cada mes.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Los aranceles se abonan por adelantado, del 1 al 10 de cada mes»."
+ },
+ {
+  "id": "i0128",
+  "negocio": "W8_n4",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Hola! cuanto sale el champu solido?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "390"
+  ],
+  "evidencia": "Champú sólido (80 g) | $U 390",
+  "respuesta_ideal": "¡Hola! Bienvenido/a a La Espuma del Sur. El champú sólido de 80 g sale $U 390.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «El champú sólido rinde como dos botellas de 250 ml aprox»."
+ },
+ {
+  "id": "i0129",
+  "negocio": "W7_n3",
+  "turnos_previos_del_cliente": [
+   "¿Puedo cancelar mi reserva si cambio de opinión?"
+  ],
+  "cliente": "¿Puedo cambiar la fecha sin perder dinero?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "Cambio de fechas sin cargo",
+   "10 días"
+  ],
+  "evidencia": "Cambio de fechas sin cargo si se avisa con 10 días de anticipación",
+  "respuesta_ideal": "Sí, podés cambiar la fecha sin cargo si avisas con 10 días de anticipación.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Cambio de fechas sin cargo si se avisa con 10 días de anticipación»."
+ },
+ {
+  "id": "i0130",
+  "negocio": "W7_n2",
+  "turnos_previos_del_cliente": [],
+  "cliente": "¿Hacen reparaciones eléctricas?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "Reparaciones eléctricas generales",
+   "COP $80.000 en adelante"
+  ],
+  "evidencia": "Reparaciones eléctricas generales: COP $80.000 en adelante",
+  "respuesta_ideal": "Sí, hacemos reparaciones eléctricas generales a partir de COP $80.000. El costo exacto depende del problema.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Reparaciones eléctricas generales: COP $80.000 en adelante»."
+ },
+ {
+  "id": "i0131",
+  "negocio": "W3_n2",
+  "turnos_previos_del_cliente": [
+   "¿Hasta qué hora atienden hoy?"
+  ],
+  "cliente": "¿Y mañana sábado?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "09:00 – 13:30"
+  ],
+  "evidencia": "Sábado: 09:00 – 13:30",
+  "respuesta_ideal": "El sábado abrimos de 09:00 a 13:30, así que tienes la mañana disponible.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Cambios de pantalla de celular: $80 000 – $180 000 (según modelo): Reparación de botones/conectores: $25 000 – $50 000; tiempo: 1–3 horas: tiempo: 45 minutos – 1 hora»."
+ },
+ {
+  "id": "i0132",
+  "negocio": "W2_n3",
+  "turnos_previos_del_cliente": [
+   "buenas tardes, cuanto cuesta el internamiento por mes?"
+  ],
+  "cliente": "¿y que incluye?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "tres comidas diarias",
+   "terapia individual y grupal"
+  ],
+  "evidencia": "Incluye alojamiento, tres comidas diarias y refrigerios, terapia individual y grupal y atención médica básica.",
+  "respuesta_ideal": "Incluye alojamiento, tres comidas diarias y refrigerios, terapia individual y grupal y atención médica básica.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Programa residencial. Dura 90 días, con capacidad para 28 residentes. Costo: L. 18,500 por mes, más una inscripción única de L. 2,000. Incluye alojamiento, tres comidas diarias y refrigerios, terapia individual y grupal y atención médica básica. No incluye exámenes de laboratorio externos ni medicamentos especiales»."
+ },
+ {
+  "id": "i0133",
+  "negocio": "W4_n1",
+  "turnos_previos_del_cliente": [
+   "Hola buenas, a q hora abren los sabados?"
+  ],
+  "cliente": "y los domingos?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "cerrado"
+  ],
+  "evidencia": "Domingos y feriados: cerrado. Excepción: en las Fiestas de Cuenca (1 al 3 de noviembre) la tienda abre también el domingo hasta las 14h00.",
+  "respuesta_ideal": "Los domingos y feriados estamos cerrados; la única excepción es el domingo de las Fiestas de Cuenca, que abrimos hasta las 14h00.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Excepción: en las Fiestas de Cuenca (1 al 3 de noviembre) la tienda abre también el domingo hasta las 14h00»."
+ },
+ {
+  "id": "i0134",
+  "negocio": "W4_n2",
+  "turnos_previos_del_cliente": [
+   "hola, quiero ponerle una cruz de madera a la parcela de mi mama, que se puede poner?",
+   "y cuanto vale la placa de bronce?",
+   "y si quiero ponerle mas de 40 letras?"
+  ],
+  "cliente": "cuanto demora en estar lista la placa?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo el plazo de entrega de la placa; puede consultarlo en la oficina, al 2292 41 15.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Servicio: Placa de bronce definitiva (hasta 40 letras); Precio: $U 6.400»."
+ },
+ {
+  "id": "i0135",
+  "negocio": "W1_n4",
+  "turnos_previos_del_cliente": [
+   "¿A qué hora abren el sábado?",
+   "y el deposito tambien abre?"
+  ],
+  "cliente": "¿Hacen delivery el sábado?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "No hacemos delivery los sábados"
+  ],
+  "evidencia": "- No hacemos delivery los sábados.",
+  "respuesta_ideal": "No, no hacemos delivery los sábados.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «No hacemos delivery los sábados»."
+ },
+ {
+  "id": "i0136",
+  "negocio": "W3_n2",
+  "turnos_previos_del_cliente": [
+   "¿Hasta qué hora atienden hoy?"
+  ],
+  "cliente": "¿Y mañana sábado?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "09:00 – 13:30"
+  ],
+  "evidencia": "Sábado: 09:00 – 13:30",
+  "respuesta_ideal": "El sábado abrimos de 09:00 a 13:30, así que tienes la mañana disponible.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Sábado: 09:00 – 13:30»."
+ },
+ {
+  "id": "i0137",
+  "negocio": "W1_n1",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Quiero ir al taller de cultivo, ¿cuándo es?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "primer sábado de cada mes",
+   "15:00 a 17:30"
+  ],
+  "evidencia": "El primer sábado de cada mes, de 15:00 a 17:30, en la sala de cultivo.",
+  "respuesta_ideal": "El taller es el primer sábado de cada mes, de 15:00 a 17:30, en la sala de cultivo.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «El primer sábado de cada mes, de 15:00 a 17:30, en la sala de cultivo»."
+ },
+ {
+  "id": "i0138",
+  "negocio": "W1_n1",
+  "turnos_previos_del_cliente": [
+   "hola! a que hora abren el sabado?",
+   "¿y el domingo?",
+   "Cuánto sale la melena de león?",
+   "Quiero 2 bandejas de melena y una de shiitake, cuánto sería?"
+  ],
+  "cliente": "¿Me lo pueden llevar a la casa? Vivo en Llanquihue",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "$3.500",
+   "miércoles y viernes"
+  ],
+  "evidencia": "Despachamos a domicilio en Puerto Varas y Llanquihue los miércoles y viernes. Costo: $2.500 en Puerto Varas y $3.500 en Llanquihue.",
+  "respuesta_ideal": "Sí, despachamos a Llanquihue los miércoles y viernes; el despacho cuesta $3.500.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Despachamos a domicilio en Puerto Varas y Llanquihue los miércoles y viernes»."
+ },
+ {
+  "id": "i0139",
+  "negocio": "W7_n4",
+  "turnos_previos_del_cliente": [
+   "¿Qué café recomiendan?",
+   "Quiero un cappuccino, por favor."
+  ],
+  "cliente": "¿Tienen WiFi?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "Conexión WiFi gratuita"
+  ],
+  "evidencia": "Conexión WiFi gratuita",
+  "respuesta_ideal": "Sí, WiFi gratuito para quien compre algo en la tienda. ¿Necesitas que te pase la contraseña?",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Conexión WiFi gratuita»."
+ },
+ {
+  "id": "i0140",
+  "negocio": "W5_n3",
+  "turnos_previos_del_cliente": [
+   "Buenos días, necesito 24 cuadernos de 100 hojas para la escuela, ¿cuánto me sale?",
+   "Y si me los llevan a la escuela, que está en la zona 1 de Xela, ¿cuánto me cobran?"
+  ],
+  "cliente": "¿Qué formas de pago aceptan?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "Visa o Mastercard",
+   "Q50.00"
+  ],
+  "evidencia": "Tarjeta Visa o Mastercard: compra mínima de Q50.00 con tarjeta.",
+  "respuesta_ideal": "Aceptamos efectivo y tarjeta Visa o Mastercard (compra mínima de Q50.00 con tarjeta); transferencia solo en pedidos al por mayor, y no se aceptan cheques.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «No se aceptan cheques»."
+ },
+ {
+  "id": "i0141",
+  "negocio": "W3_n3",
+  "turnos_previos_del_cliente": [
+   "Hola, ¿qué precio tiene una habitación para 2?"
+  ],
+  "cliente": "¿Incluye almuerzo y cena?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "Desayuno incluido",
+   "Almuerzo",
+   "Cena"
+  ],
+  "evidencia": "Desayuno incluido: [...]. Almuerzo [...] $30 Bs. Cena [...] $25 Bs",
+  "respuesta_ideal": "Solo el desayuno está incluido. Almuerzo cuesta 30 Bs y cena 25 Bs. Pero la comida es de la casa, muy fresca.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Comidas servidas: desayuno 07:00–09:00; almuerzo 12:30–14:00; cena 19:30–21:00»."
+ },
+ {
+  "id": "i0142",
+  "negocio": "W2_n2",
+  "turnos_previos_del_cliente": [],
+  "cliente": "me cobraron de mas en una balanza del pabellon A, con quien reclamo?",
+  "tipo": "instruccion",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "Los reclamos por balanzas, cobros de más o mala atención se derivan a la Sra. Blanca Caballero, encargada de reclamos, llamando al (021) 555 210, interno 4.",
+  "respuesta_ideal": "Puede comunicarse con la Sra. Blanca Caballero, encargada de reclamos, al (021) 555 210, interno 4.",
+  "respuesta_a_calificar": "Sobre eso, las indicaciones del negocio dicen: «Los reclamos por balanzas, cobros de más o mala atención se derivan a la Sra. Blanca Caballero, encargada de reclamos, llamando al (021) 555 210, interno 4»."
+ },
+ {
+  "id": "i0143",
+  "negocio": "W5_n4",
+  "turnos_previos_del_cliente": [
+   "¿Ustedes instalan estufas?",
+   "¿Y me puede decir si puedo alargar el cañón yo mismo?",
+   "¿Venden estufas?",
+   "¿Limpian estufas a pellet?",
+   "¿Cuánto sale el gorro para el cañón?"
+  ],
+  "cliente": "¿Cuánta garantía tiene ese gorro?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo información sobre la garantía del sombrerete; puede preguntarlo al (67) 2 23 4518.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Sí. Si dentro de 30 días el cañón tira mal por una limpieza deficiente, volvemos sin costo»."
+ },
+ {
+  "id": "i0144",
+  "negocio": "W5_n2",
+  "turnos_previos_del_cliente": [
+   "Egun on! Estoy pensando en un paraguas a medida para mi aita, ¿cuánto tardáis en hacerlo?"
+  ],
+  "cliente": "Vale, quiero encargarlo, ¿cómo lo hago?",
+  "tipo": "instruccion",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "Los encargos de paraguas a medida los gestiona Itziar Etxebarria: deriva al cliente al 944 15 62 03 o a tienda@paragueriaibaizabal.eus.",
+  "respuesta_ideal": "Los encargos a medida los gestiona Itziar Etxebarria: contacta con ella en el 944 15 62 03 o en tienda@paragueriaibaizabal.eus.",
+  "respuesta_a_calificar": "Vale, quiero encargarlo. No lo sé: no encontré esa información en el texto que tengo."
+ },
+ {
+  "id": "i0145",
+  "negocio": "W2_n1",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Q papeles necesito para inscribirme como visita?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "cédula de identidad vigente"
+  ],
+  "evidencia": "Presentar cédula de identidad vigente (los extranjeros, pasaporte o cédula chilena para extranjeros).",
+  "respuesta_ideal": "Necesita cédula de identidad vigente; si es extranjero, pasaporte o cédula chilena para extranjeros.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Los abogados atienden de lunes a viernes de 09:00 a 17:00 h con credencial vigente, sin necesidad de inscripción de visita»."
+ },
+ {
+  "id": "i0146",
+  "negocio": "W5_n4",
+  "turnos_previos_del_cliente": [
+   "Buenas tardes, cuanto cobran por limpiar el cañon de una estufa a leña?",
+   "mi cañon tiene 8 metros",
+   "Vivo en el Valle Simpson, ¿me cobran extra?",
+   "Ya, quiero que vengan el jueves en la mañana",
+   "¿Y cuánto rato se demoran?"
+  ],
+  "cliente": "¿tengo que hacer algo antes de que lleguen?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "12 horas",
+   "2 metros"
+  ],
+  "evidencia": "1. La estufa debe estar apagada al menos 12 horas antes (fría).\n2. Despeje 2 metros alrededor de la estufa (muebles, alfombras, leña).\n3. Debe haber un adulto en la casa durante todo el trabajo.\n4. Deje a las mascotas en otra pieza.",
+  "respuesta_ideal": "Sí: tenga la estufa apagada al menos 12 horas antes, despeje 2 metros alrededor, que haya un adulto en la casa y deje a las mascotas en otra pieza.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Si no avisa y la cuadrilla llega y no puede trabajar, se cobra la visita fallida: $10.000»."
+ },
+ {
+  "id": "i0147",
+  "negocio": "W2_n4",
+  "turnos_previos_del_cliente": [],
+  "cliente": "y con tarjeta se puede pagar?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "recargo del 3 %"
+  ],
+  "evidencia": "con tarjeta (la tarjeta tiene recargo del 3 %)",
+  "respuesta_ideal": "Sí, con tarjeta, que tiene un recargo del 3 %.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Se paga en efectivo, por transferencia o con tarjeta (la tarjeta tiene recargo del 3 %)»."
+ },
+ {
+  "id": "i0148",
+  "negocio": "W2_n1",
+  "turnos_previos_del_cliente": [],
+  "cliente": "cuanto cuesta el casillero?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "$1.000 por visita"
+  ],
+  "evidencia": "Casilleros para guardar pertenencias: $1.000 por visita.",
+  "respuesta_ideal": "El casillero cuesta $1.000 por visita.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Casilleros para guardar pertenencias: $1.000 por visita»."
+ },
+ {
+  "id": "i0149",
+  "negocio": "W1_n1",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Buenas tardes. ¿El shiitake lo venden por kilo?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "solo en bandeja"
+  ],
+  "evidencia": "La ostra gris también se vende por kilo: $11.500 el kg. Las demás variedades se venden solo en bandeja.",
+  "respuesta_ideal": "No, el shiitake se vende solo en bandeja de 250 g, a $4.600. Por kilo solo vendemos la ostra gris.",
+  "respuesta_a_calificar": "Buenas tardes. No lo sé: no encontré esa información en el texto que tengo."
+ }
+]

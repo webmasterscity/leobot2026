@@ -1,0 +1,24 @@
+[
+  [
+    {"cliente": "Hola, ¿qué marcas de alimento para perro grande tienen?", "tipo": "directa", "accion": "responder", "claves": ["Royal Canin", "Hill's", "Purina Pro Plan", "Alpo"], "evidencia": "Raza grande: marcas Premium (Royal Canin, Hill's, Purina Pro Plan) y económicas (Alpo)", "respuesta_ideal": "Para perros grandes tenemos varias marcas. Las premium son Royal Canin, Hill's y Purina Pro Plan. También ofrecemos opciones más económicas como Alpo."},
+    {"cliente": "¿Cuánto cuesta la bolsa de Purina Pro Plan para raza grande?", "tipo": "directa", "accion": "responder", "claves": ["$280 - $540 por kg"], "evidencia": "Raza grande: $280 - $540 por kg", "respuesta_ideal": "El precio depende de la presentación, pero está entre $280 y $540 por kilogramo. El exacto lo vemos cuando lo saques del mostrador."}
+  ],
+  [
+    {"cliente": "Mi gato tiene comezón en la piel. ¿Qué le recomiendan?", "tipo": "instruccion", "accion": "derivar", "claves": ["veterinario"], "evidencia": "Si alguien pregunta sobre problemas de salud... No hagas recomendaciones médicas", "respuesta_ideal": "La comezón requiere revisión veterinaria. Te recomiendo que lleves a tu gato con un veterinario para que sepa qué causa es. Nosotros sí tenemos champú medicinal leve si el vet lo receta."},
+    {"cliente": "¿Y qué tal este champú que ustedes tienen?", "tipo": "directa", "accion": "responder", "claves": ["champú medicinal", "cremas dermatológicas suaves"], "evidencia": "Champú medicinal, cremas dermatológicas suaves", "respuesta_ideal": "Sí tenemos champú medicinal, pero lo mejor es que el veterinario lo revise primero y te indique cuál es el apropiado."}
+  ],
+  [
+    {"cliente": "¿Hacen baño y peluquería aquí?", "tipo": "si_no", "accion": "responder", "claves": ["no hacemos", "baño y peluquería"], "evidencia": "NO OFRECEMOS baño y peluquería para mascotas", "respuesta_ideal": "No, eso no lo hacemos. Pero sí tenemos cepillos, champú y todo lo que necesitas para el cuidado en casa."},
+    {"cliente": "¿Ustedes cuidan perros mientras uno está fuera?", "tipo": "sin_respuesta", "accion": "abstenerse", "claves": [], "evidencia": null, "respuesta_ideal": "No, guardería no la ofrecemos. Te recomiendo buscar una guardería o pet hotel cerca de tu casa."},
+    {"cliente": "Está bien. Entonces me llevo un juguete para mi perro. ¿Qué tienen?", "tipo": "directa", "accion": "responder", "claves": ["peluches", "huesos", "cuerdas", "pelotas"], "evidencia": "Juguetes: peluches, huesos, cuerdas, pelotas", "respuesta_ideal": "Tenemos una variedad: peluches, huesos de goma, cuerdas y pelotas. ¿Qué tipo le gusta más a tu perro?"},
+    {"cliente": "¿Tienen promoción en juguetes?", "tipo": "combinada", "accion": "responder", "claves": ["10% descuento", "dos o más"], "evidencia": "10% en todos los juguetes si compras dos o más", "respuesta_ideal": "Sí, si compras dos juguetes o más, obtén 10% descuento."}
+  ],
+  [
+    {"cliente": "Necesito un transportín para mi gato. ¿Qué tamaños tienen?", "tipo": "sin_respuesta", "accion": "abstenerse", "claves": [], "evidencia": null, "respuesta_ideal": "Tenemos transportines disponibles. Para los tamaños y precios exactos, mejor vienes a verlos en tienda o llama al 55-6734-2109. ¿A qué zona llegarías?"},
+    {"cliente": "A Coyoacán nomás.", "tipo": "seguimiento", "accion": "responder", "claves": ["Coyoacán", "zona de cobertura"], "evidencia": "Tienda física en Coyoacán", "respuesta_ideal": "Perfecto, vívenos en Av. Coyoacán 2847. Abierto hoy hasta las 8 p.m. Ven a ver los transportines."}
+  ],
+  [
+    {"cliente": "Mi perro se lastimó la pata y está cojeando. ¿Qué hago?", "tipo": "instruccion", "accion": "derivar", "claves": ["veterinaria", "emergencia"], "evidencia": "Si alguien llega con una mascota... herida... Lleva a tu mascota ya a una clínica veterinaria", "respuesta_ideal": "Eso es importante. Lleva a tu perro a una clínica veterinaria de emergencia ya. Nosotros no podemos ayudarte con eso, pero el vet lo revisará y sabrá qué hacer."},
+    {"cliente": "Está bien. Gracias de todas formas.", "tipo": "charla", "accion": "charla", "claves": [], "evidencia": null, "respuesta_ideal": "Que se mejore pronto. Cuando esté mejor, vienes y te ayudamos con alimento y accesorios."}
+  ]
+]

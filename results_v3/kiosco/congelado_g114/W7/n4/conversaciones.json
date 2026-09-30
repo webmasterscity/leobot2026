@@ -1,0 +1,166 @@
+[
+  [
+    {
+      "cliente": "Hola, ¿qué panes frescos tienen?",
+      "tipo": "sin_respuesta",
+      "accion": "responder",
+      "claves": ["fresco"],
+      "evidencia": "hornamos tres veces al día para garantizar frescura",
+      "respuesta_ideal": "¡Bienvenido! Hornamos fresco tres veces al día. Tenemos baguette, bolillos, pan integral, roscas de queso y más. Te invito a que vengas a ver o llames para confirmar qué está listo ahora."
+    },
+    {
+      "cliente": "¿Cuál es el precio de la baguette?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["L. 18"],
+      "evidencia": "Baguette tradicional... Baguette: L. 18",
+      "respuesta_ideal": "La baguette cuesta L. 18."
+    },
+    {
+      "cliente": "¿Y los bolillos?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["L. 8"],
+      "evidencia": "Bolillo: L. 8",
+      "respuesta_ideal": "Los bolillos cuestan L. 8 cada uno."
+    },
+    {
+      "cliente": "¿Tienen pan integral?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["pan integral"],
+      "evidencia": "Panes: Baguette tradicional, pan integral, pan casero, bolillos, roscas de queso",
+      "respuesta_ideal": "Sí, tenemos pan integral. El kilo cuesta L. 60."
+    }
+  ],
+  [
+    {
+      "cliente": "¿A qué hora abren mañana?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["6:00 AM"],
+      "evidencia": "Lunes a viernes: 6:00 AM a 7:00 PM",
+      "respuesta_ideal": "Mañana abrimos a las 6:00 AM si es entre lunes y viernes. Si es sábado, abrimos a las 7:00 AM."
+    },
+    {
+      "cliente": "¿Cierran los domingos?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["Domingos: 7:00 AM a 2:00 PM"],
+      "evidencia": "Domingos: 7:00 AM a 2:00 PM",
+      "respuesta_ideal": "No cerramos domingo, pero tenemos horario reducido: abrimos a las 7:00 AM y cerramos a las 2:00 PM."
+    },
+    {
+      "cliente": "¿Atienden en Navidad?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["Cerrado: Navidad"],
+      "evidencia": "Cerrado: Martes de Carnaval y Navidad",
+      "respuesta_ideal": "No, en Navidad estamos cerrado. También cerramos el Martes de Carnaval. Abrimos nuevamente el día siguiente."
+    }
+  ],
+  [
+    {
+      "cliente": "Necesito un pastel para el 5 de octubre. ¿Cuánto cuesta?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["L. 250–350"],
+      "evidencia": "Pastel decorado (9 porciones): L. 250–350",
+      "respuesta_ideal": "El pastel decorado para 9 porciones cuesta entre L. 250 y L. 350, según la complejidad. Pero necesitas hacer el pedido con 48 horas de anticipación mínimo."
+    },
+    {
+      "cliente": "¿Qué tal si es muy personalizado? ¿Sigue siendo 48 horas?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["72 horas si es sin gluten o muy personalizado"],
+      "evidencia": "Pedidos de pastel decorado: 48 horas de anticipación mínimo; 72 horas si es sin gluten o muy personalizado",
+      "respuesta_ideal": "Si es muy personalizado o sin gluten, son 72 horas de anticipación. Así damos tiempo a nuestro pastelero para hacerlo bien."
+    },
+    {
+      "cliente": "¿Me ayudan con el diseño?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["Asesoría gratuita en diseño de pasteles"],
+      "evidencia": "Asesoría gratuita en diseño de pasteles para eventos",
+      "respuesta_ideal": "Claro, ofrecemos asesoría gratuita en diseño. Llama o pasa por acá y hablamos con Julio, nuestro pastelero, sobre tu idea."
+    }
+  ],
+  [
+    {
+      "cliente": "¿Venden pasteles congelados de otras marcas?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["No hacemos devoluciones de dinero", "solo nuestro producto fresco"],
+      "evidencia": "Productos congelados de otras marcas no tenemos (solo nuestro producto fresco)",
+      "respuesta_ideal": "No, solo vendemos nuestros productos frescos. No tenemos marcas congeladas de otros. Todo lo nuestro es hecho acá y fresco del horno."
+    },
+    {
+      "cliente": "¿Hacen entregas a domicilio?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["pedidos mayores a L. 500"],
+      "evidencia": "Entregas a domicilio en Tegucigalpa para pedidos mayores a L. 500 (sin costo adicional)",
+      "respuesta_ideal": "Sí, en Tegucigalpa entregamos a domicilio si tu pedido es mayor a L. 500, sin costo. Pago al momento de entrega."
+    },
+    {
+      "cliente": "Vivo fuera de Tegucigalpa. ¿Me entregan allá?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "Normalmente entregamos en Tegucigalpa. Para otros municipios, te recomiendo que llames al (504) 2239-5678 o WhatsApp (504) 9876-5432 para consultar disponibilidad."
+    }
+  ],
+  [
+    {
+      "cliente": "¿Tienen productos sin gluten?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["pan sin gluten"],
+      "evidencia": "Productos dietéticos: Pan sin sal (bajo sodio), pan integral sin azúcar, repostería sin gluten (bajo pedido)",
+      "respuesta_ideal": "Sí, hacemos pan y repostería sin gluten, pero bajo pedido. Necesitas 72 horas de anticipación y consultar si hay alergia a otros ingredientes."
+    },
+    {
+      "cliente": "¿Con qué ingredientes trabajan que podría causar alergia?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["leche", "huevo", "gluten", "frutos secos"],
+      "evidencia": "Trabajamos con leche, huevo, gluten y frutos secos",
+      "respuesta_ideal": "Trabajamos con leche, huevo, gluten y frutos secos. Si tienes alergia, consulta bien antes de hacer pedido, especialmente si es algo personalizado."
+    },
+    {
+      "cliente": "¿Puedo traer una foto para que la pongan en el pastel?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["foto comestible"],
+      "evidencia": "Catering para eventos: pan, pasteles, dulces personalizados",
+      "respuesta_ideal": "Sí, tenemos foto comestible. Trae tu foto propia o danos la tuya y la ponemos en el pastel."
+    },
+    {
+      "cliente": "¿Qué formas de pago aceptan?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["Efectivo", "Tarjeta de débito", "Transferencia bancaria"],
+      "evidencia": "Formas de pago: Efectivo | Tarjeta de débito | Transferencia bancaria",
+      "respuesta_ideal": "Aceptamos efectivo, tarjeta de débito y transferencia bancaria."
+    }
+  ],
+  [
+    {
+      "cliente": "Compré un pan ayer y hoy está duro. ¿Me lo cambian?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["defecto real de fabricación, canje", "No hay reembolso"],
+      "evidencia": "Devoluciones: no aplican (alimento perecedero). Revisa tu pedido antes de retirarlo.",
+      "respuesta_ideal": "Si es un defecto de fabricación, hacemos canje. Pero ten en cuenta que el pan es fresco; si lo dejaste fuera, se pone duro naturalmente. Trae el pan y verificamos."
+    },
+    {
+      "cliente": "¿Tienen conservantes en los productos?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["NO contienen conservantes artificiales"],
+      "evidencia": "Nuestro pan y dulces NO contienen conservantes artificiales",
+      "respuesta_ideal": "No, nuestro pan y dulces no tienen conservantes artificiales. Por eso son frescos y se venden rápido. Si buscas algo en horario tarde, mejor llama con anticipación."
+    }
+  ]
+]

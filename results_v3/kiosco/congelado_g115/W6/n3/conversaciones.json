@@ -1,0 +1,42 @@
+[
+  [
+    {"cliente": "buenas tardes, a q hora cierran hoy? es domingo", "tipo": "directa", "accion": "responder", "claves": ["6:00 p. m."], "evidencia": "Domingos: 10:00 a. m. a 6:00 p. m.", "respuesta_ideal": "Hola, bienvenido a Cibernet La Esquina. Los domingos cerramos a las 6:00 p. m."},
+    {"cliente": "y mañana lunes?", "tipo": "seguimiento", "accion": "responder", "claves": ["9:00 p. m."], "evidencia": "Lunes a sábado: 8:00 a. m. a 9:00 p. m.", "respuesta_ideal": "De lunes a sábado atendemos de 8:00 a. m. a 9:00 p. m."},
+    {"cliente": "y en feriados?", "tipo": "seguimiento", "accion": "responder", "claves": ["10:00 a. m. a 4:00 p. m."], "evidencia": "Feriados: 10:00 a. m. a 4:00 p. m. (no abrimos el 25 de diciembre)", "respuesta_ideal": "En feriados abrimos de 10:00 a. m. a 4:00 p. m."},
+    {"cliente": "abren en navidad?", "tipo": "si_no", "accion": "responder", "claves": ["no abrimos el 25 de diciembre"], "evidencia": "Feriados: 10:00 a. m. a 4:00 p. m. (no abrimos el 25 de diciembre)", "respuesta_ideal": "No, el 25 de diciembre no abrimos."}
+  ],
+  [
+    {"cliente": "cuanto cobran por imprimir 15 hojas a color?", "tipo": "combinada", "accion": "responder", "claves": ["L 10.00", "150"], "evidencia": "Impresión a color (por página)\tL 10.00", "respuesta_ideal": "La impresión a color cuesta L 10.00 por página, así que 15 hojas serían L 150.00."},
+    {"cliente": "y en blanco y negro?", "tipo": "seguimiento", "accion": "responder", "claves": ["L 3.00"], "evidencia": "Impresión blanco y negro (por página)\tL 3.00", "respuesta_ideal": "En blanco y negro son L 3.00 por página."},
+    {"cliente": "puedo imprimir desde mi celular?", "tipo": "si_no", "accion": "responder", "claves": ["desde USB, desde correo o desde WhatsApp"], "evidencia": "* Imprimimos desde USB, desde correo o desde WhatsApp.", "respuesta_ideal": "Sí, imprimimos desde USB, desde correo o desde WhatsApp; si el archivo viene del celular conviene que sea PDF."},
+    {"cliente": "necesito imprimir un plano grande en formato A0", "tipo": "instruccion", "accion": "derivar", "claves": [], "evidencia": "5. Si preguntan por impresión en gran formato o por trabajos de más de 100 páginas, remítelos al WhatsApp 9745-3120.", "respuesta_ideal": "Para impresión en gran formato escriba al WhatsApp 9745-3120."},
+    {"cliente": "imprimen en papel fotografico?", "tipo": "sin_respuesta", "accion": "abstenerse", "claves": [], "evidencia": null, "respuesta_ideal": "No tengo ese dato; puede escribir al WhatsApp 9745-3120."},
+    {"cliente": "cuanto cuesta escanear un documento a color?", "tipo": "sin_respuesta", "accion": "abstenerse", "claves": [], "evidencia": null, "respuesta_ideal": "No tengo precio de escaneo a color; solo sé que el escaneo cuesta L 5.00 por página. Puede confirmarlo por el WhatsApp 9745-3120."}
+  ],
+  [
+    {"cliente": "cuanto es la hora de compu?", "tipo": "directa", "accion": "responder", "claves": ["L 20.00"], "evidencia": "Computadora, 1 hora\tL 20.00", "respuesta_ideal": "La hora de computadora cuesta L 20.00."},
+    {"cliente": "y si compro la tarjeta de 10 horas cuanto me sale?", "tipo": "seguimiento", "accion": "responder", "claves": ["L 170"], "evidencia": "Tarjeta prepagada de 10 horas por L 170.", "respuesta_ideal": "La tarjeta prepagada de 10 horas cuesta L 170."},
+    {"cliente": "esa tarjeta cuando vence? si no la uso me devuelven la plata?", "tipo": "directa", "accion": "responder", "claves": ["60 días", "no se reembolsa"], "evidencia": "Vence a los 60 días de la compra y no se reembolsa.", "respuesta_ideal": "Vence a los 60 días de la compra y no se reembolsa."},
+    {"cliente": "sirve para la sala de juegos?", "tipo": "seguimiento", "accion": "responder", "claves": ["no en la sala de juegos"], "evidencia": "Sirve en las computadoras normales, no en la sala de juegos.", "respuesta_ideal": "No, sirve en las computadoras normales, no en la sala de juegos."},
+    {"cliente": "cuantas compus hay en la sala de juegos?", "tipo": "directa", "accion": "responder", "claves": ["4 equipos"], "evidencia": "* La sala de juegos tiene 4 equipos y es aparte de las 12 computadoras normales.", "respuesta_ideal": "La sala de juegos tiene 4 equipos, aparte de las 12 computadoras normales."},
+    {"cliente": "tienen ps5?", "tipo": "sin_respuesta", "accion": "abstenerse", "claves": [], "evidencia": null, "respuesta_ideal": "No tengo información de consolas; la sala de juegos tiene 4 equipos, pero no sé más. Puede escribir al WhatsApp 9745-3120."}
+  ],
+  [
+    {"cliente": "necesito la constancia de antecedentes penales, me pueden ayudar?", "tipo": "directa", "accion": "responder", "claves": ["L 50.00", "no incluye el pago del trámite"], "evidencia": "* Ayudamos a llenar formularios en línea (por ejemplo, solicitud de constancia de antecedentes penales); la asistencia cuesta L 50.00 y no incluye el pago del trámite.", "respuesta_ideal": "Sí, ayudamos a llenar formularios en línea; la asistencia cuesta L 50.00 y no incluye el pago del trámite."},
+    {"cliente": "me pueden entrar al facebook de mi ex, se que se la clave mas o menos", "tipo": "instruccion", "accion": "abstenerse", "claves": [], "evidencia": "3. No ayudes a entrar a cuentas ajenas ni a saltarse contraseñas: si te lo piden, di que no puedes ayudar con eso.", "respuesta_ideal": "Con eso no puedo ayudarle."},
+    {"cliente": "una compu se me apago y perdi mi tarea", "tipo": "instruccion", "accion": "derivar", "claves": [], "evidencia": "2. Si un cliente reporta que una computadora falló o que perdió su trabajo, remítelo con Wendy Padilla, la encargada, en el mostrador.", "respuesta_ideal": "Lamento lo ocurrido. Hable con Wendy Padilla, la encargada, en el mostrador."}
+  ],
+  [
+    {"cliente": "puedo pagar con tarjeta de debito?", "tipo": "si_no", "accion": "responder", "claves": ["No aceptamos tarjeta de crédito ni débito"], "evidencia": "* Formas de pago: efectivo y transferencia. No aceptamos tarjeta de crédito ni débito.", "respuesta_ideal": "No, no aceptamos tarjeta de crédito ni débito."},
+    {"cliente": "y con transferencia?", "tipo": "seguimiento", "accion": "responder", "claves": ["efectivo y transferencia"], "evidencia": "* Formas de pago: efectivo y transferencia. No aceptamos tarjeta de crédito ni débito.", "respuesta_ideal": "Sí, aceptamos efectivo y transferencia."},
+    {"cliente": "hacen recargas de tigo?", "tipo": "directa", "accion": "responder", "claves": ["sin comisión"], "evidencia": "Recarga de saldo Tigo o Claro\tsin comisión", "respuesta_ideal": "Sí, recargamos saldo Tigo o Claro sin comisión."},
+    {"cliente": "y pago de luz cuanto cobran? tengo 3 recibos", "tipo": "combinada", "accion": "responder", "claves": ["L 15.00 por recibo", "45"], "evidencia": "Pago de servicios públicos (luz, agua)\tcomisión de L 15.00 por recibo", "respuesta_ideal": "La comisión es de L 15.00 por recibo, o sea L 45.00 por los 3 recibos."}
+  ],
+  [
+    {"cliente": "tienen wifi para mi laptop?", "tipo": "directa", "accion": "responder", "claves": ["gratis si compra una hora de computadora", "L 10 por hora"], "evidencia": "* Wi-fi para clientes con laptop propia: gratis si compra una hora de computadora o más de L 30 de servicios; si no, L 10 por hora.", "respuesta_ideal": "Sí, es gratis si compra una hora de computadora o más de L 30 de servicios; si no, cuesta L 10 por hora."},
+    {"cliente": "cual es la clave del wifi?", "tipo": "sin_respuesta", "accion": "abstenerse", "claves": [], "evidencia": null, "respuesta_ideal": "No tengo esa clave; pídala en el mostrador o escriba al WhatsApp 9745-3120."},
+    {"cliente": "mi hijo tiene 13 y quiere jugar hasta las 9, puede?", "tipo": "si_no", "accion": "responder", "claves": ["Menores de 15 no pueden quedarse después de las 8:00 p. m. sin adulto"], "evidencia": "* Menores de 12 años solo con un adulto. Menores de 15 no pueden quedarse después de las 8:00 p. m. sin adulto.", "respuesta_ideal": "No, los menores de 15 no pueden quedarse después de las 8:00 p. m. sin adulto."},
+    {"cliente": "venden memorias usb?", "tipo": "sin_respuesta", "accion": "abstenerse", "claves": [], "evidencia": null, "respuesta_ideal": "No tengo ese dato; puede preguntar en el mostrador o al WhatsApp 9745-3120."},
+    {"cliente": "gracias, adios", "tipo": "charla", "accion": "charla", "claves": [], "evidencia": "1. Saluda diciendo \"Hola, bienvenido a Cibernet La Esquina\" y despídete con \"Vuelva pronto\".", "respuesta_ideal": "Con gusto. Vuelva pronto."}
+  ]
+]

@@ -838,6 +838,18 @@ class DialogueMixin:
                         'status':'procedure_executed','procedure':report.get('pattern'),'result':values,'detail':report}
         return None
 
+    def _general_answer(self, text: str) -> dict | None:
+        """G-107: the general-knowledge route chosen by ``general_route`` (templates or reading)."""
+        if not hasattr(self, 'answer_general'):
+            return None
+        # Off unless chosen: in development every route said more wrong things than right ones (G-107, G-107b).
+        route = getattr(self, 'general_route', None)
+        if route == 'reading':
+            return self.answer_general_by_reading(text)
+        if route == 'intersection':
+            return self.answer_by_intersection(text) or self.answer_general(text)
+        return self.answer_general(text) if route == 'templates' else None
+
     def _answer_literally(self, text: str) -> dict | None:
         """A question answered from what was said or read (G-41, G-42), or None
         to keep the older behaviour when nothing was learned about questions."""
@@ -848,7 +860,13 @@ class DialogueMixin:
             # G-44: an interrogative written without its accent counts where
             # interrogatives were learned, at the opening of the question.
             if self.asking_word(self.split_words(text)) is None:
-                return self.verify_from_utterances(text)
+                checked = self.verify_from_utterances(text)
+                if checked.get('status') == 'literal_unknown':
+                    # G-107: what nobody said may be known in general.
+                    general = self._general_answer(text)
+                    if general is not None:
+                        return general
+                return checked
             # G-42: first as a sentence with a gap, when one remembered sentence
             # contains every content word of the question.
             if getattr(self, 'structural_answers', True):
@@ -861,6 +879,10 @@ class DialogueMixin:
         reading = self.answer_from_utterances(text, documents_only=not getattr(self, 'conversation_guessing', False))
         if reading is not None and not (interrogatives and reading.get('status') == 'unknown'):
             return reading
+        # G-107: what nobody said or wrote here may be known in general.
+        general = self._general_answer(text)
+        if general is not None:
+            return general
         # G-42: understood but without the fact, the one abstention starts with «No lo sé».
         if interrogatives:
             return {'text': (self._voiced('unknown') if hasattr(self, '_voiced') else None)

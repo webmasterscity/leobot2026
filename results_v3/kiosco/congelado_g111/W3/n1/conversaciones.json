@@ -1,0 +1,208 @@
+[
+  [
+    {
+      "cliente": "Hola, buenos días. ¿Cuánto cuesta una cabaña para dos noches?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["$85", "$150", "$195"],
+      "evidencia": "- 8 cabañas dobles con vista a la selva: aire acondicionado, agua caliente, minibar, balcón privado — $85 por noche\n- 5 cabañas tipo junior suite con piscina privada: jacuzzi, lluvia tropical, sala pequeña — $150 por noche\n- 2 cabañas de lujo con terraza: incluyen servicio de desayuno en el cuarto — $195 por noche",
+      "respuesta_ideal": "Tenemos tres tipos: dobles a $85/noche, junior suites a $150, y de lujo a $195. Todas incluyen desayuno buffet. ¿Cuál te interesa?"
+    },
+    {
+      "cliente": "¿Y eso incluye desayuno?",
+      "tipo": "seguimiento",
+      "accion": "responder",
+      "claves": ["desayuno buffet", "7 a 10 a. m."],
+      "evidencia": "Todas incluyen desayuno buffet de 7 a 10 a. m., wifi gratis en zona común, y acceso a nuestra piscina natural.",
+      "respuesta_ideal": "Sí, todas incluyen desayuno buffet que se sirve de 7 a 10 de la mañana."
+    },
+    {
+      "cliente": "Perfecto. ¿Cómo hago la reserva?",
+      "tipo": "instruccion",
+      "accion": "derivar",
+      "claves": [],
+      "evidencia": "Escríbenos a reservas@lascataratasecolodge.cr o llama al +506 4711-8823",
+      "respuesta_ideal": "Las reservas van directo a nuestro equipo. Puedes escribir a reservas@lascataratasecolodge.cr o llamar al +506 4711-8823 y ellos te ayudan."
+    }
+  ],
+  [
+    {
+      "cliente": "Quiero hacer el tour de senderismo al volcán. ¿Cuánto vale?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["$65", "4 horas", "Senderismo Volcán"],
+      "evidencia": "- Senderismo Volcán: 4 horas, $65 por persona (mínimo 2 personas, máximo 8)",
+      "respuesta_ideal": "El tour de senderismo al volcán es $65 por persona, dura 4 horas y va con guía en español e inglés."
+    },
+    {
+      "cliente": "¿Incluye agua y algo para comer?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["agua y snacks"],
+      "evidencia": "Todas las excursiones incluyen guía en español e inglés, agua y snacks.",
+      "respuesta_ideal": "Sí, incluye agua y snacks durante el recorrido."
+    },
+    {
+      "cliente": "¿A qué hora sales?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["6:30 a. m.", "2:00 p. m.", "6:00 p. m."],
+      "evidencia": "- Tours: salen diariamente a las 6:30 a. m., 2:00 p. m., y 6:00 p. m.",
+      "respuesta_ideal": "Los tours salen todos los días a las 6:30 de la mañana, a las 2 de la tarde, o a las 6 de la noche."
+    },
+    {
+      "cliente": "¿Se puede ir con mi nena de 8 años?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["no apto para menores de 10 años"],
+      "evidencia": "- Rafting Río Arenal: 3 horas, $72 (grado I-II, no apto para menores de 10 años)",
+      "respuesta_ideal": "El senderismo sí es apto para niños, pero el rafting no es para menores de 10 años."
+    }
+  ],
+  [
+    {
+      "cliente": "Oye, ¿se puede traer mascota?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["permitidas", "$10 por noche", "cuidador responsable"],
+      "evidencia": "- Mascotas: permitidas, $10 por noche, cuidador responsable",
+      "respuesta_ideal": "Claro, se permite mascota. Cuesta $10 por noche, y el cuidador es responsable de ella todo el tiempo."
+    },
+    {
+      "cliente": "¿Hay wifi en las cabañas?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["wifi gratis en zona común", "no hay en cabañas"],
+      "evidencia": "Todas incluyen desayuno buffet de 7 a 10 a. m., wifi gratis en zona común, y acceso a nuestra piscina natural.",
+      "respuesta_ideal": "El wifi está disponible en la zona común de recepción. Las cabañas no tienen, es parte de nuestro concepto de desconexión."
+    },
+    {
+      "cliente": "¿Cuál es la cabaña más cara y qué incluye?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["$195", "desayuno en el cuarto", "terraza", "de lujo"],
+      "evidencia": "- 2 cabañas de lujo con terraza: incluyen servicio de desayuno en el cuarto — $195 por noche",
+      "respuesta_ideal": "La cabaña de lujo a $195/noche incluye terraza privada y desayuno servido en tu cuarto."
+    },
+    {
+      "cliente": "¿Hasta qué hora puedo desayunar?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["10 a. m.", "7 a 10"],
+      "evidencia": "Todas incluyen desayuno buffet de 7 a 10 a. m.",
+      "respuesta_ideal": "El desayuno se sirve hasta las 10 de la mañana."
+    }
+  ],
+  [
+    {
+      "cliente": "Hola. ¿Qué debo llevar para el tour de catarata?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "Eso me lo pregunta la gente a menudo, pero no tengo esa información exacta. Te invito a escribir a reservas@lascataratasecolodge.cr y preguntar qué ropa y equipo recomiendan."
+    },
+    {
+      "cliente": "¿El lodge tiene piscina?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["acceso a nuestra piscina natural"],
+      "evidencia": "Todas incluyen desayuno buffet de 7 a 10 a. m., wifi gratis en zona común, y acceso a nuestra piscina natural.",
+      "respuesta_ideal": "Sí, todas las cabañas incluyen acceso a la piscina natural del lodge."
+    },
+    {
+      "cliente": "¿Sirven desayuno sin gluten para celiacos?",
+      "tipo": "instruccion",
+      "accion": "derivar",
+      "claves": [],
+      "evidencia": "Si preguntan sobre alergias, dietas especiales (vegetariano, celiaco, etc.), responde: 'Nuestro chef acomoda dietas especiales con 48 horas de aviso. Escríbenos a reservas@lascataratasecolodge.cr con tus requerimientos'.",
+      "respuesta_ideal": "El chef puede acomodar dietas sin gluten, pero necesita 48 horas de aviso. Escribe a reservas@lascataratasecolodge.cr con tus requerimientos."
+    }
+  ],
+  [
+    {
+      "cliente": "¿Qué tarjetas de crédito aceptan?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["Visa", "Mastercard", "Amex"],
+      "evidencia": "Aceptamos tarjeta de crédito (Visa, Mastercard, Amex), transferencia bancaria, y efectivo en colones o dólares americanos.",
+      "respuesta_ideal": "Aceptamos Visa, Mastercard, Amex, transferencia bancaria, y efectivo en colones o dólares."
+    },
+    {
+      "cliente": "¿Puedo cancelar la reserva más adelante si cambio de planes?",
+      "tipo": "combinada",
+      "accion": "responder",
+      "claves": ["30 días previos", "50 %", "multa"],
+      "evidencia": "Política de cancelación: cancelaciones con 48 horas antes no cobran multa. Menores de 12 años pagan 50 % en tours.",
+      "respuesta_ideal": "Si cancelas con más de 48 horas de anticipación, no hay multa. Menos que eso, sí pierdes dinero."
+    }
+  ],
+  [
+    {
+      "cliente": "¿Cuánto cuesta el rafting y cuánto dura?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["Rafting Río Arenal", "3 horas", "$72"],
+      "evidencia": "- Rafting Río Arenal: 3 horas, $72 (grado I-II, no apto para menores de 10 años)",
+      "respuesta_ideal": "El rafting cuesta $72 por persona, dura 3 horas y es nivel bajo (grado I-II)."
+    },
+    {
+      "cliente": "Mi hijo tiene 9 años. ¿Puede ir?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["no apto para menores de 10 años"],
+      "evidencia": "- Rafting Río Arenal: 3 horas, $72 (grado I-II, no apto para menores de 10 años)",
+      "respuesta_ideal": "No, lo sentimos. El rafting es para mayores de 10 años. Pero puede hacer el senderismo o la observación nocturna."
+    },
+    {
+      "cliente": "¿Hay comida vegetariana en la cena?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No tengo los detalles del menú. Te invito a escribir a reservas@lascataratasecolodge.cr para preguntar qué opciones vegetarianas sirven."
+    },
+    {
+      "cliente": "Muchas gracias por la información.",
+      "tipo": "charla",
+      "accion": "charla",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "De nada. Si tienes más preguntas, llámanos al +506 4711-8823 o escribe a reservas@lascataratasecolodge.cr. ¡Esperamos recibirte!"
+    }
+  ],
+  [
+    {
+      "cliente": "Hola. ¿Están abiertos hoy?",
+      "tipo": "charla",
+      "accion": "charla",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "Hola. Estamos abiertos todos los días de 6 de la mañana a 10 de la noche. ¿Necesitas algo?"
+    },
+    {
+      "cliente": "¿Se puede fumar en las cabañas?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No tengo esa información en los detalles que tengo. Llamá a +506 4711-8823 y preguntan directo con recepción."
+    },
+    {
+      "cliente": "¿A cuántos kilómetros queda del pueblo?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No tengo esa medida exacta. Lo que sí sé es que estamos en la Avenida Central 120, en La Fortuna. Puedes usar Google Maps para ver la distancia desde donde estés."
+    },
+    {
+      "cliente": "¿Hay ascensor o escaleras en los pasillos?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "Eso lo manejan en la oficina de recepción. Mejor llama al +506 4711-8823 si tienes movilidad limitada y te asesoran."
+    }
+  ]
+]

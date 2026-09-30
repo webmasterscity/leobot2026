@@ -1,0 +1,492 @@
+[
+ {
+  "id": "i0000",
+  "negocio": "W3_n3",
+  "turnos_previos_del_cliente": [
+   "¿Ustedes tienen servicio a domicilio?",
+   "¿Hay requisito mínimo?"
+  ],
+  "cliente": "¿Que pasa si no retiro el equipo en tiempo?",
+  "tipo": "instruccion",
+  "accion_esperada": "responder",
+  "claves": [
+   "60 días",
+   "se venden para pagar costos de almacenamiento"
+  ],
+  "evidencia": "Equipos no retirados después de 60 días: se venden para pagar costos de almacenamiento",
+  "respuesta_ideal": "Si no retiras después de 60 días, lamentablemente el equipo se vende para pagar el almacenamiento. Es importante que retires a tiempo.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Equipos no retirados después de 60 días: se venden para pagar costos de almacenamiento»."
+ },
+ {
+  "id": "i0001",
+  "negocio": "W6_n4",
+  "turnos_previos_del_cliente": [
+   "Buenas noches",
+   "¿a qué hora empieza el show?"
+  ],
+  "cliente": "¿y la cena?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "20:30 hs"
+  ],
+  "evidencia": "Abrimos de miércoles a domingo. La cena se sirve desde las 20:30 hs y el show comienza a las 21:30 hs. Abrimos también los feriados, salvo el 24 y el 31 de diciembre.",
+  "respuesta_ideal": "La cena se sirve desde las 20:30 hs.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «La cena se sirve desde las 20:30 hs y el show comienza a las 21:30 hs. Abrimos también los feriados, salvo el 24 y el 31 de diciembre»."
+ },
+ {
+  "id": "i0002",
+  "negocio": "W4_n2",
+  "turnos_previos_del_cliente": [
+   "no me ha llegado la factura del servicio de la semana pasada, con quien hablo?",
+   "que garantia tiene el desatasco que me hicisteis?"
+  ],
+  "cliente": "y cubre si se vuelve a atascar por toallitas?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "No cubre atascos causados por toallitas"
+  ],
+  "evidencia": "No cubre atascos causados por toallitas o aceite tirados después del servicio (queda anotado en el parte de trabajo).",
+  "respuesta_ideal": "No cubre atascos causados por toallitas o aceite tirados después del servicio; queda anotado en el parte de trabajo.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «No cubre atascos causados por toallitas o aceite tirados después del servicio (queda anotado en el parte de trabajo)»."
+ },
+ {
+  "id": "i0003",
+  "negocio": "W7_n3",
+  "turnos_previos_del_cliente": [],
+  "cliente": "¿Cuál es el horario de atención?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "9:00 AM a 6:00 PM",
+   "10:00 AM a 2:00 PM"
+  ],
+  "evidencia": "Lunes a viernes: 9:00 AM a 6:00 PM | Sábados: 10:00 AM a 2:00 PM",
+  "respuesta_ideal": "De lunes a viernes atendemos de 9:00 AM a 6:00 PM. Los sábados de 10:00 AM a 2:00 PM.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Desde 2008 asesoramos familias, inversionistas y empresas en la búsqueda, venta y arriendo de propiedades en Arica»."
+ },
+ {
+  "id": "i0004",
+  "negocio": "W8_n1",
+  "turnos_previos_del_cliente": [
+   "Buen día. ¿Los baños tienen luz adentro? El evento es de noche",
+   "¿Y el baño VIP tiene aire acondicionado?"
+  ],
+  "cliente": "Ok, otra cosa: ¿cuánto cobran por entregar un domingo? el evento es lunes temprano",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "1.600"
+  ],
+  "evidencia": "Entrega en domingo o feriado: recargo de $ 1.600 por viaje.",
+  "respuesta_ideal": "Sí, pero la entrega en domingo o feriado tiene un recargo de $ 1.600 por viaje.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Entregas de lunes a sábado entre 7:00 y 18:00 h. Entrega en domingo o feriado: recargo de $ 1.600 por viaje»."
+ },
+ {
+  "id": "i0005",
+  "negocio": "W6_n3",
+  "turnos_previos_del_cliente": [
+   "mi hijo tiene 10 años, puede usar la compu solo?"
+  ],
+  "cliente": "¿y uno de 15 puede entrar a la gamer a las 9 de la noche?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "no pueden usar la sala gamer después de las 20:00 hs"
+  ],
+  "evidencia": "- Menores de 16 años: no pueden usar la sala gamer después de las 20:00 hs.",
+  "respuesta_ideal": "No, los menores de 16 años no pueden usar la sala gamer después de las 20:00 hs.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Menores de 16 años: no pueden usar la sala gamer después de las 20:00 hs»."
+ },
+ {
+  "id": "i0006",
+  "negocio": "W4_n2",
+  "turnos_previos_del_cliente": [
+   "no me ha llegado la factura del servicio de la semana pasada, con quien hablo?",
+   "que garantia tiene el desatasco que me hicisteis?",
+   "y cubre si se vuelve a atascar por toallitas?"
+  ],
+  "cliente": "la camara para ver la tuberia cuanto vale y me dais la grabacion?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "120 €",
+   "USB"
+  ],
+  "evidencia": "| Inspección de tuberías con cámara y grabación en USB | 120 € | se descuenta si se contrata la reparación |",
+  "respuesta_ideal": "La inspección con cámara cuesta 120 € más IVA y sí, se entrega la grabación en USB.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Servicio: Inspección de tuberías con cámara y grabación en USB; Precio: 120 €; Notas: se descuenta si se contrata la reparación»."
+ },
+ {
+  "id": "i0007",
+  "negocio": "W4_n3",
+  "turnos_previos_del_cliente": [
+   "buenas tardes, cuanto cuesta la baraja bicycle normal?",
+   "si compro 3 me hacen descuento?",
+   "y el envio a guadalajara cuanto es?"
+  ],
+  "cliente": "si compro el kit castel y dos bicycle, ya me sale gratis el envio?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "$150"
+  ],
+  "evidencia": "- Kits para principiantes: \"Mi primera magia\" (a partir de 6 años) $390; \"Kit Castel\" (12 años en adelante) $890.",
+  "respuesta_ideal": "No: el Kit Castel ($890) más dos Bicycle ($360) suman $1,250, que no pasa de $1,500, así que el envío te costaría $150.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Envíos a toda la República por paquetería: $150 MXN; gratis en compras mayores a $1,500. Tiempo de entrega de 2 a 5 días hábiles. No enviamos al extranjero»."
+ },
+ {
+  "id": "i0008",
+  "negocio": "W5_n2",
+  "turnos_previos_del_cliente": [],
+  "cliente": "cuanto sale anillar unas 250 hojas",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "$U 260"
+  ],
+  "evidencia": "$U 260 de 101 a 300 hojas",
+  "respuesta_ideal": "Anillar entre 101 y 300 hojas cuesta $U 260.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Anillado con espiral y tapas de acetato: $U 180 hasta 100 hojas; $U 260 de 101 a 300 hojas»."
+ },
+ {
+  "id": "i0009",
+  "negocio": "W6_n3",
+  "turnos_previos_del_cliente": [
+   "mi hijo tiene 10 años, puede usar la compu solo?",
+   "¿y uno de 15 puede entrar a la gamer a las 9 de la noche?"
+  ],
+  "cliente": "quiero reservar la sala gamer para el sabado",
+  "tipo": "instruccion",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "3. Las reservas de la sala gamer las confirma el personal por WhatsApp, 0981 555 014. No las confirmes tú.",
+  "respuesta_ideal": "Las reservas de la sala gamer las confirma el personal por WhatsApp, al 0981 555 014.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «SALA GAMER: RESERVAS»."
+ },
+ {
+  "id": "i0010",
+  "negocio": "W3_n2",
+  "turnos_previos_del_cliente": [
+   "Hola, ¿qué paquetes tienen para Playa del Carmen?"
+  ],
+  "cliente": "¿Y eso incluye comidas?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "desayuno incluido"
+  ],
+  "evidencia": "Incluye: vuelo redondo, 3 noches hotel 4*, desayuno incluido",
+  "respuesta_ideal": "El desayuno sí está incluido. Pero comidas y cenas corren por cuenta tuya, o podés contratar servicios adicionales como tours.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Incluye: crucero todo incluido, camarote doble, comidas y entretenimiento»."
+ },
+ {
+  "id": "i0011",
+  "negocio": "W2_n4",
+  "turnos_previos_del_cliente": [
+   "vamos dos amigos en habitacion compartida, cuanto seria en total?",
+   "se puede pagar con tarjeta?"
+  ],
+  "cliente": "a que banco tengo que hacer el deposito?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo los datos bancarios. Puede pedirlos por teléfono o WhatsApp al +502 5555-0166.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Para reservar se pide un anticipo de Q 200 por persona, por depósito o transferencia bancaria; el saldo se paga a la llegada»."
+ },
+ {
+  "id": "i0012",
+  "negocio": "W8_n3",
+  "turnos_previos_del_cliente": [
+   "Buenas tardes, quiero perforar un pozo para riego en mi rancho en Calvillo, ¿cuánto cobran el metro?",
+   "¿Y en 8 pulgadas, 150 metros, más o menos cuánto sería?",
+   "¿Eso ya incluye el tubo del pozo?",
+   "Calvillo está lejos, ¿me cobran algo por llevar la máquina?",
+   "¿Y a qué profundidad voy a encontrar agua ahí?"
+  ],
+  "cliente": "¿Cuánto cuesta ese estudio?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "6,800"
+  ],
+  "evidencia": "3.1 Estudio geofísico (sondeo eléctrico vertical, SEV): $ 6,800.00 MXN por punto, incluye informe con profundidad estimada del acuífero. Si el cliente contrata la perforación con nosotros, el costo del estudio se descuenta del total.",
+  "respuesta_ideal": "El estudio geofísico cuesta $ 6,800.00 MXN por punto, sin IVA, e incluye el informe; si después contrata la perforación con nosotros, ese costo se descuenta del total.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Si el cliente contrata la perforación con nosotros, el costo del estudio se descuenta del total»."
+ },
+ {
+  "id": "i0013",
+  "negocio": "W1_n3",
+  "turnos_previos_del_cliente": [
+   "Hi, soy de Estados Unidos, ¿puedo pagar en dólares?",
+   "¿Ustedes me hacen los papeles para llevarme la cabeza a mi país?"
+  ],
+  "cliente": "cuanto demora un craneo europeo",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "2 meses"
+  ],
+  "evidencia": "Cráneo europeo (hervido y blanqueado)\t$ 140.000\t2 meses",
+  "respuesta_ideal": "El cráneo europeo demora unos 2 meses.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Trabajo: Cráneo europeo (hervido y blanqueado); Precio: $ 140.000; Demora aprox.: 2 meses»."
+ },
+ {
+  "id": "i0014",
+  "negocio": "W2_n4",
+  "turnos_previos_del_cliente": [
+   "puedo visitar el jardin sin quedarme a dormir?",
+   "y los lunes?",
+   "cuantos carros caben en el parqueo?",
+   "venden las mermeladas por internet?"
+  ],
+  "cliente": "estoy pasando por un momento muy dificil, me siento muy triste y no se que hacer",
+  "tipo": "instruccion",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "Si una persona cuenta que está pasando por un momento muy difícil o de mucha tristeza, invítela con cariño a hablar con el P. Anselmo Xiloj en la casa o a llamar al +502 5555-0166.",
+  "respuesta_ideal": "Lamento que esté pasando por esto. Le invito a hablar con el P. Anselmo Xiloj en la casa o a llamar al +502 5555-0166.",
+  "respuesta_a_calificar": "Sobre eso, las indicaciones del negocio dicen: «No dé consejos espirituales, psicológicos ni médicos. Si una persona cuenta que está pasando por un momento muy difícil o de mucha tristeza, invítela con cariño a hablar con el P. Anselmo Xiloj en la casa o a llamar al +502 5555-0166»."
+ },
+ {
+  "id": "i0015",
+  "negocio": "W3_n3",
+  "turnos_previos_del_cliente": [
+   "¿Reparan impresoras?"
+  ],
+  "cliente": "¿Y acondicionadores de aire?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "$60.000 a $200.000 COP"
+  ],
+  "evidencia": "Acondicionador de aire (limpieza, refrigerante, compresor): $60.000 a $200.000 COP",
+  "respuesta_ideal": "Sí, hacemos mantenimiento, limpieza, cambio de refrigerante y reparación de compresores. Entre $60.000 y $200.000 COP según el trabajo.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Acondicionador de aire (limpieza, refrigerante, compresor): $60.000 a $200.000 COP»."
+ },
+ {
+  "id": "i0016",
+  "negocio": "W8_n3",
+  "turnos_previos_del_cliente": [
+   "Buenas tardes, quiero perforar un pozo para riego en mi rancho en Calvillo, ¿cuánto cobran el metro?",
+   "¿Y en 8 pulgadas, 150 metros, más o menos cuánto sería?",
+   "¿Eso ya incluye el tubo del pozo?"
+  ],
+  "cliente": "Calvillo está lejos, ¿me cobran algo por llevar la máquina?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "38 por km"
+  ],
+  "evidencia": "Fuera de Aguascalientes capital se cobra traslado de maquinaria: MXN 38 por km desde el patio, solo ida, en cada movilización.",
+  "respuesta_ideal": "Sí, fuera de Aguascalientes capital se cobra traslado de maquinaria a MXN 38 por km desde el patio, solo ida, en cada movilización.",
+  "respuesta_a_calificar": "Calvillo está lejos. No lo sé: no encontré esa información en el texto que tengo."
+ },
+ {
+  "id": "i0017",
+  "negocio": "W2_n2",
+  "turnos_previos_del_cliente": [
+   "cuanto cobran por destapar el lavadero de la cocina"
+  ],
+  "cliente": "y el desague con maquina?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "desde S/ 180"
+  ],
+  "evidencia": "- Destape de desagüe con máquina: desde S/ 180.",
+  "respuesta_ideal": "El destape de desagüe con máquina cuesta desde S/ 180.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Destape de desagüe con máquina: desde S/ 180»."
+ },
+ {
+  "id": "i0018",
+  "negocio": "W5_n4",
+  "turnos_previos_del_cliente": [
+   "hola buenas tardes"
+  ],
+  "cliente": "cuanto cobran por seguir a una persona?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "$28.000",
+   "4 horas"
+  ],
+  "evidencia": "Seguimientos y vigilancias: $28.000 por hora por investigador, con un mínimo de 4 horas por jornada.",
+  "respuesta_ideal": "Los seguimientos cuestan $28.000 por hora por investigador, con un mínimo de 4 horas por jornada, más IVA.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Seguimientos y vigilancias: $28.000 por hora por investigador, con un mínimo de 4 horas por jornada. Vehículo adicional: $45.000 por jornada»."
+ },
+ {
+  "id": "i0019",
+  "negocio": "W3_n2",
+  "turnos_previos_del_cliente": [],
+  "cliente": "¿Necesito pasaporte para viajar al Caribe?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "Pasaporte válido",
+   "credencial de elector para ciudadanos mexicanos"
+  ],
+  "evidencia": "Pasaporte válido (mínimo 6 meses de vigencia); Ciudadanos mexicanos pueden viajar al Caribe con credencial de elector",
+  "respuesta_ideal": "Depende de tu nacionalidad. Si eres ciudadano mexicano, con credencial de elector te alcanza. Si no, necesitás pasaporte vigente mínimo 6 meses.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Ciudadanos mexicanos pueden viajar al Caribe con credencial de elector»."
+ },
+ {
+  "id": "i0020",
+  "negocio": "W6_n2",
+  "turnos_previos_del_cliente": [
+   "buenas tardes",
+   "¿Hasta qué hora atienden los sábados?"
+  ],
+  "cliente": "¿y los domingos?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "10:00 a 14:00"
+  ],
+  "evidencia": "Domingos: 10:00 a 14:00",
+  "respuesta_ideal": "Los domingos atendemos de 10:00 a 14:00.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Domingos: 10:00 a 14:00»."
+ },
+ {
+  "id": "i0021",
+  "negocio": "W8_n3",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Buen día, tengo un pozo que me perforó otra empresa hace años y ya casi no da agua, ¿lo pueden revisar?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "videoinspección"
+  ],
+  "evidencia": "- ¿Dan mantenimiento a pozos que no perforaron ustedes? Sí, previa videoinspección.",
+  "respuesta_ideal": "Sí, damos mantenimiento a pozos que no perforamos nosotros, previa videoinspección del pozo.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «IMPORTANTE: la empresa no garantiza encontrar agua ni un gasto mínimo. El estudio geofísico reduce el riesgo pero no lo elimina. Si el pozo resulta seco, el cliente paga los metros perforados según contrato»."
+ },
+ {
+  "id": "i0022",
+  "negocio": "W3_n2",
+  "turnos_previos_del_cliente": [
+   "Hola, ¿qué paquetes tienen para Playa del Carmen?",
+   "¿Y eso incluye comidas?"
+  ],
+  "cliente": "OK. ¿Es para ocupancia doble?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "tarifa de ocupancia doble"
+  ],
+  "evidencia": "Precio por persona: $9.850 MXN (tarifa de ocupancia doble)",
+  "respuesta_ideal": "Sí, ese precio es para ocupancia doble, es decir, dos personas en la misma habitación.",
+  "respuesta_a_calificar": "OK. No lo tengo seguro. Lo más cercano que dice el texto es: «Precio por persona: $9.850 MXN (tarifa de ocupancia doble)»."
+ },
+ {
+  "id": "i0023",
+  "negocio": "W6_n2",
+  "turnos_previos_del_cliente": [
+   "tengo una tienda y quisiera comprarles por mayor",
+   "¿tienen quinua en stock?",
+   "la sal de uyuni cuanto vale el kilo",
+   "si compro un té y no me gusta lo puedo devolver?"
+  ],
+  "cliente": "¿cuánto dura la miel antes de vencer?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo el dato de vencimiento; puede verlo en la etiqueta o consultar al mostrador, 2-2455890.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Producto: Miel de abeja del Yungas; Presentación: frasco 500 g; Precio: Bs 45»."
+ },
+ {
+  "id": "i0024",
+  "negocio": "W4_n1",
+  "turnos_previos_del_cliente": [
+   "A que hora abren las carpas?",
+   "hasta que hora hay guardavidas"
+  ],
+  "cliente": "hoy esta para meterse al agua? que bandera hay?",
+  "tipo": "instruccion",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "Si alguien pregunta por el estado del mar, si se puede entrar al agua o qué bandera hay, no lo respondas vos: decile que mire el mástil central o consulte a los guardavidas, que están de 10 a 19.",
+  "respuesta_ideal": "Eso te lo dicen los guardavidas, que están de 10 a 19; fijate también la bandera en el mástil central.",
+  "respuesta_a_calificar": "Sobre eso, las indicaciones del negocio dicen: «Si alguien pregunta por el estado del mar, si se puede entrar al agua o qué bandera hay, no lo respondas vos: decile que mire el mástil central o consulte a los guardavidas, que están de 10 a 19»."
+ },
+ {
+  "id": "i0025",
+  "negocio": "W1_n3",
+  "turnos_previos_del_cliente": [
+   "Buen día, el domingo abren? quiero llevar un jabalí que cacé"
+  ],
+  "cliente": "Qué papeles tengo que llevar?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "permiso de caza",
+   "DNI"
+  ],
+  "evidencia": "1. Guía de tránsito o permiso de caza vigente emitido por la provincia donde se cazó el animal. Sin ese papel no recibimos ninguna pieza.\n2. DNI o pasaporte del cazador.",
+  "respuesta_ideal": "La guía de tránsito o el permiso de caza vigente de la provincia donde lo cazaste, y el DNI o pasaporte del cazador.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Guía de tránsito o permiso de caza vigente emitido por la provincia donde se cazó el animal. Sin ese papel no recibimos ninguna pieza»."
+ },
+ {
+  "id": "i0026",
+  "negocio": "W8_n3",
+  "turnos_previos_del_cliente": [],
+  "cliente": "hola, a que hora cierran los sabados?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "13:00"
+  ],
+  "evidencia": "Horario de oficina: L–V 08:00–18:00, Sáb 08:00–13:00. Domingos cerrado.",
+  "respuesta_ideal": "Buen día. Los sábados la oficina abre de 08:00 a 13:00.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Horario de oficina: L–V 08:00–18:00, Sáb 08:00–13:00»."
+ },
+ {
+  "id": "i0027",
+  "negocio": "W2_n4",
+  "turnos_previos_del_cliente": [
+   "a que hora es la misa del domingo?",
+   "y entre semana?",
+   "quiero pedir una misa por mi papa que murio, como hago?"
+  ],
+  "cliente": "hay confesiones?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "sábados de 4:00 a 5:00 p. m."
+  ],
+  "evidencia": "Confesiones: sábados de 4:00 a 5:00 p. m.",
+  "respuesta_ideal": "Sí, hay confesiones los sábados de 4:00 a 5:00 p. m.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Confesiones: sábados de 4:00 a 5:00 p. m»."
+ },
+ {
+  "id": "i0028",
+  "negocio": "W7_n4",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Hola, ¿qué panes frescos tienen?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "responder",
+  "claves": [
+   "fresco"
+  ],
+  "evidencia": "hornamos tres veces al día para garantizar frescura",
+  "respuesta_ideal": "¡Bienvenido! Hornamos fresco tres veces al día. Tenemos baguette, bolillos, pan integral, roscas de queso y más. Te invito a que vengas a ver o llames para confirmar qué está listo ahora.",
+  "respuesta_a_calificar": "Hola. No lo tengo seguro. Lo más cercano que dice el texto es: «Productos congelados de otras marcas no tenemos (solo nuestro producto fresco)»."
+ },
+ {
+  "id": "i0029",
+  "negocio": "W5_n1",
+  "turnos_previos_del_cliente": [
+   "cuanto cuestan las estrellitas"
+  ],
+  "cliente": "¿las venden sueltas?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "Solo tengo el precio de la caja de 10; no sé si se venden sueltas. Puede consultarlo al 6631-2290.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «No se vende a personas en estado de ebriedad»."
+ }
+]

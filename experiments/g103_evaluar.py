@@ -18,12 +18,14 @@ from experiments.g57_kiosco import businesses, judge, run, totals
 from leobot import Bot
 
 
-def replay(base, folders, off=(), history='real', seed=0):
+def replay(base, folders, off=(), history='real', seed=0, on=()):
     """Como `run` (sistema g57) pero con control del historial que recibe `answer`: real (las conversaciones tal cual),
     ninguno, o barajado (el historial de otra conversación del mismo banco: señal confundida)."""
     bot = Bot.load(base)
     for switch in off:
         setattr(bot, switch, False)
+    for switch in on:
+        setattr(bot, switch, True)
     items = list(businesses(folders))
     rng = random.Random(seed)
     pool = [[t['cliente'] for t in conv] for _, _, _, convs in items for conv in convs]

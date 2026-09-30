@@ -1,0 +1,156 @@
+[
+  [
+    {
+      "cliente": "¿Qué horario tienen hoy?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["Lunes a viernes: 10:00 a. m. — 8:00 p. m."],
+      "evidencia": "Lunes a viernes: 10:00 a. m. — 8:00 p. m.",
+      "respuesta_ideal": "De lunes a viernes estamos de 10 de la mañana a 8 de la noche."
+    },
+    {
+      "cliente": "¿Venden tenis Nike?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["Nike"],
+      "evidencia": "Marcas disponibles: Nike, Adidas, Puma, New Balance, Saucony, Asics, Reebok, Umbro, Joma, marcas colombianas locales.",
+      "respuesta_ideal": "Sí, contamos con zapatillas Nike de varias líneas."
+    },
+    {
+      "cliente": "¿Cuánto cuesta un tenis Nike?",
+      "tipo": "combinada",
+      "accion": "responder",
+      "claves": ["$89 900 — $350 000"],
+      "evidencia": "Zapatillas running (marcas nacional/importadas): $89 900 — $350 000",
+      "respuesta_ideal": "Los precios de zapatillas Nike van desde $89 900 hasta $350 000 dependiendo del modelo."
+    },
+    {
+      "cliente": "Tengo talla 41 y la zapatilla que me gustó es talla 40. ¿Puedo cambiarla?",
+      "tipo": "instruccion",
+      "accion": "responder",
+      "claves": ["7 días", "sin costo"],
+      "evidencia": "Cambio de talla: sin costo si se realiza en 7 días.",
+      "respuesta_ideal": "Sí, el cambio de talla es sin costo si lo haces dentro de 7 días de la compra."
+    }
+  ],
+  [
+    {
+      "cliente": "¿Dónde quedan?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["Calle 5 #24-67, Centro"],
+      "evidencia": "Calle 5 #24-67, Centro (a dos cuadras del Coliseo El Pueblo)",
+      "respuesta_ideal": "Estamos en Calle 5 #24-67 en el Centro, a dos cuadras del Coliseo El Pueblo."
+    },
+    {
+      "cliente": "¿Aceptan tarjeta de crédito?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["Tarjetas de crédito (Visa, Mastercard, American Express)"],
+      "evidencia": "Tarjetas de crédito (Visa, Mastercard, American Express) sin interés en 3 cuotas",
+      "respuesta_ideal": "Sí, aceptamos Visa, Mastercard y American Express, sin interés en 3 cuotas."
+    },
+    {
+      "cliente": "Compré hace 20 días y quiero devolver el producto. ¿Puedo?",
+      "tipo": "combinada",
+      "accion": "responder",
+      "claves": ["15 días", "tiquete"],
+      "evidencia": "Plazo: 15 días después de la compra con tiquete.",
+      "respuesta_ideal": "Lamentablemente no. El plazo para devolución es de 15 días con tiquete."
+    }
+  ],
+  [
+    {
+      "cliente": "¿Abre los domingos?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["Domingo: 12:00 p. m. — 5:00 p. m."],
+      "evidencia": "Domingo: 12:00 p. m. — 5:00 p. m.",
+      "respuesta_ideal": "Sí, los domingos abrimos de mediodía a 5 de la tarde."
+    },
+    {
+      "cliente": "¿Cuánto cuesta una mochila deportiva?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["$35 000 — $90 000"],
+      "evidencia": "Mochilas deportivas: $35 000 — $90 000",
+      "respuesta_ideal": "Las mochilas deportivas van desde $35 000 hasta $90 000."
+    },
+    {
+      "cliente": "¿Hacen personalización de camisetas?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["Personalización de uniformes", "bordado, serigrafía"],
+      "evidencia": "Personalización de uniformes (bordado, serigrafía): plazo 5-7 días, costo adicional.",
+      "respuesta_ideal": "Sí, hacemos bordado y serigrafía en uniformes. El plazo es de 5 a 7 días con costo adicional."
+    },
+    {
+      "cliente": "¿Si compro por más de $250 000 hay envío gratis?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["envío gratis"],
+      "evidencia": "Envío a domicilio: desde $15 000 dentro de Cali (pedidos superiores a $250 000 envío gratis).",
+      "respuesta_ideal": "Sí, si tu compra supera los $250 000 el envío dentro de Cali es gratis."
+    }
+  ],
+  [
+    {
+      "cliente": "¿Tienen botas de montaña?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No aparece en nuestro catálogo, pero llama al (602) 889 4567 para preguntar si tenemos algo similar en stock."
+    },
+    {
+      "cliente": "¿Tienen Asics?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["Asics"],
+      "evidencia": "Marcas disponibles: Nike, Adidas, Puma, New Balance, Saucony, Asics, Reebok, Umbro, Joma, marcas colombianas locales.",
+      "respuesta_ideal": "Sí, tenemos zapatillas Asics disponibles."
+    },
+    {
+      "cliente": "¿Cuánto cuesta un botellón de agua?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["$12 000 — $30 000"],
+      "evidencia": "Botellones de agua (500 ml — 1 L): $12 000 — $30 000",
+      "respuesta_ideal": "Los botellones de agua cuestan entre $12 000 y $30 000 según la capacidad."
+    },
+    {
+      "cliente": "¿Puedo pagar con débito?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["Tarjetas de débito (todos los bancos)"],
+      "evidencia": "Tarjetas de débito (todos los bancos)",
+      "respuesta_ideal": "Sí, aceptamos todas las tarjetas de débito."
+    }
+  ],
+  [
+    {
+      "cliente": "¿Mañana están abiertos?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "Depende de qué día sea mañana. Llama al (602) 889 4567 para confirmar si mañana estamos abiertos."
+    },
+    {
+      "cliente": "Quiero comprar uniformes para mi equipo. ¿Qué necesito?",
+      "tipo": "instruccion",
+      "accion": "derivar",
+      "claves": ["Uniformes de equipos (personalización disponible): consultar"],
+      "evidencia": "Uniformes de equipos (personalización disponible): consultar",
+      "respuesta_ideal": "Para uniformes de equipos es mejor que hables directamente con nuestro equipo. Llama al (602) 889 4567 o WhatsApp +57 315 789 4321."
+    },
+    {
+      "cliente": "¿Tienen programa de puntos?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["Programa de fidelización", "acumula puntos"],
+      "evidencia": "Programa de fidelización: acumula puntos por cada compra (1 punto = $1000 de descuento).",
+      "respuesta_ideal": "Sí, acumulamos puntos en cada compra: 1 punto equivale a $1000 de descuento."
+    }
+  ]
+]

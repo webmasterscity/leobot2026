@@ -1,0 +1,27 @@
+[
+  [
+    {"cliente": "Hola, buenos días. ¿A qué hora cierran hoy?", "tipo": "directa", "accion": "responder", "claves": ["8:00 p.m.", "lunes a viernes"], "evidencia": "Lunes a viernes: 8:00 a.m. - 8:00 p.m.", "respuesta_ideal": "Buenos días. Los lunes a viernes cerramos a las 8 de la noche. ¿Hay algo más en lo que te ayude?"},
+    {"cliente": "Perfecto. Y mañana que es sábado?", "tipo": "seguimiento", "accion": "responder", "claves": ["5:00 p.m.", "sábados"], "evidencia": "Sábados: 9:00 a.m. - 5:00 p.m.", "respuesta_ideal": "El sábado abrimos a las 9 a.m. y cerramos a las 5 de la tarde."},
+    {"cliente": "¿Dónde quedan ustedes?", "tipo": "directa", "accion": "responder", "claves": ["Carrera 15 No. 87-42", "Bogotá"], "evidencia": "Carrera 15 No. 87-42, Bogotá D.C., Colombia", "respuesta_ideal": "Estamos en la Carrera 15 número 87-42 en Bogotá. Nos quedan en el corazón del barrio."},
+    {"cliente": "¿Cuál es el número para llamar?", "tipo": "directa", "accion": "responder", "claves": ["(1) 2456-7890", "316-4589023"], "evidencia": "Teléfono: (1) 2456-7890 / Celular/WhatsApp: 316-4589023", "respuesta_ideal": "Puedes llamar al (1) 2456-7890 o enviar WhatsApp al 316-4589023, que es más rápido."}
+  ],
+  [
+    {"cliente": "Necesito Ibupirac 400 mg. ¿Cuanto cuesta?", "tipo": "directa", "accion": "responder", "claves": ["$4.500 a $5.800"], "evidencia": "Ibupirac 400 mg: $4.500 a $5.800", "respuesta_ideal": "El Ibupirac 400 mg está entre $4.500 y $5.800, dependiendo de la presentación. El precio exacto lo confirmas acá en la tienda."},
+    {"cliente": "¿Y si compro varias cosas puedo obtener algún descuento?", "tipo": "sin_respuesta", "accion": "abstenerse", "claves": [], "evidencia": null, "respuesta_ideal": "Tenemos algunos descuentos, pero no tengo todos los detalles. Te recomiendo preguntar en la tienda o llamar al 316-4589023 para confirmar."}
+  ],
+  [
+    {"cliente": "¿Hacen entregas a casa?", "tipo": "directa", "accion": "responder", "claves": ["entrega a domicilio", "zona"], "evidencia": "Entrega a domicilio en la zona", "respuesta_ideal": "Sí, hacemos entregas a domicilio en la zona. El costo es de $8.000 adicionales."},
+    {"cliente": "¿Cuál es el mínimo de compra para que me entreges?", "tipo": "combinada", "accion": "responder", "claves": ["$30.000"], "evidencia": "mínimo $30.000 en medicinas", "respuesta_ideal": "El mínimo para entrega es de $30.000 en medicinas."},
+    {"cliente": "¿A qué horas llevan los pedidos?", "tipo": "directa", "accion": "responder", "claves": ["1 p.m. y 7 p.m.", "lunes a viernes"], "evidencia": "entregas se hacen entre 1 p.m. y 7 p.m.", "respuesta_ideal": "Las entregas son de lunes a viernes, entre 1 p.m. y 7 p.m."},
+    {"cliente": "¿Y si necesito algo el domingo?", "tipo": "sin_respuesta", "accion": "abstenerse", "claves": [], "evidencia": null, "respuesta_ideal": "Abrimos los domingos de 10 a.m. a 3 p.m., pero no hacemos entregas ese día. Puedes visitarnos en persona o hacer tu pedido para el lunes."}
+  ],
+  [
+    {"cliente": "Me duele mucho la cabeza. ¿Qué me recomiendas?", "tipo": "instruccion", "accion": "responder", "claves": ["consulta con tu médico"], "evidencia": "Nunca hagas diagnóstico médico ni sugieras medicinas específicas basándote en síntomas", "respuesta_ideal": "Entiendo que tengas dolor. Lo importante es que consultes con tu médico para que te haga un diagnóstico correcto. Si tienes una fórmula, aquí te ayudamos a conseguir lo que el médico te recete."},
+    {"cliente": "¿Hay alguien ahí que pueda asesorarme mejor?", "tipo": "instruccion", "accion": "derivar", "claves": ["María del Rosario Cortés", "farmacéutica"], "evidencia": "Si alguien pregunta sobre consejos médicos... ofrece hablar con María del Rosario Cortés, nuestra farmacéutica", "respuesta_ideal": "Claro. Tenemos a María del Rosario Cortés, nuestra farmacéutica, disponible de lunes a viernes de 2 a 8 p.m. Puedes llamar al 316-4589023 para hablar con ella."}
+  ],
+  [
+    {"cliente": "Hola. Compré vitamina C el martes pero quedé con dudas sobre la dosis. ¿Puedo cambiarla?", "tipo": "si_no", "accion": "abstenerse", "claves": ["consultar con farmacéutica"], "evidencia": "No damos diagnósticos ni recomendaciones médicas: solo orientación farmacéutica", "respuesta_ideal": "Sobre la dosis correcta, deberías consultar con un médico o con nuestra farmacéutica María (de 2 a 8 p.m., lunes a viernes). Pero si la vitamina está sin abrir, dentro de 5 días puedes hacer un cambio trayendo tu recibo."},
+    {"cliente": "¿Venden antibióticos para la garganta sin receta?", "tipo": "instruccion", "accion": "responder", "claves": ["fórmula médica", "no vendemos"], "evidencia": "NO vendes ni confirmes disponibilidad de medicinas controladas (antibióticos...) sin que la persona presente la fórmula", "respuesta_ideal": "Los antibióticos requieren fórmula médica. Necesitas ir con un doctor para que te la recete y luego la traes aquí. No podemos venderlos sin eso."},
+    {"cliente": "Está bien. Gracias por la ayuda.", "tipo": "charla", "accion": "charla", "claves": [], "evidencia": null, "respuesta_ideal": "De nada, que te mejores. Nos vemos pronto en Farmacias del Corazón."}
+  ]
+]

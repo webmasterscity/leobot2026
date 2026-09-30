@@ -1,0 +1,509 @@
+[
+ {
+  "id": "i0180",
+  "negocio": "W4_n1",
+  "turnos_previos_del_cliente": [
+   "Hola, buenas. ¿Cuánto cuesta la visita?",
+   "¿Y para niños?",
+   "Somos un colegio, 28 alumnos de primaria. ¿Nos sale gratis?"
+  ],
+  "cliente": "Vale. ¿La visita se puede hacer en inglés? Tenemos alumnos de intercambio",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "una semana de antelación"
+  ],
+  "evidencia": "La visita se hace en español; en inglés solo para grupos con reserva de al menos una semana de antelación.",
+  "respuesta_ideal": "Sí, en inglés es posible para grupos, pero hay que reservar con al menos una semana de antelación.",
+  "respuesta_a_calificar": "Vale. No lo sé: no encontré esa información en el texto que tengo."
+ },
+ {
+  "id": "i0181",
+  "negocio": "W8_n4",
+  "turnos_previos_del_cliente": [
+   "un bar no me quiso dar la hoja de reclamaciones, que hago?"
+  ],
+  "cliente": "la copia verde cuanto tiempo la tengo que guardar?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "La copia verde es la suya, pero no tengo un plazo de conservación; puede preguntarlo en la oficina al 987 41 20 66 (ext. 3).",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «La hoja tiene tres copias: la blanca para la Administración, la verde para el consumidor y la rosa para el establecimiento»."
+ },
+ {
+  "id": "i0182",
+  "negocio": "W8_n2",
+  "turnos_previos_del_cliente": [
+   "cuanto sale el curso basico?",
+   "mi hijo tiene 15, puede hacerlo?",
+   "que dias son las clases?",
+   "somos 3 amigos, cuanto pagamos en total por el basico?",
+   "cuanto hay que dejar de seña?"
+  ],
+  "cliente": "el curso incluye almuerzo el dia de campo?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo ese dato; el precio incluye el dron y el traslado al predio, pero sobre el almuerzo consultá por WhatsApp al 099 412 780.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Curso básico de piloto recreativo: 8 horas (dos sábados), teoría de vuelo, normativa nacional y práctica en campo. $U 9.800, incluye préstamo del dron durante el curso»."
+ },
+ {
+  "id": "i0183",
+  "negocio": "W1_n3",
+  "turnos_previos_del_cliente": [
+   "a que hora cierran entre semana",
+   "¿Cuánto vale un juego de hélices?"
+  ],
+  "cliente": "¿Me cobran por actualizar el firmware? Lo compré en otra tienda",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "$250"
+  ],
+  "evidencia": "Actualización de firmware: sin costo si compraste el equipo con nosotros; si no, $250.",
+  "respuesta_ideal": "Si el equipo no lo compraste con nosotros, la actualización de firmware cuesta $250.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Actualización de firmware: sin costo si compraste el equipo con nosotros; si no, $250»."
+ },
+ {
+  "id": "i0184",
+  "negocio": "W5_n3",
+  "turnos_previos_del_cliente": [
+   "a q hora abren por la tarde?",
+   "y en agosto tambien?"
+  ],
+  "cliente": "¿Dónde está exactamente la oficina?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "Plaza de España 4",
+   "planta baja"
+  ],
+  "evidencia": "Estamos en la planta baja de la Casa Consistorial, Plaza de España 4, 50690 Valdecierzo, con entrada accesible por la rampa de la calle Mayor.",
+  "respuesta_ideal": "En la planta baja de la Casa Consistorial, Plaza de España 4; la entrada accesible es por la rampa de la calle Mayor.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Los martes y jueves por la tarde está también la asesora jurídica del servicio, Dña. Inés Garcés, que ve los casos más complicados (solo con cita)»."
+ },
+ {
+  "id": "i0185",
+  "negocio": "W1_n1",
+  "turnos_previos_del_cliente": [
+   "Hola buenos días",
+   "Somos la peña del barrio y queremos hacer participaciones para Navidad, ¿cómo lo hacemos?",
+   "¿Cuántas papeletas trae cada talonario?"
+  ],
+  "cliente": "¿Y cuánto nos costaría imprimir 4 talonarios?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "48"
+  ],
+  "evidencia": "Cada talonario trae 50 papeletas y la impresión cuesta 12 € por talonario.",
+  "respuesta_ideal": "La impresión cuesta 12 € por talonario, así que 4 talonarios serían 48 €.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Cada talonario trae 50 papeletas y la impresión cuesta 12 € por talonario»."
+ },
+ {
+  "id": "i0186",
+  "negocio": "W1_n4",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Puedo pagar con tarjeta de crédito?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "tarjetas de crédito"
+  ],
+  "evidencia": "No aceptamos tarjetas de crédito para el pago de viviendas.",
+  "respuesta_ideal": "No, no aceptamos tarjetas de crédito para el pago de viviendas; se paga por transferencia o vale vista.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «No aceptamos tarjetas de crédito para el pago de viviendas»."
+ },
+ {
+  "id": "i0187",
+  "negocio": "W4_n3",
+  "turnos_previos_del_cliente": [],
+  "cliente": "¿Qué días hay torneo de tres bandas?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "miércoles",
+   "7:00 pm"
+  ],
+  "evidencia": "- Torneo de tres bandas todos los miércoles a las 7:00 pm. Inscripción $ 15.000, máximo 16 jugadores, premio: el 70% de lo recaudado para el campeón.",
+  "respuesta_ideal": "Todos los miércoles a las 7:00 pm; la inscripción vale $ 15.000 y hay cupo para 16 jugadores.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Torneo de tres bandas todos los miércoles a las 7:00 pm. Inscripción $ 15.000, máximo 16 jugadores, premio: el 70% de lo recaudado para el campeón»."
+ },
+ {
+  "id": "i0188",
+  "negocio": "W4_n3",
+  "turnos_previos_del_cliente": [
+   "hola, hay parqueadero para carro?",
+   "¿Y el de motos hasta qué hora lo cierran?",
+   "¿y a como esta la cerveza?",
+   "Me cobraron dos horas y solo jugué una, ¿con quién reclamo?",
+   "¿Cuánto se apuesta normalmente en el torneo, hay pozo aparte entre los jugadores?",
+   "¿Tienen wifi para los clientes?",
+   "¿Y hay hora feliz los sabados?"
+  ],
+  "cliente": "¿La picada para 4 trae chorizo?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo el detalle de lo que trae la picada; vale $ 58.000 y en la barra le dicen qué incluye.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Picada para 2: $ 32.000 · Picada para 4: $ 58.000»."
+ },
+ {
+  "id": "i0189",
+  "negocio": "W1_n4",
+  "turnos_previos_del_cliente": [
+   "Buenas tardes"
+  ],
+  "cliente": "cuanto sale la casa de 2 dormitorios llave en mano?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "29.900.000"
+  ],
+  "evidencia": "2. Modelo Llanquihue — 54 m², 2 dormitorios, 1 baño. Kit: $ 19.800.000 · Llave en mano: $ 29.900.000",
+  "respuesta_ideal": "El modelo Llanquihue, de 54 m² y 2 dormitorios, cuesta $ 29.900.000 llave en mano, IVA incluido.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Modelo Puyehue — 72 m², 3 dormitorios, 2 baños. Kit: $ 25.600.000 · Llave en mano: $ 38.700.000»."
+ },
+ {
+  "id": "i0190",
+  "negocio": "W4_n1",
+  "turnos_previos_del_cliente": [
+   "hola, mi medico me dijo que tengo el colesterol alto, ¿el aceite de ustedes me sirve para bajarlo?"
+  ],
+  "cliente": "Bueno. ¿Venden aceite a granel?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "€7,20"
+  ],
+  "evidencia": "¿Vendéis aceite a granel? Sí, pero solo en la tienda y trayendo tu propio envase: €7,20 el litro.",
+  "respuesta_ideal": "Sí, a granel solo en la tienda y trayendo su propio envase, a €7,20 el litro.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Sí, pero solo en la tienda y trayendo tu propio envase: €7,20 el litro»."
+ },
+ {
+  "id": "i0191",
+  "negocio": "W7_n2",
+  "turnos_previos_del_cliente": [
+   "Hola, ¿cuánto es para redesignar un logo que ya tengo?",
+   "¿Eso incluye la guía de colores también?",
+   "¿Y si no estoy conforme con el rediseño, devuelven el dinero?",
+   "Bueno, ¿cuánto toman en hacerlo?"
+  ],
+  "cliente": "Okay. Una última pregunta: ¿publican ustedes en redes o solo diseñan?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "Administración básica 1 red"
+  ],
+  "evidencia": "Administración básica 1 red (30 posts/mes): $250 USD",
+  "respuesta_ideal": "Hacemos ambas. Diseño gráfico aparte, y administración de redes también. Puedo manejar tu presencia en redes por $250 USD/mes en 1 red.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Somos una agencia boutique de publicidad digital especializada en posicionamiento web, diseño gráfico y gestión de redes sociales para PyMES y emprendimientos de habla hispana»."
+ },
+ {
+  "id": "i0192",
+  "negocio": "W4_n4",
+  "turnos_previos_del_cliente": [
+   "Buenas. Vivo en la colonia Revolución, ¿me llevan tortillas a la casa?",
+   "Quiero 3 kilos para hoy a las 12"
+  ],
+  "cliente": "¿Y los domingos también entregan?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "entregamos los domingos"
+  ],
+  "evidencia": "No entregamos los domingos.",
+  "respuesta_ideal": "No, no entregamos los domingos.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Los pedidos se hacen por WhatsApp antes de las 10:00 h y se entregan entre 11:00 y 13:00 h del mismo día. No entregamos los domingos»."
+ },
+ {
+  "id": "i0193",
+  "negocio": "W2_n3",
+  "turnos_previos_del_cliente": [
+   "cuanto cuesta una geoda de cuarzo?",
+   "tienen geodas grandes?",
+   "y esa viene con certificado?"
+  ],
+  "cliente": "aceptan dolares?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "dólares (a Bs 6,96 el dólar)"
+  ],
+  "evidencia": "Aceptamos bolivianos en efectivo, dólares (a Bs 6,96 el dólar), QR interoperable y tarjetas.",
+  "respuesta_ideal": "Sí, aceptamos dólares a Bs 6,96 el dólar.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Aceptamos bolivianos en efectivo, dólares (a Bs 6,96 el dólar), QR interoperable y tarjetas»."
+ },
+ {
+  "id": "i0194",
+  "negocio": "W6_n3",
+  "turnos_previos_del_cliente": [
+   "¿cuánto sale inscribirse a los 21 km si me anoto antes de que acabe agosto?",
+   "¿y los 10?",
+   "Tengo 64 años, ¿me hacen descuento?",
+   "Entonces, los 21 km antes del 31/08 con ese descuento, ¿cuánto pagaría?",
+   "¿puedo inscribirme el mismo día de la carrera?"
+  ],
+  "cliente": "¿se puede pagar con QR?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "QR interbancario"
+  ],
+  "evidencia": "Se paga con QR interbancario, transferencia o en efectivo en la tienda Corre Cocha (calle Bolívar).",
+  "respuesta_ideal": "Sí, con QR interbancario, transferencia o efectivo en la tienda Corre Cocha.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Se paga con QR interbancario, transferencia o en efectivo en la tienda Corre Cocha (calle Bolívar)»."
+ },
+ {
+  "id": "i0195",
+  "negocio": "W6_n2",
+  "turnos_previos_del_cliente": [
+   "¿el bus interno cada cuánto pasa?",
+   "¿y hasta qué hora en la noche?",
+   "¿puedo llevar mi dron para grabar la nave?",
+   "¿hay cajero automático dentro del parque?"
+  ],
+  "cliente": "¿cuánto cuesta el almuerzo en el comedor El Fogón?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "Solo sé que el comedor atiende de lunes a viernes de 11:00 a 14:00 hrs; el precio no lo tengo.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Comedor central «El Fogón»: lunes a viernes de 11:00 a 14:00 hrs»."
+ },
+ {
+  "id": "i0196",
+  "negocio": "W5_n4",
+  "turnos_previos_del_cliente": [],
+  "cliente": "¿El estacionamiento es gratis?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "gratis la primera hora",
+   "USD 2"
+  ],
+  "evidencia": "Estacionamiento propio con entrada por calle Laguna Merín: gratis la primera hora; después, USD 2 cada hora o fracción.",
+  "respuesta_ideal": "Es gratis la primera hora; después se cobra USD 2 cada hora o fracción.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Estacionamiento propio con entrada por calle Laguna Merín: gratis la primera hora; después, USD 2 cada hora o fracción»."
+ },
+ {
+  "id": "i0197",
+  "negocio": "W4_n4",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Buenos días, ¿a cómo está el kilo de tortilla?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "24.00"
+  ],
+  "evidencia": "Tortilla de maíz blanco\t$ 24.00 el kg",
+  "respuesta_ideal": "¡Buenos días! Bienvenido a La Guadalupana. El kilo de tortilla de maíz blanco está a $ 24.00.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Nota: el medio kilo se cobra a la mitad; no vendemos menos de 1/4 de kg. El cuarto de tortilla blanca se cobra a $ 6.00»."
+ },
+ {
+  "id": "i0198",
+  "negocio": "W7_n4",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Hola, ¿venden vinilos?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "Vinilos nuevos",
+   "Vinilos vintage"
+  ],
+  "evidencia": "Vinilos nuevos (importados y nacionales) - Vinilos vintage / Segunda mano",
+  "respuesta_ideal": "Claro. Tenemos vinilos nuevos, importados y nacionales, y también vintage de segunda mano.",
+  "respuesta_a_calificar": "Hola. No lo tengo seguro. Lo más cercano que dice el texto es: «Vinilos usados: se venden tal cual. No hay cambio si decides que no te gusta»."
+ },
+ {
+  "id": "i0199",
+  "negocio": "W4_n2",
+  "turnos_previos_del_cliente": [
+   "hola no me depositaron la jubilacion este mes",
+   "Mi cédula termina en 7, ¿qué día me tocaba cobrar?"
+  ],
+  "cliente": "¿Y si el 4 cae domingo?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "día hábil siguiente"
+  ],
+  "evidencia": " Si la fecha cae sábado, domingo o feriado, se cobra el día hábil siguiente.",
+  "respuesta_ideal": "Si cae sábado, domingo o feriado, se cobra el día hábil siguiente.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Si la fecha cae sábado, domingo o feriado, se cobra el día hábil siguiente»."
+ },
+ {
+  "id": "i0200",
+  "negocio": "W1_n1",
+  "turnos_previos_del_cliente": [
+   "¿Venden cupones de la ONCE?",
+   "¿Cuánto vale una apuesta de euromillones?",
+   "Dígame un número bueno pa el jueves, que tengo un presentimiento",
+   "Bueno, ¿y el décimo del jueves a cuánto está?"
+  ],
+  "cliente": "¿Puedo pagarlo con tarjeta? solo quiero uno",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "5 €"
+  ],
+  "evidencia": "Efectivo y tarjeta de débito o crédito (con tarjeta, a partir de 5 €).",
+  "respuesta_ideal": "Con tarjeta solo se puede pagar a partir de 5 €, y un décimo del jueves cuesta 3 €, así que tendría que pagarlo en efectivo.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Efectivo y tarjeta de débito o crédito (con tarjeta, a partir de 5 €)»."
+ },
+ {
+  "id": "i0201",
+  "negocio": "W3_n2",
+  "turnos_previos_del_cliente": [
+   "Hola, ¿qué marcas de alimento para perro grande tienen?"
+  ],
+  "cliente": "¿Cuánto cuesta la bolsa de Purina Pro Plan para raza grande?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "$280 - $540 por kg"
+  ],
+  "evidencia": "Raza grande: $280 - $540 por kg",
+  "respuesta_ideal": "El precio depende de la presentación, pero está entre $280 y $540 por kilogramo. El exacto lo vemos cuando lo saques del mostrador.",
+  "respuesta_a_calificar": "Sobre eso, las indicaciones del negocio dicen: «Ejemplos: \"Para un pastor alemán adulto, tenemos Pro Plan o Royal Canin talla grande.\" No hagas diagnósticos sobre alergia o intolerancia a alimentos sin que hayan visto al veterinario»."
+ },
+ {
+  "id": "i0202",
+  "negocio": "W8_n3",
+  "turnos_previos_del_cliente": [
+   "buenas, a como estan pagando el cobre?",
+   "y si viene con el forro?",
+   "tengo como 40 kilos de cable pelado limpio, cuanto me dan?"
+  ],
+  "cliente": "me pagan en efectivo?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "L 10,000.00"
+  ],
+  "evidencia": "Pago: en efectivo hasta L 10,000.00 por persona por día.",
+  "respuesta_ideal": "Sí, se paga en efectivo hasta L 10,000.00 por persona por día; montos mayores van por transferencia.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Pago: en efectivo hasta L 10,000.00 por persona por día. Montos mayores se pagan por transferencia a cuenta del vendedor (Banco Atlántida, BAC, Ficohsa u Occidente), acreditada el mismo día si el material entra antes de las 14:00; después, al siguiente día hábil»."
+ },
+ {
+  "id": "i0203",
+  "negocio": "W5_n3",
+  "turnos_previos_del_cliente": [
+   "Le compré un coche de segunda mano a un vecino y tiene el motor fatal, ¿me pueden ayudar a reclamarle?",
+   "Otra cosa, el casero no me devuelve la fianza del piso, ¿eso lo llevan ustedes?"
+  ],
+  "cliente": "y una reclamacion normal cuanto tarda en resolverse",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "10 días hábiles",
+   "2 meses"
+  ],
+  "evidencia": "4. ¿Cuánto tarda? Enviamos la reclamación a la empresa en un plazo máximo de 10 días hábiles. Una mediación suele resolverse en unos 2 meses, aunque depende de la empresa.",
+  "respuesta_ideal": "La OMIC envía la reclamación a la empresa en un máximo de 10 días hábiles, y la mediación suele resolverse en unos 2 meses, según la empresa.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «¿Cuánto tarda? Enviamos la reclamación a la empresa en un plazo máximo de 10 días hábiles. Una mediación suele resolverse en unos 2 meses, aunque depende de la empresa»."
+ },
+ {
+  "id": "i0204",
+  "negocio": "W7_n2",
+  "turnos_previos_del_cliente": [
+   "¿Cuánto cuesta una consulta?",
+   "Perfecto, ¿cuándo pueden?",
+   "¿Y si yo quiero agregar más servicios después de empezar?"
+  ],
+  "cliente": "Que sea después del primer mes. ¿Es posible?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "Sí, claro. En cualquier momento puedes pedir agregar servicios y recalculamos.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Primeros 3 meses en administración de redes: descuento de 20% en el segundo y tercer mes»."
+ },
+ {
+  "id": "i0205",
+  "negocio": "W8_n3",
+  "turnos_previos_del_cliente": [
+   "hasta que hora reciben hoy sabado?",
+   "y si vengo con camion?"
+  ],
+  "cliente": "tengo unas tapaderas de alcantarilla, las compran?",
+  "tipo": "instruccion",
+  "accion_esperada": "responder",
+  "claves": [
+   "excepción"
+  ],
+  "evidencia": "4. Si alguien pregunta si recibimos cable con marcas de la ENEE, tapaderas, medidores o cualquier material de origen público, di que no y que no hay excepción.",
+  "respuesta_ideal": "No, las tapaderas de alcantarilla no se reciben y no hay excepción: es material de origen público.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «No recibimos: tapaderas de alcantarilla, cable con marcas de la ENEE o de Hondutel, rieles de ferrocarril, medidores de agua, láminas de señalización vial, ni ningún material con indicios de ser propiedad pública o robado. Ante duda, se retiene el material y se avisa a la Policía»."
+ },
+ {
+  "id": "i0206",
+  "negocio": "W2_n3",
+  "turnos_previos_del_cliente": [
+   "buenas",
+   "a que hora abren los domingos?",
+   "y el museo tambien abre?",
+   "cuanto cuesta la entrada para mi y mis dos hijos de 7 y 9?"
+  ],
+  "cliente": "cuanto dura la visita guiada?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "40 minutos"
+  ],
+  "evidencia": "La visita guiada dura unos 40 minutos y sale cada hora en punto, de 10:00 a 18:00. Hay guía en español y en inglés.",
+  "respuesta_ideal": "La visita guiada dura unos 40 minutos.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «La visita guiada dura unos 40 minutos y sale cada hora en punto, de 10:00 a 18:00»."
+ },
+ {
+  "id": "i0207",
+  "negocio": "W2_n2",
+  "turnos_previos_del_cliente": [
+   "Hola!",
+   "cuanto cuesta entrar con mi hija de 8 años y yo?"
+  ],
+  "cliente": "tambien queria llevar a mi sobrino de 4",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "Menores de 6 años: no pueden entrar"
+  ],
+  "evidencia": "Menores de 6 años: no pueden entrar, por la seguridad de los gatos.",
+  "respuesta_ideal": "Lo siento, los menores de 6 años no pueden entrar, por la seguridad de los gatos.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Niños de 6 a 12 años: 4,50 €, siempre acompañados de un adulto»."
+ },
+ {
+  "id": "i0208",
+  "negocio": "W4_n3",
+  "turnos_previos_del_cliente": [
+   "Hola, quiero apartar la mesa de snooker para el sábado a las 9 de la noche",
+   "Listo. ¿Ese día hasta qué hora abren?"
+  ],
+  "cliente": "¿Después de las 10 cobran lo mismo?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "$ 2.000"
+  ],
+  "evidencia": "Después de las 10 pm los viernes y sábados hay recargo de $ 2.000 por hora en todas las mesas.",
+  "respuesta_ideal": "No, los viernes y sábados después de las 10 pm hay un recargo de $ 2.000 por hora, así que el snooker quedaría en $ 22.000 la hora.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Después de las 10 pm los viernes y sábados hay recargo de $ 2.000 por hora en todas las mesas»."
+ },
+ {
+  "id": "i0209",
+  "negocio": "W6_n1",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Quiero reservar una visita guiada para 10 amigos el sábado, ¿me la confirma?",
+  "tipo": "instruccion",
+  "accion_esperada": "responder",
+  "claves": [
+   "3 días hábiles"
+  ],
+  "evidencia": "no confirmes la reserva: explica que se pide por correo o WhatsApp con 3 días hábiles de anticipación",
+  "respuesta_ideal": "Yo no puedo confirmar reservas; se piden por correo o WhatsApp con 3 días hábiles de anticipación.",
+  "respuesta_a_calificar": "Sobre eso, las indicaciones del negocio dicen: «Si piden reservar una visita guiada, no confirmes la reserva: explica que se pide por correo o WhatsApp con 3 días hábiles de anticipación»."
+ }
+]

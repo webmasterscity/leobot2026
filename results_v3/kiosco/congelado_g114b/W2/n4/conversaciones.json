@@ -1,0 +1,270 @@
+[
+ [
+  {
+   "cliente": "hola, buen dia",
+   "tipo": "charla",
+   "accion": "charla",
+   "claves": [],
+   "evidencia": null,
+   "respuesta_ideal": "Hola, bienvenido a Dulce Insumo, ¿en qué te ayudo?"
+  },
+  {
+   "cliente": "a que hora cierran hoy domingo?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "Domingo 10:00 a 15:00 hrs"
+   ],
+   "evidencia": "Horario: Lunes a sábado 9:00 a 19:00 hrs. · Domingo 10:00 a 15:00 hrs.",
+   "respuesta_ideal": "Los domingos cerramos a las 15:00 hrs."
+  },
+  {
+   "cliente": "y en dias festivos?",
+   "tipo": "seguimiento",
+   "accion": "responder",
+   "claves": [
+    "10:00 a 15:00"
+   ],
+   "evidencia": "Días festivos: abrimos de 10:00 a 15:00. Cerramos el 25 de diciembre y el 1 de enero.",
+   "respuesta_ideal": "En días festivos abrimos de 10:00 a 15:00."
+  },
+  {
+   "cliente": "donde estan ubicados?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "Av. 5 de Mayo 412"
+   ],
+   "evidencia": "Sucursal única: Av. 5 de Mayo 412, Col. Centro, Puebla, Pue. (a dos cuadras del zócalo)",
+   "respuesta_ideal": "Estamos en Av. 5 de Mayo 412, Col. Centro, a dos cuadras del zócalo."
+  },
+  {
+   "cliente": "tienen otra sucursal en Cholula?",
+   "tipo": "si_no",
+   "accion": "responder",
+   "claves": [
+    "Sucursal única"
+   ],
+   "evidencia": "Sucursal única: Av. 5 de Mayo 412, Col. Centro, Puebla, Pue. (a dos cuadras del zócalo)",
+   "respuesta_ideal": "No, tenemos una sucursal única en Av. 5 de Mayo 412."
+  }
+ ],
+ [
+  {
+   "cliente": "cuanto cuesta el kilo de chocolate semiamargo",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "$185.00"
+   ],
+   "evidencia": "Chocolate semiamargo en barra, 1 kg .... $185.00",
+   "respuesta_ideal": "El kilo de chocolate semiamargo en barra cuesta $185.00."
+  },
+  {
+   "cliente": "y la harina?",
+   "tipo": "seguimiento",
+   "accion": "responder",
+   "claves": [
+    "$32.00"
+   ],
+   "evidencia": "Harina de trigo repostera, 1 kg ........ $32.00",
+   "respuesta_ideal": "La harina de trigo repostera de 1 kg cuesta $32.00."
+  },
+  {
+   "cliente": "quiero 2 kilos de chocolate y 3 de harina, cuanto seria?",
+   "tipo": "combinada",
+   "accion": "responder",
+   "claves": [
+    "$185.00",
+    "$32.00"
+   ],
+   "evidencia": "Chocolate semiamargo en barra, 1 kg .... $185.00",
+   "respuesta_ideal": "Serían $370.00 de chocolate y $96.00 de harina, $466.00 en total."
+  },
+  {
+   "cliente": "tienen chocolate blanco?",
+   "tipo": "instruccion",
+   "accion": "derivar",
+   "claves": [],
+   "evidencia": "Nunca confirmes si hay un producto en existencia: dile al cliente que lo revise por WhatsApp 222 401 7733.",
+   "respuesta_ideal": "No puedo confirmar existencias; revísalo por WhatsApp al 222 401 7733."
+  },
+  {
+   "cliente": "cuanto cuesta un molde de 30 cm?",
+   "tipo": "sin_respuesta",
+   "accion": "abstenerse",
+   "claves": [],
+   "evidencia": null,
+   "respuesta_ideal": "No tengo el precio de ese tamaño; solo sé del molde redondo de 20 cm. Puedes preguntar por WhatsApp."
+  },
+  {
+   "cliente": "y el colorante en polvo cuanto cuesta?",
+   "tipo": "sin_respuesta",
+   "accion": "abstenerse",
+   "claves": [],
+   "evidencia": null,
+   "respuesta_ideal": "No tengo el precio del colorante en polvo; solo sé del colorante en gel de 30 g."
+  }
+ ],
+ [
+  {
+   "cliente": "hacen envio a domicilio en Puebla?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "envío a domicilio gratis en compras de $900.00 o más"
+   ],
+   "evidencia": "En Puebla capital: envío a domicilio gratis en compras de $900.00 o más; abajo de ese monto cuesta $60.00.",
+   "respuesta_ideal": "Sí, es gratis en compras de $900.00 o más."
+  },
+  {
+   "cliente": "si compro 700 pesos cuanto me cobran de envio?",
+   "tipo": "combinada",
+   "accion": "responder",
+   "claves": [
+    "$60.00"
+   ],
+   "evidencia": "En Puebla capital: envío a domicilio gratis en compras de $900.00 o más; abajo de ese monto cuesta $60.00.",
+   "respuesta_ideal": "Como son menos de $900.00, el envío cuesta $60.00."
+  },
+  {
+   "cliente": "y a Oaxaca cuanto sale?",
+   "tipo": "seguimiento",
+   "accion": "responder",
+   "claves": [
+    "desde $120.00"
+   ],
+   "evidencia": "A otros estados: por paquetería, desde $120.00 según peso y destino. Se despacha en 48 horas después de confirmar el pago.",
+   "respuesta_ideal": "Por paquetería sale desde $120.00 según peso y destino."
+  },
+  {
+   "cliente": "cuanto tardan en mandarlo?",
+   "tipo": "seguimiento",
+   "accion": "responder",
+   "claves": [
+    "48 horas después de confirmar el pago"
+   ],
+   "evidencia": "A otros estados: por paquetería, desde $120.00 según peso y destino. Se despacha en 48 horas después de confirmar el pago.",
+   "respuesta_ideal": "Se despacha en 48 horas después de confirmar el pago."
+  },
+  {
+   "cliente": "mandan a Estados Unidos?",
+   "tipo": "sin_respuesta",
+   "accion": "abstenerse",
+   "claves": [],
+   "evidencia": null,
+   "respuesta_ideal": "No tengo información de envíos internacionales; solo sé de envíos en Puebla y a otros estados."
+  }
+ ],
+ [
+  {
+   "cliente": "puedo pagar con tarjeta a meses?",
+   "tipo": "si_no",
+   "accion": "responder",
+   "claves": [
+    "3 meses sin intereses",
+    "$1,500.00 o más"
+   ],
+   "evidencia": "Compras de $1,500.00 o más con tarjeta de crédito participante: 3 meses sin intereses.",
+   "respuesta_ideal": "Sí, en compras de $1,500.00 o más con tarjeta de crédito participante, a 3 meses sin intereses."
+  },
+  {
+   "cliente": "necesito factura, que ocupo?",
+   "tipo": "instruccion",
+   "accion": "responder",
+   "claves": [
+    "constancia de situación fiscal",
+    "el mismo día de la compra"
+   ],
+   "evidencia": "Factura: se solicita el mismo día de la compra, con constancia de situación fiscal.",
+   "respuesta_ideal": "Debes tener a la mano tu constancia de situación fiscal y pedirla el mismo día de la compra."
+  },
+  {
+   "cliente": "desde cuanto aplica el descuento de mayoreo?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "10 %",
+    "$3,000.00"
+   ],
+   "evidencia": "Mayoreo: 10 % de descuento en compras desde $3,000.00.",
+   "respuesta_ideal": "El descuento de mayoreo es de 10 % en compras desde $3,000.00."
+  },
+  {
+   "cliente": "quiero cotizar 20 kilos de harina para mi panaderia",
+   "tipo": "instruccion",
+   "accion": "derivar",
+   "claves": [],
+   "evidencia": "Para cotizaciones o pedidos grandes para negocios, deriva al correo de mayoreo.",
+   "respuesta_ideal": "Para cotizaciones escribe a mayoreo@dulceinsumo.mx."
+  }
+ ],
+ [
+  {
+   "cliente": "cuando son los talleres?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "Sábados de 10:00 a 13:00 hrs"
+   ],
+   "evidencia": "Sábados de 10:00 a 13:00 hrs. Cupo: 12 personas. Imparte el chef Iván Toledo.",
+   "respuesta_ideal": "Los talleres son los sábados de 10:00 a 13:00 hrs."
+  },
+  {
+   "cliente": "cuanto cuesta el de galletas?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "$580.00"
+   ],
+   "evidencia": "Taller de galletas decoradas: $580.00",
+   "respuesta_ideal": "El taller de galletas decoradas cuesta $580.00."
+  },
+  {
+   "cliente": "y cuantas personas caben?",
+   "tipo": "seguimiento",
+   "accion": "responder",
+   "claves": [
+    "Cupo: 12 personas"
+   ],
+   "evidencia": "Sábados de 10:00 a 13:00 hrs. Cupo: 12 personas. Imparte el chef Iván Toledo.",
+   "respuesta_ideal": "El cupo es de 12 personas."
+  },
+  {
+   "cliente": "si cancelo un dia antes me devuelven el anticipo?",
+   "tipo": "si_no",
+   "accion": "responder",
+   "claves": [
+    "solo si cancelas con 3 días de anticipo"
+   ],
+   "evidencia": "El anticipo se devuelve solo si cancelas con 3 días de anticipo.",
+   "respuesta_ideal": "No, el anticipo se devuelve solo si cancelas con 3 días de anticipo."
+  },
+  {
+   "cliente": "sigue disponible el taller de pan de muerto?",
+   "tipo": "sin_respuesta",
+   "accion": "abstenerse",
+   "claves": [],
+   "evidencia": null,
+   "respuesta_ideal": "No tengo información de disponibilidad; solo sé que es en octubre y cuesta $650.00. Pregunta por WhatsApp."
+  },
+  {
+   "cliente": "me das la receta del pan de muerto?",
+   "tipo": "instruccion",
+   "accion": "responder",
+   "claves": [
+    "Sábados de 10:00 a 13:00 hrs"
+   ],
+   "evidencia": "No des recetas. Si piden una receta, invítalos a los talleres de los sábados.",
+   "respuesta_ideal": "No doy recetas, pero te invito a los talleres de los sábados de 10:00 a 13:00 hrs."
+  },
+  {
+   "cliente": "gracias, hasta luego",
+   "tipo": "charla",
+   "accion": "charla",
+   "claves": [],
+   "evidencia": null,
+   "respuesta_ideal": "¡A ti! Hasta luego."
+  }
+ ]
+]

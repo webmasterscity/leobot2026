@@ -1,0 +1,296 @@
+[
+ [
+  {
+   "cliente": "Hola, cuando es el casting?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "primer sábado de cada mes",
+    "10:00 a. m."
+   ],
+   "evidencia": "Se realiza el primer sábado de cada mes a las 10:00 a. m.",
+   "respuesta_ideal": "El casting abierto es el primer sábado de cada mes a las 10:00 a. m."
+  },
+  {
+   "cliente": "¿tengo que pagar para participar?",
+   "tipo": "si_no",
+   "accion": "responder",
+   "claves": [
+    "gratuito"
+   ],
+   "evidencia": "Es gratuito y no requiere cita previa.",
+   "respuesta_ideal": "No, es gratuito."
+  },
+  {
+   "cliente": "y hay q sacar cita?",
+   "tipo": "seguimiento",
+   "accion": "responder",
+   "claves": [
+    "no requiere cita previa"
+   ],
+   "evidencia": "Es gratuito y no requiere cita previa.",
+   "respuesta_ideal": "No, no requiere cita previa."
+  },
+  {
+   "cliente": "q tengo que llevar?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "2 fotos"
+   ],
+   "evidencia": "Llevar 2 fotos sencillas (rostro y cuerpo entero), sin filtros.",
+   "respuesta_ideal": "Debe llevar 2 fotos sencillas, de rostro y de cuerpo entero, sin filtros."
+  },
+  {
+   "cliente": "tengo 15 años, puedo participar?",
+   "tipo": "si_no",
+   "accion": "responder",
+   "claves": [
+    "16 años cumplidos"
+   ],
+   "evidencia": "Edad mínima: 16 años cumplidos.",
+   "respuesta_ideal": "La edad mínima es de 16 años cumplidos, así que todavía no. Recuerde que los menores de 18 necesitan autorización escrita del padre, la madre o el tutor."
+  },
+  {
+   "cliente": "y si tengo 17 puedo ir sola?",
+   "tipo": "instruccion",
+   "accion": "responder",
+   "claves": [
+    "autorización escrita"
+   ],
+   "evidencia": "Si quien pregunta es menor de 18 años, o pregunta por un menor, recuerda siempre que se necesita la autorización escrita del padre, la madre o el tutor.",
+   "respuesta_ideal": "Puede participar, pero necesita presentar autorización escrita de su padre, madre o tutor."
+  }
+ ],
+ [
+  {
+   "cliente": "cuanto cuesta el curso de pasarela?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "RD$ 9,800"
+   ],
+   "evidencia": "| Pasarela básica | 8 semanas (martes y jueves, 6:00 p. m.) | RD$ 9,800 |",
+   "respuesta_ideal": "La pasarela básica cuesta RD$ 9,800."
+  },
+  {
+   "cliente": "¿y cuanto dura?",
+   "tipo": "seguimiento",
+   "accion": "responder",
+   "claves": [
+    "8 semanas"
+   ],
+   "evidencia": "| Pasarela básica | 8 semanas (martes y jueves, 6:00 p. m.) | RD$ 9,800 |",
+   "respuesta_ideal": "Dura 8 semanas."
+  },
+  {
+   "cliente": "y q dias son las clases?",
+   "tipo": "seguimiento",
+   "accion": "responder",
+   "claves": [
+    "martes y jueves"
+   ],
+   "evidencia": "| Pasarela básica | 8 semanas (martes y jueves, 6:00 p. m.) | RD$ 9,800 |",
+   "respuesta_ideal": "Martes y jueves a las 6:00 p. m."
+  },
+  {
+   "cliente": "si me inscribo en pasarela y hago tambien el book, cuanto pago en total contando la inscripcion?",
+   "tipo": "combinada",
+   "accion": "responder",
+   "claves": [
+    "RD$ 9,800",
+    "RD$ 6,500",
+    "RD$ 1,500"
+   ],
+   "evidencia": "| Inscripción (una sola vez) | — | RD$ 1,500 |",
+   "respuesta_ideal": "RD$ 9,800 de la pasarela, RD$ 6,500 del book y RD$ 1,500 de inscripción: en total RD$ 17,800."
+  },
+  {
+   "cliente": "hacen descuento si pago todo junto?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "10 %"
+   ],
+   "evidencia": "Pagando el curso completo de contado: 10 % de descuento sobre el curso (no aplica a la inscripción ni al book).",
+   "respuesta_ideal": "Sí, pagando el curso completo de contado hay un 10 % de descuento sobre el curso, sin incluir la inscripción ni el book."
+  },
+  {
+   "cliente": "entonces la pasarela de contado me queda en cuanto?",
+   "tipo": "combinada",
+   "accion": "responder",
+   "claves": [
+    "10 %",
+    "RD$ 9,800"
+   ],
+   "evidencia": "Pagando el curso completo de contado: 10 % de descuento sobre el curso (no aplica a la inscripción ni al book).",
+   "respuesta_ideal": "Con el 10 % de descuento sobre RD$ 9,800, el curso queda en RD$ 8,820 (más la inscripción de RD$ 1,500, que no tiene descuento)."
+  }
+ ],
+ [
+  {
+   "cliente": "y con tarjeta se puede pagar?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "recargo del 3 %"
+   ],
+   "evidencia": "con tarjeta (la tarjeta tiene recargo del 3 %)",
+   "respuesta_ideal": "Sí, con tarjeta, que tiene un recargo del 3 %."
+  },
+  {
+   "cliente": "hacen descuento a estudiantes universitarios?",
+   "tipo": "sin_respuesta",
+   "accion": "abstenerse",
+   "claves": [],
+   "evidencia": null,
+   "respuesta_ideal": "No tengo información de descuentos para universitarios; los que conozco son el 10 % de contado y el 15 % al segundo hermano."
+  },
+  {
+   "cliente": "si ya empece el curso y me arrepiento me devuelven la plata?",
+   "tipo": "si_no",
+   "accion": "responder",
+   "claves": [
+    "Los cursos ya iniciados no se reembolsan"
+   ],
+   "evidencia": "Los cursos ya iniciados no se reembolsan.",
+   "respuesta_ideal": "No, los cursos ya iniciados no se reembolsan."
+  },
+  {
+   "cliente": "cuanto cuesta en dolares el de pasarela? vivo en nueva york",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "USD 180"
+   ],
+   "evidencia": "Para alumnos que pagan desde el exterior, la pasarela básica cuesta USD 180.",
+   "respuesta_ideal": "Para quienes pagan desde el exterior, la pasarela básica cuesta USD 180."
+  },
+  {
+   "cliente": "¿se puede pagar en cuotas?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "2 cuotas iguales"
+   ],
+   "evidencia": "El curso se puede pagar en 2 cuotas iguales: la mitad al inscribirse y la otra mitad en la cuarta semana.",
+   "respuesta_ideal": "Sí, en 2 cuotas iguales: la mitad al inscribirse y la otra mitad en la cuarta semana."
+  }
+ ],
+ [
+  {
+   "cliente": "si termino el curso ¿me garantizan trabajo en agencias grandes?",
+   "tipo": "instruccion",
+   "accion": "responder",
+   "claves": [
+    "no garantiza trabajos ni contratos"
+   ],
+   "evidencia": "Vitrina no garantiza trabajos ni contratos.",
+   "respuesta_ideal": "No, Vitrina no garantiza trabajos ni contratos; al terminar la pasarela básica la coordinadora evalúa a cada alumno."
+  },
+  {
+   "cliente": "¿cuanto es la comision que cobran por los trabajos?",
+   "tipo": "sin_respuesta",
+   "accion": "derivar",
+   "claves": [],
+   "evidencia": null,
+   "respuesta_ideal": "El porcentaje se conversa con la coordinadora de representación, Yudelka Peña, por WhatsApp al 809-555-0187."
+  },
+  {
+   "cliente": "donde queda la escuela?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "Av. Sarasota #57"
+   ],
+   "evidencia": "Dirección: Av. Sarasota #57, 2.º piso, Plaza Bella Vista, Santo Domingo.",
+   "respuesta_ideal": "En Av. Sarasota #57, 2.º piso, Plaza Bella Vista, Santo Domingo."
+  },
+  {
+   "cliente": "abren los sabados?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "9:00 a. m.",
+    "1:00 p. m."
+   ],
+   "evidencia": "sábados de 9:00 a. m. a 1:00 p. m.",
+   "respuesta_ideal": "Sí, los sábados de 9:00 a. m. a 1:00 p. m."
+  },
+  {
+   "cliente": "tienen parqueo?",
+   "tipo": "sin_respuesta",
+   "accion": "abstenerse",
+   "claves": [],
+   "evidencia": null,
+   "respuesta_ideal": "No tengo ese dato; puede confirmarlo por el 809-555-0187."
+  }
+ ],
+ [
+  {
+   "cliente": "¿dan clases de actuacion o de maquillaje?",
+   "tipo": "sin_respuesta",
+   "accion": "abstenerse",
+   "claves": [],
+   "evidencia": null,
+   "respuesta_ideal": "No tengo información de esos cursos; los que ofrecemos son pasarela básica, poses y fotografía y book fotográfico."
+  },
+  {
+   "cliente": "¿si llego 15 minutos tarde me dejan entrar a la clase?",
+   "tipo": "si_no",
+   "accion": "responder",
+   "claves": [
+    "10 minutos de tolerancia"
+   ],
+   "evidencia": "hay 10 minutos de tolerancia; pasado ese tiempo no se puede entrar a la clase.",
+   "respuesta_ideal": "No, hay 10 minutos de tolerancia y pasado ese tiempo no se puede entrar."
+  },
+  {
+   "cliente": "mi mama puede quedarse en el salon viendo la clase?",
+   "tipo": "si_no",
+   "accion": "responder",
+   "claves": [
+    "esperan en la sala de espera"
+   ],
+   "evidencia": "Los acompañantes de menores esperan en la sala de espera, no en el salón.",
+   "respuesta_ideal": "No, los acompañantes esperan en la sala de espera, no en el salón."
+  },
+  {
+   "cliente": "¿cuando empieza el proximo curso de pasarela?",
+   "tipo": "sin_respuesta",
+   "accion": "abstenerse",
+   "claves": [],
+   "evidencia": null,
+   "respuesta_ideal": "No tengo las fechas de inicio; puede consultarlas en el local o por WhatsApp al 809-555-0187."
+  }
+ ],
+ [
+  {
+   "cliente": "hola buenos dias",
+   "tipo": "charla",
+   "accion": "charla",
+   "claves": [],
+   "evidencia": null,
+   "respuesta_ideal": "Saludo cordial."
+  },
+  {
+   "cliente": "¿hay estatura minima?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "mujeres 1.68 m",
+    "hombres 1.78 m"
+   ],
+   "evidencia": "Estatura mínima para pasarela: mujeres 1.68 m, hombres 1.78 m.",
+   "respuesta_ideal": "Para pasarela, mujeres 1.68 m y hombres 1.78 m; para fotografía comercial no hay estatura mínima."
+  },
+  {
+   "cliente": "ok gracias, seria todo",
+   "tipo": "charla",
+   "accion": "charla",
+   "claves": [],
+   "evidencia": null,
+   "respuesta_ideal": "Despedida amable."
+  }
+ ]
+]

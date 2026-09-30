@@ -1,0 +1,493 @@
+[
+ {
+  "id": "i0150",
+  "negocio": "W2_n1",
+  "turnos_previos_del_cliente": [],
+  "cliente": "cuanto cuesta llevarme el equipo a mi casa nueva",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "$35.000"
+  ],
+  "evidencia": "¿Puedo llevarme el equipo si me cambio de casa? Sí, la reubicación del equipo cuesta $35.000.",
+  "respuesta_ideal": "Sí, la reubicación del equipo cuesta $35.000.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Sí, la reubicación del equipo cuesta $35.000»."
+ },
+ {
+  "id": "i0151",
+  "negocio": "W2_n3",
+  "turnos_previos_del_cliente": [],
+  "cliente": "cuanto cuesta una geoda de cuarzo?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "Bs 250"
+  ],
+  "evidencia": "Geoda de cuarzo mediana: Bs 250",
+  "respuesta_ideal": "Una geoda de cuarzo mediana cuesta Bs 250.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Geoda de cuarzo mediana: Bs 250»."
+ },
+ {
+  "id": "i0152",
+  "negocio": "W7_n2",
+  "turnos_previos_del_cliente": [],
+  "cliente": "¿Hacen sitios web?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "Sitio web básico"
+  ],
+  "evidencia": "Sitio web básico (5 páginas): $1.800 USD",
+  "respuesta_ideal": "Sí, hacemos sitios web. Sitio básico de 5 páginas cuesta $1.800 USD.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Sitio web básico (5 páginas): $1.800 USD»."
+ },
+ {
+  "id": "i0153",
+  "negocio": "W2_n1",
+  "turnos_previos_del_cliente": [
+   "hola buenas tardes",
+   "cuanto sale al mes el plan mas barato",
+   "y ese trae camara?"
+  ],
+  "cliente": "si lo tomo por el minimo del contrato, cuanto pagaria en mensualidades del basico?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "$19.900",
+   "12 meses"
+  ],
+  "evidencia": "Contrato mínimo: 12 meses. Si se pone término antes de tiempo, se cobra una multa equivalente a 2 mensualidades.",
+  "respuesta_ideal": "El contrato mínimo es de 12 meses, así que serían 12 mensualidades de $19.900, es decir $238.800 sin contar la instalación.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Contrato mínimo: 12 meses. Si se pone término antes de tiempo, se cobra una multa equivalente a 2 mensualidades»."
+ },
+ {
+  "id": "i0154",
+  "negocio": "W1_n3",
+  "turnos_previos_del_cliente": [
+   "¿Rentan drones? Es para una boda",
+   "¿Y ustedes hacen el video de la boda con dron?",
+   "Si me compro uno, ¿lo puedo volar en el centro histórico?"
+  ],
+  "cliente": "¿Cuánto cuesta el curso de fotografía aérea?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "$3,500"
+  ],
+  "evidencia": "Curso de fotografía y video aéreo: $3,500.",
+  "respuesta_ideal": "El curso de fotografía y video aéreo cuesta $3,500, incluye 2 sesiones prácticas y requiere el curso básico o experiencia comprobada.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Curso de fotografía y video aéreo: $3,500»."
+ },
+ {
+  "id": "i0155",
+  "negocio": "W8_n3",
+  "turnos_previos_del_cliente": [
+   "hola, reciben baterias de carro?",
+   "a como pagan una refrigeradora vieja?",
+   "ustedes hacen la evacuacion del freon?"
+  ],
+  "cliente": "y las latas de refresco, tienen que estar aplastadas?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "compactadas o sueltas"
+  ],
+  "evidencia": "Aluminio lata (latas de refresco)\tL 24.00\tcompactadas o sueltas",
+  "respuesta_ideal": "No hace falta, las latas se reciben compactadas o sueltas, a L 24.00 el kilo.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Material: Aluminio lata (latas de refresco); Precio: L 24.00; Observaciones: compactadas o sueltas»."
+ },
+ {
+  "id": "i0156",
+  "negocio": "W5_n3",
+  "turnos_previos_del_cliente": [
+   "Buenos días. Me han cobrado de más en la factura del móvil, ¿qué tengo que traer para reclamar?"
+  ],
+  "cliente": "¿Y no puedo reclamar aquí directamente, sin ir a la compañía?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "Primero hay que reclamar a la empresa"
+  ],
+  "evidencia": "3. ¿Puedo reclamar directamente en la OMIC? Primero hay que reclamar a la empresa. Si en un mes no le contestan, o la respuesta no le convence, entonces presente la reclamación en la OMIC.",
+  "respuesta_ideal": "No. Primero hay que reclamar a la empresa; si en un mes no le contestan o la respuesta no le convence, entonces reclama en la OMIC.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «¿Puedo reclamar directamente en la OMIC? Primero hay que reclamar a la empresa. Si en un mes no le contestan, o la respuesta no le convence, entonces presente la reclamación en la OMIC»."
+ },
+ {
+  "id": "i0157",
+  "negocio": "W6_n2",
+  "turnos_previos_del_cliente": [
+   "mi empresa quiere rentar una nave, ¿cuánto cuesta el metro cuadrado?",
+   "¿de qué tamaños hay?",
+   "¿cuánto es el contrato mínimo?"
+  ],
+  "cliente": "¿y de depósito?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "dos meses de renta"
+  ],
+  "evidencia": "Depósito equivalente a dos meses de renta.",
+  "respuesta_ideal": "El depósito equivale a dos meses de renta.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Depósito equivalente a dos meses de renta»."
+ },
+ {
+  "id": "i0158",
+  "negocio": "W2_n2",
+  "turnos_previos_del_cliente": [],
+  "cliente": "aceptan bizum?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "Tarjeta, Bizum y efectivo"
+  ],
+  "evidencia": "Tarjeta, Bizum y efectivo. Wifi gratis para clientes.",
+  "respuesta_ideal": "Sí, aceptamos tarjeta, Bizum y efectivo.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Tarjeta, Bizum y efectivo»."
+ },
+ {
+  "id": "i0159",
+  "negocio": "W8_n4",
+  "turnos_previos_del_cliente": [
+   "hola, compre unas botas por internet hace 12 dias y quiero devolverlas, la tienda dice que no",
+   "el arbitraje ese, la tienda tiene que aceptarlo?"
+  ],
+  "cliente": "donde puedo ver si esta adherida?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "web de la Junta"
+  ],
+  "evidencia": "- Consulta del listado de empresas adheridas al Sistema Arbitral de Consumo: en la oficina o en la web de la Junta.",
+  "respuesta_ideal": "El listado de empresas adheridas puede consultarlo en la oficina o en la web de la Junta.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Tramitar la solicitud de arbitraje de consumo ante la Junta Arbitral de Consumo de Castilla y León, si la empresa está adherida o acepta»."
+ },
+ {
+  "id": "i0160",
+  "negocio": "W3_n2",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Hola, ¿qué marcas de alimento para perro grande tienen?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "Royal Canin",
+   "Hill's",
+   "Purina Pro Plan",
+   "Alpo"
+  ],
+  "evidencia": "Raza grande: marcas Premium (Royal Canin, Hill's, Purina Pro Plan) y económicas (Alpo)",
+  "respuesta_ideal": "Para perros grandes tenemos varias marcas. Las premium son Royal Canin, Hill's y Purina Pro Plan. También ofrecemos opciones más económicas como Alpo.",
+  "respuesta_a_calificar": "Hola. No lo tengo seguro. Lo más cercano que dice el texto es: «Alimento seco para perros: marcas Premium (Royal Canin, Hill's, Purina Pro Plan) y económicas (Alpo, Mezcla)»."
+ },
+ {
+  "id": "i0161",
+  "negocio": "W4_n4",
+  "turnos_previos_del_cliente": [
+   "Buenos días, ¿a cómo está el kilo de tortilla?",
+   "¿Y la azul?",
+   "Deme kilo y medio de la blanca y medio kilo de azul, ¿cuánto es?",
+   "¿Lo puedo pagar con tarjeta?"
+  ],
+  "cliente": "¿Me da bolsa?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "1.00"
+  ],
+  "evidencia": "* Las bolsas de plástico se cobran a $ 1.00 (un peso); recomendamos traer servilleta de tela o tortillero.",
+  "respuesta_ideal": "Sí, la bolsa de plástico se cobra a $ 1.00; le recomendamos traer servilleta de tela o tortillero.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Las bolsas de plástico se cobran a $ 1.00 (un peso); recomendamos traer servilleta de tela o tortillero»."
+ },
+ {
+  "id": "i0162",
+  "negocio": "W4_n1",
+  "turnos_previos_del_cliente": [
+   "Buenas tardes, soy socio y quiero saber a cuánto sale la liquidación de este año",
+   "¿La oficina de socios abre el sábado?"
+  ],
+  "cliente": "¿Cuántos socios tiene la cooperativa?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "312"
+  ],
+  "evidencia": "Somos una cooperativa de 312 socios olivareros fundada en 1961 en Valdepeñas de Jaén.",
+  "respuesta_ideal": "La cooperativa tiene 312 socios olivareros.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Somos una cooperativa de 312 socios olivareros fundada en 1961 en Valdepeñas de Jaén»."
+ },
+ {
+  "id": "i0163",
+  "negocio": "W1_n3",
+  "turnos_previos_del_cliente": [
+   "a que hora cierran entre semana"
+  ],
+  "cliente": "¿Cuánto vale un juego de hélices?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "$220"
+  ],
+  "evidencia": "Hélices (juego de 4): $220",
+  "respuesta_ideal": "El juego de 4 hélices cuesta $220.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Hélices (juego de 4): $220»."
+ },
+ {
+  "id": "i0164",
+  "negocio": "W7_n2",
+  "turnos_previos_del_cliente": [
+   "¿Cuánto cuesta una consulta?",
+   "Perfecto, ¿cuándo pueden?"
+  ],
+  "cliente": "¿Y si yo quiero agregar más servicios después de empezar?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "cambios de alcance",
+   "presupuesto adicional"
+  ],
+  "evidencia": "Cambios de alcance durante el proyecto: presupuesto adicional.",
+  "respuesta_ideal": "Sí, pero eso tiene costo adicional. Calculamos y te pasamos presupuesto nuevo.",
+  "respuesta_a_calificar": "Sobre eso, las indicaciones del negocio dicen: «Si el cliente quiere agregar servicios o pedir más de lo pactado: \"Los cambios de alcance tienen costo adicional»."
+ },
+ {
+  "id": "i0165",
+  "negocio": "W2_n4",
+  "turnos_previos_del_cliente": [
+   "hola, buen dia",
+   "a que hora cierran hoy domingo?"
+  ],
+  "cliente": "y en dias festivos?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "10:00 a 15:00"
+  ],
+  "evidencia": "Días festivos: abrimos de 10:00 a 15:00. Cerramos el 25 de diciembre y el 1 de enero.",
+  "respuesta_ideal": "En días festivos abrimos de 10:00 a 15:00.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Días festivos: abrimos de 10:00 a 15:00»."
+ },
+ {
+  "id": "i0166",
+  "negocio": "W4_n4",
+  "turnos_previos_del_cliente": [
+   "¿Abren el 12 de diciembre?",
+   "¿Y el domingo a qué hora cierran?",
+   "¿Se puede apartar tortilla hecha a mano para el domingo?"
+  ],
+  "cliente": "¿Cuántas tortillas trae un kilo?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo ese dato en el manual; en el mostrador se lo pueden decir.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Las bolsas de plástico se cobran a $ 1.00 (un peso); recomendamos traer servilleta de tela o tortillero»."
+ },
+ {
+  "id": "i0167",
+  "negocio": "W8_n3",
+  "turnos_previos_del_cliente": [
+   "buenas, a como estan pagando el cobre?",
+   "y si viene con el forro?"
+  ],
+  "cliente": "tengo como 40 kilos de cable pelado limpio, cuanto me dan?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "6,600"
+  ],
+  "evidencia": "Cobre limpio (cable pelado, tubería)\tL 165.00\tsin soldadura ni pintura",
+  "respuesta_ideal": "A L 165.00 el kilo, 40 kilos serían unos L 6,600.00, según lo que marque la báscula y el precio de la semana.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Material: Cobre limpio (cable pelado, tubería); Precio: L 165.00; Observaciones: sin soldadura ni pintura»."
+ },
+ {
+  "id": "i0168",
+  "negocio": "W2_n2",
+  "turnos_previos_del_cliente": [],
+  "cliente": "estan abiertos los lunes?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "Lunes: cerrado"
+  ],
+  "evidencia": "Lunes: cerrado",
+  "respuesta_ideal": "No, los lunes permanecemos cerrados.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Lunes: cerrado»."
+ },
+ {
+  "id": "i0169",
+  "negocio": "W3_n4",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Hola, ¿a qué horas abren mañana?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "9:30 a.m.",
+   "lunes a viernes"
+  ],
+  "evidencia": "Lunes a viernes: 9:30 a.m. - 2:00 p.m. y 4:30 p.m. - 8:00 p.m.",
+  "respuesta_ideal": "Mañana es viernes, abrimos a las 9:30 de la mañana. Tenemos dos turnos: 9:30 a.m. a 2:00 p.m., y 4:30 p.m. a 8:00 p.m.",
+  "respuesta_a_calificar": "Hola. No lo sé: no encontré esa información en el texto que tengo."
+ },
+ {
+  "id": "i0170",
+  "negocio": "W6_n3",
+  "turnos_previos_del_cliente": [
+   "hola, ¿cuándo es la carrera?",
+   "¿y a qué hora sale la de 10 km?"
+  ],
+  "cliente": "¿dónde queda la salida?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "Plaza 14 de Septiembre"
+  ],
+  "evidencia": "La salida y la meta están en la Plaza 14 de Septiembre.",
+  "respuesta_ideal": "La salida y la meta están en la Plaza 14 de Septiembre.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Horas de salida: 21 km a las 6:30 a. m.; 10 km a las 7:00 a. m.; 5 km a las 8:30 a. m. Tiempo máximo para terminar: 3 horas en los 21 km y 1 hora 30 minutos en los 10 km. Ojo: Cochabamba está a 2.558 m s. n. m., así que conviene llegar unos días antes si vienes de tierras bajas»."
+ },
+ {
+  "id": "i0171",
+  "negocio": "W8_n3",
+  "turnos_previos_del_cliente": [],
+  "cliente": "buenas, a como estan pagando el cobre?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "L 165.00"
+  ],
+  "evidencia": "Cobre limpio (cable pelado, tubería)\tL 165.00\tsin soldadura ni pintura",
+  "respuesta_ideal": "Buenos días, bienvenido a Recimetal Sula. El cobre limpio se está pagando a L 165.00 el kilo y el cobre sucio a L 128.00; los precios se actualizan cada lunes y el precio final lo define el pesaje.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Cable con forro: se recibe, pero se paga como \"cobre sucio\" si no viene pelado. Ofrecemos pelado en planta con descuento de L 12.00 por kg»."
+ },
+ {
+  "id": "i0172",
+  "negocio": "W4_n4",
+  "turnos_previos_del_cliente": [],
+  "cliente": "¿Abren el 12 de diciembre?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "6 a 10"
+  ],
+  "evidencia": "El 12 de dic. (día de la Virgen) abrimos solo de 6 a 10 h.",
+  "respuesta_ideal": "Sí, el 12 de diciembre abrimos solo de 6 a 10 h.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Razón social: Días que cerramos; Tortillería La Guadalupana de Xalapa, S.A. de C.V.: 1 de enero, Jueves y Viernes Santo y 25 de diciembre. El 12 de dic. (día de la Virgen) abrimos solo de 6 a 10 h»."
+ },
+ {
+  "id": "i0173",
+  "negocio": "W1_n1",
+  "turnos_previos_del_cliente": [
+   "me han tocado 120 euros en la bonoloto, me lo pagais aqui?",
+   "lo compré en una administración de Teruel, ¿no pasa nada?"
+  ],
+  "cliente": "Es que he perdido el resguardo pero tengo una foto en el móvil, ¿me vale?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "resguardo original"
+  ],
+  "evidencia": "Sin el resguardo original no se puede pagar ningún premio de apuestas (Primitiva, Bonoloto, Euromillones, Quiniela).",
+  "respuesta_ideal": "Lo siento, sin el resguardo original no se puede pagar el premio; la foto no sirve.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «En 2011 repartimos un segundo premio del Sorteo de Navidad en el barrio de Delicias, y todavía hay vecinos que vienen a por \"el décimo de la suerte\" (todos los números tienen la misma probabilidad, pero nos hace ilusión)»."
+ },
+ {
+  "id": "i0174",
+  "negocio": "W1_n4",
+  "turnos_previos_del_cliente": [
+   "Buenas tardes",
+   "cuanto sale la casa de 2 dormitorios llave en mano?"
+  ],
+  "cliente": "¿y en kit?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "19.800.000"
+  ],
+  "evidencia": "2. Modelo Llanquihue — 54 m², 2 dormitorios, 1 baño. Kit: $ 19.800.000 · Llave en mano: $ 29.900.000",
+  "respuesta_ideal": "En kit el Llanquihue cuesta $ 19.800.000.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Si lo desea, podemos armar el kit por un valor adicional de $ 3.200.000 en los modelos Chaitén y Llanquihue (otros modelos, consultar)»."
+ },
+ {
+  "id": "i0175",
+  "negocio": "W7_n3",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Hola, ¿hacen envíos a casa?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "Envío a domicilio",
+   "4€"
+  ],
+  "evidencia": "Envío a domicilio (península, pedido mín. 30€): 4€",
+  "respuesta_ideal": "Sí, hacemos envíos a domicilio en la península desde 4 euros (pedido mínimo 30 euros).",
+  "respuesta_a_calificar": "Hola. No lo tengo seguro. Lo más cercano que dice el texto es: «Envío a domicilio (península, pedido mín. 30€): 4€»."
+ },
+ {
+  "id": "i0176",
+  "negocio": "W7_n4",
+  "turnos_previos_del_cliente": [
+   "Hola, ¿venden vinilos?",
+   "¿Cuánto cuesta un vinilo nuevo?",
+   "¿Y los usados?"
+  ],
+  "cliente": "¿Puedo escuchar uno antes de comprarlo?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "podés escuchar"
+  ],
+  "evidencia": "En tienda podés escuchar cualquier disco que quieras antes de comprar, especialmente los usados.",
+  "respuesta_ideal": "Sí, en tienda podes escuchar cualquier disco que quieras antes de comprar. Tenemos estetoscopio y revisamos juntos.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Escuchamos juntos cualquier disco que consideres antes de comprar (solo vinilos y CDs usados / en promoción)»."
+ },
+ {
+  "id": "i0177",
+  "negocio": "W5_n1",
+  "turnos_previos_del_cliente": [
+   "¿A qué hora abren los sábados?"
+  ],
+  "cliente": "y el domingo?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "cerrado"
+  ],
+  "evidencia": "Domingo: cerrado.",
+  "respuesta_ideal": "Los domingos estamos cerrados.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Domingo: cerrado»."
+ },
+ {
+  "id": "i0178",
+  "negocio": "W5_n4",
+  "turnos_previos_del_cliente": [
+   "¿El estacionamiento es gratis?",
+   "si me quedo tres horas y media, ¿cuánto pago?",
+   "¿Me pueden mandar la freidora a mi casa en Pelotas?",
+   "¿Venden chips para el celular?"
+  ],
+  "cliente": "el 1 de enero a que hora abren?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "12:00"
+  ],
+  "evidencia": "1 de enero: abrimos a las 12:00.",
+  "respuesta_ideal": "El 1 de enero abrimos a las 12:00.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «1 de enero: abrimos a las 12:00»."
+ },
+ {
+  "id": "i0179",
+  "negocio": "W2_n1",
+  "turnos_previos_del_cliente": [
+   "cuanto cobran por instalar el kit?"
+  ],
+  "cliente": "y cuanto demoran en dejarlo funcionando despues de firmar?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "48 horas hábiles"
+  ],
+  "evidencia": "La instalación se realiza dentro de 48 horas hábiles después de firmar el contrato.",
+  "respuesta_ideal": "La instalación se hace dentro de 48 horas hábiles después de firmar el contrato.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «La instalación se realiza dentro de 48 horas hábiles después de firmar el contrato»."
+ }
+]

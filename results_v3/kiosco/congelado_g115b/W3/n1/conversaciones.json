@@ -1,0 +1,148 @@
+[
+  [
+    {
+      "cliente": "Hola, buenos días. ¿Ustedes reparan violines?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["violines", "restauración"],
+      "evidencia": "Restauración completa de violines y violas (restauración de grietas, cambio de cordal, ajuste de puente)",
+      "respuesta_ideal": "Sí, hacemos restauración completa de violines. Podemos arreglar grietas, cambiar cordales, ajustar puentes y más. ¿Qué específicamente le hace falta al suyo?"
+    },
+    {
+      "cliente": "¿Cuánto cuesta reparar las cuerdas?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["$45.000", "$65.000"],
+      "evidencia": "Reparación de cuerdas (violín o viola): $45.000 - $65.000",
+      "respuesta_ideal": "El cambio de cuerdas cuesta entre $45.000 y $65.000, dependiendo de la complejidad."
+    },
+    {
+      "cliente": "¿Cuánto tiempo demora?",
+      "tipo": "seguimiento",
+      "accion": "responder",
+      "claves": ["3 días", "6 semanas"],
+      "evidencia": "Tiempo de reparación: entre 3 días (reparaciones menores) y 6 semanas (restauraciones completas).",
+      "respuesta_ideal": "Para cambio de cuerdas, normalmente entre 3 y 5 días. Dependiendo del estado del instrumento, puede variar. Te llamo cuando esté listo."
+    },
+    {
+      "cliente": "¿Atienden los domingos?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["cerrado", "domingos"],
+      "evidencia": "Domingos y festivos: cerrado",
+      "respuesta_ideal": "No, los domingos estamos cerrados. Abrimos de lunes a viernes de 10 a.m. a 6 p.m., y sábados de 10 a.m. a 2 p.m."
+    }
+  ],
+  [
+    {
+      "cliente": "Necesito reparar una guitarra. ¿Hacen eso?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["guitarras", "reparación"],
+      "evidencia": "Reparación de guitarras acústicas y clásicas (trastes, clavijas, arpuelas)",
+      "respuesta_ideal": "Claro, reparamos guitarras acústicas y clásicas. ¿Qué problema tiene tu guitarra?"
+    },
+    {
+      "cliente": "¿Es caro cambiar los trastes?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["$120.000", "$200.000"],
+      "evidencia": "Cambio de trastes (guitarra): $120.000 - $200.000",
+      "respuesta_ideal": "El cambio de trastes cuesta entre $120.000 y $200.000. Depende del estado de la guitarra y cuántos trastes necesites cambiar."
+    },
+    {
+      "cliente": "¿Ustedes venden guitarras nuevas también?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No, nosotros solo hacemos reparación y restauración. No vendemos instrumentos nuevos. Puedo darte referencias si necesitas."
+    },
+    {
+      "cliente": "¿Puedo traer la guitarra mañana?",
+      "tipo": "combinada",
+      "accion": "responder",
+      "claves": ["consulta inicial", "gratis"],
+      "evidencia": "Consulta inicial (sin compromiso): gratis",
+      "respuesta_ideal": "Claro, puedes venir mañana. Hacemos una consulta inicial sin costo para revisar la guitarra y darte un presupuesto. Venimos de 10 a.m. a 6 p.m."
+    }
+  ],
+  [
+    {
+      "cliente": "Hola, ¿reparas pianos?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["pianos", "reparación"],
+      "evidencia": "Reparación estructural de pianos de cola y verticales",
+      "respuesta_ideal": "Sí, hacemos reparación de pianos de cola y verticales. Es mejor que vengas a consultarnos, porque cada caso es distinto."
+    },
+    {
+      "cliente": "Tengo un piano de cola muy viejo. ¿Cuánto me sale arreglarlo?",
+      "tipo": "sin_respuesta",
+      "accion": "derivar",
+      "claves": [],
+      "evidencia": "Los pianos y restauraciones mayores se cotizan después de inspección visual.",
+      "respuesta_ideal": "Para un piano de esa envergadura necesitamos verlo en persona. Llama al +57 1 245-7830 y habla con el maestro, o trae el piano al taller. No puedo darte un presupuesto sin verlo."
+    },
+    {
+      "cliente": "¿Necesito hacer cita previa?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No lo tengo claro. Para algo como un piano, es mejor que llames primero al número +57 1 245-7830 y confirmes disponibilidad."
+    }
+  ],
+  [
+    {
+      "cliente": "¿Tienen garantía en los trabajos?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["6 meses", "reparación estructural"],
+      "evidencia": "Garantía: 6 meses en trabajos de reparación estructural",
+      "respuesta_ideal": "Sí, damos 6 meses de garantía en los trabajos de reparación estructural."
+    },
+    {
+      "cliente": "¿Y si el instrumento se daña durante la reparación, quién es responsable?",
+      "tipo": "sin_respuesta",
+      "accion": "derivar",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "Esa es una pregunta importante. Para eso es mejor hablar directamente con el maestro. Llama al +57 1 245-7830 y preguntas sobre la cobertura."
+    },
+    {
+      "cliente": "Hago préstamos de instrumentos a estudiantes. ¿Dan descuento por volumen?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No tengo información sobre descuentos por volumen. Tenemos 10 % de descuento para estudiantes con carné. Para otra cosa, consulta directamente en el taller o por teléfono."
+    }
+  ],
+  [
+    {
+      "cliente": "¿Puedo pagar a plazos?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No sé si ofrecemos eso. Lo que te puedo decir es que el depósito es el 50 % y el resto lo pagas al recoger. Para plazos, llama al taller."
+    },
+    {
+      "cliente": "¿Hacen limpieza de instrumentos antiguos?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["limpieza", "pulido"],
+      "evidencia": "Limpieza y pulido general: $80.000",
+      "respuesta_ideal": "Sí, hacemos limpieza y pulido general. Cuesta $80.000. También hacemos conservación de instrumentos históricos."
+    },
+    {
+      "cliente": "¿Cuál es el horario el próximo sábado?",
+      "tipo": "seguimiento",
+      "accion": "responder",
+      "claves": ["Sábados", "10 a.m.", "2 p.m."],
+      "evidencia": "Sábados: 10 a.m. - 2 p.m.",
+      "respuesta_ideal": "El sábado abrimos de 10 a.m. a 2 p.m."
+    }
+  ]
+]

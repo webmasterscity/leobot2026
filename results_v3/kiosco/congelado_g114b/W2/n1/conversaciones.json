@@ -1,0 +1,277 @@
+[
+ [
+  {
+   "cliente": "hola buenas tardes",
+   "tipo": "charla",
+   "accion": "charla",
+   "claves": [],
+   "evidencia": null,
+   "respuesta_ideal": "Bienvenido a Vigilante 24, ¿en qué puedo ayudarle?"
+  },
+  {
+   "cliente": "cuanto sale al mes el plan mas barato",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "$19.900"
+   ],
+   "evidencia": "Básico | monitoreo de 1 alarma, aviso al celular y 1 visita de patrulla por evento | $19.900",
+   "respuesta_ideal": "El plan más económico es el Básico, con un valor mensual de $19.900."
+  },
+  {
+   "cliente": "y ese trae camara?",
+   "tipo": "seguimiento",
+   "accion": "responder",
+   "claves": [
+    "Hogar Plus"
+   ],
+   "evidencia": "Hogar Plus | todo lo del Básico, más cámara de verificación y botón de pánico | $27.500",
+   "respuesta_ideal": "El Básico no incluye cámara; la cámara de verificación viene en el plan Hogar Plus."
+  },
+  {
+   "cliente": "si lo tomo por el minimo del contrato, cuanto pagaria en mensualidades del basico?",
+   "tipo": "combinada",
+   "accion": "responder",
+   "claves": [
+    "$19.900",
+    "12 meses"
+   ],
+   "evidencia": "Contrato mínimo: 12 meses. Si se pone término antes de tiempo, se cobra una multa equivalente a 2 mensualidades.",
+   "respuesta_ideal": "El contrato mínimo es de 12 meses, así que serían 12 mensualidades de $19.900, es decir $238.800 sin contar la instalación."
+  },
+  {
+   "cliente": "cuanto cuesta la camara suelta si ya tengo el basico? quiero una cotizacion",
+   "tipo": "instruccion",
+   "accion": "derivar",
+   "claves": [],
+   "evidencia": "No confirmes contratos, cotizaciones ni descuentos. Para cotizar o pedir descuentos, deriva al teléfono comercial +56 2 2987 4410.",
+   "respuesta_ideal": "Las cotizaciones las ve el equipo comercial; puede llamar al +56 2 2987 4410."
+  }
+ ],
+ [
+  {
+   "cliente": "cuanto cobran por instalar el kit?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "$89.000"
+   ],
+   "evidencia": "Kit de instalación del plan Básico: $89.000 (panel, 2 sensores de apertura, 1 sensor de movimiento y sirena).",
+   "respuesta_ideal": "El kit de instalación del plan Básico cuesta $89.000 e incluye panel, sensores y sirena."
+  },
+  {
+   "cliente": "y cuanto demoran en dejarlo funcionando despues de firmar?",
+   "tipo": "seguimiento",
+   "accion": "responder",
+   "claves": [
+    "48 horas hábiles"
+   ],
+   "evidencia": "La instalación se realiza dentro de 48 horas hábiles después de firmar el contrato.",
+   "respuesta_ideal": "La instalación se hace dentro de 48 horas hábiles después de firmar el contrato."
+  },
+  {
+   "cliente": "tengo un labrador de 30 kilos, me va a saltar el sensor de movimiento?",
+   "tipo": "si_no",
+   "accion": "responder",
+   "claves": [
+    "hasta 25 kg"
+   ],
+   "evidencia": "Los sensores de movimiento toleran mascotas de hasta 25 kg.",
+   "respuesta_ideal": "Los sensores toleran mascotas de hasta 25 kg, así que un perro de 30 kg podría activarlo."
+  },
+  {
+   "cliente": "hay algun plan que no cobre instalacion?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "24 meses",
+    "Hogar Plus"
+   ],
+   "evidencia": "Con contrato de 24 meses en el plan Hogar Plus la instalación no tiene costo.",
+   "respuesta_ideal": "Con contrato de 24 meses en el plan Hogar Plus la instalación no tiene costo."
+  },
+  {
+   "cliente": "y si se corta la luz sigue funcionando?",
+   "tipo": "seguimiento",
+   "accion": "responder",
+   "claves": [
+    "batería de respaldo por 24 horas"
+   ],
+   "evidencia": "Si se corta la luz, el panel funciona con batería de respaldo por 24 horas.",
+   "respuesta_ideal": "Sí, el panel funciona con batería de respaldo por 24 horas."
+  },
+  {
+   "cliente": "tienen sensores de humo o de incendio?",
+   "tipo": "sin_respuesta",
+   "accion": "abstenerse",
+   "claves": [],
+   "evidencia": null,
+   "respuesta_ideal": "No tengo información sobre sensores de humo; le sugiero consultar al teléfono comercial +56 2 2987 4410."
+  },
+  {
+   "cliente": "puedo pagar la instalacion en cuotas?",
+   "tipo": "sin_respuesta",
+   "accion": "abstenerse",
+   "claves": [],
+   "evidencia": null,
+   "respuesta_ideal": "No tengo información sobre pago en cuotas de la instalación; le sugiero consultar al teléfono comercial +56 2 2987 4410."
+  }
+ ],
+ [
+  {
+   "cliente": "tienen patrulla en Maipu?",
+   "tipo": "si_no",
+   "accion": "responder",
+   "claves": [
+    "En otras comunas no hay patrulla propia"
+   ],
+   "evidencia": "Tiempo promedio de llegada de la patrulla: 12 minutos en Providencia, Ñuñoa, Las Condes y Santiago Centro. En otras comunas no hay patrulla propia.",
+   "respuesta_ideal": "No, la patrulla propia solo cubre Providencia, Ñuñoa, Las Condes y Santiago Centro."
+  },
+  {
+   "cliente": "y cuanto tarda en llegar a Ñuñoa?",
+   "tipo": "seguimiento",
+   "accion": "responder",
+   "claves": [
+    "12 minutos"
+   ],
+   "evidencia": "Tiempo promedio de llegada de la patrulla: 12 minutos en Providencia, Ñuñoa, Las Condes y Santiago Centro.",
+   "respuesta_ideal": "El tiempo promedio de llegada de la patrulla es de 12 minutos."
+  },
+  {
+   "cliente": "este mes me llegaron 3 visitas por falsa alarma, cuanto me cobran?",
+   "tipo": "combinada",
+   "accion": "responder",
+   "claves": [
+    "$8.500",
+    "desde la tercera"
+   ],
+   "evidencia": "Las dos primeras visitas por falsa alarma en el mes no tienen costo; desde la tercera se cobra $8.500 por visita.",
+   "respuesta_ideal": "Las dos primeras son gratis y desde la tercera se cobra $8.500, así que pagaría $8.500."
+  },
+  {
+   "cliente": "cuantos anos lleva la empresa funcionando?",
+   "tipo": "sin_respuesta",
+   "accion": "abstenerse",
+   "claves": [],
+   "evidencia": null,
+   "respuesta_ideal": "No tengo ese dato; puede consultarlo al teléfono comercial."
+  },
+  {
+   "cliente": "cuanto cuesta agregar un sensor extra al plan Pyme?",
+   "tipo": "sin_respuesta",
+   "accion": "abstenerse",
+   "claves": [],
+   "evidencia": null,
+   "respuesta_ideal": "No tengo el precio de sensores adicionales; puede consultarlo al teléfono comercial."
+  }
+ ],
+ [
+  {
+   "cliente": "se me esta disparando la alarma y no se si hay alguien en la casa",
+   "tipo": "instruccion",
+   "accion": "derivar",
+   "claves": [],
+   "evidencia": "Si el cliente cuenta que su alarma se está disparando o que hay un robo en curso, no le hagas preguntas: dile que llame de inmediato a la central de monitoreo 600 380 2424 y a Carabineros al 133.",
+   "respuesta_ideal": "Llame de inmediato a la central de monitoreo 600 380 2424 y a Carabineros al 133."
+  },
+  {
+   "cliente": "gracias, ya llame",
+   "tipo": "charla",
+   "accion": "charla",
+   "claves": [],
+   "evidencia": null,
+   "respuesta_ideal": "Me alegra que se haya comunicado. Que tenga un día tranquilo y seguro."
+  }
+ ],
+ [
+  {
+   "cliente": "hasta que hora atienden el sabado en la oficina?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "sábados de 10:00 a 13:00 h"
+   ],
+   "evidencia": "Horario de la oficina: lunes a viernes de 9:00 a 18:00 h; sábados de 10:00 a 13:00 h. Domingos y festivos la oficina permanece cerrada.",
+   "respuesta_ideal": "Los sábados la oficina atiende de 10:00 a 13:00 h."
+  },
+  {
+   "cliente": "y el 31 de diciembre?",
+   "tipo": "seguimiento",
+   "accion": "responder",
+   "claves": [
+    "13:00 h"
+   ],
+   "evidencia": "Excepciones: el 24 y el 31 de diciembre la oficina cierra a las 13:00 h. El 18 y 19 de septiembre no hay atención en oficina.",
+   "respuesta_ideal": "El 31 de diciembre la oficina cierra a las 13:00 h."
+  },
+  {
+   "cliente": "puedo mandar un whatsapp cuando hay un robo?",
+   "tipo": "si_no",
+   "accion": "responder",
+   "claves": [
+    "solo se atienden por teléfono en la central de monitoreo"
+   ],
+   "evidencia": "¿Atienden emergencias por WhatsApp? No, las emergencias solo se atienden por teléfono en la central de monitoreo.",
+   "respuesta_ideal": "No, las emergencias solo se atienden por teléfono en la central de monitoreo, 600 380 2424."
+  },
+  {
+   "cliente": "como puedo poner un reclamo?",
+   "tipo": "instruccion",
+   "accion": "derivar",
+   "claves": [],
+   "evidencia": "Si el cliente quiere presentar un reclamo, derívalo al correo de reclamos.",
+   "respuesta_ideal": "Puede escribir su reclamo a reclamos@vigilante24.cl."
+  }
+ ],
+ [
+  {
+   "cliente": "cuanto cuesta llevarme el equipo a mi casa nueva",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "$35.000"
+   ],
+   "evidencia": "¿Puedo llevarme el equipo si me cambio de casa? Sí, la reubicación del equipo cuesta $35.000.",
+   "respuesta_ideal": "Sí, la reubicación del equipo cuesta $35.000."
+  },
+  {
+   "cliente": "aceptan pago en efectivo?",
+   "tipo": "si_no",
+   "accion": "responder",
+   "claves": [
+    "No se recibe efectivo"
+   ],
+   "evidencia": "Se puede pagar con transferencia, tarjeta de crédito (Visa y Mastercard) o cargo automático (PAC). No se recibe efectivo.",
+   "respuesta_ideal": "No, no se recibe efectivo; puede pagar por transferencia, tarjeta de crédito o PAC."
+  },
+  {
+   "cliente": "hasta que dia puedo pagar sin recargo?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "día 10 de cada mes"
+   ],
+   "evidencia": "El pago vence el día 10 de cada mes; después de esa fecha hay un recargo por mora del 3 %.",
+   "respuesta_ideal": "El pago vence el día 10 de cada mes; después hay un recargo del 3 %."
+  },
+  {
+   "cliente": "quien es el jefe de operaciones?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "Marcelo Toro"
+   ],
+   "evidencia": "Jefe de operaciones: Marcelo Toro. Jefa comercial: Carla Baeza.",
+   "respuesta_ideal": "El jefe de operaciones es Marcelo Toro."
+  },
+  {
+   "cliente": "perfecto, muchas gracias, chao",
+   "tipo": "charla",
+   "accion": "charla",
+   "claves": [],
+   "evidencia": null,
+   "respuesta_ideal": "Gracias por consultar. Que tenga un día tranquilo y seguro."
+  }
+ ]
+]

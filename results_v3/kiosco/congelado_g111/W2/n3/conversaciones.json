@@ -1,0 +1,290 @@
+[
+ [
+  {
+   "cliente": "hola, cuanto sale un vuelo de bautismo?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "$U 2.800"
+   ],
+   "evidencia": "Bautismo (Cessna 152, 1 pasajero con instructor) | 20 min | $U 2.800 por persona",
+   "respuesta_ideal": "El vuelo de bautismo cuesta $U 2.800 por persona."
+  },
+  {
+   "cliente": "mi hija tiene 10 años, puede volar?",
+   "tipo": "si_no",
+   "accion": "responder",
+   "claves": [
+    "edad mínima 8 años",
+    "autorización escrita"
+   ],
+   "evidencia": "Condiciones: edad mínima 8 años; los menores de 18 necesitan autorización escrita de madre, padre o tutor.",
+   "respuesta_ideal": "Sí, la edad mínima es 8 años, pero como es menor necesita autorización escrita de madre, padre o tutor."
+  },
+  {
+   "cliente": "y cuanto dura?",
+   "tipo": "seguimiento",
+   "accion": "responder",
+   "claves": [
+    "20 min"
+   ],
+   "evidencia": "Bautismo (Cessna 152, 1 pasajero con instructor) | 20 min | $U 2.800 por persona",
+   "respuesta_ideal": "El vuelo de bautismo dura 20 minutos."
+  },
+  {
+   "cliente": "somos 3, cuanto nos sale el panoramico en total?",
+   "tipo": "combinada",
+   "accion": "responder",
+   "claves": [
+    "$U 9.500 por avión"
+   ],
+   "evidencia": "Panorámico sobre Montevideo (Piper PA-28, hasta 3 pasajeros) | 45 min | $U 9.500 por avión",
+   "respuesta_ideal": "El panorámico cuesta $U 9.500 por avión y caben hasta 3 pasajeros, así que son $U 9.500 en total."
+  },
+  {
+   "cliente": "puedo pagar con cheque?",
+   "tipo": "si_no",
+   "accion": "responder",
+   "claves": [
+    "No se reciben cheques"
+   ],
+   "evidencia": "No se reciben cheques.",
+   "respuesta_ideal": "No, no se reciben cheques; sí efectivo, débito o crédito."
+  },
+  {
+   "cliente": "y en cuotas?",
+   "tipo": "seguimiento",
+   "accion": "responder",
+   "claves": [
+    "hasta 3 cuotas sin recargo"
+   ],
+   "evidencia": "crédito (hasta 3 cuotas sin recargo)",
+   "respuesta_ideal": "Sí, con crédito hasta en 3 cuotas sin recargo."
+  },
+  {
+   "cliente": "si llueve ese dia que pasa?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "se reprograma sin costo"
+   ],
+   "evidencia": "Si el clima no permite volar, se reprograma sin costo.",
+   "respuesta_ideal": "Si el clima no permite volar, se reprograma sin costo."
+  },
+  {
+   "cliente": "me aseguran que voy a poder volar el sabado?",
+   "tipo": "instruccion",
+   "accion": "derivar",
+   "claves": [],
+   "evidencia": "No prometas que un vuelo se va a realizar en una fecha: dependen del clima. Si preguntan por el estado del tiempo para hoy o mañana, deriva al jefe de operaciones.",
+   "respuesta_ideal": "No puedo asegurarlo porque depende del clima; el jefe de operaciones decide una hora antes del vuelo."
+  }
+ ],
+ [
+  {
+   "cliente": "quiero reservar para el domingo, me anotan?",
+   "tipo": "instruccion",
+   "accion": "derivar",
+   "claves": [],
+   "evidencia": "No confirmes reservas ni recibas pagos: para reservar, que hablen con la administración.",
+   "respuesta_ideal": "Las reservas las hace la administración, de martes a viernes de 9:00 a 16:00."
+  },
+  {
+   "cliente": "a que hora cierran los domingos en enero?",
+   "tipo": "combinada",
+   "accion": "responder",
+   "claves": [
+    "20:00"
+   ],
+   "evidencia": "Abierto de martes a domingo, de 8:00 a 18:00. Del 1 de octubre al 31 de marzo extendemos el horario hasta las 20:00.",
+   "respuesta_ideal": "En enero cerramos a las 20:00, también los domingos."
+  },
+  {
+   "cliente": "y los lunes?",
+   "tipo": "seguimiento",
+   "accion": "responder",
+   "claves": [
+    "cerrados"
+   ],
+   "evidencia": "Los lunes permanecemos cerrados.",
+   "respuesta_ideal": "Los lunes permanecemos cerrados."
+  },
+  {
+   "cliente": "la cafeteria esta abierta los sabados?",
+   "tipo": "si_no",
+   "accion": "responder",
+   "claves": [
+    "sábados y domingos de 9:00 a 17:00"
+   ],
+   "evidencia": "La cafetería «El Hangar» atiende sábados y domingos de 9:00 a 17:00.",
+   "respuesta_ideal": "Sí, la cafetería El Hangar atiende sábados y domingos de 9:00 a 17:00."
+  },
+  {
+   "cliente": "hay menu vegetariano en la cafeteria?",
+   "tipo": "sin_respuesta",
+   "accion": "abstenerse",
+   "claves": [],
+   "evidencia": null,
+   "respuesta_ideal": "No tengo información sobre el menú de la cafetería."
+  }
+ ],
+ [
+  {
+   "cliente": "quiero ser piloto, desde que edad puedo empezar el curso",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "16 años"
+   ],
+   "evidencia": "Edad mínima para empezar: 16 años.",
+   "respuesta_ideal": "La edad mínima para empezar es 16 años."
+  },
+  {
+   "cliente": "cuanto cuesta la matricula?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "$U 12.000"
+   ],
+   "evidencia": "Matrícula única: $U 12.000.",
+   "respuesta_ideal": "La matrícula es única y cuesta $U 12.000."
+  },
+  {
+   "cliente": "y la hora de vuelo con instructor?",
+   "tipo": "seguimiento",
+   "accion": "responder",
+   "claves": [
+    "$U 6.900"
+   ],
+   "evidencia": "Hora de vuelo con instructor: $U 6.900.",
+   "respuesta_ideal": "La hora de vuelo con instructor cuesta $U 6.900."
+  },
+  {
+   "cliente": "si hiciera las 45 horas todas con instructor cuanto seria?",
+   "tipo": "combinada",
+   "accion": "responder",
+   "claves": [
+    "45 horas",
+    "$U 6.900"
+   ],
+   "evidencia": "Hora de vuelo con instructor: $U 6.900. Hora de vuelo solo (para pilotos ya brevetados): $U 5.200.\n- Se requieren 45 horas de vuelo como mínimo;",
+   "respuesta_ideal": "Son 45 horas a $U 6.900, es decir $U 310.500 (sin contar la matrícula)."
+  },
+  {
+   "cliente": "y el curso de piloto comercial cuanto cuesta?",
+   "tipo": "sin_respuesta",
+   "accion": "abstenerse",
+   "claves": [],
+   "evidencia": null,
+   "respuesta_ideal": "No tengo información sobre el curso de piloto comercial; solo sobre el de piloto privado."
+  },
+  {
+   "cliente": "donde hago el examen medico?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "centro médico habilitado"
+   ],
+   "evidencia": "El certificado médico aeronáutico clase 2 se tramita en un centro médico habilitado; no se hace en el aeroclub.",
+   "respuesta_ideal": "Se tramita en un centro médico habilitado, no en el aeroclub."
+  },
+  {
+   "cliente": "las clases de teoria son online?",
+   "tipo": "si_no",
+   "accion": "responder",
+   "claves": [
+    "presencial"
+   ],
+   "evidencia": "Clases teóricas: miércoles y viernes a las 19:30 (presencial).",
+   "respuesta_ideal": "No, son presenciales, los miércoles y viernes a las 19:30."
+  },
+  {
+   "cliente": "tengo diabetes, puedo volar?",
+   "tipo": "instruccion",
+   "accion": "derivar",
+   "claves": [],
+   "evidencia": "No des consejos médicos sobre si una persona puede volar o no por su salud; indícale que consulte con su médico.",
+   "respuesta_ideal": "Eso debe consultarlo con su médico."
+  }
+ ],
+ [
+  {
+   "cliente": "puedo llevar mi dron a filmar?",
+   "tipo": "si_no",
+   "accion": "responder",
+   "claves": [
+    "Prohibido volar drones"
+   ],
+   "evidencia": "Prohibido volar drones dentro del predio.",
+   "respuesta_ideal": "No, está prohibido volar drones dentro del predio."
+  },
+  {
+   "cliente": "y sacar fotos con el celular?",
+   "tipo": "seguimiento",
+   "accion": "responder",
+   "claves": [
+    "mirador"
+   ],
+   "evidencia": "Se puede sacar fotos desde el mirador, no desde la plataforma.",
+   "respuesta_ideal": "Sí, desde el mirador; no desde la plataforma."
+  },
+  {
+   "cliente": "los socios tienen descuento en la cafeteria?",
+   "tipo": "sin_respuesta",
+   "accion": "abstenerse",
+   "claves": [],
+   "evidencia": null,
+   "respuesta_ideal": "No tengo información de descuentos en la cafetería; solo sé del 10 % en la hora de vuelo."
+  },
+  {
+   "cliente": "cuanto es la cuota de socio para menores de edad?",
+   "tipo": "sin_respuesta",
+   "accion": "abstenerse",
+   "claves": [],
+   "evidencia": null,
+   "respuesta_ideal": "No tengo una cuota distinta para menores; solo la cuota social mensual de $U 1.450."
+  },
+  {
+   "cliente": "cuanto cuesta guardar mi avion, pesa 900 kilos",
+   "tipo": "combinada",
+   "accion": "responder",
+   "claves": [
+    "$U 4.200"
+   ],
+   "evidencia": "Hangaraje mensual: $U 4.200 para aviones de hasta 1.000 kg; $U 6.500 para los más pesados.",
+   "respuesta_ideal": "Como pesa menos de 1.000 kg, el hangaraje mensual es de $U 4.200."
+  },
+  {
+   "cliente": "ha habido accidentes en el aeroclub?",
+   "tipo": "instruccion",
+   "accion": "derivar",
+   "claves": [],
+   "evidencia": "Si alguien pregunta por seguridad, accidentes o historial de incidentes, deriva al jefe de operaciones.",
+   "respuesta_ideal": "Eso lo puede responder el jefe de operaciones, Cap. Gustavo Ferreira."
+  },
+  {
+   "cliente": "tienen helicopteros para paseos?",
+   "tipo": "sin_respuesta",
+   "accion": "abstenerse",
+   "claves": [],
+   "evidencia": null,
+   "respuesta_ideal": "No tengo información sobre paseos en helicóptero."
+  },
+  {
+   "cliente": "hacen vuelos nocturnos?",
+   "tipo": "sin_respuesta",
+   "accion": "abstenerse",
+   "claves": [],
+   "evidencia": null,
+   "respuesta_ideal": "No tengo información sobre vuelos nocturnos."
+  },
+  {
+   "cliente": "gracias, chau",
+   "tipo": "charla",
+   "accion": "charla",
+   "claves": [],
+   "evidencia": null,
+   "respuesta_ideal": "Buenos vientos."
+  }
+ ]
+]

@@ -90,5 +90,33 @@ class CandidateModelTests(unittest.TestCase):
         self.assertEqual(other.context_model['usefulness']['pairs'], {'pago|efectivo': 1.5})
 
 
+class LegacyCalibrationTests(unittest.TestCase):
+    def test_old_confidence_keeps_its_original_retrieval_after_reload(self):
+        bot = Bot()
+        bot.load_context(TEXT)
+        bot.context_model['confidence'] = {'prior': [40, 40], 'counts': {}, 'values': {},
+                                           'calibration': [[-99, 0.8, 30]], 'cite_from': 0.4}
+        expected = bot._rank(['pagar'], 'pagar')
+        bot.soft_prefix = False
+        literal = bot._rank(['pagar'], 'pagar')
+        self.assertEqual(expected['score'], literal['score'])
+        import tempfile
+        from pathlib import Path
+        with tempfile.TemporaryDirectory() as tmp:
+            path = Path(tmp) / 'base.json'
+            bot.save(path)
+            loaded = Bot.load(path)
+        self.assertEqual(loaded._rank(['pagar'], 'pagar')['score'], literal['score'])
+
+    def test_calibration_that_used_prefixes_keeps_them(self):
+        bot = Bot()
+        bot.load_context(TEXT)
+        bot.context_model['confidence'] = {'prior': [40, 40], 'counts': {}, 'values': {},
+                                           'calibration': [[-99, 0.8, 30]], 'cite_from': 0.4, 'soft_prefix': True}
+        with_prefix = bot._rank(['pagar'], 'pagar')
+        bot.soft_prefix = False
+        self.assertNotEqual(with_prefix['score'], bot._rank(['pagar'], 'pagar')['score'])
+
+
 if __name__ == '__main__':
     unittest.main()

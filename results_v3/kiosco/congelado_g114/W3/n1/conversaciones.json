@@ -1,0 +1,34 @@
+[
+  [
+    {"cliente": "Hola, ¿cuanto cuesta el cemento?", "tipo": "directa", "accion": "responder", "claves": ["$8.450", "50 kg"], "evidencia": "Cemento Portland (bolsas de 50 kg): $8.450", "respuesta_ideal": "El cemento Portland en bolsa de 50 kg cuesta $8.450. ¿Cuantas bolsas necesitás?"},
+    {"cliente": "Dale, me llevo 10 bolsas. ¿Hacen entrega?", "tipo": "combinada", "accion": "responder", "claves": ["entregas a domicilio en CABA", "desde $3.500", "según zona"], "evidencia": "Entregas a domicilio en CABA: desde $3.500 según zona y carga", "respuesta_ideal": "Sí, hacemos entregas a domicilio en CABA. El costo depende de tu zona. Te va a salir desde $3.500. ¿Cuál es tu zona?"},
+    {"cliente": "Soy de Flores. ¿Me lo entregan hoy?", "tipo": "sin_respuesta", "accion": "abstenerse", "claves": [], "evidencia": null, "respuesta_ideal": "No tengo disponible la información de horarios de entrega de hoy. Te recomiendo que llames al (011) 4823-6547 para coordinar."},
+    {"cliente": "Perfecto, ¿puedo pagar con tarjeta?", "tipo": "si_no", "accion": "responder", "claves": ["tarjeta de crédito"], "evidencia": "aceptamos efectivo, transferencia bancaria, tarjeta de crédito (VISA, Mastercard)", "respuesta_ideal": "Sí, aceptamos VISA y Mastercard. Tené en cuenta que hay un recargo del 15 % si lo hacés en más de una cuota."}
+  ],
+  [
+    {"cliente": "Buen día, compré arena hace 3 días y la arena viene toda húmeda. Puedo cambiarla?", "tipo": "instruccion", "accion": "responder", "claves": ["cambio dentro de 48 hs", "remito original"], "evidencia": "Producto defectuoso: cambio dentro de 48 hs de la compra con remito original", "respuesta_ideal": "Claro, podés cambiarla. Necesitás venir dentro de 48 hs con tu remito original. ¿Todavía lo tenes?"},
+    {"cliente": "Sí, lo tengo. ¿Pero no devuelven dinero?", "tipo": "si_no", "accion": "responder", "claves": ["Sin devolución de dinero"], "evidencia": "Sin devolución de dinero", "respuesta_ideal": "No, no hacemos devolución de dinero. Solo cambiamos el producto defectuoso por otro en buen estado."},
+    {"cliente": "Che, y ¿puedo traer la arena sin remito entonces?", "tipo": "sin_respuesta", "accion": "abstenerse", "claves": [], "evidencia": null, "respuesta_ideal": "Necesitás el remito para hacer el cambio. Sin remito original no podemos procesar el cambio. Llamá si lo perdiste: (011) 4823-6547."}
+  ],
+  [
+    {"cliente": "Hola, quiero saber el precio de ladrillos cerámicos comunes", "tipo": "directa", "accion": "responder", "claves": ["$16.500", "millar"], "evidencia": "Ladrillos cerámicos comunes (millar): $16.500", "respuesta_ideal": "Los ladrillos cerámicos comunes salen $16.500 el millar (1000 unidades)."},
+    {"cliente": "Ok. ¿Y los bloques de hormigón cuanto valen?", "tipo": "seguimiento", "accion": "responder", "claves": ["$18.200"], "evidencia": "Bloques de hormigón (millar): $18.200", "respuesta_ideal": "Los bloques de hormigón cuestan $18.200 el millar."},
+    {"cliente": "Necesito 2 millares de cada uno. ¿Cuanto me saldría el total sin envío?", "tipo": "combinada", "accion": "responder", "claves": ["$16.500", "$18.200", "69.400"], "evidencia": "Ladrillos cerámicos comunes (millar): $16.500; Bloques de hormigón (millar): $18.200", "respuesta_ideal": "El total sería: 2 millares de ladrillos $33.000 + 2 millares de bloques $36.400. Te saldría $69.400 sin envío."},
+    {"cliente": "Dale, y eso ¿se puede financiar?", "tipo": "instruccion", "accion": "responder", "claves": ["3 cuotas sin interés", "$15.000"], "evidencia": "tarjeta de crédito (VISA, Mastercard) con recargo del 15 % a 3 cuotas sin interés mayores a $15.000", "respuesta_ideal": "Sí, si pagás con tarjeta de crédito podés hacer 3 cuotas sin interés. Con tu monto sí entra."}
+  ],
+  [
+    {"cliente": "¿Ustedes venden también tablones de madera?", "tipo": "sin_respuesta", "accion": "abstenerse", "claves": [], "evidencia": null, "respuesta_ideal": "No tenemos tablones de madera en este momento. Llamá al (011) 4823-6547 para consultar si lo podemos conseguir."},
+    {"cliente": "Bueno, ¿y tienen cañería de PVC?", "tipo": "directa", "accion": "responder", "claves": ["Cañería PVC", "desde: $450"], "evidencia": "Cañería PVC (varios diámetros) desde: $450", "respuesta_ideal": "Sí, tenemos cañería PVC de varios diámetros. Los precios van desde $450. ¿Qué diámetro necesitás?"},
+    {"cliente": "No se exactamente qué diámetro me hace falta. ¿Ustedes aconsejan?", "tipo": "sin_respuesta", "accion": "abstenerse", "claves": [], "evidencia": null, "respuesta_ideal": "Eso depende de tu instalación. Te recomiendo que hables con un maestro de obra o que llames directamente a nuestro equipo técnico al (011) 4823-6547."}
+  ],
+  [
+    {"cliente": "Hola, ¿a qué hora cierran hoy?", "tipo": "charla", "accion": "responder", "claves": ["6:00 p.m."], "evidencia": "Lunes a viernes: 7:00 a.m. a 6:00 p.m.", "respuesta_ideal": "Hoy cerramos a las 6:00 de la tarde. ¿Necesitás algo?"},
+    {"cliente": "Perfecto. ¿Y mañana me pueden atender a las 8:30?", "tipo": "si_no", "accion": "responder", "claves": ["7:00 a.m."], "evidencia": "Lunes a viernes: 7:00 a.m. a 6:00 p.m.", "respuesta_ideal": "No, mañana abrimos a las 7:00 de la mañana. ¿Podés venir después de ese horario?"},
+    {"cliente": "Che, ¿abren los domingos?", "tipo": "si_no", "accion": "responder", "claves": ["Domingos: Cerrado"], "evidencia": "Domingos: Cerrado", "respuesta_ideal": "No, los domingos estamos cerrados. Atendemos de lunes a sábado."},
+    {"cliente": "Gracias por la info. Un placer.", "tipo": "charla", "accion": "charla", "claves": [], "evidencia": null, "respuesta_ideal": "De nada. Muchas gracias por consultar. Esperamos tu compra."}
+  ],
+  [
+    {"cliente": "¿Hacen descuentos si compro mucho?", "tipo": "sin_respuesta", "accion": "responder", "claves": ["compras mayores a $50.000: descuento 8 %", "compras mayores a $100.000: descuento 12 %"], "evidencia": "OFERTAS ESPECIALES: Compras mayores a $50.000: descuento 8 %; Compras mayores a $100.000: descuento 12 %", "respuesta_ideal": "Sí. Si comprás más de $50.000 te hacemos un descuento del 8 %. Si superás $100.000 es del 12 %."},
+    {"cliente": "Excelente. Voy a necesitar presupuesto para una obra grande.", "tipo": "instruccion", "accion": "derivar", "claves": [], "evidencia": "Pedir presupuesto para órdenes superiores a $150.000", "respuesta_ideal": "Perfecto. Para órdenes grandes, contactá directamente a nuestro equipo de ventas: (011) 4823-6547 o ventas@constructoraintegral.com.ar. Ellos te harán un presupuesto formal."}
+  ]
+]

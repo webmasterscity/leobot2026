@@ -1,0 +1,160 @@
+[
+  {
+    "conversacion": 1,
+    "turnos": [
+      {
+        "cliente": "Hola, me duele el hombro hace una semana después de jugar tenis.",
+        "tipo": "sin_respuesta",
+        "accion": "derivar",
+        "claves": [],
+        "evidencia": "nunca hagas diagnóstico de lesiones",
+        "respuesta_ideal": "Te recomiendo que agendes una cita con nuestro médico especialista para que te evalúe completamente. Él puede diagnosticar tu lesión y recomendarte el tratamiento adecuado. Llama al +57 1 5555 8923 ext. 101."
+      },
+      {
+        "cliente": "¿Cuánto cuesta la primera consulta?",
+        "tipo": "directa",
+        "accion": "responder",
+        "claves": ["$95.000"],
+        "evidencia": "Consulta con médico especialista en medicina del deporte: diagnóstico y plan de tratamiento ($95.000 COP)",
+        "respuesta_ideal": "La consulta inicial con el médico especialista cuesta $95.000 pesos."
+      },
+      {
+        "cliente": "¿A qué hora atienden mañana?",
+        "tipo": "directa",
+        "accion": "responder",
+        "claves": ["7:00 a 19:30"],
+        "evidencia": "Lunes a viernes: 7:00 a 19:30 h",
+        "respuesta_ideal": "Mañana atendemos de 7:00 a 19:30 horas. Puedes llamar para agendar tu cita."
+      }
+    ]
+  },
+  {
+    "conversacion": 2,
+    "turnos": [
+      {
+        "cliente": "Buenas, ¿hacen fisioterapia?",
+        "tipo": "si_no",
+        "accion": "responder",
+        "claves": ["Sesiones individuales de 45 minutos", "fisioterapia"],
+        "evidencia": "Fisioterapia y rehabilitación: Sesiones individuales de 45 minutos: $65.000 por sesión",
+        "respuesta_ideal": "Sí, ofrecemos fisioterapia y rehabilitación. Las sesiones individuales duran 45 minutos y cuestan $65.000 cada una."
+      },
+      {
+        "cliente": "¿Cuánto sale un paquete de varias sesiones?",
+        "tipo": "combinada",
+        "accion": "responder",
+        "claves": ["10 sesiones", "$600.000", "8 %"],
+        "evidencia": "Paquete de 10 sesiones: $600.000 (descuento del 8 %)",
+        "respuesta_ideal": "Un paquete de 10 sesiones cuesta $600.000, lo que significa un descuento del 8 % comparado con pagar sesión por sesión."
+      }
+    ]
+  },
+  {
+    "conversacion": 3,
+    "turnos": [
+      {
+        "cliente": "¿A qué horarios atienden los sábados?",
+        "tipo": "directa",
+        "accion": "responder",
+        "claves": ["8:00 a 14:00"],
+        "evidencia": "Sábado: 8:00 a 14:00 h",
+        "respuesta_ideal": "Los sábados atendemos de 8:00 a 14:00 horas."
+      },
+      {
+        "cliente": "¿Y los domingos también abren?",
+        "tipo": "si_no",
+        "accion": "responder",
+        "claves": ["cerrado", "Domingo y festivos"],
+        "evidencia": "Domingo y festivos: cerrado",
+        "respuesta_ideal": "No, los domingos estamos cerrados. También cerramos los días festivos."
+      },
+      {
+        "cliente": "¿Tienen estacionamiento?",
+        "tipo": "si_no",
+        "accion": "responder",
+        "claves": ["disponible", "$5.000", "$100.000 mes"],
+        "evidencia": "Estacionamiento disponible: $5.000 por día o $100.000 mes",
+        "respuesta_ideal": "Sí, tenemos estacionamiento disponible a $5.000 por día o $100.000 al mes si prefieres un lugar fijo."
+      }
+    ]
+  },
+  {
+    "conversacion": 4,
+    "turnos": [
+      {
+        "cliente": "¿Ustedes trabajan con mi seguro? Tengo COMFENALCO.",
+        "tipo": "si_no",
+        "accion": "responder",
+        "claves": ["red prestadora de COMFENALCO"],
+        "evidencia": "somos red prestadora de COMFENALCO, Medicina Prepagada del Caribe y Coomeva",
+        "respuesta_ideal": "Sí, somos red prestadora de COMFENALCO. Te recomiendo confirmar que tu póliza esté vigente con nosotros llamando al +57 1 5555 8923."
+      },
+      {
+        "cliente": "¿Y si tengo Axa Colmena?",
+        "tipo": "sin_respuesta",
+        "accion": "abstenerse",
+        "claves": [],
+        "evidencia": null,
+        "respuesta_ideal": "No tengo esa información exacta. Llama al +57 1 5555 8923 para confirmar si tu aseguradora está vigente con nosotros."
+      }
+    ]
+  },
+  {
+    "conversacion": 5,
+    "turnos": [
+      {
+        "cliente": "¿Ofrecen clases en grupo?",
+        "tipo": "si_no",
+        "accion": "responder",
+        "claves": ["clases grupales", "martes y jueves", "$120.000"],
+        "evidencia": "Clases grupales de bajo impacto, aquagym y estiramientos: martes y jueves 17:30 h, sábado 10:00 h. Inscripción: $120.000 mes",
+        "respuesta_ideal": "Sí, ofrecemos clases grupales de bajo impacto, aquagym y estiramientos los martes, jueves a las 17:30 h y sábados a las 10:00 h. La inscripción mensual cuesta $120.000 por 4 clases."
+      },
+      {
+        "cliente": "¿Puedo ir solamente una vez a probar?",
+        "tipo": "sin_respuesta",
+        "accion": "abstenerse",
+        "claves": [],
+        "evidencia": null,
+        "respuesta_ideal": "No tengo información sobre clases de prueba. Te invito a que llames al +57 1 5555 8923 para consultar si hay opciones de clase visitante."
+      },
+      {
+        "cliente": "¿Tienen telemedicina?",
+        "tipo": "directa",
+        "accion": "responder",
+        "claves": ["telemedicina", "18:00 a 19:30", "$50.000"],
+        "evidencia": "Consultas por telemedicina: disponibles lunes a viernes, 18:00 a 19:30 h (consulta: $50.000)",
+        "respuesta_ideal": "Sí, ofrecemos consultas por telemedicina de lunes a viernes de 18:00 a 19:30 horas a $50.000."
+      }
+    ]
+  },
+  {
+    "conversacion": 6,
+    "turnos": [
+      {
+        "cliente": "Quiero agendar una cita de fisioterapia, ¿me pueden reservar un espacio?",
+        "tipo": "instruccion",
+        "accion": "derivar",
+        "claves": [],
+        "evidencia": "siempre confirma: puedo ayudarte a agendar, pero necesito que confirmes directamente",
+        "respuesta_ideal": "Claro, te puedo ayudar. Pero necesitas confirmar la cita directamente por teléfono al +57 1 5555 8923 ext. 101 o por WhatsApp al +57 321 555 8923 para asegurar tu disponibilidad."
+      },
+      {
+        "cliente": "¿Cuál es la política si tengo que cancelar?",
+        "tipo": "directa",
+        "accion": "responder",
+        "claves": ["24 horas", "cobran"],
+        "evidencia": "Cancelaciones: si desea cancelar una cita, notifique con 24 horas de anticipación. Cancelaciones con menos de 24 horas se cobran al 100 %",
+        "respuesta_ideal": "Las cancelaciones se deben avisar con 24 horas de anticipación. Si cancelas con menos de 24 horas, se cobra la sesión completa."
+      },
+      {
+        "cliente": "¿Y si necesito urgencia?",
+        "tipo": "sin_respuesta",
+        "accion": "derivar",
+        "claves": [],
+        "evidencia": null,
+        "respuesta_ideal": "Si es una lesión de emergencia o grave, dirígete a la sala de urgencias más cercana. Kinesis Sport atiende lesiones en rehabilitación, no emergencias."
+      }
+    ]
+  }
+]

@@ -1,0 +1,492 @@
+[
+ {
+  "id": "i0270",
+  "negocio": "W6_n1",
+  "turnos_previos_del_cliente": [
+   "¿qué exposición hay ahorita?",
+   "¿hasta cuándo va?"
+  ],
+  "cliente": "¿Camilo Arbeláez va a dar alguna charla o conversatorio?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo información sobre charlas del artista.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Ahora: «Río de sombras», fotografías de Camilo Arbeláez, hasta el 30 de noviembre de 2026»."
+ },
+ {
+  "id": "i0271",
+  "negocio": "W2_n1",
+  "turnos_previos_del_cliente": [
+   "hola buenas tardes"
+  ],
+  "cliente": "cuanto sale al mes el plan mas barato",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "$19.900"
+  ],
+  "evidencia": "Básico | monitoreo de 1 alarma, aviso al celular y 1 visita de patrulla por evento | $19.900",
+  "respuesta_ideal": "El plan más económico es el Básico, con un valor mensual de $19.900.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Plan: Hogar Plus; Qué incluye: todo lo del Básico, más cámara de verificación y botón de pánico; Valor mensual: $27.500»."
+ },
+ {
+  "id": "i0272",
+  "negocio": "W7_n4",
+  "turnos_previos_del_cliente": [
+   "Tengo una pregunta. ¿Hacen limpieza de discos?",
+   "¿Cuánto tarda?"
+  ],
+  "cliente": "Lindo. ¿Y si vendo mis discos, cuánto me dan?",
+  "tipo": "instruccion",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "Buscamos colecciones. Hacemos oferta justa.",
+  "respuesta_ideal": "Compramos colecciones. Traé fotos o los discos directo. Gustavo te hace una oferta justa.",
+  "respuesta_a_calificar": "Lindo. No lo sé: no encontré esa información en el texto que tengo."
+ },
+ {
+  "id": "i0273",
+  "negocio": "W1_n4",
+  "turnos_previos_del_cliente": [
+   "Buenas tardes"
+  ],
+  "cliente": "cuanto sale la casa de 2 dormitorios llave en mano?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "29.900.000"
+  ],
+  "evidencia": "2. Modelo Llanquihue — 54 m², 2 dormitorios, 1 baño. Kit: $ 19.800.000 · Llave en mano: $ 29.900.000",
+  "respuesta_ideal": "El modelo Llanquihue, de 54 m² y 2 dormitorios, cuesta $ 29.900.000 llave en mano, IVA incluido.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Modelo Llanquihue — 54 m², 2 dormitorios, 1 baño. Kit: $ 19.800.000 · Llave en mano: $ 29.900.000»."
+ },
+ {
+  "id": "i0274",
+  "negocio": "W4_n4",
+  "turnos_previos_del_cliente": [
+   "Buenos días, ¿a cómo está el kilo de tortilla?",
+   "¿Y la azul?"
+  ],
+  "cliente": "Deme kilo y medio de la blanca y medio kilo de azul, ¿cuánto es?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "52"
+  ],
+  "evidencia": "Tortilla de maíz blanco\t$ 24.00 el kg\nTortilla de maíz azul\t$ 32.00 el kg",
+  "respuesta_ideal": "Son $ 52.00: $ 36.00 del kilo y medio de blanca y $ 16.00 del medio kilo de azul.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Nota: el medio kilo se cobra a la mitad; no vendemos menos de 1/4 de kg. El cuarto de tortilla blanca se cobra a $ 6.00»."
+ },
+ {
+  "id": "i0275",
+  "negocio": "W7_n4",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Hola, ¿hacen envíos?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "Envío a domicilio",
+   "AMBA",
+   "300 ARS"
+  ],
+  "evidencia": "Envío a domicilio (AMBA): 300 ARS (pedido mín. 1.000 ARS)",
+  "respuesta_ideal": "Sí, enviamos en AMBA por 300 pesos (mínimo 1.000 pesos de compra). Interior del país, consultamos.",
+  "respuesta_a_calificar": "Hola. No lo tengo seguro. Lo más cercano que dice el texto es: «ENVÍOS»."
+ },
+ {
+  "id": "i0276",
+  "negocio": "W5_n4",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Hola, ¿aceptan Pix?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "Pix"
+  ],
+  "evidencia": "Aceptamos dólares, reales, pesos uruguayos, tarjetas de crédito y débito (Visa, Mastercard, Elo) y Pix.",
+  "respuesta_ideal": "¡Bienvenido a Free Shop La Frontera! Sí, aceptamos Pix.",
+  "respuesta_a_calificar": "Hola. No lo tengo seguro. Lo más cercano que dice el texto es: «Aceptamos dólares, reales, pesos uruguayos, tarjetas de crédito y débito (Visa, Mastercard, Elo) y Pix. Los precios están en dólares; si pagás en reales o en pesos se aplica la cotización del día que figura en el cartel de cada caja»."
+ },
+ {
+  "id": "i0277",
+  "negocio": "W4_n1",
+  "turnos_previos_del_cliente": [
+   "Tengo unos olivos en Los Villares, me salen unos 200 kilos de aceituna. ¿Me los pueden moler?",
+   "Y si junto con mi vecino y llegamos a 500 kilos, ¿cuánto me cobrarían?"
+  ],
+  "cliente": "¿Cuándo empieza la campaña?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "mediados de noviembre"
+  ],
+  "evidencia": "la campaña de recolección va normalmente de mediados de noviembre a finales de enero; fuera de campaña no se recibe aceituna.",
+  "respuesta_ideal": "La campaña va normalmente de mediados de noviembre a finales de enero; fuera de esas fechas no se recibe aceituna.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Nota: la campaña de recolección va normalmente de mediados de noviembre a finales de enero; fuera de campaña no se recibe aceituna»."
+ },
+ {
+  "id": "i0278",
+  "negocio": "W5_n2",
+  "turnos_previos_del_cliente": [
+   "como se puede pagar?",
+   "el paquete de 20 se puede pagar por partes?",
+   "¿y de cuánto queda cada cuota?",
+   "¿Tienen descuento para estudiantes universitarios?"
+  ],
+  "cliente": "Si tengo la sesión a las 4 de la tarde y aviso a las 9 de la mañana que no puedo ir, ¿me la cobran?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "12 horas"
+  ],
+  "evidencia": "Las sesiones se cancelan o cambian con mínimo 12 horas de anticipación. Si avisa con menos tiempo o no llega, se cobra la sesión o se descuenta del paquete.",
+  "respuesta_ideal": "Sí: avisar a las 9 a. m. para una sesión de las 4 p. m. es menos de 12 horas de anticipación, así que se cobra la sesión o se descuenta del paquete.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Si tiene gripa o congestión nasal no puede entrar a la cámara: avise antes de su sesión y se reprograma sin cobro»."
+ },
+ {
+  "id": "i0279",
+  "negocio": "W2_n4",
+  "turnos_previos_del_cliente": [
+   "cuando son los talleres?",
+   "cuanto cuesta el de galletas?",
+   "y cuantas personas caben?"
+  ],
+  "cliente": "si cancelo un dia antes me devuelven el anticipo?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "solo si cancelas con 3 días de anticipo"
+  ],
+  "evidencia": "El anticipo se devuelve solo si cancelas con 3 días de anticipo.",
+  "respuesta_ideal": "No, el anticipo se devuelve solo si cancelas con 3 días de anticipo.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Inscripción con anticipo del 50 %. El anticipo se devuelve solo si cancelas con 3 días de anticipo»."
+ },
+ {
+  "id": "i0280",
+  "negocio": "W3_n2",
+  "turnos_previos_del_cliente": [],
+  "cliente": "¿Hacen baño y peluquería aquí?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "no hacemos",
+   "baño y peluquería"
+  ],
+  "evidencia": "NO OFRECEMOS baño y peluquería para mascotas",
+  "respuesta_ideal": "No, eso no lo hacemos. Pero sí tenemos cepillos, champú y todo lo que necesitas para el cuidado en casa.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Baño y peluquería para mascotas»."
+ },
+ {
+  "id": "i0281",
+  "negocio": "W6_n3",
+  "turnos_previos_del_cliente": [
+   "¿cuánto sale inscribirse a los 21 km si me anoto antes de que acabe agosto?"
+  ],
+  "cliente": "¿y los 10?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "Bs 140"
+  ],
+  "evidencia": "10 km\tBs 140\tBs 170\tBs 200",
+  "respuesta_ideal": "Los 10 km cuestan Bs 140 en ese período.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Distancia: 21 km; Hasta el 31/08: Bs 180; Del 01/09 al 30/09: Bs 220; Hasta el 10/10: Bs 260»."
+ },
+ {
+  "id": "i0282",
+  "negocio": "W4_n1",
+  "turnos_previos_del_cliente": [
+   "Tengo unos olivos en Los Villares, me salen unos 200 kilos de aceituna. ¿Me los pueden moler?",
+   "Y si junto con mi vecino y llegamos a 500 kilos, ¿cuánto me cobrarían?",
+   "¿Cuándo empieza la campaña?"
+  ],
+  "cliente": "¿Hasta que hora puedo llevar la aceituna un domingo?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "14:00"
+  ],
+  "evidencia": "| Recepción de aceituna (solo en campaña) | 7:00–20:00 | 7:00–20:00 | 8:00–14:00 |",
+  "respuesta_ideal": "Los domingos y festivos, en campaña, se recibe aceituna de 8:00 a 14:00.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Espacio: Recepción de aceituna (solo en campaña); Lunes a viernes: 7:00–20:00; Sábado: 7:00–20:00; Domingo y festivos: 8:00–14:00»."
+ },
+ {
+  "id": "i0283",
+  "negocio": "W6_n3",
+  "turnos_previos_del_cliente": [
+   "¿cuánto sale inscribirse a los 21 km si me anoto antes de que acabe agosto?"
+  ],
+  "cliente": "¿y los 10?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "Bs 140"
+  ],
+  "evidencia": "10 km\tBs 140\tBs 170\tBs 200",
+  "respuesta_ideal": "Los 10 km cuestan Bs 140 en ese período.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Hay tres distancias: 21 km (media maratón), 10 km y 5 km familiar»."
+ },
+ {
+  "id": "i0284",
+  "negocio": "W5_n1",
+  "turnos_previos_del_cliente": [
+   "¿A qué hora abren los sábados?",
+   "y el domingo?",
+   "donde queda el patio donde venden la leña"
+  ],
+  "cliente": "tienen leña de pino? es mas barata",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "No vendemos leña de pino"
+  ],
+  "evidencia": "No vendemos leña de pino: genera mucho hollín y ensucia los cañones.",
+  "respuesta_ideal": "No. No vendemos leña de pino porque genera mucho hollín; la más económica que tenemos es la de eucalipto, a $ 55.000 el metro cúbico.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «No vendemos leña de pino: genera mucho hollín y ensucia los cañones»."
+ },
+ {
+  "id": "i0285",
+  "negocio": "W7_n3",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Hola, ¿venden lápices de colores?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "Lápices de colores",
+   "8€ – 18€"
+  ],
+  "evidencia": "Lápices de colores (caja 24): 8€ – 18€",
+  "respuesta_ideal": "Sí, tenemos lápices de colores. Una caja de 24 cuesta entre 8 y 18 euros según la marca.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Lápices de colores (caja 24): 8€ – 18€»."
+ },
+ {
+  "id": "i0286",
+  "negocio": "W7_n4",
+  "turnos_previos_del_cliente": [
+   "¿Venden fundas para vinilos?"
+  ],
+  "cliente": "¿Y portadiscos para guardar?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "Portadiscos",
+   "800 ARS – 2.500 ARS"
+  ],
+  "evidencia": "Portadiscos (de madera, hasta 100 vinilos): 800 ARS – 2.500 ARS",
+  "respuesta_ideal": "Portadiscos de madera de 800 a 2.500 pesos, para hasta 100 discos.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Portadiscos (de madera, hasta 100 vinilos): 800 ARS – 2.500 ARS»."
+ },
+ {
+  "id": "i0287",
+  "negocio": "W1_n2",
+  "turnos_previos_del_cliente": [
+   "buenas, cuanto vale una peluca de pelo natural?",
+   "¿y cuánto se demoran en hacerla?",
+   "Es que estoy en quimio, ¿tienen algún descuento?"
+  ],
+  "cliente": "Entonces con el descuento cuánto me quedaría la de 1.900.000?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "1.520.000"
+  ],
+  "evidencia": "20 % de descuento en pelucas sintéticas y naturales presentando certificado médico o fórmula de quimioterapia con menos de 6 meses de expedida.",
+  "respuesta_ideal": "Con el 20 % de descuento, una peluca de $1.900.000 le quedaría en $1.520.000 (el valor final se confirma en la valoración).",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Pelucas de cabello natural hechas a medida: desde $1.900.000. Entrega en 25 días hábiles. Se pide un abono del 50 % al hacer el pedido»."
+ },
+ {
+  "id": "i0288",
+  "negocio": "W2_n1",
+  "turnos_previos_del_cliente": [
+   "cuanto cuesta llevarme el equipo a mi casa nueva",
+   "aceptan pago en efectivo?",
+   "hasta que dia puedo pagar sin recargo?"
+  ],
+  "cliente": "quien es el jefe de operaciones?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "Marcelo Toro"
+  ],
+  "evidencia": "Jefe de operaciones: Marcelo Toro. Jefa comercial: Carla Baeza.",
+  "respuesta_ideal": "El jefe de operaciones es Marcelo Toro.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Jefe de operaciones: Marcelo Toro»."
+ },
+ {
+  "id": "i0289",
+  "negocio": "W2_n1",
+  "turnos_previos_del_cliente": [],
+  "cliente": "tienen patrulla en Maipu?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "En otras comunas no hay patrulla propia"
+  ],
+  "evidencia": "Tiempo promedio de llegada de la patrulla: 12 minutos en Providencia, Ñuñoa, Las Condes y Santiago Centro. En otras comunas no hay patrulla propia.",
+  "respuesta_ideal": "No, la patrulla propia solo cubre Providencia, Ñuñoa, Las Condes y Santiago Centro.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Las dos primeras visitas por falsa alarma en el mes no tienen costo; desde la tercera se cobra $8.500 por visita»."
+ },
+ {
+  "id": "i0290",
+  "negocio": "W1_n4",
+  "turnos_previos_del_cliente": [
+   "Buenas tardes",
+   "cuanto sale la casa de 2 dormitorios llave en mano?",
+   "¿y en kit?"
+  ],
+  "cliente": "Si la compro en kit y quiero que ustedes la armen, ¿cuánto sería en total?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "23.000.000"
+  ],
+  "evidencia": "Si lo desea, podemos armar el kit por un valor adicional de $ 3.200.000 en los modelos Chaitén y Llanquihue (otros modelos, consultar).",
+  "respuesta_ideal": "El kit Llanquihue cuesta $ 19.800.000 y el armado $ 3.200.000 adicionales, en total $ 23.000.000 (sin fundaciones ni instalaciones).",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Si lo desea, podemos armar el kit por un valor adicional de $ 3.200.000 en los modelos Chaitén y Llanquihue (otros modelos, consultar)»."
+ },
+ {
+  "id": "i0291",
+  "negocio": "W1_n3",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Compré un dron hace 3 días, ya lo volé y no me convenció, ¿lo puedo devolver?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "activado o volado"
+  ],
+  "evidencia": "Un dron activado o volado ya no se puede devolver; en ese caso aplica la garantía del fabricante de 1 año, que tramitamos nosotros.",
+  "respuesta_ideal": "No, un dron activado o volado ya no se puede devolver; las devoluciones son solo con producto sellado.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Un dron activado o volado ya no se puede devolver; en ese caso aplica la garantía del fabricante de 1 año, que tramitamos nosotros»."
+ },
+ {
+  "id": "i0292",
+  "negocio": "W6_n1",
+  "turnos_previos_del_cliente": [
+   "Voy con mi hijo de 8 años y mi mamá de 70, ¿cuánto pagamos en total?",
+   "¿Puedo pagar con Nequi?",
+   "¿y con American Express?"
+  ],
+  "cliente": "¿tienen parqueadero?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "2 horas gratis"
+  ],
+  "evidencia": "Parqueadero: no tenemos propio; hay convenio con el parqueadero de la esquina, 2 horas gratis con sello de la galería.",
+  "respuesta_ideal": "No tenemos propio, pero hay convenio con el parqueadero de la esquina: 2 horas gratis con el sello de la galería.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Parqueadero: no tenemos propio; hay convenio con el parqueadero de la esquina, 2 horas gratis con sello de la galería»."
+ },
+ {
+  "id": "i0293",
+  "negocio": "W8_n1",
+  "turnos_previos_del_cliente": [
+   "buenas tardes, aceptan tarjeta?",
+   "y en dolares se puede pagar?"
+  ],
+  "cliente": "tengo seguro con Mapfre, cubre todo?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "carta de autorización",
+   "deducible"
+  ],
+  "evidencia": "Convenios: INSS (con orden), Seguros MAPFRE y Assa (con carta de autorización). Con carta de aseguradora el paciente solo paga el deducible.",
+  "respuesta_ideal": "Tenemos convenio con MAPFRE: con la carta de autorización de la aseguradora usted solo paga el deducible.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Convenios: INSS (con orden), Seguros MAPFRE y Assa (con carta de autorización)»."
+ },
+ {
+  "id": "i0294",
+  "negocio": "W1_n1",
+  "turnos_previos_del_cliente": [],
+  "cliente": "¿Qué días hay sorteo de la Primitiva?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "lunes, jueves y sábado"
+  ],
+  "evidencia": "La Primitiva | 1 € por apuesta | lunes, jueves y sábado",
+  "respuesta_ideal": "La Primitiva se sortea los lunes, jueves y sábado.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Juego: La Primitiva; Precio: 1 € por apuesta; Días de sorteo: lunes, jueves y sábado»."
+ },
+ {
+  "id": "i0295",
+  "negocio": "W2_n3",
+  "turnos_previos_del_cliente": [],
+  "cliente": "cuando es el taller de engaste?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "Sábados a las 15:00"
+  ],
+  "evidencia": "Duración de 3 horas, Bs 180 por persona, materiales incluidos. Cupo de 8 personas. Sábados a las 15:00. Se reserva el lugar con un anticipo del 50 %.",
+  "respuesta_ideal": "El taller es los sábados a las 15:00.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Sábados a las 15:00»."
+ },
+ {
+  "id": "i0296",
+  "negocio": "W2_n3",
+  "turnos_previos_del_cliente": [
+   "cuando es el taller de engaste?",
+   "cuanto cuesta y cuantos cupos hay?",
+   "el taller es apto para ninos?",
+   "y donde queda la tienda?",
+   "tienen sucursal en Cochabamba?"
+  ],
+  "cliente": "cuanto cuesta un anillo con azurita?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo el precio de ese anillo; solo sé del collar con azurita y del anillo con sodalita. Consulte por WhatsApp.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Anillo de plata 950 con sodalita: Bs 380»."
+ },
+ {
+  "id": "i0297",
+  "negocio": "W2_n3",
+  "turnos_previos_del_cliente": [
+   "tengo una piedra de mi abuelo, cuanto me la tasan?",
+   "es cierto que la sodalita ayuda con la ansiedad?"
+  ],
+  "cliente": "puedo devolver una pieza hecha a medida?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "Piezas a medida no tienen devolución"
+  ],
+  "evidencia": "Devoluciones: dentro de 7 días con el comprobante, siempre que la pieza no esté cortada ni pulida. Piezas a medida no tienen devolución.",
+  "respuesta_ideal": "No, las piezas a medida no tienen devolución.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Se pide un anticipo del 50 %»."
+ },
+ {
+  "id": "i0298",
+  "negocio": "W4_n2",
+  "turnos_previos_del_cliente": [
+   "Hola, quiero jubilarme. Tengo 61 años y 32 años de trabajo, ¿me corresponde?",
+   "¿Qué tengo que llevar?"
+  ],
+  "cliente": "¿Y cuánto voy a cobrar más o menos?",
+  "tipo": "instruccion",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "2. No calcules ni estimes el monto de la jubilación o pensión de nadie, aunque te den sus datos. Para eso hay que pedir agenda con un asesor en el 0800 4477.",
+  "respuesta_ideal": "Eso no lo puedo calcular desde acá; para una estimación del monto tiene que pedir agenda con un asesor llamando al 0800 4477.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Quien llegue más de 15 minutos tarde a su agenda pierde el turno y debe volver a agendarse»."
+ },
+ {
+  "id": "i0299",
+  "negocio": "W3_n3",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Hola, ¿qué películas tienen esta semana?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "Aventura épica",
+   "Comedia romántica",
+   "Película Infantil"
+  ],
+  "evidencia": "Películas en cartelera actual: - Aventura épica (PG-13) — Sala 1 - Comedia romántica (12+) — Sala 2 - Película Infantil 3D (7+) — Sala 3",
+  "respuesta_ideal": "Tenemos Aventura épica en la Sala 1, Comedia romántica en la Sala 2, y Película Infantil 3D en la Sala 3. La cartelera se actualiza cada jueves.",
+  "respuesta_a_calificar": "Hola. No lo tengo seguro. Lo más cercano que dice el texto es: «Sala 2 (50 butacas): Películas en cartelera hace 2-3 semanas»."
+ }
+]

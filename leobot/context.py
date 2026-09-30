@@ -60,7 +60,9 @@ DENSE_FEATURES = ('rank', 'gain', 'gap', 'second', 'bm25', 'own', 'inherited', '
                   'unexplained_max', 'unexplained_sum', 'indirect', 'length', 'kind', 'digits', 'headed', 'position',
                   'terms', 'mass', 'interrogative', 'asked_share', 'asked_count',
                   'history', 'carried_mass', 'same_heading', 'same_unit', 'carried_gain', 'carried_mass_alone',
-                  'same_heading_alone', 'instruction')
+                  'same_heading_alone', 'instruction',
+                  'knowledge', 'knowledge_mass', 'asked_number', 'number_equal', 'number_above', 'number_below')
+CMP_WINDOW = 2
 CARRIED_WEIGHT = 0.5
 
 
@@ -80,6 +82,42 @@ def _shapes(text: str) -> list[str]:
             shape = re.sub(r'\d+', 'd', re.sub(r'[^\W\d_]+', 'a', word))
             out.add('SH:' + shape[:8])
     return sorted(out)
+
+
+_NUMBER = re.compile(r'\d[\d.,]*\d|\d')
+
+
+def _number(token: str):
+    """G-106: the value of a written number.  Written notation only: with both marks the
+    last one is the decimal mark; one mark repeated, or followed by exactly three digits,
+    groups thousands; otherwise it is the decimal mark («5.000» 5000, «1,5» 1.5)."""
+    marks = [c for c in token if c in '.,']
+    if not marks:
+        return float(token)
+    if '.' in marks and ',' in marks:
+        decimal = token[max(token.rfind('.'), token.rfind(','))]
+        token = token.replace(',' if decimal == '.' else '.', '').replace(decimal, '.')
+        return float(token)
+    mark = marks[0]
+    parts = token.split(mark)
+    if len(parts) > 2 or len(parts[-1]) == 3:
+        return float(''.join(parts))
+    return float(token.replace(mark, '.'))
+
+
+def _numbers(text: str) -> list[tuple[float, int, int]]:
+    """G-106: the written numbers of a text that are quantities (not clock times, dates or
+    codes joined to letters or colons), with their character span."""
+    out = []
+    for m in _NUMBER.finditer(text):
+        before, after = text[m.start() - 1:m.start()], text[m.end():m.end() + 1]
+        if before in (':', '/') or after in (':', '/') or before.isalpha() or after.isalpha():
+            continue
+        try:
+            out.append((_number(m.group()), m.start(), m.end()))
+        except ValueError:
+            continue
+    return out
 
 
 def _bin(value: float, edges) -> int:
@@ -447,8 +485,19 @@ class ContextMixin:
         units = self.context_units
         postings, total = self._index(), len(units)
         bridge = self._bridge() if getattr(self, 'bridge', True) else {}
-        soft = getattr(self, 'soft_prefix', True)
+        confidence = self.context_model.get('confidence')
+        default_soft = bool(self._active_model()) or not confidence or confidence.get('soft_prefix', False)
+        soft = getattr(self, 'soft_prefix', default_soft)
         title = set(getattr(self, 'context_title', ()))
+        shares = self.context_model.get('knowledge_share') if getattr(self, 'general_knowledge', True) else None
+        if shares and question:
+            # Only content words (classes learned from AnCora) are explained through general knowledge.
+            words = [w for w in self.split_words(question) if w[:1].isalnum()]
+            tags = self.tag_words(words) if words and self.syntax_model.get('sentences') else None
+            content = ({self._term(w) for w, tag in zip(words, tags) if tag in ('NOUN', 'PROPN', 'ADJ', 'VERB')}
+                       if tags else set(self.context_terms(question)))
+        else:
+            content = None
         base, gains, how = 0.0, {}, {}
         # Mixture model: the answer unit holds q because the question asks for
         # it (probability δ) or by chance, like any unit of this text (p0).
@@ -468,6 +517,20 @@ class ContextMixin:
                     for i in postings[word]:
                         if i not in best or best[i][0] < gain:
                             best[i] = (gain, 'soft', word)
+            if shares and (content is None or q in content) and q not in title and q not in postings:
+                # G-106: a question word the text lacks is explained by a word of the text that general
+                # knowledge links to it, weighed
+                # by how often, in the taught businesses, a word linked that way was in the answer.
+                for word, link in self.knowledge_related(q):
+                    share = shares.get(link)
+                    if not share or word == q or word not in postings:
+                        continue
+                    d_w = min(delta * share, 1 - 1e-4)
+                    pw0 = (len(postings[word]) + 0.5) / (total + 1)
+                    gain = math.log(d_w / pw0 + 1 - d_w) - absent
+                    for i in postings[word]:
+                        if i not in best or best[i][0] < gain:
+                            best[i] = (gain, 'knowledge', word)
             for a, d_a in bridge.get(q, ()):
                 pa0 = (len(postings.get(a, ())) + 0.5) / (total + 1)
                 gain = math.log(d_a / pa0 + 1 - d_a)
@@ -607,6 +670,7 @@ class ContextMixin:
         carried_mass = sum(carried_how.get(None, {}).values())
         carried_top = max(carried_gains.values(), default=0.0) or 1.0
         prior = units[previous['unit']]['heading'] if previous is not None and previous.get('unit') is not None else ''
+        asked_numbers = [v for v, _, _ in _numbers(question)] if question and getattr(self, 'number_compare', True) else []
         table = []
         for rank, i in enumerate(order):
             unit, held = units[i], sets[i]
@@ -645,8 +709,41 @@ class ContextMixin:
             if instruction:
                 pairs += [q + '|SRC' for q in distinct] + ['SRC|' + w for w in ordered]
             dense.append(1.0 if instruction else 0.0)
+            # G-106: question words this unit explains through general knowledge, and the
+            # written quantities of the question against the unit's (with the words around them).
+            linked = [q for q, kind in explained.items() if kind == 'knowledge']
+            dense += [float(len(linked)), sum(asked_for.get(q, 0.0) for q in linked) / mass if mass else 0.0]
+            above = below = equal = 0
+            if asked_numbers:
+                for value, around in self._unit_numbers(i):
+                    for x in asked_numbers:
+                        relation = 'eq' if x == value else ('lt' if x < value else 'gt')
+                        equal += relation == 'eq'
+                        above += relation == 'lt'
+                        below += relation == 'gt'
+                        pairs += [w + '|CMP:' + relation for w in around]
+            dense += [float(len(asked_numbers)), float(equal), float(above), float(below)]
             table.append({'unit': i, 'gain': gains.get(i, 0.0), 'dense': dense, 'pairs': pairs})
         return table
+
+    def _unit_numbers(self, i: int) -> list:
+        """G-106: the quantities of a unit, each with the dictionary forms of the CMP_WINDOW
+        words before and after it (tagged by side)."""
+        units = self.context_units
+        cache = getattr(self, '_numbers_cache', None)
+        if cache is None or cache[0] is not units:
+            cache = (units, {})
+            self._numbers_cache = cache
+        found = cache[1].get(i)
+        if found is None:
+            text = units[i]['text']
+            found = []
+            for value, start, end in _numbers(text):
+                left = [w for w in _TOKEN.findall(text[:start]) if w[:1].isalpha()][-CMP_WINDOW:]
+                right = [w for w in _TOKEN.findall(text[end:]) if w[:1].isalpha()][:CMP_WINDOW]
+                found.append((value, ['<' + self._term(w) for w in left] + ['>' + self._term(w) for w in right]))
+            cache[1][i] = found
+        return found
 
     def _pair_weights(self, model) -> dict:
         """The learned pair weights as one dictionary.  They are stored grouped by the

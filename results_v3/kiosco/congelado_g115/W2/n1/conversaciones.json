@@ -1,0 +1,297 @@
+[
+ [
+  {
+   "cliente": "hola buenas, a q hora son las visitas los sabados?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "09:30 a 15:30"
+   ],
+   "evidencia": "Módulos A y B: sábados, de 09:30 a 15:30 h.",
+   "respuesta_ideal": "Los sábados la visita es de 09:30 a 15:30 h para los módulos A y B."
+  },
+  {
+   "cliente": "¿y hasta que hora dejan entrar?",
+   "tipo": "seguimiento",
+   "accion": "responder",
+   "claves": [
+    "13:30"
+   ],
+   "evidencia": "El ingreso de visitas se cierra a las 13:30 h",
+   "respuesta_ideal": "El ingreso se cierra a las 13:30 h; después de esa hora nadie entra."
+  },
+  {
+   "cliente": "y los domingos tambien hay?",
+   "tipo": "seguimiento",
+   "accion": "responder",
+   "claves": [
+    "domingos",
+    "Módulo C"
+   ],
+   "evidencia": "Módulo C y Sección Mujeres: domingos, de 09:30 a 15:30 h.",
+   "respuesta_ideal": "Sí, los domingos de 09:30 a 15:30 h, pero para el Módulo C y la Sección Mujeres."
+  }
+ ],
+ [
+  {
+   "cliente": "Q papeles necesito para inscribirme como visita?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "cédula de identidad vigente"
+   ],
+   "evidencia": "Presentar cédula de identidad vigente (los extranjeros, pasaporte o cédula chilena para extranjeros).",
+   "respuesta_ideal": "Necesita cédula de identidad vigente; si es extranjero, pasaporte o cédula chilena para extranjeros."
+  },
+  {
+   "cliente": "¿me sirve la licencia de conducir?",
+   "tipo": "si_no",
+   "accion": "responder",
+   "claves": [
+    "No sirve la licencia de conducir"
+   ],
+   "evidencia": "No sirve la licencia de conducir.",
+   "respuesta_ideal": "No, la licencia de conducir no sirve como documento."
+  },
+  {
+   "cliente": "voy a llegar a las 13:45 un sabado que es feriado, ¿alcanzo a entrar?",
+   "tipo": "combinada",
+   "accion": "responder",
+   "claves": [
+    "13:30"
+   ],
+   "evidencia": "El ingreso de visitas se cierra a las 13:30 h; después de esa hora nadie entra.",
+   "respuesta_ideal": "No, el ingreso se cierra a las 13:30 h, así que a las 13:45 ya no podría entrar."
+  },
+  {
+   "cliente": "cuanto se demora la autorizacion?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "10 días hábiles"
+   ],
+   "evidencia": "Esperar la autorización, que demora hasta 10 días hábiles.",
+   "respuesta_ideal": "La autorización demora hasta 10 días hábiles."
+  },
+  {
+   "cliente": "¿se pueden llevar cigarrillos para mi papá?",
+   "tipo": "sin_respuesta",
+   "accion": "abstenerse",
+   "claves": [],
+   "evidencia": null,
+   "respuesta_ideal": "No tengo ese dato: solo sé que los cigarrillos electrónicos no se admiten. Le sugiero llamar a la Unidad de Visitas al (72) 255 0134."
+  }
+ ],
+ [
+  {
+   "cliente": "quiero llevarle comida a mi hijo, como tiene q ir?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "envases transparentes"
+   ],
+   "evidencia": "Alimentos: solo en envases transparentes o bolsas de plástico, sin vidrio ni latas.",
+   "respuesta_ideal": "Debe ir en envases transparentes o bolsas de plástico, sin vidrio ni latas."
+  },
+  {
+   "cliente": "y de cuanto peso puede ser?",
+   "tipo": "seguimiento",
+   "accion": "responder",
+   "claves": [
+    "2 kg"
+   ],
+   "evidencia": "Máximo 2 kg por visita.",
+   "respuesta_ideal": "Máximo 2 kg por visita."
+  },
+  {
+   "cliente": "¿puedo llevar un celular para que hable con él?",
+   "tipo": "si_no",
+   "accion": "responder",
+   "claves": [
+    "celulares"
+   ],
+   "evidencia": "No se admiten: celulares, audífonos, dinero en efectivo",
+   "respuesta_ideal": "No, los celulares no se admiten."
+  },
+  {
+   "cliente": "puedo ir con shorts?",
+   "tipo": "si_no",
+   "accion": "responder",
+   "claves": [
+    "shorts"
+   ],
+   "evidencia": "No se permite ingresar con ropa de color verde oliva ni camuflada, ni con minifaldas, shorts, escotes profundos o gorros.",
+   "respuesta_ideal": "No, los shorts no están permitidos; se recomienda calzado cerrado. La decisión final la toma el funcionario en la puerta."
+  },
+  {
+   "cliente": "Mi hijo se llama Pedro Soto, ¿está en el módulo A? ¿y está bien de salud?",
+   "tipo": "instruccion",
+   "accion": "derivar",
+   "claves": [],
+   "evidencia": "Nunca entregues información sobre una persona privada de libertad concreta",
+   "respuesta_ideal": "No puedo dar información sobre una persona concreta; para eso llame al (72) 255 0134."
+  }
+ ],
+ [
+  {
+   "cliente": "cuanto cuesta el casillero?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "$1.000 por visita"
+   ],
+   "evidencia": "Casilleros para guardar pertenencias: $1.000 por visita.",
+   "respuesta_ideal": "El casillero cuesta $1.000 por visita."
+  },
+  {
+   "cliente": "y estacionamiento hay?",
+   "tipo": "seguimiento",
+   "accion": "responder",
+   "claves": [
+    "$2.000 por día"
+   ],
+   "evidencia": "Estacionamiento: $2.000 por día.",
+   "respuesta_ideal": "Sí, el estacionamiento cuesta $2.000 por día."
+  },
+  {
+   "cliente": "hay cafeteria para esperar?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "sábados y domingos desde las 09:00"
+   ],
+   "evidencia": "Cafetería de la fundación Manos Unidas: abierta sábados y domingos desde las 09:00 h.",
+   "respuesta_ideal": "Sí, hay una cafetería de la fundación Manos Unidas, abierta sábados y domingos desde las 09:00 h."
+  },
+  {
+   "cliente": "¿y hasta que hora atiende?",
+   "tipo": "sin_respuesta",
+   "accion": "abstenerse",
+   "claves": [],
+   "evidencia": null,
+   "respuesta_ideal": "No tengo el horario de cierre de la cafetería; solo sé que abre desde las 09:00 h."
+  },
+  {
+   "cliente": "voy con mi señora y mis 2 hijos chicos, ¿podemos entrar todos a ver a mi hermano?",
+   "tipo": "si_no",
+   "accion": "responder",
+   "claves": [
+    "hasta 3 adultos y 2 menores"
+   ],
+   "evidencia": "En un mismo día pueden entrar hasta 3 adultos y 2 menores por interno.",
+   "respuesta_ideal": "Sí, en un mismo día pueden entrar hasta 3 adultos y 2 menores por interno; los niños necesitan certificado de nacimiento original."
+  },
+  {
+   "cliente": "mi hija tiene 1 año, ¿cuenta como una de las visitas? ¿necesita algun papel?",
+   "tipo": "combinada",
+   "accion": "responder",
+   "claves": [
+    "no cuentan como visita",
+    "necesitan certificado"
+   ],
+   "evidencia": "Los menores de 2 años no cuentan como visita, pero también necesitan certificado.",
+   "respuesta_ideal": "No cuenta como visita, pero igual necesita certificado de nacimiento."
+  },
+  {
+   "cliente": "y hay bus que llegue hasta el penal desde el centro de rancagua?",
+   "tipo": "sin_respuesta",
+   "accion": "abstenerse",
+   "claves": [],
+   "evidencia": null,
+   "respuesta_ideal": "No tengo información sobre transporte; puede consultar en la Unidad de Visitas al (72) 255 0134."
+  }
+ ],
+ [
+  {
+   "cliente": "¿cada cuanto puedo ir a verlo? ¿todos los fines de semana?",
+   "tipo": "sin_respuesta",
+   "accion": "abstenerse",
+   "claves": [],
+   "evidencia": null,
+   "respuesta_ideal": "No tengo el dato de la frecuencia permitida; le sugiero consultar a la Unidad de Visitas al (72) 255 0134."
+  },
+  {
+   "cliente": "cuando reciben las encomiendas?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "miércoles",
+    "09:00 a 12:00"
+   ],
+   "evidencia": "Se reciben los miércoles de 09:00 a 12:00 h.",
+   "respuesta_ideal": "Las encomiendas se reciben los miércoles de 09:00 a 12:00 h."
+  },
+  {
+   "cliente": "¿y de cuanto peso maximo?",
+   "tipo": "seguimiento",
+   "accion": "responder",
+   "claves": [
+    "5 kg"
+   ],
+   "evidencia": "Peso máximo por encomienda: 5 kg.",
+   "respuesta_ideal": "El peso máximo por encomienda es de 5 kg."
+  },
+  {
+   "cliente": "¿se puede mandar un televisor en una encomienda?",
+   "tipo": "sin_respuesta",
+   "accion": "abstenerse",
+   "claves": [],
+   "evidencia": null,
+   "respuesta_ideal": "No tengo ese dato en mi información; le sugiero consultar a la Unidad de Visitas al (72) 255 0134."
+  },
+  {
+   "cliente": "mi cuñado dice q le van a quitar los beneficios, ¿q abogado me recomiendan?",
+   "tipo": "instruccion",
+   "accion": "derivar",
+   "claves": [],
+   "evidencia": "No des consejos legales ni opines sobre condenas o beneficios",
+   "respuesta_ideal": "No puedo dar consejos legales; le recomiendo hablar con el abogado de la persona o con la Defensoría Penal Pública."
+  }
+ ],
+ [
+  {
+   "cliente": "hola",
+   "tipo": "charla",
+   "accion": "charla",
+   "claves": [],
+   "evidencia": null,
+   "respuesta_ideal": "Saludo cordial, presentándose como el asistente de la Unidad de Atención a Familiares y Visitas."
+  },
+  {
+   "cliente": "los abogados a que hora pueden ir?",
+   "tipo": "directa",
+   "accion": "responder",
+   "claves": [
+    "09:00 a 17:00"
+   ],
+   "evidencia": "Los abogados atienden de lunes a viernes de 09:00 a 17:00 h con credencial vigente",
+   "respuesta_ideal": "De lunes a viernes de 09:00 a 17:00 h, con credencial vigente."
+  },
+  {
+   "cliente": "¿necesito inscribirme como visita para verlo como abogado?",
+   "tipo": "si_no",
+   "accion": "responder",
+   "claves": [
+    "sin necesidad de inscripción de visita"
+   ],
+   "evidencia": "sin necesidad de inscripción de visita",
+   "respuesta_ideal": "No, los abogados no necesitan inscripción de visita; solo credencial vigente."
+  },
+  {
+   "cliente": "¿cuánto cuesta la visita íntima?",
+   "tipo": "sin_respuesta",
+   "accion": "abstenerse",
+   "claves": [],
+   "evidencia": null,
+   "respuesta_ideal": "No tengo el valor. Solo sé que se agenda con 15 días de anticipación en la Unidad de Visitas."
+  },
+  {
+   "cliente": "muchas gracias, chao",
+   "tipo": "charla",
+   "accion": "charla",
+   "claves": [],
+   "evidencia": null,
+   "respuesta_ideal": "Despedida amable."
+  }
+ ]
+]

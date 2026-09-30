@@ -100,7 +100,11 @@ def isotonic(points) -> list[list]:
 
 def main():
     base, out = Path(sys.argv[1]), Path(sys.argv[2])
-    rows = rows_of(Bot.load(base))
+    taught = Bot.load(base)
+    previous = taught.context_model.get('confidence')
+    soft_prefix = bool(taught._active_model()) or not previous or previous.get('soft_prefix', False)
+    soft_prefix = getattr(taught, 'soft_prefix', soft_prefix)
+    rows = rows_of(taught)
     crossed = []
     for half in (0, 1):
         model = naive_bayes([r for r in rows if r['half'] != half])
@@ -109,6 +113,7 @@ def main():
     confidence['calibration'] = isotonic(crossed)
     confidence['cite_from'] = CITE
     confidence['rows'] = len(rows)
+    confidence['soft_prefix'] = soft_prefix
     cells = {}
     for r in rows:
         row = cells.setdefault(r['cell'], [0, 0])

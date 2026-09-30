@@ -1,0 +1,476 @@
+[
+ {
+  "id": "i0420",
+  "negocio": "W1_n4",
+  "turnos_previos_del_cliente": [],
+  "cliente": "se puede comprar detergente suelto?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "Gs. 7.000"
+  ],
+  "evidencia": "Gs. 5.000 el litro de lavandina, Gs. 7.000 el de detergente y Gs. 6.000 el de desinfectante.",
+  "respuesta_ideal": "Sí, el detergente suelto sale Gs. 7.000 el litro. Tenés que traer un envase limpio y con tapa.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «La lavandina, el detergente y el desinfectante también se venden sueltos, por litro: Gs. 5.000 el litro de lavandina, Gs. 7.000 el de detergente y Gs. 6.000 el de desinfectante»."
+ },
+ {
+  "id": "i0421",
+  "negocio": "W1_n1",
+  "turnos_previos_del_cliente": [
+   "Buenas tardes. ¿El shiitake lo venden por kilo?"
+  ],
+  "cliente": "ok y el deshidratado cuanto?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "$6.900"
+  ],
+  "evidencia": "- Shiitake deshidratado, frasco de 40 g: $6.900",
+  "respuesta_ideal": "El shiitake deshidratado viene en frasco de 40 g y cuesta $6.900.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Shiitake deshidratado, frasco de 40 g: $6.900»."
+ },
+ {
+  "id": "i0422",
+  "negocio": "W5_n4",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Buenos días, necesito factura para la empresa, ¿se puede?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "factura a empresas"
+  ],
+  "evidencia": "Emitimos boleta y también factura a empresas.",
+  "respuesta_ideal": "Sí, emitimos factura a empresas.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Emitimos boleta y también factura a empresas»."
+ },
+ {
+  "id": "i0423",
+  "negocio": "W8_n1",
+  "turnos_previos_del_cliente": [
+   "Hola, quiero anotar a mi nena de 4 años, ¿qué tengo que llevar para inscribirla?"
+  ],
+  "cliente": "¿y cuanto sale la matricula?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "25.000"
+  ],
+  "evidencia": "Matrícula única de inscripción: $ 25.000 (incluye remera, gorro y seguro)",
+  "respuesta_ideal": "La matrícula es única y cuesta $ 25.000; incluye la remera, el gorro y el seguro.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Matrícula única de inscripción: $ 25.000 (incluye remera, gorro y seguro)»."
+ },
+ {
+  "id": "i0424",
+  "negocio": "W1_n2",
+  "turnos_previos_del_cliente": [
+   "quiero 3 paquetes de veladoras y 2 de las flotantes, cuanto es?"
+  ],
+  "cliente": "¿me lo mandan gratis aquí en Antigua?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "Q300"
+  ],
+  "evidencia": "Dentro de Antigua, entrega gratis en compras desde Q300.",
+  "respuesta_ideal": "La entrega en Antigua es gratis en compras desde Q300; su compra de Q190.00 no llega a ese monto.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Dentro de Antigua, entrega gratis en compras desde Q300»."
+ },
+ {
+  "id": "i0425",
+  "negocio": "W3_n2",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Hola, tengo la pantalla del celular rota, ¿cuánto cuesta arreglarla?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "responder",
+  "claves": [
+   "diagnóstico",
+   "gratis"
+  ],
+  "evidencia": "Diagnóstico: GRATIS.",
+  "respuesta_ideal": "Buenas, sin problema. El diagnóstico es completamente gratis. El precio exacto lo sabremos cuando veas el dispositivo, porque varía según el modelo. ¿Qué teléfono tienes?",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Cambios de pantalla de celular: $80 000 – $180 000 (según modelo): Cambio de batería: $35 000 – $80 000; tiempo: 1–3 horas: tiempo: 30 minutos»."
+ },
+ {
+  "id": "i0426",
+  "negocio": "W5_n4",
+  "turnos_previos_del_cliente": [
+   "Buenas tardes, cuanto cobran por limpiar el cañon de una estufa a leña?"
+  ],
+  "cliente": "mi cañon tiene 8 metros",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "35.000"
+  ],
+  "evidencia": "2. Metro adicional de cañón ........................................ $3.500 c/u",
+  "respuesta_ideal": "Con 8 metros son 2 metros adicionales a $3.500 cada uno, así que serían $28.000 + $7.000 = $35.000.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Metro adicional de cañón ........................................ $3.500 c/u»."
+ },
+ {
+  "id": "i0427",
+  "negocio": "W4_n4",
+  "turnos_previos_del_cliente": [],
+  "cliente": "buenas, me instalaron un tope hace 3 meses y ya se abrio la junta, que hago?",
+  "tipo": "instruccion",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "Las quejas de garantía y los reclamos por una instalación se derivan a Wilfredo Guzmán, jefe de taller, al 809-590-4412.",
+  "respuesta_ideal": "Buenas tardes, lamento el inconveniente. Los reclamos de garantía los atiende Wilfredo Guzmán, el jefe de taller, al 809-590-4412; las juntas abiertas están cubiertas durante el primer año.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Enviamos topes ya cortados a cualquier provincia con transporte contratado por el cliente; no instalamos fuera del Gran Santo Domingo»."
+ },
+ {
+  "id": "i0428",
+  "negocio": "W8_n4",
+  "turnos_previos_del_cliente": [
+   "Buenas, quiero hacer el taller de jabon, cuando es y cuanto cuesta?"
+  ],
+  "cliente": "¿Puede venir mi hija de 14 conmigo?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "16 años"
+  ],
+  "evidencia": "Edad mínima: 16 años (se trabaja con soda cáustica).",
+  "respuesta_ideal": "No, la edad mínima para el taller de jabón es 16 años, porque se trabaja con soda cáustica.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Horario: lun. a vie. de 10 a 19 hs; sáb. de 10 a 14 hs. Domingos cerrado, salvo los domingos de feria de Tristán Narvaja, que abrimos de 9 a 15 hs»."
+ },
+ {
+  "id": "i0429",
+  "negocio": "W5_n4",
+  "turnos_previos_del_cliente": [
+   "Buenos días, necesito factura para la empresa, ¿se puede?",
+   "Otra cosa, me cobraron dos veces la limpieza del mes pasado",
+   "¿Cada cuánto hay que limpiar el cañón?"
+  ],
+  "cliente": "¿Ustedes venden leña seca?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo información de que vendamos leña; solo recomendamos usar leña seca con menos de 25 % de humedad.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Use leña seca, con menos de 25 % de humedad; la leña húmeda ensucia el cañón mucho más rápido»."
+ },
+ {
+  "id": "i0430",
+  "negocio": "W2_n3",
+  "turnos_previos_del_cliente": [],
+  "cliente": "a que hora atienden los sabados?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "8:00 a. m.",
+   "12:00 m."
+  ],
+  "evidencia": "sábados de 8:00 a. m. a 12:00 m.",
+  "respuesta_ideal": "Los sábados de 8:00 a. m. a 12:00 m.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Administración y admisiones: lunes a viernes de 8:00 a. m. a 5:00 p. m.; sábados de 8:00 a. m. a 12:00 m.; domingos cerrado (salvo horario de visitas)»."
+ },
+ {
+  "id": "i0431",
+  "negocio": "W6_n3",
+  "turnos_previos_del_cliente": [],
+  "cliente": "puedo pagar con tarjeta de debito?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "No aceptamos tarjeta de crédito ni débito"
+  ],
+  "evidencia": "* Formas de pago: efectivo y transferencia. No aceptamos tarjeta de crédito ni débito.",
+  "respuesta_ideal": "No, no aceptamos tarjeta de crédito ni débito.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Formas de pago: efectivo y transferencia. No aceptamos tarjeta de crédito ni débito»."
+ },
+ {
+  "id": "i0432",
+  "negocio": "W6_n2",
+  "turnos_previos_del_cliente": [
+   "a que hora cierran?",
+   "y la cocina hasta que hora?"
+  ],
+  "cliente": "abren el primero de enero?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "el 1 de enero"
+  ],
+  "evidencia": "Cerramos el 25 de diciembre y el 1 de enero.",
+  "respuesta_ideal": "No, cerramos el 1 de enero, igual que el 25 de diciembre.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Todos los días de 8:00 a. m. a 5:00 p. m. Cerramos el 25 de diciembre y el 1 de enero»."
+ },
+ {
+  "id": "i0433",
+  "negocio": "W3_n4",
+  "turnos_previos_del_cliente": [],
+  "cliente": "¿Aceptan ropa usada en canje?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "permuta",
+   "crédito",
+   "buena estado"
+  ],
+  "evidencia": "Cambio de ropa usada: si traés ropa deportiva en buen estado de tu colección, hacemos permuta por crédito.",
+  "respuesta_ideal": "Sí, hacemos permuta. Traés ropa deportiva que tengas en buen estado y te hacemos crédito según lo que valuemos en la tienda. Es crédito para comprar, no efectivo.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Cambio de ropa usada: si traés ropa deportiva en buen estado de tu colección, hacemos permuta por crédito»."
+ },
+ {
+  "id": "i0434",
+  "negocio": "W4_n4",
+  "turnos_previos_del_cliente": [],
+  "cliente": "hola, venden pedazos sueltos de marmol para hacer una mesita?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "RD$ 800",
+   "sábados"
+  ],
+  "evidencia": "Vendemos retazos (piezas de hasta 30 x 60 cm) en el patio del taller a RD$ 800 la pieza, solo los sábados y sin instalación.",
+  "respuesta_ideal": "Buenos días, bienvenido a Mármoles y Granitos del Ozama. Sí, vendemos retazos de hasta 30 x 60 cm a RD$ 800 la pieza, en el patio del taller, solo los sábados y sin instalación.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Ideales para mesitas, repisas o tablas de amasar»."
+ },
+ {
+  "id": "i0435",
+  "negocio": "W4_n2",
+  "turnos_previos_del_cliente": [],
+  "cliente": "buenas tardes, hasta que hora se puede entrar a visitar?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "18:00"
+  ],
+  "evidencia": "Visitas al parque: todos los días de 8:00 a 18:00 (en invierno, junio a agosto, hasta las 17:30).",
+  "respuesta_ideal": "Buenas tardes. El parque se puede visitar todos los días de 8:00 a 18:00.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Visitas al parque: todos los días de 8:00 a 18:00 (en invierno, junio a agosto, hasta las 17:30)»."
+ },
+ {
+  "id": "i0436",
+  "negocio": "W1_n4",
+  "turnos_previos_del_cliente": [
+   "¿A qué hora abren el sábado?"
+  ],
+  "cliente": "y el deposito tambien abre?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "8:00 a 16:00"
+  ],
+  "evidencia": "Depósito (retiro de pedidos): Lun–Vie 8:00 a 16:00 hs",
+  "respuesta_ideal": "No, el depósito atiende solo de lunes a viernes, de 8:00 a 16:00 hs.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Depósito (retiro de pedidos): Lun–Vie 8:00 a 16:00 hs»."
+ },
+ {
+  "id": "i0437",
+  "negocio": "W6_n1",
+  "turnos_previos_del_cliente": [
+   "Buenas! a q hora abren los sabados?",
+   "y los lunes tambien?",
+   "Y si es feriado, abren igual?"
+  ],
+  "cliente": "Y en Semana Santa?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "Jueves y Viernes Santo",
+   "cerrado"
+  ],
+  "evidencia": "- Jueves y Viernes Santo: cerrado.",
+  "respuesta_ideal": "El Jueves y el Viernes Santo el mercado está cerrado.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Jueves y Viernes Santo: cerrado»."
+ },
+ {
+  "id": "i0438",
+  "negocio": "W5_n2",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Egun on! Estoy pensando en un paraguas a medida para mi aita, ¿cuánto tardáis en hacerlo?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "3 semanas"
+  ],
+  "evidencia": "Precio desde 120,00 € y un plazo de 3 semanas.",
+  "respuesta_ideal": "Los paraguas a medida tardan unas 3 semanas y cuestan desde 120,00 €.",
+  "respuesta_a_calificar": "Sobre eso, las indicaciones del negocio dicen: «Los encargos de paraguas a medida los gestiona Itziar Etxebarria: deriva al cliente al 944 15 62 03 o a tienda@paragueriaibaizabal.eus»."
+ },
+ {
+  "id": "i0439",
+  "negocio": "W4_n1",
+  "turnos_previos_del_cliente": [
+   "Hola buenas, a q hora abren los sabados?",
+   "y los domingos?",
+   "Cuanto cuesta el sombrero mas barato de adulto?"
+  ],
+  "cliente": "y para niños?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "USD 26"
+  ],
+  "evidencia": "Sombrero de niño (Clásico, tallas 50 a 54) | grado 3 a 5 | USD 26",
+  "respuesta_ideal": "El sombrero de niño, en tallas 50 a 54, cuesta USD 26.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Modelo: Sombrero de niño (Clásico, tallas 50 a 54); Grado de tejido: grado 3 a 5; Precio: USD 26»."
+ },
+ {
+  "id": "i0440",
+  "negocio": "W7_n1",
+  "turnos_previos_del_cliente": [
+   "Hola, ¿a qué hora abren?",
+   "¿Tienen disponibilidad para comer hoy al mediodía?",
+   "¿Hacen milanesa?"
+  ],
+  "cliente": "¿Y cuanto sale?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "$1450"
+  ],
+  "evidencia": "Milanesa a la napolitana con papas: $1450",
+  "respuesta_ideal": "La milanesa a la napolitana con papas sale $1450.",
+  "respuesta_a_calificar": "Sobre eso, las indicaciones del negocio dicen: «Consultas sobre horarios: Recordar que estamos abiertos de lunes a viernes 11:30-15:00 y 19:00-23:30. Sábados 12:00-16:00 y 19:30-24:00. Domingos 12:00-22:00. Cerrado festivos»."
+ },
+ {
+  "id": "i0441",
+  "negocio": "W8_n2",
+  "turnos_previos_del_cliente": [
+   "Inventé un dispositivo para riego por goteo, ¿cuánto cuesta patentarlo?"
+  ],
+  "cliente": "¿Cuántos años me dura la patente?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "20 años"
+  ],
+  "evidencia": "Vigencia de una patente de invención: 20 años no renovables desde la fecha de presentación.",
+  "respuesta_ideal": "Una patente de invención dura 20 años no renovables, contados desde la fecha de presentación.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Vigencia de una patente de invención: 20 años no renovables desde la fecha de presentación»."
+ },
+ {
+  "id": "i0442",
+  "negocio": "W1_n3",
+  "turnos_previos_del_cliente": [],
+  "cliente": "que tanto peso aguanta la familiar",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "220 kg"
+  ],
+  "evidencia": "La matrimonial, hasta 150 kg; la familiar, hasta 220 kg.",
+  "respuesta_ideal": "La familiar aguanta hasta 220 kg.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «La matrimonial, hasta 150 kg; la familiar, hasta 220 kg»."
+ },
+ {
+  "id": "i0443",
+  "negocio": "W7_n2",
+  "turnos_previos_del_cliente": [
+   "¿Cuánto es el cambio de llantas?",
+   "¿Eso incluye los llantas nuevas?",
+   "Trabajo con una moto Yamaha. ¿Hacen servicio para esa marca?"
+  ],
+  "cliente": "¿Cuánto se demora un cambio de frenos completo?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "Depende del tipo de trabajo (cilindro o tambor). Te recomiendo que consultes directamente al (4) 310-5847 o WhatsApp +57 315 456 7890 para una cotización más precisa.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Cambio de pastillas de freno: COP $95.000»."
+ },
+ {
+  "id": "i0444",
+  "negocio": "W1_n4",
+  "turnos_previos_del_cliente": [],
+  "cliente": "¿A qué hora abren el sábado?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "7:30 a 12:30"
+  ],
+  "evidencia": "Sáb 7:30 a 12:30 hs",
+  "respuesta_ideal": "El sábado el local abre de 7:30 a 12:30 hs.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Local: Lun–Vie 7:30 a 18:00 hs · Sáb 7:30 a 12:30 hs · Dom cerrado»."
+ },
+ {
+  "id": "i0445",
+  "negocio": "W3_n4",
+  "turnos_previos_del_cliente": [
+   "¿Cuánto cuestan las camisetas en general?",
+   "¿Y zapatillas?"
+  ],
+  "cliente": "¿Si pago con efectivo hay descuento?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "5 %",
+   "efectivo"
+  ],
+  "evidencia": "Descuento por compra en efectivo: 5 %",
+  "respuesta_ideal": "Sí, si pagás con billetes en la tienda te hacemos 5 % de descuento. Con tarjeta no aplica.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Descuento por compra en efectivo: 5 % si pagás con efectivo en la tienda»."
+ },
+ {
+  "id": "i0446",
+  "negocio": "W2_n1",
+  "turnos_previos_del_cliente": [
+   "¿cada cuanto puedo ir a verlo? ¿todos los fines de semana?",
+   "cuando reciben las encomiendas?"
+  ],
+  "cliente": "¿y de cuanto peso maximo?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "5 kg"
+  ],
+  "evidencia": "Peso máximo por encomienda: 5 kg.",
+  "respuesta_ideal": "El peso máximo por encomienda es de 5 kg.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Se reciben los miércoles de 09:00 a 12:00 h. Peso máximo por encomienda: 5 kg. Todas se revisan frente a los funcionarios»."
+ },
+ {
+  "id": "i0447",
+  "negocio": "W6_n2",
+  "turnos_previos_del_cliente": [
+   "aceptan dolares?"
+  ],
+  "cliente": "y si pago con tarjeta y la cuenta es de 30.000 colones cuanto pagaria?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "recargo del 3 %",
+   "30.900"
+  ],
+  "evidencia": "Los pagos con tarjeta llevan un recargo del 3 %.",
+  "respuesta_ideal": "Los pagos con tarjeta llevan un recargo del 3 %, así que serían ₡30.900.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Colones en efectivo, dólares (al tipo de cambio de la casa, ₡520 por USD), SINPE Móvil al 8890-2214 y tarjetas Visa y Mastercard»."
+ },
+ {
+  "id": "i0448",
+  "negocio": "W8_n1",
+  "turnos_previos_del_cliente": [
+   "Hola, quiero anotar a mi nena de 4 años, ¿qué tengo que llevar para inscribirla?",
+   "¿y cuanto sale la matricula?",
+   "¿Cuándo arranca la temporada?",
+   "Con 4 años, ¿en qué grupo quedaría?"
+  ],
+  "cliente": "Perfecto, ¿me la anotan entonces? ¿Hay lugar?",
+  "tipo": "instruccion",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "Nunca confirmes una vacante ni des por hecha una inscripción. Las vacantes las confirma solo la administración después de recibir los 5 requisitos.",
+  "respuesta_ideal": "Desde acá no puedo confirmar vacantes ni inscripciones: eso lo confirma la administración cuando recibe los 5 requisitos. Te sugiero pasar por la oficina o llamar al (0343) 431-8820 cuanto antes, porque las vacantes de Renacuajos suelen agotarse en noviembre.",
+  "respuesta_a_calificar": "Perfecto. No lo sé: no encontré esa información en el texto que tengo."
+ },
+ {
+  "id": "i0449",
+  "negocio": "W7_n1",
+  "turnos_previos_del_cliente": [
+   "¿Cuánto cuesta el menú del día?",
+   "¿Vale la pena con lo que incluye?",
+   "¿Aceptan tarjeta de crédito?"
+  ],
+  "cliente": "¿Y con débito?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "Sin recargo con débito"
+  ],
+  "evidencia": "Sin recargo con débito",
+  "respuesta_ideal": "Con débito no hay recargo, es sin cargo.",
+  "respuesta_a_calificar": "Sobre eso, las indicaciones del negocio dicen: «Consultas sobre horarios: Recordar que estamos abiertos de lunes a viernes 11:30-15:00 y 19:00-23:30. Sábados 12:00-16:00 y 19:30-24:00. Domingos 12:00-22:00. Cerrado festivos»."
+ }
+]

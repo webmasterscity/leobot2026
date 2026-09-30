@@ -420,7 +420,9 @@ class ReadingMemoryMixin:
                 supports[self.negated(sum(w in negators for w in said))].append(row['source'])
         same, opposite = supports[polarity], supports[1 - polarity]
         # G-54: the rows behind an answer, for its voice.
-        rows_of = lambda sources: [r for r in self.reading_utterances if r['source'] in set(sources)]
+        def rows_of(sources):
+            wanted = set(sources)
+            return [r for r in self.reading_utterances if r['source'] in wanted]
         if same and opposite:
             return {'text': self._voiced('contradiction', rows_of(same + opposite))
                     or 'No lo sé: lo que me dijeron se contradice.', 'status': 'literal_contradiction',
@@ -448,6 +450,10 @@ class ReadingMemoryMixin:
                     said = self._contrast(structure, row, negators)
                     if said is None and getattr(self, 'kind_contrast', True):
                         said = self._contrast(structure, row, negators, by_kind=True)
+                    if said is not None and hasattr(self, 'includes') and self.includes(
+                            self._knowledge_term(str(said)), self._knowledge_term(structure['norms'].get(value, value))):
+                        # G-107: what was said is a kind of what is asked: no contrast.
+                        said = None
                     if said is not None:
                         return {'text': self._voiced('contrast', [row]) or f'No: según lo que me dijeron, «{row["text"]}»',
                                 'status': 'literal_contrast',
@@ -1678,6 +1684,10 @@ class ReadingMemoryMixin:
         if documents_only:
             candidates = [p for p in candidates
                           if not str(self.reading_utterances[p].get('document', '')).startswith('conversación')]
+        if not getattr(self, 'library_span_reading', False):
+            # G-108: this reader was calibrated on a question about one related text; over a
+            # library of unrelated sentences its overlap threshold does not hold, so it does not guess there.
+            candidates = [p for p in candidates if not self.reading_utterances[p].get('library')]
         word_sets = self._reading_index_cache[3]
         literal = {p: self._reading_overlap(qtokens, word_sets[p]) for p in candidates}
         scored = [(literal[p], p) for p in candidates]

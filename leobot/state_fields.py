@@ -38,6 +38,7 @@ COGNITIVE_FIELDS = (
     'context_units',
     'context_title',
     'context_instructions',
+    'knowledge_model',
 )
 
 

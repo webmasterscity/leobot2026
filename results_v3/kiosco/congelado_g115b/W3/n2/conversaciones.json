@@ -1,0 +1,166 @@
+[
+  [
+    {
+      "cliente": "Buenos días. Tengo mareos frecuentes y me han dicho que vaya a una clínica de vértigo.",
+      "tipo": "charla",
+      "accion": "responder",
+      "claves": ["bienvenido", "especializado"],
+      "evidencia": "Centro especializado en diagnóstico y tratamiento del vértigo y los mareos",
+      "respuesta_ideal": "Bienvenido. Aquí somos especialistas en vértigo. ¿Cuándo quieres venir? Tenemos disponibilidad esta semana."
+    },
+    {
+      "cliente": "¿Cuánto cuesta la primera consulta?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["95 €"],
+      "evidencia": "Consulta primera vez: 95 €",
+      "respuesta_ideal": "La primera consulta cuesta 95 euros. Incluye la evaluación y el plan de tratamiento."
+    },
+    {
+      "cliente": "¿Qué días atienden?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["Lunes a viernes", "9 a.m.", "7 p.m."],
+      "evidencia": "Lunes a viernes: 9 a.m. - 7 p.m.",
+      "respuesta_ideal": "De lunes a viernes de 9 a.m. a 7 p.m., y sábados de 9 a.m. a 2 p.m."
+    },
+    {
+      "cliente": "¿Necesito cita previa?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["recomendada", "disponibilidad"],
+      "evidencia": "Cita previa: recomendada (atendemos sin cita si hay disponibilidad)",
+      "respuesta_ideal": "Te recomendamos cita previa, pero si no la tienes y pasas, te atendemos si hay hueco."
+    }
+  ],
+  [
+    {
+      "cliente": "Tengo un mareo terrible ahora, ¿puedes verme de emergencia?",
+      "tipo": "instruccion",
+      "accion": "derivar",
+      "claves": ["112", "Hospital La Paz"],
+      "evidencia": "No llevamos atención de urgencias; para ataque agudo en horario fuera, diríjase al Hospital La Paz o llamar a emergencias (112)",
+      "respuesta_ideal": "En este momento tienes que ir a urgencias. Llama al 112 o acude al Hospital La Paz. Nosotros atendemos consultas programadas, no emergencias."
+    },
+    {
+      "cliente": "¿A qué hora puedo venir mañana?",
+      "tipo": "seguimiento",
+      "accion": "responder",
+      "claves": ["9 a.m.", "7 p.m."],
+      "evidencia": "Lunes a viernes: 9 a.m. - 7 p.m.",
+      "respuesta_ideal": "Mañana si es entre lunes y viernes, podemos de 9 a.m. a 7 p.m. ¿Qué hora prefieres?"
+    },
+    {
+      "cliente": "¿Hacen análisis de sangre para detectar vértigo?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "No sé bien cómo se diagnostica exactamente. El doctor lo verá en la consulta. Vuelvo a recomendarte que vengas y el especialista te lo explica."
+    }
+  ],
+  [
+    {
+      "cliente": "Vengo derivado de mi médico de cabecera. ¿Cómo funciona eso?",
+      "tipo": "instruccion",
+      "accion": "responder",
+      "claves": ["receta electrónica", "Seguridad Social"],
+      "evidencia": "Se requiere receta electrónica para la derivación de la Seguridad Social. Los pacientes del sistema público pagan solo la aportación obligatoria.",
+      "respuesta_ideal": "Perfecto. Trae la receta electrónica del médico. Si eres del sistema público, pagas la aportación obligatoria. Si no la tienes, avísame y lo arreglamos."
+    },
+    {
+      "cliente": "¿Cuánto tiempo dura la consulta?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["20-30 minutos"],
+      "evidencia": "Consulta con especialista (20-30 min)",
+      "respuesta_ideal": "La consulta dura entre 20 y 30 minutos. Si el doctor necesita más, lo hace sin cobro extra."
+    },
+    {
+      "cliente": "¿Hay estacionamiento?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["parking", "12 €", "primera hora gratis"],
+      "evidencia": "Parking en el edificio: 12 € / hora, clientes de la clínica primera hora gratis",
+      "respuesta_ideal": "Sí, hay parking en el edificio. Cuesta 12 euros la hora, pero la primera es gratis si eres cliente nuestro."
+    }
+  ],
+  [
+    {
+      "cliente": "¿Puedo traer a mi hijo de 7 años?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["a partir de 5 años", "padre", "tutor"],
+      "evidencia": "Recibimos a pacientes de cualquier edad, incluyendo niños a partir de 5 años.",
+      "respuesta_ideal": "Sí, atendemos a partir de 5 años. Pero un padre o tutor tiene que estar presente en la consulta."
+    },
+    {
+      "cliente": "¿Qué debo llevar a la consulta?",
+      "tipo": "sin_respuesta",
+      "accion": "abstenerse",
+      "claves": [],
+      "evidencia": null,
+      "respuesta_ideal": "Lleva tu DNI y la derivación del médico si la tienes. Otros datos los rellenamos aquí. Si tienes informes médicos anteriores, los traes también."
+    },
+    {
+      "cliente": "¿Aceptan transferencia bancaria?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["transferencia", "tarjeta", "efectivo"],
+      "evidencia": "Se aceptan pagos con tarjeta, transferencia y efectivo.",
+      "respuesta_ideal": "Sí, aceptamos tarjeta, transferencia y efectivo."
+    }
+  ],
+  [
+    {
+      "cliente": "¿Cuánto cuesta la videonistagmografía?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["120 €"],
+      "evidencia": "Videonistagmografía (prueba especial de movimiento ocular): 120 €",
+      "respuesta_ideal": "La videonistagmografía cuesta 120 euros. Es una prueba especial que se hace después de la consulta, si el doctor la considera necesaria."
+    },
+    {
+      "cliente": "¿Puedo pedir la videonistagmografía sin pasar por consulta?",
+      "tipo": "instruccion",
+      "accion": "responder",
+      "claves": ["consulta primero"],
+      "evidencia": "Consulta con especialista (20-30 min); Pruebas diagnósticas si procede (15-30 min)",
+      "respuesta_ideal": "No. Primero viene la consulta (el doctor decide si la prueba es necesaria) y después se hace la prueba. Así es más eficiente y evitamos pruebas innecesarias."
+    },
+    {
+      "cliente": "¿Dan sesiones de fisioterapia?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["55 €", "85 €"],
+      "evidencia": "Sesión de fisioterapia vestibular: 55 € (30 min) / 85 € (45 min)",
+      "respuesta_ideal": "Sí. Una sesión cuesta 55 euros (30 minutos) o 85 euros (45 minutos). También tenemos un paquete de 10 sesiones con descuento."
+    }
+  ],
+  [
+    {
+      "cliente": "¿Hace falta que sea paciente de la clínica para usar el parking gratis?",
+      "tipo": "seguimiento",
+      "accion": "responder",
+      "claves": ["recibo de consulta"],
+      "evidencia": "Parking en el edificio: 12 € / hora, clientes de la clínica primera hora gratis",
+      "respuesta_ideal": "Sí, presentas el recibo de tu consulta con nosotros en la recepción del parking y la primera hora es gratis."
+    },
+    {
+      "cliente": "¿Cuántos especialistas hay?",
+      "tipo": "directa",
+      "accion": "responder",
+      "claves": ["Dra. María Losada", "Dr. José Ignacio Márquez", "Fran Alonso"],
+      "evidencia": "ESPECIALIDADES | Dra. María Losada Romero, Dr. José Ignacio Márquez, Fran Alonso Gómez, Sandra Fernández López",
+      "respuesta_ideal": "Tenemos 4 especialistas: una otorrinolaringóloga, un neurólogo vestibular, un fisioterapeuta especializado y una audioprotesista."
+    },
+    {
+      "cliente": "¿Atienden un domingo?",
+      "tipo": "si_no",
+      "accion": "responder",
+      "claves": ["domingos", "cerrado"],
+      "evidencia": "Domingos y festivos: cerrado",
+      "respuesta_ideal": "No, domingos estamos cerrados. Atiende hasta el sábado a las 2 p.m."
+    }
+  ]
+]

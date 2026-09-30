@@ -1,0 +1,342 @@
+[
+ {
+  "id": "i0013",
+  "negocio": "W1_n2",
+  "turnos_previos_del_cliente": [],
+  "cliente": "¿Puedo pasar a comprar un champú para pelucas sin tener cita?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "sin cita"
+  ],
+  "evidencia": "No, la venta de accesorios es sin cita en el horario de atención.",
+  "respuesta_ideal": "Sí, la venta de accesorios es sin cita, en el horario de atención.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «No, la venta de accesorios es sin cita en el horario de atención»."
+ },
+ {
+  "id": "i0045",
+  "negocio": "W8_n2",
+  "turnos_previos_del_cliente": [
+   "hola, estan abiertos los sabados?",
+   "y en enero?",
+   "quiero comprar un dron"
+  ],
+  "cliente": "para sacar fotos en viajes, nada profesional",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "$U 38.000",
+   "$U 95.000"
+  ],
+  "evidencia": "- Drones con cámara 4K de gama media: entre $U 38.000 y $U 95.000.",
+  "respuesta_ideal": "Para fotos de viaje te sirve un dron con cámara 4K de gama media, que va de $U 38.000 a $U 95.000.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Drones profesionales para fotografía, agro e inspección: cotización a medida, en dólares»."
+ },
+ {
+  "id": "i0046",
+  "negocio": "W5_n4",
+  "turnos_previos_del_cliente": [
+   "hola! a que hora cierran hoy?",
+   "cuanto sale el whisky de 12 años?"
+  ],
+  "cliente": "y si llevo 3 cuanto me queda con la promo?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "US$ 107,73"
+  ],
+  "evidencia": "PROMO: llevando 3 botellas de whisky de 1 litro de la línea Glen Rocha, 10 % de descuento sobre esas tres botellas.",
+  "respuesta_ideal": "Tres botellas son US$ 119,70; con el 10 % de descuento de la promo te quedan en US$ 107,73.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «PROMO: llevando 3 botellas de whisky de 1 litro de la línea Glen Rocha, 10 % de descuento sobre esas tres botellas»."
+ },
+ {
+  "id": "i0076",
+  "negocio": "W2_n1",
+  "turnos_previos_del_cliente": [
+   "hola buenas tardes",
+   "cuanto sale al mes el plan mas barato"
+  ],
+  "cliente": "y ese trae camara?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "Hogar Plus"
+  ],
+  "evidencia": "Hogar Plus | todo lo del Básico, más cámara de verificación y botón de pánico | $27.500",
+  "respuesta_ideal": "El Básico no incluye cámara; la cámara de verificación viene en el plan Hogar Plus.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Plan: Hogar Plus; Qué incluye: todo lo del Básico, más cámara de verificación y botón de pánico; Valor mensual: $27.500»."
+ },
+ {
+  "id": "i0097",
+  "negocio": "W1_n1",
+  "turnos_previos_del_cliente": [
+   "Buenas tardes, ¿hasta qué hora abren hoy? Es miércoles"
+  ],
+  "cliente": "¿y el sábado por la tarde?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "cerrado"
+  ],
+  "evidencia": "Sábados: 10:00 – 14:00 (tarde cerrado)",
+  "respuesta_ideal": "Los sábados abrimos de 10:00 a 14:00 y por la tarde está cerrado, salvo en la campaña de Navidad (del 1 al 21 de diciembre), cuando abrimos de 17:00 a 20:00.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Campaña de Navidad (del 1 al 21 de diciembre): abrimos también los sábados por la tarde de 17:00 a 20:00 y los domingos de 10:00 a 14:00»."
+ },
+ {
+  "id": "i0108",
+  "negocio": "W8_n1",
+  "turnos_previos_del_cliente": [
+   "Hola, estoy embarazada de 5 meses y mi doctor me mando una radiografia de torax, la pueden hacer?",
+   "necesito cita para la radiografia?",
+   "hasta que hora puedo llegar hoy viernes?",
+   "hacen ultrasonidos a domicilio?",
+   "y el rayos x a domicilio lo hacen en Masaya?"
+  ],
+  "cliente": "cuanto cobran la sedacion para el TAC de mi hijo de 3 años?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "Para TAC en menores de 5 años se coordina sedación con anestesiólogo, con costo adicional según el caso.",
+  "respuesta_ideal": "La sedación para menores de 5 años tiene un costo adicional que depende del caso; no tengo la cifra, puede consultarla con la Lic. Marisol Téllez en recepción.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Para TAC en menores de 5 años se coordina sedación con anestesiólogo, con costo adicional según el caso»."
+ },
+ {
+  "id": "i0118",
+  "negocio": "W8_n4",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Buenos días, ¿a qué hora abren los martes?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "9:00 a 14:00",
+   "16:30 a 18:30"
+  ],
+  "evidencia": "Lunes a viernes de 9:00 a 14:00 h, excepto jueves. Martes, además, de 16:30 a 18:30 h.",
+  "respuesta_ideal": "Buenos días, soy el asistente de la OMIC del Ayuntamiento. Los martes atendemos de 9:00 a 14:00 h y, además, por la tarde de 16:30 a 18:30 h.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Martes, además, de 16:30 a 18:30 h. Jueves: sin atención al público (día de tramitación)»."
+ },
+ {
+  "id": "i0121",
+  "negocio": "W2_n1",
+  "turnos_previos_del_cliente": [
+   "hola buenas tardes",
+   "cuanto sale al mes el plan mas barato",
+   "y ese trae camara?",
+   "si lo tomo por el minimo del contrato, cuanto pagaria en mensualidades del basico?"
+  ],
+  "cliente": "cuanto cuesta la camara suelta si ya tengo el basico? quiero una cotizacion",
+  "tipo": "instruccion",
+  "accion_esperada": "derivar",
+  "claves": [],
+  "evidencia": "No confirmes contratos, cotizaciones ni descuentos. Para cotizar o pedir descuentos, deriva al teléfono comercial +56 2 2987 4410.",
+  "respuesta_ideal": "Las cotizaciones las ve el equipo comercial; puede llamar al +56 2 2987 4410.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Plan: Hogar Plus; Qué incluye: todo lo del Básico, más cámara de verificación y botón de pánico; Valor mensual: $27.500»."
+ },
+ {
+  "id": "i0133",
+  "negocio": "W2_n4",
+  "turnos_previos_del_cliente": [
+   "cuanto cuesta el kilo de chocolate semiamargo",
+   "y la harina?",
+   "quiero 2 kilos de chocolate y 3 de harina, cuanto seria?",
+   "tienen chocolate blanco?",
+   "cuanto cuesta un molde de 30 cm?"
+  ],
+  "cliente": "y el colorante en polvo cuanto cuesta?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo el precio del colorante en polvo; solo sé del colorante en gel de 30 g.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Colorante en gel, 30 g ................. $48.00»."
+ },
+ {
+  "id": "i0176",
+  "negocio": "W7_n4",
+  "turnos_previos_del_cliente": [
+   "Hola, ¿venden vinilos?",
+   "¿Cuánto cuesta un vinilo nuevo?",
+   "¿Y los usados?"
+  ],
+  "cliente": "¿Puedo escuchar uno antes de comprarlo?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "podés escuchar"
+  ],
+  "evidencia": "En tienda podés escuchar cualquier disco que quieras antes de comprar, especialmente los usados.",
+  "respuesta_ideal": "Sí, en tienda podes escuchar cualquier disco que quieras antes de comprar. Tenemos estetoscopio y revisamos juntos.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Escuchamos juntos cualquier disco que consideres antes de comprar (solo vinilos y CDs usados / en promoción)»."
+ },
+ {
+  "id": "i0191",
+  "negocio": "W7_n2",
+  "turnos_previos_del_cliente": [
+   "Hola, ¿cuánto es para redesignar un logo que ya tengo?",
+   "¿Eso incluye la guía de colores también?",
+   "¿Y si no estoy conforme con el rediseño, devuelven el dinero?",
+   "Bueno, ¿cuánto toman en hacerlo?"
+  ],
+  "cliente": "Okay. Una última pregunta: ¿publican ustedes en redes o solo diseñan?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "Administración básica 1 red"
+  ],
+  "evidencia": "Administración básica 1 red (30 posts/mes): $250 USD",
+  "respuesta_ideal": "Hacemos ambas. Diseño gráfico aparte, y administración de redes también. Puedo manejar tu presencia en redes por $250 USD/mes en 1 red.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Somos una agencia boutique de publicidad digital especializada en posicionamiento web, diseño gráfico y gestión de redes sociales para PyMES y emprendimientos de habla hispana»."
+ },
+ {
+  "id": "i0234",
+  "negocio": "W7_n2",
+  "turnos_previos_del_cliente": [
+   "Hola, ¿qué tal? Quisiera saber si ofrecen diseño de logo.",
+   "¿En cuánto tiempo me lo entregan?"
+  ],
+  "cliente": "Bueno, quería saber también si hacen publicidad en redes sociales.",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "Administración",
+   "Redes Sociales",
+   "$250 USD"
+  ],
+  "evidencia": "Redes Sociales - Administración básica 1 red (30 posts/mes): $250 USD",
+  "respuesta_ideal": "Sí, administramos redes. Administración básica en 1 red sale $250 USD/mes con 30 posts. Si quieres 2 o 3 redes, cambia el precio.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Somos una agencia boutique de publicidad digital especializada en posicionamiento web, diseño gráfico y gestión de redes sociales para PyMES y emprendimientos de habla hispana»."
+ },
+ {
+  "id": "i0244",
+  "negocio": "W1_n1",
+  "turnos_previos_del_cliente": [],
+  "cliente": "¿Venden cupones de la ONCE?",
+  "tipo": "sin_respuesta",
+  "accion_esperada": "abstenerse",
+  "claves": [],
+  "evidencia": null,
+  "respuesta_ideal": "No tengo esa información; puede preguntarlo en ventanilla o llamar al 976 33 41 90.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «No. La ley prohíbe vender juegos de azar a menores de 18 años, aunque sea para otra persona»."
+ },
+ {
+  "id": "i0265",
+  "negocio": "W4_n1",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Tengo unos olivos en Los Villares, me salen unos 200 kilos de aceituna. ¿Me los pueden moler?",
+  "tipo": "si_no",
+  "accion_esperada": "responder",
+  "claves": [
+   "300 kg"
+  ],
+  "evidencia": "- Mínimo 300 kg por partida.",
+  "respuesta_ideal": "Con 200 kilos no llegaría al mínimo: para particulares se piden al menos 300 kg por partida, y además hace falta cita previa en la oficina de socios.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Quien tenga olivos y no sea socio puede traer su aceituna para que le hagamos su propio aceite:»."
+ },
+ {
+  "id": "i0290",
+  "negocio": "W1_n4",
+  "turnos_previos_del_cliente": [
+   "Buenas tardes",
+   "cuanto sale la casa de 2 dormitorios llave en mano?",
+   "¿y en kit?"
+  ],
+  "cliente": "Si la compro en kit y quiero que ustedes la armen, ¿cuánto sería en total?",
+  "tipo": "combinada",
+  "accion_esperada": "responder",
+  "claves": [
+   "23.000.000"
+  ],
+  "evidencia": "Si lo desea, podemos armar el kit por un valor adicional de $ 3.200.000 en los modelos Chaitén y Llanquihue (otros modelos, consultar).",
+  "respuesta_ideal": "El kit Llanquihue cuesta $ 19.800.000 y el armado $ 3.200.000 adicionales, en total $ 23.000.000 (sin fundaciones ni instalaciones).",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Si lo desea, podemos armar el kit por un valor adicional de $ 3.200.000 en los modelos Chaitén y Llanquihue (otros modelos, consultar)»."
+ },
+ {
+  "id": "i0325",
+  "negocio": "W3_n2",
+  "turnos_previos_del_cliente": [
+   "Necesito un transportín para mi gato. ¿Qué tamaños tienen?"
+  ],
+  "cliente": "A Coyoacán nomás.",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "Coyoacán",
+   "zona de cobertura"
+  ],
+  "evidencia": "Tienda física en Coyoacán",
+  "respuesta_ideal": "Perfecto, vívenos en Av. Coyoacán 2847. Abierto hoy hasta las 8 p.m. Ven a ver los transportines.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Entregas a domicilio en Coyoacán, Benito Juárez, Iztapalapa y zonas aledañas por encargo especial»."
+ },
+ {
+  "id": "i0331",
+  "negocio": "W3_n3",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Hola, ¿qué películas tienen esta semana?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "Aventura épica",
+   "Comedia romántica",
+   "Película Infantil"
+  ],
+  "evidencia": "Películas en cartelera actual: - Aventura épica (PG-13) — Sala 1 - Comedia romántica (12+) — Sala 2 - Película Infantil 3D (7+) — Sala 3",
+  "respuesta_ideal": "Tenemos Aventura épica en la Sala 1, Comedia romántica en la Sala 2, y Película Infantil 3D en la Sala 3. La cartelera se actualiza cada jueves.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Sala 2 (50 butacas): Películas en cartelera hace 2-3 semanas»."
+ },
+ {
+  "id": "i0342",
+  "negocio": "W3_n4",
+  "turnos_previos_del_cliente": [],
+  "cliente": "Quiero devolver un libro que compré hace una semana. Ya lo leí.",
+  "tipo": "instruccion",
+  "accion_esperada": "responder",
+  "claves": [
+   "14 días",
+   "sin abrir",
+   "estado perfecto"
+  ],
+  "evidencia": "Cambios: libros sin abrir y en estado perfecto dentro de 14 días con ticket original",
+  "respuesta_ideal": "Si lo ya leíste, lo sentimos, no podemos devolverlo. Los cambios son solo dentro de 14 días y si el libro está sin abrir y en estado perfecto. ¿Hay algo defectuoso en el libro?",
+  "respuesta_a_calificar": "Sobre eso, las indicaciones del negocio dicen: «Si alguien quiere devolver un libro ya leído o con marcas: \"Los cambios son solo dentro de 14 días, sin haber abierto el libro o si está en estado perfecto»."
+ },
+ {
+  "id": "i0348",
+  "negocio": "W7_n4",
+  "turnos_previos_del_cliente": [
+   "¿Qué géneros tienen?",
+   "Me encanta el tango. ¿Tienen discos de tango?",
+   "¿Quién es Gustavo?"
+  ],
+  "cliente": "¿Hacen asesoramiento?",
+  "tipo": "directa",
+  "accion_esperada": "responder",
+  "claves": [
+   "Asesoramiento musical",
+   "Consulta rápida",
+   "gratis",
+   "sesión extendida",
+   "1 hora",
+   "300 ARS"
+  ],
+  "evidencia": "Consulta rápida (recomendación, búsqueda): GRATIS - Sesión de asesoramiento extendida (1 hora, armamos tu discoteca ideal): 300 ARS",
+  "respuesta_ideal": "Consulta rápida es gratis. Si querés una sesión de 1 hora para armar tu colección de tango ideal, 300 pesos.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Asesoramiento musical»."
+ },
+ {
+  "id": "i0381",
+  "negocio": "W1_n2",
+  "turnos_previos_del_cliente": [
+   "Hola, quiero agendar una valoración",
+   "¿La valoración tiene costo?"
+  ],
+  "cliente": "¿Y cuánto tiempo dura?",
+  "tipo": "seguimiento",
+  "accion_esperada": "responder",
+  "claves": [
+   "45 minutos"
+  ],
+  "evidencia": "Valoración capilar: gratis, dura unos 45 minutos y requiere cita previa.",
+  "respuesta_ideal": "Dura unos 45 minutos.",
+  "respuesta_a_calificar": "No lo tengo seguro. Lo más cercano que dice el texto es: «Con buen cuidado, entre 1 y 2 años»."
+ }
+]
